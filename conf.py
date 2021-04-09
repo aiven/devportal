@@ -51,7 +51,10 @@ html_theme_options = {
     'font_family': 'sans',
     'head_font_family': 'ubuntu, sans',
     'sidebar_header': '#FF3554',
-    'link': '#FF3554'
+    'link': '#FF3554',
+    'github_user': 'aiven',
+    'github_repo': 'devportal',
+    'github_banner': 'true'
 }
 
 html_sidebars = {
