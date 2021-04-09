@@ -8,10 +8,3 @@ Starter Project
 
 If you don't have a dataset to play with, try our useful (but quite silly) `Fake Pizza Data Producer for Kafka <https://github.com/aiven/kafka-python-fake-data-producer>`_
 
-.. toctree::
-    :glob:
-    :hidden:
-    :maxdepth: 2
-
-    *
-
