@@ -5,7 +5,7 @@ This is a work in progress.
 
 The site will be a place to hold all our developer-facing content.
 
-It is Python-based, with content in `ReStructuredText (rst)<https://docutils.sourceforge.io/rst.html>`_ and rendered by `Sphinx<https://www.sphinx-doc.org/en/master/>`_.
+It is Python-based, with content in `ReStructuredText (rst) <https://docutils.sourceforge.io/rst.html>`_ and rendered by `Sphinx <https://www.sphinx-doc.org/en/master/>`_.
 
 Running locally
 ---------------
@@ -24,5 +24,5 @@ License
 -------
 
 This work is licensed under a
-`Creative Commons Attribution 4.0 International License<http://creativecommons.org/licenses/by/4.0/>`_.
+`Creative Commons Attribution 4.0 International License <http://creativecommons.org/licenses/by/4.0/>`_.
 
