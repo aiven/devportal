@@ -57,6 +57,7 @@ html_theme_options = {
     'github_banner': 'true'
 }
 
+html_extra_path = ["robots.txt"]
 html_sidebars = {
     '**': [
         'about.html',
