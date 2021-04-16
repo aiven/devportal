@@ -21,3 +21,7 @@ help:
 
 livehtml:
 	sphinx-autobuild "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+
+spell:
+	vale $(SOURCEDIR)/index.rst
+	vale $(SOURCEDIR)/docs
