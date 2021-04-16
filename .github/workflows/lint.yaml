@@ -10,6 +10,7 @@ on:
 jobs:
   prose:
     runs-on: ubuntu-latest
+    continue-on-error: false
     steps:
     - name: Checkout
       uses: actions/checkout@master
@@ -17,7 +18,7 @@ jobs:
     - name: Vale
       uses: errata-ai/vale-action@master
       with:
-        files: ["docs"]
+        files: '["docs"]'
       env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
