@@ -15,10 +15,9 @@ jobs:
       uses: actions/checkout@master
 
     - name: Vale
-      uses: errata-ai/vale-action@v1.4.0
+      uses: errata-ai/vale-action@master
       with:
-        files: docs/
-        onlyAnnotateModifiedLines: true
+        files: ["docs"]
       env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
