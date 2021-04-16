@@ -1,0 +1,18 @@
+name: Sphinx
+on:
+  push:
+    branches:
+      - master
+    tags:
+      - '**'
+  pull_request:
+
+jobs:
+  prose:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+
+    - name: LinkCheck
+      run: make linkcheck
