@@ -54,7 +54,8 @@ html_theme_options = {
     'link': '#FF3554',
     'github_user': 'aiven',
     'github_repo': 'devportal',
-    'github_banner': 'true'
+    'github_banner': 'true',
+    'github_button': 'false'
 }
 
 html_extra_path = ["robots.txt"]
