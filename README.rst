@@ -18,7 +18,19 @@ Start the HTML version with::
 
     make livehtml
 
-(if anything doesn't seem to re-render well, the navigation seems particularly unreliable, try ``make clean`` and then ``make livehtml`` again).
+Your preview should be at http://localhost:8000 (if anything doesn't seem to re-render well, the navigation seems particularly unreliable, try ``make clean`` and then ``make livehtml`` again).
+
+Making changes
+--------------
+
+Please make changes! Even small fixes are very welcome. The content is in the ``docs/`` folder, in `ReStructuredText <https://docutils.sourceforge.io/rst.html>`_.
+
+When you open a pull request, you will get a preview of your changes (useful if you or someone you want to show the work to does not have the tool set up locally). The process also runs some spelling and link checking tasks. You can also run those locally:
+
+* Check links: ``make linkcheck``
+* Check spelling: ``make spell``
+
+If the spellchecker is rejecting words that are valid (such as technology terms), double check the spelling and capitalisation, then add the word to ``.github/workflows/styles/Docs/accept.txt``.
 
 License
 -------
