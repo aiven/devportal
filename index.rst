@@ -17,9 +17,40 @@ Pricing is per month, you pay for the time that the service is running. Data tra
 Products
 --------
 
-**PostgreSQL** Up-to-date, this best-of breed relational database is a great fit for many applications. It's first in this list for a reason.
+Relational databases that you know and love ❤️
 
-**Apache Kafka** For data streaming services, look no further than Apache Kafka. With Apache MirrorMaker2 and Kafka Connect available alongside the Kafka services, we have extensive experience in running Kafka at scale. Let us take the strain while you focus on what matters to your business.
+.. panels::
+
+    |icon-postgres| **PostgreSQL** The lastest versions, and all the extensions you need.
+
+    ---
+
+    |icon-mysql| **MySQL** World's most widely-used open source database.
+
+Streaming data and events 📨
+
+.. panels::
+
+    |icon-kafka| **Apache Kafka** For data streaming services, look no further than Apache Kafka.
+
+    ---
+
+    |icon-kafka-connect| **Kafka Connect** To connect all the things into (source) and out of (sink) Apache Kafka.
+
+    ---
+
+    |icon-kafka-mirrormaker| **MirrorMaker2** Everything from one Apache Kafka, to another Apache Kafka
+
+
+Time series solutions ⌚
+
+.. panels::
+
+    |icon-m3db| **M3DB** Distributed time-series for seriously scalable solutions
+
+    ---
+
+    |icon-influxdb| **InfluxDB** Time-series data, managed well
 
 .. toctree::
     :hidden:
@@ -28,7 +59,30 @@ Products
 
     API<docs/api/index>
     CLI<docs/cli>
+    docs/products/index
     docs/products/kafka/index
 
     docs/community
+
+.. |icon-postgres| image:: images/icon-pg.svg
+   :width: 36px
+
+.. |icon-mysql| image:: images/icon-mysql.svg
+   :width: 36px
+
+.. |icon-kafka| image:: images/icon-kafka.svg
+   :width: 36px
+
+.. |icon-kafka-connect| image:: images/icon-kafka-connect.svg
+   :width: 36px
+
+.. |icon-kafka-mirrormaker| image:: images/icon-kafka-mirrormaker.svg
+   :width: 36px
+
+.. |icon-m3db| image:: images/icon-m3db.svg
+   :width: 36px
+
+.. |icon-influxdb| image:: images/icon-influxdb.svg
+   :width: 36px
+
 
