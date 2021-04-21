@@ -32,6 +32,11 @@ When you open a pull request, you will get a preview of your changes (useful if 
 
 If the spellchecker is rejecting words that are valid (such as technology terms), double check the spelling and capitalisation, then add the word to ``.github/workflows/styles/Docs/accept.txt``.
 
+Diagrams
+~~~~~~~~
+
+Diagrams use `sphinxcontrib-mermaid <https://github.com/mgaitan/sphinxcontrib-mermaid>`_ and `mermaid.js <https://mermaid-js.github.io/mermaid/#/>`_ syntax.
+
 License
 -------
 
