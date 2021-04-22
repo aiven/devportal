@@ -3,9 +3,9 @@ Products
 
 A quick and highly unscientific run-down of the products on the Aiven platform. Click through to the individual sections for more information on each one.
 
-**PostgreSQL** Up-to-date, this best-of breed relational database is a great fit for many applications. It's first in this list for a reason. You can also get your timeseries data fix with the Timescale extension for Postgres.
+**PostgreSQL** Up-to-date, this best-of breed relational database is a great fit for many applications. It's first in this list for a reason. You can also get your time series data fix with the Timescale extension for PostgreSQL.
 
-**Apache Kafka** For data streaming services, look no further than Apache Kafka. With Apache MirrorMaker2 and Kafka Connect available alongside the Kafka services, we have everything you need for your Kakfa toolchain and extensive experience in running Kafka at scale. Let us take the strain while you focus on what matters to your business.
+**Apache Kafka** For data streaming services, look no further than Apache Kafka. With Apache MirrorMaker2 and Kafka Connect available alongside the Kafka services, we have everything you need for your Kafka toolchain and extensive experience in running Kafka at scale. Let us take the strain while you focus on what matters to your business.
 
 **ElasticSearch** Whether it's logs, documents, or something else, you can throw it at ElasticSearch and know it will stick. With a choice of tools to talk to it and solid integrations with many other tools, if you are searching for a search tool then you need search no further.
 
@@ -15,8 +15,8 @@ A quick and highly unscientific run-down of the products on the Aiven platform. 
 
 **MySQL** Much-loved alternative to PostgreSQL. We offer both, so you choose what works best for you, we're just excited about operating them at scale!
 
-**M3DB** Distributed timeseries data is here. We offer it because we use it ourselves, and wanted to share the open source data love with you. M3DB loves both logs and metrics, and is an ideal element of any highly scalable time-series data platform.
+**M3DB** Distributed time series data is here. We offer it because we use it ourselves, and wanted to share the open source data love with you. M3DB loves both logs and metrics, and is an ideal element of any highly scalable time-series data platform.
 
-**InfluxDB** InfluxDB is another time series offering, and for not-huge data requirements, it's a solid choice.
+**InfluxDB** Another excellent time series offering, and for not-huge data requirements, it's a solid choice.
 
 **Grafana** OK so Grafana isn't exactly a database but you can plug it into any of our other services (or all of them at once, everyone should try this once in their lives) to get visualizations of the numbers you care about the most.

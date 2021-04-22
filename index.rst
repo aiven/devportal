@@ -9,8 +9,8 @@ Clouds
 
 Choose from AWS, GCP, Azure, Digital Ocean or UpCloud, and then pick the region where your service should be hosted.
 
-Why Multicloud?
-'''''''''''''''
+Why Multi-cloud?
+''''''''''''''''
 
 We offer multiple cloud options because we believe that everyone should have access to great data platforms wherever they host their applications. Our customers tell us they love it because they know that they aren't locked in to one particular cloud platform for all their data needs.
 
