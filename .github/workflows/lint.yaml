@@ -16,7 +16,7 @@ jobs:
       uses: actions/checkout@master
 
     - name: Vale
-      uses: errata-ai/vale-action@master
+      uses: errata-ai/vale-action@v1.3.0
       with:
         files: '["index.rst", "docs"]'
       env:

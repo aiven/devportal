@@ -1,0 +1,54 @@
+h1, h2, h3 {
+    color: #FF3554;
+    font-weight: bold;
+}
+
+@media (prefers-color-scheme: dark) {
+    h1, h2, h3 { color: #FF7700 }
+}
+
+
+.gh-ribbon {
+	font-family: Helvetica, Arial, sans-serif;
+	width: 600px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 0.8em;
+	padding: 10px;
+	text-decoration: none;
+	position: fixed;
+	text-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+	z-index: 1000;
+}
+
+.gh-ribbon:after {
+	content: "";
+	position: relative;
+	display: block;
+	top: 8px;
+	left: 0;
+	width: 600px;
+	border: 1px dashed rgba(255, 255, 255, 0.4);
+}
+
+.gh-ribbon:before {
+	content: "";
+	position: relative;
+	display: block;
+	bottom: 8px;
+	left: 0;
+	width: 600px;
+	border: 1px dashed rgba(255, 255, 255, 0.4);
+}
+
+.gh-ribbon.right {
+	top: 15px;
+	right: -285px; /* top - right = width / 2 */
+	transform: rotate(50deg) translateY(100%);
+}
+
+.gh-ribbon.gray {
+	background-color: #6d6d6d;
+	color: #ffffff;
+}

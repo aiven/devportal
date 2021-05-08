@@ -46,30 +46,20 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'README*']
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'alabaster'
+html_theme = 'furo'
 html_theme_options = {
-    'show_powered_by': 'False',
-    'show_relbars': 'False',
-    'font_family': 'sans',
-    'head_font_family': 'ubuntu, sans',
-    'sidebar_header': '#FF3554',
-    'link': '#FF3554',
-    'github_user': 'aiven',
-    'github_repo': 'devportal',
-    'github_banner': 'true',
-    'github_button': 'false'
+    "light_css_variables": {
+        "color-brand-primary": "#FF3554",
+        "font-stack": "Ubuntu, Verdana, sans-serif",
+        "color-sidebar-brand-text": "#FF3554",
+    },
+    "navigation_with_keys": True
 }
 
 html_extra_path = ["robots.txt"]
-html_sidebars = {
-    '**': [
-        'about.html',
-        'searchbox.html',
-        'navigation.html',
-    ]
-}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+html_css_files = ['css/aiven.css']
