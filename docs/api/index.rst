@@ -42,9 +42,3 @@ Aiven's API and Postman
 
 If you prefer an even more friendly tool, we have a blog post about `using Postman with Aiven's API <https://aiven.io/blog/your-first-aiven-api-call>`_ including how to import a Postman collection and spin up Aiven services with Postman.
 
-.. toctree::
-    :glob:
-    :hidden:
-    :maxdepth: 1
-
-    *

@@ -3,3 +3,4 @@ sphinx
 sphinx-autobuild
 sphinx-panels
 sphinxcontrib-mermaid
+sphinx-external-toc

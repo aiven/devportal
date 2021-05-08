@@ -69,18 +69,6 @@ Aiven offers everything you'd expect but here are some highlights:
 
 * Database **forking**. Create a fork of your database to test out migrations, upgrades, or anything else you'd like to try in a safe space before you go ahead.
 
-.. toctree::
-    :hidden:
-    :titlesonly:
-    :maxdepth: 2
-
-    Aiven Developer<self>
-    API<docs/api/index>
-    CLI<docs/cli>
-    docs/products/index
-    docs/products/kafka/index
-
-    docs/community
 
 .. |icon-postgres| image:: images/icon-pg.svg
    :width: 36px

@@ -1,0 +1,25 @@
+root: index
+options:
+  maxdepth: 1
+
+entries:
+  # --------- GLOBAL -----------
+  - file: docs/products/index
+
+  # CLI
+  - file: docs/cli
+
+  # API
+  - file: docs/api/index
+    title: Aiven API
+    entries:
+      - glob: docs/api/*
+
+  # -------- PRODUCT-SPECIFIC --------
+  - file: docs/products/kafka/index
+
+
+  # -------- AUXILIARY
+  - file: docs/community
+
+
