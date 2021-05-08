@@ -64,3 +64,52 @@ html_extra_path = ["robots.txt"]
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 html_css_files = ['css/aiven.css']
+
+
+# -- Replacements -----------------------------------------------------------
+rst_epilog = """
+.. |icon-postgres| image:: /images/icon-pg.svg
+   :width: 24px
+   :class: no-scaled-link
+
+.. |icon-mysql| image:: /images/icon-mysql.svg
+   :width: 24px
+   :class: no-scaled-link
+
+.. |icon-kafka| image:: /images/icon-kafka.svg
+   :width: 24px
+   :class: no-scaled-link
+
+.. |icon-kafka-connect| image:: /images/icon-kafka-connect.svg
+   :width: 24px
+   :class: no-scaled-link
+
+.. |icon-kafka-mirrormaker| image:: /images/icon-kafka-mirrormaker.svg
+   :width: 24px
+   :class: no-scaled-link
+
+.. |icon-m3db| image:: /images/icon-m3db.svg
+   :width: 24px
+   :class: no-scaled-link
+
+.. |icon-influxdb| image:: /images/icon-influxdb.svg
+   :width: 24px
+   :class: no-scaled-link
+
+.. |icon-elasticsearch| image:: /images/icon-elasticsearch.svg
+   :width: 24px
+   :class: no-scaled-link
+
+.. |icon-cassandra| image:: /images/icon-cassandra.svg
+   :width: 24px
+   :class: no-scaled-link
+
+.. |icon-redis| image:: /images/icon-redis.svg
+   :width: 24px
+   :class: no-scaled-link
+
+.. |icon-grafana| image:: /images/icon-grafana.svg
+   :width: 24px
+   :class: no-scaled-link
+
+"""

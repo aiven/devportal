@@ -70,32 +70,3 @@ Aiven offers everything you'd expect but here are some highlights:
 * Database **forking**. Create a fork of your database to test out migrations, upgrades, or anything else you'd like to try in a safe space before you go ahead.
 
 
-.. |icon-postgres| image:: images/icon-pg.svg
-   :width: 36px
-   :class: no-scaled-link
-
-.. |icon-mysql| image:: images/icon-mysql.svg
-   :width: 36px
-   :class: no-scaled-link
-
-.. |icon-kafka| image:: images/icon-kafka.svg
-   :width: 36px
-   :class: no-scaled-link
-
-.. |icon-kafka-connect| image:: images/icon-kafka-connect.svg
-   :width: 36px
-   :class: no-scaled-link
-
-.. |icon-kafka-mirrormaker| image:: images/icon-kafka-mirrormaker.svg
-   :width: 36px
-   :class: no-scaled-link
-
-.. |icon-m3db| image:: images/icon-m3db.svg
-   :width: 36px
-   :class: no-scaled-link
-
-.. |icon-influxdb| image:: images/icon-influxdb.svg
-   :width: 36px
-   :class: no-scaled-link
-
-
