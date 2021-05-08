@@ -1,5 +1,8 @@
 Aiven
 Grafana
+Terraforming
 jq
 toolchain
 datastore
+scriptable
+signups
