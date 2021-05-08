@@ -2,6 +2,7 @@
 
 {% block body -%}
 {% include "partials/icons.html" %}
+<a class="gh-ribbon gray right" href="https://github.com/aiven/devportal" target="_blank">Fork me on GitHub!</a>
 
 <input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
 <input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
@@ -65,21 +66,6 @@
                 Copyright &#169; {{ copyright }}
               {%- endtrans %}
             {%- endif %}
-          {%- endif %}
-          {%- if last_updated %}
-            |
-            {% trans last_updated=last_updated|e -%}
-              Last updated on {{ last_updated }}.
-            {%- endtrans %}
-          {%- endif %}
-          {%- if show_sphinx %}
-            |
-            {% trans -%}
-              Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
-              and
-              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-              <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
-            {%- endtrans %}
           {%- endif %}
           {%- if show_source and has_source and sourcename %}
             |

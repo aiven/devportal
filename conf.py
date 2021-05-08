@@ -49,10 +49,11 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'README*']
 html_theme = 'furo'
 html_theme_options = {
     "light_css_variables": {
-        "color-brand-primary": "red",
-        "color-brand-content": "#CC3333",
-        "color-admonition-background": "orange",
+        "color-brand-primary": "#FF3554",
+        "font-stack": "Ubuntu, Verdana, sans-serif",
+        "color-sidebar-brand-text": "#FF3554",
     },
+    "navigation_with_keys": True
 }
 
 html_extra_path = ["robots.txt"]
@@ -61,3 +62,4 @@ html_extra_path = ["robots.txt"]
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+html_css_files = ['css/aiven.css']
