@@ -1,5 +1,5 @@
-Overview
-========
+Aiven API Overview
+==================
 
 The Aiven API allows you to perform any tasks on Aiven from a client of your choice.
 
