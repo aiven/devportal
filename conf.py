@@ -29,7 +29,8 @@ author = 'Aiven Team'
 # ones.
 extensions = [
     'sphinx_panels',
-    'sphinxcontrib.mermaid'
+    'sphinxcontrib.mermaid',
+    'sphinx_external_toc',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
