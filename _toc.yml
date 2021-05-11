@@ -6,14 +6,13 @@ entries:
   # --------- GLOBAL -----------
   - file: docs/products/index
 
-  # CLI
-  - file: docs/cli
-
-  # API
-  - file: docs/api/index
-    title: Aiven API
+  - file: docs/tools/index
     entries:
-      - glob: docs/api/*
+      - file: docs/tools/cli
+      - file: docs/tools/api/index
+        title: Aiven API
+        entries:
+        - glob: docs/tools/api/*
 
   # -------- PRODUCT-SPECIFIC --------
   - file: docs/products/kafka/index
