@@ -20,7 +20,7 @@ Getting Started
 Requirements 
 ''''''''''''
 - `Download and install Terraform <https://www.terraform.io/downloads.html>`_
-- `Signup <https://console.aiven.io/signup>`_ for Aiven if you haven't already
+- `Signup <https://console.aiven.io/signup?utm_source=github&utm_medium=organic&utm_campaign=devportal&utm_content=repo>`_ for Aiven if you haven't already
 - `Generate an authentication token <https://help.aiven.io/en/articles/2059201-authentication-tokens>`_ on Aiven's console or CLI
 
 Setting up the provider
