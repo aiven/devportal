@@ -1,7 +1,7 @@
 Migrate
 =========
 
-An external PostgreSQL database can be migrated into Aiven suing the `aiven-db-migrate <https://github.com/aiven/aiven-db-migrate>`_ tool supporting both logical replication as well as dump and restore process.
+An external PostgreSQL database can be migrated into Aiven using the `Aiven-db-migrate <https://github.com/aiven/aiven-db-migrate>`_ tool supporting both logical replication as well as dump and restore process.
 
 
 Migration Requirements
@@ -13,16 +13,16 @@ A successful migration to Aiven PostgreSQL has several requirements in terms of 
 * Source server publicly available or accessible via virtual private cloud (VPC) peering connection
 * User account with access to the destination cluster from an external IP, as configured in ``pg_hba.conf`` on the source cluster
 
-Additionally, for **logical** replication the following need to be fullfilled:
+Additionally, for **logical** replication the following need to be fulfilled:
 
-* Credentials with superuser access to the source cluster or the aiven-extras extension installed on it
+* Credentials with superuser access to the source cluster or the ``aiven-extras`` extension installed on it
 * Replication slot is created on the destination cluster for each migrated database from the source cluster, so the number of maximum available replication slots needs to be considered
 * ``wal_level`` setting on the source cluster set to ``logical``
 
 
 Enable ``aiven_extras`` Extension on the Target Database
 ----------------------
-The ``aiven_extras`` extension is required to perform the migration. Once the target PostgreSQL instace has `been created  <create.html>`_ we can connect via `Command Line Interface <../../tools/cli.html>`_
+The ``aiven_extras`` extension is required to perform the migration. Once the target PostgreSQL instance has `been created  <create.html>`_ we can connect via `Command Line Interface <../../tools/cli.html>`_
 
 .. code :: bash
 

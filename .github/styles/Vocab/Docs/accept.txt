@@ -1,8 +1,12 @@
 Aiven
+API
 Grafana
 Terraforming
 jq
 toolchain
 datastore
 scriptable
-API
+signups
+Untrusted
+boolean
+Hostname

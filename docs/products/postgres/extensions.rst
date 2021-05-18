@@ -12,69 +12,69 @@ The following PostgreSQL extensions are available. Please note that some of the 
 ==================================  ============================================================
 Extension Name                      Notes
 ==================================  ============================================================
-address_standardizer
-address_standardizer_data_us
-aiven_extras                        Logical replication support
-bloom
-btree_gin
-btree_gist
-chkpass
-citext
-cube
-dblink
-dict_int
-earthdistance
-fuzzystrmatch
-hll
-hstore
-intagg
-intarray
-isn
-ltree
-pg_buffercache
-pg_cron
-pg_partman                          PostgreSQL 10 and older
-pg_prometheus                       PostgreSQL 10 to 12, the extension has been sunset
-                                    by Timescale in favor of promscale and
+``address_standardizer``
+``address_standardizer_data_us``
+``aiven_extras``                    Logical replication support
+``bloom``
+``btree_gin``
+``btree_gist``
+``chkpass``
+``citext``
+``cube``
+``dblink``
+``dict_int``
+``earthdistance``
+``fuzzystrmatch``
+``hll``
+``hstore``
+``intagg``
+``intarray``
+``isn``
+``ltree``
+``pg_buffercache``
+``pg_cron``
+``pg_partman``                      PostgreSQL 10 and older
+``pg_prometheus``                   PostgreSQL 10 to 12, the extension has been sunset
+                                    by Timescale in favor of ``promscale`` and
                                     is not supported for PostgreSQL 13
-pg_repack                           PostgreSQL 10 and newer
-pg_similarity                       PostgreSQL 13 and newer
-pg_stat_statements
-pg_trgm
-pgcrypto
-pgrouting
-pgrowlocks
-pgstattuple
-plcoffee
-plls
-plperl
-plv8                                PostgreSQL 10 and older
-postgis
-postgis_address_standardizer
-postgis_sfcgal
-postgis_tiger_geocoder
-postgis_topology
-postgis_legacy                      The extension is not packaged or supported as an extension by
+``pg_repack``                       PostgreSQL 10 and newer
+``pg_similarity``                   PostgreSQL 13 and newer
+``pg_stat_statements``
+``pg_trgm``
+``pgcrypto``
+``pgrouting``
+``pgrowlocks``
+``pgstattuple``
+``plcoffee``
+``plls``
+``plperl``
+``plv8``                            PostgreSQL 10 and older
+``postgis``
+``postgis_address_standardizer``
+``postgis_sfcgal``
+``postgis_tiger_geocoder``
+``postgis_topology``
+``postgis_legacy``                  The extension is not packaged or supported as an extension by
                                     the PostGIS project.
                                     The extension package is provided by Aiven for Aiven users.
-postgres_fdw
-rum
-sslinfo
-tablefunc
-timescaledb                         PostgreSQL 10 and newer
-tsearch2
-tsm_system_rows
-unaccent
-unit
-uuid-ossp
-wal2json
+``postgres_fdw``
+``rum``
+``sslinfo``
+``tablefunc``
+``timescaledb``                     PostgreSQL 10 and newer
+``tsearch2``
+``tsm_system_rows``
+``unaccent``
+``unit``
+``uuid-ossp``
+``wal2json``
 ==================================  ============================================================
 
 
 Install Extension
 -----------------
 
-The available extensions can be installed from the `avnadmin` user with the following `CREATE EXTENSION <CREATE EXTENSION>`_ command::
+The available extensions can be installed from the ``avnadmin`` user with the following `CREATE EXTENSION <CREATE EXTENSION>`_ command::
 
   CREATE EXTENSION <EXTENSION_NAME> CASCADE;
 
@@ -88,7 +88,7 @@ The reason for this is that user schemas and functions can and do often rely on 
 
 Instead the users need to upgrade the extensions themselves explicitly. This sort of behaviour is commonly true even if you were to run PostgreSQL on your own and just upgrade the package version of an extension to be newer, that won't update the extension version in the database(s) automatically either.
 
-So to actually run the update, please run as `avnadmin` user::
+So to actually run the update, please run as ``avnadmin`` user::
 
   ALTER EXTENSION <EXTENSION_NAME> UPDATE;
 
