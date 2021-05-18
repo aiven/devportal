@@ -18,6 +18,11 @@ entries:
   # -------- PRODUCT-SPECIFIC --------
   - file: docs/products/kafka/index
 
+  - file: docs/products/postgres/index
+    entries:
+        - file: docs/products/postgres/create
+        - file: docs/products/postgres/migrate
+
 
   # -------- AUXILIARY
   - file: docs/community
