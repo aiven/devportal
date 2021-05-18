@@ -22,6 +22,7 @@ entries:
     entries:
         - file: docs/products/postgres/create
         - file: docs/products/postgres/migrate
+        - file: docs/products/postgres/extensions
 
 
   # -------- AUXILIARY
