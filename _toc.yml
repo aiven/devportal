@@ -21,7 +21,10 @@ entries:
   - file: docs/products/postgres/index
     entries:
         - file: docs/products/postgres/create
-        - file: docs/products/postgres/migrate
+        - file: docs/products/postgres/migration/index
+          entries:
+            - file: docs/products/postgres/migration/logical_pgdump
+            - file: docs/products/postgres/migration/bucardo
         - file: docs/products/postgres/extensions
 
 

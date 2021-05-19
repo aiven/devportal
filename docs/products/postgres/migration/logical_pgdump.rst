@@ -4,6 +4,13 @@ Migrate
 An external PostgreSQL database can be migrated into Aiven using the `Aiven-db-migrate <https://github.com/aiven/aiven-db-migrate>`_ tool supporting both logical replication as well as dump and restore process.
 
 
+Logical replication is the default method, as once successful, this keeps the two databases synchronised until the replication is interrupted. If the preconditions for logical replication are not met for a database, the migration falls back to using ``pg_dump``.
+
+Regardless of the migration method used, the migration tool first performs a schema dump and migration to ensure schema compatibility.
+
+**Note**: Logical replication also works when migrating from AWS RDS PostgreSQL 10+. Google Cloud Platform's PostgreSQL for CloudSQL does not support logical replication.
+
+
 Migration Requirements
 ----------------------
 
@@ -16,12 +23,20 @@ A successful migration to Aiven PostgreSQL has several requirements in terms of 
 Additionally, for **logical** replication the following need to be fulfilled:
 
 * Credentials with superuser access to the source cluster or the ``aiven-extras`` extension installed on it
-* Replication slot is created on the destination cluster for each migrated database from the source cluster, so the number of maximum available replication slots needs to be considered
-* ``wal_level`` setting on the source cluster set to ``logical``
+* An available replication slot on the destination cluster for each database migrated from the source cluster
+* Set the ``wal_level`` on the source cluster to ``logical``. To check this setting, run the following command on the source cluster::
+
+  $ show wal_level;
+
+If necessary, run the following command in ``psql`` and then reload the PostgreSQL configuration::
+
+  $ ALTER SYSTEM SET wal_level = logical;
+
+**Note**: If you are migrating from an AWS RDS PostgreSQL cluster, you have to set the ``rds.logical_replication`` parameter to 1 (true) in the parameter group.
 
 
 Enable ``aiven_extras`` Extension on the Target Database
-----------------------
+----------------------------------------------------------------------------------------
 The ``aiven_extras`` extension is required to perform the migration. Once the target PostgreSQL instance has `been created  <create.html>`_ we can connect via `Command Line Interface <../../tools/cli.html>`_
 
 .. code :: bash
@@ -48,7 +63,7 @@ The migration can be started with::
 Substitute the ``<host>``, ``<port>``, ``<user>>``, ``<password>`` parameters with the appropriated values pointing to your source PostgreSQL instance. Also replace the ``<tgt_instance_name>`` parameter with the Aiven PostgreSQL target instance.
 
 Migration Parameters
-`````````````
+``````````````````````````
 
 The updated list of parameters available for the migration is available with the following command browsing to the ``postgres`` section ::
 
@@ -90,7 +105,7 @@ The migration status can be checked with the following command::
       --show-http
 
 Remove Logical Replication
-----------------------
+---------------------------------
 
 The migration configuration can be removed with ::
 
