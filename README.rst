@@ -32,6 +32,41 @@ When you open a pull request, you will get a preview of your changes (useful if 
 
 If the spellchecker is rejecting words that are valid (such as technology terms), double check the spelling and capitalisation, then add the word to ``.github/workflows/styles/Docs/accept.txt``.
 
+Navigation Structure
+~~~~~~~~~~~~~~~~~~~~
+
+The left-hand navigation menu is driven by a plugin called `Sphinx external TOC <https://sphinx-external-toc.readthedocs.io/en/latest/intro.html>`_. You can find our structure in ``_toc.yml``.
+
+Links
+~~~~~
+
+Links are different depending on whether they are external links, links pointing to a specific page on the site, or links pointing to a specific anchor or label.
+
+External links are used for external hyperlinks::
+
+    `ReStructuredText <https://docutils.sourceforge.io/rst.html>`_
+
+To link to another page on the site, use the `:doc: <https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html#cross-referencing-documents>`_ role::
+
+    Use the :doc:`cli` for scriptable, repeatable actions with Aiven
+
+
+The ``:doc:`` role uses the page title but if you want to change the link text, you can do so::
+
+    With an :doc:`API <api/index>` you can build any integration you choose
+
+To create a label to link to a particular section (this is also useful if renaming titles that might have links pointing to the old wording), place the label immediately before the section heading::
+
+    .. _tools_cli_tips_tricks
+
+    Tips and Tricks
+    ===============
+
+Then you can refer to the label with a `:ref: <https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html#cross-referencing-arbitrary-locations>`_ entry::
+
+    There are some :ref:`_tools_cli_tips_tricks` to assist you.
+
+
 Diagrams
 ~~~~~~~~
 

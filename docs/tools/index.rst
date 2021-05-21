@@ -9,5 +9,5 @@ Use the :doc:`cli` for scriptable, repeatable actions with Aiven - or because th
 
 With an :doc:`API <api/index>` you can build any integration you choose. This public-facing API also powers our own web interface so everything you need is supported.
 
-The `Terraform provider <https://aiven.github.io/terraform-provider-aiven/README>`_ is a great choice if you're Terraforming the rest of your platform.
+The `Terraform provider <https://github.com/aiven/terraform-provider-aiven/#readme>`_ is a great choice if you're Terraforming the rest of your platform.
 
