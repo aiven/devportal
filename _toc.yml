@@ -17,7 +17,6 @@ entries:
 
   # -------- PRODUCT-SPECIFIC --------
   - file: docs/products/kafka/index
-
   - file: docs/products/postgresql/index
     title: PostgreSQL
     entries:
@@ -33,6 +32,10 @@ entries:
       - file: docs/products/postgresql/reference/list-of-extensions
       - file: docs/products/postgresql/reference/pg-connection-limits
 
+  - file: docs/products/m3db/index
+    title: M3DB
+    entries:
+      - glob: docs/products/m3db/*
 
   # -------- AUXILIARY
   - file: docs/community
