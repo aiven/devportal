@@ -57,6 +57,9 @@ html_theme_options = {
     "navigation_with_keys": True
 }
 
+pygments_style = "monokai"
+pygments_dark_style = "monokai"
+
 html_extra_path = ["robots.txt"]
 
 # Add any paths that contain custom static files (such as style sheets) here,
