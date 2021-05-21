@@ -3,7 +3,7 @@ Aiven Terraform Provider
 
     Terraform is an open-source infrastructure as code software tool that provides a consistent CLI workflow to manage hundreds of cloud services. Terraform codifies cloud APIs into declarative configuration files. `Terraform website <https://www.terraform.io/>`_.
 
-With Aiven's Terraform Provider you can manage all our services with code.
+With Aiven's Terraform Provider you can manage all your services programmatically.
 
 See the `official documentation <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_ to learn about all the possible services and resources and the `GitHub repository <https://github.com/aiven/terraform-provider-aiven>`_ for reporting issues and contributing.
 
@@ -21,7 +21,7 @@ Let's get started by configuring Aiven's Terraform provider and deploying a Post
 Requirements 
 ''''''''''''
 - `Download and install Terraform <https://www.terraform.io/downloads.html>`_
-- `Signup <https://console.aiven.io/signup?utm_source=github&utm_medium=organic&utm_campaign=devportal&utm_content=repo>`_ for Aiven if you haven't already
+- `Sign up <https://console.aiven.io/signup?utm_source=github&utm_medium=organic&utm_campaign=devportal&utm_content=repo>`_ for Aiven if you haven't already
 - `Generate an authentication token <https://help.aiven.io/en/articles/2059201-authentication-tokens>`_ on Aiven's console or CLI
 
 Setting up the provider
@@ -30,7 +30,7 @@ To initialise the provider, we will need to configure the Terraform `required_pr
 
 Create a file named `main.tf` and add the content below:
 
-.. code :: terraform
+.. code:: bash
 
     terraform {
       required_providers {
@@ -55,7 +55,7 @@ Now let's deploy a fully managed PostgreSQL database on the GCP Frankfurt region
 
 Add the following block of code to the `main.tf` file:
 
-.. code :: terraform
+.. code:: bash
 
     resource "aiven_pg" "postgresql" {
       project                = "your-project-name"
