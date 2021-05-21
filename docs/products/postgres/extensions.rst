@@ -74,7 +74,7 @@ Extension Name                      Notes
 Install Extension
 -----------------
 
-The available extensions can be installed from the ``avnadmin`` user with the following `CREATE EXTENSION <CREATE EXTENSION>`_ command::
+The available extensions can be installed from the ``avnadmin`` user with the following ``CREATE EXTENSION`` command::
 
   CREATE EXTENSION <EXTENSION_NAME> CASCADE;
 

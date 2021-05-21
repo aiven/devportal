@@ -1,16 +1,12 @@
 Create an Instance
-=========
+==================
 
-Aiven provides several different ways to create a PostgreSQL instance: Web-UI, `Command Line Interface <../../tools/cli.html>`_, REST APIs and Terraform Provider.
-
-Web UI
----------------
-
+To create your own PostgreSQL database, you can use the web console, or try the CLI approach.
 
 Aiven CLI
----------------
+---------
 
-The ``avn`` client is an ideal way to use Aiven's services in a scriptable way. You can find more resources on how to use it in the `dedicated page <../../tools/cli.html>`_.
+The ``avn`` client is an ideal way to use Aiven's services in a scriptable way. You can find more resources on how to use it in the :doc:`dedicated page </docs/tools/cli>`.
 
 A PostgreSQL instance can be created with:
 

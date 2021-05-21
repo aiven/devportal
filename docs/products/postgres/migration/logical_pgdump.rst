@@ -3,12 +3,12 @@ Migrate
 
 An external PostgreSQL database can be migrated into Aiven using the `Aiven-db-migrate <https://github.com/aiven/aiven-db-migrate>`_ tool supporting both logical replication as well as dump and restore process.
 
-
 Logical replication is the default method, as once successful, this keeps the two databases synchronised until the replication is interrupted. If the preconditions for logical replication are not met for a database, the migration falls back to using ``pg_dump``.
 
 Regardless of the migration method used, the migration tool first performs a schema dump and migration to ensure schema compatibility.
 
-**Note**: Logical replication also works when migrating from AWS RDS PostgreSQL 10+. Google Cloud Platform's PostgreSQL for CloudSQL does not support logical replication.
+.. note::
+    Logical replication also works when migrating from AWS RDS PostgreSQL 10+. Google Cloud Platform's PostgreSQL for CloudSQL does not support logical replication.
 
 
 Migration Requirements
@@ -32,14 +32,14 @@ If necessary, run the following command in ``psql`` and then reload the PostgreS
 
   $ ALTER SYSTEM SET wal_level = logical;
 
-**Note**: If you are migrating from an AWS RDS PostgreSQL cluster, you have to set the ``rds.logical_replication`` parameter to 1 (true) in the parameter group.
+.. note::
+   If you are migrating from an AWS RDS PostgreSQL cluster, you have to set the ``rds.logical_replication`` parameter to 1 (true) in the parameter group.
 
 
 Enable ``aiven_extras`` Extension on the Target Database
-----------------------------------------------------------------------------------------
-The ``aiven_extras`` extension is required to perform the migration. Once the target PostgreSQL instance has `been created  <create.html>`_ we can connect via `Command Line Interface <../../tools/cli.html>`_
+--------------------------------------------------------
 
-.. code :: bash
+The ``aiven_extras`` extension is required to perform the migration. Once the target PostgreSQL instance has :doc:`been created </docs/products/postgres/create>` we can connect with :doc:`/docs/tools/cli`::
 
   $ avn service cli pg-demo
 
@@ -115,8 +115,10 @@ The migration configuration can be removed with ::
 
 This removes all logical replication-related objects from both source and destination cluster, so it effectively stops the logical replication. This has no effect for the ``pg_dump`` method, since it is a one-time operation.
 
-**Note** that removing a migration configuration can leave the destination cluster in an inconsistent state, depending on the state of the migration procedure when the removal is triggered. The states that are considered safe are ``done`` for the ``pg_dump`` method and ``syncing`` for ``logical replication``.
+.. note::
+   Removing a migration configuration can leave the destination cluster in an inconsistent state, depending on the state of the migration procedure when the removal is triggered. The states that are considered safe are ``done`` for the ``pg_dump`` method and ``syncing`` for ``logical replication``.
 
-While running, both migration methods are still copying data from the source cluster to the destination, so stopping the process will probably leave some tables only partially moved or missing.
+   While running, both migration methods are still copying data from the source cluster to the destination, so stopping the process will probably leave some tables only partially moved or missing.
 
-**Note**: Running a logical replication migration twice on the same cluster will create duplicate data. Logical replication also has some `limitations <https://www.postgresql.org/docs/12/logical-replication-restrictions.html>`_ on what it will copy.
+.. note::
+   Running a logical replication migration twice on the same cluster will create duplicate data. Logical replication also has some `limitations <https://www.postgresql.org/docs/12/logical-replication-restrictions.html>`_ on what it will copy.
