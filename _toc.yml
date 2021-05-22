@@ -35,7 +35,15 @@ entries:
   - file: docs/products/m3db/index
     title: M3DB
     entries:
-      - glob: docs/products/m3db/*
+      - file: docs/products/m3db/getting-started
+      - file: docs/products/m3db/guides
+        title: Guides
+        entries:
+          - glob: docs/products/m3db/guides/*
+
+      - file: docs/products/m3db/code
+        entries:
+          - glob: docs/products/m3db/code/*
 
   # -------- AUXILIARY
   - file: docs/community

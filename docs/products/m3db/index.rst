@@ -9,6 +9,20 @@ M3DB plays nicely with other tools that might be in the stack already:
 * Write metrics direct from your applications using the InfluxDB-compatible line protocol.
 * Dashboards and query features available using Grafana and PromQL.
 
+First Steps
+-----------
+
+Check out our :doc:`getting-started` guide for M3DB and take your first steps right away.
+
+
+.. panels::
+
+    📙 :doc:`guides`
+
+    ---
+
+    💻 :doc:`code`
+
 .. tip::
    Aiven offers M3DB because we needed a solution this size for our own metrics - and we love it!
 
