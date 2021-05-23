@@ -29,7 +29,7 @@ For this example you will need:
 
 .. note::
 
-    M3DB suports InfluxDB protocol so we can use the existing library for this database too.
+    M3DB supports InfluxDB (v1) protocol so we can use the existing library for this database too.
 
 Code
 ''''

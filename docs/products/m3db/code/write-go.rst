@@ -32,7 +32,7 @@ Add the following to ``main.go`` and replace the placeholder with the Prometheus
 
 .. literalinclude:: /code/products/m3db/write.go
 
-Since M3DB also supports Prometheus-style writes, this code sets up a Prometheus client and then constructs the expected data format to send to <3DB.
+Since M3DB also supports Prometheus-style writes, this code sets up a Prometheus client and then constructs the expected data format to send to M3DB.
 
 To run the code::
 

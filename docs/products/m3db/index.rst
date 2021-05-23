@@ -6,7 +6,7 @@ M3DB is an open source, **distributed time series database**. It's ideal for org
 M3DB plays nicely with other tools that might be in the stack already:
 
 * Collect metrics with Prometheus; M3DB is designed as a scalable storage backend for Prometheus.
-* Write metrics direct from your applications using the InfluxDB-compatible line protocol.
+* Write metrics direct from your applications using the InfluxDB-compatible wire protocol.
 * Dashboards and query features available using Grafana and PromQL.
 
 First Steps
