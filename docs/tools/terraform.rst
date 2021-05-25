@@ -16,6 +16,7 @@ See the `official documentation <https://registry.terraform.io/providers/aiven/a
 
 Getting Started
 ---------------
+Let's get started by configuring Aiven's Terraform provider and deploying a PostgreSQL database.
 
 Requirements 
 ''''''''''''
@@ -25,6 +26,8 @@ Requirements
 
 Setting up the provider
 '''''''''''''''''''''''
+To initialise the provider, we will need to configure the Terraform `required_providers` block and add the API authentication token in the `api_token` field.
+
 Create a file named `main.tf` and add the content below:
 
 .. code :: terraform
@@ -42,13 +45,15 @@ Create a file named `main.tf` and add the content below:
       api_token = "your-api-token"
     }
 
-Run the following command to initialize the Terraform environment::
+Run the command below to initialize Terraform. It will create a directory structure containing Terraform configuration files, install custom providers etc::
 
   $ terraform init
 
 Deploying a PostgreSQL database
 '''''''''''''''''''''''''''''''
-Add the following block of code to the file. It will deploy a PostgreSQL database on the GCP Frankfurt region:
+Now let's deploy a fully managed PostgreSQL database on the GCP Frankfurt region. You can also see other services and available regions `here https://aiven.io/pricing`_.
+
+Add the following block of code to the `main.tf` file:
 
 .. code :: terraform
 
@@ -69,7 +74,7 @@ Plan and apply the Terraform code::
   $ terraform plan
   $ terraform apply
 
-Access the database::
+We now have a PostgreSQL service up and running! You can access it with the command below::
 
   $ psql "$(terraform output -raw postgresql_service_uri)"
 
