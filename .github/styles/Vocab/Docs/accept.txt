@@ -10,3 +10,4 @@ signups
 Untrusted
 boolean
 Hostname
+Bucardo

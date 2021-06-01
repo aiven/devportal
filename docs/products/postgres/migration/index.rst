@@ -4,7 +4,7 @@ Migrate
 External PostgreSQL databases can be migrated into Aiven using the following methods:
 * logical replication
 * ``pg_dump`` and ``pg_restore``
-* bucardo
+* Bucardo
 
 Migration Requirements
 ----------------------
