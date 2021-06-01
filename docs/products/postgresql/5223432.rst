@@ -3,7 +3,7 @@
 
 Where to find the table-specific metrics that are described in the Datadog documentation
 
-Based on the Datadog `Postgres integration documentation <https://docs.datadoghq.com/integrations/postgres/?tab=host#data-collected>`_, there are a variety of different metrics recorded by the Datadog agent. However, only some of these are available in Aiven for PostgreSQL services.
+Based on the Datadog `PostgreSQL integration documentation <https://docs.datadoghq.com/integrations/postgres/?tab=host#data-collected>`_, there are a variety of different metrics recorded by the Datadog agent. However, only some of these are available in Aiven for PostgreSQL services.
 
 Currently, Aiven for PostgreSQL reports **server** and **database** metrics, but not **table** (relation) or **statement** metrics.
 

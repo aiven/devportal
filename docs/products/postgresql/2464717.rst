@@ -3,7 +3,7 @@
 
 How to set up always-on logical replication for replicating tables or a whole database to Aiven for PostgreSQL
 
-This article goes through the steps of replicating one or all tables from a self-managed Postgres cluster to an Aiven cluster.
+This article goes through the steps of replicating one or all tables from a self-managed PostgreSQL cluster to an Aiven cluster.
 
 **Note:** These instructions also work with AWS RDS PostgreSQL 10+. Google Cloud Platform's PostgreSQL for CloudSQL does not support logical replication. 
 
