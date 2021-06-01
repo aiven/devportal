@@ -13,7 +13,7 @@ List of cloud regions
 
 The response looks something like this
 
-.. code:: json
+::
 
   {
     "clouds": [
