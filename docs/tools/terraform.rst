@@ -74,7 +74,7 @@ Plan and apply the Terraform code::
   $ terraform plan
   $ terraform apply
 
-We now have a PostgreSQL service up and running! You can access it with the command below that combines the `psql` command with fetching the connection information from terraform::
+We now have a PostgreSQL service up and running! You can access it with the command below that combines the ``psql`` command with fetching the connection information from terraform::
 
   $ psql "$(terraform output -raw postgresql_service_uri)"
 

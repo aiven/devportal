@@ -5,7 +5,4 @@ jq
 toolchain
 datastore
 scriptable
-signups
-Signup
-api
 API
