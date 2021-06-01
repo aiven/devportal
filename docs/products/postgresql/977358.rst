@@ -1,0 +1,106 @@
+﻿Using the PostgreSQL dblink extension
+=====================================
+
+How to connect to other databases with dblink
+
+This article gives you an example of using the ``dblink_fdw`` foreign data wrapper. `dblink <https://www.postgresql.org/docs/9.6/static/dblink.html>`_ is a PostgreSQL extension that allows you to connect to other databases and to run arbitrary queries in them. 
+
+Foreign data wrappers (FDW) are a unified way for PostgreSQL to define a remote ``FOREIGN SERVER`` to access. It allows you to set the database connection details like hostnames in a single place, and you only need to create a ``USER MAPPING`` for remote connections with the required passwords once.  
+
+An example of using ``dblink_fdw``:
+
+1. Create the extension and database as ``avnadmin``.
+
+   **Note:** You only need to enter the username and password once using the ``CREATE USER MAPPING`` statement.
+
+   
+
+   ::
+
+     $ psql "postgres://avnadmin:adminpassword@postgres.demoproject.aivencloud.com:11254/defaultdb?sslmode=require"
+     
+     -- 'user1' will be able to create a dblink from 'defaultdb' to a new database 'db2'
+     
+     defaultdb= > CREATE USER user1 PASSWORD 'secret1';
+     CREATE ROLE
+     
+     -- 'user2' will be the owner of the new database 'db2'
+     
+     defaultdb= > CREATE USER user2 PASSWORD 'secret2';
+     CREATE ROLE
+     
+     -- we need to grant 'user2' to the current user (avnadmin) to give user2 privileges to the new database 'db2'
+     
+     GRANT user2 TO CURRENT_USER;
+     GRANT ROLE
+     
+     -- create the database that we will access over a dblink connection
+     
+     defaultdb= > CREATE DATABASE db2 OWNER user2;
+     CREATE DATABASE
+     
+     defaultdb= > CREATE EXTENSION dblink;
+     CREATE EXTENSION
+     
+     defaultdb= > CREATE SERVER db2remote
+                     FOREIGN DATA WRAPPER dblink_fdw
+                     OPTIONS (host 'postgres.demoproject.aivencloud.com',
+                              dbname 'db2', port '11254');
+     CREATE SERVER
+     
+     -- 'user1' will automatically authenticate as 'user2' with the remote 'db2' database when using the dblink connections
+     
+     defaultdb= > CREATE USER MAPPING FOR user1
+                     SERVER db2remote
+                     OPTIONS (user 'user2', password 'secret2');
+     CREATE USER MAPPING
+     
+     -- allow user1 to use the remote db2remote connection
+     
+     defaultdb= > GRANT USAGE ON FOREIGN SERVER db2remote TO user1;
+     GRANT
+
+2. Log in to the ``db2``  database as ``user2``.
+
+   ::
+
+     $ psql "postgres://user2:secret2@postgres.demoproject.aivencloud.com:11254/db2?sslmode=require"
+
+3. Create a table and add some data to it:
+
+   ::
+
+     db2= > CREATE TABLE foo (id int);
+     CREATE TABLE
+     
+     db2= > INSERT INTO foo (id) VALUES (100), (200), (300);
+     INSERT 0 3
+
+4. Access the data in ``db2`` as ``user1`` from the original ``defaultdb`` database using ``dblink``:
+
+   ::
+
+     $ psql "postgres://user1:secret1@postgres.demoproject.aivencloud.com:11254/defaultdb?sslmode=require"
+     
+     -- establish a dblink connection to the remote database
+     
+     defaultdb= > SELECT dblink_connect('myconn', 'db2remote');
+      dblink_connect
+     ────────────────
+      OK
+     (1 row)
+     
+     -- execute a test query using the dblink connection
+     
+     defaultdb= > SELECT * FROM dblink('myconn','SELECT * FROM foo') AS t(a int);
+       a
+     ─────
+      100
+      200
+      300
+     (3 rows)
+
+   
+
+   The contents of the ``foo``  table in the ``db2`` database are returned correctly from the ``dblink`` query.
+

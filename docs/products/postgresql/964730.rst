@@ -1,0 +1,119 @@
+﻿PostgreSQL connection pooling
+=============================
+
+How to optimize large numbers of connections to a database
+
+Connection pooling in Aiven for PostgreSQL services allows you to maintain very large numbers of connections to a database while minimizing the consumption of server resources.
+
+
+
+Aiven for PostgreSQL connection pooling uses PGBouncer to manage the database connection. Each pool can handle up to 5000 database client connections. Unlike when you connect directly to the PostgreSQL server, each client connection does not require a separate backend process on the server. PGBouncer automatically inserts the client queries and only uses a limited number of actual backend connections, leading to lower resource usage on the server and better total performance.
+
+Why connection pooling? 
+------------------------
+
+A high number of backend connections eventually becomes a problem with PostgreSQL, as the resource cost per connection is quite high due to how PostgreSQL manages client connections. PostgreSQL creates a separate backend process for each connection, and the unnecessary memory usage caused by the processes will start affecting the total throughput of the system at some point. Also, if each connection is very active, the performance can be affected by the high number of parallel executing tasks.
+
+
+
+It makes sense to have enough connections so that each CPU core on the server has something to do (each connection can only utilize a single CPU core), but a hundred connections per CPU core may be too much. All this is workload-specific, but often a good number of connections to have is roughly 3-5 times the CPU core count.
+
+
+
+**Note:** PostgreSQL 9.6 introduced limited parallelization support for `running queries in parallel <https://www.postgresql.org/docs/9.6/static/parallel-query.html>`_ on multiple CPU cores.
+
+
+
+Without a connection pooler, the database connections are handled directly by PostgreSQL backend processes, with one process per connection:
+
+.. image:: pictures/pgbouncer-pooling-none.png
+
+Adding a PGBouncer pooler that utilizes fewer backend connections frees up server resources for more important uses, such as disk caching: 
+
+.. image:: pictures/pgbouncer-pooling-enabled.png
+
+Many frameworks and libraries (ORMs, Django, Rails, etc.) support client-side pooling, which solves much the same problem. However, when there are many distributed applications or devices accessing the same database, a client-side solution is not enough.
+
+Connection pooling modes
+------------------------
+
+Aiven PostgreSQL supports three different operational pool modes: "session", "transaction" and "statement".
+
+* The **"session"** pooling mode means that once a client connection is granted access to a PostgreSQL server-side connection, it can hold it until the client disconnects from the pooler. After this, the server connection is added back onto the connection pooler's free connection list to wait for its next client connection. Client connections are accepted (at TCP level), but their queries only proceed once another client disconnects and frees up its backend connection back into the pool. This mode can be helpful in some cases for providing a wait queue for incoming connections while keeping the server memory usage low, but is of limited use under most common scenarios due to the slow recycling of the backend connections.
+* The **"transaction"** pooling mode, on the other hand, allows each client connection to take their turn in using a backend connection for the duration of a single transaction. After the transaction is committed, the backend connection is returned back into the pool and the next waiting client connection gets to reuse the same connection immediately. In practice, this provides quick response times for queries as long as the typical execution times for transactions are not excessively long. This is the most commonly used PGBouncer mode and also the default pooling mode in Aiven for PostgreSQL.
+* The third operational pooling mode is **"statement"**, which is similar to the "transaction" pool mode, except that instead of allowing a full transaction to run, it cycles the server-side connections after each and every database statement (SELECT, INSERT, UPDATE, DELETE statements, etc.). Transactions containing multiple SQL statements are not allowed in this mode. This mode is sometimes used, for example when running specialized sharding frontend proxies.
+
+  
+
+How to get started with Aiven PostgreSQL connection pooling
+-----------------------------------------------------------
+
+First you need an Aiven for PostgreSQL service. The steps described in this article assume that you have already created one. See our `getting started guide <https://support.aiven.io/hc/en-us/articles/213573705-Getting-started-with-Aiven-PostgreSQL>`_ for information on creating a service.
+
+1. Log in to the Aiven web console and select your PostgreSQL service.
+
+   You can connect directly to the PostgreSQL server using the settings listed on the *Overview* page (the *Service URI* address), but this type of connection does not use PGBouncer pooling.
+
+   
+2. Click the **Pools** tab.
+
+   This opens a list of the PGBouncer connection pools defined for the service.
+
+   
+3. Click **Add Pool**.
+
+   The pool settings are:
+
+   * **Pool name:** Enter a name for your connection pool here. This also becomes the ``database`` or ``dbname`` connection parameter for your pooled client connections.
+   * **Database**: Choose the database that you want to connect to. Each pool can only connect to a single database.
+   * **Username:** Select the database username that you want to use when connecting to the backend database.
+   * **Pool Mode:** Select the pooling mode as described in more detail above.
+   * **Pool Size:** Select how many PostgreSQL server connections this pool can use at a time.
+
+     
+
+4. Click **Create**.
+
+   This creates the connection pool and adds it to the list.
+
+   
+5. Click **Info** for the new pool.
+
+   This shows you the database connection settings for this pool.
+
+   **Note:** PGBouncer pools use a different port number than the regular PostgreSQL server port. You can use both pooled and non-pooled connections at the same time.
+
+Note that if you have set a custom ``search_path`` for your database, it is not automatically set for your new connection pool. Remember to set this also for new connection pools when you create them.
+
+Connection pools for replicas
+-----------------------------
+
+For all Business and Premium plans, whenever you define a connection pool, the same connection pool is created both for primary and standby servers. For standby servers, the connection pool URI is exactly the same as for the primary server, except that the host name has a ``replica-`` prefix.
+
+For example, if the primary connection URI is ``postgres://avnadmin:password@pg-prod-myproject.aivencloud.com:20986/mypool?params``, the replica connection pool URI is ``postgres://avnadmin:password@replica-pg-prod-myproject.aivencloud.com:20986/mypool?params``.
+
+Accessing PGBouncer statistics
+------------------------------
+
+You can access PGBouncer statistics using the URL from service's connection information in the JSON output of the ``service get`` command in the ``avn`` client:
+
+::
+
+  $ avn service get --project test mypg --json | jq -r '.connection_info.pgbouncer'
+  postgres://avnadmin:xxxxxxxxxxx>@mypg-test-jappja-test.avns.net:25744/pgbouncer?sslmode=require
+  
+  $ psql postgres://avnadmin:xxxxxxxxxxx@mypg-test-jappja-test.avns.net:25744/pgbouncer?sslmode=require
+  ...
+  pgbouncer=# SHOW STATS;
+
+
+Run ``SHOW HELP``  to see all available commands. Only read-only access is available, as PGBouncer pools are automatically managed by Aiven.
+
+Summary
+-------
+
+The more client connections to your database you have, the more useful connection pooling becomes. Aiven for PostgreSQL makes simplifies the use of connection pooling so that you can migrate from non-pooled connections to pooled connections by gradually changing your client-side connection database name and port number.
+
+
+
+

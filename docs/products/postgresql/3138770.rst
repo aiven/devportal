@@ -1,0 +1,53 @@
+﻿Implementing failover-resilient PostgreSQL applications
+=======================================================
+
+How to make sure that your client application is equipped to handle server-side failovers
+
+An Aiven for PostgreSQL server-side failover - replacing the old, acting primary server with a new one - can happen for various reasons:
+
+* Failure in the acting primary server (hardware, software, disk system failure, etc.)
+* Migration of the service to a different service plan
+* Maintenance updates
+* Migration of the service to a different cloud or region
+
+The client application sees the failover as a loss of its existing database connection. Depending on the reason, this could appear as a clean termination (PostgreSQL server terminating the connection over its line protocol), a socket-level connection termination, or as a completely silent loss of connection that might get logged as a socket send or receive timeout.
+
+Most client library implementations raise an error or exception to the caller when the connection is lost. Many applications respond to this simply by raising the error further in the call stack until, for example, it gets returned all the way to the end customer as an HTTP error code (Internal Server Error 500, for example).
+
+Reconnecting database connections behind the scenes, without immediately sending the error all the way to the end-user, requires some application logic to handle the error. Here we present a general approach that is suitable for many use cases.
+
+Handling disconnection-resilient database connections
+-----------------------------------------------------
+
+For the customer, the issue is visible when the client initiates a transaction that is then aborted due to query failure or when the client connection is disconnected for any reason. This causes an error (exception) on the client side, and if the client or application-side implementation passes the error directly through the call stack, the customer typically sees an HTTP error code in response to the operation that they initiated.
+
+A transparent, fault-tolerant method of handling this kind of case does require support on the client application side so that transactions are handled like in the following example (Pythonish pseudo code):
+
+::
+
+  def some_high_level_db_operation_abc(data):
+    return actual_query("SELECT foo, bar FROM update_abc(%s)", data)
+  
+  def actual_query(query, args):
+    retries_remaining_count = 5
+    while True:
+      try:
+        db.begin()
+        results = db.execute_query(query, args)
+        db.commit()
+        return results  # Success!
+      except ConnectionLostError:
+        # Transaction was not committed due to loss of DB connection and was   rolled back
+        if retries_remaining <= 0:
+          raise UnretriableError(...)
+        retries_remaining--
+        db.reconnect()  # Could happen automatically as well
+        continue  # Try same query again
+      except:
+        # Some error for which we cannot automatically retry the query
+        raise UnretriableError(...)
+
+
+**Note:** An error due to an aborted client connection will always happen eventually. If not due to maintenance updates or service migrations, there will be a networking or server failure at some point.
+
+

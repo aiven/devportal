@@ -1,0 +1,18 @@
+﻿Getting access to the PostgreSQL "public" schema
+================================================
+
+How to transfer ownership of the "public" schema to your "avnadmin" user
+
+To claim ownership of the ``public`` schema, use the ``aiven_extras`` extension as the ``avnadmin`` database user:
+
+::
+
+  CREATE EXTENSION aiven_extras CASCADE;
+  
+  SELECT * FROM aiven_extras.claim_public_schema_ownership();
+
+
+After this, ``avnadmin`` owns the schema and can modify it.
+
+
+

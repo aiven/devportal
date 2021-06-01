@@ -1,0 +1,57 @@
+﻿Detecting and addressing inactive or lagging PostgreSQL replication slots
+=========================================================================
+
+How to investigate issues with PostgreSQL disk usage and replication slots
+
+If the disk usage of a cluster is growing without any significant increase in the amount of data in the actual database, one possible cause could be inactive or lagging replication slots.
+
+An example of how to check the status of replication slots:
+
+
+1. Run the following command in ``psql``:
+
+   ::
+
+     SELECT slot_name,restart_lsn FROM pg_replication_slots;
+
+   
+
+   The output for this is something like the following:
+
+   ::
+
+     slot_name   │ restart_lsn 
+     ───────────────┼─────────────
+      pghoard_local │ 6E/16000000
+           debezium | 5B/8B0  
+     (2 rows)
+
+2. Check the ``restart_lsn`` value in the output.
+
+   If this value is much lower than the ``pghoard_local`` value (the first two hex values differ, in this example the difference is 0x6E - 0x5B = 19), there are a lot of write-ahead-logging (WAL) entries waiting for the ``debezium`` connector to catch up.
+
+   
+3. In this example, as the ``debezium`` connector appears to be broken:
+
+   * If ``debezium`` is still in use, restart it and check that it sets up the the replication slot again.
+   * If ``debezium`` is no longer needed, run the following command to remove it:
+
+     ::
+
+       SELECT pg_drop_replication_slot('debezium');
+
+     
+
+     After the next PostgreSQL checkpoint, the disk space that the WAL logs have reserved for the ``debezium`` connector should be freed up.
+
+     **Note:** The checkpoint occurs only when
+
+     - an hour has elapsed (we use a ``checkpoint_timeout`` value of 3600 seconds), or
+     - 5% of disk write operations is reached (the max_wal_size value is set to 5% of the instance storage).
+
+
+
+
+For further information about WAL and checkpointing, see `https://www.postgresql.org/docs/current/wal-configuration.html <https://www.postgresql.org/docs/current/wal-configuration.html>`_.
+
+

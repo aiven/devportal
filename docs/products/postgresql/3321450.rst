@@ -1,0 +1,24 @@
+﻿How to upgrade PostgreSQL extensions
+====================================
+
+Extensions must be upgraded explicitly
+
+When you perform a maintenance update, the update itself does not automatically update the extension versions that are used. 
+
+The reason for this is that user schemas and functions often rely on a specific version of an extension. Changing the underlying assumption behind that would break our customers' code. 
+
+Instead, you have to upgrade the extensions explicitly. This is common even if you run PostgreSQL on your own and just upgrade to a newer package version of an extension - that does not automatically update the extension in the databases either.
+
+To update an extension, run the following command::
+
+::
+
+  ALTER EXTENSION extensionname UPDATE;
+
+
+
+This updates ``extensionname`` to the latest available version. 
+
+
+
+

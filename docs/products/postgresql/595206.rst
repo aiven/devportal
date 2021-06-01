@@ -1,0 +1,54 @@
+﻿Using PostgreSQL read-only replicas
+===================================
+
+How to use read-only replicas to reduce load on your primary Aiven for PostgreSQL server
+
+Our PostgreSQL plans that have one or more standby nodes also provide direct access to these standby nodes. Using the standby server nodes for read-only queries allows you to scale your database read operations by moving some of the load away from the primary node to the otherwise mostly idle replica nodes.
+
+
+
+With Aiven for PostgreSQL, you can access the replica nodes by using the separate *Replica URI* that is shown in the Aiven web console:
+
+.. image:: pictures/console_service_pg1_edcb2198ac0ba34ca4911079f572ff8b5c.png
+
+Using the replica URL in a database client application connects to one of the available replica server nodes. Replica node access is available in our Business (primary + one standby) and Premium (primary + two standbys) service plans. In addition, these service plans improve the high availability characteristics by having a standby to fail over to.
+
+
+
+It is worth noting that since the PostgreSQL replication used in Aiven for PostgreSQL is asynchronous, there is a small replication lag involved. In practice, this means that if you do run an ``INSERT`` operation on the primary node, it takes a while (usually much less than a second) for the change to be propagated to the standby and to be visible there.
+
+Using replicas
+--------------
+
+To start using your read-only replica:
+
+1. Log in to the Aiven web console and select your PostgreSQL service.
+2. On the *Overview* page, click **Copy** next to *Replica URI*.
+
+   
+3. Open a connection to the replica by pasting the copied URL:
+
+   ::
+
+     $ psql postgres://avnadmin:foo@replica.demopg.demoprj.aivencloud.com:10546/defaultdb?sslmode=require
+     psql (9.6.1, server 9.6.1)
+     SSL connection (protocol: TLSv1.2, cipher: ECDHE-RSA-AES256-GCM-SHA384, bits: 256, compression: off)Type "help" for help.
+     
+     defaultdb=>
+
+   You can the run any read-only query without slowing down the primary server.
+
+   
+4. To check whether you are connected to a primary or standby node, run the following command:
+
+   ::
+
+     defaultdb=> SELECT * FROM pg_is_in_recovery();
+      pg_is_in_recovery 
+     -------------------
+      t
+     (1 row)
+
+   This returns ``TRUE`` if you are connected to the replica, and ``FALSE`` if you are connected to the primary server.
+
+

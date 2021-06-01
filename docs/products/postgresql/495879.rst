@@ -1,0 +1,20 @@
+﻿PostgreSQL connection limits
+============================
+
+How to handle large numbers of connections to your Aiven for PostgreSQL database
+
+Aiven for PostgreSQL instances limit the number of allowed connections to make sure that the database is able to serve all connections. The ``max_connections`` setting varies according to the service plan as follows: 
+
+* Hobbyist: 25
+* Startup/Business/Premium-4: 100 
+* Startup/Business/Premium-8: 200
+* Startup/Business/Premium-16: 400
+* Startup/Business/Premium-32: 800
+* Startup/Business/Premium-64 and above: 1000
+
+When there are a lot of clients or client threads connecting to the database, we recommend using connection pooling to limit the number of actual backend connections.  Connection pooling is available in all Aiven for PostgreSQL Startup, Business, and Premium plans, and you can configure it in the console. For more information on this feature and how to enable it, see our blog post: `http://blog.aiven.io/2016/12/aiven-postgresql-connection-pooling.html <http://blog.aiven.io/2016/12/aiven-postgresql-connection-pooling.html>`_.
+
+If using connection pooling is not a feasible option for some reason and you still need a higher ``max_connections`` value, we can set it manually for your database - with the understanding that a high connection count can cause your database to run more slowly or even run out of memory. causing some downtime until it can be restored.
+
+
+

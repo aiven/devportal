@@ -1,0 +1,206 @@
+﻿Setting up PostgreSQL logical replication
+=========================================
+
+How to set up always-on logical replication for replicating tables or a whole database to Aiven for PostgreSQL
+
+This article goes through the steps of replicating one or all tables from a self-managed Postgres cluster to an Aiven cluster.
+
+**Note:** These instructions also work with AWS RDS PostgreSQL 10+. Google Cloud Platform's PostgreSQL for CloudSQL does not support logical replication. 
+
+Requirements:
+
+* PostgreSQL version 10 or newer.
+* The Aiven for PostgreSQL cluster can connect to the source cluster's PostgreSQL port.
+* Access to an administrator role on the source cluster for some of the operations described here.
+* Set the ``wal_level`` on the source cluster to ``logical``.
+
+  To check this setting, run the following command on the source cluster:
+
+  ::
+
+    $ show wal_level;
+
+  
+
+  If necessary, run the following command in ``psql`` and then reload the PostgreSQL configuration:
+
+  ::
+
+    $ ALTER SYSTEM SET wal_level = logical;
+
+  
+
+  **Note:** If you are using an AWS RDS PostgreSQL cluster as the replication source, you have to set the ``rds.logical_replication`` parameter to ``1`` (true) in the parameter group.
+
+You do not need to install any extensions on the source cluster.
+
+The ``aiven_extras`` extension allows you to perform publish/subscribe-style logical replication without a superuser account, and it is preinstalled on Aiven PostgreSQL servers.
+
+This extension allows you to perform a number of tasks, such as replicating a subset of tables or migrating your whole PostgreSQL database into `Aiven. <https://Aiven.io>`_
+
+This example uses a source database called ``test_database`` on a self-managed PostgreSQL cluster, and replicates test tables with a single ``id`` column to the ``defaultdb`` database on an Aiven managed PostgreSQL cluster.
+
+* ``source``: A self-hosted PostgreSQL database running PostgreSQL 10+ with a public-facing port and an admin role
+
+
+* ``destination``: An Aiven for PostgreSQL database running PostgreSQL 10+
+
+
+1. On the source cluster, create a database called ``test_database`` and connect to it with ``psql``.
+
+   
+2. Create the test tables and values:
+
+   ::
+
+     source $ CREATE TABLE test_table (id INT);
+     source $ CREATE TABLE test_table_2 (id INT);
+     source $ CREATE TABLE test_table_3 (id INT);
+     source $ INSERT INTO test_table VALUES (1), (2);
+     source $ INSERT INTO test_table_2 VALUES (3), (4);
+     source $ INSERT INTO test_table_3 VALUES (5), (6);
+
+3. Create the PUBLICATION entries for the test tables.
+
+   In PostgreSQL 10 and above, ``PUBLICATION`` entries define the tables to be replicated, which are in turn ``SUBSCRIBED`` to by the receiving database.
+   When creating a publication entry, you can also define the operations to transfer. For example, you can define that only ``INSERT`` operations are replicated, but not ``UPDATE`` or ``DELETE`` operations.
+
+   
+
+   In this example, we'll replicate ``INSERT``, ``UPDATE``, and ``DELETE`` operations:
+
+   * For replicating a single table:
+
+     ::
+
+       source $ CREATE PUBLICATION pub1 FOR TABLE test_table WITH (publish='insert,update,delete');
+
+   * For replicating all tables:
+
+     ::
+
+       source $ CREATE PUBLICATION pub_all_tables FOR ALL TABLES WITH (publish='insert,update,delete');
+
+     **Note:** While ``CREATE PUBLICATION`` doesn’t require superuser privileges if you only publish an enumerated list of tables, it does require them if you want to publish all tables.
+
+     
+
+4. Log in to the destination database and create the new ``aiven_extras`` extension:
+
+   ::
+
+     destination $ CREATE EXTENSION aiven_extras CASCADE;
+
+5. Copy the table definitions.
+
+   PostgreSQL’s logical replication doesn’t copy table definitions, so you have to copy them with ``pg_dump``, for example:
+
+   a. On the source cluster, dump the schema to a file:
+
+      ::
+
+        $ pg_dump --schema-only --no-publications test_database > test_database-schema.sql
+
+   b. Change the owners of ``ALTER TABLE`` invocations from ``postgres`` to ``avnadmin``:
+
+      ::
+
+        $ sed -i 's/OWNER TO postgres/OWNER TO avnadmin/g' test_database-schema.sql
+
+      **Note:** For this example, we can use ``sed``, but be careful with your real data.
+
+      
+   c. Create the table definitions to the destination database:
+
+      ::
+
+        $ psql "postgres://avnadmin:ynjtxl0ig9smclsp2d@logrep-target-pg-11-dev-sandbox.aivencloud.com:12691/defaultdb?sslmode=require" < test_database-schema.sql
+
+      Alternatively, if like in this example there are only a few tables to be defined, define them with the appropriate ``CREATE TABLE`` statements:
+
+      ::
+
+        destination $ CREATE TABLE test_table (id INT);
+
+
+6. On the destination cluster, create a ``SUBSCRIPTION`` entry to start replicating changes from the source:
+
+   * For replicating a single table:
+
+     ::
+
+       destination $ SELECT * FROM aiven_extras.pg_create_subscription('subscription', 'host=13.48.71.233 password=Password123 port=5432 dbname=test_database user=postgres', 'pub1', 'slot', TRUE, TRUE);
+
+   * For replicating all tables:
+
+     ::
+
+       destination $ SELECT * FROM aiven_extras.pg_create_subscription('subscription', 'host=13.48.71.233 password=Password123 port=5432 dbname=test_database user=postgres', 'pub_all_tables', 'slot', TRUE, TRUE);
+
+
+7. Check that the subscription was created successfully.
+
+   As the ``pg_subscription`` catalog is superuser-only, you must use the ``aiven_extras.pg_list_all_subscriptions()`` function from ``aiven_extras``.
+
+   ::
+
+     destination=> SELECT * FROM aiven_extras.pg_list_all_subscriptions();
+      subdbid |   subname    | subowner | subenabled |                                     subconninfo                                     | subslotname | subsynccommit | subpublications 
+     ---------+--------------+----------+------------+-------------------------------------------------------------------------------------+-------------+---------------+-----------------
+        16394 | subscription |       10 | t          | host=13.48.71.233 password=Password123 port=5432 dbname=test_database user=postgres | slot        | off           | {pub1}
+     (1 row)
+
+8. Check that the data is copied from the source to the destination.
+
+   
+
+   * For replicating a single table:
+
+     ::
+
+       destination $ SELECT * FROM test_table;
+       id
+       ----
+        1
+        2
+       (2 rows)
+
+   * For replicating all tables:
+
+     ::
+
+       source $ SELECT * FROM pg_stat_replication;
+         pid  | usesysid | usename  | application_name | client_addr | client_hostname | client_port |         backend_start         | backend_xmin |   state   | sent_lsn  | write_lsn | flush_lsn | replay_lsn | write_lag | flush_lag | replay_lag | sync_priority | sync_state 
+       -------+----------+----------+------------------+-------------+-----------------+-------------+-------------------------------+--------------+-----------+-----------+-----------+-----------+------------+-----------+-----------+------------+---------------+------------
+        11896 |       10 | postgres | subscription     | ::1         |                 |       54538 | 2020-04-12 21:38:44.837484+02 |              | streaming | 0/16A62F8 | 0/16A62F8 | 0/16A62F8 | 0/16A62F8  |           |           |            |             0 | async
+       (1 row)
+       
+       destination $ SELECT * FROM pg_stat_subscription;
+        subid |   subname    |  pid  | relid | received_lsn |      last_msg_send_time       |     last_msg_receipt_time     | latest_end_lsn |        latest_end_time        
+       -------+--------------+-------+-------+--------------+-------------------------------+-------------------------------+----------------+-------------------------------
+        16486 | subscription | 10738 |       | 0/16A62F8    | 2020-04-12 19:39:46.341078+00 | 2020-04-12 19:39:46.373729+00 | 0/16A62F8      | 2020-04-12 19:39:46.341078+00
+       (1 row)
+
+
+
+**Note:** It is important to remove unused replication setups, because the underlying replication slots in PostgreSQL make sure that the server keeps all the data needed to replicate from that time forward. If the data stream has no readers, it will keep ever-growing amounts of data on disk until it is full.
+
+To remove an unused subscription, which essentially stops the replication, run the following command:
+
+::
+
+  destination $ SELECT * FROM aiven_extras.pg_drop_subscription('subscription');
+
+
+To see that everything was cleaned up correctly, you can list all the subscriptions again to see that the one you deleted is really gone:
+
+::
+
+  destination $ SELECT * FROM aiven_extras.pg_list_all_subscriptions();
+   subdbid | subname | subowner | subenabled | subconninfo | subslotname | subsynccommit | subpublications
+  ---------+---------+----------+------------+-------------+-------------+---------------+-----------------
+  (0 rows)
+
+
+
+

@@ -16,6 +16,59 @@ entries:
 
   # -------- PRODUCT-SPECIFIC --------
   - file: docs/products/kafka/index
+  - file: docs/products/postgresql/index
+    entries:
+      - file: docs/products/postgresql/489573
+        entries:
+        - file: docs/products/postgresql/4358591
+        - file: docs/products/postgresql/489569
+        - file: docs/products/postgresql/5244801
+      - file: docs/products/postgresql/replication
+        entries:
+        - file: docs/products/postgresql/653410
+        - file: docs/products/postgresql/2464717
+        - file: docs/products/postgresql/595206
+        - file: docs/products/postgresql/1755229
+        - file: docs/products/postgresql/3405616
+        - file: docs/products/postgresql/3315295
+      - file: docs/products/postgresql/using
+        entries:
+        - file: docs/products/postgresql/4738831
+        - file: docs/products/postgresql/489557
+        - file: docs/products/postgresql/1953783
+        - file: docs/products/postgresql/2428624
+        - file: docs/products/postgresql/2461799
+        - file: docs/products/postgresql/3138770
+        - file: docs/products/postgresql/489558
+        - file: docs/products/postgresql/495879
+        - file: docs/products/postgresql/backups
+          entries:
+          - file: docs/products/postgresql/1929383
+          - file: docs/products/postgresql/2107504
+          - file: docs/products/postgresql/489556
+      - file: docs/products/postgresql/integration
+        entries:
+        - file: docs/products/postgresql/489561
+        - file: docs/products/postgresql/3321450
+        - file: docs/products/postgresql/1661836
+        - file: docs/products/postgresql/1752157
+        - file: docs/products/postgresql/2632088
+        - file: docs/products/postgresql/3271181
+        - file: docs/products/postgresql/977358
+        - file: docs/products/postgresql/5278616
+      - file: docs/products/postgresql/troubleshooting
+        entries:
+        - file: docs/products/postgresql/2183573
+        - file: docs/products/postgresql/2301489
+        - file: docs/products/postgresql/2990664
+        - file: docs/products/postgresql/3061751
+        - file: docs/products/postgresql/5223432
+        - file: docs/products/postgresql/495322
+        - file: docs/products/postgresql/2722907
+        - file: docs/products/postgresql/826530
+        - file: docs/products/postgresql/5069177
+        - file: docs/products/postgresql/964730
+        - file: docs/products/postgresql/2824614
 
 
   # -------- AUXILIARY

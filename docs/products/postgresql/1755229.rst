@@ -1,0 +1,25 @@
+﻿Aiven for PostgreSQL remote replica
+===================================
+
+How to set up a remote replica for your PostgreSQL instance
+
+The goal of the remote replica is to provide a read-only instance of your managed PostgreSQL service in another, geographically diverse region. 
+
+To set up a remote replica:
+
+1. Log in to the Aiven web console.
+2. Select the PostgreSQL instance where you want to create a remote replica.
+3. Click **Create read replica**.
+
+   .. image:: pictures/create_read_replica.png
+
+4. Enter a name for the remote replica and select the cloud provider, region, and Aiven for PostgreSQL service plan that you want to use.
+
+   .. image:: pictures/create_read_replica_2.png
+
+5. Click **Create**.
+
+The remote replica is created and added to the list of services in your project. The *Overview* page of the replica indicates the name of the primary service for the replica.
+
+
+

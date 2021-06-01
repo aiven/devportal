@@ -1,0 +1,37 @@
+﻿Terminating long-running queries
+================================
+
+How to cancel runaway queries in Aiven for PostgreSQL
+
+Aiven does not terminate any customer PostgreSQL queries even if they run "forever".
+
+Long-running queries often cause issues by locking resources and preventing database maintenance tasks. 
+
+To identify such queries:
+
+* In the Aiven web console, go to the Current Queries tab for your PostgreSQL service. Here you can also click Terminate to stop any queries directly.
+
+  .. image:: pictures/623395a38fe2e9daa37be9e6_image.png
+
+* Call the following function over a database connection to terminate a query manually:
+
+  ::
+
+    SELECT pg_terminate_backend(pid);
+
+
+You can use the following query to monitor currently running queries:
+
+::
+
+  SELECT * FROM pg_stat_activity WHERE state <> 'idle';
+
+
+Client applications can use the ``statement_timeout`` session variable to voluntarily request the server to automatically cancel any query using the current connection that runs over a specified length of time. For example, the following would cancel any query that runs for more 15 seconds automatically:
+
+::
+
+  SET statement_timeout = 15000
+
+
+See the `PostgreSQL documentation <https://www.postgresql.org/docs/9.6/static/runtime-config-client.html>`_ for more information on the available session variables.

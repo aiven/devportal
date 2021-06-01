@@ -1,0 +1,17 @@
+﻿Handling pg_restore errors
+==========================
+
+What to do with "could not execute query: ERROR: must be owner of extension <extension>" errors in pg_restore
+
+The following ``pg_restore`` error appears quite commonly:
+
+::
+
+  pg_restore: [archiver (db)] could not execute query: ERROR: must be owner of extension <some_extension>
+
+
+This type of error often occurs when a lack of superuser-level privileges blocks non-essential queries. 
+
+A typical example of this is a failing "COMMENT ON  EXTENSION" query that tries to replace the documented comment string for an extension.
+
+These errors are harmless and can be ignored. As a better option, use the ``--no-comments`` switch to skip these queries altogether. There are other similar ``--no-XXX`` options that you can use to switch off other, often unnecessary restore queries.

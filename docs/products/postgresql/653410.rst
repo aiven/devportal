@@ -1,0 +1,66 @@
+﻿High availability in Aiven for PostgreSQL
+=========================================
+
+How high availability is covered in the various Aiven for PostgreSQL service plans
+
+For a high-level overview of the high availability features, see our article on `service plans and availablility <https://help.aiven.io/services/how-does-the-service-plan-affect-service-availability>`_.
+
+What are primary and standby nodes?
+-----------------------------------
+
+The PostgreSQL **primary** node is the main server node that processes SQL queries, makes the necessary changes to the database files on the disk, and returns the results to the client application.
+
+
+
+PostgreSQL **standby** nodes (also called **replicas**) replicate the changes from the primary node and try to maintain an up-to-date copy of the same database files that exists on the primary node.
+
+
+
+Standby nodes are useful for multiple reasons:
+
+* They provide another physical copy of the data in case of hardware, software, or network failures
+* They typically reduce the data loss window in disaster scenarios
+* They make it quicker to restore the database back to operation with a controlled failover in case of failures, as the standby is already installed, running, and synchronized with the data
+* They can be used for read-only queries to reduce the load on the primary server
+
+  
+
+Aiven for PostgreSQL high availability features are defined by the service plan that you select:
+
+* **Hobbyist** and **Startup** plans: These are single-node plans and have limited availability combined with two-day real-time backup histories 
+* **Business** plans: These are two-node plans (primary + standby) with higher availability and 14-day backup histories
+* **Premium** plans: These are three-node plans (primary + standby + standby) with even higher availability characteristics and 30-day backup histories 
+
+Minor failures, such as service process crashes or temporary loss of network access, are handled automatically in all plans without any major changes to the service deployment. The service automatically restores normal operation once the crashed process is automatically restarted or when network access is restored.
+
+However, more severe failures, such as losing a single node entirely, require more drastic recovery measures. Losing an entire node (or virtual machine) could happen due to hardware failure or a severe enough software failure, for example.
+
+The Aiven monitoring infrastructure automatically detects a failing node. Either the node starts reporting that its own self-diagnostics encounters issues or the node stops communicating entirely. The monitoring infrastructure automatically schedules a new replacement node to be created when this happens. 
+
+
+
+**Note:** In the event of database failover, the *Service URI* of your service remains the same; only the IP address will change to point to the new primary node.
+
+Single-node Hobbyist and Startup service plans
+----------------------------------------------
+
+When the only node for the service is lost, this immediately starts the automatic process of creating a new replacement node. The new node starts up, restores its state from the latest available backup, and resumes serving customers.
+
+Since there is just a single node providing the service, the service is unavailable for the duration of the restoration. In addition, any write operations made since the backup of the latest Write-Ahead Log (WAL) file are lost. Typically, this time window is limited to either five minutes of time or one WAL file.
+
+Highly available Business and Premium service plans
+---------------------------------------------------
+
+When the failed node is a PostgreSQL **standby** node, the **primary** node keeps running normally and provides a normal service level to the client applications. Once the new replacement standby node is ready and synchronized with the primary node, it starts replicating the primary node in real time as the situation reverts back to normal.
+
+When the failed node is a PostgreSQL **primary** node, the combined information from the Aiven monitoring infrastructure and the **standby** node is used to make a failover decision. On the nodes themselves, we use the PGLookout Open Source monitoring daemon in combination with the information from the Aiven system infrastructure. If it looks like the primary node is gone for good, the **standby** node promotes itself as the new primary node and immediately starts serving clients. A new replacement node is automatically scheduled and becomes the new **standby** node as described in the **standby** node failure case above. 
+
+If both **primary** and **standby nodes** fail at the same time, two new nodes are automatically scheduled for creation and become the new **primary** and **standby** nodes respectively. The primary node restores itself from the latest available backup, which means that there can be some degree of data loss involved. Namely any write operations made since the backup of the latest WAL file are lost. Typically, this time window is limited to either five minutes of time or one WAL file. 
+
+The amount of time it takes to replace a failed node depends mainly on the selected cloud region and the amount of data that has to be restored. However, in the case of services with two-node **Business** plans, the surviving node keeps on serving clients even during the recreation of the other node. All of this is automatic and requires no administrator intervention. 
+
+**Premium** plans operate in much the same way as our **Business** plans. The main difference comes when one of the **standby** or **primary** nodes fails. **Premium** plans have an additional, redundant **standby** node available, so availability is maintained even in the event of losing two of the nodes. In cases where the **primary** node fails, PGLookout determines which of the **standby** nodes is the furthest along in replication (has the least potential for data loss) and does a controlled failover to that node.
+
+The additional redundant standby allows you to further reduce the risk of downtime in cases where your application can never be down. **Premium** plans also come with a much longer backup history, allowing you to return your data back in time up to a month in the past.
+
+For backups and restoration, Aiven utilizes the popular Open Source backup daemon PGHoard, which Aiven maintains. It makes real-time copies of WAL files to an object store in compressed and encrypted format.

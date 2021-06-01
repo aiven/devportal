@@ -1,0 +1,52 @@
+﻿Preventing PostgreSQL full disk issues
+======================================
+
+What do to when the disk gets full in your Aiven for PostgreSQL instance
+
+If your PostgreSQL service runs out of disk space, the service will start malfunctioning. This will also prevent creating proper backups. 
+
+To prevent this situation, Aiven automatically detects when your service is running out of free space and prevents further write operations to it by setting the ``default_transaction_read_only``  parameter to  ``ON``.
+
+At this point, clients will start seeing errors like ``cannot execute CREATE TABLE in a read-only transaction``.
+
+How to increase the available space
+-----------------------------------
+
+Upgrade to a larger plan
+------------------------
+
+You can do this either from the `Aiven web console <https://console.aiven.io/>`_ or with the `Aiven CLI client <https://github.com/aiven/aiven-client>`_. New nodes with more disk space are launched once the upgrade is confirmed.
+
+To do this in the Aiven web console:
+
+1. Go to the *Overview* page of your Aiven for PostgreSQL service.
+2. Scroll down to *Service plan* and click **Upgrade Plan**.
+3. Select your new plan and click **Upgrade**.
+
+Once the data is on the new nodes with more disk space, the disk usage returns to below the critical level and the system automatically sets the ``default_transaction_read_only`` parameter to ``OFF`` to allow write operations again.
+
+Delete data
+-----------
+
+You can also delete data from your database, but since your service is set to read-only mode, this also prevents the deletion of data.
+
+There are two ways to work around this:
+
+1. Run the following command to change the transaction mode to read-write for your session:
+
+   ::
+
+     SET default_transaction_read_only = OFF;
+
+   You can then delete data within your session.
+
+   
+2. Send the following ``POST`` request using our API:
+
+   ::
+
+     https://api.aiven.io/v1/project/<project>/service/<service_name>/enable-writes
+
+   This enables write operations for the next 15 minutes, allowing you to free up space.
+
+If you upgrade your service temporarily to delete data, you may have to wait for the next backup to complete before you can downgrade to a smaller plan.

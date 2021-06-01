@@ -1,0 +1,25 @@
+﻿PostgreSQL superuser access
+===========================
+
+How superuser access is handled in Aiven for PostgreSQL
+
+Currently, we do not allow superuser access to Aiven PostgreSQL services. However, most actions that are typically done as a superuser can be performed in a different way in Aiven.
+
+The default ``avnadmin`` database user has permissions to do most of the usual DB management operations, for example:
+
+* Managing databases (``CREATE DATABASE`` , ``DROP DATABASE`` )
+* Creating database users (``CREATE USER/ROLE`` ,`` DROP USER/ROLE`` )
+* Creating extensions in databases (``CREATE EXTENSION`` )
+* Managing access permissions (``GRANT`` , ``REVOKE`` )
+* Logical replication as it has the REPLICATION privilege 
+
+You can also manage databases and users in the Aiven web console or though our REST API.
+
+You can use the grant system to limit access to different users. Various commands, such as the ``TRUNCATE``
+
+A number of extensions can be installed in Aiven PostgreSQL databases without superuser access, see `the list of extensions <https://help.aiven.io/supported-postgresql-extensions>`_ for more information.
+
+In addition, the ``aiven_extras`` extension contains additional superuser-like functionality that you can do as ``avnadmin`` that normally require superuser privileges. This includes things like PostgreSQL built-in logical replication and ``auto_explain`` usage.
+
+
+

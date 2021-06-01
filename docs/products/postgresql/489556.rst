@@ -1,0 +1,27 @@
+﻿Restoring a PostgreSQL service from a backup
+============================================
+
+How to use an Aiven for PostgreSQL backup to restore your data
+
+The backup restoration functionality in Aiven for PostgreSQL is currently tied to the *Fork database* feature. On the service's *Overview* page in the Aiven web console, click **New database fork** to make a separate, new database service that is cloned from the current service's backups. 
+**Note:** The Hobbyist service plan does not support database forking, so you have to use an external tool, such as ``pg_dump``, to perform a backup.
+
+
+
+You can enter any point of time as the target for the new service, starting from the first backup listed on the **Backups** tab. Once the new service is running, you can change your application's connection settings to point to it.
+
+
+
+You should only have to use manual restoration if your database administrator instructs you to do so or if you have accidentally destroyed data from your application. Aiven handles outages and software failures automatically by replacing broken nodes with new ones that resume right from the point of failure.
+
+
+
+**Note:** Forked services can also be very useful, for example for testing purposes, allowing you to create a completely realistic, separate copy of the actual production database with its data.
+
+
+
+The reason why Aiven for PostgreSQL does not yet allow a service to be rolled back to a backup within itself is that it creates alternative timelines for the database, and these add complexity for the user. So for now, each database service has a single linear history timeline.
+
+
+
+

@@ -1,0 +1,56 @@
+﻿Identifying and repairing issues with PostgreSQL indexes
+========================================================
+
+How to handle non-unique database indexes and identify conflicting database rows
+
+Non-unique indexes
+------------------
+
+You can rebuild corrupted indexes that do not have ``UNIQUE`` in their definition using the ``REINDEX INDEX <index-name>;`` command. This creates a new index to replace the old one.
+
+
+
+You can run the ``REINDEX`` command for all indexes of a table (``REINDEX TABLE``) or even for all indexes in the entire database (``REINDEX DATABASE``).
+
+Note that reindexing applies locks to the table and may interfere with normal use of the database. In some cases, it may be useful to use another approach of building a second index concurrently alongside the old index and then remove the index:
+
+::
+
+  CREATE INDEX CONCURRENTLY foo_index_new ON table_a (...);
+  DROP INDEX CONCURRENTLY foo_index; -- remove the old corrupted index now that we have a new one
+  ALTER INDEX foo_index_new RENAME TO foo_index;
+
+
+For more information on the ``REINDEX`` command, see the `PostgreSQL documentation page <https://www.postgresql.org/docs/current/static/sql-reindex.html>`_. 
+
+Unique indexes
+--------------
+
+It is possible that a ``UNIQUE`` index cannot be rebuilt with the ``REINDEX`` command if the index has been corrupted or it has been disabled in such a way that there are now duplicate physical rows in the source table, breaking the uniqueness constraint of the index. In such cases, the repair procedure requires removing the duplicate rows and then rebuilding the index with the ``REINDEX`` command.
+
+Identifying conflicting duplicate rows
+--------------------------------------
+
+To locate conflicting duplicate rows, run a query that counts the number of instances. As an example, we'll use the following database schema:
+
+::
+
+  CREATE TABLE route (source TEXT, destination TEXT, description TEXT);
+  CREATE UNIQUE INDEX unique_route_index ON route (source, destination);
+
+
+When a corrupted index that allows duplicate rows in the table is detected, you can find those rows by using the following type of query:
+
+::
+
+  SELECT source, destination, count 
+  FROM (SELECT source, destination, COUNT(*) AS count FROM route GROUP BY source, destination) AS foo 
+  WHERE count > 1;
+
+
+We are using the same fields that form the index, grouping by them, and looking for any entries that appear more than once. 
+
+The resulting rows identify the problematic entries, which must be resolved manually by deleting or merging the entries until no duplicates exist. Once this is done, you can use the ``REINDEX`` command to rebuild the index.
+
+
+

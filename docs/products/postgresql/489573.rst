@@ -1,0 +1,261 @@
+﻿Getting started
+=========================================
+
+How to create a service and start using Aiven for PostgreSQL
+
+Aiven services are managed in the Aiven `web console <https://console.aiven.io/>`_. When you first log in to the console with your email address and password, you will see the **Services** view, which shows you all the services in the currently selected project.
+
+Projects allow you to organize groups of services under different topics. For example, you can apply different billing settings to each project. An empty project is created for you automatically when you sign up and the free credits are attached to this project. Use the **Project** menu on the left of the console to switch between projects and create new ones.
+
+To get started with Aiven for PostgreSQL:
+
+1. Click **Create a new service**.
+
+   This opens a new page with the available service options.
+
+   .. image:: pictures/console_create_service_pg1_ed.png
+
+2. Select the main properties for your service:
+
+   a. Select **PostgreSQL** as the service type as well as the version that you want to use.
+   b. Select the cloud provider and region that you want to run your service on.
+
+      **Note:** The pricing for the same service may vary between different providers and regions. The service summary on the right side of the console shows you the pricing for your selected options.
+   c. Select a service plan.
+
+      This defines how many servers and what kind of memory, CPU, and disk resources are allocated to your service.
+
+      **Note:** We do not recommend single-node **Hobbyist** and **Startup** plans for applications where the durability of data is essential. Select a plan that includes high availability for fast recovery and the best protection against data loss and critical node failures.
+   d. Enter a name for your service.
+
+      A random name is provided by default, but you can enter a more recognizable name to distinguish it from other services.
+
+      
+
+3. Click **Create Service** under the summary on the right side of the console.
+
+   This brings you back to the **Services** view. Your new service is listed with a status indicator to show that it is being created.
+
+   
+4. Click the service name.
+
+   The Overview page for the service opens.
+
+   .. image:: pictures/console_service_pg1_ed.png
+
+   This view shows you the connection parameters for your service, its current status, and the configuration options.
+
+   The status is *REBUILDING* while the service is being created for you. Once the service is ready, the status changes to *RUNNING*. While services typically start up in a couple of minutes, the performance varies between cloud providers and regions, and it may take longer in some circumstances.
+
+   
+5. Connect to your new service:
+
+   * Using the standard ``psql`` PostgreSQL command-line tool, click **Copy** next to Service URI and paste it as a parameter:
+
+     ::
+
+       $psql postgres://avnadmin:nr0dfnswz36xs9pi@pg-3b8d4ed6-myfirstcloudhub.aivencloud.com:20985/defaultdb?sslmode=require
+       psql (10.5)
+       SSL connection (protocol: TLSv1.2, cipher: ECDHE-RSA-AES256-GCM-SHA384, bits: 256, compression: off)
+       Type "help" for help.
+       
+       defaultdb=> 
+
+   * Using a graphical client like `PGAdmin3 <https://www.pgadmin.org/>`_ to connect, copy-paste the connection parameters from the overview page to the **New Server Registration** page in PGAdmin. Remember to also change the **Maintenance DB** to ``defaultdb`` to connect to the Aiven for PostgreSQL default database.
+
+     .. image:: pictures/pgadmin3.png
+
+
+
+**Note:** Aiven enforces the use of SSL for PostgreSQL connections, so any client connecting to an Aiven for PostgreSQL service must use SSL. If you have trouble connecting to the database, make sure that your client software is not trying to establish a non-SSL connection.
+
+To create more databases, go to the **Databases** tab. Similarly, you can add database users on the **Users** tab.
+
+Python example
+--------------
+
+This Python example uses the `psycopg2 <http://initd.org/psycopg/>`_ library for connecting to Aiven PostgreSQL.
+
+::
+
+  from psycopg2.extras import RealDictCursor
+  import psycopg2
+  
+  uri = "postgres://avnadmin:nr0dfnswz36xs9pi@pg-3b8d4ed6-myfirstcloudhub.aivencloud.com:20985/defaultdb?sslmode=require"
+  
+  db_conn = psycopg2.connect(uri)
+  c = db_conn.cursor(cursor_factory=RealDictCursor)
+  
+  c.execute("SELECT 1 = 1")
+  result = c.fetchone()
+
+
+Node.js example
+---------------
+
+This example uses the `node-postgres <https://github.com/brianc/node-postgres>`_ library and the service CA certificate. Download the service certificate from the` Aiven console's <https://console.aiven.io>`_ service page by clicking **Download** next to *CA certificate* on the **Overview** tab.
+
+::
+
+  var fs = require('fs');
+  var pg = require('pg');
+  
+  
+  /* 
+   * You can also use the connectionString option for convenience but
+   * if you do that you MUST remove `sslmode=require` from the URI else
+   * it will replace the `ssl` block below and the Project CA will not
+   * be trusted.
+   */
+  var config = {
+      database: "defaultdb",
+      host: "pg-3b8d4ed6-myfirstcloudhub.aivencloud.com",
+      password: "nr0dfnswz36xs9pi",
+      port: 20985,
+      ssl: { ca: fs.readFileSync('/path/to/ca.pem') },
+      user: "avnadmin",
+  };
+  
+  var client = new pg.Client(config);
+  
+  client.connect(function (err) {
+      if (err)
+          throw err;
+      client.query('SELECT 1 AS value', [], function (err, result) {
+          if (err)
+              throw err;
+  
+          console.log(result.rows[0]);
+          client.end(function (err) {
+              if (err)
+                  throw err;
+          });
+      });
+  });
+
+
+Another example uses the `Sequelize <http://docs.sequelizejs.com/>`_ library.
+
+
+
+Prerequisites:
+
+* `pg-native <https://github.com/brianc/node-pg-native>`_ package is installed.
+* Service CA certificate, which you can download from the` Aiven console's <https://console.aiven.io>`_ service page by clicking **Download** next to *CA certificate* on the **Overview** tab.
+
+
+::
+
+  const Sequelize = require('sequelize');
+  
+  const database = 'defaultdb';
+  const username = 'avnadmin';
+  const password = 'nr0dfnswz36xs9pi';
+  const host = 'pg-3b8d4ed6-myfirstcloudhub.aivencloud.com';
+  const port = 20985;
+  const sslrootcert = '/path/to/ca.pem';
+  
+  const sequelize = new Sequelize(database, username, password, {
+    host,
+    port,
+    dialect: 'postgres',
+    native: true,
+    ssl: true,
+    dialectOptions: {
+      ssl: {
+        sslmode: 'verify-ca',
+        sslrootcert
+      }
+    },
+  });
+  
+  sequelize.query('SELECT 1 AS value')
+    .then(([results, metadata]) => console.log(results));
+
+
+C# example
+----------
+
+This C# example uses the Npgsql `driver <http://www.npgsql.org/>`_ for connecting to Aiven for PostgreSQL. 
+
+::
+
+  using Npgsql;
+  using System;
+  
+  namespace aiven
+  {
+      class Program
+      {
+          static void Main(string[] args)
+          {
+              NpgsqlConnection conn = new NpgsqlConnection("Server=pg-3b8d4ed6-myfirstcloudhub.aivencloud.com;User Id=avnadmin;Password=nr0dfnswz36xs9pi;Database=defaultdb;Port=20985;SSLMode=Require;Trust Server Certificate=true");
+              conn.Open();
+  
+              // This will return 1333332, can be any query you wish
+              NpgsqlCommand command = new NpgsqlCommand("SELECT 666666*2::BIGINT", conn);
+              Int64 count = (Int64)command.ExecuteScalar();
+  
+              Console.Write("{0}\n", count);
+              conn.Close();
+          }
+      }
+  }
+
+
+Java example
+------------
+
+This example requires the service CA certificate. Download the service certificate from the` Aiven console's <https://console.aiven.io>`_ service page by clicking **Download** next to *CA certificate* on the **Overview** tab.
+
+::
+
+  package pg;
+  
+  import java.sql.Connection;
+  import java.sql.DriverManager;
+  import java.util.Properties;
+  
+  public final class Connect {
+    public static void main(String[] args) {
+      Properties props = new Properties();
+      props.put("jdbc.url", "jdbc:postgresql://pg-3b8d4ed6-myfirstcloudhub.aivencloud.com:20985/defaultdb");
+      props.put("user", "avnadmin");
+      props.put("password", "nr0dfnswz36xs9pi");
+      props.put("ssl", "true");
+      props.put("sslmode", "verify-ca");
+      props.put("sslrootcert", "/path/to/ca.pem");
+  
+      try {
+        Connection c = DriverManager.getConnection(props.getProperty("jdbc.url"), props);
+        System.out.println("Success");
+        c.close();
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
+    }
+  }
+
+
+Maven dependency for PostgreSQL JDBC driver (you can also download the latest driver from `postgresql.org <https://jdbc.postgresql.org/>`_): 
+
+::
+
+      <dependency>
+        <groupId>org.postgresql</groupId>
+        <artifactId>postgresql</artifactId>
+        <version>42.2.0</version>
+      </dependency>
+
+
+Executable examples  
+---------------------
+
+See the `examples <https://github.com/aiven/aiven-examples>`_ repository for executable examples in a number of programming languages.
+
+
+
+  
+--
+
+

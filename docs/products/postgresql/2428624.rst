@@ -1,0 +1,33 @@
+﻿How PostgreSQL upgrades and failovers work
+==========================================
+
+Where the PostgreSQL replica address points to and why the PostgreSQL primary server may be unavailable
+
+Aiven for PostgreSQL Business and Premium plans include one or two standby read-replica servers. You can query read-replica servers, but cannot write to them. If the primary server fails, the standby replica server is automatically promoted as a new primary server. This is different from read-replica services that you can create manually for Startup, Business, and Premium services: manually created read-replica services are not promoted if the primary server fails.
+
+For Business and Premium plans, there are two distinct cases for failovers or switchovers to occur:
+
+1. Unexpected primary/replica disconnection (for example, the hardware hosting the virtual machine fails)
+2. Controlled switchover during rolling-forward upgrades
+
+Uncontrolled primary/replica disconnection
+------------------------------------------
+
+For an unexpectedly disconnected server, there is no way to know whether the server really disappeared or whether there is a temporary glitch in the cloud provider's network. 
+
+Replicas use a 300-second timeout before the Aiven management platform automatically decides that the server is gone and spins up a new server. During this period, ``replica.servicename.aivencloud.com`` points to a server that may not serve queries anymore. The DNS record pointing to the primary server (``servicename.aivencloud.com``) works fine. If the replica server does not come back online during these 300 seconds, ``replica.servicename.aivencloud.com`` is pointed to the primary server until a new replica server is built.
+
+If the primary server disappears, a replica server waits for 60 seconds before promoting itself as a new primary server. During this 60-second timeout, the master is unavailable (``servicename.aivencloud.com`` does not respond), and ``replica.servicename.aivencloud.com`` works fine (in read-only mode). After the replica server promotes itself, ``servicename.aivencloud.com`` points to the new primary server, and ``replica.servicename.aivencloud.com`` does not change - it continues to point to the new primary server. A new replica server is built automatically, and after it is synchronized, ``replica.servicename.aivencloud.com`` points to the new replica server.
+
+Controlled switchover during upgrades
+-------------------------------------
+
+When applying maintenance updates, cloud migrations, or plan changes for Business or Premium service plans (see `here <2461799.html>`_ for more information on major version upgrades), we first replace the standby servers:
+
+1. A new server is started up, a backup is restored, and the new server starts following the old primary server. After the new server is up and running, ``replica.servicename.aivencloud.com`` is changed, and the old replica server is deleted. For Premium plans, this step is executed for both replica servers before replacing the primary server.
+2. Another server is started up, a backup is restored, and the new server is synced up to the old primary server. After this is done, replication is changed to quorum commit synchronous replication where available (lower performance, higher guarantees on avoiding data loss when changing primary servers). At this point, there is one extra server running: the old primary server, and two or three new replica servers (for Business and Premium plans, respectively).
+3. When it is time to switch the primary to a new server, the old primary server is scheduled to be terminated (synchronous replication guarantees that data has been received by at least one of the new replica servers), and one of the new replica servers is immediately promoted as a primary server. At this point, ``servicename.aivencloud.com`` is updated to point to the new primary server. Similarly, the new primary server is removed from the ``replica.servicename.aivencloud.com`` record. The old primary server is kept for a period of time and sets up TCP forwarding to its replacement so that clients can connect before learning the new IP address.
+
+
+
+

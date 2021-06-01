@@ -1,0 +1,49 @@
+﻿Getting started with TimescaleDB in Aiven for PostgreSQL
+========================================================
+
+How to set up and use TimescaleDB in Aiven for PostgreSQL
+
+TimescaleDB is an open-source database designed to make SQL scalable for time series data. `TimescaleDB <https://github.com/timescale/timescaledb>`_ is packaged as a PostgreSQL extension and released under the Apache 2 open-source license.
+
+A time series indexes a series of data points in chronological order, usually as a sequence over regular intervals. Examples of a time series include:
+
+* The temperature of a home during a day
+* The position of a satellite during a day
+
+The data in these examples constitutes a monitored value (temperature or position) corresponding to the time at which the reading of the value took place. 
+
+To use TimescaleDB with Aiven for PostgreSQL:
+
+1. Connect to your Aiven for PostgreSQL primary instance with PostgreSQL version 10.3 or later. You can use any PostgreSQL client for this (psql, DBeaver, PSequel, for example). For more information on connecting to your Aiven for PostgreSQL instance, `see this article <https://help.aiven.io/postgresql/getting-started/getting-started-with-aiven-postgresql>`_.
+
+   
+2. Create the TimescaleDB extension:
+
+   ::
+
+     CREATE EXTENSION timescaledb CASCADE;
+
+3. Create a time series table to store your time series data:
+
+   ::
+
+     CREATE TABLE location_condition (
+       time        TIMESTAMPTZ       NOT NULL,
+       location    TEXT              NOT NULL,
+       temperature DOUBLE PRECISION  NULL,
+       humidity    DOUBLE PRECISION  NULL
+     );
+     
+     SELECT create_hypertable('location_condition','time');
+
+4. Add the times series data into the table that you created:
+
+   ::
+
+     INSERT INTO location_condition(time, location, temperature, humidity) VALUES (NOW(), 'office', 70.0, 50.0);
+
+
+`More information on TimescaleDB <https://www.timescale.com/>`_.
+
+
+

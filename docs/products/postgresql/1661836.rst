@@ -1,0 +1,58 @@
+﻿Integrating Google Data Studio with Aiven for PostgreSQL
+========================================================
+
+How to integrate Google Data Studio with your Aiven for PostgreSQL instance
+
+Google Data Studio is a tool that you can integrate with Aiven for PostgreSQL for creating reports or performing analysis on data that you have in your PostgreSQL database. Google Data Studio goes beyond PostgreSQL, and allows the integration of other data sources such as YouTube Analytics, MySQL, BigQuery, AdWords, etc.
+
+**Prerequisites**
+
+* Install OpenSSL on your operating system. OpenSSL is used to generate client-side public and private key pairs. In the examples in this article, these are called *client-cert.pem* and *client-key.pem* respectively.
+* Download the CA certificate for your Aiven for PostgreSQL instance from the Aiven web console. The examples here use *ca.pem* to refer to this.
+* A Google account.
+
+To integrate Google Data Studio and your Aiven for PostgreSQL instance:
+
+1. Run the following OpenSSL command to generate the client-side public and private key pairs:
+
+   ::
+
+     openssl req -x509 -newkey rsa:2048 -keyout client-key.pem -out client-cert.pem -days 3650 -nodes -subj '/CN=localhost'
+
+2. Connect to your Aiven for PostgreSQL data source from Data Studio:
+
+   a. Open `Google Data Studio <https://datastudio.google.com/>`_.
+
+      
+   b. Select **Data Sources** in the left menu and then click the blue **+** button in the bottom-right corner to add a new data source.
+
+      .. image:: pictures/1.png
+
+   c. Agree to the Google terms and conditions when prompted.
+
+      
+   d. Select **PostgreSQL** as the data source type and then click **Authorize** to authenticate your Aiven for PostgreSQL instance with your Google account.
+
+      .. image:: pictures/2.png
+
+      
+
+      
+   e. On the **Basic** tab, enter the **Host Name**, **Port**, **Database**, **Username**, and **Password** values.
+
+      You can get these values from the *Overview* page for your service in the Aiven web console.
+
+      .. image:: pictures/3.png
+
+   f. Select **Enable SSL** and upload your certificate and key files.
+
+      **Note:** Unlike shown in the screenshot above, you have to upload the client private key twice in the SSL settings section of the form: in both the **Client certificate** and **Client private key** fields. This is believed to be a known issue in Google Data Studio. For more details, please refer to this `discussion <https://support.google.com/datastudio/thread/8739014?hl=en>`_ in Data Studio Help.
+
+      
+   g. Click **Authenticate**.
+
+
+Once the database authentication is complete, you can proceed to query data from it and create elegant analytics reports.
+
+
+

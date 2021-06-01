@@ -1,0 +1,36 @@
+﻿Accessing PostgreSQL backups
+============================
+
+How to manually manage PostgreSQL backups
+
+Aiven provides fully automated backup management for PostgreSQL. All backups are encrypted with service-specific keys, and point-in-time recovery is supported to allow recovering the system to any point within the backup window. Aiven stores the backups to the closest available cloud storage. For more details regarding Aiven backups, see `this help article <https://help.aiven.io/postgresql/postgresql-backups>`_.
+
+Currently, the raw backups that Aiven creates are not accessible for our customers. If you want to store an additional set of backups, you can do this easily using standard PostgreSQL tooling. The ``pg_dump`` command allows you to create backups that can be directly restored elsewhere if necessary. Typical parameters for the command include the following:
+
+::
+
+  pg_dump '<service_url_from_aiven_web_ui>' -f <target_file/dir> -j <number_of_jobs> -F <backup_format>
+
+
+You can also run the ``pg_dump`` command against any standby node that you have, using the *Replica URI* from the Aiven web console. The ``-j``  option is especially useful when doing this, because extra load on the standby node might not be an issue.
+
+For example, to create a backup in ``directory`` format (which can be used directly with ``pg_restore``) using two concurrent jobs and storing the results to a directory called ``backup``:
+
+1. Run the following command:
+
+   ::
+
+     pg_dump 'postgres://avnadmin:password@mypg-myproject.aivencloud.com:26882/defaultdb?sslmode=require' -f backup -j 2 -F directory
+
+2. Put all the files into a single ``tar`` file and upload to S3, for example:
+
+   ::
+
+     export BACKUP_NAME=backup-`date -I`.tar
+     tar -cf $BACKUP_NAME backup/
+     s3cmd put $BACKUP_NAME s3://pg-backups/$BACKUP_NAME
+
+
+
+
+

@@ -1,0 +1,34 @@
+﻿PostgreSQL backups
+==================
+
+How Aiven backs up PostgreSQL databases
+
+Aiven for PostgreSQL databases are automatically backed up, with full backups made daily, and write-ahead logs (WAL) recorded continuously. All backups are `encrypted <https://help.aiven.io/security/cloud-security-overview>`_ using `pghoard <https://github.com/ohmu/pghoard>`_.
+
+The number of stored backups and the backup retention time depends on the service plan that you have selected. Full backups are version-specific binary backups that, when combined with WAL, allow consistent recovery to a point in time (PITR). This is different from logical backups, which are typically made with ``pg_dump`` and similar command-line tools.
+
+To restore a backup, see `this help article <https://help.aiven.io/postgresql/operations/how-do-i-restore-my-postgresql-service-from-a-backup>`_.
+
+What are the differences between logical and binary backups?
+------------------------------------------------------------
+
+The size of logical backups and the Aiven backup size shown on the Aiven web console differ, in some cases significantly. The backup sizes shown in the Aiven web console are for daily backups, before encryption and compression.
+
+Binary backups contain
+
+* all data from indexes,
+* uncommitted transactions,
+* deleted and updated rows that have not been cleaned up by the PostgreSQL VACUUM process, and
+* all databases, including templates.
+
+``pg_dump`` takes logical backups, which
+
+* do not contain index data (only queries used to recreate indexes from other data),
+* do not contain any data already deleted, and
+* depending on the options selected, may compress the output.
+
+To see the size of each database including the space consumed by indexes, use the ``\l+`` command in a ``psql``  prompt.
+
+
+
+

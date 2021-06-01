@@ -1,0 +1,10 @@
+﻿Failover proxy
+==============
+
+How Aiven for PostgreSQL upgrades minimize downtime
+
+When a PostgreSQL service switches to a new primary node, the old primary PostgreSQL process is first gracefully shut down. Once it has shut down, the PostgreSQL on the new primary node is promoted. The time between the old primary node shutting down and new primary getting promoted depends on the service and certain timing conditions, but it is typically about 5 seconds and almost always under 10 seconds.
+
+When the promotion is complete, the old primary node sets up TCP. The DNS update is done at the same time, but since there's a 15-second TTL, clients cannot connect for a longer period of time without this TCP forwarding.
+
+Once sufficient time (currently 60 seconds) has passed, the old primary node assumes it is no longer needed and the node is deleted.

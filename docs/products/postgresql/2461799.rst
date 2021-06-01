@@ -1,0 +1,47 @@
+﻿Perform a PostgreSQL major version upgrade
+==========================================
+
+How to perform a PostgreSQL in-place major version upgrade
+
+PostgreSQL in-place major version upgrades allow you to upgrade your PostgreSQL instances to a new major version. The main benefit of this is that they typically take 60 seconds or less.
+This means that you will be able to upgrade to the next major version without the manual work of forking and redirecting your traffic.
+
+We recommend you fork your existing database and do a major version upgrade on the fork. That way you'll see the immediate impact of the upgrade for your specific service without affecting the running one.
+
+To perform the upgrade:
+
+1. Log in to the Aiven web console and select the instance that you want to upgrade.
+
+   
+2. On the *Overview* page, scroll down to the *PostgreSQL version* section and click **Upgrade Postresql**.
+
+   
+3. Select the version that you want to upgrade to.
+
+   When you select the version, the system checks the compatibility of the upgrade.
+
+   
+4. Click **Upgrade**.
+
+   The system starts applying the upgrade. In summary:
+
+   a. Standby nodes are removed and replacements are created for the new version.
+   b. The primary node starts an in-place upgrade to the new major version.
+   c. Once the upgrade is complete, the replacement standby nodes point to the new primary node for replication.
+
+      
+
+5. After the upgrade is complete, run ``ANALYZE`` for all active tables in your database to refresh the table statistics.
+
+   This makes sure that your queries run efficiently. Optimizer statistics are not transferred during the major version upgrade, so if you skip this step, your queries may run much less efficiently until they are updated.
+
+
+For details on other upgrade processes (cloud migrations, plan upgrades, and downgrades), see `this help article <2428624.html>`_.
+
+**Note:** Once you start the upgrade, you cannot go back to the previous version. This renders your pre-existing PostgreSQL backups unusable for things like Point In Time Recovery, as they were made for an earlier PostgreSQL major version.
+
+
+To learn more about PostgreSQL in-place major version upgrades, `read our blog post detailing why we built it into our platform <https://aiven.io/blog/postgresql-major-version-in-place-upgrades-supported-on-aiven/>`_.
+
+
+

@@ -1,0 +1,17 @@
+﻿Using TSL-licensed TimescaleDB features
+=======================================
+
+
+
+Timescale Inc. introduced a new License called Timescale License (TSL) in December 2018. As of TimescaleDB version 1.2.0, some parts of the functionality provided by the TimescaleDB extension are licensed under the TSL license, while the majority of functionality remains under the Apache license.
+
+`Section 2.2 in the TSL license <https://github.com/timescale/timescaledb/blob/master/tsl/LICENSE-TIMESCALE#L145>`_ explicitly prohibits offering functionality covered by the license in any database-as-a-service offering. As such, we are currently unable to provide these features as part of the Aiven hosted TimescaleDB service.
+
+When you try using these features, you will see an error similar to the following:
+
+::
+
+  ERROR 0A000 (feature_not_supported) function "<function>" is not supported under the current license "ApacheOnly"
+
+
+Currently, one of the more common features that encounters this issue is ``time_bucket_gapfill``.

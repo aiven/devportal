@@ -1,0 +1,116 @@
+﻿Enable JIT in PostgreSQL 11
+===========================
+
+How to enable the Just-in-Time (JIT) expression compiler for a database in Aiven for PostgreSQL
+
+PostgreSQL 11 introduced a new component in the execution engine, a Just-in-Time (JIT) expression compiler. We recommend that you read more about `JIT <https://www.postgresql.org/docs/11/jit-reason.html>`_ if you are not familiar with it or if you are in any doubt regarding the options available. 
+
+By default, the JIT feature is disabled in PostgreSQL 11. You can now enable JIT in Aiven on a global level or just for a specific database with a simple command that does not require any installation. 
+
+
+**Enabling JIT on a global level**
+
+* Using the Aiven web console:
+
+  
+
+  1. Log in to the Aiven web console and select your PostgreSQL service.
+  2. Scroll down to the *Advanced configuration* settings and click **Add configuration option**.
+  3. Select **pg.jit** and switch it on.
+  4. Click **Save advanced configuration**.
+
+     .. image:: pictures/Screenshot+from+2019-09-20+11-09-46.png
+
+
+* Using the `Aiven command line client <https://github.com/aiven/aiven-client>`_, run the following command:
+
+  
+
+  ::
+
+    $ avn service update -c pg.jit=true <postgres-service-name>
+
+
+
+**Enabling JIT for a specific database**
+
+To create your Aiven for PostgreSQL database, follow the instructions in our `Aiven for PostgresSQL getting started guide. <489573.html>`_
+
+Most simple queries will not use JIT, because this would increase the cost. The example given here shows you how to enable JIT and make sure that it is properly configured. However, as this is an example, the value in the ``jit_above_cost`` parameter is set very low so that JIT is applied.
+
+
+1. Start ``psql`` in a command shell by pasting the entire service URL as a command-line parameter:
+
+   
+
+   ::
+
+     $ postgres://avnadmin:password@pg-3b8d4ed6myfirstcloudhub.aivencloud.com:20985/defaultdb?sslmode=require
+     
+     psql (11.5)
+     SSL connection (protocol: TLSv1.3, cipher: TLS_AES_256_GCM_SHA384, bits: 256, compression: off)
+     Type "help" for help.
+     
+     defaultdb=> 
+
+2. Run the following command to enable JIT:
+
+   ::
+
+     alter database defaultdb set jit=on;
+
+   Alternatively, you can set the ``jit`` parameter to ``true``:
+
+   ::
+
+     alter database defaultdb set jit=true;
+
+   **Note:** This enables JIT by default for a logical database. The default is only applied to new client sessions.
+
+   
+
+   You can also enable JIT for user-specific sessions:
+
+   ::
+
+     alter role avnadmin set jit=on;
+
+3. Start the new session and check that JIT is on by running the following command:
+
+   ::
+
+     defaultdb=> show jit;
+      jit 
+     -----
+      on
+     (1 row)
+
+4. Run a simple query to see that JIT is applied properly:
+
+   ::
+
+     defaultdb=> explain analyze select sum(row) from table;
+                                                                    QUERY PLAN                                                     
+                
+     ------------------------------------------------------------------------------------------------------------------------------
+     -----------
+      Finalize Aggregate  (cost=10633.55..10633.56 rows=1 width=8) (actual time=299.417..299.418 rows=1 loops=1)
+        ->  Gather  (cost=10633.33..10633.54 rows=2 width=8) (actual time=299.111..307.748 rows=3 loops=1)
+              Workers Planned: 2
+              Workers Launched: 2
+              ->  Partial Aggregate  (cost=9633.33..9633.34 rows=1 width=8) (actual time=178.676..178.676 rows=1 loops=3)
+                    ->  Parallel Seq Scan on bigone  (cost=0.00..8591.67 rows=416667 width=4) (actual time=0.022..89.465 rows=33333
+     3 loops=3)
+      Planning Time: 0.087 ms
+      JIT:
+        Functions: 12
+        Options: Inlining false, Optimization false, Expressions true, Deforming true
+        Timing: Generation 1.878 ms, Inlining 0.000 ms, Optimization 4.438 ms, Emission 44.926 ms, Total 51.243 ms
+      Execution Time: 308.777 ms
+     (12 rows)
+
+   In this example, we can see that a separate JIT section comes up after the planning time. In addition, the last row shows the execution time, which could be useful for a benchmark comparison.
+
+
+
+

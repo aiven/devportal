@@ -1,0 +1,77 @@
+﻿Supported PostgreSQL extensions
+===============================
+
+Information on the extensions that are available in Aiven for PostgreSQL
+
+You can enable the PostgreSQL extensions listed here by running the `CREATE EXTENSION <http://www.postgresql.org/docs/9.5/static/sql-createextension.html>`_ command as an ``avnadmin`` user. 
+
+
+Note that some of the extensions have dependencies and must be created in the proper order. In addition, some extensions may require disconnecting the client and reconnecting before they are fully available.
+
+Supported extensions:
+
+* address_standardizer
+* address_standardizer_data_us
+* `aiven_extras <https://github.com/aiven/aiven-extras>`_ (logical replication support) 
+* bloom
+* btree_gin
+* btree_gist
+* chkpass
+* citext
+* cube
+* dblink
+* dict_int
+* earthdistance
+* fuzzystrmatch
+* hll
+* hstore
+* intagg
+* intarray
+* isn
+* ltree
+* pg_buffercache
+* pg_cron
+* pg_partman (PostgreSQL 10 and older)
+* pg_prometheus (PostgreSQL 10 to 12, see note below)
+* pg_repack (PostgreSQL 10 and newer)
+* pg_similarity (PostgreSQL 13 and newer)
+* pg_stat_statements
+* pg_trgm
+* pgcrypto
+* pgrouting
+* pgrowlocks
+* pgstattuple
+* plcoffee
+* plls
+* plperl
+* plv8  (PostgreSQL 10 and older) 
+* postgis
+* postgis_address_standardizer
+* postgis_sfcgal
+* postgis_tiger_geocoder
+* postgis_topology
+* postgis_legacy (see note below)
+* postgres_fdw
+* rum
+* sslinfo
+* tablefunc
+* timescaledb (PostgreSQL 10 and newer) 
+* tsearch2
+* tsm_system_rows
+* unaccent
+* unit
+* uuid-ossp
+* wal2json
+
+The **postgis_legacy** extension is not packaged or supported as an extension by the PostGIS project; the extension package is provided by Aiven for Aiven customers.
+
+Timescale has retired the **pg_prometheus** extension in favor of `promscale <https://github.com/timescale/promscale>`_, and it is not supported for PostgreSQL 13.
+
+Based on support requests, we may also install additional extension-related files for your database. When you create a support ticket to request something that is not on the pre-approved list, remember to specify which database service and which specific user database you want us to install them on.
+
+"Untrusted" language extensions, such as `plpythonu <https://www.postgresql.org/docs/9.6/static/plpython.html>`_,
+
+If you want support for other extensions, let us know what you would like to see in the future.
+
+
+

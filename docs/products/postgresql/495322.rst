@@ -1,0 +1,14 @@
+﻿I imported my PostgreSQL database and I'm getting poor performance
+==================================================================
+
+How to handle performance issues after importing your database to Aiven for PostgreSQL
+
+Whenever you load data with ``pg_restore`` or similar tools, run ``ANALYZE`` or ``VACUUM ANALYZE`` on your entire database to collect new statistics.
+
+Without these operations, the database will not have up-to-date statistics on the tables and indexes, which may in turn lead to poor query plans.
+
+This can also be the case after performing a major version upgrade since optimizer statistics are not transferred to the upgraded database.
+
+For more details about ``ANALYZE``, see the PostgreSQL documentation: `https://www.postgresql.org/docs/current/static/sql-analyze.html <https://www.postgresql.org/docs/current/static/sql-analyze.html>`_
+
+
