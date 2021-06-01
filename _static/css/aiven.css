@@ -142,13 +142,17 @@ a:hover {
 }
 
 .sidebar-tree .current-page > .reference {
-  background: none;
+  background: none !important;
   border-left: 2px solid var(--linkActiveDark);
   color: var(--linkActiveDark) !important;
 }
 
+.sidebar-tree .current > .reference {
+  background: none !important;
+}
+
 .sidebar-tree .current-page > .reference:hover {
-  background: none;
+  background: none !important;
 }
 
 .sidebar-tree .toctree-l1 > .reference,
