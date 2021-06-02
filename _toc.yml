@@ -13,6 +13,7 @@ entries:
         title: Aiven API
         entries:
         - glob: docs/tools/api/*
+      - file: docs/tools/terraform
 
   # -------- PRODUCT-SPECIFIC --------
   - file: docs/products/kafka/index
@@ -20,5 +21,3 @@ entries:
 
   # -------- AUXILIARY
   - file: docs/community
-
-
