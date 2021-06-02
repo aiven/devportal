@@ -14,7 +14,7 @@
   --infoBg: var(--white);
   --border: #e1e1e3;
   --highlight: #1c1c2f;
-  --sideBar: #e1e1e3;
+  --sideBar: #f7f7fa;
 
   /* Dark mode colors */
   --bgDark: #11111e;
@@ -42,44 +42,159 @@
 }
 
 body {
-  background-color: var(--bgDark);
+  background-color: var(--bg);
 }
 
 .sidebar-drawer {
   border-right: none;
-  background: var(--sideBarDark);
+  background: var(--sideBar);
 }
 
 .toc-drawer {
-  background-color: var(--bgDark);
+  background-color: var(--bg);
 }
 
 h1,
 h2,
 h3 {
-  /* color: var(--primaryColorDark) !important; */
+  color: var(--primaryColor);
   font-family: InterBold;
 }
 
 p {
-  color: var(--secondaryColorDark);
+  color: var(--secondaryColor);
   font-family: Inter;
 }
 
 a {
-  color: var(--linkDark) !important;
+  color: var(--link) !important;
   font-family: Inter;
 }
 
 a:hover {
-  color: var(--linkActiveDark) !important;
+  color: var(--linkActive) !important;
 }
 
 @media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--bgDark);
+  }
+
   h1,
   h2,
   h3 {
-    color: #ff7700;
+    color: #ffffff;
+  }
+
+  p {
+    color: var(--secondaryColorDark);
+    font-family: Inter;
+  }
+
+  a {
+    color: var(--linkDark) !important;
+    font-family: Inter;
+  }
+
+  a:hover {
+    color: var(--linkActiveDark) !important;
+  }
+
+  .sidebar-drawer {
+    border-right: none;
+    background: var(--sideBarDark);
+  }
+
+  .toc-drawer {
+    background-color: var(--bgDark);
+  }
+
+  .context {
+    color: var(--secondaryColorDark);
+  }
+
+  .mobile-header {
+    background-color: var(--bgDark) !important;
+  }
+
+  .pre {
+    background-color: var(--lightGray);
+    color: var(--secondaryColorDark);
+  }
+
+  .related-information {
+    color: var(--secondaryColorDark) !important;
+    border-top: 1px solid var(--border) !important;
+  }
+
+  .card {
+    background-color: var(--infoBgDark) !important;
+  }
+
+  .sidebar-search:hover,
+  .sidebar-search:active,
+  .sidebar-search:focus {
+    background-color: var(--infoBgDark);
+  }
+
+  .sidebar-tree .toctree-l1 > .reference,
+  .sidebar-tree .toctree-l1 > label .icon {
+    color: var(--linkDark);
+  }
+
+  .sidebar-search-container {
+    background-color: var(--infoBgDark) !important;
+    width: 90%;
+    margin: 0px auto;
+    border-radius: 5px;
+  }
+
+  .sidebar-search-container:hover {
+    background-color: var(--infoBgDark);
+  }
+
+  .sidebar-search {
+    border-radius: 5px;
+    border: 1px solid var(--border);
+    color: var(--secondaryColorDark);
+  }
+
+  .sidebar-tree .reference:hover {
+    background: none;
+    border-left: 2px solid var(--linkActiveDark);
+    font-family: InterBold;
+  }
+
+  .sidebar-tree .current-page > .reference {
+    background: none !important;
+    border-left: 2px solid var(--linkActiveDark);
+    color: var(--linkActiveDark) !important;
+  }
+
+  .gh-ribbon.gray {
+    background-color: var(--bgDark) !important;
+    color: #ffffff;
+  }
+
+  .logo-container {
+    height: 70px;
+    width: 80%;
+    margin: 24px auto 10px;
+    padding-top: 5px;
+    background-image: url('../../_static/images/logoDark.png') !important;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 150px;
+  }
+
+  .logo-container-mobile {
+    height: 40px;
+    width: 150px;
+    padding-top: 5px;
+    background-image: url('../../_static/images/logoDark.png') !important;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 120px;
   }
 }
 
@@ -119,13 +234,13 @@ a:hover {
 
 .gh-ribbon.right {
   top: 15px;
-  right: -285px; /* top - right = width / 2 */
+  right: -285px;
   transform: rotate(50deg) translateY(100%);
 }
 
 .gh-ribbon.gray {
-  background-color: var(--bgDark);
-  color: #ffffff;
+  background-color: var(--bg);
+  color: var(--primaryColor);
 }
 
 .sidebar-brand-text {
@@ -138,14 +253,14 @@ a:hover {
 
 .sidebar-tree .reference:hover {
   background: none;
-  border-left: 2px solid var(--linkActiveDark);
+  border-left: 2px solid var(--linkActive);
   font-family: InterBold;
 }
 
 .sidebar-tree .current-page > .reference {
   background: none !important;
-  border-left: 2px solid var(--linkActiveDark);
-  color: var(--linkActiveDark) !important;
+  border-left: 2px solid var(--linkActive);
+  color: var(--linkActive) !important;
 }
 
 .sidebar-tree .current > .reference {
@@ -158,30 +273,30 @@ a:hover {
 
 .sidebar-tree .toctree-l1 > .reference,
 .sidebar-tree .toctree-l1 > label .icon {
-  color: var(--linkDark);
+  color: var(--link);
 }
 
 .sidebar-search-container {
-  background-color: var(--infoBgDark);
+  background-color: var(--infoBg);
   width: 90%;
   margin: 0px auto;
   border-radius: 5px;
 }
 
 .sidebar-search-container:hover {
-  background-color: var(--infoBgDark);
+  background-color: var(--infoBg);
 }
 
 .sidebar-search {
   border-radius: 5px;
   border: 1px solid var(--border);
-  color: var(--secondaryColorDark);
+  color: var(--secondaryColor);
 }
 
 .sidebar-search:hover,
 .sidebar-search:active,
 .sidebar-search:focus {
-  background-color: var(--infoBgDark);
+  background-color: var(--infoBg);
 }
 
 .sidebar-search-container::before {
@@ -189,7 +304,7 @@ a:hover {
 }
 
 .card {
-  background-color: var(--infoBgDark) !important;
+  background-color: var(--infoBg);
 }
 
 .notranslate > .highlight {
@@ -208,11 +323,11 @@ code.literal {
 
 .pre {
   background-color: var(--lightGray);
-  color: var(--secondaryColorDark);
+  color: var(--secondaryColor);
 }
 
 .related-information {
-  color: var(--secondaryColorDark) !important;
+  color: var(--secondaryColor) !important;
   border-top: 1px solid var(--border) !important;
 }
 
@@ -221,7 +336,7 @@ code.literal {
   width: 80%;
   margin: 24px auto 10px;
   padding-top: 5px;
-  background-image: url('../../_static/images/logo1.png') !important;
+  background-image: url('../../_static/images/logoLight.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: 150px;
@@ -231,16 +346,16 @@ code.literal {
   height: 40px;
   width: 150px;
   padding-top: 5px;
-  background-image: url(../../_static/images/logo1.png) !important;
+  background-image: url(../../_static/images/logoLight.png) !important;
   background-position: center;
   background-repeat: no-repeat;
   background-size: 120px;
 }
 
 .context {
-  color: var(--secondaryColorDark);
+  color: var(--secondaryColor);
 }
 
 .mobile-header {
-  background-color: var(--bgDark) !important;
+  background-color: var(--bg) !important;
 }
