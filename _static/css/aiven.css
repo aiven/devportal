@@ -14,6 +14,7 @@
   --infoBg: var(--white);
   --border: #e1e1e3;
   --highlight: #1c1c2f;
+  --sideBar: #e1e1e3;
 
   /* Dark mode colors */
   --bgDark: #11111e;
@@ -56,7 +57,7 @@ body {
 h1,
 h2,
 h3 {
-  color: var(--primaryColorDark) !important;
+  /* color: var(--primaryColorDark) !important; */
   font-family: InterBold;
 }
 
@@ -199,6 +200,10 @@ a:hover {
 .highlight-json > .highlight {
   background: var(--highlight) !important;
   color: var(--white);
+}
+
+code.literal {
+  background-color: var(--lightGray) !important;
 }
 
 .pre {
