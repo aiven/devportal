@@ -43,7 +43,7 @@ The following PostgreSQL extensions are available. Please note that some of the 
   * - `fuzzystrmatch <https://www.postgresql.org/docs/current/fuzzystrmatch.html>`_
     -
   * - `hll <https://github.com/citusdata/postgresql-hll>`_
-    -
+    - PostgreSQL 11 and newer
   * - `hstore <https://www.postgresql.org/docs/current/hstore.html>`_
     -
   * - `intagg <https://www.postgresql.org/docs/current/intagg.html>`_
@@ -77,7 +77,7 @@ The following PostgreSQL extensions are available. Please note that some of the 
   * - `pgrowlocks <https://www.postgresql.org/docs/current/pgrowlocks.html>`_
     -
   * - `pgstattuple <https://www.postgresql.org/docs/current/pgstattuple.html>`_
-    -
+    - PostgreSQL 11 and later
   * - `plcoffee <https://pgxn.org/dist/plv8/>`_
     - Available only up to PostgreSQL v10
   * - `plls <https://pgxn.org/dist/plv8/>`_
@@ -154,7 +154,6 @@ Request a New Extension
 Based on support requests, we may also install additional extension related files for your database. When requesting things not on the pre-approved list through a support ticket, be sure to remember to specify to which database service and to which particular user database you'd like to see us install them.
 
 .. tip::
-
-"Untrusted" language extensions such as ``plpythonu`` cannot be supported as they would compromise our ability to guarantee the highest possible service level.
+    "Untrusted" language extensions such as ``plpythonu`` cannot be supported as they would compromise our ability to guarantee the highest possible service level.
 
 If you have some other extensions you'd like to be supported, please give us a heads up on what you'd like to see in the future.
