@@ -12,168 +12,114 @@ The following PostgreSQL extensions are available. Please note that some of the 
 
 .. list-table::
   :header-rows: 1
-  :widths: 5 30 60
   :align: left
 
-  * - 🔗
-    - Extension Name
+  * - Extension Name
     - Notes
-  * - `🔗 <https://postgis.net/docs/Address_Standardizer.html>`_
-    - ``address_standardizer``
+  * - `address_standardizer <https://postgis.net/docs/Address_Standardizer.html>`_
     -
-  * - `🔗 <https://postgis.net/docs/Address_Standardizer.html>`_
-    - ``address_standardizer_data_us``
+  * - `address_standardizer_data_us <https://postgis.net/docs/Address_Standardizer.html>`_
     -
-  * - `🔗 <https://github.com/aiven/aiven-extras>`_
-    - ``aiven_extras``
+  * - `aiven_extras <https://github.com/aiven/aiven-extras>`_
     - Logical replication support
-  * - `🔗 <https://www.postgresql.org/docs/current/bloom.html>`_
-    - ``bloom``
+  * - `bloom <https://www.postgresql.org/docs/current/bloom.html>`_
     -
-  * - `🔗 <https://www.postgresql.org/docs/current/btree-gin.html>`_
-    - ``btree_gin``
+  * - `btree_gin <https://www.postgresql.org/docs/current/btree-gin.html>`_
     -
-  * - `🔗 <https://www.postgresql.org/docs/current/btree-gist.html>`_
-    - ``btree_gist``
+  * - `btree_gist <https://www.postgresql.org/docs/current/btree-gist.html>`_
     -
-  * - `🔗 <https://www.postgresql.org/docs/10/chkpass.html>`_
-    - ``chkpass``
+  * - `chkpass <https://www.postgresql.org/docs/10/chkpass.html>`_
+    - Available only up to PostgreSQL v10
+  * - `citext <https://www.postgresql.org/docs/current/citext.html>`_
     -
-  * - `🔗 <https://www.postgresql.org/docs/current/citext.html>`_
-    - ``citext``
+  * - `cube <https://www.postgresql.org/docs/current/cube.html>`_
     -
-  * - `🔗 <https://www.postgresql.org/docs/current/cube.html>`_
-    - ``cube``
+  * - `dblink <https://www.postgresql.org/docs/current/contrib-dblink-function.html>`_
     -
-  * - `🔗 <https://www.postgresql.org/docs/current/contrib-dblink-function.html>`_
-    - ``dblink``
+  * - `dict_int <https://www.postgresql.org/docs/current/dict-int.html>`_
     -
-  * - `🔗 <https://www.postgresql.org/docs/current/dict-int.html>`_
-    - ``dict_int``
+  * - `earthdistance <https://www.postgresql.org/docs/current/earthdistance.html>`_
     -
-  * - `🔗 <https://www.postgresql.org/docs/current/earthdistance.html>`_
-    - ``earthdistance``
+  * - `fuzzystrmatch <https://www.postgresql.org/docs/current/fuzzystrmatch.html>`_
     -
-  * - `🔗 <https://www.postgresql.org/docs/current/fuzzystrmatch.html>`_
-    - ``fuzzystrmatch``
+  * - `hll <https://github.com/citusdata/postgresql-hll>`_
     -
-  * - `🔗 <https://github.com/citusdata/postgresql-hll>`_
-    - ``hll``
+  * - `hstore <https://www.postgresql.org/docs/current/hstore.html>`_
     -
-  * - `🔗 <https://www.postgresql.org/docs/current/hstore.html>`_
-    - ``hstore``
+  * - `intagg <https://www.postgresql.org/docs/current/intagg.html>`_
     -
-  * - `🔗 <https://www.postgresql.org/docs/current/intagg.html>`_
-    - ``intagg``
+  * - `intarray <https://www.postgresql.org/docs/current/intarray.html>`_
     -
-  * - `🔗 <https://www.postgresql.org/docs/current/intarray.html>`_
-    - ``intarray``
+  * - `isn <https://www.postgresql.org/docs/current/isn.html>`_
     -
-  * - `🔗 <https://www.postgresql.org/docs/current/isn.html>`_
-    - ``isn``
+  * - `ltree <https://www.postgresql.org/docs/current/ltree.html>`_
     -
-  * - `🔗 <https://www.postgresql.org/docs/current/ltree.html>`_
-    - ``ltree``
+  * - `pg_buffercache <https://www.postgresql.org/docs/current/pgbuffercache.html>`_
     -
-  * - `🔗 <https://www.postgresql.org/docs/current/pgbuffercache.html>`_
-    - ``pg_buffercache``
+  * - `pg_cron <https://github.com/citusdata/pg_cron>`_
     -
-  * - `🔗 <https://github.com/citusdata/pg_cron>`_
-    - ``pg_cron``
-    -
-  * - `🔗 <https://github.com/pgpartman/pg_partman>`_
-    - ``pg_partman``
+  * - `pg_partman <https://github.com/pgpartman/pg_partman>`_
     - PostgreSQL 10 and older
-  * - `🔗 <https://github.com/timescale/pg_prometheus>`_
-    - ``pg_prometheus``
+  * - `pg_prometheus <https://github.com/timescale/pg_prometheus>`_
     - PostgreSQL 10 to 12, the extension has been sunset by Timescale in favor of ``promscale`` and is not supported for PostgreSQL 13
-  * - `🔗 <https://pgxn.org/dist/pg_repack/1.4.6/>`_
-    - ``pg_repack``
+  * - `pg_repack <https://pgxn.org/dist/pg_repack/1.4.6/>`_
     - PostgreSQL 10 and newer
-  * - `🔗 <https://github.com/eulerto/pg_similarity>`_
-    - ``pg_similarity``
+  * - `pg_similarity <https://github.com/eulerto/pg_similarity>`_
     - PostgreSQL 13 and newer
-  * - `🔗 <https://www.postgresql.org/docs/current/pgstatstatements.html>`_
-    - ``pg_stat_statements``
+  * - `pg_stat_statements <https://www.postgresql.org/docs/current/pgstatstatements.html>`_
     -
-  * - `🔗 <https://www.postgresql.org/docs/current/pgtrgm.html>`_
-    - ``pg_trgm``
+  * - `pg_trgm <https://www.postgresql.org/docs/current/pgtrgm.html>`_
     -
-  * - `🔗 <https://www.postgresql.org/docs/current/pgcrypto.html>`_
-    - ``pgcrypto``
+  * - `pgcrypto <https://www.postgresql.org/docs/current/pgcrypto.html>`_
     -
-  * - `🔗 <https://github.com/pgRouting/pgrouting>`_
-    - ``pgrouting``
+  * - `pgrouting <https://github.com/pgRouting/pgrouting>`_
     -
-  * - `🔗 <https://www.postgresql.org/docs/current/pgrowlocks.html>`_
-    - ``pgrowlocks``
+  * - `pgrowlocks <https://www.postgresql.org/docs/current/pgrowlocks.html>`_
     -
-  * - `🔗 <https://www.postgresql.org/docs/current/pgstattuple.html>`_
-    - ``pgstattuple``
+  * - `pgstattuple <https://www.postgresql.org/docs/current/pgstattuple.html>`_
     -
-  * - `🔗 <https://pgxn.org/dist/plv8/>`_
-    - ``plcoffee``
+  * - `plcoffee <https://pgxn.org/dist/plv8/>`_
+    - Available only up to PostgreSQL v10
+  * - `plls <https://pgxn.org/dist/plv8/>`_
+    - Available only up to PostgreSQL v10
+  * - `plperl <https://www.postgresql.org/docs/current/plperl.html>`_
     -
-  * - `🔗 <https://pgxn.org/dist/plv8/>`_
-    - ``plls``
+  * - `plv8 <https://pgxn.org/dist/plv8/>`_
+    - Available only up to PostgreSQL v10
+  * - `postgis <https://postgis.net/>`_
     -
-  * - `🔗 <https://www.postgresql.org/docs/current/plperl.html>`_
-    - ``plperl``
+  * - `postgis_address_standardizer <https://postgis.net/docs/Address_Standardizer.html>`_
     -
-  * - `🔗 <https://pgxn.org/dist/plv8/>`_
-    - ``plv8``
-    - PostgreSQL 10 and older
-  * - `🔗 <https://postgis.net/>`_
-    - ``postgis``
+  * - `postgis_sfcgal <http://postgis.net/docs/reference.html#reference_sfcgal>`_
     -
-  * - `🔗 <https://postgis.net/docs/Address_Standardizer.html>`_
-    - ``postgis_address_standardizer``
+  * - `postgis_tiger_geocoder <https://postgis.net/docs/Geocode.html>`_
     -
-  * - `🔗 <http://postgis.net/docs/reference.html#reference_sfcgal>`_
-    - ``postgis_sfcgal``
+  * - `postgis_topology <https://postgis.net/docs/Topology.html>`_
     -
-  * - `🔗 <https://postgis.net/docs/Geocode.html>`_
-    - ``postgis_tiger_geocoder``
-    -
-  * - `🔗 <https://postgis.net/docs/Topology.html>`_
-    - ``postgis_topology``
-    -
-  * -
-    - ``postgis_legacy``
+  * - postgis_legacy
     - The extension is not packaged or supported as an extension by the PostGIS project. The extension package is provided by Aiven for Aiven users.
-  * - `🔗 <https://www.postgresql.org/docs/current/postgres-fdw.html>`_
-    - ``postgres_fdw``
+  * - `postgres_fdw <https://www.postgresql.org/docs/current/postgres-fdw.html>`_
     -
-  * - `🔗 <https://github.com/postgrespro/rum>`_
-    - ``rum``
+  * - `rum <https://github.com/postgrespro/rum>`_
     -
-  * - `🔗 <https://www.postgresql.org/docs/current/sslinfo.html>`_
-    - ``sslinfo``
+  * - `sslinfo <https://www.postgresql.org/docs/current/sslinfo.html>`_
     -
-  * - `🔗 <https://www.postgresql.org/docs/current/tablefunc.html>`_
-    - ``tablefunc``
+  * - `tablefunc <https://www.postgresql.org/docs/current/tablefunc.html>`_
     -
-  * - `🔗 <https://github.com/timescale/timescaledb>`_
-    - ``timescaledb``
+  * - `timescaledb <https://github.com/timescale/timescaledb>`_
     - PostgreSQL 10 and newer
-  * - `🔗 <https://www.postgresql.org/docs/9.2/tsearch2.html>`_
-    - ``tsearch2``
+  * - `tsearch2 <https://www.postgresql.org/docs/9.2/tsearch2.html>`_
+    - Available only up to PostgreSQL v9.6
+  * - `tsm_system_rows <https://www.postgresql.org/docs/current/tsm-system-rows.html>`_
     -
-  * - `🔗 <https://www.postgresql.org/docs/current/tsm-system-rows.html>`_
-    - ``tsm_system_rows``
+  * - `unaccent <https://www.postgresql.org/docs/current/unaccent.html>`_
     -
-  * - `🔗 <https://www.postgresql.org/docs/current/unaccent.html>`_
-    - ``unaccent``
+  * - `unit <https://github.com/df7cb/postgresql-unit>`_
+    - PostgreSQL 10 and newer
+  * - `uuid-ossp <https://www.postgresql.org/docs/current/uuid-ossp.html>`_
     -
-  * - `🔗 <https://github.com/df7cb/postgresql-unit>`_
-    - ``unit``
-    -
-  * - `🔗 <https://www.postgresql.org/docs/current/uuid-ossp.html>`_
-    - ``uuid-ossp``
-    -
-  * - `🔗 <https://github.com/eulerto/wal2json>`_
-    - ``wal2json``
-    -
+  * - `wal2json <https://github.com/eulerto/wal2json>`_
+    - PostgreSQL 10 and newer
 
 
 
