@@ -153,6 +153,8 @@ Request a New Extension
 
 Based on support requests, we may also install additional extension related files for your database. When requesting things not on the pre-approved list through a support ticket, be sure to remember to specify to which database service and to which particular user database you'd like to see us install them.
 
+.. tip::
+
 "Untrusted" language extensions such as ``plpythonu`` cannot be supported as they would compromise our ability to guarantee the highest possible service level.
 
 If you have some other extensions you'd like to be supported, please give us a heads up on what you'd like to see in the future.
