@@ -29,7 +29,7 @@ The following PostgreSQL extensions are available. Please note that some of the 
   * - `btree_gist <https://www.postgresql.org/docs/current/btree-gist.html>`_
     -
   * - `chkpass <https://www.postgresql.org/docs/10/chkpass.html>`_
-    - Available only up to PostgreSQL v10
+    - Available up to PostgreSQL v10
   * - `citext <https://www.postgresql.org/docs/current/citext.html>`_
     -
   * - `cube <https://www.postgresql.org/docs/current/cube.html>`_
@@ -79,13 +79,13 @@ The following PostgreSQL extensions are available. Please note that some of the 
   * - `pgstattuple <https://www.postgresql.org/docs/current/pgstattuple.html>`_
     - PostgreSQL 11 and later
   * - `plcoffee <https://pgxn.org/dist/plv8/>`_
-    - Available only up to PostgreSQL v10
+    - Available up to PostgreSQL v10
   * - `plls <https://pgxn.org/dist/plv8/>`_
-    - Available only up to PostgreSQL v10
+    - Available up to PostgreSQL v10
   * - `plperl <https://www.postgresql.org/docs/current/plperl.html>`_
     -
   * - `plv8 <https://pgxn.org/dist/plv8/>`_
-    - Available only up to PostgreSQL v10
+    - Available up to PostgreSQL v10
   * - `postgis <https://postgis.net/>`_
     -
   * - `postgis_address_standardizer <https://postgis.net/docs/Address_Standardizer.html>`_
@@ -109,7 +109,7 @@ The following PostgreSQL extensions are available. Please note that some of the 
   * - `timescaledb <https://github.com/timescale/timescaledb>`_
     - PostgreSQL 10 and newer
   * - `tsearch2 <https://www.postgresql.org/docs/9.2/tsearch2.html>`_
-    - Available only up to PostgreSQL v9.6
+    - Available up to PostgreSQL v9.6
   * - `tsm_system_rows <https://www.postgresql.org/docs/current/tsm-system-rows.html>`_
     -
   * - `unaccent <https://www.postgresql.org/docs/current/unaccent.html>`_
