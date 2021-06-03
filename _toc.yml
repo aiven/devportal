@@ -20,7 +20,6 @@ entries:
 
   - file: docs/products/postgres/index
     entries:
-        - file: docs/products/postgres/create
         - file: docs/products/postgres/extensions
 
 
