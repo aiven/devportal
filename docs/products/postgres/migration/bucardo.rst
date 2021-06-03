@@ -1,2 +1,0 @@
-Migrate using Bucardo
-===========================
