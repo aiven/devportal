@@ -14,7 +14,7 @@ Any available can be installed by the ``avnadmin`` user with the following ``CRE
 Update an Extension
 -------------------
 
-To upgrade an already-installed extention to the latest version available, run as the ``avnadmin`` user::
+To upgrade an already-installed extension to the latest version available, run as the ``avnadmin`` user::
 
   ALTER EXTENSION <EXTENSION_NAME> UPDATE;
 
