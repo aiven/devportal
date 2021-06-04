@@ -36,10 +36,10 @@ entries:
     title: M3DB
     entries:
       - file: docs/products/m3db/getting-started
-      - file: docs/products/m3db/guides
-        title: Guides
+      - file: docs/products/m3db/concepts
+        title: Concepts
         entries:
-          - glob: docs/products/m3db/guides/*
+          - glob: docs/products/m3db/concepts/*
 
       - file: docs/products/m3db/howto
         entries:
