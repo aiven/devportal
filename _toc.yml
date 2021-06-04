@@ -19,8 +19,15 @@ entries:
   - file: docs/products/kafka/index
 
   - file: docs/products/postgres/index
+    title: PostgreSQL
     entries:
-        - file: docs/products/postgres/extensions
+      - file: docs/products/postgres/concepts
+        title: Concepts
+      - file: docs/products/postgres/howto
+        title: Howto
+        entries:
+          - glob: docs/products/postgres/howto/*
+      - file: docs/products/postgres/reference/list-of-extensions
 
 
   # -------- AUXILIARY
