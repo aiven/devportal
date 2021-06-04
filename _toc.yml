@@ -23,6 +23,8 @@ entries:
     entries:
       - file: docs/products/postgres/concepts
         title: Concepts
+        entries:
+          - glob: docs/products/postgres/concepts/*
       - file: docs/products/postgres/howto
         title: Howto
         entries:

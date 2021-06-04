@@ -27,8 +27,8 @@ Request a New Extension
 
 We are always open to suggestions of additional extensions that could be useful to many of our customers, and there are a few that can be enabled on request if you need them. For any extensions not on the :doc:`../reference/list-of-extensions` approved list, please open a support ticket and let us know:
 
- * which extension is requested
- * which database service and user database should have them
+* which extension is requested
+* which database service and user database should have them
 
 .. warning::
     "Untrusted" language extensions such as ``plpythonu`` cannot be supported as they would compromise our ability to guarantee the highest possible service level.
