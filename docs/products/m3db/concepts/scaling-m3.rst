@@ -128,7 +128,7 @@ Given a consistent amount of points per second coming in, the memory usage can b
 
 * filtering data that gets to aggregated namespaces 
 
-* configuring shorter buffer past duration as data for current block is retained in memory that much longer after the block is already past; Aiven for M3 defaults to maximum value, which is blocksize - 1 second); note that if changing buffer past duration to e.g. 1 minute, data older than 1 minute will be simply discarded
+* configuring shorter buffer past duration as data for current block is retained in memory that much longer after the block is already past; Aiven for M3 defaults to maximum value, which is block size - 1 second); note that if changing buffer past duration to e.g. 1 minute, data older than 1 minute will be simply discarded
 
 For M3DB memory usage cost, using the disk example, what is in RAM per series is (at least)::
 

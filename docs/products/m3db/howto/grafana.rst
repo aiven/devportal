@@ -32,5 +32,6 @@ With your M3DB service selected, the "Query" section will show the metrics from 
 Once you are happy with your panel, give it a title and click "Save" in the top right hand corner.
 
 .. image:: /images/products/m3db/m3db-grafana.png
+   :alt: Screenshot of a Grafana panel
 
 To get to know Grafana better, try the `Grafana Fundamentals <https://grafana.com/tutorials/grafana-fundamentals/?pg=docs>`_ page on the Grafana project site.
