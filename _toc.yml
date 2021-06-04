@@ -41,9 +41,9 @@ entries:
         entries:
           - glob: docs/products/m3db/guides/*
 
-      - file: docs/products/m3db/code
+      - file: docs/products/m3db/howto
         entries:
-          - glob: docs/products/m3db/code/*
+          - glob: docs/products/m3db/howto/*
 
   # -------- AUXILIARY
   - file: docs/community
