@@ -17,11 +17,11 @@ Check out our :doc:`getting-started` guide for M3DB and take your first steps ri
 
 .. panels::
 
-    📙 :doc:`guides`
+    📙 :doc:`concepts`
 
     ---
 
-    💻 :doc:`code`
+    💻 :doc:`howto`
 
 .. tip::
    Aiven offers M3DB because we needed a solution this size for our own metrics - and we love it!

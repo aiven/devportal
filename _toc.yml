@@ -40,10 +40,11 @@ entries:
         title: Concepts
         entries:
           - glob: docs/products/m3db/concepts/*
-
       - file: docs/products/m3db/howto
         entries:
           - glob: docs/products/m3db/howto/*
+      - glob: docs/products/m3db/reference/*
+
 
   # -------- AUXILIARY
   - file: docs/community
