@@ -18,18 +18,18 @@ entries:
   # -------- PRODUCT-SPECIFIC --------
   - file: docs/products/kafka/index
 
-  - file: docs/products/postgres/index
+  - file: docs/products/postgresql/index
     title: PostgreSQL
     entries:
-      - file: docs/products/postgres/concepts
+      - file: docs/products/postgresql/concepts
         title: Concepts
         entries:
-          - glob: docs/products/postgres/concepts/*
-      - file: docs/products/postgres/howto
+          - glob: docs/products/postgresql/concepts/*
+      - file: docs/products/postgresql/howto
         title: Howto
         entries:
-          - glob: docs/products/postgres/howto/*
-      - file: docs/products/postgres/reference/list-of-extensions
+          - glob: docs/products/postgresql/howto/*
+      - file: docs/products/postgresql/reference/list-of-extensions
 
 
   # -------- AUXILIARY

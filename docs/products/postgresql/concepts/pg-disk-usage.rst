@@ -3,7 +3,8 @@
 
 When you create your first Aiven for PostgreSQL service, you may see the disk usage gradually increasing even though you are not yet inserting or updating much data.
 
-.. image:: pictures/d3d3bc6c73d18c5b2cbf0985_image.png
+.. image:: /images/products/postgresql/initial-disk-usage.png
+   :alt: Disk space usage graph showing % growing over an hour
 
 This is completely normal within the first 24 hours of operation for Aiven PostgreSQL services because of our WAL (Write-Ahead Logging) archiving settings.
 
