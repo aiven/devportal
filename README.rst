@@ -30,7 +30,7 @@ When you open a pull request, you will get a preview of your changes (useful if 
 * Check links: ``make linkcheck``
 * Check spelling: ``make spell``
 
-If the spellchecker is rejecting words that are valid (such as technology terms), double check the spelling and capitalisation, then add the word to ``.github/workflows/styles/Docs/accept.txt``.
+If the spellchecker is rejecting words that are valid (such as technology terms), double check the spelling and capitalisation, then add the word to ``.github/styles/Vocab/Docs/accept.txt``.
 
 Navigation Structure
 ~~~~~~~~~~~~~~~~~~~~
@@ -77,4 +77,3 @@ License
 
 This work is licensed under a
 `Creative Commons Attribution 4.0 International License <http://creativecommons.org/licenses/by/4.0/>`_.
-
