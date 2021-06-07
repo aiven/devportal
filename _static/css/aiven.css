@@ -24,6 +24,7 @@
   --linkDark: #d2d2d6;
   --linkActiveDark: #ff3554;
   --sideBarDark: #0b0b14;
+  --lightGrayDark: #494958;
 }
 
 @font-face {
@@ -96,10 +97,6 @@ a:hover {
     font-family: Inter;
   }
 
-  a:hover {
-    color: var(--linkActiveDark) !important;
-  }
-
   .sidebar-drawer {
     border-right: none;
     background: var(--sideBarDark);
@@ -118,8 +115,12 @@ a:hover {
   }
 
   .pre {
-    background-color: var(--lightGray);
-    color: var(--secondaryColorDark);
+    background-color: var(--lightGrayDark) !important;
+    color: var(--lightGray) !important;
+  }
+
+  code.literal {
+    background-color: var(--lightGrayDark) !important;
   }
 
   .related-information {
@@ -157,18 +158,6 @@ a:hover {
     border-radius: 5px;
     border: 1px solid var(--border);
     color: var(--secondaryColorDark);
-  }
-
-  .sidebar-tree .reference:hover {
-    background: none;
-    border-left: 2px solid var(--linkActiveDark);
-    font-family: InterBold;
-  }
-
-  .sidebar-tree .current-page > .reference {
-    background: none !important;
-    border-left: 2px solid var(--linkActiveDark);
-    color: var(--linkActiveDark) !important;
   }
 
   .gh-ribbon.gray {
@@ -318,7 +307,7 @@ a:hover {
 }
 
 code.literal {
-  background-color: var(--lightGray) !important;
+  background-color: var(--lightGray);
 }
 
 .pre {
