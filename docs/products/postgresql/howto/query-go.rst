@@ -1,4 +1,4 @@
-Query Data to PostgreSQL with Go
+Query Data in PostgreSQL with Go
 --------------------------------
 
 This example queries some data in a PostgreSQL service from Go, making use of the ``pg`` library.

@@ -1,4 +1,4 @@
-Query Data to PostgreSQL with Python
+Query Data in PostgreSQL with Python
 ------------------------------------
 
 This example queries some data in a PostgreSQL service from Python, making use of the ``psycopg2`` library.
