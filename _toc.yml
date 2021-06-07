@@ -21,6 +21,7 @@ entries:
   - file: docs/products/postgresql/index
     title: PostgreSQL
     entries:
+      - file: docs/products/postgresql/getting-started
       - file: docs/products/postgresql/concepts
         title: Concepts
         entries:
