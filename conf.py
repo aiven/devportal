@@ -14,13 +14,11 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
-
 # -- Project information -----------------------------------------------------
 
 project = 'Aiven Developer'
 copyright = '2021, Aiven Team'
 author = 'Aiven Team'
-
 
 # -- General configuration ---------------------------------------------------
 
@@ -41,7 +39,6 @@ templates_path = ['_templates']
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'README*']
 
-
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
@@ -51,8 +48,38 @@ html_theme = 'furo'
 html_theme_options = {
     "light_css_variables": {
         "color-brand-primary": "#FF3554",
-        "font-stack": "Ubuntu, Verdana, sans-serif",
-        "color-sidebar-brand-text": "#FF3554",
+        "font-stack": "Inter, sans-serif",
+        "color-sidebar-brand-text": "#4a4b57",
+        "color-foreground-primary": "#333333",
+        "color-foreground-secondary": "#787885",
+        "color-foreground-border": "#e1e1e3",
+        "color-background-primary": "#e1e1e3",
+        "color-background-secondary": "#ffffff",
+        "color-content-foreground": "#787885",
+        "color-background-hover": "#c60443",
+        "color-background-border": "#e1e1e3",
+        "color-highlighted-background": "#1c1c2f",
+        "color-inline-code-background": "#787885",
+        "color-sidebar-background": "#e1e1e3",
+        "color-sidebar-background-border": "#e1e1e3",
+        "color-sidebar-search-background": "#fff",
+    },
+    "dark_css_variables": {
+        "color-brand-primary": "#ff3554",
+        "font-stack": "Inter, sans-serif",
+        "color-sidebar-brand-text": "#d2d2d6",
+        "color-foreground-primary": "#ffffff",
+        "color-foreground-secondary": "#83839d",
+        "color-foreground-border": "#e1e1e3",
+        "color-background-primary": "#11111e",
+        "color-background-secondary": "#1c1c2f",
+        "color-background-hover": "#ff3554",
+        "color-background-border": "#e1e1e3",
+        "color-highlighted-background": "#1c1c2f",
+        "color-inline-code-background": "#f7f7fa",
+        "color-sidebar-background": "#0b0b14",
+        "color-sidebar-background-border": "#e1e1e3",
+        "color-sidebar-search-background": "#1c1c2f",
     },
     "navigation_with_keys": True
 }
@@ -67,7 +94,6 @@ html_extra_path = ["robots.txt"]
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 html_css_files = ['css/aiven.css']
-
 
 # -- Replacements -----------------------------------------------------------
 rst_epilog = """

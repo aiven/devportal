@@ -25,7 +25,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="{{ pathto(master_doc) }}"><div class="brand">{{ docstitle }}</div></a>
+      <a href="{{ pathto(master_doc) }}"><div class="brand"><div class="logo-container-mobile"></div></div></a>
     </div>
     <div class="header-right">
       <label class="toc-overlay-icon toc-header-icon{% if furo_hide_toc %} no-toc{% endif %}" for="__toc">
@@ -37,6 +37,10 @@
     <div class="sidebar-container">
       {% block left_sidebar %}
       <div class="sidebar-sticky">
+        <a href="/">
+          <div class="logo-container"></div>
+        </a>
+        
         {%- for sidebar_section in sidebars %}
           {%- include sidebar_section %}
         {%- endfor %}
