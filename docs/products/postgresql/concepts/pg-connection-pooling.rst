@@ -16,7 +16,7 @@ It makes sense to have enough connections so that each CPU core on the server ha
 
 
 .. Note::
-    PostgreSQL 9.6 introduced limited parallelisation support for `running queries in parallel <https://www.postgresql.org/docs/9.6/static/parallel-query.html>`_ on multiple CPU cores.
+    PostgreSQL 9.6 introduced limited parallelization support for `running queries in parallel <https://www.postgresql.org/docs/9.6/static/parallel-query.html>`_ on multiple CPU cores.
 
 
 Without a connection pooler, the database connections are handled directly by PostgreSQL backend processes, with one process per connection:
