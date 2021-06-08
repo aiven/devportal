@@ -29,7 +29,7 @@ Below is an example of how to configure Telegraf to send metrics to M3 using the
 Configuring Telegraf Prometheus remote write for M3
 ---------------------------------------------------
 
-Here's some example config to get Telegraf to send metrics to M3 using the Prometheus remote write protocol. These lines go in the output plugins section of the Telegraf configuration file::
+Here's an example of how to configure Telegraf to send metrics to M3 using the Prometheus remote write protocol. These lines go in the output plugins section of the Telegraf configuration file::
 
     # Configuration for sending metrics to M3
     [outputs.http]
