@@ -1,7 +1,7 @@
-Query Data in PostgreSQL with Go
---------------------------------
+Connect with Go
+---------------
 
-This example queries some data in a PostgreSQL service from Go, making use of the ``pg`` library.
+This example connects to PostgreSQL service from Go, making use of the ``pg`` library.
 
 Variables
 '''''''''
@@ -30,7 +30,7 @@ Code
 
 Add the following to ``main.go`` and replace the placeholder with the PostgreSQL URI:
 
-.. literalinclude:: /code/products/postgresql/query.go
+.. literalinclude:: /code/products/postgresql/connect.go
 
 This code creates an PostgreSQL client and opens a connection to the database. Then runs a query checking the database version and prints the response
 

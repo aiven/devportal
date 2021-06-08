@@ -1,7 +1,7 @@
-Query Data in PostgreSQL with Python
-------------------------------------
+Connect with Python
+-------------------
 
-This example queries some data in a PostgreSQL service from Python, making use of the ``psycopg2`` library.
+This example connects to a PostgreSQL service from Python, making use of the ``psycopg2`` library.
 
 Variables
 '''''''''
@@ -31,7 +31,7 @@ Code
 
 Add the following to ``main.py`` and replace the placeholders with values for your project:
 
-.. literalinclude:: /code/products/m3db/write.py
+.. literalinclude:: /code/products/postgresql/connect.py
 
 
 This code creates an PostgreSQL client and connects to the database. Then runs a query checking the database version and prints the response
