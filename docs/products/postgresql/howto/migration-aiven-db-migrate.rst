@@ -24,7 +24,9 @@ Variable                Description
 Check ``wal_level`` setting
 '''''''''''''''''''''''''''
 
-As per :doc:`Migration Requirements<../concepts/aiven-db-migrate>`, to perform a migration using ``aiven-db-migrate``, the ``wal_level`` needs to be set to ``logical``. To review the current ``wal_level`` run the following command on the source cluster via ``psql``::
+As per :doc:`Migration Requirements<../concepts/aiven-db-migrate>`, to perform a migration using ``aiven-db-migrate``, the ``wal_level`` on the source cluster needs to be set to ``logical``.
+
+To review the current ``wal_level`` run the following command on the source cluster via ``psql``::
 
     show wal_level;
 
