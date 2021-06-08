@@ -6,7 +6,7 @@ M3 supports multiple methods of writing metrics to the M3 database. Two common o
 Configuring Telegraf InfluxDB output plugin for M3
 --------------------------------------------------
 
-This is how you configure Telegraf to send metrics to M3 using the InfluxDB line-protocol. This configuration needs to be part of the output plugins configuration in your Telegraf configuration file::
+Below is an example of how to configure Telegraf to send metrics to M3 using the InfluxDB line-protocol. These lines belong in the output plugins section of your Telegraf configuration file::
 
     # Configuration for sending metrics to M3
     [[outputs.influxdb]]
@@ -29,7 +29,7 @@ This is how you configure Telegraf to send metrics to M3 using the InfluxDB line
 Configuring Telegraf Prometheus remote write for M3
 ---------------------------------------------------
 
-This is how you configure Telegraf send metrics to M3 using the Prometheus remote write protocol. This configuration needs to be part of the output plugins configuration in the Telegraf configuration file::
+Here's some example config to get Telegraf to send metrics to M3 using the Prometheus remote write protocol. These lines go in the output plugins section of the Telegraf configuration file::
 
     # Configuration for sending metrics to M3
     [outputs.http]

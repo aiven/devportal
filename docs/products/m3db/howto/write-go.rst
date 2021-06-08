@@ -28,7 +28,7 @@ For this example you will need:
 Code
 ''''
 
-Add the following to ``main.go`` and replace the placeholder with the Prometheus(write) URL:
+Add the following to ``main.go`` and replace the ``PROM_WRITE_URL`` placeholder:
 
 .. literalinclude:: /code/products/m3db/write.go
 

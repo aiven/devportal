@@ -6,9 +6,9 @@ There are two M3-related services available in the `Aiven console <https://conso
 .. note::
    The M3 Aggregator service provides extra query functionality when performing complex queries against the distributed data set
 
-Choose your cloud provider and location to deploy to, then choose which plan to use.
+Choose your cloud provider and region to deploy to, then choose which plan to use.
 
-If you're just trying out M3DB, a single-node setup is available with our startup plans. This isn't recommended for production use however; for that you should try the 3-node clusters on the business plans, or a premium plan to meet your needs.
+If you're just trying out M3DB, a single-node setup is available with our startup plans. This isn't recommended for production use however; for that you should try the 3-node clusters on the business plans, or a premium plan to meet your needs. Remember that you can scale up your plan whenever you need to so don't worry if you aren't sure about the details up front.
 
 Finally, give the service a name and then select "Create Service", and your shiny new M3 database will start building. While it does that, you can already visit the service overview page to see the details of the service.
 

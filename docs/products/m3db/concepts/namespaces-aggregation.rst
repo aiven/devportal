@@ -1,7 +1,7 @@
 About M3DB Namespaces and Aggregation
 =====================================
 
-M3DB has a concept of namespaces.
+M3DB has a concept of namespaces, which can be compared to tables in a traditional database setup.
 
 * there is always one unaggregated namespace
 
@@ -30,7 +30,7 @@ Incoming data points are written to the unaggregated namespace. It's the default
 Aggregated Namespace
 --------------------
 
-An aggregated namespace has some data, usually downsampled to a lower resolution, and retained for a different period of time.
+An aggregated namespace has some data, usually downsampled to a lower resolution, and retained for a different period of time. You can see a screenshot of the configuration options below:
 
 .. image:: /images/products/m3db/configure-namespace.png
     :alt: Namespace configuration screenshot, showing the namespace name, retention and resolution fields
