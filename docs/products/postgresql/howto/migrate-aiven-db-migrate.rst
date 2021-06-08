@@ -1,4 +1,4 @@
-Migrate data to Aiven for PostgreSQL with ``aiven-db-migrate``
+Migrate Databases with ``aiven-db-migrate``
 ==============================================================
 
 This article describes how to migrate a PostgreSQL cluster from an external source to an Aiven for PostgreSQL service using the `aiven-db-migrate <https://github.com/aiven/aiven-db-migrate>`_ tool. To know more about how the tool works, please check :doc:`../concepts/aiven-db-migrate`
@@ -24,7 +24,7 @@ Variable                Description
 Check ``wal_level`` setting
 '''''''''''''''''''''''''''
 
-As per :doc:`Migration Requirements<../concepts/aiven-db-migrate>`, to perform a migration using ``aiven-db-migrate``, the ``wal_level`` on the source cluster needs to be set to ``logical``.
+As per :ref:`aiven-db-migrate-migration-requirements`, to perform a migration using ``aiven-db-migrate``, the ``wal_level`` on the source cluster needs to be set to ``logical``.
 
 To review the current ``wal_level`` run the following command on the source cluster via ``psql``::
 

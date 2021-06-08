@@ -10,6 +10,7 @@ Regardless of the migration method used, the migration tool first performs a sch
 .. Note::
     Logical replication also works when migrating from AWS RDS PostgreSQL 10+. Google Cloud Platform's PostgreSQL for CloudSQL does not support logical replication.
 
+.. _aiven-db-migrate-migration-requirements:
 
 Migration Requirements
 ''''''''''''''''''''''
