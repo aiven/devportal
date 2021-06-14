@@ -19,4 +19,4 @@ An example implementation might look something like this with your application s
         M3 <-.-> Agg(M3 Aggregator)
 
 
-Another common setup is to use Prometheus with M3 as the storage element.
+Another common setup is to use `Prometheus <https://prometheus.io/>`_ with M3 as the storage element.
