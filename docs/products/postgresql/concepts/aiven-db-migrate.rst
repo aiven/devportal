@@ -1,9 +1,9 @@
-Migrate Databases with ``aiven-db-migrate``
-===========================================
+About ``aiven-db-migrate``
+==========================
 
-When performing a migration from PostgreSQL cluster in an external source to an Aiven for PostgreSQL service, the default method  uses the `aiven-db-migrate <https://github.com/aiven/aiven-db-migrate>`_ tool, which supports both logical replication and also using a dump and restore process.
+The ``aiven-db-migrate`` tool is the recommended approach for migrating your PostgreSQL to Aiven. It supports both logical replication and also using a dump and restore process. Find out more about the tool `on GitHub <https://github.com/aiven/aiven-db-migrate>`_.
 
-Logical replication is the default method, as once successful, this keeps the two databases synchronized until the replication is interrupted. If the preconditions for logical replication are not met for a database, the migration falls back to using ``pg_dump``.
+Logical replication is the default method and once successfully set up, this keeps the two databases synchronized until the replication is interrupted. If the preconditions for logical replication are not met for a database, the migration falls back to using ``pg_dump``.
 
 Regardless of the migration method used, the migration tool first performs a schema dump and migration to ensure schema compatibility.
 
@@ -23,7 +23,7 @@ The following are the two basic requirements for a migration:
 Additionally to perform a **logical replication**, the following need to be valid:
 
 3. PostgreSQL version 10 or newer
-4. Credentials with superuser access to the source cluster or the `aiven-extras <https://github.com/aiven/aiven-extras>`_ extension installed on it.
+4. Credentials with superuser access to the source cluster or the ``aiven-extras`` extension installed (see also: `Aiven Extras on GitHub <https://github.com/aiven/aiven-extras>`_)
 
 .. Note::
     The ``aiven_extras``  extension allows you to perform publish/subscribe-style logical replication without a superuser account, and it is preinstalled on Aiven for PostgreSQL servers.
@@ -58,4 +58,7 @@ The ``aiven-db-migrate`` migration tool checks the following requirements before
     - The source ``wal_level`` is set to ``logical``
     - The user connecting to the source has superuser access or the ``aiven_extra`` extension is or can be installed on each database
 
-To understand how to perform such migration, check out :doc:`../howto/migration-aiven-db-migrate`
+Next Steps
+''''''''''
+
+There's a detailed guide for performing the migration: :doc:`../howto/migrate-aiven-db-migrate`

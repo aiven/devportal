@@ -1,12 +1,12 @@
-Migrate Databases with ``aiven-db-migrate``
-==============================================================
+Migrate to Aiven for PostgreSQL with ``aiven-db-migrate``
+=========================================================
 
-This article describes how to migrate a PostgreSQL cluster from an external source to an Aiven for PostgreSQL service using the `aiven-db-migrate <https://github.com/aiven/aiven-db-migrate>`_ tool. To know more about how the tool works, please check :doc:`../concepts/aiven-db-migrate`
+This article describes how to migrate a PostgreSQL cluster from an external source to an Aiven for PostgreSQL service using the ``aiven-db-migrate`` tool (the project is open source, find it `on GitHub <https://github.com/aiven/aiven-db-migrate>`_). To learn more, please visit :doc:`the overview of the process<../concepts/aiven-db-migrate>`.
 
 Variables
 '''''''''
 
-These are the placeholders you will need to replace in the code sample:
+Replace these placeholder variables in the code samples below:
 
 ==================      =======================================================================
 Variable                Description
@@ -21,8 +21,8 @@ Variable                Description
 ``DEST_PG_PLAN``        Aiven Plan for the destination Aiven PostgreSQL service
 ==================      =======================================================================
 
-Check ``wal_level`` setting
-'''''''''''''''''''''''''''
+Set ``wal_level`` to ``logical``
+''''''''''''''''''''''''''''''''
 
 As per :ref:`aiven-db-migrate-migration-requirements`, to perform a migration using ``aiven-db-migrate``, the ``wal_level`` on the source cluster needs to be set to ``logical``.
 
@@ -35,7 +35,7 @@ If the output is not ``logical``, run the following command in ``psql`` and then
     ALTER SYSTEM SET wal_level = logical;
 
 .. Note::
-    If you are migrating from an AWS RDS PostgreSQL cluster, you have to set the ``rds.logical_replication`` parameter to ``1`` (true) in the parameter group.
+    If you are migrating from an AWS RDS PostgreSQL cluster, set the ``rds.logical_replication`` parameter to ``1`` (true) in the parameter group.
 
 Check the Migration Configuration Options
 '''''''''''''''''''''''''''''''''''''''''
@@ -49,48 +49,33 @@ The output includes::
   ----
   Service type 'pg' options:
 
-    Remove migration
-
-       => --remove-option migration
-
-    Database name for bootstrapping the initial connection
-
-       => -c migration.dbname=<string>
-
-    Hostname or IP address of the server where to migrate data from
-
-       => -c migration.host=<string>
-
-    Password for authentication with the server where to migrate data from
-
-       => -c migration.password=<string>
-
-    Port number of the server where to migrate data from
-
-       => -c migration.port=<integer>
-
-    The server where to migrate data from is secured with SSL
-
-       => -c migration.ssl=<boolean> (default=True)
-
-    User name for authentication with the server where to migrate data from
-
-       => -c migration.username=<string>
-
+  Remove migration
+     => --remove-option migration
+  Database name for bootstrapping the initial connection
+     => -c migration.dbname=<string>  
+  Hostname or IP address of the server where to migrate data from
+     => -c migration.host=<string>  
+  Password for authentication with the server where to migrate data from
+     => -c migration.password=<string>  
+  Port number of the server where to migrate data from
+     => -c migration.port=<integer>  
+  The server where to migrate data from is secured with SSL
+     => -c migration.ssl=<boolean>  (default=True)
+  User name for authentication with the server where to migrate data from
   ----
 
-
+These are the settings we'll use when configuring the migration in the next step.
 
 Perform the Migration
 '''''''''''''''''''''
 
 The following is the migration process:
 
-1. If you don't have a PostgreSQL database already, run the following commands to create a couple of PostgreSQL services via :doc:`../../../tools/cli` substituting the parameters accordingly::
+1. If you don't have a Aiven for PostgreSQL database already, run the following commands to create a couple of PostgreSQL services via :doc:`../../../tools/cli` substituting the parameters accordingly::
 
     avn service create -t pg -p DEST_PG_PLAN DEST_PG_NAME
 
-2. Once logged on the destination Aiven PostgreSQL service execute the following command via ``psql`` to enable the ``aiven_extras`` extension::
+2. Once logged on the destination Aiven for PostgreSQL service execute the following command via ``psql`` to enable the ``aiven_extras`` extension::
 
     CREATE EXTENSION aiven_extras CASCADE;
 
@@ -109,7 +94,7 @@ The following is the migration process:
 
     avn --show-http service migration-status DEST_PG_NAME --project test
 
-The command output should be similar to the following stating that the ``pg_dump`` migration of the ``defaultdb`` database is ``done`` and the logical ``replication`` of the ``has_aiven_extras`` database is sincing``::
+The command output should be similar to the following stating that the ``pg_dump`` migration of the ``defaultdb`` database is ``done`` and the logical ``replication`` of the ``has_aiven_extras`` database is syncing``::
 
     -----Response Begin-----
     {

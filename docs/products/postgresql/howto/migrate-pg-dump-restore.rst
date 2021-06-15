@@ -1,7 +1,7 @@
-Migrate Databases with ``pg_dump`` and ``pg_restore``
-=====================================================
+Migrate to Aiven for PostgreSQL with ``pg_dump`` and ``pg_restore``
+===================================================================
 
-The preferred approach for migrating a PostgreSQL database to Aiven is to use :doc:`aiven-db-migrate <migrate-aiven-db-migrate>`. However, Aiven for PostgreSQL supports the same tools as a regular PostgreSQL database, which allows you to use those same tools for migrating to Aiven for PostgreSQL.
+The preferred approach for migrating a PostgreSQL database to Aiven is to use :doc:`aiven-db-migrate <migrate-aiven-db-migrate>`. However, Aiven for PostgreSQL supports the same tools as a regular PostgreSQL database, so you can also migrate using standard tools ``pg_dump`` and ``pg_restore``.
 
 The `pg_dump <https://www.postgresql.org/docs/current/app-pgdump.html>`_ tool can be used to extract the data from your existing PostgreSQL database and `pg_restore <https://www.postgresql.org/docs/current/app-pgrestore.html>`_ then can insert that data to your Aiven for PostgreSQL database. The duration of the process depends on the size of your existing database.
 
@@ -14,7 +14,7 @@ While the migration is in progress, no new data written to the database is inclu
 Variables
 '''''''''
 
-These are the placeholders you will need to replace in the code sample:
+You will need to replace these variables in the commands below:
 
 ====================      =======================================================================================
 Variable                  Description
@@ -36,7 +36,7 @@ To following is the series of steps required to migrate your database to Aiven f
     avn service create -t pg -p DEST_PG_PLAN DEST_PG_NAME
 
 .. Tip::
-    Aiven for PostgreSQL allows you to switch between different service plans, but at least for the duration of the initial migration process when using ``pg_dump``, we recommend that you choose a service plan that is large enough for the task. This allows you to limit downtime during the migration process.
+    Aiven for PostgreSQL allows you to switch between different service plans, but at least for the duration of the initial migration process when using ``pg_dump``, we recommend that you choose a service plan that is large enough for the task. This allows you to limit downtime during the migration process. Once migrated, you can scale the plan size up or down as needed.
 
 Aiven automatically creates a ``defaultdb`` database and ``avnadmin`` user account, which are used by default. If necessary, you can create additional databases and related users in the Aiven web console, on the **Databases** and **Users** tabs of your Aiven for PostgreSQL service.
 
@@ -48,7 +48,7 @@ Aiven automatically creates a ``defaultdb`` database and ``avnadmin`` user accou
 The ``--jobs`` option in this command instructs the operation to use 4 CPUs to dump the database. Depending on the number of CPUs that you have available, you can use this option to adjust the performance to better suit your server.
 
 .. Tip::
-    If you have issues with restoring your previous object ownerships to users that do not exist in your Aiven database, use the ``--no-owner`` option in the ``pg_dump`` command. You can then create the ownership hierarchy after the data is migrated.
+    If you encounter problems with restoring your previous object ownerships to users that do not exist in your Aiven database, use the ``--no-owner`` option in the ``pg_dump`` command. You can then create the ownership hierarchy after the data is migrated.
 
 
 3. Run pg_restore to load the data into the new database::
