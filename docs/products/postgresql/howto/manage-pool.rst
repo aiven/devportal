@@ -3,19 +3,26 @@ Manage Connection Pooling
 
 Connection Pooling allows you to maintain very large numbers of connections to a database while minimizing the consumption of server resources. Read more about it on :doc:`../concepts/pg-connection-pooling`.
 
+Connection Pooling Tips
+-----------------------------
+
+You can connect directly to the PostgreSQL server using the **Service URI** setting listed on the **Overview** page however this URI doesn't make use of PGBouncer pooling. PGBouncer pools use a different port number than the regular PostgreSQL server port, the PGBouncer **Service URI** for a particular pool can be found in the Aiven console, under the **Pool** tab in the service page.
+
+You can use both pooled and non-pooled connections at the same time.
+
+.. Note::
+    If you have set a custom ``search_path`` for your database, this is not automatically set for your new connection pool. Remember to set it also for new connection pools when you create them.
+
+Manage Connection Pools
+-----------------------------
+
+To manage the connection pools, follow the steps below:
+
 1. Log in to the Aiven web console and select your PostgreSQL service.
 
-   You can connect directly to the PostgreSQL server using the settings listed on the *Overview* page (the *Service URI* address), but this type of connection does not use PGBouncer pooling.
+2. On the **Pools** tab you can see the list, add or remove pools.
 
-
-2. Click the **Pools** tab.
-
-   This opens a list of the PGBouncer connection pools defined for the service.
-
-
-3. Click **Add Pool**.
-
-   The pool settings are:
+   The settings available are:
 
    * **Pool name:** Enter a name for your connection pool here. This also becomes the ``database`` or ``dbname`` connection parameter for your pooled client connections.
    * **Database**: Choose the database that you want to connect to. Each pool can only connect to a single database.
@@ -24,21 +31,14 @@ Connection Pooling allows you to maintain very large numbers of connections to a
    * **Pool Size:** Select how many PostgreSQL server connections this pool can use at a time.
 
 
-4. Click **Create**.
+3. Click **Info** on an existing pool.
 
-   This creates the connection pool and adds it to the list.
+   This shows you the database connection settings for the pool, similar to the below
+
+.. image:: /images/products/postgresql/connection-pool-details.png
 
 
-5. Click **Info** for the new pool.
-
-   This shows you the database connection settings for this pool.
-
-   **Note:** PGBouncer pools use a different port number than the regular PostgreSQL server port. You can use both pooled and non-pooled connections at the same time.
-
-.. Note::
-    If you have set a custom ``search_path`` for your database, this is not automatically set for your new connection pool. Remember to set it also for new connection pools when you create them.
-
-Connection pools for replicas
+Connection Pools for Replicas
 -----------------------------
 
 For all Business and Premium plans, whenever you define a connection pool, the same connection pool is created both for primary and standby servers. For standby servers, the connection pool URI is exactly the same as for the primary server, except that the host name has a ``replica-`` prefix.

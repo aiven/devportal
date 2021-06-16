@@ -6,7 +6,9 @@ PGBouncer is used at Aiven for :doc:`../concepts/pg-connection-pooling`.
 Get PGBouncer URL
 ------------------
 
-PGBouncer URL can be extracted via Aiven Command Line interface with the following command replacing the ``INSTANCE_NAME`` parameter with the name of your instance::
+PGBouncer URL can be seen under **Pools** in the PostgreSQL service web interface. Alternatively it can be extracted via :doc:`Aiven Command Line interface<../../../tools/cli>`, using `pg <https://stedolan.github.io/jq/>`_ to parse the JSON response.
+
+Execute the following command replacing the ``INSTANCE_NAME`` parameter with the name of your instance::
 
     avn service get INSTANCE_NAME --json | jq -r '.connection_info.pgbouncer'
 
@@ -17,11 +19,7 @@ The output will be similar to the below::
 Connect to PGBouncer
 --------------------
 
-Once retrieved the PGBouncer URL, connect to it with the following::
-
-    psql postgres://avnadmin:xxxxxxxxxxx@demo-pg-dev-advocates.aivencloud.com:13040/pgbouncer?sslmode=require
-
-Finally show PGBouncer statistics::
+Connect to PGBouncer using the URL extracted above and show the statistics with::
 
     pgbouncer=# SHOW STATS;
 
