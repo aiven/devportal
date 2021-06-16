@@ -10,3 +10,6 @@ signups
 Terraforming
 toolchain
 Untrusted
+parallelization
+pooler
+sharding
