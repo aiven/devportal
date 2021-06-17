@@ -13,7 +13,7 @@ Variable                Description
 =================       =======================================================
 ``SERVICE_HOST``        Service hostname, found on the service overview page
 ``SERVICE_PORT``        Service port number, found on the service overview page
-``AVNADMIN_PASS``       Password for the ``avnadmin`` user
+``AVNADMIN_PASS``       Password for the default ``avnadmin`` user
 =================       =======================================================
 
 Pre-requisites

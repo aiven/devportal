@@ -13,7 +13,7 @@ Variable                Description
 =================       =======================================================
 ``SERVICE_HOST``        Service hostname, found on the service overview page
 ``SERVICE_PORT``        Service port number, found on the service overview page
-``AVNADMIN_PASS``       Password for the ``avnadmin`` user
+``AVNADMIN_PASS``       Password for the default ``avnadmin`` user
 =================       =======================================================
 
 Pre-requisites
@@ -22,7 +22,7 @@ Pre-requisites
 For this example you will need:
 
 1. Python 3.6 or later
- 
+
 2. The Python InfluxDB library. You can install this with ``pip``::
 
     pip install influxdb
@@ -37,7 +37,7 @@ Code
 Add the following to ``main.py`` and replace the placeholders with values for your project:
 
 .. literalinclude:: /code/products/m3db/write.py
-    
+
 
 This code creates an InfluxDBClient and connects to the Influx-literate endpoint on the M3DB. Then the code constructs the expected data format, and writes it to the client.
 
