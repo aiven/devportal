@@ -9,7 +9,7 @@ etcd
 filesets
 Grafana
 hardcoded
-hostname
+[Hh]ostname
 jq
 [Nn]amespace
 parallelization
