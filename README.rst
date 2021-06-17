@@ -1,7 +1,7 @@
 Aiven Developer
 ===============
 
-This is a work in progress.
+This is work in progress.
 
 The site will be a place to hold all our developer-facing content.
 

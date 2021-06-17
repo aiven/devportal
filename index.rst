@@ -1,23 +1,21 @@
-Welcome to Aiven Developer
-==========================
+Welcome to Aiven Developer Portal
+=================================
 
-In a nutshell:
 Aiven offers managed services for the best open source data technologies, on a cloud of your choice.
 
 Clouds
 ------
 
-Choose from AWS, GCP, Azure, Digital Ocean or UpCloud, and then pick the region where your service should be hosted.
+We offer multiple cloud options because we believe that everyone should have access to great data platforms to host their applications. Our customers tell us they love the multi-cloud approach because they know that they aren't locked in to one particular cloud platform for all their data needs.
 
-Why Multi-cloud?
-''''''''''''''''
+You can choose from Amazon Web Services (AWS), Google Cloud Platform (GCP), Microsoft Azure Cloud, DigitalOcean Cloud and UpCloud, and then pick the region where your service should be hosted.
 
-We offer multiple cloud options because we believe that everyone should have access to great data platforms wherever they host their applications. Our customers tell us they love it because they know that they aren't locked in to one particular cloud platform for all their data needs.
 
 Pricing
 -------
 
-Pricing is per month, you pay for the time that the service is running. **Data transfer costs are included**.
+You are billed on a monthly basis, and you only pay for the time that the service is running. Data transfer costs are included. 
+You can check more on our `Pricing page <https://aiven.io/pricing>`_.
 
 Products
 --------
@@ -44,18 +42,18 @@ Streaming data and events 📨
 
     ---
 
-    |icon-kafka-mirrormaker| **MirrorMaker2** Everything from one Apache Kafka, to another Apache Kafka
+    |icon-kafka-mirrormaker| **MirrorMaker2** Everything from one Apache Kafka to another.
 
 
 Time series solutions ⌚
 
 .. panels::
 
-    |icon-m3db| **M3DB** Distributed time-series for seriously scalable solutions
+    |icon-m3db| **M3DB** Distributed time-series for scalable solutions.
 
     ---
 
-    |icon-influxdb| **InfluxDB** Time-series data, managed well
+    |icon-influxdb| **InfluxDB** Time-series data, managed well.
 
 
 Features
@@ -63,10 +61,10 @@ Features
 
 Aiven offers everything you'd expect but here are some highlights:
 
-* Self-service and interuption-free service **upgrades**. Spoiler: when we say "upgrade", some of our services allow "downgrade" as well. You know, just in case.
+* Self-service and interuption-free **service upgrades**. Some of our services allow "downgrade" as well. You know, just in case.
 
-* Read-only **replicas**. Whether that's for peace of mind, a reporting backend, or something else, you can spin up a read replica of your database on a different cloud.
+* Read-only **replicas**. Whether for peace of mind, a reporting backend, you can easily spin up a read replica of your database on a different cloud.
 
-* Database **forking**. Create a fork of your database to test out migrations, upgrades, or anything else you'd like to try in a safe space before you go ahead.
+* Database **forking**. Create a fork of your database to test migrations, upgrades, or anything else you'd like to try in a safe space before you go ahead.
 
 
