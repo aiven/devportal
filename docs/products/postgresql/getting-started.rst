@@ -11,6 +11,7 @@ Choose the PostgreSQL version, your cloud provider and location to deploy to, th
 Finally, give the service a name and then select "Create Service", and your shiny new PostgreSQL database will start building. While it does that, you can already visit the service overview page to see the details of the service.
 
 .. image:: /images/products/postgresql/pg-connection-details.png
+    :alt: PostgreSQL service overview tab in Aiven's console
 
 
 Connect to PostgreSQL with ``psql``
@@ -25,7 +26,8 @@ With :doc:`psql <howto/connect-psql>` you can connect to the PostgreSQL instance
 Load a Test Dataset in PostgreSQL
 ---------------------------------
 
-If you're checking out PostgreSQL, loading a test dataset will help you speeding up your knowledge. This example uses `Dellstore2 <https://www.postgresql.org/ftp/projects/pgFoundry/dbsamples/dellstore2/>`_ providing a standard store dataset with products, orders, inventory and customer information.
+If you're checking out PostgreSQL, loading a test dataset will help you speeding up your knowledge. This example uses
+``dellstore2``, a standard store dataset with products, orders, inventory and customer information.
 
 1. Download the ``dellstore2-normal-1.0.tar.gz`` file from the `PostgreSQL website <https://www.postgresql.org/ftp/projects/pgFoundry/dbsamples/dellstore2/dellstore2-normal-1.0/>`_ and unzip it.
 2. Navigate to the ``dellstore2-normal-1.0`` folder on your terminal
