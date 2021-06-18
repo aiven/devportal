@@ -25,3 +25,10 @@ livehtml:
 spell:
 	vale $(SOURCEDIR)/index.rst
 	vale $(SOURCEDIR)/docs
+
+# Index pages to Elasticsearch:
+# "make index-pages ES_URL=url
+index-pages: html
+	python "$(SOURCEDIR)/scripts/index_pages.py" \
+		--html-build-dir="$(BUILDDIR)/html" \
+		--es-url="$(ES_URL)"
