@@ -1,2 +1,5 @@
 _build/*
 .DS_Store
+__pycache__
+.netlify
+node_modules
