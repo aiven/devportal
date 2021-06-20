@@ -6,7 +6,7 @@ datastore
 downsampled
 downsampling
 etcd
-filesets
+fileset[s]?
 Grafana
 hardcoded
 [Hh]ostname
