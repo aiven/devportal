@@ -32,6 +32,7 @@ entries:
       - file: docs/products/postgresql/reference/list-of-extensions
       - file: docs/products/postgresql/reference/pg-connection-limits
       - file: docs/products/postgresql/reference/terminology
+      - file: docs/products/postgresql/reference/pg-metrics
 
   - file: docs/products/m3db/index
     title: M3DB
