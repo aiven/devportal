@@ -35,7 +35,8 @@ def parse_pages(html_build_dir):
                 'title': title,
                 'content': content.replace("¶", ""),
                 'url': relative_path,
-                'source': 'devportal'
+                'source': 'devportal',
+                'sort_priority': 1
             })
 
             print(f"Parsed {filepath}")
@@ -62,6 +63,9 @@ def create_es_base(es, index_name):
                                    },
                                    'source': {
                                        'type': 'keyword'
+                                   },
+                                   'sort_priority': {
+                                       'type': 'integer'
                                    }
                                }
                            })

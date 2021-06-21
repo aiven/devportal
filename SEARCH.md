@@ -28,7 +28,11 @@ The index is described with the following JSON:
         },
         "source": {
             "type": "keyword"
+        },
+        "sort_priority": {
+            "type": "interger"
         }
+    }
     }
 }
 ```
@@ -39,6 +43,7 @@ title|Document title, used as the link text in search results
 description|Short document description, used in help center results under the title text
 content|Main document content
 source|Document source, currently either `devportal` or `helpcenter`
+sort_priority|Document sort priority in search results, smaller priority documents are shown first and same priority documents are sorted by Elasticsearch query score
 
 In addition to these `url` field should be provided with every document but it is not indexed or used in search queries. `url` is used in search result `href`.
 
@@ -70,7 +75,8 @@ document = {
     'description': 'This guide will get you started with Kafka',
     'content': 'Long document...',
     'url': 'https://aiven.io/contact',
-    'source': 'helpcenter'
+    'source': 'helpcenter',
+    'sort_priority': 2,
 }
 
 # Send the document to the index
@@ -80,3 +86,15 @@ es.index(index='devportal',
 ```
 
 You might also need to take care of removing documents that no longer exist.
+
+# Developer Portal page indexing
+
+Developer Portal pages are indexed with [scripts/index_pages.py](scripts/index_pages.py).
+The script parses built HTML files using [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+and extracts document title from `title` element and document content from `main` element child that has a `content` class (CSS selector `main .content`).
+
+Pages that we do not want to be indexed can be added to `INDEX_BLACKLIST` list in [scripts/index_pages.py](scripts/index_pages.py).
+
+# Help Center page indexing
+
+TODO
