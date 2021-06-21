@@ -6,19 +6,23 @@
 
 {% block content -%}
 <style>
-  .title-container {
+  .search .title-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 5px;
   }
 
-  .description {
+  .search .context {
+    word-wrap: break-word;
+  }
+
+  .search .description {
     margin: 5px 0;
     font-style: italic;
   }
 
-  .chip {
+  .search .chip {
     background-color: #E13834;
     border-radius: 5px;
     padding: 3px 10px;
