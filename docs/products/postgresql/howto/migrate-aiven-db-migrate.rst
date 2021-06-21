@@ -21,7 +21,7 @@ What you'll need
 * The source server is publicly available or there is a virtual private cloud (VPC) peering connection between the private networks.
 * You have a user account with access to the destination cluster from an external IP, as configured in ``pg_hba.conf`` on the source cluster.
 
-In order to use the **logical replication** methor, you'll need the following:
+In order to use the **logical replication** method, you'll need the following:
     
 * PostgreSQL version is 10 or higher.
 * Superuser access credentials to the source cluster or the ``aiven-extras`` extension installed. The extension allows you to perform publish/subscribe-style logical replication without a superuser account, and it is preinstalled on Aiven for PostgreSQL servers. See `Aiven Extras on GitHub <https://github.com/aiven/aiven-extras>`_.
