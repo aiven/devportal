@@ -137,7 +137,7 @@
           searchResults.append(container);
         }
 
-        if (data.resultCount !== 0 && data.currentPage > 0) {
+        if (data.resultCount !== 0 && data.currentPage > 1) {
           const pageParams = new URLSearchParams({
             q: query,
             page: data.currentPage - 1,
