@@ -1,7 +1,6 @@
 import glob
 from os import path
 from bs4 import BeautifulSoup
-from urllib.parse import urljoin
 from elasticsearch import Elasticsearch
 import hashlib
 import argparse
@@ -50,6 +49,7 @@ def create_es_base(es, index_name):
     es.indices.create(index=index_name, ignore=400)
     es.indices.put_mapping(index=index_name,
                            body={
+                               'dynamic': False,
                                'properties': {
                                    'title': {
                                        'type': 'text'
@@ -59,9 +59,6 @@ def create_es_base(es, index_name):
                                    },
                                    'content': {
                                        'type': 'text'
-                                   },
-                                   'url': {
-                                       'type': 'keyword'
                                    },
                                    'source': {
                                        'type': 'keyword'
