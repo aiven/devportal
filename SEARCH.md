@@ -53,8 +53,7 @@ The Elasticsearch index is used through the Netlify function in [netlify/functio
 
 * use OR-style query matching `title`, `description` and `content` (with ES `match_phrase_prefix`)
 * give higher value to `title`
-* give higher value to Developer Portal pages using `source` property
-* filter results by minimum score
+* show Developer Portal pages first using `sort_priority`
 
 ## Adding documents to the index using Python
 
