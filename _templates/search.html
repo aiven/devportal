@@ -1,10 +1,6 @@
-{% extends "page.html" %}
-
-{% block htmltitle -%}
+{% extends "page.html" %} {% block htmltitle -%}
 <title>Search Results - {{ docstitle|striptags|e }}</title>
-{% endblock %}
-
-{% block content -%}
+{% endblock %} {% block content -%}
 <style>
   .search .title-container {
     display: flex;
@@ -23,12 +19,34 @@
   }
 
   .search .chip {
-    background-color: #E13834;
+    background-color: #e13834;
     border-radius: 5px;
     padding: 3px 10px;
     font-size: 12px;
     color: white;
     font-weight: bold;
+  }
+
+  #search-results .pagination {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+  }
+
+  #search-results .pagination a {
+    padding: 10px;
+    border: 1px solid #dee2e6;
+    color: #007bff !important;
+  }
+
+  #search-results .pagination a:hover {
+    color: #0056b3 !important;
+    background-color: #e9ecef;
+  }
+
+  #search-results .pagination .active a {
+    color: #0056b3 !important;
+    background-color: #e9ecef;
   }
 </style>
 
@@ -36,11 +54,9 @@
   <h2>Search Results</h2>
   <p class="search-summary"></p>
   <ul class="search"></ul>
+  <ul class="pagination"></ul>
 </div>
-{% endblock %}
-
-{% block scripts -%}
-{{ super() }}
+{% endblock %} {% block scripts -%} {{ super() }}
 <script>
   function formatResultContent(result, fieldName) {
     let highlight = result.highlight[fieldName];
@@ -59,66 +75,126 @@
     if (summary.length < result.source[fieldName].length) {
       summary += "...";
     }
-    return summary
+    return summary;
   }
 
   window.onload = function () {
     var urlParams = new URLSearchParams(window.location.search);
     var query = urlParams.get("q");
+    var page = urlParams.get("page");
 
-    $('input.sidebar-search').attr('value', query);
+    $("input.sidebar-search").attr("value", query);
 
-    var searchSummary = $('#search-results .search-summary');
-    var searchResults = $('#search-results .search');
+    var searchSummary = $("#search-results .search-summary");
+    var searchResults = $("#search-results .search");
+    var pagination = $("#search-results .pagination");
 
-    $.get("/.netlify/functions/search?" + $.param({query: query}))
-    .done(function(data) {
-      if (data.results.length === 0) {
-        searchSummary.html("Your search did not match any documents.");
-      } else {
-        searchSummary.html("Search finished, found " + data.results.length + " page(s) matching the search query.");
-      }
-
-      for (var i = 0; i < data.results.length; i++) {
-        var result = data.results[i];
-
-        var container = $("<li/>");
-
-        var titleContainer = $("<div/>");
-        titleContainer.addClass("title-container")
-        container.append(titleContainer);
-
-        var link = $("<a/>");
-        link.attr("href", result.source.url);
-        link.html(formatResultContent(result, "title"));
-        titleContainer.append(link);
-
-        if (result.source.source === "helpcenter") {
-          var chip = $("<span/>");
-          chip.text("Help Center");
-          chip.addClass("chip");
-          titleContainer.append(chip);
+    $.get("/.netlify/functions/search?" + $.param({ query: query, page: page }))
+      .done(function (data) {
+        if (data.resultCount === 0) {
+          searchSummary.html("Your search did not match any documents.");
+        } else {
+          searchSummary.html(
+            "Search finished, found " +
+              data.resultCount +
+              " page(s) matching the search query."
+          );
         }
 
-        if (result.source.description) {
-          var description = $("<div/>");
-          description.addClass("description")
-          description.html(formatResultContent(result, "description"));
-          container.append(description);
+        for (var i = 0; i < data.results.length; i++) {
+          var result = data.results[i];
+
+          var container = $("<li/>");
+
+          var titleContainer = $("<div/>");
+          titleContainer.addClass("title-container");
+          container.append(titleContainer);
+
+          var link = $("<a/>");
+          link.attr("href", result.source.url);
+          link.html(formatResultContent(result, "title"));
+          titleContainer.append(link);
+
+          if (result.source.source === "helpcenter") {
+            var chip = $("<span/>");
+            chip.text("Help Center");
+            chip.addClass("chip");
+            titleContainer.append(chip);
+          }
+
+          if (result.source.description) {
+            var description = $("<div/>");
+            description.addClass("description");
+            description.html(formatResultContent(result, "description"));
+            container.append(description);
+          }
+
+          var context = $("<div/>");
+          context.addClass("context");
+          context.html(formatResultContent(result, "content"));
+          container.append(context);
+
+          searchResults.append(container);
         }
 
-        var context = $("<div/>");
-        context.addClass("context")
-        context.html(formatResultContent(result, "content"));
-        container.append(context);
+        if (data.currentPage > 0) {
+          const pageParams = new URLSearchParams({
+            q: query,
+            page: data.currentPage - 1,
+          });
 
-        searchResults.append(container);
-      }
-    })
-    .fail(function(e) {
-      console.error(e);
-      searchSummary.html("Could not get search results. Please try again later.");
-    });
+          var pageContainer = $("<li/>");
+
+          var pageLink = $("<a/>");
+          pageLink.attr("href", "/search.html?" + pageParams.toString());
+          pageContainer.append(pageLink);
+          pageLink.text("Previous");
+
+          pagination.append(pageContainer);
+        }
+
+        for (var i = 1; i <= data.pageCount; i++) {
+          const pageParams = new URLSearchParams({
+            q: query,
+            page: i,
+          });
+
+          var pageContainer = $("<li/>");
+
+          if (data.currentPage === i) {
+            pageContainer.addClass("active");
+          }
+
+          var pageLink = $("<a/>");
+          pageLink.attr("href", "/search.html?" + pageParams.toString());
+          pageContainer.append(pageLink);
+          pageLink.text(i);
+
+          pagination.append(pageContainer);
+        }
+
+        if (data.currentPage < data.pageCount) {
+          const pageParams = new URLSearchParams({
+            q: query,
+            page: data.currentPage + 1,
+          });
+
+          var pageContainer = $("<li/>");
+
+          var pageLink = $("<a/>");
+          pageLink.attr("href", "/search.html?" + pageParams.toString());
+          pageContainer.append(pageLink);
+          pageLink.text("Next");
+
+          pagination.append(pageContainer);
+        }
+      })
+      .fail(function (e) {
+        console.error(e);
+        searchSummary.html(
+          "Could not get search results. Please try again later."
+        );
+      });
   };
 </script>
 

@@ -4,25 +4,34 @@ const client = new Client({
   node: process.env.ES_URL,
 });
 
+const pageSize = 10;
+
 const handler = async (event) => {
   try {
     const query = event.queryStringParameters.query;
+    let currentPage = 1;
+    if (event.queryStringParameters.page) {
+      try {
+        currentPage = Math.max(
+          1,
+          parseInt(event.queryStringParameters.page, 10)
+        );
+      } catch (e) {
+        console.warn(
+          `Invalid page ${event.queryStringParameters.page} provided`
+        );
+      }
+    }
 
     const response = await client.search({
       index: "devportal",
       body: {
-        min_score: 15,
+        sort: [{ sort_priority: "asc" }, "_score"],
+        size: pageSize,
+        from: (currentPage - 1) * pageSize,
         query: {
           bool: {
             should: [
-              {
-                term: {
-                  source: {
-                    value: 'devportal',
-                    boost: 5
-                  }
-                }
-              },
               {
                 match_phrase_prefix: {
                   title: {
@@ -70,7 +79,12 @@ const handler = async (event) => {
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ results }),
+      body: JSON.stringify({
+        results,
+        resultCount: response.body.hits.total.value,
+        pageCount: Math.ceil(response.body.hits.total.value / pageSize),
+        currentPage,
+      }),
       headers: {
         "Content-Type": "application/json",
       },
