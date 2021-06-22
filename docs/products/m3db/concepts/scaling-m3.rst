@@ -30,7 +30,7 @@ We can use the disk space used by the unaggregated namespace over time as a basi
 
 .. list-table::
     :header-rows: 1
-   
+
     * - Namespace
       - Retention
       - Resolution
@@ -70,7 +70,7 @@ Read more about this configuration `in the M3DB documentation <https://m3db.io/d
 Number of files
 '''''''''''''''
 
-There is a limit to the number of files that each Aiven M3DB node can support. The number of files increases with the number of block shards that your namespace configuration requires. To increase the number of total blocks available, we recommend increasing the number of nodes in your setup.
+There is a limit to the number of files that each Aiven M3DB node can support. The number of files increases with the number of :ref:`block shards <Terminology Shard>` that your namespace configuration requires. To increase the number of total blocks available, we recommend increasing the number of nodes in your setup.
 
 CPU Usage
 ---------
@@ -79,7 +79,7 @@ CPU usage generally scales with the amount of work done; the number of operation
 
 * M3Aggregators are not particularly CPU bound.
 
-* M3Coordinator's main resource that is used is CPU. However, if there is some sort of network congestion and requests pile up, the memory usage can also spike. 
+* M3Coordinator's main resource that is used is CPU. However, if there is some sort of network congestion and requests pile up, the memory usage can also spike.
 
 Adding more nodes to provide more CPU resource is our recommended strategy,
 
@@ -94,21 +94,17 @@ The memory usage of M3 is the most difficult aspect of scaling. It consists of:
 
 * cached data for queries
 
-* storing data being aggregated in memory. This is only applicable if aggregated namespaces are configured, in which case the impact is seen in M3Aggregator  - or a more significant impact in M3Coordinator if M3Aggregator is not in use.
+* storing data being aggregated in memory (Only applicable if aggregated namespaces are configured, in which case the impact is seen in M3Aggregator  - or a more significant impact in M3Coordinator if M3Aggregator is not in use)
 
-* storing data for the current block, that is not yet written to disk (this is the main memory impact in M3DB)
+* storing data for the current block, that is not yet written to disk (represents the main memory impact in M3DB)
 
-The first three are fairly steady, regardless of configuration settings or points stored. However, the last two are the ones that cause the majority of scalability problems.
-
-The data being stored for aggregation scales with number of namespaces, times number of time series, and also number of points per block. Due to that, each added namespace adds significant memory cost (unless some of the time series are filtered).
-
-The data in current blocks (not yet persisted to disk as filesets) has also same pattern. It grows as any of the following grow:
+The first three are fairly steady, regardless of configuration settings or points stored. However, the last two are the ones that cause the majority of scalability problems. Both the data being stored for aggregation and the data in current blocks (not yet persisted to disk as filesets) scale linearly with:
 
 * number of time series
 
-* number of points within single block
-
 * number of configured namespaces
+
+* number of points within single block
 
 For efficient on-disk storage, M3's default recommendation is to have about 720 points per block. So for 15 second intervals, that would indicate 180 minutes, or 3 hours, per block. For longer lived namespaces this rule of thumb may lead to too much data being kept in memory. For example, if there is a point per day then that would indicate keeping a block open for two years, which we would not recommend. Instead, set the block size duration to be a day, or at the very most, a few days.
 
@@ -118,9 +114,9 @@ Given a consistent amount of points per second coming in, the memory usage can b
 
 * having fewer namespaces
 
-* filtering data that gets to aggregated namespaces 
+* filtering data that gets to aggregated namespaces
 
-M3Aggregator will also hold a subset of this data; the unaggregated namespace will not be included.  
+M3Aggregator will also hold a subset of this data; the unaggregated namespace will not be included.
 
 Scaling Recommendations
 -----------------------
@@ -132,8 +128,8 @@ Real-world example: Aiven production configuration
 
 At the moment we use with 30 second typical scrape interval with following namespace configuration:
 
-* 2 day unaggregated namespace, and 
+* 2 day unaggregated namespace, and
 
 * 1 month aggregated namespace with 10min resolution
 
-This approach to aggregation does increase the CPU and memory usage in comparison to just keeping the unaggregated data for longer, but our disk usage is much smaller using this approach.  
+This approach to aggregation does increase the CPU and memory usage in comparison to just keeping the unaggregated data for longer, but our disk usage is much smaller.
