@@ -1,7 +1,7 @@
 Getting Started
 ===============
 
-PostgreSQL is available in the `Aiven console <https://console.aiven.io>`_.
+Aiven for PostgreSQL is available in the `Aiven console <https://console.aiven.io>`_.
 
 Choose the PostgreSQL version, your cloud provider and location to deploy to, then choose which plan to use.
 
@@ -26,12 +26,12 @@ With :doc:`psql <howto/connect-psql>` you can connect to the PostgreSQL instance
 Load a Test Dataset in PostgreSQL
 ---------------------------------
 
-If you're checking out PostgreSQL, loading a test dataset will help you speeding up your knowledge. This example uses
+If you're checking out PostgreSQL, loading a test dataset will give you something to look at. This example uses
 ``dellstore2``, a standard store dataset with products, orders, inventory and customer information.
 
 1. Download the ``dellstore2-normal-1.0.tar.gz`` file from the `PostgreSQL website <https://www.postgresql.org/ftp/projects/pgFoundry/dbsamples/dellstore2/dellstore2-normal-1.0/>`_ and unzip it.
-2. Navigate to the ``dellstore2-normal-1.0`` folder on your terminal
-3. Connect to your PostgreSQL instance with :doc:`psql <howto/connect-psql>`
+2. Navigate to the ``dellstore2-normal-1.0`` folder on your terminal.
+3. Connect to your PostgreSQL instance with ``psql`` as shown above.
 4. Create a ``dellstore`` database and connect to it with the following command from ``psql``::
 
     CREATE DATABASE dellstore;
@@ -40,7 +40,7 @@ If you're checking out PostgreSQL, loading a test dataset will help you speeding
 
 .. Tip::
 
-    You can verify you're connected to the correct database if your ``psql`` terminal prefix is ``dellstore==>``
+    Your ``psql`` terminal prefix will change to ``dellstore==>`` when you are connected to the correct database.
 
 5. Populate the database by executing the following command from ``psql``::
 
@@ -50,7 +50,7 @@ If you're checking out PostgreSQL, loading a test dataset will help you speeding
 
     \d
 
-The output should look like::
+The output should look like this::
 
     List of relations
     Schema |           Name           |   Type   |  Owner
@@ -69,15 +69,15 @@ The output should look like::
     public | reorder                  | table    | avnadmin
     (12 rows)
 
-Further Readings
+Further Reading
 ----------------
 
-If you're learning PostgreSQL, you might find the following resources interesting:
+Here are some more resources to help you on your PostgreSQL journey:
 
-* How to connect to PostgreSQL across various languages
+* Code examples for connecting to PostgreSQL from your application:
     * :doc:`Go <howto/connect-go>`
     * :doc:`Python <howto/connect-python>`
-* How to use :doc:`PgAdmin <howto/connect-pgadmin>` with Aiven for PostgreSQL
-* How to :doc:`Migrate from your PostgreSQL to Aiven <concepts/aiven-db-migrate>`
-* Learn PostgreSQL by doing exercises at `PostgreSQL Exercises <https://pgexercises.com/>`_
+* How to :doc:`use PgAdmin <howto/connect-pgadmin>` with Aiven for PostgreSQL
+* How to :doc:`migrate your PostgreSQL to Aiven <concepts/aiven-db-migrate>`
+* Learn PostgreSQL with some `PostgreSQL Exercises <https://pgexercises.com/>`_
 * The `awesome PostgreSQL ecosystem <https://github.com/dhamaniasad/awesome-postgres>`_ of tools and solutions
