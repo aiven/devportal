@@ -37,7 +37,7 @@ If the replica server does not come back online during these 300 seconds, ``repl
 Controlled switchover during upgrades or migrations
 ---------------------------------------------------
 
-During maintenance updates, cloud migrations, or plan changes (see `here <2461799.html>`_ for more information on major version upgrades), the below procedure is followed:
+During maintenance updates, cloud migrations, or plan changes, the below procedure is followed:
 
 1. For each of the **replica** nodes (available only on Business and Premium plans), a new server is created, and data restored from a backup. Then the new server starts following the existing primary server. After the new server is up and running and data up-to-date, ``replica.servicename.aivencloud.com`` DNS entry is changed to point to it, and the old replica server is deleted.
 
