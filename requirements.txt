@@ -6,3 +6,4 @@ sphinxcontrib-mermaid==0.6.3
 sphinx-external-toc==0.1.0
 beautifulsoup4==4.9.3
 elasticsearch==7.13.1
+requests==2.25.1
