@@ -232,23 +232,31 @@ a:hover {
   color: var(--primaryColor);
 }
 
+.sidebar-tree .current-page > .reference {
+  font-weight: 400;
+}
+
 .sidebar-brand-text {
   display: none !important;
 }
 
+.sidebar-tree label:hover {
+  background: none;
+}
+
 .sidebar-tree .reference {
-  border-left: 2px solid transparent;
+  border-left: 1px solid transparent;
 }
 
 .sidebar-tree .reference:hover {
   background: none;
-  border-left: 2px solid var(--linkActive);
-  font-family: InterBold;
+  border-left: 1px solid var(--linkActive);
+  font-family: Inter;
 }
 
 .sidebar-tree .current-page > .reference {
   background: none !important;
-  border-left: 2px solid var(--linkActive);
+  border-left: 1px solid var(--linkActive);
   color: var(--linkActive) !important;
 }
 
@@ -263,6 +271,19 @@ a:hover {
 .sidebar-tree .toctree-l1 > .reference,
 .sidebar-tree .toctree-l1 > label .icon {
   color: var(--link);
+}
+
+.sidebar-tree .toctree-l1 > label .icon:hover {
+  color: var(--linkActive);
+}
+
+.sidebar-tree .toctree-l2 > .reference,
+.sidebar-tree .toctree-l2 > label .icon {
+  color: var(--link);
+}
+
+.sidebar-tree .toctree-l2 > label .icon:hover {
+  color: var(--linkActive);
 }
 
 .sidebar-search-container {
