@@ -19,12 +19,12 @@
   }
 
   .search .chip {
-    background-color: #e13834;
+    background-color: #dadada;
     border-radius: 5px;
     padding: 3px 10px;
-    font-size: 12px;
-    color: white;
-    font-weight: bold;
+    font-size: 10px;
+    color: #4a4b57;
+    text-transform: uppercase;
   }
 
   #search-results .pagination {
@@ -35,18 +35,19 @@
 
   #search-results .pagination a {
     padding: 10px;
-    border: 1px solid #dee2e6;
-    color: #007bff !important;
+    text-decoration: none;
   }
 
   #search-results .pagination a:hover {
-    color: #0056b3 !important;
+    color: var(--linkActive) !important;
     background-color: #e9ecef;
   }
 
   #search-results .pagination .active a {
-    color: #0056b3 !important;
+    color: var(--linkActive) !important;
     background-color: #e9ecef;
+    border-radius: 5px;
+    text-decoration: none;
   }
 </style>
 
