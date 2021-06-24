@@ -5,9 +5,8 @@ Aiven Developer Portal uses custom Elasticsearch based search. The files related
 * the search results page [_templates/search.html](_templates/search.html)
 * the search form for the sidebar [_templates/sidebar/search.html](_templates/sidebar/search.html)
 * the Netlify function that is used by the search results page [netlify/functions/search/search.js](netlify/functions/search/search.js)
-* the python script that creates the index and adds the pages to the index [scripts/index_pages.py](scripts/index_pages.py)
-
-The index name in Elasticsearch is `devportal`.
+* the python script that creates the index and index mapping [scripts/create_index.py](scripts/create_index.py)
+* the python script that parses and adds the Developer Portal pages to the index [scripts/index_developer_portal_pages.py](scripts/index_developer_portal_pages.py)
 
 ## Index mapping
 
@@ -55,6 +54,42 @@ The Elasticsearch index is used through the Netlify function in [netlify/functio
 * give higher value to `title`
 * show Developer Portal pages first using `sort_priority`
 
+# Creating the index
+
+The index is created with [scripts/create_index.py](scripts/create_index.py). You can run it with
+
+```
+make create-index ES_URL=https://es.url/here
+```
+
+This can be run multiple times and has to be run at least once before the other commands that add documents to the index.
+
+The index name in Elasticsearch is `devportal`.
+# Developer Portal page indexing
+
+Developer Portal pages are indexed with [scripts/index_developer_portal_pages.py](scripts/index_developer_portal_pages.py).
+The script parses built HTML files using [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+and extracts document title from `title` element and document content from `main` element child that has a `content` class (CSS selector `main .content`).
+
+Pages that we do not want to be indexed can be added to `INDEX_BLACKLIST` list in [scripts/index_developer_portal_pages.py](scripts/index_developer_portal_pages.py).
+
+You can run the script with
+
+```
+make index-devportal ES_URL=https://es.url/here
+```
+
+# Help Center page indexing
+
+Developer Portal pages are indexed with [scripts/index_help_center_pages.py](scripts/index_help_center_pages.py).
+The script fetches HTTP pages from [https://help.aiven.io/](https://help.aiven.io/) and parses them using [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/).
+
+You can run the script with
+
+```
+make index-helpcenter ES_URL=https://es.url/here
+```
+
 ## Adding documents to the index using Python
 
 Using `elasticsearch` library:
@@ -85,15 +120,3 @@ es.index(index='devportal',
 ```
 
 You might also need to take care of removing documents that no longer exist.
-
-# Developer Portal page indexing
-
-Developer Portal pages are indexed with [scripts/index_pages.py](scripts/index_pages.py).
-The script parses built HTML files using [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-and extracts document title from `title` element and document content from `main` element child that has a `content` class (CSS selector `main .content`).
-
-Pages that we do not want to be indexed can be added to `INDEX_BLACKLIST` list in [scripts/index_pages.py](scripts/index_pages.py).
-
-# Help Center page indexing
-
-TODO

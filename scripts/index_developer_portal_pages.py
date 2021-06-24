@@ -44,33 +44,6 @@ def parse_pages(html_build_dir):
     return pages
 
 
-def create_es_base(es, index_name):
-    # If needed uncomment next line to start over
-    # es.indices.delete(index=index_name)
-    es.indices.create(index=index_name, ignore=400)
-    es.indices.put_mapping(index=index_name,
-                           body={
-                               'dynamic': False,
-                               'properties': {
-                                   'title': {
-                                       'type': 'text'
-                                   },
-                                   'description': {
-                                       'type': 'text'
-                                   },
-                                   'content': {
-                                       'type': 'text'
-                                   },
-                                   'source': {
-                                       'type': 'keyword'
-                                   },
-                                   'sort_priority': {
-                                       'type': 'integer'
-                                   }
-                               }
-                           })
-
-
 def index_pages(es, index_name, pages):
     es.delete_by_query(index=index_name,
                        body={'query': {
@@ -92,6 +65,5 @@ if __name__ == '__main__':
     index_name = 'devportal'
 
     es = Elasticsearch([args.es_url])
-    create_es_base(es, index_name)
     pages = parse_pages(args.html_build_dir)
     index_pages(es, index_name, pages)
