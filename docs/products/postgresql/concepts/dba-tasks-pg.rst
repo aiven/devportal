@@ -1,16 +1,16 @@
 Perform DBA-type tasks in Aiven for PostgreSQL
 ==============================================
 
-Aiven doesn't allow superuser access to Aiven PostgreSQL services. However, most DBA-type actions can still be achieved using a different method.
+Aiven doesn't allow superuser access to Aiven for PostgreSQL services. However, most DBA-type actions are still available through other methods.
 
 ``avnadmin`` user privileges
 ----------------------------
 
-By default, in every PostgreSQL instance, an ``avnadmin`` database user is created, with permissions to perform most of the usual DB management operations, for example it can manage:
+By default, in every PostgreSQL instance, an ``avnadmin`` database user is created, with permissions to perform most of the usual DB management operations. It can manage:
 
 * Databases (``CREATE DATABASE``, ``DROP DATABASE``)
 * Database users (``CREATE USER/ROLE``,`` DROP USER/ROLE``)
-* Extensions (``CREATE EXTENSION``), check out the list of :doc:`available extensions <../reference/list-of-extensions>`
+* Extensions (``CREATE EXTENSION``), you can also view the :doc:`list of available extensions <../reference/list-of-extensions>`
 * Access permissions (``GRANT``, ``REVOKE``)
 * Logical replication with the ``REPLICATION`` privilege
 
@@ -31,4 +31,4 @@ You can install the ``aiven_extras`` extension executing the following command w
 
     CREATE EXTENSION aiven_extras CASCADE;
 
-For more information about ``aiven_extras`` check the dedicated `GitHub repository <https://github.com/aiven/aiven-extras>`_
+For more information about ``aiven_extras`` check the `GitHub repository <https://github.com/aiven/aiven-extras>`_ for the project.
