@@ -1,5 +1,5 @@
-PostgreSQL upgrade and failover procedures
-============================================
+Upgrade and failover procedures
+===============================
 
 Aiven for PostgreSQL Business and Premium plans include **standby read-replica** servers. If the primary server fails, a standby replica server is automatically promoted as new primary server.
 
@@ -15,6 +15,7 @@ There are two distinct cases when failover or switchover occurs:
     For Hobbyist and Startup plans, due to missing standby read-replica servers, uncontrolled disconnections can only be mitigated by restoring data from a backup, and can result in data loss of the database changes since the latest available backup.
 
 .. _Failover PGUncontrolled:
+
 Uncontrolled primary/replica disconnection
 ------------------------------------------
 
@@ -30,7 +31,7 @@ After the replica promotion, both ``servicename.aivencloud.com`` and ``replica.s
 Replica server disconnection
 """"""""""""""""""""""""""""
 
-If the **replica** server disappears, Aiven's management platform uses a **300-second timeout** before marking the server as down and creating a new replica server. During this period, the DNS ``replica.servicename.aivencloud.com`` points to the disappeared server that might not serve queries anymore. The DNS record pointing to the primary server (``servicename.aivencloud.com``) works fine.
+If the **replica** server disappears, Aiven's management platform uses a **300-second timeout** before marking the server as down and creating a new replica server. During this period, the DNS ``replica.servicename.aivencloud.com`` points to the disappeared server that might not serve queries anymore. The DNS record pointing to the primary server (``servicename.aivencloud.com``) remains unchanged.
 
 If the replica server does not come back online during these 300 seconds, ``replica.servicename.aivencloud.com`` is pointed to the primary server until a new replica server is fully functional.
 

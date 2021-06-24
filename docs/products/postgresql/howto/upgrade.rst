@@ -6,11 +6,11 @@ PostgreSQL in-place upgrades allows to upgrade an instances to a new major versi
 .. Warning::
     Aiven recommends to **test the upgrade on a fork** of an existing database. Testing on a fork provides the benefit of verifying the impact of the upgrade for the specific service without affecting the running service.
 
-The PostgreSQL in-place upgrade is defined in the following steps:
+Here are the steps to upgrade a PostgreSQL service:
 
 1. Log in to the Aiven web console and select the instance that you want to upgrade.
 
-2. On the *Overview* page, scroll down to the *PostgreSQL version* section and click **Upgrade PostreSQL**.
+2. On the **Overview** page, scroll down to the **PostgreSQL version** section and click **Upgrade PostgreSQL**.
 
 3. Select the version that you want to upgrade to.
 
@@ -34,7 +34,7 @@ The PostgreSQL in-place upgrade is defined in the following steps:
    Optimizer statistics are not transferred during major version upgrades, running ``ANALYZE`` ensures that queries run efficiently.
 
 
-More information about upgrade and failover procedures can be found in the :doc:`dedicated page <../concepts/how-upgrade-failover>`.
+More information about upgrade and failover procedures can be found in the :doc:`dedicated page <../concepts/upgrade-failover>`.
 
 .. Warning::
-    Once the upgrade is started, the PostgreSQL instance can't be restored to the previous version. All the pre-existing PostgreSQL backups can no longer be used for procedures like Point In Time Recovery, Since they were created with an earlier PostgreSQL major version.
+    Once the upgrade is started, the PostgreSQL instance can't be restored to the previous version. Similarly, the pre-existing backups cannot be used for procedures such as Point In Time Recovery since they were created with an earlier version of PostgreSQL.

@@ -1,14 +1,18 @@
-High availability in Aiven for PostgreSQL
-=========================================
+High availability
+=================
 
-Aiven for PostgreSQL is available in a variety of plans offering different levels of high availability. The selected plan defines the features available, a summary is provided in the table below:
+Aiven for PostgreSQL is available on a variety of plans, offering different levels of high availability. The selected plan defines the features available, and a summary is provided in the table below:
 
 .. list-table::
+    :header-rows: 1
 
     * - Plan
       - High Availability Features
       - Backup History
-    * - **Hobbyist** and **Startup**
+    * - **Hobbyist**
+      - Single-node with limited availability
+      - 2 days
+    * - **Startup**
       - Single-node with limited availability
       - 2 days
     * - **Business**
@@ -18,8 +22,8 @@ Aiven for PostgreSQL is available in a variety of plans offering different level
       - Three-node (primary + standby + standby) with top availability characteristics
       - 30-day
 
-Why primary and standby nodes?
-------------------------------
+About primary and standby nodes
+-------------------------------
 
 Aiven's Business and Premium plans offer :ref:`primary <Terminology PGPrimary>` and :ref:`standby <Terminology PGStandby>` nodes. Having a standby service is useful for multiple reasons:
 
@@ -28,22 +32,15 @@ Aiven's Business and Premium plans offer :ref:`primary <Terminology PGPrimary>` 
 * Provides a quicker database time to restore with a controlled failover in case of failures, as the standby is already installed, running, and synchronised with the data
 * Can be used for read-only queries to reduce the load on the primary server
 
-Failures Handling
------------------
+Failure handling
+----------------
 
 **Minor failures**, such as service process crashes or temporary loss of network access, are handled automatically by Aiven in all plans without any major changes to the service deployment. The service automatically restores normal operation once the crashed process is automatically restarted or when network access is restored.
 
 **Severe failures**, such as losing a node entirely in case of hardware or severe software problems, require drastic recovery measures. The Aiven monitoring infrastructure automatically detects a failing node both when the node starts reporting issues in the self-diagnostics or when stops communicating. In such cases, the monitoring infrastructure automatically schedules a new replacement node to be created.
 
 .. Note::
-    In the event of database failover, the *Service URI* of your service remains the same; only the IP address will change to point to the new primary node.
-
-Single-node Hobbyist and Startup service plans
-----------------------------------------------
-
-Hobbyist and Startup plans provide a single node; when it's lost, Aiven immediately starts the automatic process of creating a new replacement node. The new node starts up, restores its state from the latest available backup, and resumes serving customers.
-
-Since there is just a single node providing the service, the service is unavailable for the duration of the restoration. In addition, any write operations made since the backup of the latest :ref:`WAL<Terminology PGWAL>` file are lost. Typically, this time window is limited to either five minutes of time or one :ref:`WAL<Terminology PGWAL>` file.
+    In the event of database failover, the **Service URI** of your service remains the same; only the IP address will change to point to the new primary node.
 
 Highly available Business and Premium service plans
 ---------------------------------------------------
@@ -62,4 +59,11 @@ If all the **primary** and **standby nodes** fail at the same time, new nodes ar
 .. Note::
     For backups and restoration, Aiven utilises the popular Open Source backup daemon :ref:`PGHoard <Terminology PGHoard>`, which Aiven maintains. It makes real-time copies of :ref:`WAL<Terminology PGWAL>` files to an object store in compressed and encrypted format.
 
-More information about on PostgreSQL upgrade and failover procedures is available at :doc:`the dedicated page <how-upgrade-failover>`.
+Single-node Hobbyist and Startup service plans
+----------------------------------------------
+
+Hobbyist and Startup plans provide a single node; when it's lost, Aiven immediately starts the automatic process of creating a new replacement node. The new node starts up, restores its state from the latest available backup, and resumes serving customers.
+
+Since there is just a single node providing the service, the service is unavailable for the duration of the restoration. In addition, any write operations made since the backup of the latest :ref:`WAL<Terminology PGWAL>` file are lost. Typically, this time window is limited to either five minutes of time or one :ref:`WAL<Terminology PGWAL>` file.
+
+More information about on PostgreSQL upgrade and failover procedures is available at :doc:`the dedicated page <upgrade-failover>`.
