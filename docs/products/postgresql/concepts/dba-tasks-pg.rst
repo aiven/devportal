@@ -22,7 +22,7 @@ By default, in every PostgreSQL instance, an ``avnadmin`` database user is creat
 
 The ``aiven_extras`` extension, developed and maintained by Aiven, enables the ``avnadmin`` to perform superuser-like functionalities like:
 
-* Manage `substriptions <https://www.postgresql.org/docs/current/catalog-pg-subscription.html>`_
+* Manage `subscriptions <https://www.postgresql.org/docs/current/catalog-pg-subscription.html>`_
 * Manage ``auto_explain`` `functionality <https://www.postgresql.org/docs/current/auto-explain.html>`_
 * Manage `publications <https://www.postgresql.org/docs/current/sql-createpublication.html>`_
 * :doc:`Claim public schema ownership <../howto/claim-public-schema-ownership>`
@@ -31,4 +31,4 @@ You can install the ``aiven_extras`` extension executing the following command w
 
     CREATE EXTENSION aiven_extras CASCADE;
 
-For more information about ``aiven_extras`` check the dedicated `github repository <https://github.com/aiven/aiven-extras>`_
+For more information about ``aiven_extras`` check the dedicated `GitHub repository <https://github.com/aiven/aiven-extras>`_
