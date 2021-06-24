@@ -1,7 +1,7 @@
-PostgreSQL Exposed Metrics in Grafana
+PostgreSQL Metrics Exposed in Grafana
 =====================================
 
-The metrics/dashboard integration in the Aiven console enables to push PostgreSQL metrics to an external endpoint like DataDog or to create an integration and a prebuilt dashboard in Aiven for Grafana. For more information on enabling the integration, see :doc:`../howto/report-metrics-grafana.rst`. This article describes the default dashboard created in Grafana for any PostgreSQL instance.
+The metrics/dashboard integration in the Aiven console enables you to push PostgreSQL metrics to an external endpoint like DataDog or to create an integration and a prebuilt dashboard in Aiven for Grafana. For more information on enabling the integration, see :doc:`../howto/report-metrics-grafana`. This article describes the default dashboard created in Grafana for any PostgreSQL instance.
 
 General Info about Default Dashboards
 -------------------------------------
@@ -10,7 +10,7 @@ A few key points about the default dashboards pre-created by Aiven in Grafana:
 
 1. The PostgreSQL dashboards show all tables and indexes for all logical databases since Aiven cannot determine tables or indexes relevance.
 2. Some metrics are gathered but not shown in the default dashboard, you can access all available metrics by creating new dashboards.
-3. New dashboards can be created, including any preferred set of metrics between the available and custom filtering criteria. The default dashboard can be used as a template to make the process easier.
+3. New dashboards can be created to show any metrics or use any filtering criteria. The default dashboard can be used as a template to make the process easier.
 
 .. Warning::
     When creating new dashboards, do not prefix the names with **“Aiven”** because they may be removed or replaced. The "Aiven" prefix is used to identify Aiven's system-managed dashboards. This also applies to the default dashboard, for which any direct editing to it could be lost.
@@ -38,6 +38,7 @@ This section shows a high-level overview of the service node health. Major issue
 The following metrics are shown
 
 .. list-table::
+    :header-rows: 1
 
     * - Parameter Name
       - Parameter Definition
@@ -68,6 +69,7 @@ This section shows a more detailed listing of various generic system-related met
 The following metrics are shown
 
 .. list-table::
+    :header-rows: 1
 
     * - Parameter Name
       - Parameter Definition
@@ -136,6 +138,7 @@ The metrics in the PostgreSQL overview section are grouped by logical database. 
 
 
 .. list-table::
+    :header-rows: 1
 
     * - Parameter Name
       - Parameter Definition
@@ -143,7 +146,7 @@ The metrics in the PostgreSQL overview section are grouped by logical database. 
     * - ``Database size``
       - The size of the files associated with a logical database
       - Some potentially large files that are not included in this value. Most notably, the write-ahead log (WAL) is not included in the size of the logical databases as it is not tied to any specific logical database.
-    * - ``Connections:``
+    * - ``Connections``
       - The number of open connections to the database
       - Each connection puts a large burden on the PostgreSQL server and this number :doc:`should typically be fairly small even for large plans <../concepts/pg-connection-pooling>`. Use connection pooling to :doc:`reduce the number of connections <../concepts/pg-connection-pooling>` to the actual database server.
     * - ``Oldest running query age``
@@ -152,22 +155,22 @@ The metrics in the PostgreSQL overview section are grouped by logical database. 
     * - ``Oldest connection age``
       - The age of the oldest connection.
       - Old open connections with open transactions are a problem, because they prevent ``VACUUM`` from performing correctly, resulting in bloat and performance degradation.
-    * - ``Commits / s``
+    * - ``Commits / sec``
       - The number of commits per second
       -
-    * - ``Rollbacks / s``
+    * - ``Rollbacks / sec``
       - The number of rollbacks per second
       -
-    * - ``Disk block reads / s``
+    * - ``Disk block reads / sec``
       - The number of 8 kB disk blocks that PostgreSQL reads per second, excluding reads that were satisfied by the buffer cache.
       - The read operations may have been satisfied by the operating system's file system cache.
-    * - ``Buffer cache disk block reads / s``
+    * - ``Buffer cache disk block reads / sec``
       - The number of 8 kB disk blocks that PostgreSQL reads per second that were already in buffer cache.
       -
     * - ``Temp files created / min``
       - The number of temporary files that PostgreSQL created per minute.
       - Temporary files are usually created when a query requests a large result set that can't fit in memory and needs to be sorted or when a query joins large result sets. A high number of temporary files or temporary file bytes may indicate that you should increase the working memory setting.
-    * - ``Temp file bytes written / s``
+    * - ``Temp file bytes written / sec``
       - The number of bytes written to temporary files per second
       - This value should be kept at reasonable levels to avoid the server becoming IO-bound from having to write so much data to temporary files.
     * - ``Deadlocks / min``
@@ -188,20 +191,21 @@ This section contains graphs related to the size and use of **indexes**. Since t
 
 
 .. list-table::
+    :header-rows: 1
 
     * - Parameter Name
       - Parameter Definition
       - Additional Notes
-    * - Index size``
+    * - ``Index size``
       - The size of indexes on disk
       -
-    * - Index scans / s``
+    * - ``Index scans / sec``
       - The number of scans per second per index
       -
-    * - Index tuple reads / s``
+    * - ``Index tuple reads / sec``
       - The number or tuples read from an index during index scans
       -
-    * - Index tuple fetches / s``
+    * - ``Index tuple fetches / sec``
       - The number of table rows fetched during index scans
       -
 
@@ -214,6 +218,7 @@ This section contains graphs related to the size and use of **tables**. As with 
     :alt: Aiven Grafana Dashboard for PostgreSQL database Indexes Section
 
 .. list-table::
+    :header-rows: 1
 
     * - Parameter Name
       - Parameter Definition
@@ -224,16 +229,16 @@ This section contains graphs related to the size and use of **tables**. As with 
     * - ``Table size total``
       - The total size of tables, including indexes and `TOAST data <https://www.postgresql.org/docs/current/storage-toast.html>`_
       -
-    * - `Table seq scans / s``
+    * - ``Table seq scans / sec``
       - The number of sequential scans per table per second
       - For small tables, sequential scans may be the best way of accessing the table data and having a lot of sequential scans may be normal, but for larger tables, sequential scans should be very rare.
-    * - ``Table tuple inserts / s``
+    * - ``Table tuple inserts / sec``
       - The number of tuples inserted per second
       -
-    * - ``Table tuple updates / s``
+    * - ``Table tuple updates / sec``
       - The number of tuples updated per second
       -
-    * - ``Table tuple deletions / s``
+    * - ``Table tuple deletions / sec``
       - The number of tuples deleted per second
       -
     * - ``Table dead tuples``
@@ -253,6 +258,7 @@ This section contains graphs related to **vacuum** and **analyze** operations. T
     :alt: Aiven Grafana Dashboard for PostgreSQL database Vacuum and Analyse Section
 
 .. list-table::
+    :header-rows: 1
 
     * - Parameter Name
       - Parameter Definition
@@ -283,6 +289,7 @@ This section contains PostgreSQL metrics graphs that are not covered by the prev
     :alt: Aiven Grafana Dashboard for PostgreSQL database Miscellaneous Section
 
 .. list-table::
+    :header-rows: 1
 
     * - Parameter Name
       - Parameter Definition

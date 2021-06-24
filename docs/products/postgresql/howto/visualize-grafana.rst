@@ -1,7 +1,7 @@
 Visualise PostgreSQL Data with Grafana
 ======================================
 
-PostgreSQL can hold a huge variety of datasets and creating visualisations helps reconcile numbers and gather insights on top of raw figures. Luckily, Aiven can set up the Grafana and the integration between the two services for you.
+PostgreSQL can hold a wide variety of types of data, and creating visualisations helps gather insights on top of raw figures. Luckily, Aiven can set up the Grafana and the integration between the two services for you.
 
 
 Integrate PostgreSQL and Grafana
@@ -16,10 +16,10 @@ Integrate PostgreSQL and Grafana
 
 3. On the service overview page for your Grafana service, click the "Service URI" link. The username and password for your Grafana service is also available on the service overview page.
 
-Now your Grafana service is connected to M3DB as a data source and you can go ahead and visualise your data.
+Now your Grafana service is connected to PostgreSQL as a data source and you can go ahead and visualise your data.
 
-Visualising PostgreSQL data in Grafana
---------------------------------------
+Visualize PostgreSQL data in Grafana
+------------------------------------
 
 In Grafana, create a new dashboard and add a panel to it.
 
