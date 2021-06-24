@@ -7,6 +7,7 @@ Aiven Developer Portal uses custom Elasticsearch based search. The files related
 * the Netlify function that is used by the search results page [netlify/functions/search/search.js](netlify/functions/search/search.js)
 * the python script that creates the index and index mapping [scripts/create_index.py](scripts/create_index.py)
 * the python script that parses and adds the Developer Portal pages to the index [scripts/index_developer_portal_pages.py](scripts/index_developer_portal_pages.py)
+* the python script that fetches, parses and adds the Help Center pages to the index [scripts/index_help_center_pages.py](scripts/index_help_center_pages.py)
 
 ## Index mapping
 
