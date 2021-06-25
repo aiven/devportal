@@ -23,7 +23,10 @@ Visualize PostgreSQL data in Grafana
 
 In Grafana, create a new dashboard and add a panel to it.
 
-The datasource dropdown shows ``--Grafana--`` by default, but your PostgreSQL service will be listed here with a Prometheus logo. Prometheus is managing the communication between PostgreSQL and Grafana.
+The datasource dropdown shows ``--Grafana--`` by default, but your PostgreSQL service will be listed here with a usual logo.
+
+.. image:: /images/products/postgresql/grafana-pg-logo.png
+   :alt: Screenshot of a Grafana panel showing PostgreSQL logo
 
 With your PostgreSQL service selected, the "Query" section will show the metrics from the database in its dropdown.
 
