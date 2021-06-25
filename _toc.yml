@@ -4,8 +4,6 @@ options:
 
 entries:
   # --------- GLOBAL -----------
-  - file: docs/products/index
-
   - file: docs/tools/index
     entries:
       - file: docs/tools/cli
@@ -16,7 +14,6 @@ entries:
       - file: docs/tools/terraform
 
   # -------- PRODUCT-SPECIFIC --------
-  - file: docs/products/kafka/index
   - file: docs/products/postgresql/index
     title: PostgreSQL
     entries:

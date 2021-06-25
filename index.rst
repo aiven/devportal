@@ -1,70 +1,86 @@
-Welcome to Aiven Developer Portal
-=================================
+Aiven Developer
+===============
 
-Aiven offers managed services for the best open source data technologies, on a cloud of your choice.
+What can we help you with today?
 
-Clouds
-------
+.. raw:: html
 
-We offer multiple cloud options because we believe that everyone should have access to great data platforms to host their applications. Our customers tell us they love the multi-cloud approach because they know that they aren't locked in to one particular cloud platform for all their data needs.
+    <form class="sidebar-search-container" method="get" action="search.html">
+      <input class="sidebar-search" placeholder=Search name="q">
+      <input type="hidden" name="check_keywords" value="yes">
+      <input type="hidden" name="area" value="default">
+    </form>
 
-You can choose from Amazon Web Services (AWS), Google Cloud Platform (GCP), Microsoft Azure Cloud, DigitalOcean Cloud and UpCloud, and then pick the region where your service should be hosted.
 
+*(Looking for the previous documentation? https://help.aiven.io or use the search above)*
 
-Pricing
+----------------
+
+Explore
 -------
 
-You are billed on a monthly basis, and you only pay for the time that the service is running. Data transfer costs are included. 
-You can check more on our `Pricing page <https://aiven.io/pricing>`_.
-
-Products
---------
-
-Relational databases that you know and love ❤️
+Learn about the Aiven platform
 
 .. panels::
+    :card: shadow
 
-    |icon-postgres| **PostgreSQL** The lastest versions, and all the extensions you need.
+    |icon-postgres| **PostgreSQL** Powerful relational database platform. We have the latest versions, and all the extensions you need.
 
-    ---
+    +++
 
-    |icon-mysql| **MySQL** World's most widely-used open source database.
-
-Streaming data and events 📨
-
-.. panels::
-
-    |icon-kafka| **Apache Kafka** For data streaming services, look no further than Apache Kafka.
+    .. link-button:: docs/products/postgresql/index
+        :type: ref
+        :text: Read more
+        :classes: stretched-link
 
     ---
 
-    |icon-kafka-connect| **Kafka Connect** To connect all the things into (source) and out of (sink) Apache Kafka.
+    |icon-m3db| **M3DB** Distributed time-series database for scalable solutions, with M3 Coordinator included, and M3 Aggregator also available.
+
+    +++
+
+    .. link-button:: docs/products/m3db/index
+        :type: ref
+        :text: Read more
+        :classes: stretched-link
 
     ---
 
-    |icon-kafka-mirrormaker| **MirrorMaker2** Everything from one Apache Kafka to another.
-
-
-Time series solutions ⌚
-
-.. panels::
-
-    |icon-m3db| **M3DB** Distributed time-series for scalable solutions.
+    |icon-kafka| **Apache Kafka** Streaming data pipelines for the modern enterprise. Apache MirrorMaker2 and Kafka Connect also available.
 
     ---
 
-    |icon-influxdb| **InfluxDB** Time-series data, managed well.
+    |icon-elasticsearch| **ElasticSearch** Document database with specialist search features, bring your freeform ddocuments, logs or metrics, and make sense of them here.
 
+    ---
 
-Features
---------
+    |icon-cassandra| **Cassandra** High performance storage solution for large data quantities. This specialist data solution is a partitioned row store.
 
-Aiven offers everything you'd expect but here are some highlights:
+    ---
 
-* Self-service and interuption-free **service upgrades**. Some of our services allow "downgrade" as well. You know, just in case.
+    |icon-redis| **Redis** In-memory data store for all your high-peformance short-term storage and caching needs.
 
-* Read-only **replicas**. Whether for peace of mind, a reporting backend, you can easily spin up a read replica of your database on a different cloud.
+    ---
 
-* Database **forking**. Create a fork of your database to test migrations, upgrades, or anything else you'd like to try in a safe space before you go ahead.
+    |icon-mysql| **MySQL** Popular and much-loved relational database platform.
 
+    ---
 
+    |icon-influxdb| **InfluxDB** Specialist time series database, with good tooling support.
+
+    ---
+
+    |icon-grafana| **Grafana** The visualization tool you need to explore and understand your data. Grafana integrates with the other services in just a few clicks.
+
+Tools
+-----
+
+You can use the Aiven platform in the way that best fits your workflow:
+
+* Use the `web console <https://console.aiven.io>`_ for a convenient and friendly web-based experience.
+
+* The ``avn`` :doc:`command-line tool <docs/tools/cli>` brings Aiven features to your terminal.
+
+* For programmatic integrations, the :doc:`Aiven API <docs/tools/api/index>` provides an interface you can use.
+
+* The :doc:`docs/tools/terraform` gives orchestration features for infrastructure-as-code projects.
