@@ -12,7 +12,8 @@ What can we help you with today?
     </form>
 
 
-*(Looking for the previous documentation? https://help.aiven.io or use the search above)*
+
+(Looking for the previous documentation? Visit `Aiven Help <https://help.aiven.io>`_ or use the search above.)
 
 ----------------
 
