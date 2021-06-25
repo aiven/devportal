@@ -91,4 +91,4 @@ This type of error is often related to the lack of superuser-level privileges bl
 A typical example is due to failing ``COMMENT ON EXTENSION`` queries trying to replace the documented comment string for an extension. In such cases, the errors are harmless and can be ignored. Alternatively, use the ``--no-comments`` parameter in ``pg_restore`` to skip these queries.
 
 .. Tip::
-    ``pg_restore`` offers similar ``--no-XXX`` options to switch off other, often unnecessary restore queries. More information are avaialble at the `dedicated documentation page <https://www.postgresql.org/docs/current/app-pgrestore.html>`_.
+    ``pg_restore`` offers similar ``--no-XXX`` options to switch off other, often unnecessary restore queries. More information is available in the `PostgreSQL documentation <https://www.postgresql.org/docs/current/app-pgrestore.html>`_.
