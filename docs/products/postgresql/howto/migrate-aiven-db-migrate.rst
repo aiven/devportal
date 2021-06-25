@@ -21,6 +21,8 @@ Variable                Description
 ``DEST_PG_PLAN``        Aiven Plan for the destination Aiven PostgreSQL service
 ==================      =======================================================================
 
+.. _PG MigrateWAL:
+
 Set ``wal_level`` to ``logical``
 ''''''''''''''''''''''''''''''''
 
@@ -52,13 +54,13 @@ The output includes::
   Remove migration
      => --remove-option migration
   Database name for bootstrapping the initial connection
-     => -c migration.dbname=<string>  
+     => -c migration.dbname=<string>
   Hostname or IP address of the server where to migrate data from
-     => -c migration.host=<string>  
+     => -c migration.host=<string>
   Password for authentication with the server where to migrate data from
-     => -c migration.password=<string>  
+     => -c migration.password=<string>
   Port number of the server where to migrate data from
-     => -c migration.port=<integer>  
+     => -c migration.port=<integer>
   The server where to migrate data from is secured with SSL
      => -c migration.ssl=<boolean>  (default=True)
   User name for authentication with the server where to migrate data from
