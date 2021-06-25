@@ -23,7 +23,7 @@ Visualize PostgreSQL data in Grafana
 
 In Grafana, create a new dashboard and add a panel to it.
 
-The datasource dropdown shows ``--Grafana--`` by default, but your PostgreSQL service will be listed here with a usual logo.
+The datasource dropdown shows ``--Grafana--`` by default, but you will also find your PostgreSQL service listed here.
 
 .. image:: /images/products/postgresql/grafana-pg-logo.png
    :alt: Screenshot of a Grafana panel showing PostgreSQL logo
