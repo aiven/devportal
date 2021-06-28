@@ -131,3 +131,44 @@ Verify the replication removal with::
      subdbid | subname | subowner | subenabled | subconninfo | subslotname | subsynccommit | subpublications
     ---------+---------+----------+------------+-------------+-------------+---------------+-----------------
     (0 rows)
+
+
+Manage inactive or lagging replication slots
+--------------------------------------------
+
+Inactive or lagging replication could cause problems in a database, like an ever increasing disk usage not associated to any growth of the amount of data in the database. Fulfilling the disk causes the database instance to stop serving clients thus a loss of service.
+
+1. Assess the replication slots status via ``psql``::
+
+    SELECT slot_name,restart_lsn FROM pg_replication_slots;
+
+The command output is like::
+
+        slot_name   │ restart_lsn
+     ───────────────┼─────────────
+      pghoard_local │ 6E/16000000
+           debezium | 5B/8B0
+     (2 rows)
+
+2. Compare the ``restart_lsn`` values between the replication slot in analysis (``debezium`` in the above example) and ``pghoard_local``: the hexadecimal difference between the them states how many write-ahead-logging (WAL) entries are waiting for the target ``debezium`` connector to catch up.
+
+.. Note::
+    In the above example the difference is 0x6E - 0x5B = 19 entries
+
+
+3. If, after assessing the lag, the ``debezium`` connector results lagging or inactive:
+
+* If the ``debezium`` connector is still in use, a recommended approach is to restart the process and verify if it solves the problem.
+* If the ``debezium`` connector is no longer needed, run the following command to remove it::
+
+    SELECT pg_drop_replication_slot('debezium');
+
+4. In both cases, after the next PostgreSQL checkpoint, the disk space that the WAL logs have reserved for the ``debezium`` connector should be freed up.
+
+.. Note::
+
+    The checkpoint occurs only when
+        * an hour has elapsed (we use a ``checkpoint_timeout`` value of 3600 seconds), or
+        * 5% of disk write operations is reached (the ``max_wal_size`` value is set to 5% of the instance storage).
+
+For further information about WAL and checkpointing, read the `PostgreSQL documentation <https://www.postgresql.org/docs/current/wal-configuration.html>`_.
