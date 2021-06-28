@@ -74,6 +74,7 @@ a {
 
 a:hover {
   color: var(--linkActive) !important;
+  text-decoration-color: var(--linkActive) !important;
 }
 
 @media (prefers-color-scheme: dark) {
