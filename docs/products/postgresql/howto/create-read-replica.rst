@@ -39,7 +39,7 @@ To use a read only replica:
 Verify replica usage
 --------------------
 
-To check whether you are connected to a primary or replica node, run the following command within a connected ``psql`` terminal::
+To check whether you are connected to a primary or replica node, run the following command within a ``psql`` terminal already connected to a database::
 
     SELECT * FROM pg_is_in_recovery();
 
