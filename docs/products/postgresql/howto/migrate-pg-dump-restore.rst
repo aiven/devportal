@@ -2,7 +2,7 @@ Migrate to Aiven for PostgreSQL with ``pg_dump`` and ``pg_restore``
 ===================================================================
 
 .. Tip::
-    We recommend to migrate your PostgreSQL database to Aiven by using :doc:`aiven-db-migrate <migrate-aiven-db-migrate>`. 
+    We recommend to migrate your PostgreSQL database to Aiven by using :doc:`aiven-db-migrate <migrate-aiven-db-migrate>`.
 
 Aiven for PostgreSQL supports the same tools as a regular PostgreSQL database, so you can migrate using the standard ``pg_dump`` and ``pg_restore`` tools.
 
@@ -12,7 +12,7 @@ The duration of the process depends on the size of your existing database.
 During the migration no new data written to the database is included. You should turn off all write operations to your source database server before you run the ``pg_dump``.
 
 .. Tip::
-    You can keep the write operations enabled, and use the steps to try out the migration process first before the actual migration. This way, you will find out about the duration, and check everything works without downtime. 
+    You can keep the write operations enabled, and use the steps to try out the migration process first before the actual migration. This way, you will find out about the duration, and check everything works without downtime.
 
 Variables
 '''''''''
@@ -74,3 +74,21 @@ The ``--jobs`` option in this command instructs the operation to use 4 CPUs to d
     newdb=> ANALYZE;
 
 If you got this far, then all went well and your Aiven for PostgreSQL database is now ready to use.
+
+Handle ``pg_restore`` errors
+''''''''''''''''''''''''''''
+
+When migrating PostgreSQL databases to Aiven via ``pg_restore`` you could encounter errors like::
+
+    could not execute query: ERROR: must be owner of extension <extension>
+
+For example, the following ``pg_restore`` error appears quite commonly::
+
+  pg_restore: [archiver (db)] could not execute query: ERROR: must be owner of extension <some_extension>
+
+This type of error is often related to the lack of superuser-level privileges blocking non-essential queries.
+
+A typical example is due to failing ``COMMENT ON EXTENSION`` queries trying to replace the documented comment string for an extension. In such cases, the errors are harmless and can be ignored. Alternatively, use the ``--no-comments`` parameter in ``pg_restore`` to skip these queries.
+
+.. Tip::
+    ``pg_restore`` offers similar ``--no-XXX`` options to switch off other, often unnecessary restore queries. More information is available in the `PostgreSQL documentation <https://www.postgresql.org/docs/current/app-pgrestore.html>`_.

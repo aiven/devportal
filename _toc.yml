@@ -26,11 +26,13 @@ entries:
         entries:
           - glob: docs/products/postgresql/concepts/*
       - file: docs/products/postgresql/howto
-        title: Howto
+        title: HowTo
         entries:
           - glob: docs/products/postgresql/howto/*
       - file: docs/products/postgresql/reference/list-of-extensions
       - file: docs/products/postgresql/reference/pg-connection-limits
+      - file: docs/products/postgresql/reference/terminology
+      - file: docs/products/postgresql/reference/pg-metrics
 
   - file: docs/products/m3db/index
     title: M3DB
@@ -41,6 +43,7 @@ entries:
         entries:
           - glob: docs/products/m3db/concepts/*
       - file: docs/products/m3db/howto
+        title: HowTo
         entries:
           - glob: docs/products/m3db/howto/*
       - glob: docs/products/m3db/reference/*

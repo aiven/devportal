@@ -1,5 +1,5 @@
-PostgreSQL connection pooling
-=============================
+Connection pooling
+==================
 
 Connection pooling in Aiven for PostgreSQL services allows you to maintain very large numbers of connections to a database while minimizing the consumption of server resources.
 
