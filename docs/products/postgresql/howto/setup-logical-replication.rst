@@ -171,4 +171,4 @@ The command output is like::
         * an hour has elapsed (we use a ``checkpoint_timeout`` value of 3600 seconds), or
         * 5% of disk write operations is reached (the ``max_wal_size`` value is set to 5% of the instance storage).
 
-For further information about WAL and checkpointing, read the `PostgreSQL documentation <https://www.postgresql.org/docs/current/wal-configuration.html>`_.
+For further information about WAL and checkpoints, read the `PostgreSQL documentation <https://www.postgresql.org/docs/current/wal-configuration.html>`_.
