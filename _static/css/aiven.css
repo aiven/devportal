@@ -378,3 +378,19 @@ code.literal {
   font-size: 16px;
   font-weight: 300;
 }
+
+#howto > .toctree-wrapper > ul > .toctree-l1 > a.reference:hover {
+  color: var(--linkActive);
+  text-decoration-color: var(--linkActive) !important;
+}
+
+#howto
+  > .toctree-wrapper
+  > ul
+  > .toctree-l1
+  > ul
+  > .toctree-l2
+  > a.reference:hover {
+  color: var(--linkActive);
+  text-decoration-color: var(--linkActive) !important;
+}
