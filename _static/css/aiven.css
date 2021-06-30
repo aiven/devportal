@@ -324,6 +324,17 @@ a:hover {
   background-color: var(--infoBg);
 }
 
+.card-footer > .card-text > .btn {
+  border: 1px solid var(--gray);
+  border-radius: 5px;
+  text-decoration: none;
+  float: right;
+}
+
+.card-footer > .card-text > .btn:hover {
+  border: 1px solid var(--linkActive);
+}
+
 .notranslate > .highlight {
   background: var(--highlight) !important;
   color: var(--white);
@@ -375,4 +386,51 @@ code.literal {
 
 .mobile-header {
   background-color: var(--bg) !important;
+}
+
+.card-footer {
+  background-color: unset !important;
+  border-top: unset !important;
+  padding: 0.75rem 1.25rem;
+}
+
+#howto > .toctree-wrapper > ul > li.toctree-l1,
+#concepts > .toctree-wrapper > ul > li.toctree-l1 {
+  list-style: none !important;
+  margin: 12px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#howto > .toctree-wrapper > ul > .toctree-l1 > ul > .toctree-l2,
+#concepts > .toctree-wrapper > ul > .toctree-l1 > ul > .toctree-l2,
+#concepts
+  > .toctree-wrapper
+  > ul
+  > .toctree-l1
+  > ul
+  > .toctree-l2
+  > ul
+  > .toctree-l3 {
+  list-style: none !important;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+#howto > .toctree-wrapper > ul > .toctree-l1 > a.reference:hover,
+#concepts > .toctree-wrapper > ul > .toctree-l1 > a.reference:hover {
+  color: var(--linkActive);
+  text-decoration-color: var(--linkActive) !important;
+}
+
+#howto,
+#concepts
+  > .toctree-wrapper
+  > ul
+  > .toctree-l1
+  > ul
+  > .toctree-l2
+  > a.reference:hover {
+  color: var(--linkActive);
+  text-decoration-color: var(--linkActive) !important;
 }
