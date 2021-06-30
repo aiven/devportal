@@ -366,25 +366,37 @@ code.literal {
   padding: 0.75rem 1.25rem;
 }
 
-#howto > .toctree-wrapper > ul > li.toctree-l1 {
+#howto > .toctree-wrapper > ul > li.toctree-l1,
+#concepts > .toctree-wrapper > ul > li.toctree-l1 {
   list-style: none !important;
   margin: 12px;
   font-weight: bold;
   font-size: 18px;
 }
 
-#howto > .toctree-wrapper > ul > .toctree-l1 > ul > .toctree-l2 {
+#howto > .toctree-wrapper > ul > .toctree-l1 > ul > .toctree-l2,
+#concepts > .toctree-wrapper > ul > .toctree-l1 > ul > .toctree-l2,
+#concepts
+  > .toctree-wrapper
+  > ul
+  > .toctree-l1
+  > ul
+  > .toctree-l2
+  > ul
+  > .toctree-l3 {
   list-style: none !important;
   font-size: 16px;
   font-weight: 300;
 }
 
-#howto > .toctree-wrapper > ul > .toctree-l1 > a.reference:hover {
+#howto > .toctree-wrapper > ul > .toctree-l1 > a.reference:hover,
+#concepts > .toctree-wrapper > ul > .toctree-l1 > a.reference:hover {
   color: var(--linkActive);
   text-decoration-color: var(--linkActive) !important;
 }
 
-#howto
+#howto,
+#concepts
   > .toctree-wrapper
   > ul
   > .toctree-l1
