@@ -12,6 +12,10 @@ set BUILDDIR=_build
 
 if "%1" == "" goto help
 
+if "%1" == "livehtml" (
+	sphinx-autobuild %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% %2
+)
+
 %SPHINXBUILD% >NUL 2>NUL
 if errorlevel 9009 (
 	echo.
