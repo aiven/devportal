@@ -18,42 +18,42 @@ General parameters
     - string
     -
     -
-    - Custom password for admin user. Defaults to random string. Must be set only when a new service is being created.
+    - Custom password for the admin user. It defaults to a random string, and should be set when a new service is being created.
   * - ``admin_username``
     - string
     -
     - ``avnadmin``
-    - Custom username for admin user. Must be set only when a new service is being created.
+    - Custom username for admin user. It should be set when a new service is being created.
   * - ``backup_hour``
     - integer
     -
     - 0-24
-    - The hour of day (in UTC) when backup for the service is started. New backup is only started if previous backup has already completed.
+    - The hour of the day (in UTC) when backup for the service is started. New backup is started only if the previous backup has been completed.
   * - ``backup_minute``
     - integer
     -
     - 0-60
-    - The minute of an hour when backup for the service is started. New backup is only started if previous backup has already completed.
+    - The minute of the hour when backup for the service is started. New backup is started only if the previous backup has been completed.
   * - ``ip_filter``
     - array
     - ``0.0.0.0/0``
     -
-    - Restricts incoming connections from CIDR address block, e.g. ``10.20.0.0/16``
+    - Restricts the incoming connections from the Classless Inter-Domain Routing (CIDR) address block, e.g. ``10.20.0.0/16``.
   * - ``pg.deadlock_timeout``
     - integer
     -
     -
-    - Amount of time, in milliseconds, to wait on a lock before checking to see if there is a deadlock condition.
+    - Amount of waiting time on a lock, in milliseconds, before the check to see if there is a deadlock condition.
   * - ``pg.idle_in_transaction_session_timeout``
     - integer
     -
     -
-    - Time out sessions with open transactions after this number of milliseconds
+    - Times out all sessions with open transactions after this time in milliseconds.
   * - ``pg.jit``
     - boolean
     -
     -
-    - Controls system-wide use of Just-in-Time Compilation (JIT).
+    - Controls the system-wide use of Just-in-Time Compilation (JIT).
   * - ``pg.log_error_verbosity``
     - string
     -
@@ -63,217 +63,217 @@ General parameters
     - string
     -
     -
-    - Choose from one of the available log-formats. These can support popular log analysers like ``pgbadger``, ``pganalyze`` etc.
+    - Lets you choose from one of the available log-formats. Thisupports log analysers, such as: ``pgbadger``, ``pganalyze``, etc.
   * - ``pg.log_min_duration_statement``
     - integer
     -
     -
-    - Log statements that take more than this number of milliseconds to run, -1 disables
+    - Logs statements that take more than the specified number of milliseconds to run. The -1 disables it.
   * - ``pg.max_files_per_process``
     - integer
     -
     -
-    - PostgreSQL maximum number of files that can be open per process
+    - The maximum number of PostgreSQL files that can be open per process.
   * - ``pg.max_locks_per_transaction``
     - integer
     -
     -
-    - PostgreSQL maximum locks per transaction
+    - The maximum PostgreSQL locks per transaction.
   * - ``pg.max_logical_replication_workers``
     - integer
     -
     -
-    - PostgreSQL maximum logical replication workers (taken from the pool of ``max_parallel_workers``)
+    - The maximum PostgreSQL logical replication workers (as defined by the pool of ``max_parallel_workers``).
   * - ``pg.max_parallel_workers``
     - integer
     -
     -
-    - Maximum number of workers that the system can support for parallel queries
+    - The maximum number of workers that the system can support for parallel queries.
   * - ``pg.max_parallel_workers_per_gather``
     - integer
     -
     -
-    - Maximum number of workers that can be started by a single ``Gather`` or ``Gather Merge`` node
+    - The maximum number of workers that can be started by a single ``Gather`` or ``Gather Merge`` node.
   * - ``pg.max_pred_locks_per_transaction``
     - integer
     -
     -
-    - Maximum predicate locks per transaction
+    - The maximum predicate locks per transaction.
   * - ``pg.max_prepared_transactions``
     - integer
     -
     -
-    - Maximum prepared transactions
+    - The maximum prepared transactions.
   * - ``pg.max_replication_slots``
     - integer
     -
     -
-    - Maximum replication slots
+    - The maximum replication slots.
   * - ``pg.max_stack_depth``
     - integer
     -
     -
-    - Maximum depth of the stack in bytes
+    - The maximum depth of the stack in bytes.
   * - ``pg.max_standby_archive_delay``
     - integer
     -
     -
-    - Maximum standby archive delay in milliseconds
+    - The maximum standby archive delay in milliseconds.
   * - ``pg.max_standby_streaming_delay``
     - integer
     -
     -
-    - Maximum standby streaming delay in milliseconds
+    - The maximum standby streaming delay in milliseconds.
   * - ``pg.max_wal_senders``
     - integer
     -
     -
-    - Maximum WAL senders
+    - The maximum Write-ahead logging (WAL) senders.
   * - ``pg.max_worker_processes``
     - integer
     -
     -
-    - Maximum number of background processes that the system can support
+    - The maximum number of background processes that the system can support.
   * - ``pg.pg_partman_bgw.interval``
     - integer
     -
     -
-    - Time interval between ``pg_partman``'s scheduled tasks
+    - Time interval between the ``pg_partman`` scheduled tasks.
   * - ``pg.pg_partman_bgw.role``
     - string
     -
     -
-    - Controls which role to use for ``pg_partman``'s scheduled background tasks.
+    - Controls which role to use for the ``pg_partman`` scheduled background tasks.
   * - ``pg.pg_stat_statements.track``
     - string
     - ``top``
     - ``top``, ``all``, ``none``
-    - Controls which statements are counted. Specify ``top`` to track top-level statements (those issued directly by clients), ``all`` to also track nested statements (such as statements invoked within functions), or ``none`` to disable statement statistics collection.
+    - Controls which statements are counted. Specify ``top`` to track top-level statements (those issued directly by clients), ``all`` to track nested statements (such as statements invoked within functions), or ``none`` to disable statement statistics collection.
   * - ``pg.temp_file_limit``
     - integer
     -
     -
-    - Temporary file limit in KiB, -1 for unlimited
+    - Temporary file limit in KiB. Set -1 for unlimited.
   * - ``pg.timezone``
     - string
     -
     -
-    - Service timezone
+    - The service timezone.
   * - ``pg.track_activity_query_size``
     - integer
     -
     -
-    - Number of bytes reserved to track the currently executing command for each active session.
+    - The number of bytes reserved to track the command being executed for each active session.
   * - ``pg.track_commit_timestamp``
     - string
     -
     -
-    - Recording of transactions commit time.
+    - The recording of transactions commit time.
   * - ``pg.track_functions``
     - string
     -
     -
-    - Tracking of function call counts and time used.
+    - The tracking of function call counts and time used.
   * - ``pg.track_io_timing``
     - string
     - ``off``
     -
-    - Timing of database I/O calls. The parameter is off by default, because it will repeatedly query the operating system for the current time, which may cause significant overhead on some platforms.
+    - The timing of the database input/output calls. The parameter is off by default, as it repeatedly queries the operating system for the current time, which can cause significant overhead on some platforms.
   * - ``pg.wal_sender_timeout``
     - integer
     -
     -
-    - Terminate replication connections that are inactive for longer than this amount of time, in milliseconds. Setting this value to zero disables the timeout.
+    - Terminates the replication connections that are inactive for longer than the specified amount of time, in milliseconds. Setting this value to zero disables the timeout.
   * - ``pg.wal_writer_delay``
     - integer
     - ``200ms``
     -
-    - ``WAL`` flush interval in milliseconds. Note that setting this value to lower than the default ``200ms`` may negatively impact performance
-  * - ``pg_read_replica``
+    - Write-ahead logging (``WAL``) flush interval in milliseconds. Setting this value to anything lower than the default ``200ms`` can negatively impact performance.
+  * - ``pg_read_replica`` (deprecated)
     - boolean
     -
     -
-    - Defines the forked service as a read replica: The setting is **deprecated**. Use read-replica service integration instead.
-  * - ``pg_service_to_fork_from``
+    - Defines the forked service as a read replica. **The setting is deprecated**. Use ``read-replica`` service integration instead.
+  * - ``pg_service_to_fork_from`` (deprecated)
     - string
     -
     -
-    - Name of the PG Service from which to fork. The setting is **deprecated**, use ``service_to_fork_from``).
+    - The name of the PostgreSQL service from which to fork. **The setting is deprecated**. Use ``service_to_fork_from`` instead.
   * - ``project_to_fork_from``
     - string
     -
     -
-    - Name of another project to fork a service from. It has effect only when a new service is being created.
+    - The name of a project to fork a service from. It can only be used when a new service is being created.
   * - ``pg_version``
     - string
     -
     -
-    - PostgreSQL major version
+    - The major version of PostgreSQL.
   * - ``private_access.pg``
     - boolean
     -
     -
-    - Allow clients to connect to PostgreSQL with a DNS name that always resolves to the service's private IP addresses. Only available in certain network locations
+    - Allows clients to connect to PostgreSQL with a domain name system (DNS) name that always resolves to the service private IP addresses. It is only available in certain network locations.
   * - ``private_access.prometheus``
     - boolean
     -
     -
-    - Allow clients to connect to Prometheus with a DNS name that always resolves to the service's private IP addresses. Only available in certain network locations
+    - Allows clients to connect to Prometheus with a  domain name system (DNS) name that always resolves to the service private IP addresses. It is only available in certain network locations.
   * - ``privatelink_access.pg``
     - boolean
     -
     -
-    - Enable PostgreSQL over private link
+    - Enables PostgreSQL over private link.
   * - ``public_access.pg``
     - boolean
     -
     -
-    - Allow clients to connect to pg from the public internet for service nodes that are in a project VPC or another type of private network
+    - Allows clients to connect to PostgreSQL from the public internet for service nodes that are in a project VPC or another type of private network.
   * - ``public_access.prometheus``
     - boolean
     -
     -
-    - Allow clients to connect to Prometheus from the public internet for service nodes that are in a project VPC or another type of private network
+    - Allow clients to connect to Prometheus from the public internet for service nodes that are in a Virtual Private Cloud (VPC) project or another type of private network.
   * - ``recovery_target_time``
     - string
     -
     -
-    - Recovery target time when forking a service. It has effect only when a new service is being created.
+    - The recovery target time when forking a service. It can only be used when a new service is being created.
   * - ``service_to_fork_from``
     - string
     -
     -
-    - Name of another service to fork from. This has effect only when a new service is being created.
+    - The name of a service to fork from. This can only be used when a new service is being created.
   * - ``shared_buffers_percentage``
     - number
     -
     - 20-60 (float)
-    - Percentage of total RAM that the database server uses for shared memory buffers. Valid range is 20-60 (float), which corresponds to 20% - 60%. This setting adjusts the shared_buffers configuration value.
+    - The percentage of total RAM that the database server uses for shared memory buffers. A valid range is 20-60 (float), which corresponds to 20% - 60%. This setting adjusts the shared_buffers configuration value.
   * - ``static_ips``
     - boolean
     -
     -
-    - Static IP addresses: Use static public IP addresses
+    - The static IP addresses: Use static public IP addresses.
   * - ``synchronous_replication``
     - string
     -
     -
-    - Enables synchronous replication type. Note that the service plan also needs to support synchronous replication.
+    - Enables synchronous replication type. To use it, make sure your service plan supports synchronous replication.
   * - ``timescaledb.max_background_workers``
     - integer
     -
     -
-    - The number of background workers for ``timescaledb`` operations. You should configure this setting to the sum of your number of databases and the total number of concurrent background workers you want running at any given point in time.
+    - The number of background workers for ``timescaledb`` operations. You should configure this setting to the sum of your number of databases, and the total number of the concurrent background workers you want running at any given point in time.
   * - ``variant``
     - string
     -
     -
-    - Variant of the PostgreSQL service, may affect the features that are exposed by default
+    - The variant of the PostgreSQL service which can affect the features that are delivered by default.
   * - ``work_mem``
     - integer
     -
     -
-    - Sets the maximum amount of memory to be used by a query operation (such as a sort or hash table) before writing to temporary disk files, in MB. Default is 1MB + 0.075% of total RAM (up to 32MB).
+    - Sets the maximum amount of memory to be used by a query operation (such as a sort or hash table) before writing to temporary disk files, in MB. The default is 1MB + 0.075% of total RAM (up to 32MB).
 
 Migration parameters
 --------------------
@@ -290,42 +290,42 @@ Migration parameters
     -
     -
     -
-    - Removes migration option
+    - Removes the migration option.
   * - ``migration.dbname``
     - string
     -
     -
-    - Database name for bootstrapping the initial connection
+    - The database name for bootstrapping the initial connection.
   * - ``migration.host``
     - string
     -
     -
-    - Hostname or IP address of the server where to migrate data from
+    - The hostname or IP address of the server to migrate data from.
   * - ``migration.ignore_dbs``
     - string
     -
     -
-    - Comma-separated list of databases, which should be ignored during migration (supported by MySQL only at the moment)
+    - The comma-separated list of databases which should be ignored during migration (only supported by MySQL at the moment).
   * - ``migration.password``
     - string
     -
     -
-    - Password for authentication with the server where to migrate data from
+    - The password for server authentication to migrate data from.
   * - ``migration.port``
     - integer
     -
     -
-    - Port number of the server where to migrate data from
+    - The port number of the server to migrate data from.
   * - ``migration.ssl``
     - boolean
     - ``True``
     -
-    - The server where to migrate data from is secured with SSL
+    - The server to migrate data from is secured with SSL.
   * - ``migration.username``
     - string
     -
     -
-    - User name for authentication with the server where to migrate data from
+    - The user name for server authentication to migrate data from
 
 ``autovacuum`` parameters
 -------------------------
@@ -347,32 +347,32 @@ Migration parameters
     - integer
     - 50
     -
-    - Minimum number of inserted, updated or deleted tuples needed to trigger an ``ANALYZE`` in any one table.
+    - The minimum number of inserted, updated or deleted tuples needed to trigger an ``ANALYZE`` in any table.
   * - ``pg.autovacuum_freeze_max_age``
     - integer
     -
     -
-    - Maximum age (in transactions) that a table's ``pg_class.relfrozenxid`` field can attain before a ``VACUUM`` operation is forced to prevent transaction ID wraparound within the table. Note that the system will launch ``autovacuum`` processes to prevent wraparound even when ``autovacuum`` is otherwise disabled. This parameter will cause the server to be restarted.
+    - The maximum age (in transactions) that a table ``pg_class.relfrozenxid`` field can attain before a ``VACUUM`` operation is forced to prevent transaction ID wraparound within the table. Note that the system launches ``autovacuum`` processes to prevent wraparound even when ``autovacuum`` is disabled. This parameter causes the server to be restarted.
   * - ``pg.autovacuum_max_workers``
     - integer
     - 3
     -
-    - Maximum number of ``autovacuum`` processes (other than the ``autovacuum`` launcher) that may be running at any one time. This parameter can only be set at server start.
+    - The maximum number of ``autovacuum`` processes (different than the ``autovacuum`` launcher) that can be running at a time. This parameter can only be set at the server start.
   * - ``pg.autovacuum_naptime``
     - integer
     - 60
     -
-    - Minimum delay between ``autovacuum`` runs on any given database. The delay is measured in seconds
+    - The minimum delay between ``autovacuum`` runs on any database. The delay is measured in seconds.
   * - ``pg.autovacuum_vacuum_cost_delay``
     - integer
     - 20
     -
-    - Cost delay value that will be used in automatic ``VACUUM`` operations. If -1 is specified, the regular ``vacuum_cost_delay`` value will be used.
+    - The cost delay value that is used in automatic ``VACUUM`` operations. If -1 is specified, the regular ``vacuum_cost_delay`` value will be used.
   * - ``pg.autovacuum_vacuum_cost_limit``
     - integer
     - -1
     -
-    - Cost limit value that will be used in automatic ``VACUUM`` operations. If -1 is specified, the regular ``vacuum_cost_limit`` value will be used.
+    - The cost limit value that isused in automatic ``VACUUM`` operations. If -1 is specified, the regular ``vacuum_cost_limit`` value will be used.
   * - ``pg.autovacuum_vacuum_scale_factor``
     - number
     - 0.2 (20% of table size)
@@ -382,12 +382,12 @@ Migration parameters
     - integer
     - 50
     -
-    - Minimum number of updated or deleted tuples needed to trigger a VACUUM in any one table.
+    - The minimum number of updated or deleted tuples needed to trigger a ``VACUUM`` in a table.
   * - ``pg.log_autovacuum_min_duration``
     - integer
     - -1
     -
-    - Causes each action executed by ``autovacuum`` to be logged if it ran for at least the specified number of milliseconds. Setting this to zero logs all ``autovacuum`` actions. -1 (the default) disables logging ``autovacuum`` actions.
+    - Causes each action executed by ``autovacuum`` to be logged, as long as it runs for at least the specified number of milliseconds. Setting this to zero logs all ``autovacuum`` actions. -1 (the default) disables logging the ``autovacuum`` actions.
 
 
 ``bgwriter`` parameters
@@ -410,17 +410,17 @@ Migration parameters
     - integer
     - 512 (kilobytes)
     -
-    - Whenever more than ``bgwriter_flush_after`` bytes have been written by the background writer, attempt to force the OS to issue these writes to the underlying storage. Specified in kilobytes, Setting of 0 disables forced write-back.
+    - If more than the specified ``bgwriter_flush_after`` bytes have been written by the background writer, it attempts to force the OS to issue the writes to the underlying storage. It is specified in kilobytes. Setting it to 0 disables the forced write-back.
   * - ``pg.bgwriter_lru_maxpages``
     - integer
     - 100
     -
-    - Maximum number of buffers to be written by the background writer on each round. Setting this to zero disables background writing.
+    - The maximum number of buffers to be written by the background writer on each round. Setting this to zero disables background writing.
   * - ``pg.bgwriter_lru_multiplier``
     - number
     - 2.0
     -
-    - The average recent need for new buffers is multiplied by ``bgwriter_lru_multiplier`` to arrive at an estimate of the number that will be needed during the next round, (up to ``bgwriter_lru_maxpages``). 1.0 represents a “just in time” policy of writing exactly the number of buffers predicted to be needed. Larger values provide some cushion against spikes in demand, while smaller values intentionally leave writes to be done by server processes.
+    - The ``bgwriter_lru_multiplier`` is a number used to multiply the recent average buffer needs in order to arrive at an estimate of the number that will be needed during the next round, (up to ``bgwriter_lru_maxpages``). 1.0 represents a “just in time” policy of writing exactly the number of buffers predicted to be needed. Any bigger values provide a buffer for spikes in demand, while smaller values intentionally leave writes to be done by server processes.
 
 ``pgbouncer`` parameters
 ------------------------
@@ -437,64 +437,64 @@ Migration parameters
     - integer
     -
     -
-    - If the automatically created database pools have been unused this many seconds, they are freed. If 0 then timeout is disabled.
+    - The number of seconds after which - if unused - the automatically created database pools are freed. If set to 0, then timeout is disabled.
   * - ``pgbouncer.autodb_max_db_connections``
     - integer
     -
     -
-    - Overall Maximum number of server connections per database (regardless of user). Setting it to 0 means unlimited.
+    - The overall maximum number of server connections per database (regardless of user). Setting it to 0 means it is unlimited.
   * - ``pgbouncer.autodb_pool_mode``
     - string
     - ``session``
     - ``session``, ``transaction``, ``statement``
-    - ``PGBouncer`` pool mode: with ``session`` the server is released back to pool after client disconnects. With ``transaction`` the server is released back to pool after transaction finishes. With ``statement`` the server is released back to pool after query finishes (transactions spanning multiple statements are disallowed in this mode)
+    - The ``PGBouncer`` pool mode: with ``session``, the server is released back to the pool after the client disconnects; with ``transaction``, the server is released back to the pool after the transaction finishes; with ``statement`` the server is released back to the pool after the query finishes (transactions spanning multiple statements are disallowed in this mode).
   * - ``pgbouncer.autodb_pool_size``
     - integer
     -
     -
-    - If non-zero creates automatically a pool of that size per user when a pool doesn't exist.
+    - When set to non-zero, it sutomatically creates a pool of the specified size per user, provided that the pool doesn't exist.
   * - ``pgbouncer.ignore_startup_parameters``
     - array
     -
     -
-    - List of parameters to ignore when given in startup packet
+    - The list of parameters to ignore when given in startup packet.
   * - ``pgbouncer.min_pool_size``
     - integer
     -
     -
-    - Add more server connections to pool if below this number. Improves behavior when usual load comes suddenly back after period of total inactivity. The value is capped at the pool size.
+    - Adds more server connections to the pool if the pool connection number is smaller than this number. It improves the behavior when the usual load comes back suddenly after a period of total inactivity. The value is capped at the pool size.
   * - ``pgbouncer.server_idle_timeout``
     - integer
     -
     -
-    - If a server connection has been idle more than this many seconds it will be dropped. If 0 then timeout is disabled.
+    - The amount of time in seconds after which the server connection is dropped. If set to 0, then timeout is disabled.
   * - ``pgbouncer.server_lifetime``
     - integer
     -
     -
-    - The pooler will close an unused server connection that has been connected longer than this.
+    - The amount of time after which the pooler closes any unused server connection.
   * - ``pgbouncer.server_reset_query_always``
     - boolean
     -
     -
-    - Run ``server_reset_query`` (``DISCARD ALL``) in all pooling modes
+    - Runs ``server_reset_query`` (``DISCARD ALL``) in all pooling modes.
   * - ``pglookout.max_failover_replication_time_lag``
     - integer
     - 60
     -
-    - Number of seconds of master unavailability before triggering database failover to standby
+    - The number of seconds of master unavailability before database failover is triggered to standby.
   * - ``private_access.pgbouncer``
     - boolean
     -
     -
-    - Allow clients to connect to ``pgbouncer`` with a DNS name that always resolves to the service's private IP addresses. Only available in certain network locations
+    - Allows the clients to connect to ``pgbouncer`` with a domain name system (DNS) name that always resolves to the service private IP addresses. It is only available in certain network locations.
   * - ``privatelink_access.pgbouncer``
     - boolean
     -
     -
-    - Enable ``PGbouncer`` over a private link
+    - Enables the ``PGbouncer`` over a private link.
   * - ``public_access.pgbouncer``
     - boolean
     -
     -
-    - Allows clients to connect to `PGbouncer`` from the public internet for service nodes that are in a project VPC or another type of private network
+    - Allows the clients to connect to `PGbouncer`` from the public internet for service nodes that are in a virtual private cloud (VPC) or another type of private network.
