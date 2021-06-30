@@ -74,6 +74,7 @@ a {
 
 a:hover {
   color: var(--linkActive) !important;
+  text-decoration-color: var(--linkActive) !important;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -248,6 +249,10 @@ a:hover {
   border-left: 1px solid transparent;
 }
 
+.sidebar-tree label {
+  background: none !important;
+}
+
 .sidebar-tree .reference:hover {
   background: none;
   border-left: 1px solid var(--linkActive);
@@ -258,6 +263,7 @@ a:hover {
   background: none !important;
   border-left: 1px solid var(--linkActive);
   color: var(--linkActive) !important;
+  font-weight: 400 !important;
 }
 
 .sidebar-tree .current > .reference {
@@ -273,6 +279,7 @@ a:hover {
   color: var(--link);
 }
 
+.sidebar-tree .toctree-l1 > .reference,
 .sidebar-tree .toctree-l1 > label .icon:hover {
   color: var(--linkActive);
 }
