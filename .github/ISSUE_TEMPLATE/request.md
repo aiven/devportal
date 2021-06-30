@@ -1,14 +1,15 @@
 ---
-name: 😱 Something is wrong
-about: Typo, outdated info, confusing language? Tell us
+name: 💡 Request some content
+about: What would make our docs even better?
 ---
 
-# What's wrong?
+# What should we add to our content collections?
 
-(be specific, screenshots or a copy/paste of the affected part of the page is useful)
-
-
-# URL of affected page, and any other information
+(more information is useful here! Were you trying to do something particular?)
 
 
 
+
+# Is this something you would work on yourself?
+
+[ ] I plan to open a pull request for this
