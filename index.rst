@@ -25,7 +25,7 @@ Learn about the Aiven platform
 .. panels::
     :card: shadow
 
-    |icon-postgres| **PostgreSQL** Powerful relational database platform. We have the latest versions, and all the extensions you need.
+    |icon-postgres| **PostgreSQL** Powerful relational database platform. We have the latest versions, and an excellent selection of extensions.
 
     +++
 
@@ -51,7 +51,7 @@ Learn about the Aiven platform
 
     ---
 
-    |icon-elasticsearch| **ElasticSearch** Document database with specialist search features, bring your freeform ddocuments, logs or metrics, and make sense of them here.
+    |icon-elasticsearch| **ElasticSearch** Document database with specialist search features, bring your freeform documents, logs or metrics, and make sense of them here.
 
     ---
 
