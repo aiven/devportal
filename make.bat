@@ -12,6 +12,14 @@ set BUILDDIR=_build
 
 if "%1" == "" goto help
 
+if "%1" == "livehtml" (
+	sphinx-autobuild %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% %2
+)
+
+if "%1" == "spell" (
+	vale $(SOURCEDIR)/index.rst
+	vale $(SOURCEDIR)/docs
+}
 %SPHINXBUILD% >NUL 2>NUL
 if errorlevel 9009 (
 	echo.
@@ -26,13 +34,6 @@ if errorlevel 9009 (
 )
 
 %SPHINXBUILD% -M %1 %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% %O%
-goto end
-
-if "%1" == "livehtml" (
-	sphinx-autobuild %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% %2
-) else (
-	%SPHINXBUILD% -M %1 %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% %2
-)
 goto end
 
 :help
