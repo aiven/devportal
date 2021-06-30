@@ -1,10 +1,10 @@
-Create and Use read-only replicas
+Create and use read-only replicas
 =================================
 
-PostgreSQL read-only replicas provide a great way to reduce the load on the primary server by enabling read-only queries to be performed against the replica. It's also a good option when willing to optimise query response time across different geographical locations since, with Aiven, the replica can be placed on different regions or even different cloud providers.
+PostgreSQL read-only replicas provide a great way to reduce the load on the primary server by enabling read-only queries to be performed against the replica. It's also a good way to optimise query response time across different geographical locations since, with Aiven, the replica can be placed in different regions or even different cloud providers.
 
-Create replicas
-------------
+Create a replica
+----------------
 
 To set up a remote replica:
 
@@ -22,11 +22,11 @@ The read-only replica is created and added to the list of services in your proje
 .. image:: /images/products/postgresql/read-replica-detail.png
     :alt: Image of the name of the primary service in the read only replica overview tab
 
-In case of need, read-only replicas can be manually promoted as master. For more complex high availability and failover scenarios check the :doc:`related documentation <../concepts/high-availability>`.
+Read-only replicas can be manually promoted to become the master database if the need arises. For more complex high availability and failover scenarios check the :doc:`related documentation <../concepts/high-availability>`.
 
 
-Use replicas
-------------
+Use a replica
+-------------
 
 To use a read only replica:
 
@@ -36,8 +36,8 @@ To use a read only replica:
     psql POSTGRESQL_REPLICA_URI
 
 
-Verify replica usage
---------------------
+Identify replica status
+-----------------------
 
 To check whether you are connected to a primary or replica node, run the following command within a ``psql`` terminal already connected to a database::
 
@@ -47,4 +47,4 @@ If the above command returns ``TRUE`` if you are connected to the replica, and `
 
 .. Warning::
 
-    Aiven for PostgreSQL uses an asynchronous replication, thus a small lag is involved. When running an ``INSERT`` operation on the primary node, a minimal delay (usually less than a second) can be expected for the change to be propagated to the replica and to be visible there.
+    Aiven for PostgreSQL uses asynchronous replication and so a small lag is expected. When running an ``INSERT`` operation on the primary node, a minimal delay (usually less than a second) can be expected for the change to be propagated to the replica and to be visible there.

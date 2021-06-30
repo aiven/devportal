@@ -1,9 +1,9 @@
 Set up logical replication to Aiven for PostgreSQL
 ==================================================
 
-Aiven for PostgreSQL represents the perfect managed solution for a variety of use cases; remote production systems can be completely migrated in Aiven using different methods including :doc:`using Aiven-db-migrate <migrate-aiven-db-migrate>` or the standard :doc:`dump and restore method <migrate-pg-dump-restore>`.
+Aiven for PostgreSQL represents an ideal managed solution for a variety of use cases; remote production systems can be completely migrated to Aiven using different methods including :doc:`using Aiven-db-migrate <migrate-aiven-db-migrate>` or the standard :doc:`dump and restore method <migrate-pg-dump-restore>`.
 
-In some cases a complete migration from legacy systems is not possible, still Aiven for PostgreSQL can be used to keep an in-sync copy of the source dataset via **logical replica**. This article goes through the steps of replicating some tables from a self-managed PostgreSQL cluster to Aiven.
+Whether you are migrating or have another use case to keep an existing system in sync with an Aiven for PostgreSQL service, setting up a **logical replica** is a good way to achieve that. This article goes through the steps of replicating some tables from a self-managed PostgreSQL cluster to Aiven.
 
 .. Note::
     These instructions work also with AWS RDS PostgreSQL 10+.
@@ -30,13 +30,12 @@ Variable                Description
 Requirements
 ------------
 
-The following are the requirements to setup a **logical replica** to Aiven for PostgreSQL
-
+You will need:
 
 * PostgreSQL version 10 or newer.
 * Connection between the source cluster's PostgreSQL port and Aiven for PostgreSQL cluster.
 * Access to an superuser role on the source cluster.
-* ``wal_level`` setting to ``logical`` on the source cluster. To verify and change the ``wal_level`` setting check :ref:`this section <PG MigrateWAL>`.
+* ``wal_level`` setting to ``logical`` on the source cluster. To verify and change the ``wal_level`` setting check :ref:`the instructions on setting this configuration<PG MigrateWAL>`.
 
 .. Note::
     If you are using an AWS RDS PostgreSQL cluster as source, the ``rds.logical_replication`` parameter must be set to ``1`` (true) in the parameter group.
@@ -44,7 +43,7 @@ The following are the requirements to setup a **logical replica** to Aiven for P
 Set up the replication
 ----------------------
 
-To create a logical replication, there is no need to install any extensions on the source cluster, but requires a superuser account.
+To create a logical replication, there is no need to install any extensions on the source cluster, but a superuser account is required.
 
 .. Tip::
     The ``aiven_extras`` extension enables the creation of a publish/subscribe-style logical replication without a superuser account, and it is preinstalled on Aiven PostgreSQL servers. For more info on ``aiven_extras`` check the dedicated `GitHub repository <https://github.com/aiven/aiven-extras>`_. The following example will assume ``aiven_extras`` extension is not available in the source PostgreSQL database.
@@ -136,7 +135,7 @@ Verify the replication removal with::
 Manage inactive or lagging replication slots
 --------------------------------------------
 
-Inactive or lagging replication could cause problems in a database, like an ever increasing disk usage not associated to any growth of the amount of data in the database. Fulfilling the disk causes the database instance to stop serving clients thus a loss of service.
+Inactive or lagging replication could cause problems in a database, like an ever-increasing disk usage not associated to any growth of the amount of data in the database. Filling the disk causes the database instance to stop serving clients and thus a loss of service.
 
 1. Assess the replication slots status via ``psql``::
 
