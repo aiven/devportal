@@ -12,7 +12,7 @@ Regardless of the migration method used, the migration tool first performs a sch
 
 .. _aiven-db-migrate-migration-requirements:
 
-Migration Requirements
+Migration requirements
 ''''''''''''''''''''''
 
 The following are the two basic requirements for a migration:
@@ -58,7 +58,7 @@ The ``aiven-db-migrate`` migration tool checks the following requirements before
     - The source ``wal_level`` is set to ``logical``
     - The user connecting to the source has superuser access or the ``aiven_extra`` extension is or can be installed on each database
 
-Next Steps
+Next steps
 ''''''''''
 
 There's a detailed guide for performing the migration: :doc:`../howto/migrate-aiven-db-migrate`
