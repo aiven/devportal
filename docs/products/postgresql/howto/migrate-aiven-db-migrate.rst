@@ -37,7 +37,7 @@ If the output is not ``logical``, run the following command in ``psql`` and then
 .. Note::
     If you are migrating from an AWS RDS PostgreSQL cluster, set the ``rds.logical_replication`` parameter to ``1`` (true) in the parameter group.
 
-Check the Migration Configuration Options
+Check the migration configuration options
 '''''''''''''''''''''''''''''''''''''''''
 
 The following command using the :doc:`../../../tools/cli` to see the available configuration options for migration::
@@ -66,7 +66,7 @@ The output includes::
 
 These are the settings we'll use when configuring the migration in the next step.
 
-Perform the Migration
+Perform the migration
 '''''''''''''''''''''
 
 The following is the migration process:
