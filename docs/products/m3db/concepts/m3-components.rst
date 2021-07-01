@@ -6,7 +6,7 @@ M3 consists of three components, which at Aiven are provided as two separate ser
 * **M3DB** consists of ``X`` number of M3DB + M3Coordinator pairs. Where ``X`` is the number of nodes in the Aiven plan you choose.
 * **M3 Aggregator** is an optional additional component that you need if you use aggregated namespaces, the aggregator does the downsampling. Again, the plan you choose dictates how many of these you have.
 
-Example M3 Architecture
+Example M3 architecture
 -----------------------
 
 An example implementation might look something like this with your application sending data to M3, and then the ability to see that data with Grafana.
