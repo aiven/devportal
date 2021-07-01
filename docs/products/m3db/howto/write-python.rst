@@ -1,4 +1,4 @@
-Write Data to M3DB with Python
+Write data to M3DB with Python
 ------------------------------
 
 This example writes some data to an M3DB service from Python, making use of the InfluxDB library.
