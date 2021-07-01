@@ -69,39 +69,38 @@ This example assumes a source database called ``origin_database`` on a self-mana
     SRC_CONN_URI                            \
     -t test_table -t test_table_2 -t test_table_3 > origin-database-schema.sql
 
-4. The default ``postgres`` superuser :doc:`is not available in Aiven for PostgreSQL <../concepts/dba-tasks-pg>`, thus the user defined in the ``ALTER TABLE`` invocations within ``origin-database-schema.sql`` must be changed from ``postgres`` to the default ``avnadmin``.
 
-5. Connect via ``psql`` to the destination Aiven for PostgreSQL database and create the new ``aiven_extras`` extension::
+4. Connect via ``psql`` to the destination Aiven for PostgreSQL database and create the new ``aiven_extras`` extension::
 
     CREATE EXTENSION aiven_extras CASCADE;
 
-6. Create the table definitions in the Aiven for PostgreSQL destination database within ``psql``::
+5. Create the table definitions in the Aiven for PostgreSQL destination database within ``psql``::
 
     \i origin-database-schema.sql
 
-7. Create a ``SUBSCRIPTION`` entry, named ``dest_subscription``, in the Aiven for PostgreSQL destination database to start replicating changes from the source ``pub_source_tables`` publication::
+6. Create a ``SUBSCRIPTION`` entry, named ``dest_subscription``, in the Aiven for PostgreSQL destination database to start replicating changes from the source ``pub_source_tables`` publication::
 
     SELECT * FROM
     aiven_extras.pg_create_subscription(
         'dest_subscription',
         'host=SRC_HOST password=SRC_PASSWORD port=SRC_PORT dbname=SRC_DATABASE user=SRC_USER',
         'pub_source_tables',
-        'slot',
+        'dest_slot',
         TRUE,
         TRUE);
 
 
-8. Verify that the subscription has been created successfully. As the ``pg_subscription`` catalog is superuser-only, you can use the ``aiven_extras.pg_list_all_subscriptions()`` function from ``aiven_extras`` extension::
+7. Verify that the subscription has been created successfully. As the ``pg_subscription`` catalog is superuser-only, you can use the ``aiven_extras.pg_list_all_subscriptions()`` function from ``aiven_extras`` extension::
 
      SELECT subdbid, subname, subowner, subenabled, subslotname
      FROM aiven_extras.pg_list_all_subscriptions();
 
       subdbid |      subname      | subowner | subenabled | subslotname
      ---------+-------------------+----------+------------+-------------
-        16401 | dest_subscription |       10 | t          | slot
+        16401 | dest_subscription |       10 | t          | dest_slot
      (1 row)
 
-9. Verify the subscription status::
+8. Verify the subscription status::
 
     SELECT * FROM pg_stat_subscription;
 
@@ -110,7 +109,7 @@ This example assumes a source database called ``origin_database`` on a self-mana
      16444 | dest_subscription | 869 |       | 0/C002360    | 2021-06-25 12:06:59.570865+00 | 2021-06-25 12:06:59.571295+00 | 0/C002360      | 2021-06-25 12:06:59.570865+00
     (1 row)
 
-10. Verify the data is correctly copied over the Aiven for PostgreSQL target tables
+9. Verify the data is correctly copied over the Aiven for PostgreSQL target tables
 
 
 Remove unused replication setup
@@ -146,23 +145,27 @@ The command output is like::
         slot_name   │ restart_lsn
      ───────────────┼─────────────
       pghoard_local │ 6E/16000000
-           debezium | 5B/8B0
+      dest_slot     | 5B/8B0
      (2 rows)
 
-2. Compare the ``restart_lsn`` values between the replication slot in analysis (``debezium`` in the above example) and ``pghoard_local``: the hexadecimal difference between the them states how many write-ahead-logging (WAL) entries are waiting for the target ``debezium`` connector to catch up.
+2. Compare the ``restart_lsn`` values between the replication slot in analysis (``dest_slot`` in the above example) and ``pghoard_local``: the hexadecimal difference between the them states how many write-ahead-logging (WAL) entries are waiting for the target ``dest_slot`` connector to catch up.
 
 .. Note::
     In the above example the difference is 0x6E - 0x5B = 19 entries
 
 
-3. If, after assessing the lag, the ``debezium`` connector results lagging or inactive:
+3. If, after assessing the lag, the ``dest_slot`` connector results lagging or inactive:
 
-* If the ``debezium`` connector is still in use, a recommended approach is to restart the process and verify if it solves the problem.
-* If the ``debezium`` connector is no longer needed, run the following command to remove it::
+* If the ``dest_slot`` connector is still in use, a recommended approach is to restart the process and verify if it solves the problem. You can disable and enable the associated subscription using ``aiven_extras``::
 
-    SELECT pg_drop_replication_slot('debezium');
+    SELECT * FROM aiven_extras.pg_alter_subscription_disable('dest_subscription');
+    SELECT * FROM aiven_extras.pg_alter_subscription_enable('dest_subscription');
 
-4. In both cases, after the next PostgreSQL checkpoint, the disk space that the WAL logs have reserved for the ``debezium`` connector should be freed up.
+* If the ``dest_slot`` connector is no longer needed, run the following command to remove it::
+
+    SELECT pg_drop_replication_slot('dest_subscription');
+
+4. In both cases, after the next PostgreSQL checkpoint, the disk space that the WAL logs have reserved for the ``dest_subscription`` connector should be freed up.
 
 .. Note::
 
