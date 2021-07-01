@@ -1,7 +1,7 @@
-List of Advanced Parameters
+List of advanced parameters
 ============================
 
-When creating a PostgreSQL database, it can be customised using a series of advanced parameters, listed in the tables below:
+On creating a PostgreSQL database, you can customize it using a series of the following advanced parameters:
 
 General parameters
 --------------------
@@ -22,23 +22,27 @@ General parameters
   * - ``admin_username``
     - string
     -
-    - ``avnadmin``
+    - 
     - Custom username for admin user. Must be set only when a new service is being created.
+    The default value is: ``avnadmin``
   * - ``backup_hour``
     - integer
     -
-    - 0-24
+    - 
     - The hour of day (in UTC) when backup for the service is started. New backup is only started if previous backup has already completed.
+    A valid range is: 0-24
   * - ``backup_minute``
     - integer
     -
-    - 0-60
+    - 
     - The minute of an hour when backup for the service is started. New backup is only started if previous backup has already completed.
+    A valid range is: 0-60
   * - ``ip_filter``
     - array
-    - ``0.0.0.0/0``
+    - 
     -
     - Restricts incoming connections from CIDR address block, e.g. ``10.20.0.0/16``
+    The default value is: ``0.0.0.0/0``
   * - ``pg.deadlock_timeout``
     - integer
     -
@@ -57,8 +61,9 @@ General parameters
   * - ``pg.log_error_verbosity``
     - string
     -
-    - terse, default, verbose
+    - 
     - Controls the amount of detail written in the server log for each message that is logged.
+    A valid range is: terse, default, verbose
   * - ``pg.log_line_prefix``
     - string
     -
@@ -146,9 +151,11 @@ General parameters
     - Controls which role to use for ``pg_partman``'s scheduled background tasks.
   * - ``pg.pg_stat_statements.track``
     - string
-    - ``top``
-    - ``top``, ``all``, ``none``
+    - `
+    - 
     - Controls which statements are counted. Specify ``top`` to track top-level statements (those issued directly by clients), ``all`` to also track nested statements (such as statements invoked within functions), or ``none`` to disable statement statistics collection.
+    The default value is: `top``
+    A valid range is: ``top``, ``all``, ``none``
   * - ``pg.temp_file_limit``
     - integer
     -
@@ -176,9 +183,10 @@ General parameters
     - Tracking of function call counts and time used.
   * - ``pg.track_io_timing``
     - string
-    - ``off``
+    - 
     -
     - Timing of database I/O calls. The parameter is off by default, because it will repeatedly query the operating system for the current time, which may cause significant overhead on some platforms.
+    The default value is: ``off``
   * - ``pg.wal_sender_timeout``
     - integer
     -
@@ -186,9 +194,10 @@ General parameters
     - Terminate replication connections that are inactive for longer than this amount of time, in milliseconds. Setting this value to zero disables the timeout.
   * - ``pg.wal_writer_delay``
     - integer
-    - ``200ms``
+    - 
     -
-    - ``WAL`` flush interval in milliseconds. Note that setting this value to lower than the default ``200ms`` may negatively impact performance
+    - ``WAL`` flush interval in milliseconds. Note that setting this value to lower than the default ``200ms`` may negatively impact performance.
+    The default value is: ``200ms``
   * - ``pg_read_replica``
     - boolean
     -
@@ -247,8 +256,9 @@ General parameters
   * - ``shared_buffers_percentage``
     - number
     -
-    - 20-60 (float)
+    - 
     - Percentage of total RAM that the database server uses for shared memory buffers. Valid range is 20-60 (float), which corresponds to 20% - 60%. This setting adjusts the shared_buffers configuration value.
+    A valid range is: 20-60 (float)
   * - ``static_ips``
     - boolean
     -
@@ -340,14 +350,17 @@ Migration parameters
     - Description
   * - ``pg.autovacuum_analyze_scale_factor``
     - number
-    - 0.2 (20% of table size)
-    - 0-1
+    - 
+    - 
     - The fraction of the table size to add to ``autovacuum_analyze_threshold`` when deciding whether to trigger an ``ANALYZE``.
+    The default value is: 0.2 (20% of table size)
+    A valid range is: 0-1
   * - ``pg.autovacuum_analyze_threshold``
     - integer
-    - 50
+    - 
     -
     - Minimum number of inserted, updated or deleted tuples needed to trigger an ``ANALYZE`` in any one table.
+    The default value is: 50
   * - ``pg.autovacuum_freeze_max_age``
     - integer
     -
@@ -355,39 +368,47 @@ Migration parameters
     - Maximum age (in transactions) that a table's ``pg_class.relfrozenxid`` field can attain before a ``VACUUM`` operation is forced to prevent transaction ID wraparound within the table. Note that the system will launch ``autovacuum`` processes to prevent wraparound even when ``autovacuum`` is otherwise disabled. This parameter will cause the server to be restarted.
   * - ``pg.autovacuum_max_workers``
     - integer
-    - 3
+    - 
     -
     - Maximum number of ``autovacuum`` processes (other than the ``autovacuum`` launcher) that may be running at any one time. This parameter can only be set at server start.
+    The default value is: 3
   * - ``pg.autovacuum_naptime``
     - integer
-    - 60
+    - 
     -
-    - Minimum delay between ``autovacuum`` runs on any given database. The delay is measured in seconds
+    - Minimum delay between ``autovacuum`` runs on any given database. The delay is measured in seconds.
+    The default value is: 60
   * - ``pg.autovacuum_vacuum_cost_delay``
     - integer
-    - 20
+    - 
     -
     - Cost delay value that will be used in automatic ``VACUUM`` operations. If -1 is specified, the regular ``vacuum_cost_delay`` value will be used.
+    The default value is: 20
   * - ``pg.autovacuum_vacuum_cost_limit``
     - integer
-    - -1
+    - 
     -
     - Cost limit value that will be used in automatic ``VACUUM`` operations. If -1 is specified, the regular ``vacuum_cost_limit`` value will be used.
+    The default value is: -1
   * - ``pg.autovacuum_vacuum_scale_factor``
     - number
-    - 0.2 (20% of table size)
-    - 0-1
+    - 
+    - 
     - The fraction of the table size to add to ``autovacuum_vacuum_threshold`` when deciding whether to trigger a ``VACUUM``.
+    The default value is: 0.2 (20% of table size)
+    A valid range is: 0-1
   * - ``pg.autovacuum_vacuum_threshold``
     - integer
-    - 50
+    - 
     -
     - Minimum number of updated or deleted tuples needed to trigger a VACUUM in any one table.
+    The default value is: 50
   * - ``pg.log_autovacuum_min_duration``
     - integer
-    - -1
+    - 
     -
     - Causes each action executed by ``autovacuum`` to be logged if it ran for at least the specified number of milliseconds. Setting this to zero logs all ``autovacuum`` actions. -1 (the default) disables logging ``autovacuum`` actions.
+    The default value is: -1
 
 
 ``bgwriter`` parameters
@@ -403,24 +424,28 @@ Migration parameters
     - Description
   * - ``pg.bgwriter_delay``
     - integer
-    - 200
+    - 
     -
     - Specifies the delay between activity rounds for the background writer in milliseconds.
+    The default value is: 200
   * - ``pg.bgwriter_flush_after``
     - integer
-    - 512 (kilobytes)
+    - 
     -
     - Whenever more than ``bgwriter_flush_after`` bytes have been written by the background writer, attempt to force the OS to issue these writes to the underlying storage. Specified in kilobytes, Setting of 0 disables forced write-back.
+    The default value is: 512 (kilobytes)
   * - ``pg.bgwriter_lru_maxpages``
     - integer
-    - 100
+    - 
     -
     - Maximum number of buffers to be written by the background writer on each round. Setting this to zero disables background writing.
+    The default value is: 100
   * - ``pg.bgwriter_lru_multiplier``
     - number
-    - 2.0
+    - 
     -
     - The average recent need for new buffers is multiplied by ``bgwriter_lru_multiplier`` to arrive at an estimate of the number that will be needed during the next round, (up to ``bgwriter_lru_maxpages``). 1.0 represents a “just in time” policy of writing exactly the number of buffers predicted to be needed. Larger values provide some cushion against spikes in demand, while smaller values intentionally leave writes to be done by server processes.
+    The default value is: 2.0
 
 ``pgbouncer`` parameters
 ------------------------
@@ -445,9 +470,11 @@ Migration parameters
     - Overall Maximum number of server connections per database (regardless of user). Setting it to 0 means unlimited.
   * - ``pgbouncer.autodb_pool_mode``
     - string
-    - ``session``
-    - ``session``, ``transaction``, ``statement``
-    - ``PGBouncer`` pool mode: with ``session`` the server is released back to pool after client disconnects. With ``transaction`` the server is released back to pool after transaction finishes. With ``statement`` the server is released back to pool after query finishes (transactions spanning multiple statements are disallowed in this mode)
+    - 
+    - 
+    - ``PGBouncer`` pool mode: with ``session`` the server is released back to pool after client disconnects. With ``transaction`` the server is released back to pool after transaction finishes. With ``statement`` the server is released back to pool after query finishes (transactions spanning multiple statements are disallowed in this mode).
+    The default value is: ``session``
+    A valid range is: ``session``, ``transaction``, ``statement``
   * - ``pgbouncer.autodb_pool_size``
     - integer
     -
@@ -480,9 +507,10 @@ Migration parameters
     - Run ``server_reset_query`` (``DISCARD ALL``) in all pooling modes
   * - ``pglookout.max_failover_replication_time_lag``
     - integer
-    - 60
+    - 
     -
-    - Number of seconds of master unavailability before triggering database failover to standby
+    - Number of seconds of master unavailability before triggering database failover to standby.
+    The default value is: 60
   * - ``private_access.pgbouncer``
     - boolean
     -
