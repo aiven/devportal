@@ -1,4 +1,4 @@
-M3DB Welcome
+M3DB welcome
 ============
 
 M3DB is an open source, **distributed time series database**. It's ideal for organisations that have a very large volume of metrics to handle. This platform was originally developed at Uber, so that gives an idea of the scale of metrics that it can handle.
@@ -9,7 +9,7 @@ M3DB plays nicely with other tools that might be in the stack already:
 * Write metrics direct from your applications using the InfluxDB-compatible wire protocol.
 * Dashboards and query features available using Grafana and PromQL.
 
-First Steps
+First steps
 -----------
 
 Check out our :doc:`getting-started` guide for M3DB and take your first steps right away.
@@ -26,7 +26,7 @@ Check out our :doc:`getting-started` guide for M3DB and take your first steps ri
 .. tip::
    Aiven offers M3DB because we needed a solution this size for our own metrics - and we love it!
 
-M3DB Resources
+M3DB resources
 --------------
 
 If you are new to M3 then there are lots of great resources out there to get you started with the platform. Here's our recommended reading list:
