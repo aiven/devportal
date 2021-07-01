@@ -16,8 +16,6 @@ General parameters
     - Description
   * - ``admin_password``
     - string
-    -
-    -
     - Custom password for the admin user. It defaults to a random string, and should be set when a new service is being created.
   * - ``admin_username``
     - string
@@ -63,7 +61,7 @@ General parameters
     - string
     -
     -
-    - Lets you choose from one of the available log-formats. Thisupports log analysers, such as: ``pgbadger``, ``pganalyze``, etc.
+    - Lets you choose from one of the available log-formats. This supports log analysers, such as: ``pgbadger``, ``pganalyze``, etc.
   * - ``pg.log_min_duration_statement``
     - integer
     -
@@ -372,7 +370,7 @@ Migration parameters
     - integer
     - -1
     -
-    - The cost limit value that isused in automatic ``VACUUM`` operations. If -1 is specified, the regular ``vacuum_cost_limit`` value will be used.
+    - The cost limit value that is used in automatic ``VACUUM`` operations. If -1 is specified, the regular ``vacuum_cost_limit`` value will be used.
   * - ``pg.autovacuum_vacuum_scale_factor``
     - number
     - 0.2 (20% of table size)
@@ -452,7 +450,7 @@ Migration parameters
     - integer
     -
     -
-    - When set to non-zero, it sutomatically creates a pool of the specified size per user, provided that the pool doesn't exist.
+    - When set to non-zero, it automatically creates a pool of the specified size per user, provided that the pool doesn't exist.
   * - ``pgbouncer.ignore_startup_parameters``
     - array
     -
