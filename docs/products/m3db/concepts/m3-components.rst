@@ -1,4 +1,4 @@
-Aiven for M3 Components
+Aiven for M3 components
 =======================
 
 M3 consists of three components, which at Aiven are provided as two separate services:
