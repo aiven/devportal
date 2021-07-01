@@ -26,6 +26,7 @@ entries:
         title: HowTo
         entries:
           - glob: docs/products/postgresql/howto/*
+      - file: docs/products/postgresql/reference/list-of-advanced-params
       - file: docs/products/postgresql/reference/list-of-extensions
       - file: docs/products/postgresql/reference/pg-connection-limits
       - file: docs/products/postgresql/reference/terminology
