@@ -1,4 +1,4 @@
-Getting Started
+Getting started
 ===============
 
 Aiven for PostgreSQL is available in the `Aiven console <https://console.aiven.io>`_.
@@ -23,7 +23,7 @@ With :doc:`psql <howto/connect-psql>` you can connect to the PostgreSQL instance
 
     psql SERVICE_URI
 
-Load a Test Dataset in PostgreSQL
+Load a test dataset in PostgreSQL
 ---------------------------------
 
 If you're checking out PostgreSQL, loading a test dataset will give you something to look at. This example uses
@@ -69,7 +69,7 @@ The output should look like this::
     public | reorder                  | table    | avnadmin
     (12 rows)
 
-Further Reading
+Further reading
 ----------------
 
 Here are some more resources to help you on your PostgreSQL journey:
