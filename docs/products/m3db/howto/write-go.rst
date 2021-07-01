@@ -1,4 +1,4 @@
-Write Data to M3DB with Go
+Write data to M3DB with Go
 --------------------------
 
 This example writes some data to an M3DB service from Go, making use of the Prometheus write features.
