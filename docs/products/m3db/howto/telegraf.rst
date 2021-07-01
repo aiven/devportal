@@ -1,4 +1,4 @@
-How to Write to M3 from Telegraf
+Write to M3 from Telegraf
 ================================
 
 M3 supports multiple methods of writing metrics to the M3 database. Two common options are the InfluxDB wire-protocol, and the Prometheus remote write protocol. It is possible to write metrics from an existing Telegraf setup to M3 using either of these protocols, so we've covered the configuration for both options here.
