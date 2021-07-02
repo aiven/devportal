@@ -14,7 +14,7 @@ See the `official documentation <https://registry.terraform.io/providers/aiven/a
 
   To avoid any issues, please set the termination_protection property to true on all production services, it will prevent Terraform to remove the service until the flag is set back to false again. While it prevents a service to be deleted, any logical databases, topics or other configurations may be removed even when this section is enabled. Be very careful!
 
-Getting Started
+Getting started
 ---------------
 Let's get started by configuring Aiven's Terraform provider and deploying a PostgreSQL database.
 
@@ -24,7 +24,7 @@ Requirements
 - `Sign up <https://console.aiven.io/signup?utm_source=github&utm_medium=organic&utm_campaign=devportal&utm_content=repo>`_ for Aiven if you haven't already
 - `Generate an authentication token <https://help.aiven.io/en/articles/2059201-authentication-tokens>`_ on Aiven's console or CLI
 
-Set up the Provider
+Set up the provider
 '''''''''''''''''''
 To initialise the provider, we will need to configure the Terraform `required_providers` block and add the API authentication token in the `api_token` field.
 
@@ -49,7 +49,7 @@ Run the command below to initialize Terraform. It will create a directory struct
 
   $ terraform init
 
-Deploy a PostgreSQL Database
+Deploy a PostgreSQL database
 ''''''''''''''''''''''''''''
 Now let's deploy a fully managed PostgreSQL database on the GCP Frankfurt region. You can also see other services and available regions `on our pricing page <https://aiven.io/pricing>`_.
 
@@ -78,19 +78,19 @@ We now have a PostgreSQL service up and running! You can access it with the comm
 
   $ psql "$(terraform output -raw postgresql_service_uri)"
 
-Clean Up
+Clean up
 ''''''''
 To destroy the created PostgreSQL database, use the following command::
 
   $ terraform destroy
 
-Learn More
+Learn more
 ----------
 Check out these resources to learn more about Terraform and our Provider:
 
 * `Learn Terraform <https://learn.hashicorp.com/collections/terraform/aws-get-started>`_
 * `Aiven Terraform Provider documentation <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_
 
-Get Involved
+Get involved
 ------------
 If you have any comments or want to contribute to the tool, please join us on the `GitHub repository <https://github.com/aiven/terraform-provider-aiven>`_.

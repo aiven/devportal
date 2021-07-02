@@ -1,4 +1,4 @@
-Aiven Tools
+Aiven tools
 ===========
 
 We provide the tools you need to do your work, your way. 

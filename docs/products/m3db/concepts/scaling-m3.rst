@@ -1,11 +1,11 @@
-About Scaling M3
+About scaling M3
 ================
 
 `M3 <https://www.m3db.io/>`_ scales horizontally up to a really large number of nodes (at least in the low hundreds in a single cluster, and thousands overall); if you run out of resources in M3DB, you can always add more nodes (or change to larger nodes). The same applies also to M3Aggregator nodes.
 
 The most important thing when managing resources is to understand how to make good use of the resources in use, and understand the implications of making changes such as adding more namespaces, or ingesting more data. This article outlines how resources are used and makes some recommendations about making good use of resources and managing load.
 
-Disk Usage (M3DB only)
+Disk usage (M3DB only)
 ----------------------
 
 M3DB writes data on disk for each one of the following:
@@ -23,7 +23,7 @@ They all scale based on number of points in the database. However, each namespac
 .. note:: M3Aggregator and M3Coordinator do not store anything on disk, they keep state in a shared etcd cluster.
 
 
-Example Configuration
+Example configuration
 '''''''''''''''''''''
 
 We can use the disk space used by the unaggregated namespace over time as a basis for calculating how much space the aggregated namespaces will need. This example uses namespaces configured as follows:
@@ -72,7 +72,7 @@ Number of files
 
 There is a limit to the number of files that each Aiven M3DB node can support. The number of files increases with the number of :ref:`block shards <Terminology Shard>` that your namespace configuration requires. To increase the number of total blocks available, we recommend increasing the number of nodes in your setup.
 
-CPU Usage
+CPU usage
 ---------
 
 CPU usage generally scales with the amount of work done; the number of operations (especially if having to open new SSL connections) contributes significantly, as does the data mass described above. In general:
@@ -83,7 +83,7 @@ CPU usage generally scales with the amount of work done; the number of operation
 
 Adding more nodes to provide more CPU resource is our recommended strategy,
 
-Memory Usage
+Memory usage
 ------------
 
 The memory usage of M3 is the most difficult aspect of scaling. It consists of:
@@ -118,7 +118,7 @@ Given a consistent amount of points per second coming in, the memory usage can b
 
 M3Aggregator will also hold a subset of this data; the unaggregated namespace will not be included.
 
-Scaling Recommendations
+Scaling recommendations
 -----------------------
 
 Have as few namespaces as you can, with as few points per block as you can afford (to minimize memory usage) to achieve what you want. Or filter the data that enters namespaces. If dealing only with short-term data, avoiding aggregation altogether may be the most resource effective choice.

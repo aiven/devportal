@@ -3,7 +3,7 @@ Aiven CLI
 
 Aiven offers an installable CLI (command line interface) tool. You can find it `on GitHub <https://github.com/aiven/aiven-client>`_.
 
-Getting Started
+Getting started
 ---------------
 
 The ``avn`` client is an ideal way to use Aiven's services in a scriptable way. This tool accesses the same API that powers the web console.
@@ -113,7 +113,7 @@ Log in/out and manage your user tokens here. You can also create other users.
 
 Manage your VPC configuration including user/peer networks.
 
-General Usage
+General usage
 -------------
 
 Try the ``--json`` switch to any command to get more information, in a JSON format.

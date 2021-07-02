@@ -1,9 +1,9 @@
-Manage Connection Pooling
+Manage connection pooling
 =========================
 
 Connection Pooling allows you to maintain very large numbers of connections to a database while minimizing the consumption of server resources. Read more about it on :doc:`../concepts/pg-connection-pooling`.
 
-Connection Pooling Tips
+Connection pooling tips
 -----------------------------
 
 You can connect directly to the PostgreSQL server using the **Service URI** setting listed on the **Overview** page however this URI doesn't make use of PGBouncer pooling. PGBouncer pools use a different port number than the regular PostgreSQL server port, the PGBouncer **Service URI** for a particular pool can be found in the Aiven console, under the **Pool** tab in the service page.
@@ -13,7 +13,7 @@ You can use both pooled and non-pooled connections at the same time.
 .. Note::
     If you have set a custom ``search_path`` for your database, this is not automatically set for your new connection pool. Remember to set it also for new connection pools when you create them.
 
-Manage Connection Pools
+Manage connection pools
 -----------------------------
 
 To manage the connection pools, follow the steps below:
@@ -38,7 +38,7 @@ To manage the connection pools, follow the steps below:
 .. image:: /images/products/postgresql/connection-pool-details.png
 
 
-Connection Pools for Replicas
+Connection pools for replicas
 -----------------------------
 
 For all Business and Premium plans, whenever you define a connection pool, the same connection pool is created both for primary and standby servers. For standby servers, the connection pool URI is exactly the same as for the primary server, except that the host name has a ``replica-`` prefix.

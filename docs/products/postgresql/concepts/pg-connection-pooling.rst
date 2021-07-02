@@ -77,7 +77,7 @@ Instead of having dedicated connections per client, now PGBouncer manages the co
 
 .. _pooling-modes:
 
-Connection Pooling Modes
+Connection pooling modes
 ------------------------
 
 Aiven PostgreSQL supports three different operational pool modes: ``transaction``, ``session`` and ``statement``.

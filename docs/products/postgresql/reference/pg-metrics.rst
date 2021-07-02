@@ -1,9 +1,9 @@
-PostgreSQL Metrics Exposed in Grafana
+PostgreSQL metrics exposed in Grafana
 =====================================
 
 The metrics/dashboard integration in the Aiven console enables you to push PostgreSQL metrics to an external endpoint like DataDog or to create an integration and a prebuilt dashboard in Aiven for Grafana. For more information on enabling the integration, see :doc:`../howto/report-metrics-grafana`. This article describes the default dashboard created in Grafana for any PostgreSQL instance.
 
-General Info about Default Dashboards
+General info about default dashboards
 -------------------------------------
 
 A few key points about the default dashboards pre-created by Aiven in Grafana:
@@ -15,12 +15,12 @@ A few key points about the default dashboards pre-created by Aiven in Grafana:
 .. Warning::
     When creating new dashboards, do not prefix the names with **“Aiven”** because they may be removed or replaced. The "Aiven" prefix is used to identify Aiven's system-managed dashboards. This also applies to the default dashboard, for which any direct editing to it could be lost.
 
-PostgreSQL Metrics Prebuilt Dashboard
+PostgreSQL metrics prebuilt dashboard
 -------------------------------------
 
 The PostgreSQL default dashboard is split into several sections under two main categories: Generic and PostgreSQL. **Generic** metrics are not specific to the type of service running on the node and mostly related to CPU, memory, disk, and network. **PostgreSQL** metrics are specific for the service.
 
-General Metrics
+General metrics
 ---------------
 
 Overview
@@ -127,7 +127,7 @@ For most metrics, the metric name identifies the internal PostgreSQL statistics 
 
 Metrics that are currently recorded but not shown in the default dashboard include ``postgresql.pg_stat_bgwriter`` and ``postgresql.pg_class`` metrics as a whole, as well as some individual values from other metrics.
 
-PostgreSQL Overview
+PostgreSQL overview
 """""""""""""""""""
 
 The metrics in the PostgreSQL overview section are grouped by logical database. In addition, some metrics are grouped by host.
@@ -177,7 +177,7 @@ The metrics in the PostgreSQL overview section are grouped by logical database. 
       - The number of deadlocks per minute.
       - Deadlocks occur when different transactions obtain row-level locks for two or more of the same rows in a different order. You can resolve deadlock situations by retrying the transactions on the client side, but deadlocks can create significant bottlenecks and high counts are something that you should investigate.
 
-PostgreSQL Indexes
+PostgreSQL indexes
 """"""""""""""""""
 
 This section contains graphs related to the size and use of **indexes**. Since the default dashboard contains all indexes in all logical databases, it is easily convoluted for complex databases.
@@ -248,7 +248,7 @@ This section contains graphs related to the size and use of **tables**. As with 
       - The number of inserts, updates, or deletions since the last ``ANALYZE`` operation
       - A high number for this parameter means that the query planner may end up creating bad query plans because it is operating on obsolete data. Vacuuming also performs ``ANALYZE``, and you may want to adjust your vacuum settings if you see slow queries and high table modification counts for the related tables.
 
-PostgreSQL Vacuum and analyse
+PostgreSQL vacuum and analyse
 """""""""""""""""""""""""""""
 
 This section contains graphs related to **vacuum** and **analyze** operations. The graphs are grouped by table and, for complex databases, you probably want to add additional filter criteria to only show results where values are outside the expected range.
@@ -279,7 +279,7 @@ This section contains graphs related to **vacuum** and **analyze** operations. T
       - The number of vacuum and analyze operations per table, per minute
       -
 
-PostgreSQL Miscellaneous
+PostgreSQL miscellaneous
 """"""""""""""""""""""""
 
 This section contains PostgreSQL metrics graphs that are not covered by the previous sections.

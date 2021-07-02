@@ -1,4 +1,4 @@
-Visualise M3DB Data with Grafana
+Visualize M3DB data with Grafana
 ================================
 
 Since M3DB is best for time series data, consisting of many individual metrics, then it's nicer to visualise the data than try to view it in a table or log. Luckily, Aiven can set up the Grafana and the integration between the two services for you.
@@ -17,7 +17,7 @@ Integrate M3DB and Grafana
 
 Now your Grafana service is connected to M3DB as a data source and you can go ahead and visualise your data.
 
-Visualising M3DB data in Grafana
+Visualizing M3DB data in Grafana
 --------------------------------
 
 In Grafana, create a new dashboard and add a panel to it.
