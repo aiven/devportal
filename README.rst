@@ -67,7 +67,7 @@ The ``:doc:`` role uses the page title but if you want to change the link text, 
 
 To create a label to link to a particular section (this is also useful if renaming titles that might have links pointing to the old wording), place the label immediately before the section heading::
 
-    .. _tools_cli_tips_tricks
+    .. _tools_cli_tips_tricks:
 
     Tips and Tricks
     ===============
