@@ -1,4 +1,4 @@
-Migrating to Aiven for PostgreSQL with ``aiven-db-migrate``
+Migrate to Aiven for PostgreSQL with ``aiven-db-migrate``
 ===========================================================
 
 The ``aiven-db-migrate`` tool is an open source project available on `GitHub <https://github.com/aiven/aiven-db-migrate>`_), and it is the preferred way to perform the migration. 
@@ -11,9 +11,6 @@ If the preconditions for logical replication are not met for a database, the mig
 
 .. Note::
     You can use logical replication when migrating from AWS RDS PostgreSQL 10+, whereas the Google Cloud Platform's PostgreSQL for CloudSQL does not support it.
-
-.. Warning::
-    Running a logical replication migration twice on the same cluster will create duplicate data. Logical replication also has `limitations <https://www.postgresql.org/docs/current/logical-replication-restrictions.html>`_ on what it can copy.
 
 What you'll need
 ''''''''''''''''
@@ -28,7 +25,7 @@ In order to use the **logical replication** method, you'll need the following:
 * An available replication slot on the destination cluster for each database migrated from the source cluster.
 
 
-Setting the ``wal_level`` to ``logical``
+Set the ``wal_level`` to ``logical``
 ''''''''''''''''''''''''''''''''''''''''
 
 To review the current ``wal_level``, run the following command on the source cluster via ``psql``::
@@ -87,6 +84,8 @@ Variable                Description
 ``DEST_PG_PLAN``        Aiven plan for the Aiven destination PostgreSQL service
 ==================      =======================================================================
   
+.. Warning::
+    Running a logical replication migration twice on the same cluster will create duplicate data. Logical replication also has `limitations <https://www.postgresql.org/docs/current/logical-replication-restrictions.html>`_ on what it can copy.
 
 -> To perform the migration
 '''''''''''''''''''''''''''
@@ -147,7 +146,7 @@ You should get the following command output which mentions that the ``pg_dump`` 
     The overall ``method`` field is left empty due to the mixed methods used to migrate each database.
 
 
-5. Remove the configuration from the destination service via :doc:`../../../tools/cli`:: Make sure your migration process is in one of the following state when triggering the removal: ``done`` for the ``pg_dump`` method, and ``syncing`` for logical replication. Otherwise, removing a migration configuration can leave the destination cluster in an inconsistent state.
+5. Remove the configuration from the destination service via :doc:`../../../tools/cli` Make sure your migration process is in one of the following state when triggering the removal: ``done`` for the ``pg_dump`` method, and ``syncing`` for logical replication. Otherwise, removing a migration configuration can leave the destination cluster in an inconsistent state. ::
 
     avn service update --remove-option migration DEST_PG_NAME
 
