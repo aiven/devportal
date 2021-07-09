@@ -13,7 +13,7 @@ M3 is highly compatible with other Aiven products for the following tasks:
 * To write metrics directly from your applications using the InfluxDB-compatible wire protocol.
 * To create dashboards and query available features using Grafana and PromQL.
 
-Check out all the features on our `M3 product page <https://aiven.io/m3#full-feature-list/>`_. 
+Check out all the features on our `M3 product page <https://aiven.io/m3#full-feature-list>`_. 
 
 .. tip::
    Aiven offers M3 because we ourselves needed a solution that would work with the size of our own metrics - and we love it!
@@ -21,7 +21,7 @@ Check out all the features on our `M3 product page <https://aiven.io/m3#full-fea
 First Steps
 -----------
 
-Check out our :doc:`getting-started` guide for M3 and take your first steps right away.
+Check out our :doc:`getting-started` guide for Aiven for M3 and take your first steps right away.
 
 
 .. panels::
