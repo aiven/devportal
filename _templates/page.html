@@ -78,6 +78,10 @@
               {{ _('Show Source') }}
             </a>
           {%- endif %}
+          {%- if gitstamp %}
+            |
+            Last updated on {{ gitstamp }}
+          {%- endif %}
         </div>
         {% endblock footer %}
       </footer>
