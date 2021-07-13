@@ -29,6 +29,7 @@ extensions = [
     'sphinx_panels',
     'sphinxcontrib.mermaid',
     'sphinx_external_toc',
+    'sphinx_copybutton',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
