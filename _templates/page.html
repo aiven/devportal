@@ -58,6 +58,40 @@
       </article>
       <footer>
         {% block footer %}
+        <div class="feedback">
+          <div>
+            <form name="feedback-footer" id="feedback-footer" method=post data-netlify="true">
+                Was this page useful?
+                <input type="radio" name="vote" value="yes" name="feedback-vote-yes"><label for="feedback-vote-yes">Yes</label>&nbsp;&nbsp;
+                <input type="radio" name="vote" value="no" name="feedback-vote-no"><label for="feedback-vote-no">No</label>&nbsp;&nbsp;
+              <button type="submit">Send</button>
+            </form>
+          </div>
+
+            <script>
+                function feedbackForm(event)
+                {
+                    console.log(event.target.elements.vote.value);
+
+                    // send request, change output
+                    var xhr = new XMLHttpRequest();
+                    xhr.open("POST", event.currentTarget, true);
+                    xhr.setRequestHeader('Content-Type', 'application/json');
+                    xhr.send(JSON.stringify({
+                        vote: event.target.elements.vote.value,
+                        "form-name": event.target.elements.form-name.value,
+                    }));
+
+                    event.target.innerHTML = "<i>Thanks!</i>";
+                    event.preventDefault();
+                }
+
+                let form = document.getElementById("feedback-footer");
+                form.addEventListener('submit', feedbackForm)
+
+            </script>
+
+        </div>
 
         <div class="related-information">
           {%- if show_copyright %}
