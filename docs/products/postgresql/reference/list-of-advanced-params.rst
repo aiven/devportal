@@ -191,6 +191,8 @@ General parameters
 
       Default is 1MB + 0.075% of total RAM (up to 32MB).
 
+.. _pg_migration:
+
 Migration parameters
 --------------------
 
