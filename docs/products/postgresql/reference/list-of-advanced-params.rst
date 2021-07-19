@@ -335,7 +335,7 @@ Migration parameters
     - The overall maximum number of server connections per database (regardless of user). Setting it to 0 means it is unlimited.
   * - ``pgbouncer.autodb_pool_mode``
     - string
-    - The ``PGBouncer`` pool mode: with ``session``, the server is released back to the pool after the client disconnects; with ``transaction``, the server is released back to the pool after the transaction finishes; with ``statement`` the server is released back to the pool after the query finishes (transactions spanning multiple statements are disallowed in this mode).
+    - The ``PgBouncer`` pool mode: with ``session``, the server is released back to the pool after the client disconnects; with ``transaction``, the server is released back to the pool after the transaction finishes; with ``statement`` the server is released back to the pool after the query finishes (transactions spanning multiple statements are disallowed in this mode).
 
       The default value is: ``session`` A valid range is: ``session``, ``transaction``, ``statement``
   * - ``pgbouncer.autodb_pool_size``
@@ -369,4 +369,4 @@ Migration parameters
     - Enables the ``PGbouncer`` over a private link.
   * - ``public_access.pgbouncer``
     - boolean
-    - Allows the clients to connect to `PGbouncer`` from the public internet for service nodes that are in a virtual private cloud (VPC) or another type of private network.
+    - Allows the clients to connect to `PgBouncer`` from the public internet for service nodes that are in a virtual private cloud (VPC) or another type of private network.

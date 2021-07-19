@@ -1,4 +1,4 @@
-Aiven Terraform Provider
+Aiven Terraform provider
 =========================
 
     Terraform is an open-source infrastructure as code software tool that provides a consistent CLI workflow to manage hundreds of cloud services. Terraform codifies cloud APIs into declarative configuration files. `Terraform website <https://www.terraform.io/>`_.
@@ -74,7 +74,7 @@ Plan and apply the Terraform code::
   $ terraform plan
   $ terraform apply
 
-We now have a PostgreSQL service up and running! You can access it with the command below that combines the ``psql`` command with fetching the connection information from terraform::
+We now have a PostgreSQL service up and running! You can access it with the command below that combines the ``psql`` command with fetching the connection information from Terraform::
 
   $ psql "$(terraform output -raw postgresql_service_uri)"
 
