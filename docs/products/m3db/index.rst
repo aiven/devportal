@@ -40,7 +40,7 @@ If you are new to M3, we recommend the following resources to get you started wi
 
 * For the `overview of the M3DB, M3 query and M3 aggregator components <https://m3db.io/docs/overview/components/>`_ on the main M3DB project documentation.
 
-* From the upstream project::
+* From the upstream project:
 
   - Using M3DB with `Prometheus <https://m3db.io/docs/integrations/prometheus/>`_
   - Ingesting data from `Graphite <https://m3db.io/docs/integrations/graphite/>`_
