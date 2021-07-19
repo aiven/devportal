@@ -7,6 +7,8 @@ entries:
   - file: docs/tools/index
     entries:
       - file: docs/tools/cli
+        entries: 
+        - file: docs/tools/cli-fork-service.rst
       - file: docs/tools/api/index
         title: Aiven API
         entries:
