@@ -15,6 +15,12 @@ entries:
         - glob: docs/tools/api/*
       - file: docs/tools/terraform
 
+  # -------- PLATFORM-TOPICS --------
+  - file: docs/products/postgresql/concepts
+    title: Platform
+    entries:
+     - file: docs/tools/console-fork-service.rst
+
   # -------- PRODUCT-SPECIFIC --------
   - file: docs/products/postgresql/index
     title: PostgreSQL
