@@ -71,5 +71,5 @@ If you're writing content, here are some high-level tips that can be useful.
 - Product documentation style guide
 - RestrecturedText cheatsheet
 
-|:heart_eyes:| Thanks again for contributing! |:heart_eyes:| 
+|:pray:|  Thanks again for contributing! |:pray:| 
 The DevRel team
