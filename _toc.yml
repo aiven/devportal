@@ -16,7 +16,7 @@ entries:
       - file: docs/tools/terraform
 
   # -------- PLATFORM-TOPICS --------
-  - file: docs/products/postgresql/concepts
+  - file: docs/platform/concepts
     title: Platform
     entries:
      - file: docs/tools/console-fork-service.rst
