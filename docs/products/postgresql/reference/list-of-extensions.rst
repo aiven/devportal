@@ -1,4 +1,4 @@
-List of Available Extensions
+List of available extensions
 ============================
 
 The following PostgreSQL extensions are available. Please note that some of the extensions have dependencies and they need to be created in the proper order. Also some extensions may require disconnecting the client connection and reconnecting before they are fully available.

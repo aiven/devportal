@@ -18,7 +18,7 @@ Check out all the features on our `M3 product page <https://aiven.io/m3#full-fea
 .. tip::
    Aiven offers M3 because we ourselves needed a solution that would work with the size of our own metrics - and we love it!
 
-First Steps
+First steps
 -----------
 
 Check out our :doc:`getting-started` guide for Aiven for M3 and take your first steps right away.
@@ -33,7 +33,7 @@ Check out our :doc:`getting-started` guide for Aiven for M3 and take your first 
     💻 :doc:`howto`
 
 
-M3DB Resources
+M3DB resources
 --------------
 
 If you are new to M3, we recommend the following resources to get you started with the platform:

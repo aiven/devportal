@@ -1,9 +1,9 @@
-How to Install or Update an Extension
+Install or update an extension
 =====================================
 
 Aiven PostgreSQL allows a series of pre-approved extensions to be installed.
 
-Install an Extension
+Install an extension
 --------------------
 
 Any available can be installed by the ``avnadmin`` user with the following ``CREATE EXTENSION`` command::
@@ -11,7 +11,7 @@ Any available can be installed by the ``avnadmin`` user with the following ``CRE
   CREATE EXTENSION <EXTENSION_NAME> CASCADE;
 
 
-Update an Extension
+Update an extension
 -------------------
 
 To upgrade an already-installed extension to the latest version available, run as the ``avnadmin`` user::
@@ -22,7 +22,7 @@ If you want to experiment with upgrading, remember that you can fork your existi
 
 .. warning:: When a service is updated via a maintenance update, this does not update the extension versions that are used automatically. The reason for this is that user schemas and functions can (and do often) rely on specific versions of an extension being used, so we can't assume that all extensions are safe to upgrade.
 
-Request a New Extension
+Request a new extension
 -----------------------
 
 We are always open to suggestions of additional extensions that could be useful to many of our customers, and there are a few that can be enabled on request if you need them. For any extensions not on the :doc:`../reference/list-of-extensions` approved list, please open a support ticket and let us know:

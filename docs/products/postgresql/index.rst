@@ -1,4 +1,4 @@
-PostgreSQL Welcome
+PostgreSQL welcome
 ==================
 
 PostgreSQL is an open source, **relational database**. It's ideal for organisations that need a well organised tabular datastore.
@@ -14,7 +14,7 @@ Aiven for PostgreSQL is the perfect fit for your relational data. A scalable SQL
 
     💻 :doc:`howto`
 
-PostgreSQL Resources
+PostgreSQL resources
 --------------------
 
 If you are new to PostgreSQL then there are lots of great resources out there to get you started with the platform. Here's our recommended reading list:
@@ -23,7 +23,7 @@ If you are new to PostgreSQL then there are lots of great resources out there to
 
 * `PostGIS website <https://postgis.net/>`_ to read about location queries and the spatial extension
 
-Starter Project
+Starter project
 ---------------
 
 If you don't have a dataset to play with, try our `Exoplanet example <https://aiven.io/blog/discover-exoplanets-with-postgresql?utm_source=github&utm_medium=organic&utm_campaign=devportal&utm_content=repo>`_

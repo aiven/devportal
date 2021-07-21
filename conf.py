@@ -29,6 +29,7 @@ extensions = [
     'sphinx_panels',
     'sphinxcontrib.mermaid',
     'sphinx_external_toc',
+    'sphinx_copybutton',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -44,6 +45,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'README*']
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
+html_favicon = './_static/images/favicon.ico'
 html_theme = 'furo'
 html_theme_options = {
     "light_css_variables": {

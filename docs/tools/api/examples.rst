@@ -1,4 +1,4 @@
-API Examples
+API examples
 ============
 
 Here are a few examples (using curl) to get you started with the Aiven API. Replace all the ``<variables>`` with your own values.

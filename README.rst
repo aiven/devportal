@@ -20,12 +20,22 @@ Start the HTML version with::
 
 Your preview should be at http://localhost:8000 (if anything doesn't seem to re-render well, the navigation seems particularly unreliable, try ``make clean`` and then ``make livehtml`` again).
 
+Windows users
+-------------
+
+Replace all `make` commands with `./make` - this uses the `make.bat` file instead of `Makefile` but the functionality should be equivalent.
+
 Making changes
 --------------
 
 Please make changes! Even small fixes are very welcome. The content is in the ``docs/`` folder, in `ReStructuredText <https://docutils.sourceforge.io/rst.html>`_.
 
-When you open a pull request, you will get a preview of your changes (useful if you or someone you want to show the work to does not have the tool set up locally). The process also runs some spelling and link checking tasks. You can also run those locally:
+When you open a pull request, you will get a preview of your changes (useful if you or someone you want to show the work to does not have the tool set up locally). The process also runs some spelling and link checking tasksi so please check the output of the build if it fails.
+
+Running build tasks locally
+---------------------------
+
+To run the spell check locally, you will need to have [Vale](https://github.com/errata-ai/vale) installed on your computer and available on your path.
 
 * Check links: ``make linkcheck``
 * Check spelling: ``make spell``
@@ -57,7 +67,7 @@ The ``:doc:`` role uses the page title but if you want to change the link text, 
 
 To create a label to link to a particular section (this is also useful if renaming titles that might have links pointing to the old wording), place the label immediately before the section heading::
 
-    .. _tools_cli_tips_tricks
+    .. _tools_cli_tips_tricks:
 
     Tips and Tricks
     ===============

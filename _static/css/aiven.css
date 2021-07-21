@@ -74,6 +74,7 @@ a {
 
 a:hover {
   color: var(--linkActive) !important;
+  text-decoration-color: var(--linkActive) !important;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -232,24 +233,37 @@ a:hover {
   color: var(--primaryColor);
 }
 
+.sidebar-tree .current-page > .reference {
+  font-weight: 400;
+}
+
 .sidebar-brand-text {
   display: none !important;
 }
 
+.sidebar-tree label:hover {
+  background: none;
+}
+
 .sidebar-tree .reference {
-  border-left: 2px solid transparent;
+  border-left: 1px solid transparent;
+}
+
+.sidebar-tree label {
+  background: none !important;
 }
 
 .sidebar-tree .reference:hover {
   background: none;
-  border-left: 2px solid var(--linkActive);
-  font-family: InterBold;
+  border-left: 1px solid var(--linkActive);
+  font-family: Inter;
 }
 
 .sidebar-tree .current-page > .reference {
   background: none !important;
-  border-left: 2px solid var(--linkActive);
+  border-left: 1px solid var(--linkActive);
   color: var(--linkActive) !important;
+  font-weight: 400 !important;
 }
 
 .sidebar-tree .current > .reference {
@@ -263,6 +277,20 @@ a:hover {
 .sidebar-tree .toctree-l1 > .reference,
 .sidebar-tree .toctree-l1 > label .icon {
   color: var(--link);
+}
+
+.sidebar-tree .toctree-l1 > .reference,
+.sidebar-tree .toctree-l1 > label .icon:hover {
+  color: var(--linkActive);
+}
+
+.sidebar-tree .toctree-l2 > .reference,
+.sidebar-tree .toctree-l2 > label .icon {
+  color: var(--link);
+}
+
+.sidebar-tree .toctree-l2 > label .icon:hover {
+  color: var(--linkActive);
 }
 
 .sidebar-search-container {
@@ -294,6 +322,17 @@ a:hover {
 
 .card {
   background-color: var(--infoBg);
+}
+
+.card-footer > .card-text > .btn {
+  border: 1px solid var(--gray);
+  border-radius: 5px;
+  text-decoration: none;
+  float: right;
+}
+
+.card-footer > .card-text > .btn:hover {
+  border: 1px solid var(--linkActive);
 }
 
 .notranslate > .highlight {
@@ -348,3 +387,30 @@ code.literal {
 .mobile-header {
   background-color: var(--bg) !important;
 }
+
+.card-footer {
+  background-color: unset !important;
+  border-top: unset !important;
+  padding: 0.75rem 1.25rem;
+}
+
+.toctree-wrapper > ul > li.toctree-l1 {
+  list-style: none !important;
+  margin: 12px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.toctree-wrapper > ul > .toctree-l1 > ul > .toctree-l2,
+.toctree-wrapper > ul > .toctree-l1 > ul > .toctree-l2 > ul > .toctree-l3 {
+  list-style: none !important;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.toctree-wrapper > ul > .toctree-l1 > a.reference:hover,
+.toctree-wrapper > ul > .toctree-l1 > ul > .toctree-l2 > a.reference:hover {
+  color: var(--linkActive);
+  text-decoration-color: var(--linkActive) !important;
+}
+

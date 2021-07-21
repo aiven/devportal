@@ -1,5 +1,5 @@
-Accessing PGBouncer statistics
-==============================
+Access PGBouncer statistics
+===========================
 
 PGBouncer is used at Aiven for :doc:`../concepts/pg-connection-pooling`.
 

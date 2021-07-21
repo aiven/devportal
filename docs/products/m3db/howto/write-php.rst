@@ -1,4 +1,4 @@
-Write Data to M3DB with PHP
+Write data to M3DB with PHP
 ---------------------------
 
 This example writes some data to an M3DB service from PHP, making use of the InfluxDB library.

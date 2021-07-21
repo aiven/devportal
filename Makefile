@@ -2,9 +2,10 @@
 #
 
 # You can set these variables from the command line, and also
-# from the environment for the first two.
+# from the environment for the first three.
 SPHINXOPTS    ?=
 SPHINXBUILD   ?= sphinx-build
+ES_URL		  ?=
 SOURCEDIR     = .
 BUILDDIR      = _build
 
@@ -25,3 +26,19 @@ livehtml:
 spell:
 	vale $(SOURCEDIR)/index.rst
 	vale $(SOURCEDIR)/docs
+
+# Create Elasticsearch index
+create-index:
+	python "$(SOURCEDIR)/scripts/create_index.py" \
+		--es-url="$(ES_URL)"
+
+# Index Developer Portal pages to Elasticsearch
+index-devportal: html
+	python "$(SOURCEDIR)/scripts/index_developer_portal_pages.py" \
+		--es-url="$(ES_URL)" \
+		--html-build-dir="$(BUILDDIR)/html"
+
+# Index Help Center pages to Elasticsearch
+index-helpcenter:
+	python "$(SOURCEDIR)/scripts/index_help_center_pages.py" \
+		--es-url="$(ES_URL)"
