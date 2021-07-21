@@ -1,6 +1,7 @@
 Fork your Aiven service in order to make a copy of the codebase. You can use it to create a development copy of your production, set up a snapshot to analyze an issue or test an upgrade, or create an instance in a different cloud/geographical location/under a different plan 
 
 When you fork the following items are copied into the new service:
+
 - Configurations
 - Databases
 - Service users
@@ -9,6 +10,7 @@ When you fork the following items are copied into the new service:
 Note: the service integrations are not copied over to the forked version, and need to be re-established for each new copy. 
 
 You can fork the following Aiven services:
+
 - PostgreSQL
 - MySQL
 - Redis
