@@ -42,7 +42,7 @@ templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'README*']
 
 
-gitstamp_fmt = "%b %d, %Y"
+gitstamp_fmt = "%B %Y"
 
 # -- Options for HTML output -------------------------------------------------
 
