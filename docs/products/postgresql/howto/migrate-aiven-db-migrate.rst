@@ -57,6 +57,8 @@ To review the current ``wal_level``, run the following command on the source clu
 
     show wal_level;
 
+.. _pg_migrate_wal:
+
 If the output is not ``logical``, run the following command in ``psql`` and then reload the PostgreSQL configuration::
 
     ALTER SYSTEM SET wal_level = logical;
