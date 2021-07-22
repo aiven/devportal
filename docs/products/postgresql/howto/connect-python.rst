@@ -34,7 +34,7 @@ Add the following to ``main.py`` and replace the placeholders with values for yo
 .. literalinclude:: /code/products/postgresql/connect.py
 
 
-This code creates an PostgreSQL client and connects to the database. Then runs a query checking the database version and prints the response
+This code creates a PostgreSQL client and connects to the database. Then runs a query checking the database version and prints the response
 
 To run the code::
 
