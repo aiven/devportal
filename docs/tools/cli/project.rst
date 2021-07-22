@@ -1,0 +1,249 @@
+:orphan:
+
+Command reference: ``avn project``
+==================================
+
+Work with project details
+-------------------------
+
+Commands for managing projects and using them with ``avn`` commands.
+
+
+``avn project details``
+'''''''''''''''''''''''
+
+Fetch project details
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``--project``
+    - The project to fetch details for
+
+**Example:** show the details of the currently-selected project::
+
+  avn project details
+
+
+**Example:** show the details of a named project::
+
+  avn project details --project my-project
+
+
+``avn project switch``
+''''''''''''''''''''''
+
+Set the default project to use with ``avn``
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``--project``
+    - The project to use when a project isn't specified for an ``avn`` command
+
+**Example:** change to use the project called ``my-project`` for all commands where another ``--project`` parameter isn't supplied::
+
+  avn project switch --project my-project
+
+
+``avn project list``
+''''''''''''''''''''
+
+List all the projects that you have access to.
+
+**Example:** list all the projects available to use with a ``--project`` command switch::
+
+  avn project list
+
+
+``avn project create`` and ``avn project update``
+'''''''''''''''''''''''''''''''''''''''''''''''''
+
+Create a new project with ``create`` or change the settings with ``update``.
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``project_name`` (required for ``create``)
+    - Note: this is a positional argument, not a switch
+  * - ``--project`` (required for ``update``)
+    - The project to amend, use with ``update`` only
+  * - ``--name`` (``update`` only)
+    - Supply a new name for the project
+  * - ``--account-id``
+    - The account to create the project in
+  * - ``--billing-group-id``
+    - Billing group ID to use
+  * - ``--card-id``
+    - The card ID (see ``avn card``)
+  * - ``--cloud``
+    - The cloud to use by default (see ``avn cloud``)
+  * - ``--no-fail-if-exists``
+    - Makes the command safe to run repeatedly, it will succeed if a project of this name already exists.
+  * - ``--copy-from-project`` (``create`` only)
+    - Project name to use as a template
+  * - ``--country-code``
+    - `Code <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements>`_ for the billing country
+  * - ``--billing-address``
+    - Address to bill to
+  * - ``--billing-extra-text``
+    - Information to include with an invoice such as a cost center number
+  * - ``--billing-currency``
+    - The currency to bill in. The choices are: "AUD" "CAD" "CHF" "DKK" "EUR" "GBP" "NOK" "SEK" "USD"
+  * - ``--vat-id``
+    - VAT id for this project
+  * - ``--billing-email``
+    - Email for the billing contact
+  * - ``--tech-email``
+    - Email for the technical contact
+
+**Example:** Create a project named ``my-project``::
+
+  avn project create my-project
+
+**Example:** Create a project in a specific account using ``my-project`` as a template and setting the email address for the technical contact::
+
+  avn project create \
+    --create-project-from my-project \
+    --account-id abcdef0123456789 \
+    --tech-email geek@example.com \
+    my-other-project
+
+**Example:** Rename a project::
+
+  avn project update
+    --project my-project
+    --name my-better-named-project
+
+
+
+``avn project delete``
+''''''''''''''''''''''
+
+Delete an empty project. If the project isn't empty, remove the services in it first.
+
+**Example:** Delete ``my-project``::
+
+  avn project delete my-project
+
+
+Project certificate management
+------------------------------
+
+CA certificates are managed at the project level.
+
+``avn project ca-get``
+''''''''''''''''''''''
+
+Download the CA cert for this project, the certificate will be saved in the file name you supply.
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``--project``
+    - The project to fetch details for
+  * - ``--target-filepath``
+    - File name, including path, to use
+
+**Example:** Download the CA certificate for the current project and save it in a file in the current directory called ``ca.pem``::
+
+  avn project ca-get --target-filepath ca.pem
+
+
+Users and invitations
+---------------------
+
+Manage user access to the project.
+
+``avn project invite-list``
+'''''''''''''''''''''''''''
+
+See the open invitations to the project.
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``--project``
+    - The project to show invitations for
+
+**Example:** list the invitations for the current project::
+
+  avn project invite-list
+
+
+``avn project user-list``
+'''''''''''''''''''''''''
+
+See the users with access to the project
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``--project``
+    - The project to show users for
+
+
+**Example:** list the users with access to project ``my-project``::
+
+  avn project user-list --project my-project
+
+``avn project user-invite``
+'''''''''''''''''''''''''''
+
+Send an invitation to a user (by email) to join a project
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``email`` (required)
+    - Note: this is a positional argument
+  * - ``--project``
+    - The project to invite the user to
+  * - ``--role``
+    - Can be "operator", "developer" or "admin"
+
+**Example:** invite an important person to be an admin on the currently-selected project::
+
+  avn project user-invite --role admin boss@example.com
+
+
+``avn project user-remove``
+'''''''''''''''''''''''''''
+
+Remove from the project a user with the supplied email address.
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``email`` (required)
+    - Note: this is a positional argument
+  * - ``--project``
+    - The project to remove the user from
+
+**Example:** Remove the user with email ``alice@example.com`` from project ``my-project``::
+
+  avn project user-remove --project my-project alice@example.com

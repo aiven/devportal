@@ -92,6 +92,8 @@ Manage all the projects on your Aiven account, and switch which one is the defau
 
 Download the CA cert for this project (CA certs are common for all services in a project).
 
+:doc:`See detailed command information <cli/project>`.
+
 ``service``
 '''''''''''
 
