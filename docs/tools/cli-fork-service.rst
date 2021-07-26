@@ -1,7 +1,7 @@
 Fork a service using the Aiven client (CLI)
 ===========================================
 
-.. include:: incl-forking-intro.txt
+.. include:: /docs/includes/incl-forking-intro.rst
 
 1. Open the Aiven client, and log in::
 $ avn user login <you@example.com> --token
