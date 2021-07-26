@@ -45,6 +45,7 @@ How can I contribute?
 **Reporting bugs, and suggesting enhancements**
 
 If you notice something is off (anything - from typos to incorrect instructions) or missing, consider opening an issue. 
+
 .. tip::
     Before you open an issue, check all the existing issues for the DevPortal to make sure you're not duplicating it. 
 
@@ -88,9 +89,12 @@ If you're writing content, here are some high-level tips that can be useful:
 - Choose your visuals (images, diagrams, screenshots) and include them in a specified size (no bigger than…). 
 
 
+
 **Style guides and other resources**
 
 - RestrecturedText cheatsheet
 
+
 |:pray:|  Thanks again for contributing! |:pray:| 
+
 The DevRel team
