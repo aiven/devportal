@@ -47,7 +47,7 @@ Set the default project to use with ``avn``
   * - ``--project``
     - The project to use when a project isn't specified for an ``avn`` command
 
-**Example:** change to use the project called ``my-project`` for all commands where another ``--project`` parameter isn't supplied::
+**Example:** change to use the project called ``my-project`` as default for all commands where the ``--project`` parameter isn't supplied::
 
   avn project switch --project my-project
 
@@ -110,7 +110,7 @@ Create a new project with ``create`` or change the settings with ``update``.
 
   avn project create my-project
 
-**Example:** Create a project in a specific account using ``my-project`` as a template and setting the email address for the technical contact::
+**Example:** Create a project in a specific account using ``my-project`` as a template and set the email address for the technical contact::
 
   avn project create \
     --create-project-from my-project \
@@ -130,6 +130,9 @@ Create a new project with ``create`` or change the settings with ``update``.
 ''''''''''''''''''''''
 
 Delete an empty project. If the project isn't empty, remove the services in it first.
+
+.. Note::
+    Aiven doesn't allow the deletion of non-empty projects as safeguard against accidental code execution.
 
 **Example:** Delete ``my-project``::
 
