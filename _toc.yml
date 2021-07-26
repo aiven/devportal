@@ -19,7 +19,7 @@ entries:
   - file: docs/platform/concepts
     title: Platform
     entries:
-     - file: docs/tools/console-fork-service.rst
+     - file: docs/platform/howto/console-fork-service.rst
 
   # -------- PRODUCT-SPECIFIC --------
   - file: docs/products/postgresql/index

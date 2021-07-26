@@ -1,9 +1,9 @@
 Fork a service using the Aiven console
 ======================================
 
-.. include:: incl-forking-intro.txt
+.. include:: /docs/includes/incl-forking-intro.rst
 
-.. image:: \images\tools\console\console-forking-service.gif
+.. image:: /images/tools/console/console-forking-service.gif
    :alt: Fork a service using the Aiven console.
 
 1. Log in to the Aiven console. 
