@@ -20,6 +20,21 @@ M3 is a specialized time series store which is a great choice if your organizati
 Read more about `the M3 components <https://m3db.io/docs/overview/components/>`_.
 
 
+Get started with Aiven for M3
+-----------------------------
+
+Take your first steps with Aiven for M3 by following our :doc:`getting-started` article, or browse through our full list of articles:
+
+
+.. panels::
+
+    📙 :doc:`concepts`
+
+    ---
+
+    💻 :doc:`howto`
+
+
 Ways to use Aiven for M3
 ------------------------
 Handle and analyse the time-stamped data from multiple connected devices and services, scale up as needed, and compare datasets to provide insights into past and present.
@@ -49,20 +64,6 @@ M3 is highly compatible with other Aiven products for the following tasks:
 
 Check out all the features on our `M3 product page <https://aiven.io/m3#full-feature-list>`_. 
 
-
-Get started with Aiven for M3
------------------------------
-
-Take your first steps with Aiven for M3 by following our :doc:`getting-started` article, or browse through our full list of articles:
-
-
-.. panels::
-
-    📙 :doc:`concepts`
-
-    ---
-
-    💻 :doc:`howto`
 
 
 M3 resources
