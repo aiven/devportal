@@ -35,7 +35,7 @@ You will need:
 * PostgreSQL version 10 or newer.
 * Connection between the source cluster's PostgreSQL port and Aiven for PostgreSQL cluster.
 * Access to an superuser role on the source cluster.
-* ``wal_level`` setting to ``logical`` on the source cluster. To verify and change the ``wal_level`` setting check :ref:`the instructions on setting this configuration<PG MigrateWAL>`.
+* ``wal_level`` setting to ``logical`` on the source cluster. To verify and change the ``wal_level`` setting check :ref:`the instructions on setting this configuration<pg_migrate_wal>`.
 
 .. Note::
     If you are using an AWS RDS PostgreSQL cluster as source, the ``rds.logical_replication`` parameter must be set to ``1`` (true) in the parameter group.
