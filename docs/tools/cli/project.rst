@@ -1,5 +1,3 @@
-:orphan:
-
 Command reference: ``avn project``
 ==================================
 
@@ -23,12 +21,16 @@ Fetch project details
   * - ``--project``
     - The project to fetch details for
 
-**Example:** show the details of the currently-selected project::
+**Example:** Show the details of the currently-selected project.
+
+::
 
   avn project details
 
 
-**Example:** show the details of a named project::
+**Example:** Show the details of a named project.
+
+::
 
   avn project details --project my-project
 
@@ -47,7 +49,9 @@ Set the default project to use with ``avn``
   * - ``--project``
     - The project to use when a project isn't specified for an ``avn`` command
 
-**Example:** change to use the project called ``my-project`` as default for all commands where the ``--project`` parameter isn't supplied::
+**Example:** Change to use the project called ``my-project`` as default for all commands where the ``--project`` parameter isn't supplied.
+
+::
 
   avn project switch --project my-project
 
@@ -57,7 +61,9 @@ Set the default project to use with ``avn``
 
 List all the projects that you have access to.
 
-**Example:** list all the projects available to use with a ``--project`` command switch::
+**Example:** list all the projects available to use with a ``--project`` command switch.
+
+::
 
   avn project list
 
@@ -106,11 +112,15 @@ Create a new project with ``create`` or change the settings with ``update``.
   * - ``--tech-email``
     - Email for the technical contact
 
-**Example:** Create a project named ``my-project``::
+**Example:** Create a project named ``my-project``.
+
+::
 
   avn project create my-project
 
-**Example:** Create a project in a specific account using ``my-project`` as a template and set the email address for the technical contact::
+**Example:** Create a project in a specific account using ``my-project`` as a template and set the email address for the technical contact.
+
+::
 
   avn project create \
     --create-project-from my-project \
@@ -118,7 +128,9 @@ Create a new project with ``create`` or change the settings with ``update``.
     --tech-email geek@example.com \
     my-other-project
 
-**Example:** Rename a project::
+**Example:** Rename a project.
+
+::
 
   avn project update
     --project my-project
@@ -134,7 +146,9 @@ Delete an empty project. If the project isn't empty, remove the services in it f
 .. Note::
     Aiven doesn't allow the deletion of non-empty projects as safeguard against accidental code execution.
 
-**Example:** Delete ``my-project``::
+**Example:** Delete ``my-project``.
+
+::
 
   avn project delete my-project
 
@@ -160,7 +174,9 @@ Download the CA cert for this project, the certificate will be saved in the file
   * - ``--target-filepath``
     - File name, including path, to use
 
-**Example:** Download the CA certificate for the current project and save it in a file in the current directory called ``ca.pem``::
+**Example:** Download the CA certificate for the current project and save it in a file in the current directory called ``ca.pem``.
+
+::
 
   avn project ca-get --target-filepath ca.pem
 
@@ -184,7 +200,9 @@ See the open invitations to the project.
   * - ``--project``
     - The project to show invitations for
 
-**Example:** list the invitations for the current project::
+**Example:** List the invitations for the current project.
+
+::
 
   avn project invite-list
 
@@ -204,7 +222,9 @@ See the users with access to the project
     - The project to show users for
 
 
-**Example:** list the users with access to project ``my-project``::
+**Example:** List the users with access to project ``my-project``.
+
+::
 
   avn project user-list --project my-project
 
@@ -226,7 +246,9 @@ Send an invitation to a user (by email) to join a project
   * - ``--role``
     - Can be "operator", "developer" or "admin"
 
-**Example:** invite an important person to be an admin on the currently-selected project::
+**Example:** Invite an important person to be an admin on the currently-selected project.
+
+::
 
   avn project user-invite --role admin boss@example.com
 
@@ -247,6 +269,8 @@ Remove from the project a user with the supplied email address.
   * - ``--project``
     - The project to remove the user from
 
-**Example:** Remove the user with email ``alice@example.com`` from project ``my-project``::
+**Example:** Remove the user with email ``alice@example.com`` from project ``my-project``.
+
+::
 
   avn project user-remove --project my-project alice@example.com

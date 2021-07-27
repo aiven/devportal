@@ -7,6 +7,8 @@ entries:
   - file: docs/tools/index
     entries:
       - file: docs/tools/cli
+        entries:
+        - glob: docs/tools/cli/*
       - file: docs/tools/api/index
         title: Aiven API
         entries:
