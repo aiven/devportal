@@ -1,7 +1,7 @@
 Connect with pgAdmin
 ===========================
 
-`PgAdmin <https://www.pgadmin.org/>`_ is one of the most popular PostgreSQL clients, useful to manage and query your database.
+`pgAdmin <https://www.pgadmin.org/>`_ is one of the most popular PostgreSQL clients, useful to manage and query your database.
 
 Variables
 '''''''''
@@ -25,7 +25,7 @@ For this example you'll need pgAdmin already installed on your computer, for ins
 Connect to PostgreSQL
 '''''''''''''''''''''
 
-1. Open PGAdmin and click on **Create New Server**.
+1. Open pgAdmin and click on **Create New Server**.
 2. In the **General** Tab give the connection a Name (e.g. ``MyDatabase``)
 3. In the **Connection** tab set
     * **Host name/address** to ``HOSTNAME``

@@ -4,7 +4,7 @@ Connection pooling
 Connection pooling in Aiven for PostgreSQL services allows you to maintain very large numbers of connections to a database while minimizing the consumption of server resources.
 
 
-Aiven for PostgreSQL connection pooling uses `PGBouncer <https://www.pgbouncer.org/>`_ to manage the database connection. Each pool can handle up to 5000 database client connections. Unlike when you connect directly to the PostgreSQL server, each client connection does not require a separate backend process on the server. PGBouncer automatically inserts the client queries and only uses a limited number of actual backend connections, leading to lower resource usage on the server and better total performance.
+Aiven for PostgreSQL connection pooling uses `PgBouncer <https://www.pgbouncer.org/>`_ to manage the database connection. Each pool can handle up to 5000 database client connections. Unlike when you connect directly to the PostgreSQL server, each client connection does not require a separate backend process on the server. PgBouncer automatically inserts the client queries and only uses a limited number of actual backend connections, leading to lower resource usage on the server and better total performance.
 
 Why connection pooling?
 ------------------------
@@ -41,7 +41,7 @@ Without a connection pooler, the database connections are handled directly by Po
     end
 
 
-Adding a PGBouncer pooler that utilizes fewer backend connections frees up server resources for more important uses, such as disk caching:
+Adding a PgBouncer pooler that utilizes fewer backend connections frees up server resources for more important uses, such as disk caching:
 
 .. mermaid::
 
@@ -70,7 +70,7 @@ Adding a PGBouncer pooler that utilizes fewer backend connections frees up serve
     end
 
 
-Instead of having dedicated connections per client, now PGBouncer manages the connections assignment optimising them based on client request and settings like the :ref:`pooling-modes`.
+Instead of having dedicated connections per client, now PgBouncer manages the connections assignment optimising them based on client request and settings like the :ref:`pooling-modes`.
 
 .. Tip::
     Many frameworks and libraries (ORMs, Django, Rails, etc.) support client-side pooling, which solves much the same problem. However, when there are many distributed applications or devices accessing the same database, a server-side solution is a better approach.
@@ -82,6 +82,6 @@ Connection pooling modes
 
 Aiven PostgreSQL supports three different operational pool modes: ``transaction``, ``session`` and ``statement``.
 
-* The default and recommended setting option is ``transaction`` pooling mode allows each client connection to take their turn in using a backend connection for the duration of a single transaction. After the transaction is committed, the backend connection is returned back into the pool and the next waiting client connection gets to reuse the same connection immediately. In practice, this provides quick response times for queries as long as the typical execution times for transactions are not excessively long. This is the most commonly used PGBouncer mode and also the default pooling mode in Aiven for PostgreSQL.
+* The default and recommended setting option is ``transaction`` pooling mode allows each client connection to take their turn in using a backend connection for the duration of a single transaction. After the transaction is committed, the backend connection is returned back into the pool and the next waiting client connection gets to reuse the same connection immediately. In practice, this provides quick response times for queries as long as the typical execution times for transactions are not excessively long. This is the most commonly used PgBouncer mode and also the default pooling mode in Aiven for PostgreSQL.
 * The ``session`` pooling mode means that once a client connection is granted access to a PostgreSQL server-side connection, it can hold it until the client disconnects from the pooler. After this, the server connection is added back onto the connection pooler's free connection list to wait for its next client connection. Client connections are accepted (at TCP level), but their queries only proceed once another client disconnects and frees up its backend connection back into the pool. This mode can be helpful in some cases for providing a wait queue for incoming connections while keeping the server memory usage low, but is of limited use under most common scenarios due to the slow recycling of the backend connections.
 * The ``statement`` operational pooling mode, similar to the ``transaction`` pool mode, except that instead of allowing a full transaction to run, it cycles the server-side connections after each and every database statement (``SELECT``, ``INSERT``, ``UPDATE``, ``DELETE`` statements, etc.). Transactions containing multiple SQL statements are not allowed in this mode. This mode is sometimes used, for example when running specialised sharding frontend proxies.

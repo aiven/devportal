@@ -1,4 +1,4 @@
-Aiven Developer
+Aiven developer
 ===============
 
 What can we help you with today?

@@ -1,12 +1,12 @@
-Access PGBouncer statistics
+Access PgBouncer statistics
 ===========================
 
-PGBouncer is used at Aiven for :doc:`../concepts/pg-connection-pooling`.
+PgBouncer is used at Aiven for :doc:`../concepts/pg-connection-pooling`.
 
-Get PGBouncer URL
+Get PgBouncer URL
 ------------------
 
-PGBouncer URL can be seen under **Pools** in the PostgreSQL service web interface. Alternatively it can be extracted via :doc:`Aiven Command Line interface<../../../tools/cli>`, using `pg <https://stedolan.github.io/jq/>`_ to parse the JSON response.
+PgBouncer URL can be seen under **Pools** in the PostgreSQL service web interface. Alternatively it can be extracted via :doc:`Aiven Command Line interface<../../../tools/cli>`, using `pg <https://stedolan.github.io/jq/>`_ to parse the JSON response.
 
 Execute the following command replacing the ``INSTANCE_NAME`` parameter with the name of your instance::
 
@@ -16,10 +16,10 @@ The output will be similar to the below::
 
     postgres://avnadmin:xxxxxxxxxxx@demo-pg-dev-advocates.aivencloud.com:13040/pgbouncer?sslmode=require
 
-Connect to PGBouncer
+Connect to PgBouncer
 --------------------
 
-Connect to PGBouncer using the URL extracted above and show the statistics with::
+Connect to PgBouncer using the URL extracted above and show the statistics with::
 
     pgbouncer=# SHOW STATS;
 
@@ -32,4 +32,4 @@ Depending on the load of your database, the output will be similar to::
 
 
 .. Tip::
-    Run ``SHOW HELP`` to see all available commands. Only read-only access is available, as PGBouncer pools are automatically managed by Aiven.
+    Run ``SHOW HELP`` to see all available commands. Only read-only access is available, as PgBouncer pools are automatically managed by Aiven.
