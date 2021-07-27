@@ -1,4 +1,4 @@
-Code Samples
+Code samples
 ============
 
 .. tableofcontents::

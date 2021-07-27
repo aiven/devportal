@@ -1,4 +1,4 @@
-Replication and Migrations
-==========================
+Replication and migration
+=========================
 
 .. tableofcontents::

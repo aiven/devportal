@@ -1,4 +1,4 @@
-DBA Tasks
+DBA tasks
 =========
 
 .. tableofcontents::
