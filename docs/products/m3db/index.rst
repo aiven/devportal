@@ -26,7 +26,7 @@ Handle and analyse the time-stamped data from multiple connected devices and ser
 
 With Aiven for M3, you can set up the following example solutions:
 
-- Monitor IoT deployments, and use time series analysis to identify seasonal patterns, average usage and potential inefficiences.
+- Monitor IoT deployments, and use time series analysis to identify seasonal patterns, average usage and potential inefficiencies.
 
 - Measure the performance of your applications, detect problems, respond to incidents and plan maintenance. 
 
@@ -50,7 +50,7 @@ M3 is highly compatible with other Aiven products for the following tasks:
 Check out all the features on our `M3 product page <https://aiven.io/m3#full-feature-list>`_. 
 
 
-Get strated with Aiven for M3
+Get started with Aiven for M3
 -----------------------------
 
 Take your first steps with Aiven for M3 by following our :doc:`getting-started` article, or browse through our full list of articles:
