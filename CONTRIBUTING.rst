@@ -90,9 +90,66 @@ If you're writing content, here are some high-level tips that can be useful:
 
 
 
-**Style guides and other resources**
+Style guides and other resources
+================================
 
 - RestrecturedText cheatsheet
+
+Templates for DevPortal content (by type)
+-----------------------------------------
+
+**Concept**::
+
+    ---
+    title: *About [subject]* (if this is a background information for a task, e.g. *About migrating to Aiven*) / *Subject* (use noun or noun phrase, e.g. *Authentication*, *High availability*)
+    short description: Answer the question "What is this?" and "Why do I care about this?" If the concept is unfamiliar, start with a brief definition.
+    ---
+
+    ## A section here
+
+    <!-- Write one or two paragraphs about the main idea of your topic, as a summary. -->
+    <!-- Make sure you don't have any content that isn't preceded by a header, or it won't be linkable in our TOC. -->
+
+    ## Another section here
+
+    <!-- Write one or two paragraphs about another element of your topic. -->
+    <!-- Keep adding headers and sections until you've completed your article.  -->
+
+
+**Task**::
+
+    ---
+    title: Start with a verb (e.g. *Connect with Go*, *Install or upgrade an extension*).
+    intro: Explain what the task helps users accomplish, the benefits of the task, or the purpose of the task. Try to include information that will help users understand when the task is appropriate or why the task is necessary. 
+    ---
+
+    ## Procedural section header here
+
+    <!-- Include prerequisite information or specific permissions information here. -->
+    <!-- Then write procedural steps using ordered lists. -->
+    <!-- Include only one way of doing something. If there's a shortcut, make sure to add it as a Tip. -->
+
+    ## Optionally, another procedural section here 
+
+    <!-- Keep adding procedures until you've finished writing your article. -->
+
+
+**Reference**::
+
+    ---
+    title: Nouns describing your subject
+    intro: Briefly describe what the reference item does, what it is, or what it is used for (e.g. *List of configuration elements*)
+    ---
+    ## A section here
+
+    <!-- Write one or two paragraphs about the main idea of your topic, as a summary. -->
+    <!-- Make sure you don't have any content that isn't preceded by a header, or it won't be linkable in our TOC. -->
+
+    ## Another section here
+
+    <!-- Write one or two paragraphs about another element of your topic. -->
+    <!-- Keep adding headers and sections until you've completed your article.  -->
+
 
 
 |:pray:|  Thanks again for contributing! |:pray:| 
