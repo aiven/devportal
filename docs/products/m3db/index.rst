@@ -53,7 +53,7 @@ With Aiven for M3, you can set up the following example solutions:
 
 
 
-Works best with other Aiven products
+Integrates with your existing tools
 ------------------------------------
 
 M3 is highly compatible with other Aiven products for the following tasks:
