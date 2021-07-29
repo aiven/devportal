@@ -85,9 +85,16 @@ Diagrams use `sphinxcontrib-mermaid <https://github.com/mgaitan/sphinxcontrib-me
 Importing content
 ~~~~~~~~~~~~~~~~~
 
-Some of the content for DevPortal came from a previous incarnation of documentation. To help with the migration, use the scripts in the ``utils/`` directory.
+Some of the content for DevPortal came from a previous incarnation of documentation. There is an import script to help with this process.
+
+To set up the import tooling for the first time:
 
 * Install [pandoc](https://pandoc.org/) and make sure the command is in your path
+* Change into the ``utils/`` directory
+* Run ``pip install -r requirements.txt``
+
+To bring in a page from the previous platform:
+
 * Run ``python import-help-articles.py [paste a URL]``
 * Take the resulting ``*.rst`` file and any images, and place them as appropriate in the file structure of the project
 

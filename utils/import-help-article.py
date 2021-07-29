@@ -1,3 +1,4 @@
+import argparse
 import os
 import requests
 import sys
@@ -6,10 +7,12 @@ from urllib.parse import urlparse
 import pypandoc
 from bs4 import BeautifulSoup
 
-if len(sys.argv) < 2:
-    sys.exit("Give the URL with the command")
+parser = argparse.ArgumentParser(description="Convert an existing help file")
+parser.add_argument('url', help="The URL of the source file")
+args = parser.parse_args()
 
-page_url = sys.argv[1]
+page_url = args.url
+print(page_url)
 
 # tangent: grab a filename
 url_pieces = urlparse(page_url)
