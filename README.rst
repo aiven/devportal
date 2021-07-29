@@ -82,6 +82,15 @@ Diagrams
 
 Diagrams use `sphinxcontrib-mermaid <https://github.com/mgaitan/sphinxcontrib-mermaid>`_ and `mermaid.js <https://mermaid-js.github.io/mermaid/#/>`_ syntax.
 
+Importing content
+~~~~~~~~~~~~~~~~~
+
+Some of the content for DevPortal came from a previous incarnation of documentation. To help with the migration, use the scripts in the ``utils/`` directory.
+
+* Install [pandoc](https://pandoc.org/) and make sure the command is in your path
+* Run ``python import-help-articles.py [paste a URL]``
+* Take the resulting ``*.rst`` file and any images, and place them as appropriate in the file structure of the project
+
 License
 -------
 
