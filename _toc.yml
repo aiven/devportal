@@ -7,8 +7,6 @@ entries:
   - file: docs/tools/index
     entries:
       - file: docs/tools/cli
-        entries: 
-        - file: docs/tools/cli-fork-service.rst
       - file: docs/tools/api/index
         title: Aiven API
         entries:
@@ -16,10 +14,18 @@ entries:
       - file: docs/tools/terraform
 
   # -------- PLATFORM-TOPICS --------
-  - file: docs/platform/concepts
+  - file: docs/platform/index
     title: Platform
     entries:
-     - file: docs/platform/howto/console-fork-service.rst
+    - file: docs/platform/concepts
+      title: Concepts
+      entries:
+      - file: docs/platform/howto/about-forking.rst
+    - file: docs/platform/howto
+      title: HowTo
+      entries:
+      - file: docs/platform/howto/console-fork-service.rst
+      - file: docs/tools/cli-fork-service.rst
 
   # -------- PRODUCT-SPECIFIC --------
   - file: docs/products/postgresql/index
