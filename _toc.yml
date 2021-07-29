@@ -20,12 +20,12 @@ entries:
     - file: docs/platform/concepts
       title: Concepts
       entries:
-      - file: docs/platform/howto/about-forking.rst
+      - file: docs/platform/concept/about-forking.rst
     - file: docs/platform/howto
       title: HowTo
       entries:
       - file: docs/platform/howto/console-fork-service.rst
-      - file: docs/tools/cli-fork-service.rst
+      - file: docs/platform/howto/cli-fork-service.rst
 
   # -------- PRODUCT-SPECIFIC --------
   - file: docs/products/postgresql/index

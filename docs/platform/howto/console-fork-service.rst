@@ -1,7 +1,7 @@
 Fork a service using the Aiven console
 ======================================
 
-.. include:: /docs/includes/incl-forking-intro.rst
+.. include:: /docs/platform/concepts/about-forking.rst
 
 .. image:: /images/tools/console/console-forking-service.gif
    :alt: Fork a service using the Aiven console.
