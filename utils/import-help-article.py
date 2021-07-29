@@ -1,7 +1,6 @@
 import argparse
 import os
 import requests
-import sys
 from urllib.parse import urlparse
 
 import pypandoc
@@ -12,7 +11,6 @@ parser.add_argument('url', help="The URL of the source file")
 args = parser.parse_args()
 
 page_url = args.url
-print(page_url)
 
 # tangent: grab a filename
 url_pieces = urlparse(page_url)
@@ -54,7 +52,7 @@ for image in article.findAll('img'):
 
 # output pretend HTML page
 with open(filename + '.html', 'w+') as f:
-    f.write(str(heading) + str(article))
+    f.write(str(heading) + article.prettify())
 
 f.close()
 
