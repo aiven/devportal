@@ -20,7 +20,7 @@ entries:
     - file: docs/platform/concepts
       title: Concepts
       entries:
-      - file: docs/platform/concepts/about-forking.rst
+        - glob: docs/products/postgresql/concepts/*
     - file: docs/platform/howto
       title: HowTo
       entries:
