@@ -6,6 +6,7 @@ datasource
 datastore
 downsampled
 downsampling
+Elasticsearch
 etcd
 fileset[s]?
 [Gg]o
@@ -14,9 +15,12 @@ hardcoded
 [Hh]obbyist
 [Hh]ostname
 jq
+Kibana
+Lucene
 [Nn]amespace
 NodeJS
 npm
+OpenSearch
 parallelization
 pgAdmin
 PgBouncer
@@ -24,6 +28,7 @@ pooler
 PostgreSQL
 Postman
 Python
+schemaless
 scriptable
 sharding
 signups
