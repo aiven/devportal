@@ -30,6 +30,7 @@ signups
 Telegraf
 Terraform
 Terraforming
+TimescaleDB
 toolchain
 Uber
 Untrusted
