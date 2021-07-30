@@ -27,6 +27,12 @@ DevPortal contains the following content types:
 - *Reference* - Referential content provides detailed information that peoplr need while they're actively using Aiven's products.
 - *Tutorial* - Tutorials help people learn about products, and solve real world problems by guiding them through the entire workflow to complete a task.
 
+.. tip::
+    Use the templates included below for further guidance. 
+
+To learn more about documentation content types, see the `Diátaxis Framework <https://diataxis.fr/>`_.
+
+
 **What is the structure of DevPortal?**
 
 You can see the structure in the left-hand navigation menu. 
@@ -42,15 +48,17 @@ If you have an article with general reference information, place it in the **Res
 How can I contribute?
 ---------------------
 
-**Reporting bugs, and suggesting enhancements**
+Reporting bugs, and suggesting enhancements
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you notice something is off (anything - from typos to incorrect instructions) or missing, consider opening an issue. 
+If you notice something is off (anything - from typos to completely incorrect instructions) or missing, consider opening an issue. 
 
 .. tip::
     Before you open an issue, check all the existing issues for the DevPortal to make sure you're not duplicating it. 
 
 
-**Contributing via pull requests (PR)**
+Contributing via pull requests (PRs)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you have your own article to add or you want to modify an existing article yourself, here's what you do:
 
@@ -66,13 +74,13 @@ We'll merge it!
 
 
 Style tips
-----------
+==========
 
 If you're writing content, here are some high-level tips that can be useful:
 
 - Decide what type of content you want to contribute (check the content model above), and use our content type templates - for concept, task, reference and tutorial.
 
-- Write a good title (start with a verb for tasks, and noun for concepts). 
+- Write a good title (start with a verb for tasks, and noun for concepts, or use one of the templates below to guide you). 
 
 - Note down your main ideas, and decide what formatting will best support these (use the content templates):
     - Ordered lists - for tasks
@@ -86,14 +94,12 @@ If you're writing content, here are some high-level tips that can be useful:
 
 - Add good links (internal and external) - properly formatted, to reputable sources of information.
 
-- Choose your visuals (images, diagrams, screenshots) and include them in a specified size (no bigger than…). 
+- Choose your visuals (images, diagrams, screenshots) and include them in a specified size (no bigger than 800px). 
 
 
 
 Style guides and other resources
 ================================
-
-- RestrecturedText cheatsheet
 
 Templates for DevPortal content (by type)
 -----------------------------------------
@@ -105,15 +111,17 @@ Templates for DevPortal content (by type)
     short description: Answer the question "What is this?" and "Why do I care about this?" If the concept is unfamiliar, start with a brief definition.
     ---
 
-    ## A section here
+    A section here
+    --------------
 
-    <!-- Write one or two paragraphs about the main idea of your topic, as a summary. -->
-    <!-- Make sure you don't have any content that isn't preceded by a header, or it won't be linkable in our TOC. -->
+    .. Write one or two paragraphs about the main idea of your topic, as a summary. 
+        Make sure you don't have any content that isn't preceded by a header, or it won't be linkable in our TOC. 
 
-    ## Another section here
+    Another section here
+    --------------------
 
-    <!-- Write one or two paragraphs about another element of your topic. -->
-    <!-- Keep adding headers and sections until you've completed your article.  -->
+    .. Write one or two paragraphs about another element of your topic. 
+        Keep adding headers and sections until you've completed your article.  
 
 
 **Task**::
@@ -123,15 +131,17 @@ Templates for DevPortal content (by type)
     intro: Explain what the task helps users accomplish, the benefits of the task, or the purpose of the task. Try to include information that will help users understand when the task is appropriate or why the task is necessary. 
     ---
 
-    ## Procedural section header here
+    Procedural section header here
+    -------------------------------
 
-    <!-- Include prerequisite information or specific permissions information here. -->
-    <!-- Then write procedural steps using ordered lists. -->
-    <!-- Include only one way of doing something. If there's a shortcut, make sure to add it as a Tip. -->
+    .. Include prerequisite information or specific permissions information here.
+        Then write procedural steps using ordered lists. 
+        Include only one way of doing something. If there's a shortcut, make sure to add it as a Tip. 
 
-    ## Optionally, another procedural section here 
+    Optionally, another procedural section here 
+    -------------------------------------------
 
-    <!-- Keep adding procedures until you've finished writing your article. -->
+    Keep adding procedures until you've finished writing your article.
 
 
 **Reference**::
@@ -140,18 +150,27 @@ Templates for DevPortal content (by type)
     title: Nouns describing your subject
     intro: Briefly describe what the reference item does, what it is, or what it is used for (e.g. *List of configuration elements*)
     ---
-    ## A section here
+    
+    A section here
+    --------------
 
-    <!-- Write one or two paragraphs about the main idea of your topic, as a summary. -->
-    <!-- Make sure you don't have any content that isn't preceded by a header, or it won't be linkable in our TOC. -->
+    .. Write one or two paragraphs about the main idea of your topic, as a summary.
+        Make sure you don't have any content that isn't preceded by a header, or it won't be linkable in our TOC.
 
-    ## Another section here
+    Another section here
+    ------------------------
 
-    <!-- Write one or two paragraphs about another element of your topic. -->
-    <!-- Keep adding headers and sections until you've completed your article.  -->
+    .. Write one or two paragraphs about another element of your topic.
+        Keep adding headers and sections until you've completed your article. 
 
 
+Styleguides and more info
+-------------------------
 
-|:pray:|  Thanks again for contributing! |:pray:| 
+- `ReStructuredText primer <https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html>`_
+- `Diátaxis Framework <https://diataxis.fr/>`_.
 
-The DevRel team
+
+|:pray:|  Thanks again for contributing! |:pray:|
+
+The Aiven DevRel team
