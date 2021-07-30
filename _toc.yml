@@ -25,7 +25,34 @@ entries:
       - file: docs/products/postgresql/howto
         title: HowTo
         entries:
-          - glob: docs/products/postgresql/howto/*
+          - file: docs/products/postgresql/howto/list-code-samples
+            entries:
+              - file: docs/products/postgresql/howto/connect-go
+              - file: docs/products/postgresql/howto/connect-node
+              - file: docs/products/postgresql/howto/connect-php
+              - file: docs/products/postgresql/howto/connect-python
+          - file: docs/products/postgresql/howto/list-dba-tasks
+            entries:
+              - file: docs/products/postgresql/howto/upgrade
+              - file: docs/products/postgresql/howto/manage-extensions
+              - file: docs/products/postgresql/howto/create-manual-backups
+              - file: docs/products/postgresql/howto/restore-backup
+              - file: docs/products/postgresql/howto/migrate-cloud-region
+              - file: docs/products/postgresql/howto/claim-public-schema-ownership
+              - file: docs/products/postgresql/howto/manage-pool
+              - file: docs/products/postgresql/howto/pgbouncer-stats
+          - file: docs/products/postgresql/howto/list-replication-migration
+            entries:
+              - file: docs/products/postgresql/howto/create-read-replica
+              - file: docs/products/postgresql/howto/setup-logical-replication
+              - file: docs/products/postgresql/howto/migrate-aiven-db-migrate
+              - file: docs/products/postgresql/howto/migrate-pg-dump-restore
+          - file: docs/products/postgresql/howto/list-integrations
+            entries:
+              - file: docs/products/postgresql/howto/connect-psql
+              - file: docs/products/postgresql/howto/connect-pgadmin
+              - file: docs/products/postgresql/howto/visualize-grafana
+              - file: docs/products/postgresql/howto/report-metrics-grafana
       - file: docs/products/postgresql/reference
         title: Reference
         entries:

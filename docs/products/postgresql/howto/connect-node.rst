@@ -1,7 +1,7 @@
-Connect with Go
----------------
+Connect with NodeJS
+-------------------
 
-This example connects to PostgreSQL service from Go, making use of the ``pg`` library.
+This example connects to PostgreSQL service from NodeJS, making use of the ``pg`` package.
 
 Variables
 '''''''''
@@ -19,25 +19,24 @@ Pre-requisites
 
 For this example you will need:
 
-1. The Go ``pq`` library::
+1. The npm ``pg`` package::
 
-    go get github.com/lib/pq
-
+    npm install pg 
 
 
 Code
 ''''
 
-Add the following to ``main.go`` and replace the placeholder with the PostgreSQL URI:
+Add the following to ``index.js`` and replace the placeholder with the PostgreSQL URI:
 
-.. literalinclude:: /code/products/postgresql/connect.go
+.. literalinclude:: /code/products/postgresql/connect.js
 
 This code creates a PostgreSQL client and opens a connection to the database. Then runs a query checking the database version and prints the response
 
 To run the code::
 
-    go run main.go
+    node index.php
 
 If the script runs successfully, the outputs should be the PostgreSQL version running in your service like::
 
-    Version: PostgreSQL 13.3 on x86_64-pc-linux-gnu, compiled by gcc, a 68c5366192 p 6520304dc1, 64-bit
+    PostgreSQL 13.3 on x86_64-pc-linux-gnu, compiled by gcc, a 68c5366192 p 6520304dc1, 64-bit

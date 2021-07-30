@@ -15,6 +15,8 @@ hardcoded
 [Hh]ostname
 jq
 [Nn]amespace
+NodeJS
+npm
 parallelization
 pgAdmin
 PgBouncer
