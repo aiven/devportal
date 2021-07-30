@@ -136,7 +136,7 @@ Templates for DevPortal content (by type)
 
     .. Include prerequisite information or specific permissions information here.
         Then write procedural steps using ordered lists. 
-        Include only one way of doing something. If there's a shortcut, make sure to add it as a Tip. 
+        Include only one way of doing something. If there's a shortcut, make sure to add it as a **Tip**. 
 
     Optionally, another procedural section here 
     -------------------------------------------
@@ -155,6 +155,7 @@ Templates for DevPortal content (by type)
     --------------
 
     .. Write one or two paragraphs about the main idea of your topic, as a summary.
+        Reference content is often in a form of table or list. Decide which works better for you.
         Make sure you don't have any content that isn't preceded by a header, or it won't be linkable in our TOC.
 
     Another section here
