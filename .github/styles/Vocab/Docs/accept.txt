@@ -8,6 +8,7 @@ datasource
 datastore
 downsampled
 downsampling
+Elasticsearch
 etcd
 failover
 fileset[s]?
@@ -20,13 +21,16 @@ Hillyer
 [Hh]ostname
 hyperloglogs
 jq
+Kibana
 Kubernetes
 Lua
+Lucene
 Memorystore
 [Nn]amespace
 NodeJS
 npm
 Okta
+OpenSearch
 Pagila
 parallelization
 [Oo]perator
@@ -41,6 +45,7 @@ Python
 Redis
 refcard
 Sakila
+schemaless
 scriptable
 sharding
 signups
