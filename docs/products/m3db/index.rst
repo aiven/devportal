@@ -41,15 +41,13 @@ Handle and analyse the time-stamped data from multiple connected devices and ser
 
 With Aiven for M3, you can set up the following example solutions:
 
-- Monitor IoT deployments, and use time series analysis to identify seasonal patterns, average usage and potential inefficiencies.
+- Monitor IoT deployments, applications performance, financial trends, and even self-driving cars.
 
-- Measure the performance of your applications, detect problems, respond to incidents and plan maintenance. 
+- Detect problems, respond promptly to incidents and plan maintenance.
 
-- Cross-reference contextual data to understand financial trends. 
+- Provide fast data ingest and queries, with strong data compression.
 
-- Process self-driving car data with faster data ingest and queries, and with stronger data compression. 
-
-- Predict future sales by using statistical models with historic data and cross-referencing it with consumer trends. 
+- Build statistical models on the historic data to predict future trends.
 
 
 
@@ -58,9 +56,11 @@ Integrates with your existing tools
 
 M3 is highly compatible with other Aiven products for the following tasks:
 
-* To collect metrics with Prometheus, M3 is designed as a scalable storage backend.
-* To write metrics directly from your applications using the InfluxDB-compatible wire protocol.
-* To create dashboards and query available features using Grafana and PromQL.
+- To collect metrics with Prometheus, M3 is designed as a scalable storage backend.
+
+- To write metrics directly from your applications using the InfluxDB-compatible wire protocol.
+
+- To create dashboards and query available features using Grafana and PromQL.
 
 Check out all the features on our `M3 product page <https://aiven.io/m3#full-feature-list>`_. 
 
@@ -76,6 +76,9 @@ If you are new to M3, we recommend the following resources to get you started wi
 * From the upstream project::
 
   - Using M3DB with `Prometheus <https://m3db.io/docs/integrations/prometheus/>`_
+
   - Ingesting data from `Graphite <https://m3db.io/docs/integrations/graphite/>`_
+
   - Integrating M3DB with `Grafana <https://m3db.io/docs/integrations/grafana/>`_
+  
   - Writing to M3DB using `InfluxDB protocol <https://m3db.io/docs/integrations/influx/>`_
