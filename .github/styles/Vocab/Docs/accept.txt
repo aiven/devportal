@@ -8,6 +8,7 @@ datasource
 datastore
 downsampled
 downsampling
+Elasticsearch
 etcd
 failover
 fileset[s]?
@@ -19,11 +20,14 @@ hardcoded
 [Hh]ostname
 hyperloglogs
 jq
+Kibana
 Lua
+Lucene
 Memorystore
 [Nn]amespace
 NodeJS
 npm
+OpenSearch
 parallelization
 pgAdmin
 PgBouncer
@@ -34,6 +38,7 @@ Postman
 Python
 Redis
 refcard
+schemaless
 scriptable
 sharding
 signups
