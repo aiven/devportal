@@ -88,6 +88,9 @@ entries:
         entries:
           - glob: docs/products/postgresql/reference/*
 
+  - file: docs/products/opensearch/index
+    title: OpenSearch
+
   - file: docs/products/m3db/index
     title: M3DB
     entries:
