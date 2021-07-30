@@ -51,7 +51,14 @@ Learn about the Aiven platform
 
     ---
 
-    |icon-elasticsearch| **ElasticSearch** Document database with specialist search features, bring your freeform documents, logs or metrics, and make sense of them here.
+    |icon-elasticsearch| **OpenSearch** Document database with specialist search features, bring your freeform documents, logs or metrics, and make sense of them here.
+
+    +++
+
+    .. link-button:: docs/products/opensearch/index
+        :type: ref
+        :text: Read more
+        :classes: stretched-link
 
     ---
 
