@@ -35,22 +35,6 @@ Take your first steps with Aiven for M3 by following our :doc:`getting-started` 
     💻 :doc:`howto`
 
 
-Ways to use Aiven for M3
-------------------------
-Handle and analyse the time-stamped data from multiple connected devices and services, scale up as needed, and compare datasets to provide insights into past and present.
-
-With Aiven for M3, you can set up the following example solutions:
-
-- Monitor IoT deployments, applications performance, financial trends, and even self-driving cars.
-
-- Detect problems, respond promptly to incidents and plan maintenance.
-
-- Provide fast data ingest and queries, with strong data compression.
-
-- Build statistical models on the historic data to predict future trends.
-
-
-
 Integrates with your existing tools
 ------------------------------------
 
@@ -63,6 +47,21 @@ M3 is highly compatible with other Aiven products for the following tasks:
 - To create dashboards and query available features using Grafana and PromQL.
 
 Check out all the features on our `M3 product page <https://aiven.io/m3#full-feature-list>`_. 
+
+
+
+
+Ways to use Aiven for M3
+------------------------
+Handle and analyse the time-stamped data from multiple connected devices and services, scale up as needed, and compare datasets to provide insights into past and present.
+
+With Aiven for M3, you can set up the following example solutions:
+
+- Monitor IoT deployments, applications performance, financial trends.
+
+- Detect problems, respond promptly to incidents and plan maintenance.
+
+- Provide fast data ingest and queries, with strong data compression.
 
 
 
@@ -80,5 +79,5 @@ If you are new to M3, we recommend the following resources to get you started wi
   - Ingesting data from `Graphite <https://m3db.io/docs/integrations/graphite/>`_
 
   - Integrating M3DB with `Grafana <https://m3db.io/docs/integrations/grafana/>`_
-  
+
   - Writing to M3DB using `InfluxDB protocol <https://m3db.io/docs/integrations/influx/>`_
