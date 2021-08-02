@@ -45,6 +45,21 @@ entries:
           - glob: docs/products/m3db/howto/*
       - glob: docs/products/m3db/reference/*
 
+  - file: docs/products/opensearch/index
+    title: M3DB
+    entries:
+      - file: docs/products/opensearch/concepts
+        title: Concepts
+        entries:
+          - glob: docs/products/opensearch/concepts/*
+      - file: docs/products/opensearch/howto
+        title: HowTo
+        entries:
+          - glob: docs/products/opensearch/howto/*
+      - file: docs/products/opensearch/reference/*
+        title: Reference
+        entries:
+          - glob: docs/products/opensearch/reference/*
 
   # -------- AUXILIARY
   - file: docs/community
