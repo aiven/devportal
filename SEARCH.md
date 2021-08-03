@@ -53,9 +53,6 @@ The Elasticsearch index is used through the Netlify function in [netlify/functio
 
 - use OR-style query matching `title`, `description` and `content` (with ES `match_phrase_prefix`)
 - give higher value to `title`
-- show Developer Portal pages first using `sort_priority`
-
-# <<<<<<< HEAD
 
 # Creating the index
 
@@ -94,8 +91,6 @@ You can run the script with
 make index-helpcenter ES_URL=https://es.url/here
 ```
 
-> > > > > > > 22e256f661a7afca203c8ff1f660b7f928ec53f2
-
 ## Adding documents to the index using Python
 
 Using `elasticsearch` library:
@@ -125,21 +120,4 @@ es.index(index='devportal',
          id=hashlib.sha256(page['url'].encode("utf-8")).hexdigest())
 ```
 
-<<<<<<< HEAD
 You might also need to take care of removing documents that no longer exist.
-
-# Developer Portal page indexing
-
-Developer Portal pages are indexed with [scripts/index_pages.py](scripts/index_pages.py).
-The script parses built HTML files using [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-and extracts document title from `title` element and document content from `main` element child that has a `content` class (CSS selector `main .content`).
-
-Pages that we do not want to be indexed can be added to `INDEX_BLACKLIST` list in [scripts/index_pages.py](scripts/index_pages.py).
-
-# Help Center page indexing
-
-# TODO
-
-You might also need to take care of removing documents that no longer exist.
-
-> > > > > > > 22e256f661a7afca203c8ff1f660b7f928ec53f2
