@@ -10,7 +10,7 @@ Aiven for OpenSearch comes with OpenSearch Dashboards included, giving a fully-f
 
 
 Why OpenSearch?
-===============
+---------------
 
 OpenSearch is a very useful addition to almost any data platform. It is designed to be robust, scalable and to be able to handle a variety of data types and structures. It provides high-performance search functionality for data of any size or type, and with schemaless storage, can index a variety of sources with different data structures.
 
