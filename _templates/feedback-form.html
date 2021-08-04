@@ -166,7 +166,7 @@
         body: new URLSearchParams(formData).toString(),
       })
         .then(function (response) {
-          if (response.status !== 201) {
+          if (response.status >= 400) {
             throw response;
           }
           $(".feedback").html($("#thankyou").html());
