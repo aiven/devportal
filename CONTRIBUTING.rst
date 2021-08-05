@@ -11,7 +11,7 @@ What should I know before I contribute?
 
 **What is DevPortal?**
 
-DevPortal is Aiven’s developer portal. It’s goal is to provide a comprehensive set of help articles aimed at developers using Aiven’s products. 
+DevPortal is Aiven’s developer portal. Its goal is to provide a comprehensive set of help articles aimed at developers using Aiven’s products. 
 
 
 **How does DevPortal work?**
@@ -24,7 +24,7 @@ It is Python-based, with content in ReStructuredText (rst) and rendered by Sphin
 DevPortal contains the following content types:
 - *Concept* - Conceptual content helps people understand a feature or topic by providing a clear, high-level overview, explanation of how the feature or topic can help them on their journey, and context like use cases or examples. 
 - *Task* - Task content helps people complete a task from start to finish while they're using Aiven’s products.
-- *Reference* - Referential content provides detailed information that peoplr need while they're actively using Aiven's products.
+- *Reference* - Referential content provides detailed information that people need while they're actively using Aiven's products.
 - *Tutorial* - Tutorials help people learn about products, and solve real world problems by guiding them through the entire workflow to complete a task.
 
 .. tip::
@@ -88,8 +88,8 @@ If you're writing content, here are some high-level tips that can be useful:
     - Lists and tables - for reference/options
 
 - Highlight information by using the following elements:
-    - Tips - for interesting facts about parts of your content/alternative ways of doing something, and shortcuts
-    - Warnings - for important facts readers need to know before proceeding
+    - Tip - for interesting facts about parts of your content/alternative ways of doing something, and shortcuts
+    - Important - for important facts readers need to know before proceeding
     - Info - for any extra information (this may be skipped)
 
 - Add good links (internal and external) - properly formatted, to reputable sources of information.
