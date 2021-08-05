@@ -10,7 +10,7 @@ Commands for listing cloud regions to be used when creating or moving instances 
 ``avn cloud list``
 '''''''''''''''''''''''
 
-List cloud regions with related geografical region, latitute and longitude
+List cloud regions with related geographical region, latitude and longitude
 
 .. list-table::
   :header-rows: 1
