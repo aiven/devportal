@@ -6,3 +6,4 @@ scope: heading
 match: $sentence
 exceptions:
   - HowTo
+  - Paglia

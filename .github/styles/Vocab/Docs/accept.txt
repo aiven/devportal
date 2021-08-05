@@ -6,6 +6,7 @@ cyber
 datacenter
 datasource
 datastore
+devrimgunduz
 downsampled
 downsampling
 etcd
@@ -15,6 +16,7 @@ geospatial
 [Gg]o
 Grafana
 hardcoded
+Hillyer
 [Hh]obbyist
 [Hh]ostname
 hyperloglogs
@@ -24,6 +26,7 @@ Memorystore
 [Nn]amespace
 NodeJS
 npm
+Okta
 parallelization
 pgAdmin
 PgBouncer
@@ -34,6 +37,7 @@ Postman
 Python
 Redis
 refcard
+Sakila
 scriptable
 sharding
 signups
@@ -46,4 +50,3 @@ Uber
 unencrypted
 Untrusted
 [Uu]naggregated
-Okta
