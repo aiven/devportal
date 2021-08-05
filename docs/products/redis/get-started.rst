@@ -1,0 +1,66 @@
+Get started with Aiven for Redis
+================================
+
+Get up and running with Aiven for Redis. This article shows you how to set up a Redis service in Aiven, connect to it, and use sample data to see how it works.
+
+
+Step 1: Check the basics
+-------------------------
+(TBD)
+
+
+Step 2: Create a new Aiven service
+-----------------------------------
+
+You can add services for the various Aiven products in the Aiven web console.
+
+To create a new Aiven for Redis service:
+
+1. Log in to the `Aiven web console <https://console.aiven.io/>`_.
+
+2. On the *Services* page, click **Create a new service**.
+
+   This opens a new page with the available service options.
+
+   .. image:: /images/tools/console/console_create_service.png
+
+3. Select the main properties for your service:
+
+   a. Select the service type.
+
+      If there are several versions available, select the version that you want to use. By default, the latest available version is selected.
+
+   b. Select the cloud provider and region that you want to run your service on.
+
+      **Note:** The pricing for the same service may vary between different providers and regions. The service summary on the right side of the console shows you the pricing for your selected options.
+   c. Select a service plan.
+
+      This defines the number of servers and what kind of memory, CPU, and disk resources are allocated to your service.
+
+   d. Enter a name for your service.
+
+      A random name is provided by default, but you can enter a more recognizable name to distinguish it from other services.
+
+
+4. Click **Create Service** under the summary on the right side of the console.
+
+   This brings you back to the **Services** view. Your new service is listed with a status indicator to show that it is being created.
+
+5. Click the service name.
+
+   The *Overview* page for the service opens.
+
+   .. image:: /images/tools/console/console_service.png
+
+   This view shows you the connection parameters for your service, its current status, and the configuration options.
+
+   The status is *REBUILDING* while the service is being created for you. Once the service is ready, the status changes to *RUNNING*. While services typically start up in a couple of minutes, the performance varies between cloud providers and regions, and it may take longer in some circumstances.
+
+
+Step 3: Connect to Aiven for Redis
+-----------------------------------
+(TBD)
+
+Step 4: Load sample data in Aiven for Redis
+-------------------------------------------
+(TBD)
