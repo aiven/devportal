@@ -196,7 +196,7 @@ After playing around with the sample queries, can you use SQL statements to answ
 
 Source
 ------
-You can find the source code for the Paglia database and schema `here <https://github.com/aiven/devportal/tree/main/code/products/postgresq/paglia>`_.
+You can find the source code for the Paglia database and schema `here <https://github.com/aiven/devportal/tree/paglia-sample-database/code/products/postgresql/paglia>`_.
 
 License
 -------
