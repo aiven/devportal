@@ -1,6 +1,9 @@
 Command reference: ``avn project``
 ==================================
 
+Here you'll find the full list of commands for ``avn project``.
+
+
 Work with project details
 -------------------------
 
@@ -10,7 +13,7 @@ Commands for managing projects and using them with ``avn`` commands.
 ``avn project details``
 '''''''''''''''''''''''
 
-Fetch project details
+Fetches project details.
 
 .. list-table::
   :header-rows: 1
@@ -21,7 +24,7 @@ Fetch project details
   * - ``--project``
     - The project to fetch details for
 
-**Example:** Show the details of the currently-selected project.
+**Example:** Show the details of the currently selected project.
 
 ::
 
@@ -38,7 +41,7 @@ Fetch project details
 ``avn project switch``
 ''''''''''''''''''''''
 
-Set the default project to use with ``avn``
+Sets the default project to use with ``avn``.
 
 .. list-table::
   :header-rows: 1
@@ -59,9 +62,9 @@ Set the default project to use with ``avn``
 ``avn project list``
 ''''''''''''''''''''
 
-List all the projects that you have access to.
+Lists all the projects that you have access to.
 
-**Example:** list all the projects available to use with a ``--project`` command switch.
+**Example:** List all the projects available to use with a ``--project`` command switch.
 
 ::
 
@@ -71,7 +74,7 @@ List all the projects that you have access to.
 ``avn project create`` and ``avn project update``
 '''''''''''''''''''''''''''''''''''''''''''''''''
 
-Create a new project with ``create`` or change the settings with ``update``.
+Creates a new project with ``create`` or changes the settings with ``update``.
 
 .. list-table::
   :header-rows: 1
@@ -80,7 +83,7 @@ Create a new project with ``create`` or change the settings with ``update``.
   * - Parameter
     - Information
   * - ``project_name`` (required for ``create``)
-    - Note: this is a positional argument, not a switch
+    - Note: This is a positional argument, not a switch
   * - ``--project`` (required for ``update``)
     - The project to amend, use with ``update`` only
   * - ``--name`` (``update`` only)
@@ -106,7 +109,7 @@ Create a new project with ``create`` or change the settings with ``update``.
   * - ``--billing-currency``
     - The currency to bill in. The choices are: "AUD" "CAD" "CHF" "DKK" "EUR" "GBP" "NOK" "SEK" "USD"
   * - ``--vat-id``
-    - VAT id for this project
+    - VAT ID for this project
   * - ``--billing-email``
     - Email for the billing contact
   * - ``--tech-email``
@@ -141,7 +144,7 @@ Create a new project with ``create`` or change the settings with ``update``.
 ``avn project delete``
 ''''''''''''''''''''''
 
-Delete an empty project. If the project isn't empty, remove the services in it first.
+Deletes an empty project. If the project isn't empty, it removes the services in it first.
 
 .. Note::
     Aiven doesn't allow the deletion of non-empty projects as safeguard against accidental code execution.
@@ -153,7 +156,7 @@ Delete an empty project. If the project isn't empty, remove the services in it f
   avn project delete my-project
 
 
-Project certificate management
+Manage project certificates
 ------------------------------
 
 CA certificates are managed at the project level.
@@ -161,7 +164,7 @@ CA certificates are managed at the project level.
 ``avn project ca-get``
 ''''''''''''''''''''''
 
-Download the CA cert for this project, the certificate will be saved in the file name you supply.
+Downloads the CA certificate for this project, the certificate is saved in the file name you supply.
 
 .. list-table::
   :header-rows: 1
@@ -174,22 +177,22 @@ Download the CA cert for this project, the certificate will be saved in the file
   * - ``--target-filepath``
     - File name, including path, to use
 
-**Example:** Download the CA certificate for the current project and save it in a file in the current directory called ``ca.pem``.
+**Example:** Download the CA certificate for the current project, and save it in a file in the current directory called ``ca.pem``.
 
 ::
 
   avn project ca-get --target-filepath ca.pem
 
 
-Users and invitations
----------------------
+Manage users and invitations
+----------------------------
 
 Manage user access to the project.
 
 ``avn project invite-list``
 '''''''''''''''''''''''''''
 
-See the open invitations to the project.
+Lists the open invitations to the project.
 
 .. list-table::
   :header-rows: 1
@@ -210,7 +213,7 @@ See the open invitations to the project.
 ``avn project user-list``
 '''''''''''''''''''''''''
 
-See the users with access to the project
+Lists the users with access to the project
 
 .. list-table::
   :header-rows: 1
@@ -231,7 +234,7 @@ See the users with access to the project
 ``avn project user-invite``
 '''''''''''''''''''''''''''
 
-Send an invitation to a user (by email) to join a project
+Sends an invitation to a user (by email) to join a project.
 
 .. list-table::
   :header-rows: 1
@@ -256,7 +259,7 @@ Send an invitation to a user (by email) to join a project
 ``avn project user-remove``
 '''''''''''''''''''''''''''
 
-Remove from the project a user with the supplied email address.
+Removes a user with the supplied email address from the project.
 
 .. list-table::
   :header-rows: 1
@@ -265,7 +268,7 @@ Remove from the project a user with the supplied email address.
   * - Parameter
     - Information
   * - ``email`` (required)
-    - Note: this is a positional argument
+    - Note: This is a positional argument
   * - ``--project``
     - The project to remove the user from
 
