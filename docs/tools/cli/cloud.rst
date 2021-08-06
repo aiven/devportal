@@ -1,6 +1,9 @@
 Command reference: ``avn cloud``
 ==================================
 
+Here you’ll find the full list of commands for ``avn cloud``.
+
+
 List cloud region details
 -------------------------
 
@@ -10,7 +13,7 @@ Commands for listing cloud regions to be used when creating or moving instances 
 ``avn cloud list``
 '''''''''''''''''''''''
 
-List cloud regions with related geographical region, latitude and longitude
+Lists cloud regions with related geographical region, latitude and longitude.
 
 .. list-table::
   :header-rows: 1
@@ -21,7 +24,7 @@ List cloud regions with related geographical region, latitude and longitude
   * - ``--project``
     - The project to fetch details for
 
-**Example:** Show the details of the currently-selected project.
+**Example:** Show the details of the currently selected project.
 
 ::
 
