@@ -90,7 +90,7 @@ entries:
           - glob: docs/products/m3db/howto/*
       - glob: docs/products/m3db/reference/*
 
-   - file: docs/products/redis/index
+ - file: docs/products/redis/index
     title: Redis
     entries:
       - file: docs/products/redis/get-started
@@ -101,7 +101,7 @@ entries:
       - file: docs/products/redis/howto
         title: HowTo
         entries:
-          - glob: docs/products/postgresql/howto/*
+          - glob: docs/products/redis/howto/*
 
 
   # -------- AUXILIARY
