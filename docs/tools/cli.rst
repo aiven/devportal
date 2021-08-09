@@ -63,6 +63,8 @@ Manage the payment cards on your account.
 
 Use ``avn cloud list`` to see all the currently-available clouds on Aiven. This is useful for looking up the cloud name to use with ``service`` commands.
 
+:doc:`See detailed command information <cli/cloud>`.
+
 
 ``credits``
 '''''''''''
