@@ -174,4 +174,4 @@ Styleguides and more info
 
 |:pray:|  Thanks again for contributing! |:pray:|
 
-The Aiven DevRel team
+Aiven Team
