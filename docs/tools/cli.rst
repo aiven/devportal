@@ -57,6 +57,8 @@ The billing group command also enables access to the credit code features, and d
 
 Manage the payment cards on your account.
 
+:doc:`See detailed command information <cli/card>`.
+
 
 ``cloud``
 '''''''''
@@ -69,10 +71,14 @@ Use ``avn cloud list`` to see all the currently-available clouds on Aiven. This 
 
 Claim or view the history of credit codes.
 
+:doc:`See detailed command information <cli/credits>`.
+
 ``events``
 ''''''''''
 
 Inspect the events on your account such as the services created/deleted, and which users triggered each event.
+
+:doc:`See detailed command information <cli/events>`.
 
 ``help``
 ''''''''
