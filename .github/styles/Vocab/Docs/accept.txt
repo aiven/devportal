@@ -40,3 +40,4 @@ hyperloglogs
 geospatial
 Lua
 refcard
+Google Cloud Memorystore
