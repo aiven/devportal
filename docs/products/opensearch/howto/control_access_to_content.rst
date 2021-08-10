@@ -5,11 +5,11 @@ This article shows you how to set up access control lists (ACL) for content in A
 
 See the :doc:`related documentation <../concepts/access_control>` for more information on the permissions and patterns that are supported in ACL rules.
 
-To define ACLs for your service:
+Switch on ACL support for your service
+--------------------------------------
 
-1. Log in to the Aiven web console and select your OpenSearch service.
+1. Log in to the `Aiven web console <https://console.aiven.io>`_ and select your OpenSearch service.
 
-   
 2. Click the **ACL** tab.
 
 3. Switch on **Enable ACL**.
@@ -21,14 +21,20 @@ To define ACLs for your service:
 
    
 4. If you want to enforce index rules in a limited fashion for requests that use the ``_mget``, ``_msearch``, and ``_bulk`` APIs for this service user, switch on **Enable extended ACLs**.
-   
-5. To define new ACLs:
 
-   a. Click **Create user ACL**.
-   b. Select the service user that you want to use.
-   c. Click **Add rule**.
-   d. Select the permission that you want to add.
-   e. Enter the pattern for indexes that the ACL applies to.
-   f. Add more rules to the ACL if required.
-   g. Click **Create**.
+
+Define ACLs
+-----------
+
+When you have switched on ACL support in your service, define the new ACLs:
+
+1. Log in to the `Aiven web console <https://console.aiven.io>`_ and select your OpenSearch service.
+2. Click the **ACL** tab.
+3. Click **Create user ACL**.
+4. Select the service user that you want to use.
+5. Click **Add rule**.
+6. Select the permission that you want to add.
+7. Enter the pattern for indexes that the ACL applies to.
+8. Add more rules to the ACL if required.
+9. Click **Create**.
 

@@ -11,6 +11,10 @@ You can grant the following permissions:
 * ``read``: allow only searching and retrieving documents
 * ``write``: allow updating, adding, and deleting documents
 
+  .. note::
+     Write permission allows the service user to create new indexes that match the pattern, but it does not allow deletion of those indexes.
+
+
 Rules are defined separately for each user as ``pattern/permission`` combinations. The ``pattern`` defines the indexes that the permission applies to. Patterns are glob-style, where ``*`` matches any number of characters and ``?`` matches any character. 
 
 When multiple rules match, they are applied in the order listed above. If no rules match, access is denied.
@@ -38,9 +42,6 @@ The same set would deny the service user to
 * gain any access to ``messages_2019`` (no matching rules),
 * read or search documents from ``events_2018`` (the second rule only grants ``write`` permission), and
 * write to or use the API for ``logs_20171230`` (the first rule only grants ``read`` permission).
-
-.. note::
-   Write permission allows the service user to create new indexes that match the pattern, but it does not allow deletion of those indexes.
 
 The permission also implies which index APIs the service user can access:
 
