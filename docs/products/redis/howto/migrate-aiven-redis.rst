@@ -92,8 +92,8 @@ Migrate to an existing Aiven for Redis service by updating the service configura
 
     $ avn service update --project test -c migration.host="master.jappja-redis.kdrxxz.euw1.cache.amazonaws.com" -c migration.port=6379 -c migration.password=<password> redis
 
--> To removing migration from configuration
+-> To remove migration from configuration
 ---------------------------------------------
-Migration is one-time operation - once the status is done the migration cannot be restarted. If migration needs to be run again, it must be first removed from the configuration, and then configured again::
+Migration is one-time operation - once the status is ``done``, the migration cannot be restarted. If you need to run migration again, you should first remove it from the configuration, and then configure it again::
 
     $ avn service update --project test --remove-option migration redis
