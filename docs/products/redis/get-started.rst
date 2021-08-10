@@ -6,13 +6,21 @@ Get up and running with Aiven for Redis. This article shows you how to set up a 
 
 Step 1: Check the basics
 -------------------------
-(TBD)
+* :doc:`High availability in Aiven for Redis <concepts/high-availability-redis>`.
+
+  Learn about how Aiven for Redis supports high availability.
+
+* :doc:`Memory usage, on-disk persistence and replication in Aiven for Redis <concepts/memory-usage>`.
+
+  See how Aiven for Redis solves the challenges related to high memory usage and high change rate.
 
 
 Step 2: Create a new Aiven service
 -----------------------------------
 
 You can add services for the various Aiven products in the Aiven web console.
+
+.. Add an image from Redis (waiting for console access). 
 
 To create a new Aiven for Redis service:
 
@@ -21,8 +29,6 @@ To create a new Aiven for Redis service:
 2. On the *Services* page, click **Create a new service**.
 
    This opens a new page with the available service options.
-
-   .. image:: /images/tools/console/console_create_service.png
 
 3. Select the main properties for your service:
 
@@ -48,19 +54,8 @@ To create a new Aiven for Redis service:
 
 5. Click the service name.
 
-   The *Overview* page for the service opens.
-
-   .. image:: /images/tools/console/console_service.png
-
-   This view shows you the connection parameters for your service, its current status, and the configuration options.
+   The *Overview* page for the service opens. This view shows you the connection parameters for your service, its current status, and the configuration options.
 
    The status is *REBUILDING* while the service is being created for you. Once the service is ready, the status changes to *RUNNING*. While services typically start up in a couple of minutes, the performance varies between cloud providers and regions, and it may take longer in some circumstances.
 
-
-Step 3: Connect to Aiven for Redis
------------------------------------
-(TBD)
-
-Step 4: Load sample data in Aiven for Redis
--------------------------------------------
-(TBD)
+.. Add the following steps: (Step 3: Connect to Aiven for Redis) and (Step 4: Load sample data in Aiven for Redis)
