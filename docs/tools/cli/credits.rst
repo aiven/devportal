@@ -4,16 +4,16 @@ Command reference: ``avn credits``
 Here you’ll find the full list of commands for ``avn credits``.
 
 
-Manage Aiven credits
---------------------
+Aiven credits
+-------------
 
-Commands for managing Aiven credits.
+All commands for managing Aiven credits.
 
 
 ``avn credits claim``
 '''''''''''''''''''''''
 
-Claims a new Aiven credit code.
+Add an Aiven credit code to a project.
 
 .. list-table::
   :header-rows: 1
@@ -43,7 +43,7 @@ Claims a new Aiven credit code.
 ``avn credits list``
 '''''''''''''''''''''''
 
-Lists credit codes associated with the Aiven project.
+List the credit codes associated with a project.
 
 .. list-table::
   :header-rows: 1
@@ -55,13 +55,13 @@ Lists credit codes associated with the Aiven project.
     - The project to list the credits for
 
 
-**Example:** List all credit codes associated with the currently selected Aiven project.
+**Example:** List all credit codes associated with the currently selected project.
 
 ::
 
   avn credits list
 
-**Example:** List all credit codes associated with a named Aiven project.
+**Example:** List all credit codes associated with a named project.
 
 ::
 
