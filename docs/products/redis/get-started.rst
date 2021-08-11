@@ -20,7 +20,7 @@ Step 2: Create a new Aiven service
 
 You can add services for the various Aiven products in the Aiven web console.
 
-.. Add an image from Redis (waiting for console access). 
+.. image:: /images/products/redis/get-started-redis.gif
 
 To create a new Aiven for Redis service:
 
