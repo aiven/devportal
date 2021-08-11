@@ -48,6 +48,7 @@ psql
 Python
 Redis
 refcard
+reindexing
 Sakila
 schemaless
 scriptable
@@ -63,4 +64,3 @@ unencrypted
 Untrusted
 [Uu]naggregated
 wget
-
