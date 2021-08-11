@@ -60,6 +60,11 @@ entries:
 
   - file: docs/products/opensearch/index
     title: OpenSearch
+    entries:
+      - file: docs/products/opensearch/howto
+        title: HowTo
+        entries:
+          - file: docs/products/opensearch/howto/migrating_elasticsearch_data_to_aiven
 
   - file: docs/products/m3db/index
     title: M3DB
