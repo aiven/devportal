@@ -5,8 +5,8 @@ We recommend migrating to Aiven for OpenSearch by reindexing from
 your remote cluster. The same process works for migrating from Aiven for
 OpenSearch to a self-hosted Elasticsearch service.
 
-For a larger number of indexes, we recommend that you create a script to
-run these steps automatically.
+.. tip::
+    For a larger number of indexes, we recommend that you create a script to run these steps automatically.
 
 As Aiven for OpenSearch does not support joining external
 Elasticsearch servers to the same cluster, online migration is not
