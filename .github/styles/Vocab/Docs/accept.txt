@@ -42,6 +42,7 @@ Postman
 Python
 Redis
 refcard
+reindexing
 schemaless
 scriptable
 sharding
@@ -55,4 +56,3 @@ Uber
 unencrypted
 Untrusted
 [Uu]naggregated
-
