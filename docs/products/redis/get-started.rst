@@ -38,7 +38,9 @@ To create a new Aiven for Redis service:
 
    b. Select the cloud provider and region that you want to run your service on.
 
-      **Note:** The pricing for the same service may vary between different providers and regions. The service summary on the right side of the console shows you the pricing for your selected options.
+      .. Note::
+          The pricing for the same service may vary between different providers and regions. The service summary on the right side of the console shows you the pricing for your selected options.
+          
    c. Select a service plan.
 
       This defines the number of servers and what kind of memory, CPU, and disk resources are allocated to your service.

@@ -11,15 +11,15 @@ Create an ACL using the Aiven console
 
 1. Log in to the `Aiven web console <https://console.aiven.io/>`_.
 
-2. From the **Services** page, select the Redis service you want to create an ACL for.
+2. From the *Services* page, select the Redis service you want to create an ACL for.
 
-   The **Overview** page for the service opens.
+   The *Overview* page for the service opens.
 
 3. Click the **Users and ACL**.
 
 4. Click **+ Add Service User**. 
 
-    The **New Redis User** pop-up opens.
+    The *New Redis User* pop-up opens.
 
 5. Create a user, and define which **Keys**, **Categories**, **Commands** or **Channels** the user can access. 
 
