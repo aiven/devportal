@@ -45,7 +45,7 @@ When the failed node is a Redis **primary**, the combined information from the A
 
 If all the **primary** and **standby nodes** fail at the same time, new nodes are automatically scheduled for creation to become the new primary and standby. The primary node is restored from the latest available backup, which could involve some degree of data loss. Namely all the writes to the database since the last backup will be lost.
 
-..Note::
+.. Note::
         The amount of time it takes to replace a failed node depends mainly on the used cloud region and the amount of data that needs to be restored. However, in the case of services with two or more node Business, Premium and Custom plans the surviving nodes will keep on serving clients even during the recreation of the other node. All of this is automatic and requires no administrator intervention.
 
 
