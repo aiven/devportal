@@ -15,4 +15,4 @@ To restore a backup:
 
 #. Fill in the required details, select the cloud provider, region, and service plan, then click **Create fork**.
 
-#. Once the new service is running, change your application's connection settings to point to it.
+#. Once the new service is running, change your application's connection settings to point to it and power off the original service.
