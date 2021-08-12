@@ -229,6 +229,14 @@ After playing around with the sample queries, can you use SQL statements to answ
 2. Can you list the top 5 film genres by their gross revenue?
 3. The `film.description` has the `text` type, allowing for `full text search <https://www.postgresql.org/docs/11/textsearch-intro.html>`_ queries, can you come up with an interesting SQL exploring this field?
 
+Clean up
+--------
+To clean up the environment and destroy the database, run the following commands:
+
+.. code:: sql
+    \c defaultdb;
+    DROP DATABASE pagila;
+
 Source
 ------
 You can find the source code for the Pagila database and schema `here <https://github.com/aiven/devportal/tree/paglia-sample-database/code/products/postgresql/pagila>`_.
