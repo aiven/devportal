@@ -11,6 +11,7 @@ datastore
 downsampled
 downsampling
 Elasticsearch
+Epicurious
 etcd
 fileset[s]?
 [Gg]o
@@ -18,7 +19,9 @@ Grafana
 hardcoded
 [Hh]obbyist
 [Hh]ostname
+httpie
 jq
+Kaggle
 Kibana
 Lucene
 [Nn]amespace
