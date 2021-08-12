@@ -77,7 +77,7 @@ entries:
               - file: docs/products/postgresql/howto/connect-pgadmin
               - file: docs/products/postgresql/howto/visualize-grafana
               - file: docs/products/postgresql/howto/report-metrics-grafana
-              - file: docs/products/postgresql/howto/paglia
+              - file: docs/products/postgresql/howto/pagila
       - file: docs/products/postgresql/reference
         title: Reference
         entries:

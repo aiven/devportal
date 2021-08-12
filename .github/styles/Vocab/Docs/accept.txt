@@ -27,6 +27,8 @@ Memorystore
 NodeJS
 npm
 Okta
+Pagila
+pagila
 parallelization
 pgAdmin
 PgBouncer
@@ -34,6 +36,7 @@ plaintext
 pooler
 PostgreSQL
 Postman
+psql
 Python
 Redis
 refcard
@@ -50,3 +53,4 @@ Uber
 unencrypted
 Untrusted
 [Uu]naggregated
+wget
