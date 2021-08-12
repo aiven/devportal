@@ -3,16 +3,6 @@ options:
   maxdepth: 1
 
 entries:
-  # --------- GLOBAL -----------
-  - file: docs/tools/index
-    entries:
-      - file: docs/tools/cli
-      - file: docs/tools/api/index
-        title: Aiven API
-        entries:
-        - glob: docs/tools/api/*
-      - file: docs/tools/terraform
-
   # -------- PLATFORM-TOPICS --------
   - file: docs/platform/index
     title: Platform
@@ -26,6 +16,16 @@ entries:
       entries:
       - file: docs/platform/howto/console-fork-service.rst
       - file: docs/platform/howto/cli-fork-service.rst
+
+  # --------- GLOBAL -----------
+  - file: docs/tools/index
+    entries:
+      - file: docs/tools/cli
+      - file: docs/tools/api/index
+        title: Aiven API
+        entries:
+        - glob: docs/tools/api/*
+      - file: docs/tools/terraform
 
   # -------- PRODUCT-SPECIFIC --------
   - file: docs/products/postgresql/index
