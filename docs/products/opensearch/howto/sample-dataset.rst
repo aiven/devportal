@@ -2,7 +2,7 @@ Sample dataset
 --------------
 Here you will find different sample datasets for OpenSearch and how to interact with them.
 
-Before exploring the available datasets, we need an OpenSearch server to load the data on. A quick and easy way to get a server is through `Aiven for OpenSearch <https://aiven.io/opensearch>`_. If don't have an Aiven account yet, `sign up <https://console.aiven.io/signup?utm_source=github&amp;utm_medium=organic&amp;utm_campaign=devportal&amp;utm_content=repo>`_ and enjoy our free trial!
+Before exploring the available datasets, we need an OpenSearch server to load the data on. A quick and easy way to get a server is through `Aiven for OpenSearch <https://aiven.io>`_. If don't have an Aiven account yet, `sign up <https://console.aiven.io/signup?utm_source=github&amp;utm_medium=organic&amp;utm_campaign=devportal&amp;utm_content=repo>`_ and enjoy our free trial!
 
 After logging in the Aiven Console, chose the OpenSearch version, select the cloud and plan of your choice, give the service a name and hit the "Create Service" button. In a couple of minutes, you will have an OpenSearch server up and running.
 
