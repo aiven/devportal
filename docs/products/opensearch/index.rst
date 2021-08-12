@@ -8,7 +8,6 @@ Aiven for OpenSearch
 
 Aiven for OpenSearch comes with OpenSearch Dashboards included, giving a fully-featured user interface and visualization platform for your data.
 
-
 Why OpenSearch?
 ---------------
 
