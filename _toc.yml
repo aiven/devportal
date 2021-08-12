@@ -20,7 +20,7 @@ entries:
     - file: docs/platform/concepts
       title: Concepts
       entries:
-        - glob: docs/products/postgresql/concepts/*
+        - glob: docs/platform/concepts/*
     - file: docs/platform/howto
       title: HowTo
       entries:
