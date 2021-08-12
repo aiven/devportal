@@ -1,0 +1,26 @@
+name: Index devportal pages
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.6
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.6
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Index devportal pages
+      run: |
+        make index-devportal
+      env:
+        ES_URL: ${{ secrets.ES_URL }}
