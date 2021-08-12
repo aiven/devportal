@@ -13,6 +13,7 @@ datastore
 downsampled
 downsampling
 Elasticsearch
+Epicurious
 etcd
 failover
 fileset[s]?
@@ -23,7 +24,9 @@ hardcoded
 [Hh]obbyist
 [Hh]ostname
 hyperloglogs
+httpie
 jq
+Kaggle
 Kibana
 Lua
 Lucene
