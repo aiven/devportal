@@ -20,6 +20,8 @@ Start the HTML version with::
 
 Your preview should be at http://localhost:8000 (if anything doesn't seem to re-render well, the navigation seems particularly unreliable, try ``make clean`` and then ``make livehtml`` again).
 
+> If you are working on the templates, try the additional `make livehtmlall` command. This disables sphinx's incremental build and also observes changes to the assets, so it's slower but more like a full rebuild when things change.
+
 Windows users
 -------------
 
