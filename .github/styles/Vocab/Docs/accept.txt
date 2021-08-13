@@ -1,7 +1,11 @@
+ACL
+ACLs
 Aiven
 API
+APIs
 boolean
 [Bb]usiness
+[Dd]ashboards
 datasource
 datastore
 downsampled
