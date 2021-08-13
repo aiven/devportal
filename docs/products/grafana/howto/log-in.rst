@@ -27,4 +27,4 @@ To log in:
 
     This opens your Grafana user interface. 
 
-You can now start visualizing your data sources by using the default dashaboards, or create your own. 
+You can now start visualizing your data sources by using the default dashboards, or create your own. 
