@@ -63,162 +63,162 @@ Sample queries
 
 Let's explore the dataset with a few queries. All the queries results were limited by the first 10 items. 
 
-1. List all the films by ordered by their length:
+.. dropdown:: List all the films by ordered by their length
 
-.. code:: sql
+    .. code:: sql
 
-    select
-        film_id,
-        title,
-        length
-    from
-        film
-    order by
-        length desc;
+        select
+            film_id,
+            title,
+            length
+        from
+            film
+        order by
+            length desc;
 
-.. code::
+    .. code:: text
 
-    |film_id|title             |length|
-    |-------|------------------|------|
-    |426    |HOME PITY         |185   |
-    |690    |POND SEATTLE      |185   |
-    |609    |MUSCLE BRIGHT     |185   |
-    |991    |WORST BANGER      |185   |
-    |182    |CONTROL ANTHEM    |185   |
-    |141    |CHICAGO NORTH     |185   |
-    |349    |GANGS PRIDE       |185   |
-    |212    |DARN FORRESTER    |185   |
-    |817    |SOLDIERS EVOLUTION|185   |
-    |872    |SWEET BROTHERHOOD |185   |
+        |film_id|title             |length|
+        |-------|------------------|------|
+        |426    |HOME PITY         |185   |
+        |690    |POND SEATTLE      |185   |
+        |609    |MUSCLE BRIGHT     |185   |
+        |991    |WORST BANGER      |185   |
+        |182    |CONTROL ANTHEM    |185   |
+        |141    |CHICAGO NORTH     |185   |
+        |349    |GANGS PRIDE       |185   |
+        |212    |DARN FORRESTER    |185   |
+        |817    |SOLDIERS EVOLUTION|185   |
+        |872    |SWEET BROTHERHOOD |185   |
     
     
-2. List how many films there are in each film category:
+.. dropdown:: List how many films there are in each film category
 
-.. code:: sql
+    .. code:: sql
 
-    select
-        category.name,
-        count(category.name) category_count
-    from
-        category
-    left join film_category on
-        category.category_id = film_category.category_id
-    left join film on
-        film_category.film_id = film.film_id
-    group by
-        category.name
-    order by
-        category_count desc;
+        select
+            category.name,
+            count(category.name) category_count
+        from
+            category
+        left join film_category on
+            category.category_id = film_category.category_id
+        left join film on
+            film_category.film_id = film.film_id
+        group by
+            category.name
+        order by
+            category_count desc;
 
-.. code::
+    .. code:: text
 
-    |name       |category_count|
-    |-----------|--------------|
-    |Sports     |74            |
-    |Foreign    |73            |
-    |Family     |69            |
-    |Documentary|68            |
-    |Animation  |66            |
-    |Action     |64            |
-    |New        |63            |
-    |Drama      |62            |
-    |Sci-Fi     |61            |
-    |Games      |61            |
+        |name       |category_count|
+        |-----------|--------------|
+        |Sports     |74            |
+        |Foreign    |73            |
+        |Family     |69            |
+        |Documentary|68            |
+        |Animation  |66            |
+        |Action     |64            |
+        |New        |63            |
+        |Drama      |62            |
+        |Sci-Fi     |61            |
+        |Games      |61            |
     
 
-3. Show the actors and actresses ordered by how many movies they are featured in:
+.. dropdown:: Show the actors and actresses ordered by how many movies they are featured in
 
-.. code:: sql
+    .. code:: sql
 
-    select
-        actor.first_name,
-        actor.last_name,
-        count(actor.first_name) featured_count
-    from
-        actor
-    left join film_actor on
-        actor.actor_id = film_actor.actor_id
-    group by
-        actor.first_name,
-        actor.last_name
-    order by
-        featured_count desc;
+        select
+            actor.first_name,
+            actor.last_name,
+            count(actor.first_name) featured_count
+        from
+            actor
+        left join film_actor on
+            actor.actor_id = film_actor.actor_id
+        group by
+            actor.first_name,
+            actor.last_name
+        order by
+            featured_count desc;
 
-.. code::
+    .. code:: text
 
-    |first_name|last_name|featured_count|
-    |----------|---------|--------------|
-    |SUSAN     |DAVIS    |54            |
-    |GINA      |DEGENERES|42            |
-    |WALTER    |TORN     |41            |
-    |MARY      |KEITEL   |40            |
-    |MATTHEW   |CARREY   |39            |
-    |SANDRA    |KILMER   |37            |
-    |SCARLETT  |DAMON    |36            |
-    |VIVIEN    |BASINGER |35            |
-    |VAL       |BOLGER   |35            |
-    |GROUCHO   |DUNST    |35            |
+        |first_name|last_name|featured_count|
+        |----------|---------|--------------|
+        |SUSAN     |DAVIS    |54            |
+        |GINA      |DEGENERES|42            |
+        |WALTER    |TORN     |41            |
+        |MARY      |KEITEL   |40            |
+        |MATTHEW   |CARREY   |39            |
+        |SANDRA    |KILMER   |37            |
+        |SCARLETT  |DAMON    |36            |
+        |VIVIEN    |BASINGER |35            |
+        |VAL       |BOLGER   |35            |
+        |GROUCHO   |DUNST    |35            |
 
 
-4. We can quickly get a list of all active customers ordered by their first name:
+.. dropdown:: Get a list of all active customers, ordered by their first name
 
-.. code:: sql
+    .. code:: sql
 
-    select
-        first_name,
-        last_name
-    from
-        customer
-    where
-        active = 1
-    order by first_name asc;
+        select
+            first_name,
+            last_name
+        from
+            customer
+        where
+            active = 1
+        order by first_name asc;
 
-.. code::
+    .. code:: text
 
-    |first_name|last_name|
-    |----------|---------|
-    |MARY      |SMITH    |
-    |PATRICIA  |JOHNSON  |
-    |LINDA     |WILLIAMS |
-    |BARBARA   |JONES    |
-    |ELIZABETH |BROWN    |
-    |JENNIFER  |DAVIS    |
-    |MARIA     |MILLER   |
-    |SUSAN     |WILSON   |
-    |MARGARET  |MOORE    |
-    |DOROTHY   |TAYLOR   |
+        |first_name|last_name|
+        |----------|---------|
+        |MARY      |SMITH    |
+        |PATRICIA  |JOHNSON  |
+        |LINDA     |WILLIAMS |
+        |BARBARA   |JONES    |
+        |ELIZABETH |BROWN    |
+        |JENNIFER  |DAVIS    |
+        |MARIA     |MILLER   |
+        |SUSAN     |WILSON   |
+        |MARGARET  |MOORE    |
+        |DOROTHY   |TAYLOR   |
 
-5. Now, let's see who rented most DVDs – and how many times:
+.. dropdown:: See who rented most DVDs – and how many times
 
-.. code:: sql
+    .. code:: sql
 
-    select
-        customer.first_name,
-        customer.last_name,
-        count(customer.first_name) rentals_count 
-    from
-        customer
-    left join rental on
-        customer.customer_id = rental.customer_id
-    group by 
-        customer.first_name,
-        customer.last_name
-    order by rentals_count desc;
+        select
+            customer.first_name,
+            customer.last_name,
+            count(customer.first_name) rentals_count 
+        from
+            customer
+        left join rental on
+            customer.customer_id = rental.customer_id
+        group by 
+            customer.first_name,
+            customer.last_name
+        order by rentals_count desc;
 
-.. code::
+    .. code:: text
 
-    |first_name|last_name|rentals_count|
-    |----------|---------|-------------|
-    |ELEANOR   |HUNT     |46           |
-    |KARL      |SEAL     |45           |
-    |CLARA     |SHAW     |42           |
-    |MARCIA    |DEAN     |42           |
-    |TAMMY     |SANDERS  |41           |
-    |WESLEY    |BULL     |40           |
-    |SUE       |PETERS   |40           |
-    |MARION    |SNYDER   |39           |
-    |RHONDA    |KENNEDY  |39           |
-    |TIM       |CARY     |39           |
+        |first_name|last_name|rentals_count|
+        |----------|---------|-------------|
+        |ELEANOR   |HUNT     |46           |
+        |KARL      |SEAL     |45           |
+        |CLARA     |SHAW     |42           |
+        |MARCIA    |DEAN     |42           |
+        |TAMMY     |SANDERS  |41           |
+        |WESLEY    |BULL     |40           |
+        |SUE       |PETERS   |40           |
+        |MARION    |SNYDER   |39           |
+        |RHONDA    |KENNEDY  |39           |
+        |TIM       |CARY     |39           |
 
 
 Ready for a challenge?
