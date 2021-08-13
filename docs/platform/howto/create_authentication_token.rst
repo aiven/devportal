@@ -1,5 +1,5 @@
-Creating an authentication token
-================================
+Create an authentication token
+==============================
 
 You can use the Aiven web console to create an authentication token for use with the Aiven command-line interface (CLI) or API.
 
@@ -19,7 +19,8 @@ To create an authentication token:
 
 7. Click the **Copy** icon or select and copy the access token.
 
-   **Note:** You cannot get the token later after you close this view.
+   .. note::
+       You cannot get the token later after you close this view.
 
 8. Paste the copied token to a text editor.
 

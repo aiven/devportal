@@ -1,5 +1,5 @@
-﻿Creating a new Aiven service
-============================
+﻿Create a new Aiven service
+==========================
 
 You can add services for the various Aiven products in the Aiven web console.
 
@@ -21,7 +21,9 @@ To create a new service:
 
    b. Select the cloud provider and region that you want to run your service on.
 
-      **Note:** The pricing for the same service may vary between different providers and regions. The service summary on the right side of the console shows you the pricing for your selected options.
+      .. note:: 
+	      The pricing for the same service may vary between different providers and regions. The service summary on the right side of the console shows you the pricing for your selected options.
+
    c. Select a service plan.
 
       This defines the number of servers and what kind of memory, CPU, and disk resources are allocated to your service.
