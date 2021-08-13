@@ -6,8 +6,6 @@ cyber
 datacenter
 datasource
 datastore
-defaultdb
-devrimgunduz
 downsampled
 downsampling
 etcd
@@ -29,7 +27,6 @@ NodeJS
 npm
 Okta
 Pagila
-pagila
 parallelization
 pgAdmin
 PgBouncer

@@ -1,18 +1,18 @@
 Pagila – a PostgreSQL sample database
 =====================================
 
-Aiven provides a sample database you can import in your Aiven for PostgreSQL service through the web console. Here, we will explore everything you need to know about the database and the procedure to get it up and running.
+Aiven provides a sample database you can import in your Aiven for PostgreSQL service. This page covers information about the database and the procedure to get it up and running.
 
-Pagila is a port of the `Sakila Sample Database <https://dev.mysql.com/doc/sakila/en/>`_. It was originally developed by Mark Hillyer – a former member of the MySQL AB documentation team – to provide a standard schema and data for articles, tutorials, books etc. Over time, it has been ported by the various developers to `multiple database systems <https://github.com/search?q=sakila>`_. We are currently using the version 2.1.0 provided by `devrimgunduz <https://github.com/devrimgunduz/pagila>`_.
+Pagila is a port of the `Sakila Sample Database <https://dev.mysql.com/doc/sakila/en/>`_. It was originally developed by Mark Hillyer, a former member of the MySQL AB documentation team, to provide a standard schema and data for articles, tutorials, books etc. Over time, it has been ported by the various developers to `multiple database systems <https://github.com/search?q=sakila>`_. The examples here use one from ``devrimgunduz``, `version 2.1.0 <https://github.com/devrimgunduz/pagila>`_.
 
-Sakila (and thus, Pagila) is a database representing a DVD rental store (remember those?!), containing information about films (like title, category, actresses), rental stores (like address, staff members, customers) and rentals, where a customer rentals a film from a store through its staff.
+Sakila (and thus, Pagila) is a database representing a DVD rental store (remember those?!), containing information about films (like title, category, actresses), rental stores (like address, staff members, customers) and rentals, where a customer rents a film from a store through its staff.
 
 With all these relational information, Pagila is a perfect fit to play around with PostgreSQL and the SQL language.
 
 Load Pagila on PostgreSQL
 -------------------------
 
-Before exploring Pagila's database, we need a PostgreSQL server to load the data on. A quick and easy way to get a server is through `Aiven for PostgreSQL <https://aiven.io/postgresql>`_. If don't have an Aiven account yet, `sign up <https://console.aiven.io/signup?utm_source=github&amp;utm_medium=organic&amp;utm_campaign=devportal&amp;utm_content=repo>`_ and enjoy our free trial!
+Before exploring the Pagila database, we need a PostgreSQL server to load the data on. A quick and easy way to get a server is through `Aiven for PostgreSQL <https://aiven.io/postgresql>`_. If don't have an Aiven account yet, `sign up <https://console.aiven.io/signup?utm_source=github&amp;utm_medium=organic&amp;utm_campaign=devportal&amp;utm_content=repo>`_ and enjoy our free trial!
 
 After logging in the Aiven Console, chose the PostgreSQL version, select the cloud and plan of your choice, give the service a name and hit the "Create Service" button. In a couple of minutes, you will have a PostgreSQL server up and running.
 
@@ -24,9 +24,9 @@ Now, we will load the Pagila database into our new service.
 1. Download the ``pagila-data.sql`` from our `GitHub repository <https://github.com/aiven/devportal/blob/paglia-sample-database/code/products/postgresql/pagila/pagila-data.sql>`_.
 
 .. Tip::
-    You may use the following command on your terminal:
+    You may use the following command on your terminal::
 
-    $ wget https://raw.githubusercontent.com/aiven/devportal/paglia-sample-database/code/products/postgresql/pagila/pagila-data.sql
+        wget https://raw.githubusercontent.com/aiven/devportal/paglia-sample-database/code/products/postgresql/pagila/pagila-data.sql
 
 2. Connect to the PostgreSQL instance using the command below. The ``SERVICE_URI`` value can be found in the Aiven Console dashboard.
 
@@ -36,14 +36,14 @@ Now, we will load the Pagila database into our new service.
 
 3. Within the ``psql`` shell, create a database named ``pagila`` and connect to it with the command below:
 
-.. code:: sql
+.. code:: psql
 
     CREATE DATABASE pagila;
     \c pagila;
 
 4. Populate the database with the following below. This might take some time, so grab a beverage of your choice ;)
 
-.. code:: sql
+.. code:: psql
 
     \i pagila-data.sql
 
@@ -227,22 +227,25 @@ After playing around with the sample queries, can you use SQL statements to answ
 
 1. What is the total revenue of each rental store?
 2. Can you list the top 5 film genres by their gross revenue?
-3. The `film.description` has the `text` type, allowing for `full text search <https://www.postgresql.org/docs/11/textsearch-intro.html>`_ queries, can you come up with an interesting SQL exploring this field?
+3. The ``film.description`` has the ``text`` type, allowing for `full text search <https://www.postgresql.org/docs/11/textsearch-intro.html>`_ queries, what will you search for?
 
 Clean up
 --------
 To clean up the environment and destroy the database, run the following commands:
 
-.. code:: sql
+.. code:: psql
+
     \c defaultdb;
     DROP DATABASE pagila;
 
 Source
 ------
-You can find the source code for the Pagila database and schema `here <https://github.com/aiven/devportal/tree/paglia-sample-database/code/products/postgresql/pagila>`_.
+
+The `source code for the Pagila database and schema <https://github.com/aiven/devportal/tree/paglia-sample-database/code/products/postgresql/pagila>`_ is available from our repository.
 
 License
 -------
-The Sakila schema and data are licensed under the `New BSD License <http://www.opensource.org/licenses/bsd-license.php>`_, as informed `here <https://dev.mysql.com/doc/sakila/en/sakila-license.html>`_.
 
-The Pagila schema and data are licensed under the `PostgreSQL License <https://opensource.org/licenses/postgresql>`_, as informed `here <https://github.com/devrimgunduz/pagila/blob/master/LICENSE.txt>`_.
+The Sakila schema and data are licensed under the `New BSD License <http://www.opensource.org/licenses/bsd-license.php>`_, as explained `on the Sakila page of the MySQL site <https://dev.mysql.com/doc/sakila/en/sakila-license.html>`_.
+
+The Pagila schema and data are licensed under the `PostgreSQL License <https://opensource.org/licenses/postgresql>`_, as explained `on the project pages <https://github.com/devrimgunduz/pagila/blob/master/LICENSE.txt>`_.
