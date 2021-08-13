@@ -19,29 +19,30 @@ Create an ACL using the Aiven console
 
 4. Click **+ Add Service User**. 
 
-    The *New Redis User* pop-up opens.
+   The *New Redis User* pop-up opens.
 
 5. Create a user, and define which **Keys**, **Categories**, **Commands** or **Channels** the user can access. 
 
    In this example, the ``test`` user can only retrieve keys with the pattern ``mykeys.*``.
 
-    .. image:: /images/products/redis/redis-acl.png
+   .. image:: /images/products/redis/redis-acl.png
+       :alt: Screenshot of the ACL configuration screen
 
 6. Click **Save**. 
 
 
-Create an ACL using the Aiven client
-------------------------------------
+Create an ACL using the Aiven CLI
+---------------------------------
 
-1. Open the Aiven client. 
+1. Set up the the :doc:`CLI tool </docs/tools/cli>` if you don't have it already.
 
-2. Type in::
+2. Create a user for ``mynewuser`` with read-only access to the ``mykeys.*`` keys::
 
-    $ avn service user-create --project myproject myservicename --username mynewuser --redis-acl-keys 'mykeys.*' --redis-acl-commands '+get' --redis-acl-categories ''
+    avn service user-create --project myproject myservicename --username mynewuser --redis-acl-keys 'mykeys.*' --redis-acl-commands '+get' --redis-acl-categories ''
 
 3. Confirm the ACL is applied by connecting to the service using the new username and password::
 
-    $ redis-cli --user mynewuser --pass ... --tls -h myservice-myproject.aivencloud.com -p 12719
+    redis-cli --user mynewuser --pass ... --tls -h myservice-myproject.aivencloud.com -p 12719
 
     myservice-myproject.aivencloud.com:12719> get mykeys.hello
     (nil)
