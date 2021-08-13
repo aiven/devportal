@@ -44,3 +44,4 @@ Uber
 Untrusted
 [Uu]naggregated
 failover
+reindexing
