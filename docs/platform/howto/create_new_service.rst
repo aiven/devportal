@@ -45,6 +45,6 @@ To create a new service:
 
    This view shows you the connection parameters for your service, its current status, and the configuration options.
 
-   The status is *REBUILDING* while the service is being created for you. Once the service is ready, the status changes to *RUNNING*. While services typically start up in a couple of minutes, the performance varies between cloud providers and regions, and it may take longer in some circumstances.
+   The status is *Rebuilding* while the service is being created for you. Once the service is ready, the status changes to *Running*. While services typically start up in a couple of minutes, the performance varies between cloud providers and regions, and it may take longer in some circumstances.
 
    
