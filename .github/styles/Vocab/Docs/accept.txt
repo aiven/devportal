@@ -1,8 +1,12 @@
+ACL
+ACLs
 Aiven
 API
+APIs
 [Bb]usiness
 boolean
 cyber
+[Dd]ashboards
 datacenter
 datasource
 datastore
