@@ -3,6 +3,20 @@ options:
   maxdepth: 1
 
 entries:
+  # -------- PLATFORM-TOPICS --------
+  - file: docs/platform/index
+    title: Platform
+    entries:
+    - file: docs/platform/concepts
+      title: Concepts
+      entries:
+        - glob: docs/platform/concepts/*
+    - file: docs/platform/howto
+      title: HowTo
+      entries:
+      - file: docs/platform/howto/console-fork-service.rst
+      - file: docs/platform/howto/cli-fork-service.rst
+
   # --------- GLOBAL -----------
   - file: docs/tools/index
     entries:
