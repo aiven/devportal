@@ -24,6 +24,9 @@ entries:
     entries:
       - file: docs/tools/cli
         entries:
+        - file: docs/tools/cli/user
+          entries:
+            - glob: docs/tools/cli/user/*
         - glob: docs/tools/cli/*
       - file: docs/tools/api/index
         title: Aiven API
