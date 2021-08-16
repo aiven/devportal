@@ -65,11 +65,13 @@ entries:
         title: Concepts
         entries:
           - file: docs/products/opensearch/concepts/access_control
+          - file: docs/products/opensearch/concepts/opensearch_backups
       - file: docs/products/opensearch/howto
         title: HowTo
         entries:
           - file: docs/products/opensearch/howto/migrating_elasticsearch_data_to_aiven
           - file: docs/products/opensearch/howto/control_access_to_content
+          - file: docs/products/opensearch/howto/restore_opensearch_backup
 
   - file: docs/products/m3db/index
     title: M3DB
