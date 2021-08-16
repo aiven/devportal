@@ -74,7 +74,7 @@
     fill: #bbb;
   }
 
-  .message-submit-container.hidden {
+  #feedback-form .hidden {
     display: none;
   }
 
@@ -84,7 +84,7 @@
 </style>
 
 <div class="feedback">
-  <form id="feedback-form" name="feedback" method="POST" data-netlify="true">
+  <form id="feedback-form" name="feedback" method="POST" data-netlify="true" netlify-honeypot="bot-field">
     <div class="title-vote-container">
       <div>
         <span class="feedback-form-title">Did you find this useful?</span>
@@ -117,6 +117,9 @@
         </label>
       </div>
     </div>
+    <p class="hidden">
+      <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+    </p>
     <div class="message-submit-container hidden">
       <p>
         <label
