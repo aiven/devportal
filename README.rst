@@ -37,7 +37,7 @@ When you open a pull request, you will get a preview of your changes (useful if 
 Running build tasks locally
 ---------------------------
 
-To run the spell check locally, you will need to have [Vale](https://github.com/errata-ai/vale) installed on your computer and available on your path.
+To run the spell check locally, you will need to have `Vale <https://github.com/errata-ai/vale>`_ installed on your computer and available on your path.
 
 * Check links: ``make linkcheck``
 * Check spelling: ``make spell``
@@ -91,7 +91,7 @@ Some of the content for DevPortal came from a previous incarnation of documentat
 
 To set up the import tooling for the first time:
 
-* Install [pandoc](https://pandoc.org/) and make sure the command is in your path
+* Install `pandoc <https://pandoc.org/>`_ and make sure the command is in your path
 * Change into the ``utils/`` directory
 * Run ``pip install -r requirements.txt``
 
