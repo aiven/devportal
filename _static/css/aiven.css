@@ -15,6 +15,8 @@
   --border: #e1e1e3;
   --highlight: #1c1c2f;
   --sideBar: #f7f7fa;
+  --linearPurple: #80688e;
+  --linearDarkBlue: #4f586a;
 
   /* Dark mode colors */
   --bgDark: #11111e;
@@ -103,6 +105,10 @@ a:hover {
     background: var(--sideBarDark);
   }
 
+  .toc-title-container {
+    padding-top: 40px !important;
+  }
+
   .toc-drawer {
     background-color: var(--bgDark);
   }
@@ -113,6 +119,7 @@ a:hover {
 
   .mobile-header {
     background-color: var(--bgDark) !important;
+    margin-top: 15px;
   }
 
   .pre {
@@ -200,6 +207,7 @@ a:hover {
   text-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   z-index: 1000;
+  margin-top: 35px;
 }
 
 .gh-ribbon:after {
@@ -231,6 +239,34 @@ a:hover {
 .gh-ribbon.gray {
   background-color: var(--bg);
   color: var(--primaryColor);
+}
+
+.sign-up-banner {
+  font-family: Inter;
+  width: 100%;
+  text-align: center;
+  font-size: 0.8em;
+  color: var(--white);
+  padding: 10px;
+  text-decoration: none;
+  position: fixed;
+  z-index: 1001;
+  background-image: linear-gradient(
+    45deg,
+    var(--linearPurple),
+    var(--linearDarkBlue)
+  );
+}
+
+.get-started-link {
+  font-weight: bold;
+  margin-left: 20px;
+  text-decoration: none !important;
+  color: var(--white) !important;
+}
+
+.get-started-link:hover {
+  color: var(--white) !important;
 }
 
 .sidebar-tree .current-page > .reference {
@@ -386,6 +422,19 @@ code.literal {
 
 .mobile-header {
   background-color: var(--bg) !important;
+  margin-top: 15px;
+  z-index: 999;
+}
+
+@media (max-width: 67em) {
+  .mobile-header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 30px !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .card-footer {
@@ -413,4 +462,3 @@ code.literal {
   color: var(--linkActive);
   text-decoration-color: var(--linkActive) !important;
 }
-
