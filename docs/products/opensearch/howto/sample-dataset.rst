@@ -1,16 +1,14 @@
-Sample dataset
---------------
-Here you will find different sample datasets for OpenSearch and how to interact with them.
+Sample dataset: recipes
+=======================
 
-Before exploring the available datasets, we need an OpenSearch server to load the data on. A quick and easy way to get a server is through `Aiven for OpenSearch <https://aiven.io>`_. If don't have an Aiven account yet, `sign up <https://console.aiven.io/signup?utm_source=github&amp;utm_medium=organic&amp;utm_campaign=devportal&amp;utm_content=repo>`_ and enjoy our free trial!
-
-After logging in the Aiven Console, chose the OpenSearch version, select the cloud and plan of your choice, give the service a name and hit the "Create Service" button. In a couple of minutes, you will have an OpenSearch server up and running.
+Databases are more fun with data, so to get you started on your OpenSearch journey we picked this open data set of recipes as a great example you can try out yourself.
 
 Epicurious recipes
-==================
+------------------
+
 A dataset from `Kaggle <https://www.kaggle.com/hugodarwood/epirecipes>`_ with recipes, rating and nutrition information from `Epicurious <https://www.epicurious.com>`_.
 
-Let's take a look at the a sample document:
+Let's take a look at a sample recipe document:
 
 .. code:: json
 
@@ -44,20 +42,11 @@ Let's take a look at the a sample document:
 
 
 Load the data
-'''''''''''''
-Follow the steps below to load the sample data into your OpenSearch service:
+-------------
+
+Follow the steps below to obtain the dataset and then load the sample data into your OpenSearch service using Python:
 
 1. Download and unzip the `full_format_recipes.json <https://www.kaggle.com/hugodarwood/epirecipes?select=full_format_recipes.json>`_ file from the dataset in your current directory.
-
-2. Create and activate a Python virtual environment:
-
-.. Tip::
-    If you don't have Python installed, follow the `official installation documentation <https://www.python.org/downloads/>`_.
-
-.. code:: shell
-
-    python -m venv venv
-    source venv/bin/activate
 
 3. Install the Python dependencies:
 
@@ -65,7 +54,7 @@ Follow the steps below to load the sample data into your OpenSearch service:
 
     pip install elasticsearch==7.13.4
 
-4. Create a file named ``epicurious_recipes_import.py`` and add the following code:
+4. In this step you will create the script that reads the data file you downloaded and puts the records into the OpenSearch service. Create a file named ``epicurious_recipes_import.py``, and add the following code; you will need to edit it to add the connection details for your OpenSearch service.
 
 .. Tip::
     You can find the ``SERVICE_URI`` on Aiven's dashboard.
@@ -92,21 +81,16 @@ Follow the steps below to load the sample data into your OpenSearch service:
 
     bulk(es, load_data())
 
-
-5. Run it with the following command – it might take a few seconds:
+5. Run the script with the following command, and wait for it to complete:
 
 .. code:: bash
 
     python epicurious_recipes_import.py
 
 Sample queries
-''''''''''''''
+--------------
 
-After loading the data, let's play with a couple of queries:
-
-.. Tip::
-
-    We will use `httpie <https://github.com/httpie/httpie>`_ for the HTTP requests.
+With the data in place, we can start trying some queries against your OpenSearch service. Since it has a simple HTTP interface, you can use your favorite HTTP client. In these examples, we will use `httpie <https://github.com/httpie/httpie>`_ because it's one of our favorites.
 
 First, export the ``SERVICE_URI`` variable with your OpenSearch service URI address and index name from the previous script:
 
@@ -153,17 +137,11 @@ First, export the ``SERVICE_URI`` variable with your OpenSearch service URI addr
     '
 
 Ready for a challenge?
-''''''''''''''''''''''
+----------------------
+
 After playing around with the sample queries, can you use OpenSearch queries to answer some these questions?
 
 1. Find all vegan recipes and order them by ``calories``.
 2. Find all recipes with ``vegan`` on the title but without the words ``cheese``, ``meat`` or ``egs`` on any other field.
 3. Use one query to count how many ``vegan`` and ``vegetarian`` recipes there are.
 
-Clean up
-''''''''
-To clean up the environment and, run the following commands:
-
-.. code:: bash
-
-    http DELETE "$SERVICE_URI"
