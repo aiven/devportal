@@ -12,7 +12,7 @@ Commands for managing user's access tokens.
 ``avn user access-token create``
 ''''''''''''''''''''''''''''''''
 
-Create a new access token for the currently logged user.
+Creates a new access token for the logged-in user.
 
 .. list-table::
   :header-rows: 1
@@ -23,7 +23,7 @@ Create a new access token for the currently logged user.
   * - ``--description``
     - Description of how the token will be used
   * - ``--max-age-seconds``
-    - Maximum age of the token, if any, after which it will be expired (30 days by default)
+    - Maximum age of the token in seconds, if any, after which it will expire(30 days by default)
   * - ``extend-when-used``
     - Extend token's expiry time when used (only applicable if token is set to expire)
 
@@ -31,7 +31,7 @@ Create a new access token for the currently logged user.
 
 ::
 
-  avn user access-token create --description "To be used with python notebooks"
+  avn user access-token create --description "To be used with Python Notebooks"
 
 
 **Example:** Create a new token expiring every hour if not used.
@@ -54,17 +54,19 @@ An example of newly created access token:
 ``avn user access-token list``
 ''''''''''''''''''''''''''''''
 
-Retrieves user's currently active access tokens information:
+Retrieves the information for all the access tokens active session in the session:
 
-* Expiration Time
-* Token TOKEN_PREFIX
+* Expiration time
+* Token prefix
 * Description
 * Token's max age in seconds
 * Extended when used flag 
-* Last used time, IP address and user-agent
+* Last used time
+* Last IP address 
+* Last user agent
 
 
-**Example:** Retrieves the information for the currently logged user.
+**Example:** Retrieve the information for the logged-in user.
 
 ::
 
@@ -77,7 +79,7 @@ An example of user information:
     EXPIRY_TIME           TOKEN_PREFIX  DESCRIPTION                       MAX_AGE_SECONDS  EXTEND_WHEN_USED  LAST_USED_TIME        LAST_IP      LAST_USER_AGENT
     ====================  ============  ================================  ===============  ================  ====================  ===========  ===================
     2021-09-15T15:29:14Z  XCJ3+bgWywIh  Test token                        2592000          true              2021-08-16T15:29:14Z  192.168.1.1  aiven-client/2.12.0
-    2021-08-16T16:26:10Z  6JsKDclT3OMQ  To be used with python notebooks  3600             true              null                  null         null
+    2021-08-16T16:26:10Z  6JsKDclT3OMQ  To be used with Python Notebooks  3600             true              null                  null         null
 
 
 
