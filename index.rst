@@ -61,6 +61,13 @@ Learn about the Aiven platform
 
     |icon-redis| **Redis** In-memory data store for all your high-peformance short-term storage and caching needs.
 
+    +++
+
+    .. link-button:: docs/products/redis/index
+        :type: ref
+        :text: Read more
+        :classes: stretched-link
+
     ---
 
     |icon-mysql| **MySQL** Popular and much-loved relational database platform.

@@ -90,6 +90,19 @@ entries:
           - glob: docs/products/m3db/howto/*
       - glob: docs/products/m3db/reference/*
 
+  - file: docs/products/redis/index
+    title: Redis
+    entries:
+      - file: docs/products/redis/get-started
+      - file: docs/products/redis/concepts
+        title: Concepts
+        entries:
+          - glob: docs/products/redis/concepts/*
+      - file: docs/products/redis/howto
+        title: HowTo
+        entries:
+          - glob: docs/products/redis/howto/*
+
 
   # -------- AUXILIARY
   - file: docs/community

@@ -36,3 +36,9 @@ Uber
 Untrusted
 [Uu]naggregated
 failover
+hyperloglogs
+geospatial
+Lua
+refcard
+Memorystore
+Redis
