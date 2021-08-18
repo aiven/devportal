@@ -30,18 +30,6 @@ Take your first steps with Aiven for Redis by following our :doc:`get-started` a
     💻 :doc:`howto`
 
 
-Integrates with your existing tools
-------------------------------------
-
-Redis integrates with all of Aiven services.
-
-Check out all the features on our `Aiven for Redis features list <https://aiven.io/redis#full-feature-list>`_. 
-
-.. Add specific examples of integrations with Aiven tools.
-
-
-
-
 Ways to use Aiven for Redis
 -----------------------------
 

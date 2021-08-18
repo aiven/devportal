@@ -36,7 +36,7 @@ Failure handling
 .. Note::
         In case of database failover, the **Service URI** of your service remains the same, only the IP address changes to point to the new master node.
 
-Highly Available Business, Premium and Custom service plans
+Highly available business, premium and custom service plans
 ------------------------------------------------------------
 
 When the failed node is a Redis **standby**, the **primary** node keeps on running normally, and provides normal service level to the client applications. Once the new replacement standby node is ready and synchronized with the master, it starts replicating the master in real time as the situation reverts back to normal.
@@ -49,7 +49,7 @@ If all the **primary** and **standby nodes** fail at the same time, new nodes ar
         The amount of time it takes to replace a failed node depends mainly on the used cloud region and the amount of data that needs to be restored. However, in the case of services with two or more node Business, Premium and Custom plans the surviving nodes will keep on serving clients even during the recreation of the other node. All of this is automatic and requires no administrator intervention.
 
 
-Single-node Hobbyist and Startup service plans
+Single-node hobbyist and startup service plans
 ------------------------------------------------
 
 Losing the only node from the service immediately starts the automatic process of creating a new replacement node. The new node starts up, restores its state from the latest available backup and resumes serving customers.

@@ -34,7 +34,7 @@ Create an ACL using the Aiven console
 Create an ACL using the Aiven CLI
 ---------------------------------
 
-1. Set up the the :doc:`CLI tool </docs/tools/cli>` if you don't have it already.
+1. Set up the :doc:`CLI tool </docs/tools/cli>` if you don't have it already.
 
 2. Create a user for ``mynewuser`` with read-only access to the ``mykeys.*`` keys::
 
