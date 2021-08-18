@@ -4,13 +4,13 @@ Aiven for Flink
 What is Aiven for Flink?
 ------------------------
 
-Aiven for Flink is a fully managed **distributed processing engine for stateful computations over data streams**, deployable in the cloud of your choice enabling the creation of streaming data pipelines on top of your data.
+Aiven for Flink is a fully managed **distributed processing engine for stateful computations over data streams**, deployable in the cloud of your choice enabling the creation of streaming data pipelines on top of your datasets.
 
 
 Why Flink?
--------
+-----------------
 
-TBD
+Flink is a processing engine enabling the definition of streaming data pipelines with SQL statements. It can work in batch or streaming mode, it's distributed by default and performs computation at in-memory speed at any scale.
 
 
 Get started with Aiven for Flink
@@ -37,9 +37,9 @@ Flink is highly compatible with other Aiven products for the following tasks:
 
 - Ingest changes on relational PostgreSQL or MySQL tables.
 
-- Join data coming from the two sources above to create complex data pipelines.
+- Join data coming from various sources listed above to create complex data pipelines.
   
-- Push the result back to Kafka or any of the supported sinks.
+- Stream the data pipeline result back to Apache Kafka or any of the supported sinks.
 
 
 
