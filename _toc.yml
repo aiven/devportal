@@ -151,6 +151,20 @@ entries:
         entries:
           - glob: docs/products/m3db/howto/*
       - glob: docs/products/m3db/reference/*
+  
+  - file: docs/products/flink/index
+    title: Flink
+    entries:
+      - file: docs/products/flink/getting-started
+      - file: docs/products/flink/concepts
+        title: Concepts
+        entries:
+          - glob: docs/products/flink/concepts/*
+      - file: docs/products/flink/howto
+        title: HowTo
+        entries:
+          - glob: docs/products/flink/howto/*
+      - glob: docs/products/flink/reference/
 
   - file: docs/products/redis/index
     title: Redis
