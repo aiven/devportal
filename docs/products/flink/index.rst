@@ -4,7 +4,7 @@ Aiven for Flink
 What is Aiven for Flink?
 ------------------------
 
-Aiven for Flink is a fully managed **distributed processing engine for stateful computations over data streams**, deployable in the cloud of your choice which can enable the creation of streaming data pipelines on top of your data.
+Aiven for Flink is a fully managed **distributed processing engine for stateful computations over data streams**, deployable in the cloud of your choice enabling the creation of streaming data pipelines on top of your data.
 
 
 Why Flink?
