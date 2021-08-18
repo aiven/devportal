@@ -57,7 +57,7 @@ Retrieves the current user information such as:
 * Authentication method
 
 
-**Example:** Retrieves the information for the currently logged user.
+**Example:** Retrieve the information for the currently logged user.
 
 ::
 
@@ -76,7 +76,7 @@ An example of user information:
 ``avn user login``
 ''''''''''''''''''''
 
-Logs in the user.
+Logs the user in.
 
 
 .. list-table::
@@ -90,7 +90,7 @@ Logs in the user.
   * - ``--token``
     - Logs in the user with a pre-created token 
 
-**Example:** Log in the user ``john.doe@example.com`` with prompted password.      
+**Example:** Log the ``john.doe@example.com`` user in, and prompt for password.      
 ::
 
   avn user login john.doe@example.com
@@ -98,7 +98,7 @@ Logs in the user.
 The user will be prompted to insert the password.
 
 
-**Example:** Log in the user `john.doe@example.com` with pre-created authentication token.      
+**Example:** Log the `john.doe@example.com` user `john.doe@example.com` with pre-created authentication token.      
 ::
 
   avn user login john.doe@example.com --token 
@@ -108,10 +108,10 @@ The user will be prompted to insert the pre-created authentication token.
 ``avn user logout``
 ''''''''''''''''''''
 
-Logs out the user.
+Logs the user out.
 
 
-**Example:** Log out the user.      
+**Example:** Log the user out.      
 ::
 
   avn user logout
@@ -119,10 +119,10 @@ Logs out the user.
 ``avn user tokens-expire``
 ''''''''''''''''''''''''''
 
-Expires all the authentication tokens associated with the user.
+Makes all the authentication tokens associated with the user expired.
 
 
-**Example:** Expire all the authentication tokens.      
+**Example:** Make all the authentication tokens expired.      
 ::
 
   avn user tokens-expire
