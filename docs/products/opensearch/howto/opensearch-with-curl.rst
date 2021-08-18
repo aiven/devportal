@@ -28,7 +28,7 @@ If the connection is successful, one of the nodes in your cluster will respond w
 
 * ``version`` The version information includes both the ``distribution`` and the ``version`` of the distribution that is running
 
-Manage indexes
+Manage indices
 --------------
 
 OpenSearch groups data into an index rather than a table.
@@ -42,16 +42,13 @@ Create an index by making a ``PUT`` call to it::
 
 The response should have status 200 and the body data will have ``acknowledged`` set to true;
 
-List of indexes
+List of indices
 '''''''''''''''
 
-To list the indexes do::
+To list the indices do::
 
     curl OPENSEARCH_URI/_cat/indices
 
-.. tip::
-
-    The formally correct plural form of "index" is "indices"
 
 Add an item to the index
 ''''''''''''''''''''''''
@@ -88,14 +85,7 @@ Search all items
 
 OpenSearch has support for excellent search querying, but if you want to get everything::
 
-    curl -H "Content-Type: application/json" \
-    OPENSEARCH_URI/_search \
-    -d '{
-            "query": {
-                "match_all": {}
-            }
-
-        }'
+    curl OPENSEARCH_URI/_search
 
 Search results include some key fields to look at when you try this example:
 
