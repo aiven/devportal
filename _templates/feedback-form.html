@@ -84,7 +84,13 @@
 </style>
 
 <div class="feedback">
-  <form id="feedback-form" name="feedback" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+  <form
+    id="feedback-form"
+    name="feedback"
+    method="POST"
+    data-netlify="true"
+    netlify-honeypot="bot-field"
+  >
     <div class="title-vote-container">
       <div>
         <span class="feedback-form-title">Did you find this useful?</span>
@@ -118,12 +124,17 @@
       </div>
     </div>
     <p class="hidden">
-      <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+      <label
+        >Don't fill this out if you're human: <input name="bot-field"
+      /></label>
     </p>
     <div class="message-submit-container hidden">
       <p>
         <label
-          >Anything specific you want to share?<br /><textarea
+          >Anything specific you want to share? (Please don't share any personal
+          details here. If you need a response,
+          <a href="mailto:support@aiven.io">support@aiven.io</a> is the best way
+          to reach us.)<br /><textarea
             class="feedback-message"
             name="message"
             rows="5"
