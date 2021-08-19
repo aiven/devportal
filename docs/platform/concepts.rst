@@ -1,9 +1,6 @@
 Concepts
 ========
 
-Aiven platform basics
----------------------
-
 Learn about some of the key concepts for working with Aiven platform:
 
 * :doc:`Cloud security </docs/platform/concepts/cloud-security>`.
@@ -11,9 +8,7 @@ Learn about some of the key concepts for working with Aiven platform:
   Learn about Aiven's access control, encryption, network security, data privacy and operator access.
 
 
-Learn more
-----------
+* :doc:`Database forking </docs/platform/concepts/database-forking>`.
 
-Check out all the conceptual information:
+  Quickly and safely make a copy of your database for testing, dry run upgrades, or anything else, without affecting your existing service.
 
-.. tableofcontents::

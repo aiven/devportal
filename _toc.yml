@@ -17,7 +17,6 @@ entries:
       - file: docs/platform/howto/create_new_service
       - file: docs/platform/howto/create_authentication_token
       - file: docs/platform/howto/console-fork-service.rst
-      - file: docs/platform/howto/cli-fork-service.rst
 
   # --------- GLOBAL -----------
   - file: docs/tools/index
