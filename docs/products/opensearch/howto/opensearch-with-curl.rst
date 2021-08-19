@@ -40,7 +40,22 @@ Create an index by making a ``PUT`` call to it::
 
     curl -X PUT OPENSEARCH_URI/shopping-list
 
-The response should have status 200 and the body data will have ``acknowledged`` set to true;
+The response should have status 200 and the body data will have ``acknowledged`` set to true.
+
+If you already know something about the fields that will be in the documents you'll store, you can create an index with mappings to describe those known fields::
+
+    curl -X PUT -H "Content-Type: application/json" \
+    OPENSEARCH_URI/shopping-list \
+    -d '{
+        "mappings": {
+            "properties": {
+                "item": { "type": "keyword"  },
+                "quantity": { "type": "integer" }
+            }
+        }
+     }'
+
+This example creates the shopping list example but adds information to help the indexer know how to handle the expected fields.
 
 List of indices
 '''''''''''''''
