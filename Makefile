@@ -2,10 +2,11 @@
 #
 
 # You can set these variables from the command line, and also
-# from the environment for the first three.
+# from the environment for the first four.
 SPHINXOPTS    ?=
 SPHINXBUILD   ?= sphinx-build
 ES_URL		  ?=
+PG_URL		  ?=
 SOURCEDIR     = .
 BUILDDIR      = _build
 
@@ -45,3 +46,8 @@ index-devportal: html
 index-helpcenter:
 	python "$(SOURCEDIR)/scripts/index_help_center_pages.py" \
 		--es-url="$(ES_URL)"
+
+# Create feedback table to PG
+create-feedback-table:
+	python "$(SOURCEDIR)/scripts/create_feedback_table.py" \
+		--pg-url="$(PG_URL)"

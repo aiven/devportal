@@ -80,7 +80,7 @@
     return summary;
   }
 
-  window.onload = function () {
+  window.addEventListener("load", function () {
     var urlParams = new URLSearchParams(window.location.search);
     var query = urlParams.get("q");
     var page = urlParams.get("page");
@@ -197,7 +197,7 @@
           "Could not get search results. Please try again later."
         );
       });
-  };
+  });
 </script>
 
 {%- endblock %}
