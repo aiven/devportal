@@ -32,7 +32,7 @@ Accounts
 
 An account is a collection of projects. When you first sign up to Aiven, there are no accounts, as you can use standalone projects without every needing accounts.
 
-If you have several different departmeents that are using Aiven, you can use accounts to separate access between projects and departments.
+If you have several different departments that are using Aiven, you can use accounts to separate access between projects and departments.
 
 For example, you could use different accounts for different departments and their projects, or you could use accounts to separate the projects related to customer-specific systems.
 
