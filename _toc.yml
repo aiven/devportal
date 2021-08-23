@@ -23,6 +23,9 @@ entries:
     entries:
       - file: docs/tools/cli
         entries:
+        - file: docs/tools/cli/account
+          entries:
+            - glob: docs/tools/cli/account/*
         - file: docs/tools/cli/card
         - file: docs/tools/cli/cloud
         - file: docs/tools/cli/credits
@@ -31,6 +34,7 @@ entries:
         - file: docs/tools/cli/user
           entries:
             - glob: docs/tools/cli/user/*
+
       - file: docs/tools/api/index
         title: Aiven API
         entries:
