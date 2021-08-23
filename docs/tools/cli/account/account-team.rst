@@ -227,7 +227,7 @@ An example of ``account team user-list`` output:
 ``avn account team user-list-pending``
 ''''''''''''''''''''''''''''''''''''''
 
-Lists the users with pending invitation in an Aiven team.
+Lists the users with pending invitation from an Aiven team. Unacknowledged invitations are automatically deleted in 72 hours.
 
 .. list-table::
   :header-rows: 1
@@ -246,7 +246,7 @@ Lists the users with pending invitation in an Aiven team.
 
   avn account team user-list-pending 123456789123 --team-id at3exxxxxxxxx 
 
-An example of ``account team user-list`` output:
+An example of ``account team user-list-pending`` output:
 
 .. code:: text
 
