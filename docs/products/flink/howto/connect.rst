@@ -30,8 +30,8 @@ This functionality can be achieved via REST APIs.
 
 Follow the documentation to check how source and sink tables can be defined on top of:
 
-* :doc:`Apache Kafka topics <connect/connect-kafka.rst>`
-* :doc:`Postgresql tables <connect/connect-pg.rst>`
+* :doc:`Apache Kafka topics <connect/connect-kafka>`
+* :doc:`Postgresql tables <connect/connect-pg>`
 
 
 
