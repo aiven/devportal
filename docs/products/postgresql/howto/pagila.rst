@@ -12,14 +12,19 @@ With all these relational information, Pagila is a perfect fit to play around wi
 Load Pagila on PostgreSQL
 -------------------------
 
-Before exploring the Pagila database, we need a PostgreSQL server to load the data on. A quick and easy way to get a server is through `Aiven for PostgreSQL <https://aiven.io/postgresql>`_. If don't have an Aiven account yet, `sign up <https://console.aiven.io/signup?utm_source=github&amp;utm_medium=organic&amp;utm_campaign=devportal&amp;utm_content=repo>`_ and enjoy our free trial!
+Before exploring the Pagila database, follow the :doc:`create new service article<../../../platform/howto/create_new_service>` to spin up a PostgreSQL instance.
 
-After logging in the Aiven Console, chose the PostgreSQL version, select the cloud and plan of your choice, give the service a name and hit the "Create Service" button. In a couple of minutes, you will have a PostgreSQL server up and running.
+With your new PostgreSQL service, you can quickly load the sample dataset by clicking on the "Load sample dataset" button.
 
-.. image:: /images/products/postgresql/pg-connection-details.png
-    :alt: PostgreSQL service overview tab in Aiven's console
+.. image:: /images/products/postgresql/pagila-load-sample-dataset.png
 
-Now, we will load the Pagila database into our new service.
+After loading the data, connect to the PostgreSQL instance using the command below. The ``SERVICE_URI`` value can be found in the Aiven Console dashboard.
+
+.. code:: shell
+
+   psql 'SERVICE_URI'
+
+You can also load it manually by following the steps below:
 
 1. Download the ``pagila-data.sql`` from our `GitHub repository <https://github.com/aiven/devportal/blob/paglia-sample-database/code/products/postgresql/pagila/pagila-data.sql>`_.
 
@@ -45,9 +50,15 @@ Now, we will load the Pagila database into our new service.
 
 .. code:: psql
 
-    \i pagila-data.sql
+    \i pagila-data.sql;
 
-5. You are ready to go! You can use the `Sample queries` section below to explore the database. Have fun!
+5. Once the command finishes, make sure to reconnect to the database to access the imported data:
+
+.. code:: psql
+
+    \c pagila;
+
+6. You are ready to go! You can use the `Sample queries` section below to explore the database. Have fun!
 
 Entity-relationship model diagram
 ---------------------------------
@@ -241,7 +252,7 @@ To clean up the environment and destroy the database, run the following commands
 Source
 ------
 
-The `source code for the Pagila database and schema <https://github.com/aiven/devportal/tree/paglia-sample-database/code/products/postgresql/pagila>`_ is available from our repository.
+The `source code for the Pagila database <https://github.com/aiven/devportal/tree/paglia-sample-database/code/products/postgresql/pagila>`_ is available from our repository.
 
 License
 -------
