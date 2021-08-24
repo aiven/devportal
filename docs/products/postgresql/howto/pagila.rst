@@ -17,6 +17,7 @@ Before exploring the Pagila database, follow the :doc:`create new service articl
 With your new PostgreSQL service, you can quickly load the sample dataset by clicking on the "Load sample dataset" button.
 
 .. image:: /images/products/postgresql/pagila-load-sample-dataset.png
+    :alt: A screenshot of the Aiven Console showing the "Load sample dataset" button.
 
 After loading the data, connect to the PostgreSQL instance using the command below. The ``SERVICE_URI`` value can be found in the Aiven Console dashboard.
 
@@ -58,7 +59,7 @@ You can also load it manually by following the steps below:
 
     \c pagila;
 
-6. You are ready to go! You can use the `Sample queries` section below to explore the database. Have fun!
+**You are ready to go!** You can use the `Sample queries` section below to explore the database. Have fun!
 
 Entity-relationship model diagram
 ---------------------------------
