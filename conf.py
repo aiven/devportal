@@ -31,7 +31,13 @@ extensions = [
     'sphinx_external_toc',
     'sphinx_copybutton',
     'sphinx_gitstamp',
+    'sphinxext.opengraph',
 ]
+
+# OpenGraph configuration
+# see all options at https://github.com/wpilibsuite/sphinxext-opengraph#options
+ogp_site_url = 'https://developer.aiven.io/'
+ogp_description_length = 200
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
