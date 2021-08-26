@@ -12,21 +12,15 @@ Smaller teams usually favor direct access while larger teams favor RBAC to simpl
 
 .. mermaid::
 
-    sequenceDiagram
-	    participant Users
-		participant Account
-		participant Team
-		participant Project
-		participant Service
-		
-		Users->>Project: Small teams (direct access)
-		Users->>Team: Large teams (RBAC)
-		Account-->>Team: Assign group permissions
-		Team-->>Project: Assign project access
-		Project-->>Service: Create services
+    graph LR;
+
+        User-- Direct access --> Project;
+        User-- RBAC --> Team;
+        Account-->Team;
+        Team-->Project;
+        Project-->Service;
 
 You can use accounts and teams within the Aiven platform to implement Security Assertion Markup Language single sign-on (SAML SSO) using an identity provider such as Okta, GSuite, or AzureAD. Security-conscious teams usually favor a combination of SAML and RBAC regardless of the size of team.
-
 
 Projects
 --------
@@ -45,7 +39,7 @@ Each project must have a unique name within the Aiven platform. The project name
 Accounts
 --------
 
-An account is a collection of projects. When you first sign up to Aiven, there are no accounts, as you can use standalone projects without every needing accounts.
+An account is a collection of projects. When you first sign up to Aiven, there are no accounts, as you can use standalone projects without ever needing accounts.
 
 If you have several different departments that are using Aiven, you can use accounts to separate access between projects and departments.
 
@@ -77,25 +71,25 @@ The roles and corresponding permissions that Aiven supports are:
      - Deploy
      - Billing/editing access
    * - Administrator
-     - Yes
-     - Yes
-     - Yes
-     - Yes
+     - |tick|
+     - |tick|
+     - |tick|
+     - |tick|
    * - Operator
-     - Yes
-     - Yes
-     - Yes
-     - No
+     - |tick|
+     - |tick|
+     - |tick|
+     - 
    * - Developer
-     - Yes
-     - Yes
-     - No
-     - No
+     - |tick|
+     - |tick|
+     - 
+     - 
    * - Read Only
-     - Yes
-     - No
-     - No
-     - No
+     - |tick|
+     - 
+     - 
+     - 
 
 
 Teams
