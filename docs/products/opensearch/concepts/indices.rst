@@ -35,9 +35,9 @@ Setting the number and size of shards
 
 The number of shards that you need depends heavily on the amount of data that you have. Regarding the size allocation, a general recommendation is to use somewhere between a few gigabytes and a few tens of gigabytes per shard:
 
-* If you know that you will have onle a small amount of data but many indices, start with 1 shard and split the index if necessary.
+* If you know that you will have only a small amount of data but many indices, start with 1 shard and split the index if necessary.
 * If you have tens of gigabytes of data, start with 5 shards per index to avoid splitting the index for a long time.
-* If you have hundreds of gigabytes of data, divide the amount of data in gigabyes by ten to estimate the number of shards. For example, use 25 shards for a 250GB index.
+* If you have hundreds of gigabytes of data, divide the amount of data in gigabytes by ten to estimate the number of shards. For example, use 25 shards for a 250GB index.
 * If you have terabytes of data, increase the shard size further. For example, for a 1TB index, 50 shards would be a good starting point.
 
 These are only rough suggestions; the optimal values depend heavily on how you use your data and the growth forecast for your OpenSearch data. You can change the number of shards without losing your data, but this does cause some downtime when rewriting the index.
@@ -65,14 +65,14 @@ Aiven for OpenSearch services give you the option to create `glob-style <https:/
 
 Here are some examples of the patterns that you can use:
 
-* ``logs``: matches ``logs`` but not ``logsfoo`` or``foologs``
+* ``logs``: matches ``logs`` but not ``logsfoo`` or ``foologs``
 * ``logs*``: matches ``logsfoo`` and ``logs_foo_bar`` but not ``foologs``
 * ``*_logs_*``: matches ``foo_logs_bar`` but not ``foologsbar``
-* ``logs.?``: matches ``logs.1`` but not``logs.11``
+* ``logs.?``: matches ``logs.1`` but not ``logs.11``
 
 You can also use ``*`` as a catch-all pattern that matches all indices. However, this iterates through all your patterns, so you should consider the impact carefully before using it.
 
-For example, if you have log indices ``logs.1``, ``logs.2``, and so on, up to ``logs.34``, along with new ``test.1``, ``test.2``, and ``test.3`` indioes that are intended for testing purposes but are not in use yet.
+For example, if you have log indices ``logs.1``, ``logs.2``, and so on, up to ``logs.34``, along with new ``test.1``, ``test.2``, and ``test.3`` indices that are intended for testing purposes but are not in use yet.
 
 If you then create a ``logs.*`` pattern with the maximum set to 8 and a ``*`` pattern with the maximum set to 3, the system iterates through your patterns one by one. First, it makes sure that it only keeps the 8 newest log indices based on your ``logs.*`` pattern. Then, it runs the ``*`` pattern, which affects all your indices, and since the test indices are the newest ones, it keeps those and deletes all your log indices. Keep this in mind and be careful when setting a catch-all pattern.
 
