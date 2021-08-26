@@ -96,6 +96,7 @@ entries:
         entries:
           - file: docs/products/opensearch/concepts/access_control
           - file: docs/products/opensearch/concepts/opensearch_backups
+          - file: docs/products/opensearch/concepts/indices
       - file: docs/products/opensearch/howto
         title: HowTo
         entries:
@@ -104,6 +105,8 @@ entries:
           - file: docs/products/opensearch/howto/migrating_elasticsearch_data_to_aiven
           - file: docs/products/opensearch/howto/control_access_to_content
           - file: docs/products/opensearch/howto/restore_opensearch_backup
+          - file: docs/products/opensearch/howto/set_index_retention_patterns
+          - file: docs/products/opensearch/howto/switch_off_automatic_replication_factor_adjustment
 
   - file: docs/products/m3db/index
     title: M3DB
