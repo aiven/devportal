@@ -15,8 +15,33 @@ OpenSearch is a very useful addition to almost any data platform. It is designed
 
 OpenSearch is widely used for log ingestion and analysis, particularly because it can handle the data volumes involved, and because OpenSearch Dashboards provides a powerful interface to the data, including search, aggregation and analysis functionality.
 
-Resources
----------
+Get started with Aiven for OpenSearch
+-------------------------------------
+
+Try the :doc:`sample recipes dataset <howto/sample-dataset>` or browse the other articles available:
+
+.. panels::
+
+    📙 :doc:`concepts`
+
+    ---
+
+    💻 :doc:`howto`
+
+
+Ways to Use OpenSearch
+----------------------
+
+OpenSearch is ideal for working with various types of unstructured data, where you need to be able to find things quickly. The most common examples include:
+
+* Send your **logs** to OpenSearch so that you can quickly identify and diagnose problems if they arise.
+
+* Use OpenSearch to index documents, so that you can get meaningful **search results** from a large body of knowledge.
+
+OpenSearch Resources
+--------------------
+
+* Work with your OpenSearch service :doc:`using cURL <howto/opensearch-with-curl>`
 
 * Check the `API documentation <https://opensearch.org/docs/opensearch/rest-api/index>`_ for detailed information about the HTTP endpoints.
 
