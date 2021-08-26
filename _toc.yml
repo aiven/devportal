@@ -91,6 +91,7 @@ entries:
   - file: docs/products/opensearch/index
     title: OpenSearch
     entries:
+      - file: docs/products/opensearch/howto/sample-dataset
       - file: docs/products/opensearch/concepts
         title: Concepts
         entries:
@@ -101,7 +102,6 @@ entries:
         title: HowTo
         entries:
           - file: docs/products/opensearch/howto/opensearch-with-curl
-          - file: docs/products/opensearch/howto/sample-dataset
           - file: docs/products/opensearch/howto/migrating_elasticsearch_data_to_aiven
           - file: docs/products/opensearch/howto/control_access_to_content
           - file: docs/products/opensearch/howto/restore_opensearch_backup
