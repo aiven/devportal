@@ -147,4 +147,8 @@ rst_epilog = """
    :width: 24px
    :class: no-scaled-link
 
+.. |tick| image:: /images/icon-tick.png
+   :width: 24px
+   :class: no-scaled-link
+
 """
