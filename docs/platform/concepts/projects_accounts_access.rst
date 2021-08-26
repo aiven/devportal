@@ -10,6 +10,21 @@ There are two ways that you can manage access to Aiven services:
 
 Smaller teams usually favor direct access while larger teams favor RBAC to simplify complex access requirements for large numbers of people.
 
+.. mermaid::
+
+    sequenceDiagram
+	    participant Users
+		participant Account
+		participant Team
+		participant Project
+		participant Service
+		
+		Users->>Project: Small teams (direct access)
+		Users->>Team: Large teams (RBAC)
+		Account-->>Team: Assign group permissions
+		Team-->>Project: Assign project access
+		Project-->>Service: Create services
+
 You can use accounts and teams within the Aiven platform to implement Security Assertion Markup Language single sign-on (SAML SSO) using an identity provider such as Okta, GSuite, or AzureAD. Security-conscious teams usually favor a combination of SAML and RBAC regardless of the size of team.
 
 
@@ -51,6 +66,36 @@ The roles and corresponding permissions that Aiven supports are:
 * **Developer**: This allows you to manage existing services (for example, creating databases and connecting to them), but it does not allow you to make any changes that would affect billing (for example, starting or stopping services).
 
 * **Read Only**: This allows you to view services, but does not allow you to make any changes to the services.
+
+
+.. list-table::
+   :header-rows: 1
+
+   * - Role
+     - View status
+     - Connect
+     - Deploy
+     - Billing/editing access
+   * - Administrator
+     - Yes
+     - Yes
+     - Yes
+     - Yes
+   * - Operator
+     - Yes
+     - Yes
+     - Yes
+     - No
+   * - Developer
+     - Yes
+     - Yes
+     - No
+     - No
+   * - Read Only
+     - Yes
+     - No
+     - No
+     - No
 
 
 Teams
