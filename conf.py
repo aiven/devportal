@@ -38,6 +38,7 @@ extensions = [
 # see all options at https://github.com/wpilibsuite/sphinxext-opengraph#options
 ogp_site_url = 'https://developer.aiven.io/'
 ogp_description_length = 200
+ogp_image = '/_static/images/site-preview.png'
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
