@@ -12,7 +12,7 @@ Commands for managing project users and ``avn`` client sessions.
 ``avn user access-token``
 '''''''''''''''''''''''''
 
-:doc:`See detailed command information <user/user-access-token>`
+Set of commands for managing user's access tokens. :doc:`See detailed command information <user/user-access-token>` for more information.
 
 ``avn user create``
 '''''''''''''''''''''''
@@ -116,6 +116,8 @@ Logs the user out.
 
   avn user logout
 
+.. _avncli user-tokens-expire:
+
 ``avn user tokens-expire``
 ''''''''''''''''''''''''''
 
@@ -127,3 +129,4 @@ Makes all the authentication tokens associated with the user expired.
 
   avn user tokens-expire
 
+See also other :doc:`access-token related commands <user/user-access-token>`

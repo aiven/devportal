@@ -86,7 +86,9 @@ An example of user information:
 ``avn user access-token revoke``
 ''''''''''''''''''''''''''''''''
 
-Revokes the specified user access token.
+Revokes the specified user access token. 
+
+Tokens can also be expired via the :ref:`avncli user-tokens-expire` command.
 
 
 .. list-table::
