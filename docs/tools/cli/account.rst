@@ -7,7 +7,9 @@ Here you’ll find the full list of commands for ``avn account``.
 Manage account details
 -------------------------
 
-Commands for managing Aiven accounts via ``avn`` commands.
+Commands for managing Aiven accounts via ``avn`` commands. 
+
+Check out the full description of :doc:`Aiven's security model </docs/platform/concepts/cloud-security>` for more information.
 
 
 ``avn account authentication-method``
