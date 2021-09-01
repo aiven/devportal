@@ -19,6 +19,7 @@ hardcoded
 [Hh]ostname
 hyperloglogs
 jq
+Kubernetes
 Lua
 Memorystore
 [Nn]amespace
@@ -46,4 +47,3 @@ Uber
 unencrypted
 Untrusted
 [Uu]naggregated
-

@@ -25,19 +25,19 @@ Install the cert-manager with the command below. It is used to manage the webhoo
 
 .. code:: bash
 
-    $ kubectl apply -f https://github.com/jetstack/cert-manager/releases/download/v1.5.3/cert-manager.yaml
+    kubectl apply -f https://github.com/jetstack/cert-manager/releases/download/v1.5.3/cert-manager.yaml
 
 Now let's install the Operator itself with the command below:
 
 .. code:: bash
 
-    $ kubectl apply -f https://raw.githubusercontent.com/aiven/aiven-kubernetes-operator/main/config/deployment/v0.1.0.yaml
+    kubectl apply -f https://raw.githubusercontent.com/aiven/aiven-kubernetes-operator/main/config/deployment/v0.1.0.yaml
 
 You can verify the installation by making sure the Operator Pod is running with the command below:
 
 .. code:: bash
 
-    $ kubectl get pod -n aiven-kubernetes-operator-system
+    kubectl get pod -n aiven-kubernetes-operator-system
 
     NAME                                                            READY   STATUS    RESTARTS   AGE
     aiven-kubernetes-operator-controller-manager-576d944499-ggttj   1/1     Running   0          12m
@@ -48,7 +48,7 @@ Before creating a service, we need to authenticate the Operator with Aiven's API
 
 .. code:: bash
 
-    $ kubectl create secret generic aiven-token --from-literal=token="<your-token-here>"
+    kubectl create secret generic aiven-token --from-literal=token="<your-token-here>"
 
 Deploying Aiven for PostgreSQL
 ''''''''''''''''''''''''''''''
@@ -91,13 +91,13 @@ Apply the resource with the command below:
 
 .. code:: bash
 
-    $ kubectl apply -f pg-sample.yaml
+    kubectl apply -f pg-sample.yaml
 
 You can verify the status of your service with the following command. Once the ``STATE`` field has the value ``RUNNING`` we will proceed to connect to the service.
 
 .. code:: bash
 
-    $ kubectl get pgs.aiven.io pg-sample
+    kubectl get pgs.aiven.io pg-sample
 
     NAME        PROJECT        REGION                PLAN       STATE
     pg-sample   your-project   google-europe-west1   hobbyist   RUNNING
@@ -112,7 +112,7 @@ You can take a look at the information available with the following command:
 
 .. code:: bash
 
-    $ kubectl describe secret pg-connection
+    kubectl describe secret pg-connection
 
     [...]
     Type:  Opaque
@@ -151,13 +151,13 @@ Apply it with:
 
 .. code:: bash
 
-    $ kubectl apply -f pod-psql.yaml
+    kubectl apply -f pod-psql.yaml
 
 It will run, output the PostgreSQL version and terminate. We can see the logs with the following command:
 
 .. code:: bash
 
-    $ kubectl logs psql-test-connection
+    kubectl logs psql-test-connection
 
 Managing and using a database through Kubernetes has never been so easy!
 
@@ -167,8 +167,8 @@ To destroy the resources created, execute the following commands:
 
 .. code:: bash
 
-    $ kubectl delete pod psql-test-connection
-    $ kubectl delete postgresqls.aiven.io pg-sample
+    kubectl delete pod psql-test-connection
+    kubectl delete postgresqls.aiven.io pg-sample
 
 Learn more
 ----------
