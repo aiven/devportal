@@ -244,7 +244,7 @@ After playing around with the sample queries, can you use SQL statements to answ
 
 1. What is the total revenue of each rental store?
 
-.. dropdown:: See response
+.. dropdown:: See answer
 
     .. code:: sql
 
@@ -275,7 +275,7 @@ After playing around with the sample queries, can you use SQL statements to answ
 
 2. Can you list the top 5 film genres by their gross revenue?
 
-.. dropdown:: See response
+.. dropdown:: See answer
 
     .. code:: sql
 
@@ -316,7 +316,7 @@ After playing around with the sample queries, can you use SQL statements to answ
 
 3. The ``film.description`` has the ``text`` type, allowing for `full text search <https://www.postgresql.org/docs/11/textsearch-intro.html>`_ queries, what will you search for?
 
-.. dropdown:: See response
+.. dropdown:: See answer
 
     .. code:: sql
 
