@@ -1,9 +1,9 @@
-Pagila – a PostgreSQL sample database
-=====================================
+Sample dataset: Pagila
+======================
 
 Aiven provides a sample database you can import in your Aiven for PostgreSQL service. This page covers information about the database and the procedure to get it up and running.
 
-Pagila is a port of the `Sakila Sample Database <https://dev.mysql.com/doc/sakila/en/>`_. It was originally developed by Mark Hillyer, a former member of the MySQL AB documentation team, to provide a standard schema and data for articles, tutorials, books etc. Over time, it has been ported by the various developers to `multiple database systems <https://github.com/search?q=sakila>`_. The examples here use one from ``devrimgunduz``, `version 2.1.0 <https://github.com/devrimgunduz/pagila>`_.
+Pagila is a PostgreSQL port of the `Sakila Sample Database <https://dev.mysql.com/doc/sakila/en/>`_. The examples here use one from ``devrimgunduz``, `version 2.1.0 <https://github.com/devrimgunduz/pagila>`_.
 
 Sakila (and thus, Pagila) is a database representing a DVD rental store (remember those?!), containing information about films (like title, category, actresses), rental stores (like address, staff members, customers) and rentals, where a customer rents a film from a store through its staff.
 
@@ -47,7 +47,7 @@ You can also load it manually by following the steps below:
     CREATE DATABASE pagila;
     \c pagila;
 
-4. Populate the database with the following below. This might take some time, so grab a beverage of your choice ;)
+4. Populate the database with the command below. This might take some time.
 
 .. code:: psql
 
@@ -59,7 +59,7 @@ You can also load it manually by following the steps below:
 
     \c pagila;
 
-**You are ready to go!** You can use the `Sample queries` section below to explore the database. Have fun!
+**You are ready to go!** You can use the :ref:`Sample queries<sample_queries>` section below to explore the database. Have fun!
 
 Entity-relationship model diagram
 ---------------------------------
@@ -69,6 +69,8 @@ The image below shows an overview of the Pagila database tables and views, gener
 .. image:: /images/products/postgresql/pagila-erm.png
     :scale: 50%
     :alt: A entity-relation model diagram for the Pagila databases, containing all the tables, fields and views.
+
+.. _sample_queries:
 
 Sample queries
 --------------
@@ -254,10 +256,3 @@ Source
 ------
 
 The `source code for the Pagila database <https://github.com/aiven/devportal/tree/paglia-sample-database/code/products/postgresql/pagila>`_ is available from our repository.
-
-License
--------
-
-The Sakila schema and data are licensed under the `New BSD License <http://www.opensource.org/licenses/bsd-license.php>`_, as explained `on the Sakila page of the MySQL site <https://dev.mysql.com/doc/sakila/en/sakila-license.html>`_.
-
-The Pagila schema and data are licensed under the `PostgreSQL License <https://opensource.org/licenses/postgresql>`_, as explained `on the project pages <https://github.com/devrimgunduz/pagila/blob/master/LICENSE.txt>`_.
