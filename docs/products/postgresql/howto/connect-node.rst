@@ -35,7 +35,7 @@ This code creates a PostgreSQL client and opens a connection to the database. Th
 
 To run the code::
 
-    node index.php
+    node index.js
 
 If the script runs successfully, the outputs should be the PostgreSQL version running in your service like::
 
