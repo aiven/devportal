@@ -31,6 +31,7 @@ extensions = [
     'sphinx_external_toc',
     'sphinx_copybutton',
     'sphinx_gitstamp',
+    "sphinxext.opengraph",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -39,8 +40,10 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'README*', 'scripts', 'utils', 'CONTRIBUTING.rst']
-
+exclude_patterns = [
+    '_build', 'Thumbs.db', '.DS_Store', 'README*', 'scripts', 'utils',
+    'CONTRIBUTING.rst'
+]
 
 gitstamp_fmt = "%B %Y"
 
