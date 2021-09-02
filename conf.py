@@ -99,8 +99,7 @@ html_theme_options = {
         "color-sidebar-background-border": "#e1e1e3",
         "color-sidebar-search-background": "#1c1c2f",
     },
-    "navigation_with_keys": True,
-    "language" = "en"
+    "navigation_with_keys": True
 }
 
 pygments_style = "monokai"
