@@ -16,3 +16,5 @@ $db = new PDO($conn, $fields["user"], $fields["pass"]);
 foreach ($db->query("SELECT VERSION()") as $row) {
     print($row[0]);
 }
+
+?>
