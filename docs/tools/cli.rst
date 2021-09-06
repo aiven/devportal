@@ -118,6 +118,8 @@ An alternative support ticket interface to either email or the chat widget found
 
 Log in/out and manage your user tokens here. You can also create other users.
 
+:doc:`See detailed command information <cli/user>`
+
 ``vpc``
 '''''''
 
