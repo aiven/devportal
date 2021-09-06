@@ -31,7 +31,6 @@ extensions = [
     'sphinx_external_toc',
     'sphinx_copybutton',
     'sphinx_gitstamp',
-    "sphinxext.opengraph",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
