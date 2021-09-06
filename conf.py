@@ -40,14 +40,19 @@ ogp_site_url = 'https://developer.aiven.io/'
 ogp_description_length = 200
 ogp_image = '/_static/images/site-preview.png'
 
+# Mermaid version
+mermaid_version = "8.12.0"
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'README*', 'scripts', 'utils', 'CONTRIBUTING.rst']
-
+exclude_patterns = [
+    '_build', 'Thumbs.db', '.DS_Store', 'README*', 'scripts', 'utils',
+    'CONTRIBUTING.rst'
+]
 
 gitstamp_fmt = "%B %Y"
 
@@ -99,8 +104,6 @@ html_theme_options = {
 
 pygments_style = "monokai"
 pygments_dark_style = "monokai"
-
-html_extra_path = ["robots.txt"]
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
