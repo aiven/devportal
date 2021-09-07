@@ -1,12 +1,13 @@
-furo==2021.4.11b34
-sphinx==3.5.4
+furo==2021.08.17.beta43
+sphinx==4.0.3
 sphinx-autobuild==2021.3.14
-sphinx-panels==0.5.2
-sphinxcontrib-mermaid==0.6.3
-sphinx-external-toc==0.1.0
+sphinx-panels==0.6.0
+sphinxcontrib-mermaid==0.7.1
+sphinx-external-toc==0.2.3
 sphinx-copybutton==0.4.0
 sphinx_gitstamp== 0.3.1
 beautifulsoup4==4.9.3
 elasticsearch==7.13.1
 requests==2.25.1
 psycopg2-binary==2.9.1
+sphinxext-opengraph==0.4.2

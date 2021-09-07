@@ -23,7 +23,14 @@ entries:
     entries:
       - file: docs/tools/cli
         entries:
-        - glob: docs/tools/cli/*
+        - file: docs/tools/cli/card
+        - file: docs/tools/cli/cloud
+        - file: docs/tools/cli/credits
+        - file: docs/tools/cli/events
+        - file: docs/tools/cli/project
+        - file: docs/tools/cli/user
+          entries:
+            - glob: docs/tools/cli/user/*
       - file: docs/tools/api/index
         title: Aiven API
         entries:
