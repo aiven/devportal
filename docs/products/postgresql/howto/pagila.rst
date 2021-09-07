@@ -28,12 +28,12 @@ After loading the data, connect to the PostgreSQL instance using the command bel
 Load Pagila manually
 --------------------
 
-1. Download the ``pagila-data.sql`` from our `GitHub repository <https://github.com/aiven/devportal/blob/paglia-sample-database/code/products/postgresql/pagila/pagila-data.sql>`_.
+1. Download the ``pagila-data.sql`` from our `GitHub repository <https://github.com/aiven/devportal/blob/main/code/products/postgresql/pagila/pagila-data.sql>`_.
 
 .. Tip::
     You may use the following command on your terminal::
 
-        wget https://raw.githubusercontent.com/aiven/devportal/paglia-sample-database/code/products/postgresql/pagila/pagila-data.sql
+        wget https://raw.githubusercontent.com/aiven/devportal/main/code/products/postgresql/pagila/pagila-data.sql
 
 2. Connect to the PostgreSQL instance using the command below. The ``SERVICE_URI`` value can be found in the Aiven Console dashboard.
 
@@ -356,4 +356,4 @@ To clean up the environment and destroy the database, run the following commands
 Source
 ------
 
-The `source code for the Pagila database <https://github.com/aiven/devportal/tree/paglia-sample-database/code/products/postgresql/pagila>`_ is available from our repository.
+The `source code for the Pagila database <https://github.com/aiven/devportal/tree/main/code/products/postgresql/pagila>`_ is available from our repository.
