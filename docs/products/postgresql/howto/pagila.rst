@@ -35,7 +35,7 @@ Load Pagila manually
 
         wget https://raw.githubusercontent.com/aiven/devportal/main/code/products/postgresql/pagila/pagila-data.sql
 
-2. Connect to the PostgreSQL instance using the command below. The ``SERVICE_URI`` value can be found in the Aiven Console dashboard.
+2. Connect to the PostgreSQL instance using the following command. The ``SERVICE_URI`` value can be found in the Aiven Console dashboard.
 
 .. code:: shell
 
@@ -240,7 +240,7 @@ Let's explore the dataset with a few queries. All the queries results were limit
 
 Ready for a challenge?
 ----------------------
-After playing around with the sample queries, can you use SQL statements to answer some these questions?
+After playing around with the sample queries, can you use SQL statements to answer some of these questions?
 
 1. What is the total revenue of each rental store?
 
