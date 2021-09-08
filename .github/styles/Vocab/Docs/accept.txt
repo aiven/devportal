@@ -15,6 +15,7 @@ geospatial
 [Gg]o
 Grafana
 hardcoded
+Hillyer
 [Hh]obbyist
 [Hh]ostname
 hyperloglogs
@@ -24,6 +25,8 @@ Memorystore
 [Nn]amespace
 NodeJS
 npm
+Okta
+Pagila
 parallelization
 pgAdmin
 PgBouncer
@@ -31,9 +34,11 @@ plaintext
 pooler
 PostgreSQL
 Postman
+psql
 Python
 Redis
 refcard
+Sakila
 scriptable
 sharding
 signups
@@ -46,4 +51,4 @@ Uber
 unencrypted
 Untrusted
 [Uu]naggregated
-Okta
+wget
