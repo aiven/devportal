@@ -41,7 +41,7 @@ Verify the ``cert-manager`` installation by checking if their Pods are up and ru
     NAME                                      READY   STATUS    RESTARTS   AGE
     cert-manager-848f547974-w5xj7             1/1     Running   0          8s
     cert-manager-cainjector-54f4cc6b5-vdksm   1/1     Running   0          8s
-    cert-manager-webhook-7c9588c76-pll96      0/1     Running   0          8s
+    cert-manager-webhook-7c9588c76-pll96      1/1     Running   0          8s
 
 Add the `Aiven Helm chart repository <https://github.com/aiven/aiven-charts/>`_ and update your local Helm information:
 
