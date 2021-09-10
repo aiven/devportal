@@ -15,6 +15,8 @@ Requirements
 ''''''''''''
 First, you will need access to a Kubernetes cluster. To try the Operator locally, we recommend using `kind <https://kind.sigs.k8s.io/>`_. You can install it by following their `official documentation <https://kind.sigs.k8s.io/docs/user/quick-start/#installation>`_.
 
+We will be installing the Operator with Helm. Follow their `official instructions <https://helm.sh/docs/intro/install/>`_ to install it.
+
 You'll also need an Aiven account. If you don't have one yet, `sign up <https://console.aiven.io/signup?utm_source=&utm_medium=organic&utm_campaign=k8s-operator&utm_content=post>`_ and enjoy our free trial! Once you have your account set, please generate and note down the `authentication token <https://help.aiven.io/en/articles/2059201-authentication-tokens>`_ and your project name, they will be used to authenticate the Kubernetes Operator with Aiven's API.
 
 Install the operator
@@ -23,24 +25,49 @@ Once you have a Kubernetes cluster and an Aiven authentication token, we can pro
 
 Install the cert-manager with the command below. It is used to manage the webhook TLS certificates used by our Operator.
 
+.. Tip::
+    You use the Operator without ``cert-manager`` and the admission webhooks, just take a look at the last step.
+
 .. code:: bash
 
     kubectl apply -f https://github.com/jetstack/cert-manager/releases/latest/download/cert-manager.yaml
 
-Now let's install the Operator itself with the command below:
+Verify the ``cert-manager`` installation by checking if their Pods are up and running:
 
 .. code:: bash
 
-    kubectl apply -f https://github.com/aiven/aiven-operator/releases/latest/download/deployment.yaml
+    kubectl get pod -n cert-manager
+
+    NAME                                      READY   STATUS    RESTARTS   AGE
+    cert-manager-848f547974-w5xj7             1/1     Running   0          8s
+    cert-manager-cainjector-54f4cc6b5-vdksm   1/1     Running   0          8s
+    cert-manager-webhook-7c9588c76-pll96      0/1     Running   0          8s
+
+Add the `Aiven Helm chart repository <https://github.com/aiven/aiven-charts/>`_ and update your local Helm information:
+
+.. code:: bash
+
+  helm repo add aiven https://aiven.github.io/aiven-charts
+  helm repo update
+
+Now let's install the Operator itself with the commands below. First, we will install the CRDs and them the Operator itself:
+
+.. code:: bash
+
+    helm install aiven-operator-crds aiven/aiven-operator-crds
+    helm install aiven-operator aiven/aiven-operator
+
+.. Tip::
+    You can use ``helm install aiven-operator aiven/aiven-operator --set webhooks.enabled=false`` to disable the admission webhooks.
 
 You can verify the installation by making sure the Operator Pod is running with the command below:
 
 .. code:: bash
 
-    kubectl get pod -n aiven-operator-system
+    kubectl get pod -l app.kubernetes.io/name=aiven-operator
 
-    NAME                                                 READY   STATUS    RESTARTS   AGE
-    aiven-operator-controller-manager-576d944499-ggttj   1/1     Running   0          12m
+    NAME                              READY   STATUS    RESTARTS   AGE
+    aiven-operator-576d944499-ggttj   1/1     Running   0          12m
 
 Authenticating
 ''''''''''''''
@@ -169,6 +196,14 @@ To destroy the resources created, execute the following commands:
 
     kubectl delete pod psql-test-connection
     kubectl delete postgresqls.aiven.io pg-sample
+
+To remove the Operator and ``cert-manager`` (if installed), use the following:
+
+.. code:: bash
+
+    helm uninstall aiven-operator
+    helm uninstall aiven-operator-crds
+    kubectl delete -f https://github.com/jetstack/cert-manager/releases/latest/download/cert-manager.yaml
 
 Learn more
 ----------
