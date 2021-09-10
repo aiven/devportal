@@ -1,15 +1,15 @@
-Aiven Kubernetes operator
-=========================
+Aiven Operator for Kubernetes
+=============================
 
     Kubernetes, also known as K8s, is an open-source system for automating deployment, scaling, and management of containerized applications. Kubernetes Operators are software extensions to Kubernetes that make use of custom resources to manage applications and their components. `Kubernetes website <https://kubernetes.io/>`_.
 
-Aiven Kubernetes Operator allows its users to manage Aiven services through the Kubernetes API by using `Custom Resource Definitions <https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/>`_.
+Aiven Operator for Kubernetes allows users to manage Aiven services through the Kubernetes API by using `Custom Resource Definitions <https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/>`_.
 
 For now, only Aiven for PostgreSQL and Aiven for Kafka are supported.
 
 Getting started
 ---------------
-Let's get started by configuring the Aiven Kubernetes Operator and deploying a PostgreSQL database.
+Let's get started by configuring the Aiven Operator and deploying a PostgreSQL database.
 
 Requirements
 ''''''''''''
@@ -25,22 +25,22 @@ Install the cert-manager with the command below. It is used to manage the webhoo
 
 .. code:: bash
 
-    kubectl apply -f https://github.com/jetstack/cert-manager/releases/download/v1.5.3/cert-manager.yaml
+    kubectl apply -f https://github.com/jetstack/cert-manager/releases/latest/download/cert-manager.yaml
 
 Now let's install the Operator itself with the command below:
 
 .. code:: bash
 
-    kubectl apply -f https://raw.githubusercontent.com/aiven/aiven-kubernetes-operator/main/config/deployment/v0.1.0.yaml
+    kubectl apply -f https://github.com/aiven/aiven-operator/releases/latest/download/deployment.yaml
 
 You can verify the installation by making sure the Operator Pod is running with the command below:
 
 .. code:: bash
 
-    kubectl get pod -n aiven-kubernetes-operator-system
+    kubectl get pod -n aiven-operator-system
 
-    NAME                                                            READY   STATUS    RESTARTS   AGE
-    aiven-kubernetes-operator-controller-manager-576d944499-ggttj   1/1     Running   0          12m
+    NAME                                                 READY   STATUS    RESTARTS   AGE
+    aiven-operator-controller-manager-576d944499-ggttj   1/1     Running   0          12m
 
 Authenticating
 ''''''''''''''
@@ -174,9 +174,9 @@ Learn more
 ----------
 Check out these resources to learn more about Kubernetes and our Operator:
 
-* `Aiven Kubernetes Operator documentation <https://aiven.github.io/aiven-kubernetes-operator>`_
+* `Aiven Operator for Kubernetes documentation <https://aiven.github.io/aiven-operator>`_
 * `Kubernetes Basics <https://kubernetes.io/docs/tutorials/kubernetes-basics/>`_
 
 Get involved
 ------------
-If you have any comments or want to contribute to the tool, please join us on the `GitHub repository <https://github.com/aiven/aiven-kubernetes-operator>`_.
+If you have any comments or want to contribute to the tool, please join us on the `GitHub repository <https://github.com/aiven/aiven-operator>`_.
