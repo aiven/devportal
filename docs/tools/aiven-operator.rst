@@ -13,26 +13,26 @@ Let's get started by configuring the Aiven Operator and deploying a PostgreSQL d
 
 Requirements
 ''''''''''''
-First, you will need access to a Kubernetes cluster. To try the Operator locally, we recommend using `kind <https://kind.sigs.k8s.io/>`_. You can install it by following their `official documentation <https://kind.sigs.k8s.io/docs/user/quick-start/#installation>`_.
+First, you will need access to a Kubernetes cluster. To try the operator locally, we recommend using `kind <https://kind.sigs.k8s.io/>`_. You can install it by following their `official documentation <https://kind.sigs.k8s.io/docs/user/quick-start/#installation>`_.
 
-We will be installing the Operator with Helm. Follow their `official instructions <https://helm.sh/docs/intro/install/>`_ to install it.
+We will be installing the operator with Helm. Follow their `official instructions <https://helm.sh/docs/intro/install/>`_ to install it.
 
-You'll also need an Aiven account. If you don't have one yet, `sign up <https://console.aiven.io/signup?utm_source=&utm_medium=organic&utm_campaign=k8s-operator&utm_content=post>`_ and enjoy our free trial! Once you have your account set, please generate and note down the `authentication token <https://help.aiven.io/en/articles/2059201-authentication-tokens>`_ and your project name, they will be used to authenticate the Kubernetes Operator with Aiven's API.
+You'll also need an Aiven account. If you don't have one yet, `sign up <https://console.aiven.io/signup?utm_source=&utm_medium=organic&utm_campaign=k8s-operator&utm_content=post>`_ and enjoy our free trial! Once you have your account set, please generate and note down the `authentication token <https://help.aiven.io/en/articles/2059201-authentication-tokens>`_ and your project name, they will be used to authenticate the Kubernetes operator with Aiven's API.
 
 Install the operator
 ''''''''''''''''''''
-Once you have a Kubernetes cluster and an Aiven authentication token, we can proceed to install the Operator.
+Once you have a Kubernetes cluster and an Aiven authentication token, we can proceed to install the operator.
 
-Install the cert-manager with the command below. It is used to manage the webhook TLS certificates used by our Operator.
+Install the cert-manager with the command below. It is used to manage the webhook TLS certificates used by our operator.
 
 .. Tip::
-    You use the Operator without ``cert-manager`` and the admission webhooks, just take a look at the last step.
+    You use the operator without ``cert-manager`` and the admission webhooks, just take a look at the last step.
 
 .. code:: bash
 
     kubectl apply -f https://github.com/jetstack/cert-manager/releases/latest/download/cert-manager.yaml
 
-Verify the ``cert-manager`` installation by checking if their Pods are up and running:
+Verify the ``cert-manager`` installation by checking if their pods are up and running:
 
 .. code:: bash
 
@@ -50,7 +50,7 @@ Add the `Aiven Helm chart repository <https://github.com/aiven/aiven-charts/>`_ 
   helm repo add aiven https://aiven.github.io/aiven-charts
   helm repo update
 
-Now let's install the Operator itself with the commands below. First, we will install the CRDs and them the Operator itself:
+Now let's install the CRDs and them the operator itself:
 
 .. code:: bash
 
@@ -60,7 +60,7 @@ Now let's install the Operator itself with the commands below. First, we will in
 .. Tip::
     You can use ``helm install aiven-operator aiven/aiven-operator --set webhooks.enabled=false`` to disable the admission webhooks.
 
-You can verify the installation by making sure the Operator Pod is running with the command below:
+You can verify the installation by making sure the operator pod is running with the command below:
 
 .. code:: bash
 
@@ -71,7 +71,7 @@ You can verify the installation by making sure the Operator Pod is running with 
 
 Authenticating
 ''''''''''''''
-Before creating a service, we need to authenticate the Operator with Aiven's API. To do so, create the Kubernetes Secret with the command below, substituting the "<your-token-here>" with the authentication token generated in the prerequisites section.
+Before creating a service, we need to authenticate the operator with Aiven's API. To do so, create the Kubernetes secret with the command below, substituting the ``<your-token-here>`` with the authentication token generated in the prerequisites section.
 
 .. code:: bash
 
@@ -79,7 +79,7 @@ Before creating a service, we need to authenticate the Operator with Aiven's API
 
 Deploying Aiven for PostgreSQL
 ''''''''''''''''''''''''''''''
-It's showtime! Let's create an Aiven for PostgreSQL service using the Custom Resource provided by the Operator. Create a file named ``pg-sample.yaml`` with the content below, substituting the "<your-project-name>" with your Aiven project name. Take a look at the commented lines to understand better what each field represents.
+It's showtime! Let's create an Aiven for PostgreSQL service using the Custom Resource provided by the operator. Create a file named ``pg-sample.yaml`` with the content below, substituting the ``<your-project-name>`` with your Aiven project name. Take a look at the commented lines to understand better what each field represents.
 
 .. code:: yaml
 
@@ -89,12 +89,12 @@ It's showtime! Let's create an Aiven for PostgreSQL service using the Custom Res
       name: pg-sample
     spec:
     
-      # gets the authentication token from the `aiven-token` Secret
+      # gets the authentication token from the `aiven-token` secret
       authSecretRef:
         name: aiven-token
         key: token
     
-      # outputs the PostgreSQL connection on the `pg-connection` Secret
+      # outputs the PostgreSQL connection on the `pg-connection` secret
       connInfoSecretTarget:
         name: pg-connection
     
@@ -133,7 +133,7 @@ Using the service
 '''''''''''''''''
 Once the output of the command below is ``RUNNING``, we can connect and test our PostgreSQL service.
 
-The connection information – in this case, the PostgreSQL service URI – is automatically created by the Operator within a Kubernetes Secret named after the value from the ``connInfoSecretTarget.name`` field.
+The connection information – in this case, the PostgreSQL service URI – is automatically created by the operator within a Kubernetes secret named after the value from the ``connInfoSecretTarget.name`` field.
 
 You can take a look at the information available with the following command:
 
@@ -154,7 +154,7 @@ You can take a look at the information available with the following command:
     PGPASSWORD:    16 bytes
     PGPORT:        5 bytes
 
-Lastly, let's deploy a Pod to test the connection to PostgreSQL from Kubernetes. Create a file named ``pod-psql.yaml`` with the content below:
+Lastly, let's deploy a pod to test the connection to PostgreSQL from Kubernetes. Create a file named ``pod-psql.yaml`` with the content below:
 
 .. code:: yaml
 
@@ -169,7 +169,7 @@ Lastly, let's deploy a Pod to test the connection to PostgreSQL from Kubernetes.
           name: postgres
           command: ['psql', '$(DATABASE_URI)', '-c', 'SELECT version();']
           
-          # the pg-connection Secret becomes environment variables 
+          # the pg-connection secret becomes environment variables 
           envFrom:
           - secretRef:
               name: pg-connection
@@ -197,7 +197,7 @@ To destroy the resources created, execute the following commands:
     kubectl delete pod psql-test-connection
     kubectl delete postgresqls.aiven.io pg-sample
 
-To remove the Operator and ``cert-manager`` (if installed), use the following:
+To remove the operator and ``cert-manager`` (if installed), use the following:
 
 .. code:: bash
 
@@ -207,7 +207,7 @@ To remove the Operator and ``cert-manager`` (if installed), use the following:
 
 Learn more
 ----------
-Check out these resources to learn more about Kubernetes and our Operator:
+Check out these resources to learn more about Kubernetes and our operator:
 
 * `Aiven Operator for Kubernetes documentation <https://aiven.github.io/aiven-operator>`_
 * `Kubernetes Basics <https://kubernetes.io/docs/tutorials/kubernetes-basics/>`_

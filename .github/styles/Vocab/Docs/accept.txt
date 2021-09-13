@@ -26,6 +26,7 @@ Memorystore
 NodeJS
 npm
 parallelization
+[Oo]perator
 pgAdmin
 PgBouncer
 plaintext

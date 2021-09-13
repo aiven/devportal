@@ -6,5 +6,3 @@ scope: heading
 match: $sentence
 exceptions:
   - HowTo
-  - Operator
-  - Kubernetes
