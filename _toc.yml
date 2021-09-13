@@ -85,11 +85,13 @@ entries:
           - file: docs/products/opensearch/concepts/access_control
           - file: docs/products/opensearch/concepts/opensearch_backups
           - file: docs/products/opensearch/concepts/indices
+          - file: docs/products/opensearch/concepts/opensearch-vs-elasticsearch
       - file: docs/products/opensearch/howto
         title: HowTo
         entries:
           - file: docs/products/opensearch/howto/opensearch-with-curl
           - file: docs/products/opensearch/howto/migrating_elasticsearch_data_to_aiven
+          - file: docs/products/opensearch/howto/upgrade-to-opensearch
           - file: docs/products/opensearch/howto/control_access_to_content
           - file: docs/products/opensearch/howto/restore_opensearch_backup
           - file: docs/products/opensearch/howto/set_index_retention_patterns
