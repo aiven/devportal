@@ -36,6 +36,7 @@ entries:
         entries:
         - glob: docs/tools/api/*
       - file: docs/tools/terraform
+      - file: docs/tools/kubernetes
 
   # -------- PRODUCT-SPECIFIC --------
   - file: docs/products/postgresql/index

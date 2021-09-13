@@ -92,3 +92,6 @@ You can use the Aiven platform in the way that best fits your workflow:
 * For programmatic integrations, the :doc:`Aiven API <docs/tools/api/index>` provides an interface you can use.
 
 * The :doc:`docs/tools/terraform` gives orchestration features for infrastructure-as-code projects.
+
+* The :doc:`docs/tools/kubernetes` adds orchestration of your Aiven services to your existing Kubernetes cluster.
+

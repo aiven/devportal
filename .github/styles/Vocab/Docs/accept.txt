@@ -20,6 +20,7 @@ Hillyer
 [Hh]ostname
 hyperloglogs
 jq
+Kubernetes
 Lua
 Memorystore
 [Nn]amespace
@@ -28,6 +29,7 @@ npm
 Okta
 Pagila
 parallelization
+[Oo]perator
 pgAdmin
 PgBouncer
 plaintext
@@ -52,3 +54,4 @@ unencrypted
 Untrusted
 [Uu]naggregated
 wget
+
