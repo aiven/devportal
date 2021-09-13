@@ -16,17 +16,17 @@ Included plugins
 
 These plugins are enabled on all Aiven for OpenSearch services by default:
 
-* analysis-icu
-* analysis-phonetic
-* kuromoji
-* mapper-size
-* Open Distro for Elasticsearch SQL plugin
-* Open Distro for Elasticsearch Alerting plugin
+* ICU Analysis
+* Phonetic Analysis
+* kuromoji (Japanese Analysis)
+* Mapper Size
+* `Open Distro for Elasticsearch SQL plugin <https://opendistro.github.io/for-elasticsearch/features/SQL%20Support.html>`_
+* `Open Distro for Elasticsearch Alerting plugin <https://opendistro.github.io/for-elasticsearch/features/alerting.html>`_
 
 Additional plugins
 ------------------
 
-To enable additional plugins in an Opensearch service:
+To enable additional plugins in an OpenSearch service:
 
 1. Select your service in the Aiven web console.
 2. On the service overview page, scroll down to Additional plugins
@@ -34,11 +34,11 @@ To enable additional plugins in an Opensearch service:
 
 The additional plugins collection includes the following:
 
--  `opensearch-anomaly-detection <https://opensearch.org/docs/monitoring-plugins/ad/index/>`__ 
--  `opensearch-asynchronous-search <https://opensearch.org/docs/search-plugins/async/index/>`__ 
--  `opensearch-index-management <https://opensearch.org/docs/im-plugin/index/>`__ 
--  opensearch-job-scheduler
--  `opensearch-knn <https://opensearch.org/docs/search-plugins/knn/index/>`__ 
--  `opensearch-notebooks <https://opensearch.org/docs/dashboards/notebooks/>`__ 
--  `opensearch-performance-analyzer <https://opensearch.org/docs/monitoring-plugins/pa/index/>`__ 
--  opensearch-reports-scheduler
+-  `Anomaly detection <https://opensearch.org/docs/monitoring-plugins/ad/index/>`__
+-  `Asynchronous search <https://opensearch.org/docs/search-plugins/async/index/>`__
+-  `Index Management <https://opensearch.org/docs/im-plugin/index/>`__
+-  Job scheduler
+-  `k-NN <https://opensearch.org/docs/search-plugins/knn/index/>`__
+-  `Notebooks <https://opensearch.org/docs/dashboards/notebooks/>`__
+-  `Performance Analyzer <https://opensearch.org/docs/monitoring-plugins/pa/index/>`__
+-  Reports Scheduler

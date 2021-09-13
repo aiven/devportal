@@ -10,6 +10,7 @@ cyber
 datacenter
 datasource
 datastore
+Distro
 downsampled
 downsampling
 Elasticsearch
@@ -28,6 +29,7 @@ httpie
 jq
 Kaggle
 Kibana
+kuromoji
 Lua
 Lucene
 Memorystore
