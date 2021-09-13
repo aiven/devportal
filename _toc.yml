@@ -91,6 +91,8 @@ entries:
   - file: docs/products/opensearch/index
     title: OpenSearch
     entries:
+      - file: docs/products/opensearch/getting-started
+        title: Getting started
       - file: docs/products/opensearch/howto/sample-dataset
       - file: docs/products/opensearch/concepts
         title: Concepts

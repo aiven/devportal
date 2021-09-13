@@ -45,4 +45,6 @@ OpenSearch Resources
 
 * Check the `API documentation <https://opensearch.org/docs/opensearch/rest-api/index>`_ for detailed information about the HTTP endpoints.
 
+* There's a :doc:`list of plugins <reference/plugins>` supported by Aiven for OpenSearch.
+
 * Got a question about the OpenSearch project itself? They have an `FAQ <https://opensearch.org/faq/>`_ for that.
