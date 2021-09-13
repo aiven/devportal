@@ -29,7 +29,7 @@ Try the :doc:`sample recipes dataset <howto/sample-dataset>` or browse the other
     💻 :doc:`howto`
 
 
-Ways to Use OpenSearch
+Ways to use OpenSearch
 ----------------------
 
 OpenSearch is ideal for working with various types of unstructured data, where you need to be able to find things quickly. The most common examples include:
@@ -38,7 +38,7 @@ OpenSearch is ideal for working with various types of unstructured data, where y
 
 * Use OpenSearch to index documents, so that you can get meaningful **search results** from a large body of knowledge.
 
-OpenSearch Resources
+OpenSearch resources
 --------------------
 
 * Work with your OpenSearch service :doc:`using cURL <howto/opensearch-with-curl>`

@@ -12,8 +12,8 @@ OpenSearch Dashboards is included
 
 When you create an Aiven for OpenSearch service, you will also get an OpenSearch Dashboards service alongside it. This means you can quickly and easily visualize the data in an OpenSearch service.
 
-Get up and runnning
--------------------
+Get up and running
+------------------
 
 Connect to your OpenSearch service and start working with data. Try :doc:`connecting with cURL <howto/opensearch-with-curl>` as great place to start with your services. The connection details are in the service overview.
 
