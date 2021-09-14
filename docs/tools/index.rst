@@ -54,7 +54,7 @@ We provide the tools you need to do your work, your way.
 
     +++
 
-    .. link-button:: aiven-operator
+    .. link-button:: kubernetes
         :type: ref
         :text: Read more
         :classes: stretched-link
