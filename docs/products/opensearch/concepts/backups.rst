@@ -17,11 +17,7 @@ Depending on the service plan, we offer single backups for disaster recovery or 
 To allow returning to an earlier point in time, Aiven for OpenSearch uses two kinds of backups - hourly and daily. Each type has its own
 backup frequency interval and retention period. Currently, you cannot configure these settings.
 
-Restore from backup
--------------------
-
-Create a :doc:`fork </docs/platform/concepts/database-forking>` of your OpenSearch service, and choose the backup you would like to use as the basis for your new service.
-
 .. note::
     Aiven for OpenSearch currently only supports restoring from daily backups or hourly backups from the previous day.
 
+Find out more about using your backups in our guide: :doc:`/docs/products/opensearch/howto/restore_opensearch_backup`

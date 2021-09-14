@@ -98,7 +98,7 @@ entries:
         title: Concepts
         entries:
           - file: docs/products/opensearch/concepts/access_control
-          - file: docs/products/opensearch/concepts/opensearch_backups
+          - file: docs/products/opensearch/concepts/backups
           - file: docs/products/opensearch/concepts/indices
           - file: docs/products/opensearch/concepts/opensearch-vs-elasticsearch
       - file: docs/products/opensearch/howto

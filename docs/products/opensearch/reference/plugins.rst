@@ -29,7 +29,7 @@ Additional plugins
 To enable additional plugins in an OpenSearch service:
 
 1. Select your service in the Aiven web console.
-2. On the service overview page, scroll down to Additional plugins
+2. On the service overview page, scroll down to **Additional plugins** and
    switch on the feature.
 
 The additional plugins collection includes the following:
