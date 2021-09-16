@@ -1,5 +1,5 @@
-Get started with Aiven for Redis
-================================
+Getting started
+===============
 
 Get up and running with Aiven for Redis. This article shows you how to set up a Redis service in Aiven and learn more about the platform.
 
@@ -44,9 +44,22 @@ To create a new Aiven for Redis service:
 
    The status is *Rebuilding* while the service is being created for you. Once the service is ready, the status changes to *Running*. While services typically start up in a couple of minutes, the performance varies between cloud providers and regions, and it may take longer in some circumstances.
 
+Connect to Redis with ``redis-cli``
+-----------------------------------
+The direct PostgreSQL connection endpoint can be found under the Service URI connection information on the main service overview tab. 
+
+With `redis-cli <https://redis.io/topics/rediscli>`_ you can connect to the Redis instance with the following command, by replacing the ``SERVICE_URI`` parameter::
+
+   redis-cli -u SERVICE_URI
 
 Next steps
 ----------
+
+Code examples for connecting to Redis from your application:
+   * :doc:`Go <howto/connect-go>`
+   * :doc:`Node <howto/connect-node>`
+   * :doc:`PHP <howto/connect-php>`
+   * :doc:`Python <howto/connect-python>`
 
 Check out our other resources for more technical information:
 
@@ -57,6 +70,3 @@ Check out our other resources for more technical information:
 * :doc:`Memory usage, on-disk persistence and replication in Aiven for Redis <concepts/memory-usage>`.
 
   See how Aiven for Redis solves the challenges related to high memory usage and high change rate.
-
-
-
