@@ -385,7 +385,6 @@ code.literal {
   background-color: var(--lightGray);
 }
 
-/* div.section > div.section > h3 > code.literal > .pre { */
 h3 > code > .pre {
   font-weight: 700 !important;
   color: var(--primaryColor) !important;
