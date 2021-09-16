@@ -1,9 +1,9 @@
 Getting started
 ===============
 
-The first steps in using Aiven for Apache Flink are to create a service and a Flink job. You can do this in the Aiven web console or with the Aiven CLI.
+The first steps in using Aiven for Apache Flink are to create a service and a Flink job. You can do this in the `Aiven web console <https://console.aiven.io/>`_ or with the `Aiven CLI <https://github.com/aiven/aiven-client>`_.
 
-In addition to the Flink service, you also need a service that you can use as a data source. This article outlines an example of using an Apache Kafka service as the data source.
+In addition to the Flink service, you also need one or more services that you can use as the data source and targets. This article outlines an example of using an Apache Kafka service as the data source.
 
 
 Create an Apache Flink service in the Aiven web console
@@ -13,9 +13,6 @@ Create an Apache Flink service in the Aiven web console
 1. Log in to the `Aiven web console <https://console.aiven.io/>`_.
 
 2. On the *Services* page, click **Create a new service**.
-
-   This opens a new page with the available service options.
-
 
 3. Select the main properties for your service:
 
@@ -28,7 +25,7 @@ Create an Apache Flink service in the Aiven web console
 
    c. Select a service plan.
 
-      This defines the number of servers and what kind of memory, CPU, and disk resources are allocated to your service.
+      This defines the size of the cluster and the memory, CPU, and disk resources allocated to each node.
 
    d. Enter a name for your service.
 
@@ -57,7 +54,7 @@ Create an Apache Flink service with the Aiven CLI
 
 2. Run the following command to create your Apache Flink service::
 
-       avn service create <service_name> -t flink --plan <service_plan> wait
+       avn service create <service_name> -t flink --cloud <cloud_provider_and_region> --plan <service_plan> wait
 
    This creates the service and waits until the service status is *Running*.
 
@@ -65,9 +62,9 @@ Create an Apache Flink service with the Aiven CLI
 Create a job
 ------------
 
-This example uses an Aiven for Apache Kafka service with a topic named `alert` as the source for the Flink job.
+This example uses an Aiven for Apache Kafka service as both the data source and the pipeline target. The service uses a topic named `alert` as the source, and the transformed data is inserted into another topic named `KAlert` via a Flink job.
 
-1. Create the integration between Flink and Kafka. For details, see :doc:`this article <howto/connect>`.
+1. Once you have created the Flink and Kafka services, create the integration between them. For details, see :doc:`this article <howto/connect>`.
 
 2. Create the source and sink tables. For details, see :doc:`this article <howto/connect-kafka>`.
 
