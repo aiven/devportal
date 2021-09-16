@@ -8,10 +8,6 @@ It is Python-based, with content in `ReStructuredText (rst) <https://docutils.so
 Running locally
 ---------------
 
-Install the dependencies::
-
-    pip install -r requirements.txt
-
 Start the HTML version with::
 
     make livehtml
