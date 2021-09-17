@@ -1,8 +1,7 @@
 Plugins available with Aiven for OpenSearch
 ===========================================
 
-Aiven for OpenSearch includes by default a standard a set of plugins. We also provide
-support for enabling a further set of plugins should you need them. The exact plugins are listed in the sections further down this page.
+Aiven for OpenSearch includes by default a standard a set of plugins. We are also working on adding a further set of new OpenSearch plugins. The exact plugins are listed in the sections further down this page.
 
 .. tip::
 
@@ -26,13 +25,7 @@ These plugins are enabled on all Aiven for OpenSearch services by default:
 Additional plugins
 ------------------
 
-To enable additional plugins in an OpenSearch service:
-
-1. Select your service in the Aiven web console.
-2. On the service overview page, scroll down to **Additional plugins** and
-   switch on the feature.
-
-The additional plugins collection includes the following:
+The additional plugins that will be added in the near future include the following:
 
 -  `Anomaly detection <https://opensearch.org/docs/monitoring-plugins/ad/index/>`__
 -  `Asynchronous search <https://opensearch.org/docs/search-plugins/async/index/>`__
