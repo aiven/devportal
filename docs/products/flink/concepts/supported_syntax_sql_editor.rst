@@ -16,3 +16,23 @@ At the moment, Aiven for Apache Flink services do not support the following SQL 
 
 All other valid SQL syntax is supported.
 
+Examples
+--------
+
+The following is an example of content that is not supported in the SQL editor:
+
+.. code-block:: sql
+
+    /* Add events with high CPU load */
+    
+    INSERT INTO KAlert SELECT * FROM KCpuIn WHERE 'cpu' > 70
+    
+    -- change CPU load if necessary
+	
+
+And the following is a supported example:
+
+.. code-block:: sql
+
+    INSERT INTO KAlert SELECT * FROM KCpuIn WHERE 'cpu' > 70
+
