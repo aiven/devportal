@@ -85,7 +85,7 @@ If the output is not ``logical``, run the following command in ``psql`` and then
         DEST_PG_NAME
 
 
-4. Check the migration status via :doc:`../../../tools/cli`::
+5. Check the migration status via :doc:`../../../tools/cli`::
 
     avn --show-http service migration-status DEST_PG_NAME --project test
 

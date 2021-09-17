@@ -60,12 +60,12 @@ The ``--jobs`` option in this command instructs the operation to use 4 CPUs to d
     If you have more than one database to migrate, repeat the ``pg_dump`` and ``pg_restore`` steps for each database.
 
 
-5. Switch the connection settings in your applications to use the new Aiven database once you have migrated all of your data.
+4. Switch the connection settings in your applications to use the new Aiven database once you have migrated all of your data.
 
 .. Warning::
     The user passwords are different from those on the server that you migrated from. Go to the **Users** tab for your service in the Aiven web console to check the new passwords.
 
-7. Connect to the target database via ``psql``::
+5. Connect to the target database via ``psql``::
 
     psql 'DEST_SERVICE_URI'
 
