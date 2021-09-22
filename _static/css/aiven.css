@@ -385,6 +385,11 @@ code.literal {
   background-color: var(--lightGray);
 }
 
+h3 > code > .pre {
+  font-weight: 700 !important;
+  color: var(--primaryColor) !important;
+}
+
 .pre {
   background-color: var(--lightGray);
   color: var(--secondaryColor);
