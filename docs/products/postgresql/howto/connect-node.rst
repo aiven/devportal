@@ -19,10 +19,16 @@ Pre-requisites
 
 For this example you will need:
 
-1. The npm ``pg`` package::
+1. Create a new directory and access it::
+
+    mkdir pg-node
+    cd pg-node
+
+2. :doc:`Download the PostgreSQL CA certificate </docs/platform/concepts/tls-ssl-certificates>` in the current directory in a file named ``ca.pem``.
+
+2. Install the npm ``pg`` package::
 
     npm install pg 
-
 
 Code
 ''''
