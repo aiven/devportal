@@ -29,6 +29,7 @@ hyperloglogs
 httpie
 jq
 Kaggle
+Karapace
 Kibana
 Kubernetes
 kuromoji
