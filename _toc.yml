@@ -31,6 +31,9 @@ entries:
         - file: docs/tools/cli/credits
         - file: docs/tools/cli/events
         - file: docs/tools/cli/project
+        - file: docs/tools/cli/service
+          entries:
+            - glob: docs/tools/cli/service/* 
         - file: docs/tools/cli/user
           entries:
             - glob: docs/tools/cli/user/*
