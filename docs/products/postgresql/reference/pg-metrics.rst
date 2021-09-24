@@ -33,7 +33,7 @@ This section shows a high-level overview of the service node health. Major issue
 
 
 .. image:: /images/products/postgresql/metrics-dashboard-overview.png
-    :alt: Aiven Grafana Dashboard for PostgreSQL Overview Section
+    :alt: Grafana Dashboard for PostgreSQL Overview Section
 
 The following metrics are shown
 
@@ -64,7 +64,7 @@ This section shows a more detailed listing of various generic system-related met
 
 
 .. image:: /images/products/postgresql/metrics-dashboard-system.png
-    :alt: Aiven Grafana Dashboard for PostgreSQL System Metrics Section
+    :alt: Grafana Dashboard for PostgreSQL System Metrics Section
 
 The following metrics are shown
 
@@ -134,7 +134,7 @@ The metrics in the PostgreSQL overview section are grouped by logical database. 
 
 
 .. image:: /images/products/postgresql/metrics-dashboard-pg-overview.png
-    :alt: Aiven Grafana Dashboard for PostgreSQL database Overview Section
+    :alt: Grafana Dashboard for PostgreSQL database Overview Section
 
 
 .. list-table::
@@ -187,7 +187,7 @@ This section contains graphs related to the size and use of **indexes**. Since t
 
 
 .. image:: /images/products/postgresql/metrics-dashboard-pg-indexes.png
-    :alt: Aiven Grafana Dashboard for PostgreSQL database Indexes Section
+    :alt: Grafana Dashboard for PostgreSQL database Indexes Section
 
 
 .. list-table::
@@ -215,7 +215,7 @@ Tables
 This section contains graphs related to the size and use of **tables**. As with indexes, the graph will be convoluted for complex databases, and you may want to make a copy of the dashboard to add additional filters that exclude uninteresting tables.
 
 .. image:: /images/products/postgresql/metrics-dashboard-pg-tables.png
-    :alt: Aiven Grafana Dashboard for PostgreSQL database Indexes Section
+    :alt: Grafana Dashboard for PostgreSQL database Indexes Section
 
 .. list-table::
     :header-rows: 1
@@ -255,7 +255,7 @@ This section contains graphs related to **vacuum** and **analyze** operations. T
 
 
 .. image:: /images/products/postgresql/metrics-dashboard-pg-vacuum.png
-    :alt: Aiven Grafana Dashboard for PostgreSQL database Vacuum and Analyse Section
+    :alt: Grafana Dashboard for PostgreSQL database Vacuum and Analyse Section
 
 .. list-table::
     :header-rows: 1
@@ -286,7 +286,7 @@ This section contains PostgreSQL metrics graphs that are not covered by the prev
 
 
 .. image:: /images/products/postgresql/metrics-dashboard-pg-miscellaneous.png
-    :alt: Aiven Grafana Dashboard for PostgreSQL database Miscellaneous Section
+    :alt: Grafana Dashboard for PostgreSQL database Miscellaneous Section
 
 .. list-table::
     :header-rows: 1

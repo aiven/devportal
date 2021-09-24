@@ -46,7 +46,7 @@ Set up the replication
 To create a logical replication, there is no need to install any extensions on the source cluster, but a superuser account is required.
 
 .. Tip::
-    The ``aiven_extras`` extension enables the creation of a publish/subscribe-style logical replication without a superuser account, and it is preinstalled on Aiven PostgreSQL servers. For more info on ``aiven_extras`` check the dedicated `GitHub repository <https://github.com/aiven/aiven-extras>`_. The following example will assume ``aiven_extras`` extension is not available in the source PostgreSQL database.
+    The ``aiven_extras`` extension enables the creation of a publish/subscribe-style logical replication without a superuser account, and it is preinstalled on Aiven for PostgreSQL servers. For more info on ``aiven_extras`` check the dedicated `GitHub repository <https://github.com/aiven/aiven-extras>`_. The following example will assume ``aiven_extras`` extension is not available in the source PostgreSQL database.
 
 This example assumes a source database called ``origin_database`` on a self-managed PostgreSQL cluster. The replication will mirror three tables, named ``test_table``, ``test_table_2`` and ``test_table_3``, to the ``defaultdb`` database on Aiven for PostgreSQL. The process to setup the logical replication is the following:
 

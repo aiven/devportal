@@ -32,10 +32,10 @@ Provision and configure Grafana
 
 Now your Grafana service is connected to M3DB as a data source and you can go ahead and visualize your PostgreSQL metrics.
 
-Open Aiven PostgreSQL metrics prebuilt dashboard
-------------------------------------------------
+Open PostgreSQL metrics prebuilt dashboard
+------------------------------------------
 
-In Grafana, go to "Dashboards" and "Manage" and double click on the Aiven PostgreSQL Resources dashboard that bears name of the metrics database.
+In Grafana, go to "Dashboards" and "Manage" and double click on the dashboard that bears name of the metrics database.
 
 .. image:: /images/products/postgresql/metrics-dashboard-manage.png
    :alt: Screenshot of a Grafana Manage Dashboards panel
