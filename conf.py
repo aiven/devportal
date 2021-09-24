@@ -141,7 +141,7 @@ rst_epilog = """
    :width: 24px
    :class: no-scaled-link
 
-.. |icon-elasticsearch| image:: /images/icon-elasticsearch.svg
+.. |icon-opensearch| image:: /images/icon-opensearch.png
    :width: 24px
    :class: no-scaled-link
 
