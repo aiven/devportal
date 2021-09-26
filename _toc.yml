@@ -111,6 +111,7 @@ entries:
           - file: docs/products/opensearch/howto/restore_opensearch_backup
           - file: docs/products/opensearch/howto/set_index_retention_patterns
           - file: docs/products/opensearch/howto/switch_off_automatic_replication_factor_adjustment
+          - file: docs/products/opensearch/howto/get-started-with-nodejs
       - file: docs/products/opensearch/reference
         title: Reference
         entries:
