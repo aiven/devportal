@@ -648,7 +648,7 @@ Service Schema commands
 ``avn service sstableloader``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Service Sstableloader commands
+Service ``sstableloader`` commands
 
 ``avn service task-create``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
