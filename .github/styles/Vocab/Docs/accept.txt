@@ -54,4 +54,8 @@ unencrypted
 Untrusted
 [Uu]naggregated
 wget
-
+[Kk]eystore
+[Tt]ruststore
+[Pp]rivatelink
+[Kk]eypair
+[Oo]pen[Ss]earch

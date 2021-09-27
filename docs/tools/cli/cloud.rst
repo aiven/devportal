@@ -9,6 +9,7 @@ List cloud region details
 
 Commands for listing cloud regions to be used when creating or moving instances with ``avn`` commands.
 
+.. _avn-cloud-list:
 
 ``avn cloud list``
 '''''''''''''''''''''''
