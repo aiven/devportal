@@ -23,11 +23,11 @@ Adds an Aiven for Apache Kafka ACL entry.
     - Information
   * - ``service_name``
     - The name of the service
-    - ``--permission``
+  * - ``--permission``
     - The permission type: possible values are ``read``, ``write`` or ``readwrite``
-    - ``--topic``
+  * - ``--topic``
     - The topic name pattern: accepts ``*`` and ``?`` as wildcard characters
-    - ``--username``
+  * - ``--username``
     - The username pattern: accepts ``*`` and ``?`` as wildcard characters
 
 **Example:** Add an ACLs for users with username ending with ``userA`` to ``readwrite`` on topics having name starting with ``topic2020`` in the service``kafka-doc``.
@@ -138,107 +138,352 @@ Opens an interactive shell to the given service. Supported only for Aiven for In
 ``avn service connection-pool-create``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Create a connection pool for a given PostgreSQL service 
+Creates a new :doc:`PgBouncer connection pool </docs/products/postgresql/concepts/pg-connection-pooling>` for a given PostgreSQL service.
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``service_name``
+    - The name of the service
+  * - ``--pool-name``
+    - The name of the connection pool
+  * - ``--dbname``
+    - The name of the database
+  * - ``--username``
+    - The database username to use for the connection pool
+  * - ``--pool-size``
+    - Size of the connection pool in number of connections
+  * - ``--pool-mode``
+    - The :ref:`pool mode <pooling-modes>`. Possible values are ``transaction``, ``session`` and ``statement``
+
+**Example:** In the service ``pg-doc`` Create a new connection pool named ``cp-analytics-it`` for the database ``it-analytics`` with:
+
+* username ``avnadmin``
+* pool-size of ``10`` connections 
+* ``transaction`` pool-mode
+
+::
+
+  avn service connection-pool-create pg-doc \
+    --pool-name cp-analytics-it             \
+    --dbname analytics-it                   \
+    --username avnadmin                     \
+    --pool-size 10                          \
+    --pool-mode transaction
 
 ``avn service connection-pool-delete``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Delete a connection pool from a given service 
+Deletes a :doc:`PgBouncer connection pool </docs/products/postgresql/concepts/pg-connection-pooling>` for a given PostgreSQL service.
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``service_name``
+    - The name of the service
+  * - ``--pool-name``
+    - The name of the connection pool
+
+**Example:** Delete the connection pool named ``cp-analytics-it`` in the service ``pg-doc``.
+
+::
+
+  avn service connection-pool-delete pg-doc --pool-name cp-analytics-it
+
 
 ``avn service connection-pool-list``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-List PGBouncer pools for a service 
+Lists the :doc:`PgBouncer connection pools </docs/products/postgresql/concepts/pg-connection-pooling>` available in a given PostgreSQL service.
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``service_name``
+    - The name of the Service
+
+**Example:** List the PgBouncer connection pools for the service ``pg-doc``.
+
+::
+
+  avn service connection-pool-list pg-doc 
+
+
+An example of ``account service connection-pool-list`` output:
+
+.. code:: text
+
+  POOL_NAME        DATABASE   USERNAME  POOL_MODE    POOL_SIZE
+  ===============  =========  ========  ===========  =========
+  cp-analytics-it  defaultdb  avnadmin  transaction  10
+
 
 ``avn service connection-pool-update``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Update a connection pool for a given PostgreSQL service 
+Updates a :doc:`PgBouncer connection pool </docs/products/postgresql/concepts/pg-connection-pooling>` for a given PostgreSQL service. 
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``service_name``
+    - The name of the service
+  * - ``--pool-name``
+    - The name of the connection pool
+  * - ``--dbname``
+    - The name of the database
+  * - ``--username``
+    - The database username to use for the connection pool
+  * - ``--pool-size``
+    - Size of the connection pool in number of connections
+  * - ``--pool-mode``
+    - The :ref:`pool mode <pooling-modes>`. Possible values are ``transaction``, ``session`` and ``statement``
+
+**Example:** Update the connection pool named ``cp-analytics-it`` in the service ``pg-doc`` and set the ``--pool-size`` parameter to ``20``.
+
+::
+  
+  avn service connection-pool-update pg-doc \
+    --pool-name cp-analytics-it             \
+    --pool-size 20
+
 
 ``avn service connector``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Service Connector commands
+Set of commands for managing Aiven for Apache Kafka Connect connectors. :doc:`See detailed command information <service/connector>` for more information
 
 ``avn service create``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Create a service
+Creates a new service.
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``service_name``
+    - The name of the service
+  * - ``--service-type``
+    - The type of service; check :ref:`avn-cli-service-type` for more information
+  * - ``--plan``
+    - Aiven subscription plan name; check :ref:`avn-cloud-list` for more information
+  * - ``--cloud``
+    - The cloud region name; check :ref:`avn-cloud-list` for more information
+  * - ``--no-fail-if-exists``
+    - The create command will not fail if a service with the same name already exists
+  * - ``--project-vpc-id``
+    - Id of the project VPC where to include the created service. The project VPC's cloud must match the service's cloud
+  * - ``--no-project-vpc``
+    - Stops the service to be included in the project VPC even if one is available in the selected cloud
+  * - ``--enable-termination-protection``
+    - Enables termination protection for the service
+  * - ``-c KEY=VALUE``
+    - Additional configuration settings; check :ref:`avn-cli-service-type` for more information
+
+**Example:** Create a new Aiven for Kafka service named ``kafka-demo`` in the region ``google-europe-west3`` with the plan ``business-4`` and enable Kafka Connect.
+
+::
+  
+  avn service create kafka-demo             \
+    --service-type kafka                    \
+    --cloud google-europe-west3             \
+    --plan business-4                       \
+    -c kafka_connect=true                   
 
 ``avn service credentials-reset``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Reset service credentials
+Resets the service credentials.
+
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``service_name``
+    - The name of the service
+
+**Example:** Reset the credentials of a service named ``kafka-demo``.
+
+::
+  
+  avn service credentials-reset kafka-demo
+
 
 ``avn service current-queries``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-List current service connections/queries
+List current service connections/queries for an Aiven for PostgreSQL, Aiven for MySQL or Aiven for Redis service.
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``service_name``
+    - The name of the service
+
+**Example:** List the queries running for a service named ``pg-demo``.
+
+::
+  
+  avn service current-queries pg-demo
 
 ``avn service database-create``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Create a database within a given service
+Creates a database within an Aiven for PostgreSQL, Aiven for MySQL or Aiven for InfluxDB service.
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``service_name``
+    - The name of the service
+  * - ``--dbname``
+    - The name of the database
+
+**Example:** Create a new database named ``analytics-it`` within the service named ``pg-demo``.
+
+::
+  
+  avn service database-create pg-demo --dbname analytics-it
 
 ``avn service database-delete``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Delete a database within a given service
+Removes a specific database within an Aiven for PostgreSQL, Aiven for MySQL or Aiven for InfluxDB service.
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``service_name``
+    - The name of the service
+  * - ``--dbname``
+    - The name of the database
+
+**Example:** Delete the database named ``analytics-it`` within the service named ``pg-demo``
+
+::
+
+    avn service database-delete pg-demo --dbname analytics-it  
 
 ``avn service database-list``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-List service databases
+Lists the service databases available in an Aiven for PostgreSQL, Aiven for MySQL or Aiven for InfluxDB service.
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``service_name``
+    - The name of the service
+
+**Example:** List the service databases within the service named ``pg-demo``
+
+::
+
+    avn service database-list pg-demo
 
 ``avn service es-acl-add``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Add rules to elastic ACL configuration
+Add rules to opensearch ACL configuration
 
 ``avn service es-acl-del``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Delete rules from elastic ACL configuration
+Delete rules from opensearch ACL configuration
 
 ``avn service es-acl-disable``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Disable Elasticsearch ACL configuration
+Disable Opensearch ACL configuration
 
 ``avn service es-acl-enable``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Enable Elasticsearch ACL configuration
+Enable Opensearch ACL configuration
 
 ``avn service es-acl-extended-disable``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Disable Elasticsearch Extended ACL 
+Disable Opensearch Extended ACL 
 
 ``avn service es-acl-extended-enable``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Enable Elasticsearch Extended ACL 
+Enable Opensearch Extended ACL 
 
 ``avn service es-acl-list``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-List Elasticsearch ACL configuration
+List Opensearch ACL configuration
 
 ``avn service get``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Show a single service
+Retrieves a single service details.
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``service_name``
+    - The name of the service
+  * - ``--format``
+    - Format of the output string
+
+**Example:** Retrieve the ``pg-demo`` service details in the ``'{service_name} {service_uri}'`` format.
+
+::
+
+    avn service get pg-demo --format '{service_name} {service_uri}'
+
+**Example:** Retrieve the ``pg-demo`` full service details in JSON format.
+
+::
+
+    avn service get pg-demo --json
+
 
 ``avn service index-delete``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Delete Elasticsearch service index
+Delete Opensearch service index
 
 ``avn service index-list``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-List Elasticsearch service indexes
+List Opensearch service indexes
 
 ``avn service integration-create``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -293,17 +538,67 @@ Update a service integration
 ``avn service keypair``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Service Keypair commands
+Service keypair commands
 
 ``avn service list``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-List services
+Lists services within an Aiven project.
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``service_name``
+    - The name of the service
+
+**Example:** Retrieve all the services running in the currently selected project.
+
+::
+
+    avn service list
+
+An example of ``account service list`` output:
+
+.. code:: tex
+
+  SERVICE_NAME        SERVICE_TYPE  STATE    CLOUD_NAME           PLAN         CREATE_TIME           UPDATE_TIME
+  ==================  ============  =======  ===================  ===========  ====================  ====================
+  cassandra-28962a5b  cassandra     RUNNING  google-europe-west3  business-16  2021-09-27T10:18:19Z  2021-09-27T10:25:58Z
+  os-24a6d6db         opensearch    RUNNING  google-europe-west3  business-4   2021-09-27T10:18:04Z  2021-09-27T10:23:31Z
+  influx-103c3f07     influxdb      RUNNING  google-europe-west3  startup-4    2021-09-27T10:18:13Z  2021-09-27T10:22:05Z
+  kafka-2134          kafka         RUNNING  google-europe-west3  business-4   2021-09-27T08:48:35Z  2021-09-27T11:20:55Z
+  mysql-12f7628c      mysql         RUNNING  google-europe-west3  business-4   2021-09-27T10:18:09Z  2021-09-27T10:23:02Z
+  pg-123456           pg            RUNNING  google-europe-west3  business-4   2021-09-27T07:41:04Z  2021-09-27T10:56:19Z
+
+**Example:** Retrieve all the services with name ``demo-pg`` running in the project named ``mytestproject``.
+
+::
+
+    avn service list demo-pg --project mytestproject
+
 
 ``avn service logs``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-View project logs
+Retrieves the selected service logs.
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``service_name``
+    - The name of the service
+
+**Example:** Retrieve the logs for the service named ``pg-demo``.
+
+::
+
+    avn service logs pg-demo
 
 ``avn service m3``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -394,6 +689,9 @@ List Kafka service topics
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Update a Kafka topic
+
+
+.. _avn-cli-service-type:
 
 ``avn service types``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -515,9 +813,9 @@ An example of ``account service versions`` output:
     SERVICE_TYPE   MAJOR_VERSION  STATE        AVAILABILITY_START_TIME  AVAILABILITY_END_TIME  AIVEN_END_OF_LIFE_TIME  UPSTREAM_END_OF_LIFE_TIME  TERMINATION_TIME  END_OF_LIFE_HELP_ARTICLE_URL
     =============  =============  ===========  =======================  =====================  ======================  =========================  ================  ====================================================================================================
     cassandra      3.11           available    2018-11-08T00:00:00Z     null                   null                    null                       null              null
-    elasticsearch  7              unavailable  2020-08-27T00:00:00Z     2021-09-23T00:00:00Z   2022-03-23T00:00:00Z    null                       null              https://help.aiven.io/en/articles/5424825
-    elasticsearch  7.10           unavailable  2021-02-22T00:00:00Z     2021-09-23T00:00:00Z   2022-03-23T00:00:00Z    null                       null              https://help.aiven.io/en/articles/5424825
-    elasticsearch  7.9            unavailable  2020-08-27T00:00:00Z     2021-09-23T00:00:00Z   2022-03-23T00:00:00Z    null                       null              https://help.aiven.io/en/articles/5424825
+    Opensearch  7              unavailable  2020-08-27T00:00:00Z     2021-09-23T00:00:00Z   2022-03-23T00:00:00Z    null                       null              https://help.aiven.io/en/articles/5424825
+    Opensearch  7.10           unavailable  2021-02-22T00:00:00Z     2021-09-23T00:00:00Z   2022-03-23T00:00:00Z    null                       null              https://help.aiven.io/en/articles/5424825
+    Opensearch  7.9            unavailable  2020-08-27T00:00:00Z     2021-09-23T00:00:00Z   2022-03-23T00:00:00Z    null                       null              https://help.aiven.io/en/articles/5424825
     kafka          2.3            unavailable  2019-09-05T00:00:00Z     2021-08-13T00:00:00Z   2021-08-13T00:00:00Z    null                       null              https://help.aiven.io/en/articles/4472730-eol-instructions-for-aiven-for-kafka
     kafka          2.4            unavailable  2019-10-21T00:00:00Z     2021-08-13T00:00:00Z   2021-08-13T00:00:00Z    null                       null              https://help.aiven.io/en/articles/4472730-eol-instructions-for-aiven-for-kafka
     ...

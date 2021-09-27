@@ -34,6 +34,8 @@ Instana
 jq
 Kaggle
 Karapace
+[Kk]eypair
+[Kk]eystore
 Kibana
 Kubernetes
 kuromoji
@@ -56,6 +58,7 @@ Plotly
 pooler
 PostgreSQL
 Postman
+[Pp]rivatelink
 psql
 Python
 Redis
@@ -73,6 +76,7 @@ Terraform
 Terraforming
 TimescaleDB
 toolchain
+[Tt]ruststore
 Uber
 unencrypted
 Untrusted
