@@ -22,7 +22,7 @@ Let’s start by creating an OpenSearch cluster. You can either `set it up manua
 
 To create an OpenSearch cluster we’ll be using the `Aiven command line interface <https://github.com/aiven/aiven-client>`_ . However, if you prefer a visual interface, we also have a friendly `Aiven console <https://console.aiven.io/>`_ which you can use instead of the command line.
 
-The easiest way to install `Aiven command line interface <https://github.com/aiven/aiven-client>`_ is to use Pypi:
+The easiest way to install `Aiven command line interface <https://github.com/aiven/aiven-client>`_ is to use PyPi:
 
 ::
 
@@ -46,7 +46,7 @@ To verify that you have been authenticated run the following command
 
     avn user info
 
-The output will display your current user information. If you can see it, you're ready to create Aiven services. For more information on how to set up and use Aiven CLI check `its github page <https://github.com/aiven/aiven-client>`_
+The output will display your current user information. If you can see it, you're ready to create Aiven services. For more information on how to set up and use Aiven CLI check `its GitHub page <https://github.com/aiven/aiven-client>`_
 
 Now let’s create an OpenSearch cluster named *demo-open-search*, hosted in *Google Europe (Warsaw) Region*. A single-node setup will be sufficient for this tutorial, that's why we'll use *hobbyist* plan.
 
@@ -84,7 +84,7 @@ Make sure that you have both Node.js and npm installed. You can do it by checkin
     node -v;    /
     npm -v
 
-If you you don’t have Node.js or npm installed, follow `these instructions <https://docs.npmjs.com/downloading-and-installing-node-js-and-npm>`_.
+If you don’t have Node.js or npm installed, follow `these instructions <https://docs.npmjs.com/downloading-and-installing-node-js-and-npm>`_.
 
 To set up a new Node.js project run the following command in a place where you’d like to create a project and follow the instructions (you can accept default options).
 
@@ -168,12 +168,12 @@ If you don’t want to use an additional library, you can execute the script dir
 
 `getExistingIndices` prints out a list of indices present in our cluster. Since we've just created a cluster the only index present there is ``.kibana_1`` (your name might differ), an internal index used to maintain backups when upgrading or migrating Dashboards.
 
-Getting Data
+Getting data
 ------------
 
 Now that we have our cluster running, it is time to get some data for our experiments!
 
-We’ll use a dataset from `Kaggle <https://www.kaggle.com/>`_ -  *Epicurious - Recipes with Rating and Nutrition*. It contains over 20k recipes and is perfect for data exploration! Download `full_format_recipes.json <https://www.kaggle.com/hugodarwood/epirecipes?select=full_format_recipes.json>`_  , unzip and put it into the project folder.
+We’ll use a dataset from `Kaggle <https://www.kaggle.com/>`_ -  *Epicurious - Recipes with Rating and Nutrition*. It contains over 20k recipes and is perfect for data exploration! Download `full_format_recipes.json <https://www.kaggle.com/hugodarwood/epirecipes?select=full_format_recipes.json>`_, unzip and put it into the project folder.
 
 Indexing data
 --------------
@@ -220,7 +220,7 @@ Let’s check that a new index was added
 
     run-func index.js getExistingIndices
 
-Now, you should be able to see a newly added recipes index in the list. Depending on how soon you retrieved the list of indices, you might have seen that the newly added index has yellow status. It means that there is a risk of loosing data if the primary shard encounters issues. Once a a replica is allocated the status will be set to green.
+Now, you should be able to see a newly added recipes index in the list. Depending on how soon you retrieved the list of indices, you might have seen that the newly added index has yellow status. It means that there is a risk of loosing data if the primary shard encounters issues. Once a replica is allocated the status will be set to green.
 
 You probably noticed that we haven’t specified any structure for the documents. Even though we could have set explicit mapping beforehand, we opted to rely on OpenSearch to derive the structure from the data and use dynamic mapping. The derived properties will be sufficient for our examples. You can find `more information on mapping in the documentation <full_format_recipes.json>`_ Let’s see what properties were defined by OpenSearch when indexing the data.
 
@@ -411,7 +411,7 @@ Another useful feature of free-text query is defining how far search words can b
     };
 
 
-Let's use this method to find recipes for pizza with pineapple. I've learned from my italian colleagues that it is an illegal combination! Let's see if we have any recipes where words pizza and pineapple are located within the distance of maximum 10 words.
+Let's use this method to find recipes for pizza with pineapple. I've learned from my Italian colleagues that it is an illegal combination! Let's see if we have any recipes where words pizza and pineapple are located within the distance of maximum 10 words.
 
 ::
 
