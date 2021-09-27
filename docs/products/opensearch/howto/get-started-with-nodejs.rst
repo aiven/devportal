@@ -74,7 +74,7 @@ You should see a URL as a command output.
 
 Great! Now we have the cluster set up and running. We’ll be using ``service_uri`` in just a couple of minutes.
 
-Setting up a Node.js project
+Setting up a NodeJS project
 ----------------------------
 
 Make sure that you have both Node.js and npm installed. You can do it by checking the installed versions.
@@ -94,7 +94,7 @@ To set up a new Node.js project run the following command in a place where you�
     cd demo-open-search;    /
     npm init
 
-While we’re at it let’s also install `opensearch-js <https://github.com/opensearch-project/opensearch-js>`_. At the moment of writing this tutorial the opensearch-js module is still not in the npm registry and we will install it directly from github:
+While we’re at it let’s also install `OpenSearch JavaScript client  <https://github.com/opensearch-project/opensearch-js>`_. At the moment of writing this tutorial the ``opensearch-js`` module is still not in the npm registry and we will install it directly from GitHub:
 
 ::
 
@@ -222,7 +222,7 @@ Let’s check that a new index was added
 
 Now, you should be able to see a newly added recipes index in the list. Depending on how soon you retrieved the list of indices, you might have seen that the newly added index has yellow status. It means that there is a risk of loosing data if the primary shard encounters issues. Once a replica is allocated the status will be set to green.
 
-You probably noticed that we haven’t specified any structure for the documents. Even though we could have set explicit mapping beforehand, we opted to rely on OpenSearch to derive the structure from the data and use dynamic mapping. The derived properties will be sufficient for our examples. You can find `more information on mapping in the documentation <full_format_recipes.json>`_ Let’s see what properties were defined by OpenSearch when indexing the data.
+You probably noticed that we haven’t specified any structure for the documents. Even though we could have set explicit mapping beforehand, we opted to rely on OpenSearch to derive the structure from the data and use dynamic mapping. The derived properties will be sufficient for our examples. Let’s see what properties were defined by OpenSearch when indexing the data.
 
 .. code-block:: javascript
 
