@@ -706,27 +706,134 @@ Update service settings
 ``avn service user-create``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Create service user
+Creates a new user for the selected service.
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``service_name``
+    - The name of the service
+  * - ``--username``
+    - The new username to be created
+  * - ``--m3-group``
+    - The name of the group the user belongs to (for Aiven for M3 services only)
+  * - ``--redis-acl-keys``
+    - The ACL rules for keys (Aiven for Redis services only)
+  * - ``--redis-acl-commands``
+    - The ACL rules for commands (Aiven for Redis services only)
+  * - ``--redis-acl-categories``
+    - The ACL rules for categories (Aiven for Redis services only)
+  * - ``--redis-acl-channels``
+    - The ACL rules for channels (Aiven for Redis services only)
+
+**Example:** Create a new user named ``janedoe`` for a service named ``pg-demo``.
+
+::
+
+  avn service user-create pg-demo --username janedoe
 
 ``avn service user-creds-download``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Download service user certificate/key/CA certificate 
+Downloads the SSL certificate, key and CA certificate for the selected service.
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``service_name``
+    - The name of the service
+  * - ``--username``
+    - The username for which to download the certificates
+  * - ``-d``
+    - The target directory where certificates will be stored
+
+**Example:** Download the SSL certificate, key and CA certificate in a folder named ``/tmp/certs`` for the user ``janedoe`` belonging to a service named ``kafka-demo``.
+
+::
+
+  avn service user-creds-download kafka-demo --username janedoe -d /tmp/certs
 
 ``avn service user-delete``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Delete a service user
+Delete a service in a given Aiven service.
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``service_name``
+    - The name of the service
+  * - ``--username``
+    - The username to delete
+
+**Example:** Delete the user ``janedoe`` defined in a service named ``kafka-demo``.
+
+::
+
+  avn service user-delete kafka-demo --username janedoe
 
 ``avn service user-get``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Get details for a single user
+Retrieves the details for a single user in a given Aiven service.
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``service_name``
+    - The name of the service
+  * - ``--username``
+    - The username for which to retrieve the details
+
+**Example:** Retrieve the details for the user ``janedoe`` defined for a service named ``kafka-demo``.
+
+::
+
+  avn service user-get kafka-demo --username janedoe
+
+.. Tip::
+
+    Use the ``--json`` parameter to retrieve all the service specific information for a specific user.
 
 ``avn service user-kafka-java-creds``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Download user certificate/key/CA certificate and create a Java keystore/truststore/properties from them 
+
+Downloads the SSL certificate, key and CA certificate and creates a Java keystore and truststore for the selected service.
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``service_name``
+    - The name of the service
+  * - ``--username``
+    - The username for which to download the certificates
+  * - ``-d``
+    - The target directory where certificates will be stored
+  * - ``--password``
+    - The Java keystore and truststore password (default: ``changeit``)
+
+**Example:** Download the SSL certificate, key and CA certificate in a folder named ``/tmp/certs`` for the user ``janedoe`` belonging to a service named ``kafka-demo``. Furthermore, secure the Java keystore and truststore with the password ``safePassword123``.
+
+::
+
+  avn service user-kafka-java-creds kafka-demo --username janedoe -d /tmp/certs --password safePassword123
 
 ``avn service user-list``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
