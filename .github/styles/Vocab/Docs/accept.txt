@@ -4,7 +4,7 @@ Aiven
 API
 APIs
 [Bb]usiness
-boolean
+[Bb]oolean
 cyber
 [Dd]ashboards
 datacenter
