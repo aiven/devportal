@@ -70,7 +70,9 @@ More information on ``connection-pool-add``, ``connection-pool-delete``, ``conne
 ``avn service connector``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Set of commands for managing Aiven for Apache Kafka Connect connectors. :doc:`See detailed command information <service/connector>` for more information
+Set of commands for managing Aiven for Apache Kafka Connect connectors. 
+
+More information on ``connector available``, ``connector create``, ``connector delete``, ``connector list``, ``connector pause``, ``connector restart``, ``connector restart-task``, ``connector resume``, ``connector schema``, ``connector status`` and ``connector update`` can be found in the :doc:`dedicated page <service/connector>`.
 
 ``avn service create``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
