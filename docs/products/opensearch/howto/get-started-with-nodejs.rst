@@ -199,7 +199,7 @@ That’s why we use a flat map to create a flat list of such pairs instructing O
 
     const indexName = 'recipes';
     /**
-     * Indexes data from json file with recipes.
+     * Indexing data from json file with recipes.
      */
     module.exports.indexData = () => {
        console.log(`Ingesting data: ${recipes.length} recipes`);
@@ -227,10 +227,10 @@ You probably noticed that we haven’t specified any structure for the documents
 .. code-block:: javascript
 
     /**
-     * Retrieves mapping for the index.
+     * Retrieving mapping for the index.
      */
     module.exports.getMapping = () => {
-        console.log(`Retrieving mapping for ${indexName}`)
+        console.log(`Retrieving mapping for ${indexName}`);
 
         client.indices.getMapping({index: indexName}, (error, result) => {
             if (error) {
@@ -282,7 +282,7 @@ One of the examples for term-level query is searching for all entries with sodiu
 .. code-block:: javascript
 
     /**
-     * Searches for exact matches of a value in a field.
+     * Searching for exact matches of a value in a field.
      */
     module.exports.termSearch = (field, value) => {
         console.log(`Searching for recipes with ${field} equal to ${value}`);
@@ -312,7 +312,7 @@ Full-text queries returns results sorted by relevance. It allows higher flexibil
 .. code-block:: javascript
 
     /**
-     * Returns matches sorted by relevance.
+     * Finding matches sorted by relevance.
      */
     module.exports.matchSearch = (field, query) => {
         const body = {
@@ -358,9 +358,10 @@ Next, lets use some special operators in a search query with *a query string*. L
 .. code-block:: javascript
 
     /**
-     * Allows using special operators within a query string.
+     * Using special operators within a query string and a size parameter.
      */
     module.exports.querySearch = (query, size) => {
+        console.log(`Searching for ${query} and returning maximum ${size} results`);
         const body = {
             'query': {
                 'query_string': {
@@ -390,10 +391,10 @@ Another useful feature of free-text query is defining how far search words can b
 .. code-block:: javascript
 
     /**
-     * Allows specifying a slop - a distance between search words.
+     * Specifying a slop - a distance between search words.
      */
     module.exports.slopSearch = (field, query, slop) => {
-        console.log(`search for ${query} within distance of ${slop} in the field ${field}`);
+        console.log(`Searching for ${query} within distance of ${slop} in the field ${field}`);
         const body = {
             'query': {
                 'match_phrase': {
@@ -424,10 +425,10 @@ Another useful feature of full-text search are fuzzy queries, which are used to 
 .. code-block:: javascript
 
     /**
-     * Allows  specifying fuzziness - to account of typos and misspelling.
+     * Specifying fuzziness to account for typos and misspelling.
      */
     module.exports.fuzzySearch = (value, fuzziness) => {
-        console.log(`search for ${value}`);
+        console.log(`Search for ${value} with fuzziness ${fuzziness}`);
         const query = {
             'query': {
                 'fuzzy': {
