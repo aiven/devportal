@@ -16,6 +16,7 @@ entries:
       entries:
       - file: docs/platform/howto/create_new_service
       - file: docs/platform/howto/create_authentication_token
+      - file: docs/platform/howto/download-ca-cert
       - file: docs/platform/howto/console-fork-service.rst
 
   # --------- GLOBAL -----------
