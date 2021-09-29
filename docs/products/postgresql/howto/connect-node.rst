@@ -35,7 +35,7 @@ Add the following to ``index.js`` and replace the placeholder with the PostgreSQ
 This code creates a PostgreSQL client and opens a connection to the database. Then runs a query checking the database version and prints the response.
 
 .. note::
-    This example removes ``?sslmode=require`` from the URL string to avoid running into `this bug <https://github.com/brianc/node-postgres/issues/2558>`_. Adding the ``rejectUnauthorized: true`` config ensures that the certificate is checked.
+    This example removes ``?sslmode=require`` from the URL string to avoid running into `this bug <https://github.com/brianc/node-postgres/issues/2558>`_. Adding the ``rejectUnauthorized: true`` configuration ensures that the certificate is checked.
 
 To run the code::
 
