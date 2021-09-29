@@ -19,10 +19,11 @@ Pre-requisites
 
 For this example you will need:
 
-1. The Go ``pq`` library::
+* The Go ``pq`` library::
 
     go get github.com/lib/pq
 
+* :doc:`/docs/platform/howto/download-ca-cert` from the service overview page, this example assumes it is in a local file called ``ca.pem``.
 
 
 Code
@@ -33,6 +34,9 @@ Add the following to ``main.go`` and replace the placeholder with the PostgreSQL
 .. literalinclude:: /code/products/postgresql/connect.go
 
 This code creates a PostgreSQL client and opens a connection to the database. Then runs a query checking the database version and prints the response
+
+.. note::
+   This example replaces the query string parameter to specify ``sslmode=verify-ca`` to make sure that the SSL certificate is verified, and adds the location of the cert.
 
 To run the code::
 

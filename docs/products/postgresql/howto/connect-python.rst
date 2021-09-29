@@ -19,9 +19,9 @@ Pre-requisites
 
 For this example you will need:
 
-1. Python 3.6 or later
+* Python 3.6 or later
 
-2. The Python ``psycopg2`` library. You can install this with ``pip``::
+* The Python ``psycopg2`` library. You can install this with ``pip``::
 
     pip install psycopg2
 
@@ -35,6 +35,9 @@ Add the following to ``main.py`` and replace the placeholders with values for yo
 
 
 This code creates a PostgreSQL client and connects to the database. Then runs a query checking the database version and prints the response
+
+.. note::
+    By default, the connection string specifies ``sslmode=require`` which does not verify the CA certificate. A better approach for production would be to change it to ``sslmode=verify-ca`` and include the certificate.
 
 To run the code::
 
