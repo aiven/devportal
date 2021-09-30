@@ -1,12 +1,12 @@
 Use OpenSearch with NodeJS
 ==========================
 
-The most common way to interact with OpenSearch clusters is by using one of the REST API clients. In this tutorial we'll show how OpenSearch Javascript client allows an easy and safe method to communicate with an OpenSearch cluster. To make it more delicious we’ll be using a recipe dataset from Kaggle 🍕.
+The most common way to interact with OpenSearch clusters is by using one of the REST API clients. In this tutorial we'll show how OpenSearch JavaScript client allows an easy and safe method to communicate with an OpenSearch cluster. To make it more delicious we’ll be using a recipe dataset from Kaggle 🍕.
 
 Prerequisites
 *************
 
-To be able to use OpenSearch and its Javascript client together we'll create an OpenSearch cluster and set up an empty NodeJS project. Feel free to skip this section if you're only interested in the code samples. The final demo project can be cloned from `GitHub repository <https://github.com/aiven/demo-open-search-node-js>`_.
+To be able to use OpenSearch and its JavaScript client together we'll create an OpenSearch cluster and set up an empty NodeJS project. Feel free to skip this section if you're only interested in the code samples. The final demo project can be cloned from `GitHub repository <https://github.com/aiven/demo-open-search-node-js>`_.
 
 Create an OpenSearch cluster
 ----------------------------
