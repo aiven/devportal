@@ -1,5 +1,5 @@
-Create a Kafka based Flink source or sink
-=========================================
+Create a Kafka based Flink table
+==============================================
 
 Variables
 '''''''''
@@ -18,10 +18,10 @@ Variable                         Description
 ``{{partition_by_clause}}``      Topic partition definition
 ===========================      ===============================================================================================================================
 
-Create Kafka source or sink for Flink
-'''''''''''''''''''''''''''''''''''''
+Create Kafka based Flink table via REST-APIs
+''''''''''''''''''''''''''''''''''''''''''''
 
-The following REST-API can be called.
+To create an Aiven for Apache Kafka based Flink table, use the following REST-API.
 
 Endpoint::
 
@@ -49,3 +49,31 @@ Body::
     "kafka_topic": "alert",
     "schema_sql": "`node` INT, `occurred_at` TIMESTAMP_LTZ(3), `cpu_in_mb` FLOAT"
     }
+
+More information on the table definition supported syntax can be found in the :doc:`dedicated page</docs/products/concepts/supported_syntax_sql_editor>`.
+
+Create Kafka based Flink table via Aiven console
+''''''''''''''''''''''''''''''''''''''''''''''''
+
+To create a Flink table based on Aiven for Apache Kafka via Aiven console:
+
+1. Navigate to the Aiven for Apache Flink service page, and open the **Jobs and Data** tab
+
+2. Select the **Data Tables** sub-tab and select the Aiven for Apache Kafka integration to use
+
+3. Define the Flink table **Name**, the source **Kafka topic** and **Schema SQL** 
+
+**Example**: Define a Flink table named ``KAlert`` pointing to a Kafka topic named ``alert`` available in the Aiven for Apache Kafka service named ``kafka-devportal-example``
+
+Settings:
+
+* ``kafka-devportal-example`` as the selected service 
+* ``Kalert`` as **Name**
+* ``alert`` as **Kafka topic**
+* ``node INT, occurred_at TIMESTAMP_LTZ(3), cpu_in_mb FLOAT`` as **SQL schema**
+
+The image below shows the Aiven console page with the filled details.
+
+.. image:: /images/products/flink/create-table-topic.png
+  :scale: 50 %
+  :alt: Image of the Aiven for Apache Flink Jobs and Data tab when creating a Flink table on top of an Aiven for Apache Kafka topic
