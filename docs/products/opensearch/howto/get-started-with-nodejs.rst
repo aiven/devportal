@@ -13,7 +13,7 @@ Create an OpenSearch cluster
 
 Start by creating an OpenSearch cluster. You can either `set it up manually <https://opensearch.org/docs/opensearch/install/index/>`_ or use a fully managed OpenSearch service built for you. We’ll do the latter and use Aiven for OpenSearch to create a cluster in a fast and simple way. If you don’t have an Aiven account yet, `register for a free 30 day trial <https://console.aiven.io/signup>`_.
 
-To create an OpenSearch cluster we’ll use the `Aiven command line interface <https://github.com/aiven/aiven-client>`_ . To install and set it up follow the instructions in `its GitHub page <https://github.com/aiven/aiven-client/#aiven-client->`_. However, if you prefer a visual interface, we also have a friendly `Aiven console <https://console.aiven.io/>`_ which you can use instead. Read :doc:`these instructions <../getting-started>`.
+To create an OpenSearch cluster we’ll use the `Aiven command line interface <https://github.com/aiven/aiven-client>`_ . To install and set it up follow the instructions in `its GitHub page <https://github.com/aiven/aiven-client/>`_. However, if you prefer a visual interface, we also have a friendly `Aiven console <https://console.aiven.io/>`_ which you can use instead. Read :doc:`these instructions <../getting-started>`.
 
 Create an OpenSearch cluster named ``demo-open-search``, hosted in **Google Europe (Warsaw) Region**. A single-node setup is sufficient for this tutorial, that's why we'll use **hobbyist** plan.
 
@@ -57,7 +57,7 @@ To set up a new NodeJS project run the following command in a place where you’
     cd demo-open-search
     npm init
 
-While we’re at it let’s also install `OpenSearch JavaScript client  <https://github.com/opensearch-project/opensearch-js>`_. Follow its readme for instructions.
+While we’re at it let’s also install `OpenSearch JavaScript client  <https://github.com/opensearch-project/opensearch-js>`_. Follow its README file for instructions.
 
 Next add an empty ``index.js`` file into the project and open it with your favourite editor. We’ll be adding code into this file and running the methods from the command line.
 
@@ -66,7 +66,7 @@ Show time!
 
 Time to connect to the cluster!
 
-This is where you'll use ``service_uri``, which you’ve got in the previous section. ``service_uri`` contains credentials, therefore should be treated with care. We strongly recommend using environment variables for credential information. Install `dotenv <https://github.com/motdotla/dotenv>`_, add ``.env`` file to the project and assign ``SERVICE_URI`` there. Refer to the value as ``process.env.SERVICE_URI`` in the code.
+This is where you'll use ``service_uri``, which you’ve got in the previous section. ``service_uri`` contains credentials, therefore should be treated with care. We strongly recommend using environment variables for credential information. Install ``dotenv``, you can find it in `GitHub <https://github.com/motdotla/dotenv>`_, add ``.env`` file to the project and assign ``SERVICE_URI`` there. Refer to the value as ``process.env.SERVICE_URI`` in the code.
 
 Add the following lines of code to create a client and assign ``process.env.SERVICE_URI`` to the ``node`` property. This will be sufficient to connect to the cluster, because ``service_uri`` already contains credentials. Additionally when creating a client you can also specify ``ssl configuration``, ``bearer token``, ``CA fingerprint`` and other authentication details depending on protocols you use.
 
@@ -237,7 +237,7 @@ These are the fields we'll be playing with. You can find information on dynamic 
 Query the data
 --------------
 
-Now that we have data in the OpenSearch cluster, we're ready to construct and run search queries. We will use ``search`` method which is provided by the OpenSearch Javascript client.
+Now that we have data in the OpenSearch cluster, we're ready to construct and run search queries. We will use ``search`` method which is provided by the OpenSearch JavaScript client.
 
 The ``search`` method expects three optional parameters: ``params``, ``options`` and ``callback``.
 
@@ -256,7 +256,7 @@ The query string syntax is a powerful tool which can be used for a variety of re
         q: 'ingredients:broccoli AND calories:(>=100 AND <200)'
     })
 
-A query with a request ``body`` might look bulky at first glance, but their structure makes it easier to read, understand and modify the content. Unline ``q``, which expects a string, ``body`` is an object allowing a variety of granular parameter.
+A query with a request ``body`` might look bulky at first glance, but their structure makes it easier to read, understand and modify the content. Unlike ``q``, which expects a string, ``body`` is an object allowing a variety of granular parameter.
 
 .. code-block:: javascript
 
@@ -603,7 +603,7 @@ We've create an OpenSearch cluster, connected to it and tried out different type
     *  `How information is organised into indices and documents in the official documentation <https://opensearch.org/docs/opensearch/index/#indices-and-documents>`_
 * `<https://discuss.opendistrocommunity.dev/>`_ - OpenSearch discussion forums, great place to ask questions, provide feedback and get involved
 *  `Kaggle recipes dataset <https://www.kaggle.com/hugodarwood/epirecipes?select=full_format_recipes.json>`_ - great for a playground
-* `Demo repository <https://github.com/aiven/todo>`_ - All the examples we've run in this tutorial can be found in
+* `Demo repository <https://github.com/aiven/demo-open-search-node-js>`_ - All the examples we've run in this tutorial can be found in
 
 
 
