@@ -1,38 +1,10 @@
-Create Flink integrations
-===================================
+Connect Flink to other services via table definition
+-----------------------------------------------------
 
-Apache Flink can create streaming data pipelines across services.
+To build data pipelines, Apache Flink requires source or target data structures to `be mapped as Flink tables <https://ci.apache.org/projects/flink/flink-docs-release-1.13/docs/dev/table/sql/create/#create-table>`_.
+This functionality can be achieved via REST APIs or Aiven console. 
 
-Create an integration from Flink
---------------------------------
+Follow the dedicated documentation to check how Aiven for Apache Flink tables can be defined on top of:
 
-The integration between Flink and other Aiven services can be created using :doc:`the Aiven cli</docs/tools/cli>`
-
-**Example:** Create an integration between an Aiven for Flink cluster named ``flink-demo`` and an Aiven for Kafka cluster named ``kafka-demo``.
-
-::
-
-  avn service integration-create    \
-    --project test                  \
-    -t flink                        \
-    -s kafka-demo                   \
-    -d flink-demo
-
-The integration id, required for the following steps can be fetched with::
-
-    avn service integration-list --project test flink-demo
-
-Create Flink source and sink tables definition via REST-apis
-------------------------------------------------------------
-
-Apache Flink requires topics or tables to `be mapped <https://ci.apache.org/projects/flink/flink-docs-release-1.13/docs/dev/table/sql/create/#create-table>`_ before building the related pipelines.
-This functionality can be achieved via REST APIs. 
-
-Follow the documentation to check how source and sink tables can be defined on top of:
-
-* :doc:`Apache Kafka topics <connect/connect-kafka>`
-* :doc:`Postgresql tables <connect/connect-pg>`
-
-
-
-
+* :doc:`Aiven for Apache Kafka topics <connect/connect-kafka>`
+* :doc:`Aiven for Postgresql tables <connect/connect-pg>`
