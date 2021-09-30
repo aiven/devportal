@@ -6,7 +6,7 @@ The most common way to interact with OpenSearch clusters is by using one of the 
 Prerequisites
 *************
 
-To be able to use OpenSearch and its Javascript client together we'll create an OpenSearch cluster and set up an empty NodeJS project. Feel free to skip this section if you're only interested in the code samples. The final demo project can be also found in a `GitHub repository <https://github.com/aiven/todo>`_.
+To be able to use OpenSearch and its Javascript client together we'll create an OpenSearch cluster and set up an empty NodeJS project. Feel free to skip this section if you're only interested in the code samples. The final demo project can be cloned from `GitHub repository <https://github.com/aiven/demo-open-search-node-js>`_.
 
 Create an OpenSearch cluster
 ----------------------------
@@ -64,7 +64,11 @@ Next add an empty ``index.js`` file into the project and open it with your favou
 Show time!
 **********
 
-Time to connect to the cluster! Add the following lines of code to create a client. Use ``node`` property and set it to the value of ``service_uri``, which you’ve got in the previous section. This will be sufficient to connect to the cluster, because ``service_uri`` already contains credentials. Additionally when creating a client you can also specify ``ssl configuration``, ``bearer token``, ``CA fingerprint`` and other authentication details depending on protocols you use.
+Time to connect to the cluster!
+
+This is where you'll use ``service_uri``, which you’ve got in the previous section. ``service_uri`` contains credentials, therefore should be treated with care. We strongly recommend using environment variables for credential information. Install `dotenv <https://github.com/motdotla/dotenv>`_, add ``.env`` file to the project and assign ``SERVICE_URI`` there. Refer to the value as ``process.env.SERVICE_URI`` in the code.
+
+Add the following lines of code to create a client and assign ``process.env.SERVICE_URI`` to the ``node`` property. This will be sufficient to connect to the cluster, because ``service_uri`` already contains credentials. Additionally when creating a client you can also specify ``ssl configuration``, ``bearer token``, ``CA fingerprint`` and other authentication details depending on protocols you use.
 
 
 .. code:: javascript
@@ -72,41 +76,47 @@ Time to connect to the cluster! Add the following lines of code to create a clie
     const { Client } = require('@opensearch-project/opensearch')
 
     const client = new Client({
-       node: "your-open-search-service-uri"
-    })
+      node: process.env.SERVICE_URI,
+    });
 
 The client will perform request operations on our behalf and return the response in a consistent manner, so that we can easily parse it. To render the response, add the following helper methods. In the code snippets we'll keep error handling somewhat simple and use ``console.log`` to print information into the terminal.
 
 .. code:: javascript
 
+    /**
+     * Logging result body, used in callbacks.
+     */
     const logBody = (error, result) => {
-        if (error) {
-            console.error(error);
-        } else {
-            console.log(result.body);
-        }
-    }
+      if (error) {
+        console.error(error);
+      } else {
+        console.log(result.body);
+      }
+    };
 
+    /**
+     * Parsing and logging list of titles from the result, used in callbacks.
+     */
     const logTitles = (error, result) => {
-        if (error) {
-            console.error(error);
-        } else {
-            const hits = result.body.hits.hits;
-            console.log(`Number of returned results is ${hits.length}`)
-            console.log(hits.map(hit => hit._source.title));
-        }
-    }
+      if (error) {
+        console.error(error);
+      } else {
+        const hits = result.body.hits.hits;
+        console.log(`Number of returned results is ${hits.length}`);
+        console.log(hits.map((hit) => hit._source.title));
+      }
+    };
 
 To make sure that we can indeed connect to the cluster, list the existing indices with the help of the CAT API (compact and aligned text). Call the method ``indices`` and set the format to ``json`` and use the ``logBody`` as a callback to print out the response body.
 
 .. code:: javascript
 
     /**
-     * Retrieves and logs all present indices in the cluster.
+     * Getting existing indices in the cluster.
      */
     module.exports.getExistingIndices = () => {
-        console.log(`Retrieving existing indices:`)
-        client.cat.indices({format: 'json'}, logBody)
+      console.log(`Getting existing indices:`);
+      client.cat.indices({ format: "json" }, logBody);
     };
 
 Since we'll be calling a few functions inside our code from the terminal, the `run-func utility <https://github.com/DVLP/run-func#readme>`_ makes this much more pleasant. Install it with
@@ -158,10 +168,13 @@ That’s why we use a flat map to create a flat list of such pairs instructing O
      * Indexing data from json file with recipes.
      */
     module.exports.indexData = () => {
-       console.log(`Ingesting data: ${recipes.length} recipes`);
-       const body = recipes.flatMap(doc => [{ index: { _index: indexName } }, doc]);
+      console.log(`Ingesting data: ${recipes.length} recipes`);
+      const body = recipes.flatMap((doc) => [
+        { index: { _index: indexName } },
+        doc,
+      ]);
 
-       client.bulk({ refresh: true, body }, logBody);
+      client.bulk({ refresh: true, body }, logBody);
     };
 
 Run a command to load the data and wait till it's done. We’re injecting over 20k recipes, so it can take 10-15 seconds.
@@ -186,15 +199,15 @@ You probably noticed that we haven’t specified any structure for the recipes d
      * Retrieving mapping for the index.
      */
     module.exports.getMapping = () => {
-        console.log(`Retrieving mapping for ${indexName}`);
+      console.log(`Retrieving mapping for the index with name ${indexName}`);
 
-        client.indices.getMapping({index: indexName}, (error, result) => {
-            if (error) {
-                console.error(error);
-            } else {
-                console.log(result.body.recipes.mappings.properties);
-            }
-        })
+      client.indices.getMapping({ index: indexName }, (error, result) => {
+        if (error) {
+          console.error(error);
+        } else {
+          console.log(result.body.recipes.mappings.properties);
+        }
+      });
     };
 
 ::
@@ -272,18 +285,21 @@ One of the examples of a term-level query is searching for all entries containin
      * Searching for exact matches of a value in a field.
      */
     module.exports.termSearch = (field, value) => {
-        console.log(`Searching for recipes with ${field} equal to ${value}`);
-        const body = {
-            'query': {
-                'term': {
-                    [field]: value
-                }
-            }
-        }
-        client.search({
-            index: indexName,
-            body
-        }, logTitles)
+      console.log(`Searching for values in the field ${field} equal to ${value}`);
+      const body = {
+        query: {
+          term: {
+            [field]: value,
+          },
+        },
+      };
+      client.search(
+        {
+          index: indexName,
+          body,
+        },
+        logTitles
+      );
     };
 
 ::
@@ -295,24 +311,29 @@ When dealing with numeric values, naturally we want to be able to search for cer
 .. code-block:: javascript
 
     /**
-     * Searching for exact matches of a value in a field.
+     * Searching for a range of values in a field.
      */
     module.exports.rangeSearch = (field, gte, lte) => {
-        console.log(`Searching for recipes with ${field} equal to ${value}`); //todo
-        const body = {
-            'query': {
-                'range': {
-                    [field]: {
-                        gte,
-                        lte
-                    }
-                }
-            }
-        }
-        client.search({
-            index: indexName,
-            body
-        }, logTitles)
+      console.log(
+        `Searching for values in the ${field} ranging from ${gte} to ${lte}`
+      );
+      const body = {
+        query: {
+          range: {
+            [field]: {
+              gte,
+              lte,
+            },
+          },
+        },
+      };
+      client.search(
+        {
+          index: indexName,
+          body,
+        },
+        logTitles
+      );
     };
 
 ::
@@ -329,21 +350,26 @@ When searching for terms within text fields, we might want to take into account 
      * Specifying fuzziness to account for typos and misspelling.
      */
     module.exports.fuzzySearch = (field, value, fuzziness) => {
-        console.log(`Search for ${value} with fuzziness ${fuzziness}`);
-        const query = {
-            'query': {
-                'fuzzy': {
-                    [field]: {
-                        value,
-                        fuzziness
-                    }
-                }
-            }
-        }
-        client.search({
-            index: indexName,
-            body: query
-        }, logTitles)
+      console.log(
+        `Search for ${value} in the ${field} with fuzziness set to ${fuzziness}`
+      );
+      const query = {
+        query: {
+          fuzzy: {
+            [field]: {
+              value,
+              fuzziness,
+            },
+          },
+        },
+      };
+      client.search(
+        {
+          index: indexName,
+          body: query,
+        },
+        logTitles
+      );
     };
 
 ::
@@ -367,19 +393,23 @@ To see ``match`` in action use the method below to search for "Tomato garlic sou
      * Finding matches sorted by relevance.
      */
     module.exports.matchSearch = (field, query) => {
-        const body = {
-            'query': {
-                'match': {
-                    [field] : {
-                        query
-                    }
-                }
-            }
-        }
-        client.search({
-            index: indexName,
-            body
-        }, logTitles)
+      console.log(`Searching for ${query} in the field ${field}`);
+      const body = {
+        query: {
+          match: {
+            [field]: {
+              query,
+            },
+          },
+        },
+      };
+      client.search(
+        {
+          index: indexName,
+          body,
+        },
+        logTitles
+      );
     };
 
 ::
@@ -398,21 +428,26 @@ When the order of the words is important, use ``match_phrase`` instead of ``matc
      * Specifying a slop - a distance between search words.
      */
     module.exports.slopSearch = (field, query, slop) => {
-        console.log(`Searching for ${query} within distance of ${slop} in the field ${field}`);
-        const body = {
-            'query': {
-                'match_phrase': {
-                    [field]: {
-                        query,
-                        slop
-                    }
-                }
-            }
-        }
-        client.search({
-            index: indexName,
-            body
-        }, logTitles)
+      console.log(
+        `Searching for ${query} with slop value ${slop} in the field ${field}`
+      );
+      const body = {
+        query: {
+          match_phrase: {
+            [field]: {
+              query,
+              slop,
+            },
+          },
+        },
+      };
+      client.search(
+        {
+          index: indexName,
+          body,
+        },
+        logTitles
+      );
     };
 
 
@@ -436,21 +471,26 @@ We'll also increase the number of returned results to 100 to demonstrate how we 
     /**
      * Using special operators within a query string and a size parameter.
      */
-    module.exports.querySearch = (field query, size) => {
-        console.log(`Searching for ${query} and returning maximum ${size} results`);
-        const body = {
-            'query': {
-                'query_string': {
-                    'default_field': field,
-                    query
-                }
-            }
-        }
-        client.search({
-            index: indexName,
-            body,
-            size
-        }, logTitles)
+    module.exports.querySearch = (field, query, size) => {
+      console.log(
+        `Searching for ${query} in the field ${field} and returning maximum ${size} results`
+      );
+      const body = {
+        query: {
+          query_string: {
+            default_field: field,
+            query,
+          },
+        },
+      };
+      client.search(
+        {
+          index: indexName,
+          body,
+          size,
+        },
+        logTitles
+      );
     };
 
 To find recipes with tomato, salmon or tuna and no onion run the next query:
@@ -476,22 +516,28 @@ In the next method we combine what we've learned so far, using both term-level a
      * Combining several queries together
      */
     module.exports.booleanSearch = () => {
-        console.log(`Searching for food withing Salmon
-            category without onion with low sodium and high protein`);
-        const body = {
-            'query': {
-                'bool': {
-                    'must': { "match":{"categories": "Quick & Easy"}},
-                    'must_not': {"match":{"ingredients": "garlic"}},
-                    'filter': [ {"range": {"sodium": {lte: 50}}},
-                        {"range": {"protein": {gte: 5}}}],
-                }
-            }
-        }
-        client.search({
-            index: indexName,
-            body
-        }, logTitles)
+      console.log(
+        `Searching for quick and easy recipes without garlic with low sodium and high protein`
+      );
+      const body = {
+        query: {
+          bool: {
+            must: { match: { categories: "Quick & Easy" } },
+            must_not: { match: { ingredients: "garlic" } },
+            filter: [
+              { range: { sodium: { lte: 50 } } },
+              { range: { protein: { gte: 5 } } },
+            ],
+          },
+        },
+      };
+      client.search(
+        {
+          index: indexName,
+          body,
+        },
+        logTitles
+      );
     };
 
 ::
@@ -501,7 +547,7 @@ In the next method we combine what we've learned so far, using both term-level a
 Now it's your turn! Create your own boolean query. Mix what we've learned so far to find recipes with particular nutritional values and ingredients. Experiment using different clauses to see how they affects the results.
 
 Finish up
---------
+*********
 
 Once you're done with this experiment you can delete the index.
 
@@ -511,9 +557,12 @@ Once you're done with this experiment you can delete the index.
      * Deleting the index
      */
     module.exports.deleteIndex = () => {
-        client.indices.delete({
-            index: indexName
-        }, logBody)
+      client.indices.delete(
+        {
+          index: indexName,
+        },
+        logBody
+      );
     };
 
 ::
@@ -545,7 +594,7 @@ You will be prompted to re-enter the service name to compete termination.
 
 
 Resources
----------
+*********
 
 We've create an OpenSearch cluster, connected to it and tried out different types of search queries. But this is just a tip of the iceberg. Here are some resources to help you learn other features of OpenSearch and its JavaScript client
 
