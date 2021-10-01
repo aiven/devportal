@@ -15,7 +15,7 @@ Start by creating an OpenSearch cluster. You can either `set it up manually <htt
 
 To create an OpenSearch cluster we’ll use the `Aiven command line interface <https://github.com/aiven/aiven-client>`_ . To install and set it up follow the instructions in `its GitHub page <https://github.com/aiven/aiven-client/>`_. However, if you prefer a visual interface, we also have a friendly `Aiven console <https://console.aiven.io/>`_ which you can use instead. Read :doc:`these instructions <../getting-started>`.
 
-Create an OpenSearch cluster named ``demo-open-search``, hosted in **Google Europe (Warsaw) Region**. A single-node setup is sufficient for this tutorial, that's why we'll use **hobbyist** plan.
+Run the command below to create an OpenSearch cluster named ``demo-open-search``, hosted in **Google Europe (Warsaw) Region**. A single-node setup is sufficient for this tutorial, that's why we'll use **hobbyist** plan.
 
 ::
 
@@ -66,9 +66,11 @@ Show time!
 
 Time to connect to the cluster!
 
-This is where you'll use ``service_uri``, which you’ve got in the previous section. ``service_uri`` contains credentials, therefore should be treated with care. We strongly recommend using environment variables for credential information. Install ``dotenv``, you can find it in `GitHub <https://github.com/motdotla/dotenv>`_, add ``.env`` file to the project and assign ``SERVICE_URI`` there. Refer to the value as ``process.env.SERVICE_URI`` in the code.
+This is where you'll use ``service_uri``, which you’ve got in the previous section. ``service_uri`` contains credentials, therefore should be treated with care.
 
-Add the following lines of code to create a client and assign ``process.env.SERVICE_URI`` to the ``node`` property. This will be sufficient to connect to the cluster, because ``service_uri`` already contains credentials. Additionally when creating a client you can also specify ``ssl configuration``, ``bearer token``, ``CA fingerprint`` and other authentication details depending on protocols you use.
+We strongly recommend using environment variables for credential information. An easy way to do this is to use ``dotenv``. You will find installation and usage instructions `in the library's README <https://github.com/motdotla/dotenv>`_. In short, you need to create ``.env`` file in the project and assign ``SERVICE_URI`` to your ``service_uri`` inside of this file. Add to the top of your file ``require("dotenv").config()`` and now you can refer to the value of ``service_uri`` as ``process.env.SERVICE_URI`` in the code.
+
+Add the following lines of code to create a client and assign ``process.env.SERVICE_URI`` to the ``node`` property. This will be sufficient to connect to the cluster, because ``service_uri`` already contains credentials. Additionally, when creating a client you can also specify ``ssl configuration``, ``bearer token``, ``CA fingerprint`` and other authentication details depending on protocols you use.
 
 
 .. code:: javascript
@@ -119,7 +121,7 @@ To make sure that we can indeed connect to the cluster, list the existing indice
       client.cat.indices({ format: "json" }, logBody);
     };
 
-Since we'll be calling a few functions inside our code from the terminal, the `run-func utility <https://github.com/DVLP/run-func#readme>`_ makes this much more pleasant. Install it with
+We'll be calling a few functions inside our code from the terminal and the `run-func utility <https://github.com/DVLP/run-func#readme>`_ makes this much more pleasant. Install it with
 
 ::
 
@@ -183,13 +185,13 @@ Run a command to load the data and wait till it's done. We’re injecting over 2
 
     run-func index.js indexData
 
-Let’s check that a new index was added
+Let’s check that a new index was added.
 
 ::
 
     run-func index.js getExistingIndices
 
-Now, you should be able to see a newly added recipes index in the list. Depending on how soon you retrieved the list of indices, you might have seen that the newly added index has yellow status. It means that there is a risk of loosing data if the primary shard encounters issues. Once a replica is allocated, the status will be set to green.
+Now you should be able to see a newly added recipes index in the list. Depending on how soon you retrieved the list of indices, you might have seen that the newly added index has yellow status. It means that there is a risk of loosing data if the primary shard encounters issues. Once a replica is allocated, the status will be set to green.
 
 You probably noticed that we haven’t specified any structure for the recipes data. Even though we could have set explicit mapping beforehand, we opted to rely on OpenSearch to derive the structure from the data and use a dynamic mapping. These obtained properties will be sufficient for our examples. To see the mapping definitions use method ``getMapping`` and provide index name as a parameter.
 
@@ -256,7 +258,7 @@ The query string syntax is a powerful tool which can be used for a variety of re
         q: 'ingredients:broccoli AND calories:(>=100 AND <200)'
     })
 
-A query with a request ``body`` might look bulky at first glance, but their structure makes it easier to read, understand and modify the content. Unlike ``q``, which expects a string, ``body`` is an object allowing a variety of granular parameter.
+A query with a request ``body`` might look bulky at first glance, but its structure makes it easier to read, understand and modify the content. Unlike ``q``, which expects a string, ``body`` is an object allowing a variety of granular parameters.
 
 .. code-block:: javascript
 
@@ -270,12 +272,12 @@ A query with a request ``body`` might look bulky at first glance, but their stru
         }
     })
 
-In this tutorial we'll focus on Query DSL and its three main groups of requests: term-level, full-text and boolean.
+In this tutorial we'll focus on Query DSL and its three main groups of requests: term-level, full-text and boolean. You will also see how to use the Lucene query string syntax inside Query DSL.
 
 Term-level queries
 ^^^^^^^^^^^^^^^^^^
 
-Term-level queries are handy when we need to find exact matches for numbers, dates or tags. With this type of queries search terms are used as they are without additional analysis and the results are not sorted by relevance.
+Term-level queries are handy when we need to find exact matches for numbers, dates or tags and don't need to sort the results by relevance. Term-level queries use search terms as they are without additional analysis.
 
 One of the examples of a term-level query is searching for all entries containing a particular value in a field. To construct a body request we use ``term`` property which defines an object, where the name is a field and the value is a term we're searching in this field.
 
@@ -305,6 +307,10 @@ One of the examples of a term-level query is searching for all entries containin
 ::
 
     run-func index.js termSearch sodium 0
+
+Try to replace "sodium" with other fields we have, such as "calories" or "fat".
+
+-------------------
 
 When dealing with numeric values, naturally we want to be able to search for certain ranges of values. To find all documents that contain terms  in a specific field within a given range, use ``range`` property. It expects an object, where the name is set to the field name and the body defines the upper and lower bounds: ``gt`` (greater than), ``gte`` (greater than or equal to), ``lt`` (less than) and ``lte`` (less than or equal to).
 
@@ -342,7 +348,9 @@ When dealing with numeric values, naturally we want to be able to search for cer
 
 Try your own term query! You can search for food with a particular rating value, or find all meals with zero calories!
 
-When searching for terms within text fields, we might want to take into account typos and misspellings. We measure such "deviations" by a minimum number of single-character edits necessary to convert one word into another. Such types of queries are called ``fuzzy`` and the property ``fuzziness`` specifies the maximum edit distance.
+-------------------
+
+When searching for terms inside text fields, we might want to take into account typos and misspellings. We measure such "deviations" by a minimum number of single-character edits necessary to convert one word into another. Such types of queries are called ``fuzzy`` and the property ``fuzziness`` specifies the maximum edit distance.
 
 .. code-block:: javascript
 
@@ -371,6 +379,8 @@ When searching for terms within text fields, we might want to take into account 
         logTitles
       );
     };
+
+Let's see if I can find recipes with "pinapple" 🍍
 
 ::
 
@@ -416,11 +426,13 @@ To see ``match`` in action use the method below to search for "Tomato garlic sou
 
     run-func index.js matchSearch title 'Tomato-garlic soup with dill'
 
-In the response you should see different recipes of soups sorted by how close they are to 'Tomato-garlic soup with dill' according to OpenSearch.
+In the response you should see different recipes of soups sorted by how close they are to "Tomato-garlic soup with dill" according to OpenSearch engine.
 
-Try out your favourite recipes and explore some unusual food combinations!
+What are your favourite recipes? Try them out and explore some unusual food combinations!
 
-When the order of the words is important, use ``match_phrase`` instead of ``match``. An additional power of ``match_phrase`` is that it allows to define how far search words can be from each other to still be considered a match. This parameter is called ``slop`` and the default value is ``0``. The format of ``match_phrase`` is almost identical to ``match``:
+-------------------
+
+When the order of the words is important, use ``match_phrase`` instead of ``match``. An additional power of ``match_phrase`` is that it allows to define how far search words can be from each other to still be considered a match. This parameter is called ``slop`` and its default value is ``0``. The format of ``match_phrase`` is almost identical to ``match``:
 
 .. code-block:: javascript
 
@@ -451,7 +463,7 @@ When the order of the words is important, use ``match_phrase`` instead of ``matc
     };
 
 
-We can use this method to find some sneaky recipes of pizza with pineapple! I've learned from my Italian colleagues that it is an illegal combination.
+We can use this method to find some sneaky recipes of pizza with pineapple! I've learned from my Italian colleague that it is an illegal combination.
 
 ::
 
@@ -459,12 +471,13 @@ We can use this method to find some sneaky recipes of pizza with pineapple! I've
 
 And we've found "Pan-Fried Hawaiian Pizza" ;)
 
+So far all the requests we've tried returned us at most 10 results. Why 10? Because it is a default ``size`` value. It can be increased by setting ``size`` property to a higher number. We'll do it in a minute.
 
-So far all the request queries we've run returned us at most 10 results. Why 10? Because it is a default ``size`` value. It can be increased by setting ``size`` property to a higher number. We'll do it in a minute.
+-------------------
 
 Remember the Lucene query string syntax we talked about earlier, in relation to ``q`` parameter? We can also use it inside of  Query DSL by defining ``query_string`` object. It requires its own ``query`` parameter and, optionally, we can specify ``default_field`` or ``fields`` properties to indicate the search fields.
 
-We'll also increase the number of returned results to 100 to demonstrate how we can get more than 10 values.
+Here we also add an additional variable for size to demonstrate how we can get more than 10 results.
 
 .. code-block:: javascript
 
@@ -493,7 +506,7 @@ We'll also increase the number of returned results to 100 to demonstrate how we 
       );
     };
 
-To find recipes with tomato, salmon or tuna and no onion run the next query:
+To find recipes with tomato, salmon or tuna and no onion run this query:
 
 ::
 
@@ -506,7 +519,7 @@ Boolean queries
 
 The last type of queries is the boolean one, useful to combine multiple queries together. It supports boolean clauses such as ``must``, ``filter``, ``should`` and ``must_not``.
 
-These clause types affect the document relevance score differently. Both ``must`` and ``should`` positively contribute to the score, affecting the relevance of matches, ``must_not`` sets the score to 0, ensuring that the document won't appear in the results. ``filter`` clause is similar to ``must``, however it has no effect on the relevance score.
+These clause types affect the document relevance score differently. Both ``must`` and ``should`` positively contribute to the score, affecting the relevance of matches; ``must_not`` sets the score to 0, ensuring that the document won't appear in the results. ``filter`` clause is similar to ``must``, however it has no effect on the relevance score.
 
 In the next method we combine what we've learned so far, using both term-level and full-search queries to find recipes to make a quick and easy dish, with no garlic, low sodium and high protein.
 
@@ -598,12 +611,14 @@ Resources
 
 We've create an OpenSearch cluster, connected to it and tried out different types of search queries. But this is just a tip of the iceberg. Here are some resources to help you learn other features of OpenSearch and its JavaScript client
 
-* `<https://opensearch.org>`_ - official OpenSearch documentation
+* `Official OpenSearch documentation <https://opensearch.org>`_
     *  `What clusters and nodes are in the official documentation <https://opensearch.org/docs/opensearch/index/#clusters-and-nodes>`_
     *  `How information is organised into indices and documents in the official documentation <https://opensearch.org/docs/opensearch/index/#indices-and-documents>`_
-* `<https://discuss.opendistrocommunity.dev/>`_ - OpenSearch discussion forums, great place to ask questions, provide feedback and get involved
+* `OpenSearch discussion forums <https://discuss.opendistrocommunity.dev/>`_ - great place to ask questions, provide feedback and get involved
+* `OpenSearch JavaScript client  <https://github.com/opensearch-project/opensearch-js>`_
 *  `Kaggle recipes dataset <https://www.kaggle.com/hugodarwood/epirecipes?select=full_format_recipes.json>`_ - great for a playground
 * `Demo repository <https://github.com/aiven/demo-open-search-node-js>`_ - All the examples we've run in this tutorial can be found in
+* :doc:`How to use OpenSearch with curl <opensearch-with-curl>`
 
 
 
