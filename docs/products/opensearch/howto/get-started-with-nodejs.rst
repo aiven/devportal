@@ -463,7 +463,7 @@ When the order of the words is important, use ``match_phrase`` instead of ``matc
     };
 
 
-We can use this method to find some sneaky recipes of pizza with pineapple! I've learned from my Italian colleague that it is an illegal combination.
+We can use this method to find some sneaky recipes of pizza with pineapple! I've learned from my Italian colleague that it is an illegal combination. We'll do it by searching the ``directions`` field for words "pizza" and "pineapple" with top-most distance of 10 words in between.
 
 ::
 
@@ -609,7 +609,7 @@ You will be prompted to re-enter the service name to compete termination.
 Resources
 *********
 
-We've create an OpenSearch cluster, connected to it and tried out different types of search queries. But this is just a tip of the iceberg. Here are some resources to help you learn other features of OpenSearch and its JavaScript client
+We've created an OpenSearch cluster, connected to it and tried out different types of search queries. But this is just a tip of the iceberg. Here are some resources to help you learn other features of OpenSearch and its JavaScript client
 
 * `Official OpenSearch documentation <https://opensearch.org>`_
     *  `What clusters and nodes are in the official documentation <https://opensearch.org/docs/opensearch/index/#clusters-and-nodes>`_
