@@ -185,7 +185,11 @@ entries:
       - file: docs/products/flink/concepts
         title: Concepts
         entries:
-          - glob: docs/products/flink/concepts/*
+          - file: docs/products/flink/concepts/event_processing_time
+          - file: docs/products/flink/concepts/windows
+          - file: docs/products/flink/concepts/watermarks
+          - file: docs/products/flink/concepts/checkpoints
+          - file: docs/products/flink/concepts/supported_syntax_sql_editor
       - file: docs/products/flink/howto
         title: HowTo
         entries:
