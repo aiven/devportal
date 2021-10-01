@@ -380,7 +380,7 @@ When searching for terms inside text fields, we might want to take into account 
       );
     };
 
-Let's see if I can find recipes with "pinapple" 🍍
+Let's see if I can find recipes with misspelled pineapple 🍍
 
 ::
 
