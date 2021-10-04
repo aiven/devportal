@@ -1,37 +1,7 @@
 Create Flink integrations
 ===================================
 
-Apache Flink can create streaming data pipelines across services. 
-
-Currently Aiven for Flink supports Aiven for Apache Kafka and Aiven for PostgreSQL as source and target for Flink jobs.
-
-Create a Flink integration
---------------------------
-
-The integration between Flink and other Aiven services can be created using :doc:`the Aiven cli</docs/tools/cli>` and the Aiven console.
-
-Create a Flink integration via Aiven CLI
-''''''''''''''''''''''''''''''''''''''''
-
-To create a Flink integration via Aiven CLI, you can use the `avn service integration-create` command.
-
-**Example:** Create an integration between an Aiven for Flink cluster named ``flink-demo`` and an Aiven for Kafka cluster named ``kafka-demo``.
-
-::
-
-  avn service integration-create    \
-    --project test                  \
-    -t flink                        \
-    -s kafka-demo                   \
-    -d flink-demo
-
-The integration id, required for the following steps can be fetched with::
-
-    avn service integration-list --project test flink-demo
-
-
-Create a Flink integration via Aiven console
-''''''''''''''''''''''''''''''''''''''''''''
+Apache Flink can create streaming data pipelines across services. Currently Aiven for Flink supports Aiven for Apache Kafka and Aiven for PostgreSQL as source and target for Flink jobs.
 
 To create a Aiven for Apache Flink integration via Aiven console:
 
