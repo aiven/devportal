@@ -8,7 +8,7 @@ Create PostgreSQL based Flink table
 
 Define a Flink table named ``node_info``
 
-* pointing to a PostgreSQL table named ``public.node_definition`` available in the PostgreSQL database identified by the integration with id ``a4af7409-d167-4f31-af13-ddd4cd06564f``. 
+* pointing to a PostgreSQL table named ``public.node_definition`` available in the PostgreSQL database identified by the integration with the ID ``a4af7409-d167-4f31-af13-ddd4cd06564f``. 
 * using the Aiven for Flink service named ``my-flink-service`` in the ``my-test-project`` project.
 
 Endpoint::
@@ -31,7 +31,7 @@ Create Kafka based Flink table
 
 Define a Flink table named ``KAlert`` 
 
-* pointing to a Kafka topic named ``alert`` available in the Kafka cluster identified by the integration with id ``a4af7409-d167-4f31-af13-ddd4cd06564f``
+* pointing to a Kafka topic named ``alert`` available in the Kafka cluster identified by the integration with the ID ``a4af7409-d167-4f31-af13-ddd4cd06564f``
 * using the Aiven for Flink service named ``my-flink-service`` in the ``my-test-project`` project.
 
 Endpoint::
