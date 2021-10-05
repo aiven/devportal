@@ -33,7 +33,7 @@ While you're waiting for the service to start, obtain the connection details of 
 
     avn service get demo-open-search --format {service_uri}
 
-You should see a URL address pointing to the newly created service as a command output. Copy this value, we will need these connection details for our new clust in a few minutes' time.
+You should see a URL address pointing to the newly created service as a command output. Copy this value, we will need these connection details for our new cluster in a few minutes' time.
 
 Set up a NodeJS project
 -----------------------
