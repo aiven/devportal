@@ -239,7 +239,7 @@ You should be able to see the following structure:
       title: { type: 'text', fields: { keyword: [Object] } }
     }
 
-These are the fields we'll be playing with. You can find information on dynamic mapping types `in the documentation <https://opensearch.org/docs/opensearch/rest-api/create-index/#dynamic-mapping-types>`_.
+These are the fields we'll be playing with. You can find information on dynamic mapping types `in the documentation <https://opensearch.org/docs/latest/opensearch/rest-api/index-apis/create-index/#dynamic-mapping-types>`_.
 
 Query the data
 **************
