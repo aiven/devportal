@@ -266,7 +266,7 @@ After playing around with the sample queries, can you use SQL statements to answ
         order by
             sum(payment.amount) desc;
 
-    .. code:: txt
+    .. code:: text
 
         |store_id|total revenue|
         |--------|-------------|
@@ -330,7 +330,7 @@ After playing around with the sample queries, can you use SQL statements to answ
         where
             to_tsvector(film.description) @@ to_tsquery('documentary & robot');
 
-    .. code:: txt
+    .. code:: text
 
         |  title          |                                                    description                                                     |
         |-----------------|--------------------------------------------------------------------------------------------------------------------|
