@@ -1,7 +1,7 @@
 Aiven for OpenSearch
 ====================
 
-`OpenSearch <https://opensearch.org>`_ is an open source search and analytics suite including search engine, NoSQL document database, and visualization interface. OpenSearch offers a distributed, full-text search engine based on `Apache Lucene <https://lucene.apache.org/>`_ with a RESTful API interface and support for JSON documents. Aiven for OpenSearch and Aiven for OpenSearch dashboards are available on a cloud of your choice.
+`OpenSearch <https://opensearch.org>`_ is an open source search and analytics suite including search engine, NoSQL document database, and visualization interface. OpenSearch offers a distributed, full-text search engine based on `Apache Lucene <https://lucene.apache.org/>`_ with a RESTful API interface and support for JSON documents. Aiven for OpenSearch and Aiven for OpenSearch Dashboards are available on a cloud of your choice.
 
 .. note::
     OpenSearch and OpenSearch Dashboards projects were forked in 2021 from the formerly open source projects Elasticsearch and Kibana.
