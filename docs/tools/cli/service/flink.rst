@@ -158,10 +158,10 @@ Creates a new Aiven for Apache Flink job.
     --tables KCpuIn KAlert                                     \
     --statement "INSERT INTO KAlert SELECT * FROM KCpuIn WHERE cpu_in_mb > 70" 
 
-``avn service flink job delete``
+``avn service flink job cancel``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Deletes an existing Aiven for Apache Flink job.
+Cancels an existing Aiven for Apache Flink job.
 
 .. list-table::
   :header-rows: 1
@@ -171,14 +171,14 @@ Deletes an existing Aiven for Apache Flink job.
     - Information
   * - ``service_name``
     - The name of the service
-  * - ``table_id``
+  * - ``job_id``
     - The ID of the job to delete
 
-**Example:** Delete the Flink job with ID ``8b8ac2fe-b6eb-46bc-b327-fb4b84d27276`` belonging to the Aiven for Flink service ``flink-devportal-demo``.
+**Example:** Cancel the Flink job with ID ``8b8ac2fe-b6eb-46bc-b327-fb4b84d27276`` belonging to the Aiven for Flink service ``flink-devportal-demo``.
 
 ::
   
-  avn service flink job delete flink-devportal-demo 8b8ac2fe-b6eb-46bc-b327-fb4b84d27276
+  avn service flink job cancel flink-devportal-demo 8b8ac2fe-b6eb-46bc-b327-fb4b84d27276
 
 ``avn service flink job get``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
