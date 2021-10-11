@@ -296,12 +296,45 @@ Service M3 commands
 ``avn service maintenance-start``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Start service maintenance updates
+Starts the service maintenance updates.
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``service_name``
+    - The name of the service
+
+**Example:** Start the maintenance updates for the service named ``pg-demo``.
+
+::
+
+    avn service maintenance-start pg-demo
 
 ``avn service metrics``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Get service metrics
+Retrieves the metrics for a defined service.
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``service_name``
+    - The name of the service
+  * - ``--period``
+    - The time period to retrieve the metrics for (possible values ``hour``, ``day``, ``week``, ``month``, ``year``)
+
+**Example:** Retrieve the daily metrics for the service named ``pg-demo``.
+
+::
+
+    avn service metrics pg-demo --period day
+
 
 ``avn service migration-status``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -353,12 +386,43 @@ Service Privatelink commands
 ``avn service queries``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-List service query statistics
+Lists the service connections/queries statistics for an Aiven for PostgreSQL, Aiven for MySQL or Aiven for Redis service.
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``service_name``
+    - The name of the service
+
+**Example:** List the queries for a service named ``pg-demo``.
+
+::
+  
+  avn service queries pg-demo
+
 
 ``avn service queries-reset``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Reset service query statistics
+Resets service connections/queries statistics for an Aiven for PostgreSQL, Aiven for MySQL or Aiven for Redis service.
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``service_name``
+    - The name of the service
+
+**Example:** Reset the queries for a service named ``pg-demo``.
+
+::
+  
+  avn service queries-reset pg-demo
 
 ``avn service schema``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
