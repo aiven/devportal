@@ -241,7 +241,7 @@ Lists services within an Aiven project.
 
 An example of ``account service list`` output:
 
-.. code:: tex
+.. code:: text
 
   SERVICE_NAME        SERVICE_TYPE  STATE    CLOUD_NAME           PLAN         CREATE_TIME           UPDATE_TIME
   ==================  ============  =======  ===================  ===========  ====================  ====================
@@ -357,12 +357,79 @@ More information on ``topic-create``, ``topic-delete``, ``topic-list`` and  ``to
 ``avn service types``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-List service types
+Lists the Aiven service types available in a project.
+
+
+**Example:** Retrieve all the services types available in the currently selected project.
+
+::
+
+    avn service types
+
+An example of ``account service types`` output:
+
+.. code:: text
+
+  SERVICE_TYPE       DESCRIPTION
+  =================  ===================================================================================
+  cassandra          Cassandra - Distributed NoSQL data store
+  elasticsearch      Elasticsearch - Search & Analyze Data in Real Time
+  grafana            Grafana - Metrics Dashboard
+  influxdb           InfluxDB - Distributed Time Series Database
+  kafka              Kafka - High-Throughput Distributed Messaging System
+  kafka_connect      Kafka Connect - Kafka Connect service
+  kafka_mirrormaker  Kafka MirrorMaker - Kafka MirrorMaker service
+  m3aggregator       M3 Aggregator - Aggregates metrics and provides downsampling
+  m3db               M3DB - Distributed time series database
+  mysql              MySQL - Relational Database Management System
+  opensearch         OpenSearch - Search & Analyze Data in Real Time, derived from Elasticsearch v7.10.2
+  pg                 PostgreSQL - Object-Relational Database Management System
+  redis              Redis - In-Memory Data Structure Store
 
 ``avn service update``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Update service settings
+Updates the settings for an Aiven service.
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``service_name``
+    - The name of the service
+  * - ``--cloud``
+    - The name of the cloud region where to deploy the service
+  * - ``--disk-space-gib``
+    - Amount of disk space for data storage (GiB)
+  * - ``--power-on``
+    - Power on the service
+  * - ``--power-off``
+    - Power off the service
+  * - ``--mainenance-dow``
+    - Set the automatic maintenance window's day of the week (possible values ``monday``,``tuesday``,``wednesday``,``thursday``,``friday``,``saturday``,``sunday``,``never``)
+  * - ``--mainenance-time``
+    - Set the automatic maintenance window's start time (``HH:MM:SS``)
+  * - ``--enable-termination-protection``
+    - Enable termination protection
+  * - ``--disable-termination-protection``
+    - Disable termination protection
+  * - ``--project-vpc-id``
+    - The ID of the project VPC to use for the service. The VPC's cloud must match the service's cloud.
+  * - ``--no-project-vpc``
+    - The service will not use any VPC
+  * - ``--force``
+    - Force the action without requiring confirmation
+
+**Example:** Update the service named ``demo-pg``, move it to ``azure-germany-north`` region and enable termination protection.
+
+::
+
+    avn service update demo-pg        \
+      --cloud google-europe-west1     \
+      --enable-termination-protection
+
 
 ``avn service user``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
