@@ -364,10 +364,42 @@ Get migration status
 ``avn service plans``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-List service plans
+Lists the service plans available in a selected project for a defined service type.
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``--service-type``
+    - The type of service
+  * - ``--cloud``
+    - The cloud region
+  * - ``--monthly``
+    - To show the monthly price estimate
+
+**Example:** List the service plans available for a PostgreSQL service in the ``google-europe-west3`` region.
+
+::
+
+    avn service plans --service-type pg --cloud google-europe-west3
+
+An example of ``service plans`` output:
+
+.. code:: text
+
+  pg:hobbyist                    $0.034/h  Hobbyist (1 CPU, 2 GB RAM, 8 GB disk)
+  pg:startup-4                   $0.136/h  Startup-4 (1 CPU, 4 GB RAM, 80 GB disk)
+  pg:startup-8                   $0.267/h  Startup-8 (2 CPU, 8 GB RAM, 175 GB disk)
+  ...
+  pg:premium-360                $36.027/h  Premium-360 (96 CPU, 384 GB RAM, 3000 GB disk) 3-node high availability set
+  pg:premium-512                $43.836/h  Premium-512 (128 CPU, 512 GB RAM, 3000 GB disk) 3-node high availability set
+  pg:premium-896                $72.329/h  Premium-896 (224 CPU, 896 GB RAM, 3000 GB disk) 3-node high availability set
 
 ``avn service privatelink``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
 
 Service Privatelink commands
 
@@ -444,7 +476,24 @@ Create a service task
 ``avn service terminate``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Terminate service
+Terminates a service.
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``service_name``
+    - The name of the service
+  * - ``--force``
+    - Force the action without requiring confirmation
+
+**Example:** Terminate the service named ``demo-pg``.
+
+::
+
+    avn service terminate demo-pg
 
 ``avn service topic``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -468,7 +517,7 @@ Lists the Aiven service types available in a project.
 
     avn service types
 
-An example of ``account service types`` output:
+An example of ``service types`` output:
 
 .. code:: text
 
@@ -510,7 +559,7 @@ Updates the settings for an Aiven service.
   * - ``--power-off``
     - Power off the service
   * - ``--mainenance-dow``
-    - Set the automatic maintenance window's day of the week (possible values ``monday``,``tuesday``,``wednesday``,``thursday``,``friday``,``saturday``,``sunday``,``never``)
+    - Set the automatic maintenance window's day of the week (possible values ``monday``, ``tuesday``, ``wednesday``, ``thursday``, ``friday``, ``saturday``, ``sunday``, ``never``)
   * - ``--mainenance-time``
     - Set the automatic maintenance window's start time (``HH:MM:SS``)
   * - ``--enable-termination-protection``
