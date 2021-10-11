@@ -61,7 +61,6 @@ Create a Flink job
 Define a Flink job named ``JobExample`` 
 
 * transforming data from the ``KCpuIn`` table and inserting data in the ``KAlert`` table.
-* using the ``table_id`` values for the ``KCpuIn`` and ``KAlert`` tables.
 * using the Aiven for Flink service named ``my-flink-service`` in the ``my-test-project`` project.
 
 Request:: 
@@ -77,3 +76,7 @@ Body::
     "table_ids": ["5d7be5e2-85af-4931-959f-3245b15381b2", "215328d0-8134-3ab8-7261-c2648bacee61"],
     "job_name": "JobExample"
     }
+
+
+.. note::
+    The ``table_ids`` array in this example uses the ``table_id`` values for the ``KCpuIn`` and ``KAlert`` tables. The ``table_id`` value is included in the API response when you create a table.
