@@ -28,5 +28,5 @@ Settings:
 The image below shows the Aiven console page with the filled details.
 
 .. image:: /images/products/flink/create-job.png
-  :scale: 50 %
+  :scale: 80 %
   :alt: Image of the Aiven for Apache Flink Jobs and Data tab when creating a Flink job
