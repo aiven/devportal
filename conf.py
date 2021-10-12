@@ -113,47 +113,47 @@ html_css_files = ['css/aiven.css']
 
 # -- Replacements -----------------------------------------------------------
 rst_epilog = """
-.. |icon-postgres| image:: /images/icon-pg.svg
+.. |icon-postgres| image:: /images/PostgreSQL.png
    :width: 24px
    :class: no-scaled-link
 
-.. |icon-mysql| image:: /images/icon-mysql.svg
+.. |icon-mysql| image:: /images/MySQL.png
    :width: 24px
    :class: no-scaled-link
 
-.. |icon-kafka| image:: /images/icon-kafka.svg
+.. |icon-kafka| image:: /images/Kafka.png
    :width: 24px
    :class: no-scaled-link
 
-.. |icon-kafka-connect| image:: /images/icon-kafka-connect.svg
+.. |icon-kafka-connect| image:: /images/Kafka-Connect.png
    :width: 24px
    :class: no-scaled-link
 
-.. |icon-kafka-mirrormaker| image:: /images/icon-kafka-mirrormaker.svg
+.. |icon-kafka-mirrormaker| image:: /images/Kafka-Mirrormaker.png
    :width: 24px
    :class: no-scaled-link
 
-.. |icon-m3db| image:: /images/icon-m3db.svg
+.. |icon-m3db| image:: /images/M3.png
    :width: 24px
    :class: no-scaled-link
 
-.. |icon-influxdb| image:: /images/icon-influxdb.svg
+.. |icon-influxdb| image:: /images/Influx-DB.png
    :width: 24px
    :class: no-scaled-link
 
-.. |icon-opensearch| image:: /images/icon-opensearch.png
+.. |icon-opensearch| image:: /images/OpenSearch.png
    :width: 24px
    :class: no-scaled-link
 
-.. |icon-cassandra| image:: /images/icon-cassandra.svg
+.. |icon-cassandra| image:: /images/Cassandra.png
    :width: 24px
    :class: no-scaled-link
 
-.. |icon-redis| image:: /images/icon-redis.svg
+.. |icon-redis| image:: /images/Redis.png
    :width: 24px
    :class: no-scaled-link
 
-.. |icon-grafana| image:: /images/icon-grafana.svg
+.. |icon-grafana| image:: /images/Grafana.png
    :width: 24px
    :class: no-scaled-link
 
