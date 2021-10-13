@@ -34,4 +34,4 @@ Settings:
 * ``alert`` as **Kafka topic**
 * ``node INT, occurred_at TIMESTAMP_LTZ(3), cpu_in_mb FLOAT`` as **SQL schema**
 
-**Note**: It is possible to have sink **Kafka topic** automatically created by enabling in Aiven for Apache Kafka service **kafka.auto_create_topics_enable** in **Advanced configuration** section
+**Note**: It is possible to have sink **Kafka topic** automatically created by enabling in Kafka ``kafka.auto_create_topics_enable`` in **Advanced configuration** section
