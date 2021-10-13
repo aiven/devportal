@@ -154,6 +154,10 @@ entries:
         title: HowTo
         entries:
           - glob: docs/products/grafana/howto/*
+      - file: docs/products/grafana/reference
+        title: Reference
+        entries:
+          - glob: docs/products/grafana/reference/*
      
   # -------- AUXILIARY
   - file: docs/community
