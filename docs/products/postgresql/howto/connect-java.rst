@@ -22,7 +22,7 @@ Pre-requisites
 
 For this example you will need:
 
-1. PostgreSQL JDBC Driver, the jar could be downloaded from https://jdbc.postgresql.org/
+1. PostgreSQL JDBC Driver, the jar could be downloaded from https://jdbc.postgresql.org/download.html
 
 Code
 ''''
@@ -31,18 +31,15 @@ Add the following to ``PostgresqlExample.java`` and replace the placeholder with
 
 .. literalinclude:: /code/products/postgresql/connect.java
 
-In the code tab set
+This code creates a PostgreSQL client and opens a connection to the database. Then runs a query checking the database version and prints the response
+
+To run the code replace
     * **HOST** to ``HOSTNAME``
     * **PORT**: to ``PORT``
     * **DATABASE** to ``DATABASE``
-    * **USERNAME** to ``avnadmin``
-    * **PASSWORD** to ``PASSWORD``
+    * **PASSWORD** to ``PASSWORD``::
 
-This code creates a PostgreSQL client and opens a connection to the database. Then runs a query checking the database version and prints the response
-
-To run the code::
-
-    javac PostgresqlExample.java && java -cp postgresql-42.2.24.jar:. PostgresqlExample
+    javac PostgresqlExample.java && java -cp postgresql-42.2.24.jar:. PostgresqlExample -host HOST -port PORT -database DATABASE -username avnadmin -password PASSWORD
 
 If the script runs successfully, the outputs should be the PostgreSQL version running in your service like::
 
