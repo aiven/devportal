@@ -1,6 +1,6 @@
 <?php
 
-$uri = POSTGRESQL_URI;
+$uri = "POSTGRESQL_URI";
 
 $fields = parse_url($uri);
 

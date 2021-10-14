@@ -2,9 +2,9 @@ const fs = require('fs');
 const pg = require('pg');
 const url = require('url');
 
-postgresql_uri = POSTGRESQL_URI;
+postgresqlUri = "POSTGRESQL_URI";
 
-conn = new URL(postgresql_uri);
+const conn = new URL(postgresqlUri);
 conn.search = conn.query = "";
 
 const config = {
