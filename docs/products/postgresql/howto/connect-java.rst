@@ -33,11 +33,13 @@ Add the following to ``PostgresqlExample.java`` and replace the placeholder with
 
 This code creates a PostgreSQL client and opens a connection to the database. Then runs a query checking the database version and prints the response
 
-To run the code replace
+Before running the code replace
     * **HOST** to ``HOSTNAME``
     * **PORT**: to ``PORT``
     * **DATABASE** to ``DATABASE``
-    * **PASSWORD** to ``PASSWORD``::
+    * **PASSWORD** to ``PASSWORD``
+
+To run the code::
 
     javac PostgresqlExample.java && java -cp postgresql-42.2.24.jar:. PostgresqlExample -host HOST -port PORT -database DATABASE -username avnadmin -password PASSWORD
 
