@@ -116,7 +116,7 @@ Lists all the Aiven for Apache Flink tables in a selected service.
 
 An example of ``avn service flink table list`` output:
 
-.. code:: tex
+.. code:: text
 
   INTEGRATION_ID                        TABLE_ID                              TABLE_NAME
   ====================================  ====================================  ==========
@@ -204,7 +204,7 @@ Retrieves the definition of an existing Aiven for Apache Flink job.
 
 An example of ``avn service flink job get`` output:
 
-.. code:: tex
+.. code:: text
 
   JID                               NAME        STATE    START-TIME     END-TIME  DURATION  ISSTOPPABLE  MAXPARALLELISM
   ================================  ==========  =======  =============  ========  ========  ===========  ==============
@@ -232,7 +232,7 @@ Lists all the Aiven for Apache Flink jobs in a selected service.
 
 An example of ``avn service flink job list`` output:
 
-.. code:: tex
+.. code:: text
 
   ID                                STATUS
   ================================  =======
