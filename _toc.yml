@@ -146,6 +146,18 @@ entries:
         entries:
           - glob: docs/products/redis/howto/*
 
-
+  - file: docs/products/grafana/index
+    title: Grafana
+    entries:
+      - file: docs/products/grafana/get-started
+      - file: docs/products/grafana/howto
+        title: HowTo
+        entries:
+          - glob: docs/products/grafana/howto/*
+      - file: docs/products/grafana/reference
+        title: Reference
+        entries:
+          - glob: docs/products/grafana/reference/*
+     
   # -------- AUXILIARY
   - file: docs/community
