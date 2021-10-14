@@ -143,7 +143,7 @@ Creates a new Aiven for Apache Flink job.
   * - ``--tables``
     - List of Flink tables to use as source/sink
   * - ``--statement``
-    - Flink job sql statement
+    - Flink job SQL statement
  
 
 **Example:** Create a Flink job named ``JobExample`` with:
