@@ -22,7 +22,13 @@ Pre-requisites
 
 For this example you will need:
 
-1. PostgreSQL JDBC Driver, the jar could be downloaded from https://jdbc.postgresql.org/download.html
+Download PostgreSQL Driver.
+There are several options to do that
+1. In case you have maven version >= 2+ run the code::
+
+    mvn org.apache.maven.plugins:maven-dependency-plugin:2.8:get -Dartifact=org.postgresql:postgresql:42.2.24:jar -Ddest=postgresql-42.2.24.jar
+
+2. Manually the jar could be downloaded from https://jdbc.postgresql.org/download.html
 
 Code
 ''''
