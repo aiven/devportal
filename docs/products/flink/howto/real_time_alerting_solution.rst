@@ -11,7 +11,7 @@ In addition, the instructions show you how to use a separate Python tool,`Apache
 Set up Aiven services
 ---------------------
 
-1. Follow the steps in `this article </docs/platform/howto/create_new_service>`_ to create these services:
+1. Follow the steps in :doc:`this article </docs/platform/howto/create_new_service>` to create these services:
 
    - An Aiven for Apache Kafka service with the *Business-4* service plan (this streams the CPU load)
    - An Aiven for PostgreSQL service with the *Business-4* service plan (this defines the alerting threshold values)
