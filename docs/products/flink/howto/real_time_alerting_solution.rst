@@ -21,7 +21,7 @@ Set up Aiven services
 
    - **Kafka REST API (Karapace)** > **Enable**
    - **Kafka Connect** > **Enable**
-   - **Advanced configuration** > **Add configuration option** > **kafka.auto_create_topics_enable**, switch the setting on and then click **Save advanced configuration**
+   - **Advanced configuration** > **Add configuration option** > ``kafka.auto_create_topics_enable``, switch the setting on and then click **Save advanced configuration**
 
 #. On the *Overview page*, click **Download** next to *Access Key*, *Access Certificate*, and *CA Certificate*, then copy the three downloaded files to a folder on your computer.
 
@@ -79,7 +79,7 @@ Create Apache Flink tables and jobs
    This setup uses a fixed threshold to filter any instances of high CPU load to a separate Kafka topic.
    
    a. Go to the **Data Tables** subtab.
-   b. Select your Kafka service, enter ``CPU_IN`` as the name, select **cpu_load_stats_real** as the topic, and enter the following as the SQL schema, then click **Create Table**:
+   b. Select your Kafka service, enter ``CPU_IN`` as the name, select ``cpu_load_stats_real`` as the topic, and enter the following as the SQL schema, then click **Create Table**:
 
       .. code :: sql
 
@@ -100,7 +100,7 @@ Create Apache Flink tables and jobs
           cpu STRING,
           usage DOUBLE
 
-   d. Go to the **Create SQL Job** subtab and enter ``simple_filter`` as the job name, select **CPU_IN** and **CPU_OUT_FILTER** as the tables, and enter the following as the SQL statement, then click **Execute job**:
+   d. Go to the **Create SQL Job** subtab and enter ``simple_filter`` as the job name, select ``CPU_IN`` and ``CPU_OUT_FILTER`` as the tables, and enter the following as the SQL statement, then click **Execute job**:
 
       .. code :: sql
 
@@ -124,7 +124,7 @@ Create Apache Flink tables and jobs
          usage_max DOUBLE,
          PRIMARY KEY (window_start, window_end, hostname, cpu) NOT ENFORCED
 		 
-   c. Go to the **Create SQL Job** subtab and enter ``simple_agg`` as the job name, select **CPU_OUT_AGG** and **CPU_IN** as the tables, and enter the following as the SQL statement, then click **Execute job**:
+   c. Go to the **Create SQL Job** subtab and enter ``simple_agg`` as the job name, select ``CPU_OUT_AGG`` and ``CPU_IN`` as the tables, and enter the following as the SQL statement, then click **Execute job**:
    
       .. code :: sql
 	  
@@ -152,7 +152,7 @@ Create Apache Flink tables and jobs
          insert into cpu_thresholds values ('doc', 20),('grumpy', 30),('sleepy',40),('bashful',60), ('happy',70),('sneezy',80),('dopey',90)
    
    c. In the Aiven web console, go to the **Jobs & Data** > **Data Tables** tab for your Flink service.
-   d. Select your PostgreSQL service, enter ``SOURCE_THRESHOLDS`` as the name, select **public.cpu_thresholds** as the table, and enter the following as the SQL schema, then click **Create Table**:
+   d. Select your PostgreSQL service, enter ``SOURCE_THRESHOLDS`` as the name, select ``public.cpu_thresholds`` as the table, and enter the following as the SQL schema, then click **Create Table**:
    
       .. code :: sql
 	  
@@ -170,7 +170,7 @@ Create Apache Flink tables and jobs
          usage DOUBLE,
          threshold INT
 
-   f. Go to the **Create SQL Job** subtab, enter ``simple_filter_pg`` as the name, select the **CPU_OUT_FILTER_PG**, **CPU_IN**, and **SOURCE_THRESHOLDS** tables, and enter the following as the SQL schema, then click **Execute job**:
+   f. Go to the **Create SQL Job** subtab, enter ``simple_filter_pg`` as the name, select the ``CPU_OUT_FILTER_PG``, ``CPU_IN``, and ``SOURCE_THRESHOLDS`` tables, and enter the following as the SQL schema, then click **Execute job**:
    
       .. code :: sql
 	  
@@ -195,7 +195,7 @@ Create Apache Flink tables and jobs
    
    c. In the Aiven web console, go to the **Jobs & Data** > **Data Tables** tab for your Flink service.
    
-   d. Select your PostgreSQL service, enter ``CPU_OUT_AGG_PG`` as the name, select **cpu_load_stats_agg_pg** as the table, and enter the following as the SQL schema, then click **Create Table**:
+   d. Select your PostgreSQL service, enter ``CPU_OUT_AGG_PG`` as the name, select ``cpu_load_stats_agg_pg`` as the table, and enter the following as the SQL schema, then click **Create Table**:
    
       .. code :: sql
 	  
@@ -203,7 +203,7 @@ Create Apache Flink tables and jobs
          NR_CPUS_OVER_THRESHOLD BIGINT,
          PRIMARY KEY (time_ltz) NOT ENFORCED
 
-   e. Go to the **Create SQL Job** subtab, enter ``simple_filter_pg_agg`` as the name, select the **CPU_OUT_AGG_PG**, **CPU_IN**, and **SOURCE_THRESHOLDS** tables, and enter the following as the SQL schema, then click **Execute job**:
+   e. Go to the **Create SQL Job** subtab, enter ``simple_filter_pg_agg`` as the name, select the ``CPU_OUT_AGG_PG``, ``CPU_IN``, and ``SOURCE_THRESHOLDS`` tables, and enter the following as the SQL schema, then click **Execute job**:
    
       .. code :: sql
 	  

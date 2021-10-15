@@ -201,7 +201,6 @@ entries:
           - file: docs/products/flink/howto/create-job
           - file: docs/products/flink/howto/real_time_alerting_solution
           - file: docs/products/flink/howto/rest-api-cheatsheet
-      - glob: docs/products/flink/reference/
 
   - file: docs/products/redis/index
     title: Redis
