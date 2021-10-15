@@ -74,6 +74,8 @@ Set of commands for managing Aiven for Apache Kafka Connect connectors.
 
 More information on ``connector available``, ``connector create``, ``connector delete``, ``connector list``, ``connector pause``, ``connector restart``, ``connector restart-task``, ``connector resume``, ``connector schema``, ``connector status`` and ``connector update`` can be found in the :doc:`dedicated page <service/connector>`.
 
+.. _avn-cli-service-create:
+
 ``avn service create``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
@@ -167,7 +169,7 @@ More information on ``database-add``, ``database-delete`` and ``database-list`` 
 ``avn service es-acl``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Manages rules to opensearch ACL and extended ACL configuration.
+Manages rules to OpenSearch ACL and extended ACL configuration.
 
 More information on ``es-acl-add``, ``es-acl-del``, ``es-acl-disable``, ``es-acl-enable``, ``es-acl-extended-disable``, ``es-acl-extended-enable`` and ``es-acl-extended-list``  can be found in :doc:`the dedicated page <service/es-acl>`.
 
@@ -203,7 +205,7 @@ Retrieves a single service details.
 ``avn service index``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Manages Opensearch service indexes.
+Manages OpenSearch service indexes.
 
 More information on ``index-delete`` and  ``index-list`` can be found in :doc:`the dedicated page <service/index>`.
 
@@ -478,6 +480,15 @@ Create a service task
 
 Terminates a service.
 
+.. Warning::
+
+  The ``terminate`` command deletes the service and the associated data. The data is not recoverable. 
+  To temporarily shut down the service use the :ref:`service update command <avn-cli-service-update>` ``avn service update SERVICE_NAME --power-off``
+
+.. Note::
+
+  To avoid accidental service deletion, enable the termination protection during service :ref:`creation <avn-cli-service-create>`  or :ref:`update <avn-cli-service-update>` via the ``--enable-termination-protection`` flag 
+
 .. list-table::
   :header-rows: 1
   :align: left
@@ -537,6 +548,8 @@ An example of ``service types`` output:
   pg                 PostgreSQL - Object-Relational Database Management System
   redis              Redis - In-Memory Data Structure Store
 
+.. _avn-cli-service-update:
+
 ``avn service update``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
@@ -578,7 +591,7 @@ Updates the settings for an Aiven service.
 ::
 
     avn service update demo-pg        \
-      --cloud google-europe-west1     \
+      --cloud azure-germany-north     \
       --enable-termination-protection
 
 
