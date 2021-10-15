@@ -89,6 +89,7 @@ Singlestat
 Splunk
 [Ss]pring
 Statusmap
+subtab
 Telegraf
 Terraform
 Terraforming
