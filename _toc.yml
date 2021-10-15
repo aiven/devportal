@@ -59,6 +59,7 @@ entries:
           - file: docs/products/postgresql/howto/list-code-samples
             entries:
               - file: docs/products/postgresql/howto/connect-go
+              - file: docs/products/postgresql/howto/connect-java
               - file: docs/products/postgresql/howto/connect-node
               - file: docs/products/postgresql/howto/connect-php
               - file: docs/products/postgresql/howto/connect-python
