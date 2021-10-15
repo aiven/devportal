@@ -78,6 +78,7 @@ sharding
 signups
 Singlestat
 Statusmap
+subtab
 Telegraf
 Terraform
 Terraforming
