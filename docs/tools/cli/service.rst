@@ -311,7 +311,7 @@ Lists the service plans available in a selected project for a defined service ty
   * - Parameter
     - Information
   * - ``--service-type``
-    - The type of service
+    - The type of service, check :ref:`avn-cli-service-type` for more information
   * - ``--cloud``
     - The cloud region
   * - ``--monthly``
