@@ -29,10 +29,10 @@ Memorystore
 NodeJS
 npm
 Okta
+[Oo]perator
+OpenSearch
 Pagila
 parallelization
-[Oo]perator
-[O]pen[S]earch
 pgAdmin
 PgBouncer
 plaintext
