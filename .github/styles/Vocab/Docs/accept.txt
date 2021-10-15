@@ -58,5 +58,5 @@ wget
 [Tt]ruststore
 [Pp]rivatelink
 [Kk]eypair
-[Oo]pen[Ss]earch
-[Ff]link
+[O]pen[S]earch
+[F]link
