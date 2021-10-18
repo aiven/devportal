@@ -47,8 +47,8 @@ Memorystore
 NodeJS
 npm
 Okta
-[Oo]perator
 OpenSearch
+[Oo]perator
 Pagerduty
 Pagila
 parallelization
