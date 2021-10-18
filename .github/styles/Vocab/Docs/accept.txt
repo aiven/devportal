@@ -11,6 +11,7 @@ downsampling
 etcd
 failover
 fileset[s]?
+Flink
 geospatial
 [Gg]o
 Grafana
@@ -20,6 +21,8 @@ Hillyer
 [Hh]ostname
 hyperloglogs
 jq
+[Kk]eypair
+[Kk]eystore
 Kubernetes
 Lua
 Memorystore
@@ -29,6 +32,7 @@ npm
 Okta
 Pagila
 parallelization
+OpenSearch
 [Oo]perator
 pgAdmin
 PgBouncer
@@ -36,6 +40,7 @@ plaintext
 pooler
 PostgreSQL
 Postman
+[Pp]rivatelink
 psql
 Python
 Redis
@@ -49,14 +54,9 @@ Terraform
 Terraforming
 TimescaleDB
 toolchain
+[Tt]ruststore
 Uber
 unencrypted
 Untrusted
 [Uu]naggregated
 wget
-[Kk]eystore
-[Tt]ruststore
-[Pp]rivatelink
-[Kk]eypair
-[O]pen[S]earch
-[F]link
