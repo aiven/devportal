@@ -1,7 +1,7 @@
-Use Apache Flink to create a real-time alerting solution
-========================================================
+Create a real-time alerting solution - Aiven console
+====================================================
 
-This article shows you an example of how to combine Aiven for Apache Flink with Aiven for Apache Kafka and Aiven for PostgreSQL services to create a solution that provides real-time alerting data for CPU loads.
+This tutorial shows you an example of how to combine Aiven for Apache Flink with Aiven for Apache Kafka and Aiven for PostgreSQL services to create a solution that provides real-time alerting data for CPU loads.
 
 The article includes the steps that you need when using the `Aiven web console <https://console.aiven.io>`_ along with a few different samples of how you can set thresholds for alerts. For connecting to your PostgreSQL service, this example uses the `Aiven CLI <https://github.com/aiven/aiven-client>`_, but you can also use other tools if you prefer.
 
@@ -81,30 +81,23 @@ Create Apache Flink tables and jobs
    a. Go to the **Data Tables** subtab.
    b. Select your Kafka service, enter ``CPU_IN`` as the name, select ``cpu_load_stats_real`` as the topic, and enter the following as the SQL schema, then click **Create Table**:
 
-      .. code :: sql
+      .. literalinclude:: /code/products/flink/alerting_solution_sql.md
+         :lines: 2-8
+         :language: sql
 
-          hostname STRING,
-          cpu STRING,
-          usage DOUBLE,
-          occurred_at BIGINT,
-          proctime AS PROCTIME(),
-          time_ltz AS TO_TIMESTAMP_LTZ(occurred_at, 3),
-          WATERMARK FOR time_ltz AS time_ltz - INTERVAL '10' SECOND
 
    c. Create another table by entering ``CPU_OUT_FILTER`` as the name, ``cpu_load_stats_real_filter`` as the topic, and the following as the SQL schema, then click **Create Table**:
 
-      .. code :: sql
+      .. literalinclude:: /code/products/flink/alerting_solution_sql.md
+         :lines: 11-14
+         :language: sql
 
-          time_ltz TIMESTAMP(3),
-          hostname STRING,
-          cpu STRING,
-          usage DOUBLE
 
    d. Go to the **Create SQL Job** subtab and enter ``simple_filter`` as the job name, select ``CPU_IN`` and ``CPU_OUT_FILTER`` as the tables, and enter the following as the SQL statement, then click **Execute job**:
 
-      .. code :: sql
-
-         INSERT INTO CPU_OUT_FILTER Select time_ltz, hostname, cpu, usage FROM CPU_IN WHERE usage > 80
+      .. literalinclude:: /code/products/flink/alerting_solution_sql.md
+         :lines: 17
+         :language: sql
 
 
 #. Create a pipeline with windowing.
@@ -114,24 +107,15 @@ Create Apache Flink tables and jobs
    a. Go to the **Data Tables** subtab.
    b. Select your Kafka service, enter ``CPU_OUT_AGG`` as the name, ``cpu_load_stats_agg`` as the topic, and the following as the SQL schema, then click **Create Table**:
    
-      .. code :: sql
-	  
-         window_start TIMESTAMP(3),
-         window_end TIMESTAMP(3),
-         hostname STRING,
-         cpu STRING,
-         usage_avg DOUBLE,
-         usage_max DOUBLE,
-         PRIMARY KEY (window_start, window_end, hostname, cpu) NOT ENFORCED
+      .. literalinclude:: /code/products/flink/alerting_solution_sql.md
+         :lines: 20-26
+         :language: sql
 		 
    c. Go to the **Create SQL Job** subtab and enter ``simple_agg`` as the job name, select ``CPU_OUT_AGG`` and ``CPU_IN`` as the tables, and enter the following as the SQL statement, then click **Execute job**:
    
-      .. code :: sql
-	  
-         INSERT INTO CPU_OUT_AGG
-         select window_start,window_end, hostname, cpu, avg(usage), max(usage)
-         FROM TABLE( TUMBLE(TABLE CPU_IN, DESCRIPTOR(time_ltz), INTERVAL '30' SECONDS))
-         GROUP BY window_start,window_end, hostname, cpu
+      .. literalinclude:: /code/products/flink/alerting_solution_sql.md
+         :lines: 29-32
+         :language: sql
 
 
 #. Configure your PostgreSQL service to set the threshold values.
@@ -146,35 +130,28 @@ Create Apache Flink tables and jobs
    
    b. Enter the following commands to set up the threshold values:
    
-      .. code :: sql
-	  
-         create table cpu_thresholds (hostname varchar, allowed_top int);
-         insert into cpu_thresholds values ('doc', 20),('grumpy', 30),('sleepy',40),('bashful',60), ('happy',70),('sneezy',80),('dopey',90)
+      .. literalinclude:: /code/products/flink/alerting_solution_sql.md
+         :lines: 35-36
+         :language: sql
    
    c. In the Aiven web console, go to the **Jobs & Data** > **Data Tables** tab for your Flink service.
    d. Select your PostgreSQL service, enter ``SOURCE_THRESHOLDS`` as the name, select ``public.cpu_thresholds`` as the table, and enter the following as the SQL schema, then click **Create Table**:
    
-      .. code :: sql
-	  
-         hostname string,
-         allowed_top int,
-         PRIMARY KEY (hostname) NOT ENFORCED
+      .. literalinclude:: /code/products/flink/alerting_solution_sql.md
+         :lines: 39-41
+         :language: sql
 
    e. Select your Kafka service, enter ``CPU_OUT_FILTER_PG`` as the name, ``cpu_load_stats_real_filter_pg`` as the topic, and the following as the SQL schema, then click **Create Table**:
    
-      .. code :: sql
-	  
-         time_ltz TIMESTAMP(3),
-         hostname STRING,
-         cpu STRING,
-         usage DOUBLE,
-         threshold INT
+      .. literalinclude:: /code/products/flink/alerting_solution_sql.md
+         :lines: 44-48
+         :language: sql
 
    f. Go to the **Create SQL Job** subtab, enter ``simple_filter_pg`` as the name, select the ``CPU_OUT_FILTER_PG``, ``CPU_IN``, and ``SOURCE_THRESHOLDS`` tables, and enter the following as the SQL schema, then click **Execute job**:
    
-      .. code :: sql
-	  
-         INSERT INTO CPU_OUT_FILTER_PG Select time_ltz, cpu.hostname, cpu, usage, allowed_top FROM CPU_IN cpu inner join SOURCE_THRESHOLDS FOR SYSTEM_TIME AS OF proctime as st on cpu.hostname = st.hostname WHERE usage > allowed_top
+      .. literalinclude:: /code/products/flink/alerting_solution_sql.md
+         :lines: 51
+         :language: sql
 		 
 
 #. Combine windowing with threshold values from PostgreSQL and store the results in PostgreSQL.
@@ -189,35 +166,22 @@ Create Apache Flink tables and jobs
    
    b. Enter the following command to set up the table for storing the results:
    
-      .. code :: sql
-	  
-         create table cpu_load_stats_agg_pg (time_ltz TIMESTAMP(3) PRIMARY KEY, NR_CPUS_OVER_THRESHOLD int);
+      .. literalinclude:: /code/products/flink/alerting_solution_sql.md
+         :lines: 54
+         :language: sql
    
    c. In the Aiven web console, go to the **Jobs & Data** > **Data Tables** tab for your Flink service.
    
    d. Select your PostgreSQL service, enter ``CPU_OUT_AGG_PG`` as the name, select ``cpu_load_stats_agg_pg`` as the table, and enter the following as the SQL schema, then click **Create Table**:
    
-      .. code :: sql
-	  
-         time_ltz TIMESTAMP(3),
-         NR_CPUS_OVER_THRESHOLD BIGINT,
-         PRIMARY KEY (time_ltz) NOT ENFORCED
+      .. literalinclude:: /code/products/flink/alerting_solution_sql.md
+         :lines: 57-59
+         :language: sql
 
    e. Go to the **Create SQL Job** subtab, enter ``simple_filter_pg_agg`` as the name, select the ``CPU_OUT_AGG_PG``, ``CPU_IN``, and ``SOURCE_THRESHOLDS`` tables, and enter the following as the SQL schema, then click **Execute job**:
    
-      .. code :: sql
-	  
-         INSERT INTO CPU_OUT_AGG_PG with joining_info as(
-         Select time_ltz, cpu.hostname, cpu, usage, allowed_top FROM CPU_IN cpu inner join SOURCE_THRESHOLDS FOR SYSTEM_TIME AS OF proctime as st on cpu.hostname = st.hostname
-         ),
-         windowing as (
-         select window_start,window_end, hostname, cpu, avg(usage) usage, allowed_top
-         FROM TABLE(
-         TUMBLE(TABLE joining_info, DESCRIPTOR(time_ltz), INTERVAL '30' SECONDS))
-         GROUP BY window_start,window_end, hostname, cpu, allowed_top
-         )
-         select window_start, count(*) from windowing
-         where usage>allowed_top
-         group by window_start
+      .. literalinclude:: /code/products/flink/alerting_solution_sql.md
+         :lines: 62-73
+         :language: sql
 
 
