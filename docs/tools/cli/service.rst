@@ -178,7 +178,7 @@ More information on ``es-acl-add``, ``es-acl-del``, ``es-acl-disable``, ``es-acl
 
 Manages Aiven for Apache Flink tables and jobs.
 
-More info on LIST_HERE can be found in :doc:`the dedicated page <service/flink>`.
+More info on ``flink table create``, ``flink table delete``, ``flink table get``, ``flink table list``, ``flink job create``, ``flink job cancel``, ``flink job get`` and ``flink job list`` can be found in :doc:`the dedicated page <service/flink>`.
 
 ``avn service get``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
