@@ -34,6 +34,7 @@ GROUP BY window_start,window_end, hostname, cpu
 ## PostgreSQL thresholds: cpu_thresholds table creation
 create table cpu_thresholds (hostname varchar, allowed_top int);
 insert into cpu_thresholds values ('doc', 20),('grumpy', 30),('sleepy',40),('bashful',60), ('happy',70),('sneezy',80),('dopey',90)
+select * from cpu_thresholds
 
 ## PostgreSQL thresholds: SOURCE_THRESHOLDS table
 hostname string,
