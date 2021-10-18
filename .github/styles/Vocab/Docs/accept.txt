@@ -32,7 +32,7 @@ npm
 Okta
 Pagila
 parallelization
-OpenSearch
+[Oo]pen[Ss]earch
 [Oo]perator
 pgAdmin
 PgBouncer
