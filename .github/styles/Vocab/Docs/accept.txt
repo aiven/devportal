@@ -30,10 +30,10 @@ Memorystore
 NodeJS
 npm
 Okta
-Pagila
-parallelization
 [Oo]pen[Ss]earch
 [Oo]perator
+Pagila
+parallelization
 pgAdmin
 PgBouncer
 plaintext
