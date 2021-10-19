@@ -1,0 +1,4 @@
+Code samples
+============
+
+.. tableofcontents::

@@ -145,7 +145,17 @@ entries:
       - file: docs/products/redis/howto
         title: HowTo
         entries:
-          - glob: docs/products/redis/howto/*
+          - file: docs/products/redis/howto/list-code-samples
+            entries:
+              - file: docs/products/redis/howto/connect-redis-cli
+              - file: docs/products/redis/howto/connect-go
+              - file: docs/products/redis/howto/connect-node
+              - file: docs/products/redis/howto/connect-php
+              - file: docs/products/redis/howto/connect-python
+          - file: docs/products/redis/howto/list-dba-tasks
+            entries:
+              - file: docs/products/redis/howto/configure-acl-permissions
+              - file: docs/products/redis/howto/migrate-aiven-redis
 
   - file: docs/products/grafana/index
     title: Grafana
