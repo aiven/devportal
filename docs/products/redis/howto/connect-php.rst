@@ -17,14 +17,7 @@ Variable                Description
 Pre-requisites
 ''''''''''''''
 
-1. Make sure to have the dependency manager tool `Composer <https://getcomposer.org/>`_ installed.
-
-2. Create a new directory and access it::
-
-    mkdir redis-php
-    cd redis-php
-
-3. Install the ``predis`` library::
+Install the ``predis`` library::
 
     composer require predis/predis
 
@@ -33,6 +26,7 @@ Code
 Create a new file named ``index.php``, add the following content and replace the placeholder with the Redis URI:
 
 .. literalinclude:: /code/products/redis/connect.php
+   :language: php
 
 This code creates a key named ``key`` with the value ``hello world`` and no expiration time. Then, it gets the key back from Redis and prints its value.
 

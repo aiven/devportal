@@ -17,20 +17,16 @@ Variable                Description
 Pre-requisites
 ''''''''''''''
 
-1. Create a new directory and access it::
+Install the ``ioredis`` library::
 
-    mkdir redis-node
-    cd redis-node
-
-3. Install the ``ioredis`` library::
-
-    npm install ioredis
+    npm install --save ioredis
 
 Code
 ''''
 Create a new file named ``index.js``, add the following content and replace the placeholder with the Redis URI:
 
 .. literalinclude:: /code/products/redis/connect.js
+   :language: javascript
 
 This code creates a key named ``key`` with the value ``hello world`` and no expiration time. Then, it gets the key back from Redis and prints its value.
 

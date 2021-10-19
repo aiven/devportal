@@ -17,17 +17,7 @@ Variable                Description
 Pre-requisites
 ''''''''''''''
 
-1. Create a new directory and access it::
-
-    mkdir redis-python
-    cd redis-python
-
-2. Initialize a new virtual environment::
-
-    python -m venv venv
-    source venv/bin/activate
-
-3. Install the ``redis-py`` library::
+Install the ``redis-py`` library::
 
     pip install redis
 
@@ -42,6 +32,10 @@ This code creates a key named ``key`` with the value ``hello world`` and no expi
 Run the code::
 
     python main.py
+
+.. note::
+
+    Note that on some systems you will need to use `python3` to get Python3 rather than the previous Python2
 
 If the script runs successfully, the outputs should be::
 

@@ -17,16 +17,7 @@ Variable                Description
 Pre-requisites
 ''''''''''''''
 
-1. Create a new directory and access it::
-
-    mkdir redis-go
-    cd redis-go
-
-2. Initialize the directory with::
-
-    go mod init example.com/m
-
-3. Get the ``go-redis/redis`` library::
+Get the ``go-redis/redis`` library::
 
     go get github.com/go-redis/redis/v8
 
