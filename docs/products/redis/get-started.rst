@@ -44,14 +44,6 @@ To create a new Aiven for Redis service:
 
    The status is *Rebuilding* while the service is being created for you. Once the service is ready, the status changes to *Running*. While services typically start up in a couple of minutes, the performance varies between cloud providers and regions, and it may take longer in some circumstances.
 
-Connect to Redis with ``redis-cli``
------------------------------------
-The direct PostgreSQL connection endpoint can be found under the Service URI connection information on the main service overview tab. 
-
-With `redis-cli <https://redis.io/topics/rediscli>`_ you can connect to the Redis instance with the following command, by replacing the ``SERVICE_URI`` parameter::
-
-   redis-cli -u SERVICE_URI
-
 Next steps
 ----------
 
