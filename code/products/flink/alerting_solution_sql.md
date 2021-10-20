@@ -14,7 +14,14 @@ cpu STRING,
 usage DOUBLE
 
 ## Basic filtering: job
-INSERT INTO CPU_OUT_FILTER Select time_ltz, hostname, cpu, usage FROM CPU_IN WHERE usage > 80
+INSERT INTO CPU_OUT_FILTER 
+SELECT 
+    time_ltz, 
+    hostname, 
+    cpu, 
+    usage 
+FROM CPU_IN 
+WHERE usage > 80
 
 ## Windowed pipeline: CPU_OUT_AGG table
 window_start TIMESTAMP(3),
@@ -22,23 +29,33 @@ window_end TIMESTAMP(3),
 hostname STRING,
 cpu STRING,
 usage_avg DOUBLE,
-usage_max DOUBLE,
-PRIMARY KEY (window_start, window_end, hostname, cpu) NOT ENFORCED
+usage_max DOUBLE
 
 ## Windowed pipeline: job
 INSERT INTO CPU_OUT_AGG
-select window_start,window_end, hostname, cpu, avg(usage), max(usage)
-FROM TABLE( TUMBLE(TABLE CPU_IN, DESCRIPTOR(time_ltz), INTERVAL '30' SECONDS))
-GROUP BY window_start,window_end, hostname, cpu
+SELECT 
+    window_start,
+    window_end, 
+    hostname, 
+    cpu, 
+    AVG(usage), 
+    MAX(usage)
+FROM 
+    TABLE( TUMBLE( TABLE CPU_IN, DESCRIPTOR(time_ltz), INTERVAL '30' SECONDS))
+GROUP BY 
+    window_start,
+    window_end, 
+    hostname, 
+    cpu
 
 ## PostgreSQL thresholds: cpu_thresholds table creation
-create table cpu_thresholds (hostname varchar, allowed_top int);
-insert into cpu_thresholds values ('doc', 20),('grumpy', 30),('sleepy',40),('bashful',60), ('happy',70),('sneezy',80),('dopey',90)
-select * from cpu_thresholds
+CREATE TABLE CPU_THRESHOLDS (hostname VARCHAR, allowed_top INT);
+INSERT INTO CPU_THRESHOLDS VALUES ('doc', 20),('grumpy', 30),('sleepy',40),('bashful',60), ('happy',70),('sneezy',80),('dopey',90);
+SELECT * FROM CPU_THRESHOLDS;
 
 ## PostgreSQL thresholds: SOURCE_THRESHOLDS table
-hostname string,
-allowed_top int,
+hostname STRING,
+allowed_top INT,
 PRIMARY KEY (hostname) NOT ENFORCED
 
 ## PostgreSQL thresholds: CPU_OUT_FILTER_PG table
@@ -49,26 +66,59 @@ usage DOUBLE,
 threshold INT
 
 ## PostgreSQL thresholds: job
-INSERT INTO CPU_OUT_FILTER_PG Select time_ltz, cpu.hostname, cpu, usage, allowed_top FROM CPU_IN cpu inner join SOURCE_THRESHOLDS FOR SYSTEM_TIME AS OF proctime as st on cpu.hostname = st.hostname WHERE usage > allowed_top
+INSERT INTO CPU_OUT_FILTER_PG 
+SELECT time_ltz, 
+    CPU.hostname, 
+    cpu, 
+    usage, 
+    allowed_top 
+FROM CPU_IN CPU INNER JOIN SOURCE_THRESHOLDS FOR SYSTEM_TIME AS OF proctime AS ST 
+    ON CPU.hostname = ST.hostname 
+WHERE usage > allowed_top
 
 ## Combined pipeline: cpu_load_stats_agg_pg table creation:
-create table cpu_load_stats_agg_pg (time_ltz TIMESTAMP(3) PRIMARY KEY, NR_CPUS_OVER_THRESHOLD int);
+CREATE TABLE CPU_LOAD_STATS_AGG_PG (
+    time_ltz TIMESTAMP(3) PRIMARY KEY, 
+    nr_cpus_over_threshold INT
+);
 
 ## Combined pipeline: CPU_OUT_AGG_PG table:
 time_ltz TIMESTAMP(3),
-NR_CPUS_OVER_THRESHOLD BIGINT,
+nr_cpus_over_threshold BIGINT,
 PRIMARY KEY (time_ltz) NOT ENFORCED
 
 ## Combined pipeline: job
-INSERT INTO CPU_OUT_AGG_PG with joining_info as(
-Select time_ltz, cpu.hostname, cpu, usage, allowed_top FROM CPU_IN cpu inner join SOURCE_THRESHOLDS FOR SYSTEM_TIME AS OF proctime as st on cpu.hostname = st.hostname
+INSERT INTO CPU_OUT_AGG_PG 
+WITH JOINING_INFO AS(
+    SELECT time_ltz, 
+        CPU.hostname, 
+        cpu, 
+        usage, 
+        allowed_top 
+    FROM CPU_IN CPU INNER JOIN SOURCE_THRESHOLDS 
+        FOR SYSTEM_TIME AS OF proctime AS ST 
+        ON CPU.hostname = ST.hostname
 ),
-windowing as (
-select window_start,window_end, hostname, cpu, avg(usage) usage, allowed_top
-FROM TABLE(
-TUMBLE(TABLE joining_info, DESCRIPTOR(time_ltz), INTERVAL '30' SECONDS))
-GROUP BY window_start,window_end, hostname, cpu, allowed_top
+WINDOWING AS (
+    SELECT 
+        window_start,
+        window_end, 
+        hostname, 
+        cpu, 
+        AVG(usage) USAGE, 
+        allowed_top
+    FROM TABLE(TUMBLE(TABLE JOINING_INFO, DESCRIPTOR(time_ltz), INTERVAL '30' SECONDS))
+    GROUP BY 
+        window_start,
+        window_end, 
+        hostname, 
+        cpu, 
+        allowed_top
 )
-select window_start, count(*) from windowing
-where usage>allowed_top
-group by window_start
+SELECT 
+    window_start, 
+    COUNT(*) 
+FROM WINDOWING
+WHERE USAGE > ALLOWED_TOP
+GROUP BY 
+    window_start
