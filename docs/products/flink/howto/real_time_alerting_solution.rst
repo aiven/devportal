@@ -24,11 +24,11 @@ Set up Aiven services
 
 1. Follow the steps in :doc:`this article </docs/platform/howto/create_new_service>` to create these services:
 
-   - An Aiven for Apache Kafka service with the *Business-4* service plan, named ``demo-flink-kafka`` (this streams the CPU load)
-   - An Aiven for PostgreSQL service with the *Business-4* service plan, named ``demo-flink-postgresql`` (this defines the alerting threshold values)
-   - An Aiven for Apache Flink service with the *Business-4* service plan, named ``demo-flink-flink`` (this analyzes the data stream to find CPUs where the average load exceeds the threshold values)
+   - An Aiven for Apache Kafka service with the *Business-4* service plan, named ``demo-kafka`` (this streams the CPU load)
+   - An Aiven for PostgreSQL service with the *Business-4* service plan, named ``demo-postgresql`` (this defines the alerting threshold values)
+   - An Aiven for Apache Flink service with the *Business-4* service plan, named ``demo-flink`` (this analyzes the data stream to find CPUs where the average load exceeds the threshold values)
 
-#. Select the ``demo-flink-kafka`` service and change the following settings on the *Overview* page:
+#. Select the ``demo-kafka`` service and change the following settings on the *Overview* page:
 
    - **Kafka REST API (Karapace)** > **Enable**
    - **Kafka Connect** > **Enable**
@@ -40,13 +40,13 @@ Set up Aiven services
 
 #. Copy the *Host* and *Port* values on the *Overview* page of your Kafka service.
 
-#. Select the ``demo-flink-flink`` service and add the service integrations:
+#. Select the ``demo-flink`` service and add the service integrations:
 
    a. Click **Get started** on the banner at the top of the *Overview* page.
-   b. Select **Aiven for Apache Kafka** and then select the ``demo-flink-kafka`` service.
+   b. Select **Aiven for Apache Kafka** and then select the ``demo-kafka`` service.
    c. Click **Integrate**.
    d. Click the **+** icon under *Data Flow*.
-   e. Select **Aiven for PostgreSQL** and then select the ``demo-flink-postgresql`` service.
+   e. Select **Aiven for PostgreSQL** and then select the ``demo-postgresql`` service.
    f. Click **Integrate**.
 
 
@@ -60,13 +60,13 @@ Run the following Python command to create the sample records using the `Apache 
     python3 python-fake-data-producer-for-apache-kafka/metricproducer.py \
         --cert-folder DOWNLOADED_CERTIFICATE_FOLDER \
         --host KAFKA_HOST_ADDRESS \
-        --port 12693 \
+        --port KAFKA_PORT \
         --topic-name cpu_load_stats_real \
         --nr-messages 0 \
         --max-waiting-time 1
 
 
-Replace ``DOWNLOADED_CERTIFICATE_FOLDER`` with the folder that contains the three certificate files that you downloaded, and ``KAFKA_HOST_ADDRESS`` with the address for your Aiven for Apache Kafka service.
+Replace ``DOWNLOADED_CERTIFICATE_FOLDER`` with the folder that contains the three certificate files that you downloaded, and ``KAFKA_HOST_ADDRESS`` and ``KAFKA_PORT`` with the address and port for your Aiven for Apache Kafka service.
 
 .. note::
    The ``--nr-messages 0`` option creates a continuous flow of messages that never stops.
@@ -140,17 +140,37 @@ Create a Flink SQL job using PostgreSQL thresholds
 
 This setup uses host-specific thresholds that are stored in PostgreSQL as a basis for determining instances of high CPU load.
 
-1. In the Aiven CLI, run the following command to connect to the ``flink-demo-postgresql`` service:
+1. In the Aiven CLI, run the following command to connect to the ``demo-postgresql`` service:
    
    ::
 	  
-      avn service cli flink-demo-postgresql --project PROJECT_NAME
+      avn service cli demo-postgresql --project PROJECT_NAME
    
 #. Enter the following commands to set up the threshold values:
    
    .. literalinclude:: /code/products/flink/alerting_solution_sql.md
-      :lines: 35-37
+      :lines: 35-36
       :language: sql
+
+#. Enter the following command to check that the threshold values are created:
+
+   .. literalinclude:: /code/products/flink/alerting_solution_sql.md
+      :lines: 37
+      :language: sql
+
+   The output shows you the content of the table:
+
+   ::
+
+      hostname | allowed_top
+      ---------+------------
+      doc | 20
+      grumpy | 30
+      sleepy | 40
+      bashful | 60
+      happy | 70
+      sneezy | 80
+      dopey | 90
 
 #. In the Aiven web console, go to the **Jobs & Data** > **Data Tables** tab for your Flink service.
 
@@ -180,11 +200,11 @@ Create an aggregated data pipeline with Kafka and PostgreSQL
 
 This setup highlights the instances where the average CPU load over a windowed interval exceeds the threshold and stores the results in PostgreSQL.
 
-1. In the Aiven CLI, run the following command to connect to the ``flink-demo-postgresql`` service:
+1. In the Aiven CLI, run the following command to connect to the ``demo-postgresql`` service:
    
-      ::
+   ::
 	  
-         avn service cli flink-demo-postgresql --project PROJECT_NAME
+      avn service cli demo-postgresql --project PROJECT_NAME
    
 #. Enter the following command to set up the table for storing the results:
    
