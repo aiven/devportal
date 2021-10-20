@@ -3,7 +3,7 @@ Create a real-time alerting solution - Aiven console
 
 This tutorial shows you an example of how to combine Aiven for Apache Flink with Aiven for Apache Kafka and Aiven for PostgreSQL services to create a solution that provides real-time alerting data for CPU loads.
 
-Architecture Overview
+Architecture overview
 ---------------------
 
 This example involves creating an Apache Kafka source topic that provides a stream of metrics data, a PostgreSQL database that contains data on the alerting thresholds, and an Apache Flink service that combines these two services and pushes the filtered data to a separate Apache Kafka topic or PostgreSQL table.
@@ -17,7 +17,7 @@ This example involves creating an Apache Kafka source topic that provides a stre
         id3-. filtered data .->id4(Kafka);
         id3-. filtered data .->id5(PostgreSQL);
 
-The article includes the steps that you need when using the `Aiven web console <https://console.aiven.io>`_ along with a few different samples of how you can set thresholds for alerts. For connecting to your PostgreSQL service, this example uses the `Aiven CLI <https://github.com/aiven/aiven-client>`_ calling `psql <https://www.postgresql.org/docs/current/app-psql.html>`_. But you can also use other tools if you prefer.
+The article includes the steps that you need when using the `Aiven web console <https://console.aiven.io>`_ along with a few different samples of how you can set thresholds for alerts. For connecting to your PostgreSQL service, this example uses the `Aiven CLI <https://github.com/aiven/aiven-client>`_ calling `psql <https://www.postgresql.org/docs/current/app-psql.html>`_, but you can also use other tools if you prefer.
 
 In addition, the instructions show you how to use a separate Python tool, `Apache Kafka Python fake data producer <https://github.com/aiven/python-fake-data-producer-for-apache-kafka>`_, to create sample records for your Apache Kafka topic that provides the streamed data.
 
