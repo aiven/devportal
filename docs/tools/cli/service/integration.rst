@@ -19,7 +19,7 @@ Creates a new service integration.
   * - Parameter
     - Information
   * - ``--integration-type``
-    - The type of integration (check :ref:`the command details<avn service integraton types>` for more details)
+    - The type of integration (check :ref:`the command details<avn service integration types>` for more details)
   * - ``--source-service``
     - The integration source service
   * - ``--dest-service``
@@ -32,7 +32,13 @@ Creates a new service integration.
     - The integration parameters as JSON string or path to file (preceded by ``@``)
   * - ``-c KEY=VALUE``
     - The custom configuration settings. 
-  
+
+.. Note::
+
+  Both the `--user-config-json` and `-c` flags provide a way to customise the service integration using different methods. Only one of the flag is allowed per command. When when using both in the same command, the following error will appear
+  ::
+
+    ERROR	command failed: UserError: -c (user config) and --user-config-json parameters can not be used at the same time
 
 **Example:** Create a new ``kafka_logs`` service integration to send the logs of the service named ``demo-pg`` to an Aiven for Kafka service named ``demo-kafka`` in the topic ``test_log``.
 
@@ -78,7 +84,7 @@ Creates an external service integration endpoint.
   * - ``--endpoint-name``
     - The name of the endpoint
   * - ``--endpoint-type``
-    - The type of endpoint (check :ref:`the command details<avn service integraton endpoint types>` for more details)
+    - The type of endpoint (check :ref:`the command details<avn service integration endpoint types>` for more details)
   * - ``--user-config-json``
     - The endpoint configuration in JSON format or as path to a file (preceded by ``@``)
   * - ``-c KEY=VALUE``
@@ -125,7 +131,7 @@ Lists all service integration endpoints available in a selected project.
 
     avn service integration-endpoint-list
 
-An example of ``account service integration-endpoint-list`` output:
+An example of ``avn service integration-endpoint-list`` output:
 
 .. code:: text
 
@@ -135,7 +141,7 @@ An example of ``account service integration-endpoint-list`` output:
     821e0144-1503-42db-aa9f-b4aa34c4af6b  demo-ext-kafka    external_kafka
 
 
-.. _avn service integraton endpoint types:
+.. _avn service integration endpoint types:
 
 ``avn service integration-endpoint-types-list``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -223,7 +229,7 @@ An example of ``account service integration-list`` output:
     8e752fa9-a0c1-4332-892b-f1757390d53f  demo-pg       demo-kafka  kafka_logs        true     true    Send logs to Kafka
     (integration not enabled)             demo-pg       demo-pg     metrics           false    false   Send service metrics to InfluxDB, M3 or PostgreSQL service
 
-.. _avn service integraton types:
+.. _avn service integration types:
 
 ``avn service integration-types-list``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
