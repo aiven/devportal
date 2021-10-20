@@ -23,6 +23,7 @@ PgBouncer
 pooler
 PostgreSQL
 Postman
+psql
 Python
 scriptable
 sharding
