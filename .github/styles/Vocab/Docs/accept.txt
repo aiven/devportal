@@ -37,3 +37,5 @@ Untrusted
 [Uu]naggregated
 failover
 Flink
+Karapace
+subtab
