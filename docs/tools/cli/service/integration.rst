@@ -35,7 +35,7 @@ Creates a new service integration.
 
 .. Note::
 
-  Both the ``--user-config-json`` and ``-c`` flags provide a way to customise the service integration using different methods. Only one of the flag is allowed per command. When when using both in the same command, the following error will appear
+  Both the ``--user-config-json`` and ``-c`` flags provide a way to customise the service integration using different methods. Only one of the flag is allowed per command. When using both in the same command, an error will be shown
   ::
 
     ERROR	command failed: UserError: -c (user config) and --user-config-json parameters can not be used at the same time
