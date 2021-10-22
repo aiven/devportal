@@ -74,6 +74,8 @@ Set of commands for managing Aiven for Apache Kafka Connect connectors.
 
 More information on ``connector available``, ``connector create``, ``connector delete``, ``connector list``, ``connector pause``, ``connector restart``, ``connector restart-task``, ``connector resume``, ``connector schema``, ``connector status`` and ``connector update`` can be found in the :doc:`dedicated page <service/connector>`.
 
+.. _avn-cli-service-create:
+
 ``avn service create``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
@@ -88,7 +90,7 @@ Creates a new service.
   * - ``service_name``
     - The name of the service
   * - ``--service-type``
-    - The type of service; check :ref:`avn-cli-service-type` for more information
+    - The type of service; the :ref:`service types command <avn-cli-service-type>` has the available values
   * - ``--plan``
     - Aiven subscription plan name; check :ref:`avn-cloud-list` for more information
   * - ``--cloud``
@@ -102,7 +104,7 @@ Creates a new service.
   * - ``--enable-termination-protection``
     - Enables termination protection for the service
   * - ``-c KEY=VALUE``
-    - Additional configuration settings; check :ref:`avn-cli-service-type` for more information
+    - Any additional configuration settings for your service; check our documentation for more information, or use the :ref:`service types command <avn-cli-service-type>` which has a verbose mode that shows all options.
 
 **Example:** Create a new Aiven for Kafka service named ``kafka-demo`` in the region ``google-europe-west3`` with the plan ``business-4`` and enable Kafka Connect.
 
@@ -167,7 +169,7 @@ More information on ``database-add``, ``database-delete`` and ``database-list`` 
 ``avn service es-acl``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Manages rules to opensearch ACL and extended ACL configuration.
+Manages rules to OpenSearch ACL and extended ACL configuration.
 
 More information on ``es-acl-add``, ``es-acl-del``, ``es-acl-disable``, ``es-acl-enable``, ``es-acl-extended-disable``, ``es-acl-extended-enable`` and ``es-acl-extended-list``  can be found in :doc:`the dedicated page <service/es-acl>`.
 
@@ -203,7 +205,7 @@ Retrieves a single service details.
 ``avn service index``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Manages Opensearch service indexes.
+Manages OpenSearch service indexes.
 
 More information on ``index-delete`` and  ``index-list`` can be found in :doc:`the dedicated page <service/index>`.
 
@@ -241,7 +243,7 @@ Lists services within an Aiven project.
 
 An example of ``account service list`` output:
 
-.. code:: tex
+.. code:: text
 
   SERVICE_NAME        SERVICE_TYPE  STATE    CLOUD_NAME           PLAN         CREATE_TIME           UPDATE_TIME
   ==================  ============  =======  ===================  ===========  ====================  ====================
@@ -302,10 +304,42 @@ Get migration status
 ``avn service plans``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-List service plans
+Lists the service plans available in a selected project for a defined service type.
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``--service-type``
+    - The type of service, check :ref:`avn-cli-service-type` for more information
+  * - ``--cloud``
+    - The cloud region
+  * - ``--monthly``
+    - To show the monthly price estimate
+
+**Example:** List the service plans available for a PostgreSQL service in the ``google-europe-west3`` region.
+
+::
+
+    avn service plans --service-type pg --cloud google-europe-west3
+
+An example of ``service plans`` output:
+
+.. code:: text
+
+  pg:hobbyist                    $0.034/h  Hobbyist (1 CPU, 2 GB RAM, 8 GB disk)
+  pg:startup-4                   $0.136/h  Startup-4 (1 CPU, 4 GB RAM, 80 GB disk)
+  pg:startup-8                   $0.267/h  Startup-8 (2 CPU, 8 GB RAM, 175 GB disk)
+  ...
+  pg:premium-360                $36.027/h  Premium-360 (96 CPU, 384 GB RAM, 3000 GB disk) 3-node high availability set
+  pg:premium-512                $43.836/h  Premium-512 (128 CPU, 512 GB RAM, 3000 GB disk) 3-node high availability set
+  pg:premium-896                $72.329/h  Premium-896 (224 CPU, 896 GB RAM, 3000 GB disk) 3-node high availability set
 
 ``avn service privatelink``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
 
 Service Privatelink commands
 
@@ -342,7 +376,33 @@ Create a service task
 ``avn service terminate``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Terminate service
+Permanently deletes a service.
+
+.. Warning::
+
+  The ``terminate`` command deletes the service and the associated data. The data is not recoverable. 
+  To temporarily shut down the service use the :ref:`service update command <avn-cli-service-update>` ``avn service update SERVICE_NAME --power-off``
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``service_name``
+    - The name of the service
+  * - ``--force``
+    - Force the action without requiring confirmation
+
+**Example:** Terminate the service named ``demo-pg``.
+
+::
+
+    avn service terminate demo-pg
+
+.. Note::
+
+  To avoid accidental service deletion, enable the termination protection during service :ref:`creation <avn-cli-service-create>`  or :ref:`update <avn-cli-service-update>` by using the ``--enable-termination-protection`` flag 
 
 ``avn service topic``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -357,12 +417,87 @@ More information on ``topic-create``, ``topic-delete``, ``topic-list`` and  ``to
 ``avn service types``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-List service types
+Lists the Aiven service types available in a project.
+
+
+**Example:** Retrieve all the services types available in the currently selected project.
+
+::
+
+    avn service types
+
+An example of ``service types`` output:
+
+.. code:: text
+
+  SERVICE_TYPE       DESCRIPTION
+  =================  ===================================================================================
+  cassandra          Cassandra - Distributed NoSQL data store
+  elasticsearch      Elasticsearch - Search & Analyze Data in Real Time
+  grafana            Grafana - Metrics Dashboard
+  influxdb           InfluxDB - Distributed Time Series Database
+  kafka              Kafka - High-Throughput Distributed Messaging System
+  kafka_connect      Kafka Connect - Kafka Connect service
+  kafka_mirrormaker  Kafka MirrorMaker - Kafka MirrorMaker service
+  m3aggregator       M3 Aggregator - Aggregates metrics and provides downsampling
+  m3db               M3DB - Distributed time series database
+  mysql              MySQL - Relational Database Management System
+  opensearch         OpenSearch - Search & Analyze Data in Real Time, derived from Elasticsearch v7.10.2
+  pg                 PostgreSQL - Object-Relational Database Management System
+  redis              Redis - In-Memory Data Structure Store
+
+The service types command in verbose mode also shows all the configuration options for each type of service::
+
+    avn service types -v
+
+You might find it helpful to pipe the output to ``less`` since there are a large number of options available and the command output is long.
+
+.. _avn-cli-service-update:
 
 ``avn service update``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Update service settings
+Updates the settings for an Aiven service.
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``service_name``
+    - The name of the service
+  * - ``--cloud``
+    - The name of the cloud region where to deploy the service
+  * - ``--disk-space-gib``
+    - Amount of disk space for data storage (GiB)
+  * - ``--power-on``
+    - Power on the service
+  * - ``--power-off``
+    - Power off the service
+  * - ``--mainenance-dow``
+    - Set the automatic maintenance window's day of the week (possible values ``monday``, ``tuesday``, ``wednesday``, ``thursday``, ``friday``, ``saturday``, ``sunday``, ``never``)
+  * - ``--mainenance-time``
+    - Set the automatic maintenance window's start time (``HH:MM:SS``)
+  * - ``--enable-termination-protection``
+    - Enable termination protection
+  * - ``--disable-termination-protection``
+    - Disable termination protection
+  * - ``--project-vpc-id``
+    - The ID of the project VPC to use for the service. The VPC's cloud must match the service's cloud.
+  * - ``--no-project-vpc``
+    - The service will not use any VPC
+  * - ``--force``
+    - Force the action without requiring confirmation
+
+**Example:** Update the service named ``demo-pg``, move it to ``azure-germany-north`` region and enable termination protection.
+
+::
+
+    avn service update demo-pg        \
+      --cloud azure-germany-north     \
+      --enable-termination-protection
+
 
 ``avn service user``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
