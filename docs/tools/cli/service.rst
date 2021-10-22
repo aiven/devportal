@@ -90,7 +90,7 @@ Creates a new service.
   * - ``service_name``
     - The name of the service
   * - ``--service-type``
-    - The type of service; check :ref:`avn-cli-service-type` for more information
+    - The type of service; the :ref:`service types command <avn-cli-service-type>` has the available values
   * - ``--plan``
     - Aiven subscription plan name; check :ref:`avn-cloud-list` for more information
   * - ``--cloud``
@@ -104,7 +104,7 @@ Creates a new service.
   * - ``--enable-termination-protection``
     - Enables termination protection for the service
   * - ``-c KEY=VALUE``
-    - Additional configuration settings; check :ref:`avn-cli-service-type` for more information
+    - Any additional configuration settings for your service; check our documentation for more information, or use the :ref:`service types command <avn-cli-service-type>` which has a verbose mode that shows all options.
 
 **Example:** Create a new Aiven for Kafka service named ``kafka-demo`` in the region ``google-europe-west3`` with the plan ``business-4`` and enable Kafka Connect.
 
@@ -478,16 +478,12 @@ Create a service task
 ``avn service terminate``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Terminates a service.
+Permanently deletes a service.
 
 .. Warning::
 
   The ``terminate`` command deletes the service and the associated data. The data is not recoverable. 
   To temporarily shut down the service use the :ref:`service update command <avn-cli-service-update>` ``avn service update SERVICE_NAME --power-off``
-
-.. Note::
-
-  To avoid accidental service deletion, enable the termination protection during service :ref:`creation <avn-cli-service-create>`  or :ref:`update <avn-cli-service-update>` via the ``--enable-termination-protection`` flag 
 
 .. list-table::
   :header-rows: 1
@@ -505,6 +501,10 @@ Terminates a service.
 ::
 
     avn service terminate demo-pg
+
+.. Note::
+
+  To avoid accidental service deletion, enable the termination protection during service :ref:`creation <avn-cli-service-create>`  or :ref:`update <avn-cli-service-update>` by using the ``--enable-termination-protection`` flag 
 
 ``avn service topic``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -547,6 +547,12 @@ An example of ``service types`` output:
   opensearch         OpenSearch - Search & Analyze Data in Real Time, derived from Elasticsearch v7.10.2
   pg                 PostgreSQL - Object-Relational Database Management System
   redis              Redis - In-Memory Data Structure Store
+
+The service types command in verbose mode also shows all the configuration options for each type of service::
+
+    avn service types -v
+
+You might find it helpful to pipe the output to ``less`` since there are a large number of options available and the command output is long.
 
 .. _avn-cli-service-update:
 
