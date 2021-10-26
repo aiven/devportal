@@ -100,6 +100,7 @@ Uber
 unencrypted
 Untrusted
 [Uu]naggregated
+[Uu]psert
 wget
 Zabbix
 Zipkin
