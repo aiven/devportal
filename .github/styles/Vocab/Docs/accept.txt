@@ -41,4 +41,3 @@ Flink
 Karapace
 subtab
 upsert
-Upsert
