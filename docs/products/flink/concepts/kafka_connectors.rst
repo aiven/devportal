@@ -13,7 +13,7 @@ When you integrate a standard Apache Kafka with your Aiven for Apache Flink serv
         id2-- processed message --> id3[sink topic];
 
 
-Upsert, or ``INSERT/UPDATE``, is a method of updating or deleting data based on a primary key. If a message in the source upsert topic uses a primary key with a value that already exists, the message data is interpreted as an update to the existing data that uses the same key in the upsert sink topic. If the key does not exist, it is inserted as new data, and if the message data is null, it is interpreted as a ``DELETE`` operation for that key.
+Another integration approach is upsert, or ``INSERT/UPDATE``, which is a method of updating or deleting data based on a primary key. If a message in the source upsert topic uses a primary key with a value that already exists, the message data is interpreted as an update to the existing data that uses the same key in the upsert sink topic. If the key does not exist, it is inserted as new data, and if the message data is null, it is interpreted as a ``DELETE`` operation for that key.
 
 .. mermaid::
 
