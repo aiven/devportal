@@ -18,6 +18,10 @@ entries:
       - file: docs/platform/howto/create_authentication_token
       - file: docs/platform/howto/download-ca-cert
       - file: docs/platform/howto/console-fork-service.rst
+    - file: docs/platform/reference
+      title: Reference
+      entries:
+      - file: docs/platform/reference/supported-versions
 
   # --------- GLOBAL -----------
   - file: docs/tools/index

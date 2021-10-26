@@ -51,3 +51,6 @@ index-helpcenter:
 create-feedback-table:
 	python "$(SOURCEDIR)/scripts/create_feedback_table.py" \
 		--pg-url="$(PG_URL)"
+
+eol-table:
+	python "$(SOURCEDIR)/scripts/aiven/service_versions_eol.py" > $(SOURCEDIR)/includes/eol_table.rst
