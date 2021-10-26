@@ -167,7 +167,7 @@ More information on ``database-add``, ``database-delete`` and ``database-list`` 
 ``avn service es-acl``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Manages rules to opensearch ACL and extended ACL configuration.
+Manages rules to OpenSearch ACL and extended ACL configuration.
 
 More information on ``es-acl-add``, ``es-acl-del``, ``es-acl-disable``, ``es-acl-enable``, ``es-acl-extended-disable``, ``es-acl-extended-enable`` and ``es-acl-extended-list``  can be found in :doc:`the dedicated page <service/es-acl>`.
 
@@ -210,7 +210,7 @@ Retrieves a single service details.
 ``avn service index``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Manages Opensearch service indexes.
+Manages OpenSearch service indexes.
 
 More information on ``index-delete`` and  ``index-list`` can be found in :doc:`the dedicated page <service/index>`.
 

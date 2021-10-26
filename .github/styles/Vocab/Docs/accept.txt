@@ -30,7 +30,7 @@ Memorystore
 NodeJS
 npm
 Okta
-[Oo]pen[Ss]earch
+OpenSearch
 [Oo]perator
 Pagila
 parallelization
