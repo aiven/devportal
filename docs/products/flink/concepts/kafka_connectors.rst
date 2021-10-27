@@ -13,7 +13,9 @@ When you integrate a standard Apache Kafka with your Aiven for Apache Flink serv
         id2-- processed message --> id3[sink topic];
 
 
-Another integration approach is upsert, or ``INSERT/UPDATE``, which is a method of updating or deleting data based on a primary key. If a message in the source upsert topic uses a primary key with a value that already exists, the message data is interpreted as an update to the existing data that uses the same key in the upsert sink topic. If the key does not exist, it is inserted as new data, and if the message data is null, it is interpreted as a ``DELETE`` operation for that key.
+Another integration approach is upsert, or ``INSERT/UPDATE``, which is a method of updating or deleting data based on the message key. When used as a source, Flink interprets a message that has an existing key as an update and replaces the value for that key. If the key does not exist, it is inserted as new data, and if the message data is null, it is interpreted as a ``DELETE`` operation for that key.
+
+When used as a sink, upsert provides a method to create `Kafka compacted topics <https://kafka.apache.org/documentation/#compaction>`_, containing only the latest value for a specific key and pushing a tombstone message on deletion.
 
 .. mermaid::
 
@@ -34,4 +36,6 @@ How to choose the right connector type
 For most common purposes, such as filtering data or performing calculations on streamed data, a standard Kafka connector is sufficient. You can also perform data aggregation with standard connectors, but depending on the type of aggregation, it may require more careful planning and more complex SQL compared to using upsert connectors.
 
 If you want to use multiple data streams as a source, but have the results for matching identifiers combined into single events within the same target topic, choose upsert connectors. While it varies to some extent depending on your specific use case, this means that using upsert connectors often makes it easier and more efficient to implement data aggregation.
+
+In addition, choose upsert connectors if you want to provide the output as a compacted topic and read only the latest value for each message key.
 
