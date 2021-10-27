@@ -21,7 +21,7 @@ Creates a new Aiven for Apache Flink table.
   * - ``service_name``
     - The name of the service
   * - ``integration_id``
-    - The ID of the integration to use to locate the source/sink table/topic
+    - The ID of the integration to use to locate the source/sink table/topic. The integration ID can be found with the :ref:`integration-list<avn_service_integration_list>` command
   * - ``--table-name``
     - The Flink table name
   * - ``--kafka-topic``
@@ -32,8 +32,6 @@ Creates a new Aiven for Apache Flink table.
     - A column from the table schema to use as Flink table partition definition
   * - ``--like-options``
     - Creates the Flink table based on the definition of another existing Flink table
-  * - ``--schema-sql``
-    - Flink table schema SQL definition
  
 
 **Example:** Create a Flink table named ``KAlert`` with:
@@ -94,6 +92,8 @@ Retrieves the definition of an existing Aiven for Apache Flink table.
   
   avn service flink table get flink-devportal-demo 8b8ac2fe-b6eb-46bc-b327-fb4b84d27276
 
+.. _avn_service_flink_table_list:
+
 ``avn service flink table list``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
@@ -140,22 +140,22 @@ Creates a new Aiven for Apache Flink job.
     - The name of the service
   * - ``job_name``
     - Name of the Flink job
-  * - ``--tables``
-    - List of Flink tables to use as source/sink
+  * - ``--table-ids``
+    - List of Flink tables IDs to use as source/sink. Table IDs can be found using the :ref:`list <avn_service_flink_table_list>` command
   * - ``--statement``
     - Flink job SQL statement
  
 
 **Example:** Create a Flink job named ``JobExample`` with:
 
-* ``KCpuIn, KAlert`` as source/sink **tables**
+* ``KCpuIn`` (with id ``cac53785-d1b5-4856-90c8-7cbcc3efb2b6``) and ``KAlert`` (with id ``54c2f4e6-a446-4d62-8dc9-2b81179c6f43``) as source/sink **tables**
 * ``INSERT INTO KAlert SELECT * FROM KCpuIn WHERE cpu_in_mb > 70`` as **SQL statement**
 * ``flink-devportal-demo`` as service name
 
 ::
   
-  avn service flink job create flink-devportal-demo JobExample \
-    --tables KCpuIn KAlert                                     \
+  avn service flink job create flink-devportal-demo JobExample                        \
+    --table-ids cac53785-d1b5-4856-90c8-7cbcc3efb2b6 54c2f4e6-a446-4d62-8dc9-2b81179c6f43 \
     --statement "INSERT INTO KAlert SELECT * FROM KCpuIn WHERE cpu_in_mb > 70" 
 
 ``avn service flink job cancel``
