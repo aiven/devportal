@@ -42,6 +42,8 @@ Lists all available integration endpoint types for given project.
 
 Updates a service integration endpoint.
 
+.. _avn_service_integration_list:
+
 ``avn service integration-list``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
