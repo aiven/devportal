@@ -22,11 +22,19 @@ Try the :doc:`sample recipes dataset <howto/sample-dataset>` or browse the other
 
 .. panels::
 
-    📙 :doc:`concepts`
+    📚 :doc:`concepts`
 
     ---
 
     💻 :doc:`howto`
+
+    ---
+
+    📖 :doc:`Reference <reference>`
+
+    ---
+
+    🧰 :doc:`Code <howto/opensearch-with-curl>`
 
 
 Ways to use OpenSearch

@@ -23,11 +23,15 @@ Take your first steps with Aiven for Redis by following our :doc:`get-started` a
 
 .. panels::
 
-    📙 :doc:`concepts`
+    📚 :doc:`concepts`
 
     ---
 
     💻 :doc:`howto`
+
+    ---
+
+    🧰 :doc:`howto/list-code-samples`
 
 
 Ways to use Aiven for Redis

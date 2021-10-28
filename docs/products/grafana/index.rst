@@ -26,6 +26,10 @@ Take your first steps with Aiven for Grafana by following our :doc:`get-started`
 
     💻 :doc:`howto`
 
+    ---
+
+    📖 :doc:`Reference <reference>`
+
 
 Integrates with your existing Aiven tools
 ------------------------------------------
