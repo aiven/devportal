@@ -193,6 +193,11 @@ a:hover {
     background-repeat: no-repeat;
     background-size: 120px;
   }
+
+  h3 > code > .pre {
+    font-weight: 700 !important;
+    color: var(--primaryColorDark) !important;
+  }
 }
 
 .gh-ribbon {
