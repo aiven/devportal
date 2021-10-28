@@ -14,13 +14,11 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
-
 # -- Project information -----------------------------------------------------
 
 project = 'Aiven Developer'
 copyright = '2021, Aiven Team'
 author = 'Aiven Team'
-
 
 # -- General configuration ---------------------------------------------------
 
@@ -31,7 +29,19 @@ extensions = [
     'sphinx_panels',
     'sphinxcontrib.mermaid',
     'sphinx_external_toc',
+    'sphinx_copybutton',
+    'sphinx_gitstamp',
+    'sphinxext.opengraph',
 ]
+
+# OpenGraph configuration
+# see all options at https://github.com/wpilibsuite/sphinxext-opengraph#options
+ogp_site_url = 'https://developer.aiven.io/'
+ogp_description_length = 200
+ogp_image = '/_static/images/site-preview.png'
+
+# Mermaid version
+mermaid_version = "8.12.0"
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -39,35 +49,67 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'README*']
+exclude_patterns = [
+    '_build', 'Thumbs.db', '.DS_Store', 'README*', 'scripts', 'utils',
+    'CONTRIBUTING.rst'
+]
 
+gitstamp_fmt = "%B %Y"
 
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
+html_favicon = './_static/images/favicon.ico'
 html_theme = 'furo'
 html_theme_options = {
     "light_css_variables": {
         "color-brand-primary": "#FF3554",
-        "font-stack": "Ubuntu, Verdana, sans-serif",
-        "color-sidebar-brand-text": "#FF3554",
+        "font-stack": "Inter, sans-serif",
+        "color-sidebar-brand-text": "#4a4b57",
+        "color-foreground-primary": "#333333",
+        "color-foreground-secondary": "#787885",
+        "color-foreground-border": "#e1e1e3",
+        "color-background-primary": "#e1e1e3",
+        "color-background-secondary": "#ffffff",
+        "color-content-foreground": "#787885",
+        "color-background-hover": "#c60443",
+        "color-background-border": "#e1e1e3",
+        "color-highlighted-background": "#1c1c2f",
+        "color-inline-code-background": "#787885",
+        "color-sidebar-background": "#e1e1e3",
+        "color-sidebar-background-border": "#e1e1e3",
+        "color-sidebar-search-background": "#fff",
+    },
+    "dark_css_variables": {
+        "color-brand-primary": "#ff3554",
+        "font-stack": "Inter, sans-serif",
+        "color-sidebar-brand-text": "#d2d2d6",
+        "color-foreground-primary": "#ffffff",
+        "color-foreground-secondary": "#83839d",
+        "color-foreground-border": "#e1e1e3",
+        "color-background-primary": "#11111e",
+        "color-background-secondary": "#1c1c2f",
+        "color-background-hover": "#ff3554",
+        "color-background-border": "#e1e1e3",
+        "color-highlighted-background": "#1c1c2f",
+        "color-inline-code-background": "#f7f7fa",
+        "color-sidebar-background": "#0b0b14",
+        "color-sidebar-background-border": "#e1e1e3",
+        "color-sidebar-search-background": "#1c1c2f",
     },
     "navigation_with_keys": True
 }
 
 pygments_style = "monokai"
-pygments_dark_style = "monokai"
-
-html_extra_path = ["robots.txt"]
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
+language = "en"
 html_static_path = ['_static']
 html_css_files = ['css/aiven.css']
-
 
 # -- Replacements -----------------------------------------------------------
 rst_epilog = """
@@ -99,7 +141,7 @@ rst_epilog = """
    :width: 24px
    :class: no-scaled-link
 
-.. |icon-elasticsearch| image:: /images/icon-elasticsearch.svg
+.. |icon-opensearch| image:: /images/icon-opensearch.png
    :width: 24px
    :class: no-scaled-link
 
@@ -112,6 +154,10 @@ rst_epilog = """
    :class: no-scaled-link
 
 .. |icon-grafana| image:: /images/icon-grafana.svg
+   :width: 24px
+   :class: no-scaled-link
+
+.. |tick| image:: /images/icon-tick.png
    :width: 24px
    :class: no-scaled-link
 

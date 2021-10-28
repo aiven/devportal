@@ -2,8 +2,9 @@
 
 {% block body -%}
 {% include "partials/icons.html" %}
+<div class="sign-up-banner">Try Aiven for free for 30-days! <a href="https://console.aiven.io/signup" target="_blank" class="get-started-link">Get started -></a></div>
 <a class="gh-ribbon gray right" href="https://github.com/aiven/devportal" target="_blank">Fork me on GitHub!</a>
-
+<br />
 <input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
 <input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
 <label class="overlay sidebar-overlay" for="__navigation"></label>
@@ -16,7 +17,6 @@
   </aside>
 </div>
 {%- endif %}
-
 <div class="page">
   <header class="mobile-header">
     <div class="header-left">
@@ -25,7 +25,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="{{ pathto(master_doc) }}"><div class="brand">{{ docstitle }}</div></a>
+      <a href="{{ pathto(master_doc) }}"><div class="brand"><div class="logo-container-mobile"></div></div></a>
     </div>
     <div class="header-right">
       <label class="toc-overlay-icon toc-header-icon{% if furo_hide_toc %} no-toc{% endif %}" for="__toc">
@@ -37,6 +37,10 @@
     <div class="sidebar-container">
       {% block left_sidebar %}
       <div class="sidebar-sticky">
+        <a href="/">
+          <div class="logo-container"></div>
+        </a>
+
         {%- for sidebar_section in sidebars %}
           {%- include sidebar_section %}
         {%- endfor %}
@@ -53,6 +57,8 @@
         {% block content %}{{ body }}{% endblock %}
       </article>
       <footer>
+        {% include "feedback-form.html" %}
+
         {% block footer %}
 
         <div class="related-information">
@@ -73,6 +79,10 @@
                rel="nofollow">
               {{ _('Show Source') }}
             </a>
+          {%- endif %}
+          {%- if gitstamp %}
+            |
+            Last updated: {{ gitstamp }}
           {%- endif %}
         </div>
         {% endblock footer %}

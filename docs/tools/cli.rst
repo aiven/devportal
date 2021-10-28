@@ -3,7 +3,7 @@ Aiven CLI
 
 Aiven offers an installable CLI (command line interface) tool. You can find it `on GitHub <https://github.com/aiven/aiven-client>`_.
 
-Getting Started
+Getting started
 ---------------
 
 The ``avn`` client is an ideal way to use Aiven's services in a scriptable way. This tool accesses the same API that powers the web console.
@@ -57,11 +57,15 @@ The billing group command also enables access to the credit code features, and d
 
 Manage the payment cards on your account.
 
+:doc:`See detailed command information <cli/card>`.
+
 
 ``cloud``
 '''''''''
 
 Use ``avn cloud list`` to see all the currently-available clouds on Aiven. This is useful for looking up the cloud name to use with ``service`` commands.
+
+:doc:`See detailed command information <cli/cloud>`.
 
 
 ``credits``
@@ -69,10 +73,14 @@ Use ``avn cloud list`` to see all the currently-available clouds on Aiven. This 
 
 Claim or view the history of credit codes.
 
+:doc:`See detailed command information <cli/credits>`.
+
 ``events``
 ''''''''''
 
 Inspect the events on your account such as the services created/deleted, and which users triggered each event.
+
+:doc:`See detailed command information <cli/events>`.
 
 ``help``
 ''''''''
@@ -92,6 +100,8 @@ Manage all the projects on your Aiven account, and switch which one is the defau
 
 Download the CA cert for this project (CA certs are common for all services in a project).
 
+:doc:`See detailed command information <cli/project>`.
+
 ``service``
 '''''''''''
 
@@ -108,12 +118,14 @@ An alternative support ticket interface to either email or the chat widget found
 
 Log in/out and manage your user tokens here. You can also create other users.
 
+:doc:`See detailed command information <cli/user>`
+
 ``vpc``
 '''''''
 
 Manage your VPC configuration including user/peer networks.
 
-General Usage
+General usage
 -------------
 
 Try the ``--json`` switch to any command to get more information, in a JSON format.

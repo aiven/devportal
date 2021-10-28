@@ -1,9 +1,7 @@
 Aiven Developer
 ===============
 
-This is a work in progress.
-
-The site will be a place to hold all our developer-facing content.
+This is the source for the Aiven developer documentation at https://developer.aiven.io. We are working to move all of our technical documentation to this platform, and welcome issues and pull requests from everyone.
 
 It is Python-based, with content in `ReStructuredText (rst) <https://docutils.sourceforge.io/rst.html>`_ and rendered by `Sphinx <https://www.sphinx-doc.org/en/master/>`_.
 
@@ -20,17 +18,29 @@ Start the HTML version with::
 
 Your preview should be at http://localhost:8000 (if anything doesn't seem to re-render well, the navigation seems particularly unreliable, try ``make clean`` and then ``make livehtml`` again).
 
+> If you are working on the templates, try the additional `make livehtmlall` command. This disables sphinx's incremental build and also observes changes to the assets, so it's slower but more like a full rebuild when things change.
+
+Windows users
+-------------
+
+Replace all `make` commands with `./make` - this uses the `make.bat` file instead of `Makefile` but the functionality should be equivalent.
+
 Making changes
 --------------
 
 Please make changes! Even small fixes are very welcome. The content is in the ``docs/`` folder, in `ReStructuredText <https://docutils.sourceforge.io/rst.html>`_.
 
-When you open a pull request, you will get a preview of your changes (useful if you or someone you want to show the work to does not have the tool set up locally). The process also runs some spelling and link checking tasks. You can also run those locally:
+When you open a pull request, you will get a preview of your changes (useful if you or someone you want to show the work to does not have the tool set up locally). The process also runs some spelling and link checking tasksi so please check the output of the build if it fails.
+
+Running build tasks locally
+---------------------------
+
+To run the spell check locally, you will need to have `Vale <https://github.com/errata-ai/vale>`_ installed on your computer and available on your path.
 
 * Check links: ``make linkcheck``
 * Check spelling: ``make spell``
 
-If the spellchecker is rejecting words that are valid (such as technology terms), double check the spelling and capitalisation, then add the word to ``.github/workflows/styles/Docs/accept.txt``.
+If the spellchecker is rejecting words that are valid (such as technology terms), double check the spelling and capitalisation, then add the word to ``.github/styles/Vocab/Docs/accept.txt``.
 
 Navigation Structure
 ~~~~~~~~~~~~~~~~~~~~
@@ -57,7 +67,7 @@ The ``:doc:`` role uses the page title but if you want to change the link text, 
 
 To create a label to link to a particular section (this is also useful if renaming titles that might have links pointing to the old wording), place the label immediately before the section heading::
 
-    .. _tools_cli_tips_tricks
+    .. _tools_cli_tips_tricks:
 
     Tips and Tricks
     ===============
@@ -72,9 +82,24 @@ Diagrams
 
 Diagrams use `sphinxcontrib-mermaid <https://github.com/mgaitan/sphinxcontrib-mermaid>`_ and `mermaid.js <https://mermaid-js.github.io/mermaid/#/>`_ syntax.
 
+Importing content
+~~~~~~~~~~~~~~~~~
+
+Some of the content for DevPortal came from a previous incarnation of documentation. There is an import script to help with this process.
+
+To set up the import tooling for the first time:
+
+* Install `pandoc <https://pandoc.org/>`_ and make sure the command is in your path
+* Change into the ``utils/`` directory
+* Run ``pip install -r requirements.txt``
+
+To bring in a page from the previous platform:
+
+* Run ``python import-help-articles.py [paste a URL]``
+* Take the resulting ``*.rst`` file and any images, and place them as appropriate in the file structure of the project
+
 License
 -------
 
 This work is licensed under a
 `Creative Commons Attribution 4.0 International License <http://creativecommons.org/licenses/by/4.0/>`_.
-

@@ -1,13 +1,13 @@
-Aiven Community
+Aiven community
 ===============
 
 There are lots of other ways to learn more about Aiven, and interact with us.
 
 **Blog**: https://aiven.io/blog - to read tech news, tutorials, and updates on what we're up to.
 
-**Aiven Console**: https://console.aiven.io - your Aiven web interface. New signups get a free trial.
+**Aiven Console**: https://console.aiven.io - your Aiven web interface. New accounts get a free trial.
 
-**Help Articles**: https://help.aiven.io - more tech facing goodness to help you get things done.
+**Help articles**: https://help.aiven.io - more tech facing goodness to help you get things done.
 
 **Twitter**: https://twitter.com/aiven_io - we love to chat! Tell us what you're building with Aiven :)
 

@@ -1,0 +1,4 @@
+DBA tasks
+=========
+
+.. tableofcontents::

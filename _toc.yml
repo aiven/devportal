@@ -3,22 +3,172 @@ options:
   maxdepth: 1
 
 entries:
-  # --------- GLOBAL -----------
-  - file: docs/products/index
+  # -------- PLATFORM-TOPICS --------
+  - file: docs/platform/index
+    title: Platform
+    entries:
+    - file: docs/platform/concepts
+      title: Concepts
+      entries:
+        - glob: docs/platform/concepts/*
+    - file: docs/platform/howto
+      title: HowTo
+      entries:
+      - file: docs/platform/howto/create_new_service
+      - file: docs/platform/howto/create_authentication_token
+      - file: docs/platform/howto/download-ca-cert
+      - file: docs/platform/howto/console-fork-service.rst
 
+  # --------- GLOBAL -----------
   - file: docs/tools/index
     entries:
       - file: docs/tools/cli
+        entries:
+        - file: docs/tools/cli/account
+          entries:
+            - glob: docs/tools/cli/account/*
+        - file: docs/tools/cli/card
+        - file: docs/tools/cli/cloud
+        - file: docs/tools/cli/credits
+        - file: docs/tools/cli/events
+        - file: docs/tools/cli/project
+        - file: docs/tools/cli/user
+          entries:
+            - glob: docs/tools/cli/user/*
+
       - file: docs/tools/api/index
         title: Aiven API
         entries:
         - glob: docs/tools/api/*
+      - file: docs/tools/terraform
+      - file: docs/tools/kubernetes
 
   # -------- PRODUCT-SPECIFIC --------
-  - file: docs/products/kafka/index
+  - file: docs/products/postgresql/index
+    title: PostgreSQL
+    entries:
+      - file: docs/products/postgresql/getting-started
+      - file: docs/products/postgresql/howto/pagila
+      - file: docs/products/postgresql/concepts
+        title: Concepts
+        entries:
+          - glob: docs/products/postgresql/concepts/*
+      - file: docs/products/postgresql/howto
+        title: HowTo
+        entries:
+          - file: docs/products/postgresql/howto/list-code-samples
+            entries:
+              - file: docs/products/postgresql/howto/connect-go
+              - file: docs/products/postgresql/howto/connect-java
+              - file: docs/products/postgresql/howto/connect-node
+              - file: docs/products/postgresql/howto/connect-php
+              - file: docs/products/postgresql/howto/connect-python
+          - file: docs/products/postgresql/howto/list-dba-tasks
+            entries:
+              - file: docs/products/postgresql/howto/upgrade
+              - file: docs/products/postgresql/howto/manage-extensions
+              - file: docs/products/postgresql/howto/create-manual-backups
+              - file: docs/products/postgresql/howto/restore-backup
+              - file: docs/products/postgresql/howto/migrate-cloud-region
+              - file: docs/products/postgresql/howto/claim-public-schema-ownership
+              - file: docs/products/postgresql/howto/manage-pool
+              - file: docs/products/postgresql/howto/pgbouncer-stats
+          - file: docs/products/postgresql/howto/list-replication-migration
+            entries:
+              - file: docs/products/postgresql/howto/create-read-replica
+              - file: docs/products/postgresql/howto/setup-logical-replication
+              - file: docs/products/postgresql/howto/migrate-aiven-db-migrate
+              - file: docs/products/postgresql/howto/migrate-pg-dump-restore
+          - file: docs/products/postgresql/howto/list-integrations
+            entries:
+              - file: docs/products/postgresql/howto/connect-psql
+              - file: docs/products/postgresql/howto/connect-pgadmin
+              - file: docs/products/postgresql/howto/visualize-grafana
+              - file: docs/products/postgresql/howto/report-metrics-grafana
+      - file: docs/products/postgresql/reference
+        title: Reference
+        entries:
+          - glob: docs/products/postgresql/reference/*
 
+  - file: docs/products/opensearch/index
+    title: OpenSearch
+    entries:
+      - file: docs/products/opensearch/getting-started
+        title: Getting started
+      - file: docs/products/opensearch/howto/sample-dataset
+      - file: docs/products/opensearch/concepts
+        title: Concepts
+        entries:
+          - file: docs/products/opensearch/concepts/access_control
+          - file: docs/products/opensearch/concepts/backups
+          - file: docs/products/opensearch/concepts/indices
+          - file: docs/products/opensearch/concepts/opensearch-vs-elasticsearch
+      - file: docs/products/opensearch/howto
+        title: HowTo
+        entries:
+          - file: docs/products/opensearch/howto/opensearch-with-curl
+          - file: docs/products/opensearch/howto/migrating_elasticsearch_data_to_aiven
+          - file: docs/products/opensearch/howto/upgrade-to-opensearch
+          - file: docs/products/opensearch/howto/opensearch-and-nodejs
+          - file: docs/products/opensearch/howto/control_access_to_content
+          - file: docs/products/opensearch/howto/restore_opensearch_backup
+          - file: docs/products/opensearch/howto/set_index_retention_patterns
+          - file: docs/products/opensearch/howto/switch_off_automatic_replication_factor_adjustment
+      - file: docs/products/opensearch/reference
+        title: Reference
+        entries:
+          - file: docs/products/opensearch/reference/plugins
+            title: Plugins
 
+  - file: docs/products/m3db/index
+    title: M3DB
+    entries:
+      - file: docs/products/m3db/getting-started
+      - file: docs/products/m3db/concepts
+        title: Concepts
+        entries:
+          - glob: docs/products/m3db/concepts/*
+      - file: docs/products/m3db/howto
+        title: HowTo
+        entries:
+          - glob: docs/products/m3db/howto/*
+      - glob: docs/products/m3db/reference/*
+
+  - file: docs/products/redis/index
+    title: Redis
+    entries:
+      - file: docs/products/redis/get-started
+      - file: docs/products/redis/concepts
+        title: Concepts
+        entries:
+          - glob: docs/products/redis/concepts/*
+      - file: docs/products/redis/howto
+        title: HowTo
+        entries:
+          - file: docs/products/redis/howto/list-code-samples
+            entries:
+              - file: docs/products/redis/howto/connect-redis-cli
+              - file: docs/products/redis/howto/connect-go
+              - file: docs/products/redis/howto/connect-node
+              - file: docs/products/redis/howto/connect-php
+              - file: docs/products/redis/howto/connect-python
+          - file: docs/products/redis/howto/list-dba-tasks
+            entries:
+              - file: docs/products/redis/howto/configure-acl-permissions
+              - file: docs/products/redis/howto/migrate-aiven-redis
+
+  - file: docs/products/grafana/index
+    title: Grafana
+    entries:
+      - file: docs/products/grafana/get-started
+      - file: docs/products/grafana/howto
+        title: HowTo
+        entries:
+          - glob: docs/products/grafana/howto/*
+      - file: docs/products/grafana/reference
+        title: Reference
+        entries:
+          - glob: docs/products/grafana/reference/*
+     
   # -------- AUXILIARY
   - file: docs/community
-
-
