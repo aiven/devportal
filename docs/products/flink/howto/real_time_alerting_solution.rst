@@ -50,6 +50,8 @@ Set up Aiven services
 Set up sample data
 ------------------
 
+Before you start, clone the `Apache Kafka Python fake data producer <https://github.com/aiven/python-fake-data-producer-for-apache-kafka>`_ Git repository to your computer and then run ``pip install -r requirements.txt`` in your local copy to make sure that the necessary dependencies are installed.
+
 1. On the *Overview* page of your ``demo-kafka`` service, click **Download** next to *Access Key*, *Access Certificate*, and *CA Certificate*, then copy the three downloaded files to a folder on your computer.
 
    You need these files when running the tool that creates the sample records.
@@ -219,7 +221,7 @@ This setup highlights the instances where the average CPU load over a windowed i
 #. Select your PostgreSQL service, enter ``CPU_OUT_AGG_PG`` as the name, select ``cpu_load_stats_agg_pg`` as the table, and enter the following as the SQL schema, then click **Create Table**:
    
    .. literalinclude:: /code/products/flink/alerting_solution_sql.md
-      :lines: 86-87
+      :lines: 86-88
       :language: sql
 
 #. Go to the **Create SQL Job** subtab.
