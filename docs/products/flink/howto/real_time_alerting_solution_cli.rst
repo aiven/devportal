@@ -19,22 +19,24 @@ This example involves creating an Apache Kafka source topic that provides a stre
 
 The article includes the steps that you need when using the `Aiven CLI <https://github.com/aiven/aiven-client>`_ along with a few different samples of how you can set thresholds for alerts. For connecting to your PostgreSQL service, this example uses the Aiven CLI calling `psql <https://www.postgresql.org/docs/current/app-psql.html>`_, but you can also use other tools if you prefer.
 
-In addition, the instructions show you how to use a separate Python tool, `Apache Kafka Python fake data producer <https://github.com/aiven/python-fake-data-producer-for-apache-kafka>`_, to create sample records for your Apache Kafka topic that provides the streamed data. The steps for using this tool include instructions for getting the necessary details and certificate files with the `Aiven web console <https://console.aiven.io>`_.
+In addition, the instructions show you how to use a separate Python tool, `Apache Kafka Python fake data producer <https://github.com/aiven/python-fake-data-producer-for-apache-kafka>`_, to create sample records for your Apache Kafka topic that provides the streamed data.
 
 
 Set up Aiven services
 ---------------------
+
+.. note::
+   The commands given in this example use ``business-4`` service plans, but you can use any other service plan instead if you prefer.
 
 1. Using the Aiven CLI, run the following command to create an Aiven for Apache Kafka service named ``demo-kafka``:
 
    ::
 
       avn service create demo-kafka               \
-          -t kafka                                \
+          --service-type kafka                    \
           --cloud CLOUD_AND_REGION                \
-          -p business-4                           \
+          --plan business-4                       \
           -c kafka.auto_create_topics_enable=true \
-          -c kafka_connect=true                   \
           -c kafka_rest=true                      \
           -c schema_registry=true                 \
           --project PROJECT_NAME
@@ -44,9 +46,9 @@ Set up Aiven services
    ::
 
       avn service create demo-postgresql          \
-          -t pg                                   \
+          --service-type pg                       \
           --cloud CLOUD_AND_REGION                \
-          -p business-4                           \
+          --plan business-4                       \
           --project PROJECT_NAME
 
 #. Run the following command to create an Aiven for Apache Flink service named ``demo-flink``:
@@ -54,30 +56,30 @@ Set up Aiven services
    ::
 
       avn service create demo-flink               \
-          -t flink                                \
+          --service-type flink                    \
           --cloud CLOUD_AND_REGION                \
-          -p business-4                           \
+          --plan business-4                       \
           --project PROJECT_NAME
 
 #. Add the ``demo-kafka`` and ``demo-postgresql`` integrations to the ``demo-flink`` service.
 
-   a. Enter the following command to add the ``demo-kafka`` service:
+   a. Enter the following command to add the ``demo-kafka`` service integration:
 
       ::
 
          avn service integration-create           \
              --project PROJECT_NAME               \
-             -t flink                             \
+             --service-type flink                 \
              -s demo-kafka                        \
              -d demo-flink
 
-   b. Enter the following command to add the ``demo-postgresql`` service:
+   b. Enter the following command to add the ``demo-postgresql`` service integration:
 
       ::
 
          avn service integration-create           \
              --project PROJECT_NAME               \
-             -t flink                             \
+             --service-type flink                 \
              -s demo-postgresql                   \
              -d demo-flink
 
@@ -87,22 +89,30 @@ Set up Aiven services
 
          avn service integration-list demo-flink
 
-   d. Copy the integration IDs for the ``demo-kafka`` and ``demo-postgresql`` services. 
-
-      You need these IDs to create tables for your Apache Flink jobs.
+      The output should show you that both ``demo-kafka`` and ``demo-postgresql`` integrations are enabled as well as the corresponding ``integration_id`` values that you need later when creating data tables.
 
 
 
 Set up sample data
 ------------------
 
-1. Log in to the `Aiven web console <https://console.aiven.io>`_ and select the ``demo-kafka`` service.
+Before you start, clone the `Apache Kafka Python fake data producer <https://github.com/aiven/python-fake-data-producer-for-apache-kafka>`_ Git repository to your computer and then run ``pip install -r requirements.txt`` in your local copy to make sure that the necessary dependencies are installed.
 
-#. On the *Overview* page, click **Download** next to *Access Key*, *Access Certificate*, and *CA Certificate*, then copy the three downloaded files to a folder on your computer.
+1. Using the Aiven CLI, run the following command to download the certificate files for your ``demo-kafka`` service:
 
-   You need these files when running the tool that creates the sample records.
+   ::
 
-#. Copy the *Host* and *Port* values on the *Overview* page of your Kafka service.
+      avn service user-creds-download demo-kafka  \
+          --username avnadmin                     \
+          -d TARGET_DIR
+
+   Replace ``TARGET_DIR`` with the path to a local folder on your computer.
+
+#. Run the following command to see the service parameters, then copy the ``host`` and ``port`` values.
+
+   ::
+
+      avn service get kafka-demo --format '{service_uri_params}'
 
 #. Run the following Python command to create the sample records using the `Apache Kafka Python fake data producer <https://github.com/aiven/python-fake-data-producer-for-apache-kafka>`_ tool:
 
@@ -142,24 +152,24 @@ This setup uses a fixed threshold to filter any instances of high CPU load to a 
 
    ::
 
-      avn service flink table create demo-flink INTEGRATION_ID  \
-          --table-name CPU_IN                                   \
-          --kafka-topic cpu_load_stats_real                     \
+      avn service flink table create demo-flink KAFKA_INTEGRATION_ID \
+          --table-name CPU_IN                                        \
+          --kafka-topic cpu_load_stats_real                          \
           --schema-sql "TABLE_SQL"
 
-   Replace ``INTEGRATION_ID`` with the ID for your ``demo-kafka`` service and replace ``TABLE_SQL`` with the following:
+   Replace ``KAFKA_INTEGRATION_ID`` with the ID for your ``demo-kafka`` service integration and replace ``TABLE_SQL`` with the following:
 
    .. literalinclude:: /code/products/flink/alerting_solution_sql.md
       :lines: 2-8
       :language: sql
 
-#. Run the following command to create another table named ``CPU_OUT_FILTER``:
+#. Run the following command to create the output table named ``CPU_OUT_FILTER``:
 
    ::
 
-      avn service flink table create demo-flink INTEGRATION_ID  \
-          --table-name CPU_OUT_FILTER                           \
-          --kafka-topic cpu_load_stats_real_filter              \
+      avn service flink table create demo-flink KAFKA_INTEGRATION_ID \
+          --table-name CPU_OUT_FILTER                                \
+          --kafka-topic cpu_load_stats_real_filter                   \
           --schema-sql "TABLE_SQL"
 
    Replace ``TABLE_SQL`` with the following:
@@ -183,15 +193,15 @@ This setup uses a fixed threshold to filter any instances of high CPU load to a 
      917bbec0-0f34-4a31-b910-c585feb95d09  305c44d9-22d5-4be8-987f-57c7642e8a89  CPU_IN
      917bbec0-0f34-4a31-b910-c585feb95d09  3d33a7c5-3716-4b21-9739-f79228f9f28f  CPU_OUT_FILTER
 
-#. Run the following command to create a job named ``simple_filter``:
+#. Run the following command to create a data pipeline job named ``simple_filter``:
 
    ::
 
       avn service flink job create demo-flink simple_filter     \
-          --table-ids TABLE_ID_1 TABLE_ID_2                     \
+          --table-ids CPU_IN_ID CPU_OUT_FILTER_ID               \
           --statement "JOB_SQL"
 
-   Replace the ``TABLE_ID_`` entries with the IDs for the ``CPU_IN`` and ``CPU_OUT_FILTER`` tables, and ``JOB_SQL`` with the following:
+   Replace the values for ``--table-ids`` with the IDs for the ``CPU_IN`` and ``CPU_OUT_FILTER`` tables, and ``JOB_SQL`` with the following:
 
    .. literalinclude:: /code/products/flink/alerting_solution_sql.md
       :lines: 17-24
@@ -207,12 +217,12 @@ This setup uses aggregation to determine instances of high CPU load during set i
 
    ::
 
-      avn service flink table create demo-flink INTEGRATION_ID  \
-          --table-name CPU_OUT_AGG                              \
-          --kafka-topic cpu_load_stats_agg                      \
+      avn service flink table create demo-flink KAFKA_INTEGRATION_ID  \
+          --table-name CPU_OUT_AGG                                    \
+          --kafka-topic cpu_load_stats_agg                            \
           --schema-sql "TABLE_SQL"
 
-   Replace ``INTEGRATION_ID`` with the ID for your ``demo-kafka`` service and replace ``TABLE_SQL`` with the following:
+   Replace ``KAFKA_INTEGRATION_ID`` with the ID for your ``demo-kafka`` service integration and replace ``TABLE_SQL`` with the following:
 
    .. literalinclude:: /code/products/flink/alerting_solution_sql.md
       :lines: 27-32
@@ -224,15 +234,15 @@ This setup uses aggregation to determine instances of high CPU load during set i
 
       avn service flink table list demo-flink
 
-#. Run the following command to create a job named ``simple_agg``:
+#. Run the following command to create a data pipeline job named ``simple_agg``:
 
    ::
 
       avn service flink job create demo-flink simple_agg        \
-          --table-ids TABLE_ID_1 TABLE_ID_2                     \
+          --table-ids CPU_IN_ID CPU_OUT_AGG_ID                  \
           --statement "JOB_SQL"
 
-   Replace the ``TABLE_ID_`` entries with the IDs for the ``CPU_IN`` and ``CPU_OUT_AGG`` tables, and ``JOB_SQL`` with the following:
+   Replace the values for ``--table-ids`` with the IDs for the ``CPU_IN`` and ``CPU_OUT_AGG`` tables, and ``JOB_SQL`` with the following:
 
    .. literalinclude:: /code/products/flink/alerting_solution_sql.md
       :lines: 35-49
@@ -280,12 +290,12 @@ This setup uses host-specific thresholds that are stored in PostgreSQL as a basi
 
    ::
 
-      avn service flink table create demo-flink INTEGRATION_ID  \
-          --table-name SOURCE_THRESHOLDS                        \
-          --jdbc-table cpu_thresholds                           \
+      avn service flink table create demo-flink POSTGRESQL_INTEGRATION_ID  \
+          --table-name SOURCE_THRESHOLDS                                   \
+          --jdbc-table cpu_thresholds                                      \
           --schema-sql "TABLE_SQL"
 
-   Replace ``INTEGRATION_ID`` with the ID for your ``demo-postgresql`` service and replace ``TABLE_SQL`` with the following:
+   Replace ``POSTGRESQL_INTEGRATION_ID`` with the ID for your ``demo-postgresql`` service integration and replace ``TABLE_SQL`` with the following:
 
    .. literalinclude:: /code/products/flink/alerting_solution_sql.md
       :lines: 57-59
@@ -295,12 +305,12 @@ This setup uses host-specific thresholds that are stored in PostgreSQL as a basi
 
    ::
 
-      avn service flink table create demo-flink INTEGRATION_ID  \
-          --table-name CPU_OUT_FILTER_PG                        \
-          --kafka-topic cpu_load_stats_real_filter_pg           \
+      avn service flink table create demo-flink KAFKA_INTEGRATION_ID  \
+          --table-name CPU_OUT_FILTER_PG                              \
+          --kafka-topic cpu_load_stats_real_filter_pg                 \
           --schema-sql "TABLE_SQL"
 
-   Replace ``INTEGRATION_ID`` with the ID for your ``demo-kafka`` service and replace ``TABLE_SQL`` with the following:
+   Replace ``KAFKA_INTEGRATION_ID`` with the ID for your ``demo-kafka`` service integration and replace ``TABLE_SQL`` with the following:
 
    .. literalinclude:: /code/products/flink/alerting_solution_sql.md
       :lines: 62-66
@@ -312,15 +322,15 @@ This setup uses host-specific thresholds that are stored in PostgreSQL as a basi
 
       avn service flink table list demo-flink
 
-#. Run the following command to create a job named ``simple_filter_pg``:
+#. Run the following command to create a data pipeline job named ``simple_filter_pg``:
 
    ::
 
-      avn service flink job create demo-flink simple_filter_pg  \
-          --table-ids TABLE_ID_1 TABLE_ID_2 TABLE_ID_3          \
+      avn service flink job create demo-flink simple_filter_pg            \
+          --table-ids CPU_IN_ID CPU_OUT_FILTER_PG_ID SOURCE_THRESHOLDS_ID \
           --statement "JOB_SQL"
 
-   Replace the ``TABLE_ID_`` entries with the IDs for the ``CPU_IN``, ``CPU_OUT_FILTER_PG``, and ``SOURCE_THRESHOLDS`` tables, and ``JOB_SQL`` with the following:
+   Replace the values for ``--table-ids`` with the IDs for the ``CPU_IN``, ``CPU_OUT_FILTER_PG``, and ``SOURCE_THRESHOLDS`` tables, and ``JOB_SQL`` with the following:
 
    .. literalinclude:: /code/products/flink/alerting_solution_sql.md
       :lines: 69-77
@@ -348,15 +358,15 @@ This setup highlights the instances where the average CPU load over a windowed i
 
    ::
 
-      avn service flink table create demo-flink INTEGRATION_ID  \
-          --table-name CPU_OUT_AGG_PG                           \
-          --jdbc-table cpu_load_stats_agg_pg                    \
+      avn service flink table create demo-flink POSTGRESQL_INTEGRATION_ID  \
+          --table-name CPU_OUT_AGG_PG                                      \
+          --jdbc-table cpu_load_stats_agg_pg                               \
           --schema-sql "TABLE_SQL"
 
-   Replace ``INTEGRATION_ID`` with the ID for your ``demo-postgresql`` service and replace ``TABLE_SQL`` with the following:
+   Replace ``POSTGRESQL_INTEGRATION_ID`` with the ID for your ``demo-postgresql`` service integration and replace ``TABLE_SQL`` with the following:
 
    .. literalinclude:: /code/products/flink/alerting_solution_sql.md
-      :lines: 86-87
+      :lines: 86-88
       :language: sql
 
 #. Run the following command to list the tables for the ``demo-flink`` service and get the IDs for the ``CPU_IN``, ``CPU_OUT_AGG_PG``, and ``SOURCE_THRESHOLDS`` tables:
@@ -365,15 +375,15 @@ This setup highlights the instances where the average CPU load over a windowed i
 
       avn service flink table list demo-flink
 
-#. Run the following command to create a job named ``simple_filter_pg_agg``:
+#. Run the following command to create a data pipeline job named ``simple_filter_pg_agg``:
 
    ::
 
-      avn service flink job create demo-flink simple_filter_pg_agg  \
-          --table-ids TABLE_ID_1 TABLE_ID_2 TABLE_ID_3              \
+      avn service flink job create demo-flink simple_filter_pg_agg     \
+          --table-ids CPU_IN_ID CPU_OUT_AGG_PG_ID SOURCE_THRESHOLDS_ID \
           --statement "JOB_SQL"
 
-   Replace the ``TABLE_ID_`` entries with the IDs for the ``CPU_IN``, ``CPU_OUT_AGG_PG``, and ``SOURCE_THRESHOLDS`` tables, and ``JOB_SQL`` with the following:
+   Replace the values for ``--table-ids`` with the IDs for the ``CPU_IN``, ``CPU_OUT_AGG_PG``, and ``SOURCE_THRESHOLDS`` tables, and ``JOB_SQL`` with the following:
 
    .. literalinclude:: /code/products/flink/alerting_solution_sql.md
       :lines: 91-124
