@@ -37,12 +37,6 @@ Set up Aiven services
    - **Kafka Connect** > **Enable**
    - **Advanced configuration** > **Add configuration option** > ``kafka.auto_create_topics_enable``, switch the setting on and then click **Save advanced configuration**
 
-#. On the *Overview page*, click **Download** next to *Access Key*, *Access Certificate*, and *CA Certificate*, then copy the three downloaded files to a folder on your computer.
-
-   You need these files when running the tool that creates the sample records.
-
-#. Copy the *Host* and *Port* values on the *Overview* page of your Kafka service.
-
 #. Select the ``demo-flink`` service and add the service integrations:
 
    a. Click **Get started** on the banner at the top of the *Overview* page.
@@ -56,34 +50,39 @@ Set up Aiven services
 Set up sample data
 ------------------
 
-Run the following Python command to create the sample records using the `Apache Kafka Python fake data producer <https://github.com/aiven/python-fake-data-producer-for-apache-kafka>`_ tool:
+1. On the *Overview* page of your ``demo-kafka`` service, click **Download** next to *Access Key*, *Access Certificate*, and *CA Certificate*, then copy the three downloaded files to a folder on your computer.
 
-::
+   You need these files when running the tool that creates the sample records.
 
-    python3 python-fake-data-producer-for-apache-kafka/metricproducer.py \
-        --cert-folder DOWNLOADED_CERTIFICATE_FOLDER \
-        --host KAFKA_HOST_ADDRESS \
-        --port KAFKA_PORT \
-        --topic-name cpu_load_stats_real \
-        --nr-messages 0 \
-        --max-waiting-time 1
+#. Copy the *Host* and *Port* values on the *Overview* page of your Kafka service.
+
+#. Run the following Python command to create the sample records using the `Apache Kafka Python fake data producer <https://github.com/aiven/python-fake-data-producer-for-apache-kafka>`_ tool:
+
+   ::
+
+      python3 python-fake-data-producer-for-apache-kafka/metricproducer.py \
+          --cert-folder DOWNLOADED_CERTIFICATE_FOLDER \
+          --host KAFKA_HOST_ADDRESS \
+          --port KAFKA_PORT \
+          --topic-name cpu_load_stats_real \
+          --nr-messages 0 \
+          --max-waiting-time 1
 
 
-Replace ``DOWNLOADED_CERTIFICATE_FOLDER`` with the folder that contains the three certificate files that you downloaded, and ``KAFKA_HOST_ADDRESS`` and ``KAFKA_PORT`` with the address and port for your Aiven for Apache Kafka service.
+   Replace ``DOWNLOADED_CERTIFICATE_FOLDER`` with the folder that contains the three certificate files that you downloaded, and ``KAFKA_HOST_ADDRESS`` and ``KAFKA_PORT`` with the address and port for your Aiven for Apache Kafka service.
 
-.. note::
-   The ``--nr-messages 0`` option creates a continuous flow of messages that never stops.
+   .. note::
+      The ``--nr-messages 0`` option creates a continuous flow of messages that never stops.
 
-This command pushes the following type of events to the ``cpu_load_stats_real`` topic in your Kafka service:
+   This command pushes the following type of events to the ``cpu_load_stats_real`` topic in your Kafka service:
 
-::
+   ::
    
-    {"hostname": "dopey", "cpu": "cpu4", "usage": 98.3335306302198, "occurred_at": 1633956789277}
-    {"hostname": "sleepy", "cpu": "cpu2", "usage": 87.28240549074823, "occurred_at": 1633956783483}
-    {"hostname": "sleepy", "cpu": "cpu1", "usage": 85.3384018012967, "occurred_at": 1633956788484}
-    {"hostname": "sneezy", "cpu": "cpu1", "usage": 89.11518629380006, "occurred_at": 1633956781891}
-    {"hostname": "sneezy", "cpu": "cpu2", "usage": 89.69951046388306, "occurred_at": 1633956788294}
-
+      {"hostname": "dopey", "cpu": "cpu4", "usage": 98.3335306302198, "occurred_at": 1633956789277}
+      {"hostname": "sleepy", "cpu": "cpu2", "usage": 87.28240549074823, "occurred_at": 1633956783483}
+      {"hostname": "sleepy", "cpu": "cpu1", "usage": 85.3384018012967, "occurred_at": 1633956788484}
+      {"hostname": "sneezy", "cpu": "cpu1", "usage": 89.11518629380006, "occurred_at": 1633956781891}
+      {"hostname": "sneezy", "cpu": "cpu2", "usage": 89.69951046388306, "occurred_at": 1633956788294}
 
 
 Create a pipeline for basic filtering
