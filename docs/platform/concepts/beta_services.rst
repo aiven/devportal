@@ -11,7 +11,7 @@ What does beta mean?
 
 Any service tagged as beta is intended as early access for use in non-production environments. You can however test them with production-like workloads so that you can gauge how the service behaves under heavy loads.
 
-Beta services are covered only by the basic tier of our support SLA, irrespective of your current support tier.
+Issues raised for beta services are considered low severity issues and are handled according to our support SLAs.
 
 Using a beta service means that you consent to us contacting you to request qualitative feedback and to test the service to help Aiven improve its product offering.
 
