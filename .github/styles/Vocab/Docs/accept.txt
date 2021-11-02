@@ -40,3 +40,4 @@ failover
 Flink
 Karapace
 subtab
+upsert
