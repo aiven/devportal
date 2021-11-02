@@ -8,6 +8,26 @@ def date_from_string(date):
 
 
 if __name__ == "__main__":
+    # prepare lookups
+    prod_names = {
+        "pg": "Aiven for PostgreSQL",
+        "cassandra": "Aiven for Cassandra",
+        "elasticsearch": "Aiven for Elasticsearch",
+        "flink": "Aiven for Apache Flink",
+        "grafana": "Aiven for Grafana",
+        "influxdb": "Aiven for InfluxDB",
+        "kafka": "Aiven for Apache Kafka",
+        "kafka_connect": "Kafka Connect",
+        "kafka_mirrormaker": "MirrorMaker",
+        "m3coordinator": "M3 Coordinator",
+        "m3aggregator": "M3 Aggregator",
+        "m3db": "Aiven for M3DB",
+        "mysql": "Aiven for MySQL",
+        "opensearch": "Aiven for OpenSearch",
+        "redis": "Aiven for Redis"
+    }
+
+    # get current data to build page
     response = requests.get("https://api.aiven.io/v1/service_versions")
     data = response.json()
     versions = []
@@ -33,7 +53,7 @@ if __name__ == "__main__":
             upgrade_to = ""
 
         versions.append([
-            version['service_type'],
+            prod_names[version['service_type']],
             version['major_version'],
             aiven_eol,
             aiven_eoa,
