@@ -91,6 +91,13 @@ Learn about the Aiven platform
 
     |icon-grafana| **Grafana** The visualization tool you need to explore and understand your data. Grafana integrates with the other services in just a few clicks.
 
+    +++
+
+    .. link-button:: docs/products/grafana/index
+        :type: ref
+        :text: Read more
+        :classes: stretched-link
+
 Tools
 -----
 
