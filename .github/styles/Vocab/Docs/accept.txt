@@ -11,6 +11,7 @@ datasource
 datastore
 [Dd]ashboards
 Distro
+[Dd]ockerized
 downsampled
 downsampling
 Elasticsearch
