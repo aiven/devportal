@@ -19,7 +19,7 @@ This example involves creating an Apache Kafka source topic that provides a stre
 
 The article includes the steps that you need when using the `Aiven CLI <https://github.com/aiven/aiven-client>`_ along with a few different samples of how you can set thresholds for alerts. For connecting to your PostgreSQL service, this example uses the Aiven CLI calling `psql <https://www.postgresql.org/docs/current/app-psql.html>`_, but you can also use other tools if you prefer.
 
-In addition, the instructions show you how to use a separate Python tool, `Apache Kafka Python fake data producer <https://github.com/aiven/python-fake-data-producer-for-apache-kafka>`_, to create sample records for your Apache Kafka topic that provides the streamed data.
+In addition, the instructions show you how to use a separate Python-based tool, `Dockerized fake data producer for Aiven for Apache Kafka <https://github.com/aiven/fake-data-producer-for-apache-kafka-docker>`_, to create sample records for your Apache Kafka topic that provides the streamed data.
 
 
 Set up Aiven services
@@ -96,41 +96,43 @@ Set up Aiven services
 Set up sample data
 ------------------
 
-Before you start, clone the `Apache Kafka Python fake data producer <https://github.com/aiven/python-fake-data-producer-for-apache-kafka>`_ Git repository to your computer and then run ``pip install -r requirements.txt`` in your local copy to make sure that the necessary dependencies are installed.
+Before you start, clone the `Dockerized fake data producer for Aiven for Apache Kafka <https://github.com/aiven/fake-data-producer-for-apache-kafka-docker>`_ Git repository to your computer.
 
-1. Using the Aiven CLI, run the following command to download the certificate files for your ``demo-kafka`` service:
+1. Follow `these instructions <https://developer.aiven.io/docs/tools/cli/user/user-access-token.html#manage-access-tokens>`_ to create an authentication token for your Aiven account.
 
-   ::
+#. Go to the data producer tool directory and copy the ``conf/env.conf.sample`` file to ``conf/env.conf``.
 
-      avn service user-creds-download demo-kafka  \
-          --username avnadmin                     \
-          -d TARGET_DIR
-
-   Replace ``TARGET_DIR`` with the path to a local folder on your computer.
-
-#. Run the following command to see the service parameters, then copy the ``host`` and ``port`` values.
+#. Edit the ``conf/env.conf`` file and update the parameters:
 
    ::
 
-      avn service get kafka-demo --format '{service_uri_params}'
+      PROJECT_NAME="AIVEN_PROJECT_NAME"
+      SERVICE_NAME="demo-kafka"
+      TOPIC="cpu_load_stats_real"
+      PARTITIONS=2
+      REPLICATION=2
+      NR_MESSAGES=200
+      MAX_TIME=0
+      SUBJECT="metrics"
+      USERNAME="AIVEN_ACCOUNT_EMAIL"
+      TOKEN="AUTHENTICATION_TOKEN"
 
-#. Run the following Python command to create the sample records using the `Apache Kafka Python fake data producer <https://github.com/aiven/python-fake-data-producer-for-apache-kafka>`_ tool:
-
-   ::
-
-      python3 python-fake-data-producer-for-apache-kafka/metricproducer.py \
-          --cert-folder DOWNLOADED_CERTIFICATE_FOLDER \
-          --host KAFKA_HOST_ADDRESS \
-          --port KAFKA_PORT \
-          --topic-name cpu_load_stats_real \
-          --nr-messages 0 \
-          --max-waiting-time 1
-
-
-   Replace ``DOWNLOADED_CERTIFICATE_FOLDER`` with the folder that contains the three certificate files that you downloaded, and ``KAFKA_HOST_ADDRESS`` and ``KAFKA_PORT`` with the address and port for your Aiven for Apache Kafka service.
+   Replace ``AIVEN_PROJECT_NAME`` and ``AIVEN_ACCOUNT_EMAIL`` with the details for your Aiven account, and replace ``AUTHENTICATION_TOKEN`` with the token that you created.
 
    .. note::
-      The ``--nr-messages 0`` option creates a continuous flow of messages that never stops.
+      The ``NR_MESSAGES`` option defines the number of messages that the tool creates when you run it. Setting this parameter to ``0`` creates a continuous flow of messages that never stops.
+
+#. Run the following command to build the Docker image:
+
+   ::
+
+      docker build -t fake-data-producer-for-apache-kafka-docker .
+
+#. Run the following command to run the Docker image:
+
+   ::
+
+      docker run fake-data-producer-for-apache-kafka-docker
 
    This command pushes the following type of events to the ``cpu_load_stats_real`` topic in your Kafka service:
 
@@ -147,6 +149,14 @@ Create a pipeline for basic filtering
 -------------------------------------
 
 This setup uses a fixed threshold to filter any instances of high CPU load to a separate Kafka topic.
+
+.. mermaid::
+
+    graph LR;
+
+        id1(Kafka source)-- metrics stream -->id2(Flink job);
+        id2-- high CPU -->id3(Kafka sink);
+
 
 1. Using the Aiven CLI, run the following command to create a Kafka table named ``CPU_IN``:
 
@@ -211,7 +221,15 @@ This setup uses a fixed threshold to filter any instances of high CPU load to a 
 Create a pipeline with windowing
 --------------------------------
    
-This setup uses aggregation to determine instances of high CPU load during set intervals.
+This setup uses :doc:`windows </docs/products/flink/concepts/windows>` to determine instances of high CPU load during set intervals based on :doc:`event time </docs/products/flink/concepts/event_processing_time>`.
+
+.. mermaid::
+
+    graph LR;
+
+        id1(Kafka source)-- timestamped metrics -->id3(Flink job);
+        id3-- 30-second average CPU -->id4(Kafka sink);
+
 
 1. Using the Aiven CLI, run the following command to create a Kafka table named ``CPU_OUT_AGG``:
 
@@ -253,6 +271,15 @@ Create a Flink SQL job using PostgreSQL thresholds
 --------------------------------------------------
 
 This setup uses host-specific thresholds that are stored in PostgreSQL as a basis for determining instances of high CPU load.
+
+.. mermaid::
+
+    graph LR;
+
+        id1(Kafka source)-- metrics stream -->id3(Flink job);
+		id2(PosgreSQL source)-- host-specific thresholds -->id3;
+        id3-- host with high CPU -->id4(Kafka sink);
+
 
 1. In the Aiven CLI, run the following command to connect to the ``demo-postgresql`` service:
    
@@ -340,7 +367,16 @@ This setup uses host-specific thresholds that are stored in PostgreSQL as a basi
 Create an aggregated data pipeline with Kafka and PostgreSQL
 ------------------------------------------------------------
 
-This setup highlights the instances where the average CPU load over a windowed interval exceeds the threshold and stores the results in PostgreSQL.
+This setup highlights the instances where the average CPU load over a :doc:`windowed interval </docs/products/flink/concepts/windows>` exceeds the threshold and stores the results in PostgreSQL.
+
+.. mermaid::
+
+    graph LR;
+
+        id1(Kafka source)-- timestamped metrics -->id3(Flink job);
+		id2(PosgreSQL source)-- host-specific thresholds -->id3;
+        id3-- high 30-second average CPU -->id4(PostgreSQL sink);
+
 
 1. In the Aiven CLI, run the following command to connect to the ``demo-postgresql`` service:
    
