@@ -1,10 +1,10 @@
-Aiven for Flink
-===============
+Aiven for Apache Flink
+=======================
 
-What is Aiven for Flink?
-------------------------
+What is Aiven for Apache Flink?
+-------------------------------
 
-Aiven for Flink is a fully managed **distributed processing engine for stateful computations over data streams**, deployable in the cloud of your choice enabling the creation of streaming data pipelines on top of your datasets.
+Aiven for Apache Flink is a fully managed **distributed processing engine for stateful computations over data streams**, deployable in the cloud of your choice enabling the creation of streaming data pipelines on top of your datasets.
 
 
 Why Flink?
@@ -13,10 +13,10 @@ Why Flink?
 Flink is a processing engine enabling the definition of streaming data pipelines with SQL statements. It can work in batch or streaming mode, it's distributed by default and performs computation at in-memory speed at any scale.
 
 
-Get started with Aiven for Flink
---------------------------------
+Get started with Aiven for Apache Flink
+---------------------------------------
 
-Take your first steps with Aiven for Flink by following our :doc:`getting-started` article, or browse through our full list of articles:
+Take your first steps with Aiven for Apache Flink by following our :doc:`getting-started` article, or browse through our full list of articles:
 
 
 .. panels::
@@ -33,21 +33,13 @@ Integrates with your existing tools
 
 Flink is highly compatible with other Aiven products for the following tasks:
 
-- Parse, transform, calculate streaming data from Aiven for Kafka.
+- Parse, transform, calculate streaming data from Aiven for Apache Kafka.
 
 - Ingest changes on relational PostgreSQL or MySQL tables.
 
 - Join data coming from various sources listed above to create complex data pipelines.
   
 - Stream the data pipeline result back to Apache Kafka or any of the supported sinks.
-
-
-
-
-Ways to use Aiven for Flink
----------------------------
-TBD
-
 
 Flink resources
 ---------------
