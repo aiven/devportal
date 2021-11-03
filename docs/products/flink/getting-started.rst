@@ -52,7 +52,7 @@ Create an Apache Flink service with the Aiven CLI
 
    See :doc:`this article </docs/tools/cli>` for instructions and more information.
 
-2. Run the following command to create your Apache Flink service::
+2. Run the following command to create your Aiven for Apache Flink service::
 
        avn service create <service_name> -t flink --cloud <cloud_provider_and_region> --plan <service_plan> wait
 
