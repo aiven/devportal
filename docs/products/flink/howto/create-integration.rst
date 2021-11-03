@@ -1,4 +1,4 @@
-Create apache Flink integrations
+Create Apache Flink integrations
 ===================================
 
 Apache Flink can create streaming data pipelines across services. Currently Aiven for Apache Flink supports Aiven for Apache Kafka and Aiven for PostgreSQL as source and target for Flink jobs.
