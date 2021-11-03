@@ -1,4 +1,4 @@
-Create a Kafka based Flink table
+Create a Kafka based Apache Flink table
 ==============================================
 
 To create a Flink table based on Aiven for Apache Kafka via Aiven console:

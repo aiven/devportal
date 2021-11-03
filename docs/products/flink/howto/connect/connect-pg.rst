@@ -1,4 +1,4 @@
-Create a PostgreSQL based Flink table
+Create a PostgreSQL based Apache Flink table
 ==============================================
 
 To create a Flink table based on Aiven for PostgreSQL via Aiven console:
