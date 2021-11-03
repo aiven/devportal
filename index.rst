@@ -104,6 +104,17 @@ Learn about the Aiven platform
         :type: ref
         :text: Read more
         :classes: stretched-link
+    
+    ---
+
+    |icon-flink| **Apache Flink** Streaming data pipelines defined in pure SQL.
+
+    +++
+
+    .. link-button:: docs/products/flink/index
+        :type: ref
+        :text: Read more
+        :classes: stretched-link
 
 Tools
 -----
