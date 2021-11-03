@@ -17,6 +17,7 @@ datastore
 [Dd]ev
 Debezium
 Distro
+[Dd]ockerized
 downsampled
 downsampling
 Elasticsearch
