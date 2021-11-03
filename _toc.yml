@@ -113,6 +113,7 @@ entries:
               - glob: docs/products/flink/howto/connect/*
           - file: docs/products/flink/howto/create-job
           - file: docs/products/flink/howto/real_time_alerting_solution
+          - file: docs/products/flink/howto/real_time_alerting_solution_cli
           - file: docs/products/flink/howto/rest-api-cheatsheet
 
 
