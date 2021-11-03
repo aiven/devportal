@@ -1,5 +1,5 @@
 Command reference: ``avn service integration``
-===============================================
+==============================================
 
 Here you’ll find the full list of commands for ``avn service integration``.
 

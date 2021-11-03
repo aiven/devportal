@@ -296,7 +296,16 @@ Service M3 commands
 ``avn service maintenance-start``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Starts the service maintenance updates.
+Starts the service maintenance updates. 
+
+.. Warning::
+
+  Maintenance updates do not typically cause any noticeable impact on the service in use but may sometimes cause a short period of lower performance or downtime which shall not exceed 1 hour.
+
+
+.. Note::
+  
+  If there are no updates available, the command will show a ``service is up to date, maintenance not required`` message.
 
 .. list-table::
   :header-rows: 1
@@ -316,7 +325,17 @@ Starts the service maintenance updates.
 ``avn service metrics``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Retrieves the metrics for a defined service.
+Retrieves the metrics for a defined service in Google chart compatible format. The list of service metrics includes:
+
+* ``cpu_usage``: CPU usage percentage
+* ``disk_usage``: Disk space usage percentage
+* ``disk_ioread``: Disk reads IOPS
+* ``disk_iowrites``: Disk writes IOPS
+* ``load_average``: 5 min CPU load average
+* ``mem_usage``: Memory usage percentage
+* ``net_receive``: Network traffic received in bytes/s
+* ``net_send``: Network traffic transmitted in bytes/s
+
 
 .. list-table::
   :header-rows: 1
@@ -327,7 +346,17 @@ Retrieves the metrics for a defined service.
   * - ``service_name``
     - The name of the service
   * - ``--period``
-    - The time period to retrieve the metrics for (possible values ``hour``, ``day``, ``week``, ``month``, ``year``)
+    - The time period to retrieve the metrics for (possible values ``hour``, ``day``, ``week``, ``month``, ``year``); the time period is relative to the current date and time, e.g. ``hour`` will retrieve metrics for the last hour.
+
+.. Note::
+
+  The **granularity** of retrieved data changes based on the ``--period`` flag:
+
+  * ``hour``: 30 seconds
+  * ``day``: 5 minutes
+  * ``week``: 30 minutes
+  * ``month``: 3 hours
+  * ``year``: 1 day
 
 **Example:** Retrieve the daily metrics for the service named ``pg-demo``.
 
@@ -386,7 +415,13 @@ Service Privatelink commands
 ``avn service queries``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Lists the service connections/queries statistics for an Aiven for PostgreSQL, Aiven for MySQL or Aiven for Redis service.
+Lists the service connections/queries statistics for an Aiven for PostgreSQL or Aiven for MySQL. 
+The list of queries data points retrievable includes:
+
+* the ``public.pg_stat_statements`` `columns <https://www.postgresql.org/docs/current/pgstatstatements.html>`_, for Aiven for PostgreSQL services.
+* the ``performance_schema.events_statements_summary_by_digest`` `columns <https://dev.mysql.com/doc/refman/8.0/en/performance-schema-statement-summary-tables.html>`_, for Aiven for MySQL services.
+
+A description of the retrieved columns for Aiven for PostgreSQL can be found in the dedicated `PostgreSQL documentation <https://www.postgresql.org/docs/current/pgstatstatements.html>`_ .
 
 .. list-table::
   :header-rows: 1
@@ -396,18 +431,21 @@ Lists the service connections/queries statistics for an Aiven for PostgreSQL, Ai
     - Information
   * - ``service_name``
     - The name of the service
+  * - ``--fromat``
+    - The format string for output defining the query metrics to retrieve, e.g. `'{calls} {total_time}'` 
 
-**Example:** List the queries for a service named ``pg-demo``.
+**Example:** List the queries for an Aiven for PostgreSQL service named ``pg-demo`` including the query blurb, number of calls and both total and mean execution time.
 
 ::
   
-  avn service queries pg-demo
+  avn service queries pg-demo --format '{query},{calls},{total_time},{mean_time}'
 
 
 ``avn service queries-reset``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Resets service connections/queries statistics for an Aiven for PostgreSQL, Aiven for MySQL or Aiven for Redis service.
+Resets service connections/queries statistics for an Aiven for PostgreSQL or Aiven for MySQL service. 
+Resetting query statistics could be useful to measure database behaviour in a precise point in time or after a change has been deployed.
 
 .. list-table::
   :header-rows: 1
