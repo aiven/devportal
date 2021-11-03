@@ -1,4 +1,4 @@
-Create a Flink job
+Create an Apache Flink job
 =================================
 
 Prerequisites
