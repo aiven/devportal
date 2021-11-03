@@ -41,3 +41,4 @@ Flink
 Karapace
 subtab
 upsert
+[Dd]ockerized
