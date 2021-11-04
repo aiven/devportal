@@ -3,38 +3,25 @@ Use Aggregations with OpenSearch and NodeJS
 
 Learn how to aggregate data using OpenSearch and its NodeJS client. In this tutorial we'll look at different types of aggregations, write and execute requests to learn more about the dataset at our hands.
 
-Grab your coffee, tea or lunch and let's dive in ☕
-
 .. note::
-    This tutorial is a continuation of :doc:`how to use OpenSearch with NodeJS <opensearch-and-nodejs>`. If you're new to OpenSearch and its JavaScript client you might want to check the previous article first.
+    If you're new to OpenSearch and its JavaScript client you might want to check :doc:`how to write search queries with OpenSearch with NodeJS <opensearch-and-nodejs>` first.
 
 Prepare the playground
 **********************
 
-In the :doc:`previous tutorial <opensearch-and-nodejs>` we've learned how to setup an OpenSearch cluster and its JavaScript client, how to index data and retrieve a dynamically created schema. Use this knowledge to prepare your playground for aggregations:
+We prepared a detailed guidance on :doc:`how to prepare your playground <setup-opensearch-and-nodejs-playground>`. Follow the steps to setup an OpenSearch cluster and its JavaScript client, index example data and retrieve a dynamically created schema.
 
-You'll need an OpenSearch cluster and a NodeJS project. Make sure that you have `the necessary essentials <https://developer.aiven.io/docs/products/opensearch/howto/opensearch-and-nodejs.html#prerequisites>`_ in place, that you're `connected to the OpenSearch cluster <https://developer.aiven.io/docs/products/opensearch/howto/opensearch-and-nodejs.html#connect-to-opensearch>`_ and have `example data already ingested <https://developer.aiven.io/docs/products/opensearch/howto/opensearch-and-nodejs.html#load-example-recipe-data-and-ingest-it-into-the-cluster>`_.
+You can also clone the final demo project from `GitHub repository <https://github.com/aiven/demo-open-search-node-js>`_. You'll find the code for aggregations in `aggregate.js <https://github.com/aiven/demo-open-search-node-js/blob/main/aggregate.js>`_.
 
-You can also clone the final demo project from `GitHub repository <https://github.com/aiven/demo-open-search-node-js>`_. You'll find the code for aggregations in the `aggregate.js <https://github.com/aiven/demo-open-search-node-js/blob/main/aggregate.js>`_.
+Aggregations
+************
 
-
-About aggregations
-******************
-
-Alongside the search functionality, OpenSearch offers a powerful analytics engine able to perform aggregations of big data and extract statistics and metrics in just milliseconds. Results of the aggregations can be then visualised with OpenSearch Dashboards.
-
-In this tutorial we'll write and run examples for three different types of aggregations: metric, bucket and pipeline.
-
-* **metric aggregation** performs simple calculations on values extracted from the fields of the documents, for example finding minimum or maximum value, calculating average or collecting statistics about field values.
-
-* **bucket aggregation** distributes documents over a set of buckets based on provided criteria. For example, based on predefined ranges of values or based on how often a value is encountered in a field. Bucket aggregation is also used to create histograms.
-
-* **pipeline aggregations** combine several aggregations in a way that allows using a result of one aggregation as an intermediate step to create a refined output. With pipeline aggregations you can build moving averages, cumulative sums and perform a variety of other mathematical calculations over the data in your documents.
+In this tutorial we'll write and run examples for three different types of aggregations: metric, bucket and pipeline. You can read more about aggregations in :doc:`a concept article <../concepts/aggregations>`.
 
 Structure and syntax
 --------------------
 
-To calculate an aggregation, create a request and then send it to the ``search()`` endpoint (the same we've used for search queries).
+To calculate an aggregation, create a request and then send it to the ``search()`` endpoint (the same we used for search queries).
 
 The request body should include an object with the key ``aggs`` (or you can use a longer word ``aggregations``). Specify in this object **a name** of your aggregation (we might want to reference each aggregation individually), **an aggregation type** and **a set of properties** specific for the given aggregation type.
 
@@ -170,10 +157,16 @@ Run the method to make sure that we still can calculate the average rating ::
 
     run-func aggregate metric avg rating
 
+And because we like clean code, move and export the ``logAggs`` function from ``helpers.js`` and reference it in ``aggregate.js``.
+
+.. code-block:: javascript
+
+    const { logAggs } = require("./helpers");
+
 Other simple metrics
 --------------------
 
-We can use the method we've created to run other types of metric aggregations, for example, to find what is minimum sodium value in our recipes:
+We can use the method we created to run other types of metric aggregations, for example, to find what is minimum sodium value in our recipes:
 
 ::
 
@@ -201,7 +194,7 @@ Calculating cardinality for sodium and other fields and see what conclusions you
 Field statistics
 ----------------
 
-A multi-value aggregation returns an object rather than a single value. An example of such aggregation are statistics and we can continue using the method we've created to explore different types of computed statistics.
+A multi-value aggregation returns an object rather than a single value. An example of such aggregation are statistics and we can continue using the method we created to explore different types of computed statistics.
 
 Get a set of metrics (``avg``, ``count``, ``max``, ``min`` and ``sum``) by using ``stats`` aggregation type:
 
@@ -269,11 +262,11 @@ Calculate percentiles for `calories`:
       }
     }
 
-From the returned result you can see that 50% of recipes have less than 331 calories. Interestingly, only one percent of the meals is more than 3256 calories. You must be curious what falls within that last percentile ;) Now that we know the value to look for, we can use `a range query <https://developer.aiven.io/docs/products/opensearch/howto/opensearch-and-nodejs.html#find-fields-with-a-value-within-a-range>`_ to find the recipes:
+From the returned result you can see that 50% of recipes have less than 331 calories. Interestingly, only one percent of the meals is more than 3256 calories. You must be curious what falls within that last percentile ;) Now that we know the value to look for, we can use `a range query <https://developer.aiven.io/docs/products/opensearch/howto/opensearch-and-nodejs.html#find-fields-with-a-value-within-a-range>`_ to find the recipes. Set the minimum value, but keep the maximum empty to allow no bounds:
 
 ::
 
-    run-func index rangeSearch calories 3256
+    run-func search range calories 3256
 
 ::
 
@@ -509,7 +502,7 @@ Now the list of buckets contains 30 items.
 Find least frequent items
 -------------------------
 
-Have you noticed that the buckets created with the help of ``terms`` aggregation are sorted by their size in descending order? You might wonder, what can you do to find the least frequent items.
+Did you notice that the buckets created with the help of ``terms`` aggregation are sorted by their size in descending order? You might wonder, what can you do to find the least frequent items.
 
 You can use ``rare_terms`` aggregations! ``rare_terms`` creates a set of buckets sorted by number of documents in ascending order. As a result, the most rarely used items will be at the top of the response.
 
@@ -545,7 +538,7 @@ You can use ``rare_terms`` aggregations! ``rare_terms`` creates a set of buckets
 
 ::
 
-    run-func aggregate terms categories.keyword 3
+    run-func aggregate rareTerms categories.keyword 3
 
 The result will return us all the categories with at most three documents each. Frankly, I believe waffle category deserves more recipes! 🧇
 
@@ -554,7 +547,7 @@ Histograms
 
 The story of bucket aggregations won't be complete without speaking about histograms. Histograms aggregate date based on provided interval. And since we have a `date` property, we'll build a date histogram.
 
-The format of the histogram aggregation is similar to what we've seen so far, so we can create a new method almost identical to previous ones:
+The format of the histogram aggregation is similar to what we saw so far, so we can create a new method almost identical to previous ones:
 
 .. code-block:: javascript
 
@@ -610,7 +603,7 @@ Interval can be from `minute` up to a `year`.
 
 You should see a list of buckets, one per each year starting at 1996 and up to 2016, with ``doc_count`` indicating how many recipes belong to each year. Most of the data items are marked by year 2004.
 
-Now that we've seen examples of metric and bucket aggregations, time to learn advanced concepts of pipeline aggregations.
+Now that we saw examples of metric and bucket aggregations, time to learn advanced concepts of pipeline aggregations.
 
 Pipeline aggregations
 *********************
@@ -621,7 +614,7 @@ When working with continuously incoming data we might want to understand the tre
 
 OpenSearch allows "piping" the results of one aggregation into the different one to achieve more granular analysis through an intermediate step.
 
-To demonstrate an example of pipeline aggregations, we'll look at the moving average of number of recipes added throughout the years. With the help of what we've learned so far and a couple of new tools we can do the following:
+To demonstrate an example of pipeline aggregations, we'll look at the moving average of number of recipes added throughout the years. With the help of what we learned so far and a couple of new tools we can do the following:
 
 1. Create a date histogram to divide documents across years (we name it `date_histogram`)
 2. Create a metric aggregation to count documents added per year (we name it `new_recipes`)
@@ -757,7 +750,7 @@ For every data point (a year in our case) we take the count of added recipes, ad
 Other moving functions
 ----------------------
 
-We've used one of existing built-in functions ``MovingFunctions.unweightedAvg(values)``, which as its name says calculates unweighted average. Unweighted in this context means that the function does not perform any time-dependent weighting.
+We used one of existing built-in functions ``MovingFunctions.unweightedAvg(values)``, which as its name says calculates unweighted average. Unweighted in this context means that the function does not perform any time-dependent weighting.
 
 You can also use other functions such as max(), min(), stdDev() and sum(). Additionally, you can write your own functions, such as
 
@@ -775,13 +768,13 @@ What's next
 
 This was a long ride, hopefully you have a better understanding now how to use aggregations with OpenSearch and its NodeJS client. The best way to deepen the knowledge on these concepts is to play and experiment with different types of aggregations.
 
-We've covered some of the examples, but `OpenSearch documentation <https://opensearch.org/docs/latest/opensearch/aggregations/>`_ contains way more. Check OpenSearch docs, as well as other resources listed below to learn more.
+We covered some of the examples, but `OpenSearch documentation <https://opensearch.org/docs/latest/opensearch/aggregations/>`_ contains way more. Check OpenSearch docs, as well as other resources listed below to learn more.
 
 
 Resources
 *********
 
-* `Demo GitHub repository <https://github.com/aiven/demo-open-search-node-js>`_ - where all the examples we've run in this tutorial can be found
+* `Demo GitHub repository <https://github.com/aiven/demo-open-search-node-js>`_ - where all the examples we run in this tutorial can be found
 * :doc:`Previous chapter of the tutorial <opensearch-and-nodejs>` - learn how to use OpenSearch with NodeJS to make search queries
 * :doc:`How to use OpenSearch with curl <opensearch-with-curl>`
 * `GitHub repository for OpenSearch JavaScript client  <https://github.com/opensearch-project/opensearch-js>`_
