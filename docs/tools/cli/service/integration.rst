@@ -28,10 +28,10 @@ Creates a new service integration.
     - The integration source endpoint ID
   * - ``--dest-endpoint-id``
     - The integration destination endpoint ID
-  * - ``--user-config-json`` 
+  * - ``--user-config-json``
     - The integration parameters as JSON string or path to file (preceded by ``@``)
   * - ``-c KEY=VALUE``
-    - The custom configuration settings. 
+    - The custom configuration settings.
 
 .. Note::
 
@@ -73,7 +73,7 @@ Deletes a service integration.
 ``avn service integration-endpoint-create``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Creates an external service integration endpoint. 
+Creates an external service integration endpoint.
 
 .. list-table::
   :header-rows: 1
@@ -88,7 +88,7 @@ Creates an external service integration endpoint.
   * - ``--user-config-json``
     - The endpoint configuration in JSON format or as path to a file (preceded by ``@``)
   * - ``-c KEY=VALUE``
-    - The custom configuration settings. 
+    - The custom configuration settings.
 
 **Example:** Create an external Apache Kafka endpoint named ``demo-ext-kafka``.
 
@@ -188,7 +188,7 @@ Updates a service integration endpoint.
   * - ``--user-config-json``
     - The endpoint configuration in JSON format or as path to a file (preceded by ``@``)
   * - ``-c KEY=VALUE``
-    - The custom configuration settings. 
+    - The custom configuration settings.
 
 **Example:** Update an external Apache Kafka endpoint with id ``821e0144-1503-42db-aa9f-b4aa34c4af6b``.
 
@@ -210,7 +210,7 @@ Lists the integrations defined for a selected service.
     - Information
   * - ``service_name``
     - The name of the service
-  
+
 **Example:** List all integrations for the service named ``demo-pg``.
 
 ::
@@ -235,7 +235,7 @@ An example of ``account service integration-list`` output:
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Lists all available integration types for given project.
-  
+
 **Example:** List all integration types for the currently selected project.
 
 ::
@@ -273,11 +273,11 @@ Updates an existing service integration.
     - Information
   * - ``integration_id``
     - The ID of integration
-  * - ``--user-config-json`` 
+  * - ``--user-config-json``
     - The integration parameters as JSON string or path to file (preceded by ``@``)
   * - ``-c KEY=VALUE``
-    - The custom configuration settings. 
-  
+    - The custom configuration settings.
+
 
 **Example:** Update the service integration with ID  ``8e752fa9-a0c1-4332-892b-f1757390d53f`` changing the Aiven for Kafka topic storing the logs to ``test_pg_log``.
 
