@@ -28,7 +28,7 @@ Take your first steps with Aiven for M3 by following our :doc:`getting-started` 
 
 .. panels::
 
-    📚 :doc:`concepts`
+    📚 :doc:`Concepts <concepts>`
 
     ---
 
