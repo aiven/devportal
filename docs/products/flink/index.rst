@@ -12,6 +12,12 @@ Why Flink?
 
 Flink is a processing engine enabling the definition of streaming data pipelines with SQL statements. It can work in batch or streaming mode, it's distributed by default and performs computation at in-memory speed at any scale.
 
+A major benefit of Apache Flink lies in the differences between data streams and databases. Compared to databases, where you might have automation to process the accumulated data at certain intervals, working with data streams allows you to analyze and process the data in real time. This means that you can use Apache Flink to configure solutions for real-time alerting or triggering operations instead of using less efficient solutions.
+
+Another benefit is the ability to filter and transform incoming data in real time. For example, in cases where compliance requirements necessitate that you can ensure limited visibility and access to certain data, the capability to process incoming data directly can be a significant factor. Using Apache Flink, you can configure data pipelines to handle the incoming data and store or deliver it differently according to the type of the data or content. You can also transform the data according to your needs, or combine sources to enrich the data.
+
+While the choice between data streams and databases depends largely on your use case and goals, SQL is a key part of constructing data pipelines in Apache Flink, making it quite an approachable data stream processing option for people who are already familiar with databases.
+
 
 Get started with Aiven for Apache Flink
 ---------------------------------------
