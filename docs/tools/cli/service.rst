@@ -294,10 +294,6 @@ Starts the service maintenance updates.
   Maintenance updates do not typically cause any noticeable impact on the service in use but may sometimes cause a short period of lower performance or downtime which shall not exceed 1 hour.
 
 
-.. Note::
-  
-  If there are no updates available, the command will show a ``service is up to date, maintenance not required`` message.
-
 .. list-table::
   :header-rows: 1
   :align: left
@@ -312,6 +308,10 @@ Starts the service maintenance updates.
 ::
 
     avn service maintenance-start pg-demo
+
+.. Note::
+  
+  If there are no updates available, the command will show a ``service is up to date, maintenance not required`` message.
 
 ``avn service metrics``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -390,8 +390,8 @@ A description of the retrieved columns for Aiven for PostgreSQL can be found in 
     - Information
   * - ``service_name``
     - The name of the service
-  * - ``--fromat``
-    - The format string for output defining the query metrics to retrieve, e.g. `'{calls} {total_time}'` 
+  * - ``--format``
+    - The format string for output defining the query metrics to retrieve, e.g. ``'{calls} {total_time}'`` 
 
 **Example:** List the queries for an Aiven for PostgreSQL service named ``pg-demo`` including the query blurb, number of calls and both total and mean execution time.
 
