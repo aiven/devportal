@@ -3,8 +3,53 @@ Tutorials
 
 In this section you will find links to tutorials on variety of topics covering our products, tools and other technologies that can be useful for you.
 
-* :doc:`High availability in Aiven for Redis <../products/redis/concepts/high-availability-redis>` - ``Redis`` ``advanced``
-* :doc:`Connect Postgres with Go <../products/redis/concepts/high-availability-redis>` - ``Postgres`` ``Go`` ``beginners``
-* :doc:`Step by step guide how to use OpenSearch with NodeJS <../products/redis/concepts/high-availability-redis>` - ``OpenSearch`` ``NodeJS`` ``beginners`` ``cli``
-* :doc:`Write data to M3DB with Go <../products/redis/concepts/high-availability-redis>` - ``M3`` ``Go`` ``beginners``
-* :doc:`Set index retention patterns for OpenSearch <../products/redis/concepts/high-availability-redis>` - ``OpenSearch`` ``advanced``
+.. panels::
+
+    |icon-opensearch|
+    :badge:`NodeJS,cls=badge-primary text-white badge-pill`
+    :badge:`novice,cls=badge-secondary text-white badge-pill`
+    ^^^^^^^^^^^^^^
+
+    **Prepare a playground to experiment with OpenSearch and NodeJS**
+
+    This tutorial will help you prepare your development environment and OpenSearch cluster to run search and aggregation queries.
+
+    ++++++++++++++
+
+    .. link-button:: ../products/opensearch/howto/opensearch-and-nodejs.html
+        :text: Read
+        :classes: stretched-link
+
+    ---
+
+    |icon-opensearch|
+    :badge:`NodeJS,cls=badge-primary text-white  badge-pill`
+    :badge:`novice,cls=badge-secondary text-white badge-pill`
+    ^^^^^^^^^^^^^^
+
+    **Write search queries with OpenSearch and NodeJS**
+
+    Learn how the OpenSearch JavaScript client gives a clear and useful interface to communicate with an OpenSearch cluster and run search queries
+
+    ++++++++++++++
+
+    .. link-button:: ../products/opensearch/howto/opensearch-and-nodejs.html
+        :text: Read
+        :classes: stretched-link
+
+    ---
+
+    |icon-opensearch|
+    :badge:`NodeJS,cls=badge-primary text-white  badge-pill`
+    :badge:`intermediate,cls=badge-secondary text-white badge-pill`
+    ^^^^^^^^^^^^^^
+
+    **Use Aggregations with OpenSearch and NodeJS**
+
+    Learn how to aggregate data using OpenSearch and its NodeJS client. In this tutorial we’ll look at different types of aggregations, write and execute requests to learn more about the dataset at our hands.
+
+    ++++++++++++++
+
+    .. link-button:: ../products/opensearch/howto/opensearch-and-nodejs.html
+        :text: Read
+        :classes: stretched-link

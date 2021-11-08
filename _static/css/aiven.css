@@ -472,3 +472,7 @@ h3 > code > .pre {
   color: var(--linkActive);
   text-decoration-color: var(--linkActive) !important;
 }
+
+.card-header .card-text img {
+  vertical-align: middle !important;
+}
