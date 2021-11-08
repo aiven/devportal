@@ -1,17 +1,17 @@
 Telegraf to M3 to Grafana Example
-================================
+=================================
 
-Aiven M3 + Telegraf Set up
---------------------------
+Aiven for M3 + Telegraf set up
+------------------------------
 At a high level, here’s how to set up Telegraf to push metrics to Aiven for M3.
 
-1. Create Aiven M3 Service.
+1. Create Aiven for M3 Service
 2. Install and configure Telegraf Agent
-3. Setup Aiven Grafana instance for visualization of telegraph metrics
+3. Setup Aiven for Grafana instance for visualization of telegraph metrics
 4. Enjoy the fruits of your labor!
 
-Create Aiven M3 Service
------------------------
+Create Aiven for M3 service
+---------------------------
 If you don’t have an existing Aiven account, please follow this link to sign up for a free 30 day trial with
 $300 of credits: https://console.aiven.io/signup
 
@@ -23,6 +23,7 @@ Within your existing Aiven project, create a new M3 service.
 
 .. image:: /images/products/m3db/telegraf-m3-example/m3_telegraph_01.png
    :alt: Screenshot creating M3 service
+
 4. Select a service plan type. Startup-8 will be fine for this demo.
 
 .. tip::
@@ -59,7 +60,7 @@ Use the Telegraf agent to generate a default config file for editing::
 
 Modify the **telegraf.conf** config file to change the output endpoint to that of our M3 instance.
 
-Change the URL under the ``outputs.influxdb`` section to that of your Aiven M3 service (see above).
+Change the URL under the ``outputs.influxdb`` section to that of your Aiven for M3 service (see above).
 **NOTE:** The URL prefix should simply be ``https://`` and remove the ``username:password`` from the URI (see snippet below).
 
 Specify the service username/password and set the database name to ``default``
@@ -87,8 +88,8 @@ Wait 10 seconds or so (the default collection interval) to see if there are any 
 		2021-10-08T01:21:15Z I! Tags enabled: host=MacBook-Pro
 		2021-10-08T01:21:15Z I! [agent] Config: Interval:10s, Quiet:false, Hostname:"MacBook-Pro", Flush Interval:10s
 
-Create Aiven Grafana Service
-----------------------------
+Create Aiven for Grafana service
+--------------------------------
 In the Aiven Console, navigate to the M3 service and click the ‘Manage integrations’.
 Connect your M3 instance to a new Grafana dashboard service.
 
@@ -133,7 +134,7 @@ Once the service is running, click on the Service URI and login with the user / 
 .. image:: /images/products/m3db/telegraf-m3-example/m3_telegraph_10.png
    :alt: Grafana Service Login
 
-Visualizing Metrics
+Visualizing metrics
 -------------------
 Now to what we all have been waiting for, the **Metrics**!
 
