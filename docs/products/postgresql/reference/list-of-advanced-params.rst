@@ -38,6 +38,12 @@ General parameters
   * - ``pg.deadlock_timeout``
     - integer
     - Amount of waiting time on a lock, in milliseconds, before the check to see if there is a deadlock condition.
+
+  * - ``pg.default_toast_compression``
+    - string
+    - Specifies the default TOAST compression method for values of compressible columns. Available since PostgreSQL version 14.
+
+      The default value is ``lz4``. Valid values: are ``lz4``, ``pglz``.
   * - ``pg.idle_in_transaction_session_timeout``
     - integer
     - Times out all sessions with open transactions after this time in milliseconds.
