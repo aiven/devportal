@@ -1,16 +1,19 @@
 Monitor PostgreSQL metrics with pgwatch2
 ========================================
 
-`pgwatch2`_ is an open source monitoring solution for PostgreSQL, created by CYBERTEC. It can be used to monitor instances of Aiven for PostgreSQL.
+`pgwatch2`_ is an open source monitoring solution for PostgreSQL, created by CYBERTEC and can be used to monitor instances of Aiven for PostgreSQL collecting key PostgreSQL metrics and also gathering data from a wide range of PostgreSQL extensions. 
 
-Besides collecting key PostgreSQL metrics, pgwatch2 can also gather data from a range of PostgreSQL extensions -- some of which are typically available in PostgreSQL installations, as well as more exotic ones unlikely to be enabled in managed PostgreSQL environments (e.g. due to security concerns; see :doc:`../reference/list-of-extensions` and :doc:`../howto/manage-extensions` for details about supported PostgreSQL extensions on the Aiven platform).
+.. Note::
 
-Preparing an Aiven for PostgreSQL instance for pgwatch2
+    Aiven for PostgreSQL supports the most popular extensions, but, due to security implication, can't support all the available extensions. 
+    Check :doc:`../reference/list-of-extensions` and :doc:`../howto/manage-extensions` for details on the supported PostgreSQL extensions on the Aiven platform.
+
+Prepare an Aiven for PostgreSQL instance for pgwatch2
 -------------------------------------------------------
 
 The following steps need to be executed on the Aiven for PostgreSQL instance to be monitored with pgwatch2:
 
-1. Create a user for pgwatch2 (with a sensible password, obviously)::
+1. Create a user for pgwatch2 (with a sensible password)::
 
     CREATE USER pgwatch2 WITH PASSWORD 'password';
 
@@ -22,7 +25,7 @@ The following steps need to be executed on the Aiven for PostgreSQL instance to 
 
     GRANT pg_read_all_stats TO pgwatch2;
 
-4. If you want to collect data gathered by the excellent ``pg_stat_statements`` extension, this extensions needs to to be enabled as well::
+4. If you want to collect data gathered from the ``pg_stat_statements`` extension, it needs to be enabled::
 
     CREATE EXTENSION IF NOT EXISTS pg_stat_statements;
 
@@ -30,18 +33,19 @@ The following steps need to be executed on the Aiven for PostgreSQL instance to 
     .. warning::  According to the `PostgreSQL documentation`_, setting ``track_io_timing = on`` can cause significant overhead.
 
 
-Running pgwatch2 (example)
---------------------------
+Running pgwatch2
+----------------
 
 pgwatch2 has multiple `installation options`_ to choose from. For the sake of simplicity, the following example uses `ad-hoc mode`_ with a Docker container::
 
     docker run --rm -p 3000:3000 -p 8080:8080 \
-        -e PW2_ADHOC_CONN_STR=postgres://pgwatch2:password@pg-prod-myproject.aivencloud.com:12691/defaultdb?sslmode=require \
+        -e PW2_ADHOC_CONN_STR=postgres://pgwatch2:password@HOST:PORT/defaultdb?sslmode=require \
         -e PW2_ADHOC_CONFIG=rds --name pw2 cybertec/pgwatch2-postgres
 
-This runs pgwatch2 with the container image provided by CYBERTEC. ``PW2_ADHOC_CONN_STR`` is set to the connection string of the PostgreSQL instance to be monitored, copied from the `Aiven web console`_ (except the username/password have been replaced by the ones specifically created for pgwatch2). Please consult the `pgwatch2 documentation`_ to decide on the best way to set up pgwatch2 in your environment.
+This runs pgwatch2 with the container image provided by CYBERTEC. ``PW2_ADHOC_CONN_STR`` is set to the connection string of the PostgreSQL instance to be monitored, copied from the `Aiven web console`_ replacing the username/password have been replaced by the ones specifically created for pgwatch2. Please consult the `pgwatch2 documentation`_ to decide on the best way to set up pgwatch2 in your environment.
 
-Please note that pgwatch2 ships with several dashboards that rely on extensions not available in Aiven for PostgreSQL, so it is to be expected that some dashboards are either empty or even display error symbols.
+.. Note::
+    pgwatch2 contains several dashboards that rely on extensions not available in Aiven for PostgreSQL, so it is to be expected that some dashboards are either empty or display error symbols.
 
 .. image:: /images/products/postgresql/pgwatch2.png
    :alt: Screenshot of a pgwatch2 Dashboard
