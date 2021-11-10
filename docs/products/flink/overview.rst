@@ -39,7 +39,7 @@ Managed service features
   Aiven has configured periodic checkpoints to be persisted externally in object storage. These allow Flink to recover state and positions in the data streams to provide failure-free execution.
 
 **End-to-end security**
-  All services run on a dedicated virtual machine with end-to-end encryption, and all nodes are firewalled.
+  All services run on a dedicated virtual machine with end-to-end encryption, and all nodes are firewall-protected.
 
 **Cluster logging, metrics, and alerting**
   Administrators can configure log and metrics integrations to Aiven services so that you can monitor the health of your service.
