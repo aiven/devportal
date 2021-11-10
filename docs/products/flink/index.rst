@@ -1,10 +1,12 @@
-Aiven for Apache Flink
-=======================
+Aiven for Apache Flink ``beta``
+===============================
 
 What is Aiven for Apache Flink?
 -------------------------------
 
-Aiven for Apache Flink is a fully managed **distributed processing engine for stateful computations over data streams**, deployable in the cloud of your choice enabling the creation of streaming data pipelines on top of your datasets.
+Aiven for Apache Flink beta is powered by the open-source framework Apache Flink, a **distributed processing engine for stateful computations over data streams**. It enables you to easily get started with real-time stream processing using SQL.
+
+With the launch of this service, data pipelines on Aiven now support data processing. The service is currently available as a beta release and is intended for **non-production use**. We welcome your feedback on the service and feature requests via our support channel.
 
 
 Why Flink?
@@ -19,33 +21,29 @@ A key part of data stream processing is the ability to filter and transform inco
 While the optimal solution depends largely on your use case and goals, the versatility of Apache Flink makes it a good option for many situations. As it uses SQL as a key part of constructing data pipelines, it is quite an approachable option for people who are already familiar with databases and batch processing. However, there are some relevant concepts (such as :doc:`windows <concepts/windows>`, :doc:`watermarks <concepts/watermarks>`, and :doc:`checkpoints <concepts/checkpoints>`) that are worth knowing if you are new to data stream processing.
 
 
-Get started with Aiven for Apache Flink
----------------------------------------
+Get started with Aiven for Apache Flink ``beta``
+------------------------------------------------
 
 Take your first steps with Aiven for Apache Flink by following our :doc:`getting-started` article, or browse through our full list of articles:
 
 
 .. panels::
 
-    📙 :doc:`concepts`
+    📖 :doc:`Overview <overview>`
+
+    ---
+
+    💻 :doc:`Getting started <getting-started>`
+
+    ---
+
+    📙 :doc:`Concepts <concepts>`
 
     ---
 
     💻 :doc:`howto`
 
 
-Integrates with your existing tools
-------------------------------------
-
-Flink is highly compatible with other Aiven products for the following tasks:
-
-- Parse, transform, calculate streaming data from Aiven for Apache Kafka.
-
-- Ingest changes on relational PostgreSQL or MySQL tables.
-
-- Join data coming from various sources listed above to create complex data pipelines.
-  
-- Stream the data pipeline result back to Apache Kafka or any of the supported sinks.
 
 Flink resources
 ---------------
