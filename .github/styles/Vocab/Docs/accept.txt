@@ -105,3 +105,6 @@ Untrusted
 wget
 Zabbix
 Zipkin
+Debezium
+Avro
+[Ss]ubnet
