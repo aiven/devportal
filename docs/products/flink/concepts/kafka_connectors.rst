@@ -43,6 +43,10 @@ In addition, choose upsert connectors if you want to provide the output as a com
 Requirements for each connector type
 ------------------------------------
 
+.. note::
+
+   Aiven for Apache Flink supports the following data formats: JSON (default), Apache Avro, Confluent Avro, Debezium CDC. For more information on these, see the `Apache Flink documentation on formats <https://ci.apache.org/projects/flink/flink-docs-release-1.13/docs/connectors/table/formats/overview/>`_.
+
 **Key data format**
   This sets the format that is used to convert the *key* part of Kafka messages.
 
