@@ -39,3 +39,29 @@ If you want to use multiple data streams as a source, but have the results for m
 
 In addition, choose upsert connectors if you want to provide the output as a compacted topic and read only the latest value for each message key.
 
+
+Requirements for each connector type
+------------------------------------
+
+**Key data format**
+  This sets the format that is used to convert the *key* part of Kafka messages.
+
+  This is optional for standard Kafka connectors, but required for upsert Kafka connectors.
+
+**Key fields**
+  This defines the columns from the SQL schema of the data table that are considered keys in the Kafka messages.
+
+  For standard Kafka connectors, this is required if you select a **Key data format**. It is not available for upsert Kafka connectors.
+
+**Value data format**
+  This sets the format that is used to convert the *value* part of Kafka messages.
+
+  This is required for both types of Kafka connector.
+
+**Primary key**
+  This defines the column in the SQL schema that is used to identify each message. Flink uses this to determine whether to insert a new message or update or delete an existing message.
+
+  Required for upsert Kafka connectors and defined with the ``PRIMARY KEY`` entry in the SQL schema for the data table. For example::
+
+      PRIMARY KEY (hostname) NOT ENFORCED
+
