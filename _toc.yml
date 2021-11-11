@@ -18,6 +18,7 @@ entries:
       - file: docs/platform/howto/create_authentication_token
       - file: docs/platform/howto/download-ca-cert
       - file: docs/platform/howto/console-fork-service.rst
+      - file: docs/platform/howto/tag-resources.rst
 
   # --------- GLOBAL -----------
   - file: docs/tools/index
