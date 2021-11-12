@@ -5,6 +5,9 @@ API
 APIs
 [Bb]oolean
 [Bb]usiness
+config
+[Cc][Pp][Uu]
+[Cc]trl
 cyber
 datacenter
 datasource
@@ -23,6 +26,7 @@ geospatial
 [Gg]o
 Grafana
 hardcoded
+[Hh]omebrew
 Heatmap
 [Hh]obbyist
 [Hh]ostname
@@ -38,6 +42,7 @@ Kubernetes
 kuromoji
 Lua
 Lucene
+Macbook
 Memorystore
 [Nn]amespace
 NodeJS
@@ -67,7 +72,7 @@ sharding
 signups
 Singlestat
 Statusmap
-Telegraf
+[Tt]elegraf
 Terraform
 Terraforming
 TimescaleDB
