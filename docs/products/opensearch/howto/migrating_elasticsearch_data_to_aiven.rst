@@ -41,15 +41,34 @@ To migrate or copy data:
    #. Stop writes to the index.
       This step is not necessary if you are testing the process.
 
-   #. Create the empty index on your destination OpenSearch service.
+   #. Export mapping from your source Elasticsearch index.
       For example, using ``curl``:
+
+      ::
+
+         curl https://avnadmin:yourpassword@os-123-demoprj.aivencloud.com:23125/logs-2024-09-21/_mapping > mapping.json
+   
+
+      if you have ``jq`` you can run the following or else you need to manually edit ``mapping.json`` to remove the wrapping ``{"logs-2024-09-21":{"mappings": ... }}`` and keep ``{"properties":...}}``
+      
+      ::
+
+         jq .[].mappings mapping.json > src_mapping.json    
+
+
+   #. Create the empty index on your destination OpenSearch service.
 
       ::
 
          curl -XPUT https://avnadmin:yourpassword@os-123-demoprj.aivencloud.com:23125/logs-2024-09-21
 
+   #. Import mapping on your destination OpenSearch index.
+
+      ::
+
+         curl -XPUT https://avnadmin:yourpassword@os-123-demoprj.aivencloud.com:23125/logs-2024-09-21 \
+         -H 'Content-type: application/json' -T src_mapping.json
    #. Submit the reindexing request.
-      For example, using ``curl``:
 
       ::
 
