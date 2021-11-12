@@ -50,7 +50,7 @@ Requirements for each connector type
 **Key data format**
   This sets the format that is used to convert the *key* part of Kafka messages.
 
-  This is optional for standard Kafka connectors, but required for upsert Kafka connectors.
+  This is not required for standard Kafka connectors unless you want to specify a list of keys. Required for upsert Kafka connectors.
 
 **Key fields**
   This defines the columns from the SQL schema of the data table that are considered keys in the Kafka messages.
