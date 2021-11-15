@@ -9,7 +9,7 @@ To create a Flink table based on Aiven for Apache Kafka via Aiven console:
 
 3. Select the connector type and data formats.
 
-   For more information on the connector types and the requirements for each of them, see :doc:`this article </docs/products/flink/concepts/kafka_connectors>`.
+   For more information on the connector types and the requirements for each of them, see the articles on :doc:`Kafka connector types </docs/products/flink/concepts/kafka_connectors>` and :doc:`the requirements for each connector type </docs/products/flink/concepts/kafka_connector_requirements>`.
 
 4. Define the Flink table **Name**, the source **Kafka topic** and **Schema SQL**.
 
