@@ -25,7 +25,7 @@ Managed service features
 **Scaling a Flink cluster**
   Each node is equipped with a TaskManager and JobManager. We recommend that you scale up your cluster to add more CPU and memory for the TaskManager before attempting to scale out. This approach makes the best use of the resources available in the nodes.
 
-  By default, each created TaskManager is configured with a single slot for best isolation between jobs. We highly recommend that you adjust this setting for your use case.
+  By default, each created TaskManager is configured with a single slot for best isolation between jobs. One slot is equivalent to one running data pipeline or job. We highly recommend that you adjust this setting for your use case. You can change this setting with ``number_of_task_slots`` under **Overview** > **Advanced configuration** in the Aiven web console.
 
   .. note::
      Adjusting the task slots per TaskManager requires a cluster restart.	
@@ -50,7 +50,7 @@ Managed service features
   * push service metrics to M3, InfluxDB, or PostgreSQL services on Aiven
   * create custom OpenSearch or Grafana dashboards to monitor the service 
 
-  The platform also has alert policies to notify you via email when a key metric rises above or below a set threshold, such as low memory or high CPU consumption.
+  The platform also has alert policies to notify you via email when a key metric rises above or below a set threshold, such as low memory or high CPU consumption. For information on setting the addresses for these emails, see `this article <http://help.aiven.io/en/articles/5234705-technical-emails>`_.
 
 
 Apache Flink features
