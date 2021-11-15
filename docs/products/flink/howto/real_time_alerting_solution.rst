@@ -116,17 +116,37 @@ This setup uses a fixed threshold to filter any instances of high CPU load to a 
 
 #. Go to the **Data Tables** subtab.
 
-#. Select your Kafka service, use the default selection for connector type, key, and value data format, enter ``CPU_IN`` as the name, select ``cpu_load_stats_real`` as the topic, and enter the following as the SQL schema, then click **Create Table**:
+#. Create the source Kafka table:
 
-   .. literalinclude:: /code/products/flink/alerting_solution_sql.md
-      :lines: 2-8
-      :language: sql
+   a. Select your Kafka service.
+   b. Select **Apache Kafka SQL Connector** as the connector type.
+   c. Select **Empty key** as the key.
+   d. Select **JSON** as the value data format.
+   e. Enter ``CPU_IN`` as the name
+   f. Select ``cpu_load_stats_real`` as the topic.
+   g. Enter the following as the SQL schema:
 
-#. Create another table with the default selection for connector type, key, and value data format, enter ``CPU_OUT_FILTER`` as the name, ``cpu_load_stats_real_filter`` as the topic, and the following as the SQL schema, then click **Create Table**:
+      .. literalinclude:: /code/products/flink/alerting_solution_sql.md
+         :lines: 2-8
+         :language: sql
 
-   .. literalinclude:: /code/products/flink/alerting_solution_sql.md
-      :lines: 11-14
-      :language: sql
+   h. Click **Create Table**.
+
+#. Create the sink Kafka table:
+
+   a. Select your Kafka service.
+   b. Select **Apache Kafka SQL Connector** as the connector type.
+   c. Select **Empty key** as the key.
+   d. Select **JSON** as the value data format.
+   e. Enter ``CPU_OUT_FILTER`` as the name
+   f. Select ``cpu_load_stats_real_filter`` as the topic.
+   g. Enter the following as the SQL schema:
+
+      .. literalinclude:: /code/products/flink/alerting_solution_sql.md
+         :lines: 11-14
+         :language: sql
+
+   h. Click **Create Table**.
 
 #. Go to the **Create SQL Job** subtab.
 
@@ -152,11 +172,21 @@ This setup uses :doc:`windows </docs/products/flink/concepts/windows>` to determ
 
 1. Go to the **Data Tables** subtab.
 
-#. Select your Kafka service, use the default selection for connector type, key, and value data format, enter ``CPU_OUT_AGG`` as the name, ``cpu_load_stats_agg`` as the topic, and the following as the SQL schema, then click **Create Table**:
-   
-   .. literalinclude:: /code/products/flink/alerting_solution_sql.md
-      :lines: 27-32
-      :language: sql
+#. Create the sink Kafka table:
+
+   a. Select your Kafka service.
+   b. Select **Apache Kafka SQL Connector** as the connector type.
+   c. Select **Empty key** as the key.
+   d. Select **JSON** as the value data format.
+   e. Enter ``CPU_OUT_AGG`` as the name
+   f. Select ``cpu_load_stats_agg`` as the topic.
+   g. Enter the following as the SQL schema:
+
+      .. literalinclude:: /code/products/flink/alerting_solution_sql.md
+         :lines: 27-32
+         :language: sql
+
+   h. Click **Create Table**.
 
 #. Go to the **Create SQL Job** subtab.
 
@@ -221,11 +251,21 @@ This setup uses host-specific thresholds that are stored in PostgreSQL as a basi
       :lines: 57-59
       :language: sql
 
-#. Select your Kafka service, use the default selection for connector type, key, and value data format, enter ``CPU_OUT_FILTER_PG`` as the name, ``cpu_load_stats_real_filter_pg`` as the topic, and the following as the SQL schema, then click **Create Table**:
-   
-   .. literalinclude:: /code/products/flink/alerting_solution_sql.md
-      :lines: 62-66
-      :language: sql
+#. Create the sink Kafka table:
+
+   a. Select your Kafka service.
+   b. Select **Apache Kafka SQL Connector** as the connector type.
+   c. Select **Empty key** as the key.
+   d. Select **JSON** as the value data format.
+   e. Enter ``CPU_OUT_FILTER_PG`` as the name
+   f. Select ``cpu_load_stats_real_filter_pg`` as the topic.
+   g. Enter the following as the SQL schema:
+
+      .. literalinclude:: /code/products/flink/alerting_solution_sql.md
+         :lines: 62-66
+         :language: sql
+
+   h. Click **Create Table**.
 
 #. Go to the **Create SQL Job** subtab
 
