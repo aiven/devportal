@@ -116,13 +116,13 @@ This setup uses a fixed threshold to filter any instances of high CPU load to a 
 
 #. Go to the **Data Tables** subtab.
 
-#. Select your Kafka service, enter ``CPU_IN`` as the name, select ``cpu_load_stats_real`` as the topic, and enter the following as the SQL schema, then click **Create Table**:
+#. Select your Kafka service, use the default selection for connector type, key, and value data format, enter ``CPU_IN`` as the name, select ``cpu_load_stats_real`` as the topic, and enter the following as the SQL schema, then click **Create Table**:
 
    .. literalinclude:: /code/products/flink/alerting_solution_sql.md
       :lines: 2-8
       :language: sql
 
-#. Create another table by entering ``CPU_OUT_FILTER`` as the name, ``cpu_load_stats_real_filter`` as the topic, and the following as the SQL schema, then click **Create Table**:
+#. Create another table with the default selection for connector type, key, and value data format, enter ``CPU_OUT_FILTER`` as the name, ``cpu_load_stats_real_filter`` as the topic, and the following as the SQL schema, then click **Create Table**:
 
    .. literalinclude:: /code/products/flink/alerting_solution_sql.md
       :lines: 11-14
@@ -152,7 +152,7 @@ This setup uses :doc:`windows </docs/products/flink/concepts/windows>` to determ
 
 1. Go to the **Data Tables** subtab.
 
-#. Select your Kafka service, enter ``CPU_OUT_AGG`` as the name, ``cpu_load_stats_agg`` as the topic, and the following as the SQL schema, then click **Create Table**:
+#. Select your Kafka service, use the default selection for connector type, key, and value data format, enter ``CPU_OUT_AGG`` as the name, ``cpu_load_stats_agg`` as the topic, and the following as the SQL schema, then click **Create Table**:
    
    .. literalinclude:: /code/products/flink/alerting_solution_sql.md
       :lines: 27-32
@@ -221,7 +221,7 @@ This setup uses host-specific thresholds that are stored in PostgreSQL as a basi
       :lines: 57-59
       :language: sql
 
-#. Select your Kafka service, enter ``CPU_OUT_FILTER_PG`` as the name, ``cpu_load_stats_real_filter_pg`` as the topic, and the following as the SQL schema, then click **Create Table**:
+#. Select your Kafka service, use the default selection for connector type, key, and value data format, enter ``CPU_OUT_FILTER_PG`` as the name, ``cpu_load_stats_real_filter_pg`` as the topic, and the following as the SQL schema, then click **Create Table**:
    
    .. literalinclude:: /code/products/flink/alerting_solution_sql.md
       :lines: 62-66
