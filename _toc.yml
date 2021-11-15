@@ -44,6 +44,18 @@ entries:
       - file: docs/tools/kubernetes
 
   # -------- PRODUCT-SPECIFIC --------
+  - file: docs/products/kafka/index
+    title: Apache Kafka
+    entries:
+      - file: docs/products/kafka/getting-started
+      - file: docs/products/kafka/concepts
+        entries:
+          - file: docs/products/kafka/concepts/log-compaction
+      - file: docs/products/kafka/howto
+        title: HowTo
+        entries:
+          - file: docs/products/kafka/howto/kafka-sasl-auth
+
   - file: docs/products/postgresql/index
     title: PostgreSQL
     entries:

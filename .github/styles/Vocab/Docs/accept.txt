@@ -1,6 +1,7 @@
 ACL
 ACLs
 Aiven
+Apache
 API
 APIs
 [Bb]oolean
@@ -30,8 +31,10 @@ Hillyer
 httpie
 hyperloglogs
 Instana
+Java
 jq
 Kaggle
+Kafka
 Karapace
 Kibana
 Kubernetes
@@ -39,6 +42,8 @@ kuromoji
 Lua
 Lucene
 Memorystore
+MirrorMaker
+MirrorMaker2
 [Nn]amespace
 NodeJS
 npm
