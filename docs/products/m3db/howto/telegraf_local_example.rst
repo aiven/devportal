@@ -44,21 +44,21 @@ You will use several values from this page including the **Service URI, user, an
 
 Install Telegraf
 ----------------
-To simplify this example, we will install the Telegraf agent on a Macbook to collect the system metrics.
+To simplify this example, we will install the Telegraf agent on a MacBook to collect the system metrics.
 Of course, Telegraf can also be installed on `Windows and Linux <https://docs.influxdata.com/telegraf/v1.19/introduction/installation/>`_ machines.
 
-Assuming you have homebrew installed on a Macbook, simply run the following command at the Terminal
+Assuming you have Homebrew installed on a MacBook, simply run the following command at the Terminal
 to install Telegraf (https://formulae.brew.sh/formula/telegraf)::
 
     brew update && brew install telegraf
 
 Configure Telegraf and integrate it with M3
 -------------------------------------------
-Use the Telegraf agent to generate a default config file for editing::
+Use the Telegraf agent to generate a default configuration file for editing::
 
     telegraf config > telegraf.conf
 
-Modify the **telegraf.conf** config file to change the output endpoint to that of our M3 instance.
+Modify the ``telegraf.conf`` configuration file to change the output endpoint to that of our M3 instance.
 
 Change the URL under the ``outputs.influxdb`` section to that of your Aiven for M3 service (see above).
 **NOTE:** The URL prefix should simply be ``https://`` and remove the ``username:password`` from the URI (see snippet below).
@@ -73,7 +73,7 @@ Specify the service username/password and set the database name to ``default``
 		  username = "avnadmin"
 		  password = "my_service_password"
 
-Finally, start Telegraf using the config file and begin sending system metrics to M3 by running the command below::
+Finally, start Telegraf using the configuration file and begin sending system metrics to M3 by running the command below::
 
 		telegraf -config telegraf.conf
 
@@ -145,15 +145,15 @@ In the Grafana dashboard, click the **Explore** tab.
    :alt: Grafana Explore
 
 Select your M3 service as the data source from the drop down menu at the top of the page.
-Click the metrics browser, select `cpu_usage_user`, and then click the “Use Query” button.
+Click the metrics browser, select ``cpu_usage_user``, and then click the “Use Query” button.
 
 .. image:: /images/products/m3db/telegraf-m3-example/m3_telegraph_12.png
    :alt: Grafana Explore for M3
 
-The chart displayed below represents the cpu of the Macbook.
+The chart displayed below represents the CPU of the MacBook.
 
 .. image:: /images/products/m3db/telegraf-m3-example/m3_telegraph_13.png
    :alt: Grafana Metrics for M3
 
 Tear Down
-At the terminal, press Ctrl+C to stop the Telegraf agent. Then, delete your M3 and Grafana services within the Aiven Console.
+At the terminal, press ``Ctrl+C`` to stop the Telegraf agent. Then, delete your M3 and Grafana services within the Aiven Console.
