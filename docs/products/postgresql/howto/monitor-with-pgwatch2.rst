@@ -1,11 +1,11 @@
 Monitor PostgreSQL metrics with pgwatch2
 ========================================
 
-`pgwatch2`_ is an open source monitoring solution for PostgreSQL, created by CYBERTEC and can be used to monitor instances of Aiven for PostgreSQL collecting key PostgreSQL metrics and also gathering data from a wide range of PostgreSQL extensions. 
+`pgwatch2`_ is an open source monitoring solution for PostgreSQL, created by CYBERTEC and can be used to monitor instances of Aiven for PostgreSQL collecting key PostgreSQL metrics and also gathering data from a wide range of PostgreSQL extensions.
 
 .. Note::
 
-    Aiven for PostgreSQL supports the most popular extensions, but, due to security implication, can't support all the available extensions. 
+    Aiven for PostgreSQL supports the most popular extensions, but, due to security implications, can't support all the available extensions.
     Check :doc:`../reference/list-of-extensions` and :doc:`../howto/manage-extensions` for details on the supported PostgreSQL extensions on the Aiven platform.
 
 Prepare an Aiven for PostgreSQL instance for pgwatch2
@@ -39,8 +39,8 @@ Running pgwatch2
 pgwatch2 has multiple `installation options`_ to choose from. For the sake of simplicity, the following example uses `ad-hoc mode`_ with a Docker container::
 
     docker run --rm -p 3000:3000 -p 8080:8080 \
-        -e PW2_ADHOC_CONN_STR=postgres://pgwatch2:password@HOST:PORT/defaultdb?sslmode=require \
-        -e PW2_ADHOC_CONFIG=rds --name pw2 cybertec/pgwatch2-postgres
+        -e PW2_ADHOC_CONN_STR='postgres://pgwatch2:password@HOST:PORT/defaultdb?sslmode=require' \
+        -e PW2_ADHOC_CONFIG='rds' --name pw2 cybertec/pgwatch2-postgres
 
 This runs pgwatch2 with the container image provided by CYBERTEC. ``PW2_ADHOC_CONN_STR`` is set to the connection string of the PostgreSQL instance to be monitored, copied from the `Aiven web console`_ replacing the username/password have been replaced by the ones specifically created for pgwatch2. Please consult the `pgwatch2 documentation`_ to decide on the best way to set up pgwatch2 in your environment.
 
