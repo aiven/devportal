@@ -3,6 +3,7 @@ ACLs
 Aiven
 API
 APIs
+Avro
 [Bb]oolean
 [Bb]usiness
 cyber
@@ -10,6 +11,7 @@ datacenter
 datasource
 datastore
 [Dd]ashboards
+Debezium
 Distro
 [Dd]ockerized
 downsampled
@@ -69,6 +71,7 @@ sharding
 signups
 Singlestat
 Statusmap
+[Ss]ubnet
 subtab
 Telegraf
 Terraform
@@ -83,6 +86,3 @@ Untrusted
 wget
 Zabbix
 Zipkin
-Debezium
-Avro
-[Ss]ubnet
