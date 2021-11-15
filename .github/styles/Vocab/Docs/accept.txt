@@ -4,6 +4,7 @@ Aiven
 Apache
 API
 APIs
+Avro
 [Bb]oolean
 [Bb]oot
 [Bb]usiness
@@ -14,7 +15,6 @@ datacenter
 datasource
 datastore
 [Dd]ashboards
-[Dd]ev
 Debezium
 Distro
 [Dd]ockerized
@@ -90,6 +90,7 @@ Singlestat
 Splunk
 [Ss]pring
 Statusmap
+[Ss]ubnet
 subtab
 Telegraf
 Terraform
@@ -105,6 +106,3 @@ Untrusted
 wget
 Zabbix
 Zipkin
-Debezium
-Avro
-[Ss]ubnet
