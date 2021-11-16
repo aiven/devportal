@@ -197,6 +197,8 @@ Updates a service integration endpoint.
     avn service integration-endpoint-update 821e0144-1503-42db-aa9f-b4aa34c4af6b \
         --user-config-json  '{"bootstrap_servers":"servertestABC:123","security_protocol":"PLAINTEXT"}'
 
+.. _avn_service_integration_list:
+
 ``avn service integration-list``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
