@@ -26,7 +26,7 @@ Primary server disconnection
 
 If the **primary** server disappears, Aiven's management platform uses a **60-second timeout** before marking the server as down and promoting a replica server as new primary. During this 60-second timeout, the master is unavailable (``servicename.aivencloud.com`` does not respond), and ``replica.servicename.aivencloud.com`` works fine (in read-only mode).
 
-After the replica promotion, both ``servicename.aivencloud.com`` and ``replica.servicename.aivencloud.com`` point to the new primary server. Finally, a new replica server is created, and after the synchronisation with the primary, the  ``replica.servicename.aivencloud.com`` DSN is switched to point to the new replica server.
+After the replica promotion, ``servicename.aivencloud.com`` would point to the new primary server, while ``replica.servicename.aivencloud.com`` becomes unreachable. Finally, a new replica server is created, and after the synchronisation with the primary, the  ``replica.servicename.aivencloud.com`` DSN is switched to point to the new replica server.
 
 Replica server disconnection
 """"""""""""""""""""""""""""

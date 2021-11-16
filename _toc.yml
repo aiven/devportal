@@ -16,6 +16,7 @@ entries:
       entries:
       - file: docs/platform/howto/create_new_service
       - file: docs/platform/howto/create_authentication_token
+      - file: docs/platform/howto/download-ca-cert
       - file: docs/platform/howto/console-fork-service.rst
 
   # --------- GLOBAL -----------
@@ -61,6 +62,7 @@ entries:
           - file: docs/products/postgresql/howto/list-code-samples
             entries:
               - file: docs/products/postgresql/howto/connect-go
+              - file: docs/products/postgresql/howto/connect-java
               - file: docs/products/postgresql/howto/connect-node
               - file: docs/products/postgresql/howto/connect-php
               - file: docs/products/postgresql/howto/connect-python
@@ -91,6 +93,36 @@ entries:
         entries:
           - glob: docs/products/postgresql/reference/*
 
+  - file: docs/products/opensearch/index
+    title: OpenSearch
+    entries:
+      - file: docs/products/opensearch/getting-started
+        title: Getting started
+      - file: docs/products/opensearch/howto/sample-dataset
+      - file: docs/products/opensearch/concepts
+        title: Concepts
+        entries:
+          - file: docs/products/opensearch/concepts/access_control
+          - file: docs/products/opensearch/concepts/backups
+          - file: docs/products/opensearch/concepts/indices
+          - file: docs/products/opensearch/concepts/opensearch-vs-elasticsearch
+      - file: docs/products/opensearch/howto
+        title: HowTo
+        entries:
+          - file: docs/products/opensearch/howto/opensearch-with-curl
+          - file: docs/products/opensearch/howto/migrating_elasticsearch_data_to_aiven
+          - file: docs/products/opensearch/howto/upgrade-to-opensearch
+          - file: docs/products/opensearch/howto/opensearch-and-nodejs
+          - file: docs/products/opensearch/howto/control_access_to_content
+          - file: docs/products/opensearch/howto/restore_opensearch_backup
+          - file: docs/products/opensearch/howto/set_index_retention_patterns
+          - file: docs/products/opensearch/howto/switch_off_automatic_replication_factor_adjustment
+      - file: docs/products/opensearch/reference
+        title: Reference
+        entries:
+          - file: docs/products/opensearch/reference/plugins
+            title: Plugins
+
   - file: docs/products/m3db/index
     title: M3DB
     entries:
@@ -116,8 +148,30 @@ entries:
       - file: docs/products/redis/howto
         title: HowTo
         entries:
-          - glob: docs/products/redis/howto/*
+          - file: docs/products/redis/howto/list-code-samples
+            entries:
+              - file: docs/products/redis/howto/connect-redis-cli
+              - file: docs/products/redis/howto/connect-go
+              - file: docs/products/redis/howto/connect-node
+              - file: docs/products/redis/howto/connect-php
+              - file: docs/products/redis/howto/connect-python
+          - file: docs/products/redis/howto/list-dba-tasks
+            entries:
+              - file: docs/products/redis/howto/configure-acl-permissions
+              - file: docs/products/redis/howto/migrate-aiven-redis
 
-
+  - file: docs/products/grafana/index
+    title: Grafana
+    entries:
+      - file: docs/products/grafana/get-started
+      - file: docs/products/grafana/howto
+        title: HowTo
+        entries:
+          - glob: docs/products/grafana/howto/*
+      - file: docs/products/grafana/reference
+        title: Reference
+        entries:
+          - glob: docs/products/grafana/reference/*
+     
   # -------- AUXILIARY
   - file: docs/community

@@ -1,11 +1,16 @@
-
 const fs = require('fs');
 const pg = require('pg');
 
+const postgresqlUri = "POSTGRESQL_URI";
+
+const conn = new URL(postgresqlUri);
+conn.search = conn.query = "";
+
 const config = {
-    connectionString: POSTGRESQL_URI
+    connectionString: conn.href,
     ssl: {
-        rejectUnauthorized: false,
+        rejectUnauthorized: true,
+        ca: fs.readFileSync('./ca.pem').toString(),
     },
 };
 

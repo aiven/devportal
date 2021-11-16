@@ -24,8 +24,8 @@ Variable                  Description
 ====================      =======================================================================================
 ``SRC_SERVICE_URI``       Service URI for the source PostgreSQL connection
 ``DUMP_FOLDER``           Local Folder used to store the source database dump files
-``DEST_PG_NAME``          Name of the destination Aiven PostgreSQL service
-``DEST_PG_PLAN``          Aiven plan for the destination Aiven PostgreSQL service
+``DEST_PG_NAME``          Name of the destination Aiven for PostgreSQL service
+``DEST_PG_PLAN``          Aiven plan for the destination Aiven for PostgreSQL service
 ``DEST_SERVICE_URI``      Service URI for the destination PostgreSQL connection, available from the Aiven Console
 ====================      =======================================================================================
 

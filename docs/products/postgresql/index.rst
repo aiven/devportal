@@ -8,11 +8,20 @@ Aiven for PostgreSQL is the perfect fit for your relational data. A scalable SQL
 
 .. panels::
 
-    📙 :doc:`concepts`
+    📚 :doc:`concepts`
 
     ---
 
     💻 :doc:`howto`
+
+    ---
+
+    📖 :doc:`reference`
+
+    ---
+
+    🧰 :doc:`howto/list-code-samples`
+
 
 PostgreSQL resources
 --------------------

@@ -26,6 +26,7 @@ author = 'Aiven Team'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'sphinx_sitemap',
     'sphinx_panels',
     'sphinxcontrib.mermaid',
     'sphinx_external_toc',
@@ -54,7 +55,11 @@ exclude_patterns = [
     'CONTRIBUTING.rst'
 ]
 
+# gitstamp config
 gitstamp_fmt = "%B %Y"
+
+# sitemap config
+html_baseurl = 'https://developer.aiven.io'
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -108,6 +113,7 @@ pygments_style = "monokai"
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 language = "en"
+html_extra_path = ['robots.txt']
 html_static_path = ['_static']
 html_css_files = ['css/aiven.css']
 
@@ -141,7 +147,7 @@ rst_epilog = """
    :width: 24px
    :class: no-scaled-link
 
-.. |icon-elasticsearch| image:: /images/icon-elasticsearch.svg
+.. |icon-opensearch| image:: /images/icon-opensearch.png
    :width: 24px
    :class: no-scaled-link
 

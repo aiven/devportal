@@ -129,7 +129,7 @@ You can verify the status of your service with the following command.
 
 .. code:: bash
 
-    kubectl get pgs.aiven.io pg-sample
+    kubectl get postgresqls.aiven.io pg-sample
 
 Check the output of the command for your service; once the ``STATE`` field has the value ``RUNNING``, it is ready to use. 
 

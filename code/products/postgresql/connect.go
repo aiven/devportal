@@ -1,28 +1,33 @@
 package main
 
 import (
-    "database/sql"
-    "fmt"
-    _ "github.com/lib/pq"
-    "log"
+	"database/sql"
+	"fmt"
+	"log"
+	"net/url"
+
+	_ "github.com/lib/pq"
 )
 
 func main() {
-    serviceURI := "POSTGRESQL_URI"
+	serviceURI := "POSTGRESQL_URI"
 
-    db, err := sql.Open("postgres", serviceURI)
+	conn, _ := url.Parse(serviceURI)
+	conn.RawQuery = "sslmode=verify-ca;sslrootcert=ca.pem"
 
-    if err != nil {
+	db, err := sql.Open("postgres", conn.String())
+
+	if err != nil {
 		log.Fatal(err)
 	}
 	defer db.Close()
 
-    rows, err := db.Query("SELECT version()")
+	rows, err := db.Query("SELECT version()")
 	if err != nil {
 		panic(err)
 	}
 
-    for rows.Next() {
+	for rows.Next() {
 		var result string
 		err = rows.Scan(&result)
 		if err != nil {
