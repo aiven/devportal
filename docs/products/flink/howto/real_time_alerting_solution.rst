@@ -120,7 +120,7 @@ This setup uses a fixed threshold to filter any instances of high CPU load to a 
 
    a. Select your Kafka service.
    b. Select **Apache Kafka SQL Connector** as the connector type.
-   c. Select **Empty key** as the key.
+   c. Select **Key not used** as the key.
    d. Select **JSON** as the value data format.
    e. Enter ``CPU_IN`` as the name
    f. Select ``cpu_load_stats_real`` as the topic.
@@ -136,7 +136,7 @@ This setup uses a fixed threshold to filter any instances of high CPU load to a 
 
    a. Select your Kafka service.
    b. Select **Apache Kafka SQL Connector** as the connector type.
-   c. Select **Empty key** as the key.
+   c. Select **Key not used** as the key.
    d. Select **JSON** as the value data format.
    e. Enter ``CPU_OUT_FILTER`` as the name
    f. Select ``cpu_load_stats_real_filter`` as the topic.
@@ -176,7 +176,7 @@ This setup uses :doc:`windows </docs/products/flink/concepts/windows>` to determ
 
    a. Select your Kafka service.
    b. Select **Apache Kafka SQL Connector** as the connector type.
-   c. Select **Empty key** as the key.
+   c. Select **Key not used** as the key.
    d. Select **JSON** as the value data format.
    e. Enter ``CPU_OUT_AGG`` as the name
    f. Select ``cpu_load_stats_agg`` as the topic.
@@ -255,7 +255,7 @@ This setup uses host-specific thresholds that are stored in PostgreSQL as a basi
 
    a. Select your Kafka service.
    b. Select **Apache Kafka SQL Connector** as the connector type.
-   c. Select **Empty key** as the key.
+   c. Select **Key not used** as the key.
    d. Select **JSON** as the value data format.
    e. Enter ``CPU_OUT_FILTER_PG`` as the name
    f. Select ``cpu_load_stats_real_filter_pg`` as the topic.
