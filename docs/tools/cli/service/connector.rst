@@ -1,4 +1,4 @@
-Command reference: ``avn service connector``
+``avn service connector``
 ============================================
 
 Here you’ll find the full list of commands for ``avn service connector``.

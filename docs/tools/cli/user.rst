@@ -1,4 +1,4 @@
-Command reference: ``avn user``
+``avn user``
 ==================================
 
 Here you'll find the full list of commands for ``avn user``.

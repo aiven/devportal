@@ -1,4 +1,4 @@
-Command reference: ``avn service database``
+``avn service database``
 ============================================
 
 Here you’ll find the full list of commands for ``avn service database``.

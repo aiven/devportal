@@ -1,4 +1,4 @@
-Command reference: ``avn account authentication-method``
+``avn account authentication-method``
 ========================================================
 
 Here you’ll find the full list of commands for ``avn account authentication-method``.

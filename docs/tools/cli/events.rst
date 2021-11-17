@@ -1,4 +1,4 @@
-Command reference: ``avn events``
+``avn events``
 ==================================
 
 The ``avn events`` command is an audit log of things that have happened in a particular project, including:

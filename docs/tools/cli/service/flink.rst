@@ -1,4 +1,4 @@
-Command reference: ``avn service flink``
+``avn service flink``
 ============================================
 
 Here you’ll find the full list of commands for ``avn service flink``.
