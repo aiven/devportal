@@ -107,7 +107,7 @@ Learn about the Aiven platform
     
     ---
 
-    |icon-flink| **Apache Flink** Streaming data pipelines defined in pure SQL.
+    |icon-flink| **Apache Flink** Streaming data pipelines defined in pure SQL. :badge:`beta,cls=badge-secondary text-black badge-pill`
 
     +++
 
