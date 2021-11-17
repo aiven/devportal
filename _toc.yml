@@ -36,6 +36,7 @@ entries:
         - file: docs/tools/cli/service
           entries:
             - glob: docs/tools/cli/service/* 
+        - file: docs/tools/cli/ticket
         - file: docs/tools/cli/user
           entries:
             - glob: docs/tools/cli/user/*
