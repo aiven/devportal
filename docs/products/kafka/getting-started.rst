@@ -33,4 +33,4 @@ Next steps
 
 * Check our `examples project <https://github.com/aiven/aiven-examples>`_ to find code samples to get your application connected.
 
-* Try our (pizza oriented) `sample data generator project <https://github.com/aiven/python-fake-data-producer-for-apache-kafka>`_ to give you some data to get started with.
+* Try our `sample data generator project <https://github.com/aiven/python-fake-data-producer-for-apache-kafka>`_ to give you some data to get started with.
