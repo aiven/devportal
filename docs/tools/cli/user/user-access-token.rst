@@ -1,4 +1,4 @@
-Command reference: ``avn user access-token``
+``avn user access-token``
 ============================================
 
 Here you'll find the full list of commands for ``avn user access-token``.

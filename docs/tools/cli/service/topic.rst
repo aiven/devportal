@@ -1,4 +1,4 @@
-Command reference: ``avn service topic``
+``avn service topic``
 ==================================================
 
 Here you’ll find the full list of commands for ``avn service topic``.

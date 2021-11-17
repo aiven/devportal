@@ -1,4 +1,4 @@
-Command reference: ``avn account team``
+``avn account team``
 =======================================
 
 Here you’ll find the full list of commands for ``avn account team``.

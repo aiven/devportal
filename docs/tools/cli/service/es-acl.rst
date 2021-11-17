@@ -1,4 +1,4 @@
-Command reference: ``avn service es-acl``
+``avn service es-acl``
 ============================================
 
 Here you’ll find the full list of commands for ``avn service es-acl``.
