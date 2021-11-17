@@ -53,6 +53,13 @@ Learn about the Aiven platform
 
     |icon-kafka| **Apache Kafka** Streaming data pipelines for the modern enterprise. Apache MirrorMaker2 and Kafka Connect also available.
 
+
+    +++
+
+    .. link-button:: docs/products/kafka/index
+        :type: ref
+        :text: Read more
+        :classes: stretched-link
     ---
 
     |icon-opensearch| **OpenSearch** Document database with specialist search features, bring your freeform documents, logs or metrics, and make sense of them here.
