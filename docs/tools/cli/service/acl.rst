@@ -29,7 +29,7 @@ Adds an Aiven for Apache Kafka ACL entry.
   * - ``--username``
     - The username pattern: accepts ``*`` and ``?`` as wildcard characters
 
-**Example:** Add an ACLs for users with username ending with ``userA`` to ``readwrite`` on topics having name starting with ``topic2020`` in the service``kafka-doc``.
+**Example:** Add an ACLs for users with username ending with ``userA`` to ``readwrite`` on topics having name starting with ``topic2020`` in the service ``kafka-doc``.
 
 ::
 
