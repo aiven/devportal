@@ -6,6 +6,7 @@ API
 APIs
 [Bb]oolean
 [Bb]usiness
+[Cc]onnect
 cyber
 datacenter
 datasource
