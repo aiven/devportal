@@ -1,5 +1,5 @@
-Aiven for Apache Flink ``beta``
-===============================
+Flink :badge:`beta,cls=badge-secondary text-black badge-pill`
+=============================================================
 
 What is Aiven for Apache Flink?
 -------------------------------

@@ -472,3 +472,8 @@ h3 > code > .pre {
   color: var(--linkActive);
   text-decoration-color: var(--linkActive) !important;
 }
+
+.toctree-l1 > a > span.badge,
+.toctree-l1 >  ul > .toctree-l2 > span.badge {
+  vertical-align: top;
+}

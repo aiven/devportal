@@ -179,7 +179,6 @@ entries:
       - glob: docs/products/m3db/reference/*
   
   - file: docs/products/flink/index
-    title: Flink
     entries:
       - file: docs/products/flink/getting-started
       - file: docs/products/flink/concepts
