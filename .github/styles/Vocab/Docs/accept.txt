@@ -20,6 +20,7 @@ Epicurious
 etcd
 failover
 fileset[s]?
+Flink
 Geomap
 geospatial
 [Gg]o
@@ -38,6 +39,8 @@ jq
 Kaggle
 Kafka
 Karapace
+[Kk]eypair
+[Kk]eystore
 Kibana
 Kubernetes
 kuromoji
@@ -50,8 +53,8 @@ MirrorMaker2
 NodeJS
 npm
 Okta
-[Oo]perator
 OpenSearch
+[Oo]perator
 Pagerduty
 Pagila
 parallelization
@@ -62,6 +65,7 @@ Plotly
 pooler
 PostgreSQL
 Postman
+[Pp]rivatelink
 psql
 Python
 Redis
@@ -79,6 +83,7 @@ Terraform
 Terraforming
 TimescaleDB
 toolchain
+[Tt]ruststore
 Uber
 unencrypted
 Untrusted
