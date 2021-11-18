@@ -80,7 +80,7 @@ To perform the upgrade in place using Terraform, you will need to take the follo
 
     terraform state rm 'aiven_elasticsearch.es'
 
-3. Add the Opensearch service to the Terraform state
+3. Add the OpenSearch service to the Terraform state
 
 .. code-block::
 
