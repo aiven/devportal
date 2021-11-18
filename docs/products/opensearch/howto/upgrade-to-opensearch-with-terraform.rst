@@ -41,9 +41,9 @@ To accomplish this, you will need to take the following steps:
 
 .. code-block::
 
-    terraform state rm 'aiven_elasticsearch.es'
+    terraform state rm 'aiven_elasticsearch.<service-name>'
 
-3. Finally, add the OpenSearch service to the Terraform state using an OpenSearch resource.
+3. Finally, add the OpenSearch service to the Terraform state using an OpenSearch resource. The above example would become:
 
 .. code-block::
 
@@ -60,4 +60,4 @@ To accomplish this, you will need to take the following steps:
 
 .. code-block::
 
-    terraform import 'aiven_opensearch.os' project-name/es
+    terraform import 'aiven_opensearch.os' <project-name>/<service-name>
