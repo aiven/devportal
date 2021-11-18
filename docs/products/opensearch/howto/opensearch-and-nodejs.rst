@@ -6,9 +6,53 @@ Learn how the OpenSearch JavaScript client gives a clear and useful interface to
 Prepare the playground
 **********************
 
-We prepared a detailed guidance on :doc:`how to prepare your playground <setup-opensearch-and-nodejs-playground>`. Follow the steps to setup an OpenSearch cluster and its JavaScript client, index example data and retrieve a dynamically created schema.
+You can create an OpenSearch cluster either with the visual interface or with the command line. Depending on your preference follow the instructions for :doc:`getting started with the console for Aiven for Opensearch <../getting-started>` or see :doc:`how to create a service with the help of Aiven command line interface <../../../tools/cli/service>`.
 
-You can also clone the final demo project from `GitHub repository <https://github.com/aiven/demo-open-search-node-js>`_. You'll find the code for search queries in `search.js <https://github.com/aiven/demo-open-search-node-js/blob/main/search.js>`_.
+.. note::
+
+    You can also clone the final demo project from `GitHub repository <https://github.com/aiven/demo-open-search-node-js>`_.
+
+File structure and GitHub repository
+------------------------------------
+
+To organise our development space we'll use these files:
+
+- ``config.js`` to keep necessary basis to connect to the cluster,
+- ``index.js`` to hold methods which manipulate the index,
+- ``helpers.js`` to contain utilities for logging responses,
+- ``search.js`` for methods specific to search requests.
+
+We’ll be adding code into these files and running the methods from the command line.
+
+Connect to the cluster and load data
+------------------------------------
+
+Follow instructions on how to :doc:`connect to the cluster with a NodeJS client <connect-with-nodejs>` and add the necessary code to ``config.js``. Once you're connected :ref:`load a sample data set <load-data-with-nodejs>` and :ref:`retrieve the data mapping <get-mapping-with-nodejs>` to understand the structure of the created index.
+
+Extra helpers
+-------------
+
+To render the response, add the following helper method to your ``helpers.js`` file.
+
+.. code:: javascript
+
+    /**
+     * Parsing and logging list of titles from the result, used in callbacks.
+     */
+    const logTitles = (error, result) => {
+      if (error) {
+        console.error(error);
+      } else {
+        const hits = result.body.hits.hits;
+        console.log(`Number of returned results is ${hits.length}`);
+        console.log(hits.map(hit => hit._source.title));
+      }
+    };
+
+.. note::
+    In the code snippets we'll keep error handling somewhat simple and use ``console.log`` to print information into the terminal.
+
+Now you're ready to start querying the data.
 
 Query the data
 **************
@@ -354,7 +398,7 @@ Now it's your turn to experiment! Create your own boolean query, using what we l
 What's next?
 ************
 
-Now that you learned how to work with search queries, have a look at :doc:`our tutorial for aggregations <opensearch-aggregations-and-nodejs>`. Or, if you're done for a day, see :doc:`how you can pause OpenSearch cluster <setup-opensearch-and-nodejs-playground>`.
+Now that you learned how to work with search queries, have a look at :doc:`our tutorial for aggregations <opensearch-aggregations-and-nodejs>`. Or, if you're done for a day, see :doc:`how you can pause the service <../../../platform/howto/pause-from-cli>`.
 
 Resources
 *********

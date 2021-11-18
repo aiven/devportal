@@ -9,9 +9,33 @@ Learn how to aggregate data using OpenSearch and its NodeJS client. In this tuto
 Prepare the playground
 **********************
 
-We prepared a detailed guidance on :doc:`how to prepare your playground <setup-opensearch-and-nodejs-playground>`. Follow the steps to setup an OpenSearch cluster and its JavaScript client, index example data and retrieve a dynamically created schema.
+You can create an OpenSearch cluster either with the visual interface or with the command line. Depending on your preference follow the instructions for :doc:`getting started with the console for Aiven for Opensearch <../getting-started>` or see :doc:`how to create a service with the help of Aiven command line interface <../../../tools/cli/service>`.
 
-You can also clone the final demo project from `GitHub repository <https://github.com/aiven/demo-open-search-node-js>`_. You'll find the code for aggregations in `aggregate.js <https://github.com/aiven/demo-open-search-node-js/blob/main/aggregate.js>`_.
+.. note::
+
+    You can also clone the final demo project from `GitHub repository <https://github.com/aiven/demo-open-search-node-js>`_.
+
+File structure and GitHub repository
+------------------------------------
+
+To organise our development space we'll use these files:
+
+- ``config.js`` to keep necessary basis to connect to the cluster,
+- ``index.js`` to hold methods which manipulate the index,
+- ``helpers.js`` to contain utilities for logging responses,
+- ``search.js`` and ``aggregation.js`` for methods specific to search and aggregation requests.
+
+We’ll be adding code into these files and running the methods from the command line.
+
+Connect to the cluster and load data
+------------------------------------
+
+Follow instructions on how to :doc:`connect to the cluster with a NodeJS client <connect-with-nodejs>` and add the necessary code to ``config.js``. Once you're connected :ref:`load a sample data set <load-data-with-nodejs>` and :ref:`retrieve the data mapping <get-mapping-with-nodejs>` to understand the structure of the created index.
+
+.. note::
+    In the code snippets we'll keep error handling somewhat simple and use ``console.log`` to print information into the terminal.
+
+Now you're ready to start aggregating the data.
 
 Aggregations
 ************

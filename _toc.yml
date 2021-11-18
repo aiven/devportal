@@ -19,6 +19,7 @@ entries:
       - file: docs/platform/howto/download-ca-cert
       - file: docs/platform/howto/console-fork-service.rst
       - file: docs/platform/howto/tag-resources.rst
+      - file: docs/platform/howto/pause-from-cli.rst
 
   # --------- GLOBAL -----------
   - file: docs/tools/index
@@ -128,6 +129,7 @@ entries:
           - file: docs/products/opensearch/howto/migrating_elasticsearch_data_to_aiven
           - file: docs/products/opensearch/howto/upgrade-to-opensearch
           - file: docs/products/opensearch/howto/upgrade-to-opensearch-with-terraform
+          - file: docs/products/opensearch/howto/connect-with-nodejs
           - file: docs/products/opensearch/howto/opensearch-and-nodejs
           - file: docs/products/opensearch/howto/opensearch-aggregations-and-nodejs
           - file: docs/products/opensearch/howto/control_access_to_content
