@@ -1,0 +1,216 @@
+Upgrading the Aiven Terraform Provider from v1 to v2
+============
+
+Version 2 of the Aiven Terraform Provider was released in `October of
+2020 <https://aiven.io/blog/aiven-terraform-provider-v2-release>`__. You
+may still be running v1 and wanting to upgrade, this guide will walk you
+through the process (there are quite a few ways to achieve this
+technically but we will be focusing on only one).
+
+Notable changes
+---------------
+
+-  Billing Groups have been introduced instead of needing to provide
+   Card ID
+-  Work is being done to deprecate ``aiven_service`` in order to support
+   individual service configuration better, using ``aiven_kafka`` for
+   example
+-  New resources has been added to the Aiven Terraform provider, such as
+   ``aiven_flink``, ``aiven_opensearch``, etc.
+-  More details of all of the changes can be found in the
+   `Changelog <https://github.com/aiven/terraform-provider-aiven/blob/master/CHANGELOG.md>`__.
+
+Original setup
+--------------
+
+Terraform Version: 0.12.1 Terraform Provider: 1.3.5
+
+To handle the various versions of Terraform, we will be using the great
+tool: `tfenv <https://github.com/tfutils/tfenv>`__, but you can use
+direct releases from Hashicorp as you like.
+
+``tfenv install 0.12.31 && tfenv use 0.12.31``
+
+``mkdir example-tf && cd example-tf``
+
+``GO111MODULE=on go install github.com/aiven/terraform-provider-aiven@v1.3.5``
+
+``mkdir -p $PWD/terraform.d/plugins/linux_amd64/``
+
+``cp $GOPATH/bin/terraform-provider-aiven $PWD/terraform.d/plugins/linux_amd64/terraform-provider-aiven_v1.3.5``
+
+Download one of the example scripts and add your variables (or enter
+them in the Command Line prompt). For example from
+`here <https://github.com/aiven/aiven-examples/tree/aiven-terraform-v1.3.5>`__
+or use the following example from the blog post of the v2 release:
+
+::
+
+    terraform {
+      # go install github.com/aiven/terraform-provider-aiven@v1.3.5
+      # mkdir -p $PWD/terraform.d/plugins/linux_amd64/
+      # cp $GOPATH/bin/terraform-provider-aiven \
+      #   $PWD/terraform.d/plugins/linux_amd64/terraform-provider-aiven_v1.3.5
+      required_providers {
+        aiven = "1.3.5"
+      }
+    }
+
+    variable "aiven_api_token" {
+      type = string
+    }
+
+    provider "aiven" {
+      api_token = var.aiven_api_token
+    }
+
+    data "aiven_project" "tf" {
+      project = "terror"
+    }
+
+    resource "aiven_service" "kf" {
+      project                 = aiven_project.tf.project
+      cloud_name              = "google-europe-west1"
+      plan                    = "business-4"
+      service_name            = var.kafka_svc
+      service_type            = "kafka"
+      maintenance_window_dow  = "saturday"
+      maintenance_window_time = "10:00:00"
+
+      kafka_user_config {
+        kafka_connect   = true
+        kafka_rest      = true
+        kafka_version   = "2.8"
+        schema_registry = true
+
+        kafka {
+          group_max_session_timeout_ms = 70000
+          log_retention_bytes          = 1000000000
+          auto_create_topics_enable    = true
+        }
+        public_access {
+          kafka_rest    = true
+          kafka_connect = true
+          prometheus    = true
+        }
+      }
+    }
+
+``terraform init``
+
+``terraform plan``
+
+``terraform apply``
+
+Upgrade Terraform
+-----------------
+
+Kick things off with 0.13
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you are using more providers than Aiven provider and/or your module
+syntax is 0.12, then you need to upgrade your modules and providers
+first by installing Terraform v0.13.x (i.e. 0.13.7):
+``tfenv install 0.13.7 && tfenv use 0.13.7``
+
+You will likely have an existing state file, by running:
+``terraform state replace-provider registry.terraform.io/-/aiven registry.terraform.io/aiven/aiven``
+you will replace old Aiven terraform provider references to the new
+format.
+
+Also update ``required_version`` from ``>= 0.12`` to ``>= 0.13`` in your
+``versions.tf`` file if you have any.
+
+We can remove the old Terraform folder ``rm -rf ~/.terraform.d``
+
+Edit the providers block of your script to include the latest version of
+the Aiven Terraform Provider (v2.3.1 as of 5th November 2021)
+
+::
+
+    terraform {
+      required_providers {
+        aiven = {
+          source = "aiven/aiven"
+          version = "2.3.1"
+        }
+      }
+    }
+
+After that you can run: ``terraform 0.13upgrade`` to see fixes
+recommended by Hashicorp. More information
+`here <https://www.terraform.io/upgrade-guides/0-13.html>`__.
+
+Bump it to the latest
+~~~~~~~~~~~~~~~~~~~~~
+
+Any version above 0.13 will be fine, here we use the latest (1.0.10 as
+of 5th November 2021) ``tfenv install latest && tfenv use latest``
+
+Run ``terraform init -upgrade``
+
+Run ``terraform plan``
+
+.. image:: /images/tools/terraform/terraform-upgrade.jpg
+   :alt:
+
+You may see warnings or errors like the above, these will point towards
+changes made between the release you are running and the latest release.
+
+The warnings will provide recommendations on the changes to make and you
+can get more information using our
+`docs <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`__.
+
+Migrating away from ``aiven_service`` to the ``aiven_X`` service specific resource
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Migration strategy – since ``aiven_service`` and ``aiven_X``, i.e.
+``aiven_kafka`` are different kind of resources just by rewriting code
+we would cause destructive actions.
+
+Also running ``terraform state mv <a> <b>`` will not do it because it is
+a different resource type.
+
+To solve it we would have to:
+
+-  Change the code first
+-  Remove old resource from the state
+-  Import already existing service to the Terraform state.
+
+To change from the old ``aiven_service.kf`` to the new ``aiven_kafka``
+resource, resource type should be changed as well as ``service_type``
+should be removed.
+
+Also all the references should be updated from the
+``aiven_service.kf.x`` to the ``aiven_kafka.kf.x``.
+
+::
+
+    - resource "aiven_service" "kafka" {
+    -    service_type            = "kafka"
+    + resource "aiven_kafka" "kafka" {
+        ...
+    }
+    resource "aiven_service_user" "kafka_user" {
+      project      = var.aiven_project_name
+    -  service_name = aiven_service.kafka.service_name
+    +  service_name = aiven_kafka.kafka.service_name
+      username     = var.kafka_user_name
+    }
+
+Here is the example of the steps above:
+
+::
+
+    $ terraform state list | grep kf
+    $ terraform state rm aiven_service.kf
+
+    $ terraform import aiven_kafka.kf mischa-demo/kafka-test-gr0gu
+    $ terraform plan
+    $ terraform apply
+
+For more examples please check Aiven Examples
+`repository <https://github.com/aiven/aiven-examples/tree/master/terraform>`__
+on GitHub.
+
+If you have any issues, please contact our `support <mailto:support@aiven.io>`__.

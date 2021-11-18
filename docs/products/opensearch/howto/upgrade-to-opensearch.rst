@@ -42,4 +42,4 @@ When the operation completes, your Aiven for OpenSearch service should continue 
 Extra information for Terraform users
 -------------------------------------
 
-If you manage your infrastructure with our :doc:`Terraform provider </docs/tools/terraform>` then please note that you will need to upgrade the provider to the latest release in order to have support for OpenSearch.
+If you manage your infrastructure with our :doc:`Terraform provider </docs/tools/terraform/index>` then please note that you will need to upgrade the provider to the latest release in order to have support for OpenSearch.

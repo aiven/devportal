@@ -91,3 +91,5 @@ Untrusted
 wget
 Zabbix
 Zipkin
+tfenv
+Hashicorp
