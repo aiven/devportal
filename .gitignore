@@ -4,4 +4,3 @@ _build/*
 __pycache__
 .netlify
 node_modules
-.idea/*
