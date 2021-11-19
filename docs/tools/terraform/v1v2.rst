@@ -1,5 +1,5 @@
 Upgrading the Aiven Terraform Provider from v1 to v2
-============
+====================================================
 
 Version 2 of the Aiven Terraform Provider was released in `October of
 2020 <https://aiven.io/blog/aiven-terraform-provider-v2-release>`__. You
