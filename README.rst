@@ -8,6 +8,8 @@ It is Python-based, with content in `ReStructuredText (rst) <https://docutils.so
 Running locally
 ---------------
 
+We recommend using a virtual environment like `virtualenv <https://virtualenv.pypa.io/en/latest/>`_ or `venv <https://docs.python.org/3/library/venv.html>`_.
+
 Install the dependencies::
 
     pip install -r requirements.txt
