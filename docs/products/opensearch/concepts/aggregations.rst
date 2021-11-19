@@ -1,7 +1,7 @@
 Aggregations
 ============
 
-Alongside the search functionality, OpenSearch offers a powerful analytics engine able to perform aggregations of big data and extract statistics and metrics in just milliseconds. Results of the aggregations can be then visualised with OpenSearch Dashboards.
+Alongside the search functionality, OpenSearch offers a powerful analytics engine able to perform summary calculations of your data, and extract statistics and metrics very rapidly. Results of these "aggregations" can be then visualised with OpenSearch Dashboards.
 
 Aggregations can be divided into three groups:
 

@@ -1,7 +1,7 @@
 Use Aggregations with OpenSearch and NodeJS
 ===========================================
 
-Learn how to aggregate data using OpenSearch and its NodeJS client. In this tutorial we'll look at different types of aggregations, write and execute requests to learn more about the dataset at our hands.
+Learn how to aggregate data using OpenSearch and its NodeJS client. In this tutorial we'll look at different types of aggregations, write and execute requests to learn more about the data in our dataset.
 
 .. note::
     If you're new to OpenSearch and its JavaScript client you might want to check :doc:`how to write search queries with OpenSearch with NodeJS <opensearch-and-nodejs>` first.
@@ -61,7 +61,7 @@ The structure of a simple request looks like this:
           index,
           body: {
             aggs: {
-              'GIVEN-IT-A-NAME': { // aggregation name
+              'GIVE-IT-A-NAME': { // aggregation name
                 'SPECIFY-TYPE': {  // one of the supported aggregation types
                   ... // list of properties, such as a field on which to perform the aggregation
                 },
@@ -88,7 +88,7 @@ Average value
 -------------
 
 The simplest form of an aggregation is perhaps a calculation of a single-value metric, such as finding an average across values in a field.
-Using the draft structure of an aggregation we can create a method:
+Using the draft structure of an aggregation we can create a method to calculate the average of the recipe ratings:
 
 .. code-block:: javascript
 
@@ -133,7 +133,7 @@ You'll see a calculated numeric value, the average of all values from the rating
 
 ``avg`` is one of many metric aggregation functions offered by OpenSearch. We can also use ``max``, ``min``, ``sum`` and others.
 
-To have a possibility to easily change aggregation function and aggregation field you can do couple of simplifications in the method we created:
+To have a possibility to easily change aggregation function and aggregation field we can do couple of simplifications in the method we created:
 
 * move the aggregation type and aggregation field to the method parameters, so that different values can be passed as arguments
 * generate name dynamically based on field name
@@ -190,7 +190,7 @@ And because we like clean code, move and export the ``logAggs`` function from ``
 Other simple metrics
 --------------------
 
-We can use the method we created to run other types of metric aggregations, for example, to find what is minimum sodium value in our recipes:
+We can use the method we created to run other types of metric aggregations, for example, to find what the minimum sodium value is, in any of the recipes:
 
 ::
 
@@ -264,7 +264,7 @@ To get additional information, such as standard deviation, variance and bounds, 
 Percentiles
 -----------
 
-Another example of a multi-value aggregation are ``percentiles``. Percentiles are used to interpret and understand data indicating how a given data point compares to other values in a data set. For example, if you take a test and your score falls at 80th percentile, it means that you did better than 80% of participants. Similarly, when a provider measures internet usage and peaks, the 90th percentile indicates that 90% of time the usage falls below that amount.
+Another example of a multi-value aggregation are ``percentiles``. Percentiles are used to interpret and understand data indicating how a given data point compares to other values in a data set. For example, if you take a test and score on the 80th percentile, it means that you did better than 80% of participants. Similarly, when a provider measures internet usage and peaks, the 90th percentile indicates that 90% of time the usage falls below that amount.
 
 Calculate percentiles for `calories`:
 
@@ -314,7 +314,7 @@ Bucket aggregations
 
 Buckets based on ranges
 -----------------------
-You can aggregate data by dividing it into a set of buckets. These buckets can be either predefined by you, or created dynamically based on provided criteria.
+You can aggregate data by dividing it into a set of buckets. We can either predefine these buckets, or create them dynamically to fit the data.
 
 To understand how this works, we'll create a method to aggregate recipes into buckets based on sodium ranges.
 
@@ -356,13 +356,11 @@ We use ``range`` aggregation and add a property ``ranges`` to describe how we wa
       );
     };
 
-Run it with
-
-::
+Run it with ::
 
     run-func aggregate sodiumRange
 
-::
+And then check the results::
 
     {
       buckets: [
@@ -372,9 +370,9 @@ Run it with
       ]
     }
 
-By looking at ``doc_count`` you can say how many recipes fall into each of the buckets.
+By looking at ``doc_count`` we can say how many recipes fall into each of the buckets.
 
-However, our method is narrowed for a specific scenario. We want to refactor it a bit to use for other fields and different sets of ranges. To achieve this we'll:
+However, our method is narrowed down to a specific scenario. We want to refactor it a bit to use for other fields and different sets of ranges. To achieve this we'll:
 
 * move aggregation field and bucket ranges to the list of method parameters
 * use the rest parameter syntax to collect range values
@@ -420,22 +418,16 @@ However, our method is narrowed for a specific scenario. We want to refactor it 
       );
     };
 
-To make sure that the upgraded function works as the old one run
-
-::
+To make sure that the upgraded function works just like the one one, run::
 
     run-func aggregate range sodium 500 1000
 
-Now you can run the method with other fields and custom ranges, for example, split recipes into buckets based on values in the field `fat`:
-
-::
+Now you can run the method with other fields and custom ranges, for example, split recipes into buckets based on values in the field `fat`::
 
     run-func aggregate range fat 1 5 10 30 50 100
 
 
-The returned buckets are:
-
-::
+The returned buckets are::
 
     {
       buckets: [
@@ -449,14 +441,15 @@ The returned buckets are:
       ]
     }
 
-Why not to experiment more with the range aggregation? We still have `protein` values, also play with the values for the ranges to learn more about recipes from our dataset.
+Why not experiment more with the range aggregation? We still have `protein` values, and can also play with the values for the ranges to learn more about recipes from our dataset.
 
 Buckets for every unique value
 ------------------------------
-Sometimes we want to divide the data into buckets, where each bucket corresponds to a unique value present in a field.
-This type of aggregations is called ``terms`` aggregation and is helpful when we need to have more granular understanding of a dataset. For example, we can learn how many recipes belong to every category.
 
-The structure of the method for `terms aggregation` will be similar to what we wrote for the ranges. Just a couple of differences:
+Sometimes we want to divide the data into buckets, where each bucket corresponds to a unique value present in a field.
+This type of aggregations is called ``terms`` aggregation and is helpful when we need to have more granular understanding of a dataset. For example, we can learn how many recipes belong to each category.
+
+The structure of the method for `terms aggregation` will be similar to what we wrote for the ranges, with a couple of differences:
 
 * use aggregation type ``terms``
 * use an optional property ``size``, which specifies the upper limit of the buckets we want to create.
@@ -488,13 +481,11 @@ The structure of the method for `terms aggregation` will be similar to what we w
       );
     };
 
-To get the buckets created for different categories run
-
-::
+To get the buckets created for different categories run::
 
     run-func aggregate terms categories.keyword
 
-::
+Here are the resulting delicious categories::
 
     {
       doc_count_error_upper_bound: 0,
@@ -513,11 +504,9 @@ To get the buckets created for different categories run
       ]
     }
 
-You can notice a couple of interesting things in the response. First, there were just 10 buckets created, each of which contains ``doc_count`` indicating number of recipes within particular category. Second, ``sum_other_doc_count`` is the sum of documents which are left out of response, this number is high because almost every recipe is assigned to more than one category.
+We can see a couple of interesting things in the response. First, there were just 10 buckets created, each of which contains ``doc_count`` indicating number of recipes within particular category. Second, ``sum_other_doc_count`` is the sum of documents which are left out of response, this number is high because almost every recipe is assigned to more than one category.
 
-We can increase the number of created buckets by using ``size`` property:
-
-::
+We can increase the number of created buckets by using the ``size`` property::
 
     run-func aggregate terms categories.keyword 30
 
@@ -526,9 +515,9 @@ Now the list of buckets contains 30 items.
 Find least frequent items
 -------------------------
 
-Did you notice that the buckets created with the help of ``terms`` aggregation are sorted by their size in descending order? You might wonder, what can you do to find the least frequent items.
+Did you notice that the buckets created with the help of ``terms`` aggregation are sorted by their size in descending order? You might wonder how you can find the least frequent items?
 
-You can use ``rare_terms`` aggregations! ``rare_terms`` creates a set of buckets sorted by number of documents in ascending order. As a result, the most rarely used items will be at the top of the response.
+You can use the ``rare_terms`` aggregation! This creates a set of buckets sorted by number of documents in ascending order. As a result, the most rarely used items will be at the top of the response.
 
 ``rare_terms`` request is very similar to ``terms``, however, instead of `size` property which defines total number of created buckets, ``rare_terms`` relies on ``max_doc_count``, which sets upper limit for number of documents per bucket.
 
@@ -564,7 +553,7 @@ You can use ``rare_terms`` aggregations! ``rare_terms`` creates a set of buckets
 
     run-func aggregate rareTerms categories.keyword 3
 
-The result will return us all the categories with at most three documents each. Frankly, I believe waffle category deserves more recipes! 🧇
+The result will return us all the categories with at most three documents each. Frankly, I believe the waffle category deserves more recipes! 🧇
 
 Histograms
 ----------
@@ -600,13 +589,13 @@ The format of the histogram aggregation is similar to what we saw so far, so we 
       );
     };
 
-Interval can be from `minute` up to a `year`.
+Values for the interval field can be from `minute` up to a `year`.
 
 ::
 
     run-func aggregate dateHistogram date year
 
-::
+The results when we use a year::
 
     {
       buckets: [
@@ -627,21 +616,22 @@ Interval can be from `minute` up to a `year`.
 
 You should see a list of buckets, one per each year starting at 1996 and up to 2016, with ``doc_count`` indicating how many recipes belong to each year. Most of the data items are marked by year 2004.
 
-Now that we saw examples of metric and bucket aggregations, time to learn advanced concepts of pipeline aggregations.
+Now that we have seen examples of metric and bucket aggregations, it is time to learn some more advanced concepts of pipeline aggregations.
 
 Pipeline aggregations
 *********************
 
 Calculate moving average
 ------------------------
-When working with continuously incoming data we might want to understand the trends and changes in the figures. This is convenient in many situations, such as helping to see the changes in sales over a given time, notice divergence in the activity of users or learn about other trends.
+
+When working with continuously incoming data we might want to understand the trends and changes in the figures. This is convenient in many situations, such as helping to see the changes in sales over a given time, noticing the divergence in the activity of users or learn about other trends.
 
 OpenSearch allows "piping" the results of one aggregation into the different one to achieve more granular analysis through an intermediate step.
 
 To demonstrate an example of pipeline aggregations, we'll look at the moving average of number of recipes added throughout the years. With the help of what we learned so far and a couple of new tools we can do the following:
 
-1. Create a date histogram to divide documents across years (we name it `date_histogram`)
-2. Create a metric aggregation to count documents added per year (we name it `new_recipes`)
+1. Create a date histogram to divide documents across years (we name it ``date_histogram``)
+2. Create a metric aggregation to count documents added per year (we name it ``new_recipes``)
 3. Use a moving function, a pipeline feature, to glue theses aggregations together
 4. Use a built-in function ``unweightedAvg`` to calculate average value within a window
 5. Use ``shift`` property to move window one step forward and include the current year (by default the current data position is excluded from the calculated year)
@@ -699,15 +689,11 @@ When put these pieces together we can write this method:
       );
     };
 
-Run it in the command line
-
-::
+Run it on the command line::
 
     run-func aggregate movingAverage
 
-The returned  data for every year including a value `moving_average`
-
-::
+The returned  data for every year including a value ``moving_average``::
 
     [
       {
@@ -741,7 +727,7 @@ The returned  data for every year including a value `moving_average`
     ...
     ]
 
-Pay attention to the values of `count` and `moving_average`. To understand better how those numbers were calculated, we can compute first several values on our own:
+Pay attention to the values of ``count`` and ``moving_average``. To understand better how those numbers were calculated, we can compute first several values on our own:
 
 .. list-table:: Making sense of moving_average result
    :header-rows: 1
@@ -769,7 +755,7 @@ Pay attention to the values of `count` and `moving_average`. To understand bette
      - and so on
 
 
-For every data point (a year in our case) we take the count of added recipes, add number of recipes added over last two years and divide the result by three (according to the size of our window). For the first and second year we divide by the number of available years (1 and 2 respectively). And this is how moving average is calculated. If you compare numbers from the table with the numbers returned in the `moving_average` field of the response body, you can see they are same.
+For every data point (a year in our case) we take the count of added recipes, add number of recipes added over last two years and divide the result by three (according to the size of our window). For the first and second year we divide by the number of available years (1 and 2 respectively). And this is how moving average is calculated. If you compare numbers from the table with the numbers returned in the ``moving_average`` field of the response body, you can see they are same.
 
 Other moving functions
 ----------------------
@@ -792,7 +778,7 @@ What's next
 
 This was a long ride, hopefully you have a better understanding now how to use aggregations with OpenSearch and its NodeJS client. The best way to deepen the knowledge on these concepts is to play and experiment with different types of aggregations.
 
-We covered some of the examples, but `OpenSearch documentation <https://opensearch.org/docs/latest/opensearch/aggregations/>`_ contains way more. Check OpenSearch docs, as well as other resources listed below to learn more.
+We covered some of the examples, but `OpenSearch documentation <https://opensearch.org/docs/latest/opensearch/aggregations/>`_ contains many more. Check OpenSearch docs, as well as other resources listed below to learn more.
 
 
 Resources
