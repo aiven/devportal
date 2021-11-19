@@ -8,7 +8,7 @@ It is Python-based, with content in `ReStructuredText (rst) <https://docutils.so
 Running locally
 ---------------
 
-We recommend using a virtual environment like `virtualenv <https://virtualenv.pypa.io/en/latest/>`_ or `venv <https://docs.python.org/3/library/venv.html>`_.
+We recommend using a virtual environment like `virtualenv <https://virtualenv.pypa.io/en/latest/>`_ or `venv <https://docs.python.org/3/library/venv.html>`_. Call your virtual environment `env` or `venv`, or add you preferred name to `<.gitignore>`_.
 
 Install the dependencies::
 
