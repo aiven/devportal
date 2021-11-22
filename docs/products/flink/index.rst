@@ -29,7 +29,7 @@ Take your first steps with Aiven for Apache Flink by following our :doc:`getting
 
 .. panels::
 
-    📖 :doc:`Overview <overview>`
+    📖 :doc:`Overview <concepts/overview>`
 
     ---
 

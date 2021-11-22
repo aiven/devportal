@@ -50,9 +50,13 @@ Set up Aiven services
 Set up sample data
 ------------------
 
+These steps show you how to create sample records to provide streamed data that is processed by the data pipelines presented in this tutorial. You can also use other existing data, although many of the examples in this tutorial are based on the use of this sample data.
+
 Before you start, clone the `Dockerized fake data producer for Aiven for Apache Kafka <https://github.com/aiven/fake-data-producer-for-apache-kafka-docker>`_ Git repository to your computer.
 
 1. Follow :doc:`these instructions </docs/platform/howto/create_authentication_token>` to create an authentication token for your Aiven account.
+
+   This is required to allow the tool to connect to a service in your Aiven account.
 
 #. Go to the data producer tool directory and copy the ``conf/env.conf.sample`` file to ``conf/env.conf``.
 
@@ -126,8 +130,7 @@ This setup uses a fixed threshold to filter any instances of high CPU load to a 
    f. Select ``cpu_load_stats_real`` as the topic.
    g. Enter the following as the SQL schema:
 
-      .. literalinclude:: /code/products/flink/alerting_solution_sql.md
-         :lines: 2-8
+      .. literalinclude:: /code/products/flink/basic_cpu-in_table.md
          :language: sql
 
    h. Click **Create Table**.
@@ -142,8 +145,7 @@ This setup uses a fixed threshold to filter any instances of high CPU load to a 
    f. Select ``cpu_load_stats_real_filter`` as the topic.
    g. Enter the following as the SQL schema:
 
-      .. literalinclude:: /code/products/flink/alerting_solution_sql.md
-         :lines: 11-14
+      .. literalinclude:: /code/products/flink/basic_cpu-out-filter_table.md
          :language: sql
 
    h. Click **Create Table**.
@@ -152,10 +154,12 @@ This setup uses a fixed threshold to filter any instances of high CPU load to a 
 
 #. Enter ``simple_filter`` as the job name, select ``CPU_IN`` and ``CPU_OUT_FILTER`` as the tables, and enter the following as the SQL statement, then click **Execute job**:
 
-   .. literalinclude:: /code/products/flink/alerting_solution_sql.md
-      :lines: 17-24
+   .. literalinclude:: /code/products/flink/basic_job.md
       :language: sql
 
+   The new job is added to the list on the **Jobs** subtab and starts automatically once a task slot is available. The status changes to *RUNNING* once the job starts.
+
+   When the job is running, you should start to see messages indicating hosts with high CPU loads in the ``cpu_load_stats_real_filter`` topic of your ``demo-kafka`` service.
 
 Create a pipeline with windowing
 --------------------------------
@@ -182,8 +186,7 @@ This setup uses :doc:`windows </docs/products/flink/concepts/windows>` to determ
    f. Select ``cpu_load_stats_agg`` as the topic.
    g. Enter the following as the SQL schema:
 
-      .. literalinclude:: /code/products/flink/alerting_solution_sql.md
-         :lines: 27-32
+      .. literalinclude:: /code/products/flink/windowed_cpu-out-agg_table.md
          :language: sql
 
    h. Click **Create Table**.
@@ -192,9 +195,12 @@ This setup uses :doc:`windows </docs/products/flink/concepts/windows>` to determ
 
 #. Enter ``simple_agg`` as the job name, select ``CPU_OUT_AGG`` and ``CPU_IN`` as the tables, and enter the following as the SQL statement, then click **Execute job**:
    
-   .. literalinclude:: /code/products/flink/alerting_solution_sql.md
-      :lines: 35-49
+   .. literalinclude:: /code/products/flink/windowed_job.md
       :language: sql
+
+   The new job is added to the list on the **Jobs** subtab and starts automatically once a task slot is available. The status changes to *RUNNING* once the job starts.
+
+   When the job is running, you should start to see messages indicating hosts with high CPU loads in the ``cpu_load_stats_agg`` topic of your ``demo-kafka`` service.
 
 
 Create a Flink SQL job using PostgreSQL thresholds
@@ -211,6 +217,9 @@ This setup uses host-specific thresholds that are stored in PostgreSQL as a basi
         id3-- host with high CPU -->id4(Kafka sink);
 
 
+.. note::
+   For creating and configuring the tables in your PostgreSQL service, these steps use the Aiven CLI to call ``psql``. You can instead use other tools to complete these steps if you prefer.
+
 1. In the Aiven CLI, run the following command to connect to the ``demo-postgresql`` service:
    
    ::
@@ -219,15 +228,14 @@ This setup uses host-specific thresholds that are stored in PostgreSQL as a basi
    
 #. Enter the following commands to set up the PostgreSQL table containing the threshold values:
    
-   .. literalinclude:: /code/products/flink/alerting_solution_sql.md
-      :lines: 52-53
+   .. literalinclude:: /code/products/flink/pgthresholds_cpu-thresholds_table.md
       :language: sql
 
 #. Enter the following command to check that the threshold values are created:
 
-   .. literalinclude:: /code/products/flink/alerting_solution_sql.md
-      :lines: 54
-      :language: sql
+   ::
+
+      SELECT * FROM CPU_THRESHOLDS;
 
    The output shows you the content of the table:
 
@@ -247,8 +255,7 @@ This setup uses host-specific thresholds that are stored in PostgreSQL as a basi
 
 #. Select your PostgreSQL service, enter ``SOURCE_THRESHOLDS`` as the name, select ``public.cpu_thresholds`` as the table, and enter the following as the SQL schema, then click **Create Table**:
    
-   .. literalinclude:: /code/products/flink/alerting_solution_sql.md
-      :lines: 57-59
+   .. literalinclude:: /code/products/flink/pgthresholds_source-thresholds_table.md
       :language: sql
 
 #. Create the sink Kafka table:
@@ -261,8 +268,7 @@ This setup uses host-specific thresholds that are stored in PostgreSQL as a basi
    f. Select ``cpu_load_stats_real_filter_pg`` as the topic.
    g. Enter the following as the SQL schema:
 
-      .. literalinclude:: /code/products/flink/alerting_solution_sql.md
-         :lines: 62-66
+      .. literalinclude:: /code/products/flink/pgthresholds_cpu-out-filter-pg_table.md
          :language: sql
 
    h. Click **Create Table**.
@@ -271,9 +277,12 @@ This setup uses host-specific thresholds that are stored in PostgreSQL as a basi
 
 #. Enter ``simple_filter_pg`` as the name, select the ``CPU_OUT_FILTER_PG``, ``CPU_IN``, and ``SOURCE_THRESHOLDS`` tables, and enter the following as the SQL schema, then click **Execute job**:
    
-   .. literalinclude:: /code/products/flink/alerting_solution_sql.md
-      :lines: 69-77
+   .. literalinclude:: /code/products/flink/pgthresholds_job.md
       :language: sql
+
+   The new job is added to the list on the **Jobs** subtab and starts automatically once a task slot is available. The status changes to *RUNNING* once the job starts.
+
+   When the job is running, you should start to see messages indicating hosts with high CPU loads in the ``cpu_load_stats_real_filter_pg`` topic of your ``demo-kafka`` service.
 
 
 Create an aggregated data pipeline with Kafka and PostgreSQL
@@ -290,6 +299,9 @@ This setup highlights the instances where the average CPU load over a :doc:`wind
         id3-- high 30-second average CPU -->id4(PostgreSQL sink);
 
 
+.. note::
+   For creating and configuring the tables in your PostgreSQL service, these steps use the Aiven CLI to call ``psql``. You can instead use other tools to complete these steps if you prefer.
+
 1. In the Aiven CLI, run the following command to connect to the ``demo-postgresql`` service:
    
    ::
@@ -298,24 +310,23 @@ This setup highlights the instances where the average CPU load over a :doc:`wind
    
 #. Enter the following command to set up the PostgreSQL table for storing the results:
    
-   .. literalinclude:: /code/products/flink/alerting_solution_sql.md
-      :lines: 80-83
+   .. literalinclude:: /code/products/flink/combined_cpu-load-stats-agg-pg_table.md
       :language: sql
    
 #. In the Aiven web console, go to the **Jobs & Data** > **Data Tables** tab for your Flink service.
    
 #. Select your PostgreSQL service, enter ``CPU_OUT_AGG_PG`` as the name, select ``cpu_load_stats_agg_pg`` as the table, and enter the following as the SQL schema, then click **Create Table**:
    
-   .. literalinclude:: /code/products/flink/alerting_solution_sql.md
-      :lines: 86-88
+   .. literalinclude:: /code/products/flink/combined_cpu-out-agg-pg_table.md
       :language: sql
 
 #. Go to the **Create SQL Job** subtab.
 
 #. Enter ``simple_filter_pg_agg`` as the name, select the ``CPU_OUT_AGG_PG``, ``CPU_IN``, and ``SOURCE_THRESHOLDS`` tables, and enter the following as the SQL schema, then click **Execute job**:
    
-   .. literalinclude:: /code/products/flink/alerting_solution_sql.md
-      :lines: 91-124
+   .. literalinclude:: /code/products/flink/combined_job.md
       :language: sql
 
+   The new job is added to the list on the **Jobs** subtab and starts automatically once a task slot is available. The status changes to *RUNNING* once the job starts.
 
+   When the job is running, you should start to see entries indicating hosts with high CPU loads in the ``cpu_load_stats_agg_pg`` table of your ``demo-postgresql`` database.

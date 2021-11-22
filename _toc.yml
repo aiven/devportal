@@ -181,11 +181,11 @@ entries:
   - file: docs/products/flink/index
     title: Flink
     entries:
-      - file: docs/products/flink/overview
       - file: docs/products/flink/getting-started
       - file: docs/products/flink/concepts
         title: Concepts
         entries:
+          - file: docs/products/flink/concepts/overview
           - file: docs/products/flink/concepts/event_processing_time
           - file: docs/products/flink/concepts/windows
           - file: docs/products/flink/concepts/watermarks

@@ -1,9 +1,9 @@
 Getting started
 ===============
 
-The first steps in using Aiven for Apache Flink are to create a service and a Flink job. You can do this in the `Aiven web console <https://console.aiven.io/>`_ or with the `Aiven CLI <https://github.com/aiven/aiven-client>`_.
+The first step in using Aiven for Apache Flink is to create a service. You can do this in the `Aiven web console <https://console.aiven.io/>`_ or with the `Aiven CLI <https://github.com/aiven/aiven-client>`_.
 
-In addition to the Flink service, you also need one or more services that you can use as the data source and targets. This article outlines an example of using an Apache Kafka service as the data source.
+In addition to the Flink service, you also need one or more services to use as the data source and targets. To create an Aiven for Apache Kafka or Aiven for PostgreSQL service for this purpose, :doc:`follow these instructions </docs/platform/howto/create_new_service>`. Once you have created the necessary services, you can then create a Flink job to process the data stream.
 
 
 Create an Apache Flink service in the Aiven web console
