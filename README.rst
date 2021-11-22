@@ -8,7 +8,7 @@ It is Python-based, with content in `ReStructuredText (rst) <https://docutils.so
 Running locally
 ---------------
 
-We recommend using a virtual environment like `venv <https://docs.python.org/3/library/venv.html>`_:
+We recommend using a virtual environment like `venv <https://docs.python.org/3/library/venv.html>`_::
 
     python3 -m venv /path/to/new/virtual/environment
 
