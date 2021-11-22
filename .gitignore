@@ -5,6 +5,6 @@ __pycache__
 .netlify
 node_modules
 
-# ignore common virtual environment names
+
 venv
 env
