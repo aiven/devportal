@@ -173,7 +173,7 @@ Manages rules to OpenSearch ACL and extended ACL configuration.
 
 More information on ``es-acl-add``, ``es-acl-del``, ``es-acl-disable``, ``es-acl-enable``, ``es-acl-extended-disable``, ``es-acl-extended-enable`` and ``es-acl-extended-list``  can be found in :doc:`the dedicated page <service/es-acl>`.
 
-``avn service flink``
+``avn service flink`` :badge:`beta,cls=badge-secondary badge-pill`
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Manages Aiven for Apache Flink tables and jobs.
