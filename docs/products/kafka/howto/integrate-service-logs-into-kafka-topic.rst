@@ -21,7 +21,7 @@ In the Aiven for Apache Kafka overview page enable Kafka REST API and create a K
 Add a new integration to the source
 -----------------------------------
 
-Go to the overview page of your PostgeSQL service, scroll the list of actions till you see **Service integrations** and click on **Manage Integrations**. A new pop up window will be displayed showing a list of available integrations for your service. Select **Kafka Logs** from this list.
+Go to the overview page of your PostgreSQL service, scroll the list of actions till you see **Service integrations** and click on **Manage Integrations**. A new pop up window will be displayed showing a list of available integrations for your service. Select **Kafka Logs** from this list.
 
 Follow the steps to select the destination service and the topic where you want to push the logs.
 
