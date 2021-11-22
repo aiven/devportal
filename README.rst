@@ -8,6 +8,14 @@ It is Python-based, with content in `ReStructuredText (rst) <https://docutils.so
 Running locally
 ---------------
 
+We recommend using a virtual environment like `venv <https://docs.python.org/3/library/venv.html>`_::
+
+    python3 -m venv /path/to/new/virtual/environment
+
+If you call it something other than `venv` or `env`, make sure to add your preferred name to `<.gitignore>`_.
+
+Activate your virtual environment using the `activate` script for your environment.
+
 Install the dependencies::
 
     pip install -r requirements.txt
