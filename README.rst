@@ -12,7 +12,7 @@ We recommend using a virtual environment like `venv <https://docs.python.org/3/l
 
     python3 -m venv /path/to/new/virtual/environment
 
-If you call it something other than `venv`, add your preferred name to `<.gitignore>`_.
+If you call it something other than `venv` or `env`, make sure to add your preferred name to `<.gitignore>`_.
 
 Install the dependencies::
 
