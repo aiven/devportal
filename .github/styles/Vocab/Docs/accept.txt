@@ -24,6 +24,7 @@ Flink
 Geomap
 geospatial
 [Gg]o
+Gradle
 Grafana
 hardcoded
 Homebrew
@@ -44,6 +45,7 @@ Karapace
 Kibana
 Kubernetes
 kuromoji
+Logstash
 Lua
 Lucene
 Memorystore
