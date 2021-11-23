@@ -22,6 +22,7 @@ namely **7.10.2**, therefore locking **Elasticsearch to 7.10.2** and
 deployed servers.
 
 .. image:: /images/products/opensearch/client-and-node-compatibility-es-to-os.png
+    :alt: Compatibility diagram
 
 Because of this compatibility, it does not matter the order that you
 migrate your cluster, or application clients. However, as always, please follow
