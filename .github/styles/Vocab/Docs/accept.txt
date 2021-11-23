@@ -39,6 +39,8 @@ jq
 Kaggle
 Kafka
 Karapace
+kcat
+kafkacat
 [Kk]eypair
 [Kk]eystore
 Kibana
