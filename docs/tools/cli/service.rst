@@ -418,8 +418,8 @@ Service Privatelink commands
 Lists the service connections/queries statistics for an Aiven for PostgreSQL or Aiven for MySQL. 
 The list of queries data points retrievable includes:
 
-* the ``public.pg_stat_statements`` `columns <https://www.postgresql.org/docs/current/pgstatstatements.html>`_, for Aiven for PostgreSQL services.
-* the ``performance_schema.events_statements_summary_by_digest`` `columns <https://dev.mysql.com/doc/refman/8.0/en/performance-schema-statement-summary-tables.html>`_, for Aiven for MySQL services.
+* the ``public.pg_stat_statements`` columns (see the `documentation for these statistics columns <https://www.postgresql.org/docs/current/pgstatstatements.html>`_) for Aiven for PostgreSQL services.
+* the ``performance_schema.events_statements_summary_by_digest`` (refer to `documentation on the events information from the performance schema <https://dev.mysql.com/doc/refman/8.0/en/performance-schema-statement-summary-tables.html>`_) for Aiven for MySQL services.
 
 A description of the retrieved columns for Aiven for PostgreSQL can be found in the dedicated `PostgreSQL documentation <https://www.postgresql.org/docs/current/pgstatstatements.html>`_ .
 
