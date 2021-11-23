@@ -2,10 +2,8 @@ Upgrading the Aiven Terraform Provider from v1 to v2
 ====================================================
 
 Version 2 of the Aiven Terraform Provider was released in `October of
-2020 <https://aiven.io/blog/aiven-terraform-provider-v2-release>`__. You
-may still be running v1 and wanting to upgrade, this guide will walk you
-through the process (there are quite a few ways to achieve this
-technically but we will be focusing on only one).
+2020 <https://aiven.io/blog/aiven-terraform-provider-v2-release>`__.
+We recommend you upgrade to v2 if you haven't already, and this guide will walk you through the process.
 
 Notable changes
 ---------------
@@ -174,6 +172,7 @@ a different resource type.
 To solve it we would have to:
 
 -  Change the code first
+-  Backup your terraform state file (if availaible), just in case of potential rollback
 -  Remove old resource from the state
 -  Import already existing service to the Terraform state.
 
@@ -198,12 +197,16 @@ Also all the references should be updated from the
       username     = var.kafka_user_name
     }
 
-Here is the example of the steps above:
+Here is the example of the remaining steps:
 
 ::
 
     $ terraform state list | grep kf
-    $ terraform state rm aiven_service.kf
+
+    ## You could test a potential change with either "-dry-run" flag
+    ## terraform state rm -dry-run aiven_service.kf
+
+    $ terraform state rm -backup=./ aiven_service.kf
 
     $ terraform import aiven_kafka.kf mischa-demo/kafka-test-gr0gu
     $ terraform plan
@@ -212,5 +215,3 @@ Here is the example of the steps above:
 For more examples please check Aiven Examples
 `repository <https://github.com/aiven/aiven-examples/tree/master/terraform>`__
 on GitHub.
-
-If you have any issues, please contact our `support <mailto:support@aiven.io>`__.
