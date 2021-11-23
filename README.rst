@@ -103,7 +103,7 @@ To set up the import tooling for the first time:
 
 To bring in a page from the previous platform:
 
-* Run ``python import-help-articles.py [paste a URL]``
+* Run ``python import-help-article.py [paste a URL]``
 * Take the resulting ``*.rst`` file and any images, and place them as appropriate in the file structure of the project
 
 License
