@@ -32,6 +32,7 @@ entries:
         - file: docs/tools/cli/cloud
         - file: docs/tools/cli/credits
         - file: docs/tools/cli/events
+        - file: docs/tools/cli/mirrormaker
         - file: docs/tools/cli/project
         - file: docs/tools/cli/service
           entries:
