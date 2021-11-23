@@ -172,7 +172,7 @@ a different resource type.
 To solve it we would have to:
 
 -  Change the code first
--  Backup your terraform state file (if availaible), just in case of potential rollback
+-  Backup your Terraform state file (if available), just in case of potential rollback
 -  Remove old resource from the state
 -  Import already existing service to the Terraform state.
 
