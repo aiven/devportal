@@ -1,12 +1,17 @@
 Getting started
 ===============
 
-Aiven services are managed in the Aiven `web console <https://console.aiven.io/>`__ . When you first log in to the console with your email address and password, you will see the **Services** view, which shows you all the services in the currently selected project.
+Aiven services are managed in the Aiven `web console <https://console.aiven.io/>`__ . When you first log into the console with your email address and password, you will see the **Services** view, which shows you all the services in the currently selected project.
 
 .. Warning::
 
     Aiven for Apache Kafka Connect services can be created only on top of existing Aiven for Apache Kafka running services. 
     If your project doesn't contain any Aiven for Apache Kafka services, create one before attempting to create an Aiven for Apache Kafka Connect service.
+
+.. _apache_kafka_connect_dedicated_cluster:
+
+Creating a dedicated Aiven for Apache Kafka Connect service
+-----------------------------------------------------------
 
 Create a new Aiven for Apache Kafka Connect dedicated service:
 
@@ -27,11 +32,10 @@ Create a new Aiven for Apache Kafka Connect dedicated service:
 
 6. Select a service plan. This defines how many servers and what kind of memory, CPU, and disk resources are allocated to your service.
 
-7. Click **Create Service** under the summary on the right side of the console. This brings you back to the **Services** view. Your new service is listed with a status indicator to show that it is being created.
+7. Click **Create Service** under the summary on the right side of the console. 
 
 
-While your service is being built, you can visit the **Service overview** page and
-see the status change from *REBUILDING* to *RUNNING*.
+You can see the service status in the **Service overview** page , wait till it changes from *REBUILDING* to *RUNNING* to be able to use its full functionality.
 
 Next steps
 ----------

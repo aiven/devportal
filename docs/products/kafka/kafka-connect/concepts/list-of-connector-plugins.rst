@@ -1,14 +1,13 @@
 List of available Apache Kafka Connect connectors
 =================================================
 
-The following Apache Kafka Connect connectors are currently available, and can
-be used in any Aiven for Kafka services with Kafka Connect enabled. 
+The following connectors can be used in any Aiven for Kafka services with Kafka Connect enabled. 
 
 
 Source connectors
 -----------------
 
-Source connectors enable the integration of data from an existing technology into an Apache Kafka topic. The following is the list of available connectors:
+Source connectors enable the integration of data from an existing technology into an Apache Kafka topic. The following is the list of available source connectors:
 
 * `Couchbase <https://github.com/couchbase/kafka-connect-couchbase>`__
 
@@ -35,7 +34,7 @@ Source connectors enable the integration of data from an existing technology int
 Sink connectors
 -----------------
 
-Sink connectors enable the integration of data from an existing Apache Kafka topic to a target technology. The following is the list of available connectors:
+Sink connectors enable the integration of data from an existing Apache Kafka topic to a target technology. The following is the list of available sink connectors:
 
 * `Aiven for Kafka GCS Sink Connector <https://help.aiven.io/kafka/connectors/aiven-kafka-gcs-sink-connector>`__
 
@@ -87,12 +86,13 @@ Bugs should be reported to the code owner directly.
 Requesting new connectors
 -------------------------
 
-Upon creating a support requests, Aiven will evaluate the requested connector and might add support for it. 
+If you know about new and interesting connectors you'd like Aiven to support, please open a support request about it to help us shaping the future roadmap.
+You can request adding support of a new connector by creating a support ticket. Aiven will evaluate the requested connector and might add support for it.
 
 Aiven evaluation process for new Apache Kafka Connect connectors checks:
 
 * license compatibility
-* technical evaluation
+* technical implementation
 * active repository maintenance
 
 The addition of new Apache Kafka connectors is done at the sole discretion of Aiven.
@@ -101,4 +101,3 @@ The addition of new Apache Kafka connectors is done at the sole discretion of Ai
 
     When requesting connectors that are not on the pre-approved list through a support ticket, specify the target Aiven for Apache Kafka service you'd like to have it installed to.
 
-If you know about new and interesting connectors you'd like Aiven to support, please open a support request about it to help us shaping the future roadmap.
