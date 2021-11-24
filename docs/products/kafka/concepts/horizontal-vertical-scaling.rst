@@ -1,5 +1,5 @@
-Scaling Apache Kafka
-====================
+Scaling options in Apache Kafka
+===============================
 
 Aiven for Apache Kafka has a number of predefined plans that specify the
 number of brokers and the capacity of individual brokers. The predefined plans consist of 3, 6, 9, 15, or 30 brokers, but we can also create
