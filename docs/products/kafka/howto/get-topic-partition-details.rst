@@ -3,7 +3,7 @@ Get partition details of an Apache Kafka topic
 
 Use one of three available approaches to retrieve partition details of a Kafka topic.
 
-With Aiven Console
+With Aiven console
 ------------------
 
 In the Aiven Console follow these steps:
@@ -25,22 +25,18 @@ With Aiven CLI
 
 Retrieve topic details by using Aiven CLI commands. Find the full list of commands for ``avn service topic`` in :doc:`the CLI reference </docs/tools/cli/service/topic>`.
 
-For example, this bash script, with a help of ``jq`` utility, lists topics and their details for every running Aiven for Apache Kafka service in your project:
+For example, this bash script, with a help of ``jq`` utility, lists topics and their details for a specified Apache Kafka service:
 
 .. code:: bash
 
-     #!/bin/bash
+    #!/bin/bash
+    serv=YOUR-KAFKA-SERVICE-NAME
+    cloud=$(avn service get $serv --json | jq -r '.cloud_name')
+    topics=$(avn service topic-list $serv --json | jq -r '.[] | .topic_name')
 
-     for service in $(avn service list -t kafka --json | jq -r '.[] | select(.state == "RUNNING") | [.service_name,.cloud_name] | join(",")')
-     do
-         serv=$(echo $service | cut -d "," -f 1)
-         cloud=$(echo $service | cut -d "," -f 2)
-         topics=$(avn service topic-list $serv --json | jq -r '.[] | .topic_name')
-
-         echo "Cloud: $cloud Service: $serv"
-         for topic in $topics
-         do
-             echo "Topic: $topic"
-             avn service topic-get $serv $topic
-         done
-     done
+    echo "Cloud: $cloud Service: $serv"
+    for topic in $topics
+    do
+       echo "Topic: $topic"
+       avn service topic-get $serv $topic
+    done
