@@ -1,5 +1,5 @@
-Using the Aiven SQL editor
-==========================
+Built-in SQL editor
+===================
 
 The Aiven web console includes an SQL editor for data tables and jobs in Aiven for Apache Flink services. This editor gives you access to creating the SQL schema for data tables and the job statements directly in the console.
 
