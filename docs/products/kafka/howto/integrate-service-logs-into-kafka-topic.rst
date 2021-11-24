@@ -13,8 +13,8 @@ Kafka service. For this example you need:
 -  a running Aiven for PostgreSQL service (we'll refer to it as *a source*)
 -  a running Aiven for Apache Kafka service (we'll refer as *a destination*)
 
-Setup Apache Kafka to receive the logs
----------------------------------------
+Set up Apache Kafka to receive the logs
+----------------------------------------
 
 Verify that Kafka REST API is enabled and create a Kafka topic where you want to receive the logs.
 
