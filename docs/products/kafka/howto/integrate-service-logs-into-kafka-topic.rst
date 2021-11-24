@@ -21,14 +21,19 @@ Verify that Kafka REST API is enabled and create a Kafka topic where you want to
 Add a new integration to the source service
 -------------------------------------------
 
-Navigate to the Aiven console overview page of the source PostgreSQL service, scroll the list of actions till you see **Service integrations** and click on **Manage Integrations**. A new pop up window will be displayed showing a list of available integrations for your service. Select **Kafka Logs** from this list.
-
-Select the destination Kafka service (or external Kafka integration) and the topic where the logs should be pushed.
+1. Navigate to the Aiven console overview page of the source PostgreSQL service.
+2. Scroll the list of actions till you see **Service integrations**.
+3. Click on **Manage Integrations**. A new pop up window will be displayed showing a list of available integrations for your service.
+4. Select **Kafka Logs** from this list.
+5. Select the destination Kafka service (or external Kafka integration) and the topic where the logs should be pushed.
 
 Test the integration
 --------------------
 
-Go to the destination service overview page. Open the destination topic you specified to send logs. Navigate to the page with messages and press **Fetch Messages** to see the log entries that were sent from your source service. Select **Decode from base64** to see messages in JSON format.
+1. Go to the destination service overview page.
+2. Open the destination topic you specified to send logs.
+3. Navigate to the page with messages and press **Fetch Messages** to see the log entries that were sent from your source service.
+4. Select **Decode from base64** to see messages in JSON format.
 
 Edit or remove the integration
 ------------------------------
