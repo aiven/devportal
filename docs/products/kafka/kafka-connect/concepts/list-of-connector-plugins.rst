@@ -87,7 +87,7 @@ Requesting new connectors
 -------------------------
 
 If you know about new and interesting connectors you'd like Aiven to support, please open a support request about it to help us shaping the future roadmap.
-You can request adding support of a new connector by creating a support ticket. Aiven will evaluate the requested connector and might add support for it.
+You can request adding support of a new connector by creating a support ticket. We/Aiven will evaluate the requested connector and might add support for it.
 
 Aiven evaluation process for new Apache Kafka Connect connectors checks:
 
