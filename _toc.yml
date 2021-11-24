@@ -196,10 +196,8 @@ entries:
         title: HowTo
         entries:
           - file: docs/products/flink/howto/create-integration
-          - file: docs/products/flink/howto/connect
-            title: Connect Flink to other services
-            entries:
-              - glob: docs/products/flink/howto/connect/*
+          - file: docs/products/flink/howto/connect-kafka
+          - file: docs/products/flink/howto/connect-pg
           - file: docs/products/flink/howto/create-job
           - file: docs/products/flink/howto/real_time_alerting_solution
           - file: docs/products/flink/howto/real_time_alerting_solution_cli
