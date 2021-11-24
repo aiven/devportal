@@ -6,7 +6,7 @@ What is Aiven for Apache Flink?
 
 Aiven for Apache Flink beta is powered by the open-source framework Apache Flink, a **distributed processing engine for stateful computations over data streams**. It enables you to easily get started with real-time stream processing using SQL.
 
-With the launch of this service, data pipelines on Aiven now support data processing. The service is currently available as a beta release and is intended for **non-production use**. We welcome your feedback on the service and feature requests via our support channel.
+The service is currently available as a beta release and is intended for **non-production use**.
 
 
 Why Flink?
