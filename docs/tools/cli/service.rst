@@ -291,7 +291,9 @@ Retrieves the selected service logs.
 ``avn service m3``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Service M3 commands
+Manages :doc:`Aiven for M3 namespaces </docs/products/m3db/concepts/namespaces-aggregation>`.
+
+More information on ``namespace create``, ``namespace delete``, ``namespace list``, ``namespace update`` can be found in :doc:`the dedicated page <service/m3>`.
 
 ``avn service maintenance-start``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
