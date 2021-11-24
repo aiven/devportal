@@ -86,17 +86,18 @@ We can define a ``metrics-in`` Flink table with:
     * the definition of the field ``time_ltz`` as transformation to ``TIMESTAMP(3)`` from the ``occurred_at`` timestamp in Linux format.
     * the ``WATERMARK`` definition
 
-Example: Define a Flink table using the upsert connector over topic in Avro format   
+Example: Define a Flink table using the standard connector over topic in Avro format   
 ------------------------------------------------------------------------------------
 
-In cases when target of the Flink pipeline writes to a topic named  ``metric-topic-tgt`` within the Aiven for Apache Kafka service named ``demo-kafka`` in upsert mode to a compacted topic and Avro format.
+In cases when target of the Flink data pipeline needs to write in Avro format to a topic named  ``metric-topic-tgt`` within the Aiven for Apache Kafka service named ``demo-kafka``.
 
 We can define a ``metrics-out`` Flink table with:
 
 * ``demo-kafka`` as integration service
 * ``metric-topic-tgt`` as Apache Kafka topic name
-* **Upsert Kafka SQL Connector** for the changelog mode
+* **Apache Kafka SQL Connector** for the standard connection mode
 * **Confluent Avro** as Key data format
+* `hostname` as field to be used as key, the key in Apache Kafka is by default used for partition selection 
 * **Confluent Avro** as Value data format
 * ``metrics-out`` as Flink table name
 * The following as SQL schema
@@ -105,8 +106,43 @@ We can define a ``metrics-out`` Flink table with:
 
     cpu VARCHAR,
     hostname VARCHAR,
-    max_usage DOUBLE
+    usage DOUBLE
 
 .. Note::
 
-    The SQL schema includes the output message fields ``cpu``, ``hostname``, ``max_usage`` and the related `data type <https://nightlies.apache.org/flink/flink-docs-release-1.13/docs/dev/table/types/#list-of-data-types>`_. 
+    The SQL schema includes the output message fields ``cpu``, ``hostname``, ``usage`` and the related `data type <https://nightlies.apache.org/flink/flink-docs-release-1.13/docs/dev/table/types/#list-of-data-types>`_. 
+
+
+Example: Define a Flink table using the upsert connector over topic in Avro format   
+------------------------------------------------------------------------------------
+
+In cases when target of the Flink pipeline needs to write in Avro format and upsert mode to a compacted topic named  ``metric-topic-tgt`` within the Aiven for Apache Kafka service named ``demo-kafka``.
+
+We can define a ``metrics-out`` Flink table with:
+
+* ``demo-kafka`` as integration service
+* ``metric-topic-tgt`` as Apache Kafka topic name
+* **Upsert Kafka SQL Connector** for the changelog mode
+* **Confluent Avro** as Key data format
+
+.. Note::
+
+    Unlikely the standard Apache Kafka SQL connector, when using the Upsert Kafka SQL connector the key fields are not defined. They are derived by the `PRIMARY KEY` definition in the SQL schema.
+
+* **Confluent Avro** as Value data format
+* ``metrics-out`` as Flink table name
+* The following as SQL schema
+
+.. code:: sql 
+
+    cpu VARCHAR,
+    hostname VARCHAR,
+    max_usage DOUBLE,
+    PRIMARY KEY (cpu, hostname) NOT ENFORCED
+
+.. Note::
+
+    The SQL schema includes:
+    
+    * the output message fields ``cpu``, ``hostname``, ``max_usage`` and the related `data type <https://nightlies.apache.org/flink/flink-docs-release-1.13/docs/dev/table/types/#list-of-data-types>`_. 
+    * the ``PRIMARY KEY`` definition, driving the key part of the Apache Kafka message
