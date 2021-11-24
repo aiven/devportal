@@ -282,7 +282,7 @@ This setup uses host-specific thresholds that are stored in PostgreSQL as a basi
 
    The new job is added to the list on the **Jobs** subtab and starts automatically once a task slot is available. The status changes to *RUNNING* once the job starts.
 
-   When the job is running, you should start to see messages indicating hosts with high CPU loads in the ``cpu_load_stats_real_filter_pg`` topic of your ``demo-kafka`` service.
+   When the job is running, you should start to see messages indicating CPU loads that exceed the PostgreSQL-defined thresholds in the ``cpu_load_stats_real_filter_pg`` topic of your ``demo-kafka`` service.
 
 
 Create an aggregated data pipeline with Kafka and PostgreSQL
