@@ -49,5 +49,5 @@ We can define a ``students_tbl`` Flink table with:
 * ``pg-demo`` as the selected Aiven for PostgreSQL service 
 * ``public.students`` as **JDBC table**
 * ``students_tbl`` as **Name**
-* ``student_id INT, student_name VARCHAR`` as **SQL schema**
+* ``student_id INT, student_name VARCHAR`` as **SQL schema** `mapping the existing columns <https://nightlies.apache.org/flink/flink-docs-master/docs/connectors/table/jdbc/#data-type-mapping>`_ in the PostgreSQL table
 
