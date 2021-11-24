@@ -33,7 +33,7 @@ Take your first steps with Aiven for Apache Flink by following our :doc:`getting
 
     ---
 
-    💻 :doc:`Getting started <getting-started>`
+    👣 :doc:`Getting started <getting-started>`
 
     ---
 
