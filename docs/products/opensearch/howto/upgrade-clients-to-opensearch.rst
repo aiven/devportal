@@ -8,13 +8,13 @@ Migration steps
 
 In order to upgrade the Elasticsearch clients to OpenSearch follow these steps:
 
-1. Pin your ElasticSearch libraries to version **7.10.2** (latest version under the open-source license).
-2. Switch from **ElasticSearch 7.10.2** to the fully compatible **OpenSearch 1.0.0**.
+1. Pin your Elasticsearch libraries to version **7.10.2** (latest version under the open-source license).
+2. Switch from **Elasticsearch 7.10.2** to the fully compatible **OpenSearch 1.0.0**.
 3. Update OpenSearch libraries till their latest version.
 
 
 .. note::
-    You can migrate your cluster from ElasticSearch to OpenSearch  either before or after switching the clients. Read :doc:`our article <upgrade-to-opensearch>` for more details.
+    You can migrate your cluster from Elasticsearch to OpenSearch  either before or after switching the clients. Read :doc:`our article <upgrade-to-opensearch>` for more details.
 
 
 
@@ -22,7 +22,7 @@ What if you can't upgrade immediately?
 --------------------------------------
 
 If you want to postpone the upgrade, we recommend locking the client version
-of ElasticSearch to **7.10.2** and use this version till you can proceed with the migration steps outlined above. This is true for
+of Elasticsearch to **7.10.2** and use this version till you can proceed with the migration steps outlined above. This is true for
 application libraries as well as for the supporting ecosystem of tooling
 like File Beats and Logstash.
 
