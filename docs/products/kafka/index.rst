@@ -27,7 +27,7 @@ Apache Kafka moves data between systems, and Apache Kafka Connect is how to inte
 Get started with Aiven for Apache Kafka
 ---------------------------------------
 
-Take your first steps with Aiven for M3 by following our :doc:`getting-started` article, or browse through our full list of articles:
+Take your first steps with Aiven for Apache Kafka by following our :doc:`getting-started` article, or browse through our full list of articles:
 
 
 .. panels::
