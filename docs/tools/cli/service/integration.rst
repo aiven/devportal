@@ -7,6 +7,8 @@ Here you’ll find the full list of commands for ``avn service integration``.
 Manage Aiven internal and external integrations
 --------------------------------------------------------
 
+.. _avn_service_integration_create:
+
 ``avn service integration-create``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 

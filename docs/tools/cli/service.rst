@@ -173,7 +173,7 @@ Manages rules to OpenSearch ACL and extended ACL configuration.
 
 More information on ``es-acl-add``, ``es-acl-del``, ``es-acl-disable``, ``es-acl-enable``, ``es-acl-extended-disable``, ``es-acl-extended-enable`` and ``es-acl-extended-list``  can be found in :doc:`the dedicated page <service/es-acl>`.
 
-``avn service flink``
+``avn service flink`` :badge:`beta,cls=badge-secondary badge-pill`
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Manages Aiven for Apache Flink tables and jobs.
@@ -291,7 +291,9 @@ Retrieves the selected service logs.
 ``avn service m3``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Service M3 commands
+Manages :doc:`Aiven for M3 namespaces </docs/products/m3db/concepts/namespaces-aggregation>`.
+
+More information on ``namespace create``, ``namespace delete``, ``namespace list``, ``namespace update`` can be found in :doc:`the dedicated page <service/m3>`.
 
 ``avn service maintenance-start``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -418,8 +420,8 @@ Service Privatelink commands
 Lists the service connections/queries statistics for an Aiven for PostgreSQL or Aiven for MySQL. 
 The list of queries data points retrievable includes:
 
-* the ``public.pg_stat_statements`` `columns <https://www.postgresql.org/docs/current/pgstatstatements.html>`_, for Aiven for PostgreSQL services.
-* the ``performance_schema.events_statements_summary_by_digest`` `columns <https://dev.mysql.com/doc/refman/8.0/en/performance-schema-statement-summary-tables.html>`_, for Aiven for MySQL services.
+* the ``public.pg_stat_statements`` columns (see the `documentation for these statistics columns <https://www.postgresql.org/docs/current/pgstatstatements.html>`_) for Aiven for PostgreSQL services.
+* the ``performance_schema.events_statements_summary_by_digest`` (refer to `documentation on the events information from the performance schema <https://dev.mysql.com/doc/refman/8.0/en/performance-schema-statement-summary-tables.html>`_) for Aiven for MySQL services.
 
 A description of the retrieved columns for Aiven for PostgreSQL can be found in the dedicated `PostgreSQL documentation <https://www.postgresql.org/docs/current/pgstatstatements.html>`_ .
 
