@@ -58,6 +58,7 @@ entries:
       - file: docs/products/kafka/concepts
         entries:
           - file: docs/products/kafka/concepts/log-compaction
+          - file: docs/products/kafka/concepts/horizontal-vertical-scaling
       - file: docs/products/kafka/howto
         title: HowTo
         entries:
