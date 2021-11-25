@@ -63,6 +63,7 @@ entries:
         title: HowTo
         entries:
           - file: docs/products/kafka/howto/kafka-sasl-auth
+          - file: docs/products/kafka/howto/kcat.rst
           - file: docs/products/kafka/howto/integrate-service-logs-into-kafka-topic
       
       - file: docs/products/kafka/kafka-connect/index
@@ -76,6 +77,7 @@ entries:
           title: HowTo
           entries:
           - file: docs/products/kafka/kafka-connect/howto/enable-connect
+
 
   - file: docs/products/postgresql/index
     title: PostgreSQL
