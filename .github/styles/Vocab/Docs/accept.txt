@@ -8,11 +8,13 @@ APIs
 [Bb]oot
 [Bb]usiness
 [Cc]onnect
+Couchbase
 cyber
 datacenter
 datasource
 datastore
 [Dd]ashboards
+Debezium
 Distro
 downsampled
 downsampling
@@ -41,6 +43,8 @@ jq
 Kaggle
 Kafka
 Karapace
+kcat
+kafkacat
 [Kk]eypair
 [Kk]eystore
 Kibana
@@ -80,6 +84,7 @@ scriptable
 sharding
 signups
 Singlestat
+Splunk
 [Ss]pring
 Statusmap
 Telegraf

@@ -63,7 +63,22 @@ entries:
         title: HowTo
         entries:
           - file: docs/products/kafka/howto/kafka-sasl-auth
+          - file: docs/products/kafka/howto/get-topic-partition-details
+          - file: docs/products/kafka/howto/kcat.rst
           - file: docs/products/kafka/howto/integrate-service-logs-into-kafka-topic
+      
+      - file: docs/products/kafka/kafka-connect/index
+        title: Apache Kafka Connect
+        entries:
+        - file: docs/products/kafka/kafka-connect/getting-started
+        - file: docs/products/kafka/kafka-connect/concepts
+          entries:
+          - file: docs/products/kafka/kafka-connect/concepts/list-of-connector-plugins
+        - file: docs/products/kafka/kafka-connect/howto
+          title: HowTo
+          entries:
+          - file: docs/products/kafka/kafka-connect/howto/enable-connect
+
 
   - file: docs/products/postgresql/index
     title: PostgreSQL
