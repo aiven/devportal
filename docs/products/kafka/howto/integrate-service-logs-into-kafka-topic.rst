@@ -27,8 +27,8 @@ Add a new integration to the source service
 4. Select **Kafka Logs** from this list.
 5. Select the destination Kafka service (or external Kafka integration) and the topic where the logs should be pushed.
 
-Test the integration
---------------------
+Test the integration (with Aiven for Apache Kafka)
+--------------------------------------------------
 
 1. Go to the destination service overview page.
 2. Open the destination topic you specified to send logs.
