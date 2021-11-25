@@ -19,6 +19,7 @@ entries:
       - file: docs/platform/howto/download-ca-cert
       - file: docs/platform/howto/console-fork-service.rst
       - file: docs/platform/howto/tag-resources.rst
+      - file: docs/platform/howto/pause-from-cli.rst
 
   # --------- GLOBAL -----------
   - file: docs/tools/index
@@ -32,14 +33,15 @@ entries:
         - file: docs/tools/cli/cloud
         - file: docs/tools/cli/credits
         - file: docs/tools/cli/events
+        - file: docs/tools/cli/mirrormaker
         - file: docs/tools/cli/project
         - file: docs/tools/cli/service
           entries:
-            - glob: docs/tools/cli/service/*
+            - glob: docs/tools/cli/service/* 
+        - file: docs/tools/cli/ticket
         - file: docs/tools/cli/user
           entries:
             - glob: docs/tools/cli/user/*
-
       - file: docs/tools/api/index
         title: Aiven API
         entries:
@@ -62,6 +64,7 @@ entries:
         title: HowTo
         entries:
           - file: docs/products/kafka/howto/kafka-sasl-auth
+          - file: docs/products/kafka/howto/integrate-service-logs-into-kafka-topic
 
   - file: docs/products/postgresql/index
     title: PostgreSQL
@@ -122,6 +125,7 @@ entries:
           - file: docs/products/opensearch/concepts/access_control
           - file: docs/products/opensearch/concepts/backups
           - file: docs/products/opensearch/concepts/indices
+          - file: docs/products/opensearch/concepts/aggregations
           - file: docs/products/opensearch/concepts/opensearch-vs-elasticsearch
       - file: docs/products/opensearch/howto
         title: HowTo
@@ -130,7 +134,9 @@ entries:
           - file: docs/products/opensearch/howto/migrating_elasticsearch_data_to_aiven
           - file: docs/products/opensearch/howto/upgrade-to-opensearch
           - file: docs/products/opensearch/howto/upgrade-to-opensearch-with-terraform
+          - file: docs/products/opensearch/howto/connect-with-nodejs
           - file: docs/products/opensearch/howto/opensearch-and-nodejs
+          - file: docs/products/opensearch/howto/opensearch-aggregations-and-nodejs
           - file: docs/products/opensearch/howto/control_access_to_content
           - file: docs/products/opensearch/howto/restore_opensearch_backup
           - file: docs/products/opensearch/howto/set_index_retention_patterns

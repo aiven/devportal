@@ -6,6 +6,7 @@ swap:
   timeseries: time series
   kakfa: Kafka
   postgres: PostgreSQL
+  PostgeSQL: PostgreSQL
   multicloud: multi-cloud
   "Aiven Kafka": "Aiven for Apache Kafka"
   "Aiven Flink": "Aiven for Apache Flink"

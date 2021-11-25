@@ -1,5 +1,5 @@
-``avn service flink``
-============================================
+``avn service flink`` :badge:`beta,cls=badge-secondary badge-pill`
+==================================================================
 
 Here you’ll find the full list of commands for ``avn service flink``.
 

@@ -41,8 +41,8 @@ Let's take a look at a sample recipe document:
     }
 
 
-Load the data
--------------
+Load the data with Python
+-------------------------
 
 Follow the steps below to obtain the dataset and then load the sample data into your OpenSearch service using Python:
 
@@ -87,8 +87,8 @@ Follow the steps below to obtain the dataset and then load the sample data into 
 
     python epicurious_recipes_import.py
 
-Sample queries
---------------
+Sample queries with HTTP client
+-------------------------------
 
 With the data in place, we can start trying some queries against your OpenSearch service. Since it has a simple HTTP interface, you can use your favorite HTTP client. In these examples, we will use `httpie <https://github.com/httpie/httpie>`_ because it's one of our favorites.
 
@@ -135,6 +135,88 @@ First, export the ``SERVICE_URI`` variable with your OpenSearch service URI addr
         }
     }
     '
+
+.. _load-data-with-nodejs:
+
+Load the data with NodeJS
+-------------------------
+
+To load data with NodeJS we'll use `OpenSearch JavaScript client  <https://github.com/opensearch-project/opensearch-js>`_
+
+Download `full_format_recipes.json <https://www.kaggle.com/hugodarwood/epirecipes?select=full_format_recipes.json>`_, unzip and put it into the project folder.
+
+It is possible to index values either one by one, or by using a bulk operation. Because we have a file containing a long list of recipes we’ll use a bulk operation. A bulk endpoint expects a request in a format of a list where an action and an optional document are followed one after another:
+
+* Action and metadata
+* Optional document
+* Action and metadata
+* Optional document
+* and so on...
+
+To achieve this expected format, use a flat map to create a flat list of such pairs instructing OpenSearch to index the documents.
+
+.. code-block:: javascript
+
+    module.exports.recipes = require("./full_format_recipes.json");
+
+    /**
+     * Indexing data from json file with recipes.
+     */
+    module.exports.indexData = () => {
+      console.log(`Ingesting data: ${recipes.length} recipes`);
+      const body = recipes.flatMap((doc) => [
+        { index: { _index: indexName } },
+        doc,
+      ]);
+
+      client.bulk({ refresh: true, body }, console.log(result.body));
+    };
+
+Run this method to load the data and wait till it's done. We’re injecting over 20k recipes, so it can take 10-15 seconds.
+
+.. _get-mapping-with-nodejs:
+
+Get data mapping with NodeJS
+----------------------------
+
+We didn't specify any particular structure for the recipes data when we uploaded it. Even though we could have set explicit mapping beforehand, we opted to rely on OpenSearch to derive the structure from the data and use a dynamic mapping. To see the mapping definitions use the ``getMapping`` method and provide the index name as a parameter.
+
+.. code-block:: javascript
+
+    /**
+     * Retrieving mapping for the index.
+     */
+    module.exports.getMapping = () => {
+      console.log(`Retrieving mapping for the index with name ${indexName}`);
+
+      client.indices.getMapping({ index: indexName }, (error, result) => {
+        if (error) {
+          console.error(error);
+        } else {
+          console.log(result.body.recipes.mappings.properties);
+        }
+      });
+    };
+
+You should be able to see the following structure:
+
+.. code-block:: javascript
+
+    {
+      calories: { type: 'long' },
+      categories: { type: 'text', fields: { keyword: [Object] } },
+      date: { type: 'date' },
+      desc: { type: 'text', fields: { keyword: [Object] } },
+      directions: { type: 'text', fields: { keyword: [Object] } },
+      fat: { type: 'long' },
+      ingredients: { type: 'text', fields: { keyword: [Object] } },
+      protein: { type: 'long' },
+      rating: { type: 'float' },
+      sodium: { type: 'long' },
+      title: { type: 'text', fields: { keyword: [Object] } }
+    }
+
+These are the fields you can play with. You can find information on dynamic mapping types `in the documentation <https://opensearch.org/docs/latest/opensearch/rest-api/index-apis/create-index/#dynamic-mapping-types>`_.
 
 Ready for a challenge?
 ----------------------
