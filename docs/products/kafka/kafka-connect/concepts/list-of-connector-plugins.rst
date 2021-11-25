@@ -95,8 +95,6 @@ Aiven evaluation process for new Apache Kafka Connect connectors checks:
 * technical implementation
 * active repository maintenance
 
-The addition of new Apache Kafka connectors is done at the sole discretion of Aiven.
-
 .. Tip::
 
     When requesting connectors that are not on the pre-approved list through a support ticket, specify the target Aiven for Apache Kafka service you'd like to have it installed to.
