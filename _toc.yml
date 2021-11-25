@@ -62,6 +62,7 @@ entries:
       - file: docs/products/kafka/howto
         title: HowTo
         entries:
+          - file: docs/products/kafka/howto/keystore-truststore.rst
           - file: docs/products/kafka/howto/kafka-sasl-auth
           - file: docs/products/kafka/howto/get-topic-partition-details
           - file: docs/products/kafka/howto/kcat.rst
