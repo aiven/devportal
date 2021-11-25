@@ -22,6 +22,15 @@ The article includes the steps that you need when using the `Aiven CLI <https://
 In addition, the instructions show you how to use a separate Python-based tool, `Dockerized fake data producer for Aiven for Apache Kafka <https://github.com/aiven/fake-data-producer-for-apache-kafka-docker>`_, to create sample records for your Apache Kafka topic that provides the streamed data.
 
 
+Requirements
+------------
+
+* An Aiven account
+* `Aiven CLI <https://github.com/aiven/aiven-client>`_
+* `psql <https://www.postgresql.org/docs/current/app-psql.html>`_ to connect to PostgreSQL services
+* `Dockerized fake data producer for Aiven for Apache Kafka <https://github.com/aiven/fake-data-producer-for-apache-kafka-docker>`_ and `Docker <https://www.docker.com/>`_ to generate sample data (optional)
+
+
 Set up Aiven services
 ---------------------
 
@@ -106,22 +115,9 @@ Before you start, clone the `Dockerized fake data producer for Aiven for Apache 
 
 #. Go to the data producer tool directory and copy the ``conf/env.conf.sample`` file to ``conf/env.conf``.
 
-#. Edit the ``conf/env.conf`` file and update the parameters.
+#. Edit the ``conf/env.conf`` file and update the parameters with your Aiven account information and the authentication token that you created.
 
-   Replace ``AIVEN_PROJECT_NAME`` and ``AIVEN_ACCOUNT_EMAIL`` with the details for your Aiven account, and replace ``AUTHENTICATION_TOKEN`` with the token that you created.
-
-   ::
-
-      PROJECT_NAME="AIVEN_PROJECT_NAME"
-      SERVICE_NAME="demo-kafka"
-      TOPIC="cpu_load_stats_real"
-      PARTITIONS=2
-      REPLICATION=2
-      NR_MESSAGES=200
-      MAX_TIME=0
-      SUBJECT="metrics"
-      USERNAME="AIVEN_ACCOUNT_EMAIL"
-      TOKEN="AUTHENTICATION_TOKEN"
+   See the `instructions for the tool <https://github.com/aiven/fake-data-producer-for-apache-kafka-docker#readme>`_ for details on the parameters.
 
    .. note::
       The ``NR_MESSAGES`` option defines the number of messages that the tool creates when you run it. Setting this parameter to ``0`` creates a continuous flow of messages that never stops.
@@ -161,8 +157,23 @@ This setup uses a fixed threshold to filter any instances of high CPU load to a 
         id1(Kafka source)-- metrics stream -->id2(Flink job);
         id2-- high CPU -->id3(Kafka sink);
 
+For this setup, you need to configure a source table to read the metrics data from your Kafka topic, a sink table to send the processed messages to a separate Kafka topic, and a Flink job to process the data:
 
-1. Using the Aiven CLI, run the following command to create a Kafka table named ``CPU_IN``:
+1. Using the Aiven CLI, create a Kafka table named ``CPU_IN``.
+
+   .. list-table::
+     :header-rows: 1
+     :align: left
+
+     * - Variable
+       - Value
+     * - ``KAFKA_INTEGRATION_ID``
+       - The ID for your ``demo-kafka`` service integration.
+     * - ``TABLE_SQL``
+       - .. literalinclude:: /code/products/flink/basic_cpu-in_table.md
+            :language: sql
+
+   Run the following command, replacing the variables listed in the above table with the corresponding values:
 
    ::
 
@@ -171,12 +182,19 @@ This setup uses a fixed threshold to filter any instances of high CPU load to a 
           --kafka-topic cpu_load_stats_real                          \
           --schema-sql "TABLE_SQL"
 
-   Replace ``KAFKA_INTEGRATION_ID`` with the ID for your ``demo-kafka`` service integration and replace ``TABLE_SQL`` with the following:
+#. Create an output table named ``CPU_OUT_FILTER``.
 
-   .. literalinclude:: /code/products/flink/basic_cpu-in_table.md
-      :language: sql
+   .. list-table::
+     :header-rows: 1
+     :align: left
 
-#. Run the following command to create the output table named ``CPU_OUT_FILTER``:
+     * - Variable
+       - Value
+     * - ``TABLE_SQL``
+       - .. literalinclude:: /code/products/flink/basic_cpu-out-filter_table.md
+            :language: sql
+
+   Run the following command, replacing the variables listed in the above table with the corresponding values:
 
    ::
 
@@ -184,11 +202,6 @@ This setup uses a fixed threshold to filter any instances of high CPU load to a 
           --table-name CPU_OUT_FILTER                                \
           --kafka-topic cpu_load_stats_real_filter                   \
           --schema-sql "TABLE_SQL"
-
-   Replace ``TABLE_SQL`` with the following:
-
-   .. literalinclude:: /code/products/flink/basic_cpu-out-filter_table.md
-      :language: sql
 
 #. Run the following command to list the tables for the ``demo-flink`` service:
 
@@ -205,18 +218,29 @@ This setup uses a fixed threshold to filter any instances of high CPU load to a 
      917bbec0-0f34-4a31-b910-c585feb95d09  305c44d9-22d5-4be8-987f-57c7642e8a89  CPU_IN
      917bbec0-0f34-4a31-b910-c585feb95d09  3d33a7c5-3716-4b21-9739-f79228f9f28f  CPU_OUT_FILTER
 
-#. Run the following command to create a data pipeline job named ``simple_filter``:
+#. Create a data pipeline job named ``simple_filter``.
+
+   .. list-table::
+     :header-rows: 1
+     :align: left
+
+     * - Variable
+       - Value
+     * - ``CPU_IN_ID``
+       - The table ID for your ``CPU_IN`` table.
+     * - ``CPU_OUT_FILTER_ID``
+       - The table ID for your ``CPU_OUT_FILTER`` table.
+     * - ``JOB_SQL``
+       - .. literalinclude:: /code/products/flink/basic_job.md
+            :language: sql
+
+   Run the following command, replacing the variables listed in the above table with the corresponding values:
 
    ::
 
       avn service flink job create demo-flink simple_filter     \
           --table-ids CPU_IN_ID CPU_OUT_FILTER_ID               \
           --statement "JOB_SQL"
-
-   Replace the values for ``--table-ids`` with the IDs for the ``CPU_IN`` and ``CPU_OUT_FILTER`` tables, and ``JOB_SQL`` with the following:
-
-   .. literalinclude:: /code/products/flink/basic_job.md
-      :language: sql
 
    The new job is added and starts automatically once a task slot is available.
 
@@ -235,8 +259,23 @@ This setup uses :doc:`windows </docs/products/flink/concepts/windows>` to determ
         id1(Kafka source)-- timestamped metrics -->id3(Flink job);
         id3-- 30-second average CPU -->id4(Kafka sink);
 
+This uses the same ``CPU_IN`` Kafka source table that you created in the previous section. In addition, you need a new sink table to send the processed messages to a separate Kafka topic and a new Flink job to process the data:
 
-1. Using the Aiven CLI, run the following command to create a Kafka table named ``CPU_OUT_AGG``:
+1. Using the Aiven CLI, create a Kafka table named ``CPU_OUT_AGG``.
+
+   .. list-table::
+     :header-rows: 1
+     :align: left
+
+     * - Variable
+       - Value
+     * - ``KAFKA_INTEGRATION_ID``
+       - The ID for your ``demo-kafka`` service integration.
+     * - ``TABLE_SQL``
+       - .. literalinclude:: /code/products/flink/windowed_cpu-out-agg_table.md
+            :language: sql
+
+   Run the following command, replacing the variables listed in the above table with the corresponding values:
 
    ::
 
@@ -245,29 +284,35 @@ This setup uses :doc:`windows </docs/products/flink/concepts/windows>` to determ
           --kafka-topic cpu_load_stats_agg                            \
           --schema-sql "TABLE_SQL"
 
-   Replace ``KAFKA_INTEGRATION_ID`` with the ID for your ``demo-kafka`` service integration and replace ``TABLE_SQL`` with the following:
-
-   .. literalinclude:: /code/products/flink/windowed_cpu-out-agg_table.md
-      :language: sql
-
 #. Run the following command to list the tables for the ``demo-flink`` service and get the IDs for the ``CPU_IN`` and ``CPU_OUT_AGG`` tables:
 
    ::
 
       avn service flink table list demo-flink
 
-#. Run the following command to create a data pipeline job named ``simple_agg``:
+#. Create a data pipeline job named ``simple_agg``.
+
+   .. list-table::
+     :header-rows: 1
+     :align: left
+
+     * - Variable
+       - Value
+     * - ``CPU_IN_ID``
+       - The table ID for your ``CPU_IN`` table.
+     * - ``CPU_OUT_AGG_ID``
+       - The table ID for your ``CPU_OUT_AGG`` table.
+     * - ``JOB_SQL``
+       - .. literalinclude:: /code/products/flink/windowed_job.md
+            :language: sql
+
+   Run the following command, replacing the variables listed in the above table with the corresponding values:
 
    ::
 
       avn service flink job create demo-flink simple_agg        \
           --table-ids CPU_IN_ID CPU_OUT_AGG_ID                  \
           --statement "JOB_SQL"
-
-   Replace the values for ``--table-ids`` with the IDs for the ``CPU_IN`` and ``CPU_OUT_AGG`` tables, and ``JOB_SQL`` with the following:
-
-   .. literalinclude:: /code/products/flink/windowed_job.md
-      :language: sql
 
    The new job is added and starts automatically once a task slot is available.
 
@@ -287,6 +332,7 @@ This setup uses host-specific thresholds that are stored in PostgreSQL as a basi
 		id2(PosgreSQL source)-- host-specific thresholds -->id3;
         id3-- host with high CPU -->id4(Kafka sink);
 
+This uses the same ``CPU_IN`` Kafka source table that you created earlier. In addition, you need a new sink table to send the processed messages to a separate Kafka topic, a PostgreSQL source table to hold the threshold data, and a new Flink job to process the data:
 
 1. In the Aiven CLI, run the following command to connect to the ``demo-postgresql`` service:
    
@@ -319,7 +365,21 @@ This setup uses host-specific thresholds that are stored in PostgreSQL as a basi
       sneezy   |     80
       dopey    |     90
 
-#. Run the following command to create a PostgreSQL table named ``SOURCE_THRESHOLDS``:
+#. Create a PostgreSQL table named ``SOURCE_THRESHOLDS``.
+
+   .. list-table::
+     :header-rows: 1
+     :align: left
+
+     * - Variable
+       - Value
+     * - ``POSTGRESQL_INTEGRATION_ID``
+       - The ID for your ``demo-postgresql`` service integration.
+     * - ``TABLE_SQL``
+       - .. literalinclude:: /code/products/flink/pgthresholds_source-thresholds_table.md
+            :language: sql
+
+   Run the following command, replacing the variables listed in the above table with the corresponding values:
 
    ::
 
@@ -328,12 +388,21 @@ This setup uses host-specific thresholds that are stored in PostgreSQL as a basi
           --jdbc-table cpu_thresholds                                      \
           --schema-sql "TABLE_SQL"
 
-   Replace ``POSTGRESQL_INTEGRATION_ID`` with the ID for your ``demo-postgresql`` service integration and replace ``TABLE_SQL`` with the following:
+#. Create a Kafka table named ``CPU_OUT_FILTER_PG``.
 
-   .. literalinclude:: /code/products/flink/pgthresholds_source-thresholds_table.md
-      :language: sql
+   .. list-table::
+     :header-rows: 1
+     :align: left
 
-#. Run the following command to create a Kafka table named ``CPU_OUT_FILTER_PG``:
+     * - Variable
+       - Value
+     * - ``KAFKA_INTEGRATION_ID``
+       - The ID for your ``demo-kafka`` service integration.
+     * - ``TABLE_SQL``
+       - .. literalinclude:: /code/products/flink/pgthresholds_cpu-out-filter-pg_table.md
+            :language: sql
+
+   Run the following command, replacing the variables listed in the above table with the corresponding values:
 
    ::
 
@@ -342,29 +411,37 @@ This setup uses host-specific thresholds that are stored in PostgreSQL as a basi
           --kafka-topic cpu_load_stats_real_filter_pg                 \
           --schema-sql "TABLE_SQL"
 
-   Replace ``KAFKA_INTEGRATION_ID`` with the ID for your ``demo-kafka`` service integration and replace ``TABLE_SQL`` with the following:
-
-   .. literalinclude:: /code/products/flink/pgthresholds_cpu-out-filter-pg_table.md
-      :language: sql
-
 #. Run the following command to list the tables for the ``demo-flink`` service and get the IDs for the ``CPU_IN``, ``CPU_OUT_FILTER_PG``, and ``SOURCE_THRESHOLDS`` tables:
 
    ::
 
       avn service flink table list demo-flink
 
-#. Run the following command to create a data pipeline job named ``simple_filter_pg``:
+#. Create a data pipeline job named ``simple_filter_pg``.
+
+   .. list-table::
+     :header-rows: 1
+     :align: left
+
+     * - Variable
+       - Value
+     * - ``CPU_IN_ID``
+       - The table ID for your ``CPU_IN`` table.
+     * - ``CPU_OUT_FILTER_PG_ID``
+       - The table ID for your ``CPU_OUT_FILTER_PG`` table.
+     * - ``SOURCE_THRESHOLDS_ID``
+       - The table ID for your ``SOURCE_THRESHOLDS`` table.
+     * - ``JOB_SQL``
+       - .. literalinclude:: /code/products/flink/pgthresholds_job.md
+            :language: sql
+
+   Run the following command, replacing the variables listed in the above table with the corresponding values:
 
    ::
 
       avn service flink job create demo-flink simple_filter_pg            \
           --table-ids CPU_IN_ID CPU_OUT_FILTER_PG_ID SOURCE_THRESHOLDS_ID \
           --statement "JOB_SQL"
-
-   Replace the values for ``--table-ids`` with the IDs for the ``CPU_IN``, ``CPU_OUT_FILTER_PG``, and ``SOURCE_THRESHOLDS`` tables, and ``JOB_SQL`` with the following:
-
-   .. literalinclude:: /code/products/flink/pgthresholds_job.md
-      :language: sql
 
    The new job is added and starts automatically once a task slot is available.
 
@@ -385,6 +462,8 @@ This setup highlights the instances where the average CPU load over a :doc:`wind
         id3-- high 30-second average CPU -->id4(PostgreSQL sink);
 
 
+This uses the same ``CPU_IN`` Kafka source table and ``SOURCE_THRESHOLDS`` PostgreSQL source table that you created earlier. In addition, you need a new sink PostgreSQL table to store the processed data and a new Flink job to process the data:
+
 1. In the Aiven CLI, run the following command to connect to the ``demo-postgresql`` service:
    
    ::
@@ -396,7 +475,21 @@ This setup highlights the instances where the average CPU load over a :doc:`wind
    .. literalinclude:: /code/products/flink/combined_cpu-load-stats-agg-pg_table.md
       :language: sql
    
-#. Run the following command to create a PostgreSQL table named ``CPU_OUT_AGG_PG``:
+#. Create a PostgreSQL table named ``CPU_OUT_AGG_PG``.
+
+   .. list-table::
+     :header-rows: 1
+     :align: left
+
+     * - Variable
+       - Value
+     * - ``POSTGRESQL_INTEGRATION_ID``
+       - The ID for your ``demo-postgresql`` service integration.
+     * - ``TABLE_SQL``
+       - .. literalinclude:: /code/products/flink/combined_cpu-out-agg-pg_table.md
+            :language: sql
+
+   Run the following command, replacing the variables listed in the above table with the corresponding values:
 
    ::
 
@@ -405,29 +498,37 @@ This setup highlights the instances where the average CPU load over a :doc:`wind
           --jdbc-table cpu_load_stats_agg_pg                               \
           --schema-sql "TABLE_SQL"
 
-   Replace ``POSTGRESQL_INTEGRATION_ID`` with the ID for your ``demo-postgresql`` service integration and replace ``TABLE_SQL`` with the following:
-
-   .. literalinclude:: /code/products/flink/combined_cpu-out-agg-pg_table.md
-      :language: sql
-
 #. Run the following command to list the tables for the ``demo-flink`` service and get the IDs for the ``CPU_IN``, ``CPU_OUT_AGG_PG``, and ``SOURCE_THRESHOLDS`` tables:
 
    ::
 
       avn service flink table list demo-flink
 
-#. Run the following command to create a data pipeline job named ``simple_filter_pg_agg``:
+#. Create a data pipeline job named ``simple_filter_pg_agg``.
+
+   .. list-table::
+     :header-rows: 1
+     :align: left
+
+     * - Variable
+       - Value
+     * - ``CPU_IN_ID``
+       - The table ID for your ``CPU_IN`` table.
+     * - ``CPU_OUT_AGG_PG_ID``
+       - The table ID for your ``CPU_OUT_AGG_PG`` table.
+     * - ``SOURCE_THRESHOLDS_ID``
+       - The table ID for your ``SOURCE_THRESHOLDS`` table.
+     * - ``JOB_SQL``
+       - .. literalinclude:: /code/products/flink/combined_job.md
+            :language: sql
+
+   Run the following command, replacing the variables listed in the above table with the corresponding values:
 
    ::
 
       avn service flink job create demo-flink simple_filter_pg_agg     \
           --table-ids CPU_IN_ID CPU_OUT_AGG_PG_ID SOURCE_THRESHOLDS_ID \
           --statement "JOB_SQL"
-
-   Replace the values for ``--table-ids`` with the IDs for the ``CPU_IN``, ``CPU_OUT_AGG_PG``, and ``SOURCE_THRESHOLDS`` tables, and ``JOB_SQL`` with the following:
-
-   .. literalinclude:: /code/products/flink/combined_job.md
-      :language: sql
 
    The new job is added and starts automatically once a task slot is available.
 

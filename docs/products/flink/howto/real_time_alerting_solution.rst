@@ -22,6 +22,14 @@ The article includes the steps that you need when using the `Aiven web console <
 In addition, the instructions show you how to use a separate Python-based tool, `Dockerized fake data producer for Aiven for Apache Kafka <https://github.com/aiven/fake-data-producer-for-apache-kafka-docker>`_, to create sample records for your Apache Kafka topic that provides the streamed data.
 
 
+Requirements
+------------
+
+* An Aiven account
+* `Aiven CLI <https://github.com/aiven/aiven-client>`_ and `psql <https://www.postgresql.org/docs/current/app-psql.html>`_ to connect to PostgreSQL services
+* `Dockerized fake data producer for Aiven for Apache Kafka <https://github.com/aiven/fake-data-producer-for-apache-kafka-docker>`_ and `Docker <https://www.docker.com/>`_ to generate sample data (optional)
+
+
 Set up Aiven services
 ---------------------
 
@@ -60,22 +68,9 @@ Before you start, clone the `Dockerized fake data producer for Aiven for Apache 
 
 #. Go to the data producer tool directory and copy the ``conf/env.conf.sample`` file to ``conf/env.conf``.
 
-#. Edit the ``conf/env.conf`` file and update the parameters:
+#. Edit the ``conf/env.conf`` file and update the parameters with your Aiven account information and the authentication token that you created.
 
-   ::
-
-      PROJECT_NAME="AIVEN_PROJECT_NAME"
-      SERVICE_NAME="demo-kafka"
-      TOPIC="cpu_load_stats_real"
-      PARTITIONS=2
-      REPLICATION=2
-      NR_MESSAGES=200
-      MAX_TIME=0
-      SUBJECT="metrics"
-      USERNAME="AIVEN_ACCOUNT_EMAIL"
-      TOKEN="AUTHENTICATION_TOKEN"
-
-   Replace ``AIVEN_PROJECT_NAME`` and ``AIVEN_ACCOUNT_EMAIL`` with the details for your Aiven account, and replace ``AUTHENTICATION_TOKEN`` with the token that you created.
+   See the `instructions for the tool <https://github.com/aiven/fake-data-producer-for-apache-kafka-docker#readme>`_ for details on the parameters.
 
    .. note::
       The ``NR_MESSAGES`` option defines the number of messages that the tool creates when you run it. Setting this parameter to ``0`` creates a continuous flow of messages that never stops.
@@ -115,6 +110,7 @@ This setup uses a fixed threshold to filter any instances of high CPU load to a 
         id1(Kafka source)-- metrics stream -->id2(Flink job);
         id2-- high CPU -->id3(Kafka sink);
 
+For this setup, you need to configure a source table to read the metrics data from your Kafka topic, a sink table to send the processed messages to a separate Kafka topic, and a Flink job to process the data.
 
 1. In the Aiven web console, select the **Jobs & Data** tab in your Aiven for Apache Flink service.
 
@@ -164,7 +160,7 @@ This setup uses a fixed threshold to filter any instances of high CPU load to a 
 Create a pipeline with windowing
 --------------------------------
    
-This setup uses :doc:`windows </docs/products/flink/concepts/windows>` to determine instances of high CPU load during set intervals based on :doc:`event time </docs/products/flink/concepts/event_processing_time>`.
+This setup measures CPU load over a configrured time using :doc:`windows </docs/products/flink/concepts/windows>` and :doc:`event time </docs/products/flink/concepts/event_processing_time>`.
 
 .. mermaid::
 
@@ -173,6 +169,7 @@ This setup uses :doc:`windows </docs/products/flink/concepts/windows>` to determ
         id1(Kafka source)-- timestamped metrics -->id3(Flink job);
         id3-- 30-second average CPU -->id4(Kafka sink);
 
+This uses the same ``CPU_IN`` Kafka source table that you created in the previous section. In addition, you need a new sink table to send the processed messages to a separate Kafka topic and a new Flink job to process the data.
 
 1. Go to the **Data Tables** subtab.
 
@@ -216,6 +213,7 @@ This setup uses host-specific thresholds that are stored in PostgreSQL as a basi
 		id2(PosgreSQL source)-- host-specific thresholds -->id3;
         id3-- host with high CPU -->id4(Kafka sink);
 
+This uses the same ``CPU_IN`` Kafka source table that you created earlier. In addition, you need a new sink table to send the processed messages to a separate Kafka topic, a source table to get the PostgreSQL threshold data, and a new Flink job to process the data.
 
 .. note::
    For creating and configuring the tables in your PostgreSQL service, these steps use the Aiven CLI to call ``psql``. You can instead use other tools to complete these steps if you prefer.
@@ -235,7 +233,7 @@ This setup uses host-specific thresholds that are stored in PostgreSQL as a basi
 
    ::
 
-      SELECT * FROM CPU_THRESHOLDS;
+      SELECT * FROM cpu_thresholds;
 
    The output shows you the content of the table:
 
@@ -298,6 +296,7 @@ This setup highlights the instances where the average CPU load over a :doc:`wind
 		id2(PosgreSQL source)-- host-specific thresholds -->id3;
         id3-- high 30-second average CPU -->id4(PostgreSQL sink);
 
+This uses the same ``CPU_IN`` Kafka source table and ``SOURCE_THRESHOLDS`` PostgreSQL source table that you created earlier. In addition, you need a new sink table to store the processed data in PostgreSQL and a new Flink job to process the data.
 
 .. note::
    For creating and configuring the tables in your PostgreSQL service, these steps use the Aiven CLI to call ``psql``. You can instead use other tools to complete these steps if you prefer.
