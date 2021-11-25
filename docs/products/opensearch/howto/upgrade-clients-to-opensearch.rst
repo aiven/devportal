@@ -1,47 +1,36 @@
 Upgrade Elasticsearch clients to OpenSearch
 ===========================================
 
-This article outlines the changes required for upgrading Elasticsearch clients to OpenSearch, migration strategy and what to do if you can't upgrade immediately.
+Elasticsearch has introduced breaking changes into their client libraries as early as **7.13.\***, that's why newer Elasticsearch clients won't work with OpenSearch.
+
+Migration steps
+---------------
+
+In order to upgrade the Elasticsearch clients to OpenSearch follow these steps:
+
+1. Pin your ElasticSearch libraries to version **7.10.2** (latest version under the open-source license).
+2. Switch from **ElasticSearch 7.10.2** to the fully compatible **OpenSearch 1.0.0**.
+3. Update OpenSearch libraries till their latest version.
+
+
+.. note::
+    You can migrate your cluster from ElasticSearch to OpenSearch  either before or after switching the clients. Read :doc:`our article <upgrade-to-opensearch>` for more details.
+
+
 
 What if you can't upgrade immediately?
 --------------------------------------
 
-OpenSearch documentation suggests version locking the client libraries
-to **7.10.2** for the corresponding language or framework in order
-to prevent many of the breaking changes that were introduced into
-Elasticsearch client libraries as early as **7.13.\***. This is true for
-application libraries as well as the supporting ecosystem of tooling
+If you want to postpone the upgrade, we recommend locking the client version
+of ElasticSearch to **7.10.2** and use this version till you can proceed with the migration steps outlined above. This is true for
+application libraries as well as for the supporting ecosystem of tooling
 like File Beats and Logstash.
 
-Migration strategy and upgrade order
-------------------------------------
+.. note::
+    Please refer to `OpenSearch compatibility documentation <https://opensearch.org/docs/latest/clients/index/>`_ as the source of truth.
 
-OpenSearch project was forked from the last open source version of Elasticsearch,
-namely **7.10.2**, therefore locking **Elasticsearch to 7.10.2** and
-**OpenSearch to 1.0.0** provides compatibility between client libraries and
-deployed servers.
-
-.. image:: /images/products/opensearch/client-and-node-compatibility-es-to-os.png
-    :alt: Compatibility diagram
-
-Because of this compatibility, it does not matter the order that you
-migrate your cluster, or application clients. However, as always, please follow
-best practices:
-
-- thoroughly test lower environments
-- test against a fork of your production database
-- have a fallback plan in place should anything go wrong with your production upgrade.
-
-Migration examples
-------------------
-
-Similarly to forking the Elasticsearch application code for deploying
-nodes, the OpenSearch project forked the open source client
-libraries. This means that you can simply switch the libraries without modifying your data
-model, or application logic.
-
-Please refer to `OpenSearch compatibility documentation <https://opensearch.org/docs/latest/clients/index/>`_ as
-the source of truth.
+Client migration examples
+-------------------------
 
 To help you with migration, we provided some `code migration examples <https://github.com/aiven/opensearch-migration-examples>`_ in our repository.
 
@@ -53,5 +42,5 @@ Java and Spring Boot
 NodeJS
 ~~~~~~
 
-`Node libraries <https://opensearch.org/docs/latest/clients/javascript/>`_ are forks of the Elasticsearch libraries. The only required change should be the dependency in ``package.json`` and your
+`Node libraries <https://opensearch.org/docs/latest/clients/javascript/>`_ are forks of the Elasticsearch libraries. The only required change should be the dependency in ``package.json`` and the
 ``require`` or ``import`` statements. You can see an `example migration code <https://github.com/aiven/opensearch-migration-examples/tree/main/node-client-migration>`_ in our repository.
