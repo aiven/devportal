@@ -20,11 +20,6 @@ Setup a kcat configuration file
 -------------------------------
 
 While kcat accepts all connection configuration parameters in the command line, using a configuration file helps minimising the code needed for any following calls.
-
-.. Note:: 
-
-    This example requires kcat **version 1.4.0-RC1** or greater (the ``-F`` option was added after 1.3.1). You can specify the same options on the command line with earlier versions.
-
 A kcat configuration file enabling the connection to an Aiven for Apache Kafka service with TLS security must contain the following entries:
 
 * ``bootstrap.servers``: Aiven for Apache Kafka service URI, that can be found in the service overview in Aiven console
