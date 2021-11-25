@@ -51,27 +51,10 @@ Create an Apache Flink service in the Aiven web console
    The status is *Rebuilding* while the service is being created for you. Once the service is ready, the status changes to *Running*. While services typically start up in a couple of minutes, the performance varies between cloud providers and regions, and it may take longer in some circumstances.
 
 
-Create an Apache Flink service with the Aiven CLI
--------------------------------------------------
+Next steps
+----------
 
-1. Install and set up the Aiven CLI utility.
-
-   See :doc:`this article </docs/tools/cli>` for instructions and more information.
-
-2. Run the following command to create your Aiven for Apache Flink service::
-
-       avn service create <service_name> -t flink --cloud <cloud_provider_and_region> --plan <service_plan> wait
-
-   This creates the service and waits until the service status is *Running*.
-
-
-Create a job
-------------
-
-This example uses an Aiven for Apache Kafka service as both the data source and the pipeline target. The service uses a topic named `alert` as the source, and the transformed data is inserted into another topic named `KAlert` via a Flink job.
-
-1. Once you have created the Flink and Kafka services, create the integration between them. For details, see :doc:`this article <howto/create-integration>`.
-
-2. Create the source and sink tables. For details, see :doc:`this article <howto/connect>`.
-
-3. Create the job with the REST API. For details, see :doc:`this article <howto/create-job>`.
+* For details on using the Aiven CLI to create and manage Aiven for Apache Flink services, see the :doc:`Aiven CLI documentation </docs/tools/cli>` and the :doc:`Flink-specific command reference </docs/tools/cli/service/flink>`
+* :doc:`Create integrations <howto/create-integration>` with Aiven for Apache Kafka and Aiven for PostgreSQL services
+* Create source and sink data tables to map the data for :doc:`Apache Kafka <howto/connect-kafka>` or :doc:`PostgreSQL <howto/connect-pg>` services
+* :doc:`Create Apache Flink jobs <howto/create-job>` to implement your data pipelines
