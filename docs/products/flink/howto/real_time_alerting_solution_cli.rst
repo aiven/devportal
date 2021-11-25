@@ -157,7 +157,7 @@ This setup uses a fixed threshold to filter any instances of high CPU load to a 
         id1(Kafka source)-- metrics stream -->id2(Flink job);
         id2-- high CPU -->id3(Kafka sink);
 
-For this setup, you need to configure a source table to read the metrics data from your Kafka topic, a sink table to send the processed messages to a separate Kafka topic, and a Flink job to process the data:
+For this setup, you need to configure a source table to read the metrics data from your Kafka topic, a sink table to send the processed messages to a separate Kafka topic, and a Flink job to process the data.
 
 1. Using the Aiven CLI, create a Kafka table named ``CPU_IN``.
 
@@ -250,7 +250,7 @@ For this setup, you need to configure a source table to read the metrics data fr
 Create a pipeline with windowing
 --------------------------------
    
-This setup uses :doc:`windows </docs/products/flink/concepts/windows>` to determine instances of high CPU load during set intervals based on :doc:`event time </docs/products/flink/concepts/event_processing_time>`.
+This setup measures CPU load over a configured time using :doc:`windows </docs/products/flink/concepts/windows>` and :doc:`event time </docs/products/flink/concepts/event_processing_time>`.
 
 .. mermaid::
 
@@ -259,7 +259,7 @@ This setup uses :doc:`windows </docs/products/flink/concepts/windows>` to determ
         id1(Kafka source)-- timestamped metrics -->id3(Flink job);
         id3-- 30-second average CPU -->id4(Kafka sink);
 
-This uses the same ``CPU_IN`` Kafka source table that you created in the previous section. In addition, you need a new sink table to send the processed messages to a separate Kafka topic and a new Flink job to process the data:
+This uses the same ``CPU_IN`` Kafka source table that you created in the previous section. In addition, you need a new sink table to send the processed messages to a separate Kafka topic and a new Flink job to process the data.
 
 1. Using the Aiven CLI, create a Kafka table named ``CPU_OUT_AGG``.
 
@@ -332,7 +332,7 @@ This setup uses host-specific thresholds that are stored in PostgreSQL as a basi
 		id2(PosgreSQL source)-- host-specific thresholds -->id3;
         id3-- host with high CPU -->id4(Kafka sink);
 
-This uses the same ``CPU_IN`` Kafka source table that you created earlier. In addition, you need a new sink table to send the processed messages to a separate Kafka topic, a PostgreSQL source table to hold the threshold data, and a new Flink job to process the data:
+This uses the same ``CPU_IN`` Kafka source table that you created earlier. In addition, you need a new sink table to send the processed messages to a separate Kafka topic, a PostgreSQL source table to hold the threshold data, and a new Flink job to process the data.
 
 1. In the Aiven CLI, run the following command to connect to the ``demo-postgresql`` service:
    
@@ -462,7 +462,7 @@ This setup highlights the instances where the average CPU load over a :doc:`wind
         id3-- high 30-second average CPU -->id4(PostgreSQL sink);
 
 
-This uses the same ``CPU_IN`` Kafka source table and ``SOURCE_THRESHOLDS`` PostgreSQL source table that you created earlier. In addition, you need a new sink PostgreSQL table to store the processed data and a new Flink job to process the data:
+This uses the same ``CPU_IN`` Kafka source table and ``SOURCE_THRESHOLDS`` PostgreSQL source table that you created earlier. In addition, you need a new sink PostgreSQL table to store the processed data and a new Flink job to process the data.
 
 1. In the Aiven CLI, run the following command to connect to the ``demo-postgresql`` service:
    

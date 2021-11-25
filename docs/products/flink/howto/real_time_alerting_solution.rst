@@ -160,7 +160,7 @@ For this setup, you need to configure a source table to read the metrics data fr
 Create a pipeline with windowing
 --------------------------------
    
-This setup measures CPU load over a configrured time using :doc:`windows </docs/products/flink/concepts/windows>` and :doc:`event time </docs/products/flink/concepts/event_processing_time>`.
+This setup measures CPU load over a configured time using :doc:`windows </docs/products/flink/concepts/windows>` and :doc:`event time </docs/products/flink/concepts/event_processing_time>`.
 
 .. mermaid::
 
