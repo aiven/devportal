@@ -26,6 +26,7 @@ geospatial
 [Gg]o
 Grafana
 hardcoded
+Hashicorp
 Homebrew
 Heatmap
 [Hh]obbyist
@@ -91,5 +92,3 @@ Untrusted
 wget
 Zabbix
 Zipkin
-tfenv
-Hashicorp
