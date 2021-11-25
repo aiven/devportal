@@ -5,6 +5,7 @@ Apache
 API
 APIs
 [Bb]oolean
+[Bb]oot
 [Bb]usiness
 [Cc]onnect
 cyber
@@ -79,6 +80,7 @@ scriptable
 sharding
 signups
 Singlestat
+[Ss]pring
 Statusmap
 Telegraf
 Terraform
