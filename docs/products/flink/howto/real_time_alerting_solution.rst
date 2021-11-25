@@ -42,8 +42,12 @@ Set up Aiven services
 #. Select the ``demo-kafka`` service and change the following settings on the *Overview* page:
 
    - **Kafka REST API (Karapace)** > **Enable**
-   - **Kafka Connect** > **Enable**
+
+     This setting allows you to integrate your Aiven for Apache Kafka service with Aiven for Apache Flink, and you can also use the API to view the data in your Apache Kafka topics.
+
    - **Advanced configuration** > **Add configuration option** > ``kafka.auto_create_topics_enable``, switch the setting on and then click **Save advanced configuration**
+
+     This setting allows you to create new Apache Kafka topics as you configure your Apache Flink data tables, so that you do not need to create the topics in advance.
 
 #. Select the ``demo-flink`` service and add the service integrations:
 
@@ -119,11 +123,11 @@ For this setup, you need to configure a source table to read the metrics data fr
 #. Create the source Kafka table:
 
    a. Select your Kafka service.
-   b. Select **Apache Kafka SQL Connector** as the connector type.
-   c. Select **Key not used** as the key.
-   d. Select **JSON** as the value data format.
-   e. Enter ``CPU_IN`` as the name
-   f. Select ``cpu_load_stats_real`` as the topic.
+   b. Select ``cpu_load_stats_real`` as the topic.
+   c. Select **Apache Kafka SQL Connector** as the connector type.
+   d. Select **Key not used** as the key.
+   e. Select **JSON** as the value data format.
+   f. Enter ``CPU_IN`` as the name
    g. Enter the following as the SQL schema:
 
       .. literalinclude:: /code/products/flink/basic_cpu-in_table.md
@@ -134,11 +138,11 @@ For this setup, you need to configure a source table to read the metrics data fr
 #. Create the sink Kafka table:
 
    a. Select your Kafka service.
-   b. Select **Apache Kafka SQL Connector** as the connector type.
-   c. Select **Key not used** as the key.
-   d. Select **JSON** as the value data format.
-   e. Enter ``CPU_OUT_FILTER`` as the name
-   f. Select ``cpu_load_stats_real_filter`` as the topic.
+   b. Enter ``cpu_load_stats_real_filter`` as the topic.
+   c. Select **Apache Kafka SQL Connector** as the connector type.
+   d. Select **Key not used** as the key.
+   e. Select **JSON** as the value data format.
+   f. Enter ``CPU_OUT_FILTER`` as the name
    g. Enter the following as the SQL schema:
 
       .. literalinclude:: /code/products/flink/basic_cpu-out-filter_table.md
@@ -176,11 +180,11 @@ This uses the same ``CPU_IN`` Kafka source table that you created in the previou
 #. Create the sink Kafka table:
 
    a. Select your Kafka service.
-   b. Select **Apache Kafka SQL Connector** as the connector type.
-   c. Select **Key not used** as the key.
-   d. Select **JSON** as the value data format.
-   e. Enter ``CPU_OUT_AGG`` as the name
-   f. Select ``cpu_load_stats_agg`` as the topic.
+   b. Enter ``cpu_load_stats_agg`` as the topic.
+   c. Select **Apache Kafka SQL Connector** as the connector type.
+   d. Select **Key not used** as the key.
+   e. Select **JSON** as the value data format.
+   f. Enter ``CPU_OUT_AGG`` as the name
    g. Enter the following as the SQL schema:
 
       .. literalinclude:: /code/products/flink/windowed_cpu-out-agg_table.md
@@ -259,11 +263,11 @@ This uses the same ``CPU_IN`` Kafka source table that you created earlier. In ad
 #. Create the sink Kafka table:
 
    a. Select your Kafka service.
-   b. Select **Apache Kafka SQL Connector** as the connector type.
-   c. Select **Key not used** as the key.
-   d. Select **JSON** as the value data format.
-   e. Enter ``CPU_OUT_FILTER_PG`` as the name
-   f. Select ``cpu_load_stats_real_filter_pg`` as the topic.
+   b. Select ``cpu_load_stats_real_filter_pg`` as the topic.
+   c. Select **Apache Kafka SQL Connector** as the connector type.
+   d. Select **Key not used** as the key.
+   e. Select **JSON** as the value data format.
+   f. Enter ``CPU_OUT_FILTER_PG`` as the name
    g. Enter the following as the SQL schema:
 
       .. literalinclude:: /code/products/flink/pgthresholds_cpu-out-filter-pg_table.md
