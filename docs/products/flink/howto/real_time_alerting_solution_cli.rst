@@ -37,7 +37,7 @@ Set up Aiven services
 .. note::
    The commands given in this example use ``business-4`` service plans, but you can use any other service plan instead if you prefer.
 
-1. Using the Aiven CLI, run the following command to create an Aiven for Apache Kafka service named ``demo-kafka``:
+1. Using the `Aiven CLI <https://github.com/aiven/aiven-client>`_, run the following command to create an Aiven for Apache Kafka service named ``demo-kafka``:
 
    ::
 
