@@ -7,7 +7,7 @@ To start using Aiven for OpenSearch Dashboards, you should :doc:`create Aiven fo
     If you are using Chrome, you need to enter **user name** and **password** manually. :doc:`Read more <howto/access-from-chrome>` for details.
 
 Load sample data
-************
+*****************
 
 OpenSearch Dashboards come with three demonstration datasets included. To add sample data follow these steps:
 
@@ -16,7 +16,7 @@ OpenSearch Dashboards come with three demonstration datasets included. To add sa
 #. Click on **View data** to open the dashboard.
 
 Tools and pages
-************
+***************
 
 OpenSearch Dashboards includes various tools to work with data and run queries in different ways. Below you can find ideas what you can do at different pages.
 
