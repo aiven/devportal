@@ -148,6 +148,7 @@ entries:
           - file: docs/products/opensearch/howto/migrating_elasticsearch_data_to_aiven
           - file: docs/products/opensearch/howto/upgrade-to-opensearch
           - file: docs/products/opensearch/howto/upgrade-to-opensearch-with-terraform
+          - file: docs/products/opensearch/howto/upgrade-clients-to-opensearch
           - file: docs/products/opensearch/howto/connect-with-nodejs
           - file: docs/products/opensearch/howto/opensearch-and-nodejs
           - file: docs/products/opensearch/howto/opensearch-aggregations-and-nodejs
