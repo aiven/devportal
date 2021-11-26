@@ -15,6 +15,7 @@ datasource
 datastore
 [Dd]ashboards
 Debezium
+Dev
 Distro
 downsampled
 downsampling
@@ -26,6 +27,7 @@ fileset[s]?
 Flink
 Geomap
 geospatial
+GitHub
 [Gg]o
 Gradle
 Grafana
@@ -98,5 +100,6 @@ unencrypted
 Untrusted
 [Uu]naggregated
 wget
+Workbench
 Zabbix
 Zipkin

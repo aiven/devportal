@@ -156,6 +156,14 @@ entries:
           - file: docs/products/opensearch/howto/restore_opensearch_backup
           - file: docs/products/opensearch/howto/set_index_retention_patterns
           - file: docs/products/opensearch/howto/switch_off_automatic_replication_factor_adjustment
+      - file: docs/products/opensearch/dashboards/index
+        title: OpenSearch Dashboards
+        entries:
+          - file: docs/products/opensearch/dashboards/getting-started
+          - file: docs/products/opensearch/dashboards/howto
+            title: HowTo
+            entries:
+              - file: docs/products/opensearch/dashboards/howto/access-from-chrome
       - file: docs/products/opensearch/reference
         title: Reference
         entries:
