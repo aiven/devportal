@@ -42,12 +42,14 @@ entries:
         - file: docs/tools/cli/user
           entries:
             - glob: docs/tools/cli/user/*
-
       - file: docs/tools/api/index
         title: Aiven API
         entries:
         - glob: docs/tools/api/*
-      - file: docs/tools/terraform
+      - file: docs/tools/terraform/index
+        title: Aiven Terraform provider
+        entries:
+        - glob: docs/tools/terraform/*
       - file: docs/tools/kubernetes
 
   # -------- PRODUCT-SPECIFIC --------
@@ -211,6 +213,6 @@ entries:
         title: Reference
         entries:
           - glob: docs/products/grafana/reference/*
-     
+
   # -------- AUXILIARY
   - file: docs/community

@@ -14,6 +14,7 @@ datacenter
 datasource
 datastore
 [Dd]ashboards
+[Dd]ev
 Debezium
 Distro
 downsampled
@@ -30,6 +31,7 @@ geospatial
 Gradle
 Grafana
 hardcoded
+Hashicorp
 Homebrew
 Heatmap
 [Hh]obbyist
