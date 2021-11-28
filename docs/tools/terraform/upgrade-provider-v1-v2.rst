@@ -1,5 +1,5 @@
 Upgrade the Aiven Terraform Provider from v1 to v2
-====================================================
+==================================================
 
 Version 2 of the Aiven Terraform Provider was released in `October of
 2020 <https://aiven.io/blog/aiven-terraform-provider-v2-release>`__.
@@ -22,15 +22,33 @@ Aiven Terraform Provider has a `detailed changelog <https://github.com/aiven/ter
 -  New services are available in the updated provider, such as
    ``aiven_flink`` and ``aiven_opensearch``.
 
+Upgrade Aiven Terraform provider
+--------------------------------
+
+Update the Aiven Terraform Provider by
+editing the providers block of your script to include the latest version of
+the Aiven Terraform Provider (v2.3.1 at the time of writing)::
+
+    terraform {
+      required_providers {
+        aiven = {
+          source = "aiven/aiven"
+          version = "2.3.1"
+        }
+      }
+    }
+
 Upgrade Terraform
 -----------------
 
-We recommend keeping your Terraform version up to date. If you have v0.12 then follow the steps below. Users with 0.13 (and the related syntax update) can skip the next section and move straight to upgrading the Aiven Terraform Provider version.
+We recommend keeping your Terraform version up to date.
+If you have v0.12 then follow the steps below.
+Users with 0.13 (and the related syntax update) can skip the next section.
 
 Upgrade Terraform 0.12 to 0.13
 ''''''''''''''''''''''''''''''
 
-Between v0.12 and v0.13, the syntax of Terraform files changed. If you have the older syntax, 
+Between v0.12 and v0.13, the syntax of Terraform files changed. If you have the older syntax,
 follow these steps to get the updated syntax:
 
 
@@ -47,18 +65,7 @@ you will replace old Aiven terraform provider references to the new format.
 If you are using more providers than Aiven provider you most likely need to upgrade them as well.
 More information `here <https://www.terraform.io/upgrade-guides/0-13.html>`__.
 
-Now we can remove the old Terraform folder ``rm -rf ~/.terraform.d``.
-
-Upgrade Terraform from 0.13 or later
-''''''''''''''''''''''''''''''''''''
-
-Any version above 0.13 can be upgraded to latest without any special steps. 
-
-1. Use ``tfenv`` to get the latest version (1.0.10 at the time of writing) ``tfenv install latest && tfenv use latest``
-
-2. Run ``terraform init -upgrade``
-
-3. Run ``terraform plan``
+5. Run ``terraform init -upgrade``
 
 .. image:: /images/tools/terraform/terraform-upgrade.jpg
    :alt:
@@ -70,22 +77,24 @@ The warnings will provide recommendations on the changes to make and you
 can get more information using our
 `docs <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`__.
 
-Upgrade Aiven Terraform provider
---------------------------------
+Now we can remove the old Terraform folder ``rm -rf ~/.terraform.d``.
 
-With Terraform updated, you can update the Aiven Terraform Provider by
-editing the providers block of your script to include the latest version of
-the Aiven Terraform Provider (v2.3.1 at the time of writing)::
+6. As the last step run ``terraform plan``
 
-    terraform {
-      required_providers {
-        aiven = {
-          source = "aiven/aiven"
-          version = "2.3.1"
-        }
-      }
-    }
+Upgrade Terraform from 0.13 or later
+''''''''''''''''''''''''''''''''''''
 
+Any version above 0.13 can be upgraded to latest without any special steps.
+
+.. note::
+  If you are using Aiven Terraform provider v1 with Terraform 0.14 `dev_overrides <https://www.terraform.io/docs/cli/config/config-file.html#provider-installation>`__
+  you will need to add Aiven provider to the ``exclude`` block or remove ``dev_overrides`` completely.
+
+1. Use ``tfenv`` to get the latest version (1.0.10 at the time of writing) ``tfenv install latest && tfenv use latest``
+
+2. Run ``terraform init -upgrade``
+
+3. Run ``terraform plan``
 
 Update to service specific resource syntax
 ''''''''''''''''''''''''''''''''''''''''''
@@ -106,7 +115,7 @@ To safely make this change you will:
 
 1. To change from the old ``aiven_service`` to the new ``aiven_kafka``
 resource, the resource type should be changed, and the old ``service_type``
-field removed. Any references to ``aiven.service.kafka.*`` should be updated to instead read ``aiven_kafka.kafka.*`` instead. Here's an example showing the update in action::
+field removed. Any references to ``aiven_service.kafka.*`` should be updated to instead read ``aiven_kafka.kafka.*`` instead. Here's an example showing the update in action::
 
     - resource "aiven_service" "kafka" {
     -    service_type            = "kafka"
@@ -147,6 +156,6 @@ field removed. Any references to ``aiven.service.kafka.*`` should be updated to 
 Further reading
 ---------------
 
-There are examples of migrating each of the available service types on the 
+There are examples of migrating each of the available service types on the
 `Aiven examples repository <https://github.com/aiven/aiven-examples/tree/master/terraform>`__
 on GitHub.

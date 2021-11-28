@@ -12,6 +12,7 @@ datacenter
 datasource
 datastore
 [Dd]ashboards
+dev
 Distro
 downsampled
 downsampling
