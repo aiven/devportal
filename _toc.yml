@@ -60,11 +60,27 @@ entries:
       - file: docs/products/kafka/concepts
         entries:
           - file: docs/products/kafka/concepts/log-compaction
+          - file: docs/products/kafka/concepts/horizontal-vertical-scaling
       - file: docs/products/kafka/howto
         title: HowTo
         entries:
           - file: docs/products/kafka/howto/kafka-sasl-auth
+          - file: docs/products/kafka/howto/get-topic-partition-details
+          - file: docs/products/kafka/howto/kcat.rst
           - file: docs/products/kafka/howto/integrate-service-logs-into-kafka-topic
+      
+      - file: docs/products/kafka/kafka-connect/index
+        title: Apache Kafka Connect
+        entries:
+        - file: docs/products/kafka/kafka-connect/getting-started
+        - file: docs/products/kafka/kafka-connect/concepts
+          entries:
+          - file: docs/products/kafka/kafka-connect/concepts/list-of-connector-plugins
+        - file: docs/products/kafka/kafka-connect/howto
+          title: HowTo
+          entries:
+          - file: docs/products/kafka/kafka-connect/howto/enable-connect
+
 
   - file: docs/products/postgresql/index
     title: PostgreSQL
@@ -134,6 +150,7 @@ entries:
           - file: docs/products/opensearch/howto/migrating_elasticsearch_data_to_aiven
           - file: docs/products/opensearch/howto/upgrade-to-opensearch
           - file: docs/products/opensearch/howto/upgrade-to-opensearch-with-terraform
+          - file: docs/products/opensearch/howto/upgrade-clients-to-opensearch
           - file: docs/products/opensearch/howto/connect-with-nodejs
           - file: docs/products/opensearch/howto/opensearch-and-nodejs
           - file: docs/products/opensearch/howto/opensearch-aggregations-and-nodejs
