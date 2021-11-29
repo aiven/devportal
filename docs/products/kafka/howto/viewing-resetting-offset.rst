@@ -2,36 +2,10 @@ View and reset consumer group offsets
 ============================================
 
 The `open source Apache Kafka code <https://kafka.apache.org/downloads>`_ includes a ``kafka-consumer-groups.sh`` utility enabling you to view and manipulate the state of consumer groups. 
-Before using the tool, few setup steps need to be performed.
 
-Define the configuration file
------------------------------
+.. Note::
 
-#. Create the Java keystore and truststore for your Aiven for Apache Kafka service using the :ref:`dedicated Aiven CLI command <avn_service_user_kafka_java_creds>`.
-
-#. Create a ``consumer.properties`` properties file pointing to the keystore and truststore files with the following entries:
-
-* ``security.protocol``: security protocol, SSL for the default TLS security settings
-* ``ssl.keystore.type``: keystore type, ``PKCS12`` for the keystore generated with the :ref:`dedicated Aiven CLI command <avn_service_user_kafka_java_creds>`
-* ``ssl.keystore.location``: keystore location on the file system
-* ``ssl.keystore.password``: keystore password
-* ``ssl.truststore.location``: truststore location on the file system
-* ``ssl.truststore.password``: truststore password
-* ``ssl.key.password``: keystore password
-
-.. Tip::
-
-    The ``avn service user-kafka-java-creds`` :ref:`Aiven CLI command <avn_service_user_kafka_java_creds>` accepts a ``--password`` parameter setting the same password for the truststore, keystore and key
-   
-An example of the ``consumer.properties`` content is the following::
-
-    security.protocol=SSL
-    ssl.keystore.type=PKCS12
-    ssl.keystore.location=client.keystore.p12
-    ssl.keystore.password=changeit
-    ssl.key.password=changeit
-    ssl.truststore.location=client.truststore.jks
-    ssl.truststore.password=changeit
+    Before using the ``kafka-consumer-groups.sh`` you need to configure a ``consumer.properties`` file pointing to a Java keystore and truststore which contain the required certificates for authentication. Check out how to do it in the :doc:`dedicated page <kafka-tools-config-file>`.
 
 
 Managing consumer group offsets with ``kafka-consumer-groups.sh``
@@ -39,10 +13,10 @@ Managing consumer group offsets with ``kafka-consumer-groups.sh``
 
 The ``kafka-consumer-groups.sh`` tool enables to manage consumer group offsets, the following commands are available.
 
-List the active consumer groups
+List active consumer groups
 '''''''''''''''''''''''''''''''''''''''''
 
-To list the currently active consumer groups use the following command replacing the ``demo-kafka.my-project.aivencloud.com:17072`` with the Aiven for Apache Kafka service URI:
+To list the currently active consumer groups use the following command replacing the ``demo-kafka.my-project.aivencloud.com:17072`` with your service URI:
 
 ::
 
@@ -50,13 +24,6 @@ To list the currently active consumer groups use the following command replacing
         --bootstrap-server demo-kafka.my-project.aivencloud.com:17072 \
         --command-config consumer.properties \
         --list
-
-An example of the ``list`` option, showing two consumer groups, is the following:
-
-.. code:: text
-
-    my-group
-    my-group-2
 
 Retrieve the details of a consumer group
 ''''''''''''''''''''''''''''''''''''''''''''''''
@@ -71,7 +38,7 @@ To retrieve the details of a consumer group use the following command replacing 
         --group my-group \
         --describe
           
-An example of the ``describe`` option, showing the details of the ``my-group`` consumer groups, is the following:
+The details of the consumer group ``my-group`` are printed out in the following output:
 
 .. code:: text
 
@@ -92,7 +59,7 @@ To retrieve the current members of a consumer group use the following command re
         --describe \
         --members
 
-An example of the ``--members`` option, showing the members of the ``my-group`` consumer groups, is the following:
+The members of the ``my-group`` consumer group are printed out in the following output:
 
 .. code:: text
 
@@ -104,7 +71,7 @@ An example of the ``--members`` option, showing the members of the ``my-group`` 
 Reset the offset of a consumer group
 '''''''''''''''''''''''''''''''''''''
 
-Resetting the consumer group offset might be needed when the topic parsing needs to start at a specific (non default) offset.
+You might want to reset the consumer group offset when the topic parsing needs to start at a specific (non default) offset.
 To reset the offset use the following command replacing: 
 
 * ``demo-kafka.my-project.aivencloud.com:17072`` with the Aiven for Apache Kafka service URI 

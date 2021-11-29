@@ -61,6 +61,7 @@ entries:
         title: HowTo
         entries:
           - file: docs/products/kafka/howto/kafka-sasl-auth
+          - file: docs/products/kafka/howto/kafka-tools-config-file
           - file: docs/products/kafka/howto/viewing-resetting-offset
 
   - file: docs/products/postgresql/index
