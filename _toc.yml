@@ -129,6 +129,32 @@ entries:
         entries:
           - glob: docs/products/postgresql/reference/*
 
+  - file: docs/products/flink/index
+    entries:
+      - file: docs/products/flink/getting-started
+      - file: docs/products/flink/concepts
+        title: Concepts
+        entries:
+          - file: docs/products/flink/concepts/flink-for-analysts
+          - file: docs/products/flink/concepts/flink-for-operators
+          - file: docs/products/flink/concepts/kafka-connectors
+          - file: docs/products/flink/concepts/kafka-connector-requirements
+          - file: docs/products/flink/concepts/logs-metrics-alerts
+          - file: docs/products/flink/concepts/supported-syntax-sql-editor
+          - file: docs/products/flink/concepts/event-processing-time
+          - file: docs/products/flink/concepts/windows
+          - file: docs/products/flink/concepts/watermarks
+          - file: docs/products/flink/concepts/checkpoints
+      - file: docs/products/flink/howto
+        title: HowTo
+        entries:
+          - file: docs/products/flink/howto/create-integration
+          - file: docs/products/flink/howto/connect-kafka
+          - file: docs/products/flink/howto/connect-pg
+          - file: docs/products/flink/howto/create-job
+          - file: docs/products/flink/howto/real-time-alerting-solution
+          - file: docs/products/flink/howto/real-time-alerting-solution-cli
+
   - file: docs/products/opensearch/index
     title: OpenSearch
     entries:
@@ -178,30 +204,6 @@ entries:
           - glob: docs/products/m3db/howto/*
       - glob: docs/products/m3db/reference/*
   
-  - file: docs/products/flink/index
-    entries:
-      - file: docs/products/flink/getting-started
-      - file: docs/products/flink/concepts
-        title: Concepts
-        entries:
-          - file: docs/products/flink/concepts/overview
-          - file: docs/products/flink/concepts/event_processing_time
-          - file: docs/products/flink/concepts/windows
-          - file: docs/products/flink/concepts/watermarks
-          - file: docs/products/flink/concepts/checkpoints
-          - file: docs/products/flink/concepts/supported_syntax_sql_editor
-          - file: docs/products/flink/concepts/kafka_connectors
-          - file: docs/products/flink/concepts/kafka_connector_requirements
-      - file: docs/products/flink/howto
-        title: HowTo
-        entries:
-          - file: docs/products/flink/howto/create-integration
-          - file: docs/products/flink/howto/connect-kafka
-          - file: docs/products/flink/howto/connect-pg
-          - file: docs/products/flink/howto/create-job
-          - file: docs/products/flink/howto/real_time_alerting_solution
-          - file: docs/products/flink/howto/real_time_alerting_solution_cli
-
   - file: docs/products/redis/index
     title: Redis
     entries:

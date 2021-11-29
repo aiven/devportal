@@ -27,7 +27,7 @@ To create a Flink table based on an Aiven for Apache Kafka topic via Aiven conso
 3. Select the **Kafka connector type**, between the **Apache Kafka SQL Connector** for standard topic reads/writes and the **Upsert Kafka SQL Connector** for changelog type of integration based on message key.
 
 .. Note::   
-   For more information on the connector types and the requirements for each of them, see the articles on :doc:`Kafka connector types </docs/products/flink/concepts/kafka_connectors>` and :doc:`the requirements for each connector type </docs/products/flink/concepts/kafka_connector_requirements>`.
+   For more information on the connector types and the requirements for each of them, see the articles on :doc:`Kafka connector types </docs/products/flink/concepts/kafka-connectors>` and :doc:`the requirements for each connector type </docs/products/flink/concepts/kafka-connector-requirements>`.
 
 4. Select the **Key Data Format**, if a value other than **Key not used** is selected, specify the fields from the SQL schema to be used as key. This setting is specifically needed to set message keys for topics acting as target of data pipelines.
 

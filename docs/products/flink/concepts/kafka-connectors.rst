@@ -39,4 +39,4 @@ If you want to use multiple data streams as a source, but have the results for m
 
 In addition, choose upsert connectors if you want to provide the output as a compacted topic and read only the latest value for each message key.
 
-For more details on the required information for each connector type, see :doc:`this article <kafka_connector_requirements>`.
+For more details on the required information for each connector type, see :doc:`this article <kafka-connector-requirements>`.
