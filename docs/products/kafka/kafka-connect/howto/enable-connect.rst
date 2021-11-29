@@ -5,7 +5,7 @@ To enable Kafka Connect on Aiven for Apache Kafka services, those should be runn
 
 .. Warning::
 
-    Creating a :ref:`dedicated Aiven for Kafka Connect service <apache_kafka_connect_dedicated_cluster>` is Aiven's suggested option. Having Kafka Connect running on the same nodes as Apache Kafka increases the load on the nodes possibly making the cluster more unstable. 
+    Creating a :ref:`dedicated Aiven for Apache Kafka Connect service <apache_kafka_connect_dedicated_cluster>` is Aiven's suggested option. Having Kafka Connect running on the same nodes as Apache Kafka increases the load on the nodes possibly making the cluster more unstable. 
     
     For a better separation of concerns, a dedicated Aiven for Apache Kafka Connect cluster is therefore suggested.
 
