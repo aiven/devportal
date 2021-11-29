@@ -60,7 +60,7 @@ Apache Flink features
   Connect with Aiven for PostgreSQL as a source or sink for your data. The Aiven web console features autocompletion for finding existing databases in a connected PostgreSQL service when you create data tables.
 
 **Automate workflows**
-  Automate workflows for managing Flink services with :doc:`Aiven Terraform Provider </docs/tools/terraform>`. See the `Flink data source <https://registry.terraform.io/providers/aiven/aiven/latest/docs/data-sources/flink>`_ for details.
+  Automate workflows for managing Flink services with :doc:`Aiven Terraform Provider </docs/tools/terraform/index>`. See the `Flink data source <https://registry.terraform.io/providers/aiven/aiven/latest/docs/data-sources/flink>`_ for details.
 
 
 Apache Flink resources

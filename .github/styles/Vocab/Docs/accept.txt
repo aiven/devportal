@@ -92,6 +92,7 @@ Splunk
 Statusmap
 [Ss]ubnet
 subtab
+TaskManager
 Telegraf
 Terraform
 Terraforming
