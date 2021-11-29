@@ -1,7 +1,7 @@
 Reference
 =========
 
-References for PostgreSQL:
+Useful reference materials for working with Aiven for Apache Kafka.
 
 .. tableofcontents::
 
