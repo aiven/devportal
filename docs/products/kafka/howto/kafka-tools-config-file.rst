@@ -1,4 +1,4 @@
-Configure ``consumer.properties`` for Apache Kafka Toolbox
+Configure consumer properties for Apache Kafka Toolbox
 ==========================================================
 
 The `open source Apache Kafka code <https://kafka.apache.org/downloads>`_ includes a series of tools under the ``bin`` directory that can be useful to manage and interact with Aiven for Apache Kafka.
