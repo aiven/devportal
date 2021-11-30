@@ -114,6 +114,8 @@ Retrieves the details for a single user in a given Aiven service.
 
     Use the ``--json`` parameter to retrieve all the service specific information for a specific user.
 
+.. _avn_service_user_kafka_java_creds:
+
 ``avn service user-kafka-java-creds``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
