@@ -81,6 +81,7 @@ entries:
           title: HowTo
           entries:
           - file: docs/products/kafka/kafka-connect/howto/enable-connect
+          - file: docs/products/kafka/kafka-connect/howto/enable-automatic-restart
 
 
   - file: docs/products/postgresql/index
