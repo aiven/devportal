@@ -4,6 +4,7 @@ Aiven
 Apache
 API
 APIs
+Avro
 [Bb]oolean
 [Bb]oot
 [Bb]usiness
@@ -14,9 +15,9 @@ datacenter
 datasource
 datastore
 [Dd]ashboards
-[Dd]ev
 Debezium
 Distro
+[Dd]ockerized
 downsampled
 downsampling
 Elasticsearch
@@ -89,6 +90,9 @@ Singlestat
 Splunk
 [Ss]pring
 Statusmap
+[Ss]ubnet
+subtab
+TaskManager
 Telegraf
 Terraform
 Terraforming
@@ -99,6 +103,7 @@ Uber
 unencrypted
 Untrusted
 [Uu]naggregated
+[Uu]psert
 wget
 Zabbix
 Zipkin

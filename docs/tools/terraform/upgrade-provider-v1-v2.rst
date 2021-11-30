@@ -68,7 +68,7 @@ More information `here <https://www.terraform.io/upgrade-guides/0-13.html>`__.
 5. Run ``terraform init -upgrade``
 
 .. image:: /images/tools/terraform/terraform-upgrade.jpg
-   :alt:
+   :alt: Screenshot of the upgrade command in action
 
 You may see warnings or errors like the above, these will point towards
 changes made between the release you are running and the latest release.
@@ -87,7 +87,7 @@ Upgrade Terraform from 0.13 or later
 Any version above 0.13 can be upgraded to latest without any special steps.
 
 .. note::
-  If you are using Aiven Terraform provider v1 with Terraform 0.14 `dev_overrides <https://www.terraform.io/docs/cli/config/config-file.html#provider-installation>`__
+  If you are using Aiven Terraform provider v1 with Terraform 0.14 ``dev_overrides`` (see `<https://www.terraform.io/docs/cli/config/config-file.html#provider-installation>`__ )
   you will need to add Aiven provider to the ``exclude`` block or remove ``dev_overrides`` completely.
 
 1. Use ``tfenv`` to get the latest version (1.0.10 at the time of writing) ``tfenv install latest && tfenv use latest``

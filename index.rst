@@ -60,6 +60,17 @@ Learn about the Aiven platform
         :type: ref
         :text: Read more
         :classes: stretched-link
+
+    ---
+
+    |icon-flink| **Apache Flink** Framework for definining powerful transformations of batch and streaming data sets. :badge:`beta,cls=badge-secondary text-black badge-pill`
+
+    +++
+
+    .. link-button:: docs/products/flink/index
+        :type: ref
+        :text: Read more
+        :classes: stretched-link
     ---
 
     |icon-opensearch| **OpenSearch** Document database with specialist search features, bring your freeform documents, logs or metrics, and make sense of them here.
@@ -104,6 +115,7 @@ Learn about the Aiven platform
         :type: ref
         :text: Read more
         :classes: stretched-link
+    
 
 Tools
 -----

@@ -163,6 +163,10 @@ rst_epilog = """
    :width: 24px
    :class: no-scaled-link
 
+.. |icon-flink| image:: /images/icon-flink.svg
+   :width: 24px
+   :class: no-scaled-link
+
 .. |tick| image:: /images/icon-tick.png
    :width: 24px
    :class: no-scaled-link
