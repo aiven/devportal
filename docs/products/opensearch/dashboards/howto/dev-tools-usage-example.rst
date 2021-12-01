@@ -24,7 +24,7 @@ Follow by adding another item with a different set of fields::
     }
 
 
-You can see the command output after running each of the queries::
+You can see the command output after running the query describing created item::
 
     {
       "_index" : "shopping-list",
