@@ -19,4 +19,4 @@ This connector type periodically queries the table(s) to extract the data, and c
 
 * ``timestamp+incrementing``: this last mode uses both the incrementing and timestamp functionalities with ``incrementing.column.name`` selecting the incremental column and ``timestamp.column.name`` the timestamp one(s).
 
-Check out the `Aiven JDBC source connector documentation <https://github.com/aiven/jdbc-connector-for-apache-kafka/blob/master/docs/source-connector.md#query-modes>`_ for more information.
+Check out the `Aiven JDBC source connector documentation <https://github.com/aiven/jdbc-connector-for-apache-kafka/blob/master/docs/source-connector.md>`_ for more information.
