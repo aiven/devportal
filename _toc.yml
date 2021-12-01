@@ -77,11 +77,13 @@ entries:
         - file: docs/products/kafka/kafka-connect/concepts
           entries:
           - file: docs/products/kafka/kafka-connect/concepts/list-of-connector-plugins
+          - file: docs/products/kafka/kafka-connect/concepts/jdbc-source-modes
         - file: docs/products/kafka/kafka-connect/howto
           title: HowTo
           entries:
           - file: docs/products/kafka/kafka-connect/howto/enable-connect
           - file: docs/products/kafka/kafka-connect/howto/enable-automatic-restart
+          - file: docs/products/kafka/kafka-connect/howto/jdbc-source-connector-pg
 
 
   - file: docs/products/postgresql/index

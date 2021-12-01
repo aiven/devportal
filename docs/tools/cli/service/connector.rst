@@ -30,6 +30,8 @@ Lists Kafka Connect connector plugins available in a given Aiven for Apache Kafk
 
   avn service connector available kafka-demo
 
+.. _avn_service_connector_create:
+
 ``avn service connector create``
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
