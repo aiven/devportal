@@ -39,6 +39,9 @@ Creates a new user for the selected service.
 
   avn service user-create pg-demo --username janedoe
 
+
+.. _avn_service_user_creds_download:
+
 ``avn service user-creds-download``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
@@ -110,6 +113,8 @@ Retrieves the details for a single user in a given Aiven service.
 .. Tip::
 
     Use the ``--json`` parameter to retrieve all the service specific information for a specific user.
+
+.. _avn_service_user_kafka_java_creds:
 
 ``avn service user-kafka-java-creds``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''

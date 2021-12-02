@@ -42,12 +42,14 @@ entries:
         - file: docs/tools/cli/user
           entries:
             - glob: docs/tools/cli/user/*
-
       - file: docs/tools/api/index
         title: Aiven API
         entries:
         - glob: docs/tools/api/*
-      - file: docs/tools/terraform
+      - file: docs/tools/terraform/index
+        title: Aiven Terraform provider
+        entries:
+        - glob: docs/tools/terraform/*
       - file: docs/tools/kubernetes
 
   # -------- PRODUCT-SPECIFIC --------
@@ -62,10 +64,27 @@ entries:
       - file: docs/products/kafka/howto
         title: HowTo
         entries:
+          - file: docs/products/kafka/howto/keystore-truststore.rst
           - file: docs/products/kafka/howto/kafka-sasl-auth
           - file: docs/products/kafka/howto/set-kafka-parameters
           - file: docs/products/kafka/howto/create-topics-automatically
+          - file: docs/products/kafka/howto/get-topic-partition-details
+          - file: docs/products/kafka/howto/kcat.rst
           - file: docs/products/kafka/howto/integrate-service-logs-into-kafka-topic
+      
+      - file: docs/products/kafka/kafka-connect/index
+        title: Apache Kafka Connect
+        entries:
+        - file: docs/products/kafka/kafka-connect/getting-started
+        - file: docs/products/kafka/kafka-connect/concepts
+          entries:
+          - file: docs/products/kafka/kafka-connect/concepts/list-of-connector-plugins
+        - file: docs/products/kafka/kafka-connect/howto
+          title: HowTo
+          entries:
+          - file: docs/products/kafka/kafka-connect/howto/enable-connect
+          - file: docs/products/kafka/kafka-connect/howto/enable-automatic-restart
+
 
   - file: docs/products/postgresql/index
     title: PostgreSQL
@@ -114,6 +133,32 @@ entries:
         entries:
           - glob: docs/products/postgresql/reference/*
 
+  - file: docs/products/flink/index
+    entries:
+      - file: docs/products/flink/getting-started
+      - file: docs/products/flink/concepts
+        title: Concepts
+        entries:
+          - file: docs/products/flink/concepts/flink-for-analysts
+          - file: docs/products/flink/concepts/flink-for-operators
+          - file: docs/products/flink/concepts/kafka-connectors
+          - file: docs/products/flink/concepts/kafka-connector-requirements
+          - file: docs/products/flink/concepts/logs-metrics-alerts
+          - file: docs/products/flink/concepts/supported-syntax-sql-editor
+          - file: docs/products/flink/concepts/event-processing-time
+          - file: docs/products/flink/concepts/windows
+          - file: docs/products/flink/concepts/watermarks
+          - file: docs/products/flink/concepts/checkpoints
+      - file: docs/products/flink/howto
+        title: HowTo
+        entries:
+          - file: docs/products/flink/howto/create-integration
+          - file: docs/products/flink/howto/connect-kafka
+          - file: docs/products/flink/howto/connect-pg
+          - file: docs/products/flink/howto/create-job
+          - file: docs/products/flink/howto/real-time-alerting-solution
+          - file: docs/products/flink/howto/real-time-alerting-solution-cli
+
   - file: docs/products/opensearch/index
     title: OpenSearch
     entries:
@@ -135,6 +180,7 @@ entries:
           - file: docs/products/opensearch/howto/migrating_elasticsearch_data_to_aiven
           - file: docs/products/opensearch/howto/upgrade-to-opensearch
           - file: docs/products/opensearch/howto/upgrade-to-opensearch-with-terraform
+          - file: docs/products/opensearch/howto/upgrade-clients-to-opensearch
           - file: docs/products/opensearch/howto/connect-with-nodejs
           - file: docs/products/opensearch/howto/opensearch-and-nodejs
           - file: docs/products/opensearch/howto/opensearch-aggregations-and-nodejs
@@ -161,7 +207,7 @@ entries:
         entries:
           - glob: docs/products/m3db/howto/*
       - glob: docs/products/m3db/reference/*
-
+  
   - file: docs/products/redis/index
     title: Redis
     entries:
@@ -197,6 +243,6 @@ entries:
         title: Reference
         entries:
           - glob: docs/products/grafana/reference/*
-     
+
   # -------- AUXILIARY
   - file: docs/community

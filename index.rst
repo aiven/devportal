@@ -60,6 +60,17 @@ Learn about the Aiven platform
         :type: ref
         :text: Read more
         :classes: stretched-link
+
+    ---
+
+    |icon-flink| **Apache Flink** Framework for definining powerful transformations of batch and streaming data sets. :badge:`beta,cls=badge-secondary text-black badge-pill`
+
+    +++
+
+    .. link-button:: docs/products/flink/index
+        :type: ref
+        :text: Read more
+        :classes: stretched-link
     ---
 
     |icon-opensearch| **OpenSearch** Document database with specialist search features, bring your freeform documents, logs or metrics, and make sense of them here.
@@ -104,6 +115,7 @@ Learn about the Aiven platform
         :type: ref
         :text: Read more
         :classes: stretched-link
+    
 
 Tools
 -----
@@ -116,7 +128,7 @@ You can use the Aiven platform in the way that best fits your workflow:
 
 * For programmatic integrations, the :doc:`Aiven API <docs/tools/api/index>` provides an interface you can use.
 
-* The :doc:`docs/tools/terraform` gives orchestration features for infrastructure-as-code projects.
+* The :doc:`terraform <docs/tools/terraform/index>` gives orchestration features for infrastructure-as-code projects.
 
 * The :doc:`docs/tools/kubernetes` adds orchestration of your Aiven services to your existing Kubernetes cluster.
 

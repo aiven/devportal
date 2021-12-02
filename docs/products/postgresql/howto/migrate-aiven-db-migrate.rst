@@ -1,7 +1,7 @@
 Migrate to Aiven for PostgreSQL with ``aiven-db-migrate``
 ===========================================================
 
-The ``aiven-db-migrate`` tool is an open source project available on `GitHub <https://github.com/aiven/aiven-db-migrate>`_), and it is the preferred way to perform the migration. 
+The ``aiven-db-migrate`` tool is an open source project available on `GitHub <https://github.com/aiven/aiven-db-migrate>`_, and it is the preferred way to perform the migration. 
 
 ``aiven-db-migrate`` performs a schema dump and migration first to ensure schema compatibility.
 
@@ -132,3 +132,17 @@ This command removes all logical replication-related objects from both source an
     
 .. Warning::
     Don't stop the process while running as both the logical replication and pg-dump/pg-restore methods are copying data from the source to the destination cluster.
+
+
+
+-> Migration using ``aiven-db-migrate`` directly
+------------------------------------------------
+The ``aiven-db-migrate`` tool migrates all the tables including extension tables such as ``spatial_ref_sys`` 
+from ``postgis`` extension.
+
+There will be a feature/fix to allow skip extension tables in the future.
+
+At the moment the workaround is to use skip-table::
+
+    pg_migrate -d -v -s "SRC" -t "DST" -f "_aiven" --skip-table spatial_ref_sys
+
