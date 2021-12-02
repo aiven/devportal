@@ -66,6 +66,8 @@ entries:
         entries:
           - file: docs/products/kafka/howto/keystore-truststore.rst
           - file: docs/products/kafka/howto/kafka-sasl-auth
+          - file: docs/products/kafka/howto/set-kafka-parameters
+          - file: docs/products/kafka/howto/create-topics-automatically
           - file: docs/products/kafka/howto/get-topic-partition-details
           - file: docs/products/kafka/howto/kcat.rst
           - file: docs/products/kafka/howto/integrate-service-logs-into-kafka-topic
