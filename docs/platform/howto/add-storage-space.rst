@@ -1,9 +1,12 @@
 Add storage space
 =================
 
-With Aiven for Apache Kafka, Aiven for PostgreSQL, and Aiven for MySQL services, you can configure additional disk storage on top of what is included in your service plan.
+With **Aiven for Apache Kafka**, **Aiven for PostgreSQL**, and **Aiven for MySQL** services, you can configure additional disk storage on top of what is included in your service plan.
 
 Adding storage space gives you an alternative method of customizing your service according to your needs. Compared to service plan upgrades, setting additional disk storage is mainly intended for cases where you do not need additional computing power.
+
+.. note::
+   This feature is not available for all service plans. For example, **Aiven for Apache Kafka** *Startup* and **Aiven for PostgreSQL** *Hobbyist* service plans do not support adding storage space.
 
 1. Log in to the `Aiven web console <https://console.aiven.io>`_ and select your service.
 
@@ -13,9 +16,9 @@ Adding storage space gives you an alternative method of customizing your service
 
    The cost of the additional storage is shown to the right of the slider.
 
-   * For Aiven for Apache Kafka services, you can set the amount in increments of 30GB
+   * For **Aiven for Apache Kafka** services, you can set the amount in increments of 30GB
 
-   * For Aiven for PostgreSQL and Aiven for MySQL services, you can set the amount in increments of 10GB
+   * For **Aiven for PostgreSQL** and **Aiven for MySQL** services, you can set the amount in increments of 10GB
 
 #. Click **Save changes**.
 
