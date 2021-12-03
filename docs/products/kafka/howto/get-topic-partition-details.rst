@@ -29,14 +29,15 @@ For example, this bash script, with a help of ``jq`` utility, lists topics and t
 
 .. code:: bash
 
-    #!/bin/bash
-    serv=YOUR-KAFKA-SERVICE-NAME
-    cloud=$(avn service get $serv --json | jq -r '.cloud_name')
-    topics=$(avn service topic-list $serv --json | jq -r '.[] | .topic_name')
+   #!/bin/bash
+   proj=${1:-YOUR-AIVEN-PROJECT-NAME}
+   serv="${2:-YOUR-KAFKA-SERVICE-NAME}"
+   cloud=$(avn service get --project $proj $serv --json | jq -r '.cloud_name')
+   topics=$(avn service topic-list --project $proj $serv --json | jq -r '.[] | .topic_name')
 
-    echo "Cloud: $cloud Service: $serv"
-    for topic in $topics
-    do
-       echo "Topic: $topic"
-       avn service topic-get $serv $topic
-    done
+   echo "Cloud: $cloud Service: $serv"
+   for topic in $topics
+   do
+      echo "Topic: $topic"
+      avn service topic-get --project $proj $serv $topic
+   done
