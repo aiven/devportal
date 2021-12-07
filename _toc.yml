@@ -57,6 +57,7 @@ entries:
     title: Apache Kafka
     entries:
       - file: docs/products/kafka/getting-started
+      - file: docs/products/kafka/best-practices
       - file: docs/products/kafka/concepts
         entries:
           - file: docs/products/kafka/concepts/log-compaction
