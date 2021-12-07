@@ -14,8 +14,7 @@ Authority (for example, `letsencrypt.org <http://letsencrypt.org>`_ ) for your d
 With this certificate and the right technical setup, you can use
 your domain to encrypt the traffic to your service.
 
-By default Aiven enables TLS encryption for all  **Aiven for Apache Kafka** services and on your behalf
-handles the application, renewal, and configuration of certificates.
+By default Aiven enables TLS encryption for all  **Aiven for Apache Kafka** services and helps with the application, renewal, and configuration of certificates.
 
 There are two ways you can use TLS:
 
