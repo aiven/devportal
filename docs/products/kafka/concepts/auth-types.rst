@@ -35,7 +35,7 @@ allows alternative login methods for your service. For example, if you
 use Active Directory for authentication, SASL supports a Kerberos login
 method to provide access.
 
-You can use SASL/PLAIN and SASL/SCRAM with **Aiven for Apache Kafka**.
+We support SASL/PLAIN and SASL/SCRAM with **Aiven for Apache Kafka**.
 
 SASL/PLAIN
 ~~~~~~~~~~
@@ -68,13 +68,7 @@ then used to create an "identity" that holds:
 
 This identity is then by default stored in Zookeeper.
 
-Enabling different authentication methods in Aiven
---------------------------------------------------
+Enable SASL authentication
+---------------------------
 
-**TLS** is enabled by default for your **Aiven for Apache Kafka** service, if you want to additionally add **SASL** follow these steps:
-
-#. Log in to the Aiven web console and select your **Aiven for Apache Kafka** service.
-
-#. On the *Overview* page, scroll down to *Advanced configuration* .
-
-#. Switch on **kafka.authentication_methods.sasl** to enable SASL authentication.
+Follow the steps from our article :doc:`to enable SASL authentication <../howto/kafka-sasl-auth>`
