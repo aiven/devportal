@@ -28,7 +28,10 @@ To create a new service:
 
       This defines the number of servers and what kind of memory, CPU, and disk resources are allocated to your service.
 
-      For **Aiven for Apache Kafka**, **Aiven for PostgreSQL**, and **Aiven for MySQL** services, you can also select **Add disk storage** to configure additional storage on top of the amount defined in your selected service plan. This option is available for services hosted on Amazon and Google platforms.
+      For **Aiven for Apache Kafka**, **Aiven for PostgreSQL**, and **Aiven for MySQL** services, you can also select **Add disk storage** to configure additional storage on top of the amount defined in your selected service plan.
+
+      .. note::
+         The option of adding storage space is not available for all cloud environments and service plans.
 
    d. Enter a name for your service.
 
