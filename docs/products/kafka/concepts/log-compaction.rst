@@ -1,7 +1,7 @@
 Log compaction
 ==============
 
-One way to reduce the disk space requirements in Kafka is to use **log compaction**. This operation retains only the newest record for each key on a topic, regardless of whether the retention period of the message has expired or not. Depending on the application, this can significantly reduce the amount of storage required for the topic.
+One way to reduce the disk space requirements in Apache Kafka is to use **log compaction**. This operation retains only the newest record for each key on a topic, regardless of whether the retention period of the message has expired or not. Depending on the application, this can significantly reduce the amount of storage required for the topic.
 
 To make use of log compaction, all messages sent to the topic must have an explicit key. To enable log compaction follow the steps described in :doc:`how to configure log cleaner <../howto/configure-log-cleaner>`.
 
@@ -9,7 +9,7 @@ To make use of log compaction, all messages sent to the topic must have an expli
 How topic log compaction works
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Kafka topics represent a continuous stream of messages that typically get discarded after log reaches a certain period of time or size. However for certain use cases we just need the most recent changes.
+ Apache Kafka topics represent a continuous stream of messages that typically get discarded after log reaches a certain period of time or size. However for certain use cases we just need the most recent changes.
 
 For example, if we have a topic that contains user's home address and every time there is an update, it gets sent to the topic using ``user_id`` as primary key and home address as the value:
 
@@ -93,14 +93,14 @@ After compaction
     - 14
 
 
-When a log is compacted it consists of head and tail, where head is the traditional Kafka log and new records get appended to the end of it. Kafka ensures that the records in the tail consist only of unique keys because only the tail section is scanned during compaction process while head section may contain duplicate keys.
+When a log is compacted it consists of head and tail, where head is the traditional  Apache Kafka log and new records get appended to the end of it.  Apache Kafka ensures that the records in the tail consist only of unique keys because only the tail section is scanned during compaction process while head section may contain duplicate keys.
 
 .. note:: Log compaction occurs inside a partition and if two records with the same key land in different partitions, they will not be compacted together.
 
 Segments
 ~~~~~~~~
 
-If we look "under the hood" of the partition we will find that Kafka divides the partitions into **segments** which are files (name ends with ``.log`` ) stored on a file system for each partition. A segment file is part of the partition. As the log cleaner cleans log partition segments, the segments get swapped into the log partition immediately replacing the older segments.
+If we look "under the hood" of the partition we will find that  Apache Kafka divides the partitions into **segments** which are files (name ends with ``.log`` ) stored on a file system for each partition. A segment file is part of the partition. As the log cleaner cleans log partition segments, the segments get swapped into the log partition immediately replacing the older segments.
 
 The first offset of the segment, **base offset,** corresponds to the file name of the segment. The last segment in the partition is called an **active segment** and it is the only segment to which new messages are appended to. **During the cleaning process, an active segment is excluded and you may see duplicate records.** The user-age partition below contains a segment 04.log that has not yet been compacted, hence you will see duplicate records.
 
@@ -162,7 +162,7 @@ Example of user age partition:
     - 9
 
 
-When the segment file reaches a certain size of age, Kafka will create a new segment file. This can be controlled by the following settings:
+When the segment file reaches a certain size of age,  Apache Kafka will create a new segment file. This can be controlled by the following settings:
 
 -  ``segment.bytes`` : create a new segment when current segment becomes greater than this size. This setting can be set during topic creation and defaults to 1GB.
 
