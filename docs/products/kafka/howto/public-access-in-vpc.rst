@@ -1,5 +1,5 @@
-Enable public access for Kafka in a VPC
-========================================
+Enable public access in a VPC
+==============================
 
 To enable public access for **Aiven for Apache Kafka** service which is running within a virtual private cloud (VPC), follow these steps:
 
