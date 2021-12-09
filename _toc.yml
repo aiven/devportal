@@ -71,6 +71,7 @@ entries:
           - file: docs/products/kafka/howto/get-topic-partition-details
           - file: docs/products/kafka/howto/kcat.rst
           - file: docs/products/kafka/howto/integrate-service-logs-into-kafka-topic
+          - file: docs/products/kafka/howto/use-zookeeper
       
       - file: docs/products/kafka/kafka-connect/index
         title: Apache Kafka Connect
