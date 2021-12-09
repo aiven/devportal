@@ -40,6 +40,7 @@ Heatmap
 Hillyer
 httpie
 hyperloglogs
+hypertable
 Instana
 Java
 jq
