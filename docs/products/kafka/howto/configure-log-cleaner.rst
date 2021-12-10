@@ -8,12 +8,14 @@ By default the log cleaner is enabled, but the log compaction is disabled. To en
 #. Find ``log.cleanup.policy`` in the list and select it.
 #. Set the value to ``compact``.
 
-This change will affect all topics in the cluster that do not have a configuration override in place.
+.. warning:: This change will affect all topics in the cluster that do not have a configuration override in place.
 
-Control the frequency and delay
+Log cleaning frequency and delay
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Before the cleaning begins, the cleaner thread will inspect the logs to find those with highest **dirty ratio** which is calculated as the ratio of the number of bytes in the head vs the total number of bytes in the log (tail + head). The default ratio value is 50%, but you can change it by change value of the property ``kafka.log_cleaner_min_cleanable_ratio`` from the *Advanced configuration* list.
+Before the cleaning begins, the cleaner thread will inspect the logs to find those with highest **dirty ratio**. This ratio allows to understand how many duplicated keys we have in a topic, and how many of those need to be compacted. It is calculated as the ratio of the number of bytes in the head vs the total number of bytes in the log (tail + head).
+
+The default ratio value is 50%, but you can change it by change value of the property ``kafka.log_cleaner_min_cleanable_ratio`` from the *Advanced configuration* list.
 
 Log cleaner can be configured to leave some amount of not compacted "head" of the log by setting compaction time lag. You can achieve this by setting two additional properties from the  *Advanced configuration*:
 

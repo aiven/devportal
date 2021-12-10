@@ -25,9 +25,9 @@ For example, if we have a topic that contains user's home address and every time
 
 We have three different options on how long to retain the messages:
 
-* infinite log retention: all changes to user's address would be maintained in the logs. This would lead to the log growing in size without a bound.
-* simple log retention: older log records would be deleted after log reaches certain age or size.
-* log compaction: only latest version of the key's value are kept.
+* **infinite log retention**: all changes to user's address would be maintained in the logs. This would lead to the log growing in size without a bound. This option involves a risk to outgrow the disk capacity.
+* **simple log retention**: older log records would be deleted after log reaches certain age or size.
+* **log compaction**: only latest version of the key's value are kept.
 
 With log compaction Apache Kafka would remove any older records for which there is a newer version available in the partition log. This retention policy can be set per-topic, so a single cluster can have some topics where retention is enforced by size or time and other topics where retention is enforced by compaction.
 
@@ -95,14 +95,14 @@ After compaction
 
 When a log is compacted it consists of head and tail, where head is the traditional  Apache Kafka log and new records get appended to the end of it.  Apache Kafka ensures that the records in the tail consist only of unique keys because only the tail section is scanned during compaction process while head section may contain duplicate keys.
 
-.. note:: Log compaction occurs inside a partition and if two records with the same key land in different partitions, they will not be compacted together.
+.. note:: Log compaction occurs inside a partition and if two records with the same key land in different partitions, they will not be compacted together. This usually doesn't happen since the record key is used to select the partition. However, for custom message routing this might be an issue.
 
 Segments
 ~~~~~~~~
 
 If we look "under the hood" of the partition we will find that  Apache Kafka divides the partitions into **segments** which are files (name ends with ``.log`` ) stored on a file system for each partition. A segment file is part of the partition. As the log cleaner cleans log partition segments, the segments get swapped into the log partition immediately replacing the older segments.
 
-The first offset of the segment, **base offset,** corresponds to the file name of the segment. The last segment in the partition is called an **active segment** and it is the only segment to which new messages are appended to. **During the cleaning process, an active segment is excluded and you may see duplicate records.** The user-age partition below contains a segment 04.log that has not yet been compacted, hence you will see duplicate records.
+The first offset of the segment, **base offset,** corresponds to the file name of the segment. The last segment in the partition is called an **active segment** and it is the only segment to which new messages are appended to. The user-age partition below contains a ``segment 04.log`` that has not yet been compacted, hence you will see duplicate records. **During the cleaning process, an active segment is excluded and you may see duplicate records.**
 
 Example of user age partition:
 *******************************
