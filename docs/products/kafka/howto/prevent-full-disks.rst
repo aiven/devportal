@@ -14,7 +14,7 @@ When the ACL blocks write operations, clients see an error similar to the follow
    TopicAuthorizationFailedError: [Error 29] TopicAuthorizationFailedError: mytopic
 
 
-In ensure that enough disk space is available you can take one of the following actions:
+To ensure that enough disk space is available you can take one of the following actions:
 
 Upgrade to a larger service plan
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
