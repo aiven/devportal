@@ -1,9 +1,9 @@
 Prevent full disks
 ===================
 
-To prevent **Aiven for Apache Kafka** from malfunctioning, the Aiven platform detects when the available disk space in **Aiven for Apache Kafka** services is running low.
+To prevent **Aiven for Apache Kafka** from malfunctioning, the Aiven platform detects when the available disk space in **Aiven for Apache Kafka** services is running low and when the usage exceeds 90% notifies the customer.
 
-If any of the nodes in the service exceeds the critical threshold of disk usage, the access control list (ACL) that is used to authorize API requests by Apache Kafka clients is updated on all nodes to prevent operations that would increase disk usage. Such operations include:
+If any of the nodes in the service exceeds the critical threshold of disk usage (more than 97%), the access control list (ACL) used to authorize API requests by Apache Kafka clients is updated on all nodes to prevent operations that would increase disk usage. Such operations include:
 
 -  The ``Write`` and ``IdempotentWrite`` operations that clients use to produce new messages
 
@@ -26,7 +26,7 @@ Upgrade to a larger service plan
 #. Select your new service plan and click **Upgrade** .
 
 
-This launches new nodes with more disk space. As data is moved from the old nodes to the new ones, disk usage returns to an acceptable level and the ACL is updated to allow write operations again.
+This launches new nodes with more disk space. Once data is moved from the old nodes to the new ones, disk usage returns to an acceptable level and the ACL is updated to allow write operations again.
 
 You can also use the CLI command :ref:`avn-cli-service-update` to upgrade your service plan.
 
