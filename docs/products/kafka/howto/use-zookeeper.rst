@@ -12,4 +12,6 @@ In order to change Zookeeper configuration properties follow these steps:
 
 The service configuration will be then updated.
 
+.. note:: Latest versions of Apache Kafka allow zookeeper-less mode, however, you can continue using the advanced configuration settings as before.
+
 
