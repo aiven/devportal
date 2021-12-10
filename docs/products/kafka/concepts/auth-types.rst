@@ -2,7 +2,7 @@ Authentication types
 ======================
 
 It is strongly recommended to use modern encryption protocols to protect data in transit sent to and from Apache Kafka.
-You can use one of the available options in **Aiven for Apache Kafka** services:
+You can use one of the available options in **Aiven for Apache Kafka** services.
 
 Transport Layer Security
 ------------------------
@@ -30,9 +30,7 @@ Simple Authentication and Security Layer
 ----------------------------------------
 
 **Simple Authentication and Security Layer (SASL)** acts as a layer that
-allows alternative login methods for your service. For example, if you
-use Active Directory for authentication, SASL supports a Kerberos login
-method to provide access.
+allows alternative login methods for your service.
 
 We support SASL/PLAIN and SASL/SCRAM with **Aiven for Apache Kafka**.
 
@@ -41,8 +39,7 @@ SASL/PLAIN
 
 **PLAIN** relies on a combination of username
 and password to log in over a TLS connection, meaning that your traffic
-is encrypted. You should not use SASL/PLAIN without TLS, because in this case
-anyone will be able to read your credentials when you send them.
+is encrypted. To ensure proper security mechanism Aiven does not support using SASL/PLAIN without TLS, because in this case anyone will be able to read your credentials when you send them.
 
 SASL/SCRAM
 ~~~~~~~~~~
