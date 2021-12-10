@@ -3,9 +3,6 @@ Best practices
 
 We recommend to follow these best practices to ensure that your Apache Kafka service is fast and reliable.
 
-Apache Kafka
--------------
-
 Check your topic replication factors
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -15,7 +12,7 @@ each topic is and make sure that replication is set high enough for it.
 
 You can set the replication factor in `Aiven web console <https://console.aiven.io/>`_ when you create a new topic or edit an existing one.
 
-.. note:: Do not set the replication factor below 2 in order to prevent data loss from unexpected node termination.
+.. note:: We do allow to set the replication factor below 2 in order to prevent data loss from unexpected node termination.
 
 Choose a reasonable number of partitions for a topic
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -30,6 +27,8 @@ if needed.
 
 As a general rule of thumb, the recommendation is to have max 4000
 partitions per broker, and max 200 000 partitions per cluster (`source <https://blogs.apache.org/kafka/entry/apache-kafka-supports-more-partitions>`_).
+
+.. note:: Ordering is guaranteed only per partition. If you require relative ordering of records, you need to put that subset of date into the same partition.
 
 Periodically examine topics with entity-based partitioning for imbalances
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -50,26 +49,12 @@ To find the right balance try different batch sizes in your producer and consume
 You can, for example, set ``batch.size`` and
 ``linger.ms`` in the producer configuration of your application code (see `official Apache Kafka documentation <https://kafka.apache.org/documentation/>`_ for reference).
 
-Apache Kafka Connect
---------------------
+Acknowledgements of received data
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+You can  specify a value for acknowledgements setting ``acks`` in the client producer configuration. This will have an impact on how the success of a write operation is determined.
 
-Pay attention to ``tasks.max`` for connector configurations
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+With ``acks`` equal to **0** after the producer sends the data, it does not wait for a confirmation from the broker. This will make communication faster, however there is a potential loss of data in case when broker is down when producer sends the data. This configuration is only appropriate when you can afford loss of data.
 
-By default, connectors run a maximum of **1** task, which usually leads
-to under-utilization for large  Apache Kafka Connect services (unless you have
-many connectors with one task each). In general, it is good to keep the
-cluster CPUs occupied with connector tasks without overloading them. If
-your connector is under-performing, you can try increasing ``tasks.max``
-to match the number of partitions.
+With ``acks`` equal to **1** (the default and recommended behaviour) the producer waits for the leader broker to acknowledge that the data was received. This mode partially prevents data loss, however, the data loss still can occur if the broker goes down between the moment it sent acknowledgement and the data was replicated.
 
-Consider a standalone  Apache Kafka Connect service
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-You can run Apache Kafka Connect as part of your existing Aiven for Apache
-Kafka service (for *business-4* and higher service plans). While this
-allows you to try out Apache Kafka Connect by enabling the feature within your
-existing service, for heavy usage we recommend that you enable a
-standalone Apache Kafka Connect service to run your connectors. This allows you
-to scale the Apache Kafka service and the connector service independently and
-offers more CPU time and memory for the Apache Kafka Connect service.
+With ``acks`` equal to **all**, the leader and all the replicas will send confirmation of the received data. This configuration slows the communication, but ensures that there will be no data loss, since replicas also confirm that the data was received.
