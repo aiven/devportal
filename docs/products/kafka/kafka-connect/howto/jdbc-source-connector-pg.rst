@@ -1,11 +1,11 @@
-JDBC source connector with PostgreSQL
-=====================================
+Create a JDBC source connector with PostgreSQL
+==============================================
 
 The JDBC source connector pushes data from a relational database, such as PostgreSQL, to Apache Kafka where can be transformed and read by multiple consumers. 
 
 .. Tip::
 
-    Sourcing data from a database into Apache Kafka decouples the database from the set of consumers, enabling multiple applications to access the data without adding a per-consumer query overhead to the source database.
+    Sourcing data from a database into Apache Kafka decouples the database from the set of consumers. Once the data is in Apache Kafka, multiple applications can access it without adding any additional query overhead to the source database.
 
 .. _connect_jdbc_pg_source_prereq:
 
@@ -13,6 +13,7 @@ Prerequisites
 -------------
 
 To setup a JDBC source connector pointing to PostgreSQL, you need an Aiven for Apache Kafka service :doc:`with Kafka Connect enabled <enable-connect>` or a :ref:`dedicated Aiven for Apache Kafka Connect cluster <apache_kafka_connect_dedicated_cluster>`. 
+
 Furthermore you need to collect the following information about the source PostgreSQL database upfront:
 
 * ``PG_HOST``: The database hostname
@@ -30,9 +31,12 @@ Furthermore you need to collect the following information about the source Postg
 Setup a PostgreSQL JDBC source connector with Aiven CLI
 -------------------------------------------------------
 
-The following example demonstrates how to setup an Apache Kafka JDBC source connector to a PostgreSQL database using the :ref:`Aiven CLI dedicated command <avn_service_connector_create>`:
+The following example demonstrates how to setup an Apache Kafka JDBC source connector to a PostgreSQL database using the :ref:`Aiven CLI dedicated command <avn_service_connector_create>`.
 
-1. In a file named ``jdbc_source_pg.json`` define the connector configuration with the following content:
+Define a Kafka Connect configuration file
+'''''''''''''''''''''''''''''''''''''''''
+
+Define the connector configurations in a file (we'll refer to it with the name ``jdbc_source_pg.json``) with the following content:
 
 ::
 
@@ -49,32 +53,37 @@ The following example demonstrates how to setup an Apache Kafka JDBC source conn
         "poll.interval.ms":"POLL_INTERVAL"
     }
 
-.. Note::
+The configuration file contains the following entries:
 
-    The ``PG_HOST``, ``PG_PORT``, ``PG_DATABASE_NAME``, ``SSL_MODE``, ``PG_USER``, ``PG_PASSWORD`` and ``PG_TABLES`` are the parameters collected in the :ref:`prerequisite <connect_jdbc_pg_source_prereq>` phase. 
-    The following additional parameters need to be set:
+* ``name``: the connector name
+* ``PG_HOST``, ``PG_PORT``, ``PG_DATABASE_NAME``, ``SSL_MODE``, ``PG_USER``, ``PG_PASSWORD`` and ``PG_TABLES``: source database parameters collected in the :ref:`prerequisite <connect_jdbc_pg_source_prereq>` phase. 
+* ``mode``: the query mode, more information in the :doc:`dedicated page <../concepts/jdbc-source-modes>`; depending on the selected mode, additional configuration entries might be required.
+* ``topic.prefix``: the prefix that will be used for topic names. The resulting topic name will be the concatenation of the ``topic.prefix`` and the table name.
+* ``tasks.max``: maximum number of tasks to execute in parallel. By default is 1, the connector can use at max 1 task for each source table defined.
+* ``poll.interval.ms``: query frequency, default 5000 milliseconds
 
-    * ``name``: the connector name
-    * ``mode``: the query mode, more information in the :doc:`dedicated page <../concepts/jdbc-source-modes>`; depending on the selected mode, additional configuration entries might be required.
-    * ``topic.prefix``: the prefix that will be used for topic names; the resulting topic name is the concatenation of the ``topic.prefix`` and the table name.
-    * ``tasks.max``: maximum number of tasks to execute in parallel
-    * ``poll.interval.ms``: query frequency
+Check out the `dedicated documentation <https://github.com/aiven/jdbc-connector-for-apache-kafka/blob/master/docs/source-connector-config-options.rst>`_ for the full list of parameters.
 
-    Check out the `dedicated documentation <https://github.com/aiven/jdbc-connector-for-apache-kafka/blob/master/docs/source-connector-config-options.rst>`_ for the full list of parameters.
+Create a Kafka Connect connector with Aiven CLI
+'''''''''''''''''''''''''''''''''''''''''''''''
 
-2. Execute the following :ref:`Aiven CLI command <avn_service_connector_create>` to create the connector, replacing the ``SERVICE_NAME`` with the name of the Aiven service where the connector needs to run:
+To create the connector, execute the following :ref:`Aiven CLI command <avn_service_connector_create>`, replacing the ``SERVICE_NAME`` with the name of the Aiven service where the connector needs to run:
 
 :: 
 
     avn service connector create SERVICE_NAME @jdbc_source_pg.json
 
-3. Check the connector status with the following command, replacing the ``SERVICE_NAME`` with the Aiven service and the ``CONNECTOR_NAME`` with the name of the connector defined before:
+Check the connector status with the following command, replacing the ``SERVICE_NAME`` with the Aiven service and the ``CONNECTOR_NAME`` with the name of the connector defined before:
 
 ::
 
     avn service connector status SERVICE_NAME CONNECTOR_NAME
 
-4. Verify in the Aiven for Apache Kafka target instance, the presence of the topic and the data
+Verify in the Apache Kafka target instance, the presence of the topic and the data
+
+.. Tip::
+
+    If you're using Aiven for Apache Kafka, topics will not be created automatically. Either create them manually following the ``topic.prefix.schema_name.table_name`` naming pattern or enable the ``kafka.auto_create_topics_enable`` advanced parameter.
 
 Example: define a JDBC incremental connector
 --------------------------------------------
