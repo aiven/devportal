@@ -107,3 +107,4 @@ Untrusted
 wget
 Zabbix
 Zipkin
+ZooKeeper
