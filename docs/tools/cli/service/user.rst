@@ -39,6 +39,9 @@ Creates a new user for the selected service.
 
   avn service user-create pg-demo --username janedoe
 
+
+.. _avn_service_user_creds_download:
+
 ``avn service user-creds-download``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 

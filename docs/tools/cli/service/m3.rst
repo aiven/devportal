@@ -1,0 +1,158 @@
+``avn service m3``
+============================================
+
+Here you’ll find the full list of commands for ``avn service m3``.
+
+
+Manage Aiven for M3 namespaces
+--------------------------------------------------------
+
+``avn service m3 namespace add``
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+Adds a new :doc:`Aiven for M3 namespace </docs/products/m3db/concepts/namespaces-aggregation>`.
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``service_name``
+    - The name of the service
+  * - ``namespace_name``
+    - The name of the namespace
+  * - ``--ns-type``
+    - Namespace type; possible values are ``aggregated`` or ``unaggregated``
+  * - ``--ns-retention``
+    - Namespace retention period using the :doc:`short time format </docs/products/m3db/concepts/namespaces-aggregation>` (e.g. like 3h)
+  * - ``--ns-resolution``
+    - Namespace retention period using the :doc:`short time format </docs/products/m3db/concepts/namespaces-aggregation>` (e.g. like 2m)
+  * - ``--ns-blocksize-dur``
+    - Namespace block size duration using the :doc:`short time format </docs/products/m3db/concepts/namespaces-aggregation>` (e.g. like 10m)
+  * - ``--ns-block-data-expiry-dur``
+    - Defines how long a block is kept in memory before it's flushed to disk using the :doc:`short time format </docs/products/m3db/concepts/namespaces-aggregation>` (e.g. like 10m)
+  * - ``--ns-buffer-future-dur``
+    - Defines the acceptable time span for entries with future dates using the :doc:`short time format </docs/products/m3db/concepts/namespaces-aggregation>`; 
+      
+      e.g. 20s allows to include in the namespace entries arriving up to 20 seconds before the designed start time
+  * - ``--ns-buffer-past-dur``
+    - Defines the acceptable delay for entries in the past using the :doc:`short time format </docs/products/m3db/concepts/namespaces-aggregation>`; 
+      
+      e.g. 20s allows to include in the namespace entries arriving up to 20 seconds later than the designed end time
+  * - ``--ns-writes-to-commitlog``
+    - Defines whether to include writes to this namespace in the commit log; possible values are ``true`` or ``false``, default ``false``.
+ 
+
+**Example:** In the M3 service ``demo-m3``, create an ``aggregated`` M3 namespace named ``weekly_agg`` with:
+
+* 10 minutes (``10m``) of resolution
+* 28 days (``28d``) of retention
+* avoiding including aggregated writes in the commit log
+
+::
+  
+  avn service m3 namespace add  demo-m3 weekly_agg \
+    --ns-type aggregated                           \
+    --ns-resolution 10m                            \
+    --ns-retention 28d                             \
+    --ns-writes-to-commitlog false
+
+``avn service m3 namespace delete``
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+Deletes an existing :doc:`Aiven for M3 namespace </docs/products/m3db/concepts/namespaces-aggregation>`.
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``service_name``
+    - The name of the service
+  * - ``namespace_name``
+    - The name of the M3 namespace to delete
+
+**Example:** In the M3 service ``demo-m3``, delete the M3 namespace named ``weekly_agg``.
+
+::
+  
+  avn service m3 namespace delete demo-m3 weekly_agg
+
+``avn service m3 namespace list``
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+Retrieves the details of all existing :doc:`Aiven for M3 namespaces </docs/products/m3db/concepts/namespaces-aggregation>`.
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``service_name``
+    - The name of the service
+
+**Example:** Retrieve the definition of all namespaces defined in the M3 service ``demo-m3``.
+
+::
+  
+  avn service m3 namespace list demo-m3
+
+An example of ``avn service m3 namespace list`` output:
+
+.. code:: text
+
+  NAME        TYPE          RESOLUTION  RETENTION_PERIOD_DURATION  BLOCKSIZE_DURATION  BLOCK_DATA_EXPIRY_DURATION  BUFFER_FUTURE_DURATION  BUFFER_PAST_DURATION  WRITES_TO_COMMITLOG
+  ==========  ============  ==========  =========================  ==================  ==========================  ======================  ====================  ===================
+  default     unaggregated              48h                        2h
+  weekly_agg  aggregated    10m         28d                        12h                                                                                           false
+
+``avn service m3 namespace update``
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+Updates an existing :doc:`Aiven for M3 namespace </docs/products/m3db/concepts/namespaces-aggregation>`.
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``service_name``
+    - The name of the service
+  * - ``namespace_name``
+    - The name of the namespace
+  * - ``--ns-retention``
+    - Namespace retention period using the :doc:`short time format </docs/products/m3db/concepts/namespaces-aggregation>` (e.g. like 3h)
+  * - ``--ns-resolution``
+    - Namespace retention period using the :doc:`short time format </docs/products/m3db/concepts/namespaces-aggregation>` (e.g. like 2m)
+  * - ``--ns-blocksize-dur``
+    - Namespace block size duration using the :doc:`short time format </docs/products/m3db/concepts/namespaces-aggregation>` (e.g. like 10m)
+  * - ``--ns-block-data-expiry-dur``
+    - Defines how long a block is kept in memory before it's flushed to disk using the :doc:`short time format </docs/products/m3db/concepts/namespaces-aggregation>` (e.g. like 10m)
+  * - ``--ns-buffer-future-dur``
+    - Defines the acceptable time span for entries with future dates using the :doc:`short time format </docs/products/m3db/concepts/namespaces-aggregation>`; 
+      
+      e.g. 20s allows to include in the namespace entries arriving up to 20 seconds before the designed start time
+  * - ``--ns-buffer-past-dur``
+    - Defines the acceptable delay for entries in the past using the :doc:`short time format </docs/products/m3db/concepts/namespaces-aggregation>`; 
+      
+      e.g. 20s allows to include in the namespace entries arriving up to 20 seconds later than the designed end time
+  * - ``--ns-writes-to-commitlog``
+    - Defines whether to include writes to this namespace in the commit log; possible values are ``true`` or ``false``, default ``false``.
+ 
+
+**Example:** In the M3 service ``demo-m3``, update the M3 namespace named ``weekly_agg`` with:
+
+* 5 minutes (``5m``) of resolution
+* 15 days (``15d``) of retention
+* avoiding including aggregated writes in the commit log
+
+::
+  
+  avn service m3 namespace update demo-m3 weekly_agg \
+    --ns-resolution 5m                               \
+    --ns-retention 15d                               \
+    --ns-writes-to-commitlog false

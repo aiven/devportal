@@ -20,7 +20,7 @@ The number of stored backups and the backup retention time depends on the servic
     * - Startup
       - 2 days
     * - Business
-      - 15 days
+      - 14 days
     * - Premium
       - 30 days
 
