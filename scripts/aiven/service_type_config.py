@@ -7,8 +7,8 @@ def print_row(param, value_type, title, desc, indent=0):
     for i in range(indent):
         preamble = preamble + '  '
 
-    print(f"{preamble}{param}  *{value_type}*")
-    print(f"{preamble}  - **{title}** {desc}")
+    print(f"{preamble}{param} => *{value_type}*")
+    print(f"{preamble}  **{title}** {desc}")
     print("")
 
 
