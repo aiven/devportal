@@ -226,6 +226,9 @@ entries:
           - glob: docs/products/m3db/howto/*
       - glob: docs/products/m3db/reference/*
   
+  - file: docs/products/mysql/index
+    title: MySQL
+
   - file: docs/products/redis/index
     title: Redis
     entries:
