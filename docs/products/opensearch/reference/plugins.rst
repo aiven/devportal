@@ -19,8 +19,8 @@ These plugins are enabled on all Aiven for OpenSearch services by default:
 * `Phonetic Analysis <https://www.elastic.co/guide/en/elasticsearch/plugins/current/analysis-phonetic.html>`_
 * `kuromoji (Japanese Analysis) <https://www.elastic.co/guide/en/elasticsearch/plugins/current/analysis-kuromoji.html>`_
 * `Mapper Size <https://www.elastic.co/guide/en/elasticsearch/plugins/current/mapper-size.html>`_
-* `Open Distro for Elasticsearch SQL plugin <https://opendistro.github.io/for-elasticsearch/features/SQL%20Support.html>`_
-* `Open Distro for Elasticsearch Alerting plugin <https://opendistro.github.io/for-elasticsearch/features/alerting.html>`_
+* `OpenSearch SQL <https://opensearch.org/docs/latest/search-plugins/sql/index/>`_
+* `OpenSearch Dashboards Alerting <https://opensearch.org/docs/latest/monitoring-plugins/alerting/index/>`_
 * `Anomaly detection <https://opensearch.org/docs/monitoring-plugins/ad/index/>`__
 * `Asynchronous search <https://opensearch.org/docs/search-plugins/async/index/>`__
 * `Index Management <https://opensearch.org/docs/im-plugin/index/>`__
