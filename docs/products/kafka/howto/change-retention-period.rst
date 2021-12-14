@@ -16,7 +16,9 @@ For a single topic
 
 #. Change the value of **Retention ms** value to the desired retention length in milliseconds.
 
-You can also change **Retention bytes** setting if you want to limit amount of data retained based on the storage usage.
+.. Tip::
+
+    You can also change **Retention bytes** setting if you want to limit amount of data retained based on the storage usage.
 
 
 At a service level
@@ -26,9 +28,7 @@ At a service level
 
 #. In the *Overview* page scroll down to *Advanced configuration* and click on **Add configuration option**.
 
-#. Select either ``kafka.log_retention_hours`` or ``kafka.log_retention_ms`` and assigning desirable length of time.
-
-#. Alternatively specify the value for ``kafka.log_retention_bytes`` if you prefer to limit amount of data retained based on the storage usage.
+#. Select either ``kafka.log_retention_hours`` or ``kafka.log_retention_ms`` and assigning desirable length of time. Alternatively specify the value for ``kafka.log_retention_bytes`` if you prefer to limit amount of data retained based on the storage usage.
 
 #. Click on **Save advanced configuration**.
 
@@ -37,7 +37,9 @@ Unlimited retention
 
 We do not limit the maximum retention period in any way, and in order to disable time-based content expiration altogether set the retention value to ``-1``.
 
-.. warning:: Using high retention periods without monitoring the available storage space can cause your service to run out of disk space. These situations are not covered by our SLA.
+.. Warning:: 
+
+    Using high retention periods without monitoring the available storage space can cause your service to run out of disk space. These situations are not covered by our SLA.
 
 
 
