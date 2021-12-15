@@ -53,8 +53,8 @@ Acknowledgements of received data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 You can  specify a value for acknowledgements setting ``acks`` in the client producer configuration. This will have an impact on how the success of a write operation is determined.
 
-With ``acks`` equal to **0** after the producer sends the data, it does not wait for a confirmation from the broker. This will make communication faster, however there is a potential loss of data in case when broker is down when producer sends the data. This configuration is only appropriate when you can afford loss of data.
+With ``acks`` equal to **0** after the producer sends the data, it does not wait for a confirmation from the broker. This will make communication faster. However, there is a potential loss of data in case of the broker being down when the producer sends the data. This configuration is only appropriate when you can afford loss of data.
 
-With ``acks`` equal to **1** (the default and recommended behaviour) the producer waits for the leader broker to acknowledge that the data was received. This mode partially prevents data loss, however, the data loss still can occur if the broker goes down between the moment it sent acknowledgement and the data was replicated.
+With ``acks`` equal to **1** (default value and recommended behaviour), the producer waits for the leader broker to acknowledge that the data was received. This mode partially prevents data loss, however, the data loss still can occur if the broker goes down between the moment it sent acknowledgement and the data was replicated.
 
-With ``acks`` equal to **all**, the leader and all the replicas will send confirmation of the received data. This configuration slows the communication, but ensures that there will be no data loss, since replicas also confirm that the data was received.
+With ``acks`` equal to **all**, the leader and all the replicas will send confirmation of the received data. This configuration slows the communication, but ensures that there will be no data loss, since the replicas also confirm that the data was received.
