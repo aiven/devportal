@@ -20,7 +20,7 @@ OpenSearch Dashboards have many tools and features for working with data and run
 Discover
 ---------
 
-**Discover** page provides an interface to work with available data fields and run search queries by using either `the OpenSearch Dashboards Query Language (DQL) <https://opensearch.org/docs/latest/dashboards/dql/>`_  or Lucene.
+**Discover** page provides an interface to work with available data fields and run search queries by using either `the OpenSearch Dashboards Query Language (DQL) <https://opensearch.org/docs/latest/dashboards/dql/>`_  or `Lucene <https://lucene.apache.org/>`_.
 
 Additionally to search queries, you can filter the data by using either a visual interface or `OpenSearch Query DSL <https://opensearch.org/docs/latest/opensearch/query-dsl/index/>`_
 
