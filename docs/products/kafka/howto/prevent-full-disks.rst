@@ -9,7 +9,7 @@ If any of the nodes in the service exceeds the critical threshold of disk usage 
 
 - ``CreateTopics`` operation that creates one or more topics, each carrying some overhead on disk
 
-When there is not enough space available on the disk and the ACL blocks write operations, clients will see an error. For example, python client for Apache Kafka will return::
+When there is not enough space available on the disk and the ACL blocks write operations, clients will see an error. For example, Python client for Apache Kafka will return::
 
    TopicAuthorizationFailedError: [Error 29] TopicAuthorizationFailedError: you-topic
 
