@@ -46,7 +46,7 @@ Delete one or more topics
 
 #. Click **Remove** to confirm that you want to delete the topic.
 
-This deletes the entire topic and frees up the used disk space. It may take up to a few minutes before the log cleaner starts removing the data files from disk. After that, the ACL is update to allow write operations again.
+This deletes the entire topic and frees up the used disk space. It may take up to a few minutes before the log cleaner starts removing the data files from disk. After that, the ACL is updated to allow write operations again.
 
 You can also use the CLI command :ref:`avn-cli-delete-topic` or make a call to `API endpoint <https://api.aiven.io/doc/#operation/ServiceKafkaTopicDelete>`_ from any native Apache Kafka client to delete topics.
 
