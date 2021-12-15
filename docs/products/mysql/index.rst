@@ -9,4 +9,10 @@ Aiven for MySQL is a full managed relational database service, deployable in the
 Why MySQL?
 ==========
 
-MySQL is a traditional open source relational database that plays nicely with many well-established applications. Whether you are building something new or looking for a modern platform for your existing applications, Aiven for MySQL will provide a safe home for your data needs.
+MySQL is a traditional open source relational database that plays nicely with many well-established applications. Whether you are building something new or looking for a modern platform for your existing applications, Aiven for MySQL is a friendly and scalable offering of one of the best open source databases around.
+
+MySQL Resources
+===============
+
+* Documentation for MySQL itself: https://dev.mysql.com/doc/refman/8.0/en/
+
