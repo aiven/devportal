@@ -68,7 +68,7 @@ In the case above, where a new row for ``Sam Cricket`` is added, a new record wi
 Timestamp mode
 --------------
 
-Using the ``timestamp`` mode, the connector will query the table appending a ``WHERE`` condition based on one or more **timestamp columns**. This requires that creation date and modification date are present for every row. 
+Using the ``timestamp`` mode, the connector will query the table appending a ``WHERE`` condition based on one or more **timestamp columns**. This requires that timestamps columns (like creation date and modification date) are present for every row. 
 
 In cases of two columns (e.g. ``creation_date`` and ``modification_date``) the polling query will apply the ``COALESCENCE`` function, parsing the value of the second column only when the first column is null. 
 
