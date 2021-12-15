@@ -48,7 +48,6 @@ Kafka
 kafkacat
 Karapace
 kcat
-Kerberos
 [Kk]eypair
 [Kk]eystore
 Kibana
