@@ -29,6 +29,7 @@ fileset[s]?
 Flink
 Geomap
 geospatial
+GitHub
 [Gg]o
 Gradle
 Grafana
