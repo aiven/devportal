@@ -8,6 +8,7 @@ Avro
 [Bb]oolean
 [Bb]oot
 [Bb]usiness
+Conduktor
 [Cc]onnect
 Couchbase
 cyber
@@ -40,6 +41,7 @@ Heatmap
 Hillyer
 httpie
 hyperloglogs
+hypertable
 Instana
 Java
 jq
