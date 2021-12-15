@@ -57,7 +57,6 @@ entries:
     title: Apache Kafka
     entries:
       - file: docs/products/kafka/getting-started
-      - file: docs/products/kafka/best-practices
       - file: docs/products/kafka/concepts
         entries:
           - file: docs/products/kafka/concepts/log-compaction
@@ -65,6 +64,7 @@ entries:
       - file: docs/products/kafka/howto
         title: HowTo
         entries:
+          - file: docs/products/kafka/howto/best-practices
           - file: docs/products/kafka/howto/keystore-truststore.rst
           - file: docs/products/kafka/howto/kafka-sasl-auth
           - file: docs/products/kafka/howto/set-kafka-parameters
@@ -77,13 +77,13 @@ entries:
         title: Apache Kafka Connect
         entries:
         - file: docs/products/kafka/kafka-connect/getting-started
-        - file: docs/products/kafka/kafka-connect/best-practices
         - file: docs/products/kafka/kafka-connect/concepts
           entries:
           - file: docs/products/kafka/kafka-connect/concepts/list-of-connector-plugins
         - file: docs/products/kafka/kafka-connect/howto
           title: HowTo
           entries:
+          - file: docs/products/kafka/kafka-connect/howto/best-practices
           - file: docs/products/kafka/kafka-connect/howto/enable-connect
           - file: docs/products/kafka/kafka-connect/howto/enable-automatic-restart
 

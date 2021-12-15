@@ -1,5 +1,5 @@
-Best practices
-==============
+Get the best from Kafka Connect
+================================
 
 We recommend to follow these best practices to ensure that your Apache Kafka Connect service is fast and reliable.
 

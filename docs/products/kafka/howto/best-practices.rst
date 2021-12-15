@@ -1,5 +1,5 @@
-Best practices
-==============
+Get the best from Apache Kafka
+==============================
 
 We recommend to follow these best practices to ensure that your Apache Kafka service is fast and reliable.
 
