@@ -58,24 +58,5 @@ Decrease retention time/size
 Another way to make more space available without deleting an entire
 topic is to reduce the retention time or size for one or more topics. If
 you know how old the oldest messages are in a topic, you can lower the
-retention time for the topic to make more space available:
-
-#. Log in to the `Aiven web console <https://console.aiven.io/>`_ and select your service.
-
-#. Click the **Topics** tab.
-
-#. Click a topic that you want to edit. In the *Topic info* view, check how much space the topic is currently using. Make note of the current retention time.
-
-#. In the *Topic info* view, click **Modify** .
-
-#. If there is no field for **Retention ms**, select it from the drop-down menu.
-
-#. Change the **Retention ms** value to a suitable value in milliseconds.
-
-.. note:: Using a lower value for the retention time only makes more space available if there are messages in the topic that are older than the given value.
-
-The log cleaner starts removing data from disk within a few minutes. After that, the ACL is update to allow write operations again.
-
-You can also use the CLI command :ref:`avn-cli-topic-update` with admin permissions to change the ``retention.bytes`` topic configuration parameter to something lower than the current size for the topic.
-
+retention time for the topic to make more space available. Follow the instructions :doc:`to change retention period </docs/products/kafka/howto/change-retention-period>`.
 
