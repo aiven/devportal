@@ -1,7 +1,7 @@
-Configure log cleaner for compaction
-=====================================
+Configure log cleaner for topic compaction
+==========================================
 
-By default the log cleaner is enabled, but the log compaction is disabled. To enable log compaction, follow these steps:
+The log cleaner is the process ensuring only the most recent value for a certain message key is kept within a partition for :doc:`compacted topics <../concepts/log-compaction>`.  In Aiven for Apache Kafka the log cleaner is enabled, but the log compaction is disabled by default. To enable log compaction, follow these steps:
 
 #. Log into the `Aiven web console <https://console.aiven.io/>`_ and select your Aiven for Apache Kafka service.
 #. Scroll down to *Advanced configuration* and click on **Add configuration option**.
@@ -13,11 +13,13 @@ By default the log cleaner is enabled, but the log compaction is disabled. To en
 Log cleaning frequency and delay
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Before the cleaning begins, the cleaner thread will inspect the logs to find those with highest **dirty ratio**. This ratio allows to understand how many duplicated keys we have in a topic, and how many of those need to be compacted. It is calculated as the ratio of the number of bytes in the head vs the total number of bytes in the log (tail + head).
+Before the cleaning begins, the cleaner thread will inspect the logs to find those with highest **dirty ratio** calculated as the number of bytes in the head vs the total number of bytes in the log (tail + head); you can read more about head and tail definition in the :doc:`compacted topic documentation <../concepts/log-compaction>`. The ratio provides an estimate of how many duplicated keys are present in a topic, and therefore need to be compacted.
 
-The default ratio value is 50%, but you can change it by change value of the property ``kafka.log_cleaner_min_cleanable_ratio`` from the *Advanced configuration* list.
+.. Tip::
 
-Log cleaner can be configured to leave some amount of not compacted "head" of the log by setting compaction time lag. You can achieve this by setting two additional properties from the  *Advanced configuration*:
+    For the log cleaner to start compacting a topic, the dirty ratio needs to be bigger than a threshold set to 50% by default. You can change this value by modifying the property ``kafka.log_cleaner_min_cleanable_ratio`` in the *Advanced configuration* section of the service overview.
+
+The log cleaner can be configured to leave some amount of not compacted "head" of the log by setting compaction time lag. You can achieve this by setting two additional properties from the  *Advanced configuration*:
 
 -  ``log.cleaner.min.compaction.lag.ms`` : setting to a value greater than 0 will prevent log cleaner from compacting messages with an age newer than a minimum message age. Allows to delay compacting records.
 
@@ -26,7 +28,7 @@ Log cleaner can be configured to leave some amount of not compacted "head" of th
 Tombstone records
 ~~~~~~~~~~~~~~~~~
 
-During the cleanup process, log cleaner threads would also remove records that have a null value, also known as **tombstone** records. These records can be delayed from being deleted by configuring ``delete.retention.ms`` for compacted topic.
+During the cleanup process, log cleaner threads also removes records that have a null value, also known as **tombstone** records. These records can be delayed from being deleted by configuring ``delete.retention.ms`` for the compacted topic.
 
-The consumer sees all tombstones as long as the consumer reaches head of a log in a period less than the topic configuration ``delete.retention.ms`` (the default is 24 hours).
+Consumers are able to read all tombstone messages as long as they reach the head of the topic before the period defined in ``delete.retention.ms`` (default 24 hours) is passed.
 

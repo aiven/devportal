@@ -1,113 +1,42 @@
-Log compaction
-==============
+Compacted topics
+================
 
-One way to reduce the disk space requirements in Apache Kafka is to use **log compaction**. This operation retains only the newest record for each key on a topic, regardless of whether the retention period of the message has expired or not. Depending on the application, this can significantly reduce the amount of storage required for the topic.
+One way to reduce the disk space requirements in Apache Kafka is to use **compacted topics**. This methodology retains only the newest record for each key on a topic, regardless of whether the retention period of the message has expired or not. Depending on the application, this can significantly reduce the amount of storage required for the topic.
 
 To make use of log compaction, all messages sent to the topic must have an explicit key. To enable log compaction follow the steps described in :doc:`how to configure log cleaner <../howto/configure-log-cleaner>`.
 
 
-How topic log compaction works
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+How compacted topics work
+-------------------------
 
- Apache Kafka topics represent a continuous stream of messages that typically get discarded after log reaches a certain period of time or size. However for certain use cases we just need the most recent changes.
+An Apache Kafka topic represents a continuous stream of messages that typically get discarded after the message reaches a certain period of time or size. However for certain use cases we just need the most recent value for a certain key.
 
-For example, if we have a topic that contains user's home address and every time there is an update, it gets sent to the topic using ``user_id`` as primary key and home address as the value:
+For example, if we have a topic containing user's home address, on every update a message sent using ``user_id`` as primary key and home address as the value:
 
 ::
 
    1001 -> "4 Privet Dr"
    1002 -> "221B Baker Street"
-   ...
-   1001 -> "21 Jump St"
-   ...
+   1003 -> "Milkman Road"
+   1002 -> "21 Jump St"
    1001 -> "Paper St"
+   1001 -> "Paper Road 21"
 
 
 We have three different options on how long to retain the messages:
 
-* **infinite log retention**: all changes to user's address would be maintained in the logs. This would lead to the log growing in size without a bound. This option involves a risk to outgrow the disk capacity.
-* **simple log retention**: older log records would be deleted after log reaches certain age or size.
-* **log compaction**: only latest version of the key's value are kept.
+* **infinite message retention**: all changes to user's address would be maintained in the logs. This would lead to the log growing in size without a bound. This option involves a risk to outgrow the disk capacity.
+* **simple message retention**: older records would be deleted after they reach a certain age or size.
+* **compacted topic**: only latest version of the key's value is kept. In the example above, only the current address for a specific user would be kept.
 
-With log compaction Apache Kafka would remove any older records for which there is a newer version available in the partition log. This retention policy can be set per-topic, so a single cluster can have some topics where retention is enforced by size or time and other topics where retention is enforced by compaction.
+With compacted topics, Apache Kafka removes from the topic any records for which there is a newer version (based on the record key) is available in the partition. This retention policy can be set per-topic, so a single cluster can have some topics where retention is enforced by size or time and other topics where retention is enforced by compaction.
 
-Log compaction basics
-~~~~~~~~~~~~~~~~~~~~~
+Compacted topic example
+-----------------------
 
-To understand better how log compaction work we will look at a partition log of a compacted topic before and after compaction has been applied.
+To understand better how compaction works we will look at a partition of a compacted topic before and after compaction has been applied.
 
-Before compaction
-*****************
-
-.. list-table::
-  :header-rows: 1
-  :stub-columns: 1
-  :align: left
-
-  * - Offset
-    - Key
-    - Value
-  * - 1
-    - K1
-    - 13
-  * - 2
-    - K2
-    - 11
-  * - 3
-    - K3
-    - 22
-  * - 4
-    - K3
-    - 7
-  * - 5
-    - K1
-    - 8
-  * - 6
-    - K4
-    - 14
-
-You can notice that there are two records with duplicate keys **K1**  and **K3.** After we apply log compaction, we only keep records with the latest offset (newest values) and the older ones get discarded.
-
-After compaction
-*****************
-
-.. list-table::
-  :header-rows: 1
-  :stub-columns: 1
-  :align: left
-
-  * - Offset
-    - Key
-    - Value
-  * - 2
-    - K2
-    - 11
-  * - 4
-    - K3
-    - 7
-  * - 5
-    - K1
-    - 8
-  * - 6
-    - K4
-    - 14
-
-
-When a log is compacted it consists of head and tail, where head is the traditional  Apache Kafka log and new records get appended to the end of it.  Apache Kafka ensures that the records in the tail consist only of unique keys because only the tail section is scanned during compaction process while head section may contain duplicate keys.
-
-.. note:: Log compaction occurs inside a partition and if two records with the same key land in different partitions, they will not be compacted together. This usually doesn't happen since the record key is used to select the partition. However, for custom message routing this might be an issue.
-
-Segments
-~~~~~~~~
-
-If we look "under the hood" of the partition we will find that  Apache Kafka divides the partitions into **segments** which are files (name ends with ``.log`` ) stored on a file system for each partition. A segment file is part of the partition. As the log cleaner cleans log partition segments, the segments get swapped into the log partition immediately replacing the older segments.
-
-The first offset of the segment, **base offset,** corresponds to the file name of the segment. The last segment in the partition is called an **active segment** and it is the only segment to which new messages are appended to. The user-age partition below contains a ``segment 04.log`` that has not yet been compacted, hence you will see duplicate records. **During the cleaning process, an active segment is excluded and you may see duplicate records.**
-
-Example of user age partition:
-*******************************
-
-**01.log:**
+Continuing the example above, the topic records before the compaction would be:
 
 .. list-table::
   :header-rows: 1
@@ -118,16 +47,79 @@ Example of user age partition:
     - Key
     - Value
   * - 1
-    - K1
-    - 13
+    - 1001 
+    - 4 Privet Dr
   * - 2
-    - K2
-    - 11
+    - 1002
+    - 221B Baker Street
   * - 3
-    - K3
-    - 22
+    - 1003
+    - Milkman Road
+  * - 4
+    - 1002
+    - 21 Jump St
+  * - 5
+    - 1001
+    - Paper St
+  * - 6
+    - 1001
+    - Paper Road 21
+ 
+You can notice that there are some records with duplicate keys (``1001`` and ``1002``), with the records having offset ``4``, ``5`` and ``6`` being the addresses updates. When applying compaction, we only keep records with the latest offset (newest values) and the older ones get discarded. The end result is the following:
 
-**04.log:**
+.. list-table::
+  :header-rows: 1
+  :stub-columns: 1
+  :align: left
+
+  * - Offset
+    - Key
+    - Value
+  * - 3
+    - 1003
+    - Milkman Road
+  * - 4
+    - 1002
+    - 21 Jump St
+  * - 6
+    - 1001
+    - Paper Road 21
+
+Compacted topic details
+-----------------------
+
+A compacted topic consists of an head and a tail:
+
+* the **head** is a traditional Apache Kafka topic where new records are appended. The head can therefore contain duplicated keys.
+* the **tail** contains one record per key. Apache Kafka compaction ensures that keys are unique in the tail. 
+
+.. Warning:: 
+
+  The compaction occurs **per partition**: and if two records having the same key land in different partitions, they will not be compacted. 
+  
+  This usually doesn't happen since the record key is used to select the partition. However, for custom message routing this might be an issue.
+
+Expanding the example above let's assume that the **tail** contains the following entries:
+
+.. list-table::
+  :header-rows: 1
+  :stub-columns: 1
+  :align: left
+
+  * - Offset
+    - Key
+    - Value
+  * - 1
+    - 1001 
+    - 4 Privet Dr
+  * - 2
+    - 1002
+    - 221B Baker Street
+  * - 3
+    - 1003
+    - Milkman Road
+
+And the **head**, the newer records including duplicated keys:
 
 .. list-table::
   :header-rows: 1
@@ -138,16 +130,30 @@ Example of user age partition:
     - Key
     - Value
   * - 4
-    - K3
-    - 13
+    - 1002
+    - 21 Jump St
   * - 5
-    - K1
-    - 11
+    - 1001
+    - Paper St
   * - 6
-    - K1
-    - 22
+    - 1001
+    - Paper Road 21
 
-**07.log (active segment):**
+During the compaction process, Apache Kafka creates a structure called **offset map** for the records in the head section, containing for each key, the latest offset.
+
+.. list-table::
+  :header-rows: 1
+  :stub-columns: 1
+  :align: left
+
+  * - Key
+    - Offset
+  * - 1002
+    - 4
+  * - 1001
+    - 6
+
+The compaction thread then scans the **tail**, removing every record having a key that is also present in the **offset map** with an higher offset.
 
 .. list-table::
   :header-rows: 1
@@ -157,13 +163,32 @@ Example of user age partition:
   * - Offset
     - Key
     - Value
-  * - 7
-    - K4
-    - 9
+  * - 1
+    - 1001 :badge:`delete,cls=badge-danger badge-pill`
+    - 4 Privet Dr
+  * - 2
+    - 1002 :badge:`delete,cls=badge-danger badge-pill`
+    - 221B Baker Street
+  * - 3
+    - 1003
+    - Milkman Road
 
+Lastly the records in the offset map are added in the tail. 
 
-When the segment file reaches a certain size of age,  Apache Kafka will create a new segment file. This can be controlled by the following settings:
+.. list-table::
+  :header-rows: 1
+  :stub-columns: 1
+  :align: left
 
--  ``segment.bytes`` : create a new segment when current segment becomes greater than this size. This setting can be set during topic creation and defaults to 1GB.
-
--  ``segment.ms`` : forces the segment to roll over and create a new one when the segment becomes older than this value.
+  * - Offset
+    - Key
+    - Value
+  * - 3
+    - 1003
+    - Milkman Road
+  * - 4
+    - 1002
+    - 21 Jump St
+  * - 6
+    - 1001
+    - Paper Road 21
