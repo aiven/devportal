@@ -5,11 +5,11 @@ To prevent **Aiven for Apache Kafka** from malfunctioning, the Aiven platform de
 
 If any of the nodes in the service exceeds the critical threshold of disk usage (more than 97%), the access control list (ACL) used to authorize API requests by Apache Kafka clients is updated on all nodes to prevent operations that would increase disk usage. Such operations include:
 
--  The ``Write`` and ``IdempotentWrite`` operations that clients use to produce new messages
+- ``Write`` and ``IdempotentWrite`` operations that clients use to produce new messages
 
--  The ``CreateTopics`` operation that creates one or more topics, each carrying some overhead on disk
+- ``CreateTopics`` operation that creates one or more topics, each carrying some overhead on disk
 
-When the ACL blocks write operations, clients see an error similar to the following example from the ``python-kafka`` client::
+When there is not enough space available on the disk and the ACL blocks write operations, clients see an error similar to the following example from the ``python-kafka`` client::
 
    TopicAuthorizationFailedError: [Error 29] TopicAuthorizationFailedError: mytopic
 
