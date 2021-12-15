@@ -17,6 +17,7 @@ datasource
 datastore
 [Dd]ashboards
 Debezium
+Dev
 Distro
 [Dd]ockerized
 downsampled
@@ -110,6 +111,7 @@ Untrusted
 [Uu]naggregated
 [Uu]psert
 wget
+Workbench
 Zabbix
 Zipkin
 ZooKeeper
