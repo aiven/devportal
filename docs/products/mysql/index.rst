@@ -29,4 +29,4 @@ More MySQL resources
 ====================
 
 * Documentation for MySQL itself: https://dev.mysql.com/doc/refman/8.0/en/
-
+* Read a `blog post about MyHoard <https://aiven.io/blog/introducing-myhoard-your-single-solution-to-mysql-backups-and-restoration>`_, our MySQL backup and restore tool, or check out the `GitHub repository for the project <https://github.com/aiven/myhoard>`_.
