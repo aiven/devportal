@@ -15,7 +15,7 @@ OpenSearch Dashboards come with three demonstration datasets included. To add sa
 Tools and pages
 ***************
 
-OpenSearch Dashboards includes various tools to work with data and run queries in different ways. Below you can find ideas what you can do at different pages.
+OpenSearch Dashboards have many tools and features for working with data and running queries. Here are a few ideas to get you started in each of the different sections.
 
 Discover
 ---------
@@ -25,12 +25,12 @@ Discover
 Additionally to search queries, you can filter the data by using either a visual interface or `OpenSearch Query DSL <https://opensearch.org/docs/latest/opensearch/query-dsl/index/>`_
 
 .. tip::
-    If the index you're looking at contains a date field, pay attention to currently selected date range when running a query.
+    If the index you're looking at contains a date field, pay attention to the currently selected date range when running a query.
 
 
 Visualize
 ----------
-**Visualize** page is an interphase to create and manage your visualisations. In order to create a new visualization:
+**Visualize** page is an interface to create and manage your visualisations. In order to create a new visualization:
 
 #. Select visualization type you want to use.
 #. Choose the source of data.
@@ -49,7 +49,7 @@ Read how you can use **Dev Tools** to run the queries directly from OpenSearch D
 Query Workbench
 ---------------
 
-Query Workbench allows to use SQL syntax instead of DSL to query the data. For example, you can retrieve the items we just added to the shopping list with:
+Query Workbench allows you to use SQL syntax instead of DSL to query the data. For example, you can retrieve the items we just added to the shopping list with:
 
 .. code:: sql
 

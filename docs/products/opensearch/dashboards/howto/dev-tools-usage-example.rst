@@ -3,7 +3,7 @@ Getting started with Dev tools
 
 Similarly to how you can work with the OpenSearch service :doc:`using cURL <../howto/opensearch-with-curl>` you can run the queries directly from OpenSearch Dashboards **Dev Tools**. The console contains both a request editor and a command output window.
 
-To get you started find below examples of several requests. You can see that these are  same requests as in our article :doc:`on how to use cURL <../../howto/opensearch-with-curl>`, but in a pure `DSL query form <https://opensearch.org/docs/latest/opensearch/query-dsl/index/>`_. This interface is helpful when you want to quickly populate index with sample data, or run a test query.
+To get you started, check out the various examples of requests that are included below. You can see that these are  same requests as in our article :doc:`on how to use cURL <../../howto/opensearch-with-curl>`, but in a pure `DSL query form <https://opensearch.org/docs/latest/opensearch/query-dsl/index/>`_. This interface is helpful when you want to quickly populate index with sample data, or run a test query.
 
 Use **POST** method to add a new item to an index called ``shopping-list``. If the index doesn't exist yet, it will be created::
 

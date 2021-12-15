@@ -163,7 +163,7 @@ entries:
           - file: docs/products/opensearch/dashboards/howto
             title: HowTo
             entries:
-              - file: docs/products/opensearch/dashboards/howto/access-from-chrome
+              - file: docs/products/opensearch/dashboards/howto/dev-tools-usage-example
       - file: docs/products/opensearch/reference
         title: Reference
         entries:

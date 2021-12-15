@@ -1,7 +1,7 @@
 OpenSearch Dashboards
 ======================
 
-OpenSearch Dashboards is both a visualisation tool for data in the cluster and a user interface for OpenSearch plugins.
+OpenSearch Dashboards is both a visualisation tool for data in the cluster and a user interface for OpenSearch plugins. It's included with your Aiven for OpenSearch service and accessible through the browser.
 
 .. note::
     OpenSearch Dashboards was forked in 2021 from the formerly open source project Kibana.
@@ -9,11 +9,7 @@ OpenSearch Dashboards is both a visualisation tool for data in the cluster and a
 Get started with Aiven for OpenSearch Dashboards
 ------------------------------------------------
 
-Take your first steps with Aiven for OpenSearch Dashboards by following our :doc:`getting-started` article, or browse through the full list of articles:
-
-.. panels::
-
-    💻 :doc:`howto`
+Take your first steps with Aiven for OpenSearch Dashboards by following our :doc:`getting-started` article.
 
 
 Ways to use OpenSearch Dashboards
@@ -29,3 +25,5 @@ OpenSearch Dashboards resources
 * Dashboards Query Language https://opensearch.org/docs/latest/dashboards/dql/
 
 * How to create reports https://opensearch.org/docs/latest/dashboards/reporting/
+
+* Other :doc:`helpful resources <howto>`
