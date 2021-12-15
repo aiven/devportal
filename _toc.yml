@@ -228,6 +228,12 @@ entries:
   
   - file: docs/products/mysql/index
     title: MySQL
+    entries:
+      - file: docs/products/mysql/get-started
+      - file: docs/products/mysql/howto
+        title: HowTo
+        entries:
+          - glob: docs/products/mysql/howto/*
 
   - file: docs/products/redis/index
     title: Redis
