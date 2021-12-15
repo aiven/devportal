@@ -8,6 +8,7 @@ Avro
 [Bb]oolean
 [Bb]oot
 [Bb]usiness
+Conduktor
 [Cc]onnect
 Couchbase
 cyber
@@ -28,6 +29,7 @@ fileset[s]?
 Flink
 Geomap
 geospatial
+GitHub
 [Gg]o
 Gradle
 Grafana
@@ -40,14 +42,15 @@ Heatmap
 Hillyer
 httpie
 hyperloglogs
+hypertable
 Instana
 Java
 jq
 Kaggle
 Kafka
+kafkacat
 Karapace
 kcat
-kafkacat
 [Kk]eypair
 [Kk]eystore
 Kibana
@@ -86,6 +89,7 @@ schemaless
 scriptable
 sharding
 signups
+Simple Authentication and Security Layer
 Singlestat
 Splunk
 [Ss]pring
@@ -98,6 +102,7 @@ Terraform
 Terraforming
 TimescaleDB
 toolchain
+Transport Layer Security
 [Tt]ruststore
 Uber
 unencrypted
