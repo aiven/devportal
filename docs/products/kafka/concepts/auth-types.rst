@@ -62,7 +62,7 @@ then used to create an "identity" that holds:
 
 -  ``ServerKey``
 
-This identity is then by default stored in Zookeeper.
+This identity is then by default stored in ZooKeeper.
 
 Enable SASL authentication
 ---------------------------
