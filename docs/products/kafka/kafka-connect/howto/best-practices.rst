@@ -7,13 +7,13 @@ Pay attention to ``tasks.max`` for connector configurations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 By default, connectors run a maximum of **1** task, which usually leads
-to under-utilization for large  Apache Kafka Connect services (unless you have
+to under-utilization for large Apache Kafka Connect services (unless you have
 many connectors with one task each). In general, it is good to keep the
 cluster CPUs occupied with connector tasks without overloading them. If
 your connector is under-performing, you can try increasing ``tasks.max``
 to match the number of partitions.
 
-Consider a standalone  Apache Kafka Connect service
+Consider a standalone Apache Kafka Connect service
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can run Apache Kafka Connect as part of your existing Aiven for Apache
@@ -24,4 +24,4 @@ standalone Apache Kafka Connect service to run your connectors. This allows you
 to scale the Apache Kafka service and the connector service independently and
 offers more CPU time and memory for the Apache Kafka Connect service.
 
-Having a dedicated cluster that moves the data and doesn't add load to the main nodes is also good for the "separation of concerns" paradigm.
+Having a dedicated cluster that moves the data and does not add load to the main nodes goes according to the "separation of concerns" paradigm.
