@@ -11,6 +11,8 @@ Avro
 Conduktor
 [Cc]onnect
 Couchbase
+CPU
+CRON
 cyber
 datacenter
 datasource
@@ -93,6 +95,7 @@ sharding
 signups
 Simple Authentication and Security Layer
 Singlestat
+SMTP
 Splunk
 [Ss]pring
 Statusmap
