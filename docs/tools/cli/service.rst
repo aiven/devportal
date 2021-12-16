@@ -92,7 +92,7 @@ Creates a new service.
   * - ``--service-type``
     - The type of service; the :ref:`service types command <avn-cli-service-type>` has the available values
   * - ``--plan``
-    - Aiven subscription plan name; check :ref:`avn-cloud-list` for more information
+    - Aiven subscription plan name; check :ref:`avn_service_plan` for more information
   * - ``--cloud``
     - The cloud region name; check :ref:`avn-cloud-list` for more information
   * - ``--no-fail-if-exists``
@@ -372,6 +372,8 @@ Retrieves the metrics for a defined service in Google chart compatible format. T
 
 Get migration status
 
+.. _avn_service_plan:
+
 ``avn service plans``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
@@ -582,6 +584,8 @@ Updates the settings for an Aiven service.
     - The name of the cloud region where to deploy the service
   * - ``--disk-space-gib``
     - Amount of disk space for data storage (GiB)
+  * - ``--plan``
+    - Aiven subscription plan name; check :ref:`avn_service_plan` for more information
   * - ``--power-on``
     - Power on the service
   * - ``--power-off``
