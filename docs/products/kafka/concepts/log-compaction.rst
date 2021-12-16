@@ -9,9 +9,9 @@ To make use of log compaction, all messages sent to the topic must have an expli
 How compacted topics work
 -------------------------
 
-An Apache Kafka topic represents a continuous stream of messages that typically get discarded after the message reaches a certain period of time or size. However for certain use cases we just need the most recent value for a certain key.
+An Apache Kafka topic represents a continuous stream of messages that typically get discarded after the message reaches a certain period of time or size. However, for certain use cases it is only needed the most recent value for a certain key.
 
-For example, if we have a topic containing user's home address, on every update a message sent using ``user_id`` as primary key and home address as the value:
+For example, if there is a topic containing a user's home address, on every update, a message is sent using ``user_id`` as the primary key and home address as the value:
 
 ::
 
