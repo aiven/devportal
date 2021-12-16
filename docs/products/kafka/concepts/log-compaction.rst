@@ -23,18 +23,18 @@ For example, if there is a topic containing a user's home address, on every upda
    1001 -> "Paper Road 21"
 
 
-We have three different options on how long to retain the messages:
+There are three different options to define for how long to retain the messages:
 
-* **infinite message retention**: all changes to user's address would be maintained in the logs. This would lead to the log growing in size without a bound. This option involves a risk to outgrow the disk capacity.
-* **simple message retention**: older records would be deleted after they reach a certain age or size.
-* **compacted topic**: only latest version of the key's value is kept. In the example above, only the current address for a specific user would be kept.
+* **infinite message retention**: all changes to user's address are maintained in the logs. This can lead to the log growing in size without a bound. This option involves the risk of outgrowing the disk capacity.
+* **simple message retention**: older records are deleted after they reach a certain age or size.
+* **compacted topic**: only latest version of the key's value is kept. In the example above, only the current address for a specific user is kept.
 
-With compacted topics, Apache Kafka removes from the topic any records for which there is a newer version (based on the record key) is available in the partition. This retention policy can be set per-topic, so a single cluster can have some topics where retention is enforced by size or time and other topics where retention is enforced by compaction.
+With compacted topics, Apache Kafka removes any records from the topics for which there is a newer version (based on the record key) is available in the partition. This retention policy can be set per-topic, so a single cluster can have some topics where retention is enforced by size or time and other topics where retention is enforced by compaction.
 
 Compacted topic example
 -----------------------
 
-To understand better how compaction works we will look at a partition of a compacted topic before and after compaction has been applied.
+To understand better how compaction works, we will look at a partition of a compacted topic before and after compaction has been applied.
 
 Continuing the example above, the topic records before the compaction would be:
 
@@ -65,7 +65,7 @@ Continuing the example above, the topic records before the compaction would be:
     - 1001
     - Paper Road 21
  
-You can notice that there are some records with duplicate keys (``1001`` and ``1002``), with the records having offset ``4``, ``5`` and ``6`` being the addresses updates. When applying compaction, we only keep records with the latest offset (newest values) and the older ones get discarded. The end result is the following:
+You can notice that there are some records with duplicate keys (``1001`` and ``1002``), with the records having offset ``4``, ``5``, and ``6`` being the addresses updates. When applying compaction, we only keep records with the latest offset (newest values) and the older ones get discarded. The end result is the following:
 
 .. list-table::
   :header-rows: 1
@@ -90,12 +90,12 @@ Compacted topic details
 
 A compacted topic consists of an head and a tail:
 
-* the **head** is a traditional Apache Kafka topic where new records are appended. The head can therefore contain duplicated keys.
+* the **head** is a traditional Apache Kafka topic where new records are appended. Therefore, the head can contain duplicated keys.
 * the **tail** contains one record per key. Apache Kafka compaction ensures that keys are unique in the tail. 
 
 .. Warning:: 
 
-  The compaction occurs **per partition**: if two records having the same key land in different partitions, they will not be compacted.
+  The compaction occurs **per partition**: if two records with the same key land in different partitions, they will not be compacted.
   
   This usually doesn't happen since the record key is used to select the partition. However, for custom message routing this might be an issue.
 
@@ -173,7 +173,7 @@ The compaction thread then scans the **tail**, removing every record having a ke
     - 1003
     - Milkman Road
 
-Lastly the records in the offset map are added in the tail. 
+Lastly, the records in the offset map are added in the tail. 
 
 .. list-table::
   :header-rows: 1
