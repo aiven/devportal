@@ -180,6 +180,8 @@ Manages Aiven for Apache Flink tables and jobs.
 
 More info on ``flink table create``, ``flink table delete``, ``flink table get``, ``flink table list``, ``flink job create``, ``flink job cancel``, ``flink job get`` and ``flink job list`` can be found in :doc:`the dedicated page <service/flink>`.
 
+.. _avn_service_get:
+
 ``avn service get``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
