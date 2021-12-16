@@ -11,4 +11,4 @@ To enable public access for a service which is running within a virtual private 
 
 The connection with the **Dynamic** option is not possible outside the VPC, while the connection with the **Public** option is accessible over the public internet. *The IP allow list* applies to all connection types (Dynamic and Public, in this example).
 
-.. note:: You can change the **public_access** settings without any downtime for your service.
+.. note:: You can change the **public_access** settings without any service downtime.
