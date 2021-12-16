@@ -25,7 +25,7 @@ Pre-requisites
 
 For this example you will need:
 
-* Python 3.6 or later
+* Python 3.7 or later
 
 * The Python ``PyMySQL`` library. You can install this with ``pip``::
 
