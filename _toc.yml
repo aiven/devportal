@@ -66,6 +66,7 @@ entries:
       - file: docs/products/kafka/howto
         title: HowTo
         entries:
+          - file: docs/products/kafka/howto/best-practices
           - file: docs/products/kafka/howto/keystore-truststore.rst
           - file: docs/products/kafka/howto/kafka-sasl-auth
           - file: docs/products/kafka/howto/kafka-tools-config-file
@@ -94,6 +95,7 @@ entries:
         - file: docs/products/kafka/kafka-connect/howto
           title: HowTo
           entries:
+          - file: docs/products/kafka/kafka-connect/howto/best-practices
           - file: docs/products/kafka/kafka-connect/howto/enable-connect
           - file: docs/products/kafka/kafka-connect/howto/enable-automatic-restart
           - file: docs/products/kafka/kafka-connect/howto/jdbc-source-connector-pg
