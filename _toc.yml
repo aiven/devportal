@@ -21,6 +21,7 @@ entries:
       - file: docs/platform/howto/tag-resources.rst
       - file: docs/platform/howto/pause-from-cli.rst
       - file: docs/platform/howto/public-access-in-vpc.rst
+      - file: docs/platform/howto/add-storage-space
 
   # --------- GLOBAL -----------
   - file: docs/tools/index
@@ -62,17 +63,27 @@ entries:
         entries:
           - file: docs/products/kafka/concepts/log-compaction
           - file: docs/products/kafka/concepts/horizontal-vertical-scaling
+          - file: docs/products/kafka/concepts/auth-types
       - file: docs/products/kafka/howto
         title: HowTo
         entries:
           - file: docs/products/kafka/howto/keystore-truststore.rst
           - file: docs/products/kafka/howto/kafka-sasl-auth
+          - file: docs/products/kafka/howto/kafka-tools-config-file
+          - file: docs/products/kafka/howto/viewing-resetting-offset
           - file: docs/products/kafka/howto/set-kafka-parameters
           - file: docs/products/kafka/howto/create-topics-automatically
           - file: docs/products/kafka/howto/get-topic-partition-details
           - file: docs/products/kafka/howto/kcat.rst
           - file: docs/products/kafka/howto/integrate-service-logs-into-kafka-topic
-      
+          - file: docs/products/kafka/howto/use-zookeeper
+          - file: docs/products/kafka/howto/change-retention-period
+          - file: docs/products/kafka/howto/kafka-conduktor
+          - file: docs/products/kafka/howto/prevent-full-disks
+      - file: docs/products/kafka/reference
+        title: Reference
+        entries:
+          - glob: docs/products/kafka/reference/*
       - file: docs/products/kafka/kafka-connect/index
         title: Apache Kafka Connect
         entries:
@@ -85,7 +96,6 @@ entries:
           entries:
           - file: docs/products/kafka/kafka-connect/howto/enable-connect
           - file: docs/products/kafka/kafka-connect/howto/enable-automatic-restart
-
 
   - file: docs/products/postgresql/index
     title: PostgreSQL
@@ -189,6 +199,14 @@ entries:
           - file: docs/products/opensearch/howto/restore_opensearch_backup
           - file: docs/products/opensearch/howto/set_index_retention_patterns
           - file: docs/products/opensearch/howto/switch_off_automatic_replication_factor_adjustment
+      - file: docs/products/opensearch/dashboards/index
+        title: OpenSearch Dashboards
+        entries:
+          - file: docs/products/opensearch/dashboards/getting-started
+          - file: docs/products/opensearch/dashboards/howto
+            title: HowTo
+            entries:
+              - file: docs/products/opensearch/dashboards/howto/dev-tools-usage-example
       - file: docs/products/opensearch/reference
         title: Reference
         entries:

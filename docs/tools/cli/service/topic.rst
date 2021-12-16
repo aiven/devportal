@@ -46,6 +46,8 @@ Creates a new Kafka topic on the specified Aiven for Apache Kafka service.
     --replication 2                             \
     --tag BU=FINANCE
 
+.. _avn-cli-delete-topic:
+
 ``avn service topic-delete``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
@@ -140,6 +142,7 @@ An example of ``avn service topic-get`` output:
     invoices    3           2            1                    -1               168              delete          BU=FINANCE
     orders      2           3            1                    -1               unlimited        delete
 
+.. _avn-cli-topic-update:
 
 ``avn service topic-update``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''

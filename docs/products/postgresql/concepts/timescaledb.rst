@@ -17,6 +17,9 @@ TimescaleDB is available as an extension; you can enable it by running::
 
      CREATE EXTENSION timescaledb CASCADE;
 
+After enabling the extension, you can create TimescaleDB hypertables and make use of its features for working with time-series data.
+For further information, have a look at the `Getting Started <https://docs.timescale.com/timescaledb/latest/getting-started/create-hypertable/>`_ guide from Timescale.
+
 More information about :doc:`how to install and manage extensions <../howto/manage-extensions>` is also available.
 
 TSL-licensed features

@@ -26,6 +26,16 @@ Creates a new Aiven for Apache Flink table.
     - The Flink table name
   * - ``--kafka-topic``
     - The Aiven for Apache Kafka topic to be used as source/sink (Only for Kafka integrations)
+  * - ``--kafka-connector-type``
+    - The :doc:`Flink connector type for Apache Kafka </docs/products/flink/concepts/kafka-connectors>`; possible values are ``upsert-kafka`` and ``kafka``
+  * - ``--kafka-key-format``
+    - The :doc:`Apache Kafka message key format </docs/products/flink/concepts/kafka-connector-requirements>`; possible values are ``avro,avro-confluent``, ``debezium-avro-confluent``, ``debezium-json``, and ``json``
+  * - ``--kafka-key-fields``
+    - The list of :doc:`fields to be used as Key for the message </docs/products/flink/concepts/kafka-connector-requirements>`
+  * - ``--kafka-value-format``
+    - The :doc:`Apache Kafka message value format </docs/products/flink/concepts/kafka-connector-requirements>`; possible values are ``avro,avro-confluent``, ``debezium-avro-confluent``, ``debezium-json``, and ``json``
+  * - ``--kafka-startup-mode``
+    - The Apache Kafka consumer starting offset; possible values are ``earliest-offset`` starting from the beginning of the topic and ``latest-offset`` starting from the last message
   * - ``--jdbc-table``
     - The Aiven for PostgreSQL table name to be used as source/sink (Only for PostgreSQL integrations)
   * - ``partitioned-by``
@@ -37,6 +47,10 @@ Creates a new Aiven for Apache Flink table.
 **Example:** Create a Flink table named ``KAlert`` with:
 
 * ``alert`` as source Apache Kafka **topic**
+* ``kafka`` as connector type
+* ``json`` as value and key data format
+* the field ``node`` as key
+* ``earliest-offset`` as starting offset
 * ``node INT, occurred_at TIMESTAMP_LTZ(3), cpu_in_mb FLOAT`` as **SQL schema**
 * ``ab8dd446-c46e-4979-b6c0-1aad932440c9`` as integration ID
 * ``flink-devportal-demo`` as service name
@@ -46,6 +60,11 @@ Creates a new Aiven for Apache Flink table.
   avn service flink table create flink-devportal-demo ab8dd446-c46e-4979-b6c0-1aad932440c9  \
     --table-name KAlert                                                                     \
     --kafka-topic alert                                                                     \
+    --kafka-connector-type kafka                                                            \
+    --kafka-key-format json                                                                 \
+    --kafka-key-fields node                                                                 \
+    --kafka-value-format json                                                               \
+    --kafka-startup-mode earliest-offset                                                    \
     --schema-sql "node INT, occurred_at TIMESTAMP_LTZ(3), cpu_in_mb FLOAT"
 
 ``avn service flink table delete``
