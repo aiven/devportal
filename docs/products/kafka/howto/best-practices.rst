@@ -12,7 +12,7 @@ each topic is and make sure that replication is set high enough for it.
 
 You can set the replication factor in `Aiven web console <https://console.aiven.io/>`_ when you create a new topic or edit an existing one.
 
-.. note:: We do allow to set the replication factor below 2 in order to prevent data loss from unexpected node termination.
+.. note:: We do not allow to set the replication factor below 2 in order to prevent data loss from unexpected node termination.
 
 Choose a reasonable number of partitions for a topic
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -28,7 +28,7 @@ if needed.
 As a general rule of thumb, the recommendation is to have max 4000
 partitions per broker, and max 200 000 partitions per cluster (`source <https://blogs.apache.org/kafka/entry/apache-kafka-supports-more-partitions>`_).
 
-.. note:: Ordering is guaranteed only per partition. If you require relative ordering of records, you need to put that subset of date into the same partition.
+.. note:: Ordering is guaranteed only per partition. If you require relative ordering of records, you need to put that subset of data into the same partition.
 
 Periodically examine topics with entity-based partitioning for imbalances
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
