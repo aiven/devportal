@@ -20,6 +20,7 @@ entries:
       - file: docs/platform/howto/console-fork-service.rst
       - file: docs/platform/howto/tag-resources.rst
       - file: docs/platform/howto/pause-from-cli.rst
+      - file: docs/platform/howto/public-access-in-vpc.rst
       - file: docs/platform/howto/add-storage-space
 
   # --------- GLOBAL -----------
