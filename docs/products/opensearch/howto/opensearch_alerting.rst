@@ -14,6 +14,9 @@ Create using Dashboards UI
 
 In order to create an alert via OpenSearch Dashboards interface, follow these steps:
 
+Log in Dashboard interface
+***************************
+
 1. Log in to the `Aiven web console <https://console.aiven.io>`_ and select your OpenSearch service.
 
 2. Click the **Overview** tab -> **OpenSearch Dashboards** under `Connection Information`
@@ -25,9 +28,13 @@ In order to create an alert via OpenSearch Dashboards interface, follow these st
 .. note::
     To configure each alert there are ``Monitor``, ``Data source``, ``Query``, ``Trigger`` and ``Destination`` needs to be created.
 
-4. Click the **Destination** tab -> **Add destination**
+
+Create a destination
+********************
+
+1. Click the **Destination** tab -> **Add destination**
    
-   **Name** -> ``slack-test``
+2. **Name** -> ``slack-test``
 
    **Type** -> ``Slack``
 
@@ -39,9 +46,12 @@ In order to create an alert via OpenSearch Dashboards interface, follow these st
 .. important::
    When using email you need to have a SMTP server configured for a valid domain to deliver email notifications
 
-5. Click the **Monitors** tab -> **Create monitor**
+Create a monitor
+****************
 
-6. **Monitor details**
+1. Click the **Monitors** tab -> **Create monitor**
+
+2. **Monitor details**
    
    **Monitor name** -> ``High CPU Monitor``
 
@@ -56,14 +66,13 @@ In order to create an alert via OpenSearch Dashboards interface, follow these st
 .. note::
    Schedule Frequency can be `By internal`, `Daily`, `Weekly`, `Monthly`, `Custom CRON expression`
 
-
-7. **Data source** 
+3. **Data source** 
  
    **index** -> ``sample-host-health``
 
    **Time field** -> ``timestamp``
 
-8. **Query**
+4. **Query**
 
    **Metrics** -> **Add metric** 
 
@@ -71,7 +80,10 @@ In order to create an alert via OpenSearch Dashboards interface, follow these st
 
    **Time range for the last** ``3`` ``minutes``
 
-9. **Add trigger**
+Create a trigger
+****************
+
+1. **Add trigger**
 
    **Trigger name** -> ``high_cpu``
 
@@ -82,16 +94,19 @@ In order to create an alert via OpenSearch Dashboards interface, follow these st
 .. note::
    You can see a visual graph below trigger with the index data and the trigger condition you have defined as a red line
 
-10. **Actions**
+2. **Actions**
      
-**Action name** -> ``slack``
+   **Action name** -> ``slack``
 
-**Destination** -> ``slack-test``
+   **Destination** -> ``slack-test``
 
-**Message subject** -> ``High CPU Test Alert``
+   **Message subject** -> ``High CPU Test Alert``
 
 .. note::
    Multiple Actions can be defined, in this example we will define one action to send notification to destination we have defined in step 4
+
+Alert Message
+*************
 
 **Message** can be adjusted as needed, check **Message Preview** to see the sample and use **Send test message** to validate notification delivery
 
@@ -125,4 +140,3 @@ Use ``curl`` to create the alert
    curl -XPOST \
    https://username:password@os-name-myproject.aivencloud.com:24947/_plugins/_alerting/monitors \
    -H 'Content-type: application/json' -T cpu_alert.json
-
