@@ -12,7 +12,7 @@ There are two distinct cases when failover or switchover occurs:
 2. Controlled switchover during rolling-forward upgrades
 
 .. Warning::
-    For Hobbyist and Startup plans, due to missing standby read-replica servers, uncontrolled disconnections can only be mitigated by restoring data from a backup, and can result in data loss of the database changes since the latest available backup.
+    For Hobbyist and Startup plans, due to missing standby read-replica servers, uncontrolled disconnections can only be mitigated by restoring data from a backup, and can result in data loss of the database changes since the latest backup data that was uploaded to object storage.
 
 .. _Failover PGUncontrolled:
 
@@ -26,7 +26,7 @@ Primary server disconnection
 
 If the **primary** server disappears, Aiven's management platform uses a **60-second timeout** before marking the server as down and promoting a replica server as new primary. During this 60-second timeout, the master is unavailable (``servicename.aivencloud.com`` does not respond), and ``replica.servicename.aivencloud.com`` works fine (in read-only mode).
 
-After the replica promotion, ``servicename.aivencloud.com`` would point to the new primary server, while ``replica.servicename.aivencloud.com`` becomes unreachable. Finally, a new replica server is created, and after the synchronisation with the primary, the  ``replica.servicename.aivencloud.com`` DSN is switched to point to the new replica server.
+After the replica promotion, ``servicename.aivencloud.com`` would point to the new primary server, while ``replica.servicename.aivencloud.com`` becomes unreachable. Finally, a new replica server is created, and after the synchronisation with the primary, the  ``replica.servicename.aivencloud.com`` DNS is switched to point to the new replica server.
 
 Replica server disconnection
 """"""""""""""""""""""""""""
@@ -47,9 +47,9 @@ During maintenance updates, cloud migrations, or plan changes, the below procedu
 3. Cluster replication is changed to **quorum commit synchronous** to avoid data loss when changing primary server.
 
 .. Note::
-    At this stage, one extra server running: the old primary server, and N+1 replica servers (2 for Business and 3 for Premium plans).
+    At this stage, one extra server is running: the old primary server, and N+1 replica servers (2 for Business and 3 for Premium plans).
 
-3. The old primary server is scheduled for termination, and one of the new replica servers is immediately promoted as a primary server. ``servicename.aivencloud.com`` DSN is updated to point to the new primary server. The new primary server is removed from the ``replica.servicename.aivencloud.com`` DSN record.
+3. The old primary server is scheduled for termination, and one of the new replica servers is immediately promoted as a primary server. ``servicename.aivencloud.com`` DNS is updated to point to the new primary server. The new primary server is removed from the ``replica.servicename.aivencloud.com`` DNS record.
 
 .. Note::
     The old primary server is kept alive for a short period of time with a TCP forwarding setup pointing to the new primary server allowing clients to connect before learning the new IP address.
