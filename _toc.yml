@@ -248,6 +248,7 @@ entries:
     title: Redis
     entries:
       - file: docs/products/redis/get-started
+        title: Getting started
       - file: docs/products/redis/concepts
         title: Concepts
         entries:
