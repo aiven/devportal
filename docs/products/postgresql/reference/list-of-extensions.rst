@@ -12,10 +12,10 @@ The following PostgreSQL extensions are available. Please note that some of the 
     - Link
     - Notes
   * - ``address_standardizer``
-    - https://postgis.net/docs/Address_Standardizer.html
+    - https://postgis.net/docs/standardize_address.html
     -
   * - ``address_standardizer_data_us``
-    - https://postgis.net/docs/Address_Standardizer.html
+    - https://postgis.net/docs/standardize_address.html
     -
   * - ``aiven_extras``
     - https://github.com/aiven/aiven-extras
@@ -120,7 +120,7 @@ The following PostgreSQL extensions are available. Please note that some of the 
     - https://postgis.net/
     -
   * - ``postgis_address_standardizer``
-    - https://postgis.net/docs/Address_Standardizer.html
+    - https://postgis.net/docs/standardize_address.html
     -
   * - ``postgis_sfcgal``
     - http://postgis.net/docs/reference.html#reference_sfcgal
