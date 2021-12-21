@@ -100,6 +100,7 @@ entries:
           - file: docs/products/kafka/kafka-connect/howto/enable-connect
           - file: docs/products/kafka/kafka-connect/howto/enable-automatic-restart
           - file: docs/products/kafka/kafka-connect/howto/jdbc-source-connector-pg
+          - file: docs/products/kafka/kafka-connect/howto/jdbc-source-connector-mysql
 
   - file: docs/products/postgresql/index
     title: PostgreSQL
