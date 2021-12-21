@@ -9,7 +9,7 @@ You can use the following to estimate:
 
    {max\_number\_of\_connections} = 4\times m
 
-where "m" represents the memory in megabytes (binary). With at least 10,000 connections available, even on the smallest servers. For example, on a server with 4GB memory (4,096 MB binary), the simultaneous connections are:
+where "m" represents the memory in megabytes. With at least 10,000 connections available, even on the smallest servers. For example, on a server with 4GB memory (4,096 MB), the simultaneous connections are:
 
 .. math::
 
@@ -17,4 +17,4 @@ where "m" represents the memory in megabytes (binary). With at least 10,000 conn
 
 .. note::
 
-    Make sure to convert the memory unit to megabytes (binary) unit.
+    Make sure to convert the memory unit to megabytes unit.
