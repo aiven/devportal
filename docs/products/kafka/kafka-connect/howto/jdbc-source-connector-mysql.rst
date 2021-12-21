@@ -19,7 +19,7 @@ Furthermore you need to collect the following information about the source MySQL
 * ``MYSQL_HOST``: The database hostname
 * ``MYSQL_PORT``: The database port
 * ``MYSQL_USER``: The database user to connect
-* ``MYSQL_PASSWORD``: The database password for the ``PG_USER``
+* ``MYSQL_PASSWORD``: The database password for the ``MYSQL_USER``
 * ``MYSQL_DATABASE_NAME``: the database name
 * ``MYSQL_TABLES``: the list of database tables to be included in Apache Kafka; the list must be in the form of ``table_name1,table_name2``
 
@@ -55,7 +55,7 @@ Define the connector configurations in a file (we'll refer to it with the name `
 The configuration file contains the following entries:
 
 * ``name``: the connector name
-* ``MYSQL_HOST``, ``MYSQL_PORT``, ``MYSQL_DATABASE_NAME``, ``MYSQL_USER``, ``MYSQL_PASSWORD`` and ``MYSQL_TABLES``: source database parameters collected in the :ref:`prerequisite <connect_jdbc_pg_source_prereq>` phase. 
+* ``MYSQL_HOST``, ``MYSQL_PORT``, ``MYSQL_DATABASE_NAME``, ``MYSQL_USER``, ``MYSQL_PASSWORD`` and ``MYSQL_TABLES``: source database parameters collected in the :ref:`prerequisite <connect_jdbc_mysql_source_prereq>` phase. 
 * ``mode``: the query mode, more information in the :doc:`dedicated page <../concepts/jdbc-source-modes>`; depending on the selected mode, additional configuration entries might be required.
 * ``topic.prefix``: the prefix that will be used for topic names. The resulting topic name will be the concatenation of the ``topic.prefix`` and the schema and table name.
 * ``tasks.max``: maximum number of tasks to execute in parallel. By default is 1, the connector can use at max 1 task for each source table defined.
