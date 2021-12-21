@@ -62,3 +62,7 @@ Check out our other resources for more technical information:
 * :doc:`Memory usage, on-disk persistence and replication in Aiven for Redis <concepts/memory-usage>`.
 
   See how Aiven for Redis solves the challenges related to high memory usage and high change rate.
+
+* :doc:`Estimate maximum number of connections in Aiven for Redis <howto/estimate-max-number-of-connections>`.
+
+  Learn how estimate the max number of simultaneous connections in Aiven for Redis service.
