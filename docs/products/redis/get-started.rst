@@ -1,5 +1,5 @@
-Getting started
-===============
+Get Started with Aiven for Redis
+================================
 
 Get up and running with Aiven for Redis. This article shows you how to set up a Redis service in Aiven and learn more about the platform.
 
