@@ -54,12 +54,12 @@ Define the connector configurations in a file (we'll refer to it with the name `
 
 The configuration file contains the following entries:
 
-* ``name``: the connector name
+* ``name``: the connector name.
 * ``SQLSERVER_HOST``, ``SQLSERVER_PORT``, ``SQLSERVER_DATABASE_NAME``, ``SQLSERVER_USER``, ``SQLSERVER_PASSWORD`` and ``SQLSERVER_TABLES``: source database parameters collected in the :ref:`prerequisite <connect_jdbc_sqlserver_source_prereq>` phase. 
 * ``mode``: the query mode, more information in the :doc:`dedicated page <../concepts/jdbc-source-modes>`; depending on the selected mode, additional configuration entries might be required.
 * ``topic.prefix``: the prefix that will be used for topic names. The resulting topic name will be the concatenation of the ``topic.prefix`` and the schema and table name.
 * ``tasks.max``: maximum number of tasks to execute in parallel. By default is 1, the connector can use at max 1 task for each source table defined.
-* ``poll.interval.ms``: query frequency, default 5000 milliseconds
+* ``poll.interval.ms``: query frequency, default 5000 milliseconds.
 
 Check out the `dedicated documentation <https://github.com/aiven/jdbc-connector-for-apache-kafka/blob/master/docs/source-connector-config-options.rst>`_ for the full list of parameters.
 
@@ -78,7 +78,7 @@ Check the connector status with the following command, replacing the ``SERVICE_N
 
     avn service connector status SERVICE_NAME CONNECTOR_NAME
 
-Verify in the Apache Kafka target instance, the presence of the topic and the data
+Verify in the Apache Kafka target instance, the presence of the topic and the data.
 
 .. Tip::
 
@@ -92,7 +92,7 @@ The example creates an :doc:`incremental <../concepts/jdbc-source-modes>` JDBC c
 * connector name: ``jdbc_source_sqlserver_increment``
 * source tables: ``students`` and ``exams``, available in an Aiven for  Server database 
 * :doc:`incremental column name <../concepts/jdbc-source-modes>`: ``id``
-* topic prefix: ``jdbc_source_sqlserver_increment.``
+* topic prefix: ``jdbc_source_sqlserver_increment``
 * maximum number of concurrent tasks: ``1``
 * time interval between queries: 5 seconds
 
