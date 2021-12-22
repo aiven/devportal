@@ -20,8 +20,8 @@ Furthermore you need to collect the following information about the source MySQL
 * ``MYSQL_PORT``: The database port
 * ``MYSQL_USER``: The database user to connect
 * ``MYSQL_PASSWORD``: The database password for the ``MYSQL_USER``
-* ``MYSQL_DATABASE_NAME``: the database name
-* ``MYSQL_TABLES``: the list of database tables to be included in Apache Kafka; the list must be in the form of ``table_name1,table_name2``
+* ``MYSQL_DATABASE_NAME``: The database name
+* ``MYSQL_TABLES``: The list of database tables to be included in Apache Kafka; the list must be in the form of ``table_name1,table_name2``
 
 .. Note::
 
