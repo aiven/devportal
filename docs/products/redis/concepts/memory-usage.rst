@@ -11,7 +11,7 @@ Data eviction policy in Aiven for Redis
 
 Data eviction policy is one of the most important Redis settings and it is available in the Aiven web console. 
 
-Redis has a ``max memory`` setting which controls how much data is allowed to be stored, and the data eviction policy controls what happens when that maximum is reached. All Aiven for Redis services has the eviction policy set to *No eviction* by default. This means that if you keep storing values, and never remove anything, the write operations will start failing when the maximum memory is reached.
+Redis has a ``max memory`` setting which controls how much data is allowed to be stored, and the data eviction policy controls what happens when that maximum is reached. All Aiven for Redis services have the eviction policy set to *No eviction* by default. This means that if you keep storing values, and never remove anything, the write operations will start failing when the maximum memory is reached.
 
 This is acceptable when data is consumed at a similar rate to how it is written. However, for other use cases ``Evict all keys`` with least recently used first (LRU) - which starts dropping old keys when ``max memory`` is reached - works better.  Another way is to drop random keys.
 
@@ -36,7 +36,7 @@ For all new Aiven for Redis services the ``max memory`` is set to **70% of avail
 
     If the forked process took 4 minutes to perform the task, and new data was written at 5 megabytes per second, the system memory usage can grow by 1.2 gigabytes during the operation. 
 
-Additionally, the duration of the backup and replication operations are directly proportional to the total amount of memory that is in use so the larger the plan, the larger the possible memory diverge, and thus the memory reserved for allowing these operations to be complete (without using swap) is also proportional to total memory.
+Additionally, the duration of the backup and replication operations are directly proportional to the total amount of memory that is in use so the larger the plan, the larger the possible memory diverge, and thus the memory reserved for allowing these operations to complete (without using swap) is also proportional to total memory.
 
 If Redis memory usage grows so big that it needs to use swap, the system can quickly go into a cycle that makes the node unresponsive, and it needs to be replaced. 
 
