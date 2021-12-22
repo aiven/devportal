@@ -40,7 +40,7 @@ The instructions for setting up local development are in the ``README``.
 
 0. We heartily recommend you open an issue so that we can either help with outlines, or know that three people are working on the same thing.
 
-1. Make your changes on a branch. We recommend a maximum of three articles, and don't review large changesets without prior discussion.
+1. Make your changes on a branch. We recommend a maximum of three articles, and don't review large changesets without prior discussion. File names are ``kebab-case``, with hyphens, such as ``connect-with-pgadmin.rst``. Files should also be added to the table of contents file ``_toc.yml`` so they appear in the right location in the navigation.
 
 2. Open a pull request, use the template so we know what it is and why it's a great addition. If you need to publish this quickly for a reason, mention that as well.
 
