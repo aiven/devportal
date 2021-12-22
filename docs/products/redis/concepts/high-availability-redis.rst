@@ -29,8 +29,8 @@ Aiven for Redis is available on a variety of plans, offering different levels of
 Failure handling
 ----------------
 
-**Minor failures**, such as service process crashes or temporary loss of network access are handled by Aiven automatically in all plans without any major changes to the service deployment. The service automatically restores normal operation once the crashed process is automatically restarted or when the network access is restored.
-**Severe failure**, such as losing a node entirely in case of hardware or severe software problems, requires more drastic recovery measures. Losing an entire node (virtual machine) could happen, for example, due to hardware failure or a severe enough software failure. The Aiven monitoring infrastructure automatically detects a failing node both when the node starts reporting that its own self-diagnostics is having problems or when the node stops communicating entirely. The monitoring infrastructure automatically schedules a new replacement node to be created.
+- **Minor failures**, such as service process crashes or temporary loss of network access are handled by Aiven automatically in all plans without any major changes to the service deployment. The service automatically restores normal operation once the crashed process is automatically restarted or when the network access is restored.
+- **Severe failure**, such as losing a node entirely in case of hardware or severe software problems, requires more drastic recovery measures. Losing an entire node (virtual machine) could happen, for example, due to hardware failure or a severe enough software failure. The Aiven monitoring infrastructure automatically detects a failing node both when the node starts reporting that its own self-diagnostics is having problems or when the node stops communicating entirely. The monitoring infrastructure automatically schedules a new replacement node to be created.
 
 .. Note::
         In case of database failover, the **Service URI** of your service remains the same, only the IP address changes to point to the new master node.
