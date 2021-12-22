@@ -20,8 +20,8 @@ Furthermore you need to collect the following information about the source SQL S
 * ``SQLSERVER_PORT``: The database port
 * ``SQLSERVER_USER``: The database user to connect
 * ``SQLSERVER_PASSWORD``: The database password for the ``SQLSERVER_USER``
-* ``SQLSERVER_DATABASE_NAME``: the database name
-* ``SQLSERVER_TABLES``: the list of database tables to be included in Apache Kafka; the list must be in the form of ``table_name1,table_name2``
+* ``SQLSERVER_DATABASE_NAME``: The database name
+* ``SQLSERVER_TABLES``: The list of database tables to be included in Apache Kafka; the list must be in the form of ``table_name1,table_name2``
 
 .. Note::
 
