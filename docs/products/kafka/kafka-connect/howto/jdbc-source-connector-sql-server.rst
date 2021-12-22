@@ -114,7 +114,7 @@ The connector configuration is the following:
         "poll.interval.ms":"5000"
     }
 
-With the above configuration stored in a ``jdbc_incremental_source_sqlserver.json`` file, you can create the connector in the ``demo-kafka`` instance with:
+With the above configuration stored in the ``jdbc_incremental_source_sqlserver.json`` file, you can create the connector in the ``demo-kafka`` instance with:
 
 ::
 
