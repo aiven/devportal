@@ -88,7 +88,7 @@ Postman
 Protobuf
 psql
 Python
-Redis
+[Rr]edis
 refcard
 reindexing
 Sakila
