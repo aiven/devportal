@@ -1,21 +1,16 @@
-OpenSearch alerting
-===================
+Create alerts with OpenSearch Dashboards
+========================================
 
 OpenSearch alerting feature sends notifications when data from one or more indices meets certain conditions that can be customized.
 Use case examples are such as monitoring for HTTP status code 503, CPU load average above certain percentage or watch for counts of a specific keyword in logs for a specific amount of interval,
-notification to be configured to be sent via email, slack or webhooks and other destination.
+notification to be configured to be sent via email, slack or custom webhooks and other destination, in this example we are using slack as the destination.
 
 In the following example, we are using a ``sample-host-health`` index as datasource to create a simple alert to check cpu load, action will be triggered when average of ``cpu_usage_percentage`` over ``3`` minutes is above ``75%``
-
-You can define an alert either by using visual interface or programmatically.
 
 Create using Dashboards UI
 **************************
 
 In order to create an alert via OpenSearch Dashboards interface, follow these steps:
-
-Log in Dashboard interface
-***************************
 
 1. Log in to the `Aiven web console <https://console.aiven.io>`_ and select your OpenSearch service.
 
@@ -25,12 +20,18 @@ Log in Dashboard interface
 
 3. In OpenSearch Dashboard Click  on top left to open the left side panel -> Under `OpenSearch Plugins` -> **Alerting**
 
-.. note::
-    To configure each alert there are ``Monitor``, ``Data source``, ``Query``, ``Trigger`` and ``Destination`` needs to be created.
 
+To configure each alert the following needs to be created, we will walk-through configuration of each section.
+
+- ``Destination``
+- ``Monitor``
+- ``Data source``
+- ``Query``
+- ``Trigger``
 
 Create a destination
 ********************
+Destination is a location for notifications to be delivered when an action is triggered.
 
 1. Click the **Destination** tab -> **Add destination**
    
@@ -48,6 +49,7 @@ Create a destination
 
 Create a monitor
 ****************
+Monitor is a job that runs on a defined schedule and queries OpenSearch indices. 
 
 1. Click the **Monitors** tab -> **Create monitor**
 
@@ -67,6 +69,8 @@ Create a monitor
    Schedule Frequency can be `By internal`, `Daily`, `Weekly`, `Monthly`, `Custom CRON expression`
 
 3. **Data source** 
+   
+   Data source is the OpenSearch indices to query.
  
    **index** -> ``sample-host-health``
 
@@ -74,14 +78,17 @@ Create a monitor
 
 4. **Query**
 
+   Query defines the fields to query from indices and how to evaluate the results.
+
    **Metrics** -> **Add metric** 
 
-   **Aggregation** ``avrerage()`` **Field** ``cpu_usage_percentage``
+   **Aggregation** ``average()`` **Field** ``cpu_usage_percentage``
 
    **Time range for the last** ``3`` ``minutes``
 
 Create a trigger
 ****************
+Triggers is a defined conditions from the queries results from monitor.  If conditions are met, alerts are generated.
 
 1. **Add trigger**
 
@@ -95,6 +102,8 @@ Create a trigger
    You can see a visual graph below trigger with the index data and the trigger condition you have defined as a red line
 
 2. **Actions**
+
+   Actions defines the destination for notification alerts when trigger conditions are met.
      
    **Action name** -> ``slack``
 
@@ -113,30 +122,3 @@ Alert Message
 Click on **Create** and your monitor is ready!
 
 * For further details on `alerting monitors configuration <https://opensearch.org/docs/latest/monitoring-plugins/alerting/monitors/>`_
-
-.. _Code:
-
-Create programmatically
-***********************
-
-Monitors can be created by ``POST`` a JSON to OpenSearch API 
-
-``https://username:password@os-name-myproject.aivencloud.com:24947/_plugins/_alerting/monitors``
-
-The required JSON request format can be found in `OpenSearch Alerting API documentation <https://opensearch.org/docs/latest/monitoring-plugins/alerting/api/#create-query-level-monitor>`_
-
-
-The following example code is for creating the same CPU alert monitor above programmatically.
-
-Save the JSON below into ``cpu_alert.json`` 
-
-.. literalinclude:: /code/products/opensearch/cpu_alert.json
-  :language: JSON
-
-Use ``curl`` to create the alert
-
-.. code-block::
-
-   curl -XPOST \
-   https://username:password@os-name-myproject.aivencloud.com:24947/_plugins/_alerting/monitors \
-   -H 'Content-type: application/json' -T cpu_alert.json
