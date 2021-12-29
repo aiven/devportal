@@ -91,13 +91,7 @@ Compacted topic details
 A compacted topic consists of an head and a tail:
 
 * the **head** is a traditional Apache Kafka topic where new records are appended. Therefore, the head can contain duplicated keys.
-* the **tail** contains one record per key. Apache Kafka compaction ensures that keys are unique in the tail. 
-
-.. Warning:: 
-
-  The compaction occurs **per partition**: if two records with the same key land in different partitions, they will not be compacted.
-  
-  This usually doesn't happen since the record key is used to select the partition. However, for custom message routing this might be an issue.
+* the **tail** contains one record per key. Apache Kafka compaction ensures that keys are unique in the tail.
 
 Expanding the example above let's assume that the **tail** contains the following entries:
 
@@ -192,3 +186,9 @@ Lastly, the records in the offset map are added in the tail.
   * - 6
     - 1001
     - Paper Road 21
+
+.. Warning::
+
+  The compaction occurs **per partition**: if two records with the same key land in different partitions, they will not be compacted.
+
+  This usually doesn't happen since the record key is used to select the partition. However, for custom message routing this might be an issue.
