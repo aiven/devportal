@@ -3,9 +3,9 @@ Create alerts with OpenSearch Dashboards
 
 OpenSearch alerting feature sends notifications when data from one or more indices meets certain conditions that can be customized.
 Use case examples are such as monitoring for HTTP status code 503, CPU load average above certain percentage or watch for counts of a specific keyword in logs for a specific amount of interval,
-notification to be configured to be sent via email, slack or custom webhooks and other destination, in this example we are using slack as the destination.
+notification to be configured to be sent via email, slack or custom webhooks and other destination.
 
-In the following example, we are using a ``sample-host-health`` index as datasource to create a simple alert to check cpu load, action will be triggered when average of ``cpu_usage_percentage`` over ``3`` minutes is above ``75%``
+In the following example we are using Slack as the destination and a ``sample-host-health`` index as datasource to create a simple alert to check cpu load. An action will be triggered when average of ``cpu_usage_percentage`` over ``3`` minutes is above ``75%``.
 
 Create using Dashboards UI
 **************************
@@ -14,11 +14,11 @@ In order to create an alert via OpenSearch Dashboards interface, follow these st
 
 1. Log in to the `Aiven web console <https://console.aiven.io>`_ and select your OpenSearch service.
 
-2. Click the **Overview** tab -> **OpenSearch Dashboards** under `Connection Information`
+2. Click the **Overview** tab and under `Connection Information` click on **OpenSearch Dashboards** tab.
 
    This opens the OpenSearch Dashboard
 
-3. In OpenSearch Dashboard Click  on top left to open the left side panel -> Under `OpenSearch Plugins` -> **Alerting**
+3. In OpenSearch Dashboard open the left side panel and under `OpenSearch Plugins` click on **Alerting**.
 
 
 To configure each alert the following needs to be created, we will walk-through configuration of each section.
@@ -33,13 +33,11 @@ Create a destination
 ********************
 Destination is a location for notifications to be delivered when an action is triggered.
 
-1. Click the **Destination** tab -> **Add destination**
+1. Open the **Destination** tab and click on **Add destination**
    
 2. **Name** -> ``slack-test``
 
-   **Type** -> ``Slack``
 
-   **Settings** **Webhook URL:** -> ``https://your_slack_webhook_URL``
 
 .. note::
    Destination Type can be: ``Amazon Chime``, ``Slack``, ``Custom webhook`` or ``Email``
@@ -51,7 +49,7 @@ Create a monitor
 ****************
 Monitor is a job that runs on a defined schedule and queries OpenSearch indices. 
 
-1. Click the **Monitors** tab -> **Create monitor**
+1. Open the **Monitors** tab and click on **Create monitor**
 
 2. **Monitor details**
    
