@@ -175,6 +175,11 @@ entries:
           - file: docs/products/flink/howto/create-job
           - file: docs/products/flink/howto/real-time-alerting-solution
           - file: docs/products/flink/howto/real-time-alerting-solution-cli
+      - file: docs/products/flink/reference
+        title: Reference
+        entries:
+          - glob: docs/products/flink/reference/*
+  
 
   - file: docs/products/opensearch/index
     title: OpenSearch
