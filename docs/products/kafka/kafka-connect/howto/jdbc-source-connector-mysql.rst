@@ -12,7 +12,7 @@ The JDBC source connector pushes data from a relational database, such as MySQL,
 Prerequisites
 -------------
 
-To setup a JDBC source connector pointing to MySQL, you need an Aiven for Apache Kafka service :doc:`with Kafka Connect enabled <enable-connect>` or a :ref:`dedicated Aiven for Apache Kafka Connect cluster <apache_kafka_connect_dedicated_cluster>`. 
+To setup a JDBC source connector pointing to MySQL, you need an Aiven for Apache Kafka service :doc:`with Apache Kafka Connect enabled <enable-connect>` or a :ref:`dedicated Aiven for Apache Kafka Connect cluster <apache_kafka_connect_dedicated_cluster>`. 
 
 Furthermore you need to collect the following information about the source MySQL database upfront:
 
@@ -93,7 +93,7 @@ The example creates an :doc:`incremental <../concepts/jdbc-source-modes>` JDBC c
 * source tables: ``students`` and ``exams``, available in an Aiven for MySQL database 
 * :doc:`incremental column name <../concepts/jdbc-source-modes>`: ``id``
 * topic prefix: ``jdbc_source_mysql_increment.``
-* maximum number of concurrent tasks: ``1``
+* maximum number of concurrent tasks: 1
 * time interval between queries: 5 seconds
 
 The connector configuration is the following:
