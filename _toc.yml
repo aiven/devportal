@@ -270,6 +270,7 @@ entries:
               - file: docs/products/redis/howto/configure-acl-permissions
               - file: docs/products/redis/howto/migrate-aiven-redis
           - file: docs/products/redis/howto/estimate-max-number-of-connections
+          - file: docs/products/redis/howto/warning-overcommit_memory
 
   - file: docs/products/grafana/index
     title: Grafana
