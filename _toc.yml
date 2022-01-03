@@ -101,6 +101,7 @@ entries:
           - file: docs/products/kafka/kafka-connect/howto/enable-automatic-restart
           - file: docs/products/kafka/kafka-connect/howto/jdbc-source-connector-pg
           - file: docs/products/kafka/kafka-connect/howto/jdbc-source-connector-mysql
+          - file: docs/products/kafka/kafka-connect/howto/jdbc-source-connector-sql-server
 
   - file: docs/products/postgresql/index
     title: PostgreSQL
@@ -249,6 +250,7 @@ entries:
     title: Redis
     entries:
       - file: docs/products/redis/get-started
+        title: Getting started
       - file: docs/products/redis/concepts
         title: Concepts
         entries:
@@ -267,6 +269,7 @@ entries:
             entries:
               - file: docs/products/redis/howto/configure-acl-permissions
               - file: docs/products/redis/howto/migrate-aiven-redis
+          - file: docs/products/redis/howto/estimate-max-number-of-connections
 
   - file: docs/products/grafana/index
     title: Grafana
