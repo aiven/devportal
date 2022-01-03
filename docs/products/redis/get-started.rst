@@ -4,17 +4,13 @@ Get started with Aiven for Redis
 Aiven for Redis services are managed from the `Aiven
 Console <https://console.aiven.io/>`__. Create a new Aiven for Redis service by following the steps laid out in :doc:`this article </docs/platform/howto/create_new_service>`.
 
-Once the service creation is initiated, you can go to its dedicated service page where the new service is shown
-with an indicator that it is being created.
+Once the service creation is initiated, you can go to its dedicated service page where the new service is shown with an indicator that it is being created.
 
-Click the service name in the list to go to the "**Overview**" page. The "**Overview**" tab shows the connection parameters for your Redis service and its
-current status. You can make changes to the service configuration in "*Advanced configuration*",
-even while the service is being built. You can find the available
-configuration options on the :doc:`reference page <reference/advanced-params>`.
+Click the service name in the list to go to the **Overview** page. The **Overview** tab shows the connection parameters for your Redis service and its current status. You can make changes to the service configuration in **Overview** > **Advanced configuration**, even while the service is being built. You can find the available configuration options on the :doc:`reference page <reference/advanced-params>`.
 
-The "Status" indicator says "**REBUILDING**" while the service is
+The "Status" indicator says **REBUILDING** while the service is
 being created. Once the service is up and running, the light changes to
-green and the indicator says "**RUNNING**".
+green and the indicator says **RUNNING**.
 
 .. note::
    Services typically start in a couple of minutes, the performance between clouds varies and it can take longer under some circumstances.
