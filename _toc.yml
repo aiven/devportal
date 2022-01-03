@@ -271,6 +271,7 @@ entries:
               - file: docs/products/redis/howto/migrate-aiven-redis
           - file: docs/products/redis/howto/estimate-max-number-of-connections
           - file: docs/products/redis/howto/warning-overcommit_memory
+          - file: docs/products/redis/howto/enable-lua-scripts
       - file: docs/products/redis/reference
         title: Reference
         entries:
