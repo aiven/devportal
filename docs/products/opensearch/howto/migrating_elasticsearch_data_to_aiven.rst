@@ -66,7 +66,7 @@ To migrate or copy data:
 
       ::
 
-         curl -XPUT https://avnadmin:yourpassword@os-123-demoprj.aivencloud.com:23125/logs-2024-09-21 \
+         curl -XPUT https://avnadmin:yourpassword@os-123-demoprj.aivencloud.com:23125/logs-2024-09-21/_mapping \
          -H 'Content-type: application/json' -T src_mapping.json
    #. Submit the reindexing request.
 
