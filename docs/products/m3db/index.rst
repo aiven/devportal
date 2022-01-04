@@ -34,6 +34,10 @@ Take your first steps with Aiven for M3 by following our :doc:`getting-started` 
 
     💻 :doc:`howto`
 
+    ---
+
+    📖 :doc:`reference`
+
 
 Integrates with your existing tools
 ------------------------------------
