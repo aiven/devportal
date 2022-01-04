@@ -31,6 +31,10 @@ Take your first steps with Aiven for Redis by following our :doc:`get-started` a
 
     ---
 
+    📖 :doc:`reference`
+
+    ---
+
     🧰 :doc:`howto/list-code-samples`
 
 
