@@ -1,6 +1,6 @@
 Grafana reference
-#################
+=================
 
-Reference materials for configuration, plugins and other reference materials relating to Aiven for Grafana.
+Additional reference information for Aiven for Grafana.
 
 .. tableofcontents::
