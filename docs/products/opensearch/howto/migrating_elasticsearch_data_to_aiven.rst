@@ -28,7 +28,7 @@ To migrate or copy data:
 
    ::
 
-      avn service update your-service-name -c elasticsearch.reindex_remote_whitelist=your.non-aiven-service.example.com:9200 
+      avn service update your-service-name -c opensearch.reindex_remote_whitelist=your.non-aiven-service.example.com:9200 
 
    Replace the port number with the one where your source Elasticsearch service is listening.
 
