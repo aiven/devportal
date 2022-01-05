@@ -5,8 +5,13 @@ This is the source for the Aiven developer documentation at https://developer.ai
 
 It is Python-based, with content in `ReStructuredText (rst) <https://docutils.sourceforge.io/rst.html>`_ and rendered by `Sphinx <https://www.sphinx-doc.org/en/master/>`_.
 
-Running locally
----------------
+Contributing
+------------
+
+Check the `CONTRIBUTING guide <CONTRIBUTING>`_ for details on how to create content for Aiven Developer. You will find the style guide, pull request process and templates for the various content types there.
+
+Local Development
+-----------------
 
 We recommend using a virtual environment like `venv <https://docs.python.org/3/library/venv.html>`_::
 
@@ -29,19 +34,12 @@ Your preview should be at http://localhost:8000 (if anything doesn't seem to re-
 > If you are working on the templates, try the additional `make livehtmlall` command. This disables sphinx's incremental build and also observes changes to the assets, so it's slower but more like a full rebuild when things change.
 
 Windows users
--------------
+'''''''''''''
 
 Replace all `make` commands with `./make` - this uses the `make.bat` file instead of `Makefile` but the functionality should be equivalent.
 
-Making changes
---------------
-
-Please make changes! Even small fixes are very welcome. The content is in the ``docs/`` folder, in `ReStructuredText <https://docutils.sourceforge.io/rst.html>`_.
-
-When you open a pull request, you will get a preview of your changes (useful if you or someone you want to show the work to does not have the tool set up locally). The process also runs some spelling and link checking tasksi so please check the output of the build if it fails.
-
 Running build tasks locally
----------------------------
+'''''''''''''''''''''''''''
 
 To run the spell check locally, you will need to have `Vale <https://github.com/errata-ai/vale>`_ installed on your computer and available on your path.
 
@@ -50,13 +48,18 @@ To run the spell check locally, you will need to have `Vale <https://github.com/
 
 If the spellchecker is rejecting words that are valid (such as technology terms), double check the spelling and capitalisation, then add the word to ``.github/styles/Vocab/Docs/accept.txt``.
 
-Navigation Structure
-~~~~~~~~~~~~~~~~~~~~
+Navigation structure
+''''''''''''''''''''
 
 The left-hand navigation menu is driven by a plugin called `Sphinx external TOC <https://sphinx-external-toc.readthedocs.io/en/latest/intro.html>`_. You can find our structure in ``_toc.yml``.
 
+Formatting tips
+---------------
+
+Here's an incomplete but helpful collection of tips for formatting your content on Aiven Developer.
+
 Links
-~~~~~
+'''''
 
 Links are different depending on whether they are external links, links pointing to a specific page on the site, or links pointing to a specific anchor or label.
 
@@ -86,12 +89,25 @@ Then you can refer to the label with a `:ref: <https://www.sphinx-doc.org/en/mas
 
 
 Diagrams
-~~~~~~~~
+''''''''
 
 Diagrams use `sphinxcontrib-mermaid <https://github.com/mgaitan/sphinxcontrib-mermaid>`_ and `mermaid.js <https://mermaid-js.github.io/mermaid/#/>`_ syntax.
 
+
+Sections and panels
+'''''''''''''''''''
+
+We're using `sphinx-panels <https://sphinx-panels.readthedocs.io>`_ for the card layout you see on the homepage and in a few other places. Please use sparingly :)
+
+Code samples
+''''''''''''
+
+Code samples should be autodetected (using `pygments <https://pygments.org/>`_) and also will automatically include the "click to copy" button in the top right thanks to `sphinx-copybutton <https://sphinx-copybutton.readthedocs.io>`_.
+
+Do not include a `$` before a command that the user should run, because it will get copied into the user's clipboard and cause the command to fail (this has been a common standard in the past).
+
 Importing content
-~~~~~~~~~~~~~~~~~
+-----------------
 
 Some of the content for DevPortal came from a previous incarnation of documentation. There is an import script to help with this process.
 
