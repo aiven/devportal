@@ -1,11 +1,11 @@
-Command reference: ``avn ticket``
-==================================
+``avn ticket``
+==============
 
 Here you'll find the full list of commands for ``avn ticket``.
 
 
 Create and manage support tickets
-------------------------------------
+---------------------------------
 
 Commands for managing Aiven support tickets. 
 
@@ -14,7 +14,7 @@ Commands for managing Aiven support tickets.
   To be able to create support tickets your project should be covered by a support contract.
 
 ``avn ticket create``
-'''''''''''''''''''''''''
+'''''''''''''''''''''
 
 Creates a new ticket.
 
