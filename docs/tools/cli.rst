@@ -43,6 +43,8 @@ Handle the accounts you have access to, and also configure the teams for the acc
 
 Find more info on the help article about `Accounts, Teams, Members and Roles <https://help.aiven.io/en/articles/4206498-accounts-teams-members-and-roles>`_
 
+:doc:`See detailed command information <cli/account>`.
+
 
 ``billing-group``
 '''''''''''''''''
@@ -92,6 +94,8 @@ Detailed help on using the CLI.
 
 Manage the replication flows for MirrorMaker2.
 
+:doc:`See detailed command information <cli/mirrormaker>`.
+
 
 ``project``
 '''''''''''
@@ -107,11 +111,14 @@ Download the CA cert for this project (CA certs are common for all services in a
 
 The kitchen sink! All the commands specific to a service are available here.
 
+:doc:`See detailed command information <cli/service>`.
 
 ``ticket``
 ''''''''''
 
-An alternative support ticket interface to either email or the chat widget found on our web console. Create or list tickets.
+Create or list tickets. An alternative support ticket interface to either email or the chat widget found on our web console. 
+
+:doc:`See detailed command information <cli/ticket>`.
 
 ``user``
 ''''''''
