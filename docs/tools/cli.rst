@@ -110,6 +110,7 @@ Download the CA cert for this project (CA certs are common for all services in a
 '''''''''''
 
 The kitchen sink! All the commands specific to a service are available here.
+
 :doc:`See detailed command information <cli/service>`.
 
 ``ticket``
