@@ -15,7 +15,7 @@ Add a user
     
     All other permissions related to a topic (``Alter``, ``Delete``) **only** apply to the topics matching the pattern that you specify.
 
-You can add a new user via the `Aiven console <https://console.aiven.io/>`_ with::
+You can add a new user via the `Aiven console <https://console.aiven.io/>`_ with:
 
 #. Log in to the Aiven web console and select your service.
 

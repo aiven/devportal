@@ -6,21 +6,18 @@ Aiven for Apache Kafka supports the definition of users and access control lists
 ACLs are defined as: 
 
 * a user or a wildcard mask of users
-* the grant to produce and/or consume
+* a grant to produce and/or consume
 * a topic or a wildcard mask of topics that the grant is applied to. 
 
 By default, access is allowed for all configured users to both produce and consume on all topics.
 
 .. Note:: 
 
-    By default, Aiven adds an ``Admin`` account with wildcard (``*``) permissions to every new service. When you create your own ACLs to restrict access, remove this account.
+  By default, Aiven adds an ``Admin`` account with wildcard (``*``) permissions to every new service. When you create your own ACLs to restrict access, remove this account.
 
+.. Note::
 
-**Important:** By default, Aiven adds an ``Admin`` account with wildcard
-(*) permissions to every new service. When you create your own ACLs to
-restrict access, remove this account.
-
-**Note:** When using the Aiven Terraform Provider, you can add the
+  When using the Aiven Terraform Provider, you can add the
 ``default_acl`` key to your ``resource`` and set it to ``false`` if you
 do not want to create the admin user with wildcard permissions.
 
@@ -35,7 +32,7 @@ You can define four types of grants for a particular topic or topic pattern:
 * Consume
 * Produce
 
-The type of grant dictates the actions the client is be able to perform. The following table contains a summary of the allowed action and a link to the Java APIs:
+The type of the grant dictates the actions the client is be able to perform. The following table contains a summary of the allowed action and a link to the Java APIs:
 
 .. list-table::
   :header-rows: 1
@@ -55,7 +52,7 @@ The type of grant dictates the actions the client is be able to perform. The fol
     -
     -
   * - → ``CreateTopics``
-    - `view docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/admin/Admin.html#createTopics(java.util.Collection)>`_
+    - `CreateTopics docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/admin/Admin.html#createTopics(java.util.Collection)>`_
     - ✓
     - 
     -
@@ -67,19 +64,19 @@ The type of grant dictates the actions the client is be able to perform. The fol
     -
     -
   * - → ``Delete``
-    - `view docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/admin/Admin.html#deleteConsumerGroups(java.util.Collection)>`_
+    - `Delete docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/admin/Admin.html#deleteConsumerGroups(java.util.Collection)>`_
     - ✓
     - ✓
     - 
     - ✓
   * - → ``Describe``
-    - `view docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/admin/Admin.html#describeConsumerGroups(java.util.Collection)>`_
+    - `Describe docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/admin/Admin.html#describeConsumerGroups(java.util.Collection)>`_
     - ✓
     - ✓
     - 
     - ✓
   * - → ``Read``
-    - `view docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/admin/Admin.html#listConsumerGroups(org.apache.kafka.clients.admin.ListConsumerGroupsOptions)>`_
+    - `Read docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/admin/Admin.html#listConsumerGroups(org.apache.kafka.clients.admin.ListConsumerGroupsOptions)>`_
     - ✓
     - ✓
     - 
@@ -91,43 +88,43 @@ The type of grant dictates the actions the client is be able to perform. The fol
     -
     -
   * - → ``Read``
-    - `view docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/consumer/KafkaConsumer.html#poll(java.time.Duration)>`_
+    - `Read docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/consumer/KafkaConsumer.html#poll(java.time.Duration)>`_
     - ✓
     - ✓
     - 
     - ✓
   * - → ``Write``
-    - `view docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/producer/KafkaProducer.html#send(org.apache.kafka.clients.producer.ProducerRecord,org.apache.kafka.clients.producer.Callback)>`_
+    - `Write docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/producer/KafkaProducer.html#send(org.apache.kafka.clients.producer.ProducerRecord,org.apache.kafka.clients.producer.Callback)>`_
     - ✓
     - ✓
     - ✓
     -
   * - → ``Describe``
-    - `view docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/admin/Admin.html#listTransactions()>`_
+    - `Describe docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/admin/Admin.html#listTransactions()>`_
     - ✓
     - ✓
     - ✓
     - ✓
   * - → ``Describe_Configs``
-    - `view docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/admin/Admin.html#describeTopics(java.util.Collection)>`_
+    - `Describe Configs docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/admin/Admin.html#describeTopics(java.util.Collection)>`_
     - ✓
     - ✓
     - ✓
     - ✓
   * - → ``Alter``
-    - `view docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/admin/Admin.html#alterConfigs(java.util.Map)>`_
+    - `Alter docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/admin/Admin.html#alterConfigs(java.util.Map)>`_
     - ✓
     - 
     -
     -
   * - → ``AlterConfigs``
-    - `view docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/admin/Admin.html#alterConfigs(java.util.Map)>`_
+    - `AlterConfigs docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/admin/Admin.html#alterConfigs(java.util.Map)>`_
     - ✓
     - 
     -
     -
   * - → ``Delete``
-    - `view docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/admin/Admin.html#deleteTopics(java.util.Collection)>`_
+    - `Delete docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/admin/Admin.html#deleteTopics(java.util.Collection)>`_
     - ✓
     - 
     -
@@ -139,13 +136,13 @@ The type of grant dictates the actions the client is be able to perform. The fol
     -
     -
   * - → ``Describe``
-    - `view docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/admin/Admin.html#describeTransactions(java.util.Collection)>`_
+    - `Describe docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/admin/Admin.html#describeTransactions(java.util.Collection)>`_
     - ✓
     - ✓
     - ✓
     -
   * - → ``Write``
-    - `view docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/producer/KafkaProducer.html#beginTransaction()>`_
+    - `Write docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/producer/KafkaProducer.html#beginTransaction()>`_
     - ✓
     - ✓
     - ✓
@@ -153,7 +150,7 @@ The type of grant dictates the actions the client is be able to perform. The fol
 
 .. Warning:: 
 
-    A user with the ``Admin`` permission can create topics with any name, as the ``CreateTopics`` permission is applied at the cluster level. 
+    A user with the ``Admin`` permissions can create topics with any name, as the ``CreateTopics`` permissions is applied at the cluster level. 
     
     All other permissions related to a topic (``Alter``, ``Delete``) **only** apply to the topics matching the pattern that you specify.
 
