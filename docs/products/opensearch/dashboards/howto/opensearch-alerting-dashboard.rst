@@ -116,7 +116,7 @@ Triggers is a defined conditions from the queries results from monitor.  If cond
 .. note::
    Multiple Actions can be defined, in this example we will define one action to send notification to destination we have defined in step 4
 
-Alert Message
+Alert message
 *************
 
 **Message** can be adjusted as needed, check **Message Preview** to see the sample and use **Send test message** to validate notification delivery
