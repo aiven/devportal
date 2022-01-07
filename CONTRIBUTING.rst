@@ -190,7 +190,7 @@ Title template: Start with a verb (e.g. *Connect with Go*, *Install or upgrade a
     1. Then write procedural steps using ordered lists.
     2. Include only one way of doing something.
     3. If there's a shortcut, add it as a **Tip**. 
-4. Use full sentences with proper punctuation to explain a step.
+    4. Use full sentences with proper punctuation to explain a step.
     Optionally, another procedural section here 
     -------------------------------------------
 
