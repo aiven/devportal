@@ -242,7 +242,10 @@ entries:
         title: HowTo
         entries:
           - glob: docs/products/m3db/howto/*
-      - glob: docs/products/m3db/reference/*
+      - file: docs/products/m3db/reference
+        title: Reference
+        entries:
+          - glob: docs/products/m3db/reference/*
   
   - file: docs/products/mysql/index
     title: MySQL
