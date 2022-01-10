@@ -1,6 +1,6 @@
 List of advanced parameters
 ============================
 
-When creating or working with an Aiven for Grafana service, several configuration options are available. They are summarized below:
+Below you can find a summary of every configuration option available for Aiven for Grafana service:
 
 .. include:: /includes/config-grafana.rst
