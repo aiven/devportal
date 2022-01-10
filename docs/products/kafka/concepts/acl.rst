@@ -106,7 +106,7 @@ The type of the grant dictates the actions the client is be able to perform. The
     - ✓
     - ✓
   * - → ``Describe_Configs``
-    - `Describe Configs docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/admin/Admin.html#describeTopics(java.util.Collection)>`_
+    - `Describe Configurations docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/admin/Admin.html#describeTopics(java.util.Collection)>`_
     - ✓
     - ✓
     - ✓
