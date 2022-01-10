@@ -1,6 +1,6 @@
 List of advanced parameters
 ============================
 
-When working with an Aiven for Apache Kafka service, many configuration options are available. They are summarized below:
+Below you can find a summary of every configuration option available for Aiven for Apache Kafka service:
 
 .. include:: /includes/config-kafka.rst
