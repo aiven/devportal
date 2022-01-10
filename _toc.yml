@@ -62,6 +62,7 @@ entries:
       - file: docs/products/kafka/concepts
         entries:
           - file: docs/products/kafka/concepts/log-compaction
+          - file: docs/products/kafka/concepts/partition-segments
           - file: docs/products/kafka/concepts/horizontal-vertical-scaling
           - file: docs/products/kafka/concepts/auth-types
       - file: docs/products/kafka/howto
@@ -77,6 +78,7 @@ entries:
           - file: docs/products/kafka/howto/get-topic-partition-details
           - file: docs/products/kafka/howto/kcat.rst
           - file: docs/products/kafka/howto/integrate-service-logs-into-kafka-topic
+          - file: docs/products/kafka/howto/configure-log-cleaner
           - file: docs/products/kafka/howto/use-zookeeper
           - file: docs/products/kafka/howto/change-retention-period
           - file: docs/products/kafka/howto/kafka-conduktor
