@@ -8,7 +8,7 @@ It is Python-based, with content in `ReStructuredText (rst) <https://docutils.so
 Contributing
 ------------
 
-Check the `CONTRIBUTING guide <CONTRIBUTING>`_ for details on how to create content for Aiven Developer. You will find the style guide, pull request process and templates for the various content types there.
+Check the `CONTRIBUTING guide <CONTRIBUTING.rst>`_ for details on how to create content for Aiven Developer. You will find the style guide, pull request process and templates for the various content types there.
 
 Local Development
 -----------------
