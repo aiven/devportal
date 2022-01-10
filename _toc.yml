@@ -222,6 +222,8 @@ entries:
         entries:
           - file: docs/products/opensearch/reference/plugins
             title: Plugins
+          - file: docs/products/opensearch/reference/advanced-params
+            title: Advanced Parameters
 
   - file: docs/products/m3db/index
     title: M3DB
