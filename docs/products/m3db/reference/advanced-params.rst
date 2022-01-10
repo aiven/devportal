@@ -1,6 +1,6 @@
 List of advanced parameters
 ============================
 
-When creating or working with an Aiven for M3DB service, several configuration options are available. They are summarized below:
+Below you can find a summary of every configuration option available for Aiven for M3DB service:
 
 .. include:: /includes/config-m3db.rst
