@@ -85,7 +85,7 @@
 
 
 ``redis_timeout`` => *integer*
-  **Redis idle connection timeout** 
+  **Redis idle connection timeout in seconds** 
 
 
 
