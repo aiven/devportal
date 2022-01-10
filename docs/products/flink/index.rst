@@ -42,6 +42,10 @@ Take your first steps with Aiven for Apache Flink by following our :doc:`getting
 
     💻 :doc:`howto`
 
+    ---
+
+    📖 :doc:`reference`
+
 
 Apache Flink features
 ---------------------
