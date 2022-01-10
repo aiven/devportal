@@ -38,6 +38,10 @@ Take your first steps with Aiven for Apache Kafka by following our :doc:`getting
 
     💻 :doc:`HowTo <howto>`
 
+    ---
+
+    📖 :doc:`reference`
+
 
 Apache Kafka resources
 ----------------------
