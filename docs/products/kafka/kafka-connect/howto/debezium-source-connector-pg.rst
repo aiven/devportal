@@ -1,7 +1,7 @@
 Create a Debezium source connector for PostgreSQL
 =================================================
 
-The Debezium source connector extracts the changes committed to the transaction log in a relational database, such as PostgreSQL, and provides them in a standard format into an Apache Kafka topic where can be transformed and read by multiple consumers. 
+The Debezium source connector extracts the changes committed to the transaction log in a relational database, such as PostgreSQL, and writes them to an Apache Kafka topic in a standard format where they can be transformed and read by multiple consumers. 
 
 .. Tip::
 
@@ -25,10 +25,10 @@ Furthermore you need to collect the following information about the source Postg
 * ``PG_TABLES``: The list of database tables to be included in Apache Kafka; the list must be in the form of ``schema_name1.table_name1,schema_name2.table_name2``
 * ``PG_PUBLICATION_NAME``: The name of the `PostgreSQL logical replication publication <https://www.postgresql.org/docs/current/logical-replication-publication.html>`_, if left empty, ``debezium`` is used as default.
 * ``PG_SLOT_NAME``: name of the `PostgreSQL replication slot <https://developer.aiven.io/docs/products/postgresql/howto/setup-logical-replication>`_, if left empty, ``debezium`` is be used as default
-* ``APACHE_KAFKA_HOST``: The hostname of the Apache Kafka service, setting needed only when using Avro as data format
-* ``SCHEMA_REGISTRY_PORT``: The Apache Kafka's schema registry port, setting needed only when using Avro as data format
-* ``SCHEMA_REGISTRY_USER``: The Apache Kafka's schema registry username, setting needed only when using Avro as data format
-* ``SCHEMA_REGISTRY_PASSWORD``: The Apache Kafka's schema registry user password, setting needed only when using Avro as data format
+* ``APACHE_KAFKA_HOST``: The hostname of the Apache Kafka service, only needed when using Avro as data format
+* ``SCHEMA_REGISTRY_PORT``: The Apache Kafka's schema registry port, only needed when using Avro as data format
+* ``SCHEMA_REGISTRY_USER``: The Apache Kafka's schema registry username, only needed when using Avro as data format
+* ``SCHEMA_REGISTRY_PASSWORD``: The Apache Kafka's schema registry user password, only needed when using Avro as data format
 
 
 .. Note::
@@ -77,9 +77,9 @@ The configuration file contains the following entries:
 * ``name``: the connector name
 * ``PG_HOST``, ``PG_PORT``, ``PG_DATABASE_NAME``, ``SSL_MODE``, ``PG_USER``, ``PG_PASSWORD``, ``PG_TABLES``, ``PG_PUBLICATION_NAME`` and ``PG_SLOT_NAME``: source database parameters collected in the :ref:`prerequisite <connect_debezium_pg_source_prereq>` phase. 
 * ``database.server.name``: the logical name of the database, dictates the prefix that will be used for Apache Kafka topic names. The resulting topic name will be the concatenation of the ``database.server.name`` and the table name.
-* ``tasks.max``: maximum number of tasks to execute in parallel. By default is 1, the connector can use at max 1 task for each source table defined.
+* ``tasks.max``: maximum number of tasks to execute in parallel. By default this is 1, the connector can use at most 1 task for each source table defined.
 * ``plugin.name``: defines the `PostgreSQL output plugin <https://debezium.io/documentation/reference/connectors/postgresql.html>`_ to convert changes in the database into events in Apache Kafka.
-* ``key.converter`` and ``value.converter``:  defines the messages data format in the Apache Kafka topic. The ``io.confluent.connect.avro.AvroConverter`` converter pushes messages in Avro format. To store the messages schema we use Aiven's `Karapace schema registry <https://github.com/aiven/karapace>`_ pointed by the ``schema.registry.url`` parameter and related credentials.
+* ``key.converter`` and ``value.converter``:  defines the messages data format in the Apache Kafka topic. The ``io.confluent.connect.avro.AvroConverter`` converter pushes messages in Avro format. To store the messages schema we use Aiven's `Karapace schema registry <https://github.com/aiven/karapace>`_ as specified by the ``schema.registry.url`` parameter and related credentials.
 
 .. Note::
 
@@ -101,7 +101,7 @@ Check the connector status with the following command, replacing the ``SERVICE_N
 
     avn service connector status SERVICE_NAME CONNECTOR_NAME
 
-Verify in the Apache Kafka target instance, the presence of the topic and the data
+Verify the presence of the topic and data in the Apache Kafka target instance.
 
 .. Tip::
 
