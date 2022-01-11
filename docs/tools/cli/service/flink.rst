@@ -51,7 +51,7 @@ Creates a new Aiven for Apache Flink table.
 * ``json`` as value and key data format
 * the field ``node`` as key
 * ``earliest-offset`` as starting offset
-* ``node INT, occurred_at TIMESTAMP_LTZ(3), cpu_in_mb FLOAT`` as **SQL schema**
+* ``cpu FLOAT, node INT, cpu_percent INT, occurred_at TIMESTAMP_LTZ(3)`` as **SQL schema**
 * ``ab8dd446-c46e-4979-b6c0-1aad932440c9`` as integration ID
 * ``flink-devportal-demo`` as service name
 
@@ -65,7 +65,7 @@ Creates a new Aiven for Apache Flink table.
     --kafka-key-fields node                                                                 \
     --kafka-value-format json                                                               \
     --kafka-startup-mode earliest-offset                                                    \
-    --schema-sql "node INT, occurred_at TIMESTAMP_LTZ(3), cpu_in_mb FLOAT"
+    --schema-sql "cpu FLOAT, node INT, cpu_percent INT, occurred_at TIMESTAMP_LTZ(3)"
 
 ``avn service flink table delete``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -168,14 +168,14 @@ Creates a new Aiven for Apache Flink job.
 **Example:** Create a Flink job named ``JobExample`` with:
 
 * ``KCpuIn`` (with id ``cac53785-d1b5-4856-90c8-7cbcc3efb2b6``) and ``KAlert`` (with id ``54c2f4e6-a446-4d62-8dc9-2b81179c6f43``) as source/sink **tables**
-* ``INSERT INTO KAlert SELECT * FROM KCpuIn WHERE cpu_in_mb > 70`` as **SQL statement**
+* ``INSERT INTO KAlert SELECT * FROM KCpuIn WHERE cpu_percent > 70`` as **SQL statement**
 * ``flink-devportal-demo`` as service name
 
 ::
   
   avn service flink job create flink-devportal-demo JobExample                        \
     --table-ids cac53785-d1b5-4856-90c8-7cbcc3efb2b6 54c2f4e6-a446-4d62-8dc9-2b81179c6f43 \
-    --statement "INSERT INTO KAlert SELECT * FROM KCpuIn WHERE cpu_in_mb > 70" 
+    --statement "INSERT INTO KAlert SELECT * FROM KCpuIn WHERE cpu_percent > 70"
 
 ``avn service flink job cancel``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
