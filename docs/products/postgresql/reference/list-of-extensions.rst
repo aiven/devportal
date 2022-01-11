@@ -149,9 +149,6 @@ The following PostgreSQL extensions are available. Please note that some of the 
   * - ``timescaledb``
     - https://github.com/timescale/timescaledb
     - PostgreSQL 10 and newer
-  * - ``tsearch2``
-    - https://www.postgresql.org/docs/9.2/tsearch2.html
-    - Available up to PostgreSQL v9.6
   * - ``tsm_system_rows``
     - https://www.postgresql.org/docs/current/tsm-system-rows.html
     -
