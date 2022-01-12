@@ -23,7 +23,7 @@ Furthermore you need to collect the following information about the source Postg
 * ``PG_DATABASE_NAME``: The database name
 * ``SSL_MODE``: The `SSL mode <https://www.postgresql.org/docs/current/libpq-ssl.html>`_
 * ``PG_TABLES``: The list of database tables to be included in Apache Kafka; the list must be in the form of ``schema_name1.table_name1,schema_name2.table_name2``
-* ``PG_PUBLICATION_NAME``: The name of the `PostgreSQL logical replication publication <https://www.postgresql.org/docs/current/logical-replication-publication.html>`_, if left empty, ``debezium`` is used as default.
+* ``PG_PUBLICATION_NAME``: The name of the `PostgreSQL logical replication publication <https://www.postgresql.org/docs/current/logical-replication-publication.html>`_, if left empty, ``debezium`` is used as default
 * ``PG_SLOT_NAME``: name of the `PostgreSQL replication slot <https://developer.aiven.io/docs/products/postgresql/howto/setup-logical-replication>`_, if left empty, ``debezium`` is be used as default
 * ``APACHE_KAFKA_HOST``: The hostname of the Apache Kafka service, only needed when using Avro as data format
 * ``SCHEMA_REGISTRY_PORT``: The Apache Kafka's schema registry port, only needed when using Avro as data format
@@ -38,14 +38,14 @@ Furthermore you need to collect the following information about the source Postg
 Setup a PostgreSQL Debezium source connector with Aiven CLI
 -----------------------------------------------------------
 
-The following example demonstrates how to setup an Apache Kafka Debezium source connector to a PostgreSQL database using the :ref:`Aiven CLI dedicated command <avn_service_connector_create>`.
+The following example demonstrates how to setup a Debezium source Connector for Apache Kafka to a PostgreSQL database using the :ref:`Aiven CLI dedicated command <avn_service_connector_create>`.
 
 Define a Kafka Connect configuration file
 '''''''''''''''''''''''''''''''''''''''''
 
 Define the connector configurations in a file (we'll refer to it with the name ``debezium_source_pg.json``) with the following content:
 
-::
+.. code-block:: json
 
     {
         "name":"CONNECTOR_NAME",
