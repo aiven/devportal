@@ -26,7 +26,7 @@ Enable ``dblink`` extension on Aiven for PostgreSQL
 
 To enable the ``dblink`` extension on an Aiven for PostgreSQL service:
 
-* Connect to the database with the ``avnadmin`` user, the following shows how to do it with ``psql``, the service URI can be found in the `Aiven console <https://console.aiven.io/>`_ service Overview page:
+* Connect to the database with the ``avnadmin`` user. The following shows how to do it with ``psql``, the service URI can be found in the `Aiven console <https://console.aiven.io/>`_ service Overview page:
 
 ::
 
@@ -47,14 +47,14 @@ Create a foreign data wrapper using ``dblink_fdw``
 
 To create a foreign data wrapper using the ``dblink_fwd`` you need to perform the following steps:
 
-*  Connect to the database with the ``avnadmin`` user, the following shows how to do it with ``psql``, the service URI can be found in the `Aiven console <https://console.aiven.io/>`_ service Overview page:
+*  Connect to the database with the ``avnadmin`` user. The following shows how to do it with ``psql``, the service URI can be found in the `Aiven console <https://console.aiven.io/>`_ service Overview page:
 
 ::
 
     psql "postgres://avnadmin:[AVNADMIN_PWD]@[PG_HOST]:[PG_PORT]/[PG_DB_NAME]?sslmode=require"
 
 
-* Create an user ``user1`` that will be access the ``dblink``
+* Create a user ``user1`` that will be access the ``dblink``
 
 ::
 
@@ -92,7 +92,7 @@ To create a foreign data wrapper using the ``dblink_fwd`` you need to perform th
 Query data using a foreign data wrapper
 ---------------------------------------
 
-To query a foreign data wrapper you must be use a database user having the necessary grants to the remote server definition. In the previous example the user ``user1``. To query the remote table ``inventory`` defined in the target PostgreSQL database pointed by the ``pg_remote`` server definition:
+To query a foreign data wrapper you must be a database user having the necessary grants to the remote server definition. We can use ``user1`` from the previous example. To query the remote table ``inventory`` defined in the target PostgreSQL database pointed by the ``pg_remote`` server definition:
 
 * Connect with the Aiven for PostgreSQL service with the database user (``user1``) having the necessary grants to the remote server definition
 
