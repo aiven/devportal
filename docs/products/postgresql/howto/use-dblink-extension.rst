@@ -1,7 +1,7 @@
 Use the PostgreSQL ``dblink`` extension
 ==========================================
 
-``dblink`` is a `PostgreSQL extension <https://www.postgresql.org/docs/current/dblink.html>`_  that allows you to connect to other PostgreSQL databases and to run arbitrary queries. 
+``dblink`` is a `PostgreSQL extension <https://www.postgresql.org/docs/current/dblink.html>`_ that allows you to connect to other PostgreSQL databases and to run arbitrary queries. 
 
 With `Foreign Data Wrappers <https://www.postgresql.org/docs/current/postgres-fdw.html>`_ (FDW) you can uniquely define a remote **foreign server** in order to access its data. The database connection details like hostnames are kept in a single place, and you only need to create once a **user mapping** storing remote connections credentials.
 
