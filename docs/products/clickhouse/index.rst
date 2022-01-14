@@ -4,7 +4,7 @@ ClickHouse :badge:`beta,cls=badge-secondary text-black badge-pill`
 What is Aiven for ClickHouse?
 -----------------------------
 
-Aiven for ClickHouse beta is powered by Clickhouse, an open-source database management system that uses a column-oriented structure and is best suited for the online analytical processing of queries (OLAP).
+Aiven for ClickHouse beta is powered by ClickHouse, an open-source database management system that uses a column-oriented structure and is best suited for the online analytical processing of queries (OLAP).
 
 In OLAP scenarios, a column-oriented structure provides much quicker processing of queries compared to row-oriented databases, as it reduces the input/output load by minimizing the amount of data that needs to be read and by improving data compression. To optimize data compression, ClickHouse provides both general-purpose compression codecs and codecs that are tailored for specific data types. ClickHouse also includes a vector computation engine to process the columns by vectors, or parts of columns, to increase CPU efficiency and performance.
 

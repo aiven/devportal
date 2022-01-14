@@ -8,6 +8,7 @@ Avro
 [Bb]oolean
 [Bb]oot
 [Bb]usiness
+[Cc]odecs
 Conduktor
 [Cc]onnect
 Couchbase
