@@ -24,6 +24,7 @@ For this example you will need:
 
 Download PostgreSQL Driver.
 There are several options to do that
+
 1. In case you have maven version >= 2+ run the code::
 
     mvn org.apache.maven.plugins:maven-dependency-plugin:2.8:get -Dartifact=org.postgresql:postgresql:42.2.24:jar -Ddest=postgresql-42.2.24.jar
