@@ -233,6 +233,7 @@ entries:
           - file: docs/products/opensearch/howto/upgrade-to-opensearch-with-terraform
           - file: docs/products/opensearch/howto/upgrade-clients-to-opensearch
           - file: docs/products/opensearch/howto/connect-with-nodejs
+          - file: docs/products/opensearch/howto/connect-with-python
           - file: docs/products/opensearch/howto/opensearch-and-nodejs
           - file: docs/products/opensearch/howto/opensearch-aggregations-and-nodejs
           - file: docs/products/opensearch/howto/control_access_to_content
