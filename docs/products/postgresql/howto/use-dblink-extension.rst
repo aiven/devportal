@@ -32,6 +32,10 @@ To enable the ``dblink`` extension on an Aiven for PostgreSQL service:
 
     psql "postgres://avnadmin:[AVNADMIN_PWD]@[PG_HOST]:[PG_PORT]/[PG_DB_NAME]?sslmode=require"
 
+.. Tip::
+
+    If you're using Aiven for PostgreSQL as remote server, you can connect to a service with the ``avnadmin`` user with the ``avn service cli`` command with the :ref:`Aiven CLI <avn-service-cli>`.
+
 * Create the ``dblink`` extension
 
 ::
@@ -49,9 +53,6 @@ To create a foreign data wrapper using the ``dblink_fwd`` you need to perform th
 
     psql "postgres://avnadmin:[AVNADMIN_PWD]@[PG_HOST]:[PG_PORT]/[PG_DB_NAME]?sslmode=require"
 
-.. Tip::
-
-    If you're using Aiven for PostgreSQL as remote server, you can connect to a service with the ``avnadmin`` user with the ``avn service cli`` command with the :ref:`Aiven CLI <avn_service_cli>`.
 
 * Create an user ``user1`` that will be access the ``dblink``
 
