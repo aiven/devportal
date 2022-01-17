@@ -1,20 +1,33 @@
 Using Schema Registry with Aiven for Apache Kafka
 =====================================================
 
-
 Schema Registry makes it possible to evolve a schema without having to rebuild existing Consumers and Producers. This help article walks through steps required to:
 
 #. Create version 1 of schema
 #. Use Apache Avro to compile the schema
 #. Create Consumer and Producer that utilize Aiven for Apache Kafka and Schema Registry
 
-The following information will be required for this example:
+#. Create the Java keystore and truststore for your Aiven for Apache Kafka service using the :ref:`dedicated Aiven CLI command <avn_service_user_kafka_java_creds>`.
 
-.. image:: /images/products/kafka/connection-info.png
-   :alt: Apache Kafka Connection Information
+Variables
+'''''''''
+These are the placeholders you will need to replace in the code sample:
 
-.. image:: /images/products/kafka/schema-registry-info.png
-   :alt: Schema Registry Connection Information
+=============================      =======================================================================
+Variable                           Description
+=============================      =======================================================================
+``bootstrapServers``               Service URI for kafka connection
+``keystore``                       Path to keystore
+``keystorePassword``               Password for keystore
+``truststore``                     Path to keystore
+``truststorePassword``             Password for truststore
+``sslKeyPassword``                 The password of the private key in the key store file
+``schemaRegistryUrl``              Service Registry URI for kafka connection
+``schemaRegistryUser``             Service Registry username
+``schemaRegistryPassword``         Service Registry password
+``topic``                          Kafka topic to use
+``filename``                       File with data (default name: FileWithData.csv)
+=============================      =======================================================================
 
 Create version 1 of schema
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -77,7 +90,7 @@ Create Consumer & Producer that utilize Aiven for Apache Kafka & Schema Registry
 
 Create Consumer.java and Producer.java classes as follows. (NOTE: generate the keystore and truststore per `Configuring Java SSL to access Kafka <https://developer.aiven.io/docs/products/kafka/howto/keystore-truststore>`_).
 
-Full ready to use example with instructions could be found at https://github.com/snuyanzin/schema-registry-with-avro-example
+Full ready to use example with instructions could be found at https://github.com/aiven/aiven-examples/pull/35
 
 For producer we need to specify properties::
 
