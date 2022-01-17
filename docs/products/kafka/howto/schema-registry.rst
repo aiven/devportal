@@ -3,11 +3,10 @@ Using Schema Registry with Aiven for Apache Kafka
 
 Schema Registry makes it possible to evolve a schema without having to rebuild existing Consumers and Producers. This help article walks through steps required to:
 
+#. Create the Java keystore and truststore for your Aiven for Apache Kafka service using the :ref:`dedicated Aiven CLI command <avn_service_user_kafka_java_creds>`.
 #. Create version 1 of schema
 #. Use Apache Avro to compile the schema
 #. Create Consumer and Producer that utilize Aiven for Apache Kafka and Schema Registry
-
-#. Create the Java keystore and truststore for your Aiven for Apache Kafka service using the :ref:`dedicated Aiven CLI command <avn_service_user_kafka_java_creds>`.
 
 Variables
 '''''''''
@@ -16,13 +15,13 @@ These are the placeholders you will need to replace in the code sample:
 =============================      =======================================================================
 Variable                           Description
 =============================      =======================================================================
-``bootstrapServers``               Service URI for kafka connection
+``bootstrapServers``               Service URI for Kafka connection
 ``keystore``                       Path to keystore
 ``keystorePassword``               Password for keystore
 ``truststore``                     Path to keystore
 ``truststorePassword``             Password for truststore
 ``sslKeyPassword``                 The password of the private key in the key store file
-``schemaRegistryUrl``              Service Registry URI for kafka connection
+``schemaRegistryUrl``              Service Registry URI for Kafka connection
 ``schemaRegistryUser``             Service Registry username
 ``schemaRegistryPassword``         Service Registry password
 ``topic``                          Kafka topic to use
@@ -55,14 +54,14 @@ In case of manual download ``avro-tools-1.11.0.jar`` from https://avro.apache.or
 
     mvn org.apache.maven.plugins:maven-dependency-plugin:2.8:get -Dartifact=org.apache.avro:avro-tools:1.11.0:jar -Ddest=avro-tools-1.11.0.jar
 
-Use the following command to compile the schema defined in the previous step to produce java class ``ClickRecord.java`` in ``io.aiven.avro.example`` package (taken from namespace)::
+Use the following command to compile the schema defined in the previous step to produce Java class ``ClickRecord.java`` in ``io.aiven.avro.example`` package (taken from namespace)::
 
     java -jar avro-tools-1.11.0.jar compile schema ClickRecord.avsc .
 
 Auto Schema Compiliation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-Schema could be compiled during build with e.g. maven-avro-plugin or gradle-maven-plugin.
-Here there is an example of configuration for maven-avro-plugin when ``ClickRecord.avsc`` is ``src/main/avro/ClickRecord.avsc``::
+Schema could be compiled during build with e.g. ``maven-avro-plugin`` or ``gradle-avro-plugin``.
+Here there is an example of configuration for ``maven-avro-plugin`` when ``ClickRecord.avsc`` is ``src/main/avro/ClickRecord.avsc``::
 
     <plugin>
         <groupId>org.apache.avro</groupId>
@@ -88,7 +87,7 @@ Here there is an example of configuration for maven-avro-plugin when ``ClickReco
 Create Consumer & Producer that utilize Aiven for Apache Kafka & Schema Registry
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Create Consumer.java and Producer.java classes as follows. (NOTE: generate the keystore and truststore per `Configuring Java SSL to access Kafka <https://developer.aiven.io/docs/products/kafka/howto/keystore-truststore>`_).
+Create ``Consumer.java`` and ``Producer.java`` classes as follows. (NOTE: generate the keystore and truststore per `Configuring Java SSL to access Kafka <https://developer.aiven.io/docs/products/kafka/howto/keystore-truststore>`_).
 
 Full ready to use example with instructions could be found at https://github.com/aiven/aiven-examples/pull/35
 
