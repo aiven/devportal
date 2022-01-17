@@ -20,7 +20,7 @@ What you need
 
 * Sender email address (i.e., email address shown in "From" field)
 
-* (optionally) sender name
+* Sender name (optional)
 
 
 Configure the SMTP server for Grafana
@@ -41,7 +41,7 @@ To configure the Aiven for Grafana service:
     -c smtp_server.password=emailsenderpass \
     -c smtp_server.from_address="grafana@yourcompany.com" 
 
-3. (optionally) Review all available custom option, and configure as needed::
+3. (optionally) Review all available custom options, and configure as needed::
 
     avn service types -v
 

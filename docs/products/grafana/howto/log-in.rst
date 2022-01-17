@@ -17,7 +17,7 @@ To log in:
 
 2. On the *Services* page, click the Grafana service you want to log in to.
 
-   This opens your Grafana *Overview* page.
+This opens your Grafana *Overview* page.
 
 3. Note down your **User** and **Password** from the **Connection information**. 
 
@@ -25,6 +25,6 @@ To log in:
 
 5. Type in your user name and password, and click **Log in**.
 
-    This opens your Grafana user interface. 
+This opens your Grafana user interface. 
 
 You can now start visualizing your data sources by using the default dashboards, or create your own. 
