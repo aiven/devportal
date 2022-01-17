@@ -46,7 +46,7 @@ In this tutorial we explore a simple click record schema, ``ClickRecord.avsc``, 
       ]
     }
 
-Manual Schema Compiliation
+Manual Schema Compilation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 There are two ways to compile the schema: manual and auto.
 
@@ -58,7 +58,7 @@ Use the following command to compile the schema defined in the previous step to 
 
     java -jar avro-tools-1.11.0.jar compile schema ClickRecord.avsc .
 
-Auto Schema Compiliation
+Auto Schema Compilation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 Schema could be compiled during build with e.g. ``maven-avro-plugin`` or ``gradle-avro-plugin``.
 Here there is an example of configuration for ``maven-avro-plugin`` when ``ClickRecord.avsc`` is ``src/main/avro/ClickRecord.avsc``::
