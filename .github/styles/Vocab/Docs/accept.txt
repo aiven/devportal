@@ -10,6 +10,7 @@ Avro
 [Bb]oot
 [Bb]usiness
 Cassandra
+[Cc]odecs
 Conduktor
 [Cc]onnect
 Couchbase

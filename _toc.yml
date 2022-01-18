@@ -223,6 +223,15 @@ entries:
         entries:
           - glob: docs/products/flink/reference/*
   
+  - file: docs/products/clickhouse/index
+    entries:
+      - file: docs/products/clickhouse/getting-started
+      - file: docs/products/clickhouse/concepts
+        title: Concepts
+        entries:
+          - file: docs/products/clickhouse/concepts/supported-table-engines
+          - file: docs/products/clickhouse/concepts/columnar-databases
+          - file: docs/products/clickhouse/concepts/olap
 
   - file: docs/products/opensearch/index
     title: OpenSearch
