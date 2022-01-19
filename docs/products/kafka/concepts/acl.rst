@@ -11,15 +11,13 @@ ACLs are defined as:
 
 By default, access is allowed for all configured users to both produce and consume on all topics.
 
-.. Note:: 
+.. Warning:: 
 
   By default, Aiven adds an ``Admin`` account with wildcard (``*``) permissions to every new service. When you create your own ACLs to restrict access, remove this account.
 
 .. Note::
 
-  When using the Aiven Terraform Provider, you can add the
-``default_acl`` key to your ``resource`` and set it to ``false`` if you
-do not want to create the admin user with wildcard permissions.
+  When using the Aiven Terraform Provider, you can add the ``default_acl`` key to your ``resource`` and set it to ``false`` if you do not want to create the admin user with wildcard permissions.
 
 
 ACL permission mapping

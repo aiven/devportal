@@ -1,7 +1,7 @@
 Managing users and access control lists
 =======================================
 
-Aiven for Apache Kafka supports the definition of users and access control lists (ACL) to allow or limit producer and consumer rights at the topic.
+Aiven for Apache Kafka uses access control lists (ACL) and user definitions in order to establish individual rights to produce or consume a topic.
 More information about permissions mapping can be found in the :doc:`dedicated documentation <../concepts/acl>`. 
 
 You can manage users and ACL entries in the corresponding tabs of the service page in the `Aiven web console <https://console.aiven.io/>`_.
@@ -30,21 +30,21 @@ Add a new ACL grant
 
 You can add a new access control list grant via the `Aiven console <https://console.aiven.io/>`_ with:
 
-#. Click the **ACL** tab.
+1. Click the **ACL** tab.
 
-#. Enter the username and topic that the grant applies to.
+2. Enter the username and topic that the grant applies to.
 
-#. Select the **Permission** that you want to apply.
+3. Select the **Permission** that you want to apply.
    
    Details of each available option are described in the :doc:`permission mapping documentation <../concepts/acl>`
 
-#. Click **Add ACL entry**.
+4. Click **Add ACL entry**.
 
 .. Tip:: 
     
     When using the :doc:`Aiven Terraform Provider </docs/tools/terraform/index>`, you can add the ``default_acl`` key to your ``resource`` and set it to ``false`` if you do not want to create the admin user with wildcard permissions.
 
-#. Once you start defining custom ACLs, it's recommended to delete the default ``avnadmin`` rule by clicking the **Remove** icon. 
+5. Once you start defining custom ACLs, it's recommended to delete the default ``avnadmin`` rule by clicking the **Remove** icon. 
 
 .. Warning:: 
 
