@@ -229,9 +229,12 @@ entries:
       - file: docs/products/clickhouse/concepts
         title: Concepts
         entries:
-          - file: docs/products/clickhouse/concepts/supported-table-engines
           - file: docs/products/clickhouse/concepts/columnar-databases
           - file: docs/products/clickhouse/concepts/olap
+      - file: docs/products/clickhouse/reference
+        title: Reference
+        entries:
+          - glob: docs/products/clickhouse/reference/*
 
   - file: docs/products/opensearch/index
     title: OpenSearch
