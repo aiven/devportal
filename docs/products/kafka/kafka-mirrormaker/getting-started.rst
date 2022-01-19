@@ -5,7 +5,7 @@ Aiven services are managed in the Aiven `web console <https://console.aiven.io/>
 
 .. Warning::
 
-    Aiven for Apache Kafka MirrorMaker2 services can be created only alongside at least one existing Aiven for Apache Kafka running services. 
+    Aiven for Apache Kafka MirrorMaker2 services can be created only alongside at least one existing Aiven for Apache Kafka running service. 
     If your project doesn't contain any Aiven for Apache Kafka services, create one before attempting to create an Aiven for Apache Kafka MirrorMaker2 service.
 
 .. _apache_kafka_mirrormaker_dedicated_cluster:
