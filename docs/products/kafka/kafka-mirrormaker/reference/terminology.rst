@@ -1,10 +1,10 @@
-Terminology for Aiven for Apache Kafka MirroMaker2
+Terminology for Aiven for Apache Kafka MirrorMaker2
 ==================================================
 
 .. _Terminology MM2ClusterAlias:
 
 Cluster alias 
-    The name alias defined in MirroMaker2 for a certain Apache Kafka source or target cluster.
+    The name alias defined in MirrorMaker2 for a certain Apache Kafka source or target cluster.
 
 .. _Terminology MM2ReplicationFlow:
 
