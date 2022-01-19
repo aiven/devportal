@@ -112,7 +112,7 @@ It will put generated Avro-schema related code at ``${project.basedir}/src/main/
 Set consumer and producer properties for schema registry
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The full code to create consumer and producers using the Schema Registry in Aiven for Apache Kafka can be found in the `Aiven examples GitHub repository <https://github.com/aiven/aiven-examples/pull/35>`_. The following contains a list of the properties required. 
+The full code to create consumer and producers using the Schema Registry in Aiven for Apache Kafka can be found in the `Aiven examples GitHub repository <https://github.com/aiven/aiven-examples/tree/master/solutions/kafka-schema-registry>`_. The following contains a list of the properties required.
 
 For producers you need to specify::
 
