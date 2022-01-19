@@ -78,6 +78,8 @@ The schema defined in the previous step, can be now compiled to produce a Java c
 
     java -jar avro-tools-1.11.0.jar compile schema ClickRecord.avsc .
 
+Note: the package structure will also be generated in case it is absent.
+
 Auto schema compilation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -104,6 +106,8 @@ The following is a configuration example for ``maven-avro-plugin`` when ``ClickR
             </execution>
         </executions>
     </plugin>
+
+It will put generated Avro-schema related code at ``${project.basedir}/src/main/generated-sources/``
 
 Set consumer and producer properties for schema registry
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
