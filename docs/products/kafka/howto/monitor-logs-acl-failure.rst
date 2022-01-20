@@ -1,7 +1,7 @@
 Monitor and alert logs for denied ACL
 =====================================
 
-Aiven for Apache Kafka supports the definition of users and access control lists (ACL) to allow and limit producer and consumer rights at topic level. You read more about ACLs permission in the :doc:`dedicated documentation <../concepts/acl>`.
+Aiven for Apache Kafka uses access control lists (ACL) and user definitions in order to establish individual rights to produce or consume a topic. You read more about ACLs permission in the :doc:`dedicated documentation <../concepts/acl>`.
 
 In cases of ACLs problems, an error ``io.aiven.kafka.auth.AivenAclAuthorizer`` is generated. 
 The following log patterns can also be used to set up alerts checking for failed authentication and ACL evaluation.
