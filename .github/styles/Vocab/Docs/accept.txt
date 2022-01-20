@@ -86,6 +86,7 @@ PostgreSQL
 Postman
 [Pp]rivatelink
 Protobuf
+Prometheus
 psql
 Python
 Redis
