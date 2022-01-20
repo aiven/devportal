@@ -109,5 +109,5 @@ In the above example, a separate JIT section is shown after the planning time.
 
 .. Tip::
 
-    The last row of the ``explain analyze`` command output above, shows the execution time, which could be useful for a benchmark comparison.
+    The last row of the ``explain analyze`` command output above shows the execution time, which could be useful for a benchmark comparison.
 
