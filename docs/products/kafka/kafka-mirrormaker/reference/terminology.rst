@@ -1,5 +1,5 @@
 Terminology for Aiven for Apache Kafka MirrorMaker2
-==================================================
+===================================================
 
 .. _Terminology MM2ClusterAlias:
 
