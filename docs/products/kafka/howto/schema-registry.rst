@@ -116,6 +116,7 @@ Set consumer and producer properties for schema registry
 
 The full code to create consumer and producers using the Schema Registry in Aiven for Apache Kafka can be found in the `Aiven examples GitHub repository <https://github.com/aiven/aiven-examples/tree/master/solutions/kafka-schema-registry>`_. The following contains a list of the properties required.
 
+Once you implement producers and consumers on your own then
 For producers you need to specify::
 
       props.put(CommonClientConfigs.BOOTSTRAP_SERVERS_CONFIG, [BOOTSTRAPSERVERS]);
