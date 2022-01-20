@@ -84,6 +84,7 @@ entries:
           - file: docs/products/kafka/howto/change-retention-period
           - file: docs/products/kafka/howto/kafka-conduktor
           - file: docs/products/kafka/howto/prevent-full-disks
+          - file: docs/products/kafka/howto/schema-registry.rst
           - file: docs/products/kafka/howto/manage-acls
           - file: docs/products/kafka/howto/monitor-logs-acl-failure
       - file: docs/products/kafka/reference
