@@ -61,6 +61,7 @@ entries:
       - file: docs/products/kafka/getting-started
       - file: docs/products/kafka/concepts
         entries:
+          - file: docs/products/kafka/concepts/acl
           - file: docs/products/kafka/concepts/log-compaction
           - file: docs/products/kafka/concepts/partition-segments
           - file: docs/products/kafka/concepts/horizontal-vertical-scaling
@@ -84,6 +85,8 @@ entries:
           - file: docs/products/kafka/howto/kafka-conduktor
           - file: docs/products/kafka/howto/prevent-full-disks
           - file: docs/products/kafka/howto/schema-registry.rst
+          - file: docs/products/kafka/howto/manage-acls
+          - file: docs/products/kafka/howto/monitor-logs-acl-failure
       - file: docs/products/kafka/reference
         title: Reference
         entries:
@@ -137,6 +140,7 @@ entries:
               - file: docs/products/postgresql/howto/manage-pool
               - file: docs/products/postgresql/howto/pgbouncer-stats
               - file: docs/products/postgresql/howto/use-dblink-extension
+              - file: docs/products/postgresql/howto/enable-jit
           - file: docs/products/postgresql/howto/list-replication-migration
             entries:
               - file: docs/products/postgresql/howto/create-read-replica
