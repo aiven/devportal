@@ -86,6 +86,7 @@ entries:
           - file: docs/products/kafka/howto/prevent-full-disks
           - file: docs/products/kafka/howto/manage-acls
           - file: docs/products/kafka/howto/monitor-logs-acl-failure
+          - file: docs/products/kafka/howto/kafdrop
       - file: docs/products/kafka/reference
         title: Reference
         entries:

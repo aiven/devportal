@@ -10,8 +10,8 @@ Install kcat
 
 kcat is an open source tool available from GitHub at https://github.com/edenhill/kcat. Installation instructions are provided in the repository README.
 
-Retrieve Aiven for Kafka SSL certificate files
-----------------------------------------------
+Retrieve Aiven for Apache Kafka SSL certificate files
+-----------------------------------------------------
 
 Aiven for Apache Kafka by default enables TLS security. 
 The certificates can be manually downloaded from the service overview page in the Aiven console, or via the :ref:`dedicated Aiven CLI command <avn_service_user_creds_download>`.
