@@ -10,6 +10,7 @@ Avro
 [Bb]oot
 [Bb]usiness
 Cassandra
+ClickHouse
 [Cc]odecs
 Conduktor
 [Cc]onnect
