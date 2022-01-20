@@ -1,7 +1,7 @@
 ``NOT_LEADER_FOR_PARTITION`` errors
 ===================================
 
-Aiven continuously monitors the services to ensure they are healthy; if problems arise, nodes could be recycled: new nodes are created to substitute old, malfunctioning ones. During nodes replacement in your Aiven for Apache Kafka cluster, you may find several ``NOT_LEADER_FOR_PARTITION`` warnings or errors in the logs of your producer.
+Aiven continuously monitors the services to ensure they are healthy; if problems arise, nodes could be recycled: new nodes are created to substitute old, malfunctioning ones. During nodes replacement in your Aiven for Apache Kafka® cluster, you may find several ``NOT_LEADER_FOR_PARTITION`` warnings or errors in the logs of your producer.
 
 The exact error message depends on your client library and log formatting, but should be similar to the following:
 
