@@ -19,6 +19,7 @@ datastore
 Debezium
 Dev
 Distro
+Docker
 [Dd]ockerized
 downsampled
 downsampling
@@ -48,6 +49,7 @@ Instana
 Java
 jq
 Kaggle
+Kafdrop
 Kafka
 kafkacat
 Karapace
@@ -77,10 +79,12 @@ pgAdmin
 PgBouncer
 plaintext
 Plotly
+Podman
 pooler
 PostgreSQL
 Postman
 [Pp]rivatelink
+Protobuf
 psql
 Python
 Redis
