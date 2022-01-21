@@ -1,7 +1,7 @@
 Use Kafdrop Web UI with Aiven for Apache Kafka®
 ===============================================
 
-`Kafdrop <https://github.com/obsidiandynamics/kafdrop>`_ is a popular Web UI for Apache Kafka that allows you to monitor a cluster, view topics and consumer groups with integration into the Schema Registry, with support for Avro, JSON and Protobuf.
+`Kafdrop <https://github.com/obsidiandynamics/kafdrop>`_ is a popular Web UI for Apache Kafka® that allows you to monitor a cluster, view topics and consumer groups with integration into the Schema Registry, with support for Avro, JSON and Protobuf.
 
 Retrieve Aiven for Apache Kafka® SSL certificate files
 ------------------------------------------------------
