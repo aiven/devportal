@@ -1,7 +1,7 @@
-Use kcat with Aiven for Apache Kafka
-====================================
+Use kcat with Aiven for Apache Kafka®
+=====================================
 
-`kcat <https://github.com/edenhill/kcat>`_ (formerly known as kafkacat) is a generic non-JVM producer and consumer for Apache Kafka. 
+`kcat <https://github.com/edenhill/kcat>`_ (formerly known as kafkacat) is a generic non-JVM producer and consumer for Apache Kafka®.
 It can be used to produce and consume records to Apache Kafka topics as well as to list service configurations.
 
 
@@ -10,8 +10,8 @@ Install kcat
 
 kcat is an open source tool available from GitHub at https://github.com/edenhill/kcat. Installation instructions are provided in the repository README.
 
-Retrieve Aiven for Apache Kafka SSL certificate files
------------------------------------------------------
+Retrieve Aiven for Apache Kafka® SSL certificate files
+------------------------------------------------------
 
 Aiven for Apache Kafka by default enables TLS security. 
 The certificates can be manually downloaded from the service overview page in the Aiven console, or via the :ref:`dedicated Aiven CLI command <avn_service_user_creds_download>`.
@@ -20,9 +20,9 @@ Setup a kcat configuration file
 -------------------------------
 
 While kcat accepts all connection configuration parameters in the command line, using a configuration file helps minimising the code needed for any following calls.
-A kcat configuration file enabling the connection to an Aiven for Apache Kafka service with TLS security must contain the following entries:
+A kcat configuration file enabling the connection to an Aiven for Apache Kafka® service with TLS security must contain the following entries:
 
-* ``bootstrap.servers``: Aiven for Apache Kafka service URI, that can be found in the service overview in Aiven console
+* ``bootstrap.servers``: Aiven for Apache Kafka® service URI, that can be found in the service overview in Aiven console
 * ``security.protocol``: security protocol, SSL for the default TLS security settings
 * ``ssl.key.location``: location of the `service.key` file downloaded from the service overview in Aiven console
 * ``ssl.certificate.location``: location of the `service.cert` file downloaded from the service overview in Aiven console
@@ -66,8 +66,8 @@ If :doc:`SASL authentication <kafka-sasl-auth>` is enabled, then kcat configurat
    sasl.username=avnadmin
    sasl.password=yourpassword
 
-Produce data to an Apache Kafka topic
--------------------------------------
+Produce data to an Apache Kafka® topic
+--------------------------------------
 
 Use the following code to produce a single message into topic named ``test-topic``:
 
@@ -79,14 +79,14 @@ Use the following code to produce a single message into topic named ``test-topic
 * ``-t``: specifies the topic
 * ``-k``: sets the message key
 
-The output of the above comment is a message sent to Apache Kafka ``test-topic`` containing ``test-message-key`` as key and ``test-message-content`` as payload. 
+The output of the above comment is a message sent to Apache Kafka® ``test-topic`` containing ``test-message-key`` as key and ``test-message-content`` as payload.
 
 .. Note:
 
     kcat can use a file as input input and specify a delimiter (``-D``) for splitting rows into individual records for bulk loading of data.
 
-Consume data from an Apache Kafka topic
-----------------------------------------
+Consume data from an Apache Kafka® topic
+-----------------------------------------
 
 Use the following code to consume messages coming from a topic named ``test-topic``:
 

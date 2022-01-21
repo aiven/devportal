@@ -1,15 +1,13 @@
-Use Kafdrop Web UI with Aiven for Apache Kafka
-==============================================
+Use Kafdrop Web UI with Aiven for Apache Kafka®
+===============================================
 
 `Kafdrop <https://github.com/obsidiandynamics/kafdrop>`_ is a popular Web UI for Apache Kafka that allows you to monitor a cluster, view topics and consumer groups with integration into the Schema Registry, with support for Avro, JSON and Protobuf.
 
-Retrieve Aiven for Apache Kafka SSL certificate files
------------------------------------------------------
+Retrieve Aiven for Apache Kafka® SSL certificate files
+------------------------------------------------------
 
-Aiven for Apache Kafka by default enables TLS security. 
+Aiven for Apache Kafka® by default enables TLS security.
 The certificates can be manually downloaded from the service overview page in the Aiven console, or via the :ref:`dedicated Aiven CLI command <avn_service_user_creds_download>`.
-
-
 
 Setup a Kafdrop configuration file
 ----------------------------------
@@ -28,7 +26,7 @@ Once the keystore and truststore are created, you can define a Kafdrop configura
 Run Kafdrop on Docker
 ---------------------
 
-You can run Kafdrop in a Docker/Podman container with the following command, by replacing the ``KAFKA_SERVICE_URI`` with the Aiven for Apache Kafka service URI available in the service Overview tab of the Aiven console, and the ``client.truststore.jks`` and ``client.keystore.p12`` with the keystores and truststores file names:
+You can run Kafdrop in a Docker/Podman container with the following command, by replacing the ``KAFKA_SERVICE_URI`` with the Aiven for Apache Kafka® service URI available in the service Overview tab of the Aiven console, and the ``client.truststore.jks`` and ``client.keystore.p12`` with the keystores and truststores file names:
 
 ::
 
@@ -37,7 +35,7 @@ You can run Kafdrop in a Docker/Podman container with the following command, by 
         -e KAFKA_PROPERTIES="$(cat kafdrop.properties | base64)"            \
         -e KAFKA_TRUSTSTORE="$(cat client.truststore.jks | base64)"         \
         -e KAFKA_KEYSTORE="$(cat client.keystore.p12 | base64)"             \
-        obsidiandynamics/kafdrop    
+        obsidiandynamics/kafdrop
 
 If you're also interested in Kafdrop to de-serialize Avro messages using `Karapace <https://github.com/aiven/karapace>`_ schema registry, add the following two lines to the ``docker run`` command:
 
@@ -56,7 +54,7 @@ Once Kafdrop starts, you should be able to access it at ``localhost:9000``
 .. image:: /images/products/kafka/kafdrop.gif
    :alt: Kafdrop in action
 
-You can perform the following tasks with Kafdrop over an Aiven for Apache Kafka service:
+You can perform the following tasks with Kafdrop over an Aiven for Apache Kafka® service:
 
 * View and search topics
 * Create and delete topics
