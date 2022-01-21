@@ -111,6 +111,24 @@ entries:
           - file: docs/products/kafka/kafka-connect/howto/jdbc-source-connector-mysql
           - file: docs/products/kafka/kafka-connect/howto/jdbc-source-connector-sql-server
           - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-pg
+      
+      - file: docs/products/kafka/kafka-mirrormaker/index
+        title: Apache Kafka MirrorMaker2
+        entries:
+        - file: docs/products/kafka/kafka-mirrormaker/getting-started
+        - file: docs/products/kafka/kafka-mirrormaker/concepts
+          entries:
+          - file: docs/products/kafka/kafka-mirrormaker/concepts/replication-flow-topics-regex
+        - file: docs/products/kafka/kafka-mirrormaker/howto
+          title: HowTo
+          entries:
+            - file: docs/products/kafka/kafka-mirrormaker/howto/integrate-external-kafka-cluster
+            - file: docs/products/kafka/kafka-mirrormaker/howto/setup-replication-flow
+            - file: docs/products/kafka/kafka-mirrormaker/howto/setup-mirrormaker-monitoring
+        - file: docs/products/kafka/kafka-mirrormaker/reference
+          title: Reference
+          entries:
+            - glob: docs/products/kafka/kafka-mirrormaker/reference/*
 
   - file: docs/products/postgresql/index
     title: PostgreSQL
