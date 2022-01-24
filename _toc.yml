@@ -226,6 +226,7 @@ entries:
   - file: docs/products/clickhouse/index
     entries:
       - file: docs/products/clickhouse/getting-started
+      - file: docs/products/clickhouse/sample-dataset
       - file: docs/products/clickhouse/concepts
         title: Concepts
         entries:
@@ -235,6 +236,7 @@ entries:
         title: HowTo
         entries:
           - file: docs/products/clickhouse/howto/add-service-users
+          - file: docs/products/clickhouse/howto/install-cli
       - file: docs/products/clickhouse/reference
         title: Reference
         entries:
