@@ -8,7 +8,7 @@ We will look closer at how to use ``Yandex Metrica`` `example dataset <https://c
 - ``hits_v1``, with data for every user action
 - ``visits_v1``, with information about every user session
 
-In the steps below we will download the dataset, setup a connection with the server and load the data into the cluster. ClickHouse already offers a detailed instruction `on setting up this dataset <https://clickhouse.com/docs/en/getting-started/example-datasets/metrica/>`_, however, we will expand it by adding more details on how to run commands by using ClickHouse client running in docker.
+In the steps below we will download the dataset, setup a connection with the server and load the data into the cluster. ClickHouse already offers a detailed instruction `on setting up this dataset <https://clickhouse.com/docs/en/getting-started/example-datasets/metrica/>`_, however, we will expand it by adding more details on how to run commands by using ClickHouse client running in Docker.
 
 Download the dataset
 --------------------
@@ -54,7 +54,7 @@ You can create database either through the user interface available in the  `Aiv
 Create a table
 ---------------
 
-In a similar fashion we can add a new table to the newly created database. ClickHouse documentation offers `create table` command with `a recommended table structure <https://clickhouse.com/docs/en/getting-started/example-datasets/metrica/#obtaining-tables-from-compressed-tsv-file>`_. Use it in collaboration with docker command to create tables both for ``hits_v1`` and ``visits_v1``::
+In a similar fashion we can add a new table to the newly created database. ClickHouse documentation offers `create table` command with `a recommended table structure <https://clickhouse.com/docs/en/getting-started/example-datasets/metrica/#obtaining-tables-from-compressed-tsv-file>`_. Use it in collaboration with Docker command to create tables both for ``hits_v1`` and ``visits_v1``::
 
    docker run --interactive \
     --rm clickhouse/clickhouse-client \
