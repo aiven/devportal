@@ -46,14 +46,26 @@ These are only rough suggestions; the optimal values depend heavily on how you u
 Performance impact
 -------------------
 
-Having a large number of indices or shards affects the performance of your OpenSearch service. As an example, here are some figures from a three-node Aiven for OpenSearch business-8 cluster:
+Having a large number of indices or shards affects the performance of your OpenSearch service.  
+20 shards or few per GB of heap memory should be set as per `shard count recommendation <https://www.elastic.co/guide/en/elasticsearch/reference/current/size-your-shards.html#shard-count-recommendation>`_.  As an example, an OpenSearch business-8 cluster comes with 8GB heap,
+20 x 8 = 160 or less would be the recommended configuration for number of shards.
 
-* 1,000 shards: No visible effect in performance.
-* 10,000 shards: Creating new shards starts to take more time. Increased variation in performance.
-* 15,000 shards: Creating new shards takes significantly longer, often tens of seconds.
-* 20,000 shards: Inserting new data randomly takes significantly more time (20 times more than the mean average). Significantly increased variation in performance.
+Size of shard impacts the recovery time after a failure, shard sizes between 10GB to 50GB should be set as per `shard size recommendation <https://www.elastic.co/guide/en/elasticsearch/reference/current/size-your-shards.html#shard-size-recommendation>`_.
 
-Aiven for OpenSearch takes a snapshot once every hour. With 10,000 shards, the cluster is continuously taking new backups and deleting old backups from storage. This naturally affects the service performance, as part of the capacity is continuously allocated to managing backups.
+Aiven for OpenSearch takes a snapshot once every hour. With shards exceeding recommend configuration, the cluster is continuously taking new backups and deleting old backups from storage. This naturally affects the service performance, as part of the capacity is continuously allocated to managing backups.
+
+
+OpenSearch Plan Calculator
+--------------------------
+
+This OpenSearch plan calculator can be used online or downloaded:
+
+`View only on Google Docs <https://docs.google.com/spreadsheets/d/1wJwzSdnQiGIADcxb6yx1cFjDR0LEz-pg13U-Mt2PEHc>`_ - Make a copy to your Google drive to use it.
+
+`Download XLSX <https://docs.google.com/spreadsheets/d/1wJwzSdnQiGIADcxb6yx1cFjDR0LEz-pg13U-Mt2PEHc/export>`_ - Download and use it locally.
+
+Yellow cells such as ``data node count``, ``CPUs``, ``RAM``, ``Max Shard Size`` and etc. are input values to calculate recommendation 
+values for plan sizing.
 
 
 Using patterns to set index retention
