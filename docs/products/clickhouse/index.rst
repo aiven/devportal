@@ -29,6 +29,10 @@ Take your first steps with Aiven for ClickHouse by following our :doc:`getting-s
 
     ---
 
+    💻 :doc:`howto`
+
+    ---
+
     📖 :doc:`reference`
 
 
