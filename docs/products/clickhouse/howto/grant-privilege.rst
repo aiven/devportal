@@ -23,9 +23,9 @@ For example, the request below will grant permissions to select data from `trans
 
     GRANT SELECT ON transactions.* TO auditor;
 
-You can narrow the grants to the specified tables::
+You can narrow the grants to a specified table::
 
-    GRANT SELECT ON transactions.expenses, transactions.accounts  TO auditor;
+    GRANT SELECT ON transactions.expenses TO auditor;
 
 Or particular columns of a table::
 
@@ -86,7 +86,7 @@ You can remove all or partial privileges from users or roles::
 
 You can revoke all privileges on a table or database simultaneously::
 
-    REVOKE ALL PRIVILEGES ON database.table FROM ALL;
+    REVOKE ALL PRIVILEGES ON database.table FROM external;
 
 https://clickhouse.com/docs/en/sql-reference/statements/revoke/
 

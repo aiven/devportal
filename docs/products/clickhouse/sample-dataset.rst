@@ -39,17 +39,7 @@ Create a database
 
 During service creation a default database was already added, however, you can create separate databases specific for your use case. We will create a database with the name ``dataset``, keeping it same as in ClickHouse documentation.
 
-You can create database either through the user interface available in the  `Aiven web console <https://console.aiven.io/>`_ or by using ClickHouse client::
-
-    docker run --interactive \
-    --rm clickhouse/clickhouse-client \
-    --user USER-NAME \
-    --password USER-PASSWORD \
-    --host YOUR-HOST-NAME.aivencloud.com \
-    --port YOUR-PORT \
-    --secure \
-    --query="CREATE DATABASE IF NOT EXISTS datasets"
-
+You can create a new database through the user interface available in the  `Aiven web console <https://console.aiven.io/>`_ in the tab *Databases & Tables* of your service page.
 
 Create a table
 ---------------
