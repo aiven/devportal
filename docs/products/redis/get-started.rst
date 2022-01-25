@@ -39,7 +39,7 @@ Check out more technical information:
   Learn how estimate the max number of simultaneous connections in Aiven for Redis service.
   
 
-* :doc:`Lua scripts with Aiven for Redis <concepts/enable-lua-scripts>`.
+* :doc:`Lua scripts with Aiven for Redis <concepts/lua-scripts-redis>`.
 
   Learn about inbuilt support for running Lua scripts in Aiven for Redis service.
   
