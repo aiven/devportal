@@ -33,14 +33,14 @@ For more information on the ``REINDEX`` command, see the `PostgreSQL documentati
 Rebuild unique indexes
 ----------------------
 
-A ``UNIQUE`` index works on top of one or more columns whose combination is unique in a table. In situations when the index is corrupted or disabled and duplicated physical rows appear in the table, breaking the uniqueness constraint of the index, then index rebuilding with ``REINDEX`` will fail. To solve such problem, you'll first need to remove the duplicated rows from the table before attempting to rebuild the index.
+A ``UNIQUE`` index works on top of one or more columns whose combination is unique in a table. In situations when the index is corrupted or disabled and duplicated physical rows appear in the table, breaking the uniqueness constraint of the index, then index rebuilding with ``REINDEX`` will fail. To solve such a problem, you'll first need to remove the duplicated rows from the table before attempting to rebuild the index.
 
 Identify conflicting duplicated rows
 ''''''''''''''''''''''''''''''''''''
 
 To identify conflicting duplicate rows, you need to run a query that counts the number of rows for each combination of columns included in the index definition. 
 
-For example, the following ``route`` table has an ``unique_route_index`` index defining unique rows based on the combination of the ``source`` and ``destination`` columns:
+For example, the following ``route`` table has a ``unique_route_index`` index defining unique rows based on the combination of the ``source`` and ``destination`` columns:
 
 ::
 
