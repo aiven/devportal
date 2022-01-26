@@ -1,14 +1,14 @@
-Use query editor
-================
+Use the query editor
+====================
 
-A web-based query editor accompanies your ClickHouse service. It can be found in the in the *Query Editor* tab of your service in the  `Aiven web console <https://console.aiven.io/>`_.
+Aiven for ClickHouse includes a web-based query editor, which you can find on the *Query Editor* tab of your service in the  `Aiven web console <https://console.aiven.io/>`_.
 
-The requests that are run through the query editor are executed on behalf of the default user, relying on the permissions which this user possesses.
+The requests that you run through the query editor are executed on behalf of the default user and rely on the permissions granted to this user.
 
 Examples of queries
 -------------------
 
-Retrieve a list of present databases::
+Retrieve a list of current databases::
 
     SHOW DATABASES
 

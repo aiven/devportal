@@ -14,7 +14,7 @@ This article shows you how to add new users to your Aiven for ClickHouse service
 
 #. Enter a name for the new user and select a role.
 
-   The role that you select defines the access grants that are assigned to the user.
+   The role that you select defines the access grants that are assigned to the user. For more information on roles, :doc:`see this article <grant-privilege>`.
 
 #. Click **Add User**.
 
