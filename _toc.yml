@@ -125,6 +125,7 @@ entries:
             - file: docs/products/kafka/kafka-mirrormaker/howto/integrate-external-kafka-cluster
             - file: docs/products/kafka/kafka-mirrormaker/howto/setup-replication-flow
             - file: docs/products/kafka/kafka-mirrormaker/howto/setup-mirrormaker-monitoring
+            - file: docs/products/kafka/kafka-mirrormaker/howto/remove-mirrormaker-prefix
         - file: docs/products/kafka/kafka-mirrormaker/reference
           title: Reference
           entries:
