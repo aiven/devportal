@@ -20,10 +20,6 @@ This article shows you how to add new users to your Aiven for ClickHouse service
 
    This creates the new user and shows you a summary of the information.
 
-#. Copy the password for the new user and paste it to a separate file.
+#. Copy the password on screen to a safe place. It can't be accessed again in future, however it can be reset if needed.
 
-   .. note::
-      You cannot access this password later. However, you can reset the password for a user later if necessary.
-
-#. Close the summary view.
 

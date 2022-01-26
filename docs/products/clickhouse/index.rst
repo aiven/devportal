@@ -45,3 +45,7 @@ If you are new to ClickHouse, try these resources to get you started with the pl
 * See the `main ClickHouse documentation <https://clickhouse.com/docs/en/>`_ for an introduction and a full list of features.
 
 * Our :doc:`getting-started` guide is a good way to get hands on with your first project.
+
+* Follow :doc:`a guide to add a sample dataset <sample-dataset>` to your service.
+
+* Find out :doc:`how to use the web-based query editor <howto/use-query-editor>`, that comes as part of ClickHouse service.

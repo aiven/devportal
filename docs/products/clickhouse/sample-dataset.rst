@@ -32,7 +32,7 @@ To connect to the server, use the connection details that you can find in the *C
 
 Install the ClickHouse client
 -----------------------------
-We will be using the ClickHouse client to connect to the server. Follow :doc:`the separate guide <howto/install-cli>` to familiarize yourself with how to set up and start using the ClickHouse client.
+We will be using the ClickHouse client to connect to the server. Follow :doc:`the separate guide <howto/use-cli>` to familiarize yourself with how to set up and start using the ClickHouse client.
 
 Create a database
 ------------------

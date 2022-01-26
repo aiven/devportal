@@ -235,10 +235,11 @@ entries:
       - file: docs/products/clickhouse/howto
         title: HowTo
         entries:
-          - file: docs/products/clickhouse/howto/add-service-users
-          - file: docs/products/clickhouse/howto/install-cli
-          - file: docs/products/clickhouse/howto/grant-privilege
+          - file: docs/products/clickhouse/howto/use-cli
           - file: docs/products/clickhouse/howto/use-query-editor
+          - file: docs/products/clickhouse/howto/add-service-users
+          - file: docs/products/clickhouse/howto/grant-privilege
+
       - file: docs/products/clickhouse/reference
         title: Reference
         entries:

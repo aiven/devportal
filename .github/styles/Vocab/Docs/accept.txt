@@ -11,7 +11,7 @@ Avro
 [Bb]usiness
 Cassandra
 ClickHouse
-[Cc]odecs
+codecs
 Conduktor
 [Cc]onnect
 Couchbase
