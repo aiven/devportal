@@ -1,25 +1,31 @@
 ClickHouse :badge:`beta,cls=badge-secondary text-black badge-pill`
 ==================================================================
 
+.. note::
+   The Aiven for ClickHouse service is currently available as a beta release and is intended for **non-production use**.
+
 What is Aiven for ClickHouse?
 -----------------------------
 
-Aiven for ClickHouse beta is powered by ClickHouse, an open-source database management system that uses a column-oriented structure and is best suited for the online analytical processing of queries (OLAP).
+Aiven for ClickHouse beta is powered by `ClickHouse <https://clickhouse.com/>`_, a highly scalable, open source database that uses a column-oriented structure. ClickHouse is designed for online analytical processing (OLAP) applications, and is an ideal tool for applications such as web analytics, or complex data reporting.
 
 In OLAP scenarios, a column-oriented structure provides much quicker processing of queries compared to row-oriented databases, as it reduces the input/output load by minimizing the amount of data that needs to be read and by improving data compression. To optimize data compression, ClickHouse provides both general-purpose compression codecs and codecs that are tailored for specific data types. ClickHouse also includes a vector computation engine to process the columns by vectors, or parts of columns, to increase CPU efficiency and performance.
 
-As a truly columnar database, ClickHouse also stores the values of the same column physically next to each other. This further increases the speed of retrieving the values of a column. However, it also makes it slower to retrieve complete rows, as the values of a single row are stored across different physical locations.
 
-ClickHouse supports SQL syntax that resembles the ANSI SQL standard. There are however some differences in behavior, which are listed in the `ClickHouse documentation <https://clickhouse.com/docs/en/sql-reference/ansi/>`_.
+Why ClickHouse?
+---------------
 
-.. note::
-   The service is currently available as a beta release and is intended for **non-production use**.
+ClickHouse is ideal for performing detailed analytics on large datasets. If your data is high volume, usually inserted in batches, and then rarely updated or deleted, then ClickHouse could be an excellent choice. Tables can be configured with a TTL (Time To Live) for data to stop them growing in an unconstrained way.
+
+ClickHouse is designed for analytics, so if your data is used in many different reports, including very large or complex ones that use multiple data dimensions then it could be a good fit. It isn't optimised for reports that join between source tables; much like other data warehouse solutions, data may be transformed before being inserted, to prepare for the reports that will be run.
+
+ClickHouse supports a familiar SQL syntax that resembles the ANSI SQL standard. There are however some differences in behavior, which are listed in the `ClickHouse documentation <https://clickhouse.com/docs/en/sql-reference/ansi/>`_.
 
 
 Get started with Aiven for ClickHouse
 -------------------------------------
 
-Take your first steps with Aiven for ClickHouse by following our :doc:`getting-started` article, or browse through our full list of articles:
+Take your first steps with Aiven for ClickHouse by following our :doc:`getting started <getting-started>` article, or browse through our full list of articles:
 
 
 .. panels::
