@@ -11,25 +11,25 @@ Aiven for Redis uses SSL encrypted connections by default. This is shown by the 
 .. Tip::
     You can find the ``Service URI`` on `Aiven console <https://console.aiven.io/>`_.
 
-Since **Redis 6**, the redis-cli tool itself supports SSL connections; therefore, you can connect directly to your service using::
+Since **Redis 6**, the ``redis-cli`` tool itself supports SSL connections; therefore, you can connect directly to your service using::
 
     redis-cli -u rediss://username:password@host:port
 
-Alternatively, you can use the third-party `redli tool <https://github.com/IBM-Cloud/redli>`_::
+Alternatively, you can use the third-party `Redli tool <https://github.com/IBM-Cloud/redli>`_::
 
     redli -u rediss://username:password@host:port
 
 
 Not every Redis client supports SSL-encrypted connections.
-In such cases, you would have to turn off SSL to use these clients, which is allowed but not recommended. In those cases, you have some options:
+In such cases, you would have to turn off SSL to use these clients, which is allowed but **not recommended**. You can use one of the following option to disable SSL
 
 
-Set up stunnel process
-~~~~~~~~~~~~~~~~~~~~~~
+Set up ``stunnel`` process
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-One workaround for this, it is to set up a `stunnel process <https://www.stunnel.org/index.html>`_ on the client side to handle encryption for the clients that do not support SSL connections. 
+If you want to keep SSL settings on database side, but hide it from the client side, you can set up a `Stunnel process <https://www.stunnel.org/index.html>`_ on the client to handle encryption. 
 
-You can use the following stunnel configuration, for example ``stunnel.conf``, to set up a stunnel process.
+You can use the following ``stunnel`` configuration, for example ``stunnel.conf``, to set up a ``stunnel`` process.
 ::
 
     client = yes
@@ -46,7 +46,7 @@ You can use the following stunnel configuration, for example ``stunnel.conf``, t
     ; Let's Encrypt by default without any explicit CAfile config.
     ; CAfile = /path/to/optional/project/cacert/that/you/can/download/from/aiven/console
 
-To understand the global options of the stunnel configuration, please check `Stunnel Global Options <https://www.stunnel.org/static/stunnel.html#GLOBAL-OPTIONS>`_.
+To understand the global options of the ``stunnel`` configuration, please check `Stunnel Global Options <https://www.stunnel.org/static/stunnel.html#GLOBAL-OPTIONS>`_.
 
 For ``service-level option``, the following parameters are configured:  
 
@@ -70,16 +70,17 @@ Note that when SSL is in use we have a separate service terminating the SSL conn
 Allow plain-text connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Another alternative is to actually allow plain-text connections. To allow plain-text connections, you can change this setting with **Overview** > **Advanced configuration**, or using the :doc:`Aiven Command Line interface<../../../tools/cli>`.
+An alternative is disable database SSL allowing allow plain-text connections. To allow plain-text connections, you can change this setting with **Overview** > **Advanced configuration**, or using the :doc:`Aiven Command Line interface<../../../tools/cli>`.
 
 .. Warning::
     Allowing plain-text connections can have some implications regarding the security of your Redis service. If SSL is turned off, anyone who can eavesdrop on the traffic will be able to potentially connect and access your Aiven for Redis service.
 
-Alternatively, once installed, you should run::
+To disable SSL on an existing Redis instance use the following Aiven CLI command (with link to avn update command)
 
-    avn login  # if you haven't logged in previously
+.. code-block:: console
+
     avn service update myredis -c "redis_ssl=false"
 
-After this, the ``Service URI`` will change and point at the new location, it will also start with the ``redis://`` prefix denoting that it's a direct Redis connection which does not use SSL.
+After executing the command, the ``Service URI`` will change and point at the new location, it will also start with the ``redis://`` (removing the extra s) prefix denoting that it's a direct Redis connection which does not use SSL.
 
 
