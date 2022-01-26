@@ -11,7 +11,7 @@ Aiven for PostgreSQL® sets that number to scale according to the database size,
 
 This shows you the number of transactions that trigger autovacuum to start freezing old rows.
 
-Some applications may not automatically adjust their configuration based on the actual PostgreSQL® configuration and may show unnecessary warnings. For example, [PgHero](https://github.com/ankane/pghero) default settings trigger an alert once 500 million transactions have been created, while the correct behavior might be to trigger an alert after 1.5 billion transactions. The ``transaction_id_danger`` setting controls this behavior, and changing the value from 1500000000 (1,500,000,000 or 1.5 billion) to 500000000 (500,000,000 or 500 million) would make it warn you when appropriate.
+Some applications may not automatically adjust their configuration based on the actual PostgreSQL® configuration and may show unnecessary warnings. For example, `PgHero <https://github.com/ankane/pghero>`_'s default settings trigger an alert once 500 million transactions have been created, while the correct behavior might be to trigger an alert after 1.5 billion transactions. The ``transaction_id_danger`` setting controls this behavior, and changing the value from 1500000000 (1,500,000,000 or 1.5 billion) to 500000000 (500,000,000 or 500 million) would make it warn you when appropriate.
 
 For more information, see the PostgreSQL® documentation:
 
