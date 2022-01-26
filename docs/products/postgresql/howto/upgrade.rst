@@ -20,12 +20,20 @@ Here are the steps to upgrade a PostgreSQL service:
 
 4. Click **Upgrade**.
 
-   The system starts applying the upgrade.
+   Here is the sequence of events that happen:
 
-   a. Standby nodes are removed and replacements are created for the new version.
-   b. The primary node starts an in-place upgrade to the new major version.
-   c. Once the upgrade is complete, the replacement standby nodes point to the new primary node for replication.
-
+   a. A ``pg_upgrade --check`` on the server to be as sure as possible that the upgrade on the master node is possible.
+   b. Reduce cluster size to 1 node (master) - if there is a standby node in the service, it is deleted.
+   c. Perform upgrade **ONLY** on master node.
+      1. systemd service is restarted several times in the process.
+      2. Extensions get updated.
+      3. data dir changes, data dir format changes, pghoard directory changes.
+      4. service_state, user_config changes to reflect the changes.
+   d. Do the first basebackup with the new version.
+   e. Create the rest of the nodes in the service, and update & recycle the read replica (if any).
+   f. The standby nodes are only recreated **after** the upgrade is ready on the primary and the first basebackup has been taken with the new version.
+   g. Standby nodes are running. Any service alert blackout existing on the read replica is being removed. 
+   g. Once the upgrade is complete, the replacement standby nodes point to the new primary node for replication.
 
 
 5. After the upgrade is complete, run ``ANALYZE`` for all active tables in your database to refresh the table statistics.
