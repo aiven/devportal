@@ -1,7 +1,7 @@
 Identify and repair issues with PostgreSQL indexes with ``REINDEX``
 ===================================================================
 
-PostgreSQL indexes can become corrupted due a variety of reasons including software bugs, hardware failures or unexpected duplicated data. ``REINDEX`` allows you to rebuild the index in such situations.
+PostgreSQL indexes can become corrupted due to a variety of reasons including software bugs, hardware failures or unexpected duplicated data. ``REINDEX`` allows you to rebuild the index in such situations.
 
 Rebuild non-unique indexes
 --------------------------
@@ -33,14 +33,14 @@ For more information on the ``REINDEX`` command, see the `PostgreSQL documentati
 Rebuild unique indexes
 ----------------------
 
-A ``UNIQUE`` index works on top of one or more columns which combination is unique in a table. In situations when the index is corrupted or disabled and duplicated physical rows appear in the table, breaking the uniqueness constraint of the index, then the index rebuilding with ``REINDEX`` will fail. To solve such problem, you'll first need to remove the duplicated rows from the table before attempting to rebuild the index.
+A ``UNIQUE`` index works on top of one or more columns whose combination is unique in a table. In situations when the index is corrupted or disabled and duplicated physical rows appear in the table, breaking the uniqueness constraint of the index, then index rebuilding with ``REINDEX`` will fail. To solve such problem, you'll first need to remove the duplicated rows from the table before attempting to rebuild the index.
 
 Identify conflicting duplicated rows
 ''''''''''''''''''''''''''''''''''''
 
 To identify conflicting duplicate rows, you need to run a query that counts the number of rows for each combination of columns included in the index definition. 
 
-For example, following ``route`` table has an ``unique_route_index`` index defining unique rows based on combination of the ``source`` and ``destination`` columns:
+For example, the following ``route`` table has an ``unique_route_index`` index defining unique rows based on the combination of the ``source`` and ``destination`` columns:
 
 ::
 
@@ -53,7 +53,7 @@ For example, following ``route`` table has an ``unique_route_index`` index defin
     CREATE UNIQUE INDEX unique_route_index 
         ON route (source, destination);
 
-If the ``unique_route_index`` is corrupted, you can find duplicated rows appear in the ``route`` table by issuing the following query:
+If the ``unique_route_index`` is corrupted, you can find duplicated rows in the ``route`` table by issuing the following query:
 
 ::
 
