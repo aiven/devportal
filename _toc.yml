@@ -318,6 +318,9 @@ entries:
         entries:
           - glob: docs/products/redis/reference/*
 
+  - file: docs/products/cassandra/index
+    title: Apache Cassandra
+
   - file: docs/products/grafana/index
     title: Grafana
     entries:
