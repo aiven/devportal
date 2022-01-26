@@ -55,7 +55,7 @@ There are a variety of privileges that you can grant, and you can find `the full
 
     Privileges are not revoked when a table or database is removed. They continue to be active for any new table or database that is created with the same name.
 
-You can find the full list of supported functionality related `to grants in the ClickHouse documentation <https://clickhouse.com/docs/en/sql-reference/statements/grant/>`_ .
+You can find the full list of supported functionality related `to grants in the ClickHouse documentation <https://clickhouse.com/docs/en/sql-reference/statements/grant/>`_.
 
 Set roles
 ------------------

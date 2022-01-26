@@ -37,16 +37,16 @@ We will be using the ClickHouse client to connect to the server. Follow :doc:`th
 Create a database
 ------------------
 
-When you create your service, a default database was already added. However, you can create separate databases specific to your use case. We will create a database with the name ``dataset``, keeping it the same as in the ClickHouse documentation.
+When you create your service, a default database was already added. However, you can create separate databases specific to your use case. We will create a database with the name ``datasets``, keeping it the same as in the ClickHouse documentation.
 
 To create the new database, go to the  `Aiven web console <https://console.aiven.io/>`_ and click the **Databases & Tables** tab of your service page.
 
 Create tables
 ---------------
 
-The next step is to add a new table to your newly created database. The ClickHouse documentation includes a sample `create table` command with `the recommended table structure <https://clickhouse.com/docs/en/getting-started/example-datasets/metrica/#obtaining-tables-from-compressed-tsv-file>`_.
+The next step is to add a new table to your newly created database. The ClickHouse documentation includes a sample ``CREATE TABLE`` command with `the recommended table structure <https://clickhouse.com/docs/en/getting-started/example-datasets/metrica/#obtaining-tables-from-compressed-tsv-file>`_.
 
-To use the client through Docker, run the following commands to create the tables for both ``hits_v1`` and ``visits_v1``::
+To use the command through Docker, run the following commands to create the tables for both ``hits_v1`` and ``visits_v1``::
 
    docker run --interactive \
     --rm clickhouse/clickhouse-client \

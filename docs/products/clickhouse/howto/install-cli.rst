@@ -30,12 +30,12 @@ The command to connect to the service looks like this:
 
 This example includes the ``--interactive`` option (or ``-i``) to be able to access the command prompt outside the docker container and  the ``--rm`` option to automatically remove the container after exiting.
 
-The other parameters, such as ``--user``, ``--password``, ``host``, ``port``, ``secure``, and ``query`` are arguments accepted by the ClickHouse client. You can see the full list of command line options in `the ClickHouse CLI documentation <https://clickhouse.com/docs/en/interfaces/cli/#command-line-options>`_.
+The other parameters, such as ``--user``, ``--password``, ``--host``, ``--port``, ``--secure``, and ``--query`` are arguments accepted by the ClickHouse client. You can see the full list of command line options in `the ClickHouse CLI documentation <https://clickhouse.com/docs/en/interfaces/cli/#command-line-options>`_.
 
 Command example
 -----------------
 
-Here is an example of a request to create a new database::
+Here is an example of a request to see the list of present databases::
 
     docker run --interactive \
     --rm clickhouse/clickhouse-client \
@@ -44,6 +44,6 @@ Here is an example of a request to create a new database::
     --host YOUR-HOST-NAME.aivencloud.com \
     --port YOUR-PORT \
     --secure \
-    --query="CREATE DATABASE IF NOT EXISTS a-new-and-shiny-database"
+    --query="SHOW DATABASES"
 
 
