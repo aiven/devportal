@@ -4,6 +4,7 @@ Aiven
 Apache
 API
 APIs
+autovacuum
 Avro
 [Bb]oolean
 [Bb]oot
