@@ -54,6 +54,7 @@ Hillyer
 httpie
 hyperloglogs
 hypertable
+InfluxDB
 Instana
 Java
 jq
@@ -73,7 +74,6 @@ Lua
 Lucene
 Memorystore
 MirrorMaker
-MirrorMaker2
 MySQL
 [Nn]amespace
 NodeJS
