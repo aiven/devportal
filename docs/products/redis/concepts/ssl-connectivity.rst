@@ -21,13 +21,13 @@ Alternatively, you can use the third-party `Redli tool <https://github.com/IBM-C
 
 
 Not every Redis client supports SSL-encrypted connections.
-In such cases, you would have to turn off SSL to use these clients, which is allowed but **not recommended**. You can use one of the following option to disable SSL
+In such cases, you would have to turn off SSL to use these clients, which is allowed but **not recommended**. You can use one of the following option to disable SSL.
 
 
 Set up ``stunnel`` process
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you want to keep SSL settings on database side, but hide it from the client side, you can set up a `Stunnel process <https://www.stunnel.org/index.html>`_ on the client to handle encryption. 
+If you want to keep SSL settings on database side, but hide it from the client side, you can set up a ``stunnel`` process on the client to handle encryption.
 
 You can use the following ``stunnel`` configuration, for example ``stunnel.conf``, to set up a ``stunnel`` process.
 ::
@@ -46,7 +46,7 @@ You can use the following ``stunnel`` configuration, for example ``stunnel.conf`
     ; Let's Encrypt by default without any explicit CAfile config.
     ; CAfile = /path/to/optional/project/cacert/that/you/can/download/from/aiven/console
 
-To understand the global options of the ``stunnel`` configuration, please check `Stunnel Global Options <https://www.stunnel.org/static/stunnel.html#GLOBAL-OPTIONS>`_.
+To understand the global options of the ``stunnel`` configuration, please check `Stunnel Global Options <https://www.stunnel.org/static/stunnel.html#GLOBAL-OPTIONS>`_. Also, you can find out more details about how to setup such a process on the `Stunnel website page <https://www.stunnel.org/index.html>`_.
 
 For ``service-level option``, the following parameters are configured:  
 
@@ -65,7 +65,7 @@ For ``service-level option``, the following parameters are configured:
 
 .. note:: It is important to make changes accordingly to your service. On the *Overview* page you can find your **Overview** > **Host** and **Overview** > **Port** to configure the ``connect`` parameter.
 
-Note that when SSL is in use we have a separate service terminating the SSL connections before they are forwarded to Redis. This process has a connection timeout of its own independent of Redis' connection timeout. If you allow very long Redis timeouts, this frontend service may end up closing the connection before the Redis timeout has expired. By the time of writing this, timeout is set to 12 hours.
+It is important to note that when SSL is in use, HAProxy will be responsible for terminating the SSL connections before they get forwarded to Redis. This process has a connection timeout set to 12 hours which is not configurable by the customer. If you allow very long Redis timeouts, this SSL-terminating HAProxy may end up closing the connection before the Redis timeout has expired. This timeout is independent of Redis timeout.
 
 Allow plain-text connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
