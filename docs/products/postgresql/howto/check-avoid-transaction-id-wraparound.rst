@@ -1,5 +1,5 @@
-Transaction ID wraparound
-=========================
+Check and avoid transaction ID wraparound
+=========================================
 
 The PostgreSQL® transaction control mechanism assigns a transaction ID to every row that is modified in the database; these IDs control the visibility of that row to other concurrent transactions.
 
@@ -17,5 +17,5 @@ Some applications may not automatically adjust their configuration based on the 
 
 For more information, see the PostgreSQL® documentation:
 
-* `Table 9.76. Transaction ID and Snapshot Information Functions <https://www.postgresql.org/docs/14/functions-info.html#FUNCTIONS-PG-SNAPSHOT>`_
 * `25.1.5. Preventing Transaction ID Wraparound Failures <https://www.postgresql.org/docs/current/routine-vacuuming.html#VACUUM-FOR-WRAPAROUND>`_
+* `Table 9.76. Transaction ID and Snapshot Information Functions <https://www.postgresql.org/docs/14/functions-info.html#FUNCTIONS-PG-SNAPSHOT>`_
