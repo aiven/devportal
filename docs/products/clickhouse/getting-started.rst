@@ -33,3 +33,5 @@ This example shows you how to create a new service, add a database to it, and us
        --query="YOUR SQL QUERY GOES HERE"
 
    For more information on using the ClickHouse client, see :doc:`this article <howto/use-cli>`.
+
+Now that you have your service and connection set up, see our :doc:`sample dataset article <sample-dataset>` to try out your service with actual data.
