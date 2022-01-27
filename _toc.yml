@@ -237,6 +237,7 @@ entries:
         entries:
           - file: docs/products/clickhouse/howto/use-cli
           - file: docs/products/clickhouse/howto/use-query-editor
+          - file: docs/products/clickhouse/howto/work-with-databases-and-tables
           - file: docs/products/clickhouse/howto/add-service-users
           - file: docs/products/clickhouse/howto/grant-privilege
 

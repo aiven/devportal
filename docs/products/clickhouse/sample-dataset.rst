@@ -39,7 +39,7 @@ Create a database
 
 When you create your service, a default database was already added. However, you can create separate databases specific to your use case. We will create a database with the name ``datasets``, keeping it the same as in the ClickHouse documentation.
 
-To create the new database, go to the  `Aiven web console <https://console.aiven.io/>`_ and click the **Databases & Tables** tab of your service page.
+To create the new database, go to the  `Aiven web console <https://console.aiven.io/>`_ and click the **Databases & Tables** tab of your service page and create the database ``datasets``.
 
 Create tables
 ---------------
