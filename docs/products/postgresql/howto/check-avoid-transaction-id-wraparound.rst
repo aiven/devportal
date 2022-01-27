@@ -8,7 +8,7 @@ The transaction ID is a 32-bit number, where 2 billion (2 thousand million) IDs 
 Automatic or manual vacuuming
 -----------------------------
 
-You can do this manually by executing ``VACUUM FREEZE``, but the autovacuum also does this automatically once a configured number of transactions have been created since the last freeze.
+You can manually trigger a cleanup by executing ``VACUUM FREEZE``, but the autovacuum also does this automatically once a configured number of transactions have been created since the last freeze.
 
 Checking the ``autovacuum`` frequency
 -------------------------------------
