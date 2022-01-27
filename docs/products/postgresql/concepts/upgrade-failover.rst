@@ -24,23 +24,23 @@ When a server unexpectedly disconnects, there is no certain way to know whether 
 Primary server disconnection
 """"""""""""""""""""""""""""
 
-If the **primary** server disappears, Aiven's management platform uses a **60-second timeout** before marking the server as down and promoting a replica server as new primary. During this 60-second timeout, the master is unavailable (``servicename.aivencloud.com`` does not respond), and ``replica.servicename.aivencloud.com`` works fine (in read-only mode).
+If the **primary** server disappears, Aiven's management platform uses a **60-second timeout** before marking the server as down and promoting a replica server as new primary. During this 60-second timeout, the master is unavailable (``servicename-projectname.aivencloud.com`` does not respond), and ``replica-servicename-projectname.aivencloud.com`` works fine (in read-only mode).
 
-After the replica promotion, ``servicename.aivencloud.com`` would point to the new primary server, while ``replica.servicename.aivencloud.com`` becomes unreachable. Finally, a new replica server is created, and after the synchronisation with the primary, the  ``replica.servicename.aivencloud.com`` DNS is switched to point to the new replica server.
+After the replica promotion, ``servicename-projectname.aivencloud.com`` would point to the new primary server, while ``replica-servicename-projectname.aivencloud.com`` becomes unreachable. Finally, a new replica server is created, and after the synchronisation with the primary, the  ``replica-servicename-projectname.aivencloud.com`` DNS is switched to point to the new replica server.
 
 Replica server disconnection
 """"""""""""""""""""""""""""
 
-If the **replica** server disappears, Aiven's management platform uses a **300-second timeout** before marking the server as down and creating a new replica server. During this period, the DNS ``replica.servicename.aivencloud.com`` points to the disappeared server that might not serve queries anymore. The DNS record pointing to the primary server (``servicename.aivencloud.com``) remains unchanged.
+If the **replica** server disappears, Aiven's management platform uses a **300-second timeout** before marking the server as down and creating a new replica server. During this period, the DNS ``replica-servicename-projectname.aivencloud.com`` points to the disappeared server that might not serve queries anymore. The DNS record pointing to the primary server (``servicename-projectname.aivencloud.com``) remains unchanged.
 
-If the replica server does not come back online during these 300 seconds, ``replica.servicename.aivencloud.com`` is pointed to the primary server until a new replica server is fully functional.
+If the replica server does not come back online during these 300 seconds, ``replica-servicename-projectname.aivencloud.com`` is pointed to the primary server until a new replica server is fully functional.
 
 Controlled switchover during upgrades or migrations
 ---------------------------------------------------
 
 During maintenance updates, cloud migrations, or plan changes, the below procedure is followed:
 
-1. For each of the **replica** nodes (available only on Business and Premium plans), a new server is created, and data restored from a backup. Then the new server starts following the existing primary server. After the new server is up and running and data up-to-date, ``replica.servicename.aivencloud.com`` DNS entry is changed to point to it, and the old replica server is deleted.
+1. For each of the **replica** nodes (available only on Business and Premium plans), a new server is created, and data restored from a backup. Then the new server starts following the existing primary server. After the new server is up and running and data up-to-date, ``replica-servicename-projectname.aivencloud.com`` DNS entry is changed to point to it, and the old replica server is deleted.
 
 2. An additional server is created, and data restored from a backup. Then the new server is synced up to the old primary server.
 
@@ -49,7 +49,7 @@ During maintenance updates, cloud migrations, or plan changes, the below procedu
 .. Note::
     At this stage, one extra server is running: the old primary server, and N+1 replica servers (2 for Business and 3 for Premium plans).
 
-3. The old primary server is scheduled for termination, and one of the new replica servers is immediately promoted as a primary server. ``servicename.aivencloud.com`` DNS is updated to point to the new primary server. The new primary server is removed from the ``replica.servicename.aivencloud.com`` DNS record.
+3. The old primary server is scheduled for termination, and one of the new replica servers is immediately promoted as a primary server. ``servicename-projectname.aivencloud.com`` DNS is updated to point to the new primary server. The new primary server is removed from the ``replica-servicename-projectname.aivencloud.com`` DNS record.
 
 .. Note::
     The old primary server is kept alive for a short period of time with a TCP forwarding setup pointing to the new primary server allowing clients to connect before learning the new IP address.

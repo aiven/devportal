@@ -1,7 +1,7 @@
 List of available plugins
 =========================
 
-The following plugins are available in all installations of Aiven for Grafana, and they are updated at intervals. To request additional plugins, please reach out to our support team.
+The following plugins are available in all installations of Aiven for Grafana, and they are updated at intervals. To request additional plugins, please reach out to our support team at ``support@aiven.io``.
 
 - AJAX
 - Alert list
