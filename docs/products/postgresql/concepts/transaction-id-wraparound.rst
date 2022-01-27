@@ -3,7 +3,9 @@ Transaction ID wraparound
 
 The PostgreSQL® transaction control mechanism assigns a transaction ID to every row that is modified in the database; these IDs control the visibility of that row to other concurrent transactions.
 
-The transaction ID is a 32-bit number, where 2 billion (2 thousand million) IDs are always in the "visible past" and the remainder (about 2.2 billion) are reserved for future transactions and not visible to the running transaction. To avoid a transaction wraparound and having old, existing rows invisible when more transactions are created, PostgreSQL® requires an occasional cleanup and "freezing" of old rows. You can do this manually by executing ``VACUUM FREEZE``, but the autovacuum also does this automatically once a configured number of transactions have been created since the last freeze.
+The transaction ID is a 32-bit number, where 2 billion (2 thousand million) IDs are always in the "visible past" and the remainder (about 2.2 billion) are reserved for future transactions and not visible to the running transaction. To avoid a transaction wraparound and having old, existing rows invisible when more transactions are created, PostgreSQL® requires an occasional cleanup and "freezing" of old rows. 
+
+You can do this manually by executing ``VACUUM FREEZE``, but the autovacuum also does this automatically once a configured number of transactions have been created since the last freeze.
 
 Aiven for PostgreSQL® sets that number to scale according to the database size, up to 1.5 billion transactions (which leaves 500 million transaction IDs available before a forced freeze), to avoid unnecessary churn for stable data in existing tables. To check your transaction freeze limits, run the following command in your PostgreSQL® instance::
 
