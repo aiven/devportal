@@ -1,45 +1,35 @@
 Getting started
 ===============
 
-The first step in using Aiven for ClickHouse is to create a service. You can do this in the `Aiven web console <https://console.aiven.io/>`_ or with the `Aiven CLI <https://github.com/aiven/aiven-client>`_.
+The first step in using Aiven for ClickHouse is to create a service and a database that you can use to try out the service. You can do this in the `Aiven web console <https://console.aiven.io/>`_.
 
-
-Create a ClickHouse service in the Aiven web console
-----------------------------------------------------
-
+This example shows you how to create a new service, add a database to it, and use `Docker <https://www.docker.com/>`_ to connect to the service with the ClickHouse client.
 
 1. Log in to the `Aiven web console <https://console.aiven.io/>`_.
 
-2. On the *Services* page, click **Create a new service**.
+2. Follow :doc:`these instructions </docs/platform/howto/create_new_service>` to create a new ClickHouse service.
 
-3. Select the main properties for your service:
+   Once the service is ready, the status changes to *Running*. This typically takes a couple of minutes, depending on your selected cloud provider and region.
 
-   a. Select **ClickHouse** as the service type.
+3. When the service is running, go to the *Databases & Tables* tab.
 
-   b. Select the cloud provider and region that you want to run your service on.
+4. Enter a name for your database, then click **Create database**.
 
-      .. note:: 
-	      The pricing for the same service may vary between different providers and regions. The service summary on the right side of the console shows you the pricing for your selected options.
+5. Go to the *Overview* tab and copy the **Host**, **Port**, **User**, and **Password** parameters that you need for connecting to the service.
 
-   c. Select a service plan.
+6. Get the latest Docker image of `the ClickHouse client from Docker Hub <https://hub.docker.com/r/clickhouse/clickhouse-client>`_
 
-      This defines the number of nodes, storage, memory, CPU, and backup support for the service.
+7. Run the following command to connect to your service and run an SQL query on your database:
 
-   d. Enter a name for your service.
+   .. code:: bash
 
-      A random name is provided by default, but you can enter a more recognizable name to distinguish it from other services.
+       docker run --interactive \
+       --rm clickhouse/clickhouse-client \
+       --user USER-NAME \
+       --password USER-PASSWORD \
+       --host YOUR-HOST-NAME.aivencloud.com \
+       --port YOUR-PORT \
+       --secure \
+       --query="YOUR SQL QUERY GOES HERE"
 
-
-4. Click **Create Service** under the summary on the right side of the console.
-
-   This brings you back to the **Services** view. Your new service is listed with a status indicator to show that it is being created.
-
-5. Click the service name.
-
-   The *Overview* page for the service opens.
-
-   This view shows you the connection parameters for your service, its current status, and the configuration options.
-
-   The status is *Rebuilding* while the service is being created for you. Once the service is ready, the status changes to *Running*. While services typically start up in a couple of minutes, the performance varies between cloud providers and regions, and it may take longer in some circumstances.
-
-
+   For more information on using the ClickHouse client, see :doc:`this article <howto/use-cli>`.
