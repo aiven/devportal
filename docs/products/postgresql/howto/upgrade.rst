@@ -29,16 +29,10 @@ Here are the steps to upgrade a PostgreSQL service:
    d. After a successful upgrade the primary node becomes available for use. A new full backup is initiated.
    e. After completion of the full backup, new standby nodes are created for services with more than one node.
    f. If the service is a configured to have a :doc:`read-only replica service <create-read-replica>`, the replica service will now be upgraded to the same version using the very same process. Read-only replicas remain readable during the upgrade of the primary service, but will go offline for the upgrade at this point.
-
-
-5. After the upgrade is complete, run ``ANALYZE`` for all active tables in your database to refresh the table statistics.
-
-.. Note::
-   Optimizer statistics are not transferred during major version upgrades, running ``ANALYZE`` ensures that queries run efficiently.
+   g. ``ANALYZE`` will be automatically run for all tables after the upgrade to refresh table statistics and optimize queries.
 
 .. Note::
    A full backup of a large database may take a long time to complete. It may take some time before the standby node becomes available, as they can only be launched when a backup taken from the new version is available.
-
 
 More information about upgrade and failover procedures can be found in the :doc:`dedicated page <../concepts/upgrade-failover>`.
 
