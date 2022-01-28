@@ -10,8 +10,8 @@ Automatic or manual vacuuming
 
 You can manually trigger a cleanup by executing ``VACUUM FREEZE``, but the autovacuum also does this automatically once a configured number of transactions have been created since the last freeze.
 
-Checking the ``autovacuum`` frequency
--------------------------------------
+Check the ``autovacuum`` frequency
+----------------------------------
 
 Aiven for PostgreSQL® sets that number to scale according to the database size, up to 1.5 billion transactions (which leaves 500 million transaction IDs available before a forced freeze), to avoid unnecessary churn for stable data in existing tables. To check your transaction freeze limits, run the following command in your PostgreSQL® instance::
 
