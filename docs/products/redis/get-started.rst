@@ -30,7 +30,7 @@ Check out more technical information:
 
   Learn about how Aiven for Redis supports high availability.
 
-* :doc:`SSL connectivity <concepts/ssl-connectivity>`.
+* :doc:`Manage SSL connectivity <howto/manage-ssl-connectivity>`.
 
   Check how Aiven for Redis supports SSL connections and how can be configured.
 

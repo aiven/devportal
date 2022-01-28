@@ -1,5 +1,5 @@
-SSL connectivity
-================
+Manage SSL connectivity
+=======================
 
 Client support for SSL-encrypted connections
 --------------------------------------------
