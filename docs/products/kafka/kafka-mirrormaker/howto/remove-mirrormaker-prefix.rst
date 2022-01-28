@@ -8,7 +8,7 @@ For most use cases, the extra prefix is not an issue. However, you might be usin
 
 In such cases, to remove the topic prefix, you'll need to change the replication flow ``replication_policy_class`` parameter from the default ``org.apache.kafka.connect.mirror.DefaultReplicationPolicy`` value which includes the source cluster alias in the target topic name to ``org.apache.kafka.connect.mirror.IdentityReplicationPolicy``.
 
-The change can be performed via the `Aiven console <https://console.aiven.io/>`_ or :doc:`Aiven CLI </docs/tools/cli>`. 
+The change can be performed via the `Aiven console <https://console.aiven.io/>`_ by modifying the flow details in the service page "Replication Flow" tab, or via  :doc:`Aiven CLI </docs/tools/cli>` as described in the following section. 
 
 Remove topic prefix from a replication flow
 --------------------------------------------------
@@ -26,6 +26,6 @@ In case you need to revert the policy and include the source cluster alias as to
 
 .. Warning::
 
-    The ``org.apache.kafka.connect.mirror.IdentityReplicationPolicy`` replication policy will **NOT support active-active replication** as the topics will keep the same name and offsets can not be accurately tracked. Creating the same replication flows between a source and a destination will create an infinite loop. 
+    The ``org.apache.kafka.connect.mirror.IdentityReplicationPolicy`` replication policy **doesn't support active-active replication** as the topics keep the same name and offsets can not be accurately tracked. Creating the same replication flows between a source and a destination with ``org.apache.kafka.connect.mirror.IdentityReplicationPolicy`` policy creates an infinite loop. 
     
     For active-active, please use the ``org.apache.kafka.connect.mirror.DefaultReplicationPolicy``.
