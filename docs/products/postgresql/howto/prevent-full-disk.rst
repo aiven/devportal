@@ -14,14 +14,14 @@ To re-enable database writes you need to increase the available space, by either
 Increase free space by upgrading to a larger plan
 -------------------------------------------------
 
-When upgrading to a larger plan, new nodes with bigger disk space capacity, are created and replace the original nodes. Once the upgrade is finished and the free space increased, write operations are enabled again.
+When upgrading to a larger plan, new nodes with bigger disk space capacity are created and replace the original nodes. Once the new nodes with increased disk capacity are up and running, the disk usage returns to below the critical level and the system automatically sets the ``default_transaction_read_only`` parameter to ``OFF`` allowing write operations again.
 You can upgrade the Aiven for PostgreSQL service plan via the `Aiven console <https://console.aiven.io/>`_ or :doc:`Aiven CLI </docs/tools/cli>`. 
 
 To perform a plan upgrade via the `Aiven console <https://console.aiven.io/>`_:
 
-* Go to the Aiven for PostgreSQL service page
-* In the *Overview* tab scroll down to the **Service plan** section and click on **Upgrade Plan**
-* Select the new plan with higher capacity and click **Upgrade**.
+#. Go to the Aiven for PostgreSQL service page
+#. In the *Overview* tab scroll down to the **Service plan** section and click on **Upgrade Plan**
+#. Select the new plan with higher capacity and click **Upgrade**.
 
 Once the new nodes with increased disk capacity are up and running, the disk usage returns to below the critical level and the system automatically sets the ``default_transaction_read_only`` parameter to ``OFF`` allowing write operations again.
 
@@ -32,7 +32,7 @@ Once the new nodes with increased disk capacity are up and running, the disk usa
 Increase free space by deleting data
 ------------------------------------
 
-To release space from a database, you can also delete data stored in it, but the database read-only mode also prevents them. 
+To release space from a database, you can also delete data stored in it, but the database read-only mode also prevents this. 
 You can enable deletions by either enabling writes for a specific session or for a limited amount of time over the full database.
 
 Enable database writes for a specific session
