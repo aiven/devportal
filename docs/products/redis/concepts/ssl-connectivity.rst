@@ -6,7 +6,7 @@ Client support for SSL-encrypted connections
 
 Default support
 ~~~~~~~~~~~~~~~
-Aiven for Redis uses SSL encrypted connections by default. This is shown by the use of ``rediss://`` (with double s) prefix in the ``Service URI``. 
+Aiven for Redis uses SSL encrypted connections by default. This is shown by the use of ``rediss://`` (with double s) prefix in the ``Service URI`` on the `Aiven Console <https://console.aiven.io/>`_.
 
 .. Tip::
     You can find the ``Service URI`` on `Aiven console <https://console.aiven.io/>`_.
@@ -21,7 +21,7 @@ Alternatively, you can use the third-party `Redli tool <https://github.com/IBM-C
 
 
 Not every Redis client supports SSL-encrypted connections.
-In such cases, you would have to turn off SSL to use these clients, which is allowed but **not recommended**. You can use one of the following option to disable SSL.
+In such cases, you would have to turn off or bypass the SSL to use these clients, which is allowed but **not recommended**. You can use one of the following option to achieve this.
 
 
 Set up ``stunnel`` process
@@ -70,16 +70,16 @@ It is important to note that when SSL is in use, HAProxy will be responsible for
 Allow plain-text connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-An alternative is disable database SSL allowing allow plain-text connections. To allow plain-text connections, you can change this setting with **Overview** > **Advanced configuration**, or using the :doc:`Aiven Command Line interface<../../../tools/cli>`.
+An alternative is disable database SSL allowing allow plain-text connections. To allow plain-text connections, you can change this setting on **Overview** in the **Advanced configuration** section, or using the :doc:`Aiven Command Line interface<../../../tools/cli>`.
 
 .. Warning::
-    Allowing plain-text connections can have some implications regarding the security of your Redis service. If SSL is turned off, anyone who can eavesdrop on the traffic will be able to potentially connect and access your Aiven for Redis service.
+    Allowing plain-text connections can have some implications regarding the security of your Redis service. If SSL is turned off, anyone who can eavesdrop on the traffic can potentially have access to your credentials; therefore, your Aiven for Redis service.
 
-To disable SSL on an existing Redis instance use the following Aiven CLI command (with link to avn update command)
+To disable SSL on an existing Redis instance use the following Aiven CLI command substituting the ``<my-redis>`` with your Redis the name service chosen by you when the service was created.
 
 .. code-block:: console
 
-    avn service update myredis -c "redis_ssl=false"
+    avn service update <my-redis> -c "redis_ssl=false"
 
 After executing the command, the ``Service URI`` will change and point at the new location, it will also start with the ``redis://`` (removing the extra s) prefix denoting that it's a direct Redis connection which does not use SSL.
 
