@@ -101,7 +101,7 @@ entries:
           entries:
           - file: docs/products/kafka/kafka-connect/concepts/list-of-connector-plugins
           - file: docs/products/kafka/kafka-connect/concepts/jdbc-source-modes
-          - file: docs/products/kafka/kafka-connect/concepts/s3-sink-additional-parameters
+          
         - file: docs/products/kafka/kafka-connect/howto
           title: HowTo
           entries:
@@ -114,7 +114,11 @@ entries:
           - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-pg
           - file: docs/products/kafka/kafka-connect/howto/s3-sink-prereq
           - file: docs/products/kafka/kafka-connect/howto/s3-sink-connector-aiven
-      
+        - file: docs/products/kafka/kafka-connect/reference
+          title: Reference
+          entries:
+            - file: docs/products/kafka/kafka-connect/reference/s3-sink-additional-parameters
+
       - file: docs/products/kafka/kafka-mirrormaker/index
         title: Apache Kafka MirrorMaker2
         entries:

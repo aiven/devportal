@@ -12,7 +12,7 @@ Prerequisites
 
 To setup the S3 sink connector by Aiven, you need an Aiven for Apache Kafka service :doc:`with Apache Kafka Connect enabled <enable-connect>` or a :ref:`dedicated Aiven for Apache Kafka Connect cluster <apache_kafka_connect_dedicated_cluster>`. 
 
-Furthermore you need to follow the :doc:`required setup steps <s3-sink-prereq>` and collect the following information about the target S3 bucket upfront:
+Furthermore you need to follow the steps :doc:`to prepare the AWS account and S3 sink <s3-sink-prereq>` and collect the following information about the target S3 bucket upfront:
 
 * ``AWS_S3_NAME``: The name of the S3 bucket
 * ``AWS_S3_REGION``: The AWS region where the S3 bucket has been created
@@ -55,7 +55,7 @@ The configuration file contains the following entries:
 
 .. Tip::
 
-    You can define S3 sink connector naming and data formats by setting the :doc:`dedicated parameters <../concepts/s3-sink-additional-parameters>`.
+    You can define S3 sink connector naming and data formats by setting the :doc:`dedicated parameters <../reference/s3-sink-additional-parameters>`.
 
 
 
@@ -65,19 +65,19 @@ Check out the `GitHub repository parameters documentation <https://github.com/ai
 Create a S3 sink connector with Aiven CLI
 '''''''''''''''''''''''''''''''''''''''''''''''
 
-To create the connector, execute the following :ref:`Aiven CLI command <avn_service_connector_create>`, replacing the ``SERVICE_NAME`` with the name of the Aiven service where the connector needs to run:
+To create the connector, execute the following :ref:`Aiven CLI command <avn_service_connector_create>`, replacing the ``SERVICE_NAME`` with the name of the existing Aiven for Apache Kafka® service where the connector needs to run:
 
 :: 
 
     avn service connector create SERVICE_NAME @s3_sink.json
 
-Check the connector status with the following command, replacing the ``SERVICE_NAME`` with the Aiven service and the ``CONNECTOR_NAME`` with the name of the connector defined before:
+Check the connector status with the following command, replacing the ``SERVICE_NAME`` with the existing Aiven for Apache Kafka® service and the ``CONNECTOR_NAME`` with the name of the connector defined before:
 
 ::
 
     avn service connector status SERVICE_NAME CONNECTOR_NAME
 
-Verify in the target S3 bucket, the presence of the topic and the data
+With the connection in place, verify that the data is flowing to the target S3 bucket.
 
 
 Example: define a S3 sink connector
