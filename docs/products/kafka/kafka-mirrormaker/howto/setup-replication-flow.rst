@@ -1,19 +1,19 @@
-Set up a MirrorMaker2 replication flow
-======================================
+Set up a Apache Kafka MirrorMaker 2® replication flow
+=====================================================
 
-MirrorMaker2 **replication flows** enable the topics sync from a source Apache Kafka® cluster to a target Apache Kafka® cluster deployed anywhere in the world. Replication flows can be defined against Aiven for Apache Kafka® services or external :doc:`Apache Kafka® clusters <integrate-external-kafka-cluster>`.
+Apache Kafka MirrorMaker 2® **replication flows** enable the topics sync from a source Apache Kafka® cluster to a target Apache Kafka® cluster deployed anywhere in the world. Replication flows can be defined against Aiven for Apache Kafka® services or external :doc:`Apache Kafka® clusters <integrate-external-kafka-cluster>`.
 
 
-Set up a MirrorMaker2 replication flow using Aiven console
-----------------------------------------------------------
+Set up a Apache Kafka MirrorMaker 2® replication flow using Aiven console
+-------------------------------------------------------------------------
 
 To define a replication flow between a source Apache Kafka® cluster and a target cluster:
 
-1. Navigate to the `Aiven Console <https://console.aiven.io/>`_ and select the Aiven for Apache Kafka® MirrorMaker2 service where the replication flow needs to be defined.
+1. Navigate to the `Aiven Console <https://console.aiven.io/>`_ and select the Aiven for Apache Kafka MirrorMaker 2® service where the replication flow needs to be defined.
 
 .. Note::
 
-    If no Aiven for Apache Kafka® MirrorMaker2 are already defined, :doc:`you can create one in the Aiven console <../getting-started>`.
+    If no Aiven for Apache Kafka MirrorMaker 2® are already defined, :doc:`you can create one in the Aiven console <../getting-started>`.
 
 2. In the **Overview** tab scroll to the **Service Integrations** section and click on **Manage integrations**.
 

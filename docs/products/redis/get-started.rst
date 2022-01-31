@@ -30,6 +30,10 @@ Check out more technical information:
 
   Learn about how Aiven for Redis supports high availability.
 
+* :doc:`Manage SSL connectivity <howto/manage-ssl-connectivity>`.
+
+  Check how Aiven for Redis supports SSL connections and how can be configured.
+
 * :doc:`Memory usage, on-disk persistence and replication in Aiven for Redis <concepts/memory-usage>`.
 
   See how Aiven for Redis solves the challenges related to high memory usage and high change rate.

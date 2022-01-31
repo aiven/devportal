@@ -4,6 +4,7 @@ Aiven
 Apache
 API
 APIs
+autovacuum
 Avro
 [Bb]oolean
 [Bb]oot
@@ -88,6 +89,7 @@ Protobuf
 psql
 Python
 Redis
+Redli
 refcard
 reindexing
 Sakila
@@ -120,3 +122,4 @@ Workbench
 Zabbix
 Zipkin
 ZooKeeper
+Stunnel

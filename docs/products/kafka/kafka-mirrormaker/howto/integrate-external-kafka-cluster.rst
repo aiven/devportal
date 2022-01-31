@@ -1,7 +1,7 @@
 Integrate an external Apache Kafka® cluster in Aiven
 ====================================================
 
-Aiven for Apache Kafka® MirrorMaker2 enables the cross-cluster topic replication between any two Apache Kafka® clusters, which can be deployed as Aiven or external services. To enable :doc:`replication flows <setup-replication-flow>` with an external Apache Kafka® cluster you need to define a service integration.
+Aiven for Apache Kafka MirrorMaker 2® enables the cross-cluster topic replication between any two Apache Kafka® clusters, which can be deployed as Aiven or external services. To enable :doc:`replication flows <setup-replication-flow>` with an external Apache Kafka® cluster you need to define a service integration.
 
 Define an external Apache Kafka® service integration via Aiven console
 ----------------------------------------------------------------------

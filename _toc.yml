@@ -125,6 +125,7 @@ entries:
             - file: docs/products/kafka/kafka-mirrormaker/howto/integrate-external-kafka-cluster
             - file: docs/products/kafka/kafka-mirrormaker/howto/setup-replication-flow
             - file: docs/products/kafka/kafka-mirrormaker/howto/setup-mirrormaker-monitoring
+            - file: docs/products/kafka/kafka-mirrormaker/howto/remove-mirrormaker-prefix
         - file: docs/products/kafka/kafka-mirrormaker/reference
           title: Reference
           entries:
@@ -162,6 +163,7 @@ entries:
               - file: docs/products/postgresql/howto/use-dblink-extension
               - file: docs/products/postgresql/howto/enable-jit
               - file: docs/products/postgresql/howto/repair-pg-index
+              - file: docs/products/postgresql/howto/check-avoid-transaction-id-wraparound
               - file: docs/products/postgresql/howto/prevent-full-disk
           - file: docs/products/postgresql/howto/list-replication-migration
             entries:
@@ -235,6 +237,7 @@ entries:
           - file: docs/products/opensearch/howto/upgrade-to-opensearch-with-terraform
           - file: docs/products/opensearch/howto/upgrade-clients-to-opensearch
           - file: docs/products/opensearch/howto/connect-with-nodejs
+          - file: docs/products/opensearch/howto/connect-with-python
           - file: docs/products/opensearch/howto/opensearch-and-nodejs
           - file: docs/products/opensearch/howto/opensearch-aggregations-and-nodejs
           - file: docs/products/opensearch/howto/control_access_to_content
@@ -313,6 +316,7 @@ entries:
               - file: docs/products/redis/howto/configure-acl-permissions
               - file: docs/products/redis/howto/migrate-aiven-redis
           - file: docs/products/redis/howto/estimate-max-number-of-connections
+          - file: docs/products/redis/howto/manage-ssl-connectivity
           - file: docs/products/redis/howto/warning-overcommit_memory
       - file: docs/products/redis/reference
         title: Reference
