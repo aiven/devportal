@@ -23,7 +23,7 @@ The placeholders are the following:
 
 .. Tip::
 
-    You can customise the S3 object naming and how records are grouped into files, see the `documentation in GitHub on the file naming format <https://github.com/aiven/aiven-kafka-connect-s3#file-name-format>`_ for further details.
+    You can customise the S3 object naming and how records are grouped into files, see the `documentation in GitHub on the file naming format <https://github.com/aiven/aiven-kafka-connect-s3>`_ for further details.
 
 The Apache Kafka Connect® connector creates one file per period defined by the ``offset.flush.interval.ms``  parameter. The file is generated for every partition that has received at least one new message during the period. The setting defaults to 60 seconds.
 
@@ -34,7 +34,7 @@ By default, data is stored in one record per line in S3 in CSV format.
 
 .. Tip::
 
-    You can change the output data format to JSON or Parquet by setting the ``format.output.type``. More details can be found in the `GitHub connector repository documentation <https://github.com/aiven/aiven-kafka-connect-s3#data-file-format>`_
+    You can change the output data format to JSON or Parquet by setting the ``format.output.type``. More details can be found in the `GitHub connector repository documentation <https://github.com/aiven/aiven-kafka-connect-s3>`_
 
 You can define the output data fields with the ``format.output.fields`` connector configuration. The message key and value, if included in the output, are encoded in ``Base64``. 
 

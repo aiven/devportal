@@ -57,7 +57,7 @@ The following is an example of AWS inline policy that can be added to the IAM us
 Create the AWS IAM user
 -----------------------
 
-Create IAM user using the `dedicated AWS console page <https://console.aws.amazon.com/iamv2/home?#/users>`_. In the **Select AWS credential type** section check the **Access key - Programmatic access** option generating an **access key ID** and **secret access key**. The two information are parameters in the Apache Kafka Connect® configuration.
+Create IAM user using the `IAM AWS console page <https://console.aws.amazon.com/iamv2/home>`_. In the **Select AWS credential type** section check the **Access key - Programmatic access** option generating an **access key ID** and **secret access key**. The two information are parameters in the Apache Kafka Connect® configuration.
 
 In the **Permission** section, associate to the user the IAM policy created in the previous step.
 

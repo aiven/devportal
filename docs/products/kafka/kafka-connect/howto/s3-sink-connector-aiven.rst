@@ -47,7 +47,7 @@ The configuration file contains the following entries:
 
 * ``name``: the connector name
 * ``topics``: the list of Apache Kafka® topics to sink to the S3 bucket
-* ``key.converter`` and ``value.converter``: data converters, depend on the topic data format, check the `GitHub repository documentation <https://github.com/aiven/s3-connector-for-apache-kafka#csv-format-example>`_ for more information
+* ``key.converter`` and ``value.converter``: data converters, depend on the topic data format, check the `GitHub repository documentation <https://github.com/aiven/s3-connector-for-apache-kafka>`_ for more information
 * ``aws.access.key.id``: the AWS user access key ID
 * ``aws.secret.access.key``: The AWS user secret access key
 * ``aws.s3.bucket.name``: The name of the S3 bucket
@@ -59,7 +59,7 @@ The configuration file contains the following entries:
 
 
 
-Check out the `GitHub repository parameters documentation <https://github.com/aiven/aiven-kafka-connect-s3#file-name-format>`_ for the full list of congiguration options.
+Check out the `GitHub repository parameters documentation <https://github.com/aiven/aiven-kafka-connect-s3>`_ for the full list of configuration options.
 
 
 Create a S3 sink connector with Aiven CLI
