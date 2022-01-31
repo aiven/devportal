@@ -5,11 +5,11 @@ An authentication token allows a user to programmatically access resources inste
 
 .. mermaid::
 
-sequenceDiagram
-    Client->>+Server: Here's my username/password. Give me a token.
-    Server-->>-Client: Your username/password is valid. Here's a token. 
-    Client->>+Server: Here's a token. Show me a list of my resources.
-    Server-->>-Client: Your token is valid. Here's a list of your resources.
+    sequenceDiagram 
+        Client->>+Server: Here's my username/password. Give me a token.
+        Server-->>-Client: Your username/password is valid. Here's a token. 
+        Client->>+Server: Here's a token. Show me a list of my resources.
+        Server-->>-Client: Your token is valid. Here's a list of your resources.
 
 How Aiven manages user sessions using authentication tokens
 -----------------------------------------------------------
