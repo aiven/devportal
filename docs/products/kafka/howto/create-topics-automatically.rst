@@ -1,4 +1,4 @@
-Creating Apache Kafka topics automatically
+Create Apache Kafka topics automatically
 ==========================================
 
 You can set Kafka to automatically create a topic when a message is produced to a topic that does not exist. 

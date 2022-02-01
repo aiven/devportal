@@ -1,4 +1,4 @@
-Managing users and access control lists
+Manage users and access control lists
 =======================================
 
 Aiven for Apache Kafka uses access control lists (ACL) and user definitions in order to establish individual rights to produce or consume a topic.
