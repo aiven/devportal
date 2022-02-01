@@ -23,7 +23,7 @@ To create an Apache Flink table based on an Aiven for OpenSearch® index via Aiv
 
 2. Select the **Data Tables** sub-tab and select the Aiven for OpenSearch® integration to use
 
-3. Select the Aiven for OpenSearch® service and the **index** to be used as target for the data pipeline. If you want to use a new idex not yet existing, write the index name.
+3. Select the Aiven for OpenSearch® service and the **index** to be used as target for the data pipeline. If you want to use a new index not yet existing, write the index name.
 
 4. Define the **Flink table name**; this name will represents the Flink reference to the topic and will be used during the data pipeline definition
 
