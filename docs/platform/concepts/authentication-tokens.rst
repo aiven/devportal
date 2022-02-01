@@ -23,7 +23,7 @@ Token counts
 
 The system has hard limits for how many valid authentication tokens are allowed per user. This limit is different for tokens that are created as a result of sign in operation and for tokens created explicitly. The max token count is **10** for user created tokens but the system never invalidates the tokens unless they expire or they are explicitly revoked. For automatically created tokens the limit is **1000** but when this limit is reached the system automatically deletes tokens that have been used least recently to avoid going above the limit.
 
-Therefore, an old token can stop working even if it hasn't expired nor been explicitly revoked. To avoid running into problems with this behavior you should always make sure you sign out after sign in instead of just discarding your authentication token. This is mostly relevant for automation which automatically signs in. The Aiven web console automatically revokes current token when signing out and the Aiven command line client also provides a sign out command (avn user logout).
+Therefore, an old token can stop working even if it hasn't expired nor been explicitly revoked. To avoid running into problems with this behavior you should always make sure you sign out after sign in instead of just discarding your authentication token. This is mostly relevant for automation which automatically signs in. The Aiven web console automatically revokes the current token when signing out and the Aiven command line client also provides a sign out command (avn user logout).
 
 Known limitations
 -----------------
