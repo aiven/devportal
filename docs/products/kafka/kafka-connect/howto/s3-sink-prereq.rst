@@ -1,5 +1,5 @@
-Configure AWS for the S3 sink connector
-=======================================
+Configure AWS for an S3 sink connector
+======================================
 
 To be able to sink data from Apache Kafka® to S3 via the dedicated Aiven connector, you need to perform the following steps in the `AWS console <https://s3.console.aws.amazon.com/>`_:
 
