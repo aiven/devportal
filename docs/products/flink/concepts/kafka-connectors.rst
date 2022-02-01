@@ -1,9 +1,9 @@
-Standard and upsert Apache Kafka connectors
-===========================================
+Standard and upsert Apache Kafka® connectors
+============================================
 
-In addition to integration with Apache Kafka through a standard connector, Aiven for Apache Flink also supports the use of *upsert* connectors, which allows you to create changelog-type data streams.
+In addition to integration with Apache Kafka® through a standard connector, Aiven for Apache Flink® also supports the use of *upsert* connectors, which allows you to create changelog-type data streams.
 
-When you integrate a standard Apache Kafka with your Aiven for Apache Flink service, you can use the service to read data from one Kafka topic and write the processed data to another Kafka topic. Each message in the source topic that is processed and written to the sink topic is considered unique and is handled as an individual entry.
+When you integrate a standard Apache Kafka® with your Aiven for Apache Flink® service, you can use the service to read data from one Kafka topic and write the processed data to another Kafka topic. Each message in the source topic that is processed and written to the sink topic is considered unique and is handled as an individual entry.
 
 .. mermaid::
 
@@ -15,7 +15,7 @@ When you integrate a standard Apache Kafka with your Aiven for Apache Flink serv
 
 Another integration approach is upsert, or ``INSERT/UPDATE``, which is a method of updating or deleting data based on the message key. When used as a source, Flink interprets a message that has an existing key as an update and replaces the value for that key. If the key does not exist, it is inserted as new data, and if the message data is null, it is interpreted as a ``DELETE`` operation for that key.
 
-When used as a sink, upsert provides a method to create Kafka compacted topics (see the Log Compaction section in the `Apache Kafka documentation <https://kafka.apache.org/documentation/>`_ for details), containing only the latest value for a specific key and pushing a tombstone message on deletion.
+When used as a sink, upsert provides a method to create Kafka compacted topics (see the Log Compaction section in the `Apache Kafka® documentation <https://kafka.apache.org/documentation/>`_ for details), containing only the latest value for a specific key and pushing a tombstone message on deletion.
 
 .. mermaid::
 

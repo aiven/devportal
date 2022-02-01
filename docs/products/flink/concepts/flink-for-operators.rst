@@ -1,7 +1,7 @@
-Apache Flink for operators
-==========================
+Apache Flink® for operators
+===========================
 
-Aiven for Apache Flink is currently available on AWS or GCP cloud environments; all services and infrastructure are single-tenant and dedicated solely to a single customer. Choose between single-node and three-node Apache Flink clusters, depending on your requirements:
+Aiven for Apache Flink® is currently available on AWS or GCP cloud environments; all services and infrastructure are single-tenant and dedicated solely to a single customer. Choose between single-node and three-node Apache Flink® clusters, depending on your requirements:
 
 * Single-node clusters are not highly available, but support automatic failover. They start from 4GB RAM/2 vCPU and extend up to 32GB/8 vCPU. This setup is a good option for proof of concepts and preliminary testing for development purposes.
 
@@ -12,7 +12,7 @@ Our product page provides you detailed information about the available plans and
 Cluster deployment
 ------------------
 
-Aiven for Apache Flink is configured to use the `HashMap state backend <https://ci.apache.org/projects/flink/flink-docs-stable/api/java/org/apache/flink/runtime/state/hashmap/HashMapStateBackend.html>`_. This means that `state <https://ci.apache.org/projects/flink/flink-docs-release-1.13/docs/concepts/stateful-stream-processing/#what-is-state>`_ is stored in memory, which can impact the performance of jobs that require keeping a very large state. We recommend you provision your platform accordingly.
+Aiven for Apache Flink® is configured to use the `HashMap state backend <https://ci.apache.org/projects/flink/flink-docs-stable/api/java/org/apache/flink/runtime/state/hashmap/HashMapStateBackend.html>`_. This means that `state <https://ci.apache.org/projects/flink/flink-docs-release-1.13/docs/concepts/stateful-stream-processing/#what-is-state>`_ is stored in memory, which can impact the performance of jobs that require keeping a very large state. We recommend you provision your platform accordingly.
 
 The Flink cluster executes applications in `session mode <https://ci.apache.org/projects/flink/flink-docs-release-1.13/docs/deployment/overview/#session-mode>`_, so you can deploy multiple Flink jobs on the same cluster to use the available resources effectively.
 
@@ -33,7 +33,7 @@ Cluster restart strategy
 
 The cluster’s default restart strategy is configured to Failure Rate. This controls Flink’s restart behaviour in cases of failures during the execution of jobs. Administrators can overwrite this setting in the advanced configuration options for the service.
 
-For more information on the available options, see the `Apache Flink documentation on fault tolerance <https://ci.apache.org/projects/flink/flink-docs-master/docs/deployment/config/#fault-tolerance>`_.
+For more information on the available options, see the `Apache Flink® documentation on fault tolerance <https://ci.apache.org/projects/flink/flink-docs-master/docs/deployment/config/#fault-tolerance>`_.
 
 Disaster recovery
 '''''''''''''''''
