@@ -1,12 +1,12 @@
-Apache Flink for data analysts
-==============================
+Apache Flink® for data analysts
+===============================
 
-We're actively collating advice, tips, and any limitations of working with Aiven for Apache Flink. Please let us know if you have questions.
+We're actively collating advice, tips, and any limitations of working with Aiven for Apache Flink®. Please let us know if you have questions.
 
 Jobs, tables and tasks
 ----------------------
 
-Some key points to know before you start working with Aiven for Apache Flink:
+Some key points to know before you start working with Aiven for Apache Flink®:
 
 * Jobs and tables cannot be edited after they are created.
 * Running jobs must be manually restarted after powering off the cluster or when changing service plans.
@@ -15,12 +15,12 @@ Some key points to know before you start working with Aiven for Apache Flink:
 Limitations
 -----------
 
-In order to run a stable and reliable service, you will see some differences between Aiven for Apache Flink and a Flink service that you run yourself. The main differences are:
+In order to run a stable and reliable service, you will see some differences between Aiven for Apache Flink® and a Flink service that you run yourself. The main differences are:
 
 * User-defined functions are not supported.
-* The Apache Flink CLI tool cannot be used with this service as it requires access to the JobManager in production, which is currently not exposed to customers.
+* The Apache Flink® CLI tool cannot be used with this service as it requires access to the JobManager in production, which is currently not exposed to customers.
 * Job-level settings are not yet supported. Each job inherits the cluster-level settings.
-* Flame graphs, marked as an experimental feature in Apache Flink 1.13, are not currently enabled in the Flink web UI.
+* Flame graphs, marked as an experimental feature in Apache Flink® 1.13, are not currently enabled in the Flink web UI.
 
 Troubleshooting
 ---------------
