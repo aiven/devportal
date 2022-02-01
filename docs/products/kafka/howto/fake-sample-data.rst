@@ -1,7 +1,7 @@
 Fake sample dataset
 ===================
 
-Learning streaming is way more fun with data, so to get you started on your Apache Kafka® journey we help you creating fake streaming data to a topic.
+Learning streaming is way more fun with data, so to get you started on your Apache Kafka® journey we help you create fake streaming data to a topic.
 
 .. Note::
 
@@ -13,7 +13,7 @@ The following example assumes you have an Aiven for Apache Kafka® service runni
 Fake data generator on Docker
 -----------------------------
 
-To learn data streaming, you need a continuous flow of data and for that you can use the `Dockerized fake data producer for Aiven for Apache Kafka® <https://github.com/aiven/fake-data-producer-for-apache-kafka-docker>`_. To take the generator into use:
+To learn data streaming, you need a continuous flow of data and for that you can use the `Dockerized fake data producer for Aiven for Apache Kafka® <https://github.com/aiven/fake-data-producer-for-apache-kafka-docker>`_. To start using the generator:
 
 1. Clone the repository:
 
@@ -60,4 +60,4 @@ To learn data streaming, you need a continuous flow of data and for that you can
 
     docker run fake-data-producer-for-apache-kafka-docker
 
-7. Once the Docker image is running, check in the target Aiven for Apache Kafka® service that the topic is populated. This can be done with the `Aiven console <https://console.aiven.io/>`_ or using tools like :doc:`kcat <kcat>`.
+7. Once the Docker image is running, check in the target Aiven for Apache Kafka® service that the topic is populated. This can be done with the `Aiven console <https://console.aiven.io/>`_, if the Kafka REST option is enabled, in the *Topics* tab. Alternatively you can use tools like :doc:`kcat <kcat>` to achieve the same.
