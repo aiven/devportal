@@ -55,4 +55,4 @@ We can define a ``metrics-out`` Apache Flink® table with:
     usage DOUBLE,
     occurred_at BIGINT
 
-Once clicked on the **Create** button, the ``metrics_out`` table should be visible in the table browser
+After clicking on the **Create** button, the ``metrics_out`` table should be visible in the table browser
