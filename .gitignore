@@ -7,3 +7,5 @@ node_modules
 .idea/*
 *.iml
 *.ipr
+env/
+venv/
