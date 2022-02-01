@@ -15,7 +15,7 @@ In OLAP scenarios, a column-oriented structure provides much quicker processing 
 Why ClickHouse?
 ---------------
 
-ClickHouse is ideal for performing detailed analytics on large datasets. If your data is high volume, usually inserted in batches, and then rarely updated or deleted, then ClickHouse could be an excellent choice. Tables can be configured with a TTL (Time To Live) for data to stop them growing in an unconstrained way.
+ClickHouse is ideal for performing detailed analytics on large datasets. If your data is high volume, usually inserted in batches, and then rarely updated or deleted, then ClickHouse could be an excellent choice. Tables can be configured with a TTL (Time To Live) so that data will be deleted after a defined interval, this stops the tables growing in an unconstrained way.
 
 ClickHouse is designed for analytics, so if your data is used in many different reports, including very large or complex ones that use multiple data dimensions then it could be a good fit. It isn't optimised for reports that join between source tables; much like other data warehouse solutions, data may be transformed before being inserted, to prepare for the reports that will be run.
 
@@ -54,4 +54,4 @@ If you are new to ClickHouse, try these resources to get you started with the pl
 
 * Follow :doc:`a guide to add a sample dataset <sample-dataset>` to your service.
 
-* Find out :doc:`how to use the web-based query editor <howto/use-query-editor>`, that comes as part of ClickHouse service.
+* Find out :doc:`how to use the web-based query editor <howto/use-query-editor>`, that comes as part of the Aiven for ClickHouse service.

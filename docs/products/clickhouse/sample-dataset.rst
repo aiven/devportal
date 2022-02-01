@@ -24,22 +24,22 @@ This command allows you to download and extract data from the URLs specified in 
 
 Once done, you should have two files available: ``hits_v1.tsv`` and ``visits_v1.tsv``.
 
-Set up the service and get the cluster URL
-------------------------------------------
+Set up the service and database
+-------------------------------
+
 If you don't yet have an Aiven for ClickHouse service, follow the steps in our :doc:`getting started guide <getting-started>` to create one.
 
-To connect to the server, use the connection details that you can find in the *Connection information* section of the *Overview* page. You will need **Host**, **Port**, **User**, and **Password**.
-
-Install the ClickHouse client
------------------------------
-We will be using the ClickHouse client to connect to the server. Follow :doc:`the separate guide <howto/use-cli>` to familiarize yourself with how to set up and start using the ClickHouse client.
-
-Create a database
-------------------
-
-When you create your service, a default database was already added. However, you can create separate databases specific to your use case. We will create a database with the name ``datasets``, keeping it the same as in the ClickHouse documentation.
+When you create a service, a default database was already added. However, you can create separate databases specific to your use case. We will create a database with the name ``datasets``, keeping it the same as in the ClickHouse documentation.
 
 To create the new database, go to the  `Aiven web console <https://console.aiven.io/>`_ and click the **Databases & Tables** tab of your service page and create the database ``datasets``.
+
+Connect to the ClickHouse database
+----------------------------------
+
+We will be using the ClickHouse client to connect to the server. Follow :doc:`the separate guide <howto/use-cli>` to familiarize yourself with how to set up and start using the ClickHouse client.
+
+To connect to the server, use the connection details that you can find in the *Connection information* section of the *Overview* page in the Aiven web console. You will need **Host**, **Port**, **User**, and **Password**.
+
 
 Create tables
 ---------------
@@ -108,12 +108,12 @@ Now that you have a dataset with two empty tables, inject data into each of the 
         --query="INSERT INTO datasets.visits_v1 FORMAT TSV"
 
 
-You should now see the two tables in your database.
+You should now see the two tables in your database and you are ready to try out some queries.
 
-Count items
-------------
+Run queries
+-----------
 
-Once the data is loaded, you can run the following command to check the number of items available::
+Once the data is loaded, you can start running some queries against the sample data you imported. For example, here is a command to query the number of items in the `hits_v1` table::
 
     docker run --interactive \
     --rm clickhouse/clickhouse-client \
@@ -125,7 +125,7 @@ Once the data is loaded, you can run the following command to check the number o
     --query="SELECT COUNT(*) FROM datasets.hits_v1"
 
 
-and::
+You can use a similar query to count how many items are in the `visits_v1` table::
 
     docker run --interactive \
     --rm clickhouse/clickhouse-client \
@@ -136,7 +136,7 @@ and::
     --secure \
     --query="SELECT COUNT(*) FROM datasets.visits_v1"
 
-You can also experiment with the available properties, and, for example, find the longest lasting sessions::
+Another example uses some additional query features to find the longest lasting sessions::
 
     docker run --interactive \
     --rm clickhouse/clickhouse-client \
@@ -149,5 +149,6 @@ You can also experiment with the available properties, and, for example, find th
 
 
 See tables in the console
----------------------------
-You can also use the database and added tables with the data in the  `Aiven web console <https://console.aiven.io/>`_. You can find them on the *Databases & Tables* tab of your service.
+-------------------------
+
+You can also use the database and added tables with the data in the `Aiven web console <https://console.aiven.io/>`_. You can find them on the *Databases & Tables* tab of your service.
