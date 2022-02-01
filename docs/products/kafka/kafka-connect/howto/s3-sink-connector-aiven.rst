@@ -1,16 +1,16 @@
-Create a S3 sink connector by Aiven
-===================================
+Create an S3 sink connector by Aiven
+====================================
 
-The Apache Kafka Connect® S3 sink connector by Aiven enables you to move data from Aiven for Apache Kafka cluster to Amazon S3 for long term storage.
+The Apache Kafka Connect® S3 sink connector by Aiven enables you to move data from an Aiven for Apache Kafka® cluster to Amazon S3 for long term storage.
 
 .. Note::
 
-    There are two version of S3 sink connector available with Aiven for Apache Kafka Connect®: One is developed by Aiven, another developed by Confluent. This article use Aiven version while the S3 sink connector by Confluent in a `dedicated page <https://help.aiven.io/en/articles/2413736-aiven-kafka-s3-sink-connector-by-confluent>`_.
+    There are two versions of S3 sink connector available with Aiven for Apache Kafka Connect®: One is developed by Aiven, another developed by Confluent. This article uses the Aiven version. The S3 sink connector by Confluent is discussed in a `dedicated page <https://help.aiven.io/en/articles/2413736-aiven-kafka-s3-sink-connector-by-confluent>`_.
 
 Prerequisites
 -------------
 
-To setup the S3 sink connector by Aiven, you need an Aiven for Apache Kafka service :doc:`with Apache Kafka Connect enabled <enable-connect>` or a :ref:`dedicated Aiven for Apache Kafka Connect cluster <apache_kafka_connect_dedicated_cluster>`. 
+To setup the S3 sink connector by Aiven, you need an Aiven for Apache Kafka® service :doc:`with Apache Kafka Connect enabled <enable-connect>` or a :ref:`dedicated Aiven for Apache Kafka Connect cluster <apache_kafka_connect_dedicated_cluster>`.
 
 Furthermore you need to follow the steps :doc:`to prepare the AWS account and S3 sink <s3-sink-prereq>` and collect the following information about the target S3 bucket upfront:
 
@@ -20,7 +20,7 @@ Furthermore you need to follow the steps :doc:`to prepare the AWS account and S3
 * ``AWS_USER_SECRET_ACCESS_KEY``: The AWS user secret access key
 
 Setup an S3 sink connector with Aiven CLI
--------------------------------------------------------
+-----------------------------------------
 
 The following example demonstrates how to setup an Apache Kafka Connect® S3 sink connector using the :ref:`Aiven CLI dedicated command <avn_service_connector_create>`.
 
@@ -45,10 +45,10 @@ Define the connector configurations in a file (we'll refer to it with the name `
 
 The configuration file contains the following entries:
 
-* ``name``: the connector name
-* ``topics``: the list of Apache Kafka® topics to sink to the S3 bucket
-* ``key.converter`` and ``value.converter``: data converters, depend on the topic data format, check the `GitHub repository documentation <https://github.com/aiven/s3-connector-for-apache-kafka>`_ for more information
-* ``aws.access.key.id``: the AWS user access key ID
+* ``name``: The connector name
+* ``topics``: The list of Apache Kafka® topics to sink to the S3 bucket
+* ``key.converter`` and ``value.converter``: Data converters, depending on the topic data format. Check the `GitHub repository documentation <https://github.com/aiven/s3-connector-for-apache-kafka>`_ for more information
+* ``aws.access.key.id``: The AWS user access key ID
 * ``aws.secret.access.key``: The AWS user secret access key
 * ``aws.s3.bucket.name``: The name of the S3 bucket
 * ``aws.s3.region``: The AWS region where the S3 bucket has been created
@@ -63,7 +63,7 @@ Check out the `GitHub repository parameters documentation <https://github.com/ai
 
 
 Create a S3 sink connector with Aiven CLI
-'''''''''''''''''''''''''''''''''''''''''''''''
+'''''''''''''''''''''''''''''''''''''''''
 
 To create the connector, execute the following :ref:`Aiven CLI command <avn_service_connector_create>`, replacing the ``SERVICE_NAME`` with the name of the existing Aiven for Apache Kafka® service where the connector needs to run:
 
@@ -81,9 +81,9 @@ With the connection in place, verify that the data is flowing to the target S3 b
 
 
 Example: define a S3 sink connector
---------------------------------------------
+-----------------------------------
 
-The example creates a S3 sink connector with the following properties:
+The example creates an S3 sink connector with the following properties:
 
 * connector name: ``my_s3_sink``
 * source topics: ``students``

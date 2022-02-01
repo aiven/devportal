@@ -1,7 +1,7 @@
 Configure AWS for the S3 sink connector
 =======================================
 
-To be able to sink the data from Apache Kafka® to S3 via the dedicated Aiven connector, you need to perform the following steps in the `AWS console <https://s3.console.aws.amazon.com/>`_:
+To be able to sink data from Apache Kafka® to S3 via the dedicated Aiven connector, you need to perform the following steps in the `AWS console <https://s3.console.aws.amazon.com/>`_:
 
 * **Create an AWS S3 bucket** where the data is going to be stored
 * **Define an IAM policy** to enable access to the S3 bucket
@@ -11,7 +11,7 @@ To be able to sink the data from Apache Kafka® to S3 via the dedicated Aiven co
 Create the AWS S3 bucket
 ------------------------
 
-You can create S3 bucket using the `dedicated AWS console page <https://s3.console.aws.amazon.com/>`_. When creating the bucket, specify bucket name and region, the other settings can be left as default. 
+You can create the S3 bucket using the `dedicated AWS console page <https://s3.console.aws.amazon.com/>`_. When creating the bucket, specify bucket name and region, the other settings can be left as default.
 
 .. Note::
 
@@ -57,9 +57,9 @@ The following is an example of AWS inline policy that can be added to the IAM us
 Create the AWS IAM user
 -----------------------
 
-Create IAM user using the `IAM AWS console page <https://console.aws.amazon.com/iamv2/home>`_. In the **Select AWS credential type** section check the **Access key - Programmatic access** option generating an **access key ID** and **secret access key**. The two information are parameters in the Apache Kafka Connect® configuration.
+Create the IAM user using the `IAM AWS console page <https://console.aws.amazon.com/iamv2/home>`_. In the **Select AWS credential type** section check the **Access key - Programmatic access** option generating an **access key ID** and **secret access key**. These are used as parameters in the Apache Kafka Connect® configuration.
 
-In the **Permission** section, associate to the user the IAM policy created in the previous step.
+In the **Permission** section, associate the IAM policy created in the previous step to the user.
 
 .. Note::
 

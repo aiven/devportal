@@ -1,7 +1,7 @@
 S3 sink connector naming and data formats
 =========================================
 
-The Apache Kafka Connect® S3 sink connector enables you to move data from Aiven for Apache Kafka cluster to Amazon S3 for long term storage. The following document describes advanced parameters defining the naming and data formats.
+The Apache Kafka Connect® S3 sink connector enables you to move data from an Aiven for Apache Kafka cluster to Amazon S3 for long term storage. The following document describes advanced parameters defining the naming and data formats.
 
 
 S3 naming format
@@ -17,9 +17,9 @@ The placeholders are the following:
 
 * ``AWS_S3_PREFIX``: Can be any string and use placeholders like ``{{ utc_date }}`` and ``{{ local_date }}`` to create different files for each date.
 * ``TOPIC_NAME``: Name of the topic to be pushed to S3
-* ``PARTITION_NUMBER``: topic partitions number
-* ``START_OFFSET``: file starting offset
-* ``FILE_EXTENSION``: the file extension depends on the compression defined in the ``file.compression.type`` parameter. The ``gz`` extension is generated when using the ``gzip`` compression.
+* ``PARTITION_NUMBER``: Topic partitions number
+* ``START_OFFSET``: File starting offset
+* ``FILE_EXTENSION``: The file extension depends on the compression defined in the ``file.compression.type`` parameter. The ``gz`` extension is generated when using the ``gzip`` compression.
 
 .. Tip::
 
