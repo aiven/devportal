@@ -46,6 +46,10 @@ To learn data streaming, you need a continuous flow of data and for that you can
 
     docker build -t fake-data-producer-for-apache-kafka-docker .
 
+.. Tip::
+
+    Every time you change any parameters in the ``conf/env.conf`` file, you need to rebuild the Docker image to take them into use.
+
 6. Start the streaming data flow with:
 
 ::
