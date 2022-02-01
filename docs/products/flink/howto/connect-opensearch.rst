@@ -3,7 +3,7 @@ Create an OpenSearch®-based Apache Flink® table
 
 To build data pipelines, Apache Flink® requires source and target data structures to `be mapped as Flink tables <https://ci.apache.org/projects/flink/flink-docs-release-1.13/docs/dev/table/sql/create/#create-table>`_. This functionality can be achieved via the `Aiven console <https://console.aiven.io/>`_ or :doc:`Aiven CLI </docs/tools/cli/service/flink>`.
 
-A Flink table can be defined over an existing or new Aiven for OpenSearch® index to be able to sink streaming data. To define a table over an OpenSearch® index, the index name and column data formats need to be defined, together with the Flink table name to use as reference when building data pipelines.
+A Flink table can be defined over an existing or new Aiven for OpenSearch® index, to sink streaming data. To define a table over an OpenSearch® index, the index name and column data formats need to be defined, together with the Flink table name to use as reference when building data pipelines.
 
 .. Warning:: 
 
@@ -23,7 +23,7 @@ To create an Apache Flink table based on an Aiven for OpenSearch® index via Aiv
 
 2. Select the **Data Tables** sub-tab and select the Aiven for OpenSearch® integration to use
 
-3. Select the Aiven for OpenSearch® service and the **index** to be used as target for the data pipeline. If you want to use a new index that does not yet exist, write the index name.
+3. Select the Aiven for OpenSearch® service and the **index** to be used as target for the data pipeline. If you want to use a new index that does not yet exist, just write the index name and it will be created.
 
 4. Define the **Flink table name**; this name represents the Flink reference to the topic and will be used during the data pipeline definition
 
@@ -54,3 +54,5 @@ We can define a ``metrics-out`` Apache Flink® table with:
     hostname VARCHAR,
     usage DOUBLE,
     occurred_at BIGINT
+
+Once clicked on the **Create** button, the ``metrics_out`` table should be visible in the table browser
