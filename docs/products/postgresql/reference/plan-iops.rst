@@ -1,7 +1,7 @@
 IOPS capability of plans
 ========================
 
-This article will explain what is the typical IOPS(Input/output Operations Per Second) capability used for common plans in Aiven for PostgreSQL, where you can better provision your services.
+When creating or updating an Aiven service, you can choose the plan, driving the amount of resources available. The type of virtual machines created depends by the cloud provider chosen, and each one has different IOPS (Input/output Operations Per Second) limits. This reference provides the mapping between the common plans in Aiven for PostgreSQL and the related virtual machine types in the major clouds.
 
 Hobbyist
 ''''''''
@@ -71,7 +71,7 @@ Startup
       - not available
     * - **startup-512 compute-optimized**   
       - ``m5.2xlarge``           
-      - not available           
+      - ``n2d-standard-8``           
       - not available
     * - **startup-512 storage-optimized**      
       - ``m5.large``             
@@ -79,7 +79,7 @@ Startup
       - not available
     * - **startup-512 io-optimized**          
       - ``i3.large``             
-      - not available           
+      - ``n2d-standard-2``           
       - not available
     * - **startup-896**                        
       - not available        
@@ -90,10 +90,10 @@ Startup
 Business and premium
 '''''''''''''''''''''
 
-The cloud instance types in the Business and premium plans are equal to the startup ones. The difference is the cluster size with 2 nodes for Business plans and 3 node high availability set for premium plans.
+The cloud instance types in the Business and premium plans are equal to the startup ones. The difference is the cluster size with 2 nodes for Business plans and 3 node high availability set for Premium plans.
 
-Single node capacity
-''''''''''''''''''''
+Single node IOPS capacity
+'''''''''''''''''''''''''
 
 The single node IOPS limitation detail can be found in the cloud vendor dedicated documentation:
 
