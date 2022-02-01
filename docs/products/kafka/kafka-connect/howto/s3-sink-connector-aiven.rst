@@ -62,7 +62,7 @@ The configuration file contains the following entries:
 Check out the `GitHub repository parameters documentation <https://github.com/aiven/aiven-kafka-connect-s3>`_ for the full list of configuration options.
 
 
-Create a S3 sink connector with Aiven CLI
+Create an S3 sink connector with Aiven CLI
 '''''''''''''''''''''''''''''''''''''''''
 
 To create the connector, execute the following :ref:`Aiven CLI command <avn_service_connector_create>`, replacing the ``SERVICE_NAME`` with the name of the existing Aiven for Apache Kafka® service where the connector needs to run:
