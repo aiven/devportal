@@ -2,6 +2,7 @@ Authentication tokens
 =====================
 
 An authentication token allows a user to programmatically access resources instead of using their username-password. Unlike the username-password combination that has a longer shelf life (in some case, they never expire); you can limit how long an authentication token is valid for or revoke it completely.
+Unlike a username-password, multiple tokens can be active at the time. This way, you can create a token for a specific use case and revoke the token when the project is finished.
 
 .. mermaid::
 
@@ -20,14 +21,9 @@ These tokens are set to expire after 30 days (subject to change) but the expiry 
 Token counts
 ------------
 
-The system has hard limits for how many valid authentication tokens are allowed per user. This limit is different for tokens that are created as a result of sign in operation and for tokens created explicitly; the limit for explicitly created tokens is small but the system never invalidates the tokens unless they expire or they are explicitly revoked. For automatically created tokens the limit is higher but when the limit is reached the system automatically deletes tokens that have been used least recently to avoid going above the limit.
+The system has hard limits for how many valid authentication tokens are allowed per user. This limit is different for tokens that are created as a result of sign in operation and for tokens created explicitly. The max token count is **10** for user created tokens but the system never invalidates the tokens unless they expire or they are explicitly revoked. For automatically created tokens the limit is **1000** but when this limit is reached the system automatically deletes tokens that have been used least recently to avoid going above the limit.
 
 Therefore, an old token can stop working even if it hasn't expired nor been explicitly revoked. To avoid running into problems with this behavior you should always make sure you sign out after sign in instead of just discarding your authentication token. This is mostly relevant for automation which automatically signs in. The Aiven web console automatically revokes current token when signing out and the Aiven command line client also provides a sign out command (avn user logout).
-
-Note about old authentication tokens
-------------------------------------
-
-The sign in API call used to hand out tokens that were not explicitly tracked and couldn't be individually revoked (prior to 2018-06-25). These old tokens remain valid and become automatically tracked whenever they're used so that they can be revoked. If the tokens have not been used they will not appear in the list of currently valid tokens though they will still work if used unless the revoke all action is used. These tokens, if used, also count towards maximum token quota.
 
 Known limitations
 -----------------
