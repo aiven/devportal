@@ -32,6 +32,10 @@ To learn data streaming, you need a continuous flow of data and for that you can
     --max-age-seconds 3600                                  \
     --json | jq -r '.[].full_token'
 
+.. Tip::
+
+    The above command uses `jq <https://stedolan.github.io/jq/>`_ to parse the result of the Aiven CLI command. If you don't have jq installed, you can remove the ``| jq -r '.[].full_token'`` section from the above command and parse the JSON result manually to extract the access token.
+
 4. Edit the ``conf/env.conf`` file filling the following placeholders:
 
 * ``my_project_name``: the name of your Aiven project
