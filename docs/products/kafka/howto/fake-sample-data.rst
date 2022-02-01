@@ -7,7 +7,7 @@ Learning streaming is way more fun with data, so to get you started on your Apac
 
     The following example is based on `Docker <https://www.docker.com/>`_ images, which require `Docker <https://www.docker.com/>`_ or `Podman <https://podman.io/>`_ to be executed.
 
-The following example assumes you have an Aiven for Apache Kafka® service running. You can create one following the :doc:`dedicated istructions <../getting-started>`.
+The following example assumes you have an Aiven for Apache Kafka® service running. You can create one following the :doc:`dedicated instructions <../getting-started>`.
 
 
 Fake data generator on Docker
@@ -41,7 +41,7 @@ To learn data streaming, you need a continuous flow of data and for that you can
 * ``my_project_name``: the name of your Aiven project
 * ``my_kafka_service_name``: the name of your Aiven for Apache Kafka instance
 * ``my_topic_name``: the name of the target topic, can be any name
-* ``my_aiven_email``: the email address used as username to log in Aiven services
+* ``my_aiven_email``: the email address used as username to log in to Aiven services
 * ``my_aiven_token``: the access token generated during the previous step
 
 5. Build the Docker image with:
@@ -52,7 +52,7 @@ To learn data streaming, you need a continuous flow of data and for that you can
 
 .. Tip::
 
-    Every time you change any parameters in the ``conf/env.conf`` file, you need to rebuild the Docker image to take them into use.
+    Every time you change any parameters in the ``conf/env.conf`` file, you need to rebuild the Docker image to start using them.
 
 6. Start the streaming data flow with:
 
