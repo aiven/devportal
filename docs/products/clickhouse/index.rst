@@ -54,4 +54,4 @@ If you are new to ClickHouse, try these resources to get you started with the pl
 
 * Follow :doc:`a guide to add a sample dataset <sample-dataset>` to your service.
 
-* Find out :doc:`how to use the web-based query editor <howto/use-query-editor>`, that comes as part of the Aiven for ClickHouse service.
+* Find out :doc:`how to use the web-based query editor <howto/use-query-editor>`, that comes as part of the ClickHouse service.

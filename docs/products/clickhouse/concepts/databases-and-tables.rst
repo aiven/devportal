@@ -10,7 +10,7 @@ Databases and tables are at the core of any **Database Management System**. Clic
 Databases
 ---------
 
-Creating tables in an Aiven for ClickHouse service can only be done via the Aiven platform; the `admin` user is not allowed to create databases directly for security and reliability reasons. However, you can create a new database through the web interface of `Aiven console <https://console.aiven.io/>`_:
+Creating databases in an Aiven for ClickHouse service can only be done via the Aiven platform; the `admin` user is not allowed to create databases directly for security and reliability reasons. However, you can create a new database through the web interface of `Aiven console <https://console.aiven.io/>`_:
 
 #. Log in to `Aiven console <https://console.aiven.io/>`_ and select your service.
 #. On the service page open the tab *Databases & Tables*.
@@ -19,7 +19,7 @@ Creating tables in an Aiven for ClickHouse service can only be done via the Aive
 
 .. note::
 
-    If you try adding a new database to **Aiven for ClickHouse** through the command line, you'll encounter an exception ``Not enough privileges.(ACCESS_DENIED)``. Please use the Aiven platform, either the web interface or one of our other tools, to add a new database.
+    If you try adding a new database to **Aiven for ClickHouse** through the command line, you'll encounter an exception ``Not enough privileges.(ACCESS_DENIED)``. Please use the Aiven web interface to add a new database.
 
 Tables
 ------
