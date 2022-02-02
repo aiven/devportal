@@ -48,7 +48,6 @@ hyperloglogs
 hypertable
 Instana
 Java
-jq
 Kaggle
 Kafdrop
 Kafka
