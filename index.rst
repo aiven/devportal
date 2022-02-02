@@ -101,6 +101,13 @@ Learn about the Aiven platform
 
     |icon-mysql| **MySQL** Popular and much-loved relational database platform.
 
+    +++
+
+    .. link-button:: docs/products/mysql/index
+        :type: ref
+        :text: Read more
+        :classes: stretched-link
+
     ---
 
     |icon-influxdb| **InfluxDB** Specialist time series database, with good tooling support.
