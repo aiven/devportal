@@ -33,6 +33,9 @@ Aiven Developer uses the `Diátaxis Framework <https://diataxis.fr/>`_ as the ba
 * **Reference** starts with an overview of what can be found in this section, and then usually a list of some kind. We use this type of article for lists of extensions, configuration parameters, and that sort of bookmark-it-for-reference type of content.
     - Example: https://developer.aiven.io/docs/products/kafka/reference/advanced-params.html
 
+* **Tutorial** describes a complete project for a developer to build themselves. It usually covers more than one product and/or 3rd party tool, presents a scenario, and enables a developer to create a working system by the end of the tutorial.
+    - Template: `Tutorial template`_
+
 Pull request process
 --------------------
 
@@ -226,3 +229,41 @@ Title template: *About [subject]* (if this is a background information for a tas
     (optional) Share some links related to the topic. This could be more detailed upstream documentation, a task article that uses this knowledge. More links are good!
 
 
+Tutorial template
+'''''''''''''''''
+
+Title template: *[Verb] a [noun] with [insert list of technologies here]* , e.g. *Fit an OpenSearch box to your Flask app* or *Build a temperature monitoring dashboard with InfluxDB and Grafana*
+
+::
+
+   Tutorial title 
+   ###############
+
+   Explain what the user will be building in this tutorial. Include the problem we are solving and the components or tools that will be used to solve it. Remember that the example "problem" can be silly as long as it is easy to understand. Random pet name generator, office tea rota, plant watering system ... you decide. Whatever it is, the user knows where they are going and what they will see when they get there.
+
+   Pre-requisites
+   --------------
+
+   If there are tools, accounts, licenses or particular dependencies that need to be installed before we start, let's get those out of the way first. If it requires Python 22 and the user doesn't live in the future, they know not to start spinning up all the other pieces of the puzzle. Don't forget to prompt the user to sign up for Aiven with the free trial, if appropriate.
+
+   First component
+   ---------------
+
+   Introduce the first piece of the puzzle. Tutorials need to be as logical as possible, which means making as few steps, or as few context changes as possible. For example, don't download a data file, create a database, install some code dependencies, import the data into the file, set some code up locally and then go back to the database for credentials. Instead, make the database, get and import the data, then set up the code with dependencies and connection information to build the app.
+
+   At each stage, if the user can DO something, that builds confidence and a sense of achievement. So if there's a "SHOW TABLES" command or something else to affirm that something is going well, have them do that, and explain how it fits the big picture, before you move on.
+
+   Second component
+   ----------------
+
+   There will be many sections to a tutorial. Remember that titles should be things like "Create some initial data" or "Set up the indexes". These subheadings are shown in the secondary navigation and really help a user to navigate through a longer tutorial, either looking for something particular or just trying to keep track of where they got up to. If you are adding code snippets, make sure that it is clear with each snippet where in the project it should be added, and what its function is.
+
+   Look it works!
+   --------------
+
+   Don't forget to tell the user how to run their finished project, or how to see it in action! We sometimes call this the "ta-da!" moment. Some sample output or a screenshot might also be appropriate at this point. Then go on to recap what problem we solved, and what technology we used and why.
+
+   Further reading
+   ---------------
+
+   This optional section can be added if we have extra resources that are similar or related, that we think someone might want to read. You can think of it as a very low tech recommendations engine.
