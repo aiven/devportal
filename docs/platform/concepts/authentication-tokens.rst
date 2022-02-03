@@ -1,8 +1,10 @@
 Authentication tokens
 =====================
 
-An authentication token allows a user to programmatically access resources instead of using their username-password. Unlike the username-password combination that has a longer shelf life (in some case, they never expire); you can limit how long an authentication token is valid for or revoke it completely.
-Unlike a username-password, multiple tokens can be active at the time. This way, you can create a token for a specific use case and revoke the token when the project is finished.
+An authentication token allows a user to programmatically access resources instead of using their username-password. The usage of authentication tokens has the following benefits compared to username and password:
+
+- Multiple tokens can be generated for different apps or use cases unlike a single username-password for everything.
+- Short lifespan of authentication tokens reduce the security risk of being exposed.
 
 .. mermaid::
 
