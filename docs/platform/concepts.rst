@@ -3,6 +3,10 @@ Concepts
 
 Learn about some of the key concepts for working with Aiven platform:
 
+* :doc:`Authentication tokens </docs/platform/concepts/authentication-tokens>`.
+
+  Learn about authentication tokens and how to use them to programmatically access Aiven resources.
+
 * :doc:`Beta services </docs/platform/concepts/beta_services>`.
 
   What to expect from the early versions of our new services and upgrades.
