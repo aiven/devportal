@@ -1,27 +1,22 @@
-Using Aiven with Prometheus
-===========================
-
-.. _h_6a84674413:
-
-Background
-----------
+Use Prometheus with Aiven
+=========================
 
 Prometheus is an open-source systems monitoring and alerting toolkit. It
-implements in-memory and persistent storage model for metrics as well as
+implements an in-memory and persistent storage model for metrics as well as
 a query language for accessing the metrics.
 
-The metrics delivery model of Prometheus is a somewhat atypical pull
+The metrics delivery model of Prometheus is a pull
 model where the Prometheus server connects to HTTP servers running on
 the nodes being monitored and pulls the metrics from them. While this
-makes the service discovery more of an issue than with the more common
+makes the service discovery more of an challenge than using the more common
 push approach, it does have the benefit of making the metrics available
 not just for Prometheus but for any app that can read the Prometheus
 format from the HTTP server running on Aiven nodes.
 
-Enabling Prometheus support in Aiven
-------------------------------------
+Enable Prometheus support on your Aiven project
+-----------------------------------------------
 
-To enable the metrics endpoints that Prometheus can query you need to
+Aiven offers Prometheus endpoints for your services. To enable this feature,
 follow the steps below:
 
 #. | Navigate to the project ``Service Integrations`` section from the
@@ -66,8 +61,8 @@ case, the property **public_access.prometheus** needs to be enabled in
 the Advanced Configurations of the service. In this way it becomes
 possible to access metrics by using the public hostname.
 
-Configuring your Prometheus server
------------------------------
+Configure the Prometheus server
+--------------=----------------
 
 To make Prometheus fetch metrics from Aiven servers you'll need to add a
 new scrape configuration with appropriate basic auth parameters (as seen on the
@@ -138,7 +133,7 @@ Configurations of the service.
 .. image:: /images/platform/integrations/prometheus-advanced-configurations.png
     :alt: Advanced configuration for accessing Prometheus in a VPC
 
-Further Reading:
+Further reading:
 ----------------------------------------
 
 * `Aiven M3DB & Grafana integration <https://help.aiven.io/services/integrations/getting-started-with-service-integrations>`_
