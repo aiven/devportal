@@ -12,10 +12,10 @@ This example involves creating an Apache Kafka® source topic that provides a st
 
     graph LR;
 
-        id1(Kafka)-- metrics stream -->id3(Flink);
-        id2(PostgreSQL)-- threshold data -->id3;
-        id3-. filtered data .->id4(Kafka);
-        id3-. filtered data .->id5(PostgreSQL);
+        id1("Kafka®")-- metrics stream -->id3("Flink®");
+        id2("PostgreSQL®")-- threshold data -->id3;
+        id3-. filtered data .->id4("Kafka®");
+        id3-. filtered data .->id5("PostgreSQL®");
 
 The article includes the steps that you need when using the `Aiven web console <https://console.aiven.io>`_ along with a few different samples of how you can set thresholds for alerts. For connecting to your PostgreSQL® service, this example uses the `Aiven CLI <https://github.com/aiven/aiven-client>`_ calling `psql <https://www.postgresql.org/docs/current/app-psql.html>`_, but you can also use other tools if you prefer.
 
@@ -112,8 +112,8 @@ This setup uses a fixed threshold to filter any instances of high CPU load to a 
 
     graph LR;
 
-        id1(Kafka source)-- metrics stream -->id2(Flink job);
-        id2-- high CPU -->id3(Kafka sink);
+        id1("Kafka® source")-- metrics stream -->id2("Flink® job");
+        id2-- high CPU -->id3("Kafka® sink");
 
 For this setup, you need to configure a source table to read the metrics data from your Kafka topic, a sink table to send the processed messages to a separate Kafka topic, and a Flink job to process the data.
 
@@ -171,8 +171,8 @@ This setup measures CPU load over a configured time using :doc:`windows </docs/p
 
     graph LR;
 
-        id1(Kafka source)-- timestamped metrics -->id3(Flink job);
-        id3-- 30-second average CPU -->id4(Kafka sink);
+        id1("Kafka® source")-- timestamped metrics -->id3("Flink® job");
+        id3-- 30-second average CPU -->id4("Kafka® sink");
 
 This uses the same ``CPU_IN`` Kafka source table that you created in the previous section. In addition, you need a new sink table to send the processed messages to a separate Kafka topic and a new Flink job to process the data.
 
@@ -214,9 +214,9 @@ This setup uses host-specific thresholds that are stored in PostgreSQL® as a ba
 
     graph LR;
 
-        id1(Kafka source)-- metrics stream -->id3(Flink job);
-		id2(PosgreSQL source)-- host-specific thresholds -->id3;
-        id3-- host with high CPU -->id4(Kafka sink);
+      id1("Kafka® source")-- metrics stream -->id3("Flink® job");
+		id2("PosgreSQL® source")-- host-specific thresholds -->id3;
+      id3-- host with high CPU -->id4("Kafka® sink");
 
 This uses the same ``CPU_IN`` Kafka source table that you created earlier. In addition, you need a new sink table to send the processed messages to a separate Kafka topic, a source table to get the PostgreSQL® threshold data, and a new Flink job to process the data.
 
@@ -297,9 +297,9 @@ This setup highlights the instances where the average CPU load over a :doc:`wind
 
     graph LR;
 
-        id1(Kafka source)-- timestamped metrics -->id3(Flink job);
-		   id2(PosgreSQL source)-- host-specific thresholds -->id3;
-        id3-- high 30-second average CPU -->id4(PostgreSQL sink);
+      id1("Kafka® source")-- timestamped metrics -->id3("Flink® job");
+      id2("PosgreSQL® source")-- host-specific thresholds -->id3;
+      id3-- high 30-second average CPU -->id4("PostgreSQL® sink");
 
 This uses the same ``CPU_IN`` Kafka source table and ``SOURCE_THRESHOLDS`` PostgreSQL® source table that you created earlier. In addition, you need a new sink table to store the processed data in PostgreSQL® and a new Flink job to process the data.
 
