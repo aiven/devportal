@@ -5,13 +5,12 @@ Prometheus is an open-source systems monitoring and alerting toolkit. It
 implements an in-memory and persistent storage model for metrics as well as
 a query language for accessing the metrics.
 
-The metrics delivery model of Prometheus is a pull
-model where the Prometheus server connects to HTTP servers running on
-the nodes being monitored and pulls the metrics from them. While this
-makes the service discovery more of an challenge than using the more common
-push approach, it does have the benefit of making the metrics available
-not just for Prometheus but for any app that can read the Prometheus
-format from the HTTP server running on Aiven nodes.
+The metrics delivery model of Prometheus is a pull model where the Prometheus
+server connects to HTTP servers running on the nodes being monitored and pulls
+the metrics from them. While this makes the service discovery more of an
+challenge than using the more common push approach, it does have the benefit of
+making the metrics available not just for Prometheus but for any app that can
+read the Prometheus format from the HTTP server running on Aiven nodes.
 
 Enable Prometheus support on your Aiven project
 -----------------------------------------------
@@ -36,7 +35,7 @@ follow the steps below:
      ``Use integration``
 
 #. | Confirm you have selected the Prometheus endpoint configured
-     earlier in Step 2 and click ``Enable``
+     earlier in step 2 and click ``Enable``
 
    .. image:: /images/platform/integrations/prometheus-endpoint-select.png
       :alt: Dialog box to select already configured Prometheus endpoints
@@ -50,36 +49,72 @@ follow the steps below:
    .. image:: /images/platform/integrations/prometheus-service-info.png
       :alt: Screenshot of Prometheus connection information in service overview page
 
+At this point, the system will start an HTTP server on all nodes of the service
+that provide access to the metrics. Note that there can be roughly one minute
+delay until the metrics are available.
+
+Accessing Prometheus in a VPC
+''''''''''''''''''''''''''''''
+
+If you use a VPC in your projects, then the property
+``public_access.prometheus`` needs to be enabled in the **Advanced
+Configuration** of the service whose metrics you want to access.
+
+.. image:: /images/platform/integrations/prometheus-advanced-configurations.png
+    :alt: Advanced configuration for accessing Prometheus in a VPC
+
+Configure Prometheus
+--------------------
+
+Now that Aiven is exposing endpoints for your services, add a scrape
+configuration to Prometheus for the servers you want to pull data from. The
+examples in this section show how to configure for both single-node and
+multiple-node services.
+
+For services with a single node
+'''''''''''''''''''''''''''''''
+
+For single-node services, configure a ``scrape_config`` entry and the following settings:
+
+* Basic auth details can be found on the **Prometheus** tab of the **Service Overview** page.
+
+* The **Service URI** can also be found on the **Prometheus** tab of the **Service Overview** page.
+
+* The location of the CA cert; the certificates are signed by the Aiven project CA so you will need to download it from the **Service Overview** page.
+
+.. note::
+
+    You can download the CA certificate using the 
+    `Aiven command line client <https://github.com/aiven/aiven-client/>`_
+    and the command ``avn project ca-get --target-filepath ca.pem``
+
+Your ``scrape_config`` job entry in ``prometheus.yml`` would look something like this::
+
+   scrape_configs:
+     - job_name: aivenmetrics
+       scheme: https
+       basic_auth:
+         username: <PROMETHEUS_USERNAME>
+         password: <PROMETHEUS_PASSWORD>
+       tls_config:
+         ca_file: ca.pem
+       static_configs:
+         - targets: ["<PROMETHEUS_SERVICE_URI>:<PROMETHEUS_SERVICE_PORT"]
+
+With the configuration in place, Prometheus will start pulling metrics from your services.
 
 
-After finishing these steps, the system will start an HTTP server on all
-nodes of the service that provide access to the metrics. Note that there
-can be roughly one minute delay until the metrics are available.
+For services with multiple nodes
+''''''''''''''''''''''''''''''''
 
-Often the users have VPC enabled in their projects. If this was the
-case, the property **public_access.prometheus** needs to be enabled in
-the Advanced Configurations of the service. In this way it becomes
-possible to access metrics by using the public hostname.
-
-Configure the Prometheus server
---------------=----------------
-
-To make Prometheus fetch metrics from Aiven servers you'll need to add a
-new scrape configuration with appropriate basic auth parameters (as seen on the
-Service Integrations page) and identify the servers to pull data from.
-
-For Services with multiple nodes
-'''''''''''''''''''''''''''''''''''''''''
-
-For any services that consist of multiple nodes and each node doesn't
-have its own unique DNS name, you need to use the ``dns_sd_configs``
-option for defining the servers with DNS type set to ``A`` . This causes
-Prometheus to resolve all the IP addresses associated with the DNS name
-and query all of those IP addresses directly. A side effect of using
-this IP resolution is that Prometheus expects the TLS certificate to be
-bound to the IP address of the hosts, not to the DNS name, so to make
-the connection work you must enable the ``insecure_skip_verify``
-setting. See the below snippet for an example configuration.
+For any services that consist of multiple nodes without a DNS name for each
+node, use the ``dns_sd_configs`` option to define the servers with DNS type set
+to ``A`` . This causes Prometheus to resolve all the IP addresses associated
+with the DNS name and query all of those IP addresses directly. A side effect
+of using this IP resolution is that Prometheus expects the TLS certificate to
+be bound to the IP address of the hosts, not to the DNS name, so to make the
+connection work you must enable the ``insecure_skip_verify`` setting. See the
+below snippet for an example configuration.
 
 ::
 
@@ -91,27 +126,13 @@ setting. See the below snippet for an example configuration.
          password: <PROMETHEUS_PASSWORD>
        dns_sd_configs:
          - names:
-             - <SERVICE_URI>
+             - <PROMETHEUS_SERVICE_URI>
            type: A
-           port: 9273
+           port: <PROMETHEUS_SERVICE_PORT>
        tls_config:
          insecure_skip_verify: true
 
 
-For services with a single node
-'''''''''''''''''''''''''''''''''''
-
-For services where a DNS name resolves to only single node using
-``static_configs`` instead of ``dns_sd_configs`` may be preferable as it
-allows doing all the regular certificate checks. Do note, however, that
-the certificate provided by the Aiven servers is signed by the
-Aiven project CA instead of a generally trusted CA and you must set the
-``ca_file`` setting under ``tls_config`` to point to that file. For most
-services it can be downloaded from the service overview page in Aiven
-web console or alternatively the `Aiven command line
-client <https://github.com/aiven/aiven-client/>`_ can be used (
-``avn project ca-get --target-filepath TARGET_FILEPATH`` ). The file is
-identical for all services in the same project.
 
 View full list of metrics
 ''''''''''''''''''''''''''
@@ -123,18 +144,10 @@ available via the Prometheus integration. You can see the full list of metrics `
 
 .. note:: Note that for some services the metrics provided by different hosts may vary depending on the host role. Most notably for Kafka only one of the nodes provides metrics related to consumer group offsets.
 
-Accessing Prometheus in a VPC
-''''''''''''''''''''''''''''''
+Other integrations
+------------------
 
-Often the users have VPC enabled in their projects. If this was the case, the
-property ``public_access.prometheus`` needs to be enabled in the Advanced
-Configurations of the service.
-
-.. image:: /images/platform/integrations/prometheus-advanced-configurations.png
-    :alt: Advanced configuration for accessing Prometheus in a VPC
-
-Further reading:
-----------------------------------------
+Here are some links to learn more about integrations with Aiven:
 
 * `Aiven M3DB & Grafana integration <https://help.aiven.io/services/integrations/getting-started-with-service-integrations>`_
 
