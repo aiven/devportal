@@ -55,17 +55,23 @@ Size of shard impacts the recovery time after a failure, shard sizes between 10G
 Aiven for OpenSearch takes a snapshot once every hour. With shards exceeding recommend configuration, the cluster is continuously taking new backups and deleting old backups from storage. This naturally affects the service performance, as part of the capacity is continuously allocated to managing backups.
 
 
-OpenSearch Plan Calculator
+OpenSearch plan calculator
 --------------------------
 
-This OpenSearch plan calculator can be used online or downloaded:
+To help calculate a good shard configuration to use, we've shared our plan
+calculator. By adding the values you know, about the nodes and RAM in your
+setup, you can get some recommended starter values to use for your own setup.
+This OpenSearch plan calculator can be used online or downloaded.
 
-`View only on Google Docs <https://docs.google.com/spreadsheets/d/1wJwzSdnQiGIADcxb6yx1cFjDR0LEz-pg13U-Mt2PEHc>`_ - Make a copy to your Google drive to use it.
-
-`Download XLSX <https://docs.google.com/spreadsheets/d/1wJwzSdnQiGIADcxb6yx1cFjDR0LEz-pg13U-Mt2PEHc/export>`_ - Download and use it locally.
+.. image:: /images/products/opensearch/opensearch-plan-calculator.png
+   :alt: Screenshot of the spreadsheet: enter your information and get recommendations.
 
 Yellow cells such as ``data node count``, ``CPUs``, ``RAM``, ``Max Shard Size`` and etc. are input values to calculate recommendation 
 values for plan sizing.
+
+* `View on Google Docs <https://docs.google.com/spreadsheets/d/1wJwzSdnQiGIADcxb6yx1cFjDR0LEz-pg13U-Mt2PEHc>`_ - Make a copy to your Google drive to use it.
+
+* `Download XLSX <https://docs.google.com/spreadsheets/d/1wJwzSdnQiGIADcxb6yx1cFjDR0LEz-pg13U-Mt2PEHc/export>`_ - Download and use it locally.
 
 
 Using patterns to set index retention
