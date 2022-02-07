@@ -27,7 +27,7 @@ For this example you will need:
 
 * JDK 1.8+
 
-* MySQL JDBC Driver which could be downloaded manually from https://dev.mysql.com/downloads/connector/j/
+* MySQL JDBC Driver which could be downloaded manually from `MySQL Community Downloads <https://dev.mysql.com/downloads/connector/j/>`_
   or it could be downloaded with maven like::
 
     mvn org.apache.maven.plugins:maven-dependency-plugin:2.8:get -Dartifact=mysql:mysql-connector-java:8.0.28:jar -Ddest=mysql-driver-8.0.28.jar
