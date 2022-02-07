@@ -24,7 +24,7 @@ If there is ``maven`` installed then download of ``jredis`` and dependencies and
     && mvn org.apache.maven.plugins:maven-dependency-plugin:2.8:get -Dartifact=org.slf4j:slf4j-api:1.7.35:jar -Ddest=lib/slf4j-api-1.7.35.jar \
     && mvn org.apache.maven.plugins:maven-dependency-plugin:2.8:get -Dartifact=com.google.code.gson:gson:2.8.9:jar -Ddest=lib/gson-2.8.9.jar
 
-If there is no maven then download these dependencies from https://search.maven.org and put them to ``lib`` folder
+If there is no maven then download these dependencies from `Maven Central Repository <https://search.maven.org>`_ and put them to ``lib`` folder
 
 Code
 ''''
@@ -34,7 +34,7 @@ Create a new file named ``RedisExample.java``:
 
 This code creates a key named ``key`` with the value ``hello world`` and no expiration time. Then, it gets the key back from Redis and prints its value.
 
-Replace the placeholder with the Redis URI and compile and run the code::
+Replace the placeholder with the **Redis URI** and compile and run the code::
 
     javac -cp lib/*:. RedisExample.java && java -cp lib/*:. RedisExample REDIS_URI
 
