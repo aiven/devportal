@@ -37,10 +37,19 @@ To help you with migration, we provided some `code migration examples <https://g
 Java and Spring Boot
 ~~~~~~~~~~~~~~~~~~~~
 
-`Java clients <https://opensearch.org/docs/latest/clients/java-rest-high-level/>`_ are forks of the Elasticsearch libraries. To migrate change the Maven or Gradle dependencies, and update the import statements for the DOA layer. You can find an `example code change <https://github.com/aiven/opensearch-migration-examples/commit/7453d659c06b234ae7f28f801a074e459c2f31c8>`_ in our repository.
+`Java client
+<https://opensearch.org/docs/latest/clients/java-rest-high-level/>`_ is a fork
+of the Elasticsearch library. To migrate change the Maven or Gradle dependencies, and update the import statements for the DOA layer. You can find an `example code change <https://github.com/aiven/opensearch-migration-examples/commit/7453d659c06b234ae7f28f801a074e459c2f31c8>`_ in our repository.
 
 NodeJS
 ~~~~~~
 
-`Node libraries <https://opensearch.org/docs/latest/clients/javascript/>`_ are forks of the Elasticsearch libraries. The only required change should be the dependency in ``package.json`` and the
+`Node library <https://opensearch.org/docs/latest/clients/javascript/>`_ is a fork of the Elasticsearch library. The only required change should be the dependency in ``package.json`` and the
 ``require`` or ``import`` statements. You can see an `example migration code <https://github.com/aiven/opensearch-migration-examples/tree/main/node-client-migration>`_ in our repository.
+
+
+Python
+~~~~~~
+
+`Python client library <https://opensearch.org/docs/latest/clients/python>`_ is a fork of the Elasticsearch libraries. The only required change should be the dependencies and the
+``require`` or ``import`` statements. You can check an `example migration code <https://github.com/aiven/opensearch-migration-examples/tree/main/python-client-migration>`_ in our repository.
