@@ -320,6 +320,7 @@ entries:
               - file: docs/products/redis/howto/connect-node
               - file: docs/products/redis/howto/connect-php
               - file: docs/products/redis/howto/connect-python
+              - file: docs/products/redis/howto/connect-java
           - file: docs/products/redis/howto/list-dba-tasks
             entries:
               - file: docs/products/redis/howto/configure-acl-permissions
