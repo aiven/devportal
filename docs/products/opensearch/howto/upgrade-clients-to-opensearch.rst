@@ -42,5 +42,12 @@ Java and Spring Boot
 NodeJS
 ~~~~~~
 
-`Node libraries <https://opensearch.org/docs/latest/clients/javascript/>`_ are forks of the Elasticsearch libraries. The only required change should be the dependency in ``package.json`` and the
+`Node library <https://opensearch.org/docs/latest/clients/javascript/>`_ is a fork of the Elasticsearch library. The only required change should be the dependency in ``package.json`` and the
 ``require`` or ``import`` statements. You can see an `example migration code <https://github.com/aiven/opensearch-migration-examples/tree/main/node-client-migration>`_ in our repository.
+
+
+Python
+~~~~~~
+
+`Python client library <https://opensearch.org/docs/latest/clients/python>`_ is a fork from the Elasticsearch libraries. The only required change should be the dependencies and the
+``require`` or ``import`` statements. You can see an `example migration code <https://github.com/aiven/opensearch-migration-examples/tree/main/python-client-migration>`_ in our repository.
