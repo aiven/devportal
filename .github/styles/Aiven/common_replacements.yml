@@ -21,3 +21,4 @@ swap:
   "Aiven OpenSearch": "Aiven for OpenSearch"
   "Aiven ClickHouse": "Aiven for ClickHouse"
   "OpenSearch dashboards": "OpenSearch Dashboards"
+  prometheus: Prometheus

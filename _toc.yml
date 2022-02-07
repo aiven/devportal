@@ -22,6 +22,7 @@ entries:
       - file: docs/platform/howto/pause-from-cli.rst
       - file: docs/platform/howto/public-access-in-vpc.rst
       - file: docs/platform/howto/add-storage-space
+      - file: docs/platform/howto/integrations/prometheus-metrics
 
   # --------- GLOBAL -----------
   - file: docs/tools/index
