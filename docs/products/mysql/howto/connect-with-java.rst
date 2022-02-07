@@ -15,7 +15,7 @@ Variable                Description
 ------------------      -------------------------------------------------------------
 ``MYSQL_PORT``          Port number to use, from the service overview page
 ------------------      -------------------------------------------------------------
-``MYSQL_PASSWORD``      Password for avnadmin user
+``MYSQL_PASSWORD``      Password for ``avnadmin`` user
 ------------------      -------------------------------------------------------------
 ``MYSQL_DATABASE``      Database to connect
 ==================      =============================================================
@@ -27,7 +27,7 @@ For this example you will need:
 
 * JDK 1.8+
 
-* MySql jdbc Driver which could be downloaded manually from https://dev.mysql.com/downloads/connector/j/
+* MySQL JDBC Driver which could be downloaded manually from https://dev.mysql.com/downloads/connector/j/
   or it could be downloaded with maven like::
 
     mvn org.apache.maven.plugins:maven-dependency-plugin:2.8:get -Dartifact=mysql:mysql-connector-java:8.0.28:jar -Ddest=mysql-driver-8.0.28.jar
@@ -41,7 +41,7 @@ Add the following to ``MySqlExample.java``:
 .. literalinclude:: /code/products/mysql/connect.java
 
 
-This code creates a MySQL client and connects to the database. It fetches version of MySql and prints it the output.
+This code creates a MySQL client and connects to the database. It fetches version of MySQL and prints it the output.
 
 Run the code after replacement of the placeholders with values for your project::
 
