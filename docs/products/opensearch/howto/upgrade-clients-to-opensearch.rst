@@ -37,7 +37,9 @@ To help you with migration, we provided some `code migration examples <https://g
 Java and Spring Boot
 ~~~~~~~~~~~~~~~~~~~~
 
-`The Java client <https://opensearch.org/docs/latest/clients/java-rest-high-level/>`_ is a fork of Elasticsearch libraries. To migrate change the Maven or Gradle dependencies, and update the import statements for the DOA layer. You can find an `example code change <https://github.com/aiven/opensearch-migration-examples/commit/7453d659c06b234ae7f28f801a074e459c2f31c8>`_ in our repository.
+`Java client
+<https://opensearch.org/docs/latest/clients/java-rest-high-level/>`_ is a fork
+of the Elasticsearch library. To migrate change the Maven or Gradle dependencies, and update the import statements for the DOA layer. You can find an `example code change <https://github.com/aiven/opensearch-migration-examples/commit/7453d659c06b234ae7f28f801a074e459c2f31c8>`_ in our repository.
 
 NodeJS
 ~~~~~~
