@@ -253,7 +253,6 @@ entries:
           - file: docs/products/opensearch/howto/control_access_to_content
           - file: docs/products/opensearch/howto/restore_opensearch_backup
           - file: docs/products/opensearch/howto/set_index_retention_patterns
-          - file: docs/products/opensearch/howto/switch_off_automatic_replication_factor_adjustment
           - file: docs/products/opensearch/howto/opensearch-alerting-api
       - file: docs/products/opensearch/dashboards/index
         title: OpenSearch Dashboards
