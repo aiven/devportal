@@ -1,7 +1,7 @@
 Create a real-time alerting solution - Aiven CLI
 ================================================
 
-This Aiven CLI tutorial shows you an example of how to combine Aiven for Apache Flink® with Aiven for Apache Kafka® and Aiven for PostgreSQL® services to create a solution that provides real-time alerting data for CPU loads.
+This Aiven CLI tutorial shows you an example of how to combine Aiven for Apache Flink® with Aiven for Apache Kafka®, Aiven for PostgreSQL® and Aiven for OpenSearch® services to create a solution that provides real-time alerting data for CPU loads.
 
 Architecture overview
 ---------------------
@@ -15,7 +15,7 @@ This example involves creating an Apache Kafka® source topic that provides a st
         id1(Kafka)-- metrics stream -->id3(Flink);
         id2(PostgreSQL)-- threshold data -->id3;
         id3-. filtered data .->id4(Kafka);
-        id3-. filtered data .->id5(PostgreSQL);
+        id3-. filtered/aggregated data .->id5(PostgreSQL);
 
 The article includes the steps that you need when using the `Aiven CLI <https://github.com/aiven/aiven-client>`_ along with a few different samples of how you can set thresholds for alerts. For connecting to your PostgreSQL® service, this example uses the Aiven CLI calling `psql <https://www.postgresql.org/docs/current/app-psql.html>`_, but you can also use other tools if you prefer.
 
@@ -60,6 +60,16 @@ Set up Aiven services
           --plan business-4                       \
           --project PROJECT_NAME
 
+#. Run the following command to create an Aiven for OpenSearch® service named ``demo-opensearch``:
+
+   ::
+
+      avn service create demo-opensearch          \
+          --service-type opensearc                \
+          --cloud CLOUD_AND_REGION                \
+          --plan business-4                       \
+          --project PROJECT_NAME
+
 #. Run the following command to create an Aiven for Apache Flink® service named ``demo-flink``:
 
    ::
@@ -78,7 +88,7 @@ Set up Aiven services
 
          avn service integration-create           \
              --project PROJECT_NAME               \
-             --service-type flink                 \
+             --integration-type flink                 \
              -s demo-kafka                        \
              -d demo-flink
 
@@ -88,17 +98,27 @@ Set up Aiven services
 
          avn service integration-create           \
              --project PROJECT_NAME               \
-             --service-type flink                 \
+             --integration-type flink                 \
              -s demo-postgresql                   \
              -d demo-flink
+   c. Enter the following command to add the ``demo-opensearch`` service integration:
 
-   c. Enter the following command to list the integrations:
+      ::
+
+         avn service integration-create           \
+             --project PROJECT_NAME               \
+             --integration-type flink                 \
+             -s demo-opensearch                   \
+             -d demo-flink
+
+
+   d. Enter the following command to list the integrations:
 
       ::
 
          avn service integration-list demo-flink
 
-      The output should show you that both ``demo-kafka`` and ``demo-postgresql`` integrations are enabled as well as the corresponding ``integration_id`` values that you need later when creating data tables.
+      The output should show you that both ``demo-kafka``, ``demo-postgresql`` and ``demo-opensearch`` integrations are enabled as well as the corresponding ``integration_id`` values that you need later when creating data tables.
 
 
 
