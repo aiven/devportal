@@ -1,6 +1,7 @@
 _build/*
 .DS_Store
 .vscode/*
+*/.vscode
 __pycache__
 .netlify
 node_modules

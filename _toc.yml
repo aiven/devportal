@@ -15,6 +15,7 @@ entries:
       title: HowTo
       entries:
       - file: docs/platform/howto/create_new_service
+      - file: docs/platform/howto/create_new_service_user
       - file: docs/platform/howto/create_authentication_token
       - file: docs/platform/howto/download-ca-cert
       - file: docs/platform/howto/console-fork-service.rst
@@ -22,6 +23,11 @@ entries:
       - file: docs/platform/howto/pause-from-cli.rst
       - file: docs/platform/howto/public-access-in-vpc.rst
       - file: docs/platform/howto/add-storage-space
+      - file: docs/platform/howto/restrict-access
+      - file: docs/platform/howto/scale-services
+      - file: docs/platform/howto/migrate-services
+      - file: docs/platform/howto/monitoring-services
+
 
   # --------- GLOBAL -----------
   - file: docs/tools/index

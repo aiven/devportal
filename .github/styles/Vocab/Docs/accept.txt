@@ -47,6 +47,7 @@ httpie
 hyperloglogs
 hypertable
 Instana
+ip
 Java
 jq
 Kaggle
@@ -88,6 +89,7 @@ Postman
 Protobuf
 psql
 Python
+[Rr]ebalancing
 Redis
 Redli
 refcard
@@ -108,6 +110,7 @@ TaskManager
 Telegraf
 Terraform
 Terraforming
+testuser
 TimescaleDB
 toolchain
 Transport Layer Security
