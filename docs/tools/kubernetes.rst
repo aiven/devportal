@@ -36,6 +36,10 @@ Install the ``cert-manager`` with the command below. It is used to manage the we
 
     You can use the operator without ``cert-manager`` and the admission webhooks, skip this step and move on to the Helm chart section.
 
+.. Tip::
+
+    If you are running a GKE "Autopilot" cluster in Google Cloud Platform, you will need to be using GKE version >=1.21 and install ``cert-manager`` into the ``cert-manager`` namespace, as per `this GitHub issue comment <https://github.com/cert-manager/cert-manager/issues/3717#issuecomment-975031637>`_
+
 .. code:: bash
 
     kubectl apply -f https://github.com/jetstack/cert-manager/releases/latest/download/cert-manager.yaml
@@ -75,7 +79,7 @@ If your pod is listed with status "Running" then all is well.
 
 Authenticating
 ''''''''''''''
-Before creating a service, we need to authenticate the operator with Aiven's API. To do so, create the Kubernetes secret with the command below, substituting the ``<your-token-here>`` with the authentication token generated in the "Requirements" section above.
+Before creating a service, we need to authenticate the operator with Aiven's API. To do so, create the Kubernetes secret with the command below, substituting the ``<your-token-here>`` with the authentication token generated in the "Requirements" section above.  This needs to be created in the namespace which is going to be used to create your Aiven services.
 
 .. code:: bash
 
