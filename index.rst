@@ -1,7 +1,7 @@
 Aiven developer
 ===============
 
-Aiven is a database-as-a-service for open source data solutions including Apache Kafka, PostgreSQL, Redis, OpenSearch, MySQL, Cassandra, M3DB and InfluxDB.
+Aiven is a database-as-a-service for open source data solutions including Apache Kafka, PostgreSQL, Redis, OpenSearch, MySQL, Cassandra, M3DB, Grafana and InfluxDB.
 
 ----------------
 
@@ -100,6 +100,13 @@ Learn about the Aiven platform
     ---
 
     |icon-mysql| **MySQL** Popular and much-loved relational database platform.
+
+    +++
+
+    .. link-button:: docs/products/mysql/index
+        :type: ref
+        :text: Read more
+        :classes: stretched-link
 
     ---
 

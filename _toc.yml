@@ -27,6 +27,7 @@ entries:
       - file: docs/platform/howto/scale-services
       - file: docs/platform/howto/migrate-services
       - file: docs/platform/howto/monitoring-services
+      - file: docs/platform/howto/integrations/prometheus-metrics
 
 
   # --------- GLOBAL -----------
@@ -95,6 +96,7 @@ entries:
           - file: docs/products/kafka/howto/manage-acls
           - file: docs/products/kafka/howto/monitor-logs-acl-failure
           - file: docs/products/kafka/howto/kafdrop
+      - file: docs/products/kafka/howto/fake-sample-data
       - file: docs/products/kafka/reference
         title: Reference
         entries:
@@ -257,7 +259,6 @@ entries:
           - file: docs/products/opensearch/howto/control_access_to_content
           - file: docs/products/opensearch/howto/restore_opensearch_backup
           - file: docs/products/opensearch/howto/set_index_retention_patterns
-          - file: docs/products/opensearch/howto/switch_off_automatic_replication_factor_adjustment
           - file: docs/products/opensearch/howto/opensearch-alerting-api
       - file: docs/products/opensearch/dashboards/index
         title: OpenSearch Dashboards
@@ -325,6 +326,7 @@ entries:
               - file: docs/products/redis/howto/connect-node
               - file: docs/products/redis/howto/connect-php
               - file: docs/products/redis/howto/connect-python
+              - file: docs/products/redis/howto/connect-java
           - file: docs/products/redis/howto/list-dba-tasks
             entries:
               - file: docs/products/redis/howto/configure-acl-permissions

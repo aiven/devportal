@@ -14,6 +14,7 @@ Conduktor
 Couchbase
 cyber
 datacenter
+Datadog
 datasource
 datastore
 [Dd]ashboards
@@ -87,6 +88,7 @@ PostgreSQL
 Postman
 [Pp]rivatelink
 Protobuf
+Prometheus
 psql
 Python
 [Rr]ebalancing
@@ -104,6 +106,7 @@ Singlestat
 Splunk
 [Ss]pring
 Statusmap
+Stunnel
 [Ss]ubnet
 subtab
 TaskManager
@@ -125,4 +128,3 @@ Workbench
 Zabbix
 Zipkin
 ZooKeeper
-Stunnel
