@@ -48,7 +48,6 @@ httpie
 hyperloglogs
 hypertable
 Instana
-[ip|IP]
 Java
 jq
 Kaggle
