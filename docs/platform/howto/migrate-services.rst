@@ -21,15 +21,15 @@ Migrate a service using the Aiven client (CLI)
 
 1. Prepare the command to scale the service.
 
-a. You can retrieve the list of available clouds and regions with:
+a. You can retrieve the list of available clouds and regions with::
 
     avn cloud list
 
-2. Add the ``service_to_migrate`` parameter to specify the service you want to migrate, and the ``cloud_region`` for the target plan. For example, if you want to migrate your service to ``cloud_region``, the command would be:
+2. Add the ``service_to_migrate`` parameter to specify the service you want to migrate, and the ``cloud_region`` for the target plan. For example, if you want to migrate your service to ``cloud_region``, the command would be::
 
     avn service update --cloud cloud_region service_to_migrate
 
-You can also follow the progress of your changes with:
+You can also follow the progress of your changes with::
 
     avn service list
 

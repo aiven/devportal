@@ -30,7 +30,7 @@ Create a new service user using the Aiven client (CLI)
 1. Prepare the command to add the service user to your service.
 
 
-2. Add the ``service_target`` parameter to specify the service for which you want to create a new service user, and the ``service_user`` for the new user. For instance, to add the service user ``service_user`` to the service ``service_target``, you would use this command:
+2. Add the ``service_target`` parameter to specify the service for which you want to create a new service user, and the ``service_user`` for the new user. For instance, to add the service user ``service_user`` to the service ``service_target``, you would use this command::
 
     avn service user-create --username service_user service_target
 
