@@ -8,17 +8,20 @@ Variables
 
 These are the placeholders you will need to replace in the code sample:
 
-==================      =============================================================
-Variable                Description
-==================      =============================================================
-``MYSQL_HOST``          Host name for the connection, from the service overview page
-------------------      -------------------------------------------------------------
-``MYSQL_PORT``          Port number to use, from the service overview page
-------------------      -------------------------------------------------------------
-``MYSQL_PASSWORD``      Password for ``avnadmin`` user
-------------------      -------------------------------------------------------------
-``MYSQL_DATABASE``      Database to connect
-==================      =============================================================
+.. list-table::
+   :widths: 20 80
+   :header-rows: 1
+
+   * - Variable
+     - Description
+   * - ``MYSQL_HOST``
+     - Host name for the connection, from the service overview page
+   * - ``MYSQL_PORT``
+     - Port number to use, from the service overview page
+   * - ``MYSQL_PASSWORD``
+     - Password for ``avnadmin`` user
+   * - ``MYSQL_DATABASE``
+     - Database to connect
 
 Pre-requisites
 ''''''''''''''
