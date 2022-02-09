@@ -147,12 +147,3 @@ You can use the Aiven platform in the way that best fits your workflow:
 * :doc:`docs/tools/terraform/index` gives orchestration features for infrastructure-as-code projects.
 
 * :doc:`docs/tools/kubernetes` adds orchestration of your Aiven services to your existing Kubernetes cluster.
-
---------
-
-.. Adding this disclaimer text explicitly here for the moment, but it should
-   eventually become a standard footer for all devportal pages
-
-*Apache Kafka®, Apache Flink® and Apache Cassandra® are either registered
-trademarks or trademarks of the Apache Software Foundation in the United
-States and/or other countries. M3, M3 Aggregator, M3 Coordinator, OpenSearch®, PostgreSQL®, MySQL, InfluxDB®, Grafana® are trademarks and property of their respective owners. \*Redis is a trademark of Redis Ltd. Any rights therein are reserved to Redis Ltd. Any use by Aiven is for referential purposes only and does not indicate any sponsorship, endorsement or affiliation between Redis and Aiven. All product and service names used in this website are for identification purposes only and do not imply endorsement.*
