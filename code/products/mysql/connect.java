@@ -23,7 +23,7 @@ public class MySqlExample {
             System.out.println("Host, port, database information is required");
             return;
         }
-        Class.forName("java.sql.Driver");
+        Class.forName("com.mysql.cj.jdbc.Driver");
         try (final Connection connection =
                      DriverManager.getConnection("jdbc:mysql://" + host + ":" + port + "/" + databaseName + "?sslmode=require", userName, password);
              final Statement statement = connection.createStatement();
