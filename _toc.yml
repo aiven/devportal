@@ -152,6 +152,7 @@ entries:
       - file: docs/products/postgresql/howto
         title: HowTo
         entries:
+          - file: docs/products/postgresql/howto/create-database
           - file: docs/products/postgresql/howto/list-code-samples
             entries:
               - file: docs/products/postgresql/howto/connect-go
