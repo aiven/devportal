@@ -243,6 +243,7 @@ entries:
         entries:
           - file: docs/products/opensearch/howto/opensearch-with-curl
           - file: docs/products/opensearch/howto/migrating_elasticsearch_data_to_aiven
+          - file: docs/products/opensearch/howto/opensearch-log-integration
           - file: docs/products/opensearch/howto/upgrade-to-opensearch
           - file: docs/products/opensearch/howto/upgrade-to-opensearch-with-terraform
           - file: docs/products/opensearch/howto/upgrade-clients-to-opensearch
