@@ -246,6 +246,8 @@ Title template: *[Verb] a [noun] with [insert list of technologies here]* , e.g.
 
    If there are tools, accounts, licenses or particular dependencies that need to be installed before we start, let's get those out of the way first. If it requires Python 22 and the user doesn't live in the future, they know not to start spinning up all the other pieces of the puzzle. Don't forget to prompt the user to sign up for Aiven with the free trial, if appropriate.
 
+   Bear in mind the expected experience level of the user. Our experienced technical audience does not need help installing python, handling dependencies, understanding what a text editor is. You should assume that level of knowledge and move on; the user will either enjoy getting into the interesting bits more quickly, or spend time filling in the gaps in their knowledge with materials from other excellent websites.
+
    First component
    ---------------
 
@@ -266,4 +268,4 @@ Title template: *[Verb] a [noun] with [insert list of technologies here]* , e.g.
    Further reading
    ---------------
 
-   This optional section can be added if we have extra resources that are similar or related, that we think someone might want to read. You can think of it as a very low tech recommendations engine.
+   This optional section can be added if we have extra resources that are similar or related, that we think someone might want to read. You can think of it as a very low tech recommendations engine. If you have a repo of the project in the tutorial, or any other related integrations or sample apps, this is a great place to share them.
