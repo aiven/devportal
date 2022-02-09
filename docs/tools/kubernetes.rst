@@ -38,7 +38,7 @@ Install the ``cert-manager`` with the command below. It is used to manage the we
 
 .. Tip::
 
-    If you are running a GKE "Autopilot" cluster in Google Cloud Platform, you will need to be using GKE version >=1.21 and install ``cert-manager`` into a specified namespace, as per `this GitHub issue comment <https://github.com/cert-manager/cert-manager/issues/3717#issuecomment-975031637>`_
+    If you are running a GKE "Autopilot" cluster in Google Cloud Platform, you will need to be using GKE version >=1.21 and install ``cert-manager`` into ``cert-manager`` namespace, as per `this GitHub issue comment <https://github.com/cert-manager/cert-manager/issues/3717#issuecomment-975031637>`_
 
 .. code:: bash
 
