@@ -57,7 +57,7 @@ entries:
 
   # -------- PRODUCT-SPECIFIC --------
   - file: docs/products/kafka/index
-    title: Apache Kafka
+    title: Apache Kafka®
     entries:
       - file: docs/products/kafka/getting-started
       - file: docs/products/kafka/concepts
@@ -96,7 +96,7 @@ entries:
         entries:
           - glob: docs/products/kafka/reference/*
       - file: docs/products/kafka/kafka-connect/index
-        title: Apache Kafka Connect
+        title: Apache Kafka® Connect
         entries:
         - file: docs/products/kafka/kafka-connect/getting-started
         - file: docs/products/kafka/kafka-connect/concepts
@@ -122,7 +122,7 @@ entries:
             - file: docs/products/kafka/kafka-connect/reference/s3-sink-additional-parameters
 
       - file: docs/products/kafka/kafka-mirrormaker/index
-        title: Apache Kafka MirrorMaker2
+        title: Apache Kafka® MirrorMaker2
         entries:
         - file: docs/products/kafka/kafka-mirrormaker/getting-started
         - file: docs/products/kafka/kafka-mirrormaker/concepts
@@ -141,7 +141,7 @@ entries:
             - glob: docs/products/kafka/kafka-mirrormaker/reference/*
 
   - file: docs/products/postgresql/index
-    title: PostgreSQL
+    title: PostgreSQL®
     entries:
       - file: docs/products/postgresql/getting-started
       - file: docs/products/postgresql/howto/pagila
@@ -247,7 +247,7 @@ entries:
           - glob: docs/products/clickhouse/reference/*
 
   - file: docs/products/opensearch/index
-    title: OpenSearch
+    title: OpenSearch®
     entries:
       - file: docs/products/opensearch/getting-started
         title: Getting started
@@ -278,7 +278,7 @@ entries:
           - file: docs/products/opensearch/howto/set_index_retention_patterns
           - file: docs/products/opensearch/howto/opensearch-alerting-api
       - file: docs/products/opensearch/dashboards/index
-        title: OpenSearch Dashboards
+        title: OpenSearch® Dashboards
         entries:
           - file: docs/products/opensearch/dashboards/getting-started
           - file: docs/products/opensearch/dashboards/howto
@@ -295,7 +295,7 @@ entries:
             title: Advanced Parameters
 
   - file: docs/products/m3db/index
-    title: M3DB
+    title: M3
     entries:
       - file: docs/products/m3db/getting-started
       - file: docs/products/m3db/concepts
@@ -325,7 +325,7 @@ entries:
           - glob: docs/products/mysql/reference/*
 
   - file: docs/products/redis/index
-    title: Redis
+    title: Redis™*
     entries:
       - file: docs/products/redis/get-started
         title: Getting started
@@ -357,10 +357,10 @@ entries:
           - glob: docs/products/redis/reference/*
 
   - file: docs/products/cassandra/index
-    title: Apache Cassandra
+    title: "Apache Cassandra®"
 
   - file: docs/products/grafana/index
-    title: Grafana
+    title: Grafana®
     entries:
       - file: docs/products/grafana/get-started
       - file: docs/products/grafana/howto

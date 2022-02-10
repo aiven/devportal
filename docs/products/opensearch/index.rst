@@ -42,9 +42,10 @@ Ways to use OpenSearch
 
 OpenSearch is ideal for working with various types of unstructured data, where you need to be able to find things quickly. The most common examples include:
 
-* Send your **logs** to OpenSearch so that you can quickly identify and diagnose problems if they arise. 
-.. tip::
-    Check how to send logs from a service to your OpenSearch service :doc:`by enabling log integration <howto/opensearch-log-integration>` feature.
+* Send your **logs** to OpenSearch so that you can quickly identify and diagnose problems if they arise.
+
+  .. tip::
+     Check how to send logs from a service to your OpenSearch service :doc:`by enabling log integration <howto/opensearch-log-integration>` feature.
 
 * Use OpenSearch to index documents, so that you can get meaningful **search results** from a large body of knowledge.
 

@@ -1,5 +1,5 @@
-ClickHouse :badge:`beta,cls=badge-secondary text-black badge-pill`
-==================================================================
+ClickHouse® :badge:`beta,cls=badge-secondary text-black badge-pill`
+===================================================================
 
 .. note::
    The Aiven for ClickHouse service is currently available as a beta release and is intended for **non-production use**.

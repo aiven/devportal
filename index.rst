@@ -141,7 +141,7 @@ Learn about the Aiven platform
     
     ---
 
-    |icon-clickhouse| **ClickHouse** A highly scalable, open source database that uses a column-oriented structure. :badge:`beta,cls=badge-secondary text-black badge-pill`
+    |icon-clickhouse| **ClickHouse®** A highly scalable, open source database that uses a column-oriented structure. :badge:`beta,cls=badge-secondary text-black badge-pill`
 
     +++
 
