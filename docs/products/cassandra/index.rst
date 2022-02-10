@@ -1,12 +1,12 @@
-Aiven for Apache Cassandra
-==========================
+Aiven for Apache Cassandra®
+===========================
 
-What is Apache Cassandra?
--------------------------
+What is Apache Cassandra®?
+--------------------------
 
-`Apache Cassandra <https://cassandra.apache.org/_/index.html>`_ is an open source, NoSQL database. It is specifically designed to be highly available, performant, and scalable. It supports a distributed architecture with asynchronous replication and is highly fault tolerant.
+`Apache Cassandra® <https://cassandra.apache.org/_/index.html>`_ is an open source, NoSQL database. It is specifically designed to be highly available, performant, and scalable. It supports a distributed architecture with asynchronous replication and is highly fault tolerant.
 
-Apache Cassandra originated originally from Facebook, and since then has had a strong history with some of the most demanding data platforms around while being in the care of the Apache project. From this strong history comes a robust database with an emphasis on the security expected, and the ability to scale up to meet the needs of even the largest data platforms.
+Apache Cassandra originated from Facebook, and since then has had a strong history with some of the most demanding data platforms around while being in the care of the Apache project. From this strong history comes a robust database with an emphasis on security, and the ability to scale up to meet the needs of even the largest data platforms.
 
 Aiven for Apache Cassandra builds on the open source offering, adding management features and updates so that you can rely on the database your organisation needs to succeed.
 

@@ -86,6 +86,13 @@ Learn about the Aiven platform
 
     |icon-cassandra| **Cassandra** High performance storage solution for large data quantities. This specialist data solution is a partitioned row store.
 
+    +++
+
+    .. link-button:: docs/products/cassandra/index
+        :type: ref
+        :text: Read more
+        :classes: stretched-link
+
     ---
 
     |icon-redis| **Redis** In-memory data store for all your high-peformance short-term storage and caching needs.
