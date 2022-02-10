@@ -12,7 +12,6 @@ There are lots of other ways to learn more about Aiven, and interact with us.
     +++
 
     .. link-button:: https://twitter.com/aiven_io
-        :type: ref
         :text: To the Twitterverse
         :classes: stretched-link
 
@@ -23,7 +22,6 @@ There are lots of other ways to learn more about Aiven, and interact with us.
     +++
 
     .. link-button:: https://aiven.io/blog
-        :type: ref
         :text: To the blog
         :classes: stretched-link
 
@@ -35,7 +33,6 @@ There are lots of other ways to learn more about Aiven, and interact with us.
     +++
 
     .. link-button:: https://www.youtube.com/c/Aiven_io
-        :type: ref
         :text: To YouTube
         :classes: stretched-link
 
@@ -46,7 +43,6 @@ There are lots of other ways to learn more about Aiven, and interact with us.
     +++
 
     .. link-button:: https://github.com/aiven
-        :type: ref
         :text: To the code
         :classes: stretched-link
 
