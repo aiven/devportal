@@ -9,7 +9,7 @@ Aiven doesn't allow superuser access to Aiven for PostgreSQL services. However, 
 By default, in every PostgreSQL instance, an ``avnadmin`` database user is created, with permissions to perform most of the usual DB management operations. It can manage:
 
 * Databases (``CREATE DATABASE``, ``DROP DATABASE``)
-* Database users (``CREATE USER/ROLE``,`` DROP USER/ROLE``)
+* Database users (``CREATE USER/ROLE``, ``DROP USER/ROLE``)
 * Extensions (``CREATE EXTENSION``), you can also view the :doc:`list of available extensions <../reference/list-of-extensions>`
 * Access permissions (``GRANT``, ``REVOKE``)
 * Logical replication with the ``REPLICATION`` privilege
