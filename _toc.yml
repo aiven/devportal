@@ -223,6 +223,28 @@ entries:
         entries:
           - glob: docs/products/flink/reference/*
   
+  - file: docs/products/clickhouse/index
+    entries:
+      - file: docs/products/clickhouse/getting-started
+      - file: docs/products/clickhouse/sample-dataset
+      - file: docs/products/clickhouse/concepts
+        title: Concepts
+        entries:
+          - file: docs/products/clickhouse/concepts/olap
+          - file: docs/products/clickhouse/concepts/databases-and-tables
+          - file: docs/products/clickhouse/concepts/columnar-databases
+      - file: docs/products/clickhouse/howto
+        title: HowTo
+        entries:
+          - file: docs/products/clickhouse/howto/use-cli
+          - file: docs/products/clickhouse/howto/use-query-editor
+          - file: docs/products/clickhouse/howto/add-service-users
+          - file: docs/products/clickhouse/howto/grant-privilege
+
+      - file: docs/products/clickhouse/reference
+        title: Reference
+        entries:
+          - glob: docs/products/clickhouse/reference/*
 
   - file: docs/products/opensearch/index
     title: OpenSearch

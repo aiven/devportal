@@ -10,6 +10,8 @@ Avro
 [Bb]oot
 [Bb]usiness
 Cassandra
+ClickHouse
+codecs
 Conduktor
 [Cc]onnect
 Couchbase
