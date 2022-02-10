@@ -9,6 +9,7 @@ Avro
 [Bb]oolean
 [Bb]oot
 [Bb]usiness
+Cassandra
 Conduktor
 [Cc]onnect
 Couchbase
@@ -77,6 +78,7 @@ OpenSearch
 Pagerduty
 Pagila
 parallelization
+performant
 pgAdmin
 PgBouncer
 plaintext
