@@ -9,54 +9,58 @@ Source connectors
 
 Source connectors enable the integration of data from an existing technology into an Apache Kafka topic. The following is the list of available source connectors:
 
-* `Couchbase <https://github.com/couchbase/kafka-connect-couchbase>`__
+* `Couchbase <https://github.com/couchbase/kafka-connect-couchbase>`__ (author: Couchbase)
 
-* `Official MongoDB <https://docs.mongodb.com/kafka-connector/current/>`__ :badge:`preview,cls=badge-secondary badge-pill`
+* `Official MongoDB <https://docs.mongodb.com/kafka-connector/current/>`__ :badge:`preview,cls=badge-secondary badge-pill` (author: MongoDB)
 
-* `Debezium for MongoDB <https://debezium.io/docs/connectors/mongodb/>`__
+* `Debezium for MongoDB <https://debezium.io/docs/connectors/mongodb/>`__ (author: Debezium)
 
-* `Debezium for MySQL <https://debezium.io/docs/connectors/mysql/>`__
+* `Debezium for MySQL <https://debezium.io/docs/connectors/mysql/>`__ (author: Debezium)
 
-* `Debezium for PostgreSQL <https://help.aiven.io/kafka/setting-up-debezium-with-aiven-postgresql>`__
+* `Debezium for PostgreSQL <https://help.aiven.io/kafka/setting-up-debezium-with-aiven-postgresql>`__ (author: Debezium)
 
-* `Debezium for SQL Server <https://debezium.io/docs/connectors/sqlserver/>`__
+* `Debezium for SQL Server <https://debezium.io/docs/connectors/sqlserver/>`__ (author: Debezium)
 
-* `Google Cloud Pub/Sub <https://github.com/GoogleCloudPlatform/pubsub/tree/master/kafka-connector>`__
+* `Google Cloud Pub/Sub <https://github.com/GoogleCloudPlatform/pubsub/tree/master/kafka-connector>`__ (author: Google)
 
-* `JDBC <https://github.com/aiven/aiven-kafka-connect-jdbc/blob/master/docs/source-connector.md>`__
+* Google Cloud Pub/Sub Lite (author: Google)
 
-* Schema Source
+* `JDBC <https://github.com/aiven/aiven-kafka-connect-jdbc/blob/master/docs/source-connector.md>`__ (author: Aiven)
 
-* `Stream Reactor Cassandra <https://docs.lenses.io/connectors/source/cassandra.html>`__
+* Schema Source (author: Confluent)
 
-* `Stream Reactor MQTT <https://docs.lenses.io/connectors/source/mqtt.html>`__
+* `Stream Reactor Cassandra <https://docs.lenses.io/connectors/source/cassandra.html>`__ (author: Lenses.io)
+
+* `Stream Reactor MQTT <https://docs.lenses.io/connectors/source/mqtt.html>`__ (author: Lenses.io)
 
 Sink connectors
 -----------------
 
 Sink connectors enable the integration of data from an existing Apache Kafka topic to a target technology. The following is the list of available sink connectors:
 
-* `Aiven for Kafka GCS Sink Connector <https://help.aiven.io/kafka/connectors/aiven-kafka-gcs-sink-connector>`__
-
 * `Aiven for Kafka S3 Sink Connector <https://help.aiven.io/kafka/connectors/aiven-kafka-s3-sink-connector>`__
 
 * `Confluent Amazon S3 Sink <https://help.aiven.io/kafka/aiven-kafka-kafka-connect-s3>`__
-
-* `Official MongoDB <https://docs.mongodb.com/kafka-connector/current/>`__ :badge:`preview,cls=badge-secondary badge-pill`
 
 * `Couchbase <https://github.com/couchbase/kafka-connect-couchbase>`__
 
 * `Elasticsearch <https://help.aiven.io/kafka/aiven-kafka-elasticsearch-sink-connector>`__
 
-* `Confluent Elasticsearch Sink <https://docs.confluent.io/kafka-connect-elasticsearch/current/index.html>`__
+* `Google BigQuery <https://github.com/wepay/kafka-connect-bigquery>`__
 
 * `Google Cloud Pub/Sub <https://github.com/GoogleCloudPlatform/pubsub/>`__
 
-* `Google BigQuery <https://github.com/wepay/kafka-connect-bigquery>`__
+* Google Cloud Pub/Sub Lite
+
+* Google Cloud Storage
 
 * `HTTP <https://github.com/aiven/aiven-kafka-connect-http>`__ :badge:`preview,cls=badge-secondary badge-pill`
 
 * `JDBC <https://github.com/aiven/aiven-kafka-connect-jdbc/blob/master/docs/sink-connector.md>`__
+
+* `Official MongoDB <https://docs.mongodb.com/kafka-connector/current/>`__ :badge:`preview,cls=badge-secondary badge-pill`
+
+* Opensearch
 
 * `Snowflake <https://docs.snowflake.net/manuals/user-guide/kafka-connector.html>`__ :badge:`preview,cls=badge-secondary badge-pill`
 
