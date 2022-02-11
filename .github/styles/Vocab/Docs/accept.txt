@@ -53,6 +53,7 @@ hyperloglogs
 hypertable
 Instana
 Java
+Jolokia
 jq
 Kaggle
 Kafdrop
@@ -71,6 +72,7 @@ Lucene
 Memorystore
 MirrorMaker
 MirrorMaker2
+MXBean
 MySQL
 [Nn]amespace
 NodeJS
@@ -95,6 +97,7 @@ Protobuf
 Prometheus
 psql
 Python
+[R|r]ebalanc[e|ing]
 Redis
 Redli
 refcard
