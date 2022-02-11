@@ -65,7 +65,7 @@ Set up Aiven services
    ::
 
       avn service create demo-opensearch          \
-          --service-type opensearc                \
+          --service-type opensearch               \
           --cloud CLOUD_AND_REGION                \
           --plan business-4                       \
           --project PROJECT_NAME

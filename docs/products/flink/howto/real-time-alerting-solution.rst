@@ -70,7 +70,7 @@ Set up Aiven services
    e. Select **Aiven for PostgreSQL®** and then select the ``demo-postgresql`` service.
    f. Click **Integrate**.
    g. Click the **+** icon under *Data Flow*.
-   h. Select **Aiven for PostgreSQL®** and then select the ``demo-opensearch`` service.
+   h. Select **Aiven for OpenSearch** and then select the ``demo-opensearch`` service.
    i. Click **Integrate**.
 
 

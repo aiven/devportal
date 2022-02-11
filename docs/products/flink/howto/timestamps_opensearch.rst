@@ -13,8 +13,8 @@ OpenSearch® recognises the following as correct date/time formats:
 
 Therefore you need to structure the data pipeline output to follow one of the acceptable formats
 
-Define Apache Flink® target tables including timestamps for OpernSearch®
-------------------------------------------------------------------------
+Define Apache Flink® target tables including timestamps for OpenSearch®
+-----------------------------------------------------------------------
 
 When the result of the data pipeline contains a timestamp column like the below:
 
