@@ -52,7 +52,7 @@ Follow the steps below to obtain the dataset and then load the sample data into 
 
 .. code:: shell
 
-    pip install elasticsearch==7.13.4
+    pip install opensearch-py==1.0.0
 
 4. In this step you will create the script that reads the data file you downloaded and puts the records into the OpenSearch service. Create a file named ``epicurious_recipes_import.py``, and add the following code; you will need to edit it to add the connection details for your OpenSearch service.
 
@@ -61,15 +61,14 @@ Follow the steps below to obtain the dataset and then load the sample data into 
 
 .. code:: python
 
-    from elasticsearch.helpers import bulk
-    from elasticsearch import Elasticsearch
-
     import json
+    from opensearchpy import helpers, OpenSearch
+
 
     SERVICE_URI = 'YOUR_SERVICE_URI_HERE'
     INDEX_NAME = 'epicurious-recipes'
 
-    es = Elasticsearch([SERVICE_URI])
+    os_client = OpenSearch(hosts=SERVICE_URI, ssl_enable=True)
 
 
     def load_data():
@@ -78,8 +77,11 @@ Follow the steps below to obtain the dataset and then load the sample data into 
             for recipe in data:
                 yield {'_index': INDEX_NAME, '_source': recipe}
 
+OpenSearch Python client offers a helper called bulk() which allows us to send multiple documents in one API call.
 
-    bulk(es, load_data())
+.. code:: python
+
+    helpers.bulk(os_client, load_data())
 
 5. Run the script with the following command, and wait for it to complete:
 
@@ -145,7 +147,7 @@ To load data with NodeJS we'll use `OpenSearch JavaScript client  <https://githu
 
 Download `full_format_recipes.json <https://www.kaggle.com/hugodarwood/epirecipes?select=full_format_recipes.json>`_, unzip and put it into the project folder.
 
-It is possible to index values either one by one, or by using a bulk operation. Because we have a file containing a long list of recipes we’ll use a bulk operation. A bulk endpoint expects a request in a format of a list where an action and an optional document are followed one after another:
+It is possible to index values either one by one or by using a bulk operation. Because we have a file containing a long list of recipes we’ll use a bulk operation. A bulk endpoint expects a request in a format of a list where an action and an optional document are followed one after another:
 
 * Action and metadata
 * Optional document
@@ -179,7 +181,7 @@ Run this method to load the data and wait till it's done. We’re injecting over
 Get data mapping with NodeJS
 ----------------------------
 
-We didn't specify any particular structure for the recipes data when we uploaded it. Even though we could have set explicit mapping beforehand, we opted to rely on OpenSearch to derive the structure from the data and use a dynamic mapping. To see the mapping definitions use the ``getMapping`` method and provide the index name as a parameter.
+We didn't specify any particular structure for the recipes data when we uploaded it. Even though we could have set explicit mapping beforehand, we opted to rely on OpenSearch to derive the structure from the data and use dynamic mapping. To see the mapping definitions use the ``getMapping`` method and provide the index name as a parameter.
 
 .. code-block:: javascript
 
@@ -221,9 +223,9 @@ These are the fields you can play with. You can find information on dynamic mapp
 Ready for a challenge?
 ----------------------
 
-After playing around with the sample queries, can you use OpenSearch queries to answer some these questions?
+After playing around with the sample queries, can you use OpenSearch queries to answer some of these questions?
 
 1. Find all vegan recipes and order them by ``calories``.
-2. Find all recipes with ``vegan`` on the title but without the words ``cheese``, ``meat`` or ``egs`` on any other field.
+2. Find all recipes with ``vegan`` on the title but without the words ``cheese``, ``meat`` or ``eggs`` on any other field.
 3. Use one query to count how many ``vegan`` and ``vegetarian`` recipes there are.
 
