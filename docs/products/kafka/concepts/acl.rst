@@ -50,7 +50,7 @@ The type of the grant dictates the actions the client is be able to perform. The
     -
     -
   * - → ``CreateTopics``
-    - `CreateTopics docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/admin/Admin.html#createTopics(java.util.Collection)>`_
+    - `docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/admin/Admin.html#createTopics(java.util.Collection)>`__
     - ✓
     - 
     -
@@ -62,19 +62,19 @@ The type of the grant dictates the actions the client is be able to perform. The
     -
     -
   * - → ``Delete``
-    - `Delete docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/admin/Admin.html#deleteConsumerGroups(java.util.Collection)>`_
+    - `docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/admin/Admin.html#deleteConsumerGroups(java.util.Collection)>`__
     - ✓
     - ✓
     - 
     - ✓
   * - → ``Describe``
-    - `Describe docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/admin/Admin.html#describeConsumerGroups(java.util.Collection)>`_
+    - `docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/admin/Admin.html#describeConsumerGroups(java.util.Collection)>`__
     - ✓
     - ✓
     - 
     - ✓
   * - → ``Read``
-    - `Read docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/admin/Admin.html#listConsumerGroups(org.apache.kafka.clients.admin.ListConsumerGroupsOptions)>`_
+    - `docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/admin/Admin.html#listConsumerGroups(org.apache.kafka.clients.admin.ListConsumerGroupsOptions)>`__
     - ✓
     - ✓
     - 
@@ -86,43 +86,43 @@ The type of the grant dictates the actions the client is be able to perform. The
     -
     -
   * - → ``Read``
-    - `Read docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/consumer/KafkaConsumer.html#poll(java.time.Duration)>`_
+    - `docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/consumer/KafkaConsumer.html#poll(java.time.Duration)>`__
     - ✓
     - ✓
     - 
     - ✓
   * - → ``Write``
-    - `Write docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/producer/KafkaProducer.html#send(org.apache.kafka.clients.producer.ProducerRecord,org.apache.kafka.clients.producer.Callback)>`_
+    - `docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/producer/KafkaProducer.html#send(org.apache.kafka.clients.producer.ProducerRecord,org.apache.kafka.clients.producer.Callback)>`__
     - ✓
     - ✓
     - ✓
     -
   * - → ``Describe``
-    - `Describe docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/admin/Admin.html#listTransactions()>`_
+    - `docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/admin/Admin.html#listTransactions()>`__
     - ✓
     - ✓
     - ✓
     - ✓
   * - → ``Describe_Configs``
-    - `Describe Configurations docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/admin/Admin.html#describeTopics(java.util.Collection)>`_
+    - `docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/admin/Admin.html#describeTopics(java.util.Collection)>`__
     - ✓
     - ✓
     - ✓
     - ✓
   * - → ``Alter``
-    - `Alter docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/admin/Admin.html#alterConfigs(java.util.Map)>`_
+    - `docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/admin/Admin.html#alterConfigs(java.util.Map)>`__
     - ✓
     - 
     -
     -
   * - → ``AlterConfigs``
-    - `AlterConfigs docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/admin/Admin.html#alterConfigs(java.util.Map)>`_
+    - `docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/admin/Admin.html#alterConfigs(java.util.Map)>`__
     - ✓
     - 
     -
     -
   * - → ``Delete``
-    - `Delete docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/admin/Admin.html#deleteTopics(java.util.Collection)>`_
+    - `docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/admin/Admin.html#deleteTopics(java.util.Collection)>`__
     - ✓
     - 
     -
@@ -134,13 +134,13 @@ The type of the grant dictates the actions the client is be able to perform. The
     -
     -
   * - → ``Describe``
-    - `Describe docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/admin/Admin.html#describeTransactions(java.util.Collection)>`_
+    - `docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/admin/Admin.html#describeTransactions(java.util.Collection)>`__
     - ✓
     - ✓
     - ✓
     -
   * - → ``Write``
-    - `Write docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/producer/KafkaProducer.html#beginTransaction()>`_
+    - `docs <https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/producer/KafkaProducer.html#beginTransaction()>`__
     - ✓
     - ✓
     - ✓
