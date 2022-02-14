@@ -40,7 +40,7 @@ entries:
         - file: docs/tools/cli/project
         - file: docs/tools/cli/service
           entries:
-            - glob: docs/tools/cli/service/* 
+            - glob: docs/tools/cli/service/*
         - file: docs/tools/cli/ticket
         - file: docs/tools/cli/user
           entries:
@@ -60,6 +60,7 @@ entries:
     title: Apache Kafka
     entries:
       - file: docs/products/kafka/getting-started
+      - file: docs/products/kafka/howto/fake-sample-data
       - file: docs/products/kafka/concepts
         entries:
           - file: docs/products/kafka/concepts/acl
@@ -71,26 +72,45 @@ entries:
       - file: docs/products/kafka/howto
         title: HowTo
         entries:
-          - file: docs/products/kafka/howto/best-practices
-          - file: docs/products/kafka/howto/keystore-truststore.rst
-          - file: docs/products/kafka/howto/kafka-sasl-auth
-          - file: docs/products/kafka/howto/kafka-tools-config-file
-          - file: docs/products/kafka/howto/viewing-resetting-offset
-          - file: docs/products/kafka/howto/set-kafka-parameters
-          - file: docs/products/kafka/howto/create-topics-automatically
-          - file: docs/products/kafka/howto/get-topic-partition-details
-          - file: docs/products/kafka/howto/kcat.rst
-          - file: docs/products/kafka/howto/integrate-service-logs-into-kafka-topic
-          - file: docs/products/kafka/howto/configure-log-cleaner
-          - file: docs/products/kafka/howto/use-zookeeper
-          - file: docs/products/kafka/howto/change-retention-period
-          - file: docs/products/kafka/howto/kafka-conduktor
-          - file: docs/products/kafka/howto/prevent-full-disks
-          - file: docs/products/kafka/howto/schema-registry.rst
-          - file: docs/products/kafka/howto/manage-acls
-          - file: docs/products/kafka/howto/monitor-logs-acl-failure
-          - file: docs/products/kafka/howto/kafdrop
-      - file: docs/products/kafka/howto/fake-sample-data
+          - file: docs/products/kafka/howto/list-tools
+            title: Tools
+            entries:
+              - file: docs/products/kafka/howto/kafka-tools-config-file
+              - file: docs/products/kafka/howto/kcat.rst
+              - file: docs/products/kafka/howto/kafka-conduktor
+              - file: docs/products/kafka/howto/kafdrop
+          - file: docs/products/kafka/howto/list-security
+            title: Security
+            entries:
+              - file: docs/products/kafka/howto/keystore-truststore.rst
+              - file: docs/products/kafka/howto/manage-acls
+              - file: docs/products/kafka/howto/monitor-logs-acl-failure
+              - file: docs/products/kafka/howto/kafka-sasl-auth
+          - file: docs/products/kafka/howto/list-admin
+            title: Administration tasks
+            entries:
+              - file: docs/products/kafka/howto/best-practices
+              - file: docs/products/kafka/howto/set-kafka-parameters
+              - file: docs/products/kafka/howto/viewing-resetting-offset
+              - file: docs/products/kafka/howto/configure-log-cleaner
+              - file: docs/products/kafka/howto/prevent-full-disks
+              - file: docs/products/kafka/howto/use-zookeeper
+
+
+          - file: docs/products/kafka/howto/list-integration
+            title: Integrations
+            entries:
+              - file: docs/products/kafka/howto/integrate-service-logs-into-kafka-topic
+          - file: docs/products/kafka/howto/list-topic-schema
+            title: Topic/schema management
+            entries:
+              - file: docs/products/kafka/howto/create-topics-automatically
+              - file: docs/products/kafka/howto/get-topic-partition-details
+              - file: docs/products/kafka/howto/schema-registry
+              - file: docs/products/kafka/howto/change-retention-period
+
+
+
       - file: docs/products/kafka/reference
         title: Reference
         entries:
@@ -103,7 +123,7 @@ entries:
           entries:
           - file: docs/products/kafka/kafka-connect/concepts/list-of-connector-plugins
           - file: docs/products/kafka/kafka-connect/concepts/jdbc-source-modes
-          
+
         - file: docs/products/kafka/kafka-connect/howto
           title: HowTo
           entries:
@@ -222,7 +242,7 @@ entries:
         title: Reference
         entries:
           - glob: docs/products/flink/reference/*
-  
+
   - file: docs/products/clickhouse/index
     entries:
       - file: docs/products/clickhouse/getting-started
@@ -310,7 +330,7 @@ entries:
         title: Reference
         entries:
           - glob: docs/products/m3db/reference/*
-  
+
   - file: docs/products/mysql/index
     title: MySQL
     entries:

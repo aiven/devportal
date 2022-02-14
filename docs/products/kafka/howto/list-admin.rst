@@ -1,0 +1,4 @@
+Administration tasks
+====================
+
+.. tableofcontents::
