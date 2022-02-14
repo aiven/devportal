@@ -60,7 +60,7 @@ Sink connectors enable the integration of data from an existing Apache Kafka top
 
 * `Official MongoDB <https://docs.mongodb.com/kafka-connector/current/>`__ :badge:`preview,cls=badge-secondary badge-pill`
 
-* Opensearch
+* OpenSearch
 
 * `Snowflake <https://docs.snowflake.net/manuals/user-guide/kafka-connector.html>`__ :badge:`preview,cls=badge-secondary badge-pill`
 
