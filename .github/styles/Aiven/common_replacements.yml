@@ -3,32 +3,14 @@ message: "Use '%s' instead of '%s'."
 ignorecase: true
 level: error
 swap:
-  # Common typos or mis-spellings
-  clickhouse: ClickHouse
-  flick: Flink
-  influx: InfluxDB
-  kakfa: Kafka
-  multicloud: multi-cloud
-  postgesql: PostgreSQL
-  postgres: PostgreSQL
   timeseries: time series
-  "OpenSearch dashboards": "OpenSearch Dashboards"
-  #
-  # Apache Kafka MirrorMaker 2
-  # MirrorMaker should always be followed by one (white)space character and a 2
-  'MirrorMaker(?!\s+2)': "MirrorMaker 2"
-  "MirrorMaker2": "MirrorMaker 2"
-  # And a registered mark doesn't belong in the middle
-  "Kafka® MirrorMaker 2": "Kafka MirrorMaker2"
-  #
-  # Aiven for <thing>
-  "Aiven Cassandra": "Aiven for Cassandra"
-  "Aiven ClickHouse": "Aiven for ClickHouse"
-  "Aiven Elasticsearch": "Aiven for Elasticsearch"
-  "Aiven Flink": "Aiven for Apache Flink"
-  "Aiven Grafana": "Aiven for Grafana"
-  "Aiven InfluxDB": "Aiven for InfluxDB"
+  kakfa: Kafka
+  postgres: PostgreSQL
+  PostgeSQL: PostgreSQL
+  multicloud: multi-cloud
   "Aiven Kafka": "Aiven for Apache Kafka"
+  "Aiven Flink": "Aiven for Apache Flink"
+  "Aiven PostgreSQL": "Aiven for PostgreSQL"
   "Aiven M3": "Aiven for M3"
   "Aiven MySQL": "Aiven for MySQL"
   "Aiven OpenSearch": "Aiven for OpenSearch"
