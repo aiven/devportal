@@ -1,7 +1,7 @@
 IOPS capability of plans
 ========================
 
-When creating or updating an Aiven service, you can choose the plan, driving the amount of resources available. The type of virtual machines created depends by the cloud provider chosen, and each one has different **IOPS** (Input/output Operations Per Second) limits. This reference provides the mapping between the common plans in Aiven for PostgreSQL and the related virtual machine types in the major clouds.
+When creating or updating an Aiven service, you can choose the plan, driving the number of resources available. The type of virtual machines created depends on the cloud provider chosen, and each one has different **IOPS** (Input/output Operations Per Second) limits. This reference provides the mapping between the common plans in Aiven for PostgreSQL and the related virtual machine types in the major clouds.
 
 Hobbyist
 ''''''''
@@ -35,11 +35,11 @@ Startup
       - ``standard_d1_v2``
     * - **startup-8**
       - ``m5.large``
-      - ``e2-standard-2``
+      - ``n1-standard-2``
       - ``standard_d2_v2``
     * - **startup-16**
       - ``i3.large``
-      - ``e2-standard-2``
+      - ``n1-standard-4``
       - ``standard_d3_v2``     
     * - **startup-32**
       - ``i3.xlarge``
@@ -90,7 +90,7 @@ Startup
 Business and premium
 '''''''''''''''''''''
 
-The cloud instance types in the Business and Premium plans are equal to the startup ones. The difference is the cluster size with 2 nodes for Business plans and 3 node high availability set for Premium plans.
+The cloud instance types in the Business and Premium plans are equal to the startup ones. The difference is the cluster size with 2 nodes for Business plans and 3 nodes high availability set for Premium plans.
 
 Single node IOPS capacity
 '''''''''''''''''''''''''
@@ -132,4 +132,4 @@ The single node IOPS limitation detail can be found in the cloud vendor dedicate
 
 The instance types can vary to other equivalent types in different regions.
 
-.. note:: For custom plans, if you want to know the node types for IOPS limitation, please contact support team at ``support@aiven.io``.
+.. note:: For custom plans, if you want to know the node types for IOPS limitation, please contact the support team at ``support@aiven.io``.
