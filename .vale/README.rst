@@ -65,15 +65,10 @@ In the case of the ``good.rst`` versus ``bad.rst`` files, inline "comments" are 
 
 I recommend using ``vale --output=line`` for its more compact output format.
 
-Ideally some actual form of programmatic testing would be used, but this is better than nothing.
+As an experiment, I have introduced testing with shelltestrunner_. See the file
+``.vale/test/shelltest.test``.
 
-    Possibly using https://texttest.org/ (heh, a shout out to the Divio documentation system!).
-
-    See also
-
-    * http://emilybache.blogspot.com/2011/11/what-is-text-based-testing.html
-    * http://texttest.sourceforge.net/files/textbased_testing.pdf
-    * https://www.infoq.com/news/2017/02/approval-testing-texttest/
+  .. _shelltestrunner: https://github.com/simonmichael/shelltestrunner
 
 Known or possible issues
 ========================
@@ -128,3 +123,10 @@ When there are syntax errors in reStructuredText, it seems that the file gets ig
 Vale checks reStructuredText by first running it through ``rst2html.py``. A quick check suggests that if I do ``rst2html.py <name>.rst > <name>.html``, I still get status code ``0`` if there is an error, but I also get error text written to ``stderr``. So it should, in principle, be possible to tell if something went wrong. (vale probably doesn't want to report the errors as such.)
 
 Note: the source code appears to be fairly obviously just ignoring ``stderr``. It's possible that fixing this might be fairly simple, *except* that Windows also needs supporting, and I don't know how it handles ``stderr``.
+
+The order of error output does not appear to be deterministic
+-------------------------------------------------------------
+
+    *This makes it harder to test things, for instance using shelltester*
+
+For instance, if I run ``vale --output=line .vale/tests/bad.rst``, the order of the lines output is not consistent.
