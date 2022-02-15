@@ -9,7 +9,7 @@ Using the Aiven web console
 
 1. Log in to the `Aiven web console <https://console.aiven.io/>`_.
 
-2. On the **Services** page, click on the service name.
+2. On the **Services** page, click on the Aiven for MySQL service name for which you want to create a new database.
 
 3. Select the **Databases** tab:
 
