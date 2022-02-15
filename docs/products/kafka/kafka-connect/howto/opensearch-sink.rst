@@ -28,7 +28,9 @@ Furthermore you need to collect the following information about the target OpenS
 
 .. Note::
 
-    If you're using Aiven for OpenSearch® and Aiven for Apache Kafka® the above details are available in the `Aiven console <https://console.aiven.io/>`_ service Overview tab or via the dedicated ``avn service get`` command with the :ref:`Aiven CLI <avn_service_get>`.
+    If you're using Aiven for OpenSearch® and Aiven for Apache Kafka® the above details are available in the `Aiven console <https://console.aiven.io/>`_ service *Overview tab* or via the dedicated ``avn service get`` command with the :ref:`Aiven CLI <avn_service_get>`.
+
+    The ``SCHEMA_REGISTRY`` related parameters are available in the Aiven for Apache Kafka® service page, *Overview* tab, and *Schema Registry* subtab
 
 Setup an OpenSearch sink connector with Aiven CLI
 ---------------------------------------------------
@@ -46,11 +48,11 @@ Define the connector configurations in a file (we'll refer to it with the name `
         "name":"CONNECTOR_NAME",
         "connector.class": "io.aiven.kafka.connect.opensearch.OpensearchSinkConnector",
         "topics": "TOPIC_LIST",
-        "connection.url": "ES_CONNECTION_URL",
-        "connection.username": "ES_USERNAME",
-        "connection.password": "ES_PASSWORD",
+        "connection.url": "OS_CONNECTION_URL",
+        "connection.username": "OS_USERNAME",
+        "connection.password": "OS_PASSWORD",
         "type.name": "TYPE_NAME",
-        "tasks.max":"NR_TASKS",
+        "tasks.max":"1",
         "key.ignore": "true",
         "key.converter": "io.confluent.connect.avro.AvroConverter",
         "key.converter.schema.registry.url": "https://APACHE_KAFKA_HOST:SCHEMA_REGISTRY_PORT",
@@ -65,7 +67,7 @@ Define the connector configurations in a file (we'll refer to it with the name `
 The configuration file contains the following entries:
 
 * ``name``: the connector name
-* ``OS_CONNECTION_URL``, ``OS_USERNAME``, ``OS_PASSWORD``: sink OpenSearch parameters collected in the :ref:`prerequisite <connect_opensearch_sink_prereq>` phase. 
+* ``connection.url``, ``connection.username``, ``connection.password``: sink OpenSearch parameters collected in the :ref:`prerequisite <connect_opensearch_sink_prereq>` phase. 
 * ``type.name``: the OpenSearch type name to be used when indexing.
 * ``key.ignore``: boolean flag dictating if to ignore the message key. If set to true, the document ID is generated as message's ``topic+partition+offset``, the message key is used as ID otherwise.
 * ``tasks.max``: maximum number of tasks to execute in parallel. By default this is 1.
@@ -73,19 +75,19 @@ The configuration file contains the following entries:
 
 .. Note::
 
-    The ``key.converter`` and ``value.converter`` sections are only needed when pushing data in Avro format. If omitted the messages will be defined in binary format.
+    The ``key.converter`` and ``value.converter`` sections are only needed when the source data is in Avro format. If omitted the messages will be read as binary format. 
 
 
 Create a Kafka Connect connector with Aiven CLI
 '''''''''''''''''''''''''''''''''''''''''''''''
 
-To create the connector, execute the following :ref:`Aiven CLI command <avn_service_connector_create>`, replacing the ``SERVICE_NAME`` with the name of the Aiven service where the connector needs to run:
+To create the connector, execute the following :ref:`Aiven CLI command <avn_service_connector_create>`, replacing the ``SERVICE_NAME`` with the name of the Aiven for Apache Kafka® service where the connector needs to run:
 
 :: 
 
     avn service connector create SERVICE_NAME @opensearch_sink.json
 
-Check the connector status with the following command, replacing the ``SERVICE_NAME`` with the Aiven service and the ``CONNECTOR_NAME`` with the name of the connector defined before:
+Check the connector status with the following command, replacing the ``SERVICE_NAME`` with the Aiven for Apache Kafka® service and the ``CONNECTOR_NAME`` with the name of the connector defined before:
 
 ::
 
