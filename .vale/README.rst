@@ -65,10 +65,12 @@ In the case of the ``good.rst`` versus ``bad.rst`` files, inline "comments" are 
 
 I recommend using ``vale --output=line`` for its more compact output format.
 
-As an experiment, I have introduced testing with shelltestrunner_. See the file
-``.vale/test/shelltest.test``.
+As an experiment, I have introduced testing with shelltestrunner_. See the file ``.vale/test/shelltest.test``.
 
-  .. _shelltestrunner: https://github.com/simonmichael/shelltestrunner
+  There's also a similar program, shtst_, if you prefer a Python script (or something that is ``pip install``-able). The test file syntax is very similar. I'm continuing with shelltest because it is more mature, and also because I find the ``--diff`` switch useful (which shtst does not have).
+
+.. _shelltestrunner: https://github.com/simonmichael/shelltestrunner
+.. _shtst: https://github.com/obfusk/shtst
 
 Known or possible issues
 ========================
