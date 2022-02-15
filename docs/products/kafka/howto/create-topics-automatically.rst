@@ -1,7 +1,7 @@
 Create Apache Kafka topics automatically
 ==========================================
 
-You can set Kafka to automatically create a topic when a message is produced to a topic that does not exist. 
+You can set Apache Kafka to automatically create a topic when a message is produced to a topic that does not exist. 
 By default, in Aiven for Apache Kafka this features is turned off as safeguard against accidental topic creation and when a message is produced to a topic that does not yet exist. In such cases the common error message is the following::
 
     KafkaTimeoutError: Failed to update metadata after 60.0 secs.
