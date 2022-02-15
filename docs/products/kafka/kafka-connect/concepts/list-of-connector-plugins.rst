@@ -1,5 +1,5 @@
 List of available Apache Kafka® Connect connectors
-=================================================
+==================================================
 
 The following connectors can be used in any Aiven for Apache Kafka® services with Apache Kafka Connect enabled. 
 
@@ -38,7 +38,7 @@ Sink connectors
 
 Sink connectors enable the integration of data from an existing Apache Kafka topic to a target technology. The following is the list of available sink connectors:
 
-* `Aiven for Apache Kafka S3 Sink Connector <https://help.aiven.io/kafka/connectors/aiven-kafka-s3-sink-connector>`__
+* :doc:`Aiven for Apache Kafka S3 Sink Connector <../howto/s3-sink-connector-aiven>`
 
 * `Confluent Amazon S3 Sink <https://help.aiven.io/kafka/aiven-kafka-kafka-connect-s3>`__
 
