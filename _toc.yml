@@ -136,10 +136,15 @@ entries:
           - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-pg
           - file: docs/products/kafka/kafka-connect/howto/s3-sink-prereq
           - file: docs/products/kafka/kafka-connect/howto/s3-sink-connector-aiven
+          - file: docs/products/kafka/kafka-connect/howto/s3-sink-connector-confluent
         - file: docs/products/kafka/kafka-connect/reference
           title: Reference
           entries:
-            - file: docs/products/kafka/kafka-connect/reference/s3-sink-additional-parameters
+            - file: docs/products/kafka/kafka-connect/reference/s3-sink-formats
+              title: AWS S3 sink connector naming and data format
+              entries:
+              - file: docs/products/kafka/kafka-connect/reference/s3-sink-additional-parameters
+              - file: docs/products/kafka/kafka-connect/reference/s3-sink-additional-parameters-confluent
 
       - file: docs/products/kafka/kafka-mirrormaker/index
         title: Apache Kafka MirrorMaker2
