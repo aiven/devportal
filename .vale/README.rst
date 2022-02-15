@@ -121,8 +121,10 @@ Given vale is meant to be used over a directory structure, I'm not sure this is 
 No error for broken reStructuredText
 ------------------------------------
 
+    *I'd rather like a fix for this. A quick look at the code suggests a PR might not be too hard.*
+
 When there are syntax errors in reStructuredText, it seems that the file gets ignored. This looks just the same as having no vale errors in the file.
 
 Vale checks reStructuredText by first running it through ``rst2html.py``. A quick check suggests that if I do ``rst2html.py <name>.rst > <name>.html``, I still get status code ``0`` if there is an error, but I also get error text written to ``stderr``. So it should, in principle, be possible to tell if something went wrong. (vale probably doesn't want to report the errors as such.)
 
-I haven't looked at the source code yet, but must do so before raising an issue or PR.
+Note: the source code appears to be fairly obviously just ignoring ``stderr``. It's possible that fixing this might be fairly simple, *except* that Windows also needs supporting, and I don't know how it handles ``stderr``.
