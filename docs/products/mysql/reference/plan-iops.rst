@@ -1,7 +1,7 @@
 IOPS capability of plans
 ========================
 
-When creating or updating an Aiven service, you can choose the plan, driving the amount of resources available. The type of virtual machines created depends by the cloud provider chosen, and each one has different IOPS (Input/output Operations Per Second) limits. This reference provides the mapping between the common plans in Aiven for MySQL and the related virtual machine types in the major clouds.
+When creating or updating an Aiven service, you can choose the plan, driving the number of resources available. The type of virtual machines created depends on the cloud provider chosen, and each one has different **IOPS** (Input/output Operations Per Second) limits. This reference provides the mapping between the common plans in Aiven for MySQL and the related virtual machine types in the major clouds.
 
 Hobbyist
 ''''''''
@@ -69,19 +69,46 @@ Startup
 Business and premium
 '''''''''''''''''''''
 
-The cloud instance types in the Business and premium plans are equal to the startup ones. The difference is the cluster size with 2 nodes for Business plans and 3 node high availability set for Premium plans.
+The cloud instance types in the Business and Premium plans are equal to the startup ones. The difference is the cluster size with 2 nodes for Business plans and 3 nodes high availability set for Premium plans.
 
 Single node IOPS capacity
 '''''''''''''''''''''''''
 
 The single node IOPS limitation detail can be found in the cloud vendor dedicated documentation:
 
-AWS: https://aws.amazon.com/ec2/instance-types/
+.. panels::
+    :card: shadow
 
-GCP: https://cloud.google.com/compute/docs/general-purpose-machines
+    **AWS** Amazon EC2 Instance Types
 
-Azure: https://docs.microsoft.com/en-us/azure/virtual-machines/sizes-previous-gen
+    +++
+
+    .. link-button:: https://aws.amazon.com/ec2/instance-types/
+        :text: Read more
+        :classes: stretched-link
+
+    ---
+
+    **GCP** General-purpose machine family
+
+    +++
+
+    .. link-button:: https://cloud.google.com/compute/docs/general-purpose-machines
+        :text: Read more
+        :classes: stretched-link
+
+    ---
+
+    **Azure** Previous generations of virtual machine sizes
+
+    +++
+
+    .. link-button:: https://docs.microsoft.com/en-us/azure/virtual-machines/sizes-previous-gen
+        :text: Read more
+        :classes: stretched-link
+
+    ---
 
 The instance types can vary to other equivalent types in different regions.
 
-.. note:: For custom plans, if you want to know the node types for IOPS limitation, please contact support team at ``support@aiven.io``.
+.. note:: For custom plans, if you want to know the node types for IOPS limitation, please contact the support team at ``support@aiven.io``.
