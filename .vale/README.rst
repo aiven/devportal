@@ -8,6 +8,9 @@ Notes on what we are doing with Vale
 
 .. _`vale-action`: https://github.com/errata-ai/vale-action
 
+Notes
+=====
+
 Why we're not using the Vale style
 ----------------------------------
 
