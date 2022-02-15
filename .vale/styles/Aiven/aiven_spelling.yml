@@ -1,0 +1,8 @@
+extends: spelling
+message: "'%s' seems to be a typo"
+# The dictionary directory path appears to be relative to the .vale.ini file
+dicpath: .vale/dicts
+# We want to add our dictionary on top of the default dictionary
+append: true
+dictionaries:
+  - aiven
