@@ -51,6 +51,27 @@ Note that the rules for ``Redis`` (needs ``™*``, and it's OK for the ``*`` not
 
 One day it might be nice to be able to recognise a correct use in a header that comes before all uses in body text, but that's a task for another day (and might not be possible in vale anyway).
 
+Test files
+----------
+
+In the directory ``.vale/tests`` there are pairs of files, with names that contain ``good`` and ``bad``.
+
+The intention is that when vale is run on a ``good`` file, there should be no errors, and when it is run on a ``bad`` file there should be at least one error per significant line (that is, ignoring comments, which should be evident, and blank lines).
+
+In the case of the ``good.rst`` versus ``bad.rst`` files, inline "comments" are used to indicate what sort of error is meant to be triggered by each line in the ``bad`` file (they're not real inline comments because reStructuredText doesn't have those).
+
+I recommend using ``vale --output=line`` for its more compact output format.
+
+Ideally some actual form of programmatic testing would be used, but this is better than nothing.
+
+    Possibly using https://texttest.org/ (heh, a shout out to the Divio documentation system!).
+
+    See also
+
+    * http://emilybache.blogspot.com/2011/11/what-is-text-based-testing.html
+    * http://texttest.sourceforge.net/files/textbased_testing.pdf
+    * https://www.infoq.com/news/2017/02/approval-testing-texttest/
+
 Known or possible issues
 ========================
 
