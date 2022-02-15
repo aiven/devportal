@@ -1,0 +1,25 @@
+extends: conditional
+message: "At least one '%s' must be marked as ®"
+# Assertion:
+#   This is something that *must* be fixed as directed, which assumes that we
+#   can always detect it correctly.
+level: error
+scope: text
+# Assertion:
+#   We are only interested in `Thing®` once any other problems have been solved.
+#   And it's possible that `thing` is a word that does not need `®`.
+ignorecase: false
+
+# Ideally we would be checking for the first "significant" occurrence of a
+# term, for instance in a heading. But working that out is rather hard (!)
+# and probably not important in just about all cases. So we'll worry about
+# it if it ever comes up.
+#
+# Rule: the first occurrence of `Thing` must be `Thing®`, and subsequent
+# occurrences may be either `Thing` or `Thing®`
+
+# If we have Flink not followed by ®, we must also it followed by ®.
+# (Remember, ® is not a word character, so if we matched on '\b(Word)\b',
+# we'd match both "Word" and "Word®")
+first: '\b(Flink)(?!®)'
+second: '(Flink)(?:®)'
