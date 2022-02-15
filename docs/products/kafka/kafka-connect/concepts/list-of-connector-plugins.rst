@@ -1,7 +1,7 @@
-List of available Apache Kafka Connect connectors
+List of available Apache Kafka® Connect connectors
 =================================================
 
-The following connectors can be used in any Aiven for Kafka services with Kafka Connect enabled. 
+The following connectors can be used in any Aiven for Apache Kafka® services with Apache Kafka Connect enabled. 
 
 
 Source connectors
@@ -17,7 +17,7 @@ Source connectors enable the integration of data from an existing technology int
 
 * `Debezium for MySQL <https://debezium.io/docs/connectors/mysql/>`__ 
 
-* `Debezium for PostgreSQL <https://help.aiven.io/kafka/setting-up-debezium-with-aiven-postgresql>`__ 
+* :doc:`Debezium for PostgreSQL <../howto/debezium-source-connector-pg>` 
 
 * `Debezium for SQL Server <https://debezium.io/docs/connectors/sqlserver/>`__ 
 
@@ -38,7 +38,7 @@ Sink connectors
 
 Sink connectors enable the integration of data from an existing Apache Kafka topic to a target technology. The following is the list of available sink connectors:
 
-* `Aiven for Kafka S3 Sink Connector <https://help.aiven.io/kafka/connectors/aiven-kafka-s3-sink-connector>`__
+* `Aiven for Apache Kafka S3 Sink Connector <https://help.aiven.io/kafka/connectors/aiven-kafka-s3-sink-connector>`__
 
 * `Confluent Amazon S3 Sink <https://help.aiven.io/kafka/aiven-kafka-kafka-connect-s3>`__
 
