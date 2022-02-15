@@ -5,9 +5,9 @@ The Apache Kafka Connect® S3 sink connector enables you to move data from an Ai
 
 .. Warning::
 
-    As managed service Aiven provides two version of S3 sink connector: one developed by Aiven, another developed by Confluent. 
+    Aiven provides two version of S3 sink connector: one developed by Aiven, another developed by Confluent. 
     
-    This article is about the **Confluent** version. Documentation for the Aiven version is available at the :doc:`dedicated page <s3-sink-additional-parameters>`.
+    This article is about the **Confluent** version. Documentation for the Aiven version is available in the :doc:`dedicated page <s3-sink-additional-parameters>`.
 
 
 S3 naming format
