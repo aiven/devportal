@@ -149,12 +149,10 @@ You can test your skills or follow the steps below:
    d. Select **Key not used** as the key.
    e. Select **JSON** as the value data format.
    f. Enter ``CPU_IN`` as the name
-   g. What should be the ``CPU_IN`` SQL schema? Try yourself or check the solution below:
+   g. Enter the following as the ``CPU_IN`` SQL schema
 
-      .. dropdown:: The ``CPU_IN`` SQL schema
-
-         .. literalinclude:: /code/products/flink/basic_cpu-in_table.md
-            :language: sql
+      .. literalinclude:: /code/products/flink/basic_cpu-in_table.md
+         :language: sql
 
    h. Click **Create Table**.
 
@@ -166,12 +164,10 @@ You can test your skills or follow the steps below:
    d. Select **Key not used** as the key.
    e. Select **JSON** as the value data format.
    f. Enter ``CPU_OUT_FILTER`` as the name
-   g. What should be the ``CPU_OUT_FILTER`` SQL schema? Try yourself or check the solution below:
+   g. Enter the following as ``CPU_OUT_FILTER`` SQL schema:
 
-      .. dropdown:: The ``CPU_OUT_FILTER`` SQL schema
-
-         .. literalinclude:: /code/products/flink/basic_cpu-out-filter_table.md
-            :language: sql
+      .. literalinclude:: /code/products/flink/basic_cpu-out-filter_table.md
+         :language: sql
 
    h. Click **Create Table**.
 
@@ -179,12 +175,10 @@ You can test your skills or follow the steps below:
 
 #. Enter ``simple_filter`` as the job name, select ``CPU_IN`` and ``CPU_OUT_FILTER`` as the tables.
 
-#. What should be the filtering SQL statement? Try yourself or check the solution below:
+#. Enter the following as filtering SQL statement:
 
-   .. dropdown:: The basic filtering SQL statement
-
-      .. literalinclude:: /code/products/flink/basic_job.md
-         :language: sql
+   .. literalinclude:: /code/products/flink/basic_job.md
+      :language: sql
 
 #. click **Execute job**
 
@@ -221,12 +215,10 @@ You can test your skills or follow the steps below:
    d. Select **Key not used** as the key.
    e. Select **JSON** as the value data format.
    f. Enter ``CPU_OUT_AGG`` as the name
-   g. What should be the ``CPU_OUT_AGG`` SQL schema? Try yourself or check the solution below:
+   g. Enter the following as ``CPU_OUT_AGG`` SQL schema:
 
-      .. dropdown:: The ``CPU_OUT_AGG`` SQL schema
-
-         .. literalinclude:: /code/products/flink/windowed_cpu-out-agg_table.md
-            :language: sql
+      .. literalinclude:: /code/products/flink/windowed_cpu-out-agg_table.md
+         :language: sql
 
    h. Click **Create Table**.
 
@@ -234,12 +226,10 @@ You can test your skills or follow the steps below:
 
 #. Enter ``simple_agg`` as the job name, select ``CPU_OUT_AGG`` and ``CPU_IN`` as the tables.
 
-#. What should be the filtering SQL statement? Try yourself or check the solution below:
+#. Enter the following as filtering SQL statement:
 
-   .. dropdown:: The windowing SQL statement
-   
-      .. literalinclude:: /code/products/flink/windowed_job.md
-         :language: sql
+   .. literalinclude:: /code/products/flink/windowed_job.md
+      :language: sql
 
 #. Click **Execute job**.
 
@@ -311,12 +301,10 @@ You can test your skills or follow the steps below:
    a. Select your PostgreSQL® service
    b. Select ``public.cpu_thresholds`` as the table
    c. Enter ``SOURCE_THRESHOLDS`` as the name
-   d. What should be the ``SOURCE_THRESHOLDS`` SQL schema? Try yourself or check the solution below:
+   d. Enter the following as ``SOURCE_THRESHOLDS`` SQL schema:
 
-      .. dropdown:: The ``SOURCE_THRESHOLDS`` SQL schema
-   
-         .. literalinclude:: /code/products/flink/pgthresholds_source-thresholds_table.md
-            :language: sql
+      .. literalinclude:: /code/products/flink/pgthresholds_source-thresholds_table.md
+         :language: sql
 
    e. click **Create Table**
 
@@ -328,12 +316,10 @@ You can test your skills or follow the steps below:
    d. Select **Key not used** as the key.
    e. Select **JSON** as the value data format.
    f. Enter ``CPU_OUT_FILTER_PG`` as the name
-   g. What should be the ``CPU_OUT_FILTER_PG`` SQL schema? Try yourself or check the solution below:
+   g. Enter the following as ``CPU_OUT_FILTER_PG`` SQL schema:
 
-      .. dropdown:: The ``CPU_OUT_FILTER_PG`` SQL schema
-      
-         .. literalinclude:: /code/products/flink/pgthresholds_cpu-out-filter-pg_table.md
-            :language: sql
+      .. literalinclude:: /code/products/flink/pgthresholds_cpu-out-filter-pg_table.md
+         :language: sql
 
    h. Click **Create Table**.
 
@@ -342,11 +328,9 @@ You can test your skills or follow the steps below:
    a. Go to the **Create SQL Job** subtab
    b. Enter ``simple_filter_pg`` as the name
    c. Select the ``CPU_OUT_FILTER_PG``, ``CPU_IN``, and ``SOURCE_THRESHOLDS`` tables
-   d. What should the SQL to join the tables and filter statement be? Try yourself or check the solution below:
+   d. Enter the following as SQL statement to join tables and filter:
 
-   .. dropdown:: The joining SQL statement
-   
-      .. literalinclude:: /code/products/flink/pgthresholds_job.md
+   .. literalinclude:: /code/products/flink/pgthresholds_job.md
          :language: sql
    
    e. Click **Execute job**.
@@ -397,12 +381,10 @@ You can test your skills or follow the steps below:
    a. Select your PostgreSQL® service
    b. Select ``cpu_load_stats_agg_pg`` as the table
    c. Enter ``CPU_OUT_AGG_PG`` as the name
-   d. What should be the ``CPU_OUT_AGG_PG`` SQL schema? Try yourself or check the solution below:
+   d. Enter the following as ``CPU_OUT_AGG_PG`` SQL schema:
 
-      .. dropdown:: The ``CPU_OUT_AGG_PG`` SQL schema
-   
-         .. literalinclude:: /code/products/flink/combined_cpu-out-agg-pg_table.md
-            :language: sql
+      .. literalinclude:: /code/products/flink/combined_cpu-out-agg-pg_table.md
+         :language: sql
 
    e. Click **Create Table**
 
@@ -411,12 +393,10 @@ You can test your skills or follow the steps below:
    a. Go to the **Create SQL Job** subtab
    b. Enter ``simple_filter_pg_agg`` as the name
    c. Select the ``CPU_OUT_AGG_PG``, ``CPU_IN``, and ``SOURCE_THRESHOLDS`` tables
-   d. What should the SQL to join the tables, calculate the average over a window and filter the high CPU average values be? Try yourself or check the solution below:
+   d. Enter the following SQL to join the tables, calculate the average over a window and filter the high CPU average values:
    
-      .. dropdown:: The joining SQL statement
-         
-         .. literalinclude:: /code/products/flink/combined_job.md
-            :language: sql
+      .. literalinclude:: /code/products/flink/combined_job.md
+         :language: sql
 
    d. Click **Execute job**
 
@@ -448,15 +428,14 @@ You can test your skills or follow the steps below:
    a. Select your OpenSearch® service
    b. Select ``cpu_high_load`` as the index
    c. Enter ``CPU_OUT_OS`` as the name
-   d. What should be the ``CPU_OUT_OS`` SQL schema? Try yourself or check the solution below:
+   d. Enter the following as ``CPU_OUT_OS`` SQL schema:
 
-      .. dropdown:: The ``CPU_OUT_OS`` SQL schema
+      .. literalinclude:: /code/products/flink/opensearch_out_table.md
+         :language: sql
 
-         We can reuse a similar definition of the ``CPU_OUT_FILTER_PG`` Flink table since they share the same columns
+      .. Note::
 
-         .. literalinclude:: /code/products/flink/opensearch_out_table.md
-            :language: sql
-
+         We can reuse a similar definition of the ``CPU_OUT_FILTER_PG`` Flink table since they share the same columns.
          The only difference is in the ``time_ltz`` column which now is ``STRING``, we need to translate the Flink ``TIMESTAMP`` in the timestamp format accepted by OpenSearch®.
 
    e. Click **Create Table**
@@ -466,14 +445,12 @@ You can test your skills or follow the steps below:
    a. Go to the **Create SQL Job** subtab
    b. Enter ``data_filtering_replication`` as the name
    c. Select the ``CPU_OUT_FILTER_PG`` and ``CPU_OUT_OS`` tables
-   d. What should the SQL to select from the source table, filter ``happy`` and ``sleepy`` hostnames and push the data to ``CPU_OUT_OS``:
+   d. Enter the following SQL to select from the source table, filter ``happy`` and ``sleepy`` hostnames and push the data to ``CPU_OUT_OS``:
    
-      .. dropdown:: The joining SQL statement
+      .. literalinclude:: /code/products/flink/filter_job_os.md
+         :language: sql
          
-         .. literalinclude:: /code/products/flink/filter_job_os.md
-            :language: sql
-         
-         The above SQL converts the ``local_ltz`` field to a string in the format ``yyyy/MM/dd hh:mm:ss`` which is recognised by OpenSearch as timestamp.
+      The above SQL converts the ``local_ltz`` field to a string in the format ``yyyy/MM/dd hh:mm:ss`` which is recognised by OpenSearch as timestamp.
    
    e. Click **Execute job**
 
