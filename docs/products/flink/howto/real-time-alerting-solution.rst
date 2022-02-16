@@ -135,7 +135,7 @@ You need to configure:
 * A sink table to send the processed messages to a separate Apache Kafka® topic
 * A Flink job to process the data
 
-You can test your skills or follow the steps below:
+To create the filtering data pipeline you can follow the steps below:
 
 1. In the Aiven web console, select the **Jobs & Data** tab in your Aiven for Apache Flink® service.
 
