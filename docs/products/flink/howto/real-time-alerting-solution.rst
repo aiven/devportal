@@ -203,7 +203,7 @@ The example  reuses the ``CPU_IN`` Apache Kafka® source table previously create
 * A new sink table to send the processed messages to a separate Apache Kafka® topic
 * A new Flink job to process the data
 
-You can test your skills or follow the steps below:
+To create the data pipeline you can follow the steps below:
 
 1. Go to the **Data Tables** subtab.
 
@@ -258,7 +258,7 @@ This uses the same ``CPU_IN`` Apache Kafka® source table that you created earli
 * A source table to get the PostgreSQL® threshold data
 * A Flink job to process the data.
 
-You can test your skills or follow the steps below:
+To create the data pipeline you can follow the steps below:
 
 .. note::
    For creating and configuring the tables in your PostgreSQL® service, these steps use the Aiven CLI to call ``psql``. You can instead use other tools to complete these steps if you prefer.
@@ -358,7 +358,7 @@ This uses the same ``CPU_IN`` Kafka source table and ``SOURCE_THRESHOLDS`` Postg
 * A new sink table to store the processed data in PostgreSQL®
 * A new Flink job to process the data
 
-You can test your skills or follow the steps below:
+To create the data pipeline you can follow the steps below:
 
 .. note::
    For creating and configuring the tables in your PostgreSQL® service, these steps use the Aiven CLI to call ``psql``. You can instead use other tools to complete these steps if you prefer.
@@ -421,7 +421,7 @@ This uses the ``CPU_OUT_FILTER_PG`` Flink table defined during the :ref:`third e
 * A new sink table to store the filtered data in OpenSearch®
 * A new Flink job to process the data
 
-You can test your skills or follow the steps below:
+To create the data pipeline you can follow the steps below:
 
 #. Create a Flink table to sink data to the OpenSearch® service
 
