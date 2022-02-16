@@ -1,7 +1,7 @@
 Create a real-time alerting solution - Aiven CLI
 ================================================
 
-This Aiven CLI tutorial shows you an example of how to combine Aiven for Apache Flink® with Aiven for Apache Kafka®, Aiven for PostgreSQL® and Aiven for OpenSearch® services to create a solution that provides real-time alerting data for CPU loads.
+This Aiven CLI tutorial shows you an example of how to combine Aiven for Apache Flink® with Aiven for Apache Kafka® and Aiven for PostgreSQL® services to create a solution that provides real-time alerting data for CPU loads.
 
 Architecture overview
 ---------------------
@@ -60,16 +60,6 @@ Set up Aiven services
           --plan business-4                       \
           --project PROJECT_NAME
 
-#. Run the following command to create an Aiven for OpenSearch® service named ``demo-opensearch``:
-
-   ::
-
-      avn service create demo-opensearch          \
-          --service-type opensearch               \
-          --cloud CLOUD_AND_REGION                \
-          --plan business-4                       \
-          --project PROJECT_NAME
-
 #. Run the following command to create an Aiven for Apache Flink® service named ``demo-flink``:
 
    ::
@@ -101,24 +91,14 @@ Set up Aiven services
              --integration-type flink                 \
              -s demo-postgresql                   \
              -d demo-flink
-   c. Enter the following command to add the ``demo-opensearch`` service integration:
 
-      ::
-
-         avn service integration-create           \
-             --project PROJECT_NAME               \
-             --integration-type flink                 \
-             -s demo-opensearch                   \
-             -d demo-flink
-
-
-   d. Enter the following command to list the integrations:
+   c. Enter the following command to list the integrations:
 
       ::
 
          avn service integration-list demo-flink
 
-      The output should show you that both ``demo-kafka``, ``demo-postgresql`` and ``demo-opensearch`` integrations are enabled as well as the corresponding ``integration_id`` values that you need later when creating data tables.
+      The output should show you that both ``demo-kafka`` and ``demo-postgresql`` integrations are enabled as well as the corresponding ``integration_id`` values that you need later when creating data tables.
 
 
 
@@ -154,7 +134,7 @@ Before you start, clone the `Dockerized fake data producer for Aiven for Apache 
 
       docker run fake-data-producer-for-apache-kafka-docker
 
-   This command pushes the following type of events to the ``cpu_load_stats_real`` topic in your Kafka service:
+   This command pushes the following type of events to the ``cpu_load_stats_real`` topic in your Apache Kafka® service:
 
    ::
    
@@ -168,7 +148,7 @@ Before you start, clone the `Dockerized fake data producer for Aiven for Apache 
 Create a pipeline for basic filtering
 -------------------------------------
 
-This setup uses a fixed threshold to filter any instances of high CPU load to a separate Kafka topic.
+The first example filters any instances of high CPU load based on a fixed threshold and pushes the high values into a separate Apache Kafka® topic.
 
 .. mermaid::
 
@@ -270,7 +250,7 @@ For this setup, you need to configure a source table to read the metrics data fr
 Create a pipeline with windowing
 --------------------------------
    
-This setup measures CPU load over a configured time using :doc:`windows </docs/products/flink/concepts/windows>` and :doc:`event time </docs/products/flink/concepts/event-processing-time>`.
+The second example aggregates the CPU load over a configured time using :doc:`windows </docs/products/flink/concepts/windows>` and :doc:`event time </docs/products/flink/concepts/event-processing-time>`.
 
 .. mermaid::
 
@@ -342,7 +322,7 @@ This uses the same ``CPU_IN`` Kafka source table that you created in the previou
 Create a Flink SQL job using PostgreSQL® thresholds
 ---------------------------------------------------
 
-This setup uses host-specific thresholds that are stored in PostgreSQL® as a basis for determining instances of high CPU load.
+The third example defines host-specific thresholds in a PostgreSQL®  table. The thresholds table is joined with the inbound stream of CPU measurements by hostname to filter instances of CPU load going over the defined thresholds.
 
 .. mermaid::
 
@@ -468,10 +448,10 @@ This uses the same ``CPU_IN`` Kafka source table that you created earlier. In ad
    When the job is running, you should start to see messages indicating CPU loads that exceed the PostgreSQL®-defined thresholds in the ``cpu_load_stats_real_filter_pg`` topic of your ``demo-kafka`` service.
 
 
-Create an aggregated data pipeline with Kafka and PostgreSQL®
--------------------------------------------------------------
+Create an aggregated data pipeline with Apache Kafka® and PostgreSQL®
+---------------------------------------------------------------------
 
-This setup highlights the instances where the average CPU load over a :doc:`windowed interval </docs/products/flink/concepts/windows>` exceeds the threshold and stores the results in PostgreSQL®.
+The fourth example highlights the instances where the average CPU load over a :doc:`windowed interval </docs/products/flink/concepts/windows>` exceeds the threshold and stores the results in PostgreSQL®.
 
 .. mermaid::
 
