@@ -24,7 +24,7 @@ When the result of the data pipeline contains a timestamp column like the below:
     HOSTNAME STRING,
     CPU DOUBLE
 
-To push the data correctly to an OpenSearch® index, you'll need to set the target column format as ``STRING`` in the Flink table definition, like:
+to push the data correctly to an OpenSearch® index, you'll need to set the target column format as ``STRING`` in the Flink table definition, like:
 
 ::
 
@@ -32,7 +32,7 @@ To push the data correctly to an OpenSearch® index, you'll need to set the targ
     HOSTNAME STRING,
     CPU DOUBLE    
 
-And, assuming the ``EVENT_TIME`` is a timestamp, you'll need to specify it in the format understood by OpenSearch® using the ``DATE_FORMAT`` function, like:
+and, assuming the ``EVENT_TIME`` is a timestamp, you'll need to specify it in the format understood by OpenSearch® using the ``DATE_FORMAT`` function, like:
 
 ::
 
