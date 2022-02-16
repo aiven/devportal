@@ -6,7 +6,7 @@ This tutorial shows you an example of how to combine Aiven for Apache Flink® wi
 Architecture overview
 ---------------------
 
-This example involves creating an Apache Kafka® source topic that provides a stream of metrics data, a PostgreSQL® database that contains data on the alerting thresholds, and an Apache Flink® service that combines these two services and pushes the filtered data to a separate Apache Kafka® topic or PostgreSQL® table.
+This example involves creating an Apache Kafka® source topic that provides a stream of metrics data, a PostgreSQL® database that contains data on the alerting thresholds, and an Apache Flink® service that combines these two services and pushes the filtered data to a separate Apache Kafka® topic, PostgreSQL® table or OpenSearch® index.
 
 .. mermaid::
 
@@ -18,7 +18,7 @@ This example involves creating an Apache Kafka® source topic that provides a st
         id3-. filtered/aggregated data .->id5(PostgreSQL);
         id3-. filtered data .->id6(OpenSearch);
 
-The article includes the steps that you need when using the `Aiven web console <https://console.aiven.io>`_ along with a few different samples of how you can set thresholds for alerts. For connecting to your PostgreSQL® service, this example uses the `Aiven CLI <https://github.com/aiven/aiven-client>`_ calling `psql <https://www.postgresql.org/docs/current/app-psql.html>`_, but you can also use other tools if you prefer.
+This article includes the steps that you need when using the `Aiven web console <https://console.aiven.io>`_ along with a few different samples of how you can set thresholds for alerts. For connecting to your PostgreSQL® service, this example uses the `Aiven CLI <https://github.com/aiven/aiven-client>`_ calling `psql <https://www.postgresql.org/docs/current/app-psql.html>`_, but you can also use other tools if you prefer.
 
 In addition, the instructions show you how to use a separate Python-based tool, `Dockerized fake data producer for Aiven for Apache Kafka® <https://github.com/aiven/fake-data-producer-for-apache-kafka-docker>`_, to create sample records for your Apache Kafka® topic that provides the streamed data.
 
@@ -38,11 +38,11 @@ Set up Aiven services
 1. Follow the steps in :doc:`this article </docs/platform/howto/create_new_service>` to create these services:
 
    - An Aiven for Apache Kafka® service with the *Business-4* service plan, named ``demo-kafka`` 
-     This service contains the CPU load inbout streams
+     This service provides the CPU load input streams
    - An Aiven for PostgreSQL® service with the *Business-4* service plan, named ``demo-postgresql``
-     This service contains the CPU alerting threshold values
+     This service contains the CPU alerting threshold values, and is also used as a data sink
    - An Aiven for OpenSearch® service with the *Business-4* service plan, named ``demo-opensearch`` 
-     This service contains is going to contain filtered CPU data streams for further analysis and visualization
+     This service is going to contain filtered CPU data streams for further analysis and visualization
    - An Aiven for Apache Flink® service with the *Business-4* service plan, named ``demo-flink``
      This service defines the data transformation and aggregation pipelines
 
@@ -120,7 +120,7 @@ Before you start, clone the `Dockerized fake data producer for Aiven for Apache 
 Create a pipeline for basic filtering
 -------------------------------------
 
-The first example filters any instances of high CPU load based on a fixed threshold and pushes the high values a separate Apache Kafka® topic.
+The first example filters any instances of high CPU load based on a fixed threshold and pushes the high values into a separate Apache Kafka® topic.
 
 .. mermaid::
 
@@ -164,7 +164,7 @@ You can test your skills or follow the steps below:
    d. Select **Key not used** as the key.
    e. Select **JSON** as the value data format.
    f. Enter ``CPU_OUT_FILTER`` as the name
-   g. Enter the following as ``CPU_OUT_FILTER`` SQL schema:
+   g. Enter the following as the ``CPU_OUT_FILTER`` SQL schema:
 
       .. literalinclude:: /code/products/flink/basic_cpu-out-filter_table.md
          :language: sql
@@ -175,7 +175,7 @@ You can test your skills or follow the steps below:
 
 #. Enter ``simple_filter`` as the job name, select ``CPU_IN`` and ``CPU_OUT_FILTER`` as the tables.
 
-#. Enter the following as filtering SQL statement:
+#. Enter the following as the filtering SQL statement:
 
    .. literalinclude:: /code/products/flink/basic_job.md
       :language: sql
@@ -215,7 +215,7 @@ You can test your skills or follow the steps below:
    d. Select **Key not used** as the key.
    e. Select **JSON** as the value data format.
    f. Enter ``CPU_OUT_AGG`` as the name
-   g. Enter the following as ``CPU_OUT_AGG`` SQL schema:
+   g. Enter the following as the ``CPU_OUT_AGG`` SQL schema:
 
       .. literalinclude:: /code/products/flink/windowed_cpu-out-agg_table.md
          :language: sql
@@ -226,7 +226,7 @@ You can test your skills or follow the steps below:
 
 #. Enter ``simple_agg`` as the job name, select ``CPU_OUT_AGG`` and ``CPU_IN`` as the tables.
 
-#. Enter the following as filtering SQL statement:
+#. Enter the following as the filtering SQL statement:
 
    .. literalinclude:: /code/products/flink/windowed_job.md
       :language: sql
@@ -301,7 +301,7 @@ You can test your skills or follow the steps below:
    a. Select your PostgreSQL® service
    b. Select ``public.cpu_thresholds`` as the table
    c. Enter ``SOURCE_THRESHOLDS`` as the name
-   d. Enter the following as ``SOURCE_THRESHOLDS`` SQL schema:
+   d. Enter the following as the ``SOURCE_THRESHOLDS`` SQL schema:
 
       .. literalinclude:: /code/products/flink/pgthresholds_source-thresholds_table.md
          :language: sql
@@ -316,7 +316,7 @@ You can test your skills or follow the steps below:
    d. Select **Key not used** as the key.
    e. Select **JSON** as the value data format.
    f. Enter ``CPU_OUT_FILTER_PG`` as the name
-   g. Enter the following as ``CPU_OUT_FILTER_PG`` SQL schema:
+   g. Enter the following as the ``CPU_OUT_FILTER_PG`` SQL schema:
 
       .. literalinclude:: /code/products/flink/pgthresholds_cpu-out-filter-pg_table.md
          :language: sql
@@ -328,7 +328,7 @@ You can test your skills or follow the steps below:
    a. Go to the **Create SQL Job** subtab
    b. Enter ``simple_filter_pg`` as the name
    c. Select the ``CPU_OUT_FILTER_PG``, ``CPU_IN``, and ``SOURCE_THRESHOLDS`` tables
-   d. Enter the following as SQL statement to join tables and filter:
+   d. Enter the following SQL statement to join the tables and filter:
 
    .. literalinclude:: /code/products/flink/pgthresholds_job.md
          :language: sql
@@ -376,12 +376,12 @@ You can test your skills or follow the steps below:
    
 #. In the Aiven web console, go to the **Jobs & Data** > **Data Tables** tab for your Flink service.
    
-#. Create a Flink table to sink data over PostgreSQL® service
+#. Create a Flink table to sink data to the PostgreSQL® service
 
    a. Select your PostgreSQL® service
    b. Select ``cpu_load_stats_agg_pg`` as the table
    c. Enter ``CPU_OUT_AGG_PG`` as the name
-   d. Enter the following as ``CPU_OUT_AGG_PG`` SQL schema:
+   d. Enter the following as the ``CPU_OUT_AGG_PG`` SQL schema:
 
       .. literalinclude:: /code/products/flink/combined_cpu-out-agg-pg_table.md
          :language: sql
@@ -423,20 +423,20 @@ This uses the ``CPU_OUT_FILTER_PG`` Flink table defined during the :ref:`third e
 
 You can test your skills or follow the steps below:
 
-#. Create a Flink table to sink data over OpenSearch® service
+#. Create a Flink table to sink data to the OpenSearch® service
 
    a. Select your OpenSearch® service
    b. Select ``cpu_high_load`` as the index
    c. Enter ``CPU_OUT_OS`` as the name
-   d. Enter the following as ``CPU_OUT_OS`` SQL schema:
+   d. Enter the following as the ``CPU_OUT_OS`` SQL schema:
 
       .. literalinclude:: /code/products/flink/opensearch_out_table.md
          :language: sql
 
       .. Note::
 
-         We can reuse a similar definition of the ``CPU_OUT_FILTER_PG`` Flink table since they share the same columns.
-         The only difference is in the ``time_ltz`` column which now is ``STRING``, we need to translate the Flink ``TIMESTAMP`` in the timestamp format accepted by OpenSearch®.
+         We can reuse a similar definition to the ``CPU_OUT_FILTER_PG`` Flink table since they share the same columns.
+         The only difference is the ``time_ltz`` column which is now ``STRING``, as we need to translate the Flink ``TIMESTAMP`` to the timestamp format accepted by OpenSearch®.
 
    e. Click **Create Table**
 
