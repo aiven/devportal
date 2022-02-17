@@ -31,6 +31,8 @@ Furthermore you need to collect the following information about the target Elast
 
     The ``SCHEMA_REGISTRY`` related parameters are available in the Aiven for Apache Kafka® service page, *Overview* tab, and *Schema Registry* subtab
 
+    As of version 3.0, Aiven for Apache Kafka no longer supports Confluent Schema Registry. For more information, read `the article describing the replacement, Karapace <https://help.aiven.io/en/articles/5651983>`_
+
 Setup an Elasticsearch sink connector with Aiven CLI
 ----------------------------------------------------
 
