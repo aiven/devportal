@@ -10,11 +10,19 @@
 #
 #    $ shelltest --diff .vale/tests/shelltest.test
 #
+# or, for instance:
+#
+#    $ shelltest --diff --with vale-2.14.0 .vale/tests/shelltest.test
+#
 # NOTE that the order of output of error messages from vale does not seem to be
 # deterministic. This has been evident with `.vale/tests/bad.rst`.
 # The simplest solution for our purposes is to run the result through `sort`,
 # although then we lost the ability to test the return code - although for
 # these tests I don't think I'm concerned with testing the vale return code.
+#
+# NOTE that working out what is going on when deciding if the output is what
+# is actually expected is best done *without* `sort`, as the line numbers don't
+# sort as one might hope (of course).
 
 # ---------------------------------------------------------------
 # General checks
@@ -53,8 +61,9 @@ $ vale --output=line .vale/tests/bad.rst | sort
 # Require a registered/trademarked occurrence of a term
 
 # PROBLEMS:
-# 1. The sentence case is known to be a problem - see below for more.
-# 2. I'm still exploring that Clickhouse error in the `good` file.
+# 1. The output for the good case should be empty.
+# 2. The sentence case is known to be a problem - see below for more.
+# 3. I'm still exploring that Clickhouse error in the `good` file.
 #
 $ vale --output=line .vale/tests/first_ref_good.rst | sort
 >
@@ -64,6 +73,15 @@ $ vale --output=line .vale/tests/first_ref_good.rst | sort
 
 $ vale --output=line .vale/tests/first_ref_bad.rst | sort
 >
+.vale/tests/first_ref_bad.rst:10:25:Aiven.first_Cassandra_is_registered:At least one 'Cassandra' must be marked as ®
+.vale/tests/first_ref_bad.rst:10:36:Aiven.first_OpenSearch_is_registered:At least one 'OpenSearch' must be marked as ®
+.vale/tests/first_ref_bad.rst:10:48:Aiven.first_PostgreSQL_is_registered:At least one 'PostgreSQL' must be marked as ®
+.vale/tests/first_ref_bad.rst:10:60:Aiven.first_InfluxDB_is_registered:At least one 'InfluxDB' must be marked as ®
+.vale/tests/first_ref_bad.rst:10:70:Aiven.first_Grafana_is_registered:At least one 'Grafana' must be marked as ®
+.vale/tests/first_ref_bad.rst:10:79:Aiven.first_Kubernetes_is_registered:At least one 'Kubernetes' must be marked as ®
+.vale/tests/first_ref_bad.rst:12:14:Aiven.aiven_spelling:'tradmarked' seems to be a typo
+.vale/tests/first_ref_bad.rst:12:5:Aiven.first_Redis_is_trademarked:At least one 'Redis' must be marked as ™*
+.vale/tests/first_ref_bad.rst:12:63:Aiven.first_Redis_is_trademarked:At least one 'Redis' must be marked as ™*
 .vale/tests/first_ref_bad.rst:1:11:Aiven.first_Flink_is_registered:At least one 'Flink' must be marked as ®
 .vale/tests/first_ref_bad.rst:1:1:Aiven.capitalization_headings:'This is a Flink title' should be in sentence case
 .vale/tests/first_ref_bad.rst:4:42:Aiven.first_Flink_is_registered:At least one 'Flink' must be marked as ®
@@ -77,7 +95,9 @@ $ vale --output=line .vale/tests/first_ref_bad.rst | sort
 # Headings are to be sentence cased
 # Note that these are warnings, not errors, and so vale's exit status code is 0
 
-# PROBLEMS: I know I have some problem with sentence casing in the `good` file.
+# PROBLEMS:
+# 1. The output for the good case should be empty.
+# 2. I know I have some problem with sentence casing in the `good` file.
 #
 $ vale --output=line .vale/tests/sentence_case_title_good.rst | sort
 >

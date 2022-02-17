@@ -6,14 +6,14 @@ ClickHouse®                             -- ``clickhouse`` capitalisation
 ClickHouse®                             -- ``Clickhouse`` capitalisation
 
 Flink®                                  -- ``flick`` spelling (and ®)
-InfluxDB                                -- ``influx`` common replacement
-InfluxDB                                -- ``influxdb`` spelling
+InfluxDB®                               -- ``influx`` common replacement
+InfluxDB®                               -- ``influxdb`` spelling
 Kafka®                                  -- ``kakfa`` spelling
 Kafka®                                  -- ``kafka`` case
 multi-cloud                             -- ``muticloud`` hyphenation
-PostgreSQL                              -- ``postgesql`` spelling
-PostgreSQL                              -- ``postgres`` full name
-PostgreSQL                              -- ``postgreSql`` case
+PostgreSQL®                             -- ``postgesql`` spelling
+PostgreSQL®                             -- ``postgres`` full name
+PostgreSQL®                             -- ``postgreSql`` case
 time series                             -- ``timeseries`` should be two words
 
 Apache® Nonesuch                        -- ``Apache Nonesuch`` wants ® first word

@@ -4,5 +4,5 @@ level: error
 scope: text
 ignorecase: false
 
-first: '\b(Flink)(?!®)'
-second: '(Flink)(?:®)'
+first: '\b(OpenSearch)(?!®)'
+second: '(OpenSearch)(?:®)'
