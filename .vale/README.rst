@@ -42,17 +42,70 @@ Notes on the ``common_replacements`` style (extending ``substitution``) are in t
 
 These extend ``conditional`` to check that there is at least one ``<Word>®`` if there are any occurrences of ``<Word>``.
 
+Inside vale, ``first`` is termed the *antecedent*, and ``second`` is termed the *consequent*. I think of ``first`` as the *usage* and ``second`` as the *explanation*.
+
+    What vale actually does is:
+
+    1. Find all occurrences of text fragments that match ``second``, the *consequent* or *explanation*, and remember their locations.
+    2. Find all occurrences of text fragments that match ``first``, the *antecedent* or *usage*. For each, look to see if the matched string is in any of the strings found in (1) (or in the list of exceptions, but we're ignoring that for now)
+
+    So for their ``WHO`` example:
+
+    * it looks for all occurrences of the ``second`` expression, which is ``<capitalised-word-sequence> (<3-to-5-capital-letters>)``
+
+      * it finds ``["World Health Organization (WHO)"]`` (that's one match, which it remembers in a list)
+
+    * It then looks for occurrences of the ``first`` expression, which is ``<3-to-5-capital-letters>``
+
+      * it finds ``["WHO", "WHO", "DAFB"]`` - one "WHO" in "World Health Organization (WHO)", the standalone "WHO", and the standalone "DAFB"
+
+    * it goes through that second sequence:
+
+      * it looks for "WHO" in the strings in the list of ``second`` matches, and finds it
+      * it looks for "WHO" in the strings in the list of ``second`` matches, and finds it
+      * it looks for "DAFB" in the strings in the list of ``second`` matches, and does not find it
+
+    * so it produces an error for "DAFB"
+
+    (Why not remove duplicate entries from that list of ``first`` matches? Because if a term *doesn't* match, we want to report an individual error for each one.)
+
+    It's important to understand the details of how this works, because:
+
+    a. it determines what sort of text / regular expression is needed for each of ``first`` and ``second
+    b. it explains why (at the moment) there's no ordering constraint on whether ``second`` needs to come before or after ``first``
+
+    So for the ``Flink®`` case, ``first`` must match the *usage*, the word "``Flink``" whether it is followed by the "``®``" or not, and ``second`` must match the *explanation*, the word "``Flink``" followed by the "``®``" character,
+
 See `conditional rules are not ordered`_ for why that doesn't do quite what we want (we'd like it to require the occurrence with ``®`` comes first).
 
-We have one file for each ``<Word>`` - for instance, for ``Flink``, ``Kafka``, etc.
+We have one file for each ``<Word>`` - for instance, for ``Flink``, ``Kafka``, etc. We could (perhaps) make a combined file with a complicated conditional regular expression, but that would be a lot harder to interpret. One file per word is easy to maintain.
 
-We do not ignore case, because it's only the correctly cased version of the word we care about.
+* These are errors, because we need to get it right.
+* We do not ignore case, because it's only the correctly cased version of the word we care about.
 
 Because ``®`` is not a word character, we have to check for ``first`` being the word that is explicitly not followed by ``®``.
 
 Note that the rules for ``Redis`` (needs ``™*``, and it's OK for the ``*`` not to be superscripted) and ``Apache`` (only needs ``®`` if it's not followed by one of the sub-product names) will be different.
 
 One day it might be nice to be able to recognise a correct use in a header that comes before all uses in body text, but that's a task for another day (and might not be possible in vale anyway).
+
+Trademarky things
+-----------------
+
+Temporary list from the internal page:
+
+* Kafka®
+* Flink®
+* Cassandra®
+* ClickHouse®
+* OpenSearch®
+* PostgreSQL®
+* Redis™*
+* InfluxDB®
+* Grafana®
+* Kubernetes®
+
+Plus checking for ``Aiven for <name>`` instead of ``Aiven <name>`` (the former is correct) and also checking for ``Apache®`` when ``Apache`` is *not* followed by a product name (this *may* require listing all the product names in a regular expression, or may just mean checking for ``Apache <capitalised-word>``, which is probably good enough as a first pass).
 
 Test files
 ----------
@@ -65,7 +118,7 @@ In the case of the ``good.rst`` versus ``bad.rst`` files, inline "comments" are 
 
 I recommend using ``vale --output=line`` for its more compact output format.
 
-As an experiment, I have introduced testing with shelltestrunner_. See the file ``.vale/test/shelltest.test``.
+As an experiment, I have introduced testing with shelltestrunner_. See the file ``.vale/test/shelltest.test``. This makes it a lot easier to see the effect of changes I make to the vale setup.
 
   There's also a similar program, shtst_, if you prefer a Python script (or something that is ``pip install``-able). The test file syntax is very similar. I'm continuing with shelltest because it is more mature, and also because I find the ``--diff`` switch useful (which shtst does not have).
 
@@ -80,13 +133,20 @@ Known or possible issues
 
   *May be a bug of just a feature request, report later.*
 
-That is, a ``conditional`` rule asserts that if there is an occurrence of (text matching) ``first``, then there must also be at least one occurrence of (text matching) ``second``.
+That is, a ``conditional`` rule asserts that if there is an occurrence of (text matching) ``first``, then there must also be at least one occurrence of (text matching) ``second``, which contains the string found by ``first``.
+
+  **NOTE** see `first_<Word>_is_registered checks`_ for an explanation of how ``conditional`` actually works.
 
 The example given in the documentation (for ``WHO`` and its expansion/explanation) implies that ``second`` might be expected to come first, but this is not actually required by the code.
 
 When I've got vale working as we wish, I expect to raise an issue asking that it be possible to request that ordering, since we want to be able to require ``Term®`` comes before ``Term``.
 
-Also, the documentation could do with improvement here, so fix it when able.
+More documentation (and examples) needed for ``conditional``
+------------------------------------------------------------
+
+It turns out this is quite hard to think about! And getting the regular expressions right for non-trivial cases (like registered cases, and *especially* the Redis case) is also non-trivial.
+
+  **NOTE** see `first_<Word>_is_registered checks`_ for an explanation of how ``conditional`` actually works.
 
 Strange behaviour of sentence case
 ----------------------------------

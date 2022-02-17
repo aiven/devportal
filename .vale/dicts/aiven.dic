@@ -1,6 +1,15 @@
-5
+14
 Aiven
+Cassandra
 ClickHouse
 Flink
+Grafana
+InfluxDB
 InfluxDB
 Kafka
+Kubernetes
+M3
+MySQL
+OpenSearch
+PostgreSQL
+Redis

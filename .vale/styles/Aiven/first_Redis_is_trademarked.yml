@@ -1,0 +1,29 @@
+extends: conditional
+message: "At least one '%s' must be marked as ™*"
+level: error
+scope: text
+ignorecase: false
+
+# `first` needs to match all of
+# * `Redis`
+# * `Redis™`
+# * `Redis™*`.
+# * `Redis™* and more` -- this should "produce" `Redis™*``
+# * `Redis™*?`         -- this should "produce" `Redis™*``
+# * `Redis™*bibble`    -- strictly optional, but probably good if it can
+
+# `second` needs to match
+# * `Redis™*`
+# * `Redis™* and more`
+# * `Redis™*?`
+# but not
+# * `Redis`          (missing `™*`)
+# * `Redis™`         (missing `*`)
+# * `Redis™*bibble`  (missing "not a word" character after `Redis™*`)
+
+#first: '\b(Redis)(?!(™\*\W))'
+##first: '\b(Redis[™\*]+)(?!(™\*\W))'
+##first: '\b(Redis)(?![™\*])'
+first: '\b(Redis)(?!™\*)\b'
+second: '\b(Redis™\*)(?!\w)'
+#second: '\b(Redis[™\*]*)\b'
