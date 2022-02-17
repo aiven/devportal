@@ -84,18 +84,18 @@ The configuration file contains the following entries:
     * ``value.converter.schema.registry.basic.auth.user.info``: passing the required schema registry credentials in the form of ``SCHEMA_REGISTRY_USER:SCHEMA_REGISTRY_PASSWORD`` with the ``SCHEMA_REGISTRY_USER`` and ``SCHEMA_REGISTRY_PASSWORD`` parameters :ref:`retrieved in the previous step <connect_elasticsearch_sink_prereq>`. 
 
 
-Create a Kafka Connect connector with Aiven CLI
-'''''''''''''''''''''''''''''''''''''''''''''''
+Create a Kafka Connect connector with the Aiven CLI
+'''''''''''''''''''''''''''''''''''''''''''''''''''
 
 To create the connector, execute the following :ref:`Aiven CLI command <avn_service_connector_create>`, replacing the ``SERVICE_NAME`` with the name of the Aiven for Apache Kafka® service where the connector needs to run:
 
-:: 
+.. code-block:: console 
 
     avn service connector create SERVICE_NAME @opensearch_sink.json
 
 Check the connector status with the following command, replacing the ``SERVICE_NAME`` with the Aiven for Apache Kafka® service and the ``CONNECTOR_NAME`` with the name of the connector defined before:
 
-::
+.. code-block:: console
 
     avn service connector status SERVICE_NAME CONNECTOR_NAME
 
@@ -107,7 +107,7 @@ Create daily OpenSearch indexes
 You might need to create a new OpenSearch index on daily basis to store the Apache Kafka messages. 
 Adding the following ``TimestampRouter`` transformation in the connector properties file provides a way to define the index name as concatenation of the topic name and message date.
 
-::
+.. code-block:: json
 
     "transforms": "TimestampRouter",
     "transforms.TimestampRouter.topic.format": "${topic}-${timestamp}",
@@ -117,3 +117,119 @@ Adding the following ``TimestampRouter`` transformation in the connector propert
 .. Warning::
 
     The current version of the OpenSearch sink connector is not able to automatically create daily indexes in OpenSearch. Therefore you need to create the indexes with the correct name before starting the sink connector. You can create OpenSearch indexes in many ways including :doc:`CURL commands </docs/products/opensearch/howto/opensearch-with-curl>`.
+
+Example: Create an OpenSearch® sink connector on a topic with a JSON schema
+-----------------------------------------------------------------------------
+
+If you have a topic named ``iot_measurements`` containing the following data in JSON format, with a defined JSON schema:
+
+.. code-block:: json
+
+    {
+        "schema": {
+            "type":"struct",
+            "fields":[{
+                "type":"int64",
+                "optional": false,
+                "field": "iot_id"
+                },{
+                "type":"string",
+                "optional": false,
+                "field": "metric"
+                },{
+                "type":"int32",
+                "optional": false,
+                "field": "measurement"
+                }]
+        }, 
+        "payload":{ "iot_id":1, "metric":"Temperature", "measurement":14}
+    }
+    {
+        "schema": {
+            "type":"struct",
+            "fields":[{
+                "type":"int64",
+                "optional": false,
+                "field": "iot_id"
+                },{
+                "type":"string",
+                "optional": false,
+                "field": "metric"
+                },{
+                "type":"int32",
+                "optional": false,
+                "field": "measurement"
+                }]
+        }, 
+        "payload":{"iot_id":2, "metric":"Humidity", "measurement":60}}
+    }
+
+.. Note::
+
+    Since the JSON schema needs to be defined in every message, there is a big overhead to transmit the information. To achieve a better performance in term of information-message ratio you should use the Avro format together with the `Karapace schema registry <https://karapace.io/>`__ provided by Aiven
+
+You can sink the ``iot_measurements`` topic to OpenSearch with the following connector configuration, after replacing the placeholders for ``OS_CONNECTION_URL``, ``OS_USERNAME`` and ``OS_PASSWORD``:
+
+.. code-block:: json
+
+    {
+        "name":"sink_iot_json_schema",
+        "connector.class": "io.aiven.kafka.connect.opensearch.OpensearchSinkConnector",
+        "topics": "iot_measurements",
+        "connection.url": "OS_CONNECTION_URL",
+        "connection.username": "OS_USERNAME",
+        "connection.password": "OS_PASSWORD",
+        "type.name": "iot_measurements",
+        "tasks.max":"1",
+        "key.ignore": "true",
+        "value.converter": "org.apache.kafka.connect.json.JsonConverter"
+    }
+
+The configuration file contains the following peculiarities:
+
+* ``"topics": "iot_measurements"``: setting the topic to sink
+* ``"value.converter": "org.apache.kafka.connect.json.JsonConverter"``: the message value is in plain JSON format without a schema
+* ``"key.ignore": "true"``: the connector is ignoring the message key (empty), and generating documents with ID equal to ``topic+partition+offset``
+
+
+Example: Create an OpenSearch® sink connector on a topic in plain JSON format
+-----------------------------------------------------------------------------
+
+If you have a topic named ``students`` containing the following data in JSON format, without a defined schema:
+
+.. code-block:: text
+
+    Key: 1 Value: {"student_id":1, "student_name":"Carla"}
+    Key: 2 Value: {"student_id":2, "student_name":"Ugo"}
+    Key: 3 Value: {"student_id":3, "student_name":"Mary"}
+
+You can sink the ``students`` topic to OpenSearch with the following connector configuration, after replacing the placeholders for ``OS_CONNECTION_URL``, ``OS_USERNAME`` and ``OS_PASSWORD``:
+
+.. code-block:: json
+
+    {
+        "name":"sink_students_json",
+        "connector.class": "io.aiven.kafka.connect.opensearch.OpensearchSinkConnector",
+        "topics": "students",
+        "connection.url": "OS_CONNECTION_URL",
+        "connection.username": "OS_USERNAME",
+        "connection.password": "OS_PASSWORD",
+        "type.name": "students",
+        "tasks.max":"1",
+        "key.converter": "org.apache.kafka.connect.storage.StringConverter",
+        "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+        "value.converter.schemas.enable": "false",
+        "schema.ignore": "true"
+    }
+
+The configuration file contains the following peculiarities:
+
+* ``"topics": "students"``: setting the topic to sink
+* ``"key.converter": "org.apache.kafka.connect.storage.StringConverter"``: the message key is a string
+* ``"value.converter": "org.apache.kafka.connect.json.JsonConverter"``: the message value is in plain JSON format without a schema
+* ``"value.converter.schemas.enable": "false"``: since the data in the value doesn't have a schema, the connector shouldn't try to read it and sets it to null
+* ``"schema.ignore": "true"``: since the value schema is null, the connector doesn't infer it before pushing the data to OpenSearch
+
+.. Note::
+
+    The OpenSearch document ID is set as the message key

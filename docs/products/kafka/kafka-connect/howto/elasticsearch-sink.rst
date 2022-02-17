@@ -116,3 +116,119 @@ Adding the following ``TimestampRouter`` transformation in the connector propert
 .. Warning::
 
     The current version of the Elasticsearch sink connector is not able to automatically create daily indexes in Elasticsearch. Therefore you need to create the indexes with the correct name before starting the sink connector. You can create Elasticsearch indexes in many ways including :doc:`CURL commands </docs/products/opensearch/howto/opensearch-with-curl>`.
+
+Example: Create an Elasticsearch® sink connector on a topic with a JSON schema
+-------------------------------------------------------------------------------
+
+If you have a topic named ``iot_measurements`` containing the following data in JSON format, with a defined JSON schema:
+
+.. code-block:: json
+
+    {
+        "schema": {
+            "type":"struct",
+            "fields":[{
+                "type":"int64",
+                "optional": false,
+                "field": "iot_id"
+                },{
+                "type":"string",
+                "optional": false,
+                "field": "metric"
+                },{
+                "type":"int32",
+                "optional": false,
+                "field": "measurement"
+                }]
+        }, 
+        "payload":{ "iot_id":1, "metric":"Temperature", "measurement":14}
+    }
+    {
+        "schema": {
+            "type":"struct",
+            "fields":[{
+                "type":"int64",
+                "optional": false,
+                "field": "iot_id"
+                },{
+                "type":"string",
+                "optional": false,
+                "field": "metric"
+                },{
+                "type":"int32",
+                "optional": false,
+                "field": "measurement"
+                }]
+        }, 
+        "payload":{"iot_id":2, "metric":"Humidity", "measurement":60}}
+    }
+
+.. Note::
+
+    Since the JSON schema needs to be defined in every message, there is a big overhead to transmit the information. To achieve a better performance in term of information-message ratio you should use the Avro format together with the `Karapace schema registry <https://karapace.io/>`__ provided by Aiven
+
+You can sink the ``iot_measurements`` topic to Elasticsearch with the following connector configuration, after replacing the placeholders for ``ES_CONNECTION_URL``, ``ES_USERNAME`` and ``ES_PASSWORD``:
+
+.. code-block:: json
+
+    {
+        "name":"sink_iot_json_schema",
+        "connector.class": "io.aiven.connect.elasticsearch.ElasticsearchSinkConnector",
+        "topics": "iot_measurements",
+        "connection.url": "ES_CONNECTION_URL",
+        "connection.username": "ES_USERNAME",
+        "connection.password": "ES_PASSWORD",
+        "type.name": "iot_measurements",
+        "tasks.max":"1",
+        "key.ignore": "true",
+        "value.converter": "org.apache.kafka.connect.json.JsonConverter"
+    }
+
+The configuration file contains the following peculiarities:
+
+* ``"topics": "iot_measurements"``: setting the topic to sink
+* ``"value.converter": "org.apache.kafka.connect.json.JsonConverter"``: the message value is in plain JSON format without a schema
+* ``"key.ignore": "true"``: the connector is ignoring the message key (empty), and generating documents with ID equal to ``topic+partition+offset``
+
+
+Example: Create an Elasticsearch® sink connector on a topic in plain JSON format
+--------------------------------------------------------------------------------
+
+If you have a topic named ``students`` containing the following data in JSON format, without a defined schema:
+
+.. code-block:: text
+
+    Key: 1 Value: {"student_id":1, "student_name":"Carla"}
+    Key: 2 Value: {"student_id":2, "student_name":"Ugo"}
+    Key: 3 Value: {"student_id":3, "student_name":"Mary"}
+
+You can sink the ``students`` topic to Elasticsearch with the following connector configuration, after replacing the placeholders for ``ES_CONNECTION_URL``, ``ES_USERNAME`` and ``ES_PASSWORD``:
+
+.. code-block:: json
+
+    {
+        "name":"sink_students_json",
+        "connector.class": "io.aiven.connect.elasticsearch.ElasticsearchSinkConnector",
+        "topics": "students",
+        "connection.url": "ES_CONNECTION_URL",
+        "connection.username": "ES_USERNAME",
+        "connection.password": "ES_PASSWORD",
+        "type.name": "students",
+        "tasks.max":"1",
+        "key.converter": "org.apache.kafka.connect.storage.StringConverter",
+        "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+        "value.converter.schemas.enable": "false",
+        "schema.ignore": "true"
+    }
+
+The configuration file contains the following peculiarities:
+
+* ``"topics": "students"``: setting the topic to sink
+* ``"key.converter": "org.apache.kafka.connect.storage.StringConverter"``: the message key is a string
+* ``"value.converter": "org.apache.kafka.connect.json.JsonConverter"``: the message value is in plain JSON format without a schema
+* ``"value.converter.schemas.enable": "false"``: since the data in the value doesn't have a schema, the connector shouldn't try to read it and sets it to null
+* ``"schema.ignore": "true"``: since the value schema is null, the connector doesn't infer it before pushing the data to Elasticsearch
+
+.. Note::
+
+    The Elasticsearch document ID is set as the message key
