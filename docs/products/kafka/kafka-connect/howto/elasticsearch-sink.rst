@@ -16,10 +16,10 @@ To setup an Elasticsearch sink connector, you need an Aiven for Apache Kafka ser
 
 Furthermore you need to collect the following information about the target Elasticsearch service upfront:
 
-* ``ES_CONNECTION_URL``: The Elasticsearch connection URL
+* ``ES_CONNECTION_URL``: The Elasticsearch connection URL, in the form of `https://HOST:PORT``
 * ``ES_USERNAME``: The Elasticsearch username to connect
 * ``ES_PASSWORD``: The password for the username selected
-* ``TOPIC_LIST``: The list of topics to sink
+* ``TOPIC_LIST``: The list of topics to sink divided by comma
 * ``APACHE_KAFKA_HOST``: The hostname of the Apache Kafka service, only needed when using Avro as data format
 * ``SCHEMA_REGISTRY_PORT``: The Apache Kafka's schema registry port, only needed when using Avro as data format
 * ``SCHEMA_REGISTRY_USER``: The Apache Kafka's schema registry username, only needed when using Avro as data format
@@ -85,22 +85,29 @@ The configuration file contains the following entries:
     * ``value.converter.schema.registry.basic.auth.user.info``: passing the required schema registry credentials in the form of ``SCHEMA_REGISTRY_USER:SCHEMA_REGISTRY_PASSWORD`` with the ``SCHEMA_REGISTRY_USER`` and ``SCHEMA_REGISTRY_PASSWORD`` parameters :ref:`retrieved in the previous step <connect_elasticsearch_sink_prereq>`. 
 
 
-Create a Kafka Connect connector with Aiven CLI
-'''''''''''''''''''''''''''''''''''''''''''''''
+Create a Kafka Connect connector with Aiven Console
+'''''''''''''''''''''''''''''''''''''''''''''''''''
 
-To create the connector, execute the following :ref:`Aiven CLI command <avn_service_connector_create>`, replacing the ``SERVICE_NAME`` with the name of the Aiven for Apache Kafka® service where the connector needs to run:
+To create the connector, access the `Aiven Console <https://console.aiven.io/>`_ and select the Aiven for Apache Kafka® or Aiven for Apache Kafka Connect® service where the connector needs to be defined, then:
 
-:: 
+* Click on the **Connectors** tab
+* Clink on **Create New Connector**, the button is enabled only for services :doc:`with Kafka Connect enabled <enable-connect>`.
+* Select the **Elasticsearch sink**
+* Under the *Common* tab, locate the **Connector configuration** text box and click on **Edit**
+* Paste the connector configuration (stored in the ``elasticsearch_sink.json`` file) in the form
+* Click on **Apply**
 
-    avn service connector create SERVICE_NAME @elasticsearch_sink.json
+.. Note::
 
-Check the connector status with the following command, replacing the ``SERVICE_NAME`` with the Aiven for Apache Kafka® service and the ``CONNECTOR_NAME`` with the name of the connector defined before:
+    The Aiven Console parses the configuration file and fills the relevant UI fields. You can review the UI fields across the various tab and change them if necessary. The changes will be reflected in JSON format in the **Connector configuration** text box.
 
-::
+* After all the settings are correctly configured, click on **Create new connector**
+* Verify the connector status under the **Connectors** tab
+* Verify the presence of the data in the target Elasticsearch service, the index name is equal to the Apache Kafka topic name
 
-    avn service connector status SERVICE_NAME CONNECTOR_NAME
+.. Note::
 
-Verify the presence of the data in the target Elasticsearch service, the index name is equal to the Apache Kafka topic name.
+    Connectors can be created also using the dedicated :ref:`Aiven CLI command <avn_service_connector_create>`.
 
 Create daily Elasticsearch indexes
 ----------------------------------
