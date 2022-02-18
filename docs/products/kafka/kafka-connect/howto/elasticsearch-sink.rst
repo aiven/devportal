@@ -16,7 +16,7 @@ To setup an Elasticsearch sink connector, you need an Aiven for Apache Kafka ser
 
 Furthermore you need to collect the following information about the target Elasticsearch service upfront:
 
-* ``ES_CONNECTION_URL``: The Elasticsearch connection URL, in the form of `https://HOST:PORT``
+* ``ES_CONNECTION_URL``: The Elasticsearch connection URL, in the form of ``https://HOST:PORT``
 * ``ES_USERNAME``: The Elasticsearch username to connect
 * ``ES_PASSWORD``: The password for the username selected
 * ``TOPIC_LIST``: The list of topics to sink divided by comma
