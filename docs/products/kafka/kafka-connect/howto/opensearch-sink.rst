@@ -16,10 +16,10 @@ To setup an OpenSearch sink connector, you need an Aiven for Apache Kafka servic
 
 Furthermore you need to collect the following information about the target OpenSearch service upfront:
 
-* ``OS_CONNECTION_URL``: The OpenSearch connection URL
+* ``OS_CONNECTION_URL``: The OpenSearch connection URL, in the form of `https://HOST:PORT``
 * ``OS_USERNAME``: The OpenSearch username to connect
 * ``OS_PASSWORD``: The password for the username selected
-* ``TOPIC_LIST``: The list of topics to sink
+* ``TOPIC_LIST``: The list of topics to sink divided by comma
 * ``APACHE_KAFKA_HOST``: The hostname of the Apache Kafka service, only needed when using Avro as data format
 * ``SCHEMA_REGISTRY_PORT``: The Apache Kafka's schema registry port, only needed when using Avro as data format
 * ``SCHEMA_REGISTRY_USER``: The Apache Kafka's schema registry username, only needed when using Avro as data format
