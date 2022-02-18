@@ -44,6 +44,8 @@ These extend ``conditional`` to check that there is at least one ``<Word>®`` if
 
 Inside vale, ``first`` is termed the *antecedent*, and ``second`` is termed the *consequent*. I think of ``first`` as the *usage* and ``second`` as the *explanation*.
 
+Each needs to specify one *capture group* (the part of the pattern with ``(`` and ``)``) which will be used as the match for that pattern.
+
     What vale actually does is:
 
     1. Find all occurrences of text fragments that match ``second``, the *consequent* or *explanation*, and remember their locations.
@@ -51,21 +53,21 @@ Inside vale, ``first`` is termed the *antecedent*, and ``second`` is termed the 
 
     So for their ``WHO`` example:
 
-    * it looks for all occurrences of the ``second`` expression, which is ``<capitalised-word-sequence> (<3-to-5-capital-letters>)``
+    * It looks for all occurrences of the ``second`` expression, which is ``<capitalised-word-sequence> (<3-to-5-capital-letters>)``. The capture group is the ``<3-to-5-capital-letters>``.
 
-      * it finds ``["World Health Organization (WHO)"]`` (that's one match, which it remembers in a list)
+      * It finds the text ``World Health Organization (WHO)`` and remembers ``["WHO"]``(that's one capture group, which it remembers in a list)
 
-    * It then looks for occurrences of the ``first`` expression, which is ``<3-to-5-capital-letters>``
+    * It then looks for occurrences of the ``first`` expression, which is ``<3-to-5-capital-letters>``. Again, the capture group is the ``<3-to-5-capital-letters>``.
 
-      * it finds ``["WHO", "WHO", "DAFB"]`` - one "WHO" in "World Health Organization (WHO)", the standalone "WHO", and the standalone "DAFB"
+      * It finds ``["WHO", "WHO", "DAFB"]`` - one "WHO" in "World Health Organization (WHO)", the standalone "WHO", and the standalone "DAFB"
 
-    * it goes through that second sequence:
+    * It goes through that second sequence:
 
-      * it looks for "WHO" in the strings in the list of ``second`` matches, and finds it
-      * it looks for "WHO" in the strings in the list of ``second`` matches, and finds it
-      * it looks for "DAFB" in the strings in the list of ``second`` matches, and does not find it
+      * It looks for "WHO" in each of the strings in the list of ``second`` matches, and finds it
+      * It looks for "WHO" in each of the strings in the list of ``second`` matches, and finds it
+      * It looks for "DAFB" in each of the strings in the list of ``second`` matches, and does not find it
 
-    * so it produces an error for "DAFB"
+    * So it produces an error for "DAFB"
 
     (Why not remove duplicate entries from that list of ``first`` matches? Because if a term *doesn't* match, we want to report an individual error for each one.)
 
@@ -75,6 +77,16 @@ Inside vale, ``first`` is termed the *antecedent*, and ``second`` is termed the 
     b. it explains why (at the moment) there's no ordering constraint on whether ``second`` needs to come before or after ``first``
 
     So for the ``Flink®`` case, ``first`` must match the *usage*, the word "``Flink``" whether it is followed by the "``®``" or not, and ``second`` must match the *explanation*, the word "``Flink``" followed by the "``®``" character,
+
+.. note:: **Note to self** the ``vale/internal/check/conditional.go`` method ``Run`` seems to be called multiple times for a file, looping:
+
+          * for each file
+
+            * for a gradually changing "block" - this starts as all the text in the file, and then gradually replaces blocks/elements of the text, from the start, with ``@`` - for instance, the title, then the title and the first paragraph, then the title and the first two paragraphs, and so only
+
+              * for each conditional check
+
+          I don't (as yet) understand the point of that "block" loop.
 
 See `conditional rules are not ordered`_ for why that doesn't do quite what we want (we'd like it to require the occurrence with ``®`` comes first).
 
