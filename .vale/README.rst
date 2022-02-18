@@ -88,6 +88,8 @@ Each needs to specify one *capture group* (the part of the pattern with ``(`` an
 
           I don't (as yet) understand the point of that "block" loop.
 
+See `Error matching when characters like ® are present in the text`_ for the problem that is holding this up.
+
 See `conditional rules are not ordered`_ for why that doesn't do quite what we want (we'd like it to require the occurrence with ``®`` comes first).
 
 We have one file for each ``<Word>`` - for instance, for ``Flink``, ``Kafka``, etc. We could (perhaps) make a combined file with a complicated conditional regular expression, but that would be a lot harder to interpret. One file per word is easy to maintain.
@@ -140,6 +142,27 @@ As an experiment, I have introduced testing with shelltestrunner_. See the file 
 Known or possible issues
 ========================
 
+Error matching when characters like ``®`` are present in the text
+-----------------------------------------------------------------
+
+This is the problem I've been having with trying to match conditionals for ``®`` and ``™`` checking.
+
+Characters like ``®`` or ``™`` (U+00AE and U+2122) seem to cause match offset calculations to go wrong.
+
+For instance::
+
+    $ vale --output=line 'World Health Organization (WHO) (R) and WHO or WHO'
+
+but::
+
+    $ vale --output=line 'World Health Organization (WHO) ® and WHO or WHO'
+    stdin.txt:1:28:Test.WHO_example:'WHO' has no definition
+    stdin.txt:1:39:Test.WHO_example:'WHO' has no definition
+
+I've raised `Vale issue 410`_ with the details on this.
+
+.. _`Vale issue 410`: https://github.com/errata-ai/vale/issues/410
+
 ``conditional`` rules are not ordered
 -------------------------------------
 
@@ -168,6 +191,8 @@ Strange behaviour of sentence case
 In the ``.vale/tests/sentence_case_title_good.rst`` file, some titles are being treated as errors, when one would not expect it. For instance, the title ``Not Aiven`` is an eror, but the title ``Aiven®`` is OK, and longer titles with names in them (that is, capitalised dictionary words) are OK.
 
 I'm going to leave this for the moment and concentrate on other things, and come back to it later to see if I can either work out what is going on, or work out a minimal test case.
+
+It is possible that this may be related to `Vale issue 410`_
 
 Missing documentation for dictionary ``append``
 -----------------------------------------------
