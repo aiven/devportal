@@ -34,8 +34,8 @@ Furthermore you need to collect the following information about the target OpenS
 
     As of version 3.0, Aiven for Apache Kafka no longer supports Confluent Schema Registry. For more information, read `the article describing the replacement, Karapace <https://help.aiven.io/en/articles/5651983>`_
 
-Setup an OpenSearch sink connector with Aiven CLI
----------------------------------------------------
+Setup an OpenSearch sink connector with Aiven Console
+-----------------------------------------------------
 
 The following example demonstrates how to setup a OpenSearch sink connector for Apache Kafka using the :ref:`Aiven CLI dedicated command <avn_service_connector_create>`.
 
