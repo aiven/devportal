@@ -133,7 +133,7 @@ The first example filters any instances of high CPU load based on a fixed thresh
 
 You need to configure:
 
-`` A source table to read the metrics data from your Apache Kafka® topic
+* A source table to read the metrics data from your Apache Kafka® topic
 * A sink table to send the processed messages to a separate Apache Kafka® topic
 * A Flink job to process the data
 
