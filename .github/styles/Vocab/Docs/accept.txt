@@ -28,6 +28,8 @@ etcd
 failover
 fileset[s]?
 Flink
+gantt
+Geohash
 Geomap
 geospatial
 GitHub
@@ -95,6 +97,7 @@ Simple Authentication and Security Layer
 Singlestat
 Splunk
 [Ss]pring
+Stackdriver
 Statusmap
 [Ss]ubnet
 subtab
@@ -113,6 +116,7 @@ Untrusted
 [Uu]psert
 wget
 Workbench
+Worldmap
 Zabbix
 Zipkin
 ZooKeeper
