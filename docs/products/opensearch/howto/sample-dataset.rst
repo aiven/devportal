@@ -144,10 +144,10 @@ OpenSearch Python client offers a helper called bulk() which allows us to send m
 
 Get data mapping with Python
 ----------------------------
-When the data has been sent to OpenSearch cluster on :ref:`load the data with Python <load-data-with-python>`, no data structure was specified.
-This is possible because OpenSearch has `dynamic mapping feature <https://opensearch.org/docs/latest/opensearch/rest-api/index-apis/create-index/#mappings>`_ that automatically add the fields to their type mapping.
+When we sent the data to OpenSearch cluster on :ref:`load the data with Python <load-data-with-python>`, no data structure was specified.
+This is possible because OpenSearch uses **dynamic mapping** to automatically add the fields to their type mapping. 
 
-To check the mapping definition, we will use ``get_mapping`` method with the index name as argument.
+Use ``get_mapping`` method with the index name as the argument to check the mapping definition of your data.
 
 .. code:: python
 
@@ -161,7 +161,40 @@ To check the mapping definition, we will use ``get_mapping`` method with the ind
 
     schema = mapping_data[INDEX_NAME]["mappings"][doc_type]
     print(f"Fields: {list(schema.keys())} \n")
-    pprint(schema, width=80, indent=0)
+    pprint(schema, width=50, indent=1)
+
+You should be able to see this output:
+
+.. code-block:: bash
+
+    Fields: ['calories', 'categories', 'date', 'desc', 'directions', 'fat', 'ingredients', 'protein', 'rating', 'sodium', 'title'] 
+
+And the mapping with the fields and their respective types.
+
+.. code-block:: bash
+
+    {'calories': {'type': 'float'},
+    'categories': {'fields': {'keyword': {'ignore_above': 256,
+                                        'type': 'keyword'}},
+                    'type': 'text'},
+    'date': {'type': 'date'},
+    'desc': {'fields': {'keyword': {'ignore_above': 256,
+                                    'type': 'keyword'}},
+            'type': 'text'},
+    'directions': {'fields': {'keyword': {'ignore_above': 256,
+                                        'type': 'keyword'}},
+                    'type': 'text'},
+    'fat': {'type': 'float'},
+    'ingredients': {'fields': {'keyword': {'ignore_above': 256,
+                                            'type': 'keyword'}},
+                    'type': 'text'},
+    'protein': {'type': 'float'},
+    'rating': {'type': 'float'},
+    'sodium': {'type': 'float'},
+    'title': {'fields': {'keyword': {'ignore_above': 256,
+                                    'type': 'keyword'}},
+            'type': 'text'}}
+
 
 
 .. seealso::
