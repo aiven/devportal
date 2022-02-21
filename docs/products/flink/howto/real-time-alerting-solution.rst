@@ -89,10 +89,12 @@ Before you start, clone the `Dockerized fake data producer for Aiven for Apache 
 
 #. Edit the ``conf/env.conf`` file and update the parameters with your Aiven account information and the authentication token that you created.
 
-   See the `instructions for the tool <https://github.com/aiven/fake-data-producer-for-apache-kafka-docker#readme>`_ for details on the parameters.
+   Set ``TOPIC`` to be ``cpu_load_stats_real``, and set ``NR_MESSAGES`` to be ``0``.
 
    .. note::
       The ``NR_MESSAGES`` option defines the number of messages that the tool creates when you run it. Setting this parameter to ``0`` creates a continuous flow of messages that never stops.
+
+      See the `instructions for the tool <https://github.com/aiven/fake-data-producer-for-apache-kafka-docker#readme>`_ for details on the parameters.
 
 #. Run the following command to build the Docker image:
 
@@ -109,7 +111,7 @@ Before you start, clone the `Dockerized fake data producer for Aiven for Apache 
    This command pushes the following type of events to the ``cpu_load_stats_real`` topic in your Apache Kafka® service:
 
    ::
-   
+
       {"hostname": "dopey", "cpu": "cpu4", "usage": 98.3335306302198, "occurred_at": 1633956789277}
       {"hostname": "sleepy", "cpu": "cpu2", "usage": 87.28240549074823, "occurred_at": 1633956783483}
       {"hostname": "sleepy", "cpu": "cpu1", "usage": 85.3384018012967, "occurred_at": 1633956788484}
@@ -131,7 +133,7 @@ The first example filters any instances of high CPU load based on a fixed thresh
 
 You need to configure:
 
-* A source table to read the metrics data from your Apache Kafka® topic
+`` A source table to read the metrics data from your Apache Kafka® topic
 * A sink table to send the processed messages to a separate Apache Kafka® topic
 * A Flink job to process the data
 
@@ -145,9 +147,9 @@ To create the filtering data pipeline you can follow the steps below:
 
    a. Select your Apache Kafka® service.
    b. Select ``cpu_load_stats_real`` as the topic.
-   c. Select **Apache Kafka® SQL Connector** as the connector type.
-   d. Select **Key not used** as the key.
-   e. Select **JSON** as the value data format.
+   c. Select **kafka** as the connector type.
+   d. Select **key not used** as the key.
+   e. Select **json** as the value data format.
    f. Enter ``CPU_IN`` as the name
    g. Enter the following as the ``CPU_IN`` SQL schema
 
@@ -160,9 +162,9 @@ To create the filtering data pipeline you can follow the steps below:
 
    a. Select your Apache Kafka® service.
    b. Enter ``cpu_load_stats_real_filter`` as the topic.
-   c. Select **Apache Kafka® SQL Connector** as the connector type.
-   d. Select **Key not used** as the key.
-   e. Select **JSON** as the value data format.
+   c. Select **kafka** as the connector type.
+   d. Select **key not used** as the key.
+   e. Select **json** as the value data format.
    f. Enter ``CPU_OUT_FILTER`` as the name
    g. Enter the following as the ``CPU_OUT_FILTER`` SQL schema:
 
@@ -205,15 +207,17 @@ The example  reuses the ``CPU_IN`` Apache Kafka® source table previously create
 
 To create the data pipeline you can follow the steps below:
 
-1. Go to the **Data Tables** subtab.
+1. In the Aiven web console, select the **Jobs & Data** tab in your Aiven for Apache Flink® service.
+
+#. Go to the **Data Tables** subtab.
 
 #. Create the sink Apache Kafka® table:
 
    a. Select your Apache Kafka® service.
    b. Enter ``cpu_load_stats_agg`` as the topic.
-   c. Select **Apache Kafka® SQL Connector** as the connector type.
-   d. Select **Key not used** as the key.
-   e. Select **JSON** as the value data format.
+   c. Select **kafka** as the connector type.
+   d. Select **key not used** as the key.
+   e. Select **json** as the value data format.
    f. Enter ``CPU_OUT_AGG`` as the name
    g. Enter the following as the ``CPU_OUT_AGG`` SQL schema:
 
@@ -263,14 +267,22 @@ To create the data pipeline you can follow the steps below:
 .. note::
    For creating and configuring the tables in your PostgreSQL® service, these steps use the Aiven CLI to call ``psql``. You can instead use other tools to complete these steps if you prefer.
 
-1. In the Aiven CLI, run the following command to connect to the ``demo-postgresql`` service:
-   
+1. If you haven't yet logged in to the Aiven CLI, then use the authentication token generated earlier to do so:
+
    ::
-	  
+
+     avn user login YOUR_EMAIL_ADDRESS --token
+
+   The command will prompt for the authentication token.
+
+#. In the Aiven CLI, run the following command to connect to the ``demo-postgresql`` service:
+
+   ::
+
       avn service cli demo-postgresql --project PROJECT_NAME
-   
+
 #. Enter the following commands to set up the PostgreSQL® table containing the threshold values:
-   
+
    .. literalinclude:: /code/products/flink/pgthresholds_cpu-thresholds_table.md
       :language: sql
 
@@ -294,12 +306,14 @@ To create the data pipeline you can follow the steps below:
       sneezy   |     80
       dopey    |     90
 
-#. In the Aiven web console, go to the **Jobs & Data** > **Data Tables** tab for your Flink service.
+#. In the Aiven web console, select the **Jobs & Data** tab in your Aiven for Apache Flink® service.
+
+#. Go to the **Data Tables** subtab.
 
 #. Create the Flink table pointing to the PostgreSQL® table
 
    a. Select your PostgreSQL® service
-   b. Select ``public.cpu_thresholds`` as the table
+   b. Enter ``public.cpu_thresholds`` as the table
    c. Enter ``SOURCE_THRESHOLDS`` as the name
    d. Enter the following as the ``SOURCE_THRESHOLDS`` SQL schema:
 
@@ -311,10 +325,10 @@ To create the data pipeline you can follow the steps below:
 #. Create the Flink sink table pointing to the Apache Kafka® topic:
 
    a. Select your Apache Kafka® service.
-   b. Select ``cpu_load_stats_real_filter_pg`` as the topic.
-   c. Select **Apache Kafka® SQL Connector** as the connector type.
-   d. Select **Key not used** as the key.
-   e. Select **JSON** as the value data format.
+   b. Enter ``cpu_load_stats_real_filter_pg`` as the topic.
+   c. Select **kafka** as the connector type.
+   d. Select **key not used** as the key.
+   e. Select **json** as the value data format.
    f. Enter ``CPU_OUT_FILTER_PG`` as the name
    g. Enter the following as the ``CPU_OUT_FILTER_PG`` SQL schema:
 
@@ -374,12 +388,14 @@ To create the data pipeline you can follow the steps below:
    .. literalinclude:: /code/products/flink/combined_cpu-load-stats-agg-pg_table.md
       :language: sql
    
-#. In the Aiven web console, go to the **Jobs & Data** > **Data Tables** tab for your Flink service.
-   
+#. In the Aiven web console, select the **Jobs & Data** tab in your Aiven for Apache Flink® service.
+
+#. Go to the **Data Tables** subtab.
+
 #. Create a Flink table to sink data to the PostgreSQL® service
 
    a. Select your PostgreSQL® service
-   b. Select ``cpu_load_stats_agg_pg`` as the table
+   b. Enter ``cpu_load_stats_agg_pg`` as the table
    c. Enter ``CPU_OUT_AGG_PG`` as the name
    d. Enter the following as the ``CPU_OUT_AGG_PG`` SQL schema:
 
@@ -423,10 +439,14 @@ This uses the ``CPU_OUT_FILTER_PG`` Flink table defined during the :ref:`third e
 
 To create the data pipeline you can follow the steps below:
 
+1. In the Aiven web console, select the **Jobs & Data** tab in your Aiven for Apache Flink® service.
+
+#. Go to the **Data Tables** subtab.
+
 #. Create a Flink table to sink data to the OpenSearch® service
 
    a. Select your OpenSearch® service
-   b. Select ``cpu_high_load`` as the index
+   b. Enter ``cpu_high_load`` as the index
    c. Enter ``CPU_OUT_OS`` as the name
    d. Enter the following as the ``CPU_OUT_OS`` SQL schema:
 
