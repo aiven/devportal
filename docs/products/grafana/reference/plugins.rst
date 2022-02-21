@@ -6,7 +6,7 @@ The following plugins are available in all installations of Aiven for Grafana, a
 Panel plugins
 -------------
 AJAX - `Grafana <https://grafana.com/grafana/plugins/ryantxu-ajax-panel/>`_ | `GitHub <https://github.com/ryantxu/ajax-panel>`_
-    The AJAX Panel is a general way to load external content into a grafana dashboard.
+    The AJAX Panel is a general way to load external content into a Grafana dashboard.
 
 Alert list - `Grafana <https://grafana.com/grafana/plugins/alertlist/>`_ | `Grafana Docs <https://grafana.com/docs/grafana/v7.5/panels/visualizations/alert-list-panel/>`_
     The Alert List panel allows you to display alerts on a dashboard. The list can be configured to show either the current state of your alerts or recent alert state changes.
@@ -101,7 +101,7 @@ Text - `Grafana <https://grafana.com/grafana/plugins/text/>`_
     The Text Panel is a very simple panel that displays text. The source text is written in markdown so that you can format the text.
 
 Time series
-    The Time series panel allows for visualizing timeseries data.
+    The Time series panel allows for visualizing time series data.
 
 Welcome
     The Welcome panel is included with Grafana.
@@ -115,17 +115,17 @@ Data source plugins
 Azure Monitor - `Grafana <https://grafana.com/grafana/plugins/grafana-azure-monitor-datasource/>`_ | `GitHub <https://github.com/grafana/azure-monitor-datasource>`_
     Azure Monitor is the platform service that provides a single source for monitoring Azure resources. 
 
-Clickhouse - `GitHub <https://github.com/Vertamedia/clickhouse-grafana>`_
+ClickHouse - `GitHub <https://github.com/Vertamedia/clickhouse-grafana>`_
     ClickHouse datasource plugin provides a support for ClickHouse as a backend database.
 
 CloudWatch - `Grafana <https://grafana.com/grafana/plugins/cloudwatch/>`_ | `Grafana Docs <http://docs.grafana.org/datasources/cloudwatch/>`_
     Build dashboards for your CloudWatch metrics.
 
 Elasticsearch - `Grafana <https://grafana.com/grafana/plugins/elasticsearch/>`_ | `Grafana Docs <http://docs.grafana.org/datasources/elasticsearch/>`_
-    Perform elasticsearch queries to visualize logs or metrics stored in Elasticsearch. You can also annotate your graphs with log events stored in Elasticsearch.
+    Perform Elasticsearch queries to visualize logs or metrics stored in Elasticsearch. You can also annotate your graphs with log events stored in Elasticsearch.
 
 Google BigQuery - `GitHub <https://github.com/doitintl/bigquery-grafana>`_
-    A BigQuery DataSource plugin provides support for BigQuery as a backend database.
+    The BigQuery data source plugin provides support for BigQuery as a backend database.
 
 Google Sheets - `Grafana <https://grafana.com/grafana/plugins/grafana-googlesheets-datasource/>`_ | `GitHub <https://github.com/grafana/google-sheets-datasource>`_
     Visualize your Google Spreadsheets in Grafana.
@@ -154,7 +154,7 @@ OpenTSDB - `Grafana <https://grafana.com/grafana/plugins/opentsdb/>`_ | `Grafana
     OpenTSDB is a scalable, distributed time series database.
 
 Pagerduty - `Grafana <https://grafana.com/grafana/plugins/xginn8-pagerduty-datasource/>`_ | `GitHub <https://github.com/xginn8/grafana-pagerduty>`_
-    Annotations-only datasource for PagerDuty events.
+    Annotations-only datasource for Pagerduty events.
 
 PostgreSQL - `Grafana <https://grafana.com/grafana/plugins/postgres/>`_ | `Grafana Docs <http://docs.grafana.org/features/datasources/postgres/>`_
     The PostgreSQL data source plugin allows you to query and visualize data from a PostgreSQL compatible database.
@@ -163,7 +163,7 @@ Prometheus - `Grafana <https://grafana.com/grafana/plugins/prometheus/>`_ | `Gra
     Work with the open-source service monitoring system and time series database.
 
 Prometheus AlertManager - `GitHub <https://github.com/camptocamp/grafana-prometheus-alertmanager-datasource>`_
-    This datasource lets you use the Alertmanager's API of Prometheus to create dashboards in Grafana.
+    This data source lets you use the Alertmanager's API of Prometheus to create dashboards in Grafana.
 
 SimpleJson - `Grafana <https://grafana.com/grafana/plugins/grafana-simple-json-datasource/>`_ | `GitHub <https://github.com/grafana/simple-json-datasource>`_
 
