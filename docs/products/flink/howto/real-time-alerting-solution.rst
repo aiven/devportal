@@ -147,9 +147,9 @@ To create the filtering data pipeline you can follow the steps below:
 
    a. Select your Apache Kafka® service.
    b. Select ``cpu_load_stats_real`` as the topic.
-   c. Select **kafka** as the connector type.
-   d. Select **key not used** as the key.
-   e. Select **json** as the value data format.
+   c. Select **Kafka** as the connector type.
+   d. Select **Key not used** as the key.
+   e. Select **JSON** as the value data format.
    f. Enter ``CPU_IN`` as the name
    g. Enter the following as the ``CPU_IN`` SQL schema
 
@@ -162,9 +162,9 @@ To create the filtering data pipeline you can follow the steps below:
 
    a. Select your Apache Kafka® service.
    b. Enter ``cpu_load_stats_real_filter`` as the topic.
-   c. Select **kafka** as the connector type.
-   d. Select **key not used** as the key.
-   e. Select **json** as the value data format.
+   c. Select **Kafka** as the connector type.
+   d. Select **Key not used** as the key.
+   e. Select **JSON** as the value data format.
    f. Enter ``CPU_OUT_FILTER`` as the name
    g. Enter the following as the ``CPU_OUT_FILTER`` SQL schema:
 
@@ -215,9 +215,9 @@ To create the data pipeline you can follow the steps below:
 
    a. Select your Apache Kafka® service.
    b. Enter ``cpu_load_stats_agg`` as the topic.
-   c. Select **kafka** as the connector type.
-   d. Select **key not used** as the key.
-   e. Select **json** as the value data format.
+   c. Select **Kafka** as the connector type.
+   d. Select **Key not used** as the key.
+   e. Select **JSON** as the value data format.
    f. Enter ``CPU_OUT_AGG`` as the name
    g. Enter the following as the ``CPU_OUT_AGG`` SQL schema:
 
@@ -326,9 +326,9 @@ To create the data pipeline you can follow the steps below:
 
    a. Select your Apache Kafka® service.
    b. Enter ``cpu_load_stats_real_filter_pg`` as the topic.
-   c. Select **kafka** as the connector type.
-   d. Select **key not used** as the key.
-   e. Select **json** as the value data format.
+   c. Select **Kafka** as the connector type.
+   d. Select **Key not used** as the key.
+   e. Select **JSON** as the value data format.
    f. Enter ``CPU_OUT_FILTER_PG`` as the name
    g. Enter the following as the ``CPU_OUT_FILTER_PG`` SQL schema:
 
