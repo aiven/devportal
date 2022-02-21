@@ -40,6 +40,56 @@ Let's take a look at a sample recipe document:
         "sodium": 959.0,
     }
 
+Sample queries with HTTP client
+-------------------------------
+
+With the data in place, we can start trying some queries against your OpenSearch service. Since it has a simple HTTP interface, you can use your favorite HTTP client. In these examples, we will use `httpie <https://github.com/httpie/httpie>`_ because it's one of our favorites.
+
+First, export the ``SERVICE_URI`` variable with your OpenSearch service URI address and index name from the previous script:
+
+.. code:: bash
+
+    export SERVICE_URI="YOUR_SERVICE_URI_HERE/epicurious-recipes"
+
+1. Execute a basic search for the word ``vegan`` across all documents and fields:
+
+.. code:: bash
+
+    http "$SERVICE_URI/_search?q=vegan"
+
+2. Search for ``vegan`` in the ``desc`` or ``title`` fields only: 
+
+.. code:: bash
+
+    http POST "$SERVICE_URI/_search" <<< '
+    {
+        "query": {
+            "multi_match": {
+                "query": "vegan",
+                "fields": ["desc", "title"]
+            }
+        }
+    }
+    '
+
+3. Search for recipes published only in 2013:
+
+.. code:: bash
+
+    http POST "$SERVICE_URI/_search" <<< '
+    {
+        "query": {
+            "range" : {
+                "date": {
+                "gte": "2013-01-01",
+                "lte": "2013-12-31"
+                }
+            }
+        }
+    }
+    '
+
+.. _load-data-with-python:
 
 Load the data with Python
 -------------------------
@@ -89,54 +139,35 @@ OpenSearch Python client offers a helper called bulk() which allows us to send m
 
     python epicurious_recipes_import.py
 
-Sample queries with HTTP client
--------------------------------
 
-With the data in place, we can start trying some queries against your OpenSearch service. Since it has a simple HTTP interface, you can use your favorite HTTP client. In these examples, we will use `httpie <https://github.com/httpie/httpie>`_ because it's one of our favorites.
+.. _get-mapping-with-python:
 
-First, export the ``SERVICE_URI`` variable with your OpenSearch service URI address and index name from the previous script:
+Get data mapping with Python
+----------------------------
+When the data has been sent to OpenSearch cluster on :ref:`load the data with Python <load-data-with-python>`, no data structure was specified.
+This is possible because OpenSearch has `dynamic mapping feature <https://opensearch.org/docs/latest/opensearch/rest-api/index-apis/create-index/#mappings>`_ that automatically add the fields to their type mapping.
 
-.. code:: bash
+To check the mapping definition, we will use ``get_mapping`` method with the index name as argument.
 
-    export SERVICE_URI="YOUR_SERVICE_URI_HERE/epicurious-recipes"
+.. code:: python
 
-1. Execute a basic search for the word ``vegan`` across all documents and fields:
+    from pprint import pprint
 
-.. code:: bash
+    INDEX_NAME = 'epicurious-recipes'
+    mapping_data = os_client.indices.get_mapping(INDEX_NAME)
 
-    http "$SERVICE_URI/_search?q=vegan"
+    # Find index doc_type
+    doc_type = list(mapping_data[INDEX_NAME]["mappings"].keys())[0]
 
-2. Search for ``vegan`` in the ``desc`` or ``title`` fields only: 
+    schema = mapping_data[INDEX_NAME]["mappings"][doc_type]
+    print(f"Fields: {list(schema.keys())} \n")
+    pprint(schema, width=80, indent=0)
 
-.. code:: bash
 
-    http POST "$SERVICE_URI/_search" <<< '
-    {
-        "query": {
-            "multi_match": {
-                "query": "vegan",
-                "fields": ["desc", "title"]
-            }
-        }
-    }
-    '
+.. seealso::
 
-3. Search for recipes published only in 2013:
+    More about `OpenSearch mapping <https://opensearch.org/docs/latest/opensearch/rest-api/index-apis/create-index/#mappings>`_ 
 
-.. code:: bash
-
-    http POST "$SERVICE_URI/_search" <<< '
-    {
-        "query": {
-            "range" : {
-                "date": {
-                "gte": "2013-01-01",
-                "lte": "2013-12-31"
-                }
-            }
-        }
-    }
-    '
 
 .. _load-data-with-nodejs:
 
