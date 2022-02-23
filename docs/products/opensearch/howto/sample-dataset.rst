@@ -40,55 +40,6 @@ Let's take a look at a sample recipe document:
         "sodium": 959.0,
     }
 
-Sample queries with HTTP client
--------------------------------
-
-With the data in place, we can start trying some queries against your OpenSearch service. Since it has a simple HTTP interface, you can use your favorite HTTP client. In these examples, we will use `httpie <https://github.com/httpie/httpie>`_ because it's one of our favorites.
-
-First, export the ``SERVICE_URI`` variable with your OpenSearch service URI address and index name from the previous script:
-
-.. code:: bash
-
-    export SERVICE_URI="YOUR_SERVICE_URI_HERE/epicurious-recipes"
-
-1. Execute a basic search for the word ``vegan`` across all documents and fields:
-
-.. code:: bash
-
-    http "$SERVICE_URI/_search?q=vegan"
-
-2. Search for ``vegan`` in the ``desc`` or ``title`` fields only: 
-
-.. code:: bash
-
-    http POST "$SERVICE_URI/_search" <<< '
-    {
-        "query": {
-            "multi_match": {
-                "query": "vegan",
-                "fields": ["desc", "title"]
-            }
-        }
-    }
-    '
-
-3. Search for recipes published only in 2013:
-
-.. code:: bash
-
-    http POST "$SERVICE_URI/_search" <<< '
-    {
-        "query": {
-            "range" : {
-                "date": {
-                "gte": "2013-01-01",
-                "lte": "2013-12-31"
-                }
-            }
-        }
-    }
-    '
-
 .. _load-data-with-python:
 
 Load the data with Python
@@ -283,6 +234,55 @@ You should be able to see the following structure:
     }
 
 These are the fields you can play with. You can find information on dynamic mapping types `in the documentation <https://opensearch.org/docs/latest/opensearch/rest-api/index-apis/create-index/#dynamic-mapping-types>`_.
+
+Sample queries with HTTP client
+-------------------------------
+
+With the data in place, we can start trying some queries against your OpenSearch service. Since it has a simple HTTP interface, you can use your favorite HTTP client. In these examples, we will use `httpie <https://github.com/httpie/httpie>`_ because it's one of our favorites.
+
+First, export the ``SERVICE_URI`` variable with your OpenSearch service URI address and index name from the previous script:
+
+.. code:: bash
+
+    export SERVICE_URI="YOUR_SERVICE_URI_HERE/epicurious-recipes"
+
+1. Execute a basic search for the word ``vegan`` across all documents and fields:
+
+.. code:: bash
+
+    http "$SERVICE_URI/_search?q=vegan"
+
+2. Search for ``vegan`` in the ``desc`` or ``title`` fields only: 
+
+.. code:: bash
+
+    http POST "$SERVICE_URI/_search" <<< '
+    {
+        "query": {
+            "multi_match": {
+                "query": "vegan",
+                "fields": ["desc", "title"]
+            }
+        }
+    }
+    '
+
+3. Search for recipes published only in 2013:
+
+.. code:: bash
+
+    http POST "$SERVICE_URI/_search" <<< '
+    {
+        "query": {
+            "range" : {
+                "date": {
+                "gte": "2013-01-01",
+                "lte": "2013-12-31"
+                }
+            }
+        }
+    }
+    '
 
 Ready for a challenge?
 ----------------------
