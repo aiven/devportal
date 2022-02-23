@@ -95,14 +95,12 @@ OpenSearch Python client offers a helper called bulk() which allows us to send m
 
 Get data mapping with Python
 ----------------------------
-When we sent the data to OpenSearch cluster on :ref:`load the data with Python <load-data-with-python>`, no data structure was specified.
-This is possible because OpenSearch uses **dynamic mapping** to automatically add the fields to their type mapping. 
 
-Use ``get_mapping`` method with the index name as the argument to check the mapping definition of your data.
+When no data structure is specified, which is our case as shown on :ref:`load the data with Python <load-data-with-python>`, OpenSearch uses dynamic mapping to automatically detect the fields. To check the mapping definition of your data, OpenSearch client provides a function called ``get_mapping`` as shown:
 
 .. code:: python
 
-    from pprint import pprint
+    import pprint
 
     INDEX_NAME = 'epicurious-recipes'
     mapping_data = os_client.indices.get_mapping(INDEX_NAME)
@@ -111,46 +109,52 @@ Use ``get_mapping`` method with the index name as the argument to check the mapp
     doc_type = list(mapping_data[INDEX_NAME]["mappings"].keys())[0]
 
     schema = mapping_data[INDEX_NAME]["mappings"][doc_type]
-    print(f"Fields: {list(schema.keys())} \n")
-    pprint(schema, width=50, indent=1)
+    fields =  list(schema.keys())
+    pprint(fields)
+    pprint(schema)
 
-You should be able to see this output:
+You should be able to see the fields's output:
 
 .. code-block:: bash
 
-    Fields: ['calories', 'categories', 'date', 'desc', 'directions', 'fat', 'ingredients', 'protein', 'rating', 'sodium', 'title'] 
+    ['calories',
+    'categories',
+    'date',
+    'desc',
+    'directions',
+    'fat',
+    'ingredients',
+    'protein',
+    'rating',
+    'sodium',
+    'title']
 
 And the mapping with the fields and their respective types.
 
 .. code-block:: bash
 
-    {'calories': {'type': 'float'},
-    'categories': {'fields': {'keyword': {'ignore_above': 256,
-                                        'type': 'keyword'}},
-                    'type': 'text'},
-    'date': {'type': 'date'},
-    'desc': {'fields': {'keyword': {'ignore_above': 256,
-                                    'type': 'keyword'}},
-            'type': 'text'},
-    'directions': {'fields': {'keyword': {'ignore_above': 256,
-                                        'type': 'keyword'}},
-                    'type': 'text'},
-    'fat': {'type': 'float'},
-    'ingredients': {'fields': {'keyword': {'ignore_above': 256,
-                                            'type': 'keyword'}},
-                    'type': 'text'},
-    'protein': {'type': 'float'},
-    'rating': {'type': 'float'},
-    'sodium': {'type': 'float'},
-    'title': {'fields': {'keyword': {'ignore_above': 256,
-                                    'type': 'keyword'}},
-            'type': 'text'}}
-
-
+        {'calories': {'type': 'float'},
+         'categories': {'fields': {'keyword': {'ignore_above': 256, 'type': 'keyword'}},
+                        'type': 'text'},
+         'date': {'type': 'date'},
+         'desc': {'fields': {'keyword': {'ignore_above': 256, 'type': 'keyword'}},
+                  'type': 'text'},
+         'directions': {'fields': {'keyword': {'ignore_above': 256, 'type': 'keyword'}},
+                        'type': 'text'},
+         'fat': {'type': 'float'},
+         'ingredients': {'fields': {'keyword': {'ignore_above': 256,
+                                                'type': 'keyword'}},
+                         'type': 'text'},
+         'protein': {'type': 'float'},
+         'rating': {'type': 'float'},
+         'sodium': {'type': 'float'},
+         'title': {'fields': {'keyword': {'ignore_above': 256, 'type': 'keyword'}},
+                   'type': 'text'}}
+        
 
 .. seealso::
 
-    More about `OpenSearch mapping <https://opensearch.org/docs/latest/opensearch/rest-api/index-apis/create-index/#mappings>`_ 
+    Read more about OpenSearch mapping in the `official OpenSearch documentation <https://opensearch.org/docs/latest/opensearch/rest-api/index-apis/create-index/#mappings>`_.
 
 
 .. _load-data-with-nodejs:
