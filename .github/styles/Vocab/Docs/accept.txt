@@ -34,8 +34,9 @@ etcd
 failover
 fileset[s]?
 Flink
+[Gg]eocoder
 Geomap
-geospatial
+[Gg]eospatial
 GitHub
 [Gg]o
 Gradle
