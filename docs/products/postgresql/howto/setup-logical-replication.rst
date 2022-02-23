@@ -163,7 +163,7 @@ The command output is like::
 
 * If the ``dest_slot`` connector is no longer needed, run the following command to remove it::
 
-    SELECT pg_drop_replication_slot('dest_subscription');
+    SELECT pg_drop_replication_slot('dest_slot');
 
 4. In both cases, after the next PostgreSQL checkpoint, the disk space that the WAL logs have reserved for the ``dest_subscription`` connector should be freed up.
 
