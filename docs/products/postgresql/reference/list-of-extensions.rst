@@ -88,8 +88,6 @@ Geographical features
 ``postgis_legacy`` 
     The extension is not packaged or supported as an extension by the PostGIS project. The extension package is provided by Aiven for Aiven users.
 
-``postgres_fdw`` - https://www.postgresql.org/docs/current/postgres-fdw.html
-    Foreign data wrapper to enable access to data stored in external PostgreSQL servers
 ``address_standardizer`` - https://postgis.net/docs/standardize_address.html
     Returns a standard address format from certain rules
 
@@ -103,14 +101,21 @@ Geographical features
     Geospatial routing and network analysis, extends PostGIS
 
 
+Connectivity
+------------
+
+``postgres_fdw`` - https://www.postgresql.org/docs/current/postgres-fdw.html
+    Foreign data wrapper to enable access to data stored in external PostgreSQL servers
+
+``dblink`` - https://www.postgresql.org/docs/current/contrib-dblink-function.html
+    Allow execution of queries on a remote database
+
+
 Utilities
 ---------
 
 ``aiven_extras`` - https://github.com/aiven/aiven-extras
     Aiven-created extension to enable non-superusers to access certain database features, such as logical replication support
-
-``dblink`` - https://www.postgresql.org/docs/current/contrib-dblink-function.html
-    Allow execution of queries on a remote database
 
 ``intagg`` - https://www.postgresql.org/docs/current/intagg.html
     Integer aggregator and enumerator (note that built-in functions provide these capabilities; the extension is still supported for compatibility)
