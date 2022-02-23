@@ -1,4 +1,4 @@
-Source connectors
+Sink connectors
 ====================
 
 .. tableofcontents::
