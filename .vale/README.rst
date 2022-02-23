@@ -8,6 +8,8 @@ Notes on what we are doing with Vale
 
 .. _`vale-action`: https://github.com/errata-ai/vale-action
 
+.. contents::
+
 Notes
 =====
 
@@ -50,7 +52,7 @@ By default, words specified in a Hunspell dictionary are case insensitive. So ``
 .. _`Hunspell - How to specify case-insensitivity for spell check in dic or aff file`:
     https://stackoverflow.com/questions/33880247/
 
-.. note:: In theory we could put ``KEEPCASE K`` in the ``aiven.aff`` file, and specify a word as ``/K`` in the ``aiven.dic`` file. However, looking at the source code in ``vale/pkg/spell/aff.go`` shows that vale ignores any ``KEEPCASE`` directives.
+  **Note:** In theory we could put ``KEEPCASE K`` in the ``aiven.aff`` file, and specify a word as ``/K`` in the ``aiven.dic`` file. However, looking at the source code in ``vale/pkg/spell/aff.go`` shows that vale ignores any ``KEEPCASE`` directives.
 
 How vale works with the dictionary:
 
@@ -79,9 +81,9 @@ Case studies:
 
     $ vale --output=line "abecedary Abecedary abeCEdary"
 
-   (no errors)
+  (no errors)
 
-   and if I add ``Abecedary`` to the Aiven dictionary::
+  and if I add ``Abecedary`` to the Aiven dictionary::
 
     $ vale --output=line "abecedary Abecedary abeCEdary"
 
@@ -108,7 +110,7 @@ Case studies:
 Useful links about hunspell dictionaries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Useful links to learn about Hunspell compatible dictionaries (for that is what this is):
+Useful links to learn about Hunspell compatible dictionaries:
 
 **Note** *This list needs curation to work out if it's all useful to other people or not.*
 
@@ -128,7 +130,7 @@ Useful links to learn about Hunspell compatible dictionaries (for that is what t
 
   I found this useful.
 
-  It's part of a series "striving to explain how the world’s most popular spellchecker Hunspell works via its Python port called ****Spylls****"
+  It's part of a series "striving to explain how the world’s most popular spellchecker Hunspell works via its Python port called ``Spylls``
 
   https://zverok.github.io/spellchecker.html is the series content page
 
