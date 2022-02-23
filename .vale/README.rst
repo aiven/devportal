@@ -30,7 +30,118 @@ Since we are using our own dictionary now (as well as the default one, see ``aiv
 
 Some notes on dictionaries.
 
-Remember that the first line of ``aiven.dic`` must be the number of dictionary entries (the total number of lines in the file - 1).
+
+The ``aiven`` dictionary is two files:
+
+* ``aiven.dic`` - the actual words.
+
+* ``aiven.aff`` - rules for use in the ``.dic`` file. These specify the meaning of the ``/X`` style "switches" om some of the words in the ``.dic`` file.
+
+Remember that the first line of a ``.dic`` file must be the number of dictionary entries (the total number of lines in the file - 1).
+
+Note that the ``.aff`` file is allowed to be empty if it is not needed.
+    hunspell-how-to-specify-case-insensitivity-for-spell-check-in-dic-or-aff-file`
+
+Vale and dictionary case (in)sensitivity
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+By default, words specified in a Hunspell dictionary are case insensitive. So ``word`` would match ``word``, ``Word``, ``wOrD`` and other combinations. Similarly, ``TEXT`` would match ``text``, etc. This is discussed at `Hunspell - How to specify case-insensitivity for spell check in dic or aff file`_. For reference, the default ``en_US-web`` dictionary used by vale does not do anything special about this, so it is case-insensitive.
+
+.. _`Hunspell - How to specify case-insensitivity for spell check in dic or aff file`:
+    https://stackoverflow.com/questions/33880247/
+
+.. note:: In theory we could put ``KEEPCASE K`` in the ``aiven.aff`` file, and specify a word as ``/K`` in the ``aiven.dic`` file. However, looking at the source code in ``vale/pkg/spell/aff.go`` shows that vale ignores any ``KEEPCASE`` directives.
+
+How vale works with the dictionary:
+
+* If the word is just specified as lower case (in either or both dictionaries), then any case will match.
+
+* If the word is specifed as lower case and mixed case (either in the same or separate dictionaries), then any case will match.
+
+* If the word is just specifed as mixed case (in either or both dictionaries), then the match must be mixed case, but it need not be the *same* mixed case.
+
+Summarising:
+
++-------------------------+------------+------------+
+|                         | Aiven dictionary        |
+|         matches         +------------+------------+
+|                         | lower case | mixed case |
++------------+------------+------------+------------+
+| default    | lower case | any case   | any case   |
+| dictionary +------------+------------+------------+
+|            | mixed case | any case   | mixed case |
++------------+------------+------------+------------+
+
+
+Case studies:
+
+* The default dictionary has ``abecedary``::
+
+    $ vale --output=line "abecedary Abecedary abeCEdary"
+
+   (no errors)
+
+   and if I add ``Abecedary`` to the Aiven dictionary::
+
+    $ vale --output=line "abecedary Abecedary abeCEdary"
+
+* The default dictionary has ``Abba`` and ``abba``::
+
+    $ vale --output=line "abba Abba ABBA aBBa"
+
+  (no errors)
+
+  It doesn't make a difference if I also add ``Abba`` or ``abba`` to the Aiven dictionary.
+
+* The default dictionary has ``Aberdonian``::
+
+    $ vale --output=line "Aberdonian aberdonian aberDOnian"
+    stdin.txt:1:12:Aiven.aiven_spelling:'aberdonian' seems to be a typo
+
+  and if I add ``aberdonian`` to the Aiven dictionary::
+
+    $ vale --output=line "Aberdonian aberdonian aberDOnian"
+
+  so that *did* make a difference - it made it case-insensitive, as one might hope.
+
+
+Useful links about hunspell dictionaries
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Useful links to learn about Hunspell compatible dictionaries (for that is what this is):
+
+**Note** *This list needs curation to work out if it's all useful to other people or not.*
+
+* http://hunspell.github.io/
+
+  "Hunspell is the spell checker of LibreOffice, OpenOffice.org, Mozilla Firefox 3 & Thunderbird, Google Chrome, and it is also used by proprietary software packages, like macOS, InDesign, memoQ, Opera and SDL Trados."
+
+* http://manpages.ubuntu.com/manpages/trusty/man4/hunspell.4.html
+
+  "hunspell - format of Hunspell dictionaries and affix files"
+
+  https://linux.die.net/man/4/hunspell is another rendering of the same manpage.
+
+* https://zverok.github.io/blog/2021-03-16-spellchecking-dictionaries.html
+
+  "17 (ever so slightly) weird facts about the most popular dictionary format"
+
+  I found this useful.
+
+  It's part of a series "striving to explain how the world’s most popular spellchecker Hunspell works via its Python port called ****Spylls****"
+
+  https://zverok.github.io/spellchecker.html is the series content page
+
+* http://web.archive.org/web/20130810100226/http://www.suares.com/index.php?page_id=25&news_id=233
+
+  saved page on how to create a new dictionary (both files) from scratch
+
+  This references:
+
+  * http://www.openoffice.org/lingucomponent/affix.readme which describes the ``.aff`` file format
+
+* https://www.quora.com/How-do-the-Hunspell-dictionaries-work seems to be a decent introduction
+
 
 ``common_replacements``
 -----------------------
@@ -55,7 +166,7 @@ Each needs to specify one *capture group* (the part of the pattern with ``(`` an
 
     * It looks for all occurrences of the ``second`` expression, which is ``<capitalised-word-sequence> (<3-to-5-capital-letters>)``. The capture group is the ``<3-to-5-capital-letters>``.
 
-      * It finds the text ``World Health Organization (WHO)`` and remembers ``["WHO"]``(that's one capture group, which it remembers in a list)
+      * It finds the text ``World Health Organization (WHO)`` and remembers ``["WHO"]`` (that's one capture group, which it remembers in a list)
 
     * It then looks for occurrences of the ``first`` expression, which is ``<3-to-5-capital-letters>``. Again, the capture group is the ``<3-to-5-capital-letters>``.
 
@@ -73,7 +184,7 @@ Each needs to specify one *capture group* (the part of the pattern with ``(`` an
 
     It's important to understand the details of how this works, because:
 
-    a. it determines what sort of text / regular expression is needed for each of ``first`` and ``second
+    a. it determines what sort of text / regular expression is needed for each of ``first`` and ``second``
     b. it explains why (at the moment) there's no ordering constraint on whether ``second`` needs to come before or after ``first``
 
     So for the ``Flink®`` case, ``first`` must match the *usage*, the word "``Flink``" whether it is followed by the "``®``" or not, and ``second`` must match the *explanation*, the word "``Flink``" followed by the "``®``" character,
@@ -170,7 +281,7 @@ I've raised `Vale issue 410`_ with the details on this.
 
 That is, a ``conditional`` rule asserts that if there is an occurrence of (text matching) ``first``, then there must also be at least one occurrence of (text matching) ``second``, which contains the string found by ``first``.
 
-  **NOTE** see `first_<Word>_is_registered checks`_ for an explanation of how ``conditional`` actually works.
+  **NOTE** see `first_<Word>_is registered checks`_ for an explanation of how ``conditional`` actually works.
 
 The example given in the documentation (for ``WHO`` and its expansion/explanation) implies that ``second`` might be expected to come first, but this is not actually required by the code.
 
@@ -181,7 +292,7 @@ More documentation (and examples) needed for ``conditional``
 
 It turns out this is quite hard to think about! And getting the regular expressions right for non-trivial cases (like registered cases, and *especially* the Redis case) is also non-trivial.
 
-  **NOTE** see `first_<Word>_is_registered checks`_ for an explanation of how ``conditional`` actually works.
+  **NOTE** see `first_<Word>_is registered checks`_ for an explanation of how ``conditional`` actually works.
 
 Strange behaviour of sentence case
 ----------------------------------
