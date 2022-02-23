@@ -90,26 +90,26 @@ Create a Kafka Connect connector with Aiven Console
 
 To create the connector, access the `Aiven Console <https://console.aiven.io/>`_ and select the Aiven for Apache Kafka® or Aiven for Apache Kafka Connect® service where the connector needs to be defined, then:
 
-* Click on the **Connectors** tab
-* Clink on **Create New Connector**, the button is enabled only for services :doc:`with Kafka Connect enabled <enable-connect>`.
-* Select the **Elasticsearch sink**
-* Under the *Common* tab, locate the **Connector configuration** text box and click on **Edit**
-* Paste the connector configuration (stored in the ``elasticsearch_sink.json`` file) in the form
-* Click on **Apply**
+1. Click on the **Connectors** tab
+2. Clink on **Create New Connector**, the button is enabled only for services :doc:`with Kafka Connect enabled <enable-connect>`.
+3. Select the **Elasticsearch sink**
+4. Under the *Common* tab, locate the **Connector configuration** text box and click on **Edit**
+5. Paste the connector configuration (stored in the ``elasticsearch_sink.json`` file) in the form
+6. Click on **Apply**
 
 .. Note::
 
     The Aiven Console parses the configuration file and fills the relevant UI fields. You can review the UI fields across the various tab and change them if necessary. The changes will be reflected in JSON format in the **Connector configuration** text box.
 
-* After all the settings are correctly configured, click on **Create new connector**
-* Verify the connector status under the **Connectors** tab
-* Verify the presence of the data in the target Elasticsearch service, the index name is equal to the Apache Kafka topic name
+7. After all the settings are correctly configured, click on **Create new connector**
+8. Verify the connector status under the **Connectors** tab
+9. Verify the presence of the data in the target Elasticsearch service, the index name is equal to the Apache Kafka topic name
 
 .. Note::
 
     Connectors can be created also using the dedicated :ref:`Aiven CLI command <avn_service_connector_create>`.
 
-Create daily Elasticsearch indexes
+Create daily Elasticsearch indices
 ----------------------------------
 
 You might need to create a new Elasticsearch index on daily basis to store the Apache Kafka messages. 
@@ -124,7 +124,7 @@ Adding the following ``TimestampRouter`` transformation in the connector propert
 
 .. Warning::
 
-    The current version of the Elasticsearch sink connector is not able to automatically create daily indexes in Elasticsearch. Therefore you need to create the indexes with the correct name before starting the sink connector. You can create Elasticsearch indexes in many ways including :doc:`CURL commands </docs/products/opensearch/howto/opensearch-with-curl>`.
+    The current version of the Elasticsearch sink connector is not able to automatically create daily indices in Elasticsearch. Therefore you need to create the indices with the correct name before starting the sink connector. You can create Elasticsearch indices in many ways including :doc:`CURL commands </docs/products/opensearch/howto/opensearch-with-curl>`.
 
 Example: Create an Elasticsearch® sink connector on a topic with a JSON schema
 -------------------------------------------------------------------------------
