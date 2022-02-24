@@ -69,6 +69,12 @@ Still to do:
 * check which words are actually in the main dictionary
 * decide which words we want to enforce the capitalisation of (see the section on `common_replacements`_)
 
+Addendum: I wrote a little script to detect duplicate words (those that occur in both identically in both dictionaries, ignoring any ``/`` annotation), and that reports:
+
+  Duplicate words are: API, Apache, Cassandra, Elasticsearch, GitHub, Homebrew, Java, Kafka, Kubernetes, MySQL, PostgreSQL, Prometheus, Python, Redis, boot, business, connect, go, hobbyist, operator, spring
+
+So we should consider (a) removing the duplicates, and, perhaps, (b) rechecking this every so often.
+
 Vale and dictionary case (in)sensitivity
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
