@@ -5,7 +5,7 @@ The JDBC (Kava Database Connectivity) sink connector enables you to move data fr
 
 .. Warning::
 
-    Since the JDBC sink connector is pushing data to relational databases, it can work only with topics having a schema, either defined in every message or in the schema registry features offered by Karapace <https://help.aiven.io/en/articles/5651983>`_
+    Since the JDBC sink connector is pushing data to relational databases, it can work only with topics having a schema, either defined in every message or in the schema registry features offered by `Karapace <https://help.aiven.io/en/articles/5651983>`_
 
 .. _connect_jdbc_sink_prereq:
 
@@ -17,7 +17,6 @@ To setup an JDBC sink connector, you need an Aiven for Apache Kafka service :doc
 Furthermore you need to collect the following information about the target database service upfront:
 
 * ``DB_CONNECTION_URL``: The database JDBC connection URL, the following are few examples based on different technologies:
-    
     * PostgreSQL: ``jdbc:postgresql://HOST:PORT/DB_NAME?sslmode=SSL_MODE``
     * MySQL: ``jdbc:mysql://HOST:PORT/DB_NAME?ssl-mode=SSL_MODE``
 
@@ -54,9 +53,9 @@ Define the connector configurations in a file (we'll refer to it with the name `
         "name":"CONNECTOR_NAME",
         "connector.class": "io.aiven.connect.jdbc.JdbcSinkConnector",
         "topics": "TOPIC_LIST",
-        "connection.url": "OS_CONNECTION_URL",
-        "connection.username": "OS_USERNAME",
-        "connection.password": "OS_PASSWORD",
+        "connection.url": "DB_CONNECTION_URL",
+        "connection.user": "DB_USERNAME",
+        "connection.password": "DB_PASSWORD",
         "tasks.max":"1",
         "auto.create": "true",
         "auto.evolve": "true",
@@ -99,7 +98,6 @@ The configuration file contains the following entries:
 
 
 * ``pk.mode``: defines the fields to use as primary key. Allowed options are:
-
     * ``none``: no primary key is used.
     * ``kafka``: the Apache Kafka coordinates are used.
     * ``record_key``: the entire (or part of the) message key is used.
@@ -117,9 +115,9 @@ The configuration file contains the following entries:
 
     When using Avro as source data format, you need to set following parameters
 
-    * ``value.converter.schema.registry.url``: pointing to the Aiven for Apache Kafka schema registry URL in the form of ``https://APACHE_KAFKA_HOST:SCHEMA_REGISTRY_PORT`` with the ``APACHE_KAFKA_HOST`` and ``SCHEMA_REGISTRY_PORT`` parameters :ref:`retrieved in the previous step <connect_opensearch_sink_prereq>`.
+    * ``value.converter.schema.registry.url``: pointing to the Aiven for Apache Kafka schema registry URL in the form of ``https://APACHE_KAFKA_HOST:SCHEMA_REGISTRY_PORT`` with the ``APACHE_KAFKA_HOST`` and ``SCHEMA_REGISTRY_PORT`` parameters :ref:`retrieved in the previous step <connect_jdbc_sink_prereq>`.
     * ``value.converter.basic.auth.credentials.source``: to the value ``USER_INFO``, since you're going to login to the schema registry using username and password.
-    * ``value.converter.schema.registry.basic.auth.user.info``: passing the required schema registry credentials in the form of ``SCHEMA_REGISTRY_USER:SCHEMA_REGISTRY_PASSWORD`` with the ``SCHEMA_REGISTRY_USER`` and ``SCHEMA_REGISTRY_PASSWORD`` parameters :ref:`retrieved in the previous step <connect_elasticsearch_sink_prereq>`. 
+    * ``value.converter.schema.registry.basic.auth.user.info``: passing the required schema registry credentials in the form of ``SCHEMA_REGISTRY_USER:SCHEMA_REGISTRY_PASSWORD`` with the ``SCHEMA_REGISTRY_USER`` and ``SCHEMA_REGISTRY_PASSWORD`` parameters :ref:`retrieved in the previous step <connect_jdbc_sink_prereq>`. 
 
 
 Create a Kafka Connect connector with the Aiven Console
@@ -129,9 +127,9 @@ To create the connector, access the `Aiven Console <https://console.aiven.io/>`_
 
 1. Click on the **Connectors** tab
 2. Clink on **Create New Connector**, the button is enabled only for services :doc:`with Kafka Connect enabled <enable-connect>`.
-3. Select the **OpenSearch sink**
+3. Select the **JDBC sink**
 4. Under the *Common* tab, locate the **Connector configuration** text box and click on **Edit**
-5. Paste the connector configuration (stored in the ``opensearch_sink.json`` file) in the form
+5. Paste the connector configuration (stored in the ``jdbc_sink.json`` file) in the form
 6. Click on **Apply**
 
 .. Note::
@@ -146,25 +144,8 @@ To create the connector, access the `Aiven Console <https://console.aiven.io/>`_
 
     Connectors can be created also using the dedicated :ref:`Aiven CLI command <avn_service_connector_create>`.
 
-Create daily OpenSearch indices
-----------------------------------
-
-You might need to create a new OpenSearch index on daily basis to store the Apache Kafka messages. 
-Adding the following ``TimestampRouter`` transformation in the connector properties file provides a way to define the index name as concatenation of the topic name and message date.
-
-.. code-block:: json
-
-    "transforms": "TimestampRouter",
-    "transforms.TimestampRouter.topic.format": "${topic}-${timestamp}",
-    "transforms.TimestampRouter.timestamp.format": "yyyy-MM-dd",
-    "transforms.TimestampRouter.type": "org.apache.kafka.connect.transforms.TimestampRouter"
-
-.. Warning::
-
-    The current version of the OpenSearch sink connector is not able to automatically create daily indices in OpenSearch. Therefore you need to create the indices with the correct name before starting the sink connector. You can create OpenSearch indices in many ways including :doc:`CURL commands </docs/products/opensearch/howto/opensearch-with-curl>`.
-
-Example: Create an OpenSearch® sink connector on a topic with a JSON schema
------------------------------------------------------------------------------
+Example: Create an JDBC sink connector to PostgreSQL® on a topic with a JSON schema
+-----------------------------------------------------------------------------------
 
 If you have a topic named ``iot_measurements`` containing the following data in JSON format, with a defined JSON schema:
 
@@ -206,75 +187,87 @@ If you have a topic named ``iot_measurements`` containing the following data in 
                 "field": "measurement"
                 }]
         }, 
-        "payload":{"iot_id":2, "metric":"Humidity", "measurement":60}}
+        "payload":{"iot_id":2, "metric":"Humidity", "measurement":60}
     }
 
 .. Note::
 
     Since the JSON schema needs to be defined in every message, there is a big overhead to transmit the information. To achieve a better performance in term of information-message ratio you should use the Avro format together with the `Karapace schema registry <https://karapace.io/>`__ provided by Aiven
 
-You can sink the ``iot_measurements`` topic to OpenSearch with the following connector configuration, after replacing the placeholders for ``OS_CONNECTION_URL``, ``OS_USERNAME`` and ``OS_PASSWORD``:
+You can sink the ``iot_measurements`` topic to PostgreSQL with the following connector configuration, after replacing the placeholders for ``DB_HOST``, ``DB_PORT``, ``DB_NAME``, ``DB_SSL_MODE``, ``DB_USERNAME`` and ``DB_PASSWORD``:
 
 .. code-block:: json
 
     {
         "name":"sink_iot_json_schema",
-        "connector.class": "io.aiven.kafka.connect.opensearch.OpensearchSinkConnector",
+        "connector.class": "io.aiven.connect.jdbc.JdbcSinkConnector",
         "topics": "iot_measurements",
-        "connection.url": "OS_CONNECTION_URL",
-        "connection.username": "OS_USERNAME",
-        "connection.password": "OS_PASSWORD",
-        "type.name": "iot_measurements",
+        "connection.url": "jdbc:postgresql://DB_HOST:DB_PORT/DB_NAME?sslmode=DB_SSL_MODE",
+        "connection.user": "DB_USERNAME",
+        "connection.password": "DB_PASSWORD",
         "tasks.max":"1",
-        "key.ignore": "true",
+        "auto.create": "true",
+        "auto.evolve": "true",
+        "insert.mode": "upsert",
+        "delete.enabled": "false",
+        "pk.mode": "record_value",
+        "pk.fields": "iot_id",
         "value.converter": "org.apache.kafka.connect.json.JsonConverter"
     }
 
 The configuration file contains the following peculiarities:
 
 * ``"topics": "iot_measurements"``: setting the topic to sink
-* ``"value.converter": "org.apache.kafka.connect.json.JsonConverter"``: the message value is in plain JSON format without a schema
-* ``"key.ignore": "true"``: the connector is ignoring the message key (empty), and generating documents with ID equal to ``topic+partition+offset``
+* ``"value.converter": "org.apache.kafka.connect.json.JsonConverter"``: the message value is in plain JSON format without a schema, there is not converter defined for the key since it's empty
+* ``"pk.mode": "record_value"``: the connector is using the message value to set the target database key
+* ``"pk.fields": "iot_id"``: the connector is using the field ``iot_id`` on the message value to set the target database key
+* ``"delete.enabled": "false"``: the connector is not enabling deletes on thombstones since they would require to have the valid record key and the ``pk.mode`` set to ``record_key``
 
 
-Example: Create an OpenSearch® sink connector on a topic in plain JSON format
------------------------------------------------------------------------------
+Example: Create an JDBC sink connector to MySQL on a topic using Avro and schema registry
+-----------------------------------------------------------------------------------------
 
-If you have a topic named ``students`` containing the following data in JSON format, without a defined schema:
+If you have a topic named ``students`` containing data in Avro format with the schema stored in the schema registry provided by `Karapace <https://help.aiven.io/en/articles/5651983>`_ with the following structure:
 
 .. code-block:: text
 
-    Key: 1 Value: {"student_id":1, "student_name":"Carla"}
-    Key: 2 Value: {"student_id":2, "student_name":"Ugo"}
-    Key: 3 Value: {"student_id":3, "student_name":"Mary"}
+    key: {"student_id": 1234}
+    value: {"student_name": "Mary", "exam": "Math", "exam_result":"A"} 
 
-You can sink the ``students`` topic to OpenSearch with the following connector configuration, after replacing the placeholders for ``OS_CONNECTION_URL``, ``OS_USERNAME`` and ``OS_PASSWORD``:
+You can sink the ``students`` topic to MySQL with the following connector configuration, after replacing the placeholders for ``DB_HOST``, ``DB_PORT``, ``DB_NAME``, ``DB_SSL_MODE``, ``DB_USERNAME``, ``DB_PASSWORD``, ``APACHE_KAFKA_HOST``, ``SCHEMA_REGISTRY_PORT``, ``SCHEMA_REGISTRY_USER`` and ``SCHEMA_REGISTRY_PASSWORD``:
 
 .. code-block:: json
 
     {
-        "name":"sink_students_json",
-        "connector.class": "io.aiven.kafka.connect.opensearch.OpensearchSinkConnector",
-        "topics": "students",
-        "connection.url": "OS_CONNECTION_URL",
-        "connection.username": "OS_USERNAME",
-        "connection.password": "OS_PASSWORD",
-        "type.name": "students",
-        "tasks.max":"1",
-        "key.converter": "org.apache.kafka.connect.storage.StringConverter",
-        "value.converter": "org.apache.kafka.connect.json.JsonConverter",
-        "value.converter.schemas.enable": "false",
-        "schema.ignore": "true"
+        "name": "sink_students_avro_schema",
+        "connector.class": "io.aiven.connect.jdbc.JdbcSinkConnector",
+        "topics": "my_pgnordics2022_pgsource.public.pasta",
+        "connection.url": "jdbc:mysql://DB_HOST:DB_PORT/DB_NAME?ssl-mode=DB_SSL_MODE",
+        "connection.user": "DB_USERNAME",
+        "connection.password": "DB_PASSWORD",
+        "insert.mode": "upsert",
+        "table.name.format": "students",
+        "pk.mode": "record_key",
+        "pk.fields": "student_id",
+        "auto.create": "true",
+        "auto.evolve": "true",
+        "delete.enabled": "true",
+        "key.converter": "io.confluent.connect.avro.AvroConverter",
+        "key.converter.schema.registry.url": "https://APACHE_KAFKA_HOST:SCHEMA_REGISTRY_PORT",
+        "key.converter.basic.auth.credentials.source": "USER_INFO",
+        "key.converter.schema.registry.basic.auth.user.info": "SCHEMA_REGISTRY_USER:SCHEMA_REGISTRY_PASSWORD",
+        "value.converter": "io.confluent.connect.avro.AvroConverter",
+        "value.converter.schema.registry.url": "https://APACHE_KAFKA_HOST:SCHEMA_REGISTRY_PORT",
+        "value.converter.basic.auth.credentials.source": "USER_INFO",
+        "value.converter.schema.registry.basic.auth.user.info": "SCHEMA_REGISTRY_USER:SCHEMA_REGISTRY_PASSWORD"
     }
 
 The configuration file contains the following peculiarities:
 
 * ``"topics": "students"``: setting the topic to sink
-* ``"key.converter": "org.apache.kafka.connect.storage.StringConverter"``: the message key is a string
-* ``"value.converter": "org.apache.kafka.connect.json.JsonConverter"``: the message value is in plain JSON format without a schema
-* ``"value.converter.schemas.enable": "false"``: since the data in the value doesn't have a schema, the connector shouldn't try to read it and sets it to null
-* ``"schema.ignore": "true"``: since the value schema is null, the connector doesn't infer it before pushing the data to OpenSearch
+* ``"pk.mode": "record_key"``: the connector is using the message key to set the target database key
+* ``"pk.fields": "student_id"``: the connector is using the field ``student_id`` on the message key to set the target database key
+* ``"delete.enabled": "true"``: the connector is enabling deletes on thombstones
+* ``key.converter`` and ``value.converter``: defining the Avro data format with ``io.confluent.connect.avro.AvroConverter``, the URL, and credentials to connect to the `Karapace <https://help.aiven.io/en/articles/5651983>`_ schema registry
 
-.. Note::
-
-    The OpenSearch document ID is set as the message key
+The connector will automatically create ``"auto.create": "true"`` a table in the target MySQL database called ``students`` with ``student_id``, ``student_name``, ``exam`` and ``exam_result`` as columns and populate it with the data coming from the ``students`` Apache Kafka topic.
