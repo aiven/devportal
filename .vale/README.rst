@@ -39,10 +39,35 @@ The ``aiven`` dictionary is two files:
 
 * ``aiven.aff`` - rules for use in the ``.dic`` file. These specify the meaning of the ``/X`` style "switches" om some of the words in the ``.dic`` file.
 
-Remember that the first line of a ``.dic`` file must be the number of dictionary entries (the total number of lines in the file - 1).
+Remember that the first line of a ``.dic`` file must be the number of dictionary entries (the total number of lines in the file - 1). Although apparently it's only approximate - I'd still like to keep it correct if we can.
 
 Note that the ``.aff`` file is allowed to be empty if it is not needed.
     hunspell-how-to-specify-case-insensitivity-for-spell-check-in-dic-or-aff-file`
+
+How I constructed the ``aiven.dic`` dictionary file
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Copied the content of ``.github/styles/Vocab/Docs/accept.txt``
+2. Prepended a line count
+3. Added ``M3`` - is that sensible?
+4. For every word of the form ``[Ww]ord``, changed it to just ``word``
+5. Removed ``Simple Authentication and Security Layer``. I have no idea how the dictionary would cope with a word with spaces in it, and I'm fairly sure all the individual words are in the main dictionary anyway.
+6. Replaced ``fileset[s]`` by two entries, one for ``fileset`` and one for ``filesets``
+
+   (I could instead have started supporting plural annotation via the ``.aff`` file, but that seems overkill in this case)
+
+7. Removed ``jq`` and ``kcat`` - they're just command line tools, not words.
+
+   I'm not sure about ``npm``, ``psql``, ``wget``, ``httpie`` and maybe others, so have left them in for the moment.
+
+   (of course, ``curl`` cheats by being an actual word in the main dictionary!)
+
+#. Recalculated the line count
+
+Still to do:
+
+* check which words are actually in the main dictionary
+* decide which words we want to enforce the capitalisation of (see the section on `common_replacements`_)
 
 Vale and dictionary case (in)sensitivity
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -148,7 +173,15 @@ Useful links to learn about Hunspell compatible dictionaries:
 ``common_replacements``
 -----------------------
 
-Notes on the ``common_replacements`` style (extending ``substitution``) are in the file itself.
+Notes on specific terms in the ``common_replacements`` style (extending ``substitution``) are in the file itself.
+
+Since we specify `ignorecase: true`, a rule such as::
+
+  clickhouse: ClickHouse
+
+will match any case variant of "``clickhouse``", and given an error if it is not "``ClickHouse``". Which is what we want.
+
+This sugggests that for all product names where we want to match case exactly, we should have an appropriate rule in this file. (And see the section on `Vale and dictionary case (in)sensitivity`_ to understand why this isn't solved by the entries in the dictionary.)
 
 ``first_<Word>_is registered`` checks
 -------------------------------------
