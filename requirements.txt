@@ -12,3 +12,4 @@ requests==2.25.1
 psycopg2-binary==2.9.1
 sphinxext-opengraph==0.4.2
 sphinx-sitemap==2.2.0
+ultimate-sitemap-parser==0.5
