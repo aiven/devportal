@@ -37,7 +37,7 @@ Furthermore you need to collect the following information about the target OpenS
 Setup an OpenSearch sink connector with Aiven Console
 -----------------------------------------------------
 
-The following example demonstrates how to setup a OpenSearch sink connector for Apache Kafka using the :ref:`Aiven CLI dedicated command <avn_service_connector_create>`.
+The following example demonstrates how to setup a OpenSearch sink connector for Apache Kafka using the `Aiven Console <https://console.aiven.io/>`_.
 
 Define a Kafka Connect configuration file
 '''''''''''''''''''''''''''''''''''''''''
@@ -86,8 +86,8 @@ The configuration file contains the following entries:
     * ``value.converter.schema.registry.basic.auth.user.info``: passing the required schema registry credentials in the form of ``SCHEMA_REGISTRY_USER:SCHEMA_REGISTRY_PASSWORD`` with the ``SCHEMA_REGISTRY_USER`` and ``SCHEMA_REGISTRY_PASSWORD`` parameters :ref:`retrieved in the previous step <connect_elasticsearch_sink_prereq>`. 
 
 
-Create a Kafka Connect connector with the Aiven CLI
-'''''''''''''''''''''''''''''''''''''''''''''''''''
+Create a Kafka Connect connector with the Aiven Console
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 To create the connector, access the `Aiven Console <https://console.aiven.io/>`_ and select the Aiven for Apache Kafka® or Aiven for Apache Kafka Connect® service where the connector needs to be defined, then:
 
