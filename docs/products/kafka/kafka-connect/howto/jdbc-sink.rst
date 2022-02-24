@@ -85,16 +85,16 @@ The configuration file contains the following entries:
     * ``upsert``: uses the upsert semantics supported by the target database, more information in the `dedicated GitHub repository <https://github.com/aiven/jdbc-connector-for-apache-kafka/blob/master/docs/sink-connector.md>`__
     * ``update``: uses the update semantics supported by the target database. E.g. ``UPDATE``, more information in the `dedicated GitHub repository <https://github.com/aiven/jdbc-connector-for-apache-kafka/blob/master/docs/sink-connector.md>`__
 
-* ``delete.enabled``: boolean flag enabling the deletion of rows in the target table on thombstone messages.
+* ``delete.enabled``: boolean flag enabling the deletion of rows in the target table on tombstone messages.
 
 .. Note::
 
-    A thombstone message has:
+    A tombstone message has:
     
     * a not null **key**
     * a null **value**
 
-    In case of thombstone messages and ``delete.enabled`` set to ``true``, the JDBC sink connector will delete the row referenced by the message key. If set to ``true``, it requires the ``pk.mode`` to be ``record_key`` to be able to indentify the rows to delete.
+    In case of tombstone messages and ``delete.enabled`` set to ``true``, the JDBC sink connector will delete the row referenced by the message key. If set to ``true``, it requires the ``pk.mode`` to be ``record_key`` to be able to identify the rows to delete.
 
 
 * ``pk.mode``: defines the fields to use as primary key. Allowed options are:
@@ -111,7 +111,7 @@ The configuration file contains the following entries:
 
 .. Note::
 
-    The ``key.converter`` and ``value.converter`` sections define how the topic messages will be parsed and needs to be espressed in the connector configuration. 
+    The ``key.converter`` and ``value.converter`` sections define how the topic messages will be parsed and needs to be included in the connector configuration. 
 
     When using Avro as source data format, you need to set following parameters
 
@@ -221,7 +221,7 @@ The configuration file contains the following peculiarities:
 * ``"value.converter": "org.apache.kafka.connect.json.JsonConverter"``: the message value is in plain JSON format without a schema, there is not converter defined for the key since it's empty
 * ``"pk.mode": "record_value"``: the connector is using the message value to set the target database key
 * ``"pk.fields": "iot_id"``: the connector is using the field ``iot_id`` on the message value to set the target database key
-* ``"delete.enabled": "false"``: the connector is not enabling deletes on thombstones since they would require to have the valid record key and the ``pk.mode`` set to ``record_key``
+* ``"delete.enabled": "false"``: the connector is not enabling deletes on tombstones since they would require to have the valid record key and the ``pk.mode`` set to ``record_key``
 
 
 Example: Create an JDBC sink connector to MySQL on a topic using Avro and schema registry
@@ -267,7 +267,7 @@ The configuration file contains the following peculiarities:
 * ``"topics": "students"``: setting the topic to sink
 * ``"pk.mode": "record_key"``: the connector is using the message key to set the target database key
 * ``"pk.fields": "student_id"``: the connector is using the field ``student_id`` on the message key to set the target database key
-* ``"delete.enabled": "true"``: the connector is enabling deletes on thombstones
+* ``"delete.enabled": "true"``: the connector is enabling deletes on tombstones
 * ``key.converter`` and ``value.converter``: defining the Avro data format with ``io.confluent.connect.avro.AvroConverter``, the URL, and credentials to connect to the `Karapace <https://help.aiven.io/en/articles/5651983>`_ schema registry
 
 The connector will automatically create ``"auto.create": "true"`` a table in the target MySQL database called ``students`` with ``student_id``, ``student_name``, ``exam`` and ``exam_result`` as columns and populate it with the data coming from the ``students`` Apache Kafka topic.
