@@ -82,8 +82,8 @@ The configuration file contains the following entries:
 * ``auto.evolve``: boolean flag enabling the target table modification in cases of schema modification of the messages in the topic.
 * ``insert.mode``: defines the insert mode, it can be:
     * ``insert``: uses standard ``INSERT`` statements.
-    * ``upsert``: uses the upsert semantics supported by the target database, more information in the `dedicated GitHub repository <https://github.com/aiven/jdbc-connector-for-apache-kafka/blob/master/docs/sink-connector.md#database-support>`__
-    * ``update``: uses the update semantics supported by the target database. E.g. ``UPDATE``, more information in the `dedicated GitHub repository <https://github.com/aiven/jdbc-connector-for-apache-kafka/blob/master/docs/sink-connector.md#database-support>`__
+    * ``upsert``: uses the upsert semantics supported by the target database, more information in the `dedicated GitHub repository <https://github.com/aiven/jdbc-connector-for-apache-kafka/blob/master/docs/sink-connector.md>`__
+    * ``update``: uses the update semantics supported by the target database. E.g. ``UPDATE``, more information in the `dedicated GitHub repository <https://github.com/aiven/jdbc-connector-for-apache-kafka/blob/master/docs/sink-connector.md>`__
 
 * ``delete.enabled``: boolean flag enabling the deletion of rows in the target table on thombstone messages.
 
@@ -103,7 +103,7 @@ The configuration file contains the following entries:
     * ``record_key``: the entire (or part of the) message key is used.
     * ``record_value``: the entire (or part of the) message value is used.
 
-    More information are available in the `dedicated GitHub repository <https://github.com/aiven/jdbc-connector-for-apache-kafka/blob/master/docs/sink-connector.md#primary-keys>`__.
+    More information are available in the `dedicated GitHub repository <https://github.com/aiven/jdbc-connector-for-apache-kafka/blob/master/docs/sink-connector.md>`__.
     
 * ``pk.fields``: defines which fields of the composite key or value to use as record key in the database.
 
