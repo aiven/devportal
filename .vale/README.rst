@@ -273,10 +273,70 @@ Temporary list from the internal page:
 
 Plus checking for ``Aiven for <name>`` instead of ``Aiven <name>`` (the former is correct) and also checking for ``Apache®`` when ``Apache`` is *not* followed by a product name (this *may* require listing all the product names in a regular expression, or may just mean checking for ``Apache <capitalised-word>``, which is probably good enough as a first pass).
 
+****capitalization_headings.yml``
+-------------------------------
+
+We want headings to be in sentence case. ::
+
+  extends: capitalization
+  message: "'%s' should be in sentence case"
+  level: warning
+  scope: heading
+  # $title, $sentence, $lower, $upper, or a pattern.
+  match: $sentence
+  exceptions:
+    - HowTo
+
+Internally, this calculates a metric for the title "sentence", and fails it if its score is too low. The code is in the method ``sentence`` in ``vale/internal/check/variables.go`` (it's called from a function created by ``NewCapitalization`` in ``vale/internal/check/capitalization.go``).
+
+It seems to be that it looks at each word, and:
+
+1. If the word is UPPER case (or something about the previous word, or it is in the exceptions list) then count it.
+2. If it is the first word, and it is not Title case, fail immediately.
+3. If it is the first word (which we now know is not UPPER or Title case) or it is lower case, count itself
+4. Otherwise, ignore this word.
+
+At the end, the accumulated count, divided by the number of words, must be > 0.8.
+
+So for the title "``Not Aiven, something``", we get:
+
+1. First word "``Not``" matches case (2), so ``count`` becomes 1
+2. Second word "``Aiven,``" falls through to (4) and is ignored
+3. Third word "``something``" matches (3), so ``count`` becomes 2
+4. ``2 / 3 == 0.666...`` so the check fails
+
+(by the way, the comma does not matter - removing it still gives the same result)
+
+I must admit I don't quite understand why this is a proportionality test. A long title with a mid-word capitalised will be OK, but shortening the title will suddently make it fail.
+
+Ah - the following even shows the transition:
+
+* "``Capitalised names from both dictionaries should work, as Tony and Aiven``"
+
+  11 words, count == 9 => 0.818..., which is a success
+
+* "``Capitalised names from both dictionaries should work, Tony and Aiven``"
+
+  10 words, count == 8 -> 0.8, which is a FAILURE
+
+So the question is (a) why the weighting, and (b) why don't capitalised words count towards that weighting?
+
+Particular as "``Not AIVEN, something``" is OK, because the second word is all uppercase, but "``Not Aiven, something``" is not OK.
+
+**Maybe** it's because this is trying to distinguish itself from the "``Every Word Is Capitalised``" style, which it calls ``$title``. For which it uses code from https://github.com/jdkato/titlecase to work out the Title Case version of the given string, and then (essentially) checks words against that result to accumulate a count, which again must be > 0.8. And again, it allows UPPER case words to count as a match.
+
+I wonder if it's just an omission - maybe we should be allowing Capitalised words to contribute to the count? I wonder if doing so would (a) solve my problem (I expect so) and (b) still pass all the tests (again, I suspect so). Let's try it...
+
+    **Note to self:** why does the code do ``strings.Title(strings.ToLower(w))`` rather than just ``strings.Title(w)``?
+
+Unfortunately, that seems to end up just saying "The title must start with a capital letter", which is a bit weak.
+
+**Note** I think it *used* to work because we had lots of capitalised words in our ``accept.txt``, and they get added to the exceptions list for this style, which means they count as part of step (1). That's a pain. It may be that we end up needing to add common capitalised words to the ``exceptions`` clause for this rule. Hmm. I suppose it's not *so* many words...
+
 Test files
 ----------
 
-In the directory ``.vale/tests`` there are pairs of files, with names that contain ``good`` and ``bad``.
+In the directory ****.vale/tests`` there are pairs of files, with names that contain ``good`` and ``bad``.
 
 The intention is that when vale is run on a ``good`` file, there should be no errors, and when it is run on a ``bad`` file there should be at least one error per significant line (that is, ignoring comments, which should be evident, and blank lines).
 
