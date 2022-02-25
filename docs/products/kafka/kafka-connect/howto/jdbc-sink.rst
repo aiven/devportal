@@ -1,7 +1,7 @@
 Create an JDBC sink connector
 =============================
 
-The JDBC (Kava Database Connectivity) sink connector enables you to move data from an Aiven for Apache Kafka® cluster to any relational database offering JDBC drivers like PostgreSQL® or MySQL®. The art
+The JDBC (Kava Database Connectivity) sink connector enables you to move data from an Aiven for Apache Kafka® cluster to any relational database offering JDBC drivers like PostgreSQL® or MySQL®.
 
 .. Warning::
 
