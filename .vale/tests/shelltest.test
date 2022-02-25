@@ -21,8 +21,8 @@
 # these tests I don't think I'm concerned with testing the vale return code.
 #
 # NOTE that working out what is going on when deciding if the output is what
-# is actually expected is best done *without* `sort`, as the line numbers don't
-# sort as one might hope (of course).
+# is actually expected is best done *without* `sort`, as line numbers don't
+# sort in order.
 
 # ---------------------------------------------------------------
 # General checks
@@ -31,9 +31,12 @@ $ vale --output=line .vale/tests/good.rst
 >=0
 
 
+# NOTE that the last but one line of the file (line 20) should provoke an error,
+#      but does not as yet
 $ vale --output=line .vale/tests/bad.rst | sort
 >
 .vale/tests/bad.rst:10:1:Aiven.aiven_spelling:'influxdb' seems to be a typo
+.vale/tests/bad.rst:10:1:Aiven.common_replacements:Use 'InfluxDB' instead of 'influxdb'.
 .vale/tests/bad.rst:11:1:Aiven.aiven_spelling:'kakfa' seems to be a typo
 .vale/tests/bad.rst:11:1:Aiven.common_replacements:Use 'Kafka' instead of 'kakfa'.
 .vale/tests/bad.rst:12:1:Aiven.aiven_spelling:'kafka' seems to be a typo
@@ -61,16 +64,27 @@ $ vale --output=line .vale/tests/bad.rst | sort
 # Require a registered/trademarked occurrence of a term
 
 # PROBLEMS:
-# 1. The output for the good case should be empty.
-# 2. The sentence case is known to be a problem - see below for more.
-# 3. I'm still exploring that Clickhouse error in the `good` file.
+# 1. The output for the good case should eventually be empty.
+# 2. The sentence case error (line 1) is known to be a problem - see below for more.
+# 3. The "wahooness" and "blibble" errors are correct, and the offending text will
+#    probably be removed later on
 #
 $ vale --output=line .vale/tests/first_ref_good.rst | sort
 >
+.vale/tests/first_ref_good.rst:14:28:Aiven.aiven_spelling:'blibble' seems to be a typo
+.vale/tests/first_ref_good.rst:14:7:Aiven.aiven_spelling:'wahooness' seems to be a typo
 .vale/tests/first_ref_good.rst:1:1:Aiven.capitalization_headings:'This is a Flink® title' should be in sentence case
-.vale/tests/first_ref_good.rst:8:40:Aiven.first_ClickHouse_is_registered:At least one 'ClickHouse' must be marked as ®
 >=0
 
+# PROBLEMS:
+# 1. The sentence case error (line 1) is known to be a problem - see below for more.
+# 2. In line 16, we detect that `Redis™*blibble` is a problem, but I'm not quite sure if
+#    the two errors given are quite what I want
+# 3. In line 16, we do NOT detect the `Flink®` as a problem in the same way as we do for
+#    Redis, so some more thought needed here.
+# 4. When the Vale PR for ® handling is sorted out, I should remove the lines at the end
+#    that are testing the WHO rule (and also remove that rule from the vale styles)
+#
 $ vale --output=line .vale/tests/first_ref_bad.rst | sort
 >
 .vale/tests/first_ref_bad.rst:10:25:Aiven.first_Cassandra_is_registered:At least one 'Cassandra' must be marked as ®
@@ -79,9 +93,16 @@ $ vale --output=line .vale/tests/first_ref_bad.rst | sort
 .vale/tests/first_ref_bad.rst:10:60:Aiven.first_InfluxDB_is_registered:At least one 'InfluxDB' must be marked as ®
 .vale/tests/first_ref_bad.rst:10:70:Aiven.first_Grafana_is_registered:At least one 'Grafana' must be marked as ®
 .vale/tests/first_ref_bad.rst:10:79:Aiven.first_Kubernetes_is_registered:At least one 'Kubernetes' must be marked as ®
-.vale/tests/first_ref_bad.rst:12:14:Aiven.aiven_spelling:'tradmarked' seems to be a typo
 .vale/tests/first_ref_bad.rst:12:5:Aiven.first_Redis_is_trademarked:At least one 'Redis' must be marked as ™*
-.vale/tests/first_ref_bad.rst:12:63:Aiven.first_Redis_is_trademarked:At least one 'Redis' must be marked as ™*
+.vale/tests/first_ref_bad.rst:12:64:Aiven.first_Redis_is_trademarked:At least one 'Redis' must be marked as ™*
+.vale/tests/first_ref_bad.rst:14:31:Aiven.first_Redis_is_trademarked:At least one 'Redis' must be marked as ™*
+.vale/tests/first_ref_bad.rst:14:40:Aiven.first_Redis_is_trademarked:At least one 'Redis' must be marked as ™*
+.vale/tests/first_ref_bad.rst:14:51:Aiven.first_Redis_is_trademarked:At least one 'Redis' must be marked as ™*
+.vale/tests/first_ref_bad.rst:16:21:Aiven.first_Redis_is_trademarked:At least one 'Redis' must be marked as ™*
+.vale/tests/first_ref_bad.rst:16:28:Aiven.aiven_spelling:'blibble' seems to be a typo
+.vale/tests/first_ref_bad.rst:16:7:Aiven.aiven_spelling:'wahooness' seems to be a typo
+.vale/tests/first_ref_bad.rst:18:32:Aiven.WHO_example:'WHO' has no definition
+.vale/tests/first_ref_bad.rst:19:16:Aiven.WHO_example:'WHO' has no definition
 .vale/tests/first_ref_bad.rst:1:11:Aiven.first_Flink_is_registered:At least one 'Flink' must be marked as ®
 .vale/tests/first_ref_bad.rst:1:1:Aiven.capitalization_headings:'This is a Flink title' should be in sentence case
 .vale/tests/first_ref_bad.rst:4:42:Aiven.first_Flink_is_registered:At least one 'Flink' must be marked as ®
