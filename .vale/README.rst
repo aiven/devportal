@@ -436,3 +436,22 @@ The order of error output does not appear to be deterministic
     *This makes it harder to test things, for instance using shelltester*
 
 For instance, if I run ``vale --output=line .vale/tests/bad.rst``, the order of the lines output is not consistent.
+
+Oddity in substitution matching
+-------------------------------
+
+  *Not sure what is going on here - might still be a "me" mistake rather than vale*
+
+Looking at the lines in ``.vale/tests/bad.rst``::
+
+  ``literal-text`` MirrorMaker2             -- this is NOT found
+
+  ``literal text`` MirrorMaker2             -- this IS found
+
+the first is not reported as an error, but the second is. If I put some "obvious" debugging into ``vale/internal/check/substitution.go``, it does indeed seem to "see" one and not the other.
+
+I'm not 100% sure this is a vale bug yet, because in trying to say what I want to do for ``MirrorMaker2`` I might be being over-clever.
+
+I'm recording it here because I don't want to investigate further at the moment (I'm currently running my patched vale over the documentation to try to fix all the problems it *does* find). Having a minimal provoking test case means I can come back to this and not forget it.
+
+**NOTE to self** Remmeber to ``rg -wi MirrorMaker2`` after I've done all the other documentation fixes.

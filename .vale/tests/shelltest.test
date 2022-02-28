@@ -30,8 +30,11 @@
 $ vale --output=line .vale/tests/good.rst
 >=0
 
-# NOTE that the penultimate line of the file (line 20, `Apache Nonusch`) should
-#      probably provoke an error, but does not as yet
+# PROBLEMS:
+# * line 20 <Apache Nonesuch> should probably provoke an error, but does not
+#   - that's because I haven't written the style code to make it so
+# * line 26 <``literal-text`` MirrorMaker2> should definitey provoke an error, but does not
+#   - that's definitely some sort of bug, as see line 28
 
 $ vale --output=line .vale/tests/bad.rst | sort
 >

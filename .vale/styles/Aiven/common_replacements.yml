@@ -42,10 +42,10 @@ swap:
   # Apache Kafka MirrorMaker 2
   # MirrorMaker should always be followed by one (white)space character and a 2
   'MirrorMaker(?!\s+2)': "MirrorMaker 2"
-  "MirrorMaker2": "MirrorMaker 2"
-  # And a registered mark doesn't belong in the middle
-  "Kafka® MirrorMaker 2": "Kafka MirrorMaker2"
-  #
+  'MirrorMaker2': "MirrorMaker 2"
+  # Don't forget the (R) in the middle when there's a Kafka
+  ##"Kafka MirrorMaker 2": "Kafka® MirrorMaker2"
+
   # Aiven for <thing>
   "Aiven Cassandra": "Aiven for Cassandra"
   "Aiven ClickHouse": "Aiven for ClickHouse"
@@ -59,6 +59,8 @@ swap:
   "Aiven OpenSearch": "Aiven for OpenSearch"
   "Aiven PostgreSQL": "Aiven for PostgreSQL"
   "Aiven Redis": "Aiven for Redis"
-  'Aiven Kafka MirrorMaker': 'Aiven for Apache Kafka MirrorMaker 2'
-  'Aiven Apache Kafka MirrorMaker': 'Aiven for Apache Kafka MirrorMaker 2'
-  'Aiven for Kafka MirrorMaker': 'Aiven for Apache Kafka MirrorMaker 2'
+
+  #'Aiven Kafka MirrorMaker': 'Aiven for Apache Kafka MirrorMaker 2'
+  #'Aiven Apache Kafka MirrorMaker': 'Aiven for Apache Kafka MirrorMaker 2'
+  #'Aiven for Kafka MirrorMaker': 'Aiven for Apache Kafka MirrorMaker 2'
+  #'Aiven for Apache Kafka MirrorMaker2': 'Aiven for Apache Kafka MirrorMaker 2'
