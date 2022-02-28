@@ -14,4 +14,4 @@ Once you've created your Aiven for PostgreSQL service, you can add additional da
 
    The new database will be visible immediately.
 
-You can also use the :doc:`Aiven client </tools/cli/database#manage-databases>` or the :doc:`PostgreSQL client<connect-from-cli>` to create your database from the CLI.
+You can also use the :ref:`Aiven client <avn-service-database-create>` or the :doc:`PostgreSQL client<connect-psql>` to create your database from the CLI.
