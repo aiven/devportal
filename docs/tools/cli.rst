@@ -94,7 +94,7 @@ Detailed help on using the CLI.
 ``mirrormaker``
 '''''''''''''''
 
-Manage the replication flows for MirrorMaker2.
+Manage the replication flows for Apache Kafka® MirrorMaker 2.
 
 :doc:`See detailed command information <cli/mirrormaker>`.
 

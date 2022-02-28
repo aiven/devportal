@@ -4,7 +4,7 @@
 Here you’ll find the full list of commands for ``avn service index``.
 
 
-Manage OpenSearch indexes
+Manage OpenSearch® indexes
 --------------------------------------------------------
 
 ``avn service index-delete``

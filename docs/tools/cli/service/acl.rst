@@ -4,15 +4,15 @@
 Here you’ll find the full list of commands for ``avn service acl``.
 
 
-Manage Kafka access control lists
+Manage Apache Kafka® access control lists
 --------------------------------------------------------
 
-Commands for managing Aiven for Apache Kafka access control lists via ``avn`` commands. 
+Commands for managing Aiven for Apache Kafka® access control lists via ``avn`` commands.
 
 ``avn service acl-add``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Adds an Aiven for Apache Kafka ACL entry.
+Adds an Aiven for Apache Kafka® ACL entry.
 
 .. list-table::
   :header-rows: 1
@@ -40,7 +40,7 @@ Adds an Aiven for Apache Kafka ACL entry.
 ``avn service acl-delete``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Deletes an Aiven for Apache Kafka ACL entry.
+Deletes an Aiven for Apache Kafka® ACL entry.
 
 .. list-table::
   :header-rows: 1
@@ -63,7 +63,7 @@ Deletes an Aiven for Apache Kafka ACL entry.
 ``avn service acl-list``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Lists Aiven for Apache Kafka ACL entries.
+Lists Aiven for Apache Kafka® ACL entries.
 
 .. list-table::
   :header-rows: 1

@@ -4,7 +4,7 @@
 Here you’ll find the full list of commands for ``avn service es-acl``.
 
 
-Manage OpenSearch access control lists
+Manage OpenSearch® access control lists
 --------------------------------------------------------
 
 ``avn service es-acl-add``

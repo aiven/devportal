@@ -1,10 +1,10 @@
-Aiven Operator for Kubernetes
-=============================
+Aiven Operator for Kubernetes®
+==============================
 
-Aiven Operator for Kubernetes allows users to manage Aiven services through the Kubernetes API by using `Custom Resource Definitions (CRDs) <https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/>`_.
+Aiven Operator for Kubernetes® allows users to manage Aiven services through the Kubernetes® API by using `Custom Resource Definitions (CRDs) <https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/>`_.
 
 .. note::
-    Only Aiven for PostgreSQL and Aiven for Apache Kafka are supported at this time.
+    Only Aiven for PostgreSQL® and Aiven for Apache Kafka® are supported at this time.
 
 
 |
@@ -14,7 +14,7 @@ Aiven Operator for Kubernetes allows users to manage Aiven services through the 
 Getting started
 ---------------
 
-Take your first steps by configuring the Aiven Operator and deploying a PostgreSQL database.
+Take your first steps by configuring the Aiven Operator and deploying a PostgreSQL® database.
 
 Requirements
 ''''''''''''

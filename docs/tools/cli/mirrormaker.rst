@@ -4,21 +4,21 @@
 Here you'll find the full list of commands for ``avn mirrormaker``.
 
 
-Create and manage Aiven for Apache Kafka MirrorMaker2 replication flows
+Create and manage Aiven for Apache Kafka® MirrorMaker 2 replication flows
 -----------------------------------------------------------------------
 
-Commands for managing Aiven for Apache Kafka MirrorMaker2 replication flows.
+Commands for managing Aiven for Apache Kafka® MirrorMaker 2 replication flows.
 
 ``avn mirrormaker replication-flow create``
 '''''''''''''''''''''''''''''''''''''''''''
 
-Creates a new Aiven for Apache Kafka MirrorMaker2 replication flow. 
+Creates a new Aiven for Apache Kafka® MirrorMaker 2 replication flow.
 
 .. Warning::
 
-  Before creating a replication flow, an :ref:`integration <avn_service_integration_create>` needs to be created between the Aiven for Apache Kafka MirrorMaker2 service and each of the source and the target services. 
+  Before creating a replication flow, an :ref:`integration <avn_service_integration_create>` needs to be created between the Aiven for Apache Kafka MirrorMaker 2 service and each of the source and the target services.
   
-  E.g. An integration with alias ``kafka-target-alias`` between an Aiven for Apache Kafka service named ``kafka-target`` and an Aiven for Apache Kafka MirrorMaker2 named ``kafka-mm`` can be created with::
+  E.g. An integration with alias ``kafka-target-alias`` between an Aiven for Apache Kafka service named ``kafka-target`` and an Aiven for Apache Kafka MirrorMaker 2 named ``kafka-mm`` can be created with::
 
     avn service integration-create \
       -s kafka-target              \
@@ -35,7 +35,7 @@ Creates a new Aiven for Apache Kafka MirrorMaker2 replication flow.
   * - Parameter
     - Information
   * - ``service_name``
-    - The Aiven for Apache Kafka MirrorMaker2 service where to create the replication flow
+    - The Aiven for Apache Kafka MirrorMaker 2 service where to create the replication flow
   * - ``--source-cluster``
     - The Aiven for Apache Kafka service to be used as source for replication
   * - ``--target-cluster``
@@ -48,7 +48,7 @@ Creates a new Aiven for Apache Kafka MirrorMaker2 replication flow.
 * include all topics with name starting with ``my-src-topic`` (topic name patterns can be defined using `Java patterns <https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html>`_)
 * exclude all topics with name ending with ``not-include``
 * ``DefaultReplicationPolicy`` as replication policy class
-* enable MirrorMaker2 heartbeats
+* enable MirrorMaker 2 heartbeats
 * enable synching of consumer groups offset every ``60`` seconds
 
 ::
@@ -77,7 +77,7 @@ Creates a new Aiven for Apache Kafka MirrorMaker2 replication flow.
 ``avn mirrormaker replication-flow delete``
 '''''''''''''''''''''''''''''''''''''''''''
 
-Deletes an existing Aiven for Apache Kafka MirrorMaker2 replication flow. 
+Deletes an existing Aiven for Apache Kafka® MirrorMaker 2 replication flow.
 
 .. list-table::
   :header-rows: 1
@@ -86,7 +86,7 @@ Deletes an existing Aiven for Apache Kafka MirrorMaker2 replication flow.
   * - Parameter
     - Information
   * - ``service_name``
-    - The Aiven for Apache Kafka MirrorMaker2 service where to delete the replication flow
+    - The Aiven for Apache Kafka MirrorMaker 2 service where to delete the replication flow
   * - ``--source-cluster``
     - The Aiven for Apache Kafka service to be used as source for replication
   * - ``--target-cluster``
@@ -104,7 +104,7 @@ Deletes an existing Aiven for Apache Kafka MirrorMaker2 replication flow.
 ``avn mirrormaker replication-flow get``
 '''''''''''''''''''''''''''''''''''''''''''
 
-Retrieves the configuration details of an existing Aiven for Apache Kafka MirrorMaker2 replication flow. 
+Retrieves the configuration details of an existing Aiven for Apache Kafka® MirrorMaker 2 replication flow.
 
 .. list-table::
   :header-rows: 1
@@ -113,7 +113,7 @@ Retrieves the configuration details of an existing Aiven for Apache Kafka Mirror
   * - Parameter
     - Information
   * - ``service_name``
-    - The Aiven for Apache Kafka MirrorMaker2 service where to get the replication flow details
+    - The Aiven for Apache Kafka MirrorMaker 2 service where to get the replication flow details
   * - ``--source-cluster``
     - The Aiven for Apache Kafka service to be used as source for replication
   * - ``--target-cluster``
@@ -151,7 +151,7 @@ An example of the ``avn mirrormaker replication-flow get`` command output:
 ``avn mirrormaker replication-flow list``
 '''''''''''''''''''''''''''''''''''''''''''
 
-Lists the configuration details for all replication flows defined in an existing Aiven for Apache Kafka MirrorMaker2 service. 
+Lists the configuration details for all replication flows defined in an existing Aiven for Apache Kafka® MirrorMaker 2 service.
 
 .. list-table::
   :header-rows: 1
@@ -160,10 +160,10 @@ Lists the configuration details for all replication flows defined in an existing
   * - Parameter
     - Information
   * - ``service_name``
-    - The Aiven for Apache Kafka MirrorMaker2 service where to list the replication flow
+    - The Aiven for Apache Kafka MirrorMaker 2 service where to list the replication flow
 
 
-**Example:** List the configuration details for all replication flows defined in an existing Aiven for Apache Kafka MirrorMaker2 named ``kafka-mm``.
+**Example:** List the configuration details for all replication flows defined in an existing Aiven for Apache Kafka MirrorMaker 2 named ``kafka-mm``.
 
 ::
 
@@ -194,7 +194,7 @@ An example of the ``avn mirrormaker replication-flow list`` command output:
 ``avn mirrormaker replication-flow update``
 '''''''''''''''''''''''''''''''''''''''''''
 
-Updates an existing Aiven for Apache Kafka MirrorMaker2 replication flow. 
+Updates an existing Aiven for Apache Kafka® MirrorMaker 2 replication flow.
 
 .. list-table::
   :header-rows: 1
@@ -203,7 +203,7 @@ Updates an existing Aiven for Apache Kafka MirrorMaker2 replication flow.
   * - Parameter
     - Information
   * - ``service_name``
-    - The Aiven for Apache Kafka MirrorMaker2 service where to update the replication flow
+    - The Aiven for Apache Kafka MirrorMaker 2 service where to update the replication flow
   * - ``--source-cluster``
     - The Aiven for Apache Kafka service to be used as source for replication
   * - ``--target-cluster``

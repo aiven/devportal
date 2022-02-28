@@ -1,12 +1,13 @@
-Migrate from Redis to Aiven for Redis
-=====================================
+Migrate from Redis™* to Aiven for Redis™*
+=========================================
 
-Move your data from a source, standalone Redis data store to an Aiven-managed Redis service. The migration first attempts to use the ``replication`` method, and if it fails, it uses ``scan``. 
+Move your data from a source, standalone Redis™* data store to an Aiven-managed Redis service. The migration first attempts to use the ``replication`` method, and if it fails, it uses ``scan``.
 
 In the following steps, we show you how to create a new Aiven for Redis service, and migrate data from AWS ElastiCache Redis. The Aiven project name is ``test``, and the service name for the target Aiven for Redis is ``redis``.
 
 .. Important::
-        Migrating from Google Cloud Memorystore for Redis is not currently supported.
+
+   Migrating from Google Cloud Memorystore for Redis is not currently supported.
 
 
 What you'll need
@@ -66,7 +67,8 @@ Create a service and perform the migration
     avn service create --project test -t redis -p hobbyist --cloud aws-eu-west-1 --project-vpc-id 40ddf681-0e89-4bce-bd89-25e246047731 -c migration.host="master.jappja-redis.kdrxxz.euw1.cache.amazonaws.com" -c migration.port=6379 -c migration.password=<password> redis
 
 .. Tip::
-        If the source Redis server is publicly accessible, the project-vpc-id and cloud parameters are not needed.
+
+   If the source Redis server is publicly accessible, the project-vpc-id and cloud parameters are not needed.
 
 3. Check the migration status::
 
@@ -78,7 +80,8 @@ Create a service and perform the migration
 
 
 .. Note::
-        Status can be one of ``done``, ``failed`` or ``running``. In case of failure, the error contains the error message::
+
+   Status can be one of ``done``, ``failed`` or ``running``. In case of failure, the error contains the error message::
 
             avn service migration-status --project test redis
 

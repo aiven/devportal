@@ -4,7 +4,7 @@
 Here you’ll find the full list of commands for ``avn service flink``.
 
 
-Manage a Flink table
+Manage an Apache Flink® table
 --------------------------------------------------------
 
 ``avn service flink table create``
@@ -25,7 +25,7 @@ Creates a new Aiven for Apache Flink table.
   * - ``--table-name``
     - The Flink table name
   * - ``--kafka-topic``
-    - The Aiven for Apache Kafka topic to be used as source/sink (Only for Kafka integrations)
+    - The Aiven for Apache Kafka® topic to be used as source/sink (Only for Kafka integrations)
   * - ``--kafka-connector-type``
     - The :doc:`Flink connector type for Apache Kafka </docs/products/flink/concepts/kafka-connectors>`; possible values are ``upsert-kafka`` and ``kafka``
   * - ``--kafka-key-format``
@@ -37,7 +37,7 @@ Creates a new Aiven for Apache Flink table.
   * - ``--kafka-startup-mode``
     - The Apache Kafka consumer starting offset; possible values are ``earliest-offset`` starting from the beginning of the topic and ``latest-offset`` starting from the last message
   * - ``--jdbc-table``
-    - The Aiven for PostgreSQL table name to be used as source/sink (Only for PostgreSQL integrations)
+    - The Aiven for PostgreSQL® table name to be used as source/sink (Only for PostgreSQL integrations)
   * - ``partitioned-by``
     - A column from the table schema to use as Flink table partition definition
   * - ``--like-options``

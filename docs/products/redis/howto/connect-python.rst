@@ -1,7 +1,7 @@
 Connect with Python
 -------------------
 
-This example connects to Redis service from Python, making use of the ``redis-py`` library.
+This example connects to Redis™* service from Python, making use of the ``redis-py`` library.
 
 Variables
 '''''''''
