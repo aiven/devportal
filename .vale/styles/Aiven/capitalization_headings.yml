@@ -6,3 +6,18 @@ scope: heading
 match: $sentence
 exceptions:
   - HowTo
+  - Aiven
+  - Apache
+  - Kafka
+  - Flink
+  - Cassandra
+  - ClickHouse
+  - M3
+  - OpenSearch
+  - PostgreSQL
+  - MySQL
+  - Redis
+  - InfluxDB
+  - Grafana
+  - Terraform
+  - Kubernetes
