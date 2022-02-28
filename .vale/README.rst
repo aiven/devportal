@@ -273,7 +273,7 @@ Temporary list from the internal page:
 
 Plus checking for ``Aiven for <name>`` instead of ``Aiven <name>`` (the former is correct) and also checking for ``Apache®`` when ``Apache`` is *not* followed by a product name (this *may* require listing all the product names in a regular expression, or may just mean checking for ``Apache <capitalised-word>``, which is probably good enough as a first pass).
 
-****capitalization_headings.yml``
+``capitalization_headings.yml``
 -------------------------------
 
 We want headings to be in sentence case. ::
@@ -323,20 +323,19 @@ So the question is (a) why the weighting, and (b) why don't capitalised words co
 
 Particular as "``Not AIVEN, something``" is OK, because the second word is all uppercase, but "``Not Aiven, something``" is not OK.
 
-**Maybe** it's because this is trying to distinguish itself from the "``Every Word Is Capitalised``" style, which it calls ``$title``. For which it uses code from https://github.com/jdkato/titlecase to work out the Title Case version of the given string, and then (essentially) checks words against that result to accumulate a count, which again must be > 0.8. And again, it allows UPPER case words to count as a match.
-
-I wonder if it's just an omission - maybe we should be allowing Capitalised words to contribute to the count? I wonder if doing so would (a) solve my problem (I expect so) and (b) still pass all the tests (again, I suspect so). Let's try it...
+*Maybe* it's because this is trying to distinguish itself from the "``Every Word Is Capitalised``" style, which it calls ``$title``. For which it uses code from https://github.com/jdkato/titlecase to work out the Title Case version of the given string, and then (essentially) checks words against that result to accumulate a count, which again must be > 0.8. And again, it allows UPPER case words to count as a match.
 
     **Note to self:** why does the code do ``strings.Title(strings.ToLower(w))`` rather than just ``strings.Title(w)``?
 
-Unfortunately, that seems to end up just saying "The title must start with a capital letter", which is a bit weak.
+**Note** I think it *used* to work because we had lots of capitalised words in our ``accept.txt``, and they would be added to the exceptions list for this style, which means they count as part of step (1).
 
-**Note** I think it *used* to work because we had lots of capitalised words in our ``accept.txt``, and they get added to the exceptions list for this style, which means they count as part of step (1). That's a pain. It may be that we end up needing to add common capitalised words to the ``exceptions`` clause for this rule. Hmm. I suppose it's not *so* many words...
+**Resolution** This is working as intended, although the documentation could do with explaining how it works.
+The solution for us is to add appropriate exception words to the style file. This isn't too onerous as there aren't many such words, and it's probably better to be specific (that is, it's reasonable to say which words are special for titles in the specification for how titles are checked).
 
 Test files
 ----------
 
-In the directory ****.vale/tests`` there are pairs of files, with names that contain ``good`` and ``bad``.
+In the directory ****.vale/tests**** there are pairs of files, with names that contain ``good`` and ``bad``.
 
 The intention is that when vale is run on a ``good`` file, there should be no errors, and when it is run on a ``bad`` file there should be at least one error per significant line (that is, ignoring comments, which should be evident, and blank lines).
 
@@ -395,17 +394,6 @@ It turns out this is quite hard to think about! And getting the regular expressi
 
   **NOTE** see `first_<Word>_is registered checks`_ for an explanation of how ``conditional`` actually works.
 
-Strange behaviour of sentence case
-----------------------------------
-
-    *I've yet to prove this is an actual issue, and not something I'm doing wrong.*
-
-In the ``.vale/tests/sentence_case_title_good.rst`` file, some titles are being treated as errors, when one would not expect it. For instance, the title ``Not Aiven`` is an eror, but the title ``Aiven®`` is OK, and longer titles with names in them (that is, capitalised dictionary words) are OK.
-
-I'm going to leave this for the moment and concentrate on other things, and come back to it later to see if I can either work out what is going on, or work out a minimal test case.
-
-It is possible that this may be related to `Vale issue 410`_
-
 Missing documentation for dictionary ``append``
 -----------------------------------------------
 
@@ -414,6 +402,13 @@ Missing documentation for dictionary ``append``
 There is no documentation for the ``append`` option of the ``spelling`` style.
 
 It's quite an important option, as setting it ``true`` allows appending a dictionary to the default, rather than replacing it.
+
+Documentation for ``capitalization`` needs extending
+----------------------------------------------------
+
+  *Worth doing a PR for. And definitely blogging about.*
+
+As I discovered in the section on `capitalization_headings.yml`_, the capitalization style (and particularly the ``$sentence`` "match") doesn't work quite as one might expect. What it does is quite reasonable, but could do with explaining, as it can lead to surprises for very short titles.
 
 No error for a file that doesn't exist
 --------------------------------------

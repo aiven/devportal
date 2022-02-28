@@ -30,9 +30,9 @@
 $ vale --output=line .vale/tests/good.rst
 >=0
 
+# NOTE that the penultimate line of the file (line 20, `Apache Nonusch`) should
+#      probably provoke an error, but does not as yet
 
-# NOTE that the last but one line of the file (line 20) should provoke an error,
-#      but does not as yet
 $ vale --output=line .vale/tests/bad.rst | sort
 >
 .vale/tests/bad.rst:10:1:Aiven.aiven_spelling:'influxdb' seems to be a typo
@@ -63,28 +63,13 @@ $ vale --output=line .vale/tests/bad.rst | sort
 # ---------------------------------------------------------------
 # Require a registered/trademarked occurrence of a term
 
-# PROBLEMS:
-# 1. The output for the good case should eventually be empty.
-# 2. The sentence case error (line 1) is known to be a problem - see below for more.
-# 3. The "wahooness" and "blibble" errors are correct, and the offending text will
-#    probably be removed later on
-#
 $ vale --output=line .vale/tests/first_ref_good.rst | sort
 >
-.vale/tests/first_ref_good.rst:14:28:Aiven.aiven_spelling:'blibble' seems to be a typo
-.vale/tests/first_ref_good.rst:14:7:Aiven.aiven_spelling:'wahooness' seems to be a typo
-.vale/tests/first_ref_good.rst:1:1:Aiven.capitalization_headings:'This is a Flink® title' should be in sentence case
 >=0
 
-# PROBLEMS:
-# 1. The sentence case error (line 1) is known to be a problem - see below for more.
-# 2. In line 16, we detect that `Redis™*blibble` is a problem, but I'm not quite sure if
-#    the two errors given are quite what I want
-# 3. In line 16, we do NOT detect the `Flink®` as a problem in the same way as we do for
-#    Redis, so some more thought needed here.
-# 4. When the Vale PR for ® handling is sorted out, I should remove the lines at the end
-#    that are testing the WHO rule (and also remove that rule from the vale styles)
-#
+# In line 15, we detect that `Redis™*blibble` and `Flink@wahooness` are problems, but
+# I'm not quite sure if the errors given are quite what I want.
+
 $ vale --output=line .vale/tests/first_ref_bad.rst | sort
 >
 .vale/tests/first_ref_bad.rst:10:25:Aiven.first_Cassandra_is_registered:At least one 'Cassandra' must be marked as ®
@@ -92,19 +77,16 @@ $ vale --output=line .vale/tests/first_ref_bad.rst | sort
 .vale/tests/first_ref_bad.rst:10:48:Aiven.first_PostgreSQL_is_registered:At least one 'PostgreSQL' must be marked as ®
 .vale/tests/first_ref_bad.rst:10:60:Aiven.first_InfluxDB_is_registered:At least one 'InfluxDB' must be marked as ®
 .vale/tests/first_ref_bad.rst:10:70:Aiven.first_Grafana_is_registered:At least one 'Grafana' must be marked as ®
-.vale/tests/first_ref_bad.rst:10:79:Aiven.first_Kubernetes_is_registered:At least one 'Kubernetes' must be marked as ®
-.vale/tests/first_ref_bad.rst:12:5:Aiven.first_Redis_is_trademarked:At least one 'Redis' must be marked as ™*
-.vale/tests/first_ref_bad.rst:12:64:Aiven.first_Redis_is_trademarked:At least one 'Redis' must be marked as ™*
-.vale/tests/first_ref_bad.rst:14:31:Aiven.first_Redis_is_trademarked:At least one 'Redis' must be marked as ™*
-.vale/tests/first_ref_bad.rst:14:40:Aiven.first_Redis_is_trademarked:At least one 'Redis' must be marked as ™*
-.vale/tests/first_ref_bad.rst:14:51:Aiven.first_Redis_is_trademarked:At least one 'Redis' must be marked as ™*
-.vale/tests/first_ref_bad.rst:16:21:Aiven.first_Redis_is_trademarked:At least one 'Redis' must be marked as ™*
-.vale/tests/first_ref_bad.rst:16:28:Aiven.aiven_spelling:'blibble' seems to be a typo
-.vale/tests/first_ref_bad.rst:16:7:Aiven.aiven_spelling:'wahooness' seems to be a typo
-.vale/tests/first_ref_bad.rst:18:32:Aiven.WHO_example:'WHO' has no definition
-.vale/tests/first_ref_bad.rst:19:16:Aiven.WHO_example:'WHO' has no definition
+.vale/tests/first_ref_bad.rst:12:36:Aiven.first_Kubernetes_is_registered:At least one 'Kubernetes' must be marked as ®
+.vale/tests/first_ref_bad.rst:14:11:Aiven.first_Redis_is_trademarked:At least one 'Redis' must be marked as ™*
+.vale/tests/first_ref_bad.rst:17:5:Aiven.first_Redis_is_trademarked:At least one 'Redis' must be marked as ™*
+.vale/tests/first_ref_bad.rst:17:64:Aiven.first_Redis_is_trademarked:At least one 'Redis' must be marked as ™*
+.vale/tests/first_ref_bad.rst:19:31:Aiven.first_Redis_is_trademarked:At least one 'Redis' must be marked as ™*
+.vale/tests/first_ref_bad.rst:19:40:Aiven.first_Redis_is_trademarked:At least one 'Redis' must be marked as ™*
+.vale/tests/first_ref_bad.rst:19:51:Aiven.first_Redis_is_trademarked:At least one 'Redis' must be marked as ™*
 .vale/tests/first_ref_bad.rst:1:11:Aiven.first_Flink_is_registered:At least one 'Flink' must be marked as ®
-.vale/tests/first_ref_bad.rst:1:1:Aiven.capitalization_headings:'This is a Flink title' should be in sentence case
+.vale/tests/first_ref_bad.rst:21:28:Aiven.aiven_spelling:'blibble' seems to be a typo
+.vale/tests/first_ref_bad.rst:21:7:Aiven.aiven_spelling:'wahooness' seems to be a typo
 .vale/tests/first_ref_bad.rst:4:42:Aiven.first_Flink_is_registered:At least one 'Flink' must be marked as ®
 .vale/tests/first_ref_bad.rst:6:43:Aiven.first_Flink_is_registered:At least one 'Flink' must be marked as ®
 .vale/tests/first_ref_bad.rst:8:19:Aiven.first_Kafka_is_registered:At least one 'Kafka' must be marked as ®
@@ -116,23 +98,13 @@ $ vale --output=line .vale/tests/first_ref_bad.rst | sort
 # Headings are to be sentence cased
 # Note that these are warnings, not errors, and so vale's exit status code is 0
 
-# PROBLEMS:
-# 1. The output for the good case should be empty.
-# 2. I know I have some problem with sentence casing in the `good` file.
-#
 $ vale --output=line .vale/tests/sentence_case_title_good.rst | sort
 >
-.vale/tests/sentence_case_title_good.rst:39:1:Aiven.capitalization_headings:'Multiple things with ® should work, such as Aiven® and Flink®' should be in sentence case
-.vale/tests/sentence_case_title_good.rst:46:1:Aiven.capitalization_headings:'But not Flink®' should be in sentence case
-.vale/tests/sentence_case_title_good.rst:51:1:Aiven.capitalization_headings:'But not Aiven®' should be in sentence case
-.vale/tests/sentence_case_title_good.rst:56:1:Aiven.capitalization_headings:'Not Aiven®' should be in sentence case
-.vale/tests/sentence_case_title_good.rst:61:1:Aiven.capitalization_headings:'Not Aiven, something' should be in sentence case
 >=0
 
 
 $ vale --output=line .vale/tests/sentence_case_title_bad.rst | sort
 >
-.vale/tests/sentence_case_title_bad.rst:14:1:Aiven.capitalization_headings:'We do not allow Random Mixed Case' should be in sentence case
-.vale/tests/sentence_case_title_bad.rst:4:1:Aiven.capitalization_headings:'This is a subtitle Not in sentence case by Tony' should be in sentence case
-.vale/tests/sentence_case_title_bad.rst:9:1:Aiven.capitalization_headings:'We do not allow How To in a title' should be in sentence case
+.vale/tests/sentence_case_title_bad.rst:11:1:Aiven.capitalization_headings:'Short and Bad' should be in sentence case
+.vale/tests/sentence_case_title_bad.rst:6:1:Aiven.capitalization_headings:'This is a subtitle Not in sentence case by Tony' should be in sentence case
 >=0

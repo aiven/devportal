@@ -1,79 +1,42 @@
 This is a title in sentence case
 ================================
 
-We allow words capitalised in the main dictionary, such as Tony
----------------------------------------------------------------
-
-This is my body text. It can be Capitalised as I Wish.
-
-We allow words capitalised in the Aiven dictionary, such as, well, Aiven
-------------------------------------------------------------------------
-
-Some more text.
-
 We allow HowTo (a named exception) in a title
 ---------------------------------------------
 
-Some more text.
+Lots of positive words.
 
-Strangely, we allow ALL CAPS and RandomMixedCase words
-------------------------------------------------------
+Strangely ALL CAPS is OK
+------------------------
 
-Even more text.
+6 words. ``Strangely`` is first and capitalised, so +1. Lower case words are +1, and ALL CAPS words are also +1. So our total is 6/6, which is better than 80%, so this title is OK.
 
-Things with ® should work, such as Aiven®
------------------------------------------
+Multiple things with ® should work, such as Aiven and Flink®
+------------------------------------------------------------
 
-Even more text, again.
+11 words, ``Multiple`` is first and capitalised, so +1. ``Aiven`` and ``Flink`` are exceptions, so +1 each. And the lower case words are all +1, so we get a score of 10/11 or 11/11 depending on how it regards the ``®``. In either case, this is a passing score.
 
-Things with ® should work, such as Flink®
------------------------------------------
+Aiven
+-----
 
-Even more text, again, again.
+Is OK, as it's a first word that is capitalised, so a score of 100%.
 
-Multiple things with ® should work, such as Aiven® and Flink®, for instance
----------------------------------------------------------------------------
+Aiven and Flink®
+----------------
 
-Even more text, again, again, again.
+3 words, ``Aiven`` is +1 because it's title-case and first, ``and`` is +1 because it's lower case, ``Flink`` is +1 because it's an exception. So score is 3/3 which is more than 80%, so this title is good.
 
-Multiple things with ® should work, such as Aiven® and Flink®
--------------------------------------------------------------
+Aiven and Redis™*
+-----------------
 
-(it's not clear to me why the above title doesn't work, when other titles do)
+3 words, ``Aiven`` is +1 because it's title-case and first, ``and`` is +1 because it's lower case, ``Redis`` is +1 because it's an exception. So score is 3/3 which is more than 80%, so this title is good.
 
-...you can see me trying to understand this below...
+Aiven and Redis
+---------------
 
-But not Flink®
---------------
+3 words, ``Aiven`` is +1 because it's title-case and first, ``and`` is +1 because it's lower case, ``Redis`` is +1 because it's an exception. So score is 3/3 which is more than 80%, so this title is good.
 
-(it's not clear to me why the above title doesn't work, when other titles do)
+Short but Aiven
+---------------
 
-But not Aiven®
---------------
-
-(it's not clear to me why the above title doesn't work, when other titles do)
-
-Not Aiven®
-----------
-
-(it's not clear to me why the above title doesn't work, when other titles do)
-
-Not Aiven, something
---------------------
-
-(it's not clear to me why the above title doesn't work, when other titles do)
-
-Aiven®
-------
-
-is OK
-
-Capitalised names from both dictionaries should work, such as Aiven and Tony
-----------------------------------------------------------------------------
-
-...
-
-Capitalised names from both dictionaries should work, such as Tony and Aiven
-----------------------------------------------------------------------------
-
-...
+3 words, ``Short`` is +1 because it's title-case and first, ``and`` is +1 because it's lower case, ``Aiven`` is +1 because it's an exception. So score is 3/3 which is more than 80%, so this title is good.

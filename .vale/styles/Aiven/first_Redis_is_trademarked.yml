@@ -4,13 +4,5 @@ level: error
 scope: text
 ignorecase: false
 
-# * `Redis`
-# * `Redis™`
-# * `Redis™*`.
-# * `Redis™* and more` -- this should "produce" `Redis™*``
-# * `Redis™*?`         -- this should "produce" `Redis™*``
-# * `Redis™*bibble`    -- strictly optional, but probably good if it can
-
-##first: '\b(Redis)(?:[™\*]*\W)'
-first: '\b(Redis)'
-second: '\b(Redis)(?:™\*\W)'
+first: '\b(Redis)(?!™\*\W)'
+second: '\b(Redis)(?:™\*)'
