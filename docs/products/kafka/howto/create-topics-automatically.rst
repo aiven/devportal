@@ -8,7 +8,7 @@ By default, in Aiven for Apache Kafka this features is turned off as safeguard a
 
 In such cases two options are available:
 
-#. :doc:`Create topics beforehand </docs/products/kafka/create-topic>`
+#. :doc:`Create topics beforehand </docs/products/kafka/howto/create-topic>`
 #. Enable topic automatic creation
 
 While option 2 seems the easier solution it has drawbacks like the risk of creating new topics in case of typos or accepting all the :doc:`topic configuration default values <set-kafka-parameters>` set at service level such as partition count, replication factor, and retention time.

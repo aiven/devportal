@@ -6,17 +6,20 @@ While you can set Apache Kafka® to :doc:`automatically create a topic when the 
 * it lets you to define granular topic settings such as the number of partitions, the replication factor, the retention period and more.
 * It prevents the wrong topic being generated (for instance with typos).
 
-1. Log in to the `Aiven console <https://console.aiven.io/>`_.
+Create an Apache Kafka® topic via Aiven Console
+-----------------------------------------------
 
-2. On the **Services** page, click on the service name.
+To create a new topic via the `Aiven Console <https://console.aiven.io/>`_:
 
-3. Select the **Topics** tab:
+1. On the **Services** page, click on the Aiven for Apache Kafka® service where you want to crate the topic.
 
-   a. Enter a name for your topic.
+2. Select the **Topics** tab:
 
-   b. Select **Advanced configuration** to set the replication factor, number of partitions and other advanced settings. These can be modified later.
+   a. In the *Add new topic* section, enter a name for your topic.
 
-4. Click **Add Topic** on the right hand side of the console.
+   b. In the **Advanced configuration** you can set the replication factor, number of partitions and other advanced settings. These can be modified later.
+
+3. Click **Add Topic** on the right hand side of the console.
 
    The new topic will be visible immediately, but may take a few minutes before you can update its settings.
 
