@@ -16,6 +16,13 @@ postgres                                -- full name
 postgreSql                              -- case
 timeseries                              -- should be two words
 
-
 Apache Nonesuch                         -- wants ® first word -- NOT DETECTED YET
 Apache Flink                            -- wants ® after second word
+
+MirrorMaker2                           -- ``MirrorMaker 2`` with a space
+
+--------
+
+``literal-text`` MirrorMaker2             -- this is NOT found
+
+``literal text`` MirrorMaker2             -- this IS found

@@ -6,14 +6,20 @@ scope: heading
 match: $sentence
 exceptions:
   - HowTo
+  - Python
+  - NodeJS
+  - Java
   - Aiven
   - Apache
   - Kafka
   - Flink
   - Cassandra
+  - Connect
   - ClickHouse
   - M3
   - OpenSearch
+  - Operator
+  - PgBouncer
   - PostgreSQL
   - MySQL
   - Redis

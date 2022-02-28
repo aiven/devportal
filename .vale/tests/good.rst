@@ -18,3 +18,5 @@ time series                             -- ``timeseries`` should be two words
 
 Apache® Nonesuch                        -- ``Apache Nonesuch`` wants ® first word
 Apache Flink®                           -- ``Apache Flink`` wants ® after second word
+
+MirrorMaker 2                           -- ``MirrorMaker 2`` with a space
