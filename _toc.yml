@@ -193,6 +193,7 @@ entries:
               - file: docs/products/postgresql/howto/connect-python
           - file: docs/products/postgresql/howto/list-dba-tasks
             entries:
+              - file: docs/products/postgresql/howto/create-database
               - file: docs/products/postgresql/howto/upgrade
               - file: docs/products/postgresql/howto/manage-extensions
               - file: docs/products/postgresql/howto/create-manual-backups
