@@ -208,7 +208,6 @@ entries:
           - file: docs/products/flink/concepts/flink-for-operators
           - file: docs/products/flink/concepts/kafka-connectors
           - file: docs/products/flink/concepts/kafka-connector-requirements
-          - file: docs/products/flink/concepts/logs-metrics-alerts
           - file: docs/products/flink/concepts/supported-syntax-sql-editor
           - file: docs/products/flink/concepts/event-processing-time
           - file: docs/products/flink/concepts/windows

@@ -270,6 +270,7 @@ An example of ``account service list`` output:
 
     avn service list demo-pg --project mytestproject
 
+.. _avn-service-logs:
 
 ``avn service logs``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -326,6 +327,8 @@ Starts the service maintenance updates.
 .. Note::
   
   If there are no updates available, the command will show a ``service is up to date, maintenance not required`` message.
+
+.. _avn-service-metrics:
 
 ``avn service metrics``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -584,7 +587,7 @@ Updates the settings for an Aiven service.
   * - ``service_name``
     - The name of the service
   * - ``--cloud``
-    - The name of the cloud region where to deploy the service
+    - The name of the cloud region where to deploy the service; check :ref:`avn-cloud-list` for more information
   * - ``--disk-space-gib``
     - Amount of disk space for data storage (GiB)
   * - ``--plan``
@@ -615,6 +618,21 @@ Updates the settings for an Aiven service.
     avn service update demo-pg        \
       --cloud azure-germany-north     \
       --enable-termination-protection
+
+
+**Example:** Update the service named ``big-service`` to scale it down to the ``Business-4`` plan.
+
+::
+
+    avn service update big-service        \
+      --plan business-4     
+
+**Example:** Update the service named ``secure-database`` to only accept connections from the range ``10.0.1.0/24`` and the IP ``10.25.10.12``.
+
+::
+
+    avn service update secure-database \
+      -c ip_filter=10.0.1.0/24,10.25.10.1/32
 
 
 ``avn service user``

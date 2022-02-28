@@ -7,6 +7,8 @@ Here you’ll find the full list of commands for ``avn service user``.
 Manage Aiven users and credentials
 --------------------------------------------------------
 
+.. _avn-service-user-create:
+
 ``avn service user-create``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
@@ -66,6 +68,8 @@ Downloads the SSL certificate, key and CA certificate for the selected service.
 
   avn service user-creds-download kafka-demo --username janedoe -d /tmp/certs
 
+.. _avn-service-user-delete:
+
 ``avn service user-delete``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
@@ -87,6 +91,8 @@ Delete a service in a given Aiven service.
 ::
 
   avn service user-delete kafka-demo --username janedoe
+
+.. _avn-service-user-get:
 
 ``avn service user-get``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -143,6 +149,8 @@ Downloads the SSL certificate, key and CA certificate and creates a Java keystor
 ::
 
   avn service user-kafka-java-creds kafka-demo --username janedoe -d /tmp/certs --password safePassword123
+
+.. _avn-service-user-list:
 
 ``avn service user-list``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''

@@ -112,7 +112,6 @@ TaskManager
 Telegraf
 Terraform
 Terraforming
-testuser
 TimescaleDB
 toolchain
 Transport Layer Security
