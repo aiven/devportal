@@ -9,6 +9,8 @@ Some service types (listed below) uses the Aiven project's CA for external conne
 
 For other services a browser-recognized CA is used, which is normally already marked as trusted in browsers and operating systems, so downloading the CA certificate is not normally required.
 
+.. note::
+    All the services in a project share the same Certificate Authority(CA)
 Certificate requirements
 ------------------------
 
