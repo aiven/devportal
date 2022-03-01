@@ -195,7 +195,7 @@ Multi match query
 ------------------
 One useful query when you want to align the ``match`` query properties but expand it to search in more fields is the ``multi_match`` query. You can add several fields in the ``fields`` property, so we will be searching the ``query`` string across all those fields included in the list.
 
-.. code::python
+.. code-block:: python
 
      query_body = {
                     "query": {
