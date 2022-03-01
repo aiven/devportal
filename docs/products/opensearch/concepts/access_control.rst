@@ -1,7 +1,7 @@
 Access control
 ==============
 
-Aiven for OpenSearch supports index-level access control lists (ACL) to control permissions. This approach allows you to limit the operations that are available to specific connections and to restrict access to certain data sets, which improves the security of your data.
+Aiven for OpenSearch® supports index-level access control lists (ACL) to control permissions. This approach allows you to limit the operations that are available to specific connections and to restrict access to certain data sets, which improves the security of your data.
 
 You can grant the following permissions:
 

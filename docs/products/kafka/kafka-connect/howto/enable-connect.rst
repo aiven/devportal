@@ -1,7 +1,7 @@
-Enable Kafka Connect on Aiven for Apache Kafka
-==============================================
+Enable Apache Kafka® Connect on Aiven for Apache Kafka®
+=======================================================
 
-To enable Kafka Connect on Aiven for Apache Kafka services, those should be running on business or premium plans. 
+To enable Apache Kafka® Connect on Aiven for Apache Kafka® services, those should be running on business or premium plans.
 
 .. Warning::
 

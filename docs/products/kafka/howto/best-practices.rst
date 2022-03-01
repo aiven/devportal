@@ -1,7 +1,7 @@
-Get the best from Apache Kafka
-==============================
+Get the best from Apache Kafka®
+===============================
 
-We recommend to follow these best practices to ensure that your Apache Kafka service is fast and reliable.
+We recommend to follow these best practices to ensure that your Apache Kafka® service is fast and reliable.
 
 Check your topic replication factors
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

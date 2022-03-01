@@ -1,7 +1,7 @@
 Write data to M3DB with Python
 ------------------------------
 
-This example writes some data to an M3DB service from Python, making use of the InfluxDB library.
+This example writes some data to an M3DB service from Python, making use of the InfluxDB® library.
 
 Variables
 '''''''''
@@ -39,10 +39,10 @@ Add the following to ``main.py`` and replace the placeholders with values for yo
 .. literalinclude:: /code/products/m3db/write.py
 
 
-This code creates an InfluxDBClient and connects to the Influx-literate endpoint on the M3DB. Then the code constructs the expected data format, and writes it to the client.
+This code creates an InfluxDBClient and connects to the InfluxDB-literate endpoint on the M3DB. Then the code constructs the expected data format, and writes it to the client.
 
 To run the code::
 
     python main.py
 
-If the script outputs ``True`` then there is data in your M3DB. If you'd like to you can take a look at :doc:`grafana` to see how to inspect your data with Grafana.
+If the script outputs ``True`` then there is data in your M3DB. If you'd like to you can take a look at :doc:`grafana` to see how to inspect your data with Grafana®.

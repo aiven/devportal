@@ -1,7 +1,7 @@
 Install or update an extension
 =====================================
 
-Aiven for PostgreSQL allows a series of pre-approved extensions to be installed.
+Aiven for PostgreSQL® allows a series of pre-approved extensions to be installed.
 
 Install an extension
 --------------------

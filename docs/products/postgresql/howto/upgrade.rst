@@ -1,7 +1,7 @@
-Perform a PostgreSQL major version upgrade
-==========================================
+Perform a PostgreSQL® major version upgrade
+===========================================
 
-PostgreSQL in-place upgrades allows to upgrade an instances to a new major version without needing to fork and redirect the traffic. The whole procedure usually takes 60 seconds or less for small databases.
+PostgreSQL® in-place upgrades allows to upgrade an instances to a new major version without needing to fork and redirect the traffic. The whole procedure usually takes 60 seconds or less for small databases.
 
 .. Warning::
     Aiven recommends to **test the upgrade on a fork** of an existing database. Testing on a fork provides the benefit of verifying the impact of the upgrade for the specific service without affecting the running service.

@@ -5,21 +5,21 @@ Aiven services are managed in the Aiven `web console <https://console.aiven.io/>
 
 .. Warning::
 
-    Aiven for Apache Kafka® MirrorMaker2 services can be created only alongside at least one existing Aiven for Apache Kafka® running service.
-    If your project doesn't contain any Aiven for Apache Kafka® services, create one before attempting to create an Aiven for Apache Kafka® MirrorMaker2 service.
+    Aiven for Apache Kafka® MirrorMaker 2 services can be created only alongside at least one existing Aiven for Apache Kafka running service.
+    If your project doesn't contain any Aiven for Apache Kafka services, create one before attempting to create an Aiven for Apache Kafka MirrorMaker 2 service.
 
 .. _apache_kafka_mirrormaker_dedicated_cluster:
 
-Creating a dedicated Aiven for Apache Kafka® MirrorMaker2 service
------------------------------------------------------------------
+Creating a dedicated Aiven for Apache Kafka® MirrorMaker 2 service
+------------------------------------------------------------------
 
-Create a new Aiven for Apache Kafka® MirrorMaker2 dedicated service:
+Create a new Aiven for Apache Kafka MirrorMaker 2 dedicated service:
 
-1. Select the **Aiven for Apache Kafka®** service for which you want to create a dedicated Aiven for Apache Kafka® MirrorMaker2 service.
+1. Select the **Aiven for Apache Kafka®** service for which you want to create a dedicated Aiven for Apache Kafka® MirrorMaker 2 service.
 
 2. Scroll down in the service Overview page till the **Service Integration** section and click on **Manage integrations**.
 
-3. Select **Kafka MirrorMaker** and click **Use integration**.
+3. Select **Kafka MirrorMaker 2** and click **Use integration**.
 
 4. Select the **New service** option.
 

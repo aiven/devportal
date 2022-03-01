@@ -1,7 +1,7 @@
-Get the best from Kafka Connect
-================================
+Get the best from Apache Kafka® Connect
+=======================================
 
-We recommend to follow these best practices to ensure that your Apache Kafka Connect service is fast and reliable.
+We recommend to follow these best practices to ensure that your Apache Kafka® Connect service is fast and reliable.
 
 Pay attention to ``tasks.max`` for connector configurations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

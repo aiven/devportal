@@ -1,7 +1,7 @@
 Connect with pgAdmin
 ===========================
 
-`pgAdmin <https://www.pgadmin.org/>`_ is one of the most popular PostgreSQL clients, useful to manage and query your database.
+`pgAdmin <https://www.pgadmin.org/>`_ is one of the most popular PostgreSQL® clients, useful to manage and query your database.
 
 Variables
 '''''''''

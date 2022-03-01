@@ -1,7 +1,7 @@
 Prevent full disks
 ===================
 
-To prevent **Aiven for Apache Kafka** from malfunctioning, the Aiven platform detects when the available disk space in **Aiven for Apache Kafka** services is running low, and when the usage exceeds 90% notifies the customer.
+To prevent **Aiven for Apache Kafka®** from malfunctioning, the Aiven platform detects when the available disk space in **Aiven for Apache Kafka** services is running low, and when the usage exceeds 90% notifies the customer.
 
 If any of the nodes in the service exceeds the critical threshold of disk usage (more than 97%), the access control list (ACL) used to authorize API requests by Apache Kafka clients is updated on all nodes to prevent operations that would increase disk usage. Such operations include:
 

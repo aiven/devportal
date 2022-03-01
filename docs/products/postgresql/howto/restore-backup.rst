@@ -1,7 +1,7 @@
-Restore PostgreSQL from a backup
-================================
+Restore PostgreSQL® from a backup
+=================================
 
-Aiven for PostgreSQL databases are automatically backed up and can be restored from a backup at any point in time within the **backup retention period**, which :doc:`varies by plan <../concepts/pg-backups>`. The restore is created by "Forking": a new PostgreSQL instance is created and content from the original database is restored into it.
+Aiven for PostgreSQL® databases are automatically backed up and can be restored from a backup at any point in time within the **backup retention period**, which :doc:`varies by plan <../concepts/pg-backups>`. The restore is created by "Forking": a new PostgreSQL instance is created and content from the original database is restored into it.
 
 .. Note::
     Aiven for PostgreSQL doesn't allow a service to be rolled back to a backup in-place since it creates alternative timelines for the database, adding complexity for the user.

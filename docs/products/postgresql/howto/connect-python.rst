@@ -1,7 +1,7 @@
 Connect with Python
 -------------------
 
-This example connects to a PostgreSQL service from Python, making use of the ``psycopg2`` library.
+This example connects to a PostgreSQL® service from Python, making use of the ``psycopg2`` library.
 
 Variables
 '''''''''

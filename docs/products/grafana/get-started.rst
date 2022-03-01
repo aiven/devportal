@@ -1,7 +1,7 @@
-Get started with Aiven for Grafana
+Get started with Aiven for Grafana®
 ===================================
 
-Get up and running with Aiven for Grafana. This article shows you how to set up a Grafana service in Aiven, connect to it, view your default dashboards.
+Get up and running with Aiven for Grafana®. This article shows you how to set up a Grafana service in Aiven, connect to it, view your default dashboards.
 
 
 .. Add Step 1: Check the basics

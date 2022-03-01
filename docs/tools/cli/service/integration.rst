@@ -289,3 +289,8 @@ Updates an existing service integration.
 
   avn service integration-update 8e752fa9-a0c1-4332-892b-f1757390d53f \
     -c 'kafka_topic=test_pg_log'
+
+
+------
+
+*Elasticsearch is a trademark of Elasticsearch B.V., registered in the U.S. and in other countries.*

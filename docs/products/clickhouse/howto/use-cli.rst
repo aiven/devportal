@@ -1,7 +1,7 @@
-Use the ClickHouse client
-=========================
+Use the ClickHouse® client
+==========================
 
-To use the ClickHouse client across different operating systems, we recommend utilizing `Docker <https://www.docker.com/>`_. You can get the latest image of the ClickHouse client directly from `the dedicated page in Docker hub <https://hub.docker.com/r/clickhouse/clickhouse-client>`_.
+To use the ClickHous®e client across different operating systems, we recommend utilizing `Docker <https://www.docker.com/>`_. You can get the latest image of the ClickHouse client directly from `the dedicated page in Docker hub <https://hub.docker.com/r/clickhouse/clickhouse-client>`_.
 
 .. note::
 

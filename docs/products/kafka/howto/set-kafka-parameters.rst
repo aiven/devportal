@@ -1,7 +1,7 @@
-Manage Apache Kafka parameters
+Manage Apache Kafka® parameters
 ===================================
 
-Every Aiven for Apache Kafka service comes with a set of configuration properties that define values like partition count, replication factor, retention time, whether an automatic topic creation is enabled or not and others.
+Every Aiven for Apache Kafka® service comes with a set of configuration properties that define values like partition count, replication factor, retention time, whether an automatic topic creation is enabled or not and others.
 
 You can read and edit these configuration properties in the Advanced configuration section of the Overview page in `Aiven web console <https://console.aiven.io/>`_ or using the :ref:`Aiven CLI service update command <avn-cli-service-update>`.
 

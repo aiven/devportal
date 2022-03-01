@@ -7,7 +7,7 @@ console with your email address and password, you will see the
 **Services** view, which shows you all the services in the currently
 selected project.
 
-Create a new Aiven for Apache Kafka service:
+Create a new Aiven for Apache Kafka® service:
 
 1. Select **Kafka** as the service type. You can also select the version that you want to use.
 

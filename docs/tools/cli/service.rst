@@ -706,3 +706,8 @@ Waits for the service to reach the ``RUNNING`` state
 ::
 
   avn service wait pg-doc
+
+
+------
+
+*Elasticsearch is a trademark of Elasticsearch B.V., registered in the U.S. and in other countries.*

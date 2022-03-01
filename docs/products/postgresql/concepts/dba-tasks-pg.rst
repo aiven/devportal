@@ -1,7 +1,7 @@
-Perform DBA-type tasks in Aiven for PostgreSQL
-==============================================
+Perform DBA-type tasks in Aiven for PostgreSQL®
+===============================================
 
-Aiven doesn't allow superuser access to Aiven for PostgreSQL services. However, most DBA-type actions are still available through other methods.
+Aiven doesn't allow superuser access to Aiven for PostgreSQL® services. However, most DBA-type actions are still available through other methods.
 
 ``avnadmin`` user privileges
 ----------------------------

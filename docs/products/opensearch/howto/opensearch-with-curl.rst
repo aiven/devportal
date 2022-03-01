@@ -1,7 +1,7 @@
-Use Aiven for OpenSearch with cURL
-==================================
+Use Aiven for OpenSearch® with cURL
+===================================
 
-Connect to your Aiven for OpenSearch service with `cURL <https://curl.se/>`_.
+Connect to your Aiven for OpenSearch® service with `cURL <https://curl.se/>`_.
 
 Variables
 ---------

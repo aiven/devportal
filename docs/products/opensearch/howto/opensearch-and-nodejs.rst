@@ -1,7 +1,7 @@
-Write search queries with OpenSearch and NodeJS
+Write search queries with OpenSearch® and NodeJS
 ================================================
 
-Learn how the OpenSearch JavaScript client gives a clear and useful interface to communicate with an OpenSearch cluster and run search queries. To make it more delicious we’ll be using a recipe dataset from Kaggle 🍕.
+Learn how the OpenSearch® JavaScript client gives a clear and useful interface to communicate with an OpenSearch cluster and run search queries. To make it more delicious we’ll be using a recipe dataset from Kaggle 🍕.
 
 Prepare the playground
 **********************

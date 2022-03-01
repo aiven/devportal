@@ -1,7 +1,7 @@
 Connect with PHP
 ----------------
 
-This example connects to PostgreSQL service from PHP, making use of the built-in PDO module.
+This example connects to PostgreSQL® service from PHP, making use of the built-in PDO module.
 
 Variables
 '''''''''

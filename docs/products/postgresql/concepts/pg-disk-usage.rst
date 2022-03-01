@@ -1,7 +1,7 @@
-﻿About PostgreSQL disk usage
-=============================
+﻿About PostgreSQL® disk usage
+============================
 
-When you create your first Aiven for PostgreSQL service, you may see the disk usage gradually increasing even though you are not yet inserting or updating much data.
+When you create your first Aiven for PostgreSQL® service, you may see the disk usage gradually increasing even though you are not yet inserting or updating much data.
 
 .. image:: /images/products/postgresql/initial-disk-usage.png
    :alt: Disk space usage graph showing % growing over an hour

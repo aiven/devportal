@@ -1,7 +1,7 @@
-Upgrade to OpenSearch with Terraform
-====================================
+Upgrade to OpenSearch® with Terraform
+=====================================
 
-If you manage your infrastructure with our :doc:`Terraform provider </docs/tools/terraform/index>` then please note that you will need to upgrade the provider to 2.4.0 or later in order to have support for OpenSearch.
+If you manage your infrastructure with our :doc:`Terraform provider </docs/tools/terraform/index>` then please note that you will need to upgrade the provider to 2.4.0 or later in order to have support for OpenSearch®.
 
 To upgrade an existing Elasticsearch service to OpenSearch using Terraform:
 
@@ -79,3 +79,7 @@ Bring the Terraform state back in sync with your OpenSearch service by importing
     terraform import 'aiven_opensearch.os' <project-name>/<service-name>
 
 Your Elasticsearch service has been upgraded to OpenSearch with Terraform, and the resource configuration updated to use a resource type of OpenSearch.
+
+------
+
+*Elasticsearch is a trademark of Elasticsearch B.V., registered in the U.S. and in other countries.*

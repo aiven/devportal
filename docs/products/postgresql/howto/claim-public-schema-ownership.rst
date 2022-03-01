@@ -1,7 +1,7 @@
 Claim public schema ownership
 =============================
 
-When an Aiven for PostgreSQL instance is created, the ``public`` schema is owned by the ``postgres`` user that is available only to Aiven for management purposes. If changes to the ``public`` schema are required, you can claim the ownership using the ``aiven_extras`` extension as the ``avnadmin`` database user.
+When an Aiven for PostgreSQL® instance is created, the ``public`` schema is owned by the ``postgres`` user that is available only to Aiven for management purposes. If changes to the ``public`` schema are required, you can claim the ownership using the ``aiven_extras`` extension as the ``avnadmin`` database user.
 
 1. Enable the ``aiven_extras`` extension::
 

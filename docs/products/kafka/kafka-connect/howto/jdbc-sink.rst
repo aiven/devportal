@@ -1,7 +1,7 @@
-Create an JDBC sink connector
-=============================
+Create a JDBC sink connector
+============================
 
-The JDBC (Kava Database Connectivity) sink connector enables you to move data from an Aiven for Apache Kafka® cluster to any relational database offering JDBC drivers like PostgreSQL® or MySQL®.
+The JDBC (Java Database Connectivity) sink connector enables you to move data from an Aiven for Apache Kafka® cluster to any relational database offering JDBC drivers like PostgreSQL® or MySQL.
 
 .. Warning::
 
@@ -12,7 +12,7 @@ The JDBC (Kava Database Connectivity) sink connector enables you to move data fr
 Prerequisites
 -------------
 
-To setup an JDBC sink connector, you need an Aiven for Apache Kafka service :doc:`with Kafka Connect enabled <enable-connect>` or a :ref:`dedicated Aiven for Apache Kafka Connect cluster <apache_kafka_connect_dedicated_cluster>`. 
+To setup n JDBC sink connector, you need an Aiven for Apache Kafka service :doc:`with Kafka Connect enabled <enable-connect>` or a :ref:`dedicated Aiven for Apache Kafka Connect cluster <apache_kafka_connect_dedicated_cluster>`.
 
 Furthermore you need to collect the following information about the target database service upfront:
 
@@ -37,8 +37,8 @@ Furthermore you need to collect the following information about the target datab
 
     As of version 3.0, Aiven for Apache Kafka no longer supports Confluent Schema Registry. For more information, read `the article describing the replacement, Karapace <https://help.aiven.io/en/articles/5651983>`_
 
-Setup an JDBC sink connector with Aiven Console
------------------------------------------------------
+Setup a JDBC sink connector with Aiven Console
+----------------------------------------------------
 
 The following example demonstrates how to setup a JDBC sink connector for Apache Kafka using the `Aiven Console <https://console.aiven.io/>`_.
 
@@ -138,14 +138,14 @@ To create the connector, access the `Aiven Console <https://console.aiven.io/>`_
 
 7. After all the settings are correctly configured, click on **Create new connector**
 8. Verify the connector status under the **Connectors** tab
-9. Verify the presence of the data in the target OpenSearch service, the index name is equal to the Apache Kafka topic name
+9. Verify the presence of the data in the target OpenSearch® service, the index name is equal to the Apache Kafka topic name
 
 .. Note::
 
     Connectors can be created also using the dedicated :ref:`Aiven CLI command <avn_service_connector_create>`.
 
-Example: Create an JDBC sink connector to PostgreSQL® on a topic with a JSON schema
------------------------------------------------------------------------------------
+Example: Create a JDBC sink connector to PostgreSQL® on a topic with a JSON schema
+----------------------------------------------------------------------------------
 
 If you have a topic named ``iot_measurements`` containing the following data in JSON format, with a defined JSON schema:
 
@@ -224,8 +224,8 @@ The configuration file contains the following peculiarities:
 * ``"delete.enabled": "false"``: the connector is not enabling deletes on tombstones since they would require to have the valid record key and the ``pk.mode`` set to ``record_key``
 
 
-Example: Create an JDBC sink connector to MySQL on a topic using Avro and schema registry
------------------------------------------------------------------------------------------
+Example: Create a JDBC sink connector to MySQL on a topic using Avro and schema registry
+----------------------------------------------------------------------------------------
 
 If you have a topic named ``students`` containing data in Avro format with the schema stored in the schema registry provided by `Karapace <https://help.aiven.io/en/articles/5651983>`_ with the following structure:
 

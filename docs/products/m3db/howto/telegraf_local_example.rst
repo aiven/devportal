@@ -1,5 +1,5 @@
-Telegraf to M3 to Grafana Example
-=================================
+Telegraf to M3 to Grafana® Example
+==================================
 
 Aiven for M3 + Telegraf set up
 ------------------------------
@@ -7,7 +7,7 @@ At a high level, here’s how to set up Telegraf to push metrics to Aiven for M3
 
 1. Create Aiven for M3 Service
 2. Install and configure Telegraf Agent
-3. Setup Aiven for Grafana instance for visualization of telegraph metrics
+3. Setup Aiven for Grafana® instance for visualization of telegraph metrics
 4. Enjoy the fruits of your labor!
 
 Create Aiven for M3 service
@@ -36,7 +36,7 @@ Within your existing Aiven project, create a new M3 service.
 .. image:: /images/products/m3db/telegraf-m3-example/m3_telegraph_02.png
    :alt: Screenshot creating M3 service
 
-Navigate to the newly created M3 service via the left-side menu and the service listing, and click the **InfluxDB** tab.
+Navigate to the newly created M3 service via the left-side menu and the service listing, and click the **InfluxDB®** tab.
 You will use several values from this page including the **Service URI, user, and password** when configuring Telegraf in the next section of this blog.
 
 .. image:: /images/products/m3db/telegraf-m3-example/m3_telegraph_03.png

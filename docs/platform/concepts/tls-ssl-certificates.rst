@@ -16,9 +16,9 @@ Certificate requirements
 
 Most of our services use a browser-recognized CA certificate, but there are exceptions:
 
-- **Aiven for PostgreSQL** requires the CA certificate to connect.
+- **Aiven for PostgreSQL®** requires the CA certificate to connect.
 
-- **Aiven for Apache Kafka** requires the CA certificate, and also the client key and certificate.
+- **Aiven for Apache Kafka®** requires the CA certificate, and also the client key and certificate.
 
 For these services you can :doc:`../howto/download-ca-cert` from the service overview page.
 

@@ -1,9 +1,9 @@
-Configure ACL permissions in Aiven for Redis
+Configure ACL permissions in Aiven for Redis™*
 ==============================================
 
 Use the Aiven console or the Aiven client to create custom Access Control Lists (ACLs). 
 
-Redis uses `ACLs <https://redis.io/topics/acl>`_ to restrict the usage of commands and keys available for connecting for a specific username and password. Aiven for Redis, however, does not allow use of the  `ACL * <https://redis.io/commands/acl-list>`_ commands directly in order to guarantee the reliability of replication, configuration management, or backups for disaster recovery for the default user. You can use the console or the client to create custom ACLs instead.
+Redis™* uses `ACLs <https://redis.io/topics/acl>`_ to restrict the usage of commands and keys available for connecting for a specific username and password. Aiven for Redis™*, however, does not allow use of the  `ACL * <https://redis.io/commands/acl-list>`_ commands directly in order to guarantee the reliability of replication, configuration management, or backups for disaster recovery for the default user. You can use the console or the client to create custom ACLs instead.
 
 
 Create an ACL using the Aiven console

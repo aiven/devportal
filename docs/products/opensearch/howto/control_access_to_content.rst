@@ -1,7 +1,7 @@
 Control access to content in your service
 =========================================
 
-This article shows you how to set up access control lists (ACL) for content in Aiven for OpenSearch services.
+This article shows you how to set up access control lists (ACL) for content in Aiven for OpenSearch® services.
 
 See the :doc:`related documentation <../concepts/access_control>` for more information on the permissions and patterns that are supported in ACL rules.
 

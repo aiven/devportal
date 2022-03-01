@@ -5,13 +5,13 @@ Aiven services are managed in the Aiven `web console <https://console.aiven.io/>
 
 .. Warning::
 
-    Aiven for Apache Kafka Connect services can be created only on top of existing Aiven for Apache Kafka running services. 
+    Aiven for Apache Kafka® Connect services can be created only on top of existing Aiven for Apache Kafka® running services.
     If your project doesn't contain any Aiven for Apache Kafka services, create one before attempting to create an Aiven for Apache Kafka Connect service.
 
 .. _apache_kafka_connect_dedicated_cluster:
 
-Creating a dedicated Aiven for Apache Kafka Connect service
------------------------------------------------------------
+Creating a dedicated Aiven for Apache Kafka® Connect service
+-------------------------------------------------------------
 
 Create a new Aiven for Apache Kafka Connect dedicated service:
 

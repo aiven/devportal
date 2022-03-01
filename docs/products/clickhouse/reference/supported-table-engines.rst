@@ -1,9 +1,9 @@
 Supported table engines
 =======================
 
-This article lists the table engines that are currently supported in Aiven for ClickHouse.
+This article lists the table engines that are currently supported in Aiven for ClickHouse®.
 
-ClickHouse supports several table engines that define the storage parameters, supported queries, and other aspects of the data tables. For details on each table engine, see the `ClickHouse documentation <https://clickhouse.com/docs/en/engines/table-engines/>`_.
+ClickHouse® supports several table engines that define the storage parameters, supported queries, and other aspects of the data tables. For details on each table engine, see the `ClickHouse documentation <https://clickhouse.com/docs/en/engines/table-engines/>`_.
 
 .. note::
    To support node recycling for backup and restore procedures and high availability in the Aiven platform, some of the table engines are remapped. This means that in replicated databases, ``MergeTree`` engines are automatically replaced with ``ReplicatedMergeTree`` variants of the same engine.

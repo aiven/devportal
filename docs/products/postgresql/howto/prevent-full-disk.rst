@@ -1,7 +1,7 @@
-Prevent PostgreSQL full disk issues
+Prevent PostgreSQL® full disk issues
 ===================================
 
-If your Aiven for PostgreSQL service runs out of disk space, the service will start malfunctioning, which will preclude proper backup creation. 
+If your Aiven for PostgreSQL® service runs out of disk space, the service will start malfunctioning, which will preclude proper backup creation.
 
 To prevent this situation, Aiven automatically detects when your service is running out of free space and stops further write operations by setting the ``default_transaction_read_only``  parameter to ``ON``.
 

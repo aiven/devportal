@@ -1,7 +1,7 @@
-PostgreSQL welcome
-==================
+PostgreSQL® welcome
+===================
 
-PostgreSQL is an open source, **relational database**. It's ideal for organisations that need a well organised tabular datastore.
+PostgreSQL® is an open source, **relational database**. It's ideal for organisations that need a well organised tabular datastore.
 On top of the strict table and columns formats, PostgreSQL also offers solutions for nested datasets with the native ``jsonb`` format and advanced set of extensions including `PostGIS <https://postgis.net/>`_, a spatial database extender for location queries.
 Aiven for PostgreSQL is the perfect fit for your relational data. A scalable SQL database solution that can be up and running within a few minutes.
 

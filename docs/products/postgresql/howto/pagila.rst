@@ -1,9 +1,9 @@
 Sample dataset: Pagila
 ======================
 
-Aiven provides a sample database you can import in your Aiven for PostgreSQL service. This page covers information about the database and the procedure to get it up and running.
+Aiven provides a sample database you can import in your Aiven for PostgreSQL® service. This page covers information about the database and the procedure to get it up and running.
 
-Pagila is a PostgreSQL port of the `Sakila Sample Database <https://dev.mysql.com/doc/sakila/en/>`_. The examples here use one from ``devrimgunduz``, `version 2.1.0 <https://github.com/devrimgunduz/pagila>`_.
+Pagila is a PostgreSQL® port of the `Sakila Sample Database <https://dev.mysql.com/doc/sakila/en/>`_. The examples here use one from ``devrimgunduz``, `version 2.1.0 <https://github.com/devrimgunduz/pagila>`_.
 
 Sakila (and thus, Pagila) is a database representing a DVD rental store (remember those?!), containing information about films (like title, category, actresses), rental stores (like address, staff members, customers) and rentals, where a customer rents a film from a store through its staff.
 

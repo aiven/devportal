@@ -242,3 +242,7 @@ The configuration file contains the following peculiarities:
 .. Note::
 
     The OpenSearch document ID is set as the message key
+
+------
+
+*Elasticsearch is a trademark of Elasticsearch B.V., registered in the U.S. and in other countries.*

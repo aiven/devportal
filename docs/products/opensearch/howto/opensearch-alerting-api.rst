@@ -1,7 +1,7 @@
-Create alerts with OpenSearch API
-=================================
+Create alerts with OpenSearch® API
+==================================
 
-OpenSearch alerting feature sends notifications when data from one or more indices meets certain conditions that can be customized.
+OpenSearch® alerting feature sends notifications when data from one or more indices meets certain conditions that can be customized.
 Use case examples are such as monitoring for HTTP status code 503, CPU load average above certain percentage or watch for counts of a specific keyword in logs for a specific amount of interval,
 notification to be configured to be sent via email, slack or custom webhooks and other destination, in this example we are using slack as the destination.
 

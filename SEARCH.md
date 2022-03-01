@@ -125,7 +125,6 @@ os_client.index(index='devportal',
 
 You might also need to take care of removing documents that no longer exist.
 
-
 # Testing changes to search functionality
 
 It seems like Netlify uses the deployed functions rather than the ones in a branch when building a preview, so we need to take care when testing these. A good approach is to use the [Netlify CLI](https://www.netlify.com/products/cli/) locally. For example, to test the search function:
@@ -137,3 +136,5 @@ It seems like Netlify uses the deployed functions rather than the ones in a bran
 3. From the `netlify/` directory, run `netlify dev` - this starts a server on port 8888 (but won't serve the site itself because we don't have configuration to run it locally, I think it would be possible if we needed to though)
 
 4. The search function is now available at `http://localhost:8888/.netlify/functions/search` - add `?query=kafka` or whatever your search query should be, to check that the function works and returns the results you expect. The local server will show error logs if there are any.
+
+_Elasticsearch is a trademark of Elasticsearch B.V., registered in the U.S. and in other countries._

@@ -21,7 +21,7 @@ The connection information on the main service overview tab contains sections fo
 
 **M3 Coordinator** is the endpoint for a direct connection.
 
-**InfluxDB** protocol is also supported by M3DB. This means you can use a new or existing InfluxDB application to store data in M3DB instead.
+**InfluxDB®** protocol is also supported by M3DB. This means you can use a new or existing InfluxDB application to store data in M3DB instead.
 
 **Prometheus** gets two entries since the read and write operations are on different paths.
 

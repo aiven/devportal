@@ -39,7 +39,7 @@ To create a new data pipeline defined by an Apache Flink® job via the Aiven Con
   * the `Joins <https://nightlies.apache.org/flink/flink-docs-master/docs/dev/table/sql/queries/joins/>`_ and `time window joins <https://nightlies.apache.org/flink/flink-docs-master/docs/dev/table/sql/queries/window-join/>`_
   * the `with clause <https://nightlies.apache.org/flink/flink-docs-master/docs/dev/table/sql/queries/with/>`_ helpful to divide a statement in sub-statements
 
-6. Run the job and check the results in the Aiven for Apache Kafka topic or Aiven for PostgreSQL table pointed by the target Apache Flink® table.
+6. Run the job and check the results in the Aiven for Apache Kafka® topic or Aiven for PostgreSQL® table pointed by the target Apache Flink® table.
 
 Example: Define and Apache Flink® job for basic data filtering
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''

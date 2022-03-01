@@ -1,7 +1,7 @@
 Grant privileges
 ==================
 
-ClickHouse supports a **Role Based Access Control** model and allows you to configure access privileges by using SQL statements. You can either :doc:`use the query editor <use-query-editor>` or rely on :doc:`the command-line interface <use-cli>`.
+ClickHouse® supports a **Role Based Access Control** model and allows you to configure access privileges by using SQL statements. You can either :doc:`use the query editor <use-query-editor>` or rely on :doc:`the command-line interface <use-cli>`.
 
 This article shows you examples of how to create roles and grant privileges. The ClickHouse documentation includes  `detailed documentation for access rights <https://clickhouse.com/docs/en/operations/access-rights/>`_.
 

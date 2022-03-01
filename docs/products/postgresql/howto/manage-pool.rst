@@ -6,7 +6,7 @@ Connection Pooling allows you to maintain very large numbers of connections to a
 Connection pooling tips
 -----------------------------
 
-You can connect directly to the PostgreSQL server using the **Service URI** setting listed on the **Overview** page however this URI doesn't make use of PgBouncer pooling. PgBouncer pools use a different port number than the regular PostgreSQL server port, the PgBouncer **Service URI** for a particular pool can be found in the Aiven console, under the **Pool** tab in the service page.
+You can connect directly to the PostgreSQL® server using the **Service URI** setting listed on the **Overview** page however this URI doesn't make use of PgBouncer pooling. PgBouncer pools use a different port number than the regular PostgreSQL server port, the PgBouncer **Service URI** for a particular pool can be found in the Aiven console, under the **Pool** tab in the service page.
 
 You can use both pooled and non-pooled connections at the same time.
 
