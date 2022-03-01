@@ -83,8 +83,7 @@ Find below the method signature's::
 All the parameters are optional in the ``search()`` method. We will define Python ``dict()`` objects for the ``body`` parameter and use. Here is an example:
 
 .. code:: python
-
-    query_body = {
+   query_body = {
                   "query": {
                     "match_all": {}
                   }
@@ -110,14 +109,17 @@ With Query DSL, the field ``body`` expects a dictionary object which makes it ea
 
 .. code-block:: python
 
-    query_body = {
-                  "query": {
+     query_body = {
+                    "query": {
                       "multi_match": {
-                          "query": "Garlic-Lemon",
-                          "fields": ["title", "ingredients"]
+                        "query": "Garlic-Lemon",
+                        "fields": [
+                          "title",
+                          "ingredients"
+                        ]
                       }
+                    }
                   }
-              }
     resp = client.search(index=INDEX_NAME, body=query_body)
     log_titles(resp)
 
@@ -142,14 +144,13 @@ The ``match`` query helps you to find the best matches with multiple search word
 This will return results of titles that contain "Chilled" or "Tomato" on it due to DSL defaults to the "or" operator.
 
 .. code-block:: python
-
-      query_body = {
-                    "query": {
-                      "match": {
-                        "title": "Chilled Tomato"
+       query_body = {
+                      "query": {
+                        "match": {
+                          "title": "Chilled Tomato"
+                        }
                       }
                     }
-                  }
       resp = client.search(index=INDEX_NAME, body=query_body)
       log_titles(resp)
 
@@ -157,13 +158,16 @@ If you want to find exact matches for fields in the ``title`` as "Chilled Tomato
 
 .. code-block:: python
 
-      query_body = {
-                    "query": {
-                      "match": {
-                        "title": {"query": "Chilled Tomato", "operator": "and"}
+       query_body = {
+                      "query": {
+                        "match": {
+                          "title": {
+                            "query": "Chilled Tomato",
+                            "operator": "and"
+                          }
+                        }
                       }
                     }
-                  }
       resp = client.search(index=INDEX_NAME, body=query_body)
       log_titles(resp)
 
@@ -193,27 +197,30 @@ One useful query when you want to align the ``match`` query properties but expan
 
 .. code::python
 
-    query_body = {
-                  "query": {
-                    "multi_match": {
-                      "query": query,
-                      "fields": [field1, field2 ...]
+     query_body = {
+                    "query": {
+                      "multi_match": {
+                        "query": query,
+                        "fields": [field1, field2 ...]
+                      }
                     }
                   }
-                }
 
 In the next query we are looking across the ``title`` and ``ingredients`` fields for recipes with "Summer" on them. 
 
 .. code-block:: python
 
-    query_body = {
-                  "query": {
+     query_body = {
+                    "query": {
                       "multi_match": {
-                          "query": "Summer",
-                          "fields": ["title", "ingredients"]
+                        "query": "Summer",
+                        "fields": [
+                          "title",
+                          "ingredients"
+                        ]
                       }
+                    }
                   }
-              }
     resp = client.search(index=INDEX_NAME, body=query_body)
     log_titles(resp)
 
@@ -232,29 +239,29 @@ This query can be used to match phrases in a field. Where the ``query`` is the p
 
 .. code-block:: python
 
-    query_body = {
-                  "query": {
-                    "match_phrase": {
-                      field: {
-                        "query": query
+     query_body = {
+                    "query": {
+                      "match_phrase": {
+                        field: {
+                          "query": query
+                        }
                       }
                     }
                   }
-                }
 
 If we are looking for a certain phrase, for example, ``pannacotta with lemon marmalade`` in the title, we may use a query like:
 
 .. code-block:: python
 
-    query_body = {
-                  "query": {
-                    "match_phrase": {
-                      "title": {
-                        "query": "pannacotta with lemon marmalade"
+     query_body = {
+                    "query": {
+                      "match_phrase": {
+                        "title": {
+                          "query": "pannacotta with lemon marmalade"
+                        }
                       }
                     }
                   }
-                }
     resp = client.search(index=INDEX_NAME, body=query_body)
     log_titles(resp)
 
@@ -273,38 +280,38 @@ We can solve this by setting the ``slop`` parameter. The ``slop`` parameter allo
 
 .. code-block:: python
 
-    query_body = {
-                  "query": {
-                    "match_phrase": {
-                      title: {
-                        "query": query
-                        "slop": slop
+     query_body = {
+                    "query": {
+                      "match_phrase": {
+                        title: {
+                          "query": query
+                          "slop": slop
+                        }
                       }
                     }
                   }
-                }
 
 Suppose we are looking for ``pannacotta marmalade`` phrase. In order to find more results rather than exact phrases, we should allow a certain degree like setting the ``slop=2``, so it can find matches skipping two words between the searched ones.
 
 .. code-block:: python
 
-    query_body = {
-                  "query": {
-                    "match_phrase": {
-                      "title": {
-                        "query": "pannacotta marmalade"
-                        "slop": 2
+     query_body = {
+                    "query": {
+                      "match_phrase": {
+                        "title": {
+                          "query": "pannacotta marmalade"
+                          "slop": 2
+                        }
                       }
                     }
                   }
-                }
 
 With this flexibility, we can find titles with the desired words even if there are other words in between all thanks to the ``slop`` parameter.
 
 .. code-block:: python
 
     ['Lemon Pannacotta with Lemon Marmalade ',
-    'Lemon Pannacotta with Lemon Marmalade ']
+     'Lemon Pannacotta with Lemon Marmalade ']
 
 
 If you actually do not know exactly which phrases you are looking, you can try out using the ``slop`` query from our demo:
@@ -324,27 +331,27 @@ If you are looking to find in a ``field`` an exact ``value``, the `term query <h
 
 .. code-block:: python
 
-    query_body = {
-                  "query": {
-                    "term": {
-                      field: value
+     query_body = {
+                    "query": {
+                      "term": {
+                        field: value
+                      }
                     }
                   }
-                }
 
 Let's suppose you're looking for recipes exactly with 0 fat on them:
 
 .. code-block:: python
 
-    query_body = {
-                  "query": {
-                    "term": {
-                      "fat": 0
+     query_body = {
+                    "query": {
+                      "term": {
+                        "fat": 0
+                      }
                     }
                   }
-                }
-    resp = client.search(index=INDEX_NAME, body=query_body)
-    log_titles(resp)
+     resp = client.search(index=INDEX_NAME, body=query_body)
+     log_titles(resp)
 
 Curious about recipes low in sodium? You can use find out more recipes with ``term`` queries by running the demo application:
 
@@ -360,18 +367,18 @@ This query helps to find documents that the searched field's value is within a c
 
 .. code-block:: python
 
-    query_body = {
-                  "query": {
-                    "range": {
-                      field: {
-                        "gte": gte,
-                        "lte": lte
+     query_body = {
+                    "query": {
+                      "range": {
+                        field: {
+                          "gte": gte,
+                          "lte": lte
+                        }
                       }
                     }
                   }
-                }
-    resp = client.search(index=INDEX_NAME, body=query_body)
-    log_titles(resp)
+     resp = client.search(index=INDEX_NAME, body=query_body)
+     log_titles(resp)
 
 You can construct range queries with combinations of inclusive and exclusive parameters as can be seen in the table:
 
@@ -418,18 +425,18 @@ We can try out looking for a misspelled word and allowing some ``fuzziness``, wh
 
 .. code-block:: python
 
-    query_body = {
-          "query": {
-              "fuzzy": {
-                  "title": {
-                      "value": "pinapple",
-                      "fuzziness": 2,
+     query_body = {
+                      "query": {
+                          "fuzzy": {
+                              "title": {
+                                  "value": "pinapple",
+                                  "fuzziness": 2,
+                              }
+                          }
+                      }
                   }
-              }
-          }
-      }
-    resp = client.search(index=INDEX_NAME, body=query_body)
-    log_titles(resp)
+     resp = client.search(index=INDEX_NAME, body=query_body)
+     log_titles(resp)
 
 
 Try yourself to find recipes with misspelled pineapple 🍍
