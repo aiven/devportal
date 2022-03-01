@@ -43,8 +43,9 @@ swap:
   # MirrorMaker should always be followed by one (white)space character and a 2
   'MirrorMaker(?!\s+2)': "MirrorMaker 2"
   'MirrorMaker2': "MirrorMaker 2"
-  # Don't forget the (R) in the middle when there's a Kafka
-  ##"Kafka MirrorMaker 2": "Kafka® MirrorMaker2"
+
+  # Do I want to try to catch "MirrorMaker 2®"? This appears at first attempt
+  # to be non-trivial
 
   # Aiven for <thing>
   "Aiven Cassandra": "Aiven for Cassandra"

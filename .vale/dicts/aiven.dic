@@ -1,4 +1,4 @@
-132
+137
 ACL
 ACLs
 Aiven
@@ -18,6 +18,7 @@ connect
 Couchbase
 cyber
 datacenter
+datacenters
 Datadog
 datasource
 datastore
@@ -49,20 +50,23 @@ Homebrew
 Heatmap
 hobbyist
 hostname
+hostnames
 Hillyer
 httpie
+hyperloglog
 hyperloglogs
 hypertable
+hypertables
 InfluxDB
 Instana
 Java
 Kaggle
 Kafdrop
 Kafka
-kafkacat
 Karapace
 keypair
 keystore
+keystores
 Kibana
 Kubernetes
 kuromoji
@@ -121,6 +125,7 @@ TimescaleDB
 toolchain
 Transport Layer Security
 truststore
+truststores
 Uber
 unencrypted
 Untrusted

@@ -27,6 +27,24 @@ We used to use `accept.txt` (see https://docs.errata.ai/vale/vocab) to indicate 
 
 Since we are using our own dictionary now (as well as the default one, see ``aiven_spelling.yml``) we do not need to rely on the Vale.Spelling rule.
 
+SkippedScope
+------------
+
+The ``SkippedScope`` directive can be used in the ``.vale.ini`` file to say what HTML block-level tags to ignore.
+See https://docs.errata.ai/vale/config#skippedscopes
+
+For our purposes, we want to add ``a`` (corresponding to links) and ``cite`` (corresponding to things in single backticks).
+
+  (Remember that vale uses ``rst2html.py`` to turn our reStructuredText into something it can consume.)
+
+Except maybe we don't want to ignore ``cite``, because we do want to check inside things like::
+
+  :doc:`Aiven for Apache Kafka® topics <connect-kafka>`
+
+What we *really* want to make sure we ignore is things like::
+
+  `jq <https://stedolan.github.io/jq/>`__
+
 ``aiven_spelling`` and the ``aiven`` dictionary
 -----------------------------------------------
 
@@ -189,12 +207,16 @@ will match any case variant of "``clickhouse``", and given an error if it is not
 
 This sugggests that for all product names where we want to match case exactly, we should have an appropriate rule in this file. (And see the section on `Vale and dictionary case (in)sensitivity`_ to understand why this isn't solved by the entries in the dictionary.)
 
-``first_<Word>_is registered`` checks
+**Nice to have:** add a rule to detect getting Sphinx style links wrong, because the number of trailing underlines is incorrect. This should be reasonably easy to write, and it's a common error.
+
+(and maybe also a rule to spot markdown-style links!)
+
+**`first_<Word>_is registered`` checks
 -------------------------------------
 
 These extend ``conditional`` to check that there is at least one ``<Word>®`` if there are any occurrences of ``<Word>``.
 
-Inside vale, ``first`` is termed the *antecedent*, and ``second`` is termed the *consequent*. I think of ``first`` as the *usage* and ``second`` as the *explanation*.
+Inside vale, ``first`` is termed the *antecedent*, and ``second`` is termed the *consequent*. I think of ``first`` as the *usage* and **`second`` as the *explanation*.
 
 Each needs to specify one *capture group* (the part of the pattern with ``(`` and ``)``) which will be used as the match for that pattern.
 
@@ -273,6 +295,19 @@ Temporary list from the internal page:
 
 Plus checking for ``Aiven for <name>`` instead of ``Aiven <name>`` (the former is correct) and also checking for ``Apache®`` when ``Apache`` is *not* followed by a product name (this *may* require listing all the product names in a regular expression, or may just mean checking for ``Apache <capitalised-word>``, which is probably good enough as a first pass).
 
+Other marks
+-----------
+
+We reference Elasticsearch a few times, and that needs a disclaimer/attribution, which I've supplied by hand as necessary. I am not sure if it is worth constructing a specific rule for this (and my first attempt didn't work!).
+
+Other cases that only happen occasionally:
+
+* ``Apache Lucene™`` (which is a trademark of the Apache Software Foundation) in :doc:`../../docs/producs/opersearch/index.rst`. I've added a specific attribution.
+
+* ``Apache ZooKeeper`` in :doc:`../../docs/products/kafka/concepts/auth-types.rst` and :doc:`../../docs/products/kafka/howto/use-zookeeper.rst`. This is actually an unregistered trademark (™) of Apache. I've made it refer to "Apache ZooKeeper" rather than "ZooKeeper", and added attribution in both places.
+
+* Various names in :doc:`../../docs/products/kafka/kafka-connect/concepts/list-of-connector-plugins.rst`, which may or may not need ® marks and/or attributions. I've made some attempt for some things in that file.
+
 ``capitalization_headings.yml``
 -------------------------------
 
@@ -332,10 +367,14 @@ Particular as "``Not AIVEN, something``" is OK, because the second word is all u
 **Resolution** This is working as intended, although the documentation could do with explaining how it works.
 The solution for us is to add appropriate exception words to the style file. This isn't too onerous as there aren't many such words, and it's probably better to be specific (that is, it's reasonable to say which words are special for titles in the specification for how titles are checked).
 
+(For longer term, see also `Sentence case and headings`_. Since we're making explicit exceptions in the ``capitalization_headings.yml`` style file, if the future provides us with a better sentence cased title option, we will only have this file to alter/fix. This makes this a better option than trying to re-use the older ``accept.txt`` option.)
+
+**Later finding** It appears that an exception can be a phrase, for instance ``Transport Layer Security``. I'm not actually sure how that works (!) but it makes life neater. It may be sensible to amend the list I've been building up to explicitly name some particular titles, rather than just excepting a (longish) set of words.
+
 Test files
 ----------
 
-In the directory ****.vale/tests**** there are pairs of files, with names that contain ``good`` and ``bad``.
+In the directory ****.vale/tests**** there are pairs of files, with names that contain ****good`` and ``bad``.
 
 The intention is that when vale is run on a ``good`` file, there should be no errors, and when it is run on a ``bad`` file there should be at least one error per significant line (that is, ignoring comments, which should be evident, and blank lines).
 
@@ -454,4 +493,22 @@ I'm not 100% sure this is a vale bug yet, because in trying to say what I want t
 
 I'm recording it here because I don't want to investigate further at the moment (I'm currently running my patched vale over the documentation to try to fix all the problems it *does* find). Having a minimal provoking test case means I can come back to this and not forget it.
 
-**NOTE to self** Remmeber to ``rg -wi MirrorMaker2`` after I've done all the other documentation fixes.
+**NOTE to self** Remember to ``rg -wi MirrorMaker2`` after I've done all the other documentation fixes.
+
+Sentence case and headings
+--------------------------
+
+  *A wish. Might need a fix in rst2html.py*
+
+For short titles, the sentence case "80%" rule doesn't work very well. Is there a better algorithmg for working out whether the sentence casing is accceptable or not (this might need to be given a different name). Because adding lots of exceptions is a pain (and feels the wrong solution).
+
+The expected workaround of marking up::
+
+  .. vale off
+
+  this text should be fine
+  ------------------------
+
+  .. vale on
+
+is known not to work, as reported in issue https://github.com/errata-ai/vale/issues/340 (Vale on/off comments do not work on titles in RST) and may be either impossible or very difficult to fix - in fact, it's apparently a bug in rst2html.py.

@@ -6,9 +6,20 @@ scope: heading
 match: $sentence
 exceptions:
   - HowTo
+  - APIs
+  - Telegraf
+  - MirrorMaker
+  - ZooKeeper
   - Python
   - NodeJS
   - Java
+  - Kafdrop
+  - Docker
+  - Simple Authentication and Security Layer
+  - Transport Layer Security
+  - TaskManager
+  - Prometheus
+  - VPC
   - Aiven
   - Apache
   - Kafka
@@ -16,11 +27,28 @@ exceptions:
   - Cassandra
   - Connect
   - ClickHouse
+  - Go
   - M3
   - OpenSearch
   - Operator
+  - Pagila
+  - pgAdmin
+  - TimescaleDB
+  - Elasticsearch
+  - Spring
+  - Boot
+  - GitHub
+  - Business
+  - ACLs
+  - Dashboards
+  - Workbench
+  - Dev
+  - Hobbyist
+  - Startup
+  - Premium
   - PgBouncer
   - PostgreSQL
+  - Postman
   - MySQL
   - Redis
   - InfluxDB
