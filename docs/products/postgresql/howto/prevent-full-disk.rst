@@ -1,5 +1,5 @@
 Prevent PostgreSQL® full disk issues
-===================================
+====================================
 
 If your Aiven for PostgreSQL® service runs out of disk space, the service will start malfunctioning, which will preclude proper backup creation.
 

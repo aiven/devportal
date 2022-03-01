@@ -5,7 +5,7 @@ Here you'll find the full list of commands for ``avn mirrormaker``.
 
 
 Create and manage Aiven for Apache Kafka® MirrorMaker 2 replication flows
------------------------------------------------------------------------
+-------------------------------------------------------------------------
 
 Commands for managing Aiven for Apache Kafka® MirrorMaker 2 replication flows.
 

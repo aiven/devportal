@@ -1,8 +1,8 @@
 Apache Flink® :badge:`beta,cls=badge-secondary text-black badge-pill`
-====================================================================
+=====================================================================
 
 What is Aiven for Apache Flink®?
--------------------------------
+--------------------------------
 
 Aiven for Apache Flink® beta is powered by the open-source framework Apache Flink®, a **distributed processing engine for stateful cs over data streams**. It enables you to easily get started with real-time stream processing using SQL.
 
