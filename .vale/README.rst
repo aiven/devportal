@@ -302,7 +302,7 @@ We reference Elasticsearch a few times, and that needs a disclaimer/attribution,
 
 Other cases that only happen occasionally:
 
-* ``Apache Lucene™`` (which is a trademark of the Apache Software Foundation) in `<../docs/producs/opensearch/index.rst>`_. I've added a specific attribution.
+* ``Apache Lucene™`` (which is a trademark of the Apache Software Foundation) in `<../docs/products/opensearch/index.rst>`_. I've added a specific attribution.
 
 * ``Apache ZooKeeper`` in `<../docs/products/kafka/concepts/auth-types.rst>`_ and `<../docs/products/kafka/howto/use-zookeeper.rst>`_. This is actually an unregistered trademark (™) of Apache. I've made it refer to "Apache ZooKeeper" rather than "ZooKeeper", and added attribution in both places.
 
