@@ -15,8 +15,6 @@ The ``.vale`` directory will be folded back into ``.github`` when work is finish
 
 .. _`vale-action`: https://github.com/errata-ai/vale-action
 
-.. contents::
-
 Notes
 =====
 
