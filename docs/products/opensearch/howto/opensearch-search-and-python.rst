@@ -96,12 +96,21 @@ The parameters that we will be using to configure our search queries are the ``i
 
 Find out how we write the queries and call the OpenSearch client on our demo, specifically on `search.py <https://github.com/aiven/demo-opensearch-python/blob/main/search.py>`__.
 
-Query DSL
----------
+Lucene query and query DSL
+--------------------------
 
-`OpenSearch query domain-specific language (DSL) <https://opensearch.org/docs/latest/opensearch/query-dsl/index/>`_ is the primary language for OpenSearch queries. 
+OpenSearch supports the Lucene query syntax to perform searches by using the ``q`` parameter. The ``q`` parameter expects a string with your query specifications, for example:
 
-With Query DSL, the field ``body`` expects a dictionary object which can facilitate the construction of more complex queries, for example:
+.. code-block:: python
+
+    client.search({
+        index: 'recipes',
+        q: 'ingredients:broccoli AND calories:(>=100 AND <200)'
+    })
+
+For users, who prefer to work with nested objects and familiar structures like JSON (equivalent to Python dictionaries), the `OpenSearch query domain-specific language (DSL) <https://opensearch.org/docs/latest/opensearch/query-dsl/index/>`_ is recommended.
+
+For the Query DSL, the field ``body`` expects a dictionary object which can facilitate the construction of more complex queries depending on your user case, for example:
 
 .. code-block:: python
 
@@ -138,6 +147,7 @@ Check what comes out from this combination 🧄 🍋 :
       'Lemon-Garlic Vinaigrette '
     ]
 
+For this tutorial, we will be focusing in the query DSL syntax to construct queries modifying the ``body`` parameter.
 
 .. note::
   In the method ``search()``. One of the optional fields is the ``size`` field, which is defined as the number of results returned in the search. The default value is 10.
