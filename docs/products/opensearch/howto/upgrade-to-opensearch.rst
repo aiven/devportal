@@ -47,4 +47,4 @@ Here are some related resources that may help you with your upgrade process
 * :doc:`Understand how OpenSearch relates to Elasticsearch <../concepts/opensearch-vs-elasticsearch>`
 * :doc:`Upgrade your application client libraries for OpenSearch <upgrade-clients-to-opensearch>`
 * :doc:`Plugins available on for Aiven for OpenSearch <../reference/plugins>`
-* :doc:`OpenSearch Dashboards <../dashboards/index>` replaces Kibana
+* :doc:`OpenSearch Dashboards <../dashboards/index>` as a replacement to Kibana
