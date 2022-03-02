@@ -175,20 +175,6 @@ This will return results of titles that contain "Chilled" or "Tomato" on it due 
                       }
                     }
 
-If you want to find exact matches for fields in the ``title`` as "Chilled Tomato", you can specify the operator "and".
-
-.. code-block:: python
-
-       query_body = {
-                      "query": {
-                        "match": {
-                          "title": {
-                            "query": "Chilled Tomato",
-                            "operator": "and"
-                          }
-                        }
-                      }
-                    }
 
 You can run yourself the code to explore the ``match`` function. For example, if you want to find out recipes with the name "Spring" on it:
 
@@ -225,22 +211,6 @@ One useful query when you want to align the ``match`` query properties but expan
                     }
                   }
 
-In the next query we are looking across the ``title`` and ``ingredients`` fields for recipes with "Summer" on them. 
-
-.. code-block:: python
-
-     query_body = {
-                    "query": {
-                      "multi_match": {
-                        "query": "Summer",
-                        "fields": [
-                          "title",
-                          "ingredients"
-                        ]
-                      }
-                    }
-                  }
-
 Check out more results for the ``multi_match`` queries creating your own ``multi_match`` with the help of our demo:
 
 ::
@@ -267,22 +237,8 @@ This query can be used to match phrases in a field. Where the ``query`` is the p
                       }
                     }
                   }
-
-If we are looking for a certain phrase, for example, ``pannacotta with lemon marmalade`` in the title, we may use a query like:
-
-.. code-block:: python
-
-     query_body = {
-                    "query": {
-                      "match_phrase": {
-                        "title": {
-                          "query": "pannacotta with lemon marmalade"
-                        }
-                      }
-                    }
-                  }
-
-If you know exactly which phrases you are looking for in a recipe, you can try out our ``match_phrase`` `demo <https://github.com/aiven/demo-opensearch-python>`__:
+  
+If you know exactly which phrases you are looking for in a recipe, you can try out our ``match_phrase`` `demo <https://github.com/aiven/demo-opensearch-python>`__. Explore our demo, for example, searching for ``pannacotta with lemon marmalade`` in the title:
 
 ::
 
@@ -308,32 +264,21 @@ We can solve this by setting the ``slop`` parameter. The ``slop`` parameter allo
                     }
                   }
 
-Suppose we are looking for ``pannacotta marmalade`` phrase. In order to find more results rather than exact phrases, we should allow a certain degree like setting the ``slop=2``, so it can find matches skipping two words between the searched ones.
+Suppose we are looking for ``pannacotta marmalade`` phrase. In order to find more results rather than exact phrases, we should allow a certain degree like setting the ``slop=2``, so it can find matches skipping two words between the searched ones:
 
-.. code-block:: python
-
-     query_body = {
-                    "query": {
-                      "match_phrase": {
-                        "title": {
-                          "query": "pannacotta marmalade"
-                          "slop": 2
-                        }
-                      }
-                    }
-                  }
-
-With this flexibility, we can find titles with the desired words even if there are other words in between all thanks to the ``slop`` parameter::
-
+.. code-block:: shell
 
   python search.py slop "title" "pannacotta marmalade" 2
+
+
+With this flexibility, we can find titles with the desired words even if there are other words in between all thanks to the ``slop`` parameter.
 
 .. code-block:: python
 
     ['Lemon Pannacotta with Lemon Marmalade ']
 
 
-You can try out using the ``slop`` query from our `demo <https://github.com/aiven/demo-opensearch-python>`__ and allowing some flexibility in your search query:
+Try out the ``slop`` query from our `demo <https://github.com/aiven/demo-opensearch-python>`__ to allow some flexibility in your search query:
 
 .. seealso::
 
@@ -354,20 +299,10 @@ If you are looking to find in a ``field`` an exact ``value``, the `term query <h
                     }
                   }
 
-Let's suppose you're looking for recipes exactly with 0 fat on them:
 
-.. code-block:: python
+Curious about recipes low in sodium? 
 
-     query_body = {
-                    "query": {
-                      "term": {
-                        "fat": 0
-                      }
-                    }
-                  }
-
-
-Curious about recipes low in sodium? You can use find out more recipes with ``term`` queries by running the `demo <https://github.com/aiven/demo-opensearch-python>`__ application:
+You can find out more recipes with ``term`` queries by running the `demo <https://github.com/aiven/demo-opensearch-python>`__ application:
 
 ::
 
@@ -401,14 +336,14 @@ You can construct range queries with combinations of inclusive and exclusive par
 
   * - Parameter
     - Behavior
-  * - 3
-    - Greater than or equal to.
-  * - 4
-    - Greater than.
-  * - 6
-    - 1001
-  * - 8
-    - Less than or equal to.
+  * - ``gte``
+    - Greater than or equal to
+  * - ``gt``
+    - Greater than
+  * - ``lt``
+    - Less than
+  * - ``lte``
+    - Less than or equal to
 
 Check out using our `demo <https://github.com/aiven/demo-opensearch-python>`__ which recipes you can find within a certain range of sodium, for example:
 
@@ -418,35 +353,37 @@ Check out using our `demo <https://github.com/aiven/demo-opensearch-python>`__ w
 
 Fuzzy queries
 -------------
-You can look for fuzzy combinations where variations of the words are allowed, also called expansions, returning the exact matches for those expansions. The fuzzy changes can include changing a character: post → lost, or removing character: ``eggs`` → ``ggs``, and other fuzzy combinations. The queries can be constructed as:
+You can look for fuzzy combinations where variations of the words are allowed, also called expansions, returning the exact matches for those expansions. 
+
+The fuzzy changes can include changing a character: ``post`` → ``lost``, or removing a character: ``eggs`` → ``ggs``, and other fuzzy combinations. The queries can be constructed as:
 
 .. code-block:: python
 
     query_body = {
-          "query": {
-              "fuzzy": {
-                  "title": {
-                      "value": 2
-                      "fuzziness": 2,
-                  }
-              }
-          }
-      } 
+                    "query": {
+                        "fuzzy": {
+                            field: {
+                                "value": value
+                                "fuzziness": fuzziness,
+                            }
+                        }
+                    }
+                 } 
 
 We can try out looking for a misspelled word and allowing some ``fuzziness``, which indicates the maximum edit distance.
 
 .. code-block:: python
 
-     query_body = {
-                      "query": {
-                          "fuzzy": {
-                              "title": {
-                                  "value": "pinapple",
-                                  "fuzziness": 2,
-                              }
+  query_body = {
+                  "query": {
+                      "fuzzy": {
+                          "title": {
+                              "value": "pinapple",
+                              "fuzziness": 2,
                           }
                       }
                   }
+                }
 
 
 Try yourself to find recipes with misspelled pineapple 🍍
@@ -465,7 +402,7 @@ After following this tutorial, if you want to give a pause in your service for t
 What's next?
 ''''''''''''
 
-Want to try out OpenSearch with other clients? You can learn how to write search queries with NodeJS client, see :doc:`our tutorial how to connect OpenSearch with NodeJS client <connect-with-nodejs>`.
+Want to try out OpenSearch with other clients? You can learn how to write search queries with NodeJS client, see :doc:`our tutorial <opensearch-and-nodejs>`.
 
 Resources
 '''''''''
@@ -476,6 +413,11 @@ We created an OpenSearch cluster, connected to it, and tried out different types
 * `OpenSearch Python client  <https://opensearch.org/docs/latest/clients/python/>`_
 * :doc:`How to use OpenSearch with curl <opensearch-with-curl>`
 * `Official OpenSearch documentation <https://opensearch.org>`_
-    *  `Term-level queries <https://opensearch.org/docs/latest/opensearch/query-dsl/term/>`_
-    *  `Full-text queries <https://opensearch.org/docs/latest/opensearch/query-dsl/full-text/>`_
-    *  `Boolean queries <https://opensearch.org/docs/latest/opensearch/query-dsl/bool/>`_
+    * `match <https://opensearch.org/docs/latest/opensearch/query-dsl/full-text/#match>`_
+    * `multi-match <https://opensearch.org/docs/latest/opensearch/query-dsl/full-text/#match>`_
+    * `match-phrase <https://opensearch.org/docs/latest/opensearch/query-dsl/full-text/#match-phrase>`_
+    * `fuzzy <https://opensearch.org/docs/latest/opensearch/query-dsl/full-text/#options>`_
+    * `term <https://opensearch.org/docs/latest/opensearch/query-dsl/term/#term>`_
+    * `slop <https://opensearch.org/docs/latest/opensearch/query-dsl/full-text/#options>`_
+    * `range <https://opensearch.org/docs/latest/opensearch/query-dsl/term/#range>`_
+    * `query-string <https://opensearch.org/docs/latest/opensearch/query-dsl/full-text/#query-string>`_
