@@ -67,7 +67,6 @@ The ``aiven`` dictionary is two files:
 Remember that the first line of a ``.dic`` file must be the number of dictionary entries (the total number of lines in the file - 1). Although apparently it's only approximate - I'd still like to keep it correct if we can.
 
 Note that the ``.aff`` file is allowed to be empty if it is not needed.
-    hunspell-how-to-specify-case-insensitivity-for-spell-check-in-dic-or-aff-file`
 
 How I constructed the ``aiven.dic`` dictionary file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -299,7 +298,7 @@ Other cases that only happen occasionally:
 
 It would be nice to check for ``Apache®`` when ``Apache`` is *not* followed by a product name (this *may* require listing all the product names in a regular expression, or may just mean checking for ``Apache <capitalised-word>``, which is probably good enough as a first pass).
 
-.. `PR 605`: https://github.com/aiven/devportal/pull/605
+.. _`PR 605`: https://github.com/aiven/devportal/pull/605
 
 ``capitalization_headings.yml``
 -------------------------------
@@ -440,7 +439,7 @@ Documentation for ``capitalization`` needs extending
 
   *Worth doing a PR for. And definitely blogging about.*
 
-As I discovered in the section on `capitalization_headings.yml`_, the capitalization style (and particularly the ``$sentence`` "match") doesn't work quite as one might expect. What it does is quite reasonable, but could do with explaining, as it can lead to surprises for very short titles.
+As I discovered in the section on `capitalization_headings.yml`_, the capitalization style (and particularly the ``$sentence`` "match") doesn't work quite as one might expect. What it does is reasonable, but could do with explaining, as it can lead to surprises for very short titles.
 
 No error for a file that doesn't exist
 --------------------------------------
@@ -493,7 +492,7 @@ Sentence case and headings
 
   *A wish. Might need a fix in rst2html.py*
 
-For short titles, the sentence case "80%" rule doesn't work very well. Is there a better algorithmg for working out whether the sentence casing is accceptable or not (this might need to be given a different name). Because adding lots of exceptions is a pain (and feels the wrong solution).
+For short titles, the sentence case "80%" rule doesn't work very well. Is there a better algorithm for working out whether the sentence casing is accceptable or not? (this might need to be given a different name). Because adding lots of exceptions is a pain (and feels the wrong solution).
 
 The expected workaround of marking up::
 
