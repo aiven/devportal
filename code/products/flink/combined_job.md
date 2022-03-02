@@ -29,6 +29,6 @@ SELECT
     window_start, 
     COUNT(*) 
 FROM WINDOWING
-WHERE USAGE > ALLOWED_TOP
+WHERE USAGE > allowed_top
 GROUP BY 
     window_start

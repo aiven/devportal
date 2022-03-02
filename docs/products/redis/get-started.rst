@@ -30,6 +30,10 @@ Check out more technical information:
 
   Learn about how Aiven for Redis supports high availability.
 
+* :doc:`Manage SSL connectivity <howto/manage-ssl-connectivity>`.
+
+  Check how Aiven for Redis supports SSL connections and how can be configured.
+
 * :doc:`Memory usage, on-disk persistence and replication in Aiven for Redis <concepts/memory-usage>`.
 
   See how Aiven for Redis solves the challenges related to high memory usage and high change rate.
@@ -37,3 +41,9 @@ Check out more technical information:
 * :doc:`Estimate maximum number of connections in Aiven for Redis <howto/estimate-max-number-of-connections>`.
 
   Learn how estimate the max number of simultaneous connections in Aiven for Redis service.
+  
+
+* :doc:`Lua scripts with Aiven for Redis <concepts/lua-scripts-redis>`.
+
+  Learn about inbuilt support for running Lua scripts in Aiven for Redis service.
+  

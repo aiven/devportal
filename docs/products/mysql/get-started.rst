@@ -30,5 +30,8 @@ Next steps with Aiven for MySQL
     - :doc:`from the command line <howto/connect-from-cli>`
     - :doc:`with MySQL workbench <howto/connect-from-mysql-workbench>`
 
+* Create additional databases:
+    - :doc:`create your database <howto/create-database>`
+
 * Connect from your own :doc:`Python application <howto/connect-with-python>`.
 

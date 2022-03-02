@@ -4,7 +4,7 @@ Aiven for Grafana
 What is Aiven for Grafana?
 ---------------------------
 
-Aiven for Grafana is a fully managed **analytics and monitoring solution**,, deployable in the cloud of your choice which can bring unlimited scalability and high-availability to your monitoring environment and other time series applications.
+Aiven for Grafana is a fully managed **analytics and monitoring solution**, deployable in the cloud of your choice, which can bring unlimited scalability and high-availability to your monitoring environment and other time series applications.
 
 
 Why Grafana?

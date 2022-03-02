@@ -39,6 +39,7 @@ Retrieves the project CA that the selected service belongs to.
 
   avn service ca get kafka-doc --target-filepath /tmp/ca.pem
 
+.. _avn-service-cli:
 
 ``avn service cli``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -477,6 +478,13 @@ Service Schema commands
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Service ``sstableloader`` commands
+
+``avn service tags``
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+Manage service tags.
+
+More information on ``tags list``, ``tags replace`` and  ``tags update`` can be found in :doc:`the dedicated page <service/tags>`.
 
 ``avn service task-create``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''

@@ -1,6 +1,6 @@
 Reference
 =========
 
-Additional reference information for Aiven for Apache Flink:
+Additional reference information for Aiven for Apache Flink®:
 
 .. tableofcontents::

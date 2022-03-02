@@ -1,13 +1,13 @@
-Configure consumer properties for Apache Kafka toolbox
+Configure consumer properties for Apache Kafka® toolbox
 ==========================================================
 
-The `open source Apache Kafka code <https://kafka.apache.org/downloads>`_ includes a series of tools under the ``bin`` directory that can be useful to manage and interact with Aiven for Apache Kafka.
+The `open source Apache Kafka® code <https://kafka.apache.org/downloads>`_ includes a series of tools under the ``bin`` directory that can be useful to manage and interact with Aiven for Apache Kafka®.
 Before using the tools, you need to configure a ``consumer.properties`` file pointing to a Java keystore and truststore which contain the required certificates for authentication.
 
 Define the configuration file
 -----------------------------
 
-#. Create the Java keystore and truststore for your Aiven for Apache Kafka service using the :ref:`dedicated Aiven CLI command <avn_service_user_kafka_java_creds>`.
+#. Create the Java keystore and truststore for your Aiven for Apache Kafka® service using the :ref:`dedicated Aiven CLI command <avn_service_user_kafka_java_creds>`.
 
 #. Create a ``consumer.properties`` file pointing to the keystore and truststore with the following entries:
 

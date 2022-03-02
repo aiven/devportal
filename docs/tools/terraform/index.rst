@@ -36,7 +36,7 @@ Create a file named `main.tf` and add the content below:
       required_providers {
         aiven = {
           source  = "aiven/aiven"
-          version = "2.1.12" # check out the latest version in the github release section
+          version = "2.5.0" # check out the latest version in the github release section
         }
       }
     }

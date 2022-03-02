@@ -1,9 +1,9 @@
-Connect to Apache Kafka with Conduktor
-======================================
+Connect to Apache Kafka® with Conduktor
+=======================================
 
 `Conduktor <https://www.conduktor.io/>`_ is a friendly user interface for Apache Kafka, and it works well with Aiven. In fact, there is built-in support for setting up the connection. You will need to add the CA certificate for each of your Aiven projects to Conduktor before you can connect, this is outlined in the steps below.
 
-1. Visit the **Service overview** page for your Aiven for Apache Kafka service (the :doc:`../getting-started` page is a good place for more information about creating a new service if you don't have one already).
+1. Visit the **Service overview** page for your Aiven for Apache Kafka® service (the :doc:`../getting-started` page is a good place for more information about creating a new service if you don't have one already).
 
 2. Download the **Access Key**, **Access Certificate** and **CA Certificate** (if you didn't have that already) into a directory on your computer.
 

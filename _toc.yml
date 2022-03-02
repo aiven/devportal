@@ -22,6 +22,7 @@ entries:
       - file: docs/platform/howto/pause-from-cli.rst
       - file: docs/platform/howto/public-access-in-vpc.rst
       - file: docs/platform/howto/add-storage-space
+      - file: docs/platform/howto/integrations/prometheus-metrics
 
   # --------- GLOBAL -----------
   - file: docs/tools/index
@@ -39,7 +40,7 @@ entries:
         - file: docs/tools/cli/project
         - file: docs/tools/cli/service
           entries:
-            - glob: docs/tools/cli/service/* 
+            - glob: docs/tools/cli/service/*
         - file: docs/tools/cli/ticket
         - file: docs/tools/cli/user
           entries:
@@ -59,30 +60,55 @@ entries:
     title: Apache Kafka
     entries:
       - file: docs/products/kafka/getting-started
+      - file: docs/products/kafka/howto/fake-sample-data
       - file: docs/products/kafka/concepts
         entries:
+          - file: docs/products/kafka/concepts/acl
           - file: docs/products/kafka/concepts/log-compaction
           - file: docs/products/kafka/concepts/partition-segments
           - file: docs/products/kafka/concepts/horizontal-vertical-scaling
           - file: docs/products/kafka/concepts/auth-types
+          - file: docs/products/kafka/concepts/non-leader-for-partition
       - file: docs/products/kafka/howto
         title: HowTo
         entries:
-          - file: docs/products/kafka/howto/best-practices
-          - file: docs/products/kafka/howto/keystore-truststore.rst
-          - file: docs/products/kafka/howto/kafka-sasl-auth
-          - file: docs/products/kafka/howto/kafka-tools-config-file
-          - file: docs/products/kafka/howto/viewing-resetting-offset
-          - file: docs/products/kafka/howto/set-kafka-parameters
-          - file: docs/products/kafka/howto/create-topics-automatically
-          - file: docs/products/kafka/howto/get-topic-partition-details
-          - file: docs/products/kafka/howto/kcat.rst
-          - file: docs/products/kafka/howto/integrate-service-logs-into-kafka-topic
-          - file: docs/products/kafka/howto/configure-log-cleaner
-          - file: docs/products/kafka/howto/use-zookeeper
-          - file: docs/products/kafka/howto/change-retention-period
-          - file: docs/products/kafka/howto/kafka-conduktor
-          - file: docs/products/kafka/howto/prevent-full-disks
+          - file: docs/products/kafka/howto/list-tools
+            title: Tools
+            entries:
+              - file: docs/products/kafka/howto/kafka-tools-config-file
+              - file: docs/products/kafka/howto/kcat.rst
+              - file: docs/products/kafka/howto/kafka-conduktor
+              - file: docs/products/kafka/howto/kafdrop
+          - file: docs/products/kafka/howto/list-security
+            title: Security
+            entries:
+              - file: docs/products/kafka/howto/keystore-truststore.rst
+              - file: docs/products/kafka/howto/manage-acls
+              - file: docs/products/kafka/howto/monitor-logs-acl-failure
+              - file: docs/products/kafka/howto/kafka-sasl-auth
+          - file: docs/products/kafka/howto/list-admin
+            title: Administration tasks
+            entries:
+              - file: docs/products/kafka/howto/best-practices
+              - file: docs/products/kafka/howto/set-kafka-parameters
+              - file: docs/products/kafka/howto/viewing-resetting-offset
+              - file: docs/products/kafka/howto/configure-log-cleaner
+              - file: docs/products/kafka/howto/prevent-full-disks
+              - file: docs/products/kafka/howto/use-zookeeper
+
+
+          - file: docs/products/kafka/howto/list-integration
+            title: Integrations
+            entries:
+              - file: docs/products/kafka/howto/integrate-service-logs-into-kafka-topic
+          - file: docs/products/kafka/howto/list-topic-schema
+            title: Topic/schema management
+            entries:
+              - file: docs/products/kafka/howto/create-topic
+              - file: docs/products/kafka/howto/create-topics-automatically
+              - file: docs/products/kafka/howto/get-topic-partition-details
+              - file: docs/products/kafka/howto/schema-registry
+              - file: docs/products/kafka/howto/change-retention-period
       - file: docs/products/kafka/reference
         title: Reference
         entries:
@@ -95,15 +121,56 @@ entries:
           entries:
           - file: docs/products/kafka/kafka-connect/concepts/list-of-connector-plugins
           - file: docs/products/kafka/kafka-connect/concepts/jdbc-source-modes
+
         - file: docs/products/kafka/kafka-connect/howto
           title: HowTo
           entries:
-          - file: docs/products/kafka/kafka-connect/howto/best-practices
-          - file: docs/products/kafka/kafka-connect/howto/enable-connect
-          - file: docs/products/kafka/kafka-connect/howto/enable-automatic-restart
-          - file: docs/products/kafka/kafka-connect/howto/jdbc-source-connector-pg
-          - file: docs/products/kafka/kafka-connect/howto/jdbc-source-connector-mysql
-          - file: docs/products/kafka/kafka-connect/howto/jdbc-source-connector-sql-server
+          - file: docs/products/kafka/kafka-connect/howto/list-admin
+            entries:
+            - file: docs/products/kafka/kafka-connect/howto/best-practices
+            - file: docs/products/kafka/kafka-connect/howto/enable-connect
+            - file: docs/products/kafka/kafka-connect/howto/enable-automatic-restart
+          - file: docs/products/kafka/kafka-connect/howto/list-source-connectors
+            entries:
+            - file: docs/products/kafka/kafka-connect/howto/jdbc-source-connector-pg
+            - file: docs/products/kafka/kafka-connect/howto/jdbc-source-connector-mysql
+            - file: docs/products/kafka/kafka-connect/howto/jdbc-source-connector-sql-server
+            - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-pg
+          - file: docs/products/kafka/kafka-connect/howto/list-sink-connectors
+            entries:
+            - file: docs/products/kafka/kafka-connect/howto/jdbc-sink
+            - file: docs/products/kafka/kafka-connect/howto/s3-sink-prereq
+            - file: docs/products/kafka/kafka-connect/howto/s3-sink-connector-aiven
+            - file: docs/products/kafka/kafka-connect/howto/s3-sink-connector-confluent
+            - file: docs/products/kafka/kafka-connect/howto/opensearch-sink
+            - file: docs/products/kafka/kafka-connect/howto/elasticsearch-sink
+        - file: docs/products/kafka/kafka-connect/reference
+          title: Reference
+          entries:
+            - file: docs/products/kafka/kafka-connect/reference/s3-sink-formats
+              title: AWS S3 sink connector naming and data format
+              entries:
+              - file: docs/products/kafka/kafka-connect/reference/s3-sink-additional-parameters
+              - file: docs/products/kafka/kafka-connect/reference/s3-sink-additional-parameters-confluent
+
+      - file: docs/products/kafka/kafka-mirrormaker/index
+        title: Apache Kafka MirrorMaker2
+        entries:
+        - file: docs/products/kafka/kafka-mirrormaker/getting-started
+        - file: docs/products/kafka/kafka-mirrormaker/concepts
+          entries:
+          - file: docs/products/kafka/kafka-mirrormaker/concepts/replication-flow-topics-regex
+        - file: docs/products/kafka/kafka-mirrormaker/howto
+          title: HowTo
+          entries:
+            - file: docs/products/kafka/kafka-mirrormaker/howto/integrate-external-kafka-cluster
+            - file: docs/products/kafka/kafka-mirrormaker/howto/setup-replication-flow
+            - file: docs/products/kafka/kafka-mirrormaker/howto/setup-mirrormaker-monitoring
+            - file: docs/products/kafka/kafka-mirrormaker/howto/remove-mirrormaker-prefix
+        - file: docs/products/kafka/kafka-mirrormaker/reference
+          title: Reference
+          entries:
+            - glob: docs/products/kafka/kafka-mirrormaker/reference/*
 
   - file: docs/products/postgresql/index
     title: PostgreSQL
@@ -126,6 +193,7 @@ entries:
               - file: docs/products/postgresql/howto/connect-python
           - file: docs/products/postgresql/howto/list-dba-tasks
             entries:
+              - file: docs/products/postgresql/howto/create-database
               - file: docs/products/postgresql/howto/upgrade
               - file: docs/products/postgresql/howto/manage-extensions
               - file: docs/products/postgresql/howto/create-manual-backups
@@ -134,6 +202,11 @@ entries:
               - file: docs/products/postgresql/howto/claim-public-schema-ownership
               - file: docs/products/postgresql/howto/manage-pool
               - file: docs/products/postgresql/howto/pgbouncer-stats
+              - file: docs/products/postgresql/howto/use-dblink-extension
+              - file: docs/products/postgresql/howto/enable-jit
+              - file: docs/products/postgresql/howto/repair-pg-index
+              - file: docs/products/postgresql/howto/check-avoid-transaction-id-wraparound
+              - file: docs/products/postgresql/howto/prevent-full-disk
           - file: docs/products/postgresql/howto/list-replication-migration
             entries:
               - file: docs/products/postgresql/howto/create-read-replica
@@ -174,14 +247,38 @@ entries:
           - file: docs/products/flink/howto/create-integration
           - file: docs/products/flink/howto/connect-kafka
           - file: docs/products/flink/howto/connect-pg
+          - file: docs/products/flink/howto/connect-opensearch
           - file: docs/products/flink/howto/create-job
+          - file: docs/products/flink/howto/timestamps_opensearch
           - file: docs/products/flink/howto/real-time-alerting-solution
           - file: docs/products/flink/howto/real-time-alerting-solution-cli
       - file: docs/products/flink/reference
         title: Reference
         entries:
           - glob: docs/products/flink/reference/*
-  
+
+  - file: docs/products/clickhouse/index
+    entries:
+      - file: docs/products/clickhouse/getting-started
+      - file: docs/products/clickhouse/sample-dataset
+      - file: docs/products/clickhouse/concepts
+        title: Concepts
+        entries:
+          - file: docs/products/clickhouse/concepts/olap
+          - file: docs/products/clickhouse/concepts/databases-and-tables
+          - file: docs/products/clickhouse/concepts/columnar-databases
+      - file: docs/products/clickhouse/howto
+        title: HowTo
+        entries:
+          - file: docs/products/clickhouse/howto/use-cli
+          - file: docs/products/clickhouse/howto/use-query-editor
+          - file: docs/products/clickhouse/howto/add-service-users
+          - file: docs/products/clickhouse/howto/grant-privilege
+
+      - file: docs/products/clickhouse/reference
+        title: Reference
+        entries:
+          - glob: docs/products/clickhouse/reference/*
 
   - file: docs/products/opensearch/index
     title: OpenSearch
@@ -202,16 +299,17 @@ entries:
         entries:
           - file: docs/products/opensearch/howto/opensearch-with-curl
           - file: docs/products/opensearch/howto/migrating_elasticsearch_data_to_aiven
+          - file: docs/products/opensearch/howto/opensearch-log-integration
           - file: docs/products/opensearch/howto/upgrade-to-opensearch
           - file: docs/products/opensearch/howto/upgrade-to-opensearch-with-terraform
           - file: docs/products/opensearch/howto/upgrade-clients-to-opensearch
           - file: docs/products/opensearch/howto/connect-with-nodejs
+          - file: docs/products/opensearch/howto/connect-with-python
           - file: docs/products/opensearch/howto/opensearch-and-nodejs
           - file: docs/products/opensearch/howto/opensearch-aggregations-and-nodejs
           - file: docs/products/opensearch/howto/control_access_to_content
           - file: docs/products/opensearch/howto/restore_opensearch_backup
           - file: docs/products/opensearch/howto/set_index_retention_patterns
-          - file: docs/products/opensearch/howto/switch_off_automatic_replication_factor_adjustment
           - file: docs/products/opensearch/howto/opensearch-alerting-api
       - file: docs/products/opensearch/dashboards/index
         title: OpenSearch Dashboards
@@ -246,7 +344,7 @@ entries:
         title: Reference
         entries:
           - glob: docs/products/m3db/reference/*
-  
+
   - file: docs/products/mysql/index
     title: MySQL
     entries:
@@ -279,16 +377,21 @@ entries:
               - file: docs/products/redis/howto/connect-node
               - file: docs/products/redis/howto/connect-php
               - file: docs/products/redis/howto/connect-python
+              - file: docs/products/redis/howto/connect-java
           - file: docs/products/redis/howto/list-dba-tasks
             entries:
               - file: docs/products/redis/howto/configure-acl-permissions
               - file: docs/products/redis/howto/migrate-aiven-redis
           - file: docs/products/redis/howto/estimate-max-number-of-connections
+          - file: docs/products/redis/howto/manage-ssl-connectivity
           - file: docs/products/redis/howto/warning-overcommit_memory
       - file: docs/products/redis/reference
         title: Reference
         entries:
           - glob: docs/products/redis/reference/*
+
+  - file: docs/products/cassandra/index
+    title: Apache Cassandra
 
   - file: docs/products/grafana/index
     title: Grafana

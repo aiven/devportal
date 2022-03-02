@@ -1,12 +1,12 @@
 Create a real-time alerting solution - Aiven CLI
 ================================================
 
-This Aiven CLI tutorial shows you an example of how to combine Aiven for Apache Flink with Aiven for Apache Kafka and Aiven for PostgreSQL services to create a solution that provides real-time alerting data for CPU loads.
+This Aiven CLI tutorial shows you an example of how to combine Aiven for Apache Flink® with Aiven for Apache Kafka® and Aiven for PostgreSQL® services to create a solution that provides real-time alerting data for CPU loads.
 
 Architecture overview
 ---------------------
 
-This example involves creating an Apache Kafka source topic that provides a stream of metrics data, a PostgreSQL database that contains data on the alerting thresholds, and an Apache Flink service that combines these two services and pushes the filtered data to a separate Apache Kafka topic or PostgreSQL table.
+This example involves creating an Apache Kafka® source topic that provides a stream of metrics data, a PostgreSQL® database that contains data on the alerting thresholds, and an Apache Flink® service that combines these two services and pushes the filtered data to a separate Apache Kafka® topic or PostgreSQL® table.
 
 .. mermaid::
 
@@ -15,11 +15,11 @@ This example involves creating an Apache Kafka source topic that provides a stre
         id1(Kafka)-- metrics stream -->id3(Flink);
         id2(PostgreSQL)-- threshold data -->id3;
         id3-. filtered data .->id4(Kafka);
-        id3-. filtered data .->id5(PostgreSQL);
+        id3-. filtered/aggregated data .->id5(PostgreSQL);
 
-The article includes the steps that you need when using the `Aiven CLI <https://github.com/aiven/aiven-client>`_ along with a few different samples of how you can set thresholds for alerts. For connecting to your PostgreSQL service, this example uses the Aiven CLI calling `psql <https://www.postgresql.org/docs/current/app-psql.html>`_, but you can also use other tools if you prefer.
+The article includes the steps that you need when using the `Aiven CLI <https://github.com/aiven/aiven-client>`_ along with a few different samples of how you can set thresholds for alerts. For connecting to your PostgreSQL® service, this example uses the Aiven CLI calling `psql <https://www.postgresql.org/docs/current/app-psql.html>`_, but you can also use other tools if you prefer.
 
-In addition, the instructions show you how to use a separate Python-based tool, `Dockerized fake data producer for Aiven for Apache Kafka <https://github.com/aiven/fake-data-producer-for-apache-kafka-docker>`_, to create sample records for your Apache Kafka topic that provides the streamed data.
+In addition, the instructions show you how to use a separate Python-based tool, `Dockerized fake data producer for Aiven for Apache Kafka® <https://github.com/aiven/fake-data-producer-for-apache-kafka-docker>`_, to create sample records for your Apache Kafka® topic that provides the streamed data.
 
 
 Requirements
@@ -27,8 +27,8 @@ Requirements
 
 * An Aiven account
 * `Aiven CLI <https://github.com/aiven/aiven-client>`_
-* `psql <https://www.postgresql.org/docs/current/app-psql.html>`_ to connect to PostgreSQL services
-* `Dockerized fake data producer for Aiven for Apache Kafka <https://github.com/aiven/fake-data-producer-for-apache-kafka-docker>`_ and `Docker <https://www.docker.com/>`_ to generate sample data (optional)
+* `psql <https://www.postgresql.org/docs/current/app-psql.html>`_ to connect to PostgreSQL® services
+* `Dockerized fake data producer for Aiven for Apache Kafka® <https://github.com/aiven/fake-data-producer-for-apache-kafka-docker>`_ and `Docker <https://www.docker.com/>`_ to generate sample data (optional)
 
 
 Set up Aiven services
@@ -37,7 +37,7 @@ Set up Aiven services
 .. note::
    The commands given in this example use ``business-4`` service plans, but you can use any other service plan instead if you prefer.
 
-1. Using the `Aiven CLI <https://github.com/aiven/aiven-client>`_, run the following command to create an Aiven for Apache Kafka service named ``demo-kafka``:
+1. Using the `Aiven CLI <https://github.com/aiven/aiven-client>`_, run the following command to create an Aiven for Apache Kafka® service named ``demo-kafka``:
 
    ::
 
@@ -50,7 +50,7 @@ Set up Aiven services
           -c schema_registry=true                 \
           --project PROJECT_NAME
 
-#. Run the following command to create an Aiven for PostgreSQL service named ``demo-postgresql``:
+#. Run the following command to create an Aiven for PostgreSQL® service named ``demo-postgresql``:
 
    ::
 
@@ -60,7 +60,7 @@ Set up Aiven services
           --plan business-4                       \
           --project PROJECT_NAME
 
-#. Run the following command to create an Aiven for Apache Flink service named ``demo-flink``:
+#. Run the following command to create an Aiven for Apache Flink® service named ``demo-flink``:
 
    ::
 
@@ -78,7 +78,7 @@ Set up Aiven services
 
          avn service integration-create           \
              --project PROJECT_NAME               \
-             --service-type flink                 \
+             --integration-type flink                 \
              -s demo-kafka                        \
              -d demo-flink
 
@@ -88,7 +88,7 @@ Set up Aiven services
 
          avn service integration-create           \
              --project PROJECT_NAME               \
-             --service-type flink                 \
+             --integration-type flink                 \
              -s demo-postgresql                   \
              -d demo-flink
 
@@ -107,7 +107,7 @@ Set up sample data
 
 These steps show you how to create sample records to provide streamed data that is processed by the data pipelines presented in this tutorial. You can also use other existing data, although many of the examples in this tutorial are based on the use of this sample data.
 
-Before you start, clone the `Dockerized fake data producer for Aiven for Apache Kafka <https://github.com/aiven/fake-data-producer-for-apache-kafka-docker>`_ Git repository to your computer.
+Before you start, clone the `Dockerized fake data producer for Aiven for Apache Kafka® <https://github.com/aiven/fake-data-producer-for-apache-kafka-docker>`_ Git repository to your computer.
 
 1. Follow `these instructions <https://developer.aiven.io/docs/tools/cli/user/user-access-token.html#manage-access-tokens>`_ to create an authentication token for your Aiven account.
 
@@ -134,7 +134,7 @@ Before you start, clone the `Dockerized fake data producer for Aiven for Apache 
 
       docker run fake-data-producer-for-apache-kafka-docker
 
-   This command pushes the following type of events to the ``cpu_load_stats_real`` topic in your Kafka service:
+   This command pushes the following type of events to the ``cpu_load_stats_real`` topic in your Apache Kafka® service:
 
    ::
    
@@ -148,7 +148,7 @@ Before you start, clone the `Dockerized fake data producer for Aiven for Apache 
 Create a pipeline for basic filtering
 -------------------------------------
 
-This setup uses a fixed threshold to filter any instances of high CPU load to a separate Kafka topic.
+The first example filters any instances of high CPU load based on a fixed threshold and pushes the high values into a separate Apache Kafka® topic.
 
 .. mermaid::
 
@@ -250,7 +250,7 @@ For this setup, you need to configure a source table to read the metrics data fr
 Create a pipeline with windowing
 --------------------------------
    
-This setup measures CPU load over a configured time using :doc:`windows </docs/products/flink/concepts/windows>` and :doc:`event time </docs/products/flink/concepts/event-processing-time>`.
+The second example aggregates the CPU load over a configured time using :doc:`windows </docs/products/flink/concepts/windows>` and :doc:`event time </docs/products/flink/concepts/event-processing-time>`.
 
 .. mermaid::
 
@@ -319,20 +319,20 @@ This uses the same ``CPU_IN`` Kafka source table that you created in the previou
    When the job is running, you should start to see messages indicating hosts with high CPU loads in the ``cpu_load_stats_agg`` topic of your ``demo-kafka`` service.
 
 
-Create a Flink SQL job using PostgreSQL thresholds
---------------------------------------------------
+Create a Flink SQL job using PostgreSQL® thresholds
+---------------------------------------------------
 
-This setup uses host-specific thresholds that are stored in PostgreSQL as a basis for determining instances of high CPU load.
+The third example defines host-specific thresholds in a PostgreSQL®  table. The thresholds table is joined with the inbound stream of CPU measurements by hostname to filter instances of CPU load going over the defined thresholds.
 
 .. mermaid::
 
     graph LR;
 
         id1(Kafka source)-- metrics stream -->id3(Flink job);
-		id2(PosgreSQL source)-- host-specific thresholds -->id3;
+		    id2(PosgreSQL source)-- host-specific thresholds -->id3;
         id3-- host with high CPU -->id4(Kafka sink);
 
-This uses the same ``CPU_IN`` Kafka source table that you created earlier. In addition, you need a new sink table to send the processed messages to a separate Kafka topic, a PostgreSQL source table to hold the threshold data, and a new Flink job to process the data.
+This uses the same ``CPU_IN`` Kafka source table that you created earlier. In addition, you need a new sink table to send the processed messages to a separate Kafka topic, a PostgreSQL® source table to hold the threshold data, and a new Flink job to process the data.
 
 1. In the Aiven CLI, run the following command to connect to the ``demo-postgresql`` service:
    
@@ -340,7 +340,7 @@ This uses the same ``CPU_IN`` Kafka source table that you created earlier. In ad
 	  
       avn service cli demo-postgresql --project PROJECT_NAME
    
-#. Enter the following commands to set up the PostgreSQL table containing the threshold values:
+#. Enter the following commands to set up the PostgreSQL® table containing the threshold values:
    
    .. literalinclude:: /code/products/flink/pgthresholds_cpu-thresholds_table.md
       :language: sql
@@ -365,7 +365,7 @@ This uses the same ``CPU_IN`` Kafka source table that you created earlier. In ad
       sneezy   |     80
       dopey    |     90
 
-#. Create a PostgreSQL table named ``SOURCE_THRESHOLDS``.
+#. Create a PostgreSQL® table named ``SOURCE_THRESHOLDS``.
 
    .. list-table::
      :header-rows: 1
@@ -445,24 +445,25 @@ This uses the same ``CPU_IN`` Kafka source table that you created earlier. In ad
 
    The new job is added and starts automatically once a task slot is available.
 
-   When the job is running, you should start to see messages indicating CPU loads that exceed the PostgreSQL-defined thresholds in the ``cpu_load_stats_real_filter_pg`` topic of your ``demo-kafka`` service.
+   When the job is running, you should start to see messages indicating CPU loads that exceed the PostgreSQL®-defined thresholds in the ``cpu_load_stats_real_filter_pg`` topic of your ``demo-kafka`` service.
 
 
-Create an aggregated data pipeline with Kafka and PostgreSQL
-------------------------------------------------------------
+Create an aggregated data pipeline with Apache Kafka® and PostgreSQL®
+---------------------------------------------------------------------
 
-This setup highlights the instances where the average CPU load over a :doc:`windowed interval </docs/products/flink/concepts/windows>` exceeds the threshold and stores the results in PostgreSQL.
+The fourth example highlights the instances where the average CPU load over a :doc:`windowed interval </docs/products/flink/concepts/windows>` exceeds the threshold and stores the results in PostgreSQL®.
 
 .. mermaid::
 
     graph LR;
 
-        id1(Kafka source)-- timestamped metrics -->id3(Flink job);
+        id1(Kafka source)-- timestamped stream -->id3(Flink job);
 		id2(PosgreSQL source)-- host-specific thresholds -->id3;
-        id3-- high 30-second average CPU -->id4(PostgreSQL sink);
+        id3-- high 30-second average CPU -->id4(Kafka sink);
+        
 
 
-This uses the same ``CPU_IN`` Kafka source table and ``SOURCE_THRESHOLDS`` PostgreSQL source table that you created earlier. In addition, you need a new sink PostgreSQL table to store the processed data and a new Flink job to process the data.
+This uses the same ``CPU_IN`` Kafka source table and ``SOURCE_THRESHOLDS`` PostgreSQL® source table that you created earlier. In addition, you need a new sink PostgreSQL® table to store the processed data and a new Flink job to process the data.
 
 1. In the Aiven CLI, run the following command to connect to the ``demo-postgresql`` service:
    
@@ -470,12 +471,12 @@ This uses the same ``CPU_IN`` Kafka source table and ``SOURCE_THRESHOLDS`` Postg
 	  
       avn service cli demo-postgresql --project PROJECT_NAME
    
-#. Enter the following command to set up the PostgreSQL table for storing the results:
+#. Enter the following command to set up the PostgreSQL® table for storing the results:
    
    .. literalinclude:: /code/products/flink/combined_cpu-load-stats-agg-pg_table.md
       :language: sql
    
-#. Create a PostgreSQL table named ``CPU_OUT_AGG_PG``.
+#. Create a PostgreSQL® table named ``CPU_OUT_AGG_PG``.
 
    .. list-table::
      :header-rows: 1
