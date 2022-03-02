@@ -94,6 +94,8 @@ All the parameters are optional in the ``search()`` method. We will define Pytho
 
 The parameters that we will be using to configure our search queries are the ``index`` and ``body``. The ``index`` parameter is the name of the index we used to load the data, and therefore, it does not change. However, we will be modifying the ``body`` parameter value according to the query purpose.
 
+Find out how we write the queries and call the OpenSearch client on our demo, specifically on `search.py <https://github.com/aiven/demo-opensearch-python/blob/main/search.py>`__.
+
 Search lite API and query DSL
 -----------------------------
 There are two ways of performing search queries in OpenSearch: `Search Lite API <https://opensearch.org/docs/1.2/opensearch/rest-api/search/>`_ and `OpenSearch query domain-specific language (DSL) <https://opensearch.org/docs/latest/opensearch/query-dsl/index/>`_.
@@ -122,10 +124,28 @@ With Query DSL, the field ``body`` expects a dictionary object which makes it ea
                       }
                     }
                   }
-    resp = client.search(index=INDEX_NAME, body=query_body)
-    log_titles(resp)
 
-In this example, we are searching for "Garlic-Lemon" across ``title`` and ``ingredients`` fields.
+In this example, we are searching for "Garlic-Lemon" across ``title`` and ``ingredients`` fields. Try out yourself using our demo::
+  
+  python search.py multi-match title ingredients Garlic-Lemon
+
+Check what comes out from this combination 🧄 🍋 :
+
+.. code-block:: shell
+  
+    [
+      'Garlic-Lemon Potatoes ',
+      'Lemon Garlic Mayonnaise ',
+      'Lemon Garlic Mayonnaise ',
+      'Garlic-Lemon Croutons ',
+      'Lemon-Garlic Vinaigrette ',
+      'Garlic-Lemon Potatoes ',
+      'Lemon Garlic Mayonnaise ',
+      'Lemon Garlic Mayonnaise ',
+      'Garlic-Lemon Croutons ',
+      'Lemon-Garlic Vinaigrette '
+    ]
+
 
 .. note::
   In the method ``search()``. One of the optional fields is the ``size`` field, which is defined as the number of results returned in the search. The default value is 10.
@@ -146,7 +166,7 @@ The ``match`` query helps you to find the best matches with multiple search word
 This will return results of titles that contain "Chilled" or "Tomato" on it due to DSL defaults to the "or" operator.
 
 .. code-block:: python
-  
+
        query_body = {
                       "query": {
                         "match": {
@@ -154,8 +174,6 @@ This will return results of titles that contain "Chilled" or "Tomato" on it due 
                         }
                       }
                     }
-      resp = client.search(index=INDEX_NAME, body=query_body)
-      log_titles(resp)
 
 If you want to find exact matches for fields in the ``title`` as "Chilled Tomato", you can specify the operator "and".
 
@@ -171,14 +189,12 @@ If you want to find exact matches for fields in the ``title`` as "Chilled Tomato
                         }
                       }
                     }
-      resp = client.search(index=INDEX_NAME, body=query_body)
-      log_titles(resp)
 
-You can run yourself the code to explore the ``match`` function. For example, if you want to find spring recipes in the title:
+You can run yourself the code to explore the ``match`` function. For example, if you want to find out recipes with the name "Spring" on it:
 
 .. code-block:: shell
 
-  python search.py match "title" "Spring"
+  python search.py match title Spring
   [
     'Spring Fever ',
     'Spring Rolls ',
@@ -224,17 +240,17 @@ In the next query we are looking across the ``title`` and ``ingredients`` fields
                       }
                     }
                   }
-    resp = client.search(index=INDEX_NAME, body=query_body)
-    log_titles(resp)
 
-Check out more results for the ``multi_match`` queries creating your own ``multi_match`` query, for example
+Check out more results for the ``multi_match`` queries creating your own ``multi_match`` with the help of our demo:
 
 ::
 
   python search.py multi_match title ingredients lemon
 
 
-Check out more about `multi match query <https://opensearch.org/docs/latest/opensearch/query-dsl/full-text/#multi-match>`_.
+.. seealso::
+
+  Check out more about `multi match query <https://opensearch.org/docs/latest/opensearch/query-dsl/full-text/#multi-match>`_ on the OpenSearch documentation.
 
 Match phrase query
 ------------------
@@ -265,10 +281,8 @@ If we are looking for a certain phrase, for example, ``pannacotta with lemon mar
                       }
                     }
                   }
-    resp = client.search(index=INDEX_NAME, body=query_body)
-    log_titles(resp)
 
-If you know exactly which phrases you are looking for in a recipe, you can try out our ``match_phrase`` demo:
+If you know exactly which phrases you are looking for in a recipe, you can try out our ``match_phrase`` `demo <https://github.com/aiven/demo-opensearch-python>`__:
 
 ::
 
@@ -309,19 +323,17 @@ Suppose we are looking for ``pannacotta marmalade`` phrase. In order to find mor
                     }
                   }
 
-With this flexibility, we can find titles with the desired words even if there are other words in between all thanks to the ``slop`` parameter.
+With this flexibility, we can find titles with the desired words even if there are other words in between all thanks to the ``slop`` parameter::
+
+
+  python search.py slop "title" "pannacotta marmalade" 2
 
 .. code-block:: python
 
-    ['Lemon Pannacotta with Lemon Marmalade ',
-     'Lemon Pannacotta with Lemon Marmalade ']
+    ['Lemon Pannacotta with Lemon Marmalade ']
 
 
-If you actually do not know exactly which phrases you are looking, you can try out using the ``slop`` query from our demo:
-
-::
-
-  python search.py slop "title" "pannacotta marmalade" 2
+You can try out using the ``slop`` query from our `demo <https://github.com/aiven/demo-opensearch-python>`__ and allowing some flexibility in your search query:
 
 .. seealso::
 
@@ -353,10 +365,9 @@ Let's suppose you're looking for recipes exactly with 0 fat on them:
                       }
                     }
                   }
-     resp = client.search(index=INDEX_NAME, body=query_body)
-     log_titles(resp)
 
-Curious about recipes low in sodium? You can use find out more recipes with ``term`` queries by running the demo application:
+
+Curious about recipes low in sodium? You can use find out more recipes with ``term`` queries by running the `demo <https://github.com/aiven/demo-opensearch-python>`__ application:
 
 ::
 
@@ -380,8 +391,6 @@ This query helps to find documents that the searched field's value is within a c
                       }
                     }
                   }
-     resp = client.search(index=INDEX_NAME, body=query_body)
-     log_titles(resp)
 
 You can construct range queries with combinations of inclusive and exclusive parameters as can be seen in the table:
 
@@ -401,7 +410,7 @@ You can construct range queries with combinations of inclusive and exclusive par
   * - 8
     - Less than or equal to.
 
-Check out which recipes you can find within a certain range of sodium, for example:
+Check out using our `demo <https://github.com/aiven/demo-opensearch-python>`__ which recipes you can find within a certain range of sodium, for example:
 
 ::
 
@@ -438,8 +447,6 @@ We can try out looking for a misspelled word and allowing some ``fuzziness``, wh
                           }
                       }
                   }
-     resp = client.search(index=INDEX_NAME, body=query_body)
-     log_titles(resp)
 
 
 Try yourself to find recipes with misspelled pineapple 🍍
