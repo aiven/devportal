@@ -32,7 +32,7 @@ Connect to the OpenSearch cluster in Python
 Follow instructions on how to :doc:`connect to the cluster with a Python client <connect-with-python>`. Make sure to update the ``SERVICE_URI`` to your cluster ``SERVICE_URI`` on the ``env.`` `file <https://github.com/aiven/demo-opensearch-python/blob/main/.env>`_ as explained in the `README <https://github.com/aiven/demo-opensearch-python>`_.
 Check out in `config.py <https://github.com/aiven/demo-opensearch-python/blob/main/config.py>`_, how the cluster configuration is created.
 
-.. code:: python
+.. code-block:: python
 
     import os
 
@@ -83,7 +83,8 @@ Find below the method signature::
 
 All the parameters are optional in the ``search()`` method. We will define Python ``dict()`` objects for the ``body`` parameter and use. Here is an example:
 
-.. code:: python
+.. code-block:: python
+
    query_body = {
                   "query": {
                     "match_all": {}
@@ -145,6 +146,7 @@ The ``match`` query helps you to find the best matches with multiple search word
 This will return results of titles that contain "Chilled" or "Tomato" on it due to DSL defaults to the "or" operator.
 
 .. code-block:: python
+  
        query_body = {
                       "query": {
                         "match": {
