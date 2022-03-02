@@ -34,9 +34,9 @@ etcd
 failover
 fileset[s]?
 Flink
-gantt
+Gantt
 [Gg]eocoder
-Geohash
+geohash
 Geomap
 [Gg]eospatial
 GitHub

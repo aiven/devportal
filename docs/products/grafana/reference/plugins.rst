@@ -36,7 +36,7 @@ Dashboard list - `Grafana <https://grafana.com/grafana/plugins/dashlist/>`__ | `
     The dashboard list panel allows you to display dynamic links to other dashboards. The list can be configured to use starred dashboards, a search query and/or dashboard tags.
 
 Diagram - `Grafana <https://grafana.com/grafana/plugins/jdbranham-diagram-panel/>`__ | `GitHub <https://github.com/jdbranham/grafana-diagram>`__
-    Provides a way to create flow-charts, sequence diagrams, and gantt charts by leveraging the mermaid.js library.
+    Provides a way to create flow-charts, sequence diagrams, and Gantt charts by leveraging the mermaid.js library.
 
 Discrete - `Grafana <https://grafana.com/grafana/plugins/natel-discrete-panel/>`__ | `GitHub <https://github.com/NatelEnergy/grafana-discrete-panel>`__
     The Discrete panel shows discrete values in a horizontal graph, plotting state transitions.
