@@ -1,4 +1,4 @@
-Cooking with Terraform - Apache Kafka® Connect Integration
+Connect Apache Kafka® to OpenSearch with Terraform
 ==========================================================
 
 `Kafka Connect <https://aiven.io/kafka-connect>`_ helps simplify getting data in and out of Kafka. Kafka Connectors can either be source (for pulling data from other systems into Kafka) or sink connectors (for pushing data into other systems from Kafka).
