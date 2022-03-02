@@ -302,11 +302,11 @@ We reference Elasticsearch a few times, and that needs a disclaimer/attribution,
 
 Other cases that only happen occasionally:
 
-* ``Apache Lucene™`` (which is a trademark of the Apache Software Foundation) in :doc:`../../docs/producs/opersearch/index`. I've added a specific attribution.
+* ``Apache Lucene™`` (which is a trademark of the Apache Software Foundation) in `<../../docs/producs/opensearch/index>`_. I've added a specific attribution.
 
-* ``Apache ZooKeeper`` in :doc:`../../docs/products/kafka/concepts/auth-types` and :doc:`../../docs/products/kafka/howto/use-zookeeper`. This is actually an unregistered trademark (™) of Apache. I've made it refer to "Apache ZooKeeper" rather than "ZooKeeper", and added attribution in both places.
+* ``Apache ZooKeeper`` in `<../../docs/products/kafka/concepts/auth-types>`_ and `<../../docs/products/kafka/howto/use-zookeeper>`_. This is actually an unregistered trademark (™) of Apache. I've made it refer to "Apache ZooKeeper" rather than "ZooKeeper", and added attribution in both places.
 
-* Various names in :doc:`../../docs/products/kafka/kafka-connect/concepts/list-of-connector-plugins`, which may or may not need ® marks and/or attributions. I've made some attempt for some things in that file.
+* Various names in `<../../docs/products/kafka/kafka-connect/concepts/list-of-connector-plugins>`_, which may or may not need ® marks and/or attributions. I've made some attempt for some things in that file.
 
 ``capitalization_headings.yml``
 -------------------------------
