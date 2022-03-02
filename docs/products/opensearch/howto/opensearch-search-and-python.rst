@@ -96,20 +96,12 @@ The parameters that we will be using to configure our search queries are the ``i
 
 Find out how we write the queries and call the OpenSearch client on our demo, specifically on `search.py <https://github.com/aiven/demo-opensearch-python/blob/main/search.py>`__.
 
-Search lite API and query DSL
------------------------------
-There are two ways of performing search queries in OpenSearch: `Search Lite API <https://opensearch.org/docs/1.2/opensearch/rest-api/search/>`_ and `OpenSearch query domain-specific language (DSL) <https://opensearch.org/docs/latest/opensearch/query-dsl/index/>`_.
-In the Search Lite API, it is used the ``q`` parameter to run a query parameter search. But those kinds of queries do not support the Query DSL, and they work better for simple searches because it is expected a string as a parameter, for example:
+Query DSL
+---------
 
-.. code-block:: python
+`OpenSearch query domain-specific language (DSL) <https://opensearch.org/docs/latest/opensearch/query-dsl/index/>`_ is the primary language for OpenSearch queries. 
 
-    client.search({
-        index: 'recipes',
-        q: 'ingredients:broccoli AND calories:(>=100 AND <200)'
-    })
-
-
-With Query DSL, the field ``body`` expects a dictionary object which makes it easier to construct more complex search queries. As an example:
+With Query DSL, the field ``body`` expects a dictionary object which can facilitate the construction of more complex queries, for example:
 
 .. code-block:: python
 
@@ -244,7 +236,7 @@ If you know exactly which phrases you are looking for in a recipe, you can try o
 
   python search.py match_phrase "title" "Pannacotta with lemon marmalade"
 
-If you just have a rough idea of the phrase you are looking for, you can make your match phrase query more flexible with the ``slop`` parameter in the next section.
+If you just have a rough idea of the phrase you are looking for, you can make your match phrase query more flexible with the ``slop`` parameter. Let's check out in the 
 
 Match phrase with slop query
 ----------------------------
@@ -370,27 +362,28 @@ The fuzzy changes can include changing a character: ``post`` → ``lost``, or re
                     }
                  } 
 
-We can try out looking for a misspelled word and allowing some ``fuzziness``, which indicates the maximum edit distance.
-
-.. code-block:: python
-
-  query_body = {
-                  "query": {
-                      "fuzzy": {
-                          "title": {
-                              "value": "pinapple",
-                              "fuzziness": 2,
-                          }
-                      }
-                  }
-                }
-
-
-Try yourself to find recipes with misspelled pineapple 🍍
+We can try out looking for a misspelled word and allowing some ``fuzziness``, which indicates the maximum edit distance. Let's try out to find recipes with misspelled pineapple  on the ``title`` and ``fuzziness=2`` 🍍
 
 ::
 
     python search.py fuzzy "title" "pinapple" 2
+
+Notice that "Pineapple" word appears even if we have misspelled in our search:
+
+.. code-block:: shell
+
+    [
+      'Pineapple "Lasagna" ',
+      'Pineapple Bowl ',
+      'Pineapple Paletas ',
+      'Pineapple "Salsa" ',
+      'Pineapple Sangria ',
+      'Pineapple Tart ',
+      'Pineapple Split ',
+      'Roasted Pineapple with Star Anise Pineapple Sorbet ',
+      'Pineapple-Mint Relish ',
+      'Curried Pineapple Chutney '
+    ]
 
 So even if your misspelled a word, you can still find relevant results. Try out more combinations to better understand the fuzzy query.
 
