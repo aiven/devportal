@@ -2,9 +2,16 @@
 Notes on what we are doing with Vale
 ====================================
 
-  (This file may or may not be kept)
+.. contents::
 
-  (This ``.vale`` directory will be folded back into ``.github`` when work is finished, to make the configuration available to `vale-action`_)
+The future of this file
+=======================
+
+During development of our vale setup, this file is being used as a collection of notes of what I've learnt and what might be done in the future.
+
+Longer term, this should become actual documentation of our vale setup, and why it is the way it is.
+
+The ``.vale`` directory will be folded back into ``.github`` when work is finished, to make the configuration available to `vale-action`_. This file will be retained and renamed somewhere appropriate.
 
 .. _`vale-action`: https://github.com/errata-ai/vale-action
 
@@ -44,6 +51,8 @@ Except maybe we don't want to ignore ``cite``, because we do want to check insid
 What we *really* want to make sure we ignore is things like::
 
   `jq <https://stedolan.github.io/jq/>`__
+
+...except that sometimes we put names that do need ®-checking into links. Oh dear.
 
 ``aiven_spelling`` and the ``aiven`` dictionary
 -----------------------------------------------
@@ -277,36 +286,22 @@ Note that the rules for ``Redis`` (needs ``™*``, and it's OK for the ``*`` not
 
 One day it might be nice to be able to recognise a correct use in a header that comes before all uses in body text, but that's a task for another day (and might not be possible in vale anyway).
 
-Trademarky things
------------------
-
-Temporary list from the internal page:
-
-* Kafka®
-* Flink®
-* Cassandra®
-* ClickHouse®
-* OpenSearch®
-* PostgreSQL®
-* Redis™*
-* InfluxDB®
-* Grafana®
-* Kubernetes®
-
-Plus checking for ``Aiven for <name>`` instead of ``Aiven <name>`` (the former is correct) and also checking for ``Apache®`` when ``Apache`` is *not* followed by a product name (this *may* require listing all the product names in a regular expression, or may just mean checking for ``Apache <capitalised-word>``, which is probably good enough as a first pass).
-
-Other marks
------------
+Other marks and checks
+----------------------
 
 We reference Elasticsearch a few times, and that needs a disclaimer/attribution, which I've supplied by hand as necessary. I am not sure if it is worth constructing a specific rule for this (and my first attempt didn't work!).
 
 Other cases that only happen occasionally:
 
-* ``Apache Lucene™`` (which is a trademark of the Apache Software Foundation) in `<../docs/products/opensearch/index.rst>`_. I've added a specific attribution.
+* ``Apache Lucene™`` (which is a trademark of the Apache Software Foundation) in `<../docs/products/opensearch/index.rst>`_ and `<../docs/products/opensearch/dashboards/getting-started.rst>`_. I've added a specific attribution in `PR 605`_.
 
-* ``Apache ZooKeeper`` in `<../docs/products/kafka/concepts/auth-types.rst>`_ and `<../docs/products/kafka/howto/use-zookeeper.rst>`_. This is actually an unregistered trademark (™) of Apache. I've made it refer to "Apache ZooKeeper" rather than "ZooKeeper", and added attribution in both places.
+* ``Apache ZooKeeper`` in `<../docs/products/kafka/concepts/auth-types.rst>`_ and `<../docs/products/kafka/howto/use-zookeeper.rst>`_. This is actually an unregistered trademark (™) of Apache. I've made it refer to "Apache ZooKeeper" rather than "ZooKeeper", and added attribution in both places in `PR 605`_.
 
-* Various names in `<../docs/products/kafka/kafka-connect/concepts/list-of-connector-plugins.rst>`_, which may or may not need ® marks and/or attributions. I've made some attempt for some things in that file.
+* Various names in `<../docs/products/kafka/kafka-connect/concepts/list-of-connector-plugins.rst>`_, which may or may not need ® marks and/or attributions. I've made some attempt for some things in that file in `PR 605`_.
+
+It would be nice to check for ``Apache®`` when ``Apache`` is *not* followed by a product name (this *may* require listing all the product names in a regular expression, or may just mean checking for ``Apache <capitalised-word>``, which is probably good enough as a first pass).
+
+.. `PR 605`: https://github.com/aiven/devportal/pull/605
 
 ``capitalization_headings.yml``
 -------------------------------
@@ -374,7 +369,7 @@ The solution for us is to add appropriate exception words to the style file. Thi
 Test files
 ----------
 
-In the directory ****.vale/tests**** there are pairs of files, with names that contain ****good`` and ``bad``.
+In the directory ``.vale/tests`` there are pairs of files, with names that contain ``good`` and ``bad``.
 
 The intention is that when vale is run on a ``good`` file, there should be no errors, and when it is run on a ``bad`` file there should be at least one error per significant line (that is, ignoring comments, which should be evident, and blank lines).
 
