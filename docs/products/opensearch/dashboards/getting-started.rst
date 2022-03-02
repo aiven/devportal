@@ -20,7 +20,7 @@ OpenSearch Dashboards have many tools and features for working with data and run
 Discover
 ---------
 
-**Discover** page provides an interface to work with available data fields and run search queries by using either `the OpenSearch Dashboards Query Language (DQL) <https://opensearch.org/docs/latest/dashboards/dql/>`_  or `Lucene <https://lucene.apache.org/>`_.
+**Discover** page provides an interface to work with available data fields and run search queries by using either `the OpenSearch Dashboards Query Language (DQL) <https://opensearch.org/docs/latest/dashboards/dql/>`_  or `Apache Lucene® <https://lucene.apache.org/>`_.
 
 Additionally to search queries, you can filter the data by using either a visual interface or `OpenSearch Query DSL <https://opensearch.org/docs/latest/opensearch/query-dsl/index/>`_
 
@@ -57,3 +57,6 @@ Query Workbench allows you to use SQL syntax instead of DSL to query the data. F
 
 Find more on how to work `with SQL Workbench <https://opensearch.org/docs/latest/search-plugins/sql/workbench/>`_ and `how to run SQL queries <https://opensearch.org/docs/latest/search-plugins/sql/index/>`_  in the official documentation.
 
+------
+
+*Apache Lucene is a registered trademark or trademark of the Apache Software Foundation in the United States and/or other countries*
