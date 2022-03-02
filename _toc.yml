@@ -267,6 +267,7 @@ entries:
           - file: docs/products/clickhouse/concepts/olap
           - file: docs/products/clickhouse/concepts/databases-and-tables
           - file: docs/products/clickhouse/concepts/columnar-databases
+          - file: docs/products/clickhouse/concepts/indexing
       - file: docs/products/clickhouse/howto
         title: HowTo
         entries:
