@@ -1,7 +1,7 @@
 Write search queries with OpenSearch® and Python
 ================================================
 
-Learn how to write and run search queries on your OpenSearch cluster by using your Python OpenSearch client. We need data to interact with your cluster and make queries. We will be using the recipe dataset from Kaggle. 
+Learn how to write and run search queries on your OpenSearch cluster by using a Python OpenSearch client. We need data to interact with your cluster and make queries. We will be using the recipe dataset from Kaggle. 
 
 
 Pre-requisites
@@ -9,7 +9,7 @@ Pre-requisites
 
 OpenSearch cluster
 -------------------
-For this tutorial, we will need an OpenSearch cluster that can be created :doc:`from the Aiven Console <../getting-started>` or through the :doc:`CLI command <../../../tools/cli/service>`.
+For this tutorial, we will need an OpenSearch cluster. You can create :doc:`from the Aiven Console <../getting-started>` or through the :doc:`CLI command <../../../tools/cli/service>`.
 
 
 GitHub repository
@@ -29,8 +29,8 @@ We will be using ``Typer`` `Python library <ttps://typer.tiangolo.com/>`_ to cre
 Connect to the OpenSearch cluster in Python
 -------------------------------------------
 
-Follow instructions on how to :doc:`connect to the cluster with a Python client <connect-with-python>` and add the necessary code to ``config.py``.
-In this ``config.py``, the cluster configuration is created. After this, we're set to interact with our cluster.
+Follow instructions on how to :doc:`connect to the cluster with a Python client <connect-with-python>`. Make sure to update the ``SERVICE_URI`` to your cluster ``SERVICE_URI`` on the ``env.`` `file <https://github.com/aiven/demo-opensearch-python/blob/main/.env>`_ as explained in the `README <https://github.com/aiven/demo-opensearch-python>`_.
+Check out in `config.py <https://github.com/aiven/demo-opensearch-python/blob/main/config.py>`_, how the cluster configuration is created.
 
 .. code:: python
 
@@ -45,6 +45,7 @@ In this ``config.py``, the cluster configuration is created. After this, we're s
     SERVICE_URI = os.getenv("SERVICE_URI")
     client = OpenSearch(SERVICE_URI, use_ssl=True)
 
+After this, we're set to interact with our cluster.
 
 .. tip::
 
@@ -59,7 +60,7 @@ You can run from the demo following::
 
   python index.py send-data
 
-Once the data is sent, we can :ref:`retrieve the data mapping <get-mapping-with-python>` to explore the structure of the data, with their respective fields and types. 
+Once the data is loaded, we can :ref:`retrieve the data mapping <get-mapping-with-python>` to explore the structure of the data, with their respective fields and types. 
 
 From the `demo <https://github.com/aiven/demo-opensearch-python/blob/main/index.py#L50>`_, you can check the data mapping running::
 
@@ -76,7 +77,7 @@ Query the data
 
 We have an OpenSearch client and data in your cluster, so we can start writing search queries. The method ``search()`` provided by the Python OpenSearch client library will be used to perform the queries. 
 
-Find below the method signature's::
+Find below the method signature::
 
   client.search: (body=None, index=None, doc_type=None, params=None, headers=None)
 
@@ -90,7 +91,7 @@ All the parameters are optional in the ``search()`` method. We will define Pytho
                 }
 
 
-The parameters that we will be using to configure our search queries are the ``index`` and ``body``. The ``index`` will not be changing, but we will be modifying the ``body`` parameter value according to the query purpose.
+The parameters that we will be using to configure our search queries are the ``index`` and ``body``. The ``index`` parameter is the name of the index we used to load the data, and therefore, it does not change. However, we will be modifying the ``body`` parameter value according to the query purpose.
 
 Search lite API and query DSL
 -----------------------------
@@ -189,7 +190,7 @@ You can run yourself the code to explore the ``match`` function. For example, if
     'Asian Spring Rolls '
   ]
 
-Find out more about `Match query <https://opensearch.org/docs/latest/opensearch/query-dsl/full-text/#match>`_.
+Find out more about `match queries <https://opensearch.org/docs/latest/opensearch/query-dsl/full-text/#match>`_.
 
 Multi match query
 ------------------
