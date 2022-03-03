@@ -490,11 +490,45 @@ I'm recording it here because I don't want to investigate further at the moment 
 Sentence case and headings
 --------------------------
 
-  *A wish. Might need a fix in rst2html.py*
+  *A wish. An idea.**
 
 For short titles, the sentence case "80%" rule doesn't work very well. Is there a better algorithm for working out whether the sentence casing is accceptable or not? (this might need to be given a different name). Because adding lots of exceptions is a pain (and feels the wrong solution).
 
-The expected workaround of marking up::
+It occurs to me that one possibility is to add a switch to the `capitalization` style to say "allow capitalised words from the dictionary to count towards the total". So ``Gantt`` would count.
+
+Thoughts:
+
+1. It depends on being able to easily look up whether a word is capitalised in the dictionary or dictionaries.
+2. It should allow Capitalised (and thus also MixedCase) words.
+3. Should it allow things like ``iPod`` - maybe that's *another* shade of the option (I think the existing rules would regard ``iPod`` as not a "counting" word, but need to check)
+4. This is meant to apply to ``$sentence`` - does it have any relevance for the other modes? And if not, should an error message be produced if it is specified for other modes?
+
+Finding the CONTRIBUTING document
+---------------------------------
+
+  *Should be a simple PR.*
+
+It lives in ``.github``. Where I wasn't looking.
+
+I think that there should either be a reference to it in the README (probably the best option), or it should be moved to the top level (which is where I'd expect it, but that doesn't make that the right choice).
+
+Pedanting the CONTRIBUTING document
+-----------------------------------
+
+Note that in particular ``make lint`` doesn't do anything any more, as there's no such target.
+
+(so either fix the Makefile, or suggest use of ``gofmt``)
+
+The document says running the tests needs cucumber, ascidoctor and sphinx, but I've found they also need dita-ot and xsltproc (double check that last - I think it's needed, but I already had it installed).
+
+Vale on/off problem with rst2html.py
+------------------------------------
+
+  *A wish. Might need a fix in rst2html.py*
+
+The ability to use comments to switch vale off and on again looks very valuable, although in reStructuredText it is of less utility than one might wish because of how comments work (they sort-of work like paragraphs).
+
+However, the expected workaround of marking up::
 
   .. vale off
 
