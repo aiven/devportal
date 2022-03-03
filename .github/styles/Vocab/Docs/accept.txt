@@ -95,6 +95,7 @@ Protobuf
 Prometheus
 psql
 Python
+[Rr]ebalancing
 Redis
 Redli
 refcard

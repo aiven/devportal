@@ -15,6 +15,7 @@ entries:
       title: HowTo
       entries:
       - file: docs/platform/howto/create_new_service
+      - file: docs/platform/howto/create_new_service_user
       - file: docs/platform/howto/create_authentication_token
       - file: docs/platform/howto/download-ca-cert
       - file: docs/platform/howto/console-fork-service.rst
@@ -22,7 +23,12 @@ entries:
       - file: docs/platform/howto/pause-from-cli.rst
       - file: docs/platform/howto/public-access-in-vpc.rst
       - file: docs/platform/howto/add-storage-space
+      - file: docs/platform/howto/restrict-access
+      - file: docs/platform/howto/scale-services
+      - file: docs/platform/howto/migrate-services
+      - file: docs/platform/howto/monitoring-services
       - file: docs/platform/howto/integrations/prometheus-metrics
+
 
   # --------- GLOBAL -----------
   - file: docs/tools/index
@@ -235,7 +241,6 @@ entries:
           - file: docs/products/flink/concepts/flink-for-operators
           - file: docs/products/flink/concepts/kafka-connectors
           - file: docs/products/flink/concepts/kafka-connector-requirements
-          - file: docs/products/flink/concepts/logs-metrics-alerts
           - file: docs/products/flink/concepts/supported-syntax-sql-editor
           - file: docs/products/flink/concepts/event-processing-time
           - file: docs/products/flink/concepts/windows
