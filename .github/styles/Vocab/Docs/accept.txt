@@ -10,6 +10,8 @@ Avro
 [Bb]oot
 [Bb]usiness
 Cassandra
+ClickHouse
+codecs
 Conduktor
 [Cc]onnect
 Couchbase
@@ -32,8 +34,9 @@ etcd
 failover
 fileset[s]?
 Flink
+[Gg]eocoder
 Geomap
-geospatial
+[Gg]eospatial
 GitHub
 [Gg]o
 Gradle

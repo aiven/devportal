@@ -39,3 +39,12 @@ To perform the upgrade, visit the service overview page and choose the button la
 
 When the operation completes, your Aiven for OpenSearch service should continue to operate much as your Elasticsearch service did.
 
+More resources
+--------------
+
+Here are some related resources that may help you with your upgrade process
+
+* :doc:`Understand how OpenSearch relates to Elasticsearch <../concepts/opensearch-vs-elasticsearch>`
+* :doc:`Upgrade your application client libraries for OpenSearch <upgrade-clients-to-opensearch>`
+* :doc:`Plugins available on for Aiven for OpenSearch <../reference/plugins>`
+* :doc:`OpenSearch Dashboards <../dashboards/index>` as a replacement to Kibana

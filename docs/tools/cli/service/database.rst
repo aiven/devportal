@@ -7,6 +7,8 @@ Here you’ll find the full list of commands for ``avn service database``.
 Manage databases
 --------------------------------------------------------
 
+.. _avn-service-database-create:
+
 ``avn service database-create``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 

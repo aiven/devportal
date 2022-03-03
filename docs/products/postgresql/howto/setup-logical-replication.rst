@@ -6,9 +6,7 @@ Aiven for PostgreSQL represents an ideal managed solution for a variety of use c
 Whether you are migrating or have another use case to keep an existing system in sync with an Aiven for PostgreSQL service, setting up a **logical replica** is a good way to achieve that. This article goes through the steps of replicating some tables from a self-managed PostgreSQL cluster to Aiven.
 
 .. Note::
-    These instructions work also with AWS RDS PostgreSQL 10+.
-
-    Google Cloud Platform's PostgreSQL for CloudSQL does not currently support logical replication.
+    These instructions work also with AWS RDS PostgreSQL 10+ and `Google CloudSQL PostgreSQL <https://cloud.google.com/sql/docs/release-notes#August_30_2021>`_.
 
 
 Variables
@@ -163,7 +161,7 @@ The command output is like::
 
 * If the ``dest_slot`` connector is no longer needed, run the following command to remove it::
 
-    SELECT pg_drop_replication_slot('dest_subscription');
+    SELECT pg_drop_replication_slot('dest_slot');
 
 4. In both cases, after the next PostgreSQL checkpoint, the disk space that the WAL logs have reserved for the ``dest_subscription`` connector should be freed up.
 

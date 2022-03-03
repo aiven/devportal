@@ -10,7 +10,7 @@ Logical replication is the default method which keeps the two databases synchron
 If the preconditions for logical replication are not met for a database, the migration falls back to using ``pg_dump``.
 
 .. Note::
-    You can use logical replication when migrating from AWS RDS PostgreSQL 10+, whereas the Google Cloud Platform's PostgreSQL for CloudSQL does not support it.
+    You can use logical replication when migrating from AWS RDS PostgreSQL 10+ and `Google CloudSQL PostgreSQL <https://cloud.google.com/sql/docs/release-notes#August_30_2021>`_.
 
 What you'll need
 ----------------

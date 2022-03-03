@@ -52,7 +52,7 @@ templates_path = ['_templates']
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = [
     '_build', 'Thumbs.db', '.DS_Store', 'README*', 'scripts', 'utils',
-    'CONTRIBUTING.rst', 'REVIEWING.rst'
+    'CONTRIBUTING.rst', 'REVIEWING.rst', 'includes'
 ]
 
 # gitstamp config
@@ -164,6 +164,10 @@ rst_epilog = """
    :class: no-scaled-link
 
 .. |icon-flink| image:: /images/icon-flink.svg
+   :width: 24px
+   :class: no-scaled-link
+
+.. |icon-clickhouse| image:: /images/icon-clickhouse.svg
    :width: 24px
    :class: no-scaled-link
 

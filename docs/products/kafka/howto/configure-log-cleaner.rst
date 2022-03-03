@@ -30,7 +30,7 @@ Before the cleaning begins, the cleaner thread will inspect the logs to find tho
 
 .. Tip::
 
-For the log cleaner to start compacting a topic, the dirty ratio needs to be bigger than a threshold set to 50% by default. You can change this value either globally for the cluster by modifying the property ``kafka.log_cleaner_min_cleanable_ratio`` in the *Advanced configuration* section of the service overview, or for a specific topic modifying ``min_cleanable_ratio`` value.
+    For the log cleaner to start compacting a topic, the dirty ratio needs to be bigger than a threshold set to 50% by default. You can change this value either globally for the cluster by modifying the property ``kafka.log_cleaner_min_cleanable_ratio`` in the *Advanced configuration* section of the service overview, or for a specific topic modifying ``min_cleanable_ratio`` value.
 
 The log cleaner can be configured to leave some amount of not compacted "head" of the log by setting compaction time lag. You can achieve this by setting two additional properties from the *Advanced configuration*, or a corresponding value for an individual topic:
 

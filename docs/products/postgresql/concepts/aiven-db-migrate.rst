@@ -8,7 +8,7 @@ Logical replication is the default method and once successfully set up, this kee
 Regardless of the migration method used, the migration tool first performs a schema dump and migration to ensure schema compatibility.
 
 .. Note::
-    Logical replication also works when migrating from AWS RDS PostgreSQL 10+. Google Cloud Platform's PostgreSQL for CloudSQL does not support logical replication.
+    Logical replication also works when migrating from AWS RDS PostgreSQL 10+ and `Google CloudSQL PostgreSQL <https://cloud.google.com/sql/docs/release-notes#August_30_2021>`_.
 
 .. _aiven-db-migrate-migration-requirements:
 

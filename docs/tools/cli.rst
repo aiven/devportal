@@ -3,6 +3,8 @@ Aiven CLI
 
 Aiven offers an installable CLI (command line interface) tool. You can find it `on GitHub <https://github.com/aiven/aiven-client>`_.
 
+If you prefer to follow a video tutorial, check out this short video on `how to get started <https://www.youtube.com/watch?v=nf3PPn5w6K8>`_.
+
 Getting started
 ---------------
 
