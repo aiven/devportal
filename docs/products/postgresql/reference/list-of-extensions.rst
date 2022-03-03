@@ -1,7 +1,7 @@
 List of available extensions
 ============================
 
-The following PostgreSQL extensions are available. Please note that some of the extensions have dependencies and they need to be created in the proper order. Some extensions may require disconnecting the client connection and reconnecting before they are fully available.  The version columns show which extension version is available on each version of Aiven for PostgreSQL.
+The following PostgreSQL extensions are available. Please note that some of the extensions have dependencies and they need to be created in the proper order. Some extensions may require disconnecting the client connection and reconnecting before they are fully available.  To check the details, including the version number of the extension, run ``select * from pg_available_extensions`` in your Aiven for PostgreSQL server.
 
 Data types
 ----------
