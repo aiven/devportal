@@ -1,7 +1,18 @@
 List of metrics available via Prometheus integration
 ==================================================================
 
-Below you can find a summary of every metric available via Prometheus for an Aiven for Apache Kafka service.
+The list of available metrics highly depends on the service usage, hence, there are a few metrics would be available to
+certain services while they cannot be found in other services. The following list only contains the most common metrics
+available via Prometheus for an Aiven for Apache Kafka service.
+
+You can retrieve the complete list of available metrics for your specific service by calling to the Prometheus endpoint
+
+.. code-block:: python
+
+    curl --cacert ca.pem \
+        --user '<prometheus_user>:<prometheus_password>' \
+        'https://<kafka_server_name>:<prometheus_port>/metrics'
+
 
 CPU utilization
 ---------------
@@ -37,15 +48,17 @@ Disk space utilization
 Disk input and output
 ---------------------
 
-* ``diskio_iops_in_progress``
 * ``diskio_io_time``
+* ``diskio_iops_in_progress``
+* ``diskio_merged_reads``
+* ``diskio_merged_writes``
 * ``diskio_read_bytes``
-* ``diskio_reads``
 * ``diskio_read_time``
+* ``diskio_reads``
 * ``diskio_weighted_io_time``
 * ``diskio_write_bytes``
-* ``diskio_writes``
 * ``diskio_write_time``
+* ``diskio_writes``
 
 Garbage collector MXBean
 ------------------------
@@ -59,7 +72,7 @@ Memory usage
 
 * ``java_lang_Memory_committed``: returns the amount of memory in bytes that is committed for the Java virtual machine to use
 * ``java_lang_Memory_init``: returns the amount of memory in bytes that the Java virtual machine initially requests from the operating system for memory management
-* ``java_lang_Memory_max``: returns the maximum amount of memory in bytes that can be used for memory management 
+* ``java_lang_Memory_max``: returns the maximum amount of memory in bytes that can be used for memory management
 * ``java_lang_Memory_used``: returns the amount of used memory in bytes
 * ``java_lang_Memory_ObjectPendingFinalizationCount``
 
@@ -71,12 +84,12 @@ The list of Apache Kafka Connect metrics is available in the :doc:`dedicated pag
 Apache Kafka broker
 -------------------
 
-The descriptions for the below metrics are available in the `Monitoring section of the Apache Kafka documentation <http://kafka.apache.org/documentation/#monitoring>`_. 
+The descriptions for the below metrics are available in the `Monitoring section of the Apache Kafka documentation <http://kafka.apache.org/documentation/#monitoring>`_.
 
-.. Note:: 
+.. Note::
 
     The metrics with a ``_Count`` suffix are cumulative counters for the given metric.
-    
+
     E.g. ``kafka_server_BrokerTopicMetrics_MessagesInPerSec_Count`` is a cumulative count of incoming messages despite the ``PerSec`` suffix in the metric name. To see the rate of change of these ``_Count`` metrics, a function can be applied e.g. the ``rate()`` function in PromQL.
 
 Apache Kafka controller
@@ -98,15 +111,22 @@ Apache Kafka controller
 * ``kafka_controller_ControllerStats_LeaderElectionRateAndTimeMs_OneMinuteRate``
 * ``kafka_controller_ControllerStats_LeaderElectionRateAndTimeMs_StdDev``
 * ``kafka_controller_ControllerStats_UncleanLeaderElectionsPerSec_Count``
+* ``kafka_controller_KafkaController_ActiveBrokerCount_Value``
 * ``kafka_controller_KafkaController_ActiveControllerCount_Value``
+* ``kafka_controller_KafkaController_FencedBrokerCount_Value``
 * ``kafka_controller_KafkaController_OfflinePartitionsCount_Value``
+* ``kafka_controller_KafkaController_PreferredReplicaImbalanceCount_Value``
+* ``kafka_controller_KafkaController_ReplicasIneligibleToDeleteCount_Value``
+* ``kafka_controller_KafkaController_ReplicasToDeleteCount_Value``
+* ``kafka_controller_KafkaController_TopicsIneligibleToDeleteCount_Value``
+* ``kafka_controller_KafkaController_TopicsToDeleteCount_Value``
 
 Jolokia collector collect time
 ''''''''''''''''''''''''''''''
 
 * ``kafka_jolokia_collector_collect_time``
 
-Apache Kafka log 
+Apache Kafka log
 ''''''''''''''''
 
 * ``kafka_log_LogCleaner_cleaner_recopy_percent_Value``
@@ -134,6 +154,9 @@ Apache Kafka log
 Apache Kafka network
 ''''''''''''''''''''
 
+* ``kafka_network_RequestChannel_RequestQueueSize_Value``
+* ``kafka_network_RequestChannel_ResponseQueueSize_Value``
+* ``kafka_network_RequestMetrics_RequestsPerSec_Count``
 * ``kafka_network_RequestMetrics_TotalTimeMs_95thPercentile``
 * ``kafka_network_RequestMetrics_TotalTimeMs_Count``
 * ``kafka_network_RequestMetrics_TotalTimeMs_Mean``
@@ -149,6 +172,11 @@ Apache Kafka server
 * ``kafka_server_BrokerTopicMetrics_FailedProduceRequestsPerSec_Count``
 * ``kafka_server_BrokerTopicMetrics_FetchMessageConversionsPerSec_Count``
 * ``kafka_server_BrokerTopicMetrics_MessagesInPerSec_Count``
+* ``kafka_server_BrokerTopicMetrics_ProduceMessageConversionsPerSec_Count``
+* ``kafka_server_BrokerTopicMetrics_ReassignmentBytesInPerSec_Count``
+* ``kafka_server_BrokerTopicMetrics_ReassignmentBytesOutPerSec_Count``
+* ``kafka_server_BrokerTopicMetrics_ReplicationBytesInPerSec_Count``
+* ``kafka_server_BrokerTopicMetrics_ReplicationBytesOutPerSec_Count``
 * ``kafka_server_BrokerTopicMetrics_TotalFetchRequestsPerSec_Count``
 * ``kafka_server_BrokerTopicMetrics_TotalProduceRequestsPerSec_Count``
 * ``kafka_server_DelayedOperationPurgatory_NumDelayedOperations_Value``
@@ -161,6 +189,14 @@ Apache Kafka server
 * ``kafka_server_ReplicaManager_PartitionCount_Value``
 * ``kafka_server_ReplicaManager_UnderMinIsrPartitionCount_Value``
 * ``kafka_server_ReplicaManager_UnderReplicatedPartitions_Value``
+* ``kafka_server_group_coordinator_metrics_group_completed_rebalance_count``
+* ``kafka_server_group_coordinator_metrics_group_completed_rebalance_rate``
+* ``kafka_server_group_coordinator_metrics_offset_commit_count``
+* ``kafka_server_group_coordinator_metrics_offset_commit_rate``
+* ``kafka_server_group_coordinator_metrics_offset_deletion_count``
+* ``kafka_server_group_coordinator_metrics_offset_deletion_rate``
+* ``kafka_server_group_coordinator_metrics_offset_expiration_count``
+* ``kafka_server_group_coordinator_metrics_offset_expiration_rate``
 
 Kernel
 ''''''
