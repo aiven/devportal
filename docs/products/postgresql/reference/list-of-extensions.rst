@@ -115,6 +115,7 @@ Utilities
    "`pg_freespacemap <https://www.postgresql.org/docs/current/pgfreespacemap.html>`_","examine the free space map (FSM)","1.2","1.2","1.2","1.2","1.2"
    "`pg_partman <https://github.com/pgpartman/pg_partman>`_","Extension to manage partitioned tables by time or ID","4.6.0","4.6.0","4.6.0","4.6.0","4.6.0"
    "`pg_prewarm <https://www.postgresql.org/docs/current/pgprewarm.html>`_","prewarm relation data","1.2","1.2","1.2","1.2","1.1"
+   "`pg_prometheus <https://github.com/timescale/pg_prometheus>`_","Prometheus metrics for PostgreSQL","","","0.2.1","0.2.1","0.2.1"
    "`pg_repack <https://pgxn.org/dist/pg_repack/1.4.6/>`_","Reorganize tables in PostgreSQL databases with minimal locks","1.4.7","1.4.7","1.4.7","1.4.7","1.4.7"
    "`pg_stat_statements <https://www.postgresql.org/docs/current/pgstatstatements.html>`_","track planning and execution statistics of all SQL statements executed","1.9","1.8","1.7","1.6","1.6"
    "`pg_surgery <https://www.postgresql.org/docs/current/pgsurgery.html>`_","extension to perform surgery on a damaged relation","1","","","",""
