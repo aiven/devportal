@@ -23,6 +23,7 @@ entries:
       - file: docs/platform/howto/public-access-in-vpc.rst
       - file: docs/platform/howto/add-storage-space
       - file: docs/platform/howto/integrations/prometheus-metrics
+      - file: docs/platform/howto/integrations/datadog-increase-metrics-limit
 
   # --------- GLOBAL -----------
   - file: docs/tools/index
