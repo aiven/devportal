@@ -16,7 +16,7 @@ Data types
     Data type for multidimensional cubes.
 
 ``hll`` - https://github.com/citusdata/postgresql-hll
-    Type for storing hyperloglog data.  Available since PostgreSQL 11.
+    Type for storing ``hyperloglog`` data.  Available since PostgreSQL 11.
 
 ``hstore`` - https://www.postgresql.org/docs/current/hstore.html
     Data type for storing sets of (key, value) pairs.
@@ -46,10 +46,10 @@ Search and text handling
     Bloom access method - signature file based index.
 
 ``btree_gin`` - https://www.postgresql.org/docs/current/btree-gin.html
-    Support for indexing common datatypes in GIN.
+    Support for indexing common data types in GIN.
 
 ``btree_gist`` - https://www.postgresql.org/docs/current/btree-gist.html
-    Support for indexing common datatypes in GiST.
+    Support for indexing common data types in GiST.
 
 ``dict_int`` - https://www.postgresql.org/docs/current/dict-int.html
     Text search dictionary template for integers.
@@ -99,7 +99,7 @@ Geographical features
     Used to parse an address into constituent elements. Generally used to support geocoding address normalization step.
 
 ``address_standardizer_data_us`` - https://postgis.net/docs/standardize_address.html
-    Address Standardizer US dataset example.
+    ``Address standardizer`` US dataset example.
 
 ``earthdistance`` - https://www.postgresql.org/docs/current/earthdistance.html
     Calculate great-circle distances on the surface of the Earth.
@@ -165,25 +165,25 @@ Utilities
 ---------
 
 ``aiven_extras`` - https://github.com/aiven/aiven-extras
-    This extension is meant for use in enviroments where you want non-superusers to be able to use certain database features.
+    This extension is meant for use in environments where you want non-superusers to be able to use certain database features.
 
 ``amcheck`` - https://www.postgresql.org/docs/current/amcheck.html
     Functions for verifying relation integrity.
 
 ``autoinc`` - https://www.postgresql.org/docs/current/contrib-spi.html#id-1.11.7.47.6
-    Functions for autoincrementing fields.
+    Functions for auto-incrementing fields.
 
 ``bool_plperl`` - https://www.postgresql.org/docs/current/plperl-funcs.html
-    Transform between bool and plperl.  Available since PostgreSQL 13.
+    Transform between ``bool`` and ``plperl``.  Available since PostgreSQL 13.
 
 ``bool_plperlu`` - https://www.postgresql.org/docs/current/plperl-funcs.html
-    Transform between bool and plperlu.  Available since PostgreSQL 13.
+    Transform between ``bool`` and ``plperlu``.  Available since PostgreSQL 13.
 
 ``hstore_plperl`` - https://www.postgresql.org/docs/current/hstore.html
-    Transform between hstore and plperl.
+    Transform between ``hstore`` and ``plperl``.
 
 ``hstore_plperlu`` - https://www.postgresql.org/docs/current/hstore.html
-    Transform between hstore and plperlu.
+    Transform between ``hstore`` and ``plperlu``.
 
 ``intagg`` - https://www.postgresql.org/docs/current/intagg.html
     Integer aggregator and enumerator (obsolete).
@@ -192,10 +192,10 @@ Utilities
     Functions, operators, and index support for 1-D arrays of integers.
 
 ``jsonb_plperl`` - https://www.postgresql.org/docs/current/datatype-json.html
-    Transform between jsonb and plperl.
+    Transform between ``jsonb`` and ``plperl``.
 
 ``jsonb_plperlu`` - https://www.postgresql.org/docs/current/datatype-json.html
-    Transform between jsonb and plperlu.
+    Transform between ``jsonb`` and ``plperlu``.
 
 ``lo`` - https://www.postgresql.org/docs/current/lo.html
     Large Object maintenance.
@@ -249,7 +249,7 @@ Utilities
     Information about SSL certificates.
 
 ``tablefunc`` - https://www.postgresql.org/docs/current/tablefunc.html
-    Functions that manipulate whole tables, including crosstab.
+    Functions that manipulate whole tables, including ``crosstab``.
 
 ``timetravel`` - https://www.postgresql.org/docs/6.3/c0503.htm
     Functions for implementing time travel.  Not available after PostgreSQL 11.
