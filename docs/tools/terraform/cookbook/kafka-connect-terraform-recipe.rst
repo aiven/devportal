@@ -1,11 +1,10 @@
 Connect Apache Kafka® to OpenSearch with Terraform
 ==========================================================
 
-This example shows how to use a Kafka Connector to take data from Apache Kafka and ingest it into OpenSearch using `Apche Kafka Connect <https://aiven.io/kafka-connect>`_. The data here is application logs going onto a Kafka topic, and being put into OpenSearch for short term storage and easy inspection, if needed.
+This example shows how to use a Kafka Connector to take data from Apache Kafka and ingest it into OpenSearch using `Apche Kafka Connect <https://aiven.io/kafka-connect>`_. As a use case, the data here is application logs going onto a Kafka topic, and being put into OpenSearch for short term storage and easy inspection, if needed.
 Aiven has a concept of `service integrations <WIP blog on service integration will go here>`_ to manage the relationships between components. `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_
 has a specific resource type in Terraform for service integration. 
 
-The problem that we're trying to solve is to get data out of Kafka and into OpenSeach. We're using a Kafka Connect service to make this happen. Because these services are created programmatically, we'll also need to link the services together.
 Before looking at the Terraform script, let's visually realize how the services will be connected:
 
 .. mermaid::
@@ -17,65 +16,18 @@ Before looking at the Terraform script, let's visually realize how the services 
 Describe the setup
 ==================
 
-There are four different Terraform files - each serving a specific purpose. Let's go over each of these files.
+Here is the sample Terraform file to stand-up and connect all the services. Keep in mind that some parameters and configurations will vary for your case.
 
-1. ``provider.tf`` file:
-
-.. code:: bash
-
-   terraform {
-      required_providers {
-         aiven = {
-            source  = "aiven/aiven"
-            version = ">= 2.6.0, < 3.0.0"
-         }
-      }
-   }
-
-   provider "aiven" {
-      api_token = var.aiven_api_token
-   }
-
-
-Consider this code block similar to declaring a dependency; the **Aiven Terraform Provider** in this case. We mention the source of the provider and specify a certain version to be used.
-Following `Aiven Terraform Provider doc <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_, ``api_token`` is the only parameter for the provider configuration.
-Make sure the owner of the API Authentication Token has admin permissions in Aiven.
-
-2. ``variables.tf`` file:
-
-.. code:: bash
-
-   variable "aiven_api_token" {
-      description = "Aiven console API token"
-      type = string
-   }
-
-   variable "project_name" {
-      description = "Aiven console project name"
-      type        = string
-   }
-
-This file relates to the Terraform best practices since you don't want to hardcode certain values within the main Terraform file.
-
-3. ``var-values.tfvars`` file:
-
-.. code:: bash
-
-   aiven_api_token = "<YOUR-AIVEN-AUTHENTICATION-TOKEN-GOES-HERE>"
-   project_name = "<YOUR-AIVEN-CONSOLE-PROJECT-NAME-GOES-HERE>"
-
-This is where you put the actual values for Aiven API token and Aiven console project name. This file is passed to Terraform using the ``-var-file=`` flag.
-
-4. ``services.tf`` file:
+``services.tf`` file:
 
 .. code:: bash
 
    # Kafka service
-   resource "aiven_kafka" "dewans-tf-kafka" {
+   resource "aiven_kafka" "application-logs" {
    project                 = var.project_name
    cloud_name              = "google-northamerica-northeast1"
    plan                    = "business-4"
-   service_name            = "dewans-tf-kafka"
+   service_name            = "kafka-application-logs"
    maintenance_window_dow  = "monday"
    maintenance_window_time = "10:00:00"
    kafka_user_config {
@@ -89,12 +41,21 @@ This is where you put the actual values for Aiven API token and Aiven console pr
    }
    }
 
+   # Kafka topic
+   resource "aiven_kafka_topic" "topic-logs-app-1" {
+   project = var.project_name
+   service_name = aiven_kafka.application-logs.service_name
+   topic_name = "logs-app-1"
+   partitions = 3
+   replication = 2
+   }
+
    # Kafka connect service
-   resource "aiven_kafka_connect" "dewans-tf-kafka-connect" {
+   resource "aiven_kafka_connect" "logs-connector" {
    project = var.project_name
    cloud_name = "google-northamerica-northeast1"
    plan = "business-4"
-   service_name = "dewans-tf-kafka-connect"
+   service_name = "kafka-connect-logs-connector"
    maintenance_window_dow = "monday"
    maintenance_window_time = "10:00:00"
    kafka_connect_user_config {
@@ -108,11 +69,11 @@ This is where you put the actual values for Aiven API token and Aiven console pr
    }
 
    # Kafka connect service integration
-   resource "aiven_service_integration" "dewan_tf_integration" {
+   resource "aiven_service_integration" "kafka-to-logs-connector" {
    project = var.project_name
    integration_type = "kafka_connect"
-   source_service_name = aiven_kafka.dewans-tf-kafka.service_name
-   destination_service_name = aiven_kafka_connect.dewans-tf-kafka-connect.service_name
+   source_service_name = aiven_kafka.application-logs.service_name
+   destination_service_name = aiven_kafka_connect.logs-connector.service_name
    kafka_connect_user_config {
       kafka_connect {
          group_id = "connect"
@@ -122,22 +83,13 @@ This is where you put the actual values for Aiven API token and Aiven console pr
    }
    }
 
-   # Kafka topic
-   resource "aiven_kafka_topic" "kafka-topic1" {
-   project = var.project_name
-   service_name = aiven_kafka.dewans-tf-kafka.service_name
-   topic_name = "dewans-tf-kafka-topic1"
-   partitions = 3
-   replication = 2
-   }
-
    # Kafka connector
    resource "aiven_kafka_connector" "kafka-os-con1" {
    project = var.project_name
-   service_name = aiven_kafka.dewans-tf-kafka.service_name
+   service_name = aiven_kafka.application-logs.service_name
    connector_name = "kafka-os-con1"
    config = {
-      "topics" = aiven_kafka_topic.kafka-topic1.topic_name
+      "topics" = aiven_kafka_topic.topic-logs-app-1.topic_name
       "connector.class" : "io.aiven.kafka.connect.opensearch.OpensearchSinkConnector"
       "type.name" = "os-connector"
       "name" = "kafka-os-con1"
@@ -165,45 +117,15 @@ This is where you put the actual values for Aiven API token and Aiven console pr
    }
    }
 
-This file is where all the magic (a.k.a cooking) happens. Three services and two integrations are defined in separate blocks. ``resource`` indicates the type of Aiven resource and each project identifies a specific project (this value is passed from the ``variables.tf`` file.
-For the three services, we need to specify the type of `Aiven plan <https://aiven.io/pricing>`_ and some product specific configurations. For the integrations, we specify the service name where the integration is happening and the integration configurations.
-Apart from that, we also define a Kafka topic that Terraform will create as part of the plan. 
-
-Assuming that you have `Terraform installed <https://www.terraform.io/downloads>`_, create an empty folder and add the above files to that folder. Then execute the following commands in order:
-
-.. code:: bash
-
-   terraform init 
-
-This command performs several different initialization steps in order to prepare the current working directory for use with Terraform. In our case, this command automatically finds, downloads, and installs the necessary Aiven Terraform Provider plugins.
-
-.. code:: bash
-
-   terraform plan -var-file=var-values.tfvars
-
-This command creates an execution plan and shows you the resources that will be created (or modified) for you. This command does not actually create any resource; this is more like a preview.
-
-.. code:: bash
-
-   terraform apply -var-file=var-values.tfvars
-
-If you're satisfied with ``terraform plan``, you execute ``terraform apply`` command which actually does the task or creating (or modifying) your infrastructure resources. 
-
-Optional
---------
-
-If this was a test environment, be sure to delete the resources once you're done to avoid consuming unwanted bills. 
-
-.. warning::
-
-   Use this command with caution. This will actually delete resources that might have important data.
-
-.. code:: bash
-
-   terraform destroy -var-file=var-values.tfvars
-
+This file creates three Aiven services - a Kafka service, a Kafka Connect service, and an OpenSearch service. Two service integrations among these three services and a Kafka topic within the Kafka service will also be created from this Terraform file.
+To validate, produce some messages on the Kafka topic and you should be seeing those appear on OpenSearch indices. 
 
 Wrap up
 =======
 
-If you liked this recipe, try out some of the other recipes within the Aiven Terraform cookbook.
+Some supporting material related to the above recipe:
+
+- `Configuration options for Kafka <https://developer.aiven.io/docs/products/kafka/reference/advanced-params.html>`_
+- `Configuration options for OpenSearch <https://developer.aiven.io/docs/products/opensearch/reference/advanced-params.html>`_
+
+If you liked this recipe, try out some of the other recipes within the Aiven Terraform cookbook. 
