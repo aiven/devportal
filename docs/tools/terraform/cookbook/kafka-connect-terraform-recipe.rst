@@ -1,11 +1,9 @@
 Connect Apache Kafka® to OpenSearch with Terraform
 ==========================================================
 
-`Kafka Connect <https://aiven.io/kafka-connect>`_ helps simplify getting data in and out of Kafka. Kafka Connectors can either be source (for pulling data from other systems into Kafka) or sink connectors (for pushing data into other systems from Kafka).
-This recipe for the Terraform cookbook includes an Aiven for Kafka service, an Aiven for Apache Kafka® Connect, an Aiven for OpenSearch® service, and the integrations among these services.
-
-Setup
-=====
+This example shows how to use a Kafka Connector to take data from Apache Kafka and ingest it into OpenSearch using `Apche Kafka Connect <https://aiven.io/kafka-connect>`_. The data here is application logs going onto a Kafka topic, and being put into OpenSearch for short term storage and easy inspection, if needed.
+Aiven has a concept of `service integrations <WIP blog on service integration will go here>`_ to manage the relationships between components. `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_
+has a specific resource type in Terraform for service integration. 
 
 The problem that we're trying to solve is to get data out of Kafka and into OpenSeach. We're using a Kafka Connect service to make this happen. Because these services are created programmatically, we'll also need to link the services together.
 Before looking at the Terraform script, let's visually realize how the services will be connected:
@@ -13,11 +11,11 @@ Before looking at the Terraform script, let's visually realize how the services 
 .. mermaid::
 
     flowchart LR
-        Kafka --> |Kafka Connect Service Integration| KafkaConnect
-        KafkaConnect --> | Kafka Connector OpenSearch Sink | OpenSearch
+        Kafka --> Kafka-Connect-Service-Integration --> KafkaConnect
+        KafkaConnect --> | OpenSearch-Sink-Connector | OpenSearch
 
-Let's cook
-==========
+Describe the setup
+==================
 
 There are four different Terraform files - each serving a specific purpose. Let's go over each of these files.
 
