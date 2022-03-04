@@ -1,161 +1,272 @@
 List of available extensions
 ============================
 
-The following PostgreSQL extensions are available. Please note that some of the extensions have dependencies and they need to be created in the proper order. Also some extensions may require disconnecting the client connection and reconnecting before they are fully available.
+The following PostgreSQL extensions are available. Please note that some of the extensions have dependencies and they need to be created in the proper order. Some extensions may require disconnecting the client connection and reconnecting before they are fully available.  To check the details, including the version number of the extension, run ``select * from pg_available_extensions`` in your Aiven for PostgreSQL server.
+
+.. |PG10only| replace:: :badge:`PG10 only,cls=badge-secondary text-black badge-pill`
+.. |PG11onwards| replace:: :badge:`PG11 and newer,cls=badge-secondary text-black badge-pill`
+.. |PG11earlier| replace:: :badge:`PG11 and earlier,cls=badge-secondary text-black badge-pill`
+.. |PG13onwards| replace:: :badge:`PG13 and newer,cls=badge-secondary text-black badge-pill`
+.. |PG14only| replace:: :badge:`PG14 only,cls=badge-secondary text-black badge-pill`
 
 Data types
 ----------
 
-``hll`` - https://github.com/citusdata/postgresql-hll
-    Data type ``hll`` is a HyperLogLog data structure
-
-``hstore`` - https://www.postgresql.org/docs/current/hstore.html
-    Store sets of key/value pairs as a single PostgreSQL value
+``chkpass`` - https://www.postgresql.org/docs/10/chkpass.html
+    Data type for auto-encrypted passwords. |PG10only| 
 
 ``citext`` - https://www.postgresql.org/docs/current/citext.html
-    Data type ``citext`` is a case-insensitive character string type
-
-``unit`` - https://github.com/df7cb/postgresql-unit
-    Data type for SI units
+    Data type for case-insensitive character strings.
 
 ``cube`` - https://www.postgresql.org/docs/current/cube.html
-    Data type ``cube`` to represent multidimensional cubes
+    Data type for multidimensional cubes.
+
+``hll`` - https://github.com/citusdata/postgresql-hll
+    Type for storing ``hyperloglog`` data.  |PG11onwards|
+
+``hstore`` - https://www.postgresql.org/docs/current/hstore.html
+    Data type for storing sets of (key, value) pairs.
 
 ``isn`` - https://www.postgresql.org/docs/current/isn.html
-    Data types for international product numbering standards
+    Data types for international product numbering standards.
 
 ``ltree`` - https://www.postgresql.org/docs/current/ltree.html
-    Data type ``ltree`` for representing labels of data
+    Data type for hierarchical tree-like structures.
+
+``seg`` - https://www.postgresql.org/docs/current/seg.html
+    Data type for representing line segments or floating-point intervals.
 
 ``timescaledb`` - https://github.com/timescale/timescaledb
-    Support for time series data types and functions
+    Enables scalable inserts and complex queries for time-series data.
+
+``unit`` - https://github.com/df7cb/postgresql-unit
+    SI units extension.
 
 ``uuid-ossp`` - https://www.postgresql.org/docs/current/uuid-ossp.html
-    Additional support for generating UUIDs and special UUID constants
-
+    Generate universally unique identifiers (UUIDs).
 
 Search and text handling
 ------------------------
 
-``fuzzystrmatch`` - https://www.postgresql.org/docs/current/fuzzystrmatch.html
-    Determine similarities and differences between strings
-
-``pg_similarity`` - https://github.com/eulerto/pg_similarity
-    PostgreSQL 13 and newer. Support for similarity queries on PostgreSQL
-
 ``bloom`` - https://www.postgresql.org/docs/current/bloom.html
-    Provides an index access method based on Bloom filters
-
-``unaccent`` - https://www.postgresql.org/docs/current/unaccent.html
-    Filtering dictionary to remove accented characters and enable accent-insensitive text processing 
+    Bloom access method - signature file based index.
 
 ``btree_gin`` - https://www.postgresql.org/docs/current/btree-gin.html
-    Support for GIN-based indexes to speed up full text searches
-
-``rum`` - https://github.com/postgrespro/rum
-    Support for RUM-based indexes to improve full text search
+    Support for indexing common data types in GIN.
 
 ``btree_gist`` - https://www.postgresql.org/docs/current/btree-gist.html
-    Support for GIST-based indexes to speed up full text searches
+    Support for indexing common data types in GiST.
 
 ``dict_int`` - https://www.postgresql.org/docs/current/dict-int.html
-    Add-on dictionary to allow integers to be indexed for full-text search
+    Text search dictionary template for integers.
+
+``dict_xsyn`` - https://www.postgresql.org/docs/current/dict-xsyn.html
+    Text search dictionary template for extended synonym processing.
+
+``fuzzystrmatch`` - https://www.postgresql.org/docs/current/fuzzystrmatch.html
+    Determine similarities and distance between strings.
+
+``pg_similarity`` - https://github.com/eulerto/pg_similarity
+    Support similarity queries.  |PG13onwards|
 
 ``pg_trgm`` - https://www.postgresql.org/docs/current/pgtrgm.html
-    Determine similarity of text based on trigram matching
+    Text similarity measurement and index searching based on trigrams.
 
 ``pgcrypto`` - https://www.postgresql.org/docs/current/pgcrypto.html
-    Cryptographic functions for PostgreSQL
+    Cryptographic functions.
+
+``rum`` - https://github.com/postgrespro/rum
+    RUM index access method.
+
+``unaccent`` - https://www.postgresql.org/docs/current/unaccent.html
+    Text search dictionary that removes accents.
+
+
+Auditing
+------------------------
+
+``insert_username`` - https://www.postgresql.org/docs/current/contrib-spi.html#id-1.11.7.47.7
+    Functions for tracking who changed a table.
+
+``moddatetime`` - https://www.postgresql.org/docs/10/contrib-spi.html#id-1.11.7.46.9
+    Functions for tracking last modification time.
+
+``pgaudit`` - https://www.pgaudit.org/
+    Provides auditing functionality.  |PG11onwards|
+
+``tcn`` - https://www.postgresql.org/docs/current/tcn.html
+    Triggered change notifications.
+
 
 Geographical features
 ---------------------
 
-``postgis`` - https://postgis.net/
-    Support for geographic objects and spatial database features such as location awareness
-
-``postgis_address_standardizer`` - https://postgis.net/docs/standardize_address.html
-    PostgreSQL 10 and newer, a PostGIS-powered feature to produce a standard address format
-
-``postgis_sfcgal`` - http://postgis.net/docs/reference.html#reference_sfcgal
-    Computational geometry support for spatial database features
-
-``postgis_tiger_geocoder`` - https://postgis.net/docs/Extras.html#Tiger_Geocoder
-    Geocoder and reverse geocoder to work with the TIGER database
-
-``postgis_topology`` - https://postgis.net/docs/Topology.html
-    Data types and functions to work with topological objects
-
-``postgis_legacy`` 
-    The extension is not packaged or supported as an extension by the PostGIS project. The extension package is provided by Aiven for Aiven users.
-
 ``address_standardizer`` - https://postgis.net/docs/standardize_address.html
-    Returns a standard address format from certain rules
+    Used to parse an address into constituent elements. Generally used to support geocoding address normalization step.
 
 ``address_standardizer_data_us`` - https://postgis.net/docs/standardize_address.html
-    Returns a standard US address format from certain rules
+    ``Address standardizer`` US dataset example.
 
 ``earthdistance`` - https://www.postgresql.org/docs/current/earthdistance.html
-    Calculate great circle distances on the surface of the earth
+    Calculate great-circle distances on the surface of the Earth.
 
 ``pgrouting`` - https://github.com/pgRouting/pgrouting
-    Geospatial routing and network analysis, extends PostGIS
+    Extends the PostGIS/PostgreSQL geospatial database to provide geospatial routing and other network analysis functionality.
+
+``postgis`` - https://postgis.net/
+    PostGIS geometry and geography spatial types and functions.
+
+``postgis_legacy`` - https://postgis.net/
+    Legacy functions for PostGIS.
+
+``postgis_raster`` - https://postgis.net/docs/RT_reference.html
+    PostGIS raster types and functions.
+
+``postgis_sfcgal`` - http://postgis.net/docs/reference.html#reference_sfcgal
+    PostGIS SFCGAL functions.
+
+``postgis_tiger_geocoder`` - https://postgis.net/docs/Extras.html#Tiger_Geocoder
+    PostGIS tiger geocoder and reverse geocoder.
+
+``postgis_topology`` - https://postgis.net/docs/Topology.html
+    PostGIS topology spatial types and functions.
+
+
+Procedural language
+-------------------
+
+``plcoffee`` - https://github.com/plv8/plv8
+    PL/CoffeeScript (v8) trusted procedural language.  |PG10only|
+
+``plls`` - https://github.com/plv8/plv8
+    PL/LiveScript (v8) trusted procedural language.  |PG10only|
+
+``plperl`` - https://www.postgresql.org/docs/current/plperl.html
+    PL/Perl procedural language.
+
+``plperlu`` - https://www.postgresql.org/docs/current/plperl-trusted.html
+    PL/PerlU untrusted procedural language.
+
+``plpgsql`` - https://www.postgresql.org/docs/current/plpgsql.html
+    PL/pgSQL procedural language.
+
+``plv8`` - https://github.com/plv8/plv8
+    PL/JavaScript (v8) trusted procedural language.  |PG10only|
 
 
 Connectivity
 ------------
 
-``postgres_fdw`` - https://www.postgresql.org/docs/current/postgres-fdw.html
-    Foreign data wrapper to enable access to data stored in external PostgreSQL servers
-
 ``dblink`` - https://www.postgresql.org/docs/current/contrib-dblink-function.html
-    Allow execution of queries on a remote database
+    Connect to other PostgreSQL databases from within a database.
+
+``file_fdw`` - https://www.postgresql.org/docs/current/file-fdw.html
+    Foreign-data wrapper for flat file access.
+
+``postgres_fdw`` - https://www.postgresql.org/docs/current/postgres-fdw.html
+    Foreign-data wrapper for remote PostgreSQL servers.
 
 
 Utilities
 ---------
 
 ``aiven_extras`` - https://github.com/aiven/aiven-extras
-    Aiven-created extension to enable non-superusers to access certain database features, such as logical replication support
+    This extension is meant for use in environments where you want non-superusers to be able to use certain database features.
+
+``amcheck`` - https://www.postgresql.org/docs/current/amcheck.html
+    Functions for verifying relation integrity.
+
+``autoinc`` - https://www.postgresql.org/docs/current/contrib-spi.html#id-1.11.7.47.6
+    Functions for auto-incrementing fields.
+
+``bool_plperl`` - https://www.postgresql.org/docs/current/plperl-funcs.html
+    Transform between ``bool`` and ``plperl``.  |PG13onwards|
+
+``bool_plperlu`` - https://www.postgresql.org/docs/current/plperl-funcs.html
+    Transform between ``bool`` and ``plperlu``.  |PG13onwards|
+
+``hstore_plperl`` - https://www.postgresql.org/docs/current/hstore.html
+    Transform between ``hstore`` and ``plperl``.
+
+``hstore_plperlu`` - https://www.postgresql.org/docs/current/hstore.html
+    Transform between ``hstore`` and ``plperlu``.
 
 ``intagg`` - https://www.postgresql.org/docs/current/intagg.html
-    Integer aggregator and enumerator (note that built-in functions provide these capabilities; the extension is still supported for compatibility)
+    Integer aggregator and enumerator (obsolete).
 
 ``intarray`` - https://www.postgresql.org/docs/current/intarray.html
-    Functions and operators for manipulating arrays of integers
+    Functions, operators, and index support for 1-D arrays of integers.
+
+``jsonb_plperl`` - https://www.postgresql.org/docs/current/datatype-json.html
+    Transform between ``jsonb`` and ``plperl``.
+
+``jsonb_plperlu`` - https://www.postgresql.org/docs/current/datatype-json.html
+    Transform between ``jsonb`` and ``plperlu``.
+
+``lo`` - https://www.postgresql.org/docs/current/lo.html
+    Large Object maintenance.
+
+``old_snapshot`` - https://www.postgresql.org/docs/current/oldsnapshot.html
+    Utilities in support of old_snapshot_threshold.  |PG14only|
+
+``pageinspect`` - https://www.postgresql.org/docs/current/pageinspect.html
+    Inspect the contents of database pages at a low level.
 
 ``pg_buffercache`` - https://www.postgresql.org/docs/current/pgbuffercache.html
-    Examine the shared buffer cache in real time
+    Examine the shared buffer cache.
 
 ``pg_cron`` - https://github.com/citusdata/pg_cron
-    Simple cron-based support for running period jobs in PostgreSQL
+    Job scheduler for PostgreSQL.
+
+``pg_freespacemap`` - https://www.postgresql.org/docs/current/pgfreespacemap.html
+    Examine the free space map (FSM).
+
+``pg_partman`` - https://github.com/pgpartman/pg_partman
+    Extension to manage partitioned tables by time or ID.
+
+``pg_prewarm`` - https://www.postgresql.org/docs/current/pgprewarm.html
+    Prewarm relation data.
 
 ``pg_prometheus`` - https://github.com/timescale/pg_prometheus
-    PostgreSQL 12 and older, the extension has been sunset by Timescale in favor of ``promscale``
+    Prometheus metrics for PostgreSQL.
 
 ``pg_repack`` - https://pgxn.org/dist/pg_repack/1.4.6/
-    Reorganize tables and indexes in PostgreSQL with the database online, with minimal locking
+    Reorganize tables in PostgreSQL databases with minimal locks.
 
 ``pg_stat_statements`` - https://www.postgresql.org/docs/current/pgstatstatements.html
-    Track and plan execution statistics of SQL statements
+    Track planning and execution statistics of all SQL statements executed.
+
+``pg_surgery`` - https://www.postgresql.org/docs/current/pgsurgery.html
+    Extension to perform surgery on a damaged relation.  |PG14only|
+
+``pg_visibility`` - https://www.postgresql.org/docs/current/pgvisibility.html
+    Examine the visibility map (VM) and page-level visibility info.
 
 ``pgrowlocks`` - https://www.postgresql.org/docs/current/pgrowlocks.html
-    Show row locking information for a table
+    Show row-level locking information.
 
 ``pgstattuple`` - https://www.postgresql.org/docs/current/pgstattuple.html
-    PostgreSQL 11 and later. Provides functions to obtain tuple-level statistics
+    Show tuple-level statistics.
 
-``plperl`` - https://www.postgresql.org/docs/current/plperl.html
-    Write your functions and procedures in Perl
+``refint`` - https://www.postgresql.org/docs/current/contrib-spi.html#id-1.11.7.47.5
+    Functions for implementing referential integrity (obsolete).
 
 ``sslinfo`` - https://www.postgresql.org/docs/current/sslinfo.html
-    Information about the SSL certificate used by the current client
+    Information about SSL certificates.
 
 ``tablefunc`` - https://www.postgresql.org/docs/current/tablefunc.html
-    Support for functions that return multiple rows
+    Functions that manipulate whole tables, including ``crosstab``.
+
+``timetravel`` - https://www.postgresql.org/docs/6.3/c0503.htm
+    Functions for implementing time travel.  |PG11earlier|
 
 ``tsm_system_rows`` - https://www.postgresql.org/docs/current/tsm-system-rows.html
-    Table sampling method
+    TABLESAMPLE method which accepts number of rows as a limit.
 
-``wal2json`` - https://github.com/eulerto/wal2json
-    Output plugin to produce JSON objects for logical decoding
+``tsm_system_time`` - https://www.postgresql.org/docs/current/tsm-system-time.html
+    TABLESAMPLE method which accepts time in milliseconds as a limit.
+
+``xml2`` - https://www.postgresql.org/docs/current/xml2.html
+    XPath querying and XSLT.
+
 
