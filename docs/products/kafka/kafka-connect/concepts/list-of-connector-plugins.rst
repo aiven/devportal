@@ -40,11 +40,13 @@ Sink connectors enable the integration of data from an existing Apache Kafka top
 
 * :doc:`Aiven for Apache Kafka S3 Sink Connector <../howto/s3-sink-connector-aiven>`
 
-* `Confluent Amazon S3 Sink <https://help.aiven.io/kafka/aiven-kafka-kafka-connect-s3>`__
+* `Confluent Amazon S3 Sink <https://developer.aiven.io/docs/products/kafka/kafka-connect/howto/s3-sink-connector-confluent>`__
 
 * `Couchbase <https://github.com/couchbase/kafka-connect-couchbase>`__
 
-* `Elasticsearch <https://help.aiven.io/kafka/aiven-kafka-elasticsearch-sink-connector>`__
+* `OpenSearch <https://developer.aiven.io/docs/products/kafka/kafka-connect/howto/opensearch-sink.html>`__
+
+* `Elasticsearch <https://developer.aiven.io/docs/products/kafka/kafka-connect/howto/elasticsearch-sink>`__
 
 * `Google BigQuery <https://github.com/wepay/kafka-connect-bigquery>`__
 

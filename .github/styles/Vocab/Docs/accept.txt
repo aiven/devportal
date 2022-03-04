@@ -34,8 +34,10 @@ etcd
 failover
 fileset[s]?
 Flink
+Gantt
 [Gg]eocoder
 geocoding
+geohash
 Geomap
 [Gg]eospatial
 GitHub
@@ -96,6 +98,7 @@ Protobuf
 Prometheus
 psql
 Python
+[Rr]ebalancing
 Redis
 Redli
 refcard
@@ -109,6 +112,7 @@ Simple Authentication and Security Layer
 Singlestat
 Splunk
 [Ss]pring
+Stackdriver
 Statusmap
 Stunnel
 [Ss]ubnet
@@ -128,6 +132,7 @@ unencrypted
 [Uu]psert
 wget
 Workbench
+Worldmap
 Zabbix
 Zipkin
 ZooKeeper
