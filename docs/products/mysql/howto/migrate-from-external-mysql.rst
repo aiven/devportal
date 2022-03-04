@@ -39,7 +39,7 @@ To review the current GTID setting, run the following command on the source clus
 .. Note::
     If you are migrating from MySQL in GCP, you need to enable backups with `PITR <https://cloud.google.com/sql/docs/mysql/backup-recovery/pitr>`_ for GTID to be set to 'on'
 
-2. Create a user in the source database with sufficient privileges for the pre-flight checks, the ``mysqldump``, and the ongoing replication (you can substitue `%` here for the IP address of the Aiven for MySQL database, if it already exists)::
+2. Create a user in the source database with sufficient privileges for the pre-flight checks, the ``mysqldump``, and the ongoing replication (you can substitute `%` here for the IP address of the Aiven for MySQL database, if it already exists)::
 
     create user 'SRC_USERNAME'@'%' identified by 'SRC_PASSWORD';
     grant replication slave on *.* TO 'SRC_USERNAME'@'%';
