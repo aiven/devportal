@@ -43,15 +43,15 @@ The index is described with the following JSON:
 | description   | Short document description, used in help center results under the title text                                                                             |
 | content       | Main document content                                                                                                                                    |
 | source        | Document source, currently either `devportal` or `helpcenter`                                                                                            |
-| sort_priority | Document sort priority in search results, smaller priority documents are shown first and same priority documents are sorted by Elasticsearch query score |
+| sort_priority | Document sort priority in search results, smaller priority documents are shown first and same priority documents are sorted by OpenSearch query score |
 
 In addition to these `url` field should be provided with every document but it is not indexed or used in search queries. `url` is used in search result `href`.
 
 ## Search query
 
-The Elasticsearch index is used through the Netlify function in [netlify/functions/search/search.js](netlify/functions/search/search.js). The exact query can be found in the file but the idea is:
+The OpenSearch index is used through the Netlify function in [netlify/functions/search/search.js](netlify/functions/search/search.js). The exact query can be found in the file but the idea is:
 
-- use OR-style query matching `title`, `description` and `content` (with ES `match_phrase_prefix`)
+- use OR-style query matching `title`, `description` and `content` (with OS `match_phrase_prefix`)
 - give higher value to `title`
 
 # Creating the index
@@ -59,7 +59,7 @@ The Elasticsearch index is used through the Netlify function in [netlify/functio
 The index is created with [scripts/create_index.py](scripts/create_index.py). You can run it with
 
 ```
-make create-index ES_URL=https://es.url/here
+make create-index ES_URL=https://opensearch-url/here
 ```
 
 This can be run multiple times and has to be run at least once before the other commands that add documents to the index.
@@ -97,10 +97,10 @@ Using `elasticsearch` library:
 
 ```python
 import hashlib
-from elasticsearch import Elasticsearch
+from opensearchpy import OpenSearch
 
 # Create the client instance
-es = Elasticsearch(['https://elasticsearch.url/here'])
+os_client = OpenSearch(['https://opensearch.url/here'], use_ssl=True)
 
 # Loop:
 
@@ -115,7 +115,7 @@ document = {
 }
 
 # Send the document to the index
-es.index(index='devportal',
+os_client.index(index='devportal',
          body=document,
          id=hashlib.sha256(page['url'].encode("utf-8")).hexdigest())
 ```
