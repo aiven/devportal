@@ -38,6 +38,7 @@ fileset
 filesets
 Flink
 geocoder
+geocoding
 Geomap
 geospatial
 GitHub
@@ -128,7 +129,7 @@ truststore
 truststores
 Uber
 unencrypted
-Untrusted
+untrusted
 unaggregated
 upsert
 wget
