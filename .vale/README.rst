@@ -512,6 +512,8 @@ It lives in ``.github``. Where I wasn't looking.
 
 I think that there should either be a reference to it in the README (probably the best option), or it should be moved to the top level (which is where I'd expect it, but that doesn't make that the right choice).
 
+https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/setting-guidelines-for-repository-contributors seems to indicate that it doesn't matter whether the CONTRIBUTING guide is at the top level or in ``.github`` - in either case it should get shown when someone does a PR (as it was to me).
+
 Pedanting the CONTRIBUTING document
 -----------------------------------
 
