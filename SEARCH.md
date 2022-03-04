@@ -1,6 +1,6 @@
 # Aiven Developer Portal custom search
 
-Aiven Developer Portal uses custom Elasticsearch based search. The files related to the search are:
+Aiven Developer Portal uses custom OpenSearch based search. The files related to the search are:
 
 - the search results page [\_templates/search.html](_templates/search.html)
 - the search form for the sidebar [\_templates/sidebar/search.html](_templates/sidebar/search.html)
@@ -30,7 +30,7 @@ The index is described with the following JSON:
             "type": "keyword"
         },
         "sort_priority": {
-            "type": "interger"
+            "type": "integer"
         }
     }
     }
