@@ -2,7 +2,7 @@ Connect Apache Kafka® to OpenSearch with Terraform
 ==========================================================
 
 This example shows how to use a Kafka Connector to take data from Apache Kafka and ingest it into OpenSearch using `Apche Kafka Connect <https://developer.aiven.io/docs/products/kafka/kafka-connect/index.html>`_. As a use case, the data here is application logs going onto a Kafka topic, and being put into OpenSearch for short term storage and easy inspection, if needed.
-Aiven has a concept of `service integrations <WIP blog on service integration will go here>`_ to manage the relationships between components. `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_
+Aiven has a concept of `service integrations <https://developer.aiven.io/>`_ to manage the relationships between components. `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_
 has a specific resource type in Terraform for service integration. 
 
 Before looking at the Terraform script, let's visually realize how the services will be connected:
