@@ -8,6 +8,13 @@ What you'll need
     
 * The source server is publicly available or there is a virtual private cloud (VPC) peering connection between the private networks, and any firewalls are open to allow traffic between the source and target servers.
 * You have user account on the source server with sufficient privileges to create a user for the replication process.
+* Ensure that `GTID <https://dev.mysql.com/doc/refman/8.0/en/replication-gtids.html>`_ is enabled on the source database.  To review the current GTID setting, run the following command on the source cluster::
+
+    show global variables like 'gtid_mode';
+
+.. Note::
+    If you are migrating from MySQL in GCP, you need to enable backups with `PITR <https://cloud.google.com/sql/docs/mysql/backup-recovery/pitr>`_ for GTID to be set to 'on'
+
 
 Variables
 '''''''''
@@ -30,26 +37,17 @@ Variable             Description
 -> Perform the migration
 ---------------------------
 
-1. Ensure that `GTID <https://dev.mysql.com/doc/refman/8.0/en/replication-gtids.html>`_ is enabled on the source database
-
-To review the current GTID setting, run the following command on the source cluster::
-
-    show global variables like 'gtid_mode';
-
-.. Note::
-    If you are migrating from MySQL in GCP, you need to enable backups with `PITR <https://cloud.google.com/sql/docs/mysql/backup-recovery/pitr>`_ for GTID to be set to 'on'
-
-2. Create a user in the source database with sufficient privileges for the pre-flight checks, the ``mysqldump``, and the ongoing replication (you can substitute `%` here for the IP address of the Aiven for MySQL database, if it already exists)::
+1. Create a user in the source database with sufficient privileges for the pre-flight checks, the ``mysqldump``, and the ongoing replication (you can substitute `%` here for the IP address of the Aiven for MySQL database, if it already exists)::
 
     create user 'SRC_USERNAME'@'%' identified by 'SRC_PASSWORD';
     grant replication slave on *.* TO 'SRC_USERNAME'@'%';
     grant select,process,event on *.* to 'SRC_USERNAME'@'%'
 
-3. If you don't have an Aiven for MySQL database yet, run the following command to create one via :doc:`../../../tools/cli` substituting the parameters accordingly::
+2. If you don't have an Aiven for MySQL database yet, run the following command to create one via :doc:`../../../tools/cli` substituting the parameters accordingly::
 
     avn service create -t mysql -p DEST_PLAN DEST_NAME
 
-4. Set the migration details via :doc:`../../../tools/cli` substituting the parameters accordingly::
+3. Set the migration details via :doc:`../../../tools/cli` substituting the parameters accordingly::
 
     avn service update \
         -c migration.dbname=SRC_DATABASE \
@@ -60,7 +58,7 @@ To review the current GTID setting, run the following command on the source clus
         -c migration.ssl=SRC_SSL \
         DEST_NAME
 
-5. Check the migration status via :doc:`../../../tools/cli`::
+4. Check the migration status via :doc:`../../../tools/cli`::
 
     avn --show-http service migration-status DEST_NAME
 
