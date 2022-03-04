@@ -13,12 +13,12 @@ Before looking at the Terraform script, let's visually realize how the services 
         Kafka --> Kafka-Connect-Service-Integration --> KafkaConnect
         KafkaConnect --> | OpenSearch-Sink-Connector | OpenSearch
 
-In the above diagram, **KafkaConnect** is the service that you create for connecting Kafka with external systems. The Kafka Connectors, **OpenSearch Sink Connector** for example, are ready-to-use components to send/receive data to common data sources/sinks. 
+In the above diagram, *KafkaConnect* is the service that you create for connecting Kafka with external systems. The Kafka Connectors, *OpenSearch Sink Connector* for example, are ready-to-use components to send/receive data to common data sources/sinks. 
 
 Describe the setup
 ==================
 
-Here is the sample Terraform file to stand-up and connect all the services. Keep in mind that some parameters and configurations will vary for your case.
+Here is the sample Terraform file to stand-up and connect all the services. Keep in mind that some parameters and configurations will vary for your case. A reference to the Kafka and OpenSearch configurations are added at the end of this document.
 
 ``services.tf`` file:
 
@@ -120,7 +120,7 @@ Here is the sample Terraform file to stand-up and connect all the services. Keep
    }
 
 This file creates three Aiven services - a Kafka service, a Kafka Connect service, and an OpenSearch service. Two service integrations among these three services and a Kafka topic within the Kafka service will also be created from this Terraform file.
-To validate, produce some messages on the Kafka topic and you should be seeing those appear on OpenSearch indices. 
+To validate, produce some messages on the Kafka topic and you should be seeing those appear on OpenSearch indices. If you require some guidance, refer to the `setting up your first Terraform project <https://developer.aiven.io/>`_.
 
 Wrap up
 =======
