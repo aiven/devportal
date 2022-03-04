@@ -3,11 +3,17 @@ List of available extensions
 
 The following PostgreSQL extensions are available. Please note that some of the extensions have dependencies and they need to be created in the proper order. Some extensions may require disconnecting the client connection and reconnecting before they are fully available.  To check the details, including the version number of the extension, run ``select * from pg_available_extensions`` in your Aiven for PostgreSQL server.
 
+.. |PG10only| replace:: :badge:`PG10 only,cls=badge-secondary text-black badge-pill`
+.. |PG11onwards| replace:: :badge:`PG11 and newer,cls=badge-secondary text-black badge-pill`
+.. |PG11earlier| replace:: :badge:`PG11 and earlier,cls=badge-secondary text-black badge-pill`
+.. |PG13onwards| replace:: :badge:`PG13 and newer,cls=badge-secondary text-black badge-pill`
+.. |PG14only| replace:: :badge:`PG14 only,cls=badge-secondary text-black badge-pill`
+
 Data types
 ----------
 
 ``chkpass`` - https://www.postgresql.org/docs/10/chkpass.html
-    Data type for auto-encrypted passwords.  Not available after PostgreSQL 10.
+    Data type for auto-encrypted passwords. |PG10only| 
 
 ``citext`` - https://www.postgresql.org/docs/current/citext.html
     Data type for case-insensitive character strings.
@@ -16,7 +22,7 @@ Data types
     Data type for multidimensional cubes.
 
 ``hll`` - https://github.com/citusdata/postgresql-hll
-    Type for storing ``hyperloglog`` data.  Available since PostgreSQL 11.
+    Type for storing ``hyperloglog`` data.  |PG11onwards|
 
 ``hstore`` - https://www.postgresql.org/docs/current/hstore.html
     Data type for storing sets of (key, value) pairs.
@@ -61,7 +67,7 @@ Search and text handling
     Determine similarities and distance between strings.
 
 ``pg_similarity`` - https://github.com/eulerto/pg_similarity
-    Support similarity queries.  Available since PostgreSQL 13.
+    Support similarity queries.  |PG13onwards|
 
 ``pg_trgm`` - https://www.postgresql.org/docs/current/pgtrgm.html
     Text similarity measurement and index searching based on trigrams.
@@ -86,7 +92,7 @@ Auditing
     Functions for tracking last modification time.
 
 ``pgaudit`` - https://www.pgaudit.org/
-    Provides auditing functionality.  Available since PostgreSQL 11.
+    Provides auditing functionality.  |PG11onwards|
 
 ``tcn`` - https://www.postgresql.org/docs/current/tcn.html
     Triggered change notifications.
@@ -130,10 +136,10 @@ Procedural language
 -------------------
 
 ``plcoffee`` - https://github.com/plv8/plv8
-    PL/CoffeeScript (v8) trusted procedural language.  Not available after PostgreSQL 10.
+    PL/CoffeeScript (v8) trusted procedural language.  |PG10only|
 
 ``plls`` - https://github.com/plv8/plv8
-    PL/LiveScript (v8) trusted procedural language.  Not available after PostgreSQL 10.
+    PL/LiveScript (v8) trusted procedural language.  |PG10only|
 
 ``plperl`` - https://www.postgresql.org/docs/current/plperl.html
     PL/Perl procedural language.
@@ -145,7 +151,7 @@ Procedural language
     PL/pgSQL procedural language.
 
 ``plv8`` - https://github.com/plv8/plv8
-    PL/JavaScript (v8) trusted procedural language.  Not available after PostgreSQL 10.
+    PL/JavaScript (v8) trusted procedural language.  |PG10only|
 
 
 Connectivity
@@ -174,10 +180,10 @@ Utilities
     Functions for auto-incrementing fields.
 
 ``bool_plperl`` - https://www.postgresql.org/docs/current/plperl-funcs.html
-    Transform between ``bool`` and ``plperl``.  Available since PostgreSQL 13.
+    Transform between ``bool`` and ``plperl``.  |PG13onwards|
 
 ``bool_plperlu`` - https://www.postgresql.org/docs/current/plperl-funcs.html
-    Transform between ``bool`` and ``plperlu``.  Available since PostgreSQL 13.
+    Transform between ``bool`` and ``plperlu``.  |PG13onwards|
 
 ``hstore_plperl`` - https://www.postgresql.org/docs/current/hstore.html
     Transform between ``hstore`` and ``plperl``.
@@ -201,7 +207,7 @@ Utilities
     Large Object maintenance.
 
 ``old_snapshot`` - https://www.postgresql.org/docs/current/oldsnapshot.html
-    Utilities in support of old_snapshot_threshold.  Available since PostgreSQL 14.
+    Utilities in support of old_snapshot_threshold.  |PG14only|
 
 ``pageinspect`` - https://www.postgresql.org/docs/current/pageinspect.html
     Inspect the contents of database pages at a low level.
@@ -231,7 +237,7 @@ Utilities
     Track planning and execution statistics of all SQL statements executed.
 
 ``pg_surgery`` - https://www.postgresql.org/docs/current/pgsurgery.html
-    Extension to perform surgery on a damaged relation.  Available since PostgreSQL 14.
+    Extension to perform surgery on a damaged relation.  |PG14only|
 
 ``pg_visibility`` - https://www.postgresql.org/docs/current/pgvisibility.html
     Examine the visibility map (VM) and page-level visibility info.
@@ -252,7 +258,7 @@ Utilities
     Functions that manipulate whole tables, including ``crosstab``.
 
 ``timetravel`` - https://www.postgresql.org/docs/6.3/c0503.htm
-    Functions for implementing time travel.  Not available after PostgreSQL 11.
+    Functions for implementing time travel.  |PG11earlier|
 
 ``tsm_system_rows`` - https://www.postgresql.org/docs/current/tsm-system-rows.html
     TABLESAMPLE method which accepts number of rows as a limit.
