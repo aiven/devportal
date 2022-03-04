@@ -8,7 +8,7 @@ What you'll need
     
 * The source server is publicly available or there is a virtual private cloud (VPC) peering connection between the private networks, and any firewalls are open to allow traffic between the source and target servers.
 * You have user account on the source server with sufficient privileges to create a user for the replication process.
-* Ensure that `GTID <https://dev.mysql.com/doc/refman/8.0/en/replication-gtids.html>`_ is enabled on the source database.  To review the current GTID setting, run the following command on the source cluster::
+* `GTID <https://dev.mysql.com/doc/refman/8.0/en/replication-gtids.html>`_ is enabled on the source database.  To review the current GTID setting, run the following command on the source cluster::
 
     show global variables like 'gtid_mode';
 
