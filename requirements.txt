@@ -7,7 +7,7 @@ sphinx-external-toc==0.2.3
 sphinx-copybutton==0.4.0
 sphinx_gitstamp== 0.3.2
 beautifulsoup4==4.9.3
-elasticsearch==7.13.1
+opensearch-py==1.0.0
 requests==2.25.1
 psycopg2-binary==2.9.1
 sphinxext-opengraph==0.4.2
