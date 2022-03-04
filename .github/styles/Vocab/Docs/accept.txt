@@ -121,6 +121,7 @@ TaskManager
 Telegraf
 Terraform
 Terraforming
+tfvars
 TimescaleDB
 toolchain
 Transport Layer Security
