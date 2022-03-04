@@ -64,7 +64,7 @@ To review the current GTID setting, run the following command on the source clus
 
     avn --show-http service migration-status DEST_NAME
 
-Whilst the processing is ongoing, the "migration_detail.status" will be "syncing"::
+Whilst the migration process is ongoing, the "migration_detail.status" will be "syncing"::
 
     {
         "migration": {
@@ -86,7 +86,7 @@ Whilst the processing is ongoing, the "migration_detail.status" will be "syncing
     
 
 .. Note::
-    The migration will initially do a bulk-copy of your data, and then a few minutes after that has finished it will use the built-in replication feature of MySQL to commence ongoing data copying.
+    The migration will initially do a bulk-copy of your data, and then several minutes after that has finished it will use the built-in replication feature of MySQL to commence ongoing data copying.  You can see MySQL's internal status by running ``show replica status`` on the destination database.
 
 -> Stop the replication
 --------------------------
