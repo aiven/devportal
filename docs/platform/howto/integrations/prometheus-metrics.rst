@@ -138,7 +138,7 @@ View full list of metrics
 ''''''''''''''''''''''''''
 
 Aiven provides the Prometheus client via the Telegraf plugin so all the same
-metrics that are available via the Aiven InfluxDB® metrics integration are also
+metrics that are available via the Aiven for InfluxDB® metrics integration are also
 available via the Prometheus integration. You can see the full list of metrics `here
 <https://help.aiven.io/en/articles/5144867-aiven-service-metrics>`_.
 
