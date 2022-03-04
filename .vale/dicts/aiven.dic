@@ -1,4 +1,4 @@
-137
+138
 ACL
 ACLs
 Aiven
@@ -102,6 +102,7 @@ Protobuf
 Prometheus
 psql
 Python
+rebalancing
 Redis
 Redli
 refcard
