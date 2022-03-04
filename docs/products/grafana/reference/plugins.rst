@@ -1,7 +1,7 @@
 List of available plugins
 =========================
 
-The following plugins are available in all installations of Aiven for Grafana, and they are updated at intervals. To request additional plugins, please reach out to our support team at ``support@aiven.io``.
+The following plugins are available in all installations of Aiven for Grafana®G, and they are updated at intervals. To request additional plugins, please reach out to our support team at ``support@aiven.io``.
 
 Panel plugins
 -------------
@@ -99,7 +99,7 @@ Table - `Grafana <https://grafana.com/grafana/plugins/table/>`__
     Supports both multiple modes for time series as well as for table, annotation and raw JSON data. It also provides date formatting and value formatting and coloring options.
 
 Text - `Grafana <https://grafana.com/grafana/plugins/text/>`__
-    A simple panel that displays text. The source text is written in markdown so that you can format the text.
+    A simple panel that displays text. The source text is written in markdown so that you can format it.
 
 Time series
     Allows for visualizing time series data.
@@ -107,7 +107,7 @@ Time series
 Welcome
     Included with Grafana.
 
-Worldmap Panel - `GitHub <https://github.com/grafana/worldmap-panel>`__
+`Worldmap` Panel - `GitHub <https://github.com/grafana/worldmap-panel>`__
     Displays time series data or geohash data from Elasticsearch overlaid on a world map.
 
 
@@ -116,7 +116,7 @@ Data source plugins
 Azure Monitor - `Grafana <https://grafana.com/grafana/plugins/grafana-azure-monitor-datasource/>`__ | `GitHub <https://github.com/grafana/azure-monitor-datasource>`__
     Provides a single source for monitoring Azure resources. 
 
-ClickHouse - `GitHub <https://github.com/Vertamedia/clickhouse-grafana>`__
+ClickHouse® - `GitHub <https://github.com/Vertamedia/clickhouse-grafana>`__
     Provides support for ClickHouse as a backend database.
 
 CloudWatch - `Grafana <https://grafana.com/grafana/plugins/cloudwatch/>`__ | `Grafana Docs <http://docs.grafana.org/datasources/cloudwatch/>`__
@@ -134,7 +134,7 @@ Google Sheets - `Grafana <https://grafana.com/grafana/plugins/grafana-googleshee
 Graphite - `Grafana <https://grafana.com/grafana/plugins/graphite/>`__ | `Grafana Docs <http://docs.grafana.org/datasources/graphite/>`__
     Quickly navigate the metric space, add functions, change function parameters and more. 
 
-InfluxDB - `Grafana <https://grafana.com/grafana/plugins/influxdb/>`__ | `Grafana Docs <http://docs.grafana.org/datasources/influxdb/>`__
+InfluxDB® - `Grafana <https://grafana.com/grafana/plugins/influxdb/>`__ | `Grafana Docs <http://docs.grafana.org/datasources/influxdb/>`__
 
 Instana - `Grafana <https://grafana.com/grafana/plugins/instana-datasource/>`__ | `GitHub <https://github.com/instana/instana-grafana-datasource>`__
     Shows metrics from Instana AI-Powered APM for dynamic applications.
@@ -157,7 +157,7 @@ OpenTSDB - `Grafana <https://grafana.com/grafana/plugins/opentsdb/>`__ | `Grafan
 Pagerduty - `Grafana <https://grafana.com/grafana/plugins/xginn8-pagerduty-datasource/>`__ | `GitHub <https://github.com/xginn8/grafana-pagerduty>`__
     Annotations-only datasource for Pagerduty events.
 
-PostgreSQL - `Grafana <https://grafana.com/grafana/plugins/postgres/>`__ | `Grafana Docs <http://docs.grafana.org/features/datasources/postgres/>`__
+PostgreSQL® - `Grafana <https://grafana.com/grafana/plugins/postgres/>`__ | `Grafana Docs <http://docs.grafana.org/features/datasources/postgres/>`__
     Allows you to query and visualize data from a PostgreSQL compatible database.
 
 Prometheus - `Grafana <https://grafana.com/grafana/plugins/prometheus/>`__ | `Grafana Docs <http://docs.grafana.org/datasources/prometheus/>`__
@@ -168,8 +168,8 @@ Prometheus AlertManager - `GitHub <https://github.com/camptocamp/grafana-prometh
 
 SimpleJson - `Grafana <https://grafana.com/grafana/plugins/grafana-simple-json-datasource/>`__ | `GitHub <https://github.com/grafana/simple-json-datasource>`__
 
-Stackdriver / Google Cloud Monitoring
-    Data source for Google's monitoring service (formerly named, and listed as, Stackdriver).
+`Stackdriver` / Google Cloud Monitoring
+    Data source for Google's monitoring service (formerly named, and listed as, `Stackdriver`).
 
 Tempo
     High volume, minimal dependency trace storage. OSS tracing solution from Grafana Labs.
@@ -191,3 +191,7 @@ worldPing - `GitHub <https://github.com/raintank/worldping-app>`__
 
 Zabbix (Application) - `Grafana <https://grafana.com/grafana/plugins/alexanderzobnin-zabbix-app/>`__ | `GitHub <https://github.com/alexanderzobnin/grafana-zabbix>`__
     Visualizes your Zabbix metrics.
+
+------
+
+*Elasticsearch is a trademark of Elasticsearch B.V., registered in the U.S. and in other countries.*
