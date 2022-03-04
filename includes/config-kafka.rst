@@ -42,7 +42,10 @@
 
 
 ``privatelink_access`` => *object*
-  **Allow access to selected service components through Privatelink**
+  **Allow access to selected service components through Privatelink** 
+
+  ``jolokia`` => *boolean*
+    **Enable jolokia** None
 
   ``kafka`` => *boolean*
     **Enable kafka** None
@@ -52,6 +55,9 @@
 
   ``kafka_rest`` => *boolean*
     **Enable kafka_rest** None
+
+  ``prometheus`` => *boolean*
+    **Enable prometheus** None
 
   ``schema_registry`` => *boolean*
     **Enable schema_registry** None

@@ -57,6 +57,9 @@
   ``mysqlx`` => *boolean*
     **Enable mysqlx** None
 
+  ``prometheus`` => *boolean*
+    **Enable prometheus** None
+
 
 
 ``public_access`` => *object*
