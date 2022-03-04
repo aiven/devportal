@@ -14,18 +14,18 @@ Variables
 
 You can use the following variables in the code samples provided:
 
-==================   =====================================================================================
+==================   =========================================================================================
 Variable             Description
-==================   =====================================================================================
+==================   =========================================================================================
 ``SRC_HOSTNAME``     Hostname for source MySQL connection
 ``SRC_PORT``         Port for source MySQL connection
 ``SRC_DATABASE``     Database name for source MySQL connection
 ``SRC_USERNAME``     Username for source MySQL connection
 ``SRC_PASSWORD``     Password for source MySQL connection
 ``SRC_SSL``          SSL setting for source MySQL connection
-``DEST_NAME``        Name of the Aiven destination MySQL service
-``DEST_PLAN``        Aiven plan for the Aiven destination MySQL service (e.g. startup-4, business-32, etc)
-==================   =====================================================================================
+``DEST_NAME``        Name of the destination Aiven for MySQL service
+``DEST_PLAN``        Aiven plan for the destination Aiven for MySQL service (e.g. startup-4, business-32, etc)
+==================   =========================================================================================
   
 -> Perform the migration
 ---------------------------
