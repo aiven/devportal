@@ -3,7 +3,7 @@ Set up your first Terraform project
 
 This example shows the setup for a sample Terraform project and some useful commands to stand up (and destroy) your data infrastructure.
 
-1. *provider.tf* file:
+1. ``provider.tf`` file:
 
 .. code:: bash
 
@@ -26,7 +26,7 @@ Following `Aiven Terraform Provider doc <https://registry.terraform.io/providers
 
 Make sure the owner of the API Authentication Token has admin permissions in Aiven.
 
-2. *variables.tf* file:
+2. ``variables.tf`` file:
 
 .. code:: bash
 
@@ -40,9 +40,9 @@ Make sure the owner of the API Authentication Token has admin permissions in Aiv
       type        = string
    }
 
-Avoid including sensitive values in configuration files that are under source control. Rather than using sensitive information within this *variables.tf* file, you can use a `*.tfvars` file so that Terraform receives the values during runtime.
+Avoid including sensitive values in configuration files that are under source control. Rather than using sensitive information within this *variables.tf* file, you can use a ``*.tfvars`` file so that Terraform receives the values during runtime.
 
-3. *var-values.tfvars* file:
+3. ``var-values.tfvars`` file:
 
 .. code:: bash
 
@@ -51,7 +51,7 @@ Avoid including sensitive values in configuration files that are under source co
 
 This is where you put the actual values for Aiven API token and Aiven console project name. This file is passed to Terraform using the ``-var-file=`` flag.
 
-4. *services.tf* file:
+4. ``services.tf`` file:
 
 .. code:: bash
 
