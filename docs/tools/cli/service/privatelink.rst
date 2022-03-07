@@ -137,8 +137,7 @@ Deletes an AWS PrivateLink defined for a service.
   * - ``--format``
     - Format of the output string
 
-**Example:** Delete the AWS PrivateLink for the ``kafka-12a3b4c5`` service. The deletion can take some time to complete. You can check the status by running ``avn service privatelink aws get``.
-
+**Example:** Delete the AWS PrivateLink for the ``kafka-12a3b4c5`` service. 
 ::
 
     avn service privatelink aws delete kafka-12a3b4c5
@@ -150,6 +149,11 @@ An example of output:
     AWS_SERVICE_ID              AWS_SERVICE_NAME                                         PRINCIPALS                                 STATE   
     ==========================  =======================================================  =========================================  ========
     vpce-svc-1234567890abc1234  com.amazonaws.vpce.us-east-1.vpce-svc-1234567890abc1234  arn:aws:iam::123456789012:user/cloud_user  deleting
+
+.. Tip::
+
+  The deletion can take some time to complete. You can check the status by running ``avn service privatelink aws get``.
+
 
 .. _avn_service_privatelink_aws_get:
 
@@ -211,7 +215,9 @@ Updates AWS PrivateLink principals for a service. To update multiple principals,
 
 ::
 
-    avn service privatelink aws update --principal 'arn:aws:iam::123456789012:user/cloud_user' kafka-12a3b4c5
+    avn service privatelink aws update                        \
+      --principal 'arn:aws:iam::123456789012:user/cloud_user' \
+      kafka-12a3b4c5
 
 An example of output:
 
@@ -319,7 +325,10 @@ Updates an Azure PrivateLink connection with the Private IP address of the priva
 
 ::
 
-    avn service privatelink azure connection update --endpoint-ip-address 10.19.1.4 kafka-12a3b4c5 plc12345abcdef
+    avn service privatelink azure connection update   \
+      --endpoint-ip-address 10.19.1.4                 \
+      kafka-12a3b4c5                                  \
+      plc12345abcdef
 
 An example of output:
 
@@ -355,7 +364,10 @@ Creates an Azure PrivateLink for a service.
 
 ::
 
-    avn service privatelink azure create --user-subscription-id 12345678-90ab-cdef-0987-6543210abcde kafka-12a3b4c5
+    avn service privatelink azure create    \
+      --user-subscription-id                \
+      12345678-90ab-cdef-0987-6543210abcde  \
+      kafka-12a3b4c5
 
 An example of output:
 
