@@ -21,7 +21,7 @@ What you'll need
 In order to use the **logical replication** method, you'll need the following:
     
 * PostgreSQL version is 10 or higher.
-* Superuser access credentials to the source cluster or the ``aiven-extras`` extension installed. The extension allows you to perform publish/subscribe-style logical replication without a superuser account, and it is preinstalled on Aiven for PostgreSQL servers. See `Aiven Extras on GitHub <https://github.com/aiven/aiven-extras>`_.
+* Sufficient access to the source cluster (either the ``replication`` permission or the ``aiven-extras`` extension installed). The extension allows you to perform publish/subscribe-style logical replication without a superuser account, and it is preinstalled on Aiven for PostgreSQL servers. See `Aiven Extras on GitHub <https://github.com/aiven/aiven-extras>`_.
 * An available replication slot on the destination cluster for each database migrated from the source cluster.
 
 Additional migration configuration options are available, check the :ref:`pg_migration` section of the configuration reference.
@@ -64,7 +64,7 @@ If the output is not ``logical``, run the following command in ``psql`` and then
     ALTER SYSTEM SET wal_level = logical;
 
 .. Note::
-    If you are migrating from an AWS RDS PostgreSQL cluster, set the ``rds.logical_replication`` parameter to ``1`` (true) in the parameter group.
+    If you are migrating from an AWS RDS PostgreSQL cluster, set the ``rds.logical_replication`` parameter to ``1`` (true) in the parameter group.  If you are migration from a GCP SQL PostgreSQL cluster, set the ``cloudsql.logical_decoding`` flag to ``on`` (as described in the `GCP docs <https://cloud.google.com/sql/docs/postgres/replication/configure-logical-replication>`_)
 
 
 2. If you don't have an Aiven for PostgreSQL database yet, run the following command to create a couple of PostgreSQL services via :doc:`../../../tools/cli` substituting the parameters accordingly::
