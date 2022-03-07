@@ -77,7 +77,7 @@ Pages that we do not want to be indexed can be added to `INDEX_BLACKLIST` list i
 You can run the script with
 
 ```
-make index-devportal ES_URL=https://es.url/here
+make index-devportal ES_URL=https://opensearch.url/here
 ```
 
 # Help Center page indexing
@@ -88,7 +88,7 @@ The script fetches HTTP pages from [https://help.aiven.io/](https://help.aiven.i
 You can run the script with
 
 ```
-make index-helpcenter ES_URL=https://es.url/here
+make index-helpcenter ES_URL=https://opensearch.url/here
 ```
 
 ## Adding documents to the index using Python
