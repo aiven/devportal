@@ -48,8 +48,8 @@ Variable                Description
 .. Warning::
     Running a logical replication migration twice on the same cluster will create duplicate data. Logical replication also has `limitations <https://www.postgresql.org/docs/current/logical-replication-restrictions.html>`_ on what it can copy.
 
--> To perform the migration
----------------------------
+-> Perform the migration
+------------------------
 
 1. Set the ``wal_level`` to ``logical``
 
