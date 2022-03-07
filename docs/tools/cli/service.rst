@@ -416,7 +416,7 @@ An example of ``service plans`` output:
 ``avn service privatelink``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Manages Aiven PrivateLink connections for AWS and Azure. 
+Manages Aiven privatelink connections for AWS and Azure. 
 
 More information on ``privatelink availability``, ``privatelink aws`` and ``privatelink azure`` can be found in :doc:`the dedicated page <service/privatelink>`.
 

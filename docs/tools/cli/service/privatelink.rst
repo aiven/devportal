@@ -4,7 +4,7 @@
 Here you’ll find the full list of commands for ``avn service privatelink``.
 
 
-Manage Aiven PrivateLink service for AWS and Azure
+Manage Aiven privatelink service for AWS and Azure
 --------------------------------------------------------
 
 .. _avn_service_privatelink_availability:
@@ -232,7 +232,7 @@ An example of output:
 ``avn service privatelink azure connection approve``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Approves a pending Azure PrivateLink connection endpoint.
+Approves a pending Azure Private Link connection endpoint.
 
 .. list-table::
   :header-rows: 1
@@ -243,13 +243,13 @@ Approves a pending Azure PrivateLink connection endpoint.
   * - ``service_name``
     - The name of the service
   * - ``privatelink_connection_id``
-    - The Aiven PrivateLink connection ID
+    - The Aiven privatelink connection ID
   * - ``--project``
     - The project to fetch details for
   * - ``--format``
     - Format of the output string
 
-**Example:** Approve the Azure PrivateLink ``plc12345abcdef`` connection for the ``kafka-12a3b4c5`` service.
+**Example:** Approve the Azure Private Link ``plc12345abcdef`` connection for the ``kafka-12a3b4c5`` service.
 
 ::
 
@@ -268,7 +268,7 @@ An example of output:
 ``avn service privatelink azure connection list``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Lists Azure PrivateLink connection information for a service.
+Lists Azure Private Link connection information for a service.
 
 .. list-table::
   :header-rows: 1
@@ -283,7 +283,7 @@ Lists Azure PrivateLink connection information for a service.
   * - ``--format``
     - Format of the output string
 
-**Example:** List Azure PrivateLink connection information for the ``kafka-12a3b4c5`` service.
+**Example:** List Azure Private Link connection information for the ``kafka-12a3b4c5`` service.
 
 ::
 
@@ -302,7 +302,7 @@ An example of output:
 ``avn service privatelink azure connection update``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Updates an Azure PrivateLink connection with the Private IP address of the private endpoint's Network interface.
+Updates an Azure Private Link connection with the Private IP address of the private endpoint's Network interface.
 
 .. list-table::
   :header-rows: 1
@@ -321,7 +321,7 @@ Updates an Azure PrivateLink connection with the Private IP address of the priva
   * - ``--format``
     - Format of the output string
 
-**Example:** In the ``kafka-12a3b4c5`` service, update the IP of the Azure PrivateLink connection ``plc12345abcdef`` to ``10.19.1.4``.
+**Example:** In the ``kafka-12a3b4c5`` service, update the IP of the Azure Private Link connection ``plc12345abcdef`` to ``10.19.1.4``.
 
 ::
 
@@ -343,7 +343,7 @@ An example of output:
 ``avn service privatelink azure create``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Creates an Azure PrivateLink for a service.
+Creates an Azure Private Link for a service.
 
 .. list-table::
   :header-rows: 1
@@ -356,11 +356,11 @@ Creates an Azure PrivateLink for a service.
   * - ``--project``
     - The project to fetch details for
   * - ``--user-subscription-id``
-    - Azure subscription IDs allowed to connect to the Privatelink service (example: ``12345678-90ab-cdef-0987-6543210abcde``)
+    - Azure subscription IDs allowed to connect to the Private Link service (example: ``12345678-90ab-cdef-0987-6543210abcde``)
   * - ``--format``
     - Format of the output string
 
-**Example:** Create an Azure PrivateLink for the ``kafka-12a3b4c5`` service.
+**Example:** Create an Azure Private Link for the ``kafka-12a3b4c5`` service.
 
 ::
 
@@ -382,7 +382,7 @@ An example of output:
 ``avn service privatelink azure delete``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Deletes an Azure PrivateLink defined for a service.
+Deletes an Azure Private Link defined for a service.
 
 .. list-table::
   :header-rows: 1
@@ -397,7 +397,7 @@ Deletes an Azure PrivateLink defined for a service.
   * - ``--format``
     - Format of the output string
 
-**Example:** Delete Azure PrivateLink for the ``kafka-12a3b4c5`` service.
+**Example:** Delete Azure Private Link for the ``kafka-12a3b4c5`` service.
 
 ::
 
@@ -416,7 +416,7 @@ An example of output:
 ``avn service privatelink azure get``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Lists Azure PrivateLink information for a service.
+Lists Azure Private Link information for a service.
 
 .. list-table::
   :header-rows: 1
@@ -431,7 +431,7 @@ Lists Azure PrivateLink information for a service.
   * - ``--format``
     - Format of the output string
 
-**Example:** List Azure PrivateLink information for the ``kafka-12a3b4c5`` service.
+**Example:** List Azure Private Link information for the ``kafka-12a3b4c5`` service.
 
 ::
 
@@ -450,7 +450,7 @@ An example of output:
 ``avn service privatelink azure refresh``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Refreshes incoming Azure PrivateLink endpoint connections.
+Refreshes incoming Azure Private Link endpoint connections.
 
 .. list-table::
   :header-rows: 1
@@ -465,7 +465,7 @@ Refreshes incoming Azure PrivateLink endpoint connections.
   * - ``--format``
     - Format of the output string
 
-**Example:** Refresh incoming Azure PrivateLink endpoint connections for the ``kafka-12a3b4c5`` service.
+**Example:** Refresh incoming Azure Private Link endpoint connections for the ``kafka-12a3b4c5`` service.
 
 ::
 
