@@ -93,7 +93,7 @@ Podman
 pooler
 PostgreSQL
 Postman
-[Pp]rivatelink
+[Pp]rivate[L|l]ink
 Protobuf
 Prometheus
 psql
