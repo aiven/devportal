@@ -28,6 +28,9 @@
 ``privatelink_access`` => *object*
   **Allow access to selected service components through Privatelink** 
 
+  ``prometheus`` => *boolean*
+    **Enable prometheus** None
+
   ``redis`` => *boolean*
     **Enable redis** None
 

@@ -170,6 +170,9 @@
   ``opensearch_dashboards`` => *boolean*
     **Enable opensearch_dashboards** None
 
+  ``prometheus`` => *boolean*
+    **Enable prometheus** None
+
 
 
 ``public_access`` => *object*
