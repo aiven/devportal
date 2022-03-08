@@ -384,7 +384,48 @@ As an experiment, I have introduced testing with shelltestrunner_. See the file 
 Known or possible issues
 ========================
 
-Error matching when characters like ``®`` are present in the text
+Maybe have a new dictionary for product names
+---------------------------------------------
+
+  *Local change.*
+
+We've introduced the new ``aiven.dic`` dictionary, but there are quite a few product names in there.
+
+It might be worth splitting them out into a new ``products.dic`` dictionary. This will make them easier to curate.
+
+There may be other such mini-dictionaries that we want to create as well.
+
+Aiven for Apache XXX independent of Apache XXX
+----------------------------------------------
+
+  *Local change.*
+
+I think that given a passage like:
+
+  Something something something Apache XXX® something something Aiven for Apache XXX®.
+
+it is probably "good form" to put the ``®`` on the "bare" and the "Aiven for" forms. This helps to make it clear that the "Aiven for" form is not special. It would be nice if we could make a rule (or rules) that treated this as a separate thing to check (at the moment our rule is only checking for the "Aiven XXX" case without taking into consideration if it is preceded by "Aiven for" or not.)
+
+**Also** I really want rules to prevent things like ``Apache® XXX`` when it should be ``Apache XXX®`` - I think I may say that elsewhere.
+
+Dealing with links that contain code content
+--------------------------------------------
+
+  *Local change.*
+
+Consider::
+
+  `kcat <https://something>`_
+
+We *really* want to put ``kcat`` in "code" font, but we also want it as the word in the link.
+
+(Do we ever want code-font and non-code-font words in the same link text? If we can put up with the answer "no" then this is likely to be more possible.)
+
+This should be doable, but I would like to find a way to do it that does not require a lot of knowledge of reStructuredText and/or Sphinx from the person typing.
+
+  (I also don't want to take on the long-abandoned task of making docutils understand nested markup!)
+
+Error matching when characters like ****®`` are present in the text
 -----------------------------------------------------------------
 
 This is the problem I've been having with trying to match conditionals for ``®`` and ``™`` checking.
