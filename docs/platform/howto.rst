@@ -1,7 +1,7 @@
 HowTo
 =====
 
-Browse through instructions for common Aiven platform tasks.
+To Browse through instructions for common Aiven platform tasks.
 
 .. tableofcontents::
 
