@@ -8,3 +8,4 @@ The v1.0 release of OpenSearch should be very much similar to the Elasticsearch 
 -----
 
 *Elasticsearch is a trademark of Elasticsearch B.V., registered in the U.S. and in other countries.*
+*Kibana is a trademark of Elasticsearch BV, registered in the U.S. and in other countries.*

@@ -30,3 +30,7 @@ OpenSearch Dashboards resources
 * How to create reports https://opensearch.org/docs/latest/dashboards/reporting/
 
 * Other :doc:`helpful resources <howto>`
+
+--------
+
+*Kibana is a trademark of Elasticsearch BV, registered in the U.S. and in other countries.*

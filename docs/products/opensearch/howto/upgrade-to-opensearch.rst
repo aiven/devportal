@@ -52,3 +52,4 @@ Here are some related resources that may help you with your upgrade process
 ------
 
 *Elasticsearch is a trademark of Elasticsearch B.V., registered in the U.S. and in other countries.*
+*Kibana is a trademark of Elasticsearch BV, registered in the U.S. and in other countries.*

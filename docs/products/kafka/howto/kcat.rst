@@ -1,15 +1,15 @@
-Use `kcat` with Aiven for Apache Kafka®
+Use ``kcat`` with Aiven for Apache Kafka®
 =========================================
 
-`kcat <https://github.com/edenhill/kcat>`_
-(formerly known as `kafkacat`) is a generic non-JVM producer and consumer for Apache Kafka®.
+The ``kcat`` `tool <https://github.com/edenhill/kcat>`__
+(formerly known as ``kafkacat``) is a generic non-JVM producer and consumer for Apache Kafka®.
 It can be used to produce and consume records to Apache Kafka topics as well as to list service configurations.
 
 
-Install `kcat`
+Install ``kcat``
 ----------------
 
-`kcat` is an open source tool available from GitHub at https://github.com/edenhill/kcat. Installation instructions are provided in the repository README.
+``kcat`` is an open source tool available from GitHub at https://github.com/edenhill/kcat. Installation instructions are provided in the repository README.
 
 Retrieve Aiven for Apache Kafka® SSL certificate files
 ------------------------------------------------------
@@ -17,11 +17,11 @@ Retrieve Aiven for Apache Kafka® SSL certificate files
 Aiven for Apache Kafka by default enables TLS security. 
 The certificates can be manually downloaded from the service overview page in the Aiven console, or via the :ref:`dedicated Aiven CLI command <avn_service_user_creds_download>`.
 
-Setup a `kcat` configuration file
+Setup a ``kcat`` configuration file
 -----------------------------------
 
-While `kcat` accepts all connection configuration parameters in the command line, using a configuration file helps minimising the code needed for any following calls.
-A `kcat` configuration file enabling the connection to an Aiven for Apache Kafka® service with TLS security must contain the following entries:
+While ``kcat`` accepts all connection configuration parameters in the command line, using a configuration file helps minimising the code needed for any following calls.
+A ``kcat`` configuration file enabling the connection to an Aiven for Apache Kafka® service with TLS security must contain the following entries:
 
 * ``bootstrap.servers``: Aiven for Apache Kafka® service URI, that can be found in the service overview in Aiven console
 * ``security.protocol``: security protocol, SSL for the default TLS security settings
@@ -29,7 +29,7 @@ A `kcat` configuration file enabling the connection to an Aiven for Apache Kafka
 * ``ssl.certificate.location``: location of the `service.cert` file downloaded from the service overview in Aiven console
 * ``ssl.ca.location``: location of the `ca.pem` file downloaded from the service overview in Aiven console
 
-An example of the `kcat` configuration file is provided below:
+An example of the ``kcat`` configuration file is provided below:
 
 ::
 
@@ -56,7 +56,7 @@ Alternatively, the same settings can be specified directly on the command line w
        -X ssl.certificate.location=service.cert \
        -X ssl.ca.location=ca.pem
 
-If :doc:`SASL authentication <kafka-sasl-auth>` is enabled, then `kcat` configuration file requires the following entries:
+If :doc:`SASL authentication <kafka-sasl-auth>` is enabled, then the ``kcat`` configuration file requires the following entries:
 
 ::
 
@@ -84,7 +84,7 @@ The output of the above comment is a message sent to Apache Kafka® ``test-topic
 
 .. Note:
 
-    `kcat` can use a file as input input and specify a delimiter (``-D``) for splitting rows into individual records for bulk loading of data.
+    ``kcat`` can use a file as input input and specify a delimiter (``-D``) for splitting rows into individual records for bulk loading of data.
 
 Consume data from an Apache Kafka® topic
 -----------------------------------------
@@ -98,9 +98,9 @@ Use the following code to consume messages coming from a topic named ``test-topi
 * ``-C``: sets for consumer mode
 * ``-t``: specifies the topic again 
 * ``-o``: defines the topic starting message offset (negative values are considered relative to the latest offset)
-* ``-e``: stops `kcat` once the end of the topic is reached; without it, it will continuously poll Apache Kafka for new messages.
+* ``-e``: stops ``kcat`` once the end of the topic is reached; without it, it will continuously poll Apache Kafka for new messages.
 
-The above command retrieves the last message (``-o -1``) from the topic named ``test-topic``. Consult the `kcat` helper (by adding the ``-h`` flag) for the full list of parameters.
+The above command retrieves the last message (``-o -1``) from the topic named ``test-topic``. Consult the ``kcat`` helper (by adding the ``-h`` flag) for the full list of parameters.
 
 .. Tip::
 

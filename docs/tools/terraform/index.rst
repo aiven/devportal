@@ -50,7 +50,7 @@ Run the command below to initialize Terraform. It will create a directory struct
   $ terraform init
 
 Deploy a PostgreSQL® database
-''''''''''''''''''''\''''''''
+'''''''''''''''''''''''''''''
 Now let's deploy a fully managed PostgreSQL® database on the GCP Frankfurt region. You can also see other services and available regions `on our pricing page <https://aiven.io/pricing>`_.
 
 Add the following block of code to the `main.tf` file:

@@ -12,7 +12,7 @@ The JDBC (Java Database Connectivity) sink connector enables you to move data fr
 Prerequisites
 -------------
 
-To setup n JDBC sink connector, you need an Aiven for Apache Kafka service :doc:`with Kafka Connect enabled <enable-connect>` or a :ref:`dedicated Aiven for Apache Kafka Connect cluster <apache_kafka_connect_dedicated_cluster>`.
+To setup a JDBC sink connector, you need an Aiven for Apache Kafka service :doc:`with Kafka Connect enabled <enable-connect>` or a :ref:`dedicated Aiven for Apache Kafka Connect cluster <apache_kafka_connect_dedicated_cluster>`.
 
 Furthermore you need to collect the following information about the target database service upfront:
 

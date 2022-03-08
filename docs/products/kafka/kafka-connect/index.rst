@@ -15,7 +15,7 @@ Why Apache Kafka® Connect?
 Apache Kafka represents the best in class data streaming solution. Apache Kafka Connect allows integrating Apache Kafka with the rest of your data architecture with a configuration file which defines the source and the target of your data.
 
 
-Get started with Aiven for Apache® Kafka Connect
+Get started with Aiven for Apache Kafka® Connect
 ------------------------------------------------
 
 Take your first steps with Aiven for Apache Kafka Connect by following our :doc:`getting-started` article, or browse through our full list of articles:

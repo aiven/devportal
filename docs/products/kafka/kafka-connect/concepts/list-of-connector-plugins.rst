@@ -72,7 +72,7 @@ Sink connectors enable the integration of data from an existing Apache Kafka top
 
 * `Stream Reactor InfluxDB® <https://docs.lenses.io/connectors/sink/influx.html>`__
 
-* `Stream Reactor MongoDB <https://docs.lenses.io/connectors/sink/mongo.html>`__
+* `Stream Reactor MongoDB® <https://docs.lenses.io/connectors/sink/mongo.html>`__
 
 * `Stream Reactor MQTT <https://docs.lenses.io/connectors/sink/mqtt.html>`__
 
