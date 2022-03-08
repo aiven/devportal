@@ -2,16 +2,20 @@ Connect Apache Kafka® to OpenSearch with Terraform
 ==========================================================
 
 This example shows how to use a Kafka Connector to take data from Apache Kafka and ingest it into OpenSearch using `Apache Kafka Connect <https://developer.aiven.io/docs/products/kafka/kafka-connect/index.html>`_. As a use case, the data here is application logs going onto a Kafka topic, and being put into OpenSearch for short term storage and easy inspection, if needed.
-Aiven has a concept of `service integrations <https://developer.aiven.io/>`_ to manage the relationships between components. `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_
+Aiven has a concept of service integrations to manage the relationships between components. `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_
 has a specific resource type in Terraform for service integration. 
 
 Before looking at the Terraform script, let's visually realize how the services will be connected:
 
 .. mermaid::
 
-    flowchart LR
-        Kafka --> Kafka-Connect-Service-Integration --> KafkaConnect
-        KafkaConnect --> | OpenSearch-Sink-Connector | OpenSearch
+   flowchart LR
+      kafka[Kafka]
+      sikafka{{Service Integration}}
+      kconn[Kafka Connect]
+      kcopensearch{{Kafka Connector:<br /> OpenSearch Sink}}
+      opensearch[OpenSearch]
+      kafka --> sikafka --> kconn --> kcopensearch --> opensearch
 
 In the above diagram, *KafkaConnect* is the service that you create for connecting Kafka with external systems. The Kafka Connectors, *OpenSearch Sink Connector* for example, are ready-to-use components to send/receive data to common data sources/sinks. 
 
@@ -120,12 +124,12 @@ Here is the sample Terraform file to stand-up and connect all the services. Keep
    }
 
 This file creates three Aiven services - a Kafka service, a Kafka Connect service, and an OpenSearch service. Two service integrations among these three services and a Kafka topic within the Kafka service will also be created from this Terraform file.
-To validate, produce some messages on the Kafka topic and you should be seeing those appear on OpenSearch indices. If you require some guidance, refer to the `setting up your first Terraform project <https://developer.aiven.io/>`_.
+To validate, produce some messages on the Kafka topic and you should be seeing those appear on OpenSearch indices.
 
-Wrap up
-=======
+More resources
+==============
 
-Some supporting material related to the above recipe:
+You might find these related resources useful too:
 
 - `Configuration options for Kafka <https://developer.aiven.io/docs/products/kafka/reference/advanced-params.html>`_
 - `Configuration options for OpenSearch <https://developer.aiven.io/docs/products/opensearch/reference/advanced-params.html>`_
