@@ -1,5 +1,5 @@
-Manage OpenSearch log integration
-=================================
+Manage OpenSearch logs integration
+==================================
 
 Aiven provides a service integration that allows you to send your logs from several services, such as Aiven for Kafka, PostgreSQL, Cassandra, OpenSearch, Redis, InfluxDB, and Grafana, to Aiven for OpenSearch. Making it possible for you to use OpenSearch to gain more insight and control over your logs. 
 
@@ -12,23 +12,33 @@ Here are the steps needed to enable logs integration. This allows you to send lo
 
 1. Log in to the `Aiven web console <https://console.aiven.io/>`_.
 
-2. On the **Services** page, open the service you want to send the logs from.
+2. On the **Services** page, scroll down and choose **Service integrations**.
 
-3. On the **Logs** tab, click on **Enable Logs integration**. 
+3. On the **Logs** tab, click on **Use Integration**. 
 
-4. Choose an existing OpenSearch instance or create a new one, then select **Continue**.
+4. Select an existing OpenSearch instance or create a new one, then select **Continue**.
 
-5. Configure your ``index prefix`` and ``retention limit`` parameters, then select **Enable**
+5. Configure your ``index prefix`` and ``index retention limit`` parameters, then select **Enable**
 
 .. note::
-    If you want to effectively disable the index ``retention limit``, you can set it to the maximum value which is 10000 days.
+    If you want to effectively disable the index ``index retention limit``, you can set it to the maximum value which is 10000 days.
 
 Your Aiven service is now sending logs to your OpenSearch service which you can explore further.
 
-Change logs integration configuration
--------------------------------------
+Logs integration configuration
+------------------------------
+There are two parameters that you can adjust when integrating logs to your OpenSearch service:
 
-You can change the configuration of the ``index prefix`` and ``retention limit`` after the integration is enabled.
+* ``index prefix``, specifies the prefix part.
+* ``index retention limit``, number of days to preserve the daily indexes.
+
+.. warning::
+    When the ``index retention limit`` is reached, the daily indexes are deleted. The count starts from the day that those indexes were sent.
+
+Change logs integration configuration
+'''''''''''''''''''''''''''''''''''''
+
+You can change the configuration of the ``index prefix`` and ``index retention limit`` after the integration is enabled.
 
 1. Log in to the `Aiven web console <https://console.aiven.io/>`_.
 
