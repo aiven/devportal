@@ -39,7 +39,7 @@ default DNS resolver is blocking the resolution.
 The recommended fix for this issue is to configure your DNS resolver
 (normally a server for offices, or a home router for home networks) to
 allow the resolution of hostnames in the Aiven service domain,
-```aivencloud.com`` <http://aivencloud.com>`__ , to bypass the
+``aivencloud.com``, to bypass the
 DNS-rebinding protection. If your DNS resolver allows this configuration
 it is preferable to allow one domain to bypass it instead of disabling
 DNS-rebinding protection entirely.
