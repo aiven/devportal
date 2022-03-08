@@ -372,6 +372,7 @@ Retrieves the metrics for a defined service in Google chart compatible format. T
 
     avn service metrics pg-demo --period day
 
+.. _avn-cli-service-migration-status:
 
 ``avn service migration-status``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
