@@ -1,4 +1,4 @@
-138
+139
 ACL
 ACLs
 Aiven
@@ -37,8 +37,10 @@ failover
 fileset
 filesets
 Flink
+Gantt
 geocoder
 geocoding
+geohash
 Geomap
 geospatial
 GitHub
