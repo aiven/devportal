@@ -11,6 +11,7 @@ For other services a browser-recognized CA is used, which is normally already ma
 
 .. note::
     All the services in a project share the same Certificate Authority(CA)
+
 Certificate requirements
 ------------------------
 
