@@ -19,13 +19,13 @@ To find a specific block, ClickHouse uses **a primary index**. However, unlike i
 
 First of all, not every row is indexed. By contrast, ClickHouse indexes every 10K's row (or, to be precise, the **8192nd**, when using default settings). Such type of index is descriptively called **a sparse index** and a batch of rows is sometimes called **a granule**.
 
+To make **sparse indexing** possible, ClickHouse sorts items according to the primary key. In fact, items are intentionally **sorted physically** on disk. This is done to speed up reading and to prevent jumping across the disk when processing data. Therefore, by selecting a primary key we determine how items are sorted physically on disk. Such approach helps ClickHouse effectively work on regular hard drives and depend less on SSD, comparing to other DBMS.
+
+.. note:: Even though ClickHouse sorts data by primary key, it is possible `to choose a primary key that is different than the sorting key <https://clickhouse.com/docs/en/engines/table-engines/mergetree-family/mergetree/#choosing-a-primary-key-that-differs-from-the-sorting-key>`_.
+
 Using sparse indexing has a significant consequence on advantages and limitations of ClickHouse, mainly because such primary key does not ensure uniqueness for a single searched item. Seeing that we index every ten thousandth's item, in order to find a specific individual row we need to iterate over thousands of items. That's why this approach is inadequate when working with individual rows and should be only used to deal when processing millions, or trillions of items.
 
 A good use case for it, for example, is analysing error rates based on server log analysis. In such cases we don't  center our attention on individual lines, but look at overall picture to see trends. Such requests also allow to do approximate calculations, using only sample of data to make conclusions.
-
-Another special characteristic of ClickHouse, is that the items are intentionally **physically sorted** on disk. This is done to speed up reading and to prevent jumping across the disk when processing data. Therefore, by selecting a primary key we determine how items are sorted physically on disk. Such approach helps ClickHouse effectively work on regular hard drives and depend less on SSD, comparing to other DBMS.
-
-.. note:: Even though ClickHouse sorts data by primary key, it is possible `to choose a primary key that is different than the sorting key <https://clickhouse.com/docs/en/engines/table-engines/mergetree-family/mergetree/#choosing-a-primary-key-that-differs-from-the-sorting-key>`_.
 
 A good primary index should aim at helping limit number of items we need to read in order to process a query.
 
