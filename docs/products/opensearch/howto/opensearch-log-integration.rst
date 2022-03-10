@@ -1,4 +1,4 @@
-Manage OpenSearch logs integration
+Manage OpenSearch log integration
 ==================================
 
 Aiven provides a service integration that allows you to send your logs from several services, such as Aiven for Kafka, PostgreSQL, Cassandra, OpenSearch, Redis, InfluxDB, and Grafana, to Aiven for OpenSearch. Making it possible for you to use OpenSearch to gain more insight and control over your logs. 
@@ -21,7 +21,7 @@ Here are the steps needed to enable logs integration. This allows you to send lo
 5. Configure your ``index prefix`` and ``index retention limit`` parameters, then select **Enable**
 
 .. note::
-    If you want to effectively disable the index ``index retention limit``, you can set it to the maximum value which is 10000 days.
+    If you want to effectively disable the ``index retention limit``, you can set it to the maximum value which is 10000 days.
 
 Your Aiven service is now sending logs to your OpenSearch service which you can explore further.
 
@@ -33,7 +33,9 @@ There are two parameters that you can adjust when integrating logs to your OpenS
 * ``index retention limit``, number of days to preserve the daily indexes.
 
 .. warning::
-    When the ``index retention limit`` is reached, the daily indexes are deleted. The count starts from the day that those indexes were sent.
+    
+    The logs are sent once per day from the selected service to your OpenSearch cluster. When the ``index retention limit`` is reached, those indexes are deleted from the OpenSearch cluster.
+
 
 Change logs integration configuration
 '''''''''''''''''''''''''''''''''''''
