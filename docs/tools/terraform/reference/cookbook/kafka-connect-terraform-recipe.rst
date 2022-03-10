@@ -134,4 +134,3 @@ You might find these related resources useful too:
 - `Configuration options for Kafka <https://developer.aiven.io/docs/products/kafka/reference/advanced-params.html>`_
 - `Configuration options for OpenSearch <https://developer.aiven.io/docs/products/opensearch/reference/advanced-params.html>`_
 
-If you liked this recipe, try out some of the other recipes within the Aiven Terraform cookbook. 
