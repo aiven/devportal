@@ -5,6 +5,8 @@ The following plugins are available in all installations of Aiven for Grafana®G
 
 Panel plugins
 -------------
+Grafana Plugin Flowcharting - `Grafana <https://grafana.com/grafana/plugins/agenty-flowcharting-panel/>`__ | `GitHub <https://github.com/algenty/grafana-flowcharting>`__
+        Use Flowcharting plugin to display complex diagrams using the online graphing library draw.io
 AJAX - `Grafana <https://grafana.com/grafana/plugins/ryantxu-ajax-panel/>`__ | `GitHub <https://github.com/ryantxu/ajax-panel>`__
     A general way to load external content into a Grafana dashboard.
 
@@ -116,6 +118,9 @@ Worldmap Panel - `GitHub <https://github.com/grafana/worldmap-panel>`__
 
 Data source plugins
 -------------------
+OpenSearch Data Source Plugin - `Grafana <https://grafana.com/grafana/plugins/grafana-opensearch-datasource/>`__ | `GitHub <https://github.com/grafana/opensearch-datasource>`__
+     Provides  many types of simple or complex OpenSearch queries to visualize logs or metrics stored in OpenSearch. You can also annotate your graphs with log events stored in OpenSearch.
+
 Azure Monitor - `Grafana <https://grafana.com/grafana/plugins/grafana-azure-monitor-datasource/>`__ | `GitHub <https://github.com/grafana/azure-monitor-datasource>`__
     Provides a single source for monitoring Azure resources. 
 
