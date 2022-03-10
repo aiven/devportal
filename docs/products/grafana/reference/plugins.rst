@@ -41,6 +41,9 @@ Diagram - `Grafana <https://grafana.com/grafana/plugins/jdbranham-diagram-panel/
 Discrete - `Grafana <https://grafana.com/grafana/plugins/natel-discrete-panel/>`__ | `GitHub <https://github.com/NatelEnergy/grafana-discrete-panel>`__
     Shows discrete values in a horizontal graph, plotting state transitions.
 
+FlowCharting - `Grafana <https://grafana.com/grafana/plugins/agenty-flowcharting-panel/>`__ | `Docs <https://algenty.github.io/flowcharting-repository/>`__
+    Displays complex diagrams using the online graphing library draw.io.
+
 Gauge
     Standard gauge visualization.
 
@@ -150,6 +153,9 @@ Microsoft SQL Server
 
 MySQL - `Grafana <https://grafana.com/grafana/plugins/mysql/>`__ | `Grafana Docs <http://docs.grafana.org/features/datasources/mysql/>`__
     Allows you to query any visualize data from a MySQL compatible database.
+
+OpenSearch - `Grafana <https://grafana.com/grafana/plugins/grafana-opensearch-datasource/>`__ 
+    Runs many types of simple or complex OpenSearch queries to visualize logs or metrics stored in OpenSearch. Annotate your graphs with log events stored in OpenSearch. 
 
 OpenTSDB - `Grafana <https://grafana.com/grafana/plugins/opentsdb/>`__ | `Grafana Docs <http://docs.grafana.org/datasources/opentsdb/>`__ 
     OpenTSDB is a scalable, distributed time series database.
