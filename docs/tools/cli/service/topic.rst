@@ -1,7 +1,7 @@
 ``avn service topic``
 ==================================================
 
-Here you’ll find the full list of commands for ``avn service topic``.
+Here you'll find the full list of commands for ``avn service topic``.
 
 .. _avn_cli_service_topic_create:
 
