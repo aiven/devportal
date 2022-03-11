@@ -83,7 +83,6 @@ entries:
             title: Tools
             entries:
               - file: docs/products/kafka/howto/kafka-tools-config-file
-              - file: docs/products/kafka/howto/configure-with-kafka-cli
               - file: docs/products/kafka/howto/kcat.rst
               - file: docs/products/kafka/howto/kafka-conduktor
               - file: docs/products/kafka/howto/kafdrop
@@ -98,6 +97,7 @@ entries:
             title: Administration tasks
             entries:
               - file: docs/products/kafka/howto/best-practices
+              - file: docs/products/kafka/howto/configure-with-kafka-cli
               - file: docs/products/kafka/howto/set-kafka-parameters
               - file: docs/products/kafka/howto/viewing-resetting-offset
               - file: docs/products/kafka/howto/configure-log-cleaner
