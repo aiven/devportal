@@ -66,13 +66,13 @@ After creating a client with a valid ``SERVICE_URI``, you're set to interact wit
 Upload data to OpenSearch using Python
 --------------------------------------
 
-Once you're connected, the next step should be to :ref:`inject data into our cluster <load-data-with-python>`. This is done in our demo with the `load_data function <https://github.com/aiven/demo-opensearch-python/blob/main/index.py#L23-L38>`__.
+Once you're connected, the next step should be to :ref:`inject data into our cluster <load-data-with-python>`. This is done in our demo with the `load_data function <https://github.com/aiven/demo-opensearch-python/blob/main/index.py>`__.
 
 You can inject the data to your cluster by running::
 
   python index.py load-data
 
-Once the data is loaded, we can :ref:`retrieve the data mapping <get-mapping-with-python>` to explore the structure of the data, with their respective fields and types. You can find the code implementation in the `get_mapping function <https://github.com/aiven/demo-opensearch-python/blob/main/index.py#L54-L72>`__.
+Once the data is loaded, we can :ref:`retrieve the data mapping <get-mapping-with-python>` to explore the structure of the data, with their respective fields and types. You can find the code implementation in the `get_mapping function <https://github.com/aiven/demo-opensearch-python/blob/main/index.py>`__.
 
 Check the structure of your data by running::
 
