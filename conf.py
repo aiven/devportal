@@ -19,6 +19,7 @@
 project = 'Aiven Developer'
 copyright = '2021, Aiven Team'
 author = 'Aiven Team'
+html_title = 'Aiven'
 
 # -- General configuration ---------------------------------------------------
 
