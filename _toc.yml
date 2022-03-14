@@ -59,7 +59,13 @@ entries:
       - file: docs/tools/terraform/index
         title: Aiven Terraform provider
         entries:
-        - glob: docs/tools/terraform/*
+        - file: docs/tools/terraform/upgrade-provider-v1-v2
+        - file: docs/tools/terraform/reference.rst
+          entries:
+          - file: docs/tools/terraform/reference/cookbook.rst
+            entries:
+            - file: docs/tools/terraform/reference/cookbook/kafka-connect-terraform-recipe
+              title: Apache Kafka and OpenSearch
       - file: docs/tools/kubernetes
 
   # -------- PRODUCT-SPECIFIC --------
