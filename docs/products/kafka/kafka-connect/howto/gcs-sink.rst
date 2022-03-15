@@ -25,7 +25,7 @@ Furthermore you need to follow the steps :doc:`to prepare the GCP account and GC
 Setup an GCS sink connector with Aiven Console
 ----------------------------------------------
 
-The following example demonstrates how to setup an Apache Kafka Connect® S3 sink connector using the `Aiven Console <https://console.aiven.io/>`_.
+The following example demonstrates how to setup an Apache Kafka Connect® GCS sink connector using the `Aiven Console <https://console.aiven.io/>`_.
 
 Define an Apache Kafka Connect® configuration file
 ''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -34,7 +34,7 @@ Define the connector configurations in a file (we'll refer to it with the name `
 
 ::
 
-        {
+    {
         "name": "my-gcs-connector",
         "connector.class": "io.aiven.kafka.connect.gcs.GcsSinkConnector",
         "tasks.max": "1",
@@ -52,13 +52,14 @@ Define the connector configurations in a file (we'll refer to it with the name `
 The configuration file contains the following entries:
 
 * ``name``: The connector name
-* ``topics``: The list of Apache Kafka® topics to sink to the S3 bucket
+* ``topics``: The list of Apache Kafka® topics to sink to the GCS bucket
 * ``key.converter`` and ``value.converter``: Data converters, depending on the topic data format. Check the `GitHub repository documentation <https://github.com/aiven/gcs-connector-for-apache-kafka>`_ for more information
 * ``gcs.credentials.json``: The Google service account JSON service key as JSON string
 * ``gcs.bucket.name``: The name of the GCS bucket
 * ``file.name.prefix``: The file name prefix
 * ``file.compression.type``: The type of compression to use when creating the file
-* ``format.output.type``: The format used to store the messages values
+* ``format.output.type``: The format used to store the message values
+* ``format.output.fields``: The message fields to be included in the target file
 
 .. Tip::
 
@@ -75,7 +76,7 @@ To create the connector, access the `Aiven Console <https://console.aiven.io/>`_
 
 1. Click on the **Connectors** tab
 2. Clink on **Create New Connector**, the button is enabled only for services :doc:`with Kafka Connect enabled <enable-connect>`.
-3. Select the **OpenSearch sink**
+3. Select the **Google Cloud Storage sink**
 4. Under the *Common* tab, locate the **Connector configuration** text box and click on **Edit**
 5. Paste the connector configuration (stored in the ``gcs_sink.json`` file) in the form
 6. Click on **Apply**
@@ -86,7 +87,7 @@ To create the connector, access the `Aiven Console <https://console.aiven.io/>`_
 
 7. After all the settings are correctly configured, click on **Create new connector**
 8. Verify the connector status under the **Connectors** tab
-9. Verify the presence of the data in the target OpenSearch service, the index name is equal to the Apache Kafka topic name
+9. Verify the presence of the data in the target GCS bucket
 
 .. Note::
 
@@ -99,7 +100,7 @@ Example: define a GCS sink connector
 The example creates an GCS sink connector with the following properties:
 
 * connector name: ``my_gcs_sink``
-* source topics: ``students``
+* source topics: ``test``
 * target GCS bucket name: ``my-test-bucket``
 * target Google service key: ``{\"type\": \"service_account\",   \"project_id\": \XXXXXXXXX\", ..}``
 * name prefix: ``my-custom-prefix/``
