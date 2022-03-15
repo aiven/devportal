@@ -649,7 +649,7 @@ Updates the settings for an Aiven service.
 
 Manages Aiven users and credentials.
 
-More information on ``user-create``, ``user-creds-download``, ``user-delete``, ``user-get``, ``user-kafka-java-creds``, ``user-list``, ``user-password-reset`` and  ``user-set-access-control`` can be found in :doc:`the dedicated page <service/user>`.
+More information on ``user-create``, ``user-creds-acknowledge``, ``user-creds-download``, ``user-delete``, ``user-get``, ``user-kafka-java-creds``, ``user-list``, ``user-password-reset`` and  ``user-set-access-control`` can be found in :doc:`the dedicated page <service/user>`.
 
 
 ``avn service versions``
