@@ -57,11 +57,11 @@ Setup the Kafka service:
 Download Kafka connect binaries:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Download Confluent platform. (At the time of this writing, CP 5.3.1
-   was available)
+#. Download the latest Kafka release from https://kafka.apache.org/quickstart
 
-#. Download the Kafka connect JDBC connector from Confluent Hub (
-   https://www.confluent.io/hub/ )
+#. Download the Aiven Kafka connect JDBC connector from https://github.com/aiven/jdbc-connector-for-apache-kafka/releases
+
+#. Download the Avro Value Converter from https://www.confluent.io/hub/confluentinc/kafka-connect-avro-converter
 
 Preparing Kafka connect software on a VM:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -72,15 +72,16 @@ Log in to your VM.
 
    cd $HOME
 
-   # extract confluent platform
-   tar xvf confluent-VERSION.tar.gz
+   # extract kafka
+   tar -xzf kafka_2.13-VERSION.tgz
 
-   # extract confluent connect jdbc
-   cd confluent-VERSION
-   cd share
-   mkdir -p kafka/plugins
+   cd kafka_2.13-VERSION
+   mkdir -p /share/kafka/plugins
    cd kafka/plugins
-   unzip confluentinc-kafka-connect-jdbc-VERSION.zip
+   # extract aiven connect jdbc
+   unzip jdbc-connector-for-apache-kafka-VERSION.zip
+   # extract confluent kafka connect avro converter
+   unzip confluentinc-kafka-connect-avro-converter-VERSION.zip
 
 |
 | Create a properties file, *my-connect-distributed.properties* , for
@@ -89,10 +90,10 @@ Log in to your VM.
 ::
 
    cd $HOME
-   cd confluent-VERSION
+   cd kafka_2.13-VERSION
    vi ./my-connect-distributed.properties
    #
-   plugin.path=/path/confluent-VERSION/share/kafka/plugins/confluentinc-kafka-connect-jdbc-VERSION
+   plugin.path=/path/kafka_2.13-VERSION/share/kafka/plugins/jdbc-connector-for-apache-kafka-VERSION,/path/kafka_2.13-VERSION/share/kafka/plugins/confluentinc-kafka-connect-avro-converter-VERSION/lib
 
    bootstrap.servers=KAFKA_HOST:KAFKA_PORT
 
@@ -189,7 +190,7 @@ participating in the connect cluster:
 ::
 
    cd $HOME
-   cd confluent-VERSION
+   cd kafka_2.13-VERSION
    ./bin/connect-distributed ./my-connect-distributed.properties
 
 Create the JDBC sink connector (json) configuration *jdbc-sink-pg.json*
@@ -200,7 +201,7 @@ Create the JDBC sink connector (json) configuration *jdbc-sink-pg.json*
      "name": "jdbc-sink-pg",
      "config":
      {
-     "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
+     "connector.class": "io.aiven.connect.jdbc.JdbcSinkConnector",
      "connection.url":"jdbc:postgresql://PG_HOST:PG_PORT/defaultdb?user=avnadmin&password=PG_PW&ssl=true",
      "tasks.max":"1",
      "topics": "jdbc_sink",
@@ -246,7 +247,7 @@ Publish data to the *jdbc_sink* topic using
 ::
 
    cd $HOME
-   cd confluent-VERSION
+   cd kafka_2.13-VERSION
 
    ./bin/kafka-avro-console-producer --broker-list KAFKA_HOST:KAFKA_PORT --topic jdbc_sink  --producer.config ./console-producer.properties --property schema.registry.url=https://KAFKA_HOST:SCHEMA_REGISTRY_PORT --property basic.auth.credentials.source=USER_INFO --property basic.auth.user.info=avnadmin:SCHEMA_REGISTRY_PW --property value.schema='{"type":"record","name":"myrecord","fields":[{"name":"id","type":"int"},{"name":"product","type":"string"},{"name":"quantity","type":"int"},{"name":"price","type":"float"}]}'
 
