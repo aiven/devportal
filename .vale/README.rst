@@ -408,35 +408,6 @@ it is probably "good form" to put the ``®`` on the "bare" and the "Aiven for" f
 
 **Also** I really want rules to prevent things like ``Apache® XXX`` when it should be ``Apache XXX®`` - I think I may say that elsewhere.
 
-Vale on/off inline
-------------------
-
-  *Experimentation*
-
-There already is support for ``.. vale off`` and ``.. vale on``, but these can only wrap blocks (and don't work around titles).
-
-Would it be possible to use ``.. raw:: html`` and ``|substitution|`` to provide inline such? So one could write something like ``|vale-off|some text|vale-on|``?
-
-As https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html#substitution-definitions says"
-
-  "Substitution definitions allow the power and flexibility of block-level directives to be shared by inline text. They are a way to include arbitrarily complex inline structures within text, while keeping the details out of the flow of text."
-
-Maybe something like::
-
-  .. |vale-on| raw:: html
-
-     <!-- vale on -->
-
-or::
-
-  .. |vale-on| :raw-html:`<!-- vale on -->`
-
-If this works, it may solve some of our other issues without any hacking of vale itself, and without complicated setup in the styles/rules.
-
-It may also be possible to define the substitutions in the sphinx ``conf.py``, so it's always there.
-
-And lastly, if this does work, it's worth blogging about...
-
 Dealing with links that contain code content
 --------------------------------------------
 
@@ -538,12 +509,14 @@ The order of error output does not appear to be deterministic
 
 For instance, if I run ``vale --output=line .vale/tests/bad.rst``, the order of the lines output is not consistent.
 
+**Note:** check exactly what the ``--sort`` switch does.
+
 Oddity in substitution matching
 -------------------------------
 
   *Not sure what is going on here - might still be a "me" mistake rather than vale*
 
-Looking at the lines in ``.vale/tests/bad.rst``::
+Looking at the lines in **`.vale/tests/bad.rst``::
 
   ``literal-text`` MirrorMaker2             -- this is NOT found
 
@@ -609,4 +582,35 @@ However, the expected workaround of marking up::
 
   .. vale on
 
-is known not to work, as reported in issue https://github.com/errata-ai/vale/issues/340 (Vale on/off comments do not work on titles in RST) and may be either impossible or very difficult to fix - in fact, it's apparently a bug in rst2html.py.
+is known not to work, as reported in `issue 340`_ (Vale on/off comments do not work on titles in RST) and may be either impossible or very difficult to fix - in fact, it's apparently a bug in rst2html.py.
+
+.. _`issue 340`: https://github.com/errata-ai/vale/issues/340
+
+Vale on/off inline
+------------------
+
+  *Experimentation*
+
+There already is support for ``.. vale off`` and ``.. vale on``, but these can only wrap blocks (and don't work around titles).
+
+Would it be possible to use ``.. raw:: html`` and ``|substitution|`` to provide inline such? So one could write something like ``|vale-off|some text|vale-on|``?
+
+As https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html#substitution-definitions says"
+
+  "Substitution definitions allow the power and flexibility of block-level directives to be shared by inline text. They are a way to include arbitrarily complex inline structures within text, while keeping the details out of the flow of text."
+
+Maybe something like::
+
+  .. |vale-on| raw:: html
+
+     <!-- vale on -->
+
+or::
+
+  .. |vale-on| :raw-html:`<!-- vale on -->`
+
+If this works, it may solve some of our other issues without any hacking of vale itself, and without complicated setup in the styles/rules (and it would be a work-around for `Vale on/off problem with rst2html.py`_, and probably worth mentioning in `issue 340`_.
+
+It may also be possible to define the substitutions in the sphinx ``conf.py``, so it's always there.
+
+And lastly, if this does work, it's worth blogging about...
