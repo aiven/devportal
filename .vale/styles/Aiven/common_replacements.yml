@@ -22,6 +22,7 @@ swap:
   postgres: PostgreSQL          # not its name
   timeseries: time series       # two words, not one
   "OpenSearch dashboards": "OpenSearch Dashboards"
+  "google cloud storage": "Google Cloud Storage"
 
   # Enforcing the correct case usage
   aiven: Aiven
