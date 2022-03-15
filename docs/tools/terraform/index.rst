@@ -16,73 +16,20 @@ See the `official documentation <https://registry.terraform.io/providers/aiven/a
 
 Getting started
 ---------------
-Let's get started by configuring Aiven's Terraform provider and deploying a PostgreSQL® database.
 
-Requirements 
-''''''''''''
-- `Download and install Terraform <https://www.terraform.io/downloads.html>`_
-- `Sign up <https://console.aiven.io/signup?utm_source=github&utm_medium=organic&utm_campaign=devportal&utm_content=repo>`_ for Aiven if you haven't already
-- `Generate an authentication token <https://help.aiven.io/en/articles/2059201-authentication-tokens>`_ on Aiven's console or CLI
+Please refer to the :doc:`getting started guide <geting-started>` for your first Terraform project.
 
-Set up the provider
-'''''''''''''''''''
-To initialise the provider, we will need to configure the Terraform `required_providers` block and add the API authentication token in the `api_token` field.
+.. panels::
 
-Create a file named `main.tf` and add the content below:
+    💻 :doc:`howto`
 
-.. code:: bash
+    ---
 
-    terraform {
-      required_providers {
-        aiven = {
-          source  = "aiven/aiven"
-          version = "2.5.0" # check out the latest version in the github release section
-        }
-      }
-    }
+    📖 :doc:`reference`
 
-    provider "aiven" {
-      api_token = "your-api-token"
-    }
+    ---
 
-Run the command below to initialize Terraform. It will create a directory structure containing Terraform configuration files, install custom providers etc::
-
-  $ terraform init
-
-Deploy a PostgreSQL® database
-'''''''''''''''''''''''''''''
-Now let's deploy a fully managed PostgreSQL® database on the GCP Frankfurt region. You can also see other services and available regions `on our pricing page <https://aiven.io/pricing>`_.
-
-Add the following block of code to the `main.tf` file:
-
-.. code:: bash
-
-    resource "aiven_pg" "postgresql" {
-      project                = "your-project-name"
-      service_name           = "postgresql"
-      cloud_name             = "google-europe-west3"
-      plan                   = "startup-4"
-    }
-    
-    output "postgresql_service_uri" {
-      value     = aiven_pg.postgresql.service_uri
-      sensitive = true
-    }
-
-Plan and apply the Terraform code::
-
-  $ terraform plan
-  $ terraform apply
-
-We now have a PostgreSQL service up and running! You can access it with the command below that combines the ``psql`` command with fetching the connection information from Terraform::
-
-  $ psql "$(terraform output -raw postgresql_service_uri)"
-
-Clean up
-''''''''
-To destroy the created PostgreSQL database, use the following command::
-
-  $ terraform destroy
+    👨‍🍳 :doc:`reference/cookbook`  
 
 Learn more
 ----------

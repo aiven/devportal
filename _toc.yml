@@ -59,7 +59,12 @@ entries:
       - file: docs/tools/terraform/index
         title: Aiven Terraform provider
         entries:
-        - file: docs/tools/terraform/upgrade-provider-v1-v2
+        - file: docs/tools/terraform/getting-started
+        - file: docs/tools/terraform/howto
+          title: HowTo
+          entries:
+            - file: docs/tools/terraform/howto/upgrade-provider-v1-v2
+              title: Upgrade the Aiven Terraform Provider from v1 to v2
         - file: docs/tools/terraform/reference
           entries:
           - file: docs/tools/terraform/reference/cookbook
