@@ -5,7 +5,7 @@ Sometimes, when accessing the `Aiven Console <https://console.aiven.io/>`_ and t
 
 .. Note::
 
-    The same error message is shown in Terraform (e.g when using ``terraform plan``) because it uses the same backend API.
+    The same error message is shown in Terraform (for example, when using ``terraform plan``) because it uses the same backend API.
  
 There can be a number of reasons why you are seeing the above message:
 
