@@ -1,5 +1,5 @@
-Renew service users SSL certificates
-====================================
+Renew and Acknowledge service user SSL certificates
+===================================================
 
 In every Aiven for Apache Kafka® service, when the existing service user SSL certificate is close to expiration (approximately 3 months before the expiration date), a new certificate is automatically generated and the project admins, operators, and tech email addresses are notified.
 
