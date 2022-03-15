@@ -18,10 +18,10 @@ entries:
       - file: docs/platform/howto/create_new_service_user
       - file: docs/platform/howto/create_authentication_token
       - file: docs/platform/howto/download-ca-cert
-      - file: docs/platform/howto/console-fork-service.rst
-      - file: docs/platform/howto/tag-resources.rst
-      - file: docs/platform/howto/pause-from-cli.rst
-      - file: docs/platform/howto/public-access-in-vpc.rst
+      - file: docs/platform/howto/console-fork-service
+      - file: docs/platform/howto/tag-resources
+      - file: docs/platform/howto/pause-from-cli
+      - file: docs/platform/howto/public-access-in-vpc
       - file: docs/platform/howto/add-storage-space
       - file: docs/platform/howto/restrict-access
       - file: docs/platform/howto/scale-services
@@ -60,9 +60,9 @@ entries:
         title: Aiven Terraform provider
         entries:
         - file: docs/tools/terraform/upgrade-provider-v1-v2
-        - file: docs/tools/terraform/reference.rst
+        - file: docs/tools/terraform/reference
           entries:
-          - file: docs/tools/terraform/reference/cookbook.rst
+          - file: docs/tools/terraform/reference/cookbook
             entries:
             - file: docs/tools/terraform/reference/cookbook/kafka-connect-terraform-recipe
               title: Apache Kafka and OpenSearch
@@ -89,17 +89,17 @@ entries:
             title: Tools
             entries:
               - file: docs/products/kafka/howto/kafka-tools-config-file
-              - file: docs/products/kafka/howto/kcat.rst
+              - file: docs/products/kafka/howto/kcat
               - file: docs/products/kafka/howto/kafka-conduktor
               - file: docs/products/kafka/howto/kafdrop
           - file: docs/products/kafka/howto/list-security
             title: Security
             entries:
-              - file: docs/products/kafka/howto/keystore-truststore.rst
+              - file: docs/products/kafka/howto/keystore-truststore
               - file: docs/products/kafka/howto/manage-acls
               - file: docs/products/kafka/howto/monitor-logs-acl-failure
               - file: docs/products/kafka/howto/kafka-sasl-auth
-              - file: docs/products/kafka/howto/renew-ssl-certs.rst
+              - file: docs/products/kafka/howto/renew-ssl-certs
           - file: docs/products/kafka/howto/list-admin
             title: Administration tasks
             entries:
