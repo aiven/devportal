@@ -1,12 +1,12 @@
 import glob
 from os import path
 from bs4 import BeautifulSoup
-from elasticsearch import Elasticsearch
+from opensearchpy import OpenSearch
 import hashlib
 import argparse
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--es-url', help='Elasticsearch URL')
+parser.add_argument('--es-url', help='OpenSearch URL')
 parser.add_argument('--html-build-dir', help='Sphinx HTML build directory')
 
 # Path relative to build dir
@@ -44,11 +44,11 @@ def parse_pages(html_build_dir):
     return pages
 
 
-def create_es_base(es, index_name):
+def create_es_base(os_client, index_name):
     # If needed uncomment next line to start over
-    # es.indices.delete(index=index_name)
-    es.indices.create(index=index_name, ignore=400)
-    es.indices.put_mapping(index=index_name,
+    # os_client.indices.delete(index=index_name)
+    os_client.indices.create(index=index_name, ignore=400)
+    os_client.indices.put_mapping(index=index_name,
                            body={
                                'dynamic': False,
                                'properties': {
@@ -71,8 +71,8 @@ def create_es_base(es, index_name):
                            })
 
 
-def index_pages(es, index_name, pages):
-    es.delete_by_query(index=index_name,
+def index_pages(os_client, index_name, pages):
+    os_client.delete_by_query(index=index_name,
                        body={'query': {
                            'term': {
                                'source': 'devportal'
@@ -80,7 +80,7 @@ def index_pages(es, index_name, pages):
                        }})
 
     for page in pages:
-        es.index(index=index_name,
+        os_client.index(index=index_name,
                  body=page,
                  id=hashlib.sha256(page['url'].encode("utf-8")).hexdigest())
         print(f"Indexed {page['url']}")
@@ -91,7 +91,7 @@ if __name__ == '__main__':
 
     index_name = 'devportal'
 
-    es = Elasticsearch([args.es_url])
-    create_es_base(es, index_name)
+    os_client = OpenSearch([args.es_url], use_ssl=True)
+    create_es_base(os_client, index_name)
     pages = parse_pages(args.html_build_dir)
-    index_pages(es, index_name, pages)
+    index_pages(os_client, index_name, pages)

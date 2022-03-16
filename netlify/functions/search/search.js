@@ -1,4 +1,4 @@
-const { Client } = require("@elastic/elasticsearch");
+const { Client } = require("@opensearch-project/opensearch");
 
 const client = new Client({
   node: process.env.ES_URL,
