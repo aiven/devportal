@@ -57,6 +57,14 @@ const handler = async (event) => {
                   },
                 },
               },
+              {
+                match_phrase_prefix: {
+                  url: {
+                    query: query,
+                    slop: 5,
+                  },
+                },
+              },
             ],
           },
         },
