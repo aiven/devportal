@@ -72,8 +72,8 @@ When the dump is completed, you can check that the index is available in the Ope
 
 .. _copy-data-from-os-to-s3:
 
-Copying data from Aiven OpenSearch to S3
-----------------------------------------
+Copying data from Aiven OpenSearch to AWS S3
+--------------------------------------------
 
 Prerequisites
 ~~~~~~~~~~~~~
