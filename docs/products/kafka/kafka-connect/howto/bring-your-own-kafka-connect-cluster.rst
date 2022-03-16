@@ -46,13 +46,12 @@ Setup truststore and keystore:
 Setup the Kafka service:
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Make sure that the advanced setting, "
-   *kafka.auto_create_topics_enable* " is enabled. This can be set from
+#. Make sure that the advanced setting, ``kafka.auto_create_topics_enable`` is enabled. This can be set from
    the Overview tab for the Kafka service in the Aiven console.
 
 #. Enable Schema Registry from the Overview tab for the Kafka service
 
-#. Create a topic named *jdbc_sink*
+#. Create a topic named ``jdbc_sink``
 
 Download Kafka connect binaries:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -84,8 +83,7 @@ Log in to your VM.
    unzip confluentinc-kafka-connect-avro-converter-VERSION.zip
 
 |
-| Create a properties file, *my-connect-distributed.properties* , for
-  Kafka connect.
+| Create a properties file, ``my-connect-distributed.properties`` , for Kafka connect.
 
 ::
 
@@ -193,7 +191,7 @@ participating in the connect cluster:
    cd kafka_2.13-VERSION
    ./bin/connect-distributed ./my-connect-distributed.properties
 
-Create the JDBC sink connector (json) configuration *jdbc-sink-pg.json*
+Create the JDBC sink connector ``json`` configuration ``jdbc-sink-pg.json``
 
 ::
 
@@ -229,10 +227,7 @@ Check the status of the JDBC sink connector instance
    # check running tasks
    curl localhost:8083/connectors/jdbc-sink-pg/tasks
 
-Publish data to the *jdbc_sink* topic using
-*kafka-avro-console-producer*
-
-*console-producer.properties*
+Publish data to the ``jdbc_sink`` topic using ``kafka-avro-console-producer`` ``console-producer.properties``
 
 ::
 
