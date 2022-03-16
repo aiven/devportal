@@ -1,7 +1,7 @@
 Set up your first Terraform project
 ===================================
 
-This example shows the setup for a sample Terraform project and some useful commands to stand up (and destroy) your Aiven data infrastructure.
+This example shows the setup for a simple Terraform project and some useful commands to stand up (and destroy) your Aiven data infrastructure.
 
 Requirements 
 ''''''''''''
@@ -103,11 +103,17 @@ If you're satisfied with ``terraform plan``, you execute ``terraform apply`` com
 Clean up
 ''''''''
 
-If this was a test environment, be sure to delete the resources once you're done to avoid consuming unwanted bills. 
+If this was a test environment, be sure to delete the resources once you're done to avoid consuming unwanted bills. To be confident about the service termination, you can create a speculative destroy plan by running the following command:
+
+.. code:: bash
+
+   terraform plan -destroy
+
+This will run ``terraform plan`` in destroy mode and show you the proposed destroy changes without executing them.
 
 .. warning::
 
-   Use this command with caution. This will actually delete resources that might have important data.
+   Use the following command with caution. This will actually delete resources that might have important data.
 
 .. code:: bash
 
