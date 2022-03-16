@@ -10,7 +10,28 @@ Requirements
 - `Generate an authentication token <https://developer.aiven.io/docs/platform/howto/create_authentication_token.html>`_ on Aiven's console or CLI
 
 
-1. ``provider.tf`` file:
+Configure your project and services
+'''''''''''''''''''''''''''''''''''
+
+Your Terraform file(s) consists of lines for the actual infrastructure as well as required dependencies and configurations. While you can stuff these together in one file, it's ideal to keep those as separate files.
+In this section, you'll learn how to structure a simple Terraform project. 
+
+1.  BYOTF - Bring Your Own Terraform Script. 
+
+``services.tf`` file:
+
+.. code:: bash
+
+   # Your actual Terraform script goes here 
+
+
+2. Consider the following code block similar to declaring a dependency; the *Aiven Terraform Provider* in this case. Within the `required_providers` block, you mention the source of the provider and specify a certain version. 
+The versions here are for example purpose and will change in the future. Following `Aiven Terraform Provider doc <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_, `api_token` is the only parameter for the provider configuration.
+
+Make sure that you have either the *Administrator* or *Operator* role when creating the API token. When you create a project, you automatically receive the *Administrator* access. 
+For more details, refer to the `Project members and roles page <https://developer.aiven.io/docs/platform/concepts/projects_accounts_access.html#project-members-and-roles>`_.
+
+``provider.tf`` file:
 
 .. code:: bash
 
@@ -28,12 +49,9 @@ Requirements
    }
 
 
-Consider this code block similar to declaring a dependency; the *Aiven Terraform Provider* in this case. Within the *required_providers* block, you mention the source of the provider and specify a certain version. The versions here are for example purpose and will change in the future.
-Following `Aiven Terraform Provider doc <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_, *api_token* is the only parameter for the provider configuration.
+3. Avoid including sensitive values in configuration files that are under source control. Rather than using sensitive information within this *variables.tf* file, you can use a ``*.tfvars`` file so that Terraform receives the values during runtime.
 
-Make sure the owner of the API Authentication Token has admin permissions in Aiven.
-
-2. ``variables.tf`` file:
+``variables.tf`` file:
 
 .. code:: bash
 
@@ -47,22 +65,19 @@ Make sure the owner of the API Authentication Token has admin permissions in Aiv
       type        = string
    }
 
-Avoid including sensitive values in configuration files that are under source control. Rather than using sensitive information within this *variables.tf* file, you can use a ``*.tfvars`` file so that Terraform receives the values during runtime.
 
-3. ``var-values.tfvars`` file:
+4. This is where you put the actual values for Aiven API token and Aiven console project name. This file is passed to Terraform using the ``-var-file=`` flag.
+
+``var-values.tfvars`` file:
 
 .. code:: bash
 
    aiven_api_token = "<YOUR-AIVEN-AUTHENTICATION-TOKEN-GOES-HERE>"
    project_name = "<YOUR-AIVEN-CONSOLE-PROJECT-NAME-GOES-HERE>"
 
-This is where you put the actual values for Aiven API token and Aiven console project name. This file is passed to Terraform using the ``-var-file=`` flag.
 
-4. ``services.tf`` file:
-
-.. code:: bash
-
-   # Your actual Terraform script goes here 
+Execution
+'''''''''
 
 Create an empty folder and add the above files to that folder. Then execute the following commands in order:
 
@@ -84,8 +99,9 @@ This command creates an execution plan and shows you the resources that will be 
 
 If you're satisfied with ``terraform plan``, you execute ``terraform apply`` command which actually does the task or creating (or modifying) your infrastructure resources. 
 
-Optional
---------
+
+Clean up
+''''''''
 
 If this was a test environment, be sure to delete the resources once you're done to avoid consuming unwanted bills. 
 
@@ -96,3 +112,9 @@ If this was a test environment, be sure to delete the resources once you're done
 .. code:: bash
 
    terraform destroy -var-file=var-values.tfvars
+
+
+Further reference
+'''''''''''''''''
+
+This article outlined a simple Terraform project structure. For a more complex project structure, please refer to the `Terraform Docs <https://www.terraform.io/language/modules/develop/structure>`_. 

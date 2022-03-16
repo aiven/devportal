@@ -59,7 +59,7 @@ entries:
       - file: docs/tools/terraform/index
         title: Aiven Terraform provider
         entries:
-        - file: docs/tools/terraform/getting-started
+        - file: docs/tools/terraform/get-started
         - file: docs/tools/terraform/howto
           title: HowTo
           entries:

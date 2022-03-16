@@ -17,7 +17,7 @@ See the `official documentation <https://registry.terraform.io/providers/aiven/a
 Getting started
 ---------------
 
-Please refer to the :doc:`getting started guide <geting-started>` for your first Terraform project.
+Please refer to the :doc:`getting started guide <get-started>` for your first Terraform project.
 
 .. panels::
 
