@@ -34,11 +34,11 @@ Prerequisites
 Here are some information you need to collect to copy your data:
 
 OpenSearch cluster:
-* OpenSearch cluster url , for e.g. ``http://opensearch-url:9243/``
+* OpenSearch cluster URL , for e.g. ``http://opensearch-url:9243/``
 
 Aiven for OpenSearch:
 * ``INDEX_NAME``: the name of the index that you aim to backup.
-* ``SERVICE_URI``: OpenSearch service uri. You can find it in Aiven's dashboard.
+* ``SERVICE_URI``: OpenSearch service URI. You can find it in Aiven's dashboard.
 
 
 
@@ -85,7 +85,7 @@ You need to collect this information about your Aiven for OpenSearch cluster and
 
 Aiven for OpenSearch:
 
-* ``SERVICE_URI``: OpenSearch service uri, which you can find in Aiven's dashboard.
+* ``SERVICE_URI``: OpenSearch service URI, which you can find in Aiven's dashboard.
 * ``INDEX_NAME``: the name of the index that you aim to backup.
 
 AWS S3:
