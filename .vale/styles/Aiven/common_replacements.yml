@@ -8,7 +8,7 @@ swap:
   # will match any case variant of "clickhouse", and given an
   # error if it is not "ClickHouse". Which is what we want.
 
-  clickhouse: ClickHouse        # Case - and not the H in the middle
+  clickhouse: ClickHouse        # Case - and note the H in the middle
   flick: Flink                  # it's easy to mistype
   # The word 'influx' is in the default Vale dictionary, marked /MS, which
   # means allowing `'s` and allowing a plural form. The default dictionary
@@ -21,6 +21,7 @@ swap:
   postgesql: PostgreSQL         # it's easy to mistype
   postgres: PostgreSQL          # not its name
   timeseries: time series       # two words, not one
+  hashicorp: HashiCorp          # case - note the C in the middle
   "OpenSearch dashboards": "OpenSearch Dashboards"
   "google cloud storage": "Google Cloud Storage"
 
