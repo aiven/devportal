@@ -48,7 +48,7 @@ Sink connectors enable the integration of data from an existing Apache Kafka top
 
 * `Elasticsearch <https://developer.aiven.io/docs/products/kafka/kafka-connect/howto/elasticsearch-sink>`__
 
-* `Google BigQuery <https://github.com/wepay/kafka-connect-bigquery>`__
+* `Google BigQuery <https://github.com/confluentinc/kafka-connect-bigquery>`__
 
 * `Google Cloud Pub/Sub <https://github.com/GoogleCloudPlatform/pubsub/>`__
 
