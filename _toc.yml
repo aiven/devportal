@@ -127,7 +127,7 @@ entries:
               - file: docs/products/kafka/howto/configure-log-cleaner
               - file: docs/products/kafka/howto/prevent-full-disks
               - file: docs/products/kafka/howto/use-zookeeper
-
+          - file: docs/products/kafka/howto/kafka-streams-with-aiven-for-kafka.rst
 
           - file: docs/products/kafka/howto/list-integration
             title: Integrations
