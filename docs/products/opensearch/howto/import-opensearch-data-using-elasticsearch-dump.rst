@@ -6,7 +6,7 @@ It is a good practice to perform backups of your OpenSearch data to another stor
 
 In this article, you can find out how to dump your OpenSearch data to an:
 
-* :ref:`OpenSearch cluster <copy-data-from-os-to-os>`
+* :ref:`Aiven OpenSearch <copy-data-from-os-to-os>`
 * :ref:`AWS S3 bucket <copy-data-from-os-to-s3>`
 
 To copy the index data, we will be using ``elasticsearch-dump`` `tool <elashttps://github.com/elasticsearch-dump/elasticsearch-dump>`__. You can read the `instructions on GitHub <https://github.com/elasticsearch-dump/elasticsearch-dump/blob/master/README.md>`_ in how to install it. From this library, we will use ``elasticdump`` command to copy the ``input`` index data to an specific ``output``. 
@@ -34,9 +34,11 @@ Prerequisites
 Here are some information you need to collect to copy your data:
 
 OpenSearch cluster:
+
 * OpenSearch cluster URL , for e.g. ``http://opensearch-url:9243/``
 
 Aiven for OpenSearch:
+
 * ``INDEX_NAME``: the name of the index that you aim to backup.
 * ``SERVICE_URI``: OpenSearch service URI. You can find it in Aiven's dashboard.
 
