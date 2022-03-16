@@ -23,6 +23,7 @@ const handler = async (event) => {
       }
     }
 
+    let analyzer_name = "devportal_analyzer" // Needs to match what the index was created with
     const response = await client.search({
       index: "devportal",
       body: {
@@ -38,6 +39,7 @@ const handler = async (event) => {
                     query: query,
                     slop: 2,
                     boost: 5,
+                    analyzer: analyzer_name,
                   },
                 },
               },
@@ -54,6 +56,7 @@ const handler = async (event) => {
                   description: {
                     query: query,
                     slop: 2,
+                    analyzer: analyzer_name,
                   },
                 },
               },
@@ -62,6 +65,7 @@ const handler = async (event) => {
                   content: {
                     query: query,
                     slop: 5,
+                    analyzer: analyzer_name,
                   },
                 },
               },
@@ -70,6 +74,7 @@ const handler = async (event) => {
                   url: {
                     query: query,
                     slop: 5,
+                    analyzer: analyzer_name,
                   },
                 },
               },
