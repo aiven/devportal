@@ -9,7 +9,7 @@ In this article, you can find out how to dump your OpenSearch data to an:
 * :ref:`Aiven OpenSearch <copy-data-from-os-to-os>`
 * :ref:`AWS S3 bucket <copy-data-from-os-to-s3>`
 
-To copy the index data, we will be using ``elasticsearch-dump`` `tool <elashttps://github.com/elasticsearch-dump/elasticsearch-dump>`__. You can read the `instructions on GitHub <https://github.com/elasticsearch-dump/elasticsearch-dump/blob/master/README.md>`_ in how to install it. From this library, we will use ``elasticdump`` command to copy the ``input`` index data to an specific ``output``. 
+To copy the index data, we will be using ``elasticsearch-dump`` `tool <elashttps://github.com/elasticsearch-dump/elasticsearch-dump>`__. You can read the `instructions on GitHub <https://github.com/elasticsearch-dump/elasticsearch-dump/blob/master/README.md>`_ on how to install it. From this library, we will use ``elasticdump`` command to copy the input index data to an specific output. 
 
 .. note::
 
@@ -39,11 +39,9 @@ OpenSearch cluster:
 
 Aiven for OpenSearch:
 
-* ``INDEX_NAME``: the name of the index that you aim to backup.
+* ``INPUT_INDEX_NAME``: the index that you aim to copy from your input source.
+* ``OUTPUT_INDEX_NAME``: the index that you want to have in your output with the copied data.
 * ``SERVICE_URI``: OpenSearch service URI. You can find it in Aiven's dashboard.
-
-
-
 
 Import mapping
 ~~~~~~~~~~~~~~
@@ -53,8 +51,8 @@ The process of defining how a document and the fields are stored and indexed is 
 .. code-block:: shell
 
     elasticdump \
-    --input=http://opensearch-url:9243/INDEX_NAME \
-    --output=SERVICE_URI/INDEX_NAME \
+    --input=http://opensearch-url:9243/INPUT_INDEX_NAME \
+    --output=SERVICE_URI/OUTPUT_INDEX_NAME \
     --type=mapping
 
 
@@ -66,8 +64,8 @@ This is how you can copy your index data from an OpenSearch cluster (can be in A
 .. code-block:: shell
 
     elasticdump \
-    --input=http://opensearch-url:9243/INDEX_NAME \
-    --output=SERVICE_URI/INDEX_NAME \
+    --input=http://opensearch-url:9243/INPUT_INDEX_NAME \
+    --output=SERVICE_URI/OUTPUT_INDEX_NAME \
     --type=data
 
 When the dump is completed, you can check that the index is available in the OpenSearch service you send it to. You will be able to find it under the **Indexes** tab in your Aiven console.
@@ -83,12 +81,12 @@ Prerequisites
 * Aiven for OpenSearch cluster as the ``input``
 * AWS S3 bucket as the ``output``
 
-You need to collect this information about your Aiven for OpenSearch cluster and your AWS service:
+You need to collect the following information about your Aiven for OpenSearch cluster and your AWS service:
 
 Aiven for OpenSearch:
 
 * ``SERVICE_URI``: OpenSearch service URI, which you can find in Aiven's dashboard.
-* ``INDEX_NAME``: the name of the index that you aim to backup.
+* ``INPUT_INDEX_NAME``: the index that you aim to copy from your input source.
 
 AWS S3:
 
@@ -111,7 +109,7 @@ Use ``elasticsearch-dump`` command to copy the data from your **Aiven OpenSearch
     elasticdump \
     --s3AccessKeyId "${ACCESS_KEY_ID}" \
     --s3SecretAccessKey "${SECRET_ACCESS_KEY}" \
-    --input=SERVICE_URI/index_name --output "s3://${BUCKET_NAME}/${FILE_NAME}.json"  
+    --input=SERVICE_URI/INPUT_INDEX_NAME --output "s3://${BUCKET_NAME}/${FILE_NAME}.json"  
 
 Resources
 ---------
