@@ -7,6 +7,8 @@ Here you’ll find the full list of commands for ``avn service user``.
 Manage Aiven users and credentials
 --------------------------------------------------------
 
+.. _avn-service-user-create:
+
 ``avn service user-create``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
@@ -39,6 +41,29 @@ Creates a new user for the selected service.
 
   avn service user-create pg-demo --username janedoe
 
+.. _avn_service_user_creds_acknowledge:
+
+``avn service user-creds-acknowledge``
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+Acknowledges the usage of the :doc:`renewed SSL certificate </docs/products/kafka/howto/renew-ssl-certs>` for a specific service user.
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``service_name``
+    - The name of the service
+  * - ``--username``
+    - The username for which to download the certificates
+
+**Example:** Acknowledge the usage of the new SSL certificate for the user ``janedoe`` belonging to a service named ``kafka-demo``.
+
+::
+
+  avn service user-creds-acknowledge kafka-demo --username janedoe
 
 .. _avn_service_user_creds_download:
 
@@ -66,6 +91,8 @@ Downloads the SSL certificate, key and CA certificate for the selected service.
 
   avn service user-creds-download kafka-demo --username janedoe -d /tmp/certs
 
+.. _avn-service-user-delete:
+
 ``avn service user-delete``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
@@ -87,6 +114,8 @@ Delete a service in a given Aiven service.
 ::
 
   avn service user-delete kafka-demo --username janedoe
+
+.. _avn-service-user-get:
 
 ``avn service user-get``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -143,6 +172,8 @@ Downloads the SSL certificate, key and CA certificate and creates a Java keystor
 ::
 
   avn service user-kafka-java-creds kafka-demo --username janedoe -d /tmp/certs --password safePassword123
+
+.. _avn-service-user-list:
 
 ``avn service user-list``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''

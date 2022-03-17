@@ -270,6 +270,7 @@ An example of ``account service list`` output:
 
     avn service list demo-pg --project mytestproject
 
+.. _avn-service-logs:
 
 ``avn service logs``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -327,6 +328,8 @@ Starts the service maintenance updates.
   
   If there are no updates available, the command will show a ``service is up to date, maintenance not required`` message.
 
+.. _avn-service-metrics:
+
 ``avn service metrics``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
@@ -369,6 +372,7 @@ Retrieves the metrics for a defined service in Google chart compatible format. T
 
     avn service metrics pg-demo --period day
 
+.. _avn-cli-service-migration-status:
 
 ``avn service migration-status``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -416,8 +420,9 @@ An example of ``service plans`` output:
 ``avn service privatelink``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
+Manages Aiven privatelink connections for AWS and Azure. 
 
-Service Privatelink commands
+More information on ``privatelink availability``, ``privatelink aws`` and ``privatelink azure`` can be found in :doc:`the dedicated page <service/privatelink>`.
 
 ``avn service queries``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -591,7 +596,7 @@ Updates the settings for an Aiven service.
   * - ``service_name``
     - The name of the service
   * - ``--cloud``
-    - The name of the cloud region where to deploy the service
+    - The name of the cloud region where to deploy the service; check :ref:`avn-cloud-list` for more information
   * - ``--disk-space-gib``
     - Amount of disk space for data storage (GiB)
   * - ``--plan``
@@ -624,12 +629,27 @@ Updates the settings for an Aiven service.
       --enable-termination-protection
 
 
+**Example:** Update the service named ``big-service`` to scale it down to the ``Business-4`` plan.
+
+::
+
+    avn service update big-service        \
+      --plan business-4     
+
+**Example:** Update the service named ``secure-database`` to only accept connections from the range ``10.0.1.0/24`` and the IP ``10.25.10.12``.
+
+::
+
+    avn service update secure-database \
+      -c ip_filter=10.0.1.0/24,10.25.10.1/32
+
+
 ``avn service user``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Manages Aiven users and credentials.
 
-More information on ``user-create``, ``user-creds-download``, ``user-delete``, ``user-get``, ``user-kafka-java-creds``, ``user-list``, ``user-password-reset`` and  ``user-set-access-control`` can be found in :doc:`the dedicated page <service/user>`.
+More information on ``user-create``, ``user-creds-acknowledge``, ``user-creds-download``, ``user-delete``, ``user-get``, ``user-kafka-java-creds``, ``user-list``, ``user-password-reset`` and  ``user-set-access-control`` can be found in :doc:`the dedicated page <service/user>`.
 
 
 ``avn service versions``

@@ -10,18 +10,21 @@ Logical replication is the default method which keeps the two databases synchron
 If the preconditions for logical replication are not met for a database, the migration falls back to using ``pg_dump``.
 
 .. Note::
+
     You can use logical replication when migrating from AWS RDS PostgreSQL 10+ and `Google CloudSQL PostgreSQL <https://cloud.google.com/sql/docs/release-notes#August_30_2021>`_.
 
-What you'll need
-----------------
+Requirements
+------------
+
+To perform a migration with ``aiven-db-migrate``:
     
-* The source server is publicly available or there is a virtual private cloud (VPC) peering connection between the private networks.
+* The source server needs to be publicly available or accessible via a virtual private cloud (VPC) peering connection between the private networks.
 * You have a user account with access to the destination cluster from an external IP, as configured in ``pg_hba.conf`` on the source cluster.
 
 In order to use the **logical replication** method, you'll need the following:
     
 * PostgreSQL version is 10 or higher.
-* Superuser access credentials to the source cluster or the ``aiven-extras`` extension installed. The extension allows you to perform publish/subscribe-style logical replication without a superuser account, and it is preinstalled on Aiven for PostgreSQL servers. See `Aiven Extras on GitHub <https://github.com/aiven/aiven-extras>`_.
+* Sufficient access to the source cluster (either the ``replication`` permission or the ``aiven-extras`` extension installed). The extension allows you to perform publish/subscribe-style logical replication without a superuser account, and it is preinstalled on Aiven for PostgreSQL servers. See `Aiven Extras on GitHub <https://github.com/aiven/aiven-extras>`_.
 * An available replication slot on the destination cluster for each database migrated from the source cluster.
 
 Additional migration configuration options are available, check the :ref:`pg_migration` section of the configuration reference.
@@ -48,8 +51,8 @@ Variable                Description
 .. Warning::
     Running a logical replication migration twice on the same cluster will create duplicate data. Logical replication also has `limitations <https://www.postgresql.org/docs/current/logical-replication-restrictions.html>`_ on what it can copy.
 
--> To perform the migration
----------------------------
+Perform the migration
+---------------------
 
 1. Set the ``wal_level`` to ``logical``
 
@@ -64,7 +67,7 @@ If the output is not ``logical``, run the following command in ``psql`` and then
     ALTER SYSTEM SET wal_level = logical;
 
 .. Note::
-    If you are migrating from an AWS RDS PostgreSQL cluster, set the ``rds.logical_replication`` parameter to ``1`` (true) in the parameter group.
+    If you are migrating from an AWS RDS PostgreSQL cluster, set the ``rds.logical_replication`` parameter to ``1`` (true) in the parameter group.  If you are migration from a GCP SQL PostgreSQL cluster, set the ``cloudsql.logical_decoding`` flag to ``on`` (as described in the `GCP docs <https://cloud.google.com/sql/docs/postgres/replication/configure-logical-replication>`_)
 
 
 2. If you don't have an Aiven for PostgreSQL database yet, run the following command to create a couple of PostgreSQL services via :doc:`../../../tools/cli` substituting the parameters accordingly::
@@ -135,8 +138,9 @@ This command removes all logical replication-related objects from both source an
 
 
 
--> Migration using ``aiven-db-migrate`` directly
-------------------------------------------------
+Migrate using ``aiven-db-migrate`` directly
+-------------------------------------------
+
 The ``aiven-db-migrate`` tool migrates all the tables including extension tables such as ``spatial_ref_sys`` 
 from ``postgis`` extension.
 

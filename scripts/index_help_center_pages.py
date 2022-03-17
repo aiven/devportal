@@ -1,15 +1,15 @@
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
-from elasticsearch import Elasticsearch
+from opensearchpy import OpenSearch
 import hashlib
 import argparse
 import requests
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--es-url", help="Elasticsearch URL")
+parser.add_argument("--es-url", help="OpenSearch URL")
 
 
-def index_pages(es, index_name, base_url):
+def index_pages(os_client, index_name, base_url):
     successes = []
     skips = []
     deletes = []
@@ -48,7 +48,7 @@ def index_pages(es, index_name, base_url):
                     "sort_priority": 2,
                 }
 
-                es.index(
+                os_client.index(
                     index=index_name,
                     body=page,
                     id=hashlib.sha256(page["url"].encode("utf-8")).hexdigest(),
@@ -58,7 +58,7 @@ def index_pages(es, index_name, base_url):
             except Exception as e:
                 fails.append((article_url, e))
 
-    search_result = es.search(
+    search_result = os_client.search(
         index=index_name,
         body={"query": {"term": {"source": "helpcenter"}}},
         _source=["url"],
@@ -71,7 +71,7 @@ def index_pages(es, index_name, base_url):
         page_id = page["_id"]
         page_url = page["_source"]["url"]
         if page_url not in all_current_urls:
-            es.delete(index=index_name, id=page_id)
+            os_client.delete(index=index_name, id=page_id)
             deletes.append(page_url)
 
     print("# INDEXED")
@@ -90,5 +90,5 @@ if __name__ == "__main__":
     index_name = "devportal"
     base_url = "https://help.aiven.io/en"
 
-    es = Elasticsearch([args.es_url])
-    index_pages(es, index_name, base_url)
+    os_client = OpenSearch([args.es_url], use_ssl=True)
+    index_pages(os_client, index_name, base_url)

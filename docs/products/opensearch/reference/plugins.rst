@@ -29,5 +29,5 @@ These plugins are enabled on all Aiven for OpenSearch services by default:
 * `Performance Analyzer <https://opensearch.org/docs/monitoring-plugins/pa/index/>`__
 * `OpenSearch Dashboards Reports <https://github.com/opensearch-project/dashboards-reports>`__
 * `Scheduler for Dashboards Reports <https://github.com/opensearch-project/dashboards-reports>`__
-* `OpenSearch Dashboards GANTT Charts <https://opensearch.org/docs/latest/dashboards/gantt/>`__
+* `OpenSearch Dashboards Gantt Charts <https://opensearch.org/docs/latest/dashboards/gantt/>`__
 * `OpenSearch Dashboards Trace Analytics <https://opensearch.org/docs/latest/monitoring-plugins/trace/index/>`__

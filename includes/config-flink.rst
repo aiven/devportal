@@ -25,6 +25,9 @@
   ``flink`` => *boolean*
     **Enable flink** None
 
+  ``prometheus`` => *boolean*
+    **Enable prometheus** None
+
 
 
 ``restart_strategy`` => *string*

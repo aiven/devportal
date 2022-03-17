@@ -34,7 +34,10 @@ etcd
 failover
 fileset[s]?
 Flink
+Gantt
 [Gg]eocoder
+geocoding
+geohash
 Geomap
 [Gg]eospatial
 GitHub
@@ -92,12 +95,12 @@ Podman
 pooler
 PostgreSQL
 Postman
-[Pp]rivatelink
+[Pp]rivate[L|l]ink
 Protobuf
 Prometheus
 psql
 Python
-[R|r]ebalanc[e|ing]
+[Rr]ebalancing
 Redis
 Redli
 refcard
@@ -111,6 +114,7 @@ Simple Authentication and Security Layer
 Singlestat
 Splunk
 [Ss]pring
+Stackdriver
 Statusmap
 Stunnel
 [Ss]ubnet
@@ -125,11 +129,12 @@ Transport Layer Security
 [Tt]ruststore
 Uber
 unencrypted
-Untrusted
+[Uu]ntrusted
 [Uu]naggregated
 [Uu]psert
 wget
 Workbench
+Worldmap
 Zabbix
 Zipkin
 ZooKeeper
