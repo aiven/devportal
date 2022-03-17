@@ -13,7 +13,7 @@ To setup the Google Cloud Storage sink connector by Aiven, you need an Aiven for
 Furthermore you need to follow the steps :doc:`to prepare the GCP account and GCS sink <gcs-sink-prereq>` and collect the following information about the target GCS bucket upfront:
 
 * ``GCS_NAME``: The name of the GCS bucket
-* ``GCS_CREDENTIALS``: The Google service account JSON service key :ref:`created during the prerequisit phase <gcs-sink-connector-google-account>`
+* ``GCS_CREDENTIALS``: The Google service account JSON service key :ref:`created during the prerequisite phase <gcs-sink-connector-google-account>`
 
 .. Warning::
 
