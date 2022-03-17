@@ -100,7 +100,7 @@ Protobuf
 Prometheus
 psql
 Python
-[Rr]ebalancing
+[R|r]ebalanc[e|ing]
 Redis
 Redli
 refcard
