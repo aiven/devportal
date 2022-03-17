@@ -614,3 +614,16 @@ If this works, it may solve some of our other issues without any hacking of vale
 It may also be possible to define the substitutions in the sphinx ``conf.py``, so it's always there.
 
 And lastly, if this does work, it's worth blogging about...
+
+*Although* it's not clear if we ever *want* to use this ourselves - it's a slippery slope disabling checking on parts of a document...
+
+More potential checks
+---------------------
+
+  *I should consolidate these suggestions*
+
+These all probably need ``raw`` mode, to see the actual markup, which I haven't used yet.
+
+* check for markdown style links (so easy to do when we use both markdown and reStructuredText in different places)
+* check for missing ``:alt:`` in ``.. image::`` directives (at the moment we're relying on a vale bug to spot these - I'm looking into that elsewhere)
+* check for single backticks (as for markdown) where there shoud be double backticks (single backticks in reStructuredText means "use the default role", which in our sphinx setup gives italics, which is a bit confusing and actually quite easy to miss)
