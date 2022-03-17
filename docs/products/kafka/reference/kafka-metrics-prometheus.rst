@@ -7,7 +7,7 @@ available via Prometheus for an Aiven for Apache Kafka service.
 
 You can retrieve the complete list of available metrics for your specific service by calling to the Prometheus endpoint
 
-.. code-block:: python
+.. code-block:: bash
 
     curl --cacert ca.pem \
         --user '<prometheus_user>:<prometheus_password>' \
