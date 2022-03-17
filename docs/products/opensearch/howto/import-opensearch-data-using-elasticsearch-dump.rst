@@ -35,11 +35,11 @@ Here are some information you need to collect to copy your data:
 
 OpenSearch cluster:
 
-* OpenSearch cluster URL , for e.g. ``http://opensearch-url:9243/``
+* ``INPUT_SERVICE_URI``: OpenSearch cluster URL, for e.g. ``http://opensearch-url:9243/``
+* ``INPUT_INDEX_NAME``: the index that you aim to copy from your input source.
 
 Aiven for OpenSearch:
 
-* ``INPUT_INDEX_NAME``: the index that you aim to copy from your input source.
 * ``OUTPUT_INDEX_NAME``: the index that you want to have in your output with the copied data.
 * ``SERVICE_URI``: OpenSearch service URI. You can find it in Aiven's dashboard.
 
@@ -51,7 +51,7 @@ The process of defining how a document and the fields are stored and indexed is 
 .. code-block:: shell
 
     elasticdump \
-    --input=http://opensearch-url:9243/INPUT_INDEX_NAME \
+    --input=INPUT_SERVICE_URI/INPUT_INDEX_NAME \
     --output=SERVICE_URI/OUTPUT_INDEX_NAME \
     --type=mapping
 
@@ -64,7 +64,7 @@ This is how you can copy your index data from an OpenSearch cluster (can be in A
 .. code-block:: shell
 
     elasticdump \
-    --input=http://opensearch-url:9243/INPUT_INDEX_NAME \
+    --input=INPUT_SERVICE_URI/INPUT_INDEX_NAME \
     --output=SERVICE_URI/OUTPUT_INDEX_NAME \
     --type=data
 
@@ -85,13 +85,13 @@ You need to collect the following information about your Aiven for OpenSearch cl
 
 Aiven for OpenSearch:
 
-* ``SERVICE_URI``: OpenSearch service URI, which you can find in Aiven's dashboard.
+* ``SERVICE_URI`: OpenSearch service URI, which you can find in Aiven's dashboard.
 * ``INPUT_INDEX_NAME``: the index that you aim to copy from your input source.
 
 AWS S3:
 
 * AWS credentials (``ACCESS_KEY_ID`` and ``SECRET_ACCESS_KEY``).
-* S3 file path, with the bucket name and file name, for e.g. ``s3://${BUCKET_NAME}/${FILE_NAME}.json``
+* S3 file path. This includes bucket name and file name, for e.g. ``s3://${BUCKET_NAME}/${FILE_NAME}.json``
 
 .. seealso::
 
