@@ -1,15 +1,9 @@
 Manage configurations with Apache Kafka® CLI tools
 ==================================================
 
-ZooKeeper is an important part of Apache Kafka® since it tracks the status of the cluster and offers visibility its the current state. Moreover, by interacting with ZooKeeper, you're able to change any Apache Kafka parameter.
+Aiven for Apache Kafka® services are fully manageble and customisable via either :doc:`advanced configuration flags in the Aiven Console <use-zookeeper>` or the :doc:`Aiven CLI </docs/tools/cli>`. To guarantee the service stability, direct Apache ZooKeeper™ access isn't available, but our tooling provides you all the options that you need - whether your Apache Kafka version has Apache ZooKeeper™ in it or not.
 
-Aiven for Apache Kafka® is a fully managed service, therefore, to guarantee the service stability, good maintenance and functionality, we do not allow direct access to ZooKeeper. Instead, we monitor and manage it using the Aiven platform to make sure that we can react as quickly as possible if any issues occur.
-
-Most of the changes usually performed via ZooKeeper are available via the :doc:`advanced configuration flags in the Aiven web console <use-zookeeper>` or via the :doc:`Aiven CLI </docs/tools/cli>`. However, you may want to use the client tools included in the `Apache Kafka binaries <https://kafka.apache.org/downloads>`_ to manage the configurations for your services. 
-
-.. Warning::
-    
-    Without access to ZooKeeper, some of the Apache Kafka command line tools are not working. But some commands, with the Apache Kafka product maturation, removed the reliance on ZooKeeper giving you options to handle specific configuration changes.
+Some of the configuration changes don't need ZooKeeper access, and therefore you can use the stardard client tools shipped with the Apache Kafka® binaries. The example below shows how to create a topic using one of such tools, the ``kafka-topics.sh``.
 
 Example: Create a topic with retention time to 30 minutes with ``kafka-topics.sh``
 ----------------------------------------------------------------------------------
