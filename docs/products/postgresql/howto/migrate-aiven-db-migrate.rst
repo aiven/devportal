@@ -12,7 +12,6 @@ If the preconditions for logical replication are not met for a database, the mig
 .. Note::
 
     You can use logical replication when migrating from AWS RDS PostgreSQL® 10+ and `Google CloudSQL PostgreSQL <https://cloud.google.com/sql/docs/release-notes#August_30_2021>`_.
-    You can use logical replication when migrating from AWS RDS PostgreSQL® 10+ and `Google CloudSQL PostgreSQL <https://cloud.google.com/sql/docs/release-notes#August_30_2021>`_.
 
 Requirements
 ------------

@@ -14,13 +14,13 @@ Why Apache Kafka?
 
 Apache Kafka itself is technically a distributed log storage mechanism; in reality it is a best-in-class, highly-available data streaming solution. Oh, and it just happens to have an incredibly rich ecosystem of open source tooling that connects to and extends the existing platform.
 
-Aiven for Apache Kafka MirrorMaker 2
-''''''''''''''''''''''''''''''''''''
+Aiven for Apache Kafka® MirrorMaker 2
+'''''''''''''''''''''''''''''''''''''
 
 By adding Aiven for Apache Kafka MirrorMaker 2 to your setup, you gain replication superpowers. Whether you need data replication across clusters, availability zones or clouds, MirrorMaker 2 is the answer.
 
-Aiven for Apache Kafka Connect
-''''''''''''''''''''''''''''''
+Aiven for Apache Kafka® Connect
+'''''''''''''''''''''''''''''''
 
 Apache Kafka moves data between systems, and Apache Kafka Connect is how to interface between Apache Kafka and the rest of your data architecture. Connectors are available for many databases, storage platforms and other common integrations.
 
