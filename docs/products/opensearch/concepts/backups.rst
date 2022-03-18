@@ -1,3 +1,5 @@
+.. _opensearch-backup:
+
 Backups
 =======
 
