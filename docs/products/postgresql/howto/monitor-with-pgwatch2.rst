@@ -1,7 +1,7 @@
-Monitor PostgreSQL metrics with pgwatch2
-========================================
+Monitor PostgreSQL® metrics with pgwatch2
+==========================================
 
-`pgwatch2`_ is an open source monitoring solution for PostgreSQL, created by CYBERTEC and can be used to monitor instances of Aiven for PostgreSQL collecting key PostgreSQL metrics and also gathering data from a wide range of PostgreSQL extensions.
+`pgwatch2`_ is an open source monitoring solution for PostgreSQL®, created by CYBERTEC and can be used to monitor instances of Aiven for PostgreSQL collecting key PostgreSQL metrics and also gathering data from a wide range of PostgreSQL extensions.
 
 .. Note::
 

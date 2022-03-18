@@ -46,9 +46,9 @@ M3 is highly compatible with other Aiven products for the following tasks:
 
 - To collect metrics with Prometheus, M3 is designed as a scalable storage backend.
 
-- To write metrics directly from your applications using the InfluxDB-compatible wire protocol.
+- To write metrics directly from your applications using the InfluxDB®-compatible wire protocol.
 
-- To create dashboards and query available features using Grafana and PromQL.
+- To create dashboards and query available features using Grafana® and PromQL.
 
 Check out all the features on our `M3 product page <https://aiven.io/m3#full-feature-list>`_. 
 

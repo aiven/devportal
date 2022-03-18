@@ -1,17 +1,17 @@
-Monitor PostgreSQL metrics with Grafana
-=======================================
+Monitor PostgreSQL® metrics with Grafana®
+=========================================
 
-As well as offering PostgreSQL-as-a-service, the Aiven platform gives you access to monitor the database. The metrics/dashboard integration in the Aiven console lets you send PostgreSQL metrics to an external endpoint like Datadog or to create an integration and a :doc:`prebuilt dashboard <../reference/pg-metrics>` in Aiven for Grafana. Get detailed information about the metrics and dashboard sections in :doc:`../reference/pg-metrics`.
+As well as offering PostgreSQL-as-a-service, the Aiven platform gives you access to monitor the database. The metrics/dashboard integration in the Aiven console lets you send PostgreSQL® metrics to an external endpoint like Datadog or to create an integration and a :doc:`prebuilt dashboard <../reference/pg-metrics>` in Aiven for Grafana®. Get detailed information about the metrics and dashboard sections in :doc:`../reference/pg-metrics`.
 
 
-Push PostgreSQL metrics to InfluxDB, M3DB or PostgreSQL
--------------------------------------------------------
+Push PostgreSQL metrics to InfluxDB®, M3DB or PostgreSQL
+--------------------------------------------------------
 
 To collect metrics about your PostgreSQL service you will need to configure a metrics integration and nominate somewhere to store the collected metrics.
 
 1. On the service overview page for your PostgreSQL service, go to "Manage Integrations" and choose the "Metrics" option with "**Send** service metrics to InfluxDB, M3DB or PostgreSQL service" as its description.
 
-2. Choose either a new or existing InfluxDB, M3DB or PostgreSQL service.
+2. Choose either a new or existing InfluxDB®, M3DB or PostgreSQL service.
 
    - A new service will ask you to select the cloud, region and plan to use. You should also give your service a name. The service overview page shows the nodes rebuilding, and then indicates when they are ready.
    - If you're already using InfluxDB, M3DB or PostgreSQL on Aiven, you can submit your PostgreSQL metrics to the existing service.

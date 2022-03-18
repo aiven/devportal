@@ -1,7 +1,7 @@
-Get partition details of an Apache Kafka topic
-==============================================
+Get partition details of an Apache Kafka® topic
+===============================================
 
-Use one of three available approaches to retrieve partition details of a Kafka topic.
+Use one of three available approaches to retrieve partition details of an Apache Kafka® topic.
 
 With Aiven console
 ------------------

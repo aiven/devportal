@@ -1,5 +1,5 @@
 Aiven Terraform provider
-=========================
+========================
 
     Terraform is an open-source infrastructure as code software tool that provides a consistent CLI workflow to manage hundreds of cloud services. Terraform codifies cloud APIs into declarative configuration files. `Terraform website <https://www.terraform.io/>`_.
 
@@ -16,7 +16,7 @@ See the `official documentation <https://registry.terraform.io/providers/aiven/a
 
 Getting started
 ---------------
-Let's get started by configuring Aiven's Terraform provider and deploying a PostgreSQL database.
+Let's get started by configuring Aiven's Terraform provider and deploying a PostgreSQL® database.
 
 Requirements 
 ''''''''''''
@@ -49,9 +49,9 @@ Run the command below to initialize Terraform. It will create a directory struct
 
   $ terraform init
 
-Deploy a PostgreSQL database
-''''''''''''''''''''''''''''
-Now let's deploy a fully managed PostgreSQL database on the GCP Frankfurt region. You can also see other services and available regions `on our pricing page <https://aiven.io/pricing>`_.
+Deploy a PostgreSQL® database
+'''''''''''''''''''''''''''''
+Now let's deploy a fully managed PostgreSQL® database on the GCP Frankfurt region. You can also see other services and available regions `on our pricing page <https://aiven.io/pricing>`_.
 
 Add the following block of code to the `main.tf` file:
 

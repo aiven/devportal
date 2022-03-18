@@ -1,7 +1,7 @@
-Aiven for OpenSearch
-====================
+Aiven for OpenSearch®
+=====================
 
-`OpenSearch <https://opensearch.org>`_ is an open source search and analytics suite including search engine, NoSQL document database, and visualization interface. OpenSearch offers a distributed, full-text search engine based on `Apache Lucene <https://lucene.apache.org/>`_ with a RESTful API interface and support for JSON documents. Aiven for OpenSearch and Aiven for OpenSearch Dashboards are available on a cloud of your choice.
+`OpenSearch® <https://opensearch.org>`_ is an open source search and analytics suite including search engine, NoSQL document database, and visualization interface. OpenSearch offers a distributed, full-text search engine based on `Apache Lucene® <https://lucene.apache.org/>`_ with a RESTful API interface and support for JSON documents. Aiven for OpenSearch and Aiven for OpenSearch Dashboards are available on a cloud of your choice.
 
 .. note::
     OpenSearch and OpenSearch Dashboards projects were forked in 2021 from the formerly open source projects Elasticsearch and Kibana.
@@ -42,9 +42,9 @@ Ways to use OpenSearch
 
 OpenSearch is ideal for working with various types of unstructured data, where you need to be able to find things quickly. The most common examples include:
 
-* Send your **logs** to OpenSearch so that you can quickly identify and diagnose problems if they arise. 
+* Send your **logs** to OpenSearch so that you can quickly identify and diagnose problems if they arise.
 
-.. tip::
+  .. tip::
     Check how to send logs from a service to your OpenSearch service :doc:`by enabling log integration <howto/opensearch-log-integration>` feature.
 
 * Use OpenSearch to index documents, so that you can get meaningful **search results** from a large body of knowledge.
@@ -59,3 +59,9 @@ OpenSearch resources
 * There's a :doc:`list of plugins <reference/plugins>` supported by Aiven for OpenSearch.
 
 * Got a question about the OpenSearch project itself? They have an `FAQ <https://opensearch.org/faq/>`_ for that.
+
+--------
+
+*Apache Lucene is a registered trademark or trademark of the Apache Software Foundation in the United States and/or other countries*
+*Elasticsearch is a trademark of Elasticsearch B.V., registered in the U.S. and in other countries.*
+*Kibana is a trademark of Elasticsearch B.V., registered in the U.S. and in other countries.*

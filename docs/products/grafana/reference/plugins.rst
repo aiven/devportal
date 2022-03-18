@@ -1,7 +1,7 @@
 List of available plugins
 =========================
 
-The following plugins are available in all installations of Aiven for Grafana®G, and they are updated at intervals. To request additional plugins, please reach out to our support team at ``support@aiven.io``.
+The following plugins are available in all installations of Aiven for Grafana®, and they are updated at intervals. To request additional plugins, please reach out to our support team at ``support@aiven.io``.
 
 Panel plugins
 -------------
@@ -120,7 +120,7 @@ Azure Monitor - `Grafana <https://grafana.com/grafana/plugins/grafana-azure-moni
     Provides a single source for monitoring Azure resources. 
 
 ClickHouse® - `GitHub <https://github.com/Vertamedia/clickhouse-grafana>`__
-    Provides support for ClickHouse as a backend database.
+    Provides support for ClickHouse® as a backend database.
 
 CloudWatch - `Grafana <https://grafana.com/grafana/plugins/cloudwatch/>`__ | `Grafana Docs <http://docs.grafana.org/datasources/cloudwatch/>`__
     Build dashboards for your CloudWatch metrics.

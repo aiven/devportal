@@ -1,7 +1,7 @@
-Upgrade Elasticsearch clients to OpenSearch
-===========================================
+Upgrade Elasticsearch clients to OpenSearch®
+============================================
 
-Elasticsearch has introduced breaking changes into their client libraries as early as **7.13.\***, that's why newer Elasticsearch clients won't work with OpenSearch.
+Elasticsearch has introduced breaking changes into their client libraries as early as **7.13.\***, that's why newer Elasticsearch clients won't work with OpenSearch®.
 
 Migration steps
 ---------------
@@ -53,3 +53,7 @@ Python
 
 `Python client library <https://opensearch.org/docs/latest/clients/python>`_ is a fork of the Elasticsearch libraries. The only required change should be the dependencies and the
 ``require`` or ``import`` statements. You can check an `example migration code <https://github.com/aiven/opensearch-migration-examples/tree/main/python-client-migration>`__ in our repository.
+
+------
+
+*Elasticsearch is a trademark of Elasticsearch B.V., registered in the U.S. and in other countries.*

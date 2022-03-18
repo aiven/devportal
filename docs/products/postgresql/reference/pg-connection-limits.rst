@@ -1,7 +1,7 @@
 Connection limits per plan
 =====================================
 
-Aiven for PostgreSQL instances limit the number of allowed connections to make sure that the database is able to serve them all. The ``max_connections`` setting varies according to the service plan as follows:
+Aiven for PostgreSQL® instances limit the number of allowed connections to make sure that the database is able to serve them all. The ``max_connections`` setting varies according to the service plan as follows:
 
 .. list-table::
    :header-rows: 1

@@ -12,7 +12,7 @@ Manage databases
 ``avn service database-create``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Creates a database within an Aiven for PostgreSQL, Aiven for MySQL or Aiven for InfluxDB service.
+Creates a database within an Aiven for PostgreSQL®, Aiven for MySQL or Aiven for InfluxDB® service.
 
 .. list-table::
   :header-rows: 1
@@ -34,7 +34,7 @@ Creates a database within an Aiven for PostgreSQL, Aiven for MySQL or Aiven for 
 ``avn service database-delete``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Removes a specific database within an Aiven for PostgreSQL, Aiven for MySQL or Aiven for InfluxDB service.
+Removes a specific database within an Aiven for PostgreSQL®, Aiven for MySQL or Aiven for InfluxDB® service.
 
 .. list-table::
   :header-rows: 1
@@ -56,7 +56,7 @@ Removes a specific database within an Aiven for PostgreSQL, Aiven for MySQL or A
 ``avn service database-list``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Lists the service databases available in an Aiven for PostgreSQL, Aiven for MySQL or Aiven for InfluxDB service.
+Lists the service databases available in an Aiven for PostgreSQL®, Aiven for MySQL or Aiven for InfluxDB® service.
 
 .. list-table::
   :header-rows: 1

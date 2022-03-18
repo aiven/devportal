@@ -15,13 +15,17 @@ When you fork a service, the following items are copied into the new service:
 
 You can fork the following Aiven services:
 
-- PostgreSQL
+- PostgreSQL®
 - MySQL
-- Redis
-- Cassandra (Limitation: you cannot fork to a lower amount of nodes)
+- Redis™*
+- Apache Cassandra® (Limitation: you cannot fork to a lower amount of nodes)
 - Elasticsearch
-- InfluxDB
+- InfluxDB®
 - M3DB
-- Grafana
+- Grafana®
 
 When forking a service with Point in Time Recovery (PITR), you can choose to fork from the latest transaction or select a specific point in the past to fork from. 
+
+------
+
+*Elasticsearch is a trademark of Elasticsearch B.V., registered in the U.S. and in other countries.*

@@ -2,7 +2,7 @@ Configure log cleaner for topic compaction
 ==========================================
 
 
-The log cleaner is the process ensuring only the most recent value for a certain message key is kept within a partition for :doc:`compacted topics <../concepts/log-compaction>`.  In Aiven for Apache Kafka the log cleaner is enabled, but the **log compaction** is disabled by default. To enable log compaction, follow these steps:
+The log cleaner is the process ensuring only the most recent value for a certain message key is kept within a partition for :doc:`compacted topics <../concepts/log-compaction>`.  In Aiven for Apache Kafka® the log cleaner is enabled, but the **log compaction** is disabled by default. To enable log compaction, follow these steps:
 
 
 Enable log compaction for all topics

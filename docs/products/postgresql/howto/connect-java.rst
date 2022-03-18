@@ -1,7 +1,7 @@
 Connect with Java
 -----------------
 
-This example connects to PostgreSQL service from Java, making use of JDBC Driver.
+This example connects to PostgreSQL® service from Java, making use of JDBC Driver.
 
 Variables
 '''''''''

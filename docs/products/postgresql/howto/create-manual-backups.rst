@@ -1,5 +1,5 @@
-Create manual PostgreSQL backups
-================================
+Create manual PostgreSQL® backups
+=================================
 
 Aiven provides :doc:`fully automated backup management for PostgreSQL <../concepts/pg-backups>`. All backups are encrypted with service-specific keys, and point-in-time recovery is supported to allow recovering the system to any point within the backup window. Aiven stores the backups to the closest available cloud storage to enhance restore speed.
 

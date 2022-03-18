@@ -1,7 +1,7 @@
 Add service user accounts
 =========================
 
-This article shows you how to add new users to your Aiven for ClickHouse service, allowing you to control access grants for different purposes.
+This article shows you how to add new users to your Aiven for ClickHouse® service, allowing you to control access grants for different purposes.
 
 1. Log in to the `Aiven web console <https://console.aiven.io/>`_ and select your ClickHouse service.
 

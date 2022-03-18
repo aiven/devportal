@@ -1,7 +1,7 @@
 Connect with PHP
 ----------------
 
-This example connects to Redis service from PHP, making use of the ``predis`` library.
+This example connects to Redis™* service from PHP, making use of the ``predis`` library.
 
 Variables
 '''''''''

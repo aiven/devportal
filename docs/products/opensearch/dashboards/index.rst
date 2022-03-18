@@ -1,7 +1,7 @@
-OpenSearch Dashboards
-======================
+OpenSearch® Dashboards
+=======================
 
-OpenSearch Dashboards is both a visualisation tool for data in the cluster and a user interface for OpenSearch plugins. It's included with your Aiven for OpenSearch service and accessible through the browser.
+OpenSearch® Dashboards is both a visualisation tool for data in the cluster and a user interface for OpenSearch plugins. It's included with your Aiven for OpenSearch service and accessible through the browser.
 
 .. note::
     OpenSearch Dashboards was forked in 2021 from the formerly open source project Kibana.
@@ -30,3 +30,7 @@ OpenSearch Dashboards resources
 * How to create reports https://opensearch.org/docs/latest/dashboards/reporting/
 
 * Other :doc:`helpful resources <howto>`
+
+--------
+
+*Kibana is a trademark of Elasticsearch BV, registered in the U.S. and in other countries.*

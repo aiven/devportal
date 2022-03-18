@@ -1,6 +1,6 @@
 Reference
 =========
 
-Additional reference information for Aiven for ClickHouse:
+Additional reference information for Aiven for ClickHouse®:
 
 .. tableofcontents::

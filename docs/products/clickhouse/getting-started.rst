@@ -1,7 +1,7 @@
 Getting started
 ===============
 
-The first step in using Aiven for ClickHouse is to create a service and a database that you can use to try out the service. You can do this in the `Aiven web console <https://console.aiven.io/>`_.
+The first step in using Aiven for ClickHouse® is to create a service and a database that you can use to try out the service. You can do this in the `Aiven web console <https://console.aiven.io/>`_.
 
 This example shows you how to create a new service, add a database to it, and use `Docker <https://www.docker.com/>`_ to connect to the service with the ClickHouse client.
 

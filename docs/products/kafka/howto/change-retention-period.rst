@@ -1,7 +1,7 @@
 Change data retention period
 ==============================
 
-To avoid running out of disk space, by default Apache Kafka drops the oldest messages from the beginning of each log after their retention period expires. **Aiven for Apache Kafka** allows you to configure the retention period for each topic.
+To avoid running out of disk space, by default Apache Kafka® drops the oldest messages from the beginning of each log after their retention period expires. **Aiven for Apache Kafka®** allows you to configure the retention period for each topic.
 
 The retention period can be set at a service and at a topic level. The setting at service level will be taken into use when no retention period is defined for a specific topic (the default is 168 hours). The change of service retention period overwrites the retention period of previously created topics.
 

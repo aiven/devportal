@@ -1,7 +1,7 @@
 List of advanced parameters
 ============================
 
-On creating a PostgreSQL database, you can customize it using a series of the following advanced parameters:
+On creating a PostgreSQL® database, you can customize it using a series of the following advanced parameters:
 
 General parameters
 --------------------

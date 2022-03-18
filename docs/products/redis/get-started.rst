@@ -1,7 +1,7 @@
-Get started with Aiven for Redis
-================================
+Get started with Aiven for Redis™*
+==================================
 
-Aiven for Redis services are managed from the `Aiven
+Aiven for Redis™* services are managed from the `Aiven
 Console <https://console.aiven.io/>`__. Create a new Aiven for Redis service by following the steps laid out in :doc:`this article </docs/platform/howto/create_new_service>`.
 
 Once the service creation is initiated, you can go to its dedicated service page where the new service is shown with an indicator that it is being created.

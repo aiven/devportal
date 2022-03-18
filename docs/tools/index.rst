@@ -11,4 +11,4 @@ For programmatic integrations, the :doc:`Aiven API <api/index>` provides an inte
 
 The :doc:`terraform <terraform/index>` gives orchestration features for infrastructure-as-code projects.
 
-The :doc:`kubernetes` adds orchestration of your Aiven services to your existing Kubernetes cluster.
+The :doc:`kubernetes` adds orchestration of your Aiven services to your existing Kubernetes® cluster.

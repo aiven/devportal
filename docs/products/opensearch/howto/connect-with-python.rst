@@ -1,7 +1,7 @@
-Connect to OpenSearch cluster with Python
-=========================================
+Connect to OpenSearch® cluster with Python
+==========================================
 
-You can interact with your cluster with the help of the `Python OpenSearch client <https://github.com/opensearch-project/opensearch-py>`_. 
+You can interact with your cluster with the help of the `Python OpenSearch® client <https://github.com/opensearch-project/opensearch-py>`_.
 It provides a convenient syntax to send commands to your OpenSearch cluster. Follow its ``README`` file for installation instructions.
 
 To connect with your cluster, you need the **Service URI** of your OpenSearch cluster. You can find the connection details in the section **Overview** on `Aiven web console <https://console.aiven.io>`_.  Alternatively, you can retrieve it via the ``avn service get`` command with the :ref:`Aiven CLI <avn_service_get>`.  Notice that ``service_uri`` contains credentials; therefore, should be treated with care.

@@ -1,7 +1,7 @@
-PostgreSQL metrics exposed in Grafana
-=====================================
+PostgreSQL® metrics exposed in Grafana®
+=======================================
 
-The metrics/dashboard integration in the Aiven console enables you to push PostgreSQL metrics to an external endpoint like Datadog or to create an integration and a prebuilt dashboard in Aiven for Grafana. For more information on enabling the integration, see :doc:`../howto/report-metrics-grafana`. This article describes the default dashboard created in Grafana for any PostgreSQL instance.
+The metrics/dashboard integration in the Aiven console enables you to push PostgreSQL® metrics to an external endpoint like Datadog or to create an integration and a prebuilt dashboard in Aiven for Grafana®. For more information on enabling the integration, see :doc:`../howto/report-metrics-grafana`. This article describes the default dashboard created in Grafana for any PostgreSQL instance.
 
 General info about default dashboards
 -------------------------------------

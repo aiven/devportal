@@ -11,13 +11,13 @@ Source connectors enable the integration of data from an existing technology int
 
 * `Couchbase <https://github.com/couchbase/kafka-connect-couchbase>`__
 
-* `Official MongoDB <https://docs.mongodb.com/kafka-connector/current/>`__ :badge:`preview,cls=badge-secondary badge-pill`
+* `Official MongoDB® <https://docs.mongodb.com/kafka-connector/current/>`__ :badge:`preview,cls=badge-secondary badge-pill`
 
-* `Debezium for MongoDB <https://debezium.io/docs/connectors/mongodb/>`__ 
+* `Debezium for MongoDB® <https://debezium.io/docs/connectors/mongodb/>`__
 
 * `Debezium for MySQL <https://debezium.io/docs/connectors/mysql/>`__ 
 
-* :doc:`Debezium for PostgreSQL <../howto/debezium-source-connector-pg>` 
+* :doc:`Debezium for PostgreSQL® <../howto/debezium-source-connector-pg>`
 
 * `Debezium for SQL Server <https://debezium.io/docs/connectors/sqlserver/>`__ 
 
@@ -29,7 +29,7 @@ Source connectors enable the integration of data from an existing technology int
 
 * Schema Source 
 
-* `Stream Reactor Cassandra <https://docs.lenses.io/connectors/source/cassandra.html>`__ 
+* `Stream Reactor Cassandra® <https://docs.lenses.io/connectors/source/cassandra.html>`__
 
 * `Stream Reactor MQTT <https://docs.lenses.io/connectors/source/mqtt.html>`__ 
 
@@ -38,11 +38,11 @@ Sink connectors
 
 Sink connectors enable the integration of data from an existing Apache Kafka topic to a target technology. The following is the list of available sink connectors:
 
-* :doc:`Aiven for Apache Kafka S3 Sink Connector <../howto/s3-sink-connector-aiven>`
+* :doc:`Aiven for Apache Kafka® S3 Sink Connector <../howto/s3-sink-connector-aiven>`
 
 * `Confluent Amazon S3 Sink <https://developer.aiven.io/docs/products/kafka/kafka-connect/howto/s3-sink-connector-confluent>`__
 
-* `Couchbase <https://github.com/couchbase/kafka-connect-couchbase>`__
+* `Couchbase® <https://github.com/couchbase/kafka-connect-couchbase>`__
 
 * `OpenSearch <https://developer.aiven.io/docs/products/kafka/kafka-connect/howto/opensearch-sink.html>`__
 
@@ -60,23 +60,23 @@ Sink connectors enable the integration of data from an existing Apache Kafka top
 
 * `JDBC <https://github.com/aiven/aiven-kafka-connect-jdbc/blob/master/docs/sink-connector.md>`__
 
-* `Official MongoDB <https://docs.mongodb.com/kafka-connector/current/>`__ :badge:`preview,cls=badge-secondary badge-pill`
+* `Official MongoDB® <https://docs.mongodb.com/kafka-connector/current/>`__ :badge:`preview,cls=badge-secondary badge-pill`
 
-* `OpenSearch <https://github.com/aiven/opensearch-connector-for-apache-kafka/blob/main/docs/opensearch-sink-connector-config-options.rst>`_ :badge:`preview,cls=badge-secondary badge-pill`
+* `OpenSearch® <https://github.com/aiven/opensearch-connector-for-apache-kafka/blob/main/docs/opensearch-sink-connector-config-options.rst>`_ :badge:`preview,cls=badge-secondary badge-pill`
 
 * `Snowflake <https://docs.snowflake.net/manuals/user-guide/kafka-connector.html>`__ :badge:`preview,cls=badge-secondary badge-pill`
 
 * `Splunk <https://github.com/splunk/kafka-connect-splunk>`__
 
-* `Stream Reactor Cassandra <https://docs.lenses.io/connectors/sink/cassandra.html>`__
+* `Stream Reactor Cassandra® <https://docs.lenses.io/connectors/sink/cassandra.html>`__
 
-* `Stream Reactor InfluxDB <https://docs.lenses.io/connectors/sink/influx.html>`__
+* `Stream Reactor InfluxDB® <https://docs.lenses.io/connectors/sink/influx.html>`__
 
-* `Stream Reactor Mongo DB <https://docs.lenses.io/connectors/sink/mongo.html>`__
+* `Stream Reactor MongoDB® <https://docs.lenses.io/connectors/sink/mongo.html>`__
 
 * `Stream Reactor MQTT <https://docs.lenses.io/connectors/sink/mqtt.html>`__
 
-* `Stream Reactor Redis <https://docs.lenses.io/connectors/sink/redis.html>`__
+* `Stream Reactor Redis™* <https://docs.lenses.io/connectors/sink/redis.html>`__
 
 
 Preview connectors
@@ -105,3 +105,9 @@ Aiven evaluation process for new Apache Kafka Connect connectors checks:
 
     When requesting connectors that are not on the pre-approved list through a support ticket, specify the target Aiven for Apache Kafka service you'd like to have it installed to.
 
+
+
+------
+
+*Elasticsearch is a trademark of Elasticsearch B.V., registered in the U.S. and in other countries.*
+*Couchbase is a trademark of Couchbase, Inc.*

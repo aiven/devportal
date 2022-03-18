@@ -1,7 +1,7 @@
-Restore an OpenSearch backup
-============================
+Restore an OpenSearch® backup
+=============================
 
-Depending on your service plan, you can restore OpenSearch backups from a specific day or hour.
+Depending on your service plan, you can restore OpenSearch® backups from a specific day or hour.
 
 To restore a backup:
 

@@ -1,7 +1,7 @@
 Connect with Go
 ---------------
 
-This example connects to PostgreSQL service from Go, making use of the ``pg`` library.
+This example connects to PostgreSQL® service from Go, making use of the ``pg`` library.
 
 Variables
 '''''''''

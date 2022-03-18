@@ -1,9 +1,9 @@
 Getting started
 ===============
 
-Aiven for PostgreSQL is available in the `Aiven console <https://console.aiven.io>`_.
+Aiven for PostgreSQL® is available in the `Aiven console <https://console.aiven.io>`_.
 
-Choose the PostgreSQL version, your cloud provider and location to deploy to, then choose which plan to use.
+Choose the PostgreSQL® version, your cloud provider and location to deploy to, then choose which plan to use.
 
 .. note::
     If you're just trying out PostgreSQL, a single-node setup is available with our startup and hobbyist plans. This isn't recommended for production use however; for that you should try the high availability pairs provided on the business plans, or a premium plan to meet your needs.

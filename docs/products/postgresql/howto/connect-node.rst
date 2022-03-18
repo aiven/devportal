@@ -1,7 +1,7 @@
 Connect with NodeJS
 -------------------
 
-This example connects to PostgreSQL service from NodeJS, making use of the ``pg`` package.
+This example connects to PostgreSQL® service from NodeJS, making use of the ``pg`` package.
 
 Variables
 '''''''''

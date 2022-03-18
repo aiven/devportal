@@ -1,10 +1,10 @@
-Aiven for Redis
-===============
+Aiven for Redis™*
+=================
 
-What is Aiven for Redis?
-------------------------
+What is Aiven for Redis™*?
+--------------------------
 
-Aiven for Redis is a fully managed **in-memory NoSQL database**, deployable in the cloud of your choice which can help you store and access data quickly and efficiently.
+Aiven for Redis™* is a fully managed **in-memory NoSQL database**, deployable in the cloud of your choice which can help you store and access data quickly and efficiently.
 
 
 Why Redis?
@@ -41,7 +41,7 @@ Take your first steps with Aiven for Redis by following our :doc:`get-started` a
 Ways to use Aiven for Redis
 -----------------------------
 
-- Redis is usually used as an auxiliary data store, working with a main database (e.g. PostgreSQL). 
+- Redis is usually used as an auxiliary data store, working with a main database (e.g. PostgreSQL®).
 
 - Redis is used for transient data, for caching values for fast access, and for data that could be recreated such as session data. Redis isn't persistent storage by default, although it can be configured to persist.
 

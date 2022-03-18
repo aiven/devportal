@@ -1,7 +1,7 @@
 Connect with ``psql``
 ========================
 
-``psql`` is a command line tool for PostgreSQL, useful to manage and query your database.
+``psql`` is a command line tool for PostgreSQL®, useful to manage and query your database.
 
 Variables
 '''''''''

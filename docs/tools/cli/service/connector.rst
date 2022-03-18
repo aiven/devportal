@@ -4,16 +4,16 @@
 Here you’ll find the full list of commands for ``avn service connector``.
 
 
-Manage Kafka Connect connectors details
+Manage Apache Kafka® Connect connectors details
 --------------------------------------------------------
 
-Commands for managing Aiven for Apache Kafka Connect connectors via ``avn`` commands. 
+Commands for managing Aiven for Apache Kafka® Connect connectors via ``avn`` commands.
 
 
 ``avn service connector available``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Lists Kafka Connect connector plugins available in a given Aiven for Apache Kafka service.
+Lists Apache Kafka® Connect connector plugins available in a given Aiven for Apache Kafka® service.
 
 .. list-table::
   :header-rows: 1
@@ -35,7 +35,7 @@ Lists Kafka Connect connector plugins available in a given Aiven for Apache Kafk
 ``avn service connector create``
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Creates a new Kafka Connect connector in a given Aiven for Apache Kafka service.
+Creates a new Apache Kafka® Connect connector in a given Aiven for Apache Kafka® service.
 
 .. list-table::
   :header-rows: 1
@@ -68,7 +68,7 @@ Creates a new Kafka Connect connector in a given Aiven for Apache Kafka service.
 ``avn service connector delete``
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Deletes Kafka Connect connector in a given Aiven for Apache Kafka service.
+Deletes an Apache Kafka® Connect connector in a given Aiven for Apache Kafka® service.
 
 .. list-table::
   :header-rows: 1
@@ -90,7 +90,7 @@ Deletes Kafka Connect connector in a given Aiven for Apache Kafka service.
 ``avn service connector list``
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Lists Kafka Connect connectors in a given Aiven for Apache Kafka service.
+Lists Apache Kafka® Connect connectors in a given Aiven for Apache Kafka® service.
 
 .. list-table::
   :header-rows: 1
@@ -142,7 +142,7 @@ An example of ``avn service connector list`` output:
 ``avn service connector pause``
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Pauses a Kafka Connect connector in a given Aiven for Apache Kafka service.
+Pauses an Apache Kafka® Connect connector in a given Aiven for Apache Kafka® service.
 
 .. list-table::
   :header-rows: 1
@@ -165,7 +165,7 @@ Pauses a Kafka Connect connector in a given Aiven for Apache Kafka service.
 ``avn service connector restart``
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Restarts a Kafka Connect connector in a given Aiven for Apache Kafka service.
+Restarts an Apache Kafka® Connect connector in a given Aiven for Apache Kafka® service.
 
 .. list-table::
   :header-rows: 1
@@ -187,7 +187,7 @@ Restarts a Kafka Connect connector in a given Aiven for Apache Kafka service.
 ``avn service connector restart-task``
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Restarts a Kafka Connect connector task in a given Aiven for Apache Kafka service.
+Restarts an Apache Kafka® Connect connector task in a given Aiven for Apache Kafka® service.
 
 .. list-table::
   :header-rows: 1
@@ -211,7 +211,7 @@ Restarts a Kafka Connect connector task in a given Aiven for Apache Kafka servic
 ``avn service connector resume``
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Resumes a Kafka Connect connector in a given Aiven for Apache Kafka service.
+Resumes an Apache Kafka® Connect connector in a given Aiven for Apache Kafka® service.
 
 .. list-table::
   :header-rows: 1
@@ -233,7 +233,7 @@ Resumes a Kafka Connect connector in a given Aiven for Apache Kafka service.
 ``avn service connector schema``
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Retrieves the configuration information for a Connect connector plugin in a given Aiven for Apache Kafka service.
+Retrieves the configuration information for an Apache Kafka® Connect connector plugin in a given Aiven for Apache Kafka® service.
 
 .. list-table::
   :header-rows: 1
@@ -255,7 +255,7 @@ Retrieves the configuration information for a Connect connector plugin in a give
 ``avn service connector status``
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Gets a Kafka Connect connector status in a given Aiven for Apache Kafka service.
+Gets an Apache Kafka® Connect connector status in a given Aiven for Apache Kafka service.
 
 .. list-table::
   :header-rows: 1
@@ -294,7 +294,7 @@ An example of ``avn service connector status`` output:
 ``avn service connector update``
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Updates a Kafka Connect connector in a given Aiven for Apache Kafka service.
+Updates an Apache Kafka® Connect connector in a given Aiven for Apache Kafka® service.
 
 .. list-table::
   :header-rows: 1

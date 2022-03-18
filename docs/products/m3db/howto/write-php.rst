@@ -1,7 +1,7 @@
 Write data to M3DB with PHP
 ---------------------------
 
-This example writes some data to an M3DB service from PHP, making use of the InfluxDB library.
+This example writes some data to an M3DB service from PHP, making use of the InfluxDB® library.
 
 Variables
 '''''''''
@@ -28,7 +28,7 @@ For this example you will need:
 
 .. note::
 
-    M3DB supports InfluxDB (v1) protocol so we can use the existing library for this database too.
+    M3DB supports InfluxDB® (v1) protocol so we can use the existing library for this database too.
 
 Code
 ''''
@@ -38,10 +38,10 @@ Add the following to ``index.php`` and replace the placeholders with values for 
 .. literalinclude:: /code/products/m3db/write.php
     :language: php
 
-This code creates an InfluxDBClient and connects to the Influx-literate endpoint on the M3DB. Then the code constructs the expected data format, and writes it to the client.
+This code creates an InfluxDBClient and connects to the InfluxDB-literate endpoint on the M3DB. Then the code constructs the expected data format, and writes it to the client.
 
 To run the code::
 
     php -f index.php
 
-If the script outputs ``bool(true)`` then there is data in your M3DB. If you'd like to you can take a look at :doc:`grafana` to see how to inspect your data with Grafana.
+If the script outputs ``bool(true)`` then there is data in your M3DB. If you'd like to you can take a look at :doc:`grafana` to see how to inspect your data with Grafana®.

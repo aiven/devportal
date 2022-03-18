@@ -1,10 +1,10 @@
-Log in to Aiven for Grafana
-===========================
+Log in to Aiven for Grafana®
+============================
 
-Log in to Aiven for Grafana to start monitoring your data sources. 
+Log in to Aiven for Grafana® to start monitoring your data sources.
 
 .. Tip::
-        Your InfluxDB or OpenSearch services in the same Aiven project are automatically configured as data sources, and you can easily start visualizing the data from them.
+        Your InfluxDB® or OpenSearch® services in the same Aiven project are automatically configured as data sources, and you can easily start visualizing the data from them.
 
 
 .. image:: /images/products/grafana/log-in-grafana.gif
@@ -27,4 +27,4 @@ This opens your Grafana *Overview* page.
 
 This opens your Grafana user interface. 
 
-You can now start visualizing your data sources by using the default dashboards, or create your own. 
+You can now start visualizing your data sources by using the default dashboards, or create your own.
