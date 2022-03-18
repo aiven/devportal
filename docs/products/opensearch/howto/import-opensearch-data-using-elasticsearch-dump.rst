@@ -85,7 +85,7 @@ You need to collect the following information about your Aiven for OpenSearch cl
 
 Aiven for OpenSearch:
 
-* ``SERVICE_URI`: OpenSearch service URI, which you can find in Aiven's dashboard.
+* ``SERVICE_URI``: OpenSearch service URI, which you can find in Aiven's dashboard.
 * ``INPUT_INDEX_NAME``: the index that you aim to copy from your input source.
 
 AWS S3:
