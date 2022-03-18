@@ -1,18 +1,24 @@
 List of metrics available via Prometheus integration
 ==================================================================
 
-The list of available metrics highly depends on the service usage, hence, there are a few metrics would be available to
-certain services while they cannot be found in other services. The following list only contains the most common metrics
-available via Prometheus for an Aiven for Apache Kafka service.
+The following list only contains the most common metrics available via Prometheus for an Aiven for Apache Kafka® service.
 
-You can retrieve the complete list of available metrics for your specific service by calling to the Prometheus endpoint
+You can retrieve the complete list of available metrics for your specific service by calling to the Prometheus endpoint substituting: 
+
+* the Aiven project certificate (``ca.pem``)
+* the Prometheus credentials (``<PROMETHEUS_USER>:<PROMETHEUS_PASSWORD>``)
+* the Aiven for Apache Kafka hostname (``<KAFKA_HOSTNAME>``)
+* the Prometheus port (``<PROMETHEUS_PORT>``)
 
 .. code-block:: bash
 
     curl --cacert ca.pem \
-        --user '<prometheus_user>:<prometheus_password>' \
-        'https://<kafka_server_name>:<prometheus_port>/metrics'
+        --user '<PROMETHEUS_USER>:<PROMETHEUS_PASSWORD>' \
+        'https://<KAFKA_HOSTNAME>:<PROMETHEUS_PORT>/metrics'
 
+.. Tip::
+
+    You can check how to use Prometheus via Aiven in the :doc:`dedicated document </docs/platform/howto/integrations/prometheus-metrics>`.
 
 CPU utilization
 ---------------

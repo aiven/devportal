@@ -178,6 +178,7 @@ entries:
               - file: docs/products/kafka/kafka-connect/reference/s3-sink-additional-parameters
               - file: docs/products/kafka/kafka-connect/reference/s3-sink-additional-parameters-confluent
             - file: docs/products/kafka/kafka-connect/reference/gcs-sink-formats
+            - file: docs/products/kafka/kafka-connect/reference/connect-metrics-prometheus
 
       - file: docs/products/kafka/kafka-mirrormaker/index
         title: Apache Kafka MirrorMaker2
