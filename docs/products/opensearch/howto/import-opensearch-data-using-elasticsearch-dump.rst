@@ -1,12 +1,12 @@
 
-Dump OpenSearch index using ``elasticsearch-dump``
-==================================================
+Dump OpenSearch® index using ``elasticsearch-dump``
+===================================================
 
-It is a good practice to perform backups of your OpenSearch data to another storage service. This way you can access your data and restore it if something unexpected happens to it. 
+It is a good practice to perform backups of your OpenSearch® data to another storage service. This way you can access your data and restore it if something unexpected happens to it. 
 
 In this article, you can find out how to dump your OpenSearch data to an:
 
-* :ref:`Aiven OpenSearch <copy-data-from-os-to-os>`
+* :ref:`Aiven for OpenSearch® <copy-data-from-os-to-os>`
 * :ref:`AWS S3 bucket <copy-data-from-os-to-s3>`
 
 To copy the index data, we will be using ``elasticsearch-dump`` `tool <elashttps://github.com/elasticsearch-dump/elasticsearch-dump>`__. You can read the `instructions on GitHub <https://github.com/elasticsearch-dump/elasticsearch-dump/blob/master/README.md>`_ on how to install it. From this library, we will use ``elasticdump`` command to copy the input index data to an specific output. 
