@@ -122,6 +122,19 @@ To bring in a page from the previous platform:
 * Run ``python import-help-article.py [paste a URL]``
 * Take the resulting ``*.rst`` file and any images, and place them as appropriate in the file structure of the project
 
+Migration status
+-----------------
+
+You can check the migration status from ``https://help.aiven.io/en`` articles to the ``https://developer.aiven.io/`` articles by using the ``page_stats.py`` script available in this repository. 
+
+Install the dependencies::
+
+    pip install -r requirements-dev.txt
+
+To run the ``page_status.py`` script::
+
+    python page_stats.py    
+
 License
 -------
 
