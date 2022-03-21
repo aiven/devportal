@@ -16,20 +16,34 @@ Configure your project and services
 Your Terraform file(s) consists of lines for the actual infrastructure as well as required dependencies and configurations. While you can stuff these together in one file, it's ideal to keep those as separate files.
 In this section, you'll learn how to structure a simple Terraform project. 
 
-1.  BYOTF - Bring Your Own Terraform Script. 
+1.  The following Terraform script deploys a single-node Redis service. This is a simple example which you can swap out with your own Terraform script(s) or other advanced recipes from :doc:`the Terraform cookbook <reference/cookbook>`.
 
 ``services.tf`` file:
 
 .. code:: bash
 
-   # Your actual Terraform script goes here 
+  # A single-node Redis service
+  
+   resource "aiven_redis" "single-node-aiven-redis" {
+  project                 = var.project_name
+  cloud_name              = "google-northamerica-northeast1"
+  plan                    = "startup-4"
+  service_name            = "gcp-single-node-redis1"
+  maintenance_window_dow  = "monday"
+  maintenance_window_time = "10:00:00"
+
+  redis_user_config {
+    redis_maxmemory_policy = "allkeys-random"
+
+    public_access {
+      redis = true
+    }
+  }
+}
 
 
-2. Consider the following code block similar to declaring a dependency; the *Aiven Terraform Provider* in this case. Within the `required_providers` block, you mention the source of the provider and specify a certain version. 
-The versions here are for example purpose and will change in the future. Following `Aiven Terraform Provider doc <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_, `api_token` is the only parameter for the provider configuration.
-
-Make sure that you have either the *Administrator* or *Operator* role when creating the API token. When you create a project, you automatically receive the *Administrator* access. 
-For more details, refer to the `Project members and roles page <https://developer.aiven.io/docs/platform/concepts/projects_accounts_access.html#project-members-and-roles>`_.
+2. Consider the following code block similar to declaring a dependency; the *Aiven Terraform Provider* in this case. Within the ``required_providers`` block, you mention the source of the provider and specify a certain version. 
+The versions here are for example purpose and will change in the future. Following `Aiven Terraform Provider doc <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_, ``api_token`` is the only parameter for the provider configuration.
 
 ``provider.tf`` file:
 
@@ -50,6 +64,9 @@ For more details, refer to the `Project members and roles page <https://develope
 
 
 3. Avoid including sensitive values in configuration files that are under source control. Rather than using sensitive information within this *variables.tf* file, you can use a ``*.tfvars`` file so that Terraform receives the values during runtime.
+
+Make sure that you have either the *Administrator* or *Operator* role when creating the API token. When you create a project, you automatically receive the *Administrator* access. 
+For more details, refer to the `Project members and roles page <https://developer.aiven.io/docs/platform/concepts/projects_accounts_access.html#project-members-and-roles>`_.
 
 ``variables.tf`` file:
 
@@ -76,8 +93,8 @@ For more details, refer to the `Project members and roles page <https://develope
    project_name = "<YOUR-AIVEN-CONSOLE-PROJECT-NAME-GOES-HERE>"
 
 
-Execution
-'''''''''
+Apply the Terraform configuration
+'''''''''''''''''''''''''''''''''
 
 Create an empty folder and add the above files to that folder. Then execute the following commands in order:
 
