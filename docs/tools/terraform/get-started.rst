@@ -3,16 +3,15 @@ Set up your first Terraform project
 
 This example shows the setup for a simple Terraform project and some useful commands to stand up (and destroy) your Aiven data infrastructure.
 
-Requirements 
-''''''''''''
+Prepare the dependencies 
+''''''''''''''''''''''''
 - `Download and install Terraform <https://www.terraform.io/downloads.html>`_
 - `Sign up <https://console.aiven.io/signup?utm_source=github&utm_medium=organic&utm_campaign=devportal&utm_content=repo>`_ for Aiven if you haven't already
-- `Generate an authentication token <https://developer.aiven.io/docs/platform/howto/create_authentication_token.html>`_ on Aiven's console or CLI
+- `Generate an authentication token <https://developer.aiven.io/docs/platform/howto/create_authentication_token.html>`_
 
-.. Tip:: Make sure that you have either the *Administrator* or *Operator* role when creating the API token. When you create a project, you automatically receive the *Administrator* access. 
+.. Tip:: Make sure that you have either the *Administrator* or *Operator* role when creating the API token. When you create a project, you automatically receive the *Administrator* access.
+
 For more details, refer to the `Project members and roles page <https://developer.aiven.io/docs/platform/concepts/projects_accounts_access.html#project-members-and-roles>`_.
-
-
 
 Configure your project and services
 '''''''''''''''''''''''''''''''''''
@@ -26,24 +25,24 @@ In this section, you'll learn how to structure a simple Terraform project.
 
 .. code:: bash
 
-  # A single-node Redis service
+   # A single-node Redis service
   
    resource "aiven_redis" "single-node-aiven-redis" {
-  project                 = var.project_name
-  cloud_name              = "google-northamerica-northeast1"
-  plan                    = "startup-4"
-  service_name            = "gcp-single-node-redis1"
-  maintenance_window_dow  = "monday"
-  maintenance_window_time = "10:00:00"
+      project                 = var.project_name
+      cloud_name              = "google-northamerica-northeast1"
+      plan                    = "startup-4"
+      service_name            = "gcp-single-node-redis1"
+      maintenance_window_dow  = "monday"
+      maintenance_window_time = "10:00:00"
 
-  redis_user_config {
-    redis_maxmemory_policy = "allkeys-random"
+      redis_user_config {
+         redis_maxmemory_policy = "allkeys-random"
 
-    public_access {
-      redis = true
-    }
-  }  
-}
+         public_access {
+            redis = true
+         }
+      }  
+   }
 
 
 2. Consider the following code block similar to declaring a dependency; the *Aiven Terraform Provider* in this case. Within the ``required_providers`` block, you mention the source of the provider and specify a certain version. 
