@@ -9,6 +9,10 @@ Requirements
 - `Sign up <https://console.aiven.io/signup?utm_source=github&utm_medium=organic&utm_campaign=devportal&utm_content=repo>`_ for Aiven if you haven't already
 - `Generate an authentication token <https://developer.aiven.io/docs/platform/howto/create_authentication_token.html>`_ on Aiven's console or CLI
 
+.. Tip:: Make sure that you have either the *Administrator* or *Operator* role when creating the API token. When you create a project, you automatically receive the *Administrator* access. 
+For more details, refer to the `Project members and roles page <https://developer.aiven.io/docs/platform/concepts/projects_accounts_access.html#project-members-and-roles>`_.
+
+
 
 Configure your project and services
 '''''''''''''''''''''''''''''''''''
@@ -38,7 +42,7 @@ In this section, you'll learn how to structure a simple Terraform project.
     public_access {
       redis = true
     }
-  }
+  }  
 }
 
 
@@ -64,9 +68,6 @@ The versions here are for example purpose and will change in the future. Followi
 
 
 3. Avoid including sensitive values in configuration files that are under source control. Rather than using sensitive information within this *variables.tf* file, you can use a ``*.tfvars`` file so that Terraform receives the values during runtime.
-
-Make sure that you have either the *Administrator* or *Operator* role when creating the API token. When you create a project, you automatically receive the *Administrator* access. 
-For more details, refer to the `Project members and roles page <https://developer.aiven.io/docs/platform/concepts/projects_accounts_access.html#project-members-and-roles>`_.
 
 ``variables.tf`` file:
 
