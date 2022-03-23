@@ -56,7 +56,6 @@ hyperloglogs
 hypertable
 Instana
 Java
-Jolokia
 jq
 Kaggle
 Kafdrop
@@ -75,7 +74,6 @@ Lucene
 Memorystore
 MirrorMaker
 MirrorMaker2
-MXBean
 MySQL
 [Nn]amespace
 NodeJS

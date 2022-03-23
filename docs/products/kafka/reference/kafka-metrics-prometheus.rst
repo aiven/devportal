@@ -3,7 +3,7 @@ List of metrics available via Prometheus integration
 
 The following list only contains the most common metrics available via Prometheus for an Aiven for Apache Kafka® service.
 
-You can retrieve the complete list of available metrics for your specific service by calling to the Prometheus endpoint substituting: 
+You can retrieve the complete list of available metrics for your specific service by making a request to the Prometheus endpoint, substituting:
 
 * the Aiven project certificate (``ca.pem``)
 * the Prometheus credentials (``<PROMETHEUS_USER>:<PROMETHEUS_PASSWORD>``)
@@ -18,7 +18,7 @@ You can retrieve the complete list of available metrics for your specific servic
 
 .. Tip::
 
-    You can check how to use Prometheus via Aiven in the :doc:`dedicated document </docs/platform/howto/integrations/prometheus-metrics>`.
+    You can check how to use Prometheus with Aiven in the :doc:`dedicated document </docs/platform/howto/integrations/prometheus-metrics>`.
 
 CPU utilization
 ---------------
@@ -66,8 +66,8 @@ Disk input and output
 * ``diskio_write_time``
 * ``diskio_writes``
 
-Garbage collector MXBean
-------------------------
+Garbage collector ``MXBean``
+----------------------------
 
 * ``java_lang_GarbageCollector_G1_Young_Generation_CollectionCount``: returns the total number of collections that have occurred
 * ``java_lang_GarbageCollector_G1_Young_Generation_CollectionTime``: returns the approximate accumulated collection elapsed time in milliseconds
@@ -94,9 +94,11 @@ The descriptions for the below metrics are available in the `Monitoring section 
 
 .. Note::
 
-    The metrics with a ``_Count`` suffix are cumulative counters for the given metric.
+    The metrics with a ``_Count`` suffix are cumulative counters for the given metric, e.g. ``kafka_controller_ControllerStats_LeaderElectionRateAndTimeMs_Count``.
 
-    E.g. ``kafka_server_BrokerTopicMetrics_MessagesInPerSec_Count`` is a cumulative count of incoming messages despite the ``PerSec`` suffix in the metric name. To see the rate of change of these ``_Count`` metrics, a function can be applied e.g. the ``rate()`` function in PromQL.
+    Note that a metric like ``kafka_server_BrokerTopicMetrics_MessagesInPerSec_Count`` is a cumulative count of incoming messages despite the ``PerSec`` suffix in the metric name.
+
+    To see the rate of change of these ``_Count`` metrics, a function can be applied, e.g. the ``rate()`` function in PromQL.
 
 Apache Kafka controller
 '''''''''''''''''''''''
@@ -127,8 +129,8 @@ Apache Kafka controller
 * ``kafka_controller_KafkaController_TopicsIneligibleToDeleteCount_Value``
 * ``kafka_controller_KafkaController_TopicsToDeleteCount_Value``
 
-Jolokia collector collect time
-''''''''''''''''''''''''''''''
+``Jolokia`` collector collect time
+''''''''''''''''''''''''''''''''''
 
 * ``kafka_jolokia_collector_collect_time``
 
