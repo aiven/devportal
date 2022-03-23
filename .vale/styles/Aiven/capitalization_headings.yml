@@ -5,53 +5,54 @@ scope: heading
 # $title, $sentence, $lower, $upper, or a pattern.
 match: $sentence
 exceptions:
-  - HowTo
+  - ACLs
   - APIs
-  - Telegraf
-  - MirrorMaker
-  - ZooKeeper
-  - Python
-  - NodeJS
-  - Java
-  - Kafdrop
-  - Docker
-  - Simple Authentication and Security Layer
-  - Transport Layer Security
-  - TaskManager
-  - Prometheus
-  - VPC
   - Aiven
   - Apache
-  - Kafka
-  - Flink
+  - Boot
+  - Business
   - Cassandra
-  - Connect
   - ClickHouse
+  - Connect
+  - Dashboards
+  - Dev
+  - Docker
+  - Elasticsearch
+  - Flink
+  - GitHub
   - Go
+  - Google Cloud Storage
+  - Grafana
+  - Hobbyist
+  - HowTo
+  - InfluxDB
+  - Java
+  - Kafdrop
+  - Kafka
+  - Kubernetes
   - M3
+  - MirrorMaker
+  - MySQL
+  - NodeJS
   - OpenSearch
   - Operator
   - Pagila
   - pgAdmin
-  - TimescaleDB
-  - Elasticsearch
-  - Spring
-  - Boot
-  - GitHub
-  - Business
-  - ACLs
-  - Dashboards
-  - Workbench
-  - Dev
-  - Hobbyist
-  - Startup
-  - Premium
   - PgBouncer
   - PostgreSQL
   - Postman
-  - MySQL
+  - Premium
+  - Prometheus
+  - Python
   - Redis
-  - InfluxDB
-  - Grafana
+  - Simple Authentication and Security Layer
+  - Spring
+  - Startup
+  - TaskManager
+  - Telegraf
   - Terraform
-  - Kubernetes
+  - TimescaleDB
+  - Transport Layer Security
+  - VPC
+  - Workbench
+  - ZooKeeper
