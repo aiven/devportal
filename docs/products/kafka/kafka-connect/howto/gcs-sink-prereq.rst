@@ -1,15 +1,15 @@
-Configure GCP for an Google cloud storage sink connector
-========================================================
+Configure GCP for a Google Cloud Storage sink connector
+=======================================================
 
-To be able to sink data from Apache Kafka® to Google cloud storage via the dedicated Aiven connector, you need to perform the following steps in the `GCP console <https://console.cloud.google.com/>`_:
+To be able to sink data from Apache Kafka® to Google Cloud Storage via the dedicated Aiven connector, you need to perform the following steps in the `GCP console <https://console.cloud.google.com/>`_:
 
-* Create an `Google cloud storage (GCS) bucket <https://console.cloud.google.com/storage/>`_ where the data is going to be stored
+* Create a `Google Cloud Storage (GCS) bucket <https://console.cloud.google.com/storage/>`_ where the data is going to be stored
 * Create a new `Google service account and generate a JSON service key <https://cloud.google.com/docs/authentication/getting-started>`_ 
 * Grant the service account access to the GCS bucket
 
 .. _gcs-sink-connector-google-bucket:
 
-Create the Google cloud storage (GCS) bucket
+Create the Google Cloud Storage (GCS) bucket
 --------------------------------------------
 
 You can create the GCS bucket using the `dedicated Google cloud console page <https://console.cloud.google.com/storage/>`_. When creating the bucket, specify bucket name and location, the other settings can be left as default.
