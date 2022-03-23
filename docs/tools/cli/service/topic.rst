@@ -1,7 +1,7 @@
 ``avn service topic``
 ==================================================
 
-Here you’ll find the full list of commands for ``avn service topic``.
+Here you'll find the full list of commands for ``avn service topic``.
 
 .. _avn_cli_service_topic_create:
 
@@ -38,13 +38,20 @@ Creates a new Kafka topic on the specified Aiven for Apache Kafka service.
   * - ``-tag KEY[=VALUE]``
     - Topic tagging
 
-**Example:** Create a new topic named ``invoices`` with ``3`` partitions and ``2`` as replication factor in the ``demo-kafka`` service. Furthermore tag the topic with ``BU=FINANCE`` tag.
+**Example:** Create a new topic named ``invoices`` in the ``demo-kafka`` service with:
+
+* ``3`` partitions
+* ``2`` as replication factor
+* 2 hours of retention time
+* ``BU=FINANCE`` tag
+
 
 ::
 
   avn service topic-create demo-kafka invoices  \
     --partitions 3                              \
     --replication 2                             \
+    --retention 2                               \
     --tag BU=FINANCE
 
 .. _avn-cli-delete-topic:
