@@ -15,7 +15,7 @@
   },
   "homepage": "https://github.com/aiven/devportal#readme",
   "dependencies": {
-    "@opensearch-project/opensearch": "1.0.0",
-    "pg": "^8.7.1"
+    "@opensearch-project/opensearch": "^1.0.2",
+    "pg": "^8.7.3"
   }
 }
