@@ -5,8 +5,8 @@ Aiven provides a service integration that allows you to send your logs from seve
 
 In this article, you will understand how to enable, edit and disable the logs integration feature on Aiven for OpenSearch.
 
-Enable logs integration
------------------------
+Enable log integration
+----------------------
 
 Here are the steps needed to enable logs integration. This allows you to send your service's logs to your Aiven for OpenSearch from another Aiven service.
 
@@ -25,8 +25,8 @@ Here are the steps needed to enable logs integration. This allows you to send yo
 
 Your Aiven service is now sending logs to your OpenSearch service which you can explore further.
 
-Logs integration configuration
-------------------------------
+Configure log integration
+-------------------------
 There are two parameters that you can adjust when integrating logs to your OpenSearch service:
 
 * ``index prefix``, specifies the prefix part.
