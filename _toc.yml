@@ -165,6 +165,8 @@ entries:
             - file: docs/products/kafka/kafka-connect/howto/s3-sink-prereq
             - file: docs/products/kafka/kafka-connect/howto/s3-sink-connector-aiven
             - file: docs/products/kafka/kafka-connect/howto/s3-sink-connector-confluent
+            - file: docs/products/kafka/kafka-connect/howto/gcs-sink-prereq
+            - file: docs/products/kafka/kafka-connect/howto/gcs-sink
             - file: docs/products/kafka/kafka-connect/howto/opensearch-sink
             - file: docs/products/kafka/kafka-connect/howto/elasticsearch-sink
         - file: docs/products/kafka/kafka-connect/reference
@@ -175,6 +177,7 @@ entries:
               entries:
               - file: docs/products/kafka/kafka-connect/reference/s3-sink-additional-parameters
               - file: docs/products/kafka/kafka-connect/reference/s3-sink-additional-parameters-confluent
+            - file: docs/products/kafka/kafka-connect/reference/gcs-sink-formats
 
       - file: docs/products/kafka/kafka-mirrormaker/index
         title: Apache Kafka MirrorMaker2
