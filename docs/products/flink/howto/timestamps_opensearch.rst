@@ -8,8 +8,8 @@ When the output of the Apache Flink® data pipeline is an Aiven for OpenSearch®
 OpenSearch® recognises the following as correct date/time formats:
 
 * ``yyyy/MM/dd`` for a **date** field
-* ``hh:mm:ss`` for a **time** field
-* ``yyyy/MM/dd hh:mm:ss`` for a **timestamp** field
+* ``HH:mm:ss`` for a **time** field
+* ``yyyy/MM/dd HH:mm:ss`` for a **timestamp** field
 
 Therefore you need to structure the data pipeline output to follow one of the acceptable formats
 
@@ -36,6 +36,6 @@ and, assuming the ``EVENT_TIME`` is a timestamp, you'll need to specify it in th
 
 ::
 
-    DATE_FORMAT(EVENT_TIME, 'yyyy/MM/dd hh:mm:ss')
+    DATE_FORMAT(EVENT_TIME, 'yyyy/MM/dd HH:mm:ss')
 
 Once the pipeline is running, you can check that the ``EVENT_TIME`` field in OpenSearch® is recognized as a timestamp.
