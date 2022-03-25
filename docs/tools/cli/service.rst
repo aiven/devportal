@@ -97,7 +97,7 @@ Creates a new service.
   * - ``--cloud``
     - The cloud region name; check :ref:`avn-cloud-list` for more information
   * - ``--disk-space-gib``
-    - Extra amount of disk space for data storage (GiB)
+    - Total amount of disk space for data storage (GiB)
   * - ``--no-fail-if-exists``
     - The create command will not fail if a service with the same name already exists
   * - ``--project-vpc-id``
@@ -113,7 +113,7 @@ Creates a new service.
 
 * the ``business-4`` plan 
 * Kafka Connect enabled
-* 600 GiB of additional storage capacity
+* 600 GiB of total storage capacity
 
 ::
   
@@ -605,7 +605,7 @@ Updates the settings for an Aiven service.
   * - ``--cloud``
     - The name of the cloud region where to deploy the service; check :ref:`avn-cloud-list` for more information
   * - ``--disk-space-gib``
-    - Extra amount of disk space for data storage (GiB)
+    - Total amount of disk space for data storage (GiB)
   * - ``--plan``
     - Aiven subscription plan name; check :ref:`avn_service_plan` for more information
   * - ``--power-on``
