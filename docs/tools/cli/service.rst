@@ -96,6 +96,8 @@ Creates a new service.
     - Aiven subscription plan name; check :ref:`avn_service_plan` for more information
   * - ``--cloud``
     - The cloud region name; check :ref:`avn-cloud-list` for more information
+  * - ``--disk-space-gib``
+    - Total amount of disk space for data storage (GiB)
   * - ``--no-fail-if-exists``
     - The create command will not fail if a service with the same name already exists
   * - ``--project-vpc-id``
@@ -107,7 +109,11 @@ Creates a new service.
   * - ``-c KEY=VALUE``
     - Any additional configuration settings for your service; check our documentation for more information, or use the :ref:`service types command <avn-cli-service-type>` which has a verbose mode that shows all options.
 
-**Example:** Create a new Aiven for Kafka® service named ``kafka-demo`` in the region ``google-europe-west3`` with the plan ``business-4`` and enable Kafka Connect.
+**Example:** Create a new Aiven for Kafka® service named ``kafka-demo`` in the region ``google-europe-west3`` with: 
+
+* the ``business-4`` plan 
+* Kafka Connect enabled
+* 600 GiB of total storage capacity
 
 ::
   
@@ -115,7 +121,8 @@ Creates a new service.
     --service-type kafka                    \
     --cloud google-europe-west3             \
     --plan business-4                       \
-    -c kafka_connect=true                   
+    -c kafka_connect=true                   \
+    --disk-space-gib 600              
 
 ``avn service credentials-reset``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -598,7 +605,7 @@ Updates the settings for an Aiven service.
   * - ``--cloud``
     - The name of the cloud region where to deploy the service; check :ref:`avn-cloud-list` for more information
   * - ``--disk-space-gib``
-    - Amount of disk space for data storage (GiB)
+    - Total amount of disk space for data storage (GiB)
   * - ``--plan``
     - Aiven subscription plan name; check :ref:`avn_service_plan` for more information
   * - ``--power-on``
