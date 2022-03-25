@@ -21,26 +21,20 @@ The full code used here can be found at `GitHub repository <https://github.com/a
 
 We use ``Typer`` Python `library <ttps://typer.tiangolo.com/>`_ to create CLI commands to run from the terminal. You can follow the instructions to have the code in your machine and be able to run the commands:
 
-1. Clone the repository:
+1. Clone the repository and install the dependencies
 
 ::
 
     git clone https://github.com/aiven/demo-opensearch-python
-
-2. Install the dependencies:
-
-::
-
-    pip install requirements.txt
+    pip install -r requirements.txt
 
 3. Download the dataset from Kaggle's `recipe dataset <https://www.kaggle.com/hugodarwood/epirecipes?select=full_format_recipes.json>`_, and save the ``full_format_recipes.json`` in the current folder of the `demo repository <https://github.com/aiven/demo-opensearch-python>`_.
 
 Connect to the OpenSearch cluster in Python
 -------------------------------------------
 
-You have to create an OpenSearch Python client to interact with your cluster. You can follow the instructions on how to :doc:`connect to the cluster with a Python client <connect-with-python>`.
-
-You can see how the OpenSearch client is created and configured in `config.py <https://github.com/aiven/demo-opensearch-python/blob/main/config.py>`_:
+Make sure to update the ``SERVICE_URI`` to your cluster ``SERVICE_URI`` in the ``.env`` `file <https://github.com/aiven/demo-opensearch-python/blob/main/.env>`_ as explained in the `README <https://github.com/aiven/demo-opensearch-python>`_.
+Once the environment variables are set, create an OpenSearch Python client to connect to your OpenSearch cluster using the :doc:`connection instructions <connect-with-python>`. You can see find the whole code sample in the `config.py <https://github.com/aiven/demo-opensearch-python/blob/main/config.py>`_:
 
 .. code-block:: python
 
@@ -54,8 +48,6 @@ You can see how the OpenSearch client is created and configured in `config.py <h
     INDEX_NAME = "epicurious-recipes"
     SERVICE_URI = os.getenv("SERVICE_URI")
     client = OpenSearch(SERVICE_URI, use_ssl=True)
-
-Make sure to update the ``SERVICE_URI`` to your cluster ``SERVICE_URI`` in the ``.env`` `file <https://github.com/aiven/demo-opensearch-python/blob/main/.env>`_ as explained in the `README <https://github.com/aiven/demo-opensearch-python>`_.
 
 .. tip::
 
@@ -193,21 +185,18 @@ Check what comes out from this interesting combination 🧄 🍋 :
 For this tutorial, we focus on the query DSL syntax to construct queries modifying the ``body`` parameter. In the method ``search()``, one of the optional fields is the ``size`` field, which is defined as the number of results returned in the search. 
 
 .. note::
-  The default value of the ``size`` field is 10.
+  The default value of the ``size`` field is 10, and we're using the default value in this tutorial.
   
 
-We're not adjusting the ``size`` parameter in this tutorial. Therefore, we're using the default value which is 10 results per search.
-
-
-Common queries
-''''''''''''''
+Write common queries
+''''''''''''''''''''
 
 In the next section, we cover some of the more common queries. Time to start querying 🔎 
 
 .. _match-query:
 
-Match query
------------
+Create match query
+------------------
 
 The ``match`` query helps you to find the best matches with multiple search words. It is the default option for a `full-text search <https://opensearch.org/docs/latest/opensearch/query-dsl/full-text/>`_. 
 
@@ -284,8 +273,8 @@ As a result of the "Spring" search recipes, you'll find:
   
   Find out more about `match queries <https://opensearch.org/docs/latest/opensearch/query-dsl/full-text/#match>`_.
 
-Multi match query
-------------------
+Use Multi match query
+---------------------
 One useful query when you want to align the ``match`` query properties but expand it to search in more fields is the ``multi_match`` query. You can add several fields in the ``fields`` property, to search for the ``query`` string across all those fields included in the list.
 
 .. code-block:: python
@@ -314,7 +303,7 @@ Suppose you are looking for citrus recipes 🍋. For example, recipes with ingre
 
 .. _match-phrase-query:
 
-Match phrase query
+Match with phrases
 ------------------
 This query can be used to match **exact phrases** in a field. Where the ``query`` is the phrase that is being searched in a certain ``field``:
 
@@ -346,8 +335,8 @@ If you just have a rough idea of the phrase you're looking for, you can make you
 
 .. _match-phrase-slop:
 
-Match phrase with slop query
-----------------------------
+Match phrases with slop query
+-----------------------------
 You can use the ``slop`` parameter to create more flexible searches. Suppose you're searching for ``pannacotta marmalade`` with the ``match_phrase`` query, and no results are found. This happens because you are looking for exact phrases, as discussed in :ref:`match phrase query <match-phrase-query>` section.
 You can expand your searches by configuring the ``slop`` parameter. The default value for the ``slop`` parameter is 0. 
 
@@ -391,8 +380,8 @@ So with ``slop`` parameter adjusted, you're may be able to find results even wit
   Read more about ``slop`` parameter on the `OpenSearch project specifications <https://opensearch.org/docs/latest/opensearch/query-dsl/full-text#options>`_.
 
 
-Term query
-----------
+Use term query
+--------------
 
 If you want results with a precise value in a ``field``, the `term query <https://opensearch.org/docs/latest/opensearch/query-dsl/term/#term>`_ is the right choice. The term query can be used to find documents according to a precise value such as a price or product ID, for example.
 
@@ -422,8 +411,8 @@ Run the search query yourself to find recipes with zero sodium on it, for exampl
 
 
 
-Range query
------------
+Search with range query
+-----------------------
 
 This query helps to find documents that the field is within a provided range. This can be handy if you're dealing with **numerical values** and are interested **in ranges** instead of specific values. The queries can be constructed as:
 
@@ -471,8 +460,8 @@ Try to find recipes in a certain range of sodium, for example:
 
 .. _fuzzy-query:
 
-Fuzzy queries
--------------
+Write fuzzy queries
+-------------------
 This query looks for documents that have **similar term** to the searched term. This similarity is calculated by the ``Levenshtein`` `edit distance <https://en.wikipedia.org/wiki/Levenshtein_distance>`_. This distance refers to the minimum number of single-character edits between two words. Some of those changes:
 
 * Change of a character: ``post`` → ``lost``
@@ -528,31 +517,12 @@ As you can see, this search returns results 🍍:
 
 It is your turn, try out more combinations to better understand the fuzzy query.
 
-
-Pause services
-''''''''''''''
-
-After following this tutorial, if you want to give a pause in your service, for the time being, see :doc:`how you can pause the service <../../../platform/howto/pause-from-cli>`. 
-
-What's next?
-''''''''''''
-
-Want to try out OpenSearch with other clients? You can learn how to write search queries with NodeJS client, see :doc:`our tutorial <opensearch-and-nodejs>`.
-
-Resources
+Read more
 '''''''''
 
-We created an OpenSearch cluster, connected to it, and tried out different types of search queries. Now, you can explore more resources to help you to learn other features of OpenSearch and its Python client.
+Want to try out OpenSearch with other clients? You can learn how to write search queries with NodeJS client, see :doc:`our tutorial <opensearch-and-nodejs>`. We created an OpenSearch cluster, connected to it, and tried out different types of search queries. Now, you can explore more resources to help you to learn other features of OpenSearch and its Python client.
 
 * `Demo repository <https://github.com/aiven/demo-opensearch-python>`_, contains all code from this tutorial
 * `OpenSearch Python client  <https://opensearch.org/docs/latest/clients/python/>`_
 * :doc:`How to use OpenSearch with curl <opensearch-with-curl>`
 * `Official OpenSearch documentation <https://opensearch.org>`_
-    * `match <https://opensearch.org/docs/latest/opensearch/query-dsl/full-text/#match>`_
-    * `multi-match <https://opensearch.org/docs/latest/opensearch/query-dsl/full-text/#match>`_
-    * `match-phrase <https://opensearch.org/docs/latest/opensearch/query-dsl/full-text/#match-phrase>`_
-    * `fuzzy <https://opensearch.org/docs/latest/opensearch/query-dsl/full-text/#options>`_
-    * `term <https://opensearch.org/docs/latest/opensearch/query-dsl/term/#term>`_
-    * `slop <https://opensearch.org/docs/latest/opensearch/query-dsl/full-text/#options>`_
-    * `range <https://opensearch.org/docs/latest/opensearch/query-dsl/term/#range>`_
-    * `query-string <https://opensearch.org/docs/latest/opensearch/query-dsl/full-text/#query-string>`_
