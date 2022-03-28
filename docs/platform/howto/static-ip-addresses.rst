@@ -1,44 +1,53 @@
-Static IP addresses
-===================
+Manage static IP addresses
+==========================
 
-.. Note:: Each static IP addresses has an hourly price ranging from $0.025 to $0.075 depending on region. The feature is recent and Aiven's**\ `pricing page <https://aiven.io/pricing>`__\ **doesn't include static IPs yet.**
+.. Note:: Each static IP address will incur a small charge
 
 By default an Aiven service will use public IP addresses allocated from
 the cloud provider's shared pool of addresses for the cloud region. As a
-result, Aiven service nodes effectively get a random IP address. Since
-the addresses are shared with all other users of the cloud region, it's
-not feasible to create firewall rules to limit access to/from nodes
-using public IP addresses as the firewall would need granting access to
-other users in the cloud region's for the entire IP range.
-
-You can however create IP addresses to your project. These addresses
-have a static IP for the lifetime of the address resource, and makes the
-addresses predictable for firewall rules. After creating the address it
-can be associated with an Aiven service. Once enough IP addresses have
-been associated with a service, you can turn on static IP use on the
-service.
+result, Aiven service IP addresses cannot be predicted. This is
+a good approach for most use cases, but we do also offer static IP
+addresses should you need them. This allows you to configure a firewall
+rule for your own services.
 
 .. _platform_howto_setup_static_ip:
 
+Calculate the number of IP addresses needed
+-------------------------------------------
+
+Work out how many IP addresses your service will need to guarantee that the
+service has enough static IP addresses available to handle upgrades and
+failures. The table below shows how to calculate the number of IPs needed,
+depending on the size of your service plan.
+
+.. list-table::
+    :header-rows: 1
+
+    * - Plan size
+      - IPs needed
+      - Example
+
+    * - up to 6 nodes
+      - double the number of nodes
+      - 3 node plan needs 6 static IPs (2 * 3 nodes)
+
+    * - 6+ nodes
+      - number of nodes + 6
+      - 9 node plan needs 15 static IPs (9 nodes, plus 6)
+
 Reserve static IP addresses
 ---------------------------
-**Calculate the number of static IP addresses needed**
 
-| Start by creating IP addresses into the cloud region you intend to use
-  them for a service. The amount of IP addresses depends on the service
-  plan. You'll need 2x the number of IP addresses compared to the amount
-  of nodes in the plan. We request a number of static IPs two times the 
-  amount of the cluster nodes, since it guarantees upgrades and failovers 
-  to be handled using only static IP addresses and not relying on random ones
-  can be handled without using non-static IP addresses. However no more
-  than 6 additional addresses will be used, so for example a 3 node plan
-  will need 2 \* 3 = 6 static IPs, but a 9 node plan will need 9 + 6 =
-  15 static IPs.
-| Static IPs are created to your project with
+Create a static IP addresses using the :doc:`/docs/tools/cli`, repeat as many
+times as you need to create enough IP addresses for your service. Specify the
+name of the cloud that the IP address should be created in, to match the
+service that will use it.
 
 ::
 
    avn static-ip create --cloud azure-westeurope
+
+The command returns some information about the newly created static IP address.
 
 .. code:: text
 
@@ -46,12 +55,13 @@ Reserve static IP addresses
    ================  ==========  ============  ========  ====================
    azure-westeurope  null        null          creating  ip359373e5e56
 
-When the IP address has been provisioned, the state turns to ``created``
-and there the allocated IP address is visible:
-
-::
+When the IP address has been provisioned, the state turns to ``created``. The
+list of static IP addresses in the current project is available using the
+``static-ip list`` command::
 
    avn static-ip list
+
+The output shows the state of each one, and its ``ID``, which you will need in the next step.
 
 .. code:: text
 
@@ -61,14 +71,24 @@ and there the allocated IP address is visible:
    azure-westeurope  13.81.29.69    null          created  ip359373e5e56
    azure-westeurope  13.93.221.175  null          created  ip358375b2765
 
-``created`` IP address can be associated with a service. These makes the
-addresses eligible for use for the service, but only after the static IP
-feature has been enabled on the service.
+   
+Once the status shows as ``created`` IP address can be associated with a
+service.
 
-::
+Associate static IP addresses with a service
+--------------------------------------------
+
+Using the name of the service, and the ID of the static IP address, you can
+assign which service a static IP should be used by::
 
    avn static-ip associate --service my-static-pg ip359373e5e56
    avn static-ip associate --service my-static-pg ip358375b2765
+
+When you have the required number of addresses available, you can enable static
+IPs on your service.
+
+Configure service to use static IP
+----------------------------------
 
 Enable static IPs for the service by setting the ``static_ips`` user
 configuration option:
@@ -77,44 +97,41 @@ configuration option:
 
    avn service update -c static_ips=true my-static-pg
 
-Note that this leads to a rolling forward replacement of service nodes,
-similar to applying a maintenance upgrade. The new nodes will use the
-static IPs associated with the service
+.. note::
 
-::
+    This leads to a rolling forward replacement of service nodes,
+    similar to applying a maintenance upgrade. The new nodes will use the
+    static IPs associated with the service
 
-   avn static-ip list
+Once the nodes have been replaced, they will be using the static IPs that you
+associated with the service. You can check which ones are in use by running the
+``avn static-ip list`` command again. The "available" state means that the IP
+is associated to the service, and "assigned" means that it is in active use.
 
-.. code:: text
+.. _platform_howto_remove_static_ip:
 
-   CLOUD_NAME        IP_ADDRESS     SERVICE_NAME  STATE      STATIC_IP_ADDRESS_ID
-   ================  =============  ============  =========  ====================
-   azure-westeurope  13.81.29.69    my-static-pg  assigned   ip359373e5e56
-   azure-westeurope  13.93.221.175  my-static-pg  available  ip358375b2765
+Remove static IP addresses
+--------------------------
 
-.. _platform_howto_setup_static_ip:
+.. note::
 
-Removing static IPs
--------------------
+    To dissociate an IP from a service, the service must either have enough IPs
+    still available, or the ``static_ips`` configuration setting for the
+    service must be set to ``false``.
 
-Static IP addresses are removed by first dissociating them from a
-service. This returns them back to the ``created`` state to either be
-associated with another service, or deleted.
+Static IP addresses are removed by first dissociating them from a service,
+while they are not in use. This returns them back to the ``created`` state to
+either be associated with another service, or deleted.
 
 ::
 
    avn static-ip dissociate ip358375b2765
-   avn static-ip list
-
-.. code:: text
-
-   CLOUD_NAME        IP_ADDRESS     SERVICE_NAME  STATE     STATIC_IP_ADDRESS_ID
-   ================  =============  ============  ========  ====================
-   azure-westeurope  13.81.29.69    my-static-pg  assigned  ip359373e5e56
-   azure-westeurope  13.93.221.175  null          created   ip358375b2765
 
 To delete a static IP:
 
 ::
 
    avn static-ip delete ip358375b2765
+
+Neither the ``dissociate`` or ``delete`` commands return any information on
+success.
