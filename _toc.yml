@@ -17,6 +17,7 @@ entries:
       - file: docs/platform/howto/create_new_service
       - file: docs/platform/howto/create_new_service_user
       - file: docs/platform/howto/create_authentication_token
+      - file: docs/platform/howto/disable-user-2fa
       - file: docs/platform/howto/download-ca-cert
       - file: docs/platform/howto/console-fork-service
       - file: docs/platform/howto/tag-resources
