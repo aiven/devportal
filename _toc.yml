@@ -247,6 +247,7 @@ entries:
               - file: docs/products/postgresql/howto/visualize-grafana
               - file: docs/products/postgresql/howto/report-metrics-grafana
               - file: docs/products/postgresql/howto/monitor-with-pgwatch2
+              - file: docs/products/postgresql/howto/datasource-integration
       - file: docs/products/postgresql/reference
         title: Reference
         entries:
