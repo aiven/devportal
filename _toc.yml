@@ -22,6 +22,7 @@ entries:
       - file: docs/platform/howto/tag-resources.rst
       - file: docs/platform/howto/pause-from-cli.rst
       - file: docs/platform/howto/public-access-in-vpc.rst
+      - file: docs/platform/howto/private-ip-resolution.rst
       - file: docs/platform/howto/add-storage-space
       - file: docs/platform/howto/restrict-access
       - file: docs/platform/howto/scale-services
@@ -29,7 +30,6 @@ entries:
       - file: docs/platform/howto/monitoring-services
       - file: docs/platform/howto/integrations/prometheus-metrics
       - file: docs/platform/howto/integrations/datadog-increase-metrics-limit
-      - file: docs/platform/howto/troubleshooting-dns-names-pointing-to-private-ips-not-resolving.rst
       - file: docs/platform/howto/static-ip-addresses.rst
 
 
