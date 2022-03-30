@@ -19,4 +19,4 @@ When nodes are replaced, the partition leaders are expected to change. Every par
 
     If a service has 3000 active partitions, then you can expect at least one of these error messages for each partition in each producer. 
 
-Producers usually update their metadata cache immediately. After that, they continue producing messages without issue. However, high load on the broker side or unfortunate timing in parallel requests can sometimes trigger several updates. This might cause a very large number of these warnings in the producer logs, which can look worrying but is in fact harmless.
+Most producers libraries update their cluster metadata cache on a regular poll interval, or immediately based on errors. After that, they continue producing messages without issue. However, high load on the broker side or unfortunate timing in parallel requests can sometimes trigger several updates. This might cause a very large number of these warnings in the producer logs, which can look worrying but is in fact harmless.
