@@ -39,11 +39,5 @@ Lists cloud regions with related geographical region, latitude and longitude.
   avn cloud list --project my-project
 
 
-Reference list of clouds
-------------------------
-
-A quick reference list of the default available clouds, but bear in mind that this may differ between projects.
-
-
-.. include:: /includes/clouds-list.rst
+A reference of the cloud regions is available in the :doc:`dedicated document </docs/platform/reference/list_of_clouds>`.
 
