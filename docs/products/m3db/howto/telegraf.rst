@@ -1,7 +1,7 @@
 Write to M3 from Telegraf
 ================================
 
-M3 supports multiple methods of writing metrics to the M3 database. Two common options are the InfluxDB wire-protocol, and the Prometheus remote write protocol. It is possible to write metrics from an existing Telegraf setup to M3 using either of these protocols, so we've covered the configuration for both options here.
+M3 supports multiple methods of writing metrics to the M3 database. Two common options are the InfluxDB® wire-protocol, and the Prometheus remote write protocol. It is possible to write metrics from an existing Telegraf setup to M3 using either of these protocols, so we've covered the configuration for both options here.
 
 Variables
 ---------
@@ -16,8 +16,8 @@ Variable                Description
 ``AVNADMIN_PASS``       Password for the default ``avnadmin`` user
 ==================      ==========================================================
 
-Configuring Telegraf InfluxDB output plugin for M3
---------------------------------------------------
+Configuring Telegraf InfluxDB® output plugin for M3
+---------------------------------------------------
 
 Below is an example of how to configure Telegraf to send metrics to M3 using the InfluxDB line-protocol. These lines belong in the **output plugins** section of your Telegraf configuration file::
 

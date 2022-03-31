@@ -1,8 +1,8 @@
 Authentication types
 ======================
 
-It is strongly recommended to use modern encryption protocols to protect data in transit sent to and from Apache Kafka.
-You can use one of the available options in **Aiven for Apache Kafka** services.
+It is strongly recommended to use modern encryption protocols to protect data in transit sent to and from Apache Kafka®.
+You can use one of the available options in **Aiven for Apache Kafka®** services.
 
 Transport Layer Security
 ------------------------
@@ -62,9 +62,13 @@ then used to create an "identity" that holds:
 
 -  ``ServerKey``
 
-This identity is then by default stored in ZooKeeper.
+This identity is then by default stored in Apache ZooKeeper™.
 
 Enable SASL authentication
 ---------------------------
 
 Follow the steps from our article :doc:`to enable SASL authentication <../howto/kafka-sasl-auth>`
+
+-----
+
+*Apache ZooKeeper is a trademark of the Apache Software Foundation in the United States and/or other countries*

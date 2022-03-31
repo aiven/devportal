@@ -1,7 +1,7 @@
 Reference
 =========
 
-References for PostgreSQL:
+References for PostgreSQL®:
 
 .. tableofcontents::
 

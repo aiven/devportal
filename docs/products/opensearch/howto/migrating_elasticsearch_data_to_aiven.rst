@@ -1,7 +1,7 @@
-Migrate Elasticsearch data to Aiven for OpenSearch
-==================================================
+Migrate Elasticsearch data to Aiven for OpenSearch®
+====================================================
 
-We recommend migrating to Aiven for OpenSearch by reindexing from
+We recommend migrating to Aiven for OpenSearch® by reindexing from
 your remote cluster. The same process works for migrating from Aiven for
 OpenSearch to a self-hosted Elasticsearch service.
 
@@ -99,3 +99,8 @@ To migrate or copy data:
 
    #. Delete the source index if necessary.
 
+
+
+------
+
+*Elasticsearch is a trademark of Elasticsearch B.V., registered in the U.S. and in other countries.*

@@ -1,7 +1,7 @@
 Manage users and access control lists
 =======================================
 
-Aiven for Apache Kafka uses access control lists (ACL) and user definitions in order to establish individual rights to produce or consume a topic.
+Aiven for Apache Kafka® uses access control lists (ACL) and user definitions in order to establish individual rights to produce or consume a topic.
 More information about permissions mapping can be found in the :doc:`dedicated documentation <../concepts/acl>`. 
 
 You can manage users and ACL entries in the corresponding tabs of the service page in the `Aiven web console <https://console.aiven.io/>`_.

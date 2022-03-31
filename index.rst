@@ -164,4 +164,4 @@ You can use the Aiven platform in the way that best fits your workflow:
 
 * :doc:`docs/tools/terraform/index` gives orchestration features for infrastructure-as-code projects.
 
-* :doc:`docs/tools/kubernetes` adds orchestration of your Aiven services to your existing Kubernetes cluster.
+* :doc:`docs/tools/kubernetes` adds orchestration of your Aiven services to your existing Kubernetes® cluster.

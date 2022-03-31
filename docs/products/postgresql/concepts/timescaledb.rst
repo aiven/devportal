@@ -1,7 +1,7 @@
 About TimescaleDB
 =================
 
-`TimescaleDB <https://github.com/timescale/timescaledb>`_ is an open-source database designed to make your existing relational database scalable for time series data. TimescaleDB is available as a PostgreSQL extension on Aiven.
+`TimescaleDB <https://github.com/timescale/timescaledb>`_ is an open-source database designed to make your existing relational database scalable for time series data. TimescaleDB is available as a PostgreSQL® extension on Aiven.
 
 A time series indexes a series of data points in chronological order, usually as a sequence over regular intervals. Examples of a time series include:
 

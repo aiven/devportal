@@ -92,7 +92,7 @@ Creates an external service integration endpoint.
   * - ``-c KEY=VALUE``
     - The custom configuration settings. 
 
-**Example:** Create an external Apache Kafka endpoint named ``demo-ext-kafka``.
+**Example:** Create an external Apache Kafka® endpoint named ``demo-ext-kafka``.
 
 ::
 
@@ -192,7 +192,7 @@ Updates a service integration endpoint.
   * - ``-c KEY=VALUE``
     - The custom configuration settings. 
 
-**Example:** Update an external Apache Kafka endpoint with id ``821e0144-1503-42db-aa9f-b4aa34c4af6b``.
+**Example:** Update an external Apache Kafka® endpoint with id ``821e0144-1503-42db-aa9f-b4aa34c4af6b``.
 
 ::
 
@@ -289,3 +289,8 @@ Updates an existing service integration.
 
   avn service integration-update 8e752fa9-a0c1-4332-892b-f1757390d53f \
     -c 'kafka_topic=test_pg_log'
+
+
+------
+
+*Elasticsearch is a trademark of Elasticsearch B.V., registered in the U.S. and in other countries.*

@@ -20,7 +20,7 @@ When you're ready to continue using the service run the command to power it on. 
     avn service wait demo-open-search
 
 
-If you have finished exploring your OpenSearch service, you can destroy or "terminate" the service. To terminate the service completely use the following command:
+If you have finished exploring your OpenSearch® service, you can destroy or "terminate" the service. To terminate the service completely use the following command:
 
 ::
 

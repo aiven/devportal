@@ -10,7 +10,7 @@ tool (`see the project page <https://github.com/tfutils/tfenv>`_), but you can u
 direct releases from Hashicorp if you prefer.
 
 Major changes in v2
--------------------
+'''''''''''''''''''
 
 Aiven Terraform Provider has a `detailed changelog <https://github.com/aiven/terraform-provider-aiven/blob/master/CHANGELOG.md>`_ but the main additions in v2 are:
 
@@ -23,7 +23,7 @@ Aiven Terraform Provider has a `detailed changelog <https://github.com/aiven/ter
    ``aiven_flink`` and ``aiven_opensearch``.
 
 Upgrade Aiven Terraform provider
---------------------------------
+''''''''''''''''''''''''''''''''
 
 Update the Aiven Terraform Provider by
 editing the providers block of your script to include the latest version of
@@ -39,7 +39,7 @@ the Aiven Terraform Provider (v2.3.1 at the time of writing)::
     }
 
 Upgrade Terraform
------------------
+'''''''''''''''''
 
 We recommend keeping your Terraform version up to date.
 If you have v0.12 then follow the steps below.
@@ -87,7 +87,7 @@ Upgrade Terraform from 0.13 or later
 Any version above 0.13 can be upgraded to latest without any special steps.
 
 .. note::
-  If you are using Aiven Terraform provider v1 with Terraform 0.14 ``dev_overrides`` (see `<https://www.terraform.io/docs/cli/config/config-file.html#provider-installation>`__ )
+  If you are using Aiven Terraform provider v1 with Terraform 0.14 ``dev_overrides`` (see `<https://www.terraform.io/cli/config/config-file#provider-installation>`__ )
   you will need to add Aiven provider to the ``exclude`` block or remove ``dev_overrides`` completely.
 
 1. Use ``tfenv`` to get the latest version (1.0.10 at the time of writing) ``tfenv install latest && tfenv use latest``
@@ -154,7 +154,7 @@ field removed. Any references to ``aiven_service.kafka.*`` should be updated to 
     terraform apply
 
 Further reading
----------------
+'''''''''''''''
 
 There are examples of migrating each of the available service types on the
 `Aiven examples repository <https://github.com/aiven/aiven-examples/tree/master/terraform>`__

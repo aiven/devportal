@@ -1,7 +1,7 @@
 Create and use read-only replicas
 =================================
 
-PostgreSQL read-only replicas provide a great way to reduce the load on the primary server by enabling read-only queries to be performed against the replica. It's also a good way to optimise query response time across different geographical locations since, with Aiven, the replica can be placed in different regions or even different cloud providers.
+PostgreSQL® read-only replicas provide a great way to reduce the load on the primary server by enabling read-only queries to be performed against the replica. It's also a good way to optimise query response time across different geographical locations since, with Aiven, the replica can be placed in different regions or even different cloud providers.
 
 Create a replica
 ----------------

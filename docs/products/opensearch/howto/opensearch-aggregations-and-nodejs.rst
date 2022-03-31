@@ -1,10 +1,10 @@
-Use Aggregations with OpenSearch and NodeJS
-===========================================
+Use Aggregations with OpenSearch® and NodeJS
+============================================
 
 Learn how to aggregate data using OpenSearch and its NodeJS client. In this tutorial we'll look at different types of aggregations, write and execute requests to learn more about the data in our dataset.
 
 .. note::
-    If you're new to OpenSearch and its JavaScript client you might want to check :doc:`how to write search queries with OpenSearch with NodeJS <opensearch-and-nodejs>` first.
+    If you're new to OpenSearch® and its JavaScript client you might want to check :doc:`how to write search queries with OpenSearch with NodeJS <opensearch-and-nodejs>` first.
 
 Prepare the playground
 **********************

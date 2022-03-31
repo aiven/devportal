@@ -1,11 +1,11 @@
-Create an Elasticsearch® sink connector
+Create an Elasticsearch sink connector
 =======================================
 
-The Elasticsearch sink connector enables you to move data from an Aiven for Apache Kafka® cluster to an Elasticsearch® instance for further processing and analysis. 
+The Elasticsearch sink connector enables you to move data from an Aiven for Apache Kafka® cluster to an Elasticsearch instance for further processing and analysis.
 
 .. Warning::
 
-    This article describes how to create a sink connector to Elasticsearch®. Similar instructions are available also for OpenSearch® in the :doc:`dedicated article <opensearch-sink>`.
+    This article describes how to create a sink connector to Elasticsearch. Similar instructions are available also for OpenSearch® in the :doc:`dedicated article <opensearch-sink>`.
 
 .. _connect_elasticsearch_sink_prereq:
 
@@ -27,7 +27,7 @@ Furthermore you need to collect the following information about the target Elast
 
 .. Note::
 
-    If you're using Aiven for Elasticsearch® and Aiven for Apache Kafka® the above details are available in the `Aiven console <https://console.aiven.io/>`_ service Overview tab or via the dedicated ``avn service get`` command with the :ref:`Aiven CLI <avn_service_get>`.
+    If you're using Aiven for Elasticsearch and Aiven for Apache Kafka® the above details are available in the `Aiven console <https://console.aiven.io/>`_ service Overview tab or via the dedicated ``avn service get`` command with the :ref:`Aiven CLI <avn_service_get>`.
 
     The ``SCHEMA_REGISTRY`` related parameters are available in the Aiven for Apache Kafka® service page, *Overview* tab, and *Schema Registry* subtab
 
@@ -126,7 +126,7 @@ Adding the following ``TimestampRouter`` transformation in the connector propert
 
     The current version of the Elasticsearch sink connector is not able to automatically create daily indices in Elasticsearch. Therefore you need to create the indices with the correct name before starting the sink connector. You can create Elasticsearch indices in many ways including :doc:`CURL commands </docs/products/opensearch/howto/opensearch-with-curl>`.
 
-Example: Create an Elasticsearch® sink connector on a topic with a JSON schema
+Example: Create an Elasticsearch sink connector on a topic with a JSON schema
 -------------------------------------------------------------------------------
 
 If you have a topic named ``iot_measurements`` containing the following data in JSON format, with a defined JSON schema:
@@ -200,7 +200,7 @@ The configuration file contains the following peculiarities:
 * ``"key.ignore": "true"``: the connector is ignoring the message key (empty), and generating documents with ID equal to ``topic+partition+offset``
 
 
-Example: Create an Elasticsearch® sink connector on a topic in plain JSON format
+Example: Create an Elasticsearch sink connector on a topic in plain JSON format
 --------------------------------------------------------------------------------
 
 If you have a topic named ``students`` containing the following data in JSON format, without a defined schema:
@@ -241,3 +241,7 @@ The configuration file contains the following peculiarities:
 .. Note::
 
     The Elasticsearch document ID is set as the message key
+
+------
+
+*Elasticsearch is a trademark of Elasticsearch B.V., registered in the U.S. and in other countries.*

@@ -17,6 +17,7 @@ entries:
       - file: docs/platform/howto/create_new_service
       - file: docs/platform/howto/create_new_service_user
       - file: docs/platform/howto/create_authentication_token
+      - file: docs/platform/howto/disable-user-2fa
       - file: docs/platform/howto/download-ca-cert
       - file: docs/platform/howto/console-fork-service.rst
       - file: docs/platform/howto/tag-resources.rst
@@ -61,8 +62,21 @@ entries:
       - file: docs/tools/terraform/index
         title: Aiven Terraform provider
         entries:
-        - glob: docs/tools/terraform/*
+        - file: docs/tools/terraform/get-started
+          title: Get started
+        - file: docs/tools/terraform/howto
+          title: HowTo
+          entries:
+            - file: docs/tools/terraform/howto/upgrade-provider-v1-v2
+              title: Upgrade the Aiven Terraform Provider from v1 to v2
+        - file: docs/tools/terraform/reference
+          entries:
+          - file: docs/tools/terraform/reference/cookbook
+            entries:
+            - file: docs/tools/terraform/reference/cookbook/kafka-connect-terraform-recipe
+              title: Apache Kafka and OpenSearch
       - file: docs/tools/kubernetes
+        title: Aiven Operator for Kubernetes
 
   # -------- PRODUCT-SPECIFIC --------
   - file: docs/products/kafka/index
@@ -85,20 +99,22 @@ entries:
             title: Tools
             entries:
               - file: docs/products/kafka/howto/kafka-tools-config-file
-              - file: docs/products/kafka/howto/kcat.rst
+              - file: docs/products/kafka/howto/kcat
               - file: docs/products/kafka/howto/kafka-conduktor
               - file: docs/products/kafka/howto/kafdrop
           - file: docs/products/kafka/howto/list-security
             title: Security
             entries:
-              - file: docs/products/kafka/howto/keystore-truststore.rst
+              - file: docs/products/kafka/howto/keystore-truststore
               - file: docs/products/kafka/howto/manage-acls
               - file: docs/products/kafka/howto/monitor-logs-acl-failure
               - file: docs/products/kafka/howto/kafka-sasl-auth
+              - file: docs/products/kafka/howto/renew-ssl-certs
           - file: docs/products/kafka/howto/list-admin
             title: Administration tasks
             entries:
               - file: docs/products/kafka/howto/best-practices
+              - file: docs/products/kafka/howto/configure-with-kafka-cli
               - file: docs/products/kafka/howto/set-kafka-parameters
               - file: docs/products/kafka/howto/viewing-resetting-offset
               - file: docs/products/kafka/howto/configure-log-cleaner
@@ -130,6 +146,7 @@ entries:
           entries:
           - file: docs/products/kafka/kafka-connect/concepts/list-of-connector-plugins
           - file: docs/products/kafka/kafka-connect/concepts/jdbc-source-modes
+          - file: docs/products/kafka/kafka-connect/concepts/connect-plugin-list-not-available
 
         - file: docs/products/kafka/kafka-connect/howto
           title: HowTo
@@ -151,6 +168,8 @@ entries:
             - file: docs/products/kafka/kafka-connect/howto/s3-sink-prereq
             - file: docs/products/kafka/kafka-connect/howto/s3-sink-connector-aiven
             - file: docs/products/kafka/kafka-connect/howto/s3-sink-connector-confluent
+            - file: docs/products/kafka/kafka-connect/howto/gcs-sink-prereq
+            - file: docs/products/kafka/kafka-connect/howto/gcs-sink
             - file: docs/products/kafka/kafka-connect/howto/opensearch-sink
             - file: docs/products/kafka/kafka-connect/howto/elasticsearch-sink
         - file: docs/products/kafka/kafka-connect/reference
@@ -161,6 +180,8 @@ entries:
               entries:
               - file: docs/products/kafka/kafka-connect/reference/s3-sink-additional-parameters
               - file: docs/products/kafka/kafka-connect/reference/s3-sink-additional-parameters-confluent
+            - file: docs/products/kafka/kafka-connect/reference/gcs-sink-formats
+            - file: docs/products/kafka/kafka-connect/reference/connect-metrics-prometheus
 
       - file: docs/products/kafka/kafka-mirrormaker/index
         title: Apache Kafka MirrorMaker2
@@ -235,6 +256,7 @@ entries:
           - glob: docs/products/postgresql/reference/*
 
   - file: docs/products/flink/index
+    title: Apache Flink
     entries:
       - file: docs/products/flink/getting-started
       - file: docs/products/flink/concepts
@@ -266,6 +288,7 @@ entries:
           - glob: docs/products/flink/reference/*
 
   - file: docs/products/clickhouse/index
+    title: ClickHouse
     entries:
       - file: docs/products/clickhouse/getting-started
       - file: docs/products/clickhouse/sample-dataset
@@ -275,6 +298,7 @@ entries:
           - file: docs/products/clickhouse/concepts/olap
           - file: docs/products/clickhouse/concepts/databases-and-tables
           - file: docs/products/clickhouse/concepts/columnar-databases
+          - file: docs/products/clickhouse/concepts/indexing
       - file: docs/products/clickhouse/howto
         title: HowTo
         entries:
@@ -317,6 +341,7 @@ entries:
           - file: docs/products/opensearch/howto/opensearch-aggregations-and-nodejs
           - file: docs/products/opensearch/howto/control_access_to_content
           - file: docs/products/opensearch/howto/restore_opensearch_backup
+          - file: docs/products/opensearch/howto/import-opensearch-data-using-elasticsearch-dump
           - file: docs/products/opensearch/howto/set_index_retention_patterns
           - file: docs/products/opensearch/howto/opensearch-alerting-api
       - file: docs/products/opensearch/dashboards/index

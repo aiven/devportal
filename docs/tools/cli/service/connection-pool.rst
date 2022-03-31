@@ -10,7 +10,7 @@ Manage PgBouncer connection pools
 ``avn service connection-pool-create``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Creates a new :doc:`PgBouncer connection pool </docs/products/postgresql/concepts/pg-connection-pooling>` for a given PostgreSQL service.
+Creates a new :doc:`PgBouncer connection pool </docs/products/postgresql/concepts/pg-connection-pooling>` for a given PostgreSQL® service.
 
 .. list-table::
   :header-rows: 1
@@ -49,7 +49,7 @@ Creates a new :doc:`PgBouncer connection pool </docs/products/postgresql/concept
 ``avn service connection-pool-delete``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Deletes a :doc:`PgBouncer connection pool </docs/products/postgresql/concepts/pg-connection-pooling>` for a given PostgreSQL service.
+Deletes a :doc:`PgBouncer connection pool </docs/products/postgresql/concepts/pg-connection-pooling>` for a given PostgreSQL® service.
 
 .. list-table::
   :header-rows: 1
@@ -72,7 +72,7 @@ Deletes a :doc:`PgBouncer connection pool </docs/products/postgresql/concepts/pg
 ``avn service connection-pool-list``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Lists the :doc:`PgBouncer connection pool </docs/products/postgresql/concepts/pg-connection-pooling>` for a given PostgreSQL service.
+Lists the :doc:`PgBouncer connection pool </docs/products/postgresql/concepts/pg-connection-pooling>` for a given PostgreSQL® service.
 
 .. list-table::
   :header-rows: 1
@@ -101,7 +101,7 @@ An example of ``avn service connection-pool-list`` output:
 ``avn service connection-pool-update``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Updates a :doc:`PgBouncer connection pool </docs/products/postgresql/concepts/pg-connection-pooling>` for a given PostgreSQL service.
+Updates a :doc:`PgBouncer connection pool </docs/products/postgresql/concepts/pg-connection-pooling>` for a given PostgreSQL® service.
 
 .. list-table::
   :header-rows: 1

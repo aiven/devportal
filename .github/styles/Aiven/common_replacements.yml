@@ -22,3 +22,4 @@ swap:
   "Aiven ClickHouse": "Aiven for ClickHouse"
   "OpenSearch dashboards": "OpenSearch Dashboards"
   prometheus: Prometheus
+  "google cloud storage": "Google Cloud Storage"

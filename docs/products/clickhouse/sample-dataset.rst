@@ -1,7 +1,7 @@
 Sample dataset
 ===============
 
-The official ClickHouse website offers `a list of example datasets <https://clickhouse.com/docs/en/getting-started/example-datasets/>`_ to get you started. Each dataset has a description on how to download, inject, and transform the data samples as needed.
+The official ClickHouse® website offers `a list of example datasets <https://clickhouse.com/docs/en/getting-started/example-datasets/>`_ to get you started. Each dataset has a description on how to download, inject, and transform the data samples as needed.
 
 This article takes a closer look at how to use the ``Yandex Metrica`` `example dataset <https://clickhouse.com/docs/en/getting-started/example-datasets/metrica/>`_. This contains two tables:
 

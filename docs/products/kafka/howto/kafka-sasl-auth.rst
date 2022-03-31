@@ -1,7 +1,7 @@
-Use SASL Authentication with Apache Kafka
-=========================================
+Use SASL Authentication with Apache Kafka®
+==========================================
 
-Aiven offers a choice of :doc:`authentication methods for Apache Kafka <../concepts/auth-types>`, including `SASL <https://en.wikipedia.org/wiki/Simple_Authentication_and_Security_Layer>`_ (Simple Authentication and Security Layer).
+Aiven offers a choice of :doc:`authentication methods for Apache Kafka® <../concepts/auth-types>`, including `SASL <https://en.wikipedia.org/wiki/Simple_Authentication_and_Security_Layer>`_ (Simple Authentication and Security Layer).
 
 1. Scroll down the **Service overview** page to the **Advanced configuration** section.
 

@@ -1,6 +1,6 @@
 # Aiven Developer Portal custom search
 
-Aiven Developer Portal uses custom Elasticsearch based search. The files related to the search are:
+Aiven Developer Portal uses custom OpenSearch based search. The files related to the search are:
 
 - the search results page [\_templates/search.html](_templates/search.html)
 - the search form for the sidebar [\_templates/sidebar/search.html](_templates/sidebar/search.html)
@@ -30,7 +30,7 @@ The index is described with the following JSON:
             "type": "keyword"
         },
         "sort_priority": {
-            "type": "interger"
+            "type": "integer"
         }
     }
     }
@@ -43,23 +43,26 @@ The index is described with the following JSON:
 | description   | Short document description, used in help center results under the title text                                                                             |
 | content       | Main document content                                                                                                                                    |
 | source        | Document source, currently either `devportal` or `helpcenter`                                                                                            |
-| sort_priority | Document sort priority in search results, smaller priority documents are shown first and same priority documents are sorted by Elasticsearch query score |
+| sort_priority | Document sort priority in search results, smaller priority documents are shown first and same priority documents are sorted by OpenSearch query score |
 
 In addition to these `url` field should be provided with every document but it is not indexed or used in search queries. `url` is used in search result `href`.
 
-## Search query
+## Search function
 
-The Elasticsearch index is used through the Netlify function in [netlify/functions/search/search.js](netlify/functions/search/search.js). The exact query can be found in the file but the idea is:
+The OpenSearch index is used through the Netlify function in [netlify/functions/search/search.js](netlify/functions/search/search.js). To call the function, make a GET request to the function URL and append your search term to the `query` parameter, like this: [https://developer.aiven.io/.netlify/functions/search?query=redis](https://developer.aiven.io/.netlify/functions/search?query=redis).
 
-- use OR-style query matching `title`, `description` and `content` (with ES `match_phrase_prefix`)
+The query uses this overall approach:
+
+- use OR-style query matching `title`, `description` and `content` (with OS `match_phrase_prefix`)
 - give higher value to `title`
+
 
 # Creating the index
 
 The index is created with [scripts/create_index.py](scripts/create_index.py). You can run it with
 
 ```
-make create-index ES_URL=https://es.url/here
+make create-index ES_URL=https://opensearch-url/here
 ```
 
 This can be run multiple times and has to be run at least once before the other commands that add documents to the index.
@@ -77,7 +80,7 @@ Pages that we do not want to be indexed can be added to `INDEX_BLACKLIST` list i
 You can run the script with
 
 ```
-make index-devportal ES_URL=https://es.url/here
+make index-devportal ES_URL=https://opensearch.url/here
 ```
 
 # Help Center page indexing
@@ -88,7 +91,7 @@ The script fetches HTTP pages from [https://help.aiven.io/](https://help.aiven.i
 You can run the script with
 
 ```
-make index-helpcenter ES_URL=https://es.url/here
+make index-helpcenter ES_URL=https://opensearch.url/here
 ```
 
 ## Adding documents to the index using Python
@@ -97,10 +100,10 @@ Using `elasticsearch` library:
 
 ```python
 import hashlib
-from elasticsearch import Elasticsearch
+from opensearchpy import OpenSearch
 
 # Create the client instance
-es = Elasticsearch(['https://elasticsearch.url/here'])
+os_client = OpenSearch(['https://opensearch.url/here'], use_ssl=True)
 
 # Loop:
 
@@ -115,9 +118,23 @@ document = {
 }
 
 # Send the document to the index
-es.index(index='devportal',
+os_client.index(index='devportal',
          body=document,
          id=hashlib.sha256(page['url'].encode("utf-8")).hexdigest())
 ```
 
 You might also need to take care of removing documents that no longer exist.
+
+# Testing changes to search functionality
+
+It seems like Netlify uses the deployed functions rather than the ones in a branch when building a preview, so we need to take care when testing these. A good approach is to use the [Netlify CLI](https://www.netlify.com/products/cli/) locally. For example, to test the search function:
+
+1. Create an OpenSearch service on Aiven, copy the URL and then set it as the environment `ES_URL` in your terminal
+
+2. Run `make create-index` and then `make index-helpcenter` and `make index-devportal` to populate the OpenSearch data (you can go browse with OpenSearch dashboards at this point if you're interested)
+
+3. From the `netlify/` directory, run `netlify dev` - this starts a server on port 8888 (but won't serve the site itself because we don't have configuration to run it locally, I think it would be possible if we needed to though)
+
+4. The search function is now available at `http://localhost:8888/.netlify/functions/search` - add `?query=kafka` or whatever your search query should be, to check that the function works and returns the results you expect. The local server will show error logs if there are any.
+
+_Elasticsearch is a trademark of Elasticsearch B.V., registered in the U.S. and in other countries._

@@ -1,7 +1,7 @@
 Partition segments
 ==================
 
-Apache Kafka divides topics partition data into **segment** files (with ``.log`` suffix) stored on the file system. Each segment file is named using the offset of the first message (a.k.a. **base offset**) contained. For example, the segment file ``04.log`` contains the message with offset ``4`` as first entry. 
+Apache Kafka® divides topics partition data into **segment** files (with ``.log`` suffix) stored on the file system. Each segment file is named using the offset of the first message (a.k.a. **base offset**) contained. For example, the segment file ``04.log`` contains the message with offset ``4`` as first entry.
 
 The last segment in the partition is called the **active segment** and it is the only segment to which new messages are appended to.
 

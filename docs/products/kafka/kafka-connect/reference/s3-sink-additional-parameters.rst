@@ -40,7 +40,7 @@ By default, data is stored in one record per line in S3 in CSV format.
 
 .. Tip::
 
-    You can change the output data format to JSON or `Parquet <https://parquet.apache.org/documentation/latest/>`_ by setting the ``format.output.type``. More details can be found in the `GitHub connector repository documentation <https://github.com/aiven/aiven-kafka-connect-s3>`_
+    You can change the output data format to JSON or `Parquet <https://parquet.apache.org/docs/>`_ by setting the ``format.output.type``. More details can be found in the `GitHub connector repository documentation <https://github.com/aiven/aiven-kafka-connect-s3>`_
 
 You can define the output data fields with the ``format.output.fields`` connector configuration. The message key and value, if included in the output, are encoded in ``Base64``. 
 

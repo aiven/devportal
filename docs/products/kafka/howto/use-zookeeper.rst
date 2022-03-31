@@ -1,7 +1,8 @@
-Set ZooKeeper configuration
-===========================
+Set Apache ZooKeeper™ configuration
+===================================
 
-ZooKeeper is used both by Apache Kafka and by Aiven management software to coordinate work within the cluster. However, to assure the stability of the cluster the access to ZooKeeper is by default restricted.
+Apache ZooKeeper™ is used both by Apache Kafka® and by Aiven management software to coordinate work within the cluster. However, to assure the stability of the cluster the access to ZooKeeper is by default restricted.
+
 
 In order to change ZooKeeper configuration properties follow these steps:
 
@@ -14,4 +15,6 @@ The service configuration will be then updated.
 
 .. note:: Latest versions of Apache Kafka allow ZooKeeper-less mode, however, you can continue using the advanced configuration settings as before.
 
+-----
 
+*Apache ZooKeeper is a trademark of the Apache Software Foundation in the United States and/or other countries*

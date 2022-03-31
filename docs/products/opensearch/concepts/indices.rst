@@ -1,7 +1,7 @@
 Indices
 =======
 
-OpenSearch uses indices to organize data into types, similarly to databases and tables in relational databases.
+OpenSearch® uses indices to organize data into types, similarly to databases and tables in relational databases.
 
 The data is distributed within your cluster by mapping each index to a primary shard, which is copied to one or more replica shards to protect your data against hardware failure and to provide additional capacity for read requests.
 
@@ -120,3 +120,7 @@ When the replication factor (``number_of_replicas`` value) is greater than size 
 .. note::
     The replication factor is ``number_of_replicas`` + 1. For example, for a three-node cluster, the maximum ``number_of_replicas`` value is 2, which means that all shards on the index are replicated to all three nodes.
 
+
+------
+
+*Elasticsearch is a trademark of Elasticsearch B.V., registered in the U.S. and in other countries.*

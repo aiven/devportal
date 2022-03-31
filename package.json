@@ -14,11 +14,8 @@
     "url": "https://github.com/aiven/devportal/issues"
   },
   "homepage": "https://github.com/aiven/devportal#readme",
-  "devDependencies": {
-    "netlify-cli": "^3.37.26"
-  },
   "dependencies": {
-    "@elastic/elasticsearch": "7.13.0",
-    "pg": "^8.7.1"
+    "@opensearch-project/opensearch": "^1.0.2",
+    "pg": "^8.7.3"
   }
 }

@@ -27,13 +27,13 @@ Creates a new user for the selected service.
   * - ``--m3-group``
     - The name of the group the user belongs to (for Aiven for M3 services only)
   * - ``--redis-acl-keys``
-    - The ACL rules for keys (Aiven for Redis services only)
+    - The ACL rules for keys (Aiven for Redis™* services only)
   * - ``--redis-acl-commands``
-    - The ACL rules for commands (Aiven for Redis services only)
+    - The ACL rules for commands (Aiven for Redis™* services only)
   * - ``--redis-acl-categories``
-    - The ACL rules for categories (Aiven for Redis services only)
+    - The ACL rules for categories (Aiven for Redis™* services only)
   * - ``--redis-acl-channels``
-    - The ACL rules for channels (Aiven for Redis services only)
+    - The ACL rules for channels (Aiven for Redis™* services only)
 
 **Example:** Create a new user named ``janedoe`` for a service named ``pg-demo``.
 
@@ -41,6 +41,29 @@ Creates a new user for the selected service.
 
   avn service user-create pg-demo --username janedoe
 
+.. _avn_service_user_creds_acknowledge:
+
+``avn service user-creds-acknowledge``
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+Acknowledges the usage of the :doc:`renewed SSL certificate </docs/products/kafka/howto/renew-ssl-certs>` for a specific service user.
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``service_name``
+    - The name of the service
+  * - ``--username``
+    - The username for which to download the certificates
+
+**Example:** Acknowledge the usage of the new SSL certificate for the user ``janedoe`` belonging to a service named ``kafka-demo``.
+
+::
+
+  avn service user-creds-acknowledge kafka-demo --username janedoe
 
 .. _avn_service_user_creds_download:
 
@@ -210,4 +233,4 @@ Resets or changes the service user password.
 ``avn service user-set-access-control``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Set Redis service user access control 
+Set Redis™* service user access control

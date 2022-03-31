@@ -1,14 +1,14 @@
 About ``aiven-db-migrate``
 ==========================
 
-The ``aiven-db-migrate`` tool is the recommended approach for migrating your PostgreSQL to Aiven. It supports both logical replication and also using a dump and restore process. Find out more about the tool `on GitHub <https://github.com/aiven/aiven-db-migrate>`_.
+The ``aiven-db-migrate`` tool is the recommended approach for migrating your PostgreSQL® to Aiven. It supports both logical replication and also using a dump and restore process. Find out more about the tool `on GitHub <https://github.com/aiven/aiven-db-migrate>`_.
 
 Logical replication is the default method and once successfully set up, this keeps the two databases synchronized until the replication is interrupted. If the preconditions for logical replication are not met for a database, the migration falls back to using ``pg_dump``.
 
 Regardless of the migration method used, the migration tool first performs a schema dump and migration to ensure schema compatibility.
 
 .. Note::
-    Logical replication also works when migrating from AWS RDS PostgreSQL 10+ and `Google CloudSQL PostgreSQL <https://cloud.google.com/sql/docs/release-notes#August_30_2021>`_.
+    Logical replication also works when migrating from AWS RDS PostgreSQL® 10+ and `Google CloudSQL PostgreSQL <https://cloud.google.com/sql/docs/release-notes#August_30_2021>`_.
 
 .. _aiven-db-migrate-migration-requirements:
 
@@ -22,7 +22,7 @@ The following are the two basic requirements for a migration:
 
 Additionally to perform a **logical replication**, the following need to be valid:
 
-3. PostgreSQL version 10 or newer
+3. PostgreSQL® version 10 or newer
 4. Credentials with superuser access to the source cluster or the ``aiven-extras`` extension installed (see also: `Aiven Extras on GitHub <https://github.com/aiven/aiven-extras>`_)
 
 .. Note::
@@ -50,7 +50,7 @@ The ``aiven-db-migrate`` migration tool checks the following requirements before
     - by connecting as a superuser
     - without requiring superuser access
     - by inclusion in the allowed extensions list
-    - by being a trusted extension (for PostgreSQL 13 and newer)
+    - by being a trusted extension (for PostgreSQL® 13 and newer)
 
 11. In addition, for using the logical replication method:
 

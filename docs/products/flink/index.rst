@@ -1,10 +1,10 @@
-Apache Flink :badge:`beta,cls=badge-secondary text-black badge-pill`
-====================================================================
+Apache Flink® :badge:`beta,cls=badge-secondary text-black badge-pill`
+=====================================================================
 
-What is Aiven for Apache Flink?
--------------------------------
+What is Aiven for Apache Flink®?
+--------------------------------
 
-Aiven for Apache Flink beta is powered by the open-source framework Apache Flink, a **distributed processing engine for stateful computations over data streams**. It enables you to easily get started with real-time stream processing using SQL.
+Aiven for Apache Flink® beta is powered by the open-source framework Apache Flink®, a **distributed processing engine for stateful computations over data streams**. It enables you to easily get started with real-time stream processing using SQL.
 
 The service is currently available as a beta release and is intended for **non-production use**.
 
@@ -53,15 +53,15 @@ Apache Flink features
 **Flink SQL**
   Apache Flink enables you to develop streaming applications using standard SQL. The :doc:`Aiven web console provides an SQL editor <concepts/supported-syntax-sql-editor>` to explore the table schema and create SQL queries to process streaming data.
 
-**Built-in data flow integration with Aiven for Apache Kafka**
-  Connect with Aiven for Apache Kafka as a source or sink for your data.
+**Built-in data flow integration with Aiven for Apache Kafka®**
+  Connect with Aiven for Apache Kafka® as a source or sink for your data.
 
   * Autocompletion for finding existing topics in a connected Kafka service when you create data tables.
   * Choose the table format when reading data from Kafka - JSON, Apache Avro, Confluent Avro, Debezium CDC.
   * Supports :doc:`upsert Kafka connectors <concepts/kafka-connectors>`, which allow you to produce a changelog stream, where each data record represents an update or delete event.
 
-**Built-in data flow integration with Aiven for PostgreSQL**
-  Connect with Aiven for PostgreSQL as a source or sink for your data. The Aiven web console features autocompletion for finding existing databases in a connected PostgreSQL service when you create data tables.
+**Built-in data flow integration with Aiven for PostgreSQL®**
+  Connect with Aiven for PostgreSQL® as a source or sink for your data. The Aiven web console features autocompletion for finding existing databases in a connected PostgreSQL service when you create data tables.
 
 **Automate workflows**
   Automate workflows for managing Flink services with :doc:`Aiven Terraform Provider </docs/tools/terraform/index>`. See the `Flink data source <https://registry.terraform.io/providers/aiven/aiven/latest/docs/data-sources/flink>`_ for details.

@@ -1,7 +1,7 @@
 ﻿Set index retention patterns
 ============================
 
-This article describes how to configure the maximum number of indices to keep in your Aiven for OpenSearch instance. For more information on OpenSearch indices and shards, see :doc:`this article <../concepts/indices>`.
+This article describes how to configure the maximum number of indices to keep in your Aiven for OpenSearch® instance. For more information on OpenSearch® indices and shards, see :doc:`this article <../concepts/indices>`.
 
 To create cleanup patterns for OpenSearch indices:
 

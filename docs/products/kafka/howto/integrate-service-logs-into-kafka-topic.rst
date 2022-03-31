@@ -1,13 +1,13 @@
-Integration of logs into Apache Kafka topic
+Integration of logs into Apache Kafka® topic
 ============================================
 
-You can send logs from your Aiven services into a specified Apache Kafka topic. The setup can be done through `Aiven console <https://console.aiven.io>`_.
+You can send logs from your Aiven services into a specified Apache Kafka® topic. The setup can be done through `Aiven console <https://console.aiven.io>`_.
 
 .. note::
 
     Note, the integration can be used for both Aiven for Apache Kafka, as well as external Kafka clusters registered in the project's service integrations page. Read more on :doc:`how to manage Aiven internal and external integrations </docs/tools/cli/service/integration>`.
 
-In this example we'll show how to send the logs from an Aiven for PostgreSQL service to a topic in your Aiven for Apache
+In this example we'll show how to send the logs from an Aiven for PostgreSQL® service to a topic in your Aiven for Apache
 Kafka service. For this example you need:
 
 -  a running Aiven for PostgreSQL service (we'll refer to it as *a source*)

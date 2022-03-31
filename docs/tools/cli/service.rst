@@ -13,7 +13,7 @@ Commands for managing Aiven services via ``avn`` commands.
 ``avn service acl``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Manages the Aiven for Apache Kafka ACL entries. 
+Manages the Aiven for Apache Kafka® ACL entries.
 
 More information on ``acl-add``, ``acl-delete`` and ``acl-list`` can be found in :doc:`the dedicated page <service/acl>`.
 
@@ -44,7 +44,7 @@ Retrieves the project CA that the selected service belongs to.
 ``avn service cli``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Opens an interactive shell to the given service. Supported only for Aiven for InfluxDB and Aiven for PostgreSQL services.
+Opens an interactive shell to the given service. Supported only for Aiven for InfluxDB® and Aiven for PostgreSQL® services.
 
 .. list-table::
   :header-rows: 1
@@ -55,7 +55,7 @@ Opens an interactive shell to the given service. Supported only for Aiven for In
   * - ``service_name``
     - The name of the service
 
-**Example:** Open a new ``psql`` shell connecting to an Aiven for PostgreSQL service named ``pg-doc``.
+**Example:** Open a new ``psql`` shell connecting to an Aiven for PostgreSQL® service named ``pg-doc``.
 
 ::
 
@@ -64,14 +64,14 @@ Opens an interactive shell to the given service. Supported only for Aiven for In
 ``avn service connection-pool``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Manages the :doc:`PgBouncer connection pool </docs/products/postgresql/concepts/pg-connection-pooling>` for a given PostgreSQL service.
+Manages the :doc:`PgBouncer connection pool </docs/products/postgresql/concepts/pg-connection-pooling>` for a given PostgreSQL® service.
 
 More information on ``connection-pool-add``, ``connection-pool-delete``, ``connection-pool-list`` and ``connection-pool-update`` can be found in :doc:`the dedicated page <service/connection-pool>`.
 
 ``avn service connector``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Set of commands for managing Aiven for Apache Kafka Connect connectors. 
+Set of commands for managing Aiven for Apache Kafka® Connect connectors.
 
 More information on ``connector available``, ``connector create``, ``connector delete``, ``connector list``, ``connector pause``, ``connector restart``, ``connector restart-task``, ``connector resume``, ``connector schema``, ``connector status`` and ``connector update`` can be found in the :doc:`dedicated page <service/connector>`.
 
@@ -96,6 +96,8 @@ Creates a new service.
     - Aiven subscription plan name; check :ref:`avn_service_plan` for more information
   * - ``--cloud``
     - The cloud region name; check :ref:`avn-cloud-list` for more information
+  * - ``--disk-space-gib``
+    - Total amount of disk space for data storage (GiB)
   * - ``--no-fail-if-exists``
     - The create command will not fail if a service with the same name already exists
   * - ``--project-vpc-id``
@@ -107,7 +109,11 @@ Creates a new service.
   * - ``-c KEY=VALUE``
     - Any additional configuration settings for your service; check our documentation for more information, or use the :ref:`service types command <avn-cli-service-type>` which has a verbose mode that shows all options.
 
-**Example:** Create a new Aiven for Kafka service named ``kafka-demo`` in the region ``google-europe-west3`` with the plan ``business-4`` and enable Kafka Connect.
+**Example:** Create a new Aiven for Kafka® service named ``kafka-demo`` in the region ``google-europe-west3`` with: 
+
+* the ``business-4`` plan 
+* Kafka Connect enabled
+* 600 GiB of total storage capacity
 
 ::
   
@@ -115,7 +121,8 @@ Creates a new service.
     --service-type kafka                    \
     --cloud google-europe-west3             \
     --plan business-4                       \
-    -c kafka_connect=true                   
+    -c kafka_connect=true                   \
+    --disk-space-gib 600              
 
 ``avn service credentials-reset``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -142,7 +149,7 @@ Resets the service credentials. More information on user password change is prov
 ``avn service current-queries``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-List current service connections/queries for an Aiven for PostgreSQL, Aiven for MySQL or Aiven for Redis service.
+List current service connections/queries for an Aiven for PostgreSQL®, Aiven for MySQL or Aiven for Redis™* service.
 
 .. list-table::
   :header-rows: 1
@@ -162,7 +169,7 @@ List current service connections/queries for an Aiven for PostgreSQL, Aiven for 
 ``avn service database``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Manages databases within an Aiven for PostgreSQL, Aiven for MySQL or Aiven for InfluxDB service.
+Manages databases within an Aiven for PostgreSQL®, Aiven for MySQL or Aiven for InfluxDB® service.
 
 More information on ``database-add``, ``database-delete`` and ``database-list`` can be found in :doc:`the dedicated page <service/database>`.
 
@@ -170,14 +177,14 @@ More information on ``database-add``, ``database-delete`` and ``database-list`` 
 ``avn service es-acl``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Manages rules to OpenSearch ACL and extended ACL configuration.
+Manages rules to OpenSearch® ACL and extended ACL configuration.
 
 More information on ``es-acl-add``, ``es-acl-del``, ``es-acl-disable``, ``es-acl-enable``, ``es-acl-extended-disable``, ``es-acl-extended-enable`` and ``es-acl-extended-list``  can be found in :doc:`the dedicated page <service/es-acl>`.
 
 ``avn service flink`` :badge:`beta,cls=badge-secondary badge-pill`
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Manages Aiven for Apache Flink tables and jobs.
+Manages Aiven for Apache Flink® tables and jobs.
 
 More info on ``flink table create``, ``flink table delete``, ``flink table get``, ``flink table list``, ``flink job create``, ``flink job cancel``, ``flink job get`` and ``flink job list`` can be found in :doc:`the dedicated page <service/flink>`.
 
@@ -215,7 +222,7 @@ Retrieves a single service details.
 ``avn service index``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Manages OpenSearch service indexes.
+Manages OpenSearch® service indexes.
 
 More information on ``index-delete`` and  ``index-list`` can be found in :doc:`the dedicated page <service/index>`.
 
@@ -399,7 +406,7 @@ Lists the service plans available in a selected project for a defined service ty
   * - ``--monthly``
     - To show the monthly price estimate
 
-**Example:** List the service plans available for a PostgreSQL service in the ``google-europe-west3`` region.
+**Example:** List the service plans available for a PostgreSQL® service in the ``google-europe-west3`` region.
 
 ::
 
@@ -427,7 +434,7 @@ More information on ``privatelink availability``, ``privatelink aws`` and ``priv
 ``avn service queries``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Lists the service connections/queries statistics for an Aiven for PostgreSQL or Aiven for MySQL. 
+Lists the service connections/queries statistics for an Aiven for PostgreSQL® or Aiven for MySQL.
 The list of queries data points retrievable includes:
 
 * the ``public.pg_stat_statements`` columns (see the `documentation for these statistics columns <https://www.postgresql.org/docs/current/pgstatstatements.html>`_) for Aiven for PostgreSQL services.
@@ -456,7 +463,7 @@ A description of the retrieved columns for Aiven for PostgreSQL can be found in 
 ``avn service queries-reset``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Resets service connections/queries statistics for an Aiven for PostgreSQL or Aiven for MySQL service. 
+Resets service connections/queries statistics for an Aiven for PostgreSQL® or Aiven for MySQL service.
 Resetting query statistics could be useful to measure database behaviour in a precise point in time or after a change has been deployed.
 
 .. list-table::
@@ -535,7 +542,7 @@ Permanently deletes a service.
 ``avn service topic``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Manages Aiven for Apache Kafka topics.
+Manages Aiven for Apache Kafka® topics.
 
 More information on ``topic-create``, ``topic-delete``, ``topic-list`` and  ``topic-update`` can be found in :doc:`the dedicated page <service/topic>`.
 
@@ -598,7 +605,7 @@ Updates the settings for an Aiven service.
   * - ``--cloud``
     - The name of the cloud region where to deploy the service; check :ref:`avn-cloud-list` for more information
   * - ``--disk-space-gib``
-    - Amount of disk space for data storage (GiB)
+    - Total amount of disk space for data storage (GiB)
   * - ``--plan``
     - Aiven subscription plan name; check :ref:`avn_service_plan` for more information
   * - ``--power-on``
@@ -649,7 +656,7 @@ Updates the settings for an Aiven service.
 
 Manages Aiven users and credentials.
 
-More information on ``user-create``, ``user-creds-download``, ``user-delete``, ``user-get``, ``user-kafka-java-creds``, ``user-list``, ``user-password-reset`` and  ``user-set-access-control`` can be found in :doc:`the dedicated page <service/user>`.
+More information on ``user-create``, ``user-creds-acknowledge``, ``user-creds-download``, ``user-delete``, ``user-get``, ``user-kafka-java-creds``, ``user-list``, ``user-password-reset`` and  ``user-set-access-control`` can be found in :doc:`the dedicated page <service/user>`.
 
 
 ``avn service versions``
@@ -706,3 +713,8 @@ Waits for the service to reach the ``RUNNING`` state
 ::
 
   avn service wait pg-doc
+
+
+------
+
+*Elasticsearch is a trademark of Elasticsearch B.V., registered in the U.S. and in other countries.*

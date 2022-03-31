@@ -1,7 +1,7 @@
 High availability
 =================
 
-Aiven for PostgreSQL is available on a variety of plans, offering different levels of high availability. The selected plan defines the features available, and a summary is provided in the table below:
+Aiven for PostgreSQL® is available on a variety of plans, offering different levels of high availability. The selected plan defines the features available, and a summary is provided in the table below:
 
 .. list-table::
     :header-rows: 1

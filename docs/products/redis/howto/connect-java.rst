@@ -1,7 +1,7 @@
 Connect with Java
 -------------------
 
-This example connects to Redis service from Java, making use of the ``jredis``.
+This example connects to Redis™* service from Java, making use of the ``jredis``.
 
 Variables
 '''''''''

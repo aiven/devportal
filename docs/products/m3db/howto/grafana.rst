@@ -1,7 +1,7 @@
-Visualize M3DB data with Grafana
-================================
+Visualize M3DB data with Grafana®
+=================================
 
-Since M3DB is best for time series data, consisting of many individual metrics, then it's nicer to visualise the data than try to view it in a table or log. Luckily, Aiven can set up the Grafana and the integration between the two services for you.
+Since M3DB is best for time series data, consisting of many individual metrics, then it's nicer to visualise the data than try to view it in a table or log. Luckily, Aiven can set up the Grafana® and the integration between the two services for you.
 
 Integrate M3DB and Grafana
 --------------------------

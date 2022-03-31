@@ -1,10 +1,10 @@
-Terminology for PostgreSQL
-==========================
+Terminology for PostgreSQL®
+===========================
 
 .. _Terminology PGPrimary:
 
 Primary node
-    The PostgreSQL primary node is the main server node that processes SQL queries, makes the necessary changes to the database files on the disk, and returns the results to the client application.
+    The PostgreSQL® primary node is the main server node that processes SQL queries, makes the necessary changes to the database files on the disk, and returns the results to the client application.
 
 .. _Terminology PGStandby:
 

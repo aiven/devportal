@@ -1,7 +1,7 @@
 Migrate to a different cloud provider or region
 ===============================================
 
-Any Aiven service can be relocated to a different cloud vendor or region. This is also valid for PostgreSQL where the migration happens without downtime. Cloud provider/region migration features mean that you can relocate a service at any time, for example to meet specific latency requirements for a particular geography.
+Any Aiven service can be relocated to a different cloud vendor or region. This is also valid for PostgreSQL® where the migration happens without downtime. Cloud provider/region migration features mean that you can relocate a service at any time, for example to meet specific latency requirements for a particular geography.
 
 To migrate a PostgreSQL service to a new cloud provider/region
 

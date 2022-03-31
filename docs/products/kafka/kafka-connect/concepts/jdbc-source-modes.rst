@@ -2,7 +2,7 @@ JDBC source connector modes
 ===========================
 
 
-JDBC source connector extracts data from a relational database, such as PostgreSQL or MySQL, and pushes it to Apache Kafka where can be transformed and read by multiple consumers. The details of the connector are covered in the `Aiven JDBC source connector GitHub documentation <https://github.com/aiven/jdbc-connector-for-apache-kafka/blob/master/docs/source-connector.md>`_. 
+JDBC source connector extracts data from a relational database, such as PostgreSQL® or MySQL, and pushes it to Apache Kafka® where can be transformed and read by multiple consumers. The details of the connector are covered in the `Aiven JDBC source connector GitHub documentation <https://github.com/aiven/jdbc-connector-for-apache-kafka/blob/master/docs/source-connector.md>`_.
 
 This connector type periodically queries the table(s) to extract the data, and can be configured in four **modes**.
 
