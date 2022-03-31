@@ -46,9 +46,12 @@ These are only rough suggestions; the optimal values depend heavily on how you u
 Performance impact
 -------------------
 
-Having a large number of indices or shards affects the performance of your OpenSearch service.  
-20 shards or few per GB of heap memory should be set as per `shard count recommendation <https://www.elastic.co/guide/en/elasticsearch/reference/current/size-your-shards.html#shard-count-recommendation>`_.  As an example, an OpenSearch business-8 cluster comes with 8GB heap,
-20 x 8 = 160 or less would be the recommended configuration for number of shards.
+Having a large number of indices or shards affects the performance of your OpenSearch service.
+For OpenSearch clusters, Aiven allocates 50% of the available memory to the JVM heap; the remaining 50% is reserved for the underlying OS and caching in-memory data structures.
+20 shards, or fewer, per GB of heap memory should be set as per `shard count recommendation <https://www.elastic.co/guide/en/elasticsearch/reference/current/size-your-shards.html#shard-count-recommendation>`_.
+
+As an example, an OpenSearch business-8 cluster comes with 8GB RAM.
+20 x (8 x .5) = 80, or less, would be the recommended configuration for the number of shards.
 
 Size of shard impacts the recovery time after a failure, shard sizes between 10GB to 50GB should be set as per `shard size recommendation <https://www.elastic.co/guide/en/elasticsearch/reference/current/size-your-shards.html#shard-size-recommendation>`_.
 
@@ -66,7 +69,7 @@ This OpenSearch plan calculator can be used online or downloaded.
 .. image:: /images/products/opensearch/opensearch-plan-calculator.png
    :alt: Screenshot of the spreadsheet: enter your information and get recommendations.
 
-Yellow cells such as ``data node count``, ``CPUs``, ``RAM``, ``Max Shard Size`` and etc. are input values to calculate recommendation 
+Yellow cells such as ``data node count``, ``CPUs``, ``RAM``, ``Max Shard Size`` and etc. are input values to calculate recommendation
 values for plan sizing.
 
 * `View on Google Docs <https://docs.google.com/spreadsheets/d/1wJwzSdnQiGIADcxb6yx1cFjDR0LEz-pg13U-Mt2PEHc>`_ - Make a copy to your Google drive to use it.
