@@ -107,8 +107,8 @@ configuration option:
 
 Once the nodes have been replaced, they will be using the static IPs that you
 associated with the service. You can check which ones are in use by running the
-``avn static-ip list`` command again. The "available" state means that the IP
-is associated to the service, and "assigned" means that it is in active use.
+``avn static-ip list`` command again. The ``available`` state means that the IP
+is associated to the service, and ``assigned`` means that it is in active use.
 
 .. _platform_howto_remove_static_ip:
 
