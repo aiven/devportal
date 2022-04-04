@@ -34,7 +34,7 @@ To learn data streaming, you need a continuous flow of data and for that you can
 
 .. Tip::
 
-    The above command uses `jq <https://stedolan.github.io/jq/>`_ to parse the result of the Aiven CLI command. If you don't have `jq` installed, you can remove the ``| jq -r '.[].full_token'`` section from the above command and parse the JSON result manually to extract the access token.
+    The above command uses ``jq`` (https://stedolan.github.io/jq/) to parse the result of the Aiven CLI command. If you don't have ``jq`` installed, you can remove the ``| jq -r '.[].full_token'`` section from the above command and parse the JSON result manually to extract the access token.
 
 4. Edit the ``conf/env.conf`` file filling the following placeholders:
 
