@@ -1,4 +1,4 @@
-139
+141
 ACL
 ACLs
 Aiven
@@ -104,6 +104,8 @@ Protobuf
 Prometheus
 psql
 Python
+rebalance
+rebalances
 rebalancing
 Redis
 Redli
@@ -117,7 +119,6 @@ signups
 Singlestat
 Splunk
 spring
-Statusmap
 Stunnel
 subnet
 subtab

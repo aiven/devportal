@@ -35,7 +35,9 @@ Obtain an authentication token from your `Aiven console <https://console.aiven.i
 Handling JSON responses
 '''''''''''''''''''''''
 
-The Aiven API returns information in JSON format, sometimes a lot of information. This is perfect for machines but not ideal for humans. We like to use a tool like `jq <https://stedolan.github.io/jq/>`_ to make things easier to read and manipulate.
+The Aiven API returns information in JSON format, sometimes a lot of
+information. This is perfect for machines but not ideal for humans. We like to
+use a tool like ``jq`` (https://stedolan.github.io/jq/) to make things easier to read and manipulate.
 
 Aiven API and Postman
 '''''''''''''''''''''''
