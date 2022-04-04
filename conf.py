@@ -61,6 +61,12 @@ gitstamp_fmt = "%B %Y"
 
 # sitemap config
 html_baseurl = 'https://developer.aiven.io'
+# Since we have `language='en'` set (further down) the URLs in the sitemap will
+# default to "{version}{lang}{link}", producing things like
+#    <url><loc>https://developer.aiven.io/en/docs/platform/howto/create_authentication_token.html</loc></url>
+# That doesn't work because we do not produce pages with the `/en` in the URL.
+# We need to be explicit that we don't want {version} or {language} in the URLs
+sitemap_url_scheme = "{link}"
 
 # -- Options for HTML output -------------------------------------------------
 
