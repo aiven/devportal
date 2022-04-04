@@ -7,3 +7,4 @@ match: $sentence
 exceptions:
   - HowTo
   - Google Cloud Storage
+  - Google BigQuery
