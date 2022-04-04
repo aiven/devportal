@@ -222,7 +222,7 @@ This sugggests that for all product names where we want to match case exactly, w
 
 These extend ``conditional`` to check that there is at least one ``<Word>®`` if there are any occurrences of ``<Word>``.
 
-Inside vale, ``first`` is termed the *antecedent*, and ``second`` is termed the *consequent*. I think of ``first`` as the *usage* and **`second`` as the *explanation*.
+Inside vale, ``first`` is termed the *antecedent*, and ``second`` is termed the *consequent*. I think of ``first`` as the *usage* and ``second`` as the *explanation*.
 
 Each needs to specify one *capture group* (the part of the pattern with ``(`` and ``)``) which will be used as the match for that pattern.
 
@@ -425,7 +425,7 @@ This should be doable, but I would like to find a way to do it that does not req
 
   (I also don't want to take on the long-abandoned task of making docutils understand nested markup!)
 
-Error matching when characters like ****®`` are present in the text
+Error matching when characters like ``®`` are present in the text
 -----------------------------------------------------------------
 
 This is the problem I've been having with trying to match conditionals for ``®`` and ``™`` checking.
@@ -516,7 +516,7 @@ Oddity in substitution matching
 
   *Not sure what is going on here - might still be a "me" mistake rather than vale*
 
-Looking at the lines in **`.vale/tests/bad.rst``::
+Looking at the lines in ``.vale/tests/bad.rst``::
 
   ``literal-text`` MirrorMaker2             -- this is NOT found
 

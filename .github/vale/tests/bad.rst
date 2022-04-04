@@ -2,6 +2,7 @@
    (``vale --output=line`` is assumed)
    Lines should correspond to those in good.txt
    At some point this will probably be split into multiple files
+
 clickhouse                              -- capitalisation
 Clickhouse                              -- capitalisation
 
