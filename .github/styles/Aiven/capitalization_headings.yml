@@ -1,9 +1,0 @@
-extends: capitalization
-message: "'%s' should be in sentence case"
-level: warning
-scope: heading
-# $title, $sentence, $lower, $upper, or a pattern.
-match: $sentence
-exceptions:
-  - HowTo
-  - Google Cloud Storage
