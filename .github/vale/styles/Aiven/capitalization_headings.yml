@@ -21,6 +21,7 @@ exceptions:
   - Flink
   - GitHub
   - Go
+  - Google Big Query
   - Google Cloud Storage
   - Grafana
   - Hobbyist

@@ -48,7 +48,7 @@ go
 Gradle
 Grafana
 hardcoded
-Hashicorp
+HashiCorp
 Homebrew
 Heatmap
 hobbyist
@@ -117,6 +117,7 @@ scriptable
 sharding
 signups
 Singlestat
+Snowflake
 Splunk
 spring
 Stunnel
