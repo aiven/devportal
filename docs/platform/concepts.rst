@@ -18,7 +18,7 @@ Learn about some of the key concepts for working with Aiven platform:
 
 * :doc:`Service forking </docs/platform/concepts/service-forking>`.
 
-  Quickly and safely make a copy of your database for testing, dry run upgrades, or anything else, without affecting your existing service.
+  Quickly and safely make a copy of your database or other service for testing, dry run upgrades, or anything else, without affecting your existing service.
 
 * :doc:`Projects and access management </docs/platform/concepts/projects_accounts_access>`.
 
