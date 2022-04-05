@@ -128,6 +128,14 @@ The solution for us is to add appropriate exception words to the style file. Thi
 
 **Later finding** It appears that an exception can be a phrase, for instance ``Transport Layer Security``. I'm not actually sure how that works (!) but it makes life neater. It may be sensible to amend the list I've been building up to explicitly name some particular titles, rather than just excepting a (longish) set of words.
 
+Worked examples
+~~~~~~~~~~~~~~~
+
+The test files
+`sentence_case_title_good.rst <tests/sentence_case_title_good.rst>`_
+and
+`sentence_case_title_bad.rst <tests/sentence_case_title_bad.rst>`_
+give worked examples of how the scoring for title words is done.
 
 Common replacements
 -------------------
