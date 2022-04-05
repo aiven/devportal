@@ -52,11 +52,11 @@ Define the connector configurations in a file (we'll refer to it with the name `
 
     {
         "name":"CONNECTOR_NAME",
-        "connector.class": "io.aiven.kafka.connect.opensearch.OpensearchSinkConnector",
+        "connector.class": "com.wepay.kafka.connect.bigquery.BigQuerySinkConnector",
         "topics": "TOPIC_LIST",
         "project": "GCP_PROJECT_NAME",
-        "datasets": "BIGQUERY_DATASET_NAME",
-        "schemaRetriever": "com.wepay.kafka.connect.bigquery.schemaregistry.schemaretriever.SchemaRegistrySchemaRetriever",
+        "datasets": ".*=BIGQUERY_DATASET_NAME",
+        "schemaRetriever": "com.wepay.kafka.connect.bigquery.retrieve.IdentitySchemaRetriever",
         "schemaRegistryClient.basic.auth.credentials.source": "URL",
         "schemaRegistryLocation":"https://SCHEMA_REGISTRY_USER:SCHEMA_REGISTRY_PASSWORD@APACHE_KAFKA_HOST:SCHEMA_REGISTRY_PORT",
         "key.converter": "io.confluent.connect.avro.AvroConverter",
@@ -67,7 +67,6 @@ Define the connector configurations in a file (we'll refer to it with the name `
         "value.converter.schema.registry.url": "https://APACHE_KAFKA_HOST:SCHEMA_REGISTRY_PORT",
         "value.converter.basic.auth.credentials.source": "USER_INFO",
         "value.converter.schema.registry.basic.auth.user.info": "SCHEMA_REGISTRY_USER:SCHEMA_REGISTRY_PASSWORD",
-        "batch.size": 1,
         "autoCreateTables": "true",
         "keySource": "JSON",
         "keyfile": "GCP_SERVICE_KEY"
@@ -76,10 +75,9 @@ Define the connector configurations in a file (we'll refer to it with the name `
 The configuration file contains the following entries:
 
 * ``name``: the connector name
-* ``connection.url``, ``connection.username``, ``connection.password``: sink OpenSearch parameters collected in the :ref:`prerequisite <connect_opensearch_sink_prereq>` phase. 
-* ``type.name``: the OpenSearch type name to be used when indexing.
-* ``key.ignore``: boolean flag dictating if to ignore the message key. If set to true, the document ID is generated as message's ``topic+partition+offset``, the message key is used as ID otherwise.
-* ``tasks.max``: maximum number of tasks to execute in parallel. By default this is 1.
+* ``project``: the GCP project name where the target Google BigQuery is located. 
+* ``datasets``: the target BigQuery datasets names, prefixed with ``.*=``.
+* ``schemaRegistryLocation``: details of the connection to Karapace offering the schema registry functionality, only needed when the source data is in Avro format.
 * ``key.converter`` and ``value.converter``:  defines the messages data format in the Apache Kafka topic. The ``io.confluent.connect.avro.AvroConverter`` converter translates messages from the Avro format. To retrieve the messages schema we use Aiven's `Karapace schema registry <https://github.com/aiven/karapace>`_ as specified by the ``schema.registry.url`` parameter and related credentials.
 
 .. Note::
@@ -88,9 +86,14 @@ The configuration file contains the following entries:
 
     When using Avro as source data format, you need to set following parameters
 
-    * ``value.converter.schema.registry.url``: pointing to the Aiven for Apache Kafka schema registry URL in the form of ``https://APACHE_KAFKA_HOST:SCHEMA_REGISTRY_PORT`` with the ``APACHE_KAFKA_HOST`` and ``SCHEMA_REGISTRY_PORT`` parameters :ref:`retrieved in the previous step <connect_opensearch_sink_prereq>`.
+    * ``value.converter.schema.registry.url``: pointing to the Aiven for Apache Kafka schema registry URL in the form of ``https://APACHE_KAFKA_HOST:SCHEMA_REGISTRY_PORT`` with the ``APACHE_KAFKA_HOST`` and ``SCHEMA_REGISTRY_PORT`` parameters :ref:`retrieved in the previous step <connect_bigquery_sink_prereq>`.
     * ``value.converter.basic.auth.credentials.source``: to the value ``USER_INFO``, since you're going to login to the schema registry using username and password.
     * ``value.converter.schema.registry.basic.auth.user.info``: passing the required schema registry credentials in the form of ``SCHEMA_REGISTRY_USER:SCHEMA_REGISTRY_PASSWORD`` with the ``SCHEMA_REGISTRY_USER`` and ``SCHEMA_REGISTRY_PASSWORD`` parameters :ref:`retrieved in the previous step <connect_elasticsearch_sink_prereq>`. 
+
+* ``batch.size``:
+* ``autoCreateTables``: enables the auto creation of the target BigQuery tables if they don't exist 
+* ``keySource``: defines the format of the GCP key, the value should be ``JSON`` if the key is generated in JSON format
+* ``keyfile``: contains the GCP service account key, correcly escaped as defined in the :ref:`prerequisite phase <connect_bigquery_sink_prereq>`
 
 
 Create a Kafka Connect connector with the Aiven Console
@@ -100,9 +103,9 @@ To create the connector, access the `Aiven Console <https://console.aiven.io/>`_
 
 1. Click on the **Connectors** tab
 2. Clink on **Create New Connector**, the button is enabled only for services :doc:`with Kafka Connect enabled <enable-connect>`.
-3. Select the **OpenSearch sink**
+3. Select the **Google BigQuery Sink**
 4. Under the *Common* tab, locate the **Connector configuration** text box and click on **Edit**
-5. Paste the connector configuration (stored in the ``opensearch_sink.json`` file) in the form
+5. Paste the connector configuration (stored in the ``bigquery_sink.json`` file) in the form
 6. Click on **Apply**
 
 .. Note::
@@ -111,31 +114,14 @@ To create the connector, access the `Aiven Console <https://console.aiven.io/>`_
 
 7. After all the settings are correctly configured, click on **Create new connector**
 8. Verify the connector status under the **Connectors** tab
-9. Verify the presence of the data in the target OpenSearch service, the index name is equal to the Apache Kafka topic name
+9. Verify the presence of the data in the target BigQuery dataset, the table name is equal to the Apache Kafka topic name, if you need to change the target table name, you can do so using the Kafka Connect ``RegexRouter`` transformation.
 
 .. Note::
 
     Connectors can be created also using the dedicated :ref:`Aiven CLI command <avn_service_connector_create>`.
 
-Create daily OpenSearch indices
-----------------------------------
-
-You might need to create a new OpenSearch index on daily basis to store the Apache Kafka messages. 
-Adding the following ``TimestampRouter`` transformation in the connector properties file provides a way to define the index name as concatenation of the topic name and message date.
-
-.. code-block:: json
-
-    "transforms": "TimestampRouter",
-    "transforms.TimestampRouter.topic.format": "${topic}-${timestamp}",
-    "transforms.TimestampRouter.timestamp.format": "yyyy-MM-dd",
-    "transforms.TimestampRouter.type": "org.apache.kafka.connect.transforms.TimestampRouter"
-
-.. Warning::
-
-    The current version of the OpenSearch sink connector is not able to automatically create daily indices in OpenSearch. Therefore you need to create the indices with the correct name before starting the sink connector. You can create OpenSearch indices in many ways including :doc:`CURL commands </docs/products/opensearch/howto/opensearch-with-curl>`.
-
-Example: Create an OpenSearch® sink connector on a topic with a JSON schema
------------------------------------------------------------------------------
+Example: Create an Google BigQuery sink connector on a topic with a JSON schema
+-------------------------------------------------------------------------------
 
 If you have a topic named ``iot_measurements`` containing the following data in JSON format, with a defined JSON schema:
 
@@ -177,79 +163,66 @@ If you have a topic named ``iot_measurements`` containing the following data in 
                 "field": "measurement"
                 }]
         }, 
-        "payload":{"iot_id":2, "metric":"Humidity", "measurement":60}}
+        "payload":{"iot_id":2, "metric":"Humidity", "measurement":60}
     }
 
 .. Note::
 
     Since the JSON schema needs to be defined in every message, there is a big overhead to transmit the information. To achieve a better performance in term of information-message ratio you should use the Avro format together with the `Karapace schema registry <https://karapace.io/>`__ provided by Aiven
 
-You can sink the ``iot_measurements`` topic to OpenSearch with the following connector configuration, after replacing the placeholders for ``OS_CONNECTION_URL``, ``OS_USERNAME`` and ``OS_PASSWORD``:
+You can sink the ``iot_measurements`` topic to BigQuery with the following connector configuration, after replacing the placeholders for ``GCP_PROJECT_NAME``, ``GCP_SERVICE_KEY`` and ``BIGQUERY_DATASET_NAME``:
 
 .. code-block:: json
 
     {
-        "name":"sink_iot_json_schema",
-        "connector.class": "io.aiven.kafka.connect.opensearch.OpensearchSinkConnector",
-        "topics": "iot_measurements",
-        "connection.url": "OS_CONNECTION_URL",
-        "connection.username": "OS_USERNAME",
-        "connection.password": "OS_PASSWORD",
-        "type.name": "iot_measurements",
-        "tasks.max":"1",
-        "key.ignore": "true",
-        "value.converter": "org.apache.kafka.connect.json.JsonConverter"
-    }
+    "name":"iot_sink",
+    "connector.class": "com.wepay.kafka.connect.bigquery.BigQuerySinkConnector",
+    "topics": "iot_measurements",
+    "project": "GCP_PROJECT_NAME",
+    "defaultDataset": ".*=BIGQUERY_DATASET_NAME",
+    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "autoCreateTables": "true",
+    "keySource": "JSON",
+    "keyfile": "GCP_SERVICE_KEY"
+}
 
 The configuration file contains the following peculiarities:
 
 * ``"topics": "iot_measurements"``: setting the topic to sink
 * ``"value.converter": "org.apache.kafka.connect.json.JsonConverter"``: the message value is in plain JSON format without a schema
-* ``"key.ignore": "true"``: the connector is ignoring the message key (empty), and generating documents with ID equal to ``topic+partition+offset``
 
 
-Example: Create an OpenSearch® sink connector on a topic in plain JSON format
------------------------------------------------------------------------------
+Example: Create a Google BigQuery sink connector on a topic in AVRO format
+--------------------------------------------------------------------------
 
-If you have a topic named ``students`` containing the following data in JSON format, without a defined schema:
-
-.. code-block:: text
-
-    Key: 1 Value: {"student_id":1, "student_name":"Carla"}
-    Key: 2 Value: {"student_id":2, "student_name":"Ugo"}
-    Key: 3 Value: {"student_id":3, "student_name":"Mary"}
-
-You can sink the ``students`` topic to OpenSearch with the following connector configuration, after replacing the placeholders for ``OS_CONNECTION_URL``, ``OS_USERNAME`` and ``OS_PASSWORD``:
+If you have a topic named ``students`` in AVRO format with the schema stored in Karapace, you can sink the ``students`` topic to BigQuery with the following connector configuration, after replacing the placeholders for ``GCP_PROJECT_NAME``, ``GCP_SERVICE_KEY``, ``BIGQUERY_DATASET_NAME``,``SCHEMA_REGISTRY_USER``, ``SCHEMA_REGISTRY_PASSWORD``, ``APACHE_KAFKA_HOST``, ``SCHEMA_REGISTRY_PORT``:
 
 .. code-block:: json
 
     {
-        "name":"sink_students_json",
-        "connector.class": "io.aiven.kafka.connect.opensearch.OpensearchSinkConnector",
+        "name":"students_sink",
+        "connector.class": "com.wepay.kafka.connect.bigquery.BigQuerySinkConnector",
         "topics": "students",
-        "connection.url": "OS_CONNECTION_URL",
-        "connection.username": "OS_USERNAME",
-        "connection.password": "OS_PASSWORD",
-        "type.name": "students",
-        "tasks.max":"1",
-        "key.converter": "org.apache.kafka.connect.storage.StringConverter",
-        "value.converter": "org.apache.kafka.connect.json.JsonConverter",
-        "value.converter.schemas.enable": "false",
-        "schema.ignore": "true"
+        "project": "GCP_PROJECT_NAME",
+        "defaultDataset": ".*=BIGQUERY_DATASET_NAME",
+        "schemaRetriever": "com.wepay.kafka.connect.bigquery.retrieve.IdentitySchemaRetriever",
+        "schemaRegistryClient.basic.auth.credentials.source": "URL",
+        "schemaRegistryLocation":"https://SCHEMA_REGISTRY_USER:SCHEMA_REGISTRY_PASSWORD@APACHE_KAFKA_HOST:SCHEMA_REGISTRY_PORT",
+        "key.converter": "io.confluent.connect.avro.AvroConverter",
+        "key.converter.schema.registry.url": "https://APACHE_KAFKA_HOST:SCHEMA_REGISTRY_PORT",
+        "key.converter.basic.auth.credentials.source": "USER_INFO",
+        "key.converter.schema.registry.basic.auth.user.info": "SCHEMA_REGISTRY_USER:SCHEMA_REGISTRY_PASSWORD",
+        "value.converter": "io.confluent.connect.avro.AvroConverter",
+        "value.converter.schema.registry.url": "https://APACHE_KAFKA_HOST:SCHEMA_REGISTRY_PORT",
+        "value.converter.basic.auth.credentials.source": "USER_INFO",
+        "value.converter.schema.registry.basic.auth.user.info": "SCHEMA_REGISTRY_USER:SCHEMA_REGISTRY_PASSWORD",
+        "autoCreateTables": "true",
+        "keySource": "JSON",
+        "keyfile": "GCP_SERVICE_KEY"
     }
 
 The configuration file contains the following peculiarities:
 
 * ``"topics": "students"``: setting the topic to sink
-* ``"key.converter": "org.apache.kafka.connect.storage.StringConverter"``: the message key is a string
-* ``"value.converter": "org.apache.kafka.connect.json.JsonConverter"``: the message value is in plain JSON format without a schema
-* ``"value.converter.schemas.enable": "false"``: since the data in the value doesn't have a schema, the connector shouldn't try to read it and sets it to null
-* ``"schema.ignore": "true"``: since the value schema is null, the connector doesn't infer it before pushing the data to OpenSearch
+* ``key.converter`` and ``value.converter``: defines the messages data format in the Apache Kafka topic. The ``io.confluent.connect.avro.AvroConverter`` converter translates messages from the Avro format. To retrieve the messages schema we use Aiven's `Karapace schema registry <https://github.com/aiven/karapace>`_ as specified by the ``schema.registry.url`` parameter and related credentials.
 
-.. Note::
-
-    The OpenSearch document ID is set as the message key
-
-------
-
-*Elasticsearch is a trademark of Elasticsearch B.V., registered in the U.S. and in other countries.*
