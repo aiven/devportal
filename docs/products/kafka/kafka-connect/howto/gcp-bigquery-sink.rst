@@ -94,6 +94,24 @@ The configuration file contains the following entries:
 * ``keySource``: defines the format of the GCP key, the value should be ``JSON`` if the key is generated in JSON format
 * ``keyfile``: contains the GCP service account key, correctly escaped as defined in the :ref:`prerequisite phase <connect_bigquery_sink_prereq>`
 
+.. Warning::
+
+    The configuration of the BigQuery connector in Aiven has a non-backward-compatible change between versions ``1.2.0`` and ``1.6.5``:
+
+    * version ``1.2.0`` uses the ``credentials`` field to specify the Google Cloud credentials in JSON format::
+
+        ...
+        "credentials": "{...}",
+        ...
+
+    * from version ``1.6.5`` on, use the ``keyfield`` field and set the ``keySource`` parameter to ``JSON``::
+
+        ...
+        "keyfile": "{...}",
+        "keySource": "JSON",
+        ...
+
+    You can review the connector version available in an Aiven for Apache Kafka service with the :ref:`dedicated Aiven CLI command <avn_cli_service_connector_available>` ``avn service connector available``.
 
 Create a Kafka Connect connector with the Aiven Console
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''
