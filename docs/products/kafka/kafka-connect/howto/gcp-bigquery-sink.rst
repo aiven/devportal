@@ -90,7 +90,6 @@ The configuration file contains the following entries:
     * ``value.converter.basic.auth.credentials.source``: to the value ``USER_INFO``, since you're going to login to the schema registry using username and password.
     * ``value.converter.schema.registry.basic.auth.user.info``: passing the required schema registry credentials in the form of ``SCHEMA_REGISTRY_USER:SCHEMA_REGISTRY_PASSWORD`` with the ``SCHEMA_REGISTRY_USER`` and ``SCHEMA_REGISTRY_PASSWORD`` parameters :ref:`retrieved in the previous step <connect_elasticsearch_sink_prereq>`. 
 
-* ``batch.size``:
 * ``autoCreateTables``: enables the auto creation of the target BigQuery tables if they don't exist 
 * ``keySource``: defines the format of the GCP key, the value should be ``JSON`` if the key is generated in JSON format
 * ``keyfile``: contains the GCP service account key, correctly escaped as defined in the :ref:`prerequisite phase <connect_bigquery_sink_prereq>`
@@ -195,7 +194,7 @@ The configuration file contains the following peculiarities:
 Example: Create a Google BigQuery sink connector on a topic in Avro format
 --------------------------------------------------------------------------
 
-If you have a topic named ``students`` in Avro format with the schema stored in Karapace, you can sink the ``students`` topic to BigQuery with the following connector configuration, after replacing the placeholders for ``GCP_PROJECT_NAME``, ``GCP_SERVICE_KEY``, ``BIGQUERY_DATASET_NAME``,``SCHEMA_REGISTRY_USER``, ``SCHEMA_REGISTRY_PASSWORD``, ``APACHE_KAFKA_HOST``, ``SCHEMA_REGISTRY_PORT``:
+If you have a topic named ``students`` in Avro format with the schema stored in Karapace, you can sink the ``students`` topic to BigQuery with the following connector configuration, after replacing the placeholders for ``GCP_PROJECT_NAME``, ``GCP_SERVICE_KEY``, ``BIGQUERY_DATASET_NAME``, ``SCHEMA_REGISTRY_USER``, ``SCHEMA_REGISTRY_PASSWORD``, ``APACHE_KAFKA_HOST``, ``SCHEMA_REGISTRY_PORT``:
 
 .. code-block:: json
 
