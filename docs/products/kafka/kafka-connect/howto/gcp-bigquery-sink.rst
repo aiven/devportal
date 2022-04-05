@@ -188,7 +188,7 @@ You can sink the ``iot_measurements`` topic to BigQuery with the following conne
 
 The configuration file contains the following peculiarities:
 
-* ``"topics": "iot_measurements"``: setting the topic to sink
+* ``"topics": "iot_measurements"``: defines the topic to sink
 * ``"value.converter": "org.apache.kafka.connect.json.JsonConverter"``: the message value is in plain JSON format without a schema
 
 
