@@ -7,16 +7,6 @@ Notes on how we use Vale
 
 **Note** there is a separate file for `issues <ISSUES.rst>`_ that we might want to fix, both in our use of vale and in vale itself.
 
------------
-
-
-####################
-THE STRUCTURE I WANT
-####################
-
-Introduction
-============
-
 
 The organisation of our vale setup
 ==================================
