@@ -110,6 +110,7 @@ sharding
 signups
 Simple Authentication and Security Layer
 Singlestat
+Snowflake
 Splunk
 [Ss]pring
 Stackdriver

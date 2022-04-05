@@ -22,9 +22,9 @@ Furthermore you need to follow the steps :doc:`to prepare the Snowflake account 
 
             select current_account(), current_region() 
 
-* ``SNOWFLAKE_USERNAME``: A valid Snowflake username with enough priviledges to write data in the target database as mentioned in the :doc:`prerequisite document <snowflake-sink-prereq>`.
+* ``SNOWFLAKE_USERNAME``: A valid Snowflake username with enough privileges to write data in the target database as mentioned in the :doc:`prerequisite document <snowflake-sink-prereq>`.
 * ``SNOWFLAKE_PRIVATE_KEY``: The private key associated to the ``SNOWFLAKE_USERNAME`` as mentioned in the :doc:`prerequisite document <snowflake-sink-prereq>`.
-* ``SNOWFLAKE_PRIVATE_KEY_PASSPHRASE``: The privete key passphrase
+* ``SNOWFLAKE_PRIVATE_KEY_PASSPHRASE``: The private key passphrase
 * ``SNOWFLAKE_DATABASE``: The target Snowflake database name
 * ``SNOWFLAKE_SCHEMA``: The target Snowflake database schema
 * ``TOPIC_LIST``: The list of topics to sink divided by comma

@@ -11,7 +11,7 @@ To be able to sink data from Apache Kafka® to Snowflake via the dedicated conne
 Configure a Snowflake key pair authentication
 ---------------------------------------------
 
-The Apache Kafka BigQuery sink connector requires a key pair authentication with a minimum 2048-bit RSA. You neeed to generate the key pair locally and then upload the public key to Snowflake as defined in the `dedicated documentation <https://docs.snowflake.com/en/user-guide/key-pair-auth.html#configuring-key-pair-authentication>`_. The following procedure guides you in the necessary steps:
+The Apache Kafka BigQuery sink connector requires a key pair authentication with a minimum 2048-bit RSA. You need to generate the key pair locally and then upload the public key to Snowflake as defined in the `dedicated documentation <https://docs.snowflake.com/en/user-guide/key-pair-auth.html#configuring-key-pair-authentication>`_. The following procedure guides you in the necessary steps:
 
 1. Generate the private key using ``openssl``::
 
@@ -35,7 +35,7 @@ Create a dedicated Snowflake user and add the public key
 
 You need to associate the public key generated at the previous with a new or existing Snowflake user. The following steps define how to create a new user and associate the public key to it.
 
-1. In the Snowflake UI, navigate to the **Worksheets** panel, and ensure to use a role with enough priviledges (**SECURITYADMIN** or **ACCOUNTADMIN**)
+1. In the Snowflake UI, navigate to the **Worksheets** panel, and ensure to use a role with enough privileges (**SECURITYADMIN** or **ACCOUNTADMIN**)
 2. Run the following query to create a user::
 
     CREATE USER aiven;
@@ -55,7 +55,7 @@ You need to associate the public key generated at the previous with a new or exi
         XXXXXXY
         -----END PUBLIC KEY-----
     
-    The output for the following command is the the content between ``-----BEGIN PUBLIC KEY-----`` and ``-----END PUBLIC KEY-----`` in one line, like::
+    The output for the following command is the content between ``-----BEGIN PUBLIC KEY-----`` and ``-----END PUBLIC KEY-----`` in one line, like::
 
          YXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXY
 
@@ -67,9 +67,9 @@ You need to associate the public key generated at the previous with a new or exi
 Create a dedicated Snowflake role and assign the user
 -----------------------------------------------------
 
-Creating a new role is strongly suggested to provide the minimal amount of priviledges needed to the connector to operate. The following steps define what needs to be included:
+Creating a new role is strongly suggested to provide the minimal amount of privileges needed to the connector to operate. The following steps define what needs to be included:
 
-1. In the Snowflake UI, navigate to the **Worksheets** panel, and ensure to use a role with enough priviledges (**SECURITYADMIN** or **ACCOUNTADMIN**)
+1. In the Snowflake UI, navigate to the **Worksheets** panel, and ensure to use a role with enough privileges (**SECURITYADMIN** or **ACCOUNTADMIN**)
 
 2. Run the following query to create a role::
 
@@ -88,9 +88,9 @@ Grant the Snowflake role access to the required database
 
 The Snowflake sink connector will write data in tables belonging to a schema within a database. The following steps define the required grants that need to be associated to newly created role to write to the ``TESTSCHEMA`` schema in the ``TESTDATABASE`` database:
 
-1. In the Snowflake UI, navigate to the **Worksheets** panel, and ensure to use a role with enough priviledges (**SECURITYADMIN** or **ACCOUNTADMIN**)
+1. In the Snowflake UI, navigate to the **Worksheets** panel, and ensure to use a role with enough privileges (**SECURITYADMIN** or **ACCOUNTADMIN**)
 
-2. Grant the required priviledges to the newly created ``aiven_snowflake_sink_connector_role`` role::
+2. Grant the required privileges to the newly created ``aiven_snowflake_sink_connector_role`` role::
 
     grant usage on database TESTDATABASE to role aiven_snowflake_sink_connector_role;
     grant usage on schema TESTDATABASE.TESTSCHEMA to role aiven_snowflake_sink_connector_role;
