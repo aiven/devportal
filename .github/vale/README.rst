@@ -7,18 +7,35 @@ Notes on how we use Vale
 
 **Note** there is a separate file for `issues <ISSUES.rst>`_ that we might want to fix, both in our use of vale and in vale itself.
 
+The main vale websites are:
+
+* https://github.com/errata-ai/vale/
+* https://docs.errata.ai/vale/
+
+and the related:
+
+* https://github.com/errata-ai/vale-action
+
 
 The organisation of our vale setup
 ==================================
 
-``.vale.ini``
+The top-level file ``.vale.ini`` specifies
+
+* where the vale style files can be found (``.github/vale/styles``)
+* what files to check (at the moment, ``.rst`` files)
+
+We store the rest of our vale configuration in the ``.github`` directory, as suggested by `vale-action`_.
+
+The vale-action workflow is specified in ``.github/workflows/link.yaml`` - this determines what checks are run by github when you make a PR, etc.
+
+The rest of the vale specific files are in ``.github/vale``. vale-actions suggests using ``.github/styles`` for the style files, but we also have a README, dictionaries and tests, so it seems sensible to add a specific vale subdirectory.
 
 use of vale-actions
 
-why stuff is in ``.github/vale``
+why stuff is in ```.github/vale``
 
-
-
+.. _vale-action: https://github.com/errata-ai/vale-action
 
 Styles
 ======
@@ -340,8 +357,10 @@ Running checks on github - the vale-action workflow
 
 https://github.com/errata-ai/vale-action
 
+The github workflow ``.github/workflows/lint.yaml`` uses ``vale-action`` to run vale.
 
-Why we don't use the Vocab style and ``accept.txt``
+
+Why we don't use the Vocab style and ```accept.txt``
 ===================================================
 
 Or "**Why we're not using the Vale style*"
@@ -376,9 +395,8 @@ For instance::
   brew install shelltestrunner
   shelltest --diff .github/vale/tests/shelltest.test
 
-.. nothing to see here
 
-  There's also a similar program, shtst_, if you prefer a Python script (or something that is ``pip install``-able). The test file syntax is very similar. I'm continuing with shelltest because it is more mature, and also because I find the ``--diff`` switch useful (which shtst does not have).
+There's also a similar program, shtst_, if you prefer a Python script (or something that is ``pip install``-able). The test file syntax is very similar. I'm continuing with shelltest because it is more mature, and also because I find the ``--diff`` switch useful (which shtst does not have).
 
 .. _shelltestrunner: https://github.com/simonmichael/shelltestrunner
 .. _shtst: https://github.com/obfusk/shtst
