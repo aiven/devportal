@@ -1,7 +1,7 @@
-Database forking
+Service forking
 ================
 
-Fork your Aiven service in order to make a copy of the database. You can use it to create a development copy of your production environment, set up a snapshot to analyze an issue or test an upgrade, or create an instance in a different cloud/geographical location/under a different plan.
+:doc:`Fork your Aiven service </docs/platform/howto/console-fork-service>` in order to make a copy of the service. You can use it to create a development copy of your production environment, set up a snapshot to analyze an issue or test an upgrade, or create an instance in a different cloud/geographical location/under a different plan.
 
 When you fork a service, the following items are copied into the new service:
 

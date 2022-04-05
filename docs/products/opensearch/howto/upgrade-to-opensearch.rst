@@ -8,7 +8,7 @@ For current Aiven for Elasticsearch customers, we recommend you upgrade as soon 
 
 There are three approaches that you can use to upgrade an existing service:
 
-* Create a :doc:`fork </docs/platform/concepts/database-forking>` of Aiven for OpenSearch from your existing Aiven for Elasticsearch service. This is a good way to get a fast preview of how Aiven for OpenSearch will work for you.
+* Create a :doc:`fork </docs/platform/concepts/service-forking>` of Aiven for OpenSearch from your existing Aiven for Elasticsearch service. This is a good way to get a fast preview of how Aiven for OpenSearch will work for you.
 * Create a fork of Aiven for Elasticsearch from your existing Aiven for Elasticsearch service. This gives you the opportunity to test the process of upgrading an existing Elasticsearch service to OpenSearch without experimenting on your live database.
 * Upgrade from Aiven for Elasticsearch to Aiven for OpenSearch to move either a test or production database to the upgraded state.
 
