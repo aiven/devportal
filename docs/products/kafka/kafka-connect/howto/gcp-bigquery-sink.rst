@@ -52,19 +52,11 @@ Define the connector configurations in a file (we'll refer to it with the name `
 
     {
         "name":"CONNECTOR_NAME",
-<<<<<<< HEAD
         "connector.class": "com.wepay.kafka.connect.bigquery.BigQuerySinkConnector",
         "topics": "TOPIC_LIST",
         "project": "GCP_PROJECT_NAME",
         "datasets": ".*=BIGQUERY_DATASET_NAME",
         "schemaRetriever": "com.wepay.kafka.connect.bigquery.retrieve.IdentitySchemaRetriever",
-=======
-        "connector.class": "io.aiven.kafka.connect.opensearch.OpensearchSinkConnector",
-        "topics": "TOPIC_LIST",
-        "project": "GCP_PROJECT_NAME",
-        "datasets": "BIGQUERY_DATASET_NAME",
-        "schemaRetriever": "com.wepay.kafka.connect.bigquery.schemaregistry.schemaretriever.SchemaRegistrySchemaRetriever",
->>>>>>> 05fe04b (fixed headings)
         "schemaRegistryClient.basic.auth.credentials.source": "URL",
         "schemaRegistryLocation":"https://SCHEMA_REGISTRY_USER:SCHEMA_REGISTRY_PASSWORD@APACHE_KAFKA_HOST:SCHEMA_REGISTRY_PORT",
         "key.converter": "io.confluent.connect.avro.AvroConverter",
@@ -75,10 +67,6 @@ Define the connector configurations in a file (we'll refer to it with the name `
         "value.converter.schema.registry.url": "https://APACHE_KAFKA_HOST:SCHEMA_REGISTRY_PORT",
         "value.converter.basic.auth.credentials.source": "USER_INFO",
         "value.converter.schema.registry.basic.auth.user.info": "SCHEMA_REGISTRY_USER:SCHEMA_REGISTRY_PASSWORD",
-<<<<<<< HEAD
-=======
-        "batch.size": 1,
->>>>>>> 05fe04b (fixed headings)
         "autoCreateTables": "true",
         "keySource": "JSON",
         "keyfile": "GCP_SERVICE_KEY"
@@ -197,6 +185,7 @@ You can sink the ``iot_measurements`` topic to BigQuery with the following conne
         "keySource": "JSON",
         "keyfile": "GCP_SERVICE_KEY"
     }
+
 
 The configuration file contains the following peculiarities:
 
