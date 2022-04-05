@@ -36,253 +36,87 @@ Styles
 Spelling
 --------
 
+``.github/vale/styles/Aiven/aiven_spelling.yml``
+
+This file:
+
+1. Says where to look for local dictionaries (``.github/vale/dicts``)
+2. Specifies the message to use when a spelling mistake / typo is discovered
+3. Says to *append* the ``aiven`` dictionary to the default dictionary.
+
+For more on dictionaries, see `Dictionaries`_ below.
+
 
 Capitalised headings
 --------------------
+
+``.github/vale/styles/Aiven/capitalization_headings.yml``
+
+We want headings to be in sentence case. ::
+
+  extends: capitalization
+  message: "'%s' should be in sentence case"
+  level: warning
+  scope: heading
+  # $title, $sentence, $lower, $upper, or a pattern.
+  match: $sentence
+  exceptions:
+    - HowTo
+
+Internally, this calculates a metric for the title "sentence", and fails it if its score is too low. The code is in the method ``sentence`` in ``vale/internal/check/variables.go`` (it's called from a function created by ``NewCapitalization`` in ``vale/internal/check/capitalization.go``).
+
+It seems to be that it looks at each word, and:
+
+1. If the word is UPPER case (or something about the previous word, or it is in the exceptions list) then count it.
+2. If it is the first word, and it is not Title case, fail immediately.
+3. If it is the first word (which we now know is not UPPER or Title case) or it is lower case, count itself
+4. Otherwise, ignore this word.
+
+At the end, the accumulated count, divided by the number of words, must be > 0.8.
+
+So for the title "``Not Aiven, something``", we get:
+
+1. First word "``Not``" matches case (2), so ``count`` becomes 1
+2. Second word "``Aiven,``" falls through to (4) and is ignored
+3. Third word "``something``" matches (3), so ``count`` becomes 2
+4. ``2 / 3 == 0.666...`` so the check fails
+
+(by the way, the comma does not matter - removing it still gives the same result)
+
+I must admit I don't quite understand why this is a proportionality test. A long title with a mid-word capitalised will be OK, but shortening the title will suddently make it fail.
+
+Ah - the following even shows the transition:
+
+* "``Capitalised names from both dictionaries should work, as Tony and Aiven``"
+
+  11 words, count == 9 => 0.818..., which is a success
+
+* "``Capitalised names from both dictionaries should work, Tony and Aiven``"
+
+  10 words, count == 8 -> 0.8, which is a FAILURE
+
+So the question is (a) why the weighting, and (b) why don't capitalised words count towards that weighting?
+
+Particular as "``Not AIVEN, something``" is OK, because the second word is all uppercase, but "``Not Aiven, something``" is not OK.
+
+*Maybe* it's because this is trying to distinguish itself from the "``Every Word Is Capitalised``" style, which it calls ``$title``. For which it uses code from https://github.com/jdkato/titlecase to work out the Title Case version of the given string, and then (essentially) checks words against that result to accumulate a count, which again must be > 0.8. And again, it allows UPPER case words to count as a match.
+
+    **Note to self:** why does the code do ``strings.Title(strings.ToLower(w))`` rather than just ``strings.Title(w)``?
+
+**Note** I think it *used* to work because we had lots of capitalised words in our ``accept.txt``, and they would be added to the exceptions list for this style, which means they count as part of step (1).
+
+**Resolution** This is working as intended, although the documentation could do with explaining how it works.
+The solution for us is to add appropriate exception words to the style file. This isn't too onerous as there aren't many such words, and it's probably better to be specific (that is, it's reasonable to say which words are special for titles in the specification for how titles are checked).
+
+(For longer term, see also `Sentence case and headings`_. Since we're making explicit exceptions in the ``capitalization_headings.yml`` style file, if the future provides us with a better sentence cased title option, we will only have this file to alter/fix. This makes this a better option than trying to re-use the older ``accept.txt`` option.)
+
+**Later finding** It appears that an exception can be a phrase, for instance ``Transport Layer Security``. I'm not actually sure how that works (!) but it makes life neater. It may be sensible to amend the list I've been building up to explicitly name some particular titles, rather than just excepting a (longish) set of words.
 
 
 Common replacements
 -------------------
 
-
-
-Checking ``®`` marks and other things
--------------------------------------
-
-
-Dictionaries
-============
-
-The default dictionary
-----------------------
-
-
-The aiven dictionary
---------------------
-
-
-Adding words (or not) to the aiven dictionary
----------------------------------------------
-
-
-Running checks on github - the vale-action workflow
-===================================================
-
-
-Why we don't use the Vocab style and ``accept.txt``
-===================================================
-
-
-
-
-
-
-
------------
-
-#########
-OLD NOTES
-#########
-
-
-The future of this file
-=======================
-
-During development of our vale setup, this file is being used as a collection of notes of what I've learnt and what might be done in the future.
-
-Longer term, this should become actual documentation of our vale setup, and why it is the way it is.
-
-The ```.vale`` directory will be folded back into ``.github`` when work is finished, to make the configuration available to `vale-action`_. This file will be retained and renamed somewhere appropriate.
-
-.. _`vale-action`: https://github.com/errata-ai/vale-action
-
-Notes
-=====
-
-Why we're not using the Vale style
-----------------------------------
-
-We dont want to use the Vale style (https://docs.errata.ai/vale/styles#built-in-style)
-
-It provides 3 rules:
-
-*** Vale.Spelling
-* Vale.Terms and Vale.Avoid - see https://docs.errata.ai/vale/vocab
-
-We used to use `accept.txt` (see https://docs.errata.ai/vale/vocab) to indicate additional correct spellings, but that didn't work well as we added more styles, because words in `accept.txt` are added to the exceptions for various styles. Hence moving to our own (additional) dictionary.
-
-Since we are using our own dictionary now (as well as the default one, see ``aiven_spelling.yml``) we do not need to rely on the Vale.Spelling rule.
-
-SkippedScope
-------------
-
-The ``SkippedScope`` directive can be used in the ``.vale.ini`` file to say what HTML block-level tags to ignore.
-See https://docs.errata.ai/vale/config#skippedscopes
-
-For our purposes, we want to add ``a`` (corresponding to links) and ``cite`` (corresponding to things in single backticks).
-
-  (Remember that vale uses ``rst2html.py`` to turn our reStructuredText into something it can consume.)
-
-Except maybe we don't want to ignore ``cite``, because we do want to check inside things like::
-
-  :doc:`Aiven for Apache Kafka® topics <connect-kafka>`
-
-What we *really* want to make sure we ignore is things like::
-
-  `jq <https://stedolan.github.io/jq/>`__
-
-...except that sometimes we put names that do need ®-checking into links. Oh dear.
-
-``aiven_spelling`` and the ``aiven`` dictionary
------------------------------------------------
-
-Some notes on dictionaries.
-
-
-The ``aiven`` dictionary is two files:
-
-* ``aiven.dic`` - the actual words.
-
-* ``aiven.aff`` - rules for use in the ``.dic`` file. These specify the meaning of the ``/X`` style "switches" om some of the words in the ``.dic`` file.
-
-Remember that the first line of a ``.dic`` file must be the number of dictionary entries (the total number of lines in the file - 1). Although apparently it's only approximate - I'd still like to keep it correct if we can.
-
-Note that the ``.aff`` file is allowed to be empty if it is not needed.
-
-How I constructed the ``aiven.dic`` dictionary file
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-1. Copied the content of ``.github/styles/Vocab/Docs/accept.txt``
-2. Prepended a line count
-3. Added ``M3`` - is that sensible?
-4. For every word of the form ``[Ww]ord``, changed it to just ``word``
-5. Removed ``Simple Authentication and Security Layer``. I have no idea how the dictionary would cope with a word with spaces in it, and I'm fairly sure all the individual words are in the main dictionary anyway.
-6. Replaced ``fileset[s]`` by two entries, one for ``fileset`` and one for ``filesets``
-
-   (I could instead have started supporting plural annotation via the ``.aff`` file, but that seems overkill in this case)
-
-7. Removed ``jq`` and ``kcat`` - they're just command line tools, not words.
-
-   I'm not sure about ``npm``, ``psql``, ``wget``, ``httpie`` and maybe others, so have left them in for the moment.
-
-   (of course, ``curl`` cheats by being an actual word in the main dictionary!)
-
-#. Recalculated the line count
-
-Still to do:
-
-* check which words are actually in the main dictionary
-* decide which words we want to enforce the capitalisation of (see the section on `common_replacements`_)
-
-Addendum: I wrote a little script to detect duplicate words (those that occur in both identically in both dictionaries, ignoring any ``/`` annotation), and that reports:
-
-  Duplicate words are: API, Apache, Cassandra, Elasticsearch, GitHub, Homebrew, Java, Kafka, Kubernetes, MySQL, PostgreSQL, Prometheus, Python, Redis, boot, business, connect, go, hobbyist, operator, spring
-
-So we should consider (a) removing the duplicates, and, perhaps, (b) rechecking this every so often.
-
-Vale and dictionary case (in)sensitivity
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-By default, words specified in a Hunspell dictionary are case insensitive. So ``word`` would match ``word``, ``Word``, ``wOrD`` and other combinations. Similarly, ``TEXT`` would match ``text``, etc. This is discussed at `Hunspell - How to specify case-insensitivity for spell check in dic or aff file`_. For reference, the default ``en_US-web`` dictionary used by vale does not do anything special about this, so it is case-insensitive.
-
-.. _`Hunspell - How to specify case-insensitivity for spell check in dic or aff file`:
-    https://stackoverflow.com/questions/33880247/
-
-  **Note:** In theory we could put ``KEEPCASE K`` in the ``aiven.aff`` file, and specify a word as ``/K`` in the ``aiven.dic`` file. However, looking at the source code in ``vale/pkg/spell/aff.go`` shows that vale ignores any ``KEEPCASE`` directives.
-
-How vale works with the dictionary:
-
-* If the word is just specified as lower case (in either or both dictionaries), then any case will match.
-
-* If the word is specifed as lower case and mixed case (either in the same or separate dictionaries), then any case will match.
-
-* If the word is just specifed as mixed case (in either or both dictionaries), then the match must be mixed case, but it need not be the *same* mixed case.
-
-Summarising:
-
-+-------------------------+------------+------------+
-|                         | Aiven dictionary        |
-|         matches         +------------+------------+
-|                         | lower case | mixed case |
-+------------+------------+------------+------------+
-| default    | lower case | any case   | any case   |
-| dictionary +------------+------------+------------+
-|            | mixed case | any case   | mixed case |
-+------------+------------+------------+------------+
-
-
-Case studies:
-
-* The default dictionary has ``abecedary``::
-
-    $ vale --output=line "abecedary Abecedary abeCEdary"
-
-  (no errors)
-
-  and if I add ``Abecedary`` to the Aiven dictionary::
-
-    $ vale --output=line "abecedary Abecedary abeCEdary"
-
-* The default dictionary has ``Abba`` and ``abba``::
-
-    $ vale --output=line "abba Abba ABBA aBBa"
-
-  (no errors)
-
-  It doesn't make a difference if I also add ``Abba`` or ``abba`` to the Aiven dictionary.
-
-* The default dictionary has ``Aberdonian``::
-
-    $ vale --output=line "Aberdonian aberdonian aberDOnian"
-    stdin.txt:1:12:Aiven.aiven_spelling:'aberdonian' seems to be a typo
-
-  and if I add ``aberdonian`` to the Aiven dictionary::
-
-    $ vale --output=line "Aberdonian aberdonian aberDOnian"
-
-  so that *did* make a difference - it made it case-insensitive, as one might hope.
-
-
-Useful links about hunspell dictionaries
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Useful links to learn about Hunspell compatible dictionaries:
-
-**Note** *This list needs curation to work out if it's all useful to other people or not.*
-
-* http://hunspell.github.io/
-
-  "Hunspell is the spell checker of LibreOffice, OpenOffice.org, Mozilla Firefox 3 & Thunderbird, Google Chrome, and it is also used by proprietary software packages, like macOS, InDesign, memoQ, Opera and SDL Trados."
-
-* http://manpages.ubuntu.com/manpages/trusty/man4/hunspell.4.html
-
-  "hunspell - format of Hunspell dictionaries and affix files"
-
-  https://linux.die.net/man/4/hunspell is another rendering of the same manpage.
-
-* https://zverok.github.io/blog/2021-03-16-spellchecking-dictionaries.html
-
-  "17 (ever so slightly) weird facts about the most popular dictionary format"
-
-  I found this useful.
-
-  It's part of a series "striving to explain how the world’s most popular spellchecker Hunspell works via its Python port called ``Spylls``
-
-  https://zverok.github.io/spellchecker.html is the series content page
-
-* http://web.archive.org/web/20130810100226/http://www.suares.com/index.php?page_id=25&news_id=233
-
-  saved page on how to create a new dictionary (both files) from scratch
-
-  This references:
-
-  * http://www.openoffice.org/lingucomponent/affix.readme which describes the ``.aff`` file format
-
-* https://www.quora.com/How-do-the-Hunspell-dictionaries-work seems to be a decent introduction
-
-
-``common_replacements``
------------------------
+``.github/vale/styles/Aiven/common_replacements.yml``
 
 Notes on specific terms in the ``common_replacements`` style (extending ``substitution``) are in the file itself.
 
@@ -298,8 +132,12 @@ This sugggests that for all product names where we want to match case exactly, w
 
 (and maybe also a rule to spot markdown-style links!)
 
-``first_<Word>_is registered`` checks
+
+
+Checking ``®`` marks and other things
 -------------------------------------
+
+``.github/vale/styles/Aiven/first_<Word>_is registered.yml`` and the like
 
 These extend ``conditional`` to check that there is at least one ``<Word>®`` if there are any occurrences of ``<Word>``.
 
@@ -364,90 +202,175 @@ Note that the rules for ``Redis`` (needs ``™*``, and it's OK for the ``*`` not
 
 One day it might be nice to be able to recognise a correct use in a header that comes before all uses in body text, but that's a task for another day (and might not be possible in vale anyway).
 
-Other marks and checks
+
+
+Dictionaries
+============
+
+How dictionaries work
+---------------------
+
+Vale uses hunspell compatible dictionaries, but it doesn't use all of the information that can be specified in such dictionaries.
+
+Vale and dictionary case (in)sensitivity
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+By default, words specified in a Hunspell dictionary are case insensitive. So ``word`` would match ``word``, ``Word``, ``wOrD`` and other combinations. Similarly, ``TEXT`` would match ``text``, etc. This is discussed at `Hunspell - How to specify case-insensitivity for spell check in dic or aff file`_. For reference, the default ``en_US-web`` dictionary used by vale does not do anything special about this, so it is case-insensitive.
+
+.. _`Hunspell - How to specify case-insensitivity for spell check in dic or aff file`:
+    https://stackoverflow.com/questions/33880247/
+
+  **Note:** In theory we could put ``KEEPCASE K`` in the ``aiven.aff`` file, and specify a word as ``/K`` in the ``aiven.dic`` file. However, looking at the source code in ``vale/pkg/spell/aff.go`` shows that vale ignores any ``KEEPCASE`` directives.
+
+How vale works with the dictionary:
+
+* If the word is just specified as lower case (in either or both dictionaries), then any case will match.
+
+* If the word is specifed as lower case and mixed case (either in the same or separate dictionaries), then any case will match.
+
+* If the word is just specifed as mixed case (in either or both dictionaries), then the match must be mixed case, but it need not be the *same* mixed case.
+
+Summarising:
+
++-------------------------+------------+------------+
+|                         | Aiven dictionary        |
+|         matches         +------------+------------+
+|                         | lower case | mixed case |
++------------+------------+------------+------------+
+| default    | lower case | any case   | any case   |
+| dictionary +------------+------------+------------+
+|            | mixed case | any case   | mixed case |
++------------+------------+------------+------------+
+
+
+Case studies:
+
+* The default dictionary has ``abecedary``::
+
+    $ vale --output=line "abecedary Abecedary abeCEdary"
+
+  (no errors)
+
+  and if I add ``Abecedary`` to the Aiven dictionary::
+
+    $ vale --output=line "abecedary Abecedary abeCEdary"
+
+* The default dictionary has ``Abba`` and ``abba``::
+
+    $ vale --output=line "abba Abba ABBA aBBa"
+
+  (no errors)
+
+  It doesn't make a difference if I also add ``Abba`` or ``abba`` to the Aiven dictionary.
+
+* The default dictionary has ``Aberdonian``::
+
+    $ vale --output=line "Aberdonian aberdonian aberDOnian"
+    stdin.txt:1:12:Aiven.aiven_spelling:'aberdonian' seems to be a typo
+
+  and if I add ``aberdonian`` to the Aiven dictionary::
+
+    $ vale --output=line "Aberdonian aberdonian aberDOnian"
+
+  so that *did* make a difference - it made it case-insensitive, as one might hope.
+
+
+
+The default dictionary
 ----------------------
 
-We reference Elasticsearch a few times, and that needs a disclaimer/attribution, which I've supplied by hand as necessary. I am not sure if it is worth constructing a specific rule for this (and my first attempt didn't work!).
+The default dictionary used by vale is defined at https://github.com/errata-ai/en_US-web
 
-Other cases that only happen occasionally:
+The aiven dictionary
+--------------------
 
-* ``Apache Lucene™`` (which is a trademark of the Apache Software Foundation) in `<../docs/products/opensearch/index.rst>`_ and `<../docs/products/opensearch/dashboards/getting-started.rst>`_. I've added a specific attribution in `PR 605`_.
+The ``aiven`` dictionary is two files:
 
-* ``Apache ZooKeeper`` in `<../docs/products/kafka/concepts/auth-types.rst>`_ and `<../docs/products/kafka/howto/use-zookeeper.rst>`_. This is actually an unregistered trademark (™) of Apache. I've made it refer to "Apache ZooKeeper" rather than "ZooKeeper", and added attribution in both places in `PR 605`_.
+* ``.github/vale/dicts/aiven.dic`` - the actual words.
 
-* Various names in `<../docs/products/kafka/kafka-connect/concepts/list-of-connector-plugins.rst>`_, which may or may not need ® marks and/or attributions. I've made some attempt for some things in that file in `PR 605`_.
+* ``.github/vale/dicts/aiven.aff`` - rules for use in the ``.dic`` file. These specify the meaning of the ``/X`` style "switches" om some of the words in the ``.dic`` file.
 
-It would be nice to check for ``Apache®`` when ``Apache`` is *not* followed by a product name (this *may* require listing all the product names in a regular expression, or may just mean checking for ``Apache <capitalised-word>``, which is probably good enough as a first pass).
+Remember that the first line of a ``.dic`` file must be the number of dictionary entries (the total number of lines in the file - 1). Although apparently it's only approximate - I'd still like to keep it correct if we can.
 
-.. _`PR 605`: https://github.com/aiven/devportal/pull/605
+The ``.aff`` file is allowed to be empty if it is not needed.
 
-``capitalization_headings.yml``
--------------------------------
+At the moment, the ``aiven.aff`` file is left empty, and if we want singlular and plural forms (for instance) we need to explicitly specify both of them in the ``aiven.dic`` file. This is something that might be addressed in future changes.
 
-We want headings to be in sentence case. ::
+Adding words (or not) to the aiven dictionary
+---------------------------------------------
 
-  extends: capitalization
-  message: "'%s' should be in sentence case"
-  level: warning
-  scope: heading
-  # $title, $sentence, $lower, $upper, or a pattern.
-  match: $sentence
-  exceptions:
-    - HowTo
+The guidelines are:
 
-Internally, this calculates a metric for the title "sentence", and fails it if its score is too low. The code is in the method ``sentence`` in ``vale/internal/check/variables.go`` (it's called from a function created by ``NewCapitalization`` in ``vale/internal/check/capitalization.go``).
+1. Don't add a word that is already in the default dictionary.
+2. Don't add a word that is a command line tool (for instance, ``jq``) if at all possible.
+3. Just add the word you need - don't try to generalise for plural, singular, etc.
+4. Do try to keep the word count on the first line of the file up-to-date.
 
-It seems to be that it looks at each word, and:
 
-1. If the word is UPPER case (or something about the previous word, or it is in the exceptions list) then count it.
-2. If it is the first word, and it is not Title case, fail immediately.
-3. If it is the first word (which we now know is not UPPER or Title case) or it is lower case, count itself
-4. Otherwise, ignore this word.
+Useful links about hunspell dictionaries
+----------------------------------------
 
-At the end, the accumulated count, divided by the number of words, must be > 0.8.
+Useful links to learn about Hunspell compatible dictionaries:
 
-So for the title "``Not Aiven, something``", we get:
+**Note** *This list needs curation to work out if it's all useful to other people or not.*
 
-1. First word "``Not``" matches case (2), so ``count`` becomes 1
-2. Second word "``Aiven,``" falls through to (4) and is ignored
-3. Third word "``something``" matches (3), so ``count`` becomes 2
-4. ``2 / 3 == 0.666...`` so the check fails
+* http://hunspell.github.io/
 
-(by the way, the comma does not matter - removing it still gives the same result)
+  "Hunspell is the spell checker of LibreOffice, OpenOffice.org, Mozilla Firefox 3 & Thunderbird, Google Chrome, and it is also used by proprietary software packages, like macOS, InDesign, memoQ, Opera and SDL Trados."
 
-I must admit I don't quite understand why this is a proportionality test. A long title with a mid-word capitalised will be OK, but shortening the title will suddently make it fail.
+* http://manpages.ubuntu.com/manpages/trusty/man4/hunspell.4.html
 
-Ah - the following even shows the transition:
+  "hunspell - format of Hunspell dictionaries and affix files"
 
-* "``Capitalised names from both dictionaries should work, as Tony and Aiven``"
+  https://linux.die.net/man/4/hunspell is another rendering of the same manpage.
 
-  11 words, count == 9 => 0.818..., which is a success
+* https://zverok.github.io/blog/2021-03-16-spellchecking-dictionaries.html
 
-* "``Capitalised names from both dictionaries should work, Tony and Aiven``"
+  "17 (ever so slightly) weird facts about the most popular dictionary format"
 
-  10 words, count == 8 -> 0.8, which is a FAILURE
+  I found this useful.
 
-So the question is (a) why the weighting, and (b) why don't capitalised words count towards that weighting?
+  It's part of a series "striving to explain how the world’s most popular spellchecker Hunspell works via its Python port called ``Spylls``
 
-Particular as "``Not AIVEN, something``" is OK, because the second word is all uppercase, but "``Not Aiven, something``" is not OK.
+  https://zverok.github.io/spellchecker.html is the series content page
 
-*Maybe* it's because this is trying to distinguish itself from the "``Every Word Is Capitalised``" style, which it calls ``$title``. For which it uses code from https://github.com/jdkato/titlecase to work out the Title Case version of the given string, and then (essentially) checks words against that result to accumulate a count, which again must be > 0.8. And again, it allows UPPER case words to count as a match.
+* http://web.archive.org/web/20130810100226/http://www.suares.com/index.php?page_id=25&news_id=233
 
-    **Note to self:** why does the code do ``strings.Title(strings.ToLower(w))`` rather than just ``strings.Title(w)``?
+  saved page on how to create a new dictionary (both files) from scratch
 
-**Note** I think it *used* to work because we had lots of capitalised words in our ``accept.txt``, and they would be added to the exceptions list for this style, which means they count as part of step (1).
+  This references:
 
-**Resolution** This is working as intended, although the documentation could do with explaining how it works.
-The solution for us is to add appropriate exception words to the style file. This isn't too onerous as there aren't many such words, and it's probably better to be specific (that is, it's reasonable to say which words are special for titles in the specification for how titles are checked).
+  * http://www.openoffice.org/lingucomponent/affix.readme which describes the ``.aff`` file format
 
-(For longer term, see also `Sentence case and headings`_. Since we're making explicit exceptions in the ``capitalization_headings.yml`` style file, if the future provides us with a better sentence cased title option, we will only have this file to alter/fix. This makes this a better option than trying to re-use the older ``accept.txt`` option.)
+* https://www.quora.com/How-do-the-Hunspell-dictionaries-work seems to be a decent introduction
 
-**Later finding** It appears that an exception can be a phrase, for instance ``Transport Layer Security``. I'm not actually sure how that works (!) but it makes life neater. It may be sensible to amend the list I've been building up to explicitly name some particular titles, rather than just excepting a (longish) set of words.
+
+Running checks on github - the vale-action workflow
+===================================================
+
+https://github.com/errata-ai/vale-action
+
+
+Why we don't use the Vocab style and ``accept.txt``
+===================================================
+
+Or "**Why we're not using the Vale style*"
+
+We dont want to use the Vale style (https://docs.errata.ai/vale/styles#built-in-style)
+
+It provides 3 rules:
+
+* Vale.Spelling
+* Vale.Terms and Vale.Avoid - see https://docs.errata.ai/vale/vocab
+
+We used to use `accept.txt` (see https://docs.errata.ai/vale/vocab) to indicate additional correct spellings, but that didn't work well as we added more styles, because words in `accept.txt` are added to the exceptions for various styles. Hence moving to our own (additional) dictionary.
+
+Since we are using our own dictionary now (as well as the default one, see ``aiven_spelling.yml``) we do not need to rely on the Vale.Spelling rule.
 
 Test files
-----------
+==========
 
-In the directory ``.vale/tests`` there are pairs of files, with names that contain ``good`` and ``bad``.
+In the directory ``.github/vale/tests`` there are pairs of files, with names that contain ``good`` and ``bad``.
 
 The intention is that when vale is run on a ``good`` file, there should be no errors, and when it is run on a ``bad`` file there should be at least one error per significant line (that is, ignoring comments, which should be evident, and blank lines).
 
@@ -455,7 +378,15 @@ In the case of the ``good.rst`` versus ``bad.rst`` files, inline "comments" are 
 
 I recommend using ``vale --output=line`` for its more compact output format.
 
-As an experiment, I have introduced testing with shelltestrunner_. See the file ``.vale/test/shelltest.test``. This makes it a lot easier to see the effect of changes I make to the vale setup.
+To make it easier to see changes and regressions, the file ``.vale/test/shelltest.test`` can be used with
+shelltestrunner_.
+
+For instance::
+
+  brew install shelltestrunner
+  shelltest --diff .github/vale/tests/shelltest.test
+
+.. nothing to see here
 
   There's also a similar program, shtst_, if you prefer a Python script (or something that is ``pip install``-able). The test file syntax is very similar. I'm continuing with shelltest because it is more mature, and also because I find the ``--diff`` switch useful (which shtst does not have).
 
