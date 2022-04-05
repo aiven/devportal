@@ -93,7 +93,7 @@ The configuration file contains the following entries:
 * ``batch.size``:
 * ``autoCreateTables``: enables the auto creation of the target BigQuery tables if they don't exist 
 * ``keySource``: defines the format of the GCP key, the value should be ``JSON`` if the key is generated in JSON format
-* ``keyfile``: contains the GCP service account key, correcly escaped as defined in the :ref:`prerequisite phase <connect_bigquery_sink_prereq>`
+* ``keyfile``: contains the GCP service account key, correctly escaped as defined in the :ref:`prerequisite phase <connect_bigquery_sink_prereq>`
 
 
 Create a Kafka Connect connector with the Aiven Console
@@ -192,10 +192,10 @@ The configuration file contains the following peculiarities:
 * ``"value.converter": "org.apache.kafka.connect.json.JsonConverter"``: the message value is in plain JSON format without a schema
 
 
-Example: Create a Google BigQuery sink connector on a topic in AVRO format
+Example: Create a Google BigQuery sink connector on a topic in Avro format
 --------------------------------------------------------------------------
 
-If you have a topic named ``students`` in AVRO format with the schema stored in Karapace, you can sink the ``students`` topic to BigQuery with the following connector configuration, after replacing the placeholders for ``GCP_PROJECT_NAME``, ``GCP_SERVICE_KEY``, ``BIGQUERY_DATASET_NAME``,``SCHEMA_REGISTRY_USER``, ``SCHEMA_REGISTRY_PASSWORD``, ``APACHE_KAFKA_HOST``, ``SCHEMA_REGISTRY_PORT``:
+If you have a topic named ``students`` in Avro format with the schema stored in Karapace, you can sink the ``students`` topic to BigQuery with the following connector configuration, after replacing the placeholders for ``GCP_PROJECT_NAME``, ``GCP_SERVICE_KEY``, ``BIGQUERY_DATASET_NAME``,``SCHEMA_REGISTRY_USER``, ``SCHEMA_REGISTRY_PASSWORD``, ``APACHE_KAFKA_HOST``, ``SCHEMA_REGISTRY_PORT``:
 
 .. code-block:: json
 
