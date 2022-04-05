@@ -186,7 +186,6 @@ You can sink the ``iot_measurements`` topic to BigQuery with the following conne
         "keyfile": "GCP_SERVICE_KEY"
     }
 
-
 The configuration file contains the following peculiarities:
 
 * ``"topics": "iot_measurements"``: setting the topic to sink
