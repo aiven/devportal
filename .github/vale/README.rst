@@ -31,10 +31,6 @@ The vale-action workflow is specified in ``.github/workflows/link.yaml`` - this 
 
 The rest of the vale specific files are in ``.github/vale``. vale-actions suggests using ``.github/styles`` for the style files, but we also have a README, dictionaries and tests, so it seems sensible to add a specific vale subdirectory.
 
-use of vale-actions
-
-why stuff is in ```.github/vale``
-
 .. _vale-action: https://github.com/errata-ai/vale-action
 
 Styles
@@ -44,6 +40,17 @@ Spelling
 --------
 
 ``.github/vale/styles/Aiven/aiven_spelling.yml``
+
+::
+
+  extends: spelling
+  message: "'%s' seems to be a typo"
+  # The dictionary directory path appears to be relative to the .vale.ini file
+  dicpath: .github/vale/dicts
+  # We want to add our dictionary on top of the default dictionary
+  append: true
+  dictionaries:
+    - aiven
 
 This file:
 
@@ -71,6 +78,8 @@ We want headings to be in sentence case. ::
     - HowTo
 
 Internally, this calculates a metric for the title "sentence", and fails it if its score is too low. The code is in the method ``sentence`` in ``vale/internal/check/variables.go`` (it's called from a function created by ``NewCapitalization`` in ``vale/internal/check/capitalization.go``).
+
+**TODO: tidy the following up into something that makes sense**
 
 It seems to be that it looks at each word, and:
 
@@ -125,6 +134,24 @@ Common replacements
 
 ``.github/vale/styles/Aiven/common_replacements.yml``
 
+For instance::
+
+  extends: substitution
+  message: "Use '%s' instead of '%s'."
+  ignorecase: true
+  level: error
+  swap:
+    ...
+    clickhouse: ClickHouse        # Case - and note the H in the middle
+    ...
+    kakfa: Kafka                  # it's easy to mistype
+    ...
+    "google cloud storage": "Google Cloud Storage"
+    ...
+    "Aiven Cassandra": "Aiven for Cassandra"
+
+(much of the file is not shown, hence the ``...``)
+
 Notes on specific terms in the ``common_replacements`` style (extending ``substitution``) are in the file itself.
 
 Since we specify `ignorecase: true`, a rule such as::
@@ -135,10 +162,6 @@ will match any case variant of "``clickhouse``", and given an error if it is not
 
 This sugggests that for all product names where we want to match case exactly, we should have an appropriate rule in this file. (And see the section on `Vale and dictionary case (in)sensitivity`_ to understand why this isn't solved by the entries in the dictionary.)
 
-**Nice to have:** add a rule to detect getting Sphinx style links wrong, because the number of trailing underlines is incorrect. This should be reasonably easy to write, and it's a common error.
-
-(and maybe also a rule to spot markdown-style links!)
-
 
 
 Checking ``®`` marks and other things
@@ -146,7 +169,20 @@ Checking ``®`` marks and other things
 
 ``.github/vale/styles/Aiven/first_<Word>_is registered.yml`` and the like
 
-These extend ``conditional`` to check that there is at least one ``<Word>®`` if there are any occurrences of ``<Word>``.
+For instance, ``first_Flink_is_registered.yml``::
+
+  extends: conditional
+  message: "At least one '%s' must be marked as ®"
+  level: error
+  scope: text
+  ignorecase: false
+
+  first: '\b(Flink)(?!®)'
+  second: '(Flink)(?:®)'
+
+These files extend ``conditional`` to check that there is at least one ``<Word>®`` if there are any occurrences of ``<Word>``.
+
+**TODO: tidy the following up into something that makes sense**
 
 Inside vale, ``first`` is termed the *antecedent*, and ``second`` is termed the *consequent*. I think of ``first`` as the *usage* and ``second`` as the *explanation*.
 
@@ -207,7 +243,7 @@ Because ``®`` is not a word character, we have to check for ``first`` being the
 
 Note that the rules for ``Redis`` (needs ``™*``, and it's OK for the ``*`` not to be superscripted) and ``Apache`` (only needs ``®`` if it's not followed by one of the sub-product names) will be different.
 
-One day it might be nice to be able to recognise a correct use in a header that comes before all uses in body text, but that's a task for another day (and might not be possible in vale anyway).
+One day it might be nice to be able to recognise a correct use in a header that comes before all uses in body text, but that's a task for another day (and might not be possible in vale anyway) (in fact, see the `issues <ISSUES.rst>`_ file for something about that).
 
 
 
@@ -221,6 +257,9 @@ Vale uses hunspell compatible dictionaries, but it doesn't use all of the inform
 
 Vale and dictionary case (in)sensitivity
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**NOTE: tidy the following up to make sense.**
+
 
 By default, words specified in a Hunspell dictionary are case insensitive. So ``word`` would match ``word``, ``Word``, ``wOrD`` and other combinations. Similarly, ``TEXT`` would match ``text``, etc. This is discussed at `Hunspell - How to specify case-insensitivity for spell check in dic or aff file`_. For reference, the default ``en_US-web`` dictionary used by vale does not do anything special about this, so it is case-insensitive.
 
@@ -319,7 +358,7 @@ Useful links about hunspell dictionaries
 
 Useful links to learn about Hunspell compatible dictionaries:
 
-**Note** *This list needs curation to work out if it's all useful to other people or not.*
+**Note This list needs curation to work out if it's all useful to other people or not.**
 
 * http://hunspell.github.io/
 
@@ -360,10 +399,10 @@ https://github.com/errata-ai/vale-action
 The github workflow ``.github/workflows/lint.yaml`` uses ``vale-action`` to run vale.
 
 
-Why we don't use the Vocab style and ```accept.txt``
+Why we don't use the Vocab style and ``accept.txt``
 ===================================================
 
-Or "**Why we're not using the Vale style*"
+Or "*Why we're not using the Vale style*"
 
 We dont want to use the Vale style (https://docs.errata.ai/vale/styles#built-in-style)
 
