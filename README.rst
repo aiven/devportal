@@ -48,7 +48,7 @@ To run the spell check locally, you will need to have `Vale <https://github.com/
 
 For documentation on how we use Vale, see `our Vale README <.github/vale/README.rst>`_.
 
-If the spellchecker is rejecting words that are valid (such as technology terms), double check the spelling and capitalisation, then add the word to ``.github/vale/dicts/aiven.dic``. Please note that we try not to add the names of commands (for instance, ``jq`` or ``kcat``). See the section on dictionaries in `our Vale README <.github/vale/README.rst>`_
+If the spellchecker is rejecting words that are valid (such as technology terms), double check the spelling and capitalisation. If it's upset about the use of a capitalised word in a title, then add the word for ``.github/vale/styles/Aiven/capitalization_headings.yml``, and otherwise add it to the Aiven dictionary at  ``.github/vale/dicts/aiven.dic``. Please note that we try not to add the names of commands to the dictionary (for instance, ``jq`` or ``kcat``). See the section on dictionaries in `our Vale README <.github/vale/README.rst>`_
 
 Navigation structure
 ''''''''''''''''''''

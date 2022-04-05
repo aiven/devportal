@@ -33,6 +33,23 @@ The rest of the vale specific files are in ``.github/vale``. vale-actions sugges
 
 .. _vale-action: https://github.com/errata-ai/vale-action
 
+Adding words (or not) to the aiven dictionary
+=============================================
+
+First check if the problem is with the use of a capitalised word in a heading, or with the spelling of the word.
+
+If it's a problem with capitalisation in a heading, then try adding the (capitalised) word to the exceptions in `<styles/Aiven/capitalization_headings.yml>`_. See `Capitalised headings`_ for more information.
+
+If it's a problem with spelling, then you may need to add the word to `<styles/Aiven/aiven_spelling.yml>`_.
+The guidelines are:
+
+1. Don't add a word that is already in the default dictionary.
+2. Don't add a word that is a command line tool (for instance, ``jq``) if at all possible.
+3. Just add the word you need - don't try to generalise for plural, singular, etc.
+4. Do try to keep the word count on the first line of the file up-to-date.
+
+See `Dictionaries`_ for more information.
+
 Styles
 ======
 
@@ -349,16 +366,6 @@ Remember that the first line of a ``.dic`` file must be the number of dictionary
 The ``.aff`` file is allowed to be empty if it is not needed.
 
 At the moment, the ``aiven.aff`` file is left empty, and if we want singlular and plural forms (for instance) we need to explicitly specify both of them in the ``aiven.dic`` file. This is something that might be addressed in future changes.
-
-Adding words (or not) to the aiven dictionary
----------------------------------------------
-
-The guidelines are:
-
-1. Don't add a word that is already in the default dictionary.
-2. Don't add a word that is a command line tool (for instance, ``jq``) if at all possible.
-3. Just add the word you need - don't try to generalise for plural, singular, etc.
-4. Do try to keep the word count on the first line of the file up-to-date.
 
 
 Useful links about hunspell dictionaries
