@@ -46,7 +46,9 @@ To run the spell check locally, you will need to have `Vale <https://github.com/
 * Check links: ``make linkcheck``
 * Check spelling: ``make spell``
 
-If the spellchecker is rejecting words that are valid (such as technology terms), double check the spelling and capitalisation, then add the word to ``.github/styles/Vocab/Docs/accept.txt``.
+For documentation on how we use Vale, see `our Vale README <.github/vale/README.rst>`_.
+
+If the spellchecker is rejecting words that are valid (such as technology terms), double check the spelling and capitalisation, then add the word to ``.github/vale/dicts/aiven.dic``. Please note that we try not to add the names of commands (for instance, ``jq`` or ``kcat``). See the section on dictionaries in `our Vale README <.github/vale/README.rst>`_
 
 Navigation structure
 ''''''''''''''''''''
