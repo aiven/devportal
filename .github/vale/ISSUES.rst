@@ -7,6 +7,20 @@ Changes for us
 
 These are ideas for things we might want to do in this repository.
 
+Duplicate dictionary entries
+----------------------------
+
+  *Local change*
+
+I wrote a little script (``~/sw/vale-work/check_dict_words.py`` on Tibs' machine) to detect duplicate words (those that occur in both identically in the default and aiven dictionaries, ignoring any ``/`` annotation).
+
+It has paths built in, but is probably worth productionising at some point (on the other hand, it is *very* simple).
+
+Running that reports:
+
+  Duplicate words are: API, Apache, Cassandra, Elasticsearch, GitHub, Homebrew, Java, Kafka, Kubernetes, MySQL, PostgreSQL, Prometheus, Python, Redis, boot, business, connect, go, hobbyist, operator, spring
+
+So we should consider (a) removing the duplicates, and, perhaps, (b) rechecking this every so often.
 
 Maybe have a new dictionary for product names
 ---------------------------------------------
@@ -39,18 +53,45 @@ Dealing with links that contain code content
 
 Consider::
 
-  `kcat <https://something>`_
+  `jq <https://stedolan.github.io/jq/>`_
 
-We *really* want to put ``kcat`` in "code" font, but we also want it as the word in the link.
+We *really* want to put ``jq`` in "code" font, but we also want it as the word in the link.
 
-(Do we ever want code-font and non-code-font words in the same link text? If we can put up with the answer "no" then this is likely to be more possible.)
+Unfortunately, reStructuredText does not support::
 
-This should be doable, but I would like to find a way to do it that does not require a lot of knowledge of reStructuredText and/or Sphinx from the person typing.
+  ```jq`` <https://stedolan.github.io/jq/>`_
 
-  (I also don't want to take on the long-abandoned task of making docutils understand nested markup!)
+and historical attempts to change reStructuredText / docutils to handle nested inline markup have never got very far.
 
-Ideas for more checks
----------------------
+We could probably come up with some use of replacements (as we do for various icons - see the end of our sphinx `conf.py <../../conf.py>`_ file), but that needs a lot of Sphinx/reStructuredText knowledge, and would need a separate replacement defining for each such link. It also doesn't work if we ever want literal and non-literal text in the same link text.
+
+I did look at the ``SkippedScope`` directive (https://docs.errata.ai/vale/config#skippedscopes) in the ``.vale.ini`` file, which can be used to say what HTML block-level tags to ignore.
+
+I considered adding ``a`` (corresponding to links), except that sometimes we *do* need checking inside links - for instance if there is a ``PostgreSQL®`` in the link text. (Remember that vale uses ``rst2html.py`` to turn our reStructuredText into something it can consume.)
+
+...except that sometimes we do want to check the link text, for instance::
+
+  `PostgreSQL® Project website <https://www.postgresql.org/>`_
+
+Other marks and checks
+----------------------
+
+We reference Elasticsearch a few times, and that needs a disclaimer/attribution, which I've supplied by hand as necessary. I am not sure if it is worth constructing a specific rule for this (and my first attempt didn't work!).
+
+Other cases that only happen occasionally:
+
+* ``Apache Lucene™`` (which is a trademark of the Apache Software Foundation) in `<../docs/products/opensearch/index.rst>`_ and `<../docs/products/opensearch/dashboards/getting-started.rst>`_. I've added a specific attribution in `PR 605`_.
+
+* ``Apache ZooKeeper`` in `<../docs/products/kafka/concepts/auth-types.rst>`_ and `<../docs/products/kafka/howto/use-zookeeper.rst>`_. This is actually an unregistered trademark (™) of Apache. I've made it refer to "Apache ZooKeeper" rather than "ZooKeeper", and added attribution in both places in `PR 605`_.
+
+* Various names in `<../docs/products/kafka/kafka-connect/concepts/list-of-connector-plugins.rst>`_, which may or may not need ® marks and/or attributions. I've made some attempt for some things in that file in `PR 605`_.
+
+It would be nice to check for ``Apache®`` when ``Apache`` is *not* followed by a product name (this *may* require listing all the product names in a regular expression, or may just mean checking for ``Apache <capitalised-word>``, which is probably good enough as a first pass).
+
+.. _`PR 605`: https://github.com/aiven/devportal/pull/605
+
+``raw`` mode checks - checking the markup
+-----------------------------------------
 
 These all probably need ``raw`` mode, to see the actual markup, which I haven't used yet.
 
