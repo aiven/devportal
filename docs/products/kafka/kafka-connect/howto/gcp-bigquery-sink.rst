@@ -175,16 +175,16 @@ You can sink the ``iot_measurements`` topic to BigQuery with the following conne
 .. code-block:: json
 
     {
-    "name":"iot_sink",
-    "connector.class": "com.wepay.kafka.connect.bigquery.BigQuerySinkConnector",
-    "topics": "iot_measurements",
-    "project": "GCP_PROJECT_NAME",
-    "defaultDataset": ".*=BIGQUERY_DATASET_NAME",
-    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
-    "autoCreateTables": "true",
-    "keySource": "JSON",
-    "keyfile": "GCP_SERVICE_KEY"
-}
+        "name":"iot_sink",
+        "connector.class": "com.wepay.kafka.connect.bigquery.BigQuerySinkConnector",
+        "topics": "iot_measurements",
+        "project": "GCP_PROJECT_NAME",
+        "defaultDataset": ".*=BIGQUERY_DATASET_NAME",
+        "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+        "autoCreateTables": "true",
+        "keySource": "JSON",
+        "keyfile": "GCP_SERVICE_KEY"
+    }
 
 The configuration file contains the following peculiarities:
 
