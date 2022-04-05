@@ -1,26 +1,26 @@
 Sample dataset
 ===============
 
-The official ClickHouse® website offers `a list of example datasets <https://clickhouse.com/docs/en/getting-started/example-datasets/>`_ to get you started. Each dataset has a description on how to download, inject, and transform the data samples as needed.
+The official ClickHouse® website offers `a list of example datasets <https://clickhouse.com/docs/en/example-datasets/>`_ to get you started. Each dataset has a description on how to download, inject, and transform the data samples as needed.
 
-This article takes a closer look at how to use the ``Yandex Metrica`` `example dataset <https://clickhouse.com/docs/en/getting-started/example-datasets/metrica/>`_. This contains two tables:
+This article takes a closer look at how to use the ``Anonymized Web Analytics Data`` `example dataset <https://clickhouse.com/docs/en/example-datasets/metrica/>`_. This contains two tables:
 
 - ``hits_v1``, with data for every user action
 - ``visits_v1``, with information about every user session
 
-The steps below show you how to download the dataset, set up a connection with the server, and load the data into your cluster. ClickHouse already offers detailed instructions `on setting up this dataset <https://clickhouse.com/docs/en/getting-started/example-datasets/metrica/>`_, but these steps add some more details on how to run commands by using a ClickHouse client running in Docker.
+The steps below show you how to download the dataset, set up a connection with the server, and load the data into your cluster. ClickHouse already offers detailed instructions `on setting up this dataset <https://clickhouse.com/docs/en/example-datasets/metrica/>`_, but these steps add some more details on how to run commands by using a ClickHouse client running in Docker.
 
 Download the dataset
 --------------------
 
-Download the original dataset directly from `the dataset documentation page <https://clickhouse.com/docs/en/getting-started/example-datasets/metrica/>`_. You can do this using cURL, where the generic command looks like this::
+Download the original dataset directly from `the dataset documentation page <https://clickhouse.com/docs/en/example-datasets/metrica/>`_. You can do this using cURL, where the generic command looks like this::
 
     curl address_to_file_in_format_tsv_xz | unxz --threads=`nproc` > file-name.tsv
 
 .. note::
     The ``nproc`` Linux command, which prints the number of processing units, is not available on macOS. To use the above command, add an alias for ``nproc`` into your  ``~/.zshrc`` file: ``alias nproc="sysctl -n hw.logicalcpu"``.
 
-This command allows you to download and extract data from the URLs specified in the `ClickHouse documentation <https://clickhouse.com/docs/en/getting-started/example-datasets/metrica/#obtaining-tables-from-compressed-tsv-file>`_.
+This command allows you to download and extract data from the URLs specified in the `ClickHouse documentation <https://clickhouse.com/docs/en/example-datasets/metrica/#obtaining-tables-from-compressed-tsv-file>`_.
 
 Once done, you should have two files available: ``hits_v1.tsv`` and ``visits_v1.tsv``.
 
@@ -44,7 +44,7 @@ To connect to the server, use the connection details that you can find in the *C
 Create tables
 ---------------
 
-The next step is to add a new table to your newly created database. The ClickHouse documentation includes a sample ``CREATE TABLE`` command with `the recommended table structure <https://clickhouse.com/docs/en/getting-started/example-datasets/metrica/#obtaining-tables-from-compressed-tsv-file>`_.
+The next step is to add a new table to your newly created database. The ClickHouse documentation includes a sample ``CREATE TABLE`` command with `the recommended table structure <https://clickhouse.com/docs/en/example-datasets/metrica/#obtaining-tables-from-compressed-tsv-file>`_.
 
 To use the command through Docker, run the following commands to create the tables for both ``hits_v1`` and ``visits_v1``::
 
