@@ -160,9 +160,6 @@ Connectivity
 ``dblink`` - https://www.postgresql.org/docs/current/contrib-dblink-function.html
     Connect to other PostgreSQL databases from within a database.
 
-``file_fdw`` - https://www.postgresql.org/docs/current/file-fdw.html
-    Foreign-data wrapper for flat file access.
-
 ``postgres_fdw`` - https://www.postgresql.org/docs/current/postgres-fdw.html
     Foreign-data wrapper for remote PostgreSQL servers.
 
