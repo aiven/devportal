@@ -17,7 +17,7 @@ indexes are cleaned up. If you have low-volume logging and want to keep
 indexes for very long time (years?), consider per-week or per-month
 indexes instead.
 
-It is not recommended to create a new index per customer/project/entity if
+It is **not** recommended to create a new index per customer/project/entity if
 
 -  you have potentially a very large number of entities (thousands), or
    you have hundreds of entities and need multiple different indexes for
