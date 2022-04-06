@@ -31,7 +31,7 @@ process requires a brief downtime while the index is rewritten.
 Performance numbers
 -------------------
 
-Having a large number of shards affect performance you get
+Having a large number of shards affect your OpenSearch performance
 out from OpenSearch. Some rough numbers from three-node Aiven
 OpenSearch business-8 cluster:
 
