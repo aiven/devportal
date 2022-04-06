@@ -18,7 +18,7 @@ Furthermore you need to follow the steps :doc:`to prepare the Snowflake account 
 
     .. Tip::
 
-        The Snowflake Account id and region name can be obtained in the Snowflake UI by issuing the following query in a worksheet::
+        The Snowflake account Id and region name can be obtained in the Snowflake UI by issuing the following query in a worksheet::
 
             select current_account(), current_region() 
 
@@ -26,7 +26,7 @@ Furthermore you need to follow the steps :doc:`to prepare the Snowflake account 
 * ``SNOWFLAKE_PRIVATE_KEY``: The private key associated to the ``SNOWFLAKE_USERNAME`` as mentioned in the :doc:`prerequisite document <snowflake-sink-prereq>`.
 * ``SNOWFLAKE_PRIVATE_KEY_PASSPHRASE``: The private key passphrase
 * ``SNOWFLAKE_DATABASE``: The target Snowflake database name
-* ``SNOWFLAKE_SCHEMA``: The target Snowflake database schema
+* ``SNOWFLAKE_SCHEMA``: The target Snowflake database schema name
 * ``TOPIC_LIST``: The list of topics to sink divided by comma
 * ``APACHE_KAFKA_HOST``: The hostname of the Apache Kafka service, only needed when using Avro as data format
 * ``SCHEMA_REGISTRY_PORT``: The Apache Kafka's schema registry port, only needed when using Avro as data format
