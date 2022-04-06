@@ -1,7 +1,7 @@
 Indexing and data processing
 =============================
 
-In this article we look at how ClickHouse works with data and how this differs from other database management systems (DBMS).
+In this article we look at how ClickHouse® works with data and how this differs from other database management systems (DBMS).
 In particular we'll touch on such topics as **data indexing** and **a vector computation engine**.
 Understanding the ClickHouse approach to data processing will help you learn why ClickHouse is perfect solution for some use cases and an awful choice for others.
 

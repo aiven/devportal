@@ -149,6 +149,6 @@ Other integrations
 
 Here are some links to learn more about integrations with Aiven:
 
-* `Aiven M3DB & Grafana integration <https://help.aiven.io/services/integrations/getting-started-with-service-integrations>`_
+* `Aiven M3DB & Grafana® integration <https://help.aiven.io/services/integrations/getting-started-with-service-integrations>`_
 
 * `Datadog integration <https://help.aiven.io/services/integrations/getting-started-with-datadog>`_

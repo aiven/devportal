@@ -45,7 +45,7 @@ GitHub
 Gradle
 Grafana
 hardcoded
-Hashicorp
+HashiCorp
 Homebrew
 Heatmap
 [Hh]obbyist

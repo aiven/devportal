@@ -1,5 +1,5 @@
-Connect two PostgreSQL services via datasource integration
-==========================================================
+Connect two PostgreSQL® services via datasource integration
+===========================================================
 
 There are two types of datasource integrations you can use with Aiven for PostgreSQL®: :doc:`Aiven for Grafana® <visualize-grafana>`, and another Aiven for PostgreSQL® service.  If you are connecting two PostgreSQL® services together, perhaps to :doc:`query across them <use-dblink-extension>`, but still want to have a restricted IP allow-list, then you will need to use the ``Datasource`` service integration.
 
