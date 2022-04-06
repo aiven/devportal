@@ -233,4 +233,4 @@ You can sink the ``iot_measurements`` topic to PostgreSQL with the following con
 The configuration file contains the following peculiarities:
 
 * ``"topics": "iot_measurements"``: setting the topic to sink
-* ``"value.converter": "org.apache.kafka.connect.json.JsonConverter"``: the message value is in plain JSON format without a schema, there is not converter defined for the key since it's empty
+* ``"value.converter": "org.apache.kafka.connect.json.JsonConverter"``: the message value is in JSON format with a schema, there is not key converter defined for the key since it's empty
