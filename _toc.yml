@@ -10,7 +10,14 @@ entries:
     - file: docs/platform/concepts
       title: Concepts
       entries:
-        - glob: docs/platform/concepts/*
+      - file: docs/platform/concepts/authentication-tokens
+      - file: docs/platform/concepts/beta_services
+      - file: docs/platform/concepts/cloud-security
+      - file: docs/platform/concepts/logs-metrics-alerts
+      - file: docs/platform/concepts/projects_accounts_access
+      - file: docs/platform/concepts/service-forking
+      - file: docs/platform/concepts/static-ips
+      - file: docs/platform/concepts/tls-ssl-certificates
     - file: docs/platform/howto
       title: HowTo
       entries:
