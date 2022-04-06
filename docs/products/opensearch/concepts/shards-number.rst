@@ -26,7 +26,7 @@ These suggestions are only indicative - optimal values depend heavily on
 your usage pattern and anticipated growth of data in OpenSearch.
 
 You can change the number of shards without losing your data, but this
-process will require a brief downtime when index is rewritten.
+process requires a brief downtime while the index is rewritten.
 
 Performance numbers
 -------------------
