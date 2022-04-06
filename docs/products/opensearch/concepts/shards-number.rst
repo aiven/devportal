@@ -3,7 +3,7 @@ Optimal number of shards
 
 OpenSearch® has a default shard count limit per index (1024) and Aiven does not place any additional restrictions on the number of shards that you can use for your OpenSearch service. However, maintaining higher count of shards comes with the performance cost, and can make the cluster less efficient. In this article we'll give advice on how to determine number of shards you need.
 
-Number of shards depends heavily on the amount of data you have.
+The number of suggested shards depends heavily on the amount of data you have.
 Somewhere between a few gigabytes and a few tens of gigabytes per shard
 is a good rule of thumb.
 
