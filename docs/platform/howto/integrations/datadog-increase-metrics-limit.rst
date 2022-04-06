@@ -7,7 +7,7 @@ This is the guide for how to lift the limitation, get more metrics from the inte
 
 Identify that metrics are been dropped
 --------------------------------------
-Following example is a large Kafka where some metrics can not be found in Datadog dashboards after service integration.
+Following example is a large Apache Kafka® where some metrics can not be found in Datadog dashboards after service integration.
 A number of metrics have been dropped by user Telegraf.
 
 ::

@@ -154,7 +154,7 @@ Microsoft SQL Server
 MySQL - `Grafana <https://grafana.com/grafana/plugins/mysql/>`__ | `Grafana Docs <http://docs.grafana.org/features/datasources/mysql/>`__
     Allows you to query any visualize data from a MySQL compatible database.
 
-OpenSearch - `Grafana <https://grafana.com/grafana/plugins/grafana-opensearch-datasource/>`__ 
+OpenSearch® - `Grafana <https://grafana.com/grafana/plugins/grafana-opensearch-datasource/>`__
     Runs many types of simple or complex OpenSearch queries to visualize logs or metrics stored in OpenSearch. Annotate your graphs with log events stored in OpenSearch. 
 
 OpenTSDB - `Grafana <https://grafana.com/grafana/plugins/opentsdb/>`__ | `Grafana Docs <http://docs.grafana.org/datasources/opentsdb/>`__ 

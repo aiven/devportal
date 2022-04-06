@@ -10,7 +10,7 @@ a good approach for most use cases, but we do also offer static IP
 addresses should you need them. This allows you to configure a firewall
 rule for your own services.
 
-Learn more about :doc:`static IP addresses at Aiven </docs/platform/concepts/static-ips>`_.
+Learn more about :doc:`static IP addresses at Aiven </docs/platform/concepts/static-ips>`.
 
 .. _platform_howto_setup_static_ip:
 

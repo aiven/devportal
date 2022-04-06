@@ -17,8 +17,8 @@ To copy the index data, we will be using ``elasticsearch-dump`` `tool <elashttps
 
 .. _copy-data-from-os-to-os:
 
-Copying data from OpenSearch to Aiven OpenSearch
-------------------------------------------------
+Copying data from OpenSearch to Aiven for OpenSearch®
+-----------------------------------------------------
 
 Prerequisites
 ~~~~~~~~~~~~~
@@ -72,8 +72,8 @@ When the dump is completed, you can check that the index is available in the Ope
 
 .. _copy-data-from-os-to-s3:
 
-Copying data from Aiven OpenSearch to AWS S3
---------------------------------------------
+Copying data from Aiven for OpenSearch to AWS S3
+------------------------------------------------
 
 Prerequisites
 ~~~~~~~~~~~~~
@@ -101,7 +101,7 @@ AWS S3:
 Export OpenSearch index data to S3
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Use ``elasticsearch-dump`` command to copy the data from your **Aiven OpenSearch cluster** to your **AWS S3 bucket**. Use your Aiven OpenSearch ``SERVICE_URI`` for the ``input`` . For the ``output``, choose an AWS S3 file path including the file name that you want for your document. 
+Use ``elasticsearch-dump`` command to copy the data from your **Aiven OpenSearch cluster** to your **AWS S3 bucket**. Use your Aiven for OpenSearch ``SERVICE_URI`` for the ``input`` . For the ``output``, choose an AWS S3 file path including the file name that you want for your document.
 
 
 .. code-block:: shell
@@ -115,3 +115,11 @@ Resources
 ---------
 
 Aiven for OpenSearch databases are automatically backed up, so you can check more information about how the :ref:`Backup process works <opensearch-backup>`.
+
+-------
+
+.. We don't directly reference Elasticsearch itself, but we do use the term
+   "elasticsearch" so it is probably polite to include the following
+   disclaimer
+
+*Elasticsearch is a trademark of Elasticsearch B.V., registered in the U.S. and in other countries.*

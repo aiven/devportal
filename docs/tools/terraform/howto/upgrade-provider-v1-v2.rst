@@ -7,7 +7,7 @@ This article will walk you through upgrading from Aiven Terraform Provider v1 to
 
 To handle the various versions of Terraform, we will be using the ``tfenv``
 tool (`see the project page <https://github.com/tfutils/tfenv>`_), but you can use
-direct releases from Hashicorp if you prefer.
+direct releases from HashiCorp if you prefer.
 
 Major changes in v2
 '''''''''''''''''''
@@ -61,7 +61,7 @@ follow these steps to get the updated syntax:
 ``terraform state replace-provider registry.terraform.io/-/aiven registry.terraform.io/aiven/aiven``
 you will replace old Aiven terraform provider references to the new format.
 
-4. Run ``terraform 0.13upgrade`` to see any additional fixes recommended by Hashicorp.
+4. Run ``terraform 0.13upgrade`` to see any additional fixes recommended by HashiCorp.
 If you are using more providers than Aiven provider you most likely need to upgrade them as well.
 More information `here <https://www.terraform.io/upgrade-guides/0-13.html>`__.
 
