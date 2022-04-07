@@ -49,7 +49,7 @@ Setup the Kafka service:
 #. Make sure that the advanced setting, ``kafka.auto_create_topics_enable`` is enabled. This can be set from
    the Overview tab for the Kafka service in the Aiven console.
 
-#. Enable Schema Registry from the Overview tab for the Kafka service
+#. Enable the Schema Registry from the Overview tab for the Kafka service
 
 #. Create a topic named ``jdbc_sink``
 
