@@ -66,7 +66,7 @@ are installed on your computer)
 .. _modifying-kafkamusicexamplejava:
 
 Modifying ``KafkaMusicExample.java``
---------------------------------
+------------------------------------
 
 Please navigate to the
 ``src/main/java/io/confluent/examples/streams/interactivequeries/kafkamusic``
@@ -121,7 +121,7 @@ truststore files' location on your computer.*
 .. _modify-kafkamusicexampledriverjava:
 
 Modify ``KafkaMusicExampleDriver.java``
------------------------------------
+---------------------------------------
 
 Please make the suggested changes below to the ``KafkaMusicExampleDriver.java`` class file.
 
