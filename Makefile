@@ -83,3 +83,6 @@ service-type-config-grafana:
 service-type-config-influxdb:
 	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "influxdb" > includes/config-influxdb.rst
 
+# (Re)Generate cloud listing
+cloud-list:
+	python "$(SOURCEDIR)/scripts/aiven/clouds.py" > includes/clouds-list.rst

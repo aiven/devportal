@@ -353,4 +353,4 @@ UpCloud
     - ``upcloud-sg-sin``
     - Asia, Singapore 
 
-List of clouds retrieved at **2022-04-07 11:00:20.499579**
+List of clouds retrieved at **2022-04-07 11:10:33.677802**
