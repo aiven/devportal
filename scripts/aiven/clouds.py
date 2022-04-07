@@ -1,10 +1,12 @@
 import requests
+import datetime
 
 
 def print_cloud_entry(cloud):
-    print("  * - {}".format(cloud['geo_region']))
+    print("  * - {}".format(cloud['geo_region'].title()))
     print("    - ``{}``".format(cloud['cloud_name']))
-    print("    - {}".format(cloud['cloud_description']))
+    prefix = cloud['cloud_description'][0: cloud['cloud_description'].find('-')]
+    print("    - {}".format(prefix))
 
 
 def main():
@@ -16,7 +18,7 @@ def main():
 
     prevCloud = None
     for cloud in data:
-        currCloud = cloud["cloud_name"][0: cloud["cloud_name"].find('-')]
+        currCloud = cloud["cloud_description"][cloud["cloud_description"].find('-')+2: cloud["cloud_description"].find(':')]
         if currCloud != prevCloud:
             prevCloud = currCloud
             print("")
@@ -32,6 +34,9 @@ def main():
             print("    - Description")
 
         print_cloud_entry(cloud)
+
+    print("")
+    print("List of clouds retrieved at **{}**".format(datetime.datetime.now()))
 
 
 if __name__ == '__main__':
