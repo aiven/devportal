@@ -61,7 +61,7 @@ Preparing Kafka connect software on a VM:
 
 1. Log in to your VM.
 
-::
+.. code-block:: shell
 
    cd $HOME
 
@@ -78,38 +78,35 @@ Preparing Kafka connect software on a VM:
 
 2. Create a properties file, ``my-connect-distributed.properties`` , for Kafka connect.
 
-::
+.. code-block:: shell
 
    cd $HOME
    cd kafka_2.13-VERSION
    vi ./my-connect-distributed.properties
 
 .. literalinclude:: /code/products/kafka/my-connect-distributed.properties
+    :language: properties
 
 3. Import the Aiven project CA into the JVM's trust store.
 
 Download Aiven project CA - ca.pem and then transfer it to the VM. Execute the following steps on each VM
 participating in the connect cluster:
 
-::
+.. code-block:: shell
 
    # Import the Aiven project CA into the JVM's trust store
    sudo su
    cd /tmp
    openssl x509 -in /path/ca.pem -inform pem -out ca.der -outform der
    keytool -v -printcert -file ca.der
-   #
    cp $JAVA_HOME/jre/lib/security/cacerts $JAVA_HOME/jre/lib/security/cacerts.orig
-   #
    keytool -importcert -alias startssl -keystore $JAVA_HOME/jre/lib/security/cacerts -storepass changeit -file ca.der
-   #
    keytool -keystore $JAVA_HOME/jre/lib/security/cacerts -storepass changeit -list | grep startssl
-   #
    exit
 
 4. Start the cluster
 
-::
+.. code-block:: shell
 
    cd $HOME
    cd kafka_2.13-VERSION
@@ -117,33 +114,32 @@ participating in the connect cluster:
 
 5. Create the JDBC sink connector ``json`` configuration ``jdbc-sink-pg.json``
 
-::
+.. code-block:: json
 
-   {
-     "name": "jdbc-sink-pg",
-     "config":
-     {
-     "connector.class": "io.aiven.connect.jdbc.JdbcSinkConnector",
-     "connection.url":"jdbc:postgresql://PG_HOST:PG_PORT/defaultdb?user=avnadmin&password=PG_PW&ssl=true",
-     "tasks.max":"1",
-     "topics": "jdbc_sink",
-     "auto.create": "true",
-     "value.converter":"io.confluent.connect.avro.AvroConverter",
-    "value.converter.schema.registry.url":"https://KAFKA_HOST:SCHEMA_REGISTRY_PORT",
-     "value.converter.basic.auth.credentials.source":"USER_INFO",
-     "value.converter.basic.auth.user.info":"avnadmin:SCHEMA_REGISTRY_PW"
-     }
-   }
+    {
+        "name": "jdbc-sink-pg",
+        "config": {
+            "connector.class": "io.aiven.connect.jdbc.JdbcSinkConnector",
+            "connection.url": "jdbc:postgresql://PG_HOST:PG_PORT/defaultdb?user=avnadmin&password=PG_PW&ssl=true",
+            "tasks.max": "1",
+            "topics": "jdbc_sink",
+            "auto.create": "true",
+            "value.converter": "io.confluent.connect.avro.AvroConverter",
+            "value.converter.schema.registry.url": "https://KAFKA_HOST:SCHEMA_REGISTRY_PORT",
+            "value.converter.basic.auth.credentials.source": "USER_INFO",
+            "value.converter.basic.auth.user.info": "avnadmin:SCHEMA_REGISTRY_PW"
+        }
+    }
 
 6. Create the JDBC sink connector instance
 
-::
+.. code-block:: shell
 
    curl -s -H "Content-Type: application/json" -X POST -d @jdbc-sink-pg.json http://localhost:8083/connectors/ | jq .
 
 7. Check the status of the JDBC sink connector instance
 
-::
+.. code-block:: shell
 
    # check the status
    curl localhost:8083/connectors/jdbc-sink-pg/status | jq
@@ -153,7 +149,7 @@ participating in the connect cluster:
 
 8. Publish data to the ``jdbc_sink`` topic using ``kafka-avro-console-producer`` ``console-producer.properties``
 
-::
+.. code-block:: properties
 
    security.protocol=SSL
    ssl.truststore.location=/path/client.truststore.jks
@@ -163,7 +159,7 @@ participating in the connect cluster:
    ssl.keystore.password=secret
    ssl.key.password=secret
 
-::
+.. code-block:: shell
 
    cd $HOME
    cd kafka_2.13-VERSION
@@ -172,13 +168,13 @@ participating in the connect cluster:
 
 Data...
 
-::
+.. code-block:: json
 
    {"id": 999, "product": "foo", "quantity": 100, "price": 50}
 
 9. Login into PostgreSQL database and check for data.
 
-::
+.. code-block:: shell
 
    psql PG_SERVICE_URI
 
