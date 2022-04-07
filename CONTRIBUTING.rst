@@ -159,7 +159,7 @@ Formatting tips
 
 Advice on marking up elements correctly can be found in the `README <README.rst>`_.
 
-Other useful tips and tricks for working with Sphinx and reStructuredText can be found in `USEFUL-TIPS <USEFUL-TIPS>`_
+Other useful tips and tricks for working with Sphinx and reStructuredText can be found in `SPHINX-TIPS <SPHINX-TIPS.rst>`_
 
 
 Further reading
