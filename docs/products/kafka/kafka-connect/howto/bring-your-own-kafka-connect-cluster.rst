@@ -33,15 +33,7 @@ The following Aiven for Apache Kafka and PostgreSQL services' details are requir
 Setup the truststore and keystore:
 ----------------------------------
 
-#. Download the Aiven project CA and client keys from the console
-
-#. Generate the *truststore* and *keystore*
-
-::
-
-   openssl pkcs12 -export -inkey service.key -in service.cert -out client.keystore.p12 -name service_key
-
-   keytool -import -file ca.pem -alias CA -keystore client.truststore.jks 
+Create a :doc:`Java keystore and truststore <../../howto/keystore-truststore>` for the Aiven for Apache Kafka service.
 
 Setup the Kafka service:
 ------------------------
