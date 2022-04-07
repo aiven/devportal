@@ -38,11 +38,13 @@ The following information will be required in the configuration process:
 -  Kafka service's service URL
 
 .. image:: kafka-services-service-url.jpg
+   :alt: Kafka Service's URL
 
 -  Schema Registry URL (URL without the username and password), username
    and password from the Kafka service
 
 .. image:: schema-registry-url.jpg
+   :alt: Schema Registry URL
 
 Modifying the KafkaMusicExample to work with Aiven for Kafka and Schema registry
 --------------------------------------------------------------------------------
