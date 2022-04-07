@@ -16,13 +16,8 @@ To copy the index data, we will be using ``elasticsearch-dump`` `tool <elashttps
 
 .. _copy-data-from-os-to-os:
 
-<<<<<<< HEAD
 Copying data from OpenSearch to Aiven for OpenSearch®
 -----------------------------------------------------
-=======
-Copying data from OpenSearch to Aiven for OpenSearch
-----------------------------------------------------
->>>>>>> ae30c68 (Fix missing ® etc.)
 
 Prerequisites
 ~~~~~~~~~~~~~
