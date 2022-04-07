@@ -17,18 +17,20 @@ As a prerequisite, the following information should be collected.
 
 .. _following-aiven-kafka-and-postgresql-services-details-are-required-from-aiven-console-for-the-respective-service:
 
-The following Aiven for Apache Kafka and PostgreSQL services' details are required from Aiven console for the respective service:
----------------------------------------------------------------------------------------------------------------------------------
+Prerequisites:
+--------------
+The following Aiven for Apache Kafka and PostgreSQL services' details are required from Aiven console for the respective
+service:
 
-| *KAFKA_HOST*
-| *KAFKA_PORT*
-| *SCHEMA_REGISTRY_PORT*
-| *SCHEMA_REGISTRY_PW*
-| *KAFKA_CONNECT_SERVICE_URI*
-| *PG_SERVICE_URI*
-| *PG_HOST*
-| *PG_PORT*
-| *PG_PW*
+* ``KAFKA_HOST``: The hostname of the Apache Kafka service
+* ``KAFKA_PORT``: The port of the Apache Kafka service
+* ``SCHEMA_REGISTRY_PORT``: The Apache Kafka's schema registry port
+* ``SCHEMA_REGISTRY_PW``: The Apache Kafka's schema registry user password
+* ``KAFKA_CONNECT_SERVICE_URI``: The URI where the hosted Kafka is sitting
+* ``PG_SERVICE_URI``: The Apache Kafka's schema registry port, only needed when using Avro as data format
+* ``PG_HOST``: The PostgreSQL service hostname
+* ``PG_PORT``: The PostgreSQL service port
+* ``PG_PW``: The PostgreSQL service password
 
 Setup the truststore and keystore:
 ----------------------------------
