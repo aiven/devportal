@@ -90,73 +90,8 @@ Log in to your VM.
    cd $HOME
    cd kafka_2.13-VERSION
    vi ./my-connect-distributed.properties
-   #
-   plugin.path=/path/kafka_2.13-VERSION/share/kafka/plugins/jdbc-connector-for-apache-kafka-VERSION,/path/kafka_2.13-VERSION/share/kafka/plugins/confluentinc-kafka-connect-avro-converter-VERSION/lib
 
-   bootstrap.servers=KAFKA_HOST:KAFKA_PORT
-
-   group.id=connect-cluster
-
-   key.converter=org.apache.kafka.connect.json.JsonConverter
-   value.converter=org.apache.kafka.connect.json.JsonConverter
-   key.converter.schemas.enable=false
-   value.converter.schemas.enable=false
-
-   internal.key.converter=org.apache.kafka.connect.json.JsonConverter
-   internal.value.converter=org.apache.kafka.connect.json.JsonConverter
-   internal.key.converter.schemas.enable=false
-   internal.value.converter.schemas.enable=false
-
-   # Connect clusters create three topics to manage offsets, configs, and status
-   # information. Note that these contribute towards the total partition limit quota.
-   offset.storage.topic=connect-offsets
-   offset.storage.replication.factor=3
-   offset.storage.partitions=3
-
-   config.storage.topic=connect-configs
-   config.storage.replication.factor=3
-
-   status.storage.topic=connect-status
-   status.storage.replication.factor=3
-
-   offset.flush.interval.ms=10000
-
-   ssl.endpoint.identification.algorithm=https
-   request.timeout.ms=20000
-   retry.backoff.ms=500
-   security.protocol=SSL
-   ssl.protocol=TLS
-   ssl.truststore.location=/path/client.truststore.jks
-   ssl.truststore.password=secret
-   ssl.keystore.location=/path/client.keystore.p12
-   ssl.keystore.password=secret
-   ssl.key.password=secret
-   ssl.keystore.type=PKCS12
-
-   consumer.ssl.endpoint.identification.algorithm=https
-   consumer.request.timeout.ms=20000
-   consumer.retry.backoff.ms=500
-   consumer.security.protocol=SSL
-   consumer.ssl.protocol=TLS
-   consumer.ssl.truststore.location=/path/client.truststore.jks
-   consumer.ssl.truststore.password=secret
-   consumer.ssl.keystore.location=/path/client.keystore.p12
-   consumer.ssl.keystore.password=secret
-   consumer.ssl.key.password=secret
-   consumer.ssl.keystore.type=PKCS12
-
-   producer.ssl.endpoint.identification.algorithm=https
-   producer.request.timeout.ms=20000
-   producer.retry.backoff.ms=500
-   producer.security.protocol=SSL
-   producer.ssl.protocol=TLS
-   producer.ssl.truststore.location=/path/client.truststore.jks
-   producer.ssl.truststore.password=secret
-   producer.ssl.keystore.location=/path/client.keystore.p12
-   producer.ssl.keystore.password=secret
-   producer.ssl.key.password=secret
-   producer.ssl.keystore.type=PKCS12
-   #
+.. literalinclude:: /code/products/kafka/my-connect-distributed.properties
 
 |
 | **Import the Aiven project CA into the JVM's trust store.**
