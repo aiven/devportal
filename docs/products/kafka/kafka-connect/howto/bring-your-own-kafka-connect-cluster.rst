@@ -18,7 +18,7 @@ As a prerequisite, the following information should be collected.
 .. _following-aiven-kafka-and-postgresql-services-details-are-required-from-aiven-console-for-the-respective-service:
 
 The following Aiven for Apache Kafka and PostgreSQL services' details are required from Aiven console for the respective service:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------------------------------------------------------------------------------------------------------
 
 | *KAFKA_HOST*
 | *KAFKA_PORT*
@@ -31,7 +31,7 @@ The following Aiven for Apache Kafka and PostgreSQL services' details are requir
 | *PG_PW*
 
 Setup the truststore and keystore:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------
 
 #. Download the Aiven project CA and client keys from the console
 
@@ -44,7 +44,7 @@ Setup the truststore and keystore:
    keytool -import -file ca.pem -alias CA -keystore client.truststore.jks 
 
 Setup the Kafka service:
-~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
 #. Make sure that the advanced setting, ``kafka.auto_create_topics_enable`` is enabled. This can be set from
    the Overview tab for the Kafka service in the Aiven console.
@@ -54,7 +54,7 @@ Setup the Kafka service:
 #. Create a topic named ``jdbc_sink``
 
 Download Kafka Connect binaries:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------
 
 #. Download the latest Kafka release from https://kafka.apache.org/quickstart
 
@@ -63,7 +63,7 @@ Download Kafka Connect binaries:
 #. Download the Avro Value Converter from https://www.confluent.io/hub/confluentinc/kafka-connect-avro-converter
 
 Preparing Kafka connect software on a VM:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------------------
 
 Log in to your VM.
 
