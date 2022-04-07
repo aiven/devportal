@@ -17,7 +17,7 @@ As a prerequisite, the following information should be collected.
 
 .. _following-aiven-kafka-and-postgresql-services-details-are-required-from-aiven-console-for-the-respective-service:
 
-Following Aiven for Apache Kafka and PostgreSQL services' details are required from Aiven console for the respective service:
+The following Aiven for Apache Kafka and PostgreSQL services' details are required from Aiven console for the respective service:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *KAFKA_HOST*
