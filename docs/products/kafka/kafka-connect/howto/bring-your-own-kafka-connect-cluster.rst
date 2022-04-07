@@ -35,7 +35,7 @@ Setup the truststore and keystore:
 
 #. Download the Aiven project CA and client keys from the console
 
-#. Generate *truststore* and *keystore*
+#. Generate the *truststore* and *keystore*
 
 ::
 
