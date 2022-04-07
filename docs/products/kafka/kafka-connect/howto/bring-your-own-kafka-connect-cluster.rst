@@ -30,7 +30,7 @@ The following Aiven for Apache Kafka and PostgreSQL services' details are requir
 | *PG_PORT*
 | *PG_PW*
 
-Setup truststore and keystore:
+Setup the truststore and keystore:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Download the Aiven project CA and client keys from the console
