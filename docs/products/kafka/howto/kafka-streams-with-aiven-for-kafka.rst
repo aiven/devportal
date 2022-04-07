@@ -197,17 +197,29 @@ Checking the data
 
 Point the browser to the following links.
 
-`List all running instances of this
-application <http://localhost:7070/kafka-music/instances>`__
+* List all running instances of this application
 
-`List app instances that currently manage (parts of) state store
-"song-play-count" <http://localhost:7070/kafka-music/instances/song-play-count>`__
+.. code::
 
-`Get the latest top five for the genre
-"punk" <http://localhost:7070/kafka-music/charts/genre/punk>`__
+    http://localhost:7070/kafka-music/instances
 
-`Get the latest top five across all
-genres <http://localhost:7070/kafka-music/charts/top-five>`__
+* List app instances that currently manage (parts of) state store ``song-play-count``
+
+.. code::
+
+    http://localhost:7070/kafka-music/instances/song-play-count
+
+* Get the latest top five for the genre ``punk``
+
+.. code::
+
+    http://localhost:7070/kafka-music/charts/genre/punk
+
+* Get the latest top five across all genres
+
+.. code::
+
+    http://localhost:7070/kafka-music/charts/top-five
 
 *Got here by accident? Learn how Aiven simplifies working with Apache
 Kafka:*
