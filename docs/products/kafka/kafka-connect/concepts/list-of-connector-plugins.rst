@@ -44,7 +44,7 @@ Sink connectors enable the integration of data from an existing Apache Kafka top
 
 * `Couchbase® <https://github.com/couchbase/kafka-connect-couchbase>`__
 
-* `OpenSearch <https://developer.aiven.io/docs/products/kafka/kafka-connect/howto/opensearch-sink.html>`__
+* `OpenSearch® <https://developer.aiven.io/docs/products/kafka/kafka-connect/howto/opensearch-sink.html>`__
 
 * `Elasticsearch <https://developer.aiven.io/docs/products/kafka/kafka-connect/howto/elasticsearch-sink>`__
 
