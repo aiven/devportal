@@ -1,5 +1,4 @@
 import requests
-import datetime
 
 
 def print_cloud_entry(cloud):
@@ -43,9 +42,6 @@ def main():
             print("    - Description")
 
         print_cloud_entry(cloud)
-
-    print("")
-    print("List of clouds retrieved at **{}**".format(datetime.datetime.now()))
 
 
 if __name__ == '__main__':

@@ -9,4 +9,3 @@ A reference list of the default available cloud regions.
 
 
 .. include:: /includes/clouds-list.rst
-
