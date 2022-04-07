@@ -51,14 +51,14 @@ Modifying the KafkaMusicExample to work with Aiven for Kafka and Schema registry
 
 1. Download the ``kafka-streams-examples`` sources from Github
 
-::
+.. code:: shell
 
    $ git clone https://github.com/confluentinc/kafka-streams-examples.git
 
 2. Build the packages using Maven (NOTE: We assume Apache Maven binaries
 are installed on your computer)
 
-::
+.. code:: shell
 
    $ cd kafka-streams-examples/
    $ mvn -DskipTests=true clean package
@@ -74,7 +74,7 @@ directory which contains the ``KafkaMusicExample.java`` source file and make
 the suggested changes within the "Change (begin)" and "Change (end)"
 blocks, and finally save your changes.
 
-::
+.. code:: java
 
      private static final String DEFAULT_REST_ENDPOINT_HOSTNAME = "localhost";
      // Change (begin)
@@ -82,7 +82,7 @@ blocks, and finally save your changes.
      private static final String DEFAULT_SCHEMA_REGISTRY_URL = "https://kafka-20-biz4-a-exercise1.aivencloud.com:17298";
      // Change (end)
 
-   …
+.. code:: java
 
        final int restEndpointPort = Integer.parseInt(args[0]);
        // Change (begin)
@@ -91,7 +91,7 @@ blocks, and finally save your changes.
        // Change (end)
        final String restEndpointHostname = args.length > 3 ? args[3] : DEFAULT_REST_ENDPOINT_HOSTNAME;
 
-   …
+.. code:: java
 
        streamsConfiguration.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
        // Change (begin)
@@ -104,7 +104,7 @@ blocks, and finally save your changes.
    streamsConfiguration.put(SslConfigs.SSL_KEY_PASSWORD_CONFIG, "secret");
        // Change (end)
 
-   …
+.. code:: java
 
        // create and configure the SpecificAvroSerdes required in this example    
        // Change (begin)
@@ -113,8 +113,6 @@ blocks, and finally save your changes.
    serdeConfig.put(AbstractKafkaAvroSerDeConfig.BASIC_AUTH_CREDENTIALS_SOURCE, "USER_INFO");
    serdeConfig.put(AbstractKafkaAvroSerDeConfig.USER_INFO_CONFIG, "avnadmin:schema-reg-password");
        // Change (end)
-
-   …
 
 *Please substitute appropriate values for Kafka service URL, Schema
 registry URL, avndmin's password (for schema registry) and key and
@@ -127,14 +125,14 @@ Modify ``KafkaMusicExampleDriver.java``
 
 Please make the suggested changes below to the ``KafkaMusicExampleDriver.java`` class file.
 
-::
+.. code:: java
 
      // Change (begin)
      private static final String DEFAULT_BOOTSTRAP_SERVERS = "kafka-20-biz4-a-exercise1.aivencloud.com:17295";
      private static final String DEFAULT_SCHEMA_REGISTRY_URL = "https://kafka-20-biz4-a-exercise1.aivencloud.com:17298";
      // Change (end)
 
-   …
+.. code:: java
 
        final int restEndpointPort = Integer.parseInt(args[0]);
        // Change (begin)
@@ -143,7 +141,7 @@ Please make the suggested changes below to the ``KafkaMusicExampleDriver.java`` 
        // Change (end)
        final String restEndpointHostname = args.length > 3 ? args[3] : DEFAULT_REST_ENDPOINT_HOSTNAME;
 
-   …
+.. code:: java
 
        streamsConfiguration.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
        // Change (begin)
@@ -156,7 +154,7 @@ Please make the suggested changes below to the ``KafkaMusicExampleDriver.java`` 
    streamsConfiguration.put(SslConfigs.SSL_KEY_PASSWORD_CONFIG, "secret");
        // Change (end)
 
-   …
+.. code:: java
 
        // create and configure the SpecificAvroSerdes required in this example
        // Change (begin)
@@ -166,8 +164,6 @@ Please make the suggested changes below to the ``KafkaMusicExampleDriver.java`` 
    serdeConfig.put(AbstractKafkaAvroSerDeConfig.USER_INFO_CONFIG, "avnadmin:schema-reg-password");
        // Change (end)
 
-   …
-
 *Please substitute appropriate values for Kafka service URL, Schema
 registry URL, avndmin's password (for schema registry) and key and
 truststore files' location on your computer.*
@@ -175,7 +171,7 @@ truststore files' location on your computer.*
 Building the applications
 -------------------------
 
-::
+.. code:: shell
 
    $ mvn -DskipTests=true clean package
 
@@ -184,7 +180,7 @@ Running the applications
 
 (From Terminal #1) Start the Music example
 
-::
+.. code:: shell
 
    $ java -cp ./target/kafka-streams-examples-5.0.0-standalone.jar io.confluent.examples.streams.interactivequeries.kafkamusic.KafkaMusicExample 7070
 
