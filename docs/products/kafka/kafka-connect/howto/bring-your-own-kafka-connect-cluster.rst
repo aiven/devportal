@@ -57,7 +57,7 @@ Download Kafka Connect binaries:
 Preparing Kafka connect software on a VM:
 -----------------------------------------
 
-Log in to your VM.
+1. Log in to your VM.
 
 ::
 
@@ -74,8 +74,7 @@ Log in to your VM.
    # extract confluent kafka connect avro converter
    unzip confluentinc-kafka-connect-avro-converter-VERSION.zip
 
-|
-| Create a properties file, ``my-connect-distributed.properties`` , for Kafka connect.
+2. Create a properties file, ``my-connect-distributed.properties`` , for Kafka connect.
 
 ::
 
@@ -85,12 +84,9 @@ Log in to your VM.
 
 .. literalinclude:: /code/products/kafka/my-connect-distributed.properties
 
-|
-| **Import the Aiven project CA into the JVM's trust store.**
+3. Import the Aiven project CA into the JVM's trust store.
 
-#. Download Aiven project CA - ca.pem.
-
-Then transfer it to the VM. Execute the following steps on each VM
+Download Aiven project CA - ca.pem and then transfer it to the VM. Execute the following steps on each VM
 participating in the connect cluster:
 
 ::
@@ -109,8 +105,7 @@ participating in the connect cluster:
    #
    exit
 
-|
-| **Start the cluster**
+4. Start the cluster
 
 ::
 
@@ -118,7 +113,7 @@ participating in the connect cluster:
    cd kafka_2.13-VERSION
    ./bin/connect-distributed ./my-connect-distributed.properties
 
-Create the JDBC sink connector ``json`` configuration ``jdbc-sink-pg.json``
+5. Create the JDBC sink connector ``json`` configuration ``jdbc-sink-pg.json``
 
 ::
 
@@ -138,13 +133,13 @@ Create the JDBC sink connector ``json`` configuration ``jdbc-sink-pg.json``
      }
    }
 
-Create the JDBC sink connector instance
+6. Create the JDBC sink connector instance
 
 ::
 
    curl -s -H "Content-Type: application/json" -X POST -d @jdbc-sink-pg.json http://localhost:8083/connectors/ | jq .
 
-Check the status of the JDBC sink connector instance
+7. Check the status of the JDBC sink connector instance
 
 ::
 
@@ -154,7 +149,7 @@ Check the status of the JDBC sink connector instance
    # check running tasks
    curl localhost:8083/connectors/jdbc-sink-pg/tasks
 
-Publish data to the ``jdbc_sink`` topic using ``kafka-avro-console-producer`` ``console-producer.properties``
+8. Publish data to the ``jdbc_sink`` topic using ``kafka-avro-console-producer`` ``console-producer.properties``
 
 ::
 
@@ -179,7 +174,7 @@ Data...
 
    {"id": 999, "product": "foo", "quantity": 100, "price": 50}
 
-Login into PostgreSQL database and check for data.
+9. Login into PostgreSQL database and check for data.
 
 ::
 
