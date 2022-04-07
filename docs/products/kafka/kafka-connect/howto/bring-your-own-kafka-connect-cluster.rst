@@ -53,7 +53,7 @@ Setup the Kafka service:
 
 #. Create a topic named ``jdbc_sink``
 
-Download Kafka connect binaries:
+Download Kafka Connect binaries:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Download the latest Kafka release from https://kafka.apache.org/quickstart
