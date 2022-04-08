@@ -99,6 +99,7 @@ These all probably need ``raw`` mode, to see the actual markup, which I haven't 
 * check for markdown style links (it's so easy to use markdown link style by mistake)
 * check for missing ``:alt:`` in ``.. image::`` directives (at the moment we're relying on a vale bug to spot these - I'm looking into that elsewhere)
 * check for single backticks (as for markdown) where there shoud be double backticks (single backticks in reStructuredText means "use the default role", which in our sphinx setup gives italics, which is a bit confusing and actually quite easy to miss)
+* check for missing ``:language:`` on ``.. literalinclude::``, and for missing language name after ``.. code::`` and its variants
 
 
 
