@@ -36,7 +36,7 @@ Code
 Add the following to ``index.php`` and replace the placeholders with values for your project:
 
 .. literalinclude:: /code/products/m3db/write.php
-    :language: php
+   :language: php
 
 This code creates an InfluxDBClient and connects to the InfluxDB-literate endpoint on the M3DB. Then the code constructs the expected data format, and writes it to the client.
 

@@ -31,6 +31,7 @@ Code
 Add the following to ``main.go`` and replace the ``PROM_WRITE_URL`` placeholder:
 
 .. literalinclude:: /code/products/m3db/write.go
+   :language: go
 
 Since M3DB also supports Prometheus-style writes, this code sets up a Prometheus client and then constructs the expected data format to send to M3DB.
 
