@@ -11,10 +11,10 @@ It can be estimated as:
 
 To calculate the maximum number of connections, we need to check the value of the usable memory. For this estimation, the usable memory value is **rounded down** to the nearest integer value of GiB. 
 
-**For plans under 4 GiB of usable memory**, you can estimate as
-
 .. note::
     Independent of the plan, an ``extra_connection`` with a value of ``1`` will be added for the system process.
+
+**For plans under 4 GiB of usable memory**, you can estimate as
 
 .. math::
     
