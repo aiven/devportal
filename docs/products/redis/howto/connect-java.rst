@@ -31,6 +31,7 @@ Code
 Create a new file named ``RedisExample.java``:
 
 .. literalinclude:: /code/products/redis/connect.java
+   :language: java
 
 This code creates a key named ``key`` with the value ``hello world`` and no expiration time. Then, it gets the key back from Redis and prints its value.
 

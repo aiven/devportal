@@ -42,6 +42,7 @@ Code
 Add the following to ``MySqlExample.java``:
 
 .. literalinclude:: /code/products/mysql/connect.java
+   :language: java
 
 
 This code creates a MySQL client and connects to the database. It fetches version of MySQL and prints it the output.

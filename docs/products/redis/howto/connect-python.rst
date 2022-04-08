@@ -26,6 +26,7 @@ Code
 Create a new file named ``main.py``, add the following content and replace the placeholder with the Redis URI:
 
 .. literalinclude:: /code/products/redis/connect.py
+   :language: python
 
 This code creates a key named ``key`` with the value ``hello world`` and no expiration time. Then, it gets the key back from Redis and prints its value.
 

@@ -32,6 +32,7 @@ Code
 Add the following to ``main.py`` and replace the placeholders with values for your project:
 
 .. literalinclude:: /code/products/postgresql/connect.py
+   :language: python
 
 
 This code creates a PostgreSQL client and connects to the database. Then runs a query checking the database version and prints the response

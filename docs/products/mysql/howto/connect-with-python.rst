@@ -38,6 +38,7 @@ Code
 Add the following to ``main.py`` and replace the placeholders with values for your project:
 
 .. literalinclude:: /code/products/mysql/connect.py
+   :language: python
 
 
 This code creates a MySQL client and connects to the database. It creates a table, inserts some values, fetches them and prints the output.

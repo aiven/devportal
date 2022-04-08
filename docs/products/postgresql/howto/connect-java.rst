@@ -37,6 +37,7 @@ Code
 Add the following to ``PostgresqlExample.java`` and replace the placeholder with the PostgreSQL URI:
 
 .. literalinclude:: /code/products/postgresql/connect.java
+   :language: java
 
 This code creates a PostgreSQL client and opens a connection to the database. Then runs a query checking the database version and prints the response
 
