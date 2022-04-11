@@ -1,7 +1,7 @@
-Create a HTTP sink connector
-============================
+Create an HTTP sink connector
+=============================
 
-The HTTP sink connector enables you to move data from an Aiven for Apache Kafka® cluster to remote server via HTTP. The full list of parameters and setup details is available in the `dedicated GitHub repository <https://github.com/aiven/http-connector-for-apache-kafka/>`_.
+The HTTP sink connector enables you to move data from an Aiven for Apache Kafka® cluster to a remote server via HTTP. The full list of parameters and setup details is available in the `dedicated GitHub repository <https://github.com/aiven/http-connector-for-apache-kafka/>`_.
 
 
 .. _connect_http_sink_prereq:
@@ -25,10 +25,10 @@ Furthermore you need to collect the following information about the target serve
 
     You can browse the additional parameters available for the ``static`` and ``oauth2`` authorization types in the `dedicated documentation <https://github.com/aiven/http-connector-for-apache-kafka/blob/main/docs/sink-connector-config-options.rst>`_.
 
-Setup a HTTP sink connector with Aiven Console
+Setup an HTTP sink connector with Aiven Console
 ----------------------------------------------------
 
-The following example demonstrates how to setup a HTTP sink connector for Apache Kafka using the `Aiven Console <https://console.aiven.io/>`_.
+The following example demonstrates how to setup an HTTP sink connector for Apache Kafka using the `Aiven Console <https://console.aiven.io/>`_.
 
 Define a Kafka Connect configuration file
 '''''''''''''''''''''''''''''''''''''''''
@@ -51,13 +51,13 @@ The configuration file contains the following entries:
 
 * ``name``: the connector name
 * ``http.url`` and ``http.authorization.type``: remote server URL and authorization parameters collected in the :ref:`prerequisite <connect_http_sink_prereq>` phase. 
-* ``key.converter`` and ``value.converter``:  defines the messages data format in the Apache Kafka topic. The ``io.confluent.connect.avro.AvroConverter`` converter translates messages from the Avro format. To retrieve the messages schema we use Aiven's `Karapace schema registry <https://github.com/aiven/karapace>`_ as specified by the ``schema.registry.url`` parameter and related credentials.
+* ``key.converter`` and ``value.converter``:  defines the message data format in the Apache Kafka topic. The ``io.confluent.connect.avro.AvroConverter`` converter translates messages from the Avro format. To retrieve the message schema we use Aiven's `Karapace schema registry <https://github.com/aiven/karapace>`_ as specified by the ``schema.registry.url`` parameter and related credentials.
 
 .. Note::
 
-    The ``key.converter`` and ``value.converter`` sections define how the topic messages will be parsed and needs to be included in the connector configuration. 
+    The ``key.converter`` and ``value.converter`` sections define how the topic messages will be parsed and need to be included in the connector configuration.
 
-    When using Avro as source data format, you need to set following parameters
+    When using Avro as source data format, you need to set the following parameters
 
     * ``value.converter.schema.registry.url``: pointing to the Aiven for Apache Kafka schema registry URL in the form of ``https://APACHE_KAFKA_HOST:SCHEMA_REGISTRY_PORT`` with the ``APACHE_KAFKA_HOST`` and ``SCHEMA_REGISTRY_PORT`` parameters :ref:`retrieved in the previous step <connect_http_sink_prereq>`.
     * ``value.converter.basic.auth.credentials.source``: to the value ``USER_INFO``, since you're going to login to the schema registry using username and password.
@@ -70,7 +70,7 @@ Create a Kafka Connect connector with the Aiven Console
 To create the connector, access the `Aiven Console <https://console.aiven.io/>`_ and select the Aiven for Apache Kafka® or Aiven for Apache Kafka Connect® service where the connector needs to be defined, then:
 
 1. Click on the **Connectors** tab
-2. Clink on **Create New Connector**, the button is enabled only for services :doc:`with Kafka Connect enabled <enable-connect>`.
+2. Clink on **Create New Connector**. This button is only enabled for services :doc:`with Kafka Connect enabled <enable-connect>`.
 3. Select the **HTTP sink**
 4. Under the *Common* tab, locate the **Connector configuration** text box and click on **Edit**
 5. Paste the connector configuration (stored in the ``http_sink.json`` file) in the form
@@ -78,7 +78,7 @@ To create the connector, access the `Aiven Console <https://console.aiven.io/>`_
 
 .. Note::
 
-    The Aiven Console parses the configuration file and fills the relevant UI fields. You can review the UI fields across the various tab and change them if necessary. The changes will be reflected in JSON format in the **Connector configuration** text box.
+    The Aiven Console parses the configuration file and fills the relevant UI fields. You can review the UI fields across the various tabs and change them if necessary. The changes will be reflected in JSON format in the **Connector configuration** text box.
 
 7. After all the settings are correctly configured, click on **Create new connector**
 8. Verify the connector status under the **Connectors** tab
@@ -86,7 +86,7 @@ To create the connector, access the `Aiven Console <https://console.aiven.io/>`_
 
 .. Note::
 
-    Connectors can be created also using the dedicated :ref:`Aiven CLI command <avn_service_connector_create>`.
+    Connectors can also be created using the dedicated :ref:`Aiven CLI command <avn_service_connector_create>`.
 
 Example: Create an HTTP sink connector with a server having no authorization
 ----------------------------------------------------------------------------
@@ -113,7 +113,7 @@ You can sink the ``iot_measurements`` topic to a remote server over HTTP with th
         "value.converter": "org.apache.kafka.connect.storage.StringConverter"
     }
 
-The configuration file contains the following peculiarities:
+The configuration file contains the following things to note:
 
 * ``"topics": "iot_measurements"``: setting the topic to sink
 * ``"value.converter": "org.apache.kafka.connect.json.StringConverter"``: the message value and key are in plain JSON format without a schema, therefore we can just pass them as plain string via HTTP
