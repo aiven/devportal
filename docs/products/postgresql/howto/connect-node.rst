@@ -31,6 +31,7 @@ Code
 Add the following to ``index.js`` and replace the placeholder with the PostgreSQL URI:
 
 .. literalinclude:: /code/products/postgresql/connect.js
+   :language: javascript
 
 This code creates a PostgreSQL client and opens a connection to the database. Then runs a query checking the database version and prints the response.
 
