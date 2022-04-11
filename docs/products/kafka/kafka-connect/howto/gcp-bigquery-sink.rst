@@ -1,7 +1,7 @@
 Create a Google BigQuery sink connector
 =======================================
 
-The Google BigQuery sink connector enables you to move data from an Aiven for Apache Kafka® cluster to a set of Google BigQuery tables for further processing and analysis. 
+The `Google BigQuery sink connector <https://github.com/confluentinc/kafka-connect-bigquery>`_ enables you to move data from an Aiven for Apache Kafka® cluster to a set of Google BigQuery tables for further processing and analysis. 
 
 
 .. _connect_bigquery_sink_prereq:
@@ -55,7 +55,7 @@ Define the connector configurations in a file (we'll refer to it with the name `
         "connector.class": "com.wepay.kafka.connect.bigquery.BigQuerySinkConnector",
         "topics": "TOPIC_LIST",
         "project": "GCP_PROJECT_NAME",
-        "datasets": ".*=BIGQUERY_DATASET_NAME",
+        "defaultDataset": ".*=BIGQUERY_DATASET_NAME",
         "schemaRetriever": "com.wepay.kafka.connect.bigquery.retrieve.IdentitySchemaRetriever",
         "schemaRegistryClient.basic.auth.credentials.source": "URL",
         "schemaRegistryLocation":"https://SCHEMA_REGISTRY_USER:SCHEMA_REGISTRY_PASSWORD@APACHE_KAFKA_HOST:SCHEMA_REGISTRY_PORT",
@@ -76,7 +76,7 @@ The configuration file contains the following entries:
 
 * ``name``: the connector name
 * ``project``: the GCP project name where the target Google BigQuery is located. 
-* ``datasets``: the target BigQuery datasets names, prefixed with ``.*=``.
+* ``defaultDataset``: the target BigQuery datasets names, prefixed with ``.*=``.
 * ``schemaRegistryLocation``: details of the connection to Karapace offering the schema registry functionality, only needed when the source data is in Avro format.
 * ``key.converter`` and ``value.converter``:  defines the messages data format in the Apache Kafka topic. The ``io.confluent.connect.avro.AvroConverter`` converter translates messages from the Avro format. To retrieve the messages schema we use Aiven's `Karapace schema registry <https://github.com/aiven/karapace>`_ as specified by the ``schema.registry.url`` parameter and related credentials.
 
@@ -90,7 +90,13 @@ The configuration file contains the following entries:
     * ``value.converter.basic.auth.credentials.source``: to the value ``USER_INFO``, since you're going to login to the schema registry using username and password.
     * ``value.converter.schema.registry.basic.auth.user.info``: passing the required schema registry credentials in the form of ``SCHEMA_REGISTRY_USER:SCHEMA_REGISTRY_PASSWORD`` with the ``SCHEMA_REGISTRY_USER`` and ``SCHEMA_REGISTRY_PASSWORD`` parameters :ref:`retrieved in the previous step <connect_elasticsearch_sink_prereq>`. 
 
+
 * ``autoCreateTables``: enables the auto creation of the target BigQuery tables if they don't exist 
+
+.. Warning:: 
+
+    Enabling the flag ``autoCreateTables`` (and additionally ``autoUpdate`` and ``allowNewBigQueryFields``, see `dedicate documentation <https://github.com/wepay/kafka-connect-bigquery/wiki/Connector-Configuration>`_ for more info) allows the connector to automatically create and evolve BigQuery tables based on the incoming topic messages. In such cases, there is less overall control over the tables, columns and data types definition possibly resulting in errors especially if the messages evolve beyond BigQuery compatibility.
+
 * ``keySource``: defines the format of the GCP key, the value should be ``JSON`` if the key is generated in JSON format
 * ``keyfile``: contains the GCP service account key, correctly escaped as defined in the :ref:`prerequisite phase <connect_bigquery_sink_prereq>`
 
@@ -112,6 +118,8 @@ The configuration file contains the following entries:
         ...
 
     You can review the connector version available in an Aiven for Apache Kafka service with the :ref:`dedicated Aiven CLI command <avn_cli_service_connector_available>` ``avn service connector available``.
+
+The full list of parameters is available in the `dedicated GitHub page <https://github.com/wepay/kafka-connect-bigquery/wiki/Connector-Configuration>`_.
 
 Create a Kafka Connect connector with the Aiven Console
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''
