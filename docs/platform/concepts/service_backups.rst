@@ -1,5 +1,5 @@
 Backup at Aiven
-----------------
+========================
 
 
 All the Aiven services have time-based backups (except for the Kafka) that are encrypted and securely stored. The backup retention times vary based on the service and the selected service plan. Backups we take for managing the service are not available for download for any service type, as those are compressed and encrypted by our management platform.
@@ -35,11 +35,12 @@ Depending on the service plan, each service provides different backups with diff
 +---------------------------------------+------------------------------------------+---------------------------------------------------------+--------------------------------------------------------+--------------------------------------------------------+
 | Aiven for ClickHouse®                 | Daily backups up to 2 days               | Daily backups up to 2 days                              | Daily backups up to 14 days                            | Plan Not Available                                     |
 +---------------------------------------+------------------------------------------+---------------------------------------------------------+--------------------------------------------------------+--------------------------------------------------------+
+
 The above table describes only regarding the hourly and daily backups with the number of days of retention. The following section deals with more specific backup strategies on each service type.
 
 
 Aiven for PostgreSQL®
-'''''''''
+'''''''''''''''''''''''''''
 We take daily full backups and constantly archive WAL segments to cloud object storage. In the event of a node failure we can reconstruct the latest state from a replica (if using a Business or Premium plan) or from the latest base backup and replaying the latest WAL segments on top of that (if using a Startup plan). You can also supplement this with a remote read replica service which you can even run in a different cloud region or another cloud provider entirely, but can be promoted to master if needed.
 
 You may modify the backup time configuration option in Advanced Configuration in Aiven console which will begin shifting the backup schedule to the new time. If there was a recent backup taken, it may take another backup cycle before it starts applying new backup time. 
@@ -51,7 +52,7 @@ More information Refer to :
  - https://help.aiven.io/en/articles/1755229-aiven-for-postgresql-remote-replica
 
 Aiven for MySQL
-'''''
+'''''''''''''''''''''
 These databases are automatically backed-up, with full backups daily, and Binary log recorded continuously. All backups are encrypted. We use the open source myhoard software to do this. Myhoard uses Percona XtraBackup internally for taking a full (or incremental) snapshot for MySQL. 
 
 You may modify the backup time configuration option in Advanced Configuration in Aiven console which will begin shifting the backup schedule to the new time. If there was a recent backup taken, it may take another backup cycle before it starts applying new backup time. 
@@ -60,7 +61,7 @@ More information refer to:
  - https://help.aiven.io/en/articles/5199859-mysql-backups
 
 Aiven for Apache Kafka®
-''''''
+''''''''''''''''''''''''''''''
 We do not take backups and data durability is determined by the replication of data across the cluster, as in general it's more often used as a transport for data rather than a permanent store and the way how Kafka stores data does not really allow reasonable backup to be implemented using traditional backup strategies. To back up data passing through Kafka, we recommend setting up :doc:`MirrorMaker2<../../products/kafka/kafka-mirrormaker/index>` to replicate the data to another cluster, which could be an Aiven service or a Kafka cluster on your own infrastructure. 
 
 The backup cluster would be running as an independent Kafka service, therefore you have complete freedom of choice in which zone the service should be based. Unlike earlier versions, Mirrormaker2 provides the tools for mapping the offsets between the source and destination, so the user does not need to make this sort of calculations. More details here, under the section "Offset Mapping" in this blog `article <https://blog.cloudera.com/a-look-inside-kafka-mirrormaker-2/>`__.
@@ -81,16 +82,16 @@ More information refer to :
 
 
 Aiven for Redis™*
-''''''
+''''''''''''''''''''''''
 We offer backups that are taken every 12 hours and for persistence, we support **RBD** and have also recently added No Persistence feature which can be controlled by redis_persistence under **Advanced Configuration**. At the moment we do not support AOF persistence however our team has it in our backlog.
 
 When persistence is 'rdb', Redis does RDB dumps each 10 minutes if any key is changed. Also RDB dumps are done according to backup schedule for backup purposes. When persistence is 'off', no RDB dumps and backups are done, so data can be lost at any moment if service is restarted for any reason, or if service is powered off. Also service can't be forked.
 
 Aiven for InfluxDB®
-''''''''
+''''''''''''''''''''''''''
 We offer backups that are taken every 12 hours with 2.5 days of retention. 
 We automatically backup Influx, encrypt it and finally upload it to our S3 account in the same region. When an instance has to be rebuilt, we download the backup and restore from it to create the new instance.
 
 Aiven for Apache Cassandra®
-''''''''''
+''''''''''''''''''''''''''''''
 We currently support backups taken every 24 hours. The PITR feature is currently not available. Please contact support if you would to be notified once PITR feature is available for Cassandra.
