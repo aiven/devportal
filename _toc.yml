@@ -179,6 +179,7 @@ entries:
             - file: docs/products/kafka/kafka-connect/howto/gcs-sink
             - file: docs/products/kafka/kafka-connect/howto/opensearch-sink
             - file: docs/products/kafka/kafka-connect/howto/elasticsearch-sink
+            - file: docs/products/kafka/kafka-connect/howto/http-sink
         - file: docs/products/kafka/kafka-connect/reference
           title: Reference
           entries:
