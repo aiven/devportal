@@ -22,7 +22,7 @@ Furthermore, for the JDBC sink connector database example, you need to collect t
 * ``PG_PORT``: The PostgreSQL service port
 * ``PG_USERNAME``: The PostgreSQL service username
 * ``PG_PASSWORD``: The PostgreSQL service password
-* ``PG_DATABASE_NAME``: The PostgreSQL serrvice database name
+* ``PG_DATABASE_NAME``: The PostgreSQL service database name
 
 .. Note::
 
@@ -63,7 +63,7 @@ You need to enable the schema registry features offered by `Karapace <https://he
 Download the required binaries
 ''''''''''''''''''''''''''''''
 
-The The Apache Kafka binaries are needed to setup a Apache Kafka Connect cluster locally:
+The following binaries are needed to setup a Apache Kafka Connect cluster locally:
 
 * `Apache Kafka <https://kafka.apache.org/quickstart>`_
 * `Aiven Kafka connect JDBC connector <https://github.com/aiven/jdbc-connector-for-apache-kafka/releases>`_
@@ -80,7 +80,7 @@ The following process defines the setup required to create a local Apache Kafka 
 
    tar -xzf kafka_2.13-3.1.0.tgz
 
-2. create a ``plugins`` folder and unzip the JDBC and avro binaries
+2. create a ``plugins`` folder and unzip the JDBC and Avro binaries
 
 .. code-block:: shell
 
