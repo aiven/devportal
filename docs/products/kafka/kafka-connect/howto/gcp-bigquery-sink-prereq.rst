@@ -5,7 +5,7 @@ To be able to sink data from Apache Kafka® to Google BigQuery via the dedicated
 
 * Create a new `Google service account and generate a JSON service key <https://cloud.google.com/docs/authentication/getting-started>`_ 
 * Verify that BigQuery API is enabled
-* Create a `BigQuery dataset <https://cloud.google.com/bigquery/docs/datasets>`_ where the data is going to be stored
+* Create a new `BigQuery dataset <https://cloud.google.com/bigquery/docs/datasets>`_ or define an existing one where the data is going to be stored
 * Grant `dataset access to the service account <https://cloud.google.com/bigquery/docs/dataset-access-controls>`__
 
 
@@ -36,7 +36,7 @@ The BigQuery sink connector uses the API to push the data. To enable them:
 Create the Google BigQuery dataset
 ----------------------------------
 
-You can create the Google BigQuery dataset using `the GCP console <https://console.cloud.google.com/bigquery>`__ by following the `instructions in the dedicated page <https://cloud.google.com/bigquery/docs/datasets>`_. 
+You can either send the Apache Kafka data to an existing Google BigQuery dataset or create a new one using `the GCP console <https://console.cloud.google.com/bigquery>`__ by following the `instructions in the dedicated page <https://cloud.google.com/bigquery/docs/datasets>`_. 
 
 .. Tip::
 
