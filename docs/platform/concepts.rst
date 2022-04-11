@@ -15,6 +15,9 @@ Learn about some of the key concepts for working with Aiven platform:
 
   Learn about Aiven's access control, encryption, network security, data privacy and operator access.
 
+* :doc:`Backups at Aiven <docs/platform/concepts/service_backups>`.
+
+  Learn about how Aiven regulates Backup for each service and it's retention policies.
 
 * :doc:`Service forking </docs/platform/concepts/service-forking>`.
 
