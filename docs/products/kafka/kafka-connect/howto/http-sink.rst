@@ -16,10 +16,13 @@ Furthermore you need to collect the following information about the target serve
 * ``SERVER_URL``: The remote server URL that will be called via POST method
 * ``SERVER_AUTHORIZATION_TYPE``: The HTTP authorization type, supported types are ``none``, ``oauth2`` and ``static``
 * ``TOPIC_LIST``: The list of topics to sink divided by comma
-* ``APACHE_KAFKA_HOST``: The hostname of the Apache Kafka service, only needed when using Avro as data format
-* ``SCHEMA_REGISTRY_PORT``: The Apache Kafka's schema registry port, only needed when using Avro as data format
-* ``SCHEMA_REGISTRY_USER``: The Apache Kafka's schema registry username, only needed when using Avro as data format
-* ``SCHEMA_REGISTRY_PASSWORD``: The Apache Kafka's schema registry user password, only needed when using Avro as data format
+
+and, if you are using Avro as the data format:
+
+* ``APACHE_KAFKA_HOST``: The hostname of the Apache Kafka service
+* ``SCHEMA_REGISTRY_PORT``: The Apache Kafka's schema registry port
+* ``SCHEMA_REGISTRY_USER``: The Apache Kafka's schema registry username
+* ``SCHEMA_REGISTRY_PASSWORD``: The Apache Kafka's schema registry user password
 
 .. Note::
 
