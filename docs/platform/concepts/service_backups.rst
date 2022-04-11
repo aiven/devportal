@@ -59,12 +59,6 @@ You may modify the backup time configuration option in Advanced Configuration in
 More information refer to:
  - https://help.aiven.io/en/articles/5199859-mysql-backups
 
-.. warning::
-    Since customers depend on their old backups to be retained until they are able to solve their problems, it is to be noted that the customer not to perform the following actions as this resets the backup count back to it's default value and delete all older backups that are not part of the new backup count (or shall we say the default backup count of the service plan):
-     - Changing the service plan
-     - Migrating to another cloud region or VPC
-     - Powering off and on
-
 Aiven for Apache Kafka®
 ''''''
 We do not take backups and data durability is determined by the replication of data across the cluster, as in general it's more often used as a transport for data rather than a permanent store and the way how Kafka stores data does not really allow reasonable backup to be implemented using traditional backup strategies. To back up data passing through Kafka, we recommend setting up :doc:`MirrorMaker2<../../products/kafka/kafka-mirrormaker/index>` to replicate the data to another cluster, which could be an Aiven service or a Kafka cluster on your own infrastructure. 
