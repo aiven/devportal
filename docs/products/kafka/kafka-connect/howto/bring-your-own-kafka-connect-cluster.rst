@@ -106,8 +106,8 @@ The following process defines the setup required to create a local Apache Kafka 
    * ``APACHE_KAFKA_HOST``, ``APACHE_KAFKA_PORT``, ``SCHEMA_REGISTRY_PORT``, ``SCHEMA_REGISTRY_USER``, ``SCHEMA_REGISTRY_PASSWORD``, to the related parameters fetched in the :ref:`prerequisite step <bring_your_own_kafka_connect_prereq>`
    * ``KEYSTORE_PATH``, ``TRUSTSTORE_PATH`` and ``KEY_TRUST_SECRET`` to the keystore, truststore location and related secret as defined in the :ref:`related step <setup_trustore_keystore_bring_your_own_connect>`
 
-.. literalinclude:: /code/products/kafka/my-connect-distributed.properties
-    :language: properties
+   .. literalinclude:: /code/products/kafka/my-connect-distributed.properties
+      :language: properties
 
 4. Start the local Apache Kafka Connect cluster, executing the following from the ``kafka_2.13-3.1.0`` folder: 
 
