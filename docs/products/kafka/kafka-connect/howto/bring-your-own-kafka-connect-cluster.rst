@@ -153,7 +153,7 @@ The following steps define how you can add a JDBC connector to the local Apache 
 
       curl localhost:8083/connectors/jdbc-sink-pg/status | jq
 
-The result should be similar to the following
+   The result should be similar to the following
 
    .. code-block:: json
 
