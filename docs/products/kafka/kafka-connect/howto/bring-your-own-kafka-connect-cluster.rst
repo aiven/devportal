@@ -2,7 +2,9 @@ Bring your own Apache Kafka® Connect cluster
 ============================================
 
 Aiven provides Apache Kafka® Connect cluster as a managed service in combination with Aiven for Apache Kafka managed service. However, there are
-circumstances where you may want to roll your own Kafka Connect cluster. The following article defines the necessary steps to integrate your own Apache Kafka Connect cluster with Aiven for Apache Kafka® and use schema registry offered by `Karapace <https://help.aiven.io/en/articles/5651983>`__. The example shows how to create a JDBC sink connector to a PostgreSQL® database.
+circumstances where you may want to roll your own Kafka Connect cluster. 
+
+The following article defines the necessary steps to integrate your own Apache Kafka Connect cluster with Aiven for Apache Kafka® and use schema registry offered by `Karapace <https://help.aiven.io/en/articles/5651983>`__. The example shows how to create a JDBC sink connector to a PostgreSQL® database.
 
 .. _bring_your_own_kafka_connect_prereq:
 
@@ -15,6 +17,9 @@ Furthermore, for the JDBC sink connector database example, you need to collect t
 
 * ``APACHE_KAFKA_HOST``: The hostname of the Apache Kafka service
 * ``APACHE_KAFKA_PORT``: The port of the Apache Kafka service
+* ``REST_API_PORT``: The Apache Kafka's REST API port, only needed when testing data flow with REST APIs
+* ``REST_API_USERNAME``: The Apache Kafka's REST API username, only needed when testing data flow with REST APIs
+* ``REST_API_PASSWORD``: The Apache Kafka's REST API password, only needed when testing data flow with REST APIs
 * ``SCHEMA_REGISTRY_PORT``: The Apache Kafka's schema registry port, only needed when using Avro as data format
 * ``SCHEMA_REGISTRY_USER``: The Apache Kafka's schema registry username, only needed when using Avro as data format
 * ``SCHEMA_REGISTRY_PASSWORD``: The Apache Kafka's schema registry user password, only needed when using Avro as data format
@@ -29,8 +34,8 @@ Furthermore, for the JDBC sink connector database example, you need to collect t
     If you're using Aiven for PostgreSQL and Aiven for Apache Kafka the above details are available in the `Aiven console <https://console.aiven.io/>`_ service Overview tab or via the dedicated ``avn service get`` command with the :ref:`Aiven CLI <avn_service_get>`.
 
 
-Attach your own Apache Kafka Connect cluster to Aiven for Apache Kafka
-----------------------------------------------------------------------
+Attach your own Apache Kafka Connect cluster to Aiven for Apache Kafka®
+-----------------------------------------------------------------------
 
 The following example demonstrates how to setup a local Apache Kafka Connect cluster with a working JDBC sink connector and attach it to an Aiven for Apache Kafka service.
 
@@ -42,20 +47,16 @@ Setup the truststore and keystore
 Create a :doc:`Java keystore and truststore <../../howto/keystore-truststore>` for the Aiven for Apache Kafka service.
 For the following example we assume:
 
-* the keystore is available at ``KEYSTORE_PATH/client.keystore.p12``
-* the truststore is available at ``TRUSTSTORE_PATH/client.truststore.jks``
-* all the keystore and truststore secret is the same ``KEY_TRUST_SECRET``
+* The keystore is available at ``KEYSTORE_PATH/client.keystore.p12``
+* The truststore is available at ``TRUSTSTORE_PATH/client.truststore.jks``
+* All the keystore and truststore secret is the same ``KEY_TRUST_SECRET``
 
 Configure the Aiven for Apache Kafka service
 ''''''''''''''''''''''''''''''''''''''''''''
 
 You need to enable the schema registry features offered by `Karapace <https://help.aiven.io/en/articles/5651983>`__. You can do it in the `Aiven Console <https://console.aiven.io/>`_ in the Aiven for Apache Kafka service overview tab.
 
-1. Enable the **Schema Registry (Karapace)**
-
-.. Tip::
-
-   Enabling also **Apache Kafka REST API (Karapace)** allows you to browse messages in Aiven for Apache Kafka topics directly from the Aiven console.
+1. Enable the **Schema Registry (Karapace)** and **Apache Kafka REST API (Karapace)**
 
 2. In the **Topic** tab, create a new topic called ``jdbc_sink``, the topic will be used by the Apache Kafka Connect connector
 
@@ -80,19 +81,28 @@ The following process defines the setup required to create a local Apache Kafka 
 
    tar -xzf kafka_2.13-3.1.0.tgz
 
-2. create a ``plugins`` folder and unzip the JDBC and Avro binaries
+2. Within the newly ``kafka_2.13-3.1.0`` created create a ``plugins`` folder and a ``lib`` sub-folder
 
 .. code-block:: shell
 
    cd kafka_2.13-3.1.0
-   mkdir -p plugins
-   cd plugins
+   mkdir -p plugins/lib
+
+
+3. Unzip the JDBC and Avro binaries and copy the ``jar`` files in the ``plugins/lib`` folder
+
+.. code-block:: shell
+
    # extract aiven connect jdbc
    unzip jdbc-connector-for-apache-kafka-6.7.0.zip
    # extract confluent kafka connect avro converter
    unzip confluentinc-kafka-connect-avro-converter-7.1.0.zip
+   # copying plugins in the plugins/lib folder
+   cp jdbc-connector-for-apache-kafka-6.7.0/*.jar plugins/lib/
+   cp confluentinc-kafka-connect-avro-converter-7.1.0/*.jar plugins/lib/
 
 3. Create a properties file, ``my-connect-distributed.properties``, under the main ``kafka_2.13-3.1.0`` folder for the Apache Kafka Connect settings. Change the following placeholders:
+
    * ``PATH_TO_KAFKA_HOME`` with the path to the ``kafka_2.13-3.1.0`` folder
    * ``APACHE_KAFKA_HOST``, ``APACHE_KAFKA_PORT``, ``SCHEMA_REGISTRY_PORT``, ``SCHEMA_REGISTRY_USER``, ``SCHEMA_REGISTRY_PASSWORD``, with the related parameters fetched in the :ref:`prerequisite step <bring_your_own_kafka_connect_prereq>`
    * ``KEYSTORE_PATH``, ``TRUSTSTORE_PATH`` and ``KEY_TRUST_SECRET`` with the keystore, truststore location and related secret as defined in the :ref:`related step <setup_trustore_keystore_bring_your_own_connect>`
@@ -119,7 +129,7 @@ The following steps define how you can add a JDBC connector to the local Apache 
         "name": "jdbc-sink-pg",
         "config": {
             "connector.class": "io.aiven.connect.jdbc.JdbcSinkConnector",
-            "connection.url": "jdbc:postgresql://PG_HOST:PG_PORT/PG_DATABASE_NAME?user=PG_USERNAME&password=PG_PASSWORD&ssl=true",
+            "connection.url": "jdbc:postgresql://PG_HOST:PG_PORT/PG_DATABASE_NAME?user=PG_USERNAME&password=PG_PASSWORD&ssl=required",
             "tasks.max": "1",
             "topics": "jdbc_sink",
             "auto.create": "true",
@@ -130,57 +140,68 @@ The following steps define how you can add a JDBC connector to the local Apache 
         }
     }
 
-6. Create the JDBC sink connector instance using Kafka Connect REST APIs
+2. Create the JDBC sink connector instance using Kafka Connect REST APIs
 
 .. code-block:: shell
 
-   curl -s -H "Content-Type: application/json" -X POST -d @jdbc-sink-pg.json http://localhost:8083/connectors/ | jq .
+   curl -s -H "Content-Type: application/json" -X POST \
+      -d @jdbc-sink-pg.json                            \
+      http://localhost:8083/connectors/
 
-7. Check the status of the JDBC sink connector instance
+3. Check the status of the JDBC sink connector instance, ``jq`` is used to beautify the output
 
 .. code-block:: shell
 
-   # check the status
    curl localhost:8083/connectors/jdbc-sink-pg/status | jq
 
-   # check running tasks
-   curl localhost:8083/connectors/jdbc-sink-pg/tasks
-
-8. Publish data to the ``jdbc_sink`` topic using ``kafka-avro-console-producer`` ``console-producer.properties``
-
-.. code-block:: properties
-
-   security.protocol=SSL
-   ssl.truststore.location=/path/client.truststore.jks
-   ssl.truststore.password=secret
-   ssl.keystore.type=PKCS12
-   ssl.keystore.location=/path/client.keystore.p12
-   ssl.keystore.password=secret
-   ssl.key.password=secret
-
-.. code-block:: shell
-
-   cd $HOME
-   cd kafka_2.13-VERSION
-
-   ./bin/kafka-avro-console-producer --broker-list KAFKA_HOST:KAFKA_PORT --topic jdbc_sink  --producer.config ./console-producer.properties --property schema.registry.url=https://KAFKA_HOST:SCHEMA_REGISTRY_PORT --property basic.auth.credentials.source=USER_INFO --property basic.auth.user.info=avnadmin:SCHEMA_REGISTRY_PW --property value.schema='{"type":"record","name":"myrecord","fields":[{"name":"id","type":"int"},{"name":"product","type":"string"},{"name":"quantity","type":"int"},{"name":"price","type":"float"}]}'
-
-Data...
+The result should be similar to the following
 
 .. code-block:: json
 
-   {"id": 999, "product": "foo", "quantity": 100, "price": 50}
+   {
+      "name": "jdbc-sink-pg",
+      "connector": {
+         "state": "RUNNING",
+         "worker_id": "10.128.0.12:8083"
+      },
+      "tasks": [
+         {
+            "id": 0,
+            "state": "RUNNING",
+            "worker_id": "10.128.0.12:8083"
+         }
+      ],
+      "type": "sink"
+   }
 
-9. Login into PostgreSQL database and check for data.
+
+Verify the JDBC connector using Karapace REST APIs
+''''''''''''''''''''''''''''''''''''''''''''''''''
+
+To verify that the connector is working, you can write messages to the ``jdbc_sink`` topic in Avro format using `Karapace REST APIs <https://github.com/aiven/karapace>`_ by following the steps below:
+
+1. Create a new **Avro schema** using the ``/subjects/`` endpoint, after changing the placeholders for ``REST_API_USER``, ``REST_API_PASSWORD``, ``APACHE_KAFKA_HOST``, ``REST_API_PORT``
 
 .. code-block:: shell
 
-   psql PG_SERVICE_URI
+   curl -X POST -H "Content-Type: application/vnd.schemaregistry.v1+json" \
+      --data '''
+         {"schema":
+            "{\"type\": \"record\",\"name\": \"jdbcsinkexample\",\"namespace\": \"example\",\"doc\": \"example\",\"fields\": [{ \"type\": \"string\", \"name\": \"name\", \"doc\": \"person name\", \"namespace\": \"example\", \"default\": \"mario\"},{ \"type\": \"int\", \"name\": \"age\", \"doc\": \"persons age\", \"namespace\": \"example\", \"default\": 5}]}"
+         }''' \
+      https://REST_API_USER:REST_API_PASSWORD@APACHE_KAFKA_HOST:REST_API_PORT/subjects/jdbcsinkexample/versions/
 
-   psql> select * from jdbc_sink;
+The above call creates a new schema called ``jdbcsinkexample`` with a schema containing two fields (``name`` and ``age``).
 
-|
-| *Got here by accident? Learn how Aiven simplifies working with Apache
-  Kafka:*
+2. Create a new **message** in the ``jdbc_sink`` topic using the ``jdbcsinkexample`` schema, after changing the placeholders for ``REST_API_USER``, ``REST_API_PASSWORD``, ``APACHE_KAFKA_HOST``, ``REST_API_PORT``
 
--  `Managed Kafka as a Service <https://aiven.io/kafka>`__
+.. code-block:: shell
+
+   curl -H "Content-Type: application/vnd.kafka.avro.v2+json" -X POST \
+      -d '''
+         {"value_schema": 
+            "{\"namespace\": \"test\", \"type\": \"record\", \"name\": \"example\", \"fields\": [{\"name\": \"name\", \"type\": \"string\"},{\"name\": \"age\", \"type\": \"int\"}]}", 
+         "records": [{"value": {"name": "Eric","age":77}}]}'''   \
+      https://REST_API_USER:REST_API_PASSWORD@APACHE_KAFKA_HOST:REST_API_PORT/topics/jdbc_sink
+
+3. Verify the presence of a table called ``jdbc_sink`` in PostgreSQL containing the row with name ``Eric`` and age ``77``
