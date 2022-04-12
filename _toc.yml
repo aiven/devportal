@@ -161,6 +161,7 @@ entries:
           - file: docs/products/kafka/kafka-connect/howto/list-admin
             entries:
             - file: docs/products/kafka/kafka-connect/howto/best-practices
+            - file: docs/products/kafka/kafka-connect/howto/bring-your-own-kafka-connect-cluster
             - file: docs/products/kafka/kafka-connect/howto/enable-connect
             - file: docs/products/kafka/kafka-connect/howto/enable-automatic-restart
           - file: docs/products/kafka/kafka-connect/howto/list-source-connectors
