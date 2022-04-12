@@ -48,7 +48,7 @@ For the following example we assume:
 
 * The keystore is available at ``KEYSTORE_PATH/client.keystore.p12``
 * The truststore is available at ``TRUSTSTORE_PATH/client.truststore.jks``
-* The same secret (password) is used for both the keystore and the truststore, and is shown here as ``KEY_TRUST_SECRET``
+* For simplicity, the same secret (password) is used for both the keystore and the truststore, and is shown here as ``KEY_TRUST_SECRET``
 
 Configure the Aiven for Apache Kafka service
 ''''''''''''''''''''''''''''''''''''''''''''
