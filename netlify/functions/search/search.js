@@ -42,6 +42,14 @@ const handler = async (event) => {
                 },
               },
               {
+                match: {
+                  title: {
+                    query: query,
+                    fuzziness: "AUTO"
+                  },
+                },
+              },
+              {
                 match_phrase_prefix: {
                   description: {
                     query: query,
