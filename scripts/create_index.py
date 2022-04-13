@@ -27,6 +27,9 @@ def create_index(os_client, index_name):
                                    },
                                    'sort_priority': {
                                        'type': 'integer'
+                                   },
+                                   'url': {
+                                       'type': 'text'
                                    }
                                }
                            })
