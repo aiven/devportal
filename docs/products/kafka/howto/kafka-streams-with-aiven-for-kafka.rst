@@ -1,227 +1,262 @@
-Kafka Streams with Aiven for Kafka
-==================================
+Use Kafka® Streams with Aiven for Apache Kafka
+==============================================
 
-Kafka streams and streams API allows for streaming data through the
-heart of Kafka, the brokers. The data that passes through the brokers
-has a key-value structure. As this data enters the brokers, it is
-serialized by the streams API to a byte array, and as it exits the
-brokers it is de-serialized back to the original key-value structure,
-again by the streams API. Kafka streams also allows for transformation
-of data that enters the brokers in real-time, and feed the transformed
-data back into Kafka as another, transformed stream of data. This makes
-Kafka streams quite a powerful concept in terms of the many use cases it
-can address in the world of real-time data processing and analysis.
+`Apache Kafka® streams <https://kafka.apache.org/documentation/streams/>`_ and streams API allows streaming data through the heart of Apache Kafka: the brokers. 
 
-This help article explores how to realize Kafka streams with Aiven for
-Kafka and Schema registry.
+As the data, a key-value structure, enters the brokers, it is serialized by the streams API to a byte array. The opposite happens when data exists the brokers where the streams API de-serializes it back to the original key-value structure. 
 
-**Note:** As of version 3.0, Aiven for Apache Kafka no longer supports
-Confluent Schema Registry. For more information, see `this article that
-describes the replacement,
-Karapace <https://help.aiven.io/en/articles/5651983>`__ .
+Apache Kafka streams also allows data transformation in real-time with the output feeding another, transformed, stream of data. This makes
+Kafka streams a powerful tool for the variety of use cases it can address in the world of real-time data processing and analysis.
 
-The article is divided into the following parts:
+The following article explores how to realize Kafka streams with Aiven for Apache Kafka and the schema registry functionality offered by `Karapace <https://karapace.io/>`_.
 
--  Creating an Aiven for Kafka service
 
--  Modifying the KafkaMusicExample application to work with Aiven for
-   Kafka and Schema registry
+.. _kafka-streams-prereq:
 
-Creating an Aiven for Kafka service is documented in the “ `Getting
-started with Aiven for
-Kafka <https://help.aiven.io/kafka/getting-started-with-aiven-kafka>`__
-” help article. After creating the Kafka service, please create topics
-“play-events” and “song-feed” via the Aiven console.
+Prerequisites
+-------------
 
-The following information will be required in the configuration process:
+To use Kafka streams, you need an Aiven for Apache Kafka service up and running with **Schema Registry (Karapace)** Enabled.
 
--  Kafka service's service URL
+.. Note::
 
-.. image:: /images/products/kafka/kafka-services-service-url.jpg
-   :alt: Kafka Service's URL
+   Enabling **Schema Registry (Karapace)** is needed to make use of the schema registry features necessary for dealing with messages in Avro format. If you plan to use JSON format, enabling Schema Registry (Karapace) might not be necessary.
 
--  Schema Registry URL (URL without the username and password), username
-   and password from the Kafka service
+Two topics named ``song-feed`` and ``play-events`` should be created. Furthermore, for the example, you need to collect the following information about the Aiven for Apache Kafka service:
 
-.. image:: /images/products/kafka/schema-registry-url.jpg
-   :alt: Schema Registry URL
+* ``APACHE_KAFKA_HOST``: The hostname of the Apache Kafka service
+* ``APACHE_KAFKA_PORT``: The port of the Apache Kafka service
+* ``SCHEMA_REGISTRY_PORT``: The Apache Kafka's schema registry port, only needed when using Avro as data format
+* ``SCHEMA_REGISTRY_USER``: The Apache Kafka's schema registry username, only needed when using Avro as data format
+* ``SCHEMA_REGISTRY_PASSWORD``: The Apache Kafka's schema registry user password, only needed when using Avro as data format
 
-Modifying the KafkaMusicExample to work with Aiven for Kafka and Schema registry
---------------------------------------------------------------------------------
 
-1. Download the ``kafka-streams-examples`` sources from Github
+.. Note::
+
+   If you're using Aiven for Apache Kafka the above details are available in the `Aiven console <https://console.aiven.io/>`_ service Overview tab or via the dedicated ``avn service get`` command with the :ref:`Aiven CLI <avn_service_get>`.
+
+The following example assumes you have `Apache Maven <https://maven.apache.org/index.html>`_ already installed.
+
+
+Use Kafka streams with Aiven for Apache Kafka - ``KafkaMusicExample``
+---------------------------------------------------------------------
+
+The following example shows how to customise the ``KafkaMusicExample`` available in the `dedicated repository <https://github.com/confluentinc/kafka-streams-examples>`_ to work with Aiven for Apache Kafka.
+
+1. Download the ``kafka-streams-examples`` sources from GitHub
 
 .. code:: shell
 
    $ git clone https://github.com/confluentinc/kafka-streams-examples.git
 
-2. Build the packages using Maven (NOTE: We assume Apache Maven binaries
-are installed on your computer)
+2. Build the packages using Maven
 
 .. code:: shell
 
-   $ cd kafka-streams-examples/
-   $ mvn -DskipTests=true clean package
+   cd kafka-streams-examples/
+   mvn -DskipTests=true clean package
 
-.. _modifying-kafkamusicexamplejava:
+.. _kafka-streams-keystore-truststore:
 
-Modifying ``KafkaMusicExample.java``
-------------------------------------
+Setup the truststore and keystore
+''''''''''''''''''''''''''''''''''
 
-Please navigate to the
-``src/main/java/io/confluent/examples/streams/interactivequeries/kafkamusic``
-directory which contains the ``KafkaMusicExample.java`` source file and make
-the suggested changes within the "Change (begin)" and "Change (end)"
-blocks, and finally save your changes.
+Create a :doc:`Java keystore and truststore <keystore-truststore>` for the Aiven for Apache Kafka service.
+For the following example we assume:
 
-.. code:: java
-
-     private static final String DEFAULT_REST_ENDPOINT_HOSTNAME = "localhost";
-     // Change (begin)
-     private static final String DEFAULT_BOOTSTRAP_SERVERS = "kafka-20-biz4-a-exercise1.aivencloud.com:17295";
-     private static final String DEFAULT_SCHEMA_REGISTRY_URL = "https://kafka-20-biz4-a-exercise1.aivencloud.com:17298";
-     // Change (end)
-
-.. code:: java
-
-       final int restEndpointPort = Integer.parseInt(args[0]);
-       // Change (begin)
-       final String bootstrapServers = args.length > 1 ? args[1] : DEFAULT_BOOTSTRAP_SERVERS;
-       final String schemaRegistryUrl = args.length > 2 ? args[2] : DEFAULT_SCHEMA_REGISTRY_URL;
-       // Change (end)
-       final String restEndpointHostname = args.length > 3 ? args[3] : DEFAULT_REST_ENDPOINT_HOSTNAME;
-
-.. code:: java
-
-       streamsConfiguration.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
-       // Change (begin)
-   streamsConfiguration.put(CommonClientConfigs.SECURITY_PROTOCOL_CONFIG, "SSL");
-   streamsConfiguration.put(SslConfigs.SSL_TRUSTSTORE_LOCATION_CONFIG, "/path/to/client.truststore.jks");
-   streamsConfiguration.put(SslConfigs.SSL_TRUSTSTORE_PASSWORD_CONFIG, "secret");
-   streamsConfiguration.put(SslConfigs.SSL_KEYSTORE_TYPE_CONFIG, "PKCS12");
-   streamsConfiguration.put(SslConfigs.SSL_KEYSTORE_LOCATION_CONFIG, "/path/to/client.keystore.p12");
-   streamsConfiguration.put(SslConfigs.SSL_KEYSTORE_PASSWORD_CONFIG, "secret");
-   streamsConfiguration.put(SslConfigs.SSL_KEY_PASSWORD_CONFIG, "secret");
-       // Change (end)
-
-.. code:: java
-
-       // create and configure the SpecificAvroSerdes required in this example    
-       // Change (begin)
-       Map<String, String> serdeConfig = new HashMap<>();
-   serdeConfig.put(AbstractKafkaAvroSerDeConfig.SCHEMA_REGISTRY_URL_CONFIG, schemaRegistryUrl);
-   serdeConfig.put(AbstractKafkaAvroSerDeConfig.BASIC_AUTH_CREDENTIALS_SOURCE, "USER_INFO");
-   serdeConfig.put(AbstractKafkaAvroSerDeConfig.USER_INFO_CONFIG, "avnadmin:schema-reg-password");
-       // Change (end)
-
-*Please substitute appropriate values for Kafka service URL, Schema
-registry URL, avndmin's password (for schema registry) and key and
-truststore files' location on your computer.*
+* The keystore is available at ``KEYSTORE_PATH/client.keystore.p12``
+* The truststore is available at ``TRUSTSTORE_PATH/client.truststore.jks``
+* For simplicity, the same secret (password) is used for both the keystore and the truststore, and is shown here as ``KEY_TRUST_SECRET``
 
 .. _modify-kafkamusicexampledriverjava:
 
-Modify ``KafkaMusicExampleDriver.java``
----------------------------------------
+Customize ``KafkaMusicExampleDriver.java``
+''''''''''''''''''''''''''''''''''''''''''
 
-Please make the suggested changes below to the ``KafkaMusicExampleDriver.java`` class file.
+The ``KafkaMusicExample`` example in the repository is constituted by two classes under the ``src/main/java/io/confluent/examples/streams/interactivequeries/kafkamusic`` folder:
 
-.. code:: java
+* ``KafkaMusicExampleDriver.java``: an Apache Kafka producer writing messages to a topic named ``song-feed``
+* ``KafkaMusicExample.java``: a Kafka stream application reading from the ``song-feed`` topic and calculating aggregated metrics
 
-     // Change (begin)
-     private static final String DEFAULT_BOOTSTRAP_SERVERS = "kafka-20-biz4-a-exercise1.aivencloud.com:17295";
-     private static final String DEFAULT_SCHEMA_REGISTRY_URL = "https://kafka-20-biz4-a-exercise1.aivencloud.com:17298";
-     // Change (end)
+To have the two applications working with Aiven for Apache Kafka we need to customise the files to use the right endpoints. Starting with the ``KafkaMusicExampleDriver.java`` follow the steps below:
 
-.. code:: java
+1. Add the following dependencies
 
-       final int restEndpointPort = Integer.parseInt(args[0]);
-       // Change (begin)
-       final String bootstrapServers = args.length > 1 ? args[1] : DEFAULT_BOOTSTRAP_SERVERS;
-       final String schemaRegistryUrl = args.length > 2 ? args[2] : DEFAULT_SCHEMA_REGISTRY_URL;
-       // Change (end)
-       final String restEndpointHostname = args.length > 3 ? args[3] : DEFAULT_REST_ENDPOINT_HOSTNAME;
+   .. code:: java
 
-.. code:: java
+      import org.apache.kafka.clients.CommonClientConfigs;
+      import org.apache.kafka.common.config.SslConfigs;
+      import java.util.HashMap;
 
-       streamsConfiguration.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
-       // Change (begin)
-   streamsConfiguration.put(CommonClientConfigs.SECURITY_PROTOCOL_CONFIG, "SSL");
-   streamsConfiguration.put(SslConfigs.SSL_TRUSTSTORE_LOCATION_CONFIG, "/path/to/client.truststore.jks");
-   streamsConfiguration.put(SslConfigs.SSL_TRUSTSTORE_PASSWORD_CONFIG, "secret");
-   streamsConfiguration.put(SslConfigs.SSL_KEYSTORE_TYPE_CONFIG, "PKCS12");
-   streamsConfiguration.put(SslConfigs.SSL_KEYSTORE_LOCATION_CONFIG, "/path/to/client.keystore.p12");
-   streamsConfiguration.put(SslConfigs.SSL_KEYSTORE_PASSWORD_CONFIG, "secret");
-   streamsConfiguration.put(SslConfigs.SSL_KEY_PASSWORD_CONFIG, "secret");
-       // Change (end)
+2. After the Change the ``KafkaMusicExampleDriver`` class declaration add the following two lines to set the ``DEFAULT_BOOTSTRAP_SERVERS`` and ``DEFAULT_SCHEMA_REGISTRY_URL`` endpoints replacing the ``APACHE_KAFKA_HOST``, ``APACHE_KAFKA_PORT``, ``APACHE_KAFKA_HOST``, ``SCHEMA_REGISTRY_PORT`` placeholders
 
-.. code:: java
+   .. code:: java
 
-       // create and configure the SpecificAvroSerdes required in this example
-       // Change (begin)
-       Map<String, String> serdeConfig = new HashMap<>();
-   serdeConfig.put(AbstractKafkaAvroSerDeConfig.SCHEMA_REGISTRY_URL_CONFIG, schemaRegistryUrl);
-   serdeConfig.put(AbstractKafkaAvroSerDeConfig.BASIC_AUTH_CREDENTIALS_SOURCE, "USER_INFO");
-   serdeConfig.put(AbstractKafkaAvroSerDeConfig.USER_INFO_CONFIG, "avnadmin:schema-reg-password");
-       // Change (end)
+      private static final String DEFAULT_BOOTSTRAP_SERVERS = "APACHE_KAFKA_HOST:APACHE_KAFKA_PORT";
+      private static final String DEFAULT_SCHEMA_REGISTRY_URL = "https://APACHE_KAFKA_HOST:SCHEMA_REGISTRY_PORT";
 
-*Please substitute appropriate values for Kafka service URL, Schema
-registry URL, avndmin's password (for schema registry) and key and
-truststore files' location on your computer.*
+3. Within the ``main`` function, replace the ``bootstrapServers`` and ``schemaRegistryUrl`` default values
 
-Building the applications
--------------------------
+   .. code:: java
+
+      final String bootstrapServers = args.length > 1 ? args[1] : DEFAULT_BOOTSTRAP_SERVERS;
+      final String schemaRegistryUrl = args.length > 2 ? args[2] : DEFAULT_SCHEMA_REGISTRY_URL;
+
+4. Within the ``main`` function, after the line 
+
+   .. code:: java
+
+      props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
+
+   Define the keystore and trustore location and secrets for SSL connection, by replacing the placeholders ``KEYSTORE_PATH``, ``TRUSTSTORE_PATH`` and ``KEY_TRUST_SECRET`` with the values set when :ref:`creating the keystore and truststore <kafka-streams-keystore-truststore>`.
+
+   .. code:: java
+
+      props.put(ProducerConfig.SECURITY_PROTOCOL_CONFIG, "SSL");
+      props.put(SslConfigs.SSL_TRUSTSTORE_LOCATION_CONFIG, "TRUSTSTORE_PATH/client.truststore.jks");
+      props.put(SslConfigs.SSL_TRUSTSTORE_PASSWORD_CONFIG, "KEY_TRUST_SECRET");
+      props.put(SslConfigs.SSL_KEYSTORE_TYPE_CONFIG, "PKCS12");
+      props.put(SslConfigs.SSL_KEYSTORE_LOCATION_CONFIG, "KEYSTORE_PATH/client.keystore.p12");
+      props.put(SslConfigs.SSL_KEYSTORE_PASSWORD_CONFIG, "KEY_TRUST_SECRET");
+      props.put(SslConfigs.SSL_KEY_PASSWORD_CONFIG, "KEY_TRUST_SECRET");
+
+5. Within the ``main`` function, replace the line
+
+   .. code:: java
+
+      final Map<String, String> serdeConfig = Collections.singletonMap(
+         AbstractKafkaSchemaSerDeConfig.SCHEMA_REGISTRY_URL_CONFIG, schemaRegistryUrl);
+   
+   With the following, creating and configuring the ``SpecificAvroSerdes`` required, passing the schema registry username and password and substituting the ``SCHEMA_REGISTRY_USER`` and ``SCHEMA_REGISTRY_PASSWORD`` placeholders
+
+
+   .. code:: java
+
+      final Map<String, String> serdeConfig = new HashMap<>();
+      serdeConfig.put(AbstractKafkaSchemaSerDeConfig.SCHEMA_REGISTRY_URL_CONFIG, schemaRegistryUrl);
+      serdeConfig.put(AbstractKafkaSchemaSerDeConfig.BASIC_AUTH_CREDENTIALS_SOURCE, "USER_INFO");
+      serdeConfig.put(AbstractKafkaSchemaSerDeConfig.USER_INFO_CONFIG, "SCHEMA_REGISTRY_USER:SCHEMA_REGISTRY_PASSWORD");
+
+
+.. _modifying-kafkamusicexamplejava:
+
+Customize ``KafkaMusicExample.java``
+''''''''''''''''''''''''''''''''''''
+
+Similar changes need to be performed in the file ``KafkaMusicExample.java`` always replacing the placeholders with the connection parameters fetched in the :ref:`prerequisite phase<kafka-streams-prereq>`.
+
+1. Add the following dependencies
+
+   .. code:: java
+
+      import org.apache.kafka.clients.CommonClientConfigs;
+      import org.apache.kafka.common.config.SslConfigs;
+
+2. Change the ``DEFAULT_BOOTSTRAP_SERVERS`` and ``DEFAULT_SCHEMA_REGISTRY_URL`` endpoints replacing the ``APACHE_KAFKA_HOST``, ``APACHE_KAFKA_PORT``, ``APACHE_KAFKA_HOST``, ``SCHEMA_REGISTRY_PORT`` placeholders
+
+   .. code:: java
+
+      private static final String DEFAULT_BOOTSTRAP_SERVERS = "APACHE_KAFKA_HOST:APACHE_KAFKA_PORT";
+      private static final String DEFAULT_SCHEMA_REGISTRY_URL = "https://APACHE_KAFKA_HOST:SCHEMA_REGISTRY_PORT";
+
+3. Replace the ``bootstrapServers`` and ``schemaRegistryUrl`` default values
+
+   .. code:: java
+
+      final String bootstrapServers = args.length > 1 ? args[1] : DEFAULT_BOOTSTRAP_SERVERS;
+      final String schemaRegistryUrl = args.length > 2 ? args[2] : DEFAULT_SCHEMA_REGISTRY_URL;
+
+4. Within the ``main`` function, replace the line
+
+   .. code:: java
+
+      final KafkaStreams streams = new KafkaStreams(
+         buildTopology(singletonMap(AbstractKafkaSchemaSerDeConfig.SCHEMA_REGISTRY_URL_CONFIG, schemaRegistryUrl)),
+         streamsConfig(bootstrapServers, restEndpointPort, "/tmp/kafka-streams", restEndpointHostname)
+         );
+   
+   With the following, creating and configuring the ``SpecificAvroSerdes`` required, passing the schema registry username and password and substituting the ``SCHEMA_REGISTRY_USER`` and ``SCHEMA_REGISTRY_PASSWORD`` placeholders
+
+
+   .. code:: java
+
+      final Map<String, String> serdeConfig = new HashMap<>();
+      serdeConfig.put(AbstractKafkaSchemaSerDeConfig.SCHEMA_REGISTRY_URL_CONFIG, schemaRegistryUrl);
+      serdeConfig.put(AbstractKafkaSchemaSerDeConfig.BASIC_AUTH_CREDENTIALS_SOURCE, "USER_INFO");
+      serdeConfig.put(AbstractKafkaSchemaSerDeConfig.USER_INFO_CONFIG, "SCHEMA_REGISTRY_USER:SCHEMA_REGISTRY_PASSWORD");
+
+      final KafkaStreams streams = new KafkaStreams(
+         buildTopology(serdeConfig),
+         streamsConfig(bootstrapServers, restEndpointPort, "/tmp/kafka-streams", restEndpointHostname)
+         );
+
+5. Within the ``streamsConfig`` static function, after the line 
+
+   .. code:: java
+      
+      streamsConfiguration.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
+
+   Define the keystore and trustore location and secrets for SSL connection, by replacing the placeholders ``KEYSTORE_PATH``, ``TRUSTSTORE_PATH`` and ``KEY_TRUST_SECRET`` with the values set when :ref:`creating the keystore and truststore <kafka-streams-keystore-truststore>`.
+
+   .. code:: java
+
+      streamsConfiguration.put(CommonClientConfigs.SECURITY_PROTOCOL_CONFIG, "SSL");
+      streamsConfiguration.put(SslConfigs.SSL_TRUSTSTORE_LOCATION_CONFIG, "TRUSTSTORE_PATH/client.truststore.jks");
+      streamsConfiguration.put(SslConfigs.SSL_TRUSTSTORE_PASSWORD_CONFIG, "KEY_TRUST_SECRET");
+      streamsConfiguration.put(SslConfigs.SSL_KEYSTORE_TYPE_CONFIG, "PKCS12");
+      streamsConfiguration.put(SslConfigs.SSL_KEYSTORE_LOCATION_CONFIG, "KEYSTORE_PATH/client.keystore.p12");
+      streamsConfiguration.put(SslConfigs.SSL_KEYSTORE_PASSWORD_CONFIG, "KEY_TRUST_SECRET");
+      streamsConfiguration.put(SslConfigs.SSL_KEY_PASSWORD_CONFIG, "KEY_TRUST_SECRET");
+
+
+
+
+Build the applications
+''''''''''''''''''''''''''''''''''''
+
+from the main ``kafka-streams-examples`` folder, execute the following Maven command to build the applications:
 
 .. code:: shell
 
    $ mvn -DskipTests=true clean package
 
-Running the applications
-------------------------
+The above command should create under the ``target`` folder a ``jar`` file named ``kafka-streams-examples-<VERSION>-standalone.jar`` where version depend on the repository release number. When using the ``7.00`` release the file name would be ``kafka-streams-examples-7.0.0-standalone.jar``.
 
-(From Terminal #1) Start the Music example
+Run the applications
+''''''''''''''''''''
+
+To run the applications in parallel you need to have two terminal sessions pointing at the main ``kafka-streams-examples`` folder.
+
+From the first terminal session you can start the ``KafkaMusicExampleDriver`` producer with:
 
 .. code:: shell
 
-   $ java -cp ./target/kafka-streams-examples-5.0.0-standalone.jar io.confluent.examples.streams.interactivequeries.kafkamusic.KafkaMusicExample 7070
+   java -cp ./target/kafka-streams-examples-7.0.0-standalone.jar \
+      io.confluent.examples.streams.interactivequeries.kafkamusic.KafkaMusicExampleDriver
 
-|
-| (From Terminal #2) Start the data driver/generator that streams data
-  to the topics in Kafka
+From the second terminal session you can start the ``KafkaMusicExample`` Kafka streams application with:
 
-::
+.. code:: shell
 
-   $ java -cp ./target/kafka-streams-examples-5.0.0-standalone.jar io.confluent.examples.streams.interactivequeries.kafkamusic.KafkaMusicExampleDriver
+   java -cp ./target/kafka-streams-examples-7.0.0-standalone.jar \
+      io.confluent.examples.streams.interactivequeries.kafkamusic.KafkaMusicExample 7070
 
-Checking the data
------------------
+Check the produced data
+'''''''''''''''''''''''
 
-Point the browser to the following links.
+The results of the running applications are available at the following via ``curl`` command (and optionally ``jq`` to beautify the JSON output):
 
-* List all running instances of this application
-
-.. code::
-
-    http://localhost:7070/kafka-music/instances
-
-* List app instances that currently manage (parts of) state store ``song-play-count``
-
-.. code::
-
-    http://localhost:7070/kafka-music/instances/song-play-count
-
-* Get the latest top five for the genre ``punk``
-
-.. code::
-
-    http://localhost:7070/kafka-music/charts/genre/punk
 
 * Get the latest top five across all genres
 
 .. code::
 
-    http://localhost:7070/kafka-music/charts/top-five
+   curl http://localhost:7070/kafka-music/charts/top-five | jq
 
-*Got here by accident? Learn how Aiven simplifies working with Apache
-Kafka:*
+* Get the latest top five for the genre ``punk``
 
--  `Managed Kafka as a Service <https://aiven.io/kafka>`__
+.. code::
+
+   curl http://localhost:7070/kafka-music/charts/genre/punk | jq
+
+More information for further customisations is available in the `source GitHub repository <https://github.com/confluentinc/kafka-streams-examples>`_.
