@@ -9,6 +9,7 @@ Manage Apache Kafka® Connect connectors details
 
 Commands for managing Aiven for Apache Kafka® Connect connectors via ``avn`` commands.
 
+.. _avn_cli_service_connector_available:
 
 ``avn service connector available``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
