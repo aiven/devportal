@@ -16,13 +16,13 @@ Furthermore you need to follow the steps :doc:`to prepare the GCP account <gcp-b
 * ``GCP_PROJECT_NAME``: The GCP project name where the target Google BigQuery is located
 * ``GCP_SERVICE_KEY``: A valid GCP service account key for the ``GCP_PROJECT_NAME``. To create the project key review the :ref:`dedicated document <gcp-bigquery-sink-connector-google-account>`
 
-.. Warning::
+  .. Warning::
 
-    The GCP BigQuery sink connector accepts the ``GCP_SERVICE_KEY`` JSON service key as a string, therefore all  ``"`` symbols within it must be escaped ``\"``.
+     The GCP BigQuery sink connector accepts the ``GCP_SERVICE_KEY`` JSON service key as a string, therefore all  ``"`` symbols within it must be escaped ``\"``.
 
-    The ``GCP_SERVICE_KEY`` parameter should be in the format ``{\"type\": \"service_account\",\"project_id\": \"XXXXXX\", ...}``
+     The ``GCP_SERVICE_KEY`` parameter should be in the format ``{\"type\": \"service_account\",\"project_id\": \"XXXXXX\", ...}``
 
-    Additionally, any ``\n`` symbols contained in the ``private_key`` field need to be escaped (by substituting with ``\\n``)
+     Additionally, any ``\n`` symbols contained in the ``private_key`` field need to be escaped (by substituting with ``\\n``)
 
 * ``BIGQUERY_DATASET_NAME``: The BigQuery dataset name, as defined in the :ref:`dedicated pre-requisite step <gcp-bigquery-sink-connector-bigquery-dataset>`
 * ``TOPIC_LIST``: The list of topics to sink divided by comma
@@ -38,8 +38,8 @@ Furthermore you need to follow the steps :doc:`to prepare the GCP account <gcp-b
 
     As of version 3.0, Aiven for Apache Kafka no longer supports Confluent Schema Registry. For more information, read `the article describing the replacement, Karapace <https://help.aiven.io/en/articles/5651983>`_
 
-Setup an Google BigQuery sink connector with Aiven Console
-----------------------------------------------------------
+Setup a Google BigQuery sink connector with Aiven Console
+---------------------------------------------------------
 
 The following example demonstrates how to setup a Google BigQuery sink connector for Apache Kafka using the `Aiven Console <https://console.aiven.io/>`_.
 
@@ -92,31 +92,31 @@ The configuration file contains the following entries:
 
 * ``autoCreateTables``: enables the auto creation of the target BigQuery tables if they don't exist 
 
-   .. warning::
+  .. warning::
 
-      Enabling the flag ``autoCreateTables`` (and additionally ``autoUpdate`` and ``allowNewBigQueryFields``, see `dedicate documentation <https://github.com/wepay/kafka-connect-bigquery/wiki/Connector-Configuration>`_ for more info) allows the connector to automatically create and evolve BigQuery tables based on the incoming topic messages. In such cases, there is less overall control over the tables, columns and data types definition possibly resulting in errors especially if the messages evolve beyond BigQuery compatibility.
+     Enabling the flag ``autoCreateTables`` (and additionally ``autoUpdate`` and ``allowNewBigQueryFields``, see `dedicate documentation <https://github.com/wepay/kafka-connect-bigquery/wiki/Connector-Configuration>`_ for more info) allows the connector to automatically create and evolve BigQuery tables based on the incoming topic messages. In such cases, there is less overall control over the tables, columns and data types definition possibly resulting in errors especially if the messages evolve beyond BigQuery compatibility.
 
 * ``keySource``: defines the format of the GCP key, the value should be ``JSON`` if the key is generated in JSON format
 * ``keyfile``: contains the GCP service account key, correctly escaped as defined in the :ref:`prerequisite phase <connect_bigquery_sink_prereq>`
 
-   .. warning::
+  .. warning::
 
-      The configuration of the BigQuery connector in Aiven has a non-backward-compatible change between versions ``1.2.0`` and ``1.6.5``:
+     The configuration of the BigQuery connector in Aiven has a non-backward-compatible change between versions ``1.2.0`` and ``1.6.5``:
 
-      * version ``1.2.0`` uses the ``credentials`` field to specify the Google Cloud credentials in JSON format::
+     * version ``1.2.0`` uses the ``credentials`` field to specify the Google Cloud credentials in JSON format::
 
           ...
           "credentials": "{...}",
           ...
 
-      * from version ``1.6.5`` on, use the ``keyfield`` field and set the ``keySource`` parameter to ``JSON``::
+     * from version ``1.6.5`` on, use the ``keyfield`` field and set the ``keySource`` parameter to ``JSON``::
 
           ...
           "keyfile": "{...}",
           "keySource": "JSON",
           ...
 
-      You can review the connector version available in an Aiven for Apache Kafka service with the :ref:`dedicated Aiven CLI command <avn_cli_service_connector_available>` ``avn service connector available``.
+     You can review the connector version available in an Aiven for Apache Kafka service with the :ref:`dedicated Aiven CLI command <avn_cli_service_connector_available>` ``avn service connector available``.
 
 The full list of parameters is available in the `dedicated GitHub page <https://github.com/wepay/kafka-connect-bigquery/wiki/Connector-Configuration>`_.
 
