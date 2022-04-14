@@ -108,7 +108,7 @@ To have the two applications working with Aiven for Apache Kafka we need to cust
 
       props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
 
-   Define the keystore and trustore location and secrets for SSL connection, by replacing the placeholders ``KEYSTORE_PATH``, ``TRUSTSTORE_PATH`` and ``KEY_TRUST_SECRET`` with the values set when :ref:`creating the keystore and truststore <kafka-streams-keystore-truststore>`.
+   Define the keystore and truststore location and secrets for SSL connection, by replacing the placeholders ``KEYSTORE_PATH``, ``TRUSTSTORE_PATH`` and ``KEY_TRUST_SECRET`` with the values set when :ref:`creating the keystore and truststore <kafka-streams-keystore-truststore>`.
 
    .. code:: java
 
@@ -196,7 +196,7 @@ Similar changes need to be performed in the file ``KafkaMusicExample.java`` alwa
       
       streamsConfiguration.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
 
-   Define the keystore and trustore location and secrets for SSL connection, by replacing the placeholders ``KEYSTORE_PATH``, ``TRUSTSTORE_PATH`` and ``KEY_TRUST_SECRET`` with the values set when :ref:`creating the keystore and truststore <kafka-streams-keystore-truststore>`.
+   Define the keystore and truststore location and secrets for SSL connection, by replacing the placeholders ``KEYSTORE_PATH``, ``TRUSTSTORE_PATH`` and ``KEY_TRUST_SECRET`` with the values set when :ref:`creating the keystore and truststore <kafka-streams-keystore-truststore>`.
 
    .. code:: java
 
