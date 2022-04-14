@@ -18,7 +18,7 @@ Furthermore you need to follow the steps :doc:`to prepare the GCP account <gcp-b
 
 .. Warning::
 
-    The GCP BigQuery sink connector accepts the ``GCP_SERVICE_KEY`` JSON service key as string, therefore all  ``"`` symbols within it must be escaped ``\"``.
+    The GCP BigQuery sink connector accepts the ``GCP_SERVICE_KEY`` JSON service key as a string, therefore all  ``"`` symbols within it must be escaped ``\"``.
 
     The ``GCP_SERVICE_KEY`` parameter should be in the format ``{\"type\": \"service_account\",\"project_id\": \"XXXXXX\", ...}``
 
@@ -76,48 +76,47 @@ The configuration file contains the following entries:
 
 * ``name``: the connector name
 * ``project``: the GCP project name where the target Google BigQuery is located. 
-* ``defaultDataset``: the target BigQuery datasets names, prefixed with ``.*=``.
+* ``defaultDataset``: the target BigQuery dataset name, prefixed with ``.*=``.
 * ``schemaRegistryLocation``: details of the connection to Karapace offering the schema registry functionality, only needed when the source data is in Avro format.
-* ``key.converter`` and ``value.converter``:  defines the messages data format in the Apache Kafka topic. The ``io.confluent.connect.avro.AvroConverter`` converter translates messages from the Avro format. To retrieve the messages schema we use Aiven's `Karapace schema registry <https://github.com/aiven/karapace>`_ as specified by the ``schema.registry.url`` parameter and related credentials.
+* ``key.converter`` and ``value.converter``:  define the message data format in the Apache Kafka topic. The ``io.confluent.connect.avro.AvroConverter`` converter translates messages from the Avro format. To retrieve the message schema we use Aiven's `Karapace schema registry <https://github.com/aiven/karapace>`_, as specified by the ``schema.registry.url`` parameter and related credentials.
 
-.. Note::
+  .. note::
 
-    The ``key.converter`` and ``value.converter`` sections are only needed when the source data is in Avro format. If omitted the messages will be read as binary format. 
+     The ``key.converter`` and ``value.converter`` sections are only needed when the source data is in Avro format. If omitted the messages will be read as binary format.
 
-    When using Avro as source data format, you need to set following parameters
+     When using Avro as source data format, you need to set following parameters
 
-    * ``value.converter.schema.registry.url``: pointing to the Aiven for Apache Kafka schema registry URL in the form of ``https://APACHE_KAFKA_HOST:SCHEMA_REGISTRY_PORT`` with the ``APACHE_KAFKA_HOST`` and ``SCHEMA_REGISTRY_PORT`` parameters :ref:`retrieved in the previous step <connect_bigquery_sink_prereq>`.
-    * ``value.converter.basic.auth.credentials.source``: to the value ``USER_INFO``, since you're going to login to the schema registry using username and password.
-    * ``value.converter.schema.registry.basic.auth.user.info``: passing the required schema registry credentials in the form of ``SCHEMA_REGISTRY_USER:SCHEMA_REGISTRY_PASSWORD`` with the ``SCHEMA_REGISTRY_USER`` and ``SCHEMA_REGISTRY_PASSWORD`` parameters :ref:`retrieved in the previous step <connect_elasticsearch_sink_prereq>`. 
-
+     * ``value.converter.schema.registry.url``: pointing to the Aiven for Apache Kafka schema registry URL in the form of ``https://APACHE_KAFKA_HOST:SCHEMA_REGISTRY_PORT`` with the ``APACHE_KAFKA_HOST`` and ``SCHEMA_REGISTRY_PORT`` parameters :ref:`retrieved in the previous step <connect_bigquery_sink_prereq>`.
+     * ``value.converter.basic.auth.credentials.source``: to the value ``USER_INFO``, since you're going to login to the schema registry using username and password.
+     * ``value.converter.schema.registry.basic.auth.user.info``: passing the required schema registry credentials in the form of ``SCHEMA_REGISTRY_USER:SCHEMA_REGISTRY_PASSWORD`` with the ``SCHEMA_REGISTRY_USER`` and ``SCHEMA_REGISTRY_PASSWORD`` parameters :ref:`retrieved in the previous step <connect_elasticsearch_sink_prereq>`.
 
 * ``autoCreateTables``: enables the auto creation of the target BigQuery tables if they don't exist 
 
-.. Warning:: 
+   .. warning::
 
-    Enabling the flag ``autoCreateTables`` (and additionally ``autoUpdate`` and ``allowNewBigQueryFields``, see `dedicate documentation <https://github.com/wepay/kafka-connect-bigquery/wiki/Connector-Configuration>`_ for more info) allows the connector to automatically create and evolve BigQuery tables based on the incoming topic messages. In such cases, there is less overall control over the tables, columns and data types definition possibly resulting in errors especially if the messages evolve beyond BigQuery compatibility.
+      Enabling the flag ``autoCreateTables`` (and additionally ``autoUpdate`` and ``allowNewBigQueryFields``, see `dedicate documentation <https://github.com/wepay/kafka-connect-bigquery/wiki/Connector-Configuration>`_ for more info) allows the connector to automatically create and evolve BigQuery tables based on the incoming topic messages. In such cases, there is less overall control over the tables, columns and data types definition possibly resulting in errors especially if the messages evolve beyond BigQuery compatibility.
 
 * ``keySource``: defines the format of the GCP key, the value should be ``JSON`` if the key is generated in JSON format
 * ``keyfile``: contains the GCP service account key, correctly escaped as defined in the :ref:`prerequisite phase <connect_bigquery_sink_prereq>`
 
-.. Warning::
+   .. warning::
 
-    The configuration of the BigQuery connector in Aiven has a non-backward-compatible change between versions ``1.2.0`` and ``1.6.5``:
+      The configuration of the BigQuery connector in Aiven has a non-backward-compatible change between versions ``1.2.0`` and ``1.6.5``:
 
-    * version ``1.2.0`` uses the ``credentials`` field to specify the Google Cloud credentials in JSON format::
+      * version ``1.2.0`` uses the ``credentials`` field to specify the Google Cloud credentials in JSON format::
 
-        ...
-        "credentials": "{...}",
-        ...
+          ...
+          "credentials": "{...}",
+          ...
 
-    * from version ``1.6.5`` on, use the ``keyfield`` field and set the ``keySource`` parameter to ``JSON``::
+      * from version ``1.6.5`` on, use the ``keyfield`` field and set the ``keySource`` parameter to ``JSON``::
 
-        ...
-        "keyfile": "{...}",
-        "keySource": "JSON",
-        ...
+          ...
+          "keyfile": "{...}",
+          "keySource": "JSON",
+          ...
 
-    You can review the connector version available in an Aiven for Apache Kafka service with the :ref:`dedicated Aiven CLI command <avn_cli_service_connector_available>` ``avn service connector available``.
+      You can review the connector version available in an Aiven for Apache Kafka service with the :ref:`dedicated Aiven CLI command <avn_cli_service_connector_available>` ``avn service connector available``.
 
 The full list of parameters is available in the `dedicated GitHub page <https://github.com/wepay/kafka-connect-bigquery/wiki/Connector-Configuration>`_.
 
@@ -133,22 +132,22 @@ To create the connector, access the `Aiven Console <https://console.aiven.io/>`_
 5. Paste the connector configuration (stored in the ``bigquery_sink.json`` file) in the form
 6. Click on **Apply**
 
-.. Note::
+   .. note::
 
-    The Aiven Console parses the configuration file and fills the relevant UI fields. You can review the UI fields across the various tab and change them if necessary. The changes will be reflected in JSON format in the **Connector configuration** text box.
+      The Aiven Console parses the configuration file and fills the relevant UI fields. You can review the UI fields across the various tabs and change them if necessary. The changes will be reflected in JSON format in the **Connector configuration** text box.
 
 7. After all the settings are correctly configured, click on **Create new connector**
 8. Verify the connector status under the **Connectors** tab
-9. Verify the presence of the data in the target BigQuery dataset, the table name is equal to the Apache Kafka topic name, if you need to change the target table name, you can do so using the Kafka Connect ``RegexRouter`` transformation.
+9. Verify the presence of the data in the target BigQuery dataset, the table name is equal to the Apache Kafka topic name. If you need to change the target table name, you can do so using the Kafka Connect ``RegexRouter`` transformation.
 
-.. Note::
+   .. note::
 
-    Connectors can be created also using the dedicated :ref:`Aiven CLI command <avn_service_connector_create>`.
+      Connectors can be created also using the dedicated :ref:`Aiven CLI command <avn_service_connector_create>`.
 
-Example: Create an Google BigQuery sink connector on a topic with a JSON schema
--------------------------------------------------------------------------------
+Example: Create a Google BigQuery sink connector on a topic with a JSON schema
+------------------------------------------------------------------------------
 
-If you have a topic named ``iot_measurements`` containing the following data in JSON format, with a defined JSON schema:
+You have a topic named ``iot_measurements`` containing data in JSON format, with a defined JSON schema:
 
 .. code-block:: json
 
@@ -211,7 +210,7 @@ You can sink the ``iot_measurements`` topic to BigQuery with the following conne
         "keyfile": "GCP_SERVICE_KEY"
     }
 
-The configuration file contains the following peculiarities:
+The configuration file contains the following things to note:
 
 * ``"topics": "iot_measurements"``: defines the topic to sink
 * ``"value.converter": "org.apache.kafka.connect.json.JsonConverter"``: the message value is in plain JSON format without a schema
@@ -220,7 +219,9 @@ The configuration file contains the following peculiarities:
 Example: Create a Google BigQuery sink connector on a topic in Avro format
 --------------------------------------------------------------------------
 
-If you have a topic named ``students`` in Avro format with the schema stored in Karapace, you can sink the ``students`` topic to BigQuery with the following connector configuration, after replacing the placeholders for ``GCP_PROJECT_NAME``, ``GCP_SERVICE_KEY``, ``BIGQUERY_DATASET_NAME``, ``SCHEMA_REGISTRY_USER``, ``SCHEMA_REGISTRY_PASSWORD``, ``APACHE_KAFKA_HOST``, ``SCHEMA_REGISTRY_PORT``:
+You have a topic named ``students`` in Avro format with the schema stored in Karapace.
+
+You can sink the ``students`` topic to BigQuery with the following connector configuration, after replacing the placeholders for ``GCP_PROJECT_NAME``, ``GCP_SERVICE_KEY``, ``BIGQUERY_DATASET_NAME``, ``SCHEMA_REGISTRY_USER``, ``SCHEMA_REGISTRY_PASSWORD``, ``APACHE_KAFKA_HOST``, ``SCHEMA_REGISTRY_PORT``:
 
 .. code-block:: json
 
@@ -246,8 +247,7 @@ If you have a topic named ``students`` in Avro format with the schema stored in 
         "keyfile": "GCP_SERVICE_KEY"
     }
 
-The configuration file contains the following peculiarities:
+The configuration file contains the following things to note:
 
 * ``"topics": "students"``: setting the topic to sink
-* ``key.converter`` and ``value.converter``: defines the messages data format in the Apache Kafka topic. The ``io.confluent.connect.avro.AvroConverter`` converter translates messages from the Avro format. To retrieve the messages schema we use Aiven's `Karapace schema registry <https://github.com/aiven/karapace>`_ as specified by the ``schema.registry.url`` parameter and related credentials.
-
+* ``key.converter`` and ``value.converter``: define the message data format in the Apache Kafka topic. The ``io.confluent.connect.avro.AvroConverter`` converter translates messages from the Avro format. To retrieve the message schema we use Aiven's `Karapace schema registry <https://github.com/aiven/karapace>`_ as specified by the ``schema.registry.url`` parameter and related credentials.
