@@ -1,5 +1,5 @@
-Sample dataset: Pagila
-======================
+Sample dataset for PostgreSQL®: Pagila
+======================================
 
 Aiven provides a sample database you can import in your Aiven for PostgreSQL® service. This page covers information about the database and the procedure to get it up and running.
 

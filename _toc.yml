@@ -90,7 +90,9 @@ entries:
     title: Apache Kafka
     entries:
       - file: docs/products/kafka/getting-started
+        title: Get started
       - file: docs/products/kafka/howto/fake-sample-data
+        title: Sample data generator
       - file: docs/products/kafka/concepts
         entries:
           - file: docs/products/kafka/concepts/acl
@@ -144,7 +146,11 @@ entries:
       - file: docs/products/kafka/reference
         title: Reference
         entries:
-          - glob: docs/products/kafka/reference/*
+          - file: docs/products/kafka/reference/advanced-params
+            title: Advanced parameters
+          - file: docs/products/kafka/reference/kafka-metrics-prometheus
+            title: Metrics available via Prometheus
+
       - file: docs/products/kafka/kafka-connect/index
         title: Apache Kafka Connect
         entries:
@@ -193,6 +199,7 @@ entries:
               - file: docs/products/kafka/kafka-connect/reference/s3-sink-additional-parameters-confluent
             - file: docs/products/kafka/kafka-connect/reference/gcs-sink-formats
             - file: docs/products/kafka/kafka-connect/reference/connect-metrics-prometheus
+              title: Metrics available via Prometheus
 
       - file: docs/products/kafka/kafka-mirrormaker/index
         title: Apache Kafka MirrorMaker2
@@ -217,7 +224,9 @@ entries:
     title: PostgreSQL
     entries:
       - file: docs/products/postgresql/getting-started
+        title: Get started
       - file: docs/products/postgresql/howto/pagila
+        title: "Sample dataset: Pagila"
       - file: docs/products/postgresql/concepts
         title: Concepts
         entries:
@@ -265,12 +274,24 @@ entries:
       - file: docs/products/postgresql/reference
         title: Reference
         entries:
-          - glob: docs/products/postgresql/reference/*
+          - file: docs/products/postgresql/reference/list-of-advanced-params
+            title: Advanced parameters
+          - file: docs/products/postgresql/reference/list-of-extensions
+            title: Extensions
+          - file: docs/products/postgresql/reference/pg-metrics
+            title: Metrics exposed to Grafana
+          - file: docs/products/postgresql/reference/pg-connection-limits
+            title: Connection limits per plan
+          - file: docs/products/postgresql/reference/resource-capability
+            title: Resource capability per plan
+          - file: docs/products/postgresql/reference/terminology
+            title: Terminology
 
   - file: docs/products/flink/index
     title: Apache Flink
     entries:
       - file: docs/products/flink/getting-started
+        title: Get started
       - file: docs/products/flink/concepts
         title: Concepts
         entries:
@@ -297,12 +318,14 @@ entries:
       - file: docs/products/flink/reference
         title: Reference
         entries:
-          - glob: docs/products/flink/reference/*
+          - file: docs/products/flink/reference/advanced-params
+            title: Advanced parameters
 
   - file: docs/products/clickhouse/index
     title: ClickHouse
     entries:
       - file: docs/products/clickhouse/getting-started
+        title: Get started
       - file: docs/products/clickhouse/sample-dataset
       - file: docs/products/clickhouse/concepts
         title: Concepts
@@ -322,13 +345,14 @@ entries:
       - file: docs/products/clickhouse/reference
         title: Reference
         entries:
-          - glob: docs/products/clickhouse/reference/*
+          - file: docs/products/clickhouse/reference/supported-table-engines
+            title: Supported table engines
 
   - file: docs/products/opensearch/index
     title: OpenSearch
     entries:
       - file: docs/products/opensearch/getting-started
-        title: Getting started
+        title: Get started
       - file: docs/products/opensearch/howto/sample-dataset
       - file: docs/products/opensearch/concepts
         title: Concepts
@@ -371,12 +395,13 @@ entries:
           - file: docs/products/opensearch/reference/plugins
             title: Plugins
           - file: docs/products/opensearch/reference/advanced-params
-            title: Advanced Parameters
+            title: Advanced parameters
 
   - file: docs/products/m3db/index
     title: M3DB
     entries:
       - file: docs/products/m3db/getting-started
+        title: Get started
       - file: docs/products/m3db/concepts
         title: Concepts
         entries:
@@ -388,12 +413,16 @@ entries:
       - file: docs/products/m3db/reference
         title: Reference
         entries:
-          - glob: docs/products/m3db/reference/*
+          - file: docs/products/m3db/reference/terminology
+            title: Terminology
+          - file: docs/products/m3db/reference/advanced-params
+            title: Advanced parameters
 
   - file: docs/products/mysql/index
     title: MySQL
     entries:
       - file: docs/products/mysql/get-started
+        title: Get started
       - file: docs/products/mysql/howto
         title: HowTo
         entries:
@@ -401,13 +430,17 @@ entries:
       - file: docs/products/mysql/reference
         title: Reference
         entries:
-          - glob: docs/products/mysql/reference/*
+          - file: docs/products/mysql/reference/advanced-params
+            title: Advanced parameters
+          - file: docs/products/mysql/reference/resource-capability
+            title: Resource capability per plan
+
 
   - file: docs/products/redis/index
     title: Redis
     entries:
       - file: docs/products/redis/get-started
-        title: Getting started
+        title: Get started
       - file: docs/products/redis/concepts
         title: Concepts
         entries:
@@ -433,7 +466,8 @@ entries:
       - file: docs/products/redis/reference
         title: Reference
         entries:
-          - glob: docs/products/redis/reference/*
+          - file: docs/products/redis/reference/advanced-params
+            title: Advanced parameters
 
   - file: docs/products/cassandra/index
     title: Apache Cassandra
@@ -442,6 +476,7 @@ entries:
     title: Grafana
     entries:
       - file: docs/products/grafana/get-started
+        title: Get started
       - file: docs/products/grafana/howto
         title: HowTo
         entries:
@@ -449,7 +484,10 @@ entries:
       - file: docs/products/grafana/reference
         title: Reference
         entries:
-          - glob: docs/products/grafana/reference/*
+          - file: docs/products/grafana/reference/advanced-params
+            title: Advanced paramters
+          - file: docs/products/grafana/reference/plugins
+            title: Plugins
 
   # -------- AUXILIARY
   - file: docs/community

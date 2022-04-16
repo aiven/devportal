@@ -1,5 +1,5 @@
-List of available plugins
-=========================
+Plugins for Aiven for Grafana®
+==============================
 
 The following plugins are available in all installations of Aiven for Grafana®, and they are updated at intervals. To request additional plugins, please reach out to our support team at ``support@aiven.io``.
 

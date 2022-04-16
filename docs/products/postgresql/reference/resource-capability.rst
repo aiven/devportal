@@ -1,5 +1,5 @@
-Resource capability of plans
-============================
+Resource capability of Aiven for PostgreSQL® plans
+==================================================
 
 When creating or updating an Aiven service, the plan that you choose will drive the specific resources (CPU / memory / disk IOPS / etc) powering your service.  Aiven is a cloud data platform, so the underlying instance types are chosen appropriately for the type of service - elements like local NVMe SSDs, sufficient memory for the expected workloads, fast access to backup storage, ability to encrypt the disks, etc all contribute to the choice of which instance types to use on which cloud platforms.  In addition, particular instance types are sometimes not available in a specific cloud region.  There is no one-size-fits-all when it comes to choosing the optimal instance type, so Aiven takes all of these things into account to select the right instance type for a given service.
 

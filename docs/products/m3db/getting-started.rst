@@ -1,5 +1,5 @@
-Getting started
-===============
+Getting started with Aiven for M3DB
+===================================
 
 There are two M3-related services available in the `Aiven console <https://console.aiven.io>`_. Get started with an **M3DB** service; this is the part that stores data.
 

@@ -1,5 +1,5 @@
-List of advanced parameters
-============================
+Advanced parameters for Aiven for PostgreSQL®
+=============================================
 
 On creating a PostgreSQL® database, you can customize it using a series of the following advanced parameters:
 

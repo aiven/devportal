@@ -1,7 +1,7 @@
-Fake sample dataset
-===================
+Sample dataset generator for Aiven for Apache Kafka®
+====================================================
 
-Learning streaming is way more fun with data, so to get you started on your Apache Kafka® journey we help you create fake streaming data to a topic.
+Learning to work with streaming data is much more fun with data, so to get you started on your Apache Kafka® journey we help you create fake streaming data to a topic.
 
 .. Note::
 
