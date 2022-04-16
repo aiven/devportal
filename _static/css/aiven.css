@@ -79,6 +79,10 @@ a:hover {
   text-decoration-color: var(--linkActive) !important;
 }
 
+main > .content p:not(.card-text) a:not(.btn) {
+  color: var(--linkActive) !important;
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     background-color: var(--bgDark);
@@ -98,6 +102,10 @@ a:hover {
   a {
     color: var(--linkDark) !important;
     font-family: Inter;
+  }
+
+  main > .content p:not(.card-text) a:not(.btn) {
+    color: var(--linkDark) !important;
   }
 
   .sidebar-drawer {
