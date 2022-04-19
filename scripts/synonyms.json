@@ -1,4 +1,4 @@
 [
      "postgresql, postgres, pg",
-     "kafka, kafak, kfaka"
+     "mirrormaker, mm2"
 ]
