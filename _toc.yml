@@ -18,6 +18,7 @@ entries:
       - file: docs/platform/concepts/service-forking
       - file: docs/platform/concepts/static-ips
       - file: docs/platform/concepts/tls-ssl-certificates
+      - file: docs/platform/concepts/github-desktop-training	
     - file: docs/platform/howto
       title: HowTo
       entries:
