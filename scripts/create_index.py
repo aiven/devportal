@@ -1,11 +1,16 @@
 from opensearchpy import OpenSearch
 import argparse
+import json
+import os
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--es-url', help='OpenSearch URL')
 
 
 def create_index(os_client, index_name):
+    # Load the synonyms from a JSON file
+    syns = json.load(open(os.path.dirname(__file__) + '/synonyms.json', 'r'))
+
     # If needed uncomment next line to start over
     # os_client.indices.delete(index=index_name)
     index_body = {
@@ -21,10 +26,7 @@ def create_index(os_client, index_name):
                         "filter": {
                             "devportal_synonyms": {
                                 "type": "synonym",
-                                "synonyms": [
-                                        "postgresql, postgres, pg",
-                                        "kafka, kafak, kfaka",
-                                    ]
+                                "synonyms": syns
                                 }
                             }
                         }
