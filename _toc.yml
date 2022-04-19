@@ -437,6 +437,10 @@ entries:
     entries:
       - file: docs/products/mysql/get-started
         title: Get started
+      - file: docs/products/mysql/concepts                   
+        title: Concepts                           
+        entries:                                  
+          - glob: docs/products/mysql/concepts/*
       - file: docs/products/mysql/howto
         title: HowTo
         entries:
