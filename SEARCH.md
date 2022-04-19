@@ -125,6 +125,19 @@ os_client.index(index='devportal',
 
 You might also need to take care of removing documents that no longer exist.
 
+# Synonyms
+
+If you want to alias one search term to another, then you can update the file `scripts/synonyms.json` with comma-separated lists of aliases.  For example:
+```
+[
+     "postgresql, postgres, pg",
+     "kafka, kafak, kfaka"
+]
+```
+Note the lack of a trailing comma on the final term; this file must be valid JSON.
+
+The aliases are used at index-creation time, so if this file changes then the index needs to be re-created before it will take effect.
+
 # Testing changes to search functionality
 
 It seems like Netlify uses the deployed functions rather than the ones in a branch when building a preview, so we need to take care when testing these. A good approach is to use the [Netlify CLI](https://www.netlify.com/products/cli/) locally. For example, to test the search function:
