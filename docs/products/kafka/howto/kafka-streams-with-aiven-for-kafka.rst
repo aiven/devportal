@@ -1,5 +1,5 @@
-Use Kafka® Streams with Aiven for Apache Kafka
-==============================================
+Use Apache Kafka® Streams with Aiven for Apache Kafka®
+======================================================
 
 `Apache Kafka® streams <https://kafka.apache.org/documentation/streams/>`_ and streams API allows streaming data through the heart of Apache Kafka: the brokers. 
 
