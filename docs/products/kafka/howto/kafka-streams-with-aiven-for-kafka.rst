@@ -3,7 +3,7 @@ Use Kafka® Streams with Aiven for Apache Kafka
 
 `Apache Kafka® streams <https://kafka.apache.org/documentation/streams/>`_ and streams API allows streaming data through the heart of Apache Kafka: the brokers. 
 
-As the data, a key-value structure, enters the brokers, it is serialized by the streams API to a byte array. The opposite happens when data exists the brokers where the streams API de-serializes it back to the original key-value structure. 
+As the data, a key-value structure, enters the brokers, it is serialized by the streams API to a byte array. The opposite happens when data exits the brokers, where the streams API de-serializes it back to the original key-value structure.
 
 Apache Kafka streams also allows data transformation in real-time with the output feeding another, transformed, stream of data. This makes
 Kafka streams a powerful tool for the variety of use cases it can address in the world of real-time data processing and analysis.
@@ -45,16 +45,16 @@ The following example shows how to customise the ``KafkaMusicExample`` available
 
 1. Download the ``kafka-streams-examples`` sources from GitHub
 
-.. code:: shell
+   .. code:: shell
 
-   $ git clone https://github.com/confluentinc/kafka-streams-examples.git
+      $ git clone https://github.com/confluentinc/kafka-streams-examples.git
 
 2. Build the packages using Maven
 
-.. code:: shell
+   .. code:: shell
 
-   cd kafka-streams-examples/
-   mvn -DskipTests=true clean package
+      cd kafka-streams-examples/
+      mvn -DskipTests=true clean package
 
 .. _kafka-streams-keystore-truststore:
 
@@ -68,17 +68,23 @@ For the following example we assume:
 * The truststore is available at ``TRUSTSTORE_PATH/client.truststore.jks``
 * For simplicity, the same secret (password) is used for both the keystore and the truststore, and is shown here as ``KEY_TRUST_SECRET``
 
-.. _modify-kafkamusicexampledriverjava:
-
-Customize ``KafkaMusicExampleDriver.java``
-''''''''''''''''''''''''''''''''''''''''''
+Customizing the Java applications
+'''''''''''''''''''''''''''''''''
 
 The ``KafkaMusicExample`` example in the repository is constituted by two classes under the ``src/main/java/io/confluent/examples/streams/interactivequeries/kafkamusic`` folder:
 
 * ``KafkaMusicExampleDriver.java``: an Apache Kafka producer writing messages to a topic named ``song-feed``
 * ``KafkaMusicExample.java``: a Kafka stream application reading from the ``song-feed`` topic and calculating aggregated metrics
 
-To have the two applications working with Aiven for Apache Kafka we need to customise the files to use the right endpoints. Starting with the ``KafkaMusicExampleDriver.java`` follow the steps below:
+To have the two applications working with Aiven for Apache Kafka we need to customise the files to use the right endpoints.
+
+.. _modify-kafkamusicexampledriverjava:
+
+Customize ``KafkaMusicExampleDriver.java``
+''''''''''''''''''''''''''''''''''''''''''
+
+
+Starting with the ``KafkaMusicExampleDriver.java`` follow the steps below:
 
 1. Add the following dependencies
 
@@ -88,7 +94,7 @@ To have the two applications working with Aiven for Apache Kafka we need to cust
       import org.apache.kafka.common.config.SslConfigs;
       import java.util.HashMap;
 
-2. After the Change the ``KafkaMusicExampleDriver`` class declaration add the following two lines to set the ``DEFAULT_BOOTSTRAP_SERVERS`` and ``DEFAULT_SCHEMA_REGISTRY_URL`` endpoints replacing the ``APACHE_KAFKA_HOST``, ``APACHE_KAFKA_PORT``, ``APACHE_KAFKA_HOST``, ``SCHEMA_REGISTRY_PORT`` placeholders
+2. After the ``KafkaMusicExampleDriver`` class declaration add the following two lines to set the ``DEFAULT_BOOTSTRAP_SERVERS`` and ``DEFAULT_SCHEMA_REGISTRY_URL`` endpoints replacing the ``APACHE_KAFKA_HOST``, ``APACHE_KAFKA_PORT``, ``APACHE_KAFKA_HOST``, ``SCHEMA_REGISTRY_PORT`` placeholders
 
    .. code:: java
 
@@ -108,7 +114,7 @@ To have the two applications working with Aiven for Apache Kafka we need to cust
 
       props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
 
-   Define the keystore and truststore location and secrets for SSL connection, by replacing the placeholders ``KEYSTORE_PATH``, ``TRUSTSTORE_PATH`` and ``KEY_TRUST_SECRET`` with the values set when :ref:`creating the keystore and truststore <kafka-streams-keystore-truststore>`.
+   define the keystore and truststore location and secrets for SSL connection, by replacing the placeholders ``KEYSTORE_PATH``, ``TRUSTSTORE_PATH`` and ``KEY_TRUST_SECRET`` with the values set when :ref:`creating the keystore and truststore <kafka-streams-keystore-truststore>`.
 
    .. code:: java
 
@@ -127,7 +133,7 @@ To have the two applications working with Aiven for Apache Kafka we need to cust
       final Map<String, String> serdeConfig = Collections.singletonMap(
          AbstractKafkaSchemaSerDeConfig.SCHEMA_REGISTRY_URL_CONFIG, schemaRegistryUrl);
    
-   With the following, creating and configuring the ``SpecificAvroSerdes`` required, passing the schema registry username and password and substituting the ``SCHEMA_REGISTRY_USER`` and ``SCHEMA_REGISTRY_PASSWORD`` placeholders
+   with the following, creating and configuring the ``SpecificAvroSerdes`` required, passing the schema registry username and password and substituting the ``SCHEMA_REGISTRY_USER`` and ``SCHEMA_REGISTRY_PASSWORD`` placeholders
 
 
    .. code:: java
@@ -143,7 +149,7 @@ To have the two applications working with Aiven for Apache Kafka we need to cust
 Customize ``KafkaMusicExample.java``
 ''''''''''''''''''''''''''''''''''''
 
-Similar changes need to be performed in the file ``KafkaMusicExample.java`` always replacing the placeholders with the connection parameters fetched in the :ref:`prerequisite phase<kafka-streams-prereq>`.
+Similar changes need to be performed in the file ``KafkaMusicExample.java``, replacing the placeholders with the connection parameters fetched in the :ref:`prerequisite phase<kafka-streams-prereq>`.
 
 1. Add the following dependencies
 
@@ -175,7 +181,7 @@ Similar changes need to be performed in the file ``KafkaMusicExample.java`` alwa
          streamsConfig(bootstrapServers, restEndpointPort, "/tmp/kafka-streams", restEndpointHostname)
          );
    
-   With the following, creating and configuring the ``SpecificAvroSerdes`` required, passing the schema registry username and password and substituting the ``SCHEMA_REGISTRY_USER`` and ``SCHEMA_REGISTRY_PASSWORD`` placeholders
+   with the following, creating and configuring the ``SpecificAvroSerdes`` required, passing the schema registry username and password and substituting the ``SCHEMA_REGISTRY_USER`` and ``SCHEMA_REGISTRY_PASSWORD`` placeholders
 
 
    .. code:: java
@@ -196,7 +202,7 @@ Similar changes need to be performed in the file ``KafkaMusicExample.java`` alwa
       
       streamsConfiguration.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
 
-   Define the keystore and truststore location and secrets for SSL connection, by replacing the placeholders ``KEYSTORE_PATH``, ``TRUSTSTORE_PATH`` and ``KEY_TRUST_SECRET`` with the values set when :ref:`creating the keystore and truststore <kafka-streams-keystore-truststore>`.
+   define the keystore and truststore location and secrets for SSL connection, by replacing the placeholders ``KEYSTORE_PATH``, ``TRUSTSTORE_PATH`` and ``KEY_TRUST_SECRET`` with the values set when :ref:`creating the keystore and truststore <kafka-streams-keystore-truststore>`.
 
    .. code:: java
 
@@ -214,13 +220,13 @@ Similar changes need to be performed in the file ``KafkaMusicExample.java`` alwa
 Build the applications
 ''''''''''''''''''''''''''''''''''''
 
-from the main ``kafka-streams-examples`` folder, execute the following Maven command to build the applications:
+From the main ``kafka-streams-examples`` folder, execute the following Maven command to build the applications:
 
 .. code:: shell
 
-   $ mvn -DskipTests=true clean package
+   mvn -DskipTests=true clean package
 
-The above command should create under the ``target`` folder a ``jar`` file named ``kafka-streams-examples-<VERSION>-standalone.jar`` where version depend on the repository release number. When using the ``7.00`` release the file name would be ``kafka-streams-examples-7.0.0-standalone.jar``.
+The above command should create a ``jar`` file named ``kafka-streams-examples-<VERSION>-standalone.jar`` under the ``target`` folder, where ``<VERSION>`` depends on the repository release number. When using the ``7.00`` release the file name would be ``kafka-streams-examples-7.0.0-standalone.jar``.
 
 Run the applications
 ''''''''''''''''''''
@@ -244,19 +250,19 @@ From the second terminal session you can start the ``KafkaMusicExample`` Kafka s
 Check the produced data
 '''''''''''''''''''''''
 
-The results of the running applications are available at the following via ``curl`` command (and optionally ``jq`` to beautify the JSON output):
+The results of the running applications are available by running the following ``curl`` commands (and optionally ``jq`` to beautify the JSON output):
 
 
 * Get the latest top five across all genres
 
-.. code::
+  .. code::
 
-   curl http://localhost:7070/kafka-music/charts/top-five | jq
+     curl http://localhost:7070/kafka-music/charts/top-five | jq
 
 * Get the latest top five for the genre ``punk``
 
-.. code::
+  .. code::
 
-   curl http://localhost:7070/kafka-music/charts/genre/punk | jq
+     curl http://localhost:7070/kafka-music/charts/genre/punk | jq
 
 More information for further customisations is available in the `source GitHub repository <https://github.com/confluentinc/kafka-streams-examples>`_.
