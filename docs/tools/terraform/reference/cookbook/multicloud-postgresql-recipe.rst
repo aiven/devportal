@@ -2,8 +2,8 @@ Deploy PostgreSQL® services to multiple clouds and regions
 ==========================================================
 
 There are many reasons why businesses need to distribute their databases geographically. One of the primary reason is data residency/regulation which mandates user data to stay within certain regions. 
-This example shows a use case where a sysadmin needs to setup three highly-available PostgreSQL databases in three regions and across different cloud providers for data regulation and compliance.
-In addition, these databases must be configured in a way that they are protected against database deletion. `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_ can help create multiple services programmatically. 
+This example shows how to set up three highly-available PostgreSQL databases in three regions and across different cloud providers for data regulation and compliance. In addition, these databases must be configured in a way that they are protected against database deletion.
+`Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_ can help create multiple services programmatically. 
 
 The following image shows that the Aiven Terraform Provider calls the Aiven API under the hood to create three PostgreSQL services on AWS (Europe), DigitalOcean (US), and Google Cloud Platform(Asia):
 
