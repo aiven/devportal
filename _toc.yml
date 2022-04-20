@@ -10,6 +10,7 @@ entries:
     - file: docs/platform/concepts
       title: Concepts
       entries:
+      - file: docs/platform/concepts/some-text
       - file: docs/platform/concepts/authentication-tokens
       - file: docs/platform/concepts/beta_services
       - file: docs/platform/concepts/cloud-security
