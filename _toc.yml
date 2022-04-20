@@ -15,6 +15,7 @@ entries:
       - file: docs/platform/concepts/cloud-security
       - file: docs/platform/concepts/logs-metrics-alerts
       - file: docs/platform/concepts/projects_accounts_access
+      - file: docs/platform/concepts/copy-projects_accounts_access
       - file: docs/platform/concepts/service-forking
       - file: docs/platform/concepts/static-ips
       - file: docs/platform/concepts/tls-ssl-certificates
