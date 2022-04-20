@@ -48,6 +48,20 @@ To run the spell check locally, you will need to have `Vale <https://github.com/
 
 If the spellchecker is rejecting words that are valid (such as technology terms), double check the spelling and capitalisation, then add the word to ``.github/styles/Vocab/Docs/accept.txt``.
 
+Installing Vale
+"""""""""""""""
+On Fedora (F34), you can install Vale easily (without a package manager) using the following:::
+
+    package=$(curl -s https://api.github.com/repos/errata-ai/vale/releases/latest \
+    | jq -r ' .assets[] | select(.name | contains("Linux"))'); output=$(mktemp -d); \
+    echo $package | jq -r '.browser_download_url' | xargs curl -L --output-dir $output -O; \
+    echo $package | jq -r '.name' | sed -r "s#(.*)#$output/\1#g" | xargs cat \
+    | tar xzf - -C $output; cp -v $output/vale $HOME/bin
+
+Then add ``$HOME/bin`` to ``$PATH`` (e.g. in ``.bashrc``, where ``vale`` is downloaded to via the above command)
+
+Alternatively, use ``snap`` or ``brew``: `https://vale.sh/docs/vale-cli/installation/`
+
 Navigation structure
 ''''''''''''''''''''
 
