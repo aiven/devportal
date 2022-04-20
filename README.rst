@@ -21,6 +21,8 @@ If you call it something other than `venv` or `env`, make sure to add your prefe
 
 Activate your virtual environment using the `activate` script for your environment.
 
+    source /path/to/new/virtual/environment/bin/activate
+
 Install the dependencies::
 
     pip install -r requirements.txt
