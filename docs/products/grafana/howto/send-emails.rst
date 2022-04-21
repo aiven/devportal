@@ -30,7 +30,7 @@ To configure the Aiven for Grafana service:
 
 1. Open the Aiven client, and log in::
 
-    $ avn user login <you@example.com> --token
+    avn user login <you@example.com> --token
 
 2. configure the service using your own SMTP values::
 
