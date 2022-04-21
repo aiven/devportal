@@ -47,7 +47,7 @@ The following example shows how to customise the ``KafkaMusicExample`` available
 
    .. code:: shell
 
-      $ git clone https://github.com/confluentinc/kafka-streams-examples.git
+      git clone https://github.com/confluentinc/kafka-streams-examples.git
 
 2. Build the packages using Maven
 
