@@ -398,7 +398,16 @@ entries:
       - file: docs/products/mysql/howto
         title: HowTo
         entries:
-          - glob: docs/products/mysql/howto/*
+          - file: docs/products/mysql/howto/list-code-samples
+            entries:
+              - file: docs/products/mysql/howto/connect-from-cli
+              - file: docs/products/mysql/howto/connect-from-mysql-workbench
+              - file: docs/products/mysql/howto/connect-with-python
+              - file: docs/products/mysql/howto/connect-with-java
+          - file: docs/products/mysql/create-database
+          - file: docs/products/mysql/max-number-of-connections
+          - file: docs/products/mysql/migrate-from-external-mysql
+          - file: docs/products/mysql/do-check-service-migration
       - file: docs/products/mysql/reference
         title: Reference
         entries:
