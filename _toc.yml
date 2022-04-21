@@ -349,9 +349,15 @@ entries:
           - file: docs/products/opensearch/howto/upgrade-to-opensearch-with-terraform
           - file: docs/products/opensearch/howto/upgrade-clients-to-opensearch
           - file: docs/products/opensearch/howto/connect-with-nodejs
+            title: Connect with NodeJS
           - file: docs/products/opensearch/howto/connect-with-python
+            title: Connect with Python
+          - file: docs/products/opensearch/howto/opensearch-search-and-python
+            title: Search with Python
           - file: docs/products/opensearch/howto/opensearch-and-nodejs
+            title: Search with NodeJS
           - file: docs/products/opensearch/howto/opensearch-aggregations-and-nodejs
+            title: Aggregation with NodeJS
           - file: docs/products/opensearch/howto/control_access_to_content
           - file: docs/products/opensearch/howto/restore_opensearch_backup
           - file: docs/products/opensearch/howto/import-opensearch-data-using-elasticsearch-dump
