@@ -68,7 +68,7 @@ Define the connector configurations in a file (we'll refer to it with the name `
 The configuration file contains the following entries:
 
 * ``name``: The connector name
-* ``topics``: The list of Apache Kafka® topics to sink to the GCS bucket
+* ``topics``: The list of Apache Kafka® topics to sink to the Snowflake database
 * ``key.converter`` and ``value.converter``:  defines the messages data format in the Apache Kafka topic. The ``io.confluent.connect.avro.AvroConverter`` converter translates messages from the Avro format. To retrieve the messages schema we use Aiven's `Karapace schema registry <https://github.com/aiven/karapace>`_ as specified by the ``schema.registry.url`` parameter and related credentials.
 
 .. Note::
@@ -124,7 +124,7 @@ The example creates an Snowflake sink connector with the following properties:
 * source topics: ``test``
 * Snowflake database: ``testdb``
 * Snowflake schema: ``testschema``
-* Snowflake URL: ``https://XX0000.eu-central-1.snowflakecomputing.com:443``
+* Snowflake URL: ``XX0000.eu-central-1.snowflakecomputing.com``
 * Snowflake user: ``testuser``
 * User private key:: 
 
@@ -152,12 +152,9 @@ The connector configuration is the following:
         "value.converter.basic.auth.credentials.source": "USER_INFO",
         "value.converter.schema.registry.basic.auth.user.info": "SCHEMA_REGISTRY_USER:SCHEMA_REGISTRY_PASSWORD",
         "topics": "test",
-        "snowflake.url.name": "https://XX0000.eu-central-1.snowflakecomputing.com:443",
+        "snowflake.url.name": "XX0000.eu-central-1.snowflakecomputing.com",
         "snowflake.user.name": "testkafka",
-        "snowflake.private.key": "XXXXXXXYYY
-            ZZZZZZZZZZ
-            KKKKKKKKKK
-            YY",
+        "snowflake.private.key": "XXXXXXXYYYZZZZZZZZZZKKKKKKKKKKYY",
         "snowflake.private.key.passphrase": "password123",
         "snowflake.database.name": "testdb",
         "snowflake.schema.name": "testschema"
@@ -213,7 +210,7 @@ If you have a topic named ``iot_measurements`` containing the following data in 
 
     Since the JSON schema needs to be defined in every message, there is a big overhead to transmit the information. To achieve a better performance in term of information-message ratio you should use the Avro format together with the `Karapace schema registry <https://karapace.io/>`__ provided by Aiven
 
-You can sink the ``iot_measurements`` topic to PostgreSQL with the following connector configuration, after replacing the placeholders for ``SNOWFLAKE_URL``, ``SNOWFLAKE_USERNAME``, ``SNOWFLAKE_PRIVATE_KEY``, ``SNOWFLAKE_PRIVATE_KEY_PASSPHRASE``, ``SNOWFLAKE_DATABASE`` and ``SNOWFLAKE_SCHEMA``:
+You can sink the ``iot_measurements`` topic to Snowflake with the following connector configuration, after replacing the placeholders for ``SNOWFLAKE_URL``, ``SNOWFLAKE_USERNAME``, ``SNOWFLAKE_PRIVATE_KEY``, ``SNOWFLAKE_PRIVATE_KEY_PASSPHRASE``, ``SNOWFLAKE_DATABASE`` and ``SNOWFLAKE_SCHEMA``:
 
 .. code-block:: json
 

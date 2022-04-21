@@ -8,6 +8,8 @@ To be able to sink data from Apache Kafka® to Snowflake via the dedicated conne
 * Create a Snowflake role
 * Grant the Snowflake role access to the required database
 
+Each of these steps are described in more details below.
+
 Configure a Snowflake key pair authentication
 ---------------------------------------------
 
@@ -81,7 +83,7 @@ Creating a new role is strongly suggested to provide the minimal amount of privi
 
 4. Run the following query to alter the user making the new role default when logging in::
 
-    alter user confluent set default_role=aiven_snowflake_sink_connector_role;
+    alter user aiven set default_role=aiven_snowflake_sink_connector_role;
 
 Grant the Snowflake role access to the required database
 --------------------------------------------------------
