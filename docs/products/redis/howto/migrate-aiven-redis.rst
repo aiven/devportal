@@ -13,7 +13,7 @@ In the following steps, we show you how to create a new Aiven for Redis service,
 What you'll need
 ----------------
 
-* A target Aiven for Redis service. See :doc:`/docs/products/redis/get-started` to create one, or follow the instructions below.
+* A target Aiven for Redis service. See :doc:`/docs/products/redis/getting-started` to create one, or follow the instructions below.
 
 * The hostname, port and password of the source Redis service. 
 
