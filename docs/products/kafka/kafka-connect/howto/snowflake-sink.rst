@@ -12,7 +12,7 @@ To setup the Snowflake sink connector, you need an Aiven for Apache Kafka® serv
 
 Furthermore you need to follow the steps :doc:`to prepare the Snowflake account <snowflake-sink-prereq>` and collect the following information about the target Snowflake database upfront:
 
-* ``SNOWFLAKE_URL``: The URL used to access the Snowflake account in the format of ``https://ACCOUNT_LOCATOR.REGION_ID.snowflakecomputing.com:443`` where
+* ``SNOWFLAKE_URL``: The URL used to access the Snowflake account in the format of ``ACCOUNT_LOCATOR.REGION_ID.snowflakecomputing.com`` where
     *  ``ACCOUNT_LOCATOR`` is the name of the account, more information are available in the dedicated `Snowflake documentation <https://docs.snowflake.com/en/user-guide/admin-account-identifier.html>`_
     * ``REGION_ID`` is the Id of the region where the Snowflake service is available, you can review the region Ids in the `dedicated documentation <https://docs.snowflake.com/en/user-guide/intro-regions.html>`_
 
