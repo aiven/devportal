@@ -1,7 +1,7 @@
 Write search queries with OpenSearch® and Python
 ================================================
 
-In this tutorial, you will learn how to write and run search queries on your OpenSearch cluster using a `Python OpenSearch client <https://github.com/opensearch-project/opensearch-py>`_. 
+Learn how to write and run search queries on your OpenSearch cluster using a `Python OpenSearch client <https://github.com/opensearch-project/opensearch-py>`_. 
 
 
 For our data, we use a food recipe dataset `from Kaggle <https://www.kaggle.com/hugodarwood/epirecipes?select=full_format_recipes.json>`_. After injecting this data into our cluster, we will write search queries to find different food recipes.
@@ -12,14 +12,14 @@ Pre-requisites
 GitHub repository
 ------------------
 
-The full code used here can be found at `GitHub repository <https://github.com/aiven/demo-opensearch-python>`_. The files are organized according to their functions:
+The full code used here can be found `in a GitHub repository <https://github.com/aiven/demo-opensearch-python>`_. The files are organized according to their functions:
 
 - `config.py <https://github.com/aiven/demo-opensearch-python/blob/main/config.py>`_, information to connect to the cluster
 - `index.py <https://github.com/aiven/demo-opensearch-python/blob/main/index.py>`_, methods that manipulate the index
 - `search.py <https://github.com/aiven/demo-opensearch-python/blob/main/search.py>`_, customized search query methods
 - `helpers.py <https://github.com/aiven/demo-opensearch-python/blob/main/helpers.py>`_, response handler of search requests
 
-We use ``Typer`` Python `library <ttps://typer.tiangolo.com/>`_ to create CLI commands to run from the terminal. You can follow the instructions to have the code in your machine and be able to run the commands:
+We use ``Typer`` Python `library <ttps://typer.tiangolo.com/>`_ to create CLI commands to run from the terminal. Follow the instructions to get the code on your machine and try the commands:
 
 1. Clone the repository and install the dependencies
 
@@ -28,10 +28,10 @@ We use ``Typer`` Python `library <ttps://typer.tiangolo.com/>`_ to create CLI co
     git clone https://github.com/aiven/demo-opensearch-python
     pip install -r requirements.txt
 
-3. Download the dataset from Kaggle's `recipe dataset <https://www.kaggle.com/hugodarwood/epirecipes?select=full_format_recipes.json>`_, and save the ``full_format_recipes.json`` in the current folder of the `demo repository <https://github.com/aiven/demo-opensearch-python>`_.
+2. Download the dataset from Kaggle's `recipe dataset <https://www.kaggle.com/hugodarwood/epirecipes?select=full_format_recipes.json>`_, and save the ``full_format_recipes.json`` in the current folder of the `demo repository <https://github.com/aiven/demo-opensearch-python>`_.
 
-Connect to the OpenSearch cluster in Python
--------------------------------------------
+Connect to the OpenSearch cluster with Python
+---------------------------------------------
 
 Make sure to update the ``SERVICE_URI`` to your cluster ``SERVICE_URI`` in the ``.env`` `file <https://github.com/aiven/demo-opensearch-python/blob/main/.env>`_ as explained in the `README <https://github.com/aiven/demo-opensearch-python>`_.
 Once the environment variables are set, create an OpenSearch Python client to connect to your OpenSearch cluster using the :doc:`connection instructions <connect-with-python>`. You can see find the whole code sample in the `config.py <https://github.com/aiven/demo-opensearch-python/blob/main/config.py>`_:
@@ -116,8 +116,8 @@ All set to start writing your search queries.
 Query the data
 ''''''''''''''
 
-``search()`` method
--------------------
+Use the ``search()`` method
+---------------------------
 
 You have an OpenSearch client and data injected in your cluster, so you can start writing search queries. Python OpenSearch client has a handy method called ``search()``, which we'll use to run our queries.
 
@@ -195,8 +195,8 @@ In the next section, we cover some of the more common queries. Time to start que
 
 .. _match-query:
 
-Create match query
-------------------
+Create ``match`` query
+----------------------
 
 The ``match`` query helps you to find the best matches with multiple search words. It is the default option for a `full-text search <https://opensearch.org/docs/latest/opensearch/query-dsl/full-text/>`_. 
 
@@ -273,8 +273,8 @@ As a result of the "Spring" search recipes, you'll find:
   
   Find out more about `match queries <https://opensearch.org/docs/latest/opensearch/query-dsl/full-text/#match>`_.
 
-Use Multi match query
----------------------
+Use a ``multi_match`` query
+---------------------------
 One useful query when you want to align the ``match`` query properties but expand it to search in more fields is the ``multi_match`` query. You can add several fields in the ``fields`` property, to search for the ``query`` string across all those fields included in the list.
 
 .. code-block:: python
@@ -305,6 +305,7 @@ Suppose you are looking for citrus recipes 🍋. For example, recipes with ingre
 
 Match with phrases
 ------------------
+
 This query can be used to match **exact phrases** in a field. Where the ``query`` is the phrase that is being searched in a certain ``field``:
 
 .. code-block:: python
@@ -323,7 +324,7 @@ If you know exactly which phrases you're looking for, you can try out our ``matc
 
 .. note::
   
-  If you misspell the searched word, the query will not bring any results as the purpose is to look for **exact phrases**. The lowercase and uppercase can bring your results according to the relevance 
+  If you misspell the searched word, the query will not return any results as the purpose is to look for **exact phrases**. The lowercase and uppercase can bring your results according to the relevance 
 
 For example, try searching for ``pannacotta with lemon marmalade`` in the title:
 
@@ -335,16 +336,17 @@ If you just have a rough idea of the phrase you're looking for, you can make you
 
 .. _match-phrase-slop:
 
-Match phrases with slop query
------------------------------
+Match phrases and add some ``slop``
+-----------------------------------
+
 You can use the ``slop`` parameter to create more flexible searches. Suppose you're searching for ``pannacotta marmalade`` with the ``match_phrase`` query, and no results are found. This happens because you are looking for exact phrases, as discussed in :ref:`match phrase query <match-phrase-query>` section.
 You can expand your searches by configuring the ``slop`` parameter. The default value for the ``slop`` parameter is 0. 
 
-The ``slop`` parameter allows to control the degree of disorder in your search as explained in the `OpenSearch documentation <https://opensearch.org/docs/latest/opensearch/query-dsl/full-text/#match>`_: 
+The ``slop`` parameter allows to control the degree of disorder in your search as explained in the `OpenSearch documentation for the slop feature <https://opensearch.org/docs/latest/opensearch/query-dsl/full-text/#match>`_: 
 
       ``slop`` is the number of other words allowed between words in the query phrase. For example, to switch the order of two words requires two moves (the first move places the words atop one another), so to permit re-orderings of phrases, the slop must be at least two. A value of zero requires an exact match.
 
-You can construct the query with it as:
+You can construct a query and add some ``slop`` like this:
 
 .. code-block:: python
 
@@ -361,7 +363,7 @@ You can construct the query with it as:
 
 In the demo, you can find the `search_slop() <https://github.com/aiven/demo-opensearch-python/blob/main/search.py>`__ function where this query is used. Suppose you're looking for ``pannacotta marmalade`` phrase. To find more results rather than exact phrases, you should allow a certain degree. You can configure the ``slop`` to 2 , so it can find matches skipping **two words** between the searched ones. 
 
-This is `how <https://github.com/aiven/demo-opensearch-python/>`__ you can run this query yourself:
+This is how you can run this query yourself:
 
 .. code-block:: shell
 
@@ -380,8 +382,8 @@ So with ``slop`` parameter adjusted, you're may be able to find results even wit
   Read more about ``slop`` parameter on the `OpenSearch project specifications <https://opensearch.org/docs/latest/opensearch/query-dsl/full-text#options>`_.
 
 
-Use term query
---------------
+Use a ``term`` query
+--------------------
 
 If you want results with a precise value in a ``field``, the `term query <https://opensearch.org/docs/latest/opensearch/query-dsl/term/#term>`_ is the right choice. The term query can be used to find documents according to a precise value such as a price or product ID, for example.
 
@@ -411,8 +413,8 @@ Run the search query yourself to find recipes with zero sodium on it, for exampl
 
 
 
-Search with range query
------------------------
+Search with a ``range`` query
+-----------------------------
 
 This query helps to find documents that the field is within a provided range. This can be handy if you're dealing with **numerical values** and are interested **in ranges** instead of specific values. The queries can be constructed as:
 
@@ -462,6 +464,7 @@ Try to find recipes in a certain range of sodium, for example:
 
 Write fuzzy queries
 -------------------
+
 This query looks for documents that have **similar term** to the searched term. This similarity is calculated by the ``Levenshtein`` `edit distance <https://en.wikipedia.org/wiki/Levenshtein_distance>`_. This distance refers to the minimum number of single-character edits between two words. Some of those changes:
 
 * Change of a character: ``post`` → ``lost``
