@@ -27,20 +27,18 @@ Occasionally, when running the ``vale`` command (for instance, via ``make spell`
 
   Post "http://localhost:7069": dial tcp [::1]:7069: connect: connection refused
 
-If so, just run the command again - it appears to be transtory.
+If so, just run the command again - it appears to be transitory.
 
 The organisation of our Vale setup
 ==================================
 
-The top-level file ``.vale.ini`` specifies
+The top-level file `.vale.ini <../../.vale.ini>`_ specifies
 
-* where the vale style files can be found (``.github/vale/styles``)
+* where the vale style files can be found (`.github/vale/styles <styles>`_)
 * what files to check (``.rst`` files)
 * what styles to use (our own ``Aiven`` style)
 
-We store the details of our vale configuration in ``.github/vale``.
-
-The GitHub action's workflow is specified in ``.github/workflows/link.yaml``.
+The GitHub action's workflow is specified in `.github/workflows/lint.yaml <../workflows/lint.yaml>`_.
 
 .. _vale-action: https://github.com/errata-ai/vale-action
 
@@ -49,7 +47,7 @@ The GitHub action's workflow is specified in ``.github/workflows/link.yaml``.
 Common replacements
 ===================
 
-The file `<styles/Aiven/common_replacements.yml` provides corrections for things we think are likely to be common mistakes. This includes common misspellings (``kakfa`` instead of ``Kafka``), getting capitalisation wrong (it should be ``ClickHouse``), and forgetting the ``for`` in ``Aiven for <product>``.
+The file `<styles/Aiven/common_replacements.yml>`_ provides corrections for things we think are likely to be common mistakes. This includes common misspellings (``kakfa`` instead of ``Kafka``), getting capitalisation wrong (it should be ``ClickHouse``), and forgetting the ``for`` in ``Aiven for <product>``.
 
 
 Sentence case headings
