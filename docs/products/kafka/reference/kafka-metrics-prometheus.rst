@@ -1,5 +1,5 @@
-List of metrics available via Prometheus integration
-==================================================================
+Aiven for Apache Kafka® metrics available via Prometheus
+========================================================
 
 The following list only contains the most common metrics available via Prometheus for an Aiven for Apache Kafka® service.
 

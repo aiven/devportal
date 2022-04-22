@@ -1,5 +1,5 @@
-Supported table engines
-=======================
+Supported table engines in Aiven for ClickHouse®
+================================================
 
 This article lists the table engines that are currently supported in Aiven for ClickHouse®.
 

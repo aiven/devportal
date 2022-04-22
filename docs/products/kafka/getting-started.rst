@@ -1,5 +1,5 @@
-Getting started
-===============
+Getting started with Aiven for Apache Kafka®
+============================================
 
 Aiven services are managed in the Aiven `web
 console <https://console.aiven.io/>`__ . When you first log in to the

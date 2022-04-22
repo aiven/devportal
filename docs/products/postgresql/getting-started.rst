@@ -1,5 +1,5 @@
-Getting started
-===============
+Getting started with Aiven for PostgreSQL®
+==========================================
 
 Aiven for PostgreSQL® is available in the `Aiven console <https://console.aiven.io>`_.
 
