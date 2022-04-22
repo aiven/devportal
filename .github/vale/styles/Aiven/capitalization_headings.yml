@@ -21,7 +21,7 @@ exceptions:
   - Flink
   - GitHub
   - Go
-  - Google Big Query
+  - Google BigQuery
   - Google Cloud Storage
   - Grafana
   - Hobbyist
@@ -47,6 +47,7 @@ exceptions:
   - Python
   - Redis
   - Simple Authentication and Security Layer
+  - Snowflake
   - Spring
   - Startup
   - TaskManager
