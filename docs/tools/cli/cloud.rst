@@ -25,15 +25,19 @@ Lists cloud regions with related geographical region, latitude and longitude.
   * - ``--project``
     - The project to fetch details for
 
-**Example:** Show the details of the currently selected project.
+**Example:** Show the clouds available to the currently selected project.
 
 ::
 
   avn cloud list
 
 
-**Example:** Show the details of a named project.
+**Example:** Show the clouds available to a named project.
 
 ::
 
   avn cloud list --project my-project
+
+
+A reference of the cloud regions is available in the :doc:`dedicated document </docs/platform/reference/list_of_clouds>`.
+
