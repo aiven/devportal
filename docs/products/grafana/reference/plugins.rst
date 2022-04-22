@@ -95,7 +95,7 @@ Status history
 Status Panel - `Grafana <https://grafana.com/grafana/plugins/vonage-status-panel/>`__ | `GitHub <https://github.com/Vonage/Grafana_Status_panel>`__
     Use as a centralized view for the status of component in a glance.
 
-``Statusmap`` - `Grafana <https://grafana.com/grafana/plugins/flant-statusmap-panel/>`__ | `GitHub <https://github.com/flant/grafana-statusmap>`__
+Statusmap - `Grafana <https://grafana.com/grafana/plugins/flant-statusmap-panel/>`__ | `GitHub <https://github.com/flant/grafana-statusmap>`__
     Shows discrete statuses of multiple targets over time.
 
 Table - `Grafana <https://grafana.com/grafana/plugins/table/>`__
@@ -110,7 +110,7 @@ Time series
 Welcome
     Included with Grafana.
 
-``Worldmap`` Panel - `GitHub <https://github.com/grafana/worldmap-panel>`__
+Worldmap Panel - `GitHub <https://github.com/grafana/worldmap-panel>`__
     Displays time series data or geohash data from Elasticsearch overlaid on a world map.
 
 
@@ -174,8 +174,8 @@ Prometheus AlertManager - `GitHub <https://github.com/camptocamp/grafana-prometh
 
 SimpleJson - `Grafana <https://grafana.com/grafana/plugins/grafana-simple-json-datasource/>`__ | `GitHub <https://github.com/grafana/simple-json-datasource>`__
 
-``Stackdriver`` / Google Cloud Monitoring
-    Data source for Google's monitoring service (formerly named, and listed as, ``Stackdriver``).
+Stackdriver / Google Cloud Monitoring
+    Data source for Google's monitoring service (formerly named, and listed as, Stackdriver).
 
 Tempo
     High volume, minimal dependency trace storage. OSS tracing solution from Grafana Labs.

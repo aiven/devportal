@@ -1,4 +1,4 @@
-141
+144
 ACL
 ACLs
 Aiven
@@ -120,6 +120,8 @@ Singlestat
 Snowflake
 Splunk
 spring
+Stackdriver
+Statusmap
 Stunnel
 subnet
 subtab
@@ -139,6 +141,7 @@ unaggregated
 upsert
 wget
 Workbench
+Worldmap
 Zabbix
 Zipkin
 ZooKeeper

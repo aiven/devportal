@@ -17,7 +17,11 @@ jobs:
 
     - name: Vale
       # We want support for at least vale v2.15.3
-      #uses: errata-ai/vale-action@v1.3.0
+      # The current release of vale-action, v1.5.0, only provides vale 2.15.2
+      # So for the moment we need to use vale-action master, which provides
+      # at least vale 2.15.5.
+      # When there is a vale-action that provides a version we can use, re-pin
+      # this to a specific version of vale-action.
       uses: errata-ai/vale-action@master
       with:
         files: '["index.rst", "docs"]'

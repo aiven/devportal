@@ -44,11 +44,9 @@ Running build tasks locally
 To run the spell check locally, you will need to have `Vale <https://github.com/errata-ai/vale>`_ installed on your computer and available on your path.
 
 * Check links: ``make linkcheck``
-* Check spelling: ``make spell``
+* Check spelling and usage: ``make spell``
 
-For documentation on how we use Vale, see `our Vale README <.github/vale/README.rst>`_.
-
-If the spellchecker is rejecting words that are valid (such as technology terms), double check the spelling and capitalisation. If it's upset about the use of a capitalised word in a title, then add the word for ``.github/vale/styles/Aiven/capitalization_headings.yml``, and otherwise add it to the Aiven dictionary at  ``.github/vale/dicts/aiven.dic``. Please note that we try not to add the names of commands to the dictionary (for instance, ``jq`` or ``kcat``). See the section on dictionaries in `our Vale README <.github/vale/README.rst>`_
+For documentation on how we use Vale, see `our Vale README <.github/vale/README.rst>`_. This also explains how to add new words to the dictionary, or alter the things that Vale checks.
 
 Navigation structure
 ''''''''''''''''''''
