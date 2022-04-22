@@ -84,7 +84,7 @@ Checking registered trademark usage
 
 It is correct and polite to put the ``®`` (registered trademark) character after particular product names, in at least the first and most prominent use on a page. Style files with names like `<styles/Aiven/first_Flink_is_registered.yml` check for this.
 
-``*Note:** they're not perfect yet, so may not always catch all cases, and may not insist that the product name with ``®`` comes *before* other uses. We will be making improvements in this area.
+**Note:** they're not perfect yet, so may not always catch all cases, and may not insist that the product name with ``®`` comes *before* other uses. We will be making improvements in this area.
 
 Test files
 ==========
