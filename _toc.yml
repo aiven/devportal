@@ -272,6 +272,7 @@ entries:
               - file: docs/products/postgresql/howto/migrate-aiven-db-migrate
               - file: docs/products/postgresql/howto/migrate-from-aws-rds
               - file: docs/products/postgresql/howto/migrate-from-aws-aurora
+              - file: docs/products/postgresql/howto/migrate-from-google-cloudsql
               - file: docs/products/postgresql/howto/migrate-pg-dump-restore
           - file: docs/products/postgresql/howto/list-integrations
             entries:

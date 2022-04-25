@@ -1,5 +1,5 @@
-Migrate from RDS PostgreSQL to Aiven PostgreSQL with ``aiven-db-migrate``
-===========================================================================
+Migrate from google cloud SQL PostgreSQL to Aiven PostgreSQL with ``aiven-db-migrate``
+========================================================================================
 
 ``avn`` Aiven CLI simplifies PostgreSQL database migration with ``aiven-db-migrate`` without down time.
 The ``aiven-db-migrate`` tool is an open source project available on `GitHub <https://github.com/aiven/aiven-db-migrate>`_, and it is the preferred way to perform the migration. 
@@ -69,25 +69,22 @@ To review the current ``wal_level``, run the following command on the source clu
 
 .. _pg_migrate_wal:
 
-If you have not enabled logical replication on RDS already, the following instructions shows how to set the ``rds.logical_replication`` parameter to ``1`` (true) in the parameter group.
+1. If you have not enabled logical replication on Cloud SQL PostgreSQL already, the following instructions shows how to set the ``cloudsql.logical_decoding`` parameter to ``On``.
 
-    Create a parameter group for your RDS database.
+   Set logical replication parameter for your Cloud SQL PostgreSQL database.
 
-    .. image:: /images/products/postgresql/migrate-rds-pg-parameter-group.png
-        :alt: RDS PostgreSQL parameter group
+    .. image:: /images/products/postgresql/migrate-cloudsql-flags.png
+        :alt: Cloud SQL PostgreSQL flags
 
-    Set the ``rds.logical_replication`` parameter to ``1`` (true) in the parameter group
+2. Authorize Aiven PostgresSQL IP to Cloud SQL's allowed network CIDR.
 
-    .. image:: /images/products/postgresql/migrate-rds-pg-parameter-value.png
-        :alt: RDS PostgreSQL parameter value
+    .. image:: /images/products/postgresql/migrate-cloudsql-network.png
+        :alt: Cloud SQL PostgreSQL network
 
-    Modify Database options to use the new DB parameter group - ``RDS`` -> ``Databases`` -> ``Modify``
 
-    .. image:: /images/products/postgresql/migrate-rds-pg-parameter-modify.png
-        :alt: RDS PostgreSQL parameter modify
+3. Set replication role to PostgreSQL user (or the user will be used for migration) in Cloud SQL PostgreSQL::
 
-.. Warning::
-    Apply immediately or reboot is required to see configuration change reflected to ``wal_level``
+    ALTER ROLE postgres REPLICATION;
 
 
 .. include:: aiven-db-migrate.rst
