@@ -10,10 +10,10 @@ The following image shows that the Aiven Terraform Provider calls the Aiven API 
 .. mermaid::
 
    graph LR
-      A[Aiven Terraform Provider]
-      A --> B[(AWS EU)]
-      A --> C[(DO US)]
-      A --> D[(GCP Asia)]
+      A[Terraform Script]
+      A --> B[(Aiven for PostgreSQL - AWS EU)]
+      A --> C[(Aiven for PostgreSQL - DigitalOcean NA)]
+      A --> D[(Aiven for PostgreSQL - GCP Asia)]
 
 Describe the setup
 ------------------
@@ -26,40 +26,36 @@ Here is the sample Terraform file to deploy all three services. Keep in mind tha
 
    # European Postgres Service
    resource "aiven_pg" "aws-eu-pg" {
-   project      = var.project_name
-   cloud_name   = "aws-eu-west-2" # London
-   plan         = "business-8"    # Primary + read replica
-   service_name = "postgres-eu-aws"
-   termination_protection = true
+     project      = var.project_name
+     cloud_name   = "aws-eu-west-2" # London
+     plan         = "business-8"    # Primary + read replica
+     service_name = "postgres-eu-aws"
+     termination_protection = true
    }
 
    # US Postgres Service
    resource "aiven_pg" "do-us-pg" {
-   project      = var.project_name
-   cloud_name   = "do-nyc"     # New York
-   plan         = "business-8" # Primary + read replica
-   service_name = "postgres-us-do"
-   termination_protection = true
+     project      = var.project_name
+     cloud_name   = "do-nyc"     # New York
+     plan         = "business-8" # Primary + read replica
+     service_name = "postgres-us-do"
+     termination_protection = true
    }
 
    # Asia Postgres Service
    resource "aiven_pg" "gcp-as-pg" {
-   project      = var.project_name
-   cloud_name   = "google-asia-southeast1" # Singapore
-   plan         = "business-8"             # Primary + read replica
-   service_name = "postgres-as-gcp"
-   termination_protection = true
+     project      = var.project_name
+     cloud_name   = "google-asia-southeast1" # Singapore
+     plan         = "business-8"             # Primary + read replica
+     service_name = "postgres-as-gcp"
+     termination_protection = true
    }
 
 This file creates three Aiven for PostgreSQL services across three cloud providers and in three different regions. The ``termination_protection = true`` property ensures that these databases are protected against accidental or unauthorized deletion.
 
-With termination protection enabled, a ``terraform destroy`` command will result in the following error message:
+With termination protection enabled, a ``terraform destroy`` command will result in a 403 response and an error message "Service is protected against termination and shutdown. Remove termination protection first.".
 
-.. code:: bash
-
-   Error: 403: {"errors":[{"message":"Service is protected against termination and shutdown. Remove termination protection first.","status":403}],"message":"Service is protected against termination and shutdown. Remove termination protection first."}
-
-To proceed, you need to update the script with ``termination_protection = false`` and then execute a ``terraform apply`` followed by a ``terraform destroy``.
+To destroy resources with termination protection, you need to update the script with ``termination_protection = false`` and then execute a ``terraform apply`` followed by a ``terraform destroy``.
 
 More resources
 --------------
@@ -67,5 +63,5 @@ More resources
 You might find these related resources useful too:
 
 - `Configuration options for PostgreSQL <https://developer.aiven.io/docs/products/postgresql/reference/list-of-advanced-params.html>`_
-
-
+- `Set up your first Aiven Terraform project <https://developer.aiven.io/docs/tools/terraform/get-started.html>`_
+- `Benefits and challenges of multicloud <https://aiven.io/blog/getting-the-most-of-multi-cloud>`_
