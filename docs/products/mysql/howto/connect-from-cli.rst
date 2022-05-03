@@ -1,7 +1,7 @@
 Connect to MySQL from the command line
 --------------------------------------
 
-Here, you can find how to connect to your MySQL via the command line with:
+Here, you can find how to connect to your MySQL via the command line with a choice of tools:
 
 * :ref:`mysqlsh shell <connect-mysqlsh>`
 * :ref:`mysql client <connect-mysql>`
@@ -100,4 +100,4 @@ Once you have these parameters, execute the following from a terminal window to 
    mysql --user avnadmin --password=USER_PASSWORD --host USER_HOST --port USER_PORT defaultdb
 
 .. warning::
-   If you are providing the password via the command line, you must pass it as shown; putting a space between the parameter name and value will result in wrong parsing of the variables.
+   If you are providing the password via the command line, you must pass it as shown; putting a space between the parameter name and value will cause the password to be parsed incorrectly.
