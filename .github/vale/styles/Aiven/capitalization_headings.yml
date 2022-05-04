@@ -27,6 +27,7 @@ exceptions:
   - Hobbyist
   - HowTo
   - InfluxDB
+  - InnoDB
   - Java
   - Kafdrop
   - Kafka
