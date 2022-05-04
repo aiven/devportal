@@ -1,7 +1,7 @@
 Set up your first Aiven Terraform project
 =========================================
 
-This example shows the setup for a Terraform project containing a single Redis™** service, and shows off some useful commands to stand up (and destroy) your Aiven data infrastructure.
+This example shows the setup for a Terraform project containing a single Redis™* service, and shows off some useful commands to stand up (and destroy) your Aiven data infrastructure.
 
 Prepare the dependencies 
 ''''''''''''''''''''''''

@@ -1,0 +1,61 @@
+extends: capitalization
+message: "'%s' should be in sentence case"
+level: warning
+scope: heading
+# $title, $sentence, $lower, $upper, or a pattern.
+match: $sentence
+exceptions:
+  - ACLs
+  - APIs
+  - Aiven
+  - Apache
+  - Boot
+  - Business
+  - Cassandra
+  - ClickHouse
+  - Connect
+  - Dashboards
+  - Dev
+  - Docker
+  - Elasticsearch
+  - Flink
+  - GitHub
+  - Go
+  - Google BigQuery
+  - Google Cloud Storage
+  - Grafana
+  - Hobbyist
+  - HowTo
+  - InfluxDB
+  - InnoDB
+  - Java
+  - Kafdrop
+  - Kafka
+  - Kubernetes
+  - M3
+  - MirrorMaker
+  - MySQL
+  - NodeJS
+  - OpenSearch
+  - Operator
+  - Pagila
+  - pgAdmin
+  - PgBouncer
+  - PostgreSQL
+  - Postman
+  - Premium
+  - Prometheus
+  - Python
+  - Redis
+  - Simple Authentication and Security Layer
+  - Snowflake
+  - Spring
+  - Startup
+  - TaskManager
+  - Telegraf
+  - Terraform
+  - TimescaleDB
+  - Transport Layer Security
+  - VPC
+  - Workbench
+  - ZooKeeper

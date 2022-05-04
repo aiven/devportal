@@ -77,7 +77,7 @@ These are the placeholders you will need to replace in the code sample:
   * - ``USER_PORT``
     - Port for MySQL connection
   * - ``USER_PASSWORD``
-    - Password of your Aiven MySQL connection
+    - Password of your Aiven for MySQL connection
 
 .. _connect-mysql:
 

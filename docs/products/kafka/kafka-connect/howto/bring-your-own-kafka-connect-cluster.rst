@@ -66,7 +66,7 @@ Download the required binaries
 The following binaries are needed to setup a Apache Kafka Connect cluster locally:
 
 * `Apache Kafka <https://kafka.apache.org/quickstart>`_
-* `Aiven Kafka connect JDBC connector <https://github.com/aiven/jdbc-connector-for-apache-kafka/releases>`_
+* `Aiven for Kafka connect JDBC connector <https://github.com/aiven/jdbc-connector-for-apache-kafka/releases>`_
 * If you are going to use Avro as the data format, `Avro Value Converter <https://www.confluent.io/hub/confluentinc/kafka-connect-avro-converter>`_. The examples below show how to do this.
 
 Setup the local Apache Kafka Connect cluster

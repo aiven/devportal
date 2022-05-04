@@ -1,0 +1,115 @@
+# A file of tests to be run with shelltest.
+#
+# See https://github.com/simonmichael/shelltestrunner
+#
+# On a Mac, install with `brew install shelltest`
+#
+# For the moment there's only one test file for all the tests - this may change.
+#
+# Run with:
+#
+#    $ shelltest --diff .github/vale/tests/shelltest.test
+#
+# or, for instance:
+#
+#    $ shelltest --diff --with vale-2.15.1 .github/vale/tests/shelltest.test
+#
+# NOTE that the order of output of error messages from vale does not seem to be
+# deterministic. This has been evident with `.github/vale/tests/bad.rst`.
+# The simplest solution for our purposes is to run the result through `sort`,
+# although then we lost the ability to test the return code - although for
+# these tests I don't think I'm concerned with testing the vale return code.
+#
+# NOTE that working out what is going on when deciding if the output is what
+# is actually expected is best done *without* `sort`, as line numbers don't
+# sort in order.
+
+# ---------------------------------------------------------------
+# General checks
+
+$ vale --output=line .github/vale/tests/good.rst
+>=0
+
+# PROBLEMS:
+# * line 20 <Apache Nonesuch> should probably provoke an error, but does not
+#   - that's because I haven't written the style code to make it so
+# * line 27 <``literal-text`` MirrorMaker2> should definitey provoke an error, but does not
+#   - that's definitely some sort of bug, as see line 28
+
+$ vale --output=line .github/vale/tests/bad.rst | sort
+>
+.github/vale/tests/bad.rst:10:1:Aiven.common_replacements:Use 'InfluxDB' instead of 'influx'.
+.github/vale/tests/bad.rst:11:1:Aiven.aiven_spelling:'influxdb' does not seem to be a recognised word
+.github/vale/tests/bad.rst:11:1:Aiven.common_replacements:Use 'InfluxDB' instead of 'influxdb'.
+.github/vale/tests/bad.rst:12:1:Aiven.aiven_spelling:'kakfa' does not seem to be a recognised word
+.github/vale/tests/bad.rst:12:1:Aiven.common_replacements:Use 'Kafka' instead of 'kakfa'.
+.github/vale/tests/bad.rst:13:1:Aiven.aiven_spelling:'kafka' does not seem to be a recognised word
+.github/vale/tests/bad.rst:13:1:Aiven.common_replacements:Use 'Kafka' instead of 'kafka'.
+.github/vale/tests/bad.rst:14:1:Aiven.aiven_spelling:'multicloud' does not seem to be a recognised word
+.github/vale/tests/bad.rst:14:1:Aiven.common_replacements:Use 'multi-cloud' instead of 'multicloud'.
+.github/vale/tests/bad.rst:15:1:Aiven.aiven_spelling:'postgesql' does not seem to be a recognised word
+.github/vale/tests/bad.rst:15:1:Aiven.common_replacements:Use 'PostgreSQL' instead of 'postgesql'.
+.github/vale/tests/bad.rst:16:1:Aiven.aiven_spelling:'postgres' does not seem to be a recognised word
+.github/vale/tests/bad.rst:16:1:Aiven.common_replacements:Use 'PostgreSQL' instead of 'postgres'.
+.github/vale/tests/bad.rst:17:1:Aiven.common_replacements:Use 'PostgreSQL' instead of 'postgreSql'.
+.github/vale/tests/bad.rst:18:1:Aiven.aiven_spelling:'timeseries' does not seem to be a recognised word
+.github/vale/tests/bad.rst:18:1:Aiven.common_replacements:Use 'time series' instead of 'timeseries'.
+.github/vale/tests/bad.rst:21:8:Aiven.first_Flink_is_registered:At least one 'Flink' must be marked as ®
+.github/vale/tests/bad.rst:23:1:Aiven.common_replacements:Use 'MirrorMaker 2' instead of 'MirrorMaker2'.
+.github/vale/tests/bad.rst:29:18:Aiven.common_replacements:Use 'MirrorMaker 2' instead of 'MirrorMaker2'.
+.github/vale/tests/bad.rst:6:1:Aiven.aiven_spelling:'clickhouse' does not seem to be a recognised word
+.github/vale/tests/bad.rst:6:1:Aiven.common_replacements:Use 'ClickHouse' instead of 'clickhouse'.
+.github/vale/tests/bad.rst:7:1:Aiven.aiven_spelling:'Clickhouse' does not seem to be a recognised word
+.github/vale/tests/bad.rst:7:1:Aiven.common_replacements:Use 'ClickHouse' instead of 'Clickhouse'.
+.github/vale/tests/bad.rst:9:1:Aiven.common_replacements:Use 'Flink' instead of 'flick'.
+>=0
+
+
+# ---------------------------------------------------------------
+# Require a registered/trademarked occurrence of a term
+
+$ vale --output=line .github/vale/tests/first_ref_good.rst | sort
+>
+>=0
+
+# In line 15, we detect that `Redis™*blibble` and `Flink@wahooness` are problems, but
+# I'm not quite sure if the errors given are quite what I want.
+
+$ vale --output=line .github/vale/tests/first_ref_bad.rst | sort
+>
+.github/vale/tests/first_ref_bad.rst:10:25:Aiven.first_Cassandra_is_registered:At least one 'Cassandra' must be marked as ®
+.github/vale/tests/first_ref_bad.rst:10:36:Aiven.first_OpenSearch_is_registered:At least one 'OpenSearch' must be marked as ®
+.github/vale/tests/first_ref_bad.rst:10:48:Aiven.first_PostgreSQL_is_registered:At least one 'PostgreSQL' must be marked as ®
+.github/vale/tests/first_ref_bad.rst:10:60:Aiven.first_InfluxDB_is_registered:At least one 'InfluxDB' must be marked as ®
+.github/vale/tests/first_ref_bad.rst:10:70:Aiven.first_Grafana_is_registered:At least one 'Grafana' must be marked as ®
+.github/vale/tests/first_ref_bad.rst:12:36:Aiven.first_Kubernetes_is_registered:At least one 'Kubernetes' must be marked as ®
+.github/vale/tests/first_ref_bad.rst:14:11:Aiven.first_Redis_is_trademarked:At least one 'Redis' must be marked as ™*
+.github/vale/tests/first_ref_bad.rst:17:5:Aiven.first_Redis_is_trademarked:At least one 'Redis' must be marked as ™*
+.github/vale/tests/first_ref_bad.rst:17:64:Aiven.first_Redis_is_trademarked:At least one 'Redis' must be marked as ™*
+.github/vale/tests/first_ref_bad.rst:19:31:Aiven.first_Redis_is_trademarked:At least one 'Redis' must be marked as ™*
+.github/vale/tests/first_ref_bad.rst:19:40:Aiven.first_Redis_is_trademarked:At least one 'Redis' must be marked as ™*
+.github/vale/tests/first_ref_bad.rst:19:51:Aiven.first_Redis_is_trademarked:At least one 'Redis' must be marked as ™*
+.github/vale/tests/first_ref_bad.rst:1:11:Aiven.first_Flink_is_registered:At least one 'Flink' must be marked as ®
+.github/vale/tests/first_ref_bad.rst:21:28:Aiven.aiven_spelling:'blibble' does not seem to be a recognised word
+.github/vale/tests/first_ref_bad.rst:21:7:Aiven.aiven_spelling:'wahooness' does not seem to be a recognised word
+.github/vale/tests/first_ref_bad.rst:4:42:Aiven.first_Flink_is_registered:At least one 'Flink' must be marked as ®
+.github/vale/tests/first_ref_bad.rst:6:43:Aiven.first_Flink_is_registered:At least one 'Flink' must be marked as ®
+.github/vale/tests/first_ref_bad.rst:8:19:Aiven.first_Kafka_is_registered:At least one 'Kafka' must be marked as ®
+.github/vale/tests/first_ref_bad.rst:8:39:Aiven.first_ClickHouse_is_registered:At least one 'ClickHouse' must be marked as ®
+.github/vale/tests/first_ref_bad.rst:8:65:Aiven.first_ClickHouse_is_registered:At least one 'ClickHouse' must be marked as ®
+>=0
+
+# ---------------------------------------------------------------
+# Headings are to be sentence cased
+# Note that these are warnings, not errors, and so vale's exit status code is 0
+
+$ vale --output=line .github/vale/tests/sentence_case_title_good.rst | sort
+>
+>=0
+
+
+$ vale --output=line .github/vale/tests/sentence_case_title_bad.rst | sort
+>
+.github/vale/tests/sentence_case_title_bad.rst:11:1:Aiven.capitalization_headings:'Short and Bad' should be in sentence case
+.github/vale/tests/sentence_case_title_bad.rst:6:1:Aiven.capitalization_headings:'This is a subtitle Not in sentence case by Tony' should be in sentence case
+>=0

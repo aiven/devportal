@@ -44,9 +44,9 @@ Running build tasks locally
 To run the spell check locally, you will need to have `Vale <https://github.com/errata-ai/vale>`_ installed on your computer and available on your path.
 
 * Check links: ``make linkcheck``
-* Check spelling: ``make spell``
+* Check spelling and usage: ``make spell``
 
-If the spellchecker is rejecting words that are valid (such as technology terms), double check the spelling and capitalisation, then add the word to ``.github/styles/Vocab/Docs/accept.txt``.
+For documentation on how we use Vale, see `our Vale README <.github/vale/README.rst>`_. This also explains how to add new words to the dictionary, or alter the things that Vale checks.
 
 Navigation structure
 ''''''''''''''''''''

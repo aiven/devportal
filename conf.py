@@ -53,7 +53,8 @@ templates_path = ['_templates']
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = [
     '_build', 'Thumbs.db', '.DS_Store', 'README*', 'scripts', 'utils',
-    'CONTRIBUTING.rst', 'REVIEWING.rst', 'includes'
+    'CONTRIBUTING.rst', 'REVIEWING.rst', 'includes',
+    '.github/vale'
 ]
 
 # gitstamp config
