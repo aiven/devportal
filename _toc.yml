@@ -282,6 +282,8 @@ entries:
       - file: docs/products/postgresql/reference
         title: Reference
         entries:
+          - file: docs/products/postgresql/reference/high-cpu-load-of-pgbouncer
+            title: Extensions
           - file: docs/products/postgresql/reference/list-of-advanced-params
             title: Advanced parameters
           - file: docs/products/postgresql/reference/list-of-extensions
