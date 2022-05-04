@@ -42,8 +42,6 @@ The GitHub action's workflow is specified in `.github/workflows/lint.yaml <../wo
 
 .. _vale-action: https://github.com/errata-ai/vale-action
 
-**Note** there is also an `issues <ISSUES.rst>`_ file that describes possible future work.
-
 Common replacements
 ===================
 
