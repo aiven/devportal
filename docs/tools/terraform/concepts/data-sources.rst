@@ -16,6 +16,6 @@ A good example is the ``project`` resource. If you are working with services and
         sensitive = true
     }
 
-By using the data source instead of the resource, Terraform won't try to manage the project. However it has awareness of it, and can return information relating to it. In the example above, the certificate is made available as an output so that Terraform can use that data, perhaps as configuration for another resource.
+By using the data source instead of the resource, Terraform won't try to manage the project. However it has awareness of it, and can return information relating to it. In the example above, the certificate is made available as an `output value <https://www.terraform.io/language/values/outputs>`_ so that Terraform can use that data, perhaps as configuration for another resource.
 
 The data source approach is recommended for projects that will integrate with resources that they don't manage themselves.
