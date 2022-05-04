@@ -1,7 +1,7 @@
 Handle page redirects
 =====================
 
-Devportal uses the filename to define the page url, so for example the page
+Devportal uses the filename to define the page URL, so for example the page
 ``docs/platform/concepts/database-forking.rst``
 will be available as https://developer.aiven.io/docs/platform/concepts/database-forking.html
 
@@ -29,6 +29,6 @@ This was done by renaming the original page (and adjusting the ``_toc.yml`` file
     This page is a redirect from ``database-forking`` to ``service-forking``, since the original name (``database-forking``) was incorrect.
     It's part of `PR #710 <https://github.com/aiven/devportal/pull/710>`_
 
-The ``:orphan:`` section tells sphinx not to include this page in any contents list, which means that it does not issue a warning that ``database-forking.rst`` isn't included in the ``_toc.yaml`` file.
+The ``:orphan:`` section tells Sphinx not to include this page in any contents list, which means that it does not issue a warning that ``database-forking.rst`` isn't included in the ``_toc.yaml`` file.
 
 The javascript inside the ``.. raw:: html`` does the redirect.
