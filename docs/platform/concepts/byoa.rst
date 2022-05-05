@@ -5,7 +5,7 @@ Bring Your Own Account (BYOA) is an optional setup feature that gives customers 
 
 The BYOA setup has a custom pricing structure that is calculated case by case. 
 
-For a cost estimate, please contact `sales@aiven.io`. 
+For a cost estimate, please contact `Sales@Aiven.io <_SalesEmail>`_.
 
 What is BYOA?
 =============
@@ -44,23 +44,25 @@ Each month, Aiven charges a monthly BYOA fee for computing resources and Aiven s
 
 Remember that in BYOA, Aiven does not invoice for the cloud service. As a BYOA customer, you pay for the cloud computing resources you are using directly through your cloud provider portal. 
 
-All BYOA discounts are evaluated case by case. If your company fulfills the requirements specified earlier, contact sales@aiven.io for more information and cost estimations of the full setup. 
+All BYOA discounts are evaluated case by case. If your company fulfills the requirements specified earlier, contact `Sales@Aiven.io <_SalesEmail>`_ for more information and cost estimations of the full setup. 
 
-Testing, POC, and Deployments
+Testing, POC, and deployments
 =============================
 
-BYOA requires setup on your cloud account as well as Aiven's automation. Coordinating this process takes time so we recommend the following timeline for anyone considering using the BYOA deployment model.
+BYOA requires setup on your cloud account as well as Aiven's automation. Coordinating this process takes time so we recommend allocating sufficient time for anyone considering using the BYOA deployment model.
 
-1. [2-4 Weeks] Functionality Testing and Security Validation
+- Functionality Testing and Security Validation
 
   - Ensure the technical feasibility of the Aiven platform
   - Perform all need technical and security audits of the proposed solution
 
-1. [2-4 Weeks] Deploy and Configure the BYOA Environment
+- Deploy and Configure the BYOA Environment
 
-  - Ensure that you have devops resources available to iterate and debug any networking issues
+  - Ensure that you have DevOps resources available to iterate and debug any networking issues
   - This can potentially be done in parallel with phase #1
 
-1. [1-2 Weeks] Onboarding and Migrations
+- On-boarding and Migrations
 
   - Aiven will be available for support while teams migrate workloads onto the new platform
+
+.. _SalesEmail: mailto:sales@aiven.io
