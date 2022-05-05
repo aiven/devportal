@@ -1,6 +1,6 @@
 REST API endpoint access
 ===============================================
-Aiven for OpenSearch® limits access to REST API endpoints. Below you can find which endpoints you can access.
+For operational reasons, Aiven for OpenSearch® limits access to REST API endpoints. Below you can find which endpoints you can access.
 
 The following endpoints are allowed:
 
