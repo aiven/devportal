@@ -11,6 +11,4 @@ The maximum value for ``number_of_replicas`` is the number of nodes in the clust
 
 For example, for a 3-node cluster, the maximum ``number_of_replicas`` is 2, which means all shards on the index are replicated to all 3 nodes.
 
-If ``number_of_replicas`` is set to 0 in a multi-node cluster, it is
-   automatically increased to 1 to ensure no
-data-loss occurs if one node is lost.
+If ``number_of_replicas`` is set to 0 in a multi-node cluster, it is automatically increased to 1 to ensure no data-loss occurs if one node is lost.
