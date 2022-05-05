@@ -73,14 +73,14 @@ The very first line of `<dicts/aiven.dic>`_ is a count of the number of entries.
 
 If you don't care about the case of the word, then just put it in the dictionary in lower-case. For instance, ``fakeword`` will match ``fakeword``, ``Fakeword`` and ``fakeWORD``.
 
-If you enter the word in ``mixedCase``, then it won't match a lower-case word, but it also won't forbid the "wrong" mixed-case (for instance, ``MixedCase``). If you care about the specific use of capital letters in a word, it's better to use the `Common Replacements`_ file to be specific about the
+If you enter the word in ``mixedCase``, then it won't match a lower-case word, but it also won't forbid the "wrong" mixed-case (for instance, ``MixedCase``). If you care about the specific use of capital letters in a word, it's better to use the `Common Replacements`_ file to be specific about how it should appear.
 
 We try not to add words that are actually commands, for instance ``jq`` or ``wget``.
 
 Checking registered trademark usage
 ===================================
 
-It is correct and polite to put the ``®`` (registered trademark) character after particular product names, in at least the first and most prominent use on a page. Style files with names like `<styles/Aiven/first_Flink_is_registered.yml` check for this.
+It is correct and polite to put the ``®`` (registered trademark) character after particular product names, in at least the first and most prominent use on a page. Style files with names like `<styles/Aiven/first_Flink_is_registered.yml>`_ check for this.
 
 **Note:** they're not perfect yet, so may not always catch all cases, and may not insist that the product name with ``®`` comes *before* other uses. We will be making improvements in this area.
 
