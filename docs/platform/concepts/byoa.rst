@@ -5,7 +5,7 @@ Bring Your Own Account (BYOA) is an optional setup feature that gives customers 
 
 The BYOA setup has a custom pricing structure that is calculated case by case. 
 
-For a cost estimate, please contact `Sales@Aiven.io <_SalesEmail>`_.
+For a cost estimate, please contact `Sales@Aiven.io <mailto:sales@aiven.io>`_.
 
 What is BYOA?
 =============
@@ -44,7 +44,7 @@ Each month, Aiven charges a monthly BYOA fee for computing resources and Aiven s
 
 Remember that in BYOA, Aiven does not invoice for the cloud service. As a BYOA customer, you pay for the cloud computing resources you are using directly through your cloud provider portal. 
 
-All BYOA discounts are evaluated case by case. If your company fulfills the requirements specified earlier, contact `Sales@Aiven.io <_SalesEmail>`_ for more information and cost estimations of the full setup. 
+All BYOA discounts are evaluated case by case. If your company fulfills the requirements specified earlier, contact `Sales@Aiven.io <mailto:sales@aiven.io>`_ for more information and cost estimations of the full setup. 
 
 Testing, POC, and deployments
 =============================
@@ -58,11 +58,9 @@ BYOA requires setup on your cloud account as well as Aiven's automation. Coordin
 
 - Deploy and Configure the BYOA Environment
 
-  - Ensure that you have DevOps resources available to iterate and debug any networking issues
+  - Ensure that you have devops resources available to iterate and debug any networking issues
   - This can potentially be done in parallel with phase #1
 
-- On-boarding and Migrations
+- Onboarding and Migrations
 
   - Aiven will be available for support while teams migrate workloads onto the new platform
-
-.. _SalesEmail: mailto:sales@aiven.io
