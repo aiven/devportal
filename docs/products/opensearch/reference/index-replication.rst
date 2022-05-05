@@ -1,7 +1,7 @@
 Automatic adjustment of replication factors
 ===========================================
 
-Aiven for OpenSearch automatically adjusts index replication factors
+Aiven for OpenSearch® automatically adjusts index replication factors
 to ensure data availability and service functionality.
 
 When is the replication factor automatically adjusted?
