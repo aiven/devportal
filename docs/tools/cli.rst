@@ -27,6 +27,9 @@ There are two options for authenticating. The first is to use your username, and
 
   avn user login <you@example.com>
 
+.. important::
+  Enable your Aiven password to log in via your user e-mail. Find more information on :doc:`How to create Aiven password </docs/platform/howto/enable-aiven-password>`.
+
 You can also use an access token (this is the recommended route if you use SSO), with a command like::
 
   avn user login <you@example.com> --token
