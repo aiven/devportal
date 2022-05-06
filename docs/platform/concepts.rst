@@ -27,3 +27,7 @@ Learn about some of the key concepts for working with Aiven platform:
 * :doc:`TLS/SSL certificates </docs/platform/concepts/tls-ssl-certificates>`.
 
   Securing connections to Aiven services with certificates.
+
+* :doc:`Bring your own account (BYOA) </docs/platform/concepts/byoa>`.
+
+  BYOA is an optional setup feature that allows you to purchase your Aiven services through your existing Cloud Provider.
