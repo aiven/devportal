@@ -5,7 +5,7 @@ Bring Your Own Account (BYOA) is an optional setup feature that gives customers 
 
 The BYOA setup has a custom pricing structure that is calculated case by case. 
 
-For a cost estimate, please contact Sales@Aiven.io. 
+For a cost estimate, please contact Sales@aiven.io.
 
 What is BYOA?
 -------------
@@ -33,7 +33,7 @@ Some companies have data processing limitations that require them to use virtual
 
 And as already mentioned, BYOA lets you apply any bonuses, discounts or free credits accruing to your existing account to your Aiven-managed services. 
 
-(Apart from said discounts, cost savings are not typically achieved BYOA. In the BYOA model, you pay less for the Aiven managed service costs, but you still have to pay the cloud service provider. This means that the total costs of the BYOA setup may not be lower (and may even be higher) than Aiven’s regular offering, where Aiven handles the cloud infrastructure costs.)
+(Apart from said discounts, cost savings are not typically achieved with BYOA. In the BYOA model, you pay less for the Aiven managed service costs, but you still have to pay the cloud service provider. This means that the total costs of the BYOA setup may not be lower (and may even be higher) than Aiven’s regular offering, where Aiven handles the cloud infrastructure costs.)
 
 Cost breakdown of the BYOA model
 --------------------------------
@@ -44,7 +44,7 @@ Each month, Aiven charges a monthly BYOA fee for computing resources and Aiven s
 
 Remember that in BYOA, Aiven does not invoice for the cloud service. As a BYOA customer, you pay for the cloud computing resources you are using directly through your cloud provider portal. 
 
-All BYOA discounts are evaluated case by case. If your company fulfills the requirements specified earlier, contact Sales@Aiven.io for more information and cost estimations of the full setup. 
+All BYOA discounts are evaluated case by case. If your company fulfills the requirements specified earlier, contact Sales@aiven.io for more information and cost estimations of the full setup.
 
 Testing, POC, and deployments
 -----------------------------
@@ -54,7 +54,7 @@ BYOA requires setup on your cloud account as well as Aiven's automation. Coordin
 - Functionality Testing and Security Validation
 
   - Ensure the technical feasibility of the Aiven platform
-  - Perform all need technical and security audits of the proposed solution
+  - Perform all needed technical and security audits of the proposed solution
 
 - Deploy and Configure the BYOA Environment
 
