@@ -1,11 +1,7 @@
 Enable Aiven password
 =====================
 
-Enable your Aiven password to be able to log in via :doc:`Aiven CLI </docs/tools/cli>`. For example::
-
-    avn user login <user@aiven.io>
-
-Follow these steps to enable your password:
+If you prefer to authenticate directly in the `Aiven web console <https://console.aiven.io/>`_ without using a third party information, it is possible. You can log in directly by enabling your Aiven password. You can follow these steps to enable your password:
 
 1. Log in to the `Aiven web console <https://console.aiven.io/>`_.
 2. Click **User information**, then select **Authentication** tab
