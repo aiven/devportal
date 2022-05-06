@@ -17,5 +17,5 @@ With this feature enabled, if you try to run ``CREATE``, ``ALTER``, ``DROP``, ``
 More resources
 --------------
 
-    - `MyHoard, your solution to MySQL backups and restoration <https://aiven.io/blog/introducing-myhoard-your-single-solution-to-mysql-backups-and-restoration>`_
-    - `Aiven cloud security and data encryption <https://developer.aiven.io/docs/platform/concepts/cloud-security#data-encryption>`_
+- Our blog post: `MyHoard, your solution to MySQL backups and restoration <https://aiven.io/blog/introducing-myhoard-your-single-solution-to-mysql-backups-and-restoration>`_
+- Read about `Aiven cloud security and data encryption <https://developer.aiven.io/docs/platform/concepts/cloud-security#data-encryption>`_
