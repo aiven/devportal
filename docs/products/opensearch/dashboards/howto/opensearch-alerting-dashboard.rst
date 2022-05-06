@@ -47,7 +47,8 @@ Destination is a location for notifications to be delivered when an action is tr
    Destination Type can be: ``Amazon Chime``, ``Slack``, ``Custom webhook`` or ``Email``
 
 .. important::
-   When using email you need to have a SMTP server configured for a valid domain to deliver email notifications
+   - When using email you need to have a SMTP server configured for a valid domain to deliver email notifications
+   - Please note that the authentication of a sender account is currently not supported. That is, when an alert is being created, the email destination does not support the encryption methods SSL/TLS. 
 
 Create a monitor
 ****************
