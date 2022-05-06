@@ -17,4 +17,4 @@ To make sure it works:
 1. Log out from the `Aiven web console <https://console.aiven.io/>`_.
 2. Log in to the `Aiven web console <https://console.aiven.io/>`_, and select **Log in with Password** option.
 
-If you can log in using your Aiven password, then it worked. Otherwise, contact the support team via `support@aiven.io` to assist you.
+If you can log in using your Aiven password, then it worked. Otherwise, contact the support team via ``support@aiven.io`` to assist you.
