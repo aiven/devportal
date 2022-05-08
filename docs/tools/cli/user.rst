@@ -98,7 +98,7 @@ Logs the user in.
 The user will be prompted to insert the password.
 
 
-**Example:** Log the `john.doe@example.com` user `john.doe@example.com` with pre-created authentication token.      
+**Example:** Log the ``john.doe@example.com`` user in, using a pre-created authentication token.
 ::
 
   avn user login john.doe@example.com --token 
