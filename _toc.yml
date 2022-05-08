@@ -50,6 +50,8 @@ entries:
 
 
   # --------- GLOBAL -----------
+  - file: docs/integrations/index
+    title: Integrations
   - file: docs/tools/index
     entries:
       - file: docs/tools/cli
