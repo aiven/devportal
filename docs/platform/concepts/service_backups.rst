@@ -48,7 +48,7 @@ To back up data passing through Kafka, we recommend setting up :doc:`MirrorMaker
 
 Using MirrorMaker 2, the backup cluster is running as an independent Kafka service, so you have complete freedom of choice in which zone the service should be based.
 
-Note that MirrorMaker 2 provides tools for mapping between source and target offset, so the user does not need to make this calculation. For more details see the section "Offset Mapping" in the blog post `A look inside Kafka Mirrormaker 2 <https://blog.cloudera.com/a-look-inside-kafka-mirrormaker-2/>`__.
+Note that MirrorMaker 2 provides tools for mapping between source and target offset, so the user does not need to make this calculation. For more details see the section "Offset Mapping" in the blog post `A look inside Kafka MirrorMaker 2 <https://blog.cloudera.com/a-look-inside-kafka-mirrormaker-2/>`__.
 
 An alternative is to use Kafka Connect to backup the cluster, for instance sinking data from Apache Kafka® to S3 via the `dedicated Aiven connector <https://developer.aiven.io/docs/products/kafka/kafka-connect/howto/s3-sink-prereq.html>`_.
 
@@ -85,7 +85,7 @@ These databases are automatically backed up, encrypted, and stored securely in o
 
 For more information refer to
 
-- `OpenSearch backups <https://help.aiven.io/en/articles/4197366-elasticsearch-backups>`_
+- `OpenSearch backups <https://developer.aiven.io/docs/products/opensearch/concepts/backups.html>`_
 - `How to restore an OpenSearch® backup <https://developer.aiven.io/docs/products/opensearch/howto/restore_opensearch_backup.html>`_
 
 Aiven for Apache Cassandra®
