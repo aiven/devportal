@@ -42,17 +42,21 @@ The above table describes only the hourly and daily backups with the number of d
 
 Aiven for Apache Kafka®
 ''''''''''''''''''''''''''''''
-We do not take backups and data durability is determined by the replication of data across the cluster, as in general it's more often used as a transport for data rather than a permanent store and the way Kafka stores data does not really allow reasonable backup to be implemented using traditional backup strategies. To back up data passing through Kafka, we recommend setting up :doc:`MirrorMaker 2<../../products/kafka/kafka-mirrormaker/index>` to replicate the data to another cluster, which could be an Aiven service or a Kafka cluster on your own infrastructure.
+We do not take backups and data durability is determined by the replication of data across the cluster, as in general it's more often used as a transport for data rather than a permanent store and the way Kafka stores data does not really allow reasonable backup to be implemented using traditional backup strategies.
 
-The backup cluster would be running as an independent Kafka service, therefore you have complete freedom of choice in which zone the service should be based. Unlike earlier versions, MirrorMaker 2 provides the tools for mapping the offsets between the source and destination, so the user does not need to make this sort of calculation. For more details see the section "Offset Mapping" in the blog post `A look inside Kafka Mirrormaker 2 <https://blog.cloudera.com/a-look-inside-kafka-mirrormaker-2/>`__.
+To back up data passing through Kafka, we recommend setting up :doc:`MirrorMaker 2<../../products/kafka/kafka-mirrormaker/index>` to replicate the data to another cluster, which could be an Aiven service or a Kafka cluster on your own infrastructure.
 
-Another possible way is to set up Kafka-connect to backup the cluster, which helps to be able to sink data from Apache Kafka® to S3 via the dedicated Aiven connector.
+Using MirrorMaker 2, the backup cluster is running as an independent Kafka service, so you have complete freedom of choice in which zone the service should be based.
 
-For more information refer to:
+Note that MirrorMaker 2 provides tools for mapping between source and target offset, so the user does not need to make this calculation. For more details see the section "Offset Mapping" in the blog post `A look inside Kafka Mirrormaker 2 <https://blog.cloudera.com/a-look-inside-kafka-mirrormaker-2/>`__.
 
-- `Configure AWS for an S3 sink connector <https://developer.aiven.io/docs/products/kafka/kafka-connect/howto/s3-sink-prereq.html>`_
-- Cloudera's `A look inside Kafka MirrorMaker 2 <https://blog.cloudera.com/a-look-inside-kafka-mirrormaker-2/>`_
+An alternative is to use Kafka Connect to backup the cluster, for instance sinking data from Apache Kafka® to S3 via the `dedicated Aiven connector <https://developer.aiven.io/docs/products/kafka/kafka-connect/howto/s3-sink-prereq.html>`_.
+
+For more information refer to
+
 - `Aiven for Apache Kafka® MirrorMaker 2 <https://developer.aiven.io/docs/products/kafka/kafka-mirrormaker/index.html>`_
+- Cloudera's `A look inside Kafka MirrorMaker 2 <https://blog.cloudera.com/a-look-inside-kafka-mirrormaker-2/>`_
+- `Configure AWS for an S3 sink connector <https://developer.aiven.io/docs/products/kafka/kafka-connect/howto/s3-sink-prereq.html>`_
 
 Aiven for PostgreSQL®
 '''''''''''''''''''''
@@ -61,6 +65,7 @@ We take daily full backups and constantly archive WAL segments to cloud object s
 You may modify the backup time configuration option in **Advanced Configuration** in the Aiven console which will begin shifting the backup schedule to the new time. If there was a recent backup taken, it may take another backup cycle before it starts applying a new backup time.
 
 For more information refer to
+
 - `PostgreSQL® backups <https://developer.aiven.io/docs/products/postgresql/concepts/pg-backups.html>`_
 - `High availability <https://developer.aiven.io/docs/products/postgresql/concepts/high-availability.html>`_
 - `Create and use read-only replicas <https://developer.aiven.io/docs/products/postgresql/howto/create-read-replica.html>`_
@@ -92,7 +97,7 @@ Aiven for Redis™*
 ''''''''''''''''''''''''
 We offer backups that are taken every 12 hours, and for persistence we support **RBD** (Redis Database Backup). The persistence feature can be controlled by ``redis_persistence`` under **Advanced Configuration**. AOF persistence is currently not supported by the Aiven for Redis service.
 
-When persistence is set to ``rdb``, Redis does RDB dumps every 10 minutes if any key is changed. Also, RDB dumps are done according to the backup schedule for backup purposes. When persistence is ``off``, no RDB dumps or backups are done, so data can be lost at any moment if the service is restarted for any reason or if the service is powered off, and the service can't be forked.
+When persistence is set to ``rdb``, Redis does RDB dumps every 10 minutes if any key is changed. Also, RDB dumps are done according to the backup schedule for backup purposes. When persistence is ``off``, no RDB dumps or backups are done, so data can be lost at any moment if the service is restarted for any reason or if the service is powered off. This also means the service can't be forked.
 
 Aiven for InfluxDB®
 '''''''''''''''''''
