@@ -52,6 +52,18 @@ entries:
   # --------- GLOBAL -----------
   - file: docs/integrations/index
     title: Integrations
+    entries:
+    - file: docs/integrations/concepts
+      title: Concepts
+      entries:
+        - file: docs/integrations/concepts/datadog
+    - file: docs/integrations/howto
+      title: HowTo
+      entries:
+        - file: docs/integrations/howto/datadog-metrics
+        - file: docs/integrations/howto/datadog-logs
+
+
   - file: docs/tools/index
     entries:
       - file: docs/tools/cli
