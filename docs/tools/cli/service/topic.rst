@@ -23,7 +23,7 @@ Creates a new Kafka topic on the specified Aiven for Apache Kafka service.
     - The name of the service
   * - ``topic``
     - The name of the topic
-  * - ``partitions``
+  * - ``--partitions``
     - The number of topic partitions
   * - ``--replication``
     - The topic replication factor
@@ -35,7 +35,7 @@ Creates a new Kafka topic on the specified Aiven for Apache Kafka service.
     - The retention limit in bytes (default: unlimited)
   * - ``--cleanup-policy``
     - The topic cleanup policy; can be either ``delete`` or ``compact``.
-  * - ``-tag KEY[=VALUE]``
+  * - ``--tag KEY[=VALUE]``
     - Topic tagging
 
 **Example:** Create a new topic named ``invoices`` in the ``demo-kafka`` service with:
@@ -167,7 +167,7 @@ Updates a Kafka topic on the specified Aiven for Apache Kafka service.
     - The name of the service
   * - ``topic``
     - The name of the topic
-  * - ``partitions``
+  * - ``--partitions``
     - The number of topic partitions
   * - ``--replication``
     - The topic replication factor
@@ -179,7 +179,7 @@ Updates a Kafka topic on the specified Aiven for Apache Kafka service.
     - The retention limit in bytes (default: unlimited)
   * - ``--cleanup-policy``
     - The topic cleanup policy; can be either ``delete`` or ``compact``.
-  * - ``-tag KEY[=VALUE]``
+  * - ``--tag KEY[=VALUE]``
     - Topic tagging
   * - ``--untag KEY``
     - Topic tag to remove

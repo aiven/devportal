@@ -24,7 +24,7 @@ Creates a new access token for the logged-in user.
     - Description of how the token will be used
   * - ``--max-age-seconds``
     - Maximum age of the token in seconds, if any, after which it will expire(30 days by default)
-  * - ``extend-when-used``
+  * - ``--extend-when-used``
     - Extend token's expiry time when used (only applicable if token is set to expire)
 
 **Example:** Create a new access token.
@@ -120,6 +120,8 @@ Updates the description of an access token.
     - Information
   * - ``token_prefix``
     - The full token or token prefix identifying the token to update
+  * - ``--description``
+    - Description of how the token will be used
 
 **Example:** Update the description of the access token starting with ``6JsKDclT3OMQ``.      
 ::

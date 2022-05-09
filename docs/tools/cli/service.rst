@@ -17,7 +17,7 @@ Manages the Aiven for Apache Kafka® ACL entries.
 
 More information on ``acl-add``, ``acl-delete`` and ``acl-list`` can be found in :doc:`the dedicated page <service/acl>`.
 
-``avn service ca``
+``avn service ca get``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Retrieves the project CA that the selected service belongs to.
@@ -44,7 +44,7 @@ Retrieves the project CA that the selected service belongs to.
 ``avn service cli``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Opens an interactive shell to the given service. Supported only for Aiven for InfluxDB® and Aiven for PostgreSQL® services.
+Opens the appropriate interactive shell, such as ``psql`` or ``redis-cli``, to the given service. Supported only for Aiven for PostgreSQL®, Aiven for Redis™*, and Aiven for InfluxDB® services.
 
 .. list-table::
   :header-rows: 1
