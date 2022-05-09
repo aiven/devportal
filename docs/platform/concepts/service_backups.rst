@@ -2,7 +2,7 @@ Backups at Aiven
 ================
 
 All Aiven services have time-based backups, except for Kafka, that are encrypted and securely stored. The backup retention times vary based on the service and the selected service plan. Backups we take for managing the service are not available for download for any service type, as those are compressed and encrypted by our management platform.
-    
+
 Whenever the service is powered on from a powered-off state, the restore the latest backup available when the service is rebuilt. We do review any services that are powered off for longer than 180 days. We will send you a notification email in advance to take action before we perform house cleaning and delete the service and backup as part of `periodic cleanup of powered-off services <https://help.aiven.io/en/articles/4578430-periodic-cleanup-of-powered-off-services>`__. If you would still like to keep the powered off service for longer than 180 days, you can avoid this routine cleanup by powering on the service and then powering it back off again.
 
 Depending on the service plan, each service provides different backups with different retention periods:
@@ -44,38 +44,48 @@ We take daily full backups and constantly archive WAL segments to cloud object s
 
 You may modify the backup time configuration option in Advanced Configuration in Aiven console which will begin shifting the backup schedule to the new time. If there was a recent backup taken, it may take another backup cycle before it starts applying a new backup time. 
 
-
-For more information refer to :
- - https://developer.aiven.io/docs/products/postgresql/concepts/pg-backups.html
- - https://help.aiven.io/en/articles/653410-aiven-postgresql-high-availability
- - https://help.aiven.io/en/articles/1755229-aiven-for-postgresql-remote-replica
+For more information refer to
+ - `PostgreSQL® backups <https://developer.aiven.io/docs/products/postgresql/concepts/pg-backups.html>`_
+ - `High availability <https://developer.aiven.io/docs/products/postgresql/concepts/high-availability.html>`_
+ - `Create and use read-only replicas <https://developer.aiven.io/docs/products/postgresql/howto/create-read-replica.html>`_
 
 Aiven for MySQL
-'''''''''''''''
-These databases are automatically backed-up, with full backups daily, and binary logs recorded continuously. All backups are encrypted. We use the open source myhoard software to do this. Myhoard uses Percona XtraBackup internally for taking a full (or incremental) snapshot for MySQL.  You may modify the backup time configuration option in Advanced Configuration in Aiven console which will begin shifting the backup schedule to the new time. If there was a recent backup taken, it may take another backup cycle before it starts applying a new backup time. 
+'''''''''''''''''''''
+These databases are automatically backed-up, with full backups daily, and binary logs recorded continuously. All backups are encrypted. We use the open source `myhoard <https://github.com/aiven/myhoard>`_ software to do this. Myhoard uses `Percona XtraBackup <https://www.percona.com/>`_ internally for taking a full (or incremental) snapshot for MySQL.
+
+You may modify the backup time configuration option in Advanced Configuration in Aiven console which will begin shifting the backup schedule to the new time. If there was a recent backup taken, it may take another backup cycle before it starts applying new backup time.
+
+For more information refer to [MySQL Backups](https://help.aiven.io/en/articles/5199859-mysql-backups)
 
 Aiven for Apache Kafka®
-'''''''''''''''''''''''
-We do not take backups and data durability is determined by the replication of data across the cluster, as in general it's more often used as a transport for data rather than a permanent store and the way how Kafka stores data does not really allow reasonable backup to be implemented using traditional backup strategies. To back up data passing through Kafka, we recommend setting up :doc:`MirrorMaker2<../../products/kafka/kafka-mirrormaker/index>` to replicate the data to another cluster, which could be an Aiven service or a Kafka cluster on your own infrastructure. 
+''''''''''''''''''''''''''''''
+We do not take backups and data durability is determined by the replication of data across the cluster, as in general it's more often used as a transport for data rather than a permanent store and the way Kafka stores data does not really allow reasonable backup to be implemented using traditional backup strategies. To back up data passing through Kafka, we recommend setting up :doc:`MirrorMaker 2<../../products/kafka/kafka-mirrormaker/index>` to replicate the data to another cluster, which could be an Aiven service or a Kafka cluster on your own infrastructure.
 
-The backup cluster would be running as an independent Kafka service, therefore you have complete freedom of choice in which zone the service should be based. Unlike earlier versions, Mirrormaker2 provides the tools for mapping the offsets between the source and destination, so the user does not need to make this sort of calculation. More details here, under the section "Offset Mapping" in this blog `article <https://blog.cloudera.com/a-look-inside-kafka-mirrormaker-2/>`__.
+The backup cluster would be running as an independent Kafka service, therefore you have complete freedom of choice in which zone the service should be based. Unlike earlier versions, MirrorMaker 2 provides the tools for mapping the offsets between the source and destination, so the user does not need to make this sort of calculations. More details here, under the section "Offset Mapping" in this blog `article <https://blog.cloudera.com/a-look-inside-kafka-mirrormaker-2/>`__.
 
 Another possible way is to set up Kafka-connect to backup the cluster, which helps to be able to sink data from Apache Kafka® to S3 via the dedicated Aiven connector.
 
-More information refer to:
- - https://developer.aiven.io/docs/products/kafka/kafka-connect/howto/s3-sink-prereq.html
- - https://blog.cloudera.com/a-look-inside-kafka-mirrormaker-2/
- - https://developer.aiven.io/docs/products/kafka/kafka-mirrormaker/index.html
+For more information refer to:
+ - `Configure AWS for an S3 sink connector <https://developer.aiven.io/docs/products/kafka/kafka-connect/howto/s3-sink-prereq.html>`_
+ - Cloudera's `A look inside Kafka MirrorMaker 2 <https://blog.cloudera.com/a-look-inside-kafka-mirrormaker-2/>`_
+ - `Aiven for Apache Kafka® MirrorMaker 2 <https://developer.aiven.io/docs/products/kafka/kafka-mirrormaker/index.html>`_
 
 Aiven for OpenSearch®
-'''''''''''''''''''''
-These databases are automatically backed up, encrypted, and stored securely in object storage. The backups are taken every hour and the retention period varies based on the service plan. You can read in our article `how to restore an OpenSearch® backup <https://developer.aiven.io/docs/products/opensearch/howto/restore_opensearch_backup.html>`_.
+''''''''''''''''''''''''''''
+These databases are automatically backed up, encrypted, and stored securely in object storage. The backups are taken every hour and the retention period varies based on the service plan.
+
+For more information refer to
+
+- `OpenSearch backups <https://help.aiven.io/en/articles/4197366-elasticsearch-backups>`_
+- `How to restore an OpenSearch® backup <https://developer.aiven.io/docs/products/opensearch/howto/restore_opensearch_backup.html>`_
+
 
 
 Aiven for Redis™*
-'''''''''''''''''
-We offer backups that are taken every 12 hours and for persistence, we support **RBD** and have also recently added the persistence feature which can be controlled by redis_persistence under **Advanced Configuration**. The AOF persistence is currently not supported in Aiven for Redis service.
-When persistence is set to ``rdb``, Redis does RDB (Redis Database Backup) dumps every 10 minutes if any key is changed. Also, RDB dumps are done according to the backup schedule for backup purposes. When persistence is ``off``, no RDB dumps and backups are done, so data can be lost at any moment if the service is restarted for any reason or if the service is powered off. Also, the service can't be forked.
+''''''''''''''''''''''''
+We offer backups that are taken every 12 hours, and for persistence we support **RBD** (Redis Database Backup). The persistence feature can be controlled by ``redis_persistence`` under **Advanced Configuration**. AOF persistence is currently not supported by the Aiven for Redis service.
+
+When persistence is set to ``rdb``, Redis does RDB dumps every 10 minutes if any key is changed. Also, RDB dumps are done according to the backup schedule for backup purposes. When persistence is ``off``, no RDB dumps or backups are done, so data can be lost at any moment if the service is restarted for any reason or if the service is powered off, and the service can't be forked.
 
 Aiven for InfluxDB®
 '''''''''''''''''''
