@@ -17,7 +17,7 @@ Learn about some of the key concepts for working with Aiven platform:
 
 * :doc:`Backups at Aiven <docs/platform/concepts/service_backups>`.
 
-  Learn about how Aiven regulates Backup for each service and it's retention policies.
+  Learn about how Aiven regulates backup for each service and its retention policies.
 
 * :doc:`Service forking </docs/platform/concepts/service-forking>`.
 
