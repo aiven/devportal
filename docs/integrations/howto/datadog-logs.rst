@@ -19,6 +19,9 @@ Start by configuring the link between Aiven and DataDog for logs. This setup onl
 
 1. Choose **Service integrations** in the left hand menu of the web console, then choose **Syslog** and **Add a new endpoint**.
 
+.. image:: /images/integrations/configure-rsyslog-integration-datadog.png
+   :alt: Screenshot of configuration screen for rsyslog
+
 2. Configure the settings for the new endpoint:
 
    * **Endpoint name** is how you will refer to this logs integration when linking it to other Aiven services
@@ -43,8 +46,10 @@ Send logs from an Aiven service to DataDog
 
 Follow the steps in this section for each of the services whose logs should be sent to DataDog.
 
-
 4. From the **Service Overview** page, select **Manage integrations** and choose the **Rsyslog** option.
+
+.. image:: /images/integrations/rsyslog-service-integration.png
+   :alt: Screenshot of system integrations including rsyslog
 
 5. Pick the log integration you created earlier from the dropdown and choose **Enable**.
 
