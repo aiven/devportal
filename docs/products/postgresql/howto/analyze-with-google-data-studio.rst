@@ -36,7 +36,7 @@ Connect your Aiven for PostgreSQL data source to Google Data Studio
 
 #. Login to Google and open `Google Data Studio <https://datastudio.google.com/>`__ .
 
-#. Select `Create` and choose `Data source`
+#. Select **Create** and choose **Data source**.
 
 #. Fill in the requested information and agree to the Google terms and conditions.
 
