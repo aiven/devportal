@@ -6,7 +6,7 @@ Google Data Studio allows you to create reports and visualisations of the data i
 Variables
 ---------
 
-These are the placeholders you will need to replace in the code sample:
+These are the values you will need to connect to Google Data Studio:
 
 ==================      ===========================================================================
 Variable                Description
@@ -44,11 +44,11 @@ Connect your Aiven for PostgreSQL data source to Google Data Studio
 
 #. On the **Basic** tab, set
 
-   * **Host name** to ``HOSTNAME``
-   * **Port**: to ``PORT``
-   * **Database** to ``DATABASE``
+   * **Host name** to the ``HOSTNAME``
+   * **Port**: to the ``PORT``
+   * **Database** to the ``DATABASE``
    * **Username** to ``avnadmin``
-   * **Password** to ``PASSWORD``
+   * **Password** to the ``PASSWORD``
 
 #. Select **Enable SSL** and **Enable client authenticaion**
    and upload your certificate and key files.
