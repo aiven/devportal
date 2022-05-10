@@ -44,18 +44,18 @@ Connect your Aiven for PostgreSQL data source to Google Data Studio
 
 #. On the **Basic** tab, set
 
-    * **Host name** to ``HOSTNAME``
-    * **Port**: to ``PORT``
-    * **Database** to ``DATABASE``
-    * **Username** to ``avnadmin``
-    * **Password** to ``PASSWORD``
+   * **Host name** to ``HOSTNAME``
+   * **Port**: to ``PORT``
+   * **Database** to ``DATABASE``
+   * **Username** to ``avnadmin``
+   * **Password** to ``PASSWORD``
 
 #. Select **Enable SSL** and **Enable client authenticaion**
    and upload your certificate and key files.
 
-   * **Server certificate** is the ``ca.pem``
-   * **Client certificate** is the ``client-cert.pem``
-   * **Client private key** is the ``client-key.pem``
+   * **Server certificate** is ``ca.pem``
+   * **Client certificate** is ``client-cert.pem``
+   * **Client private key** is ``client-key.pem``
 
 #. Click **AUTHENTICATE**.
 
