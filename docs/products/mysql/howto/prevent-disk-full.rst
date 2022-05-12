@@ -18,7 +18,7 @@ Identify and optimize problem tables
 
 InnoDB does not reclaim unused disk space by default and this can cause a disk to become full. 
 
-Read the help article MySQL disk usage for more information.
+Read the help article `MySQL disk usage <https://help.aiven.io/en/articles/4808068-mysql-disk-usage>`_ for more information.
 
 Upgrade to a larger plan
 ~~~~~~~~~~~~~~~~~~~~~~~~
