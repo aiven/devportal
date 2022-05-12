@@ -461,6 +461,7 @@ entries:
           - file: docs/products/mysql/howto/max-number-of-connections
           - file: docs/products/mysql/howto/migrate-from-external-mysql
           - file: docs/products/mysql/howto/do-check-service-migration
+          - file: docs/products/mysql/howto/prevent-disk-full
       - file: docs/products/mysql/reference
         title: Reference
         entries:
