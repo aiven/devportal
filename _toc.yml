@@ -564,6 +564,16 @@ entries:
   - file: docs/products/cassandra/index
     title: Apache Cassandra
 
+  - file: docs/products/influxdb/index
+    title: InfluxDB
+    entries:
+      - file: docs/products/influxdb/getting-started
+        title: Get started
+      - file: docs/products/influxdb/reference/available-influxdb-commands
+        title: Available InfluxDB Commands
+      - file: docs/products/influxdb/reference/influxdb-retention-policies
+        title: InfluxDB Retention Policies
+
   - file: docs/products/grafana/index
     title: Grafana
     entries:

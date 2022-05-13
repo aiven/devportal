@@ -128,6 +128,13 @@ Learn about the Aiven platform
 
     |icon-influxdb| **InfluxDB®** Specialist time series database, with good tooling support.
 
+    +++
+
+    .. link-button:: docs/products/influxdb/index
+        :type: ref
+        :text: Read more
+        :classes: stretched-link
+
     ---
 
     |icon-grafana| **Grafana®** The visualization tool you need to explore and understand your data. Grafana integrates with the other services in just a few clicks.
