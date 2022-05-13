@@ -7,6 +7,7 @@ API
 APIs
 autovacuum
 Avro
+binlog
 boolean
 boot
 business
@@ -82,6 +83,7 @@ M3
 Memorystore
 MirrorMaker
 MySQL
+myhoard
 namespace
 namespaces
 NodeJS
