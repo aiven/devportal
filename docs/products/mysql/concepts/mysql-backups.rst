@@ -11,11 +11,12 @@ The number of stored backups and backup retention time depends on your `Aiven se
 MySQL backups and encryption
 ----------------------------
 
-All Aiven for MySQL backups, uses the `myhoard software <https://github.com/aiven/myhoard>`_ to perform encryptions. Myhoard utilizes `Percona XtraBackup <https://www.percona.com/>`_ internally for taking a full (or incremental) snapshot for MySQL. 
+All Aiven for MySQL backups use the `myhoard software <https://github.com/aiven/myhoard>`_ to perform encryption. Myhoard utilizes `Percona XtraBackup <https://www.percona.com/>`_ internally for taking a full (or incremental) snapshot of MySQL.
 
-Since `Percona XtraBackup 8.0.23 version <https://jira.percona.com/browse/PXB-1979>`_ the --lock-ddl is enabled by default. This ensures that DDL changes can not be performed while a full backup process is ongoing. This is important to guarantee that the backup service is consistent and can be reliably used for restoration. 
+Since `Percona XtraBackup 8.0.23 <https://jira.percona.com/browse/PXB-1979>`_ the ``--lock-ddl`` option is enabled by default. This ensures that DDL changes cannot be performed while a full backup process is ongoing. This is important to guarantee that the backup service is consistent and can be reliably used for restoration.
 
-With this feature enabled, if you try to run ``CREATE``, ``ALTER``, ``DROP``, ``TRUNCATE`` or another command, you may receive the message **Waiting for backup lock**. In this case, wait till the backup is complete for running such operations.
+
+With this feature enabled, if you try to run ``CREATE``, ``ALTER``, ``DROP``, ``TRUNCATE`` or another command during backup, you may receive the message **Waiting for backup lock**. In this case, wait till the backup is complete for running such operations.
 
 More resources
 --------------
