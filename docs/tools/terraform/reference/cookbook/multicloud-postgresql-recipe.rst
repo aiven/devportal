@@ -9,11 +9,10 @@ The following image shows that the Aiven Terraform Provider calls the Aiven API 
 
 .. mermaid::
 
-   graph LR
-      A[Terraform Script]
-      A --> B[(Aiven for PostgreSQL - AWS EU)]
-      A --> C[(Aiven for PostgreSQL - DigitalOcean NA)]
-      A --> D[(Aiven for PostgreSQL - GCP Asia)]
+   graph TD
+      B[(Aiven for PostgreSQL - AWS EU)]
+      C[(Aiven for PostgreSQL - DigitalOcean NA)]
+      D[(Aiven for PostgreSQL - GCP Asia)]
 
 Describe the setup
 ------------------
