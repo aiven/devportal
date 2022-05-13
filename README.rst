@@ -50,7 +50,10 @@ If the spellchecker is rejecting words that are valid (such as technology terms)
 
 Installing Vale
 """""""""""""""
-On Fedora (F34), you can install Vale easily (without a package manager) using the following:::
+
+The `Vale installation page <https://docs.errata.ai/vale/install>`_ has instructions for all platforms including docker; this will be updated if the approach changes between versions.
+
+On Fedora (F34), here's a tip for installing Vale (current version 2.16) (without a package manager) using the following:::
 
     package=$(curl -s https://api.github.com/repos/errata-ai/vale/releases/latest \
     | jq -r ' .assets[] | select(.name | contains("Linux"))'); output=$(mktemp -d); \
