@@ -48,6 +48,23 @@ To run the spell check locally, you will need to have `Vale <https://github.com/
 
 For documentation on how we use Vale, see `our Vale README <.github/vale/README.rst>`_. This also explains how to add new words to the dictionary, or alter the things that Vale checks.
 
+Installing Vale
+"""""""""""""""
+
+The `Vale installation page <https://docs.errata.ai/vale/install>`_ has instructions for all platforms including docker; this will be updated if the approach changes between versions.
+
+On Fedora (F34), here's a tip for installing Vale (current version 2.16) (without a package manager) using the following:::
+
+    package=$(curl -s https://api.github.com/repos/errata-ai/vale/releases/latest \
+    | jq -r ' .assets[] | select(.name | contains("Linux"))'); output=$(mktemp -d); \
+    echo $package | jq -r '.browser_download_url' | xargs curl -L --output-dir $output -O; \
+    echo $package | jq -r '.name' | sed -r "s#(.*)#$output/\1#g" | xargs cat \
+    | tar xzf - -C $output; cp -v $output/vale $HOME/bin
+
+Then add ``$HOME/bin`` to ``$PATH`` (e.g. in ``.bashrc``, where ``vale`` is downloaded to via the above command)
+
+Alternatively, use ``snap`` or ``brew``: `https://vale.sh/docs/vale-cli/installation/`
+
 Navigation structure
 ''''''''''''''''''''
 
