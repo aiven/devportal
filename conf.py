@@ -17,7 +17,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'Aiven Developer'
-copyright = '2021, Aiven Team'
+copyright = '2022, Aiven Team'
 author = 'Aiven Team'
 html_title = 'Aiven'
 
