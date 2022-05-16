@@ -91,7 +91,7 @@ Using SASL authentication
 
          from kafka import KafkaProducer
 
-         # Choose an appropriate SASL mechanism
+         # Choose an appropriate SASL mechanism, for instance:
          SASL_MECHANISM = 'SCRAM-SHA-256'
 
          producer = KafkaProducer(
@@ -132,7 +132,7 @@ Using SASL authentication
 
         from kafka import KafkaConsumer
 
-        # Choose an appropriate SASL mechanism
+        # Choose an appropriate SASL mechanism, for instance:
         SASL_MECHANISM = 'SCRAM-SHA-256'
 
         consumer = KafkaConsumer(
