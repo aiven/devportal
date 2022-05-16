@@ -190,6 +190,7 @@ entries:
             - file: docs/products/kafka/kafka-connect/howto/jdbc-source-connector-mysql
             - file: docs/products/kafka/kafka-connect/howto/jdbc-source-connector-sql-server
             - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-pg
+            - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-mysql
           - file: docs/products/kafka/kafka-connect/howto/list-sink-connectors
             entries:
             - file: docs/products/kafka/kafka-connect/howto/jdbc-sink
