@@ -31,7 +31,7 @@ Furthermore you need to collect the following information about the source Mongo
 Setup a MongoDB Debezium source connector with Aiven Console
 ------------------------------------------------------------
 
-The following example demonstrates how to setup a Debezium source Connector for Apache Kafka to a MongoDB database using the :ref:`Aiven CLI dedicated command <avn_service_connector_create>`.
+The following example demonstrates how to setup a Debezium source Connector for Apache Kafka to a MongoDB database using the `Aiven Console <https://console.aiven.io/>`_.
 
 Define a Kafka Connect configuration file
 '''''''''''''''''''''''''''''''''''''''''
