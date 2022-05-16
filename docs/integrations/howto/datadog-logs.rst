@@ -33,11 +33,12 @@ Start by configuring the link between Aiven and DataDog for logs. This setup onl
 
    * **Format** set to "custom"
 
-   * **Log Template** should be set as follows, but edited to include your actual ``DATADOG_API_KEY`` and ``AIVEN_PROJECT_NAME``:
+   * **Log Template** should be set as follows, but edited to include your actual ``DATADOG_API_KEY`` and ``AIVEN_PROJECT_NAME`` [1]_ [2]_:
 
 ::
 
    DATADOG_API_KEY <%pri%>1 %timestamp:::date-rfc3339% %HOSTNAME%.AIVEN_PROJECT_NAME %app-name% - - - %msg%
+
 
 3. Save the settings.
 
@@ -56,4 +57,9 @@ Follow the steps in this section for each of the services whose logs should be s
 6. Visit DataDog and look under "Logs" to see the data flowing within a few minutes.
 
 .. seealso:: Learn more about :doc:`/docs/integrations/concepts/datadog`.
+
+
+.. [1] Metrics and logs are correlated in datadog by hostname. The metrics integration is currently configured to append the project name to the hostname in order to disambiguate between services that have the same name in different projects. Adding the project name to the hostname in the syslog integration to datadog assures that they can be correlated again in the DataDog dashboard. Not doing so will not result in missing logs, but the logs that appear in DataDog will miss tags that come from this correlation with the metrics. See https://docs.datadoghq.com/integrations/rsyslog.
+
+.. [2] for example: ``0000000000000000deadbeefdeadbeef <%pri%>1 %timestamp:::date-rfc3339% %HOSTNAME%.my_project %app-name% - - - %msg%``
 
