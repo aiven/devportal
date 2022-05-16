@@ -1,4 +1,4 @@
-InfluxDB® Retention Policies
+InfluxDB® retention policies
 ###########################
 
 InfluxDB® enforces what are known as "Retention Policies" to automatically manage the lifetime of data points in measurements.
