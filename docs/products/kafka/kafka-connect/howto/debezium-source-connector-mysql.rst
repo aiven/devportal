@@ -56,7 +56,7 @@ Define the connector configurations in a file (we'll refer to it with the name `
 
     {
         "name":"CONNECTOR_NAME",
-        "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+        "connector.class": "io.debezium.connector.mysql.MySqlConnector",
         "database.hostname": "MYSQL_HOST",
         "database.port": "MYSQL_PORT",
         "database.user": "MYSQL_USER",
