@@ -50,7 +50,7 @@ The following example demonstrates how to setup a Debezium source Connector for 
 Define a Kafka Connect configuration file
 '''''''''''''''''''''''''''''''''''''''''
 
-Define the connector configurations in a file (we'll refer to it with the name ``debezium_source_mysql.json``) with the following content:
+Define the connector configurations in a file (we'll refer to it with the name ``debezium_source_mysql.json``) with the following content, creating a file is not strictly necessary but allows to have all the information in one place before copy/pasting them in the `Aiven Console <https://console.aiven.io/>`_:
 
 .. code-block:: json
 
@@ -97,22 +97,24 @@ Define the connector configurations in a file (we'll refer to it with the name `
 
 The configuration file contains the following entries:
 
-* ``name``: the connector name
+* ``name``: the connector name, replace CONNECTOR_NAME with the name you want to use for the connector.
 * ``MYSQL_HOST``, ``MYSQL_PORT``, ``MYSQL_DATABASE_NAME``, ``SSL_MODE``, ``MYSQL_USER``, ``MYSQL_PASSWORD``, ``MYSQL_TABLES``: source database parameters collected in the :ref:`prerequisite <connect_debezium_mysql_source_prereq>` phase. 
 * ``database.server.name``: the logical name of the database, dictates the prefix that will be used for Apache Kafka topic names. The resulting topic name will be the concatenation of the ``database.server.name`` and the table name.
-* ``tasks.max``: maximum number of tasks to execute in parallel. By default this is 1, the connector can use at most 1 task for each source table defined.
+* ``tasks.max``: maximum number of tasks to execute in parallel. By default this is 1, the connector can use at most 1 task for each source table defined. Replace ``NR_TASKS`` with the amount of parallel task based on the number of tables.
 * ``database.history.kafka.bootstrap.servers``: points to the Aiven for Apache Kafka service where the connector is running and is needed to store :ref:`schema definition changes <connect_debezium_mysql_schema_versioning>`
 * ``database.history.producer`` and ``database.history.consumer``: points to truststores and keystores pre-created on the Aiven for Apache Kafka node to handle SSL authentication
 
-.. Warning::
+    .. Warning::
 
-    The values defined for each ``database.history.producer`` and ``database.history.consumer`` parameters are already set to work with the predefined truststore and keystore created in the Aiven for Apache Kafka nodes. Therefore, they **should not be changed**.
+        The values defined for each ``database.history.producer`` and ``database.history.consumer`` parameters are already set to work with the predefined truststore and keystore created in the Aiven for Apache Kafka nodes. Therefore, they **should not be changed**.
 
 * ``key.converter`` and ``value.converter``:  defines the messages data format in the Apache Kafka topic. The ``io.confluent.connect.avro.AvroConverter`` converter pushes messages in Avro format. To store the messages schema we use Aiven's `Karapace schema registry <https://github.com/aiven/karapace>`_ as specified by the ``schema.registry.url`` parameter and related credentials.
 
-.. Note::
+    .. Note::
 
-    The ``key.converter`` and ``value.converter`` sections are only needed when pushing data in Avro format. If omitted the messages will be defined in JSON format.
+        The ``key.converter`` and ``value.converter`` sections are only needed when pushing data in Avro format. If omitted the messages will be defined in JSON format.
+
+        The ``USER_INFO`` is not a placeholder, no substitution is needed for that parameter.
 
 
 Create a Kafka Connect connector with the Aiven Console
