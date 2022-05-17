@@ -60,7 +60,7 @@ The configuration file contains the following entries:
 * ``output.format.value`` and ``output.format.key``: the output format of the data produced by the connector for the key/value. Supported formats are: 
     
     * ``json``: Raw JSON strings 
-    * ``bson``: Bson byte array
+    * ``bson``: Binary Javascript Object Notation byte array
     * ``schema``: Avro schema output, using this option an additional parameter (``output.schema.key`` or ``output.schema.value``) needs to be passed defining the documents schema
 
 * ``publish.full.document.only``: only publishes the actual document rather than the full change stream document including additional metadata.
@@ -98,6 +98,7 @@ Example: Create a MongoDB source connector
 If you have in MongoDB a collection named ``students`` in a database named ``districtA`` containing the following data that you want to move to Apache Kafka:
 
 .. code-block:: json
+
     {"name":"carlo", "age": 77}
     {"name":"lucy", "age": 55}
     {"name":"carlo", "age": 33}
@@ -105,6 +106,7 @@ If you have in MongoDB a collection named ``students`` in a database named ``dis
 You can create a source connector taking the ``students`` MongoDB collection to Apache Kafka with the following connector configuration, after replacing the placeholders for ``MONGODB_HOST``, ``MONGODB_PORT``, ``MONGODB_DB_NAME``, ``MONGODB_USERNAME`` and ``MONGODB_PASSWORD``:
 
 .. code-block:: json
+
     {
         "name": "my-mongodb-source",
         "connector.class": "com.mongodb.kafka.connect.MongoSourceConnector",
@@ -125,4 +127,4 @@ The configuration file contains the following peculiarities:
 * ``"output.schema.infer.value": "true"``: the schema is automatically inferred.
 * ``"poll.await.time.ms": "1000"``: One second polling time
 
-Once the connector is created successfully, you should see a topic named ``MONGODB_DB_NAME.students`` in Aiven for Apache Kakfa.
+Once the connector is created successfully, you should see a topic named ``MONGODB_DB_NAME.students`` in Aiven for Apache Kafka.
