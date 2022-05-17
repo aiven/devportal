@@ -46,9 +46,9 @@ A standard BYOA deployment requires the customer to create a Virtual Private Clo
 dedicated to Aiven services within each region they want to operate. Aiven will access these
 VPCs via a static IP address and then route traffic through a proxy for additional security.
 In order to accomplish this, Aiven will utilize a bastion host, logically separated from the
-Aiven services a customer deploys. As the user of these services (e.g. Kafka), you will be
-able to utilize them through standard VPC peering techniques. Although the bastion host
-and the service nodes will reside in a customer managed VPC, they will not be accessible
+Aiven services a customer deploys. As the user of these services (e.g. Aiven for Apache Kafka®),
+you will be able to utilize them through standard VPC peering techniques. Although the bastion
+host and the service nodes will reside in a customer managed VPC, they will not be accessible
 (e.g. SSH) to anyone outside of Aiven.
 
 Depending on the service being used, Aiven will take regular backups to enable forking,
