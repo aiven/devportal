@@ -132,9 +132,9 @@ If you have a topic named ``students`` containing the following data that you wa
 
 .. code-block:: json
 
-    {"name":"carlo", age: 77}
-    {"name":"lucy", age: 55}
-    {"name":"carlo", age: 33}
+    {"name":"carlo", "age": 77}
+    {"name":"lucy", "age": 55}
+    {"name":"carlo", "age": 33}
 
 You can sink the ``students`` topic to MongoDB with the following connector configuration, after replacing the placeholders for ``MONGODB_HOST``, ``MONGODB_PORT``, ``MONGODB_DB_NAME``, ``MONGODB_USERNAME`` and ``MONGODB_PASSWORD``:
 
@@ -167,9 +167,9 @@ If you have a topic named ``students`` containing the following data that you wa
 
 .. code-block:: json
 
-    {"name":"carlo", age: 77}
-    {"name":"lucy", age: 55}
-    {"name":"carlo", age: 33}
+    {"name":"carlo", "age": 77}
+    {"name":"lucy", "age": 55}
+    {"name":"carlo", "age": 33}
 
 You can sink the ``students`` topic to MongoDB with the following connector configuration, after replacing the placeholders for ``MONGODB_HOST``, ``MONGODB_PORT``, ``MONGODB_DB_NAME``, ``MONGODB_USERNAME`` and ``MONGODB_PASSWORD``:
 
