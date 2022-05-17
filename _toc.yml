@@ -508,6 +508,14 @@ entries:
 
   - file: docs/products/cassandra/index
     title: Apache Cassandra
+    entries:
+      - file: docs/products/cassandra/get-started
+        title: Get started
+      - file: docs/products/cassandra/howto/
+        title: HowTo
+        entries:
+          - file: docs/products/cassandra/howto/using-sstableloader-to-migrate
+            title: Migrating existing Cassandra clusters with sstableloader
 
   - file: docs/products/grafana/index
     title: Grafana

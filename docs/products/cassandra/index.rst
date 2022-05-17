@@ -17,3 +17,11 @@ Apache Cassandra is designed to handle large volumes of writes to the database; 
 
 It is a truly distributed database where the individual nodes can communicate with one another without referencing any master node. This improves both its scalability and its fault tolerance, two key capabilities of Apache Cassandra.
 
+Getting started with Aiven for Apache Cassandra
+-----------------------------------------------
+
+Take your first steps with Aiven for Apache Cassandra by following our :doc:`getting-started` article, or browse through our full list of articles:
+
+.. panels::
+
+    📚 :doc:`HowTo <howto>`
