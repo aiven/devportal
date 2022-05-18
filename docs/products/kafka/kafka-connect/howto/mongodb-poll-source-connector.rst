@@ -1,7 +1,7 @@
 Create a MongoDB source connector
 =================================
 
-The MongoDB source connector periodically queries MongoDB collections and the new documents to Apache Kafka® where can be transformed and read by multiple consumers.
+The MongoDB source connector periodically queries MongoDB collections and copies the new documents to Apache Kafka® where they can be transformed and read by multiple consumers.
 
 .. Tip::
 
@@ -12,16 +12,20 @@ The MongoDB source connector periodically queries MongoDB collections and the ne
 Prerequisites
 -------------
 
-To setup a MongoDB source connector, you need an Aiven for Apache Kafka service :doc:`with Kafka Connect enabled <enable-connect>` or a :ref:`dedicated Aiven for Apache Kafka Connect cluster <apache_kafka_connect_dedicated_cluster>`. 
+To set up a MongoDB source connector, you need an Aiven for Apache Kafka service :doc:`with Kafka Connect enabled <enable-connect>` or a :ref:`dedicated Aiven for Apache Kafka Connect cluster <apache_kafka_connect_dedicated_cluster>`. 
+
+.. Tip::
+
+  The connector will write to a topic named ``DATABASE.COLLECTION`` so either create the topic in your Kafka service, or enable the ``auto_create_topic`` parameter so that the topic will be created automatically.
 
 Furthermore you need to collect the following information about the source MongoDB database upfront:
 
 * ``MONGODB_CONNECTION_URI``: The MongoDB database connection URL in the format ``mongodb://USERNAME:PASSWORD@HOST:PORT`` where:
 
-    * ``USERNAME``: The database username to connect
-    * ``PASSWORD``: The password for the username selected
-    * ``HOST``: the MongoDB hostname
-    * ``PORT``: the MongoDB port
+  * ``USERNAME``: The database username to connect
+  * ``PASSWORD``: The password for the username selected
+  * ``HOST``: the MongoDB hostname
+  * ``PORT``: the MongoDB port
 
 * ``MONGODB_DATABASE_NAME``: The name of the MongoDB database
 * ``MONGODB_COLLECTION_NAME``: The name of the MongoDB collection
@@ -31,7 +35,7 @@ The complete list of parameters and customization options is available in the `M
 Setup a MongoDB source connector with Aiven Console
 -------------------------------------------------------
 
-The following example demonstrates how to setup an Apache Kafka MongoDB source connector using the :ref:`Aiven Console <https://console.aiven.io/>`_.
+The following example demonstrates how to setup an Apache Kafka MongoDB source connector using the `Aiven Console <https://console.aiven.io/>`_.
 
 Define a Kafka Connect configuration file
 '''''''''''''''''''''''''''''''''''''''''
@@ -59,11 +63,11 @@ The configuration file contains the following entries:
 * ``poll.await.time.ms``: polling period, time between two queries to the collection, default 5000 milliseconds.
 * ``output.format.value`` and ``output.format.key``: the output format of the data produced by the connector for the key/value. Supported formats are: 
     
-    * ``json``: Raw JSON strings 
-    * ``bson``: Binary Javascript Object Notation byte array
-    * ``schema``: Avro schema output, using this option an additional parameter (``output.schema.key`` or ``output.schema.value``) needs to be passed defining the documents schema
+  * ``json``: Raw JSON strings 
+  * ``bson``: Binary Javascript Object Notation byte array
+  * ``schema``: Avro schema output, using this option an additional parameter (``output.schema.key`` or ``output.schema.value``) needs to be passed defining the documents schema
 
-* ``publish.full.document.only``: only publishes the actual document rather than the full change stream document including additional metadata.
+* ``publish.full.document.only``: only publishes the actual document rather than the full change stream document including additional metadata. Defaults to ``false``.
 
 
 Check out the `dedicated documentation <https://docs.mongodb.com/kafka-connector/current/>`_ for the full list of parameters.
