@@ -34,3 +34,7 @@ Learn about some of the key concepts for working with Aiven platform:
 * :doc:`Bring your own account (BYOA) </docs/platform/concepts/byoa>`.
 
   BYOA is an optional setup feature that allows you to purchase your Aiven services through your existing Cloud Provider.
+
+* :doc:`Disaster Recovery (DR) testing scenarios </docs/platform/concepts/disaster-recovery-test-scenarios>`.
+  
+  DR testing scenarios are simulations of disaster scenarios run for enterprise support customers by Aiven operators.
