@@ -36,7 +36,7 @@ The following example demonstrates how to setup a Debezium source connector for 
 Define a Kafka Connect configuration file
 '''''''''''''''''''''''''''''''''''''''''
 
-Define the connector configurations in a file (we'll refer to it with the name ``debezium_source_mongodb.json``) with the following content, creating a file is not strictly necessary but allows to have all the information in one place before copy/pasting them in the `Aiven Console <https://console.aiven.io/>`_:
+Define the connector configurations in a file (we'll refer to it with the name ``debezium_source_mongodb.json``) with the following content. Creating a file is not strictly necessary but allows to have all the information in one place before copy/pasting them in the `Aiven Console <https://console.aiven.io/>`_:
 
 .. code-block:: json
 
@@ -78,25 +78,25 @@ Create a Kafka Connect connector with the Aiven Console
 To create the connector, access the `Aiven Console <https://console.aiven.io/>`_ and select the Aiven for Apache Kafka® or Aiven for Apache Kafka Connect® service where the connector needs to be defined, then:
 
 1. Click on the **Connectors** tab
-2. Clink on **Create New Connector**, the button is enabled only for services :doc:`with Kafka Connect enabled <enable-connect>`.
+2. Click on **Create New Connector**, the button is enabled only for services :doc:`with Kafka Connect enabled <enable-connect>`.
 3. Select **Debezium - MongoDB**
 4. Under the *Common* tab, locate the **Connector configuration** text box and click on **Edit**
-5. Paste the connector configuration (stored in the ``debezium_source_mongodb.json`` file) in the form
+5. Paste the connector configuration (stored in the ``debezium_source_mongodb.json`` file) into the form
 6. Click on **Apply**
 
-    .. note::
+   .. note::
 
-        The Aiven Console parses the configuration file and fills the relevant UI fields. You can review the UI fields across the various tabs and change them if necessary. The changes will be reflected in JSON format in the **Connector configuration** text box.
+      The Aiven Console parses the configuration file and fills the relevant UI fields. You can review the UI fields across the various tabs and change them if necessary. The changes will be reflected in JSON format in the **Connector configuration** text box.
 
 7. After all the settings are correctly configured, click on **Create new connector**
 
-    .. Tip::
+   .. Tip::
 
-        If you're using Aiven for Apache Kafka, topics will not be created automatically. Either create them manually following the ``database.server.name.schema_name.table_name`` naming pattern or enable the ``kafka.auto_create_topics_enable`` advanced parameter.
+      If you're using Aiven for Apache Kafka, topics will not be created automatically. Either create them manually following the ``database.server.name.schema_name.table_name`` naming pattern or enable the ``kafka.auto_create_topics_enable`` advanced parameter.
     
 8. Verify the connector status under the **Connectors** tab
 9. Verify the presence of the data in the target Apache Kafka topic coming from the MongoDB dataset. The topic name is equal to the concatenation of the database and collection name. If you need to change the target table name, you can do so using the Kafka Connect ``RegexRouter`` transformation.
 
 .. note::
 
-    Connectors can be created also using the dedicated :ref:`Aiven CLI command <avn_service_connector_create>`.
+    Connectors can also be created using the dedicated :ref:`Aiven CLI command <avn_service_connector_create>`.
