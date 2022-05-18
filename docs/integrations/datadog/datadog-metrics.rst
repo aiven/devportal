@@ -10,7 +10,7 @@ You will need a Datadog account and the following details handy:
 
 * Which region your Datadog account is in, US or EU.
 
-* An API key for this integration. Generate an API key by visiting **Organization settings** under your account menu, and then choose **API Keys**. The **New Key** button will give you an API key; you should copy this as you will need it shortly.
+* A Datadog API key. Generate an API key by visiting **Organization settings** under your account menu, and then choose **API Keys**. The **New Key** button will give you an API key; you should copy this as you will need it shortly.
 
 Configure the service integration
 ---------------------------------
