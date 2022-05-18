@@ -19,7 +19,7 @@ Available integrations
 
     **Metrics**
 
-    * :doc:`DataDog <concepts/datadog>`
+    * :doc:`Datadog <datadog/index>`
     * :doc:`Prometheus </docs/platform/howto/integrations/prometheus-metrics>`
 
     ---
@@ -27,5 +27,5 @@ Available integrations
     **Logs**
 
     * :doc:`/docs/products/opensearch/howto/opensearch-log-integration`
-    * :doc:`DataDog <concepts/datadog>`
+    * :doc:`Datadog <datadog/index>`
     * `RSyslog integration <https://help.aiven.io/en/articles/2933115-remote-syslog-integration>`_
