@@ -23,6 +23,7 @@ exceptions:
   - Go
   - Google BigQuery
   - Google Cloud Storage
+  - Google Data Studio
   - Grafana
   - Hobbyist
   - HowTo
