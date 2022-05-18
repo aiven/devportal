@@ -22,16 +22,7 @@ Pre-requisites
 
 1. You will need a Google account, to access Google Data Studio.
 
-2. Install ``openssl`` and run the following to generate the client-side public and private key pairs:
-
-   .. code:: bash
-
-      openssl req -x509 -newkey rsa:2048 -keyout client-key.pem -out client-cert.pem \
-         -days 3650 -nodes -subj '/CN=localhost'
-   
-  The command generates two files named ``client-key.pem`` and ``client-cert.pem`` that will later be used in the Google Data Studio connection setup
-
-3. On the Aiven Console service page for your PostgreSQL database, download the CA certificate. The default filename is ``ca.pem``.
+2. On the Aiven Console service page for your PostgreSQL database, download the CA certificate. The default filename is ``ca.pem``.
 
 Connect your Aiven for PostgreSQL data source to Google Data Studio
 -------------------------------------------------------------------
@@ -52,12 +43,7 @@ Connect your Aiven for PostgreSQL data source to Google Data Studio
    * **Username** to ``avnadmin``
    * **Password** to the ``PASSWORD``
 
-#. Select **Enable SSL** and **Enable client authentication**
-   and upload your certificate and key files.
-
-   * **Server certificate** is ``ca.pem``
-   * **Client certificate** is ``client-cert.pem``
-   * **Client private key** is ``client-key.pem``
+#. Select **Enable SSL** and upload your server certificate file, ``ca.pem``.
 
 #. Click **AUTHENTICATE**.
 
