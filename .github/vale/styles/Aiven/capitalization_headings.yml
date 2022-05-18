@@ -16,6 +16,7 @@ exceptions:
   - Connect
   - Dashboards
   - Dev
+  - Disaster Recovery
   - Docker
   - Elasticsearch
   - Flink
