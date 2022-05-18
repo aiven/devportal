@@ -1,5 +1,5 @@
 Disaster Recovery testing scenarios
-=====================
+===================================
 
 `Disaster Recovery <https://en.wikipedia.org/wiki/Disaster_recovery>`_ (DR) is the ability of software and/or services to handle extreme scenarios; this could be the failure of the software itself or an outage within a datacenter.
 
@@ -8,7 +8,7 @@ These situations are uncommon but can have a huge impact, so they need to be pre
 What is a Disaster Recovery scenario?
 -----------------------------------------------------------
 
-This is a preset scenario where an Aiven specialist will simulate an issue with your service and `sabotage` one (or more) of your Virtual Machines. For example, with an Aiven for PostgreSQL service, we can `sabotage` the Primary instance and test the failover functionality or we can sabotage both nodes to test recovery time for a complete outage.
+This is a preset scenario where an Aiven specialist will simulate an issue with your service and `sabotage` one (or more) of your Virtual Machines. For example, with an Aiven for PostgreSQL® service, we can `sabotage` the Primary instance and test the failover functionality or we can sabotage both nodes to test recovery time for a complete outage.
 
 What is needed?
 -----------------------------------------------------------
@@ -21,7 +21,7 @@ What is needed?
 How do we request this?
 -----------------------------------------------------------
 
-You can request this by opening a support ticket, emailing `support@aiven.io <mailto:support@aiven.io>`_ or by contacting your Customer Success Manager.
+You can request this by opening a support ticket, emailing `support@Aiven.io <mailto:support@aiven.io>`_ or by contacting your Customer Success Manager.
 
 How is it run?
 -----------------------------------------------------------
