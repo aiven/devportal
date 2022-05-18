@@ -37,7 +37,7 @@ Deployment of BYOA
 
 With BYOA, you can use any standard Aiven method (e.g. CLI, Terraform) to manage your services and generally have the same user experience as with the regular Aiven deployment model.
 
-BYOA Standard
+BYOA standard
 *************
 
 .. image:: /images/platform/byoa-standard.png
@@ -59,7 +59,7 @@ to read and write in order to accomplish this. Please bear in mind that all back
 encrypted using Aiven managed keys and that the customer will be responsible for managing
 object storage configurations.
 
-BYOA with IPSec Ingress
+BYOA with IPsec ingress
 *************
 
 .. image:: /images/platform/byoa-ipsec-ingress.png
@@ -68,7 +68,7 @@ A slight variation on a standard BYOA deployment enables Aiven to manage a custo
 services through an IPSec tunnel. This deployment can be beneficial if management over
 the public internet is infeasible or adds additional complexity.
 
-BYOA with Direct IPSec Ingress
+BYOA with direct IPsec ingress
 *************
 
 .. image:: /images/platform/byoa-ipsec-ingress-direct.png
