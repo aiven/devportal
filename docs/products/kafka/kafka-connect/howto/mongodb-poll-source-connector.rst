@@ -64,7 +64,7 @@ The configuration file contains the following entries:
 * ``output.format.value`` and ``output.format.key``: the output format of the data produced by the connector for the key/value. Supported formats are: 
     
   * ``json``: Raw JSON strings 
-  * ``bson``: Binary Javascript Object Notation byte array
+  * ``bson``: Binary JavaScript Object Notation byte array
   * ``schema``: Avro schema output, using this option an additional parameter (``output.schema.key`` or ``output.schema.value``) needs to be passed defining the documents schema
 
 * ``publish.full.document.only``: only publishes the actual document rather than the full change stream document including additional metadata. Defaults to ``false``.
