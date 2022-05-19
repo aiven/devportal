@@ -52,6 +52,7 @@ Define a Kafka Connect configuration file
 Define the connector configurations in a file (we'll refer to it with the name ``redis_sink.json``) with the following content, creating a file is not strictly necessary but allows to have all the information in one place before copy/pasting them in the `Aiven Console <https://console.aiven.io/>`_:
 
 .. code-block:: json
+
     {
         "name":"CONNECTOR_NAME",
         "connector.class": "com.datamountaineer.streamreactor.connect.redis.sink.RedisSinkConnector",
@@ -70,6 +71,7 @@ Define the connector configurations in a file (we'll refer to it with the name `
         "value.converter.basic.auth.credentials.source": "USER_INFO",
         "value.converter.schema.registry.basic.auth.user.info": "SCHEMA_REGISTRY_USER:SCHEMA_REGISTRY_PASSWORD"
     }
+
 The configuration file contains the following entries:
 
 * ``name``: the connector name, replace ``CONNECTOR_NAME`` with the name you want to use for the connector.
@@ -118,6 +120,7 @@ Example: Create a Redis sink connector
 If you have a topic named ``students`` containing the following data that you want to move to Redis:
 
 .. code-block:: json
+
     {"id":1, "name":"carlo", "age": 77}
     {"id":2, "name":"lucy", "age": 55}
     {"id":3, "name":"carlo", "age": 33}
@@ -126,6 +129,7 @@ If you have a topic named ``students`` containing the following data that you wa
 You can sink the ``students`` topic to Redis with the following connector configuration, after replacing the placeholders for ``REDIS_HOST``, ``REDIS_PORT``, ``REDIS_DB_NAME``, ``REDIS_USERNAME`` and ``REDIS_PASSWORD``:
 
 .. code-block:: json
+
     {
         "name": "my-redis-sink",
         "connector.class": "com.datamountaineer.streamreactor.connect.redis.sink.RedisSinkConnector",

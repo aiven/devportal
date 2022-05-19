@@ -207,6 +207,7 @@ entries:
             - file: docs/products/kafka/kafka-connect/howto/snowflake-sink-prereq
             - file: docs/products/kafka/kafka-connect/howto/snowflake-sink
             - file: docs/products/kafka/kafka-connect/howto/http-sink
+            - file: docs/products/kafka/kafka-connect/howto/redis-streamreactor-sink
 
         - file: docs/products/kafka/kafka-connect/reference
           title: Reference
