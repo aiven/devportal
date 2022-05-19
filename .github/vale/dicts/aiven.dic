@@ -1,4 +1,4 @@
-145
+152
 ACL
 ACLs
 Aiven
@@ -118,6 +118,7 @@ Redis
 Redli
 refcard
 reindexing
+rsyslog
 Sakila
 schemaless
 scriptable
@@ -132,6 +133,7 @@ Statusmap
 Stunnel
 subnet
 subtab
+syslog
 TaskManager
 Telegraf
 Terraform

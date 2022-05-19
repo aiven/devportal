@@ -15,6 +15,7 @@ exceptions:
   - ClickHouse
   - Connect
   - Dashboards
+  - Datadog
   - Dev
   - Disaster Recovery
   - Docker

@@ -50,6 +50,16 @@ entries:
 
 
   # --------- GLOBAL -----------
+  - file: docs/integrations/index
+    title: Integrations
+    entries:
+    - file: docs/integrations/datadog/index
+      title: Datadog
+      entries:
+        - file: docs/integrations/datadog/datadog-metrics
+        - file: docs/integrations/datadog/datadog-logs
+
+
   - file: docs/tools/index
     entries:
       - file: docs/tools/cli
