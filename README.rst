@@ -1,6 +1,8 @@
 Aiven Developer
 ===============
 
+**Hello**
+
 This is the source for the Aiven developer documentation at https://developer.aiven.io. We are working to move all of our technical documentation to this platform, and welcome issues and pull requests from everyone.
 
 It is Python-based, with content in `ReStructuredText (rst) <https://docutils.sourceforge.io/rst.html>`_ and rendered by `Sphinx <https://www.sphinx-doc.org/en/master/>`_.
