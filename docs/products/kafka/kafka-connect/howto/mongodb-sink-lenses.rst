@@ -23,21 +23,21 @@ Furthermore you need to collect the following information about the target Mongo
 
 * ``MONGODB_CONNECTION_URI``: The MongoDB database connection URL in the format ``mongodb://USERNAME:PASSWORD@HOST:PORT`` where:
     
-    * ``USERNAME``: The database username to connect
-    * ``PASSWORD``: The password for the username selected
-    * ``HOST``: the MongoDB hostname
-    * ``PORT``: the MongoDB port
+  * ``USERNAME``: The database username to connect
+  * ``PASSWORD``: The password for the username selected
+  * ``HOST``: the MongoDB hostname
+  * ``PORT``: the MongoDB port
 
 * ``MONGODB_DATABASE_NAME``: The name of the MongoDB database
 * ``TOPIC_LIST``: The list of topics to sink divided by comma
 * ``KCQL_TRANSFORMATION``: The KCQL syntax to parse the topic data, should be in the format:
 
-    ::
+  ::
 
-        INSERT | UPSERT 
-        INTO MONGODB_COLLECTION_NAME
-        SELECT LIST_OF_FIELDS 
-        FROM APACHE_KAFKA_TOPIC
+    INSERT | UPSERT 
+    INTO MONGODB_COLLECTION_NAME
+    SELECT LIST_OF_FIELDS 
+    FROM APACHE_KAFKA_TOPIC
 
 
 * ``APACHE_KAFKA_HOST``: The hostname of the Apache Kafka service, only needed when using Avro as data format
@@ -130,7 +130,7 @@ Example: Create a MongoDB sink connector in insert mode
 
 If you have a topic named ``students`` containing the following data that you want to move to MongoDB:
 
-.. code-block:: json
+.. code-block::
 
     {"name":"carlo", "age": 77}
     {"name":"lucy", "age": 55}
@@ -165,7 +165,7 @@ Example: Create a MongoDB sink connector in upsert mode
 
 If you have a topic named ``students`` containing the following data that you want to move to MongoDB, but having one document per person ``name`` in the following messages:
 
-.. code-block:: json
+.. code-block::
 
     {"name":"carlo", "age": 77}
     {"name":"lucy", "age": 55}
@@ -195,7 +195,7 @@ The configuration file contains the following peculiarities:
 
 Once the connector is created successfully, you should see a collection named ``studentscol`` in the MongoDB database referenced by the ``MONGODB_DB_NAME`` placeholder. The collection should contain two documents since the name ``carlo`` was present two times:
 
-.. code-block:: json
+.. code-block::
 
     {"name":"lucy", age: 55}
     {"name":"carlo", age: 33}
