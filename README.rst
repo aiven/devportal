@@ -17,8 +17,6 @@ We recommend using a virtual environment like `venv <https://docs.python.org/3/l
 
     python3 -m venv venv
 
-If you call the directory (the last parameter above) something other than `venv` or `env`, make sure to add the directory name to `<.gitignore>`_.
-
 Activate your virtual environment using the `activate` script for your environment::
 
     source venv/bin/activate
