@@ -20,11 +20,11 @@ Furthermore you need to collect the following information about the target Redis
 * ``TOPIC_LIST``: The list of topics to sink divided by comma
 * ``KCQL_TRANSFORMATION``: The KCQL syntax to parse the topic data, should be in the format:
 
-    ::
+  ::
 
-        [INSERT INTO REDIS_CACHE]
-        SELECT LIST_OF_FIELDS 
-        FROM APACHE_KAFKA_TOPIC
+    [INSERT INTO REDIS_CACHE]
+    SELECT LIST_OF_FIELDS 
+    FROM APACHE_KAFKA_TOPIC
 
 
 * ``APACHE_KAFKA_HOST``: The hostname of the Apache Kafka service, only needed when using Avro as data format
@@ -119,7 +119,7 @@ Example: Create a Redis sink connector
 
 If you have a topic named ``students`` containing the following data that you want to move to Redis:
 
-.. code-block:: json
+.. code-block::
 
     {"id":1, "name":"carlo", "age": 77}
     {"id":2, "name":"lucy", "age": 55}
