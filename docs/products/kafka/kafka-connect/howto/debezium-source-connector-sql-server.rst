@@ -1,14 +1,14 @@
 Create a Debezium source connector for SQL Server
 ==================================================
 
-The SQL Server Debezium source connector is based on the `change data capture feature <https://docs.microsoft.com/en-us/sql/relational-databases/track-changes/about-change-data-capture-sql-server?view=sql-server-2017>`, extracts the database changes captured in specific `change tables <https://debezium.io/documentation/reference/stable/connectors/sqlserver.html>`_ on a polling interval, and writes them to an Apache Kafka® topic in a standard format where they can be transformed and read by multiple consumers.
+The SQL Server Debezium source connector is based on the `change data capture feature <https://docs.microsoft.com/en-us/sql/relational-databases/track-changes/about-change-data-capture-sql-server?view=sql-server-2017>`_, extracts the database changes captured in specific `change tables <https://debezium.io/documentation/reference/stable/connectors/sqlserver.html>`_ on a polling interval, and writes them to an Apache Kafka® topic in a standard format where they can be transformed and read by multiple consumers.
 
 .. _connect_debezium_sql_server_schema_versioning:
 
 Enable CDC in SQL Server
 ------------------------
 
-The Change Data Capture (CDC) needs to be enabled at database level and table level.
+To use the Debezium source connector for SQL server, you need to enabled at database level and table level the SQL Server Change Data Capture (CDC). This will create the secessary schemas and tables containing a history of all the change events happening to the tables you want to track with the connector.
 
 Enable CDC at database level
 ''''''''''''''''''''''''''''
@@ -150,17 +150,17 @@ The configuration file contains the following entries:
 * ``database.history.kafka.bootstrap.servers``: points to the Aiven for Apache Kafka service where the connector is running and is needed to store :ref:`schema definition changes <connect_debezium_sql_server_schema_versioning>`
 * ``database.history.producer`` and ``database.history.consumer``: points to truststores and keystores pre-created on the Aiven for Apache Kafka node to handle SSL authentication
 
-    .. Warning::
+  .. Warning::
 
-        The values defined for each ``database.history.producer`` and ``database.history.consumer`` parameters are already set to work with the predefined truststore and keystore created in the Aiven for Apache Kafka nodes. Therefore, they **should not be changed**.
+    The values defined for each ``database.history.producer`` and ``database.history.consumer`` parameters are already set to work with the predefined truststore and keystore created in the Aiven for Apache Kafka nodes. Therefore, they **should not be changed**.
 
 * ``key.converter`` and ``value.converter``:  defines the messages data format in the Apache Kafka topic. The ``io.confluent.connect.avro.AvroConverter`` converter pushes messages in Avro format. To store the messages schema we use Aiven's `Karapace schema registry <https://github.com/aiven/karapace>`_ as specified by the ``schema.registry.url`` parameter and related credentials.
 
-    .. Note::
+  .. Note::
 
-        The ``key.converter`` and ``value.converter`` sections are only needed when pushing data in Avro format. If omitted the messages will be defined in JSON format.
+    The ``key.converter`` and ``value.converter`` sections are only needed when pushing data in Avro format. If omitted the messages will be defined in JSON format.
 
-        The ``USER_INFO`` is not a placeholder, no substitution is needed for that parameter.
+    The ``USER_INFO`` is not a placeholder, no substitution is needed for that parameter.
 
 
 Create a Kafka Connect connector with the Aiven Console
@@ -175,15 +175,15 @@ To create the connector, access the `Aiven Console <https://console.aiven.io/>`_
 5. Paste the connector configuration (stored in the ``debezium_source_sql_server.json`` file) in the form
 6. Click on **Apply**
 
-    .. note::
+   .. note::
 
-      The Aiven Console parses the configuration file and fills the relevant UI fields. You can review the UI fields across the various tabs and change them if necessary. The changes will be reflected in JSON format in the **Connector configuration** text box.
+    The Aiven Console parses the configuration file and fills the relevant UI fields. You can review the UI fields across the various tabs and change them if necessary. The changes will be reflected in JSON format in the **Connector configuration** text box.
 
 7. After all the settings are correctly configured, click on **Create new connector**
 
-    .. Tip::
+   .. Tip::
 
-        If you're using Aiven for Apache Kafka, topics will not be created automatically. Either create them manually following the ``database.server.name.schema_name.table_name`` naming pattern or enable the ``kafka.auto_create_topics_enable`` advanced parameter.
+    If you're using Aiven for Apache Kafka, topics will not be created automatically. Either create them manually following the ``database.server.name.schema_name.table_name`` naming pattern or enable the ``kafka.auto_create_topics_enable`` advanced parameter.
 
 8. Verify the connector status under the **Connectors** tab
 9. Verify the presence of the data in the target Apache Kafka topic coming from the SQL Server dataset. The topic name is equal to concatenation of the database and table name. If you need to change the target table name, you can do so using the Kafka Connect ``RegexRouter`` transformation.
