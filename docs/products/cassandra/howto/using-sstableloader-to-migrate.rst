@@ -1,7 +1,7 @@
-Using sstableloader to migrate your existing Cassandra cluster to Aiven
+Using sstableloader to migrate your existing Apache Cassandra® cluster to Aiven
 ================================================
 
-**How to use the sstableloader utility to upload Cassandra data files to a new Aiven service**
+**How to use the sstableloader utility to upload Cassandra® data files to a new Aiven service**
 
 While it's possible to migrate a Cassandra cluster to Aiven by inserting rows using a regular Cassandra client, there is an alternative which scales better for large amounts of data. The sstableloader utility is run on the source cluster nodes and reads the raw data files for tables that you want to migrate, and uploads them efficiently to the target cluster by connecting directly to the target nodes'  internode port that is normally used only for communication between the cluster's nodes.
 

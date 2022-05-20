@@ -1,4 +1,4 @@
-145
+148
 ACL
 ACLs
 Aiven
@@ -17,6 +17,7 @@ codecs
 Conduktor
 connect
 Couchbase
+cqlsh
 cyber
 datacenter
 datacenters
@@ -70,6 +71,7 @@ Kafdrop
 Kafka
 Karapace
 keypair
+keyspace
 keystore
 keystores
 Kibana
@@ -126,6 +128,7 @@ Singlestat
 Snowflake
 Splunk
 spring
+sstableloader
 Stackdriver
 Statusmap
 Stunnel

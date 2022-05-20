@@ -38,7 +38,7 @@ Your Cassandra cluster is created with all nodes in a Data Center (DC) named aiv
 
 While SimpleStrategy has a replication factor property, it may place the replicas in the same AZ. The examples below demonstrate how to create keyspaces with NetworkTopologyStrategy using the aiven DC.
 
-We strongly recommend the use of a replication factor that is more than 1 (and no more than the number of nodes in your cluster). Using a replication factor of 1 can potentially result in dataloss as the node storing it is still a single point of failure.
+We strongly recommend the use of a replication factor that is more than 1 (and no more than the number of nodes in your cluster). Using a replication factor of 1 can potentially result in data loss as the node storing it is still a single point of failure.
 
 Cqlsh example
 -------------
@@ -76,7 +76,7 @@ Point the SSL_CERTIFICATE environment variable to the downloaded file and run cq
 
    (1 rows)
 
-Programming Language Examples
+Programming language examples
 -----------------------------
 
 * `Python <https://github.com/aiven/aiven-examples/blob/master/cassandra/python/cassandra_example.py>`_ 
