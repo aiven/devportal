@@ -585,8 +585,8 @@ entries:
   - file: docs/community
     title: Community
     entries:
+    - file: docs/aiven-support-details
     - file: docs/community/documentation/index
       entries:
       - glob: docs/community/documentation/tips-tricks/*
         title: Tips & Tricks
-
