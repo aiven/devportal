@@ -63,9 +63,6 @@ Define the connector configurations in a file (we'll refer to it with the name `
         "database.password": "MYSQL_PASSWORD",
         "database.dbname": "MYSQL_DATABASE_NAME",
         "database.sslmode": "SSL_MODE",
-        "plugin.name": "PLUGIN_NAME",
-        "slot.name": "MYSQL_SLOT_NAME",
-        "publication.name": "MYSQL_PUBLICATION_NAME",
         "database.server.name": "KAFKA_TOPIC_PREFIX",
         "table.include.list": "MYSQL_TABLES",
         "tasks.max":"NR_TASKS",
@@ -77,6 +74,7 @@ Define the connector configurations in a file (we'll refer to it with the name `
         "value.converter.schema.registry.url": "https://APACHE_KAFKA_HOST:SCHEMA_REGISTRY_PORT",
         "value.converter.basic.auth.credentials.source": "USER_INFO",
         "value.converter.schema.registry.basic.auth.user.info": "SCHEMA_REGISTRY_USER:SCHEMA_REGISTRY_PASSWORD",
+        "database.history.kafka.topic": "HISTORY_TOPIC_NAME",
         "database.history.kafka.bootstrap.servers": "APACHE_KAFKA_HOST:APACHE_KAFKA_PORT",
         "database.history.producer.security.protocol": "SSL",
         "database.history.producer.ssl.keystore.type": "PKCS12",
@@ -101,20 +99,21 @@ The configuration file contains the following entries:
 * ``MYSQL_HOST``, ``MYSQL_PORT``, ``MYSQL_DATABASE_NAME``, ``SSL_MODE``, ``MYSQL_USER``, ``MYSQL_PASSWORD``, ``MYSQL_TABLES``: source database parameters collected in the :ref:`prerequisite <connect_debezium_mysql_source_prereq>` phase. 
 * ``database.server.name``: the logical name of the database, dictates the prefix that will be used for Apache Kafka topic names. The resulting topic name will be the concatenation of the ``database.server.name`` and the table name.
 * ``tasks.max``: maximum number of tasks to execute in parallel. By default this is 1, the connector can use at most 1 task for each source table defined. Replace ``NR_TASKS`` with the amount of parallel task based on the number of tables.
+* ``database.history.kafka.topic``: the name of the Apache Kafka topic that will contain the history of schema changes.
 * ``database.history.kafka.bootstrap.servers``: points to the Aiven for Apache Kafka service where the connector is running and is needed to store :ref:`schema definition changes <connect_debezium_mysql_schema_versioning>`
 * ``database.history.producer`` and ``database.history.consumer``: points to truststores and keystores pre-created on the Aiven for Apache Kafka node to handle SSL authentication
 
-    .. Warning::
+  .. Warning::
 
-        The values defined for each ``database.history.producer`` and ``database.history.consumer`` parameters are already set to work with the predefined truststore and keystore created in the Aiven for Apache Kafka nodes. Therefore, they **should not be changed**.
+    The values defined for each ``database.history.producer`` and ``database.history.consumer`` parameters are already set to work with the predefined truststore and keystore created in the Aiven for Apache Kafka nodes. Therefore, they **should not be changed**.
 
 * ``key.converter`` and ``value.converter``:  defines the messages data format in the Apache Kafka topic. The ``io.confluent.connect.avro.AvroConverter`` converter pushes messages in Avro format. To store the messages schema we use Aiven's `Karapace schema registry <https://github.com/aiven/karapace>`_ as specified by the ``schema.registry.url`` parameter and related credentials.
 
-    .. Note::
+  .. Note::
 
-        The ``key.converter`` and ``value.converter`` sections are only needed when pushing data in Avro format. If omitted the messages will be defined in JSON format.
+    The ``key.converter`` and ``value.converter`` sections are only needed when pushing data in Avro format. If omitted the messages will be defined in JSON format.
 
-        The ``USER_INFO`` is not a placeholder, no substitution is needed for that parameter.
+    The ``USER_INFO`` is not a placeholder, no substitution is needed for that parameter.
 
 
 Create a Kafka Connect connector with the Aiven Console
@@ -129,9 +128,9 @@ To create the connector, access the `Aiven Console <https://console.aiven.io/>`_
 5. Paste the connector configuration (stored in the ``debezium_source_mysql.json`` file) in the form
 6. Click on **Apply**
 
-    .. note::
+   .. note::
 
-      The Aiven Console parses the configuration file and fills the relevant UI fields. You can review the UI fields across the various tabs and change them if necessary. The changes will be reflected in JSON format in the **Connector configuration** text box.
+    The Aiven Console parses the configuration file and fills the relevant UI fields. You can review the UI fields across the various tabs and change them if necessary. The changes will be reflected in JSON format in the **Connector configuration** text box.
 
 7. After all the settings are correctly configured, click on **Create new connector**
 
