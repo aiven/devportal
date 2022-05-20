@@ -40,7 +40,7 @@ There are multiple ways you can try out your new InfluxDB® service, you can cop
         -database 'defaultdb' -username 'avnadmin' \
         -password 'krx4mpjiz498m7zc' -ssl
 
-Programming Language Examples
+Programming language examples
 -----------------------------
 * `Python <https://github.com/aiven/aiven-examples/blob/master/influxdb/python/main.py>`_
 * `Go <https://github.com/aiven/aiven-examples/blob/master/influxdb/go/influxdb_example.go>`_
