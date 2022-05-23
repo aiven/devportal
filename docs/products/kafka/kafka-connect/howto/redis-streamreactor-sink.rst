@@ -16,7 +16,7 @@ Furthermore you need to collect the following information about the target Redis
 * ``REDIS_HOSTNAME``: The Redis hostname
 * ``REDIS_PORT``: The Redis port
 * ``REDIS_PASSWORD``: The Redis password
-* ``REDIS_SSL``: The Redis SSL setting
+* ``REDIS_SSL``: The Redis SSL setting, should be ``true`` or ``false``
 * ``TOPIC_LIST``: The list of topics to sink divided by comma
 * ``KCQL_TRANSFORMATION``: The KCQL syntax to parse the topic data, should be in the format:
 
