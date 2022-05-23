@@ -134,7 +134,7 @@ To create the connector, access the `Aiven Console <https://console.aiven.io/>`_
 
 7. After all the settings are correctly configured, click on **Create new connector**
 
-.. Tip::
+   .. Tip::
 
     If you're using Aiven for Apache Kafka, topics will not be created automatically. Either create them manually following the ``database.server.name.schema_name.table_name`` naming pattern or enable the ``kafka.auto_create_topics_enable`` advanced parameter.
 

@@ -15,6 +15,7 @@ exceptions:
   - ClickHouse
   - Connect
   - Dashboards
+  - Debezium
   - Dev
   - Docker
   - Elasticsearch
