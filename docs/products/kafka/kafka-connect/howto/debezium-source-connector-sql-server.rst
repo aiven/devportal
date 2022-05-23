@@ -1,14 +1,14 @@
 Create a Debezium source connector for SQL Server
 ==================================================
 
-The SQL Server Debezium source connector is based on the `change data capture feature <https://docs.microsoft.com/en-us/sql/relational-databases/track-changes/about-change-data-capture-sql-server?view=sql-server-2017>`_, extracts the database changes captured in specific `change tables <https://debezium.io/documentation/reference/stable/connectors/sqlserver.html>`_ on a polling interval, and writes them to an Apache Kafka® topic in a standard format where they can be transformed and read by multiple consumers.
+The SQL Server Debezium source connector is based on the `change data capture (CDC) feature <https://docs.microsoft.com/en-us/sql/relational-databases/track-changes/about-change-data-capture-sql-server?view=sql-server-2017>`_, extracts the database changes captured in specific `change tables <https://debezium.io/documentation/reference/stable/connectors/sqlserver.html>`_ on a polling interval, and writes them to an Apache Kafka® topic in a standard format where they can be transformed and read by multiple consumers.
 
 .. _connect_debezium_sql_server_schema_versioning:
 
 Enable CDC in SQL Server
 ------------------------
 
-To use the Debezium source connector for SQL server, you need to enabled at database level and table level the SQL Server Change Data Capture (CDC). This will create the secessary schemas and tables containing a history of all the change events happening to the tables you want to track with the connector.
+To use the Debezium source connector for SQL server, you need to enabled at database level and table level the SQL Server Change Data Capture (CDC). This will create the necessary schemas and tables containing a history of all the change events happening to the tables you want to track with the connector.
 
 Enable CDC at database level
 ''''''''''''''''''''''''''''
@@ -122,6 +122,7 @@ Define the connector configurations in a file (we'll refer to it with the name `
         "value.converter.schema.registry.url": "https://APACHE_KAFKA_HOST:SCHEMA_REGISTRY_PORT",
         "value.converter.basic.auth.credentials.source": "USER_INFO",
         "value.converter.schema.registry.basic.auth.user.info": "SCHEMA_REGISTRY_USER:SCHEMA_REGISTRY_PASSWORD",
+        "database.history.kafka.topic": "HISTORY_TOPIC_NAME",
         "database.history.kafka.bootstrap.servers": "APACHE_KAFKA_HOST:APACHE_KAFKA_PORT",
         "database.history.producer.security.protocol": "SSL",
         "database.history.producer.ssl.keystore.type": "PKCS12",
@@ -147,6 +148,7 @@ The configuration file contains the following entries:
 * ``database.server.name``: the logical name of the database, dictates the prefix that will be used for Apache Kafka topic names. The resulting topic name will be the concatenation of the ``database.server.name`` and the table name.
 * ``tasks.max``: maximum number of tasks to execute in parallel. By default this is 1, the connector can use at most 1 task for each source table defined. Replace ``NR_TASKS`` with the amount of parallel task based on the number of input tables.
 * ``poll.interval.ms``: the frequency of the queries to the CDC tables.
+* ``database.history.kafka.topic``: the name of the Apache Kafka topic that will contain the history of schema changes.
 * ``database.history.kafka.bootstrap.servers``: points to the Aiven for Apache Kafka service where the connector is running and is needed to store :ref:`schema definition changes <connect_debezium_sql_server_schema_versioning>`
 * ``database.history.producer`` and ``database.history.consumer``: points to truststores and keystores pre-created on the Aiven for Apache Kafka node to handle SSL authentication
 
