@@ -16,7 +16,7 @@ security posture and keep their data in their own cloud.
 Who is eligible for BYOA?
 -------------------------
 
-The BYOA setup always requires custom work, and not all cloud providers support it yet. Therefore Aiven has set two prerequisites for customers to be eligible:
+The BYOA setup always requires custom work, and not all cloud providers support it yet. Therefore Aiven has set three prerequisites for customers to be eligible:
 
 - Customers must use Amazon Web Services (AWS), Google Cloud Platform (GCP) or Microsoft Azure* accounts (BYOA is not available for others)
 - The customer's total monthly spend is greater than $5,000
@@ -26,7 +26,7 @@ The BYOA setup always requires custom work, and not all cloud providers support 
 
 Cost of BYOA
 -----------------
-The BYOA setup has a custom pricing structure that is calculated on case by case basis. When leveraging BYOA you will negate Aiven's feature of paying for all network traffic out of the service.
+The BYOA setup has a custom pricing structure that is calculated on a case by case basis. Unlike Aiven's standard all-inclusive pricing, with BYOA you will be responsible for all cloud infrastructure and network traffic charges.
 
 Note that with BYOA, you receive two separate monthly invoices, one from Aiven for their managed services and another from the cloud service provider for the cloud infrastructure costs. In this fashion you can utilize any cloud commit you may have and potentially leverage CUDs in certain cases.
 
@@ -52,7 +52,7 @@ host and the service nodes will reside in a customer managed VPC, they will not 
 (e.g. SSH) to anyone outside of Aiven.
 
 Depending on the service being used, Aiven will take regular backups to enable forking,
-Point inTime Recovery (PITR) and disaster recovery. These backups by default will not
+Point in Time Recovery (PITR) and disaster recovery. These backups by default will not
 reside in the customer’s cloud account. If there is a requirement to have all backups
 in your own account we can do this as well. Aiven will need object storage and permissions
 to read and write in order to accomplish this. Please bear in mind that all backups are
@@ -95,22 +95,3 @@ In most cases customers can meet their regulatory and business requirements by u
 a standard Aiven deployment or Enhanced Compliance Environment. In fact, 99% of Aiven
 customers are able to meet their requirements without BYOA. If you would like to understand
 BYOA better or are still unsure which deployment model is the best fit for you, please contact our sales department.
-
-Testing, POC, and deployments
------------------------------
-
-BYOA requires setup on your cloud account as well as Aiven's automation. Coordinating this process takes time so we recommend allocating sufficient time for anyone considering using the BYOA deployment model.
-
-- Functionality Testing and Security Validation
-
-  - Ensure the technical feasibility of the Aiven platform
-  - Perform all needed technical and security audits of the proposed solution
-
-- Deploy and Configure the BYOA Environment
-
-  - Ensure that you have DevOps resources available to iterate and debug any networking issues
-  - This can potentially be done in parallel with phase #1
-
-- Onboarding and Migrations
-
-  - Aiven will be available for support while teams migrate workloads onto the new platform
