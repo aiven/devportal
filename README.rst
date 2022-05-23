@@ -15,11 +15,11 @@ Local Development
 
 We recommend using a virtual environment like `venv <https://docs.python.org/3/library/venv.html>`_::
 
-    python3 -m venv /path/to/new/virtual/environment
+    python3 -m venv venv
 
-If you call it something other than `venv` or `env`, make sure to add your preferred name to `<.gitignore>`_.
+Activate your virtual environment using the `activate` script for your environment::
 
-Activate your virtual environment using the `activate` script for your environment.
+    source venv/bin/activate
 
 Install the dependencies::
 
