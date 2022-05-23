@@ -15,8 +15,10 @@ exceptions:
   - ClickHouse
   - Connect
   - Dashboards
+  - Datadog
   - Debezium
   - Dev
+  - Disaster Recovery
   - Docker
   - Elasticsearch
   - Flink
@@ -24,6 +26,7 @@ exceptions:
   - Go
   - Google BigQuery
   - Google Cloud Storage
+  - Google Data Studio
   - Grafana
   - Hobbyist
   - HowTo
@@ -35,6 +38,7 @@ exceptions:
   - Kubernetes
   - M3
   - MirrorMaker
+  - MongoDB
   - MySQL
   - NodeJS
   - OpenSearch

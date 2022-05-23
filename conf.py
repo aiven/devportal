@@ -34,7 +34,12 @@ extensions = [
     'sphinx_copybutton',
     'sphinx_gitstamp',
     'sphinxext.opengraph',
+    'notfound.extension',
 ]
+
+# Not Found configuration
+# see all options at https://sphinx-notfound-page.readthedocs.io/en/latest/configuration.html
+notfound_urls_prefix = ''
 
 # OpenGraph configuration
 # see all options at https://github.com/wpilibsuite/sphinxext-opengraph#options

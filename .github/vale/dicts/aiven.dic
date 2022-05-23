@@ -1,4 +1,4 @@
-145
+152
 ACL
 ACLs
 Aiven
@@ -82,6 +82,7 @@ myhoard
 M3
 Memorystore
 MirrorMaker
+MongoDB
 MySQL
 myhoard
 namespace
@@ -117,6 +118,7 @@ Redis
 Redli
 refcard
 reindexing
+rsyslog
 Sakila
 schemaless
 scriptable
@@ -132,6 +134,7 @@ Statusmap
 Stunnel
 subnet
 subtab
+syslog
 TaskManager
 Telegraf
 Terraform
