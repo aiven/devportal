@@ -1,8 +1,10 @@
 Connect to Aiven for Apache Kafka® with Python
 ==============================================
 
-These examples show how to connect to an Aiven for Apache Kafka® service using the
-`kafka-python <https://pypi.org/project/kafka-python/>`__ library, as either a producer or consumer.
+.. |kafka-python| replace:: ``kafka-python``
+.. _`kafka-python`: https://pypi.org/project/kafka-python/
+
+These examples show how to connect to an Aiven for Apache Kafka® service using the |kafka-python|_ library, as either a producer or consumer.
 
 .. note:: The examples given here provide different options for the different authentication
    methods. For more information on the supported methods, see `our article on Kafka
@@ -11,7 +13,7 @@ These examples show how to connect to an Aiven for Apache Kafka® service using 
 Pre-requisites
 --------------
 
-Install the Python  `kafka-python <https://pypi.org/project/kafka-python/>`__ library:
+Install the Python |kafka-python|_ library:
 
 .. code:: bash
 
