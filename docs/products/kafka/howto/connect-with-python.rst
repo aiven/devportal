@@ -1,6 +1,9 @@
 Connect to Aiven for Apache Kafka® with Python
 ==============================================
 
+.. See https://docs.google.com/document/d/1PqNbBMzeED_AFeIFzfdcoR_P2bUJrNdcv4uHheeCh6I/edit
+   for an explanation of the following
+
 .. |kafka-python| replace:: ``kafka-python``
 .. _`kafka-python`: https://pypi.org/project/kafka-python/
 
