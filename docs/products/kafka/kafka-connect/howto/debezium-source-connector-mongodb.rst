@@ -65,11 +65,11 @@ The configuration file contains the following entries:
 * ``tasks.max``: maximum number of tasks to execute in parallel. By default this is 1, the connector can use at most 1 task for each collection defined. Replace ``NR_TASKS`` with the amount of parallel task based on the number of input collections.
 * ``key.converter`` and ``value.converter``:  defines the messages data format in the Apache Kafka topic. The ``io.confluent.connect.avro.AvroConverter`` converter pushes messages in Avro format. To store the messages schema we use Aiven's `Karapace schema registry <https://github.com/aiven/karapace>`_ as specified by the ``schema.registry.url`` parameter and related credentials.
 
-    .. Note::
+  .. Note::
 
-        The ``key.converter`` and ``value.converter`` sections are only needed when pushing data in Avro format. If omitted the messages will be defined in JSON format.
+    The ``key.converter`` and ``value.converter`` sections are only needed when pushing data in Avro format. If omitted the messages will be defined in JSON format.
 
-        The ``USER_INFO`` is not a placeholder, no substitution is needed for that parameter.
+    The ``USER_INFO`` is **not** a placeholder, no substitution is needed for that parameter.
 
 
 Create a Kafka Connect connector with the Aiven Console
