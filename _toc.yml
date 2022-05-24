@@ -43,6 +43,7 @@ entries:
       - file: docs/platform/howto/integrations/prometheus-metrics
       - file: docs/platform/howto/integrations/datadog-increase-metrics-limit
       - file: docs/platform/howto/static-ip-addresses.rst
+      - file: docs/platform/howto/use-vpc-peering
     - file: docs/platform/reference
       title: Reference
       entries:
