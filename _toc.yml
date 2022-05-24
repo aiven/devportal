@@ -49,6 +49,7 @@ entries:
           - file: docs/platform/howto/download-ca-cert
           - file: docs/platform/howto/restrict-access
           - file: docs/platform/howto/public-access-in-vpc.rst
+          - file: docs/platform/howto/use-vpc-peering
           - file: docs/platform/howto/static-ip-addresses.rst
           - file: docs/platform/howto/private-ip-resolution.rst
       - file: docs/platform/howto/list-monitoring
