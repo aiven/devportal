@@ -16,6 +16,7 @@ exceptions:
   - Connect
   - Dashboards
   - Datadog
+  - Debezium
   - Dev
   - Disaster Recovery
   - Docker
@@ -54,6 +55,7 @@ exceptions:
   - Simple Authentication and Security Layer
   - Snowflake
   - Spring
+  - SQL Server
   - Startup
   - TaskManager
   - Telegraf
