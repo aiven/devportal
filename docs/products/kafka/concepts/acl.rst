@@ -1,9 +1,16 @@
 Access control lists permission mapping
 =======================================
 
-Aiven for Apache Kafka® uses access control lists (ACL) and user definitions in order to establish individual rights to produce or consume a topic and manage topics. You can manage users and ACL entries in the corresponding tabs of the service page in the Aiven web console as explained in the :doc:`dedicated documentation <../howto/manage-acls>`.
+Aiven for Apache Kafka® uses **access control lists** (ACL) and user definitions in order to establish individual rights to produce, consume or manage topics. You can manage users and ACL entries in the corresponding tabs of the service page in the Aiven web console as explained in the :doc:`dedicated documentation <../howto/manage-acls>`.
 
-The ACL consists of ACL entries. An ACL entry is defined as the combination of the username, the permission given to the user and the associated topic.
+ACL structure
+-------------
+
+The ACL consists of **ACL entries**. An ACL entry is defined as the combination of:
+
+* the username
+* the permission given to the user 
+* the associated topic(s)
 
 The username is either an Aiven username, or can have wildcards. Similarly, the the topic is an Apache Kafka® topic name as such or can have wildcards. The permission is one of ``read``, ``write``, ``readwrite`` and ``admin``.
 
@@ -24,7 +31,7 @@ By default, access is allowed for all configured users to both produce and consu
 
 .. Warning:: 
 
-  By default, Aiven adds an ``avnadmin`` account to every new service and adds `admin` permission for all topics to that user. When you create your own ACLs to restrict access, you probably need to remove this ACL entry.
+  By default, Aiven adds an ``avnadmin`` account to every new service and adds `admin` permission for all topics to that user. When you create your own ACLs to restrict access, you probably want to remove this ACL entry.
 
 .. Note::
 
@@ -36,10 +43,10 @@ ACL permission mapping
 
 You can define four types of permission for a particular topic or topic pattern. Note each permission is called differently in the Console when creating them (e.g. Consume) and in the ACL entries list:
 
-* Admin / `admin`
-* Consume and Produce / `readwrite`
-* Consume / `read`
-* Produce / `write`
+* Admin / ``admin``
+* Consume and Produce / ``readwrite``
+* Consume / ``read``
+* Produce / ``write``
 
 The type of the permission dictates the actions the client is be able to perform. The following table contains a summary of the allowed action and a link to the Java APIs:
 
