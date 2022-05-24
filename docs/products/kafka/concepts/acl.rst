@@ -1,19 +1,37 @@
 Access control lists permission mapping
 =======================================
 
-Aiven for Apache Kafka® uses access control lists (ACL) and user definitions in order to establish individual rights to produce or consume a topic. You can manage users and ACL entries in the corresponding tabs of the service page in the Aiven web console as explained in the :doc:`dedicated documentation <../howto/manage-acls>`.
+Aiven for Apache Kafka® uses **access control lists** (ACL) and user definitions in order to establish individual rights to produce, consume or manage topics. You can manage users and ACL entries in the corresponding tabs of the service page in the Aiven web console as explained in the :doc:`dedicated documentation <../howto/manage-acls>`.
 
-ACLs are defined as: 
+ACL structure
+-------------
 
-* a user or a wildcard mask of users
-* a grant to produce and/or consume
-* a topic or a wildcard mask of topics that the grant is applied to. 
+The ACL consists of **ACL entries**. An ACL entry is defined as the combination of:
+
+* the username
+* the permission given to the user 
+* the associated topic(s)
+
+The username is either an Aiven username, or can have wildcards. Similarly, the the topic is an Apache Kafka® topic name as such or can have wildcards. The permission is one of ``read``, ``write``, ``readwrite`` and ``admin``.
+
+The wildcards supported are:
+
+* ``?`` matching a single characters
+* ``*`` matching one or multiple characters
+
+Aiven for Apache Kafka® evaluates each topic access against the ACL entries. If it finds a matching ACL entry, access is granted. If no entry matches, access is denied. Thus the order of the ACL entries is irrelevant.
+
+Examples:
+
+* username: ``abc``, permission: ``read``, topic: ``xyz``. User ``abc`` has read access to topic ``xyz``.
+* username: ``analyst*``, permission: ``read``, topic: ``xyz``. All Aiven users with username starting ``analyst`` have read access to topic ``xyz``.
+* username: ``developer*``, permission: ``read``, topic: ``test*``. All Aiven users with username starting ``developer`` have read access to topics starting with ``test``.
 
 By default, access is allowed for all configured users to both produce and consume on all topics.
 
 .. Warning:: 
 
-  By default, Aiven adds an ``Admin`` account with wildcard (``*``) permissions to every new service. When you create your own ACLs to restrict access, remove this account.
+  By default, Aiven adds an ``avnadmin`` account to every new service and adds `admin` permission for all topics to that user. When you create your own ACLs to restrict access, you probably want to remove this ACL entry.
 
 .. Note::
 
@@ -23,14 +41,14 @@ By default, access is allowed for all configured users to both produce and consu
 ACL permission mapping
 ----------------------
 
-You can define four types of grants for a particular topic or topic pattern:
+You can define four types of permission for a particular topic or topic pattern. Note each permission is called differently in the Console when creating them (e.g. Consume) and in the ACL entries list:
 
-* Admin
-* Consume and Produce
-* Consume
-* Produce
+* Admin / ``admin``
+* Consume and Produce / ``readwrite``
+* Consume / ``read``
+* Produce / ``write``
 
-The type of the grant dictates the actions the client is be able to perform. The following table contains a summary of the allowed action and a link to the Java APIs:
+The type of the permission dictates the actions the client is be able to perform. The following table contains a summary of the allowed action and a link to the Java APIs:
 
 .. list-table::
   :header-rows: 1
