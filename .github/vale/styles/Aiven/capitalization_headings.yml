@@ -11,6 +11,7 @@ exceptions:
   - Apache
   - Boot
   - Business
+  - BYOA
   - Cassandra
   - ClickHouse
   - Connect
@@ -28,6 +29,7 @@ exceptions:
   - HowTo
   - InfluxDB
   - InnoDB
+  - IPsec
   - Java
   - Kafdrop
   - Kafka
