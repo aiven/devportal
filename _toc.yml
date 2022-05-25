@@ -28,6 +28,7 @@ entries:
       - file: docs/platform/howto/create_new_service_user
       - file: docs/platform/howto/create_authentication_token
       - file: docs/platform/howto/enable-aiven-password
+      - file: docs/platform/howto/disable-platform-authentication
       - file: docs/platform/howto/disable-user-2fa
       - file: docs/platform/howto/download-ca-cert
       - file: docs/platform/howto/console-fork-service.rst
@@ -42,6 +43,10 @@ entries:
       - file: docs/platform/howto/monitoring-services
       - file: docs/platform/howto/integrations/prometheus-metrics
       - file: docs/platform/howto/integrations/datadog-increase-metrics-limit
+      - file: docs/platform/howto/saml-authentication
+      - file: docs/platform/howto/saml-auth-with-azure
+      - file: docs/platform/howto/saml-auth-with-google
+      - file: docs/platform/howto/saml-auth-with-okta
       - file: docs/platform/howto/static-ip-addresses.rst
       - file: docs/platform/howto/use-vpc-peering
     - file: docs/platform/reference
