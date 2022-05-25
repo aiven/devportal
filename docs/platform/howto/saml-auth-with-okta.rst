@@ -46,16 +46,19 @@ In the following form, you can give the app a name (e.g. "Aiven SAML"), logo and
 
 Then comes the SAML configuration form. The following fields need to be set:
 
-* Single sign on URL: This value is visible in Aiven Console on the newly created Authentication method page. The URL format is https://api.aiven.io/v1/sso/saml/account/{account_id}/method/{account_authentication_method_id}/acs 
+* Single sign on URL: This value is visible in Aiven Console on the newly created Authentication method page. The URL format is ``https://api.aiven.io/v1/sso/saml/account/{account_id}/method/{account_authentication_method_id}/acs`` 
 
-* Audience URI (SP Entity ID): This value is visible in Aiven Console on the newly created Authentication method page. The URL format is https://api.aiven.io/v1/sso/saml/account/{account_id}/method/{account_authentication_method_id}/metadata 
+* Audience URI (SP Entity ID): This value is visible in Aiven Console on the newly created Authentication method page. The URL format is ``https://api.aiven.io/v1/sso/saml/account/{account_id}/method/{account_authentication_method_id}/metadata`` 
 
-* Default RelayState : This is the homepage of the Aiven Console and is important for IdP initiated sign-on to function correctly.
-https://console.aiven.io/ - Aiven Console
-https://console.gcp.aiven.io/ - GCP Marketplace Console
-https://console.aws.aiven.io/ - AWS Marketplace Console
+* Default RelayState: This is the homepage of the Aiven Console and is important for IdP initiated sign-on to function correctly.
+    
+    * https://console.aiven.io/ - Aiven Console
+    
+    * https://console.gcp.aiven.io/ - GCP Marketplace Console
 
-* "Attribute statements" should have an entry where "name" is email  and "value" user.email  (see image below)
+    * https://console.aws.aiven.io/ - AWS Marketplace Console
+
+* "Attribute statements" should have an entry where "name" is email  and "value" user.email
 
 
 Once this is done, click "Next" then "Finish". You will be redirected to your application in Okta.
@@ -99,6 +102,7 @@ Invalid RelayState
 ------------------
 
 If you get this error, it means that you are attempting an IdP-initiated auth flow, i.e. you clicked the Aiven SAML app from the Okta UI. Previously, Aiven did not support IdP-initiated flows, but now it is possible if you set the Default RelayState in Okta to: 
+
 * https://console.aiven.io/ - Aiven Console
 
 * https://console.gcp.aiven.io/ - GCP Marketplace Console

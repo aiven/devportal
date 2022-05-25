@@ -44,6 +44,7 @@ entries:
       - file: docs/platform/howto/integrations/prometheus-metrics
       - file: docs/platform/howto/integrations/datadog-increase-metrics-limit
       - file: docs/platform/howto/saml-authentication
+      - file: docs/platform/howto/saml-auth-with-auth0
       - file: docs/platform/howto/saml-auth-with-azure
       - file: docs/platform/howto/saml-auth-with-google
       - file: docs/platform/howto/saml-auth-with-okta

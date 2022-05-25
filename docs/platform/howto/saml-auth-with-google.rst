@@ -33,12 +33,14 @@ Creating the G-Suite Application
 
 Go to the SAML apps management in G-Suite and create a new application with the "+" icon in the bottom right corner. Then click the "setup my own custom app" link at the bottom of the opened modal. You will get the following:
 
+.. image:: /images/platform/howto/google-idp-information.png
+
 Download the certificate and note the SSO URL and Entity ID somewhere, it will be needed later.
 Click "Next" and set an application name, e.g. "Aiven". Click "Next" again to go to the application configuration. Fill in the form with the following data:
 
-* ACS URL : This value is visible in Aiven Console on the newly created Authentication method page. The URL format is https://api.aiven.io/v1/sso/saml/account/{account_id}/method/{account_authentication_method_id}/acs 
+* ACS URL : This value is visible in Aiven Console on the newly created Authentication method page. The URL format is ``https://api.aiven.io/v1/sso/saml/account/{account_id}/method/{account_authentication_method_id}/acs`` 
 
-* Entity ID : This value is visible in Aiven Console on the newly created Authentication method page. The URL format is https://api.aiven.io/v1/sso/saml/account/{account_id}/method/{account_authentication_method_id}/metadata 
+* Entity ID : This value is visible in Aiven Console on the newly created Authentication method page. The URL format is ``https://api.aiven.io/v1/sso/saml/account/{account_id}/method/{account_authentication_method_id}/metadata`` 
 
 Then click "Next" to set the Attribute Mapping. Add a new mapping with "application attribute" set to email , then chose "Basic information" for "category" and "Primary Email" for "user field". Finally click "Finish" then "OK" in the "Setting up SSO" modal.
 
@@ -48,5 +50,7 @@ Setting up the G-Suite Application in Aiven
 -------------------------------------------
 
 Once the application is set up, you need to provide the application data to Aiven. Go back to Aiven Console and update the SAML configuration.
+
+.. image:: /images/platform/howto/account-authentication-google.png
 
 When this is done you can go to the Account link url to finalize linking your G-Suite account and Aiven profile. You can also invite other members of your team to login or signup to Aiven using G-Suite via the Signup link shown in the Authentication method page.
