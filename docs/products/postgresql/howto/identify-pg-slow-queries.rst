@@ -129,7 +129,7 @@ You can run the above commands on your own PostgreSQL® to gather more informati
 SQL queries having high I/O activity
 ------------------------------------
 
-The following SQL shows queries with their ``id`` and mean time in seconds. The resultset is ordered based on the sum of ``blk_read_time`` and ``blk_write_time`` meaning that queries with the highest read/write are shown at the top.
+The following SQL shows queries with their ``id`` and mean time in seconds. The result set is ordered based on the sum of ``blk_read_time`` and ``blk_write_time`` meaning that queries with the highest read/write are shown at the top.
 
 .. code-block:: sql
 
@@ -145,7 +145,7 @@ The following SQL shows queries with their ``id`` and mean time in seconds. The 
 Top time consuming queries
 --------------------------
 
-Aside from the relevant information to the database, the following SQL retrieves the number of calls, consumption time in milliseconds as ``total_time_seconds``, and the minimum, maximum, and mean times such query has ever been executed in milliseconds. The resultset is ordered in descending order by ``mean_time`` showing the queries with most consumption time first.
+Aside from the relevant information to the database, the following SQL retrieves the number of calls, consumption time in milliseconds as ``total_time_seconds``, and the minimum, maximum, and mean times such query has ever been executed in milliseconds. The result set is ordered in descending order by ``mean_time`` showing the queries with most consumption time first.
 
 .. code-block:: sql
 
@@ -164,7 +164,7 @@ Aside from the relevant information to the database, the following SQL retrieves
 Queries with high memory usage
 ------------------------------
 
-The following SQL retrieves the query, its id, and relevant information about the database. The resultset in this case is ordered by showing the queries with the highest memory usage at the top, by summing the number of shared memory blocks returned from the cache (``shared_blks_hit``), and 
+The following SQL retrieves the query, its id, and relevant information about the database. The result set in this case is ordered by showing the queries with the highest memory usage at the top, by summing the number of shared memory blocks returned from the cache (``shared_blks_hit``), and 
 the number of shared memory blocks marked as "dirty" during a request needed to be written to disk (``shared_blks_dirtied``).
 
 .. code-block:: sql
