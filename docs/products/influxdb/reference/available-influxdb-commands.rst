@@ -4,7 +4,7 @@ Available InfluxDB® commands
 InfluxDB® retention policy and continuous query management
 ---------------------------------------------------------
 
-The default InfluxDB service user "**avnadmin**" in our services is not a full "admin" account (as per InfluxDB terminology), but it has the capability to manipulate retention policies and continuous queries.
+The default InfluxDB service user ``avnadmin`` in our services is not a full "admin" account (as per InfluxDB terminology), but it has the capability to manipulate retention policies and continuous queries.
 
 Databases still need to be created via the Aiven web console or via the `REST API <https://api.aiven.io/doc/>`_. Also some cluster manipulation commands have been disabled as they could interfere with us being able to provide the best service level possible.
 
@@ -18,4 +18,4 @@ Here are the relevant links to the InfluxDB® documentation:
 
 * `Continuous Query commands <https://docs.influxdata.com/influxdb/v1.2/query_language/continuous_queries/>`_
 
-Note that if you are using the InfluxDB HTTP API directly, you may need pass the name of the database as an URI argument (for example `&db=defaultdb`) for some of the management commands to work.
+Note that if you are using the InfluxDB HTTP API directly, you may need pass the name of the database as an URI argument (for example ``&db=defaultdb``) for some of the management commands to work.

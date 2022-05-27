@@ -9,6 +9,7 @@ To get started with InfluxDB®, first select the "Create a new service" button.
 
 .. image:: /images/products/influxdb/console.png
     :width: 500px
+    :alt: InfluxDB service selection in the Aiven Console
 
 The dialog that opens allows you to specify the main service properties:
 
@@ -30,6 +31,7 @@ InfluxDB® backups are taken every twelve hours and are encrypted and stored sec
 
 .. image:: /images/products/influxdb/console-influxdb.png
     :width: 500px
+    :alt: Overview InfluxDB service in the Aiven Console
 
 InfluxDB® command-line example
 -----------------------------
