@@ -6,11 +6,9 @@ Configure Google, GitHub or GitLab authentication integration to Aiven for Grafa
 
 Grafana supports multiple different authentication plugins, in addition to built-in username and password authentication.
 
-Aiven Grafana has support for Google, GitHub and GitLab authentication. Configuring authentication integration is currently available in Aiven console, or can be configured either with the API or with `Aiven command-line client <https://github.com/aiven/aiven-client>`_ (``avn``).
+Aiven for Grafana has support for Google, GitHub and GitLab authentication. Configuring authentication integration is currently available in the Aiven Console, or can be configured either with the API or with the `Aiven command-line client <https://github.com/aiven/aiven-client>`_ (``avn``).
 
-Please note that enabling this feature requires applying a maintenance upgrade for Grafana services created before September 2018.
-
-Google authentication
+Configure Google authentication for Grafana
 ---------------------
 
 First, create your Google OAuth keys by following `this article <http://docs.grafana.org/auth/google/>`_ and make a note of your client ID and client secret. Then open your Aiven for Grafana service and navigate to `Advanced Configuration <https://help.aiven.io/en/articles/3601906-advanced-configuration-in-aiven-console>`_ at the bottom of the page. Configure the following options in the advanced configuration:
@@ -30,10 +28,11 @@ Optional:
 * ``user_auto_assign_org``: set to true to add all new users to the main organization
 
 .. image:: /images/products/grafana/aiven_add_google_oauth.png
+        :alt: Adding Google OAuth
     
 After setting up authentication integration, it will take a short moment - typically less than a minute - before plugin is enabled in Aiven for Grafana.
 
-GitHub authentication
+Configure GitHub authentication for Grafana
 ---------------------
 
 First, create your GitHub application by following `this article <https://grafana.com/docs/grafana/latest/auth/github/>`_ and make note of your application client ID and client secret. Then open your Aiven for Grafana service and navigate to `Advanced Configuration <https://help.aiven.io/en/articles/3601906-advanced-configuration-in-aiven-console>`_ at the bottom of the page. Configure the following options in the advanced configuration:
@@ -55,9 +54,11 @@ Optional:
 * ``user_auto_assign_org``: set to true to add all new users to the main organization
 
 .. image:: /images/products/grafana/aiven_github_configuration.png
+        :alt: Advanced configuration for GitHub
 
-GitLab authentication
+Configure GitLab authentication for Grafana
 ---------------------
+
 First, create your GitLab application by following this article and make note of your application client ID and client secret. Then open your Aiven for Grafana service and navigate to Advanced Configuration at the bottom of the page. Configure the following options in the advanced configuration:
 
 * ``auth_gitlab.client_id``: client ID from GitLab OAuth apps console
@@ -83,8 +84,9 @@ If you use your own instance of GitLab instead of gitlab.com, then set the follo
 * ``auth_github.token_url``
 
 .. image:: /images/products/grafana/aiven_gitlab_configuration.png
+        :alt: Advanced configuration for GitLab
 
-Configure authentication using Aiven Client
+Configure authentication using the Aiven Client
 -------------------------------------------
 
 After installing ``avn``, use ``avn service types -v`` to see all available options.
