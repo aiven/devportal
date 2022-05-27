@@ -1,7 +1,7 @@
-Migrate from google cloud SQL PostgreSQL to Aiven PostgreSQL with ``aiven-db-migrate``
-========================================================================================
+Migrate from google cloud SQL PostgreSQL® to Aiven for PostgreSQL® with ``aiven-db-migrate``
+============================================================================================
 
-``avn`` Aiven CLI simplifies PostgreSQL database migration with ``aiven-db-migrate`` without down time.
+``avn`` Aiven CLI simplifies PostgreSQL® database migration with ``aiven-db-migrate`` without down time.
 The ``aiven-db-migrate`` tool is an open source project available on `GitHub <https://github.com/aiven/aiven-db-migrate>`_, and it is the preferred way to perform the migration. 
 
 ``aiven-db-migrate`` performs a schema dump and migration first to ensure schema compatibility.
@@ -67,7 +67,7 @@ To review the current ``wal_level``, run the following command on the source clu
 
     show wal_level;
 
-.. _pg_migrate_wal:
+.. _pg_migrate_wal_cloudsql:
 
 1. If you have not enabled logical replication on Cloud SQL PostgreSQL already, the following instructions shows how to set the ``cloudsql.logical_decoding`` parameter to ``On``.
 

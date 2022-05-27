@@ -17,6 +17,8 @@ By default, in every PostgreSQL instance, an ``avnadmin`` database user is creat
 .. Tip::
     You can also manage databases and users in the Aiven web console or though our :doc:`REST API <../../../tools/api/index>`.
 
+.. _aiven_extras_extension:
+
 ``aiven_extras`` extension
 --------------------------
 

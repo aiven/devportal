@@ -1,4 +1,4 @@
-Enable logical replication on Amazon aurora PostgreSQL®
+Enable logical replication on Amazon Aurora PostgreSQL®
 =========================================================
 
 If you have not enabled logical replication on Aurora already, the following instructions shows how to set the ``rds.logical_replication`` parameter to ``1`` (true) in the parameter group.

@@ -2,7 +2,7 @@
 Migrate to Aiven for PostgreSQL® with ``aiven-db-migrate``
 ===============================================================
 
-The ``aiven-db-migrate`` tool is an open source project available on `GitHub <https://github.com/aiven/aiven-db-migrate>`_, and it is the preferred way to perform the migration. 
+The ``aiven-db-migrate`` tool is an open source project available on `GitHub <https://github.com/aiven/aiven-db-migrate>`_, and it is the preferred way to perform PostgreSQL® database migration. 
 
 ``aiven-db-migrate`` performs a schema dump and migration first to ensure schema compatibility.
 
@@ -33,44 +33,29 @@ In order to use the **logical replication** method, you'll need the following:
 
     avn service create -t pg -p DEST_PG_PLAN DEST_PG_NAME
 
-2. Once logged in into the destination Aiven for PostgreSQL service, execute the following command via ``psql`` to enable the ``aiven_extras`` extension::
- 
-    psql postgres://avnadmin:PASSWORD@HOSTNAME:PORT/defaultdb?sslmode=require
-    CREATE EXTENSION aiven_extras CASCADE;
+2. Enable the ``aiven_extras`` extension in the Aiven for PostgreSQL® target database as written in the :ref:`dedicated document <aiven_extras_extension>`.
 
-.. Note::
+3. Set the ``wal_level`` to ``logical`` on source database. Check the following examples for the main managed databases:
+
+   * :doc:`Amazon Aurora <./logical-replication-aws-aurora>`
+   * :doc:`Amazon RDS <./logical-replication-aws-rds>`
+   * :doc:`Google Cloud SQL <./logical-replication-gcp-cloudsql>`
+
+   .. Note::
     Aiven for PostgreSQL has ``wal_level`` set to ``logical`` by default
 
-3. Set the ``wal_level`` to ``logical`` on source database.
+   To review the current ``wal_level``, run the following command on the source cluster via ``psql``
 
-:doc:`./logical-replication-aws-aurora`
-
-:doc:`./logical-replication-aws-rds`
-
-:doc:`./logical-replication-gcp-cloudsql`
-
-To review the current ``wal_level``, run the following command on the source cluster via ``psql``::
+   .. code:: sql
 
     show wal_level;
 
 .. _pg_migrate_wal:
 
+Variables
+---------
 
-Perform the migration
----------------------
-.. Warning::
-    Running a logical replication migration twice on the same cluster will create duplicate data. Logical replication also has `limitations <https://www.postgresql.org/docs/current/logical-replication-restrictions.html>`_ on what it can copy.
-
-Run ``aiven-db-migrate`` library module directly
-''''''''''''''''''''''''''''''''''''''''''''''''
-::
-
-    python3 -m aiven_db_migrate.migrate pg -d \
-    -s postgres://SRC_USERNAME:SRC_PASSWORD@SRC_HOSTNAME:SRC_PORT \
-    -t postgres://DST_USERNAME:DST_PASSWORD@DST_HOSTNAME:DST_PORT/DST_DBNAME?sslmode=require \
-    --max-replication-lag 1 --stop-replication -f DB_TO_SKIP
-
-**Variables**
+The following variables need to be substituted in the ``aiven-db-migrate`` calls
 
 ==================      =======================================================================
 Variable                Description
@@ -79,40 +64,26 @@ Variable                Description
 ``SRC_PASSWORD``        Password for source PostgreSQL connection
 ``SRC_HOSTNAME``        Hostname for source PostgreSQL connection
 ``SRC_PORT``            Port for source PostgreSQL connection
-``DST_USERNAME``        Username for destination PostgreSQL connection
-``DST_PASSWORD``        Password for destination PostgreSQL connection
-``DST_HOSTNAME``        Hostname for destination PostgreSQL connection
-``DST_PORT``            Port for destination PostgreSQL connection
+``DEST_PG_NAME``        Destination Aiven for PostgreSQL service name
 ``DST_DBNAME``          Bootstrap database name for destination PostgreSQL connection
+``DB_TO_SKIP``          Comma separated list of database names for which to skip the migrations
 ==================      =======================================================================
 
-**Flags**
 
-=========================================   =======================================================================
-Flag                                        Description
-=========================================   =======================================================================
-``-d, --debug``                             Enable debug logging 
-``-f, --filtered-db``                       Password for source PostgreSQL connection
-``--stop-replication``                      By default logical replication will be left running on both source and target database
-``--max-replication-lag``                   Max replication lag in bytes to wait for, by default no wait, this parameter is required when using --stop-replication
-=========================================   =======================================================================
+Perform the migration with ``aiven-db-migrate``
+-----------------------------------------------
 
-* ``-d`` is highly recommended when running migration to see details of the migration process.
+.. Warning::
 
-* For live migration ``--stop-replication`` and ``--max-replication-lag`` flags are not needed to keep logical replication running.
- 
-* The ``aiven-db-migrate`` tool migrates all the tables including extension tables such as ``spatial_ref_sys`` from ``postgis`` extension.  There will be a feature/fix to allow skip extension tables in the future.  At the moment the workaround is to use ``--skip-table`` flag::
-
-    --skip-table spatial_ref_sys
+    Running a logical replication migration twice on the same cluster will create duplicate data. Logical replication also has `limitations <https://www.postgresql.org/docs/current/logical-replication-restrictions.html>`_ on what it can copy.
 
 
-OR
-''
+Run ``aiven-db-migrate`` using the Aiven CLI  
+''''''''''''''''''''''''''''''''''''''''''''
 
-Run ``aiven-db-migrate`` using ``avn`` CLI  
-''''''''''''''''''''''''''''''''''''''''''
+You can initiate a migration to an Aiven for PostgreSQL® service with the :doc:`../../../tools/cli` and the following command, substituting the placeholders accordingly:
 
-* Set the migration details via :doc:`../../../tools/cli` substituting the parameters accordingly::
+.. code:: bash
 
     avn service update -c migration.host=SRC_HOSTNAME   \
         -c migration.port=SRC_PORT                      \
@@ -124,27 +95,25 @@ Run ``aiven-db-migrate`` using ``avn`` CLI
         DEST_PG_NAME
 
 .. Note::
-    Using avn CLI shows limited status output, to troubleshoot failures please run ``aiven-db-migrate`` directly from the above instructions.
 
-**Variables**
+    Using avn CLI shows limited status output, to troubleshoot failures please run ``aiven-db-migrate`` :doc:`directly from Python <run-aiven-db-migrate-python>`.
 
-==================      =======================================================================
-Variable                Description
-==================      =======================================================================
-``DEST_PG_PLAN``        Aiven plan for the Aiven destination PostgreSQL service
-``PROJECT_NAME``        Aiven project for the Aiven destination PostgreSQL service
-==================      =======================================================================
+Check the migration status using the Aiven CLI
+''''''''''''''''''''''''''''''''''''''''''''''
 
-* Check the migration status via :doc:`../../../tools/cli`::
+You can check the migration status using the :doc:`Aiven CLI <../../../tools/cli>` and the following call:
 
-    avn --show-http service migration-status DEST_PG_NAME --project PROJECT_NAME
+.. code:: bash
+
+    avn --show-http service migration-status \
+        DEST_PG_NAME
 
 
 .. Note::
     There maybe delay for migration status to update the current progress, keep running this command to see the most up-to-date status.
 
 
-You should get the following command output which mentions that the ``pg_dump`` migration of the ``defaultdb`` database is ``done`` and the logical ``replication`` of the ``has_aiven_extras`` database is syncing``::
+The output should be similar to the following, which mentions that the ``pg_dump`` migration of the ``defaultdb`` database is ``done`` and the logical ``replication`` of the ``has_aiven_extras`` database is syncing::
 
     -----Response Begin-----
     {
@@ -177,14 +146,34 @@ You should get the following command output which mentions that the ``pg_dump`` 
 .. Note::
     The overall ``method`` field is left empty due to the mixed methods used to migrate each database.
 
+Stop the migration process using the Aiven CLI
+''''''''''''''''''''''''''''''''''''''''''''''
 
-* Remove the configuration from the destination service via :doc:`../../../tools/cli` Make sure your migration process is in one of the following state when triggering the removal: ``done`` for the ``pg_dump`` method, and ``syncing`` for logical replication. Otherwise, removing a migration configuration can leave the destination cluster in an inconsistent state. ::
+Once the migration is finished, you can stop the related process using the :doc:`../../../tools/cli`.
+
+.. Warning::
+
+    Make sure your migration process is in one of the following state when triggering the removal: 
+        
+    * ``done`` if using ``pg_dump``
+    * ``syncing`` if using logical replication
+    
+    Otherwise, removing a migration configuration can leave the destination cluster in an inconsistent state. 
+    
+The migration process can be stopped with:
+
+.. code:: bash
 
     avn service update --remove-option migration DEST_PG_NAME
 
 
-This command removes all logical replication-related objects from both source and destination cluster. This stops the logical replication which has no effect for the ``pg_dump`` method as it is a one-time operation.
+The above command removes all logical replication-related objects from both source and destination cluster. 
+If using logical replication, the process stops it. It has no effect for the ``pg_dump`` method as it is a one-time operation.
     
 .. Warning::
-    Don't stop the process while running as both the logical replication and pg-dump/pg-restore methods are copying data from the source to the destination cluster.
-    Once migration is completed successfully, unused replications should be removed.
+
+    Don't stop the migration process while it is ``running`` state since both the logical replication and ``pg-dump``/``pg-restore`` methods are copying data from the source to the destination cluster.
+    
+    Once migration is completed successfully, unused replication slots should be removed.
+
+The migration using ``aiven-db-migrate`` can also be :doc:`performed in Python <run-aiven-db-migrate-python>` without requiring the Aiven CLI.

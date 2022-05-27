@@ -15,7 +15,7 @@ Run ``aiven-db-migrate`` library module directly
 ==================      =======================================================================
 Variable                Description
 ==================      =======================================================================
-``SRC_USERNAME``        Username for source PostgreSQL connection
+``SRC_USERNAME``        Username for source PostgreSQL® connection
 ``SRC_PASSWORD``        Password for source PostgreSQL connection
 ``SRC_HOSTNAME``        Hostname for source PostgreSQL connection
 ``SRC_PORT``            Port for source PostgreSQL connection
@@ -61,7 +61,9 @@ Run ``aiven-db-migrate`` using ``avn`` CLI
         -c migration.dbname=DST_DBNAME                  \
         -c migration.ignore_dbs=DB_TO_SKIP              \
         DEST_PG_NAME
+
 .. Note::
+    
     Using avn CLI shows limited status output, to troubleshoot failures please run ``aiven-db-migrate`` directly from the above instructions.
 
 **Variables**
