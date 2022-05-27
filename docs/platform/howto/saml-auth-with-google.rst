@@ -1,7 +1,7 @@
 Setting up SAML authentication with Google G-Suite
 ==================================================
 
-You first need to create an Aiven account and an Aiven account authentication method. Account is a top level concept that can be associated with multiple different projects and with which you can make corporate level configuration like the authentication setup. You can do this in Aiven Console.
+You first need to create an Aiven account and an Aiven account authentication method. Account is a top level concept that can be associated with multiple different projects and with which you can make corporate level configuration like the authentication setup. You can do this in the `Aiven Console <https://console.aiven.io>`_.
 
 Creating the Aiven account
 --------------------------

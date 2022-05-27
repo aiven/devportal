@@ -1,7 +1,7 @@
 Setting up SAML authentication with Okta
 ======================================
 
-You first need to create an Aiven account and an Aiven account authentication method. Account is a top level concept that can be associated with multiple different projects and with which you can make corporate level configuration like the authentication setup. You can do this in Aiven Console.
+You first need to create an Aiven account and an Aiven account authentication method. Account is a top level concept that can be associated with multiple different projects and with which you can make corporate level configuration like the authentication setup. You can do this in the `Aiven Console <https://console.aiven.io>`_.
 
 Creating the Aiven account
 --------------------------
@@ -36,7 +36,7 @@ This is a two step process. We will first create the SAML SP-Initiated authentic
 Creating the SP-Initiated Authentication Application
 ----------------------------------------------------
 
-Login to the "Admin" portal and navigate to the "Applications" tab. Click on the "Add Application" button, then "Create New App". You should see the following form:
+Login to the "Admin" portal and navigate to the "Applications" tab. Click on the "Add Application" button, then "Create New App".
 
 Select "SAML 2.0" for the "Sign on method", then click "Next".
 
@@ -98,8 +98,7 @@ When launching the Aiven SAML application and receiving an "Authentication faile
 
 .. image:: /images/platform/howto/idp-enabled.png
 
-Invalid RelayState
-------------------
+**Invalid RelayState**
 
 If you get this error, it means that you are attempting an IdP-initiated auth flow, i.e. you clicked the Aiven SAML app from the Okta UI. Previously, Aiven did not support IdP-initiated flows, but now it is possible if you set the Default RelayState in Okta to: 
 
@@ -109,7 +108,6 @@ If you get this error, it means that you are attempting an IdP-initiated auth fl
 
 * https://console.aws.aiven.io/ - AWS Marketplace Console
 
-My Okta Password Does Not Work
-------------------------------
+**My Okta Password Does Not Work**
 
 Make sure that you use the "Account Link URL" to add the Okta Authentication method to your Aiven profile. Once linked, you should get the choice of multiple sign-in methods as well as see the other Authentication methods in you user profile.

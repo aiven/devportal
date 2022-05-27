@@ -4,7 +4,7 @@ Setting up SAML with Auth0
 Using Auth0 as an Identity Provider (IdP) with Aiven SAML Authentications
 --------------------------
 
-You first need to create an Aiven account and an Aiven account authentication method. Account is a top level concept that can be associated with multiple different projects and with which you can make corporate level configuration like the authentication setup. You can do this in Aiven Console.
+You first need to create an Aiven account and an Aiven account authentication method. Account is a top level concept that can be associated with multiple different projects and with which you can make corporate level configuration like the authentication setup. You can do this in the `Aiven Console <https://console.aiven.io>`_.
 
 Creating the Aiven account
 --------------------------
@@ -21,7 +21,7 @@ Once created, you will see an overview of the account just created. A tab, calle
 
 .. image:: /images/platform/howto/authentication-methods.png
 
-Clicking on Add Authentication Method  creates a dialog where you can name your method, specify the type and a default team you would want members to join.
+Clicking on Add Authentication Method creates a dialog where you can name your method, specify the type and a default team you would want members to join.
 
 .. image:: /images/platform/howto/add-authentication-method.png
 
@@ -36,17 +36,17 @@ Creating the Auth0 Application
 
 Head to auth0.com and login (or signup), from the dashboard, you will see an option for Applications. 
 
-.. image:: /images/platform/auth0-applications.png
+.. image:: /images/platform/howto/auth0-applications.png
 
-Click on Create Application  and you can select Regular Web Applications  as the type. Click Create  and you will be taken through to an overview of the application. We will not be using the Quickstart  here, so we will focus on Settings  and Add-ons 
+Click on Create Application and you can select Regular Web Applications as the type. Click Create  and you will be taken through to an overview of the application. We will not be using the Quickstart  here, so we will focus on Settings and Add-ons. 
 
-.. image:: /images/platform/create-application-auth0.png
+.. image:: /images/platform/howto/create-application-auth0.png
 
-Once your application has been created, click on the Settings  icon and then go to the Add-ons  tab. Enable the `SAML 2.0 Web App and click on it to open the settings dialog.
+Once your application has been created, click on the Settings icon and then go to the Add-ons tab. Enable the SAML 2.0 Web App and click on it to open the settings dialog.
 
-.. image:: /images/platform/addon-saml-web-app-auth0.png
+.. image:: /images/platform/howto/addon-saml-web-app-auth0.png
 
-You will need to set the Application Callback URL  to the ACS URL  provided by the Aiven Console. In the settings, some mapping configuration needs to be done, the following should be added:::
+You will need to set the Application Callback URL to the ACS URL provided by the Aiven Console. In the settings, some mapping configuration needs to be done, the following should be added::
 
     {
     "mappings": {
