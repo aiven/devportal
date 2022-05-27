@@ -94,8 +94,8 @@ Your ``scrape_config`` job entry in ``prometheus.yml`` would look something like
      - job_name: aivenmetrics
        scheme: https
        basic_auth:
-         username: <PROMETHEUS_USERNAME>
-         password: <PROMETHEUS_PASSWORD>
+         username: <PROMETHEUS_USERNAME>
+         password: <PROMETHEUS_PASSWORD>
        tls_config:
          ca_file: ca.pem
        static_configs:
@@ -119,18 +119,18 @@ below snippet for an example configuration.
 ::
 
    scrape_configs:
-     - job_name: aivenmetrics
-       scheme: https
-       basic_auth:
-         username: <PROMETHEUS_USERNAME>
-         password: <PROMETHEUS_PASSWORD>
-       dns_sd_configs:
-         - names:
-             - <PROMETHEUS_SERVICE_URI>
-           type: A
-           port: <PROMETHEUS_SERVICE_PORT>
-       tls_config:
-         insecure_skip_verify: true
+     - job_name: aivenmetrics
+       scheme: https
+       basic_auth:
+         username: <PROMETHEUS_USERNAME>
+         password: <PROMETHEUS_PASSWORD>
+       dns_sd_configs:
+         - names:
+             - <PROMETHEUS_SERVICE_URI>
+           type: A
+           port: <PROMETHEUS_SERVICE_PORT>
+       tls_config:
+         insecure_skip_verify: true
 
 
 

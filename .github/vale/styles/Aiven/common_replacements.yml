@@ -1,0 +1,71 @@
+extends: substitution
+message: "Use '%s' instead of '%s'."
+ignorecase: true
+level: error
+swap:
+  # Because we have `ignorecase: true`, a rule such as
+  #   clickhouse: ClickHouse
+  # will match any case variant of "clickhouse", and given an
+  # error if it is not "ClickHouse". Which is what we want.
+
+  clickhouse: ClickHouse        # Case - and note the H in the middle
+  flick: Flink                  # it's easy to mistype
+  # The word 'influx' is in the default Vale dictionary, marked /MS, which
+  # means allowing `'s` and allowing a plural form. The default dictionary
+  # seems to allow `influxDB` as if it were `influx` (it doesn't recognise
+  # `influxdb`). However, since we don't expect to need the word `influx`
+  # in our texts, let's "correct" it here to InfluxDB.
+  influx: InfluxDB              # not its name
+  kakfa: Kafka                  # it's easy to mistype
+  multicloud: multi-cloud       # hyphenated, not one word
+  postgesql: PostgreSQL         # it's easy to mistype
+  postgres: PostgreSQL          # not its name
+  timeseries: time series       # two words, not one
+  hashicorp: HashiCorp          # case - note the C in the middle
+  "OpenSearch dashboards": "OpenSearch Dashboards"
+  "google cloud storage": "Google Cloud Storage"
+  datadog: Datadog # Case
+  DataDog: Datadog # Case, no extra D
+
+  # Enforcing the correct case usage
+  aiven: Aiven
+  cassandra: Cassandra
+  clickhouse: ClickHouse
+  flink: Flink
+  grafana: Grafana
+  influxdb: InfluxDB
+  kafka: Kafka
+  kubernetes: Kubernetes
+  m3: M3
+  mysql: MySQL
+  opensearch: OpenSearch
+  postgresql: PostgreSQL
+  redis: Redis
+  # QUESTION: How much do we want to expand this list?
+
+  # Apache Kafka MirrorMaker 2
+  # MirrorMaker should always be followed by one (white)space character and a 2
+  'MirrorMaker(?!\s+2)': "MirrorMaker 2"
+  'MirrorMaker2': "MirrorMaker 2"
+
+  # Do I want to try to catch "MirrorMaker 2®"? This appears at first attempt
+  # to be non-trivial
+
+  # Aiven for <thing>
+  "Aiven Cassandra": "Aiven for Cassandra"
+  "Aiven ClickHouse": "Aiven for ClickHouse"
+  "Aiven Elasticsearch": "Aiven for Elasticsearch"
+  "Aiven Flink": "Aiven for Apache Flink"
+  "Aiven Grafana": "Aiven for Grafana"
+  "Aiven InfluxDB": "Aiven for InfluxDB"
+  "Aiven Kafka": "Aiven for Apache Kafka"
+  "Aiven M3": "Aiven for M3"
+  "Aiven MySQL": "Aiven for MySQL"
+  "Aiven OpenSearch": "Aiven for OpenSearch"
+  "Aiven PostgreSQL": "Aiven for PostgreSQL"
+  "Aiven Redis": "Aiven for Redis"
+
+  #'Aiven Kafka MirrorMaker': 'Aiven for Apache Kafka MirrorMaker 2'
+  #'Aiven Apache Kafka MirrorMaker': 'Aiven for Apache Kafka MirrorMaker 2'
+  #'Aiven for Kafka MirrorMaker': 'Aiven for Apache Kafka MirrorMaker 2'
+  #'Aiven for Apache Kafka MirrorMaker2': 'Aiven for Apache Kafka MirrorMaker 2'

@@ -15,11 +15,11 @@ Local Development
 
 We recommend using a virtual environment like `venv <https://docs.python.org/3/library/venv.html>`_::
 
-    python3 -m venv /path/to/new/virtual/environment
+    python3 -m venv venv
 
-If you call it something other than `venv` or `env`, make sure to add your preferred name to `<.gitignore>`_.
+Activate your virtual environment using the `activate` script for your environment::
 
-Activate your virtual environment using the `activate` script for your environment.
+    source venv/bin/activate
 
 Install the dependencies::
 
@@ -44,9 +44,26 @@ Running build tasks locally
 To run the spell check locally, you will need to have `Vale <https://github.com/errata-ai/vale>`_ installed on your computer and available on your path.
 
 * Check links: ``make linkcheck``
-* Check spelling: ``make spell``
+* Check spelling and usage: ``make spell``
 
-If the spellchecker is rejecting words that are valid (such as technology terms), double check the spelling and capitalisation, then add the word to ``.github/styles/Vocab/Docs/accept.txt``.
+For documentation on how we use Vale, see `our Vale README <.github/vale/README.rst>`_. This also explains how to add new words to the dictionary, or alter the things that Vale checks.
+
+Installing Vale
+"""""""""""""""
+
+The `Vale installation page <https://docs.errata.ai/vale/install>`_ has instructions for all platforms including docker; this will be updated if the approach changes between versions.
+
+On Fedora (F34), here's a tip for installing Vale (current version 2.16) (without a package manager) using the following:::
+
+    package=$(curl -s https://api.github.com/repos/errata-ai/vale/releases/latest \
+    | jq -r ' .assets[] | select(.name | contains("Linux"))'); output=$(mktemp -d); \
+    echo $package | jq -r '.browser_download_url' | xargs curl -L --output-dir $output -O; \
+    echo $package | jq -r '.name' | sed -r "s#(.*)#$output/\1#g" | xargs cat \
+    | tar xzf - -C $output; cp -v $output/vale $HOME/bin
+
+Then add ``$HOME/bin`` to ``$PATH`` (e.g. in ``.bashrc``, where ``vale`` is downloaded to via the above command)
+
+Alternatively, use ``snap`` or ``brew``: `https://vale.sh/docs/vale-cli/installation/`
 
 Navigation structure
 ''''''''''''''''''''

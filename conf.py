@@ -17,7 +17,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'Aiven Developer'
-copyright = '2021, Aiven Team'
+copyright = '2022, Aiven Team'
 author = 'Aiven Team'
 html_title = 'Aiven'
 
@@ -34,7 +34,12 @@ extensions = [
     'sphinx_copybutton',
     'sphinx_gitstamp',
     'sphinxext.opengraph',
+    'notfound.extension',
 ]
+
+# Not Found configuration
+# see all options at https://sphinx-notfound-page.readthedocs.io/en/latest/configuration.html
+notfound_urls_prefix = ''
 
 # OpenGraph configuration
 # see all options at https://github.com/wpilibsuite/sphinxext-opengraph#options
@@ -53,7 +58,8 @@ templates_path = ['_templates']
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = [
     '_build', 'Thumbs.db', '.DS_Store', 'README*', 'scripts', 'utils',
-    'CONTRIBUTING.rst', 'REVIEWING.rst', 'includes'
+    'CONTRIBUTING.rst', 'REVIEWING.rst', 'includes',
+    '.github/vale'
 ]
 
 # gitstamp config

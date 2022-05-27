@@ -16,14 +16,19 @@ entries:
       - file: docs/platform/concepts/logs-metrics-alerts
       - file: docs/platform/concepts/projects_accounts_access
       - file: docs/platform/concepts/service-forking
+      - file: docs/platform/concepts/service_backups
       - file: docs/platform/concepts/static-ips
       - file: docs/platform/concepts/tls-ssl-certificates
+      - file: docs/platform/concepts/byoa
+      - file: docs/platform/concepts/disaster-recovery-test-scenarios
     - file: docs/platform/howto
       title: HowTo
       entries:
       - file: docs/platform/howto/create_new_service
       - file: docs/platform/howto/create_new_service_user
       - file: docs/platform/howto/create_authentication_token
+      - file: docs/platform/howto/change-your-email-address
+      - file: docs/platform/howto/enable-aiven-password
       - file: docs/platform/howto/disable-user-2fa
       - file: docs/platform/howto/download-ca-cert
       - file: docs/platform/howto/console-fork-service.rst
@@ -46,6 +51,16 @@ entries:
 
 
   # --------- GLOBAL -----------
+  - file: docs/integrations/index
+    title: Integrations
+    entries:
+    - file: docs/integrations/datadog/index
+      title: Datadog
+      entries:
+        - file: docs/integrations/datadog/datadog-metrics
+        - file: docs/integrations/datadog/datadog-logs
+
+
   - file: docs/tools/index
     entries:
       - file: docs/tools/cli
@@ -80,12 +95,18 @@ entries:
           entries:
             - file: docs/tools/terraform/howto/upgrade-provider-v1-v2
               title: Upgrade the Aiven Terraform Provider from v1 to v2
+        - file: docs/tools/terraform/concepts
+          title: Concepts
+          entries:
+            - glob: docs/tools/terraform/concepts/*
         - file: docs/tools/terraform/reference
           entries:
           - file: docs/tools/terraform/reference/cookbook
             entries:
             - file: docs/tools/terraform/reference/cookbook/kafka-connect-terraform-recipe
               title: Apache Kafka and OpenSearch
+            - file: docs/tools/terraform/reference/cookbook/multicloud-postgresql-recipe
+              title: Multicloud PostgreSQL 
       - file: docs/tools/kubernetes
         title: Aiven Operator for Kubernetes
 
@@ -180,7 +201,11 @@ entries:
             - file: docs/products/kafka/kafka-connect/howto/jdbc-source-connector-pg
             - file: docs/products/kafka/kafka-connect/howto/jdbc-source-connector-mysql
             - file: docs/products/kafka/kafka-connect/howto/jdbc-source-connector-sql-server
+            - file: docs/products/kafka/kafka-connect/howto/mongodb-poll-source-connector
             - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-pg
+            - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-mysql
+            - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-sql-server
+            - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-mongodb
           - file: docs/products/kafka/kafka-connect/howto/list-sink-connectors
             entries:
             - file: docs/products/kafka/kafka-connect/howto/jdbc-sink
@@ -196,6 +221,7 @@ entries:
             - file: docs/products/kafka/kafka-connect/howto/snowflake-sink-prereq
             - file: docs/products/kafka/kafka-connect/howto/snowflake-sink
             - file: docs/products/kafka/kafka-connect/howto/http-sink
+            - file: docs/products/kafka/kafka-connect/howto/redis-streamreactor-sink
 
         - file: docs/products/kafka/kafka-connect/reference
           title: Reference
@@ -274,6 +300,9 @@ entries:
               - file: docs/products/postgresql/howto/migrate-from-aws-aurora
               - file: docs/products/postgresql/howto/migrate-from-google-cloudsql
               - file: docs/products/postgresql/howto/migrate-pg-dump-restore
+              - file: docs/products/postgresql/howto/logical-replication-aws-aurora
+              - file: docs/products/postgresql/howto/logical-replication-aws-rds
+              - file: docs/products/postgresql/howto/logical-replication-gcp-cloudsql
           - file: docs/products/postgresql/howto/list-integrations
             entries:
               - file: docs/products/postgresql/howto/connect-psql
@@ -282,9 +311,12 @@ entries:
               - file: docs/products/postgresql/howto/report-metrics-grafana
               - file: docs/products/postgresql/howto/monitor-with-pgwatch2
               - file: docs/products/postgresql/howto/datasource-integration
+              - file: docs/products/postgresql/howto/analyze-with-google-data-studio
       - file: docs/products/postgresql/reference
         title: Reference
         entries:
+          - file: docs/products/postgresql/reference/high-cpu-load-of-pgbouncer
+            title: High CPU load
           - file: docs/products/postgresql/reference/list-of-advanced-params
             title: Advanced parameters
           - file: docs/products/postgresql/reference/list-of-extensions
@@ -413,6 +445,8 @@ entries:
             title: Plugins
           - file: docs/products/opensearch/reference/advanced-params
             title: Advanced parameters
+          - file: docs/products/opensearch/reference/index-replication
+          - file: docs/products/opensearch/reference/restapi-limited-access
 
   - file: docs/products/m3db/index
     title: M3DB
@@ -440,10 +474,24 @@ entries:
     entries:
       - file: docs/products/mysql/get-started
         title: Get started
+      - file: docs/products/mysql/concepts                   
+        title: Concepts                           
+        entries:                                  
+          - glob: docs/products/mysql/concepts/*
       - file: docs/products/mysql/howto
         title: HowTo
         entries:
-          - glob: docs/products/mysql/howto/*
+          - file: docs/products/mysql/howto/list-code-samples
+            entries:
+              - file: docs/products/mysql/howto/connect-from-cli
+              - file: docs/products/mysql/howto/connect-with-python
+              - file: docs/products/mysql/howto/connect-with-java
+          - file: docs/products/mysql/howto/create-database
+          - file: docs/products/mysql/howto/connect-from-mysql-workbench
+          - file: docs/products/mysql/howto/max-number-of-connections
+          - file: docs/products/mysql/howto/migrate-from-external-mysql
+          - file: docs/products/mysql/howto/do-check-service-migration
+          - file: docs/products/mysql/howto/prevent-disk-full
       - file: docs/products/mysql/reference
         title: Reference
         entries:

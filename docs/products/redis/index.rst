@@ -18,7 +18,7 @@ Read more about `the introduction to Redis <https://redis.io/topics/introduction
 Get started with Aiven for Redis
 ---------------------------------
 
-Take your first steps with Aiven for Redis by following our :doc:`get-started` article, or browse through our full list of articles:
+Take your first steps with Aiven for Redis by following our :doc:`getting started guide <get-started>`, or browse through our full list of articles:
 
 
 .. panels::

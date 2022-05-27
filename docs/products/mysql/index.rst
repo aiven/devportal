@@ -18,11 +18,16 @@ Our :doc:`getting started guide <get-started>` will get you up and running quick
 
 .. panels::
 
-    💻 :doc:`howto`
+
+    📚 :doc:`Concepts <concepts>`
 
     ---
 
-    📖 :doc:`reference`
+    💻 :doc:`HowTo <howto>`
+
+    ---
+
+    📖 :doc:`Reference <reference>`
 
 
 More MySQL resources

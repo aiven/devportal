@@ -1,4 +1,3 @@
-
 Dump OpenSearch® index using ``elasticsearch-dump``
 ===================================================
 

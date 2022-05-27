@@ -27,9 +27,12 @@ There are two options for authenticating. The first is to use your username, and
 
   avn user login <you@example.com>
 
-You can also use an access token (this is the recommended route if you use SSO), with a command like::
+For security reasons, it is recommended to use an access token, especially if you use SSO. You can use a command like::
 
   avn user login <you@example.com> --token
+
+.. tip::
+  To learn how to create an authentication token refer to :doc:`../platform/howto/create_authentication_token`
 
 This command will prompt you for a token rather than a password.
 

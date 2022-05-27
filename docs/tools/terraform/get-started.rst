@@ -1,7 +1,7 @@
 Set up your first Aiven Terraform project
 =========================================
 
-This example shows the setup for a Terraform project containing a single Redis™** service, and shows off some useful commands to stand up (and destroy) your Aiven data infrastructure.
+This example shows the setup for a Terraform project containing a single Redis™* service, and shows off some useful commands to stand up (and destroy) your Aiven data infrastructure.
 
 Prepare the dependencies 
 ''''''''''''''''''''''''
@@ -43,7 +43,8 @@ Add the following to a new ``provider.tf`` file:
       api_token = var.aiven_api_token
    }
 
-
+You can also set the environment variable ``AIVEN_TOKEN`` for the ``api_token`` property. With this, you don't need to pass the ``-var-file`` flag when executing Terraform commands.
+ 
 2.  The following Terraform script deploys a single-node Redis service. This is a minimal example which you can swap out with your own Terraform scripts or other advanced recipes from :doc:`the Terraform cookbook <reference/cookbook>`.
 
 The contents of the ``redis.tf`` file should look like this:
