@@ -42,6 +42,8 @@ Go to the *Overview* page of your Aiven for Apache Kafka service.
      #. Select **SASL** as the **Authentication Method**
      #. Next to *CA Certificate*, click **Download** and save the ``ca.pem`` file
 
+In the examples, we just show the name of the file, but in actual use, the full path should be used.
+
 Variables
 ---------
 
@@ -70,6 +72,27 @@ Variable              Description
 -----------------     -------------------------------------------------------------
 ``SASL_PASSWORD``     Password for this user
 =================     =============================================================
+
+For consumers:
+
+=================     =============================================================
+Variable              Description
+=================     =============================================================
+``TOPIC_NAME``        The name of the topic to read from
+-----------------     -------------------------------------------------------------
+``START_FROM``        The value to use for the ``auto_offset_reset`` parameter,
+                      which says which message to start consuming from.
+
+                      Allowed values are:
+
+                      * ``latest`` - consume from the end of the topic partition.
+                        This is the default.
+                      * ``earliest`` - consume from the beginning of the topic
+                        partition
+=================     =============================================================
+
+For more information on ``auto_offset_reset``, see the Kafka documentation on [auto.offset.rest](https://kafka.apache.org/documentation/#consumerconfigs_auto.offset.reset) and [Consumer Position](https://kafka.apache.org/documentation/#consumerconfigs_auto.offset.reset)
+
 
 Connect a producer
 ------------------
@@ -119,8 +142,8 @@ Using SSL authentication
         from kafka import KafkaConsumer
 
         consumer = KafkaConsumer(
-            "demo-topic",
-            auto_offset_reset="earliest",
+            "TOPIC_NAME",
+            auto_offset_reset="START_FROM",
             bootstrap_servers=f"{HOST}:{SSL_PORT}",
             client_id = CONSUMER_CLIENT_ID,
             group_id = CONSUMER_GROUP_ID,
@@ -141,8 +164,8 @@ Using SASL authentication
         SASL_MECHANISM = 'SCRAM-SHA-256'
 
         consumer = KafkaConsumer(
-            "demo-topic",
-            auto_offset_reset = "earliest",
+            "TOPIC_NAME",
+            auto_offset_reset = "START_FROM",
             bootstrap_servers = f'{HOST}:{SASL_PORT}',
             client_id = CONSUMER_CLIENT_ID,
             group_id = CONSUMER_GROUP_ID,
