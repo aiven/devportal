@@ -73,7 +73,7 @@ Variable              Description
 ``SASL_PASSWORD``     Password for this user
 =================     =============================================================
 
-For consumers:
+For consumers you will also need:
 
 =================     =============================================================
 Variable              Description
