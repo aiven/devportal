@@ -1,5 +1,5 @@
 Cross-cluster replication with Apache Kafka® MirrorMaker 2
-=========================================================
+==========================================================
 
 From disaster recovery to isolating data for compliance reasons, businesses need to replicate data across their Apache Kafka® clusters, and Apache Kafka® MirrorMaker 2 is a perfect tool 
 to do so. A single MirrorMaker 2 cluster can run multiple replication flows, and it has a mechanism for preventing replication cycles. This example sets up two Aiven for Apache Kafka clusters (a source and a target),
