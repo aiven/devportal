@@ -30,5 +30,5 @@ Use ``curl`` to create the alert
    https://username:password@os-name-myproject.aivencloud.com:24947/_plugins/_alerting/monitors \
    -H 'Content-type: application/json' -T cpu_alert.json
 
-* The required JSON request format can be found in `OpenSearch Alerting API documentation <https://opensearch.org/docs/latest/monitoring-plugins/alerting/api/#create-query-level-monitor>`_
+* The required JSON request format can be found in `OpenSearch Alerting API documentation <https://opensearch.org/docs/latest/monitoring-plugins/alerting/api/#sample-request>`_
 

@@ -154,7 +154,7 @@ And the mapping with the fields and their respective types.
 
 .. seealso::
 
-    Read more about OpenSearch mapping in the `official OpenSearch documentation <https://opensearch.org/docs/latest/opensearch/rest-api/index-apis/create-index/#mappings>`_.
+    Read more about OpenSearch mapping in the `official OpenSearch documentation <https://opensearch.org/docs/latest/opensearch/rest-api/index-apis/put-mapping/>`_.
 
 
 .. _load-data-with-nodejs:
@@ -237,7 +237,7 @@ You should be able to see the following structure:
       title: { type: 'text', fields: { keyword: [Object] } }
     }
 
-These are the fields you can play with. You can find information on dynamic mapping types `in the documentation <https://opensearch.org/docs/latest/opensearch/rest-api/index-apis/create-index/#dynamic-mapping-types>`_.
+These are the fields you can play with. You can find information on dynamic mapping types `in the documentation <https://opensearch.org/docs/latest/opensearch/mappings/#dynamic-mapping>`_.
 
 Sample queries with HTTP client
 -------------------------------

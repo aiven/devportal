@@ -296,7 +296,12 @@ entries:
               - file: docs/products/postgresql/howto/create-read-replica
               - file: docs/products/postgresql/howto/setup-logical-replication
               - file: docs/products/postgresql/howto/migrate-aiven-db-migrate
+                entries:
+                - file: docs/products/postgresql/howto/logical-replication-aws-aurora
+                - file: docs/products/postgresql/howto/logical-replication-aws-rds
+                - file: docs/products/postgresql/howto/logical-replication-gcp-cloudsql
               - file: docs/products/postgresql/howto/migrate-pg-dump-restore
+              - file: docs/products/postgresql/howto/run-aiven-db-migrate-python
           - file: docs/products/postgresql/howto/list-integrations
             entries:
               - file: docs/products/postgresql/howto/connect-psql
