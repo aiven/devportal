@@ -110,7 +110,7 @@ Access to backups
 The Aiven platform provides a centralised, managed platform for the services outlined above to run across many different cloud providers and regions. Tooling that we have built to provide these backups are open source and available for you to use in your own infrastructure. 
 
 The nature of the Aiven platform is to manage the operational tasks of running complex software at scale so that you are able to focus your efforts on using the services, not maintaining them. This means that we take care of the availability, security, connectivity and backups.
-Access to backups of your services are not possible. The backups are encrypted and stored in object storage. If you do need to backup your services, this can be done with the standard tooling for that service. Below, we provide a list of the backup tools used for each service type.
+Access to backups of your services is not possible. The backups are encrypted and stored in object storage. If you do need to backup your services, this can be done with the standard tooling for that service. Below, we provide a list of the backup tools used for each service type.
 
 Please note that these tools are merely recommendations and not intended to create a snapshot of your Aiven service; purely to provide access to the data.
 
