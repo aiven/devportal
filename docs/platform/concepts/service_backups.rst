@@ -103,3 +103,20 @@ Aiven for InfluxDB®
 '''''''''''''''''''
 We offer backups that are taken every 12 hours with 2.5 days of retention. 
 We automatically backup InfluxDB®, encrypt it and then upload it to our S3 account in the same region. When an instance has to be rebuilt, we download the backup and restore it to create the new instance.
+
+
+Access to backups
+'''''''''''''''''
+The Aiven platform provides a centralised, managed platform for the services outlined above to run across many different cloud providers and regions. Tooling that we have built to provide these backups are open source and available for you to use in your own infrastructure. 
+
+The nature of the Aiven platform is to manage the operational tasks of running complex software at scale so that you are able to focus your efforts on using the services, not maintaining them. This means that we take care of the availability, security, connectivity and backups.
+Access to backups of your services are not possible. The backups are encrypted and stored in object storage. If you do need to backup your services, this can be done with the standard tooling for that service. Below, we provide a list of the backup tools used for each service type.
+
+Please note that these tools are merely recommendations and not intended to create a snapshot of your Aiven service; purely to provide access to the data.
+
+- `PostgreSQL: pgdump <https://www.postgresql.org/docs/14/app-pgdump.html>`
+- `MySQL: mysqldump <https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html>`
+- `Redis: redis-cli <https://redis.io/docs/manual/cli/#remote-backups-of-rdb-files>`
+- `Cassandra: cqlsh <https://docs.datastax.com/en/archived/cql/3.3/cql/cql_reference/cqlshCopy.html>`
+- `OpenSearch: elasticdump <https://github.com/elasticsearch-dump/elasticsearch-dump>`
+- `InfluxDB: influxd <https://docs.influxdata.com/influxdb/v1.8/tools/influx-cli/>`
