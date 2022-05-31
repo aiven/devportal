@@ -114,7 +114,10 @@ Access to backups of your services is not possible. The backups are encrypted an
 
 Please note that these tools are merely recommendations and not intended to create a snapshot of your Aiven service; purely to provide access to the data.
 
-- PostgreSQL: `pgdump <https://www.postgresql.org/docs/14/app-pgdump.html>`_
+.. |pgdump| replace:: ``pgdump``
+.. _`pgdump`: https://www.postgresql.org/docs/14/app-pgdump.htm
+
+- PostgreSQL: pgdump
 - MySQL: `mysqldump <https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html>`_
 - Redis: `redis-cli <https://redis.io/docs/manual/cli/#remote-backups-of-rdb-files>`_
 - Cassandra: `cqlsh <https://docs.datastax.com/en/archived/cql/3.3/cql/cql_reference/cqlshCopy.html>`_
