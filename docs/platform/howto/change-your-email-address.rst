@@ -21,9 +21,11 @@ Step by step:
 3. Click "Send Invitation"
 
 .. image:: /images/platform/invite-member.png
+   :alt: Specify email address of user to invite and their role
 
 Your new email address will receive an invitation to create an Aiven account which will then have access to the project. You need to do this for each of your projects. If your projects are managed by another user as part of an organization, then you may need to ask the administrator of those projects to add your new account and remove your old one.
 
 Once you have confirmed, your new account has correct privileges, you can remove your old email account from each of your projects by clicking on "Remove user":
 
 .. image:: /images/platform/remove-user.png
+   :alt: The "Remove user" button is at the right of each Member entry
