@@ -74,6 +74,14 @@ html_baseurl = 'https://developer.aiven.io'
 # We need to be explicit that we don't want {version} or {language} in the URLs
 sitemap_url_scheme = "{link}"
 
+# ``make linkcheck`` is not perfect.
+# The following pages are known to cause it problems.
+linkcheck_ignore = [
+    # Kafka documentation anchors do not seem to be detected. We use the following:
+   'https://kafka.apache.org/documentation/#consumerconfigs_auto.offset.reset',
+    'https://kafka.apache.org/documentation/#design_consumerposition',
+]
+
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
