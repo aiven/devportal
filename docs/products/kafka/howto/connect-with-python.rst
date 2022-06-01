@@ -95,7 +95,10 @@ Variable              Description
                         partition
 =================     =============================================================
 
-For more information on ``auto_offset_reset``, see the Kafka documentation on `auto.offset.reset <https://kafka.apache.org/documentation/#consumerconfigs_auto.offset.reset>`_ and `Consumer Position <https://kafka.apache.org/documentation/#consumerconfigs_auto.offset.reset>`_.
+For more information on ``auto_offset_reset``, see the Kafka documentation on
+`auto.offset.reset <https://kafka.apache.org/documentation/#consumerconfigs_auto.offset.reset>`_
+and
+`Consumer Position <https://kafka.apache.org/documentation/#design_consumerposition>`_.
 
 
 Connect a producer
