@@ -161,8 +161,8 @@ Aside from the relevant information to the database, the following SQL retrieves
     ORDER by mean_time desc
     LIMIT 10;
 
-Example: queries with high memory usage
-'''''''''''''''''''''''''''''''''''''''
+Check queries with high memory usage
+''''''''''''''''''''''''''''''''''''
 
 The following SQL retrieves the query, its ``id``, and relevant information about the database. The result set in this case is ordered by showing the queries with the highest memory usage at the top, summing the number of shared memory blocks returned from the cache (``shared_blks_hit``), and 
 the number of shared memory blocks marked as "dirty" during a request needed to be written to disk (``shared_blks_dirtied``).
