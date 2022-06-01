@@ -42,12 +42,16 @@ Go to the *Overview* page of your Aiven for Apache Kafka service.
      #. Select **SASL** as the **Authentication Method**
      #. Next to *CA Certificate*, click **Download** and save the ``ca.pem`` file
 
+Note that the *CA Certificate* ``ca.pem`` file has the same contents by either route.
+
+Alternatively, you can use the `Aiven command line tool <https://developer.aiven.io/docs/tools/cli.html>`_ to download the files. See the documentation for `avn service user-creds-download <https://developer.aiven.io/docs/tools/cli/service/user.html#avn-service-user-creds-download>`_
+
 In the examples, we just show the name of the file, but in actual use, the full path should be used.
 
 Variables
 ---------
 
-These are the placeholders you will need to replace in the code samples. The values are from the *Connection information* on the service overview page.
+These are the placeholders you will need to replace in the code samples. The values are from the ``Connection information`` on the service overview page.
 
 If you are using SSL (remember to choose **Client Certificate** if **Authentication Method** is shown):
 
@@ -91,7 +95,7 @@ Variable              Description
                         partition
 =================     =============================================================
 
-For more information on ``auto_offset_reset``, see the Kafka documentation on `auto.offset.rest <https://kafka.apache.org/documentation/#consumerconfigs_auto.offset.reset>`_ and `Consumer Position <https://kafka.apache.org/documentation/#consumerconfigs_auto.offset.reset>`_.
+For more information on ``auto_offset_reset``, see the Kafka documentation on `auto.offset.reset <https://kafka.apache.org/documentation/#consumerconfigs_auto.offset.reset>`_ and `Consumer Position <https://kafka.apache.org/documentation/#consumerconfigs_auto.offset.reset>`_.
 
 
 Connect a producer
