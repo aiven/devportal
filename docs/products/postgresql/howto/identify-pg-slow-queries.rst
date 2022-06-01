@@ -1,5 +1,5 @@
 Identify PostgreSQL® slow queries 
-=========================================
+=================================
 
 PostgreSQL® allows you to keep track of queries with certain performance metrics and statistics, which comes in handy when identifying slow queries.
 
@@ -27,7 +27,7 @@ Column Type                Description
 ``Total (ms)``          Total time spent executing the statement
 ==================      =======================================================================
 
-You can also create custom queries using the ``pg_stat_statements`` view and use all the `available columns <https://www.postgresql.org/docs/current/pgstatstatements.html>`_ to your investigate your use case.
+You can also create custom queries using the ``pg_stat_statements`` view and use all the `available columns <https://www.postgresql.org/docs/current/pgstatstatements.html>`_ to investigate your use case.
 
 Pre-requisites
 ''''''''''''''
@@ -42,7 +42,7 @@ Discover slow queries
 
 You can run the following command to display the ``pg_stat_statements`` view and all the columns contained:
 
-.. code-block:: sql
+.. code-block:: shell
 
     \d pg_stat_statements;
 
@@ -94,12 +94,12 @@ On older PostgreSQL versions you might find different column names (e.g. the col
 
     You can write custom queries to ``pg_stat_statements`` to help you analyze recently run queries in your database.
 
-Example: sort database queries based on ``total_exec_time``
-'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+Sort database queries based on ``total_exec_time``
+''''''''''''''''''''''''''''''''''''''''''''''''''
 
 The following query, inspired by a `GitHub repository <https://github.com/heroku/heroku-pg-extras/blob/ece431777dd34ff6c2a8dfb790b24db99f114165/commands/outliers.js>`_, uses the ``pg_stat_statements`` view, shows the running queries sorted descending by ``total_exec_time``, re-formats the ``calls`` column and deduces the ``prop_exec_time`` and ``sync_io_time``:
 
-.. code-block:: sql
+.. code-block:: postgresql
 
     SELECT interval '1 millisecond' * total_exec_time AS total_exec_time,
         to_char((total_exec_time/sum(total_exec_time) OVER()) * 100, 'FM90D0') || '%'  AS prop_exec_time,
@@ -126,12 +126,12 @@ You can run the above commands on your own PostgreSQL® to gather more informati
 
         SELECT pg_stat_statements_reset()
 
-Example: top queries with high I/O activity
-'''''''''''''''''''''''''''''''''''''''''''
+Find top queries with high I/O activity
+'''''''''''''''''''''''''''''''''''''''
 
 The following SQL shows queries with their ``id`` and mean time in seconds. The result set is ordered based on the sum of ``blk_read_time`` and ``blk_write_time`` meaning that queries with the highest read/write are shown at the top.
 
-.. code-block:: sql
+.. code-block:: postgresql
 
     SELECT userid::regrole, 
         dbid, 
@@ -142,12 +142,12 @@ The following SQL shows queries with their ``id`` and mean time in seconds. The 
     ORDER by (blk_read_time+blk_write_time) DESC
     LIMIT 10;
 
-Example: top time consuming queries
-'''''''''''''''''''''''''''''''''''
+See top time-consuming queries
+''''''''''''''''''''''''''''''
 
 Aside from the relevant information to the database, the following SQL retrieves the number of calls, consumption time in milliseconds as ``total_time_seconds``, and the minimum, maximum, and mean times such query has ever been executed in milliseconds. The result set is ordered in descending order by ``mean_time`` showing the queries with most consumption time first.
 
-.. code-block:: sql
+.. code-block:: postgresql
 
     SELECT userid::regrole, 
         dbid, 
@@ -164,10 +164,10 @@ Aside from the relevant information to the database, the following SQL retrieves
 Example: queries with high memory usage
 '''''''''''''''''''''''''''''''''''''''
 
-The following SQL retrieves the query, its id, and relevant information about the database. The result set in this case is ordered by showing the queries with the highest memory usage at the top, by summing the number of shared memory blocks returned from the cache (``shared_blks_hit``), and 
+The following SQL retrieves the query, its ``id``, and relevant information about the database. The result set in this case is ordered by showing the queries with the highest memory usage at the top, summing the number of shared memory blocks returned from the cache (``shared_blks_hit``), and 
 the number of shared memory blocks marked as "dirty" during a request needed to be written to disk (``shared_blks_dirtied``).
 
-.. code-block:: sql
+.. code-block:: postgresql
 
     SELECT userid::regrole, 
         dbid, 
