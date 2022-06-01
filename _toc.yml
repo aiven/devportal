@@ -557,3 +557,10 @@ entries:
 
   # -------- AUXILIARY
   - file: docs/community
+    title: Community
+    entries:
+    - file: docs/community/documentation/index
+      entries:
+      - glob: docs/community/documentation/tips-tricks/*
+        title: Tips & Tricks
+

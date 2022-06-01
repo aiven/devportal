@@ -84,6 +84,8 @@ External links are used for external hyperlinks::
 
     `ReStructuredText <https://docutils.sourceforge.io/rst.html>`_
 
+If you get the warning ``Duplicate target name``, because of multiple links with the same label, see :doc:`Create anonymous links <docs/documentation/anonymus-links>`.
+
 To link to another page on the site, use the `:doc: <https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html#cross-referencing-documents>`_ role::
 
     Use the :doc:`cli` for scriptable, repeatable actions with Aiven
