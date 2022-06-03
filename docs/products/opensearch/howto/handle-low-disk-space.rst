@@ -1,7 +1,7 @@
 Handle low disk space
 ======================
 
-When you're running low on disk space using Aiven OpenSearch, you can take one of these actions:
+When you're running low on disk space using Aiven for OpenSearch®, you can take one of these actions:
 
 -  Upgrade to a larger plan from with a help of `Aiven console <https://console.aiven.io/>`_ or by using `Aiven CLI client <https://github.com/aiven/aiven-client>`_.
 
