@@ -48,7 +48,34 @@ Destination is a location for notifications to be delivered when an action is tr
 
 .. important::
    - When using email you need to have a SMTP server configured for a valid domain to deliver email notifications
-   - Please note that the authentication of a sender account is currently not supported. That is, when an alert is being created, the email destination does not support the encryption methods SSL/TLS. 
+
+Email destination with authenticated sender
+*******************************************
+This procedure needs to be taken whenever you need to authenticate the sender account before sending email messages. To do so, the credentials need to be added first to the OpenSearch keystore. Thus, this is going to be the very first preparatory step that needs to be done in the Aiven console.
+
+1. In **Overview** tab of your OpenSearch service, **Advanced Config** section, fill in the following fields and save:
+
+   - ``email_sender_name``
+   - ``email_sender_username``
+   - ``email_sender_password``
+
+   At the end of this step the email account creedentials will be added to the OpenSearch keystore. That is, the steps-by-step procedure that follows need to be completed in OpenSearch Dashboards.
+
+2. Open the **Destination** tab and click on **Add destination**
+
+3. Fill in the fields under **Destination**
+
+   Fill ``email-test`` as the **Name**
+
+   Select ``Email`` under **Type**
+
+   In this step we assume that no senders exist yet. So, click first on **Manage Senders**, then click on **New sender** link.
+
+   Assign a name to the sender. Please note that this name should match the property ``email_sender_name`` from step 1.
+
+   Fill in the information required by the form and select SSL or TLS in **Encryption method**.
+
+4. Lastly you need to complete the form with the recipients, by creating email groups in **Manage email groups** if necessary.
 
 Create a monitor
 ****************
