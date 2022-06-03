@@ -87,7 +87,7 @@ Create and run a consumer that pulls and outputs the data from ``demo-topic``:
 Relying on SASL-SSL authentication
 -----------------------------------
 
-If you want to use SASL authentication, turn on **kafka_authentication_methods.sasl** under *Advanced configuration* on the *Overview* page of your service.
+If you want to use SASL authentication, turn on ``kafka_authentication_methods.sasl`` under *Advanced configuration* on the *Overview* page of your service.
 
 Create and run a producer, that sends a message into the topic ``demo-topic``:
 
