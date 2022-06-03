@@ -80,6 +80,9 @@ linkcheck_ignore = [
     # Kafka documentation anchors do not seem to be detected. We use the following:
    'https://kafka.apache.org/documentation/#consumerconfigs_auto.offset.reset',
     'https://kafka.apache.org/documentation/#design_consumerposition',
+
+    # The following link is indicating as broken is spite of being a valid one
+    'https://clickhouse.com/docs/en/sql-reference/statements/grant/#grant-privileges'
 ]
 
 # -- Options for HTML output -------------------------------------------------
