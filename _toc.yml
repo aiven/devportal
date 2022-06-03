@@ -243,6 +243,11 @@ entries:
               - file: docs/products/kafka/howto/get-topic-partition-details
               - file: docs/products/kafka/howto/schema-registry
               - file: docs/products/kafka/howto/change-retention-period
+          - file: docs/products/kafka/howto/list-code-samples
+            title: Code samples
+            entries:
+              - file: docs/products/kafka/howto/connect-nodejs
+
       - file: docs/products/kafka/reference
         title: Reference
         entries:
