@@ -157,6 +157,8 @@ entries:
             entries:
               - file: docs/products/kafka/howto/connect-with-python
                 title: Connect with Python
+              - file: docs/products/kafka/howto/connect-java
+                title: Connect with Java
           - file: docs/products/kafka/howto/list-tools
             title: Tools
             entries:
@@ -198,6 +200,7 @@ entries:
               - file: docs/products/kafka/howto/get-topic-partition-details
               - file: docs/products/kafka/howto/schema-registry
               - file: docs/products/kafka/howto/change-retention-period
+
       - file: docs/products/kafka/reference
         title: Reference
         entries:
