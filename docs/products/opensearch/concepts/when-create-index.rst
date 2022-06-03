@@ -30,7 +30,7 @@ It is **not** recommended to create a new index per customer/project/entity if
 
 Instead of creating something like ``items_project_a`` , consider using
 a single ``items`` index with a field for project identifier, and query
-the data with OpenSearch filtering. This will be far more efficient
+the data with OpenSearch® filtering. This will be far more efficient
 usage of your OpenSearch service.
 
 .. note:: Aiven does not place any restrictions on the number of indices in your OpenSearch service.
