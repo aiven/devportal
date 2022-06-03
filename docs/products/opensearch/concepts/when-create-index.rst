@@ -1,5 +1,5 @@
-Index usage
-=============
+When to create a new index
+==========================
 
 This article will help you determine weather to create a new index per customer/project/entity or to look for alternatives.
 

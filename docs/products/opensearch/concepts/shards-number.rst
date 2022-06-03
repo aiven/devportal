@@ -27,27 +27,3 @@ your usage pattern and anticipated growth of data in OpenSearch.
 
 You can change the number of shards without losing your data, but this
 process requires a brief downtime while the index is rewritten.
-
-Performance numbers
--------------------
-
-Having a large number of shards affect your OpenSearch performance
-out from OpenSearch. Some benchmark results from three-node Aiven
-OpenSearch ``business-8`` cluster:
-
--  1 000 shards: no visible effect in OpenSearch performance.
-
--  10 000 shards is already quite a lot - creating new shards starts to
-   take longer and longer time. Variance in performance grows.
-
--  15 000 shards: creating new shards takes significantly longer time,
-   often tens of seconds.
-
--  20 000 shards: inserting new data randomly takes significantly longer
-   times (20x longer than mean). Similarly, variance in search
-   performance grows significantly.
-
-Aiven for OpenSearch takes a snapshot once every hour. With 10 000 shards
-cluster is continuously taking new backups and deleting old backups from
-backup storage. This will naturally affect service performance, as part
-of the capacity is continuously in use for managing backups.
