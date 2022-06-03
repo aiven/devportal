@@ -205,6 +205,7 @@ entries:
             title: Advanced parameters
           - file: docs/products/kafka/reference/kafka-metrics-prometheus
             title: Metrics available via Prometheus
+          - file: docs/products/kafka/reference/code-samples/java
 
       - file: docs/products/kafka/kafka-connect/index
         title: Apache Kafka Connect
