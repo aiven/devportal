@@ -33,7 +33,7 @@ Performance numbers
 
 Having a large number of shards affect your OpenSearch performance
 out from OpenSearch. Some benchmark results from three-node Aiven
-OpenSearch business-8 cluster:
+OpenSearch ``business-8`` cluster:
 
 -  1 000 shards: no visible effect in OpenSearch performance.
 
