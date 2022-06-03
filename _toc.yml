@@ -430,6 +430,7 @@ entries:
           - file: docs/products/opensearch/howto/import-opensearch-data-using-elasticsearch-dump
           - file: docs/products/opensearch/howto/set_index_retention_patterns
           - file: docs/products/opensearch/howto/opensearch-alerting-api
+          - file: docs/products/opensearch/howto/handle-low-disk-space
       - file: docs/products/opensearch/dashboards/index
         title: OpenSearch Dashboards
         entries:
