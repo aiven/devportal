@@ -8,7 +8,7 @@ notification to be configured to be sent via email, slack or custom webhooks and
 In the following example we are using Slack as the destination and a ``sample-host-health`` index as datasource to create a simple alert to check cpu load. An action will be triggered when average of ``cpu_usage_percentage`` over ``3`` minutes is above ``75%``.
 
 Create using Dashboards UI
-**************************
+''''''''''''''''''''''''''
 
 In order to create an alert via OpenSearch Dashboards interface, follow these steps:
 
@@ -30,7 +30,7 @@ To configure each alert the following needs to be created, we will walk-through 
 - ``Trigger``
 
 Create a destination
-********************
+''''''''''''''''''''
 Destination is a location for notifications to be delivered when an action is triggered.
 
 1. Open the **Destination** tab and click on **Add destination**
@@ -49,17 +49,18 @@ Destination is a location for notifications to be delivered when an action is tr
 .. important::
    - When using email you need to have a SMTP server configured for a valid domain to deliver email notifications
 
-Email destination with authenticated sender
-*******************************************
-This procedure needs to be taken whenever you need to authenticate the sender account before sending email messages. To do so, the credentials need to be added first to the OpenSearch keystore. Thus, this is going to be the very first preparatory step that needs to be done in the Aiven console.
+Configure authentication for email destination
+''''''''''''''''''''''''''''''''''''''''''''''
 
-1. In **Overview** tab of your OpenSearch service, **Advanced Config** section, fill in the following fields and save:
+This section shows how to authenticate the sender account before sending email messages. To authenticate when sending emails, the credentials need to be added first to the OpenSearch keystore. Perform this step before configuring an email destination that requires authentication.
+
+1. In **Overview** tab of your OpenSearch service, **Advanced configuration** section, fill in the following fields and save:
 
    - ``email_sender_name``
    - ``email_sender_username``
    - ``email_sender_password``
 
-   At the end of this step the email account creedentials will be added to the OpenSearch keystore. That is, the steps-by-step procedure that follows need to be completed in OpenSearch Dashboards.
+   At the end of this step the email account credentials will be added to the OpenSearch keystore. That is, the steps-by-step procedure that follows need to be completed in OpenSearch Dashboards.
 
 2. Open the **Destination** tab and click on **Add destination**
 
@@ -78,7 +79,7 @@ This procedure needs to be taken whenever you need to authenticate the sender ac
 4. Lastly you need to complete the form with the recipients, by creating email groups in **Manage email groups** if necessary.
 
 Create a monitor
-****************
+''''''''''''''''
 Monitor is a job that runs on a defined schedule and queries OpenSearch indices. 
 
 1. Open the **Monitors** tab and click on **Create monitor**
@@ -117,7 +118,7 @@ Monitor is a job that runs on a defined schedule and queries OpenSearch indices.
    Fill ``3`` under **Time range for the last** and select ``minutes``
 
 Create a trigger
-****************
+''''''''''''''''
 Triggers is a defined conditions from the queries results from monitor.  If conditions are met, alerts are generated.
 
 1. Click on **Add trigger**
@@ -145,7 +146,7 @@ Triggers is a defined conditions from the queries results from monitor.  If cond
    Multiple Actions can be defined, in this example we will define one action to send notification to destination we have defined in step 4
 
 Alert message
-*************
+'''''''''''''
 
 **Message** can be adjusted as needed, check **Message Preview** to see the sample and use **Send test message** to validate notification delivery
 
