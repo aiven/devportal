@@ -44,9 +44,12 @@ Go to the *Overview* page of your Aiven for Apache Kafka service.
 
 Note that the *CA Certificate* ``ca.pem`` file has the same contents by either route.
 
-Alternatively, you can use the `Aiven command line tool <https://developer.aiven.io/docs/tools/cli.html>`_ to download the files. See the documentation for `avn service user-creds-download <https://developer.aiven.io/docs/tools/cli/service/user.html#avn-service-user-creds-download>`_
+.. Warning::
 
-In the examples, we just show the name of the file, but in actual use, the full path should be used.
+  In the below examples, we just pass the name of the certificate files, but in actual use, the full path should be used.
+
+You can also use the `Aiven command line tool <https://developer.aiven.io/docs/tools/cli.html>`_ to download the files. See the documentation for `avn service user-creds-download <https://developer.aiven.io/docs/tools/cli/service/user.html#avn-service-user-creds-download>`_
+
 
 Variables
 ---------
@@ -104,7 +107,7 @@ and
 Connect a producer
 ------------------
 
-Using SSL authentication
+With SSL authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code:: python
@@ -119,7 +122,7 @@ Using SSL authentication
             ssl_keyfile="service.key",
         )
 
-Using SASL authentication
+With SASL authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code:: python
@@ -141,7 +144,7 @@ Using SASL authentication
 Connect a consumer
 ------------------
 
-Using SSL authentication
+With SSL authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code:: python
@@ -160,7 +163,8 @@ Using SSL authentication
             ssl_keyfile="service.key",
         )
 
-Using SASL authentication
+
+With SASL authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code:: python
