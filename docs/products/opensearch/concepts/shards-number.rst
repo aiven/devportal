@@ -14,16 +14,21 @@ is a good rule of thumb.
    shards per index in order to avoid splitting the index for a long
    time.
 
--  If you estimate you will have hundreds of gigabytes of data, start
-   with something like (amount of data in gigabytes) / 10 for
-   ``number_of_shards`` . For 250GB index, that would be 25 shards.
+-  If you estimate you will have hundreds of gigabytes of data, calculate the starting number of shards as
 
--  If you estimate you will have terabytes of data, increase shard size
-   a bit. For example, for 1TB index 50 shards could be a relevant
-   suggestion.
+   .. math:: 
+   
+      number\_of\_shards = amount\_of\_data\_in\_gigabytes / 10 
+   
+   For example: for 250GB index, that would be 25 shards.
+
+-  If you estimate you will have terabytes of data, increase the shard size compared to the previous example. 
+
+   For example, for 1TB index 50 shards could be a relevant suggestion.
 
 These suggestions are only indicative - optimal values depend heavily on
 your usage pattern and anticipated growth of data in OpenSearch.
 
-You can change the number of shards without losing your data, but this
-process requires a brief downtime while the index is rewritten.
+.. Tip::
+
+   You can change the number of shards without losing your data, but this process requires a brief downtime while the index is rewritten.
