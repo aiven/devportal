@@ -129,6 +129,10 @@ entries:
       - file: docs/products/kafka/howto
         title: HowTo
         entries:
+          - file: docs/products/kafka/howto/list-code-samples
+            entries:
+              - file: docs/products/kafka/howto/connect-with-python
+                title: Connect with Python
           - file: docs/products/kafka/howto/list-tools
             title: Tools
             entries:
@@ -154,8 +158,6 @@ entries:
               - file: docs/products/kafka/howto/configure-log-cleaner
               - file: docs/products/kafka/howto/prevent-full-disks
               - file: docs/products/kafka/howto/use-zookeeper
-          
-
           - file: docs/products/kafka/howto/list-integration
             title: Integrations
             entries:
