@@ -84,9 +84,9 @@ Once Kpow starts, you should be able to access it at ``localhost:3000``
 .. image:: /images/products/kafka/kpow.jpg
    :alt: Kpow in action
 
-You can perform the following tasks with Kafdrop over an Aiven for Apache Kafka® service:
+You can perform the following tasks with Kpow over an Aiven for Apache Kafka® service:
 
 * View and search topics
 * Create and delete topics
 * View brokers
-* produce and consume messages
+* Produce and consume messages
