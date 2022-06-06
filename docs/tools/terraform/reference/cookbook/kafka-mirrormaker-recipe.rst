@@ -31,10 +31,9 @@ The following image shows a unidirectional flow with the Apache Kafka MirrorMake
 Describe the setup
 ------------------
 
-Here is the sample Terraform file that will spin up two Aoache Kafka services, an Apache Kafka MirrorMaker 2 service and the MirrorMaker 2 service will be configured with two cluster alias pointed to the source and target Apache Kafka clusters. 
-The service integrations **source-kafka-to-mm** and **mm-to-target-kafka** connect the Kafka clusters to the MirrorMaker 2 instance. The replication flow **mm-replication-flow** creates a unidirectional flow to populate the remote topics based on source 
-topics. The `".*"` wildcard in the MirrorMaker 2 configuration means that all the topics from the source cluster will be replicated to the target cluster. However, since the flow is unidirectional, 
-the `topic-b` will only be present in the target cluster and not the source cluster.
+Here is the sample Terraform file that will spin up two Apache Kafka services, an Apache Kafka MirrorMaker 2 service and the MirrorMaker 2 service will be configured with two cluster alias pointed to the source and target Apache Kafka clusters. 
+The service integrations ``source-kafka-to-mm`` and ``mm-to-target-kafka`` connect the Kafka clusters to the MirrorMaker 2 instance. The replication flow ``mm-replication-flow`` creates a unidirectional flow to populate the remote topics based on source 
+topics. The `".*"` wildcard in the MirrorMaker 2 configuration means that all the topics from the source cluster will be replicated to the target cluster. However, since the flow is unidirectional, the ``topic-b`` will only be present in the target cluster and not the source cluster.
 
 ``services.tf`` file:
 
@@ -148,6 +147,8 @@ the `topic-b` will only be present in the target cluster and not the source clus
    partitions   = 3
    replication  = 2
   }
+
+For Apache Kafka MirrorMaker 2 and Apache Kafka service integration, ``ip_filter`` is a specific configuration that whitelists certain ranges of IP addresses. This example of ``0.0.0.0/0`` denotes that all IP addresses are allowed.
 
 More resources
 --------------
