@@ -6,6 +6,7 @@ scope: heading
 match: $sentence
 exceptions:
   - ACLs
+  - Amazon Aurora
   - APIs
   - Aiven
   - Apache
@@ -27,6 +28,7 @@ exceptions:
   - Go
   - Google BigQuery
   - Google Cloud Storage
+  - Google Cloud SQL
   - Google Data Studio
   - Grafana
   - Hobbyist
