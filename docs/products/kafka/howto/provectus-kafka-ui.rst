@@ -14,10 +14,10 @@ Furthermore, you need to collect the following information:
 * ``APACHE_KAFKA_PORT``: The Aiven for Apache Kafka port
 * ``KEYSTORE_FILE_NAME``: The name of the Java keystore containing the Aiven for Apache Kafka SSL certificates
 * ``TRUSTSTORE_FILE_NAME``: The name of the Java truststore containing the Aiven for Apache Kafka SSL certificates
-* ``SSL_KEYSTORE_PASSWORD``: The password used to secure the Kava keystore
-* ``SSL_KEY_PASSWORD``: The password used to secure the Kava key
-* ``SSL_TRUSTSTORE_LOCATION``: The password used to secure the Kava truststore
-* ``SSL_TRUSTSTORE_PASSWORD``: The password used to secure the Kava truststore
+* ``SSL_KEYSTORE_PASSWORD``: The password used to secure the Java keystore
+* ``SSL_KEY_PASSWORD``: The password used to secure the Java key
+* ``SSL_TRUSTSTORE_LOCATION``: The password used to secure the Java truststore
+* ``SSL_TRUSTSTORE_PASSWORD``: The password used to secure the Java truststore
 * ``SSL_STORE_FOLDER``: The absolute path of the folder containing both the truststore and keystore
 
 
