@@ -1,7 +1,7 @@
-Apache Kafka as source and sink for Apache Flink job
+Apache Kafka® as source and sink for Apache Flink® job
 ====================================================
 
-This example shows how to set up an Aiven for Apache Kafka® with an Aiven for Apache Flink® integration using the `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_.
+This example shows how to set up an Aiven for Apache Kafka with an Aiven for Apache Flink integration using the `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_.
 An Apache Kafka source topic is used as a data source, and Apache Flink processes the data to do filtering or transformation, and finally write the transformed output to a different target topic.
 
 Let's cook!
@@ -25,7 +25,7 @@ Before looking at the Terraform script, let's visually realize how the services 
 
 If you relate the above diagram to the following example, both source and target Apache Kafka topics are part of the same Apache Kafka cluster.
 
-The following Terraform script stands up both Apache Kafka and Apache Flink services, creates the service integration, source and target Apacha Kafka topics, an Apache Flink job and two Apache Flink tables. 
+The following Terraform script stands up both Apache Kafka and Apache Flink services, creates the service integration, source and target Apache Kafka topics, an Apache Flink job and two Apache Flink tables. 
 
 ``services.tf`` file:
 
