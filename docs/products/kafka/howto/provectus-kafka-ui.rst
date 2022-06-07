@@ -41,7 +41,7 @@ Since container for Provectus® UI for Apache Kafka® uses non-root user, to avo
 
 3. Copy secrets there (replace the ``KEYSTORE_FILE_NAME`` and ``TRUSTSTORE_FILE_NAME`` with the keystores and truststores file names)::
 
-    cp KEYSTORE_FILE_NAMETRUSTSTORE_FILE_NAME kafka-secrets
+    cp KEYSTORE_FILE_NAME TRUSTSTORE_FILE_NAME kafka-secrets
 
 4. Give read permissions for secret files for everyone::
 
