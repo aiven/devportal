@@ -6,16 +6,21 @@ scope: heading
 match: $sentence
 exceptions:
   - ACLs
+  - Amazon Aurora
   - APIs
   - Aiven
   - Apache
   - Boot
   - Business
+  - BYOA
   - Cassandra
   - ClickHouse
   - Connect
   - Dashboards
+  - Datadog
+  - Debezium
   - Dev
+  - Disaster Recovery
   - Docker
   - Elasticsearch
   - Flink
@@ -23,11 +28,14 @@ exceptions:
   - Go
   - Google BigQuery
   - Google Cloud Storage
+  - Google Cloud SQL
+  - Google Data Studio
   - Grafana
   - Hobbyist
   - HowTo
   - InfluxDB
   - InnoDB
+  - IPsec
   - Java
   - Kafdrop
   - Kafka
@@ -51,6 +59,7 @@ exceptions:
   - Simple Authentication and Security Layer
   - Snowflake
   - Spring
+  - SQL Server
   - Startup
   - TaskManager
   - Telegraf

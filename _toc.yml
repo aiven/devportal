@@ -20,12 +20,14 @@ entries:
       - file: docs/platform/concepts/static-ips
       - file: docs/platform/concepts/tls-ssl-certificates
       - file: docs/platform/concepts/byoa
+      - file: docs/platform/concepts/disaster-recovery-test-scenarios
     - file: docs/platform/howto
       title: HowTo
       entries:
       - file: docs/platform/howto/create_new_service
       - file: docs/platform/howto/create_new_service_user
       - file: docs/platform/howto/create_authentication_token
+      - file: docs/platform/howto/change-your-email-address
       - file: docs/platform/howto/enable-aiven-password
       - file: docs/platform/howto/disable-user-2fa
       - file: docs/platform/howto/download-ca-cert
@@ -49,6 +51,16 @@ entries:
 
 
   # --------- GLOBAL -----------
+  - file: docs/integrations/index
+    title: Integrations
+    entries:
+    - file: docs/integrations/datadog/index
+      title: Datadog
+      entries:
+        - file: docs/integrations/datadog/datadog-metrics
+        - file: docs/integrations/datadog/datadog-logs
+
+
   - file: docs/tools/index
     entries:
       - file: docs/tools/cli
@@ -117,6 +129,10 @@ entries:
       - file: docs/products/kafka/howto
         title: HowTo
         entries:
+          - file: docs/products/kafka/howto/list-code-samples
+            entries:
+              - file: docs/products/kafka/howto/connect-with-python
+                title: Connect with Python
           - file: docs/products/kafka/howto/list-tools
             title: Tools
             entries:
@@ -142,8 +158,6 @@ entries:
               - file: docs/products/kafka/howto/configure-log-cleaner
               - file: docs/products/kafka/howto/prevent-full-disks
               - file: docs/products/kafka/howto/use-zookeeper
-          
-
           - file: docs/products/kafka/howto/list-integration
             title: Integrations
             entries:
@@ -189,7 +203,11 @@ entries:
             - file: docs/products/kafka/kafka-connect/howto/jdbc-source-connector-pg
             - file: docs/products/kafka/kafka-connect/howto/jdbc-source-connector-mysql
             - file: docs/products/kafka/kafka-connect/howto/jdbc-source-connector-sql-server
+            - file: docs/products/kafka/kafka-connect/howto/mongodb-poll-source-connector
             - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-pg
+            - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-mysql
+            - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-sql-server
+            - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-mongodb
           - file: docs/products/kafka/kafka-connect/howto/list-sink-connectors
             entries:
             - file: docs/products/kafka/kafka-connect/howto/jdbc-sink
@@ -207,6 +225,7 @@ entries:
             - file: docs/products/kafka/kafka-connect/howto/http-sink
             - file: docs/products/kafka/kafka-connect/howto/mongodb-sink-mongo
             - file: docs/products/kafka/kafka-connect/howto/mongodb-sink-lenses
+            - file: docs/products/kafka/kafka-connect/howto/redis-streamreactor-sink
 
         - file: docs/products/kafka/kafka-connect/reference
           title: Reference
@@ -274,6 +293,8 @@ entries:
               - file: docs/products/postgresql/howto/use-dblink-extension
               - file: docs/products/postgresql/howto/enable-jit
               - file: docs/products/postgresql/howto/repair-pg-index
+              - file: docs/products/postgresql/howto/identify-pg-slow-queries
+              - file: docs/products/postgresql/howto/optimize-pg-slow-queries
               - file: docs/products/postgresql/howto/check-avoid-transaction-id-wraparound
               - file: docs/products/postgresql/howto/prevent-full-disk
           - file: docs/products/postgresql/howto/list-replication-migration
@@ -281,7 +302,12 @@ entries:
               - file: docs/products/postgresql/howto/create-read-replica
               - file: docs/products/postgresql/howto/setup-logical-replication
               - file: docs/products/postgresql/howto/migrate-aiven-db-migrate
+                entries:
+                - file: docs/products/postgresql/howto/logical-replication-aws-aurora
+                - file: docs/products/postgresql/howto/logical-replication-aws-rds
+                - file: docs/products/postgresql/howto/logical-replication-gcp-cloudsql
               - file: docs/products/postgresql/howto/migrate-pg-dump-restore
+              - file: docs/products/postgresql/howto/run-aiven-db-migrate-python
           - file: docs/products/postgresql/howto/list-integrations
             entries:
               - file: docs/products/postgresql/howto/connect-psql
@@ -290,6 +316,7 @@ entries:
               - file: docs/products/postgresql/howto/report-metrics-grafana
               - file: docs/products/postgresql/howto/monitor-with-pgwatch2
               - file: docs/products/postgresql/howto/datasource-integration
+              - file: docs/products/postgresql/howto/analyze-with-google-data-studio
       - file: docs/products/postgresql/reference
         title: Reference
         entries:
@@ -383,6 +410,8 @@ entries:
           - file: docs/products/opensearch/concepts/indices
           - file: docs/products/opensearch/concepts/aggregations
           - file: docs/products/opensearch/concepts/opensearch-vs-elasticsearch
+          - file: docs/products/opensearch/concepts/shards-number
+          - file: docs/products/opensearch/concepts/when-create-index
       - file: docs/products/opensearch/howto
         title: HowTo
         entries:
@@ -528,9 +557,16 @@ entries:
         title: Reference
         entries:
           - file: docs/products/grafana/reference/advanced-params
-            title: Advanced paramters
+            title: Advanced parameters
           - file: docs/products/grafana/reference/plugins
             title: Plugins
 
   # -------- AUXILIARY
   - file: docs/community
+    title: Community
+    entries:
+    - file: docs/community/documentation/index
+      entries:
+      - glob: docs/community/documentation/tips-tricks/*
+        title: Tips & Tricks
+

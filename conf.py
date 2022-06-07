@@ -34,7 +34,12 @@ extensions = [
     'sphinx_copybutton',
     'sphinx_gitstamp',
     'sphinxext.opengraph',
+    'notfound.extension',
 ]
+
+# Not Found configuration
+# see all options at https://sphinx-notfound-page.readthedocs.io/en/latest/configuration.html
+notfound_urls_prefix = ''
 
 # OpenGraph configuration
 # see all options at https://github.com/wpilibsuite/sphinxext-opengraph#options
@@ -68,6 +73,14 @@ html_baseurl = 'https://developer.aiven.io'
 # That doesn't work because we do not produce pages with the `/en` in the URL.
 # We need to be explicit that we don't want {version} or {language} in the URLs
 sitemap_url_scheme = "{link}"
+
+# ``make linkcheck`` is not perfect.
+# The following pages are known to cause it problems.
+linkcheck_ignore = [
+    # Kafka documentation anchors do not seem to be detected. We use the following:
+   'https://kafka.apache.org/documentation/#consumerconfigs_auto.offset.reset',
+    'https://kafka.apache.org/documentation/#design_consumerposition',
+]
 
 # -- Options for HTML output -------------------------------------------------
 

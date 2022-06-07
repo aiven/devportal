@@ -15,11 +15,11 @@ Local Development
 
 We recommend using a virtual environment like `venv <https://docs.python.org/3/library/venv.html>`_::
 
-    python3 -m venv /path/to/new/virtual/environment
+    python3 -m venv venv
 
-If you call it something other than `venv` or `env`, make sure to add your preferred name to `<.gitignore>`_.
+Activate your virtual environment using the `activate` script for your environment::
 
-Activate your virtual environment using the `activate` script for your environment.
+    source venv/bin/activate
 
 Install the dependencies::
 
@@ -83,6 +83,8 @@ Links are different depending on whether they are external links, links pointing
 External links are used for external hyperlinks::
 
     `ReStructuredText <https://docutils.sourceforge.io/rst.html>`_
+
+If you get the warning ``Duplicate target name``, because of multiple links with the same label, see :doc:`Create anonymous links <docs/documentation/anonymus-links>`.
 
 To link to another page on the site, use the `:doc: <https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html#cross-referencing-documents>`_ role::
 

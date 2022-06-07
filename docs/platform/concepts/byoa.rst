@@ -1,66 +1,105 @@
 Bring your own account (BYOA)
 =============================
 
-Bring Your Own Account (BYOA) is an optional setup feature that gives customers using Aiven services more control over their cloud service provider account. 
+Aiven services are usually deployed on Aiven managed infrastructure, using
+Aiven managed security protocols, and backed by Aiven managed storage and backups.
+This provides the most seamless, straight forward, and de-risked approach to deploying
+Aiven services. However, there are cases where this approach is not appropriate, such
+as the need to achieve strict regulatory compliance.
 
-The BYOA setup has a custom pricing structure that is calculated case by case. 
+In cases like these, Aiven offers customers the ability to instead BYOA (Bring
+Your Own Account).  BYOA allows customers to manage their own infrastructure,
+their own security posture and keep their data in their own cloud.
 
-For a cost estimate, please contact Sales@Aiven.io.
+When to consider bringing your own account
+------------------------------------------
 
-What is BYOA?
--------------
+There are three major reasons to utilize BYOA:
 
-It means that you can get your services through Aiven, but use your existing Cloud Provider account to purchase them.
+1. **Compliance**: Aiven offers managed environments for several standard compliance regulations such as HIPAA, PCI DSS and GDPR. However, if you have strict regulatory requirements, or special compliance requirements, BYOA may be the best option for you.
+2. **Network auditing**: If you require visibility of all traffic within any VPC you operate in or need frequent auditing capabilities, BYOA is potentially a good fit. BYOA gives you the ability to audit network metadata but not the actual contents.
+3. **Fine grained network control**: BYOA requires only some specific network access (e.g. service management and troubleshooting), otherwise allowing you to customize your network to meet any internal requirements or requirements of your customers.
 
-With BYOA, you use the Aiven Console or CLI to manage your services and generally have the same user experience as with the regular Aiven service model. At the same time, you also receive and can apply any bonuses accruing to your existing account with the cloud provider.
+Who is eligible?
+----------------
 
-Note that with BYOA, you receive two separate monthly invoices, one from Aiven for their managed services and another from the cloud service provider for the cloud infrastructure costs. 
+The BYOA setup is a bespoke service offered on a case-by-case basis, and not
+all cloud providers support it yet. Therefore customers must meet the following
+requirements:
 
-Who is eligible for BYOA?
--------------------------
-
-The BYOA setup always requires custom work, and not all cloud providers support it yet. Therefore Aiven has set two prerequisites for customers to be eligible:
-
-- Customers must use Amazon Web Services (AWS), Google Cloud Platform (GCP) or Microsoft Azure* accounts (BYOA is not available for others)
-- The customer's total monthly spend is over $5000
+- Use a cloud that supports these features: Amazon Web Services (AWS), Google Cloud Platform (GCP), or Microsoft Azure*
+- Total monthly spend is greater than $5,000
+- An active Enterprise Support contract
 
 *\*Excluding Azure Germany*
 
-Why should you use the BYOA model?
-----------------------------------
+When to use a standard Aiven deployment
+---------------------------------------
 
-Some companies have data processing limitations that require them to use virtual machines actually owned by them. In this case, the use of normal Aiven services is not possible, because VMs run under Aiven. The BYOA gets around this, because the VMs do not fall under Aiven's ownership in any way.
+BYOA deployments are not automated and they add additional complexity for communicating
+to the Aiven control plane, service management, key management and security.
 
-And as already mentioned, BYOA lets you apply any bonuses, discounts or free credits accruing to your existing account to your Aiven-managed services. 
+In most cases customers can meet their regulatory and business requirements by utilizing
+a standard Aiven deployment or Enhanced Compliance Environment. In fact, 99% of Aiven
+customers are able to meet their requirements without BYOA. If you would like to understand
+BYOA better or are unsure which deployment model is the best fit for you, please contact our sales department Sales@Aiven.io.
 
-(Apart from said discounts, cost savings are not typically achieved with BYOA. In the BYOA model, you pay less for the Aiven managed service costs, but you still have to pay the cloud service provider. This means that the total costs of the BYOA setup may not be lower (and may even be higher) than Aiven’s regular offering, where Aiven handles the cloud infrastructure costs.)
+Pricing and billing
+-------------------
 
-Cost breakdown of the BYOA model
+Unlike Aiven's standard all-inclusive pricing, the BYOA setup has custom
+pricing depending on the nature of your requirements. Customers entering this
+arrangement are responsible for all cloud infrastructure and network traffic
+charges.
+
+.. Note:: Customers receive two separate monthly invoices, one from Aiven for their managed services and another from the cloud service provider for the cloud infrastructure costs. This enables you to use any cloud commit you may have and potentially leverage CUDs in certain cases.
+
+For a cost estimate and analysis, please contact Sales@Aiven.io.
+
+Architecture of BYOA deployments
 --------------------------------
 
-Since the creation of each BYOA setup requires a significant amount of development work, Aiven charges a one-time fee for BYOA setup work. This fee is defined on a case by case basis.
+With BYOA, you can use any standard Aiven method (e.g. :doc:`CLI </docs/tools/cli>`, :doc:`Terraform </docs/tools/terraform/index>`) to manage your services and generally have the same user experience as with the regular Aiven deployment model.
 
-Each month, Aiven charges a monthly BYOA fee for computing resources and Aiven services. 
+BYOA standard
+'''''''''''''
 
-Remember that in BYOA, Aiven does not invoice for the cloud service. As a BYOA customer, you pay for the cloud computing resources you are using directly through your cloud provider portal. 
+.. image:: /images/platform/byoa-standard.png
+   :alt: Overview architecture diagram with VPC set up
 
-All BYOA discounts are evaluated case by case. If your company fulfills the requirements specified earlier, contact Sales@Aiven.io for more information and cost estimations of the full setup.
+A standard BYOA deployment requires the customer to create a Virtual Private Cloud (VPC)
+dedicated to Aiven services within each region they want to operate. Aiven will access these
+VPCs via a static IP address and then route traffic through a proxy for additional security.
+In order to accomplish this, Aiven will utilize a bastion host, logically separated from the
+Aiven services a customer deploys. As the user of these services (e.g. Aiven for Apache Kafka®),
+you will be able to utilize them through standard VPC peering techniques. Although the bastion
+host and the service nodes will reside in a customer managed VPC, they will not be accessible
+(e.g. SSH) to anyone outside of Aiven.
 
-Testing, POC, and deployments
------------------------------
+Depending on the service being used, Aiven will take regular backups to enable forking,
+Point in Time Recovery (PITR) and disaster recovery. These backups by default will not
+reside in the customer’s cloud account. If there is a requirement to have all backups
+in your own account we can do this as well. Aiven will need object storage and permissions
+to read and write in order to accomplish this. Please bear in mind that all backups are
+encrypted using Aiven managed keys and that the customer will be responsible for managing
+object storage configurations.
 
-BYOA requires setup on your cloud account as well as Aiven's automation. Coordinating this process takes time so we recommend allocating sufficient time for anyone considering using the BYOA deployment model.
+BYOA with IPsec ingress
+'''''''''''''''''''''''
 
-- Functionality Testing and Security Validation
+.. image:: /images/platform/byoa-ipsec-ingress.png
+   :alt: Overview architecture diagram with IPsec tunnel
 
-  - Ensure the technical feasibility of the Aiven platform
-  - Perform all needed technical and security audits of the proposed solution
+A slight variation on a standard BYOA deployment enables Aiven to manage a customer's
+services through an IPsec tunnel. This deployment can be beneficial if management over
+the public internet is infeasible or adds additional complexity.
 
-- Deploy and Configure the BYOA Environment
+BYOA with direct IPsec ingress
+''''''''''''''''''''''''''''''
 
-  - Ensure that you have DevOps resources available to iterate and debug any networking issues
-  - This can potentially be done in parallel with phase #1
+.. image:: /images/platform/byoa-ipsec-ingress-direct.png
+   :alt: Overview architecture diagram with direct IPsec access
 
-- Onboarding and Migrations
-
-  - Aiven will be available for support while teams migrate workloads onto the new platform
+Again a slight variation on a standard BYOA deployment enables Aiven to manage a customer's
+services through a direct IPsec tunnel. This deployment can be beneficial if there is a
+desire to reduce the number of Aiven managed components.

@@ -1,4 +1,4 @@
-145
+152
 ACL
 ACLs
 Aiven
@@ -64,6 +64,7 @@ hypertables
 InfluxDB
 Instana
 io
+IPsec
 Java
 Kaggle
 Kafdrop
@@ -118,6 +119,8 @@ Redis
 Redli
 refcard
 reindexing
+reStructuredText
+rsyslog
 Sakila
 schemaless
 scriptable
@@ -125,13 +128,16 @@ sharding
 signups
 Singlestat
 Snowflake
+Sphinx
 Splunk
 spring
+Sql
 Stackdriver
 Statusmap
 Stunnel
 subnet
 subtab
+syslog
 TaskManager
 Telegraf
 Terraform

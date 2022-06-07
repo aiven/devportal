@@ -24,6 +24,8 @@ swap:
   hashicorp: HashiCorp          # case - note the C in the middle
   "OpenSearch dashboards": "OpenSearch Dashboards"
   "google cloud storage": "Google Cloud Storage"
+  datadog: Datadog # Case
+  DataDog: Datadog # Case, no extra D
 
   # Enforcing the correct case usage
   aiven: Aiven
