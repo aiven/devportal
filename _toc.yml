@@ -408,6 +408,8 @@ entries:
           - file: docs/products/opensearch/concepts/indices
           - file: docs/products/opensearch/concepts/aggregations
           - file: docs/products/opensearch/concepts/opensearch-vs-elasticsearch
+          - file: docs/products/opensearch/concepts/shards-number
+          - file: docs/products/opensearch/concepts/when-create-index
       - file: docs/products/opensearch/howto
         title: HowTo
         entries:
