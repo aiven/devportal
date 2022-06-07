@@ -1,7 +1,7 @@
 Low disk space watermarks
 ==========================
 
-OpenSearch relies on three indicators to identify and respond to low disk space.
+OpenSearch® relies on three indicators to identify and respond to low disk space.
 
 Disk allocation low watermark
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
