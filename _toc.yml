@@ -449,6 +449,7 @@ entries:
             title: Advanced parameters
           - file: docs/products/opensearch/reference/index-replication
           - file: docs/products/opensearch/reference/restapi-limited-access
+          - file: docs/products/opensearch/reference/low-space-watermarks
 
   - file: docs/products/m3db/index
     title: M3DB
