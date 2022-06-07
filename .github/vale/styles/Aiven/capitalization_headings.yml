@@ -43,6 +43,7 @@ exceptions:
   - Kafka
   - Karapace
   - Kpow
+  - ksqlDB
   - Kubernetes
   - M3
   - LogDNA
