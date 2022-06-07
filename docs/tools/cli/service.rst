@@ -612,9 +612,9 @@ Updates the settings for an Aiven service.
     - Power on the service
   * - ``--power-off``
     - Power off the service
-  * - ``--mainenance-dow``
+  * - ``--maintenance-dow``
     - Set the automatic maintenance window's day of the week (possible values ``monday``, ``tuesday``, ``wednesday``, ``thursday``, ``friday``, ``saturday``, ``sunday``, ``never``)
-  * - ``--mainenance-time``
+  * - ``--maintenance-time``
     - Set the automatic maintenance window's start time (``HH:MM:SS``)
   * - ``--enable-termination-protection``
     - Enable termination protection
