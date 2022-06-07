@@ -21,13 +21,10 @@ To setup a MongoDB sink connector, you need an Aiven for Apache Kafka service :d
 
 Furthermore you need to collect the following information about the target MongoDB database upfront:
 
-* ``MONGODB_CONNECTION_URI``: The MongoDB database connection URL in the format ``mongodb://USERNAME:PASSWORD@HOST:PORT`` where:
-    
-  * ``USERNAME``: The database username to connect
-  * ``PASSWORD``: The password for the username selected
-  * ``HOST``: the MongoDB hostname
-  * ``PORT``: the MongoDB port
-
+* ``MONGODB_USERNAME``: The database username to connect
+* ``MONGODB_PASSWORD``: The password for the username selected
+* ``MONGODB_HOST``: the MongoDB hostname
+* ``MONGODB_PORT``: the MongoDB port
 * ``MONGODB_DATABASE_NAME``: The name of the MongoDB database
 * ``TOPIC_LIST``: The list of topics to sink divided by comma
 * ``KCQL_TRANSFORMATION``: The KCQL syntax to parse the topic data, should be in the format:
@@ -70,7 +67,7 @@ Define the connector configurations in a file (we'll refer to it with the name `
         "name":"CONNECTOR_NAME",
         "connector.class": "com.datamountaineer.streamreactor.connect.mongodb.sink.MongoSinkConnector",
         "topics": "TOPIC_LIST",
-        "connect.mongo.connection": "MONGODB_CONNECTION_URI",
+        "connect.mongo.connection": "mongodb://MONGODB_USERNAME:MONGODB_PASSWORD@MONGODB_HOST:MONGODB_PORT",
         "connect.mongo.db": "MONGODB_DATABASE_NAME",
         "connect.mongo.kcql": "KCQL_TRANSFORMATION",
         "key.converter": "io.confluent.connect.avro.AvroConverter",
