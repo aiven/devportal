@@ -119,6 +119,7 @@ Redis
 Redli
 refcard
 reindexing
+reStructuredText
 rsyslog
 Sakila
 schemaless
@@ -127,6 +128,7 @@ sharding
 signups
 Singlestat
 Snowflake
+Sphinx
 Splunk
 spring
 Sql

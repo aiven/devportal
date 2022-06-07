@@ -129,6 +129,10 @@ entries:
       - file: docs/products/kafka/howto
         title: HowTo
         entries:
+          - file: docs/products/kafka/howto/list-code-samples
+            entries:
+              - file: docs/products/kafka/howto/connect-with-python
+                title: Connect with Python
           - file: docs/products/kafka/howto/list-tools
             title: Tools
             entries:
@@ -154,8 +158,6 @@ entries:
               - file: docs/products/kafka/howto/configure-log-cleaner
               - file: docs/products/kafka/howto/prevent-full-disks
               - file: docs/products/kafka/howto/use-zookeeper
-          
-
           - file: docs/products/kafka/howto/list-integration
             title: Integrations
             entries:
@@ -289,6 +291,8 @@ entries:
               - file: docs/products/postgresql/howto/use-dblink-extension
               - file: docs/products/postgresql/howto/enable-jit
               - file: docs/products/postgresql/howto/repair-pg-index
+              - file: docs/products/postgresql/howto/identify-pg-slow-queries
+              - file: docs/products/postgresql/howto/optimize-pg-slow-queries
               - file: docs/products/postgresql/howto/check-avoid-transaction-id-wraparound
               - file: docs/products/postgresql/howto/prevent-full-disk
           - file: docs/products/postgresql/howto/list-replication-migration
@@ -404,6 +408,8 @@ entries:
           - file: docs/products/opensearch/concepts/indices
           - file: docs/products/opensearch/concepts/aggregations
           - file: docs/products/opensearch/concepts/opensearch-vs-elasticsearch
+          - file: docs/products/opensearch/concepts/shards-number
+          - file: docs/products/opensearch/concepts/when-create-index
       - file: docs/products/opensearch/howto
         title: HowTo
         entries:
@@ -549,9 +555,16 @@ entries:
         title: Reference
         entries:
           - file: docs/products/grafana/reference/advanced-params
-            title: Advanced paramters
+            title: Advanced parameters
           - file: docs/products/grafana/reference/plugins
             title: Plugins
 
   # -------- AUXILIARY
   - file: docs/community
+    title: Community
+    entries:
+    - file: docs/community/documentation/index
+      entries:
+      - glob: docs/community/documentation/tips-tricks/*
+        title: Tips & Tricks
+
