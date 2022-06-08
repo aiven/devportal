@@ -1,5 +1,5 @@
 Apache Kafka® as source and sink for Apache Flink® job
-====================================================
+======================================================
 
 This example shows how to set up an Aiven for Apache Kafka with an Aiven for Apache Flink integration using the `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_.
 An Apache Kafka source topic is used as a data source, and Apache Flink processes the data to do filtering or transformation, and finally write the transformed output to a different target topic.
@@ -75,10 +75,12 @@ The following Terraform script stands up both Apache Kafka and Apache Flink serv
     table_name     = "source_table"
     kafka_topic    = aiven_kafka_topic.source.topic_name
     schema_sql = <<EOF
-      `cpu` INT,
-      `node` INT,
-      `occurred_at` TIMESTAMP(3) METADATA FROM 'timestamp',
-      WATERMARK FOR `occurred_at` AS `occurred_at` - INTERVAL '5' SECOND
+      hostname STRING,
+      cpu STRING,
+      usage DOUBLE,
+      occurred_at BIGINT,
+      time_ltz AS TO_TIMESTAMP_LTZ(occurred_at, 3),
+      WATERMARK FOR time_ltz AS time_ltz - INTERVAL '10' SECOND
     EOF
   }
 
@@ -89,9 +91,10 @@ The following Terraform script stands up both Apache Kafka and Apache Flink serv
     table_name     = "sink_table"
     kafka_topic    = aiven_kafka_topic.sink.topic_name
     schema_sql     = <<EOF
-      `cpu` INT,
-      `node` INT,
-      `occurred_at` TIMESTAMP(3)
+      time_ltz TIMESTAMP(3),
+      hostname STRING,
+      cpu STRING,
+      usage DOUBLE
     EOF
   }
 
@@ -105,8 +108,13 @@ The following Terraform script stands up both Apache Kafka and Apache Flink serv
     ]
     statement = <<EOF
       INSERT INTO ${aiven_flink_table.sink.table_name}
-      SELECT * FROM ${aiven_flink_table.source.table_name}
-      WHERE `cpu` > 70
+      SELECT
+        time_ltz,
+        hostname,
+        cpu,
+        usage
+      FROM ${aiven_flink_table.source.table_name}
+      WHERE usage > 70
     EOF
   }
 
@@ -114,8 +122,10 @@ The resource ``"aiven_flink"`` creates an Aiven for Apache Flink resource with t
 ``"aiven_kafka"`` resource creates an Apache Kafka cluster and two Apache Kafka topics (**source** and a **sink**) are created using the ``"aiven_kafka_topic"`` resource.
 Similarly, the ``"aiven_service_integration"`` resource creates the integration between Apache Kafka and the Apache Flink service. Two ``"aiven_flink_table"``
 resources are created - a **source** and a **sink** with a specified schema. Once the Terraform script is run, an Apache Flink job is started that copies data from the **source** Flink table to the **sink** Flink 
-table where the ``cpu`` threshold is over a certain limit. The data originates at the resource ``"aiven_kafka_topic"`` called **source** and the processed data is put into another resource ``"aiven_kafka_topic"`` 
+table where the ``usage`` threshold is over a certain limit. The data originates at the resource ``"aiven_kafka_topic"`` called **source** and the processed data is put into another resource ``"aiven_kafka_topic"`` 
 called **sink**.
+
+To test the data streaming pipeline, you can use the `fake data producer for Apache Kafka on Docker <https://github.com/aiven/fake-data-producer-for-apache-kafka-docker>`_ making sure that in the ``conf/env.conf`` file you specify ``TOPIC="source-topic"`` (same topic name defined in the resource ``"aiven_kafka_topic"``) and ``SUBJECT="metric"`` together with the appropriate project name, service name and required credentials.
 
 More resources
 --------------
