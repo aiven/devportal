@@ -25,8 +25,8 @@ Before looking at the Terraform script, let's visually realize how the services 
 
 If you relate the above diagram to the following example, both source and target Apache Kafka topics are part of the same Apache Kafka cluster.
 
-Imagine that you are collecting CPU usages for hundreds of machines in your data centre and these metrics are populated in an Apache Kafka topic called **source**. But you're interested to learn about those machines with CPU usages higher than 85%.
-For this, you'd like to run an Apache Flink job and write the filtered messaged into a topic called **sink**. The following Terraform script stands up both Apache Kafka and Apache Flink services, creates the service integration, source and target Apache Kafka topics, an Apache Flink job and two Apache Flink tables. 
+Imagine that you are collecting CPU usage for hundreds of machines in your data centre and these metrics are populated in an Apache Kafka topic called **source_topic**. But you're interested in learning about those machines with CPU usages higher than 85%.
+For this, you'd like to run an Apache Flink job and write the filtered messages into a topic called **sink_topic**. The following Terraform script stands up both Apache Kafka and Apache Flink services, creates the service integration, source and target Apache Kafka topics, an Apache Flink job, and two Apache Flink tables. 
 
 ``services.tf`` file:
 
