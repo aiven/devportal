@@ -186,7 +186,7 @@ main > .content p:not(.card-text) a:not(.btn) {
     width: 80%;
     margin: 24px auto 10px;
     padding-top: 5px;
-    background-image: url('../../_static/images/logoDark.png') !important;
+    background-image: url('../../_static/images/logoCrabbyDark-pride.svg') !important;
     background-position: center;
     background-repeat: no-repeat;
     background-size: 150px;
@@ -196,7 +196,7 @@ main > .content p:not(.card-text) a:not(.btn) {
     height: 40px;
     width: 150px;
     padding-top: 5px;
-    background-image: url('../../_static/images/logoDark.png') !important;
+    background-image: url('../../_static/images/logoCrabbyDark-pride.svg') !important;
     background-position: center;
     background-repeat: no-repeat;
     background-size: 120px;
@@ -418,7 +418,7 @@ h3 > code > .pre {
   width: 80%;
   margin: 24px auto 10px;
   padding-top: 5px;
-  background-image: url('../../_static/images/logoLight.png');
+  background-image: url('../../_static/images/logoCrabbyLight-pride.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: 150px;
@@ -428,7 +428,7 @@ h3 > code > .pre {
   height: 40px;
   width: 150px;
   padding-top: 5px;
-  background-image: url(../../_static/images/logoLight.png) !important;
+  background-image: url(../../_static/images/logoCrabbyLight-pride.svg) !important;
   background-position: center;
   background-repeat: no-repeat;
   background-size: 120px;
