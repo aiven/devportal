@@ -2,7 +2,7 @@ Apache Kafka® as source and sink for Apache Flink® job
 ======================================================
 
 This example shows how to set up an Aiven for Apache Kafka with an Aiven for Apache Flink integration using the `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_.
-An Apache Kafka source topic is used as a data source, and Apache Flink processes the data to do filtering or transformation, and finally write the transformed output to a different target topic.
+An Apache Kafka source topic is used as a data source, and Apache Flink processes the data to do filtering or transformation, and finally write the transformed output to a sink topic.
 
 Let's cook!
 -----------
@@ -20,7 +20,7 @@ Before looking at the Terraform script, let's visually realize how the services 
       FlinkSourceTable-->|Filter/Transform|FlinkTargetTable
       end
       subgraph Apache Kafka
-      FlinkTargetTable-->|FlinkJob|TargetTopic
+      FlinkTargetTable-->|FlinkJob|SinkTopic
       end
 
 If you relate the above diagram to the following example, both source and target Apache Kafka topics are part of the same Apache Kafka cluster.
@@ -120,7 +120,7 @@ For this, you'd like to run an Apache Flink job and write the filtered messages 
   }
 
 The resource ``"aiven_flink"`` creates an Aiven for Apache Flink resource with the project name, choice of cloud, an Aiven service plan, and a specified service name. 
-``"aiven_kafka"`` resource creates an Apache Kafka cluster and two Apache Kafka topics (**source** and a **sink**) are created using the ``"aiven_kafka_topic"`` resource.
+``"aiven_kafka"`` resource creates an Apache Kafka cluster and two Apache Kafka topics (**sourc_topice** and a **sink_topic**) are created using the ``"aiven_kafka_topic"`` resource.
 Similarly, the ``"aiven_service_integration"`` resource creates the integration between Apache Kafka and the Apache Flink service. Two ``"aiven_flink_table"``
 resources are created - a **source** and a **sink** with a specified schema. Once the Terraform script is run, an Apache Flink job is started that copies data from the **source** Flink table to the **sink** Flink 
 table where the ``usage`` threshold is over a certain limit. The data originates at the resource ``"aiven_kafka_topic"`` called **source** and the processed data is put into another resource ``"aiven_kafka_topic"`` 
