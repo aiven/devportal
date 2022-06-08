@@ -1,5 +1,5 @@
-How to pause or terminate your service
-======================================
+Pause or terminate your service
+===============================
 
 One of the nice things about cloud services is that they can be created and destroyed easily, or just paused while you aren't using them so that you aren't being charged (or using up your trial credits).
 

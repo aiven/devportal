@@ -1,5 +1,5 @@
-﻿Create a new Aiven service
-==========================
+﻿Create a new service
+====================
 
 You can add services for the various Aiven products in the Aiven web console.
 
