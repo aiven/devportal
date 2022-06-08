@@ -25,7 +25,8 @@ Before looking at the Terraform script, let's visually realize how the services 
 
 If you relate the above diagram to the following example, both source and target Apache Kafka topics are part of the same Apache Kafka cluster.
 
-The following Terraform script stands up both Apache Kafka and Apache Flink services, creates the service integration, source and target Apache Kafka topics, an Apache Flink job and two Apache Flink tables. 
+Imagine that you are collecting CPU usages for hundreds of machines in your data centre and these metrics are populated in an Apache Kafka topic called **source**. But you're interested to learn about those machines with CPU usages higher than 85%.
+For this, you'd like to run an Apache Flink job and write the filtered messaged into a topic called **sink**. The following Terraform script stands up both Apache Kafka and Apache Flink services, creates the service integration, source and target Apache Kafka topics, an Apache Flink job and two Apache Flink tables. 
 
 ``services.tf`` file:
 
@@ -114,7 +115,7 @@ The following Terraform script stands up both Apache Kafka and Apache Flink serv
         cpu,
         usage
       FROM ${aiven_flink_table.source.table_name}
-      WHERE usage > 70
+      WHERE usage > 85
     EOF
   }
 
@@ -125,7 +126,8 @@ resources are created - a **source** and a **sink** with a specified schema. Onc
 table where the ``usage`` threshold is over a certain limit. The data originates at the resource ``"aiven_kafka_topic"`` called **source** and the processed data is put into another resource ``"aiven_kafka_topic"`` 
 called **sink**.
 
-To test the data streaming pipeline, you can use the `fake data producer for Apache Kafka on Docker <https://github.com/aiven/fake-data-producer-for-apache-kafka-docker>`_ making sure that in the ``conf/env.conf`` file you specify ``TOPIC="source-topic"`` (same topic name defined in the resource ``"aiven_kafka_topic" "source"``) and ``SUBJECT="metric"`` together with the appropriate project name, service name and required credentials. In the destination topic, defined in the resource ``"aiven_kafka_topic" "sink"``, you should see only data samples having ``usage`` above 70.
+To test the data streaming pipeline, you can use the `fake data producer for Apache Kafka on Docker <https://github.com/aiven/fake-data-producer-for-apache-kafka-docker>`_ making sure that in the ``conf/env.conf`` file you specify ``TOPIC="source-topic"`` (same topic name defined in the resource ``"aiven_kafka_topic" "source"``) and ``SUBJECT="metric"`` together with the appropriate project name, service name and required credentials.
+In the destination topic, defined in the resource ``"aiven_kafka_topic" "sink"``, you should see only data samples having ``usage`` above 85. A note that the fake data generates CPU usages higher than 70.
 
 More resources
 --------------
