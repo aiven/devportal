@@ -1,5 +1,5 @@
-Scaling services
-================
+Scale your service
+==================
 
 When creating a new Aiven service, you are not tied to a plan. Your services can be adjusted to better match your needs. Services can be moved to a higher or lower plan, and to a different tier—Startup, Business or Premium.
 
