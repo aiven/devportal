@@ -11,15 +11,17 @@ const pageSize = 10;
  * https://developers.cloudflare.com/pages/platform/functions/#writing-your-first-function
  */
 
-export async function onRequestGet({ params }) {
+export async function onRequestGet({ context }) {
   try {
-    const query = params.query;
+    const url = new URL(context.request.url);
+    const page = url.searchParams.get('page');
+    const query = url.searchParams.get('query');
     let currentPage = 1;
-    if (params.page) {
+    if (page) {
       try {
-        currentPage = Math.max(1, parseInt(params.page, 10));
+        currentPage = Math.max(1, parseInt(page, 10));
       } catch (e) {
-        console.warn(`Invalid page ${params.page} provided`);
+        console.warn(`Invalid page ${page} provided`);
       }
     }
 
