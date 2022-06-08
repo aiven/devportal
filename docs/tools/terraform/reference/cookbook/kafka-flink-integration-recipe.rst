@@ -125,7 +125,7 @@ resources are created - a **source** and a **sink** with a specified schema. Onc
 table where the ``usage`` threshold is over a certain limit. The data originates at the resource ``"aiven_kafka_topic"`` called **source** and the processed data is put into another resource ``"aiven_kafka_topic"`` 
 called **sink**.
 
-To test the data streaming pipeline, you can use the `fake data producer for Apache Kafka on Docker <https://github.com/aiven/fake-data-producer-for-apache-kafka-docker>`_ making sure that in the ``conf/env.conf`` file you specify ``TOPIC="source-topic"`` (same topic name defined in the resource ``"aiven_kafka_topic"``) and ``SUBJECT="metric"`` together with the appropriate project name, service name and required credentials.
+To test the data streaming pipeline, you can use the `fake data producer for Apache Kafka on Docker <https://github.com/aiven/fake-data-producer-for-apache-kafka-docker>`_ making sure that in the ``conf/env.conf`` file you specify ``TOPIC="source-topic"`` (same topic name defined in the resource ``"aiven_kafka_topic" "source"``) and ``SUBJECT="metric"`` together with the appropriate project name, service name and required credentials. In the destination topic, defined in the resource ``"aiven_kafka_topic" "sink"``, you should see only data samples having ``usage`` above 70.
 
 More resources
 --------------
