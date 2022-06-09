@@ -68,8 +68,8 @@ You can run Provectus® UI for Apache Kafka® in a Docker/Podman container with 
 ::
 
     docker run -p 8080:8080 \
-        -v SSL_STORE_FOLDER/TRUSTSTORE_FILE_NAME:/client.truststore.jks \
-        -v SSL_STORE_FOLDER/KEYSTORE_FILE_NAME:/client.keystore.p12 \
+        -v SSL_STORE_FOLDER/TRUSTSTORE_FILE_NAME:/client.truststore.jks:ro \
+        -v SSL_STORE_FOLDER/KEYSTORE_FILE_NAME:/client.keystore.p12:ro \
         -e KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS=APACHE_KAFKA_HOST:APACHE_KAFKA_PORT \
         -e KAFKA_CLUSTERS_0_PROPERTIES_SECURITY_PROTOCOL=SSL \
         -e KAFKA_CLUSTERS_0_PROPERTIES_SSL_TRUSTSTORE_LOCATION=/client.truststore.jks \
