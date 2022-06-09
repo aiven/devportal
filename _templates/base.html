@@ -6,6 +6,7 @@
 
 <link rel="canonical" href="https://developer.aiven.io/{% if '{}'.format(pagename).split('/')[-1] == 'index' %}{{ pagename | replace('/index','') }}{% else %}{{ pagename }}{% endif %}" />
 <!-- The replace('/index/','') was done to make google happy with index page canonicals -->
+<!-- The '{}'.format(pagename).split('/')[-1] == 'index'  extracts the page name from the full page url and checks if the name matches 'index' -->
 
 
 <meta name="description" content="{{ body|striptags|replace("\u00B6", '')|truncate(160) }}">
