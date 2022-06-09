@@ -3,7 +3,11 @@
 {%- block extrahead %}
 {{ super() }}
 
-<link rel="canonical" href="https://developer.aiven.io/{{ pagename }}" />
+
+<link rel="canonical" href="https://developer.aiven.io/{% if '{}'.format(pagename).split('/')[-1] == 'index' %}{{ pagename | replace('/index','') }}{% else %}{{ pagename }}{% endif %}" />
+<!-- The replace('/index/','') was done to make google happy with index page canonicals -->
+
+
 <meta name="description" content="{{ body|striptags|replace("\u00B6", '')|truncate(160) }}">
 
 <!-- Twitter Cards -->
