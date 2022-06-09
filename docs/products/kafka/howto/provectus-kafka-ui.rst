@@ -12,11 +12,9 @@ Furthermore, you need to collect the following information:
 
 * ``APACHE_KAFKA_HOST``: The Aiven for Apache Kafka hostname
 * ``APACHE_KAFKA_PORT``: The Aiven for Apache Kafka port
-* ``KEYSTORE_FILE_NAME``: The name of the Java keystore containing the Aiven for Apache Kafka SSL certificates
-* ``TRUSTSTORE_FILE_NAME``: The name of the Java truststore containing the Aiven for Apache Kafka SSL certificates
+* ``SSL_KEYSTORE_FILE_NAME``: The name of the Java keystore containing the Aiven for Apache Kafka SSL certificates
+* ``SSL_TRUSTSTORE_FILE_NAME``: The name of the Java truststore containing the Aiven for Apache Kafka SSL certificates
 * ``SSL_KEYSTORE_PASSWORD``: The password used to secure the Java keystore
-* ``SSL_KEY_PASSWORD``: The password used to secure the Java key
-* ``SSL_TRUSTSTORE_LOCATION``: The password used to secure the Java truststore
 * ``SSL_TRUSTSTORE_PASSWORD``: The password used to secure the Java truststore
 * ``SSL_STORE_FOLDER``: The absolute path of the folder containing both the truststore and keystore
 
@@ -32,24 +30,20 @@ Since container for Provectus® UI for Apache Kafka® uses non-root user, to avo
 
 1. Create separate directory for secrets::
 
-    mkdir kafka-secrets
-
+    mkdir SSL_STORE_FOLDER
 
 2. Restrict the directory to current user::
 
-    chmod 700 kafka-secrets
+    chmod 700 SSL_STORE_FOLDER
 
-3. Copy secrets there (replace the ``KEYSTORE_FILE_NAME`` and ``TRUSTSTORE_FILE_NAME`` with the keystores and truststores file names)::
+3. Copy secrets there (replace the ``SSL_KEYSTORE_FILE_NAME`` and ``SSL_TRUSTSTORE_FILE_NAME`` with the keystores and truststores file names)::
 
-    cp KEYSTORE_FILE_NAME TRUSTSTORE_FILE_NAME kafka-secrets
+    cp SSL_KEYSTORE_FILE_NAME SSL_TRUSTSTORE_FILE_NAME SSL_STORE_FOLDER
 
 4. Give read permissions for secret files for everyone::
 
-    chmod +r kafka-secrets/*
+    chmod +r SSL_STORE_FOLDER/*
 
-5. Change the directory::
-
-    cd kafka-secrets
 
 Execute Provectus® UI for Apache Kafka® on Docker or Podman
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -59,23 +53,23 @@ You can run Provectus® UI for Apache Kafka® in a Docker/Podman container with 
 * ``APACHE_KAFKA_HOST``
 * ``APACHE_KAFKA_PORT`` 
 * ``SSL_STORE_FOLDER``
-* ``KEYSTORE_FILE_NAME``
-* ``KEYSTORE_PWD``
-* ``TRUSTSTORE_FILE_NAME``
-* ``TRUSTSTORE_PWD``
+* ``SSL_KEYSTORE_FILE_NAME``
+* ``SSL_KEYSTORE_PASSWORD``
+* ``SSL_TRUSTSTORE_FILE_NAME``
+* ``SSL_TRUSTSTORE_PASSWORD``
 
 
 ::
 
     docker run -p 8080:8080 \
-        -v SSL_STORE_FOLDER/TRUSTSTORE_FILE_NAME:/client.truststore.jks:ro \
-        -v SSL_STORE_FOLDER/KEYSTORE_FILE_NAME:/client.keystore.p12:ro \
+        -v SSL_STORE_FOLDER/SSL_TRUSTSTORE_FILE_NAME:/client.truststore.jks:ro \
+        -v SSL_STORE_FOLDER/SSL_KEYSTORE_FILE_NAME:/client.keystore.p12:ro \
         -e KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS=APACHE_KAFKA_HOST:APACHE_KAFKA_PORT \
         -e KAFKA_CLUSTERS_0_PROPERTIES_SECURITY_PROTOCOL=SSL \
         -e KAFKA_CLUSTERS_0_PROPERTIES_SSL_TRUSTSTORE_LOCATION=/client.truststore.jks \
-        -e KAFKA_CLUSTERS_0_PROPERTIES_SSL_TRUSTSTORE_PASSWORD=TRUSTSTORE_PWD \
+        -e KAFKA_CLUSTERS_0_PROPERTIES_SSL_TRUSTSTORE_PASSWORD=SSL_TRUSTSTORE_PASSWORD \
         -e KAFKA_CLUSTERS_0_PROPERTIES_SSL_KEYSTORE_LOCATION=/client.keystore.p12 \
-        -e KAFKA_CLUSTERS_0_PROPERTIES_SSL_KEYSTORE_PASSWORD=KEYSTORE_PWD \
+        -e KAFKA_CLUSTERS_0_PROPERTIES_SSL_KEYSTORE_PASSWORD=SSL_KEYSTORE_PASSWORD \
         -e KAFKA_CLUSTERS_0_PROPERTIES_SSL_KEYSTORE_TYPE=PKCS12 \
         -d provectuslabs/kafka-ui:latest
 
