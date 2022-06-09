@@ -55,7 +55,7 @@ mermaid_output_format = "raw"
 
 mermaid_params = [
     "--theme",
-    "neutral",
+    "dark",
     "--width",
     "600",
     "--backgroundColor",
