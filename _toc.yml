@@ -120,6 +120,8 @@ entries:
               title: Apache Kafka and OpenSearch
             - file: docs/tools/terraform/reference/cookbook/multicloud-postgresql-recipe
               title: Multicloud PostgreSQL 
+            - file: docs/tools/terraform/reference/cookbook/kafka-karapace-recipe
+              title: Apache Kafka with Karapace  
       - file: docs/tools/kubernetes
         title: Aiven Operator for Kubernetes
 
