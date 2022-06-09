@@ -118,6 +118,8 @@ entries:
             entries:
             - file: docs/tools/terraform/reference/cookbook/kafka-connect-terraform-recipe
               title: Apache Kafka and OpenSearch
+            - file: docs/tools/terraform/reference/cookbook/singlecloud-postgresql-recipe
+              title: Singlecloud PostgreSQL
             - file: docs/tools/terraform/reference/cookbook/multicloud-postgresql-recipe
               title: Multicloud PostgreSQL 
       - file: docs/tools/kubernetes
