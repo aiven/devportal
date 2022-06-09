@@ -16,10 +16,10 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Aiven Developer'
-copyright = '2022, Aiven Team'
-author = 'Aiven Team'
-html_title = 'Aiven'
+project = "Aiven Developer"
+copyright = "2022, Aiven Team"
+author = "Aiven Team"
+html_title = "Aiven"
 
 # -- General configuration ---------------------------------------------------
 
@@ -27,46 +27,65 @@ html_title = 'Aiven'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx_sitemap',
-    'sphinx_panels',
-    'sphinxcontrib.mermaid',
-    'sphinx_external_toc',
-    'sphinx_copybutton',
-    'sphinx_gitstamp',
-    'sphinxext.opengraph',
-    'notfound.extension',
+    "sphinx_sitemap",
+    "sphinx_panels",
+    "sphinxcontrib.mermaid",
+    "sphinx_external_toc",
+    "sphinx_copybutton",
+    "sphinx_gitstamp",
+    "sphinxext.opengraph",
+    "notfound.extension",
 ]
 
 # Not Found configuration
 # see all options at https://sphinx-notfound-page.readthedocs.io/en/latest/configuration.html
-notfound_urls_prefix = ''
+notfound_urls_prefix = ""
 
 # OpenGraph configuration
 # see all options at https://github.com/wpilibsuite/sphinxext-opengraph#options
-ogp_site_url = 'https://developer.aiven.io/'
+ogp_site_url = "https://developer.aiven.io/"
 ogp_description_length = 200
-ogp_image = '/_static/images/site-preview.png'
+ogp_image = "/_static/images/site-preview.png"
 
 # Mermaid version
-mermaid_version = "8.12.0"
+mermaid_version = "9.1.1"
+
+# Generate image
+mermaid_output_format = "raw"
+
+mermaid_params = [
+    "--theme",
+    "neutral",
+    "--width",
+    "600",
+    "--backgroundColor",
+    "white",
+]
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
+templates_path = ["_templates"]
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = [
-    '_build', 'Thumbs.db', '.DS_Store', 'README*', 'scripts', 'utils',
-    'CONTRIBUTING.rst', 'REVIEWING.rst', 'includes',
-    '.github/vale'
+    "_build",
+    "Thumbs.db",
+    ".DS_Store",
+    "README*",
+    "scripts",
+    "utils",
+    "CONTRIBUTING.rst",
+    "REVIEWING.rst",
+    "includes",
+    ".github/vale",
 ]
 
 # gitstamp config
 gitstamp_fmt = "%B %Y"
 
 # sitemap config
-html_baseurl = 'https://developer.aiven.io'
+html_baseurl = "https://developer.aiven.io"
 # Since we have `language='en'` set (further down) the URLs in the sitemap will
 # default to "{version}{lang}{link}", producing things like
 #    <url><loc>https://developer.aiven.io/en/docs/platform/howto/create_authentication_token.html</loc></url>
@@ -78,8 +97,8 @@ sitemap_url_scheme = "{link}"
 # The following pages are known to cause it problems.
 linkcheck_ignore = [
     # Kafka documentation anchors do not seem to be detected. We use the following:
-   'https://kafka.apache.org/documentation/#consumerconfigs_auto.offset.reset',
-    'https://kafka.apache.org/documentation/#design_consumerposition',
+    "https://kafka.apache.org/documentation/#consumerconfigs_auto.offset.reset",
+    "https://kafka.apache.org/documentation/#design_consumerposition",
 ]
 
 # -- Options for HTML output -------------------------------------------------
@@ -87,8 +106,8 @@ linkcheck_ignore = [
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_favicon = './_static/images/favicon.ico'
-html_theme = 'furo'
+html_favicon = "./_static/images/favicon.ico"
+html_theme = "furo"
 html_theme_options = {
     "light_css_variables": {
         "color-brand-primary": "#FF3554",
@@ -125,7 +144,7 @@ html_theme_options = {
         "color-sidebar-background-border": "#e1e1e3",
         "color-sidebar-search-background": "#1c1c2f",
     },
-    "navigation_with_keys": True
+    "navigation_with_keys": True,
 }
 
 pygments_style = "monokai"
@@ -134,9 +153,9 @@ pygments_style = "monokai"
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 language = "en"
-html_extra_path = ['robots.txt']
-html_static_path = ['_static']
-html_css_files = ['css/aiven.css']
+html_extra_path = ["robots.txt"]
+html_static_path = ["_static"]
+html_css_files = ["css/aiven.css"]
 
 # -- Replacements -----------------------------------------------------------
 rst_epilog = """
