@@ -35,6 +35,10 @@ Learn about some of the key concepts for working with Aiven platform:
 
   BYOA is an optional setup feature that allows you to purchase your Aiven services through your existing Cloud Provider.
 
+* :doc:`Enhanced Compliance Environments (ECE) </docs/platform/concepts/enhanced-compliance-env>`.
+
+  Enhanced Compliance Environments are an optional setup feature that allows you to deploy Aiven services within an environment that satisfies compliance beyond those of a standard environment.
+
 * :doc:`Disaster Recovery (DR) testing scenarios </docs/platform/concepts/disaster-recovery-test-scenarios>`.
   
   DR testing scenarios are simulations of disaster scenarios run for enterprise support customers by Aiven operators.
