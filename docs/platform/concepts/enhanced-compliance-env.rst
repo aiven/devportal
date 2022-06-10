@@ -32,7 +32,7 @@ egress networking charges are still covered in an ECE. Customers can still take 
 any applicable marketplaces and spend down their commitment accordingly.
 
 Similarities to a standard environment
-----------------
+------------------------------------------------
 In many ways, an ECE is the same as a standard Aiven deployment. All of Aiven’s tooling
 (:doc:`CLI </docs/tools/cli>`, :doc:`Terraform </docs/tools/terraform/index>`, etc.) interact with ECEs seamlessly, you will still be able to take advantage
 of all of Aiven’s service integrations, and access to the environment can be achieved through
@@ -61,7 +61,7 @@ Azure:
     * Azure VNet ID
 
 What compliances are covered?
-----------------
+--------------------------------
 Although not exhaustive, Aiven is capable of supporting both the Health Insurance Portability and
 Accountability Act (HIPAA) and the Payment Card Industry Data Security Standard (PCI DSS)
 compliances. If you require compliance beyond these please contact our sales department so we
