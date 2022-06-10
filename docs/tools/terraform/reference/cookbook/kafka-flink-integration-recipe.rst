@@ -73,7 +73,7 @@ For this, you'd like to run an Apache Flink job and write the filtered messages 
     project        = var.project_name
     service_name   = aiven_flink.flink.service_name
     integration_id = aiven_service_integration.flink_to_kafka.integration_id
-    table_name     = "source_table"
+    table_name     = "iot_measurements_table"
     kafka_topic    = aiven_kafka_topic.source.topic_name
     schema_sql = <<EOF
       hostname STRING,
@@ -89,7 +89,7 @@ For this, you'd like to run an Apache Flink job and write the filtered messages 
     project        = var.project_name
     service_name   = aiven_flink.flink.service_name
     integration_id = aiven_service_integration.flink_to_kafka.integration_id
-    table_name     = "sink_table"
+    table_name     = "cpu_high_usage_table"
     kafka_topic    = aiven_kafka_topic.sink.topic_name
     schema_sql     = <<EOF
       time_ltz TIMESTAMP(3),
