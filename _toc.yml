@@ -166,6 +166,7 @@ entries:
             title: Administration tasks
             entries:
               - file: docs/products/kafka/howto/best-practices
+              - file: docs/products/kafka/howto/enable-karapace
               - file: docs/products/kafka/howto/configure-with-kafka-cli
               - file: docs/products/kafka/howto/set-kafka-parameters
               - file: docs/products/kafka/howto/viewing-resetting-offset
