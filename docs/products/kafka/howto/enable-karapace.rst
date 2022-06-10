@@ -6,7 +6,7 @@ Karapace is an Aiven-built open source tool that adds quality-of-life improvemen
 Enable Karapace on Aiven for Apache Kafka
 -----------------------------------------
 
-1. Visit the service overview page for the service, and look for the two configuration settings for Karapace.
+1. In the `Aiven Console <https://console.aiven.io/>`_, visit the service overview page for the service, and look for the two configuration settings for Karapace.
 
 2. Enable either or both of the REST API and Schema Registry settings in the web console.
 
