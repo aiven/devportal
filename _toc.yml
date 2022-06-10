@@ -153,6 +153,7 @@ entries:
               - file: docs/products/kafka/howto/kcat
               - file: docs/products/kafka/howto/kafka-conduktor
               - file: docs/products/kafka/howto/kafdrop
+              - file: docs/products/kafka/howto/provectus-kafka-ui
           - file: docs/products/kafka/howto/list-security
             title: Security
             entries:
