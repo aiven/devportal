@@ -35,14 +35,18 @@ Here is the sample Terraform file that will spin up two Apache Kafka services, a
 The service integrations ``source-kafka-to-mm`` and ``mm-to-target-kafka`` connect the Kafka clusters to the MirrorMaker 2 instance. The replication flow ``mm-replication-flow`` creates a unidirectional flow to populate the remote topics based on source 
 topics. The `".*"` wildcard in the MirrorMaker 2 configuration means that all the topics from the source cluster will be replicated to the target cluster. However, since the flow is unidirectional, the ``topic-b`` will only be present in the target cluster and not the source cluster.
 
+.. Tip::
+
+    Be sure to check out the :doc:`getting started guide <../../get-started>` to learn about the common files required to execute the following recipe. For example, you'll need to declare the variables for ``project_name`` and ``api_token``.
+
 ``services.tf`` file:
 
 .. code:: bash
 
    resource "aiven_kafka_mirrormaker" "mm" {
-    project      = data.aiven_project.kafka-mm-project1.project
+    project      = var.project_name
     cloud_name   = "google-europe-west1"
-    plan         = "startup-4"
+    plan         = "business-4"
     service_name = "mm"
 
     kafka_mirrormaker_user_config {
@@ -59,7 +63,7 @@ topics. The `".*"` wildcard in the MirrorMaker 2 configuration means that all th
   }
 
   resource "aiven_service_integration" "source-kafka-to-mm" {
-   project                  = data.aiven_project.kafka-mm-project1.project
+   project                  = var.project_name
    integration_type         = "kafka_mirrormaker"
    source_service_name      = aiven_kafka.source.service_name
    destination_service_name = aiven_kafka_mirrormaker.mm.service_name
@@ -70,7 +74,7 @@ topics. The `".*"` wildcard in the MirrorMaker 2 configuration means that all th
   }
 
   resource "aiven_service_integration" "mm-to-target-kafka" {
-   project                  = data.aiven_project.kafka-mm-project1.project
+   project                  = var.project_name
    integration_type         = "kafka_mirrormaker"
    source_service_name      = aiven_kafka.target.service_name
    destination_service_name = aiven_kafka_mirrormaker.mm.service_name
@@ -81,7 +85,7 @@ topics. The `".*"` wildcard in the MirrorMaker 2 configuration means that all th
   }
 
   resource "aiven_mirrormaker_replication_flow" "mm-replication-flow" {
-   project        = data.aiven_project.kafka-mm-project1.project
+   project        = var.project_name
    service_name   = aiven_kafka_mirrormaker.mm.service_name
    source_cluster = aiven_kafka.source.service_name
    target_cluster = aiven_kafka.target.service_name
@@ -99,7 +103,7 @@ topics. The `".*"` wildcard in the MirrorMaker 2 configuration means that all th
   }
 
   resource "aiven_kafka" "source" {
-   project                 = data.aiven_project.kafka-mm-project1.project
+   project                 = var.project_name
    cloud_name              = "google-europe-west1"
    plan                    = "business-4"
    service_name            = "source"
@@ -116,7 +120,7 @@ topics. The `".*"` wildcard in the MirrorMaker 2 configuration means that all th
   }
 
   resource "aiven_kafka_topic" "source" {
-   project      = data.aiven_project.kafka-mm-project1.project
+   project      = var.project_name
    service_name = aiven_kafka.source.service_name
    topic_name   = "topic-a"
    partitions   = 3
@@ -124,7 +128,7 @@ topics. The `".*"` wildcard in the MirrorMaker 2 configuration means that all th
   }
 
   resource "aiven_kafka" "target" {
-   project                 = data.aiven_project.kafka-mm-project1.project
+   project                 = var.project_name
    cloud_name              = "google-europe-west1"
    plan                    = "business-4"
    service_name            = "target"
@@ -141,7 +145,7 @@ topics. The `".*"` wildcard in the MirrorMaker 2 configuration means that all th
   }
 
   resource "aiven_kafka_topic" "target" {
-   project      = data.aiven_project.kafka-mm-project1.project
+   project      = var.project_name
    service_name = aiven_kafka.target.service_name
    topic_name   = "topic-b"
    partitions   = 3
