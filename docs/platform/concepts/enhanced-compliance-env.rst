@@ -47,6 +47,7 @@ With these differences in mind, Aiven requires the following to provision an Enh
 Environment:
 
 - A CIDR block for all region/environment combinations. For example, if you have a development, QA and production environment and operate in 3 regions in each of those, we will need 9 CIDR blocks.
+
 The necessary peering information to enable the peer from our end. This differs between clouds:
 
 AWS:
