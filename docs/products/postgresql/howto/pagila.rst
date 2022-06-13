@@ -9,24 +9,10 @@ Sakila (and thus, Pagila) is a database representing a DVD rental store (remembe
 
 With all these relational information, Pagila is a perfect fit to play around with PostgreSQL and the SQL language.
 
-Load Pagila via the web console
--------------------------------
+Load Pagila to your Aiven for PostgreSQL service
+------------------------------------------------
 
 Before exploring the Pagila database, follow the :doc:`create new service article<../../../platform/howto/create_new_service>` to spin up a PostgreSQL instance.
-
-With your new PostgreSQL service, you can quickly load the sample dataset by clicking on the "Load sample dataset" button.
-
-.. image:: /images/products/postgresql/pagila-load-sample-dataset.png
-    :alt: A screenshot of the Aiven Console showing the "Load sample dataset" button.
-
-After loading the data, connect to the PostgreSQL instance using the command below. The ``SERVICE_URI`` value can be found in the Aiven Console dashboard.
-
-.. code:: shell
-
-   psql 'SERVICE_URI'
-
-Load Pagila manually
---------------------
 
 1. Download the ``pagila-data.sql`` from our `GitHub repository <https://github.com/aiven/devportal/blob/main/code/products/postgresql/pagila/pagila-data.sql>`_.
 
