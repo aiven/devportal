@@ -118,7 +118,7 @@ Example: Create a MongoDB sink connector
 
 If you have a topic named ``students`` containing the following data:
 
-.. code-block:: json
+.. code-block:: 
 
     key: 1       value: {"name":"carlo"}
     key: 2       value: {"name":"lucy"}
