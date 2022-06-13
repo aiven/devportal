@@ -104,11 +104,13 @@ entries:
           - file: docs/tools/terraform/reference/cookbook
             entries:
             - file: docs/tools/terraform/reference/cookbook/kafka-connect-terraform-recipe
-              title: Apache Kafka and OpenSearch
-            - file: docs/tools/terraform/reference/cookbook/kafka-mirrormaker-recipe
-              title: Cross-cluster replication with Apache Kafka® Mirrormaker2   
+              title: Apache Kafka and OpenSearch  
             - file: docs/tools/terraform/reference/cookbook/multicloud-postgresql-recipe
-              title: Multicloud PostgreSQL 
+              title: Multicloud PostgreSQL
+            - file: docs/tools/terraform/reference/cookbook/kafka-flink-integration-recipe
+              title: Apache Kafka and Apache Flink
+            - file: docs/tools/terraform/reference/cookbook/kafka-mirrormaker-recipe
+              title: Cross-cluster replication with Apache Kafka Mirrormaker2        
       - file: docs/tools/kubernetes
         title: Aiven Operator for Kubernetes
 
