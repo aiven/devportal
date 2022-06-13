@@ -7,11 +7,11 @@ You'll also enable the auto creation of Apache Kafka topics which will allow you
 .. mermaid::
 
    flowchart LR
-      subgraph ide1 [Apache Kafka]
-         Karapace 
-         AutoCreateTopics
-         KafkaREST
-      end
+      producer[Producer]
+      consumer[Consumer]
+      SchemaRegistry{{Schema Registry:<br /> Karapace}}
+      producer --> Kafka --> consumer
+      producer --> SchemaRegistry --> consumer
 
 Describe the setup
 ------------------
