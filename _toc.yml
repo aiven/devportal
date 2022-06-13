@@ -119,7 +119,9 @@ entries:
             - file: docs/tools/terraform/reference/cookbook/kafka-connect-terraform-recipe
               title: Apache Kafka and OpenSearch
             - file: docs/tools/terraform/reference/cookbook/multicloud-postgresql-recipe
-              title: Multicloud PostgreSQL 
+              title: Multicloud PostgreSQL
+            - file: docs/tools/terraform/reference/cookbook/kafka-flink-integration-recipe
+              title: Apache Kafka and Apache Flink
             - file: docs/tools/terraform/reference/cookbook/kafka-karapace-recipe
               title: Apache Kafka with Karapace  
       - file: docs/tools/kubernetes
@@ -155,6 +157,7 @@ entries:
               - file: docs/products/kafka/howto/kcat
               - file: docs/products/kafka/howto/kafka-conduktor
               - file: docs/products/kafka/howto/kafdrop
+              - file: docs/products/kafka/howto/provectus-kafka-ui
           - file: docs/products/kafka/howto/list-security
             title: Security
             entries:
@@ -167,6 +170,7 @@ entries:
             title: Administration tasks
             entries:
               - file: docs/products/kafka/howto/best-practices
+              - file: docs/products/kafka/howto/enable-karapace
               - file: docs/products/kafka/howto/configure-with-kafka-cli
               - file: docs/products/kafka/howto/set-kafka-parameters
               - file: docs/products/kafka/howto/viewing-resetting-offset

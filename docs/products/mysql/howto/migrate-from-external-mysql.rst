@@ -34,12 +34,12 @@ You can use the following variables in the code samples provided:
     - Hostname for source MySQL connection
   * - ``SRC_PORT``
     - Port for source MySQL connection
-  * - ``SRC_DATABASE``
-    - Database name for source MySQL connection
   * - ``SRC_USERNAME``
     - Username for source MySQL connection
   * - ``SRC_PASSWORD``
     - Password for source MySQL connection
+  * - ``SRC_IGNORE_DBS``
+    - Comma-separated list of databases to ignore in migration
   * - ``SRC_SSL``
     - SSL setting for source MySQL connection
   * - ``DEST_NAME``
@@ -62,11 +62,11 @@ Perform the migration
 3. Set the migration details via the ``avn service update`` :ref:`Aiven CLI command <avn-cli-service-update>` substituting the parameters accordingly::
 
     avn service update \
-        -c migration.dbname=SRC_DATABASE \
         -c migration.host=SRC_HOSTNAME \
         -c migration.port=SRC_PORT \
         -c migration.username=SRC_USERNAME \
         -c migration.password=SRC_PASSWORD \
+        -c migration.ignore_dbs=SRC_IGNORE_DBS \
         -c migration.ssl=SRC_SSL \
         DEST_NAME
 
