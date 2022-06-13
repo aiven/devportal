@@ -108,8 +108,9 @@ pooler
 PostgreSQL
 Postman
 privatelink
-Protobuf
 Prometheus
+Protobuf
+Provectus
 psql
 Python
 rebalance
@@ -119,6 +120,7 @@ Redis
 Redli
 refcard
 reindexing
+reStructuredText
 rsyslog
 Sakila
 schemaless
@@ -127,6 +129,7 @@ sharding
 signups
 Singlestat
 Snowflake
+Sphinx
 Splunk
 spring
 Sql

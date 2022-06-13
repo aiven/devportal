@@ -39,7 +39,7 @@ To allow the creation of new users::
 
     GRANT CREATE USER ON transactions.* TO administrator
 
-There are a variety of privileges that you can grant, and you can find `the full list in the ClickHouse documentation <https://clickhouse.com/docs/en/sql-reference/statements/grant/#grant-privileges>`_.
+There are a variety of privileges that you can grant, and you can find `the full list in the ClickHouse documentation <https://clickhouse.com/docs/en/sql-reference/statements/grant/#privileges>`_.
 
 
 

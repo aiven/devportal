@@ -18,3 +18,10 @@ where ``m`` represents the memory in megabytes. With at least 10,000 connections
 .. note::
     
     Make sure to convert the memory figure ``m`` to megabytes.
+
+
+This number is estimated by the exact available memory so it varies between different plans and cloud providers, to see the exact maximum connections allowed, use * :doc:`redis-cli <./connect-redis-cli>` and ``info`` command as the following:
+
+.. code-block::
+
+    echo "info" | redis-cli -u REDIS_URI | grep maxclients

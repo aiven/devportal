@@ -24,26 +24,39 @@ entries:
     - file: docs/platform/howto
       title: HowTo
       entries:
-      - file: docs/platform/howto/create_new_service
-      - file: docs/platform/howto/create_new_service_user
-      - file: docs/platform/howto/create_authentication_token
-      - file: docs/platform/howto/change-your-email-address
-      - file: docs/platform/howto/enable-aiven-password
-      - file: docs/platform/howto/disable-user-2fa
-      - file: docs/platform/howto/download-ca-cert
-      - file: docs/platform/howto/console-fork-service.rst
-      - file: docs/platform/howto/tag-resources.rst
-      - file: docs/platform/howto/pause-from-cli.rst
-      - file: docs/platform/howto/public-access-in-vpc.rst
-      - file: docs/platform/howto/private-ip-resolution.rst
-      - file: docs/platform/howto/add-storage-space
-      - file: docs/platform/howto/restrict-access
-      - file: docs/platform/howto/scale-services
-      - file: docs/platform/howto/migrate-services
-      - file: docs/platform/howto/monitoring-services
-      - file: docs/platform/howto/integrations/prometheus-metrics
-      - file: docs/platform/howto/integrations/datadog-increase-metrics-limit
-      - file: docs/platform/howto/static-ip-addresses.rst
+      - file: docs/platform/howto/list-user
+        title: User/Access management
+        entries:
+          - file: docs/platform/howto/change-your-email-address
+          - file: docs/platform/howto/create_authentication_token
+          - file: docs/platform/howto/create_new_service_user
+          - file: docs/platform/howto/enable-aiven-password
+          - file: docs/platform/howto/disable-user-2fa            
+      - file: docs/platform/howto/list-service
+        title: Service management
+        entries:
+          - file: docs/platform/howto/create_new_service
+          - file: docs/platform/howto/console-fork-service.rst
+          - file: docs/platform/howto/pause-from-cli.rst
+          - file: docs/platform/howto/scale-services
+          - file: docs/platform/howto/migrate-services
+          - file: docs/platform/howto/add-storage-space
+          - file: docs/platform/howto/tag-resources.rst
+      - file: docs/platform/howto/list-network
+        title: Network management
+        entries:
+          - file: docs/platform/howto/download-ca-cert
+          - file: docs/platform/howto/restrict-access
+          - file: docs/platform/howto/public-access-in-vpc.rst
+          - file: docs/platform/howto/static-ip-addresses.rst
+          - file: docs/platform/howto/private-ip-resolution.rst
+      - file: docs/platform/howto/list-monitoring
+        title: Monitoring management
+        entries:
+          - file: docs/platform/howto/monitoring-services
+          - file: docs/platform/howto/integrations/prometheus-metrics
+          - file: docs/platform/howto/integrations/datadog-increase-metrics-limit
+      
     - file: docs/platform/reference
       title: Reference
       entries:
@@ -106,11 +119,11 @@ entries:
             - file: docs/tools/terraform/reference/cookbook/kafka-connect-terraform-recipe
               title: Apache Kafka and OpenSearch  
             - file: docs/tools/terraform/reference/cookbook/multicloud-postgresql-recipe
-              title: Multicloud PostgreSQL
+              title: Multicloud PostgreSQL 
             - file: docs/tools/terraform/reference/cookbook/kafka-flink-integration-recipe
               title: Apache Kafka and Apache Flink
             - file: docs/tools/terraform/reference/cookbook/kafka-mirrormaker-recipe
-              title: Cross-cluster replication with Apache Kafka Mirrormaker2        
+              title: Apache Kafka and Apache MirrorMaker   
       - file: docs/tools/kubernetes
         title: Aiven Operator for Kubernetes
 
@@ -133,6 +146,10 @@ entries:
       - file: docs/products/kafka/howto
         title: HowTo
         entries:
+          - file: docs/products/kafka/howto/list-code-samples
+            entries:
+              - file: docs/products/kafka/howto/connect-with-python
+                title: Connect with Python
           - file: docs/products/kafka/howto/list-tools
             title: Tools
             entries:
@@ -140,6 +157,7 @@ entries:
               - file: docs/products/kafka/howto/kcat
               - file: docs/products/kafka/howto/kafka-conduktor
               - file: docs/products/kafka/howto/kafdrop
+              - file: docs/products/kafka/howto/provectus-kafka-ui
           - file: docs/products/kafka/howto/list-security
             title: Security
             entries:
@@ -152,14 +170,13 @@ entries:
             title: Administration tasks
             entries:
               - file: docs/products/kafka/howto/best-practices
+              - file: docs/products/kafka/howto/enable-karapace
               - file: docs/products/kafka/howto/configure-with-kafka-cli
               - file: docs/products/kafka/howto/set-kafka-parameters
               - file: docs/products/kafka/howto/viewing-resetting-offset
               - file: docs/products/kafka/howto/configure-log-cleaner
               - file: docs/products/kafka/howto/prevent-full-disks
               - file: docs/products/kafka/howto/use-zookeeper
-          
-
           - file: docs/products/kafka/howto/list-integration
             title: Integrations
             entries:
@@ -225,6 +242,8 @@ entries:
             - file: docs/products/kafka/kafka-connect/howto/snowflake-sink-prereq
             - file: docs/products/kafka/kafka-connect/howto/snowflake-sink
             - file: docs/products/kafka/kafka-connect/howto/http-sink
+            - file: docs/products/kafka/kafka-connect/howto/mongodb-sink-mongo
+            - file: docs/products/kafka/kafka-connect/howto/mongodb-sink-lenses
             - file: docs/products/kafka/kafka-connect/howto/redis-streamreactor-sink
 
         - file: docs/products/kafka/kafka-connect/reference
@@ -293,6 +312,8 @@ entries:
               - file: docs/products/postgresql/howto/use-dblink-extension
               - file: docs/products/postgresql/howto/enable-jit
               - file: docs/products/postgresql/howto/repair-pg-index
+              - file: docs/products/postgresql/howto/identify-pg-slow-queries
+              - file: docs/products/postgresql/howto/optimize-pg-slow-queries
               - file: docs/products/postgresql/howto/check-avoid-transaction-id-wraparound
               - file: docs/products/postgresql/howto/prevent-full-disk
           - file: docs/products/postgresql/howto/list-replication-migration
@@ -408,6 +429,8 @@ entries:
           - file: docs/products/opensearch/concepts/indices
           - file: docs/products/opensearch/concepts/aggregations
           - file: docs/products/opensearch/concepts/opensearch-vs-elasticsearch
+          - file: docs/products/opensearch/concepts/shards-number
+          - file: docs/products/opensearch/concepts/when-create-index
       - file: docs/products/opensearch/howto
         title: HowTo
         entries:
@@ -432,6 +455,7 @@ entries:
           - file: docs/products/opensearch/howto/import-opensearch-data-using-elasticsearch-dump
           - file: docs/products/opensearch/howto/set_index_retention_patterns
           - file: docs/products/opensearch/howto/opensearch-alerting-api
+          - file: docs/products/opensearch/howto/handle-low-disk-space
       - file: docs/products/opensearch/dashboards/index
         title: OpenSearch Dashboards
         entries:
@@ -450,6 +474,7 @@ entries:
             title: Advanced parameters
           - file: docs/products/opensearch/reference/index-replication
           - file: docs/products/opensearch/reference/restapi-limited-access
+          - file: docs/products/opensearch/reference/low-space-watermarks
 
   - file: docs/products/m3db/index
     title: M3DB
@@ -553,9 +578,16 @@ entries:
         title: Reference
         entries:
           - file: docs/products/grafana/reference/advanced-params
-            title: Advanced paramters
+            title: Advanced parameters
           - file: docs/products/grafana/reference/plugins
             title: Plugins
 
   # -------- AUXILIARY
   - file: docs/community
+    title: Community
+    entries:
+    - file: docs/community/documentation/index
+      entries:
+      - glob: docs/community/documentation/tips-tricks/*
+        title: Tips & Tricks
+

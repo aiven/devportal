@@ -24,10 +24,15 @@ Fork a service using the Aiven client (CLI)
 
 1. Prepare the command to create a new service, this will contain the new copy of your data store.
 
-2. Add the ``service_to_fork_from`` parameter to specify the service to use as the source. For example, if you want to create a fork of your ``forker`` service, and name it ``forked``, the command would be something like::
+2. Add the ``service_to_fork_from`` parameter to specify the service to use as the source. 
+Change service type accordingly with ``-t``, run the following command to see available options::
+
+    avn service types        
+
+For example, if you want to create a fork of your ``forker`` PostgreSQL® service, and name it ``forked``, the command would be something like::
 
     avn service create forked -t pg --plan business-4 -c service_to_fork_from=forker
-
+    
 You have now copied your Aiven service.
 
 You can now apply any integrations you may need for the copy.

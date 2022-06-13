@@ -20,6 +20,7 @@ You can fork the following Aiven services:
 - Redis™*
 - Apache Cassandra® (Limitation: you cannot fork to a lower amount of nodes)
 - Elasticsearch
+- OpenSearch®
 - InfluxDB®
 - M3DB
 - Grafana®

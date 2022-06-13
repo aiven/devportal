@@ -138,7 +138,7 @@ To create the connector, access the `Aiven Console <https://console.aiven.io/>`_
 
 7. After all the settings are correctly configured, click on **Create new connector**
 8. Verify the connector status under the **Connectors** tab
-9. Verify the presence of the data in the target OpenSearch® service, the index name is equal to the Apache Kafka topic name
+9. Verify the presence of the data in the target Database service, the table name is equal to the Apache Kafka topic name
 
 .. Note::
 
