@@ -16,7 +16,7 @@ is enabled for – ``stderr``, ``stout``, and ``stdin``.
 
 Who is eligible?
 ----------------
-Enhance compliance environments, although similar to standard environments, involve added setup
+Enhanced compliance environments, although similar to standard environments, involve added setup
 and maintenance complexity. The following are requirements to utilize an ECE:
 
 - A BAA signed with Aiven
@@ -73,8 +73,8 @@ Migrating
 ----------------
 Migrations to Aiven are fairly straightforward in general, but migrating to an ECE can add a
 tiny bit of complexity. If the migration is for a new service there are a few standard
-migration methods that will work – please contact sales at Sales@Aiven.io and a Solution Architect will be
-able to help.
+migration methods that will work – please contact `sales <sales@aiven.io>`_ and a Solution Architect
+will be able to help.
 
 If you need to migrate an existing Aiven service to an ECE the standard automated migration
 methods will not work out of the box. To facilitate the migration, the Aiven network
