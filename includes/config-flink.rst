@@ -31,7 +31,7 @@
 
 
 ``restart_strategy`` => *string*
-  **Flink restart-strategy** failure-rate (default): Restarts the job after failure, but when failure rate (failures per time interval) is exceeded, the job eventually fails. Restart strategy waits a fixed amount of time between attempts.fixed-delay: Attempts to restart the job a given number of times before it fails. Restart strategy waits a fixed amount of time between attempts. exponential-delay: Attempts to restart the job infinitely, with increasing delay up to the maximum delay. The job never fails. off: The job fails directly and no restart is attempted.
+  **Flink restart-strategy** failure-rate (default): Restarts the job after failure, but when failure rate (failures per time interval) is exceeded, the job eventually fails. Restart strategy waits a fixed amount of time between attempts.fixed-delay: Attempts to restart the job a given number of times before it fails. Restart strategy waits a fixed amount of time between attempts. exponential-delay: Attempts to restart the job infinitely, with increasing delay up to the maximum delay. The job never fails. none: The job fails directly and no restart is attempted.
 
 
 
@@ -57,7 +57,6 @@
 
 ``execution_checkpointing_timeout_ms`` => *integer*
   **Flink execution.checkpointing.timeout in milliseconds** The time after which a checkpoint-in-progress is aborted, if it did not complete by then.
-
 
 
 

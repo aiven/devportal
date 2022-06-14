@@ -1,3 +1,4 @@
+
 ``custom_domain`` => *['string', 'null']*
   **Custom domain** Serve the web frontend using a custom CNAME pointing to the Aiven DNS name
 
@@ -14,7 +15,7 @@
 
 
 ``private_access`` => *object*
-  **Allow access to selected service ports from private networks**
+  **Allow access to selected service ports from private networks** 
 
   ``prometheus`` => *boolean*
     **Allow clients to connect to prometheus with a DNS name that always resolves to the service's private IP addresses. Only available in certain network locations** None
@@ -22,7 +23,7 @@
 
 
 ``public_access`` => *object*
-  **Allow access to selected service ports from the public Internet**
+  **Allow access to selected service ports from the public Internet** 
 
   ``kafka`` => *boolean*
     **Allow clients to connect to kafka from the public internet for service nodes that are in a project VPC or another type of private network** None
@@ -65,7 +66,7 @@
 
 
 ``kafka`` => *object*
-  **Kafka broker configuration values**
+  **Kafka broker configuration values** 
 
   ``compression_type`` => *string*
     **compression.type** Specify the final compression type for a given topic. This configuration accepts the standard compression codecs ('gzip', 'snappy', 'lz4', 'zstd'). It additionally accepts 'uncompressed' which is equivalent to no compression; and 'producer' which means retain the original compression codec set by the producer.
@@ -119,7 +120,7 @@
     **log.index.size.max.bytes** The maximum size in bytes of the offset index
 
   ``log_message_downconversion_enable`` => *boolean*
-    **log.message.downconversion.enable** This configuration controls whether down-conversion of message formats is enabled to satisfy consume requests.
+    **log.message.downconversion.enable** This configuration controls whether down-conversion of message formats is enabled to satisfy consume requests. 
 
   ``log_message_timestamp_type`` => *string*
     **log.message.timestamp.type** Define whether the timestamp in the message is message create time or log append time.
@@ -187,7 +188,7 @@
 
 
 ``kafka_authentication_methods`` => *object*
-  **Kafka authentication methods**
+  **Kafka authentication methods** 
 
   ``certificate`` => *boolean*
     **Enable certificate/SSL authentication** None
@@ -198,12 +199,12 @@
 
 
 ``kafka_connect`` => *boolean*
-  **Enable Kafka Connect service**
+  **Enable Kafka Connect service** 
 
 
 
 ``kafka_connect_config`` => *object*
-  **Kafka Connect configuration values**
+  **Kafka Connect configuration values** 
 
   ``connector_client_config_override_policy`` => *string*
     **Client config override policy** Defines what client configurations can be overridden by the connector. Default is None
@@ -218,7 +219,7 @@
     **Consumer isolation level** Transaction read isolation level. read_uncommitted is the default, but read_committed can be used if consume-exactly-once behavior is desired.
 
   ``consumer_max_partition_fetch_bytes`` => *integer*
-    **The maximum amount of data per-partition the server will return.** Records are fetched in batches by the consumer.If the first record batch in the first non-empty partition of the fetch is larger than this limit, the batch will still be returned to ensure that the consumer can make progress.
+    **The maximum amount of data per-partition the server will return.** Records are fetched in batches by the consumer.If the first record batch in the first non-empty partition of the fetch is larger than this limit, the batch will still be returned to ensure that the consumer can make progress. 
 
   ``consumer_max_poll_interval_ms`` => *integer*
     **The maximum delay between polls when using consumer group management** The maximum delay in milliseconds between invocations of poll() when using consumer group management (defaults to 300000).
@@ -232,6 +233,9 @@
   ``offset_flush_timeout_ms`` => *integer*
     **Offset flush timeout** Maximum number of milliseconds to wait for records to flush and partition offset data to be committed to offset storage before cancelling the process and restoring the offset data to be committed in a future attempt (defaults to 5000).
 
+  ``producer_compression_type`` => *string*
+    **The default compression type for producers** Specify the default compression type for producers. This configuration accepts the standard compression codecs ('gzip', 'snappy', 'lz4', 'zstd'). It additionally accepts 'none' which is the default and equivalent to no compression.
+
   ``producer_max_request_size`` => *integer*
     **The maximum size of a request in bytes** This setting will limit the number of record batches the producer will send in a single request to avoid sending huge requests.
 
@@ -241,22 +245,22 @@
 
 
 ``kafka_rest`` => *boolean*
-  **Enable Kafka-REST service**
+  **Enable Kafka-REST service** 
 
 
 
 ``kafka_version`` => *['string', 'null']*
-  **Kafka major version**
+  **Kafka major version** 
 
 
 
 ``schema_registry`` => *boolean*
-  **Enable Schema-Registry service**
+  **Enable Schema-Registry service** 
 
 
 
 ``kafka_rest_config`` => *object*
-  **Kafka REST configuration**
+  **Kafka REST configuration** 
 
   ``producer_acks`` => *string*
     **producer.acks** The number of acknowledgments the producer requires the leader to have received before considering a request complete. If set to 'all' or '-1', the leader will wait for the full set of in-sync replicas to acknowledge the record.
@@ -279,10 +283,13 @@
 
 
 ``schema_registry_config`` => *object*
-  **Schema Registry configuration**
+  **Schema Registry configuration** 
 
   ``topic_name`` => *string*
     **topic_name** The durable single partition topic that acts as the durable log for the data. This topic must be compacted to avoid losing data due to retention policy. Please note that changing this configuration in an existing Schema Registry / Karapace setup leads to previous schemas being inaccessible, data encoded with them potentially unreadable and schema ID sequence put out of order. It's only possible to do the switch while Schema Registry / Karapace is disabled. Defaults to `_schemas`.
 
   ``leader_eligibility`` => *boolean*
     **leader_eligibility** If true, Karapace / Schema Registry on the service nodes can participate in leader election. It might be needed to disable this when the schemas topic is replicated to a secondary cluster and Karapace / Schema Registry there must not participate in leader election. Defaults to `true`.
+
+
+

@@ -83,11 +83,14 @@
   ``indices_queries_cache_size`` => *integer*
     **indices.queries.cache.size** Percentage value. Default is 10%. Maximum amount of heap used for query cache. This is an expert setting. Too low value will decrease query performance and increase performance for other operations; too high value will cause issues with other OpenSearch functionality.
 
+  ``indices_recovery_max_bytes_per_sec`` => *integer*
+    **indices.recovery.max_bytes_per_sec** Limits total inbound and outbound recovery traffic for each node. Applies to both peer recoveries as well as snapshot recoveries (i.e., restores from a snapshot). Defaults to 40mb
+
+  ``indices_recovery_max_concurrent_file_chunks`` => *integer*
+    **indices.recovery.max_concurrent_file_chunks** Number of file chunks sent in parallel for each recovery. Defaults to 2.
+
   ``action_auto_create_index_enabled`` => *boolean*
     **action.auto_create_index** Explicitly allow or block automatic creation of indices. Defaults to true
-
-  ``thread_pool_index_size`` => *integer*
-    **index thread pool size** Size for the thread pool. See documentation for exact details. Do note this may have maximum value depending on CPU count - value is automatically lowered if set to higher than maximum value.
 
   ``thread_pool_search_size`` => *integer*
     **search thread pool size** Size for the thread pool. See documentation for exact details. Do note this may have maximum value depending on CPU count - value is automatically lowered if set to higher than maximum value.
@@ -130,6 +133,21 @@
 
   ``override_main_response_version`` => *boolean*
     **compatibility.override_main_response_version** Compatibility mode sets OpenSearch to report its version as 7.10 so clients continue to work. Default is false
+
+  ``script_max_compilations_rate`` => *string*
+    **Script max compilation rate - circuit breaker to prevent/minimize OOMs** Script compilation circuit breaker limits the number of inline script compilations within a period of time. Default is use-context
+
+  ``cluster_routing_allocation_node_concurrent_recoveries`` => *integer*
+    **Concurrent incoming/outgoing shard recoveries per node** How many concurrent incoming/outgoing shard recoveries (normally replicas) are allowed to happen on a node. Defaults to 2.
+
+  ``email_sender_name`` => *['string']*
+    **Sender email name placeholder to be used in Opensearch Dashboards and Opensearch keystore** This should be identical to the Sender name defined in Opensearch dashboards
+
+  ``email_sender_username`` => *['string']*
+    **Sender email address for Opensearch alerts** None
+
+  ``email_sender_password`` => *['string']*
+    **Sender email password for Opensearch alerts to authenticate with SMTP server** Sender email password for Opensearch alerts to authenticate with SMTP server
 
 
 
@@ -201,7 +219,6 @@
 
 ``project_to_fork_from`` => *['string', 'null']*
   **Name of another project to fork a service from. This has effect only when a new service is being created.** 
-
 
 
 
