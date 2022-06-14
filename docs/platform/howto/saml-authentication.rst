@@ -11,13 +11,13 @@ Setting up the SAML authentication method
 
 Detailed instructions exist for the following providers:
 
-* `Okta <>`_ 
+* Okta
 
-* `G-Suite <>`_ 
+* G-Suite
 
-* `Azure AD <>`_
+* Azure AD
 
-* `Auth0 <>`_ 
+* Auth0
 
 If your provider isn't in the list, please contact us at support@aiven.io so we can assist you with the configuration of the provider of your choice.
 
@@ -44,10 +44,9 @@ Once you’ve logged in to the provider, you will be redirected back to the Aive
 
 
 You don’t have an Aiven profile
---------------------------------------------
+-------------------------------
 
 Click on the “Sign up” button. You will be redirected to your SAML provider’s authentication page. Once you’ve logged in to the provider, you will be redirected back to the Aiven sign page where you can finish the sign up process. Once this is done, you will have your Aiven profile created and associated with your SAML authentication method.
 
 .. image:: /images/platform/trial.png
-
-
+    :alt: Signing up for a trial account

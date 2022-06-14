@@ -9,22 +9,27 @@ Creating the Aiven account
 Once you have logged into the Aiven Console, you should see your projects in the top left of your screen. Click the current project to open the project select and click See all projects. This should open a Projects & Accounts modal.
 
 .. image:: /images/platform/howto/see-all-projects.png
+    :alt: View all projects in the Aiven Console
 
 On the Projects & Accounts modal, click on Create account and you will be taken to a page where you provide a name, project(s) to link it to and the option to invite other admins.
 
 .. image:: /images/platform/howto/console-aiven-account-create.png
+    :alt: Create and configure a new account
 
 Once created, you will see an overview of the account just created. A tab, called Authentication, will let you add a new method (in this case: SAML) and configure them.
 
 .. image:: /images/platform/howto/authentication-methods.png
+    :alt: Adding an authentication method
 
 Clicking on Add Authentication Method creates a dialog where you can name your method, specify the type and a default team you would want members to join.
 
 .. image:: /images/platform/howto/add-auth-method-google.png
+    :alt: Configuring authentication methods
 
 Once you click Add, you will see the configuration URLs for your Identity Provider (do not worry about making a note of these, you can access them at any time).
 
 .. image:: /images/platform/howto/configuration-urls.png
+    :alt: Configuration references
 
 For now, we are done with the Aiven side of this, let's move on to G-suite and create our application.
 
@@ -34,6 +39,7 @@ Creating the G-Suite Application
 Go to the SAML apps management in G-Suite and create a new application with the "+" icon in the bottom right corner. Then click the "setup my own custom app" link at the bottom of the opened modal. You will get the following:
 
 .. image:: /images/platform/howto/google-idp-information.png
+    :alt: Setting up a custom app Google
 
 Download the certificate and note the SSO URL and Entity ID somewhere, it will be needed later.
 Click "Next" and set an application name, e.g. "Aiven". Click "Next" again to go to the application configuration. Fill in the form with the following data:
@@ -52,5 +58,6 @@ Setting up the G-Suite Application in Aiven
 Once the application is set up, you need to provide the application data to Aiven. Go back to Aiven Console and update the SAML configuration.
 
 .. image:: /images/platform/howto/account-authentication-google.png
+    :alt: Provide Google app details to Aiven
 
 When this is done you can go to the Account link url to finalize linking your G-Suite account and Aiven profile. You can also invite other members of your team to login or signup to Aiven using G-Suite via the Signup link shown in the Authentication method page.

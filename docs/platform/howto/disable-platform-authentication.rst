@@ -2,15 +2,16 @@ Disable platform authentication
 ===============================
 
 How to prevent users signing in using username and password
--------------------------------------------
+-----------------------------------------------------------
 
-If you have already `set up an alternative authentication method <>`_ then you might want to disable the default password-based Platform authentication method to prevent it being used to access projects within your account.
+If you have already set up an alternative authentication method then you might want to disable the default password-based Platform authentication method to prevent it being used to access projects within your account.
 
 To do this, you must log in to the Aiven Console using your alternative authentication method. You must not be logged in with any open sessions using the password-based Platform authentication.
 
 Navigate to the Authentication tab in your account and then click the button to disable the Platform authentication. If you have an open session which is using that authentication method you will receive an error message. To resolve this, log out of the open session and try again.
 
 .. image:: /images/platform/authentication-method.png
+    :alt: Auth methods overview
 
 Using the Aiven CLI
 -------------------
