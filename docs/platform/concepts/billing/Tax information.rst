@@ -1,5 +1,5 @@
 Tax information regarding Aiven services
-#############
+=========================================
 
 Aiven services are provided by Aiven Ltd, a private limited company incorporated in Finland. 
 This article describes our tax status in different jurisdictions. 
