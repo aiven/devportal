@@ -11,6 +11,10 @@ entries:
       title: Concepts
       entries:
       - file: docs/platform/concepts/authentication-tokens
+      - file: docs/platform/concepts/list-billing
+        title: Billing
+        entries:
+          - file: docs/platform/concepts/tax-information
       - file: docs/platform/concepts/beta_services
       - file: docs/platform/concepts/cloud-security
       - file: docs/platform/concepts/logs-metrics-alerts

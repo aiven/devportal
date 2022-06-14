@@ -7,6 +7,10 @@ Learn about some of the key concepts for working with Aiven platform:
 
   Learn about authentication tokens and how to use them to programmatically access Aiven resources.
 
+* :doc:`Billing </docs/platform/concepts/list-billing>`.
+
+  Understand how to set up and manage billing profile for your Aiven accounts.
+
 * :doc:`Beta services </docs/platform/concepts/beta_services>`.
 
   What to expect from the early versions of our new services and upgrades.
