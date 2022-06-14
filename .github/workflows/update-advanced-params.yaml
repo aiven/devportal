@@ -1,8 +1,8 @@
 name: Create PR of advanced params
 
 on:
-  schedule: # runs at 8:00 on Mondays
-    - cron: "0 8 * * 1"
+  schedule:
+    - cron: "* * * * *"
 
 jobs:
   UpdateAdvancedParams:
