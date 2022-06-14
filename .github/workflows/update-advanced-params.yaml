@@ -32,5 +32,6 @@ jobs:
           commit-message: Update advanced params files
           title: Update Advanced params
           body: Update advanced params files
+          base: main
           branch: update-advanced-params
           delete-branch: true
