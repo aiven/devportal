@@ -40,7 +40,7 @@ BYOA deployments are not automated and they add additional complexity for commun
 to the Aiven control plane, service management, key management and security.
 
 In most cases customers can meet their regulatory and business requirements by utilizing
-a standard Aiven deployment or Enhanced Compliance Environment. In fact, 99% of Aiven
+a standard Aiven deployment or :doc:`Enhanced Compliance Environment </docs/platform/concepts/enhanced-compliance-env>`. In fact, 99% of Aiven
 customers are able to meet their requirements without BYOA. If you would like to understand
 BYOA better or are unsure which deployment model is the best fit for you, please contact our sales department Sales@Aiven.io.
 
