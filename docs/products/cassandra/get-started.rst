@@ -10,12 +10,13 @@ You can create new projects by clicking the project dropdown at the top of the s
 To get started with Cassandra, first click the "Create a new service" button.
 
 .. image:: /images/products/cassandra/cassandra-console.png
+   :alt: Create a new Cassandra service from the Aiven Console
 
 The dialog that opens allows you to specify the main service properties:
 
 * **Service name**: A short name for the service used to distinguish it from others. A random name is provided, but you can type in a more user-friendly one.
 
-* **Service type**: Select "Cassandra".
+* **Service type**: Select "Apache Cassandra".
 
 * **Plan**: How many servers and what kind of memory/CPU/disk resources will be allocated to run your service.
 
@@ -28,31 +29,29 @@ Click the service name in the list and the service's "Overview" information page
 The "Status" indicator will say "REBUILDING" while the service is being created for you. Once the service is up and running, the light will change to green and it will say "RUNNING". Note: while services typically start in minutes, the performance between clouds varies and it can take longer in some cases.
 
 .. image:: /images/products/cassandra/cassandra-console-cluster.png
+   :alt: Running Cassandra cluster in Console view
 
 The Cassandra cluster is initiated with a superuser role named avnadmin. The role can be used to create keyspaces and additional roles with any tool or library supporting the Cassandra protocol.
 
 Data center and replication
 ---------------------------
 
-Your Cassandra cluster is created with all nodes in a Data Center (DC) named aiven. It's strongly recommended to use the NetworkTopologyStrategy replication strategy when creating keyspaces to ensure replicas of your data are distributed on nodes in different Availability Zones (AZ) within the service's selected cloud. 
+Your Cassandra cluster is created with all nodes in a Data Center (DC) named aiven. It's strongly recommended to use the ``NetworkTopologyStrategy`` replication strategy when creating keyspaces to ensure replicas of your data are distributed on nodes in different Availability Zones (AZ) within the service's selected cloud. 
 
-While SimpleStrategy has a replication factor property, it may place the replicas in the same AZ. The examples below demonstrate how to create keyspaces with NetworkTopologyStrategy using the aiven DC.
+While ``SimpleStrategy`` has a replication factor property, it may place the replicas in the same AZ. The examples below demonstrate how to create keyspaces with ``NetworkTopologyStrategy`` using the aiven DC.
 
 We strongly recommend the use of a replication factor that is more than 1 (and no more than the number of nodes in your cluster). Using a replication factor of 1 can potentially result in data loss as the node storing it is still a single point of failure.
 
-Cqlsh example
+``cqlsh`` example
 -------------
 
 The CQL shell is an easy way to try out your new Cassandra service. 
 
 **Download cqlsh**
 
-Download Cassandra binaries from `archive.apache.org/dist/cassandra <http://archive.apache.org/dist/cassandra/>`_
-
-Find the matching version with the Aiven Cassandra service you have created.
-Extract the tarball without installing cassandra, in the following steps we will launch cqlsh from apache-cassandra-x.y.z/bin/cqlsh
-
-Extract the tarball without installing Cassandra, we'll just need to use cqlsh from apache-cassandra-x.y.z/bin/cqlsh where x.y.z is replaced by the version you have downloaded.
+1. Download Cassandra binaries from `archive.apache.org/dist/cassandra <http://archive.apache.org/dist/cassandra/>`_
+2. Find the matching version with the Aiven Cassandra service you have created.
+3. Extract the tarball without installing Cassandra, we'll just need to use ``cqlsh`` from `apache-cassandra-x.y.z/bin/cqlsh <https://apache-cassandra-x.y.z/bin/cqlsh>`_
 
 **Download service certificate**
 

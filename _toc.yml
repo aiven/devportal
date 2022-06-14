@@ -515,7 +515,7 @@ entries:
         title: HowTo
         entries:
           - file: docs/products/cassandra/howto/using-sstableloader-to-migrate
-            title: Migrating existing Cassandra clusters with sstableloader
+            title: Migrating clusters with sstableloader
 
   - file: docs/products/grafana/index
     title: Grafana
