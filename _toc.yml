@@ -138,6 +138,8 @@ entries:
               title: PostgreSQL with custom configs
             - file: docs/tools/terraform/reference/cookbook/kafka-mongodb-recipe
               title: Apache Kafka MongoDB Source Connector  
+            - file: docs/tools/terraform/reference/cookbook/kafka-custom-conf-recipe.rst
+              title: Apache Kafka and Kafka Connect services with custom configurations   
       - file: docs/tools/kubernetes
         title: Aiven Operator for Kubernetes
 
