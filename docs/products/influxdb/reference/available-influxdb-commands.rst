@@ -1,8 +1,8 @@
 Available InfluxDB® commands
-###########################
+############################
 
 InfluxDB® retention policy and continuous query management
----------------------------------------------------------
+----------------------------------------------------------
 
 The default InfluxDB service user ``avnadmin`` in our services is not a full "admin" account (as per InfluxDB terminology), but it has the capability to manipulate retention policies and continuous queries.
 

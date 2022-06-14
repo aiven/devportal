@@ -1,5 +1,5 @@
 Getting started with Aiven for InfluxDB®
-#######################################
+########################################
 
 Aiven services are managed from Aiven `web console <https://console.aiven.io/>`_. First login to the console with your email address and password and you will be automatically taken to the "Services" view that shows all the services of the currently selected project.
 
@@ -34,7 +34,7 @@ InfluxDB® backups are taken every twelve hours and are encrypted and stored sec
     :alt: Overview InfluxDB service in the Aiven Console
 
 InfluxDB® command-line example
------------------------------
+------------------------------
 
 There are multiple ways you can try out your new InfluxDB® service, you can copy-paste the connection parameters from the overview page to use in the following examples::
 
