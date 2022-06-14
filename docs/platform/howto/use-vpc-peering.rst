@@ -2,7 +2,7 @@ Using Virtual Private Cloud (VPC) peering
 =========================================
 
 How to set up AWS, Google Cloud, or Azure VPC peering for Aiven projects
--------------------------------------------
+------------------------------------------------------------------------
 
 Virtual Private Cloud (VPC) peering is a method of connecting separate AWS, Google Cloud, or Azure private networks with each other. This makes it possible for the virtual machines in the different VPCs to talk to each other directly without going through the public internet.
 
@@ -17,6 +17,7 @@ To set up VPC peering for your Aiven project:
 3. On the right of the Project VPC view, select the cloud that you want to use for the VPC.
 
 .. image:: /images/platform/VPC/aiven_create_project_vpc.png
+    :alt: Setting up VPC peering for your Aiven project
 
 4. Enter the IP range that you want to use for the VPC connection.
 Use an IP range that does not overlap with any networks that you want to connect via VPC peering. For example, if your own networks use the range ``10.0.0.0/8``, you could set the range for your Aiven project's VPC to ``192.168.0.0/24``.
@@ -37,6 +38,7 @@ Setting up the VPC peering connection in AWS
 2. Go to My Account and make note of your account ID.
 
 .. image:: /images/platform/VPC/aws_account_id.png
+    :alt: AWS account ID
 
 3. Go to the VPC service to find the VPC that you want to connect and copy the ID for that VPC.
 
@@ -45,15 +47,18 @@ Setting up the VPC peering connection in AWS
 5. Enter your AWS account ID and VPC ID, select the region for your AWS VPC, then click Add peering connection.
 
 .. image:: /images/platform/VPC/add_aws_peering_connection.png
+    :alt: Add peering connection
 
 This adds a new connection in your AWS Console with the Pending Acceptance status.
 
 .. image:: /images/platform/VPC/accept_request.png
+    :alt: Pending acceptance request
 
 6. In your AWS Console, check that the account ID and VPC ID match those listed in the Aiven web console, then select Actions > Accept Request.
 When you have accepted the request in AWS Console, the peering connection is active in the Aiven web console.
 
 .. image:: /images/platform/VPC/aws_peering_active.png
+    :alt: AWS peering connectiin active
 
 Setting up the VPC peering connection in Google Cloud Platform (GCP)
 --------------------------------------------------------------------
@@ -72,6 +77,7 @@ Setting up the VPC peering connection in Google Cloud Platform (GCP)
 This adds a new connection with the Pending Peer status.
 
 .. image:: /images/platform/vpc/gcp_add_peering_connection.png
+    :alt: Adding VPC peering connection in GCP
 
 7. In your GCP Console, go to VPC > VPC network peering and select Create Connection.
 
@@ -81,10 +87,12 @@ You can click the blue Pending peer icon to see the Aiven project name and the n
 9. Click Create.
 
 .. image:: /images/platform/vpc/gcp_create_peering_connection.png
+    :alt: Creating a VPC peering connection
 
 When you create the new connection, it is active in both the Aiven web console and your GCP Console.
 
 .. image:: /images/platform/vpc/gcp_peering_active.png
+    :alt: Active peering connection
 
 Deploying new services to a VPC
 -------------------------------
@@ -92,6 +100,7 @@ Deploying new services to a VPC
 When you create a new service, your peered VPC is available as a new geolocation on the VPC tab.
 
 .. image:: /images/platform/vpc/geolocation-vpc.png
+    :alt: VPC as new geolocation
 
 .. Note:: It might take a few minutes for newly created VPCs to appear for service deployments.
 
@@ -105,17 +114,20 @@ You can migrate any Aiven service to or from a VPC.
 2. On the Overview tab, scroll down to Cloud and VPC and click Migrate Cloud.
 
 .. image:: /images/platform/vpc/overview-migrate-cloud.png
+    :alt: Cloud migration overview
 
 .. Note:: Any services that are currently public include the Public Internet status.
 
 3. Under Region, click the VPC tab and select the VPC that you want to use.
 
 .. image:: /images/platform/vpc/select-region-vpc.png
+    :alt: Select the region for VPC
 
 4. Click Migrate.
 This migrates the service to the private network and sets the status to Project VPC.
 
 .. image:: /images/platform/vpc/set-project-vpc.png
+    :alt: Project VPC status
 
 .. Note:: Once you migrate your service to an Aiven project-specific VPC, you can no longer access the service over the public internet. You can only access it from clients that are in a VPC that is peered to the VPC for the Aiven project.
 
@@ -132,4 +144,3 @@ When you move your service to a VPC, access from public networks is blocked by d
 IP filtering (the Allowed IP Addresses list on the service overview page) is still available for a service deployed to a VPC where both public and private access are allowed. We recommend that you use IP filtering when your VPC service is also exposed to the public internet.
 
 Also note that safelisting applies to both internal and external traffic. If you safelist an external IP address and want to keep traffic flowing with the internal (peered) connections, make sure that you safelist the CIDR blocks of the peered networks as well to avoid disruptions to the service.
-
