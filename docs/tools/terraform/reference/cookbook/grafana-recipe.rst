@@ -61,8 +61,8 @@ Here is the sample Terraform file to deploy two services and a service integrati
     resource "aiven_service_integration" "postgresql_to_grafana" {
       project                  = var.project_name
       integration_type         = "dashboard"
-      source_service_name      = aiven_grafana.dewan-grafana.service_name
-      destination_service_name = aiven_pg.dewan-pg.service_name
+      source_service_name      = aiven_grafana.demo-grafana.service_name
+      destination_service_name = aiven_pg.demo-pg.service_name
     }
 
 At first, the **aiven_pg** and **aiven_grafana** resources are created. Once the services are running, the third Terraform resource **aiven_service_integration** is created which establishes the service integration between the Aiven for PostgreSQL and Aiven for Grafana services.
