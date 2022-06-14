@@ -30,7 +30,7 @@ For this, you'd like to run an Apache Flink job and write the filtered messages 
 
 ``services.tf`` file:
 
-.. code:: bash
+.. code:: terraform
 
   resource "aiven_flink" "flink" {
     project      = var.project_name
