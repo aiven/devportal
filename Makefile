@@ -54,34 +54,37 @@ create-feedback-table:
 
 # (Re)Generate config listing for a service type
 service-type-config-pg:
-	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "pg" > includes/config-pg.rst
+	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "pg"
 
 service-type-config-kafka:
-	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "kafka" > includes/config-kafka.rst
+	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "kafka"
 
 service-type-config-cassandra:
-	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "cassandra" > includes/config-cassandra.rst
+	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "cassandra"
 
 service-type-config-opensearch:
-	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "opensearch" > includes/config-opensearch.rst
+	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "opensearch"
 
 service-type-config-mysql:
-	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "mysql" > includes/config-mysql.rst
+	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "mysql"
 
 service-type-config-m3db:
-	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "m3db" > includes/config-m3db.rst
+	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "m3db"
 
 service-type-config-redis:
-	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "redis" > includes/config-redis.rst
+	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "redis"
 
 service-type-config-flink:
-	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "flink" > includes/config-flink.rst
+	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "flink"
 
 service-type-config-grafana:
-	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "grafana" > includes/config-grafana.rst
+	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "grafana"
 
 service-type-config-influxdb:
-	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "influxdb" > includes/config-influxdb.rst
+	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "influxdb" 
+
+service-type-config-all:
+	python "$(SOURCEDIR)/scripts/aiven/service_type_config_all.py"
 
 # (Re)Generate cloud listing
 cloud-list:
