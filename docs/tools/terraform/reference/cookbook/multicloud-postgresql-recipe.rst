@@ -21,7 +21,7 @@ Here is the sample Terraform file to deploy all three services. Keep in mind tha
 
 ``services.tf`` file:
 
-.. code:: bash
+.. code:: terraform
 
    # European Postgres Service
    resource "aiven_pg" "aws-eu-pg" {
