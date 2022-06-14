@@ -41,9 +41,9 @@ topics. The `".*"` wildcard in the MirrorMaker 2 configuration means that all th
 
 ``services.tf`` file:
 
-.. code:: bash
+.. code:: terraform
 
-   resource "aiven_kafka_mirrormaker" "mm" {
+  resource "aiven_kafka_mirrormaker" "mm" {
     project      = var.project_name
     cloud_name   = "google-europe-west1"
     plan         = "business-4"
@@ -63,93 +63,93 @@ topics. The `".*"` wildcard in the MirrorMaker 2 configuration means that all th
   }
 
   resource "aiven_service_integration" "source-kafka-to-mm" {
-   project                  = var.project_name
-   integration_type         = "kafka_mirrormaker"
-   source_service_name      = aiven_kafka.source.service_name
-   destination_service_name = aiven_kafka_mirrormaker.mm.service_name
+    project                  = var.project_name
+    integration_type         = "kafka_mirrormaker"
+    source_service_name      = aiven_kafka.source.service_name
+    destination_service_name = aiven_kafka_mirrormaker.mm.service_name
 
     kafka_mirrormaker_user_config {
-     cluster_alias = "source"
+      cluster_alias = "source"
     }
   }
 
   resource "aiven_service_integration" "mm-to-target-kafka" {
-   project                  = var.project_name
-   integration_type         = "kafka_mirrormaker"
-   source_service_name      = aiven_kafka.target.service_name
-   destination_service_name = aiven_kafka_mirrormaker.mm.service_name
+    project                  = var.project_name
+    integration_type         = "kafka_mirrormaker"
+    source_service_name      = aiven_kafka.target.service_name
+    destination_service_name = aiven_kafka_mirrormaker.mm.service_name
 
     kafka_mirrormaker_user_config {
-     cluster_alias = "target"
+      cluster_alias = "target"
     }
   }
 
   resource "aiven_mirrormaker_replication_flow" "mm-replication-flow" {
-   project        = var.project_name
-   service_name   = aiven_kafka_mirrormaker.mm.service_name
-   source_cluster = aiven_kafka.source.service_name
-   target_cluster = aiven_kafka.target.service_name
-   enable         = true
+    project        = var.project_name
+    service_name   = aiven_kafka_mirrormaker.mm.service_name
+    source_cluster = aiven_kafka.source.service_name
+    target_cluster = aiven_kafka.target.service_name
+    enable         = true
 
-   topics = [
-     ".*",
-   ]
+    topics = [
+      ".*",
+    ]
 
-   topics_blacklist = [
-     ".*[\\-\\.]internal",
-     ".*\\.replica",
-     "__.*"
-   ]
+    topics_blacklist = [
+      ".*[\\-\\.]internal",
+      ".*\\.replica",
+      "__.*"
+    ]
   }
 
   resource "aiven_kafka" "source" {
-   project                 = var.project_name
-   cloud_name              = "google-europe-west1"
-   plan                    = "business-4"
-   service_name            = "source"
-   maintenance_window_dow  = "monday"
-   maintenance_window_time = "10:00:00"
+    project                 = var.project_name
+    cloud_name              = "google-europe-west1"
+    plan                    = "business-4"
+    service_name            = "source"
+    maintenance_window_dow  = "monday"
+    maintenance_window_time = "10:00:00"
 
-   kafka_user_config {
-     kafka_version = "3.1"
-     kafka {
-       group_max_session_timeout_ms = 70000
-       log_retention_bytes          = 1000000000
-     }
-   }
+    kafka_user_config {
+      kafka_version = "3.1"
+      kafka {
+        group_max_session_timeout_ms = 70000
+        log_retention_bytes          = 1000000000
+      }
+    }
   }
 
   resource "aiven_kafka_topic" "source" {
-   project      = var.project_name
-   service_name = aiven_kafka.source.service_name
-   topic_name   = "topic-a"
-   partitions   = 3
-   replication  = 2
+    project      = var.project_name
+    service_name = aiven_kafka.source.service_name
+    topic_name   = "topic-a"
+    partitions   = 3
+    replication  = 2
   }
 
   resource "aiven_kafka" "target" {
-   project                 = var.project_name
-   cloud_name              = "google-europe-west1"
-   plan                    = "business-4"
-   service_name            = "target"
-   maintenance_window_dow  = "monday"
-   maintenance_window_time = "10:00:00"
+    project                 = var.project_name
+    cloud_name              = "google-europe-west1"
+    plan                    = "business-4"
+    service_name            = "target"
+    maintenance_window_dow  = "monday"
+    maintenance_window_time = "10:00:00"
 
-   kafka_user_config {
-     kafka_version = "3.1"
-     kafka {
-       group_max_session_timeout_ms = 70000
-       log_retention_bytes          = 1000000000
-     }
+    kafka_user_config {
+      kafka_version = "3.1"
+      kafka {
+        group_max_session_timeout_ms = 70000
+        log_retention_bytes          = 1000000000
+      }
     }
   }
 
   resource "aiven_kafka_topic" "target" {
-   project      = var.project_name
-   service_name = aiven_kafka.target.service_name
-   topic_name   = "topic-b"
-   partitions   = 3
-   replication  = 2
+    project      = var.project_name
+    service_name = aiven_kafka.target.service_name
+    topic_name   = "topic-b"
+    partitions   = 3
+    replication  = 2
   }
 
 For Apache Kafka MirrorMaker 2 and Apache Kafka service integration, ``ip_filter`` is a specific configuration that whitelists certain ranges of IP addresses. This example of ``0.0.0.0/0`` denotes that all IP addresses are allowed.
