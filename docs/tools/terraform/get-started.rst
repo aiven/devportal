@@ -28,31 +28,31 @@ Following `Aiven Terraform Provider documentation <https://registry.terraform.io
 
 Add the following to a new ``provider.tf`` file:
 
-.. code:: bash
+.. code:: terraform
 
    terraform {
-      required_providers {
-         aiven = {
-            source  = "aiven/aiven"
-            version = ">= 2.6.0, < 3.0.0"
-         }
-      }
+     required_providers {
+       aiven = {
+         source  = "aiven/aiven"
+         version = ">= 3.1"
+       }
+     }
    }
-
+   
    provider "aiven" {
-      api_token = var.aiven_api_token
+     api_token = var.aiven_api_token
    }
-
-You can also set the environment variable ``AIVEN_TOKEN`` for the ``api_token`` property. With this, you don't need to pass the ``-var-file`` flag when executing Terraform commands.
+   
+   You can also set the environment variable ``AIVEN_TOKEN`` for the ``api_token`` property. With this, you don't need to pass the ``-var-file`` flag when executing Terraform commands.
  
 2.  The following Terraform script deploys a single-node Redis service. This is a minimal example which you can swap out with your own Terraform scripts or other advanced recipes from :doc:`the Terraform cookbook <reference/cookbook>`.
 
 The contents of the ``redis.tf`` file should look like this:
 
-.. code:: bash
+.. code:: terraform
 
     # A single-node Redis service
-  
+    
     resource "aiven_redis" "single-node-aiven-redis" {
       project                 = var.project_name
       cloud_name              = "google-northamerica-northeast1"
@@ -60,43 +60,43 @@ The contents of the ``redis.tf`` file should look like this:
       service_name            = "gcp-single-node-redis1"
       maintenance_window_dow  = "monday"
       maintenance_window_time = "10:00:00"
-
+    
       redis_user_config {
         redis_maxmemory_policy = "allkeys-random"
-
+    
         public_access {
           redis = true
         }
-      }  
+      }
     }
-
-
-3. To avoid including sensitive information in source control, the variables are defined here in the ``variables.tf`` file. You can then use a ``*.tfvars`` file with the actual values so that Terraform receives the values during runtime, and exclude it.
+    
+    
+    3. To avoid including sensitive information in source control, the variables are defined here in the ``variables.tf`` file. You can then use a ``*.tfvars`` file with the actual values so that Terraform receives the values during runtime, and exclude it.
 
 The ``variables.tf`` file defines both the API token, and the project name to use:
 
-.. code:: bash
+.. code:: terraform
 
    variable "aiven_api_token" {
-      description = "Aiven console API token"
-      type = string
+     description = "Aiven console API token"
+     type        = string
    }
-
+   
    variable "project_name" {
-      description = "Aiven console project name"
-      type        = string
+     description = "Aiven console project name"
+     type        = string
    }
-
-
-The ``var-values.tfvars`` file holds the actual values and is passed to Terraform using the ``-var-file=`` flag.
+   
+   
+   The ``var-values.tfvars`` file holds the actual values and is passed to Terraform using the ``-var-file=`` flag.
 
 ``var-values.tfvars`` file:
 
-.. code:: bash
+.. code:: terraform
 
    aiven_api_token = "<YOUR-AIVEN-AUTHENTICATION-TOKEN-GOES-HERE>"
-   project_name = "<YOUR-AIVEN-CONSOLE-PROJECT-NAME-GOES-HERE>"
-
+   project_name    = "<YOUR-AIVEN-CONSOLE-PROJECT-NAME-GOES-HERE>"
+   
 Edit the file and replace the ``<..>`` sections with the API token you created earlier, and the name of the Aiven project that resources should be created in.
 
 

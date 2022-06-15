@@ -25,32 +25,32 @@ Here is the sample Terraform file to deploy all three services. Keep in mind tha
 
    # European Postgres Service
    resource "aiven_pg" "aws-eu-pg" {
-     project      = var.project_name
-     cloud_name   = "aws-eu-west-2" # London
-     plan         = "business-8"    # Primary + read replica
-     service_name = "postgres-eu-aws"
+     project                = var.project_name
+     cloud_name             = "aws-eu-west-2" # London
+     plan                   = "business-8"    # Primary + read replica
+     service_name           = "postgres-eu-aws"
      termination_protection = true
    }
-
+   
    # US Postgres Service
    resource "aiven_pg" "do-us-pg" {
-     project      = var.project_name
-     cloud_name   = "do-nyc"     # New York
-     plan         = "business-8" # Primary + read replica
-     service_name = "postgres-us-do"
+     project                = var.project_name
+     cloud_name             = "do-nyc"     # New York
+     plan                   = "business-8" # Primary + read replica
+     service_name           = "postgres-us-do"
      termination_protection = true
    }
-
+   
    # Asia Postgres Service
    resource "aiven_pg" "gcp-as-pg" {
-     project      = var.project_name
-     cloud_name   = "google-asia-southeast1" # Singapore
-     plan         = "business-8"             # Primary + read replica
-     service_name = "postgres-as-gcp"
+     project                = var.project_name
+     cloud_name             = "google-asia-southeast1" # Singapore
+     plan                   = "business-8"             # Primary + read replica
+     service_name           = "postgres-as-gcp"
      termination_protection = true
    }
-
-This file creates three Aiven for PostgreSQL services across three cloud providers and in three different regions. The ``termination_protection = true`` property ensures that these databases are protected against accidental or unauthorized deletion.
+   
+   This file creates three Aiven for PostgreSQL services across three cloud providers and in three different regions. The ``termination_protection = true`` property ensures that these databases are protected against accidental or unauthorized deletion.
 
 With termination protection enabled, a ``terraform destroy`` command will result in a 403 response and an error message "Service is protected against termination and shutdown. Remove termination protection first.".
 
