@@ -1,15 +1,18 @@
 Deploy PostgreSQL® service to a single cloud and region
-=========================================
+=======================================================
 
-This example shows the setup for a Terraform project containing a single PostgreSQL service. The following setup shows that the Aiven Terraform Provider calls the Aiven API under the hood to create a PostgreSQL service with startup-4 plan on Google Cloud Platform (Europe).
+This example shows how to use Terraform script to create a single PostgreSQL service in a single cloud and region with some basic configurations applied to the service.
+
+The following image shows that the Aiven Terraform Provider calls the Aiven API under the hood to create a single service PostgreSQL services on AWS (Europe):
+
+.. mermaid::
+
+   graph TD
+      B[(Aiven for PostgreSQL - AWS EU)]
 
 
 Describe the setup
 '''''''''''''''''''''''''''''''''''
-
-Your Terraform files declare the structure of your infrastructure as well as required dependencies and configuration. While you can stuff these together in one file, it's ideal to keep those as separate files.
-
-The following Terraform script deploys a single-node PostgreSQL service. This is a minimal example which you can swap out with your own Terraform scripts or other advanced recipes from :doc:`the Terraform cookbook <reference/cookbook>`.
 
 The contents of the ``postgresql.tf`` file should look like this:
 
@@ -28,6 +31,17 @@ The contents of the ``postgresql.tf`` file should look like this:
 
     pg_user_config {
       pg_version = 14
+      backup_hour           = 01
+      backup_minute         = 30
+      shared_buffers_percentage = 40
+
+      ##project_to_fork_from  = "dev-sandbox"        ### You can create read-replica
+      ##service_to_fork_from  = "pg-31c3595b-simon"  ### PostgreSQL service by using
+      ##pg_read_replica          = true              ### these three line configurations
+
+      ##ip_filter           = ["0.0.0.0/0", "8.8.8.8", "9.9.9.9"]
+      ##admin_username      = "customadminusername"
+      ##admin_password      = "addyourownpassword"
 
     public_access {
       pg         = false
@@ -37,7 +51,14 @@ The contents of the ``postgresql.tf`` file should look like this:
     pg {
       idle_in_transaction_session_timeout = 900
       log_min_duration_statement          = -1
+      jit                                 = false
+      deadlock_timeout                    = 2000
       } 
+
+    pgbouncer {
+      min_pool_size = 20
+      autodb_max_db_connections = 100
+      }
     }
 
     timeouts {
@@ -46,12 +67,9 @@ The contents of the ``postgresql.tf`` file should look like this:
     }
   }
 
-This file create one Aiven for PostgreSQL service in the region that has been defined in the file. The ``termination_protection = true`` property ensures that these databases are protected against accidental or unauthorized deletion.
+This file create one Aiven for PostgreSQL service in the region that has been defined in the file. You can set this new service as a read-replica service by defining the ``project_to_fork_from``, ``service_to_fork_from`` and set the value of ``pg_read_replica``
 
-With termination protection enabled, a ``terraform destroy`` command will result in a 403 response and an error message "Service is protected against termination and shutdown. Remove termination protection first.".
-
-To destroy resources with termination protection, you need to update the script with ``termination_protection = false`` and then execute a ``terraform apply`` followed by a ``terraform destroy``.
-
+You can specify the ``admin_username`` and ``admin_password`` for this service. This option will not be available if ``pg_read_replica`` is set to true. 
 
 More resources
 '''''''''''''''''
