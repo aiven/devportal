@@ -181,7 +181,7 @@ You will also need a custom logline format for NewRelic Syslog
 integration. This is so you can prepend your `NewRelic Insights Insert
 Key <https://docs.newrelic.com/docs/apis/intro-apis/new-relic-api-keys/>`__
 and ensure the format matches the `built-in Grok
-pattern <https://docs.newrelic.com/docs/logs/log-management/ui-data/built-log-parsing-rulesets/#syslog-rfc5424>`__
+pattern <https://docs.newrelic.com/docs/logs/ui-data/built-log-parsing-rules/#syslog-rfc5424>`__
 .
 
 ::
