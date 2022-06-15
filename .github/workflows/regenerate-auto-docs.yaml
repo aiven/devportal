@@ -1,0 +1,40 @@
+name: Create PR of generated auto docs
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "* * * * *"
+
+jobs:
+  RegenerateAutoDocs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repo
+        uses: actions/checkout@v2
+
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.8"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Update advanced params file for all services
+        run: make service-type-config-all
+
+      - name: Update available cloud list
+        run: make cloud-list
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          commit-message: Update advanced params files
+          title: Update Advanced params
+          body: Update advanced params files
+          base: main
+          branch: update-advanced-params
+          delete-branch: true
