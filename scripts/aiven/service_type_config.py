@@ -1,11 +1,8 @@
 import requests
 import argparse
 
-# Save generated files in the includes
-PATH = "includes/"
 
-
-def print_row(param, value_type, title, desc, indent=0):
+def create_row(param, value_type, title, desc, indent=0) -> str:
     row = ""
     preamble = "" + "  " * indent
 
@@ -15,14 +12,14 @@ def print_row(param, value_type, title, desc, indent=0):
     return row
 
 
-def print_service_type_docs(service_type, data):
+def create_service_type_docs(service_type, data) -> str:
     result = ""
     schema = data["service_types"][service_type]["user_config_schema"]
 
     # Rows
     for key, value in schema["properties"].items():
         result += "\n"
-        result += print_row(
+        result += create_row(
             f"``{key}``",
             value.get("type", ""),
             value.get("title", ""),
@@ -33,11 +30,11 @@ def print_service_type_docs(service_type, data):
         if value.get("type", "") == "object":
             for nested_key, nested_value in value.get("properties").items():
                 result += "\n" * 2
-                result += print_row(
+                result += create_row(
                     f"``{nested_key}``",
                     nested_value.get("type", ""),
-                    nested_value.get("title"),
-                    nested_value.get("description"),
+                    nested_value.get("title", ""),
+                    nested_value.get("description", ""),
                     1,
                 )
 
@@ -48,11 +45,10 @@ def print_service_type_docs(service_type, data):
     return result
 
 
-def generate_file(service_type, data):
-    FILE_NAME = PATH + f"config-{str(service_type)}.rst"
-    with open(FILE_NAME, "w") as text_file:
-        text_file.write(print_service_type_docs(service_type, data))
-        print(f"Generated Advanced params: {FILE_NAME}")
+def generate_file(service_type, data, file_path) -> None:
+    """
+    Generates a file
+    """
 
 
 def main():
@@ -62,12 +58,21 @@ def main():
         metavar="service_type",
         help="which service type to get config for",
     )
+    parser.add_argument(
+        "filename",
+        metavar="filename",
+        help="file to save content to",
+    )
     args = parser.parse_args()
     response = requests.get("https://api.aiven.io/v1/service_types")
     data = response.json()
     for service_type in data["service_types"]:
         if service_type == args.service_type:
-            generate_file(service_type, data)
+            filename = args.filename
+            with open(filename, "w") as text_file:
+                file_content = create_service_type_docs(service_type, data)
+                text_file.write(file_content)
+                print(f"Updated Advanced params saved on {filename}")
 
 
 if __name__ == "__main__":
