@@ -155,10 +155,10 @@ use the server and port of the collector.
        -c format=rfc5424 -c tls=true \
        -c sd='collector-token-string@NNNNN'
 
-datadog
+Datadog
 ~~~~~~~
 
-For datadog integration you need to use custom format with logline
+For Datadog integration you need to use custom format with logline
 
 ::
 
@@ -168,7 +168,7 @@ For datadog integration you need to use custom format with logline
        -c tls=true -c format=custom \
        -c logline='DATADOG_API_KEY <%pri%>1 %timestamp:::date-rfc3339% %HOSTNAME% %app-name% - - - %msg%'
 
-NOTE: If you want to use datadog EU environment, the service address is:
+NOTE: If you want to use Datadog EU environment, the service address is:
 
 Server: ``tcp-intake.logs.datadoghq.eu``
 
