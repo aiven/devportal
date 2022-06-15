@@ -1,4 +1,9 @@
 
+``elasticsearch_version`` => *['string', 'null']*
+  **Elasticsearch major version** 
+
+
+
 ``opensearch_version`` => *['string', 'null']*
   **OpenSearch major version** 
 
@@ -39,28 +44,28 @@
 
 
 
-``opensearch_dashboards`` => *object*
-  **OpenSearch Dashboards settings** 
+``kibana`` => *object*
+  **Kibana settings** 
 
   ``enabled`` => *boolean*
-    **Enable or disable OpenSearch Dashboards** 
+    **Enable or disable Kibana** 
 
   ``max_old_space_size`` => *integer*
-    **max_old_space_size** Limits the maximum amount of memory (in MiB) the OpenSearch Dashboards process can use. This sets the max_old_space_size option of the nodejs running the OpenSearch Dashboards. Note: the memory reserved by OpenSearch Dashboards is not available for OpenSearch.
+    **max_old_space_size** Limits the maximum amount of memory (in MiB) the Kibana process can use. This sets the max_old_space_size option of the nodejs running the Kibana. Note: the memory reserved by Kibana is not available for Elasticsearch.
 
-  ``opensearch_request_timeout`` => *integer*
-    **Timeout in milliseconds for requests made by OpenSearch Dashboards towards OpenSearch** 
+  ``elasticsearch_request_timeout`` => *integer*
+    **Timeout in milliseconds for requests made by Kibana towards Elasticsearch** 
 
 
 
-``opensearch`` => *object*
-  **OpenSearch settings** 
+``elasticsearch`` => *object*
+  **Elasticsearch settings** 
 
   ``reindex_remote_whitelist`` => *['array', 'null']*
-    **reindex_remote_whitelist** Whitelisted addresses for reindexing. Changing this value will cause all OpenSearch instances to restart.
+    **reindex_remote_whitelist** Whitelisted addresses for reindexing. Changing this value will cause all Elasticsearch instances to restart.
 
   ``http_max_content_length`` => *integer*
-    **http.max_content_length** Maximum content length for HTTP requests to the OpenSearch HTTP API, in bytes.
+    **http.max_content_length** Maximum content length for HTTP requests to the Elasticsearch HTTP API, in bytes.
 
   ``http_max_header_size`` => *integer*
     **http.max_header_size** The max size of allowed headers, in bytes
@@ -72,7 +77,7 @@
     **indices.query.bool.max_clause_count** Maximum number of clauses Lucene BooleanQuery can have. The default value (1024) is relatively high, and increasing it may cause performance issues. Investigate other approaches first before increasing this value.
 
   ``search_max_buckets`` => *['integer', 'null']*
-    **search.max_buckets** Maximum number of aggregation buckets allowed in a single response. OpenSearch default value is used when this is not defined.
+    **search.max_buckets** Maximum number of aggregation buckets allowed in a single response. Elasticsearch default value is used when this is not defined.
 
   ``indices_fielddata_cache_size`` => *['integer', 'null']*
     **indices.fielddata.cache.size** Relative amount. Maximum amount of heap memory used for field data cache. This is an expert setting; decreasing the value too much will increase overhead of loading field data; too much memory used for field data cache will decrease amount of heap available for other operations.
@@ -81,7 +86,7 @@
     **indices.memory.index_buffer_size** Percentage value. Default is 10%. Total amount of heap used for indexing buffer, before writing segments to disk. This is an expert setting. Too low value will slow down indexing; too high value will increase indexing performance but causes performance issues for query performance.
 
   ``indices_queries_cache_size`` => *integer*
-    **indices.queries.cache.size** Percentage value. Default is 10%. Maximum amount of heap used for query cache. This is an expert setting. Too low value will decrease query performance and increase performance for other operations; too high value will cause issues with other OpenSearch functionality.
+    **indices.queries.cache.size** Percentage value. Default is 10%. Maximum amount of heap used for query cache. This is an expert setting. Too low value will decrease query performance and increase performance for other operations; too high value will cause issues with other Elasticsearch functionality.
 
   ``indices_recovery_max_bytes_per_sec`` => *integer*
     **indices.recovery.max_bytes_per_sec** Limits total inbound and outbound recovery traffic for each node. Applies to both peer recoveries as well as snapshot recoveries (i.e., restores from a snapshot). Defaults to 40mb
@@ -168,11 +173,11 @@
 ``private_access`` => *object*
   **Allow access to selected service ports from private networks** 
 
-  ``opensearch`` => *boolean*
-    **Allow clients to connect to opensearch with a DNS name that always resolves to the service's private IP addresses. Only available in certain network locations** 
+  ``elasticsearch`` => *boolean*
+    **Allow clients to connect to elasticsearch with a DNS name that always resolves to the service's private IP addresses. Only available in certain network locations** 
 
-  ``opensearch_dashboards`` => *boolean*
-    **Allow clients to connect to opensearch_dashboards with a DNS name that always resolves to the service's private IP addresses. Only available in certain network locations** 
+  ``kibana`` => *boolean*
+    **Allow clients to connect to kibana with a DNS name that always resolves to the service's private IP addresses. Only available in certain network locations** 
 
   ``prometheus`` => *boolean*
     **Allow clients to connect to prometheus with a DNS name that always resolves to the service's private IP addresses. Only available in certain network locations** 
@@ -182,11 +187,11 @@
 ``privatelink_access`` => *object*
   **Allow access to selected service components through Privatelink** 
 
-  ``opensearch`` => *boolean*
-    **Enable opensearch** 
+  ``elasticsearch`` => *boolean*
+    **Enable elasticsearch** 
 
-  ``opensearch_dashboards`` => *boolean*
-    **Enable opensearch_dashboards** 
+  ``kibana`` => *boolean*
+    **Enable kibana** 
 
   ``prometheus`` => *boolean*
     **Enable prometheus** 
@@ -196,11 +201,11 @@
 ``public_access`` => *object*
   **Allow access to selected service ports from the public Internet** 
 
-  ``opensearch`` => *boolean*
-    **Allow clients to connect to opensearch from the public internet for service nodes that are in a project VPC or another type of private network** 
+  ``elasticsearch`` => *boolean*
+    **Allow clients to connect to elasticsearch from the public internet for service nodes that are in a project VPC or another type of private network** 
 
-  ``opensearch_dashboards`` => *boolean*
-    **Allow clients to connect to opensearch_dashboards from the public internet for service nodes that are in a project VPC or another type of private network** 
+  ``kibana`` => *boolean*
+    **Allow clients to connect to kibana from the public internet for service nodes that are in a project VPC or another type of private network** 
 
   ``prometheus`` => *boolean*
     **Allow clients to connect to prometheus from the public internet for service nodes that are in a project VPC or another type of private network** 
