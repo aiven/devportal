@@ -1,6 +1,6 @@
 import requests
 from fileinput import filename
-from service_type_config import create_service_type_docs, generate_file
+from service_type_config import create_service_type_docs
 
 PATH = "includes/"
 

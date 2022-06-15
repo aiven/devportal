@@ -2,24 +2,50 @@ import requests
 import argparse
 
 
-def create_row(param, value_type, title, desc, indent=0) -> str:
+def create_row(parameter, value_type, title, desc, indent=0) -> str:
+    """Creates content's row.
+
+    :param parameter: parameter described
+    :param value_type: parameter type
+    :param title: paramete's title
+    :param desc: parameter description
+    :returns: formatted string with parameter info
+    :rtype: str
+    """
     row = ""
     preamble = "" + "  " * indent
 
-    row += f"{preamble}{param} => *{value_type}*"
+    row += f"{preamble}{parameter} => *{value_type}*"
     row += "\n"
     row += f"{preamble}  **{title}** {desc}"
     return row
 
 
-def create_service_type_docs(service_type, data) -> str:
-    result = ""
-    schema = data["service_types"][service_type]["user_config_schema"]
+import sys
+from typing import Dict
+
+
+def create_service_type_docs(service_type: str, data: Dict) -> str:
+    """Creates information to be used to write service type docs.
+
+    :param service_type: parameter described
+    :param data: parameters data to extract needed info
+    :param title: paramete's title
+    :param desc: parameter description
+    :returns: formatted string with parameter info
+    :rtype: str
+    """
+    content = ""
+    try:
+        schema = data["service_types"][service_type]["user_config_schema"]
+    except KeyError:
+        print(f"Invalid service_type: {service_type}")
+        sys.exit(1)
 
     # Rows
     for key, value in schema["properties"].items():
-        result += "\n"
-        result += create_row(
+        content += "\n"
+        content += create_row(
             f"``{key}``",
             value.get("type", ""),
             value.get("title", ""),
@@ -29,8 +55,8 @@ def create_service_type_docs(service_type, data) -> str:
         # handle any nested properties
         if value.get("type", "") == "object":
             for nested_key, nested_value in value.get("properties").items():
-                result += "\n" * 2
-                result += create_row(
+                content += "\n" * 2
+                content += create_row(
                     f"``{nested_key}``",
                     nested_value.get("type", ""),
                     nested_value.get("title", ""),
@@ -38,17 +64,11 @@ def create_service_type_docs(service_type, data) -> str:
                     1,
                 )
 
-        result += "\n" * 3
+        content += "\n" * 3
         pass
     # Empty row to end
-    result += "\n"
-    return result
-
-
-def generate_file(service_type, data, file_path) -> None:
-    """
-    Generates a file
-    """
+    content += "\n"
+    return content
 
 
 def main():
