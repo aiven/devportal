@@ -37,6 +37,8 @@ If the replica server does not come back online during these 300 seconds, ``repl
 
 Controlled switchover during upgrades or migrations
 ---------------------------------------------------
+.. Note::
+    This does not include major version upgrade with ``pg_upgrade``, for major version upgrade please see this :doc:`how-to </docs/products/postgresql/howto/upgrade>`.
 
 During maintenance updates, cloud migrations, or plan changes, the below procedure is followed:
 
@@ -52,4 +54,4 @@ During maintenance updates, cloud migrations, or plan changes, the below procedu
 3. The old primary server is scheduled for termination, and one of the new replica servers is immediately promoted as a primary server. ``servicename-projectname.aivencloud.com`` DNS is updated to point to the new primary server. The new primary server is removed from the ``replica-servicename-projectname.aivencloud.com`` DNS record.
 
 .. Note::
-    The old primary server is kept alive for a short period of time with a TCP forwarding setup pointing to the new primary server allowing clients to connect before learning the new IP address.
+    The old primary server is kept alive for a short period of time (minimum 60 seconds) with a TCP forwarding setup pointing to the new primary server allowing clients to connect before learning the new IP address.
