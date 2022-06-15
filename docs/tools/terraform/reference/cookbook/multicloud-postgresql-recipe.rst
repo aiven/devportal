@@ -50,7 +50,7 @@ Here is the sample Terraform file to deploy all three services. Keep in mind tha
      termination_protection = true
    }
    
-   This file creates three Aiven for PostgreSQL services across three cloud providers and in three different regions. The ``termination_protection = true`` property ensures that these databases are protected against accidental or unauthorized deletion.
+This file creates three Aiven for PostgreSQL services across three cloud providers and in three different regions. The ``termination_protection = true`` property ensures that these databases are protected against accidental or unauthorized deletion.
 
 With termination protection enabled, a ``terraform destroy`` command will result in a 403 response and an error message "Service is protected against termination and shutdown. Remove termination protection first.".
 

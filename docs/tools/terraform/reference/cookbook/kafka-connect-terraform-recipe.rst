@@ -123,7 +123,7 @@ Here is the sample Terraform file to stand-up and connect all the services. Keep
       }
     }
     
-    This file creates three Aiven services - a Kafka service, a Kafka Connect service, and an OpenSearch service. Two service integrations among these three services and a Kafka topic within the Kafka service will also be created from this Terraform file.
+This file creates three Aiven services - a Kafka service, a Kafka Connect service, and an OpenSearch service. Two service integrations among these three services and a Kafka topic within the Kafka service will also be created from this Terraform file.
 To validate, produce some messages on the Kafka topic and you should be seeing those appear on OpenSearch indices.
 
 More resources

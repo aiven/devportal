@@ -119,7 +119,7 @@ For this, you'd like to run an Apache Flink job and write the filtered messages 
       EOF
   }
   
-  The resource ``"aiven_flink"`` creates an Aiven for Apache Flink resource with the project name, choice of cloud, an Aiven service plan, and a specified service name. 
+The resource ``"aiven_flink"`` creates an Aiven for Apache Flink resource with the project name, choice of cloud, an Aiven service plan, and a specified service name. 
 ``"aiven_kafka"`` resource creates an Apache Kafka cluster and two Apache Kafka topics (**cpu_measurements** and a **cpu_high_usage**) are created using the ``"aiven_kafka_topic"`` resource.
 Similarly, the ``"aiven_service_integration"`` resource creates the integration between Apache Kafka and the Apache Flink service. Two ``"aiven_flink_table"``
 resources are created - a **source** and a **sink** with a specified schema. Once the Terraform script is run, an Apache Flink job is started that copies data from the **source** Flink table to the **sink** Flink 

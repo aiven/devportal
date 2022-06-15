@@ -43,7 +43,7 @@ Add the following to a new ``provider.tf`` file:
      api_token = var.aiven_api_token
    }
    
-   You can also set the environment variable ``AIVEN_TOKEN`` for the ``api_token`` property. With this, you don't need to pass the ``-var-file`` flag when executing Terraform commands.
+You can also set the environment variable ``AIVEN_TOKEN`` for the ``api_token`` property. With this, you don't need to pass the ``-var-file`` flag when executing Terraform commands.
  
 2.  The following Terraform script deploys a single-node Redis service. This is a minimal example which you can swap out with your own Terraform scripts or other advanced recipes from :doc:`the Terraform cookbook <reference/cookbook>`.
 
@@ -71,7 +71,7 @@ The contents of the ``redis.tf`` file should look like this:
     }
     
     
-    3. To avoid including sensitive information in source control, the variables are defined here in the ``variables.tf`` file. You can then use a ``*.tfvars`` file with the actual values so that Terraform receives the values during runtime, and exclude it.
+3. To avoid including sensitive information in source control, the variables are defined here in the ``variables.tf`` file. You can then use a ``*.tfvars`` file with the actual values so that Terraform receives the values during runtime, and exclude it.
 
 The ``variables.tf`` file defines both the API token, and the project name to use:
 
@@ -88,7 +88,7 @@ The ``variables.tf`` file defines both the API token, and the project name to us
    }
    
    
-   The ``var-values.tfvars`` file holds the actual values and is passed to Terraform using the ``-var-file=`` flag.
+The ``var-values.tfvars`` file holds the actual values and is passed to Terraform using the ``-var-file=`` flag.
 
 ``var-values.tfvars`` file:
 
