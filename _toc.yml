@@ -22,6 +22,7 @@ entries:
       - file: docs/platform/concepts/byoa
       - file: docs/platform/concepts/enhanced-compliance-env
       - file: docs/platform/concepts/disaster-recovery-test-scenarios
+      - file: docs/platform/concepts/choosing-timeseries-database
     - file: docs/platform/howto
       title: HowTo
       entries:
