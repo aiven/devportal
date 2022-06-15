@@ -1,7 +1,7 @@
-Kafka with Kafka Connect services with custom configurations
+Kafka® with Kafka® Connect services with custom configurations
 ============================================================
 
-This example shows how to create an Apache Kafka service integrates with Kafka Connect with some custom configurations. 
+This example shows how to create an Apache Kafka® service integrates with Kafka® Connect with some custom configurations. 
 
 Aiven has a concept of service integrations to manage the relationships between components. `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_
 has a specific resource type in Terraform for service integration. 
