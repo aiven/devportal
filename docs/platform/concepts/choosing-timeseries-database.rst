@@ -16,5 +16,5 @@ time series databases in its product portfolio.
    scalable**, high performance time series database that is also
    **high availability.**
 
-We offer a selection of business and premium plans for your use. Read
-more about them on `our website <https://aiven.io/>`__ .
+Find our more about our time series offerings on `our website
+<https://aiven.io/time-series-databases/what-are-time-series-databases>`__ .
