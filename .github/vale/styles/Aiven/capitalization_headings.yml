@@ -39,6 +39,7 @@ exceptions:
   - Java
   - Kafdrop
   - Kafka
+  - Karapace Schema Registry
   - Kubernetes
   - M3
   - MirrorMaker
