@@ -9,11 +9,9 @@ A single MirrorMaker 2 cluster can run multiple replication flows, and it has a 
 * two Aiven for Apache Kafka clusters (a source and a target)
 * an Aiven for Apache Kafka MirrorMaker 2 service
 * two service integrations between the Apache Kafka cluster and the MirrorMaker 2
-* a replication flow to move all the topics from the source cluster to the target cluster. 
+* a replication flow to move all the topics from the source cluster to the target cluster 
 
-The `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_ is used to create all the required resources in a declarative style. 
-
-The following image shows a unidirectional flow with the Apache Kafka MirrorMaker 2 replicating all the topics from ``DC1`` (source Kafka cluster) to ``DC2`` (target Kafka cluster):
+The `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_ is used to create all the required resources in a declarative style. The following image shows a unidirectional flow with the Apache Kafka MirrorMaker 2 replicating all the topics from ``DC1`` (source Kafka cluster) to ``DC2`` (target Kafka cluster):
 
 .. mermaid::
 
