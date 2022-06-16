@@ -2,11 +2,18 @@ Cross-cluster replication with Apache Kafka® MirrorMaker 2
 ==========================================================
 
 From disaster recovery to isolating data for compliance reasons, businesses need to replicate data across their Apache Kafka® clusters, and Apache Kafka® MirrorMaker 2 is a perfect tool 
-to do so. A single MirrorMaker 2 cluster can run multiple replication flows, and it has a mechanism for preventing replication cycles. This example sets up two Aiven for Apache Kafka clusters (a source and a target),
-a MirrorMaker 2 service, two service integrations between the Apache Kafka cluster and the MirrorMaker 2, and a replication flow for data to move from all the topics from the source cluster to the target cluster. The 
-`Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_ is used to create all the required resources in a declarative style. 
+to do so. 
 
-The following image shows a unidirectional flow with the Apache Kafka MirrorMaker 2 replicating all the topics from DC1 (source Kafka cluster) to DC2 (target Kafka cluster):
+A single MirrorMaker 2 cluster can run multiple replication flows, and it has a mechanism for preventing replication cycles. This example sets up: 
+
+* two Aiven for Apache Kafka clusters (a source and a target)
+* an Aiven for Apache Kafka MirrorMaker 2 service
+* two service integrations between the Apache Kafka cluster and the MirrorMaker 2
+* a replication flow to move all the topics from the source cluster to the target cluster. 
+
+The `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_ is used to create all the required resources in a declarative style. 
+
+The following image shows a unidirectional flow with the Apache Kafka MirrorMaker 2 replicating all the topics from ``DC1`` (source Kafka cluster) to ``DC2`` (target Kafka cluster):
 
 .. mermaid::
 
@@ -32,8 +39,11 @@ Describe the setup
 ------------------
 
 Here is the sample Terraform file that will spin up two Apache Kafka services, an Apache Kafka MirrorMaker 2 service and the MirrorMaker 2 service will be configured with two cluster alias pointed to the source and target Apache Kafka clusters. 
+
 The service integrations ``source-kafka-to-mm`` and ``mm-to-target-kafka`` connect the Kafka clusters to the MirrorMaker 2 instance. The replication flow ``mm-replication-flow`` creates a unidirectional flow to populate the remote topics based on source 
-topics. The `".*"` wildcard in the MirrorMaker 2 configuration means that all the topics from the source cluster will be replicated to the target cluster. However, since the flow is unidirectional, the ``topic-b`` will only be present in the target cluster and not the source cluster.
+topics. 
+
+The ``".*"`` wildcard in the MirrorMaker 2 configuration means that all the topics from the source cluster will be replicated to the target cluster. However, since the flow is unidirectional, the ``topic-b`` will only be present in the target cluster (where it was originally created) and not the source cluster.
 
 .. Tip::
 
