@@ -43,6 +43,6 @@ Learn about some of the key concepts for working with Aiven platform:
   
   DR testing scenarios are simulations of disaster scenarios run for enterprise support customers by Aiven operators.
 
-* :doc:`Choosing a timeseries database </docs/platform/concepts/choosing-timeseries-database>`.
+* :doc:`Choosing a time series database </docs/platform/concepts/choosing-timeseries-database>`.
   
-  Choosing a timeseries database in Aiven Console.
+  Choosing a time series database in Aiven Console.
