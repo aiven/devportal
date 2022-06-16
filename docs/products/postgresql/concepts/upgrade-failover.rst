@@ -37,8 +37,10 @@ If the replica server does not come back online during these 300 seconds, ``repl
 
 Controlled switchover during upgrades or migrations
 ---------------------------------------------------
+
 .. Note::
-    This does not include major version upgrade with ``pg_upgrade``, for major version upgrade please see this :doc:`how-to </docs/products/postgresql/howto/upgrade>`.
+    
+    The below doesn't apply to major version upgrade with ``pg_upgrade``, for major version upgrade please read the related :doc:`how-to </docs/products/postgresql/howto/upgrade>`.
 
 During maintenance updates, cloud migrations, or plan changes, the below procedure is followed:
 
