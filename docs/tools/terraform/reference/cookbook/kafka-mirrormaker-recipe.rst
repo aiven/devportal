@@ -162,6 +162,15 @@ The ``".*"`` wildcard in the MirrorMaker 2 configuration means that all the topi
 
 For Apache Kafka MirrorMaker 2 and Apache Kafka service integration, ``ip_filter`` is a specific configuration that whitelists certain ranges of IP addresses. This example of ``0.0.0.0/0`` denotes that all IP addresses are allowed.
 
+.. Tip::
+
+  In the target Apache Kafka cluster you will find: 
+  
+  * the topic named ``topic-b`` created via the resource ``"aiven_kafka_topic" "target"``
+  * some internal MirrorMaker2 topics starting with prefix ``mm2``
+  * a heartbeat topic for the ``source`` Kafka cluster named ``source.heartbeats``
+  * the replicated topic ``topic-a`` prefixed with the source Kafka cluster alias ``source``
+
 More resources
 --------------
 
