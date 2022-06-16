@@ -21,7 +21,7 @@ Here is the sample Terraform file to deploy two services and a service integrati
 
 .. Tip::
 
-    Be sure to check out the :doc:`getting started guide <../../get-started>` to learn about the common files required to execute the following recipe. For example, you'll need to declare the variables for ``project_name`` and ``api_token``.
+    Be sure to check out the :doc:`getting started guide <../../get-started>` to learn about the common files required to execute the following recipe. For example, you'll need to declare the variables for ``project_name``, ``api_token``, and ``service_name_prefix``.
 
 ``services.tf`` file:
 
