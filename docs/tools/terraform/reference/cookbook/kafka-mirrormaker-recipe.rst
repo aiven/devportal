@@ -167,7 +167,7 @@ For Apache Kafka MirrorMaker 2 and Apache Kafka service integration, ``ip_filter
   In the target Apache Kafka cluster you will find: 
   
   * the topic named ``topic-b`` created via the resource ``"aiven_kafka_topic" "target"``
-  * some internal MirrorMaker2 topics starting with prefix ``mm2``
+  * some internal MirrorMaker 2 topics starting with prefix ``mm2``
   * a heartbeat topic for the ``source`` Kafka cluster named ``source.heartbeats``
   * the replicated topic ``topic-a`` prefixed with the source Kafka cluster alias ``source``
 
