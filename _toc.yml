@@ -388,7 +388,6 @@ entries:
           - file: docs/products/flink/howto/create-job
           - file: docs/products/flink/howto/timestamps_opensearch
           - file: docs/products/flink/howto/real-time-alerting-solution
-          - file: docs/products/flink/howto/real-time-alerting-solution-cli
       - file: docs/products/flink/reference
         title: Reference
         entries:
