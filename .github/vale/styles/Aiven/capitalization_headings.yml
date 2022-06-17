@@ -39,6 +39,7 @@ exceptions:
   - Java
   - Kafdrop
   - Kafka
+  - Karapace
   - Kubernetes
   - M3
   - MirrorMaker
@@ -57,6 +58,7 @@ exceptions:
   - Provectus
   - Python
   - Redis
+  - Schema Registry
   - Simple Authentication and Security Layer
   - Snowflake
   - Spring

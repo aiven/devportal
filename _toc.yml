@@ -11,6 +11,10 @@ entries:
       title: Concepts
       entries:
       - file: docs/platform/concepts/authentication-tokens
+      - file: docs/platform/concepts/list-billing
+        title: Billing
+        entries:
+          - file: docs/platform/concepts/tax-information
       - file: docs/platform/concepts/beta_services
       - file: docs/platform/concepts/cloud-security
       - file: docs/platform/concepts/logs-metrics-alerts
@@ -20,6 +24,7 @@ entries:
       - file: docs/platform/concepts/static-ips
       - file: docs/platform/concepts/tls-ssl-certificates
       - file: docs/platform/concepts/byoa
+      - file: docs/platform/concepts/enhanced-compliance-env
       - file: docs/platform/concepts/disaster-recovery-test-scenarios
     - file: docs/platform/howto
       title: HowTo
@@ -119,11 +124,13 @@ entries:
             - file: docs/tools/terraform/reference/cookbook/kafka-connect-terraform-recipe
               title: Apache Kafka and OpenSearch  
             - file: docs/tools/terraform/reference/cookbook/multicloud-postgresql-recipe
-              title: Multicloud PostgreSQL 
+              title: Multicloud PostgreSQL
             - file: docs/tools/terraform/reference/cookbook/kafka-flink-integration-recipe
               title: Apache Kafka and Apache Flink
             - file: docs/tools/terraform/reference/cookbook/kafka-mirrormaker-recipe
               title: Apache Kafka and Apache MirrorMaker   
+            - file: docs/tools/terraform/reference/cookbook/kafka-karapace-recipe
+              title: Apache Kafka with Karapace
       - file: docs/tools/kubernetes
         title: Aiven Operator for Kubernetes
 

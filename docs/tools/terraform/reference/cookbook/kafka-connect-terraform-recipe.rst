@@ -26,102 +26,102 @@ Here is the sample Terraform file to stand-up and connect all the services. Keep
 
 ``services.tf`` file:
 
-.. code:: bash
+.. code:: terraform
 
-   # Kafka service
-   resource "aiven_kafka" "application-logs" {
-   project                 = var.project_name
-   cloud_name              = "google-northamerica-northeast1"
-   plan                    = "business-4"
-   service_name            = "kafka-application-logs"
-   maintenance_window_dow  = "monday"
-   maintenance_window_time = "10:00:00"
-   kafka_user_config {
-      kafka_connect = true
-      kafka_rest    = true
-      kafka_version = "3.0"
-      kafka {
-         group_max_session_timeout_ms = 70000
-         log_retention_bytes          = 1000000000
+    # Kafka service
+    resource "aiven_kafka" "application-logs" {
+      project                 = var.project_name
+      cloud_name              = "google-northamerica-northeast1"
+      plan                    = "business-4"
+      service_name            = "kafka-application-logs"
+      maintenance_window_dow  = "monday"
+      maintenance_window_time = "10:00:00"
+      kafka_user_config {
+        kafka_connect = true
+        kafka_rest    = true
+        kafka_version = "3.0"
+        kafka {
+          group_max_session_timeout_ms = 70000
+          log_retention_bytes          = 1000000000
+        }
       }
-   }
-   }
+    }
 
-   # Kafka topic
-   resource "aiven_kafka_topic" "topic-logs-app-1" {
-   project = var.project_name
-   service_name = aiven_kafka.application-logs.service_name
-   topic_name = "logs-app-1"
-   partitions = 3
-   replication = 2
-   }
+    # Kafka topic
+    resource "aiven_kafka_topic" "topic-logs-app-1" {
+      project      = var.project_name
+      service_name = aiven_kafka.application-logs.service_name
+      topic_name   = "logs-app-1"
+      partitions   = 3
+      replication  = 2
+    }
 
-   # Kafka connect service
-   resource "aiven_kafka_connect" "logs-connector" {
-   project = var.project_name
-   cloud_name = "google-northamerica-northeast1"
-   plan = "business-4"
-   service_name = "kafka-connect-logs-connector"
-   maintenance_window_dow = "monday"
-   maintenance_window_time = "10:00:00"
-   kafka_connect_user_config {
-      kafka_connect {
-         consumer_isolation_level = "read_committed"
+    # Kafka connect service
+    resource "aiven_kafka_connect" "logs-connector" {
+      project                 = var.project_name
+      cloud_name              = "google-northamerica-northeast1"
+      plan                    = "business-4"
+      service_name            = "kafka-connect-logs-connector"
+      maintenance_window_dow  = "monday"
+      maintenance_window_time = "10:00:00"
+      kafka_connect_user_config {
+        kafka_connect {
+          consumer_isolation_level = "read_committed"
+        }
+        public_access {
+          kafka_connect = true
+        }
       }
-      public_access {
-         kafka_connect = true
+    }
+
+    # Kafka connect service integration
+    resource "aiven_service_integration" "kafka-to-logs-connector" {
+      project                  = var.project_name
+      integration_type         = "kafka_connect"
+      source_service_name      = aiven_kafka.application-logs.service_name
+      destination_service_name = aiven_kafka_connect.logs-connector.service_name
+      kafka_connect_user_config {
+        kafka_connect {
+          group_id             = "connect"
+          status_storage_topic = "__connect_status"
+          offset_storage_topic = "__connect_offsets"
+        }
       }
-   }
-   }
+    }
 
-   # Kafka connect service integration
-   resource "aiven_service_integration" "kafka-to-logs-connector" {
-   project = var.project_name
-   integration_type = "kafka_connect"
-   source_service_name = aiven_kafka.application-logs.service_name
-   destination_service_name = aiven_kafka_connect.logs-connector.service_name
-   kafka_connect_user_config {
-      kafka_connect {
-         group_id = "connect"
-         status_storage_topic = "__connect_status"
-         offset_storage_topic = "__connect_offsets"
+    # Kafka connector
+    resource "aiven_kafka_connector" "kafka-os-con1" {
+      project        = var.project_name
+      service_name   = aiven_kafka.application-logs.service_name
+      connector_name = "kafka-os-con1"
+      config = {
+        "topics" = aiven_kafka_topic.topic-logs-app-1.topic_name
+        "connector.class" : "io.aiven.kafka.connect.opensearch.OpensearchSinkConnector"
+        "type.name"                      = "os-connector"
+        "name"                           = "kafka-os-con1"
+        "connection.url"                 = "https://${aiven_opensearch.os-service1.service_host}:${aiven_opensearch.os-service1.service_port}"
+        "connection.username"            = aiven_opensearch.os-service1.service_username
+        "connection.password"            = aiven_opensearch.os-service1.service_password
+        "key.converter"                  = "org.apache.kafka.connect.storage.StringConverter"
+        "value.converter"                = "org.apache.kafka.connect.json.JsonConverter"
+        "tasks.max"                      = 1
+        "schema.ignore"                  = true
+        "value.converter.schemas.enable" = false
       }
-   }
-   }
+    }
 
-   # Kafka connector
-   resource "aiven_kafka_connector" "kafka-os-con1" {
-   project = var.project_name
-   service_name = aiven_kafka.application-logs.service_name
-   connector_name = "kafka-os-con1"
-   config = {
-      "topics" = aiven_kafka_topic.topic-logs-app-1.topic_name
-      "connector.class" : "io.aiven.kafka.connect.opensearch.OpensearchSinkConnector"
-      "type.name" = "os-connector"
-      "name" = "kafka-os-con1"
-      "connection.url" = "https://${aiven_opensearch.os-service1.service_host}:${aiven_opensearch.os-service1.service_port}"
-      "connection.username" = aiven_opensearch.os-service1.service_username
-      "connection.password" = aiven_opensearch.os-service1.service_password
-      "key.converter" = "org.apache.kafka.connect.storage.StringConverter"
-      "value.converter" = "org.apache.kafka.connect.json.JsonConverter"
-      "tasks.max" = 1
-      "schema.ignore" = true
-      "value.converter.schemas.enable" = false
-   }
-   }
-
-   # Opensearch service
-   resource "aiven_opensearch" "os-service1" {
-   project = var.project_name
-   cloud_name = "google-northamerica-northeast1"
-   plan = "business-4"
-   service_name = "os-service1"
-   maintenance_window_dow = "monday"
-   maintenance_window_time = "10:00:00"
-   opensearch_user_config {
-      opensearch_version = "1"
-   }
-   }
+    # Opensearch service
+    resource "aiven_opensearch" "os-service1" {
+      project                 = var.project_name
+      cloud_name              = "google-northamerica-northeast1"
+      plan                    = "business-4"
+      service_name            = "os-service1"
+      maintenance_window_dow  = "monday"
+      maintenance_window_time = "10:00:00"
+      opensearch_user_config {
+        opensearch_version = "1"
+      }
+    }
 
 This file creates three Aiven services - a Kafka service, a Kafka Connect service, and an OpenSearch service. Two service integrations among these three services and a Kafka topic within the Kafka service will also be created from this Terraform file.
 To validate, produce some messages on the Kafka topic and you should be seeing those appear on OpenSearch indices.

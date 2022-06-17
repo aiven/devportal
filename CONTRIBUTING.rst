@@ -47,6 +47,8 @@ The instructions for setting up local development are in the ``README``.
 
 2. Open a pull request, use the template so we know what it is and why it's a great addition. If you need to publish this quickly for a reason, mention that as well.
 
+   If there is an associated issue, add ``Fixes <issue-URL>`` to the PR description text - this means the issue will automatically get closed when the PR is merged.
+
 3. We have an automated build process that checks your work against our in-house styles, gets product names with the right capitalization, and checks links. Please don't be alarmed if your build fails! View the output of the failed jobs to find out what happened, or we can advise when we review. You can run these locally if you like: ``make spell`` and ``make linkcheck``.
 
 .. tip::
