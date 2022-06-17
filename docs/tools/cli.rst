@@ -137,6 +137,8 @@ Log in/out and manage your user tokens here. You can also create other users.
 
 Manage your VPC configuration including user/peer networks.
 
+:doc:`See detailed command information <cli/vpc>`
+
 General usage
 -------------
 
