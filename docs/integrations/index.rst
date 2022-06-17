@@ -20,6 +20,7 @@ Available integrations
     **Metrics**
 
     * :doc:`Datadog <datadog/index>`
+    * :doc:`Amazon CloudWatch <cloudwatch/index>`
     * :doc:`Prometheus </docs/platform/howto/integrations/prometheus-metrics>`
 
     ---
@@ -28,4 +29,5 @@ Available integrations
 
     * :doc:`/docs/products/opensearch/howto/opensearch-log-integration`
     * :doc:`Datadog <datadog/index>`
+    * :doc:`Amazon CloudWatch <cloudwatch/index>`
     * `RSyslog integration <https://help.aiven.io/en/articles/2933115-remote-syslog-integration>`_

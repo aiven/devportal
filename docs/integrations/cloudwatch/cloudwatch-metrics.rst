@@ -30,14 +30,14 @@ Your first step is to create the endpoint to be used between the Aiven service a
   
    * Your AWS account **Region**.
   
-   * **Cloudwatch Namespace** where your metrics can be organized in different spaces. This field is **Optional** and if not provided, it will be generated.
+   * **Cloudwatch Namespace** where your metrics can be organized in different spaces. This field is `Optional` and if not provided, one will be created for you.
 
-3. Click in **Create** to save this endpoint.
+3. To save this endpoint, click in **Create**.
 
 Send metrics from an Aiven service to AWS CloudWatch
 ----------------------------------------------------
 
-Follow the steps in this section for each of the services whose metrics should be sent to AWS CloudWatch.
+Follow the steps in this section for each of the services whose metrics should be sent to your AWS CloudWatch.
 
 4. From the **Service Overview** page, select **Manage integrations** and choose the **AWS CloudWatch Metrics** option.
 

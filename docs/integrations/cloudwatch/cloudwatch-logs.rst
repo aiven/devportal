@@ -3,6 +3,9 @@ Send logs to Amazon CloudWatch
 
 This article will show you how to use the Aiven integration to send logs from your Aiven services to the `Amazon (AWS) CloudWatch <https://aws.amazon.com/cloudwatch/>`_.
 
+Prerequisites
+-------------
+
 You will need:
 
 * An AWS account, and which region it is in.
@@ -23,7 +26,7 @@ Start by configuring the link between the Aiven service and the AWS CloudWatch. 
 
 2. Configure the settings for the new endpoint:
 
-   * ***Endpoint name*** is how you will refer to this logs integration when linking it to other Aiven services.
+   * **Endpoint name** is how you will refer to this logs integration when linking it to other Aiven services.
 
    * Your AWS credentials: **Access Key** and **Secret Key**.
   
