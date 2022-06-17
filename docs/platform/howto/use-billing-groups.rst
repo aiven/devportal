@@ -60,4 +60,4 @@ The billing group page contains multiple sections:
 
 
 For more information, see our `support page <https://help.aiven.io/>`__
-or contact us at support@aiven.io .
+or contact us at support@Aiven.io .
