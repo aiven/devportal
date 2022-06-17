@@ -14,6 +14,7 @@ boot
 business
 Cassandra
 ClickHouse
+CloudWatch
 codecs
 compliances
 Conduktor
