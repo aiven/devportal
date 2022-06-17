@@ -57,6 +57,7 @@ Variable                     Description
 ``KEYSTORE_PASSWORD``        Password you used when creating a keystore
 ``KEY_PASSWORD``             Password for the key in the keystore, if you chose a different password than the one for keystore
 ``SERIALIZER``               Serializer of your choice, you can find available options  `in the Apache Kafka documentation <https://kafka.apache.org/0102/javadoc/org/apache/kafka/common/serialization/>`_.
+``DESERIALIZER``             Deserializer of your choice, you can find available options  `in the Apache Kafka documentation <https://kafka.apache.org/0102/javadoc/org/apache/kafka/common/serialization/>`_.
 ========================     =======================================================================================================
 
 
@@ -77,10 +78,10 @@ Set up properties to connect to the cluster and create a producer and a consumer
      properties.put("ssl.keystore.location", "{KEYSTORE_LOCATION}");
      properties.put("ssl.keystore.password", "{KEYSTORE_PASSWORD}");
      properties.put("ssl.key.password", "{KEY_PASSWORD}");
-     properties.put("key.serializer",
-         "org.apache.kafka.common.serialization.StringSerializer");
-     properties.put("value.serializer",
-         "org.apache.kafka.common.serialization.StringSerializer");
+     properties.put("key.serializer", "{SERIALIZER}");
+     properties.put("value.serializer", {SERIALIZER}");
+     properties.put("key.deserializer", "{DESERIALIZER}");
+     properties.put("value.deserializer", {DESERIALIZER}");
 
      // create a producer
      KafkaProducer<String, String> producer = new KafkaProducer<>(properties);
@@ -112,10 +113,10 @@ Set up properties to connect to the cluster and create a producer and a consumer
     properties.put("ssl.truststore.location", "{TRUSTSTORE_LOCATION}");
     properties.put("ssl.truststore.password", "{TRUSTSTORE_PASSWORD}");
 
-    properties.put("key.serializer",
-    "org.apache.kafka.common.serialization.StringSerializer");
-    properties.put("value.serializer",
-     "org.apache.kafka.common.serialization.StringSerializer");
+    properties.put("key.serializer", "{SERIALIZER}");
+    properties.put("value.serializer", {SERIALIZER}");
+     properties.put("key.deserializer", "{DESERIALIZER}");
+     properties.put("value.deserializer", {DESERIALIZER}");
 
     // create a producer
     KafkaProducer<String, String> producer = new KafkaProducer<>(properties);
