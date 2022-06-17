@@ -48,4 +48,4 @@ Follow the steps in this section for each of the services whose metrics should b
 
 6. Go to your AWS account and check the "CloudWatch" service. You can go to the **Metrics** section to see your Aiven service metrics data. It may take a few minutes until the data arrives.
 
-.. seealso:: Learn more about :doc:`/docs/integrations/aws/index`.
+.. seealso:: Learn more about :doc:`/docs/integrations/cloudwatch/index`.
