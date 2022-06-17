@@ -157,7 +157,7 @@ entries:
             entries:
               - file: docs/products/kafka/howto/connect-with-python
                 title: Connect with Python
-              - file: docs/products/kafka/howto/connect-java
+              - file: docs/products/kafka/howto/connect-with-java
                 title: Connect with Java
           - file: docs/products/kafka/howto/list-tools
             title: Tools
