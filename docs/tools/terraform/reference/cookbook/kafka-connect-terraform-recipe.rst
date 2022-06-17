@@ -46,7 +46,7 @@ Here is the sample Terraform file to stand-up and connect all the services. Keep
         }
       }
     }
-
+    
     # Kafka topic
     resource "aiven_kafka_topic" "topic-logs-app-1" {
       project      = var.project_name
@@ -55,7 +55,7 @@ Here is the sample Terraform file to stand-up and connect all the services. Keep
       partitions   = 3
       replication  = 2
     }
-
+    
     # Kafka connect service
     resource "aiven_kafka_connect" "logs-connector" {
       project                 = var.project_name
@@ -73,7 +73,7 @@ Here is the sample Terraform file to stand-up and connect all the services. Keep
         }
       }
     }
-
+    
     # Kafka connect service integration
     resource "aiven_service_integration" "kafka-to-logs-connector" {
       project                  = var.project_name
@@ -88,7 +88,7 @@ Here is the sample Terraform file to stand-up and connect all the services. Keep
         }
       }
     }
-
+    
     # Kafka connector
     resource "aiven_kafka_connector" "kafka-os-con1" {
       project        = var.project_name
@@ -109,7 +109,7 @@ Here is the sample Terraform file to stand-up and connect all the services. Keep
         "value.converter.schemas.enable" = false
       }
     }
-
+    
     # Opensearch service
     resource "aiven_opensearch" "os-service1" {
       project                 = var.project_name
@@ -122,7 +122,7 @@ Here is the sample Terraform file to stand-up and connect all the services. Keep
         opensearch_version = "1"
       }
     }
-
+    
 This file creates three Aiven services - a Kafka service, a Kafka Connect service, and an OpenSearch service. Two service integrations among these three services and a Kafka topic within the Kafka service will also be created from this Terraform file.
 To validate, produce some messages on the Kafka topic and you should be seeing those appear on OpenSearch indices.
 

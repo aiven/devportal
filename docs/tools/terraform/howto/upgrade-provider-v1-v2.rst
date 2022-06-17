@@ -27,16 +27,19 @@ Upgrade Aiven Terraform provider
 
 Update the Aiven Terraform Provider by
 editing the providers block of your script to include the latest version of
-the Aiven Terraform Provider (v2.3.1 at the time of writing)::
+the Aiven Terraform Provider (v2.3.1 at the time of writing):
+
+.. code:: terraform
 
     terraform {
       required_providers {
         aiven = {
-          source = "aiven/aiven"
-          version = "2.3.1"
+          source  = "aiven/aiven"
+          version = ">= 3.1"
         }
       }
     }
+    
 
 Upgrade Terraform
 '''''''''''''''''
