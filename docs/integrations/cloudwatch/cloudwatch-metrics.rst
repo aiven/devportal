@@ -8,9 +8,14 @@ Prepare your AWS account
 
 * An AWS account, and which region it is in.
 
-* An AWS Access Key and Secret Key. Generate the credentials by visiting your AWS console under the **IAM dashboard** then click in **Users**, open the **Security credentials** tab, and choose **Create access key**. Click on **Download** as you will need this shortly.
-
 * An Aiven account with a service running.
+
+* An AWS Access Key and Secret Key. 
+  
+.. tip::
+   
+   To generate your AWS credentials, visit your AWS console under the **IAM dashboard** then click in **Users**, open the **Security credentials** tab, and choose **Create access key**. Click on **Download** as you will need this shortly.
+
 
 Configure the integration
 -------------------------
@@ -23,12 +28,12 @@ Your first step is to create the endpoint to be used between the Aiven service a
    :alt: Screenshot of configuration screen for CloudWatch Metrics integration
 
 2. Configure the settings for the new endpoint:
-
-   * ***Endpoint name*** is how you will refer to the AWS CloudWatch metrics integration when linking it to an Aiven service.
-
-   * Your AWS credentials: **Access Key** and **Secret Key**.
-  
+   
    * Your AWS account **Region**.
+  
+   * Your AWS credentials: **Access Key** and **Secret Key**.
+
+   * **Endpoint name** is how you will refer to the AWS CloudWatch metrics integration when linking it to an Aiven service.
   
    * **CloudWatch Namespace** where your metrics can be organized in different spaces. This field is `Optional` and if not provided, one will be created for you.
 
@@ -48,6 +53,9 @@ Follow the steps in this section for each of the services whose metrics should b
 
 5. Choose the endpoint by the **Endpoint name** you created earlier from the dropdown and choose **Enable**.
 
+.. image:: /images/integrations/configure-cloudwatch-metrics-endpoint.png
+   :alt: Screenshot of configuration screen for CloudWatch Metrics integration
+   
 6. Customize which metrics you want to send to the CloudWatch. To do this, toggle a metric group or individual metric field.
 
    .. image:: /images/integrations/cloudwatch-metrics-list.png
