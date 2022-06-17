@@ -8,7 +8,7 @@ Prerequisites
 
 To connect Kpow to Aiven for Apache Kafka® you need to create a :doc:`Java keystore and truststore containing the service SSL certificates <keystore-truststore>`. 
 
-Kpow uses a `set of Apache Kafka topics <https://docs.kpow.io/installation/minimum-acl-permissions>`_ to store the working information. You can either     :doc:`create the topics manually <create-topic>` or enable the :doc:`automatic creation of topics <create-topics-automatically>` for the Aiven for Apache Kafka service.
+Kpow uses a `set of Apache Kafka topics <https://docs.kpow.io/installation/minimum-acl-permissions>`_ to store the working information. You can either :doc:`create the topics manually <create-topic>` or enable the :doc:`automatic creation of topics <create-topics-automatically>` for the Aiven for Apache Kafka service.
 
 Furthermore, you need to collect the following information:
 
@@ -34,15 +34,15 @@ Retrieve Aiven for Apache Kafka® SSL certificate files
 ------------------------------------------------------
 
 Aiven for Apache Kafka® by default enables TLS security.
-The certificates can be manually downloaded from the service overview page in the Aiven console, or via the :ref:`dedicated Aiven CLI command <avn_service_user_creds_download>`.
+Downloaded the certificates from the service overview page in the Aiven console, or via the :ref:`dedicated Aiven CLI command <avn_service_user_creds_download>`.
 
 
-Setup a Kpow configuration file
+Set up a Kpow configuration file
 ----------------------------------
 
 Kpow supports both :doc:`SASL and SSL authentication methods<../concepts/auth-types>`. The following example shows the SSL version which requires a keystore and truststore that can be created following the :doc:`dedicated documentation <keystore-truststore>`.
 
-Once the keystore and truststore are created, you can define a Kpow configuration file named ``kpow.env`` with the following content, replacing the ``APACHE_KAFKA_HOST``, ``APACHE_KAFKA_PORT``,  ``KPOW_LICENSE_ID``, ``KPOW_LICENSE_CODE``, ``KPOW_LICENSEE``, ``KPOW_LICENSE_EXPIRY_DATE``, ``KPOW_LICENSE_SIGNATURE``, ``KEYSTORE_FILE_NAME``, ``KEYSTORE_PASSWORD``, ``KEY_PASSWORD``, ``TRUSTSTORE_FILE_NAME`` and ``TRUSTSTORE_PASSWORD``  with the the respective values taken from the prerequisites section:
+Once the keystore and truststore are created, define a Kpow configuration file named ``kpow.env`` with the following content, replacing the ``APACHE_KAFKA_HOST``, ``APACHE_KAFKA_PORT``,  ``KPOW_LICENSE_ID``, ``KPOW_LICENSE_CODE``, ``KPOW_LICENSEE``, ``KPOW_LICENSE_EXPIRY_DATE``, ``KPOW_LICENSE_SIGNATURE``, ``KEYSTORE_FILE_NAME``, ``KEYSTORE_PASSWORD``, ``KEY_PASSWORD``, ``TRUSTSTORE_FILE_NAME`` and ``TRUSTSTORE_PASSWORD``  with the the respective values taken from the prerequisites section:
 
 ::
 
@@ -79,7 +79,7 @@ You can run Kpow in a Docker/Podman container with the following command, by rep
 Use Kpow
 -----------
 
-Once Kpow starts, you should be able to access it at ``localhost:3000``
+Once Kpow starts, access the interface at ``localhost:3000``.
 
 .. image:: /images/products/kafka/kpow.jpg
    :alt: Kpow in action
