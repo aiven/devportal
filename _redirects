@@ -11,7 +11,7 @@
 /grafana            /docs/products/grafana/index.html
 
 /api                /docs/tools/api/index.html
-/cli                /docs/tools/cli/index.html
+/cli                /docs/tools/cli.html
 /terraform          /docs/tools/terraform/index.html
 
 
