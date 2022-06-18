@@ -18,7 +18,7 @@
   **M3 limits** 
 
   ``query_series`` => *integer*
-    **The maximum number of series fetched in single query** None
+    **The maximum number of series fetched in single query** 
 
   ``query_require_exhaustive`` => *boolean*
     **Require exhaustive result** When query limits are exceeded, whether to return error (if True) or return partial results (False)
@@ -34,7 +34,7 @@
   **Allow access to selected service ports from private networks** 
 
   ``m3coordinator`` => *boolean*
-    **Allow clients to connect to m3coordinator with a DNS name that always resolves to the service's private IP addresses. Only available in certain network locations** None
+    **Allow clients to connect to m3coordinator with a DNS name that always resolves to the service's private IP addresses. Only available in certain network locations** 
 
 
 
@@ -42,7 +42,7 @@
   **Allow access to selected service ports from the public Internet** 
 
   ``m3coordinator`` => *boolean*
-    **Allow clients to connect to m3coordinator from the public internet for service nodes that are in a project VPC or another type of private network** None
+    **Allow clients to connect to m3coordinator from the public internet for service nodes that are in a project VPC or another type of private network** 
 
 
 
@@ -65,7 +65,7 @@
   **M3 rules** 
 
   ``mapping`` => *array*
-    **List of M3 mapping rules** None
+    **List of M3 mapping rules** 
 
 
 
@@ -76,7 +76,6 @@
 
 ``project_to_fork_from`` => *['string', 'null']*
   **Name of another project to fork a service from. This has effect only when a new service is being created.** 
-
 
 
 
