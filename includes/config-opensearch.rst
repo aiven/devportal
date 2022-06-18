@@ -43,13 +43,13 @@
   **OpenSearch Dashboards settings** 
 
   ``enabled`` => *boolean*
-    **Enable or disable OpenSearch Dashboards** None
+    **Enable or disable OpenSearch Dashboards** 
 
   ``max_old_space_size`` => *integer*
     **max_old_space_size** Limits the maximum amount of memory (in MiB) the OpenSearch Dashboards process can use. This sets the max_old_space_size option of the nodejs running the OpenSearch Dashboards. Note: the memory reserved by OpenSearch Dashboards is not available for OpenSearch.
 
   ``opensearch_request_timeout`` => *integer*
-    **Timeout in milliseconds for requests made by OpenSearch Dashboards towards OpenSearch** None
+    **Timeout in milliseconds for requests made by OpenSearch Dashboards towards OpenSearch** 
 
 
 
@@ -83,11 +83,14 @@
   ``indices_queries_cache_size`` => *integer*
     **indices.queries.cache.size** Percentage value. Default is 10%. Maximum amount of heap used for query cache. This is an expert setting. Too low value will decrease query performance and increase performance for other operations; too high value will cause issues with other OpenSearch functionality.
 
+  ``indices_recovery_max_bytes_per_sec`` => *integer*
+    **indices.recovery.max_bytes_per_sec** Limits total inbound and outbound recovery traffic for each node. Applies to both peer recoveries as well as snapshot recoveries (i.e., restores from a snapshot). Defaults to 40mb
+
+  ``indices_recovery_max_concurrent_file_chunks`` => *integer*
+    **indices.recovery.max_concurrent_file_chunks** Number of file chunks sent in parallel for each recovery. Defaults to 2.
+
   ``action_auto_create_index_enabled`` => *boolean*
     **action.auto_create_index** Explicitly allow or block automatic creation of indices. Defaults to true
-
-  ``thread_pool_index_size`` => *integer*
-    **index thread pool size** Size for the thread pool. See documentation for exact details. Do note this may have maximum value depending on CPU count - value is automatically lowered if set to higher than maximum value.
 
   ``thread_pool_search_size`` => *integer*
     **search thread pool size** Size for the thread pool. See documentation for exact details. Do note this may have maximum value depending on CPU count - value is automatically lowered if set to higher than maximum value.
@@ -123,13 +126,28 @@
     **write thread pool queue size** Size for the thread pool queue. See documentation for exact details.
 
   ``action_destructive_requires_name`` => *['boolean', 'null']*
-    **Require explicit index names when deleting** None
+    **Require explicit index names when deleting** 
 
   ``cluster_max_shards_per_node`` => *integer*
     **cluster.max_shards_per_node** Controls the number of shards allowed in the cluster per data node
 
   ``override_main_response_version`` => *boolean*
     **compatibility.override_main_response_version** Compatibility mode sets OpenSearch to report its version as 7.10 so clients continue to work. Default is false
+
+  ``script_max_compilations_rate`` => *string*
+    **Script max compilation rate - circuit breaker to prevent/minimize OOMs** Script compilation circuit breaker limits the number of inline script compilations within a period of time. Default is use-context
+
+  ``cluster_routing_allocation_node_concurrent_recoveries`` => *integer*
+    **Concurrent incoming/outgoing shard recoveries per node** How many concurrent incoming/outgoing shard recoveries (normally replicas) are allowed to happen on a node. Defaults to 2.
+
+  ``email_sender_name`` => *['string']*
+    **Sender email name placeholder to be used in Opensearch Dashboards and Opensearch keystore** This should be identical to the Sender name defined in Opensearch dashboards
+
+  ``email_sender_username`` => *['string']*
+    **Sender email address for Opensearch alerts** 
+
+  ``email_sender_password`` => *['string']*
+    **Sender email password for Opensearch alerts to authenticate with SMTP server** Sender email password for Opensearch alerts to authenticate with SMTP server
 
 
 
@@ -151,13 +169,13 @@
   **Allow access to selected service ports from private networks** 
 
   ``opensearch`` => *boolean*
-    **Allow clients to connect to opensearch with a DNS name that always resolves to the service's private IP addresses. Only available in certain network locations** None
+    **Allow clients to connect to opensearch with a DNS name that always resolves to the service's private IP addresses. Only available in certain network locations** 
 
   ``opensearch_dashboards`` => *boolean*
-    **Allow clients to connect to opensearch_dashboards with a DNS name that always resolves to the service's private IP addresses. Only available in certain network locations** None
+    **Allow clients to connect to opensearch_dashboards with a DNS name that always resolves to the service's private IP addresses. Only available in certain network locations** 
 
   ``prometheus`` => *boolean*
-    **Allow clients to connect to prometheus with a DNS name that always resolves to the service's private IP addresses. Only available in certain network locations** None
+    **Allow clients to connect to prometheus with a DNS name that always resolves to the service's private IP addresses. Only available in certain network locations** 
 
 
 
@@ -165,13 +183,13 @@
   **Allow access to selected service components through Privatelink** 
 
   ``opensearch`` => *boolean*
-    **Enable opensearch** None
+    **Enable opensearch** 
 
   ``opensearch_dashboards`` => *boolean*
-    **Enable opensearch_dashboards** None
+    **Enable opensearch_dashboards** 
 
   ``prometheus`` => *boolean*
-    **Enable prometheus** None
+    **Enable prometheus** 
 
 
 
@@ -179,13 +197,13 @@
   **Allow access to selected service ports from the public Internet** 
 
   ``opensearch`` => *boolean*
-    **Allow clients to connect to opensearch from the public internet for service nodes that are in a project VPC or another type of private network** None
+    **Allow clients to connect to opensearch from the public internet for service nodes that are in a project VPC or another type of private network** 
 
   ``opensearch_dashboards`` => *boolean*
-    **Allow clients to connect to opensearch_dashboards from the public internet for service nodes that are in a project VPC or another type of private network** None
+    **Allow clients to connect to opensearch_dashboards from the public internet for service nodes that are in a project VPC or another type of private network** 
 
   ``prometheus`` => *boolean*
-    **Allow clients to connect to prometheus from the public internet for service nodes that are in a project VPC or another type of private network** None
+    **Allow clients to connect to prometheus from the public internet for service nodes that are in a project VPC or another type of private network** 
 
 
 
@@ -201,7 +219,6 @@
 
 ``project_to_fork_from`` => *['string', 'null']*
   **Name of another project to fork a service from. This has effect only when a new service is being created.** 
-
 
 
 
