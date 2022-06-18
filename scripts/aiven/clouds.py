@@ -80,7 +80,7 @@ def main():
 
     with open(filename, "w") as text_file:
         text_file.write(res)
-        print(f"Updated list of available cloud region: {filename}")
+        print(f"Generate 'List of Available Cloud Region': {filename}")
 
 
 if __name__ == "__main__":
