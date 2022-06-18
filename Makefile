@@ -53,26 +53,11 @@ create-feedback-table:
 		--pg-url="$(PG_URL)"
 
 # (Re)Generate config listing for a service type
-service-type-config-pg:
-	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "pg" "includes/config-pg.rst"
-
-service-type-config-kafka:
-	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "kafka" "includes/config-kafka.rst"
-
 service-type-config-cassandra:
 	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "cassandra" "includes/config-cassandra.rst"
 
-service-type-config-opensearch:
-	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "opensearch" "includes/config-opensearch.rst"
-
-service-type-config-mysql:
-	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "mysql" "includes/config-mysql.rst"
-
-service-type-config-m3db:
-	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "m3db" "includes/config-m3db.rst"
-
-service-type-config-redis:
-	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "redis" "includes/config-redis.rst"
+service-type-config-clickhouse:
+	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "clickhouse" "includes/config-clickhouse.rst"
 
 service-type-config-flink:
 	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "flink" "includes/config-flink.rst"
@@ -83,8 +68,33 @@ service-type-config-grafana:
 service-type-config-influxdb:
 	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "influxdb" "includes/config-influxdb.rst"
 
-service-type-config-all:
-	python "$(SOURCEDIR)/scripts/aiven/service_type_config_all.py"
+service-type-config-kafka_mirrormaker:
+	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "kafka_mirrormaker" "includes/config-kafka_mirrormaker.rst"
+
+service-type-config-kafka_connect:
+	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "kafka_connect" "includes/config-kafka_connect.rst"
+
+service-type-config-kafka:
+	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "kafka" "includes/config-kafka.rst"
+
+service-type-config-m3aggregator:
+	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "m3aggregator" "includes/config-m3aggregator.rst"
+
+service-type-config-m3db:
+	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "m3db" "includes/config-m3db.rst"
+
+service-type-config-mysql:
+	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "mysql" "includes/config-mysql.rst"
+
+service-type-config-opensearch:
+	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "opensearch" "includes/config-opensearch.rst"
+
+service-type-config-pg:
+	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "pg" "includes/config-pg.rst"
+
+service-type-config-redis:
+	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "redis" "includes/config-redis.rst"
+
 # (Re)Generate cloud listing
 cloud-list:
 	python "$(SOURCEDIR)/scripts/aiven/clouds.py" "includes/clouds-list.rst"
