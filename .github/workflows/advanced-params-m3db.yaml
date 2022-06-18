@@ -1,0 +1,38 @@
+name: Create PR of generated auto docs
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "* * * * *"
+
+jobs:
+  AdvancedParamsM3DB:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repo
+        uses: actions/checkout@v2
+
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.8"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: M3DB - update advanced params
+        run: make service-type-config-m3db
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          commit-message: M3DB - update advanced params
+          title: M3DB - update advanced params
+          body: M3DB - update advanced parameters file
+          base: main
+          branch: m3db-update-advanced-params
+          labels: m3db, automated-pr
+          delete-branch: true
