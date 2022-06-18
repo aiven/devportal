@@ -1,8 +1,11 @@
 import requests
 import argparse
+from typing import List, Union
 
 
-def create_row(parameter, value_type, title, desc, indent=0) -> str:
+def create_row(
+    parameter: str, value_type: Union[List, str], title: str, desc: str, indent=0
+) -> str:
     """Creates content's row.
 
     :param parameter: parameter described
@@ -25,7 +28,7 @@ import sys
 from typing import Dict
 
 
-def create_service_type_docs(service_type: str, data: Dict) -> str:
+def create_service_docs(service_type: str, data: Dict) -> str:
     """Creates information to be used to write service type docs.
 
     :param service_type: parameter described
@@ -90,9 +93,8 @@ def main():
         if service_type == args.service_type:
             filename = args.filename
             with open(filename, "w") as text_file:
-                file_content = create_service_type_docs(service_type, data)
-                text_file.write(file_content)
-                print(f"Updated Advanced params saved on {filename}")
+                text_file.write(create_service_docs(service_type, data))
+                print(f"{service_type.title()} - 'Advanced Parameters' file generated.")
 
 
 if __name__ == "__main__":
