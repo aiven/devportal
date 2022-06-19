@@ -125,7 +125,7 @@ entries:
             - file: docs/tools/terraform/reference/cookbook/kafka-connect-terraform-recipe
               title: Apache Kafka and OpenSearch  
             - file: docs/tools/terraform/reference/cookbook/multicloud-postgresql-recipe
-              title: Multicloud PostgreSQL 
+              title: Multicloud PostgreSQL
             - file: docs/tools/terraform/reference/cookbook/kafka-flink-integration-recipe
               title: Apache Kafka and Apache Flink
             - file: docs/tools/terraform/reference/cookbook/kafka-mirrormaker-recipe
@@ -138,8 +138,10 @@ entries:
               title: PostgreSQL with custom configs
             - file: docs/tools/terraform/reference/cookbook/kafka-mongodb-recipe
               title: Apache Kafka MongoDB Source Connector  
+            - file: docs/tools/terraform/reference/cookbook/kafka-karapace-recipe
+              title: Apache Kafka with Karapace 
             - file: docs/tools/terraform/reference/cookbook/kafka-custom-conf-recipe.rst
-              title: Apache Kafka and Kafka Connect services with custom configurations   
+              title: Apache Kafka Connect Custom Configurations   
       - file: docs/tools/kubernetes
         title: Aiven Operator for Kubernetes
 
