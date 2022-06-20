@@ -1,0 +1,36 @@
+name: Create PR of generated auto docs
+
+on:
+  schedule:
+    - cron: "0 6 * * 2"
+
+jobs:
+  AdvancedParamsOpenSearch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repo
+        uses: actions/checkout@v2
+
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.8"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: OpenSearch - update advanced params
+        run: make service-type-config-opensearch
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          commit-message: OpenSearch - update advanced params
+          title: OpenSearch - update advanced params
+          body: OpenSearch - update advanced parameters file
+          base: main
+          branch: mysql-update-advanced-params
+          labels: mysql, automated-pr
+          delete-branch: true
