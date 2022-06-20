@@ -10,7 +10,7 @@ These examples show how to connect to an Aiven for Apache Kafka® service using 
 
 Pre-requisites
 ---------------
-Add a dependency for ``kafka-clients`` from your preferred artifact repository, for example `Maven repository <mvnrepository.com>`_ into your Java project.
+Add a dependency for ``kafka-clients`` from your preferred artifact repository, for example `Maven repository <https://maven.apache.org/index.html>`_ into your Java project.
 
 Go to the *Overview* page of your Aiven for Apache Kafka service.
 
