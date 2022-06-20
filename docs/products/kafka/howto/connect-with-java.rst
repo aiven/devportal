@@ -10,7 +10,7 @@ These examples show how to connect to an Aiven for Apache Kafka® service using 
 
 Pre-requisites
 ---------------
-Add a dependency for `kafka-clients` from your preferred artifact repository, for example `Maven <https://mvnrepository.com/artifact/org.apache.kafka>`_ into your Java project.
+Add a dependency for ``kafka-clients`` from your preferred artifact repository, for example `Maven repository <https://mvnrepository.com/>`_ into your Java project.
 
 Go to the *Overview* page of your Aiven for Apache Kafka service.
 
@@ -57,7 +57,7 @@ Variable                     Description
 ``KEYSTORE_PASSWORD``        Password you used when creating a keystore
 ``KEY_PASSWORD``             Password for the key in the keystore, if you chose a different password than the one for keystore
 ``SERIALIZER``               How to serialize data, you can find available options  `in the Apache Kafka documentation <https://kafka.apache.org/0102/javadoc/org/apache/kafka/common/serialization/>`_.
-``DESERIALIZER``             How to deserialize data, you can find available options  `in the Apache Kafka documentation <https://kafka.apache.org/0102/javadoc/org/apache/kafka/common/serialization/>`_.
+``DESERIALIZER``             How to de-serialize data, you can find available options  `in the Apache Kafka documentation <https://kafka.apache.org/0102/javadoc/org/apache/kafka/common/serialization/>`_.
 ========================     =======================================================================================================
 
 
