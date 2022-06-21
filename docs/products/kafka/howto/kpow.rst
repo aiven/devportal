@@ -10,15 +10,19 @@ To connect Kpow to Aiven for Apache Kafka® you need to create a :doc:`Java keys
 
 Kpow uses a `set of Apache Kafka topics <https://docs.kpow.io/installation/minimum-acl-permissions>`_ to store the working information. You can either :doc:`create the topics manually <create-topic>` or enable the :doc:`automatic creation of topics <create-topics-automatically>` for the Aiven for Apache Kafka service.
 
-Furthermore, you need to collect the following information:
+Furthermore, you need to collect the following information for Apache Kafka and Kpow:
+
+.. Tip::
+
+    If you create a Kpow trial, you should receive all the ``KPOW`` related parameters in the welcome email, scrolling down to the relevant **Certificates** section.
 
 * ``APACHE_KAFKA_HOST``: The Aiven for Apache Kafka hostname
 * ``APACHE_KAFKA_PORT``: The Aiven for Apache Kafka port
 * ``KEYSTORE_FILE_NAME``: The name of the Java keystore containing the Aiven for Apache Kafka SSL certificates
-* ``SSL_KEYSTORE_PASSWORD``: The password used to secure the Kava keystore
-* ``SSL_KEY_PASSWORD``: The password used to secure the Kava key
-* ``SSL_TRUSTSTORE_LOCATION``: The password used to secure the Kava truststore
-* ``SSL_TRUSTSTORE_PASSWORD``: The password used to secure the Kava truststore
+* ``SSL_KEYSTORE_PASSWORD``: The password used to secure the Java keystore
+* ``SSL_KEY_PASSWORD``: The password used to secure the Java key. If you created the keystore using the instructions above, then this will be the same as the Java keystore password
+* ``SSL_TRUSTSTORE_LOCATION``: The password used to secure the Java truststore
+* ``SSL_TRUSTSTORE_PASSWORD``: The password used to secure the Java truststore
 * ``SSL_STORE_FOLDER``: The absolute path of the folder containing both the truststore and keystore
 * ``KPOW_LICENSE_ID``: Kpow license ID
 * ``KPOW_LICENSE_CODE``: Kpow license code
@@ -26,9 +30,6 @@ Furthermore, you need to collect the following information:
 * ``KPOW_LICENSE_EXPIRY_DATE``: Kpow license expiry date
 * ``KPOW_LICENSE_SIGNATURE``: Kpow license signature
 
-.. Tip::
-
-    If you create a Kpow trial, you should receive all the ``KPOW`` related parameters in the welcome email
 
 Retrieve Aiven for Apache Kafka® SSL certificate files
 ------------------------------------------------------
@@ -42,7 +43,7 @@ Set up a Kpow configuration file
 
 Kpow supports both :doc:`SASL and SSL authentication methods<../concepts/auth-types>`. The following example shows the SSL version which requires a keystore and truststore that can be created following the :doc:`dedicated documentation <keystore-truststore>`.
 
-Once the keystore and truststore are created, define a Kpow configuration file named ``kpow.env`` with the following content, replacing the ``APACHE_KAFKA_HOST``, ``APACHE_KAFKA_PORT``,  ``KPOW_LICENSE_ID``, ``KPOW_LICENSE_CODE``, ``KPOW_LICENSEE``, ``KPOW_LICENSE_EXPIRY_DATE``, ``KPOW_LICENSE_SIGNATURE``, ``KEYSTORE_FILE_NAME``, ``KEYSTORE_PASSWORD``, ``KEY_PASSWORD``, ``TRUSTSTORE_FILE_NAME`` and ``TRUSTSTORE_PASSWORD``  with the the respective values taken from the prerequisites section:
+Once the keystore and truststore are created, define a Kpow configuration file named ``kpow.env`` with the following content, replacing the ``APACHE_KAFKA_HOST``, ``APACHE_KAFKA_PORT``,  ``KPOW_LICENSE_ID``, ``KPOW_LICENSE_CODE``, ``KPOW_LICENSEE``, ``KPOW_LICENSE_EXPIRY_DATE``, ``KPOW_LICENSE_SIGNATURE``, ``SSL_KEYSTORE_FILE_NAME``, ``SSL_KEYSTORE_PASSWORD``, ``SSL_KEY_PASSWORD``, ``SSL_TRUSTSTORE_FILE_NAME`` and ``SSL_TRUSTSTORE_PASSWORD``  with the the respective values taken from the prerequisites section:
 
 ::
 
@@ -53,11 +54,11 @@ Once the keystore and truststore are created, define a Kpow configuration file n
     LICENSE_EXPIRY=KPOW_LICENSE_EXPIRY_DATE
     LICENSE_SIGNATURE=KPOW_LICENSE_SIGNATURE
     SECURITY_PROTOCOL=SSL
-    SSL_KEYSTORE_LOCATION=/ssl/KEYSTORE_FILE_NAME
-    SSL_KEYSTORE_PASSWORD=KEYSTORE_PASSWORD
-    SSL_KEY_PASSWORD=KEY_PASSWORD
-    SSL_TRUSTSTORE_LOCATION=/ssl/TRUSTSTORE_FILE_NAME
-    SSL_TRUSTSTORE_PASSWORD=TRUSTSTORE_PASSWORD
+    SSL_KEYSTORE_LOCATION=/ssl/SSL_KEYSTORE_FILE_NAME
+    SSL_KEYSTORE_PASSWORD=SSL_KEYSTORE_PASSWORD
+    SSL_KEY_PASSWORD=SSL_KEY_PASSWORD
+    SSL_TRUSTSTORE_LOCATION=/ssl/SSL_TRUSTSTORE_FILE_NAME
+    SSL_TRUSTSTORE_PASSWORD=SSL_TRUSTSTORE_PASSWORD
 
 .. Warning::
 
