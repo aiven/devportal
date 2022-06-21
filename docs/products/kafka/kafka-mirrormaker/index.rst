@@ -29,6 +29,9 @@ Take your first steps with Aiven for Apache Kafka® MirrorMaker 2 by following o
 
     💻 :doc:`HowTo <howto>`
 
+    ---
+
+    📖 :doc:`Reference <reference>`
 
 Apache Kafka® MirrorMaker 2 resources
 -------------------------------------
