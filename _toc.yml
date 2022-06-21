@@ -130,7 +130,10 @@ entries:
             - file: docs/tools/terraform/reference/cookbook/kafka-mirrormaker-recipe
               title: Apache Kafka and Apache MirrorMaker   
             - file: docs/tools/terraform/reference/cookbook/kafka-karapace-recipe
-              title: Apache Kafka with Karapace
+              title: Apache Kafka with Karapace 
+            - file: docs/tools/terraform/reference/cookbook/grafana-m3db-postgresql-recipe
+              title: Visualize PostgreSQL metrics with Grafana
+
       - file: docs/tools/kubernetes
         title: Aiven Operator for Kubernetes
 
