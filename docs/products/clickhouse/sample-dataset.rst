@@ -20,7 +20,7 @@ Download the original dataset directly from `the dataset documentation page <htt
 .. note::
     The ``nproc`` Linux command, which prints the number of processing units, is not available on macOS. To use the above command, add an alias for ``nproc`` into your  ``~/.zshrc`` file: ``alias nproc="sysctl -n hw.logicalcpu"``.
 
-This command allows you to download and extract data from the URLs specified in the `ClickHouse documentation <https://clickhouse.com/docs/en/getting-started/example-datasets/metrica/#obtaining-tables-from-compressed-tsv-file>`_.
+This command allows you to download and extract data from the URLs specified in the `ClickHouse documentation <https://clickhouse.com/docs/en/getting-started/example-datasets/metrica>`_.
 
 Once done, you should have two files available: ``hits_v1.tsv`` and ``visits_v1.tsv``.
 
@@ -44,7 +44,7 @@ To connect to the server, use the connection details that you can find in the *C
 Create tables
 ---------------
 
-The next step is to add a new table to your newly created database. The ClickHouse documentation includes a sample ``CREATE TABLE`` command with `the recommended table structure <https://clickhouse.com/docs/en/getting-started/example-datasets/metrica/#obtaining-tables-from-compressed-tsv-file>`_.
+The next step is to add a new table to your newly created database. The ClickHouse documentation includes a sample ``CREATE TABLE`` command with `the recommended table structure <https://clickhouse.com/docs/en/getting-started/example-datasets/metrica>`_.
 
 To use the command through Docker, run the following commands to create the tables for both ``hits_v1`` and ``visits_v1``::
 

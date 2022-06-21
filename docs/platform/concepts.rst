@@ -7,6 +7,10 @@ Learn about some of the key concepts for working with Aiven platform:
 
   Learn about authentication tokens and how to use them to programmatically access Aiven resources.
 
+* :doc:`Billing </docs/platform/concepts/list-billing>`.
+
+  Understand how to set up and manage billing profile for your Aiven accounts.
+
 * :doc:`Beta services </docs/platform/concepts/beta_services>`.
 
   What to expect from the early versions of our new services and upgrades.
@@ -34,6 +38,10 @@ Learn about some of the key concepts for working with Aiven platform:
 * :doc:`Bring your own account (BYOA) </docs/platform/concepts/byoa>`.
 
   BYOA is an optional setup feature that allows you to purchase your Aiven services through your existing Cloud Provider.
+
+* :doc:`Enhanced Compliance Environments (ECE) </docs/platform/concepts/enhanced-compliance-env>`.
+
+  Enhanced Compliance Environments are an optional setup feature that allows you to deploy Aiven services within an environment that satisfies compliance beyond those of a standard environment.
 
 * :doc:`Disaster Recovery (DR) testing scenarios </docs/platform/concepts/disaster-recovery-test-scenarios>`.
   

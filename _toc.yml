@@ -11,6 +11,10 @@ entries:
       title: Concepts
       entries:
       - file: docs/platform/concepts/authentication-tokens
+      - file: docs/platform/concepts/list-billing
+        title: Billing
+        entries:
+          - file: docs/platform/concepts/tax-information
       - file: docs/platform/concepts/beta_services
       - file: docs/platform/concepts/cloud-security
       - file: docs/platform/concepts/logs-metrics-alerts
@@ -20,6 +24,7 @@ entries:
       - file: docs/platform/concepts/static-ips
       - file: docs/platform/concepts/tls-ssl-certificates
       - file: docs/platform/concepts/byoa
+      - file: docs/platform/concepts/enhanced-compliance-env
       - file: docs/platform/concepts/disaster-recovery-test-scenarios
     - file: docs/platform/howto
       title: HowTo
@@ -117,7 +122,7 @@ entries:
           - file: docs/tools/terraform/reference/cookbook
             entries:
             - file: docs/tools/terraform/reference/cookbook/kafka-connect-terraform-recipe
-              title: Apache Kafka and OpenSearch
+              title: Apache Kafka and OpenSearch  
             - file: docs/tools/terraform/reference/cookbook/multicloud-postgresql-recipe
               title: Multicloud PostgreSQL 
             - file: docs/tools/terraform/reference/cookbook/kafka-flink-integration-recipe
@@ -161,6 +166,7 @@ entries:
               - file: docs/products/kafka/howto/kcat
               - file: docs/products/kafka/howto/kafka-conduktor
               - file: docs/products/kafka/howto/kafdrop
+              - file: docs/products/kafka/howto/provectus-kafka-ui
           - file: docs/products/kafka/howto/list-security
             title: Security
             entries:
@@ -173,6 +179,7 @@ entries:
             title: Administration tasks
             entries:
               - file: docs/products/kafka/howto/best-practices
+              - file: docs/products/kafka/howto/enable-karapace
               - file: docs/products/kafka/howto/configure-with-kafka-cli
               - file: docs/products/kafka/howto/set-kafka-parameters
               - file: docs/products/kafka/howto/viewing-resetting-offset

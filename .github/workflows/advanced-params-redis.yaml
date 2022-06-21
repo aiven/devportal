@@ -1,0 +1,36 @@
+name: Create PR of generated auto docs
+
+on:
+  schedule:
+    - cron: "0 6 * * 2"
+
+jobs:
+  AdvancedParamsRedis:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repo
+        uses: actions/checkout@v2
+
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.8"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Redis - update advanced params
+        run: make service-type-config-redis
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          commit-message: Redis - update advanced params
+          title: Redis - update advanced params
+          body: Redis - update advanced parameters file
+          base: main
+          branch: redis-update-advanced-params
+          labels: redis, automated-pr
+          delete-branch: true
