@@ -1,4 +1,4 @@
-name: Create PR of generated auto docs
+name: M3DB - Create PR to update advanced params
 
 on:
   schedule:

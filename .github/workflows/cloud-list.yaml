@@ -1,4 +1,4 @@
-name: Create PR of generated auto docs
+name: Cloud - Create PR to update available list
 
 on:
   schedule:

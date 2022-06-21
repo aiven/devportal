@@ -1,4 +1,4 @@
-name: Create PR of generated auto docs
+name: OpenSearch - Create PR to update advanced params
 
 on:
   schedule:
@@ -22,7 +22,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Update available cloud list
-        run: make cloud-list
+        run: make service-type-config-opensearch
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4

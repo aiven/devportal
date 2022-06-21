@@ -1,11 +1,11 @@
-name: Create PR of generated auto docs
+name: MySQL - Create PR to update advanced params
 
 on:
   schedule:
     - cron: "0 6 * * 2"
 
 jobs:
-  AdvancedParamsOpenSearch:
+  AdvancedParamsMySQL:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repo
@@ -21,15 +21,15 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: OpenSearch - update advanced params
-        run: make service-type-config-opensearch
+      - name: MySQL - update advanced params
+        run: make service-type-config-mysql
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
-          commit-message: OpenSearch - update advanced params
-          title: OpenSearch - update advanced params
-          body: OpenSearch - update advanced parameters file
+          commit-message: MySQL - update advanced params
+          title: MySQL - update advanced params
+          body: MySQL - update advanced parameters file
           base: main
           branch: mysql-update-advanced-params
           labels: mysql, automated-pr
