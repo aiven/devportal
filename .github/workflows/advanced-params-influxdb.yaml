@@ -1,4 +1,4 @@
-name: InfluxDB - Create PR to update advanced params
+name: InfluxDB - Create PR to Update Advanced parameters
 
 on:
   schedule:
@@ -21,14 +21,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: InfluxDB - update advanced params
+      - name: InfluxDB - Update Advanced parameters
         run: make service-type-config-influxdb
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
-          commit-message: InfluxDB - update advanced params
-          title: InfluxDB - update advanced params
+          commit-message: InfluxDB - Update Advanced parameters
+          title: InfluxDB - Update Advanced parameters
           body: InfluxDB - update advanced parameters file
           base: main
           branch: influxdb-update-advanced-params

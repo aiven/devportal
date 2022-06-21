@@ -1,4 +1,4 @@
-name: OpenSearch - Create PR to update advanced params
+name: OpenSearch - Create PR to Update Advanced parameters
 
 on:
   schedule:
@@ -27,8 +27,8 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
-          commit-message: OpenSearch - update advanced params
-          title: OpenSearch - update advanced params
+          commit-message: OpenSearch - Update Advanced parameters
+          title: OpenSearch - Update Advanced parameters
           body: OpenSearch - update advanced parameters file
           base: main
           branch: opensearch-update-advanced-params

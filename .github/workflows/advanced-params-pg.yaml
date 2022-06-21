@@ -1,4 +1,4 @@
-name: PostgreSQL - Create PR to update advanced params
+name: PostgreSQL - Create PR to Update Advanced parameters
 
 on:
   schedule:
@@ -21,14 +21,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: PostgreSQL - update advanced params
+      - name: PostgreSQL - Update Advanced parameters
         run: make service-type-config-pg
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
-          commit-message: PostgreSQL - update advanced params
-          title: PostgreSQL - update advanced params
+          commit-message: PostgreSQL - Update Advanced parameters
+          title: PostgreSQL - Update Advanced parameters
           body: PostgreSQL - update advanced parameters file
           base: main
           branch: pg-update-advanced-params

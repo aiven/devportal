@@ -1,4 +1,4 @@
-name: Redis - Create PR to update advanced params
+name: Redis - Create PR to Update Advanced parameters
 
 on:
   schedule:
@@ -21,14 +21,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Redis - update advanced params
+      - name: Redis - Update Advanced parameters
         run: make service-type-config-redis
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
-          commit-message: Redis - update advanced params
-          title: Redis - update advanced params
+          commit-message: Redis - Update Advanced parameters
+          title: Redis - Update Advanced parameters
           body: Redis - update advanced parameters file
           base: main
           branch: redis-update-advanced-params

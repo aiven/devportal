@@ -1,4 +1,4 @@
-name: Cassandra - Create PR to update advanced params
+name: Cassandra - Create PR to Update Advanced parameters
 
 on:
   schedule:
@@ -21,14 +21,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Cassandra - update advanced params
+      - name: Cassandra - Update Advanced parameters
         run: make service-type-config-cassandra
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
-          commit-message: Cassandra - update advanced params
-          title: Cassandra - update advanced params
+          commit-message: Cassandra - Update Advanced parameters
+          title: Cassandra - Update Advanced parameters
           body: Cassandra - update advanced parameters file
           base: main
           branch: cassandra-update-advanced-params

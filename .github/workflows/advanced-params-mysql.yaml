@@ -1,4 +1,4 @@
-name: MySQL - Create PR to update advanced params
+name: MySQL - Create PR to Update Advanced parameters
 
 on:
   schedule:
@@ -21,14 +21,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: MySQL - update advanced params
+      - name: MySQL - Update Advanced parameters
         run: make service-type-config-mysql
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
-          commit-message: MySQL - update advanced params
-          title: MySQL - update advanced params
+          commit-message: MySQL - Update Advanced parameters
+          title: MySQL - Update Advanced parameters
           body: MySQL - update advanced parameters file
           base: main
           branch: mysql-update-advanced-params

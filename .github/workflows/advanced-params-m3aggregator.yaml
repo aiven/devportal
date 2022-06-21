@@ -1,4 +1,4 @@
-name: M3Aggregator - Create PR to update advanced params
+name: M3Aggregator - Create PR to Update Advanced parameters
 
 on:
   schedule:
@@ -21,14 +21,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: M3Aggregator - update advanced params
+      - name: M3Aggregator - Update Advanced parameters
         run: make service-type-config-m3aggregator
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
-          commit-message: M3Aggregator - update advanced params
-          title: M3Aggregator - update advanced params
+          commit-message: M3Aggregator - Update Advanced parameters
+          title: M3Aggregator - Update Advanced parameters
           body: M3Aggregator - update advanced parameters file
           base: main
           branch: m3aggregator-update-advanced-params

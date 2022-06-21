@@ -1,4 +1,4 @@
-name: Flink - Create PR to update advanced params
+name: Flink - Create PR to Update Advanced parameters
 
 on:
   schedule:
@@ -21,14 +21,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Flink - update advanced params
+      - name: Flink - Update Advanced parameters
         run: make service-type-config-flink
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
-          commit-message: Flink - update advanced params
-          title: Flink - update advanced params
+          commit-message: Flink - Update Advanced parameters
+          title: Flink - Update Advanced parameters
           body: Flink - update advanced parameters file
           base: main
           branch: flink-update-advanced-params
