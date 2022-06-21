@@ -29,6 +29,10 @@ Take your first steps with Aiven for Apache Kafka Connect by following our :doc:
 
     💻 :doc:`HowTo <howto>`
 
+    ---
+
+    📖 :doc:`Reference <reference>`
+
 
 Apache Kafka® Connect resources
 -------------------------------
