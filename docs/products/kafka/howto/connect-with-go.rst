@@ -242,7 +242,6 @@ With SASL authentication
     )
 
     func main() {
-        keypair, err := tls.LoadX509KeyPair("service.cert", "service.key")
         caCert, err := ioutil.ReadFile("ca.pem")
         if err != nil {
             log.Println(err)
@@ -255,7 +254,6 @@ With SASL authentication
             return
         }
         tlsConfig := &tls.Config{
-            Certificates: []tls.Certificate{keypair},
             RootCAs:      caCertPool,
         }
         scram, err := scram.Mechanism(scram.SHA512, "{USER_NAME}", "{SASL_PASSWORD}")
