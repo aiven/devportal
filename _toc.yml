@@ -200,7 +200,6 @@ entries:
               - file: docs/products/kafka/howto/get-topic-partition-details
               - file: docs/products/kafka/howto/schema-registry
               - file: docs/products/kafka/howto/change-retention-period
-
       - file: docs/products/kafka/reference
         title: Reference
         entries:
@@ -208,7 +207,6 @@ entries:
             title: Advanced parameters
           - file: docs/products/kafka/reference/kafka-metrics-prometheus
             title: Metrics available via Prometheus
-          - file: docs/products/kafka/reference/code-samples/java
 
       - file: docs/products/kafka/kafka-connect/index
         title: Apache Kafka Connect
