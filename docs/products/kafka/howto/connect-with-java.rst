@@ -69,24 +69,24 @@ Set up properties to connect to the cluster and create a producer and a consumer
 
 .. code::
 
-     Properties properties = new Properties();
-     properties.put("bootstrap.servers", "{HOST}:{SSL_PORT}");
-     properties.put("security.protocol", "SSL");
-     properties.put("ssl.truststore.location", "{TRUSTSTORE_LOCATION}");
-     properties.put("ssl.truststore.password", "{TRUSTSTORE_PASSWORD}");
-     properties.put("ssl.keystore.type", "PKCS12");
-     properties.put("ssl.keystore.location", "{KEYSTORE_LOCATION}");
-     properties.put("ssl.keystore.password", "{KEYSTORE_PASSWORD}");
-     properties.put("ssl.key.password", "{KEY_PASSWORD}");
-     properties.put("key.serializer", "{SERIALIZER}");
-     properties.put("value.serializer", {SERIALIZER}");
-     properties.put("key.deserializer", "{DESERIALIZER}");
-     properties.put("value.deserializer", {DESERIALIZER}");
+    Properties properties = new Properties();
+    properties.put("bootstrap.servers", "{HOST}:{SSL_PORT}");
+    properties.put("security.protocol", "SSL");
+    properties.put("ssl.truststore.location", "{TRUSTSTORE_LOCATION}");
+    properties.put("ssl.truststore.password", "{TRUSTSTORE_PASSWORD}");
+    properties.put("ssl.keystore.type", "PKCS12");
+    properties.put("ssl.keystore.location", "{KEYSTORE_LOCATION}");
+    properties.put("ssl.keystore.password", "{KEYSTORE_PASSWORD}");
+    properties.put("ssl.key.password", "{KEY_PASSWORD}");
+    properties.put("key.serializer", "{SERIALIZER}");
+    properties.put("value.serializer", {SERIALIZER}");
+    properties.put("key.deserializer", "{DESERIALIZER}");
+    properties.put("value.deserializer", "{DESERIALIZER}");
 
-     // create a producer
-     KafkaProducer<String, String> producer = new KafkaProducer<>(properties);
-     // create a consumer
-     KafkaConsumer<String, String> consumer = new KafkaConsumer<>(properties);
+    // create a producer
+    KafkaProducer<String, String> producer = new KafkaProducer<>(properties);
+    // create a consumer
+    KafkaConsumer<String, String> consumer = new KafkaConsumer<>(properties);
 
 With SASL-SSL authentication
 -----------------------------
@@ -115,8 +115,8 @@ Set up properties to connect to the cluster and create a producer and a consumer
 
     properties.put("key.serializer", "{SERIALIZER}");
     properties.put("value.serializer", {SERIALIZER}");
-     properties.put("key.deserializer", "{DESERIALIZER}");
-     properties.put("value.deserializer", {DESERIALIZER}");
+    properties.put("key.deserializer", "{DESERIALIZER}");
+    properties.put("value.deserializer", "{DESERIALIZER}");
 
     // create a producer
     KafkaProducer<String, String> producer = new KafkaProducer<>(properties);
