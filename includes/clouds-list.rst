@@ -1,4 +1,5 @@
 
+
 Amazon Web Services
 -----------------------------------------------------
 .. list-table::
@@ -22,6 +23,9 @@ Amazon Web Services
   * - East Asia
     - ``aws-ap-northeast-2``
     - Asia, Korea 
+  * - East Asia
+    - ``aws-ap-northeast-3``
+    - Asia, Japan 
   * - Europe
     - ``aws-eu-central-1``
     - Europe, Germany 
