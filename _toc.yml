@@ -574,6 +574,12 @@ entries:
 
   - file: docs/products/cassandra/index
     title: Apache Cassandra
+    entries:
+      - file: docs/products/cassandra/reference
+        title: Reference
+        entries:
+          - file: docs/products/cassandra/reference/advanced-params
+            title: Advanced parameters
 
   - file: docs/products/grafana/index
     title: Grafana
