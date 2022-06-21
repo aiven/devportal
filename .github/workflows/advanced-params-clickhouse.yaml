@@ -1,4 +1,4 @@
-name: Create PR of generated auto docs
+name: ClickHouse - Create PR to Update Advanced parameters
 
 on:
   schedule:
@@ -21,14 +21,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: ClickHouse - update advanced params
+      - name: ClickHouse - Update Advanced parameters
         run: make service-type-config-clickhouse
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
-          commit-message: ClickHouse - update advanced params
-          title: ClickHouse - update advanced params
+          commit-message: ClickHouse - Update Advanced parameters
+          title: ClickHouse - Update Advanced parameters
           body: ClickHouse - update advanced parameters file
           base: main
           branch: clickhouse-update-advanced-params

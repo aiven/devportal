@@ -1,4 +1,4 @@
-name: Create PR of generated auto docs
+name: KafkaMirrorMaker - Create PR to Update Advanced parameters
 
 on:
   schedule:
@@ -21,14 +21,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: KafkaMirrorMaker - update advanced params
+      - name: KafkaMirrorMaker - Update Advanced parameters
         run: make service-type-config-kafka_mirrormaker
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
-          commit-message: KafkaMirrorMaker - update advanced params
-          title: KafkaMirrorMaker - update advanced params
+          commit-message: KafkaMirrorMaker - Update Advanced parameters
+          title: KafkaMirrorMaker - Update Advanced parameters
           body: KafkaMirrorMaker - update advanced parameters file
           base: main
           branch: kafka-mirrormaker-update-advanced-params

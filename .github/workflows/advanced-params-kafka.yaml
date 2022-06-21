@@ -1,4 +1,4 @@
-name: Create PR of generated auto docs
+name: Kafka - Create PR to Update Advanced parameters
 
 on:
   schedule:
@@ -21,14 +21,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Kafka - update advanced params
+      - name: Kafka - Update Advanced parameters
         run: make service-type-config-kafka
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
-          commit-message: Kafka - update advanced params
-          title: Kafka - update advanced params
+          commit-message: Kafka - Update Advanced parameters
+          title: Kafka - Update Advanced parameters
           body: Kafka - update advanced parameters file
           base: main
           branch: kafka-update-advanced-params
