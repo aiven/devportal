@@ -422,6 +422,8 @@ entries:
         entries:
           - file: docs/products/clickhouse/reference/supported-table-engines
             title: Supported table engines
+          - file: docs/products/clickhouse/reference/advanced-params
+            title: Advanced parameters
 
   - file: docs/products/opensearch/index
     title: OpenSearch
