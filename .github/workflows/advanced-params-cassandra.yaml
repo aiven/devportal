@@ -32,4 +32,5 @@ jobs:
           body: Cassandra - update advanced parameters file
           base: main
           branch: cassandra-update-advanced-params
+          labels: cassandra, automated-pr
           delete-branch: true
