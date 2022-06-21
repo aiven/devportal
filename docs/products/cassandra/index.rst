@@ -10,10 +10,10 @@ Apache Cassandra originated from Facebook, and since then has had a strong histo
 
 Aiven for Apache Cassandra builds on the open source offering, adding management features and updates so that you can rely on the database your organisation needs to succeed.
 
-Why Aiven for Apache Cassandra?
--------------------------------
+Why Aiven for Apache Cassandra®?
+--------------------------------
 
-Apache Cassandra is designed to handle large volumes of writes to the database; this is one of the key reasons we see for adopting Apache Cassandra over some of the other options in a similar problem space.
+Apache Cassandra® is designed to handle large volumes of writes to the database; this is one of the key reasons we see for adopting Apache Cassandra over some of the other options in a similar problem space.
 
 It is a truly distributed database where the individual nodes can communicate with one another without referencing any master node. This improves both its scalability and its fault tolerance, two key capabilities of Apache Cassandra.
 

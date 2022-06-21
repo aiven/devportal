@@ -1,6 +1,6 @@
 Reference
 =========
 
-Additional reference information for Aiven for Apache Cassandra:
+Additional reference information for Aiven for Apache Cassandra®:
 
 .. tableofcontents::
