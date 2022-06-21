@@ -2,7 +2,7 @@ Deploy a Grafana® service to visualize PostgreSQL® metrics
 ==========================================================
 
 Whether monitoring your data infrastructure or analyzing resource utilization based on metrics, `Aiven for Grafana <https://aiven.io/grafana>`_ provides powerful visualizations and easy integrations for your Aiven services.
-A time-series database like M3DB can be used as a data source to send the relational database metrics to the Grafana dashboard.
+A time-series database like M3DB can be used as backend to store PostgreSQL® database metrics to be queried by the Grafana dashboard.
 This example shows how to use the `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_  to create an Aiven for PosgreSQL service, an Aiven for M3DB service, an Aiven for Grafana service, and the related service integrations programmatically. 
 
 .. mermaid::
@@ -12,16 +12,15 @@ This example shows how to use the `Aiven Terraform Provider <https://registry.te
       M3DB[Aiven for M3DB]
       Grafana[Aiven for Grafana]
       PostgreSQL ==>|si-metrics| M3DB
-      M3DB ==>|si-datasource| Grafana
-      Grafana ==>|si-dashboard| PostgreSQL
+      Grafana ==>|si-dashboard| M3DB
 
-In the above diagram, the Grafana dashboard is able to display the metrics for the PostgreSQL service because M3DB is acting as a datasource in the middle. All three services are connected via Aiven Service Integrations, which lets your Aiven services talk to one another without you having to write complex integration codes.
+In the above diagram, the PostgreSQL service metrics are pushed to M3DB which is then queried by a prebuilt Grafana dashboard. All three services are connected via Aiven Service Integrations, which lets your Aiven services talk to one another without you having to write complex integration codes.
 ``si-...`` in the above diagram stands for "Service Integration".
 
 Let's cook!
 -----------
 
-Here is the sample Terraform file to deploy the three services and three service integrations. Keep in mind that some parameters and configurations will vary for your case. A reference to some of the advanced configurations is added at the end of this document.
+Here is the sample Terraform file to deploy the three services and two service integrations. Keep in mind that some parameters and configurations will vary for your case. A reference to some of the advanced configurations is added at the end of this document.
 
 .. Tip::
 
@@ -37,7 +36,7 @@ Here is the sample Terraform file to deploy the three services and three service
   resource "aiven_pg" "demo-pg" {
     project                 = var.project_name
     cloud_name              = "google-northamerica-northeast1"
-    plan                    = "startup-8"                     
+    plan                    = "startup-8"
     service_name            = join("-", [var.service_name_prefix, "postgres"])
     termination_protection  = false
     maintenance_window_dow  = "sunday"
@@ -83,7 +82,7 @@ Here is the sample Terraform file to deploy the three services and three service
     }
   }
 
-  # PostgreSQL-M3DB Service Integration
+  # PostgreSQL-M3DB Metrics Service Integration
 
   resource "aiven_service_integration" "postgresql_to_m3db" {
     project                  = var.project_name
@@ -92,22 +91,13 @@ Here is the sample Terraform file to deploy the three services and three service
     destination_service_name = aiven_m3db.demo-m3db.service_name
   }
 
-  # M3DB-Grafana Service Integration
+  # M3DB-Grafana Dashboard Service Integration
 
   resource "aiven_service_integration" "m3db-to-grafana" {
     project                  = var.project_name
-    integration_type         = "datasource"
-    source_service_name      = aiven_grafana.demo-grafana.service_name
-    destination_service_name = aiven_m3db.demo-m3db.service_name
-  }
-
-  # PostgreSQL-Grafana Service Integration
-
-  resource "aiven_service_integration" "postgresql-to-grafana" {
-    project                  = var.project_name
     integration_type         = "dashboard"
     source_service_name      = aiven_grafana.demo-grafana.service_name
-    destination_service_name = aiven_pg.demo-pg.service_name
+    destination_service_name = aiven_m3db.demo-m3db.service_name
   }
 
 At first, ``aiven_pg``, ``aiven_m3db``, and ``aiven_grafana`` resources are created. Once these three services are running, the resources that bridge them ``aiven_service_integration`` are created.
