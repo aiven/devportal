@@ -1,0 +1,19 @@
+# Convenience URLs
+/kafka              /docs/products/kafka/index.html
+/postgresql         /docs/products/postgresql/index.html
+/flink              /docs/products/flink/index.html
+/clickhouse         /docs/products/clickhouse/index.html
+/opensearch         /docs/products/opensearch/index.html
+/m3db               /docs/products/m3db/index.html
+/mysql              /docs/products/mysql/index.html
+/redis              /docs/products/redis/index.html
+/cassandra          /docs/products/cassandra/index.html
+/grafana            /docs/products/grafana/index.html
+
+/api                /docs/tools/api/index.html
+/cli                /docs/tools/cli.html
+/terraform          /docs/tools/terraform/index.html
+
+
+# Renamed/deleted files
+/docs/products/flink/howto/real-time-alerting-solution-cli.html       /docs/products/flink/howto/real-time-alerting-solution.html

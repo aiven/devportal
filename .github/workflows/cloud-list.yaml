@@ -1,4 +1,4 @@
-name: Create PR of generated auto docs
+name: Cloud - Create PR to update available list
 
 on:
   schedule:
@@ -32,5 +32,5 @@ jobs:
           body: Cloud - Update available list
           base: main
           labels: automated-pr, Clouds & Regions
-          branch: update-advanced-params
+          branch: cloud-update-advanced-params
           delete-branch: true

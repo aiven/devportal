@@ -1,4 +1,4 @@
-name: Create PR of generated auto docs
+name: Grafana - Create PR to Update Advanced parameters
 
 on:
   schedule:
@@ -21,14 +21,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Grafana - update advanced params
+      - name: Grafana - Update Advanced parameters
         run: make service-type-config-grafana
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
-          commit-message: Grafana - update advanced params
-          title: Grafana - update advanced params
+          commit-message: Grafana - Update Advanced parameters
+          title: Grafana - Update Advanced parameters
           body: Grafana - update advanced parameters file
           base: main
           branch: grafana-update-advanced-params

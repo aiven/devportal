@@ -1,4 +1,4 @@
-name: Create PR of generated auto docs
+name: M3DB - Create PR to Update Advanced parameters
 
 on:
   schedule:
@@ -21,14 +21,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: M3DB - update advanced params
+      - name: M3DB - Update Advanced parameters
         run: make service-type-config-m3db
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
-          commit-message: M3DB - update advanced params
-          title: M3DB - update advanced params
+          commit-message: M3DB - Update Advanced parameters
+          title: M3DB - Update Advanced parameters
           body: M3DB - update advanced parameters file
           base: main
           branch: m3db-update-advanced-params

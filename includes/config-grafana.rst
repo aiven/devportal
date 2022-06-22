@@ -18,16 +18,16 @@
   **External image store settings** 
 
   ``provider`` => *string*
-    **Provider type** None
+    **Provider type** 
 
   ``bucket_url`` => *string*
-    **Bucket URL for S3** None
+    **Bucket URL for S3** 
 
   ``access_key`` => *string*
-    **S3 access key. Requires permissions to the S3 bucket for the s3:PutObject and s3:PutObjectAcl actions** None
+    **S3 access key. Requires permissions to the S3 bucket for the s3:PutObject and s3:PutObjectAcl actions** 
 
   ``secret_key`` => *string*
-    **S3 secret key** None
+    **S3 secret key** 
 
 
 
@@ -35,28 +35,28 @@
   **SMTP server settings** 
 
   ``host`` => *string*
-    **Server hostname or IP** None
+    **Server hostname or IP** 
 
   ``port`` => *integer*
-    **SMTP server port** None
+    **SMTP server port** 
 
   ``skip_verify`` => *boolean*
-    **Skip verifying server certificate. Defaults to false** None
+    **Skip verifying server certificate. Defaults to false** 
 
   ``username`` => *['string', 'null']*
-    **Username for SMTP authentication** None
+    **Username for SMTP authentication** 
 
   ``password`` => *['string', 'null']*
-    **Password for SMTP authentication** None
+    **Password for SMTP authentication** 
 
   ``from_address`` => *string*
-    **Address used for sending emails** None
+    **Address used for sending emails** 
 
   ``from_name`` => *['string', 'null']*
-    **Name used in outgoing emails, defaults to Grafana** None
+    **Name used in outgoing emails, defaults to Grafana** 
 
   ``starttls_policy`` => *string*
-    **Either OpportunisticStartTLS, MandatoryStartTLS or NoStartTLS. Default is OpportunisticStartTLS.** None
+    **Either OpportunisticStartTLS, MandatoryStartTLS or NoStartTLS. Default is OpportunisticStartTLS.** 
 
 
 
@@ -69,34 +69,34 @@
   **Generic OAuth integration** 
 
   ``allow_sign_up`` => *boolean*
-    **Automatically sign-up users on successful sign-in** None
+    **Automatically sign-up users on successful sign-in** 
 
   ``allowed_domains`` => *array*
-    **Allowed domains** None
+    **Allowed domains** 
 
   ``allowed_organizations`` => *array*
-    **Require user to be member of one of the listed organizations** None
+    **Require user to be member of one of the listed organizations** 
 
   ``api_url`` => *string*
-    **API URL** None
+    **API URL** 
 
   ``auth_url`` => *string*
-    **Authorization URL** None
+    **Authorization URL** 
 
   ``client_id`` => *string*
-    **Client ID from provider** None
+    **Client ID from provider** 
 
   ``client_secret`` => *string*
-    **Client secret from provider** None
+    **Client secret from provider** 
 
   ``name`` => *string*
-    **Name of the OAuth integration** None
+    **Name of the OAuth integration** 
 
   ``scopes`` => *array*
-    **OAuth scopes** None
+    **OAuth scopes** 
 
   ``token_url`` => *string*
-    **Token URL** None
+    **Token URL** 
 
 
 
@@ -104,16 +104,16 @@
   **Google Auth integration** 
 
   ``allow_sign_up`` => *boolean*
-    **Automatically sign-up users on successful sign-in** None
+    **Automatically sign-up users on successful sign-in** 
 
   ``client_id`` => *string*
-    **Client ID from provider** None
+    **Client ID from provider** 
 
   ``client_secret`` => *string*
-    **Client secret from provider** None
+    **Client secret from provider** 
 
   ``allowed_domains`` => *array*
-    **Domains allowed to sign-in to this Grafana** None
+    **Domains allowed to sign-in to this Grafana** 
 
 
 
@@ -121,19 +121,19 @@
   **Github Auth integration** 
 
   ``allow_sign_up`` => *boolean*
-    **Automatically sign-up users on successful sign-in** None
+    **Automatically sign-up users on successful sign-in** 
 
   ``client_id`` => *string*
-    **Client ID from provider** None
+    **Client ID from provider** 
 
   ``client_secret`` => *string*
-    **Client secret from provider** None
+    **Client secret from provider** 
 
   ``team_ids`` => *array*
-    **Require users to belong to one of given team IDs** None
+    **Require users to belong to one of given team IDs** 
 
   ``allowed_organizations`` => *array*
-    **Require users to belong to one of given organizations** None
+    **Require users to belong to one of given organizations** 
 
 
 
@@ -141,25 +141,25 @@
   **GitLab Auth integration** 
 
   ``allow_sign_up`` => *boolean*
-    **Automatically sign-up users on successful sign-in** None
+    **Automatically sign-up users on successful sign-in** 
 
   ``api_url`` => *string*
-    **API URL. This only needs to be set when using self hosted GitLab** None
+    **API URL. This only needs to be set when using self hosted GitLab** 
 
   ``auth_url`` => *string*
-    **Authorization URL. This only needs to be set when using self hosted GitLab** None
+    **Authorization URL. This only needs to be set when using self hosted GitLab** 
 
   ``client_id`` => *string*
-    **Client ID from provider** None
+    **Client ID from provider** 
 
   ``client_secret`` => *string*
-    **Client secret from provider** None
+    **Client secret from provider** 
 
   ``allowed_groups`` => *array*
-    **Require users to belong to one of given groups** None
+    **Require users to belong to one of given groups** 
 
   ``token_url`` => *string*
-    **Token URL. This only needs to be set when using self hosted GitLab** None
+    **Token URL. This only needs to be set when using self hosted GitLab** 
 
 
 
@@ -167,25 +167,25 @@
   **Azure AD OAuth integration** 
 
   ``allow_sign_up`` => *boolean*
-    **Automatically sign-up users on successful sign-in** None
+    **Automatically sign-up users on successful sign-in** 
 
   ``client_id`` => *string*
-    **Client ID from provider** None
+    **Client ID from provider** 
 
   ``client_secret`` => *string*
-    **Client secret from provider** None
+    **Client secret from provider** 
 
   ``auth_url`` => *string*
-    **Authorization URL** None
+    **Authorization URL** 
 
   ``token_url`` => *string*
-    **Token URL** None
+    **Token URL** 
 
   ``allowed_groups`` => *array*
-    **Require users to belong to one of given groups** None
+    **Require users to belong to one of given groups** 
 
   ``allowed_domains`` => *array*
-    **Allowed domains** None
+    **Allowed domains** 
 
 
 
@@ -193,7 +193,7 @@
   **Allow access to selected service ports from private networks** 
 
   ``grafana`` => *boolean*
-    **Allow clients to connect to grafana with a DNS name that always resolves to the service's private IP addresses. Only available in certain network locations** None
+    **Allow clients to connect to grafana with a DNS name that always resolves to the service's private IP addresses. Only available in certain network locations** 
 
 
 
@@ -201,7 +201,7 @@
   **Allow access to selected service components through Privatelink** 
 
   ``grafana`` => *boolean*
-    **Enable grafana** None
+    **Enable grafana** 
 
 
 
@@ -209,7 +209,7 @@
   **Allow access to selected service ports from the public Internet** 
 
   ``grafana`` => *boolean*
-    **Allow clients to connect to grafana from the public internet for service nodes that are in a project VPC or another type of private network** None
+    **Allow clients to connect to grafana from the public internet for service nodes that are in a project VPC or another type of private network** 
 
 
 
@@ -317,29 +317,28 @@
   **Grafana date format specifications** 
 
   ``full_date`` => *string*
-    **Moment.js style format string for cases where full date is shown** None
+    **Moment.js style format string for cases where full date is shown** 
 
   ``interval_second`` => *string*
-    **Moment.js style format string used when a time requiring second accuracy is shown** None
+    **Moment.js style format string used when a time requiring second accuracy is shown** 
 
   ``interval_minute`` => *string*
-    **Moment.js style format string used when a time requiring minute accuracy is shown** None
+    **Moment.js style format string used when a time requiring minute accuracy is shown** 
 
   ``interval_hour`` => *string*
-    **Moment.js style format string used when a time requiring hour accuracy is shown** None
+    **Moment.js style format string used when a time requiring hour accuracy is shown** 
 
   ``interval_day`` => *string*
-    **Moment.js style format string used when a time requiring day accuracy is shown** None
+    **Moment.js style format string used when a time requiring day accuracy is shown** 
 
   ``interval_month`` => *string*
-    **Moment.js style format string used when a time requiring month accuracy is shown** None
+    **Moment.js style format string used when a time requiring month accuracy is shown** 
 
   ``interval_year`` => *string*
-    **Moment.js style format string used when a time requiring year accuracy is shown** None
+    **Moment.js style format string used when a time requiring year accuracy is shown** 
 
   ``default_timezone`` => *string*
-    **Default time zone for user preferences. Value 'browser' uses browser local time zone.** None
-
+    **Default time zone for user preferences. Value 'browser' uses browser local time zone.** 
 
 
 

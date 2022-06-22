@@ -161,6 +161,8 @@ entries:
             entries:
               - file: docs/products/kafka/howto/connect-with-python
                 title: Connect with Python
+              - file: docs/products/kafka/howto/connect-with-java
+                title: Connect with Java
           - file: docs/products/kafka/howto/list-tools
             title: Tools
             entries:
@@ -169,6 +171,7 @@ entries:
               - file: docs/products/kafka/howto/kafka-conduktor
               - file: docs/products/kafka/howto/kafdrop
               - file: docs/products/kafka/howto/provectus-kafka-ui
+              - file: docs/products/kafka/howto/kpow
           - file: docs/products/kafka/howto/list-security
             title: Security
             entries:
@@ -260,6 +263,8 @@ entries:
         - file: docs/products/kafka/kafka-connect/reference
           title: Reference
           entries:
+            - file: docs/products/kafka/kafka-connect/reference/advanced-params
+              title: Advanced parameters
             - file: docs/products/kafka/kafka-connect/reference/s3-sink-formats
               title: AWS S3 sink connector naming and data format
               entries:
@@ -392,7 +397,6 @@ entries:
           - file: docs/products/flink/howto/create-job
           - file: docs/products/flink/howto/timestamps_opensearch
           - file: docs/products/flink/howto/real-time-alerting-solution
-          - file: docs/products/flink/howto/real-time-alerting-solution-cli
       - file: docs/products/flink/reference
         title: Reference
         entries:
@@ -425,6 +429,8 @@ entries:
         entries:
           - file: docs/products/clickhouse/reference/supported-table-engines
             title: Supported table engines
+          - file: docs/products/clickhouse/reference/advanced-params
+            title: Advanced parameters
 
   - file: docs/products/opensearch/index
     title: OpenSearch
@@ -575,6 +581,12 @@ entries:
 
   - file: docs/products/cassandra/index
     title: Apache Cassandra
+    entries:
+      - file: docs/products/cassandra/reference
+        title: Reference
+        entries:
+          - file: docs/products/cassandra/reference/advanced-params
+            title: Advanced parameters
 
   - file: docs/products/grafana/index
     title: Grafana
