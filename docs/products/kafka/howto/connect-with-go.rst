@@ -136,15 +136,8 @@ Set up properties to connect to the cluster:
             RootCAs: caCertPool,
         }
 
-        // parse Kafka cluster version
-        version, err := sarama.ParseKafkaVersion("2.4.0")
-        if err != nil {
-            panic(err)
-        }
-
         // init config, enable errors and notifications
         config := sarama.NewConfig()
-        config.Version = version
         config.Metadata.Full = true
         config.ClientID = "{CLIENT_ID}"
         config.Producer.Return.Successes = true
