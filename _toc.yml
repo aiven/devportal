@@ -99,6 +99,7 @@ entries:
         - file: docs/tools/cli/user
           entries:
             - glob: docs/tools/cli/user/*
+        - file: docs/tools/cli/vpc
       - file: docs/tools/api/index
         title: Aiven API
         entries:
