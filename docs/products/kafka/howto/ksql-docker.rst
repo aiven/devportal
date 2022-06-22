@@ -24,13 +24,15 @@ Furthermore, you need to collect the following information:
 * ``SSL_KEY_PASSWORD``: The password used to secure the Java key
 * ``SSL_TRUSTSTORE_PASSWORD``: The password used to secure the Java truststore
 * ``SSL_STORE_FOLDER``: The absolute path of the folder containing both the truststore and keystore
-* ``TRUSTSTORE_SCHEMA_REGISTRY_FILE_NAME``: The name of the Java truststore containing the schema registry certificate
-* ``TRUSTSTORE_SCHEMA_REGISTRY_PASSWORD``: The password used to secure the Java truststore for the schema registry certificate
+* ``TRUSTSTORE_SCHEMA_REGISTRY_FILE_NAME``: The name of the Java truststore containing the schema registry (`Karapace <https://karapace.io/>`__) certificate 
+* ``TRUSTSTORE_SCHEMA_REGISTRY_PASSWORD``: The password used to secure the Java truststore for the schema registry (`Karapace <https://karapace.io/>`__)  certificate
 
 Create a keystore for schema registry's ca file
 '''''''''''''''''''''''''''''''''''''''''''''''
 
-ksqlDB by default uses the ``ssl.truststore`` settings for the Schema Registry connection. Therefore you need to explicitly define a truststore that contains the commonly trusted root CA of Schema Registry server. To create such a truststore:
+ksqlDB by default uses the ``ssl.truststore`` settings for the Schema Registry connection. 
+
+To have ksqlDB working with Aiven's `Karapace <https://karapace.io/>`__ Schema Registry you need to explicitly define a truststore that contains the commonly trusted root CA of Schema Registry server. To create such a truststore:
 
 1. Obtain the root CA of the server with the following ``openssl`` command by replacing the ``APACHE_KAFKA_HOST`` and ``SCHEMA_REGISTRY_PORT`` placeholders::
 
@@ -55,7 +57,7 @@ ksqlDB by default uses the ``ssl.truststore`` settings for the Schema Registry c
 
 
 Run ksqlDB on Docker
-------------------
+--------------------
 
 You can run ksqlDB on Docker with the following command, by replacing the placeholders:
 
