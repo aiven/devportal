@@ -70,10 +70,11 @@ Before you begin, you will require a MongoDB database and the related database c
 
 .. Tip:: 
   
+  * Since you have ``kafka_connect`` set to ``true`` under the ``kafka_user_config``, you don't need a standalone Aiven for Apache Kafka Connect service.
   * You need to enable the ``auto_create_topics_enable`` flag so that the connector is able to create the topic on the Apache Kafka cluster.
   * The automatically created topic name will be **DATABASE.COLLECTION** - ``sample_airbnb.listingsAndReviews`` in this example.
   * ``poll.await.time.ms`` can be configured to set the amount of wait time before the MongoDB source connector pulls the new changes from a collection.
-  * ``publish.full.document.only``, when set to ``true``, only publishes the actual document rather than the full change stream document. The default value is ``false``
+  * ``publish.full.document.only``, when set to ``true``, only publishes the actual document rather than the full change stream document. The default value is ``false``.
 
 More resources
 --------------
