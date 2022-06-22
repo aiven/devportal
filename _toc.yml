@@ -136,6 +136,8 @@ entries:
               title: Visualize PostgreSQL metrics with Grafana  
             - file: docs/tools/terraform/reference/cookbook/postgresql-custom-configs-recipe
               title: PostgreSQL with custom configs
+            - file: docs/tools/terraform/reference/cookbook/kafka-mongodb-recipe
+              title: Apache Kafka MongoDB Source Connector  
       - file: docs/tools/kubernetes
         title: Aiven Operator for Kubernetes
 
