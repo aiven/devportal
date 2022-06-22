@@ -45,15 +45,15 @@ Variables
 Variable                     Description
 ========================     =======================================================================================================
 ``HOST``                     Host name for the connection
-``USER_NAME``                Name of the user for the connection
 ``SSL_PORT``                 Port number to use for SSL
 ``SASL_PORT``                Port number to use for SASL
+``SASL_USERNAME``            Name of the user for the connection
 ``SASL_PASSWORD``            Password required to connect using SASL
 ``CLIENT_ID``                Application-specific client id
 ========================     =======================================================================================================
 
 With library ``sarama``
------------------------_
+-------------------------
 Install the library `Sarama <https://github.com/Shopify/sarama>`_ and use code snippet according to your preferred authentication method below.
 
 With SSL authentication
@@ -151,7 +151,7 @@ Set up properties to connect to the cluster:
 
         // Kafka SASL configuration
         config.Net.SASL.Enable = true
-        config.Net.SASL.User = "{USER_NAME}"
+        config.Net.SASL.User = "{SASL_USERNAME}"
         config.Net.SASL.Password = "{SASL_PASSWORD}"
         config.Net.SASL.Handshake = true
         config.Net.SASL.Mechanism = sarama.SASLTypePlaintext
@@ -256,7 +256,7 @@ With SASL authentication
         tlsConfig := &tls.Config{
             RootCAs:      caCertPool,
         }
-        scram, err := scram.Mechanism(scram.SHA512, "{USER_NAME}", "{SASL_PASSWORD}")
+        scram, err := scram.Mechanism(scram.SHA512, "{SASL_USERNAME}", "{SASL_PASSWORD}")
         if err != nil {
             log.Println(err)
             return
