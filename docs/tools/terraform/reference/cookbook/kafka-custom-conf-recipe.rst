@@ -13,7 +13,7 @@ Before looking at the Terraform script, let's visually realize how the services 
       id4[[Aiven Kafka User]]
       id5[[Aiven Kafka User ACL]]
       end
-      Aiven-for-Apache-Kafka <--> Aiven-for-Apache-Kafka-Connect --> External-Systems
+      Aiven-for-Apache-Kafka <--> Aiven-for-Apache-Kafka-Connect --> OpenSearch
       Producer --> Aiven-for-Apache-Kafka --> Consumer
 
 Let's cook!
@@ -48,9 +48,6 @@ Here is the sample Terraform file to stand-up and connect all the services. Terr
         num_partitions               = 3
         default_replication_factor   = 2
         min_insync_replicas          = 2
-        message_max_bytes            = 131072
-        group_max_session_timeout_ms = 70000
-        log_retention_bytes          = 1000000000
       }
   
       kafka_authentication_methods {
@@ -63,10 +60,19 @@ Here is the sample Terraform file to stand-up and connect all the services. Terr
       }
     }
   }
-  
-  output "kafka1_value" {
-    value     = aiven_kafka.kafka
-    sensitive = true
+
+  resource "aiven_kafka_topic" "kafka_topic" {
+  project                = var.project_name
+  service_name           = aiven_kafka.kafka.service_name
+  topic_name             = "logs-app-1"
+  partitions             = 5
+  replication            = 3
+
+  config {
+    flush_ms                       = 10
+    unclean_leader_election_enable = true
+    cleanup_policy                 = "compact,delete"
+    }
   }
   
   resource "aiven_kafka_user" "kafka_user" {
@@ -80,7 +86,7 @@ Here is the sample Terraform file to stand-up and connect all the services. Terr
     service_name = aiven_kafka.kafka.service_name
     username     = var.kafka_user_name
     permission   = "read"
-    topic        = "*"
+    topic        = aiven_kafka_topic.kafka_topic.topic_name
   }
   
   resource "aiven_kafka_connect" "kafka_connect" {
@@ -102,11 +108,6 @@ Here is the sample Terraform file to stand-up and connect all the services. Terr
     }
   }
   
-  output "kafka_connect_value" {
-    value     = aiven_kafka_connect.kafka_connect
-    sensitive = true
-  }
-  
   resource "aiven_service_integration" "kafka-to-connect" {
     project                  = var.project_name
     integration_type         = "kafka_connect"
@@ -122,14 +123,42 @@ Here is the sample Terraform file to stand-up and connect all the services. Terr
       }
     }
   }
-  
-  output "kafka-to-connect_si_value" {
-    value     = aiven_service_integration.kafka-to-connect
-    sensitive = true
+
+  resource "aiven_kafka_connector" "kafka-os-con1" {
+  project        = var.project_name
+  service_name   = aiven_kafka.kafka.service_name
+  connector_name = "kafka-os-con1"
+  config = {
+    "topics" = aiven_kafka_topic.kafka_topic.topic_name
+    "connector.class" : "io.aiven.kafka.connect.opensearch.OpensearchSinkConnector"
+    "type.name"                      = "os-connector"
+    "name"                           = "kafka-os-con1"
+    "connection.url"                 = "https://${aiven_opensearch.os-service1.service_host}:${aiven_opensearch.os-service1.service_port}"
+    "connection.username"            = aiven_opensearch.os-service1.service_username
+    "connection.password"            = aiven_opensearch.os-service1.service_password
+    "key.converter"                  = "org.apache.kafka.connect.storage.StringConverter"
+    "value.converter"                = "org.apache.kafka.connect.json.JsonConverter"
+    "tasks.max"                      = 1
+    "schema.ignore"                  = true
+    "value.converter.schemas.enable" = false
+    }
   }
+
+  resource "aiven_opensearch" "os-service1" {
+  project                 = var.project_name
+  cloud_name              = "google-northamerica-northeast1"
+  plan                    = "business-4"
+  service_name            = "os-service1"
+  maintenance_window_dow  = "monday"
+  maintenance_window_time = "10:00:00"
+  opensearch_user_config {
+  opensearch_version = "1"
+    }
+  }
+
   
   
-This file creates two Aiven services - a Kafka service and a Kafka Connect service. One service integrations among these two services, an additional ``kafka_user`` and a ``kafka_user_acl`` entry with the defined username and defined permission will also be created from this terraform file.
+This file creates three Aiven services - a Kafka service, a Kafka Connect service and an OpenSearch service. A service integration is created between Kafka service and Kafka Connect service. A sink connector is also created between the kafka connect service to the Opensearch service. An additional ``kafka_user``, ``kafka_user_acl``, and ``kafka_topic`` with the defined username and defined permission will also be created from this terraform file. 
 
 More resources
 --------------
