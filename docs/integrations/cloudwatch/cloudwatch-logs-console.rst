@@ -1,6 +1,8 @@
 Send logs to AWS CloudWatch from Aiven web console
 ==================================================
 
+You can find here the steps to send your Aiven service logs to the AWS CloudWatch using the `Aiven web console <https://console.aiven.io>`_.
+ 
 Prerequisites
 -------------
 
