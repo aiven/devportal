@@ -164,6 +164,8 @@ entries:
                 title: Connect with Python
               - file: docs/products/kafka/howto/connect-with-java
                 title: Connect with Java
+              - file: docs/products/kafka/howto/connect-with-go
+                title: Connect with Go
           - file: docs/products/kafka/howto/list-tools
             title: Tools
             entries:
