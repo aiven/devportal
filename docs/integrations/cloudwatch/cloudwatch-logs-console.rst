@@ -19,10 +19,7 @@ Configure the integration
 
 Start by configuring the link between the Aiven service and the AWS CloudWatch. This setup only needs to be done once.
 
-1. Choose **Service integrations** in the left hand menu of the web console, then choose **AWS CloudWatch Logs** and **Add a new endpoint**.
-
-.. image:: /images/integrations/configure-cloudwatch-logs-endpoint.png
-   :alt: Screenshot of configuration screen for CloudWatch Logs integration
+1. Choose **Service integrations** in the left hand menu of the web console, then choose **AWS CloudWatch Logs** and **Add a new endpoint** or **Create new**.
 
 2. Configure the settings for the new endpoint:
 
@@ -33,6 +30,9 @@ Start by configuring the link between the Aiven service and the AWS CloudWatch. 
    * Your AWS account **Region**.
 
    * **Log Group Name** where your logs streams can be grouped in a group on AWS CloudWatch. If this field is not provided, it will be generated for you.
+
+.. image:: /images/integrations/configure-cloudwatch-logs-endpoint.png
+   :alt: Screenshot of system integrations including AWS CloudWatch Logs endpoint
 
 3. Click in **Create** to save this endpoint.
 

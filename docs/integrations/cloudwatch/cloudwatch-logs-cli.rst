@@ -18,7 +18,7 @@ This is what you'll need to send your logs from the AWS CloudWatch using the :do
 
 .. important::
 
-   Your AWS credentials should have appropriate access rights. According to the offical AWS documentation, the access rights required for the credentials are:
+   Your AWS credentials should have appropriate access rights. According to the official AWS documentation, the access rights required for the credentials are:
 
    * "logs:DescribeLogStreams" which lists the log streams for the specified log group endpoint.
    * "logs:CreateLogGroup" which creates a log group with the specified name endpoint.
