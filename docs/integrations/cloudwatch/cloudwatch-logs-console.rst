@@ -2,7 +2,7 @@ Send logs to AWS CloudWatch from Aiven web console
 ==================================================
 
 You can find here the steps to send your Aiven service logs to the AWS CloudWatch using the `Aiven web console <https://console.aiven.io>`_.
- 
+
 Prerequisites
 -------------
 
@@ -10,9 +10,9 @@ You will need:
 
 * An AWS account, and which region it is in.
 
-* An AWS Access Key and Secret Key. Generate the credentials by visiting **IAM dashboard** then click in **Users**, open the **Security credentials** tab, and choose **Create access key**. Click on **Download** as you will need this shortly.
-
 * An Aiven account with a service running.
+
+* An AWS Access Key and Secret Key. Generate the credentials by visiting **IAM dashboard** then click in **Users**, open the **Security credentials** tab, and choose **Create access key**. Click on **Download** as you will need this shortly.
 
 Configure the integration
 -------------------------

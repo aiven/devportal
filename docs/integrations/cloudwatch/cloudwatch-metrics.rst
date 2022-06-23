@@ -3,8 +3,8 @@ Send metrics to Amazon CloudWatch
 
 Aiven enables you to send your service metrics to your `Amazon (AWS) CloudWatch <https://aws.amazon.com/cloudwatch/>`_. This article covers all the steps to enable this integration for your Aiven service.
 
-Prepare your AWS account
-------------------------
+Prerequisites
+-------------
 
 * An AWS account, and which region it is in.
 
@@ -28,16 +28,15 @@ Your first step is to create the endpoint to be used between the Aiven service a
    :alt: Screenshot of configuration screen for CloudWatch Metrics integration
 
 2. Configure the settings for the new endpoint:
-   
-   * Your AWS account **Region**.
-  
-   * Your AWS credentials: **Access Key** and **Secret Key**.
 
    * **Endpoint name** is how you will refer to the AWS CloudWatch metrics integration when linking it to an Aiven service.
   
-   * **CloudWatch Namespace** where your metrics can be organized in different spaces. This field is `Optional` and if not provided, one will be created for you.
-
-
+   * **CloudWatch Namespace** where your metrics can be organized in different spaces. 
+  
+   * Your AWS credentials: **Access Key** and **Secret Key**.
+  
+   * Your AWS account **Region**.
+  
 3. To save this endpoint, click in **Create**.
 
 

@@ -8,10 +8,9 @@ Prerequisites
 
 This is what you'll need to send your logs from the AWS CloudWatch using the :doc:`Aiven client </docs/tools/cli>`.
 
+* Aiven client installed.
 
 * An Aiven account with a service running.
-
-* Aiven client installed.
 
 * An AWS account, and which region it is in. 
 
@@ -37,14 +36,27 @@ Configure the integration
 
 .. seealso:: Learn more about  :doc:`/docs/tools/cli/user/user-access-token`
 
-2. Collect the following information for the creation of the endpoint between your Aiven account and AWS CloudWatch.
+2. Collect the following information for the creation of the endpoint between your Aiven account and AWS CloudWatch. These are the placeholders you will need to replace in the code sample:
 
-* ``PROJECT``, the Aiven project where your endpoint will be saved to.
-* ``LOG_GROUP_NAME``, to group your log streams on AWS CloudWatch. It is an optional field. If the value is not provided, it'll be generated for you.
-* ``AWS_REGION``, the AWS region of your account.
-* ``AWS_ACCESS_KEY_ID``, your AWS access key ID.
-* ``AWS_SECRET_ACCESS_KEY``, your AWS secret access key.
-* ``ENDPOINT_NAME``, reference name for this log integration when linking it to other Aiven services.
+.. list-table::
+  :header-rows: 1
+  :widths: 15 60
+  :align: left
+
+  * - Variable
+    - Description
+  * - ``PROJECT``
+    - Aiven project where your endpoint will be saved to.
+  * - ``LOG_GROUP_NAME``
+    - Used to group your log streams on AWS CloudWatch. It is an optional field. If the value is not provided, it'll be generated for you.
+  * - ``AWS_REGION``
+    - The AWS region of your account.
+  * - ``AWS_ACCESS_KEY_ID``
+    - Your AWS access key ID.
+  * - ``AWS_SECRET_ACCESS_KEY``
+    - Your AWS secret access key.
+  * - ``ENDPOINT_NAME``
+    - Reference name for this log integration when linking it to other Aiven services.
 
 3. Create the endpoint between your Aiven account and AWS CloudWatch.
 
@@ -78,13 +90,24 @@ Send logs from an Aiven service to AWS CloudWatch
 
 5. Collect the following information for sending the service logs of an Aiven service to your CloudWatch:
 
-* ``PROJECT``, the Aiven project where your endpoint is saved.
-* ``ENDPOINT_ID``, reference name for this log integration when linking it to other Aiven services.
-* ``AIVEN_SERVICE_NAME``, the Aiven service name that you want to send the logs from.
+.. list-table::
+  :header-rows: 1
+  :widths: 15 60
+  :align: left
 
-6. Send logs from the Aiven service to AWS CloudWatch by running:
+  * - Variable
+    - Description
+  * - ``PROJECT``
+    - The Aiven project where your endpoint is saved.
+  * - ``ENDPOINT_ID``
+    - Reference name for this log integration when linking it to other Aiven services.
+  * - ``AIVEN_SERVICE_NAME``
+    - The Aiven service name that you want to send the logs from.
+
+1. Send logs from the Aiven service to AWS CloudWatch by running:
 
 .. code:: bash
+   
    avn service integration-create --project PROJECT\
       -t external_aws_cloudwatch_logs -s AIVEN_SERVICE_NAME \
       -D ENDPOINT_ID
