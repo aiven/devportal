@@ -23,6 +23,7 @@ exceptions:
   - Disaster Recovery
   - Docker
   - Elasticsearch
+  - European Union
   - Flink
   - GitHub
   - Go
@@ -59,9 +60,11 @@ exceptions:
   - Provectus
   - Python
   - Redis
+  - reStructuredText
   - Schema Registry
   - Simple Authentication and Security Layer
   - Snowflake
+  - Sphinx
   - Spring
   - SQL Server
   - Startup
@@ -70,6 +73,7 @@ exceptions:
   - Terraform
   - TimescaleDB
   - Transport Layer Security
+  - United States
   - VPC
   - Workbench
   - ZooKeeper
