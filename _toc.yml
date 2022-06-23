@@ -81,6 +81,7 @@ entries:
       title: Amazon CloudWatch
       entries:
         - file: docs/integrations/cloudwatch/cloudwatch-metrics
+          title: CloudWatch Metrics
         - file: docs/integrations/cloudwatch/list-cloudwatch-logs
           title: CloudWatch Logs
           entries:

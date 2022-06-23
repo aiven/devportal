@@ -15,4 +15,4 @@ CloudWatch logs
 
 You can send any of your Aiven service logs to your Amazon CloudWatch logs service. 
 
-Check out our tutorial on :doc:`how to send your Aiven service logs to AWS CloudWatch </docs/integrations/cloudwatch/cloudwatch-logs>`.
+Check out our tutorial on :doc:`how to send your Aiven service logs to AWS CloudWatch </docs/integrations/cloudwatch/list-cloudwatch-logs>`.
