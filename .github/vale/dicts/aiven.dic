@@ -14,9 +14,11 @@ business
 Cassandra
 ClickHouse
 codecs
+compliances
 Conduktor
 connect
 Couchbase
+CPU
 cyber
 datacenter
 datacenters
@@ -124,6 +126,7 @@ reindexing
 reStructuredText
 rsyslog
 Sakila
+Sarama
 schemaless
 scriptable
 sharding
