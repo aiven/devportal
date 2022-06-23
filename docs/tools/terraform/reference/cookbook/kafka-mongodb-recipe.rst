@@ -1,7 +1,7 @@
 Apache Kafka® with MongoDB Source Connector
 ===========================================
 
-The `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_ is a great choice for declaratively provisioning an Aiven for Apache Kafka® cluster with Kafka Connect enabled and the MongoDB source connector configured.
+The `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_ is a great choice for declaratively provisioning an Aiven for Apache Kafka® cluster with Kafka Connect enabled and the `MongoDB source connector <https://developer.aiven.io/docs/products/kafka/kafka-connect/howto/mongodb-poll-source-connector.html>`_ configured.
 
 Let's check out the following diagram to understand the setup.
 
@@ -21,7 +21,7 @@ Describe the setup
 ------------------
 
 Here is the Terraform recipe that will spin up an Aiven for Apache Kafka service with Kafka Connect enabled. This recipe will also create and configure a MongoDB source connector. 
-Before you begin, you will require a MongoDB database and the related database connection information. You'll also need to make sure that the database is reachable from the public internet.
+Before you begin, you will require a MongoDB database and the related database connection information. You'll also need to make sure that the database is reachable from the public internet (unless it's part of a paired VPC).
 
 .. Tip::
 
@@ -43,8 +43,6 @@ Before you begin, you will require a MongoDB database and the related database c
       kafka_rest    = true
       kafka_version = "3.1"
       kafka {
-        group_max_session_timeout_ms = 70000
-        log_retention_bytes          = 1000000000
         auto_create_topics_enable    = true
       }
     }
@@ -72,7 +70,7 @@ Before you begin, you will require a MongoDB database and the related database c
   
   * Since you have ``kafka_connect`` set to ``true`` under the ``kafka_user_config``, you don't need a standalone Aiven for Apache Kafka Connect service.
   * You need to enable the ``auto_create_topics_enable`` flag so that the connector is able to create the topic on the Apache Kafka cluster.
-  * The automatically created topic name will be **DATABASE.COLLECTION** - ``sample_airbnb.listingsAndReviews`` in this example.
+  * The automatically created topic name will be the concatenation of ``database`` and ``collection`` parameters - ``sample_airbnb.listingsAndReviews`` in this example.
   * ``poll.await.time.ms`` can be configured to set the amount of wait time before the MongoDB source connector pulls the new changes from a collection.
   * ``publish.full.document.only``, when set to ``true``, only publishes the actual document rather than the full change stream document. The default value is ``false``.
 
