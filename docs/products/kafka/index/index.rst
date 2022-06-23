@@ -32,15 +32,15 @@ Take your first steps with Aiven for Apache Kafka by following our :doc:`getting
 
 .. panels::
 
-    📚 :doc:`Concepts <concepts>`
+    📚 :doc:`Concepts <../concepts>`
 
     ---
 
-    💻 :doc:`HowTo <howto>`
+    💻 :doc:`HowTo <../howto>`
 
     ---
 
-    📖 :doc:`reference`
+    📖 :doc:`../reference`
 
 
 Apache Kafka resources

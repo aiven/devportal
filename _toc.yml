@@ -140,7 +140,7 @@ entries:
         title: Aiven Operator for Kubernetes
 
   # -------- PRODUCT-SPECIFIC --------
-  - file: docs/products/kafka/index
+  - file: docs/products/kafka/index/index
     title: Apache Kafka
     entries:
       - file: docs/products/kafka/getting-started
