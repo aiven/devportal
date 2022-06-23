@@ -18,6 +18,7 @@ compliances
 Conduktor
 connect
 Couchbase
+CPU
 cyber
 datacenter
 datacenters
@@ -126,6 +127,7 @@ repo
 reStructuredText
 rsyslog
 Sakila
+Sarama
 schemaless
 scriptable
 sharding
