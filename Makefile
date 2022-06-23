@@ -89,11 +89,10 @@ service-type-config-mysql:
 service-type-config-opensearch:
 	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "opensearch" "includes/config-opensearch.rst"
 
-service-type-config-pg:
-	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "pg" "includes/config-pg.rst"
-
 service-type-config-redis:
 	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "redis" "includes/config-redis.rst"
+
+# TODO: add automation for "pg". See https://github.com/aiven/devportal/issues/1026
 
 # (Re)Generate cloud listing
 cloud-list:
