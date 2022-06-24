@@ -54,7 +54,7 @@ An alternative is to use Kafka Connect to backup the cluster, for instance sinki
 
 For more information refer to
 
-- `Aiven for Apache Kafka® MirrorMaker 2 <https://developer.aiven.io/docs/products/kafka/kafka-mirrormaker/kafka-mirrormaker.html>`_
+- :doc:`Aiven for Apache Kafka® MirrorMaker 2 </docs/products/kafka/kafka-mirrormaker/kafka-mirrormaker.html>`
 - Cloudera's `A look inside Kafka MirrorMaker 2 <https://blog.cloudera.com/a-look-inside-kafka-mirrormaker-2/>`_
 - `Configure AWS for an S3 sink connector <https://developer.aiven.io/docs/products/kafka/kafka-connect/howto/s3-sink-prereq.html>`_
 
