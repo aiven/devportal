@@ -11,7 +11,7 @@ You can also use the dedicated functions :ref:`service logs <avn-service-logs>` 
 
 Note that it is also possible to :doc:`export logs and metrics to an Aiven service or external provider</docs/platform/concepts/logs-metrics-alerts>`. For instance:
 
-    - Sending logs to :doc:`Aiven for Opensearch</docs/products/opensearch/index>`.
-    - Sending metrics to :doc:`Aiven for m3</docs/products/m3db/index>`, and visualise these metrics with :doc:`Aiven for Grafana</docs/products/grafana/index>`.
+    - Sending logs to :doc:`Aiven for Opensearch</docs/products/opensearch/opensearch>`.
+    - Sending metrics to :doc:`Aiven for m3</docs/products/m3db/m3db>`, and visualise these metrics with :doc:`Aiven for Grafana</docs/products/grafana/grafana>`.
 
 

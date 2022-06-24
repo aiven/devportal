@@ -72,5 +72,5 @@ Follow the steps in this section for each of the services whose logs should be s
 
 6. Visit Datadog and look under "Logs" to see the data flowing within a few minutes.
 
-.. seealso:: Learn more about :doc:`/docs/integrations/datadog/index`.
+.. seealso:: Learn more about :doc:`/docs/integrations/datadog/datadog`.
 

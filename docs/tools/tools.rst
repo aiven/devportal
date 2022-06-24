@@ -7,8 +7,8 @@ The Aiven `web console <https://console.aiven.io>`_ is the friendliest way to ge
 
 The ``avn`` :doc:`command-line tool <cli>` brings Aiven features to your terminal.
 
-For programmatic integrations, the :doc:`Aiven API <api/index>` provides an interface you can use. This public-facing API also powers our own web interface so everything you need is supported.
+For programmatic integrations, the :doc:`Aiven API <api/api>` provides an interface you can use. This public-facing API also powers our own web interface so everything you need is supported.
 
-The :doc:`terraform <terraform/index>` gives orchestration features for infrastructure-as-code projects.
+The :doc:`terraform <terraform/terraform>` gives orchestration features for infrastructure-as-code projects.
 
 The :doc:`kubernetes` adds orchestration of your Aiven services to your existing Kubernetes® cluster.
