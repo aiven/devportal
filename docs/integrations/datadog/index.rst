@@ -10,6 +10,10 @@ You can send the metrics from any or all of your Aiven services to Datadog. The 
 
 Find out :doc:`how to send your Aiven service metrics to Datadog </docs/integrations/datadog/datadog-metrics>`.
 
+.. Tip::
+
+    If you're using Aiven for Apache Kafka® you can also :doc:`customise the metrics sent to Datadog </docs/product/kafka/howto/datadog-customised-metrics>`.
+
 Datadog for logs
 ----------------
 
