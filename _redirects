@@ -17,17 +17,17 @@
 
 # Redirect from .index.html to specific page names for landing
 
-# with one section and no subsections, i. e. docs/platform/platform.html
+# with one section and no subsections, i. e. docs/platform/platform
 /docs/:section/index.html                                              /docs/:section/:section
 /docs/:section/index                                                   /docs/:section/:section
 /docs/:section/                                                        /docs/:section/:section
 
-# with one subsection, i. e. docs/products/cassandra/cassandra.html
+# with one subsection, i. e. docs/products/cassandra/cassandra
 /docs/:section/:subsection/index.html                                  /docs/:section/:subsection/:subsection
 /docs/:section/:subsection/index                                       /docs/:section/:subsection/:subsection
 /docs/:section/:subsection/                                            /docs/:section/:subsection/:subsection
 
-# with a subsubsection, i. e. docs/products/opensearch/dashboards/dashboards.rst
+# with a subsubsection, i. e. docs/products/opensearch/dashboards/dashboards
 /docs/:section/:subsection/:subsubsection/index.html                   /docs/:section/:subsection/:subsubsection/:subsubsection
 /docs/:section/:subsection/:subsubsection/index                        /docs/:section/:subsection/:subsubsection/:subsubsection
 /docs/:section/:subsection/:subsubsection/                             /docs/:section/:subsection/:subsubsection/:subsubsection
