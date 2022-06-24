@@ -519,6 +519,8 @@ entries:
             title: Terminology
           - file: docs/products/m3db/reference/advanced-params
             title: Advanced parameters
+          - file: docs/products/m3db/reference/advanced-params-m3aggregator
+            title: Advanced parameters M3Aggregator
 
   - file: docs/products/mysql/index
     title: MySQL
