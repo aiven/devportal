@@ -40,7 +40,7 @@ The ``max_jmx_metrics`` is not exposed in our console yet, but you should be abl
 
 .. note:: Please gradually increase the value, and monitor the memory usage on the cluster.
 
-.. _article: https://developer.aiven.io/docs/integrations/datadog/datadog.html
+.. _article: /docs/integrations/datadog/datadog.html
 
 .. _plan: https://docs.datadoghq.com/account_management/billing/custom_metrics/?tab=countrate#allocation
 
