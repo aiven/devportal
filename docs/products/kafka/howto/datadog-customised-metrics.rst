@@ -1,5 +1,5 @@
 Configure Apache Kafka® metrics sent to Datadog
------------------------------------------------
+===============================================
 
 When creating a :doc:`Datadog service integration </docs/integrations/datadog/datadog-metrics>`, you can customise which metrics are sent to the Datadog endpoint using the :doc:`Aiven CLI </docs/tools/cli>`.
 
