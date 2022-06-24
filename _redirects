@@ -15,5 +15,15 @@
 /terraform          /docs/tools/terraform/index.html
 
 
+# Redirect from index to
+/index.html         /main.html
+
+# docs/platform/main.rst
+/docs/:section/index.html                                               /docs/:section/main.html
+# docs/products/cassandra/main.rst
+/docs/:section/:subsection//index.html                                  /docs/:section/:subsection//main.html
+# docs/products/opensearch/dashboards/main.rst
+/docs/:section/:subsection/:subsubsection/index.html                    /docs/:section/:subsection/:subsubsection/main.html
+
 # Renamed/deleted files
 /docs/products/flink/howto/real-time-alerting-solution-cli.html       /docs/products/flink/howto/real-time-alerting-solution.html

@@ -4,7 +4,7 @@ options:
 
 entries:
   # -------- PLATFORM-TOPICS --------
-  - file: docs/platform/index
+  - file: docs/platform/main
     title: Platform
     entries:
     - file: docs/platform/concepts
@@ -69,17 +69,17 @@ entries:
 
 
   # --------- GLOBAL -----------
-  - file: docs/integrations/index
+  - file: docs/integrations/main
     title: Integrations
     entries:
-    - file: docs/integrations/datadog/index
+    - file: docs/integrations/datadog/main
       title: Datadog
       entries:
         - file: docs/integrations/datadog/datadog-metrics
         - file: docs/integrations/datadog/datadog-logs
 
 
-  - file: docs/tools/index
+  - file: docs/tools/main
     entries:
       - file: docs/tools/cli
         entries:
@@ -100,11 +100,11 @@ entries:
           entries:
             - glob: docs/tools/cli/user/*
         - file: docs/tools/cli/vpc
-      - file: docs/tools/api/index
+      - file: docs/tools/api/main
         title: Aiven API
         entries:
         - glob: docs/tools/api/*
-      - file: docs/tools/terraform/index
+      - file: docs/tools/terraform/main
         title: Aiven Terraform provider
         entries:
         - file: docs/tools/terraform/get-started
@@ -142,7 +142,7 @@ entries:
         title: Aiven Operator for Kubernetes
 
   # -------- PRODUCT-SPECIFIC --------
-  - file: docs/products/kafka/index
+  - file: docs/products/kafka/main
     title: Apache Kafka
     entries:
       - file: docs/products/kafka/getting-started
@@ -218,7 +218,7 @@ entries:
           - file: docs/products/kafka/reference/kafka-metrics-prometheus
             title: Metrics available via Prometheus
 
-      - file: docs/products/kafka/kafka-connect/index
+      - file: docs/products/kafka/kafka-connect/main
         title: Apache Kafka Connect
         entries:
         - file: docs/products/kafka/kafka-connect/getting-started
@@ -280,7 +280,7 @@ entries:
             - file: docs/products/kafka/kafka-connect/reference/connect-metrics-prometheus
               title: Metrics available via Prometheus
 
-      - file: docs/products/kafka/kafka-mirrormaker/index
+      - file: docs/products/kafka/kafka-mirrormaker/main
         title: Apache Kafka MirrorMaker2
         entries:
         - file: docs/products/kafka/kafka-mirrormaker/getting-started
@@ -299,7 +299,7 @@ entries:
           entries:
             - glob: docs/products/kafka/kafka-mirrormaker/reference/*
 
-  - file: docs/products/postgresql/index
+  - file: docs/products/postgresql/main
     title: PostgreSQL
     entries:
       - file: docs/products/postgresql/getting-started
@@ -376,7 +376,7 @@ entries:
           - file: docs/products/postgresql/reference/terminology
             title: Terminology
 
-  - file: docs/products/flink/index
+  - file: docs/products/flink/main
     title: Apache Flink
     entries:
       - file: docs/products/flink/getting-started
@@ -409,7 +409,7 @@ entries:
           - file: docs/products/flink/reference/advanced-params
             title: Advanced parameters
 
-  - file: docs/products/clickhouse/index
+  - file: docs/products/clickhouse/main
     title: ClickHouse
     entries:
       - file: docs/products/clickhouse/getting-started
@@ -438,7 +438,7 @@ entries:
           - file: docs/products/clickhouse/reference/advanced-params
             title: Advanced parameters
 
-  - file: docs/products/opensearch/index
+  - file: docs/products/opensearch/main
     title: OpenSearch
     entries:
       - file: docs/products/opensearch/getting-started
@@ -479,7 +479,7 @@ entries:
           - file: docs/products/opensearch/howto/set_index_retention_patterns
           - file: docs/products/opensearch/howto/opensearch-alerting-api
           - file: docs/products/opensearch/howto/handle-low-disk-space
-      - file: docs/products/opensearch/dashboards/index
+      - file: docs/products/opensearch/dashboards/main
         title: OpenSearch Dashboards
         entries:
           - file: docs/products/opensearch/dashboards/getting-started
@@ -499,7 +499,7 @@ entries:
           - file: docs/products/opensearch/reference/restapi-limited-access
           - file: docs/products/opensearch/reference/low-space-watermarks
 
-  - file: docs/products/m3db/index
+  - file: docs/products/m3db/main
     title: M3DB
     entries:
       - file: docs/products/m3db/getting-started
@@ -522,7 +522,7 @@ entries:
           - file: docs/products/m3db/reference/advanced-params-m3aggregator
             title: Advanced parameters M3Aggregator
 
-  - file: docs/products/mysql/index
+  - file: docs/products/mysql/main
     title: MySQL
     entries:
       - file: docs/products/mysql/get-started
@@ -554,7 +554,7 @@ entries:
             title: Resource capability per plan
 
 
-  - file: docs/products/redis/index
+  - file: docs/products/redis/main
     title: Redis
     entries:
       - file: docs/products/redis/get-started
@@ -587,7 +587,7 @@ entries:
           - file: docs/products/redis/reference/advanced-params
             title: Advanced parameters
 
-  - file: docs/products/cassandra/index
+  - file: docs/products/cassandra/main
     title: Apache Cassandra
     entries:
       - file: docs/products/cassandra/reference
@@ -596,7 +596,7 @@ entries:
           - file: docs/products/cassandra/reference/advanced-params
             title: Advanced parameters
 
-  - file: docs/products/grafana/index
+  - file: docs/products/grafana/main
     title: Grafana
     entries:
       - file: docs/products/grafana/get-started
@@ -617,7 +617,7 @@ entries:
   - file: docs/community
     title: Community
     entries:
-    - file: docs/community/documentation/index
+    - file: docs/community/documentation/main
       entries:
       - glob: docs/community/documentation/tips-tricks/*
         title: Tips & Tricks
