@@ -15,15 +15,19 @@
 /terraform          /docs/tools/terraform/index.html
 
 
-# Redirect from index to
-/index.html         /main.html
+# Redirect from .index.html to specific page names for landing
 
-# docs/platform/main.rst
-/docs/:section/index.html                                               /docs/:section/main.html
-# docs/products/cassandra/main.rst
-/docs/:section/:subsection/index.html                                  /docs/:section/:subsection/main.html
-# docs/products/opensearch/dashboards/main.rst
-/docs/:section/:subsection/:subsubsection/index.html                    /docs/:section/:subsection/:subsubsection/:subsubsection.html
+# with one section and no subsections, i. e. docs/platform/platform.html
+/docs/:section/index.html                                              /docs/:section/:section
+/docs/:section/                                                        /docs/:section/:section
+
+# with one subsection, i. e. docs/products/cassandra/cassandra.html
+/docs/:section/:subsection/index.html                                  /docs/:section/:subsection/subsection
+/docs/:section/:subsection/                                            /docs/:section/:subsection/subsection
+
+# with a subsubsection, i. e. docs/products/opensearch/dashboards/dashboards.rst
+/docs/:section/:subsection/:subsubsection/index.html                   /docs/:section/:subsection/:subsubsection/:subsubsection
+/docs/:section/:subsection/:subsubsection/                             /docs/:section/:subsection/:subsubsection/:subsubsection
 
 # Renamed/deleted files
 /docs/products/flink/howto/real-time-alerting-solution-cli.html       /docs/products/flink/howto/real-time-alerting-solution.html

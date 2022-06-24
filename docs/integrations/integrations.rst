@@ -11,15 +11,15 @@ Available integrations
 
     **Data Flow**
 
-    * :doc:`/docs/products/kafka/kafka-connect/index`
-    * :doc:`/docs/products/flink/index`
+    * :doc:`/docs/products/kafka/kafka-connect/kafka-connect`
+    * :doc:`/docs/products/flink/flink`
 
     ---
 
 
     **Metrics**
 
-    * :doc:`Datadog <datadog/index>`
+    * :doc:`Datadog <datadog/datadog>`
     * :doc:`Prometheus </docs/platform/howto/integrations/prometheus-metrics>`
 
     ---
@@ -27,5 +27,5 @@ Available integrations
     **Logs**
 
     * :doc:`/docs/products/opensearch/howto/opensearch-log-integration`
-    * :doc:`Datadog <datadog/index>`
+    * :doc:`Datadog <datadog/datadog>`
     * `RSyslog integration <https://help.aiven.io/en/articles/2933115-remote-syslog-integration>`_
