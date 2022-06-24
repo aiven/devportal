@@ -44,7 +44,7 @@ To customise the metrics sent to Datadog, you can use the ``service integration-
 
 .. Tip:: 
 
-    By default all topics are included
+    By default, all topics are included.
 
 * ``exclude_topics``: defining the comma separated list of topics to exclude
 * ``include_consumer_groups``: defining the comma separated list of consumer groups to include
@@ -60,3 +60,4 @@ As example to sent the ``kafka.log.log_size`` and ``kafka.log.log_end_offset`` m
 
 Once the update is successful and metrics have been collected and pushed, you should see them in your Datadog explorer.
 
+.. seealso:: Learn more about :doc:`/docs/integrations/datadog/index`.

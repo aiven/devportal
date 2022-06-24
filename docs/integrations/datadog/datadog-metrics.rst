@@ -39,7 +39,7 @@ Repeat these steps for each service whose metrics should be sent to Datadog.
 
 .. Tip::
 
-    If you're using Aiven for Apache Kafka® you can also :doc:`customise the metrics sent to Datadog </docs/product/kafka/howto/datadog-customised-metrics>`
+    If you're using Aiven for Apache Kafka® you can also :doc:`customise the metrics sent to Datadog </docs/product/kafka/howto/datadog-customised-metrics>`.
 
 7. Return to your Datadog dashboard and after a few minutes, you should see the data start to arrive from your Aiven service(s).
 
