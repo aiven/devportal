@@ -1,7 +1,7 @@
 Increase metrics limit setting for Datadog
 ==========================================
 
-Monitoring of services, applications is essential to know wether programs work as expected, here is the article_ on getting started with Aiven and Datadog integration.
+Monitoring of services, applications is essential to know wether programs work as expected, here is the :doc:`article </docs/integrations/datadog/>` on getting started with Aiven and Datadog integration.
 For large service cluster, sometimes, we can not find the metrics we expected or some value missing on dashboards. 
 This is the guide for how to lift the limitation, get more metrics from the integration.
 
@@ -39,8 +39,6 @@ The ``max_jmx_metrics`` is not exposed in our console yet, but you should be abl
   avn service integration-update SERVICE_INTEGRATION_ID --project PROJECT_NAME -c max_jmx_metrics=LIMIT
 
 .. note:: Please gradually increase the value, and monitor the memory usage on the cluster.
-
-.. _article: /docs/integrations/datadog/datadog.html
 
 .. _plan: https://docs.datadoghq.com/account_management/billing/custom_metrics/?tab=countrate#allocation
 
