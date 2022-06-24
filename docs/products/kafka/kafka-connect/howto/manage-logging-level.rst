@@ -3,7 +3,7 @@ Manage Apache Kafka® Connect logging level
 
 During the operation of an Aiven for Apache Kafka® Connect cluster, you may encounter errors from one or more running connectors. Sometimes the stack trace printed in the logs is useful in determining the root cause of an issue while other times, the information provided just isn't enough to work with.
 
-Therefore you might need access to more detailed logs to debug an issue. This can be done for a specific logger or connector by setting the logging level of an Apache Kafka® Connect's cluster using the `Kafka Connect REST APIs <https://kafka.apache.org/documentation.html#connect_rest>`__. 
+Therefore you might need access to more detailed logs to debug an issue. This can be done for a specific logger or connector by setting the logging level of an Apache Kafka® Connect's cluster using the `Kafka Connect REST APIs <https://kafka.apache.org/documentation.html>`__. 
 
 .. Warning::
 
