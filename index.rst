@@ -42,7 +42,7 @@ Learn about the Aiven platform
 
     +++
 
-    .. link-button:: docs/products/postgresql/index
+    .. link-button:: docs/products/postgresql/main
         :type: ref
         :text: Read more
         :classes: stretched-link
@@ -53,7 +53,7 @@ Learn about the Aiven platform
 
     +++
 
-    .. link-button:: docs/products/m3db/index
+    .. link-button:: docs/products/m3db/main
         :type: ref
         :text: Read more
         :classes: stretched-link
@@ -65,7 +65,7 @@ Learn about the Aiven platform
 
     +++
 
-    .. link-button:: docs/products/kafka/index
+    .. link-button:: docs/products/kafka/main
         :type: ref
         :text: Read more
         :classes: stretched-link
@@ -76,7 +76,7 @@ Learn about the Aiven platform
 
     +++
 
-    .. link-button:: docs/products/flink/index
+    .. link-button:: docs/products/flink/main
         :type: ref
         :text: Read more
         :classes: stretched-link
@@ -86,7 +86,7 @@ Learn about the Aiven platform
 
     +++
 
-    .. link-button:: docs/products/opensearch/index
+    .. link-button:: docs/products/opensearch/main
         :type: ref
         :text: Read more
         :classes: stretched-link
@@ -97,7 +97,7 @@ Learn about the Aiven platform
 
     +++
 
-    .. link-button:: docs/products/cassandra/index
+    .. link-button:: docs/products/cassandra/main
         :type: ref
         :text: Read more
         :classes: stretched-link
@@ -108,7 +108,7 @@ Learn about the Aiven platform
 
     +++
 
-    .. link-button:: docs/products/redis/index
+    .. link-button:: docs/products/redis/main
         :type: ref
         :text: Read more
         :classes: stretched-link
@@ -119,7 +119,7 @@ Learn about the Aiven platform
 
     +++
 
-    .. link-button:: docs/products/mysql/index
+    .. link-button:: docs/products/mysql/main
         :type: ref
         :text: Read more
         :classes: stretched-link
@@ -134,7 +134,7 @@ Learn about the Aiven platform
 
     +++
 
-    .. link-button:: docs/products/grafana/index
+    .. link-button:: docs/products/grafana/main
         :type: ref
         :text: Read more
         :classes: stretched-link
@@ -145,7 +145,7 @@ Learn about the Aiven platform
 
     +++
 
-    .. link-button:: docs/products/clickhouse/index
+    .. link-button:: docs/products/clickhouse/main
         :type: ref
         :text: Read more
         :classes: stretched-link
@@ -160,8 +160,8 @@ You can use the Aiven platform in the way that best fits your workflow:
 
 * The ``avn`` :doc:`command-line tool <docs/tools/cli>` brings Aiven features to your terminal.
 
-* The :doc:`Aiven API <docs/tools/api/index>` provides an interface you can use for programmatic integrations.
+* The :doc:`Aiven API <docs/tools/api/main>` provides an interface you can use for programmatic integrations.
 
-* :doc:`docs/tools/terraform/index` gives orchestration features for infrastructure-as-code projects.
+* :doc:`docs/tools/terraform/main` gives orchestration features for infrastructure-as-code projects.
 
 * :doc:`docs/tools/kubernetes` adds orchestration of your Aiven services to your existing Kubernetes® cluster.
