@@ -60,4 +60,4 @@ As example to sent the ``kafka.log.log_size`` and ``kafka.log.log_end_offset`` m
 
 Once the update is successful and metrics have been collected and pushed, you should see them in your Datadog explorer.
 
-.. seealso:: Learn more about :doc:`/docs/integrations/datadog/index`.
+.. seealso:: Learn more about :doc:`/docs/integrations/datadog`.

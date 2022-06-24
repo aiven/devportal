@@ -18,23 +18,23 @@ OpenSearch is widely used for log ingestion and analysis, particularly because i
 Get started with Aiven for OpenSearch
 -------------------------------------
 
-Try the :doc:`sample recipes dataset <howto/sample-dataset>` or browse the other articles available:
+Try the :doc:`sample recipes dataset </docs/products/opensearch/howto/sample-dataset>` or browse the other articles available:
 
 .. panels::
 
-    📚 :doc:`concepts`
+    📚 :doc:`/docs/products/opensearch/concepts`
 
     ---
 
-    💻 :doc:`howto`
+    💻 :doc:`/docs/products/opensearch/howto`
 
     ---
 
-    📖 :doc:`Reference <reference>`
+    📖 :doc:`Reference </docs/products/opensearch/reference>`
 
     ---
 
-    🧰 :doc:`Code <howto/opensearch-with-curl>`
+    🧰 :doc:`Code </docs/products/opensearch/howto/opensearch-with-curl>`
 
 
 Ways to use OpenSearch
@@ -45,18 +45,18 @@ OpenSearch is ideal for working with various types of unstructured data, where y
 * Send your **logs** to OpenSearch so that you can quickly identify and diagnose problems if they arise.
 
   .. tip::
-    Check how to send logs from a service to your OpenSearch service :doc:`by enabling log integration <howto/opensearch-log-integration>` feature.
+    Check how to send logs from a service to your OpenSearch service :doc:`by enabling log integration </docs/products/opensearch/howto/opensearch-log-integration>` feature.
 
 * Use OpenSearch to index documents, so that you can get meaningful **search results** from a large body of knowledge.
 
 OpenSearch resources
 --------------------
 
-* Work with your OpenSearch service :doc:`using cURL <howto/opensearch-with-curl>`
+* Work with your OpenSearch service :doc:`using cURL </docs/products/opensearch/howto/opensearch-with-curl>`
 
 * Check the `API documentation <https://opensearch.org/docs/opensearch/rest-api/index>`_ for detailed information about the HTTP endpoints.
 
-* There's a :doc:`list of plugins <reference/plugins>` supported by Aiven for OpenSearch.
+* There's a :doc:`list of plugins </docs/products/opensearch/reference/plugins>` supported by Aiven for OpenSearch.
 
 * Got a question about the OpenSearch project itself? They have an `FAQ <https://opensearch.org/faq/>`_ for that.
 

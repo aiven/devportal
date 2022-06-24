@@ -14,20 +14,20 @@ MySQL is a traditional open source relational database that plays nicely with ma
 Get started with Aiven for MySQL
 ================================
 
-Our :doc:`getting started guide <get-started>` will get you up and running quickly.
+Our :doc:`getting started guide </docs/products/mysql/get-started>` will get you up and running quickly.
 
 .. panels::
 
 
-    📚 :doc:`Concepts <concepts>`
+    📚 :doc:`Concepts </docs/products/mysql/concepts>`
 
     ---
 
-    💻 :doc:`HowTo <howto>`
+    💻 :doc:`HowTo </docs/products/mysql/howto>`
 
     ---
 
-    📖 :doc:`Reference <reference>`
+    📖 :doc:`Reference </docs/products/mysql/reference>`
 
 
 More MySQL resources

@@ -50,4 +50,4 @@ Follow the steps in this section for each of the services whose logs should be s
 
 6. Visit your AWS account and look under **CloudWatch** and explore the **Logs** section to see the data flowing within a few minutes.
 
-.. seealso:: Learn more about :doc:`/docs/integrations/cloudwatch/index`.
+.. seealso:: Learn more about :doc:`/docs/integrations/cloudwatch`.
