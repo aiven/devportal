@@ -5,22 +5,31 @@ PostgreSQL® is an open source, **relational database**. It's ideal for organisa
 On top of the strict table and columns formats, PostgreSQL also offers solutions for nested datasets with the native ``jsonb`` format and advanced set of extensions including `PostGIS <https://postgis.net/>`_, a spatial database extender for location queries.
 Aiven for PostgreSQL is the perfect fit for your relational data. A scalable SQL database solution that can be up and running within a few minutes.
 
+.. grid:: 1 2 2 2
 
-.. panels::
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
 
-    📚 :doc:`/docs/products/postgresql/concepts`
+        📚 :doc:`/docs/products/postgresql/concepts`
 
-    ---
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
 
-    💻 :doc:`/docs/products/postgresql/howto`
+        💻 :doc:`/docs/products/postgresql/howto`
 
-    ---
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
 
-    📖 :doc:`/docs/products/postgresql/reference`
+        📖 :doc:`/docs/products/postgresql/reference`
 
-    ---
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
 
-    🧰 :doc:`/docs/products/postgresql/howto/list-code-samples`
+        🧰 :doc:`/docs/products/postgresql/howto/list-code-samples`
 
 
 PostgreSQL resources

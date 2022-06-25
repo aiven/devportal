@@ -21,14 +21,19 @@ Get started with Aiven for Grafana
 Take your first steps with Aiven for Grafana by following our :doc:`/docs/products/grafana/get-started` article, or browse through our full list of articles:
 
 
-.. panels::
+.. grid:: 1 2 2 2
 
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
 
-    💻 :doc:`/docs/products/grafana/howto`
+        💻 :doc:`/docs/products/grafana/howto`
 
-    ---
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
 
-    📖 :doc:`Reference </docs/products/grafana/reference>`
+        📖 :doc:`Reference </docs/products/grafana/reference>`
 
 
 Integrates with your existing Aiven tools
