@@ -28,7 +28,7 @@ html_title = 'Aiven'
 # ones.
 extensions = [
     'sphinx_sitemap',
-    'sphinx_panels',
+    'sphinx_design',
     'sphinxcontrib.mermaid',
     'sphinx_external_toc',
     'sphinx_copybutton',
