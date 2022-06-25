@@ -1,4 +1,4 @@
-ClickHouse® :badge:`beta,cls=badge-secondary text-black badge-pill`
+ClickHouse® |beta|
 ===================================================================
 
 .. note::
