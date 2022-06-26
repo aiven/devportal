@@ -90,6 +90,8 @@ linkcheck_ignore = [
 html_favicon = './_static/images/favicon.ico'
 html_theme = 'furo'
 html_theme_options = {
+    "light_logo": "images/logoCrabbyLight-pride.svg",
+    "dark_logo": "images/logoCrabbyDark-pride.svg",
     "light_css_variables": {
         "color-brand-primary": "#FF3554",
         "font-stack": "Inter, sans-serif",
@@ -97,14 +99,14 @@ html_theme_options = {
         "color-foreground-primary": "#333333",
         "color-foreground-secondary": "#787885",
         "color-foreground-border": "#e1e1e3",
-        "color-background-primary": "#e1e1e3",
-        "color-background-secondary": "#ffffff",
+        "color-background-primary": "#ffffff",
+        "color-background-secondary": "#f7f7fa",
         "color-content-foreground": "#787885",
         "color-background-hover": "#c60443",
         "color-background-border": "#e1e1e3",
         "color-highlighted-background": "#1c1c2f",
         "color-inline-code-background": "#787885",
-        "color-sidebar-background": "#e1e1e3",
+        "color-sidebar-background": "#ffffff",
         "color-sidebar-background-border": "#e1e1e3",
         "color-sidebar-search-background": "#fff",
     },
@@ -117,6 +119,7 @@ html_theme_options = {
         "color-foreground-border": "#e1e1e3",
         "color-background-primary": "#11111e",
         "color-background-secondary": "#1c1c2f",
+        "color-content-foreground": "#83839d",
         "color-background-hover": "#ff3554",
         "color-background-border": "#e1e1e3",
         "color-highlighted-background": "#1c1c2f",

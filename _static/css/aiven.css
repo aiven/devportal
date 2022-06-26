@@ -1,32 +1,10 @@
 /* Assigning color variables */
 :root {
-  --bg: #ffffff;
-  --primaryColor: #333333;
-  --secondaryColor: #787885;
-  --coral: #e41a4a;
   --white: #ffffff;
-  --gray: #787885;
-  --lightGray: #f7f7fa;
   --link: #4a4b57;
   --linkActive: #c60443;
-  --iconGray: #9696a0;
-  --label: #7e7e9a;
-  --infoBg: var(--white);
-  --border: #e1e1e3;
-  --highlight: #1c1c2f;
-  --sideBar: #f7f7fa;
   --linearPurple: #80688e;
   --linearDarkBlue: #4f586a;
-
-  /* Dark mode colors */
-  --bgDark: #11111e;
-  --infoBgDark: #1c1c2f;
-  --primaryColorDark: #ffffff;
-  --secondaryColorDark: #83839d;
-  --linkDark: #d2d2d6;
-  --linkActiveDark: #ff3554;
-  --sideBarDark: #0b0b14;
-  --lightGrayDark: #494958;
 }
 
 @font-face {
@@ -44,168 +22,30 @@
   src: url(../fonts/Inter-Medium.ttf);
 }
 
-body {
-  background-color: var(--bg);
-}
 
 .sidebar-drawer {
   border-right: none;
-  background: var(--sideBar);
-}
-
-.toc-drawer {
-  background-color: var(--bg);
 }
 
 h1,
 h2,
 h3 {
-  color: var(--primaryColor);
+  color: var(--color-foreground-primary);
   font-family: InterBold;
 }
 
 p {
-  color: var(--secondaryColor);
+  color: var(--color-content-foreground);
   font-family: Inter;
 }
 
 a {
-  color: var(--link) !important;
-  font-family: Inter;
-}
-
-a:hover {
   color: var(--linkActive) !important;
   text-decoration-color: var(--linkActive) !important;
 }
 
 main > .content p:not(.card-text) a:not(.btn) {
   color: var(--linkActive) !important;
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: var(--bgDark);
-  }
-
-  h1,
-  h2,
-  h3 {
-    color: #ffffff;
-  }
-
-  p {
-    color: var(--secondaryColorDark);
-    font-family: Inter;
-  }
-
-  a {
-    color: var(--linkDark) !important;
-    font-family: Inter;
-  }
-
-  main > .content p:not(.card-text) a:not(.btn) {
-    color: var(--linkDark) !important;
-  }
-
-  .sidebar-drawer {
-    border-right: none;
-    background: var(--sideBarDark);
-  }
-
-  .toc-title-container {
-    padding-top: 40px !important;
-  }
-
-  .toc-drawer {
-    background-color: var(--bgDark);
-  }
-
-  .context {
-    color: var(--secondaryColorDark);
-  }
-
-  .mobile-header {
-    background-color: var(--bgDark) !important;
-    margin-top: 15px;
-  }
-
-  .pre {
-    background-color: var(--lightGrayDark) !important;
-    color: var(--lightGray) !important;
-  }
-
-  code.literal {
-    background-color: var(--lightGrayDark) !important;
-  }
-
-  .related-information {
-    color: var(--secondaryColorDark) !important;
-    border-top: 1px solid var(--border) !important;
-  }
-
-  .card {
-    background-color: var(--infoBgDark) !important;
-  }
-
-  .sidebar-search:hover,
-  .sidebar-search:active,
-  .sidebar-search:focus {
-    background-color: var(--infoBgDark);
-  }
-
-  .sidebar-tree .toctree-l1 > .reference,
-  .sidebar-tree .toctree-l1 > label .icon {
-    color: var(--linkDark);
-  }
-
-  .sidebar-search-container {
-    background-color: var(--infoBgDark) !important;
-    width: 90%;
-    margin: 0px auto;
-    border-radius: 5px;
-  }
-
-  .sidebar-search-container:hover {
-    background-color: var(--infoBgDark);
-  }
-
-  .sidebar-search {
-    border-radius: 5px;
-    border: 1px solid var(--border);
-    color: var(--secondaryColorDark);
-  }
-
-  .gh-ribbon.gray {
-    background-color: var(--bgDark) !important;
-    color: #ffffff;
-  }
-
-  .logo-container {
-    height: 70px;
-    width: 80%;
-    margin: 24px auto 10px;
-    padding-top: 5px;
-    background-image: url('../../_static/images/logoDark.png') !important;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 150px;
-  }
-
-  .logo-container-mobile {
-    height: 40px;
-    width: 150px;
-    padding-top: 5px;
-    background-image: url('../../_static/images/logoDark.png') !important;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 120px;
-  }
-
-  h3 > code > .pre {
-    font-weight: 700 !important;
-    color: var(--primaryColorDark) !important;
-  }
 }
 
 .gh-ribbon {
@@ -250,7 +90,7 @@ main > .content p:not(.card-text) a:not(.btn) {
 }
 
 .gh-ribbon.gray {
-  background-color: var(--bg);
+  background-color: var(--color-background-primary);
   color: var(--primaryColor);
 }
 
@@ -355,8 +195,8 @@ main > .content p:not(.card-text) a:not(.btn) {
 
 .sidebar-search {
   border-radius: 5px;
-  border: 1px solid var(--border);
-  color: var(--secondaryColor);
+  border: 1px solid var(--color-foreground-border);
+  color: var(--color-foreground-secondary);
 }
 
 .sidebar-search:hover,
@@ -374,7 +214,6 @@ main > .content p:not(.card-text) a:not(.btn) {
 }
 
 .card-footer > .card-text > .btn {
-  border: 1px solid var(--gray);
   border-radius: 5px;
   text-decoration: none;
   float: right;
@@ -385,61 +224,53 @@ main > .content p:not(.card-text) a:not(.btn) {
 }
 
 .notranslate > .highlight {
-  background: var(--highlight) !important;
+  background: var(--color-highlighted-background) !important;
   color: var(--white);
 }
 
 .highlight-json > .highlight {
-  background: var(--highlight) !important;
+  background: var(--color-highlighted-background) !important;
   color: var(--white);
 }
 
 code.literal {
-  background-color: var(--lightGray);
+  background-color: var(--color-background-secondary);
+}
+
+h1 > code > .pre {
+  font-weight: 700 !important;
+  background-color: var(--color-background-secondary);
+  color: var(--color-foreground-primary);
+}
+
+h2 > code > .pre {
+  font-weight: 700 !important;
+  background-color: var(--color-background-secondary);
+  color: var(--color-foreground-primary);
 }
 
 h3 > code > .pre {
   font-weight: 700 !important;
-  color: var(--primaryColor);
+  background-color: var(--color-background-secondary);
+  color: var(--color-foreground-primary);
 }
 
 .pre {
-  background-color: var(--lightGray);
-  color: var(--secondaryColor);
+  background-color: var(--color-background-secondary);
+  color: var(--color-foreground-secondary);
 }
 
 .related-information {
-  color: var(--secondaryColor) !important;
-  border-top: 1px solid var(--border) !important;
-}
-
-.logo-container {
-  height: 70px;
-  width: 80%;
-  margin: 24px auto 10px;
-  padding-top: 5px;
-  background-image: url('../../_static/images/logoLight.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 150px;
-}
-
-.logo-container-mobile {
-  height: 40px;
-  width: 150px;
-  padding-top: 5px;
-  background-image: url(../../_static/images/logoLight.png) !important;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 120px;
+  color: var(--color-foreground-secondary) !important;
+  border-top: 1px solid var(--color-foreground-border) !important;
 }
 
 .context {
-  color: var(--secondaryColor);
+  color: var(--color-foreground-secondary);
 }
 
 .mobile-header {
-  background-color: var(--bg) !important;
+  background-color: var(--color-background-primary) !important;
   margin-top: 15px;
   z-index: 999;
 }
@@ -484,4 +315,8 @@ h3 > code > .pre {
 .toctree-l1 > a > span.badge,
 .toctree-l1 >  ul > .toctree-l2 > span.badge {
   vertical-align: top;
+}
+
+.disclaimer > p {
+    color: var(--color-foreground-muted)
 }
