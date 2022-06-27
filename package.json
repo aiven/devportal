@@ -4,7 +4,7 @@
   "description": "Aiven Developer Portal",
   "private": true,
   "scripts": {
-    "dev": "netlify dev"
+    "dev": "npx wrangler pages dev ./_static"
   },
   "repository": {
     "type": "git",
@@ -16,6 +16,7 @@
   "homepage": "https://github.com/aiven/devportal#readme",
   "dependencies": {
     "@opensearch-project/opensearch": "^1.0.2",
-    "pg": "^8.7.3"
+    "pg": "^8.7.3",
+    "wrangler": "^2.0.8"
   }
 }
