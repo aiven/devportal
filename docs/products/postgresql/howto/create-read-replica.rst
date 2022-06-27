@@ -30,6 +30,10 @@ The read-only replica is created and added to the list of services in your proje
 
 Read-only replicas can be manually promoted to become the master database if the need arises. For more complex high availability and failover scenarios check the :doc:`related documentation <../concepts/high-availability>`.
 
+.. note::
+    In case you are interested in promoting a read-replica to master via an API console call, you can call
+    the API endpoint to `delete the service integration <https://api.aiven.io/doc/#operation/ServiceIntegrationDelete>`_ using the ``integration_id`` of the replica service, as deleting the integration that comes with ``integration_type`` of value ``read_replica`` will lead to the service to no longer be a ``read_replica``, hence becoming the ``master``.
+
 
 Use a replica
 -------------
