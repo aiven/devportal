@@ -46,12 +46,6 @@ Here is the sample Terraform file to stand-up and connect all the services. Terr
       kafka {
         auto_create_topics_enable    = true
         num_partitions               = 3
-        default_replication_factor   = 2
-        min_insync_replicas          = 2
-      }
-  
-      kafka_authentication_methods {
-        certificate = true
       }
   
       public_access {
@@ -157,8 +151,15 @@ Here is the sample Terraform file to stand-up and connect all the services. Terr
   }
 
   
-  
-This file creates three Aiven services - a Kafka service, a Kafka Connect service and an OpenSearch service. A service integration is created between Kafka service and Kafka Connect service. A sink connector is also created between the kafka connect service to the Opensearch service. An additional ``kafka_user``, ``kafka_user_acl``, and ``kafka_topic`` with the defined username and defined permission will also be created from this terraform file. 
+- This file creates three Aiven services - a Kafka service, a Kafka Connect service and an OpenSearch service. A service integration is created between Kafka service and Kafka Connect service. A sink connector is also created between the kafka connect service to the Opensearch service. 
+
+- An additional ``kafka_user``, ``kafka_user_acl``, and ``kafka_topic`` with the defined username and defined permission will also be created from this terraform file. 
+
+- ``auto_create_topics_enable`` set to true to enable the auto creation of topics
+
+- This config ``num_partitions`` will set the number of partitions for the autocreated topics.
+
+- ``Consumer isolation level`` define the transaction read isolation level. read_uncommitted is the default, but read_committed can be used if consume-exactly-once behavior is desired.
 
 More resources
 --------------

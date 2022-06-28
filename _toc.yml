@@ -138,8 +138,6 @@ entries:
               title: PostgreSQL with custom configs
             - file: docs/tools/terraform/reference/cookbook/kafka-mongodb-recipe
               title: Apache Kafka MongoDB Source Connector  
-            - file: docs/tools/terraform/reference/cookbook/kafka-karapace-recipe
-              title: Apache Kafka with Karapace 
             - file: docs/tools/terraform/reference/cookbook/kafka-custom-conf-recipe.rst
               title: Apache Kafka Connect Custom Configurations   
       - file: docs/tools/kubernetes
