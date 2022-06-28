@@ -1,7 +1,7 @@
 Monitor PostgreSQL® metrics using M3-related services
 =====================================================
 
-Aiven for M3DB is a powerful metrics engine that can be used to monitor your Aiven services on a very large scale. Aiven for M3 Aggregator can store your data at various resolutions for different workloads at scale. You can monitor a relational database like PostgreSQL by sending its metrics to M3DB with M3 Aggregator integration and then visualizing the metrics data on a Grafana dashboard.
+Aiven for M3DB is a powerful metrics engine that can be used to monitor your Aiven services on a very large scale. Aiven for M3 Aggregator can store your data at various resolutions for different workloads at scale. You can monitor a relational database like PostgreSQL by sending its metrics to M3DB with M3 Aggregator integration and then visualizing the metrics data on an Aiven for Grafana® dashboard.
 This example shows how to use the `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_  to create an Aiven for M3 service, an Aiven for M3 Aggregator service, an Aiven for Grafana service, an Aiven for PostgreSQL service, and the related service integrations programmatically. 
 
 .. mermaid::
@@ -11,8 +11,8 @@ This example shows how to use the `Aiven Terraform Provider <https://registry.te
     Gr((Grafana)) ---> |dashboard| M3
     M3 -.-> Agg(M3 Aggregator)
 
-In the above diagram, a service integration between the **PostgreSQL** service and the M3DB + M3 Coordinator service ensures that PostgreSQL metrics are sent to M3. If you're planning for longer retentions, the M3 aggregator can help reduce the volume of time series data stored by using variable datapoint resolutions. 
-The M3 service contains both M3DB and M3 Coordinator. The service integration between **M3** and M3 Aggregator brings unaggregated metrics from M3 Coordinator to M3 Aggregator. Finally, the third service integration shows M3 datapoints in the form of graphs on a Grafana dashboard.
+In the above diagram, a service integration between the **PostgreSQL** service and the M3DB + M3 Coordinator service ensures that PostgreSQL metrics are sent to M3. If you're planning for longer retentions, the M3 aggregator can help reduce the volume of time series data stored by using variable data point resolutions. 
+The M3 service contains both M3DB and M3 Coordinator. The service integration between **M3** and M3 Aggregator brings unaggregated metrics from M3 Coordinator to M3 Aggregator. Finally, the third service integration shows M3 data points in the form of graphs on a Grafana dashboard.
 
 Let's cook!
 -----------
