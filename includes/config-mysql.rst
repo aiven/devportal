@@ -38,13 +38,13 @@
   **Allow access to selected service ports from private networks** 
 
   ``mysql`` => *boolean*
-    **Allow clients to connect to mysql with a DNS name that always resolves to the service's private IP addresses. Only available in certain network locations** None
+    **Allow clients to connect to mysql with a DNS name that always resolves to the service's private IP addresses. Only available in certain network locations** 
 
   ``mysqlx`` => *boolean*
-    **Allow clients to connect to mysqlx with a DNS name that always resolves to the service's private IP addresses. Only available in certain network locations** None
+    **Allow clients to connect to mysqlx with a DNS name that always resolves to the service's private IP addresses. Only available in certain network locations** 
 
   ``prometheus`` => *boolean*
-    **Allow clients to connect to prometheus with a DNS name that always resolves to the service's private IP addresses. Only available in certain network locations** None
+    **Allow clients to connect to prometheus with a DNS name that always resolves to the service's private IP addresses. Only available in certain network locations** 
 
 
 
@@ -52,13 +52,13 @@
   **Allow access to selected service components through Privatelink** 
 
   ``mysql`` => *boolean*
-    **Enable mysql** None
+    **Enable mysql** 
 
   ``mysqlx`` => *boolean*
-    **Enable mysqlx** None
+    **Enable mysqlx** 
 
   ``prometheus`` => *boolean*
-    **Enable prometheus** None
+    **Enable prometheus** 
 
 
 
@@ -66,13 +66,13 @@
   **Allow access to selected service ports from the public Internet** 
 
   ``mysql`` => *boolean*
-    **Allow clients to connect to mysql from the public internet for service nodes that are in a project VPC or another type of private network** None
+    **Allow clients to connect to mysql from the public internet for service nodes that are in a project VPC or another type of private network** 
 
   ``mysqlx`` => *boolean*
-    **Allow clients to connect to mysqlx from the public internet for service nodes that are in a project VPC or another type of private network** None
+    **Allow clients to connect to mysqlx from the public internet for service nodes that are in a project VPC or another type of private network** 
 
   ``prometheus`` => *boolean*
-    **Allow clients to connect to prometheus from the public internet for service nodes that are in a project VPC or another type of private network** None
+    **Allow clients to connect to prometheus from the public internet for service nodes that are in a project VPC or another type of private network** 
 
 
 
@@ -175,7 +175,6 @@
 
   ``long_query_time`` => *number*
     **long_query_time** The slow_query_logs work as SQL statements that take more than long_query_time seconds to execute. Default is 10s
-
 
 
 
