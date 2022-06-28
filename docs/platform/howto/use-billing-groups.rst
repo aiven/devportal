@@ -26,7 +26,7 @@ To view and manage billing groups in the `Aiven Console <https://console.aiven.i
 #. Click an account that you want to manage and then click the **Billing** tab.
 
    .. Tip::
-    This window allows you to create new billing groups and assign projects to your billing groups. For more information on creating billing groups, `see the releated article <https://help.aiven.io/en/articles/4634847>`__.
+    This window allows you to create new billing groups and assign projects to your billing groups. For more information on creating billing groups, `see the related article <https://help.aiven.io/en/articles/4634847>`__.
 
 #. Click one of the listed billing groups to browse the details for that billing group.
 
