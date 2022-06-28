@@ -1,23 +1,23 @@
-Monitor PostgreSQL® metrics using M3-related services
-=====================================================
+Setup M3-related services using Aiven Terraform Provider
+========================================================
 
-Aiven for M3DB is a powerful metrics engine that can be used to monitor your Aiven services on a very large scale. Aiven for M3 Aggregator can store your data at various resolutions for different workloads at scale. You can monitor a relational database like PostgreSQL by sending its metrics to M3DB with M3 Aggregator integration and then visualizing the metrics data on an Aiven for Grafana® dashboard.
-This example shows how to use the `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_  to create an Aiven for M3 service, an Aiven for M3 Aggregator service, an Aiven for Grafana service, an Aiven for PostgreSQL service, and the related service integrations programmatically. 
+`Aiven for M3DB <https://aiven.io/m3>`_ is a powerful time-series database that can be used to monitor your Aiven services on a very large scale. `Aiven for M3 Aggregator <https://aiven.io/m3-aggregator>`_ can store your data at various resolutions for different workloads at scale. You can monitor a relational database like PostgreSQL® by sending its metrics to M3DB with M3 Aggregator integration and then visualizing the metrics data on an Aiven for Grafana® dashboard.
+This example shows how to use the `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_  to create an Aiven for M3 service, an Aiven for M3 Aggregator service, and the related service integration programmatically. 
 
 .. mermaid::
 
   graph LR
-    PG[(PostgreSQL)] ---> |metrics| M3[(M3DB + M3 Coordinator)]
-    Gr((Grafana)) ---> |dashboard| M3
-    M3 -.-> Agg(M3 Aggregator)
+      M3[(M3DB + M3 Coordinator)]
+      M3Agg[M3 Aggregator]
+      M3 -.-> M3Agg
 
-In the above diagram, a service integration between the **PostgreSQL** service and the M3DB + M3 Coordinator service ensures that PostgreSQL metrics are sent to M3. If you're planning for longer retentions, the M3 aggregator can help reduce the volume of time series data stored by using variable data point resolutions. 
-The M3 service contains both M3DB and M3 Coordinator. The service integration between **M3** and M3 Aggregator brings unaggregated metrics from M3 Coordinator to M3 Aggregator. Finally, the third service integration shows M3 data points in the form of graphs on a Grafana dashboard.
+In the above diagram, the M3 service contains both M3DB and M3 Coordinator. If you're planning for longer retentions, the M3 aggregator can help reduce the volume of time series data stored by using variable data point resolutions. 
+The service integration between M3DB + M3 Coordinator and M3 Aggregator brings unaggregated metrics from M3 Coordinator to M3 Aggregator.
 
 Let's cook!
 -----------
 
-The following Terraform recipe will create an Aiven for PostgreSQL service, an Aiven for M3 service, an Aiven for M3 Aggregator service, an Aiven for Grafana service, and the related service integrations.
+The following Terraform recipe will create an Aiven for M3 service, an Aiven for M3 Aggregator service, and the related service integration.
 
 .. Tip::
 
@@ -37,50 +37,40 @@ The following Terraform recipe will create an Aiven for PostgreSQL service, an A
       m3db_version = 1.5
 
       namespaces {
-        name = "m3_ns"
+        name = "m3_default_unaggregated_ns"
         type = "unaggregated"
       }
-    }
-  }
-
-  resource "aiven_pg" "demo-pg" {
-    project      = var.project_name
-    cloud_name   = "google-northamerica-northeast1"
-    service_name = join("-", [var.service_name_prefix, "postgresql"])
-    plan         = "startup-4"
-
-    pg_user_config {
-      pg_version = 14
-    }
-  }
-
-  resource "aiven_service_integration" "int-m3db-pg" {
-    project                  = var.project_name
-    integration_type         = "metrics"
-    source_service_name      = aiven_pg.demo-pg.service_name
-    destination_service_name = aiven_m3db.demo-m3db.service_name
-  }
-
-  resource "aiven_grafana" "demo-grafana" {
-    project      = var.project_name
-    cloud_name   = "google-northamerica-northeast1"
-    plan         = "startup-4"
-    service_name = join("-", [var.service_name_prefix, "grafana"])
-
-    grafana_user_config {
-      alerting_enabled = true
-
-      public_access {
-        grafana = true
+      namespaces {
+        name       = "m3_lowRes_aggregated_ns"
+        type       = "aggregated"
+        resolution = "10m"
+        options {
+          retention_options {
+            retention_period_duration = "1d"
+          }
+        }
+      }
+      namespaces {
+        name       = "m3_medRes_ns"
+        type       = "aggregated"
+        resolution = "2m"
+        options {
+          retention_options {
+            retention_period_duration = "6h"
+          }
+        }
+      }
+      namespaces {
+        name       = "m3_highRes_ns"
+        type       = "aggregated"
+        resolution = "10s"
+        options {
+          retention_options {
+            retention_period_duration = "1h"
+          }
+        }
       }
     }
-  }
-
-  resource "aiven_service_integration" "int-grafana-m3db" {
-    project                  = var.project_name
-    integration_type         = "dashboard"
-    source_service_name      = aiven_grafana.demo-grafana.service_name
-    destination_service_name = aiven_m3db.demo-m3db.service_name
   }
 
   resource "aiven_m3aggregator" "demo-m3a" {
@@ -101,8 +91,8 @@ The following Terraform recipe will create an Aiven for PostgreSQL service, an A
     destination_service_name = aiven_m3aggregator.demo-m3a.service_name
   }
 
-Namespaces in M3 are used to determine how metrics are stored and retained. There is always one unaggregated namespace which is configured under the ``demo-m3db`` resource ``namespaces`` block. 
-The ``grafana_user_config`` setting under the ``demo-grafana`` resource will ensure that you receive alerts based on metrics' threshold level. Make a note of the different ``integration_type`` for each of the service integrations. 
+``namespaces`` in M3 is used to determine how metrics are stored and retained. There is always one unaggregated namespace which is configured under the ``demo-m3db`` resource ``namespaces`` block. There are three aggregated namespaces defined within the same block for different resolution settings.
+Typically, a low resolution data is retained for a longer period of time than a high resolution data. 
 
 More resources
 --------------
