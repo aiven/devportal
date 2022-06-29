@@ -90,7 +90,7 @@ Upgrade Terraform from 0.13 or later
 Any version above 0.13 can be upgraded to latest without any special steps.
 
 .. note::
-  If you are using Aiven Terraform provider v1 with Terraform 0.14 ``dev_overrides`` (see `<https://www.terraform.io/cli/config/config-file#provider-installation>`__ )
+  If you are using Aiven Terraform provider v1 with Terraform 0.14 ``dev_overrides`` (see `Provider Installation <https://www.terraform.io/cli/config/config-file>`__),
   you will need to add Aiven provider to the ``exclude`` block or remove ``dev_overrides`` completely.
 
 1. Use ``tfenv`` to get the latest version (1.0.10 at the time of writing) ``tfenv install latest && tfenv use latest``
