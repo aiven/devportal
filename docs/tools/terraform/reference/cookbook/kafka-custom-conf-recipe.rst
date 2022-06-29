@@ -1,7 +1,7 @@
 Apache Kafka® with custom configurations
 ========================================
 
-This example deploys an `Aiven for Apache Kafka® <https://aiven.io/kafka>`_ service with some custom configurations, as well as a Kafka topic, a Kafka user, and an ACL (access control list) to allow fine-grained permissions about which topic that user can access, using the `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_.
+This example deploys an `Aiven for Apache Kafka® <https://aiven.io/kafka>`_ service with some custom configurations, as well as a Kafka topic, a Kafka user, and an access control list (ACL) to allow fine-grained permissions about which topic that user can access, using the `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_.
 
 Before looking at the Terraform script, let's visualize the resources:
 
