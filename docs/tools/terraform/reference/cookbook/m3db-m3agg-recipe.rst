@@ -1,7 +1,9 @@
 Setup M3-related services using Aiven Terraform Provider
 ========================================================
 
-`Aiven for M3DB <https://aiven.io/m3>`_ is a powerful time-series database that can be used to monitor your Aiven services on a very large scale. `Aiven for M3 Aggregator <https://aiven.io/m3-aggregator>`_ can store your data at various resolutions for different workloads at scale. You can monitor a relational database like PostgreSQL® by sending its metrics to M3DB with M3 Aggregator integration and then visualizing the metrics data on an Aiven for Grafana® dashboard.
+`Aiven for M3DB <https://aiven.io/m3>`_ is a powerful time-series database that can be used when handling very large volumes of metrics and scalability is a concern. `Aiven for M3 Aggregator <https://aiven.io/m3-aggregator>`_ can store your data at various resolutions for different workloads at scale. 
+Together, they are a perfect choice to aggregate, store, and query large time-series data like internet of things (IoT) sensor readings. 
+
 This example shows how to use the `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_  to create an Aiven for M3 service, an Aiven for M3 Aggregator service, and the related service integration programmatically. 
 
 .. mermaid::
@@ -11,8 +13,9 @@ This example shows how to use the `Aiven Terraform Provider <https://registry.te
       M3Agg[M3 Aggregator]
       M3 -.-> M3Agg
 
-In the above diagram, the M3 service contains both M3DB and M3 Coordinator. If you're planning for longer retentions, the M3 aggregator can help reduce the volume of time series data stored by using variable data point resolutions. 
-The service integration between M3DB + M3 Coordinator and M3 Aggregator brings unaggregated metrics from M3 Coordinator to M3 Aggregator.
+In the above diagram, the M3 service contains both M3DB and M3 Coordinator. The service integration between M3DB + M3 Coordinator and M3 Aggregator brings unaggregated metrics from M3 Coordinator to M3 Aggregator. 
+While you can do aggregation without an M3 Aggregator node, a dedicated metrics aggregator can help reduce the volume of time series data stored by using variable data point resolutions. This is especially true if you want the ability to automatically roll-up data over time.
+For example, to aggregate all IoT metrics from the last two months into 10-minute points. 
 
 Let's cook!
 -----------
@@ -92,7 +95,7 @@ The following Terraform recipe will create an Aiven for M3 service, an Aiven for
   }
 
 ``namespaces`` in M3 is used to determine how metrics are stored and retained. There is always one unaggregated namespace which is configured under the ``demo-m3db`` resource ``namespaces`` block. There are three aggregated namespaces defined within the same block for different resolution settings.
-Typically, a low resolution data is retained for a longer period of time than a high resolution data. 
+With high resolution (more samples per second), you'll have more data points for a given time compared to low resolution. More data points will require more storage, and that's why low resolution data is retained for a longer period of time than high resolution data. 
 
 More resources
 --------------
