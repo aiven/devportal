@@ -1,21 +1,21 @@
 Connect to MySQL with PHP
-------------------------
+========================
 
 This example connects to MySQL service from PHP, making use of the built-in PDO module.
 
 Variables
-'''''''''
+---------
 
 These are the placeholders you will need to replace in the code sample:
 
-==================      =============================================================
+==================      ================================================================
 Variable                Description
-==================      =============================================================
-``MYSQL_URI``           URL for MySQL connection, from the service overview page
-==================      =============================================================
+==================      ================================================================
+``MYSQL_URI``           Service URI for MySQL connection, from the service overview page
+==================      ================================================================
 
 Pre-requisites
-''''''''''''''
+--------------
 
 For this example you will need:
 
@@ -25,7 +25,7 @@ For this example you will need:
    Your PHP installation will need to include the `MySQL functions <https://www.php.net/manual/en/ref.pdo-pgsql.php>`_ (most installations will have this already).
 
 Code
-''''
+----
 
 Add the following to ``index.php`` and replace the placeholder with the MySQL URI:
 
