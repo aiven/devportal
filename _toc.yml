@@ -24,6 +24,7 @@ entries:
       - file: docs/platform/concepts/static-ips
       - file: docs/platform/concepts/tls-ssl-certificates
       - file: docs/platform/concepts/byoa
+      - file: docs/platform/concepts/dynamic-disk-sizing
       - file: docs/platform/concepts/enhanced-compliance-env
       - file: docs/platform/concepts/disaster-recovery-test-scenarios
     - file: docs/platform/howto
@@ -36,7 +37,7 @@ entries:
           - file: docs/platform/howto/create_authentication_token
           - file: docs/platform/howto/create_new_service_user
           - file: docs/platform/howto/enable-aiven-password
-          - file: docs/platform/howto/disable-user-2fa            
+          - file: docs/platform/howto/user-2fa            
       - file: docs/platform/howto/list-service
         title: Service management
         entries:
@@ -125,7 +126,7 @@ entries:
             - file: docs/tools/terraform/reference/cookbook/kafka-connect-terraform-recipe
               title: Apache Kafka and OpenSearch  
             - file: docs/tools/terraform/reference/cookbook/multicloud-postgresql-recipe
-              title: Multicloud PostgreSQL 
+              title: Multicloud PostgreSQL
             - file: docs/tools/terraform/reference/cookbook/kafka-flink-integration-recipe
               title: Apache Kafka and Apache Flink
             - file: docs/tools/terraform/reference/cookbook/kafka-mirrormaker-recipe
@@ -205,6 +206,7 @@ entries:
             entries:
               - file: docs/products/kafka/howto/integrate-service-logs-into-kafka-topic
               - file: docs/products/kafka/howto/kafka-streams-with-aiven-for-kafka
+              - file: docs/products/kafka/howto/datadog-customised-metrics
           - file: docs/products/kafka/howto/list-topic-schema
             title: Topic/schema management
             entries:
@@ -522,6 +524,8 @@ entries:
             title: Terminology
           - file: docs/products/m3db/reference/advanced-params
             title: Advanced parameters
+          - file: docs/products/m3db/reference/advanced-params-m3aggregator
+            title: Advanced parameters M3Aggregator
 
   - file: docs/products/mysql/index
     title: MySQL

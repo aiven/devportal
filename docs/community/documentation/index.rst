@@ -1,7 +1,7 @@
 Documentation
 =============
 
-This documentation is powered by a `public GitHub repo <https://github.com/aiven/devportal>`_, and contributions are always welcome.
+This documentation is powered by a `public GitHub repository <https://github.com/aiven/devportal>`_, and contributions are always welcome.
 
 Check out the `README <https://github.com/aiven/devportal#readme>`_ to learn more about the project.
 

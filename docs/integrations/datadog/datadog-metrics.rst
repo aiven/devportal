@@ -37,6 +37,10 @@ Repeat these steps for each service whose metrics should be sent to Datadog.
 
 6. From the list, choose which Datadog integration to use, then select **Enable**.
 
+.. Tip::
+
+    If you're using Aiven for Apache Kafka® you can also :doc:`customise the metrics sent to Datadog </docs/products/kafka/howto/datadog-customised-metrics>`.
+
 7. Return to your Datadog dashboard and after a few minutes, you should see the data start to arrive from your Aiven service(s).
 
 .. seealso:: Learn more about :doc:`/docs/integrations/datadog/index`.

@@ -35,6 +35,10 @@ Learn about some of the key concepts for working with Aiven platform:
 
   Securing connections to Aiven services with certificates.
 
+* :doc: `Dynamic Disk Sizing (DDS) </docs/platform/concepts/dynamic-disk-sizing>`.
+
+  Add (and remove) storage on the fly without upgrading your plan.
+
 * :doc:`Bring your own account (BYOA) </docs/platform/concepts/byoa>`.
 
   BYOA is an optional setup feature that allows you to purchase your Aiven services through your existing Cloud Provider.
