@@ -139,7 +139,7 @@ entries:
             - file: docs/tools/terraform/reference/cookbook/kafka-mongodb-recipe
               title: Apache Kafka MongoDB Source Connector  
             - file: docs/tools/terraform/reference/cookbook/kafka-custom-conf-recipe.rst
-              title: Apache Kafka Connect Custom Configurations   
+              title: Apache Kafka with custom configurations   
       - file: docs/tools/kubernetes
         title: Aiven Operator for Kubernetes
 

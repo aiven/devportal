@@ -1,10 +1,9 @@
-Apache Kafka® Connect Services with Custom Configurations
-=========================================================
+Apache Kafka® with custom configurations
+========================================
 
-Apache Kafka® Connect is an open-source component that allows Apache Kafka® to connect with various data systems via connectors. You can think of connectors as the translators between Apache Kafka topics and external systems.
-This example uses `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_ to deploy Apache Kafka, Apache Kafka Connect, and the service integration between them, as well as related resources and configurations.
+This example deploys an `Aiven for Apache Kafka® <https://aiven.io/kafka>`_ service with some custom configurations, as well as a Kafka topic, a Kafka user, and an ACL (access control list) to allow fine-grained permissions about which topic that user can access, using the `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_.
 
-Before looking at the Terraform script, let's visually realize how the services will be connected:
+Before looking at the Terraform script, let's visualize the resources:
 
 .. mermaid::
 
@@ -13,13 +12,12 @@ Before looking at the Terraform script, let's visually realize how the services 
       id4[[Aiven Kafka User]]
       id5[[Aiven Kafka User ACL]]
       end
-      Aiven-for-Apache-Kafka <--> Aiven-for-Apache-Kafka-Connect --> OpenSearch
       Producer --> Aiven-for-Apache-Kafka --> Consumer
 
 Let's cook!
 ------------
 
-Here is the sample Terraform file to stand-up and connect all the services. Terraform also performs some custom configurations on these resources.
+Here is the sample Terraform script to stand-up Aiven for Apache Kafka and related resources. The script also performs some custom configurations on these resources.
 
 .. Tip::
 
@@ -29,143 +27,104 @@ Here is the sample Terraform file to stand-up and connect all the services. Terr
 
 .. code:: terraform
 
-  resource "aiven_kafka" "kafka" {
+  resource "aiven_kafka" "demo-kafka" {
     project                 = var.project_name
     cloud_name              = "google-europe-west1"
     plan                    = "business-4"
     service_name            = "demo-kafka"
     maintenance_window_dow  = "sunday"
     maintenance_window_time = "01:00:00"
-  
+    default_acl             = false
+
     kafka_user_config {
       kafka_rest      = true
-      kafka_connect   = true
+      kafka_connect   = false
       schema_registry = true
       kafka_version   = "3.1"
-  
+
       kafka {
         auto_create_topics_enable    = true
         num_partitions               = 3
+        default_replication_factor   = 2
+        min_insync_replicas          = 2
       }
-  
+
+      kafka_authentication_methods {
+        certificate = true
+      }
+
       public_access {
         kafka_rest    = true
-        kafka_connect = true
       }
     }
   }
 
-  resource "aiven_kafka_topic" "kafka_topic" {
-  project                = var.project_name
-  service_name           = aiven_kafka.kafka.service_name
-  topic_name             = "logs-app-1"
-  partitions             = 5
-  replication            = 3
-
-  config {
-    flush_ms                       = 10
-    unclean_leader_election_enable = true
-    cleanup_policy                 = "compact,delete"
-    }
+  resource "aiven_kafka_topic" "demo-kafka-topic" {
+    project                = var.project_name
+    service_name           = aiven_kafka.demo-kafka.service_name
+    topic_name             = "demo-kafka-topic"
+    partitions             = 5
+    replication            = 3
   }
-  
-  resource "aiven_kafka_user" "kafka_user" {
+
+  resource "aiven_kafka_user" "demo-kafka-user" {
     project      = var.project_name
-    service_name = aiven_kafka.kafka.service_name
+    service_name = aiven_kafka.demo-kafka.service_name
     username     = var.kafka_user_name
   }
-  
-  resource "aiven_kafka_acl" "kafka_user_acl" {
+
+  resource "aiven_kafka_acl" "demo-kafka-user_acl" {
     project      = var.project_name
-    service_name = aiven_kafka.kafka.service_name
+    service_name = aiven_kafka.demo-kafka.service_name
     username     = var.kafka_user_name
     permission   = "read"
-    topic        = aiven_kafka_topic.kafka_topic.topic_name
-  }
-  
-  resource "aiven_kafka_connect" "kafka_connect" {
-    project                 = var.project_name
-    cloud_name              = "google-europe-west1"
-    plan                    = "startup-4"
-    service_name            = "demo-kafka-connect"
-    maintenance_window_dow  = "sunday"
-    maintenance_window_time = "01:00:00"
-  
-    kafka_connect_user_config {
-      kafka_connect {
-        consumer_isolation_level = "read_committed"
-      }
-  
-      public_access {
-        kafka_connect = true
-      }
-    }
-  }
-  
-  resource "aiven_service_integration" "kafka-to-connect" {
-    project                  = var.project_name
-    integration_type         = "kafka_connect"
-    source_service_name      = aiven_kafka.kafka.service_name
-    destination_service_name = aiven_kafka_connect.kafka_connect.service_name
-  
-    kafka_connect_user_config {
-      kafka_connect {
-        group_id             = "connect"
-        status_storage_topic = "__connect_status"
-        offset_storage_topic = "__connect_offsets"
-        config_storage_topic = "__connect_configs"
-      }
-    }
+    topic        = aiven_kafka_topic.demo-kafka-topic.topic_name
   }
 
-  resource "aiven_kafka_connector" "kafka-os-con1" {
-  project        = var.project_name
-  service_name   = aiven_kafka.kafka.service_name
-  connector_name = "kafka-os-con1"
-  config = {
-    "topics" = aiven_kafka_topic.kafka_topic.topic_name
-    "connector.class" : "io.aiven.kafka.connect.opensearch.OpensearchSinkConnector"
-    "type.name"                      = "os-connector"
-    "name"                           = "kafka-os-con1"
-    "connection.url"                 = "https://${aiven_opensearch.os-service1.service_host}:${aiven_opensearch.os-service1.service_port}"
-    "connection.username"            = aiven_opensearch.os-service1.service_username
-    "connection.password"            = aiven_opensearch.os-service1.service_password
-    "key.converter"                  = "org.apache.kafka.connect.storage.StringConverter"
-    "value.converter"                = "org.apache.kafka.connect.json.JsonConverter"
-    "tasks.max"                      = 1
-    "schema.ignore"                  = true
-    "value.converter.schemas.enable" = false
-    }
-  }
+Let's go over a few of these configurations and understand their functions:
 
-  resource "aiven_opensearch" "os-service1" {
-  project                 = var.project_name
-  cloud_name              = "google-northamerica-northeast1"
-  plan                    = "business-4"
-  service_name            = "os-service1"
-  maintenance_window_dow  = "monday"
-  maintenance_window_time = "10:00:00"
-  opensearch_user_config {
-  opensearch_version = "1"
-    }
-  }
+``aiven_kafka`` resource configurations:
 
-  
-- This file creates three Aiven services - a Kafka service, a Kafka Connect service and an OpenSearch service. A service integration is created between Kafka service and Kafka Connect service. A sink connector is also created between the kafka connect service to the Opensearch service. 
+- ``default_acl`` parameter, when set to **true**, creates default wildcard Kafka ACL. This example sets this parameter to **false** and prevents the default wildcard ACL for resouces.
 
-- An additional ``kafka_user``, ``kafka_user_acl``, and ``kafka_topic`` with the defined username and defined permission will also be created from this terraform file. 
+- For ``kafka_user_config``, ``schema_registry`` is set to **true**, which enables the `Karapace Schema Registry <https://aiven.io/blog/what-is-karapace>`_ and ``kafka_rest`` allows you to view the messages in the topics from the Aiven web console when set to **true**.
 
-- ``auto_create_topics_enable`` set to true to enable the auto creation of topics
+- ``auto_create_topics_enable`` under ``kafka`` nested configurations enables the auto creation of topics when set to **true**. This means that a topic doesn't need to exist before sending a message.
 
-- This config ``num_partitions`` will set the number of partitions for the autocreated topics.
+- ``num_partitions`` will set the number of partitions for the autocreated topics.
 
-- ``Consumer isolation level`` define the transaction read isolation level. read_uncommitted is the default, but read_committed can be used if consume-exactly-once behavior is desired.
+- By default, the replication factor is 1. This example sets ``default_replication_factor`` to 2 and thus requires a minimum of two brokers. For production environments, a replication factor of 3 is recommended. 
+
+- ``min_insync_replicas`` indicates that at least 2 replicas (brokers) should respond back if all replicas(brokers) are not functioning properly. When all replicas are functioning properly, this setting has no effect. 
+
+- The ``certificate`` parameter under the ``kafka_authentication_methods`` nested configurations, when set to **true**, enables certificate/SSL authentication.
+
+``aiven_kafka_topic`` resource configurations:
+
+- ``partitions`` denotes the number of partitions to create in the topic, and ``replication`` sets the replication factor for the topic.
+
+``aiven_kafka_user`` resource configurations:
+
+- We are passing a preset username using ``var.kafka_user_name``
+
+``aiven_kafka_acl`` resource configurations:
+
+- This ACL allows **read** access to the **demo-kafka-topic** topic for the ``var.kafka_user_name`` user. 
+
+.. Warning:: 
+
+  By default, Aiven adds an ``avnadmin`` account to every new service and adds `admin` permission for all topics to that user. When you create your own ACLs to restrict access, you probably want to remove this ACL entry.
+
+.. Note::
+
+  When using the Aiven Terraform Provider, you can add the ``default_acl`` key to your ``resource`` and set it to ``false`` if you do not want to create the admin user with wildcard permissions.
 
 More resources
 --------------
 
-Keep in mind that some parameters and configurations will vary for your case. A reference to the Aiven for Apache Kafka and Aiven for Apache Kafka Connect connectors are provided below:
+Keep in mind that some parameters and configurations will vary for your case. Some related resources are provided below:
 
 - `Configuration options for Aiven for Apache Kafka <https://developer.aiven.io/docs/products/kafka/reference/advanced-params.html>`_
-- `List of available Apache Kafka Connect connectors <https://developer.aiven.io/docs/products/kafka/kafka-connect/concepts/list-of-connector-plugins.html>`_
+- `Aiven for Apache Kafka access control lists permission mapping <https://developer.aiven.io/docs/products/kafka/concepts/acl.html>`_
+- `How to Manage Aiven for Apache Kafka Parameters <https://www.youtube.com/watch?v=pXQZWI0ddLg>`_
 - `Set up your first Aiven Terraform project <https://developer.aiven.io/docs/tools/terraform/get-started.html>`_
