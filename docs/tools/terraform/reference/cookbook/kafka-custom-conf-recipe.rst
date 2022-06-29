@@ -85,13 +85,13 @@ Let's go over a few of these configurations and understand their functions:
 
 ``aiven_kafka`` resource configurations:
 
-- ``default_acl`` parameter, when set to **true**, creates default wildcard Kafka ACL. This example sets this parameter to **false** and prevents the default wildcard ACL for resouces.
+- ``default_acl`` parameter, when set to **true**, creates default wildcard Kafka ACL. This example sets this parameter to **false** and prevents the default wildcard ACL for resources.
 
 - For ``kafka_user_config``, ``schema_registry`` is set to **true**, which enables the `Karapace Schema Registry <https://aiven.io/blog/what-is-karapace>`_ and ``kafka_rest`` allows you to view the messages in the topics from the Aiven web console when set to **true**.
 
 - ``auto_create_topics_enable`` under ``kafka`` nested configurations enables the auto creation of topics when set to **true**. This means that a topic doesn't need to exist before sending a message.
 
-- ``num_partitions`` will set the number of partitions for the autocreated topics.
+- ``num_partitions`` will set the number of partitions for the automatically created topics.
 
 - By default, the replication factor is 1. This example sets ``default_replication_factor`` to 2 and thus requires a minimum of two brokers. For production environments, a replication factor of 3 is recommended. 
 
@@ -109,7 +109,7 @@ Let's go over a few of these configurations and understand their functions:
 
 ``aiven_kafka_acl`` resource configurations:
 
-- This ACL allows **read** access to the **demo-kafka-topic** topic for the ``var.kafka_user_name`` user. 
+- This ACL allows **read** access to the ``demo-kafka-topic`` topic for the ``var.kafka_user_name`` user. 
 
 .. Warning:: 
 
