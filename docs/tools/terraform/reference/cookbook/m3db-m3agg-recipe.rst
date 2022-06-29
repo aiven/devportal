@@ -14,7 +14,7 @@ This example shows how to use the `Aiven Terraform Provider <https://registry.te
       M3 -.-> M3Agg
 
 In the above diagram, the M3 service contains both M3DB and M3 Coordinator. The service integration between M3DB + M3 Coordinator and M3 Aggregator brings unaggregated metrics from M3 Coordinator to M3 Aggregator. 
-While you can do aggregation without an M3 Aggregator node, a dedicated metrics aggregator can help reduce the volume of time series data stored by using variable data point resolutions. This is especially true if you want the ability to automatically roll-up data over time.
+While you can perform aggregations without an M3 Aggregator node, a dedicated metrics aggregator can help in cases when the downsampling workload is slowing down the ingestion of metrics by the main M3DB.
 For example, to aggregate all IoT metrics from the last two months into 10-minute points. 
 
 Let's cook!
