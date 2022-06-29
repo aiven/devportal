@@ -73,7 +73,7 @@ Here is the sample Terraform script to stand-up Aiven for Apache Kafka and relat
     username     = var.kafka_user_name
   }
 
-  resource "aiven_kafka_acl" "demo-kafka-user_acl" {
+  resource "aiven_kafka_acl" "demo-kafka-user-acl" {
     project      = var.project_name
     service_name = aiven_kafka.demo-kafka.service_name
     username     = var.kafka_user_name
