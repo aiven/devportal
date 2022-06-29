@@ -139,6 +139,8 @@ entries:
               title: PostgreSQL with custom configs
             - file: docs/tools/terraform/reference/cookbook/kafka-mongodb-recipe
               title: Apache Kafka MongoDB Source Connector  
+            - file: docs/tools/terraform/reference/cookbook/kafka-gcs-sink-recipe
+              title: Apache Kafka GCS Sink Connector
       - file: docs/tools/kubernetes
         title: Aiven Operator for Kubernetes
 
