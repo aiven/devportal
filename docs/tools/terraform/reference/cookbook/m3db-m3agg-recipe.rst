@@ -105,4 +105,4 @@ You might find these related resources useful too:
 - `Configuration options for Aiven for M3DB <https://developer.aiven.io/docs/products/m3db/reference/advanced-params.html>`_
 - `Configuration options for Aiven for M3 Aggregator <https://developer.aiven.io/docs/products/m3db/reference/advanced-params-m3aggregator.html>`_
 - `Set up your first Aiven Terraform project <https://developer.aiven.io/docs/tools/terraform/get-started.html>`_
-- `Metrics and graphs with M3 and Grafana <https://aiven.io/blog/metrics-and-graphs-with-m3-and-grafana>`_
+- `Metrics and graphs with M3 and Grafana® <https://aiven.io/blog/metrics-and-graphs-with-m3-and-grafana>`_
