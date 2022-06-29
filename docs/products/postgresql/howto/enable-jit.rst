@@ -3,7 +3,7 @@ Enable JIT in PostgreSQL®
 
 PostgreSQL® 11 introduced a new component in the execution engine, a `Just-in-Time (JIT) expression compiler <https://www.postgresql.org/docs/current/jit-reason.html>`_. We recommend that you read more about JIT if you are not familiar with it or if you are in any doubt regarding the options available.
 
-By default, the JIT feature is **disabled** in PostgreSQL 11. You can now enable JIT in Aiven for PostgreSQL on a global level or just for a specific database with a simple command that does not require any installation. 
+By default, the JIT feature is **disabled** in all versions of PostgreSQL that Aiven supports. You can now enable JIT in Aiven for PostgreSQL on a global level or just for a specific database with a simple command that does not require any installation. 
 
 
 Enable JIT on a global level

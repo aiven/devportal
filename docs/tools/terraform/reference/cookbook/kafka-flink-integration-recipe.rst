@@ -25,8 +25,8 @@ Before looking at the Terraform script, let's visually realize how the services 
 
 If you relate the above diagram to the following example, both source and target Apache Kafka topics are part of the same Apache Kafka cluster.
 
-Imagine that you are collecting CPU usage for hundreds of machines in your data centre and these metrics are populated in an Apache Kafka topic called **cpu_measurements**. But you're interested in learning about those machines with CPU usages higher than 85%.
-For this, you'd like to run an Apache Flink job and write the filtered messages into a topic called **cpu_high_usage**. The following Terraform script stands up both Apache Kafka and Apache Flink services, creates the service integration, source and target Apache Kafka topics, an Apache Flink job, and two Apache Flink tables. 
+Imagine that you are collecting CPU usage for hundreds of machines in your data centre and these metrics are populated in an Apache Kafka topic called ``cpu_measurements``. But you're interested in learning about those machines with CPU usages higher than 85%.
+For this, you'd like to run an Apache Flink job and write the filtered messages into a topic called ``cpu_high_usage``. The following Terraform script stands up both Apache Kafka and Apache Flink services, creates the service integration, source and target Apache Kafka topics, an Apache Flink job, and two Apache Flink tables. 
 
 ``services.tf`` file:
 
@@ -120,7 +120,7 @@ For this, you'd like to run an Apache Flink job and write the filtered messages 
   }
   
 The resource ``"aiven_flink"`` creates an Aiven for Apache Flink resource with the project name, choice of cloud, an Aiven service plan, and a specified service name. 
-``"aiven_kafka"`` resource creates an Apache Kafka cluster and two Apache Kafka topics (**cpu_measurements** and a **cpu_high_usage**) are created using the ``"aiven_kafka_topic"`` resource.
+``"aiven_kafka"`` resource creates an Apache Kafka cluster and two Apache Kafka topics (``cpu_measurements`` and a ``cpu_high_usage``) are created using the ``"aiven_kafka_topic"`` resource.
 Similarly, the ``"aiven_service_integration"`` resource creates the integration between Apache Kafka and the Apache Flink service. Two ``"aiven_flink_table"``
 resources are created - a **source** and a **sink** with a specified schema. Once the Terraform script is run, an Apache Flink job is started that copies data from the **source** Flink table to the **sink** Flink 
 table where the ``usage`` threshold is over a certain limit. The data originates at the resource ``"aiven_kafka_topic"`` called **source** and the processed data is put into another resource ``"aiven_kafka_topic"`` 
