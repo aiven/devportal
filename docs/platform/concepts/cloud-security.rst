@@ -49,7 +49,7 @@ When using VPC peering, no public internet based access is provided to the servi
 
 The service providing virtual machines are still contained under Aiven cloud provider accounts. Aiven VPCs are created per-project and not shared between customers, accounts or projects. When services are deployed in a VPC, the DNS names resolve to their Private IP. 
 
-Some services allow both public and private access to be enabled while inside a VPC (for testing, for example) and you can find instructions for this here.
+Some services allow both public and private access to be enabled while inside a VPC (for testing, for example) and you can find instructions for this :doc:`here </docs/platform/howto/public-access-in-vpc>`.
 
 Connections to Aiven services are always established from customer's VPC towards the peered Aiven VPC, and one can thus utilize VPC Firewall rules to prevent any ingress connections from Aiven side to customer's network. 
 
