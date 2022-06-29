@@ -14,8 +14,8 @@ This example shows how to use the `Aiven Terraform Provider <https://registry.te
       M3 -.-> M3Agg
 
 In the above diagram, the M3 service contains both M3DB and M3 Coordinator. The service integration between M3DB + M3 Coordinator and M3 Aggregator brings unaggregated metrics from M3 Coordinator to M3 Aggregator. 
-While you can do aggregation without an M3 Aggregator node, a dedicated metrics aggregator can help reduce the volume of time series data stored by using variable data point resolutions. This is especially true if you want the ability to automatically roll-up data over time.
-For example, to aggregate all IoT metrics from the last two months into 10-minute points. 
+While you can perform aggregations without an M3 Aggregator node, a dedicated metrics aggregator can help in cases when the downsampling workload is slowing down the ingestion of metrics by the main M3DB.
+For example, to aggregate all IoT metrics from the last two months into 10-minute points.
 
 Let's cook!
 -----------
@@ -42,6 +42,11 @@ The following Terraform recipe will create an Aiven for M3 service, an Aiven for
       namespaces {
         name = "m3_default_unaggregated_ns"
         type = "unaggregated"
+        options {
+          retention_options {
+            retention_period_duration = "2h"
+          }
+        }
       }
       namespaces {
         name       = "m3_lowRes_aggregated_ns"
@@ -49,32 +54,35 @@ The following Terraform recipe will create an Aiven for M3 service, an Aiven for
         resolution = "10m"
         options {
           retention_options {
-            retention_period_duration = "1d"
+            retention_period_duration = "6d"
           }
         }
       }
       namespaces {
-        name       = "m3_medRes_ns"
+        name       = "m3_medRes_aggregated_ns"
         type       = "aggregated"
         resolution = "2m"
         options {
           retention_options {
-            retention_period_duration = "6h"
+            retention_period_duration = "18h"
           }
         }
       }
       namespaces {
-        name       = "m3_highRes_ns"
+        name       = "m3_highRes_aggregated_ns"
         type       = "aggregated"
         resolution = "10s"
         options {
           retention_options {
-            retention_period_duration = "1h"
+            retention_period_duration = "4h"
           }
         }
       }
     }
   }
+
+
+  // Setting up aggregation
 
   resource "aiven_m3aggregator" "demo-m3a" {
     project      = var.project_name
@@ -95,6 +103,12 @@ The following Terraform recipe will create an Aiven for M3 service, an Aiven for
   }
 
 ``namespaces`` in M3 is used to determine how metrics are stored and retained. There is always one unaggregated namespace which is configured under the ``demo-m3db`` resource ``namespaces`` block. There are three aggregated namespaces defined within the same block for different resolution settings.
+
+- ``m3_default_unaggregated_ns`` keeps the unaggregated data for 2h (retention time)
+- ``m3_lowRes_aggregated_ns`` downsamples the data to 10m and keeps the data for 6d (retention time)
+- ``m3_medRes_aggregated_ns`` downsamples the data to 2m and keeps the data for 18h (retention time)
+- ``m3_highRes_aggregated_ns`` downsamples the data to 10s and keeps the data for 4h (retention time)
+
 With high resolution (more samples per second), you'll have more data points for a given time compared to low resolution. More data points will require more storage, and that's why low resolution data is retained for a longer period of time than high resolution data. 
 
 More resources
