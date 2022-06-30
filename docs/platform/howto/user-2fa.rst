@@ -34,6 +34,10 @@ If you need to disable two-factor authentication settings from your account, you
 
 With those steps, you can disable your user two-factor authentication. Disabling two-factor authentication means that you no longer need to provide both the password and a time-based authentication code generated to login into your account. 
 
+.. warning::
+    
+    Disabling two-factor authentication will automatically revoke the user's existing tokens. 
+
 Reset user two-factor authentication
 ------------------------------------
 
