@@ -143,9 +143,11 @@ entries:
             - file: docs/tools/terraform/reference/cookbook/postgresql-custom-configs-recipe
               title: PostgreSQL with custom configs
             - file: docs/tools/terraform/reference/cookbook/kafka-mongodb-recipe
-              title: Apache Kafka MongoDB Source Connector  
+              title: Apache Kafka MongoDB Source Connector
             - file: docs/tools/terraform/reference/cookbook/kafka-custom-conf-recipe.rst
-              title: Apache Kafka with custom configurations   
+              title: Apache Kafka with custom configurations  
+            - file: docs/tools/terraform/reference/cookbook/m3db-m3agg-recipe
+              title: M3 and M3 Aggregator 
       - file: docs/tools/kubernetes
         title: Aiven Operator for Kubernetes
 
