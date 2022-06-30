@@ -15,6 +15,7 @@ entries:
         title: Billing
         entries:
           - file: docs/platform/concepts/tax-information
+          - file: docs/platform/concepts/billing-groups
       - file: docs/platform/concepts/beta_services
       - file: docs/platform/concepts/cloud-security
       - file: docs/platform/concepts/logs-metrics-alerts
@@ -62,6 +63,10 @@ entries:
           - file: docs/platform/howto/monitoring-services
           - file: docs/platform/howto/integrations/prometheus-metrics
           - file: docs/platform/howto/integrations/datadog-increase-metrics-limit
+      - file: docs/platform/howto/list-billing
+        title: Billing management
+        entries:
+          - file: docs/platform/howto/use-billing-groups
       
     - file: docs/platform/reference
       title: Reference
