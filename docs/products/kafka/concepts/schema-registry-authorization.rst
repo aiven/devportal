@@ -29,6 +29,8 @@ The global compatibility APIs require ``Config:`` resource access with ``Read`` 
 
 The endpoints involving subjects that are read-like, i.e. don't modify anything, require ``schema_registry_read`` operation for the subject in the request. The endpoints that return subject-related data filter the output so that only the entries the username has access to are returned. The endpoints that mutate a subject-related entity correspondingly require ``schema_registry_read`` operation.
 
+If access to an endpoint is denied because of ACL, the HTTP response will have status code 401.
+
 .. list-table:: Examples
    :widths: 25 25 25 25
    :header-rows: 1
