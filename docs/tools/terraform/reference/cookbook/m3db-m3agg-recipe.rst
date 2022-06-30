@@ -1,7 +1,7 @@
 Setup M3-related services using Aiven Terraform Provider
 ========================================================
 
-`Aiven for M3DB <https://aiven.io/m3>`_ is a powerful time-series database that can be used when handling very large volumes of metrics and scalability is a concern. `Aiven for M3 Aggregator <https://aiven.io/m3-aggregator>`_ can store your data at various resolutions for different workloads at scale. 
+`Aiven for M3DB <https://developer.aiven.io/docs/products/m3db/index.html>`_ is a powerful time-series database that can be used when handling very large volumes of metrics and scalability is a concern. `Aiven for M3 Aggregator <https://developer.aiven.io/docs/products/m3db/concepts/m3-components.html>`_ can store your data at various resolutions for different workloads at scale. 
 Together, they are a perfect choice to aggregate, store, and query large time-series data like internet of things (IoT) sensor readings. 
 
 This example shows how to use the `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_  to create an Aiven for M3 service, an Aiven for M3 Aggregator service, and the related service integration programmatically. 
@@ -105,9 +105,9 @@ The following Terraform recipe will create an Aiven for M3 service, an Aiven for
 ``namespaces`` in M3 is used to determine how metrics are stored and retained. There is always one unaggregated namespace which is configured under the ``demo-m3db`` resource ``namespaces`` block. There are three aggregated namespaces defined within the same block for different resolution settings.
 
 - ``m3_default_unaggregated_ns`` keeps the unaggregated data for 2h (retention time)
-- ``m3_lowRes_aggregated_ns`` downsamples the data to 10m (resolution) and keeps the data for 6d (retention time)
-- ``m3_medRes_aggregated_ns`` downsamples the data to 2m (resolution) and keeps the data for 18h (retention time)
-- ``m3_highRes_aggregated_ns`` downsamples the data to 10s (resolution) and keeps the data for 4h (retention time)
+- ``m3_lowRes_aggregated_ns`` aggregates the data to 10m (resolution) and keeps the data for 6d (retention time)
+- ``m3_medRes_aggregated_ns`` aggregates the data to 2m (resolution) and keeps the data for 18h (retention time)
+- ``m3_highRes_aggregated_ns`` aggregates the data to 10s (resolution) and keeps the data for 4h (retention time)
 
 With high resolution (more samples per second), you'll have more data points for a given time compared to low resolution. More data points will require more storage, and that's why low resolution data is retained for a longer period of time than high resolution data. 
 
