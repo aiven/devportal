@@ -59,6 +59,12 @@ The endpoints involving subjects that are read-like, i.e. don't modify anything,
      - Write (add, delete etc) access for users with prefix user_write to the subjects with prefix s. Implies read access, see the above row.
 
 
+Aiven Client can be used to add the ACL entries. Here's an example how to add the ACL entry of the first row in the above table:
+
+``avn service schema-registry-acl-add --project your_project --permission schema_registry_read --resource Subject:t1 --username user_1 kafka_service``
+
+There is additionally the command ``service schema-registry-acl-list`` to list the ACL entries and ``service schema-registry-acl-delete`` to delete an ACL entry.
+
 Note the user Aiven Console, Aiven Client and Aiven REST API use when working with Schema Registry is a special superuser that has write access to everything in Schema Registry. This means e.g. that in Console, all schemas can be seen, all schemas can be modified etc in the Schemas tab of a Kafka service. This user and the ACL entries for it are not visible in Console, but Aiven platform adds them automatically.
 
 
