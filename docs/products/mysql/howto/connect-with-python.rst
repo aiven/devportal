@@ -31,6 +31,10 @@ For this example you will need:
 
     pip install pymysql
 
+* Install ``cryptography`` package::
+
+   pip install cryptography
+
 
 Code
 ''''
@@ -53,3 +57,6 @@ If the script runs successfully, the output will be the values that were inserte
 
 Now that your application is connected, you are all set to use Python with Aiven for MySQL.
 
+.. warning::
+
+    Make sure to create a table with a unique name. If you try to create a table that already exists, an exception will be raised.
