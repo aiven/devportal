@@ -18,7 +18,8 @@ integrate.
 This can be configured from the Service Integrations page in the Aiven
 Console.
 
-.. image:: /images/integrations/remote-syslog-integration_image1.png
+.. image:: /images/integrations/remote-syslog-endpoint.png
+  :width: 400
 
 Another option is to use the `Aiven
 Client <https://github.com/aiven/aiven-client>`__ .
@@ -74,16 +75,14 @@ Add rsyslog integration to service
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This can be configured in the Aiven Console by navigating to the target
-service overview page and then scrolling down to the Manage Integrations
+service overview page and then scrolling down to the **Manage integrations**
 button.
 
-
-.. image:: /images/integrations/remote-syslog-integration_image2.png
 
 You should be able to select your previously configured Rsyslog service
 integration by clicking Use integration in the modal window.
 
-.. image:: /images/integrations/remote-syslog-integration_image3.png
+.. image:: /images/integrations/remote-syslog-service-integrations.png
 
 Alternately, with the Aiven Client, first you need the id of the
 endpoint previously created
@@ -168,11 +167,15 @@ For Datadog integration you need to use custom format with logline
        -c tls=true -c format=custom \
        -c logline='DATADOG_API_KEY <%pri%>1 %timestamp:::date-rfc3339% %HOSTNAME% %app-name% - - - %msg%'
 
-NOTE: If you want to use Datadog EU environment, the service address is:
+.. Note::
+   If you want to use Datadog EU environment, the service address is:
+   
+   Server: ``tcp-intake.logs.datadoghq.eu``
+   
+   Port: ``443``
 
-Server: ``tcp-intake.logs.datadoghq.eu``
+:doc:`Further details on send metrics and logs to Datadog </docs/integrations/datadog/index>`
 
-Port: ``443``
 
 NewRelic
 ~~~~~~~~
