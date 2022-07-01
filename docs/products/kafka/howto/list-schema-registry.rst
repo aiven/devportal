@@ -1,0 +1,4 @@
+Schema registry
+===============
+
+.. tableofcontents::
