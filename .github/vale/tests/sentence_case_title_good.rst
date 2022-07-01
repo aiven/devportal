@@ -26,7 +26,7 @@ Aiven and Flink®
 
 3 words, ``Aiven`` is +1 because it's title-case and first, ``and`` is +1 because it's lower case, ``Flink`` is +1 because it's an exception. So score is 3/3 which is more than 80%, so this title is good.
 
-Aiven and Redis™*
+Aiven and Redis®*
 -----------------
 
 3 words, ``Aiven`` is +1 because it's title-case and first, ``and`` is +1 because it's lower case, ``Redis`` is +1 because it's an exception. So score is 3/3 which is more than 80%, so this title is good.

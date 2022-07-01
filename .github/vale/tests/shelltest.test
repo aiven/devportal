@@ -66,7 +66,7 @@ $ vale --output=line --sort .github/vale/tests/first_ref_good.rst
 >
 >=0
 
-# In line 15, we detect that `Redis™*blibble` and `Flink@wahooness` are problems, but
+# In line 15, we detect that `Redis®*blibble` and `Flink@wahooness` are problems, but
 # I'm not quite sure if the errors given are quite what I want.
 
 $ vale --output=line --sort .github/vale/tests/first_ref_bad.rst
@@ -82,14 +82,15 @@ $ vale --output=line --sort .github/vale/tests/first_ref_bad.rst
 .github/vale/tests/first_ref_bad.rst:10:60:Aiven.first_InfluxDB_is_registered:At least one 'InfluxDB' must be marked as ®
 .github/vale/tests/first_ref_bad.rst:10:70:Aiven.first_Grafana_is_registered:At least one 'Grafana' must be marked as ®
 .github/vale/tests/first_ref_bad.rst:12:36:Aiven.first_Kubernetes_is_registered:At least one 'Kubernetes' must be marked as ®
-.github/vale/tests/first_ref_bad.rst:14:11:Aiven.first_Redis_is_trademarked:At least one 'Redis' must be marked as ™*
-.github/vale/tests/first_ref_bad.rst:17:5:Aiven.first_Redis_is_trademarked:At least one 'Redis' must be marked as ™*
-.github/vale/tests/first_ref_bad.rst:17:64:Aiven.first_Redis_is_trademarked:At least one 'Redis' must be marked as ™*
-.github/vale/tests/first_ref_bad.rst:19:31:Aiven.first_Redis_is_trademarked:At least one 'Redis' must be marked as ™*
-.github/vale/tests/first_ref_bad.rst:19:40:Aiven.first_Redis_is_trademarked:At least one 'Redis' must be marked as ™*
-.github/vale/tests/first_ref_bad.rst:19:51:Aiven.first_Redis_is_trademarked:At least one 'Redis' must be marked as ™*
-.github/vale/tests/first_ref_bad.rst:21:7:Aiven.aiven_spelling:'wahooness' does not seem to be a recognised word
-.github/vale/tests/first_ref_bad.rst:21:28:Aiven.aiven_spelling:'blibble' does not seem to be a recognised word
+.github/vale/tests/first_ref_bad.rst:14:11:Aiven.first_Redis_is_registered:At least one 'Redis' must be marked as ®*
+.github/vale/tests/first_ref_bad.rst:17:5:Aiven.first_Redis_is_registered:At least one 'Redis' must be marked as ®*
+.github/vale/tests/first_ref_bad.rst:17:63:Aiven.first_Redis_is_registered:At least one 'Redis' must be marked as ®*
+.github/vale/tests/first_ref_bad.rst:19:1:Aiven.first_Redis_is_registered:At least one 'Redis' must be marked as ®*
+.github/vale/tests/first_ref_bad.rst:21:31:Aiven.first_Redis_is_registered:At least one 'Redis' must be marked as ®*
+.github/vale/tests/first_ref_bad.rst:21:40:Aiven.first_Redis_is_registered:At least one 'Redis' must be marked as ®*
+.github/vale/tests/first_ref_bad.rst:21:51:Aiven.first_Redis_is_registered:At least one 'Redis' must be marked as ®*
+.github/vale/tests/first_ref_bad.rst:23:7:Aiven.aiven_spelling:'wahooness' does not seem to be a recognised word
+.github/vale/tests/first_ref_bad.rst:23:28:Aiven.aiven_spelling:'blibble' does not seem to be a recognised word
 >=1
 
 # ---------------------------------------------------------------
