@@ -1,7 +1,7 @@
 Estimate maximum number of connection
 =====================================
 
-The number of simultaneous connections in Aiven for Redis™* depends on the total available memory on the server.
+The number of simultaneous connections in Aiven for Redis®* depends on the total available memory on the server.
 
 You can use the following to estimate:
 

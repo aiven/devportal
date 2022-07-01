@@ -8,7 +8,7 @@ Apache Kafka®,
 Apache Flink®,
 OpenSearch®,
 Apache Cassandra®,
-Redis™*,
+Redis®*,
 MySQL,
 InfluxDB® and Grafana®.
 
@@ -104,7 +104,7 @@ Learn about the Aiven platform
 
     ---
 
-    |icon-redis| **Redis™\*** In-memory data store for all your high-peformance short-term storage and caching needs.
+    |icon-redis| **Redis®\*** In-memory data store for all your high-peformance short-term storage and caching needs.
 
     +++
 

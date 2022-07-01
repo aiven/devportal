@@ -11,7 +11,7 @@ Apache Kafka®,
 Apache Cassandra®,
 PostgreSQL®,
 MySQL,
-Redis™*,
+Redis®*,
 InfluxDB®,
 Grafana®,
 and M3 - all available in more than 80 regions around the world on AWS, GCP, Microsoft Azure, DigitalOcean, and UpCloud cloud platforms.

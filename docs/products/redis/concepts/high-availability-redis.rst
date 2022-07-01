@@ -1,7 +1,7 @@
-High availability in Aiven for Redis™*
+High availability in Aiven for Redis®*
 ======================================
 
-Aiven for Redis™* is available on a variety of plans, offering different levels of high availability. The selected plan defines the features available, and a summary is provided in the table below:
+Aiven for Redis®* is available on a variety of plans, offering different levels of high availability. The selected plan defines the features available, and a summary is provided in the table below:
 
 .. list-table::
     :header-rows: 1

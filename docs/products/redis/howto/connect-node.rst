@@ -1,7 +1,7 @@
 Connect with NodeJS
 -------------------
 
-This example connects to Redis™* service from NodeJS, making use of the ``ioredis`` library.
+This example connects to Redis®* service from NodeJS, making use of the ``ioredis`` library.
 
 Variables
 '''''''''

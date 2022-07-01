@@ -22,7 +22,7 @@ Depending on the service plan, each service provides different backups with diff
 +---------------------------------------+------------------------------------------+---------------------------------------------------------+--------------------------------------------------------+--------------------------------------------------------+
 | Aiven for Apache Cassandra®           | Plan not available                       | Single day backup                                       | Single day backup                                      | Single day backup                                      |
 +---------------------------------------+------------------------------------------+---------------------------------------------------------+--------------------------------------------------------+--------------------------------------------------------+
-| Aiven for Redis™*                     | Single backup only for disaster recovery | Backup every 12 hours up to 1 day                       | Backup every 12 hours up to 3 days                     | Backup every 12 hours up to 13 days                    |
+| Aiven for Redis®*                     | Single backup only for disaster recovery | Backup every 12 hours up to 1 day                       | Backup every 12 hours up to 3 days                     | Backup every 12 hours up to 13 days                    |
 +---------------------------------------+------------------------------------------+---------------------------------------------------------+--------------------------------------------------------+--------------------------------------------------------+
 | Aiven for InfluxDB®                   | Plan not available                       | Backup every 12 hours up to 2.5 days                    | Plan not available                                     | Plan not available                                     |
 +---------------------------------------+------------------------------------------+---------------------------------------------------------+--------------------------------------------------------+--------------------------------------------------------+
@@ -93,7 +93,7 @@ Aiven for Apache Cassandra®
 We currently support backups taken every 24 hours. The PITR feature is currently not available. Please contact support if you would to be notified once the PITR feature is available for Cassandra.
 
 
-Aiven for Redis™*
+Aiven for Redis®*
 ''''''''''''''''''''''''
 We offer backups that are taken every 12 hours, and for persistence we support **RBD** (Redis Database Backup). The persistence feature can be controlled by ``redis_persistence`` under **Advanced Configuration**. AOF persistence is currently not supported by the Aiven for Redis service.
 

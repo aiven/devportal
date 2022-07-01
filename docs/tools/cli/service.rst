@@ -44,7 +44,7 @@ Retrieves the project CA that the selected service belongs to.
 ``avn service cli``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Opens the appropriate interactive shell, such as ``psql`` or ``redis-cli``, to the given service. Supported only for Aiven for PostgreSQL®, Aiven for Redis™*, and Aiven for InfluxDB® services.
+Opens the appropriate interactive shell, such as ``psql`` or ``redis-cli``, to the given service. Supported only for Aiven for PostgreSQL®, Aiven for Redis®*, and Aiven for InfluxDB® services.
 
 .. list-table::
   :header-rows: 1
@@ -149,7 +149,7 @@ Resets the service credentials. More information on user password change is prov
 ``avn service current-queries``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-List current service connections/queries for an Aiven for PostgreSQL®, Aiven for MySQL or Aiven for Redis™* service.
+List current service connections/queries for an Aiven for PostgreSQL®, Aiven for MySQL or Aiven for Redis®* service.
 
 .. list-table::
   :header-rows: 1

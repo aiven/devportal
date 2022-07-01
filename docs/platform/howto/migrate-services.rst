@@ -2,7 +2,7 @@ Migrate services
 ================
 
 When migrating a service, the migration happens in the background and does not affect your service until the service has been rebuilt at the new region. The migration includes the **DNS update** for the  named service to point to the new region. 
-Most of the services have usually no service interruption expected. However, for services like PostgreSQL®, MySQL and Redis™*, it may cause a short interruption (5 to 10 seconds) in service while the DNS changes are propagated.
+Most of the services have usually no service interruption expected. However, for services like PostgreSQL®, MySQL and Redis®*, it may cause a short interruption (5 to 10 seconds) in service while the DNS changes are propagated.
 
 The short interruption mentioned above does not include the potential delays caused by client side library implementation.
 
