@@ -24,7 +24,7 @@ To manage the connection pools, follow the steps below:
 
    The settings available are:
 
-   * **Pool name:** Enter a name for your connection pool here. This also becomes the ``database`` or ``dbname`` connection parameter for your pooled client connections.
+   * **Pool name:** Enter a name for your connection pool here. This also becomes the ``database`` or ``dbname`` connection parameter for your pooled client connections. This parameter must be equal to the ``Database`` parameter. 
    * **Database**: Choose the database that you want to connect to. Each pool can only connect to a single database.
    * **Username:** Select the database username that you want to use when connecting to the backend database.
    * **Pool Mode:** Select the pooling mode as described in more detail above.
