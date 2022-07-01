@@ -29,7 +29,7 @@ A Karapace schema registry authorization ACL consists of zero or more entries th
 
 * The **resource** is can be in the following formats: 
 
-  * ``Config:``: the entry controls the access to global compatibility configurations
+  * ``Config:``: the entry controls the access to global compatibility configurations. As of Karapace allows only to retrieve and change the default schema compatibility mode via the global ``Config:`` resource, check the `project README for more information <https://github.com/aiven/karapace/blob/main/README.rst>`_.
 
     .. Note::
 
@@ -55,9 +55,10 @@ The algorithm to determine if a request has the necessary permissions is the fol
 Endpoints and required ACLs
 ---------------------------
 
-Karapace schema registry offers a series of endpoints:
+Karapace schema registry offers a series of endpoints to:
 
-* We should really add the list HERE
+* Get/set the global configurations: ``/config``
+* Get/set schema subjects and associated details: ``/subject``
 
 In order to access properly the endpoints you need to have the following ACLs:
 
