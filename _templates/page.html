@@ -28,8 +28,16 @@
     <div class="header-left">
       <label class="nav-overlay-icon" for="__navigation">
         <div class="visually-hidden">Toggle site navigation sidebar</div>
-        <svg><use href="#svg-menu"></use></svg>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
       </label>
+    </div>
+    <div class="header-center">
+      <div class="logo-container-mobile">
+        <a href="{{ pathto(master_doc) }}">
+          <img class="only-light" src="{{ pathto('_static/' + theme_light_logo, 1) }}" alt="Light Logo"/>
+          <img class="only-dark" src="{{ pathto('_static/' + theme_dark_logo, 1) }}" alt="Dark Logo"/>
+        </a>
+      </div>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -42,7 +50,7 @@
       </div>
       <div class="toc-overlay-icon toc-header-icon{% if furo_hide_toc %} no-toc{% endif %}" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
-        <i class="icon"><svg><use href="#svg-toc"></use></svg></i> Words go here
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </div>
     </div>
   </header>

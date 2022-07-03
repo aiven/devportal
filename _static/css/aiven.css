@@ -320,3 +320,14 @@ h3 > code > .pre {
 .disclaimer > p {
     color: var(--color-foreground-muted)
 }
+
+
+.logo-container-mobile {
+  height: 40px;
+  width: 120px;
+  padding: 15px;
+}
+
+.sidebar-logo {
+  padding-top: 5px;
+}
