@@ -94,6 +94,8 @@ html_theme_options = {
     "dark_logo": "images/logoCrabbyDark-pride.svg",
     "light_css_variables": {
         "color-brand-primary": "#FF3554",
+        "color-link": "#c60443",
+        "color-sidebar-link-text": "#c60443",
         "font-stack": "Inter, sans-serif",
         "color-sidebar-brand-text": "#4a4b57",
         "color-foreground-primary": "#333333",

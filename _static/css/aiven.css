@@ -1,8 +1,6 @@
 /* Assigning color variables */
 :root {
   --white: #ffffff;
-  --link: #4a4b57;
-  --linkActive: #c60443;
   --linearPurple: #80688e;
   --linearDarkBlue: #4f586a;
 }
@@ -40,13 +38,11 @@ p {
 }
 
 a {
-  color: var(--linkActive) !important;
-  text-decoration-color: var(--linkActive) !important;
+  color: var(--color-link);
+  text-decoration-color: var(--color-link);
+  font-family: Inter;
 }
 
-main > .content p:not(.card-text) a:not(.btn) {
-  color: var(--linkActive) !important;
-}
 
 .gh-ribbon {
   font-family: Helvetica, Arial, sans-serif;
