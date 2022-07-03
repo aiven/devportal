@@ -262,6 +262,7 @@ h3 > code > .pre {
 .related-information {
   color: var(--color-foreground-secondary) !important;
   border-top: 1px solid var(--color-foreground-border) !important;
+  padding: 5px;
 }
 
 .context {
