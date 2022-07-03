@@ -37,6 +37,7 @@ Learn about the Aiven platform
     .. grid-item-card::
         :shadow: md
         :margin: 2 2 0 0
+        :link: docs/products/postgresql
 
         |icon-postgres| **PostgreSQL®** Powerful relational database platform. We have the latest versions, and an excellent selection of extensions.
 
@@ -51,6 +52,7 @@ Learn about the Aiven platform
     .. grid-item-card::
         :shadow: md
         :margin: 2 2 0 0
+        :link: docs/products/m3db
 
         |icon-m3db| **M3** Distributed time-series database for scalable solutions, with M3 Coordinator included, and M3 Aggregator also available.
 
@@ -64,6 +66,7 @@ Learn about the Aiven platform
     .. grid-item-card::
         :shadow: md
         :margin: 2 2 0 0
+        :link: docs/products/kafka
 
         |icon-kafka| **Apache Kafka®** Streaming data pipelines for the modern enterprise. Apache MirrorMaker2 and Kafka Connect also available.
 
@@ -79,6 +82,7 @@ Learn about the Aiven platform
     .. grid-item-card::
         :shadow: md
         :margin: 2 2 0 0
+        :link: docs/products/flink
 
         |icon-flink| **Apache Flink®** Framework for definining powerful transformations of batch and streaming data sets. :bdg-secondary:`beta`
 
@@ -92,6 +96,7 @@ Learn about the Aiven platform
     .. grid-item-card::
         :shadow: md
         :margin: 2 2 0 0
+        :link: docs/products/opensearch
 
         |icon-opensearch| **OpenSearch®** Document database with specialist search features, bring your freeform documents, logs or metrics, and make sense of them here.
 
@@ -106,6 +111,7 @@ Learn about the Aiven platform
     .. grid-item-card::
         :shadow: md
         :margin: 2 2 0 0
+        :link: docs/products/cassandra
 
         |icon-cassandra| **Apache Cassandra®** High performance storage solution for large data quantities. This specialist data solution is a partitioned row store.
 
@@ -116,7 +122,10 @@ Learn about the Aiven platform
 
             Read more
     
-
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
+        :link: docs/products/redis
 
         |icon-redis| **Redis®\*** In-memory data store for all your high-peformance short-term storage and caching needs.
 
@@ -131,6 +140,7 @@ Learn about the Aiven platform
     .. grid-item-card::
         :shadow: md
         :margin: 2 2 0 0
+        :link: docs/products/mysql
 
         |icon-mysql| **MySQL** Popular and much-loved relational database platform.
 
@@ -150,6 +160,7 @@ Learn about the Aiven platform
     .. grid-item-card::
         :shadow: md
         :margin: 2 2 0 0
+        :link: docs/products/grafana
 
         |icon-grafana| **Grafana®** The visualization tool you need to explore and understand your data. Grafana integrates with the other services in just a few clicks.
 
@@ -163,6 +174,7 @@ Learn about the Aiven platform
     .. grid-item-card::
         :shadow: md
         :margin: 2 2 0 0
+        :link: docs/products/clickhouse
 
         |icon-clickhouse| **ClickHouse** A highly scalable, open source database that uses a column-oriented structure. :bdg-secondary:`beta`
 
