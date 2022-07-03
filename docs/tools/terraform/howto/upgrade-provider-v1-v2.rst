@@ -2,7 +2,7 @@ Upgrade the Aiven Terraform Provider from v1 to v2
 ==================================================
 
 Version 2 of the Aiven Terraform Provider was released in `October of
-2020 <https://aiven.io/blog/aiven-terraform-provider-v2-release>`__.
+2020 <https://aiven.io/blog/aiven-terraform-provider-v2-release>`_.
 This article will walk you through upgrading from Aiven Terraform Provider v1 to v2, including some tips if you are upgrading Terraform as well (0.12 or later).
 
 To handle the various versions of Terraform, we will be using the ``tfenv``
@@ -66,7 +66,7 @@ you will replace old Aiven terraform provider references to the new format.
 
 4. Run ``terraform 0.13upgrade`` to see any additional fixes recommended by HashiCorp.
 If you are using more providers than Aiven provider you most likely need to upgrade them as well.
-More information `here <https://www.terraform.io/upgrade-guides/0-13.html>`__.
+More information `here <https://www.terraform.io/upgrade-guides/0-13.html>`_.
 
 5. Run ``terraform init -upgrade``
 
@@ -78,7 +78,7 @@ changes made between the release you are running and the latest release.
 
 The warnings will provide recommendations on the changes to make and you
 can get more information using our
-`docs <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`__.
+`docs <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_.
 
 Now we can remove the old Terraform folder ``rm -rf ~/.terraform.d``.
 
@@ -90,7 +90,9 @@ Upgrade Terraform from 0.13 or later
 Any version above 0.13 can be upgraded to latest without any special steps.
 
 .. note::
-  If you are using Aiven Terraform provider v1 with Terraform 0.14 ``dev_overrides`` (see `<https://www.terraform.io/cli/config/config-file#provider-installation>`__ )
+
+  If you are using Aiven Terraform provider v1 with Terraform 0.14 ``dev_overrides`` (see `Development Overrides for Provider Developers <https://www.terraform.io/cli/config/config-file>`_ )
+
   you will need to add Aiven provider to the ``exclude`` block or remove ``dev_overrides`` completely.
 
 1. Use ``tfenv`` to get the latest version (1.0.10 at the time of writing) ``tfenv install latest && tfenv use latest``
@@ -160,5 +162,5 @@ Further reading
 '''''''''''''''
 
 There are examples of migrating each of the available service types on the
-`Aiven examples repository <https://github.com/aiven/aiven-examples/tree/master/terraform>`__
+`Aiven examples repository <https://github.com/aiven/aiven-examples/tree/master/terraform>`_
 on GitHub.

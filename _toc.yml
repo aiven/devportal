@@ -15,6 +15,7 @@ entries:
         title: Billing
         entries:
           - file: docs/platform/concepts/tax-information
+          - file: docs/platform/concepts/billing-groups
       - file: docs/platform/concepts/beta_services
       - file: docs/platform/concepts/cloud-security
       - file: docs/platform/concepts/logs-metrics-alerts
@@ -24,6 +25,7 @@ entries:
       - file: docs/platform/concepts/static-ips
       - file: docs/platform/concepts/tls-ssl-certificates
       - file: docs/platform/concepts/byoa
+      - file: docs/platform/concepts/dynamic-disk-sizing
       - file: docs/platform/concepts/enhanced-compliance-env
       - file: docs/platform/concepts/disaster-recovery-test-scenarios
     - file: docs/platform/howto
@@ -36,7 +38,7 @@ entries:
           - file: docs/platform/howto/create_authentication_token
           - file: docs/platform/howto/create_new_service_user
           - file: docs/platform/howto/enable-aiven-password
-          - file: docs/platform/howto/disable-user-2fa            
+          - file: docs/platform/howto/user-2fa            
       - file: docs/platform/howto/list-service
         title: Service management
         entries:
@@ -61,6 +63,10 @@ entries:
           - file: docs/platform/howto/monitoring-services
           - file: docs/platform/howto/integrations/prometheus-metrics
           - file: docs/platform/howto/integrations/datadog-increase-metrics-limit
+      - file: docs/platform/howto/list-billing
+        title: Billing management
+        entries:
+          - file: docs/platform/howto/use-billing-groups
       
     - file: docs/platform/reference
       title: Reference
@@ -125,7 +131,7 @@ entries:
             - file: docs/tools/terraform/reference/cookbook/kafka-connect-terraform-recipe
               title: Apache Kafka and OpenSearch  
             - file: docs/tools/terraform/reference/cookbook/multicloud-postgresql-recipe
-              title: Multicloud PostgreSQL 
+              title: Multicloud PostgreSQL
             - file: docs/tools/terraform/reference/cookbook/kafka-flink-integration-recipe
               title: Apache Kafka and Apache Flink
             - file: docs/tools/terraform/reference/cookbook/kafka-mirrormaker-recipe
@@ -137,7 +143,11 @@ entries:
             - file: docs/tools/terraform/reference/cookbook/postgresql-custom-configs-recipe
               title: PostgreSQL with custom configs
             - file: docs/tools/terraform/reference/cookbook/kafka-mongodb-recipe
-              title: Apache Kafka MongoDB Source Connector  
+              title: Apache Kafka MongoDB Source Connector
+            - file: docs/tools/terraform/reference/cookbook/kafka-custom-conf-recipe.rst
+              title: Apache Kafka with custom configurations  
+            - file: docs/tools/terraform/reference/cookbook/m3db-m3agg-recipe
+              title: M3 and M3 Aggregator 
       - file: docs/tools/kubernetes
         title: Aiven Operator for Kubernetes
 

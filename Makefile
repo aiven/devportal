@@ -65,9 +65,6 @@ service-type-config-flink:
 service-type-config-grafana:
 	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "grafana" "includes/config-grafana.rst"
 
-service-type-config-influxdb:
-	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "influxdb" "includes/config-influxdb.rst"
-
 service-type-config-kafka_mirrormaker:
 	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "kafka_mirrormaker" "includes/config-kafka_mirrormaker.rst"
 
@@ -93,6 +90,7 @@ service-type-config-redis:
 	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "redis" "includes/config-redis.rst"
 
 # TODO: add automation for "pg". See https://github.com/aiven/devportal/issues/1026
+# TODO: add automation for "influxdb". See https://github.com/aiven/devportal/issues/1097
 
 # (Re)Generate cloud listing
 cloud-list:

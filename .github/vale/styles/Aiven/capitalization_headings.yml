@@ -22,6 +22,7 @@ exceptions:
   - Dev
   - Disaster Recovery
   - Docker
+  - Dynamic Disk Sizing
   - Elasticsearch
   - European Union
   - Flink

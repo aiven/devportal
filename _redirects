@@ -34,3 +34,4 @@
 
 # Renamed/deleted files
 /docs/products/flink/howto/real-time-alerting-solution-cli.html       /docs/products/flink/howto/real-time-alerting-solution.html
+/docs/platform/howto/disable-user-2fa.html                            /docs/platform/howto/user-2fa.html
