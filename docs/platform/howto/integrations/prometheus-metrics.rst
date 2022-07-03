@@ -133,6 +133,8 @@ below snippet for an example configuration.
          insecure_skip_verify: true
 
 
+.. note:: For PostgreSQL® services with multiple nodes, the primary DNS name does not include standby IP addresses. To track those, please explicitly include also the replica DNS names into the list. If you have <PROMETHEUS_SERVICE_URI> as 'example.aivencloud.com', then the you will need to add 'replica-example.aivencloud.com'.
+
 
 View full list of metrics
 ''''''''''''''''''''''''''
