@@ -53,122 +53,124 @@ The ``service.tf`` file for the provisioning af these 3 services and integration
 
 .. code::
 
-  terraform {
-    required_providers {
-      aiven = {
-        source  = "aiven/aiven"
-        version = ">=3.2.1"
-  #      version = ">= 2.0.0, < 3.0.0"
-      }
+terraform {
+  required_providers {
+    aiven = {
+      source  = "aiven/aiven"
+      version = ">=3.2.1"
+#      version = ">= 2.0.0, < 3.0.0"
+    }
+  }
+}
+
+provider "aiven" {
+  api_token = var.aiven_api_token
+}
+
+data "aiven_project" "prj" {
+  project = var.project
+}
+
+resource "aiven_pg" "demo" {
+  project      = var.project
+  service_name = "demo-postgres"
+  cloud_name   = "google-europe-north1"
+  plan         = "business-4"
+}
+
+resource "aiven_kafka" "kf" {
+  project                 = var.project
+  cloud_name              = "azure-norway-west"
+  plan                    = "startup-2"
+#  service_name            = "${var.prefix}kf"
+  service_name            = "kf"
+  maintenance_window_dow  = "saturday"
+  maintenance_window_time = "10:00:00"
+  kafka_user_config {
+    kafka_rest      = true
+    kafka_connect   = false
+    schema_registry = true
+    kafka_version   = "3.1"
+
+    kafka {
+      auto_create_topics_enable    = true
+      num_partitions               = 3
+      default_replication_factor   = 2
+      min_insync_replicas          = 2
+    }
+
+    kafka_authentication_methods {
+      certificate = true
+    }
+
+  }
+}
+
+resource "aiven_kafka_connect" "kc" {
+  project                 = var.project
+  cloud_name              = "google-europe-north1"
+  project_vpc_id          = "francesco-demo/01a413b4-36df-4b1b-a697-fd7f87833494"
+  plan                    = "startup-4"
+#  service_name            = "${var.prefix}kc"
+  service_name            = "kc"
+  maintenance_window_dow  = "monday"
+  maintenance_window_time = "10:00:00"
+
+  kafka_connect_user_config {
+    kafka_connect {
+      consumer_isolation_level = "read_committed"
+    }
+
+    public_access {
+      kafka_connect = true
+    }
+  }
+}
+
+resource "aiven_service_integration" "i1" {
+  project                  = var.project
+  integration_type         = "kafka_connect"
+  source_service_name      = aiven_kafka.kf.service_name
+  destination_service_name = aiven_kafka_connect.kc.service_name
+
+  kafka_connect_user_config {
+    kafka_connect {
+      group_id             = "connect"
+      status_storage_topic = "__connect_status"
+      offset_storage_topic = "__connect_offsets"
     }
   }
 
-  provider "aiven" {
-    api_token = var.aiven_api_token
+  depends_on = [aiven_kafka_connect.kc,aiven_pg.demo]
+}
+
+resource "aiven_kafka_connector" "cdc-connector" {
+  project        = var.project
+  service_name   = aiven_kafka_connect.kc.service_name
+  connector_name = "kafka-pg-source"
+
+  config = {
+    "name"            = "kafka-pg-source"
+    "connector.class" = "io.debezium.connector.postgresql.PostgresConnector",
+    "snapshot.mode"   = "initial"
+    "database.hostname" : aiven_pg.demo.service_host
+    "database.port" : aiven_pg.demo.service_port
+    "database.password" : aiven_pg.demo.service_password
+    "database.user" : aiven_pg.demo.service_username
+    "database.dbname"           = "defaultdb"
+    "database.server.name"      = "replicator"
+    "database.ssl.mode"         = "require"
+    "include.schema.changes"    = true
+    "include.query"             = true
+    "table.include.list"        = "public.tab1"
+    "plugin.name"               = "wal2json"
+    "decimal.handling.mode"     = "double"
+    "_aiven.restart.on.failure" = "true"
+    "heartbeat.interval.ms"     = 30000
+    "heartbeat.action.query"    = "INSERT INTO heartbeat (status) VALUES (1)"
   }
-
-  data "aiven_project" "prj" {
-    project = var.project
-  }
-
-  resource "aiven_pg" "demo" {
-    project      = var.project
-    service_name = "demo-postgres"
-    cloud_name   = "google-europe-north1"
-    plan         = "business-4"
-  }
-
-  resource "aiven_kafka" "kf" {
-    project                 = var.project
-    cloud_name              = "azure-norway-west"
-    plan                    = "startup-2"
-    service_name            = "${var.prefix}kf"
-    maintenance_window_dow  = "saturday"
-    maintenance_window_time = "10:00:00"
-    kafka_user_config {
-      kafka_rest      = true
-      kafka_connect   = false
-      schema_registry = true
-      kafka_version   = "3.1"
-
-      kafka {
-        auto_create_topics_enable    = true
-        num_partitions               = 3
-        default_replication_factor   = 2
-        min_insync_replicas          = 2
-      }
-
-      kafka_authentication_methods {
-        certificate = true
-      }
-    }
-  }
-
-  resource "aiven_kafka_connect" "kc" {
-    project                 = var.project
-    cloud_name              = "google-europe-north1"
-    project_vpc_id          = "francesco-demo/01a413b4-36df-4b1b-a697-fd7f87833494"
-    plan                    = "startup-4"
-    service_name            = "${var.prefix}kc"
-    maintenance_window_dow  = "monday"
-    maintenance_window_time = "10:00:00"
-
-    kafka_connect_user_config {
-      kafka_connect {
-        consumer_isolation_level = "read_committed"
-      }
-
-      public_access {
-        kafka_connect = true
-      }
-    }
-  }
-
-  resource "aiven_service_integration" "i1" {
-    project                  = var.project
-    integration_type         = "kafka_connect"
-    source_service_name      = aiven_kafka.kf.service_name
-    destination_service_name = aiven_kafka_connect.kc.service_name
-
-    kafka_connect_user_config {
-      kafka_connect {
-        group_id             = "connect"
-        status_storage_topic = "__connect_status"
-        offset_storage_topic = "__connect_offsets"
-      }
-    }
-
-    depends_on = [aiven_kafka_connect.kc,aiven_pg.demo]
-  }
-
-  resource "aiven_kafka_connector" "cdc-connector" {
-    project        = var.project
-    service_name   = aiven_kafka_connect.kc.service_name
-    connector_name = "kafka-pg-source"
-
-    config = {
-      "name"            = "kafka-pg-source"
-      "connector.class" = "io.debezium.connector.postgresql.PostgresConnector",
-      "snapshot.mode"   = "initial"
-      "database.hostname" : aiven_pg.demo.service_host
-      "database.port" : aiven_pg.demo.service_port
-      "database.password" : aiven_pg.demo.service_password
-      "database.user" : aiven_pg.demo.service_username
-      "database.dbname"           = "defaultdb"
-      "database.server.name"      = "replicator"
-      "database.ssl.mode"         = "require"
-      "include.schema.changes"    = true
-      "include.query"             = true
-      "table.include.list"        = "public.tab1"
-      "plugin.name"               = "wal2json"
-      "decimal.handling.mode"     = "double"
-      "_aiven.restart.on.failure" = "true"
-      "heartbeat.interval.ms"     = 30000
-      "heartbeat.action.query"    = "INSERT INTO heartbeat (status) VALUES (1)"
-    }
-    depends_on = [aiven_kafka_connect.kc,aiven_pg.demo]
-  }
-
+  depends_on = [aiven_service_integration.i1,aiven_kafka_connect.kc,aiven_pg.demo]
+}
 Let's see the different resources we are going to create:
 
 - Version 3.2.1 of the Aiven Terraform provider will be used
