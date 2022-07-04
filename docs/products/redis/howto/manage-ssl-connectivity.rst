@@ -6,7 +6,7 @@ Client support for SSL-encrypted connections
 
 Default support
 ~~~~~~~~~~~~~~~
-Aiven for Redis™* uses SSL encrypted connections by default. This is shown by the use of ``rediss://`` (with double s) prefix in the ``Service URI`` on the `Aiven Console <https://console.aiven.io/>`_.
+Aiven for Redis®* uses SSL encrypted connections by default. This is shown by the use of ``rediss://`` (with double s) prefix in the ``Service URI`` on the `Aiven Console <https://console.aiven.io/>`_.
 
 .. Tip::
 

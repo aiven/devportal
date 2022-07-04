@@ -1,7 +1,7 @@
 Connect with Go
 ---------------
 
-This example connects to Redis™* service from Go, making use of the ``go-redis/redis`` library.
+This example connects to Redis®* service from Go, making use of the ``go-redis/redis`` library.
 
 Variables
 '''''''''

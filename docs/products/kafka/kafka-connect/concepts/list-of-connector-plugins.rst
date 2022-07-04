@@ -76,7 +76,7 @@ Sink connectors enable the integration of data from an existing Apache Kafka top
 
 * `Stream Reactor MQTT <https://docs.lenses.io/connectors/sink/mqtt.html>`__
 
-* `Stream Reactor Redis™* <https://docs.lenses.io/connectors/sink/redis.html>`__
+* `Stream Reactor Redis®* <https://docs.lenses.io/connectors/sink/redis.html>`__
 
 
 Preview connectors

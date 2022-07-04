@@ -1,0 +1,8 @@
+extends: conditional
+message: "At least one '%s' must be marked as ®*"
+level: error
+scope: text
+ignorecase: false
+
+first: '\b(Redis)(?!®\*)'
+second: '(Redis)(?:®\*)'
