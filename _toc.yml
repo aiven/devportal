@@ -83,7 +83,16 @@ entries:
       entries:
         - file: docs/integrations/datadog/datadog-metrics
         - file: docs/integrations/datadog/datadog-logs
-
+    - file: docs/integrations/cloudwatch/index
+      title: Amazon CloudWatch
+      entries:
+        - file: docs/integrations/cloudwatch/cloudwatch-metrics
+          title: CloudWatch Metrics
+        - file: docs/integrations/cloudwatch/list-cloudwatch-logs
+          title: CloudWatch Logs
+          entries:
+            - file: docs/integrations/cloudwatch/cloudwatch-logs-console
+            - file: docs/integrations/cloudwatch/cloudwatch-logs-cli
 
   - file: docs/tools/index
     entries:
