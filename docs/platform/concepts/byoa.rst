@@ -59,7 +59,7 @@ For a cost estimate and analysis, please contact Sales@Aiven.io.
 Architecture of BYOA deployments
 --------------------------------
 
-With BYOA, you can use any standard Aiven method (e.g. :doc:`CLI </docs/tools/cli>`, :doc:`Terraform </docs/tools/terraform/terraform>`) to manage your services and generally have the same user experience as with the regular Aiven deployment model.
+With BYOA, you can use any standard Aiven method (e.g. :doc:`CLI </docs/tools/cli>`, :doc:`Terraform </docs/tools/terraform>`) to manage your services and generally have the same user experience as with the regular Aiven deployment model.
 
 BYOA standard
 '''''''''''''

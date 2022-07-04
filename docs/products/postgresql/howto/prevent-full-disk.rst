@@ -49,7 +49,7 @@ You can then delete data within your session.
 Enable database writes for a limited amount of time
 '''''''''''''''''''''''''''''''''''''''''''''''''''
 
-If you want to enable any writes to the database for a limited amount of time, send the following ``POST`` request using :doc:`Aiven APIs </docs/tools/api/api>` and replacing the ``PROJECT_NAME`` and ``SERVICE_NAME`` placeholders:
+If you want to enable any writes to the database for a limited amount of time, send the following ``POST`` request using :doc:`Aiven APIs </docs/tools/api>` and replacing the ``PROJECT_NAME`` and ``SERVICE_NAME`` placeholders:
 
 ::
 

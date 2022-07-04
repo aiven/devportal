@@ -54,5 +54,5 @@ Check out the `Aiven Console <https://console.aiven.io>`_ for your Aiven web int
 Documentation contributors
 --------------------------
 
-We love our documentation that we created documentation about the documentation! If you want to learn more about the platform, or contribute some changes of your own, everything you need is in the :doc:`/docs/community/documentation/documentation` section.
+We love our documentation that we created documentation about the documentation! If you want to learn more about the platform, or contribute some changes of your own, everything you need is in the :doc:`/docs/community/documentation` section.
 

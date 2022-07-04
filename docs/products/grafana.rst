@@ -18,17 +18,17 @@ Read more about `the open source Grafana <https://grafana.com/oss/grafana/>`_ or
 Get started with Aiven for Grafana
 --------------------------------------
 
-Take your first steps with Aiven for Grafana by following our :doc:`get-started` article, or browse through our full list of articles:
+Take your first steps with Aiven for Grafana by following our :doc:`/docs/products/grafana/get-started` article, or browse through our full list of articles:
 
 
 .. panels::
 
 
-    💻 :doc:`howto`
+    💻 :doc:`/docs/products/grafana/howto`
 
     ---
 
-    📖 :doc:`Reference <reference>`
+    📖 :doc:`Reference </docs/products/grafana/reference>`
 
 
 Integrates with your existing Aiven tools

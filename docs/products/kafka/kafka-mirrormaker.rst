@@ -18,20 +18,20 @@ Apache Kafka® represents the best in class data streaming solution. Apache Kafk
 Get started with Aiven for Apache Kafka® MirrorMaker 2
 ------------------------------------------------------
 
-Take your first steps with Aiven for Apache Kafka® MirrorMaker 2 by following our :doc:`getting-started` article, or browse through our full list of articles:
+Take your first steps with Aiven for Apache Kafka® MirrorMaker 2 by following our :doc:`/docs/products/kafka/kafka-mirrormaker/getting-started` article, or browse through our full list of articles:
 
 
 .. panels::
 
-    📚 :doc:`Concepts <concepts>`
+    📚 :doc:`Concepts </docs/products/kafka/kafka-mirrormaker/concepts>`
 
     ---
 
-    💻 :doc:`HowTo <howto>`
+    💻 :doc:`HowTo </docs/products/kafka/kafka-mirrormaker/howto>`
 
     ---
 
-    📖 :doc:`Reference <reference>`
+    📖 :doc:`Reference </docs/products/kafka/kafka-mirrormaker/reference>`
 
 Apache Kafka® MirrorMaker 2 resources
 -------------------------------------

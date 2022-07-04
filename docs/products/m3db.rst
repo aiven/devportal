@@ -23,20 +23,20 @@ Read more about `the M3 components <https://m3db.io/docs/overview/components/>`_
 Get started with Aiven for M3
 -----------------------------
 
-Take your first steps with Aiven for M3 by following our :doc:`getting-started` article, or browse through our full list of articles:
+Take your first steps with Aiven for M3 by following our :doc:`/docs/products/m3db/getting-started` article, or browse through our full list of articles:
 
 
 .. panels::
 
-    📚 :doc:`Concepts <concepts>`
+    📚 :doc:`Concepts </docs/products/m3db/concepts>`
 
     ---
 
-    💻 :doc:`howto`
+    💻 :doc:`/docs/products/m3db/howto`
 
     ---
 
-    📖 :doc:`reference`
+    📖 :doc:`/docs/products/m3db/reference`
 
 
 Integrates with your existing tools

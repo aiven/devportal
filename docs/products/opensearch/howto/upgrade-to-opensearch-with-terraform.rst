@@ -1,7 +1,7 @@
 Upgrade to OpenSearch® with Terraform
 =====================================
 
-If you manage your infrastructure with our :doc:`Terraform provider </docs/tools/terraform/terraform>` then please note that you will need to upgrade the provider to 2.4.0 or later in order to have support for OpenSearch®.
+If you manage your infrastructure with our :doc:`Terraform provider </docs/tools/terraform>` then please note that you will need to upgrade the provider to 2.4.0 or later in order to have support for OpenSearch®.
 
 To upgrade an existing Elasticsearch service to OpenSearch using Terraform:
 

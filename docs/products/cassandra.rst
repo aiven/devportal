@@ -23,4 +23,4 @@ Get started with Aiven for Apache Cassandra
 Find more information about Apache Cassandra in the following sections:
 
 .. panels::
-    📖 :doc:`reference`
+    📖 :doc:`/docs/products/cassandra/reference`

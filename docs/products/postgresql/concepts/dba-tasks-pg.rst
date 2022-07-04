@@ -15,7 +15,7 @@ By default, in every PostgreSQL instance, an ``avnadmin`` database user is creat
 * Logical replication with the ``REPLICATION`` privilege
 
 .. Tip::
-    You can also manage databases and users in the Aiven web console or though our :doc:`REST API <../../../tools/api/api>`.
+    You can also manage databases and users in the Aiven web console or though our :doc:`REST API <../../../tools/api>`.
 
 .. _aiven_extras_extension:
 
