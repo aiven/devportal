@@ -1,14 +1,14 @@
-Apache Kafka® with Debezium source connector for Postgres®
+Apache Kafka® with Debezium source connector for PostgreSQL®
 ==========================================================
 
-The `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_ is a great choice for provisioning an Aiven for Apache Kafka® cluster with Kafka Connect enabled and the `Debezium source connector for Postgres® <https://developer.aiven.io/docs/products/kafka/kafka-connect/howto/debezium-source-connector-pg.html>`_ configured.
+The `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_ is a great choice for provisioning an Aiven for Apache Kafka® cluster with Kafka Connect enabled and the `Debezium source connector for PostgreSQL® <https://developer.aiven.io/docs/products/kafka/kafka-connect/howto/debezium-source-connector-pg.html>`_ configured.
 
 Let's check out the following diagram to understand the setup.
 
 .. mermaid::
 
    flowchart LR
-      id1[(PostGres Database)]
+      id1[(PostgreSQL Database)]
       subgraph Kafka Connect
       Debezium-Source-Connector-PG
       end
@@ -20,8 +20,8 @@ Let's check out the following diagram to understand the setup.
 Describe the setup
 ------------------
 
-This terraform recipe will provision one Aiven PostGres database service, one Aiven for Apache Kafka service, a separate Aiven for Apache Kafka Connect 
-service with a Debezium source connector for PostGres enabled and configured to connect to the PostGres database and capture any change in tables.
+This terraform recipe will provision one Aiven PostgreSQL database service, one Aiven for Apache Kafka service, a separate Aiven for Apache Kafka Connect 
+service with a Debezium source connector for PostgreSQL enabled and configured to connect to the PostgreSQL database and capture any change in tables.
 As soon as any of the monitored tables is inserted or updated with new data, the Debezium connector will capture the data change and convert table data into
 json payload and produce messages to the relevant Kafka topic. 
 Some of these services are created in one cloud provider and some in another cloud provider, to demonstrate how easy it is with Aiven to integrate services across 
@@ -172,7 +172,7 @@ The ``service.tf`` file for the provisioning af these 3 services and integration
 Let's see the different resources we are going to create:
 
 - Version 3.2.1 of the Aiven Terraform provider will be used
-- The PostGres database will be created in "google-europe-north1" cloud provider with a business-4 plan
+- The PostgreSQL database will be created in "google-europe-north1" cloud provider with a business-4 plan
 - The Aiven Apache Kafka service will be created in "azure-norway-west" cloud and will be preconfigured with a number of properties:
   
   - The ``auto_create_topics_enable = true`` property is crucial as it allows the Debezium connector to create the Kafka topics directly.
@@ -181,7 +181,7 @@ Let's see the different resources we are going to create:
 
 - One Aiven Apache Kafka Connect service is configured with public access
 - Then a service integration is created within Kafka Connect service. This integration will use 2 internal topics for storing status and offset.
-- The last Aiven service that will be provisioned is the actual Debezium source connector for PostGres, which is specified by the "connector.class" and is configured with the connection strings to access the PostGres database and listen for all data changes on one or more tables. In our case, it will be "tab1" in "defaultdb", "public" schema. The plugin used is "wal2json" that converts WAL events (WAL stands for Write Ahead Logging) into json payload that is sent to the Kafka topic. The Kafka topic that the Debezium connector creates has the name "replicator.public.tab1", where "replicator" is the logical database used by Debezium connector to monitor for data changes and "public" and "tab1" are the name of the schema and the table name respectively.
+- The last Aiven service that will be provisioned is the actual Debezium source connector for PostgreSQL, which is specified by the "connector.class" and is configured with the connection strings to access the PostgreSQL database and listen for all data changes on one or more tables. In our case, it will be "tab1" in "defaultdb", "public" schema. The plugin used is "wal2json" that converts WAL events (WAL stands for Write Ahead Logging) into json payload that is sent to the Kfka topic. The Kafka topic that the Debezium connector creates has the name "replicator.public.tab1", where "replicator" is the logical database used by Debezium connector to monitor for data changes and "public" and "tab1" are the name of the schema and the table name respectively.
 
 
 More resources
