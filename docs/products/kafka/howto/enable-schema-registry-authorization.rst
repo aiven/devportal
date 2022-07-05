@@ -6,7 +6,7 @@ Schema registry authorization feature enabled in :doc:`Karapace schema registry 
 Enable Karapace schema registry authorization via Aiven CLI
 -----------------------------------------------------------
 
-Karapace schema registry authorization has been available in Aiven since 2022-06-30 in all Aiven for Apache Kafka® services created after that date have it enabled by default and it's not possible to disable it.
+Karapace schema registry authorization has been available in Aiven since 2022-06-30 in all Aiven for Apache Kafka® services created after that date have it enabled by default and it's not possible to disable it.  Aiven-client version 2.16 or later is required for enabling Karapace schema registry authorization via Aiven CLI.
 
 For the services created before 2022-06-30 the feature needs to be enabled using the following :doc:`Aiven CLI </docs/tools/cli>` command by substituting the ``SERVICE_NAME`` placeholder with the name of the Aiven for Apache Kafka service where to enable Karapace schema registry authorization::
 

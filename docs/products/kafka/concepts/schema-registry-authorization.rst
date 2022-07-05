@@ -45,12 +45,7 @@ A Karapace schema registry authorization ACL consists of zero or more entries th
   * ``*`` matching any characters
   * ``?`` matching a single character
 
-The algorithm to determine if a request has the necessary permissions is the following:
-
-* Iterate over ACL entries in the order
-* Check if the current requesting user matches the ACL entry and the resource in the ACL entry matches the accessed resource
-* If it matches, use that ACL entry. Check whether the operation in the ACL entry matches the accessed operation, based on that grant or deny access
-* If no ACL entry is found, deny access, with HTTP response having status code 401
+Schema registry will determine if there are necessary permissions to serve the request by checking if any of the ACL entries match the requesting user, the accessed resource, and grant the requested access.  The order of the ACL entries does not matter.  If none of the ACL entries grant access, the schema registry responds with HTTP status code 401 Unauthorized.
 
 Endpoints and required ACLs
 ---------------------------
@@ -81,19 +76,19 @@ The following are some Examples
     - Read access for ``user_1`` to the global compatibility configuration
   * - ``user_1``
     - ``schema_registry_read``
-    - ``Subject: s1``
+    - ``Subject:s1``
     - Read access for ``user_1`` to the subject ``s1``. When filtering results in list endpoints, only return the results related to subjects ``s1``.
   * - ``user_1``
     - ``schema_registry_write``
-    - ``Subject: s1``
+    - ``Subject:s1``
     - Write access for ``user_1`` to the subject ``s1``. Write implies read access, see the above row.
   * - ``user_readonly*``
     - ``schema_registry_read``
-    - ``Subject: s*``
+    - ``Subject:s*``
     - Read access for users with prefix ``user_readonly`` to the subjects with prefix ``s``. When filtering results, only return entities for subjects with prefix ``s``.
   * - ``user_write*``
     - ``schema_registry_write``
-    - ``Subject: s*``
+    - ``Subject:s*``
     - Write (add, delete etc) access for users with prefix ``user_write`` to the subjects with prefix ``s``. Write implies read access, see the above row.
 
 

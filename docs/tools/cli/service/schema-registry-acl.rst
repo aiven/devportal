@@ -34,9 +34,9 @@ Adds an Aiven for Apache Kafka® Karapace schema registry ACL entry. The detaile
 ::
 
   avn service schema-registry-acl-add kafka-doc \
-    --username userAB*                          \
+    --username 'userAB*'                        \
     --permission schema_registry_write          \
-    --topic s123*
+    --resource 'Subject:s123*'
 
 
 
@@ -83,3 +83,13 @@ Lists Aiven for Apache Kafka® Karapace schema registry ACL entries.
 
   avn service schema-registry-acl-list kafka-doc
 
+
+The command output is:
+
+.. code:: text
+
+    ID                        USERNAME  RESOURCE         PERMISSION
+    ========================  ========  ===============  =====================
+    default-sr-admin-config   avnadmin  Config:          schema_registry_write
+    default-sr-admin-subject  avnadmin  Subject:*        schema_registry_write
+    acl12345678901            userAB*   Subject:s123*    schema_registry_write
