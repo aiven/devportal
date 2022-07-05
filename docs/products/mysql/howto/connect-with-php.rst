@@ -1,5 +1,5 @@
 Connect to MySQL with PHP
-========================
+=========================
 
 This example connects to MySQL service from PHP, making use of the built-in PDO module.
 
@@ -32,7 +32,7 @@ Add the following to ``index.php`` and replace the placeholder with the MySQL UR
 .. literalinclude:: /code/products/mysql/connect.php
    :language: php
 
-This code creates a MySQL client and opens a connection to the database. Then runs a query checking the database version and prints the response
+This code creates a MySQL client and opens a connection to the database. It then runs a query checking the database version and prints the response
 
 .. note::
    This example replaces the query string parameter to specify ``sslmode=verify-ca`` to make sure that the SSL certificate is verified, and adds the location of the cert.
@@ -41,6 +41,6 @@ To run the code::
 
     php index.php
 
-If the script runs successfully, the outputs should be the MySQL version running in your service like::
+If the script runs successfully, the output is the MySQL version running in your service like::
 
-    8.0.28~
+    8.0.28

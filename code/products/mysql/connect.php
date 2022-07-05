@@ -11,8 +11,11 @@ $conn .= ";port=" . $fields["port"];;
 $conn .= ";dbname=defaultdb";
 $conn .= ";sslmode=verify-ca;sslrootcert=ca.pem";
 
-$db = new PDO($conn, $fields["user"], $fields["pass"]);
+try {
+    $db = new PDO($conn, $fields["user"], $fields["pass"]);
 
-foreach ($db->query("SELECT VERSION()") as $row) {
-    print($row[0]);
+    $stmt = $db->query("SELECT VERSION()");
+    print($stmt->fetch()[0]);
+} catch (Exception $e) {
+    echo "Error: " . $e->getMessage();
 }
