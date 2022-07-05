@@ -50,11 +50,6 @@ Schema registry will determine if there are necessary permissions to serve the r
 Endpoints and required ACLs
 ---------------------------
 
-Karapace schema registry offers a series of endpoints to:
-
-* Get/set the global configurations: ``/config``
-* Get/set schema subjects and associated details: ``/subject``
-
 In order to access properly the endpoints you need to have the following ACLs:
 
 * The endpoints involving subjects that are read-like, i.e. don't modify anything, require ``schema_registry_read`` operation for the subject in the request. The endpoints that return subject-related data filter the output so that only the entries the username has access to are returned. 
