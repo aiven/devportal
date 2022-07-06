@@ -32,44 +32,50 @@ Client <https://github.com/aiven/aiven-client>`__ .
        -c format=rfc5424 -c tls=true
 
 When defining the remote syslog server the following parameters can be
-applied
+applied using the ``-c`` switch.
 
 Required:
 
--  **server** -  DNS name or IPv4 address of the server
+-  ``server`` -  DNS name or IPv4 address of the server
 
--  **port** - port to connect to
+-  ``port`` - port to connect to
 
--  **format** - message format used by the server, this can be either
+-  ``format`` - message format used by the server, this can be either
    ``rfc3164`` (the old BSD style message format), ``rfc5424`` (current
    syslog message format) or custom
 
--  **tls** - use TLS (as the messages are not filtered and may contain
+-  ``tls`` - use TLS (as the messages are not filtered and may contain
    sensitive information, it is highly recommended to set this to true
    if the remote server supports it)
 
 Conditional (required if format == custom):
 
--  **logline** - syslog log line template for a custom format,
+-  ``logline`` - syslog log line template for a custom format,
    supporting limited rsyslog style templating (using
-   ``%             tag            %`` ). Supported tags are: ``pri`` ,
-   ``timestamp`` , ``timestamp:::date-rfc3339`` , ``HOSTNAME`` ,
-   ``app-name`` , ``procid`` , ``msgid`` , ``msg`` and
-   ``structured-data``
+   ``%tag%`` ). Supported tags are:
+   ``HOSTNAME``,
+   ``app-name``,
+   ``msg``,
+   ``msgid`` ,
+   ``pri``,
+   ``procid``,
+   ``structured-data``,
+   ``timestamp`` and
+   ``timestamp:::date-rfc3339``.
 
 Optional:
 
--  **sd** - content of the structured data block of ``rfc5424`` message
+-  ``sd`` - content of the structured data block of ``rfc5424`` message
 
--  **ca** - (PEM format) Certificate Authority to use for verifying the
+-  ``ca`` - (PEM format) Certificate Authority to use for verifying the
    servers certificate (typically not needed unless the server's
    certificate is issued by an internal CA or it uses a self-signed
    certificate)
 
--  **key** - (PEM format) client key if the server requires client
+-  ``key`` - (PEM format) client key if the server requires client
    authentication
 
--  **cert** - (PEM format) client cert to use
+-  ``cert`` - (PEM format) client cert to use
 
 Add rsyslog integration to service
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -149,9 +155,8 @@ use the server and port of the collector.
 
    avn service integration-endpoint-create --project your-project \
        -d loggly -t rsyslog \
-       -c server=syslog.collection.XX.sumologic.com \
-       -c port=6514 \
-       -c format=rfc5424 -c tls=true \
+       -c server=syslog.collection.XX.sumologic.com -c port=6514 \
+       -c tls=true -c format=rfc5424 \
        -c sd='collector-token-string@NNNNN'
 
 Datadog
@@ -170,9 +175,8 @@ For Datadog integration you need to use custom format with logline
 .. Note::
    If you want to use Datadog EU environment, the service address is:
    
-   Server: ``tcp-intake.logs.datadoghq.eu``
-   
-   Port: ``443``
+   * ``server``: ``tcp-intake.logs.datadoghq.eu``
+   * ``port``: ``443``
 
 :doc:`Further details on send metrics and logs to Datadog </docs/integrations/datadog/index>`
 
@@ -208,9 +212,10 @@ For coralogix integration you need to use custom format with logline
    -c tls=false -c format=custom \
    -c logline="{\"fields\": {\"private_key\":\"YOUR_CORALOGIX_KEY\",\"company_id\":\"YOUR_COMPANY_ID\",\"app_name\":\"%app-name%\",\"subsystem_name\":\"programname\"},\"message\": {\"message\":\"%msg%\",\"program_name\":\"programname\",\"pri_text\":\"%pri%\",\"hostname\":\"%HOSTNAME%\"}}"
 
-| **NOTE: TLS needs to be set to false.**
-| According to your account (If it ends in .com / .us / .in ) you will
-  need to use one of the following Syslog Endpoints for server:
+.. note:: ``tls`` needs to be set to ``false``.
+
+Depending on whether your account ends in ``.com``, ``.us`` or ``.in``, you will
+need to use one of the following Syslog Endpoints for ``server``:
 
 -  ``syslogserver.coralogix.com``
 
@@ -226,4 +231,8 @@ logline. Please note that there are no backslashes around ``key`` value
 
 ::
 
-   avn service integration-endpoint-create --project your-project -d logdna -t rsyslog -c server=syslog-a.logdna.com -c port=6514 -c tls=true -c format=custom -c logline='<%pri%>%protocol-version% %timestamp:::date-rfc3339% %hostname% %app-name% %procid% %msgid% [logdna@48950 key="YOUR_KEY_GOES_HERE"] %msg%'
+   avn service integration-endpoint-create --project your-project \
+   -d logdna -t rsyslog \
+   -c server=syslog-a.logdna.com -c port=6514 \
+   -c tls=true -c format=custom \
+   -c logline='<%pri%>%protocol-version% %timestamp:::date-rfc3339% %hostname% %app-name% %procid% %msgid% [logdna@48950 key="YOUR_KEY_GOES_HERE"] %msg%'
