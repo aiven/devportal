@@ -44,7 +44,7 @@ Aiven for Apache Kafka®
 ''''''''''''''''''''''''''''''
 We do not take backups and data durability is determined by the replication of data across the cluster, as in general it's more often used as a transport for data rather than a permanent store and the way Kafka stores data does not really allow reasonable backup to be implemented using traditional backup strategies.
 
-To back up data passing through Kafka, we recommend setting up :doc:`MirrorMaker 2<../../products/kafka/kafka-mirrormaker/index>` to replicate the data to another cluster, which could be an Aiven service or a Kafka cluster on your own infrastructure.
+To back up data passing through Kafka, we recommend setting up :doc:`MirrorMaker 2<../../products/kafka/kafka-mirrormaker>` to replicate the data to another cluster, which could be an Aiven service or a Kafka cluster on your own infrastructure.
 
 Using MirrorMaker 2, the backup cluster is running as an independent Kafka service, so you have complete freedom of choice in which zone the service should be based.
 
@@ -54,7 +54,7 @@ An alternative is to use Kafka Connect to backup the cluster, for instance sinki
 
 For more information refer to
 
-- `Aiven for Apache Kafka® MirrorMaker 2 <https://developer.aiven.io/docs/products/kafka/kafka-mirrormaker/index.html>`_
+- :doc:`Aiven for Apache Kafka® MirrorMaker 2 </docs/products/kafka/kafka-mirrormaker>`
 - Cloudera's `A look inside Kafka MirrorMaker 2 <https://blog.cloudera.com/a-look-inside-kafka-mirrormaker-2/>`_
 - `Configure AWS for an S3 sink connector <https://developer.aiven.io/docs/products/kafka/kafka-connect/howto/s3-sink-prereq.html>`_
 

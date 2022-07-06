@@ -16,19 +16,19 @@ See the `Aiven Terraform provider documentation <https://registry.terraform.io/p
 Getting started
 ---------------
 
-Check out the :doc:`getting started guide <get-started>` for your first Terraform project.
+Check out the :doc:`getting started guide </docs/tools/terraform/get-started>` for your first Terraform project.
 
 .. panels::
 
-    💻 :doc:`howto`
+    💻 :doc:`/docs/tools/terraform/howto`
 
     ---
 
-    📖 :doc:`reference`
+    📖 :doc:`/docs/tools/terraform/reference`
 
     ---
 
-    👨‍🍳 :doc:`reference/cookbook`  
+    👨‍🍳 :doc:`/docs/tools/terraform/reference/cookbook`
 
 Learn more
 ----------

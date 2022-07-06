@@ -18,20 +18,20 @@ Apache Kafka represents the best in class data streaming solution. Apache Kafka 
 Get started with Aiven for Apache Kafka® Connect
 ------------------------------------------------
 
-Take your first steps with Aiven for Apache Kafka Connect by following our :doc:`getting-started` article, or browse through our full list of articles:
+Take your first steps with Aiven for Apache Kafka Connect by following our :doc:`/docs/products/kafka/kafka-connect/getting-started` article, or browse through our full list of articles:
 
 
 .. panels::
 
-    📚 :doc:`Concepts <concepts>`
+    📚 :doc:`Concepts </docs/products/kafka/kafka-connect/concepts>`
 
     ---
 
-    💻 :doc:`HowTo <howto>`
+    💻 :doc:`HowTo </docs/products/kafka/kafka-connect/howto>`
 
     ---
 
-    📖 :doc:`Reference <reference>`
+    📖 :doc:`Reference </docs/products/kafka/kafka-connect/reference>`
 
 
 Apache Kafka® Connect resources

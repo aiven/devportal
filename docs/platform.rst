@@ -22,12 +22,12 @@ Learn more about the Aiven platform
 
 .. panels::
 
-    📚 :doc:`Concepts <concepts>`
+    📚 :doc:`Concepts </docs/platform/concepts>`
 
     ---
 
-    💻 :doc:`HowTo <howto>`
+    💻 :doc:`HowTo </docs/platform/howto>`
 
     ---
 
-    📖 :doc:`Reference <reference>`
+    📖 :doc:`Reference </docs/platform/reference>`

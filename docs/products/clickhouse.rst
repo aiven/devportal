@@ -25,21 +25,21 @@ ClickHouse supports a familiar SQL syntax that resembles the ANSI SQL standard. 
 Get started with Aiven for ClickHouse
 -------------------------------------
 
-Take your first steps with Aiven for ClickHouse by following our :doc:`getting started <getting-started>` article, or browse through our full list of articles:
+Take your first steps with Aiven for ClickHouse by following our :doc:`getting started </docs/products/clickhouse/getting-started>` article, or browse through our full list of articles:
 
 
 .. panels::
 
 
-    📚 :doc:`Concepts <concepts>`
+    📚 :doc:`Concepts </docs/products/clickhouse/concepts>`
 
     ---
 
-    💻 :doc:`howto`
+    💻 :doc:`/docs/products/clickhouse/howto`
 
     ---
 
-    📖 :doc:`reference`
+    📖 :doc:`/docs/products/clickhouse/reference`
 
 
 
@@ -50,8 +50,8 @@ If you are new to ClickHouse, try these resources to get you started with the pl
 
 * See the `main ClickHouse documentation <https://clickhouse.com/docs/en/>`_ for an introduction and a full list of features.
 
-* Our :doc:`getting-started` guide is a good way to get hands on with your first project.
+* Our :doc:`/docs/products/clickhouse/getting-started` guide is a good way to get hands on with your first project.
 
-* Follow :doc:`a guide to add a sample dataset <sample-dataset>` to your service.
+* Follow :doc:`a guide to add a sample dataset </docs/products/clickhouse/sample-dataset>` to your service.
 
-* Find out :doc:`how to use the web-based query editor <howto/use-query-editor>`, that comes as part of the ClickHouse service.
+* Find out :doc:`how to use the web-based query editor </docs/products/clickhouse/howto/use-query-editor>`, that comes as part of the ClickHouse service.

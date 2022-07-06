@@ -42,7 +42,7 @@ You can add a new access control list grant via the `Aiven console <https://cons
 
 .. Tip:: 
     
-    When using the :doc:`Aiven Terraform Provider </docs/tools/terraform/index>`, you can add the ``default_acl`` key to your ``resource`` and set it to ``false`` if you do not want to create the admin user with wildcard permissions.
+    When using the :doc:`Aiven Terraform Provider </docs/tools/terraform>`, you can add the ``default_acl`` key to your ``resource`` and set it to ``false`` if you do not want to create the admin user with wildcard permissions.
 
 5. Once you start defining custom ACLs, it's recommended to delete the default ``avnadmin`` rule by clicking the **Remove** icon. 
 

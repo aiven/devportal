@@ -18,7 +18,7 @@ With Aiven API
 
 Retrieve topic details with an API call using `the endpoint to get Kafka topic info <https://api.aiven.io/doc/#operation/ServiceKafkaTopicGet>`_.
 
-Learn more about API usage in the :doc:`Aiven API overview </docs/tools/api/index>`.
+Learn more about API usage in the :doc:`Aiven API overview </docs/tools/api>`.
 
 With Aiven CLI
 --------------

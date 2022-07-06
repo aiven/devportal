@@ -17,7 +17,7 @@ The following example demonstrate how to push the metrics of an Aiven for Apache
             -s mirrormaker-demo         \
             -d influxdb
 
-Once the integration is created the Apache Kafka MirrorMaker 2 metrics will flow into the Aiven for InfluxDB service in the measurement named ``kafka_mirrormaker_summary`` and can, for example, be visualised using :doc:`Aiven for Grafana® </docs/products/grafana/index>`
+Once the integration is created the Apache Kafka MirrorMaker 2 metrics will flow into the Aiven for InfluxDB service in the measurement named ``kafka_mirrormaker_summary`` and can, for example, be visualised using :doc:`Aiven for Grafana® </docs/products/grafana>`
 
 .. image:: /images/products/kafka/kafka-mirrormaker/grafana-mirrormaker2-lag.png
    :alt: Grafana® Dashboard showing MirrorMaker 2 replica lag per topic

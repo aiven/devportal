@@ -224,7 +224,7 @@ Retrieves a single service details.
 
 Manages OpenSearch® service indexes.
 
-More information on ``index-delete`` and  ``index-list`` can be found in :doc:`the dedicated page <service/index>`.
+More information on ``index-delete`` and  ``index-list`` can be found in :doc:`the dedicated page <service/service>`.
 
 ``avn service integration``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''

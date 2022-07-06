@@ -9,7 +9,7 @@ OpenSearch® Dashboards is both a visualisation tool for data in the cluster and
 Get started with Aiven for OpenSearch Dashboards
 ------------------------------------------------
 
-Take your first steps with Aiven for OpenSearch Dashboards by following our :doc:`getting-started` article.
+Take your first steps with Aiven for OpenSearch Dashboards by following our :doc:`/docs/products/opensearch/dashboards/getting-started` article.
 
 
 Ways to use OpenSearch Dashboards
@@ -29,7 +29,7 @@ OpenSearch Dashboards resources
 
 * How to create reports https://opensearch.org/docs/latest/dashboards/reporting/
 
-* Other :doc:`helpful resources <howto>`
+* Other :doc:`helpful resources </docs/products/opensearch/dashboards/howto>`
 
 --------
 
