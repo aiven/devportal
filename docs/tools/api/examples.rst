@@ -1,7 +1,7 @@
 API examples
 ============
 
-Here are a few examples (using curl) to get you started with the Aiven API. Replace all ``TOKEN`` with your own value.
+Here is an example to get you started with the Aiven API using curl. Replace ``{TOKEN}`` with your own value of the authentication token.
 
 List of cloud regions
 ---------------------
