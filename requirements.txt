@@ -13,3 +13,4 @@ psycopg2-binary==2.9.1
 sphinxext-opengraph==0.4.2
 sphinx-sitemap==2.2.0
 sphinx-notfound-page==0.8
+pygments==2.12.0
