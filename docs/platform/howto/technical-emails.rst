@@ -1,5 +1,5 @@
-Technical Emails
-================
+Receive Technical Notifications
+===============================
 
 After creating services on Aiven you will want to make sure you stay
 up-to-date with what's happening to them.
