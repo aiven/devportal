@@ -1,7 +1,7 @@
 Choosing a time series database
 ===============================
 
-With its introduction, Aiven now offers a wide choice of open source
+Aiven offers a wide choice of open source
 time series databases in its product portfolio.
 
 -  Aiven for PostgreSQL® with the TimescaleDB extension is your best
