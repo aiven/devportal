@@ -26,7 +26,7 @@ Prerequisites
 
 * Python 3.7 or later
   
-* An mysqlx python library installed::
+* A ``mysqlx`` python library installed::
      
      pip install mysql-connector-python
 
