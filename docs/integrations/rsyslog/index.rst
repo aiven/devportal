@@ -1,7 +1,7 @@
 Remote syslog integration
 =========================
 
-In addition to using Aiven for Elasticsearch to store the logs from your
+In addition to using Aiven for OpenSearch¤ to store the logs from your
 Aiven services, you can now integrate with an external monitoring system
 that supports the rsyslog protocol.
 
