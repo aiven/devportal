@@ -1,15 +1,14 @@
 API examples
 ============
 
-Here are a few examples (using curl) to get you started with the Aiven API. Replace all the ``<variables>`` with your own values.
+Here is an example to get you started with the Aiven API using curl. Replace ``{TOKEN}`` with your own value of the authentication token.
 
 List of cloud regions
 ---------------------
 
-::
+.. code::
 
-  curl -H "Authorization: Bearer <token>" \
-    https://api.aiven.io/v1/clouds
+  curl -H "Authorization: Bearer {TOKEN}" https://api.aiven.io/v1/clouds
 
 The response looks something like this
 
