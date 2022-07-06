@@ -6,7 +6,7 @@ These examples show how to connect to an Aiven for Apache Kafka® command line c
 Pre-requisites
 --------------
 
-Follow `Apache Kafka documentation <https://kafka.apache.org/downloads>`_ to set up `kafka-console-producer` and `kafka-console-consumer`. For `kafka-avro-console-producer` follow the instructions in `its github repository <https://github.com/confluentinc/schema-registry>`_.
+Follow `Apache Kafka documentation <https://kafka.apache.org/downloads>`_ to set up ``kafka-console-producer`` and ``kafka-console-consumer``. For ``kafka-avro-console-producer`` follow the instructions in `its github repository <https://github.com/confluentinc/schema-registry>`_.
 
 Create the keystore ``client.keystore.p12`` and truststore ``client.truststore.jks`` by following  :doc:`our article on configuring Java SSL to access Kafka <../howto/keystore-truststore>`.
 
@@ -54,7 +54,7 @@ Both producer and consumer will need to securely connect to the Apache Kafka ser
 Produce messages
 -----------------
 
-With `kafka-console-producer` you can send multiple messages into your topic.
+With ``kafka-console-producer`` you can send multiple messages into your topic.
 
 .. code::
 
@@ -65,7 +65,7 @@ With `kafka-console-producer` you can send multiple messages into your topic.
 Produce messages with schema
 ----------------------------
 
-With `kafka-avro-console-producer` you can include the schema by connecting to your schema registry
+With ``kafka-avro-console-producer`` you can include the schema by connecting to your schema registry
 
 .. code::
 
@@ -80,7 +80,7 @@ With `kafka-avro-console-producer` you can include the schema by connecting to y
 Consume messages
 -----------------
 
-With `kafka-console-consumer` you can read messages from your topic. For example, run the command below to start reading from the beginning of the topic.
+With ``kafka-console-consumer`` you can read messages from your topic. For example, run the command below to start reading from the beginning of the topic.
 
 .. code::
 
