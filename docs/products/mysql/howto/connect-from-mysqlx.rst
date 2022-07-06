@@ -32,7 +32,7 @@ Prerequisites
 
 * An Aiven account with a service running. Click on **MySQLx** tab under **Connection information**, and copy ``SERVICE_URI`` and ``Port`` information.
 
-* Set ``PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python`` on your terminal to avoid issues described on `Protocol buffers docs <https://developers.google.com/protocol-buffers/docs/news/2022-05-06#python-update>`_. 
+* Set ``PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python`` on your terminal to avoid issues described on `Protocol buffers docs <https://developers.google.com/protocol-buffers/docs/news/2022-05-06>`_. 
   
   .. code:: shell
 
