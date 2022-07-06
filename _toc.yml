@@ -188,6 +188,8 @@ entries:
                 title: Connect with Java
               - file: docs/products/kafka/howto/connect-with-go
                 title: Connect with Go
+              - file: docs/products/kafka/howto/connect-with-command-line
+                title: Connect with command line
           - file: docs/products/kafka/howto/list-tools
             title: Tools
             entries:
