@@ -6,7 +6,7 @@ These examples show how to connect to an Aiven for Apache Kafka® command line c
 Pre-requisites
 --------------
 
-Follow `Apache Kafka documentation <https://kafka.apache.org/downloads>`_ to set up ``kafka-console-producer`` and ``kafka-console-consumer``. For ``kafka-avro-console-producer`` follow the instructions in `its github repository <https://github.com/confluentinc/schema-registry>`_.
+Follow `Apache Kafka documentation <https://kafka.apache.org/downloads>`_ to set up ``kafka-console-producer`` and ``kafka-console-consumer``. For ``kafka-avro-console-producer`` follow the instructions in `its GitHub repository <https://github.com/confluentinc/schema-registry>`_.
 
 Create the keystore ``client.keystore.p12`` and truststore ``client.truststore.jks`` by following  :doc:`our article on configuring Java SSL to access Kafka <../howto/keystore-truststore>`.
 
