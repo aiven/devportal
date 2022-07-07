@@ -27,10 +27,10 @@ Variable                     Description
 ``TRUSTSTORE_LOCATION``      Location of your truststore (named by default as client.truststore.jks)
 ``TRUSTSTORE_PASSWORD``      Password you used when creating a truststore
 ``CONFIGURATION_PATH``       Path to your configuration file with security protocol details.
-``SCHEMA_REGISRY_HOST``      Host name for your schema registry
-``SCHEMA_REGISRY_PORT``      Port number for your schema registry
-``SCHEMA_REGISRY_USER``      User name for your schema registry
-``SCHEMA_REGISRY_PWD``       Password for your schema registry
+``SCHEMA_REGISTRY_HOST``     Host name for your schema registry
+``SCHEMA_REGISTRY_PORT``     Port number for your schema registry
+``SCHEMA_REGISTRY_USER``     User name for your schema registry
+``SCHEMA_REGISTRY_PWD``      Password for your schema registry
 ========================     =======================================================================================================
 
 Create configuration file
@@ -73,9 +73,9 @@ With ``kafka-avro-console-producer`` you can include the schema by connecting to
     --producer.config {CONFIGURATION_PATH} \
     --topic target-topic \
     --property value.schema='{"type":"record","name":"Test","fields":[{"name":"id","type":"string"}]}' \
-    --property schema.registry.url={SCHEMA_REGISRY_HOST}:{SCHEMA_REGISRY_PASSWORD} \
+    --property schema.registry.url={SCHEMA_REGISTRY_HOST}:{SCHEMA_REGISTRY_PASSWORD} \
     --property basic.auth.credentials.source=USER_INFO \
-    --property basic.auth.user.info={SCHEMA_REGISRY_USER}:{SCHEMA_REGISRY_PASSWORD}
+    --property basic.auth.user.info={SCHEMA_REGISTRY_USER}:{SCHEMA_REGISTRY_PASSWORD}
 
 Consume messages
 -----------------
