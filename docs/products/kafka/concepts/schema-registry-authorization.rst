@@ -5,16 +5,14 @@ Schema registry authorization feature enabled in :doc:`Karapace schema registry 
 
 .. Tip::
 
-  Karapace schema registry authorization has been available in Aiven since 2022-06-30 in all Aiven for Apache Kafka® services created after that date have it enabled by default and it's not possible to disable it.
-
-  For the services created before 2022-06-30 the feature needs to be enabled, check the :doc:`dedicated article <../howto/enable-schema-registry-authorization>` to understand how to enable the feature.
+  Karapace schema registry authorization is enabled on all Aiven for Apache Kafka services. The exception is older services created before mid-2022, where the feature needs to be enabled. Check the :doc:`dedicated article <../howto/enable-schema-registry-authorization>` to learn how to enable the feature.
 
 .. _karapace_schema_registry_acls:
 
 Karapace schema registry ACLs
 -----------------------------
 
-Karapace schema registry authorization is configured using dedicated Access Control List (ACL). 
+Karapace schema registry authorization is configured using dedicated Access Control Lists (ACLs). 
 
 Karapace schema registry ACL definition
 '''''''''''''''''''''''''''''''''''''''
@@ -24,18 +22,18 @@ A Karapace schema registry authorization ACL consists of zero or more entries th
 * The **username** is the name of a service user in the Aiven for Apache Kafka service.
 * The **operations** are: 
   
-  * ``schema_registry_read`` (later: ``read``)
-  * ``schema_registry_write`` (later: ``write``). ``write`` implies ``read``.
+  * ``schema_registry_read``
+  * ``schema_registry_write`` (always includes ``schema_registry_read``)
 
-* The **resource** is can be in the following formats: 
+* The **resource** can be in the following formats:
 
-  * ``Config:``: the entry controls the access to global compatibility configurations. As of Karapace allows only to retrieve and change the default schema compatibility mode via the global ``Config:`` resource, check the `project README for more information <https://github.com/aiven/karapace/blob/main/README.rst>`_.
+  * ``Config:``: the entry controls access to global compatibility configurations. Karapace only allows a user to retrieve and change the default schema compatibility mode via the global ``Config:`` resource, check the `project README <https://github.com/aiven/karapace/blob/main/README.rst>`_ for more information.
 
     .. Note::
 
-      The global compatibility APIs require ``Config:`` resource access with ``Read`` permission when getting the configuration and ``Write`` permission when setting it.
+      The global compatibility APIs require ``Config:`` resource access with ``schema_registry_read`` permission when getting the configuration and ``schema_registry_write`` permission when setting it.
 
-  * ``Subject:subject_name``: the entry controls the access to subjects in Schema Registry
+  * ``Subject:subject_name``: the entry controls access to subjects in the schema registry.
     
 
 .. Tip::
@@ -45,20 +43,20 @@ A Karapace schema registry authorization ACL consists of zero or more entries th
   * ``*`` matching any characters
   * ``?`` matching a single character
 
-Schema registry will determine if there are necessary permissions to serve the request by checking if any of the ACL entries match the requesting user, the accessed resource, and grant the requested access.  The order of the ACL entries does not matter.  If none of the ACL entries grant access, the schema registry responds with HTTP status code 401 Unauthorized.
+The schema registry will determine if there are necessary permissions to serve the request by checking if any of the ACL entries match the requesting user, the accessed resource, and grant the requested access.  The order of the ACL entries does not matter.  If none of the ACL entries grant access, the schema registry responds with HTTP status code 401 Unauthorized.
 
 Endpoints and required ACLs
 ---------------------------
 
-In order to access properly the endpoints you need to have the following ACLs:
+In order to properly access the endpoints you need to have the following ACLs:
 
 * The endpoints involving subjects that are read-like, i.e. don't modify anything, require ``schema_registry_read`` operation for the subject in the request. The endpoints that return subject-related data filter the output so that only the entries the username has access to are returned. 
 * The endpoints that mutate a subject-related entity correspondingly require ``schema_registry_write`` operation.
 
-The following are some Examples
+The following are some examples
 
-.. list-table:: Examples
-  :widths: 25 25 25 25
+.. list-table::
+  :widths: 15 25 15 45
   :header-rows: 1
 
   * - username
@@ -88,6 +86,10 @@ The following are some Examples
 
 
 .. Warning::
-  Currently there's no `Aiven Console <https://console.aiven.io/>`_ support for Karapace schema registry authentication management. Enabling it, and managing the ACL entries can only be done using Aiven Client. Console support will be added later.
+  Enabling Karapace schema registry authentication management, and managing the ACL entries, is done using the :doc:`Aiven CLI </docs/tools/cli/service/schema-registry-acl>` (requires version 2.16 or later).
 
-Note the user `Aiven Console <https://console.aiven.io/>`_, Aiven Client and Aiven REST API use when working with Schema Registry is a special superuser with write access to everything in Schema Registry. This means e.g. that in `Aiven Console <https://console.aiven.io/>`_, all schemas can be seen, all schemas can be modified etc in the Schemas tab of a Kafka service. This user and the ACL entries for it are not visible in Console, but Aiven platform adds them automatically.
+Note the user that manages the ACLs is a special superuser with write access to everything in the schema registry. This means that in `Aiven Console <https://console.aiven.io/>`_, all schemas can be seen, all schemas can be modified etc in the Schemas tab of a Kafka service. This user and the ACL entries for it are not visible in Console, but Aiven platform adds them automatically.
+
+Read more: :doc:`/docs/products/kafka/howto/manage-schema-registry-authorization`.
+
+

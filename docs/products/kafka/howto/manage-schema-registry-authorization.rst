@@ -1,20 +1,17 @@
 Manage Karapace schema registry authorization
 =============================================
 
-Schema registry authorization feature enabled in :doc:`Karapace schema registry <../howto/enable-karapace>`  allows you to both authenticate the user, and additionally grant or deny access to individual `Karapace schema registry REST API endpoints <https://github.com/aiven/karapace>`_ and filters the content the endpoints return.
+Schema registry authorization allows you to authenticate the user, and to control access to individual `Karapace schema registry REST API endpoints <https://github.com/aiven/karapace>`_, and to filter the content the endpoints return.
 
 .. Tip::
 
-    Karapace schema registry authorization has been available in Aiven since 2022-06-30 in all Aiven for Apache Kafka® services created after that date have it enabled by default and it's not possible to disable it.
+    Some older Aiven for Apache Kafka services may not have this feature enabled by default, read :doc:`how to enable schema registry authorization on older services <../howto/enable-schema-registry-authorization>`.
 
-    For the services created before 2022-06-30 the feature needs to be enabled, check the :doc:`dedicated article <../howto/enable-schema-registry-authorization>` to understand how to enable the feature.
+Karapace schema registry authorization is configured using dedicated Access Control Lists (ACLs); to learn more about defining ACLs, check the :ref:`dedicated page <karapace_schema_registry_acls>`.
 
-Manage Karapace schema registry ACLSs via Aiven CLI
----------------------------------------------------
+To manage Karapace schema registry authorization ACL entries you can use the :doc:`Aiven CLI </docs/tools/cli/service/schema-registry-acl>`.
 
-Karapace schema registry authorization is configured using dedicated Access Control List (ACL), to review ACLs definitions, check the :ref:`dedicated page <karapace_schema_registry_acls>`.
-
-To manage Karapace schema registry authorization ACL entries you can use the :doc:`Aiven CLI </docs/tools/cli>`. Here's an example how to add an ACL entry granting an user named ``user_1`` read options (``schema_registry_read``) to the subject ``s1``, after replacing the placeholders ``PROJECT_NAME`` and ``APACHE_KAFKA_SERVICE_NAME`` with the name of the project and the Aiven for Apache Kafka® service::
+Here's an example of how to add an ACL entry granting a user named ``user_1`` read options (``schema_registry_read``) to the subject ``s1``, after replacing the placeholders ``PROJECT_NAME`` and ``APACHE_KAFKA_SERVICE_NAME`` with the name of the project and the Aiven for Apache Kafka® service::
 
     avn service schema-registry-acl-add     \
         --project PROJECT_NAME              \
