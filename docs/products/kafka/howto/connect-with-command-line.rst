@@ -20,7 +20,8 @@ Variables
 ========================     =======================================================================================================
 Variable                     Description
 ========================     =======================================================================================================
-``HOST``                     Host name for the connection
+``HOST``                     Host name for the Kafka service
+``PORT``                     Port number to use for the Kafka service
 ``KEYSTORE_LOCATION``        Location of you keystore (named by default as client.keystore.p12)
 ``KEYSTORE_PASSWORD``        Password you used when creating a keystore
 ``KEY_PASSWORD``             Password for the key in the keystore, if you chose a different password than the one for keystore
