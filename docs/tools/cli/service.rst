@@ -486,6 +486,13 @@ Resetting query statistics could be useful to measure database behaviour in a pr
 
 Service Schema commands
 
+``avn service schema-registry-acl``
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+Manages :doc:`Aiven for Apache Kafka® Karapace schema registry authorization </docs/products/kafka/concepts/schema-registry-authorization>`.
+
+More information on ``schema-registry-acl-add``, ``schema-registry-acl-delete``, ``schema-registry-acl-list`` can be found in :doc:`the dedicated page <service/schema-registry-acl>`.
+
 ``avn service sstableloader``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
