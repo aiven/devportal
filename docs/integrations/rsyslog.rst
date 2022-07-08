@@ -1,7 +1,7 @@
 Remote syslog integration
 =========================
 
-In addition to using Aiven for OpenSearch¤ to store the logs from your
+In addition to using Aiven for OpenSearch® to store the logs from your
 Aiven services, you can now integrate with an external monitoring system
 that supports the rsyslog protocol.
 
@@ -114,7 +114,7 @@ Integrating with a third party syslog service
 All integrations can be configured using the Aiven Console or the Aiven
 CLI though the examples are easier to copy and paste in the CLI form.
 
-papertrail
+Papertrail
 ~~~~~~~~~~
 
 As papertrail identifies the client based on the server and port  you
@@ -130,7 +130,7 @@ signed by known CAs. You also need to set the format to ``rfc3164`` .
        -c server=logsN.papertrailapp.com -c port=XXXXX \
        -c format=rfc3164 -c tls=true
 
-loggly
+Loggly
 ~~~~~~
 
 In addition to the server and port you also need a *customer token*
@@ -145,7 +145,7 @@ creating the endpoint.
        -c format=rfc5424 -c tls=true \
        -c sd='TOKEN@NNNNN TAG="tag-of-your-choice"'
 
-sumo logic
+Sumo Logic
 ~~~~~~~~~~
 
 You need to the give the collector token as the ``-c sd`` parameter and
@@ -162,7 +162,7 @@ use the server and port of the collector.
 Datadog
 ~~~~~~~
 
-For Datadog integration you need to use custom format with logline
+For Datadog integration you need to use custom format with ``logline``
 
 ::
 
@@ -181,8 +181,8 @@ For Datadog integration you need to use custom format with logline
 :doc:`Further details on send metrics and logs to Datadog </docs/integrations/datadog/index>`
 
 
-NewRelic
-~~~~~~~~
+New Relic
+~~~~~~~~~
 
 You will also need a custom logline format for NewRelic Syslog
 integration. This is so you can prepend your `NewRelic Insights Insert
@@ -210,7 +210,7 @@ For coralogix integration you need to use custom format with logline
    -d coralogix -t rsyslog \
    -c server=syslogserver.coralogix.us -c port=5142 \
    -c tls=false -c format=custom \
-   -c logline="{\"fields\": {\"private_key\":\"YOUR_CORALOGIX_KEY\",\"company_id\":\"YOUR_COMPANY_ID\",\"app_name\":\"%app-name%\",\"subsystem_name\":\"programname\"},\"message\": {\"message\":\"%msg%\",\"program_name\":\"programname\",\"pri_text\":\"%pri%\",\"hostname\":\"%HOSTNAME%\"}}"
+   -c logline="{\"fields\": {\"private_key\":\"YOUR_CORALOGIX_KEY\",\"company_id\":\"YOUR_COMPANY_ID\",\"app_name\":\"%app-name%\",\"subsystem_name\":\"programname\"},\"message\": {\"message\":\"%msg%\",\"program_name\":\"%programname%\",\"pri_text\":\"%pri%\",\"hostname\":\"%HOSTNAME%\"}}"
 
 .. note:: ``tls`` needs to be set to ``false``.
 
@@ -223,11 +223,11 @@ need to use one of the following Syslog Endpoints for ``server``:
 
 -  ``syslogserver.app.coralogix.in``
 
-LogDNA
-~~~~~~
+Mezmo (LogDNA)
+~~~~~~~~~~~~~~
 
-For LogDNA syslog integration, you would need to use custom format with
-logline. Please note that there are no backslashes around ``key`` value
+For Mezmo syslog integration, you would need to use custom format with
+logline.
 
 ::
 
