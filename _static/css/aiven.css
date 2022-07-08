@@ -131,6 +131,9 @@ a {
 }
 
 .sidebar-tree .reference {
+  background: none;
+  font-family: Inter;
+  color: var(--color-sidebar-link-text);
   border-left: 1px solid transparent;
 }
 
@@ -140,18 +143,20 @@ a {
 
 .sidebar-tree .reference:hover {
   background: none;
-  border-left: 1px solid var(--linkActive);
+  border-left: 1px solid transparent;
   font-family: Inter;
+  color: var(--color_brand_content);
 }
 
 .sidebar-tree .current-page > .reference {
   background: none !important;
-  border-left: 1px solid var(--linkActive);
-  color: var(--linkActive) !important;
+  border-left: 1px solid var(--color-brand-content);
+  color: var(--color-brand-content) !important;
   font-weight: 400 !important;
 }
 
 .sidebar-tree .current > .reference {
+  color: var(--color-link);
   background: none !important;
 }
 
@@ -159,22 +164,13 @@ a {
   background: none !important;
 }
 
-.sidebar-tree .toctree-l1 > .reference,
-.sidebar-tree .toctree-l1 > label .icon {
-  color: var(--link);
+.sidebar-tree > .reference,
+.sidebar-tree > label .icon {
+  color: var(--color-link);
 }
 
-.sidebar-tree .toctree-l1 > .reference,
-.sidebar-tree .toctree-l1 > label .icon:hover {
-  color: var(--linkActive);
-}
-
-.sidebar-tree .toctree-l2 > .reference,
-.sidebar-tree .toctree-l2 > label .icon {
-  color: var(--link);
-}
-
-.sidebar-tree .toctree-l2 > label .icon:hover {
+.sidebar-tree > .reference,
+.sidebar-tree > label .icon:hover {
   color: var(--linkActive);
 }
 
