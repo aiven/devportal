@@ -650,7 +650,7 @@ Updates the settings for an Aiven service.
     avn service update big-service        \
       --plan business-4     
 
-**Example:** Update the service named ``secure-database`` to only accept connections from the range ``10.0.1.0/24`` and the IP ``10.25.10.12``.
+**Example:** Update the service named ``secure-database`` to only accept connections from the range ``10.0.1.0/24`` and the IP ``10.25.10.12``. Note that there is no whitespace between the IP addresses in the command below.
 
 ::
 
