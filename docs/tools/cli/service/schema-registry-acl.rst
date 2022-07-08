@@ -25,11 +25,11 @@ Adds a Karapace schema registry ACL entry. The detailed explanation of parameter
   * - ``--permission``
     - The permission type: possible values are ``schema_registry_read`` or ``schema_registry_write``
   * - ``--resource``
-    - The resource to grant access to, can be in the form of ``Config:`` or ``Subject:<subject>``, accepts * and ? as wildcard characters accepts ``*`` and ``?`` as wildcard characters. More information can be found in the :ref:`dedicated page <karapace_schema_registry_acls>`.
+    - The resource to grant access to, can be in the form of ``Config:`` or ``Subject:<subject>``, accepts ``*`` and ``?`` as wildcard characters. More information can be found in the :ref:`dedicated page <karapace_schema_registry_acls>`.
   * - ``--username``
     - The username pattern: accepts ``*`` and ``?`` as wildcard characters
 
-**Example:** Add an ACLs for users with username starting with ``userAB`` to write (``schema_registry_write``) subjects having name starting with ``s123`` in the Aiven for Apache Kafka® service ``kafka-doc``.
+**Example:** Add an ACL for users with username starting with ``userAB`` to write (``schema_registry_write``) subjects having name starting with ``s123`` in the Aiven for Apache Kafka® service ``kafka-doc``.
 
 ::
 
@@ -57,7 +57,7 @@ Deletes a Karapace schema registry ACL entry.
     - The id of the Karapace schema registry ACL to delete
 
 
-**Example:** Delete the Karapace schema registry ACLs with id ``acl3604f96c74a`` on the Aiven for Apache Kafka®  instance named ``kafka-doc``.
+**Example:** Delete the Karapace schema registry ACL with id ``acl3604f96c74a`` on the Aiven for Apache Kafka®  instance named ``kafka-doc``.
 
 ::
 

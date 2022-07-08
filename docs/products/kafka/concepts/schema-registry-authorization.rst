@@ -1,7 +1,7 @@
 Schema registry authorization
 =============================
 
-The schema registry authorization feature enabled in :doc:`Karapace schema registry <../howto/enable-karapace>`  allows you to both authenticate the user, and additionally grant or deny access to individual `Karapace schema registry REST API endpoints <https://github.com/aiven/karapace>`_ and filters the content the endpoints return.
+The schema registry authorization feature enabled in :doc:`Karapace schema registry <../howto/enable-karapace>`  allows you to both authenticate the user, and additionally grant or deny access to individual `Karapace schema registry REST API endpoints <https://github.com/aiven/karapace>`_ and filter the content the endpoints return.
 
 .. Tip::
 
@@ -43,7 +43,7 @@ A Karapace schema registry authorization ACL consists of zero or more entries th
   * ``*`` matching any characters
   * ``?`` matching a single character
 
-The schema registry will determine if there are necessary permissions to serve the request by checking if any of the ACL entries match the requesting user, the accessed resource, and grant the requested access.  The order of the ACL entries does not matter.  If none of the ACL entries grant access, the schema registry responds with HTTP status code 401 Unauthorized.
+The schema registry will determine if there are necessary permissions to serve the request by checking if any of the ACL entries match the requesting user and the accessed resource, and grant the requested access.  The order of the ACL entries does not matter.  If none of the ACL entries grant access, the schema registry responds with HTTP status code 401 Unauthorized.
 
 Endpoints and required ACLs
 ---------------------------
