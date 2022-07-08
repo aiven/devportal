@@ -1,56 +1,28 @@
 Connect to Aiven for Apache Kafka® with command line tools
 ==========================================================
 
-These examples show how to connect to an Aiven for Apache Kafka® command line clients.
+These examples show how to send messages to and receive messages from an Aiven for Apache Kafka service using command line tools.
 
 Pre-requisites
 --------------
 
-Follow `Apache Kafka documentation <https://kafka.apache.org/downloads>`_ to set up ``kafka-console-producer`` and ``kafka-console-consumer``. For ``kafka-avro-console-producer`` follow the instructions in `its GitHub repository <https://github.com/confluentinc/schema-registry>`_.
-
-Create the keystore ``client.keystore.p12`` and truststore ``client.truststore.jks`` by following  :doc:`our article on configuring Java SSL to access Kafka <../howto/keystore-truststore>`.
-
-.. Warning::
-
-  In the below examples, we just pass the name of the certificate files, but in actual use, the full path should be used.
+``kafka-console-producer`` and ``kafka-console-consumer`` are part of the Apache Kafka® toolbox included with `open source Apache Kafka® code <https://kafka.apache.org/downloads>`_. Follow :doc:`the guide to set up properties to use Apache Kafka toolbox <kafka-tools-config-file>`.
+For ``kafka-avro-console-producer`` follow the installation instructions in `its GitHub repository <https://github.com/confluentinc/schema-registry>`_.
 
 Variables
 ---------
 
-========================     =======================================================================================================
+========================     ========================================================================================================================
 Variable                     Description
-========================     =======================================================================================================
-``HOST``                     Host name for the Kafka service
+========================     ========================================================================================================================
+``HOST``                     Host name for the connection
 ``PORT``                     Port number to use for the Kafka service
-``KEYSTORE_LOCATION``        Location of you keystore (named by default as client.keystore.p12)
-``KEYSTORE_PASSWORD``        Password you used when creating a keystore
-``KEY_PASSWORD``             Password for the key in the keystore, if you chose a different password than the one for keystore
-``TRUSTSTORE_LOCATION``      Location of your truststore (named by default as client.truststore.jks)
-``TRUSTSTORE_PASSWORD``      Password you used when creating a truststore
-``CONFIGURATION_PATH``       Path to your configuration file with security protocol details.
-``SCHEMA_REGISTRY_HOST``     Host name for your schema registry
-``SCHEMA_REGISTRY_PORT``     Port number for your schema registry
-``SCHEMA_REGISTRY_USER``     User name for your schema registry
-``SCHEMA_REGISTRY_PWD``      Password for your schema registry
-========================     =======================================================================================================
-
-Create configuration file
--------------------------
-
-Both producer and consumer will need to securely connect to the Apache Kafka service. Put your connection properties into a configuration file:
-
-.. code::
-
-   security.protocol=SSL
-   ssl.protocol=TLS
-   ssl.key.password={KEY_PASSWORD}
-   ssl.keystore.location={KEYSTORE_LOCATION}
-   ssl.keystore.password={KEYSTORE_PASSWORD}
-   ssl.keystore.type=PKCS12
-   ssl.truststore.location={TRUSTSTORE_LOCATION}
-   ssl.truststore.password={TRUSTSTORE_PASSWORD}
-   ssl.truststore.type=JKS
-
+``CONFIGURATION_PATH``       Path to your configuration file :doc:`for Apache Kafka toolbox <kafka-tools-config-file>`.
+``SCHEMA_REGISTRY_HOST``      Host name for your schema registry
+``SCHEMA_REGISTRY_PORT``      Port number for your schema registry
+``SCHEMA_REGISTRY_USER``      User name for your schema registry
+``SCHEMA_REGISTRY_PWD``       Password for your schema registry
+========================     ========================================================================================================================
 
 Produce messages
 -----------------
