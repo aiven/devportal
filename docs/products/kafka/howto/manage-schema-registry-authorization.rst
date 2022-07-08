@@ -1,7 +1,7 @@
 Manage Karapace schema registry authorization
 =============================================
 
-Schema registry authorization allows you to authenticate the user, to control access to individual `Karapace schema registry REST API endpoints <https://github.com/aiven/karapace>`_, and to filter the content the endpoints return.
+Karapace schema registry authorization allows you to authenticate the user, to control access to individual `Karapace schema registry REST API endpoints <https://github.com/aiven/karapace>`_, and to filter the content the endpoints return.
 
 .. Tip::
 
