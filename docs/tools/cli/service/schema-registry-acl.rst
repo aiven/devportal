@@ -4,15 +4,15 @@
 Here you’ll find the full list of commands for ``avn service schema-registry-acl``.
 
 
-Manage Apache Kafka® Karapace schema registry access control lists
-------------------------------------------------------------------
+Manage Karapace schema registry access control lists for Apache Kafka®
+----------------------------------------------------------------------
 
-Commands for managing :doc:`Aiven for Apache Kafka® Karapace schema registry authorization </docs/products/kafka/concepts/schema-registry-authorization>` via ``avn`` commands.
+Commands for managing :doc:`Karapace schema registry authorization </docs/products/kafka/concepts/schema-registry-authorization>` for your Aiven for Apache Kafka® service via ``avn`` commands.
 
 ``avn service schema-registry-acl-add``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Adds an Aiven for Apache Kafka® Karapace schema registry ACL entry. The detailed explanation of parameters can be found in the :ref:`dedicated page <karapace_schema_registry_acls>`.
+Adds a Karapace schema registry ACL entry. The detailed explanation of parameters can be found in the :ref:`dedicated page <karapace_schema_registry_acls>`.
 
 .. list-table::
   :header-rows: 1
@@ -29,7 +29,7 @@ Adds an Aiven for Apache Kafka® Karapace schema registry ACL entry. The detaile
   * - ``--username``
     - The username pattern: accepts ``*`` and ``?`` as wildcard characters
 
-**Example:** Add an ACLs for users with username starting with ``userAB`` to write (``schema_registry_write``) subjects having name starting with ``s123`` in the service ``kafka-doc``.
+**Example:** Add an ACLs for users with username starting with ``userAB`` to write (``schema_registry_write``) subjects having name starting with ``s123`` in the Aiven for Apache Kafka® service ``kafka-doc``.
 
 ::
 
@@ -43,7 +43,7 @@ Adds an Aiven for Apache Kafka® Karapace schema registry ACL entry. The detaile
 ``avn service schema-registry-acl-delete``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Deletes an Aiven for Apache Kafka® Karapace schema registry ACL entry.
+Deletes a Karapace schema registry ACL entry.
 
 .. list-table::
   :header-rows: 1
@@ -57,7 +57,7 @@ Deletes an Aiven for Apache Kafka® Karapace schema registry ACL entry.
     - The id of the Karapace schema registry ACL to delete
 
 
-**Example:** Delete the Karapace schema registry ACLs with id ``acl3604f96c74a`` on the Aiven for Apache Kafka instance named ``kafka-doc``.
+**Example:** Delete the Karapace schema registry ACLs with id ``acl3604f96c74a`` on the Aiven for Apache Kafka®  instance named ``kafka-doc``.
 
 ::
 
@@ -66,7 +66,7 @@ Deletes an Aiven for Apache Kafka® Karapace schema registry ACL entry.
 ``avn service schema-registry-acl-list``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Lists Aiven for Apache Kafka® Karapace schema registry ACL entries.
+Lists Karapace schema registry ACL entries.
 
 .. list-table::
   :header-rows: 1
@@ -77,7 +77,7 @@ Lists Aiven for Apache Kafka® Karapace schema registry ACL entries.
   * - ``service_name``
     - The name of the service
 
-**Example:** List the ACLs defined for a service named ``kafka-doc``.
+**Example:** List the ACLs defined for an Aiven for Apache Kafka® service named ``kafka-doc``.
 
 ::
 

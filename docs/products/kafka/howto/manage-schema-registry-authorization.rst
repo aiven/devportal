@@ -5,7 +5,7 @@ Schema registry authorization allows you to authenticate the user, and to contro
 
 .. Tip::
 
-    Some older Aiven for Apache Kafka services may not have this feature enabled by default, read :doc:`how to enable schema registry authorization on older services <../howto/enable-schema-registry-authorization>`.
+    Some older Aiven for Apache Kafka® services may not have this feature enabled by default, read :doc:`how to enable schema registry authorization on older services <../howto/enable-schema-registry-authorization>`.
 
 Karapace schema registry authorization is configured using dedicated Access Control Lists (ACLs); to learn more about defining ACLs, check the :ref:`dedicated page <karapace_schema_registry_acls>`.
 
