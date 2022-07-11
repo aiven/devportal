@@ -90,7 +90,8 @@ The roles and corresponding permissions that Aiven supports are:
      - 
      - 
      - 
-
+.. Note::
+    Read-Only role cannot view or copy service account passwords.  Administrator, Operator and Developer can fully manage service accounts.
 
 Teams
 -----
