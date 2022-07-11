@@ -630,6 +630,10 @@ entries:
   - file: docs/products/cassandra
     title: Apache Cassandra
     entries:
+      - file: docs/products/cassandra/concepts
+        title: Concepts
+        entries:
+          - glob: docs/products/cassandra/concepts/*
       - file: docs/products/cassandra/reference
         title: Reference
         entries:
