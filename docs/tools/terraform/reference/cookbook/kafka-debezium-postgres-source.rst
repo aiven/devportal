@@ -8,11 +8,11 @@ Let's check out the following diagram to understand the setup.
 .. mermaid::
 
    flowchart LR
-      id1[(PostgreSQL Database)]
+      id1[(PostgreSQL service on GCP)]
       subgraph Kafka Connect
       Debezium-Source-Connector-PG
       end
-      subgraph Apache Kafka
+      subgraph Apache Kafka on Azure
       Topic
       end
       id1 --->|wal2json plugin| Debezium-Source-Connector-PG -->|publishes changes| Topic
