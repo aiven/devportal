@@ -119,8 +119,14 @@
   ``information_schema_stats_expiry`` => *integer*
     **information_schema_stats_expiry** The time, in seconds, before cached statistics expire
 
+  ``innodb_change_buffer_max_size`` => *integer*
+    **innodb_change_buffer_max_size** Maximum size for the InnoDB change buffer, as a percentage of the total size of the buffer pool. Default is 25
+
+  ``innodb_flush_neighbors`` => *integer*
+    **innodb_flush_neighbors** Specifies whether flushing a page from the InnoDB buffer pool also flushes other dirty pages in the same extent (default is 1): 0 - dirty pages in the same extent are not flushed,  1 - flush contiguous dirty pages in the same extent,  2 - flush dirty pages in the same extent
+
   ``innodb_ft_min_token_size`` => *integer*
-    **innodb_ft_min_token_size** Minimum length of words that are stored in an InnoDB FULLTEXT index.
+    **innodb_ft_min_token_size** Minimum length of words that are stored in an InnoDB FULLTEXT index. Changing this parameter will lead to a restart of the MySQL service.
 
   ``innodb_ft_server_stopword_table`` => *['null', 'string']*
     **innodb_ft_server_stopword_table** This option is used to specify your own InnoDB FULLTEXT index stopword list for all InnoDB tables.
@@ -137,14 +143,26 @@
   ``innodb_print_all_deadlocks`` => *boolean*
     **innodb_print_all_deadlocks** When enabled, information about all deadlocks in InnoDB user transactions is recorded in the error log. Disabled by default.
 
+  ``innodb_read_io_threads`` => *integer*
+    **innodb_read_io_threads** The number of I/O threads for read operations in InnoDB. Default is 4. Changing this parameter will lead to a restart of the MySQL service.
+
   ``innodb_rollback_on_timeout`` => *boolean*
-    **innodb_rollback_on_timeout** When enabled a transaction timeout causes InnoDB to abort and roll back the entire transaction.
+    **innodb_rollback_on_timeout** When enabled a transaction timeout causes InnoDB to abort and roll back the entire transaction. Changing this parameter will lead to a restart of the MySQL service.
+
+  ``innodb_thread_concurrency`` => *integer*
+    **innodb_thread_concurrency** Defines the maximum number of threads permitted inside of InnoDB. Default is 0 (infinite concurrency - no limit)
+
+  ``innodb_write_io_threads`` => *integer*
+    **innodb_write_io_threads** The number of I/O threads for write operations in InnoDB. Default is 4. Changing this parameter will lead to a restart of the MySQL service.
 
   ``interactive_timeout`` => *integer*
     **interactive_timeout** The number of seconds the server waits for activity on an interactive connection before closing it.
 
   ``internal_tmp_mem_storage_engine`` => *string*
     **internal_tmp_mem_storage_engine** The storage engine for in-memory internal temporary tables.
+
+  ``net_buffer_length`` => *integer*
+    **net_buffer_length** Start sizes of connection buffer and result buffer. Default is 16384 (16K). Changing this parameter will lead to a restart of the MySQL service.
 
   ``net_read_timeout`` => *integer*
     **net_read_timeout** The number of seconds to wait for more data from a connection before aborting the read.
