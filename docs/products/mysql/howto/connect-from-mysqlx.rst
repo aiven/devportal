@@ -19,7 +19,9 @@ Variables
    * - ``SERVICE_URI``
      - Connection information about your Aiven for MySQLx service.
    * - ``MYSQLX_PASSWORD``
-     - Password for ``avnadmin`` user
+     - Password for ``avnadmin`` user.
+   * - ``MYSQLX_USER``
+   * - Your Aiven **User** information.
 
 Prerequisites
 '''''''''''''
@@ -43,7 +45,7 @@ Code
 
 Add the following to ``main.py`` and replace the placeholders with values for your project:
 
-.. literalinclude:: /code/products/mysql/connect.py
+.. literalinclude:: /code/products/mysql/connect-from-mysqlx.py
    :language: python
 
 
