@@ -6,6 +6,7 @@ The following PostgreSQL® extensions are available. Please note that some of th
 .. |PG10only| replace:: :badge:`PG10 only,cls=badge-secondary text-black badge-pill`
 .. |PG11onwards| replace:: :badge:`PG11 and newer,cls=badge-secondary text-black badge-pill`
 .. |PG11earlier| replace:: :badge:`PG11 and earlier,cls=badge-secondary text-black badge-pill`
+.. |PG12earlier| replace:: :badge:`PG12 and earlier,cls=badge-secondary text-black badge-pill`
 .. |PG13onwards| replace:: :badge:`PG13 and newer,cls=badge-secondary text-black badge-pill`
 .. |PG14only| replace:: :badge:`PG14 only,cls=badge-secondary text-black badge-pill`
 
@@ -222,10 +223,10 @@ Utilities
     Extension to manage partitioned tables by time or ID.
 
 ``pg_prewarm`` - https://www.postgresql.org/docs/current/pgprewarm.html
-    Prewarm relation data.
+    Prewarm relation data.  |PG11onwards|
 
 ``pg_prometheus`` - https://github.com/timescale/pg_prometheus
-    Prometheus metrics for PostgreSQL.
+    Prometheus metrics for PostgreSQL.  |PG12earlier|
 
 ``pg_repack`` - https://pgxn.org/dist/pg_repack/1.4.6/
     Reorganize tables in PostgreSQL databases with minimal locks.
