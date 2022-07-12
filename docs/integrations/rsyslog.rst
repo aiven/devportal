@@ -42,13 +42,13 @@ Required:
 
 -  ``format`` - message format used by the server, this can be either
    ``rfc3164`` (the old BSD style message format), ``rfc5424`` (current
-   syslog message format) or custom
+   syslog message format) or ``custom``
 
 -  ``tls`` - use TLS (as the messages are not filtered and may contain
    sensitive information, it is highly recommended to set this to true
    if the remote server supports it)
 
-Conditional (required if format == custom):
+Conditional (required if ``format`` == ``custom``):
 
 -  ``logline`` - syslog log line template for a custom format,
    supporting limited rsyslog style templating (using
@@ -117,11 +117,12 @@ CLI though the examples are easier to copy and paste in the CLI form.
 Papertrail
 ~~~~~~~~~~
 
-As papertrail identifies the client based on the server and port  you
-only need to copy the appropriate values from the "Log Destinations"
-page and use those as the values for server and port respectively. You
-**do not need** the ca-bundle as papertrail's servers use certificates
-signed by known CAs. You also need to set the format to ``rfc3164`` .
+As `Papertrail <https://www.papertrail.com/>`_ identifies the client based on
+the server and port  you only need to copy the appropriate values from the
+"Log Destinations" page and use those as the values for server and port
+respectively. You **do not need** the ca-bundle as the Papertrail servers use
+certificates signed by known CAs. You also need to set the format to
+``rfc3164`` .
 
 ::
 
@@ -130,8 +131,10 @@ signed by known CAs. You also need to set the format to ``rfc3164`` .
        -c server=logsN.papertrailapp.com -c port=XXXXX \
        -c format=rfc3164 -c tls=true
 
-Loggly
-~~~~~~
+Loggly®
+~~~~~~~
+
+`Loggly <https://www.loggly.com/>`_
 
 In addition to the server and port you also need a *customer token*
 which you then **need** to give as part of the ``-c sd`` parameter when
@@ -145,8 +148,10 @@ creating the endpoint.
        -c format=rfc5424 -c tls=true \
        -c sd='TOKEN@NNNNN TAG="tag-of-your-choice"'
 
-Sumo Logic
-~~~~~~~~~~
+Sumo Logic®
+~~~~~~~~~~~
+
+`Sumo Logic <https://www.sumologic.com/>`_
 
 You need to the give the collector token as the ``-c sd`` parameter and
 use the server and port of the collector.
@@ -162,7 +167,7 @@ use the server and port of the collector.
 Datadog
 ~~~~~~~
 
-For Datadog integration you need to use custom format with ``logline``
+For `Datadog <https://www.datadoghq.com/>`_ integration you need to use custom format with ``logline``
 
 ::
 
@@ -178,18 +183,17 @@ For Datadog integration you need to use custom format with ``logline``
    * ``server``: ``tcp-intake.logs.datadoghq.eu``
    * ``port``: ``443``
 
-:doc:`Further details on send metrics and logs to Datadog </docs/integrations/datadog/index>`
+:doc:`Further details on sending metrics and logs to Datadog </docs/integrations/datadog>`
 
 
 New Relic
 ~~~~~~~~~
 
-You will also need a custom logline format for NewRelic Syslog
-integration. This is so you can prepend your `NewRelic Insights Insert
+You will also need a custom ``logline`` format for `New Relic <https://newrelic.com/>`_ Syslog
+integration. This is so you can prepend your `New Relic Insights Insert
 Key <https://docs.newrelic.com/docs/apis/intro-apis/new-relic-api-keys/>`__
 and ensure the format matches the `built-in Grok
-pattern <https://docs.newrelic.com/docs/logs/ui-data/built-log-parsing-rules/#syslog-rfc5424>`__
-.
+pattern <https://docs.newrelic.com/docs/logs/ui-data/built-log-parsing-rules/#syslog-rfc5424>`__.
 
 ::
 
@@ -202,7 +206,7 @@ pattern <https://docs.newrelic.com/docs/logs/ui-data/built-log-parsing-rules/#sy
 Coralogix
 ~~~~~~~~~
 
-For coralogix integration you need to use custom format with logline
+For `Coralogix <https://coralogix.com/>`_ integration you need to use custom format with ``logline``
 
 ::
 
@@ -226,8 +230,8 @@ need to use one of the following Syslog Endpoints for ``server``:
 Mezmo (LogDNA)
 ~~~~~~~~~~~~~~
 
-For Mezmo syslog integration, you would need to use custom format with
-logline.
+For `Mezmo <https://www.mezmo.com/>`_ syslog integration, you would need to use custom format with
+``logline``.
 
 ::
 
@@ -236,3 +240,11 @@ logline.
    -c server=syslog-a.logdna.com -c port=6514 \
    -c tls=true -c format=custom \
    -c logline='<%pri%>%protocol-version% %timestamp:::date-rfc3339% %hostname% %app-name% %procid% %msgid% [logdna@48950 key="YOUR_KEY_GOES_HERE"] %msg%'
+
+-----
+
+The Loggly trademark is the exclusive
+property of SolarWinds Worldwide, LLC or its affiliates, is registered with the U.S.
+Patent and Trademark Office, and may be registered or pending registration in other
+countries. All other SolarWinds trademarks, service marks, and logos may be common
+law marks or are registered or pending registration.

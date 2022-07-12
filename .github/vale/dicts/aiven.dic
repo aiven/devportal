@@ -18,6 +18,7 @@ CloudWatch
 codecs
 compliances
 Conduktor
+Coralogix
 connect
 Couchbase
 CPU
@@ -81,12 +82,14 @@ Kibana
 Kpow
 Kubernetes
 kuromoji
+Loggly
 Logstash
 Lua
 Lucene
 myhoard
 M3
 Memorystore
+Mezmo
 MirrorMaker
 MongoDB
 MySQL
@@ -101,6 +104,7 @@ OpenSearch
 operator
 Pagerduty
 Pagila
+Papertrail
 parallelization
 Percona
 performant

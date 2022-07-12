@@ -45,9 +45,11 @@ exceptions:
   - Kpow
   - Kubernetes
   - M3
+  - LogDNA
   - MirrorMaker
   - MongoDB
   - MySQL
+  - New Relic
   - NodeJS
   - OpenSearch
   - Operator
@@ -69,6 +71,7 @@ exceptions:
   - Spring
   - SQL Server
   - Startup
+  - Sumo Logic
   - TaskManager
   - Telegraf
   - Terraform
