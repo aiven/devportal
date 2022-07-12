@@ -18,7 +18,10 @@
   **M3 limits** 
 
   ``query_series`` => *integer*
-    **The maximum number of series fetched in single query** 
+    **The maximum number of series fetched in single query.** 
+
+  ``query_docs`` => *integer*
+    **The maximum number of docs fetched in single query. Default=0(unlimited).** 
 
   ``query_require_exhaustive`` => *boolean*
     **Require exhaustive result** When query limits are exceeded, whether to return error (if True) or return partial results (False)
