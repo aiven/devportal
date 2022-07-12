@@ -50,3 +50,7 @@ Learn about some of the key concepts for working with Aiven platform:
 * :doc:`Disaster Recovery (DR) testing scenarios </docs/platform/concepts/disaster-recovery-test-scenarios>`.
   
   DR testing scenarios are simulations of disaster scenarios run for enterprise support customers by Aiven operators.
+
+* :doc:`Choosing a time series database </docs/platform/concepts/choosing-timeseries-database>`.
+  
+  Choosing a time series database in Aiven Console.
