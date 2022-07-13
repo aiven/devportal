@@ -30,4 +30,4 @@ Available integrations
     * :doc:`/docs/products/opensearch/howto/opensearch-log-integration`
     * :doc:`Datadog </docs/integrations/datadog>`
     * :doc:`Amazon CloudWatch </docs/integrations/cloudwatch>`
-    * :doc:`RSyslog integration </docs/rsyslog>`
+    * :doc:`RSyslog integration </docs/integrations/rsyslog>`

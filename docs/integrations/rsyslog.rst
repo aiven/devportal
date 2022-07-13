@@ -1,11 +1,6 @@
 Remote syslog integration
 =========================
 
-.. contents::
-    :local:
-    :depth: 2
-    :class: this-will-duplicate-information-and-it-is-still-useful-here
-
 In addition to using Aiven for OpenSearch® to store the logs from your
 Aiven services, you can now integrate with an external monitoring system
 that supports the rsyslog protocol.
@@ -24,7 +19,8 @@ This can be configured from the Service Integrations page in the Aiven
 Console.
 
 .. image:: /images/integrations/remote-syslog-endpoint.png
-  :width: 400
+   :alt: "Create new Syslog endpoint" dialog
+   :width: 400
 
 Another option is to use the `Aiven
 Client <https://github.com/aiven/aiven-client>`__ .
@@ -94,6 +90,7 @@ You should be able to select your previously configured Rsyslog service
 integration by clicking Use integration in the modal window.
 
 .. image:: /images/integrations/remote-syslog-service-integrations.png
+   :alt: The page that shows the integrations available for a service
 
 Alternately, with the Aiven Client, first you need the id of the
 endpoint previously created
@@ -105,7 +102,7 @@ endpoint previously created
    ====================================  ==============  =============
    618fb764-5832-4636-ba26-0d9857222cfd  example-syslog  rsyslog
 
-Finally you can link the service to the endpoint
+Then you can link the service to the endpoint
 
 ::
 
@@ -122,15 +119,15 @@ CLI though the examples are easier to copy and paste in the CLI form.
 Coralogix
 ~~~~~~~~~
 
-For `Coralogix <https://coralogix.com/>`_ integration you need to use custom format with ``logline``
+For `Coralogix <https://coralogix.com/>`_ integration you need to use a custom ``logline`` format
 
 ::
 
    avn service integration-endpoint-create --project your-project \
-   -d coralogix -t rsyslog \
-   -c server=syslogserver.coralogix.us -c port=5142 \
-   -c tls=false -c format=custom \
-   -c logline="{\"fields\": {\"private_key\":\"YOUR_CORALOGIX_KEY\",\"company_id\":\"YOUR_COMPANY_ID\",\"app_name\":\"%app-name%\",\"subsystem_name\":\"programname\"},\"message\": {\"message\":\"%msg%\",\"program_name\":\"%programname%\",\"pri_text\":\"%pri%\",\"hostname\":\"%HOSTNAME%\"}}"
+       -d coralogix -t rsyslog \
+       -c server=syslogserver.coralogix.us -c port=5142 \
+       -c tls=false -c format=custom \
+       -c logline="{\"fields\": {\"private_key\":\"YOUR_CORALOGIX_KEY\",\"company_id\":\"YOUR_COMPANY_ID\",\"app_name\":\"%app-name%\",\"subsystem_name\":\"programname\"},\"message\": {\"message\":\"%msg%\",\"program_name\":\"%programname%\",\"pri_text\":\"%pri%\",\"hostname\":\"%HOSTNAME%\"}}"
 
 .. note:: ``tls`` needs to be set to ``false``.
 
@@ -147,7 +144,7 @@ need to use one of the following Syslog Endpoints for ``server``:
 Datadog
 ~~~~~~~
 
-For `Datadog <https://www.datadoghq.com/>`_ integration you need to use custom format with ``logline``
+For `Datadog <https://www.datadoghq.com/>`_ integration you need to use a custom ``logline`` format
 
 ::
 
@@ -163,16 +160,23 @@ For `Datadog <https://www.datadoghq.com/>`_ integration you need to use custom f
    * ``server``: ``tcp-intake.logs.datadoghq.eu``
    * ``port``: ``443``
 
-:doc:`Further details on sending metrics and logs to Datadog </docs/integrations/datadog>`
+.. Ideally the following link would use a ``:doc:`` role - for instance:
 
+     :doc:`Aiven and Datadog </docs/integrations/datadog>`
+
+   but a problem with vale means that it would then try to check the URL, and
+   would complain that ``datadog`` is not ``Datadog``.
+
+For further details on sending metrics and logs to Datadog, see the `Aiven and
+Datadog <./datadog.html>`_ page
 
 Loggly®
 ~~~~~~~
 
+For
 `Loggly <https://www.loggly.com/>`_
-
-In addition to the server and port you also need a *customer token*
-which you then **need** to give as part of the ``-c sd`` parameter when
+integration, as well the server and port you also need a *customer token*
+which you then **must** give as part of the ``-c sd`` parameter when
 creating the endpoint.
 
 ::
@@ -187,33 +191,32 @@ creating the endpoint.
 Mezmo (LogDNA)
 ~~~~~~~~~~~~~~
 
-For `Mezmo <https://www.mezmo.com/>`_ syslog integration, you would need to use custom format with
-``logline``.
+For `Mezmo <https://www.mezmo.com/>`_ syslog integration you need to use a custom ``logline`` format
 
 ::
 
    avn service integration-endpoint-create --project your-project \
-   -d logdna -t rsyslog \
-   -c server=syslog-a.logdna.com -c port=6514 \
-   -c tls=true -c format=custom \
-   -c logline='<%pri%>%protocol-version% %timestamp:::date-rfc3339% %hostname% %app-name% %procid% %msgid% [logdna@48950 key="YOUR_KEY_GOES_HERE"] %msg%'
+       -d logdna -t rsyslog \
+       -c server=syslog-a.logdna.com -c port=6514 \
+       -c tls=true -c format=custom \
+       -c logline='<%pri%>%protocol-version% %timestamp:::date-rfc3339% %hostname% %app-name% %procid% %msgid% [logdna@48950 key="YOUR_KEY_GOES_HERE"] %msg%'
 
 
 New Relic
 ~~~~~~~~~
 
-You will also need a custom ``logline`` format for `New Relic <https://newrelic.com/>`_ Syslog
-integration. This is so you can prepend your `New Relic License Key <https://docs.newrelic.com/docs/apis/intro-apis/new-relic-api-keys/#license-key>`__
+For `New Relic <https://newrelic.com/>`_ Syslog integration you need to use a custom ``logline`` format.
+This is so you can prepend your `New Relic License Key <https://docs.newrelic.com/docs/apis/intro-apis/new-relic-api-keys/#license-key>`__
 and ensure the format matches the `built-in Grok
 pattern <https://docs.newrelic.com/docs/logs/ui-data/built-log-parsing-rules/#syslog-rfc5424>`__.
 
 ::
 
    avn service integration-endpoint-create --project your-project \
-   -d newrelic -t rsyslog \
-   -c server=newrelic.syslog.nr-data.net -c port=6514 \
-   -c tls=true -c format=custom \
-   -c logline='NEWRELIC_LICENSE_KEY <%pri%>%protocol-version% %timestamp:::date-rfc3339% %hostname% %app-name% %procid% %msgid% -  %msg%'
+       -d newrelic -t rsyslog \
+       -c server=newrelic.syslog.nr-data.net -c port=6514 \
+       -c tls=true -c format=custom \
+       -c logline='NEWRELIC_LICENSE_KEY <%pri%>%protocol-version% %timestamp:::date-rfc3339% %hostname% %app-name% %procid% %msgid% -  %msg%'
 
 
 Papertrail
@@ -237,9 +240,8 @@ certificates signed by known CAs. You also need to set the format to
 Sumo Logic®
 ~~~~~~~~~~~
 
-`Sumo Logic <https://www.sumologic.com/>`_
-
-You need to the give the collector token as the ``-c sd`` parameter and
+For `Sumo Logic <https://www.sumologic.com/>`_
+you need to the give the collector token as the ``-c sd`` parameter and
 use the server and port of the collector.
 
 ::
