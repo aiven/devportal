@@ -19,7 +19,7 @@ Karapace schema registry ACL definition
 
 A Karapace schema registry authorization ACL consists of zero or more entries that each specify a **username**, an **operation** and a **resource**.
 
-* The **username** is the name of a service user in the Aiven for Apache Kafka®G service.
+* The **username** is the name of a service user in the Aiven for Apache Kafka® service.
 * The **operations** are: 
   
   * ``schema_registry_read``
