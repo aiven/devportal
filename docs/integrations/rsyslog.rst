@@ -1,6 +1,11 @@
 Remote syslog integration
 =========================
 
+.. contents::
+    :local:
+    :depth: 2
+    :class: this-will-duplicate-information-and-it-is-still-useful-here
+
 In addition to using Aiven for OpenSearch® to store the logs from your
 Aiven services, you can now integrate with an external monitoring system
 that supports the rsyslog protocol.
@@ -114,95 +119,6 @@ Integrating with a third party syslog service
 All integrations can be configured using the Aiven Console or the Aiven
 CLI though the examples are easier to copy and paste in the CLI form.
 
-Papertrail
-~~~~~~~~~~
-
-As `Papertrail <https://www.papertrail.com/>`_ identifies the client based on
-the server and port  you only need to copy the appropriate values from the
-"Log Destinations" page and use those as the values for server and port
-respectively. You **do not need** the ca-bundle as the Papertrail servers use
-certificates signed by known CAs. You also need to set the format to
-``rfc3164`` .
-
-::
-
-   avn service integration-endpoint-create --project your-project \
-       -d papertrail -t rsyslog \
-       -c server=logsN.papertrailapp.com -c port=XXXXX \
-       -c format=rfc3164 -c tls=true
-
-Loggly®
-~~~~~~~
-
-`Loggly <https://www.loggly.com/>`_
-
-In addition to the server and port you also need a *customer token*
-which you then **need** to give as part of the ``-c sd`` parameter when
-creating the endpoint.
-
-::
-
-   avn service integration-endpoint-create --project your-project \
-       -d loggly -t rsyslog \
-       -c server=logs-01.loggly.com -c port=514 \
-       -c format=rfc5424 -c tls=true \
-       -c sd='TOKEN@NNNNN TAG="tag-of-your-choice"'
-
-Sumo Logic®
-~~~~~~~~~~~
-
-`Sumo Logic <https://www.sumologic.com/>`_
-
-You need to the give the collector token as the ``-c sd`` parameter and
-use the server and port of the collector.
-
-::
-
-   avn service integration-endpoint-create --project your-project \
-       -d loggly -t rsyslog \
-       -c server=syslog.collection.XX.sumologic.com -c port=6514 \
-       -c tls=true -c format=rfc5424 \
-       -c sd='collector-token-string@NNNNN'
-
-Datadog
-~~~~~~~
-
-For `Datadog <https://www.datadoghq.com/>`_ integration you need to use custom format with ``logline``
-
-::
-
-   avn service integration-endpoint-create --project your-project \
-       -d datadog -t rsyslog \
-       -c server=intake.logs.datadoghq.com -c port=10516 \
-       -c tls=true -c format=custom \
-       -c logline='DATADOG_API_KEY <%pri%>1 %timestamp:::date-rfc3339% %HOSTNAME% %app-name% - - - %msg%'
-
-.. Note::
-   If you want to use Datadog EU environment, the service address is:
-   
-   * ``server``: ``tcp-intake.logs.datadoghq.eu``
-   * ``port``: ``443``
-
-:doc:`Further details on sending metrics and logs to Datadog </docs/integrations/datadog>`
-
-
-New Relic
-~~~~~~~~~
-
-You will also need a custom ``logline`` format for `New Relic <https://newrelic.com/>`_ Syslog
-integration. This is so you can prepend your `New Relic Insights Insert
-Key <https://docs.newrelic.com/docs/apis/intro-apis/new-relic-api-keys/>`__
-and ensure the format matches the `built-in Grok
-pattern <https://docs.newrelic.com/docs/logs/ui-data/built-log-parsing-rules/#syslog-rfc5424>`__.
-
-::
-
-   avn service integration-endpoint-create --project your-project \
-   -d newrelic -t rsyslog \
-   -c server=newrelic.syslog.nr-data.net -c port=6514 \
-   -c tls=true -c format=custom \
-   -c logline='NEWRELIC_INSIGHTS_INSERT_KEY <%pri%>%protocol-version% %timestamp:::date-rfc3339% %hostname% %app-name% %procid% %msgid% -  %msg%'
-
 Coralogix
 ~~~~~~~~~
 
@@ -227,6 +143,47 @@ need to use one of the following Syslog Endpoints for ``server``:
 
 -  ``syslogserver.app.coralogix.in``
 
+
+Datadog
+~~~~~~~
+
+For `Datadog <https://www.datadoghq.com/>`_ integration you need to use custom format with ``logline``
+
+::
+
+   avn service integration-endpoint-create --project your-project \
+       -d datadog -t rsyslog \
+       -c server=intake.logs.datadoghq.com -c port=10516 \
+       -c tls=true -c format=custom \
+       -c logline='DATADOG_API_KEY <%pri%>1 %timestamp:::date-rfc3339% %HOSTNAME% %app-name% - - - %msg%'
+
+.. Note::
+   If you want to use Datadog EU environment, the service address is:
+   
+   * ``server``: ``tcp-intake.logs.datadoghq.eu``
+   * ``port``: ``443``
+
+:doc:`Further details on sending metrics and logs to Datadog </docs/integrations/datadog>`
+
+
+Loggly®
+~~~~~~~
+
+`Loggly <https://www.loggly.com/>`_
+
+In addition to the server and port you also need a *customer token*
+which you then **need** to give as part of the ``-c sd`` parameter when
+creating the endpoint.
+
+::
+
+   avn service integration-endpoint-create --project your-project \
+       -d loggly -t rsyslog \
+       -c server=logs-01.loggly.com -c port=514 \
+       -c format=rfc5424 -c tls=true \
+       -c sd='TOKEN@NNNNN TAG="tag-of-your-choice"'
+
+
 Mezmo (LogDNA)
 ~~~~~~~~~~~~~~
 
@@ -240,6 +197,58 @@ For `Mezmo <https://www.mezmo.com/>`_ syslog integration, you would need to use 
    -c server=syslog-a.logdna.com -c port=6514 \
    -c tls=true -c format=custom \
    -c logline='<%pri%>%protocol-version% %timestamp:::date-rfc3339% %hostname% %app-name% %procid% %msgid% [logdna@48950 key="YOUR_KEY_GOES_HERE"] %msg%'
+
+
+New Relic
+~~~~~~~~~
+
+You will also need a custom ``logline`` format for `New Relic <https://newrelic.com/>`_ Syslog
+integration. This is so you can prepend your `New Relic License Key <https://docs.newrelic.com/docs/apis/intro-apis/new-relic-api-keys/#license-key>`__
+and ensure the format matches the `built-in Grok
+pattern <https://docs.newrelic.com/docs/logs/ui-data/built-log-parsing-rules/#syslog-rfc5424>`__.
+
+::
+
+   avn service integration-endpoint-create --project your-project \
+   -d newrelic -t rsyslog \
+   -c server=newrelic.syslog.nr-data.net -c port=6514 \
+   -c tls=true -c format=custom \
+   -c logline='NEWRELIC_LICENSE_KEY <%pri%>%protocol-version% %timestamp:::date-rfc3339% %hostname% %app-name% %procid% %msgid% -  %msg%'
+
+
+Papertrail
+~~~~~~~~~~
+
+As `Papertrail <https://www.papertrail.com/>`_ identifies the client based on
+the server and port  you only need to copy the appropriate values from the
+"Log Destinations" page and use those as the values for server and port
+respectively. You **do not need** the ca-bundle as the Papertrail servers use
+certificates signed by known CAs. You also need to set the format to
+``rfc3164`` .
+
+::
+
+   avn service integration-endpoint-create --project your-project \
+       -d papertrail -t rsyslog \
+       -c server=logsN.papertrailapp.com -c port=XXXXX \
+       -c format=rfc3164 -c tls=true
+
+
+Sumo Logic®
+~~~~~~~~~~~
+
+`Sumo Logic <https://www.sumologic.com/>`_
+
+You need to the give the collector token as the ``-c sd`` parameter and
+use the server and port of the collector.
+
+::
+
+   avn service integration-endpoint-create --project your-project \
+       -d loggly -t rsyslog \
+       -c server=syslog.collection.XX.sumologic.com -c port=6514 \
+       -c tls=true -c format=rfc5424 \
+       -c sd='collector-token-string@NNNNN'
 
 -----
 
