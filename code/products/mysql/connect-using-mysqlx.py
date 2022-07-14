@@ -1,11 +1,5 @@
 import mysqlx
 
-# replace the variables accordingly
-SERVICE_URI = "aiven-service-URI"
-MYSQLX_USER = "aiven-mysqlx-user"
-MYSQLX_PASSWORD = "aiven-mysqlx-user-password"
-
-
 connection_data = f"mysqlx://{MYSQLX_USER}:{MYSQLX_PASSWORD}@{SERVICE_URI}/defaultdb?ssl-mode=REQUIRED"
 
 session = mysqlx.get_session(connection_data)
