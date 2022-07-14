@@ -1,12 +1,12 @@
 Configure properties for Apache Kafka® toolbox
 ==========================================================
 
-The `open source Apache Kafka® code <https://kafka.apache.org/downloads>`_ includes a series of tools under the ``bin`` directory that can be useful to manage and interact with Aiven for Apache Kafka®.
+The `open source Apache Kafka® code <https://kafka.apache.org/downloads>`_ includes a series of tools under the ``bin`` directory that can be useful to manage and interact with an Aiven for Apache Kafka® service.
 Before using the tools, you need to configure a file pointing to a Java keystore and truststore which contain the required certificates for authentication.
 
 .. note::
 
-    There is no restrictions on the file name, but make sure to use correct file name when performing cli operations. In the examples below we'll name the file `configuration.properties`.
+    There are no restrictions on the file name, but make sure to use the correct name when performing CLI operations. In the examples below we'll name the file ``configuration.properties```.
 
 Define the configuration file
 -----------------------------
