@@ -45,7 +45,7 @@ Code
 
 Add the following to ``main.py`` and replace the placeholders with values for your project:
 
-.. literalinclude:: /code/products/mysql/connect-from-mysqlx.py
+.. literalinclude:: /code/products/mysql/connect-using-mysqlx.py
    :language: python
 
 
