@@ -21,7 +21,7 @@ Describe the setup
 ------------------
 
 This terraform recipe will provision one Aiven PostgreSQL database service, one Aiven for Apache Kafka service, a separate Aiven for Apache Kafka Connect 
-service with a Debezium source connector for PostgreSQL enabled and configured to connect to the PostgreSQL database and capture any change in tables. The peculiarity of this setup is that the the Aiven Apache Kafka service is deployed in Azure cloud whilst the PostgreSQL db is deployed in a Google Cloud like the Aiven Apache Kafka Connector service. Aiven makes it very easy to configure services in different cluods that integrate seamlessly. 
+service with a Debezium source connector for PostgreSQL enabled and configured to connect to the PostgreSQL database and capture any change in tables. The peculiarity of this setup is that the the Aiven for Apache Kafka service is deployed in Azure cloud whilst the PostgreSQL db is deployed in a Google Cloud like the Aiven for Apache Kafka Connector service. Aiven makes it very easy to configure services in different clouds that integrate seamlessly. 
 As soon as any of the monitored tables is inserted or updated with new data, the Debezium connector will capture the data change and convert table data into
 JSON payload and produce messages to the relevant Kafka topic. 
 Some of these services are created in one cloud provider and some in another cloud provider, to demonstrate how easy it is with Aiven to integrate services across 
@@ -174,7 +174,7 @@ Let's see the different resources we are going to create:
 
 - Version 3.2.1 of the Aiven Terraform provider will be used
 - The PostgreSQL database will be created in "google-europe-north1" cloud provider with a business-4 plan
-- The Aiven Apache Kafka service will be created in "azure-norway-west" cloud and will be preconfigured with a number of properties:
+- The Aiven Apache Kafka service will be created in "azure-norway-west" cloud and will be configured with a number of properties:
   
   - The ``auto_create_topics_enable = true`` property is crucial as it allows the Debezium connector to create the Kafka topics directly.
   - The ``kafka_connect = false`` property is needed because we want to create a separate Aiven Apache Kafka Connect service.
@@ -182,7 +182,7 @@ Let's see the different resources we are going to create:
 
 - One Aiven Apache Kafka Connect service is configured with public access
 - Then a service integration is created within Kafka Connect service. This integration will use 2 internal topics for storing status and offset.
-- The last Aiven service that will be provisioned is the actual Debezium source connector for PostgreSQL, which is specified by the "connector.class" and is configured with the connection strings to access the PostgreSQL database and listen for all data changes on one or more tables. In our case, it will be "tab1" in "defaultdb", "public" schema. The plugin used is "wal2json" that converts WAL events (WAL stands for Write Ahead Logging) into JSON payload that is sent to the Kafka topic. The Kafka topic that the Debezium connector creates has the name "replicator.public.tab1", where "replicator" is the logical database used by Debezium connector to monitor for data changes and "public" and "tab1" are the name of the schema and the table name respectively. One important thing to otice is the "depends_on" property that establishes a dependency between the services creation in order to avoid failures.
+- The last Aiven service that will be provisioned is the actual Debezium source connector for PostgreSQL, which is specified by the "connector.class" and is configured with the connection strings to access the PostgreSQL database and listen for all data changes on one or more tables. In our case, it will be "tab1" in "defaultdb", "public" schema. The plugin used is "wal2json" that converts WAL events (WAL stands for Write Ahead Logging) into JSON payload that is sent to the Kafka topic. The Kafka topic that the Debezium connector creates has the name "replicator.public.tab1", where "replicator" is the logical database used by Debezium connector to monitor for data changes and "public" and "tab1" are the name of the schema and the table name respectively. One important thing to notice is the "depends_on" property that establishes a dependency between the services creation in order to avoid failures.
 
 
 More resources
