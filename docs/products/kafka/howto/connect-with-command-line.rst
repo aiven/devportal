@@ -1,12 +1,13 @@
 Connect to Aiven for Apache Kafka® with command line tools
 ==========================================================
 
-These examples show how to send messages to and receive messages from an Aiven for Apache Kafka service using command line tools.
+These examples show how to send messages to and receive messages from an Aiven for Apache Kafka® service using command line tools.
 
 Pre-requisites
 --------------
 
-``kafka-console-producer`` and ``kafka-console-consumer`` are part of the Apache Kafka® toolbox included with `open source Apache Kafka® code <https://kafka.apache.org/downloads>`_. Follow :doc:`the guide to set up properties to use Apache Kafka toolbox <kafka-tools-config-file>`.
+``kafka-console-producer`` and ``kafka-console-consumer`` are part of the Apache Kafka® toolbox included with `open source Apache Kafka® code <https://kafka.apache.org/downloads>`_. Follow
+`the guide to set up properties to use Apache Kafka toolbox <kafka-tools-config-file.html>`_
 For ``kafka-avro-console-producer`` follow the installation instructions in `its GitHub repository <https://github.com/confluentinc/schema-registry>`_.
 
 Variables
@@ -17,7 +18,7 @@ Variable                     Description
 ========================     ========================================================================================================================
 ``HOST``                     Host name for the connection
 ``PORT``                     Port number to use for the Kafka service
-``CONFIGURATION_PATH``       Path to your configuration file :doc:`for Apache Kafka toolbox <kafka-tools-config-file>`.
+``CONFIGURATION_PATH``       Path to your configuration file `for Apache Kafka toolbox <kafka-tools-config-file.html>`_.
 ``SCHEMA_REGISTRY_HOST``      Host name for your schema registry
 ``SCHEMA_REGISTRY_PORT``      Port number for your schema registry
 ``SCHEMA_REGISTRY_USER``      User name for your schema registry
