@@ -56,7 +56,6 @@ The ``service.tf`` file for the provisioning of these 3 services and integration
         aiven = {
           source  = "aiven/aiven"
           version = ">=3.2.1"
-    #      version = ">= 2.0.0, < 3.0.0"
         }
       }
     }
@@ -80,7 +79,6 @@ The ``service.tf`` file for the provisioning of these 3 services and integration
       project                 = var.project
       cloud_name              = "azure-norway-west"
       plan                    = "startup-2"
-    #  service_name            = "${var.prefix}kf"
       service_name            = "kf"
       maintenance_window_dow  = "saturday"
       maintenance_window_time = "10:00:00"
@@ -109,7 +107,6 @@ The ``service.tf`` file for the provisioning of these 3 services and integration
       cloud_name              = "google-europe-north1"
       project_vpc_id          = "francesco-demo/01a413b4-36df-4b1b-a697-fd7f87833494"
       plan                    = "startup-4"
-    #  service_name            = "${var.prefix}kc"
       service_name            = "kc"
       maintenance_window_dow  = "monday"
       maintenance_window_time = "10:00:00"
@@ -177,13 +174,13 @@ Let's see the different resources we are going to create:
 - The Aiven Apache Kafka service will be created in "azure-norway-west" cloud and will be configured with a number of properties:
   
   - The ``auto_create_topics_enable = true`` property is crucial as it allows the Debezium connector to create the Kafka topics directly.
-  - The ``kafka_connect = false`` property is needed because we want to create a separate Aiven Apache Kafka Connect service.
+  - The ``kafka_connect = false`` property is used because we want to create a separate Aiven for Apache Kafka Connect service.
 
 
-- One Aiven Apache Kafka Connect service is configured with public access
-- Then a service integration is created within Kafka Connect service. This integration will use 2 internal topics for storing status and offset.
-- The last Aiven service that will be provisioned is the actual Debezium source connector for PostgreSQL, which is specified by the "connector.class" and is configured with the connection strings to access the PostgreSQL database and listen for all data changes on one or more tables. In our case, it will be "tab1" in "defaultdb", "public" schema. The plugin used is "wal2json" that converts WAL events (WAL stands for Write Ahead Logging) into JSON payload that is sent to the Kafka topic. The Kafka topic that the Debezium connector creates has the name "replicator.public.tab1", where "replicator" is the logical database used by Debezium connector to monitor for data changes and "public" and "tab1" are the name of the schema and the table name respectively. One important thing to notice is the "depends_on" property that establishes a dependency between the services creation in order to avoid failures.
-
+- The Aiven for Apache Kafka Connect service is configured with public access to allow the service to be accessed through a VPC since we are setting up services in different clouds
+- The resource "aiven_service_integration.i1" configures the integration between the AIven for Apache Kafka service and the Aiven for Apache Kafka Connect service. This integration uses 2 internal topics for storing status and offset.
+- The last Aiven service that will be provisioned is the Debezium source connector for PostgreSQL, which is specified by the "connector.class" and is configured with the connection strings to access the PostgreSQL database and listen for all data changes on one or more tables. In our case, the table that is monitored for any new data is "tab1" in "defaultdb", in "public" schema. The plugin used is "wal2json" that converts WAL events (WAL stands for Write Ahead Logging) into JSON payload that is sent to the Kafka topic. The Kafka topic that the Debezium connector creates has the name "replicator.public.tab1", where "replicator" is the logical database used by Debezium connector to monitor for data changes and "public" and "tab1" are the name of the PostgreSQL schema and table name respectively. 
+- The "depends_on" property establishes a dependency between the services creation in order to avoid failures.
 
 More resources
 --------------
