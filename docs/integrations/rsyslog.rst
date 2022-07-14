@@ -144,31 +144,7 @@ need to use one of the following Syslog Endpoints for ``server``:
 Datadog
 ~~~~~~~
 
-For `Datadog <https://www.datadoghq.com/>`_ integration you need to use a custom ``logline`` format
-
-::
-
-   avn service integration-endpoint-create --project your-project \
-       -d datadog -t rsyslog \
-       -c server=intake.logs.datadoghq.com -c port=10516 \
-       -c tls=true -c format=custom \
-       -c logline='DATADOG_API_KEY <%pri%>1 %timestamp:::date-rfc3339% %HOSTNAME% %app-name% - - - %msg%'
-
-.. Note::
-   If you want to use Datadog EU environment, the service address is:
-   
-   * ``server``: ``tcp-intake.logs.datadoghq.eu``
-   * ``port``: ``443``
-
-.. Ideally the following link would use a ``:doc:`` role - for instance:
-
-     :doc:`Aiven and Datadog </docs/integrations/datadog>`
-
-   but a problem with vale means that it would then try to check the URL, and
-   would complain that ``datadog`` is not ``Datadog``.
-
-For further details on sending metrics and logs to Datadog, see the `Aiven and
-Datadog <./datadog.html>`_ page
+For `Datadog <https://www.datadoghq.com/>`_ integration, please see the :doc:`Aiven and Datadog <./datadog>` page
 
 Loggly®
 ~~~~~~~
