@@ -102,7 +102,6 @@ The ``service.tf`` file for the provisioning of these 3 services and integration
     resource "aiven_kafka_connect" "kc" {
       project                 = var.project
       cloud_name              = "google-europe-north1"
-      project_vpc_id          = "francesco-demo/01a413b4-36df-4b1b-a697-fd7f87833494"
       plan                    = "startup-4"
       service_name            = "kc"
       maintenance_window_dow  = "monday"
@@ -161,7 +160,7 @@ The ``service.tf`` file for the provisioning of these 3 services and integration
         "heartbeat.interval.ms"     = 30000
         "heartbeat.action.query"    = "INSERT INTO heartbeat (status) VALUES (1)"
       }
-      depends_on = [aiven_service_integration.i1,aiven_kafka_connect.kc,aiven_pg.demo]
+      depends_on = [aiven_service_integration.i1]
     }
 
 Let's see the different resources we are going to create:
