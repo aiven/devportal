@@ -143,20 +143,19 @@ a {
 
 .sidebar-tree .reference:hover {
   background: none;
-  border-left: 1px solid transparent;
+  border-left: 1px solid var(--color-link);
   font-family: Inter;
-  color: var(--color_brand_content);
+  color: var(--color-link);
 }
 
 .sidebar-tree .current-page > .reference {
   background: none !important;
-  border-left: 1px solid var(--color-brand-content);
-  color: var(--color-brand-content) !important;
+  border-left: 1px solid var(--color-link);
+  color: var(--color-link) !important;
   font-weight: 400 !important;
 }
 
 .sidebar-tree .current > .reference {
-  color: var(--color-link);
   background: none !important;
 }
 

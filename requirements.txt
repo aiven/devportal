@@ -4,7 +4,7 @@ sphinx-autobuild==2021.3.14
 sphinx-panels==0.6.0
 sphinxcontrib-mermaid==0.7.1
 sphinx-external-toc==0.2.3
-sphinx-copybutton==0.4.0
+sphinx-copybutton==0.5.0
 sphinx_gitstamp== 0.3.2
 beautifulsoup4==4.9.3
 opensearch-py==1.0.0
