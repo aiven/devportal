@@ -21,7 +21,7 @@ Describe the setup
 ------------------
 
 This terraform recipe will provision one Aiven PostgreSQL database service, one Aiven for Apache Kafka service, a separate Aiven for Apache Kafka Connect 
-service with a Debezium source connector for PostgreSQL enabled and configured to connect to the PostgreSQL database and capture any change in tables.
+service with a Debezium source connector for PostgreSQL enabled and configured to connect to the PostgreSQL database and capture any change in tables. The peculiarity of this setup is that the the Aiven Apache Kafka service is deployed in Azure cloud whilst the PostgreSQL db is deployed in a Google Cloud like the Aiven Apache Kafka Connector service. Aiven makes it very easy to configure services in different cluods that integrate seamlessly. 
 As soon as any of the monitored tables is inserted or updated with new data, the Debezium connector will capture the data change and convert table data into
 JSON payload and produce messages to the relevant Kafka topic. 
 Some of these services are created in one cloud provider and some in another cloud provider, to demonstrate how easy it is with Aiven to integrate services across 
