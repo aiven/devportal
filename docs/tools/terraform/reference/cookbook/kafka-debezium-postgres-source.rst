@@ -64,9 +64,6 @@ The ``service.tf`` file for the provisioning of these 3 services and integration
       api_token = var.aiven_api_token
     }
 
-    data "aiven_project" "prj" {
-      project = var.project
-    }
 
     resource "aiven_pg" "demo" {
       project      = var.project
