@@ -102,6 +102,7 @@ The ``service.tf`` file for the provisioning of these 3 services and integration
     resource "aiven_kafka_connect" "kc" {
       project                 = var.project
       cloud_name              = "google-europe-north1"
+      project_vpc_id          = "francesco-demo/01a413b4-36df-4b1b-a697-fd7f87833494"
       plan                    = "startup-4"
       service_name            = "kc"
       maintenance_window_dow  = "monday"
