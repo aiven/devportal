@@ -142,7 +142,7 @@ See the Coralogix `Rsyslog <https://coralogix.com/docs/rsyslog/>`_ documentation
 Datadog
 ~~~~~~~
 
-For `Datadog <https://www.datadoghq.com/>`_ integration, please see the `Aiven and Datadog <./datadog.html>`_ page.
+For `Datadog <https://www.datadoghq.com/>`_ integration, please see the `Aiven and Datadog <https://developer.aiven.io/docs/integrations/datadog.html>`_ page.
 
 Loggly®
 ~~~~~~~
