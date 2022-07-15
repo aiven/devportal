@@ -2,7 +2,7 @@ Remote syslog integration
 =========================
 
 In addition to using Aiven for OpenSearch® to store the logs from your
-Aiven services, you can now integrate with an external monitoring system
+Aiven services, you can also integrate with an external monitoring system
 that supports the rsyslog protocol.
 
 Creating rsyslog integration
@@ -87,7 +87,7 @@ button.
 
 
 You should be able to select your previously configured Rsyslog service
-integration by clicking Use integration in the modal window.
+integration by clicking **Use integration** in the modal window.
 
 .. image:: /images/integrations/remote-syslog-service-integrations.png
    :alt: The page that shows the integrations available for a service
@@ -121,6 +121,14 @@ Coralogix
 
 For `Coralogix <https://coralogix.com/>`_ integration you need to use a custom ``logline`` format with your key and company ID.
 
+The Syslog Endpoint to use for ``server`` depends on your account:
+
+-  if it ends with ``.com`` use ``syslogserver.coralogix.com``
+-  if it ends with ``.us`` use ``syslogserver.coralogix.us``
+-  if it ends with ``.in`` use ``syslogserver.app.coralogix.in``
+
+See the Coralogix `Rsyslog <https://coralogix.com/docs/rsyslog/>`_ documentation for more information.
+
 ::
 
    avn service integration-endpoint-create --project your-project \
@@ -131,20 +139,10 @@ For `Coralogix <https://coralogix.com/>`_ integration you need to use a custom `
 
 .. Note:: ``tls`` needs to be set to ``false``.
 
-Depending on whether your account ends in ``.com``, ``.us`` or ``.in``, you will
-need to use one of the following Syslog Endpoints for ``server``:
-
--  ``syslogserver.coralogix.com``
-
--  ``syslogserver.coralogix.us``
-
--  ``syslogserver.app.coralogix.in``
-
-
 Datadog
 ~~~~~~~
 
-For `Datadog <https://www.datadoghq.com/>`_ integration, please see the :doc:`Aiven and Datadog <./datadog>` page.
+For `Datadog <https://www.datadoghq.com/>`_ integration, please see the `Aiven and Datadog <./datadog.html>`_ page.
 
 Loggly®
 ~~~~~~~
@@ -184,6 +182,13 @@ This is so you can prepend your `New Relic License Key <https://docs.newrelic.co
 and ensure the format matches the `built-in Grok
 pattern <https://docs.newrelic.com/docs/logs/ui-data/built-log-parsing-rules/#syslog-rfc5424>`__.
 
+The value to use for ``server`` depends on the account location:
+
+- ``newrelic.syslog.eu.nr-data.net`` for an EU region account (the US endpoint will not work for an EU account)
+- ``newrelic.syslog.nr-data.net`` for other regions
+
+For more information see `Use TCP endpoint to forward logs to New Relic <https://docs.newrelic.com/docs/logs/log-api/use-tcp-endpoint-forward-logs-new-relic/>`_
+
 ::
 
    avn service integration-endpoint-create --project your-project \
@@ -192,15 +197,13 @@ pattern <https://docs.newrelic.com/docs/logs/ui-data/built-log-parsing-rules/#sy
        -c tls=true -c format=custom \
        -c logline='YOUR_LICENSE_KEY <%pri%>%protocol-version% %timestamp:::date-rfc3339% %hostname% %app-name% %procid% %msgid% %structured-data% %msg%'
 
-.. Note:: If you're using an EU region account you should use newrelic.syslog.eu.nr-data.net as the endpoint, instead of newrelic.syslog.nr-data.net. Don't forget to replace it on the configuration files, using the US endpoint for EU account will not work. https://docs.newrelic.com/docs/logs/log-api/use-tcp-endpoint-forward-logs-new-relic/
-
 
 Papertrail
 ~~~~~~~~~~
 
 As `Papertrail <https://www.papertrail.com/>`_ identifies the client based on
 the server and port  you only need to copy the appropriate values from the
-"Log Destinations" page and use those as the values for server and port
+"Log Destinations" page and use those as the values for ``server`` and ``port``
 respectively. You **do not need** the ca-bundle as the Papertrail servers use
 certificates signed by known CAs. You also need to set the format to
 ``rfc3164`` .
@@ -217,7 +220,8 @@ Sumo Logic®
 ~~~~~~~~~~~
 
 For `Sumo Logic <https://www.sumologic.com/>`_
-you need to use a custom ``logline`` format with your collector token and use the server and port of the collector.
+you need to use a custom ``logline`` format with your collector token, use the server and port of the collector,
+and replace ``YOUR_DEPLOYMENT`` with one of ``au``, ``ca``, ``de``, ``eu``, ``fed``, ``in``, ``jp``, ``us1`` or ``us2``. See `Cloud Syslog Source <https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-Syslog-Source>`_ for more information.
 
 ::
 
@@ -226,9 +230,7 @@ you need to use a custom ``logline`` format with your collector token and use th
        -c server=syslog.collection.YOUR_DEPLOYMENT.sumologic.com -c port=6514 \
        -c tls=true -c format=custom \
        -c logline='<%pri%>%protocol-version% %timestamp:::date-rfc3339% %HOSTNAME% %app-name% %procid% %msgid% YOUR_TOKEN %msg%'
-.. Note:: 
-   where YOUR_DEPLOYMENT is au, ca, de, eu, fed, in, jp, us1, or us2 
-   https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-Syslog-Source
+
 
 -----
 
