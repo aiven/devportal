@@ -15,39 +15,27 @@ Let's check out the following diagram to understand the setup.
       subgraph Apache Kafka on Azure
       Topic
       end
-      id1 --->|wal2json plugin| Debezium-Source-Connector-PG -->|publishes changes| Topic
+      id1 --->|wal2json plugin| Debezium-Source-Connector-PG --->|publishes changes| Topic
 
 Describe the setup
 ------------------
 
-This terraform recipe will provision one Aiven for PostgreSQL database service, one Aiven for Apache Kafka service, a separate Aiven for Apache Kafka Connect 
-service with a Debezium source connector for PostgreSQL enabled and configured to connect to the PostgreSQL database and capture any change in tables. The peculiarity of this setup is that the the Aiven for Apache Kafka service is deployed in Azure cloud whilst the PostgreSQL db is deployed in a Google Cloud like the Aiven for Apache Kafka Connector service. Aiven makes it very easy to configure services in different clouds that integrate seamlessly. 
-As soon as any of the monitored tables is inserted or updated with new data, the Debezium connector will capture the data change and convert table data into
-JSON payload and produce messages to the relevant Kafka topic. 
-Some of these services are created in one cloud provider and some in another cloud provider, to demonstrate how easy it is with Aiven to integrate services across 
-multiple cloud vendors.
+This terraform recipe will provision one Aiven for PostgreSQL database service, one Aiven for Apache Kafka service, and a separate Aiven for Apache Kafka Connect  
+service with a Debezium source connector for PostgreSQL enabled and configured to connect to the PostgreSQL database and capture any changes in tables. The Aiven for Apache Kafka service is deployed in the Azure cloud, whereas the PostgreSQL database, like the Aiven for Apache Kafka Connector service, is deployed in the Google Cloud.
+Aiven makes it very easy to configure services in different clouds that integrate seamlessly. As soon as any of the monitored tables is inserted or updated with new data, the Debezium connector will capture the data change and convert table data into
+JSON payload and produce messages to the relevant Kafka topic. Some of these services are created on one cloud provider and some on another cloud provider, to demonstrate how easy it is with Aiven to integrate services across multiple cloud vendors.
 
 .. Warning::
 
-    Aiven provides the option to run Kafka Connect on the same nodes as your Kafka cluster, sharing the resources. This is a low-cost way to get started with Kafka Connect but it is not recommended for Production environments, or scenarios where the deployed Connect cluster needs to be in a different cloud provider/region to the Kafka cluster. For these situations, Aiven recommends the use of a dedicated Aiven for Apache Kafka Connect service
+    Aiven provides the option to run Kafka Connect on the same nodes as your Kafka cluster, sharing the resources. This is a low-cost way to get started with Kafka Connect. A standalone Aiven for Apache Kafka® Connect allows you to scale independently, offers more CPU time and memory for the Kafka Connect service and reduces load on nodes, making the cluster more stable.
 
 
 .. Tip::
 
     Be sure to check out the :doc:`getting started guide <../../get-started>` to learn about the common files required to execute the following recipe.
-    For example, you'll need to declare the variables for ``project``, ``api_token``.
-    These global variables that allow terraform to access the Aiven console and instruct deployments, are normally configured in a separate file called ``secret.tfvars`` and called 
-    in the terraform command line using the option ``--var-file=<path/to/tfvars file>``.
+    For example, you'll need to declare the variables for ``project`` and ``api_token``.
 
-The content of the ``secret.tfvars`` file, looks like this:
-
-.. code::
-
-  project = "my-aiven-project"
-  aiven_api_token = "<AIVEN_TOKEN>"
-  prefix = "anytext"
-
-The ``service.tf`` file for the provisioning of these 3 services and integrations is this:
+The ``services.tf`` file for the provisioning of these three services, service integration, and related resource is this:
 
 .. code:: terraform
 
@@ -164,7 +152,7 @@ The ``service.tf`` file for the provisioning of these 3 services and integration
       depends_on = [aiven_service_integration.i1]
     }
 
-Let's see the different resources we are going to create:
+Let's go over a few of these configurations and understand their functions:
 
 - Version 3.2.1 of the Aiven Terraform provider will be used
 - The PostgreSQL database will be created in "google-europe-north1" cloud provider with a business-4 plan
@@ -175,8 +163,8 @@ Let's see the different resources we are going to create:
 
 
 - The Aiven for Apache Kafka Connect service is configured with public access to allow the service to be accessed through a VPC since we are setting up services in different clouds
-- The resource "aiven_service_integration.i1" configures the integration between the Aiven for Apache Kafka service and the Aiven for Apache Kafka Connect service. This integration uses 2 internal topics for storing status and offset.
-- The last Aiven service that will be provisioned is the Debezium source connector for PostgreSQL, which is specified by the "connector.class" and is configured with the connection strings to access the PostgreSQL database and listen for all data changes on one or more tables. In our case, the table that is monitored for any new data is "tab1" in "defaultdb", in "public" schema. The plugin used is "wal2json" that converts WAL events (WAL stands for Write Ahead Logging) into JSON payload that is sent to the Kafka topic. The Kafka topic that the Debezium connector creates has the name "replicator.public.tab1", where "replicator" is the logical database used by Debezium connector to monitor for data changes and "public" and "tab1" are the name of the PostgreSQL schema and table name respectively. 
+- The resource ``aiven_service_integration.i1`` configures the integration between the Aiven for Apache Kafka service and the Aiven for Apache Kafka Connect service. This integration uses 2 internal topics for storing status and offset.
+- The last Aiven service that will be provisioned is the Debezium source connector for PostgreSQL, which is specified by the "connector.class" and is configured with the connection strings to access the PostgreSQL database and listen for all data changes on one or more tables. In our case, the table that is monitored for any new data is "tab1" in ``defaultdb``, in "public" schema. The plugin used is "wal2json" that converts WAL events (WAL stands for Write Ahead Logging) into JSON payload that is sent to the Kafka topic. The Kafka topic that the Debezium connector creates has the name "replicator.public.tab1", where "replicator" is the logical database used by Debezium connector to monitor for data changes and "public" and "tab1" are the name of the PostgreSQL schema and table name respectively. 
 - The "depends_on" property establishes a dependency between the services creation in order to avoid failures.
 
 More resources
