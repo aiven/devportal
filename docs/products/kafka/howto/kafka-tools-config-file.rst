@@ -6,7 +6,7 @@ Before using the tools, you need to configure a file pointing to a Java keystore
 
 .. note::
 
-    There are no restrictions on the file name, but make sure to use the correct name when performing CLI operations. In the examples below we'll name the file ``configuration.properties```.
+    There are no restrictions on the file name, but make sure to use the correct name when performing CLI operations. In the examples below we'll name the file ``configuration.properties``.
 
 Define the configuration file
 -----------------------------

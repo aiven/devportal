@@ -36,6 +36,13 @@ With ``kafka-console-producer`` you can send multiple messages into your topic.
       --topic target-topic \
       --producer.config {CONFIGURATION_PATH}
 
+Once the connection is successfully established you can send messages one after another by typing them in the terminal. For example:
+
+.. code::
+
+    message1
+    message2
+
 Produce messages with schema
 ----------------------------
 
@@ -50,6 +57,16 @@ With ``kafka-avro-console-producer`` you can include the schema by connecting to
       --property schema.registry.url={SCHEMA_REGISTRY_HOST}:{SCHEMA_REGISTRY_PASSWORD} \
       --property basic.auth.credentials.source=USER_INFO \
       --property basic.auth.user.info={SCHEMA_REGISTRY_USER}:{SCHEMA_REGISTRY_PASSWORD}
+
+After the connection is established you can send messages according to selected schema. For example:
+
+.. code::
+
+    {"id": "1"}
+
+.. note::
+
+    For more details how to use ``kafka-avro-console-producer`` check `Confluent developer documentation <https://docs.confluent.io/platform/current/tutorials/examples/clients/docs/kafka-commands.html#consume-avro-records>`_.
 
 Consume messages
 -----------------
