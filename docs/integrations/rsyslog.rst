@@ -119,7 +119,7 @@ CLI though the examples are easier to copy and paste in the CLI form.
 Coralogix
 ~~~~~~~~~
 
-For `Coralogix <https://coralogix.com/>`_ integration you need to use a custom ``logline`` format
+For `Coralogix <https://coralogix.com/>`_ integration you need to use a custom ``logline`` format with your key and company ID.
 
 ::
 
@@ -129,7 +129,7 @@ For `Coralogix <https://coralogix.com/>`_ integration you need to use a custom `
        -c tls=false -c format=custom \
        -c logline="{\"fields\": {\"private_key\":\"YOUR_CORALOGIX_KEY\",\"company_id\":\"YOUR_COMPANY_ID\",\"app_name\":\"%app-name%\",\"subsystem_name\":\"programname\"},\"message\": {\"message\":\"%msg%\",\"program_name\":\"%programname%\",\"pri_text\":\"%pri%\",\"hostname\":\"%HOSTNAME%\"}}"
 
-.. note:: ``tls`` needs to be set to ``false``.
+.. Note:: ``tls`` needs to be set to ``false``.
 
 Depending on whether your account ends in ``.com``, ``.us`` or ``.in``, you will
 need to use one of the following Syslog Endpoints for ``server``:
@@ -144,44 +144,42 @@ need to use one of the following Syslog Endpoints for ``server``:
 Datadog
 ~~~~~~~
 
-For `Datadog <https://www.datadoghq.com/>`_ integration, please see the :doc:`Aiven and Datadog <./datadog>` page
+For `Datadog <https://www.datadoghq.com/>`_ integration, please see the :doc:`Aiven and Datadog <./datadog>` page.
 
 Loggly®
 ~~~~~~~
 
 For
 `Loggly <https://www.loggly.com/>`_
-integration, as well the server and port you also need a *customer token*
-which you then **must** give as part of the ``-c sd`` parameter when
-creating the endpoint.
+integration, you need to use a custom ``logline`` format with your token.
 
 ::
 
    avn service integration-endpoint-create --project your-project \
-       -d loggly -t rsyslog \
-       -c server=logs-01.loggly.com -c port=514 \
-       -c format=rfc5424 -c tls=true \
-       -c sd='TOKEN@NNNNN TAG="tag-of-your-choice"'
+       -d loggly -t rsyslog \
+       -c server=logs-01.loggly.com -c port=6514 \
+       -c tls=true -c format=custom \
+       -c logline='<%pri%>%protocol-version% %timestamp:::date-rfc3339% %HOSTNAME% %app-name% %procid% %msgid% TOKEN tag="RsyslogTLS"] %msg%'
 
 
 Mezmo (LogDNA)
 ~~~~~~~~~~~~~~
 
-For `Mezmo <https://www.mezmo.com/>`_ syslog integration you need to use a custom ``logline`` format
+For `Mezmo <https://www.mezmo.com/>`_ syslog integration you need to use a custom ``logline`` format with your key.
 
 ::
 
    avn service integration-endpoint-create --project your-project \
-       -d logdna -t rsyslog \
-       -c server=syslog-a.logdna.com -c port=6514 \
-       -c tls=true -c format=custom \
-       -c logline='<%pri%>%protocol-version% %timestamp:::date-rfc3339% %hostname% %app-name% %procid% %msgid% [logdna@48950 key="YOUR_KEY_GOES_HERE"] %msg%'
+      -d logdna -t rsyslog \
+      -c server=syslog-a.logdna.com -c port=6514 \
+      -c tls=true -c format=custom \
+      -c logline='<%pri%>%protocol-version% %timestamp:::date-rfc3339% %HOSTNAME% %app-name% %procid% %msgid% [logdna@48950 key="YOUR_KEY_GOES_HERE"] %msg%'
 
 
 New Relic
 ~~~~~~~~~
 
-For `New Relic <https://newrelic.com/>`_ Syslog integration you need to use a custom ``logline`` format.
+For `New Relic <https://newrelic.com/>`_ Syslog integration you need to use a custom ``logline`` format with your license key.
 This is so you can prepend your `New Relic License Key <https://docs.newrelic.com/docs/apis/intro-apis/new-relic-api-keys/#license-key>`__
 and ensure the format matches the `built-in Grok
 pattern <https://docs.newrelic.com/docs/logs/ui-data/built-log-parsing-rules/#syslog-rfc5424>`__.
@@ -192,7 +190,9 @@ pattern <https://docs.newrelic.com/docs/logs/ui-data/built-log-parsing-rules/#sy
        -d newrelic -t rsyslog \
        -c server=newrelic.syslog.nr-data.net -c port=6514 \
        -c tls=true -c format=custom \
-       -c logline='NEWRELIC_LICENSE_KEY <%pri%>%protocol-version% %timestamp:::date-rfc3339% %hostname% %app-name% %procid% %msgid% -  %msg%'
+       -c logline='YOUR_LICENSE_KEY <%pri%>%protocol-version% %timestamp:::date-rfc3339% %hostname% %app-name% %procid% %msgid% %structured-data% %msg%'
+
+.. Note:: If you're using an EU region account you should use newrelic.syslog.eu.nr-data.net as the endpoint, instead of newrelic.syslog.nr-data.net. Don't forget to replace it on the configuration files, using the US endpoint for EU account will not work. https://docs.newrelic.com/docs/logs/log-api/use-tcp-endpoint-forward-logs-new-relic/
 
 
 Papertrail
@@ -208,25 +208,27 @@ certificates signed by known CAs. You also need to set the format to
 ::
 
    avn service integration-endpoint-create --project your-project \
-       -d papertrail -t rsyslog \
-       -c server=logsN.papertrailapp.com -c port=XXXXX \
-       -c format=rfc3164 -c tls=true
+       -d papertrail -t rsyslog \
+       -c server=logsN.papertrailapp.com -c port=XXXXX \
+       -c tls=true -c format=rfc3164 
 
 
 Sumo Logic®
 ~~~~~~~~~~~
 
 For `Sumo Logic <https://www.sumologic.com/>`_
-you need to the give the collector token as the ``-c sd`` parameter and
-use the server and port of the collector.
+you need to use a custom ``logline`` format with your collector token and use the server and port of the collector.
 
 ::
 
    avn service integration-endpoint-create --project your-project \
-       -d loggly -t rsyslog \
-       -c server=syslog.collection.XX.sumologic.com -c port=6514 \
-       -c tls=true -c format=rfc5424 \
-       -c sd='collector-token-string@NNNNN'
+       -d sumologic -t rsyslog \
+       -c server=syslog.collection.YOUR_DEPLOYMENT.sumologic.com -c port=6514 \
+       -c tls=true -c format=custom \
+       -c logline='<%pri%>%protocol-version% %timestamp:::date-rfc3339% %HOSTNAME% %app-name% %procid% %msgid% YOUR_TOKEN %msg%'
+.. Note:: 
+   where YOUR_DEPLOYMENT is au, ca, de, eu, fed, in, jp, us1, or us2 
+   https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-Syslog-Source
 
 -----
 
