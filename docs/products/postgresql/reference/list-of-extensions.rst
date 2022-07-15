@@ -92,9 +92,6 @@ Auditing
 ``moddatetime`` - https://www.postgresql.org/docs/10/contrib-spi.html#id-1.11.7.46.9
     Functions for tracking last modification time.
 
-``pgaudit`` - https://www.pgaudit.org/
-    Provides auditing functionality.  |PG11onwards|
-
 ``tcn`` - https://www.postgresql.org/docs/current/tcn.html
     Triggered change notifications.
 
