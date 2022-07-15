@@ -30,4 +30,4 @@ Available integrations
     * :doc:`/docs/products/opensearch/howto/opensearch-log-integration`
     * :doc:`Datadog </docs/integrations/datadog>`
     * :doc:`Amazon CloudWatch </docs/integrations/cloudwatch>`
-    * `RSyslog integration <https://help.aiven.io/en/articles/2933115-remote-syslog-integration>`_
+    * :doc:`RSyslog integration </docs/integrations/rsyslog>`
