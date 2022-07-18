@@ -31,7 +31,7 @@ entries:
       - file: docs/platform/concepts/enhanced-compliance-env
       - file: docs/platform/concepts/disaster-recovery-test-scenarios
       - file: docs/platform/concepts/choosing-timeseries-database
-      - file: docs/platform/concepts/trouble-upgrading
+      - file: docs/platform/concepts/plan-upgrades
     - file: docs/platform/howto
       title: HowTo
       entries:
