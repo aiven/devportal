@@ -42,14 +42,13 @@ To have ksqlDB working with Aiven's `Karapace <https://karapace.io/>`__ Schema R
             /END CERT/ {last=t; t=""; s=0}; END{print last}' \
         > ca_schema_registry.cert
 
-2. Create the truststore with the following ``keytool`` command  by replacing the ``TRUSTSTORE_SCHEMA_REGISTRY_FILE_NAME`` placeholder::
+2. Create the truststore with the following ``keytool`` command  by replacing the ``TRUSTSTORE_SCHEMA_REGISTRY_FILE_NAME`` and ``TRUSTSTORE_SCHEMA_REGISTRY_PASSWORD`` placeholder::
 
     keytool -import -file ca_schema_registry.cert \
         -alias CA \
-        -keystore \
-        TRUSTSTORE_SCHEMA_REGISTRY_FILE_NAME
-   
-   You'll be prompted to insert a password, which in this example is referenced by the placeholder ``TRUSTSTORE_SCHEMA_REGISTRY_PASSWORD``
+        -keystore TRUSTSTORE_SCHEMA_REGISTRY_FILE_NAME \
+        -storepass TRUSTSTORE_SCHEMA_REGISTRY_PASSWORD \
+        -noprompt
 
 .. Tip::
 
@@ -100,6 +99,36 @@ You can run ksqlDB on Docker with the following command, by replacing the placeh
 .. Tip::
 
     ``USER_INFO`` is **not** a placeholder, but rather a literal that shouldn't be changed
+
+.. Warning::
+
+    Some docker setup has issues using mounting options ``-v``, in those cases copying the Keystore and Truststore in the container could be an easier option. This can be achieved with the following::
+
+        docker container create --name ksql  \
+            -p 127.0.0.1:8088:8088 \
+            -e KSQL_BOOTSTRAP_SERVERS=APACHE_KAFKA_HOST:APACHE_KAFKA_PORT \
+            -e KSQL_LISTENERS=http://0.0.0.0:8088/ \
+            -e KSQL_KSQL_SERVICE_ID=ksql_service_1_ \
+            -e KSQL_OPTS="-Dsecurity.protocol=SSL
+                -Dssl.keystore.type=PKCS12
+                -Dssl.keystore.location=/home/appuser/KEYSTORE_FILE_NAME
+                -Dssl.keystore.password=SSL_KEYSTORE_PASSWORD
+                -Dssl.key.password=SSL_KEY_PASSWORD
+                -Dssl.truststore.type=JKS
+                -Dssl.truststore.location=/home/appuser/TRUSTSTORE_FILE_NAME
+                -Dssl.truststore.password=SSL_TRUSTSTORE_PASSWORD
+                -Dksql.schema.registry.url=APACHE_KAFKA_HOST:SCHEMA_REGISTRY_PORT
+                -Dksql.schema.registry.basic.auth.credentials.source=USER_INFO
+                -Dksql.schema.registry.basic.auth.user.info=avnadmin:SCHEMA_REGISTRY_PASSWORD
+                -Dksql.schema.registry.ssl.truststore.location=/home/appuser/TRUSTSTORE_SCHEMA_REGISTRY_FILE_NAME
+                -Dksql.schema.registry.ssl.truststore.password=TRUSTSTORE_SCHEMA_REGISTRY_PASSWORD" \
+            confluentinc/ksqldb-server:0.23.1
+        docker cp KEYSTORE_FILE_NAME ksql:/home/appuser/
+        docker cp TRUSTSTORE_FILE_NAME ksql:/home/appuser/
+        docker cp TRUSTSTORE_SCHEMA_REGISTRY_FILE_NAME ksql:/home/appuser/
+        docker start ksql
+
+
 
 Once the Docker image is up and running you should be able to access ksqlDB's at ``localhost:8088`` or connect via terminal with the following command::
 
