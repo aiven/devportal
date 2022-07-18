@@ -60,7 +60,9 @@ The output should be similar to the below
 
 .. Warning::
 
-    If you have not previously set a logging level for a connector's logger class, then the list of loggers retrieved above will not show any logger level information of that connector's logger class, even if that connector is currently running in the Aiven for Apache Kafka Connect cluster. See the next section on how to change the logging level of a particular logger.
+    The previous command shows the standard list of loggers (``org.apache.zookeeper``, ``org.reflections`` and ``root``) and any loggers for which the logging level has been already modified.
+    
+    Therefore, if you have not previously set a custom logging level for a connector's logger class, the related logger level information will not be visible in the list, even if that connector is currently running in the Kafka Connect cluster. The next section describes how to change the logging level of a particular logger.
 
 Change the logging level for a particular logger
 ''''''''''''''''''''''''''''''''''''''''''''''''
@@ -82,29 +84,31 @@ For example, when we set a custom log level for the logger ``io.debezium.connect
 
 .. code-block:: json
 
-    "io.debezium.connector.postgresql.connection.AbstractMessageDecoder": {
-        "level": "TRACE"
-    },
-    "io.debezium.connector.postgresql.connection.PostgresConnection": {
-        "level": "TRACE"
-    },
-    "io.debezium.connector.postgresql.connection.PostgresDefaultValueConverter": {
-        "level": "TRACE"
-    },
-    "io.debezium.connector.postgresql.connection.PostgresReplicationConnection": {
-        "level": "TRACE"
-    },
-    "io.debezium.connector.postgresql.connection.pgproto.PgProtoMessageDecoder": {
-        "level": "TRACE"
+    {
+        "io.debezium.connector.postgresql.connection.AbstractMessageDecoder": {
+            "level": "TRACE"
+        },
+        "io.debezium.connector.postgresql.connection.PostgresConnection": {
+            "level": "TRACE"
+        },
+        "io.debezium.connector.postgresql.connection.PostgresDefaultValueConverter": {
+            "level": "TRACE"
+        },
+        "io.debezium.connector.postgresql.connection.PostgresReplicationConnection": {
+            "level": "TRACE"
+        },
+        "io.debezium.connector.postgresql.connection.pgproto.PgProtoMessageDecoder": {
+            "level": "TRACE"
+        }
     }
 
 
-A note about loggers
-''''''''''''''''''''
+Get the connector class name
+''''''''''''''''''''''''''''
 
 Loggers are Java objects which trigger log events, and each log message produced by the application is sent to a specific logger. Loggers are arranged in hierarchies, for example the logger ``io.debezium.connector.postgresql.PostgresConnector`` is a child of the logger ``io.debezium.connector.postgresql``. When you define the logging level of a logger using the commands above, the logging level will be set for that logger and all of its children in the logger hierarchy.
 
-By convention, loggers have the same name as the corresponding Java class.  Therefore, to get name of the logger of a particular connector, use the connector's classname. The classname is usually the first field of the connector config when you select a connector for creation in the Aiven Console. For example, the logger for the Debezium PostgreSQL® source connector is also its classname ``io.debezium.connector.postgresql``:
+By convention, loggers have the same name as the corresponding Java class. Therefore, to get name of the logger of a particular connector, use the connector's classname. The classname is usually the first field of the connector config when you select a connector for creation in the Aiven Console. For example, the logger for the Debezium PostgreSQL® source connector is also its classname ``io.debezium.connector.postgresql``:
 
 .. code-block:: json
 
