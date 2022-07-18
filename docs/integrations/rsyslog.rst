@@ -232,6 +232,22 @@ and replace ``YOUR_DEPLOYMENT`` with one of ``au``, ``ca``, ``de``, ``eu``, ``fe
        -c logline='<%pri%>%protocol-version% %timestamp:::date-rfc3339% %HOSTNAME% %app-name% %procid% %msgid% YOUR_TOKEN %msg%'
 
 
+Logtail
+~~~~~~~
+
+For
+`Logtail <https://logtail.com/>`_
+integration, you need to use a custom ``logline`` format with your token.
+
+::
+
+   avn service integration-endpoint-create --project your-project \
+       -d logtail -t rsyslog \
+       -c server=in.logtail.com -c port=6514 \
+       -c tls=true -c format=custom \
+       -c logline='<%pri%>%protocol-version% %timestamp:::date-rfc3339% %HOSTNAME% %app-name% %procid% %msgid% [logtail@11993 source_token="TOKEN-FROM-LOGTAIL"] %msg%'
+
+
 -----
 
 The Loggly trademark is the exclusive
