@@ -133,10 +133,10 @@ The ``services.tf`` file for the provisioning of these three services, service i
         "name"            = "kafka-pg-source"
         "connector.class" = "io.debezium.connector.postgresql.PostgresConnector",
         "snapshot.mode"   = "initial"
-        "database.hostname" : aiven_pg.demo.service_host
-        "database.port" : aiven_pg.demo.service_port
-        "database.password" : aiven_pg.demo.service_password
-        "database.user" : aiven_pg.demo.service_username
+        "database.hostname" = aiven_pg.demo.service_host
+        "database.port" = aiven_pg.demo.service_port
+        "database.password" = aiven_pg.demo.service_password
+        "database.user" = aiven_pg.demo.service_username
         "database.dbname"           = "defaultdb"
         "database.server.name"      = "replicator"
         "database.ssl.mode"         = "require"
