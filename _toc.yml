@@ -232,6 +232,7 @@ entries:
               - file: docs/products/kafka/howto/kafka-streams-with-aiven-for-kafka
               - file: docs/products/kafka/howto/datadog-customised-metrics
               - file: docs/products/kafka/howto/ksql-docker
+                title: Use ksqlDB with Aiven for Apache Kafka
           - file: docs/products/kafka/howto/list-topic-schema
             title: Topic/schema management
             entries:
