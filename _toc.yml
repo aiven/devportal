@@ -132,6 +132,8 @@ entries:
           entries:
             - file: docs/tools/terraform/howto/upgrade-provider-v1-v2
               title: Upgrade the Aiven Terraform Provider from v1 to v2
+            - file: docs/tools/terraform/howto/config-postgresql-provider
+              title: Configure PostgreSQL provider for Aiven PG services  
         - file: docs/tools/terraform/concepts
           title: Concepts
           entries:
