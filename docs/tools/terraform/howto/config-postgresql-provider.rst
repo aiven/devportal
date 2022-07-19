@@ -2,7 +2,7 @@ Use PostgreSQL® provider with Aiven's PostgreSQL service
 #####################################################
 
 Aiven's Terraform provider is aimed for provisioning and performing basic service configuration, if additional configuration on the service is required there are other providers that can be used to perform the task. 
-This article shows how to use the `PostgreSQL® provider <https://registry.terraform.io/providers/cyrilgdn/postgresql/latest/docs>`_ along the ``Aiven Postgres service``.   
+This article shows how to use the `PostgreSQL® provider <https://registry.terraform.io/providers/cyrilgdn/postgresql/latest/docs>`_ along with the ``Aiven Postgres service``.   
 
 
 Configure the required providers
