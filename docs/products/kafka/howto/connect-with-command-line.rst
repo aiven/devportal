@@ -14,7 +14,7 @@ get the Confluent platform using the **Tar archive** option at `Quick Start for 
 .. note:: You do not need to install the Confluent platform to use the ``kafka-avro-console-producer`` tool with an Aiven for Apache Kafka service that is using Karapace.
 
 To setup the configuration file needed by all three tools, follow
-`the guide to set up properties to use the Apache Kafka toolbox <kafka-tools-config-file.html>`_
+`the guide to set up properties to use the Apache Kafka toolbox`_.
 
 Variables
 ---------
@@ -24,13 +24,17 @@ Variable                     Description
 ========================     ===========================================================================================
 ``HOST``                     Host name for the connection
 ``PORT``                     Port number to use for the Kafka service
-``CONFIGURATION_PATH``       Path to your configuration file `for Apache Kafka toolbox <kafka-tools-config-file.html>`_.
+``CONFIGURATION_PATH``       Path to your configuration file `for Apache Kafka toolbox`_
 ``SCHEMA_REGISTRY_HOST``     Host name for your schema registry
 ``SCHEMA_REGISTRY_PORT``     Port number for your schema registry
 ``SCHEMA_REGISTRY_USER``     User name for your schema registry
 ``SCHEMA_REGISTRY_PWD``      Password for your schema registry
 ``TARGET_TOPIC``             The name of the Kafka topic to be written to/read from
 ========================     ===========================================================================================
+
+.. _`the guide to set up properties to use the Apache Kafka toolbox`: toolbox_
+.. _`for Apache Kafka toolbox`: toolbox_
+.. _toolbox: https://developer.aiven.io/docs/products/kafka/howto/kafka-tools-config-file.html
 
 In the command lines below, values in ``{`` and ``}`` are to be replaced - so ``{PORT}`` would be replaced by the appropriate port number, for instance ``12345``.
 
