@@ -22,9 +22,9 @@ Here's an example of how to add an ACL entry granting a user named ``user_1`` re
 
 .. Tip::
     
-    The Aiven CLI command ``service schema-registry-acl-list`` allows you to list the ACL entries already defined. ``service schema-registry-acl-delete`` allows you to delete an ACL entry.
+    The Aiven CLI command ``avn service schema-registry-acl-list`` allows you to list the ACL entries already defined. ``avn service schema-registry-acl-delete`` allows you to delete an ACL entry.
 
-Additionally the :doc:`Aiven Aiven Terraform provider </docs/tools/terraform>` supports managing Karapace schema registry authorization ACL entries with ``aiven_kafka_schema_registry_acl`` resource. See  `the resource documentation  <https://registry.terraform.io/providers/aiven/aiven/latest/docs/resources/kafka_schema_registry_acl>`_ for more details.
+Additionally the :doc:`Aiven Aiven Terraform provider </docs/tools/terraform>` supports managing Karapace schema registry authorization ACL entries with the ``aiven_kafka_schema_registry_acl`` resource. See  `the resource documentation  <https://registry.terraform.io/providers/aiven/aiven/latest/docs/resources/kafka_schema_registry_acl>`_ for more details.
 
 .. code:: terraform
 
