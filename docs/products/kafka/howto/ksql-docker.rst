@@ -1,9 +1,9 @@
 Use ksqlDB with Aiven for Apache Kafka®
 =======================================
 
-Aiven provides a managed Apache Kafka® solution together with a number of auxiliary services like Apache Kafka Connect, Kafka REST and Schema Registry via `Karapace <https://github.com/aiven/karapace>`_. A managed `ksqlDB <https://ksqldb.io/>`_ service in Aiven is, however, not supported. if you want to define streaming data pipelines with SQL, you have two options:
+Aiven provides a managed Apache Kafka® solution together with a number of auxiliary services like Apache Kafka Connect, Kafka REST and Schema Registry via `Karapace <https://github.com/aiven/karapace>`_. A managed `ksqlDB <https://ksqldb.io/>`_ service in Aiven is, however, not supported. If you want to define streaming data pipelines with SQL, you have two options:
 
-* Use :doc:`Aiven for Apache Flink </docs/products/flink/index>` 
+* Use `Aiven for Apache Flink® <https://developer.aiven.io/docs/products/flink.html>`_
 * Run a self-hosted ksqlDB cluster.
 
 
@@ -17,7 +17,7 @@ Furthermore, you need to collect the following information:
 * ``APACHE_KAFKA_HOST``: The Aiven for Apache Kafka hostname
 * ``APACHE_KAFKA_PORT``: The Aiven for Apache Kafka port
 * ``SCHEMA_REGISTRY_PORT``: The Aiven for Apache Kafka schema registry port, if enabled
-* ``SCHEMA_REGISTRY_PASSWORD``: The password associated to the ``avnadmin`` user for Schema Registry
+* ``SCHEMA_REGISTRY_PASSWORD``: The password associated with the ``avnadmin`` user for Schema Registry
 * ``KEYSTORE_FILE_NAME``: The name of the Java keystore containing the Aiven for Apache Kafka SSL certificates
 * ``TRUSTSTORE_FILE_NAME``: The name of the Java truststore containing the Aiven for Apache Kafka SSL certificates
 * ``SSL_KEYSTORE_PASSWORD``: The password used to secure the Java keystore
@@ -42,7 +42,7 @@ To have ksqlDB working with Aiven's `Karapace <https://karapace.io/>`__ Schema R
             /END CERT/ {last=t; t=""; s=0}; END{print last}' \
         > ca_schema_registry.cert
 
-2. Create the truststore with the following ``keytool`` command  by replacing the ``TRUSTSTORE_SCHEMA_REGISTRY_FILE_NAME`` and ``TRUSTSTORE_SCHEMA_REGISTRY_PASSWORD`` placeholder::
+2. Create the truststore with the following ``keytool`` command  by replacing the ``TRUSTSTORE_SCHEMA_REGISTRY_FILE_NAME`` and ``TRUSTSTORE_SCHEMA_REGISTRY_PASSWORD`` placeholders::
 
     keytool -import -file ca_schema_registry.cert \
         -alias CA \
@@ -52,7 +52,7 @@ To have ksqlDB working with Aiven's `Karapace <https://karapace.io/>`__ Schema R
 
 .. Tip::
 
-    The ``TRUSTSTORE_SCHEMA_REGISTRY_FILE_NAME`` can be any name with extension should be ``.jks``
+    The ``TRUSTSTORE_SCHEMA_REGISTRY_FILE_NAME`` can be any name but the extension should be ``.jks``
 
 
 Run ksqlDB on Docker
@@ -102,7 +102,7 @@ You can run ksqlDB on Docker with the following command, by replacing the placeh
 
 .. Warning::
 
-    Some docker setup has issues using mounting options ``-v``, in those cases copying the Keystore and Truststore in the container could be an easier option. This can be achieved with the following::
+    Some docker setups have issues using the ``-v`` mounting options. In those cases copying the Keystore and Truststore in the container can be an easier option. This can be achieved with the following::
 
         docker container create --name ksql  \
             -p 127.0.0.1:8088:8088 \
@@ -130,6 +130,6 @@ You can run ksqlDB on Docker with the following command, by replacing the placeh
 
 
 
-Once the Docker image is up and running you should be able to access ksqlDB's at ``localhost:8088`` or connect via terminal with the following command::
+Once the Docker image is up and running you should be able to access ksqlDB at ``localhost:8088`` or connect via terminal with the following command::
 
     docker exec -it ksql ksql
