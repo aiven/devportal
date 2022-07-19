@@ -3,18 +3,21 @@ Rotating Grafana® service credentials
 
 In the interests of security, it is best practice to rotate credentials from time-to-time.
 
-For Grafana®, a few steps need to be performed manually to do this. You will need to have access to a web browser and need to have `aiven-client (avn) <https://developer.aiven.io/docs/tools/cli.html>`_ installed.
+For Grafana®, a few steps need to be performed manually to do this. You will need to have access to a web browser,
+and to have installed ``avn``, the `Aiven CLI tool <https://developer.aiven.io/docs/tools/cli.html>`_.
 
-1. Login with the ``avnadmin`` credentials via the web browser to the Grafana instance from the Service URI displayed on the Aiven Console.
+1. In the web browser, go to the `Aiven Console <https://console.aiven.io/>`_ page for your Grafana service.
 
-2. In the bottom-left of Grafana is a small avatar displayed above the help icon. Hover over it, and click Change password.
+2. Login to the Grafana instance at the Service URI displayed on that page, using the ``avnadmin`` credentials.
+
+3. In the bottom-left of Grafana is a small avatar displayed above the help icon. Hover over it, and click Change password.
 
    .. image:: /images/products/grafana/grafana-credentials.png
       :alt: Aiven Administrator in Grafana
 
-3. Change the password and make a note of it somewhere safe.
+4. Change the password and make a note of it somewhere safe.
 
-4. Login to aiven-client and then run the following command to update the stored password in the console :: 
+5. Login with ``avn`` and then run the following command to update the stored password in the console ::
 
     avn service user-password-reset \
       --username avnadmin \
@@ -28,4 +31,4 @@ For Grafana®, a few steps need to be performed manually to do this. You will ne
          --new-password my_super_secure_password \
          my-grafana-service
 
-5. Refresh the Aiven Console and the new password should now be displayed for the ``avnadmin`` user.
+6. Refresh the Aiven Console and the new password should now be displayed for the ``avnadmin`` user.
