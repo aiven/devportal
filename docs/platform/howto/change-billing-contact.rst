@@ -10,19 +10,18 @@ Add a new payment card
 ~~~~~~~~~~~~~~~~~~~~~~
 To add a new payment card and change the billing contact: 
 
--  In the `Aiven web console <https://console.aiven.io/>`_, click the **User information** icon on the top right of the screen to view the User profile. 
+1. In the `Aiven web console <https://console.aiven.io/>`_, click the **User information** icon on the top right of the screen to view the User profile. 
   
 .. image:: /images/platform/howto/billing_user_information.png
+   :alt: Select the user information icon to view billing contact
 
--  | Next, click the **Payment Options** tab.
-
-.. image:: /images/platform/howto/billing_payment_options.png
-
--  | Enter the new credit card details and click **Save card**.
--  In the new card added, assign the project(s) from the previous card
+2. Next, click the **Payment Options** tab.
+3. Enter the new credit card details and click **Save card**.
+4. In the new card added, assign the project(s) from the previous card
    by clicking on **assign to project** .
 
 .. image:: /images/platform/howto/billing_assign_card.png
+   :alt: Assign payment card to projects
 
 Once the project(s) are assigned, the new billing contact is set, and you can delete the previous billing contact user if needed. 
 
