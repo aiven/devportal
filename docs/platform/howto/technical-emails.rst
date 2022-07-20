@@ -1,4 +1,4 @@
-Receive Technical Notifications
+Receive technical notifications
 ===============================
 
 After creating services on Aiven you will want to make sure you stay
