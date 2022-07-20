@@ -3,7 +3,7 @@ Manage Apache Kafka® Connect logging level
 
 During the operation of an Aiven for Apache Kafka® Connect cluster, you may encounter errors from one or more running connectors. Sometimes the stack trace printed in the logs is useful in determining the root cause of an issue, while other times the information provided just isn't enough to work with.
 
-Therefore you might need access to more detailed logs to debug an issue. This can be done for a specific logger or connector by setting the logging level of an Apache Kafka® Connect cluster using the `Kafka Connect REST APIs <https://kafka.apache.org/documentation.html>`__.
+It is possible to get access to more detailed logs to debug an issue. This can be done for a specific logger or connector by setting the logging level of an Apache Kafka® Connect cluster using the `Kafka Connect REST APIs <https://kafka.apache.org/documentation.html>`__.
 
 .. Warning::
 
@@ -62,7 +62,7 @@ The output should be similar to the following
 
     The previous command shows the standard list of loggers (``org.apache.zookeeper``, ``org.reflections`` and ``root``) and any loggers for which the logging level has been already modified.
     
-    Therefore, if you have not previously set a custom logging level for a connector's logger class, the related logger level information will not be visible in the list, even if that connector is currently running in the Kafka Connect cluster. The next section describes how to change the logging level of a particular logger.
+    This means that if you have not previously set a custom logging level for a connector's logger class, the related logger level information will not be visible in the list, even if that connector is currently running in the Kafka Connect cluster. The next section describes how to change the logging level of a particular logger.
 
 Change the logging level for a particular logger
 ''''''''''''''''''''''''''''''''''''''''''''''''
@@ -108,7 +108,8 @@ Get the connector class name
 
 Loggers are Java objects which trigger log events, and each log message produced by the application is sent to a specific logger. Loggers are arranged in hierarchies, for example the logger ``io.debezium.connector.postgresql.PostgresConnector`` is a child of the logger ``io.debezium.connector.postgresql``. When you define the logging level of a logger using the commands above, the logging level will be set for that logger and all of its children in the logger hierarchy.
 
-By convention, loggers have the same name as the corresponding Java class. Therefore, to get name of the logger of a particular connector, use the connector's class name. The class name is usually the first field of the connector configuration when you select a connector for creation in the Aiven Console. For example, the logger for the Debezium PostgreSQL® source connector is also its class name ``io.debezium.connector.postgresql``:
+By convention, loggers have the same name as the corresponding Java class.
+To get the name of the logger for a particular connector, use the connector's class name. The class name is usually the first field of the connector configuration when you select a connector for creation in the Aiven Console. For example, the logger for the Debezium PostgreSQL® source connector is also its class name ``io.debezium.connector.postgresql``:
 
 .. code-block:: json
 
