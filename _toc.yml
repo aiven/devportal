@@ -273,6 +273,8 @@ entries:
             - file: docs/products/kafka/kafka-connect/howto/bring-your-own-kafka-connect-cluster
             - file: docs/products/kafka/kafka-connect/howto/enable-connect
             - file: docs/products/kafka/kafka-connect/howto/enable-automatic-restart
+            - file: docs/products/kafka/kafka-connect/howto/manage-logging-level
+              title: Manage Kafka Connect logging level
           - file: docs/products/kafka/kafka-connect/howto/list-source-connectors
             entries:
             - file: docs/products/kafka/kafka-connect/howto/jdbc-source-connector-pg
