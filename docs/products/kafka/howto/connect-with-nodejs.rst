@@ -50,6 +50,8 @@ Variable                     Description
 ``CONSUMER_GROUP``           Consumer group to read the data
 ========================     =======================================================================================================
 
+Replace the variables above in the code examples below.
+
 With SSL authentication
 ------------------------
 
@@ -62,7 +64,7 @@ Create a producer
     console.log(Kafka.features); // this should print 'ssl', among other things
 
     const producer = new Kafka.Producer({
-        'metadata.broker.list': '{HOST}:{SSL_PORT}',
+        'metadata.broker.list': HOST:SSL_PORT,
         'security.protocol': 'ssl',
         'ssl.key.location': 'service.key',
         'ssl.certificate.location': 'service.cert',
@@ -76,6 +78,10 @@ Create a producer
         // produce the messages and disconnect
     });
 
+Add the ``producer.produce()`` command with the details of the message to produce.
+
+.. tip:: The consumer expects the messages to be in a topic named ``demo-topic``,
+
 Create a consumer
 #################
 
@@ -84,8 +90,8 @@ Create a consumer
     const Kafka = require('node-rdkafka');
 
     const stream = new Kafka.createReadStream({
-        'metadata.broker.list': '{HOST}:{SSL_PORT}',
-        'group.id': '{CONSUMER_GROUP}',
+        'metadata.broker.list': HOST:SSL_PORT,
+        'group.id': CONSUMER_GROUP,
         'security.protocol': 'ssl',
         'ssl.key.location': 'service.key',
         'ssl.certificate.location': 'service.cert',
@@ -96,12 +102,15 @@ Create a consumer
         // process message
     });
 
+The consumer will consume new messages sent to the topics listed. To see your consumer in action, run the producer as well, and try using ``console.log`` to inspect the message that is received.
 
 With SASL authentication
 -------------------------
 
-Create a producer:
-###################
+If you prefer to authenticate with SASL, the setup for the producer and consumer looks slightly different so we have included examples of these here.
+
+Create a producer
+#################
 
 .. code:: js
 
@@ -109,11 +118,11 @@ Create a producer:
     console.log(Kafka.features); // this should print 'sasl_ssl', among other things
 
     const producer = new Kafka.Producer({
-        'metadata.broker.list': '{HOST}:{SASL_PORT}',
+        'metadata.broker.list': HOST:SASL_PORT,
         'security.protocol': 'sasl_ssl',
-        'sasl.mechanism': '{SASL_MECHANISM}',
-        'sasl.username': '{USER_NAME}',
-        'sasl.password': '{SASL_PASSWORD}',
+        'sasl.mechanism': SASL_MECHANISM,
+        'sasl.username': USER_NAME,
+        'sasl.password': SASL_PASSWORD,
         'ssl.ca.location': 'ca.pem',
         'dr_cb': true
     });
@@ -124,23 +133,29 @@ Create a producer:
       // produce the messages and disconnect
     });
 
-Create the consumer
-###################
+Add the ``producer.produce()`` command with the details of the message to produce.
+
+.. tip:: The consumer expects the messages to be in a topic named ``demo-topic``,
+
+Create a consumer
+#################
 
 .. code:: js
 
     const Kafka = require('node-rdkafka');
 
     const stream = new Kafka.createReadStream({
-        'metadata.broker.list': '{HOST}:{SASL_PORT}',
-        'group.id': '{CONSUMER_GROUP}',
+        'metadata.broker.list': HOST:SASL_PORT,
+        'group.id': CONSUMER_GROUP,
         'security.protocol': 'sasl_ssl',
-        'sasl.mechanism': {SASL_MECHANISM}
-        'sasl.username': '{USER_NAME}',
-        'sasl.password': '{SASL_PASSWORD}',
+        'sasl.mechanism': SASL_MECHANISM,
+        'sasl.username': USER_NAME,
+        'sasl.password': SASL_PASSWORD,
         'ssl.ca.location': 'ca.pem'
     }, {}, {'topics': ['demo-topic']});
 
     stream.on('data', (message) => {
         // process message
     });
+
+For a quick way to test that messages are arriving, use ``console.log`` to inspect the message when it arrives. Run the producer at the same time, and see messages arriving in the consumer.
