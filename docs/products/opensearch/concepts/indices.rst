@@ -77,6 +77,10 @@ values for plan sizing.
 * `Download XLSX <https://docs.google.com/spreadsheets/d/1wJwzSdnQiGIADcxb6yx1cFjDR0LEz-pg13U-Mt2PEHc/export>`_ - Download and use it locally.
 
 
+.. warning::
+    The Dashboards from Aiven for OpenSearch is not compatible across minor versions. Because of this, if existing current nodes of your service instance are of an older version, you can expect downtime during migration or plan changes.
+
+
 Using patterns to set index retention
 -------------------------------------
 
