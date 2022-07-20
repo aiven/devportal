@@ -3,8 +3,8 @@ Use Karapace with Aiven for Apache Kafka®
 
 Karapace is an Aiven-built open source tool that adds quality-of-life improvements to your Aiven for Apache Kafka® service. It consists of both a schema registry, and a REST API; all Aiven for Apache Kafka services support either of both of these features if you want to use them.
 
-Enable Karapace on Aiven for Apache Kafka
------------------------------------------
+Enable Karapace schema registry and REST APIs on Aiven for Apache Kafka
+-----------------------------------------------------------------------
 
 1. In the `Aiven Console <https://console.aiven.io/>`_, visit the service overview page for the service, and look for the two configuration settings for Karapace.
 
