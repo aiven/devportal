@@ -275,32 +275,64 @@ entries:
             - file: docs/products/kafka/kafka-connect/howto/enable-automatic-restart
           - file: docs/products/kafka/kafka-connect/howto/list-source-connectors
             entries:
-            - file: docs/products/kafka/kafka-connect/howto/jdbc-source-connector-pg
-            - file: docs/products/kafka/kafka-connect/howto/jdbc-source-connector-mysql
-            - file: docs/products/kafka/kafka-connect/howto/jdbc-source-connector-sql-server
-            - file: docs/products/kafka/kafka-connect/howto/mongodb-poll-source-connector
-            - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-pg
-            - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-mysql
-            - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-sql-server
-            - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-mongodb
+            - file: docs/products/kafka/kafka-connect/howto/list-source-connectors-pg
+              title: PostgreSQL
+              entries:
+                - file: docs/products/kafka/kafka-connect/howto/jdbc-source-connector-pg
+                - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-pg
+            - file: docs/products/kafka/kafka-connect/howto/list-source-connectors-mysql
+              title: MySQL
+              entries:  
+                - file: docs/products/kafka/kafka-connect/howto/jdbc-source-connector-mysql
+                - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-mysql
+            - file: docs/products/kafka/kafka-connect/howto/list-source-connectors-sql-server
+              title: SQL Server
+              entries:  
+                - file: docs/products/kafka/kafka-connect/howto/jdbc-source-connector-sql-server
+                - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-sql-server
+            - file: docs/products/kafka/kafka-connect/howto/list-source-connectors-mongodb
+              title: MongoDB
+              entries:
+                - file: docs/products/kafka/kafka-connect/howto/mongodb-poll-source-connector
+                - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-mongodb
+
           - file: docs/products/kafka/kafka-connect/howto/list-sink-connectors
             entries:
             - file: docs/products/kafka/kafka-connect/howto/jdbc-sink
-            - file: docs/products/kafka/kafka-connect/howto/s3-sink-prereq
-            - file: docs/products/kafka/kafka-connect/howto/s3-sink-connector-aiven
-            - file: docs/products/kafka/kafka-connect/howto/s3-sink-connector-confluent
-            - file: docs/products/kafka/kafka-connect/howto/gcs-sink-prereq
-            - file: docs/products/kafka/kafka-connect/howto/gcs-sink
-            - file: docs/products/kafka/kafka-connect/howto/gcp-bigquery-sink-prereq
-            - file: docs/products/kafka/kafka-connect/howto/gcp-bigquery-sink
+              title: JDBC
+            - file: docs/products/kafka/kafka-connect/howto/list-sink-connectors-s3
+              title: AWS S3
+              entries:
+              - file: docs/products/kafka/kafka-connect/howto/s3-sink-prereq
+              - file: docs/products/kafka/kafka-connect/howto/s3-sink-connector-aiven
+              - file: docs/products/kafka/kafka-connect/howto/s3-sink-connector-confluent
+            - file: docs/products/kafka/kafka-connect/howto/list-sink-connectors-gcs
+              title: Google Cloud Storage
+              entries:
+                - file: docs/products/kafka/kafka-connect/howto/gcs-sink-prereq
+                - file: docs/products/kafka/kafka-connect/howto/gcs-sink
+            - file: docs/products/kafka/kafka-connect/howto/list-sink-connectors-bigquery
+              title: Google BigQuery
+              entries:
+              - file: docs/products/kafka/kafka-connect/howto/gcp-bigquery-sink-prereq
+              - file: docs/products/kafka/kafka-connect/howto/gcp-bigquery-sink
             - file: docs/products/kafka/kafka-connect/howto/opensearch-sink
+              title: OpenSearch
             - file: docs/products/kafka/kafka-connect/howto/elasticsearch-sink
-            - file: docs/products/kafka/kafka-connect/howto/snowflake-sink-prereq
-            - file: docs/products/kafka/kafka-connect/howto/snowflake-sink
-            - file: docs/products/kafka/kafka-connect/howto/http-sink
-            - file: docs/products/kafka/kafka-connect/howto/mongodb-sink-mongo
-            - file: docs/products/kafka/kafka-connect/howto/mongodb-sink-lenses
+              title: ElasticSearch
+            - file: docs/products/kafka/kafka-connect/howto/list-sink-connectors-snowflake
+              title: Snowflake
+              entries:
+              - file: docs/products/kafka/kafka-connect/howto/snowflake-sink-prereq
+              - file: docs/products/kafka/kafka-connect/howto/snowflake-sink
+              - file: docs/products/kafka/kafka-connect/howto/http-sink
+            - file: docs/products/kafka/kafka-connect/howto/list-sink-connectors-mongodb
+              title: MongoDB
+              entries:
+              - file: docs/products/kafka/kafka-connect/howto/mongodb-sink-mongo
+              - file: docs/products/kafka/kafka-connect/howto/mongodb-sink-lenses
             - file: docs/products/kafka/kafka-connect/howto/redis-streamreactor-sink
+              title: Redis
 
         - file: docs/products/kafka/kafka-connect/reference
           title: Reference

@@ -1,0 +1,4 @@
+Source connectors - PostgreSQL®
+===============================
+
+.. tableofcontents::
