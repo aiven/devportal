@@ -32,7 +32,7 @@ Prerequisites
      
      pip install mysql-connector-python
 
-* An Aiven account with a service running. Click on MySQLx tab under **Connection information**, and copy **SERVICE_URI**, **User** and **Password** needed to access the service with the help of MySQLx. They are used below as variables.
+* An Aiven account with a service running. Click on MySQLx tab under **Connection information**, and copy **Service URI**, **User** and **Password** needed to access the service with the help of MySQLx. They are used below as variables.
 
 * Set ``PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python`` on your terminal to avoid issues described on `Protocol buffers docs <https://developers.google.com/protocol-buffers/docs/news/2022-05-06>`_. 
   
