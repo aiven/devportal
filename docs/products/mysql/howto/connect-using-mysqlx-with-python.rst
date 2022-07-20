@@ -32,7 +32,7 @@ Prerequisites
      
      pip install mysql-connector-python
 
-* An Aiven account with a an Aivem for MySQL service running.
+* An Aiven account with a an Aiven for MySQL service running.
 
 * Set an environment variable ``PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python`` to avoid issues described on `Protocol buffers docs <https://developers.google.com/protocol-buffers/docs/news/2022-05-06>`_. If you are running Python from the command line, you can set this in your terminal:
   
