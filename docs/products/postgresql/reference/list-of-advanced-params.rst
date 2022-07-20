@@ -184,7 +184,7 @@ General parameters
     - The static IP addresses: Use static public IP addresses.
   * - ``synchronous_replication``
     - string
-    - Enables synchronous replication type. To use it, make sure your service plan supports synchronous replication.
+    - Enables synchronous replication type.  Only available on premium service plans.
   * - ``timescaledb.max_background_workers``
     - integer
     - The number of background workers for ``timescaledb`` operations. You should configure this setting to the sum of your number of databases, and the total number of the concurrent background workers you want running at any given point in time.
