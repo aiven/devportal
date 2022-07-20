@@ -657,6 +657,8 @@ Updates the settings for an Aiven service.
     avn service update secure-database \
       -c ip_filter=10.0.1.0/24,10.25.10.1/32
 
+.. note:: There is no whitespace between the IP addresses and comma in the command.
+
 
 ``avn service user``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
