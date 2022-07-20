@@ -105,7 +105,7 @@ html_theme_options = {
         "color-foreground-muted": "#787885",
         "color-foreground-border": "#e1e1e3",
         "color-background-primary": "#ffffff",
-        "color-background-secondary": "#ffffff",
+        "color-background-secondary": "#f7f7fa",
         "color-content-foreground": "#787885",
         "color-background-hover": "#c60443",
         "color-background-border": "#e1e1e3",

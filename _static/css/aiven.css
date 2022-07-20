@@ -229,7 +229,6 @@ a {
 
 code.literal {
   background-color: var(--color-background-secondary);
-  border: 0px !important;
 }
 
 h1 > code > .pre {
