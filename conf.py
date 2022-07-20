@@ -137,6 +137,10 @@ html_theme_options = {
         "color-sidebar-background": "#0b0b14",
         "color-sidebar-background-border": "#e1e1e3",
         "color-sidebar-search-background": "#1c1c2f",
+        "color-admonition-title-background--tip": "#00c85240",
+        "color-admonition-title-background--note": "#00b0ff40",
+        "color-admonition-title-background--warning": "#ff910040",
+        "color-admonition-title-background--error": "#ff525240"
     },
     "navigation_with_keys": True
 }
