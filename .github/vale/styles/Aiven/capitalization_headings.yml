@@ -6,6 +6,7 @@ scope: heading
 match: $sentence
 exceptions:
   - ACLs
+  - Amazon
   - Amazon Aurora
   - APIs
   - Aiven
@@ -15,6 +16,7 @@ exceptions:
   - BYOA
   - Cassandra
   - ClickHouse
+  - CloudWatch
   - Connect
   - Dashboards
   - Datadog
