@@ -17,11 +17,11 @@ Variables
    * - Variable
      - Description
    * - ``SERVICE_URI``
-     - URI for the connection.
+     - Service URI from the MySQLx tab on the service overview page
    * - ``MYSQLX_USER``
-     - Your Aiven **User** information.
+     - User from the MySQLx tab on the service overview page
    * - ``MYSQLX_PASSWORD``
-     - Your Aiven **User** password.
+     - Password from the MySQLx tab on the service overview page
 
 Prerequisites
 '''''''''''''
@@ -32,9 +32,9 @@ Prerequisites
      
      pip install mysql-connector-python
 
-* An Aiven account with a service running. Click on MySQLx tab under **Connection information**, and copy **Service URI**, **User** and **Password** needed to access the service with the help of MySQLx. They are used below as variables.
+* An Aiven account with a an Aivem for MySQL service running.
 
-* Set ``PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python`` on your terminal to avoid issues described on `Protocol buffers docs <https://developers.google.com/protocol-buffers/docs/news/2022-05-06>`_. 
+* Set an environment variable ``PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python`` to avoid issues described on `Protocol buffers docs <https://developers.google.com/protocol-buffers/docs/news/2022-05-06>`_. If you are running Python from the command line, you can set this in your terminal:
   
   .. code:: shell
 
