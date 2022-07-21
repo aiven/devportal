@@ -29,11 +29,27 @@ def parse_pages(html_build_dir):
             doc = BeautifulSoup(file.read(), 'html.parser')
 
             title = doc.title.text
-            content = doc.select('main .content')[0].text
+            elements = doc.select('div.article-container')[0]
 
+            # remove tables of contents
+            for toc in elements.select('div.toctree-wrapper'):
+                toc.decompose()
+
+            # remove header links
+            for headerlink in elements.select('a.headerlink'):
+                headerlink.decompose()
+
+            # remove preamble links etc
+            for backtotop in elements.select('a.back-to-top'):
+                backtotop.decompose()
+
+            for icons in elements.select('div.content-icon-container'):
+                icons.decompose()
+
+            content = elements.text
             pages.append({
                 'title': title,
-                'content': content.replace("¶", ""),
+                'content': content,
                 'url': relative_path,
                 'source': 'devportal',
                 'sort_priority': 1
