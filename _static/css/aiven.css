@@ -287,6 +287,17 @@ h3 > code > .pre {
   padding: 0.75rem 1.25rem;
 }
 
+.toctree-wrapper .reference {
+  font-family: Inter;
+  color: var(--color-sidebar-link-text);
+  text-decoration-color: var(--color-sidebar-link-text);
+}
+
+.toctree-wrapper .reference:hover {
+  color: var(--color-link);
+  text-decoration-color: var(--color-link);
+}
+
 .toctree-wrapper > ul > li.toctree-l1 {
   list-style: none !important;
   margin: 12px;
@@ -299,12 +310,6 @@ h3 > code > .pre {
   list-style: none !important;
   font-size: 16px;
   font-weight: 300;
-}
-
-.toctree-wrapper > ul > .toctree-l1 > a.reference:hover,
-.toctree-wrapper > ul > .toctree-l1 > ul > .toctree-l2 > a.reference:hover {
-  color: var(--linkActive);
-  text-decoration-color: var(--linkActive) !important;
 }
 
 .toctree-l1 > a > span.badge,
