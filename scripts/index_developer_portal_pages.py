@@ -49,7 +49,7 @@ def parse_pages(html_build_dir):
             content = elements.text
             pages.append({
                 'title': title,
-                'content': content,
+                'content': content.strip(),
                 'url': relative_path,
                 'source': 'devportal',
                 'sort_priority': 1
