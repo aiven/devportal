@@ -24,7 +24,7 @@ Available integrations
 
         **Metrics**
 
-        + :doc:`Datadog </docs/integrations/datadog/index>`
+        + :doc:`Datadog </docs/integrations/datadog>`
         + :doc:`Amazon CloudWatch </docs/integrations/cloudwatch>`
         + :doc:`Prometheus </docs/platform/howto/integrations/prometheus-metrics>`
 
