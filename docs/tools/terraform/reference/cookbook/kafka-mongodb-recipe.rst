@@ -24,9 +24,7 @@ Here is the Terraform recipe that will spin up an Aiven for Apache Kafka service
 
 .. Warning::
 
-    Creating a `dedicated Aiven for Apache Kafka Connect service <https://developer.aiven.io/docs/products/kafka/kafka-connect/getting-started.html#apache-kafka-connect-dedicated-cluster>`_ is Aiven's suggested option. Having Kafka Connect running on the same nodes as Apache Kafka increases the load on the nodes possibly making the cluster more unstable. 
-    
-    For a better separation of concerns, a dedicated Aiven for Apache Kafka Connect cluster is therefore suggested.
+    Aiven provides the option to run Kafka Connect on the same nodes as your Kafka cluster, sharing the resources. This is a low-cost way to get started with Kafka Connect. A standalone Aiven for Apache Kafka® Connect allows you to scale independently, offers more CPU time and memory for the Kafka Connect service and reduces load on nodes, making the cluster more stable.
 
 Before you begin, you will require a MongoDB database and the related database connection information. You'll also need to make sure that the database is reachable from the public internet (unless it's part of a paired VPC).
 
