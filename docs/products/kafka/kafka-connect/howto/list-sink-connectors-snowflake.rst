@@ -1,0 +1,4 @@
+Sink connectors - Snowflake
+===========================
+
+.. tableofcontents::

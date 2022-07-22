@@ -1,0 +1,4 @@
+Source connectors - MySQL
+=========================
+
+.. tableofcontents::
