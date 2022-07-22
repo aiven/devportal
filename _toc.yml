@@ -69,6 +69,7 @@ entries:
         title: Billing management
         entries:
           - file: docs/platform/howto/use-billing-groups
+          - file: docs/platform/howto/change-billing-contact
       
     - file: docs/platform/reference
       title: Reference
