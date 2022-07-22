@@ -1,4 +1,4 @@
-Apache Flink® :badge:`beta,cls=badge-secondary text-black badge-pill`
+Apache Flink® |beta|
 =====================================================================
 
 What is Aiven for Apache Flink®?
@@ -33,18 +33,25 @@ Get started with Aiven for Apache Flink
 Take your first steps with Aiven for Apache Flink by following our :doc:`/docs/products/flink/getting-started` article, or browse through our full list of articles:
 
 
-.. panels::
+.. grid:: 1 2 2 2
 
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
 
-    📚 :doc:`Concepts </docs/products/flink/concepts>`
+        📚 :doc:`Concepts </docs/products/flink/concepts>`
 
-    ---
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
 
-    💻 :doc:`/docs/products/flink/howto`
+        💻 :doc:`/docs/products/flink/howto`
 
-    ---
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
 
-    📖 :doc:`/docs/products/flink/reference`
+        📖 :doc:`/docs/products/flink/reference`
 
 
 Apache Flink features

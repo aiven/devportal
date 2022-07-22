@@ -18,17 +18,25 @@ Getting started
 
 Check out the :doc:`getting started guide </docs/tools/terraform/get-started>` for your first Terraform project.
 
-.. panels::
+.. grid:: 1 2 2 2
 
-    💻 :doc:`/docs/tools/terraform/howto`
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
 
-    ---
+        💻 :doc:`/docs/tools/terraform/howto`
 
-    📖 :doc:`/docs/tools/terraform/reference`
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
 
-    ---
+        📖 :doc:`/docs/tools/terraform/reference`
 
-    👨‍🍳 :doc:`/docs/tools/terraform/reference/cookbook`
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
+
+        👨‍🍳 :doc:`/docs/tools/terraform/reference/cookbook`
 
 Learn more
 ----------

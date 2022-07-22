@@ -22,5 +22,10 @@ Get started with Aiven for Apache Cassandra
 
 Find more information about Apache Cassandra in the following sections:
 
-.. panels::
-    📖 :doc:`/docs/products/cassandra/reference`
+.. grid:: 1 2 2 2
+
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
+
+        📖 :doc:`/docs/products/cassandra/reference`

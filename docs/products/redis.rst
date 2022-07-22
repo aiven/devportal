@@ -21,21 +21,31 @@ Get started with Aiven for Redis
 Take your first steps with Aiven for Redis by following our :doc:`getting started guide </docs/products/redis/get-started>`, or browse through our full list of articles:
 
 
-.. panels::
+.. grid:: 1 2 2 2
 
-    📚 :doc:`/docs/products/redis/concepts`
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
 
-    ---
+        📚 :doc:`/docs/products/redis/concepts`
 
-    💻 :doc:`/docs/products/redis/howto`
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
 
-    ---
+        💻 :doc:`/docs/products/redis/howto`
 
-    📖 :doc:`/docs/products/redis/reference`
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
 
-    ---
+        📖 :doc:`/docs/products/redis/reference`
 
-    🧰 :doc:`/docs/products/redis/howto/list-code-samples`
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
+
+        🧰 :doc:`/docs/products/redis/howto/list-code-samples`
 
 
 Ways to use Aiven for Redis

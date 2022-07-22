@@ -28,7 +28,7 @@ html_title = 'Aiven'
 # ones.
 extensions = [
     'sphinx_sitemap',
-    'sphinx_panels',
+    'sphinx_design',
     'sphinxcontrib.mermaid',
     'sphinx_external_toc',
     'sphinx_copybutton',
@@ -212,5 +212,9 @@ rst_epilog = """
 .. |tick| image:: /images/icon-tick.png
    :width: 24px
    :class: no-scaled-link
+
+.. |beta| replace:: :bdg-secondary:`beta`
+
+.. |preview| replace:: :bdg-secondary:`preview`
 
 """

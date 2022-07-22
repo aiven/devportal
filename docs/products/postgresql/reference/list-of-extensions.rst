@@ -3,12 +3,12 @@ Extensions on Aiven for PostgreSQL®
 
 The following PostgreSQL® extensions are available. Please note that some of the extensions have dependencies and they need to be created in the proper order. Some extensions may require disconnecting the client connection and reconnecting before they are fully available.  To check the details, including the version number of the extension, run ``select * from pg_available_extensions`` in your Aiven for PostgreSQL server.
 
-.. |PG10only| replace:: :badge:`PG10 only,cls=badge-secondary text-black badge-pill`
-.. |PG11onwards| replace:: :badge:`PG11 and newer,cls=badge-secondary text-black badge-pill`
-.. |PG11earlier| replace:: :badge:`PG11 and earlier,cls=badge-secondary text-black badge-pill`
-.. |PG12earlier| replace:: :badge:`PG12 and earlier,cls=badge-secondary text-black badge-pill`
-.. |PG13onwards| replace:: :badge:`PG13 and newer,cls=badge-secondary text-black badge-pill`
-.. |PG14only| replace:: :badge:`PG14 only,cls=badge-secondary text-black badge-pill`
+.. |PG10only| replace:: :bdg-secondary:`PG10 only`
+.. |PG11onwards| replace:: :bdg-secondary:`PG11 and newer`
+.. |PG11earlier| replace:: :bdg-secondary:`PG11 and earlier`
+.. |PG12earlier| replace:: :bdg-secondary:`PG12 and earlier`
+.. |PG13onwards| replace:: :bdg-secondary:`PG13 and newer`
+.. |PG14only| replace:: :bdg-secondary:`PG14 only`
 
 Data types
 ----------

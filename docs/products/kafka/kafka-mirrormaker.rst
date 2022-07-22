@@ -21,17 +21,25 @@ Get started with Aiven for Apache Kafka® MirrorMaker 2
 Take your first steps with Aiven for Apache Kafka® MirrorMaker 2 by following our :doc:`/docs/products/kafka/kafka-mirrormaker/getting-started` article, or browse through our full list of articles:
 
 
-.. panels::
+.. grid:: 1 2 2 2
 
-    📚 :doc:`Concepts </docs/products/kafka/kafka-mirrormaker/concepts>`
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
 
-    ---
+        📚 :doc:`Concepts </docs/products/kafka/kafka-mirrormaker/concepts>`
 
-    💻 :doc:`HowTo </docs/products/kafka/kafka-mirrormaker/howto>`
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
 
-    ---
+        💻 :doc:`HowTo </docs/products/kafka/kafka-mirrormaker/howto>`
 
-    📖 :doc:`Reference </docs/products/kafka/kafka-mirrormaker/reference>`
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
+
+        📖 :doc:`Reference </docs/products/kafka/kafka-mirrormaker/reference>`
 
 Apache Kafka® MirrorMaker 2 resources
 -------------------------------------

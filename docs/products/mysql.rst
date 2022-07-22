@@ -16,18 +16,25 @@ Get started with Aiven for MySQL
 
 Our :doc:`getting started guide </docs/products/mysql/get-started>` will get you up and running quickly.
 
-.. panels::
+.. grid:: 1 2 2 2
 
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
 
-    📚 :doc:`Concepts </docs/products/mysql/concepts>`
+        📚 :doc:`Concepts </docs/products/mysql/concepts>`
 
-    ---
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
 
-    💻 :doc:`HowTo </docs/products/mysql/howto>`
+        💻 :doc:`HowTo </docs/products/mysql/howto>`
 
-    ---
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
 
-    📖 :doc:`Reference </docs/products/mysql/reference>`
+        📖 :doc:`Reference </docs/products/mysql/reference>`
 
 
 More MySQL resources
