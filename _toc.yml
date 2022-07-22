@@ -173,6 +173,7 @@ entries:
         title: Sample data generator
       - file: docs/products/kafka/concepts
         entries:
+          - file: docs/products/kafka/concepts/upgrade-procedure
           - file: docs/products/kafka/concepts/acl
           - file: docs/products/kafka/concepts/schema-registry-authorization
           - file: docs/products/kafka/concepts/log-compaction
