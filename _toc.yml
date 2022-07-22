@@ -70,7 +70,7 @@ entries:
         title: Billing management
         entries:
           - file: docs/platform/howto/use-billing-groups
-          - file: docs/platform/howto/billing-google-cloud-marketplace-subscription
+          - file: docs/platform/howto/billing-google-cloud-platform-marketplace-subscription
     - file: docs/platform/reference
       title: Reference
       entries:
