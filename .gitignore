@@ -10,3 +10,4 @@ node_modules
 *.ipr
 env/
 venv/
+.venv/
