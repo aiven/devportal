@@ -36,6 +36,9 @@ Install the ``cert-manager`` with the command below. It is used to manage the we
 
     You can use the operator without ``cert-manager`` and the admission webhooks, skip this step and move on to the Helm chart section.
 
+.. Note::
+    `For GKE version >=1.21 VPC users, firewall rule to explicitly allow ingress to port 9443 <https://cloud.google.com/kubernetes-engine/docs/how-to/private-clusters#add_firewall_rules>`_ needs to be added for admission webhook.
+
 .. Tip::
 
     If you are running a GKE "Autopilot" cluster in Google Cloud Platform, you will need to be using GKE version >=1.21 and install ``cert-manager`` into the ``cert-manager`` namespace, as per `this GitHub issue comment <https://github.com/cert-manager/cert-manager/issues/3717#issuecomment-975031637>`_
