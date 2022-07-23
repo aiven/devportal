@@ -39,29 +39,15 @@ The ``services.tf`` file for the provisioning of these three services, service i
 
 .. code:: terraform
 
-    terraform {
-      required_providers {
-        aiven = {
-          source  = "aiven/aiven"
-          version = ">=3.2.1"
-        }
-      }
-    }
-
-    provider "aiven" {
-      api_token = var.aiven_api_token
-    }
-
-
     resource "aiven_pg" "demo-pg" {
-      project      = var.project
+      project      = var.project_name
       service_name = "demo-postgres"
       cloud_name   = "google-europe-north1"
       plan         = "business-4"
     }
 
     resource "aiven_kafka" "demo-kafka" {
-      project                 = var.project
+      project                 = var.project_name
       cloud_name              = "azure-norway-west"
       plan                    = "startup-2"
       service_name            = "demo-kafka"
@@ -88,7 +74,7 @@ The ``services.tf`` file for the provisioning of these three services, service i
     }
 
     resource "aiven_kafka_connect" "demo-kafka-connect" {
-      project                 = var.project
+      project                 = var.project_name
       cloud_name              = "google-europe-north1"
       project_vpc_id          = "proj1-demo/01a413b4-36df-4b1b-a697-fd7f87833494"
       plan                    = "startup-4"
@@ -108,7 +94,7 @@ The ``services.tf`` file for the provisioning of these three services, service i
     }
 
     resource "aiven_service_integration" "i1" {
-      project                  = var.project
+      project                  = var.project_name
       integration_type         = "kafka_connect"
       source_service_name      = aiven_kafka.demo-kafka.service_name
       destination_service_name = aiven_kafka_connect.demo-kafka-connect.service_name
@@ -122,14 +108,14 @@ The ``services.tf`` file for the provisioning of these three services, service i
       }
     }
 
-    resource "aiven_kafka_connector" "cdc-connector" {
-      project        = var.project
+    resource "aiven_kafka_connector" "kafka-pg-source" {
+      project        = var.project_name
       service_name   = aiven_kafka_connect.demo-kafka-connect.service_name
       connector_name = "kafka-pg-source"
 
       config = {
         "name"            = "kafka-pg-source"
-        "connector.class" = "io.debezium.connector.postgresql.PostgresConnector",
+        "connector.class" = "io.debezium.connector.postgresql.PostgresConnector"
         "snapshot.mode"   = "initial"
         "database.hostname" = aiven_pg.demo-pg.service_host
         "database.port" = aiven_pg.demo-pg.service_port
@@ -147,18 +133,18 @@ The ``services.tf`` file for the provisioning of these three services, service i
         "heartbeat.interval.ms"     = 30000
         "heartbeat.action.query"    = "INSERT INTO heartbeat (status) VALUES (1)"
       }
-#      depends_on = [aiven_service_integration.i1]
+      depends_on = [aiven_service_integration.i1]
     }
 
 Let's go over a few of these configurations and understand their functions:
 
-- The ``auto_create_topics_enable = true`` property is crucial as it allows the Debezium connector to create the Kafka topics directly.
+- The ``auto_create_topics_enable = true`` property allows the Debezium connector to send messages to a non-existing topic.
 - The ``kafka_connect = false`` property is used because we want to create a separate Aiven for Apache Kafka Connect service.
-- The Aiven for Apache Kafka Connect service is configured with ``public_access`` set to TRUE to allow the service to be accessed through a VPC since we are setting up services in different clouds
-- The resource ``aiven_service_integration.i1`` configures the integration between the Aiven for Apache Kafka service and the Aiven for Apache Kafka Connect service. This integration uses 2 internal topics for storing status and offset.
-- ``group_id`` under kafka_connect_user_config: is required when running the Kafka Connect service. This is a unique ID that identifies the Kafka Connect cluster.
-- ``status_storage_topic`` and ``offset_storage_topic`` identify the name of the Kafka topics that store the connector status and the connector offsets respectively.
-- The last Aiven service is the Debezium source connector for PostgreSQL, which is specified by the "connector.class" and is configured with the connection strings to access the PostgreSQL database and listen for all data changes on one or more tables, including schema changes. In our case, the table that is monitored for any data change is "tab1" in ``defaultdb``, in ``public`` schema. The plugin used to capture changes is ``wal2json`` that converts WAL events (WAL stands for Write Ahead Logging) into JSON payload that is sent to the Kafka topic via the Kafka connect service. The Kafka topic that the Debezium connector creates has the name ``replicator.public.tab1``, where "replicator" is the logical database used by Debezium connector to monitor for data changes and "public" and "tab1" are the name of the PostgreSQL schema and table name respectively. 
+- The Aiven for Apache Kafka Connect service is configured with ``public_access`` set to TRUE to allow the service to be accessed through a VPC since we are setting up services in different clouds.
+- The resource ``aiven_service_integration.i1`` configures the integration between the Aiven for Apache Kafka service and the Aiven for Apache Kafka Connect service. This integration uses two internal topics for storing status and offset.
+- ``group_id`` under ``kafka_connect_user_config`` is a unique ID that identifies the Kafka Connect cluster.
+- ``status_storage_topic`` and ``offset_storage_topic`` identify the name of the internal Kafka topics that store the connector status and the connector offsets respectively.
+- The Debezium source connector for PostgreSQL listens for all data changes on one or more tables, including schema changes. In our case, the table that is monitored for any data change is "tab1" in ``defaultdb`` database under ``public`` schema. The plugin used to capture changes is ``wal2json`` that converts WAL events (WAL stands for Write Ahead Logging) into JSON payload that is sent to the Kafka topic via the Kafka connect service. The Kafka topic that the Debezium connector creates has the name ``replicator.public.tab1``, where "replicator" is the logical database used by Debezium connector to monitor for data changes and "public" and "tab1" are the name of the PostgreSQL schema and table name respectively. 
 - The "depends_on" property establishes a dependency between the services creation in order to avoid failures.
 
 More resources
