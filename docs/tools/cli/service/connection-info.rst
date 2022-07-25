@@ -10,7 +10,7 @@ Retrieve connection information
 ``avn service connection-info kafkacat``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Retrieves the :doc:`kcat </docs/products/kafka/howto/kcat>` command necessary to connect to a certain Aiven for Apache Kafka® service.
+Retrieves the ``kcat`` :doc:`command </docs/products/kafka/howto/kcat>` necessary to connect to a certain Aiven for Apache Kafka® service.
 
 .. list-table::
   :header-rows: 1
@@ -39,7 +39,7 @@ Retrieves the :doc:`kcat </docs/products/kafka/howto/kcat>` command necessary to
   * - ``--overwrite``
     - Save (or overwrite if already existing) the certificate and key files
 
-**Example:** Retrieve the kcat command to connect to an Aiven for Apache Kafka service named ``demo-kafka`` with SSL authentication (``certificate``), download the certificates necessary for the connection:
+**Example:** Retrieve the ``kcat`` command to connect to an Aiven for Apache Kafka service named ``demo-kafka`` with SSL authentication (``certificate``), download the certificates necessary for the connection:
 
 ::
 
@@ -137,7 +137,7 @@ An example of ``avn service connection-info pg string`` output:
 ``avn service connection-info pg uri``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Retrieves the jdbc connection string for a certain Aiven for PostgreSQL® service.
+Retrieves the connection URI for a certain Aiven for PostgreSQL® service.
 
 .. list-table::
   :header-rows: 1
@@ -161,7 +161,7 @@ Retrieves the jdbc connection string for a certain Aiven for PostgreSQL® servic
     - The ``sslmode`` to use. Possible values are ``require``, ``verify-ca``, ``verify-full``, ``disable``, ``allow``, ``prefer``
 
 
-**Example:** Retrieve the jdbc connection string for an Aiven for PostgreSQL® service named ``demo-pg``:
+**Example:** Retrieve the connection URI for an Aiven for PostgreSQL® service named ``demo-pg``:
 
 ::
 
@@ -216,7 +216,7 @@ An example of ``avn service connection-info psql`` output:
 ``avn service connection-info redis uri``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Retrieves the connection uri needed to connect to a certain Aiven for Redis® service.
+Retrieves the connection URI needed to connect to a certain Aiven for Redis®* service.
 
 .. list-table::
   :header-rows: 1
@@ -237,7 +237,7 @@ Retrieves the connection uri needed to connect to a certain Aiven for Redis® se
   * - ``--db``
     - The database name to use to connect
 
-**Example:** Retrieve the connection uri needed to connect to an Aiven for Regis® service named ``demo-redis``:
+**Example:** Retrieve the connection URI needed to connect to an Aiven for Regis® service named ``demo-redis``:
 
 ::
 

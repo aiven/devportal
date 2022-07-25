@@ -93,7 +93,7 @@ Opens the appropriate interactive shell, such as ``psql`` or ``redis-cli``, to t
 ``avn service connection-info``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Retrieves the connection information for Aiven for Apache Kafka®, Aiven for PostgreSQL® and Aiven for Redis® in a variety of formats.
+Retrieves the connection information for Aiven for Apache Kafka®, Aiven for PostgreSQL® and Aiven for Redis®* in a variety of formats.
 
 More information on ``connection-info`` can be found in :doc:`the dedicated page <service/connection-info>`.
 
