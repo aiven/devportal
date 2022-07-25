@@ -95,45 +95,6 @@ An example of ``avn service connection-info pg string`` output:
   host='demo-pg-dev-project.aivencloud.com' port='13039' user=avnadmin dbname='defaultdb'
 
 
-``avn service connection-info pg string``
-'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
-Retrieves the connection parameters for a certain Aiven for PostgreSQL® service.
-
-.. list-table::
-  :header-rows: 1
-  :align: left
-
-  * - Parameter
-    - Information
-  * - ``service_name``
-    - The name of the service
-  * - ``--route``
-    - The type of route to use to connect to the service. Possible values are ``dynamic``, ``privatelink`` and ``public``
-  * - ``--usage``
-    - The database connection usage. Possible values are ``primary`` and ``replica`` 
-  * - ``--privatelink-connection-id``
-    - The Id of the privatelink to use
-  * - ``--username``
-    - The username used to connect if using ``sasl`` authentication method
-  * - ``--dbname``
-    - The database name to use to connect
-  * - ``--sslmode``
-    - The ``sslmode`` to use. Possible values are ``require``, ``verify-ca``, ``verify-full``, ``disable``, ``allow``, ``prefer``
-
-
-**Example:** Retrieve the connection parameters for an Aiven for PostgreSQL® service named ``demo-pg``:
-
-::
-
-  avn service connection-info pg string demo-pg
-
-An example of ``avn service connection-info pg string`` output:
-
-.. code:: text
-
-  host='demo-pg-dev-project.aivencloud.com' port='13039' user=avnadmin dbname='defaultdb'
-
 ``avn service connection-info pg uri``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
@@ -210,7 +171,7 @@ An example of ``avn service connection-info psql`` output:
 
 .. code:: text
 
-  psql postgres://avnadmin:AVNS_YlkRllMsFCkXnGfin6H@demo-pg-dev-advocates.aivencloud.com:13039/defaultdb?sslmode=require
+  psql postgres://avnadmin:XXXXXXXXXXXX@demo-pg-dev-advocates.aivencloud.com:13039/defaultdb?sslmode=require
 
 
 ``avn service connection-info redis uri``
