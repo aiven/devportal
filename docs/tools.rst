@@ -11,4 +11,4 @@ For programmatic integrations, the :doc:`Aiven API </docs/tools/api>` provides a
 
 :doc:`Aiven Terraform provider </docs/tools/terraform>` gives orchestration features for infrastructure-as-code projects.
 
-:doc:`Aiven Operator for Kubernetes </docs/tools/kubernetes>` adds orchestration of your Aiven services to your existing Kubernetes® cluster.
+:doc:`Aiven Operator for Kubernetes® </docs/tools/kubernetes>` adds orchestration of your Aiven services to your existing Kubernetes® cluster.
