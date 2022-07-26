@@ -198,7 +198,7 @@ Retrieves the connection URI needed to connect to a certain Aiven for Redis®* s
   * - ``--db``
     - The database name to use to connect
 
-**Example:** Retrieve the connection URI needed to connect to an Aiven for Regis® service named ``demo-redis``:
+**Example:** Retrieve the connection URI needed to connect to an Aiven for Redis® service named ``demo-redis``:
 
 ::
 
