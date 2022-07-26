@@ -94,6 +94,10 @@ The configuration file contains the following entries:
     The ``key.converter`` and ``value.converter`` sections are only needed when pushing data in Avro format. If omitted the messages will be defined in JSON format.
 
 
+.. Tip::
+
+    Check the `dedicated blog post <https://aiven.io/blog/db-technology-migration-with-apache-kafka-and-kafka-connect>`_ for an end-to-end example of the Debezium source connector in action with PostgreSQL.
+
 Create a Kafka Connect connector with Aiven CLI
 '''''''''''''''''''''''''''''''''''''''''''''''
 
@@ -114,6 +118,8 @@ Verify the presence of the topic and data in the Apache Kafka target instance.
 .. Tip::
 
     If you're using Aiven for Apache Kafka, topics will not be created automatically. Either create them manually following the ``database.server.name.schema_name.table_name`` naming pattern or enable the ``kafka.auto_create_topics_enable`` advanced parameter.
+
+
 
 Solve the error ``must be superuser to create FOR ALL TABLES publication``
 --------------------------------------------------------------------------

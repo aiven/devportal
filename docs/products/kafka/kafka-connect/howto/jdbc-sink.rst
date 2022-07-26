@@ -144,6 +144,10 @@ To create the connector, access the `Aiven Console <https://console.aiven.io/>`_
 
     Connectors can be created also using the dedicated :ref:`Aiven CLI command <avn_service_connector_create>`.
 
+.. Tip::
+
+    Check the `dedicated blog post <https://aiven.io/blog/db-technology-migration-with-apache-kafka-and-kafka-connect>`_ for an end-to-end example of the JDBC sink connector in action with MySQL.
+
 Example: Create a JDBC sink connector to PostgreSQL® on a topic with a JSON schema
 ----------------------------------------------------------------------------------
 
