@@ -9,6 +9,6 @@ The ``avn`` :doc:`command-line tool </docs/tools/cli>` brings Aiven features to 
 
 For programmatic integrations, the :doc:`Aiven API </docs/tools/api>` provides an interface you can use. This public-facing API also powers our own web interface so everything you need is supported.
 
-The :doc:`terraform </docs/tools/terraform>` gives orchestration features for infrastructure-as-code projects.
+:doc:`Aiven Terraform provider </docs/tools/terraform>` gives orchestration features for infrastructure-as-code projects.
 
-The :doc:`kubernetes </docs/tools/kubernetes>` adds orchestration of your Aiven services to your existing Kubernetes® cluster.
+:doc:`Aiven Operator for Kubernetes® </docs/tools/kubernetes>` adds orchestration of your Aiven services to your existing Kubernetes® cluster.
