@@ -711,6 +711,19 @@ entries:
           - file: docs/products/cassandra/reference/advanced-params
             title: Advanced parameters
 
+  - file: docs/products/influxdb
+    title: InfluxDB
+    entries:
+      - file: docs/products/influxdb/getting-started
+        title: Get started
+      - file: docs/products/influxdb/reference
+        title: Reference
+        entries:
+          - file: docs/products/influxdb/reference/available-influxdb-commands
+            title: Available commands
+          - file: docs/products/influxdb/reference/influxdb-retention-policies
+            title: Retention policies
+
   - file: docs/products/grafana
     title: Grafana
     entries:
