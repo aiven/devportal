@@ -173,6 +173,9 @@ The following steps define how you can add a JDBC connector to the local Apache 
          "type": "sink"
       }
 
+.. Tip::
+
+   Check the `dedicated blog post <https://aiven.io/blog/connecting-twitter-to-aiven-for-apache-kafka>`_ for an end-to-end example of how to setup a Kafka Connect cluster to host a custom connector.
 
 Verify the JDBC connector using Karapace REST APIs
 ''''''''''''''''''''''''''''''''''''''''''''''''''

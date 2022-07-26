@@ -64,6 +64,11 @@ The configuration file contains the following entries:
 
 Check out the `dedicated documentation <https://github.com/aiven/jdbc-connector-for-apache-kafka/blob/master/docs/source-connector-config-options.rst>`_ for the full list of parameters.
 
+.. Tip::
+
+    Check the `dedicated blog post <https://aiven.io/blog/using-kafka-connect-jdbc-source-a-postgresql-example>`_ for an end-to-end example of the JDBC source connector in action with PostgreSQL®.
+
+
 Create a Kafka Connect connector with Aiven CLI
 '''''''''''''''''''''''''''''''''''''''''''''''
 
