@@ -1,4 +1,4 @@
-name: TestLaysa
+name: Linkcheck
 "on":
   push:
     branches:
