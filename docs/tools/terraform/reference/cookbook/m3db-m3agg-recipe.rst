@@ -1,7 +1,7 @@
 Setup M3-related services using Aiven Terraform Provider
 ========================================================
 
-`Aiven for M3DB <https://developer.aiven.io/docs/products/m3db/index.html>`_ is a powerful time-series database that can be used when handling very large volumes of metrics and scalability is a concern. `Aiven for M3 Aggregator <https://developer.aiven.io/docs/products/m3db/concepts/m3-components.html>`_ can store your data at various resolutions for different workloads at scale. 
+`Aiven for M3DB <https://developer.aiven.io/docs/products/m3db>`_ is a powerful time-series database that can be used when handling very large volumes of metrics and scalability is a concern. `Aiven for M3 Aggregator <https://developer.aiven.io/docs/products/m3db/concepts/m3-components.html>`_ can store your data at various resolutions for different workloads at scale. 
 Together, they are a perfect choice to aggregate, store, and query large time-series data like internet of things (IoT) sensor readings. 
 
 This example shows how to use the `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_  to create an Aiven for M3 service, an Aiven for M3 Aggregator service, and the related service integration programmatically. 
