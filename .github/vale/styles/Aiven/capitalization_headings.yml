@@ -8,6 +8,7 @@ exceptions:
   - ACLs
   - Amazon
   - Amazon Aurora
+  - Amazon Web Services
   - APIs
   - Aiven
   - Apache
@@ -31,6 +32,8 @@ exceptions:
   - GitHub
   - Go
   - Google BigQuery
+  - Google Cloud Platform
+  - Google Cloud Platform Marketplace
   - Google Cloud Storage
   - Google Cloud SQL
   - Google Data Studio
@@ -49,6 +52,7 @@ exceptions:
   - Kubernetes
   - M3
   - LogDNA
+  - Microsoft Azure
   - MirrorMaker
   - MongoDB
   - MySQL
