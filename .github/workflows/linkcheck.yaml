@@ -1,11 +1,7 @@
-name: LinkCheck - all files
+name: LinkCheck - All files
 on:
-  push:
-    branches:
-      - master
-    tags:
-      - "**"
-  pull_request:
+  schedule:
+    - cron: "0 17 * * 3"
 
 jobs:
   prose:
