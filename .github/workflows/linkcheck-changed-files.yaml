@@ -37,4 +37,9 @@ jobs:
                 var="$var $file"
             fi
           done
-          make files="$var" linkcheck-changed-files
+          if [ -z "$var" ]
+          then
+                echo "No .rst changed files to check."
+          else
+                make files="$var" linkcheck-changed-files
+          fi
