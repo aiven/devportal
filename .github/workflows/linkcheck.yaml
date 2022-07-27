@@ -1,8 +1,11 @@
 name: LinkCheck - all files
-
 on:
-  schedule:
-    - cron: "* * * * *"
+  push:
+    branches:
+      - master
+    tags:
+      - "**"
+  pull_request:
 
 jobs:
   prose:
