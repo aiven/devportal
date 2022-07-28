@@ -651,8 +651,8 @@ entries:
         title: Get started
       - file: docs/products/grafana/howto
         title: HowTo
-        entries:                       
-          - glob: docs/products/grafana/howto/*          
+        entries:
+          - glob: docs/products/grafana/howto/*
       - file: docs/products/grafana/reference
         title: Reference
         entries:
