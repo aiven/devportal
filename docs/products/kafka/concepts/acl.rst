@@ -12,12 +12,16 @@ The ACL consists of **ACL entries**. An ACL entry is defined as the combination 
 * the permission given to the user 
 * the associated topic(s)
 
-The username is either an Aiven username, or can have wildcards. Similarly, the the topic is an Apache Kafka® topic name as such or can have wildcards. The permission is one of ``read``, ``write``, ``readwrite`` and ``admin``.
+The username portion of the ACL entry can be an Apache Kafka® service user name, or a string containing wildcards which could match multiple users. Similarly, the topic portion can be a single Apache Kafka® topic name or can use a wildcard pattern. The permission is one of ``read``, ``write``, ``readwrite`` and ``admin``.
 
 The wildcards supported are:
 
-* ``?`` matching a single characters
-* ``*`` matching one or multiple characters
+* ``?`` matching a single character (equivalent to regular expression `.`)
+* ``*`` matching zero or more characters (equivalent to regular expression `(.*)`)
+
+The wildcards can be combined for more complex pattern matching:
+
+* ``?*`` matches a single character, and then zero or more other characters (equivalent to regular expression `(.+)`)
 
 Aiven for Apache Kafka® evaluates each topic access against the ACL entries. If it finds a matching ACL entry, access is granted. If no entry matches, access is denied. Thus the order of the ACL entries is irrelevant.
 
@@ -27,11 +31,9 @@ Examples:
 * username: ``analyst*``, permission: ``read``, topic: ``xyz``. All Aiven users with username starting ``analyst`` have read access to topic ``xyz``.
 * username: ``developer*``, permission: ``read``, topic: ``test*``. All Aiven users with username starting ``developer`` have read access to topics starting with ``test``.
 
-By default, access is allowed for all configured users to both produce and consume on all topics.
-
 .. Warning:: 
 
-  By default, Aiven adds an ``avnadmin`` account to every new service and adds `admin` permission for all topics to that user. When you create your own ACLs to restrict access, you probably want to remove this ACL entry.
+  By default, Aiven adds an ``avnadmin`` service user to every new service and adds `admin` permission for all topics to that user. When you create your own ACLs to restrict access, you probably want to remove this ACL entry.
 
 .. Note::
 
