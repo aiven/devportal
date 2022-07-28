@@ -12,7 +12,7 @@ What you need
 
 Converting dashboard using ``elasticsearch_`` prefixes to ``opensearch_`` prefixes
 ----------------------------------------------------------------------------------
-1. `Download <github.com/aiven/aiven-string-replacer-for-grafana>`_ and install ``aiven-string-replacer-for-grafana``
+1. Run this command to `download <https://github.com/aiven/aiven-string-replacer-for-grafana>`_ and install ``aiven-string-replacer-for-grafana`` 
 
 .. code:: json
 
