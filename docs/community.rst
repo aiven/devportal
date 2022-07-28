@@ -9,7 +9,6 @@ There are lots of other ways to learn more about Aiven, and interact with us.
     .. grid-item-card::
         :shadow: md
         :margin: 2 2 0 0
-        :link: https://twitter.com/aiven_io
 
         🐦 **Twitter** We love to chat! Tell us what you're building with Aiven!
 
@@ -23,7 +22,6 @@ There are lots of other ways to learn more about Aiven, and interact with us.
     .. grid-item-card::
         :shadow: md
         :margin: 2 2 0 0
-        :link: https://aiven.io/blog
 
         📖 **Blog** To read tech news, tutorials, and updates on what we're up to.
 
@@ -38,7 +36,6 @@ There are lots of other ways to learn more about Aiven, and interact with us.
     .. grid-item-card::
         :shadow: md
         :margin: 2 2 0 0
-        :link: https://www.youtube.com/c/Aiven_io
 
         📺 **YouTube** If video is your thing, cool, it's ours too.
 
@@ -52,7 +49,6 @@ There are lots of other ways to learn more about Aiven, and interact with us.
     .. grid-item-card::
         :shadow: md
         :margin: 2 2 0 0
-        :link: https://github.com/aiven
 
         🐱 **GitHub** Find our public repositories on GitHub, work on `open source <https://aiven.io/open-source>`_ with us! 
 
