@@ -136,6 +136,10 @@ The ``services.tf`` file for the provisioning of these three services, service i
       depends_on = [aiven_service_integration.i1]
     }
 
+.. Warning::
+
+  ``wal2json`` will be deprecated in Debezium 2.0. A future revision of the recipe will use another decoding plug-in like ``pgoutput``.
+
 Let's go over a few of these configurations and understand their functions:
 
 - The ``auto_create_topics_enable = true`` property allows the Debezium connector to send messages to a non-existing topic.
