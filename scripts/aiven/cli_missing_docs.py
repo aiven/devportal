@@ -5,6 +5,10 @@ command documentation for Aiven client
 import os
 from aiven.client import argx, cli
 from docutils.core import publish_doctree
+from pathlib import Path
+
+p = os.path.abspath(os.path.join(__file__, "../../.."))
+os.chdir(p)
 
 
 def find_cli_docs() -> None:
@@ -41,8 +45,6 @@ def find_cli_commands():
     """
     cmds = []
     for prop_name in dir(cli.AivenCLI):
-        print(cli.AivenCLI)
-
         # Ignore private values/methods
         if prop_name.startswith("_"):
             continue
@@ -50,8 +52,6 @@ def find_cli_commands():
         prop = getattr(cli.AivenCLI, prop_name)
         # And see if it has an argument list defined on it
         arg_list = getattr(prop, argx.ARG_LIST_PROP, None)
-        print(arg_list)
-        print("arg list")
         # If it doesn't, then it's not a command and we can ignore it
         if arg_list is None:
             continue
