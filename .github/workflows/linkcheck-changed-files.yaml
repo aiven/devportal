@@ -41,5 +41,5 @@ jobs:
           then
                 echo "No *.rst changed files to check."
           else
-                make files="$var" linkcheck-changed-files
+                make files="$var" linkcheck-specified-files
           fi
