@@ -1,6 +1,14 @@
-""" 
-Script to help find missing related devportal 
-command documentation for Aiven client
+"""
+Script to help find missing related devportal command documentation
+for Aiven client
+
+Notes:
+
+  1. Just run this script to use it: `python cli_missing_docs.py`
+  2. Since the script uses docutils to parse the `.rst` files, and not sphinx,
+     it is normal to get `(ERROR/3) Unknown interpreted text role` messages,
+     as docutils doesn't understand sphinx extensions. These don't affect the
+     accuracy of the `MISSING` output.
 """
 import os
 from aiven.client import argx, cli
