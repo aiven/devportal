@@ -1,5 +1,5 @@
 Sunsetting Backward compatible Aiven for OpenSearch®
-===================================================
+====================================================
 
 On September 2021, Aiven introduced Aiven for OpenSearch® service that is backward compatible with Aiven for Elasticsearch. As a refresher on the context, please refer to our `announcement blog post <https://aiven.io/blog/announcing-aiven-for-opensearch>`_.
 
@@ -10,7 +10,7 @@ Aiven REST API
 Once we turn off the backward compatibility, there are a few changes will happen to Aiven REST API.
 
 Aiven for OpenSearch® ACL API
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 After August 23 2022, we recommend you to switch to using Aiven for OpenSearch® API instead of Aiven for Elasticsearch API. This includes using:
 
