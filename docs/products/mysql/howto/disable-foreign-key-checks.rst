@@ -63,7 +63,7 @@ As result, you can verify that the foreign keys are enabled by default. This is 
     +--------------------+-------+
     1 row in set (0.05 sec)
 
-To disable the foreing key checks for the session, you give an additional parameter when you connect to your Aiven for MySQL using the ``mysqlsh``:
+To disable the foreign key checks for the session, you give an additional parameter when you connect to your Aiven for MySQL using the ``mysqlsh``:
 
 .. code::shell
 
