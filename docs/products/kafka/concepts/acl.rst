@@ -16,12 +16,12 @@ The username portion of the ACL entry can be an Apache Kafka® service user name
 
 The wildcards supported are:
 
-* ``?`` matching a single character (equivalent to regular expression `.`)
-* ``*`` matching zero or more characters (equivalent to regular expression `(.*)`)
+* ``?`` matching a single character (equivalent to regular expression ``.``)
+* ``*`` matching zero or more characters (equivalent to regular expression ``(.*)``)
 
 The wildcards can be combined for more complex pattern matching:
 
-* ``?*`` matches a single character, and then zero or more other characters (equivalent to regular expression `(.+)`)
+* ``?*`` matches a single character, and then zero or more other characters (equivalent to regular expression ``(.+)``)
 
 Aiven for Apache Kafka® evaluates each topic access against the ACL entries. If it finds a matching ACL entry, access is granted. If no entry matches, access is denied. Thus the order of the ACL entries is irrelevant.
 
