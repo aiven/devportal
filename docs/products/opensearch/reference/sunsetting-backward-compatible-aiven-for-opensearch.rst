@@ -150,7 +150,7 @@ Grafana®
 
 If you have a default Aiven for Grafana® dashboard, Aiven automatically converts all queries using ``elasticsearch_`` prefixes to ``opensearch_`` prefixes.
 
-If you have a non-default Aiven for Grafana® dashboard. Aiven provides a `tool <https://github.com/aiven/aiven-string-replacer-for-grafana>`_ and an `instruction <../../grafana/howto/aiven-string-replacer-for-grafana.html>`_ to help you converting your dashboard that uses ``elasticsearch_`` to ``opensearch_``.
+If you have a non-default Aiven for Grafana® dashboard. Aiven provides a `tool <https://github.com/aiven/aiven-string-replacer-for-grafana>`_ and an :doc:`instruction <../../grafana/howto/aiven-string-replacer-for-grafana>` to help you converting your dashboard that uses ``elasticsearch_`` to ``opensearch_``.
 
 Datadog metrics integrations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -1,7 +1,7 @@
 Converting Elasticsearch Grafana® dashboards to OpenSearch® Grafana® dashboards
 ###############################################################################
 
-After August 23 2022, all of Aiven for OpenSearch® metrics only contains ``opensearch_`` prefixes. As a refresher on the context, please refer to `this article <../../opensearch/reference/sunsetting-backward-compatible-aiven-for-opensearch.html>`_. 
+After August 23 2022, all of Aiven for OpenSearch® metrics only contains ``opensearch_`` prefixes. As a refresher on the context, please refer to :doc:`this article <../../opensearch/reference/sunsetting-backward-compatible-aiven-for-opensearch.html>`. 
 
 This tutorial helps you to quickly convert all of your non-default Aiven for Grafana® dashboard that uses ``elasticsearch_`` prefixes metrics to ``opensearch_`` prefixes metrics.
 
