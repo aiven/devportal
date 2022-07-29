@@ -3,6 +3,7 @@
 
 Here you’ll find the full list of commands for ``avn service connection-info``.
 
+.. _avn_cli_service_connection_info_kcat:
 
 Retrieve connection information
 --------------------------------------------------------
@@ -10,7 +11,7 @@ Retrieve connection information
 ``avn service connection-info kafkacat``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Retrieves the ``kcat`` :doc:`command </docs/products/kafka/howto/kcat>` necessary to connect to a certain Aiven for Apache Kafka® service.
+Retrieves the ``kcat`` command necessary to connect to an Aiven for Apache Kafka® service and produce/consume messages to topics, check out more in the :doc:`dedicated article </docs/products/kafka/howto/kcat>`.
 
 .. list-table::
   :header-rows: 1
@@ -23,7 +24,7 @@ Retrieves the ``kcat`` :doc:`command </docs/products/kafka/howto/kcat>` necessar
   * - ``--route``
     - The type of route to use to connect to the service. Possible values are ``dynamic``, ``privatelink`` and ``public``
   * - ``--privatelink-connection-id``
-    - The Id of the privatelink to use
+    - The ID of the privatelink to use
   * - ``--kafka-authentication-method``
     - The Aiven for Apache Kafka® authentication method. Possible values are ``certificate`` and ``sasl``
   * - ``--username``
@@ -53,7 +54,7 @@ An example of ``service connection-info kafkacat`` output:
 
 .. Warning::
 
-  The command output uses the old ``kafkacat`` naming. To be able to execute ``kcat`` commands, replace ``kafkacat with ``kcat``.
+  The command output uses the old ``kafkacat`` naming. To be able to execute ``kcat`` commands, replace ``kafkacat`` with ``kcat``.
 
 ``avn service connection-info pg string``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -73,7 +74,7 @@ Retrieves the connection parameters for a certain Aiven for PostgreSQL® service
   * - ``--usage``
     - The database connection usage. Possible values are ``primary`` and ``replica`` 
   * - ``--privatelink-connection-id``
-    - The Id of the privatelink to use
+    - The ID of the privatelink to use
   * - ``--username``
     - The username used to connect if using ``sasl`` authentication method
   * - ``--dbname``
@@ -98,7 +99,7 @@ An example of ``avn service connection-info pg string`` output:
 ``avn service connection-info pg uri``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Retrieves the connection URI for a certain Aiven for PostgreSQL® service.
+Retrieves the connection URI for an Aiven for PostgreSQL® service.
 
 .. list-table::
   :header-rows: 1
@@ -113,7 +114,7 @@ Retrieves the connection URI for a certain Aiven for PostgreSQL® service.
   * - ``--usage``
     - The database connection usage. Possible values are ``primary`` and ``replica`` 
   * - ``--privatelink-connection-id``
-    - The Id of the privatelink to use
+    - The ID of the privatelink to use
   * - ``--username``
     - The username used to connect if using ``sasl`` authentication method
   * - ``--dbname``
@@ -137,7 +138,7 @@ An example of ``avn service connection-info pg uri`` output:
 ``avn service connection-info psql``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Retrieves the ``psql`` command needed to connect to a certain Aiven for PostgreSQL® service.
+Retrieves the ``psql`` command needed to connect to an Aiven for PostgreSQL® service.
 
 .. list-table::
   :header-rows: 1
@@ -177,7 +178,7 @@ An example of ``avn service connection-info psql`` output:
 ``avn service connection-info redis uri``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Retrieves the connection URI needed to connect to a certain Aiven for Redis®* service.
+Retrieves the connection URI needed to connect to an Aiven for Redis®* service.
 
 .. list-table::
   :header-rows: 1
@@ -192,7 +193,7 @@ Retrieves the connection URI needed to connect to a certain Aiven for Redis®* s
   * - ``--usage``
     - The database connection usage. Possible values are ``primary`` and ``replica`` 
   * - ``--privatelink-connection-id``
-    - The Id of the privatelink to use
+    - The ID of the privatelink to use
   * - ``--username``
     - The username used to connect if using ``sasl`` authentication method
   * - ``--db``

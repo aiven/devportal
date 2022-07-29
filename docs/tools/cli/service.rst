@@ -20,7 +20,7 @@ More information on ``acl-add``, ``acl-delete`` and ``acl-list`` can be found in
 ``avn service backup-list``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Retrieves the information about the list of backups for a certain service.
+Retrieves the list of backups for a certain service.
 
 
 .. list-table::
