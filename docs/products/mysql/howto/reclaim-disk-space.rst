@@ -19,6 +19,3 @@ If you do not have enough free space to run the ``OPTIMIZE TABLE`` command, then
 .. note::
 
     When you perform a temporary upgrade, it may require waiting for a smaller backup to be taken place before downgrading the plan again.
-
-
-
