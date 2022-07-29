@@ -633,6 +633,8 @@ entries:
   - file: docs/products/cassandra
     title: Apache Cassandra
     entries:
+      - file: docs/products/cassandra/get-started
+        title: Get started
       - file: docs/products/cassandra/concepts
         title: Concepts
         entries:
