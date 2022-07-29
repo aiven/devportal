@@ -1,15 +1,11 @@
 Disable foreign key checks
 ==========================
 
-It can be useful to know how to disable foreign key checks. For example, your migration to Aiven for MySQL may face foreign key violations which can result in an error, similar to::
+All Aiven for MySQL® services have the foreign key checks enabled by default. This helps to keep referential integrity across tables. However, you might want to disable it for a particular session. For example, when migrating to an Aiven for MySQL you may face errors related to foreign key violations similar to::
 
   ERROR 3780 (HY000) at line 11596: Referencing column 'g_id' and referenced column 'g_id' in foreign key constraint 'FK_33b11dcfac6148578da087b07c2f388f' are incompatible.
 
-In this article, we will explain how to temporarily disable Aiven for MySQL foreign key checking for the duration of a session. 
-
-.. note::
-
-    Aiven for MySQL has by default foreign key checks enabled.
+In this article, we will explain how to temporarily disable Aiven for MySQL foreign key checking for the duration of a session.
 
 Prerequisites
 -------------
@@ -30,27 +26,27 @@ You need those variables to run the commands. You can find this information in t
 
   * - Variable
     - Description
-  * - ``USER_HOST``
+  * - ``HOST``
     - Hostname for MySQL connection
-  * - ``USER_PORT``
+  * - ``PORT``
     - Port for MySQL connection
-  * - ``USER_PASSWORD``
+  * - ``PASSWORD``
     - Password of your Aiven for MySQL connection
   * - ``DB_NAME``
     - Database Name of your Aiven for MySQL connection
 
-Disable foreign key checks
---------------------------
+Check the foreign key check flag
+--------------------------------
 
-You can connect to your Aiven for MySQL following this command::
+First, you need connect to your Aiven for MySQL. You can use the following command for that::
     
-    mysql --user avnadmin --password=USER_PASSWORD --host USER_HOST --port USER_PORT DB_NAME
+    mysql --user avnadmin --password=PASSWORD --host HOST --port PORT DB_NAME
 
 After connecting, you can run the following command to check the default configuration for your foreign key checks.
 
 .. code:: shell
 
-    mysql> SHOW VARIABLES LIKE 'foreign_key_checks';
+    SHOW VARIABLES LIKE 'foreign_key_checks';
 
 As result, you can verify that the foreign keys are enabled by default. This is the output you will see:
 
@@ -63,15 +59,18 @@ As result, you can verify that the foreign keys are enabled by default. This is 
     +--------------------+-------+
     1 row in set (0.05 sec)
 
+Disable foreign key checks
+--------------------------
+
 To disable the foreign key checks for the session, you give an additional parameter when you connect to your Aiven for MySQL using the ``mysqlsh``:
 
-.. code::shell
+.. code:: shell
 
-    mysql --user avnadmin --password=USER_PASSWORD --host USER_HOST --port USER_PORT DB_NAME --init-command="SET @@SESSION.foreign_key_checks = 0;"
+    mysql --user avnadmin --password=PASSWORD --host HOST --port PORT DB_NAME --init-command="SET @@SESSION.foreign_key_checks = 0;"
 
 Once again, we can check the current status of the foreign key checks by running::
 
-  mysql> SHOW VARIABLES LIKE 'foreign_key_checks';
+    SHOW VARIABLES LIKE 'foreign_key_checks';
 
 As result, we can see that the foreign key checks are disabled for this session:
 
