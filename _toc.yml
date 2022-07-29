@@ -539,7 +539,6 @@ entries:
           - file: docs/products/opensearch/reference/index-replication
           - file: docs/products/opensearch/reference/restapi-limited-access
           - file: docs/products/opensearch/reference/low-space-watermarks
-          - file: docs/products/opensearch/reference/sunsetting-backward-compatible-aiven-for-opensearch
 
   - file: docs/products/m3db
     title: M3DB
