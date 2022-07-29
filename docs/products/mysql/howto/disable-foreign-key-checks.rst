@@ -84,6 +84,29 @@ As result, we can see that the foreign key checks are disabled for this session:
     1 row in set (0.04 sec)
 
 
+In addition, you can add the flag when running a set of commands saved in a file which the extension is ``.sql``.
+
+.. list-table::
+  :header-rows: 1
+  :widths: 15 60
+  :align: left
+
+  * - Variable
+    - Description
+  * - ``FILENAME``
+    - File which the extension is ``.sql``, for e.g. filename.sql
+
+You can paste the following command on your ``FILENAME``::
+
+  SHOW VARIABLES LIKE 'foreign_key_checks';
+
+Now you can set the ``init-command`` flag to disable the foreign key checks, and run the commands in this file like:
+
+.. code:: shell
+
+    mysql --user avnadmin --password=PASSWORD --host HOST --port PORT DB_NAME --init-command="SET @@SESSION.foreign_key_checks = 0;" < FILENAME
+
+
 More resources
 --------------
 
