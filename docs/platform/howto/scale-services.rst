@@ -1,5 +1,3 @@
-`_scale_your_service`
-
 Scale your service
 ==================
 
