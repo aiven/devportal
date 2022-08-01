@@ -230,6 +230,7 @@ entries:
               - file: docs/products/kafka/howto/configure-log-cleaner
               - file: docs/products/kafka/howto/prevent-full-disks
               - file: docs/products/kafka/howto/use-zookeeper
+              - file: docs/products/kafka/howto/avoid-out-of-memory-error
 
           - file: docs/products/kafka/howto/list-integration
             title: Integrations
