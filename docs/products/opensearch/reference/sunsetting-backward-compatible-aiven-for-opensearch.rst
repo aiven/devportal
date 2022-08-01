@@ -1,9 +1,9 @@
 Sunsetting backward compatibility with Aiven for Elasticsearch
 ==============================================================
 
-In September 2021, Aiven `introduced Aiven for OpenSearch® <https://aiven.io/blog/announcing-aiven-for-opensearch>`_ service that is backward compatible with Aiven for Elasticsearch.
+In September 2021, Aiven `introduced Aiven for OpenSearch® <https://aiven.io/blog/announcing-aiven-for-opensearch>`_ service and provided a migration path from Aiven for Elasticsearch service to Aiven for OpenSearch service that has backward capability to Aiven for Elasticsearch.
 
-On 23 August 2022, a mandatory update will be scheduled to discontinue the backward compatibility with Aiven for Elasticsearch. In this article, we will explain what are the changes after performing the update.
+On 23 August 2022, in order to complete the migration, Aiven will sunset the backward compatible capability to all migrated Aiven for OpenSearch cluster. In this article, we will explain what are the changes after performing the update.
 
 Aiven REST API
 --------------
@@ -18,7 +18,7 @@ After 23 August 2022, we recommend you to switch to use `Aiven for OpenSearch® 
 * POST ``https://api.aiven.io/v1/project/{project}/service/{service_name}/opensearch/acl``
 * PUT ``https://api.aiven.io/v1/project/{project}/service/{service_name}/opensearch/acl``
 
-In favor of:
+Instead of:
 
 * GET ``https://api.aiven.io/v1/project/{project}/service/{service_name}/elasticsearch/acl``
 * POST ``https://api.aiven.io/v1/project/{project}/service/{service_name}/elasticsearch/acl``
@@ -27,12 +27,21 @@ In favor of:
   
 .. seealso::
 
-	You can check the usage of Aiven API for Aiven for OpenSearch `on our official docs <https://api.aiven.io/doc/#tag/Service:_OpenSearch>`_.
+	You can check the usage of Aiven API for Aiven for OpenSearch `in the API reference <https://api.aiven.io/doc/#tag/Service:_OpenSearch>`_.
 
 Aiven API to access service information
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Sunsetting the backwards compatibility with Aiven for Elasticsearch will bring changes in how to access service information using the Aiven API. You can find below the changes when you make a request to ``https://api.aiven.io/v1/project/{project}/service/{service_name}``:
+
+================     =============================================================
+Variable             Description
+================     =============================================================
+``project``             The name of your project on Aiven
+----------------     -------------------------------------------------------------
+``service_name``        The name of your service
+================     =============================================================
+
 
 * ``elasticsearch`` and ``kibana`` will no longer be returned under ``components`` field
 * ``elasticsearch``, ``elasticsearch_username``, ``elasticsearch_password``, ``kibana_uri`` will no longer be returned under ``connection_info``
