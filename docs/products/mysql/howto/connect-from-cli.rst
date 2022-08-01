@@ -78,6 +78,8 @@ These are the placeholders you will need to replace in the code sample:
     - Port for MySQL connection
   * - ``USER_PASSWORD``
     - Password of your Aiven for MySQL connection
+  * - ``DB_NAME``
+    - Database Name of your Aiven for MySQL connection
 
 .. _connect-mysql:
 
@@ -97,7 +99,7 @@ Once you have these parameters, execute the following from a terminal window to 
 
 ::
 
-   mysql --user avnadmin --password=USER_PASSWORD --host USER_HOST --port USER_PORT defaultdb
+   mysql --user avnadmin --password=USER_PASSWORD --host USER_HOST --port USER_PORT DB_NAME
 
 .. warning::
    If you are providing the password via the command line, you must pass it as shown; putting a space between the parameter name and value will cause the password to be parsed incorrectly.
