@@ -16,6 +16,10 @@ InfluxDB®,
 Grafana®,
 and M3 - all available in more than 80 regions around the world on AWS, GCP, Microsoft Azure, DigitalOcean, and UpCloud cloud platforms.
 
+What is the Aiven platform?
+----------------------------
+
+You can check latest Aiven improvements on the `Aiven Changelog <https://aiven.io/changelog>`_ page.
 
 Learn more about the Aiven platform
 ------------------------------------
