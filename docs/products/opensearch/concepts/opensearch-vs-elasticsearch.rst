@@ -5,6 +5,10 @@ OpenSearch® is the open source continuation of the original Elasticsearch proje
 
 The v1.0 release of OpenSearch should be very much similar to the Elasticsearch release that it is based on and Aiven encourages all customers to upgrade at their earliest convenience. This is to ensure that your platforms are in a position to continue to receive upgrades in the future.
 
+.. seealso::
+
+    :doc:`</docs/products/opensearch/reference/sunsetting-backward-compatible-aiven-for-opensearch>`
+    
 -----
 
 *Elasticsearch is a trademark of Elasticsearch B.V., registered in the U.S. and in other countries.*

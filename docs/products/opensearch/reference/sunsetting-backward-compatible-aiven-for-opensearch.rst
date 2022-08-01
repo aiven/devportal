@@ -1,40 +1,45 @@
-Sunsetting Backward compatible Aiven for OpenSearch®
-====================================================
+Sunsetting backward compatibility with Aiven for Elasticsearch
+==============================================================
 
-On September 2021, Aiven introduced Aiven for OpenSearch® service that is backward compatible with Aiven for Elasticsearch. As a refresher on the context, please refer to our `announcement blog post <https://aiven.io/blog/announcing-aiven-for-opensearch>`_.
+In September 2021, Aiven `introduced Aiven for OpenSearch® <https://aiven.io/blog/announcing-aiven-for-opensearch>`_ service that is backward compatible with Aiven for Elasticsearch.
 
-After August 23 2022, we will schedule a mandatory update that will turn off the backwards compatibility in your services. In this article, we will explain what are the changes after the successful update.
+On 23 August 2022, a mandatory update will be scheduled to discontinue the backward compatibility with Aiven for Elasticsearch. In this article, we will explain what are the changes after performing the update.
 
 Aiven REST API
 --------------
-Once we turn off the backward compatibility, there are a few changes will happen to Aiven REST API.
+This section covers changes related to the REST API when the backward compatibility with Aiven for Elasticsearch is discontinued.
 
 Aiven for OpenSearch® ACL API
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-After August 23 2022, we recommend you to switch to using Aiven for OpenSearch® API instead of Aiven for Elasticsearch API. This includes using:
+After 23 August 2022, we recommend you to switch to use `Aiven for OpenSearch® API <https://api.aiven.io/doc/#tag/Service:_OpenSearch>`_ instead of Aiven for Elasticsearch API. This includes using:
 
 * GET ``https://api.aiven.io/v1/project/{project}/service/{service_name}/opensearch/acl``
 * POST ``https://api.aiven.io/v1/project/{project}/service/{service_name}/opensearch/acl``
 * PUT ``https://api.aiven.io/v1/project/{project}/service/{service_name}/opensearch/acl``
 
-In favor of
+In favor of:
 
 * GET ``https://api.aiven.io/v1/project/{project}/service/{service_name}/elasticsearch/acl``
 * POST ``https://api.aiven.io/v1/project/{project}/service/{service_name}/elasticsearch/acl``
 * PUT ``https://api.aiven.io/v1/project/{project}/service/{service_name}/elasticsearch/acl``
 
-Aiven API for getting service information
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  
+.. seealso::
 
-After August 23 2022, when make a call to ``https://api.aiven.io/v1/project/{project}/service/{service_name}`` to get service information:
+	You can check the usage of Aiven API for Aiven for OpenSearch `on our official docs <https://api.aiven.io/doc/#tag/Service:_OpenSearch>`_.
+
+Aiven API to access service information
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Sunsetting the backwards compatibility with Aiven for Elasticsearch will bring changes in how to access service information using the Aiven API. You can find below the changes when you make a request to ``https://api.aiven.io/v1/project/{project}/service/{service_name}``:
 
 * ``elasticsearch`` and ``kibana`` will no longer be returned under ``components`` field
 * ``elasticsearch``, ``elasticsearch_username``, ``elasticsearch_password``, ``kibana_uri`` will no longer be returned under ``connection_info``
 * ``elasticsearch_version`` will no longer be returned under ``user_config``
 * ``service_type`` will return ``opensearch`` instead of ``elasticsearch``
 
-Example of JSON response to your *Backward Compatible* Aiven for OpenSearch® service:
+Example of JSON response to your **backward compatible with Aiven for Elasticsearch** Aiven for OpenSearch® service:
 
 .. code:: json
 
@@ -89,7 +94,7 @@ Example of JSON response to your *Backward Compatible* Aiven for OpenSearch® se
 	 }
 	}
 
-Example of JSON response to your Aiven for OpenSearch® service after turning off backward compatibility:
+Example of JSON response to your Aiven for OpenSearch® service after **turning off backward compatibility with Elasticsearch**:
 
 .. code:: json
 
@@ -140,10 +145,14 @@ Service page for Aiven for OpenSearch® after turning off backward compatibility
 Metrics integrations
 --------------------
 
-Aiven provides metrics via the Telegraf plugin so metrics that are available across Aiven for InfluxDB®, Aiven for M3 metrics integration, external Prometheus integration, external AWS CloudWatch metrics integration are the same. You can see the full list of `detail metrics <https://help.aiven.io/en/articles/5144867-aiven-service-metrics>`_ and `additional metrics <https://help.aiven.io/en/articles/5144953-additional-service-metrics>`_.
+Aiven provides metrics via the Telegraf plugin so metrics that are available across Aiven for InfluxDB®, Aiven for M3 metrics integration, external Prometheus integration, and external AWS CloudWatch metrics integration are the same. You can see the full list of `detail metrics <https://help.aiven.io/en/articles/5144867-aiven-service-metrics>`_ and `additional metrics <https://help.aiven.io/en/articles/5144953-additional-service-metrics>`_.
 
 Once we turn off the backward compatibility, Aiven for OpenSearch® will not produce any ``elasticsearch_`` prefixes metrics to **all types of metric integrations** apart from external Datadog integration. Therefore, the metrics from your Aiven for OpenSearch® cluster only contains ``opensearch_`` prefixes from the above lists.
 
+Datadog metrics integrations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Aiven does not have controls over Datadog agents, therefore, all metrics sent to external Datadog metrics integration currently still have ``elasticsearch.`` prefixes.
 
 Grafana®
 ~~~~~~~~
@@ -152,7 +161,3 @@ If you have a default Aiven for Grafana® dashboard, Aiven automatically convert
 
 If you have a non-default Aiven for Grafana® dashboard. Aiven provides a `tool <https://github.com/aiven/aiven-string-replacer-for-grafana>`_ and an :doc:`instruction <../../grafana/howto/aiven-string-replacer-for-grafana>` to help you converting your dashboard that uses ``elasticsearch_`` to ``opensearch_``.
 
-Datadog metrics integrations
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Aiven does not have controls over Datadog agents, therefore, all metrics sent to external Datadog metrics integration currently still have ``elasticsearch.`` prefixes.
