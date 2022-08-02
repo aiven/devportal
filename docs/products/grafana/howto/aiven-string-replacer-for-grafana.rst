@@ -1,20 +1,18 @@
-Converting Elasticsearch Grafana® dashboards to OpenSearch® Grafana® dashboards
-###############################################################################
+Replacing string in marshalled dashboards for Grafana®
+######################################################
 
-After August 23 2022, all of Aiven for OpenSearch® metrics only contains ``opensearch_`` prefixes. As a refresher on the context, please refer to :doc:`this article <../../opensearch/reference/sunsetting-backward-compatible-aiven-for-opensearch.html>`. 
-
-This tutorial helps you to quickly convert all of your non-default Aiven for Grafana® dashboard that uses ``elasticsearch_`` prefixes metrics to ``opensearch_`` prefixes metrics.
+This tutorial helps you to quickly replace metric expression that occurs more than once in Grafana® dashboard.
 
 What you need
 -------------
 * GO envinronment installed. Please follow this `instructions <https://go.dev/dl/>`_ to install GO.
-* Grafana® dashboard using ``elasticsearch_`` prefixes. This tool can work with your own Grafana® cluster or your Aiven for Grafana® cluster
+* This tool can work with your own Grafana® cluster or your Aiven for Grafana® cluster
 
-Converting dashboard using ``elasticsearch_`` prefixes to ``opensearch_`` prefixes
-----------------------------------------------------------------------------------
+Replacing string in marshalled dashboard
+----------------------------------------
 1. Run this command to `download <https://github.com/aiven/aiven-string-replacer-for-grafana>`_ and install ``aiven-string-replacer-for-grafana`` 
 
-.. code:: json
+.. code:: bash
 
   go install github.com/aiven/aiven-string-replacer-for-grafana
 
@@ -32,7 +30,27 @@ Converting dashboard using ``elasticsearch_`` prefixes to ``opensearch_`` prefix
 
 8. When you have your API Key of your Grafana® cluster, UID, and URL of your dashboard ready, you can run this command.
 
-.. code:: json
+.. code:: bash
+
+  aiven-string-replacer-for-grafana -apikey YOUR_API_KEY -url YOUR_DASHBOARD_URL -from OLD_STRING -to NEW_STRING -uid YOUR_DASHBOARD_UID
+
+======================     =============================================================
+Variable                   Description
+======================     =============================================================
+``YOUR_API_KEY``             The API key from step 4
+----------------------     -------------------------------------------------------------
+``YOUR_DASHBOARD_URL``       The dashboard URL
+----------------------     -------------------------------------------------------------
+``OLD_STRING``               The name of your service
+----------------------     -------------------------------------------------------------
+``NEW_STRING``               The name of your service
+----------------------     -------------------------------------------------------------
+``YOUR_DASHBOARD_UID``       The dashboard UID from step 7.
+======================     =============================================================
+
+Example of query that replaces ``elasticsearch_`` prefix metrics to ``opensearch_`` prefix
+
+.. code:: bash
 
   aiven-string-replacer-for-grafana -apikey YOUR_API_KEY -url YOUR_DASHBOARD_URL -from elasticsearch_ -to opensearch_ -uid YOUR_DASHBOARD_UID
 
