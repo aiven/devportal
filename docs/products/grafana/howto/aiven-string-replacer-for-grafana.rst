@@ -41,9 +41,9 @@ Variable                   Description
 ----------------------     -------------------------------------------------------------
 ``YOUR_DASHBOARD_URL``       The dashboard URL
 ----------------------     -------------------------------------------------------------
-``OLD_STRING``               The name of your service
+``OLD_STRING``               Old string that gets replaced
 ----------------------     -------------------------------------------------------------
-``NEW_STRING``               The name of your service
+``NEW_STRING``               New string that replaces
 ----------------------     -------------------------------------------------------------
 ``YOUR_DASHBOARD_UID``       The dashboard UID from step 7.
 ======================     =============================================================
