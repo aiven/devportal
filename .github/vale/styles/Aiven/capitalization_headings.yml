@@ -40,6 +40,8 @@ exceptions:
   - Grafana
   - Hobbyist
   - HowTo
+  - Identity Provider
+  - IdP
   - InfluxDB
   - InnoDB
   - IPsec
