@@ -19,6 +19,29 @@ The command to connect to the service looks like this:
 
 .. code:: bash
 
+    docker run -it \
+    --rm clickhouse/clickhouse-client \
+    --user USER-NAME \
+    --password USER-PASSWORD \
+    --host YOUR-HOST-NAME.aivencloud.com \
+    --port YOUR-PORT \
+    --secure
+
+This example includes the ``-it`` option (a combination of ``--interactive`` and ``--tty``) to take you inside the container and  the ``--rm`` option to automatically remove the container after exiting.
+
+The other parameters, such as ``--user``, ``--password``, ``--host``, ``--port``, ``--secure``, and ``--query`` are arguments accepted by the ClickHouse client. You can see the full list of command line options in `the ClickHouse CLI documentation <https://clickhouse.com/docs/en/interfaces/cli/#command-line-options>`_.
+
+Once you're connected to the server, you can type queries directly within the client, for example, to see the list of existing databases, run
+
+.. code:: sql
+
+    SHOW DATABASES
+
+
+Alternatively, sometimes you might want to run individual queries and be able to access the command prompt outside the docker container. In this case you can set ``--interactive`` and  use ``--query`` parameter without entering the docker container:
+
+.. code:: bash
+
     docker run --interactive \
     --rm clickhouse/clickhouse-client \
     --user USER-NAME \
@@ -28,14 +51,7 @@ The command to connect to the service looks like this:
     --secure \
     --query="YOUR SQL QUERY GOES HERE"
 
-This example includes the ``--interactive`` option (or ``-i``) to be able to access the command prompt outside the docker container and  the ``--rm`` option to automatically remove the container after exiting.
-
-The other parameters, such as ``--user``, ``--password``, ``--host``, ``--port``, ``--secure``, and ``--query`` are arguments accepted by the ClickHouse client. You can see the full list of command line options in `the ClickHouse CLI documentation <https://clickhouse.com/docs/en/interfaces/cli/#command-line-options>`_.
-
-Command example
------------------
-
-Here is an example of a request to see the list of present databases::
+Similar to above example, you can request the list of present databases directly::
 
     docker run --interactive \
     --rm clickhouse/clickhouse-client \

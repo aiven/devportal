@@ -40,33 +40,30 @@ We will be using the ClickHouse client to connect to the server. Follow :doc:`th
 
 To connect to the server, use the connection details that you can find in the *Connection information* section of the *Overview* page in the Aiven web console. You will need **Host**, **Port**, **User**, and **Password**.
 
+.. code:: bash
+
+    docker run -it \
+    --rm clickhouse/clickhouse-client \
+    --user USER-NAME \
+    --password USER-PASSWORD \
+    --host YOUR-HOST-NAME.aivencloud.com \
+    --port YOUR-PORT \
+    --secure
+
+Once you're connected, you can run queries from within the ClickHouse client.
 
 Create tables
 ---------------
 
-The next step is to add a new table to your newly created database. The ClickHouse documentation includes a sample ``CREATE TABLE`` command with `the recommended table structure <https://clickhouse.com/docs/en/getting-started/example-datasets/metrica>`_.
+The next step is to add new tables to your newly created database. The ClickHouse documentation includes a sample ``CREATE TABLE`` command with `the recommended table structure <https://clickhouse.com/docs/en/getting-started/example-datasets/metrica>`_, use it to create the tables for both ``hits_v1`` and ``visits_v1``::
 
-To use the command through Docker, run the following commands to create the tables for both ``hits_v1`` and ``visits_v1``::
+.. code:: sql
 
-   docker run --interactive \
-    --rm clickhouse/clickhouse-client \
-    --user USER-NAME \
-    --password USER-PASSWORD \
-    --host YOUR-HOST-NAME.aivencloud.com \
-    --port YOUR-PORT \
-    --secure \
-    --query="CREATE TABLE datasets.hits_v1 [...] "
+   CREATE TABLE datasets.hits_v1 [...]
 
-::
+.. code:: sql
 
-   docker run --interactive \
-    --rm clickhouse/clickhouse-client \
-    --user USER-NAME \
-    --password USER-PASSWORD \
-    --host YOUR-HOST-NAME.aivencloud.com \
-    --port YOUR-PORT \
-    --secure \
-    --query="CREATE TABLE datasets.visits_v1 [...] "
+   CREATE TABLE datasets.visits_v1 [...]
 
 .. note::
 
@@ -75,7 +72,7 @@ To use the command through Docker, run the following commands to create the tabl
 Load data
 ----------
 
-Now that you have a dataset with two empty tables, inject data into each of the tables. To do this:
+Now that you have a dataset with two empty tables, we'll inject data into each of the tables. However, because we need to access files outside the docker container, we'll run the command specifying ``--query`` parameter. To do this:
 
 1. Go to the folder where you stored the downloaded files for ``hits_v1.tsv`` and ``visits_v1.tsv``.
 
@@ -113,39 +110,17 @@ You should now see the two tables in your database and you are ready to try out 
 Run queries
 -----------
 
-Once the data is loaded, you can start running some queries against the sample data you imported. For example, here is a command to query the number of items in the `hits_v1` table::
+Once the data is loaded, you can run queries against the sample data you imported. For example, here is a command to query the number of items in the `hits_v1` table:
 
-    docker run --interactive \
-    --rm clickhouse/clickhouse-client \
-    --user USER-NAME \
-    --password USER-PASSWORD \
-    --host YOUR-HOST-NAME.aivencloud.com \
-    --port YOUR-PORT \
-    --secure \
-    --query="SELECT COUNT(*) FROM datasets.hits_v1"
+.. code:: sql
 
-
-You can use a similar query to count how many items are in the `visits_v1` table::
-
-    docker run --interactive \
-    --rm clickhouse/clickhouse-client \
-    --user USER-NAME \
-    --password USER-PASSWORD \
-    --host YOUR-HOST-NAME.aivencloud.com \
-    --port YOUR-PORT \
-    --secure \
-    --query="SELECT COUNT(*) FROM datasets.visits_v1"
+   SELECT COUNT(*) FROM datasets.hits_v1
 
 Another example uses some additional query features to find the longest lasting sessions::
 
-    docker run --interactive \
-    --rm clickhouse/clickhouse-client \
-    --user USER-NAME \
-    --password USER-PASSWORD \
-    --host YOUR-HOST-NAME.aivencloud.com \
-    --port YOUR-PORT \
-    --secure \
-    --query="SELECT StartURL AS URL, MAX(Duration) AS MaxDuration FROM tutorial.visits_v1 GROUP BY URL ORDER BY MaxDuration DESC LIMIT 10"
+.. code:: sql
+
+    SELECT StartURL AS URL, MAX(Duration) AS MaxDuration FROM datasets.visits_v1 GROUP BY URL ORDER BY MaxDuration DESC LIMIT 10
 
 
 See tables in the console
