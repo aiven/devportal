@@ -66,16 +66,16 @@ The following set of steps are executed during an upgrade procedure:
                 PartitionC2([Partition C])
             end
             subgraph NewNode1
-                PartitionNewA2([Partition A])
-                PartitionNewB2([Partition B])
+                PartitionNewA1([Partition A])
+                PartitionNewC1([Partition C])
             end
             subgraph NewNode2
-                PartitionNewA1([Partition A])
+                PartitionNewB1([Partition B])
                 PartitionNewC2([Partition C])
             end
             subgraph NewNode3
-                PartitionNewB1([Partition B])
-                PartitionNewC1([Partition C])
+                PartitionNewA2([Partition A])
+                PartitionNewB2([Partition B])
             end
         end
 
@@ -106,16 +106,16 @@ The following set of steps are executed during an upgrade procedure:
 
         subgraph KafkaCluster
             subgraph NewNode1
-                PartitionNewA2([Partition A])
-                PartitionNewB2([Partition B])
+                PartitionNewA1([Partition A])
+                PartitionNewC1([Partition C])
             end
             subgraph NewNode2
-                PartitionNewA1([Partition A])
+                PartitionNewB1([Partition B])
                 PartitionNewC2([Partition C])
             end
             subgraph NewNode3
-                PartitionNewB1([Partition B])
-                PartitionNewC1([Partition C])
+                PartitionNewA2([Partition A])
+                PartitionNewB2([Partition B])
             end
         end
 
