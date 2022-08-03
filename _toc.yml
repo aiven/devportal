@@ -72,6 +72,11 @@ entries:
           - file: docs/platform/howto/use-billing-groups
           - file: docs/platform/howto/billing-google-cloud-platform-marketplace-subscription
             title: Set up GCP Marketplace
+      - file: docs/platform/howto/saml-authentication
+        title: SAML Authentication
+        entries:
+          - file: docs/platform/howto/saml/setup-saml-onelogin
+            title: Setting up SAML with OneLogin
     - file: docs/platform/reference
       title: Reference
       entries:
