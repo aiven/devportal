@@ -55,7 +55,7 @@ Once you're connected, you can run queries from within the ClickHouse client.
 Create tables
 ---------------
 
-The next step is to add new tables to your newly created database. The ClickHouse documentation includes a sample ``CREATE TABLE`` command with `the recommended table structure <https://clickhouse.com/docs/en/getting-started/example-datasets/metrica>`_, use it to create the tables for both ``hits_v1`` and ``visits_v1``::
+The next step is to add new tables to your newly created database. The ClickHouse documentation includes a sample ``CREATE TABLE`` command with `the recommended table structure <https://clickhouse.com/docs/en/getting-started/example-datasets/metrica>`_, use it to create the tables for both ``hits_v1`` and ``visits_v1``:
 
 .. code:: sql
 
@@ -116,7 +116,7 @@ Once the data is loaded, you can run queries against the sample data you importe
 
    SELECT COUNT(*) FROM datasets.hits_v1
 
-Another example uses some additional query features to find the longest lasting sessions::
+Another example uses some additional query features to find the longest lasting sessions:
 
 .. code:: sql
 
