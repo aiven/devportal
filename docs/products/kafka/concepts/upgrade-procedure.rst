@@ -15,95 +15,33 @@ All the above operations involve creating new broker nodes to replace existing o
 Upgrade procedure steps
 ---------------------------
 
-The following set of steps are executed during an upgrade procedure, the example shows a possible scenario for a 3-node Apache Kafka service.
+To demonstrate what steps are taken during the automated upgrade procedure, we'll look at the example for a 3-node Apache Kafka service visualised below:
 
 .. mermaid::
 
     flowchart TD;
         subgraph KafkaCluster
-            subgraph Node3
-                PartitionB2([Partition B])
-                PartitionC2([Partition C])
+            subgraph Node1
+                PartitionA1([Partition A])
+                PartitionB1([Partition B])
             end
             subgraph Node2
                 PartitionA2([Partition A])
                 PartitionC1([Partition C])
             end
-            subgraph Node1
-                PartitionA1([Partition A])
-                PartitionB1([Partition B])
+            subgraph Node3
+                PartitionB2([Partition B])
+                PartitionC2([Partition C])
             end
+            
+            
         end
         
-    
+The following set of steps are executed during an upgrade procedure:    
 
 1. New Apache Kafka® nodes are started alongside the existing nodes
 
-.. mermaid::
-
-    flowchart TD;
-
-        subgraph NewNode3
-            PartitionNew31([ ])
-            PartitionNew32([ ])
-        end
-        subgraph NewNode2
-            PartitionNew21([ ])
-            PartitionNew22([ ])
-        end
-        subgraph NewNode1
-            PartitionNew11([ ])
-            PartitionNew12([ ])
-        end
-        subgraph KafkaCluster
-            subgraph Node3
-                PartitionB2([Partition B])
-                PartitionC2([Partition C])
-            end
-            subgraph Node2
-                PartitionA2([Partition A])
-                PartitionC1([Partition C])
-            end
-            subgraph Node1
-                PartitionA1([Partition A])
-                PartitionB1([Partition B])
-            end
-        end
-        
-
 2. Once the new nodes are running, they join the Apache Kafka cluster
-
-.. mermaid::
-
-    flowchart TD;
-
-        subgraph KafkaCluster
-            subgraph NewNode3
-                PartitionNew31([ ])
-                PartitionNew32([ ])
-            end
-            subgraph NewNode2
-                PartitionNew21([ ])
-                PartitionNew22([ ])
-            end
-            subgraph NewNode1
-                PartitionNew11([ ])
-                PartitionNew12([ ])
-            end
-        
-            subgraph Node3
-                PartitionB2([Partition B])
-                PartitionC2([Partition C])
-            end
-            subgraph Node2
-                PartitionA2([Partition A])
-                PartitionC1([Partition C])
-            end
-            subgraph Node1
-                PartitionA1([Partition A])
-                PartitionB1([Partition B])
-            end
-        end
 
 .. Note::
     The Apache Kafka cluster now contains a mix of old and new nodes       
@@ -115,30 +53,29 @@ The following set of steps are executed during an upgrade procedure, the example
     flowchart TD;
 
         subgraph KafkaCluster
-            subgraph NewNode3
-                PartitionNewB1([Partition B])
-                PartitionNewC1([Partition C])
-            end
-            subgraph NewNode2
-                PartitionNewA1([Partition A])
-                PartitionNewC2([Partition C])
-            end
-            subgraph NewNode1
-                PartitionNewA2([Partition A])
-                PartitionNewB2([Partition B])
-            end
-        
-            subgraph Node3
-                PartitionB2([Partition B])
-                PartitionC2([Partition C])
+            subgraph Node1
+                PartitionA1([Partition A])
+                PartitionB1([Partition B])
             end
             subgraph Node2
                 PartitionA2([Partition A])
                 PartitionC1([Partition C])
             end
-            subgraph Node1
-                PartitionA1([Partition A])
-                PartitionB1([Partition B])
+            subgraph Node3
+                PartitionB2([Partition B])
+                PartitionC2([Partition C])
+            end
+            subgraph NewNode1
+                PartitionNewA2([Partition A])
+                PartitionNewB2([Partition B])
+            end
+            subgraph NewNode2
+                PartitionNewA1([Partition A])
+                PartitionNewC2([Partition C])
+            end
+            subgraph NewNode3
+                PartitionNewB1([Partition B])
+                PartitionNewC1([Partition C])
             end
         end
 
@@ -154,36 +91,6 @@ The following set of steps are executed during an upgrade procedure, the example
     This step is CPU intensive due to the additional data movement overhead.
 
 4. Once old nodes don't have any partition data, they are retired from the cluster.
-
-.. mermaid::
-
-    flowchart TD;
-
-        subgraph KafkaCluster
-            subgraph NewNode3
-                PartitionNewB1([Partition B])
-                PartitionNewC1([Partition C])
-            end
-            subgraph NewNode2
-                
-                PartitionNewC2([Partition C])
-            end
-            subgraph NewNode1
-                PartitionNewA2([Partition A])
-                
-            end
-        
-            subgraph Node3
-                PartitionB2([Partition B])
-                
-            end
-            subgraph Node2
-                PartitionA2([Partition A])
-                
-            end
-
-            
-        end
         
 .. Note::
 
@@ -198,17 +105,17 @@ The following set of steps are executed during an upgrade procedure, the example
     flowchart TD;
 
         subgraph KafkaCluster
-            subgraph NewNode3
-                PartitionNewB1([Partition B])
-                PartitionNewC1([Partition C])
+            subgraph NewNode1
+                PartitionNewA2([Partition A])
+                PartitionNewB2([Partition B])
             end
             subgraph NewNode2
                 PartitionNewA1([Partition A])
                 PartitionNewC2([Partition C])
             end
-            subgraph NewNode1
-                PartitionNewA2([Partition A])
-                PartitionNewB2([Partition B])
+            subgraph NewNode3
+                PartitionNewB1([Partition B])
+                PartitionNewC1([Partition C])
             end
         end
 

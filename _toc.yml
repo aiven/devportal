@@ -174,11 +174,13 @@ entries:
       - file: docs/products/kafka/concepts
         entries:
           - file: docs/products/kafka/concepts/upgrade-procedure
+            title: Upgrade procedure
+          - file: docs/products/kafka/concepts/horizontal-vertical-scaling
+            title: Scaling options
           - file: docs/products/kafka/concepts/acl
           - file: docs/products/kafka/concepts/schema-registry-authorization
           - file: docs/products/kafka/concepts/log-compaction
           - file: docs/products/kafka/concepts/partition-segments
-          - file: docs/products/kafka/concepts/horizontal-vertical-scaling
           - file: docs/products/kafka/concepts/auth-types
           - file: docs/products/kafka/concepts/non-leader-for-partition
       - file: docs/products/kafka/howto
