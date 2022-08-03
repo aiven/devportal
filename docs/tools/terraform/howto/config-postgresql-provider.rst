@@ -1,5 +1,5 @@
-Use PostgreSQL® provider with Aiven's PostgreSQL service
-#####################################################
+Use PostgreSQL® provider for additional PostgreSQL configurations
+#################################################################
 
 `Aiven Terraform provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_ can be used to create and manage Aiven for PostgreSQL® service, PostgreSQL® databases, and users. If you need to perform additional configurations such as setting PostgreSQL default privileges, configure PostgreSQL publication, or reuse a PostgreSQL-based sub-module between different vendors to make the Terraform code homogeneous, you can consider using the `PostgreSQL® provider <https://registry.terraform.io/providers/cyrilgdn/postgresql/latest/docs>`_.
 This article shows how to use the PostgreSQL provider along with the Aiven Terraform Provider to create a PostgreSQL role.   
@@ -54,10 +54,11 @@ Optionally, when the Aiven for PostgreSQL service is created within the same Ter
     }
 
     # PostgreSQL provider is configured with references to the aiven_pg.demo-pg resource.
+    
     provider "postgresql" {
       host            = aiven_pg.demo-pg.service_host
       port            = aiven_pg.demo-pg.service_port
-      database        = "defaultdb"
+      database        = aiven_pg.demo-pg.pg.dbname
       username        = aiven_pg.demo-pg.service_username
       password        = aiven_pg.demo-pg.service_password
       sslmode         = "require"
