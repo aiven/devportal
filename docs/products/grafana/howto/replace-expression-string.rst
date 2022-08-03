@@ -1,5 +1,5 @@
-Replacing string in marshalled dashboards for Grafana®
-######################################################
+Replacing string in Grafana® dashboards
+#######################################
 
 Sometimes, it is useful to replace all occurrences of a string in Grafana® metric expressions.
 This page describes how to do that using the ``aiven-string-replaced-for-grafana`` tool
@@ -90,7 +90,7 @@ The change will be visible in the *Query* panel:
 
 Use the version history to revert
 ---------------------------------
-If necessary, the *Dashboard changelog* can be used to revert a change.
+If necessary, the *Dashboard changelog* page can be used to revert a change to a specific version.
 
 * Go to the dashboard that you modified.
 
