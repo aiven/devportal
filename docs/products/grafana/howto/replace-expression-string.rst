@@ -46,7 +46,7 @@ To get your API key (``YOUR_API_KEY``):
 
 * Otherwise, select **Add API key** and fill in the *Key name*, *Role* and *Time to live*. Click **Add** and then save the new API key.
 
-   .. note:: *Role* must be either *Editor* or *Admin*. Click **Add**
+   .. note:: *Role* must be either *Editor* or *Admin*.
 
 To get the dashboard URL and UID (``YOUR_DASHBOARD_URL`` and ``YOUR_DASHBOARD_URI``):
 
@@ -59,7 +59,7 @@ To get the dashboard URL and UID (``YOUR_DASHBOARD_URL`` and ``YOUR_DASHBOARD_UR
 Perform the replacement
 -----------------------
 
-Use a command of the following form to perform the replacement, changing the placeholder variable names to the values you collected above:
+Use a command like the following to perform the replacement, changing the placeholder variable names to the values you collected above:
 
 .. code:: bash
 
@@ -69,32 +69,34 @@ Use a command of the following form to perform the replacement, changing the pla
 Example: changing ``elasticsearch_`` to ``opensearch_``
 -------------------------------------------------------
 
+For instance, use the following command to change all metric expressions that start with ``elasticsearch_`` to instead start with ``opensearch_``:
+
 .. code:: bash
 
   aiven-string-replacer-for-grafana -apikey YOUR_API_KEY -url YOUR_DASHBOARD_URL \
       -from elasticsearch_ -to opensearch_ -uid YOUR_DASHBOARD_UID
 
-Then change will be visible in the *Query* panel:
+The change will be visible in the *Query* panel:
 
-* Before running the command, a query used metrics starting with ``elasticsearch_``:
+* Before running the command, metrics start with ``elasticsearch_``:
 
   .. image:: /images/products/grafana/query-with-elasticsearch-prefix.png
       :alt: A screenshot of the Grafana Dashboard query showing metrics prefixed with ``elasticsearch_``
 
-* After running the command, the query uses metrics starting with ``opensearch_``:
+* After running the command, metrics start with ``opensearch_``:
 
   .. image:: /images/products/grafana/query-with-opensearch-prefix.png
       :alt: A screenshot of the Grafana Dashboard query showing metrics prefixed with ``opensearch_``
 
 Use the version history to revert
 ---------------------------------
-The *Dashboard changelog* can be used to revert a change, if necessary.
+If necessary, the *Dashboard changelog* can be used to revert a change.
 
-* Go to the your dashboard that you modified.
+* Go to the dashboard that you modified.
 
 * Select the **Dashboard settings** icon, then select **Versions**.
 
-* This will show *your Dashboard changelog*, and you can use this to revert to an earlier version of the dashboard.
+* This will show your Dashboard changelog, and you can use this to revert to an earlier version of the dashboard.
 
 .. image:: /images/products/grafana/grafana-version-changelog.png
     :alt: A screenshot of the Grafana Dashboard version changelog after conversion
