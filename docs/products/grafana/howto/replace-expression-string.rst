@@ -1,8 +1,8 @@
-Replacing string in Grafana® dashboards
-#######################################
+Replacing a string in Grafana® dashboards
+#########################################
 
 Sometimes, it is useful to replace all occurrences of a string in Grafana® metric expressions.
-This page describes how to do that using the ``aiven-string-replaced-for-grafana`` tool
+This page describes how to do that using the ``aiven-string-replacer-for-grafana`` tool
 
 The approach described will work with your own Grafana® cluster or with an Aiven for Grafana® cluster
 
