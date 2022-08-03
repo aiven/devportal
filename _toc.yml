@@ -52,6 +52,7 @@ entries:
           - file: docs/platform/howto/migrate-services
           - file: docs/platform/howto/add-storage-space
           - file: docs/platform/howto/tag-resources.rst
+          - file: docs/platform/howto/viewing-service-logs.rst
       - file: docs/platform/howto/list-network
         title: Network management
         entries:
