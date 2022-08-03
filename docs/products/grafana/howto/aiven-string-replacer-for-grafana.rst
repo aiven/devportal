@@ -65,3 +65,8 @@ Example of that same query after conversion. It should use ``opensearch_`` prefi
 
 .. image:: /images/products/grafana/query-with-opensearch-prefix.png
     :alt: A screenshot of the Grafana Dashboard query with opensearch_ prefix metrics
+
+Go to the your dashboard that you want to convert. Click on the **Dashboard settings** icon, then click **Versions**. You can see the *your Dashboard changelog*
+
+.. image:: /images/products/grafana/grafana-version-changelog.png
+    :alt: A screenshot of the Grafana Dashboard version changelog after conversion
