@@ -12,7 +12,7 @@ Setting up the SAML authentication method
 
 SAML Authentication methods are configured at the *Account* level. To configure a new one, click the *downward facing arrow* next to your current project in the top-left of the Aiven Console.
 
-In the popup that appears, select *See all projects and accounts*, from here you can create a new *Account* or select the existing one you would like to use.
+In the popup that appears, select *See all projects and accounts*, from here you can create a new **Account** or select the existing one you would like to use.
 
 In the *Account* page, select the *Authentication* tab and click the red button to *Add a new authentication method*.
 
@@ -92,14 +92,12 @@ Logging in with a SAML authentication method
   Aiven user, if you have one, or create a new Aiven profile
   associated with it. To do that, you first need to get an invite link
   from your Account manager. Once you get the invite link, click on it
-  and you should land on the following page:
-
-.. image:: 3376377-saml-authentication_image1.png
+  and you should be redirected to the Aiven console.
 
 You have an Aiven profile and are logged in to the Aiven Console
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| Click on the “Link profile” button. You will be redirected to your
+| Click on the **Link profile** button. You will be redirected to your
   SAML provider’s authentication page. Once you’ve logged in to the
   provider, you will be redirected back to the Aiven Console, and the
   authentication method will be linked to your profile.
@@ -107,7 +105,7 @@ You have an Aiven profile and are logged in to the Aiven Console
 You have an Aiven profile and are logged out
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| Click on the “Login” button. You will be sent to the login page of the
+| Click on the **Login** button. You will be sent to the login page of the
   Aiven Console, where you can log in as usual, using your password, your configured SAML provider or
   Google OAuth. After you’re logged in to the Aiven Console, you will be
   redirected to your SAML provider’s authentication page. Once you’ve
@@ -117,7 +115,7 @@ You have an Aiven profile and are logged out
 You don’t have an Aiven profile
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| Click on the “Sign up” button. You will be redirected to your SAML
+| Click on the **Sign up** button. You will be redirected to your SAML
   provider’s authentication page. Once you’ve logged in to the provider,
   you will be redirected back to the Aiven sign page where you can
   finish the sign up process. Once this is done, you will have your
