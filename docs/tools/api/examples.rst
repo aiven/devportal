@@ -10,7 +10,7 @@ List of cloud regions
 
   curl -H "Authorization: Bearer {TOKEN}" https://api.aiven.io/v1/clouds
 
-The response looks something like this
+The following is a sample response: 
 
 .. code:: json
 
@@ -31,6 +31,6 @@ The response looks something like this
         "geo_region": "africa"
       },
 
-For most endpoints where a cloud is used as an input, the `cloud_name` from this result is the field to use.
+For most endpoints where a cloud is used as an input, the `cloud_name` from this result is the field to use. For more information on the available endpoints, see the `Aiven API documentation <https://api.aiven.io/doc/>`_.
 
 
