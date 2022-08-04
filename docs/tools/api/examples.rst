@@ -31,6 +31,6 @@ The response looks something like this
         "geo_region": "africa"
       },
 
-For most endpoints where a cloud is used as an input, the `cloud_name` from this result is the field to use.
+For most endpoints where a cloud is used as an input, the `cloud_name` from this result is the field to use. For more information on the available endpoints, see the `API documentation <https://api.aiven.io/doc/>`_.
 
 
