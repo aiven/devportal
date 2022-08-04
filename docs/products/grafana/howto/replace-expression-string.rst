@@ -22,17 +22,17 @@ Values you will need
 --------------------
 
 =========================    =============================================================
-Variable                   Description
+Variable                     Description
 =========================    =============================================================
-``GRAFANA_API_KEY``         The API key for accessing Grafana
+``GRAFANA_API_KEY``          The API key for accessing Grafana
 -------------------------    -------------------------------------------------------------
 ``GRAFANA_DASHBOARD_URL``    The URL for the Grafana dashboard
 -------------------------    -------------------------------------------------------------
 ``GRAFANA_DASHBOARD_UID``    The UID that identifies the Grafana dashboard
 -------------------------    -------------------------------------------------------------
-``OLD_STRING``              The old string, that you want to replace
+``OLD_STRING``               The old string, that you want to replace
 -------------------------    -------------------------------------------------------------
-``NEW_STRING``              The new string, that you want to use instead
+``NEW_STRING``               The new string, that you want to use instead
 =========================    =============================================================
 
 Get the Grafana API key
