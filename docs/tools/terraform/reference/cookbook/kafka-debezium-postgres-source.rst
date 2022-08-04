@@ -1,5 +1,5 @@
 Debezium source connector - PostgreSQL® to Apache Kafka® across clouds
-==========================================================
+======================================================================
 
 The `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_ is a great choice for provisioning an Aiven for Apache Kafka® cluster with Kafka Connect enabled and the `Debezium source connector for PostgreSQL® <https://developer.aiven.io/docs/products/kafka/kafka-connect/howto/debezium-source-connector-pg.html>`_ configured.
 
