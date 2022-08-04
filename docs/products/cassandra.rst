@@ -20,7 +20,7 @@ It is a truly distributed database where the individual nodes can communicate wi
 Get started with Aiven for Apache Cassandra
 -------------------------------------------
 
-Find more information about Apache Cassandra in the following sections:
+Take your first steps with Aiven for Apache Cassandra® by following our :doc:`/docs/products/cassandra/get-started` article, or browse through our full list of articles:
 
 .. panels::
 
