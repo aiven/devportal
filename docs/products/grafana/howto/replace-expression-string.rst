@@ -48,7 +48,7 @@ To get your API key (``GRAFANA_API_KEY``):
 
 * Otherwise, select **Add API key** and fill in the *Key name*, *Role* and *Time to live*. Click **Add** and then save the new API key.
 
-   .. info:: *Role* must be either *Editor* or *Admin*.
+   .. tip:: *Role* must be either *Editor* or *Admin*.
 
 To get the Grafana dashboard URL and UID
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
