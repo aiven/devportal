@@ -2,12 +2,12 @@ Replacing a string in Grafana® dashboards
 #########################################
 
 Sometimes, it is useful to replace all occurrences of a string in Grafana® metric expressions.
-This page describes how to do that using the ``aiven-string-replacer-for-grafana`` tool
+This page describes how to do that using the ``aiven-string-replacer-for-grafana`` tool, which is on `GitHub <https://github.com/aiven/aiven-string-replacer-for-grafana>`_.
 
 The approach described will work with your own Grafana® cluster or with an Aiven for Grafana® cluster
 
-Install ``aiven-string-replacer-for-grafana``
----------------------------------------------
+Prerequisites
+-------------
 
 Building the tool requires a Go environment. Follow the `Go installation instructions <https://go.dev/dl/>`_.
 
@@ -21,24 +21,26 @@ run the following at the terminal prompt:
 Values you will need
 --------------------
 
-======================     =============================================================
+=========================    =============================================================
 Variable                   Description
-======================     =============================================================
-``YOUR_API_KEY``           The API key for accessing Grafana
-----------------------     -------------------------------------------------------------
-``YOUR_DASHBOARD_URL``     The URL for the Grafana dashboard
-----------------------     -------------------------------------------------------------
-``YOUR_DASHBOARD_UID``     The UID that identifies the Grafana dashboard
-----------------------     -------------------------------------------------------------
-``OLD_STRING``             The old string, that you want to replace
-----------------------     -------------------------------------------------------------
-``NEW_STRING``             The new string, that you want to use instead
-======================     =============================================================
+=========================    =============================================================
+``GRAFANA_API_KEY``         The API key for accessing Grafana
+-------------------------    -------------------------------------------------------------
+``GRAFANA_DASHBOARD_URL``    The URL for the Grafana dashboard
+-------------------------    -------------------------------------------------------------
+``GRAFANA_DASHBOARD_UID``    The UID that identifies the Grafana dashboard
+-------------------------    -------------------------------------------------------------
+``OLD_STRING``              The old string, that you want to replace
+-------------------------    -------------------------------------------------------------
+``NEW_STRING``              The new string, that you want to use instead
+=========================    =============================================================
 
-Gather authentication and authorization values
-----------------------------------------------
+Get the Grafana API key
+~~~~~~~~~~~~~~~~~~~~~~~
 
-To get your API key (``YOUR_API_KEY``):
+The key needs the Grafana API key to be able to edit the Grafana dashboards.
+
+To get your API key (``GRAFANA_API_KEY``):
 
 * Go to your Grafana® UI. Select the **Configuration** icon and then select the **API keys** tab
 
@@ -46,15 +48,18 @@ To get your API key (``YOUR_API_KEY``):
 
 * Otherwise, select **Add API key** and fill in the *Key name*, *Role* and *Time to live*. Click **Add** and then save the new API key.
 
-   .. note:: *Role* must be either *Editor* or *Admin*.
+   .. info:: *Role* must be either *Editor* or *Admin*.
 
-To get the dashboard URL and UID (``YOUR_DASHBOARD_URL`` and ``YOUR_DASHBOARD_URI``):
+To get the Grafana dashboard URL and UID
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To get the dashboard URL and UID (``GRAFANA_DASHBOARD_URL`` and ``GRAFANA_DASHBOARD_UID``):
 
 * Go to the dashboard on which you want to change metric expression strings.
 
-* Save the URL.
+* Save the dashboard URL (``GRAFANA_DASHBOARD_URL``).
 
-* Select the **Dashboard settings** icon, then select **JSON Model**. Save the dashboard *UID* from the *JSON Model* page.
+* Select the **Dashboard settings** icon, then select **JSON Model**. Save the dashboard *UID* from the *JSON Model* page (``GRAFANA_DASHBOARD_UID``).
 
 Perform the replacement
 -----------------------
@@ -63,8 +68,12 @@ Use a command like the following to perform the replacement, changing the placeh
 
 .. code:: bash
 
-  aiven-string-replacer-for-grafana -apikey YOUR_API_KEY -url YOUR_DASHBOARD_URL \
-      -from OLD_STRING -to NEW_STRING -uid YOUR_DASHBOARD_UID
+  aiven-string-replacer-for-grafana \
+      -apikey GRAFANA_API_KEY \
+      -url GRAFANA_DASHBOARD_URL \
+      -from OLD_STRING \
+      -to NEW_STRING \
+      -uid GRAFANA_DASHBOARD_UID
 
 Example: changing ``elasticsearch_`` to ``opensearch_``
 -------------------------------------------------------
@@ -73,8 +82,12 @@ For instance, use the following command to change all metric expressions that st
 
 .. code:: bash
 
-  aiven-string-replacer-for-grafana -apikey YOUR_API_KEY -url YOUR_DASHBOARD_URL \
-      -from elasticsearch_ -to opensearch_ -uid YOUR_DASHBOARD_UID
+  aiven-string-replacer-for-grafana \
+      -apikey GRAFANA_API_KEY \
+      -url YOUR_DASHBOARD_URL \
+      -from elasticsearch_ \
+      -to opensearch_ \
+      -uid YOUR_DASHBOARD_UID
 
 The change will be visible in the *Query* panel:
 
