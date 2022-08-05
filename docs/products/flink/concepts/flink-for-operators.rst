@@ -12,9 +12,9 @@ Our product page provides you detailed information about the available plans and
 Cluster deployment
 ------------------
 
-Aiven for Apache Flink® is configured to use the `HashMap state backend <https://ci.apache.org/projects/flink/flink-docs-stable/api/java/org/apache/flink/runtime/state/hashmap/HashMapStateBackend.html>`_. This means that `state <https://ci.apache.org/projects/flink/flink-docs-release-1.13/docs/concepts/stateful-stream-processing/#what-is-state>`_ is stored in memory, which can impact the performance of jobs that require keeping a very large state. We recommend you provision your platform accordingly.
+Aiven for Apache Flink® is configured to use the `HashMap state backend <https://ci.apache.org/projects/flink/flink-docs-stable/api/java/org/apache/flink/runtime/state/hashmap/HashMapStateBackend.html>`_. This means that `state <https://ci.apache.org/projects/flink/flink-docs-release-1.15/docs/concepts/stateful-stream-processing/#what-is-state>`_ is stored in memory, which can impact the performance of jobs that require keeping a very large state. We recommend you provision your platform accordingly.
 
-The Flink cluster executes applications in `session mode <https://ci.apache.org/projects/flink/flink-docs-release-1.13/docs/deployment/overview/#session-mode>`_, so you can deploy multiple Flink jobs on the same cluster to use the available resources effectively.
+The Flink cluster executes applications in `session mode <https://ci.apache.org/projects/flink/flink-docs-release-1.15/docs/deployment/overview/#session-mode>`_, so you can deploy multiple Flink jobs on the same cluster to use the available resources effectively.
 
 Scaling a Flink cluster
 '''''''''''''''''''''''

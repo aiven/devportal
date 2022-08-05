@@ -76,4 +76,4 @@ If you are new to Flink, try these resources to get you started with the platfor
 
 * Our :doc:`/docs/products/flink/getting-started` guide is a good way to get hands on with your first project..
 
-* Read more about `Flink SQL capabilities <https://ci.apache.org/projects/flink/flink-docs-release-1.13/docs/dev/table/sql/overview/>`_.
+* Read more about `Flink SQL capabilities <https://ci.apache.org/projects/flink/flink-docs-release-1.15/docs/dev/table/sql/overview/>`_.

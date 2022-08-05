@@ -20,7 +20,7 @@ In order to run a stable and reliable service, you will see some differences bet
 * User-defined functions are not supported.
 * The Apache Flink® CLI tool cannot be used with this service as it requires access to the JobManager in production, which is currently not exposed to customers.
 * Job-level settings are not yet supported. Each job inherits the cluster-level settings.
-* Flame graphs, marked as an experimental feature in Apache Flink® 1.13, are not currently enabled in the Flink web UI.
+* Flame graphs, marked as an experimental feature in Apache Flink® 1.15, are not currently enabled in the Flink web UI.
 
 Troubleshooting
 ---------------
