@@ -156,7 +156,7 @@ Lists all available integration endpoint types for given project.
 
     avn service integration-endpoint-types-list
 
-An example of ``account service integration-endpoint-types-list`` output:
+An example of ``avn service integration-endpoint-types-list`` output:
 
 .. code:: text
 
