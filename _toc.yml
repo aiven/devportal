@@ -691,6 +691,7 @@ entries:
           - file: docs/products/cassandra/howto/list-code-samples
             entries:
               - file: docs/products/cassandra/howto/connect-python
+              - file: docs/products/cassandra/howto/connect-go
       - file: docs/products/cassandra/reference
         title: Reference
         entries:
