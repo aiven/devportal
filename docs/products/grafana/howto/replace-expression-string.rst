@@ -9,8 +9,9 @@ The approach described will work with your own Grafana® cluster or with an Aive
 .. note:: This command is mentioned in the 2022-08-09 Aiven blog post
    `Aiven finishes the transition away from Elasticsearch: technical details
    <https://aiven.io/blog/finish-move-away-from-elasticsearch>`_
-   See `Example: changing elasticsearch to opensearch`_ later in this page for
-   specific help.
+
+   See `the example`_ of changing ``elasticsearch_`` to ``opensearch_`` later
+   in this page for.
 
 Prerequisites
 -------------
@@ -80,6 +81,8 @@ Use a command like the following to perform the replacement, changing the placeh
       -from OLD_STRING \
       -to NEW_STRING \
       -uid GRAFANA_DASHBOARD_UID
+
+.. _`the example`:
 
 Example: changing ``elasticsearch_`` to ``opensearch_``
 -------------------------------------------------------
