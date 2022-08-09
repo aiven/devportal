@@ -6,6 +6,12 @@ This page describes how to do that using the ``aiven-string-replacer-for-grafana
 
 The approach described will work with your own Grafana® cluster or with an Aiven for Grafana® cluster
 
+.. note:: This command is mentioned in the 2022-08-09 Aiven blog post
+   `Aiven finishes the transition away from Elasticsearch: technical details
+   <https://aiven.io/blog/finish-move-away-from-elasticsearch>`_
+   See `Example: changing elasticsearch to opensearch`_ later in this page for
+   specific help.
+
 Prerequisites
 -------------
 
