@@ -85,14 +85,14 @@ Examples
 * ``_*/admin`` would grant unlimited access to all top-level APIs
 * ``_msearch/admin`` grants unlimited access to the ``_msearch`` API only
 
-The ACL **only controls access to the API** and not what it can be used for. Giving access to the toplevel API will in effect circumvent index specific rules, for example ``_msearch/admin`` access
+The ACL **only controls access to the API** and not what it can be used for. Giving access to the top-level API will in effect circumvent index specific rules, for example ``_msearch/admin`` access
 allows searching any index via the API as the indices to search are defined in the request body itself.
 
 .. note::
    When top-level API access is granted via explicit ACL the request content is not examined.
 
-Enabling ExtendedACLs
-+++++++++++++++++++++
+Enabling extended ACLs
+++++++++++++++++++++++
 
 Instead of creating a rule that allows access to the top-level ``_mget``, ``_msearch`` and ``_bulk`` APIs, you can switch on the ``ExtendedAcl``.
 This will automatically enable these APIs for the user and each API request is checked to make sure operations only target indices
