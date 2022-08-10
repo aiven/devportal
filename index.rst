@@ -40,7 +40,7 @@ Learn about the Aiven platform
 
         |icon-postgres| **PostgreSQL®** Powerful relational database platform. We have the latest versions, and an excellent selection of extensions.
 
-        .. button-link:: docs/products/postgresql
+        .. button-link:: docs/products/postgresql.html
             :align: right
             :color: primary
             :outline:
@@ -54,7 +54,7 @@ Learn about the Aiven platform
 
         |icon-m3db| **M3** Distributed time-series database for scalable solutions, with M3 Coordinator included, and M3 Aggregator also available.
 
-        .. button-link:: docs/products/m3db
+        .. button-link:: docs/products/m3db.html
             :align: right
             :color: primary
             :outline:
@@ -68,7 +68,7 @@ Learn about the Aiven platform
         |icon-kafka| **Apache Kafka®** Streaming data pipelines for the modern enterprise. Apache MirrorMaker2 and Kafka Connect also available.
 
 
-        .. button-link:: docs/products/kafka
+        .. button-link:: docs/products/kafka.html
             :align: right
             :color: primary
             :outline:
@@ -82,7 +82,7 @@ Learn about the Aiven platform
 
         |icon-flink| **Apache Flink®** Framework for definining powerful transformations of batch and streaming data sets. :bdg-secondary:`beta`
 
-        .. button-link:: docs/products/flink
+        .. button-link:: docs/products/flink.html
             :align: right
             :color: primary
             :outline:
@@ -95,7 +95,7 @@ Learn about the Aiven platform
 
         |icon-opensearch| **OpenSearch®** Document database with specialist search features, bring your freeform documents, logs or metrics, and make sense of them here.
 
-        .. button-link:: docs/products/opensearch
+        .. button-link:: docs/products/opensearch.html
             :align: right
             :color: primary
             :outline:
@@ -109,7 +109,7 @@ Learn about the Aiven platform
 
         |icon-cassandra| **Apache Cassandra®** High performance storage solution for large data quantities. This specialist data solution is a partitioned row store.
 
-        .. button-link:: docs/products/cassandra
+        .. button-link:: docs/products/cassandra.html
             :align: right
             :color: primary
             :outline:
@@ -122,7 +122,7 @@ Learn about the Aiven platform
 
         |icon-redis| **Redis®\*** In-memory data store for all your high-peformance short-term storage and caching needs.
 
-        .. button-link:: docs/products/redis
+        .. button-link:: docs/products/redis.html
             :align: right
             :color: primary
             :outline:
@@ -136,7 +136,7 @@ Learn about the Aiven platform
 
         |icon-mysql| **MySQL** Popular and much-loved relational database platform.
 
-        .. button-link:: docs/products/mysql
+        .. button-link:: docs/products/mysql.html
             :align: right
             :color: primary
             :outline:
@@ -155,7 +155,7 @@ Learn about the Aiven platform
 
         |icon-grafana| **Grafana®** The visualization tool you need to explore and understand your data. Grafana integrates with the other services in just a few clicks.
 
-        .. button-link:: docs/products/grafana
+        .. button-link:: docs/products/grafana.html
             :align: right
             :color: primary
             :outline:
@@ -168,7 +168,7 @@ Learn about the Aiven platform
 
         |icon-clickhouse| **ClickHouse** A highly scalable, open source database that uses a column-oriented structure. :bdg-secondary:`beta`
 
-        .. button-link:: docs/products/clickhouse
+        .. button-link:: docs/products/clickhouse.html
             :align: right
             :color: primary
             :outline:
