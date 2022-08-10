@@ -170,7 +170,7 @@ Learn about the Aiven platform
 
         .. button-link:: docs/products/clickhouse
             :align: right
-            :color: secondary
+            :color: primary
             :outline:
 
             Read more
