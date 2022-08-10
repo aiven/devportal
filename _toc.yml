@@ -596,6 +596,7 @@ entries:
           - file: docs/products/mysql/howto/migrate-from-external-mysql
           - file: docs/products/mysql/howto/do-check-service-migration
           - file: docs/products/mysql/howto/prevent-disk-full
+          - file: docs/products/mysql/howto/reclaim-disk-space
           - file: docs/products/mysql/howto/disable-foreign-key-checks
       - file: docs/products/mysql/reference
         title: Reference

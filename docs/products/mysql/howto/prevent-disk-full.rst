@@ -43,3 +43,6 @@ The output of a successful operation is::
 
 This way you can free up space within the next 15 minutes.
 
+.. seealso::
+
+    Consider reading how to :doc:`reclaim disk space </docs/products/mysql/howto/reclaim-disk-space>` if you are having issues with full disk.
