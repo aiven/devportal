@@ -64,7 +64,7 @@ OpenSearch has several "top-level" API endpoints (``_mget``, ``_msearch``, and s
 
 Only rules where the pattern starts with ``_`` are considered for top-level API access. Normal rules do not grant access to these APIs. For example, ``*search/admin`` only grants access to indexes that match the pattern, not to ``_msearch``.
 
-You can switch on the ``ExtendedAcl`` option for the service to enforce index rules in a limited fashion for requests that use the ``_mget``, ``_msearch``, and ``_bulk`` APIs (and only those). When this option is in use, service users can access these APIs as long as all operations only target indexes that they have appropriate permissions for. 
+You can switch on the ``ExtendedAcl`` option for the service to enforce index rules in a limited fashion for requests that use the ``_mget`` and ``_msearch`` APIs (and only those). When this option is in use, service users can access these APIs as long as all operations only target indexes that they have appropriate permissions for. 
 
 .. note::
    To enforce the rules with ``ExtendedACL``, the service must inspect the content of the request, which can cause performance and latency issues. All requests are also limited to a maximum of 16 KiB in size. If the request is too large or if any of the operations or indexes are not allowed, the entire request is rejected.

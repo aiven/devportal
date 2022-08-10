@@ -134,6 +134,8 @@ entries:
           entries:
             - file: docs/tools/terraform/howto/upgrade-provider-v1-v2
               title: Upgrade the Aiven Terraform Provider from v1 to v2
+            - file: docs/tools/terraform/howto/config-postgresql-provider
+              title: Use PostgreSQL provider alongside Aiven Terraform Provider  
         - file: docs/tools/terraform/concepts
           title: Concepts
           entries:
@@ -158,6 +160,8 @@ entries:
               title: PostgreSQL with custom configs
             - file: docs/tools/terraform/reference/cookbook/kafka-mongodb-recipe
               title: Apache Kafka MongoDB Source Connector
+            - file: docs/tools/terraform/reference/cookbook/kafka-debezium-postgres-source
+              title: Debezium Source Connector across clouds
             - file: docs/tools/terraform/reference/cookbook/kafka-custom-conf-recipe.rst
               title: Apache Kafka with custom configurations  
             - file: docs/tools/terraform/reference/cookbook/m3db-m3agg-recipe
@@ -175,11 +179,14 @@ entries:
         title: Sample data generator
       - file: docs/products/kafka/concepts
         entries:
+          - file: docs/products/kafka/concepts/upgrade-procedure
+            title: Upgrade procedure
+          - file: docs/products/kafka/concepts/horizontal-vertical-scaling
+            title: Scaling options
           - file: docs/products/kafka/concepts/acl
           - file: docs/products/kafka/concepts/schema-registry-authorization
           - file: docs/products/kafka/concepts/log-compaction
           - file: docs/products/kafka/concepts/partition-segments
-          - file: docs/products/kafka/concepts/horizontal-vertical-scaling
           - file: docs/products/kafka/concepts/auth-types
           - file: docs/products/kafka/concepts/non-leader-for-partition
       - file: docs/products/kafka/howto
@@ -230,6 +237,7 @@ entries:
               - file: docs/products/kafka/howto/configure-log-cleaner
               - file: docs/products/kafka/howto/prevent-full-disks
               - file: docs/products/kafka/howto/use-zookeeper
+              - file: docs/products/kafka/howto/avoid-out-of-memory-error
 
           - file: docs/products/kafka/howto/list-integration
             title: Integrations
@@ -589,6 +597,7 @@ entries:
           - file: docs/products/mysql/howto/do-check-service-migration
           - file: docs/products/mysql/howto/prevent-disk-full
           - file: docs/products/mysql/howto/reclaim-disk-space
+          - file: docs/products/mysql/howto/disable-foreign-key-checks
       - file: docs/products/mysql/reference
         title: Reference
         entries:
@@ -634,6 +643,8 @@ entries:
   - file: docs/products/cassandra
     title: Apache Cassandra
     entries:
+      - file: docs/products/cassandra/get-started
+        title: Get started
       - file: docs/products/cassandra/concepts
         title: Concepts
         entries:

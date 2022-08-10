@@ -14,7 +14,7 @@ API quickstart
 Calling the Aiven API
 ---------------------
 
-The Aiven API is a traditional HTTP API. All our own tools, such as the `web console <https://console.aiven.io>`_ and ``avn`` CLI use this API.
+The `Aiven API <https://api.aiven.io/doc/>`_ is a traditional HTTP API. All our own tools, such as the `web console <https://console.aiven.io>`_ and ``avn`` CLI use this API.
 
 .. mermaid::
 
@@ -35,7 +35,7 @@ Obtain an authentication token from your `Aiven console <https://console.aiven.i
 Handling JSON responses
 '''''''''''''''''''''''
 
-The Aiven API returns information in JSON format, sometimes a lot of
+The `Aiven API <https://api.aiven.io/doc/>`_ returns information in JSON format, sometimes a lot of
 information. This is perfect for machines but not ideal for humans. We like to
 use a tool like ``jq`` (https://stedolan.github.io/jq/) to make things easier to read and manipulate.
 
