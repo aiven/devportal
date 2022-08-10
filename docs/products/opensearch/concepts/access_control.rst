@@ -6,7 +6,7 @@ This approach allows you to limit the operations that are available to specific 
 restrict access to certain data sets.
 
 .. note::
-   When access control is initially enabled for the service a set of rules that allow
+   When access control is initially enabled for the service, a set of rules that allows
    full unlimited access to existing service users is created automatically.
 
 Rules are defined separately for each user as ``pattern/permission`` combinations. The ``pattern`` defines the indices that the permission applies to.
@@ -29,7 +29,7 @@ The permission also implies which *index APIs* the service user can access:
 * ``write``: ``_bulk``, ``_mapping``, ``_update_by_query``, ``_delete_by_query``
 
 .. note::
-   When no rules match, access is *implicitly denied*.
+   When no rules match, access is **implicitly denied**.
 
 .. note::
    ``write`` permission allows creating indices that match the rule's index pattern but does now allow deleting them.
@@ -67,10 +67,11 @@ Controlling access to top-level APIs
 In addition to indices, ACLs can be used to control access to "top-level" APIs by creating a API specific rule.
 
 .. note::
-   access to the ``_cluster``, ``_cat``, ``_tasks``, ``_scripts``, ``_snapshot``, and ``_nodes`` APIs is controlled
+   Access to the ``_cluster``, ``_cat``, ``_tasks``, ``_scripts``, ``_snapshot``, and ``_nodes`` APIs is controlled
    by the service itself, not by these ACLs.
 
-Access to the top-level ``_mget``, ``_msearch``, and ``_bulk`` APIs can also be controlled by enabling ``ExtendedACL``.
+.. note::
+    Access to the top-level ``_mget``, ``_msearch``, and ``_bulk`` APIs can also be controlled by enabling ``ExtendedACL``.
 
 Using ACLs to control access
 ++++++++++++++++++++++++++++
@@ -84,7 +85,7 @@ Examples
 * ``_*/admin`` would grant unlimited access to all top-level APIs
 * ``_msearch/admin`` grants unlimited access to the ``_msearch`` API only
 
-The ACL *only controls access to the API* not what it can be used for. Giving access to the toplevel API will in effect circumvent index specific rules, for example ``_msearch/admin`` access
+The ACL **only controls access to the API** and not what it can be used for. Giving access to the toplevel API will in effect circumvent index specific rules, for example ``_msearch/admin`` access
 allows searching any index via the API as the indices to search are defined in the request body itself.
 
 .. note::
@@ -97,8 +98,8 @@ Instead of creating a rule that allows access to the top-level ``_mget``, ``_mse
 This will automatically enable these APIs for the user and each API request is checked to make sure operations only target indices
 that the user has appropriate permissions for (as defined by the normal index ACLs).
 
-As the service must inspect the content of the request, this *can cause* performance and latency issues. The requests are also *limited to a maximum of 15000 bytes* in size.
-If the request is *too large* or if *any* of the operations or indices are not allowed by the ACLs, the *entire request* is rejected.
+As the service must inspect the content of the request, this *can cause* performance and latency issues. The requests are also **limited to a maximum of 15000 bytes** in size.
+If the request is **too large** or if **any** of the operations or indices are not allowed by the ACLs, the *entire request* is rejected.
 
 .. note::
    ACLs permitting access to top-level API will always take precedence over ``ExtendedACL``, you can for example allow access to ``_bulk`` for a trusted service account to
@@ -108,7 +109,7 @@ If the request is *too large* or if *any* of the operations or indices are not a
 Access control and aliases
 --------------------------
 
-Aliases are *not expanded*. If you use aliases, the ACL must include a rule where the pattern matches the alias.
+Aliases are **not expanded**. If you use aliases, the ACL must include a rule where the pattern matches the alias.
 
 .. note::
    Rules matching the indices the alias "expands" to are not used, only the rule where the pattern matches the alias itself.
