@@ -56,11 +56,11 @@ Navigate to your Identity Provider and configure a new application. The table be
     - Identifier
     - SP Entity
   * - Email Mapping
-    - `email`
-    - `user.email`
-    - `Email`
-    - `user.mail`
-    - `LoginUser.email`
+    - ``email``
+    - ``user.email``
+    - ``Email``
+    - ``user.mail``
+    - ``LoginUser.email``
 
 Enable the SAML authentication method in the Aiven Console
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
@@ -71,11 +71,11 @@ In the Edit page, you need to input:
 
 * the URL of your Identity Provider
 * the Entity ID
-* the certificate details. 
+* the certificate details
 
-.. Tip::
+  .. Tip::
 
-  You can also toggle **Enable IdP login** allowing your users to initiate a login directly from your Identity Provider.
+    You can also toggle **Enable IdP login** allowing your users to initiate a login directly from your Identity Provider.
 
 * Save and click on **Enable authentication method**. Once active, you will see 2 URLs:
   

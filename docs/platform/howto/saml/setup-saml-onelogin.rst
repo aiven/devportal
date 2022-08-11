@@ -25,7 +25,7 @@ choose the team to add invited people to (or leave it blank)
 Setup on OneLogin
 -----------------
 
-1. Enter the *Administration* portal (top right link by your username)
+1. Enter OneLogin *Administration* portal (top right link by your username)
 
 2. Select *Applications* and then **Add App**. 
 
@@ -36,19 +36,26 @@ Setup on OneLogin
 OneLogin configuration
 ~~~~~~~~~~~~~~~~~~~~~~
 
-1. In the **Configuration** section of the menu:
+1. In the **Configuration** section of the menu, set the following parameters:
+
+   .. list-table::
+      :header-rows: 1
+      :align: left
+
+      * - Parameter
+        - Value
+      * - ``ACS URL Validation``
+        - ``[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)``
+      * - ``ACS URL``
+        - the ``ACS URL`` displayed in the Aiven authentication method you created
+      * - ``Login URL``
+        - ``https://console.aiven.io``
+      * - ``SAML Initiator``
+        - ``Service Provider`` (or ``OneLogin`` if your users will sign in through OneLogin)
+      * - ``SAML nameID format``
+        - ``Email``
    
-   1. Set ``ACS URL Validation`` to: ``[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)``
-   
-   2. Set ``ACS URL`` to the ACS URL in the Aiven authentication method you created
-   
-   3. Set ``Login URL`` to ``https://console.aiven.io``
-   
-   4. Set ``SAML Initiator`` to ``Service Provider`` (or ``OneLogin`` if your users will sign in through OneLogin)
-   
-   5. Set ``SAML nameID format`` to ``Email``
-   
-   6. Click **Save**
+2. Click **Save**
 
 2. In the **SSO** section of the menu:
 
@@ -81,4 +88,4 @@ Finish the configuration in Aiven
 .. note::
    You will need to assign users in OneLogin before the connection will work. If you experience errors, try selecting **Reapply entitlement Mappings** under *More Actions* in the *Settings* of your OneLogin App.
 
-If you still have issues, you can use the `SAML Tracer browser extension <https://addons.mozilla.org/firefox/addon/saml-tracer/>`_ to  check the process step by step. The errors shown in the tracker should help you to debug the issues. If it does not work, you can request help by sending an email at support@Aiven.io.
+If you have issues, you can use the `SAML Tracer browser extension <https://addons.mozilla.org/firefox/addon/saml-tracer/>`_ to  check the process step by step. The errors shown in the tracker should help you to debug the issues. If it does not work, you can request help by sending an email at support@Aiven.io.
