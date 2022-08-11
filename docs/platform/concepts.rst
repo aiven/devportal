@@ -31,6 +31,10 @@ Learn about some of the key concepts for working with Aiven platform:
 
   Understanding memory overhead and limits applied to services.
 
+* :doc:`Out of memory conditions </docs/platform/concepts/out-of-memory-conditions>`.
+
+  How Aiven protects your service from the Out Of Memory Killer when memory is overcommitted.
+
 * :doc:`Projects and access management </docs/platform/concepts/projects_accounts_access>`.
 
   Understand how to set up users, accounts and access management for your Aiven projects.
