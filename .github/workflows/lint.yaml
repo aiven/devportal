@@ -25,6 +25,7 @@ jobs:
       uses: errata-ai/vale-action@master
       with:
         files: '["index.rst", "docs"]'
+        version: 2.20.0
       env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
