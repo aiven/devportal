@@ -476,6 +476,7 @@ entries:
         entries:
           - file: docs/products/clickhouse/howto/use-cli
           - file: docs/products/clickhouse/howto/use-query-editor
+          - file: docs/products/clickhouse/howto/use-play
           - file: docs/products/clickhouse/howto/add-service-users
           - file: docs/products/clickhouse/howto/grant-privilege
 
