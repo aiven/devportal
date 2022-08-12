@@ -4,7 +4,8 @@ Get started with Aiven for Apache Cassandra®
 The first step in using Aiven for Apache Cassandra® is to create a service. You can do so either using the `Aiven Web Console <https://console.aiven.io/>`_ or the `Aiven CLI <https://github.com/aiven/aiven-client>`_.
 
 Create an Aiven for Apache Cassandra® service using the Aiven web console
-----------------------------------------------------
+-------------------------------------------------------------------------
+
 1. Log in to the `Aiven web console <https://console.aiven.io/>`_.
 
 2. Follow :doc:`these instructions </docs/platform/howto/create_new_service>` to create a new Cassandra® service.
@@ -12,7 +13,7 @@ Create an Aiven for Apache Cassandra® service using the Aiven web console
    Once the service is ready, the status changes to *Running*. This typically takes a couple of minutes, depending on your selected cloud provider and region.
 
 Create an Aiven for Apache Cassandra® service using the Aiven CLI
---------------------------------------------
+-----------------------------------------------------------------
 
 If you prefer launching a new service from the CLI, `Aiven CLI <https://github.com/aiven/aiven-client>`_ includes a command for doing so. 
 
