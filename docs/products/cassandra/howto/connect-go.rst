@@ -41,5 +41,5 @@ entry into the table with the values ``1`` and ``hello world``. Finally, it read
 
 3. Run the program with the required flags to pass the necessary connection details:: 
 
-    ./main --HOST <HOST> --PORT <PORT> --USER avnadmin --PASSWORD <PASSWORD> --SSL-CERTFILE <PATH TO CERTFILE>
+    ./main --host <HOST> --port <PORT> --user avnadmin --password <PASSWORD> --ssl-certfile <PATH TO CERTFILE>
 
