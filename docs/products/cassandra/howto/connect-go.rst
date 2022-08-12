@@ -8,14 +8,15 @@ Variables
 
 These are the placeholders you will need to replace in the code sample:
 
-==================      =============================================================
+==================      ================================================================================
 Variable                Description
-==================      =============================================================
+==================      ================================================================================
 ``HOST``                Host name of your Cassandra service 
-``PORT``                Port number to use for connection to your Cassandra service 
+``PORT``                Port number used for connecting to your Cassandra service 
+``USER``                Username used for connecting to your Cassandra service. Defaults to ``avnadmin`` 
 ``PASSWORD``            Password of the ``avnadmin`` user
 ``SSL-CERTFILE``        Path to the `CA Certificate` file of your Cassandra service
-==================      =============================================================
+==================      ================================================================================
 
 Pre-requisites
 ''''''''''''''
