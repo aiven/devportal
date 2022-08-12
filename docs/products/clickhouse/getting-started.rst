@@ -34,16 +34,16 @@ Connect to ClickHouse
 
 2. Go to the *Overview* tab and copy the **Host**, **Port**, **User**, and **Password** parameters that you need for connecting to the service.
 
-3. Run the following command to connect to your service and run SQL queries on your database:
+3. Run the following command to connect to your service and run SQL queries on your database, by substituing the placeholders for ``USERNAME``, ``PASSWORD``, ``HOST`` and ``PORT``:
 
    .. code:: bash
 
-       docker run -it \
-       --rm clickhouse/clickhouse-client \
-       --user USER-NAME \
-       --password USER-PASSWORD \
-       --host YOUR-HOST-NAME.aivencloud.com \
-       --port YOUR-PORT \
+       docker run -it                       \
+       --rm clickhouse/clickhouse-client    \
+       --user USERNAME                      \
+       --password PASSWORD                  \
+       --host HOST                          \
+       --port PORT                          \
        --secure
 
 For more information on using the ClickHouse client, see :doc:`this article <howto/use-cli>`.

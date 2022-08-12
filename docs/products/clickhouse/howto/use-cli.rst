@@ -15,16 +15,16 @@ You will need to know the following properties to establish a secure connection 
 Command template
 -----------------
 
-The command to connect to the service looks like this:
+The command to connect to the service looks like this, substitute the placeholders for ``USERNAME``, ``PASSWORD``, ``HOST`` and ``PORT``:
 
 .. code:: bash
 
     docker run -it \
     --rm clickhouse/clickhouse-client \
-    --user USER-NAME \
-    --password USER-PASSWORD \
-    --host YOUR-HOST-NAME.aivencloud.com \
-    --port YOUR-PORT \
+    --user USERNAME \
+    --password PASSWORD \
+    --host HOST \
+    --port PORT \
     --secure
 
 This example includes the ``-it`` option (a combination of ``--interactive`` and ``--tty``) to take you inside the container and  the ``--rm`` option to automatically remove the container after exiting.
@@ -42,24 +42,24 @@ Alternatively, sometimes you might want to run individual queries and be able to
 
 .. code:: bash
 
-    docker run --interactive \
-    --rm clickhouse/clickhouse-client \
-    --user USER-NAME \
-    --password USER-PASSWORD \
-    --host YOUR-HOST-NAME.aivencloud.com \
-    --port YOUR-PORT \
-    --secure \
+    docker run --interactive            \
+    --rm clickhouse/clickhouse-client   \
+    --user USERNAME                     \
+    --password PASSWORD                 \
+    --host HOST                         \
+    --port PORT                         \
+    --secure                            \
     --query="YOUR SQL QUERY GOES HERE"
 
 Similar to above example, you can request the list of present databases directly::
 
-    docker run --interactive \
-    --rm clickhouse/clickhouse-client \
-    --user USER-NAME \
-    --password USER-PASSWORD \
-    --host YOUR-HOST-NAME.aivencloud.com \
-    --port YOUR-PORT \
-    --secure \
+    docker run --interactive            \
+    --rm clickhouse/clickhouse-client   \
+    --user USERNAME                     \
+    --password PASSWORD                 \
+    --host HOST                         \
+    --port PORT                         \
+    --secure                            \
     --query="SHOW DATABASES"
 
 

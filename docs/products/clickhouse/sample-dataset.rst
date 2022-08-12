@@ -31,7 +31,10 @@ If you don't yet have an Aiven for ClickHouse service, follow the steps in our :
 
 When you create a service, a default database was already added. However, you can create separate databases specific to your use case. We will create a database with the name ``datasets``, keeping it the same as in the ClickHouse documentation.
 
-To create the new database, go to the  `Aiven web console <https://console.aiven.io/>`_ and click the **Databases & Tables** tab of your service page and create the database ``datasets``.
+To create the new database:
+
+* go to the  `Aiven web console <https://console.aiven.io/>`_ and click the **Databases & Tables** tab of your service page
+* create the database ``datasets``
 
 Connect to the ClickHouse database
 ----------------------------------
@@ -42,12 +45,12 @@ To connect to the server, use the connection details that you can find in the *C
 
 .. code:: bash
 
-    docker run -it \
-    --rm clickhouse/clickhouse-client \
-    --user USER-NAME \
-    --password USER-PASSWORD \
-    --host YOUR-HOST-NAME.aivencloud.com \
-    --port YOUR-PORT \
+    docker run --interactive            \
+    --rm clickhouse/clickhouse-client   \
+    --user USERNAME                     \
+    --password PASSWORD                 \
+    --host HOST                         \
+    --port PORT                         \
     --secure
 
 Once you're connected, you can run queries from within the ClickHouse client.
@@ -78,30 +81,30 @@ Now that you have a dataset with two empty tables, we'll inject data into each o
 
 #. Run the following command::
 
-        cat hits_v1.tsv | docker run \
-        --interactive \
-        --rm clickhouse/clickhouse-client \
-        --user USER-NAME \
-        --password USER-PASSWORD \
-        --host YOUR-HOST-NAME.aivencloud.com \
-        --port YOUR-PORT \
-        --secure \
-        --max_insert_block_size=100000
+        cat hits_v1.tsv | docker run        \
+        --interactive                       \
+        --rm clickhouse/clickhouse-client   \
+        --user USERNAME                     \
+        --password PASSWORD                 \
+        --host HOST                         \
+        --port PORT                         \
+        --secure                            \
+        --max_insert_block_size=100000      \
         --query="INSERT INTO datasets.hits_v1 FORMAT TSV"
 
    ``hits_v1.tsv`` contains approximately 7Gb of data. Depending on your internet connection, it can take some time to load all the items.
 
 #. Run the corresponding command for ``visits_v1.tsv``::
 
-        cat visits_v1.tsv | docker run \
-        --interactive \
-        --rm clickhouse/clickhouse-client \
-        --user USER-NAME \
-        --password USER-PASSWORD \
-        --host YOUR-HOST-NAME.aivencloud.com \
-        --port YOUR-PORT \
-        --secure \
-        --max_insert_block_size=100000
+        cat visits_v1.tsv | docker run      \
+        --interactive                       \
+        --rm clickhouse/clickhouse-client   \
+        --user USERNAME                     \
+        --password PASSWORD                 \
+        --host HOST                         \
+        --port PORT                         \
+        --secure                            \
+        --max_insert_block_size=100000      \
         --query="INSERT INTO datasets.visits_v1 FORMAT TSV"
 
 
@@ -120,7 +123,12 @@ Another example uses some additional query features to find the longest lasting 
 
 .. code:: sql
 
-    SELECT StartURL AS URL, MAX(Duration) AS MaxDuration FROM datasets.visits_v1 GROUP BY URL ORDER BY MaxDuration DESC LIMIT 10
+    SELECT StartURL AS URL, 
+        MAX(Duration) AS MaxDuration 
+    FROM datasets.visits_v1 
+    GROUP BY URL 
+    ORDER BY MaxDuration DESC 
+    LIMIT 10
 
 
 See tables in the console
