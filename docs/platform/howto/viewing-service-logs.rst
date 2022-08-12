@@ -1,7 +1,7 @@
 Viewing service logs
 ====================
 
-Accessing logs from Aiven service: PostgreSQL, Kafka, Cassandra, Redis, InfluxDB
+Accessing logs from Aiven service: PostgreSQL®, Kafka®, Cassandra®, Redis®*, InfluxDB®
 
 Occasionally there is a need to inspect logs from Aiven services. For example, to debug query performance or inspecting errors caused by a specific workload.
 
