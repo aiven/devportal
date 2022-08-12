@@ -24,6 +24,7 @@ jobs:
       # this to a specific version of vale-action.
       uses: errata-ai/vale-action@reviewdog
       with:
+        version: 2.15.5
         files: '["index.rst", "docs"]'
       env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
