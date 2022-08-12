@@ -166,7 +166,7 @@ If you have installed a `local cluster installation of Apache Flink 1.15.1 <http
 
    $FLINK_DIR/bin/flink run target/capitalizer-0.0.1-SNAPSHOT.jar
 
-You can see that the job is running in the Flink web UI at http://localhost:8081.
+You can see that the job is running in the Flink web UI at ``http://localhost:8081``.
 
 .. Note::
 
