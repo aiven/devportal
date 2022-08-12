@@ -1,7 +1,7 @@
 Reclaim disk space
 ==================
 
-You can configure Innodb to release disk space back to the operating system by running the ``OPTIMIZE TABLE`` command.
+You can configure InnoDB to release disk space back to the operating system by running the ``OPTIMIZE TABLE`` command.
 
 Note that `under certain conditions <https://dev.mysql.com/doc/refman/8.0/en/optimize-table.html#optimize-table-innodb-details>`_ (e.g. including the presence of a ``FULLTEXT`` index), the command ``OPTIMIZE TABLE`` will `copy <https://dev.mysql.com/doc/refman/8.0/en/alter-table.html#alter-table-performance>`_ the data to a new table containing just the current data, and then drop and rename the new table to match the old one. During this process, data modification will be blocked. This will require enough free space to store two copies of the current data at once.
 

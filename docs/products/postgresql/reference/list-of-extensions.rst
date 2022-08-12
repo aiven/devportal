@@ -223,7 +223,7 @@ Utilities
 
 .. _avn_superuser_only_extensions:
 
-Superuser-only Extensions
+Superuser-only extensions
 -------------------------
 
 The following extensions can only be installed by superusers, **and are not generally available**.

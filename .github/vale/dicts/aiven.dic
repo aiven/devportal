@@ -68,6 +68,7 @@ hyperloglogs
 hypertable
 hypertables
 InfluxDB
+InnoDB
 Instana
 io
 IPsec
