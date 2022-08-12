@@ -22,9 +22,8 @@ jobs:
       # at least vale 2.15.5.
       # When there is a vale-action that provides a version we can use, re-pin
       # this to a specific version of vale-action.
-      uses: errata-ai/vale-action@reviewdog
+      uses: errata-ai/vale-action@master
       with:
-        version: 2.15.5
         files: '["index.rst", "docs"]'
       env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
