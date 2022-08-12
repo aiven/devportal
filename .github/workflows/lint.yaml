@@ -19,7 +19,7 @@ jobs:
       # 2020-08-12 The default branch of vale-action is `reviewdog`, which
       # defaults to using the latest version of `vale`
       # If we want a specific version, use `version:` in the `with` clause below
-      uses: errata-ai/vale-action
+      uses: errata-ai/vale-action@reviewdog
       with:
         files: '["index.rst", "docs"]'
       env:
