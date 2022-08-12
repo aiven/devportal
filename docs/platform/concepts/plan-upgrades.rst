@@ -1,5 +1,5 @@
-Prepare for larger service plans
-================================
+Solving payment issues when upgrading to larger service plans
+=============================================================
 
 When you have set up a project without a valid credit card or other payment method and no invoices have been paid, you may receive the following error when you try to spin up a new service or upgrade the plan of an existing one:
 
