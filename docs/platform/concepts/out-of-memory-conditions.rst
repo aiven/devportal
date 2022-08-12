@@ -13,7 +13,7 @@ However, if enough processes start using all their allocated memory simultaneous
 The Out of Memory Killer
 ------------------------
 
-The solution that the linux kernel employs is to invoke the ``Out of Memory Killer`` (or ``OOM Killer``), a Linux kernel process that reviews all running processes and kills one or more of them in order to free up system memory in order keep the system running.
+The solution that the Linux kernel employs is to invoke the ``Out of Memory Killer`` (or ``OOM Killer``), a Linux kernel process that reviews all running processes and kills one or more of them in order to free up system memory in order keep the system running.
 
 
 Which process will be killed?
