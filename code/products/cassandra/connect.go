@@ -26,7 +26,7 @@ func parseArgs() Args {
 	var args Args
 	flag.StringVar(&args.Host, "host", "", "Cassandra host")
 	flag.IntVar(&args.Port, "port", -1, "Cassandra port")
-	flag.StringVar(&args.Username, "username", "avnadmin", "Cassandra username")
+	flag.StringVar(&args.Username, "user", "avnadmin", "Cassandra username")
 	flag.StringVar(&args.Password, "password", "", "Cassandra password")
 	flag.StringVar(&args.SSLCertfile, "ssl-certfile", "./ca.pem", "Path to project CA certificate")
 	flag.Parse()
@@ -64,7 +64,7 @@ func createSession(args Args) gocql.Session {
 		Password: args.Password,
 	}
 	cluster.SslOpts = &gocql.SslOptions{
-		SSLCertfile: args.SSLCertfile,
+		CaPath: args.SSLCertfile,
 	}
 	cluster.Consistency = gocql.Quorum
 
