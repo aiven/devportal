@@ -1,5 +1,5 @@
-Configure Java SSL to access Apache Kafka®
-=================================================
+Configure Java SSL keystore and trustore to access Apache Kafka®
+================================================================
 
 Aiven for Apache Kafka® utilises TLS (SSL) to secure the traffic between its services and client applications. This means that clients must be configured with the
 right tools to be able to communicate with the Aiven services.
