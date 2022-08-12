@@ -6,19 +6,23 @@ Where Apache Kafka® excels at receiving and sending event streams, Flink consum
 
 The example in this article shows you how to create a simple Java Flink job that reads data from a Kafka topic, processes it, and then pushes it to a different Kafka topic.
 
+.. Note::
+
+   If you want to experience the power of streaming SQL transformations with Flink, Aiven provides a hosted :doc:`/docs/products/flink` with built-in data flow integration with Aiven for Apache Kafka®.
+
+   This example demonstrates using the Java API on a `local installation of Apache Flink 1.15.1 <https://nightlies.apache.org/flink/flink-docs-release-1.15/docs/try-flink/local_installation/>`_, but it can be applied to use Aiven for Apache Kafka with any self-hosted cluster.
+
 .. _kafka-flink-prereq:
 
 Prerequisites
 -------------
-
-You need an Aiven for Apache Kafka service up and running.
 
 You need an Aiven for Apache Kafka service up and running with two topics, named ``test-flink-input`` and ``test-flink-output`` already created. Furthermore, for the example, you need to collect the following information about the Aiven for Apache Kafka service:
 
 * ``APACHE_KAFKA_HOST``: The hostname of the Apache Kafka service
 * ``APACHE_KAFKA_PORT``: The port of the Apache Kafka service
 
-You need to have Apache Maven™ installed to build the example.
+You need to have `Apache Maven™ <https://maven.apache.org/install.html>`_ installed to build the example.
 
 Setup the truststore and keystore
 ''''''''''''''''''''''''''''''''''
@@ -54,13 +58,6 @@ The following example shows how to customise the ``DataStreamJob`` generated fro
         <artifactId>flink-connector-kafka</artifactId>
         <version>${flink.version}</version>
       </dependency>
-
-3. Build the packages using Maven:
-
-   .. code:: shell
-
-      cd capitalizer/
-      mvn -DskipTests=true clean package
 
 Customizing the ``DataStreamJob`` application
 '''''''''''''''''''''''''''''''''''''''''''''
@@ -160,41 +157,13 @@ Run the applications
 ''''''''''''''''''''
 
 If you have installed a `local cluster installation of Apache Flink 1.15.1 <https://nightlies.apache.org/flink/flink-docs-release-1.15/docs/try-flink/local_installation/>`_, you can launch the job on your local machine.
-``$FLINK_DIR`` is the Flink installation directory.
+``$FLINK_HOME`` is the Flink installation directory.
 
 .. code:: shell
 
-   $FLINK_DIR/bin/flink run target/capitalizer-0.0.1-SNAPSHOT.jar
+   $FLINK_HOME/bin/flink run target/capitalizer-0.0.1-SNAPSHOT.jar
 
 You can see that the job is running in the Flink web UI at ``http://localhost:8081``.
 
-.. Note::
-
-   While this example demonstrates running on a `local installation of Apache Flink 1.15.1 <https://nightlies.apache.org/flink/flink-docs-release-1.15/docs/try-flink/local_installation/>`_, it can be applied to any cluster running Apache Flink.
-   
-   Aiven also provides a hosted :doc:`/docs/products/flink` with built-in data flow integration with Aiven for Apache Kafka®
-
-Check the produced data
-'''''''''''''''''''''''
-
-:doc:`/docs/products/kafka/howto/connect-with-command-line` describes how to configure the Kafka tools to send and receive data from the topics in this example.
-``$KAFKA_DIR`` is where the kafka executables were installed, and ``CONFIGURATION_PROPERTIES`` is where the configuration was saved.
-Replace the ``APACHE_KAFKA_HOST`` and ``APACHE_KAFKA_PORT`` placeholders with the values from the :ref:`prerequisites <kafka-flink-prereq>`.
-
-.. code:: shell
-
-   # Send a string to the input topic
-   echo "Hello Aiven for Apache Kafka!" |
-       $KAFKA_DIR/bin/kafka-console-producer.sh \
-       --broker-list APACHE_KAFKA_HOST:APACHE_KAFKA_PORT \
-       --topic test-flink-input \
-       --producer.config CONFIGURATION_PROPERTIES
-
-   # Scan the output topic for any changed records
-   $KAFKA_DIR/bin/kafka-console-consumer.sh \
-       --bootstrap-server APACHE_KAFKA_HOST:APACHE_KAFKA_PORT \
-       --consumer.config CONFIGURATION_PROPERTIES \
-       --topic test-flink-output --from-beginning
-   # You should see: HELLO AIVEN FOR APACHE KAFKA!
-   # Ctrl-C to stop consuming messages
+By following the article :doc:`/docs/products/kafka/howto/connect-with-command-line`, you can send string events to the input topic and verify that the messages are forwarded to the output topic in upper case.
 
