@@ -13,7 +13,7 @@ Prerequisites
 
 You need an Aiven for Apache Kafka service up and running.
 
-Two topics named ``test-flink-input`` and ``test-flink-output`` should be created. Furthermore, for the example, you need to collect the following information about the Aiven for Apache Kafka service:
+You need an Aiven for Apache Kafka service up and running with two topics, named ``test-flink-input`` and ``test-flink-output`` already created. Furthermore, for the example, you need to collect the following information about the Aiven for Apache Kafka service:
 
 * ``APACHE_KAFKA_HOST``: The hostname of the Apache Kafka service
 * ``APACHE_KAFKA_PORT``: The port of the Apache Kafka service
