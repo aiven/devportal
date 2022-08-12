@@ -94,12 +94,12 @@ The change will be visible in the *Query* panel:
 * Before running the command, metrics start with ``elasticsearch_``:
 
   .. image:: /images/products/grafana/query-with-elasticsearch-prefix.png
-     :alt: A screenshot of the Grafana Dashboard query showing metrics prefixed with ``elasticsearch_``
+      :alt: A screenshot of the Grafana Dashboard query showing metrics prefixed with ``elasticsearch_``
 
 * After running the command, metrics start with ``opensearch_``:
 
   .. image:: /images/products/grafana/query-with-opensearch-prefix.png
-     :alt: A screenshot of the Grafana Dashboard query showing metrics prefixed with ``opensearch_``
+      :alt: A screenshot of the Grafana Dashboard query showing metrics prefixed with ``opensearch_``
 
 Use the version history to revert
 ---------------------------------
@@ -112,4 +112,4 @@ If necessary, the *Dashboard changelog* page can be used to revert a change to a
 * This will show your Dashboard changelog, and you can use this to revert to an earlier version of the dashboard.
 
 .. image:: /images/products/grafana/grafana-version-changelog.png
-   :alt: A screenshot of the Grafana Dashboard version changelog after conversion
+    :alt: A screenshot of the Grafana Dashboard version changelog after conversion
