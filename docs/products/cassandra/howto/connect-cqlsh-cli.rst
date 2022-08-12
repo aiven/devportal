@@ -20,7 +20,7 @@ These are the placeholders you will need to replace in the code sample:
 ==================      =============================================================
 Variable                Description
 ==================      =============================================================
-``PASSWORD``            Password of the `avnadmin` user
+``PASSWORD``            Password of the ``avnadmin`` user
 ``HOST``                Host name for the connection
 ``PORT``                Port number to use for the Cassandra service
 ``SSL_CERTFILE``        Path of the `CA Certificate` for the Cassandra service
@@ -39,7 +39,7 @@ Set the `SSL_CERTFILE` environment variable to the location of the *CA Certifica
     export SSL_CERTFILE=<PATH>
     
 .. note::
-    Alternatively, you can provide the path to the certfile in the [ssl] section by setting the the 'certfile' parameter in ~/.cassandra/cqlshrc
+    Alternatively, you can provide the path to the certfile in the [ssl] section by setting the the ``certfile`` parameter in ``~/.cassandra/cqlshrc``
 
 
 Navigate to the directory of your local Cassandra installation and execute the following from a terminal window:
