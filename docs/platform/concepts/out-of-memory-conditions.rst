@@ -3,7 +3,7 @@ Out of memory conditions
 
 **Many processes request more memory from the kernel then they will ever use or need.**
 
-Because of this the kernel over allocates memory (heuristic overcommit), which allows it satisfy multiple processes requesting more memory then is available, in the knowledge that either they will never use it, or that they will have freed it by the time any other process actually needs it.
+Because of this the kernel over allocates memory (heuristic overcommit), which allows it to satisfy multiple processes requesting more memory then is available, in the knowledge that either they will never use it, or that they will have freed it by the time any other process actually needs it.
 
 However, if enough processes start using all their allocated memory simultaneously there may not be enough physical memory available and an ``Out Of Memory`` (``OOM``) condition occurs. 
 
@@ -19,11 +19,11 @@ The solution that the Linux kernel employs is to invoke the ``Out of Memory Kill
 Which process will be killed?
 -----------------------------
 
-The ``OOM Killer`` selects process to kill based on a ``oom_score``; a calculation that balances the how much memory the process is using with how long the process has been running. 
+The ``OOM Killer`` selects process to kill based on an ``oom_score``; a calculation that balances how much memory the process is using with how long the process has been running.
 
 Processes that have been running for a long time are less likely to be killed. Subprocesses are summed with parent processes in terms of memory usage, so a process which forks a large number of subprocesses, but itself does not use a lot of memory, may still be killed.
 
-*In most instances, the hosted data service, or a child process, will have the highest memory footprint and be a prime candidate for termination when the OOM Killer sweeps the running processes.*
+*In most instances, the hosted data service, or a child process, will have the highest memory footprint and be a prime candidate for termination when the OOM Killer inspects the running processes.*
 
 Aiven's cloud data platform leverages kernel namespaces (or containers) to isolate processes from each other. Isolation has several benefits, including: 
 
