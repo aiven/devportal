@@ -244,6 +244,7 @@ entries:
             entries:
               - file: docs/products/kafka/howto/integrate-service-logs-into-kafka-topic
               - file: docs/products/kafka/howto/kafka-streams-with-aiven-for-kafka
+              - file: docs/products/kafka/howto/flink-with-aiven-for-kafka
               - file: docs/products/kafka/howto/datadog-customised-metrics
               - file: docs/products/kafka/howto/ksql-docker
                 title: Use ksqlDB with Aiven for Apache Kafka
