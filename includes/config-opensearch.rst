@@ -84,7 +84,7 @@
     **indices.queries.cache.size** Percentage value. Default is 10%. Maximum amount of heap used for query cache. This is an expert setting. Too low value will decrease query performance and increase performance for other operations; too high value will cause issues with other OpenSearch functionality.
 
   ``indices_recovery_max_bytes_per_sec`` => *integer*
-    **indices.recovery.max_bytes_per_sec** Limits total inbound and outbound recovery traffic for each node. Applies to both peer recoveries as well as snapshot recoveries (i.e., restores from a snapshot). Defaults to 40mb
+    **indices.recovery.max_bytes_per_sec** Limits total inbound and outbound recovery traffic for each node. Applies to both peer recoveries as well as snapshot recoveries (i.e., restores from a snapshot). Defaults to 40mb per CPU. 
 
   ``indices_recovery_max_concurrent_file_chunks`` => *integer*
     **indices.recovery.max_concurrent_file_chunks** Number of file chunks sent in parallel for each recovery. Defaults to 2.
