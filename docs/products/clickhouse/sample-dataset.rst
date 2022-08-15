@@ -34,7 +34,7 @@ When you create a service, a default database was already added. However, you ca
 To create the new database:
 
 * go to the  `Aiven web console <https://console.aiven.io/>`_ and click the **Databases & Tables** tab of your service page
-* create the database ``datasets``
+* create the database ``datasets``.
 
 Connect to the ClickHouse database
 ----------------------------------
