@@ -23,4 +23,4 @@ Create a new role::
 Alternatives
 -------------
 
-Query editor is convenient if you want to run queries directly from the console on behalf of the default user. However, if you want to run requests using different user, or if you expect a large size of the response, you can use :doc:`play <use-play>`, a built-in user interface accessible through HTTPS.
+The query editor is convenient if you want to run queries directly from the console on behalf of the default user. However, if you want to run requests using a different user, or if you expect a large size of the response, you can use :doc:`play <use-play>`, a built-in user interface accessible through HTTPS.
