@@ -1,7 +1,7 @@
-Use ClickHouse® play UI
-========================
+Use play UI
+============
 
-ClickHouse includes a built-in user interface for running SQL queries. You can access it from a web browser over the HTTPS protocol. Follow these steps to use it:
+ClickHouse® includes a built-in user interface for running SQL queries. You can access it from a web browser over the HTTPS protocol. Follow these steps to use it:
 
 1. Log in to the `Aiven web console <https://console.aiven.io/>`_, choose the right project, and select your Aiven for ClickHouse service.
 #. In the *Overview* tab, find *Connection information* and select **ClickHouse HTTPS**.
