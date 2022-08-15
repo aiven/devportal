@@ -10,7 +10,7 @@ restrict access to certain data sets.
    full unlimited access to existing service users is created automatically.
 
 Rules are defined separately for each user as ``pattern/permission`` combinations. The ``pattern`` defines the indices that the permission applies to.
-Patterns are glob-style, where ``*`` matches any number of characters (including none) and ``?`` matches any character.
+Patterns are glob-style, where ``*`` matches any number of characters (including none) and ``?`` matches any single character.
 
 You can grant the following permissions:
 
