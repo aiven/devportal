@@ -20,21 +20,31 @@ Get started with Aiven for OpenSearch
 
 Try the :doc:`sample recipes dataset </docs/products/opensearch/howto/sample-dataset>` or browse the other articles available:
 
-.. panels::
+.. grid:: 1 2 2 2
 
-    📚 :doc:`/docs/products/opensearch/concepts`
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
 
-    ---
+        📚 :doc:`/docs/products/opensearch/concepts`
 
-    💻 :doc:`/docs/products/opensearch/howto`
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
 
-    ---
+        💻 :doc:`/docs/products/opensearch/howto`
 
-    📖 :doc:`Reference </docs/products/opensearch/reference>`
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
 
-    ---
+        📖 :doc:`Reference </docs/products/opensearch/reference>`
 
-    🧰 :doc:`Code </docs/products/opensearch/howto/opensearch-with-curl>`
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
+
+        🧰 :doc:`Code </docs/products/opensearch/howto/opensearch-with-curl>`
 
 
 Ways to use OpenSearch
