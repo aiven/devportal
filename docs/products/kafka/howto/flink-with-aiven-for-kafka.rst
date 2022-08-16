@@ -8,7 +8,7 @@ The example in this article shows you how to create a simple Java Flink job that
 
 .. Note::
 
-   If you want to experience the power of streaming SQL transformations with Flink, Aiven provides a hosted :doc:`/docs/products/flink` with built-in data flow integration with Aiven for Apache Kafka®.
+   If you want to experience the power of streaming SQL transformations with Flink, Aiven provides a managed :doc:`/docs/products/flink` with built-in data flow integration with Aiven for Apache Kafka®.
 
    This example demonstrates using the Java API on a `local installation of Apache Flink 1.15.1 <https://nightlies.apache.org/flink/flink-docs-release-1.15/docs/try-flink/local_installation/>`_, but it can be applied to use Aiven for Apache Kafka with any self-hosted cluster.
 
@@ -17,7 +17,8 @@ The example in this article shows you how to create a simple Java Flink job that
 Prerequisites
 -------------
 
-You need an Aiven for Apache Kafka service up and running with two topics, named ``test-flink-input`` and ``test-flink-output`` already created. Furthermore, for the example, you need to collect the following information about the Aiven for Apache Kafka service:
+You need an Aiven for Apache Kafka service up and running with `two topics </docs/products/kafka/howto/create-topic>`_, named ``test-flink-input`` and ``test-flink-output`` already created.
+Furthermore, for the example, you need to collect the following information about the Aiven for Apache Kafka service:
 
 * ``APACHE_KAFKA_HOST``: The hostname of the Apache Kafka service
 * ``APACHE_KAFKA_PORT``: The port of the Apache Kafka service
@@ -40,13 +41,13 @@ Use Flink with Aiven for Apache Kafka
 
 The following example shows how to customise the ``DataStreamJob`` generated from the `Quickstart <https://nightlies.apache.org/flink/flink-docs-release-1.15/docs/dev/configuration/overview/>`_ to work with Aiven for Apache Kafka.
 
-1. Generate a Flink job skeleton named ``capitalizer`` using the Maven archetype:
+1. Generate a Flink job skeleton named ``flink-capitalizer`` using the Maven archetype:
 
    .. code:: shell
 
       mvn archetype:generate -DinteractiveMode=false \
         -DarchetypeGroupId=org.apache.flink -DarchetypeArtifactId=flink-quickstart-java \
-        -DarchetypeVersion=1.15.1 -DgroupId=com.example -DartifactId=capitalizer \
+        -DarchetypeVersion=1.15.1 -DgroupId=com.example -DartifactId=flink-capitalizer \
         -Dversion=0.0.1-SNAPSHOT
 
 2. Uncomment the Kafka connector in `pom.xml`:
@@ -146,13 +147,13 @@ In the generated code, ``DataStreamJob`` is the main entry point, and has alread
 Build the application
 ''''''''''''''''''''''''''''''''''''
 
-From the main ``capitalizer`` folder, execute the following Maven command to build the application:
+From the main ``flink-capitalizer`` folder, execute the following Maven command to build the application:
 
 .. code:: shell
 
    mvn -DskipTests=true clean package
 
-The above command should create a ``jar`` file named ``target/capitalizer-0.0.1-SNAPSHOT.jar``.
+The above command should create a ``jar`` file named ``target/flink-capitalizer-0.0.1-SNAPSHOT.jar``.
 
 Run the applications
 ''''''''''''''''''''
@@ -162,7 +163,7 @@ If you have installed a `local cluster installation of Apache Flink 1.15.1 <http
 
 .. code:: shell
 
-   $FLINK_HOME/bin/flink run target/capitalizer-0.0.1-SNAPSHOT.jar
+   $FLINK_HOME/bin/flink run target/flink-capitalizer-0.0.1-SNAPSHOT.jar
 
 You can see that the job is running in the Flink web UI at ``http://localhost:8081``.
 
