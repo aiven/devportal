@@ -31,7 +31,6 @@ entries:
       - file: docs/platform/concepts/enhanced-compliance-env
       - file: docs/platform/concepts/disaster-recovery-test-scenarios
       - file: docs/platform/concepts/choosing-timeseries-database
-      - file: docs/platform/concepts/plan-upgrades
     - file: docs/platform/howto
       title: HowTo
       entries:
@@ -72,6 +71,7 @@ entries:
         title: Billing management
         entries:
           - file: docs/platform/howto/use-billing-groups
+          - file: docs/platform/howto/payment-issues-plan-upgrades
           - file: docs/platform/howto/billing-google-cloud-platform-marketplace-subscription
             title: Set up GCP Marketplace
       - file: docs/platform/howto/list-saml
