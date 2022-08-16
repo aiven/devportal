@@ -40,6 +40,8 @@ exceptions:
   - Grafana
   - Hobbyist
   - HowTo
+  - Identity Provider
+  - IdP
   - InfluxDB
   - InnoDB
   - IPsec
@@ -58,6 +60,7 @@ exceptions:
   - MySQL
   - New Relic
   - NodeJS
+  - OneLogin
   - OpenSearch
   - Operator
   - Out of Memory Killer
@@ -72,6 +75,7 @@ exceptions:
   - Python
   - Redis
   - reStructuredText
+  - Setting up SAML with OneLogin
   - Schema Registry
   - Simple Authentication and Security Layer
   - Snowflake
