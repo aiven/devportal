@@ -8,7 +8,8 @@ The default InfluxDB service user ``avnadmin`` in our services is not a full "ad
 
 Databases still need to be created via the Aiven web console or via the `REST API <https://api.aiven.io/doc/>`_. Also some cluster manipulation commands have been disabled as they could interfere with us being able to provide the best service level possible.
 
-The normal retention policy commands, such as ``CREATE RETENTION POLICY`` and ``ALTER RETENTION POLICY`` can be used modify the retention periods.
+The normal retention policy commands, such as ``CREATE RETENTION POLICY`` and ``ALTER RETENTION POLICY`` can be used to modify the retention periods.
+
 
 Relevant links to the InfluxDB® documentation: 
 
