@@ -1,7 +1,10 @@
-Idle connections
-================
+Keep-alive connections parameters
+=================================
 
-This document describes how Aiven for PostgreSQL® sets the keep-alive parameters on the server side, and what keep-alive parameters can be used at the client side.
+PostgreSQL® keep-alive connection parameters are useful to manage Idle connections. The following is a reference to the default Aiven for PostgreSQL® parameters on the server side, and what keep-alive parameters can be used at the client side.
+
+Keep-alive server side parameters
+---------------------------------
 
 Currently, the following default keep-alive timeouts are used on the `server-side <https://www.postgresql.org/docs/current/runtime-config-connection.html#RUNTIME-CONFIG-CONNECTION-SETTINGS>`_:
 
@@ -17,6 +20,9 @@ Currently, the following default keep-alive timeouts are used on the `server-sid
 |``tcp_keepalives_interval``|5      |Specifies the amount of time after which a TCP ``keepalive`` message   |
 |                           |       |that has not been acknowledged by the client should be retransmitted.  |
 +---------------------------+-------+-----------------------------------------------------------------------+
+
+Keep-alive client side parameters
+---------------------------------
 
 The `client-side <https://www.postgresql.org/docs/current/libpq-connect.html#LIBPQ-KEEPALIVES>`_ keep-alive parameters can be set to whatever values you want. 
 
