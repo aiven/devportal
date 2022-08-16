@@ -16,4 +16,4 @@ Relevant links to the InfluxDB® documentation:
 * `Retention policy commands <https://docs.influxdata.com/influxdb/v1.8/concepts/glossary/#retention-policy-rp>`_
 * `Tasks <https://docs.influxdata.com/influxdb/cloud/process-data/get-started/>`_
 
-Note that if you are using the InfluxDB HTTP API directly, you may need pass the name of the database as an URI argument (for example ``&db=defaultdb``) for some of the management commands to work.
+Note that if you are using the InfluxDB HTTP API directly, you may need to pass the name of the database as an URI argument (for example ``&db=defaultdb``) for some of the management commands to work.
