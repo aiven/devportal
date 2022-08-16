@@ -17,7 +17,7 @@ The example in this article shows you how to create a simple Java Flink job that
 Prerequisites
 -------------
 
-You need an Aiven for Apache Kafka service up and running with :doc:`two topics </docs/products/kafka/howto/create-topic>`, named ``test-flink-input`` and ``test-flink-output`` already created.
+You need an Aiven for Apache Kafka service up and running with two topics, named ``test-flink-input`` and ``test-flink-output``, already `created <https://developer.aiven.io/docs/products/kafka/howto/create-topic.html>`_.
 Furthermore, for the example, you need to collect the following information about the Aiven for Apache Kafka service:
 
 * ``APACHE_KAFKA_HOST``: The hostname of the Apache Kafka service
