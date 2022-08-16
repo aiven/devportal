@@ -436,6 +436,8 @@ entries:
             title: Resource capability per plan
           - file: docs/products/postgresql/reference/terminology
             title: Terminology
+          - file: docs/products/postgresql/reference/idle-connections
+            title: Idle connections
 
   - file: docs/products/flink
     title: Apache Flink
