@@ -1,11 +1,7 @@
 Getting started with Aiven for InfluxDB®
 ########################################
 
-Aiven services are managed from Aiven `web console <https://console.aiven.io/>`_. First login to the console with your email address and password and you will be automatically taken to the "Services" view that shows all the services of the currently selected project.
-
-**Projects** allow organizing groups of services under different topics and each project can for example have different billing settings. An empty project is created for you automatically when you sign-up and the free credits are attached to this project. You can create new projects by clicking the project name in the left side-bar and selecting "**Create a new project**". The same menu can also be used to switch between projects.
-
-To get started with InfluxDB®, first select the "Create a new service" button.
+InfluxDB® is an open-source time series database developed by InfluxData. To get started with Aiven for InfluxDB, first select the "Create a new service" button.
 
 .. image:: /images/products/influxdb/console.png
     :width: 500px
@@ -20,6 +16,10 @@ The dialog that opens allows you to specify the main service properties:
 
 After making the selections, select the "Create" button and you will be taken back to the service list view and the newly created service is shown with an indicator that it is being created.
 
+.. image:: /images/products/influxdb/console-influxdb.png
+    :width: 500px
+    :alt: Overview InfluxDB service in the Aiven Console
+
 Select the service name in the list and the "Overview" information page for the service opens. This view shows the connection parameters for your service, its current status and allows making changes to the service.
 
 The "Status" indicator will say "Rebuilding" while the service is being created for you. Once the service is up and running, the light will change to green and it will say "Running". Note that while typically services start in a couple of minutes, the performance between clouds varies and it can take longer under some circumstances.
@@ -28,10 +28,6 @@ Backups
 -------
 
 InfluxDB® backups are taken every twelve hours and are encrypted and stored securely in object storage.
-
-.. image:: /images/products/influxdb/console-influxdb.png
-    :width: 500px
-    :alt: Overview InfluxDB service in the Aiven Console
 
 InfluxDB® command-line example
 ------------------------------

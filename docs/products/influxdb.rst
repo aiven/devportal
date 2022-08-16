@@ -1,9 +1,5 @@
 Aiven for Aiven for InfluxDB®
 =============================
-
-What is Aiven for Aiven for InfluxDB®
--------------------------------------
-
 Aiven for Apache InfluxDB® is a fully managed time series database, deployable in the cloud of your choice. 
 
 
