@@ -109,7 +109,10 @@ entries:
             - file: docs/integrations/cloudwatch/cloudwatch-logs-console
             - file: docs/integrations/cloudwatch/cloudwatch-logs-cli
     - file: docs/integrations/rsyslog
-      title: RSyslog integration
+      title: RSyslog
+      entries:
+        - file: docs/integrations/rsyslog/logtail
+          title: Logtail
   - file: docs/tools
     entries:
       - file: docs/tools/cli
