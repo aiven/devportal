@@ -1,7 +1,7 @@
-Migrating to Aiven for PostgreSQL using Bucardo
+Migrating to Aiven for PostgreSQL® using Bucardo
 ===============================================
 
-The preferred approach to migrating a database to Aiven for PostgreSQL
+The preferred approach to migrating a database to Aiven for PostgreSQL®
 is to use `our Open Source migration tool <https://help.aiven.io/en/articles/4358591>`__ . However, if you
 are running PostgreSQL 9.6 or do not have ``superuser`` access to your
 database to add replication slots, you can use the open source
@@ -18,7 +18,7 @@ database to add replication slots, you can use the open source
 -  Connectivity between your current database, the Aiven database, and
    Bucardo
 
-Moving Existing Data
+Moving existing data
 ~~~~~~~~~~~~~~~~~~~~
 
 To move existing data, you can follow the steps below and
@@ -28,7 +28,7 @@ You can also use the standard ``pg_dump`` and ``pg_restore`` commands to
 fill the Aiven database and use Bucardo for syncing any changes to the
 source database and ensuring it remains up to date.
 
-Replicating Changes
+Replicating changes
 ~~~~~~~~~~~~~~~~~~~
 
 To migrate your data using Bucardo:
