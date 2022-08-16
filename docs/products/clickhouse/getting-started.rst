@@ -34,7 +34,7 @@ Connect to ClickHouse
 
 2. Go to the *Overview* tab and copy the **Host**, **Port**, **User**, and **Password** parameters that you need for connecting to the service.
 
-3. Run the following command to connect to your service and run SQL queries on your database, by substituing the placeholders for ``USERNAME``, ``PASSWORD``, ``HOST`` and ``PORT``:
+3. Run the following command to connect to your service and run SQL queries on your database, substitute the placeholders for ``USERNAME``, ``PASSWORD``, ``HOST`` and ``PORT``:
 
    .. code:: bash
 
