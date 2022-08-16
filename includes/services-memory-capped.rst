@@ -1,14 +1,18 @@
 Services with memory limits
------------------------------------------------------
+---------------------------
 
-A memory limit is applied to the primary process of the following Aiven services:
+For data services with unbounded memory allocation, a memory limit is placed on the primary service container, with the remainder reserved for overhead and disk cache:
 
 - InfluxDB®
 - MySQL
 - PostgreSQL®
 
-With all new instances, a limit of 80% of available memory (RAM - 350MB) is assigned to the primary process, with the remainder reserved for operating overhead and page cache.
+This **service memory** can be calculated as: 
+  
+  |service_memory| 
 
-.. note:: Reserved memory for non-service use is capped to a maximum of 4GB.
+.. important:: 
+  |  Reserved memory for non-service use is capped to a maximum of 4GB.
+  |  For MySQL, a 600MB minimum is always guaranteed.
 
-.. note:: For MySQL, a minimum of 600MB is always guaranteed.
+

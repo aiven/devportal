@@ -624,7 +624,6 @@ entries:
               - file: docs/products/mysql/howto/connect-with-php
           - file: docs/products/mysql/howto/create-database
           - file: docs/products/mysql/howto/connect-from-mysql-workbench
-          - file: docs/products/mysql/howto/max-number-of-connections
           - file: docs/products/mysql/howto/migrate-from-external-mysql
           - file: docs/products/mysql/howto/do-check-service-migration
           - file: docs/products/mysql/howto/prevent-disk-full

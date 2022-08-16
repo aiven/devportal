@@ -33,7 +33,7 @@ Aiven's cloud data platform leverages kernel namespaces (or containers) to isola
 
 Left unchecked, the ``OOM Killer`` may opt to kill the primary service. This is undesirable as unclean termination of the primary service can lead to data loss, inconsistency, or corrupted backups. 
 
-Further, if Aiven's management platform detects that the primary service is unavailable for **60 seconds**, the service will be marked as down and a failover will occur. 
+Further, if Aiven's management platform detects that the primary service is unavailable for **|failover_primary|**, the service will be marked as down and a failover will occur. 
 
 To mitigate this scenario, namespaces are used, :doc:`some with additional memory limits <service-memory-limits>`, in combination with an ``oom_score_adjust`` on the primary process, to coax the ``OOM Killer`` into selection of less critical processes. 
 
