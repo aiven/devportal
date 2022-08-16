@@ -83,6 +83,7 @@ In the generated code, ``DataStreamJob`` is the main entry point, and has alread
 
    .. code:: java
       
+      import java.util.Properties;
       import org.apache.flink.api.common.eventtime.WatermarkStrategy;
       import org.apache.flink.api.common.serialization.SimpleStringSchema;
       import org.apache.flink.connector.base.DeliveryGuarantee;
