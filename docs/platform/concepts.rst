@@ -62,14 +62,10 @@ Learn about some of the key concepts for working with Aiven platform:
 * `Choosing a time series database`_.
   
   Choosing a time series database in Aiven Console.
-<<<<<<< HEAD
 
 .. We would like to use a :doc: role for this, but at 2022-08, vale will
    spell-check the URL if we do so, and complain about 'timeseries'
 .. _`Choosing a time series database`: https://developer.aiven.io/docs/platform/concepts/choosing-timeseries-database
 
-* :doc:`Working with larger plans</docs/platform/concepts/plan-upgrades>`.
 
-  How to prepare to create or upgrade a service to a larger plan.
-=======
->>>>>>> 0c96fa84 (Changed style and moved to howto)
+

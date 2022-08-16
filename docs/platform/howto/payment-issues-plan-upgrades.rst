@@ -5,7 +5,9 @@ When you have set up a project without a valid credit card or other payment meth
 
 .. code:: text
 
-        Creating plan this large requires valid payment information and at least one invoice having been paid. Please contact support to enable creation of larger plans when these conditions are not met.
+        Creating plan this large requires valid payment information and at least one invoice having been paid.
+        
+        Please contact support to enable creation of larger plans when these conditions are not met.
 
 In order to gain access to higher plans, please contact our support team at support@Aiven.io and we will help you get going with your new plan.
 
