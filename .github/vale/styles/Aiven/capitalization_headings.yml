@@ -54,6 +54,7 @@ exceptions:
   - Kubernetes
   - M3
   - LogDNA
+  - Logtail
   - Microsoft Azure
   - MirrorMaker
   - MongoDB
