@@ -17,7 +17,7 @@ The example in this article shows you how to create a simple Java Flink job that
 Prerequisites
 -------------
 
-You need an Aiven for Apache Kafka service up and running with `two topics </docs/products/kafka/howto/create-topic>`_, named ``test-flink-input`` and ``test-flink-output`` already created.
+You need an Aiven for Apache Kafka service up and running with :doc:`two topics </docs/products/kafka/howto/create-topic>`, named ``test-flink-input`` and ``test-flink-output`` already created.
 Furthermore, for the example, you need to collect the following information about the Aiven for Apache Kafka service:
 
 * ``APACHE_KAFKA_HOST``: The hostname of the Apache Kafka service
@@ -40,6 +40,8 @@ Use Flink with Aiven for Apache Kafka
 -------------------------------------
 
 The following example shows how to customise the ``DataStreamJob`` generated from the `Quickstart <https://nightlies.apache.org/flink/flink-docs-release-1.15/docs/dev/configuration/overview/>`_ to work with Aiven for Apache Kafka.
+
+The full code to run this example can be found in the `Aiven examples GitHub repository <https://github.com/aiven/aiven-examples/tree/master/kafka/flink-capitalizer>`_.
 
 1. Generate a Flink job skeleton named ``flink-capitalizer`` using the Maven archetype:
 
