@@ -1,7 +1,7 @@
 Integrate with Apache Kafka®
 =============================
 
-You can integrate Aiven for ClickHouse® with either *Aiven for Apache Kafka* service located in the same project, or *an external Apache kafka endpoint*. A single Aiven for ClickHouse instance can connect to multiple Kafka clusters with different authentication mechanism and credentials.
+You can integrate Aiven for ClickHouse® with either *Aiven for Apache Kafka* service located in the same project, or *an external Apache Kafka endpoint*. A single Aiven for ClickHouse instance can connect to multiple Kafka clusters with different authentication mechanism and credentials.
 
 Behind the scenes the integration between Aiven for ClickHouse and Apache Kafka services relies on `ClickHouse Kafka Engine <https://clickhouse.com/docs/en/engines/table-engines/integrations/kafka/>`_.
 
@@ -59,13 +59,13 @@ Integration settings
 Next step is to configure the topic and data format options for the integration. This will create a virtual table inside ClickHouse that can receive and send messages from multiple topics. You can have as many of such tables as you need. You need to define for each table
 
 
-* `name` - name of the connector table
-* `columns` - array of columns, with names and types
-* `topics` - array of topics, where you want to bring the data from
-* `data_format` - your preferred format for data input, see :doc:`../reference/supported-input-output-formats`
-* `group_name` - consumer group name, that will be created on your behalf
+* ``name`` - name of the connector table
+* ``columns`` - array of columns, with names and types
+* ``topics`` - array of topics, where you want to bring the data from
+* ``data_format`` - your preferred format for data input, see :doc:`../reference/supported-input-output-formats`
+* ``group_name`` - consumer group name, that will be created on your behalf
 
-Integration settings in a json format:
+Integration settings in a JSON format:
 
 .. code:: json
 
