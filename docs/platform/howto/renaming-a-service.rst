@@ -7,4 +7,4 @@ If you need to have your service running under a different name, the best option
 
 Learn more :doc:`about service forking <../concepts/service-forking>`.
 
-Get in touch with Aiven support either over Intercom chat or with support@aiven.io email in case you have questions about the process.
+Get in touch with Aiven support either over Intercom chat or with ``support@aiven.io`` email in case you have questions about the process.
