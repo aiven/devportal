@@ -494,17 +494,23 @@ entries:
       - file: docs/products/clickhouse/howto
         title: HowTo
         entries:
+          - file: docs/products/clickhouse/howto/list-integrations
+            entries:
+              - file: docs/products/clickhouse/howto/integrate-kafka
           - file: docs/products/clickhouse/howto/use-cli
           - file: docs/products/clickhouse/howto/use-query-editor
           - file: docs/products/clickhouse/howto/use-play
           - file: docs/products/clickhouse/howto/add-service-users
           - file: docs/products/clickhouse/howto/grant-privilege
 
+
       - file: docs/products/clickhouse/reference
         title: Reference
         entries:
           - file: docs/products/clickhouse/reference/supported-table-engines
             title: Supported table engines
+          - file: docs/products/clickhouse/reference/supported-input-output-formats
+            title: Supported data formats for input and output
           - file: docs/products/clickhouse/reference/advanced-params
             title: Advanced parameters
 
