@@ -16,7 +16,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Aiven Developer'
+project = 'Aiven Docs'
 copyright = '2022, Aiven Team'
 author = 'Aiven Team'
 html_title = 'Aiven'
@@ -43,7 +43,7 @@ notfound_urls_prefix = ''
 
 # OpenGraph configuration
 # see all options at https://github.com/wpilibsuite/sphinxext-opengraph#options
-ogp_site_url = 'https://developer.aiven.io/'
+ogp_site_url = 'https://docs.aiven.io/'
 ogp_description_length = 200
 ogp_image = '/_static/images/site-preview.png'
 
@@ -66,7 +66,7 @@ exclude_patterns = [
 gitstamp_fmt = "%B %Y"
 
 # sitemap config
-html_baseurl = 'https://developer.aiven.io'
+html_baseurl = 'https://docs.aiven.io'
 # Since we have `language='en'` set (further down) the URLs in the sitemap will
 # default to "{version}{lang}{link}", producing things like
 #    <url><loc>https://developer.aiven.io/en/docs/platform/howto/create_authentication_token.html</loc></url>
