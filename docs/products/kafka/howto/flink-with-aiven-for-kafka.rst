@@ -49,8 +49,8 @@ The full code to run this example can be found in the `Aiven examples GitHub rep
 
       mvn archetype:generate -DinteractiveMode=false \
         -DarchetypeGroupId=org.apache.flink -DarchetypeArtifactId=flink-quickstart-java \
-        -DarchetypeVersion=1.15.1 -DgroupId=com.example -DartifactId=flink-capitalizer \
-        -Dversion=0.0.1-SNAPSHOT
+        -DarchetypeVersion=1.15.1 -DgroupId=io.aiven.example -DartifactId=flink-capitalizer \
+        -Dpackage=io.aiven.example.flinkcapitalizer -Dversion=0.0.1-SNAPSHOT
 
 2. Uncomment the Kafka connector in `pom.xml`:
 
@@ -67,12 +67,12 @@ Customizing the ``DataStreamJob`` application
 
 In the generated code, ``DataStreamJob`` is the main entry point, and has already been configured with all of the context necessary to interact with the cluster for your processing.
 
-1. Create a new class called ``com.example.StringCapitalizer`` which performs a simple ``MapFunction`` transformation on incoming records.
+1. Create a new class called ``io.aiven.example.flinkcapitalizer.StringCapitalizer`` which performs a simple ``MapFunction`` transformation on incoming records.
    Every incoming string will be emitted as uppercase.
    
    .. code:: java
       
-      package com.example;
+      package io.aiven.example.flinkcapitalizer;
 
       import org.apache.flink.api.common.functions.MapFunction;
 
