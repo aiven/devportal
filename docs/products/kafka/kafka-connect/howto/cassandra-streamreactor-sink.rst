@@ -25,10 +25,10 @@ Furthermore you need to collect the following information about the target Cassa
 
     If you're using Aiven for Apache Cassandra, you can use the following keystore values
     
-    * ``CASSANDRA_KEYSTORE``: ``/run/aiven/keys/public.truststore.jks``
-    * ``CASSANDRA_KEYSTORE_PASSWORD``: ``password``
+    * ``CASSANDRA_TRUSTSTORE``: ``/run/aiven/keys/public.truststore.jks``
+    * ``CASSANDRA_TRUSTSTORE_PASSWORD``: ``password``
 
-* ``CASSANDRA_KEYSPACE``: The Cassandra Keyspace to use to sink the data
+* ``CASSANDRA_KEYSPACE``: The Cassandra keyspace to use to sink the data
 
 .. Warning::
 
@@ -82,8 +82,8 @@ Define the connector configurations in a file (we'll refer to it with the name `
         "connect.cassandra.username": "CASSANDRA_USERNAME",
         "connect.cassandra.password": "CASSANDRA_PASSWORD",
         "connect.cassandra.ssl.enabled": "CASSANDRA_SSL",
-        "connect.cassandra.trust.store.path": "CASSANDRA_KEYSTORE",
-        "connect.cassandra.trust.store.password": "CASSANDRA_KEYSTORE_PASSWORD",
+        "connect.cassandra.trust.store.path": "CASSANDRA_TRUSTSTORE",
+        "connect.cassandra.trust.store.password": "CASSANDRA_TRUSTSTORE_PASSWORD",
         "connect.cassandra.key.space": "CASSANDRA_KEYSPACE",
         "connect.cassandra.kcql": "KCQL_TRANSFORMATION",
         "key.converter": "io.confluent.connect.avro.AvroConverter",
@@ -150,7 +150,7 @@ If you have a topic named ``students`` containing the following data that you wa
     {"id":3, "name":"carlo", "age": 33}
     {"id":2, "name":"lucy", "age": 21}
 
-You can sink the ``students`` topic to Cassandra with the following connector configuration, after replacing the placeholders for ``CASSANDRA_HOST``, ``CASSANDRA_PORT``, ``CASSANDRA_USERNAME``, ``CASSANDRA_PASSWORD``, ``CASSANDRA_KEYSTORE``, ``CASSANDRA_KEYSTORE_PASSWORD``, ``CASSANDRA_KEYSPACE``:
+You can sink the ``students`` topic to Cassandra with the following connector configuration, after replacing the placeholders for ``CASSANDRA_HOST``, ``CASSANDRA_PORT``, ``CASSANDRA_USERNAME``, ``CASSANDRA_PASSWORD``, ``CASSANDRA_KEYSTORE``, ``CASSANDRA_KEYSTORE_PASSWORD``, ``CASSANDRA_TRUSTSTORE``, ``CASSANDRA_TRUSTSTORE_PASSWORD`, ``CASSANDRA_KEYSPACE``:
 
 .. code-block:: json
 
@@ -163,8 +163,8 @@ You can sink the ``students`` topic to Cassandra with the following connector co
         "connect.cassandra.username": "CASSANDRA_USERNAME",
         "connect.cassandra.password": "CASSANDRA_PASSWORD",
         "connect.cassandra.ssl.enabled": "CASSANDRA_SSL",
-        "connect.cassandra.trust.store.path": "CASSANDRA_KEYSTORE",
-        "connect.cassandra.trust.store.password": "CASSANDRA_KEYSTORE_PASSWORD",
+        "connect.cassandra.trust.store.path": "CASSANDRA_TRUSTSTORE",
+        "connect.cassandra.trust.store.password": "CASSANDRA_TRUSTSTORE_PASSWORD",
         "connect.cassandra.key.space": "students_keyspace",
         "topics": "students",
         "value.converter": "org.apache.kafka.connect.json.JsonConverter",

@@ -25,10 +25,10 @@ Furthermore you need to collect the following information about the target Cassa
 
     If you're using Aiven for Apache Cassandra, you can use the following keystore values
     
-    * ``CASSANDRA_KEYSTORE``: ``/run/aiven/keys/public.truststore.jks``
-    * ``CASSANDRA_KEYSTORE_PASSWORD``: ``password``
+    * ``CASSANDRA_TRUSTSTORE``: ``/run/aiven/keys/public.truststore.jks``
+    * ``CASSANDRA_TRUSTSTORE_PASSWORD``: ``password``
 
-* ``CASSANDRA_KEYSPACE``: The Cassandra Keyspace to use to source the data from
+* ``CASSANDRA_KEYSPACE``: The Cassandra keyspace to use to source the data from
 * ``KCQL_TRANSFORMATION``: The KCQL syntax to parse the topic data, should be in the format:
 
   ::
@@ -77,8 +77,8 @@ Define the connector configurations in a file (we'll refer to it with the name `
         "connect.cassandra.username": "CASSANDRA_USERNAME",
         "connect.cassandra.password": "CASSANDRA_PASSWORD",
         "connect.cassandra.ssl.enabled": "CASSANDRA_SSL",
-        "connect.cassandra.trust.store.path": "CASSANDRA_KEYSTORE",
-        "connect.cassandra.trust.store.password": "CASSANDRA_KEYSTORE_PASSWORD",
+        "connect.cassandra.trust.store.path": "CASSANDRA_TRUSTSTORE",
+        "connect.cassandra.trust.store.password": "CASSANDRA_TRUSTSTORE_PASSWORD",
         "connect.cassandra.key.space": "CASSANDRA_KEYSPACE",
         "connect.cassandra.kcql": "KCQL_TRANSFORMATION",
         "key.converter": "io.confluent.connect.avro.AvroConverter",
@@ -136,7 +136,7 @@ To create the connector, access the `Aiven Console <https://console.aiven.io/>`_
 Example: Create a Cassandra source connector
 -------------------------------------------------------
 
-If you have a Cassandra table named ``students`` in the ``students_keyspace`` keyspace, with four columns (``id``, ``name``, ``age`` and ``timestamp_added``) and you want to load increamentally an Apache Kafka topic called ``students_topic``, you can use the following connector configuration, after replacing the placeholders for ``CASSANDRA_HOST``, ``CASSANDRA_PORT``, ``CASSANDRA_USERNAME``, ``CASSANDRA_PASSWORD``, ``CASSANDRA_KEYSTORE``, ``CASSANDRA_KEYSTORE_PASSWORD``, ``CASSANDRA_KEYSPACE``:
+If you have a Cassandra table named ``students`` in the ``students_keyspace`` keyspace, with four columns (``id``, ``name``, ``age`` and ``timestamp_added``) and you want to load incrementally an Apache Kafka topic called ``students_topic``, you can use the following connector configuration, after replacing the placeholders for ``CASSANDRA_HOST``, ``CASSANDRA_PORT``, ``CASSANDRA_USERNAME``, ``CASSANDRA_PASSWORD``, ``CASSANDRA_KEYSTORE``, ``CASSANDRA_KEYSTORE_PASSWORD``, ``CASSANDRA_TRUSTSTORE``, ``CASSANDRA_TRUSTSTORE_PASSWORD``, ``CASSANDRA_KEYSPACE``:
 
 .. code-block:: json
 
@@ -149,8 +149,8 @@ If you have a Cassandra table named ``students`` in the ``students_keyspace`` ke
         "connect.cassandra.username": "CASSANDRA_USERNAME",
         "connect.cassandra.password": "CASSANDRA_PASSWORD",
         "connect.cassandra.ssl.enabled": "CASSANDRA_SSL",
-        "connect.cassandra.trust.store.path": "CASSANDRA_KEYSTORE",
-        "connect.cassandra.trust.store.password": "CASSANDRA_KEYSTORE_PASSWORD",
+        "connect.cassandra.trust.store.path": "CASSANDRA_TRUSTSTORE",
+        "connect.cassandra.trust.store.password": "CASSANDRA_TRUSTSTORE_PASSWORD",
         "connect.cassandra.key.space": "students_keyspace",
         "value.converter": "org.apache.kafka.connect.json.JsonConverter",
         "connect.cassandra.kcql": "INSERT INTO students_topic SELECT id, name, age, timestamp_added FROM students PK timestamp_added INCREMENTALMODE=TIMESTAMP"    
