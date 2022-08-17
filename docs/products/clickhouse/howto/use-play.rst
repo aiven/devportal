@@ -11,5 +11,5 @@ ClickHouse® includes a built-in user interface for running SQL queries. You can
 #. Click **Run**.
 
 .. note::
-    The play interface is only available if you can connect directly to ClickHouse from your browser. If the service is :doc:`restricted by IP addresses </docs/platform/howto/restrict-access.html>`_ or in a :doc:`VPC without public access </docs/platform/howto/public-access-in-vpc.html>`_, you can use the :doc:`query editor <use-query-editor>` instead.
+    The play interface is only available if you can connect directly to ClickHouse from your browser. If the service is :doc:`restricted by IP addresses </docs/platform/howto/restrict-access.html>` or in a :doc:`VPC without public access </docs/platform/howto/public-access-in-vpc.html>`, you can use the :doc:`query editor <use-query-editor>` instead.
     The query editor can be accessed directly from the console to run requests on behalf of the default user.
