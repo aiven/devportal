@@ -49,6 +49,7 @@ entries:
           - file: docs/platform/howto/create_new_service
           - file: docs/platform/howto/console-fork-service.rst
           - file: docs/platform/howto/pause-from-cli.rst
+          - file: docs/platform/howto/renaming-a-service.rst
           - file: docs/platform/howto/scale-services
           - file: docs/platform/howto/migrate-services
           - file: docs/platform/howto/add-storage-space
