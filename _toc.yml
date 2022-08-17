@@ -312,6 +312,7 @@ entries:
             - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-mysql
             - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-sql-server
             - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-mongodb
+            - file: docs/products/kafka/kafka-connect/howto/cassandra-streamreactor-source
           - file: docs/products/kafka/kafka-connect/howto/list-sink-connectors
             entries:
             - file: docs/products/kafka/kafka-connect/howto/jdbc-sink
@@ -330,6 +331,7 @@ entries:
             - file: docs/products/kafka/kafka-connect/howto/mongodb-sink-mongo
             - file: docs/products/kafka/kafka-connect/howto/mongodb-sink-lenses
             - file: docs/products/kafka/kafka-connect/howto/redis-streamreactor-sink
+            - file: docs/products/kafka/kafka-connect/howto/cassandra-streamreactor-sink
 
         - file: docs/products/kafka/kafka-connect/reference
           title: Reference
