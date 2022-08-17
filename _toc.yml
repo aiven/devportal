@@ -180,7 +180,9 @@ entries:
             - file: docs/tools/terraform/reference/cookbook/kafka-custom-conf-recipe.rst
               title: Apache Kafka with custom configurations  
             - file: docs/tools/terraform/reference/cookbook/m3db-m3agg-recipe
-              title: M3 and M3 Aggregator 
+              title: M3 and M3 Aggregator
+            - file: docs/tools/terraform/reference/cookbook/postgresql-read-replica-recipe
+              title: Create a MySQL/PostgreSQL® Read Replica   
       - file: docs/tools/kubernetes
         title: Aiven Operator for Kubernetes
 
