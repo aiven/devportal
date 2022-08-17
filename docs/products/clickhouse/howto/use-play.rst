@@ -11,4 +11,5 @@ ClickHouse® includes a built-in user interface for running SQL queries. You can
 #. Click **Run**.
 
 .. note::
-    `/play` is an alternative to the :doc:`query editor <use-query-editor>`. The query editor can be accessed directly from the console to run requests on behalf of the default user.
+    The play interface is only available if you can connect directly to ClickHouse from your browser. If the service is `restricted by IP addresses <https://developer.aiven.io/docs/platform/howto/restrict-access.html>`_ or in a `VPC without public access <https://developer.aiven.io/docs/platform/howto/public-access-in-vpc.html>`_, you can use the :doc:`query editor <use-query-editor>` instead.
+    The query editor can be accessed directly from the console to run requests on behalf of the default user.
