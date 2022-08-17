@@ -1,5 +1,5 @@
-MySQL max_connections
-=====================
+MySQL ``max_connections``
+=========================
 
 The number of simultaneous connections in Aiven for MySQL depends on the :doc:`usable memory </docs/platform/concepts/service-memory-limits>` on the server.
 

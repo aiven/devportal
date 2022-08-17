@@ -32,7 +32,7 @@ Global buffers
 
 **MySQL pre-allocates global buffers to improve performance of database operations.**
 
-An explanation of these various buffers (or code areas) can be found in the MySql documentation: `How MySQL Uses Memory <https://dev.mysql.com/doc/refman/8.0/en/memory-use.html>`_.
+An explanation of these various buffers (or code areas) can be found in the MySQL documentation: `How MySQL Uses Memory <https://dev.mysql.com/doc/refman/8.0/en/memory-use.html>`_.
 
 .. code-block:: sql
 
@@ -107,7 +107,7 @@ The :doc:`max_connections <../howto/max-number-of-connections>` parameter is bas
 .. Important::
     **This parameter should be used as a guideline only**. 
     
-    By default, ``max_connections`` is configured for _optimistic_ concurrency using all available memory.
+    By default, ``max_connections`` is configured for *optimistic* concurrency using all available memory.
     
     In many instances, if the ``max connections`` are fully utilized, resource overcommitment and :doc:`/docs/platform/concepts/out-of-memory-conditions` will occur.
 

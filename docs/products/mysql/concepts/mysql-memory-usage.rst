@@ -22,7 +22,7 @@ Per the `MySQL 8.0 Reference <https://dev.mysql.com/doc/refman/8.0/en/innodb-buf
 
 And `How MySQL Uses Memory <https://dev.mysql.com/doc/refman/8.0/en/memory-use.html>`_:
 
-    InnoDB allocates memory for the entire buffer pool at server startup, using malloc() operations. The innodb_buffer_pool_size system variable defines the buffer pool size. Typically, a recommended innodb_buffer_pool_size value is 50 to 75 percent of system memory.
+    InnoDB allocates memory for the entire buffer pool at server startup, using malloc() operations. The ``innodb_buffer_pool_size`` system variable defines the buffer pool size. Typically, a recommended ``innodb_buffer_pool_size`` value is 50 to 75 percent of system memory.
 
 However, the InnoDB buffer pool isn't the only pre-allocated buffer.
 
@@ -32,7 +32,7 @@ Global buffers
 
 The InnoDB buffer pool is part of the global buffers MySQL allocates to improve performance of database operations.
 
-An explanation of these various buffers (or code areas) can be found in the MySql documentation: `How MySQL Uses Memory <https://dev.mysql.com/doc/refman/8.0/en/memory-use.html>`_.
+An explanation of these various buffers (or code areas) can be found in the MySQL documentation: `How MySQL Uses Memory <https://dev.mysql.com/doc/refman/8.0/en/memory-use.html>`_.
 
 Using a 4GB service as an example, a view of the global buffers shows a memory that has been allocated:
 
