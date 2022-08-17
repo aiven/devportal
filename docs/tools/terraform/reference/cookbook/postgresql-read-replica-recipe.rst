@@ -42,9 +42,9 @@ The following sample Terraform script stands up the primary PostgreSQL service a
 
 .. code:: terraform
   
-  resource "aiven_pg" "demo-postgres-primary" {
+  resource "aiven_pg" "demo-postgresql-primary" {
     project                 = var.project_name
-    service_name            = "demo-postgres-primary"
+    service_name            = "demo-postgresql-primary"
     cloud_name              = "google-northamerica-northeast1"
     plan                    = "startup-4"
     maintenance_window_dow  = "sunday"
@@ -52,10 +52,10 @@ The following sample Terraform script stands up the primary PostgreSQL service a
     termination_protection  = false
   }
   
-  resource "aiven_pg" "demo-postgres-read-replica" {
+  resource "aiven_pg" "demo-postgresql-read-replica" {
     project                 = var.project_name
     cloud_name              = "google-northamerica-northeast1"
-    service_name            = "demo-postgres-read-replica"
+    service_name            = "demo-postgresql-read-replica"
     plan                    = "startup-4"
     maintenance_window_dow  = "sunday"
     maintenance_window_time = "10:00:00"
@@ -63,11 +63,11 @@ The following sample Terraform script stands up the primary PostgreSQL service a
   
     service_integrations {
       integration_type    = "read_replica"
-      source_service_name = aiven_pg.demo-postgres-primary.service_name
+      source_service_name = aiven_pg.demo-postgresql-primary.service_name
     }
   
     pg_user_config {
-      service_to_fork_from = aiven_pg.demo-postgres-primary.service_name
+      service_to_fork_from = aiven_pg.demo-postgresql-primary.service_name
   
       pg {
         idle_in_transaction_session_timeout = 900
@@ -81,18 +81,18 @@ The following sample Terraform script stands up the primary PostgreSQL service a
     }
   
     depends_on = [
-      aiven_pg.demo-postgres-primary,
+      aiven_pg.demo-postgresql-primary,
     ]
   }
   
-Once you run ``terraform apply`` command, **demo-postgres-primary** gets created first since **demo-postgres-read-replica** service depends on it. 
+Once you run ``terraform apply`` command, **demo-postgresql-primary** gets created first since **demo-postgresql-read-replica** service depends on it. 
 Terraform knows it from the ``depends_on`` block. Here are some configurations that are used in this setup:
 
-- **service_to_fork_from**: This is the source Aiven for PostgreSQL service.
-- **idle_in_transaction_session_timeout**: Kills an idle session after specified number of seconds.
-- **server_reset_query_always**: This pgbouncer config, when set to ``false``, causes the ``server_reset_query`` to not take effect for transaction pooling.
-Accoding to the PostgreSQL documentation, when transaction pooling is used, the ``server_reset_query`` should be empty, as clients should not use any session features.
-- **max_failover_replication_time_lag**: In case of a failover, this is the replication time lag after which **failover_command** will be executed and a **failover_has_happened** file will be created.
+- ``service_to_fork_from``: This is the source Aiven for PostgreSQL service.
+- ``idle_in_transaction_session_timeout``: Kills an idle session after specified number of seconds.
+- ``server_reset_query_always``: This PgBouncer configuration, when set to ``false``, causes the ``server_reset_query`` to not take effect for transaction pooling.
+According to the PostgreSQL documentation, when transaction pooling is used, the ``server_reset_query`` should be empty, as clients should not use any session features.
+- ``max_failover_replication_time_lag``: In case of a failover, this is the replication time lag after which ``failover_command`` will be executed and a ``failover_has_happened`` file will be created.
 
 More resources
 '''''''''''''''''
