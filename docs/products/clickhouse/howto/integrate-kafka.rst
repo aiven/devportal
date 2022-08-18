@@ -100,7 +100,7 @@ Follow these instructions:
 
     avn service integration-list --project PROJECT CLICKHOUSE_SERVICE_NAME | grep KAFKA_SERVICE_NAME
 
-2. Update the configuration settings using the service integration id retrieved in the previous step and your integration settings. ``SERVICE_INTEGRATION_ID``, ``CONNECTOR_TABLE_NAME``, ``DATA_FORMAT`` and ``CONSUMER_NAME`` with your values:
+2. Update the configuration settings using the service integration id retrieved in the previous step and your integration settings. Replace ``SERVICE_INTEGRATION_ID``, ``CONNECTOR_TABLE_NAME``, ``DATA_FORMAT`` and ``CONSUMER_NAME`` with your values:
 
 .. code::
 
