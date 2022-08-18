@@ -23,6 +23,7 @@ entries:
       - file: docs/platform/concepts/service-forking
       - file: docs/platform/concepts/service_backups
       - file: docs/platform/concepts/service-memory-limits
+      - file: docs/platform/concepts/out-of-memory-conditions
       - file: docs/platform/concepts/static-ips
       - file: docs/platform/concepts/tls-ssl-certificates
       - file: docs/platform/concepts/byoa
@@ -48,6 +49,7 @@ entries:
           - file: docs/platform/howto/create_new_service
           - file: docs/platform/howto/console-fork-service.rst
           - file: docs/platform/howto/pause-from-cli.rst
+          - file: docs/platform/howto/rename-a-service.rst
           - file: docs/platform/howto/scale-services
           - file: docs/platform/howto/migrate-services
           - file: docs/platform/howto/add-storage-space
@@ -69,9 +71,19 @@ entries:
       - file: docs/platform/howto/list-billing
         title: Billing management
         entries:
+          - file: docs/platform/howto/manage-payment-card
           - file: docs/platform/howto/use-billing-groups
+          - file: docs/platform/howto/change-billing-contact
+          - file: docs/platform/howto/payment-issues-plan-upgrades
           - file: docs/platform/howto/billing-google-cloud-platform-marketplace-subscription
             title: Set up GCP Marketplace
+      - file: docs/platform/howto/list-saml
+        title: SAML Authentication
+        entries:
+          - file: docs/platform/howto/saml/saml-authentication
+          - file: docs/platform/howto/saml/setup-saml-onelogin
+            title: Setting up SAML with OneLogin
+
     - file: docs/platform/reference
       title: Reference
       entries:
@@ -98,7 +110,10 @@ entries:
             - file: docs/integrations/cloudwatch/cloudwatch-logs-console
             - file: docs/integrations/cloudwatch/cloudwatch-logs-cli
     - file: docs/integrations/rsyslog
-      title: RSyslog integration
+      title: RSyslog
+      entries:
+        - file: docs/integrations/rsyslog/logtail
+          title: Logtail
   - file: docs/tools
     entries:
       - file: docs/tools/cli
@@ -217,6 +232,7 @@ entries:
             title: Security
             entries:
               - file: docs/products/kafka/howto/keystore-truststore
+                title: Configure Java SSL keystore and truststore to access Apache Kafka
               - file: docs/products/kafka/howto/manage-acls
               - file: docs/products/kafka/howto/monitor-logs-acl-failure
               - file: docs/products/kafka/howto/kafka-sasl-auth
@@ -297,6 +313,7 @@ entries:
             - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-mysql
             - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-sql-server
             - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-mongodb
+            - file: docs/products/kafka/kafka-connect/howto/cassandra-streamreactor-source
           - file: docs/products/kafka/kafka-connect/howto/list-sink-connectors
             entries:
             - file: docs/products/kafka/kafka-connect/howto/jdbc-sink
@@ -315,6 +332,7 @@ entries:
             - file: docs/products/kafka/kafka-connect/howto/mongodb-sink-mongo
             - file: docs/products/kafka/kafka-connect/howto/mongodb-sink-lenses
             - file: docs/products/kafka/kafka-connect/howto/redis-streamreactor-sink
+            - file: docs/products/kafka/kafka-connect/howto/cassandra-streamreactor-sink
 
         - file: docs/products/kafka/kafka-connect/reference
           title: Reference
@@ -425,6 +443,8 @@ entries:
             title: Resource capability per plan
           - file: docs/products/postgresql/reference/terminology
             title: Terminology
+          - file: docs/products/postgresql/reference/idle-connections
+            title: Idle connections
 
   - file: docs/products/flink
     title: Apache Flink
@@ -477,6 +497,7 @@ entries:
         entries:
           - file: docs/products/clickhouse/howto/use-cli
           - file: docs/products/clickhouse/howto/use-query-editor
+          - file: docs/products/clickhouse/howto/use-play
           - file: docs/products/clickhouse/howto/add-service-users
           - file: docs/products/clickhouse/howto/grant-privilege
 

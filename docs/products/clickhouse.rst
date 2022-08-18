@@ -1,4 +1,4 @@
-ClickHouse® :badge:`beta,cls=badge-secondary text-black badge-pill`
+ClickHouse® |beta|
 ===================================================================
 
 .. note::
@@ -28,19 +28,25 @@ Get started with Aiven for ClickHouse
 Take your first steps with Aiven for ClickHouse by following our :doc:`getting started </docs/products/clickhouse/getting-started>` article, or browse through our full list of articles:
 
 
-.. panels::
+.. grid:: 1 2 2 2
 
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
 
-    📚 :doc:`Concepts </docs/products/clickhouse/concepts>`
+        📚 :doc:`Concepts </docs/products/clickhouse/concepts>`
 
-    ---
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
 
-    💻 :doc:`/docs/products/clickhouse/howto`
+        💻 :doc:`/docs/products/clickhouse/howto`
 
-    ---
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
 
-    📖 :doc:`/docs/products/clickhouse/reference`
-
+        📖 :doc:`/docs/products/clickhouse/reference`
 
 
 ClickHouse resources

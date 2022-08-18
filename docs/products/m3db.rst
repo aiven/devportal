@@ -26,17 +26,25 @@ Get started with Aiven for M3
 Take your first steps with Aiven for M3 by following our :doc:`/docs/products/m3db/getting-started` article, or browse through our full list of articles:
 
 
-.. panels::
+.. grid:: 1 2 2 2
 
-    📚 :doc:`Concepts </docs/products/m3db/concepts>`
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
 
-    ---
+        📚 :doc:`Concepts </docs/products/m3db/concepts>`
 
-    💻 :doc:`/docs/products/m3db/howto`
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
 
-    ---
+        💻 :doc:`/docs/products/m3db/howto`
 
-    📖 :doc:`/docs/products/m3db/reference`
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
+
+        📖 :doc:`/docs/products/m3db/reference`
 
 
 Integrates with your existing tools

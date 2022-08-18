@@ -17,6 +17,35 @@ Manages the Aiven for Apache Kafka® ACL entries.
 
 More information on ``acl-add``, ``acl-delete`` and ``acl-list`` can be found in :doc:`the dedicated page <service/acl>`.
 
+``avn service backup-list``
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+Retrieves the list of backups for a certain service.
+
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``service_name``
+    - The name of the service
+
+**Example:** Retrieve the list of backups for the service ``grafana-25c408a5``.
+
+::
+  
+  avn service backup-list grafana-25c408a5
+
+An example of ``service backup-list`` output:
+
+.. code:: text
+
+  BACKUP_NAME                     BACKUP_TIME           DATA_SIZE  STORAGE_LOCATION
+  ==============================  ====================  =========  ===================
+  grafana-20220614T140308137245Z  2022-06-14T14:03:08Z  774144     google-europe-west3
+
 ``avn service ca get``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
@@ -60,6 +89,13 @@ Opens the appropriate interactive shell, such as ``psql`` or ``redis-cli``, to t
 ::
 
   avn service cli pg-doc
+
+``avn service connection-info``
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+Retrieves the connection information for Aiven for Apache Kafka®, Aiven for PostgreSQL® and Aiven for Redis®* in a variety of formats.
+
+More information on ``connection-info`` can be found in :doc:`the dedicated page <service/connection-info>`.
 
 ``avn service connection-pool``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -181,7 +217,7 @@ Manages rules to OpenSearch® ACL and extended ACL configuration.
 
 More information on ``es-acl-add``, ``es-acl-del``, ``es-acl-disable``, ``es-acl-enable``, ``es-acl-extended-disable``, ``es-acl-extended-enable`` and ``es-acl-extended-list``  can be found in :doc:`the dedicated page <service/es-acl>`.
 
-``avn service flink`` :badge:`beta,cls=badge-secondary badge-pill`
+``avn service flink`` |beta|
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Manages Aiven for Apache Flink® tables and jobs.
@@ -258,7 +294,7 @@ Lists services within an Aiven project.
 
     avn service list
 
-An example of ``account service list`` output:
+An example of ``service list`` output:
 
 .. code:: text
 
@@ -686,7 +722,7 @@ For each service, lists the versions available together with:
 
   avn service versions
 
-An example of ``account service versions`` output:
+An example of ``service versions`` output:
 
 .. code:: text
 

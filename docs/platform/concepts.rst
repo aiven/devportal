@@ -31,6 +31,10 @@ Learn about some of the key concepts for working with Aiven platform:
 
   Understanding memory overhead and limits applied to services.
 
+* :doc:`Out of memory conditions </docs/platform/concepts/out-of-memory-conditions>`.
+
+  How Aiven protects your service from the Out Of Memory Killer when memory is overcommitted.
+
 * :doc:`Projects and access management </docs/platform/concepts/projects_accounts_access>`.
 
   Understand how to set up users, accounts and access management for your Aiven projects.
@@ -55,6 +59,13 @@ Learn about some of the key concepts for working with Aiven platform:
   
   DR testing scenarios are simulations of disaster scenarios run for enterprise support customers by Aiven operators.
 
-* :doc:`Choosing a time series database </docs/platform/concepts/choosing-timeseries-database>`.
+* `Choosing a time series database`_.
   
   Choosing a time series database in Aiven Console.
+
+.. We would like to use a :doc: role for this, but at 2022-08, vale will
+   spell-check the URL if we do so, and complain about 'timeseries'
+.. _`Choosing a time series database`: https://developer.aiven.io/docs/platform/concepts/choosing-timeseries-database
+
+
+

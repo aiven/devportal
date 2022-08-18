@@ -5,12 +5,12 @@ The following PostgreSQL® extensions are available. Please note that some of th
 
 To check the details, including the version number of the extension, run ``select * from pg_available_extensions`` in your Aiven for PostgreSQL server.
 
-.. |PG10only| replace:: :badge:`PG10 only,cls=badge-secondary text-black badge-pill`
-.. |PG11onwards| replace:: :badge:`PG11 and newer,cls=badge-secondary text-black badge-pill`
-.. |PG11earlier| replace:: :badge:`PG11 and earlier,cls=badge-secondary text-black badge-pill`
-.. |PG12earlier| replace:: :badge:`PG12 and earlier,cls=badge-secondary text-black badge-pill`
-.. |PG13onwards| replace:: :badge:`PG13 and newer,cls=badge-secondary text-black badge-pill`
-.. |PG14only| replace:: :badge:`PG14 only,cls=badge-secondary text-black badge-pill`
+.. |PG10only| replace:: :bdg-secondary:`PG10 only`
+.. |PG11onwards| replace:: :bdg-secondary:`PG11 and newer`
+.. |PG11earlier| replace:: :bdg-secondary:`PG11 and earlier`
+.. |PG12earlier| replace:: :bdg-secondary:`PG12 and earlier`
+.. |PG13onwards| replace:: :bdg-secondary:`PG13 and newer`
+.. |PG14only| replace:: :bdg-secondary:`PG14 only`
 
 .. note::
     Not all extensions listed in ``pg_available_extensions`` are able to be installed. See :ref:`Superuser-only Extensions<avn_superuser_only_extensions>` for more.
@@ -223,7 +223,7 @@ Utilities
 
 .. _avn_superuser_only_extensions:
 
-Superuser-only Extensions
+Superuser-only extensions
 -------------------------
 
 The following extensions can only be installed by superusers, **and are not generally available**.

@@ -258,6 +258,9 @@ Google Cloud
     - ``google-europe-north1``
     - Europe, Finland 
   * - Europe
+    - ``google-europe-southwest1``
+    - Europe, Madrid 
+  * - Europe
     - ``google-europe-west1``
     - Europe, Belgium 
   * - Europe
@@ -272,6 +275,12 @@ Google Cloud
   * - Europe
     - ``google-europe-west6``
     - Europe, Switzerland 
+  * - Europe
+    - ``google-europe-west8``
+    - Europe, Italy 
+  * - Europe
+    - ``google-europe-west9``
+    - Europe, France 
   * - North America
     - ``google-northamerica-northeast1``
     - Canada, Quebec 
@@ -287,6 +296,12 @@ Google Cloud
   * - North America
     - ``google-us-east4``
     - United States, Virginia 
+  * - North America
+    - ``google-us-east5``
+    - United States, Ohio 
+  * - North America
+    - ``google-us-south1``
+    - United States, Texas 
   * - North America
     - ``google-us-west1``
     - United States, Oregon 

@@ -6,28 +6,36 @@ Aiven is just one tool in a cloud professional's toolbox. Our aim is to ensure t
 Available integrations
 ----------------------
 
-.. panels::
-    :card: shadow
+.. grid:: 1 2 2 2
 
-    **Data Flow**
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
 
-    * :doc:`/docs/products/kafka/kafka-connect`
-    * :doc:`/docs/products/flink`
+        **Data Flow**
 
-    ---
+        + :doc:`/docs/products/kafka/kafka-connect`
+        + :doc:`/docs/products/flink`
+
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
 
 
-    **Metrics**
+        **Metrics**
 
-    * :doc:`Datadog </docs/integrations/datadog>`
-    * :doc:`Amazon CloudWatch </docs/integrations/cloudwatch>`
-    * :doc:`Prometheus </docs/platform/howto/integrations/prometheus-metrics>`
+        + :doc:`Datadog </docs/integrations/datadog>`
+        + :doc:`Amazon CloudWatch </docs/integrations/cloudwatch>`
+        + :doc:`Prometheus </docs/platform/howto/integrations/prometheus-metrics>`
 
-    ---
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
 
-    **Logs**
+        **Logs**
 
-    * :doc:`/docs/products/opensearch/howto/opensearch-log-integration`
-    * :doc:`Datadog </docs/integrations/datadog>`
-    * :doc:`Amazon CloudWatch </docs/integrations/cloudwatch>`
-    * :doc:`RSyslog integration </docs/integrations/rsyslog>`
+        + :doc:`/docs/products/opensearch/howto/opensearch-log-integration`
+        + :doc:`Datadog </docs/integrations/datadog>`
+        + :doc:`Amazon CloudWatch </docs/integrations/cloudwatch>`
+        + :doc:`RSyslog integration </docs/integrations/rsyslog>`
+        + :doc:`Logtail (via Rsyslog) </docs/integrations/rsyslog/logtail>`

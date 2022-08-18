@@ -56,15 +56,15 @@ Sink connectors enable the integration of data from an existing Apache Kafka top
 
 * `Google Cloud Storage <https://help.aiven.io/kafka/connectors/aiven-kafka-gcs-sink-connector>`_
 
-* `HTTP <https://github.com/aiven/aiven-kafka-connect-http>`__ :badge:`preview,cls=badge-secondary badge-pill`
+* `HTTP <https://github.com/aiven/aiven-kafka-connect-http>`__ |preview|
 
 * `JDBC <https://github.com/aiven/aiven-kafka-connect-jdbc/blob/master/docs/sink-connector.md>`__
 
 * `Official MongoDB® <https://docs.mongodb.com/kafka-connector/current/>`__
 
-* `OpenSearch® <https://github.com/aiven/opensearch-connector-for-apache-kafka/blob/main/docs/opensearch-sink-connector-config-options.rst>`_ :badge:`preview,cls=badge-secondary badge-pill`
+* `OpenSearch® <https://github.com/aiven/opensearch-connector-for-apache-kafka/blob/main/docs/opensearch-sink-connector-config-options.rst>`_ |preview|
 
-* `Snowflake <https://docs.snowflake.net/manuals/user-guide/kafka-connector.html>`__ :badge:`preview,cls=badge-secondary badge-pill`
+* `Snowflake <https://docs.snowflake.net/manuals/user-guide/kafka-connector.html>`__ |preview|
 
 * `Splunk <https://github.com/splunk/kafka-connect-splunk>`__
 
@@ -85,7 +85,7 @@ Preview connectors
 .. image:: /images/products/kafka/kafka-connect/preview-kafka-connect-connectors.png
    :alt: Preview icon next to a OpenSearch Apache Kafka Connect connector
 
-Some of the available connectors have the :badge:`preview,cls=badge-secondary badge-pill` tag next to the name. **Preview connectors do not come under our SLA**, consider this before using them for production purposes. 
+Some of the available connectors have the |preview| tag next to the name. **Preview connectors do not come under our SLA**, consider this before using them for production purposes. 
 Bugs should be reported to the code owner directly.
 
 
