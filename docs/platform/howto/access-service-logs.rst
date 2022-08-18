@@ -1,7 +1,7 @@
 Access service logs
 ====================
 
-Occasionally there is a need to inspect logs from Aiven services. For example, to debug query performance or inspecting errors caused by a specific workload.
+Occasionally there is the need to inspect logs from Aiven services. For example, to debug query performance or inspecting errors caused by a specific workload.
 
 There are three built-in ways to inspect service logs at Aiven:
 
