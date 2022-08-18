@@ -98,7 +98,9 @@ Follow these instructions:
 
 .. code::
 
-    avn service integration-list --project PROJECT CLICKHOUSE_SERVICE_NAME | grep KAFKA_SERVICE_NAME
+    avn service integration-list                        \
+    --project PROJECT                                   \
+    CLICKHOUSE_SERVICE_NAME | grep KAFKA_SERVICE_NAME
 
 2. Update the configuration settings using the service integration id retrieved in the previous step and your integration settings. Replace ``SERVICE_INTEGRATION_ID``, ``CONNECTOR_TABLE_NAME``, ``DATA_FORMAT`` and ``CONSUMER_NAME`` with your values:
 
@@ -164,7 +166,8 @@ You can also bring the entries from ClickHouse table into the Apache Kafka topic
 
 .. code:: sql
 
-    INSERT INTO service_KAFKA_SERVICE_NAME.CONNECTOR_TABLE_NAME(id, name) VALUES (1, 'Michelangelo')
+    INSERT INTO service_KAFKA_SERVICE_NAME.CONNECTOR_TABLE_NAME(id, name)
+    VALUES (1, 'Michelangelo')
 
 .. warning::
 
