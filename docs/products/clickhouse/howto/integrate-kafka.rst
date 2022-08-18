@@ -16,6 +16,7 @@ You will need:
 
 * Aiven for ClickHouse service
 * Aiven for Apache Kafka service or a self-hosted Apache Kafka service
+* If you use the self-hosted Apache Kafka service, an external Apache Kafka endpoint should be configured in **Service Integrations**
 * At least one topic in the Apache Kafka service
 
 Variables
@@ -46,17 +47,19 @@ You can create an integration with the help of :ref:`Aiven CLI <avn_service_inte
 #. Click on **Enable**.
 #. Your Apache Kafka service will be added to the list of enabled service integrations.
 #. You can now close *Service integrations* modal window.
-#. The Kafka integration table will now appear in the database.
+#. The Kafka integration database will now be added.
+
+The newly created database name has the following format: `service_KAFKA_SERVICE_NAME`, where KAFKA_SERVICE_NAME is the name of your Apache Kafka service.
 
 .. note::
 
-    Creation of this default configuration only creates an empty ClickHouse but does not create any table. This database is named after the Kafka service.
+    During this step we only created an empty database in ClickHouse, but we didn't create any tables yet. Creation of the virtual connector table is done by setting specific integration configuration, see the section below.
 
 
-Integration settings
------------------------
+Update Apache Kafka integration settings
+-----------------------------------------
 
-Next step is to configure the topic and data format options for the integration. This will create a virtual table inside ClickHouse that can receive and send messages from multiple topics. You can have as many of such tables as you need. You need to define for each table
+Next step is to configure the topic and data format options for the integration. This will create a virtual table in ClickHouse that can receive and send messages from multiple topics. You can have as many of such tables as you need. You need to define for each table following:
 
 
 * ``name`` - name of the connector table
@@ -87,22 +90,17 @@ Integration settings in a JSON format:
 Configure integration with CLI
 --------------------------------
 
-Currently the configurations can be set only with the help of CLI command :ref:`avn service integration-update <avn service integration-update>`:
+Currently the configurations can be set only with the help of CLI command :ref:`avn service integration-update <avn service integration-update>`
 
-1. Get *the service integration id* by requesting the full list of integrations:
+Follow these instructions:
+
+1. Get *the service integration id* by requesting the full list of integrations. Replace ``PROJECT``, ``CLICKHOUSE_SERVICE_NAME`` and ``KAFKA_SERVICE_NAME`` with the names of your services:
 
 .. code::
 
     avn service integration-list --project PROJECT CLICKHOUSE_SERVICE_NAME | grep KAFKA_SERVICE_NAME
 
-Alternatively, if you cannot use ``grep``, you can retrieve the complete list of possible integration and find the enabled one:
-
-.. code::
-
-    avn service integration-list --project PROJECT CLICKHOUSE_SERVICE_NAME
-
-
-2. Update the configuration settings using the service integration id retrieved in the previous step and your integration settings:
+2. Update the configuration settings using the service integration id retrieved in the previous step and your integration settings. ``SERVICE_INTEGRATION_ID``, ``CONNECTOR_TABLE_NAME``, ``DATA_FORMAT`` and ``CONSUMER_NAME`` with your values:
 
 .. code::
 
@@ -126,11 +124,11 @@ Alternatively, if you cannot use ``grep``, you can retrieve the complete list of
 
 Read and store data
 -------------------
-In Aiven for ClickHouse you can consume messages by running SELECT command:
+In Aiven for ClickHouse you can consume messages by running SELECT command. Replace ``KAFKA_SERVICE_NAME`` and ``CONNECTOR_TABLE_NAME`` with your values and run:
 
 .. code:: sql
 
-    SELECT * FROM KAFKA_SERVICE_NAME.CONNECTOR_TABLE_NAME
+    SELECT * FROM service_KAFKA_SERVICE_NAME.CONNECTOR_TABLE_NAME
 
 However, the messages are only read once (per consumer group). If you want to store the messages for later, you can send them into a separate ClickHouse table with the help of a materialized view.
 
@@ -157,8 +155,12 @@ Now the messages consumed from the Apache Kafka topic will be read automatically
 Write data back to the topic
 ----------------------------
 
-You can also bring the entries from ClickHouse table into the Apache Kafka topic.
+You can also bring the entries from ClickHouse table into the Apache Kafka topic. Replace ``KAFKA_SERVICE_NAME`` and ``CONNECTOR_TABLE_NAME`` with your values:
 
 .. code:: sql
 
-    INSERT INTO KAFKA_SERVICE_NAME.CONNECTOR_TABLE_NAME(id, name) VALUES (1, 'Michelangelo')
+    INSERT INTO service_KAFKA_SERVICE_NAME.CONNECTOR_TABLE_NAME(id, name) VALUES (1, 'Michelangelo')
+
+.. warning::
+
+    Writing to more than one topic is not supported.
