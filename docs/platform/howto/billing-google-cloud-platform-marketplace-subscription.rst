@@ -1,32 +1,41 @@
-Set up Google Cloud Platform Marketplace for Aiven Services
-===========================================================
+Set up Google Cloud Marketplace for Aiven Services
+==================================================
 
-Aiven makes its services available through the Google Cloud Platform Marketplace. This article shows the steps needed to create a subscription that links the accounts.
+Aiven makes its services available through the Google Cloud Marketplace on GCP. This article shows the steps needed to create a subscription that links the accounts.
 
-Navigate to Aiven marketplace page on GCP
------------------------------------------
+First, there are some steps which need to be completed on the Google Cloud Marketplace page, before heading over to the Aiven console and finishing the process.
 
-Navigate to `Aiven on the GCP marketplace <https://console.cloud.google.com/marketplace/product/aiven-public/aiven>`_. This page contains information about all of Aiven's services and how the marketplace subscription works.
+Google Cloud Marketplace setup
+------------------------------
 
-Select your desired billing account, then read and agree to the the
-terms and conditions.
+1. Navigate to `Aiven Managed Database Services on the Google Cloud Marketplace <https://console.cloud.google.com/marketplace/product/aiven-public/aiven>`_.  This page contains information about all of Aiven's services and how the marketplace subscription works.  Click the "Subscribe" button on this page.
 
-When you are ready, click the **Subscribe** button at the bottom of the
-page. You will NOT be charged by clicking this button. This only sets up
-a billing subscription between GCP and Aiven. You will only be charged
-after deploying Aiven services.
+2. Select your desired billing account, then read and agree to the terms and conditions.
 
-Finalize your Aiven GCP subscription
-------------------------------------
+3. When you are ready, click the **Subscribe** button at the bottom of the page.  You will NOT be charged by clicking this button; this only sets up a billing subscription between GCP and Aiven.  You will only be charged after deploying Aiven services.
 
-After subscribing, check your email for a confirmation link to to create your
-new account. Click the link to confirm this.
+4. You should now see a message "Your order request has been sent to Aiven".  Click on the "Go to product page" button.
 
-When you view the Aiven page on GCP Marketplace, you will see a new button labeled **MANAGE ON PROVIDER**. Clicking this button will take you to the Aiven GCP Console at https://console.gcp.aiven.io.
+5. Everything is now complete in your GCP account, but you still need to setup the Aiven account.  Click on the "Manage on provider" button to go to the Aiven console to complete the process.
+
+.. image:: /images/platform/howto/gcp-manage-on-provider.png
+   :alt: Google Cloud Marketplace page after subscribing, showing the "Manage on provider" button
+   :height: 249px
+
+Aiven account setup
+-------------------
+
+6. You should now be on a signup page at Aiven, asking you for your email address to create a new account.
+
+7. After entering your email address, you will be sent an email to confirm your registration.  Click on the link.
+
+8. You can now proceed to the Aiven console dashboard, where you can manage your Aiven services as normal.
 
 .. note:: 
+   Note the URL is https://console.gcp.aiven.io - this uses a different account system than https://console.aiven.io.  If you have an existing Aiven account you will need to create a new Aiven GCP account using the Aiven GCP console, and when coming back to Aiven in the future you will need to use https://console.gcp.aiven.io to login.
 
-    Note the URL is https://console.gcp.aiven.io This uses a different account system than https://console.aiven.io. If you have an existing Aiven account, you will need to create a new Aiven GCP account using the Aiven GCP console.
+.. note:: 
+   When you view the Aiven page on GCP Marketplace, you will see a new button labeled **MANAGE ON PROVIDER**. Clicking this button will take you to the Aiven GCP Console at https://console.gcp.aiven.io.
 
 Billing
 -------
