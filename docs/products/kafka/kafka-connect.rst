@@ -21,17 +21,25 @@ Get started with Aiven for Apache Kafka® Connect
 Take your first steps with Aiven for Apache Kafka Connect by following our :doc:`/docs/products/kafka/kafka-connect/getting-started` article, or browse through our full list of articles:
 
 
-.. panels::
+.. grid:: 1 2 2 2
 
-    📚 :doc:`Concepts </docs/products/kafka/kafka-connect/concepts>`
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
 
-    ---
+        📚 :doc:`Concepts </docs/products/kafka/kafka-connect/concepts>`
 
-    💻 :doc:`HowTo </docs/products/kafka/kafka-connect/howto>`
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
 
-    ---
+        💻 :doc:`HowTo </docs/products/kafka/kafka-connect/howto>`
 
-    📖 :doc:`Reference </docs/products/kafka/kafka-connect/reference>`
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
+
+        📖 :doc:`Reference </docs/products/kafka/kafka-connect/reference>`
 
 
 Apache Kafka® Connect resources

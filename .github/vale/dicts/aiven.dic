@@ -14,6 +14,7 @@ boolean
 boot
 business
 Cassandra
+Centrify
 ClickHouse
 CloudWatch
 codecs
@@ -68,6 +69,7 @@ hyperloglogs
 hypertable
 hypertables
 InfluxDB
+InnoDB
 Instana
 io
 IPsec
@@ -77,6 +79,7 @@ Kafdrop
 Kafka
 Karapace
 keypair
+keyspace
 keystore
 keystores
 Kibana
@@ -85,6 +88,7 @@ Kubernetes
 kuromoji
 Loggly
 Logstash
+Logtail
 Lua
 Lucene
 myhoard
@@ -99,10 +103,13 @@ namespace
 namespaces
 NodeJS
 npm
+OAuth
 Okta
 onboarding
 OpenSearch
 operator
+overcommit
+overcommitted
 Pagerduty
 Pagila
 Papertrail
@@ -137,6 +144,7 @@ Sarama
 schemaless
 scriptable
 sharding
+signup
 signups
 Singlestat
 Snowflake
@@ -148,6 +156,8 @@ Stackdriver
 Statusmap
 Stunnel
 subnet
+subprocess
+subprocesses
 subtab
 syslog
 TaskManager

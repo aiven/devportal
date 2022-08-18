@@ -21,6 +21,8 @@ Furthermore you need to follow the steps :doc:`to prepare the GCP account and GC
 
     The ``GCS_CREDENTIALS`` parameter should be in the format ``{\"type\": \"service_account\",\"project_id\": \"XXXXXX\", ...}``
 
+    Additionally, any ``\n`` symbols contained in the ``private_key`` field need to be escaped (by substituting with ``\\n``)
+
 
 Setup an GCS sink connector with Aiven Console
 ----------------------------------------------

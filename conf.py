@@ -16,7 +16,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Aiven Developer'
+project = 'Aiven Docs'
 copyright = '2022, Aiven Team'
 author = 'Aiven Team'
 html_title = 'Aiven'
@@ -28,7 +28,7 @@ html_title = 'Aiven'
 # ones.
 extensions = [
     'sphinx_sitemap',
-    'sphinx_panels',
+    'sphinx_design',
     'sphinxcontrib.mermaid',
     'sphinx_external_toc',
     'sphinx_copybutton',
@@ -43,7 +43,7 @@ notfound_urls_prefix = ''
 
 # OpenGraph configuration
 # see all options at https://github.com/wpilibsuite/sphinxext-opengraph#options
-ogp_site_url = 'https://developer.aiven.io/'
+ogp_site_url = 'https://docs.aiven.io/'
 ogp_description_length = 200
 ogp_image = '/_static/images/site-preview.png'
 
@@ -66,7 +66,7 @@ exclude_patterns = [
 gitstamp_fmt = "%B %Y"
 
 # sitemap config
-html_baseurl = 'https://developer.aiven.io'
+html_baseurl = 'https://docs.aiven.io'
 # Since we have `language='en'` set (further down) the URLs in the sitemap will
 # default to "{version}{lang}{link}", producing things like
 #    <url><loc>https://developer.aiven.io/en/docs/platform/howto/create_authentication_token.html</loc></url>
@@ -101,19 +101,21 @@ html_theme_options = {
         "font-stack": "Inter, sans-serif",
         "color-sidebar-brand-text": "#4a4b57",
         "color-foreground-primary": "#333333",
-        "color-foreground-secondary": "#787885",
-        "color-foreground-muted": "#787885",
+        "color-foreground-secondary": "#747481",
+        "color-foreground-muted": "#747481",
         "color-foreground-border": "#e1e1e3",
         "color-background-primary": "#ffffff",
         "color-background-secondary": "#f7f7fa",
-        "color-content-foreground": "#787885",
+        "color-content-foreground": "#747481",
         "color-background-hover": "#c60443",
         "color-background-border": "#e1e1e3",
         "color-highlighted-background": "#1c1c2f",
-        "color-inline-code-background": "#787885",
+        "color-inline-code-background": "#747481",
         "color-sidebar-background": "#f7f7fa",
         "color-sidebar-background-border": "#e1e1e3",
         "color-sidebar-search-background": "#fff",
+        "sd-color-card-background": "#f7f7fa",
+        "sd-color-primary": "#4a4b57",
     },
     "dark_css_variables": {
         "color-brand-primary": "#d2d2d6",
@@ -125,7 +127,7 @@ html_theme_options = {
         "color-sidebar-link-text--top-level": "#d2d2d6",
         "color-foreground-primary": "#ffffff",
         "color-foreground-secondary": "#83839d",
-        "color-foreground-muted": "#787885",
+        "color-foreground-muted": "#747481",
         "color-foreground-border": "#e1e1e3",
         "color-background-primary": "#11111e",
         "color-background-secondary": "#1c1c2f",
@@ -140,7 +142,9 @@ html_theme_options = {
         "color-admonition-title-background--tip": "#00c85240",
         "color-admonition-title-background--note": "#00b0ff40",
         "color-admonition-title-background--warning": "#ff910040",
-        "color-admonition-title-background--error": "#ff525240"
+        "color-admonition-title-background--error": "#ff525240",
+        "sd-color-card-background": "#0b0b14",
+        "sd-color-primary": "#e1e1e3",
     },
     "navigation_with_keys": True
 }
@@ -212,5 +216,9 @@ rst_epilog = """
 .. |tick| image:: /images/icon-tick.png
    :width: 24px
    :class: no-scaled-link
+
+.. |beta| replace:: :bdg-secondary:`beta`
+
+.. |preview| replace:: :bdg-secondary:`preview`
 
 """

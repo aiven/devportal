@@ -29,18 +29,25 @@ Get started with Aiven for Apache Kafka
 
 Take your first steps with Aiven for Apache Kafka by following our :doc:`/docs/products/kafka/getting-started` article, or browse through our full list of articles:
 
+.. grid:: 1 2 2 2
 
-.. panels::
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
 
-    📚 :doc:`Concepts </docs/products/kafka/concepts>`
+        📚 :doc:`Concepts </docs/products/kafka/concepts>`
 
-    ---
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
 
-    💻 :doc:`HowTo </docs/products/kafka/howto>`
+        💻 :doc:`HowTo </docs/products/kafka/howto>`
 
-    ---
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
 
-    📖 :doc:`/docs/products/kafka/reference`
+        📖 :doc:`/docs/products/kafka/reference`
 
 
 Apache Kafka resources

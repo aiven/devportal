@@ -1,26 +1,47 @@
 Access control
 ==============
 
-Aiven for OpenSearch® supports index-level access control lists (ACL) to control permissions. This approach allows you to limit the operations that are available to specific connections and to restrict access to certain data sets, which improves the security of your data.
+Aiven for OpenSearch® supports index-level access control lists (ACL) to control permissions.
+This approach allows you to limit the operations that are available to specific service users and
+restrict access to certain data sets.
 
-You can grant the following permissions:
+.. note::
+   When access control is initially enabled for the service, a set of rules that allows
+   full unlimited access to existing service users is created automatically.
 
-* ``deny``: no access
-* ``admin``: full access to APIs and documents 
-* ``readwrite``: full access to documents
-* ``read``: allow only searching and retrieving documents
-* ``write``: allow updating, adding, and deleting documents
+Patterns and permissions
+------------------------
 
-  .. note::
-     Write permission allows the service user to create new indexes that match the pattern, but it does not allow deletion of those indexes.
+Rules are defined separately for each user as ``pattern/permission`` combinations. The ``pattern`` defines the indices that the permission applies to.
+Patterns are glob-style, where ``*`` matches any number of characters (including none) and ``?`` matches any single character.
 
+You can grant the following permissions. They are ordered by importance:
 
-Rules are defined separately for each user as ``pattern/permission`` combinations. The ``pattern`` defines the indexes that the permission applies to. Patterns are glob-style, where ``*`` matches any number of characters and ``?`` matches any character. 
+1. ``deny``: explicitly deny access
+#. ``admin``: unlimited access to the index
+#. ``readwrite``: full access to documents
+#. ``read``: allow only searching and retrieving documents
+#. ``write``: allow updating, adding, and deleting documents
 
-When multiple rules match, they are applied in the order listed above. If no rules match, access is denied.
+The permission also implies which `index APIs <https://opensearch.org/docs/latest/opensearch/rest-api/index-apis/index/>`_ the service user can access:
+
+1. ``deny``: no access
+#. ``admin``: no restrictions
+#. ``readwrite``: ``_search``, ``_mget``, ``_bulk``, ``_mapping``, ``_update_by_query``, ``_delete_by_query``
+#. ``read``: ``_search``, ``_mget``
+#. ``write``: ``_bulk``, ``_mapping``, ``_update_by_query``, ``_delete_by_query``
+
+.. note::
+   When no rules match, access is **implicitly denied**.
+
+.. note::
+   ``write`` permission allows creating indices that match the rule's index pattern but does now allow deleting them.
+   Indices can only be deleted when a matching ``admin`` permission rule exists.
+
+When multiple rules match, they are applied in the order listed above regardless of the rule order (see the example below).
 
 Example
--------
++++++++
 
 As an example, we can use the following set of rules:
 
@@ -43,43 +64,64 @@ The same set would deny the service user to
 * read or search documents from ``events_2018`` (the second rule only grants ``write`` permission), and
 * write to or use the API for ``logs_20171230`` (the first rule only grants ``read`` permission).
 
-The permission also implies which index APIs the service user can access:
+Access control and aliases
+++++++++++++++++++++++++++
 
-* ``read``:  ``_search``, ``_mget``
-* ``write``: ``_bulk``, ``_mapping``, ``_update_by_query``, ``_delete_by_query``
-* ``admin``: no restrictions 
+.. warning::
+    Aliases are **not expanded**. If you use aliases, the ACL must include a rule where the pattern matches the alias.
 
-  
+.. note::
+   Rules matching the indices the alias "expands" to are not used, only the rule where the pattern matches the alias itself.
 
 Controlling access to top-level APIs
 ------------------------------------
 
-OpenSearch has several "top-level" API endpoints (``_mget``, ``_msearch``, and so on), where you have to grant access separately. To do this, use patterns similar to the index patterns, for example:
+In addition to indices, ACLs can be used to control access to "top-level" APIs by creating a API specific rule.
+
+.. note::
+   Access to the ``_cluster``, ``_cat``, ``_tasks``, ``_scripts``, ``_snapshot``, and ``_nodes`` APIs is controlled
+   by the service itself, not by these ACLs.
+
+.. note::
+    Access to the top-level ``_mget``, ``_msearch``, and ``_bulk`` APIs can also be controlled by enabling ``ExtendedACL``.
+
+Using ACLs to control access
+++++++++++++++++++++++++++++
+
+Only rules where the pattern starts with ``_`` are considered for top-level API access.
+Normal index rules do not grant access to these APIs. For example, ``*search/admin`` only grants access to indices that match the pattern, not to ``_msearch``.
+
+Examples
+::::::::
 
 * ``_*/admin`` would grant unlimited access to all top-level APIs
 * ``_msearch/admin`` grants unlimited access to the ``_msearch`` API only
 
+The ACL **only controls access to the API** and not what it can be used for. Giving access to the top-level API will in effect circumvent index specific rules, for example ``_msearch/admin`` access
+allows searching any index via the API as the indices to search are defined in the request body itself.
+
+.. warning::
+   When top-level API access is granted via explicit ACL the request content is not examined.
+
+Enabling extended ACLs
+++++++++++++++++++++++
+
+Instead of creating a rule that allows access to the top-level ``_mget``, ``_msearch`` and ``_bulk`` APIs, you can switch on the ``ExtendedAcl``.
+This will automatically enable these APIs for the user and each API request is checked to make sure operations only target indices
+that the user has appropriate permissions for (as defined by the normal index ACLs).
+
+As the service must inspect the content of the request, this *can cause* performance and latency issues. The requests are also **limited to a maximum of 15000 bytes** in size.
+If the request is **too large** or if **any** of the operations or indices are not allowed by the ACLs, the *entire request* is rejected.
+
 .. note::
-   You might encounter ``HTTP 500`` internal server errors when you try to view dashboards as a service user that has read-only access to certain indexes, as these dashboards call the ``_msearch`` API. In such cases, add a new ACL rule that grants **Admin** access to ``_msearch`` for that service user.
-
-Only rules where the pattern starts with ``_`` are considered for top-level API access. Normal rules do not grant access to these APIs. For example, ``*search/admin`` only grants access to indexes that match the pattern, not to ``_msearch``.
-
-You can switch on the ``ExtendedAcl`` option for the service to enforce index rules in a limited fashion for requests that use the ``_mget``, ``_msearch``, and ``_bulk`` APIs (and only those). When this option is in use, service users can access these APIs as long as all operations only target indexes that they have appropriate permissions for. 
-
-.. note::
-   To enforce the rules with ``ExtendedACL``, the service must inspect the content of the request, which can cause performance and latency issues. All requests are also limited to a maximum of 16 KiB in size. If the request is too large or if any of the operations or indexes are not allowed, the entire request is rejected.
-
-
-Access control and aliases
---------------------------
-
-Aliases are not expanded. If you use aliases, the ACL must include a rule that matches the alias. 
-
+   ACLs permitting access to top-level API will always take precedence over ``ExtendedACL``, you can for example allow access to ``_bulk`` for a trusted service account to
+   do mass updates.
 
 Access control and OpenSearch Dashboards
 ----------------------------------------
 
-Enabling ACLs does not restrict access to OpenSearch Dashboards itself, but all requests done by OpenSearch Dashboards are checked against the current user's ACLs. 
+Enabling ACLs does not restrict access to OpenSearch Dashboards itself, but all requests done by OpenSearch Dashboards are checked against the current user's ACLs.
 
-In practice, for OpenSearch Dashboards to function properly, you must grant the user admin-level access to the ``_msearch`` interface (permission: ``admin``, pattern: ``_msearch``) or switch on the ``ExtendedAcl`` option.
-
+.. note::
+   You might encounter ``HTTP 500`` internal server errors when you try to view dashboards as a service user that has read-only access to certain indices, as these dashboards call the ``_msearch`` API.
+   In such cases, add a new ACL rule that grants **Admin** access to ``_msearch`` for that service user.

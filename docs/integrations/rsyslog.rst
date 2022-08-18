@@ -78,6 +78,8 @@ Optional:
 
 -  ``cert`` - (PEM format) client cert to use
 
+.. _add_rsyslog_integration:
+
 Add rsyslog integration to service
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -110,11 +112,23 @@ Then you can link the service to the endpoint
        -t rsyslog -s your-service \
        -D 618fb764-5832-4636-ba26-0d9857222cfd
 
-Integrating with a third party syslog service
----------------------------------------------
+Example configurations
+----------------------
 
-All integrations can be configured using the Aiven Console or the Aiven
-CLI though the examples are easier to copy and paste in the CLI form.
+Rsyslog is a standard integration so you can use it with any external system. We have collected some examples of how to integrate with popular third party platforms to get you started quickly.
+
+.. note:: All integrations can be configured using the Aiven Console or the Aiven CLI though the examples are easier to copy and paste in the CLI form.
+
+* :ref:`Coralogix<rsyslog_coralogix>`
+* :doc:`Datadog </docs/integrations/datadog/datadog-logs>`
+* :ref:`Loggly<rsyslog_loggly>`
+* :doc:`Logtail </docs/integrations/rsyslog/logtail>`
+* :ref:`Mezmo<rsyslog_mezmo>`
+* :ref:`New Relic<rsyslog_new_relic>`
+* :ref:`Papertrail<rsyslog_papertrail>`
+* :ref:`Sumo Logic<rsyslog_sumo_logic>`
+
+.. _rsyslog_coralogix:
 
 Coralogix
 ~~~~~~~~~
@@ -139,10 +153,7 @@ See the Coralogix `Rsyslog <https://coralogix.com/docs/rsyslog/>`_ documentation
 
 .. Note:: ``tls`` needs to be set to ``false``.
 
-Datadog
-~~~~~~~
-
-For `Datadog <https://www.datadoghq.com/>`_ integration, please see the :doc:`Aiven and Datadog </docs/integrations/datadog>` page.
+.. _rsyslog_loggly:
 
 Loggly®
 ~~~~~~~
@@ -159,6 +170,7 @@ integration, you need to use a custom ``logline`` format with your token.
        -c tls=true -c format=custom \
        -c logline='<%pri%>%protocol-version% %timestamp:::date-rfc3339% %HOSTNAME% %app-name% %procid% %msgid% TOKEN tag="RsyslogTLS"] %msg%'
 
+.. _rsyslog_mezmo:
 
 Mezmo (LogDNA)
 ~~~~~~~~~~~~~~
@@ -173,6 +185,7 @@ For `Mezmo <https://www.mezmo.com/>`_ syslog integration you need to use a custo
       -c tls=true -c format=custom \
       -c logline='<%pri%>%protocol-version% %timestamp:::date-rfc3339% %HOSTNAME% %app-name% %procid% %msgid% [logdna@48950 key="YOUR_KEY_GOES_HERE"] %msg%'
 
+.. _rsyslog_new_relic:
 
 New Relic
 ~~~~~~~~~
@@ -197,6 +210,7 @@ For more information see `Use TCP endpoint to forward logs to New Relic <https:/
        -c tls=true -c format=custom \
        -c logline='YOUR_LICENSE_KEY <%pri%>%protocol-version% %timestamp:::date-rfc3339% %hostname% %app-name% %procid% %msgid% %structured-data% %msg%'
 
+.. _rsyslog_papertrail:
 
 Papertrail
 ~~~~~~~~~~
@@ -215,6 +229,7 @@ certificates signed by known CAs. You also need to set the format to
        -c server=logsN.papertrailapp.com -c port=XXXXX \
        -c tls=true -c format=rfc3164 
 
+.. _rsyslog_sumo_logic:
 
 Sumo Logic®
 ~~~~~~~~~~~
@@ -230,7 +245,6 @@ and replace ``YOUR_DEPLOYMENT`` with one of ``au``, ``ca``, ``de``, ``eu``, ``fe
        -c server=syslog.collection.YOUR_DEPLOYMENT.sumologic.com -c port=6514 \
        -c tls=true -c format=custom \
        -c logline='<%pri%>%protocol-version% %timestamp:::date-rfc3339% %HOSTNAME% %app-name% %procid% %msgid% YOUR_TOKEN %msg%'
-
 
 -----
 

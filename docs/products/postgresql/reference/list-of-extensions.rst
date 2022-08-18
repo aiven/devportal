@@ -1,14 +1,19 @@
 Extensions on Aiven for PostgreSQL®
 ===================================
 
-The following PostgreSQL® extensions are available. Please note that some of the extensions have dependencies and they need to be created in the proper order. Some extensions may require disconnecting the client connection and reconnecting before they are fully available.  To check the details, including the version number of the extension, run ``select * from pg_available_extensions`` in your Aiven for PostgreSQL server.
+The following PostgreSQL® extensions are available. Please note that some of the extensions have dependencies and they need to be created in the proper order. Some extensions may require disconnecting the client connection and reconnecting before they are fully available.
 
-.. |PG10only| replace:: :badge:`PG10 only,cls=badge-secondary text-black badge-pill`
-.. |PG11onwards| replace:: :badge:`PG11 and newer,cls=badge-secondary text-black badge-pill`
-.. |PG11earlier| replace:: :badge:`PG11 and earlier,cls=badge-secondary text-black badge-pill`
-.. |PG12earlier| replace:: :badge:`PG12 and earlier,cls=badge-secondary text-black badge-pill`
-.. |PG13onwards| replace:: :badge:`PG13 and newer,cls=badge-secondary text-black badge-pill`
-.. |PG14only| replace:: :badge:`PG14 only,cls=badge-secondary text-black badge-pill`
+To check the details, including the version number of the extension, run ``select * from pg_available_extensions`` in your Aiven for PostgreSQL server.
+
+.. |PG10only| replace:: :bdg-secondary:`PG10 only`
+.. |PG11onwards| replace:: :bdg-secondary:`PG11 and newer`
+.. |PG11earlier| replace:: :bdg-secondary:`PG11 and earlier`
+.. |PG12earlier| replace:: :bdg-secondary:`PG12 and earlier`
+.. |PG13onwards| replace:: :bdg-secondary:`PG13 and newer`
+.. |PG14only| replace:: :bdg-secondary:`PG14 only`
+
+.. note::
+    Not all extensions listed in ``pg_available_extensions`` are able to be installed. See :ref:`Superuser-only Extensions<avn_superuser_only_extensions>` for more.
 
 Data types
 ----------
@@ -61,9 +66,6 @@ Search and text handling
 ``dict_int`` - https://www.postgresql.org/docs/current/dict-int.html
     Text search dictionary template for integers.
 
-``dict_xsyn`` - https://www.postgresql.org/docs/current/dict-xsyn.html
-    Text search dictionary template for extended synonym processing.
-
 ``fuzzystrmatch`` - https://www.postgresql.org/docs/current/fuzzystrmatch.html
     Determine similarities and distance between strings.
 
@@ -85,12 +87,6 @@ Search and text handling
 
 Auditing
 ------------------------
-
-``insert_username`` - https://www.postgresql.org/docs/current/contrib-spi.html#id-1.11.7.47.7
-    Functions for tracking who changed a table.
-
-``moddatetime`` - https://www.postgresql.org/docs/10/contrib-spi.html#id-1.11.7.46.9
-    Functions for tracking last modification time.
 
 ``tcn`` - https://www.postgresql.org/docs/current/tcn.html
     Triggered change notifications.
@@ -142,9 +138,6 @@ Procedural language
 ``plperl`` - https://www.postgresql.org/docs/current/plperl.html
     PL/Perl procedural language.
 
-``plperlu`` - https://www.postgresql.org/docs/current/plperl-trusted.html
-    PL/PerlU untrusted procedural language.
-
 ``plpgsql`` - https://www.postgresql.org/docs/current/plpgsql.html
     PL/pgSQL procedural language.
 
@@ -168,23 +161,8 @@ Utilities
 ``aiven_extras`` - https://github.com/aiven/aiven-extras
     This extension is meant for use in environments where you want non-superusers to be able to use certain database features.
 
-``amcheck`` - https://www.postgresql.org/docs/current/amcheck.html
-    Functions for verifying relation integrity.
-
-``autoinc`` - https://www.postgresql.org/docs/current/contrib-spi.html#id-1.11.7.47.6
-    Functions for auto-incrementing fields.
-
 ``bool_plperl`` - https://www.postgresql.org/docs/current/plperl-funcs.html
     Transform between ``bool`` and ``plperl``.  |PG13onwards|
-
-``bool_plperlu`` - https://www.postgresql.org/docs/current/plperl-funcs.html
-    Transform between ``bool`` and ``plperlu``.  |PG13onwards|
-
-``hstore_plperl`` - https://www.postgresql.org/docs/current/hstore.html
-    Transform between ``hstore`` and ``plperl``.
-
-``hstore_plperlu`` - https://www.postgresql.org/docs/current/hstore.html
-    Transform between ``hstore`` and ``plperlu``.
 
 ``intagg`` - https://www.postgresql.org/docs/current/intagg.html
     Integer aggregator and enumerator (obsolete).
@@ -195,14 +173,8 @@ Utilities
 ``jsonb_plperl`` - https://www.postgresql.org/docs/current/datatype-json.html
     Transform between ``jsonb`` and ``plperl``.
 
-``jsonb_plperlu`` - https://www.postgresql.org/docs/current/datatype-json.html
-    Transform between ``jsonb`` and ``plperlu``.
-
 ``lo`` - https://www.postgresql.org/docs/current/lo.html
     Large Object maintenance.
-
-``old_snapshot`` - https://www.postgresql.org/docs/current/oldsnapshot.html
-    Utilities in support of old_snapshot_threshold.  |PG14only|
 
 ``pageinspect`` - https://www.postgresql.org/docs/current/pageinspect.html
     Inspect the contents of database pages at a low level.
@@ -212,9 +184,6 @@ Utilities
 
 ``pg_cron`` - https://github.com/citusdata/pg_cron
     Job scheduler for PostgreSQL.
-
-``pg_freespacemap`` - https://www.postgresql.org/docs/current/pgfreespacemap.html
-    Examine the free space map (FSM).
 
 ``pg_partman`` - https://github.com/pgpartman/pg_partman
     Extension to manage partitioned tables by time or ID.
@@ -231,20 +200,11 @@ Utilities
 ``pg_stat_statements`` - https://www.postgresql.org/docs/current/pgstatstatements.html
     Track planning and execution statistics of all SQL statements executed.
 
-``pg_surgery`` - https://www.postgresql.org/docs/current/pgsurgery.html
-    Extension to perform surgery on a damaged relation.  |PG14only|
-
-``pg_visibility`` - https://www.postgresql.org/docs/current/pgvisibility.html
-    Examine the visibility map (VM) and page-level visibility info.
-
 ``pgrowlocks`` - https://www.postgresql.org/docs/current/pgrowlocks.html
     Show row-level locking information.
 
 ``pgstattuple`` - https://www.postgresql.org/docs/current/pgstattuple.html
     Show tuple-level statistics.
-
-``refint`` - https://www.postgresql.org/docs/current/contrib-spi.html#id-1.11.7.47.5
-    Functions for implementing referential integrity (obsolete).
 
 ``sslinfo`` - https://www.postgresql.org/docs/current/sslinfo.html
     Information about SSL certificates.
@@ -261,7 +221,57 @@ Utilities
 ``tsm_system_time`` - https://www.postgresql.org/docs/current/tsm-system-time.html
     TABLESAMPLE method which accepts time in milliseconds as a limit.
 
-``xml2`` - https://www.postgresql.org/docs/current/xml2.html
-    XPath querying and XSLT.
+.. _avn_superuser_only_extensions:
 
+Superuser-only extensions
+-------------------------
 
+The following extensions can only be installed by superusers, **and are not generally available**.
+
+``amcheck`` - https://www.postgresql.org/docs/current/amcheck.html
+    Functions for verifying relation integrity.
+
+``autoinc`` - https://www.postgresql.org/docs/current/contrib-spi.html#id-1.11.7.47.6
+    Functions for auto-incrementing fields.
+
+``bool_plperlu`` - https://www.postgresql.org/docs/current/plperl-funcs.html
+    Transform between ``bool`` and ``plperlu``.  |PG13onwards|
+
+``dict_xsyn`` - https://www.postgresql.org/docs/current/dict-xsyn.html
+    Text search dictionary template for extended synonym processing.
+
+``hstore_plperl`` - https://www.postgresql.org/docs/current/hstore.html
+    Transform between ``hstore`` and ``plperl``.
+
+``hstore_plperlu`` - https://www.postgresql.org/docs/current/hstore.html
+    Transform between ``hstore`` and ``plperlu``.
+
+``insert_username`` - https://www.postgresql.org/docs/current/contrib-spi.html#id-1.11.7.47.7
+    Functions for tracking who changed a table.
+
+``jsonb_plperlu`` - https://www.postgresql.org/docs/current/datatype-json.html
+    Transform between ``jsonb`` and ``plperlu``.
+
+``moddatetime`` - https://www.postgresql.org/docs/10/contrib-spi.html#id-1.11.7.46.9
+    Functions for tracking last modification time.
+
+``old_snapshot`` - https://www.postgresql.org/docs/current/oldsnapshot.html
+    Utilities in support of old_snapshot_threshold.  |PG14only|
+
+``pageinspect`` - https://www.postgresql.org/docs/current/pageinspect.html
+    Inspect the contents of database pages at a low level.
+
+``pg_freespacemap`` - https://www.postgresql.org/docs/current/pgfreespacemap.html
+    Examine the free space map (FSM).
+
+``pg_surgery`` - https://www.postgresql.org/docs/current/pgsurgery.html
+    Extension to perform surgery on a damaged relation.  |PG14only|
+
+``pg_visibility`` - https://www.postgresql.org/docs/current/pgvisibility.html
+    Examine the visibility map (VM) and page-level visibility info.
+
+``plperlu`` - https://www.postgresql.org/docs/current/plperl-trusted.html
+    PL/PerlU untrusted procedural language.
+
+``refint`` - https://www.postgresql.org/docs/current/contrib-spi.html#id-1.11.7.47.5
+    Functions for implementing referential integrity (obsolete).

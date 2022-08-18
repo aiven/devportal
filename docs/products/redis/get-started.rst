@@ -32,7 +32,8 @@ In order to launch a service, decide on the service plan, cloud provider, and re
 Next steps
 ----------
 
-* Learn how to connect to Aiven for Redis by using different programming languages:
+* Learn how to connect to Aiven for Redis by either using ``redis-cli`` or different programming languages:
+   - :doc:`redis-cli<howto/connect-redis-cli>`
    - :doc:`Go <howto/connect-go>`
    - :doc:`Node <howto/connect-node>`
    - :doc:`PHP <howto/connect-php>`

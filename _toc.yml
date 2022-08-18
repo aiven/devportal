@@ -23,6 +23,7 @@ entries:
       - file: docs/platform/concepts/service-forking
       - file: docs/platform/concepts/service_backups
       - file: docs/platform/concepts/service-memory-limits
+      - file: docs/platform/concepts/out-of-memory-conditions
       - file: docs/platform/concepts/static-ips
       - file: docs/platform/concepts/tls-ssl-certificates
       - file: docs/platform/concepts/byoa
@@ -48,11 +49,12 @@ entries:
           - file: docs/platform/howto/create_new_service
           - file: docs/platform/howto/console-fork-service.rst
           - file: docs/platform/howto/pause-from-cli.rst
+          - file: docs/platform/howto/rename-a-service.rst
           - file: docs/platform/howto/scale-services
           - file: docs/platform/howto/migrate-services
           - file: docs/platform/howto/add-storage-space
           - file: docs/platform/howto/tag-resources
-          - file: docs/platform/howto/access-service-logs
+          - file: docs/platform/howto/viewing-service-logs
       - file: docs/platform/howto/list-network
         title: Network management
         entries:
@@ -70,9 +72,19 @@ entries:
       - file: docs/platform/howto/list-billing
         title: Billing management
         entries:
+          - file: docs/platform/howto/manage-payment-card
           - file: docs/platform/howto/use-billing-groups
+          - file: docs/platform/howto/change-billing-contact
+          - file: docs/platform/howto/payment-issues-plan-upgrades
           - file: docs/platform/howto/billing-google-cloud-platform-marketplace-subscription
             title: Set up GCP Marketplace
+      - file: docs/platform/howto/list-saml
+        title: SAML Authentication
+        entries:
+          - file: docs/platform/howto/saml/saml-authentication
+          - file: docs/platform/howto/saml/setup-saml-onelogin
+            title: Setting up SAML with OneLogin
+
     - file: docs/platform/reference
       title: Reference
       entries:
@@ -99,7 +111,10 @@ entries:
             - file: docs/integrations/cloudwatch/cloudwatch-logs-console
             - file: docs/integrations/cloudwatch/cloudwatch-logs-cli
     - file: docs/integrations/rsyslog
-      title: RSyslog integration
+      title: RSyslog
+      entries:
+        - file: docs/integrations/rsyslog/logtail
+          title: Logtail
   - file: docs/tools
     entries:
       - file: docs/tools/cli
@@ -135,6 +150,8 @@ entries:
           entries:
             - file: docs/tools/terraform/howto/upgrade-provider-v1-v2
               title: Upgrade the Aiven Terraform Provider from v1 to v2
+            - file: docs/tools/terraform/howto/config-postgresql-provider
+              title: Use PostgreSQL provider alongside Aiven Terraform Provider  
         - file: docs/tools/terraform/concepts
           title: Concepts
           entries:
@@ -159,6 +176,8 @@ entries:
               title: PostgreSQL with custom configs
             - file: docs/tools/terraform/reference/cookbook/kafka-mongodb-recipe
               title: Apache Kafka MongoDB Source Connector
+            - file: docs/tools/terraform/reference/cookbook/kafka-debezium-postgres-source
+              title: Debezium Source Connector across clouds
             - file: docs/tools/terraform/reference/cookbook/kafka-custom-conf-recipe.rst
               title: Apache Kafka with custom configurations  
             - file: docs/tools/terraform/reference/cookbook/m3db-m3agg-recipe
@@ -176,11 +195,14 @@ entries:
         title: Sample data generator
       - file: docs/products/kafka/concepts
         entries:
+          - file: docs/products/kafka/concepts/upgrade-procedure
+            title: Upgrade procedure
+          - file: docs/products/kafka/concepts/horizontal-vertical-scaling
+            title: Scaling options
           - file: docs/products/kafka/concepts/acl
           - file: docs/products/kafka/concepts/schema-registry-authorization
           - file: docs/products/kafka/concepts/log-compaction
           - file: docs/products/kafka/concepts/partition-segments
-          - file: docs/products/kafka/concepts/horizontal-vertical-scaling
           - file: docs/products/kafka/concepts/auth-types
           - file: docs/products/kafka/concepts/non-leader-for-partition
       - file: docs/products/kafka/howto
@@ -211,6 +233,7 @@ entries:
             title: Security
             entries:
               - file: docs/products/kafka/howto/keystore-truststore
+                title: Configure Java SSL keystore and truststore to access Apache Kafka
               - file: docs/products/kafka/howto/manage-acls
               - file: docs/products/kafka/howto/monitor-logs-acl-failure
               - file: docs/products/kafka/howto/kafka-sasl-auth
@@ -290,6 +313,7 @@ entries:
             - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-mysql
             - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-sql-server
             - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-mongodb
+            - file: docs/products/kafka/kafka-connect/howto/cassandra-streamreactor-source
           - file: docs/products/kafka/kafka-connect/howto/list-sink-connectors
             entries:
             - file: docs/products/kafka/kafka-connect/howto/jdbc-sink
@@ -308,6 +332,7 @@ entries:
             - file: docs/products/kafka/kafka-connect/howto/mongodb-sink-mongo
             - file: docs/products/kafka/kafka-connect/howto/mongodb-sink-lenses
             - file: docs/products/kafka/kafka-connect/howto/redis-streamreactor-sink
+            - file: docs/products/kafka/kafka-connect/howto/cassandra-streamreactor-sink
 
         - file: docs/products/kafka/kafka-connect/reference
           title: Reference
@@ -418,6 +443,8 @@ entries:
             title: Resource capability per plan
           - file: docs/products/postgresql/reference/terminology
             title: Terminology
+          - file: docs/products/postgresql/reference/idle-connections
+            title: Idle connections
 
   - file: docs/products/flink
     title: Apache Flink
@@ -470,6 +497,7 @@ entries:
         entries:
           - file: docs/products/clickhouse/howto/use-cli
           - file: docs/products/clickhouse/howto/use-query-editor
+          - file: docs/products/clickhouse/howto/use-play
           - file: docs/products/clickhouse/howto/add-service-users
           - file: docs/products/clickhouse/howto/grant-privilege
 
@@ -590,6 +618,7 @@ entries:
           - file: docs/products/mysql/howto/migrate-from-external-mysql
           - file: docs/products/mysql/howto/do-check-service-migration
           - file: docs/products/mysql/howto/prevent-disk-full
+          - file: docs/products/mysql/howto/reclaim-disk-space
           - file: docs/products/mysql/howto/disable-foreign-key-checks
       - file: docs/products/mysql/reference
         title: Reference
@@ -636,6 +665,8 @@ entries:
   - file: docs/products/cassandra
     title: Apache Cassandra
     entries:
+      - file: docs/products/cassandra/get-started
+        title: Get started
       - file: docs/products/cassandra/concepts
         title: Concepts
         entries:

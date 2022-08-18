@@ -67,6 +67,10 @@ If :doc:`SASL authentication <kafka-sasl-auth>` is enabled, then the ``kcat`` co
    sasl.username=avnadmin
    sasl.password=yourpassword
 
+.. Tip::
+
+   If you're using Aiven for Apache Kafka®, you can retrieve the ``kcat`` command parameters using the dedicated :ref:`Aiven CLI command <_avn_cli_service_connection_info_kcat>`.
+
 Produce data to an Apache Kafka® topic
 --------------------------------------
 
