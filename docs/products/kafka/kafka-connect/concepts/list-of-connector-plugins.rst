@@ -54,7 +54,7 @@ Sink connectors enable the integration of data from an existing Apache Kafka top
 
 * `Google Cloud Pub/Sub Lite <https://github.com/GoogleCloudPlatform/pubsub/>`_
 
-* `Google Cloud Storage <https://help.aiven.io/kafka/connectors/aiven-kafka-gcs-sink-connector>`_
+* `Google Cloud Storage <https://docs.aiven.io/docs/products/kafka/kafka-connect/howto/gcs-sink.html>`_
 
 * `HTTP <https://github.com/aiven/aiven-kafka-connect-http>`__ |preview|
 

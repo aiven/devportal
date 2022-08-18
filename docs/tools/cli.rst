@@ -46,7 +46,7 @@ Top-level commands for the Aiven CLI are listed here, along with some informatio
 
 Handle the accounts you have access to, and also configure the teams for the accounts.
 
-Find more info on the help article about `Accounts, Teams, Members and Roles <https://help.aiven.io/en/articles/4206498-accounts-teams-members-and-roles>`_
+Find more info on the help article about `Accounts, Teams, Members and Roles <https://docs.aiven.io/docs/platform/concepts/projects_accounts_access.html>`_
 
 :doc:`See detailed command information <cli/account>`.
 

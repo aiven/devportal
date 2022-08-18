@@ -77,7 +77,7 @@ Myhoard uses `Percona XtraBackup <https://www.percona.com/>`_ internally for tak
 
 You may modify the backup time configuration option in **Advanced Configuration** in the Aiven console which will begin shifting the backup schedule to the new time. If there was a recent backup taken, it may take another backup cycle before it starts applying new backup time.
 
-For more information refer to `MySQL Backups <https://help.aiven.io/en/articles/5199859-mysql-backups>`_.
+For more information refer to `MySQL Backups <https://docs.aiven.io/docs/products/mysql/concepts/mysql-backups.html>`_.
 
 Aiven for OpenSearch®
 ''''''''''''''''''''''''''''
