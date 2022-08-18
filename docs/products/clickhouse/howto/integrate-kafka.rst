@@ -152,6 +152,11 @@ Add a materialised view to bring the data from the connector:
 Now the messages consumed from the Apache Kafka topic will be read automatically and sent into the destination table directly.
 
 
+.. note::
+
+    ClickHouse is strict about allowed symbols in database and table names. You can use backticks around the names when running ClickHouse requests, particularly in the cases when the name contains dashes.
+
+
 Write data back to the topic
 ----------------------------
 
