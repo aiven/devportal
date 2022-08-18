@@ -29,8 +29,10 @@ Aiven account setup
 
 7. After entering your email address, you will be sent an email to confirm your registration.  Click on the link.
 
-8. You can now proceed to the Aiven console dashboard, where you can manage your Aiven services as normal.
+8. You can now proceed to the `Aiven console for GCP <https://console.gcp.aiven.io/>`_, where you can manage your Aiven services as normal.
 
+.. image:: /images/platform/howto/gcp-console.png
+   :alt: The GCP version of the Aiven web console
 .. note:: 
    Note the URL is https://console.gcp.aiven.io - this uses a different account system than https://console.aiven.io.  If you have an existing Aiven account you will need to create a new Aiven GCP account using the Aiven GCP console, and when coming back to Aiven in the future you will need to use https://console.gcp.aiven.io to login.
 
