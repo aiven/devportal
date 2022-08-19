@@ -41,7 +41,7 @@ Follow these steps:
 .. important::
 
     Please be aware that you can set up Billing profile per project or create a Billing Group if you want to group costs and consolidate invoices by different business units.
-    For further information please refer to `Billing Groups <https://docs.aiven.io/docs/platform/concepts/billing-groups.html>`_. 
+    For further information please refer to :doc:`Billing Groups </docs/platform/concepts/billing-groups>`. 
 
 Once the billing country has been updated in the billing section, it will be used in all future invoices. 
 Billing estimates are updated approximately once an hour, so it may take up to an hour for the new tax status to become visible on the invoice estimates.

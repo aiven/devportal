@@ -3,7 +3,7 @@
 Backups
 =======
 
-Aiven for OpenSearch® databases are automatically backed up, `encrypted <https://docs.aiven.io/docs/platform/concepts/cloud-security>`_, and stored securely in object storage. Backups are stored in the same region as the main service nodes.
+Aiven for OpenSearch® databases are automatically backed up, :doc:`encrypted </docs/platform/concepts/cloud-security>`, and stored securely in object storage. Backups are stored in the same region as the main service nodes.
 
 Depending on the service plan, we offer single backups for disaster recovery or daily backups with different retention periods:
 

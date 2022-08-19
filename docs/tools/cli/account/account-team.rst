@@ -1,7 +1,7 @@
 ``avn account team``
 =======================================
 
-Here you’ll find the full list of commands for ``avn account team``.
+Here you'll find the full list of commands for ``avn account team``.
 
 
 Manage account teams
@@ -103,7 +103,7 @@ Attaches an existing account team to a project.
     - The project to attach to
   * - ``--team-type``
     - The permission level (possible values ``admin``, ``developer``, ``operator``, ``read_only``). 
-      More info at the `dedicated page <https://docs.aiven.io/docs/platform/concepts/projects_accounts_access.html>`_
+      More info at the :doc:`dedicated page </docs/platform/concepts/projects_accounts_access>`
 
 
 **Example:** Attach the team with id ``at3exxxxxxxxx`` belonging to the account ``123456789123`` to the project named ``testing-sandbox`` granting ``operator`` access.
