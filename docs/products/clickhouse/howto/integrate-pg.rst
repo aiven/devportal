@@ -89,27 +89,6 @@ In Aiven for ClickHouse you can read data by running SELECT command. Replace ``P
 
     SELECT * FROM service_PG_SERVICE_NAME_PG_DATABASE_PG_SCHEMA.PG_TABLE
 
-If you want to copy the messages into a separate ClickHouse table, you can a materialized view.
-
-For example, create a destination table in ClickHouse:
-
-.. code:: sql
-
-    CREATE TABLE destination (id UInt64, name String)
-    ENGINE = ReplicatedMergeTree()
-    ORDER BY id;
-
-Add use a materialised view to bring the data from the connector:
-
-.. code:: sql
-
-    CREATE MATERIALIZED VIEW materialised_view TO destination AS
-    SELECT *
-    FROM service_PG_SERVICE_NAME_PG_DATABASE_PG_SCHEMA.PG_TABLE;
-
-
-Now the new entries added into PostgreSQL table will be automatically sent into the destination table.
-
 .. note::
 
     ClickHouse is strict about allowed symbols in database and table names. You can use backticks around the names when running ClickHouse requests, particularly in the cases when the name contains dashes.
