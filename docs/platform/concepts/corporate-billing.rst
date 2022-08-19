@@ -1,4 +1,4 @@
-Corporate Billing
+Corporate billing
 =================
 
 Everyone has their preferred way of paying for services. At Aiven, we give you the flexibility to receive invoices or pay by credit card for your Aiven services.
