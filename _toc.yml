@@ -52,6 +52,7 @@ entries:
           - file: docs/platform/howto/rename-a-service.rst
           - file: docs/platform/howto/scale-services
           - file: docs/platform/howto/migrate-services
+          - file: docs/platform/howto/recover-a-deleted-service
           - file: docs/platform/howto/add-storage-space
           - file: docs/platform/howto/tag-resources.rst
       - file: docs/platform/howto/list-network
