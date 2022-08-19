@@ -7,7 +7,7 @@ Behind the scenes the integration between Aiven for ClickHouse and Apache Kafka 
 
 .. note::
 
-    ClickHouse service integrations are available for Startup plans and higher.
+    Aiven for ClickHouse service integrations are available for Startup plans and higher.
 
 Prerequisites
 -------------
@@ -31,7 +31,7 @@ Variable                         Description
 ``KAFKA_SERVICE_NAME``           Name of the Apache Kafka service you use for the integration.
 ``PROJECT``                      Name of Aiven project where your services are located.
 ``CONNECTOR_TABLE_NAME``         Name of the Kafka engine virtual table that is used as a connector.
-``DATA_FORMAT``                  Input/output data format in which data is accepted into ClickHouse. See :doc:`../reference/supported-input-output-formats`
+``DATA_FORMAT``                  Input/output data format in which data is accepted into Aiven for ClickHouse. See :doc:`../reference/supported-input-output-formats`
 ``CONSUMER_GROUP_NAME``          Name of the consumer group. Each message is delivered once per consumer group.
 ============================     ==========================================================================================================
 
@@ -53,13 +53,13 @@ The newly created database name has the following format: `service_KAFKA_SERVICE
 
 .. note::
 
-    During this step we only created an empty database in ClickHouse, but we didn't create any tables yet. Creation of the virtual connector table is done by setting specific integration configuration, see the section below.
+    During this step we only created an empty database in Aiven for ClickHouse, but we didn't create any tables yet. Creation of the virtual connector table is done by setting specific integration configuration, see the section below.
 
 
 Update Apache Kafka integration settings
 -----------------------------------------
 
-Next step is to configure the topic and data format options for the integration. This will create a virtual table in ClickHouse that can receive and send messages from multiple topics. You can have as many of such tables as you need. You need to define for each table following:
+Next step is to configure the topic and data format options for the integration. This will create a virtual table in Aiven for ClickHouse that can receive and send messages from multiple topics. You can have as many of such tables as you need. You need to define for each table following:
 
 
 * ``name`` - name of the connector table
