@@ -50,13 +50,13 @@ Using MirrorMaker 2, the backup cluster is running as an independent Kafka servi
 
 Note that MirrorMaker 2 provides tools for mapping between source and target offset, so the user does not need to make this calculation. For more details see the section "Offset Mapping" in the blog post `A look inside Kafka MirrorMaker 2 <https://blog.cloudera.com/a-look-inside-kafka-mirrormaker-2/>`__.
 
-An alternative is to use Kafka Connect to backup the cluster, for instance sinking data from Apache Kafka® to S3 via the `dedicated Aiven connector <https://developer.aiven.io/docs/products/kafka/kafka-connect/howto/s3-sink-prereq.html>`_.
+An alternative is to use Kafka Connect to backup the cluster, for instance sinking data from Apache Kafka® to S3 via the :doc:`dedicated Aiven connector </docs/products/kafka/kafka-connect/howto/s3-sink-prereq>`.
 
 For more information refer to
 
 - :doc:`Aiven for Apache Kafka® MirrorMaker 2 </docs/products/kafka/kafka-mirrormaker>`
 - Cloudera's `A look inside Kafka MirrorMaker 2 <https://blog.cloudera.com/a-look-inside-kafka-mirrormaker-2/>`_
-- `Configure AWS for an S3 sink connector <https://developer.aiven.io/docs/products/kafka/kafka-connect/howto/s3-sink-prereq.html>`_
+- :doc:`Configure AWS for an S3 sink connector </docs/products/kafka/kafka-connect/howto/s3-sink-prereq>`
 
 Aiven for PostgreSQL®
 '''''''''''''''''''''
@@ -66,9 +66,9 @@ You may modify the backup time configuration option in **Advanced Configuration*
 
 For more information refer to
 
-- `PostgreSQL® backups <https://developer.aiven.io/docs/products/postgresql/concepts/pg-backups.html>`_
-- `High availability <https://developer.aiven.io/docs/products/postgresql/concepts/high-availability.html>`_
-- `Create and use read-only replicas <https://developer.aiven.io/docs/products/postgresql/howto/create-read-replica.html>`_
+- :doc:`PostgreSQL® backups </docs/products/postgresql/concepts/pg-backups>`
+- :doc:`High availability </docs/products/postgresql/concepts/high-availability>`
+- :doc:`Create and use read-only replicas </docs/products/postgresql/howto/create-read-replica>`
 
 Aiven for MySQL
 '''''''''''''''''''''
@@ -85,8 +85,8 @@ These databases are automatically backed up, encrypted, and stored securely in o
 
 For more information refer to
 
-- `OpenSearch backups <https://developer.aiven.io/docs/products/opensearch/concepts/backups.html>`_
-- `How to restore an OpenSearch® backup <https://developer.aiven.io/docs/products/opensearch/howto/restore_opensearch_backup.html>`_
+- :doc:`OpenSearch backups </docs/products/opensearch/concepts/backups>`
+- :doc:`How to restore an OpenSearch® backup </docs/products/opensearch/howto/restore_opensearch_backup>`
 
 Aiven for Apache Cassandra®
 '''''''''''''''''''''''''''
