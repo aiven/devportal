@@ -148,7 +148,7 @@ Add a materialised view to bring the data from the connector:
 
     CREATE MATERIALIZED VIEW materialised_view TO destination AS
     SELECT *
-    FROM KAFKA_SERVICE_NAME.CONNECTOR_TABLE_NAME;
+    FROM service_KAFKA_SERVICE_NAME.CONNECTOR_TABLE_NAME;
 
 
 Now the messages consumed from the Apache Kafka topic will be read automatically and sent into the destination table directly.
