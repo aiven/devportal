@@ -3,11 +3,11 @@ Integrate with PostgreSQL®
 
 You can integrate Aiven for ClickHouse® with either *Aiven for PostgreSQL* service located in the same project, or *an external PostgreSQL endpoint*.
 
-Behind the scenes the integration between Aiven for ClickHouse and Apache Kafka services relies on `ClickHouse PostgreSQL Engine <https://clickhouse.com/docs/en/engines/table-engines/integrations/postgresql>`_.
+Behind the scenes the integration between Aiven for ClickHouse and PostgreSQL relies on `ClickHouse PostgreSQL Engine <https://clickhouse.com/docs/en/engines/table-engines/integrations/postgresql>`_.
 
 .. note::
 
-    ClickHouse service integrations are available for Startup plans and higher.
+    Aiven for ClickHouse service integrations are available for Startup plans and higher.
 
 Prerequisites
 -------------
@@ -28,11 +28,10 @@ The following variables will be used later in the code snippets:
 Variable                         Description
 ============================     ==========================================================================================================
 ``CLICKHOUSE_SERVICE_NAME``      Name of your Aiven for ClickHouse service.
-``PG_SERVICE_NAME``              Name of the Apache Kafka service you use for the integration.
-``PROJECT``                      Name of Aiven project where your services are located.
-``CONNECTOR_TABLE_NAME``         Name of the Kafka engine virtual table that is used as a connector.
-``DATA_FORMAT``                  Input/output data format in which data is accepted into ClickHouse. See :doc:`../reference/supported-input-output-formats`
-``CONSUMER_GROUP_NAME``          Name of the consumer group. Each message is delivered once per consumer group.
+``PG_SERVICE_NAME``              Name of the PostgreSQL service you use for the integration.
+``PG_DATABASE``                  Name of PostgreSQL database you're integrating.
+``PG_SCHEMA``                    Name of PostgreSQL schema.
+``PG_TABLE``                     Name of the PostgreSQL table you use for the integration.
 ============================     ==========================================================================================================
 
 Create an integration
@@ -49,7 +48,7 @@ You can create an integration with the help of :ref:`Aiven CLI <avn_service_inte
 #. You can now close *Service integrations* modal window.
 #. The PostgreSQL integration database will now be added.
 
-The newly created database name has the following format: ``service_PG_SERVICE_NAME_PG_DATABASE_PG_SCHEMA`` (for example, ``service_myPGService_myDatabase_mySchema``), where PG_SERVICE_NAME is the name of your PostgreSQL service.
+The newly created database name has the following format: ``service_PG_SERVICE_NAME_PG_DATABASE_PG_SCHEMA``, for example, ``service_myPGService_myDatabase_mySchema``.
 
 .. note::
 
@@ -111,6 +110,9 @@ Add use a materialised view to bring the data from the connector:
 
 Now the new entries added into PostgreSQL table will be automatically sent into the destination table.
 
+.. note::
+
+    ClickHouse is strict about allowed symbols in database and table names. You can use backticks around the names when running ClickHouse requests, particularly in the cases when the name contains dashes.
 
 Write data to PostgreSQL table
 -------------------------------
