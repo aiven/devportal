@@ -45,5 +45,5 @@ Invoice must be paid within **10 days** of receipt by a wire transfer to Aiven b
    
    SWIFT/BIC: CITIIE2X
 
-**To switch from credit card charges to corporate billing**, please make sure your billing profile and email address are up to date on your Aiven project's billing settings as shown below and contact sales@aiven.io to request the change. 
+**To switch from credit card charges to corporate billing**, please make sure your billing profile and email address are up to date on your Aiven project's billing settings as shown below and contact sales@Aiven.io to request the change. 
 
