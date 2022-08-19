@@ -89,7 +89,7 @@ In Aiven for ClickHouse you can read data by running SELECT command. Replace ``P
 
     SELECT * FROM service_PG_SERVICE_NAME_PG_DATABASE_PG_SCHEMA.PG_TABLE
 
-If you want to copy the messages into a separate Clickhouse table, you can a materialized view.
+If you want to copy the messages into a separate ClickHouse table, you can a materialized view.
 
 For example, create a destination table in ClickHouse:
 
