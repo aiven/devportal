@@ -1,7 +1,7 @@
 Integrate with Apache Kafka®
 =============================
 
-You can integrate Aiven for ClickHouse® with either *Aiven for Apache Kafka* service located in the same project, or *an external Apache Kafka endpoint*. A single Aiven for ClickHouse instance can connect to multiple Kafka clusters with different authentication mechanism and credentials.
+You can integrate Aiven for ClickHouse® with either *Aiven for Apache Kafka®* service located in the same project, or *an external Apache Kafka endpoint*. A single Aiven for ClickHouse instance can connect to multiple Kafka clusters with different authentication mechanism and credentials.
 
 Behind the scenes the integration between Aiven for ClickHouse and Apache Kafka services relies on `ClickHouse Kafka Engine <https://clickhouse.com/docs/en/engines/table-engines/integrations/kafka/>`_.
 
@@ -16,7 +16,12 @@ You will need:
 
 * Aiven for ClickHouse service
 * Aiven for Apache Kafka service or a self-hosted Apache Kafka service
-* If you use the self-hosted Apache Kafka service, an external Apache Kafka endpoint should be configured in **Service Integrations**
+
+
+  .. Tip:: 
+
+    If you use the self-hosted Apache Kafka service, an external Apache Kafka endpoint should be configured in **Service Integrations**
+
 * At least one topic in the Apache Kafka service
 
 Variables

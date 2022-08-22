@@ -4,7 +4,7 @@ Supported data formats for input and output
 ============================     ====================================================================================
 Format name                      Example
 ============================     ====================================================================================
-CSV                              ```123,"Hello"``
+CSV                              ``123,"Hello"``
 JSONCompactEachRow               ``[123,"Hello"]``
 JSONCompactStringsEachRow        ``["123","Hello"]``
 JSONEachRow                      ``{"x":123,"y":"hello"}``
