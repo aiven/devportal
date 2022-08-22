@@ -116,7 +116,7 @@ Worldmap Panel - `GitHub <https://github.com/grafana/worldmap-panel>`__
 
 Data source plugins
 -------------------
-Altinity plugin for ClickHouse® - `GitHub <https://github.com/Altinity/clickhouse-grafana>`__
+Altinity plugin for ClickHouse® - `GitHub <https://github.com/Altinity/clickhouse-grafana>`_
     Provides support for ClickHouse® as a backend database.
 
 Azure Monitor - `Grafana <https://grafana.com/grafana/plugins/grafana-azure-monitor-datasource/>`__ | `GitHub <https://github.com/grafana/azure-monitor-datasource>`__
