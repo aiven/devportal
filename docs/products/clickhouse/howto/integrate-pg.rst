@@ -12,7 +12,7 @@ Behind the scenes the integration between Aiven for ClickHouse and PostgreSQL re
 Prerequisites
 -------------
 
-You will need:
+To connect Aiven for Clickhouse to PostgreSQL you will need:
 
 * Aiven for ClickHouse service
 * Aiven for PostgreSQL service or a self-hosted PostgreSQL service
