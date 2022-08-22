@@ -96,7 +96,7 @@ In Aiven for ClickHouse you can read data by running SELECT command. Replace ``P
 Write data to PostgreSQL table
 -------------------------------
 
-You can also bring the entries from ClickHouse table into the PostgreSQL table. Replace ``PG_SERVICE_NAME``, ``PG_DATABASE``, ``PG_SCHEMA`` and ``PG_TABLE`` with your values:
+You can also insert rows from the ClickHouse table into the PostgreSQL table. Replace ``PG_SERVICE_NAME``, ``PG_DATABASE``, ``PG_SCHEMA`` and ``PG_TABLE`` with your values:
 
 .. code:: sql
 
