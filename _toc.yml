@@ -498,6 +498,7 @@ entries:
         entries:
           - file: docs/products/clickhouse/howto/list-integrations
             entries:
+              - file: docs/products/clickhouse/howto/connect-to-grafana
               - file: docs/products/clickhouse/howto/integrate-kafka
               - file: docs/products/clickhouse/howto/integrate-pg
           - file: docs/products/clickhouse/howto/use-cli
