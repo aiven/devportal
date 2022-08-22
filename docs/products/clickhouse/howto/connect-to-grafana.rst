@@ -29,7 +29,7 @@ Integration steps
 #. In *Configuration menu* select **Data sources**.
 #. Click to **Add data source**.
 #. Find **Altinity plugin for ClickHouse** in the list and select it. You'll see a panel with list of settings to fill in.
-#. Set *Url* to ``CLICKHOUSE_HTTPS_URI``.
+#. Set *URL* to ``CLICKHOUSE_HTTPS_URI``.
 #. In *Auth* section enable **Basic auth** and **With Credentials**.
 #. In *Basic Auth Details* set your ``CLICKHOUSE_USER`` and ``CLICKHOUSE_PASSWORD``.
 #. Press on **Save & test**.
