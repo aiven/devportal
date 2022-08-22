@@ -12,12 +12,15 @@ Behind the scenes the integration between Aiven for ClickHouse and PostgreSQL re
 Prerequisites
 -------------
 
-To connect Aiven for Clickhouse to PostgreSQL you will need:
+To connect Aiven for ClickHouse to PostgreSQL you will need:
 
 * Aiven for ClickHouse service
 * Aiven for PostgreSQL service or a self-hosted PostgreSQL service
-* If you use the self-hosted PostgreSQL service, an external PostgreSQL endpoint should be configured in **Service Integrations**
 * These instructions assume that you have at least one table in your PostgreSQL service
+
+.. tip::
+
+    If you use the self-hosted PostgreSQL service, an external PostgreSQL endpoint should be configured in **Service Integrations**
 
 Variables
 -------------
@@ -52,7 +55,7 @@ The newly created database name has the following format: ``service_PG_SERVICE_N
 
 .. note::
 
-    When connecting to an Aiven for PostgreSQL, we connect as the main service user of that service, which has access to all the PostgreSQL tables. SELECT and INSERT privileges are granted to the main service user. It is up to the main service user to grant access to other users.
+    When connecting to an Aiven for PostgreSQL, we connect as the main service user of that service, which has access to all the PostgreSQL tables. SELECT and INSERT privileges are granted to the main service user (``avnadmin``). It is up to the main service user to grant access to other users. Read more :doc:`how to grant privileges <grant-privilege>`.
 
 
 Update PostgreSQL integration settings
@@ -71,7 +74,7 @@ When connecting to a PostgreSQL service, ClickHouse needs to know the name of th
 
     avn service integration-list CLICKHOUSE_SERVICE_NAME | grep PG_SERVICE_NAME
 
-2. Update the configuration settings using the service integration id retrieved in the previous step and your integration settings. Replace ``SERVICE_INTEGRATION_ID``, ``PG_DATABASE`` and ``PG_SCHEMA`` with your values:
+2. Update the configuration settings using the service integration id retrieved in the previous step and your integration settings. Replace ``SERVICE_INTEGRATION_ID``, ``PG_DATABASE`` and ``PG_SCHEMA`` with your values, you can add more than one combination of database/schema in the object ``databases``:
 
 .. code::
 
@@ -91,7 +94,7 @@ In Aiven for ClickHouse you can read data by running SELECT command. Replace ``P
 
 .. note::
 
-    ClickHouse is strict about allowed symbols in database and table names. You can use backticks around the names when running ClickHouse requests, particularly in the cases when the name contains dashes.
+    ClickHouse is strict about allowed symbols in database and table names. You can use backticks around the names when running ClickHouse requests, particularly in the cases when the name contains dashes. For example, ``SELECT * FROM `service_your-kafka-service`.table``.
 
 Write data to PostgreSQL table
 -------------------------------
