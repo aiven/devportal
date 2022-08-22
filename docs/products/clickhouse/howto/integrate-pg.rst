@@ -58,7 +58,7 @@ The newly created database name has the following format: ``service_PG_SERVICE_N
 Update PostgreSQL integration settings
 -----------------------------------------
 
-When connecting to a PostgreSQL service, ClickHouse needs to know the name of the PostgreSQL schema and database you want to access. By default these settings are set to the public schema in the ``defaultdb``. However, you can update these values by following next steps.
+When connecting to a PostgreSQL service, ClickHouse needs to know the name of the PostgreSQL schema and database you want to access. By default these settings are set to the ``public`` schema in the ``defaultdb``. However, you can update these values by following next steps.
 
 .. note::
 
