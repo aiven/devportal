@@ -27,7 +27,7 @@ When creating **integration** passwords on Aiven's end, the above requirements a
 
 Additionally, when creating and/or resetting the password, please consider the following tips:
 
-Password Tips
+Password tips
 -------------
 
 -  Use password manager to create a randomly generated strong password
