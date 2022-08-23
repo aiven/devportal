@@ -24,7 +24,7 @@ The :doc:`service memory </docs/platform/concepts/service-memory-limits>` can be
 
   |service_memory|
 
-where the overhead is currently: |vm_overhead|
+where the overhead is currently |vm_overhead|
 
 
 Global buffers 
@@ -83,8 +83,8 @@ Queries may use part or all of the allocation.
   +-------------------+
 
 .. Important::
-  | **The actual amount of memory a query could use is technically unbounded.**.
-  | Uncontrolled memory allocations and temporary table usage can adversely affect the memory allocation.
+  | **The actual amount of memory a query could use is technically unbounded.**
+  | Uncontrolled memory allocations and temporary table usage can adversely affect memory allocation.
   | The data dictionary size is based on the number of tables, fields and indexes within the database.
 
 

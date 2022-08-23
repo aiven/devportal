@@ -12,7 +12,7 @@ The InnoDB buffer pool
 
 Arguably, the most important MySQL component is the InnoDB Buffer Pool. 
 
-Every time an operation happen to a table (read or write), the page where the records (and indexes) are located is loaded into the Buffer Pool.
+Every time an operation happens to a table (read or write), the page where the records (and indexes) are located is loaded into the Buffer Pool.
 
 This means that if the data you read and write the most has its pages in the Buffer Pool, the performance will be better than if you have to read pages from disk. When there are no more free pages in the pool, older pages must be evicted and if they were modified, synchronized back to disk (checkpointing).
 
