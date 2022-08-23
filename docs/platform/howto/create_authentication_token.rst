@@ -30,4 +30,4 @@ To create an authentication token:
 You can now use the authentication token to access your Aiven resources from the CLI or API.
 
 .. note::
-    You can :ref:`create an authentication token using the Aiven CLI <avn-user-access-token-create>` as well.
+    You can :ref:`create an authentication token <avn-user-access-token-create>` via the :doc:`Aiven CLI </docs/tools/cli>` as well.
