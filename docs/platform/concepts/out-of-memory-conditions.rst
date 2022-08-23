@@ -57,5 +57,4 @@ For most databases, the service memory footprint can often be reduced by:
 In cases where the working set no longer fits into memory, consider :doc:`scaling your service <../howto/scale-services>`.
 
 
-
-
+.. include:: /includes/platform-variables.rst
