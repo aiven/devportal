@@ -11,5 +11,5 @@ When creating a new Aiven service, you are not tied to a plan. Your services can
 
 Your service will be in a *Rebuilding* state, and once complete will be on the new plan. The service will still be accessible through the process. 
 
-
-You can also use the :ref:`dedicated service update function <avn-cli-service-update>` to scale your service plan via the :doc:`Aiven CLI </docs/tools/cli>`.
+.. note::
+    You can also use the :ref:`dedicated service update function <avn-cli-service-update>` to scale your service plan via the :doc:`Aiven CLI </docs/tools/cli>`.

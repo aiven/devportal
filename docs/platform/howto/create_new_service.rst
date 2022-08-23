@@ -52,4 +52,5 @@ To create a new service:
 
    The status is *Rebuilding* while the service is being created for you. Once the service is ready, the status changes to *Running*. While services typically start up in a couple of minutes, the performance varies between cloud providers and regions, and it may take longer in some circumstances.
 
-   
+.. note::
+    You can also use the :ref:`dedicated user-create function <avn-service-create>` to create a new service user via the :doc:`Aiven CLI </docs/tools/cli>`.
