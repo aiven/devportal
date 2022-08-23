@@ -3,7 +3,7 @@ MySQL tuning for concurrency
 
 **Determining how much memory is available for queries, and tuning concurrency accordingly, requires calculation of service memory, query analysis, and monitoring.**
 
-Global buffers, thread buffers, and some uncontrolled memory allocations (`TRIGGERS`, `PROCEDURES` and `FUNCTIONS`), all contribute to the memory MySQL will require for a given workload.
+Global buffers, thread buffers, and some uncontrolled memory allocations (``TRIGGERS``, ``PROCEDURES`` and ``FUNCTIONS``), all contribute to the memory MySQL will require for a given workload.
 
 There are several key calculations which are fundamental to tuning:
 
@@ -24,7 +24,7 @@ The :doc:`service memory </docs/platform/concepts/service-memory-limits>` can be
 
   |service_memory|
 
-Where the overhead is currently: |vm_overhead|
+where the overhead is currently: |vm_overhead|
 
 
 Global buffers 
