@@ -1,7 +1,7 @@
 Create a MySQL/PostgreSQL® read replica using Terraform
 ========================================================
 
-A MySQL/PostgreSQL® read replica can be used to offload read requests or analytics traffic from the primary instance. In this example, you'll create two Aiven for PostgreSQL® services - a primary service and the other one as its read replica. 
+A MySQL/PostgreSQL® read replica can be used to offload read requests like the analytics traffic from the primary instance. In this example, you'll create two Aiven for PostgreSQL® services - a primary service and the other one as its read replica. 
 Both services will be provisioned programmatically using the `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_. The same process can be followed for setting up MySQL read replica as well. 
 The following diagram shows the typical client interaction when a read replica is in place.
 
