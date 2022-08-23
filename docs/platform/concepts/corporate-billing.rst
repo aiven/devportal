@@ -33,17 +33,22 @@ Prices for Aiven services are always defined in US dollars, but invoices can als
 
 Invoice must be paid within **10 days** of receipt by a wire transfer to Aiven bank account at Citibank Europe Plc:
 
--  EUR
+.. list-table::
+   :header-rows: 1
+   :widths: 20 60 20
+   :align: left
 
-   IBAN: FI46 7130 7000 7841 84
-   
-   SWIFT/BIC: CITIFIHX
+   * - Currency
+     - IBAN
+     - SWIFT/BIC
 
--  USD
-   
-   IBAN: IE09 CITI 9900 5132 6532 19
-   
-   SWIFT/BIC: CITIIE2X
+   * - EUR
+     - FI46 7130 7000 7841 84
+     - CITIFIHX
+
+   * - USD
+     - IE09 CITI 9900 5132 6532 19
+     - CITIIE2X
 
 **To switch from credit card charges to corporate billing**, please make sure your billing profile and email address are up to date on your Aiven project's billing settings as shown below and contact sales@Aiven.io to request the change. 
 
