@@ -21,10 +21,19 @@
     **The maximum number of series fetched in single query.** 
 
   ``query_docs`` => *integer*
-    **The maximum number of docs fetched in single query. Default=0(unlimited).** 
+    **The maximum number of docs fetched in single query.** 
 
   ``query_require_exhaustive`` => *boolean*
-    **Require exhaustive result** When query limits are exceeded, whether to return error (if True) or return partial results (False)
+    **Require exhaustive result** When query limits are exceeded, whether to return error or return partial results.
+
+  ``max_recently_queried_series_disk_bytes_read`` => *integer*
+    **The maximum number of disk bytes that can be read in a given lookback period.** 
+
+  ``max_recently_queried_series_blocks`` => *integer*
+    **The maximum number of blocks that can be read in a given lookback period.** 
+
+  ``max_recently_queried_series_lookback`` => *string*
+    **The lookback period for 'max_recently_queried_series_blocks' and 'max_recently_queried_series_disk_bytes_read'.** 
 
 
 
