@@ -93,7 +93,7 @@ Concurrency
 
 Aiven configures a default value for the ``max_connections`` parameter for all MySQL services.
 
-The :doc:`max_connections <../howto/max-number-of-connections>` parameter is based off the service :doc:`usable memory </docs/platform/concepts/service-memory-limits>`.
+The :doc:`max_connections <max-number-of-connections>` parameter is based off the service :doc:`usable memory </docs/platform/concepts/service-memory-limits>`.
 
 .. code-block:: sql 
 
