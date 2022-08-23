@@ -116,7 +116,7 @@ This is less than the service RAM, but exceeds the :doc:`service memory limit </
 
 **For performance and stability, the following calculation is recommended:**
 
-  :math:`max_concurrency =` |mysql_max_concurrency|
+  :math:`max\_concurrency =` |mysql_max_concurrency|
 
 This value may be pessimistic for a workload that does not require the full thread buffer, but is an advisable starting point for concurrency testing and monitoring. Concurrency can be incremented, if service memory permits.
 
