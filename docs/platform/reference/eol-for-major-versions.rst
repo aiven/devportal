@@ -16,12 +16,12 @@ following the upstream project's EOL schedule, we ensure that Aiven
 services are always running on supported versions of the open source
 software.
 
-**Version Numbering**
+**Version numbering**
 ~~~~~~~~~~~~~~~~~~~~~
 
 Aiven services inherit the upstream project’s software versioning
 scheme. Depending on the service, a major version can be either a single
-digit (e.g. PostgreSQL 12) or ``major.minor`` (e.g. Kafka 2.4). The
+digit (e.g. PostgreSQL® 12) or ``major.minor`` (e.g. Kafka® 2.4). The
 exact version of the service is visible in the Aiven console once the
 service is up and running.
 
@@ -41,10 +41,10 @@ as the upstream open source project's EOL .
    7.x         2022-03-23    2022-05-11 (v7.10)
    =========== ============= ==================
 
-Aiven for PostgreSQL
---------------------
+Aiven for PostgreSQL®
+---------------------
 
-Aiven for PostgreSQL major versions will reach EOL on the same date as
+Aiven for PostgreSQL® major versions will reach EOL on the same date as
 the upstream open source project's EOL .
 
 .. container:: intercom-interblocks-table-container
@@ -71,10 +71,10 @@ the upstream open source project's EOL .
 
 .. _aiven-for-kafka:
 
-Aiven for Apache Kafka
-----------------------
+Aiven for Apache Kafka®
+-----------------------
 
-Starting with v2.5, Aiven for Kafka ``major.minor`` version will reach
+Starting with v2.5, Aiven for Kafka® ``major.minor`` version will reach
 EOL one year after it's made available on Aiven platform.
 
 .. container:: intercom-interblocks-table-container
@@ -98,10 +98,10 @@ EOL one year after it's made available on Aiven platform.
 
 .. _h_0f2929c770:
 
-Aiven for Cassandra
--------------------
+Aiven for Cassandra®
+--------------------
 
-Starting with v4, Aiven for Cassandra ``major`` version will reach EOL
+Starting with v4, Aiven for Cassandra® ``major`` version will reach EOL
 six months after it's made available on Aiven platform.
 
 .. container:: intercom-interblocks-table-container
@@ -116,7 +116,7 @@ six months after it's made available on Aiven platform.
    | 4           | N/A           | N/A              | 2021-12-09       |
    +-------------+---------------+------------------+------------------+
 
-Aiven Service EOL Policy for major versions
+Aiven service EOL policy for major versions
 -------------------------------------------
 
 Aiven EOL policy is applicable only for services whose major versions
@@ -149,7 +149,7 @@ Upon EOL
 -  Affected powered-off services will no longer be accessible and their
    backups will be deleted.
 
-Our Recommendation
+Our recommendation
 ------------------
 
 We **highly recommend** customers to perform the version upgrade well
