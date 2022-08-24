@@ -34,7 +34,7 @@ Aiven account setup
 .. image:: /images/platform/howto/gcp-console.png
    :alt: The GCP version of the Aiven web console
 .. note:: 
-   Note the URL is https://console.gcp.aiven.io - this uses a different account system than https://console.aiven.io.  If you have an existing Aiven account you will need to create a new Aiven GCP account using the Aiven GCP console, and when coming back to Aiven in the future you will need to use https://console.gcp.aiven.io to login.
+   Note the URL is https://console.gcp.aiven.io - this uses a different account system than https://console.aiven.io.  If you have an existing Aiven account you will need to create a new Aiven GCP account using the Aiven GCP console, and when coming back to Aiven in the future, you will need to use https://console.gcp.aiven.io to login.
 
 .. note:: 
    When you view the Aiven page on GCP Marketplace, you will see a new button labeled **MANAGE ON PROVIDER**. Clicking this button will take you to the Aiven GCP Console at https://console.gcp.aiven.io.
