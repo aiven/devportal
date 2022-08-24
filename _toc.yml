@@ -41,7 +41,6 @@ entries:
           - file: docs/platform/howto/create_authentication_token
           - file: docs/platform/howto/create_new_service_user
           - file: docs/platform/howto/enable-aiven-password
-          - file: docs/platform/howto/password-policy
           - file: docs/platform/howto/user-2fa
           - file: docs/platform/howto/technical-emails            
       - file: docs/platform/howto/list-service
