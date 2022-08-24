@@ -11,7 +11,7 @@ Follow the steps to :doc:`set up Google Cloud Platform Marketplace for Aiven Ser
 Gather the required information
 -------------------------------
 
-Aiven will need the name of the project which currently contains your services, and the account name for the new project (in the format `E-1234-1234-1234-1234`) which is shown in the "Settings" screen for your new project in the Aiven GCP console (`https://console.gcp.aiven.io <https://console.gcp.aiven.io>`_)
+Aiven will need the name of the project which currently contains your services and the account name for the new project (in the format `E-1234-1234-1234-1234`) which is shown in the "Settings" screen for your new project in the Aiven GCP console (`https://console.gcp.aiven.io <https://console.gcp.aiven.io>`_).
 
 Send the request to Aiven
 -------------------------
