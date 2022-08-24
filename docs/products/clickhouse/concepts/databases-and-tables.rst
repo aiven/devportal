@@ -22,7 +22,7 @@ Similar to creating the database, removal should also be done through the Aiven 
 
 .. note::
 
-    If you try adding or removing a new database to **Aiven for ClickHouse** through the command line, you'll encounter an exception ``Not enough privileges.(ACCESS_DENIED)``. Please use the Aiven web interface to add a new database.
+    If you try adding or removing a database to **Aiven for ClickHouse** through the command line, you'll encounter an exception ``Not enough privileges.(ACCESS_DENIED)``. Please use the Aiven web interface to add a new database.
 
 Tables
 ------
