@@ -14,7 +14,7 @@ Google Cloud Marketplace setup
 
 3. When you are ready, click the **Subscribe** button at the bottom of the page.  You will NOT be charged by clicking this button; this only sets up a billing subscription between GCP and Aiven.  You will only be charged after deploying Aiven services.
 
-4. You should now see a message "Your order request has been sent to Aiven".  Click on the "Go to product page" button.
+4. You should now see a message that says  "Your order request has been sent to Aiven".  Click on the **Go to product page** button.
 
 5. Everything is now complete in your GCP account, but you still need to setup the Aiven account.  Click on the "Manage on provider" button to go to the Aiven console to complete the process.
 
