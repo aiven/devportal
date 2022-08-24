@@ -52,3 +52,5 @@ Invoice must be paid within **10 days** of receipt by a wire transfer to Aiven b
 
 **To switch from credit card charges to corporate billing**, please make sure your billing profile and email address are up to date on your Aiven project's billing settings as shown below and contact sales@Aiven.io to request the change. 
 
+.. image:: /images/platform/aiven-billing-information.png
+   :alt: Billing profile
