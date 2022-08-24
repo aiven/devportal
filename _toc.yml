@@ -49,10 +49,13 @@ entries:
           - file: docs/platform/howto/create_new_service
           - file: docs/platform/howto/console-fork-service.rst
           - file: docs/platform/howto/pause-from-cli.rst
+          - file: docs/platform/howto/rename-a-service.rst
           - file: docs/platform/howto/scale-services
           - file: docs/platform/howto/migrate-services
+          - file: docs/platform/howto/recover-a-deleted-service
           - file: docs/platform/howto/add-storage-space
-          - file: docs/platform/howto/tag-resources.rst
+          - file: docs/platform/howto/tag-resources
+          - file: docs/platform/howto/access-service-logs
       - file: docs/platform/howto/list-network
         title: Network management
         entries:
@@ -75,7 +78,9 @@ entries:
           - file: docs/platform/howto/change-billing-contact
           - file: docs/platform/howto/payment-issues-plan-upgrades
           - file: docs/platform/howto/billing-google-cloud-platform-marketplace-subscription
-            title: Set up GCP Marketplace
+            title: Set up Google Cloud Marketplace
+          - file: docs/platform/howto/move-to-gcp-marketplace-billing
+            title: Move to Google Cloud Marketplace
       - file: docs/platform/howto/list-saml
         title: SAML Authentication
         entries:
@@ -109,7 +114,10 @@ entries:
             - file: docs/integrations/cloudwatch/cloudwatch-logs-console
             - file: docs/integrations/cloudwatch/cloudwatch-logs-cli
     - file: docs/integrations/rsyslog
-      title: RSyslog integration
+      title: RSyslog
+      entries:
+        - file: docs/integrations/rsyslog/logtail
+          title: Logtail
   - file: docs/tools
     entries:
       - file: docs/tools/cli
@@ -176,7 +184,9 @@ entries:
             - file: docs/tools/terraform/reference/cookbook/kafka-custom-conf-recipe.rst
               title: Apache Kafka with custom configurations  
             - file: docs/tools/terraform/reference/cookbook/m3db-m3agg-recipe
-              title: M3 and M3 Aggregator 
+              title: M3 and M3 Aggregator
+            - file: docs/tools/terraform/reference/cookbook/postgresql-read-replica-recipe
+              title: PostgreSQL® Read Replica   
       - file: docs/tools/kubernetes
         title: Aiven Operator for Kubernetes
 
@@ -256,6 +266,7 @@ entries:
             entries:
               - file: docs/products/kafka/howto/integrate-service-logs-into-kafka-topic
               - file: docs/products/kafka/howto/kafka-streams-with-aiven-for-kafka
+              - file: docs/products/kafka/howto/flink-with-aiven-for-kafka
               - file: docs/products/kafka/howto/datadog-customised-metrics
               - file: docs/products/kafka/howto/ksql-docker
                 title: Use ksqlDB with Aiven for Apache Kafka
@@ -308,6 +319,7 @@ entries:
             - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-mysql
             - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-sql-server
             - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-mongodb
+            - file: docs/products/kafka/kafka-connect/howto/cassandra-streamreactor-source
           - file: docs/products/kafka/kafka-connect/howto/list-sink-connectors
             entries:
             - file: docs/products/kafka/kafka-connect/howto/jdbc-sink
@@ -326,6 +338,7 @@ entries:
             - file: docs/products/kafka/kafka-connect/howto/mongodb-sink-mongo
             - file: docs/products/kafka/kafka-connect/howto/mongodb-sink-lenses
             - file: docs/products/kafka/kafka-connect/howto/redis-streamreactor-sink
+            - file: docs/products/kafka/kafka-connect/howto/cassandra-streamreactor-sink
 
         - file: docs/products/kafka/kafka-connect/reference
           title: Reference
@@ -437,6 +450,8 @@ entries:
             title: Resource capability per plan
           - file: docs/products/postgresql/reference/terminology
             title: Terminology
+          - file: docs/products/postgresql/reference/idle-connections
+            title: Idle connections
 
   - file: docs/products/flink
     title: Apache Flink
@@ -487,17 +502,26 @@ entries:
       - file: docs/products/clickhouse/howto
         title: HowTo
         entries:
+          - file: docs/products/clickhouse/howto/list-integrations
+            entries:
+              - file: docs/products/clickhouse/howto/connect-to-grafana
+              - file: docs/products/clickhouse/howto/integrate-kafka
+              - file: docs/products/clickhouse/howto/integrate-pg
+              - file: docs/products/clickhouse/howto/connect-with-jdbc
           - file: docs/products/clickhouse/howto/use-cli
           - file: docs/products/clickhouse/howto/use-query-editor
           - file: docs/products/clickhouse/howto/use-play
           - file: docs/products/clickhouse/howto/add-service-users
           - file: docs/products/clickhouse/howto/grant-privilege
 
+
       - file: docs/products/clickhouse/reference
         title: Reference
         entries:
           - file: docs/products/clickhouse/reference/supported-table-engines
             title: Supported table engines
+          - file: docs/products/clickhouse/reference/supported-input-output-formats
+            title: Supported data formats for input and output
           - file: docs/products/clickhouse/reference/advanced-params
             title: Advanced parameters
 
@@ -606,7 +630,6 @@ entries:
               - file: docs/products/mysql/howto/connect-with-php
           - file: docs/products/mysql/howto/create-database
           - file: docs/products/mysql/howto/connect-from-mysql-workbench
-          - file: docs/products/mysql/howto/max-number-of-connections
           - file: docs/products/mysql/howto/migrate-from-external-mysql
           - file: docs/products/mysql/howto/do-check-service-migration
           - file: docs/products/mysql/howto/prevent-disk-full
@@ -663,6 +686,12 @@ entries:
         title: Concepts
         entries:
           - glob: docs/products/cassandra/concepts/*
+      - file: docs/products/cassandra/howto
+        title: HowTo
+        entries:
+          - file: docs/products/cassandra/howto/list-code-samples
+            entries:
+              - file: docs/products/cassandra/howto/connect-python
       - file: docs/products/cassandra/reference
         title: Reference
         entries:

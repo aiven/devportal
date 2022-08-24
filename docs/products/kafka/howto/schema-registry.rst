@@ -70,7 +70,7 @@ Once the schema is defined, you need to compile it, and it can be done **manuall
 Manual schema compilation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In case of manual schema compilation, download ``avro-tools-1.11.0.jar`` from https://avro.apache.org/releases.html#Download or via maven using the following::
+In case of manual schema compilation, download ``avro-tools-1.11.0.jar`` from https://avro.apache.org/releases.html or via maven using the following::
 
     mvn org.apache.maven.plugins:maven-dependency-plugin:2.8:get -Dartifact=org.apache.avro:avro-tools:1.11.0:jar -Ddest=avro-tools-1.11.0.jar
 

@@ -1,8 +1,9 @@
-171
+184
 ACL
 ACLs
 Aiven
 Aiven's
+Altinity
 Amazon
 Apache
 API
@@ -16,6 +17,7 @@ Bucardo
 business
 Cassandra
 Centrify
+checkpointing
 ClickHouse
 CloudWatch
 codecs
@@ -80,6 +82,7 @@ Kafdrop
 Kafka
 Karapace
 keypair
+keyspace
 keystore
 keystores
 Kibana
@@ -88,6 +91,7 @@ Kubernetes
 kuromoji
 Loggly
 Logstash
+Logtail
 Lua
 Lucene
 myhoard
@@ -169,6 +173,7 @@ Transport Layer Security
 truststore
 truststores
 Uber
+uncomment
 unencrypted
 untrusted
 unaggregated

@@ -44,9 +44,9 @@ Sink connectors enable the integration of data from an existing Apache Kafka top
 
 * `Couchbase® <https://github.com/couchbase/kafka-connect-couchbase>`__
 
-* `OpenSearch® <https://developer.aiven.io/docs/products/kafka/kafka-connect/howto/opensearch-sink.html>`__
+* :doc:`OpenSearch® </docs/products/kafka/kafka-connect/howto/opensearch-sink>`
 
-* `Elasticsearch <https://developer.aiven.io/docs/products/kafka/kafka-connect/howto/elasticsearch-sink>`__
+* :doc:`Elasticsearch </docs/products/kafka/kafka-connect/howto/elasticsearch-sink>`
 
 * `Google BigQuery <https://github.com/confluentinc/kafka-connect-bigquery>`__
 
@@ -54,7 +54,7 @@ Sink connectors enable the integration of data from an existing Apache Kafka top
 
 * `Google Cloud Pub/Sub Lite <https://github.com/GoogleCloudPlatform/pubsub/>`_
 
-* `Google Cloud Storage <https://help.aiven.io/kafka/connectors/aiven-kafka-gcs-sink-connector>`_
+* :doc:`Google Cloud Storage </docs/products/kafka/kafka-connect/howto/gcs-sink>`
 
 * `HTTP <https://github.com/aiven/aiven-kafka-connect-http>`__ |preview|
 

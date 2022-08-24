@@ -5,15 +5,18 @@ The practical memory limit will always be less than the service physical memory 
 
 **All services are subject to operating overhead:**
 
-- A small amount of memory is required by the operating system kernel to manage system resources, including networking functions and disk buffers.
+- A small amount of memory is required by the operating system kernel to manage system resources, including networking functions and disk cache.
 - Aiven's cloud data platform requires memory to monitor availability, provide metrics, logging and manage backups.
-- Services may utilize optional components, service integrations, connection pooling, or plug-ins that also consume system resources.
 
-In most instances, the combined overhead is negligible; however, it is **critically important to maintain availability**.
+A server (or node) **usable memory** can be calculated as: 
+  
+  |vm_usable_memory| 
 
-If a service consumes too much memory, the operating system, or management layer, including backups and availability monitoring, may fail status checks or operations due to resource contention.
-In severe instances, the node may fail completely with an :doc:`Out Of Memory <out-of-memory-conditions>` condition. 
+.. important:: This ``overhead`` is currently calculated as: |vm_overhead|
 
-For database services with unbounded memory allocation, a memory limit is placed on the primary service.
+Services may utilize optional components, service integrations, connection pooling, or plug-ins, which are not included in overhead calculations.
+
+If a service is overcommitted, the operating system, management layer, backups or availability monitoring, may fail status checks or operations due to resource contention. In severe instances, the node may fail completely with an :doc:`Out Of Memory <out-of-memory-conditions>` condition. 
 
 .. include:: /includes/services-memory-capped.rst
+.. include:: /includes/platform-variables.rst

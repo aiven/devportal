@@ -263,6 +263,7 @@ An example of ``account service integration-types-list`` output:
     schema_registry_proxy            Proxy Schema Registry requests                                        kafka                                                                                        external_schema_registry
     signalfx                         Receive service metrics from service                                  signalfx                         Send service metrics to SignalFX                            kafka
 
+.. _avn service integration-update:
 
 ``avn service integration-update``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''

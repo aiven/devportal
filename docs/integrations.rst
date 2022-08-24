@@ -38,3 +38,4 @@ Available integrations
         + :doc:`Datadog </docs/integrations/datadog>`
         + :doc:`Amazon CloudWatch </docs/integrations/cloudwatch>`
         + :doc:`RSyslog integration </docs/integrations/rsyslog>`
+        + :doc:`Logtail (via Rsyslog) </docs/integrations/rsyslog/logtail>`

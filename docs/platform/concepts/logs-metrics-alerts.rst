@@ -21,5 +21,5 @@ You can create custom OpenSearch® or Grafana® dashboards to monitor the servic
 Alerts
 ------
 
-The platform also has alert policies to notify you via email when a key metric rises above or below a set threshold, such as low memory or high CPU consumption. For information on setting the addresses for these emails, see `this article <https://help.aiven.io/en/articles/5234705-technical-emails>`_.
+The platform also has alert policies to notify you via email when a key metric rises above or below a set threshold, such as low memory or high CPU consumption. For information on setting the addresses for these emails, see :doc:`this article </docs/platform/howto/technical-emails>`.
 

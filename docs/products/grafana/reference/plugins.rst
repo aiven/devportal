@@ -116,17 +116,20 @@ Worldmap Panel - `GitHub <https://github.com/grafana/worldmap-panel>`__
 
 Data source plugins
 -------------------
+Altinity plugin for ClickHouse® - `GitHub <https://github.com/Altinity/clickhouse-grafana>`_
+    Provides support for ClickHouse® as a backend database.
+
 Azure Monitor - `Grafana <https://grafana.com/grafana/plugins/grafana-azure-monitor-datasource/>`__ | `GitHub <https://github.com/grafana/azure-monitor-datasource>`__
     Provides a single source for monitoring Azure resources. 
-
-ClickHouse® - `GitHub <https://github.com/Vertamedia/clickhouse-grafana>`__
-    Provides support for ClickHouse® as a backend database.
 
 CloudWatch - `Grafana <https://grafana.com/grafana/plugins/cloudwatch/>`__ | `Grafana Docs <http://docs.grafana.org/datasources/cloudwatch/>`__
     Build dashboards for your CloudWatch metrics.
 
 Elasticsearch - `Grafana <https://grafana.com/grafana/plugins/elasticsearch/>`__ | `Grafana Docs <http://docs.grafana.org/datasources/elasticsearch/>`__
     Performs Elasticsearch queries to visualize logs or metrics stored in Elasticsearch. Annotate your graphs with log events stored in Elasticsearch.
+
+GitHub - `GitHub <https://github.com/grafana/github-datasource>`__
+    Allows GitHub API data to be visually represented in Grafana dashboards.
 
 Google BigQuery - `GitHub <https://github.com/doitintl/bigquery-grafana>`__
     Provides support for BigQuery as a backend database.
