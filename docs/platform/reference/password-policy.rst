@@ -1,7 +1,7 @@
 Password policy
 ===============
 
-Aiven is committed to enhancing security of our customers and preventing hackers from accessing your account. Creating a strong password makes it harder for attackers to gain unauthorized access to your account.
+Aiven is committed to keeping your account secure. Creating a strong password makes it harder for attackers to gain unauthorized access to your account.
 
 **Password Requirements**
 
