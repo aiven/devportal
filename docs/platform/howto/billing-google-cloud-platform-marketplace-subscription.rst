@@ -3,7 +3,7 @@ Set up Google Cloud Marketplace for Aiven services
 
 Aiven makes its services available through the Google Cloud Marketplace on Google Cloud Platform (GCP). This article shows the steps needed to create a subscription that links the accounts.
 
-First, there are some steps which need to be completed on the Google Cloud Marketplace page, before heading over to the Aiven console and finishing the process.
+First, there are some steps that need to be completed on the Google Cloud Marketplace page before heading over to the Aiven console and finishing the process.
 
 Google Cloud Marketplace setup
 ------------------------------
