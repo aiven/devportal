@@ -31,7 +31,7 @@ Variable                Description
 
 Connect to the database
 '''''''''''''''''''''''
-The following example establishes a SSL connection with your database cluster after replacing the placeholders for ``HOST``, ``PORT``, ``USER``, ``PASSWORD``, ``SSL-CERTFILE``: 
+The following example establishes a SSL connection with your database cluster; replace the placeholders for ``HOST``, ``PORT``, ``USER``, ``PASSWORD``, ``SSL-CERTFILE``: 
 
 .. literalinclude:: /code/products/cassandra/connect.py
    :language: python
