@@ -8,7 +8,7 @@ First, there are some steps that need to be completed on the Google Cloud Market
 Google Cloud Marketplace setup
 ------------------------------
 
-1. Navigate to `Aiven Managed Database Services on the Google Cloud Marketplace <https://console.cloud.google.com/marketplace/product/aiven-public/aiven>`_.  This page contains information about all of Aiven's services and how the marketplace subscription works.  Click the "Subscribe" button on this page.
+1. Navigate to `Aiven Managed Database Services on the Google Cloud Marketplace <https://console.cloud.google.com/marketplace/product/aiven-public/aiven>`_.  This page contains information about all of Aiven's services and how the marketplace subscription works.  Click the **Subscribe** button on this page.
 
 2. Select your desired billing account, then read and agree to the terms and conditions.
 
