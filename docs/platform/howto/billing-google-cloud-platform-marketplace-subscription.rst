@@ -16,7 +16,7 @@ Google Cloud Marketplace setup
 
 4. You should now see a message that says  "Your order request has been sent to Aiven".  Click on the **Go to product page** button.
 
-5. Everything is now complete in your GCP account, but you still need to setup the Aiven account.  Click on the "Manage on provider" button to go to the Aiven console to complete the process.
+5. Everything is now complete in your GCP account, but you still need to setup the Aiven account.  Click on the **Manage on provider** button to go to the Aiven console to complete the process.
 
 .. image:: /images/platform/howto/gcp-manage-on-provider.png
    :alt: Google Cloud Marketplace page after subscribing, showing the "Manage on provider" button
