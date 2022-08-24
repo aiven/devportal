@@ -38,7 +38,7 @@ Password tips
 
 -  Select a password that is not usual and memorable only to you
 
-Selecting a strong password is a first step in securing your account. To know more about how you can strengthen your security by adding a two factor authentication, please refer :doc:`./user-2fa`.
+Selecting a strong password is a first step in securing your account. To know more about how you can strengthen your security by adding a two factor authentication, please refer :doc:`../howto/user-2fa`.
 
 If you forget your password, you may reset your password by selecting **Forgot Password**  on the `Aiven Console login <https://console.aiven.io/>`_ page.
 

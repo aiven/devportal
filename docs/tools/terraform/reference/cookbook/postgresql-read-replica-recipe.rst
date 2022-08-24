@@ -91,7 +91,7 @@ Terraform knows it from the ``depends_on`` block. Here are some configurations t
 - ``service_to_fork_from``: This is the source Aiven for PostgreSQL service.
 - ``idle_in_transaction_session_timeout``: Kills an idle session after specified number of seconds.
 - ``server_reset_query_always``: This PgBouncer configuration, when set to ``false``, causes the ``server_reset_query`` to not take effect for transaction pooling.
-According to the PostgreSQL documentation, when transaction pooling is used, the ``server_reset_query`` should be empty, as clients should not use any session features.
+  According to the PostgreSQL documentation, when transaction pooling is used, the ``server_reset_query`` should be empty, as clients should not use any session features.
 - ``max_failover_replication_time_lag``: In case of a failover, this is the replication time lag after which ``failover_command`` will be executed and a ``failover_has_happened`` file will be created.
 
 More resources
