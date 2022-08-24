@@ -15,7 +15,7 @@ Creating databases in an Aiven for ClickHouse service can only be done via the A
 #. Log in to `Aiven console <https://console.aiven.io/>`_ and select your service.
 #. On the service page open the tab *Databases & Tables*.
 #. Enter your database name in *Create a new database* and click on **Create database**.
-#. You'll see the name of the database appear in the *Database List* below.
+#. You'll see the name of the database appear in the *Database List* section.
 #. On our side we enable necessary customizations and run secondary queries to grant access to the admin user.
 
 Similar to creating the database, removal should also be done through the Aiven platform. In the web interface of `Aiven console <https://console.aiven.io/>`_ you'll find delete button next to the database you created in the *Database List*.
