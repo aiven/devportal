@@ -25,9 +25,13 @@ Variable                Description
 ``SSL-CERTFILE``        Path to the `CA Certificate` file of your Cassandra service
 ==================      ================================================================================
 
+.. Tip::
+
+    The Aiven for Cassandra CA certificate can be downloaded from the `Aiven Console <https://console.aiven.io/>`_, on the service detail page or with the :ref:`dedicated Aiven CLI command <avn_service_ca_get>`.
+
 Connect to the database
 '''''''''''''''''''''''
-The following example establishes a SSL connection with your database cluster: 
+The following example establishes a SSL connection with your database cluster after replacing the placeholders for ``HOST``, ``PORT``, ``USER``, ``PASSWORD``, ``SSL-CERTFILE``: 
 
 .. literalinclude:: /code/products/cassandra/connect.py
    :language: python

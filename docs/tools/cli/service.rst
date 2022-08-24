@@ -1,7 +1,7 @@
 ``avn service``
 ==================================
 
-Here you’ll find the full list of commands for ``avn service``.
+Here you'll find the full list of commands for ``avn service``.
 
 
 Manage service details
@@ -45,6 +45,8 @@ An example of ``service backup-list`` output:
   BACKUP_NAME                     BACKUP_TIME           DATA_SIZE  STORAGE_LOCATION
   ==============================  ====================  =========  ===================
   grafana-20220614T140308137245Z  2022-06-14T14:03:08Z  774144     google-europe-west3
+
+.. _avn_service_ca_get:
 
 ``avn service ca get``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
