@@ -5,7 +5,7 @@ If you are expecting higher than usual traffic on your Aiven services, then we o
 
 But, if your services are already experiencing the high load, require extra resource or under-performing then you can read our list of short term tactics to survive `here <https://help.aiven.io/en/articles/4660372-reacting-to-high-load>`_.
 
-Service Health
+Service health
 --------------
 
 Subscribe for service notifications
@@ -43,12 +43,12 @@ Integrate an Aiven service
 
 If you are not already using an external tool for visualizing metrics and logs you might want to consider using our built-in service integrations to easily connect these to other Aiven services.
 
-For example you could have your service metrics ingested into an InfluxDB service and visualized using a Grafana. The advantage here is that we provide you with pre-built dashboards for any connected Aiven service which give you immediate insights into the performance of your services. The process is outlined `here <https://help.aiven.io/en/articles/1456441-getting-started-with-service-integrations>`_.
+For example you could have your service metrics ingested into an InfluxDB® service and visualized using a Grafana®. The advantage here is that we provide you with pre-built dashboards for any connected Aiven service which give you immediate insights into the performance of your services. The process is outlined `here <https://help.aiven.io/en/articles/1456441-getting-started-with-service-integrations>`_.
 
 .. image:: /images/platform/concepts/grafana-status.png
-   :alt: Grafana dashboard
+   :alt: Grafana® dashboard
 
-You could also `enable logs integration <https://docs.aiven.io/docs/products/opensearch/howto/opensearch-log-integration.html>`_ for your services to have the logs pumped into an Elasticsearch service (on Aiven or external) and then use the built-in Kibana UI to keep an eye on things.
+You could also `enable logs integration <https://docs.aiven.io/docs/products/opensearch/howto/opensearch-log-integration.html>`_ for your services to have the logs pumped into an OpenSearch® service (on Aiven or external) and then use the built-in Kibana UI to keep an eye on things.
 
 .. image:: /images/platform/concepts/pg-log-integration.png
    :alt: Logs integration for pg
@@ -84,7 +84,7 @@ After you start the upgrade, Aiven will perform an upgrade in a rolling forward 
 
 **The earlier you do this, the better.** When load increases to the point where a service is struggling then it makes it harder for the old nodes to stream their changes to the new nodes since they're already under high load. You can avoid this problem by upgrading to a larger plan well in advance when your current plan starts to feel the strain.
 
-Aiven services are billed per hour and can be downgraded to a smaller plan at a later date if the heavy traffic is expected to fall, e.g. after a seasonal spike in demand. Currently the only exception is a Cassandra service: the size of the nodes can be changed freely but the total number of nodes cannot be reduced.
+Aiven services are billed per hour and can be downgraded to a smaller plan at a later date if the heavy traffic is expected to fall, e.g. after a seasonal spike in demand. Currently the only exception is a Cassandra® service: the size of the nodes can be changed freely but the total number of nodes cannot be reduced.
 
 You can read more about how upgrade/updates are applied at Aiven `here <https://help.aiven.io/en/articles/489581-how-do-you-apply-software-updates-and-security-patches>`_.
 
@@ -124,7 +124,7 @@ These updates can contain new features, bug fixes, and performance improvements.
 
 Remember also that in case one of your service nodes terminates unexpectedly at any point in time, then the new node that replaces it will start fresh with all available maintenance updates applied (if any). If you keep up with applying the optional updates then you will have a chance to test the changes out in your staging environment before this happens.
 
-Database Forks
+Database forks
 --------------
 
 Did you know that it is possible to run load tests against copies of your production databases using the Fork Database option in the Aiven Console?
@@ -143,8 +143,8 @@ Finally it is worth looking at any optimizations you can make to your usage of a
 
 You can read more about this in our individual support articles:
 
-- `Kafka and Kafka Connect best practices <https://help.aiven.io/en/articles/4738784-basic-kafka-best-practices>`_
+- `Kafka® and Kafka® Connect best practices <https://help.aiven.io/en/articles/4738784-basic-kafka-best-practices>`_
 
-- `PostgreSQL best practices <https://help.aiven.io/en/articles/4738831-basic-postgresql-best-practices>`_
+- `PostgreSQL® best practices <https://help.aiven.io/en/articles/4738831-basic-postgresql-best-practices>`_
 
-If you have any questions, please feel free to reach out to our support@aiven.io and let us know.
+If you have any questions, please feel free to reach out to our support@Aiven.io and let us know.
