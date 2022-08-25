@@ -27,6 +27,7 @@ Get the ``gocql`` library::
 
 Code
 ''''
+
 1. Create a new file named ``main.go`` and add the following content:
 
 .. literalinclude:: /code/products/cassandra/connect.go
