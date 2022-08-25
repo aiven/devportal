@@ -16,7 +16,6 @@ entries:
         entries:
           - file: docs/platform/concepts/tax-information
           - file: docs/platform/concepts/billing-groups
-          - file: docs/platform/concepts/corporate-billing
       - file: docs/platform/concepts/beta_services
       - file: docs/platform/concepts/cloud-security
       - file: docs/platform/concepts/logs-metrics-alerts
