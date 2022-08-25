@@ -36,6 +36,7 @@ entries:
       - file: docs/platform/concepts/service-level-agreement
       - file: docs/platform/concepts/maintenance-window
       - file: docs/platform/concepts/service-resources
+      - file: docs/platform/concepts/preparing-for-high-load
     - file: docs/platform/howto
       title: HowTo
       entries:
