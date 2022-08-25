@@ -60,6 +60,14 @@ There are lots of other ways to learn more about Aiven, and interact with us.
 
             To the code
 
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
+
+        🏆 **Mini Challenges** Get your hands dirty with Aiven by trying some of our technical mini challenges, each introducing you to different open source technologies. 
+        :doc:`Helsinki bus data hell with Clickhouse </docs/community/challenge/helsinki-bus-data-clickhouse>`
+        :doc:`Apache Kafka riddle </docs/community/challenge/kafka-riddle>`
+
 
 Check out the `Aiven Console <https://console.aiven.io>`_ for your Aiven web interface. New accounts get a free trial!
 

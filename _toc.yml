@@ -722,4 +722,8 @@ entries:
       entries:
       - glob: docs/community/documentation/tips-tricks/*
         title: Tips & Tricks
+    - file: docs/community/challenge/helsinki-bus-data-clickhouse
+      title: Helsinki Bus Data Challenge with Clickhouse
+    - file: docs/community/challenge/kafka-riddle
+      title: Apache Kafka Riddle on Aiven
 
