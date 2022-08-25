@@ -4,7 +4,9 @@ Connection pooling
 Connection pooling in Aiven for PostgreSQL® services allows you to maintain very large numbers of connections to a database while minimizing the consumption of server resources.
 
 
-Aiven for PostgreSQL connection pooling uses `PgBouncer <https://www.pgbouncer.org/>`_ to manage the database connection. Each pool can handle up to 5000 database client connections. Unlike when you connect directly to the PostgreSQL® server, each client connection does not require a separate backend process on the server. PgBouncer automatically inserts the client queries and only uses a limited number of actual backend connections, leading to lower resource usage on the server and better total performance.
+Aiven for PostgreSQL connection pooling uses `PgBouncer <https://www.pgbouncer.org/>`_ to manage the database connection. 
+**Each pool can handle minimum 5000 up to 500 * GB of RAM in the service plan and <= 50000 client connections.**
+Unlike when you connect directly to the PostgreSQL® server, each client connection does not require a separate backend process on the server. PgBouncer automatically inserts the client queries and only uses a limited number of actual backend connections, leading to lower resource usage on the server and better total performance.
 
 Why connection pooling?
 ------------------------
