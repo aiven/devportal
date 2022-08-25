@@ -98,7 +98,7 @@ Note that we can only offer custom plans for services costing at least $500 per 
 Backups
 -------
 
-For PostgreSQL and MySQL databases you can configure a time when the daily backups are taken. You can set the backup_hour and backup_minute variables in the Advanced Configuration section.
+For PostgreSQL® and MySQL® databases you can configure a time when the daily backups are taken. You can set the ``backup_hour`` and ``backup_minute`` variables in the Advanced Configuration section.
 
 .. image:: /images/platform/concepts/advanced-configuration.png
    :alt: Advanced configuration
