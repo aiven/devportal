@@ -66,6 +66,10 @@ entries:
           - file: docs/platform/howto/public-access-in-vpc.rst
           - file: docs/platform/howto/static-ip-addresses.rst
           - file: docs/platform/howto/private-ip-resolution.rst
+          - file: docs/platform/howto/create-vpc-peering
+          - file: docs/platform/howto/setup-vpc-peering-aws
+          - file: docs/platform/howto/setup-vpc-peering-gcp
+          - file: docs/platform/howto/setup-vpc-peering-azure
       - file: docs/platform/howto/list-monitoring
         title: Monitoring management
         entries:
