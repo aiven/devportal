@@ -3,7 +3,6 @@
 {%- block extrahead %}
 {{ super() }}
 
-<link rel="canonical" href="https://developer.aiven.io/{{ pagename }}" />
 <meta name="description" content="{{ body|striptags|replace("\u00B6", '')|truncate(160) }}">
 
 <!-- Twitter Cards -->
@@ -11,7 +10,7 @@
 <meta name="twitter:site" content="@aiven_io">
 <meta name="twitter:title" content="{{ docstitle|striptags|e }}">
 <meta name="twitter:description" content="{{ body|striptags|replace("\u00B6", '')|truncate(200) }}">
-<meta name="twitter:image" content="https://developer.aiven.io/_static/images/site-preview.png">
+<meta name="twitter:image" content="https://docs.aiven.io/_static/images/site-preview.png">
 
 <!-- Snowplow Analytics -->
 <script type="text/javascript" async=1>
