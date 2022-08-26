@@ -45,7 +45,7 @@ On the service or intra-VM level, we will be rolling out maintenance updates wit
 
 - Aiven for Elasticsearch® is not vulnerable.
 
-- Aiven Grafana® is not vulnerable.
+- Aiven for Grafana® is not vulnerable.
 
 - Aiven for InfluxDB® is not vulnerable.
 
