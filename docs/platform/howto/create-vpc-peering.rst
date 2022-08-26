@@ -3,7 +3,7 @@
 Create Virtual Private Cloud (VPC) peering
 ==========================================
 
-Virtual Private Cloud (VPC) peering is a method of connecting separate AWS, Google Cloud, or Azure private networks with each other. This makes it possible for the virtual machines in the different VPCs to talk to each other directly without going through the public internet.
+Virtual Private Cloud (VPC) peering is a method of connecting separate AWS, Google Cloud, or Azure private networks with each other. This makes it possible for the virtual machines in the different VPC to talk to each other directly without going through the public internet.
 
 In Aiven, VPC peering is configured as a project and region-specific setting. This means that all services created and running use the same VPC peering connection. If necessary, you can use different connections for VPC peering across multiple projects.
 
@@ -22,7 +22,7 @@ Use an IP range that does not overlap with any networks that you want to connect
 
 Once you have created the VPC, Aiven automatically sets it up and updates the status in the **VPC** view of the web console.
 
-When you create a new service, you can then place it in the VPC. The **VPC** tab in the *Select Service Cloud Region* section lists the available VPCs. This also allows you to migrate a service to or from a VPC.
+When you create a new service, you can then place it in the VPC. The **VPC** tab in the *Select Service Cloud Region* section lists the available VPC. This also allows you to migrate a service to or from a VPC.
 
    .. note::
        Depending on the cloud provider that you selected for the VPC connection, you also have to accept a VPC peering connection request or set up a corresponding VPC peering connection to Aiven.
@@ -41,7 +41,7 @@ Deploying new services to a VPC
 -------------------------------
 
 When you create a new service, your peered VPC is available as a new geolocation on the **VPC** tab under *Select Service Cloud Region*.
-It might take a few minutes for newly created VPCs to appear for service deployments.
+It might take a few minutes for newly created VPC to appear for service deployments.
 
 Migrating a public service to a VPC
 -----------------------------------
