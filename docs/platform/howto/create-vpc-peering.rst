@@ -31,11 +31,11 @@ When you create a new service, you can then place it in the VPC. The **VPC** tab
 Cloud-specific VPC peering instructions
 ---------------------------------------
 
-- Refer to :ref:`AWS VPC peering instructions <platform_howto_setup_vpc_peering_aws>`.
+- Refer to :ref:`AWS VPC peering instructions <aws-vpc-peering>`.
 
-- Refer to :ref:`GCP VPC peering instructions <platform_howto_setup_vpc_peering_gcp>`.
+- Refer to :ref:`GCP VPC peering instructions <gcp-vpc-peering>`.
 
-- Refer to :ref:`Azure VPC peering instructions <platform_howto_setup_vpc_peering_azure>`.
+- Refer to :ref:`Azure VPC peering instructions <azure-vpc-peering>`.
 
 Deploying new services to a VPC
 -------------------------------
