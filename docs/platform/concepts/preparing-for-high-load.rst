@@ -65,7 +65,7 @@ Upgrades
 
 If the metrics show that there is not much room for growth on your current plan, then you should consider preemptively upgrading before you encounter problems.
 
-After you start the upgrade, Aiven will perform an upgrade in a rolling forward style by provisioning new nodes alongside the existing ones with more CPUs, RAM, and storage alongside the existing nodes, stream across the latest data, and then perform a controlled failover to the new nodes. 
+After you start the upgrade, Aiven will perform an upgrade in a rolling forward style by provisioning new nodes alongside the existing ones with more CPU, RAM, and storage alongside the existing nodes, stream across the latest data, and then perform a controlled failover to the new nodes. 
 
 **The earlier you do this, the better.** When load increases to the point where a service is struggling then it makes it harder for the old nodes to stream their changes to the new nodes since they're already under high load. You can avoid this problem by upgrading to a larger plan well in advance when your current plan starts to feel the strain.
 
