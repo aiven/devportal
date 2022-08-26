@@ -31,8 +31,13 @@ To manage the connection pools, follow the steps below:
    * **Pool Size:** Select how many PostgreSQL server connections this pool can use at a time. 
    
    .. important:: 
-    Pool Size parameter is NOT the maximum number of client connections of this pool, the client connections for each pool is
-    minimum 5000 up to 500 * GB of RAM in the service plan and <= 50000
+    Pool Size parameter is NOT the maximum number of client connections of this pool.
+    
+    Each pool can handle from a minimum of 5000 client connections to a maximum defined by the lower threshold between:
+    
+    * 500 for each GB of RAM in the service plan
+    * A total of 50000 client connections
+
  
 
 3. Click **Info** on an existing pool.
