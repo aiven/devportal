@@ -1,7 +1,7 @@
 Maintenance downtime window
 ===========================
 
-Maintenance window is a time window during which we'll switch to new upgraded virtual machines and point the connection URI's DNS name at the new server.
+Maintenance window is a time window during which we'll switch to new upgraded virtual machines and point the connection URI DNS name at the new server.
 
 Aiven service upgrades are performed in rolling forward style, which means that new service nodes are first created alongside with the older nodes one at a time, after which the old nodes are retired.
 
