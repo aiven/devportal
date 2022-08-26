@@ -29,7 +29,7 @@ User permissions are defined at project level in Aiven. Each user invited to a p
 
 - Create and modify Kafka® topics
 
-- Create and modify PostgreSQL® connection poolers
+- Create and modify PostgreSQL® connection pools
 
 **Operator**
 
