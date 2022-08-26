@@ -1,4 +1,4 @@
-Aiven statement on Meltdown and Spectre vulnerabilities
+Aiven statement on meltdown and spectre vulnerabilities
 =======================================================
 
 Information regarding the Intel/AMD/ARM CPU flaw that affects Aiven services
@@ -29,25 +29,25 @@ On infrastructure, the risk of the vulnerability is access of customer data via 
 
 - Google Cloud Platform states that all infrastructure has been patched. (Google Compute Engine Security Bulletin 2018-01-03)
 
-- Azure reports that the majority of the Azure infrastructure has been patched. (https://azure.microsoft.com/en-us/blog/securing-azure-customers-from-cpu-vulnerability/). We continue to monitor and react to notifications on impacted VMs.
+- Azure reports that the majority of the Azure infrastructure has been patched. (https://azure.microsoft.com/en-us/blog/securing-azure-customers-from-cpu-vulnerability/). We continue to monitor and react to notifications on impacted VM.
 
 - UpCloud plans to roll out the necessary patches in the coming days. (UpCloud: Information regarding the Intel CPU vulnerability (Meltdown))
 
-- DigitalOcean is conducting ongoing investigation on the issue. We continue to monitor and react to notifications on impacted VMs.
+- DigitalOcean is conducting ongoing investigation on the issue. We continue to monitor and react to notifications on impacted VM.
 
 **Aiven Services**
 
 On the service or intra-VM level, we will be rolling out maintenance updates with the relevant security patches to all services. We consider threat risk at this level lower than the infrastructure side: access to all Aiven services require user authentication.
 
-- Aiven PostgreSQL® may be subject to the Spectre attacks resulting in privilege escalation between configured PostgreSQL database users. Custom code can be executed by authenticated PostgreSQL database users through the supported extensions.
+- Aiven for PostgreSQL® may be subject to the Spectre attacks resulting in privilege escalation between configured PostgreSQL database users. Custom code can be executed by authenticated PostgreSQL database users through the supported extensions.
 
-- Aiven Redis®* may be subject to Spectre attacks as it allows execution of custom code in the form of LUA scripts for authenticated users. However, since Redis doesn't support more than one user or other access controls, the attack doesn't grant additional access.
+- Aiven for Redis®* may be subject to Spectre attacks as it allows execution of custom code in the form of LUA scripts for authenticated users. However, since Redis doesn't support more than one user or other access controls, the attack doesn't grant additional access.
 
-- Aiven Elasticsearch® is not vulnerable.
+- Aiven for Elasticsearch® is not vulnerable.
 
 - Aiven Grafana® is not vulnerable.
 
-- Aiven InfluxDB® is not vulnerable.
+- Aiven for InfluxDB® is not vulnerable.
 
 - Aiven for Apache Kafka® is not vulnerable.
 
