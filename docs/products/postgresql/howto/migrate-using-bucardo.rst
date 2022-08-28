@@ -2,7 +2,7 @@ Migrating to Aiven for PostgreSQL® using Bucardo
 ===============================================
 
 The preferred approach to migrating a database to Aiven for PostgreSQL®
-is to use `our Open Source migration tool <https://help.aiven.io/en/articles/4358591>`__ . However, if you
+is to use `Aiven's open source migration tool <https://developer.aiven.io/docs/products/postgresql/concepts/aiven-db-migrate.html>`_. However, if you
 are running PostgreSQL 9.6 (or earlier) or do not have ``superuser`` access to your
 database to add replication slots, you can use the open source
 `Bucardo <https://bucardo.org>`__ tool to allow replication to Aiven.
