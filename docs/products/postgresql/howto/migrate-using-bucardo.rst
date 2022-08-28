@@ -15,7 +15,7 @@ database to add replication slots, you can use the open source
 
 -  A computer with Bucardo installed
 
--  Connectivity between your current database, the Aiven database, and
+-  Connectivity between Bucardo and the source and target databases
 
 Moving existing data
 ~~~~~~~~~~~~~~~~~~~~
