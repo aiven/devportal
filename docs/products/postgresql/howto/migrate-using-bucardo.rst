@@ -25,7 +25,7 @@ To move existing data, you can follow the steps below and
 ``sync`` job to use the ``onetimecopy`` and move existing data across.
 You can also use the standard ``pg_dump`` and ``pg_restore`` commands to
 fill the Aiven database and use Bucardo for syncing any changes to the
-source database and ensuring it remains up to date.
+source database and ensuring it remains up-to-date.
 
 Replicating changes
 ~~~~~~~~~~~~~~~~~~~
