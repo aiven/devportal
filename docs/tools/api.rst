@@ -6,9 +6,11 @@ The Aiven API allows you to perform any tasks on Aiven from a client of your cho
 API quickstart
 --------------
 
+* Try `Aiven on Postman <https://www.postman.com/aiven-apis/workspace/aiven/documentation/21112408-1f6306ef-982e-49f8-bdae-4d9fdadbd6cd>`_ and make your first calls to our API.
+
 * You will need an authentication token from the `profile section of your Aiven console <https://console.aiven.io/profile/auth>`_.
 
-* Check the `API docs and OpenAPI spec <https://api.aiven.io/doc/>`_ for the available endpoints.
+* Check the `API docs and OpenAPI spec <https://api.aiven.io/doc/>`_ for more available endpoints.
 
 
 Calling the Aiven API
