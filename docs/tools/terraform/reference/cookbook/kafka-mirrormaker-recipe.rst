@@ -95,8 +95,8 @@ The ``".*"`` wildcard in the MirrorMaker 2 configuration means that all the topi
   resource "aiven_mirrormaker_replication_flow" "mm-replication-flow" {
     project        = var.project_name
     service_name   = aiven_kafka_mirrormaker.mm.service_name
-    source_cluster = aiven_kafka.source.service_name
-    target_cluster = aiven_kafka.target.service_name
+    source_cluster = aiven_service_integration.source-kafka-to-mm.kafka_mirrormaker_user_config[0].cluster_alias
+    target_cluster = aiven_service_integration.mm-to-target-kafka.kafka_mirrormaker_user_config[0].cluster_alias
     enable         = true
 
     topics = [
