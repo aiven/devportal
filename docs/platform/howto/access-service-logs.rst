@@ -17,6 +17,6 @@ There are three built-in ways to inspect service logs at Aiven:
 
 Log Retention Policy
 --------------------
-Service logs are generally retained for a few days, and in some cases up to 14 days maximum.  Unless you are using :doc:`logs integration </docs/integrations>` to another service, older logs are not accessible.
+Service logs are generally retained for a few days, and for some Aiven Services up to 14 days maximum.  Unless you are using :doc:`logs integration </docs/integrations>` to another service, older logs are not accessible.
 
 If longer retention time or more comprehensive analytics or search functionality is needed, you can setup a :doc:`log integration with an Aiven for OpenSearch® service </docs/products/opensearch/howto/opensearch-log-integration>`. The integration allows you to configure longer retention times for your service logs, only limited by the disk space available on the Aiven for OpenSearch® plan you have selected. OpenSearch® together with OpenSearch® Dashboards offers comprehensive logs browsing and analytics platform.
