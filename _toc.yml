@@ -424,6 +424,7 @@ entries:
                 - file: docs/products/postgresql/howto/logical-replication-aws-rds
                 - file: docs/products/postgresql/howto/logical-replication-gcp-cloudsql
               - file: docs/products/postgresql/howto/migrate-pg-dump-restore
+              - file: docs/products/postgresql/howto/migrate-using-bucardo
               - file: docs/products/postgresql/howto/run-aiven-db-migrate-python
           - file: docs/products/postgresql/howto/list-integrations
             entries:
