@@ -64,9 +64,9 @@ There are lots of other ways to learn more about Aiven, and interact with us.
         :shadow: md
         :margin: 2 2 0 0
 
-        🏆 **Mini Challenges** Get your hands dirty with Aiven by trying some of our technical mini challenges, each introducing you to different open source technologies. 
-        :doc:`Helsinki bus data hell with Clickhouse </docs/community/challenge/helsinki-bus-data-clickhouse>`
-        :doc:`Apache Kafka riddle </docs/community/challenge/kafka-riddle>`
+        🏆 **Mini Challenges** Get to know Aiven through our mini challenges, each introducing you to different open source technologies. 
+        * :doc:`Helsinki bus data hell with Clickhouse </docs/community/challenge/catch-the-bus>`
+        * :doc:`Apache Kafka riddle </docs/community/challenge/the-rolling-challenge>`
 
 
 Check out the `Aiven Console <https://console.aiven.io>`_ for your Aiven web interface. New accounts get a free trial!
