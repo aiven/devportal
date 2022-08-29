@@ -2,7 +2,7 @@ Migrating to Aiven for PostgreSQL® using Bucardo
 ===============================================
 
 The preferred approach to migrating a database to Aiven for PostgreSQL®
-is to use `Aiven's open source migration tool <https://developer.aiven.io/docs/products/postgresql/concepts/aiven-db-migrate.html>`_. However, if you
+is to use Aiven's open source migration tool (:doc:`../concepts/aiven-db-migrate`). However, if you
 are running PostgreSQL 9.6 (or earlier) or do not have ``superuser`` access to your
 database to add replication slots, you can use the open source
 `Bucardo <https://bucardo.org>`__ tool to allow replication to Aiven.
@@ -49,26 +49,26 @@ To migrate your data using Bucardo:
      system, but you might find it in
      ``/usr/local/share/perl5/5.32/Bucardo.pm`` , for example.
 
-   #. Scroll down until you see a ``disable_triggers`` function, on line
-      `5324 <https://github.com/bucardo/bucardo/blob/1ff4d32d1924f3437af3fbcc1a50c1a5b21d5f5c/Bucardo.pm#L5324>`__
+   a. Scroll down until you see a ``disable_triggers`` function, on line
+      `5324 <https://github.com/bucardo/bucardo/blob/1ff4d32d1924f3437af3fbcc1a50c1a5b21d5f5c/Bucardo.pm#L5324>`__.
 
-   #. On line `5359 <https://github.com/bucardo/bucardo/blob/1ff4d32d1924f3437af3fbcc1a50c1a5b21d5f5c/Bucardo.pm#L5359>`__, change ``SET session_replication_role = default`` to
+   b. On line `5359 <https://github.com/bucardo/bucardo/blob/1ff4d32d1924f3437af3fbcc1a50c1a5b21d5f5c/Bucardo.pm#L5359>`__, change ``SET session_replication_role = default`` to
       the following:
 
       ::
 
          $dbh->do(q{select aiven_extras.session_replication_role('replica');});
 
-   #. Scroll down to the ``enable_triggers`` function at line `5395 <https://github.com/bucardo/bucardo/blob/1ff4d32d1924f3437af3fbcc1a50c1a5b21d5f5c/Bucardo.pm#L5395>`__
+   c. Scroll down to the ``enable_triggers`` function at line `5395 <https://github.com/bucardo/bucardo/blob/1ff4d32d1924f3437af3fbcc1a50c1a5b21d5f5c/Bucardo.pm#L5395>`__.
 
-   #. On line 5428, change ``SET session_replication_role = default`` to
+   d. On line 5428, change ``SET session_replication_role = default`` to
       the following:
 
       ::
 
          $dbh->do(q{select aiven_extras.session_replication_role('origin');});
 
-   #. | Save your changes and close the file.
+   e. | Save your changes and close the file.
 
 #. | Add your source and destination databases.
    | For example:
