@@ -94,7 +94,8 @@ entries:
             title: Setting up SAML with OneLogin
           - file: docs/platform/howto/saml/setup-saml-azure
             title: Setting up SAML with Azure
-
+          - file: docs/platform/howto/saml/setup-saml-okta
+            title: Setting up SAML with Okta
     - file: docs/platform/reference
       title: Reference
       entries:
