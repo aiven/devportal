@@ -219,7 +219,7 @@ As `Papertrail <https://www.papertrail.com/>`_ identifies the client based on
 the server and port  you only need to copy the appropriate values from the
 "Log Destinations" page and use those as the values for ``server`` and ``port``
 respectively. You **do not need** the ca-bundle as the Papertrail servers use
-certificates signed by known CAs. You also need to set the format to
+certificates signed by a known CA. You also need to set the format to
 ``rfc3164`` .
 
 ::
