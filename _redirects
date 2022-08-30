@@ -38,7 +38,7 @@ https://developer.aiven.io/* https://docs.aiven.io/:splat 301!
 
 # Renamed/deleted files
 /docs/products/flink/howto/real-time-alerting-solution-cli.html       /docs/products/flink/howto/real-time-alerting-solution.html
-/docs/platform/howto/disable-user-2fa.html                            /docs/platform/howto/user-2fa.html
+/docs/platform/howto/disable-user-2fa.html                            /docs/platform/howto/user-2fa.html                                  301!
+/docs/tools/terraform/upgrade-provider-v1-v2.html                     /docs/tools/terraform/howto/upgrade-provider-v1-v2.html             301!
 /docs/products/mysql/howto/max-number-of-connections.html             /docs/products/mysql/concepts/max-number-of-connections.html
 /docs/products/postgresql/reference/plan-iops.html                    /docs/products/postgresql/reference/resource-capability.html
-/docs/tools/terraform/upgrade-provider-v1-v2                          /docs/tools/terraform/howto/upgrade-provider-v1-v2
