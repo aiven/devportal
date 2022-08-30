@@ -66,7 +66,6 @@ entries:
           - file: docs/platform/howto/public-access-in-vpc.rst
           - file: docs/platform/howto/static-ip-addresses.rst
           - file: docs/platform/howto/private-ip-resolution.rst
-          - file: docs/platform/howto/private-access-error
       - file: docs/platform/howto/list-monitoring
         title: Monitoring management
         entries:
@@ -157,7 +156,9 @@ entries:
             - file: docs/tools/terraform/howto/upgrade-provider-v1-v2
               title: Upgrade the Aiven Terraform Provider from v1 to v2
             - file: docs/tools/terraform/howto/config-postgresql-provider
-              title: Use PostgreSQL provider alongside Aiven Terraform Provider  
+              title: Use PostgreSQL provider alongside Aiven Terraform Provider 
+            - file: docs/tools/terraform/howto/private-access-error
+              title: Issue when enabling private access in Terraform 
         - file: docs/tools/terraform/concepts
           title: Concepts
           entries:
