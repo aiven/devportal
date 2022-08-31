@@ -120,6 +120,7 @@ entries:
       entries:
         - file: docs/integrations/rsyslog/logtail
           title: Logtail
+    - file: docs/integrations/send-logs-to-elasticsearch
   - file: docs/tools
     entries:
       - file: docs/tools/cli

@@ -72,6 +72,8 @@ Deletes a service integration.
 
     avn service integration-delete 8e752fa9-a0c1-4332-892b-f1757390d53f
 
+.. _avn_service_integration_endpoint_create:
+
 ``avn service integration-endpoint-create``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
@@ -121,6 +123,7 @@ Deletes a service integration endpoint.
 
     avn service integration-endpoint-delete 97590813-4a58-4c0c-91fd-eef0f074873b
 
+.. _avn_service_integration_endpoint_list:
 
 ``avn service integration-endpoint-list``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
