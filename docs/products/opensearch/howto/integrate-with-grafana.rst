@@ -34,7 +34,7 @@ Integration steps
 #. Set *URL* to ``OPENSEARCH_URI``.
 #. In *Auth* section enable **Basic auth** and **With Credentials**.
 #. In *Basic Auth Details* set your ``OPENSEARCH_USER`` and ``OPENSEARCH_PASSWORD``.
-#. Scroll down to *OpenSearch details* and set the index name(for example, ``logs-*``).
+#. Scroll down to *OpenSearch details* and set the index name or an index pattern (for example, ``logs-*``).
 #. Set the time field name (in case you use :doc:`the log integration <opensearch-log-integration>` it will be ``timestamp``).
 #. Press on **Save & test**. In case of errors, verify that the data source information is set correctly.
 
