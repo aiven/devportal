@@ -1,7 +1,7 @@
 Integrate with Grafana®
 =======================
 
-You can monitor and set up alerts for the data in your Aiven for OpenSearch service with Grafana. This feature is especially powerful if you're sending your Aiven service logs to an OpenSearch instance using :doc:`log integration <opensearch-log-integration>`.
+You can monitor and set up alerts for the data in your Aiven for OpenSearch® service with Grafana. This feature is especially powerful if you're sending your Aiven service logs to an OpenSearch instance using :doc:`log integration <opensearch-log-integration>`.
 
 Prerequisites
 --------------
@@ -41,6 +41,6 @@ Integration steps
 
 Create dashboards and alerts
 -------------------------------
-Using Grafana's interface you can now create dashboards and alerts.
+Using the interface of Grafana you can now create dashboards and alerts.
 
 Select **Create** from the menu on the left and select to create either a dashboard or an alert rule. Follow the instructions to set them up.
