@@ -1,7 +1,7 @@
 ``avn service integration``
 ==============================================
 
-Here you’ll find the full list of commands for ``avn service integration``.
+Here you'll find the full list of commands for ``avn service integration``.
 
 
 Manage Aiven internal and external integrations
@@ -34,6 +34,10 @@ Creates a new service integration.
     - The integration parameters as JSON string or path to file (preceded by ``@``)
   * - ``-c KEY=VALUE``
     - The custom configuration settings. 
+
+.. Tip::
+
+      Endpoint IDs are used when creating an integration with external services. To get an integration endpoint ID use the :ref:`dedicated endpoint list <avn_service_integration_endpoint_list>` command.
 
 .. Note::
 
@@ -101,6 +105,20 @@ Creates an external service integration endpoint.
     avn service integration-endpoint-create --endpoint-name demo-ext-kafka \
         --endpoint-type external_kafka  \
         --user-config-json  '{"bootstrap_servers":"servertest:123","security_protocol":"PLAINTEXT"}'
+
+**Example:** Create an external Loggly endpoint named ``Loggly-ext``.
+
+::
+
+    avn service integration-endpoint-create         \
+      --endpoint-name Loggly-ext                    \
+      -d loggly -t rsyslog                          \
+      -c server=logs-01.loggly.com                  \
+      -c port=6514                                  \
+      -c format=rfc5424                             \
+      -c tls=true                                   \
+      -c sd='TOKEN@NNNNN TAG="tag-of-your-choice"'  \
+      -c ca='loggly-tls-cert'
 
 
 ``avn service integration-endpoint-delete``

@@ -120,6 +120,8 @@ entries:
       entries:
         - file: docs/integrations/rsyslog/logtail
           title: Logtail
+        - file: docs/integrations/rsyslog/loggly
+          title: Loggly
     - file: docs/integrations/send-logs-to-elasticsearch
   - file: docs/tools
     entries:
@@ -431,6 +433,7 @@ entries:
             entries:
               - file: docs/products/postgresql/howto/connect-psql
               - file: docs/products/postgresql/howto/connect-pgadmin
+              - file: docs/products/postgresql/howto/connect-skyvia
               - file: docs/products/postgresql/howto/visualize-grafana
               - file: docs/products/postgresql/howto/report-metrics-grafana
               - file: docs/products/postgresql/howto/monitor-with-pgwatch2
