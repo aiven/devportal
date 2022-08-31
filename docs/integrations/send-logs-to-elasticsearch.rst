@@ -47,12 +47,13 @@ Send logs to an external service
 #. In the newly appeared modal window choose the endpoint with name ``CONNECTION_NAME`` from the list and press **ENABLE**.
 #. You can now close the modal window.
 #. Observe the status change for newly added integration in the section **Service integrations** on the service overview page.
-#. Verify that the logs are flowing into your Elasticsearch service.send-logs-to-elasticsearch.rst
+#. Verify that the logs are flowing into your Elasticsearch.
 
+.. note:: Logs are split per day with index name consisting of your desired index prefix and a date in a format year-month-day, for example ``logs-2022-08-30``.
 
 .. note:: You can also set up the integration using Aiven CLI and the commands :ref:`avn service integration-endpoint-create <avn_service_integration_endpoint_create>` and :ref:`avn service integration-endpoint-list <avn_service_integration_endpoint_list>` and :ref:`avn_service_integration_create`
 
 
-.. note:: To be able to add integrations, your Aiven services might require the minimal plan level. For example, integrations are not available for the plan Hobbyist.
+.. warning:: Integration are not available on Hobbyist plans. If you want to enable integrations please select at least a startup plan.
 
 
