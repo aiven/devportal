@@ -9,42 +9,34 @@ Variables
 
 These are the placeholders you will need to replace in the code sample:
 
-==================      =======================================================================
+==================      ===========================================================================
 Variable                Description
-==================      =======================================================================
-``SERVER``              Hostname for PostgreSQL connection, from the service overview page
-``PORT``                Port for PostgreSQL connection, from the service overview page
-``DATABASE``            Database Name for PostgreSQL connection, from the service overview page
-``USERNAME``            ``avnadmin``
-``PASSWORD``            ``avnadmin`` password, from the service overview page
-==================      =======================================================================
+==================      ===========================================================================
+``HOSTNAME``            Hostname for the PostgreSQL connection, from the service overview page
+``PORT``                Port for the PostgreSQL connection, from the service overview page
+``DATABASE_NAME``       Database Name for the PostgreSQL connection, from the service overview page
+``USERNAME``            Username for the PostgreSQL connection
+``PASSWORD``            Password for the above specified username
+==================      ===========================================================================
 
 Connect to PostgreSQL
 '''''''''''''''''''''
 
 1. In skyvia workspace -> **Connections** -> **Connector** -> **PostgreSQL**.
 2. In the **General** Tab give the connection a Name (e.g. ``MyDatabase``)
-3. In the **Connection** tab set
-    * **Server** to ``SERVER``
-    * **Port**: to ``PORT``
-    * **User ID** to ``avnadmin``
-    * **Password** to ``PASSWORD``
-    * **Database** to ``YourDatabase``
-  
-.. image:: /images/products/postgresql/connect-skyvia-settings.png
-    :alt: skyvia settings
+3. In the **Connection** tab set:
 
-4. Click on **Advanced Settings** to expand the settings.
+   * **Server** to ``HOSTNAME``
+   * **Port**: to ``PORT``
+   * **User ID** to ``USERNAME``
+   * **Password** to ``PASSWORD``
+   * **Database** to ``DATABASE``
 
-.. image:: /images/products/postgresql/connect-skyvia-ssl.png
-    :alt: skyvia advanced settings
+4. Click on **Advanced Settings** to expand the settings and set:
 
-5. In the **SSL** Mode set to ``Require``.
-6. Copy and paste ``CA Certificate`` from Aiven console into ``SSL CA Cert``.
-   
-.. image:: /images/products/postgresql/connect-skyvia-cacert.png
-    :alt: skyvia CA cert
+   * **SSL** Mode set to ``Require``
+   * In **SSL CA Cert** copy and paste ``CA Certificate`` from the `Aiven Console <https://console.aiven.io/>`_
+   * **SSL Cert** and **SSL Key** empty.
+   * **SSL TLS Protocol** to ``1.2``.
 
-7. Leave ``empty`` for **SSL Cert** and **SSL Key**.
-8. Set ``SSL TLS Protocol`` to ``1.2``.
-9. Click on **Save Connection**.
+5. Click on **Save Connection**.
