@@ -122,6 +122,7 @@ entries:
           title: Logtail
         - file: docs/integrations/rsyslog/loggly
           title: Loggly
+    - file: docs/integrations/send-logs-to-elasticsearch
   - file: docs/tools
     entries:
       - file: docs/tools/cli
