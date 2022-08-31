@@ -3,9 +3,10 @@ name: "LinkCheck - All files"
 on:
   schedule:
     - cron: "0 5 * * 2"
+  workflow_dispatch:
 
 jobs:
-  run-checks:
+  linkcheck-files:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repo
