@@ -15,7 +15,7 @@ There are three built-in ways to inspect service logs at Aiven:
 
 * `Aiven API <https://api.aiven.io/doc/#operation/ProjectGetServiceLogs>`_ endpoint is available for fetching the same information two above methods output, in case programmatic access is needed.
 
-Log Retention Policy
+Log retention policy
 --------------------
 Service logs are generally retained for a few days, and for some Aiven Services up to 14 days maximum.  Unless you are using :doc:`logs integration </docs/integrations>` to another service, older logs are not accessible.
 
