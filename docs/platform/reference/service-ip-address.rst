@@ -1,4 +1,4 @@
-Service ip address and dns
+Service IP address and DNS
 ==========================
 
 When a new service is created in Aiven, a cloud service provider will dynamically assign a public IP address from their connection pool. This IP address is not a permanent one, because with every service node update (failover, maintenance upgrade or cloud migration) the IP address will change as Aiven will create a new VM, migrate to it and then retire the older node. 
