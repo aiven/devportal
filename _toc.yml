@@ -120,6 +120,9 @@ entries:
       entries:
         - file: docs/integrations/rsyslog/logtail
           title: Logtail
+        - file: docs/integrations/rsyslog/loggly
+          title: Loggly
+    - file: docs/integrations/send-logs-to-elasticsearch
   - file: docs/tools
     entries:
       - file: docs/tools/cli
@@ -424,11 +427,13 @@ entries:
                 - file: docs/products/postgresql/howto/logical-replication-aws-rds
                 - file: docs/products/postgresql/howto/logical-replication-gcp-cloudsql
               - file: docs/products/postgresql/howto/migrate-pg-dump-restore
+              - file: docs/products/postgresql/howto/migrate-using-bucardo
               - file: docs/products/postgresql/howto/run-aiven-db-migrate-python
           - file: docs/products/postgresql/howto/list-integrations
             entries:
               - file: docs/products/postgresql/howto/connect-psql
               - file: docs/products/postgresql/howto/connect-pgadmin
+              - file: docs/products/postgresql/howto/connect-skyvia
               - file: docs/products/postgresql/howto/visualize-grafana
               - file: docs/products/postgresql/howto/report-metrics-grafana
               - file: docs/products/postgresql/howto/monitor-with-pgwatch2
@@ -566,6 +571,7 @@ entries:
           - file: docs/products/opensearch/howto/import-opensearch-data-using-elasticsearch-dump
           - file: docs/products/opensearch/howto/set_index_retention_patterns
           - file: docs/products/opensearch/howto/opensearch-alerting-api
+          - file: docs/products/opensearch/howto/integrate-with-grafana
           - file: docs/products/opensearch/howto/handle-low-disk-space
       - file: docs/products/opensearch/dashboards
         title: OpenSearch Dashboards

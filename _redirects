@@ -18,6 +18,12 @@ https://developer.aiven.io/* https://docs.aiven.io/:splat 301!
 /cli                /docs/tools/cli.html
 /terraform          /docs/tools/terraform/index.html
 
+# Renamed/deleted files
+/docs/products/flink/howto/real-time-alerting-solution-cli.html       /docs/products/flink/howto/real-time-alerting-solution.html
+/docs/platform/howto/disable-user-2fa.html                            /docs/platform/howto/user-2fa.html
+/docs/tools/terraform/upgrade-provider-v1-v2.html                     /docs/tools/terraform/howto/upgrade-provider-v1-v2.html
+/docs/products/mysql/howto/max-number-of-connections.html             /docs/products/mysql/concepts/max-number-of-connections.html
+/docs/products/postgresql/reference/plan-iops.html                    /docs/products/postgresql/reference/resource-capability.html
 
 # Redirect from .index.html to specific page names for landing
 
@@ -35,7 +41,3 @@ https://developer.aiven.io/* https://docs.aiven.io/:splat 301!
 /docs/:section/:subsection/:subsubsection/index.html                   /docs/:section/:subsection/:subsubsection
 /docs/:section/:subsection/:subsubsection/index                        /docs/:section/:subsection/:subsubsection
 /docs/:section/:subsection/:subsubsection/                             /docs/:section/:subsection/:subsubsection
-
-# Renamed/deleted files
-/docs/products/flink/howto/real-time-alerting-solution-cli.html       /docs/products/flink/howto/real-time-alerting-solution.html
-/docs/platform/howto/disable-user-2fa.html                            /docs/platform/howto/user-2fa.html

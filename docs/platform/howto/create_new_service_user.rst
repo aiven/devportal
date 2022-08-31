@@ -20,4 +20,5 @@ Service users are users that only exist in the scope of the corresponding Aiven 
     Success!
     Service user 'testuser' has been created.
 
-YOu can also use the :ref:`dedicated user-create function <avn-service-user-create>` to create a new service user via the :doc:`Aiven CLI </docs/tools/cli>`.
+.. note::
+    You can :ref:`create a new service user using the Aiven CLI <avn-service-user-create>` as well.
