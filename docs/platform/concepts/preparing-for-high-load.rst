@@ -1,4 +1,4 @@
-Preparing for high load
+Prepare for high load
 =======================
 
 If you are expecting higher than usual traffic on your Aiven services, then we outline several recommendations and best practices that can be applied ahead of time to make sure you have the best tools and your service is ready to sustain high loads. If you still have time to prepare there are many ways to set yourself up for success.
@@ -37,7 +37,7 @@ Integrate an Aiven service
 
 If you are not already using an external tool for visualizing metrics and logs you might want to consider using our built-in service integrations to easily connect these to other Aiven services.
 
-For example you could have your service metrics ingested into an InfluxDB® service and visualized using a Grafana®. The advantage here is that we provide you with pre-built dashboards for any connected Aiven service which give you immediate insights into the performance of your services. The process is outlined `here <https://help.aiven.io/en/articles/1456441-getting-started-with-service-integrations>`_.
+For example you could have your service metrics ingested into an InfluxDB® service and visualized using a Grafana®. The advantage here is that we provide you with pre-built dashboards for any connected Aiven service which give you immediate insights into the performance of your services. The process is outlined `here <https://docs.aiven.io/docs/integrations.html>`_.
 
 You could also `enable logs integration <https://docs.aiven.io/docs/products/opensearch/howto/opensearch-log-integration.html>`_ for your services to have the logs pumped into an OpenSearch® service (on Aiven or external) and then use the built-in Kibana UI to keep an eye on things.
 
@@ -71,7 +71,8 @@ After you start the upgrade, Aiven will perform an upgrade in a rolling forward 
 
 Aiven services are billed per hour and can be downgraded to a smaller plan at a later date if the heavy traffic is expected to fall, e.g. after a seasonal spike in demand. Currently the only exception is a Cassandra® service: the size of the nodes can be changed freely but the total number of nodes cannot be reduced.
 
-You can read more about how upgrade/updates are applied at Aiven `here <https://help.aiven.io/en/articles/489581-how-do-you-apply-software-updates-and-security-patches>`_.
+You can read more about how upgrade/updates are applied at Aiven `here <https://docs.aiven.io/docs/platform/howto/scale-services.html>`_.
+
 
 Custom plans
 ''''''''''''
@@ -103,7 +104,7 @@ Remember also that in case one of your service nodes terminates unexpectedly at 
 Database forks
 --------------
 
-Did you know that it is possible to run load tests against copies of your production databases using the Fork Database option in the Aiven Console?
+Did you know that it is possible to run load tests against copies of your production databases using the `Fork Database <https://docs.aiven.io/docs/platform/howto/console-fork-service.html>`_ option in the Aiven Console?
 
 This uses the same procedure of restoring a backup to a separate service that can be used for data recovery in case of accidental deletion of data by your code or human error. It is good to practice the steps that would need to be taken in this failure scenario as well as test the maximum load your system can comfortably handle.
 
@@ -116,8 +117,8 @@ Finally it is worth looking at any optimizations you can make to your usage of a
 
 You can read more about this in our individual support articles:
 
-- `Kafka® and Kafka® Connect best practices <https://help.aiven.io/en/articles/4738784-basic-kafka-best-practices>`_
+- `Kafka® and Kafka® Connect best practices <https://docs.aiven.io/docs/products/kafka/howto/best-practices.html>`_
 
-- `PostgreSQL® best practices <https://help.aiven.io/en/articles/4738831-basic-postgresql-best-practices>`_
+- `PostgreSQL® best practices <https://docs.aiven.io/docs/products/postgresql/howto/optimize-pg-slow-queries.html>`_
 
 If you have any questions, please feel free to reach out to our support@Aiven.io and let us know.
