@@ -13,7 +13,7 @@ Karapace rest provides a RESTful interface to your Apache Kafka cluster, allowin
 Get started with Karapace
 ------------------------------------------------
 
-Take your first steps Karapace by following our :doc:`/docs/products/karapace/concepts` article, or browse through our full list of articles:
+Take your first steps Karapace by following our :doc:`/docs/products/kafka/karapace/concepts` article, or browse through our full list of articles:
 
 .. grid:: 1 2 2 2
 
