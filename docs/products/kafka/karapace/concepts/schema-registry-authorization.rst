@@ -4,7 +4,7 @@ Karapace schema registry authorization
 The schema registry authorization feature when enabled in `Karapace schema registry <../getting-started>`_ allows you to authenticate the user, and control read or write access to the individual resources available in the Schema Registry. 
 Authorization in Karapace is achieved by using Access Control Lists (ACLs). ACLs provide a way to achieve fine-grained access control for the resources in Karapace.
 
-.. image:: /images/products/Karapace/ACL.png
+.. image:: /images/products/karapace/ACL.png
   :alt: Access control list
 
 .. Note::

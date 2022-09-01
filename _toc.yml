@@ -382,15 +382,15 @@ entries:
       - file: docs/products/kafka/karapace
         title: Karapace
         entries:
-        - file: docs/products/kafka/kaparace/getting-started
-        - file: docs/products/kafka/kaparace/concepts
+        - file: docs/products/kafka/karapace/getting-started
+        - file: docs/products/kafka/karapace/concepts
           entries:
-          - file: docs/products/kafka/kaparace/concepts/schema-registry-authorization
-        - file: docs/products/kafka/kaparace/howto
+          - file: docs/products/kafka/karapace/concepts/schema-registry-authorization
+        - file: docs/products/kafka/karapace/howto
           title: HowTo
           entries:
-            - file: docs/products/kafka/kaparace/howto/enable-schema-registry-authorization
-            - file: docs/products/kafka/kaparace/howto/manage-schema-registry-authorization
+            - file: docs/products/kafka/karapace/howto/enable-schema-registry-authorization
+            - file: docs/products/kafka/karapace/howto/manage-schema-registry-authorization
 
   - file: docs/products/postgresql
     title: PostgreSQL
