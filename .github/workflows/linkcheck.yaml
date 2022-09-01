@@ -22,3 +22,10 @@ jobs:
           pip install -r requirements.txt
       - name: LinkCheck
         run: make linkcheck
+      - name: Create Issue
+        if: failure()
+        uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          filename: .github/test.md
