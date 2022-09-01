@@ -7,13 +7,14 @@ Here you’ll find the full list of commands for ``avn service schema-registry-a
 Manage Karapace schema registry access control lists for Apache Kafka®
 ----------------------------------------------------------------------
 
-The following are the commands for managing `Karapace schema registry authorization </docs/products/kafka/concepts/schema-registry-authorization>`_ for your Aiven for Apache Kafka® service via ``avn`` commands.
-For more information on Karapace schema registry authorization and ACLs definition, see `Karapace schema registry authorization </docs/products/kafka/karapace/concept/schema-registry-authorization>`_.
+Using the following commands you can manage :doc:`Karapace schema registry authorization </docs/products/kafka/karapace/concepts/schema-registry-authorization>` for your Aiven for Apache Kafka® service via the ``avn`` commands.
+
 
 ``avn service schema-registry-acl-add``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 You can add a Karapace schema registry ACL entry by using the command:  
-``avn service schema-registry-acl-add``
+::
+  avn service schema-registry-acl-add
 
 Where: 
 
@@ -46,12 +47,13 @@ The following example shows you how to add an ACL entry to grant a user (``user_
     --resource 'Subject:s123*'
 
 .. Note:: 
-  You cannot edit an Karapace schema registry ACL entry. You need to create a new entry and delete the older entry. 
+  You cannot edit a Karapace schema registry ACL entry. You need to create a new entry and delete the older entry. 
 
 ``avn service schema-registry-acl-delete``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 You can delete a Karapace schema registry ACL entry using the command:
-``avn service schema-registry-acl-delete``
+::
+  avn service schema-registry-acl-delete
 
 Where: 
 
@@ -75,7 +77,8 @@ The following example deletes the Karapace schema registry ACL with ID ``acl3604
 ``avn service schema-registry-acl-list``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 You can view a list of all Karapace schema registry ACL entries defined using the command: 
-``avn service schema-registry-acl-list``
+::
+  avn service schema-registry-acl-list
 
 Where: 
 
