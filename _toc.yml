@@ -379,6 +379,19 @@ entries:
           entries:
             - glob: docs/products/kafka/kafka-mirrormaker/reference/*
 
+      - file: docs/products/kafka/karapace
+        title: Karapace
+        entries:
+        - file: docs/products/kafka/kaparace/getting-started
+        - file: docs/products/kafka/kaparace/concepts
+          entries:
+          - file: docs/products/kafka/kaparace/concepts/schema-registry-authorization
+        - file: docs/products/kafka/kaparace/howto
+          title: HowTo
+          entries:
+            - file: docs/products/kafka/kaparace/howto/enable-schema-registry-authorization
+            - file: docs/products/kafka/kaparace/howto/manage-schema-registry-authorization
+
   - file: docs/products/postgresql
     title: PostgreSQL
     entries:
