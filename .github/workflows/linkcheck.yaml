@@ -3,6 +3,7 @@ name: "LinkCheck - All files"
 on:
   schedule:
     - cron: "0 5 * * 2"
+  workflow_dispatch:
 
 jobs:
   run-checks:
