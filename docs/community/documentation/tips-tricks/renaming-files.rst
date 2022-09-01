@@ -21,5 +21,5 @@ If you are moving or renaming a file, put the old and new URLs into the file. If
 
 
 `BEFORE <https://github.com/pyvista/pyvista/blob/main/CONTRIBUTING.rst#testing>`_.
-`AFTER <https://github.com/pyvista/pyvista/blob/main/CONTRIBUTING.rst#user-content-testing`_.
+`AFTER <https://github.com/pyvista/pyvista/blob/main/CONTRIBTING.rst#user-content-testing`_.
 

@@ -23,3 +23,6 @@ jobs:
           pip install -r requirements.txt
       - name: LinkCheck
         run: make linkcheck
+      - name: Create Issue
+        if: failure() # OR Check a bool variable you create and toggle as needed
+        uses: JasonEtco/create-an-issue@masterenv:GITHUB_TOKEN:${{ secrets.GITHUB_TOKEN }}
