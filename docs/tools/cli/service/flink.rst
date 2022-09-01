@@ -1,7 +1,7 @@
 ``avn service flink`` |beta|
 ==================================================================
 
-Here you’ll find the full list of commands for ``avn service flink``.
+Here you'll find the full list of commands for ``avn service flink``.
 
 
 Manage an Apache Flink® table
@@ -20,36 +20,96 @@ Creates a new Aiven for Apache Flink table.
     - Information
   * - ``service_name``
     - The name of the service
+  * - ``table_properties``
+    - Table properties definition as JSON string or path (preceded by '@') to a JSON configuration file
+
+The ``table_properties`` parameter should contain the following common properties in JSON format
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+
+  * - ``name``
+    - Logical table name
   * - ``integration_id``
     - The ID of the integration to use to locate the source/sink table/topic. The integration ID can be found with the :ref:`integration-list<avn_service_integration_list>` command
-  * - ``--table-name``
-    - The Flink table name
-  * - ``--kafka-topic``
-    - The Aiven for Apache Kafka® topic to be used as source/sink (Only for Kafka integrations)
-  * - ``--kafka-connector-type``
-    - The :doc:`Flink connector type for Apache Kafka </docs/products/flink/concepts/kafka-connectors>`; possible values are ``upsert-kafka`` and ``kafka``
-  * - ``--kafka-key-format``
-    - The :doc:`Apache Kafka message key format </docs/products/flink/concepts/kafka-connector-requirements>`; possible values are ``avro,avro-confluent``, ``debezium-avro-confluent``, ``debezium-json``, and ``json``
-  * - ``--kafka-key-fields``
-    - The list of :doc:`fields to be used as Key for the message </docs/products/flink/concepts/kafka-connector-requirements>`
-  * - ``--kafka-value-format``
-    - The :doc:`Apache Kafka message value format </docs/products/flink/concepts/kafka-connector-requirements>`; possible values are ``avro,avro-confluent``, ``debezium-avro-confluent``, ``debezium-json``, and ``json``
-  * - ``--kafka-startup-mode``
-    - The Apache Kafka consumer starting offset; possible values are ``earliest-offset`` starting from the beginning of the topic and ``latest-offset`` starting from the last message
-  * - ``--jdbc-table``
-    - The Aiven for PostgreSQL® table name to be used as source/sink (Only for PostgreSQL integrations)
-  * - ``partitioned-by``
-    - A column from the table schema to use as Flink table partition definition
-  * - ``--like-options``
-    - Creates the Flink table based on the definition of another existing Flink table
- 
+  * - ``schema_sql``
+    - The Flink table SQL schema definition
 
-**Example:** Create a Flink table named ``KAlert`` with:
+And then a property identifying the type of Flink table connector within the one supported.
+
+For the :doc:`insert only mode for Aiven for Apache Kafka® </docs/products/flink/concepts/kafka-connectors>`, add a JSON field named ``kafka`` with the following fields included in a JSON object:
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  
+  * - ``scan_startup_mode``
+    - The Apache Kafka consumer starting offset; possible values are ``earliest-offset`` starting from the beginning of the topic and ``latest-offset`` starting from the last message
+  * - ``topic``
+    - The name of the source or target Aiven for Apache Kafka topic
+  * - ``value_fields_include``
+    - Defines if the message key fields are included in the value; possible values are ``ALL`` to include the key fields in the valye, ``EXCEPT_KEY`` to remove them
+  * - ``key_format``
+    - Defines the format used to convert the message value; possible values are ``json`` or ``avro``; if the key is not used, the ``key_format`` field can be omitted
+  * - ``value_format``
+    - Defines the format used to convert the message value; possible values are ``json`` or ``avro``
+
+For the :doc:`upsert mode for Aiven for Apache Kafka® </docs/products/flink/concepts/kafka-connectors>`, add a JSON field named ``upsert-kafka`` with the following fields included in a JSON object:
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  
+  * - ``topic``
+    - The name of the source or target Aiven for Apache Kafka topic
+  * - ``value_fields_include``
+    - Defines if the message key fields are included in the value; possible values are ``ALL`` to include the key fields in the valye, ``EXCEPT_KEY`` to remove them
+  * - ``key_format``
+    - Defines the format used to convert the message value; possible values are ``json`` or ``avro``; if the key is not used, the ``key_format`` field can be omitted
+  * - ``value_format``
+    - Defines the format used to convert the message value; possible values are ``json`` or ``avro``
+
+
+For the :doc:`JDBC query mode for Aiven for PostgreSQL® </docs/products/flink/howto/connect-pg>`, add a JSON field named ``jdbc`` with the following fields included in a JSON object:
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+
+  * - ``table_name``
+    - The name of the Aiven for PostgreSQL® database table
+
+For the :doc:`index mode for Aiven for OpenSearch® </docs/products/flink/howto/connect-pg>`, add a JSON field named ``opensearch`` with the following fields included in a JSON object:
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+
+  * - ``index``
+    - The name of the  Aiven for OpenSearch® index to use
+
+
+**Example:** Create a Flink table named ``KAlert`` on top of an Aiven for Apache Kafka topic in **insert mode** with:
 
 * ``alert`` as source Apache Kafka **topic**
 * ``kafka`` as connector type
 * ``json`` as value and key data format
-* the field ``node`` as key
 * ``earliest-offset`` as starting offset
 * ``cpu FLOAT, node INT, cpu_percent INT, occurred_at TIMESTAMP_LTZ(3)`` as **SQL schema**
 * ``ab8dd446-c46e-4979-b6c0-1aad932440c9`` as integration ID
@@ -57,15 +117,84 @@ Creates a new Aiven for Apache Flink table.
 
 ::
   
-  avn service flink table create flink-devportal-demo ab8dd446-c46e-4979-b6c0-1aad932440c9  \
-    --table-name KAlert                                                                     \
-    --kafka-topic alert                                                                     \
-    --kafka-connector-type kafka                                                            \
-    --kafka-key-format json                                                                 \
-    --kafka-key-fields node                                                                 \
-    --kafka-value-format json                                                               \
-    --kafka-startup-mode earliest-offset                                                    \
-    --schema-sql "cpu FLOAT, node INT, cpu_percent INT, occurred_at TIMESTAMP_LTZ(3)"
+  avn service flink table create flink-devportal-demo \
+    """{
+        \"name\":\"KAlert\",
+        \"integration_id\": \"ab8dd446-c46e-4979-b6c0-1aad932440c9\",
+        \"kafka\": {
+            \"scan_startup_mode\": \"earliest-offset\",
+            \"topic\": \"alert\",
+            \"value_fields_include\": \"ALL\",
+            \"value_format\": \"json\",
+            \"key_format\": \"json\"
+        },
+        \"schema_sql\":\"cpu FLOAT, node INT, cpu_percent INT, occurred_at TIMESTAMP_LTZ(3)\"    
+    }"""
+
+**Example:** Create a Flink table named ``KAlert`` on top of an Aiven for Apache Kafka topic in **upsert mode** with:
+
+* ``alert`` as source Apache Kafka **topic**
+* ``upsert-kafka`` as connector type
+* ``json`` as value and key data format
+* ``cpu FLOAT, node INT PRIMARY KEY, cpu_percent INT, occurred_at TIMESTAMP_LTZ(3)`` as **SQL schema**
+* ``ab8dd446-c46e-4979-b6c0-1aad932440c9`` as integration ID
+* ``flink-devportal-demo`` as service name
+
+::
+  
+  avn service flink table create flink-devportal-demo \
+    """{
+        \"name\":\"Kalert\",
+        \"integration_id\": \"ab8dd446-c46e-4979-b6c0-1aad932440c9\",
+        \"upsert_kafka\": {
+            \"key_format\": \"json\",
+            \"topic\": \"alert\",
+            \"value_fields_include\": \"ALL\",
+            \"value_format\": \"json\"
+        },
+        \"schema_sql\":\"cpu FLOAT, node INT PRIMARY KEY, cpu_percent INT, occurred_at TIMESTAMP_LTZ(3)\"    
+    }"""
+
+**Example:** Create a Flink table named ``KAlert`` on top of an Aiven for PostgreSQL table with:
+
+* ``alert`` as source PostgreSQL **table**
+* ``jdbc`` as connector type
+* ``cpu FLOAT, node INT PRIMARY KEY, cpu_percent INT, occurred_at TIMESTAMP(3)`` as **SQL schema**
+* ``ab8dd446-c46e-4979-b6c0-1aad932440c9`` as integration ID
+* ``flink-devportal-demo`` as service name
+
+::
+  
+  avn service flink table create flink-devportal-demo \
+    """{
+        \"name\":\"KAlert\",
+        \"integration_id\": \"ab8dd446-c46e-4979-b6c0-1aad932440c9\",
+        \"jdbc\": {
+            \"table_name\": \"alert\"
+        },
+        \"schema_sql\":\"cpu FLOAT, node INT PRIMARY KEY, cpu_percent INT, occurred_at TIMESTAMP(3)\"    
+    }"""
+
+**Example:** Create a Flink table named ``KAlert`` on top of an Aiven for OpenSearch index with:
+
+* ``alert`` as source OpenSearch **index**
+* ``opensearch`` as connector type
+* ``cpu FLOAT, node INT PRIMARY KEY, cpu_percent INT, occurred_at TIMESTAMP(3)`` as **SQL schema**
+* ``ab8dd446-c46e-4979-b6c0-1aad932440c9`` as integration ID
+* ``flink-devportal-demo`` as service name
+
+::
+  
+  avn service flink table create flink-devportal-demo \
+    """{
+        \"name\":\"KAlert\",
+        \"integration_id\": \"ab8dd446-c46e-4979-b6c0-1aad932440c9\",
+        \"opensearch\": {
+            \"index\": \"alert\"
+        },
+        \"schema_sql\":\"cpu FLOAT, node INT PRIMARY KEY, cpu_percent INT, occurred_at TIMESTAMP(3)\"    
+    }"""
+
 
 ``avn service flink table delete``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -111,6 +240,44 @@ Retrieves the definition of an existing Aiven for Apache Flink table.
   
   avn service flink table get flink-devportal-demo 8b8ac2fe-b6eb-46bc-b327-fb4b84d27276
 
+An example of ``avn service flink table get`` output:
+
+.. code:: text
+
+  INTEGRATION_ID                        TABLE_ID                              TABLE_NAME   SCHEMA_SQL              COLUMNS
+  ====================================  ====================================  ===========  ======================  ===============================================================================================================
+  77741d89-71f1-4de6-897a-fd83bce0ee62  f7bbe17b-ab47-46fd-83cb-2f5d23656018  mytablename  "id INT,name string"   ß{"data_type": "INT", "name": "id", "nullable": true}, {"data_type": "STRING", "name": "name", "nullable": true}
+
+.. Tip::
+
+  Adding the ``--json`` flag retrieves the table information in a richer JSON format
+
+.. code:: json
+
+  [
+      {
+          "columns": [
+              {
+                  "data_type": "INT",
+                  "name": "id",
+                  "nullable": true
+              },
+              {
+                  "data_type": "STRING",
+                  "name": "name",
+                  "nullable": true
+              }
+          ],
+          "integration_id": "77741d89-71f1-4de6-897a-fd83bce0ee62",
+          "jdbc": {
+              "table_name": "mysourcetablename"
+          },
+          "schema_sql": "id INT,name string",
+          "table_id": "f7bbe17b-ab47-46fd-83cb-2f5d23656018",
+          "table_name": "mytablename"
+      }
+  ]
+
 .. _avn_service_flink_table_list:
 
 ``avn service flink table list``
@@ -137,9 +304,10 @@ An example of ``avn service flink table list`` output:
 
 .. code:: text
 
-  INTEGRATION_ID                        TABLE_ID                              TABLE_NAME
-  ====================================  ====================================  ==========
-  ab8dd446-c46e-4979-b6c0-1aad932440c9  acb601d7-2000-4076-ae58-563aa7d9ab5a  KAlert
+  INTEGRATION_ID                        TABLE_ID                              TABLE_NAME   SCHEMA_SQL
+  ====================================  ====================================  ===========  ======================
+  315fe8af-34d9-4d7e-8711-bc7b6841dc55  882ee0be-cb0b-4ccf-b4d1-89d2e4a34260  ttt5         "id INT,\nage int"
+  77741d89-71f1-4de6-897a-fd83bce0ee62  f7bbe17b-ab47-46fd-83cb-2f5d23656018  testname445  "id INT,\nname string"
 
 Manage a Flink job
 --------------------------------------------------------
@@ -213,13 +381,13 @@ Retrieves the definition of an existing Aiven for Apache Flink job.
   * - ``service_name``
     - The name of the service
   * - ``job_id``
-    - The ID of the table to retrieve
+    - The ID of the job to retrieve
 
 **Example:** Retrieve the definition of the Flink job with ID ``8b8ac2fe-b6eb-46bc-b327-fb4b84d27276`` belonging to the Aiven for Flink service ``flink-devportal-demo``.
 
 ::
   
-  avn service flink table get flink-devportal-demo 8b8ac2fe-b6eb-46bc-b327-fb4b84d27276
+  avn service flink job get flink-devportal-demo 8b8ac2fe-b6eb-46bc-b327-fb4b84d27276
 
 An example of ``avn service flink job get`` output:
 
