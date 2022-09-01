@@ -31,7 +31,7 @@ Static IP addresses are created in a specific cloud and belong to a specific pro
         available -- dissociate --> created
         created -- delete IP --> none
 
-To create, delete, associate or dissociate IPs, use the :doc:`/docs/tools/cli` tool. To reconfigure a service, set its ``static_ips`` configuration value to ``true`` to use static IPs, or ``false`` to stop using them.
+To create, delete, associate or dissociate IP addresses, use the :doc:`/docs/tools/cli` tool. To reconfigure a service, set its ``static_ips`` configuration value to ``true`` to use static IP addresses, or ``false`` to stop using them.
 
 .. note:: The ``static_ip`` configuration can only be enabled when enough static IP addresses have been created *and associated* with the service.
 
