@@ -723,7 +723,7 @@ entries:
       - glob: docs/community/documentation/tips-tricks/*
         title: Tips & Tricks
     - file: docs/community/challenge/catch-the-bus
-      title: 'Catch the Bus' Aiven challenge with Clickhouse
+      title: Catch the Bus - Aiven challenge with Clickhouse
     - file: docs/community/challenge/the-rolling-challenge
-      title: 'The rolling challenge' with Aiven for Apache Kafka
+      title: The rolling challenge - Aiven for Apache Kafka
 
