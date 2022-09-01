@@ -161,6 +161,8 @@ Manage project certificates
 
 CA certificates are managed at the project level.
 
+.. _avn_project_ca_get:
+
 ``avn project ca-get``
 ''''''''''''''''''''''
 

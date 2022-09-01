@@ -49,17 +49,19 @@ The instructions for setting up local development are in the ``README``.
 
    If there is an associated issue, add ``Fixes <issue-URL>`` to the PR description text - this means the issue will automatically get closed when the PR is merged.
 
-3. We have an automated build process that checks your work against our in-house styles, gets product names with the right capitalization, and checks links. Please don't be alarmed if your build fails! View the output of the failed jobs to find out what happened, or we can advise when we review. You can run these locally if you like: ``make spell`` and ``make linkcheck``.
-
+3. We have an automated build process that checks your work against our in-house styles, gets product names with the right capitalization, and checks links that you added. Please don't be alarmed if your build fails! View the output of the failed jobs to find out what happened, or we can advise when we review. You can run these locally if you like: ``make spell`` and ``make linkcheck``.
+   
 .. tip::
 
     Don't add commands to the accepted words list, these should always be in ``literal`` markup and ignored by the spell checker. Literal markup can't be used inside link text, so reword your link and sentence to avoid this.
+    
+4. On devportal, some CI/CD processes run weekly. Some of those processes are automation that helps to keep our documentation up-to-date. In another process we [check](https://github.com/aiven/devportal/blob/main/.github/workflows/linkcheck.yaml) for broken links in our docs. If the build fails, a GitHub Issue is open to inform collaborators and maintainers about it.
 
-4. Every pull request generates a preview link, that will be added to your pull request as a comment. This link is publicly available and does not change during the lifetime of your pull request. Feel free to share it with others who might want a preview of your changes.
+5. Every pull request generates a preview link, that will be added to your pull request as a comment. This link is publicly available and does not change during the lifetime of your pull request. Feel free to share it with others who might want a preview of your changes.
 
-5. Our docs team will review your pull request, and you will receive some feedback. It's expected that there will be 2 or 3 rounds of revisions, but if you'd rather we just made changes ourselves, let us know.
+6. Our docs team will review your pull request, and you will receive some feedback. It's expected that there will be 2 or 3 rounds of revisions, but if you'd rather we just made changes ourselves, let us know.
 
-6. The reviewer will merge the pull request once it is ready and has been approved.
+7. The reviewer will merge the pull request once it is ready and has been approved.
 
 
 Style guide
