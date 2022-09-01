@@ -384,11 +384,13 @@ entries:
         entries:
         - file: docs/products/kafka/karapace/getting-started
         - file: docs/products/kafka/karapace/concepts
+          title: Concepts
           entries:
-          - file: docs/products/kafka/karapace/concepts/schema-registry-authorization
+            - file: docs/products/kafka/karapace/concepts/schema-registry-authorization
         - file: docs/products/kafka/karapace/howto
           title: HowTo
           entries:
+            - file: docs/products/kafka/karapace/howto/enable-karapace
             - file: docs/products/kafka/karapace/howto/enable-schema-registry-authorization
             - file: docs/products/kafka/karapace/howto/manage-schema-registry-authorization
 
