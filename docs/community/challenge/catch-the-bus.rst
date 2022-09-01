@@ -1,7 +1,7 @@
-Catch the bus - Aiven challenge with Clickhouse
+Catch the bus - Aiven challenge with ClickHouse
 ===============
 
-Welcome to the challenge. We've put together a small exercise for you to explore Clickhouse on Aiven. 
+Welcome to the challenge. We've put together a small exercise for you to explore ClickHouse on Aiven. 
 
 TODO: Ben to add description about the challenge (what's the story). What's the users' "goal"?
 
