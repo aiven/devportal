@@ -10,7 +10,7 @@ Manage an Apache Flink® table
 ``avn service flink table create``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Creates a new Aiven for Apache Flink table.
+Creates a new Aiven for Apache Flink® table.
 
 .. list-table::
   :header-rows: 1
@@ -41,7 +41,7 @@ The ``table_properties`` parameter should contain the following common propertie
 
 And then a property identifying the type of Flink table connector within the one supported.
 
-For the :doc:`insert only mode for Aiven for Apache Kafka® </docs/products/flink/concepts/kafka-connectors>`, add a JSON field named ``kafka`` with the following fields included in a JSON object:
+For the Aiven for Apache Kafka® :doc:`insert only mode </docs/products/flink/concepts/kafka-connectors>`, add a JSON field named ``kafka`` with the following fields included in a JSON object:
 
 .. list-table::
   :header-rows: 1
@@ -55,13 +55,13 @@ For the :doc:`insert only mode for Aiven for Apache Kafka® </docs/products/flin
   * - ``topic``
     - The name of the source or target Aiven for Apache Kafka topic
   * - ``value_fields_include``
-    - Defines if the message key fields are included in the value; possible values are ``ALL`` to include the key fields in the valye, ``EXCEPT_KEY`` to remove them
+    - Defines if the message key fields are included in the value; possible values are ``ALL`` to include the key fields in the value, ``EXCEPT_KEY`` to remove them
   * - ``key_format``
     - Defines the format used to convert the message value; possible values are ``json`` or ``avro``; if the key is not used, the ``key_format`` field can be omitted
   * - ``value_format``
     - Defines the format used to convert the message value; possible values are ``json`` or ``avro``
 
-For the :doc:`upsert mode for Aiven for Apache Kafka® </docs/products/flink/concepts/kafka-connectors>`, add a JSON field named ``upsert-kafka`` with the following fields included in a JSON object:
+For the Aiven for Apache Kafka® :doc:`upsert mode </docs/products/flink/concepts/kafka-connectors>`, add a JSON field named ``upsert-kafka`` with the following fields included in a JSON object:
 
 .. list-table::
   :header-rows: 1
@@ -73,14 +73,14 @@ For the :doc:`upsert mode for Aiven for Apache Kafka® </docs/products/flink/con
   * - ``topic``
     - The name of the source or target Aiven for Apache Kafka topic
   * - ``value_fields_include``
-    - Defines if the message key fields are included in the value; possible values are ``ALL`` to include the key fields in the valye, ``EXCEPT_KEY`` to remove them
+    - Defines if the message key fields are included in the value; possible values are ``ALL`` to include the key fields in the value, ``EXCEPT_KEY`` to remove them
   * - ``key_format``
     - Defines the format used to convert the message value; possible values are ``json`` or ``avro``; if the key is not used, the ``key_format`` field can be omitted
   * - ``value_format``
     - Defines the format used to convert the message value; possible values are ``json`` or ``avro``
 
 
-For the :doc:`JDBC query mode for Aiven for PostgreSQL® </docs/products/flink/howto/connect-pg>`, add a JSON field named ``jdbc`` with the following fields included in a JSON object:
+For the Aiven for PostgreSQL® :doc:`JDBC query mode </docs/products/flink/howto/connect-pg>`, add a JSON field named ``jdbc`` with the following fields included in a JSON object:
 
 .. list-table::
   :header-rows: 1
@@ -92,7 +92,7 @@ For the :doc:`JDBC query mode for Aiven for PostgreSQL® </docs/products/flink/h
   * - ``table_name``
     - The name of the Aiven for PostgreSQL® database table
 
-For the :doc:`index mode for Aiven for OpenSearch® </docs/products/flink/howto/connect-pg>`, add a JSON field named ``opensearch`` with the following fields included in a JSON object:
+For the Aiven for OpenSearch® :doc:`index integration </docs/products/flink/howto/connect-pg>`, add a JSON field named ``opensearch`` with the following fields included in a JSON object:
 
 .. list-table::
   :header-rows: 1
