@@ -27,7 +27,7 @@ Variable                Description
 
 .. Tip::
 
-    The Aiven for Cassandra CA certificate can be downloaded from the `Aiven Console <https://console.aiven.io/>`_, on the service detail page or with the :ref:`dedicated Aiven CLI command <avn_service_ca_get>`.
+    The Aiven for Cassandra CA certificate can be downloaded from the `Aiven Console <https://console.aiven.io/>`_, on the service detail page or with the :ref:`dedicated Aiven CLI command <avn_project_ca_get>`.
 
 Connect to the database
 '''''''''''''''''''''''
