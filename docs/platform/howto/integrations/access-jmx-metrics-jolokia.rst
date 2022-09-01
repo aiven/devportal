@@ -1,3 +1,5 @@
+Jolokia
+
 Access JMX metrics via Jolokia
 ===============================
 
@@ -18,9 +20,9 @@ username and password for authentication. In most cases, you can re-use
 the same Jolokia endpoint configuration for all services within a
 project.
 
-   .. image:: /images/integrations/jolokia-service-integration-endpoint.png
+   .. image:: /images/integrations/jolokia-service-integration-image-1.png
       :alt: Jolokia service integration endpoint
-   .. image:: /images/integrations/jolokia-integration-endpoint-details.png
+   .. image:: /images/integrations/jolokia-service-integration-image-2.png
       :alt: Jolokia integration endpoint details
 
 .. note::
