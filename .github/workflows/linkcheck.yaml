@@ -28,4 +28,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          filename: .github/test.md
+          filename: .github/ISSUE_TEMPLATE/linkcheck_report.md
