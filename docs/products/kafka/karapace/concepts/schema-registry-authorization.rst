@@ -12,7 +12,7 @@ Authorization in Karapace is achieved by using Access Control Lists (ACLs). ACLs
   Karapace schema registry authorization is enabled on all Aiven for Apache Kafka® services. The exception is older services created before mid-2022, where the feature needs to be :doc:`enabled <../getting-started>`.
 
 Common use cases
--------------------
+----------------
 Some of the common use cases for Karapace schema registry authorization include: 
 
 * **Schemas as API contract among teams:** Allow teams to leverage schemas as API contracts with other teams by providing read-only access to schemas in Schema Registry.
@@ -20,8 +20,10 @@ Some of the common use cases for Karapace schema registry authorization include:
 * **Schema registration automated with CI/CD:** Achieve automation of schema registration using Continuous Integration(CI) tools in such a way that add, update and delete operations on schemas is limited to the CI Tools. At the same time, the different applications are allowed read-only access to the schemas as needed.
 * **Segregated consumers of Schema Registry and REST Proxy:** Limits the attack surface by segregating and limiting access to only what is required for the consumers of the Schema Registry and REST Proxy.
 
+.. _karapace_schema_registry_acls:
+
 ACLs definition
------------------------------
+---------------
 An ACL for Karapace schema registry authorization consists of zero or more entries that specify a **username**, an **operation**, and a **resource**. 
 
 * **Username** is the name of a service user in the Aiven for Apache Kafka® service.
