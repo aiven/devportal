@@ -18,30 +18,9 @@ Prerequisites
 
 To simplify the example, we'll create Aiven for MySQL databases for both, ``source-db`` and ``target-db``. You can create the databases by going to your running service for **Aiven for MySQL** > **Databases** > **Create a new database**.
 
-Variables
----------
-
-These are the information you need to collect to collect from your Aiven for MySQL ``source-db``:
-
-.. list-table::
-   :widths: 20 80
-   :header-rows: 1
-
-   * - Variable
-     - Description
-   * - ``SOURCE_DB_URL``
-     - Host name for the connection, from the ``source-db`` service **Overview** page
-   * - ``SOURCE_DB_USER``
-     - User name, from the service **Overview** page
-   * - ``SOURCE_DB_PORT``
-     - Port number to use, from the service **Overview** page
-   * - ``SOURCE_DB_PASSWORD``
-     - Password for ``avnadmin`` user
-  * - ``DEFAULTDB``
-    - Contains the ``source-db`` data
 
 Backup the data
-~~~~~~~~~~~~~~~
+---------------
 
 First, we will back up our ``source-db`` data to a file called ``mydb_backup.sql``. For that, you need to collect some information about your Aiven for MySQL ``source-db`` database:
 
@@ -62,6 +41,7 @@ First, we will back up our ``source-db`` data to a file called ``mydb_backup.sql
    * - ``DEFAULTDB``
      - Contains the ``source-db`` data
 
+Use the following command to backup your Aiven for MySQL data to a the ``mydb_backup.sql`` file:
 
 .. code-block:: shell
 
@@ -79,10 +59,10 @@ The ``--single-transaction`` `flag <https://dev.mysql.com/doc/refman/8.0/en/mysq
 
 .. warning::
     
-    If you are using `Global Transaction Identifiers (GTID's) <https://dev.mysql.com/doc/refman/5.7/en/replication-gtids-concepts.html>` with InnoDB use the ``--set-gtid-purged=OFF`` `option <https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html#option_mysqldump_set-gtid-purged>`. The reason is that GTID's are not available with MyISAM.
+    If you are using `Global Transaction Identifiers <https://dev.mysql.com/doc/refman/5.7/en/replication-gtids-concepts.html>`_ (GTIDs) with InnoDB use the ``--set-gtid-purged=OFF`` `option <https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html#option_mysqldump_set-gtid-purged>`_. The reason is that GTID's are not available with MyISAM.
 
 Restore the data
-~~~~~~~~~~~~~~~~
+----------------
 
 You can backup the data previously saved in a file to an Aiven for MySQL database. You need to collect the following information about your Aiven for MySQL ``target-db``:
 
@@ -92,17 +72,18 @@ You can backup the data previously saved in a file to an Aiven for MySQL databas
 
    * - Variable
      - Description
-   * - ``SOURCE_DB_URL``
-     - Host name for the connection, from the ``source-db`` service **Overview** page
-   * - ``SOURCE_DB_USER``
+   * - ``TARGET_URL``
+     - Host name for the connection, from the ``target-db`` service **Overview** page
+   * - ``TARGET_USER``
      - User name, from the service **Overview** page
-   * - ``SOURCE_DB_PORT``
+   * - ``TARGET_PORT``
      - Port number to use, from the service **Overview** page
-   * - ``SOURCE_DB_PASSWORD``
+   * - ``TARGET_PASSWORD``
      - Password for ``avnadmin`` user
    * - ``DEFAULTDB``
-     - Contains the ``source-db`` data
+     - Contains the ``target-db`` data
 
+Run the following command to store your saved data to your Aiven for MySQL database:
 
 .. code-block:: shell
 
@@ -112,4 +93,11 @@ You can backup the data previously saved in a file to an Aiven for MySQL databas
     -u TARGET_DB_USER \
     --password < mydb_backup.sql
 
-Another thing that is good to remember is to invoke a mysqlcheck to get proper database statistics in place for the newly loaded data.
+After running this command your data should be stored in your Aiven for MySQL ``target-db``. You can check out ``mysqlcheck`` `command <https://dev.mysql.com/doc/refman/8.0/en/mysqlcheck.html>`_ to perform further analyzes of your current MySQL data.
+
+
+Read more about migrations
+--------------------------
+
+- :doc:`How to migrate to Aiven for MySQL from an external MySQL </docs/products/mysql/howto/migrate-from-external-mysql>`
+- :doc:`How to perform migration check on your Aiven for MySQL database </docs/products/mysql/howto/migrate-from-external-mysql>`
