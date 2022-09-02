@@ -32,7 +32,7 @@ Where:
       - ``schema_registry_read``
       -  ``schema_registry_write``
   * - ``--resource``
-    - The resource format can be ``Config:`` or ``Subject:<subject>``. For more information, see `ACLs definition <karapace_schema_registry_acls#ACLs definition>`_.
+    - The resource format can be ``Config:`` or ``Subject:<subject>``. For more information, see `ACLs definition <karapace_schema_registry_acls>`_.
   * - ``--username``
     - The name of a service user
 
