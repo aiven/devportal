@@ -669,6 +669,7 @@ entries:
           - file: docs/products/mysql/howto/identify-disk-usage-issues
           - file: docs/products/mysql/howto/disable-foreign-key-checks
           - file: docs/products/mysql/howto/enable-slow-queries
+          - file: docs/products/mysql/howto/migrate-database-mysqldump 
       - file: docs/products/mysql/reference
         title: Reference
         entries:
