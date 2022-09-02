@@ -1,28 +1,28 @@
-PostgreSQL long-running queries
+PostgreSQL® long-running queries
 ===============================
 
-Aiven does not terminate any customer PostgreSQL queries even if they run indefinitely.  Long-running queries often cause issues by locking resources and preventing database maintenance tasks.
+Aiven does not terminate any customer queries even if they run indefinitely.  Long-running queries often cause issues by locking resources and preventing database maintenance tasks.
 
 To identify and terminate such long-running queries, you can do it from either:
 
 * `Aiven console <http://console.aiven.io>`_ / web page
-* `PostgreSQL shell <https://www.postgresql.org/docs/current/app-psql.html>`_ (psql)
+* `PostgreSQL shell <https://www.postgresql.org/docs/current/app-psql.html>`_ (``psql``)
 
 
 Aiven console
 -------------
-In the Aiven web console, you can go to the **Current Queries** tab for your PostgreSQL service.
+In the Aiven web console, you can go to the **Current Queries** tab for your service.
 
 .. image:: /images/products/postgresql/pg-long-running-queries.png
-    :alt: PostgreSQL service overview tab in Aiven's console
+    :alt: PostgreSQL® service overview tab in Aiven's console
 
 
 On this page, you can click **Terminate** to stop any queries directly.
 
 
-PostgreSQL shell (psql)
+PostgreSQL® shell (psql)
 -----------------------
-You can login to your PostgreSQL service via `psql <service_uri>`.  Once connected, you can call the following function on the `psql` shell:
+You can login to your PostgreSQL® service via ``psql <service_uri>``.  Once connected, you can call the following function on the ``psql`` shell:
 
 .. code:: bash
 
@@ -43,7 +43,7 @@ Client applications can use the statement_timeout session variable to voluntaril
     => SET statement_timeout = 15000
 
 
-You may check the `Client Connection Defaults <https://www.postgresql.org/docs/9.6/runtime-config-client.html>`_ PostgreSQL documentation for more information on the available session variables.
+You may check the `Client Connection Defaults <https://www.postgresql.org/docs/9.6/runtime-config-client.html>`_ documentation for more information on the available session variables.
 
 .. note:: 
 
