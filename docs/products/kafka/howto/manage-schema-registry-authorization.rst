@@ -28,10 +28,10 @@ Additionally the :doc:`Aiven Aiven Terraform provider </docs/tools/terraform>` s
 
 .. code:: terraform
 
-   resource "aiven_kafka_schema_registry_acl" "my_resource" {
+   resource ``aiven_kafka_schema_registry_acl`` "my_resource" {
      project      = aiven_kafka_topic.demo.project
      service_name = aiven_kafka_topic.demo.service_name
      resource     = "Subject:${aiven_kafka_topic.demo.topic_name}"
      username     = aiven_kafka_user.demo.username
-     permission   = "schema_registry_read"
+     permission   = ``schema_registry_read``
    }

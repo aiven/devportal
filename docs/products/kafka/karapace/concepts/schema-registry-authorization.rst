@@ -57,7 +57,7 @@ The schema registry responds with HTTP status code 401 Unauthorized message if n
   Enabling or disabling Karapace schema registry authorization, and managing the ACLs, is done using the Aiven CLI (requires version 2.16 or later). For more information, see :doc:`Enable Karapace schema registry authorization <../howto/enable-schema-registry-authorization>`. 
  
 
-Securing Endpoints with ACL
+Securing endpoints with ACL
 ---------------------------
 
 To correctly set up access control for the different endpoints, you need to have the following in the ACL:
@@ -78,7 +78,7 @@ The following table provides you with examples:
   * - ``user_1``
     - ``schema_registry_read``
     - ``Config:``
-    - Provides ``user_1`` he permission to read everything in the resource config. 
+    - Provides ``user_1`` he permission to read everything in the resource configuration. 
   * - ``user_1``
     - ``schema_registry_read``
     - ``Subject:s1``

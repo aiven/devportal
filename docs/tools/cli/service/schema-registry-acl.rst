@@ -32,7 +32,7 @@ Where:
       - ``schema_registry_read``
       -  ``schema_registry_write``
   * - ``--resource``
-    - The resource format can be ``Config:`` or ``Subject:<subject>``. For more information, see `ACLs definition <karapace_schema_registry_acls>`_.
+    - The resource format can be ``Config:`` or ``Subject:<subject>``. For more information, see `ACLs definition <karapace_schema_registry_acls>`.
   * - ``--username``
     - The name of a service user
 
@@ -105,6 +105,6 @@ The command output is:
 
     ID                        USERNAME  RESOURCE         PERMISSION
     ========================  ========  ===============  =====================
-    default-sr-admin-config   avnadmin  Config:          schema_registry_write
-    default-sr-admin-subject  avnadmin  Subject:*        schema_registry_write
-    acl12345678901            userAB*   Subject:s123*    schema_registry_write
+    default-sr-admin-config   avnadmin  Config:          ``schema_registry_write``
+    default-sr-admin-subject  avnadmin  Subject:*        ``schema_registry_write``
+    acl12345678901            userAB*   Subject:s123*    ``schema_registry_write``
