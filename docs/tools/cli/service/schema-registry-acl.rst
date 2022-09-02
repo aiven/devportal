@@ -13,7 +13,7 @@ Using the following commands you can manage :doc:`Karapace schema registry autho
 ``avn service schema-registry-acl-add``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 You can add a Karapace schema registry ACL entry by using the command::
-  
+
   avn service schema-registry-acl-add
 
 Where: 
@@ -51,8 +51,8 @@ The following example shows you how to add an ACL entry to grant a user (``user_
 
 ``avn service schema-registry-acl-delete``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-You can delete a Karapace schema registry ACL entry using the command:
-::
+You can delete a Karapace schema registry ACL entry using the command::
+
   avn service schema-registry-acl-delete
 
 Where: 
@@ -76,8 +76,8 @@ The following example deletes the Karapace schema registry ACL with ID ``acl3604
 
 ``avn service schema-registry-acl-list``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-You can view a list of all Karapace schema registry ACL entries defined using the command: 
-::
+You can view a list of all Karapace schema registry ACL entries defined using the command::
+
   avn service schema-registry-acl-list
 
 Where: 
