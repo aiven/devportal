@@ -1,4 +1,4 @@
-Connect with rivery
+Connect with Rivery
 ===================
 
 `Rivery <https://rivery.io/>`_ is a fully-managed solution for data ingestion, transformation, orchestration, reverse ETL and more.

@@ -1,4 +1,4 @@
-Connect with skyvia
+Connect with Skyvia
 ===================
 
 `Skyvia <https://skyvia.com/>`_ is an universal cloud data platform.
