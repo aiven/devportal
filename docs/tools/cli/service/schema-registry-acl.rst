@@ -12,8 +12,8 @@ Using the following commands you can manage :doc:`Karapace schema registry autho
 
 ``avn service schema-registry-acl-add``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-You can add a Karapace schema registry ACL entry by using the command:  
-::
+You can add a Karapace schema registry ACL entry by using the command::
+  
   avn service schema-registry-acl-add
 
 Where: 
