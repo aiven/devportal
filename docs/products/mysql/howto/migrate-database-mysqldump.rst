@@ -22,7 +22,7 @@ To simplify the example, we'll create Aiven for MySQL databases for both, ``sour
 Backup the data
 ---------------
 
-First, we will back up our ``source-db`` data to a file called ``mydb_backup.sql``. For that, you need to collect some information about your Aiven for MySQL ``source-db`` database:
+First, we will back up our ``source-db`` data to a file called ``mydb_backup.sql``. For that, you need to collect some information from the **Overview** page about your Aiven for MySQL ``source-db`` database:
 
 .. list-table::
    :widths: 20 80
@@ -30,16 +30,16 @@ First, we will back up our ``source-db`` data to a file called ``mydb_backup.sql
 
    * - Variable
      - Description
-   * - ``SOURCE_DB_URL``
-     - Host name for the connection, from the ``source-db`` service **Overview** page
+   * - ``SOURCE_DB_HOST``
+     - Host name for the connection
    * - ``SOURCE_DB_USER``
-     - User name, from the service **Overview** page
+     - User name for the connection
    * - ``SOURCE_DB_PORT``
-     - Port number to use, from the service **Overview** page
+     - Connection Port number
    * - ``SOURCE_DB_PASSWORD``
-     - Password for ``avnadmin`` user
+     - Connection password
    * - ``DEFAULTDB``
-     - Contains the ``source-db`` data
+     - Database that contains the ``source-db`` data
 
 Use the following command to backup your Aiven for MySQL data to a the ``mydb_backup.sql`` file:
 
@@ -47,12 +47,16 @@ Use the following command to backup your Aiven for MySQL data to a the ``mydb_ba
 
     mysqldump \
     -p DEFAULTDB -P SOURCE_DB_PORT \
-    -h SOURCE_DB_URL --single-transaction \
+    -h SOURCE_DB_HOST --single-transaction \
     -u SOURCE_DB_USER --set-gtid-purged=OFF \
     --password > mydb_backup.sql
 
-.. tip::
-    With this command, the password will be requested at the prompt; this is more secure than including the password straight away. 
+
+With this command, the password will be requested at the prompt; paste ``SOURCE_DB_PASSWORD`` to the terminal, then a file named ``mydb_backup.sql`` will be created with your backup data.
+
+.. note::
+  
+  Having the prompt request the password is more secure than including the password straight away in the command. 
 
 The ``--single-transaction`` `flag <https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html#option_mysqldump_single-transaction>`_ starts a transaction before running. This means that the process does not lock the entire database. This allows ``mysqldump`` to read the database in the current state at the time of the transaction which ensures that your data is reliable
 
@@ -64,7 +68,7 @@ The ``--single-transaction`` `flag <https://dev.mysql.com/doc/refman/8.0/en/mysq
 Restore the data
 ----------------
 
-You can backup the data previously saved in a file to an Aiven for MySQL database. You need to collect the following information about your Aiven for MySQL ``target-db``:
+You can backup the data previously saved in a file to an Aiven for MySQL database. You need to collect from the **Overview** page the following information about your Aiven for MySQL ``target-db``:
 
 .. list-table::
    :widths: 20 80
@@ -72,16 +76,16 @@ You can backup the data previously saved in a file to an Aiven for MySQL databas
 
    * - Variable
      - Description
-   * - ``TARGET_URL``
-     - Host name for the connection, from the ``target-db`` service **Overview** page
-   * - ``TARGET_USER``
-     - User name, from the service **Overview** page
-   * - ``TARGET_PORT``
-     - Port number to use, from the service **Overview** page
-   * - ``TARGET_PASSWORD``
-     - Password for ``avnadmin`` user
+   * - ``TARGET_DB_HOST``
+     - Service host name
+   * - ``TARGET_DB_USER``
+     - Service user name
+   * - ``TARGET_DB_PORT``
+     - Port number to use
+   * - ``TARGET_DB_PASSWORD``
+     - Connection password
    * - ``DEFAULTDB``
-     - Contains the ``target-db`` data
+     - Database that contains the ``target-db`` data
 
 Run the following command to store your saved data to your Aiven for MySQL database:
 
@@ -89,11 +93,11 @@ Run the following command to store your saved data to your Aiven for MySQL datab
 
     mysql \
     -p DEFAULTDB -P TARGET_DB_PORT \
-    -h TARGET_DB_URL \
+    -h TARGET_DB_HOST \
     -u TARGET_DB_USER \
     --password < mydb_backup.sql
 
-After running this command your data should be stored in your Aiven for MySQL ``target-db``. You can check out ``mysqlcheck`` `command <https://dev.mysql.com/doc/refman/8.0/en/mysqlcheck.html>`_ to perform further analyzes of your current MySQL data.
+The password will be requested at the prompt. You can paste ``TARGET_DB_PASSWORD`` to the terminal. Your data should be stored in your Aiven for MySQL ``target-db``. You can check out ``mysqlcheck`` `command <https://dev.mysql.com/doc/refman/8.0/en/mysqlcheck.html>`_ to perform further analyzes of your current MySQL data.
 
 
 Read more about migrations
