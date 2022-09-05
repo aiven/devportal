@@ -29,14 +29,14 @@ Aiven account setup
 
 7. You should now be on the `Azure signup page at Aiven <https://console.azure.aiven.io/login>`_, asking you for your email address to log in to the account.  This should be the same email as you use on the Azure console.
 
-8. After entering your email address, you will be sent to Azure single sign-on, and then return to the Aiven console.
+8. After entering your email address, you will be authenticated via Azure single sign-on and then returned to the Aiven console.
 
-9. You will be sent an email to "Activate your new subscription" - click on the "Activate now >" link to join your Aiven account to your Azure account.
+9. You will be sent an email to "Activate your new subscription" - click on the **Activate now** link to join your Aiven account to your Azure account.
 
 10. You are now ready to create your first project and deploy services.
 
 .. note:: 
-   Note the URL is https://console.azure.aiven.io - this uses a different account system than https://console.aiven.io.  When coming back to Aiven in the future, you will need to use https://console.azure.aiven.io to login, and authenticate using Azure oauth.
+   Note the URL is https://console.azure.aiven.io - this uses a different account system than https://console.aiven.io.  When coming back to Aiven in the future, you will need to use https://console.azure.aiven.io to login, and authenticate using Azure OAuth.
 
 .. note:: 
    When you view the Aiven subscription on the Azure SaaS resource list, you will see a link **Open SaaS Account on publisher's site**.  You can use this link to complete the subscription process if anything goes wrong during the steps listed here.
