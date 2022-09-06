@@ -7,7 +7,7 @@ Downloading and installing nosqlbench
 `Nosqlbench <https://docs.nosqlbench.io/>`__ was originally developed by
 Datastax and then open sourced into an independent project. It is a
 great tool to stress-test and benchmark several sql and no-sql databases
-including cassandra, mongo and postgres.
+including Cassandra, MongoDB and PostgreSQL.
 
 It is highly configurable, thoroughly documented and above all it really
 works !
@@ -45,7 +45,7 @@ the ``workload``option calls a specific workload file that is compiled
 inside the ``nb`` executable and instructs ``nb`` to generate key/value
 pairs for a table called ``baselines.keyvalue``. 
 The ``phase`` option refers to a specific point in the **workload** definition file and specifies 
-the particular **activity** to run. In our case, the phase is ``schema`` which means that the nosqlbench will create the schema of the cassandra keyspace.
+the particular **activity** to run. In our case, the phase is ``schema`` which means that the nosqlbench will create the schema of the Cassandra keyspace.
 
 In order to run client connections and generate actual data in the keyspace and tables created, these command lines need to be run:
 
@@ -115,13 +115,13 @@ Use this command line to check if the sample data has been loaded into the table
 
    SSL_CERTFILE=ca_cassandra-123.pem cqlsh --ssl -u avnadmin -p $AVNADMPWD cassandra-f5c27ca-demo.aivencloud.com 20341
 
-which will open a cqlsh prompt to run queries on the cassandra db.
+which will open a cqlsh prompt to run queries on the Cassandra db.
 
 Another way to check that data has been loaded correctly is to count
-records in the table. Now, in a distributed db like cassandra, counting
+records in the table. Now, in a distributed db like Cassandra, counting
 is not the most straightforward things because depending on the
 consistency level of the request, different results may be obtained.
 `DSBULK link to DSBULK article on devportal`__,
-an open source loading, unloading and counting tool for cassandra,
+an open source loading, unloading and counting tool for Cassandra,
 allows for configurable consistency level and provides reliable and fast
 counting capabilities.
