@@ -21,7 +21,7 @@ software.
 
 Aiven services inherit the upstream project’s software versioning
 scheme. Depending on the service, a major version can be either a single
-digit (e.g. PostgreSQL® 12) or ``major.minor`` (e.g. Kafka® 2.4). The
+digit (e.g. PostgreSQL® 14) or ``major.minor`` (e.g. Kafka® 3.2). The
 exact version of the service is visible in the Aiven console once the
 service is up and running.
 
@@ -94,6 +94,7 @@ EOL one year after it's made available on Aiven platform.
    2.8.x       2022-06-02    2021-04-26
    3.0         2022-11-22    2021-11-22
    3.1         2023-02-14    2022-02-14
+   3.2         
    =========== ============= ========================================
 
 .. _h_0f2929c770:
@@ -138,17 +139,6 @@ When Aiven defines the EOL date for a service major version,
 -  Email reminders will be sent to customers on a monthly cadence. On
    the month of the EOL date, the cadence shifts to weekly reminders.
 
-Upon EOL
-~~~~~~~~
-
--  Affected powered-on services will be automatically upgraded to the
-   latest available version. For example, if latest version is
-   ElasticSearch 7.7, then upon Elasticsearch 5.x EOL, it will be
-   upgraded to the latest ES 7.7 instead of Elasticsearch 6.x.
-
--  Affected powered-off services will no longer be accessible and their
-   backups will be deleted.
-
 Our recommendation
 ------------------
 
@@ -161,7 +151,8 @@ Aiven platform offers database forking as an efficient tool to verify
 the version upgrade so that customers can safely test compatibility
 without committing their production services to a one-way upgrade.
 
-**Tip:** Navigate to the service's "Overview" page and scroll down until
-you see a "New database fork" button. This will allow you to make a
-separate new database service that is cloned from the current one's
-backups.
+.. Tip::
+   Navigate to the service's ```Overview`` page and scroll down until
+   you see a ``New database fork`` button. This will allow you to make a
+   separate new database service that is cloned from the current one's
+   backups.
