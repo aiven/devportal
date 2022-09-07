@@ -30,7 +30,7 @@ An ACL for Karapace schema registry authorization consists of zero or more entri
 * **Operations** are:
   
   * ``schema_registry_read``
-  * ``schema_registry_write`` (always includes schema_registry_read)
+  * ``schema_registry_write`` (always includes ``schema_registry_read``)
 
 *  A **resource** can be in the following formats:
   
