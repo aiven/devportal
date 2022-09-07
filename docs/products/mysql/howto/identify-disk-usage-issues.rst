@@ -27,7 +27,7 @@ The query results shows if a table has significantly more allocated but unused s
 
 .. note::
     
-    Note that, by default, statistics in information_schema.TABLES are only updated every 24 hours or whenever the ``ANALYZE TABLE`` command runs.
+    Note that, by default, statistics in ``information_schema.TABLES`` are only updated every 24 hours or whenever the ``ANALYZE TABLE`` command runs.
 
 
 .. seealso::
