@@ -7,7 +7,7 @@ Downloading and installing nosqlbench
 `Nosqlbench <https://docs.nosqlbench.io/>`__ was originally developed by
 Datastax and then open sourced into an independent project. It is a
 great tool to stress-test and benchmark several sql and no-sql databases
-including Cassandra, MongoDB and PostgreSQL.
+including Cassandra, MongoDB and PostgreSQL®.
 
 It is highly configurable, thoroughly documented and above all it really
 works !
