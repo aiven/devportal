@@ -21,29 +21,17 @@ On the Projects & Accounts modal, click on ``Create account`` and you
 will be taken to a page where you provide a **name** , **project(s)** to
 link it to and the option to invite other admins.
 
-.. image:: /images/platform/howto/saml/okta/okta-create-new-account.png
-   :alt: Create new account in Aiven console
-
 Once created, you will see an overview of the account just created. A
-tab, called **Authentication** , will let you add a new method (in this
+tab, called ``Authentication`` , will let you add a new method (in this
 case: **SAML** ) and configure them.
 
-.. image:: /images/platform/howto/saml/okta/okta-authentication-tab.png
-   :alt: Authentication tab in Aiven console
-
 Clicking on ``Add Authentication Method`` creates a dialog where you can
-**name** your method, specify the **type** and a default **team** you
+**name** your ``Method Name``, specify the **SAML** for ``Method Type`` and a default **team** you
 would want members to join.
-
-.. image:: /images/platform/howto/saml/okta/okta-add-authentication-method.png
-   :alt: Add authentication method in Aiven console
 
 Once you click ``Add`` , you will see the configuration URLs for your
 Identity Provider (do not worry about making a note of these, you can
 access them at any time).
-
-.. image:: /images/platform/howto/saml/okta/okta-saml-configuration-urls.png
-   :alt: Configure authentication URLs in Aiven console
 
 For now, we are done with the Aiven side of this, let's move on to Okta
 and create our application.
@@ -60,21 +48,15 @@ Creating the SP-Initiated authentication application
 
 Login to the ``Admin`` portal and navigate to the ``Applications`` tab.
 Click on the ``Create a new app integration`` button. You
-should see the following form:
+should see the ``Create SAML Integration`` form:
 
-.. image:: /images/platform/howto/saml/okta/okta-create-saml-integration.png
-   :alt: Create SAML integration in Okta
-
-Select ``SAML 2.0`` for the ``Sign on method``, then click ``Next``.
+Select **SAML 2.0** for the ``Sign on method``, then click ``Next``.
 
 In the following form, you can give the app a name (e.g. "Aiven SAML"),
 logo and set it's visibility for your Okta users. Once this is done,
 click ``Next``.
 
-.. image:: /images/platform/howto/saml/okta/okta-create-saml-2.0.png
-   :alt: Create SAML 2.0 app integration in Okta
-
-Then comes the SAML configuration form. The following fields need to be
+Next step comes the SAML configuration form. The following fields need to be
 set:
 
 -  ``Single sign on URL`` : This value is visible in Aiven Console on
@@ -93,10 +75,7 @@ set:
    | ``https://console.aws.aiven.io/ - AWS Marketplace Console``
 
 -  ``Attribute statements`` should have an entry where ``name`` is ``email``
-   and ``value`` ``user.email`` (see image below)
-
-.. image:: /images/platform/howto/saml/okta/okta-saml-settings.png
-   :alt: SAML settings in Okta
+   and ``value`` ``user.email``
 
 Once this is done, click ``Next`` then ``Finish``. You will be redirect to
 your application in Okta.
@@ -108,21 +87,28 @@ Once the application is created, you need to provide the application
 data to Aiven. These data can be found in the ``Sign On`` tab of the
 application on Okta, after clicking the ``View Setup Instructions``.
 
-.. image:: /images/platform/howto/saml/okta/okta-view-saml-instructions.png
+.. image:: /images/platform/howto/saml/okta-view-saml-instructions.png
    :alt: View SAML setup instructions in Okta
 
-This will open a new tab where you will get the required information to
+This will open a new tab where you will get the following required information to
 finalize the setup to use Okta with Aiven in the next step.
 
-.. image:: /images/platform/howto/saml/okta/okta-view-saml-tab.png
-   :alt: View SAML configuration tab in Okta
+* ``Identity Provider Signle Sign-On URL``
+  
+* ``Identity Provider Issuer``
 
+* ``X.509 Certificate``
 
-You can then go back to Aiven Console and finalize the configuration in
-the Authentication method page.
+You can then go back to **Aiven Console** and finalize the configuration in
+the **Authentication** method page.
 
-.. image:: /images/platform/howto/saml/okta/okta-edit-method.png
-   :alt: Edit authentication method in Aiven Console
+Filled the following information with values from Okta SAML information from the previous step:
+
+* ``SAML IDP Url`` -> ``Identity Provider Signle Sign-On URL``
+   
+* ``SAML Entity ID`` -> ``Identity Provider Issuer``
+
+* ``SAML Certificate`` -> ``X.509 Certificate``
 
 .. Important::
    Toggle ``Enable IdP login`` and ``Enable authentication method`` before clicking ``Edit Method`` to save the settings.
@@ -139,12 +125,8 @@ Assigning users to the Okta application
 
 For your users to be able to login using SAML, you need to assign to the
 Okta application you just created. To do that, go to the ``Assignments``
-tab of the application. Then click on the ``Assign`` button and assign
+tab of the application. Then click on the ``Assign`` drop-down button and assign
 individual users or groups to the application.
-
-.. image:: /images/platform/howto/saml/okta/okta-saml-assign.png
-   :alt: Assign users in Okta
-
 
 Troubleshooting
 ---------------
@@ -154,14 +136,14 @@ Authentication failed
 
 When launching Aiven SAML application getting the following error.
 
-.. image:: /images/platform/howto/saml/okta/okta-auth-failed.png
-   :alt: Authentication Failed in Aiven console
 
-Check Okta authentication in Aiven console if **Enable IdP login** is
+   **Authentication Failed**
+   
+   Login failed.  Please contact your account administrator for more details.
+
+Check Okta authentication in Aiven console if **Enable IdP login** and **Enable authentication method** are
 enabled.
 
-.. image:: /images/platform/howto/saml/okta/okta-enable.png
-   :alt: Enable IdP login in Aiven console
 
 Invalid ``RelayState``
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -181,12 +163,7 @@ My Okta password does not work
 Make sure that you use the ``Account Link URL`` to add the Okta
 Authentication method to your Aiven profile. Once linked, you should get
 the choice of multiple sign-in methods as well as see the other
-Authentication method in you user profile.
-
-.. image:: /images/platform/howto/saml/okta/okta-login-console.png
-   :alt: Enable IdP login in Aiven console
-.. image:: /images/platform/howto/saml/okta/okta-authentication-methods.png
-   :alt: Enable IdP login in Aiven console
+Authentication method in ``User Information`` -> ``Authentication``.
 
 I need help
 ~~~~~~~~~~~
