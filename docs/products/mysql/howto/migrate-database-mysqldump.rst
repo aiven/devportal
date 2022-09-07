@@ -22,7 +22,7 @@ To simplify the example, we'll create Aiven for MySQL databases for both, ``sour
 Backup the data
 ---------------
 
-First, we will back up our ``source-db`` data to a file called ``mydb_backup.sql``. For that, you need to collect some information about your Aiven for MySQL ``source-db`` database. Go to your Aiven ``source-db`` service, from **Overview** page, find the following information:
+First, we'll back up our ``source-db`` data to a file called ``mydb_backup.sql``. For that, you need to collect some information about your Aiven for MySQL ``source-db`` database. Go to your Aiven ``source-db`` service, from **Overview** page, find the following information:
 
 .. list-table::
    :widths: 20 80
