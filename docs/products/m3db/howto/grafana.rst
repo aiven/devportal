@@ -10,8 +10,12 @@ Integrate M3DB and Grafana
 
 2. Choose either a new or existing service.
 
-   - A new service will ask you to select the cloud, region and plan to use. You should also give your service a name. The service overview page shows the nodes rebuilding, and then indicates when they are ready.
-   - If you're already using Grafana on Aiven, you can integrate your M3DB as a data source for that existing Grafana.
+   - When creating a new service you will need to select the cloud, region and plan to use. You should also give your service a name. The service overview page shows the nodes rebuilding, and then indicates when they are ready.
+   - If you're already using Grafana on Aiven, you can integrate your M3DB as a data source for that existing Grafana. 
+   
+     .. Note::
+     
+      If you are a member of multiple Aiven projects with *operator* or *admin* access right, you need to choose the project first then your target Grafana services.
 
 3. On the service overview page for your Grafana service, click the **Service URI** link. The username and password for your Grafana service is also available on the service overview page.
 
