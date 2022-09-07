@@ -16,7 +16,7 @@ You can add a Karapace schema registry ACL entry by using the command::
 
   avn service schema-registry-acl-add
 
-Where: 
+Where:
 
 .. list-table::
   :header-rows: 1
@@ -37,14 +37,15 @@ Where:
     - The name of a service user
 
 **Example**
-The following example shows you how to add an ACL entry to grant a user (``user_1``) read options (``schem_registry_read``) to subject ``s1``. Replace the placeholders ``PROJECT_NAME`` and ``APACHE_KAFKA_SERVICE_NAME`` with the name of the project and the Aiven for Apache Kafka® service.
+
+The following example shows you how to add an ACL entry to grant a user (``user_1``) read options (``schema_registry_read``) to subject ``s1``. Replace the placeholders ``PROJECT_NAME`` and ``APACHE_KAFKA_SERVICE_NAME`` with the name of the project and the Aiven for Apache Kafka® service.
 
 ::
 
   avn service schema-registry-acl-add kafka-doc \
-    --username 'userAB*'                        \
-    --permission schema_registry_write          \
-    --resource 'Subject:s123*'
+    --username 'user_1'                        \
+    --permission schema_registry_read          \
+    --resource 'Subject:s1'
 
 .. Note:: 
   You cannot edit a Karapace schema registry ACL entry. You need to create a new entry and delete the older entry. 
@@ -105,6 +106,6 @@ The command output is:
 
     ID                        USERNAME  RESOURCE         PERMISSION
     ========================  ========  ===============  =====================
-    default-sr-admin-config   avnadmin  Config:          ``schema_registry_write``
-    default-sr-admin-subject  avnadmin  Subject:*        ``schema_registry_write``
-    acl12345678901            userAB*   Subject:s123*    ``schema_registry_write``
+    default-sr-admin-config   avnadmin  Config:          schema_registry_write
+    default-sr-admin-subject  avnadmin  Subject:*        schema_registry_write
+    acl12345678901            userAB*   Subject:s123*    schema_registry_write
