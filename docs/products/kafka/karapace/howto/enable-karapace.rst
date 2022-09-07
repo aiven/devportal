@@ -8,4 +8,5 @@ To enable Karapace Schema registry and REST APIs on Aiven for Apache Kafka®, fo
 
 To learn more about Karapace and its features, see the `Karapace homepage <https://karapace.io>`_ and `GitHub project <https://github.com/aiven/karapace>`_.
 
-If you use any of our automation or other integrations, the parameters to enable schema registry or REST APIs on your service are named ``schema_registry`` and ``kafka_rest``.  
+.. tip:: 
+    If you use any of our automation or other integrations, the parameters to enable schema registry or REST APIs on your service are named ``schema_registry`` and ``kafka_rest``.  
