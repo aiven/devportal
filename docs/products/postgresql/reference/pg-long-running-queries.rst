@@ -36,7 +36,7 @@ You can use the following query to monitor currently running queries:
     => SELECT * FROM pg_stat_activity WHERE state <> 'idle';
 
 
-Client applications can use the statement_timeout session variable to voluntarily request the server to automatically cancel any query using the current connection that runs over a specified length of time. For example, the following would cancel any query that runs for more 15 seconds automatically:
+Client applications can use the `statement_timeout`` session variable to voluntarily request the server to automatically cancel any query using the current connection that runs over a specified length of time. For example, the following would cancel any query that runs for more 15 seconds automatically:
 
 .. code:: bash
 
@@ -76,5 +76,3 @@ To be able to check the database owner and grant the role, you can run the follo
     
     => grant testrole to avnadmin;
     GRANT ROLE
-
-For any additional questions, you can contact support@aiven.io.
