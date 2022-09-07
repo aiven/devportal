@@ -62,7 +62,7 @@ Securing endpoints with ACL
 
 To correctly set up access control for the different endpoints, you need to have the following in the ACL:
 
-* Endpoints that provide read-only operations require schema_registry_read permission in the ACL for the specific subject.  In the case of endpoints that return data related to multiple subjects, the response is filtered to include data against only those subjects the user has been granted read permission. 
+* Endpoints that provide read-only operations require ``schema_registry_read`` permission in the ACL for the specific subject.  In the case of endpoints that return data related to multiple subjects, the response is filtered to include data against only those subjects the user has been granted read permission. 
 * Endpoints that provide write operations require the schema_registry_write permission in the ACL for the specific subject.  
 
 The following table provides you with examples: 
