@@ -9,8 +9,12 @@ Start from the **Service Overview** page of the service you would like to monito
 
 2. Choose either a new or existing M3DB service.
 
-   - A new service will ask you to select the cloud, region and plan to use. You should also give your service a name. The service overview page shows the nodes rebuilding, and then indicates when they are ready.
-   - If you're already using M3DB on Aiven, you can use your M3DB service as a destination for your metrics data. If you are a member of more than one Aiven projects with *operator* or *admin* access right, you need to choose the project first then your target M3DB services.
+   - When creating a new service you will need to select the cloud, region and plan to use. You should also give your service a name. The service overview page shows the nodes rebuilding, and then indicates when they are ready.
+   - If you're already using M3DB on Aiven, you can use your M3DB service as a destination for your metrics data. 
+   
+     .. Note::
+     
+      If you are a member of multiple Aiven projects with *operator* or *admin* access right, you need to choose the project first then your target M3DB services.
 
 That's it! Were you expecting something more complicated?
 

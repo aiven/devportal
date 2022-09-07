@@ -19,7 +19,7 @@ Here are the steps needed to enable logs integration. This allows you to send yo
 2. On the **Logs** tab, click on **Use Integration**. 
 
 3. Select an existing OpenSearch instance or create a new one, then select **Continue**.
-    - A new service will ask you to select the cloud, region and plan to use. You should also give your service a name. The service overview page shows the nodes rebuilding, and then indicates when they are ready.
+    - When creating a new service you will need to select the cloud, region and plan to use. You should also give your service a name. The service overview page shows the nodes rebuilding, and then indicates when they are ready.
     - If you're already using OpenSearch on Aiven, you can use your running OpenSearch service as a destination for your metrics data. If you are a member of more than one Aiven projects with *operator* or *admin* access right, you need to choose the project first then your target OpenSearch service.
 
 4. Configure your ``index prefix`` and ``index retention limit`` parameters, then select **Enable**
