@@ -12,26 +12,26 @@ Prerequisite steps in Aiven
 
 1. Login to the `Aiven Console <https://console.aiven.io>`_
 
-2. Under *Projects* in the top left, click the drop down arrow and
+2. Under **Projects** in the top left, click the drop down arrow and
 then on **See All Accounts**
 
 3. Click on the Account you want to edit or create a new one
 
 4. Select the **Authentication** tab
 
-5. Create a new Authentication Method, call it *OneLogin* (or similar) and then
+5. Create a new Authentication Method, call it `OneLogin` (or similar) and then
 choose the team to add invited people to (or leave it blank)
 
 Setup on OneLogin
 -----------------
 
-1. Enter OneLogin *Administration* portal (top right link by your username)
+1. Enter OneLogin **Administration** portal (top right link by your username)
 
-2. Select *Applications* and then **Add App**. 
+2. Select **Applications** and then **Add App**. 
 
 3. Search for **SAML Custom Connector (Advanced)** and select it.
 
-3. Change the Display Name to Aiven and add any other visual configurations you like and click **Save**.
+3. Change the Display Name to `Aiven`` and add any other visual configurations you like and click **Save**.
 
 OneLogin configuration
 ~~~~~~~~~~~~~~~~~~~~~~
