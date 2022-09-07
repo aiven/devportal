@@ -1,13 +1,13 @@
-Connect with Skyvia
+Connect with Rivery
 ===================
 
-`Skyvia <https://skyvia.com/>`_ is an universal cloud data platform.
-This example shows how to configure PostgreSQL® as a connection in skyvia.
+`Rivery <https://rivery.io/>`_ is a fully-managed solution for data ingestion, transformation, orchestration, reverse ETL and more.
+This example shows how to configure PostgreSQL® as a connection in rivery.
 
 Variables
 '''''''''
 
-These are the placeholders you will need to replace your PostgreSQL® connection information:
+These are the placeholders you will need to replace from your PostgreSQL® connection information:
 
 ==================      ===========================================================================
 Variable                Description
@@ -26,17 +26,14 @@ Connect to PostgreSQL®
 2. In the **General** Tab give the connection a Name (e.g. ``MyDatabase``)
 3. In the **Connection** tab set:
 
-   * **Server** to ``HOSTNAME``
+   * **Host** to ``HOSTNAME``
    * **Port**: to ``PORT``
-   * **User ID** to ``USERNAME``
-   * **Password** to ``PASSWORD``
    * **Database** to ``DATABASE``
+   * **User name** to ``USERNAME``
+   * **Password** to ``PASSWORD``
 
-4. Click on **Advanced Settings** to expand the settings and set:
+4. Click on **SSL Options** to expand the settings and set:
 
    * **SSL** Mode set to ``Require``
-   * In **SSL CA Cert** copy and paste ``CA Certificate`` from the `Aiven Console <https://console.aiven.io/>`_
-   * **SSL Cert** and **SSL Key** empty.
-   * **SSL TLS Protocol** to ``1.2``.
 
-5. Click on **Save Connection**.
+5. Click on **Save**.

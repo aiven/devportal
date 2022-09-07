@@ -76,10 +76,12 @@ exceptions:
   - Provectus
   - Python
   - Redis
+  - Rivery
   - reStructuredText
   - Setting up SAML with OneLogin
   - Schema Registry
   - Simple Authentication and Security Layer
+  - Skyvia
   - Snowflake
   - Sphinx
   - Spring
@@ -94,4 +96,5 @@ exceptions:
   - United States
   - VPC
   - Workbench
+  - Zapier
   - ZooKeeper

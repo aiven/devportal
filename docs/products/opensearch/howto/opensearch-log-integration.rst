@@ -3,7 +3,7 @@ Manage OpenSearch® log integration
 
 Aiven provides a service integration that allows you to send your logs from several services, such as Aiven for Apache Kafka®, PostgreSQL®, Apache Cassandra®, OpenSearch®, Redis®*, InfluxDB®, and Grafana®, to Aiven for OpenSearch®. Making it possible for you to use OpenSearch to gain more insight and control over your logs.
 
-In this article, you will understand how to enable, edit and disable the logs integration feature on Aiven for OpenSearch. 
+In this article, you will understand how to enable, edit and disable the logs integration feature on Aiven for OpenSearch®. 
 
 .. tip::
 
@@ -12,13 +12,15 @@ In this article, you will understand how to enable, edit and disable the logs in
 Enable log integration
 ----------------------
 
-Here are the steps needed to enable logs integration. This allows you to send your service's logs to your Aiven for OpenSearch from another Aiven service.
+Here are the steps needed to enable logs integration. This allows you to send your service's logs to your Aiven for OpenSearch® from another Aiven service.
 
 1. On the **Services** page, scroll down and choose **Service integrations**.
 
 2. On the **Logs** tab, click on **Use Integration**. 
 
 3. Select an existing OpenSearch instance or create a new one, then select **Continue**.
+    - When creating a new service you will need to select the cloud, region and plan to use. You should also give your service a name. The service overview page shows the nodes rebuilding, and then indicates when they are ready.
+    - If you're already using OpenSearch on Aiven, you can use your running OpenSearch service as a destination for your metrics data. If you are a member of more than one Aiven projects with *operator* or *admin* access right, you need to choose the project first then your target OpenSearch service.
 
 4. Configure your ``index prefix`` and ``index retention limit`` parameters, then select **Enable**
 
