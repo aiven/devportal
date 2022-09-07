@@ -6,7 +6,7 @@ Downloading and installing nosqlbench
 
 `Nosqlbench <https://docs.nosqlbench.io/>`__ was originally developed by
 Datastax and then open sourced into an independent project. It is a
-great tool to stress-test and benchmark several sql and no-sql databases
+great tool to stress-test and benchmark several SQL and NOSQL databases
 including Cassandra, MongoDB and PostgreSQL®.
 
 It is highly configurable, thoroughly documented and above all it really
@@ -103,7 +103,7 @@ using ``threads`` option to parallelise at the client side:
 
 ::
 
-   ./nb run driver=cql workload=cql-keyvalue username=avnadmin password=$AVNADMPWD ssl=openssl certFilePath=~/ca_cassandra-frez.pem tags=phase:main cycles=100k threads=50 --progress console:1s host=cassandra-f5c27ca-demo.aivencloud.com port=20341
+   ./nb run driver=cql workload=cql-keyvalue username=avnadmin password=$AVNADMPWD ssl=openssl certFilePath=~/ca_cassandra.pem tags=phase:main cycles=100k threads=50 --progress console:1s host=cassandra-f5c27ca-demo.aivencloud.com port=20341
 
 
 Check that data has been loaded
