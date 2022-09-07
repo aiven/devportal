@@ -1,11 +1,9 @@
 Identify disk usage issues
 ==========================
 
-Aiven for MySQL is configured to use ``innodb_file_per_table=ON`` which means that for every table its data and indexes are stored together in a separate ``.idb`` file.
+Aiven for MySQL is configured to use ``innodb_file_per_table=ON`` which means that an ``.idb`` file is generated per table containing its data and indexes.
 
-Over time, when a table receives a lot of inserts and deletions, the amount of space it occupies on disk can grow significantly larger than the current data in the table. A classic example of this would be a table containing jobs for a work queue in which rows are repeatedly added to the end of the table and removed from the beginning.
-
-InnoDB does not release this allocated space back to the operating system automatically, in case the table grows larger in the future, but this can cause problems. Since every other table exists in its own ``.idb`` file, the allocated but unused space is unavailable for the tables to grow.
+Over time, when a table receives a lot of inserts and deletions, the amount of space it occupies on disk can become significantly larger than the current data in the table. A classic example of this would be a table containing jobs for a work queue in which rows are repeatedly added to the end of the table and removed from the beginning. This happens because InnoDB does not release the allocated space back to the operating system automatically, in case the table grows larger in the future, but this can cause problems. Since every other table exists in its own ``.idb`` file, the allocated but unused space is unavailable for the tables to grow. Since every other table exists in its own ``.idb`` file, the allocated but unused space is unavailable for the tables to grow.
 
 Find disk usage issues
 ----------------------
