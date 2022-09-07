@@ -22,36 +22,30 @@ On this page, you can click **Terminate** to stop any queries directly.
 
 PostgreSQL® shell (psql)
 -----------------------
-You can login to your PostgreSQL® service via ``psql <service_uri>``.  Once connected, you can call the following function on the ``psql`` shell:
+You can login to your PostgreSQL® service via ``psql <service_uri>``.  Once connected, you can call the following function on the ``psql`` shell::
 
-.. code:: bash
-
-    => SELECT pg_terminate_backend(pid);
+    SELECT pg_terminate_backend(pid);
 
 
-You can use the following query to monitor currently running queries:
+You can use the following query to monitor currently running queries::
 
-.. code:: bash
-
-    => SELECT * FROM pg_stat_activity WHERE state <> 'idle';
+    SELECT * FROM pg_stat_activity WHERE state <> 'idle';
 
 
-Client applications can use the `statement_timeout`` session variable to voluntarily request the server to automatically cancel any query using the current connection that runs over a specified length of time. For example, the following would cancel any query that runs for more 15 seconds automatically:
+Client applications can use the ``statement_timeout`` session variable to voluntarily request the server to automatically cancel any query using the current connection that runs over a specified length of time. For example, the following would cancel any query that runs for more 15 seconds automatically::
 
-.. code:: bash
-
-    => SET statement_timeout = 15000
+    SET statement_timeout = 15000
 
 
-You may check the `Client Connection Defaults <https://www.postgresql.org/docs/9.6/runtime-config-client.html>`_ documentation for more information on the available session variables.
+You may check the `Client Connection Defaults for version PostgreSQL® 14 <https://www.postgresql.org/docs/14/runtime-config-client.html>`_ documentation for more information on the available session variables.
 
-.. note:: 
 
-    There may be a scenario where you encounter an error when running the above commands.
+Common errors
+^^^^^^^^^^^^^
 
-If the database user is not a member of the database connected to, you may encounter the error:
+There may be a scenario where you encounter an error when running the above commands.
 
-.. code:: bash
+If the database user is not a member of the database connected to, you may encounter the error::
 
     SELECT r.rolname as username,r1.rolname as "role"
     FROM pg_catalog.pg_roles r JOIN pg_catalog.pg_auth_members m
@@ -59,20 +53,29 @@ If the database user is not a member of the database connected to, you may encou
     JOIN pg_roles r1 ON (m.roleid=r1.oid)
     WHERE r.rolcanlogin
     ORDER BY 1;
+
+where you would see the following::
+
     username |        role
     ----------+---------------------
     avnadmin | pg_read_all_stats
     avnadmin | pg_stat_scan_tables
     (3 rows)
 
-To be able to check the database owner and grant the role, you can run the following:
+To be able to check the database owner and grant the role, you can run the following::
 
-.. code:: bash
+    \l
 
-    => \l
+which you should see the role::
+
        Name    |  Owner   |
     -----------+----------+
      testdb    | testrole |
     
-    => grant testrole to avnadmin;
+To resolve the permission issue, you may grant the user the appropriate role as per below::
+
+    grant testrole to avnadmin;
+
+where you should see the confirmation response::
+    
     GRANT ROLE
