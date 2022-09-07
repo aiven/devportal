@@ -32,6 +32,7 @@ datacenter
 datacenters
 Datadog
 datasource
+Datastax
 datastore
 dashboards
 Debezium
@@ -107,6 +108,7 @@ myhoard
 namespace
 namespaces
 NodeJS
+nosqlbench
 npm
 OAuth
 Okta
