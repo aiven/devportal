@@ -37,7 +37,7 @@ Client applications can use the ``statement_timeout`` session variable to volunt
     SET statement_timeout = 15000
 
 
-You may check the `Client Connection Defaults for version PostgreSQL® 14 <https://www.postgresql.org/docs/14/runtime-config-client.html>`_ documentation for more information on the available session variables.
+You may check the `Client Connection Defaults for version PostgreSQL® 14 <https://www.postgresql.org/docs/current/runtime-config-client.html>`_ documentation for more information on the available session variables.
 
 
 Common errors
