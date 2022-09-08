@@ -6,7 +6,7 @@ Karapace schema registry authorization allows you to authenticate the user, to c
 .. tip:: 
   Some older Aiven for Apache Kafka® services may not have this feature enabled by default, and you need to :doc:`enable Karapace schema registry authorization <../howto/enable-schema-registry-authorization>`.
 
-Karapace schema registry authorization is configured using :doc:`Access Control Lists (ACLs) <../concepts/schema-registry-authorization>`. You can manage the Karapace schema registry authorization ACL entries using the :doc:`Aiven CLI </docs/tools/cli/service/schema-registry-acl>`. 
+Karapace schema registry authorization is configured using :doc:`Access Control Lists (ACLs) <../concepts/acl-definition>`. You can manage the Karapace schema registry authorization ACL entries using the :doc:`Aiven CLI </docs/tools/cli/service/schema-registry-acl>`. 
 
 Using the Aiven CLI commands, you can 
 
@@ -24,10 +24,10 @@ An example of recource configuration via Terraform is as shown below:
 
 .. code:: terraform
 
-   resource ``aiven_kafka_schema_registry_acl`` "my_resource" {
+   resource "aiven_kafka_schema_registry_acl" "my_resource" {
      project      = aiven_kafka_topic.demo.project
      service_name = aiven_kafka_topic.demo.service_name
      resource     = "Subject:${aiven_kafka_topic.demo.topic_name}"
      username     = aiven_kafka_user.demo.username
-     permission   = ``schema_registry_read``
+     permission   = "schema_registry_read"
    }
