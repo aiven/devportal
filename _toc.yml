@@ -464,6 +464,8 @@ entries:
             title: Terminology
           - file: docs/products/postgresql/reference/idle-connections
             title: Idle connections
+          - file: docs/products/postgresql/reference/pg-long-running-queries
+            title: Long-running queries
 
   - file: docs/products/flink
     title: Apache Flink
