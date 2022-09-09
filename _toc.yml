@@ -91,6 +91,8 @@ entries:
           - file: docs/platform/howto/saml/saml-authentication
           - file: docs/platform/howto/saml/setup-saml-onelogin
             title: Setting up SAML with OneLogin
+          - file: docs/platform/howto/saml/setup-saml-azure
+            title: Setting up SAML with Azure
 
     - file: docs/platform/reference
       title: Reference

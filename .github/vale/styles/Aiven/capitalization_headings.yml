@@ -6,6 +6,7 @@ scope: heading
 match: $sentence
 exceptions:
   - ACLs
+  - Active Directory
   - Amazon
   - Amazon Aurora
   - Amazon Web Services
