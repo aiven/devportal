@@ -38,7 +38,7 @@ If you are new to Karapace, learn more from the following resources:
 
 * The Karapace schema registry that Aiven maintains and makes available for every Aiven for Apache Kafka service: https://karapace.io/
 
-* Check out the `project repository <https://github.com/aiven/karapace>`_.
+* Check out the `GitHub project repository <https://github.com/aiven/karapace>`_.
 
 
  
