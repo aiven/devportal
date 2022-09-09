@@ -1,7 +1,7 @@
 Enable slow queries 
 ===================
 
-You can identify inefficient or time-consuming queries by enabling `slow queries <https://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html>` in your MySQL service. In this tutorial, you can find how can you enable slow queries in your Aiven for MySQL service.
+You can identify inefficient or time-consuming queries by enabling `slow queries <https://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html>`_ in your MySQL service. In this tutorial, you can find how can you enable slow queries in your Aiven for MySQL service.
 
 Prerequisites
 -------------
