@@ -1,5 +1,5 @@
-Issue when enabling private access in terraform 
-===============================================
+Private access error when using VPC 
+===================================
 
 When trying to set the Terraform argument ``private_access`` you may encounter the following error message:
 
