@@ -163,7 +163,7 @@ entries:
             - file: docs/tools/terraform/howto/config-postgresql-provider
               title: Use PostgreSQL provider alongside Aiven Terraform Provider  
             - file: docs/tools/terraform/howto/promote-to-master-pg-rr
-              title: "promote to master" on PostgreSQL read replica  
+              title: Promote PostgreSQL read replica to master 
         - file: docs/tools/terraform/concepts
           title: Concepts
           entries:
