@@ -26,7 +26,9 @@ Variable                Description
 ``SSL_CERTFILE``        Path of the `CA Certificate` for the Cassandra service
 ==================      =============================================================
 
+.. Tip::
 
+    All the above variables and the CA Certificate file can be found in the `Aiven Console <https://console.aiven.io/>`_, in the service detail page.
 
 
 Code
@@ -39,7 +41,8 @@ Set the `SSL_CERTFILE` environment variable to the location of the *CA Certifica
     export SSL_CERTFILE=<PATH>
     
 .. note::
-    Alternatively, you can provide the path to the certfile in the [ssl] section by setting the the ``certfile`` parameter in ``~/.cassandra/cqlshrc``
+
+    Alternatively, you can provide the path to the CA Certificate file in the ``[ssl]`` section by setting the the ``certfile`` parameter in ``~/.cassandra/cqlshrc``
 
 
 Navigate to the directory of your local Cassandra installation and execute the following from a terminal window:
@@ -49,4 +52,4 @@ Navigate to the directory of your local Cassandra installation and execute the f
     ./cqlsh --ssl -u avnadmin -p <PASSWORD> <HOST> <PORT> 
 
 
-This code connects to the Cassandra database.
+You are now connected to the Cassandra database.
