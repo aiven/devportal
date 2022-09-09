@@ -1,13 +1,13 @@
 Stress test Aiven for Apache Cassandra® using nosqlbench
 ========================================================
 
-Download and install nosqlbench
--------------------------------------
-
 `Nosqlbench <https://docs.nosqlbench.io/>`_ was originally developed by
 Datastax and then open sourced into an independent project. It is a
 great tool to stress-test and benchmark several SQL and NOSQL databases
 including Cassandra and PostgreSQL®.
+
+Download and install nosqlbench
+-------------------------------------
 
 To download the latest release, search for "latest" in `nosqlbench GitHub repository <https://github.com/nosqlbench/nosqlbench/releases/latest>`_.
 Nosqlbench can be downloaded as a Linux binary executable called ``nb``. The ``nb`` executable is built with all java libraries and includes a number of sample scenarios ready to be run.
