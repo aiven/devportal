@@ -1,4 +1,4 @@
-Setting up SAML authentication with Okta
+Set up SAML authentication with Okta
 ========================================
 
 SAML ( *Security Assertion Markup Language* ) is a standard for
@@ -22,6 +22,7 @@ then on **See All Accounts**
 5. Create a new Authentication Method, call it *Okta* (or similar) and then
 choose the team to add invited people to (or leave it blank)
 
+.. _setup_saml_okta_setup_okta:
 
 Setup on Okta
 -------------
@@ -30,16 +31,15 @@ This is a two step process. We will first create the SAML SP-Initiated
 authentication flow, then create a bookmark app that will redirect to
 the Aiven console's login page.
 
-1. Login to the ``Admin`` portal and navigate to the ``Applications`` tab. 
-   Click on the ``Create a new app integration`` button. You should see the ``Create SAML Integration`` form:
+1. Login to the **Admin** portal and navigate to the **Applications** tab. 
+   Click on the **Create a new app integration** button. You should see the **Create SAML Integration** form
 
-2. Select **SAML 2.0** for the ``Sign on method``, then click ``Next``.
+2. Select **SAML 2.0** for the **Sign on method**, then click **Next**
 
-Okta configuration
-~~~~~~~~~~~~~~~~~~
+3. Give the app a name (e.g. "Aiven SAML"), a logo and set it's visibility for your Okta users, then click **Next**
 
-3. In the following form, you can give the app a name (e.g. "Aiven SAML"), 
-   logo and set it's visibility for your Okta users. Once this is done, click ``Next``.
+4. Edit the app configuration setting the following values:
+
 
    .. list-table::
       :widths: 10 90
@@ -49,31 +49,44 @@ Okta configuration
       * - Parameter
         - Value
       * - ``Single sign on URL``
-        - | ``https://api.aiven.io/v1/sso/saml/account/{account_id}/method/{account_auth_method_id}/acs``
-          .. note::
-             This value is visible in Aiven Console on the newly created Authentication method page.
+        - ``https://api.aiven.io/v1/sso/saml/account/{account_id}/method/{account_auth_method_id}/acs``
       * - ``Audience URI (SP Entity ID)``
-        - | ``https://api.aiven.io/v1/sso/saml/account/{account_id}/method/{account_auth_method_id}/metadata``
-          .. note::
-             This value is visible in Aiven Console on the newly created Authentication method page.
+        - ``https://api.aiven.io/v1/sso/saml/account/{account_id}/method/{account_auth_method_id}/metadata``
       * - ``Default RelayState``
-        - | ``https://console.aiven.io/ - Aiven Console``
-          | ``https://console.gcp.aiven.io/ - GCP Marketplace Console``
-          | ``https://console.aws.aiven.io/ - AWS Marketplace Console``
-          .. important:: 
-             This is the homepage of the Aiven Console and is important for IdP initiated sign-on to function correctly.
+        - ``https://console.aiven.io/`` when using the Aiven Console
 
-4. ``Attribute statements`` should have an entry where ``name`` is ``email`` and ``value`` ``user.email``
+          ``https://console.gcp.aiven.io/`` when using Aiven GCP Marketplace Console
 
-5. Once this is done, click ``Next`` then ``Finish``. You will be redirect to your application in Okta.
+          ``https://console.aws.aiven.io/`` when using Aiven AWS Marketplace Console
+   
+   .. important:: 
+      The ``Default RelayState`` is the homepage of the Aiven Console and is foundamental for IdP initiated sign-on to function correctly.
 
-6. Once the application is created, you need to provide the application data to Aiven. These data can be found in the ``Sign On`` tab of the application on Okta, after clicking the ``View Setup Instructions``.
+   .. note::
+      The ``Single sign on URL`` and ``Audience URI (SP Entity ID)`` values are visible in `Aiven Console <https://console.aiven.io/>`__ on the newly created Authentication method page.
+
+5. The **Attribute statements** should have an entry with:
+   
+   .. list-table::
+      :widths: 10 90
+      :header-rows: 1
+      :align: left
+
+      * - Parameter
+        - Value
+      * - ``name``
+        - ``email``
+      * - ``value``
+        - ``user.email``
+
+5. Click ``Next`` then ``Finish``. You will be redirect to your application in Okta.
+
+6. Once the application is created, collect the application data to finish the setup in the `Aiven Console <https://console.aiven.io/>`__. The application data can be found in the **Sign On** tab of the application on Okta, after clicking the **View Setup Instructions**.
 
    .. image:: /images/platform/howto/saml/okta-view-saml-instructions.png
       :alt: View SAML setup instructions in Okta
 
-   This will open a new tab where you will get the following required information to
-   finalize the setup to use Okta with Aiven in the next step.
+   The required information to finalize the setup to use Okta with Aiven are the following:
 
    * ``Identity Provider Signle Sign-On URL``
    
@@ -84,31 +97,31 @@ Okta configuration
 Finish the configuration in Aiven
 ---------------------------------
 
-7. You can then go back to **Aiven Console** and finalize the configuration in the **Authentication** method page.
+Navigate to `Aiven Console <https://console.aiven.io/>`__ and finalize the configuration in the **Authentication** method page and set the following parameters for the new authentication method:
 
-   .. list-table::
-      :header-rows: 1
-      :align: left
+.. list-table::
+   :header-rows: 1
+   :align: left
 
-      * - Parameter
-        - | Value 
-          | ``from the SAML setup instrctions in previous step``
-      * - ``SAML IDP Url`` 
-        - ``Identity Provider Signle Sign-On URL``
-      * - ``SAML Entity ID`` 
-        - ``Identity Provider Issuer``
-      * - ``SAML Certificate`` 
-        - ``X.509 Certificate``
+   * - Parameter
+     - Value
+   * - ``SAML IDP Url`` 
+     - ``Identity Provider Signle Sign-On URL``
+   * - ``SAML Entity ID`` 
+     - ``Identity Provider Issuer``
+   * - ``SAML Certificate`` 
+     - ``X.509 Certificate``
 
-   .. important::
-      Toggle ``Enable IdP login`` and ``Enable authentication method`` before clicking ``Edit Method`` to save the settings.
+.. important::
+   Enable ``Enable IdP login`` and ``Enable authentication method`` before clicking ``Edit Method`` to save the settings.
 
-8. When this is done use the ``Account Link URL`` on the authentication configuration page to link your Okta account and Aiven profile. You can also invite other members of your team to login or signup to Aiven using Okta via the Signup link shown in the Authentication method page.
+Use the **Account Link URL** on the authentication configuration page to link your Okta account and Aiven profile. You can also invite other members of your team to login or signup to Aiven using Okta via the **Signup link** shown in the Authentication method page.
    
-   .. note::
-      Remember that they will need to be assigned to the Aiven application in Okta for it to be possible.**
+.. note::
 
-Assigning users to the Okta application
+   New users need to be assigned to the Aiven application in Okta for the login to be successful
+
+Assign users to the Okta application
 ---------------------------------------
 
 For your users to be able to login using SAML, you need to assign to the
@@ -122,9 +135,9 @@ Troubleshooting
 Authentication failed
 ~~~~~~~~~~~~~~~~~~~~~
 
-When launching Aiven SAML application getting the following error.
+When launching Aiven SAML application getting the following error::
 
-   **Authentication Failed**
+   Authentication Failed
 
    Login failed.  Please contact your account administrator for more details.
 
@@ -135,17 +148,12 @@ enabled.
 Invalid ``RelayState``
 ~~~~~~~~~~~~~~~~~~~~~~
 
-If you get this error, it means that you are attempting an IdP-initiated auth flow, i.e. you clicked the Aiven SAML app from the
-Okta UI. Previously, Aiven did not support IdP-initiated flows, but now it is possible if you set the Default ``RelayState`` in Okta to the corresponding console of your account.
+If you get the ``Invalid RelayState``, then you are attempting an IdP-initiated auth flow, for example by clicking the Aiven SAML app from the Okta UI. Previously, Aiven did not support IdP-initiated flows, but now it is possible if you set the ``Default RelayState`` in Okta to the corresponding console of your account as defined in the :ref:`setup Okta section <setup_saml_okta_setup_okta>`.
 
-| ``https://console.aiven.io/ - Aiven Console``
-| ``https://console.gcp.aiven.io/ - GCP Marketplace Console``
-| ``https://console.aws.aiven.io/ - AWS Marketplace Console``
+The Okta password does not work
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-My Okta password does not work
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Make sure to use the **Account Link URL** to add the Okta Authentication method to your Aiven profile. 
 
-Make sure that you use the ``Account Link URL`` to add the Okta
-Authentication method to your Aiven profile. Once linked, you should get
-the choice of multiple sign-in methods as well as see the other
-Authentication method in ``User Information`` -> ``Authentication``.
+Once linked, you should get the choice of multiple sign-in methods as well as see the other
+Authentication method in **User Information** -> **Authentication** section on the `Aiven Console <https://console.aiven.io/>`__.

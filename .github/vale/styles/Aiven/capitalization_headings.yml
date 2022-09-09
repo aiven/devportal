@@ -63,6 +63,7 @@ exceptions:
   - MySQL
   - New Relic
   - NodeJS
+  - Okta
   - OneLogin
   - OpenSearch
   - Operator
