@@ -161,7 +161,7 @@ Set up properties to connect to the cluster:
 
 With library ``kafka-go``
 --------------------------
-Install the library `Sarama <https://github.com/Shopify/sarama>`_ and use code snippet according to your preferred authentication method below.
+`Install the library <https://github.com/segmentio/kafka-go>`_ ``kafka-go`` and use code snippet according to your preferred authentication method below.
 
 With SSL authentication
 ***********************
