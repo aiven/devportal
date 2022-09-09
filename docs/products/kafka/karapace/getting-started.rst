@@ -1,4 +1,4 @@
-Getting Started with Karapace
+Getting started with Karapace
 =============================
 
 To use Karapace, you need to enable **Karapace Schema registry** and **REST APIs** on your Aiven for Apache Kafka® service. This can be enabled through the Aiven console.
