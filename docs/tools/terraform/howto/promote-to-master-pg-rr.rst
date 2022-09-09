@@ -72,7 +72,7 @@ Once you remove these code blocks, your Terraform script will look something lik
 Run ``terraform apply`` to have the read replica promoted to master and both Aiven for PostgreSQL services will run as independent services.
 
 .. note::
-    In order for the promotion to master to succeed, the resource "aiven_service_integration" must be used when creating the primary and read replica services and subsequently removed. 
+    In order for the promotion to master to succeed, the resource ``aiven_service_integration`` must be used when creating the primary and read replica services and subsequently removed. 
 
 
   
