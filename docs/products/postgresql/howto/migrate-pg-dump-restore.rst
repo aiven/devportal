@@ -100,5 +100,5 @@ Whenever you load data with the ``pg_restore`` or similar tools, it is recommend
 
 Generally, the Aiven platform automatically runs ``ANALYZE`` on your service after performing a major version upgrade in order to ensure the statistics are up-to-date.
 
-For more information about ``ANALYZE``, you may see the official `sql analyze <https://www.postgresql.org/docs/current/sql-analyze.html>`_ documentation.
+For more information about ``ANALYZE``, you may see the official `SQL analyze <https://www.postgresql.org/docs/current/sql-analyze.html>`_ documentation.
 
