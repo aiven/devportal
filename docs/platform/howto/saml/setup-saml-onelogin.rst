@@ -31,7 +31,7 @@ Setup on OneLogin
 
 3. Search for **SAML Custom Connector (Advanced)** and select it.
 
-3. Change the Display Name to `Aiven`` and add any other visual configurations you like and click **Save**.
+3. Change the Display Name to ``Aiven`` and add any other visual configurations you like and click **Save**.
 
 OneLogin configuration
 ~~~~~~~~~~~~~~~~~~~~~~
