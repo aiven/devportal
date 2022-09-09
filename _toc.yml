@@ -647,6 +647,7 @@ entries:
           - file: docs/products/mysql/howto/reclaim-disk-space
           - file: docs/products/mysql/howto/identify-disk-usage-issues
           - file: docs/products/mysql/howto/disable-foreign-key-checks
+          - file: docs/products/mysql/howto/enable-slow-queries
       - file: docs/products/mysql/reference
         title: Reference
         entries:
