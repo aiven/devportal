@@ -1,13 +1,13 @@
 Stress test Aiven for Apache Cassandra® using nosqlbench
 ========================================================
 
-Downloading and installing nosqlbench
+Download and install nosqlbench
 -------------------------------------
 
 `Nosqlbench <https://docs.nosqlbench.io/>`_ was originally developed by
 Datastax and then open sourced into an independent project. It is a
 great tool to stress-test and benchmark several SQL and NOSQL databases
-including Cassandra, MongoDB and PostgreSQL®.
+including Cassandra and PostgreSQL®.
 
 To download the latest release, search for "latest" in `nosqlbench GitHub repository <https://github.com/nosqlbench/nosqlbench/releases/latest>`_.
 Nosqlbench can be downloaded as a Linux binary executable called ``nb``. The ``nb`` executable is built with all java libraries and includes a number of sample scenarios ready to be run.
@@ -15,55 +15,82 @@ Nosqlbench can be downloaded as a Linux binary executable called ``nb``. The ``n
 Prerequisites
 -------------
 
-ADD STUFF HERE
-
-Running a nosqlbench scenario against your Aiven for Apache Cassandra® service
-------------------------------------------------------------------------------
-
-Without getting into the details of the `nosqlbench core concepts <https://docs.nosqlbench.io/docs/nosqlbench/core-concepts/>`_, 
-we want to provide you with a number of command lines to start using nosqlbench effectively with Aiven.
-
-Preparing to use authentication and SSL
----------------------------------------
-
 In Aiven console, select your Cassandra service and download the SSL certificate to a 
-file on your linux computer where you have installed the ``nb`` executable. We will assume the certificate has been  saved 
+file on the same linux computer where you have installed the ``nb`` executable. We will assume the certificate has been  saved 
 in a file called ``ca_cassandra.pem``, in the same directory of the ``nb`` executable.
 
-The second thing to do is to create an environment variable called ``AVNADMPWD`` with the ``avnadmin`` password that can be found in the details 
-of the Cassandra service in the Aiven console. 
-This can be done by adding this line in the ``.bashrc`` file::
+The second thing to do is to create an environment variable called ``AVNADMPWD`` with the password of Aiven user ``avnadmin``. 
+This password can be copied from the Cassandra service details in the Aiven console  
+
+In order to store this password securely, add this line in the ``.bashrc`` file in the home of the user running the ``nb`` command line::
 
    export AVNADMPWD=avnadmin-password
 
-Once you have saved and sourced the ``.bashrc`` file, you can run this ``nb`` command line to create a sample schema and load data::
+Save and source the ``.bashrc`` file.
 
-   ./nb run driver=cql workload=cql-keyvalue username=avnadmin password=$AVNADMPWD ssl=openssl certFilePath=~/ca_cassandra.pem tags=phase:schema cycles=100k --progress console:1s host=cassandra-f5c27ca-demo.aivencloud.com port=20341
+Run a nosqlbench scenario against your Aiven for Apache Cassandra® service
+------------------------------------------------------------------------------
 
-where ``driver`` specifies the type of client you are going to use, in our case it's ``cql``
-the ``workload``option calls a specific workload file that is compiled
-inside the ``nb`` executable and instructs ``nb`` to generate key/value
-pairs for a table called ``baselines.keyvalue``. 
-The ``phase`` option refers to a specific point in the **workload** definition file and specifies 
-the particular **activity** to run. In our case, the phase is ``schema`` which means that the nosqlbench will create the schema of the Cassandra keyspace.
+Getting into the details of the `nosqlbench core concepts <https://docs.nosqlbench.io/docs/nosqlbench/core-concepts/>`_ is beyond the scope of this article.
+However the successful student will find the core concepts extemely useful to understand how ``nb`` works internally.
+The scope of this article is to provide you with a number of command lines to start using nosqlbench effectively with Aiven.
+
+
+This ``nb`` command line creates a sample schema and loads data in the new table (called ``baselines.keyvalue``)::
+
+   ./nb run \
+   driver=cql \
+   workload=cql-keyvalue \
+   username=avnadmin \
+   password=$AVNADMPWD \
+   ssl=openssl \
+   certFilePath=~/ca_cassandra.pem \
+   tags=phase:schema \
+   cycles=100k \
+   --progress console:1s \
+   host=cassandra-f5c27ca-demo.aivencloud.com port=20341
+
+- where ``driver`` specifies the type of client you are going to use, in our case it's ``cql``
+- the ``workload``option calls a specific workload file that is compiled inside the ``nb`` executable and instructs ``nb`` to generate key/value pairs for a table called ``baselines.keyvalue``. 
+- The ``phase`` option refers to a specific point in the **workload** definition file and specifies the particular **activity** to run. In our case, the phase is ``schema`` which means that the nosqlbench will create the schema of the Cassandra keyspace.
 
 In order to run client connections and generate actual data in the keyspace and tables created, these command lines need to be run::
 
-    ./nb run driver=cql workload=cql-keyvalue username=avnadmin password=$AVNADMPWD ssl=openssl certFilePath=~/ca_cassandra.pem tags=phase:rampup cycles=100k --progress console:1s host=cassandra-f5c27ca-demo.aivencloud.com port=20341
+    ./nb run \
+    driver=cql \
+    workload=cql-keyvalue \
+    username=avnadmin \
+    password=$AVNADMPWD \
+    ssl=openssl \
+    certFilePath=~/ca_cassandra.pem \
+    tags=phase:rampup \
+    cycles=100k \
+    --progress console:1s \
+    host=cassandra-f5c27ca-demo.aivencloud.com port=20341
     
 or::
 
-    ./nb run driver=cql workload=cql-keyvalue username=avnadmin password=$AVNADMPWD ssl=openssl certFilePath=~/ca_cassandra.pem tags=phase:main cycles=100k --progress console:1s host=cassandra-f5c27ca-demo.aivencloud.com port=20341
+    ./nb run \
+    driver=cql \
+    workload=cql-keyvalue \
+    username=avnadmin \
+    password=$AVNADMPWD \
+    ssl=openssl \
+    certFilePath=~/ca_cassandra.pem \
+    tags=phase:main \
+    cycles=100k \
+    --progress console:1s \
+    host=cassandra-f5c27ca-demo.aivencloud.com port=20341
 
 where the phases ``rampup`` or ``main`` identify other activities that are defined in the ``cql-keyvalue`` workload file.
 
 
-To understand how the ``cql-keyvalue`` workload functions, it will help to have a look at the workload definition file for the key-value example.
-First of all you can list all the precompiled workloads::
+In order to see the details of the several predefined workloads and activities, it will help to dump the workload definition to a file.
+With this command line you can list all the precompiled workloads::
 
    ./nb --list-workloads
 
-The above command will generate a list like the following::
+The above command will generate a list like this below::
 
     # An IOT workload with more optimal settings for DSE
     /activities/baselines/cql-iot-dse.yaml
@@ -76,30 +103,42 @@ The above command will generate a list like the following::
 
     ...
 
-To dump and edit the particular workload file locally on disk, you can use this command line:
-
-::
+To dump and edit the particular workload file locally on disk, you can use this command line::
 
    ./nb --copy cql-keyvalue
 
 this command will generate the file called ``cql-keyvalue.yaml`` which
 contatins the specifications for the keyvalue workload.
 
-Other useful ``nb`` commands
+Create your own workload
+------------------------
+
+Workload files can be modified and customised and then run with ``nb``.
+The command option ``workload=cql-keyvalue`` expects the file ``cql-keyvalue.yaml`` to be in the same directory of the ``nb`` command.
+If you create a new yaml file called ``my-workload.yaml`` in the same directory of ``nb`` command, the new workload can be run with this command line::
+
+      ./nb run \
+    driver=cql \
+    workload=my-workload
+
+Parallelise ``nb`` execution
 ----------------------------
 
-For a list of all the pre-compiled scenarios:
-
-::
-
-   ./nb --list-scenarios
-
 This command line is similar to the one used to load the data but is
-using ``threads`` option to parallelise at the client side:
+using ``threads`` option to parallelise at the client side::
 
-::
-
-   ./nb run driver=cql workload=cql-keyvalue username=avnadmin password=$AVNADMPWD ssl=openssl certFilePath=~/ca_cassandra.pem tags=phase:main cycles=100k threads=50 --progress console:1s host=cassandra-f5c27ca-demo.aivencloud.com port=20341
+   ./nb run \
+   driver=cql \
+   workload=cql-keyvalue \
+   username=avnadmin \
+   password=$AVNADMPWD \
+   ssl=openssl \
+   certFilePath=~/ca_cassandra.pem \
+   tags=phase:main \
+   cycles=100k \
+   threads=50 \
+   --progress console:1s \
+   host=cassandra-f5c27ca-demo.aivencloud.com port=20341
 
 
 Check that data has been loaded
