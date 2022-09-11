@@ -117,3 +117,12 @@ $ vale --output=line --sort .github/vale/tests/missing_image_alt.rst
 .github/vale/tests/missing_image_alt.rst:20:1:Aiven.missing_alt_in_image:Missing ':alt:' in '.. image:: images/eof.png :width: 100% '
 >=1
 
+# ---------------------------------------------------------------
+# Markdown-style links don't work in reStructuredText, so report them
+
+$ vale --output=line --sort .github/vale/tests/markdown_links.rst
+>
+.github/vale/tests/markdown_links.rst:1:28:Aiven.markdown_links:Markdown links like '[Some text](https://example.com)' won't work in reStructuredText
+.github/vale/tests/markdown_links.rst:4:29:Aiven.markdown_links:Markdown links like '[]() (what would markdown do with that?)' won't work in reStructuredText
+.github/vale/tests/markdown_links.rst:8:18:Aiven.markdown_links:Markdown links like '[text](url)' won't work in reStructuredText
+>=1
