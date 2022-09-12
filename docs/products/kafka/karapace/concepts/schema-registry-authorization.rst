@@ -1,12 +1,12 @@
 
 Karapace schema registry authorization
 ======================================
-The schema registry authorization feature when enabled in :doc:`Karapace schema registry <../getting-started>` allows you to authenticate the user, and control read or write access to the individual resources available in the Schema Registry. 
+The schema registry authorization feature when enabled in :doc:`Karapace schema registry <../howto/enable-karapace>` allows you to authenticate the user, and control read or write access to the individual resources available in the Schema Registry. 
 Authorization in Karapace is achieved by using :doc:`Access Control Lists (ACLs) <../concepts/acl-definition>`. ACLs provide a way to achieve fine-grained access control for the resources in Karapace.
 
 .. Note::
 
-  Karapace schema registry authorization is enabled on all Aiven for Apache Kafka® services. The exception is older services created before mid-2022, where the feature needs to be :doc:`enabled <../getting-started>`.
+  Karapace schema registry authorization is enabled on all Aiven for Apache Kafka® services. The exception is older services created before mid-2022, where the feature needs to be :doc:`enabled <../howto/enable-karapace>`.
 
 Common use cases
 ----------------

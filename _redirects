@@ -24,6 +24,8 @@ https://developer.aiven.io/* https://docs.aiven.io/:splat 301!
 /docs/tools/terraform/upgrade-provider-v1-v2.html                     /docs/tools/terraform/howto/upgrade-provider-v1-v2.html
 /docs/products/mysql/howto/max-number-of-connections.html             /docs/products/mysql/concepts/max-number-of-connections.html
 /docs/products/postgresql/reference/plan-iops.html                    /docs/products/postgresql/reference/resource-capability.html
+/docs/products/kafka/howto/enable-schema-registry-authorization.html  /docs/products/kafka/karapace/howto/enable-schema-registry-authorization.html
+/docs/products/kafka/howto/manage-schema-registry-authorization.html  /docs/products/kafka/karapace/howto/manage-schema-registry-authorization.html
 
 # Redirect from .index.html to specific page names for landing
 

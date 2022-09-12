@@ -16,6 +16,7 @@ Using the Aiven CLI commands, you can
 
 For more information on the ACL commands, the required parameters and examples, see :doc:`avn service schema-registry-acl </docs/tools/cli/service/schema-registry-acl>`.
 
+
 Manage resources via Terraform
 ------------------------------
 Additionally, the :doc:`Aiven Aiven Terraform provider </docs/tools/terraform>` supports managing Karapace schema registry authorization ACL entries with the ``aiven_kafka_schema_registry_acl`` resource. For more information, see the `resource documentation  <https://registry.terraform.io/providers/aiven/aiven/latest/docs/resources/kafka_schema_registry_acl>`_.

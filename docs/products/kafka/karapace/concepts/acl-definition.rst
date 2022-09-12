@@ -12,10 +12,8 @@ An ACL for Karapace schema registry authorization consists of zero or more entri
 *  A **resource** can be in the following formats:
   
    * ``Config:``: the entry controls access to global compatibility configurations. Karapace only allows a user to retrieve and change the default schema compatibility mode via the global ``Config:`` resource. For more information, see the project `README <https://github.com/aiven/karapace/blob/main/README.rst>`_.
-
-    .. Note::
-
-      The global compatibility APIs require ``Config:`` resource access with ``schema_registry_read`` permission when getting the configuration and ``schema_registry_write`` permission when setting it.    
+      .. Note::
+        The global compatibility APIs require ``Config:`` resource access with ``schema_registry_read`` permission when getting the configuration and ``schema_registry_write`` permission when setting it.    
   
    * ``Subject:subject_name``: the entry controls access to subjects in the schema registry.
 
