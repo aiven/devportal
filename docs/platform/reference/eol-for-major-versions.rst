@@ -29,7 +29,8 @@ Aiven for Elasticsearch
 -----------------------
 
 Aiven for Elasticsearch major versions will reach EOL on the same date
-as the upstream open source project's EOL .
+as the upstream open source project's EOL.  `Aiven for OpenSearch® <https://docs.aiven.io/docs/products/opensearch.html>`_
+is Aiven's service offering for Elasticsearch.
 
 .. container:: intercom-interblocks-table-container
 
@@ -40,6 +41,21 @@ as the upstream open source project's EOL .
    6.x         2020-11-20    2020-11-20
    7.x         2022-03-23    2022-05-11 (v7.10)
    =========== ============= ==================
+
+
+Aiven for OpenSearch®
+---------------------
+
+Aiven for OpenSearch® is the open source continuation of the original Elasticsearch service.
+
+.. container:: intercom-interblocks-table-container
+
+   =========== ============= ==================
+   **Version** **Aiven EOL** **Upstream EOL**
+   1.x         2024-??-??    2023-12-31
+   2.x         202?-??-??    202?-??-??
+   =========== ============= ==================
+
 
 Aiven for PostgreSQL®
 ---------------------
@@ -94,7 +110,7 @@ EOL one year after it's made available on Aiven platform.
    2.8.x       2022-06-02    2021-04-26
    3.0         2022-11-22    2021-11-22
    3.1         2023-02-14    2022-02-14
-   3.2         
+   3.2         2023-06-27    2022-06-21
    =========== ============= ========================================
 
 .. _h_0f2929c770:
@@ -152,7 +168,7 @@ the version upgrade so that customers can safely test compatibility
 without committing their production services to a one-way upgrade.
 
 .. Tip::
-   Navigate to the service's ```Overview`` page and scroll down until
+   Navigate to the service's ``Overview`` page and scroll down until
    you see a ``New database fork`` button. This will allow you to make a
    separate new database service that is cloned from the current one's
    backups.
