@@ -261,8 +261,6 @@ entries:
                 title: Schema registry
                 entries:
                   - file: docs/products/kafka/howto/enable-karapace
-                  - file: docs/products/kafka/howto/enable-schema-registry-authorization
-                  - file: docs/products/kafka/howto/manage-schema-registry-authorization
               - file: docs/products/kafka/howto/best-practices
               - file: docs/products/kafka/howto/configure-with-kafka-cli
               - file: docs/products/kafka/howto/set-kafka-parameters
@@ -383,6 +381,22 @@ entries:
           title: Reference
           entries:
             - glob: docs/products/kafka/kafka-mirrormaker/reference/*
+
+      - file: docs/products/kafka/karapace
+        title: Karapace
+        entries:
+        - file: docs/products/kafka/karapace/getting-started
+        - file: docs/products/kafka/karapace/concepts
+          title: Concepts
+          entries:
+            - file: docs/products/kafka/karapace/concepts/schema-registry-authorization
+            - file: docs/products/kafka/karapace/concepts/acl-definition
+        - file: docs/products/kafka/karapace/howto
+          title: HowTo
+          entries:
+            - file: docs/products/kafka/karapace/howto/enable-karapace
+            - file: docs/products/kafka/karapace/howto/enable-schema-registry-authorization
+            - file: docs/products/kafka/karapace/howto/manage-schema-registry-authorization
 
   - file: docs/products/postgresql
     title: PostgreSQL

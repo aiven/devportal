@@ -36,6 +36,7 @@ Datastax
 datastore
 dashboards
 Debezium
+deserialize
 Dev
 Distro
 Docker
