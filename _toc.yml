@@ -711,6 +711,7 @@ entries:
               - file: docs/products/cassandra/howto/connect-python
               - file: docs/products/cassandra/howto/connect-go
           - file: docs/products/cassandra/howto/connect-cqlsh-cli
+          - file: docs/products/cassandra/howto/use-nosqlbench-with-cassandra
       - file: docs/products/cassandra/reference
         title: Reference
         entries:
