@@ -1,4 +1,4 @@
-Parform a stress test using nosqlbench
+Perform a stress test using nosqlbench
 ========================================================
 
 `Nosqlbench <https://docs.nosqlbench.io/>`_ is an open source project that can be used to stress-test and benchmark several SQL and NOSQL databases including Cassandra® and PostgreSQL®.
@@ -14,7 +14,7 @@ Nosqlbench can be downloaded as a Linux binary executable called ``nb``. The ``n
    You can read more about the nosqlbench core concepts and parameters in the `dedicated documentation <https://docs.nosqlbench.io/docs/nosqlbench/core-concepts/>`_
 
 Variables
-'''''''''
+-------------
 
 These are the placeholders you will need to replace in the code sample:
 
@@ -34,6 +34,7 @@ Variable                Description
 Run nosqlbench against your Aiven for Apache Cassandra® service
 ---------------------------------------------------------------
 
+The following sections shows how to run several nosqlbench worlkloads against an Aiven for Cassandra service.
 
 Create a schema and load data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -90,13 +91,13 @@ Customise nosqlbench workflows
 Nosqlbench uses workflows to define the load activity. You can define your own workflow to satisfy specific loading/benchmarking needs.
 
 Check the workflow details
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To check the details of the several predefined workloads and activities, you can dump the definition to a file. To have the list of all the precompiled worloads execute::
+To check the details of the several predefined workloads and activities, you can dump the definition to a file. To have the list of all the pre-compiled workloads execute::
 
    ./nb --list-workloads
 
-The above command will generate the list of precompiled workloads like::
+The above command will generate the list of pre-compiled workloads like::
 
     # An IOT workload with more optimal settings for DSE
     /activities/baselines/cql-iot-dse.yaml
@@ -122,7 +123,7 @@ Create your own workload
 Workload files can be modified and then executed with ``nb`` using the command option ``workload=WORKLOAD_NAME``.
 
 The tool expects the file ``WORKLOAD_NAME.yaml`` to be in the same directory of the ``nb`` command.
-If you create a new yaml file called ``my-workload.yaml`` in the same directory of ``nb`` command, the new workload can be run with this command line::
+If you create the file called ``my-workload.yaml`` in the same directory of ``nb`` command, the new workload can be run with this command line::
 
    ./nb run                   \
       driver=cql              \
