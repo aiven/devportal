@@ -11,7 +11,7 @@ Prerequisites
 Configure slow queries
 ----------------------
 
-Follow the steps to enable your slow queries in your Aiven for MySQL service:
+Follow these steps to enable your slow queries in your Aiven for MySQL service:
 
 1. On the **Overview** page, scroll down to the **Advanced configuration** section and click **Add configuration option**.
 2. Click **Add configuration option** and choose the ``slow_query_log``. 
@@ -25,7 +25,7 @@ Your Aiven for MySQL can now log slow queries. If you want to simulate slow quer
 Simulate slow queries
 ---------------------
 
-Connect to your Aiven for MySQL using your favorite tool. Make sure to have ``slow_query_log`` enabled and set ``long_query_time``, in seconds, for ``2``. Now, you can run the following query to simulate a slow query of 3 seconds.
+Connect to your Aiven for MySQL using your favorite tool. Make sure to have ``slow_query_log`` enabled and set ``long_query_time`` to ``2`` seconds. Now, you can run the following query to simulate a slow query of 3 seconds.
 
 .. code::
 
@@ -48,7 +48,7 @@ Now, you can check the logs of your slow query:
 
     select convert(sql_text using utf8) as slow_query, query_time from mysql.slow_log;
 
-You can see the logs in the output:
+Your output should look similar to this:
 
 .. code::
 
