@@ -1,13 +1,13 @@
-Use of Deprecated TLS Versions
+Use of deprecated TLS Versions
 ==============================
 
 TLS versions ``TLSv1`` and ``TLSv1.1`` are considered insecure, and are no longer supported in Aiven for PostgreSQL® deployments.
 
-Older services (and forks of older services) may still allow connections using these TLS versions. Support for these versions is deprecated, and will be removed in the future.
+Older services (and forks of older services) may still allow connections using these TLS versions. Support for these versions is deprecated and will be removed in the future.
 
-We recommend updating clients, or configuring them to only use ``TLSv1.2`` and above. Please refer to the documentation for your client(s) on how to accomplish this.
+We recommend updating clients, or configuring them to only use ``TLSv1.2`` and above. Please refer to the documentation for your PostgreSQL client(s) on how to accomplish this.
 
-To check the TLS versions clients are connecting with, you can query the ``pg_stat_activity``` table joined with ``pg_stat_ssl``:
+To check the TLS versions clients are connecting with, you can query the ``pg_stat_activity`` table joined with ``pg_stat_ssl``:
 
 .. code:: sql
 
