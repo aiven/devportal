@@ -3,6 +3,10 @@ Create a Debezium source connector for MySQL
 
 The MySQL Debezium source connector extracts the changes committed to the database binary log (binlog), and writes them to an Apache Kafka® topic in a standard format where they can be transformed and read by multiple consumers.
 
+.. note::
+
+    You can check the full set of available parameters and configuration options in the `connector's documentation <https://debezium.io/docs/connectors/mysql/>`_.
+
 .. _connect_debezium_mysql_schema_versioning:
 
 Schema versioning

@@ -3,6 +3,10 @@ Create a Debezium source connector for SQL Server
 
 The SQL Server Debezium source connector is based on the `change data capture (CDC) feature <https://docs.microsoft.com/en-us/sql/relational-databases/track-changes/about-change-data-capture-sql-server?view=sql-server-2017>`_, extracts the database changes captured in specific `change tables <https://debezium.io/documentation/reference/stable/connectors/sqlserver.html>`_ on a polling interval, and writes them to an Apache Kafka® topic in a standard format where they can be transformed and read by multiple consumers.
 
+.. note::
+
+    You can check the full set of available parameters and configuration options in the `connector's documentation <https://debezium.io/documentation/reference/stable/connectors/sqlserver.html>`_.
+
 .. _connect_debezium_sql_server_schema_versioning:
 
 Enable CDC in SQL Server
