@@ -481,7 +481,7 @@ entries:
           - file: docs/products/postgresql/reference/idle-connections
             title: Idle connections
           - file: docs/products/postgresql/reference/use-of-deprecated-tls-versions
-            title: Use of Deprecated TLS Versions
+            title: Use of deprecated TLS Versions
 
   - file: docs/products/flink
     title: Apache Flink
