@@ -17,12 +17,12 @@ In the `Aiven Console <http://console.aiven.io/>`_, you can go to the **Current 
     :alt: PostgreSQL® service overview tab in Aiven's console
 
 
-On this page, you can click **Terminate** to stop any queries directly.
+On the Current Queries page, you can check the query duration and click **Terminate** to stop any long-running queries.
 
 
-PostgreSQL® shell (psql)
-^^^^^^^^^^^^^^^^^^^^^^^^
-You can login to your service by running on the terminal ``psql <service_uri>``.  Once connected, you can call the following function on the ``psql`` shell to terminate a query manually::
+Detect and terminate long running queries with ``psql``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+You can :doc:`login to your service <./connect-psql>`  by running on the terminal ``psql <service_uri>``.  Once connected, you can call the following function on the ``psql`` shell to terminate a query manually::
 
     SELECT pg_terminate_backend(pid);
 
