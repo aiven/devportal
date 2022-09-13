@@ -8,7 +8,7 @@ List of cloud regions
 
 .. code::
 
-  curl -H "Authorization: Bearer {TOKEN}" https://api.aiven.io/v1/clouds
+  curl -H "Authorization: aivenv1 {TOKEN}" https://api.aiven.io/v1/clouds
 
 The following is a sample response: 
 
