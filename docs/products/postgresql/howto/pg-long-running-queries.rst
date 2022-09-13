@@ -5,11 +5,11 @@ Aiven does not terminate any customer queries even if they run indefinitely, but
 
 To identify and terminate such long-running queries, you can do it from either:
 
-* `Aiven Console <http://console.aiven.io>`_
+* `Aiven Console <http://console.aiven.io>`__
 * `PostgreSQL® shell <https://www.postgresql.org/docs/current/app-psql.html>`_ (``psql``)
 
 
-Terminate long running queries from the Aiven console
+Terminate long running queries from the Aiven Console
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 In the `Aiven Console <http://console.aiven.io/>`_, you can go to the **Current Queries** tab for your service.
 
@@ -27,7 +27,7 @@ You can :doc:`login to your service <./connect-psql>`  by running on the termina
     SELECT pg_terminate_backend(pid);
 
 
-You can learn more about the ``pg_terminate_backend()`` function from the `official documentation <https://pgpedia.info/p/pg_terminate_backend.html>`_.
+You can learn more about the ``pg_terminate_backend()`` function from the `official documentation <https://www.postgresql.org/docs/current/functions-admin.html>`_.
 
 You can then use the following query to monitor currently running queries::
 
