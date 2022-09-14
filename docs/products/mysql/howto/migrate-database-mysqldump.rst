@@ -22,6 +22,9 @@ The below example uses Aiven for MySQL databases for both, ``source-db`` and ``t
 Backup the data
 ---------------
 
+Variables
+'''''''''
+
 To backup the ``source-db`` data to a file called ``mydb_backup.sql`` you need to collect some information about your Aiven for MySQL ``source-db`` database. Go to your Aiven ``source-db`` service, from **Overview** page, find the following information:
 
 .. list-table::
@@ -40,6 +43,9 @@ To backup the ``source-db`` data to a file called ``mydb_backup.sql`` you need t
      - Connection **Password**
    * - ``DEFAULTDB``
      - Database that contains the ``source-db`` data
+
+Commands
+'''''''''
 
 Use the following command to backup your Aiven for MySQL data to the ``mydb_backup.sql`` file:
 
@@ -68,6 +74,9 @@ The ``--single-transaction`` `flag <https://dev.mysql.com/doc/refman/8.0/en/mysq
 Restore the data
 ----------------
 
+Variables
+'''''''''
+
 You can back up the data previously saved in a file to an Aiven for MySQL database. You need to collect some information about your Aiven for MySQL ``target-db`` to restore the data. Go to your Aiven ``target-db`` service, from **Overview** page, find the following information:
 
 .. list-table::
@@ -86,6 +95,9 @@ You can back up the data previously saved in a file to an Aiven for MySQL databa
      - Connection password
    * - ``DEFAULTDB``
      - Database that contains the ``target-db`` data
+
+Commands
+'''''''''
 
 Run the following command to store your saved data to your Aiven for MySQL database:
 
