@@ -1,5 +1,5 @@
-Migrate your MySQL data using ``mysqldump``
-===========================================
+Backup and restore MySQL data using ``mysqldump``
+=================================================
 
 Performing the backup of your MySQL data to another storage service is a good way to ensure access to your data in case a failure occurs. In this article, you can find out how to copy your Aiven for MySQL data to a file and backup to another Aiven for MySQL database using ``mysqldump`` `tool <https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html>`__.
 
