@@ -58,18 +58,21 @@ Use the following command to backup your Aiven for MySQL data to the ``mydb_back
     --password > mydb_backup.sql
 
 
-With this command, the password will be requested at the prompt; paste ``SOURCE_DB_PASSWORD`` to the terminal, then a file named ``mydb_backup.sql`` will be created with your backup data.
-
-.. note::
-  
-  Having the prompt request for the password is more secure than including the password straight away in the command. 
+With this command, the password will be requested at the prompt; paste ``SOURCE_DB_PASSWORD`` to the terminal, then a file named ``mydb_backup.sql`` will be created with your backup data. Note that having the prompt request for the password is more secure than including the password straight away in the command. 
 
 The ``--single-transaction`` `flag <https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html#option_mysqldump_single-transaction>`_ starts a transaction in isolation mode ``REPEATABLE READ`` before running, allowing ``mysqldump`` to read the database in the current state at the time of the transaction and therefore ensuring consistency of the data.
 
-
 .. warning::
-    
-    If you are using `Global Transaction Identifiers <https://dev.mysql.com/doc/refman/5.7/en/replication-gtids-concepts.html>`_ (GTIDs) with InnoDB use the ``--set-gtid-purged=OFF`` `option <https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html#option_mysqldump_set-gtid-purged>`_. The reason is that GTID's are not available with MyISAM.
+
+  If you are using `Global Transaction Identifiers <https://dev.mysql.com/doc/refman/5.7/en/replication-gtids-concepts.html>`_ (GTIDs) with InnoDB use the ``--set-gtid-purged=OFF`` `option <https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html#option_mysqldump_set-gtid-purged>`_. The reason is that GTID's are not available with MyISAM.
+
+
+
+  
+
+
+
+
 
 Restore the data
 ----------------
