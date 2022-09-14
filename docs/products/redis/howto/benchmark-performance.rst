@@ -9,7 +9,7 @@ Redis®* **memtier_benchmark** is a command line utility developed by Redis Labs
 To set up memtier_benchmark, first download the source code from `github <https://github.com/RedisLabs/memtier_benchmark>`_, and follow the instructions in ``README`` to install all the dependencies, then build and install the tool. Now it's ready to go.
 
 .. Note::
-    The ``Testing`` section in ``README`` is not mandatry, can be ignored.
+    The ``Testing`` section in ``README`` is not mandatry, can be skipped.
 
 Before using the tool, go through the help or refer to this `Redis article <https://redis.com/blog/memtier_benchmark-a-high-throughput-benchmarking-tool-for-redis-memcached/>`_ to understand what the tool can offer.::
 
