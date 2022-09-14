@@ -14,15 +14,15 @@ Prerequisites
 
 .. tip::
 
-    For the dumping process, we recommend you pick a plan size that is large enough to store your data, so you can limit the downtime during migration.
+    For the restore process, we recommend you pick a plan size that is large enough to store your data, so you can limit the downtime if you're performing a migration.
 
-To simplify the example, we'll create Aiven for MySQL databases for both, ``source-db`` and ``target-db``. You can create the databases by going to your running service for **Aiven for MySQL** > **Databases** > **Create a new database**.
+The below example uses Aiven for MySQL databases for both, ``source-db`` and ``target-db``. You can create the databases by going to your running service for **Aiven for MySQL** > **Databases** > **Create a new database**.
 
 
 Backup the data
 ---------------
 
-First, we'll back up our ``source-db`` data to a file called ``mydb_backup.sql``. For that, you need to collect some information about your Aiven for MySQL ``source-db`` database. Go to your Aiven ``source-db`` service, from **Overview** page, find the following information:
+To backup the ``source-db`` data to a file called ``mydb_backup.sql`` you need to collect some information about your Aiven for MySQL ``source-db`` database. Go to your Aiven ``source-db`` service, from **Overview** page, find the following information:
 
 .. list-table::
    :widths: 20 80
@@ -58,7 +58,7 @@ With this command, the password will be requested at the prompt; paste ``SOURCE_
   
   Having the prompt request for the password is more secure than including the password straight away in the command. 
 
-The ``--single-transaction`` `flag <https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html#option_mysqldump_single-transaction>`_ starts a transaction before running. This means that the process does not lock the entire database. This allows ``mysqldump`` to read the database in the current state at the time of the transaction which ensures that your data is reliable
+The ``--single-transaction`` `flag <https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html#option_mysqldump_single-transaction>`_ starts a transaction in isolation mode ``REPEATABLE READ`` before running, allowing ``mysqldump`` to read the database in the current state at the time of the transaction and therefore ensuring consistency of the data.
 
 
 .. warning::
