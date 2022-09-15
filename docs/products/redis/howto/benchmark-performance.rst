@@ -1,22 +1,22 @@
 Benchmark performance
 =====================
 
-Redis®* **memtier_benchmark** is a command line utility developed by Redis Labs (formerly Garantia Data Ltd.) for load generation and bechmarking NoSQL key-value databases. It is recommended for the performance benchmarking of Aiven Redis®* services.
+Redis®* **memtier_benchmark** is a command line utility developed by Redis Labs (formerly Garantia Data Ltd.) for load generation and bechmarking NoSQL key-value databases. It is recommended for the performance benchmarking of Aiven for Redis®* services.
 
 .. Warning::
     ``redis-benchmark`` is not supported to work with Aiven services, since ``CONFIG`` command is not allowed to run.
     
 Prerequisites
 -------------
-* An Aiven Redis service running.
-* **memtier_benchmark** installed. To install the tool, first download the source code from `github <https://github.com/RedisLabs/memtier_benchmark>`_, and follow the instructions in ``README`` to install all the dependencies, then build and install the tool. Now it's ready to go.
+* An Aiven for Redis service running.
+* ``memtier_benchmark`` installed. To install the tool, first download the source code from `Github <https://github.com/RedisLabs/memtier_benchmark>`_, and follow the instructions in the ``README`` to install all the dependencies, then build and install the tool. Now it's ready to go.
 
 .. Note::
     The ``Testing`` section in ``README`` is not mandatory, can be skipped.
 
 Running benchmark
 -----------------
-Before using **memtier_benchmark**, read the help from :code:`mentier_benchmark -h` or this `Redis article <https://redis.com/blog/memtier_benchmark-a-high-throughput-benchmarking-tool-for-redis-memcached/>`_ to understand what the tool can offer.
+Before using ``memtier_benchmark``, read the help from :code:`mentier_benchmark -h` or this `Redis article <https://redis.com/blog/memtier_benchmark-a-high-throughput-benchmarking-tool-for-redis-memcached/>`_ to understand what the tool can offer.
 
 The following variables need to be substituted when running the commands. You can find the information in the **Overview** tab of your Aiven for Redis service.
 
@@ -28,15 +28,15 @@ The following variables need to be substituted when running the commands. You ca
   * - Variable
     - Description
   * - ``USERNAME``
-    - User name of Aiven Redis connection
+    - User name of Aiven for Redis connection
   * - ``PASSWORD``
-    - Password of Aiven Redis connection
+    - Password of Aiven for Redis connection
   * - ``HOST``
     - Hostname for Redis connection
   * - ``PORT``
     - Port for Redis connection
     
-Below is a sample command from the `Redis blog <https://redis.com/blog/benchmark-shared-vs-dedicated-redis-instances/>`_ and its output (running on an Aiven Redis service). Each run of the benchmarking tool consists of executing ``10000 (-n 10000)`` SET & GET operations with ``1:1 ratio (--ratio 1:1)`` by launching ``4 threads (-t 4)`` and each thread opening ``25 connections (-c 25)``.  The tool does ``10 iterations (-x 10)`` of each run to collect meaningful aggregate averages.
+Below is a sample command from the `Redis blog <https://redis.com/blog/benchmark-shared-vs-dedicated-redis-instances/>`_ and its output (running on an Aiven for Redis service). Each run of the benchmarking tool consists of executing ``10000 (-n 10000)`` SET & GET operations with ``1:1 ratio (--ratio 1:1)`` by launching ``4 threads (-t 4)`` and each thread opening ``25 connections (-c 25)``.  The tool does ``10 iterations (-x 10)`` of each run to collect meaningful aggregate averages.
 
 .. Code::
 
