@@ -10,7 +10,7 @@ There are lots of other ways to learn more about Aiven, and interact with us.
         :shadow: md
         :margin: 2 2 0 0
 
-        🐦 **Twitter** We love to chat! Tell us what you're building with Aiven!
+        |icon-twitter| **Twitter** We love to chat! Tell us what you're building with Aiven!
 
         .. button-link:: https://twitter.com/aiven_io
             :align: right
@@ -23,7 +23,7 @@ There are lots of other ways to learn more about Aiven, and interact with us.
         :shadow: md
         :margin: 2 2 0 0
 
-        📖 **Blog** To read tech news, tutorials, and updates on what we're up to.
+        |icon-blog| **Blog** To read tech news, tutorials, and updates on what we're up to.
 
 
         .. button-link:: https://aiven.io/blog
@@ -37,7 +37,7 @@ There are lots of other ways to learn more about Aiven, and interact with us.
         :shadow: md
         :margin: 2 2 0 0
 
-        📺 **YouTube** If video is your thing, cool, it's ours too.
+        |icon-youtube| **YouTube** If video is your thing, cool, it's ours too.
 
         .. button-link:: https://www.youtube.com/c/Aiven_io
             :align: right
@@ -50,7 +50,7 @@ There are lots of other ways to learn more about Aiven, and interact with us.
         :shadow: md
         :margin: 2 2 0 0
 
-        🐱 **GitHub** Find our public repositories on GitHub, work on `open source <https://aiven.io/open-source>`_ with us! 
+        |icon-github| **GitHub** Find our public repositories on GitHub, work on `open source <https://aiven.io/open-source>`_ with us! 
 
 
         .. button-link:: https://github.com/aiven
