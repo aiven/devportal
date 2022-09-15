@@ -20,7 +20,7 @@ Here are the steps needed to enable logs integration. This allows you to send yo
 
 3. Select an existing OpenSearch instance or create a new one, then select **Continue**.
     - When creating a new service you will need to select the cloud, region and plan to use. You should also give your service a name. The service overview page shows the nodes rebuilding, and then indicates when they are ready.
-    - If you're already using OpenSearch on Aiven, you can use your running OpenSearch service as a destination for your metrics data. If you are a member of more than one Aiven projects with *operator* or *admin* access right, you need to choose the project first then your target OpenSearch service.
+    - If you're already using OpenSearch on Aiven, you can use your running OpenSearch service as a destination for your metrics data. If you are a member of more than one Aiven project with *operator* or *admin* access rights, you need to choose the project first then your target OpenSearch service.
 
 4. Configure your ``index prefix`` and ``index retention limit`` parameters, then select **Enable**.
 
@@ -52,9 +52,9 @@ You can change the configuration of the ``index prefix`` and ``index retention l
 
 4. On the **Enabled service integrations** list, find the service to configure.
 
-5. Click on **Edit** button, and edit the parameters.
+5. Click **Edit**, and edit the parameters.
 
-6. Once the parameters are chosen, click the **Edit** button.
+6. Once the parameters are chosen, click **Edit**.
 
 Your log integration parameters should be updated after those steps.
 
@@ -69,6 +69,6 @@ In case, you are no longer interested in sending the logs from your service to O
 
 3. On the **Enabled service integrations** list, find the service to disable the integration.
 
-4. Click the **Delete** button.
+4. Click **Delete**.
 
 Your log integration for OpenSearch should be successfully disabled after those steps.
