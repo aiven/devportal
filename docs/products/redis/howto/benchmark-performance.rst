@@ -6,18 +6,17 @@ Redis®* **memtier_benchmark** is a command line utility developed by Redis Labs
 .. Warning::
     ``redis-benchmark`` is not supported to work with Aiven services, since ``CONFIG`` command is not allowed to run.
     
-Install memtier_benchmark
--------------------------
-To set up memtier_benchmark, first download the source code from `github <https://github.com/RedisLabs/memtier_benchmark>`_, and follow the instructions in ``README`` to install all the dependencies, then build and install the tool. Now it's ready to go.
+Prerequisites
+-------------
+* An Aiven Redis service running.
+* **memtier_benchmark** installed. To install the tool, first download the source code from `github <https://github.com/RedisLabs/memtier_benchmark>`_, and follow the instructions in ``README`` to install all the dependencies, then build and install the tool. Now it's ready to go.
 
 .. Note::
-    The ``Testing`` section in ``README`` is not mandatry, can be skipped.
+    The ``Testing`` section in ``README`` is not mandatory, can be skipped.
 
-Use memtier_benchmark
----------------------
-Before using the tool, go through the help or refer to this `Redis article <https://redis.com/blog/memtier_benchmark-a-high-throughput-benchmarking-tool-for-redis-memcached/>`_ to understand what the tool can offer. ::
-
-    mentier_benchmark -h
+Running benchmark
+-----------------
+Before using **memtier_benchmark**, read the help from :code:`mentier_benchmark -h` or this `Redis article <https://redis.com/blog/memtier_benchmark-a-high-throughput-benchmarking-tool-for-redis-memcached/>`_ to understand what the tool can offer.
 
 The following variables need to be substituted when running the commands. You can find the information in the **Overview** tab of your Aiven for Redis service.
 
@@ -37,9 +36,14 @@ The following variables need to be substituted when running the commands. You ca
   * - ``PORT``
     - Port for Redis connection
     
-Below is a sample command from the `Redis blog <https://redis.com/blog/benchmark-shared-vs-dedicated-redis-instances/>`_. Each run of the benchmarking tool consists of executing ``10000 (-n 10000)`` SET & GET operations with ``1:1 ratio (--ratio 1:1)`` by launching ``4 threads (-t 4)`` and each thread opening ``25 connections (-c 25)``.  The tool does ``10 iterations (-x 10)`` of each run to collect meaningful aggregate averages. ::
+Below is a sample command from the `Redis blog <https://redis.com/blog/benchmark-shared-vs-dedicated-redis-instances/>`_ and its output (running on an Aiven Redis service). Each run of the benchmarking tool consists of executing ``10000 (-n 10000)`` SET & GET operations with ``1:1 ratio (--ratio 1:1)`` by launching ``4 threads (-t 4)`` and each thread opening ``25 connections (-c 25)``.  The tool does ``10 iterations (-x 10)`` of each run to collect meaningful aggregate averages.
 
-    $ memtier_benchmark -a USERNAME:PASSWORD -s HOST -p PORT --tls --tls-skip-verify -t 4 -n 10000 --ratio 1:1 -c 25 -x 10 -d 100 --key-pattern S:S
+.. Code::
+
+    memtier_benchmark -a 'USERNAME:PASSWORD' -s 'HOST' -p 'PORT' --tls --tls-skip-verify -t 4 -n 10000 --ratio 1:1 -c 25 -x 10 -d 100 --key-pattern S:S
+
+.. Code:: 
+
     Writing results to stdout
     [RUN #1] Preparing benchmark client...
     [RUN #1] Launching threads now...
@@ -90,4 +94,4 @@ Below is a sample command from the `Redis blog <https://redis.com/blog/benchmark
     <<<< many lines for Request Latency Distribution
 
 .. Note::
-    Aivens has ``rate limit`` on services. By default it's ``300`` new connections per second per CPU core. Also be aware of the connection limit depending on memory size as explained in `Estimate maximum number of connection <https://docs.aiven.io/docs/products/redis/howto/estimate-max-number-of-connections.html>`_.
+    Aiven has ``rate limit`` on services. By default it's ``300`` new connections per second per CPU core. Also be aware of the connection limit depending on memory size as explained in `Estimate maximum number of connection <https://docs.aiven.io/docs/products/redis/howto/estimate-max-number-of-connections.html>`_.
