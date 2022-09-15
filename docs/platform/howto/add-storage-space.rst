@@ -1,5 +1,15 @@
-Add storage space
-=================
+Add additional storage 
+=======================
+
+You can add additional storage at the time of new service creation or on-demand to a running service. This section provides you with information on how to add additional storage. 
+
+Add additional storage during new service creation
+--------------------------------------------------
+You can add additional storage when creating a new service. For information on how to add additional storage during new service creation, see Create a new service. 
+
+Add additional storage to running service
+-----------------------------------------
+
 
 With **Aiven for Apache Kafka®**, **Aiven for PostgreSQL®**, and **Aiven for MySQL** services, you can configure additional disk storage on top of what is included in your service plan.
 
