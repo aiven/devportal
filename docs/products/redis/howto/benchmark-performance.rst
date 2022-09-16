@@ -42,7 +42,7 @@ Below is a sample command from the `Redis blog <https://redis.com/blog/benchmark
 
     memtier_benchmark -a 'USERNAME:PASSWORD' -s 'HOST' -p 'PORT' --tls --tls-skip-verify -t 4 -n 10000 --ratio 1:1 -c 25 -x 10 -d 100 --key-pattern S:S
 
-The command's output (running on an Aiven for Redis service) is quite self-explainable. Running it against different Redis services or the same service in different conditions can effectively benchmark the performance.
+The command's output (running on an Aiven for Redis service) is quite self-explanatory. Running it against different Redis services or the same service in different conditions can effectively benchmark the performance.
 
 .. Code:: 
 
