@@ -66,14 +66,6 @@ The ``--single-transaction`` `flag <https://dev.mysql.com/doc/refman/8.0/en/mysq
 
   If you are using `Global Transaction Identifiers <https://dev.mysql.com/doc/refman/5.7/en/replication-gtids-concepts.html>`_ (GTIDs) with InnoDB use the ``--set-gtid-purged=OFF`` `option <https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html#option_mysqldump_set-gtid-purged>`_. The reason is that GTID's are not available with MyISAM.
 
-
-
-  
-
-
-
-
-
 Restore the data
 ----------------
 
@@ -89,13 +81,13 @@ To restore data saved in a file to an Aiven for MySQL database, you need to incl
    * - Variable
      - Description
    * - ``TARGET_DB_HOST``
-     - Service host name
+     - **Host** name for the connection
    * - ``TARGET_DB_USER``
-     - Service user name
+     - **User** name for the connection
    * - ``TARGET_DB_PORT``
-     - Port number to use
+     - Connection **Port** number
    * - ``TARGET_DB_PASSWORD``
-     - Connection password
+     - Connection **Password**
    * - ``DEFAULTDB``
      - Database that contains the ``target-db`` data
 
