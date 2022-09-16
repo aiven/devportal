@@ -8,9 +8,9 @@ Find the replication by running the command on the standby node:
 
 .. code::
 
-    mysql> show replica status\G 
+    mysql> show slave statusG
 
-Your output should looks similar to this:
+With this command, you can find information about the configuration and status of the connection between the replica server and the source server. 
 
 .. code::
 
@@ -75,6 +75,7 @@ Your output should looks similar to this:
     Get_Source_public_key: 0 
     Network_Namespace:
 
+
 To find replication problems, you need to check for the lag ``transactions/seconds`` metric, they are calculated by connecting to the master node and comparing GTIDs, the ``Retrieved_Gtid_Set`` on the output, then you check the time between the last and the newest. This approach will give a better indication of lag, since a long running transaction on the primary when viewed from the point of the standby would seem like nothing is happening and there is no need to replicate.
 
 ``Seconds_Behind_Source`` as shown in the output is not a reliable indicator of lag for monitoring, but is still useful. Details can be found here. You can also run the following query to see if replication is currently performing any work on the standby node. For example, if there are tasks which are not progressing, this can indicate an issue.
@@ -92,7 +93,7 @@ Run the following command to check if the table level is locked::
 
     mysql> show processlist
 
-The output looks like this:
+The result is a list of current processes with their statuses. If a query is causing others to lock, you should be able to identify it. The query that is causing the others queries to lock will show as waiting for another process, possibly a temporary table. The output may look like this: 
 
 .. code::
 
@@ -100,19 +101,17 @@ The output looks like this:
     | Id    | User            | Host                         | db     | Command | Time  | State                           | Info                                                                                                
     |  1800 | avnadmin        | HOST_IP:53938                | teammy | Query   | 58798 | Waiting for table metadata lock | /* ApplicationName=DataGrip 2020.3.2 */ LOCK TABLES users WRITE
 
+
 If nothing shows up there, you may find them by showing the open tables::
 
     show open tables where In_Use > 0
 
 
-You can also check ``innodb`` status::
+Another way is to check the InnoDB status by running::
 
     show engine innodb status
 
-
-On the output, you can check for the section ``TRANSACTION`` to find more information.
-
-There are also cases where multiple queries and load can cause replication problem.
+This will show you the locking query, and the affected rows and tables. On the output, you can check for the section ``TRANSACTION`` to find this information. There are also cases where multiple queries and load can cause replication problems.
 
 Long running transactions
 -------------------------
