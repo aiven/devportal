@@ -1,8 +1,7 @@
-Dynamic Disk Sizing
+Dynamic disk sizing
 ====================
 
-Dynamic disk sizing (DDS) allows you to adjust the amount of disk space for your service from within the Aiven Console by adding additional disk storage. 
-With Dynamic disk sizing, you can add additional storage to your services at the time of service creation or on-demand without interruption to meet the growing business needs. 
+Dynamic disk sizing (DDS) allows you to add or remove additional storage to your services from within the `Aiven web console <https://console.aiven.io/>`_. You can add additional storage during service creation or on-demand without interruption to meet the growing business needs. 
 
 Dynamic Disk Sizing (DDS) is available for the following services:
 
@@ -33,7 +32,7 @@ Using DDS provides the following benefits:
 
 How does Dynamic Disk Sizing work?
 ----------------------------------
-You can add additional disk storage to your service plan when you create a new service on the Aiven console or on-demand when you need more storage while running your service. Adding additional storage will not affect or interrupt the operations of your service. 
+You can :doc:`add additional disk storage <../howto/add-storage-space>` to your service plan when you create a new service on the `Aiven web console <https://console.aiven.io/>`_ or on-demand when you need more storage while running your service. Adding additional storage will not affect or interrupt the operations of your service. 
 
 When you add additional storage to your service, the Aiven platform provisions additional disk storage and dynamically adds it to your running instances. The total amount of additional storage you can add to your service is based on your service plan and the cloud provider.
 
@@ -41,23 +40,25 @@ In a clustered service (Cassandra or Kafka), the additional storage added will b
 
 Pricing for dynamic disk sizing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-If you include additional storage at the time of service creation, the additional storage cost is included as part of your service's total cost. It is also visible in the service summary.
+Suppose you add additional storage at the time of service creation. In that case, the cost is calculated based on the total amount of additional storage added in GB and included as part of your service's total cost. It is also visible in the service summary.
 
-If you add additional storage on-demand when your service is running, the cost is calculated based on the total amount of additional storage in GB.
+Likewise, the cost of adding storage on-demand when your service is running is visible on the Aiven web console when you add storage. 
 
-The total price you see is the cost of the storage and any backups associated with it. You can also see the additional storage usage costs in your invoices.
+The total price you see is the cost of the additional storage and any backups associated with it. You can also see the additional storage usage costs in your invoices.
 
 Limitations
 ~~~~~~~~~~~
 - The maximum available additional storage capacity is based on your service plan and the cloud provider.
-- Each time additional storage is added to the running service, an additional disk is added to the corresponding nodes. Since the cloud providers may limit the maximum number of disks attached to a node, this limits the number of times you can add additional storage. If this limit is reached, you will see a prompt to perform a maintenance update for performance optimization. You can add additional storage two times until the maximum storage limit is reached.
+- Each time additional storage is added to the running service, an additional disk is added to the corresponding nodes. Since the cloud providers may limit the maximum number of disks attached to a node, this limits the number of times you can add additional storage. If this limit is reached, you will see a prompt to perform a maintenance update for performance optimization. You can add additional storage two times until the maximum storage limit is reached.  Therefore, we advise you to plan to add a sufficient amount of disk capacity. 
+- If there is an ongoing Maintenance update, you will not be able to add additional storage until the maintenance is completed. 
+
 
 Next steps
 ----------
-For infromation on how to add additonal disk storage to your service from the Aiven web console, see How to add additional storage. 
+For infromation on how to add additonal disk storage to your service from the `Aiven web console <https://console.aiven.io/>`_, see :doc:`Add additional storage <../howto/add-storage-space>`. 
 
 
 .. note:: 
 
-    It is unlikely that any performance degradation from using network attached storage would be noticeable in your clients but it is a possibility. 
+    It is unlikely that any performance degradation from additional disk storage would be noticeable in your clients, but it is possible.
 
