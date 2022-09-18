@@ -34,4 +34,18 @@ Take your first steps with Aiven for Apache Cassandra® by following our :doc:`/
         :shadow: md
         :margin: 2 2 0 0
 
+        💻 :doc:`/docs/products/cassandra/howto`
+
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
+
         📖 :doc:`/docs/products/cassandra/reference`
+
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
+
+        🧰 :doc:`Code samples </docs/products/cassandra/howto/list-code-samples>`
+
+
