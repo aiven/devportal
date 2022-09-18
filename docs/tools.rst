@@ -31,7 +31,7 @@ You can use the Aiven platform in the way that best fits your workflow with our 
         
         Work with Aiven features from your command line using Aiven CLI tool.
 
-        .. button-link:: docs/tools/cli
+        .. button-link:: tools/cli
             :align: right
             :color: primary
             :outline:
@@ -47,7 +47,7 @@ You can use the Aiven platform in the way that best fits your workflow with our 
         An interface you can use for programmatic integrations that also powers our own web interface.
 
 
-        .. button-link:: docs/tools/api
+        .. button-link:: tools/api
             :align: right
             :color: primary
             :outline:
@@ -62,7 +62,7 @@ You can use the Aiven platform in the way that best fits your workflow with our 
         
         An infrastructure-as-code tool to manage cloud infrastructure.
 
-        .. button-link:: docs/tools/terraform
+        .. button-link:: tools/terraform
             :align: right
             :color: primary
             :outline:
@@ -77,7 +77,7 @@ You can use the Aiven platform in the way that best fits your workflow with our 
         
         Tool for orchestration of your Aiven services to your existing Kubernetes® cluster.
 
-        .. button-link:: docs/tools/kubernetes
+        .. button-link:: tools/kubernetes
             :align: right
             :color: primary
             :outline:
