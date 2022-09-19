@@ -251,9 +251,12 @@ You can use the Aiven platform in the way that best fits your workflow with our 
         
         Tool for orchestration of your Aiven services to your existing Kubernetes® cluster.
 
-        .. button-link:: docs/tools/kubernetes
+        .. button-link:: https://docs.aiven.io/docs/tools/kubernetes.html
             :align: right
             :color: primary
             :outline:
 
             Read more
+..
+  docs/tools/kubernetes failed on linkcheck for unknown reason,
+  so using external links instead.
