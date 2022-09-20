@@ -1,7 +1,7 @@
 Dynamic disk sizing
 ====================
 
-Dynamic disk sizing (DDS) allows you to add or remove additional storage to your services from within the `Aiven web console <https://console.aiven.io/>`_. You can add additional storage during service creation or on-demand without interruption to meet the growing business needs. 
+Dynamic disk sizing (DDS) allows you to add or remove additional storage to your services from within the `Aiven Console <https://console.aiven.io/>`_. You can add additional storage during service creation or on-demand without interruption to meet the growing business needs. 
 
 Dynamic Disk Sizing (DDS) is available for the following services:
 
@@ -32,7 +32,7 @@ Using DDS provides the following benefits:
 
 How does Dynamic Disk Sizing work?
 ----------------------------------
-You can :doc:`add additional disk storage <../howto/add-storage-space>` to your service plan when you create a new service on the `Aiven web console <https://console.aiven.io/>`_ or on-demand when you need more storage while running your service. Adding additional storage will not affect or interrupt the operations of your service. 
+You can :doc:`add additional disk storage <../howto/add-storage-space>` to your service plan when you create a new service on the `Aiven Console <https://console.aiven.io/>`_ or on-demand when you need more storage while running your service. Adding additional storage will not affect or interrupt the operations of your service. 
 
 When you add additional storage to your service, the Aiven platform provisions additional disk storage and dynamically adds it to your running instances. The total amount of additional storage you can add to your service is based on your service plan and the cloud provider.
 
@@ -55,7 +55,7 @@ Limitations
 
 Next steps
 ----------
-For infromation on how to add additonal disk storage to your service from the `Aiven web console <https://console.aiven.io/>`_, see :doc:`Add additional storage <../howto/add-storage-space>`. 
+For infromation on how to add additonal disk storage to your service from the `Aiven Console <https://console.aiven.io/>`_, see :doc:`Add additional storage <../howto/add-storage-space>`. 
 
 
 .. note:: 

@@ -12,7 +12,7 @@ Add additional storage to running service
 -----------------------------------------
 You can add additional storage to your running service from the Aiven web console without interrupting the service. 
 
-1. Log in to the `Aiven web console <https://console.aiven.io/>`_, and go to **Services** to select your running service. 
+1. Log in to the `Aiven Console <https://console.aiven.io/>`_, and go to **Services** to select your running service. 
 2. In the **Overview** tab, scroll down to **Service plan**.
 3. Click **Add storage**. 
 
@@ -45,7 +45,7 @@ Before you decrease or remove the additional storage on your service:
 
 Follow these steps to decrease or remove the added storage:
 
-1. In the `Aiven web console <https://console.aiven.io/>`_, select your **Service**. 
+1. In the `Aiven Console <https://console.aiven.io/>`_, select your **Service**. 
 2. In the **Overview** tab of the service, scroll down to **Service plan**. 
 3. Click **Edit** next to **Additional disk storage**. 
 4. On the **Upgrade service disk space** pop-up window, use the slider under **Additional disk storage** to reduce the additional disk storage capacity or set it to None. 
