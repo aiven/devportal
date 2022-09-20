@@ -65,8 +65,8 @@ There are lots of other ways to learn more about Aiven, and interact with us.
         :margin: 2 2 0 0
 
         🏆 **Mini Challenges** Get to know Aiven through our mini challenges, each introducing you to different open source technologies. 
-        * :doc:`Helsinki bus data hell with Clickhouse </docs/community/challenge/catch-the-bus>`
-        * :doc:`Apache Kafka riddle </docs/community/challenge/the-rolling-challenge>`
+        
+        * :doc:`Catch the bus (Clickhouse) </docs/community/challenge/catch-the-bus>`
 
 
 Check out the `Aiven Console <https://console.aiven.io>`_ for your Aiven web interface. New accounts get a free trial!
