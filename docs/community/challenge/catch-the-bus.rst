@@ -23,7 +23,7 @@ The goal is to find the best bus routes between the different KFC restaurants in
 
 5. Once ready: 
     * Tag us on Twitter with #aivencatchthebuschallenge (and #bigdatalondon22 if you're at the conference) with a screenshot of a map with these routes plotted on it. 
-    * Or email us at `hacks@aiven.io <mailto:hacks@aiven.io?subject=Solution for Aiven 'Catch the bus' challenge>`_.
+    * Or email us at `hacks@Aiven.io <mailto:hacks@aiven.io?subject=Solution for Aiven 'Catch the bus' challenge>`_.
 
 6. Lastly, collect your prize if you do the challenge before 21.11.2022: 
     * If you do the challenge in connection with a conference, come visit us at our booth to collect your limited edition Aiven cap.
