@@ -3,7 +3,7 @@ Jolokia
 Access JMX metrics via Jolokia
 ===============================
 
-`Jolokia <https://jolokia.org/>`_ is one of the external metrics integration supported on the Aiven platform besides :doc:`Datadog metrics <docs/integrations/datadog/datadog-metrics>` and :doc:`Prometheus metrics <docs/platform/howto/integrations/prometheus-metrics.html>`.
+`Jolokia <https://jolokia.org/>`_ is one of the external metrics integration supported on the Aiven platform besides :doc:`Datadog metrics </docs/integrations/datadog/datadog-metrics>` and :doc:`Prometheus metrics </docs/platform/howto/integrations/prometheus-metrics>`.
 
 .. note:: 
 
@@ -53,7 +53,7 @@ to get the list of IP addresses associated with a DNS name:
    kafka-67bd7c5-myproject.aivencloud.com has address 35.228.234.106
    kafka-67bd7c5-myproject.aivencloud.com has address 35.228.157.197
 
-Here's a quick example of a cURL request. :doc:`Download the CA certificate <docs/platform/howto/download-ca-cert>` first before executing the cURL request. 
+Here's a quick example of a cURL request. :doc:`Download the CA certificate </docs/platform/howto/download-ca-cert>` first before executing the cURL request.
 The file is identical for all endpoints and services in the same project.
 
 Please note to use port 6733 which is the default port Jolokia is

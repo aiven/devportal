@@ -20,7 +20,7 @@ The below example uses Aiven for MySQL databases for both the ``source-db`` and 
 
 
 Back up the data
----------------
+----------------
 
 Variables
 '''''''''
