@@ -11,7 +11,7 @@ The row based replication works very well as long as the tables being replicated
 
 .. code::
 
-    DELETE FROM nopk WHERE modified_time > '2020-01-13' 
+    DELETE FROM nopk WHERE modified_time > '2022-01-13' 
 
 If a statement like above matched 500 rows and the table had a million rows altogether, the row based replication format would contain 500 individual delete operations and the target server needed to do sequential scan over the one million rows for each of the individual deletions, which could take tens of minutes. If the table had a primary key the same statement would likely be replicated in under a second.
 
@@ -19,8 +19,12 @@ Replication use in Aiven for MySQL
 ----------------------------------
 
 The considerations presented above are not only valid for services that actually have standby nodes or read replicas. Whenever the Aiven management platform needs to create a new node for a service, the node is first initialized from backup to most recent backed up state. This includes applying the full replication stream that has been created after the most recent full base backup. Once the latest backed
-up state has been restored the node will connect to the current master (if available) and replicate latest state from that, which is also affected by possible replication slowness.
+up state has been restored the node will connect to the current master, if available, and replicate latest state from that, which is also affected by possible replication slowness.
 
 When new nodes are created, it needs to perform replication and having large tables without primary keys may make operations such as replacing failed nodes, upgrading service plan, migrating service to a different cloud provider or region, starting up new read replica service, forking a service, and some others to take extremely long time or depending on the situation practically not complete at all without manual operator intervention (e.g. new read replica might never be able to catch up with existing master because replication is too slow). 
 
-To work around these issues Aiven operations people may need to resort to operations such as temporarily making master read only or promoting a replacement server before it has fully applied the replication stream, resulting in data loss. To make the service operate correctly and avoid such drastic measures you should ensure the primary keys exist for any tables that are not trivially small.
+To work around these issues Aiven operations people may need to resort to operations such as temporarily making ``master`` read only or promoting a replacement server before it has fully applied the replication stream, resulting in data loss. To make the service operate correctly and avoid such drastic measures you should ensure the primary keys exist for any tables that are not trivially small.
+
+.. seealso::
+    
+    Learn how to :doc:`create new tables without primary keys </docs/products/mysql/howto/create-tables-without-primary-keys>` in your Aiven for MySQL.

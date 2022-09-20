@@ -73,3 +73,7 @@ When executing the ``ALTER TABLE`` statement for a large table, you may encounte
 
 You will need to set a high enough value for the operation to succeed. Depending on the table size this could be a few gigabytes or even more for very large tables. You can change the ``innodb_online_alter_log_max_size`` by selecting your Aiven for MySQL service and go to *Overview* > **Advanced configuration** > **Change** > **Add configuration option** to add the parameter and make changes.
 
+
+.. seealso::
+    
+    Learn how to :doc:`create new tables without primary keys </docs/products/mysql/howto/create-tables-without-primary-keys>` in your Aiven for MySQL.
