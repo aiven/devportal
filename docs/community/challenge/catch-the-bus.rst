@@ -3,9 +3,9 @@ Catch the bus - Aiven challenge with ClickHouse®
 
 Welcome to Aiven "Catch the bus" challenge, an easy way for you to explore Aiven for ClickHouse®. 
 
-With the launch of Aiven for ClickHouse we finally have the "C" for our KFC stack, the best combination of tools for real-time alert and historic analytics. The stack utilises Apache Kafka, Apache Flink, and ClickHouse to build up a robust, scalable architecture for getting the most from your data, whether it be batched ETL or real-time sensors.
+With the launch of Aiven for ClickHouse we finally have the "C" for our KFC stack, the best combination of tools for real-time alert and historic analytics. The stack utilises Apache Kafka®, Apache Flink®, and ClickHouse to build up a robust, scalable architecture for getting the most from your data, whether it be batched ETL or real-time sensors.
 
-For this challenge, we'll be using real-time data from `digitransit<https://digitransit.fi/en/developers/apis/4-realtime-api/>` to plot maps and find new insights. Digitransit provides real-time bus informantion and positioning information for busses in Helsinki. We've saved out a few weeks worth of data as a CSV to experiemnt with.
+For this challenge, we'll be using real-time data from `digitransit<https://digitransit.fi/en/developers/apis/4-realtime-api/>` to plot maps and find new insights. Digitransit provides real-time bus information and positioning information for busses in Helsinki. We've saved out a few weeks worth of data as a CSV to experiment with.
 
 Let's dive right in.
 
