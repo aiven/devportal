@@ -1,11 +1,14 @@
 MySQL replication
 =================
 
+.. _replication-overview:
+
 Overview
 --------
 
-MySQL replication is always based on replicating logical changes. That is, the replication protocol may contain an actual statement that the target server should apply or it may have an entry saying "update row with these old attributes to have these new attributes". These are called statement and row formats. 
-The statement format is more compact but cannot represent all changes because some statements would yield different results if executed as is on different servers. The row format can represent all changes and it allows using tools like Debezium since the binary log contains full details of all changes in itself. For these reasons Aiven uses row format by default. 
+MySQL replication is always based on replicating logical changes. This means that the replication protocol may contain an actual statement that the target server should apply or it may have an entry saying **update row with these old attributes to have these new attributes**. These are called statement and row formats.
+
+The statement format is more compact but cannot represent all changes because some statements would yield different results if executed as is on different servers. The row format statement can represent all changes, and it allows using tools like Debezium since the binary log contains full details of all changes in itself. For these reasons Aiven uses row format by default. 
 
 The row based replication works very well as long as the tables being replicated have a primary key. MySQL primary key look ups are very fast and the target server can find the rows to update and delete very quickly. However, when the table being replicated is lacking a primary key the, the target server needs to make a sequential table scan for each individual update or delete statement and the replication can become extremely slow if the table is large.
 
@@ -18,7 +21,7 @@ If a statement like above matched 500 rows and the table had a million rows alto
 Replication use in Aiven for MySQL
 ----------------------------------
 
-The considerations presented above are not only valid for services that actually have standby nodes or read replicas. Whenever the Aiven management platform needs to create a new node for a service, the node is first initialized from backup to most recent backed up state. This includes applying the full replication stream that has been created after the most recent full base backup. Once the latest backed
+The considerations presented on the :ref:`Replication Overview <replication-overview>` section are not only valid for services that actually have standby nodes or read replicas. Whenever the Aiven management platform needs to create a new node for a service, the node is first initialized from backup to most recent backed up state. This includes applying the full replication stream that has been created after the most recent full base backup. Once the latest backed
 up state has been restored the node will connect to the current master, if available, and replicate latest state from that, which is also affected by possible replication slowness.
 
 When new nodes are created, it needs to perform replication and having large tables without primary keys may make operations such as replacing failed nodes, upgrading service plan, migrating service to a different cloud provider or region, starting up new read replica service, forking a service, and some others to take extremely long time or depending on the situation practically not complete at all without manual operator intervention (e.g. new read replica might never be able to catch up with existing master because replication is too slow). 
