@@ -10,7 +10,7 @@ User permissions are defined at project level in Aiven. Each user invited to a p
 Project roles
 -------------
 
-The following is the list of project roles and related priviledges:
+The following is the list of project roles and related privileges:
 
 * **Admin**: can perform all available operations for projects and services. 
 
@@ -26,10 +26,10 @@ The following is the list of project roles and related priviledges:
 
 * **Read-only**: allows viewing services but does not allow making any changes whatsoever to the services.
 
-Roles detailed priviledges 
+Roles detailed privileges 
 --------------------------
 
-The following is a list of priviledges enabled for each role.
+The following is a list of privileges enabled for each role.
 
 Developer
 ~~~~~~~~~
