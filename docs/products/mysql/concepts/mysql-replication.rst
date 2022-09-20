@@ -23,8 +23,6 @@ up state has been restored the node will connect to the current master, if avail
 
 When new nodes are created, it needs to perform replication and having large tables without primary keys may make operations such as replacing failed nodes, upgrading service plan, migrating service to a different cloud provider or region, starting up new read replica service, forking a service, and some others to take extremely long time or depending on the situation practically not complete at all without manual operator intervention (e.g. new read replica might never be able to catch up with existing master because replication is too slow). 
 
-To work around these issues Aiven operations people may need to resort to operations such as temporarily making ``master`` read only or promoting a replacement server before it has fully applied the replication stream, resulting in data loss. To make the service operate correctly and avoid such drastic measures you should ensure the primary keys exist for any tables that are not trivially small.
+To work around these issues Aiven operations people may need to resort to operations such as temporarily making ``master`` read only or promoting a replacement server before it has fully applied the replication stream, resulting in data loss. 
 
-.. seealso::
-    
-    Learn how to :doc:`create new tables without primary keys </docs/products/mysql/howto/create-tables-without-primary-keys>` in your Aiven for MySQL.
+To make the service operate correctly and avoid such drastic measures you should ensure the primary keys exist for any tables that are not trivially small. You can check the article how to :doc:`create missing primary keys </docs/products/mysql/howto/create-missing-primary-keys>` to ensure primary keys exists in your Aiven for MySQL service.
