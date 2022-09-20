@@ -761,3 +761,5 @@ entries:
       entries:
       - glob: docs/community/documentation/tips-tricks/*
         title: Tips & Tricks
+    - file: docs/community/challenge/catch-the-bus
+      title: Catch the Bus - Aiven challenge with ClickHouse
