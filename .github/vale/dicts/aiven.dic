@@ -1,4 +1,4 @@
-184
+188
 ACL
 ACLs
 Aiven
@@ -13,6 +13,7 @@ Avro
 binlog
 boolean
 boot
+Bucardo
 business
 Cassandra
 Centrify
@@ -31,9 +32,11 @@ datacenter
 datacenters
 Datadog
 datasource
+Datastax
 datastore
 dashboards
 Debezium
+deserialize
 Dev
 Distro
 Docker
@@ -76,6 +79,8 @@ Instana
 io
 IPsec
 Java
+JMX
+Jolokia
 Kaggle
 Kafdrop
 Kafka
@@ -104,6 +109,7 @@ myhoard
 namespace
 namespaces
 NodeJS
+nosqlbench
 npm
 OAuth
 Okta
@@ -121,6 +127,7 @@ performant
 pgAdmin
 PgBouncer
 plaintext
+plc
 Plotly
 Podman
 pooler
@@ -140,6 +147,7 @@ Redli
 refcard
 reindexing
 reStructuredText
+rivery
 rsyslog
 Sakila
 Sarama
@@ -149,6 +157,7 @@ sharding
 signup
 signups
 Singlestat
+skyvia
 Snowflake
 Sphinx
 Splunk
@@ -181,5 +190,6 @@ wget
 Workbench
 Worldmap
 Zabbix
+zapier
 Zipkin
 ZooKeeper

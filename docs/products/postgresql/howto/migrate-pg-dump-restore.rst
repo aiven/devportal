@@ -92,3 +92,13 @@ A typical example is due to failing ``COMMENT ON EXTENSION`` queries trying to r
 
 .. Tip::
     ``pg_restore`` offers similar ``--no-XXX`` options to switch off other, often unnecessary restore queries. More information is available in the `PostgreSQL documentation <https://www.postgresql.org/docs/current/app-pgrestore.html>`_.
+
+
+Poor performance after migration
+--------------------------------
+Whenever you load data with the ``pg_restore`` or similar tools, it is recommended to run ``ANALYZE`` or ``VACUUM ANALYZE`` on your entire database to collect new statistics.  The database will not have up-to-date statistics on the tables and indexes without these operations.  In turn, this may lead to poor query plans and poor database performance.
+
+Generally, the Aiven platform automatically runs ``ANALYZE`` on your service after performing a major version upgrade in order to ensure the statistics are up-to-date.
+
+For more information about ``ANALYZE``, you may see the official `SQL analyze <https://www.postgresql.org/docs/current/sql-analyze.html>`_ documentation.
+

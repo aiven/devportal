@@ -1,7 +1,7 @@
 {
   "name": "devportal",
   "version": "1.0.0",
-  "description": "Aiven Developer Portal",
+  "description": "Aiven Documentation",
   "private": true,
   "scripts": {
     "dev": "netlify dev"

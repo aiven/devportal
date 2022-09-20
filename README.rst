@@ -1,14 +1,14 @@
-Aiven Developer
-===============
+Aiven Documentation
+===================
 
-This is the source for the Aiven developer documentation at https://developer.aiven.io. We are working to move all of our technical documentation to this platform, and welcome issues and pull requests from everyone.
+This is the source for the Aiven documentation at https://docs.aiven.io. We are working to move all of our technical documentation to this platform, and welcome issues and pull requests from everyone.
 
 It is Python-based, with content in `ReStructuredText (rst) <https://docutils.sourceforge.io/rst.html>`_ and rendered by `Sphinx <https://www.sphinx-doc.org/en/master/>`_.
 
 Contributing
 ------------
 
-Check the `CONTRIBUTING guide <CONTRIBUTING.rst>`_ for details on how to create content for Aiven Developer. You will find the style guide, pull request process and templates for the various content types there.
+Check the `CONTRIBUTING guide <CONTRIBUTING.rst>`_ for details on how to create content for these docs. You will find the style guide, pull request process and templates for the various content types there.
 
 Local Development
 -----------------
@@ -73,7 +73,7 @@ The left-hand navigation menu is driven by a plugin called `Sphinx external TOC 
 Formatting tips
 ---------------
 
-Here's an incomplete but helpful collection of tips for formatting your content on Aiven Developer.
+Here's an incomplete but helpful collection of tips for formatting your content on Aiven Docs.
 
 Links
 '''''
@@ -144,7 +144,7 @@ To bring in a page from the previous platform:
 Migration status
 -----------------
 
-You can check the migration status from ``https://help.aiven.io/en`` articles to the ``https://developer.aiven.io/`` articles by using the ``page_stats.py`` script available in this repository. 
+You can check the migration status from ``https://help.aiven.io/en`` articles to the ``https://docs.aiven.io/`` articles by using the ``page_stats.py`` script available in this repository. 
 
 Install the dependencies::
 

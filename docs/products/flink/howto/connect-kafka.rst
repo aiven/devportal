@@ -1,7 +1,7 @@
 Create an Apache Kafka®-based Apache Flink® table
 ==================================================
 
-To build data pipelines, Apache Flink® requires source and target data structures to `be mapped as Flink tables <https://ci.apache.org/projects/flink/flink-docs-release-1.13/docs/dev/table/sql/create/#create-table>`_. This functionality can be achieved via the `Aiven console <https://console.aiven.io/>`_ or :doc:`Aiven CLI </docs/tools/cli/service/flink>`.
+To build data pipelines, Apache Flink® requires source and target data structures to `be mapped as Flink tables <https://ci.apache.org/projects/flink/flink-docs-release-1.15/docs/dev/table/sql/create/#create-table>`_. This functionality can be achieved via the `Aiven console <https://console.aiven.io/>`_ or :doc:`Aiven CLI </docs/tools/cli/service/flink>`.
 
 A Flink table can be defined over an existing or new Aiven for Apache Kafka® topic to be able to source or sink streaming data. To define a table over an Apache Kafka® topic, the topic name, columns data format and connector type need to be defined, together with the Flink table name to use as reference when building data pipelines.
 
@@ -82,7 +82,7 @@ We can define a ``metrics_in`` Flink table with:
 
     The SQL schema includes:
 
-    * the message fields ``cpu``, ``hostname``, ``usage``, ``occurred_at`` and the related `data type <https://nightlies.apache.org/flink/flink-docs-release-1.13/docs/dev/table/types/#list-of-data-types>`_. The order of fields in the SQL definition doesn't need to follow the order presented in the payload.
+    * the message fields ``cpu``, ``hostname``, ``usage``, ``occurred_at`` and the related `data type <https://nightlies.apache.org/flink/flink-docs-release-1.15/docs/dev/table/types/#list-of-data-types>`_. The order of fields in the SQL definition doesn't need to follow the order presented in the payload.
     * the definition of the field ``time_ltz`` as transformation to ``TIMESTAMP(3)`` from the ``occurred_at`` timestamp in Linux format.
     * the ``WATERMARK`` definition
 
@@ -110,7 +110,7 @@ We can define a ``metrics-out`` Flink table with:
 
 .. Note::
 
-    The SQL schema includes the output message fields ``cpu``, ``hostname``, ``usage`` and the related `data type <https://nightlies.apache.org/flink/flink-docs-release-1.13/docs/dev/table/types/#list-of-data-types>`_. 
+    The SQL schema includes the output message fields ``cpu``, ``hostname``, ``usage`` and the related `data type <https://nightlies.apache.org/flink/flink-docs-release-1.15/docs/dev/table/types/#list-of-data-types>`_.
 
 
 Example: Define a Flink table using the upsert connector over topic in Avro format   
@@ -144,5 +144,5 @@ We can define a ``metrics-out`` Flink table with:
 
     The SQL schema includes:
     
-    * the output message fields ``cpu``, ``hostname``, ``max_usage`` and the related `data type <https://nightlies.apache.org/flink/flink-docs-release-1.13/docs/dev/table/types/#list-of-data-types>`_. 
+    * the output message fields ``cpu``, ``hostname``, ``max_usage`` and the related `data type <https://nightlies.apache.org/flink/flink-docs-release-1.15/docs/dev/table/types/#list-of-data-types>`_.
     * the ``PRIMARY KEY`` definition, driving the key part of the Apache Kafka message

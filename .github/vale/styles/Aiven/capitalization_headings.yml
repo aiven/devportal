@@ -6,6 +6,7 @@ scope: heading
 match: $sentence
 exceptions:
   - ACLs
+  - Active Directory
   - Amazon
   - Amazon Aurora
   - Amazon Web Services
@@ -54,6 +55,7 @@ exceptions:
   - Kubernetes
   - M3
   - LogDNA
+  - Loggly
   - Logtail
   - Microsoft Azure
   - MirrorMaker
@@ -75,10 +77,12 @@ exceptions:
   - Provectus
   - Python
   - Redis
+  - Rivery
   - reStructuredText
   - Setting up SAML with OneLogin
   - Schema Registry
   - Simple Authentication and Security Layer
+  - Skyvia
   - Snowflake
   - Sphinx
   - Spring
@@ -93,4 +97,5 @@ exceptions:
   - United States
   - VPC
   - Workbench
+  - Zapier
   - ZooKeeper

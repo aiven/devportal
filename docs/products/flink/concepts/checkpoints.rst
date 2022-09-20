@@ -16,6 +16,6 @@ Essentially, a checkpoint creates a snapshot of the data stream and stores it. T
         id3-->id6[(State backend)];
 
 
-For more information, see the `Apache Flink® documentation on checkpoints <https://ci.apache.org/projects/flink/flink-docs-release-1.13/docs/ops/state/checkpoints/>`_.
+For more information, see the `Apache Flink® documentation on checkpoints <https://ci.apache.org/projects/flink/flink-docs-release-1.15/docs/ops/state/checkpoints/>`_.
 
 
