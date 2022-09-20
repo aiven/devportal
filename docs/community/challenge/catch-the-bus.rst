@@ -13,7 +13,7 @@ Instructions
 ------------
 The goal is to find the best bus routes between the different KFC restaurants in Helsinki.
 
-1. Create an Aiven free trial account here: `Sign up for free<https://console.aiven.io/signup/email?credit_code=AivenChallengeBIGDATALDN22&trial_challenge=catch_the_bus>`_.
+1. Create an Aiven free trial account here: `sign up for free <https://console.aiven.io/signup/email?credit_code=AivenChallengeBIGDATALDN22&trial_challenge=catch_the_bus>`_.
 
 2. `Download the dataset here <https://drive.google.com/file/d/1B4Scsuz4hTx2Hbd9seMIb0dDgbo-b0bf/view>`_.
 
