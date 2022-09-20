@@ -1,5 +1,5 @@
-Contributing to Aiven Developer
-===============================
+Contributing to Aiven Docs
+==========================
 
 Please read this guide before you open a pull request (yes, there is documentation for how to do documentation). If you're opening an issue, go ahead! And either way, thank you for your input, we appreciate you! :heart_eyes:
 
@@ -13,25 +13,25 @@ Please read this guide before you open a pull request (yes, there is documentati
 Before you start
 ----------------
 
-The **goal** of Aiven Developer is to support and enable developers to achieve their goals, as quickly and easily as possible. We support that by providing accurate information in a concise format and a clear structure. It is better for one contributor to take time to make the content as clear as possible, than for many developers to have to spend time trying to understand something less clear.
+The **goal** of the docs is to support and enable users to achieve their goals, as quickly and easily as possible. We support that by providing accurate information in a concise format and a clear structure. It is better for one contributor to take time to make the content as clear as possible, than for many developers to have to spend time trying to understand something less clear.
 
 Our intended **audience** is very technical, so does not need entry-level explanation of common concepts. They are here for advanced or Aiven-specific information. They might be in a hurry though (for example, during an incident on their platform) so clear, informative and friendly are the themes to aim for.
 
 Content types
 -------------
 
-Aiven Developer uses the `Diátaxis Framework <https://diataxis.fr/>`_ as the basis of its content structure. This means that every article should be one of the following types:
+Aiven Docs uses the `Diátaxis Framework <https://diataxis.fr/>`_ as the basis of its content structure. This means that every article should be one of the following types:
 
 * **HowTo** walks a developer through completing a specific task. It has a clear introduction of the task and what is is for, and numbered steps to follow (without choices, if there's more than one way to do something, pick one). If additional explanation could be useful, link to a related concept article.
-    - Example: https://developer.aiven.io/docs/products/postgresql/howto/upgrade.html
+    - Example: https://docs.aiven.io/docs/products/postgresql/howto/upgrade.html
     - Template: `Howto article template`_
 
 * **Concept** is an explainer article that helps a developer to learn or understand something. Developers researching features, or who need extra background information on something that has been mentioned in a task, rely on these articles to fill gaps in their knowledge. It's common for HowTo articles to link to Concept articles.
-    - Example: https://developer.aiven.io/docs/products/postgresql/concepts/pg-connection-pooling.html
+    - Example: https://docs.aiven.io/docs/products/postgresql/concepts/pg-connection-pooling.html
     - Template: `Concept article template`_
 
 * **Reference** starts with an overview of what can be found in this section, and then usually a list of some kind. We use this type of article for lists of extensions, configuration parameters, and that sort of bookmark-it-for-reference type of content.
-    - Example: https://developer.aiven.io/docs/products/kafka/reference/advanced-params.html
+    - Example: https://docs.aiven.io/docs/products/kafka/reference/advanced-params.html
 
 * **Tutorial** describes a complete project for a developer to build themselves. It usually covers more than one product and/or 3rd party tool, presents a scenario, and enables a developer to create a working system by the end of the tutorial.
     - Template: `Tutorial template`_
@@ -49,23 +49,25 @@ The instructions for setting up local development are in the ``README``.
 
    If there is an associated issue, add ``Fixes <issue-URL>`` to the PR description text - this means the issue will automatically get closed when the PR is merged.
 
-3. We have an automated build process that checks your work against our in-house styles, gets product names with the right capitalization, and checks links. Please don't be alarmed if your build fails! View the output of the failed jobs to find out what happened, or we can advise when we review. You can run these locally if you like: ``make spell`` and ``make linkcheck``.
-
+3. We have an automated build process that checks your work against our in-house styles, gets product names with the right capitalization, and checks links that you added. Please don't be alarmed if your build fails! View the output of the failed jobs to find out what happened, or we can advise when we review. You can run these locally if you like: ``make spell`` and ``make linkcheck``.
+   
 .. tip::
 
     Don't add commands to the accepted words list, these should always be in ``literal`` markup and ignored by the spell checker. Literal markup can't be used inside link text, so reword your link and sentence to avoid this.
+    
+4. On devportal, some CI/CD processes run weekly. Some of those processes are automation that helps to keep our documentation up-to-date. In another process we [check](https://github.com/aiven/devportal/blob/main/.github/workflows/linkcheck.yaml) for broken links in our docs. If the build fails, a GitHub Issue is open to inform collaborators and maintainers about it.
 
-4. Every pull request generates a preview link, that will be added to your pull request as a comment. This link is publicly available and does not change during the lifetime of your pull request. Feel free to share it with others who might want a preview of your changes.
+5. Every pull request generates a preview link, that will be added to your pull request as a comment. This link is publicly available and does not change during the lifetime of your pull request. Feel free to share it with others who might want a preview of your changes.
 
-5. Our docs team will review your pull request, and you will receive some feedback. It's expected that there will be 2 or 3 rounds of revisions, but if you'd rather we just made changes ourselves, let us know.
+6. Our docs team will review your pull request, and you will receive some feedback. It's expected that there will be 2 or 3 rounds of revisions, but if you'd rather we just made changes ourselves, let us know.
 
-6. The reviewer will merge the pull request once it is ready and has been approved.
+7. The reviewer will merge the pull request once it is ready and has been approved.
 
 
 Style guide
 -----------
 
-These are the guidelines that we use for Aiven Developer; following them helps us keep all the content consistent and easy to follow for our audience. We review your pull request against these guidelines, so for fewer rounds of revisions, follow this advice!
+These are the guidelines that we use for Aiven Docs; following them helps us keep all the content consistent and easy to follow for our audience. We review your pull request against these guidelines, so for fewer rounds of revisions, follow this advice!
 
 Use a specific template
 '''''''''''''''''''''''
@@ -145,7 +147,7 @@ Example values
 
 Example values should not be "foo" or "bar. Instead, if it's a username, try "Alice". If it's an email address use ``someone@example.com``. A user can quickly identify which variable goes where if they look like the values they represent.
 
-When using placeholders in code examples, we use all uppercase. For example: https://developer.aiven.io/docs/products/postgresql/howto/connect-python.html
+When using placeholders in code examples, we use all uppercase. For example: https://docs.aiven.io/docs/products/postgresql/howto/connect-python.html
 
 What not to do
 ''''''''''''''

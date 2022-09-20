@@ -161,6 +161,22 @@ html_css_files = ['css/aiven.css']
 
 # -- Replacements -----------------------------------------------------------
 rst_epilog = """
+.. |icon-twitter| image:: /images/social_media/icon-twitter.svg
+   :width: 24px
+   :class: no-scaled-link
+
+.. |icon-github| image:: /images/social_media/icon-github.svg
+   :width: 24px
+   :class: no-scaled-link
+
+.. |icon-blog| image:: /images/social_media/icon-blog.svg
+   :width: 24px
+   :class: no-scaled-link
+
+.. |icon-youtube| image:: /images/social_media/icon-youtube.svg
+   :width: 24px
+   :class: no-scaled-link
+
 .. |icon-postgres| image:: /images/icon-pg.svg
    :width: 24px
    :class: no-scaled-link
