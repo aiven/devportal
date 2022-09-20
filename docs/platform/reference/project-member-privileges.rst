@@ -1,39 +1,55 @@
 Project member privileges
 =========================
 
-Manage user level permissions in Aiven projects
+User permissions are defined at project level in Aiven. Each user invited to a project has one of the available roles in it, defined originally by the **Admin** level user who invited the user to the project. 
 
-User permissions are defined at project level in Aiven. Each user invited to a project has one of the available roles in it, defined originally by the **Admin** level user who invited the user to the project.  Roles can be managed by a project **Admin** user under the **Project Members** page.
+.. Important::
 
-**Project roles overview**
+    Roles can only be managed by project **Admin** users under the **Project Members** page.
 
-- **Admin** role is required to invite more users to the project or to modify billing information. Admins can perform all available operations for projects and services.  Each project must always have at least one Admin user.  
+Project roles
+-------------
 
-- **Operator** role provides full access to services but does not allow modifying billing information or project members.  
+The following is the list of project roles and related priviledges:
 
-- **Developer** role allows managing existing services (e.g. creating databases and connecting to them), but does not allow making any changes that would affect billing (for example, starting or stopping services).
+* **Admin**: can perform all available operations for projects and services. 
 
-- **Read-only** role allows viewing services but does not allow making any changes whatsoever to the services.
+  Admins are the only allowed to invite more users to the project or to modify billing information.
+  
+  .. Important::
+  
+    Each project must always have at least one Admin user.  
 
-**Operations allowed for each project role**
+* **Operator**: provides full access to services but does not allow modifying billing information or project members.  
 
-**Developer**
+* **Developer**: allows managing existing services (e.g. creating databases and connecting to them), but does not allow making any changes that would affect billing (for example, starting or stopping services).
 
-- Access hosted services (PostgreSQL®, Kafka®, etc.) by using the connection parameters and service URI
+* **Read-only**: allows viewing services but does not allow making any changes whatsoever to the services.
+
+Roles detailed priviledges 
+--------------------------
+
+The following is a list of priviledges enabled for each role.
+
+Developer
+~~~~~~~~~
+
+- Access hosted services (Aiven for PostgreSQL®, Aiven for Apache Kafka®, etc.) by using the connection parameters and service URI
 
 - Create and modify service databases
 
 - Create and modify service database users
 
-- Remove Elasticsearch® indexes
+- Remove Aiven for OpenSearch® indexes
 
-- Create and modify Kafka® topics
+- Create and modify Aiven for Apache Kafka® topics
 
-- Create and modify PostgreSQL® connection pools
+- Create and modify Aiven for PostgreSQL® connection pools
 
-**Operator**
+Operator
+~~~~~~~~
 
-- All the operations available to Developers (see above)
+All the operations available to Developers (see above) and:
 
 - Download project PDF invoices
 
@@ -41,9 +57,10 @@ User permissions are defined at project level in Aiven. Each user invited to a p
 
 - Start scheduled service maintenance
 
-**Admin**
+Admin
+~~~~~
 
-- All the operations available to Operators (see above)
+All the operations available to Operators (see above) and:
 
 - Delete the project
 
@@ -54,6 +71,3 @@ User permissions are defined at project level in Aiven. Each user invited to a p
 - Define the project role for users in the project
 
 - Update project billing information
-
-
-
