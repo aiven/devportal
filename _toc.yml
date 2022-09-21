@@ -165,7 +165,7 @@ entries:
             - file: docs/tools/terraform/howto/upgrade-provider-v1-v2
               title: Upgrade the Aiven Terraform Provider from v1 to v2
             - file: docs/tools/terraform/howto/config-postgresql-provider
-              title: Use PostgreSQL provider alongside Aiven Terraform Provider  
+              title: Use PostgreSQL provider alongside Aiven Terraform Provider 
             - file: docs/tools/terraform/howto/promote-to-master-pg-rr
               title: Promote PostgreSQL read replica to master 
         - file: docs/tools/terraform/concepts
@@ -199,7 +199,11 @@ entries:
             - file: docs/tools/terraform/reference/cookbook/m3db-m3agg-recipe
               title: M3 and M3 Aggregator
             - file: docs/tools/terraform/reference/cookbook/postgresql-read-replica-recipe
-              title: PostgreSQL® Read Replica   
+              title: PostgreSQL® Read Replica
+          - file: docs/tools/terraform/reference/troubleshooting
+            entries:   
+            - file: docs/tools/terraform/reference/troubleshooting/private-access-error
+              title: Private access error when using VPC
       - file: docs/tools/kubernetes
         title: Aiven Operator for Kubernetes
 
