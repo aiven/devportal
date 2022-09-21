@@ -7,10 +7,9 @@ By creating a Transit Gateway VPC attachment, services in an Aiven Project VPC c
 Set up a Project VPC
 --------------------
 
-:ref:`Create a VPC on the Aiven platform <platform_howto_setup_vpc_peering>` in the same region as your Transit Gateway is located in.
+Create a VPC on the Aiven platform in the same region as your Transit Gateway is located in.
 
-
-Setting up a VPC attachment for your Project VPC
+Set up a VPC attachment for your Project VPC
 ------------------------------------------------
 
 Install the Aiven CLI
