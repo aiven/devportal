@@ -240,6 +240,9 @@ The following extensions can only be installed by superusers, **and are not gene
 ``dict_xsyn`` - https://www.postgresql.org/docs/current/dict-xsyn.html
     Text search dictionary template for extended synonym processing.
 
+``file_fdw`` - https://www.postgresql.org/docs/current/file-fdw.html
+    Foreign-data wrapper for flat file access.
+
 ``hstore_plperl`` - https://www.postgresql.org/docs/current/hstore.html
     Transform between ``hstore`` and ``plperl``.
 
