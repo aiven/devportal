@@ -22,9 +22,9 @@ To use Datadog Database Monitoring with your Aiven for PostgreSQL® services, yo
 Enable monitoring 
 -----------------
 
-You can individually enable DataDog Database Monitoring for the specific :doc:`Datadog Metrics </docs/integrations/datadog/datadog-metrics>` integration for Aiven for PostgreSQL®, by configuring the ``datadog_dbm_enabled`` parameter. Repeat this action for every Datadog Metrics integration for Aiven for PostgreSQL®, which you plan to monitor.
+You can individually enable Datadog Database Monitoring for the specific :doc:`Datadog Metrics </docs/integrations/datadog/datadog-metrics>` integration for Aiven for PostgreSQL®, by configuring the ``datadog_dbm_enabled`` parameter. Repeat this action for every Datadog Metrics integration for Aiven for PostgreSQL®, which you plan to monitor.
 
-Using the :doc:`Aiven CLI </docs/tools/cli>`, you can obtain the DataDog Metric integration you want to monitor and enable it using the ``datadog_dbm_enabled`` configuration parameter. For example: 
+Using the :doc:`Aiven CLI </docs/tools/cli>`, you can obtain the Datadog Metric integration you want to monitor and enable it using the ``datadog_dbm_enabled`` configuration parameter. For example: 
 
 * Find the UUID of the Datadog Metrics integration for a particular service: 
 ::
@@ -39,6 +39,6 @@ Using the :doc:`Aiven CLI </docs/tools/cli>`, you can obtain the DataDog Metric 
 More resources
 --------------
 * Learn more about :doc:`Datadog and Aiven </docs/integrations/datadog>`.
-* Learn more about `Datadog Deep Database Monitoring <https://www.datadoghq.com/product/database-monitoring/>`_ from their product page. 
+* Learn more about `DataDog Deep Database Monitoring <https://www.datadoghq.com/product/database-monitoring/>`_ from their product page. 
 
 
