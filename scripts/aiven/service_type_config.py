@@ -21,7 +21,7 @@ def create_row(
     """
     row = ""
     preamble = ""
-    section_level = "~" if indent == 0 else "^"
+    section_level = "-" if indent == 0 else "~"
 
     row += f"{preamble}{parameter}"
     row += "\n"
