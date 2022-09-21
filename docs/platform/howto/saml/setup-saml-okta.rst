@@ -22,6 +22,9 @@ then on **See All Accounts**
 5. Create a new Authentication Method, call it *Okta* (or similar) and then
 choose the team to add invited people to (or leave it blank)
 
+.. image:: /images/platform/howto/saml/okta/okta-saml-configuration-urls.png
+   :alt: Configure authentication URLs in Aiven console
+
 .. _setup_saml_okta_setup_okta:
 
 Setup on Okta
@@ -83,7 +86,7 @@ the Aiven console's login page.
 
 6. Once the application is created, collect the application data to finish the setup in the `Aiven Console <https://console.aiven.io/>`__. The application data can be found in the **Sign On** tab of the application on Okta, after clicking the **View Setup Instructions**.
 
-   .. image:: /images/platform/howto/saml/okta-view-saml-instructions.png
+   .. image:: /images/platform/howto/saml/okta/okta-view-saml-instructions.png
       :alt: View SAML setup instructions in Okta
 
    The required information to finalize the setup to use Okta with Aiven are the following:
@@ -93,6 +96,22 @@ the Aiven console's login page.
    * ``Identity Provider Issuer``
 
    * ``X.509 Certificate``
+
+.. image:: /images/platform/howto/saml/okta/okta-saml-settings.png
+   :alt: SAML settings in Okta
+
+Assign users to the Okta application
+---------------------------------------
+
+For your users to be able to login using SAML, you need to assign to the
+Okta application you just created. To do that, go to the ``Assignments``
+tab of the application. Then click on the ``Assign`` drop-down button and assign
+individual users or groups to the application.
+
+.. note::
+
+   New users need to be assigned to the Aiven application in Okta for the login to be successful
+
 
 Finish the configuration in Aiven
 ---------------------------------
@@ -112,22 +131,14 @@ Navigate to `Aiven Console <https://console.aiven.io/>`__ and finalize the confi
    * - ``SAML Certificate`` 
      - ``X.509 Certificate``
 
+.. image:: /images/platform/howto/saml/okta/okta-edit-method.png
+   :alt: Edit authentication method in Aiven Console
+
 .. important::
    Enable ``Enable IdP login`` and ``Enable authentication method`` before clicking ``Edit Method`` to save the settings.
 
 Use the **Account Link URL** on the authentication configuration page to link your Okta account and Aiven profile. You can also invite other members of your team to login or signup to Aiven using Okta via the **Signup link** shown in the Authentication method page.
    
-.. note::
-
-   New users need to be assigned to the Aiven application in Okta for the login to be successful
-
-Assign users to the Okta application
----------------------------------------
-
-For your users to be able to login using SAML, you need to assign to the
-Okta application you just created. To do that, go to the ``Assignments``
-tab of the application. Then click on the ``Assign`` drop-down button and assign
-individual users or groups to the application.
 
 Troubleshooting
 ---------------
