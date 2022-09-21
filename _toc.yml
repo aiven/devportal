@@ -460,6 +460,7 @@ entries:
               - file: docs/products/postgresql/howto/visualize-grafana
               - file: docs/products/postgresql/howto/report-metrics-grafana
               - file: docs/products/postgresql/howto/monitor-with-pgwatch2
+              - file: docs/products/postgresql/howto/monitor-query-performance-with-datadog
               - file: docs/products/postgresql/howto/datasource-integration
               - file: docs/products/postgresql/howto/analyze-with-google-data-studio
       - file: docs/products/postgresql/reference
