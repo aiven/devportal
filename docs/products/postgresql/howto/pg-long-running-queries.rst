@@ -10,7 +10,8 @@ To identify and terminate such long-running queries, you can do it from either:
 
 
 Terminate long running queries from the Aiven Console
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------------------------------
+
 In the `Aiven Console <http://console.aiven.io/>`_, you can go to the **Current Queries** tab for your service.
 
 .. image:: /images/products/postgresql/pg-long-running-queries.png
@@ -21,7 +22,8 @@ On the Current Queries page, you can check the query duration and click **Termin
 
 
 Detect and terminate long running queries with ``psql``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------------------------------------
+
 You can :doc:`login to your service <./connect-psql>`  by running on the terminal ``psql <service_uri>``.  Once connected, you can call the following function on the ``psql`` shell to terminate a query manually::
 
     SELECT pg_terminate_backend(pid);
@@ -42,8 +44,8 @@ Client applications can use the ``statement_timeout`` session variable to volunt
 You may check the `client connection defaults <https://www.postgresql.org/docs/current/runtime-config-client.html>`_ documentation for more information on the available session variables.
 
 
-Common error
-^^^^^^^^^^^^
+Database user error
+-----------------------------------------------------
 
 If you run the above command using a database user not being a member of the database you're connecting to, you will encounter the error::
 
