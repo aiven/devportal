@@ -19,23 +19,23 @@ Calculate the number of IP addresses needed
 
 Work out how many IP addresses your service will need to guarantee that the
 service has enough static IP addresses available to handle upgrades and
-failures. The table below shows how to calculate the number of IPs needed,
+failures. The table below shows how to calculate the number of IP addresses needed,
 depending on the size of your service plan.
 
 .. list-table::
     :header-rows: 1
 
     * - Plan size
-      - IPs needed
+      - IP addresses needed
       - Example
 
     * - up to 6 nodes
       - double the number of nodes
-      - 3 node plan needs 6 static IPs (2 * 3 nodes)
+      - 3 node plan needs 6 static IP addresses (2 * 3 nodes)
 
     * - 6+ nodes
       - number of nodes + 6
-      - 9 node plan needs 15 static IPs (9 nodes, plus 6)
+      - 9 node plan needs 15 static IP addresses (9 nodes, plus 6)
 
 Reserve static IP addresses
 ---------------------------
@@ -87,12 +87,12 @@ assign which service a static IP should be used by::
    avn static-ip associate --service my-static-pg ip358375b2765
 
 When you have the required number of addresses available, you can enable static
-IPs on your service.
+IP addresses on your service.
 
 Configure service to use static IP
 ----------------------------------
 
-Enable static IPs for the service by setting the ``static_ips`` user
+Enable static IP addresses for the service by setting the ``static_ips`` user
 configuration option:
 
 ::
@@ -103,9 +103,9 @@ configuration option:
 
     This leads to a rolling forward replacement of service nodes,
     similar to applying a maintenance upgrade. The new nodes will use the
-    static IPs associated with the service
+    static IP addresses associated with the service
 
-Once the nodes have been replaced, they will be using the static IPs that you
+Once the nodes have been replaced, they will be using the static IP addresses that you
 associated with the service. You can check which ones are in use by running the
 ``avn static-ip list`` command again. The ``available`` state means that the IP
 is associated to the service, and ``assigned`` means that it is in active use.
@@ -117,7 +117,7 @@ Remove static IP addresses
 
 .. note::
 
-    To dissociate an IP from a service, the service must either have enough IPs
+    To dissociate an IP from a service, the service must either have enough IP addresses
     still available, or the ``static_ips`` configuration setting for the
     service must be set to ``false``.
 

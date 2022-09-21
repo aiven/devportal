@@ -1,6 +1,6 @@
-# Aiven Developer Portal custom search
+# Aiven Docs custom search
 
-Aiven Developer Portal uses custom OpenSearch based search. The files related to the search are:
+Aiven Docs uses custom OpenSearch based search. The files related to the search are:
 
 - the search results page [\_templates/search.html](_templates/search.html)
 - the search form for the sidebar [\_templates/sidebar/search.html](_templates/sidebar/search.html)
@@ -69,9 +69,9 @@ This can be run multiple times and has to be run at least once before the other 
 
 The index name in Elasticsearch is `devportal`.
 
-# Developer Portal page indexing
+# Docs page indexing
 
-Developer Portal pages are indexed with [scripts/index_developer_portal_pages.py](scripts/index_developer_portal_pages.py).
+Pages are indexed with [scripts/index_developer_portal_pages.py](scripts/index_developer_portal_pages.py).
 The script parses built HTML files using [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
 and extracts document title from `title` element and document content from `main` element child that has a `content` class (CSS selector `main .content`).
 
@@ -85,7 +85,7 @@ make index-devportal ES_URL=https://opensearch.url/here
 
 # Help Center page indexing
 
-Developer Portal pages are indexed with [scripts/index_help_center_pages.py](scripts/index_help_center_pages.py).
+Intercom pages are indexed with [scripts/index_help_center_pages.py](scripts/index_help_center_pages.py).
 The script fetches HTTP pages from [https://help.aiven.io/](https://help.aiven.io/) and parses them using [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/).
 
 You can run the script with

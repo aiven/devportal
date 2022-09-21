@@ -9,6 +9,8 @@ Manage access tokens
 
 Commands for managing user's access tokens.
 
+.. _avn-user-access-token-create:
+
 ``avn user access-token create``
 ''''''''''''''''''''''''''''''''
 

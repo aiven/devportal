@@ -29,7 +29,7 @@ There are several options to do that
 
     mvn org.apache.maven.plugins:maven-dependency-plugin:2.8:get -Dartifact=org.postgresql:postgresql:42.3.2:jar -Ddest=postgresql-42.3.2.jar
 
-2. Manually the jar could be downloaded from https://jdbc.postgresql.org/download.html
+2. Manually the jar could be downloaded from https://jdbc.postgresql.org/download/
 
 Code
 ''''

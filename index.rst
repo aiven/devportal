@@ -1,5 +1,5 @@
-Aiven developer
-===============
+Aiven documentation
+===================
 
 Aiven is a database-as-a-service for open source data solutions including
 PostgreSQL®,

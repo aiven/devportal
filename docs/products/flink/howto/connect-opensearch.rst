@@ -1,7 +1,7 @@
 Create an OpenSearch®-based Apache Flink® table
 ===============================================
 
-To build data pipelines, Apache Flink® requires source and target data structures to `be mapped as Flink tables <https://ci.apache.org/projects/flink/flink-docs-release-1.13/docs/dev/table/sql/create/#create-table>`_. This functionality can be achieved via the `Aiven console <https://console.aiven.io/>`_ or :doc:`Aiven CLI </docs/tools/cli/service/flink>`.
+To build data pipelines, Apache Flink® requires source and target data structures to `be mapped as Flink tables <https://ci.apache.org/projects/flink/flink-docs-release-1.15/docs/dev/table/sql/create/#create-table>`_. This functionality can be achieved via the `Aiven console <https://console.aiven.io/>`_ or :doc:`Aiven CLI </docs/tools/cli/service/flink>`.
 
 A Flink table can be defined over an existing or new Aiven for OpenSearch® index, to sink streaming data. To define a table over an OpenSearch® index, the index name and column data formats need to be defined, together with the Flink table name to use as reference when building data pipelines.
 

@@ -3,7 +3,6 @@
 {%- block extrahead %}
 {{ super() }}
 
-<link rel="canonical" href="https://developer.aiven.io/{{ pagename }}" />
 <meta name="description" content="{{ body|striptags|replace("\u00B6", '')|truncate(160) }}">
 
 <!-- Twitter Cards -->
@@ -11,7 +10,7 @@
 <meta name="twitter:site" content="@aiven_io">
 <meta name="twitter:title" content="{{ docstitle|striptags|e }}">
 <meta name="twitter:description" content="{{ body|striptags|replace("\u00B6", '')|truncate(200) }}">
-<meta name="twitter:image" content="https://developer.aiven.io/_static/images/site-preview.png">
+<meta name="twitter:image" content="https://docs.aiven.io/_static/images/site-preview.png">
 
 <!-- Snowplow Analytics -->
 <script type="text/javascript" async=1>
@@ -44,18 +43,35 @@ snowplow("newTracker", "at", "dc.aiven.io", {
   }
 });
 
-// enable fully anonymous tracking
-snowplow('clearUserData');
-
-snowplow("trackPageView");
-
 </script>
 <!-- End Snowplow Analytics -->
 
 <!-- OneTrust Cookies Consent Notice start for aiven.io -->
-<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" data-document-language="true" type="text/javascript" charset="UTF-8" data-domain-script="0623fbc6-a463-4822-a7a4-fdb5afcc3afb" ></script>
+<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" data-document-language="true" type="text/javascript" charset="UTF-8" data-domain-script="0623fbc6-a463-4822-a7a4-fdb5afcc3afb" onerror="snowplow('trackPageView');"></script>
 <script type="text/javascript">
-function OptanonWrapper() { }
+function OptanonWrapper() {
+  if (!Optanon.IsAlertBoxClosed()) {
+    window.firstTimeVisit = true; // User has not given consent to aiven.io
+    snowplow('trackPageView'); // Initial page view anonymously.
+    return;
+  }
+
+  if (window.OnetrustActiveGroups.includes('115') || window.OnetrustActiveGroups.includes('2')) {
+    // Consent given for Snowplow cookies. UX cookies 115. Performance cookies 2.
+    snowplow('disableAnonymousTracking', { stateStorageStrategy: 'cookieAndLocalStorage' });
+  } else {
+    // enable fully anonymous tracking
+    snowplow('clearUserData');
+  }
+
+  if (window.firstTimeVisit) {
+    // Consent was just given so track the cookie banner click.
+    snowplow('trackLinkClick', { targetUrl: 'https://aiven.io/cookies' });
+  } else {
+    // Consent has already been given in a previous visit so track page views normally.
+    snowplow('trackPageView');
+  }
+}
 </script>
 <!-- OneTrust Cookies Consent Notice end for aiven.io -->
 {% endblock %}
