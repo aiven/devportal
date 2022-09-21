@@ -1,6 +1,6 @@
 .. _platform_howto_setup_vpc_peering:
 
-Create Virtual Private Cloud (VPC) peering
+Manage Virtual Private Cloud (VPC) peering
 ==========================================
 
 Virtual Private Cloud (VPC) peering is a method of connecting separate AWS, Google Cloud, or Azure private networks with each other. This makes it possible for the virtual machines in the different VPC to talk to each other directly without going through the public internet.
@@ -36,6 +36,16 @@ Deploying new services to a VPC
 When you create a new service, your peered VPC is available as a new geolocation on the **VPC** tab under *Select Service Cloud Region*.
 It might take a few minutes for newly created VPC to appear for service deployments.
 
+.. note::
+
+The service nodes use firewall rules to allow only connections from private IP ranges that originate from networks on the other end of VPC peering connections. You can only deploy services to a VPC if they belong to the project where that specific VPC was created.
+
+Deleting an existing VPC and VPC peering
+----------------------------------------
+
+Before deleting an existing VPC from Aiven console, you should move out any active services from that VPC. To delete a VPC, navigate to the Aiven console under the VPC section. You can find the **Delete** button as the last column for each VPC.
+Once the VPC is deleted, the cloud provider side of the peering connection will go to an inactive or deleted state.
+
 Migrating a public service to a VPC
 -----------------------------------
 
@@ -55,10 +65,6 @@ You can migrate any Aiven service to or from a VPC.
    .. note::
        Once you migrate your service to an Aiven project-specific VPC, you can no longer access the service over the public internet. You can only access it from clients that are in a VPC that is peered to the VPC for the Aiven project.
 
-Security
---------
-
-The service nodes use firewall rules to allow only connections from private IP ranges that originate from networks on the other end of VPC peering connections. You can only deploy services to a VPC if they belong to the project where that specific VPC was created.
 
 Accessing VPC services from the public internet
 -----------------------------------------------
@@ -69,3 +75,4 @@ You can switch on public internet access for your services in the service's *Ove
 IP filtering (the Allowed IP Addresses list on the service overview page) is still available for a service deployed to a VPC where both public and private access are allowed. We recommend that you use IP filtering when your VPC service is also exposed to the public internet.
 
 Also note that safelisting applies to both internal and external traffic. If you safelist an external IP address and want to keep traffic flowing with the internal (peered) connections, make sure that you safelist the CIDR blocks of the peered networks as well to avoid disruptions to the service.
+
