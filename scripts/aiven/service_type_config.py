@@ -4,7 +4,11 @@ from typing import List, Union
 
 
 def create_row(
-    parameter: str, value_type: Union[List, str], title: str, desc: str, indent=0
+    parameter: str,
+    value_type: Union[List, str],
+    title: str,
+    desc: str,
+    indent=0,
 ) -> str:
     """Creates content's row.
 
@@ -16,11 +20,12 @@ def create_row(
     :rtype: str
     """
     row = ""
-    preamble = "" + "  " * indent
+    preamble = ""
+    section_level = "~" if indent == 0 else "^"
 
     row += f"{preamble}{parameter}"
     row += "\n"
-    row += "'" * len(f"{preamble}{parameter}")
+    row += section_level * len(f"{preamble}{parameter}")
     row += "\n"
     row += f"*{value_type}*"
     row += "\n"
@@ -69,7 +74,7 @@ def create_service_docs(service_type: str, data: Dict) -> str:
                     nested_value.get("type", ""),
                     nested_value.get("title", ""),
                     nested_value.get("description", ""),
-                    0,
+                    1,
                 )
 
         content += "\n" * 3
