@@ -41,4 +41,3 @@ More resources
 * Learn more about :doc:`Datadog and Aiven </docs/integrations/datadog>`.
 * Learn more about `Datadog Deep Database Monitoring <https://www.datadoghq.com/product/database-monitoring/>`_ from their product page. 
 
-
