@@ -63,7 +63,7 @@ the Aiven console's login page.
           ``https://console.aws.aiven.io/`` when using Aiven AWS Marketplace Console
    
    .. important:: 
-      The ``Default RelayState`` is the homepage of the Aiven Console and is foundamental for IdP initiated sign-on to function correctly.
+      The ``Default RelayState`` is the homepage of the Aiven Console and is fundamental for IdP initiated sign-on to function correctly.
 
    .. note::
       The ``Single sign on URL`` and ``Audience URI (SP Entity ID)`` values are visible in `Aiven Console <https://console.aiven.io/>`__ on the newly created Authentication method page.
