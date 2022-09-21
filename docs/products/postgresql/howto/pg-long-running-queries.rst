@@ -45,18 +45,17 @@ You may check the `client connection defaults <https://www.postgresql.org/docs/c
 Common error
 ^^^^^^^^^^^^
 
-There may be a scenario where you encounter an error when running the above commands.
+If you run the above command using a database user not being a member of the database you're connecting to, you will encounter the error::
 
-If the database user is not a member of the database connected to, you may encounter the error: 
-
-``ERROR:  must be a member of the role whose process is being terminated or member of pg_signal_backend``
+    ERROR:  must be a member of the role whose process is being terminated or member of pg_signal_backend
 
 You can check the roles assigned to each user with the following command::
 
     SELECT r.rolname as username,r1.rolname as "role"
-    FROM pg_catalog.pg_roles r JOIN pg_catalog.pg_auth_members m
-    ON (m.member = r.oid)
-    JOIN pg_roles r1 ON (m.roleid=r1.oid)
+    FROM pg_catalog.pg_roles r 
+        JOIN pg_catalog.pg_auth_members m
+            ON (m.member = r.oid)
+        JOIN pg_roles r1 ON (m.roleid=r1.oid)
     WHERE r.rolcanlogin
     ORDER BY 1;
 
@@ -81,7 +80,3 @@ which you should see the role::
 To resolve the permission issue, you may grant the user the appropriate role as per below::
 
     grant testrole to avnadmin;
-
-where you should see the confirmation response::
-    
-    GRANT ROLE
