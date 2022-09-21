@@ -18,7 +18,11 @@ def create_row(
     row = ""
     preamble = "" + "  " * indent
 
-    row += f"{preamble}{parameter} => *{value_type}*"
+    row += f"{preamble}{parameter}"
+    row += "\n"
+    row += "'" * len(f"{preamble}{parameter}")
+    row += "\n"
+    row += f"*{value_type}*"
     row += "\n"
     row += f"{preamble}  **{title}** {desc}"
     return row
@@ -53,6 +57,7 @@ def create_service_docs(service_type: str, data: Dict) -> str:
             value.get("type", ""),
             value.get("title", ""),
             value.get("description", ""),
+            0,
         )
 
         # handle any nested properties
@@ -64,7 +69,7 @@ def create_service_docs(service_type: str, data: Dict) -> str:
                     nested_value.get("type", ""),
                     nested_value.get("title", ""),
                     nested_value.get("description", ""),
-                    1,
+                    0,
                 )
 
         content += "\n" * 3
