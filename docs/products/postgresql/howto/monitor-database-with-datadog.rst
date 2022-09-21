@@ -39,6 +39,6 @@ Using the :doc:`Aiven CLI </docs/tools/cli>`, you can obtain the Datadog Metric 
 More resources
 --------------
 * Learn more about :doc:`Datadog and Aiven </docs/integrations/datadog>`.
-* Learn more about `DataDog Deep Database Monitoring <https://www.datadoghq.com/product/database-monitoring/>`_ from their product page. 
+* Learn more about `Datadog Deep Database Monitoring <https://www.datadoghq.com/product/database-monitoring/>`_ from their product page. 
 
 
