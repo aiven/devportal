@@ -1,7 +1,7 @@
-Dynamic disk sizing
+Dynamic Disk Sizing
 ====================
 
-Dynamic disk sizing (DDS) allows you to add or remove additional storage to your services from within the `Aiven Console <https://console.aiven.io/>`_. You can add additional storage during service creation or on-demand without interruption to meet the growing business needs. 
+Dynamic Disk Sizing (DDS) allows you to add or remove additional storage to your services from within the `Aiven Console <https://console.aiven.io/>`_. You can add additional storage during service creation or on-demand without interruption to meet the growing business needs. 
 
 Dynamic Disk Sizing (DDS) is available for the following services:
 
@@ -36,7 +36,7 @@ You can :doc:`add additional disk storage <../howto/add-storage-space>` to your 
 
 When you add additional storage to your service, the Aiven platform provisions additional disk storage and dynamically adds it to your running instances. The total amount of additional storage you can add to your service is based on your service plan and the cloud provider.
 
-In a clustered service (Cassandra or Kafka), the additional storage added will be equally divided between the nodes. In a shared service, each node receives the total shared capacity of the additional storage added. All the additional storage added will remain usable.
+In a clustered service (Apache Cassandra or Apache Kafka), the additional storage added will be equally divided between the nodes. In a shared service, each node receives the total shared capacity of the additional storage added. All the additional storage added will remain usable.
 
 Pricing for dynamic disk sizing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
