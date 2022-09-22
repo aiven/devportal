@@ -2,7 +2,7 @@ Manage billing groups in the Aiven Console
 ==========================================
 
 Billing groups enable you to set a common billing profile for multiple
-projects and generate a consolidated invoice. To know more about the key benefits read the :doc:`related documentation <../concepts/billing-groups>`.
+projects and generate a consolidated invoice. To learn more about the key benefits of billing groups read the :doc:`related documentation <../concepts/billing-groups>`.
 
 Billing groups and Aiven accounts
 ---------------------------------
@@ -21,43 +21,31 @@ Manage billing groups
 
 To view and manage billing groups in the `Aiven Console <https://console.aiven.io/>`_:
 
-#. Click the current project and select **See all projects & accounts**.
+#. In the account that you want to manage, click **Billing**.
 
-#. Click an account that you want to manage and then click the **Billing** tab.
-
-   .. Tip::
+   .. tip::
     This window allows you to create new billing groups and assign projects to your billing groups. For more information on creating billing groups, `see the related article <https://help.aiven.io/en/articles/4634847-getting-started-with-billing-groups>`__.
 
 #. Click one of the listed billing groups to browse the details for that billing group.
 
-Navigate the billing group page
-'''''''''''''''''''''''''''''''
+Billing group page overview
+'''''''''''''''''''''''''''
 
-The billing group page contains multiple sections:
+When you select a billing group, the page that opens displays the accumulated costs of all projects that are assigned to the billing group. 
 
-* the **accumulated costs** of all projects that are assigned to the billing group in the top-right corner.
-* the *action menu* , available in the top-right corner, includes options to **rename or delete the billing group**. 
+The action menu in the top right includes options to rename or delete the billing group. 
 
-  .. Note::
-    You can only delete a billing group that has no projects assigned to it.
+.. note:: You can only delete a billing group that has no projects assigned to it.
 
-* the **Overview** tab contains: 
-    * the projects assigned to this billing group
-    * the generated invoices
-    * the applied credits
-* the **Projects** tab lists the projects that are assigned to the billing group
+This page has other sections with more information:
 
-  .. Tip::
-  
-    You can assign new projects to the billing group on this tab. If you have more than one billing group in the current account, you can also move projects between billing groups.
+* On the **Invoices** tab you can view and download the invoices generated for the billing group. The invoices include separate lines for each project and service assigned to the billing group.
+* The **Projects** tab lists the projects that are assigned to this billing group.
 
-* the **Invoices** tab allows you to **view and download the invoices** generated for the billing group. The invoices include separate lines for each project and service assigned to the billing group.
-* the **Credits** tab allows you to view and assign credit codes for the billing group.
-* the **Events** tab lists all the logged actions for the billing group.
-* the **Billing information** tab allows you to add and update the payment method and billing details for generating the invoices.
+  .. tip:: You can assign new projects to the billing group on this tab. If you have more than one billing group in the current account, you can also move projects between billing groups.
 
-.. note:: Under the Settings of your Account, you can set the **Primary Billing Group** so that new projects will be assigned by default, unless specified otherwise
+* On the **Credits** tab you can view and assign credit codes for the billing group.
+* The **Events** tab lists all the logged actions for the billing group.
+* On the **Billing information** tab you can add or update the payment method and other billing details for generating the invoices.
 
-
-For more information, see our `support page <https://help.aiven.io/>`__
-or contact us at support@Aiven.io .
+  .. note:: In the settings for your account, you can set the primary billing group that new projects are assigned to by default, unless specified otherwise.
