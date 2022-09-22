@@ -29,6 +29,7 @@ AWS PrivateLink. You also need the AWS CLI to create a VPC endpoint.
 currently support AWS PrivateLink.
 
 #. | Create an AWS PrivateLink resource on the Aiven service:
+   
    | The Amazon Resource Name (ARN) for the principals that are allowed
      to connect to the VPC endpoint service and the AWS network load
      balancer requires your Amazon account ID. In addition, you can set
