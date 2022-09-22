@@ -41,7 +41,7 @@ Use ``avn vpc list`` to find the ID for your Project VPC. The ``project_vpc_id v
 Determine the IP ranges to route from the Project VPC to the AWS Transit Gateway
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-While a Transit Gateway has a route table of its own, and will by default route traffic to each attached network (directly to attached VPC or indirectly via VPN attachments), attached VPC's route tables need to be updated to include the TGW as a target for any IP range (CIDR) that should be routed using the VPC attachment. These IP ranges must be configured when creating the attachment for an Aiven Project VPC.
+While a Transit Gateway has a route table of its own, and will by default route traffic to each attached network (directly to attached VPC or indirectly via VPN attachments), attached route tables of the VPC need to be updated to include the TGW as a target for any IP range (CIDR) that should be routed using the VPC attachment. These IP ranges must be configured when creating the attachment for an Aiven Project VPC.
 The IPv4 range will be referred below to as ``$user_peer_network_cidr``.
 
 Create Aiven peering connection
