@@ -17,7 +17,7 @@ You can enable PrivateLink for Aiven services located in project VPC.
 Before you can set up AWS PrivateLink, `create a
 VPC <https://help.aiven.io/en/articles/778836>`__ and launch the
 services that you want to connect to that VPC. As there is no network
-routing between the VPCs, you can use any private IP range for the VPC,
+routing between the VPC, you can use any private IP range for the VPC,
 unless you also want to connect to the project VPC using VPC peering
 connections. This means that overlaps in the IP range are not an issue.
 
