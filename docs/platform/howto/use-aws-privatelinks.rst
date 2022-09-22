@@ -88,7 +88,7 @@ currently support AWS PrivateLink.
    | Note that for fault tolerance, you should specify a subnet ID for
      each availability zone in the region. The security groups determine
      the instances that are allowed to connect to the endpoint network
-     interfaces created by AWS into the specified sub-nets.
+     interfaces created by AWS into the specified subnets.
    | Alternatively, you can create the VPC endpoint in the AWS web
      console under **VPC** > **Endpoints** > **Create endpoint** . See
      the `AWS
