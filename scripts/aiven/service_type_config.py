@@ -29,7 +29,8 @@ def create_row(
     row += "\n"
     row += f"*{value_type}*"
     row += "\n"
-    row += f"{preamble}  **{title}** {desc}"
+    row += "\n"
+    row += f"**{title}** {desc}"
     return row
 
 
