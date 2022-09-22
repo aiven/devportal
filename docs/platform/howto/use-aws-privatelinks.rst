@@ -104,7 +104,7 @@ currently support AWS PrivateLink.
      them to the Aiven VPC endpoint service. Once the AWS endpoint state
      changes to ``available`` , the connection is visible in Aiven.
 
-#. | Enable PrivateLink access for Aiven service components.
+#. | Enable PrivateLink access for Aiven service components:
    | You can control each service component separately - for example,
      you can enable PrivateLink access for Kafka while allowing Kafka
      Connect to connect via VPC peering connections only.
