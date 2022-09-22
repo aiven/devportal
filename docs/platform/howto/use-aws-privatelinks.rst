@@ -22,7 +22,7 @@ unless you also want to connect to the project VPC using VPC peering
 connections. This means that overlaps in the IP range are not an issue.
 
 You can use either the `Aiven web console <https://console.aiven.io>`__
-or the `Aiven CLI <https://github.com/aiven/aiven-client>`__ to set up
+or the :doc:`Aiven CLI </docs/tools/cli>` to set up
 AWS PrivateLink. You also need the AWS CLI to create a VPC endpoint.
 
 **Note:** Aiven for Apache Cassandra® and Aiven for M3 services do not
