@@ -138,7 +138,7 @@ currently support AWS PrivateLink.
    load balancer behind each VPC endpoint service, and the target rules
    on the load balancer for the service nodes need at least two
    successful heartbeats before they transition from the ``initial``
-   state to ``healthy`` and are included in the load balancer's active
+   state to ``healthy`` and are included in the active forwarding rules of the load balancer.
    forwarding rules.
 
    | **Note:** Currently, you can only create one VPC endpoint for each
