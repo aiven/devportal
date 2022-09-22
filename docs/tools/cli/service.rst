@@ -271,10 +271,33 @@ Manages Aiven internal and external services integrations.
 
 More information on ``integration-delete``, ``integration-endpoint-create``, ``integration-endpoint-delete``, ``integration-endpoint-list``, ``integration-endpoint-types-list``, ``integration-endpoint-update``, ``integration-list``, ``integration-types-list`` and ``integration-update`` can be found in :doc:`the dedicated page <service/integration>`.
 
-``avn service keypair``
+``avn service keypair get``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Service keypair commands
+Service keypair commands. The use cases for this command are limited to accessing the keypair for an Aiven for Apache Cassandra® service that was started in ``migration mode``. For more information about this, see https://help.aiven.io/en/articles/3147884-using-sstableloader-to-migrate-your-existing-cassandra-cluster-to-aiven
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``service_name``
+    - The name of the service
+  * - ``keypair``
+    - The name of the keypair. Options are ``cassandra_migrate_sstableloader_user``
+  * - ``--key-filepath``
+    - The location to download the key to
+  * - ``--cert-filepath``
+    - The location to download the certificate to
+
+**Example:** Retrieve the keypair, and save them to the ``/tmp`` directory, for an Aiven for Apache Cassandra® service, called ``test-cass``, that was started in migration mode.
+
+::
+
+    avn service keypair get --key-filepath /tmp/keyfile --cert-filepath /tmp/certfile test-cass cassandra_migrate_sstableloader_user
+
+The output of this command results in 2 files (``keyfile`` and ``certfile``) saved to the ``/tmp`` directory.
 
 ``avn service list``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
