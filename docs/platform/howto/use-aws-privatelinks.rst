@@ -13,7 +13,7 @@ choose and receives the private IP addresses that belong to the IP range
 of your VPC. The VPC endpoint is routed to your Aiven service located in
 one of Aiven's AWS accounts.
 
-You can enable PrivateLink for Aiven services located in project VPCs.
+You can enable PrivateLink for Aiven services located in project VPC.
 Before you can set up AWS PrivateLink, `create a
 VPC <https://help.aiven.io/en/articles/778836>`__ and launch the
 services that you want to connect to that VPC. As there is no network
