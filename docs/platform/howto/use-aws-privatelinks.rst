@@ -98,6 +98,7 @@ currently support AWS PrivateLink.
      for the VPC endpoint must allow ingress in the port range
      ``10000-31000`` to accommodate the pool of Kafka broker ports used
      in our PrivateLink implementation.
+   
    | It takes a while before the endpoint is ready to use as AWS
      provisions network interfaces to each of the sub-nets and connects
      them to the Aiven VPC endpoint service. Once the AWS endpoint state
