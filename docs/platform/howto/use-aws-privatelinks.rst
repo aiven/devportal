@@ -8,7 +8,7 @@ peering <https://help.aiven.io/en/articles/778836-using-vpc-peering>`__
 , traffic is routed through an AWS VPC peering connection to your Aiven
 services. With PrivateLink, you can create a VPC endpoint to your own
 VPC and access an Aiven service from that. The VPC endpoint creates
-network interfaces (NIC) to the sub-nets and availability zones that you
+network interfaces (NIC) to the subnets and availability zones that you
 choose and receives the private IP addresses that belong to the IP range
 of your VPC. The VPC endpoint is routed to your Aiven service located in
 one of Aiven's AWS accounts.
