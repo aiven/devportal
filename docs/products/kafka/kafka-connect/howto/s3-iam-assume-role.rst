@@ -86,3 +86,5 @@ The connector configurations in a file (we'll refer to it with the name ``s3_sin
         "aws.s3.bucket.name": "<AWS_S3_NAME>",
         "aws.s3.region": "<AWS_S3_REGION>"
     }
+
+To check all the Apache Kafka Connect® S3 sink connector by Aiven parameters and configuration options, browse the :doc:`dedicated document <s3-sink-connector-aiven>`.
