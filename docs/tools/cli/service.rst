@@ -297,7 +297,7 @@ Service keypair commands. The use cases for this command are limited to accessin
 
     avn service keypair get --key-filepath /tmp/keyfile --cert-filepath /tmp/certfile test-cass cassandra_migrate_sstableloader_user
 
-The output of this command results in 2 files (``keyfile`` and ``certfile``) saved to the `tmp` directory.
+The output of this command results in 2 files (``keyfile`` and ``certfile``) saved to the ``/tmp`` directory.
 
 ``avn service list``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
