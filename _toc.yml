@@ -92,6 +92,7 @@ entries:
         title: Billing management
         entries:
           - file: docs/platform/howto/manage-payment-card
+          - file: docs/platform/howto/create-billing-groups
           - file: docs/platform/howto/use-billing-groups
           - file: docs/platform/howto/change-billing-contact
           - file: docs/platform/howto/update-tax-status
