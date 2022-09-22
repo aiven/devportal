@@ -55,7 +55,7 @@ Limitations
 
 Next steps
 ----------
-For infromation on how to add additonal disk storage to your service from the `Aiven Console <https://console.aiven.io/>`_, see :doc:`Add additional storage <../howto/add-storage-space>`. 
+For information on how to add additional disk storage to your service from the `Aiven Console <https://console.aiven.io/>`_, see :doc:`Add additional storage <../howto/add-storage-space>`. 
 
 
 .. note:: 
