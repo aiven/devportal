@@ -18,7 +18,7 @@ Dynamic Disk Sizing (DDS) is available for the following services:
 
 Why dynamic disk sizing?
 ------------------------
-When creating a service on Aiven, you have a fixed pre-defined storage allocation based on your plan selection. However, when running your Service, there is a possibility that you may soon realize the need for scaling up the storage alone.
+When creating a service on Aiven, you have a fixed pre-defined storage allocation based on your plan selection. However, when running your service, there is a possibility that you may soon realize the need for scaling up the storage alone.
 
 Predicting future growth and storage requirements can sometimes be challenging, and upgrading your service plans for additional storage requirements alone may not be feasible. Upgrading the service plans means paying for more compute resources (or RAM) that your current usage does not require. 
 
