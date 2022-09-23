@@ -5,7 +5,7 @@ on:
     - cron: "0 6 * * 2"
 
 jobs:
-  AdvancedParamsGrafana:
+  advanced_params_grafana:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repo
