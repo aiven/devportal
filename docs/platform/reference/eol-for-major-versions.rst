@@ -53,7 +53,6 @@ Aiven for OpenSearch® is the open source continuation of the original Elasticse
    =========== ============= ==================
    **Version** **Aiven EOL** **Upstream EOL**
    1.x         2024-??-??    2023-12-31
-   2.x         202?-??-??    202?-??-??
    =========== ============= ==================
 
 
