@@ -5,7 +5,7 @@ on:
     - cron: "0 6 * * 2"
 
 jobs:
-  CloudList:
+  cloud_list:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repo
