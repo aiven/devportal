@@ -463,6 +463,7 @@ entries:
               - file: docs/products/postgresql/howto/connect-rivery
               - file: docs/products/postgresql/howto/connect-skyvia
               - file: docs/products/postgresql/howto/connect-zapier
+              - file: docs/products/postgresql/howto/monitor-database-with-datadog
               - file: docs/products/postgresql/howto/visualize-grafana
               - file: docs/products/postgresql/howto/report-metrics-grafana
               - file: docs/products/postgresql/howto/monitor-with-pgwatch2
