@@ -48,7 +48,7 @@ Creates a new billing group with ``create`` or amend it with ``update``
     - Note: This is a positional argument, not a switch
   * - ``ID`` (required for ``update``)
     - Note: This is a positional argument, not a switch
-  * - ``--account-id`` (required for ``update``)
+  * - ``--account-id``
     - The account ID to create the billing group in
   * - ``--card-id``
     - The card ID (see ``avn card``)
@@ -73,13 +73,13 @@ Creates a new billing group with ``create`` or amend it with ``update``
   * - ``--zip-code``
     - ZIP / Post Code
 
-**Example:** Create a billing-group named ``qa-dept``.
+**Example:** Create a billing-group named ``qa-dept`` under the account
 
 ::
 
-  avn billing-group create qa-dept --account-t c59dde4j9 --billing-currency EUR --billing-email billing@testers.dev --company testers --address-line "1 No Way" --country-code SE --city Stockholm
+  avn billing-group create qa-dept --account-id c59dde4j9 --billing-currency EUR --billing-email billing@testers.dev --company testers --address-line "1 No Way" --country-code SE --city Stockholm
 
-**Example:** Rename a billing-group 
+**Example:** Rename your ``qa-dept`` billing group with ID ``55b0e547-58f9-48de-8808-807d385d1f95`` to ``qa-department``.
 
 ::
 
@@ -103,7 +103,7 @@ Claim a credit code within your biling-group
   * - ``code``
     - Credit Code
 
-**Example:** Claim a credit code in your billing-group
+**Example:** Claim the credit code ``sneaky-crab`` in your billing-group
 
 ::
 
@@ -128,6 +128,15 @@ Lists all the credits redeemed in your billing-group
 ::
 
   avn billing-group credits-list 55b0e547-58f9-48de-8808-807d385d1f95
+
+An example of ``avn billing-group credits-list`` output:
+
+.. code:: text
+
+  CODE      REMAINING_VALUE
+  ========  ===============
+  S18A11Y  0.00
+
 
 ``avn billing-group delete``
 ''''''''''''''''''''''''''''''''''''
@@ -169,6 +178,27 @@ List the events that have occurred for a given billing-group
 
   avn billing-group events 55b0e547-58f9-48de-8808-807d385d1f95
 
+An example of ``avn billing-group events`` output:
+
+.. code:: text
+
+  CREATE_TIME           ACTOR             EVENT_DESC
+  ====================  ================  ===================================================================================================================
+  2021-10-14T21:09:02Z  Aiven Automation  Set VAT ID state to invalid
+  2021-10-14T14:31:15Z  me@you.com   "Set billing email address to \"[\"\"me@you.io\"\"]\""
+  2021-10-14T14:30:46Z  me@you.com   Set VAT ID state to unconfirmed
+  2021-10-14T13:08:45Z  Aiven Automation  Set VAT ID state to invalid
+  2021-10-14T08:15:09Z  me@you.com   "Added US$\"400\" credits to the billing group"
+  2021-10-14T08:15:00Z  me@you.com   Added project inzone-a-project to billing group
+  2021-10-14T08:15:00Z  me@you.com   Added project inzone-b-project to billing group
+  2021-10-14T08:15:00Z  me@you.com   Added project inzone-c-project to billing group
+  2021-10-14T08:15:00Z  me@you.com   Added project kona-a-project to billing group
+  2021-10-14T08:15:00Z  me@you.com   Added project kona-b-project to billing group
+  2021-10-14T08:15:00Z  me@you.com   Added project kona-c-project to billing group
+  2021-10-14T08:15:00Z  me@you.com   "Added user u2865a92fe3d (\"me@you.com\") to billing group \"u856238c-8213-6592-975e-cfc3662c1084\" with type"
+  2021-10-14T08:15:00Z  me@you.com   "Created billing group \"test-group\""
+
+
 ``avn billing-group get``
 ''''''''''''''''''''''''''
 
@@ -189,6 +219,15 @@ Get details for a given billing-group
 
   avn billing-group get 55b0e547-58f9-48de-8808-807d385d1f95
 
+An example of ``avn billing-group get`` output:
+
+.. code:: text
+
+  BILLING_GROUP_ID                      BILLING_GROUP_NAME  ACCOUNT_NAME
+  ====================================  ==================  ============
+  u856238c-8213-6592-975e-cfc3662c1084  test-group        null
+
+
 ``avn billing-group invoice-lines``
 ''''''''''''''''''''''''''''''''''''
 
@@ -205,7 +244,7 @@ Retrieve the lines for a given invoice
   * -  ``invoice```
     - The number of the invoice
 
-**Example:** Retrieve lines from invoice for your billing group
+**Example:** Retrieve lines from invoice for the specified billing group
 
 ::
 
