@@ -10,6 +10,7 @@ API
 APIs
 autovacuum
 Avro
+Azure
 binlog
 boolean
 boot
@@ -58,6 +59,7 @@ Geomap
 geospatial
 GitHub
 go
+Google Cloud Platform
 Gradle
 Grafana
 hardcoded
@@ -149,6 +151,8 @@ reindexing
 reStructuredText
 rivery
 rsyslog
+safelist
+safelisting
 Sakila
 Sarama
 schemaless
@@ -186,6 +190,8 @@ unencrypted
 untrusted
 unaggregated
 upsert
+VPC
+VNet
 wget
 Workbench
 Worldmap
