@@ -17,9 +17,11 @@ We make the API available to all Aiven users. It is also the engine behind our w
 API quickstart
 --------------
 
-* Try `Aiven on Postman <https://www.postman.com/aiven-apis/workspace/aiven/documentation/21112408-1f6306ef-982e-49f8-bdae-4d9fdadbd6cd>`_ and start working with your data platform programmatically.
+* **Postman**: Try `Aiven on Postman <https://www.postman.com/aiven-apis/workspace/aiven/documentation/21112408-1f6306ef-982e-49f8-bdae-4d9fdadbd6cd>`_ and start working with your data platform programmatically.
 
-* Check the `API documentation and OpenAPI description <https://api.aiven.io/doc/>`_ to work with the API directly.
+* **API documentation**: Check the `API documentation and OpenAPI description <https://api.aiven.io/doc/>`_ to work with the API directly.
+
+* **Examples**: See the API in action with some :doc:`api/examples`.
 
 Authentication
 --------------
@@ -30,7 +32,7 @@ Send this token in the header, using a structure like this, and replacing ``TOKE
 
     Authorization: aivenv1 TOKEN
 
-Read more about :doc:Working with API tokens.
+Read more about :doc:`/docs/platform/concepts/authentication-tokens`.
 
 Handling JSON responses
 -----------------------
