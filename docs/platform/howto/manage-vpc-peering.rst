@@ -30,6 +30,11 @@ When you create a new service, you can then place it in the VPC. The **VPC** tab
    .. note::
        Depending on the cloud provider that you selected for the VPC connection, you also have to accept a VPC peering connection request or set up a corresponding VPC peering connection to Aiven. 
 
+Cloud-specific VPC peering instructions
+-----------------------------------------------------
+
+- Refer to :ref:`GCP VPC peering instructions <vpc-peering-gcp>`.
+
 Deploying new services to a VPC
 -------------------------------
 
