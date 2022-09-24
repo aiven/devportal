@@ -80,7 +80,7 @@ Bring the Terraform state back in sync with your OpenSearch service by importing
 
 Your Elasticsearch service has been upgraded to OpenSearch with Terraform, and the resource configuration updated to use a resource type of OpenSearch.
 
-If you have had any Elasticsearch ALCs and users, do not forget to import OpenSearch counterparts to the Terraform state.
+If you have had any Elasticsearch ACLs and users, do not forget to import OpenSearch counterparts to the Terraform state.
 
 .. code-block::
 
