@@ -28,6 +28,8 @@ https://developer.aiven.io/* https://docs.aiven.io/:splat 301!
 /docs/products/kafka/howto/manage-schema-registry-authorization.html  /docs/products/kafka/karapace/howto/manage-schema-registry-authorization.html
 /docs/platform/howto/renaming-a-service.html                            /docs/platform/howto/rename-a-service.html
 /docs/platform/howto/recovering-a-deleted-service.html                       /docs/platform/howto/recover-a-deleted-service.html
+/docs/products/opensearch/howto/upgrade-to-opensearch-with-terraform.html /docs/tools/terraform/howto/upgrade-to-opensearch.html
+
 # Redirect from .index.html to specific page names for landing
 
 # with one section and no subsections, i. e. docs/platform
