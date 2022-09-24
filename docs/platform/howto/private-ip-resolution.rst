@@ -1,5 +1,5 @@
-Handle resolution errors of private IPs
----------------------------------------
+Handle resolution errors of private IP addresses
+------------------------------------------------
 
 When an Aiven service is placed in a VPC (Virtual Private Cloud), the DNS hostname of the
 service will resolve to a private IP address within the VPC's network

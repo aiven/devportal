@@ -3,9 +3,24 @@ Perform a PostgreSQL® major version upgrade
 
 PostgreSQL® in-place upgrades allows to upgrade an instances to a new major version without needing to fork and redirect the traffic. The whole procedure usually takes 60 seconds or less for small databases.
 
+For all upgrades, Aiven recommends to **test the upgrade on a fork** of the database to be upgraded.
+Testing on a fork provides the benefit of verifying the impact of the upgrade for the specific service
+without affecting the running service. This is useful in two main aspects:
+
+1. Ensuring that it succeeds and is performed quickly enough -- which might not be the case -- usually
+   when there many of databases or many "large objects". Smaller node sizes with a large dataset can run
+   into OOM issues during the ``pg_dump/pg_restore`` phase of ``pg_upgrade --link`` and a fork will reveal
+   this scenario.
+
+2. To test query performance directly after upgrade under real world load i.e. when no statistics
+   are available and caches are cold.
+
 .. Warning::
-    Aiven recommends to **test the upgrade on a fork** of an existing database. Testing on a fork provides the benefit of verifying the impact of the upgrade for the specific service without affecting the running service.
-    Very large databases may take a long time to upgrade, but a :doc:`read-only replica service <create-read-replica>` may be used if it is necessary to keep the data readable during an upgrade.
+    Very large databases may take a long time to upgrade. If this scenario is unfeasible, a
+    :doc:`read-only replica service <create-read-replica>` may be used to keep the data readable
+    during an upgrade. Any PostgreSQL upgrade has some risk of downtime and data loss if the node
+    goes down before the system is back in a normal state. A read-only replica can help reduce
+    this risk.
 
 Here are the steps to upgrade a PostgreSQL service:
 

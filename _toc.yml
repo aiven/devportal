@@ -33,6 +33,8 @@ entries:
       - file: docs/platform/concepts/disaster-recovery-test-scenarios
       - file: docs/platform/concepts/choosing-timeseries-database
       - file: docs/platform/concepts/service-level-agreement
+      - file: docs/platform/concepts/maintenance-window
+      - file: docs/platform/concepts/service-resources
     - file: docs/platform/howto
       title: HowTo
       entries:
@@ -67,12 +69,14 @@ entries:
           - file: docs/platform/howto/static-ip-addresses.rst
           - file: docs/platform/howto/private-ip-resolution.rst
           - file: docs/platform/howto/attach-vpc-aws-tgw
+          - file: docs/platform/howto/manage-vpc-peering
       - file: docs/platform/howto/list-monitoring
         title: Monitoring management
         entries:
           - file: docs/platform/howto/monitoring-services
           - file: docs/platform/howto/integrations/prometheus-metrics
           - file: docs/platform/howto/integrations/datadog-increase-metrics-limit
+          - file: docs/platform/howto/integrations/access-jmx-metrics-jolokia
       - file: docs/platform/howto/list-billing
         title: Billing management
         entries:
@@ -90,7 +94,10 @@ entries:
           - file: docs/platform/howto/saml/saml-authentication
           - file: docs/platform/howto/saml/setup-saml-onelogin
             title: Setting up SAML with OneLogin
-
+          - file: docs/platform/howto/saml/setup-saml-azure
+            title: Setting up SAML with Azure
+          - file: docs/platform/howto/saml/setup-saml-okta
+            title: Setting up SAML with Okta
     - file: docs/platform/reference
       title: Reference
       entries:
@@ -121,6 +128,9 @@ entries:
       entries:
         - file: docs/integrations/rsyslog/logtail
           title: Logtail
+        - file: docs/integrations/rsyslog/loggly
+          title: Loggly
+    - file: docs/integrations/send-logs-to-elasticsearch
   - file: docs/tools
     entries:
       - file: docs/tools/cli
@@ -157,7 +167,9 @@ entries:
             - file: docs/tools/terraform/howto/upgrade-provider-v1-v2
               title: Upgrade the Aiven Terraform Provider from v1 to v2
             - file: docs/tools/terraform/howto/config-postgresql-provider
-              title: Use PostgreSQL provider alongside Aiven Terraform Provider  
+              title: Use PostgreSQL provider alongside Aiven Terraform Provider 
+            - file: docs/tools/terraform/howto/promote-to-master-pg-rr
+              title: Promote PostgreSQL read replica to master 
         - file: docs/tools/terraform/concepts
           title: Concepts
           entries:
@@ -189,7 +201,11 @@ entries:
             - file: docs/tools/terraform/reference/cookbook/m3db-m3agg-recipe
               title: M3 and M3 Aggregator
             - file: docs/tools/terraform/reference/cookbook/postgresql-read-replica-recipe
-              title: PostgreSQL® Read Replica   
+              title: PostgreSQL® Read Replica
+          - file: docs/tools/terraform/reference/troubleshooting
+            entries:   
+            - file: docs/tools/terraform/reference/troubleshooting/private-access-error
+              title: Private access error when using VPC
       - file: docs/tools/kubernetes
         title: Aiven Operator for Kubernetes
 
@@ -253,8 +269,6 @@ entries:
                 title: Schema registry
                 entries:
                   - file: docs/products/kafka/howto/enable-karapace
-                  - file: docs/products/kafka/howto/enable-schema-registry-authorization
-                  - file: docs/products/kafka/howto/manage-schema-registry-authorization
               - file: docs/products/kafka/howto/best-practices
               - file: docs/products/kafka/howto/configure-with-kafka-cli
               - file: docs/products/kafka/howto/set-kafka-parameters
@@ -376,6 +390,22 @@ entries:
           entries:
             - glob: docs/products/kafka/kafka-mirrormaker/reference/*
 
+      - file: docs/products/kafka/karapace
+        title: Karapace
+        entries:
+        - file: docs/products/kafka/karapace/getting-started
+        - file: docs/products/kafka/karapace/concepts
+          title: Concepts
+          entries:
+            - file: docs/products/kafka/karapace/concepts/schema-registry-authorization
+            - file: docs/products/kafka/karapace/concepts/acl-definition
+        - file: docs/products/kafka/karapace/howto
+          title: HowTo
+          entries:
+            - file: docs/products/kafka/karapace/howto/enable-karapace
+            - file: docs/products/kafka/karapace/howto/enable-schema-registry-authorization
+            - file: docs/products/kafka/karapace/howto/manage-schema-registry-authorization
+
   - file: docs/products/postgresql
     title: PostgreSQL
     entries:
@@ -412,6 +442,7 @@ entries:
               - file: docs/products/postgresql/howto/enable-jit
               - file: docs/products/postgresql/howto/repair-pg-index
               - file: docs/products/postgresql/howto/identify-pg-slow-queries
+              - file: docs/products/postgresql/howto/pg-long-running-queries
               - file: docs/products/postgresql/howto/optimize-pg-slow-queries
               - file: docs/products/postgresql/howto/check-avoid-transaction-id-wraparound
               - file: docs/products/postgresql/howto/prevent-full-disk
@@ -431,6 +462,10 @@ entries:
             entries:
               - file: docs/products/postgresql/howto/connect-psql
               - file: docs/products/postgresql/howto/connect-pgadmin
+              - file: docs/products/postgresql/howto/connect-rivery
+              - file: docs/products/postgresql/howto/connect-skyvia
+              - file: docs/products/postgresql/howto/connect-zapier
+              - file: docs/products/postgresql/howto/monitor-database-with-datadog
               - file: docs/products/postgresql/howto/visualize-grafana
               - file: docs/products/postgresql/howto/report-metrics-grafana
               - file: docs/products/postgresql/howto/monitor-with-pgwatch2
@@ -455,6 +490,8 @@ entries:
             title: Terminology
           - file: docs/products/postgresql/reference/idle-connections
             title: Idle connections
+          - file: docs/products/postgresql/reference/use-of-deprecated-tls-versions
+            title: Use of deprecated TLS Versions
 
   - file: docs/products/flink
     title: Apache Flink
@@ -568,6 +605,7 @@ entries:
           - file: docs/products/opensearch/howto/import-opensearch-data-using-elasticsearch-dump
           - file: docs/products/opensearch/howto/set_index_retention_patterns
           - file: docs/products/opensearch/howto/opensearch-alerting-api
+          - file: docs/products/opensearch/howto/integrate-with-grafana
           - file: docs/products/opensearch/howto/handle-low-disk-space
       - file: docs/products/opensearch/dashboards
         title: OpenSearch Dashboards
@@ -637,7 +675,10 @@ entries:
           - file: docs/products/mysql/howto/do-check-service-migration
           - file: docs/products/mysql/howto/prevent-disk-full
           - file: docs/products/mysql/howto/reclaim-disk-space
+          - file: docs/products/mysql/howto/identify-disk-usage-issues
           - file: docs/products/mysql/howto/disable-foreign-key-checks
+          - file: docs/products/mysql/howto/enable-slow-queries
+          - file: docs/products/mysql/howto/migrate-database-mysqldump 
       - file: docs/products/mysql/reference
         title: Reference
         entries:
@@ -696,6 +737,8 @@ entries:
             entries:
               - file: docs/products/cassandra/howto/connect-python
               - file: docs/products/cassandra/howto/connect-go
+          - file: docs/products/cassandra/howto/connect-cqlsh-cli
+          - file: docs/products/cassandra/howto/use-nosqlbench-with-cassandra
       - file: docs/products/cassandra/reference
         title: Reference
         entries:
@@ -727,4 +770,5 @@ entries:
       entries:
       - glob: docs/community/documentation/tips-tricks/*
         title: Tips & Tricks
-
+    - file: docs/community/challenge/catch-the-bus
+      title: Catch the Bus - Aiven challenge with ClickHouse

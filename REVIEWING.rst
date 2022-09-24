@@ -1,7 +1,7 @@
-Review Aiven Developer pull requests
-====================================
+Review Aiven Docs pull requests
+===============================
 
-We have many contributors and reviewers, so here's a checklist to share the things we want to look at when reviewing contributions. Please follow these guidelines when reviewing any pull request on Aiven Developer, and don't merge your own work.
+We have many contributors and reviewers, so here's a checklist to share the things we want to look at when reviewing contributions. Please follow these guidelines when reviewing any pull request on Aiven Docs, and don't merge your own work.
 
 At an overall level
 -------------------

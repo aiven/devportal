@@ -44,7 +44,7 @@ Try the :doc:`sample recipes dataset </docs/products/opensearch/howto/sample-dat
         :shadow: md
         :margin: 2 2 0 0
 
-        🧰 :doc:`Code </docs/products/opensearch/howto/opensearch-with-curl>`
+        🧰 :doc:`Code samples </docs/products/opensearch/howto/opensearch-with-curl>`
 
 
 Ways to use OpenSearch

@@ -5,7 +5,7 @@ on:
     - cron: "0 6 * * 2"
 
 jobs:
-  AdvancedParamsRedis:
+  advanced_params_redis:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repo

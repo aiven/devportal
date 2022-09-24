@@ -1,4 +1,4 @@
-184
+188
 ACL
 ACLs
 Aiven
@@ -10,6 +10,7 @@ API
 APIs
 autovacuum
 Avro
+Azure
 binlog
 boolean
 boot
@@ -32,9 +33,11 @@ datacenter
 datacenters
 Datadog
 datasource
+Datastax
 datastore
 dashboards
 Debezium
+deserialize
 Dev
 Distro
 Docker
@@ -56,6 +59,7 @@ Geomap
 geospatial
 GitHub
 go
+Google Cloud Platform
 Gradle
 Grafana
 hardcoded
@@ -77,6 +81,8 @@ Instana
 io
 IPsec
 Java
+JMX
+Jolokia
 Kaggle
 Kafdrop
 Kafka
@@ -105,6 +111,7 @@ myhoard
 namespace
 namespaces
 NodeJS
+nosqlbench
 npm
 OAuth
 Okta
@@ -142,7 +149,10 @@ Redli
 refcard
 reindexing
 reStructuredText
+rivery
 rsyslog
+safelist
+safelisting
 Sakila
 Sarama
 schemaless
@@ -151,6 +161,7 @@ sharding
 signup
 signups
 Singlestat
+skyvia
 Snowflake
 Sphinx
 Splunk
@@ -179,9 +190,12 @@ unencrypted
 untrusted
 unaggregated
 upsert
+VPC
+VNet
 wget
 Workbench
 Worldmap
 Zabbix
+zapier
 Zipkin
 ZooKeeper

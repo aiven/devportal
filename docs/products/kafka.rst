@@ -49,6 +49,11 @@ Take your first steps with Aiven for Apache Kafka by following our :doc:`/docs/p
 
         📖 :doc:`/docs/products/kafka/reference`
 
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
+
+        🧰 :doc:`Code samples </docs/products/kafka/howto/list-code-samples>`
 
 Apache Kafka resources
 ----------------------

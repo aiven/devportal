@@ -1,4 +1,4 @@
-Service migration check
+Perform migration check
 =======================
 
 In this article, we show how to find potential errors before starting your database migration process. 
@@ -28,7 +28,7 @@ When migrating a database to Aiven, you may find errors such as:
 To avoid these types of failures during the migration process we recommend you run some checks in advance. In this article, we will show how you can run those checks for your MySQL migration process.
 
 Aiven CLI
-#########
+---------
 
 **Step 1: create a task to perform the migration check.**
 
@@ -67,7 +67,7 @@ You can find whether the operation succeeds and more relevant information about 
     mysql_migration_check  true     e2df7736-66c5-4696-b6c9-d33a0fc4cbed  All pre-checks passed successfully, preferred migration method will be [Replication]
 
 Aiven REST API
-##############
+--------------
 
 The same checks can be performed via the REST API. More details can be found here:
 
