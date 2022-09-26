@@ -63,6 +63,7 @@ currently support AWS PrivateLink.
    | This creates an AWS network load balancer dedicated to your Aiven
      service and attaches it to an AWS VPC endpoint service that you can
      later use to connect to your account's VPC endpoint.
+
    | The PrivateLink resource stays in the initial ``creating`` state
      for up to a few minutes while the load balancer is being launched.
      After the load balancer and VPC endpoint service have been created,
@@ -89,6 +90,7 @@ currently support AWS PrivateLink.
      each availability zone in the region. The security groups determine
      the instances that are allowed to connect to the endpoint network
      interfaces created by AWS into the specified subnets.
+
    | Alternatively, you can create the VPC endpoint in the AWS web
      console under **VPC** > **Endpoints** > **Create endpoint** . See
      the `AWS
@@ -100,7 +102,7 @@ currently support AWS PrivateLink.
      in our PrivateLink implementation.
    
    | It takes a while before the endpoint is ready to use as AWS
-     provisions network interfaces to each of the sub-nets and connects
+     provisions network interfaces to each of the subnets and connects
      them to the Aiven VPC endpoint service. Once the AWS endpoint state
      changes to ``available`` , the connection is visible in Aiven.
 
