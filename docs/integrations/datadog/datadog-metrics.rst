@@ -43,4 +43,6 @@ Repeat these steps for each service whose metrics should be sent to Datadog.
 
 7. Return to your Datadog dashboard and after a few minutes, you should see the data start to arrive from your Aiven service(s).
 
-.. seealso:: Learn more about :doc:`/docs/integrations/datadog`.
+.. seealso:: 
+    - Learn more about :doc:`/docs/integrations/datadog`.
+    - For information on how to enable `Datadog Deep Database Monitoring <https://www.datadoghq.com/product/database-monitoring/>`_ for specific Datadog Metrics integration, see :doc:`Database monitoring with Datadog </docs/products/postgresql/howto/monitor-database-with-datadog>`. 

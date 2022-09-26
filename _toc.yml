@@ -96,7 +96,8 @@ entries:
             title: Setting up SAML with OneLogin
           - file: docs/platform/howto/saml/setup-saml-azure
             title: Setting up SAML with Azure
-
+          - file: docs/platform/howto/saml/setup-saml-okta
+            title: Setting up SAML with Okta
     - file: docs/platform/reference
       title: Reference
       entries:
@@ -166,9 +167,10 @@ entries:
             - file: docs/tools/terraform/howto/upgrade-provider-v1-v2
               title: Upgrade the Aiven Terraform Provider from v1 to v2
             - file: docs/tools/terraform/howto/config-postgresql-provider
-              title: Use PostgreSQL provider alongside Aiven Terraform Provider  
+              title: Use PostgreSQL provider alongside Aiven Terraform Provider 
             - file: docs/tools/terraform/howto/promote-to-master-pg-rr
-              title: Promote PostgreSQL read replica to master 
+              title: Promote PostgreSQL read replica to master
+            - file: docs/tools/terraform/howto/upgrade-to-opensearch
         - file: docs/tools/terraform/concepts
           title: Concepts
           entries:
@@ -200,7 +202,11 @@ entries:
             - file: docs/tools/terraform/reference/cookbook/m3db-m3agg-recipe
               title: M3 and M3 Aggregator
             - file: docs/tools/terraform/reference/cookbook/postgresql-read-replica-recipe
-              title: PostgreSQL® Read Replica   
+              title: PostgreSQL® Read Replica
+          - file: docs/tools/terraform/reference/troubleshooting
+            entries:   
+            - file: docs/tools/terraform/reference/troubleshooting/private-access-error
+              title: Private access error when using VPC
       - file: docs/tools/kubernetes
         title: Aiven Operator for Kubernetes
 
@@ -437,6 +443,7 @@ entries:
               - file: docs/products/postgresql/howto/enable-jit
               - file: docs/products/postgresql/howto/repair-pg-index
               - file: docs/products/postgresql/howto/identify-pg-slow-queries
+              - file: docs/products/postgresql/howto/pg-long-running-queries
               - file: docs/products/postgresql/howto/optimize-pg-slow-queries
               - file: docs/products/postgresql/howto/check-avoid-transaction-id-wraparound
               - file: docs/products/postgresql/howto/prevent-full-disk
@@ -459,6 +466,7 @@ entries:
               - file: docs/products/postgresql/howto/connect-rivery
               - file: docs/products/postgresql/howto/connect-skyvia
               - file: docs/products/postgresql/howto/connect-zapier
+              - file: docs/products/postgresql/howto/monitor-database-with-datadog
               - file: docs/products/postgresql/howto/visualize-grafana
               - file: docs/products/postgresql/howto/report-metrics-grafana
               - file: docs/products/postgresql/howto/monitor-with-pgwatch2
@@ -581,7 +589,6 @@ entries:
           - file: docs/products/opensearch/howto/migrating_elasticsearch_data_to_aiven
           - file: docs/products/opensearch/howto/opensearch-log-integration
           - file: docs/products/opensearch/howto/upgrade-to-opensearch
-          - file: docs/products/opensearch/howto/upgrade-to-opensearch-with-terraform
           - file: docs/products/opensearch/howto/upgrade-clients-to-opensearch
           - file: docs/products/opensearch/howto/connect-with-nodejs
             title: Connect with NodeJS
@@ -763,3 +770,5 @@ entries:
       entries:
       - glob: docs/community/documentation/tips-tricks/*
         title: Tips & Tricks
+    - file: docs/community/challenge/catch-the-bus
+      title: Catch the Bus - Aiven challenge with ClickHouse

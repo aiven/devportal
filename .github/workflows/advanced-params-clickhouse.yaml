@@ -5,7 +5,7 @@ on:
     - cron: "0 6 * * 2"
 
 jobs:
-  AdvancedParamsClickHouse:
+  advanced_params_clickhouse:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repo

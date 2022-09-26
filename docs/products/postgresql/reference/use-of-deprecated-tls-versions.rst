@@ -9,7 +9,7 @@ We recommend updating clients, or configuring them to only use ``TLSv1.2`` and a
 
 To check the TLS versions clients are connecting with, you can query the ``pg_stat_activity`` table joined with ``pg_stat_ssl``:
 
-.. code:: sql
+.. code::
 
     SELECT
         datname,
@@ -27,7 +27,7 @@ To check the TLS versions clients are connecting with, you can query the ``pg_st
     WHERE
         client_addr IS NOT NULL;
 
-.. code:: sql
+.. code::
 
      datname  │   pid   │ usesysid │ usename  │ application_name │  client_addr   │ ssl │ version │         cipher         │         backend_start         
     ──────────┼─────────┼──────────┼──────────┼──────────────────┼────────────────┼─────┼─────────┼────────────────────────┼───────────────────────────────

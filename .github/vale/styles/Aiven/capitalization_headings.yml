@@ -63,6 +63,7 @@ exceptions:
   - MySQL
   - New Relic
   - NodeJS
+  - Okta
   - OneLogin
   - OpenSearch
   - Operator
@@ -95,7 +96,7 @@ exceptions:
   - TimescaleDB
   - Transport Layer Security
   - United States
-  - VPC
+  - Virtual Private Cloud
   - Workbench
   - Zapier
   - ZooKeeper
