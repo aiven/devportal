@@ -137,6 +137,7 @@ entries:
         - file: docs/tools/cli/account
           entries:
             - glob: docs/tools/cli/account/*
+        - file: docs/tools/cli/billing-group
         - file: docs/tools/cli/card
         - file: docs/tools/cli/cloud
         - file: docs/tools/cli/credits
