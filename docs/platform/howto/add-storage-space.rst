@@ -10,7 +10,7 @@ You can add additional storage when creating a new service. For information on h
 
 Add additional storage to running service
 -----------------------------------------
-You can add additional storage to your running service from the Aiven web console without interrupting the service. 
+You can :doc:`add additional storage <../concepts/dynamic-disk-sizing>` to your running service from the Aiven web console without interrupting the service. 
 
 1. Log in to the `Aiven Console <https://console.aiven.io/>`_, and go to **Services** to select your running service. 
 2. In the **Overview** tab, scroll down to **Service plan**.

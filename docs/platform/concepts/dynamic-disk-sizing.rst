@@ -32,7 +32,7 @@ Using DDS provides the following benefits:
 
 How does Dynamic Disk Sizing work?
 ----------------------------------
-You can :doc:`add additional disk storage <../howto/add-storage-space>` to your service plan when you create a new service on the `Aiven Console <https://console.aiven.io/>`_ or on-demand when you need more storage while running your service. Adding additional storage will not affect or interrupt the operations of your service. 
+You can add additional disk storage to your service plan when you :doc:`create a new service <../howto/create_new_service>` on the `Aiven Console <https://console.aiven.io/>`_ or on-demand when you need more storage while :doc:`running your service<../howto/add-storage-space>`. Adding additional storage will not affect or interrupt the operations of your service. 
 
 When you add additional storage to your service, the Aiven platform provisions additional disk storage and dynamically adds it to your running instances. The total amount of additional storage you can add to your service is based on your service plan and the cloud provider.
 

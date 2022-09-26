@@ -30,7 +30,7 @@ To create a new service:
 
    d. Add additional disk space
       
-      Configure additional disk storage for your service by using the slider and selecting the desired additional disk capacity. You can also see the cost for the additional storage on the right side and in the Service summary section on the console.  
+      Configure :doc:`additional disk storage <../concepts/dynamic-disk-sizing>` for your service by using the slider and selecting the desired additional disk capacity. You can also see the cost for the additional storage on the right side and in the Service summary section on the console.  
 
       .. note::
          The option of adding storage space is not available for all cloud environments and service plans.
