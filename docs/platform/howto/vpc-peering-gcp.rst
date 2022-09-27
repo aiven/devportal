@@ -1,6 +1,6 @@
 .. _vpc-peering-gcp:
 
-Set Virtual Private Cloud (VPC) peering on Google Cloud Platform (GCP)
+Set up Virtual Private Cloud (VPC) peering on Google Cloud Platform (GCP)
 ======================================================================
 
 Once you've created a :ref:`VPC on the Aiven platform <platform_howto_setup_vpc_peering>`, you can follow this instruction to set up VPC peering on AWS.
