@@ -33,7 +33,7 @@ When you create a new service, you can then place it in the VPC. The **VPC** tab
 Cloud-specific VPC peering instructions
 -----------------------------------------------------
 
-- Refer to :ref:`GCP VPC peering instructions <vpc-peering-gcp>`.
+- :ref:`Set up VPC peering on Google Cloud Platform (GCP) <vpc-peering-gcp>`.
 
 Deploying new services to a VPC
 -------------------------------
