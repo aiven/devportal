@@ -43,7 +43,7 @@ It might take a few minutes for newly created VPC to appear for service deployme
 
 .. note::
 
-The service nodes use firewall rules to allow only connections from private IP ranges that originate from networks on the other end of VPC peering connections. You can only deploy services to a VPC if they belong to the project where that specific VPC was created.
+       The service nodes use firewall rules to allow only connections from private IP ranges that originate from networks on the other end of VPC peering connections. You can only deploy services to a VPC if they belong to the project where that specific VPC was created.
 
 Deleting an existing VPC and VPC peering
 ----------------------------------------

@@ -64,7 +64,7 @@ There are lots of other ways to learn more about Aiven, and interact with us.
         :shadow: md
         :margin: 2 2 0 0
 
-        🏆 **Mini Challenges** Get to know Aiven through our mini challenges, each introducing you to different open source technologies. 
+        |icon-challenge-trophy| **Mini Challenges** Get to know Aiven through our mini challenges, each introducing you to different open source technologies. 
         
         * :doc:`Catch the bus (Clickhouse) </docs/community/challenge/catch-the-bus>`
 
