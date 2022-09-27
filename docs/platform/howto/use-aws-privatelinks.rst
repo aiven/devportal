@@ -3,9 +3,7 @@ Using AWS PrivateLink with Aiven services
 
 AWS `PrivateLink <https://aws.amazon.com/privatelink/>`__ brings Aiven
 services to the selected virtual private cloud (VPC) in your AWS
-account. In a traditional setup that uses `VPC
-peering <https://help.aiven.io/en/articles/778836-using-vpc-peering>`__
-, traffic is routed through an AWS VPC peering connection to your Aiven
+account. In a traditional setup that uses :ref:`VPC peering <platform_howto_setup_vpc_peering>`, traffic is routed through an AWS VPC peering connection to your Aiven
 services. With PrivateLink, you can create a VPC endpoint to your own
 VPC and access an Aiven service from that. The VPC endpoint creates
 network interfaces (NIC) to the subnets and availability zones that you
@@ -14,8 +12,7 @@ of your VPC. The VPC endpoint is routed to your Aiven service located in
 one of Aiven's AWS accounts.
 
 You can enable PrivateLink for Aiven services located in project VPC.
-Before you can set up AWS PrivateLink, `create a
-VPC <https://help.aiven.io/en/articles/778836>`__ and launch the
+Before you can set up AWS PrivateLink, :ref:`create a VPC <platform_howto_setup_vpc_peering>` and launch the
 services that you want to connect to that VPC. As there is no network
 routing between the VPC, you can use any private IP range for the VPC,
 unless you also want to connect to the project VPC using VPC peering
