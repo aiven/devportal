@@ -68,6 +68,8 @@ There are lots of other ways to learn more about Aiven, and interact with us.
         
         * :doc:`Catch the bus (Clickhouse) </docs/community/challenge/catch-the-bus>`
 
+        * :doc:`Rolling challenge (Apache Kafka & Flink) </docs/community/challenge/the-rolling-challenge>`
+
 
 Check out the `Aiven Console <https://console.aiven.io>`_ for your Aiven web interface. New accounts get a free trial!
 
