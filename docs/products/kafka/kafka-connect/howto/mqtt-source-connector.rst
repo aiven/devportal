@@ -1,9 +1,12 @@
-Create a MQTT source connector for RabbitMQ®
-============================================
+Create a MQTT source connector
+==============================
 
-In order to support the `MQTT source connector <https://docs.lenses.io/5.0/integrations/connectors/stream-reactor/sources/mqttsourceconnector/>`_ the `RabbitMQ MQTT plugin <https://www.rabbitmq.com/mqtt.html>`_ must be enabled. 
+The `MQTT source connector <https://docs.lenses.io/5.0/integrations/connectors/stream-reactor/sources/mqttsourceconnector/>`_ copies messages from the MQTT topic into Apache Kafka® where they can be transformed and read by multiple consumers.
 
-Then Stream Reactor MQTT source connector creates a queue and binds it to the ``amq.topic`` defined in the KCQL statement, messages in the topic are copied to Apache Kafka® where they can be transformed and read by multiple consumers.
+Then, the Stream Reactor MQTT source connector creates a queue and binds it to the ``amq.topic`` defined in the KCQL statement, then messages are copied to the Apache Kafka® service. 
+
+The connector can be used to source messages from RabbitMQ® where `RabbitMQ MQTT plugin <https://www.rabbitmq.com/mqtt.html>`_ is enabled. 
+
 
 .. _connect_mqtt_rbmq_source_prereq:
 
@@ -82,43 +85,6 @@ To create the connector, access the `Aiven Console <https://console.aiven.io/>`_
 8. Verify the connector status under the **Connectors** tab
 9. Verify the presence of the data in the target Apache Kafka topic, the topic name is the one defined in the ``KCQL_STATEMENT``
 
-Example: Create a MQTT source connector from Aiven CLI
-------------------------------------------------------
-The Connectors can be created also using the dedicated :ref:`Aiven CLI command <avn_service_connector_create>`
+.. Tip::
 
-* For the following example the ``mqt.topic`` name is ``tokafka`` and the Kafka topic name is ``FromRMQ`` these values are used in the ``connect.mqtt.kcql`` setting.
-* The ``key.converter`` and ``value.converter`` converter is set to **AvroConverter** 
-* If the **AvroConverter** is used you need to provide an Avro Schema to be able to read and translate the raw bytes to an Avro record. The setting for it are passed in ``key.converter.basic.auth.credentials.source``, ``key.converter.schema.registry.basic.auth.user.info``, ``key.converter.schema.registry.basic.auth.user.info``, ``value.converter.basic.auth.credentials.source``, ``value.converter.basic.auth.credentials.source``, ``value.converter.schema.registry.url``.   
-
-
-Create the ``mqtt_source.json`` with the the following configuration, replace the values according to your environment. 
-
-.. code-block:: json
-
-    {
-        "name": "RMQSource",
-        "connect.mqtt.hosts": "tcp://HOST:PORT",
-        "connect.mqtt.kcql": "INSERT INTO FromRMQ  SELECT *  FROM tokafka",
-        "connector.class": "com.datamountaineer.streamreactor.connect.mqtt.source.MqttSourceConnector",
-        "connect.mqtt.username": "USERNAME",
-        "connect.mqtt.password": "PASSWORD",
-        "key.converter": "io.confluent.connect.avro.AvroConverter",
-        "connect.mqtt.service.quality": "1",
-        "value.converter": "io.confluent.connect.avro.AvroConverter",
-        "key.converter.basic.auth.credentials.source": "USER_INFO",
-        "key.converter.schema.registry.basic.auth.user.info": "SCHEMA_REGISTRY_USER:SCHEMA_REGISTRY_PASSWORD",
-        "key.converter.schema.registry.url": "https://APACHE_KAFKA_HOST:SCHEMA_REGISTRY_PORT",
-        "value.converter.basic.auth.credentials.source": "USER_INFO",
-        "value.converter.basic.auth.credentials.source": "SCHEMA_REGISTRY_USER:SCHEMA_REGISTRY_PASSWORD",
-        "value.converter.schema.registry.url": "https://APACHE_KAFKA_HOST:SCHEMA_REGISTRY_PORT"
-    }
-
-Then run the Aiven CLI command replacing the ``SERVICE_NAME`` with the Aiven service where the connector Kafka connector is running.     
-::
-    avn service connector create SERVICE_NAME @mqtt_source.json.json
-
-Check the connector status with the following command, replacing the SERVICE_NAME with the Aiven service and the CONNECTOR_NAME with the name of the connector defined before:
-::
-    avn service connector status SERVICE_NAME CONNECTOR_NAME
-
-Once the connector is created successfully, you should see a topic named ``FromRMQ`` in Aiven for Apache Kafka.
+    Connectors can be created also using the dedicated :ref:`Aiven CLI command <avn_service_connector_create>`.
