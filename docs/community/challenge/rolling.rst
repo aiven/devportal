@@ -14,7 +14,7 @@ Instructions
 
 The goal is to make sense of the incoming stream of data.
 
-1. Create an Aiven free trial account: `sign up for free <https://console.aiven.io/signup/email?credit_code=AivenChallengeCURRENT22&trial_challenge=rolling>`_.
+1. Create an Aiven free trial account: `sign up for free <https://console.aiven.io/signup/email?credit_code=AivenChallengeCURRENTNA22&trial_challenge=rolling>`_.
 
 2. Create an :doc:`Aiven for Apache Kafka® service </docs/products/kafka/getting-started>`
 
