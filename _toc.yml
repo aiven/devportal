@@ -70,6 +70,7 @@ entries:
           - file: docs/platform/howto/private-ip-resolution.rst
           - file: docs/platform/howto/manage-vpc-peering
           - file: docs/platform/howto/vpc-peering-gcp
+          - file: docs/platform/howto/use-aws-privatelinks.rst
       - file: docs/platform/howto/list-monitoring
         title: Monitoring management
         entries:
@@ -138,6 +139,7 @@ entries:
         - file: docs/tools/cli/account
           entries:
             - glob: docs/tools/cli/account/*
+        - file: docs/tools/cli/billing-group
         - file: docs/tools/cli/card
         - file: docs/tools/cli/cloud
         - file: docs/tools/cli/credits
@@ -169,7 +171,8 @@ entries:
             - file: docs/tools/terraform/howto/config-postgresql-provider
               title: Use PostgreSQL provider alongside Aiven Terraform Provider 
             - file: docs/tools/terraform/howto/promote-to-master-pg-rr
-              title: Promote PostgreSQL read replica to master 
+              title: Promote PostgreSQL read replica to master
+            - file: docs/tools/terraform/howto/upgrade-to-opensearch
         - file: docs/tools/terraform/concepts
           title: Concepts
           entries:
@@ -588,7 +591,6 @@ entries:
           - file: docs/products/opensearch/howto/migrating_elasticsearch_data_to_aiven
           - file: docs/products/opensearch/howto/opensearch-log-integration
           - file: docs/products/opensearch/howto/upgrade-to-opensearch
-          - file: docs/products/opensearch/howto/upgrade-to-opensearch-with-terraform
           - file: docs/products/opensearch/howto/upgrade-clients-to-opensearch
           - file: docs/products/opensearch/howto/connect-with-nodejs
             title: Connect with NodeJS
