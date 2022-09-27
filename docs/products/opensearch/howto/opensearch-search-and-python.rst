@@ -453,7 +453,7 @@ Try to find recipes in a certain range of sodium, for example:
 
 .. seealso::
 
-  See more about the range query in the `OpenSearch documentation <https://opensearch.org/docs/latest/opensearch/query-dsl/term/#range>`_.
+  See more about the range query in the `OpenSearch documentation <https://opensearch.org/docs/latest/opensearch/query-dsl/term/#range-query>`_.
 
 .. _fuzzy-query:
 
