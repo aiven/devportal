@@ -7,7 +7,7 @@ Once you've created a :ref:`VPC on the Aiven platform <platform_howto_setup_vpc_
 
 1. Open your GCP Console.
 
-2. Select **VPC Networks** on the left and find the VPC that you want to connect.
+2. Select **VPC Networks** and find the VPC that you want to connect to.
 
 3. Click the project name and make note of the *Project ID*.
 
