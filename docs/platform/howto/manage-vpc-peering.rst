@@ -27,7 +27,7 @@ Once you have created the VPC, Aiven automatically sets it up and updates the st
 
 When you create a new service, you can then place it in the VPC. The **VPC** tab in the *Select Service Cloud Region* section lists the available VPC. This also allows you to migrate a service to or from a VPC.
 
-   .. note::
+.. note::
        Depending on the cloud provider that you selected for the VPC connection, you also have to accept a VPC peering connection request or set up a corresponding VPC peering connection to Aiven. 
 
 Cloud-specific VPC peering instructions
