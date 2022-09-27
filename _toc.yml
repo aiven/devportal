@@ -69,6 +69,7 @@ entries:
           - file: docs/platform/howto/static-ip-addresses.rst
           - file: docs/platform/howto/private-ip-resolution.rst
           - file: docs/platform/howto/manage-vpc-peering
+          - file: docs/platform/howto/vpc-peering-gcp
           - file: docs/platform/howto/use-aws-privatelinks.rst
       - file: docs/platform/howto/list-monitoring
         title: Monitoring management
