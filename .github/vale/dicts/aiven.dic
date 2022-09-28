@@ -8,6 +8,7 @@ Amazon
 Apache
 API
 APIs
+Auth0
 autovacuum
 Avro
 Azure
@@ -155,6 +156,7 @@ rsyslog
 safelist
 safelisting
 Sakila
+SAML
 Sarama
 schemaless
 scriptable

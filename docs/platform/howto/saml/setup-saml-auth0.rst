@@ -36,13 +36,13 @@ Setup on Auth0
 
 3. Give your application a name (for example, "Aiven App"), choose "Regular Web Applications", and hit **Create**. 
 
-3. Once your application has been created, go to the **Addons** tab and enable *SAML 2 WEB APP* option.
+3. Once your application has been created, go to the ``Addons`` tab and enable *SAML 2 WEB APP* option.
 
 4. Click on the *SAML 2 WEB APP* option to open the settings dialog.
 
 5. Set the *Application Callback URL*  to the *ACS URL* provided by the Aiven Console.
 
-6. Under the *Application Callback URL*, in the settings section, remove existing codeblock and add the following mapping configuration:
+6. Under the *Application Callback URL*, in the settings section, remove existing configuration and add the following mapping configuration:
 
 .. code-block:: shell
 
@@ -56,7 +56,7 @@ Setup on Auth0
     ]
    }
 
-7. Once done, click **Enable** and **Save**. From the **Usage** tab, make a note of the ``Identity Provider Login URL``. This will need to be copied into the SAML config in the Aiven Console. You will also need the ``Issuer URN`` (we refer to it as the ``Entity ID``) and the ``Identity Provider Certificate``.
+7. Once done, click **Enable** and **Save**. From the **Usage** tab, make a note of the ``Identity Provider Login URL``. This will need to be copied into the SAML configuration in the Aiven Console. You will also need the ``Issuer URN`` (we refer to it as the ``Entity ID``) and the ``Identity Provider Certificate``.
 
 Finish the configuration in Aiven
 ---------------------------------
