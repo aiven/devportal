@@ -45,7 +45,7 @@ console or via the `Kafka Connect REST
 API <https://docs.confluent.io/platform/current/connect/references/restapi.html#rest-api-task-restart>`__
 (you can get the service URI from the web console).
 
-.. image:: pg-debezium-cdc_image1.png
+.. image:: /images/products/postgresql/pg-debezium-cdc_image1.png
 
 For automatically restarting tasks due to unrecoverable errors, we can
 set *``"_aiven.restart.on.failure": true``* in the connector's
