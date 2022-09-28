@@ -340,6 +340,7 @@ entries:
             - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-sql-server
             - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-mongodb
             - file: docs/products/kafka/kafka-connect/howto/cassandra-streamreactor-source
+            - file: docs/products/kafka/kafka-connect/howto/mqtt-source-connector
           - file: docs/products/kafka/kafka-connect/howto/list-sink-connectors
             entries:
             - file: docs/products/kafka/kafka-connect/howto/jdbc-sink
