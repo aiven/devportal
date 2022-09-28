@@ -6,13 +6,13 @@ Here are some strategies to find out MySQL replication lagging on your Aiven for
 Query locks on the standby node
 -------------------------------
 
-Another reason you may face replication lagging is when a row or table is locked. If this happens your replication will not progress. 
+A replication might face lagging when a row or table is locked. If this happens your replication will not progress. 
 
 Run the following command to check if the table level is locked::
 
-    mysql> show processlist
+    show processlist
 
-The result is a list of current processes with their statuses. If a query is causing others to lock, you should be able to identify it. The query that is causing the others queries to lock will show as waiting for another process, possibly a temporary table. The output may look like this: 
+The result is a list of current processes with their statuses. If a query is causing others to lock, you should be able to identify it. The query that is causing the others queries to lock will show as waiting for another process, possibly a temporary table. The output may look like this (check the ``State`` column): 
 
 .. code::
 
@@ -21,30 +21,35 @@ The result is a list of current processes with their statuses. If a query is cau
     |  1800 | avnadmin        | HOST_IP:53938                | teammy | Query   | 58798 | Waiting for table metadata lock | /* ApplicationName=DataGrip 2020.3.2 */ LOCK TABLES users WRITE
 
 
-If nothing shows up there, you may find them by showing the open tables::
+If no query seems being locked, you may find other table locks by showing the open tables::
 
     show open tables where In_Use > 0
 
 
-Another way is to check the InnoDB status by running::
+Or by checking the InnoDB status::
 
     show engine innodb status
 
-This will show you the locking query, and the affected rows and tables. On the output, you can check for the section ``TRANSACTION`` to find this information. There are also cases where multiple queries and load can cause replication problems.
+The above command shows the locking query, and the affected rows and tables. On the output, you can check for the section ``TRANSACTION`` to find this information. 
+
+.. Note::
+    There are also cases where multiple queries and load can cause replication problems.
 
 Long running transactions
 -------------------------
 
-Long running transactions with large binlogs can result in replication problems. You can find replication problems in this case by checking the time since the process is in progress. Once the binlog has been replicated, the standby node will be stuck processing one massive ``GTID``. If ``Read_Source_Log_Pos`` in the output is updating, this requires no further action from your side. You should leave the replication process to continue without interferring in the service.
+Long running transactions with large binary logs can result in replication problems. To find these kind of replication problems check the time since the process is in progress. 
+
+Once the binary log has been replicated, the standby node will be stuck processing one specific global transaction identifier  (``GTID``). If the ``GTID`` mentioned in the ``Read_Source_Log_Pos`` output is updating, the replication is progressing therefore requires no further action from your side.
 
 
 No disk space on the standby
 ----------------------------
 
-You can run the command ``show processlist`` to find if there is a disk space issue::
+An alternative cause of lagging replication could be the missing space on the target standby database. You can check disk space issues with::
 
 
-    mysql> show processlist;
+    show processlist;
 
 
 If there is an issue with the disk space, you may find similar output:
