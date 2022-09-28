@@ -85,6 +85,7 @@ entries:
           - file: docs/platform/howto/use-billing-groups
           - file: docs/platform/howto/change-billing-contact
           - file: docs/platform/howto/payment-issues-plan-upgrades
+          - file: docs/platform/howto/custom-plans
           - file: docs/platform/howto/billing-google-cloud-platform-marketplace-subscription
             title: Set up Google Cloud Marketplace
           - file: docs/platform/howto/move-to-gcp-marketplace-billing
