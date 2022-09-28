@@ -38,22 +38,20 @@ Setup on Auth0
 
 3. Once your application has been created, go to the ``Addons`` tab and enable **SAML 2 WEB APP** option
 
-4. Click on the **SAML 2 WEB APP** option to open the settings dialog
+4. Click on the **SAML 2 WEB APP** option to open the ``Settings`` tab
 
 5. Set the ``Application Callback URL`` to the ``ACS URL`` provided by the Aiven Console
 
-6. Under the ``Application Callback URL``, in the settings section, remove existing configuration and add the following mapping configuration:
+6. Under the ``Application Callback URL``, in the ``Settings`` section, remove existing configuration and add the following field mapping configuration:
 
 .. code-block:: shell
 
    {
-    "mappings": {
-      "email": "email"
-    },
-    "nameIdentifierFormat": "urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress",
-    "nameIdentifierProbes": [
-      "email"
-    ]
+     "email": "email",
+     "first_name": "first_name",
+     "identity": "email",
+     "last_name": "last_name"
+     "mapUnknownClaimsAsIs": true
    }
 
 7. Once done, click **Enable** and **Save**
@@ -69,12 +67,10 @@ Finish the configuration in Aiven
 
 2. Set the ``SAML IDP URL`` as the ``Identity Provider Login URL`` from Auth0 
 
-3. Set the ``SAML Entity ID`` as the ``Issuer URN`` from Auth0
+3. Set the ``SAML Entity ID`` as the ``Issuer`` from Auth0 (example: ``urn:dev-i-fiqy2a.us.auth0.com``)
 
 4. Paste the certificate from Auth0 into ``SAML Certificate``
 
-5. Do **not** enable ``Enable IdP login`` unless you set ``SAML Initiator`` to ``Auth0`` in your Auth0 application
-
-6. Save that and you are good to go! Make sure the authentication method is enabled and you can then use the **Signup URL** to invite new people and **Account link URL** for those that already have an Aiven login.
+5. Save that and you are good to go! Make sure the authentication method is enabled and you can then use the **Signup URL** to invite new people and **Account link URL** for those that already have an Aiven login.
 
 If you have issues, you can use the `SAML Tracer browser extension <https://addons.mozilla.org/firefox/addon/saml-tracer/>`_ to  check the process step by step. The errors shown in the tracker should help you to debug the issues. If it does not work, you can request help by sending an email at support@Aiven.io.
