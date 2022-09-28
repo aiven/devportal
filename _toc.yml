@@ -85,7 +85,6 @@ entries:
           - file: docs/platform/howto/use-billing-groups
           - file: docs/platform/howto/change-billing-contact
           - file: docs/platform/howto/payment-issues-plan-upgrades
-          - file: docs/platform/howto/custom-plans
           - file: docs/platform/howto/billing-google-cloud-platform-marketplace-subscription
             title: Set up Google Cloud Marketplace
           - file: docs/platform/howto/move-to-gcp-marketplace-billing
@@ -341,7 +340,6 @@ entries:
             - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-sql-server
             - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-mongodb
             - file: docs/products/kafka/kafka-connect/howto/cassandra-streamreactor-source
-            - file: docs/products/kafka/kafka-connect/howto/mqtt-source-connector
           - file: docs/products/kafka/kafka-connect/howto/list-sink-connectors
             entries:
             - file: docs/products/kafka/kafka-connect/howto/jdbc-sink
@@ -451,6 +449,7 @@ entries:
               - file: docs/products/postgresql/howto/optimize-pg-slow-queries
               - file: docs/products/postgresql/howto/check-avoid-transaction-id-wraparound
               - file: docs/products/postgresql/howto/prevent-full-disk
+              - file: docs/products/postgresql/howto/postgresql-debezium-cdc
           - file: docs/products/postgresql/howto/list-replication-migration
             entries:
               - file: docs/products/postgresql/howto/create-read-replica
