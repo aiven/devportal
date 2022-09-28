@@ -10,7 +10,7 @@ When you fork a service, the following items are copied into the new service:
 - Service users
 - Connection pools
 
-Rest assured that forking your production cluster does not cause any additional load to it, because the new fork does not communicate with old database cluster. Data is restored from the latest backup that is hosted outside of the old cluster.
+Forking a service does not cause any additional load to it, because the new fork does not communicate with the original service. The data is restored from the latest backup stored separately from the service.
 
 .. Warning::
         The service integrations are not copied over to the forked version, and need to be re-established for each new copy.
