@@ -1,4 +1,4 @@
-Identify MySQL replication lagging
+Identify lagging MySQL replication
 ==================================
 
 Here are some strategies to find out MySQL replication lagging on your Aiven for MySQL service.
