@@ -1,9 +1,11 @@
 Create a MQTT source connector
 ==============================
 
-The `MQTT source connector <https://docs.lenses.io/5.0/integrations/connectors/stream-reactor/sources/mqttsourceconnector/>`_ copies messages from the MQTT topic into Apache Kafka® where they can be transformed and read by multiple consumers.
+The `MQTT source connector <https://docs.lenses.io/5.0/integrations/connectors/stream-reactor/sources/mqttsourceconnector/>`_ copies messages from the MQTT topic into Apache Kafka® where they can be transformed and read by multiple consumers. Then, the Stream Reactor MQTT source connector creates a queue and binds it to the ``amq.topic`` defined in the KCQL statement, then messages are copied to the Apache Kafka® service. 
 
-Then, the Stream Reactor MQTT source connector creates a queue and binds it to the ``amq.topic`` defined in the KCQL statement, then messages are copied to the Apache Kafka® service. 
+.. note::
+
+    You can check the full set of available parameters and configuration options in the `connector's documentation <https://docs.lenses.io/5.0/integrations/connectors/stream-reactor/sources/mqttsourceconnector/>`_.
 
 .. Tip::
 
