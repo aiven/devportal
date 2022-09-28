@@ -24,7 +24,7 @@ Define the Loggly integration endpoint
 To create a Loggly integration using the `Aiven Console <https://console.aiven.io>`_: 
 
 * Select the Project where the integration needs to be defined
-* Select **Service Integrations** on the left hand side
+* Select **Integration Endpoints** 
 * Navigate to **Syslog** configuration
 * Define a new endpoint with the following parameters
   

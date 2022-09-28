@@ -20,7 +20,7 @@ To connect Aiven for ClickHouse to PostgreSQL you will need:
 
 .. tip::
 
-    If you use the self-hosted PostgreSQL service, an external PostgreSQL endpoint should be configured in **Service Integrations**
+    If you use the self-hosted PostgreSQL service, an external PostgreSQL endpoint should be configured in **Integration Endpoints**.
 
 Variables
 -------------
