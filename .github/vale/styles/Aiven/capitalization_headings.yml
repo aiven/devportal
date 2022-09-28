@@ -81,6 +81,8 @@ exceptions:
   - Rivery
   - reStructuredText
   - Setting up SAML with OneLogin
+  - Set up SAML with Auth0
+  - Setup on Auth0
   - Schema Registry
   - Simple Authentication and Security Layer
   - Skyvia
