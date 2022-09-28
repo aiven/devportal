@@ -5,7 +5,9 @@ The `MQTT source connector <https://docs.lenses.io/5.0/integrations/connectors/s
 
 Then, the Stream Reactor MQTT source connector creates a queue and binds it to the ``amq.topic`` defined in the KCQL statement, then messages are copied to the Apache Kafka® service. 
 
-The connector can be used to source messages from RabbitMQ® where `RabbitMQ MQTT plugin <https://www.rabbitmq.com/mqtt.html>`_ is enabled. 
+.. Tip::
+
+    The connector can be used to source messages from RabbitMQ® where `RabbitMQ MQTT plugin <https://www.rabbitmq.com/mqtt.html>`_ is enabled. 
 
 
 .. _connect_mqtt_rbmq_source_prereq:
@@ -19,11 +21,11 @@ To set up a MQTT source connector, you need an Aiven for Apache Kafka service :d
 
   The connector will write to a topic defined in the ``"connect.mqtt.kcql"`` configuration, so either create the topic in your Kafka service, or enable the ``auto_create_topic`` parameter so that the topic will be created automatically.
 
-Furthermore you need to collect the following information about the source RabbitMQ/MQTT server upfront:
+Furthermore you need to collect the following information about the source MQTT server upfront:
 
-* ``USERNAME``: The RabbitMQ/MQTT username to connect
+* ``USERNAME``: The MQTT username to connect
 * ``PASSWORD``: The password for the username selected
-* ``HOST``: The RabbitMQ/MQTT hostname
+* ``HOST``: The MQTT hostname
 * ``PORT``: MQTT port (usually 1883)
 * ``KCQL_STATEMENT``: The KCQL statement to be used in the following format: ``INSERT INTO <your-kafka-topic> SELECT * FROM <your-mqtt-topic>``
 * ``APACHE_KAFKA_HOST``: The hostname of the Apache Kafka service, only needed when using Avro as data format
@@ -59,7 +61,7 @@ Define the connector configurations in a file (we'll refer to it with the name `
 The configuration file contains the following entries:
 
 * ``name``: the connector name, replace ``CONNECTOR_NAME`` with the name you want to use for the connector.
-* ``connect.mqtt.hosts``, ``connect.mqtt.kcql``, ``connect.mqtt.username`` and ``connect.mqtt.password``: source RabbitMQ/MQTT parameters collected in the :ref:`prerequisite <connect_mqtt_rbmq_source_prereq>` phase. 
+* ``connect.mqtt.hosts``, ``connect.mqtt.kcql``, ``connect.mqtt.username`` and ``connect.mqtt.password``: source MQTT parameters collected in the :ref:`prerequisite <connect_mqtt_rbmq_source_prereq>` phase. 
 * ``key.converter`` and ``value.converter``: The data converter used for this example Jason converter is used.
 * ``connect.mqtt.service.quality``: Specifies the ``Mqtt`` quality of service.  
     
