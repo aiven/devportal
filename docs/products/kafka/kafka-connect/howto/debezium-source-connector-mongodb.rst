@@ -3,6 +3,10 @@ Create a Debezium source connector for MongoDB
 
 The Debezium source connector for MongoDB tracks database changes using a MongoDB replica set or shared cluster, and writes them to an Apache Kafka® topic in a standard format where they can be transformed and read by multiple consumers.
 
+.. note::
+
+    You can check the full set of available parameters and configuration options in the `connector's documentation <https://debezium.io/docs/connectors/mongodb/>`_.
+
 .. _connect_debezium_mongodb_source_prereq:
 
 Prerequisites
