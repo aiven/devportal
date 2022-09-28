@@ -10,8 +10,10 @@ When you fork a service, the following items are copied into the new service:
 - Service users
 - Connection pools
 
+Rest assured that forking your production cluster does not cause any additional load to it, because the new fork does not communicate with old database cluster. Data is restored from the latest backup that is hosted outside of the old cluster.
+
 .. Warning::
-        The service integrations are not copied over to the forked version, and need to be re-established for each new copy. 
+        The service integrations are not copied over to the forked version, and need to be re-established for each new copy.
 
 You can fork the following Aiven services:
 
@@ -25,7 +27,7 @@ You can fork the following Aiven services:
 - M3DB
 - Grafana®
 
-When forking a service with Point in Time Recovery (PITR), you can choose to fork from the latest transaction or select a specific point in the past to fork from. 
+When forking a service with Point in Time Recovery (PITR), you can choose to fork from the latest transaction or select a specific point in the past to fork from.
 
 ------
 
