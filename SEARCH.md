@@ -49,7 +49,7 @@ In addition to these `url` field should be provided with every document but it i
 
 ## Search function
 
-The OpenSearch® index is used through the Netlify function in [netlify/functions/search/search.js](netlify/functions/search/search.js). To call the function, make a GET request to the function URL and append your search term to the `query` parameter, like this: [https://developer.aiven.io/.netlify/functions/search?query=redis](https://developer.aiven.io/.netlify/functions/search?query=redis).
+The OpenSearch index is used through the Netlify function in [netlify/functions/search/search.js](netlify/functions/search/search.js). To call the function, make a GET request to the function URL and append your search term to the `query` parameter, like this: [https://developer.aiven.io/.netlify/functions/search?query=redis](https://developer.aiven.io/.netlify/functions/search?query=redis).
 
 The query uses this overall approach:
 
@@ -67,7 +67,7 @@ make create-index ES_URL=https://opensearch-url/here
 
 This can be run multiple times and has to be run at least once before the other commands that add documents to the index.
 
-The index name in OpenSearch® is `devportal`.
+The index name in Elasticsearch is `devportal`.
 
 # Docs page indexing
 
@@ -96,7 +96,7 @@ make index-helpcenter ES_URL=https://opensearch.url/here
 
 ## Adding documents to the index using Python
 
-Using `opensearchpy` library:
+Using `elasticsearch` library:
 
 ```python
 import hashlib
@@ -142,11 +142,12 @@ The aliases are used at index-creation time, so if this file changes then the in
 
 It seems like Netlify uses the deployed functions rather than the ones in a branch when building a preview, so we need to take care when testing these. A good approach is to use the [Netlify CLI](https://www.netlify.com/products/cli/) locally. For example, to test the search function:
 
-1. Create an OpenSearch® service on Aiven, copy the URL and then set it as the environment `ES_URL` in your terminal
+1. Create an OpenSearch service on Aiven, copy the URL and then set it as the environment `ES_URL` in your terminal
 
-2. Run `make create-index` and then `make index-helpcenter` and `make index-devportal` to populate the OpenSearch® data (you can go browse with OpenSearch® dashboards at this point if you're interested)
+2. Run `make create-index` and then `make index-helpcenter` and `make index-devportal` to populate the OpenSearch data (you can go browse with OpenSearch dashboards at this point if you're interested)
 
 3. From the `netlify/` directory, run `netlify dev` - this starts a server on port 8888 (but won't serve the site itself because we don't have configuration to run it locally, I think it would be possible if we needed to though)
 
 4. The search function is now available at `http://localhost:8888/.netlify/functions/search` - add `?query=kafka` or whatever your search query should be, to check that the function works and returns the results you expect. The local server will show error logs if there are any.
 
+_Elasticsearch is a trademark of Elasticsearch B.V., registered in the U.S. and in other countries._
