@@ -15,7 +15,7 @@ As the first step, you need to add the remote syslog you want to send
 the log to into the project that contains the service you want to
 integrate.
 
-This can be configured from the Integration Endpoints page in the Aiven
+This can be configured from the **Integration endpoints** page in the Aiven
 Console.
 
 .. image:: /images/integrations/remote-syslog-endpoint.png

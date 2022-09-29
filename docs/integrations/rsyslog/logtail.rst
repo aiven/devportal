@@ -7,7 +7,7 @@ Send Aiven logs to Logtail
 
 2. Copy the **Source token** of your new source; you will need this shortly to configure the Aiven side of the integration.
 
-3. Create the service integration on Aiven. Choose **Integration Endpoints** in the web console, click on **Syslog** and choose **Add new endpoint**.
+3. Create the service integration on Aiven. Choose **Integration endpoints** in the web console, click on **Syslog** and choose **Add new endpoint**.
 
 4. Configure the new endpoint:
 

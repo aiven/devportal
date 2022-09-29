@@ -10,7 +10,7 @@ An external Apache Kafka® service integration endpoint can be defined in the `A
 
 1. Navigate to the Aiven project where you want to integrate the external Apache Kafka cluster.
 
-2. Select **Integration Endpoints**, and then **External Kafka** from the list of available services.
+2. Select **Integration endpoints**, and then **External Kafka** from the list of available services.
 
 3. Click on **Add a new endpoint**.
 
