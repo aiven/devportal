@@ -42,7 +42,7 @@ Below is a sample command from the `Redis blog <https://redis.com/blog/benchmark
 
     memtier_benchmark -a 'USERNAME:PASSWORD' -s 'HOST' -p 'PORT' --tls --tls-skip-verify -t 4 -n 10000 --ratio 1:1 -c 25 -x 10 -d 100 --key-pattern S:S
 
-Below is the output of the sample command above (running on an Aiven for Redis service). It's an example demonstrating what performance data ``memtier_benchmark`` can collect. The beginning sections are the data of the ``10`` runs executed. The following sections present, among the 10 runs, the ``BEST RUN``, ``WORST RUN`` and ``AGGREGATED AVERAGE`` results as well as the ``Request Latency Distribution`` of the operations. 
+Below is the output of the sample command above. This example demonstrates what performance data ``memtier_benchmark`` can collect. The beginning sections are the data of the ``10`` runs executed. The following sections present, among the 10 runs, the ``BEST RUN``, ``WORST RUN`` and ``AGGREGATED AVERAGE`` results as well as the ``Request Latency Distribution`` of the operations. 
 
 .. Code:: 
 
