@@ -1,7 +1,7 @@
 Benchmark performance
 =====================
 
-Redis®* **memtier_benchmark** is a command line utility developed by Redis Labs (formerly Garantia Data Ltd.) for load generation and bechmarking NoSQL key-value databases. It is recommended for the performance benchmarking of Aiven for Redis®* services.
+Redis®* ``memtier_benchmark*`` is a command line utility developed by Redis Labs for load generation and performing benchmark NoSQL key-value databases. It is recommended for performing benchmark of Aiven for Redis®* services.
 
 .. Warning::
     ``redis-benchmark`` is not supported to work with Aiven services, since ``CONFIG`` command is not allowed to run.
