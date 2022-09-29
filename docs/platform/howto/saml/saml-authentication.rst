@@ -65,6 +65,16 @@ In your Identity Provider (IdP), use the metadata URL and ACS URL to configure a
     - ``user.mail``
     - ``LoginUser.email``
 
+Setup instructions for specific providers are available on the following pages:
+
+* :doc:`Set up SAML with OneLogin </docs/platform/howto/saml/setup-saml-onelogin>`
+* :doc:`Set up SAML with Microsoft Azure Active Directory </docs/platform/howto/saml/setup-saml-azure>`
+* :doc:`Set up SAML with Okta </docs/platform/howto/saml/setup-saml-okta>`
+* :doc:`Set up SAML with Auth0 </docs/platform/howto/saml/setup-saml-auth0>`
+
+If your provider isn't listed, contact us at support@Aiven.io so we can assist you with the configuration.
+
+
 Step 3. Enable the SAML authentication method in the Aiven Console
 -------------------------------------------------------------------
 
@@ -80,29 +90,13 @@ After creating the application in your IdP, go back to the Authentication page i
 
 #. Click **Edit method**. 
 
-..
-  Delete these links - waiting on confirmation from Lorna this is fine to do. 
-
-  Detailed instructions exist for the following providers:
-
-  * `Okta <https://help.aiven.io/en/articles/3438800-setting-up-saml-authentication-with-okta>`_
-  * `G-Suite <https://help.aiven.io/en/articles/3447699-setting-up-saml-authentication-with-google-g-suite>`_
-  * `Azure AD <https://help.aiven.io/en/articles/3557077-setting-up-saml-authentication-with-azure>`_
-  * `Auth0 <https://help.aiven.io/en/articles/3808083-setting-up-saml-with-auth0>`_
-  * `Centrify <https://help.aiven.io/en/articles/4485814-setting-up-saml-with-centrify>`_
-
-
-  If your provider isn't in the list, please contact us at
-  support@Aiven.io so we can assist you with the configuration of the
-  provider of your choice.
-
 Step 4. Log in with the SAML authentication method
 --------------------------------------------------
 
 After the authentication method is enabled, there are 2 URLs in the **Signup and link accounts URLs** section:
 
-* Signup URL: For users that don't have an Aiven account to create a new Aiven user linked to the configured IdP.
-* Account link URL: For users that already have an Aiven user account to link their existing Aiven user with the configured IdP.
+* **Signup URL**: For users that don't have an Aiven account to create a new Aiven user linked to the configured IdP.
+* **Account link URL**: For users that already have an Aiven user account to link their existing Aiven user with the configured IdP.
 
 Send the appropriate URL to link the authentication method to a new or existing Aiven user. 
 
