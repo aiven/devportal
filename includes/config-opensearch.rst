@@ -51,7 +51,7 @@
 -------------------
 *integer*
 
-**Maximum index count** Maximum number of indexes to keep before deleting the oldest one
+**Maximum index count** DEPRECATED: use index_patterns instead
 
 
 

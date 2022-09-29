@@ -7,6 +7,10 @@ The MongoDB source connector periodically queries MongoDB collections and copies
 
     The query bases approach used by this MongoDB source connector periodically pulls the new changes from a collection. The polling interval can be set as a parameter. For a log based change data capture please check the Debezium source connector for MongoDB.
 
+.. note::
+
+    You can check the full set of available parameters and configuration options in the `connector's documentation <https://docs.mongodb.com/kafka-connector/current/>`_.
+
 .. _connect_mongodb_pull_source_prereq:
 
 Prerequisites
@@ -81,7 +85,7 @@ To create the connector, access the `Aiven Console <https://console.aiven.io/>`_
 2. Clink on **Create New Connector**, the button is enabled only for services :doc:`with Kafka Connect enabled <enable-connect>`.
 3. Select the **MongoDB Kafka Source Connector**
 4. Under the *Common* tab, locate the **Connector configuration** text box and click on **Edit**
-5. Paste the connector configuration (stored in the ``mongodb_sink.json`` file) in the form
+5. Paste the connector configuration (stored in the ``mongodb_source.json`` file) in the form
 6. Click on **Apply**
 
 .. Note::

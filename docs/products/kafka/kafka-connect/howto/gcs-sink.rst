@@ -3,7 +3,9 @@ Create a Google Cloud Storage sink connector
 
 The Apache Kafka Connect® Google Cloud Storage (GCS) sink connector by Aiven enables you to move data from an Aiven for Apache Kafka® cluster to a Google Cloud Storage bucket for long term storage. The full connector documentation is available in the dedicated `GitHub repository <https://github.com/aiven/aiven-kafka-connect-gcs>`_.
 
+.. note::
 
+    You can check the full set of available parameters and configuration options in the `connector's documentation <https://github.com/aiven/aiven-kafka-connect-gcs>`_.
 
 Prerequisites
 -------------

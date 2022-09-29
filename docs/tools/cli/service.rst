@@ -571,10 +571,79 @@ More information on ``tags list``, ``tags replace`` and  ``tags update`` can be 
 
 Create a service task
 
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``service_name``
+    - The name of the service
+  * - ``--project``
+    - Project name (defaults to ``None``)
+  * - ``--operation``
+    - Task operation (default: ``upgrade_check``, possible values: ``migration_check``, ``upgrade_check``)
+  * - ``--target-version``
+    - Upgrade target version (used for PostgreSQL) (possible values: ``11``, ``12``, ``13``, ``14``)
+  * - ``--source-service-uri``
+    - Migration: source URI for migration
+  * - ``--ignore-dbs``
+    - Migration: comma-separated list of databases to be ignored (MySQL only)
+  * - ``--format``
+    - Format string for output, e.g. ``{name} {retention_hours}``
+  * - ``--json``
+    - Raw JSON output
+
+
+**Example:** Create a migration task to migrate a MySQL database to Aiven to the service ``mysql`` in project ``myproj``
+
+::
+
+  avn service task-create --operation migration_check --source-service-uri mysql://user:password@host:port/databasename --project myproj mysql
+
+An example ``avn service task-create`` output:
+
+.. code:: text
+
+  TASK_TYPE              SUCCESS  TASK_ID                             
+  =====================  =======  ====================================
+  mysql_migration_check  null     e2df7736-66c5-4696-b6c9-d33a0fc4cbed
+
 ``avn service task-get``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Create a service task
+Get details for a single task for your service
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``service_name``
+    - The name of the service
+  * - ``--project``
+    - Project name (defaults to ``None``)
+  * - ``--task-id``
+    - The task ID to check
+  * - ``--format``
+    - Format string for output, e.g. ``{name} {retention_hours}``
+  * - ``--json``
+    - Raw JSON output
+
+**Example:** Check the status of your migration task with id ``e2df7736-66c5-4696-b6c9-d33a0fc4cbed`` for the service named ``mysql`` in the ``myproj`` project
+
+::
+
+  avn service task-get --task-id e2df7736-66c5-4696-b6c9-d33a0fc4cbed --project myproj mysql
+
+An example ``avn service task-get`` ouput:
+
+.. code:: text
+
+  TASK_TYPE              SUCCESS  TASK_ID                               RESULT                                                                              
+  =====================  =======  ====================================  ====================================================================================
+  mysql_migration_check  true     e2df7736-66c5-4696-b6c9-d33a0fc4cbed  All pre-checks passed successfully, preferred migration method will be [Replication]
 
 ``avn service terminate``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''

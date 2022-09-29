@@ -27,8 +27,13 @@ Once you have created the VPC, Aiven automatically sets it up and updates the st
 
 When you create a new service, you can then place it in the VPC. The **VPC** tab in the *Select Service Cloud Region* section lists the available VPC. This also allows you to migrate a service to or from a VPC.
 
-   .. note::
+.. note::
        Depending on the cloud provider that you selected for the VPC connection, you also have to accept a VPC peering connection request or set up a corresponding VPC peering connection to Aiven. 
+
+Cloud-specific VPC peering instructions
+-----------------------------------------------------
+
+- :ref:`Set up VPC peering on Google Cloud Platform (GCP) <vpc-peering-gcp>`.
 
 Deploying new services to a VPC
 -------------------------------
@@ -38,7 +43,7 @@ It might take a few minutes for newly created VPC to appear for service deployme
 
 .. note::
 
-The service nodes use firewall rules to allow only connections from private IP ranges that originate from networks on the other end of VPC peering connections. You can only deploy services to a VPC if they belong to the project where that specific VPC was created.
+       The service nodes use firewall rules to allow only connections from private IP ranges that originate from networks on the other end of VPC peering connections. You can only deploy services to a VPC if they belong to the project where that specific VPC was created.
 
 Deleting an existing VPC and VPC peering
 ----------------------------------------

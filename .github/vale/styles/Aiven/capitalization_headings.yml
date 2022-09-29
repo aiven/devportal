@@ -14,6 +14,7 @@ exceptions:
   - Aiven
   - Apache
   - AWS Transit Gateway
+  - Auth0
   - Boot
   - Business
   - BYOA
@@ -81,7 +82,7 @@ exceptions:
   - Redis
   - Rivery
   - reStructuredText
-  - Setting up SAML with OneLogin
+  - SAML
   - Schema Registry
   - Simple Authentication and Security Layer
   - Skyvia

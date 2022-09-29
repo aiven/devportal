@@ -11,6 +11,8 @@ The MongoDB sink connector enables you to move data from an Aiven for Apache Kaf
     * The `MongoDB sink connector by Lenses.io <https://docs.lenses.io/connectors/sink/mongo.html>`_
 
     This document refers to the MongoDB sink connector by Lenses.io, you can browse the MongoDB implementation in the :doc:`related document <mongodb-sink-mongo>`
+    
+    You can check the full set of available parameters and configuration options in the `connector's documentation <https://docs.lenses.io/connectors/sink/mongo.html>`_.
 
 .. _connect_mongodb_lenses_sink_prereq:
 
