@@ -13,6 +13,7 @@ exceptions:
   - APIs
   - Aiven
   - Apache
+  - Auth0
   - Boot
   - Business
   - BYOA
@@ -80,9 +81,7 @@ exceptions:
   - Redis
   - Rivery
   - reStructuredText
-  - Setting up SAML with OneLogin
-  - Set up SAML with Auth0
-  - Setup on Auth0
+  - SAML
   - Schema Registry
   - Simple Authentication and Security Layer
   - Skyvia
