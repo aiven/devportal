@@ -114,7 +114,7 @@ Now you can convert your application to use the private hostname again.
 #. Cleanup by disabling public access
 -------------------------------------------
 
-Disable the ``public_access.kafka`` configuration on all of your services in
+Disable the ``public_access.{service type}`` configuration on all of your services in
 the "Advanced Configuration" section. This will remove the ``public-``
 prefixed hostname and port.
 
