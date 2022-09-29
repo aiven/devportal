@@ -9,10 +9,10 @@ Redis®* **memtier_benchmark** is a command line utility developed by Redis Labs
 Prerequisites
 -------------
 * An Aiven for Redis service running.
-* ``memtier_benchmark`` installed. To install the tool, first download the source code from `Github <https://github.com/RedisLabs/memtier_benchmark>`_, and follow the instructions in the ``README`` to install all the dependencies, then build and install the tool. Now it's ready to go.
+* ``memtier_benchmark`` installed. To install the tool, first download the source code from `Github <https://github.com/RedisLabs/memtier_benchmark>`_, and follow the instructions in the `README <https://github.com/RedisLabs/memtier_benchmark/blob/master/README.md>`_ to install all the dependencies, then build and install the tool. Now it's ready to go.
 
 .. Note::
-    The ``Testing`` section in ``README`` is not mandatory, can be skipped.
+    The ``Testing`` section in `README <https://github.com/RedisLabs/memtier_benchmark/blob/master/README.md>`_ is not mandatory, can be skipped.
 
 Running benchmark
 -----------------
@@ -42,7 +42,7 @@ Below is a sample command from the `Redis blog <https://redis.com/blog/benchmark
 
     memtier_benchmark -a 'USERNAME:PASSWORD' -s 'HOST' -p 'PORT' --tls --tls-skip-verify -t 4 -n 10000 --ratio 1:1 -c 25 -x 10 -d 100 --key-pattern S:S
 
-The command's output (running on an Aiven for Redis service) is quite self-explanatory. Running it against different Redis services or the same service in different conditions can effectively benchmark the performance.
+Below is the output of the sample command above (running on an Aiven for Redis service). It demonstrates what performance data ``memtier_benchmark`` can collect. The beginning sections are the data of the ``10`` runs executed. The following sections present, among the 10 runs, the ``BEST RUN``, ``WORST RUN`` and ``AGGREGATED AVERAGE`` results as well as the ``Request Latency Distribution`` of the operations. 
 
 .. Code:: 
 
@@ -71,7 +71,14 @@ The command's output (running on an Aiven for Redis service) is quite self-expla
     Waits           0.00          ---          ---             ---             ---             ---             ---          --- 
     Totals       4808.23      2404.11         0.00        21.62624        20.60700        49.15100       111.10300       668.06 
     
-    <<<< many lines for Request Latency Distribution
+    Request Latency Distribution
+    Type     <= msec         Percent
+    ------------------------------------------------------------------------
+    SET      11.327        0.000
+    <<<< many lines 
+    GET      66.559      100.000
+    ---
+    WAIT      0.000      100.000
 
     WORST RUN RESULTS
     ============================================================================================================================
@@ -82,7 +89,14 @@ The command's output (running on an Aiven for Redis service) is quite self-expla
     Waits           0.00          ---          ---             ---             ---             ---             ---          --- 
     Totals       4498.20      2249.10         0.00        22.94390        21.63100        47.87100       109.56700       624.99 
 
-    <<<< many lines for Request Latency Distribution
+    Request Latency Distribution
+    Type     <= msec         Percent
+    ------------------------------------------------------------------------
+    SET      10.047        0.000
+    <<<< many lines
+    GET     191.487      100.000
+    ---
+    WAIT      0.000      100.000
 
     AGGREGATED AVERAGE RESULTS (10 runs)
     ============================================================================================================================
@@ -93,7 +107,16 @@ The command's output (running on an Aiven for Redis service) is quite self-expla
     Waits           0.00          ---          ---             ---             ---             ---             ---          --- 
     Totals       4624.02      2312.01         0.00        22.42798        21.24700        47.35900       101.88700       642.47 
 
-    <<<< many lines for Request Latency Distribution
+    Request Latency Distribution
+    Type     <= msec         Percent
+    ------------------------------------------------------------------------
+    SET       9.791        0.000
+    <<<< many lines
+    GET     712.703      100.000
+    ---
+    WAIT      0.000      100.000
+
+Running the same command on different Redis services or on the same service in different conditions can effectively benchmark the performance.
 
 .. Note::
     Aiven has ``rate limit`` on services. By default it's ``300`` new connections per second per CPU core. Also be aware of the connection limit depending on memory size as explained in `Estimate maximum number of connection <https://docs.aiven.io/docs/products/redis/howto/estimate-max-number-of-connections.html>`_.
