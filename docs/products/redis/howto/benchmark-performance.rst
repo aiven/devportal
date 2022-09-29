@@ -9,7 +9,7 @@ Redis®* ``memtier_benchmark*`` is a command line utility developed by Redis Lab
 Prerequisites
 -------------
 * An Aiven for Redis service running.
-* ``memtier_benchmark`` installed. To install the tool, first download the source code from `Github <https://github.com/RedisLabs/memtier_benchmark>`_, and follow the instructions in the `README <https://github.com/RedisLabs/memtier_benchmark/blob/master/README.md>`_ to install all the dependencies, then build and install the tool. Now it's ready to go.
+* ``memtier_benchmark`` installed. To install the tool, first download the source code from `GitHub <https://github.com/RedisLabs/memtier_benchmark>`_, and follow the instructions in the `README <https://github.com/RedisLabs/memtier_benchmark/blob/master/README.md>`_ to install all the dependencies, then build and install the tool. Now it's ready to go.
 
 .. Note::
     The ``Testing`` section in `README <https://github.com/RedisLabs/memtier_benchmark/blob/master/README.md>`_ is not mandatory, can be skipped.
