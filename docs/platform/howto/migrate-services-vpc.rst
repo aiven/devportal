@@ -40,13 +40,12 @@ firewall rules are set up correctly.
 ---------------------
 
 Ensure that you have the VPC created and peering is active. This is
-simple to do and can be automated via terraform if needed. See Aiven's
-`Using VPC
-Peering <https://help.aiven.io/en/articles/778836-using-vpc-peering>`__
-help article to set up the peering connection.
+simple to do and can be automated via terraform if needed. Please check out
+:ref:`how to set up VPC peering <platform_howto_setup_vpc_peering>`
+on the Aiven platform.
 
 We will be using the ``google-us-east1`` VPC for testing. Ensure that the
-VPC and peering are both in the "Active" state.
+VPC and peering are both in an ``Active`` state.
 
 #. Testing the connection
 ------------------------------
@@ -69,10 +68,9 @@ on Ubuntu 20.04 LTS and should work for most Linux distributions.
 #. Enable public access
 ----------------------------
 
-Enable the ``public_access.kafka`` configuration on all of your services in the
-"Advanced Configuration" section. This will create a new hostname and
-port. It will still be publicly available once the service is moved into
-the VPC.
+Enable the ``public_access.{service type}`` configuration on all of your services in the
+"Advanced Configuration" section. For example, the configuration name is ``public_access.kafka`` for Aiven for Apache Kafka®. This will create a new hostname and
+port. It will still be publicly available once the service is moved into the VPC.
 
 You will now see a new hostname and port under "Connection Information"
 by selecting the ``Public`` "Access Route"

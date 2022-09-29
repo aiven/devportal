@@ -1,13 +1,10 @@
-Migrate services
-================
+Migrate service to another cloud or region
+==========================================
 
 When migrating a service, the migration happens in the background and does not affect your service until the service has been rebuilt at the new region. The migration includes the **DNS update** for the  named service to point to the new region. 
 Most of the services have usually no service interruption expected. However, for services like PostgreSQL®, MySQL and Redis®*, it may cause a short interruption (5 to 10 seconds) in service while the DNS changes are propagated.
 
 The short interruption mentioned above does not include the potential delays caused by client side library implementation.
-
-Migrate service to another cloud or region
-------------------------------------------
 
 When spinning a new Aiven service, you are not tied to a cloud provider or region. Your services can be migrated to better match your needs. Services can be moved to another cloud provider, or another region within the same provider, or both.
 
