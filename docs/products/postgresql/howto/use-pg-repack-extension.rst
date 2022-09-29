@@ -8,7 +8,7 @@ Use the PostgreSQL® ``pg_repack`` extension
 
 To use the ``pg_repack`` extension: 
 
-1. Run the following command as ``avnadmin`` user: 
+1. Connect to the database as ``avnadmin`` user, and run the following command: 
 :: 
   CREATE EXTENSION pg_repack;
 
