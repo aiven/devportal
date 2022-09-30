@@ -24,6 +24,9 @@ Your first step is to create the endpoint to be used between the Aiven service a
 
 1. Click **Integration endpoints** in the web console, then choose **AWS CloudWatch Metrics** and **Add a new endpoint** or **Create new**.
 
+.. image:: /images/integrations/aiven-integrations.png
+   :alt: Screenshot of Aiven Integrations
+
 2. Configure the settings for the new endpoint:
 
    * **Endpoint name** is how you will refer to the AWS CloudWatch metrics integration when linking it to an Aiven service.
