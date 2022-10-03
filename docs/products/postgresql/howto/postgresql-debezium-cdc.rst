@@ -64,14 +64,13 @@ Per the Debezium docs, there are two reasons why growing replication lag can hap
 
 #. *Too many updates in the tracked database but only a tiny number of updates are
    related to the table(s) and schema(s) for which the connector is capturing changes.
-   Such issue can be resolved with periodic heartbeat events
-   (setting the ``heartbeat.interval.ms`` connector configuration property).*
+   Such issue can be resolved with periodic heartbeat events and set the (*\ ``heartbeat.interval.ms``\ *) connector configuration property.*
 
 #. *The PostgreSQL instance contains multiple databases and one of them
    is a high-traffic database. Debezium captures changes in another
    database that is low-traffic in comparison to the other database.
    Debezium then cannot confirm the LSN
-   (*\ ``confirmed_flush_lsn`` `PostgreSQL replication slots <https://www.postgresql.org/docs/13/view-pg-replication-slots.html>`__\ *)
+   (*\ ``confirmed_flush_lsn``\ *)
    as replication slots work per-database and Debezium is not invoked.
    As WAL is shared by all databases, the amount used tends to grow
    until an event is emitted by the database for which Debezium is
@@ -85,10 +84,8 @@ During testing, this has been observed to happen in 2 scenarios:
 #. The table(s) which the Debezium connector is tracking has not had any
    changes, heartbeats are enabled (via
    ``heartbeat.interval.ms``
-   `Debezium heartbeat interval <https://debezium.io/documentation/reference/1.5/connectors/postgresql.html#postgresql-property-heartbeat-interval-ms>`__
    and
-   ```heartbeat.action.query``
-   `Debezium heartbeat action <https://debezium.io/documentation/reference/1.5/connectors/postgresql.html#postgresql-property-heartbeat-action-query>`__
+   ``heartbeat.action.query``
    ), but the connector is not sending the heartbeat. Debezium not
    sending the heartbeat is a known bug reported in
    `DBZ-3746 <https://issues.redhat.com/browse/DBZ-3746>`__ .
