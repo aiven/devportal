@@ -1,67 +1,67 @@
-Handling PostgreSQL® node replacements when using Debezium for Change Data Capture
+Handle PostgreSQL® node replacements when using Debezium for Change Data Capture
 =================================================================================
 
 As an Aiven customer you may be running a Aiven for Apache Kafka® Connect
 cluster that runs one or more `Debezium PostgreSQL® source
-connectors <https://debezium.io/documentation/reference/connectors/postgresql.html>`__
+connectors <https://docs.aiven.io/docs/products/kafka/kafka-connect/howto/debezium-source-connector-pg.html>`__
 (Debezium) capturing changes from an Aiven for PostgreSQL® (PG) service.
 
-After the PG service has had a maintenance update or undergo any
+After the PostgreSQL service has had a maintenance update or undergo any
 operation which replaces the nodes (such as a plan or cloud region
-change), Debezium would lose connection to the PG database. It is able
+change), Debezium would lose connection to the PostgreSQL database. It is able
 to recover from connection errors to the database and start listening
 for change events again after a restart of the connector's task.
 However, in some cases the Debezium replication slot is lagging behind
 as the amount of WAL logs grows causing a concern.
 
-There is a GitHub repository where you can easily spin up a Debezium -
-PostgreSQL setup to test the node replacement scenario and also follow
-along this help article:
-https://github.com/aiven/debezium-pg-kafka-connect-test
+.. Tip::
+    There is a GitHub repository where you can easily spin up a Debezium -
+    PostgreSQL setup to test the node replacement scenario and also follow
+    along this help article:
+    https://github.com/aiven/debezium-pg-kafka-connect-test
 
 The possible errors encountered, the cause and solution to the growing
-replication slot lag, and how to ensure a graceful PG node replacement
+replication slot lag, and how to ensure a graceful PostgreSQL node replacement
 or maintenance upgrade are explained in the next sections.
 
-.. _h_ab9933dea8:
 
-Possible errors seen in Debezium connector logs when PG has a node replacement
+Debezium errors related to PostgreSQL node replacement
 ------------------------------------------------------------------------------
 
-During the reported PG node replacements where Debezium could not
+During the reported PostgreSQL node replacements where Debezium could not
 recover, we have observed the following errors that have occurred in one
 or more occasions:
 
--  ``org.apache.kafka.connect.errors.ConnectException: Could not create PG connection``
+-  ``org.apache.kafka.connect.errors.ConnectException: Could not create PostgreSQL connection``
 
 -  ``io.debezium.DebeziumException: Could not execute heartbeat action (Error: 57P01)``
 
 -  ``org.PostgreSQL.util.PSQLException: ERROR: replication slot "SLOT_NAME" is active for PID xxxx``
 
 These are all unrecoverable errors, meaning that they require a restart
-of the connector task(s) in order for the connector to resume operations
-again. A restart can be performed manually either through the web
+of the connector task(s) in order to resume operations
+again. A restart can be performed manually either through the `Aiven Console <https://console.aiven.io/>`_, in under the `Connectors` tab
 console or via the `Kafka Connect REST
 API <https://docs.confluent.io/platform/current/connect/references/restapi.html#rest-api-task-restart>`__
-(you can get the service URI from the web console).
+. You can get the service URI from the `Aiven Console <https://console.aiven.io/>`_, in the service detail page.
 
 .. image:: /images/products/postgresql/pg-debezium-cdc_image1.png
 
-For automatically restarting tasks due to unrecoverable errors, we can
-set *``"_aiven.restart.on.failure": true``* in the connector's
-configuration ( `help
-article <https://help.aiven.io/en/articles/5088396-kafka-connect-auto-restart-on-failures>`__
-). By default tasks are checked for errors every 15 minutes but we can
-set this to something else. Please contact Aiven support if you would
-like to have this check interval shortened.
+.. Tip::
+    For automatically restarting tasks due to unrecoverable errors, we can
+    set ``"_aiven.restart.on.failure": true`` in the connector's
+    configuration ( `help
+    article <https://help.aiven.io/en/articles/5088396-kafka-connect-auto-restart-on-failures>`__
+    ). By default tasks are checked for errors every 15 minutes but we can
+    set this to something else. Please contact Aiven support if you would
+    like to have this check interval shortened.
 
-.. _h_09f7114538:
 
-Debezium connectors/tasks have been restarted, but there is growing replication lag
+
+Growing replication lag after Debezium connector restart
 -----------------------------------------------------------------------------------
 
-Per the Debezium docs, there are two reasons why this can happen (copied
-verbatim from the `Debezium
+Per the Debezium docs, there are two reasons why growing replication lag can happen after Debezium connector restart (referred from the `Debezium
 docs <https://debezium.io/documentation/reference/1.5/connectors/postgresql.html#postgresql-wal-disk-space>`__
 ):
 
@@ -81,7 +81,7 @@ docs <https://debezium.io/documentation/reference/1.5/connectors/postgresql.html
    until an event is emitted by the database for which Debezium is
    capturing changes.*
 
-During basic testing, this has been observed to happen in 2 scenarios:
+During testing, this has been observed to happen in 2 scenarios:
 
 #. The table(s) which the Debezium connector is tracking has not had any
    changes, and heartbeats are not enabled in the connector.
@@ -97,7 +97,7 @@ During basic testing, this has been observed to happen in 2 scenarios:
 
 .. _h_7415120456:
 
-Clearing the replication lag
+Clear the replication lag
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To clear the lag, simply resume the database activities (assuming you
@@ -108,7 +108,7 @@ confirm the latest LSN and allow the database to reclaim the WAL space.
 
 .. _h_b915a23266:
 
-Ensuring Debezium gracefully survives a PostgreSQL node replacement
+Ensure Debezium gracefully survives a PostgreSQL node replacement
 -----------------------------------------------------------------
 
 To prevent data loss (Debezium missing change events) in the event of a
@@ -186,7 +186,7 @@ same `example script mentioned
 above <https://github.com/aiven/debezium-pg-kafka-connect-test/blob/53da8ee8fde8bf7802fd5bbb6aa39359cd1c0877/bin/python_scripts/debezium_pg_producer.py#L66>`__
 demonstrates this implementation.
 
-3. Set ``_aiven.restart.on.failure": true`` on all Debezium connectors
+3. Set ``"_aiven.restart.on.failure": true`` on all Debezium connectors
 to ensure that failed tasks are automatically restarted in case they
 fail. By default this is checked every 15 minutes but we can set this to
 happen more frequently.
