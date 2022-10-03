@@ -60,9 +60,7 @@ API <https://docs.confluent.io/platform/current/connect/references/restapi.html#
 Growing replication lag after Debezium connector restart
 -----------------------------------------------------------------------------------
 
-Per the Debezium docs, there are two reasons why growing replication lag can happen after Debezium connector restart (`Debezium
-docs <https://debezium.io/documentation/reference/1.5/connectors/PostgreSQL.html#postgresql-wal-disk-space>`__
-):
+Per the Debezium docs, there are two reasons why growing replication lag can happen after Debezium connector restart:
 
 #. *Too many updates in the tracked database but only a tiny number of updates are
    related to the table(s) and schema(s) for which the connector is capturing changes.
