@@ -57,7 +57,8 @@ every option must be explicitly provided on the command line.
 
 cat conf.file:
 
-datastax-java-driver {
+  datastax-java-driver {
+
   advanced {
     ssl-engine-factory {
       keystore-password = "cassandra"
@@ -71,7 +72,7 @@ datastax-java-driver {
       password = AVNS_JHMJgrFwIa-uPd7BwEB
     }
   }
-}
+  }
 
 The config file can contain many different blocks for different configurations. In our case it only contains the datastax-java-driver block.
 The careful reader has not missed that the ssl-engine-factory block contains the path of the truststore and the password to read into the 
