@@ -50,29 +50,28 @@ to ``cassandra-certificate.pem``.
 During creation of the truststore, you will be need to set a password that is required to access the truststore and retrieve the certificate.
 
 3- next step is to create a configuration file with the connection information.
-In this way the `dsbulk`` command line will be more readable and will not show passwords in clear. If you don't create a config file, 
+In this way the `dsbulk` command line will be more readable and will not show passwords in clear. If you don't create a config file, 
 every option must be explicitly provided on the command line.
 
 4- create a file that contains the connection configuration like this::
 
 cat conf.file:
 
-  datastax-java-driver {
-
-  advanced {
-    ssl-engine-factory {
-      keystore-password = "cassandra"
-      keystore-path = "/home/user1/client.truststore"
-      class = DefaultSslEngineFactory
-      truststore-password = "cassandra"
-      truststore-path = "/home/user1/client.truststore"
-    }
-    auth-provider {
-      username = avnadmin
-      password = AVNS_JHMJgrFwIa-uPd7BwEB
-    }
-  }
-  }
+  | datastax-java-driver {
+  | advanced {
+  |  ssl-engine-factory {
+  |    keystore-password = "cassandra"
+  |    keystore-path = "/home/user1/client.truststore"
+  |    class = DefaultSslEngineFactory
+  |    truststore-password = "cassandra"
+  |    truststore-path = "/home/user1/client.truststore"
+  |  }
+  |  auth-provider {
+  |    username = avnadmin
+  |    password = AVNS_JHMJgrFwIa-uPd7BwEB
+  |  }
+  |}
+  |}
 
 The config file can contain many different blocks for different configurations. In our case it only contains the datastax-java-driver block.
 The careful reader has not missed that the ssl-engine-factory block contains the path of the truststore and the password to read into the 
