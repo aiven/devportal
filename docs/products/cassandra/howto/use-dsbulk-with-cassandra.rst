@@ -45,8 +45,8 @@ in a file called `cassandra-certificate.pem` in a directory on the linux system 
 ``keytool -import -v -trustcacerts -alias CARoot -file cassandra-certificate.pem -keystore client.truststore``
 
 a truststore file called `client.truststore` is created in the directory where the keytool command has been launched. 
-The keytool command assumes the file `cassandra-certificate.pem` is in the same directory where you run `keytool`. If that is not the case, provide a full path 
-to `cassandra-certificate.pem`.
+The keytool command assumes the file ``cassandra-certificate.pem`` is in the same directory where you run ``keytool``. If that is not the case, provide a full path 
+to ``cassandra-certificate.pem``.
 During creation of the truststore, you will be need to set a password that is required to access the truststore and retrieve the certificate.
 
 3- next step is to create a configuration file with the connection information.
