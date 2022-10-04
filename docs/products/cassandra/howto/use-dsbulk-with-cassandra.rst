@@ -55,7 +55,8 @@ every option must be explicitly provided on the command line.
 
 4- create a file that contains the connection configuration like this::
 
-cat conf.file
+cat conf.file:
+
 datastax-java-driver {
   advanced {
     ssl-engine-factory {
