@@ -8,11 +8,11 @@ Use the PostgreSQL® ``pg_repack`` extension
 
 To use the ``pg_repack`` extension: 
 
-1. Connect to the database as ``avnadmin`` user, and run the following command: 
+1. Connect to the database as ``avnadmin`` user, and run the following command to create the extension: 
 :: 
   CREATE EXTENSION pg_repack;
 
-2. Run the command-line tool that comes with the extension on your machine. The command to reorganize a single table looks like the following:
+2. Run the ``pg_repack`` command on the table. For example, the command to reorganize a single table is as follows: 
 ::
   pg_repack -d connstr --no-superuser-check -t tablename   
 
