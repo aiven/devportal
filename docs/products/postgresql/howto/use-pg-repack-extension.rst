@@ -14,7 +14,7 @@ To use the ``pg_repack`` extension:
 
 2. Run the ``pg_repack`` command on the table to reorganize it. 
 ::
-  pg_repack -k -U <username> -h <hostname> -p <port> -d <database name> -t <table name>;   
+  pg_repack -k -U avnadmin -h <hostname> -p <port> -d <databasename> -t <tablename>   
 
 .. note:: 
   - Using ``-k`` skips the superuser checks in the client. This setting is useful when using pg_repack on platforms that support running it as non-superusers.
