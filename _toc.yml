@@ -609,7 +609,8 @@ entries:
             title: Aggregation with NodeJS
           - file: docs/products/opensearch/howto/control_access_to_content
           - file: docs/products/opensearch/howto/restore_opensearch_backup
-          - file: docs/products/opensearch/howto/import-opensearch-data-using-elasticsearch-dump
+          - file: docs/products/opensearch/howto/import-opensearch-data-elasticsearch-dump-to-aiven
+          - file: docs/products/opensearch/howto/import-opensearch-data-elasticsearch-dump-to-aws
           - file: docs/products/opensearch/howto/set_index_retention_patterns
           - file: docs/products/opensearch/howto/opensearch-alerting-api
           - file: docs/products/opensearch/howto/integrate-with-grafana
