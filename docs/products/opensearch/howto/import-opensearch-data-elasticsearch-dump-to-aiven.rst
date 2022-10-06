@@ -1,4 +1,4 @@
-Copying data from OpenSearch to Aiven for OpenSearch® using ``elasticsearch-dump``
+Copy data from OpenSearch to Aiven for OpenSearch® using ``elasticsearch-dump``
 ===================================================
 
 It is a good practice to perform backups of your OpenSearch® data to another storage service. This way you can access your data and restore it if something unexpected happens to it. 
