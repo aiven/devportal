@@ -1,4 +1,4 @@
-Copying data from Aiven for OpenSearch to AWS S3 using ``elasticsearch-dump``
+Copy data from Aiven for OpenSearch® to AWS S3 using ``elasticsearch-dump``
 ===================================================
 
 It is a good practice to perform backups of your OpenSearch® data to another storage service. This way you can access your data and restore it if something unexpected happens to it. 
