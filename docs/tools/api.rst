@@ -11,7 +11,7 @@ Common use cases for the Aiven API:
 
 * Deploy and tear down development or demo platforms on a schedule.
 
-We make the API available to all Aiven users. It is also the engine behind our web console, so you should find that all operations are also available via API.
+We make the API available to all Aiven users. It is also the engine behind the Aiven Console, so you should find that all operations are also available through the API.
 
 
 API quickstart
@@ -26,7 +26,7 @@ API quickstart
 Authentication
 --------------
 
-Some endpoints (but not quite all) require authentication. You will need an authentication token from the `profile section of your Aiven console <https://console.aiven.io/profile/auth>`_.
+Some (but not quite all) endpoints require authentication. You'll need an authentication token from the `profile section of your Aiven console <https://console.aiven.io/profile/auth>`_.
 
 Send this token in the header, using a structure like this, and replacing ``TOKEN`` with your actual API token::
 

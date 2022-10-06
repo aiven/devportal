@@ -1,12 +1,12 @@
 Work with API authorization tokens
 ==================================
 
-The Aiven API uses tokens for authentication. In this article, we will cover some of the key considerations for working with API tokens.
+The Aiven API uses tokens for authentication. In this article, we cover some of the key considerations when working with API tokens.
 
 Limit token expiry
 ------------------
 
-Think about how long the token needs to be valid for; this will vary with the situation that the token is used for.
+Think about how long the token needs to be valid for; this varies depending on what the token is used for.
 
 * When I am doing a one-off demo or video recording, I set my token to expire after one hour. This means that even if I have exposed the token during my work, it will no longer work by the time the video is published.
 
