@@ -25,6 +25,7 @@ These plugins are enabled on all Aiven for OpenSearch services by default:
 * `Scheduler for Dashboards Reports <https://github.com/opensearch-project/dashboards-reports>`__
 * `OpenSearch Dashboards Gantt Charts <https://opensearch.org/docs/latest/dashboards/gantt/>`__
 * `OpenSearch Dashboards Trace Analytics <https://opensearch.org/docs/latest/monitoring-plugins/trace/index/>`__
+* `ML Commons plugin <https://opensearch.org/docs/latest/ml-commons-plugin/index/>`_
 
 
 ------
