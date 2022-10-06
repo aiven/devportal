@@ -6,6 +6,28 @@ Use the PostgreSQL® ``pg_repack`` extension
 .. note:: 
   Before you install the ``pg_repack`` extension, verify the version of the extension is supported on the PostgreSQL version you are using. For information on supported versions, see `pg_repack <https://reorg.github.io/pg_repack/>`_ documentation.   
 
+Variables
+---------
+The following variables need to be substituted when running the commands.
+
+.. list-table::
+  :header-rows: 1
+  :widths: 16 60
+  :align: left
+
+  * - Variable
+    - Description
+  * - ``HOSTNAME``
+    - Hostname for PostgreSQL connection
+  * - ``PORT``
+    - Port for PostgreSQL connection
+  * - ``DATABASENAME``
+    - Database Name of your Aiven for PostgreSQL connection
+  * - ``TABLENAME``
+    - Name of the table you want to reorganize
+
+Use ``pg_repack`` extension
+---------------------------
 To use the ``pg_repack`` extension: 
 
 1. Connect to the database as ``avnadmin`` user, and run the following command to create the extension: 
@@ -14,7 +36,7 @@ To use the ``pg_repack`` extension:
 
 2. Run the ``pg_repack`` command on the table to reorganize it. 
 ::
-  pg_repack -k -U avnadmin -h <hostname> -p <port> -d <databasename> -t <tablename>   
+  pg_repack -k -U avnadmin -h <HOSTNAME> -p <PORT> -d <DATABASENAME> -t <TABLENAME>   
 
 .. note:: 
   - Using ``-k`` skips the superuser checks in the client. This setting is useful when using pg_repack on platforms that support running it as non-superusers.
