@@ -7,15 +7,12 @@ In this article, you can find out how to dump your OpenSearch data to Aiven for 
 
 To copy the index data, we will be using ``elasticsearch-dump`` `tool <https://github.com/elasticsearch-dump/elasticsearch-dump>`__. You can read the `instructions on GitHub <https://github.com/elasticsearch-dump/elasticsearch-dump/blob/master/README.md>`_ on how to install it. From this library, we will use ``elasticdump`` command to copy the input index data to an specific output. 
 
-.. note::
-
-    Make sure to have ``elasticsearch-dump`` `tool <https://github.com/elasticsearch-dump/elasticsearch-dump>`__ installed for the next steps.
-
 .. _copy-data-from-os-to-os:
 
 Prerequisites
 ~~~~~~~~~~~~~
 
+* ``elasticsearch-dump`` `tool <https://github.com/elasticsearch-dump/elasticsearch-dump>`__ installed
 * OpenSearch cluster as the ``input`` (can be in Aiven or elsewhere)
 * Aiven for OpenSearch cluster as the ``output``
 
