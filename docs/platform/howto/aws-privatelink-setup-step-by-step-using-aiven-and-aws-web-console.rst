@@ -19,7 +19,7 @@ There are 5 steps
 #. Configure Aiven service to accept incoming connections via
    Privatelink
 
-.. image:: 5858370-aws-privatelink-setup-step-by-step-using-aiven-and-aws-web-console_image1.png
+.. image:: ../../../images/platform/howto/5858370-aws-privatelink-setup-step-by-step-using-aiven-and-aws-web-console_image1.png
 
 --------------
 
@@ -90,14 +90,14 @@ the final step.
 
 Login Aiven console, select "VPC" in the left and create project VPC
 
-.. image:: 5858370-aws-privatelink-setup-step-by-step-using-aiven-and-aws-web-console_image2.png
+.. image:: ../../../images/platform/howto/5858370-aws-privatelink-setup-step-by-step-using-aiven-and-aws-web-console_image2.png
 
 .. _h_dd69fc9964:
 
 2.2 Wait until the VPC become "active"
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: 5858370-aws-privatelink-setup-step-by-step-using-aiven-and-aws-web-console_image3.png
+.. image:: ../../../images/platform/howto/5858370-aws-privatelink-setup-step-by-step-using-aiven-and-aws-web-console_image3.png
 
 .. _h_586bdede97:
 
@@ -108,7 +108,7 @@ In this example we will use Kafka, but it's similar for other service
 types. While creating Aiven service, select cloud provider "AWS", region
 "VPC" and the VPC you just created.
 
-.. image:: 5858370-aws-privatelink-setup-step-by-step-using-aiven-and-aws-web-console_image4.png
+.. image:: ../../../images/platform/howto/5858370-aws-privatelink-setup-step-by-step-using-aiven-and-aws-web-console_image4.png
 
 .. _h_eb6fca0ecb:
 
@@ -123,7 +123,7 @@ types. While creating Aiven service, select cloud provider "AWS", region
 Login AWS console. On the upper right corner, you will see your AWS
 account ID and IAM user name. You will need these information later.
 
-.. image:: 5858370-aws-privatelink-setup-step-by-step-using-aiven-and-aws-web-console_image5.png
+.. image:: ../../../images/platform/howto/5858370-aws-privatelink-setup-step-by-step-using-aiven-and-aws-web-console_image5.png
 
 .. _h_99bfb5711a:
 
@@ -133,7 +133,7 @@ account ID and IAM user name. You will need these information later.
 In Aiven console, click on the service, select "Network" tab, and click
 "Create Privatelink"
 
-.. image:: 5858370-aws-privatelink-setup-step-by-step-using-aiven-and-aws-web-console_image6.png
+.. image:: ../../../images/platform/howto/5858370-aws-privatelink-setup-step-by-step-using-aiven-and-aws-web-console_image6.png
 
 .. _h_942c4da106:
 
@@ -142,7 +142,7 @@ In Aiven console, click on the service, select "Network" tab, and click
 
 A window asking for "principles" will appear.
 
-.. image:: 5858370-aws-privatelink-setup-step-by-step-using-aiven-and-aws-web-console_image7.png
+.. image:: ../../../images/platform/howto/5858370-aws-privatelink-setup-step-by-step-using-aiven-and-aws-web-console_image7.png
 
 Assuming your AWS account ID is 111122223333 and you'd like to allow
 anyone (e.g. you have multiple IAM users) in your AWS account to
@@ -171,7 +171,7 @@ After clicking "create", wait for the Privatelink status change from
 like ``com.amazonaws.vpce.ap-southeast-2.vpce-svc-00000000000000000`` .
 You will need this in the next step.
 
-.. image:: 5858370-aws-privatelink-setup-step-by-step-using-aiven-and-aws-web-console_image8.png
+.. image:: ../../../images/platform/howto/5858370-aws-privatelink-setup-step-by-step-using-aiven-and-aws-web-console_image8.png
 
 .. _h_cd615bc6ae:
 
@@ -186,7 +186,7 @@ You will need this in the next step.
 In AWS VPC management console, select "endpoints" in the left, and click
 "create endpoint" button.
 
-.. image:: 5858370-aws-privatelink-setup-step-by-step-using-aiven-and-aws-web-console_image9.png
+.. image:: ../../../images/platform/howto/5858370-aws-privatelink-setup-step-by-step-using-aiven-and-aws-web-console_image9.png
 
 .. _h_2e5b8aa8d8:
 
@@ -195,7 +195,7 @@ In AWS VPC management console, select "endpoints" in the left, and click
 
 Select "Find service by name".
 
-.. image:: 5858370-aws-privatelink-setup-step-by-step-using-aiven-and-aws-web-console_image10.png
+.. image:: ../../../images/platform/howto/5858370-aws-privatelink-setup-step-by-step-using-aiven-and-aws-web-console_image10.png
 
 .. _h_cfca13fa12:
 
@@ -225,7 +225,7 @@ click "create endpoint".
 Note it may take a few minutes to see the status: "available", you may
 see "pending acceptance" before that.
 
-.. image:: 5858370-aws-privatelink-setup-step-by-step-using-aiven-and-aws-web-console_image11.png
+.. image:: ../../../images/platform/howto/5858370-aws-privatelink-setup-step-by-step-using-aiven-and-aws-web-console_image11.png
 
 .. _h_956ceaf913:
 
@@ -240,7 +240,7 @@ see "pending acceptance" before that.
 Click on the service in Aiven console, select "network" tab, and turn on
 "Enable kafka access"
 
-.. image:: 5858370-aws-privatelink-setup-step-by-step-using-aiven-and-aws-web-console_image12.png
+.. image:: ../../../images/platform/howto/5858370-aws-privatelink-setup-step-by-step-using-aiven-and-aws-web-console_image12.png
 
 .. _h_e11a485025:
 
@@ -251,4 +251,4 @@ While connecting to the service (e.g. from an EC2 instance in your AWS
 VPC), make sure you're using the connection information for
 "Privatelink" access route.
 
-.. image:: 5858370-aws-privatelink-setup-step-by-step-using-aiven-and-aws-web-console_image13.png
+.. image:: ../../../images/platform/howto/5858370-aws-privatelink-setup-step-by-step-using-aiven-and-aws-web-console_image13.png
