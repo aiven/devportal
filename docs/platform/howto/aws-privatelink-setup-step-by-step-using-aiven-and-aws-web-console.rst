@@ -104,7 +104,7 @@ Login Aiven console, select "VPC" in the left and create project VPC
 2.3. Create Aiven service in project VPC
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this example we will use Kafka, but it's similar for other service
+In this example we will use Kafka®, but it's similar for other service
 types. While creating Aiven service, select cloud provider "AWS", region
 "VPC" and the VPC you just created.
 
