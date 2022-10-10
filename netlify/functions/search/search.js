@@ -32,6 +32,7 @@ const handler = async (event) => {
         from: (currentPage - 1) * pageSize,
         query: {
           bool: {
+            minimum_should_match: 2,
             should: [
               {
                 match: {
