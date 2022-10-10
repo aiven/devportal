@@ -27,6 +27,7 @@ During the reported PostgreSQL node replacements where Debezium could not recove
 These are all unrecoverable errors, meaning that they require a restart of the connector task(s) in order to resume operations again. A restart can be performed manually either through the `Aiven Console <https://console.aiven.io/>`_, in under the `Connectors` tab console or via the `Kafka Connect REST API <https://docs.confluent.io/platform/current/connect/references/restapi.html#rest-api-task-restart>`__. You can get the service URI from the `Aiven Console <https://console.aiven.io/>`_, in the service detail page.
 
 .. image:: /images/products/postgresql/pg-debezium-cdc_image1.png
+   :alt: The Aiven Console page showing the Debezium connector error
 
 .. Tip::
 
