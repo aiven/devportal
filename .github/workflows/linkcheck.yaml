@@ -21,10 +21,13 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       - name: LinkCheck
-        run: make linkcheck
+        id: run_tests
+        run: |
+          make linkcheck > logs.txt || echo "BROKEN=$(grep -E "broken" logs.txt)" >> $GITHUB_ENV
+
       - name: Create Issue
-        if: failure()
-        uses: JasonEtco/create-an-issue@v2
+        if: "${{ env.BROKEN != '' }}"
+        uses: dblock/create-a-github-issue@v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
