@@ -71,7 +71,7 @@ the final step.
 
 -  Go to `EC2  dashboard` - search EC2 in the search box if you don't know how to open the EC2 dashboard.
    
-   -  in the top right corner, press on `Launch instances`, and provide a name for the instance and choose from one of the available images or start from your template.
+   -  At the top right corner, press on `Launch instances`, and provide a name for the instance and choose from one of the available images or start from your template.
    -  In the instance configuration, scroll down to `Network settings`
    -  Press `Edit` to edit the configuration.
    -  Select the VPC that was created in the previous steps
@@ -89,7 +89,8 @@ the final step.
 2.1 Create VPC in Aiven console
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Login to Aiven console, select "VPC" in the left panel and create project VPC
+Login to Aiven console, select "VPC" in the left panel and create project VPC in any region in AWS cloud. To create a privatelink in other public clouds you must use the `avn` command line.
+For now, we will describe AWS privatelink setup.
 
 .. image:: /images/platform/howto/5858370-aws-privatelink-setup-step-by-step-using-aiven-and-aws-web-console_image2.png
 
