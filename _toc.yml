@@ -92,6 +92,7 @@ entries:
           - file: docs/platform/howto/vnet-peering-azure
           - file: docs/platform/howto/use-aws-privatelinks.rst
           - file: docs/platform/howto/use-azure-privatelink
+          - file: docs/platform/howto/aws-privatelink-setup-step-by-step-using-aiven-and-aws-web-console.rst
       - file: docs/platform/howto/list-monitoring
         title: Monitoring management
         entries:
