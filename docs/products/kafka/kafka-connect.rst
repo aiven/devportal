@@ -14,101 +14,114 @@ Why Apache Kafka® Connect?
 
 Apache Kafka represents the best in class data streaming solution. Apache Kafka Connect allows integrating Apache Kafka with the rest of your data architecture with a configuration file which defines the source and the target of your data.
 
-List of source connectors
--------------------------
+Source connectors
+-----------------
 
-.. card:: **NoSQL**
-    :shadow: md
+.. grid:: 1 2 2 2
 
-    `Couchbase <https://github.com/couchbase/kafka-connect-couchbase>`__
+   .. grid-item-card:: **RDBMS**
+       :margin: 2 2 0 0
+       :shadow: md
 
-    `Official MongoDB® <https://docs.mongodb.com/kafka-connector/current/>`__
+       `Debezium for MySQL <https://debezium.io/docs/connectors/mysql/>`__ 
 
-    `Debezium for MongoDB® <https://debezium.io/docs/connectors/mongodb/>`__
+       :doc:`Debezium for PostgreSQL® <kafka-connect/howto/debezium-source-connector-pg>`
+
+       `Debezium for SQL Server <https://debezium.io/docs/connectors/sqlserver/>`__ 
+
+       `JDBC <https://github.com/aiven/aiven-kafka-connect-jdbc/blob/master/docs/source-connector.md>`__ 
+
+   .. grid-item-card:: **Streaming**
+       :shadow: md
+       :margin: 2 2 0 0
+
+       `Google Cloud Pub/Sub <https://github.com/GoogleCloudPlatform/pubsub/tree/master/kafka-connector>`__ 
+
+       `Google Cloud Pub/Sub Lite <https://github.com/GoogleCloudPlatform/pubsub/>`_ 
+
+       `Stream Reactor Cassandra® <https://docs.lenses.io/connectors/source/cassandra.html>`__
+
+       `Stream Reactor MQTT <https://docs.lenses.io/connectors/source/mqtt.html>`__ 
+
+   .. grid-item-card:: **NoSQL**
+       :margin: 2 2 0 0
+       :shadow: md
+
+       `Couchbase <https://github.com/couchbase/kafka-connect-couchbase>`__
+
+       `Official MongoDB® <https://docs.mongodb.com/kafka-connector/current/>`__
+
+       `Debezium for MongoDB® <https://debezium.io/docs/connectors/mongodb/>`__
 
 
-.. card:: **RDBMS**
-    :shadow: md
+Sink connectors
+---------------
 
-    `Debezium for MySQL <https://debezium.io/docs/connectors/mysql/>`__ 
+.. grid:: 1 2 2 2
 
-    :doc:`Debezium for PostgreSQL® <kafka-connect/howto/debezium-source-connector-pg>`
+   .. grid-item-card:: **Filestore**
+      :margin: 2 2 0 0
+      :shadow: md
 
-    `Debezium for SQL Server <https://debezium.io/docs/connectors/sqlserver/>`__ 
+      :doc:`Aiven for Apache Kafka® S3 Sink Connector <kafka-connect/howto/s3-sink-connector-aiven>`
 
-    `JDBC <https://github.com/aiven/aiven-kafka-connect-jdbc/blob/master/docs/source-connector.md>`__ 
+      `Confluent Amazon S3 Sink <https://developer.aiven.io/docs/products/kafka/kafka-connect/howto/s3-sink-connector-confluent>`__
 
-.. card:: **Streaming**
-    :shadow: md
+      :doc:`Google Cloud Storage </docs/products/kafka/kafka-connect/howto/gcs-sink>`
 
-    `Google Cloud Pub/Sub <https://github.com/GoogleCloudPlatform/pubsub/tree/master/kafka-connector>`__ 
+   .. grid-item-card:: **NoSQL**
+       :margin: 2 2 0 0
+       :shadow: md
 
-    `Google Cloud Pub/Sub Lite <https://github.com/GoogleCloudPlatform/pubsub/>`_ 
+       `Couchbase® <https://github.com/couchbase/kafka-connect-couchbase>`__
 
-    `Stream Reactor Cassandra® <https://docs.lenses.io/connectors/source/cassandra.html>`__
+       `Official MongoDB® <https://docs.mongodb.com/kafka-connector/current/>`__
 
-    `Stream Reactor MQTT <https://docs.lenses.io/connectors/source/mqtt.html>`__ 
+       :doc:`OpenSearch® </docs/products/kafka/kafka-connect/howto/opensearch-sink>`
 
-List of sink connectors
------------------------
+       `OpenSearch® <https://github.com/aiven/opensearch-connector-for-apache-kafka/blob/main/docs/opensearch-sink-connector-config-options.rst>`_ |preview|
 
-.. card:: **Filestore**
-   :shadow: md
+       :doc:`Elasticsearch </docs/products/kafka/kafka-connect/howto/elasticsearch-sink>`
 
-   :doc:`Aiven for Apache Kafka® S3 Sink Connector <kafka-connect/howto/s3-sink-connector-aiven>`
+   .. grid-item-card:: **RDBMS**
+       :margin: 2 2 0 0
+       :shadow: md
 
-   `Confluent Amazon S3 Sink <https://developer.aiven.io/docs/products/kafka/kafka-connect/howto/s3-sink-connector-confluent>`__
+       `JDBC <https://github.com/aiven/aiven-kafka-connect-jdbc/blob/master/docs/sink-connector.md>`__
 
-   :doc:`Google Cloud Storage </docs/products/kafka/kafka-connect/howto/gcs-sink>`
+   .. grid-item-card:: **Data Warehouse**
+       :margin: 2 2 0 0
+       :shadow: md
 
-.. card:: **NoSQL**
-    :shadow: md
+       `Google BigQuery <https://github.com/confluentinc/kafka-connect-bigquery>`__
 
-    `Couchbase® <https://github.com/couchbase/kafka-connect-couchbase>`__
+       `Snowflake <https://docs.snowflake.net/manuals/user-guide/kafka-connector.html>`__ |preview|
 
-    `Official MongoDB® <https://docs.mongodb.com/kafka-connector/current/>`__
+   .. grid-item-card:: **Streaming**
+       :margin: 2 2 0 0
+       :shadow: md
 
-    :doc:`OpenSearch® </docs/products/kafka/kafka-connect/howto/opensearch-sink>`
+       `Google Cloud Pub/Sub <https://github.com/GoogleCloudPlatform/pubsub/>`__
 
-    `OpenSearch® <https://github.com/aiven/opensearch-connector-for-apache-kafka/blob/main/docs/opensearch-sink-connector-config-options.rst>`_ |preview|
+       `Google Cloud Pub/Sub Lite <https://github.com/GoogleCloudPlatform/pubsub/>`_
 
-    :doc:`Elasticsearch </docs/products/kafka/kafka-connect/howto/elasticsearch-sink>`
+       `Stream Reactor Cassandra® <https://docs.lenses.io/connectors/sink/cassandra.html>`__
 
-.. card:: **RDBMS**
-    :shadow: md
+       `Stream Reactor InfluxDB® <https://docs.lenses.io/connectors/sink/influx.html>`__
 
-    `JDBC <https://github.com/aiven/aiven-kafka-connect-jdbc/blob/master/docs/sink-connector.md>`__
+       `Stream Reactor MongoDB® <https://docs.lenses.io/connectors/sink/mongo.html>`__
 
-.. card:: **Data Warehouse**
-    :shadow: md
+       `Stream Reactor MQTT <https://docs.lenses.io/connectors/sink/mqtt.html>`__
 
-    `Google BigQuery <https://github.com/confluentinc/kafka-connect-bigquery>`__
+       `Stream Reactor Redis®* <https://docs.lenses.io/connectors/sink/redis.html>`__
 
-    `Snowflake <https://docs.snowflake.net/manuals/user-guide/kafka-connector.html>`__ |preview|
+   .. grid-item-card:: **Other**
+       :margin: 2 2 0 0
+       :shadow: md
 
-.. card:: **Streaming**
-    :shadow: md
+       `HTTP <https://github.com/aiven/aiven-kafka-connect-http>`__ |preview|
 
-    `Google Cloud Pub/Sub <https://github.com/GoogleCloudPlatform/pubsub/>`__
-
-    `Google Cloud Pub/Sub Lite <https://github.com/GoogleCloudPlatform/pubsub/>`_
-
-    `Stream Reactor Cassandra® <https://docs.lenses.io/connectors/sink/cassandra.html>`__
-
-    `Stream Reactor InfluxDB® <https://docs.lenses.io/connectors/sink/influx.html>`__
-
-    `Stream Reactor MongoDB® <https://docs.lenses.io/connectors/sink/mongo.html>`__
-
-    `Stream Reactor MQTT <https://docs.lenses.io/connectors/sink/mqtt.html>`__
-
-    `Stream Reactor Redis®* <https://docs.lenses.io/connectors/sink/redis.html>`__
-
-.. card:: **Other**
-    :shadow: md
-
-    `HTTP <https://github.com/aiven/aiven-kafka-connect-http>`__ |preview|
-
-    `Splunk <https://github.com/splunk/kafka-connect-splunk>`__
+       `Splunk <https://github.com/splunk/kafka-connect-splunk>`__
 
 
 
