@@ -26,7 +26,7 @@ question.
 
 For example, available memory and CPU configurations may depend on restrictions imposed by the cloud provider and the instance types available in the region.
 
-Please feel free to contact us via Intercom or sales@Aiven.io for a quote and the availability of a custom plan.
+Please feel free to contact us via sales@Aiven.io for a quote and the availability of a custom plan.
 
 Custom plan request
 -------------------
