@@ -14,7 +14,7 @@ To use AWS Assume role credentials in the S3 sink connector, you need to:
 Request a unique IAM user from Aiven support
 --------------------------------------------
 
-Every customer in Aiven has a dedicated IAM user. Therefore, there are no shared credentials and roles among customers, and a `cross-account role <https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html>`_ provides access to one Aiven project only. You can request an IAM user and the `External ID <https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html>`_ (the role unique identifier) by contacting the Aiven support at support@aiven.io.
+Every customer in Aiven has a dedicated IAM user. Therefore, there are no shared credentials and roles among customers, and a `cross-account role <https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html>`_ provides access to one Aiven project only. You can request an IAM user and the `External ID <https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html>`_ (the role unique identifier) by contacting the Aiven support at ``support@aiven.io``.
 
 The following is a sample IAM user and External ID:
 
