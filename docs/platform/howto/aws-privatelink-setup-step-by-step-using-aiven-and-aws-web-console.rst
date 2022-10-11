@@ -38,32 +38,31 @@ the final step.
 1.1 AWS VPC management console:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Create VPC - pick a CIDR
+-  Create VPC - pick a CIDR:
+   -  In the search box in AWS console, search for VPC and open the VPC Service. A VPC Dashboard will open.
+   -  Press on the `Create VPC` button and choose `VPC and more`
+   -  In the `IPv4 CIDR block` choose a CIDR, i.e. 10.11.0.0/20 and press `Create VPC`.
+   -  After creation of the VPC, press the `X` to close the VPC workflow window and go back to `VPC dashboard`.
 
--  Create subnet - also pick a CIDR
+-  Create subnet - also pick a CIDR:
+   
+   - In `VPC dashboard` press on `Your VPCs` and identify the VPC and the region you want to work with and remember its `VPC ID`.
+   - In the left panel, select `Subnets`, sort the subnets by `VPC`
+   - select the subnet that refer to the VPC that you just created and edit that by clicking upper right corner "Actions" → "Edit subnet settings" →"Auto-assign IP settings", and tick "Enable auto-assign public IPv4 address". At the bottom of the page, press `Save`.
+   - Do this for all the subnets referring to the VPC.
+   - Go back to the `VPC dashboard` by navigating back to `VPC`.
 
-   -  Edit the subnet, upper right corner "Actions" → "Edit subnet
-      settings" →"Auto-assign IP settings", and tick "Enable auto-assign
-      public IPv4 address"
+-  Route table - DO NOT create new route table, as it should be created automatically
 
--  Route table - DO NOT create new route table, as it should be created
-   automatically
+-  Internet gateway, a new internet gateway is automatically created and attached to the VPC when you created the VPC
 
--  Create Internet gateway, and attach it to the VPC
+-  A `default` security group is also created automatically upon creation of the VPC
 
--  At route table, edit route to add Internet gateway (destination
-   0.0.0.0/0, target: the internet gateway just created)
-
--  DO NOT create new security group - the "default" one will be created
-   automatically.
-
--  At the "default" security group for the VPC
-
-   -  Keep the default "allow" source from the security group itself,
-      otherwise machines in the same security group cannot talk to each
-      other.
-
-   -  Edit inbound rules to allow inbound SSH.
+-  To allow SSH connectivity, select `Security groups` on the left panel
+  
+   -  select the `Security group ID` that refers to the VPC you are working on.
+   -  Press the button `Edit inbound rules` and select `SSH` in the `Type` field drop down list.
+   -  press on `Save rules` and exit
 
 .. _h_cf3bb023be:
 
@@ -80,7 +79,7 @@ the final step.
 
 .. _h_9950f9b97e:
 
-2. Create (Aiven) project VPC and Aiven service
+1. Create (Aiven) project VPC and Aiven service
 -----------------------------------------------
 
 .. _h_eb163399cb:
