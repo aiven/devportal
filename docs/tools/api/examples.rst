@@ -123,7 +123,7 @@ The following is a sample response:
         "geo_region": "africa"
       },
 
-For most endpoints where a cloud is used as an input, the `cloud_name` from this result is the field to use.
+For most endpoints where a cloud is used as an input, the ``cloud_name`` from this result is the field to use.
 
 More endpoints
 --------------
