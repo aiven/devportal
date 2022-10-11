@@ -2,9 +2,9 @@ Use AWS IAM assume role credentials provider
 ============================================
 
 
-The :doc:`Apache Kafka® S3 sink connector by Aiven <s3-sink-connector-aiven>` allows you to move data from an Aiven for Apache Kafka® cluster to Amazon S3 for long term storage. The connection between the connector and the S3 bucket can be managed either via long-term AWS credentials ``ACCESS_KEY_ID`` and ``SECRET_ACCESS_KEY``, or using `AWS Assume role credentials <https://docs.aws.amazon.com/sdkref/latest/guide/feature-assume-role-credentials.html>`_ which request a short-term credential every time the connector has a task to store data to an S3 bucket.
+The :doc:`Apache Kafka® S3 sink connector by Aiven <s3-sink-connector-aiven>` allows you to move data from an Aiven for Apache Kafka® cluster to Amazon S3 for long term storage. The connection between the connector and the S3 bucket can be managed either via long-term AWS credentials (``ACCESS_KEY_ID`` and ``SECRET_ACCESS_KEY``), or using `AWS Assume role credentials <https://docs.aws.amazon.com/sdkref/latest/guide/feature-assume-role-credentials.html>`_ which request a short-term credential every time the connector has a task to store data to an S3 bucket.
 
-To use AWS Assume role credentials in the S3 sink connector need to:
+To use AWS Assume role credentials in the S3 sink connector, you need to:
 
 * Request a unique IAM user from Aiven support
 * Create an AWS cross-account access role
@@ -14,19 +14,19 @@ To use AWS Assume role credentials in the S3 sink connector need to:
 Request a unique IAM user from Aiven support
 --------------------------------------------
 
-Every customer in Aiven has a dedicated IAM user, therefore there are no share credentials and roles among customers, and a `cross-account role <https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html>`_ provides access to one Aiven project only. You can request an IAM user and the `External Id <https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html>`_ (the role unique identifier) by contacting the Aiven support at support@Aiven.io.
+Every customer in Aiven has a dedicated IAM user. Therefore, there are no shared credentials and roles among customers, and a `cross-account role <https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html>`_ provides access to one Aiven project only. You can request an IAM user and the `External ID <https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html>`_ (the role unique identifier) by contacting the Aiven support at support@aiven.io.
 
-The following is a sample IAM user and External Id:
+The following is a sample IAM user and External ID:
 
 * IAM user: ``arn:aws:iam::012345678901:user/sample-project-user``
-* External Id: ``2f401145-06a0-4938-8e05-2d67196a0695``
+* External ID: ``2f401145-06a0-4938-8e05-2d67196a0695``
 
 Create an AWS cross-account access role
 ---------------------------------------
 
 To create a cross-account access role:
 
-1. Login in the AWS Console and navigate to **IAM** -> **Roles** -> **Create role**
+1. Log in to the AWS Console and navigate to **IAM** -> **Roles** -> **Create role**
 2. Select **Another AWS account** as a type of trusted entity 
 3. Specify the **Account ID**
 
@@ -34,10 +34,10 @@ To create a cross-account access role:
 
     The **Account ID** is the numerical string contained in the IAM user between ``aws:iam::`` and ``:user/``. 
     
-    In the above example is ``012345678901``.
+    In the above example, it is ``012345678901``.
 
-4. Select an option **Require external ID** and paste the External Id
-5. Select permissions that allow writing to an S3 bucket, the following permissions are needed:
+4. Select an option **Require external ID** and paste the External ID
+5. Select permissions that allow writing to an S3 bucket. The following permissions are needed:
 
    * ``s3:GetObject``
    * ``s3:PutObject``
@@ -45,13 +45,13 @@ To create a cross-account access role:
    * ``s3:ListMultipartUploadParts``
    * ``s3:ListBucketMultipartUploads``
 
-6. Optionally add tags
-7. Specify a name for the role. As example ``AivenKafkaConnectSink``
+6. Optionally, add tags
+7. Specify a name for the role. As an example, ``AivenKafkaConnectSink``
 8. To further secure the setting and limit access, you associate the newly created role to a unique full **IAM user** name. 
 
    You can do so, by editing the newly created role (``AivenKafkaConnectSink``) and navigate to **Trust relationships** -> **Edit trust relationship**
 
-Create an Kafka Connect S3 Sink connector
+Create a Kafka Connect S3 Sink connector
 -----------------------------------------
 
 You can view all the necessary steps to create an S3 sink connector in the :doc:`dedicated documentation <s3-sink-connector-aiven>`. To use the IAM assume role credentials provider, you simply need to remove, in the connector configuration, the references to:
