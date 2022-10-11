@@ -33,6 +33,12 @@
 
 **batch_size_fail_threshold_in_kb** Fail any multiple-partition batch exceeding this value. 50kb (10x warn threshold) by default.
 
+``datacenter``
+~~~~~~~~~~~~~~
+*string*
+
+**Cassandra datacenter name** Name of the datacenter to which nodes of this service belong. Can be set only when creating the service.
+
 
 
 ``migrate_sstableloader``
@@ -40,6 +46,14 @@
 *boolean*
 
 **Migration mode for the sstableloader utility** Sets the service into migration mode enabling the sstableloader utility to be used to upload Cassandra data files. Available only on service create.
+
+
+
+``service_to_join_with``
+------------------------
+*string*
+
+**Name of the service to form a bigger cluster with** When bootstrapping, instead of creating a new Cassandra cluster try to join an existing one from another service. Can only be set on service creation.
 
 
 
