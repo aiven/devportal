@@ -38,7 +38,14 @@ Handling JSON responses
 -----------------------
 
 The `Aiven API <https://api.aiven.io/doc/>`_ returns information in JSON format, sometimes a lot of
-information. This is perfect for machines but not ideal for humans. We like to
-use a tool like ``jq`` (https://stedolan.github.io/jq/) to make things easier to read and manipulate.
+information. This is perfect for machines but not ideal for humans. Try a tool
+like ``jq`` (https://stedolan.github.io/jq/) to make things easier to read and
+manipulate.
 
+Further reading
+---------------
 
+Here are some more resources for you:
+
+* Some `API examples on the Aiven blog <https://aiven.io/blog/your-first-aiven-api-call>`_. This post also includes information about importing our OpenAPI description into Postman.
+* Learn more about the :doc:`/docs/tools/cli`.
