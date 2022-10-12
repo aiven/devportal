@@ -75,6 +75,7 @@ entries:
           - file: docs/platform/howto/manage-vpc-peering
           - file: docs/platform/howto/vpc-peering-gcp
           - file: docs/platform/howto/use-aws-privatelinks.rst
+          - file: docs/platform/howto/use-azure-privatelinks
       - file: docs/platform/howto/list-monitoring
         title: Monitoring management
         entries:
