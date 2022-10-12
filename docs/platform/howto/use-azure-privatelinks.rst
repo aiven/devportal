@@ -130,11 +130,11 @@ To enable Private Link access in the Aiven Console:
 #. Toggle the switch next to the components to set the values to true.
 #. Click **Save advanced configuration**.
 
-Each service component can be controlled separately. For example, you can enable Private Link access for Kafka, while allowing Kafka Connect to only be connected via VNet peering.
+Each service component can be controlled separately. For example, you can enable Private Link access for your Aiven for Apache Kafka® service, while allowing Kafka® Connect to only be connected via VNet peering.
 
 After toggling the values your Private Link resource will be rebuilt with load balancer rules added for the service component's ports.Connection information like the URI or hostname and port to access the service through the private endpoint is available on the service's overview page in the Aiven Console. 
 
-.. note:: For Aiven for Apache Kafka services, the security group for the VPC endpoint must allow ingress in the port range ``10000-31000``. This is to accommodate the pool of Kafka broker ports used in the Private Link implementation.
+.. note:: For Aiven for Apache Kafka® services, the security group for the VPC endpoint must allow ingress in the port range ``10000-31000``. This is to accommodate the pool of Kafka broker ports used in the Private Link implementation.
 
 Update subscription list
 --------------------------
