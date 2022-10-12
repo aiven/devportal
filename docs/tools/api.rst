@@ -26,7 +26,7 @@ API quickstart
 Authentication
 --------------
 
-Some (but not quite all) endpoints require authentication. You'll need an authentication token from the `profile section of your Aiven console <https://console.aiven.io/profile/auth>`_.
+Most (but not all) endpoints require authentication. You'll need an authentication token from the `profile section of your Aiven console <https://console.aiven.io/profile/auth>`_.
 
 Send this token in the header, using a structure like this, and replacing ``TOKEN`` with your actual API token::
 

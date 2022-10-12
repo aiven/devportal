@@ -8,11 +8,13 @@ Limit token expiry
 
 Think about how long the token needs to be valid for; this varies depending on what the token is used for.
 
-* When I am doing a one-off demo or video recording, I set my token to expire after one hour. This means that even if I have exposed the token during my work, it will no longer work by the time the video is published.
+* If you're doing a video recording for a demo, you can set the token to expire in an hour. This means that even if you have exposed the token during your work, it will no longer work by the time the video is published.
 
 * For server side use within the build process, such as on the CI server, a token with long-term validity and/or refresh interval is appropriate.
 
 * For a situation where the token could ever be accessible, keep the expiry time short, and generate a new token for each operation.
+
+The longer a token lives, the higher the risk of exposure. Follow the IT security best practises established by your company and refrain from allowing human users to share the same token.
 
 Use appropriate user accounts
 -----------------------------
