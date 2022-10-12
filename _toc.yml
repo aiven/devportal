@@ -26,6 +26,7 @@ entries:
       - file: docs/platform/concepts/service-memory-limits
       - file: docs/platform/concepts/out-of-memory-conditions
       - file: docs/platform/concepts/static-ips
+      - file: docs/platform/concepts/static-ip-pricing
       - file: docs/platform/concepts/tls-ssl-certificates
       - file: docs/platform/concepts/byoa
       - file: docs/platform/concepts/dynamic-disk-sizing
