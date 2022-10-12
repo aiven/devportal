@@ -32,10 +32,12 @@ To use the ``pg_repack`` extension:
 
 1. Connect to the database as ``avnadmin`` user, and run the following command to create the extension: 
 :: 
+
   CREATE EXTENSION pg_repack;
 
 2. Run the ``pg_repack`` command on the table to reorganize it. 
 ::
+
   pg_repack -k -U avnadmin -h <HOSTNAME> -p <PORT> -d <DATABASENAME> -t <TABLENAME>   
 
 .. note:: 
