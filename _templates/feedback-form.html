@@ -172,11 +172,10 @@
 
       var formData = new FormData(form.get()[0]);
 
-      fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData).toString(),
-      })
+      fetch("https://nzuogyzpvd.execute-api.eu-west-1.amazonaws.com/test/createsubmission", {
+          method: "POST",
+          body: JSON.stringify(Object.fromEntries(formData))
+        })
         .then(function (response) {
           if (response.status >= 400) {
             throw response;
@@ -184,6 +183,9 @@
           $(".feedback").html($("#thankyou").html());
         })
         .catch(function (error) {
+          console.log({
+            error
+          });
           alert("Could not submit feedback, please try again later.");
         });
     }

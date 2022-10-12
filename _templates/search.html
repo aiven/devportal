@@ -92,15 +92,18 @@
     var searchResults = $("#search-results .search");
     var pagination = $("#search-results .pagination");
 
-    $.get("/.netlify/functions/search?" + $.param({ query: query, page: page }))
+    $.get("https://omyro9h0xg.execute-api.eu-west-1.amazonaws.com/test/search?" + $.param({
+        query: query,
+        page: page
+      }))
       .done(function (data) {
         if (data.resultCount === 0) {
           searchSummary.html("Your search did not match any documents.");
         } else {
           searchSummary.html(
             "Search finished, found " +
-              data.resultCount +
-              " page(s) matching the search query."
+            data.resultCount +
+            " page(s) matching the search query."
           );
         }
 
