@@ -1,5 +1,5 @@
 Copy data from OpenSearch to Aiven for OpenSearch® using ``elasticsearch-dump``
-===================================================
+===============================================================================
 
 It is a good practice to perform backups of your OpenSearch® data to another storage service. This way you can access your data and restore it if something unexpected happens to it. 
 
@@ -59,8 +59,6 @@ This is how you can copy your index data from an OpenSearch cluster (can be in A
     --type=data
 
 When the dump is completed, you can check that the index is available in the OpenSearch service you send it to. You will be able to find it under the **Indexes** tab in your Aiven console.
-
-.. _copy-data-from-os-to-s3:
 
 Resources
 ---------

@@ -1,6 +1,6 @@
 Troubleshooting
 ===============
 
-A collection of howto troubleshoot issues with Aiven Terraform.
+A collection of articles to help troubleshoot issues with Aiven Terraform.
 
 .. tableofcontents::
