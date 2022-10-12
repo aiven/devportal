@@ -37,4 +37,4 @@ Since it's migrated off Netlify, certains functions are lost (needs further inve
 
 **Question**: How do we calculate the cost of our service (like OpenSearch and PostgreQL)? Is it a factor?
 
-**Reference**: (AWS Lambda pricing)[https://aws.amazon.com/lambda/pricing/] and (AWS API Gateway pricing)[https://aws.amazon.com/api-gateway/pricing/]
+**Reference**: [AWS Lambda pricing](https://aws.amazon.com/lambda/pricing/) and [AWS API Gateway pricing](https://aws.amazon.com/api-gateway/pricing/)
