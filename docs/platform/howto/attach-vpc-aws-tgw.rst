@@ -7,7 +7,7 @@ By creating a Transit Gateway VPC attachment, services in an Aiven Project VPC c
 Set up a project VPC
 --------------------
 
-Create a VPC on the Aiven platform in the same region as your Transit Gateway is located in.
+Create a VPC on the Aiven platform in the same region as your Transit Gateway.
 
 Set up a VPC attachment for your Project VPC
 ------------------------------------------------
@@ -21,8 +21,8 @@ Locate your AWS account and AWS Transit Gateway ID
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To attach a VPC to a Transit Gateway in a different account, the AWS account ID must be included. 
-This ID is 12-digits and will be referred below to as ``$user_account_id``. 
-In addition the ID of the Transit Gateway itself is needed. This is has the format ``tgw-...`` with the dots being 17 hexadecimal characters. 
+This ID is 12-digits and will be referred to below as ``$user_account_id``.
+In addition the ID of the Transit Gateway itself is needed. This has the format ``tgw-...`` with the dots being 17 hexadecimal characters.
 It will be referred to as ``$user_tgw_id``.
 
 Share the AWS Transit Gateway with the Aiven AWS account
@@ -41,7 +41,7 @@ Use ``avn vpc list`` to find the ID for your Project VPC. The ``project_vpc_id v
 Determine the IP ranges to route from the Project VPC to the AWS Transit Gateway
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-While a Transit Gateway has a route table of its own, and will by default route traffic to each attached network (directly to attached VPC or indirectly via VPN attachments), attached route tables of the VPC need to be updated to include the TGW as a target for any IP range (CIDR) that should be routed using the VPC attachment. These IP ranges must be configured when creating the attachment for an Aiven Project VPC.
+While a Transit Gateway has a route table of its own, and will by default route traffic to each attached network (directly to attached VPC or indirectly via VPN attachments), the attached route tables of the VPC need to be updated to include the TGW as a target for any IP range (CIDR) that should be routed using the VPC attachment. These IP ranges must be configured when creating the attachment for an Aiven Project VPC.
 The IPv4 range will be referred below to as ``$user_peer_network_cidr``.
 
 Create Aiven peering connection
@@ -51,7 +51,11 @@ A Transit Gateway VPC attachment is created by making a request to the Aiven API
 
 .. code-block:: shell
 
-    avn vpc peering-connection create --project-vpc-id $aws_vpc --peer-cloud-account $user_account_id --peer-vpc $user_tgw_id --user-peer-network-cidr $user_peer_network_cidr
+    avn vpc peering-connection create \
+      --project-vpc-id $aws_vpc \
+      --peer-cloud-account $user_account_id \
+      --peer-vpc $user_tgw_id \
+      --user-peer-network-cidr $user_peer_network_cidr
 
 Note that you can use the ``--user-peer-network-cidr`` argument multiple times to define more than one peer network CIDR. It's also possible to create the attachment without any CIDRs and add them later (though the attachment will be not be of any use until that is done since no addresses will be routed through the TGW from the Project VPC).
 
@@ -60,10 +64,13 @@ Accept AWS Transit Gateway VPC attachment
 
 After running ``vpc peering-connection create`` command the state of the Aiven peering connection is ``APPROVED``. Once the Aiven platform has built the connection by creating an AWS Transit Gateway VPC attachment, the state changes to ``PENDING_PEER`` if everything went well. Otherwise the state information will indicate why the attachment failed to be created. Note that it may take up to a few minutes before building the attachment has completed.
 
-The state can be checked for using:
+The state can be checked using:
 
 .. code-block:: shell
 
-    avn vpc peering-connection --project-vpc-id $project_vpc_id --peer-cloud-account $user_account_id --peer-vpc $user_tgw_id -v
+    avn vpc peering-connection \
+      --project-vpc-id $project_vpc_id \
+      --peer-cloud-account $user_account_id \
+      --peer-vpc $user_tgw_id -v
 
 Once the state is ``PENDING_PEER``, the output will contain a message instructing to accept a VPC attachment in your AWS account. The Aiven platform monitors the attachment until it has been accepted, and once that is detected the state changes to ``ACTIVE`` indicating the VPC attachment is operational, the Project VPC route table has been updated to route ``$user_peer_network_cidr`` to the Transit Gateway, and service nodes in the Project VPC have opened firewall access to those networks.
