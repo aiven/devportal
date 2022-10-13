@@ -91,7 +91,7 @@ Due to a limited availability, the following AZ are not included in Aiven Produc
 
 - No issues with availability zones so this actually can be enabled.
 
-        - m150/standard_ds15_v2 used in influxdb/startup-150 is not available in the region
+        - m150/standard_ds15_v2 used in *influxdb/startup-150* is not available in the region
         - m150/standard_d15_v2 is not available in the region
 
 - azure-india-central
@@ -123,7 +123,7 @@ Due to a limited availability, the following AZ are not included in Aiven Produc
 
     - No issues with availability zones so this actually can be enabled.
 
-        - m150/standard_ds15_v2 used in influxdb/startup-150 is not available in the region
+        - m150/standard_ds15_v2 used in *influxdb/startup-150* is not available in the region
         - m150/standard_d15_v2 is not available in the region
 
 - azure-southcentralus
