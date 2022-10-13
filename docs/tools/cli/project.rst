@@ -1,3 +1,5 @@
+.. _avn-manage-project:
+
 ``avn project``
 ==================================
 

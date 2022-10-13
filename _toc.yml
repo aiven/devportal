@@ -41,6 +41,7 @@ entries:
       - file: docs/platform/howto/list-user
         title: User/Access management
         entries:
+          - file: docs/platform/howto/manage-project
           - file: docs/platform/howto/change-your-email-address
           - file: docs/platform/howto/create_authentication_token
           - file: docs/platform/howto/create_new_service_user
