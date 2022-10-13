@@ -28,12 +28,12 @@ Cloud providers in Aiven with the AZ support are the following:
 
 - :ref:`UpCloud<UpCloud Availability Zone>`
 
-Smart AZ for Apache Kafka
+Smart AZ for Apache Kafka®
 --------------------------
 
-On top of spreading service's nodes across the AZs of a cloud region, Aiven automatically balances replicas of your Apache Kafka partitions into different AZs. 
+On top of spreading service's nodes across the AZs of a cloud region, Aiven automatically balances replicas of your Apache Kafka® partitions into different AZs. 
 
-Since Aiven automatically rebalances the data in your Apache Kafka cluster, your data remains fully available when a node or a whole AZ is lost.
+Since Aiven automatically rebalances the data in your Apache Kafka® cluster, your data remains fully available when a node or a whole AZ is lost.
 
 UpCloud AZ
 ----------
@@ -47,9 +47,9 @@ Read more
 - :doc:`High availability </docs/products/postgresql/concepts/high-availability>`
 - :doc:`Create and use read-only replicas </docs/products/postgresql/howto/create-read-replica>`
 - :doc:`Migrate service to another cloud or region <docs/platform/howto/migrate-services-cloud-region>`
-- :doc:`Aiven for Apache Kafka® MirrorMaker 2 </docs/products/kafka/kafka-mirrormaker>`
-- Cloudera's `A look inside Kafka MirrorMaker 2 <https://blog.cloudera.com/a-look-inside-kafka-mirrormaker-2/>`_
-- :doc:`Configure AWS for an S3 sink connector </docs/products/kafka/kafka-connect/howto/s3-sink-prereq>`
-- :doc:`MirrorMaker 2<../../products/kafka/kafka-mirrormaker>`
+- :doc:`Aiven for Apache Kafka®® MirrorMaker 2 </docs/products/Kafka®/Kafka®-mirrormaker>`
+- Cloudera's `A look inside Kafka® MirrorMaker 2 <https://blog.cloudera.com/a-look-inside-Kafka®-mirrormaker-2/>`_
+- :doc:`Configure AWS for an S3 sink connector </docs/products/Kafka®/Kafka®-connect/howto/s3-sink-prereq>`
+- :doc:`MirrorMaker 2<../../products/Kafka®/Kafka®-mirrormaker>`
 - :doc:`OpenSearch backups </docs/products/opensearch/concepts/backups>`
 - :doc:`MySQL Backups </docs/products/mysql/concepts/mysql-backups>`
