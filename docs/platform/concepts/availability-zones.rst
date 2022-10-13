@@ -38,7 +38,7 @@ Since Aiven automatically rebalances the data in your Apache Kafka® cluster, yo
 UpCloud AZ
 ----------
 
-With Upcloud, it only applies to *upcloud-fi-hel*, where Upcloud provides datacenters (*fi-hel1* and *fi-hel2*). For example, with a two-node plan, it will result in one of the servers in *fi-hel1* and the other in *fi-hel2*.
+With UpCloud, it only applies to ``upcloud-fi-hel``, where UpCloud provides datacenters (*fi-hel1* and *fi-hel2*). For example, with a two-node plan, it will result in one of the servers in *fi-hel1* and the other in *fi-hel2*.
 
 Azure AZ availability
 ---------------------
