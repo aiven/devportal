@@ -23,13 +23,13 @@ Source connectors
        :margin: 2 2 0 0
        :shadow: md
 
-       `Debezium for MySQL <https://debezium.io/docs/connectors/mysql/>`__ 
+       :doc:`Debezium for MySQL <kafka-connect/howto/debezium-source-connector-mysql>` 
 
        :doc:`Debezium for PostgreSQL® <kafka-connect/howto/debezium-source-connector-pg>`
 
-       `Debezium for SQL Server <https://debezium.io/docs/connectors/sqlserver/>`__ 
+       :doc:`Debezium for SQL Server <kafka-connect/howto/debezium-source-connector-sql-server>`
 
-       `JDBC <https://github.com/aiven/aiven-kafka-connect-jdbc/blob/master/docs/source-connector.md>`__ 
+       :doc:`JDBC <kafka-connect/howto/jdbc-source-connector-pg>` 
 
    .. grid-item-card:: **Streaming**
        :shadow: md
@@ -39,7 +39,7 @@ Source connectors
 
        `Google Cloud Pub/Sub Lite <https://github.com/GoogleCloudPlatform/pubsub/>`_ 
 
-       `Stream Reactor Cassandra® <https://docs.lenses.io/connectors/source/cassandra.html>`__
+       :doc:`Stream Reactor Cassandra® <kafka-connect/howto/cassandra-streamreactor-source>`
 
        `Stream Reactor MQTT <https://docs.lenses.io/connectors/source/mqtt.html>`__ 
 
@@ -49,9 +49,9 @@ Source connectors
 
        `Couchbase <https://github.com/couchbase/kafka-connect-couchbase>`__
 
-       `Official MongoDB® <https://docs.mongodb.com/kafka-connector/current/>`__
+       :doc:`Official MongoDB® <kafka-connect/howto/mongodb-poll-source-connector>`
 
-       `Debezium for MongoDB® <https://debezium.io/docs/connectors/mongodb/>`__
+       :doc:`Debezium for MongoDB® <kafka-connect/howto/debezium-source-connector-mongodb>`
 
 
 Sink connectors
@@ -65,9 +65,9 @@ Sink connectors
 
       :doc:`Aiven for Apache Kafka® S3 Sink Connector <kafka-connect/howto/s3-sink-connector-aiven>`
 
-      `Confluent Amazon S3 Sink <https://developer.aiven.io/docs/products/kafka/kafka-connect/howto/s3-sink-connector-confluent>`__
+      :doc:`Confluent Amazon S3 Sink <kafka-connect/howto/s3-sink-connector-confluent>`
 
-      :doc:`Google Cloud Storage </docs/products/kafka/kafka-connect/howto/gcs-sink>`
+      :doc:`Google Cloud Storage <kafka-connect/howto/gcs-sink>`
 
    .. grid-item-card:: **NoSQL**
        :margin: 2 2 0 0
@@ -75,27 +75,25 @@ Sink connectors
 
        `Couchbase® <https://github.com/couchbase/kafka-connect-couchbase>`__
 
-       `Official MongoDB® <https://docs.mongodb.com/kafka-connector/current/>`__
+       :doc:`Official MongoDB® <kafka-connect/howto/mongodb-sink-mongo>`
 
-       :doc:`OpenSearch® </docs/products/kafka/kafka-connect/howto/opensearch-sink>`
+       :doc:`OpenSearch® <kafka-connect/howto/opensearch-sink>` |preview|
 
-       `OpenSearch® <https://github.com/aiven/opensearch-connector-for-apache-kafka/blob/main/docs/opensearch-sink-connector-config-options.rst>`_ |preview|
-
-       :doc:`Elasticsearch </docs/products/kafka/kafka-connect/howto/elasticsearch-sink>`
+       :doc:`Elasticsearch <kafka-connect/howto/elasticsearch-sink>`
 
    .. grid-item-card:: **RDBMS**
        :margin: 2 2 0 0
        :shadow: md
 
-       `JDBC <https://github.com/aiven/aiven-kafka-connect-jdbc/blob/master/docs/sink-connector.md>`__
+       :doc:`JDBC <kafka-connect/howto/jdbc-sink>`
 
    .. grid-item-card:: **Data Warehouse**
        :margin: 2 2 0 0
        :shadow: md
 
-       `Google BigQuery <https://github.com/confluentinc/kafka-connect-bigquery>`__
+       :doc:`Google BigQuery <kafka-connect/howto/gcp-bigquery-sink>`
 
-       `Snowflake <https://docs.snowflake.net/manuals/user-guide/kafka-connector.html>`__ |preview|
+       :doc:`Snowflake <kafka-connect/howto/snowflake-sink>`
 
    .. grid-item-card:: **Streaming**
        :margin: 2 2 0 0
@@ -105,21 +103,21 @@ Sink connectors
 
        `Google Cloud Pub/Sub Lite <https://github.com/GoogleCloudPlatform/pubsub/>`_
 
-       `Stream Reactor Cassandra® <https://docs.lenses.io/connectors/sink/cassandra.html>`__
+       :doc:`Stream Reactor Cassandra® <kafka-connect/howto/cassandra-streamreactor-sink>`
 
        `Stream Reactor InfluxDB® <https://docs.lenses.io/connectors/sink/influx.html>`__
 
-       `Stream Reactor MongoDB® <https://docs.lenses.io/connectors/sink/mongo.html>`__
+       :doc:`Stream Reactor MongoDB® <kafka-connect/howto/mongodb-sink-lenses>`
 
        `Stream Reactor MQTT <https://docs.lenses.io/connectors/sink/mqtt.html>`__
 
-       `Stream Reactor Redis®* <https://docs.lenses.io/connectors/sink/redis.html>`__
+       :doc:`Stream Reactor Redis®* <kafka-connect/howto/redis-streamreactor-sink>`
 
    .. grid-item-card:: **Other**
        :margin: 2 2 0 0
        :shadow: md
 
-       `HTTP <https://github.com/aiven/aiven-kafka-connect-http>`__ |preview|
+       :doc:`HTTP <kafka-connect/howto/http-sink>`
 
        `Splunk <https://github.com/splunk/kafka-connect-splunk>`__
 
@@ -164,3 +162,8 @@ If you are new to Apache Kafka Connect, try these resources to learn more:
 
 * Our code samples repository, to get you started quickly: https://github.com/aiven/aiven-examples
 
+
+------
+
+*Elasticsearch is a trademark of Elasticsearch B.V., registered in the U.S. and in other countries.*
+*Couchbase is a trademark of Couchbase, Inc.*
