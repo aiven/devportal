@@ -12,9 +12,12 @@ exceptions:
   - Amazon Web Services
   - APIs
   - Aiven
+  - Aiven Production
   - Apache
   - AWS Transit Gateway
   - Auth0
+  - AZ
+  - AZs
   - Boot
   - Business
   - BYOA
