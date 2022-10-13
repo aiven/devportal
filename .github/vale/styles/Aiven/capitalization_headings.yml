@@ -13,6 +13,7 @@ exceptions:
   - APIs
   - Aiven
   - Apache
+  - AWS Transit Gateway
   - Auth0
   - Boot
   - Business

@@ -69,6 +69,7 @@ entries:
           - file: docs/platform/howto/public-access-in-vpc.rst
           - file: docs/platform/howto/static-ip-addresses.rst
           - file: docs/platform/howto/private-ip-resolution.rst
+          - file: docs/platform/howto/attach-vpc-aws-tgw
           - file: docs/platform/howto/manage-vpc-peering
           - file: docs/platform/howto/vpc-peering-gcp
           - file: docs/platform/howto/use-aws-privatelinks.rst
