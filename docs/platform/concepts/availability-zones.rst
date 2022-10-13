@@ -67,21 +67,16 @@ AZs not in Aiven Production
 Due to a limited availability, the following AZ are not included in Aiven Production:
 
 - azure-eastasia
-
     - Only two zones available for most instance types
 
 - azure-eastus
-
     - Third zone not available for
-
         - a64/standard_l8s_v2
         - a120/standard_l16s_v2
         - a240/standard_l32s_v2
 
 - azure-eastus2
-
     - No zones available for
-
         - m150/standard_d15_v2
         - m150/standard_ds15_v2
         - m150/standard_d15_v2
@@ -89,10 +84,9 @@ Due to a limited availability, the following AZ are not included in Aiven Produc
 
 - azure-germany-westcentral
 
-- No issues with availability zones so this actually can be enabled.
-
-        - m150/standard_ds15_v2 used in ``influxdb/startup-150`` is not available in the region
-        - m150/standard_d15_v2 is not available in the region
+    - No issues with availability zones so this actually can be enabled.
+    - m150/standard_ds15_v2 used in ``influxdb/startup-150`` is not available in the region
+    - m150/standard_d15_v2 is not available in the region
 
 - azure-india-central
 
@@ -152,6 +146,6 @@ Read more
 - :doc:`High availability </docs/products/postgresql/concepts/high-availability>`
 - :doc:`Create and use read-only replicas </docs/products/postgresql/howto/create-read-replica>`
 - :doc:`Migrate service to another cloud or region <docs/platform/howto/migrate-services-cloud-region>`
-- :doc:`Aiven for Apache Kafka® MirrorMaker 2 </docs/products/Kafka/Kafka-mirrormaker>`
+- :doc:`Aiven for Apache Kafka® MirrorMaker 2 </docs/products/kafka/kafka-mirrormaker>`
 - :doc:`OpenSearch backups </docs/products/opensearch/concepts/backups>`
 - :doc:`MySQL Backups </docs/products/mysql/concepts/mysql-backups>`
