@@ -14,6 +14,8 @@ Preface: the logic is stored on AWS Lambda so changing the code locally won't do
 
 ## Search functionality
 
+![Screenshot 2022-10-13 at 11 18 06](https://user-images.githubusercontent.com/110401626/195541905-0095725f-5cf4-4614-8b78-adfff21ca1d5.png)
+
 The search function is now available on AWS Lambda, enabled by AWS API Gateway to turn it into a REST API as a GET request. It's served at for example `https://omyro9h0xg.execute-api.eu-west-1.amazonaws.com/test/search?query=kafka`
 
 The cost for both AWS Lambda and API Gateway should be under 50$ monthly with the assumption that we get 10 million calls.
