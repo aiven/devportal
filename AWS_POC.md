@@ -3,8 +3,8 @@
 Preface: the logic is stored on AWS Lambda so changing the code locally won't do anything. The instruction is just to run the project for demo purpose, the development workflow would be improved / streamlined if we go this route.
 
 - Open an OpenSearch service on Aiven sandbox.
-- Add this line `export ES_URL="[OpenSearch Service URI]"` to the `.bash_profile` or `.z_profile` depending on your setup.
-- Add this line `export PG_URL="[PostgreSQL Service URI]"` to the `.bash_profile` or `.z_profile` depending on your setup.
+- Add this line `export ES_URL="[OpenSearch Service URI]"` to the `.bash_profile` or `.zprofile` depending on your setup.
+- Add this line `export PG_URL="[PostgreSQL Service URI]"` to the `.bash_profile` or `.zprofile` depending on your setup.
 - Follow the [README instructions](https://github.com/aiven/devportal#local-development) to set up a local development.
 - Follow the instructions to create the indices with `make create-index ES_URL=https://opensearch-url/here`, `make index-devportal ES_URL=https://opensearch.url/here`, `make index-helpcenter ES_URL=https://opensearch.url/here`.
 
