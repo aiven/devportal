@@ -40,6 +40,111 @@ UpCloud AZ
 
 With Upcloud, it only applies to *upcloud-fi-hel*, where Upcloud provides datacenters (*fi-hel1* and *fi-hel2*). For example, with a two-node plan, it will result in one of the servers in *fi-hel1* and the other in *fi-hel2*.
 
+Azure AZ availability
+---------------------
+
+AZs in Aiven Production
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Here are Azure AZs available in Aiven Production:
+
+- azure-australiaeast
+- azure-brazilsouth
+- azure-canadacentral
+- azure-centralus
+- azure-france-central
+- azure-korea-central
+- azure-northeurope
+- azure-southeastasia
+- azure-switzerland-north
+- azure-uae-north
+- azure-westeurope
+- azure-westus2
+
+AZs not in Aiven Production
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Due to a limited availability, the following AZ are not included in Aiven Production:
+
+- azure-eastasia
+
+    - Only two zones available for most instance types
+
+- azure-eastus
+
+    - Third zone not available for
+
+        - a64/standard_l8s_v2
+        - a120/standard_l16s_v2
+        - a240/standard_l32s_v2
+
+- azure-eastus2
+
+    - No zones available for
+
+        - m150/standard_d15_v2
+        - m150/standard_ds15_v2
+        - m150/standard_d15_v2
+        - m150/standard_ds15_v2
+
+- azure-germany-westcentral
+
+- No issues with availability zones so this actually can be enabled.
+
+        - m150/standard_ds15_v2 used in influxdb/startup-150 is not available in the region
+        - m150/standard_d15_v2 is not available in the region
+
+- azure-india-central
+
+    - Only one zone available for
+
+        - a64/standard_l8s_v2
+        - a120/standard_l16s_v2
+
+- azure-japaneast
+
+    - No zones available for
+
+        - a64/standard_l8s_v2
+        - a120/standard_l16s_v2
+        - a240/standard_l32s_v2
+        - m150/standard_d15_v2
+        - m150/standard_ds15_v2
+        - m150/standard_d15_v2
+        - m150/standard_ds15_v2
+
+- azure-norway-east
+
+    - No issues with availability zones so this actually can be enabled.
+
+        - m150/standard_d15_v2 is not available in the region
+
+- azure-south-africa-north
+
+    - No issues with availability zones so this actually can be enabled.
+
+        - m150/standard_ds15_v2 used in influxdb/startup-150 is not available in the region
+        - m150/standard_d15_v2 is not available in the region
+
+- azure-southcentralus
+
+    - Only two zones available for
+
+        - a64/standard_l8s_v2
+        - a120/standard_l16s_v2
+
+- azure-uksouth
+
+    - No zones available for
+
+        - a64/standard_l8s_v2
+        - a120/standard_l16s_v2
+        - a240/standard_l32s_v2
+        - m150/standard_d15_v2
+        - m150/standard_ds15_v2
+        - m150/standard_d15_v2
+        - m150/standard_ds15_v2
+
 Read more
 ----------
 
@@ -47,9 +152,6 @@ Read more
 - :doc:`High availability </docs/products/postgresql/concepts/high-availability>`
 - :doc:`Create and use read-only replicas </docs/products/postgresql/howto/create-read-replica>`
 - :doc:`Migrate service to another cloud or region <docs/platform/howto/migrate-services-cloud-region>`
-- :doc:`Aiven for Apache Kafka®® MirrorMaker 2 </docs/products/Kafka®/Kafka®-mirrormaker>`
-- Cloudera's `A look inside Kafka® MirrorMaker 2 <https://blog.cloudera.com/a-look-inside-Kafka®-mirrormaker-2/>`_
-- :doc:`Configure AWS for an S3 sink connector </docs/products/Kafka®/Kafka®-connect/howto/s3-sink-prereq>`
-- :doc:`MirrorMaker 2<../../products/Kafka®/Kafka®-mirrormaker>`
+- :doc:`Aiven for Apache Kafka® MirrorMaker 2 </docs/products/Kafka/Kafka-mirrormaker>`
 - :doc:`OpenSearch backups </docs/products/opensearch/concepts/backups>`
 - :doc:`MySQL Backups </docs/products/mysql/concepts/mysql-backups>`
