@@ -101,4 +101,3 @@ exceptions:
   - Workbench
   - Zapier
   - ZooKeeper
-  - Debezium or Change Data Capture
