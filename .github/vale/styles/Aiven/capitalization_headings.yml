@@ -21,6 +21,7 @@ exceptions:
   - ClickHouse
   - CloudWatch
   - Connect
+  - Cookbook
   - Dashboards
   - Datadog
   - Debezium
