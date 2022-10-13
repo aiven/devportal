@@ -11,7 +11,7 @@ entries:
       title: Concepts
       entries:
       - file: docs/platform/concepts/authentication-tokens
-      - file: docs/platform/concepts/vailability-zones
+      - file: docs/platform/concepts/availability-zones
       - file: docs/platform/concepts/list-billing
         title: Billing
         entries:
