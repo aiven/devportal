@@ -1,0 +1,24 @@
+Access Suspended Due to Past Due Invoice
+===================================================================
+
+How to reactivate suspended account.
+-------------------------------------
+When Aiven Customer has past due bills and didn't set up a payment method they will receive below error while login to console.
+
+ERROR
+Project suspended, access prohibited
+
+In order to have access to project again Customer needs to open a support case with Aiven.
+------------------------------------------------------------------------------------------
+
+ - Please email: support@aiven.io providing below information
+  - Full name
+  - Project name
+  - email assosiated with account
+
+
+Aiven Support after confirming with Billing department will reactivate the project.
+
+Please provide payment method when you get access to the console in order to not face this issue again.
+
+ - Payment method can be added by clicking Billing tab on the left section fo Aiven Console.
