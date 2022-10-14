@@ -12,7 +12,6 @@ exceptions:
   - Amazon Web Services
   - APIs
   - Aiven
-  - Aiven Production
   - Apache
   - AWS Transit Gateway
   - Auth0
