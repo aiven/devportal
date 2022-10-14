@@ -22,7 +22,7 @@ Rename a project
 
 Renaming a project is possible **only** when all the services in the project are powered-off. To rename a project in the `Aiven web console <https://console.aiven.io/>`_:
 
-1. Make sure the respective project is selected from the **Project** drop down.
+1. Select the project from the **Project** drop down.
 2. Click on **Settings**. 
 3. Type in the new project name in the *Project Name* field.
 4. Click on **Save changes**. 
@@ -41,7 +41,7 @@ Delete a project
 
 In order to delete a project, you need to removes the services in it first. Once all the services are removed:
 
-1. Make sure the respective project is selected from the **Project** drop down.
+1. Select the project from the **Project** drop down.
 2. Click on **Settings**.
 3. Click on **Remove project**. 
 
