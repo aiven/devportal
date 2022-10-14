@@ -26,7 +26,7 @@ Cloud providers with AZs available to support your Aiven services are the follow
 
 - Microsoft Azure
 
-- :ref:`UpCloud availability zones`
+- UpCloud
 
 Smart availability zones for Apache Kafka®
 -------------------------------------------
