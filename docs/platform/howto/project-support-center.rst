@@ -3,7 +3,7 @@ Get Support in the Aiven Console
 
 Aiven is committed to providing excellent and responsive support to all of our customers. We are constantly monitoring our services 24/7 and rapidly addressing any anomalies.
 
-In addition to our standard support, we offer three additional tiers that include faster response times and phone support. For more information about support plans, please see `Aiven support details page <https://aiven.io/support-services>`_ or contact sales@aiven.io to discuss premium support.
+In addition to our standard support, we offer three additional tiers that include faster response times and phone support. For more information about support plans, please see `Aiven support details page <https://aiven.io/support-services>`_ or contact ``sales@aiven.io`` to discuss premium support.
 
 
 You can create and track support tickets in the Project Support Center in the Aiven Console.
