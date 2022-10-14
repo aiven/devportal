@@ -5,7 +5,10 @@ In the `Aiven web console <https://console.aiven.io/>`_, follow these steps to c
 
 1. Click on **Project** drop down and click on **Create new project**.
 2. Give the new project a name.
-3. When you create a new project, you will need to enable billing for creating new services.
+3. Select an Account to add the project to.
+4. In **Payment method** select a project to copy the billing details from, or select **Use a new credit card**.
+
+When you create a new project, you will need to enable :doc:`billing for creating new services <docs/platform/howto/list-billing>`.
 
 Rename a project
 ================
