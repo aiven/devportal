@@ -22,7 +22,7 @@ Renaming a project is possible **only** when all the services in the project are
 
 .. note:: 
    
-   - Except for Aiven for Apache Kafka®, all other service types have backups which are restored once you power them back on.
+   - Except for Aiven for Apache Kafka®, all service types have backups which are restored once you power them back on.
    - Renaming the project will invalidate all of the project's pending invitations.
    - The project name in your existing DNS records will not be updated.
 
