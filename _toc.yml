@@ -106,7 +106,8 @@ entries:
           - file: docs/platform/howto/saml/setup-saml-okta
             title: Setting up SAML with Okta
           - file: docs/platform/howto/saml/setup-saml-auth0
-            title: Setting up SAML with Auth0  
+            title: Setting up SAML with Auth0
+      - file: docs/platform/howto/project-support-center  
     - file: docs/platform/reference
       title: Reference
       entries:
