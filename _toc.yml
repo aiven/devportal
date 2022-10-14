@@ -84,6 +84,7 @@ entries:
       - file: docs/platform/howto/list-billing
         title: Billing management
         entries:
+          - file: docs/platform/howto/access-suspended-due.rst-to-past-due-invoice
           - file: docs/platform/howto/manage-payment-card
           - file: docs/platform/howto/use-billing-groups
           - file: docs/platform/howto/change-billing-contact
