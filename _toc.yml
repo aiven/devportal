@@ -47,7 +47,8 @@ entries:
           - file: docs/platform/howto/create_new_service_user
           - file: docs/platform/howto/enable-aiven-password
           - file: docs/platform/howto/user-2fa
-          - file: docs/platform/howto/technical-emails            
+          - file: docs/platform/howto/technical-emails
+          - file: docs/platform/howto/reactivate-suspended-project            
       - file: docs/platform/howto/list-service
         title: Service management
         entries:
@@ -84,6 +85,7 @@ entries:
       - file: docs/platform/howto/list-billing
         title: Billing management
         entries:
+          - file: docs/platform/howto/access-suspended-due.rst-to-past-due-invoice
           - file: docs/platform/howto/manage-payment-card
           - file: docs/platform/howto/use-billing-groups
           - file: docs/platform/howto/change-billing-contact
