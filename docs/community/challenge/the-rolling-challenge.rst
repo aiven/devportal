@@ -89,7 +89,7 @@ The goal is to make sense of the incoming stream of data.
             ts_ltz AS TO_TIMESTAMP_LTZ(ts, 3),
             WATERMARK FOR ts_ltz AS ts_ltz - INTERVAL '10' SECOND
 
-12. If you find the solution, email us at hacks@Aiven.io and come to the booth C10 to collect your prize
+12. If you find the solution, email us at hacks@Aiven.io
 
 Tips
 ----
