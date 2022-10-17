@@ -24,7 +24,7 @@ Your new ticket is sent to our support team for review and you also receive an c
 You can also track the status of your tickets and review them from the project support center.
 
 Add followers to an open ticket
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If other users want to track and manage a ticket, the owner can add them to an open ticket by the owner of the ticket:
 
