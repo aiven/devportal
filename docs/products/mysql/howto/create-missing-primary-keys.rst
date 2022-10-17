@@ -28,7 +28,8 @@ To see the exact table definition for the problematic tables you can do:
 
 If your table already contains a column or set of columns that can be used as primary key or composite key, then using such column(s) is recommended. Here are some examples of tables definitions and how to create the missing primary keys:
 
-Example 1
+Example: adding primary key
+'''''''''''''''''''''''''''
 
 .. code::
 
@@ -36,22 +37,25 @@ Example 1
     social_security_number VARCHAR(30) NOT NULL,
     first_name TEXT,
     last_name TEXT
-);
+    );
 
 You can create the missing primary key by first adding the primary key:
 
 .. code::
 
     ALTER TABLE person ADD PRIMARY KEY (social_security_number);
-    
-Example 2
+
+You don't have to explicitly define it as UNIQUE, `as primary key is always unique in MySQL <https://dev.mysql.com/doc/refman/8.0/en/primary-key-optimization.html>`_.
+
+Example: add a new separate id column
+'''''''''''''''''''''''''''''''''''''
 
 .. code::
 
     CREATE TABLE team_membership (
     user_id BIGINT NOT NULL,
     team_id BIGINT NOT NULL
-);
+    );
 
 Same as before, add the primary key by following:
 
@@ -59,7 +63,7 @@ Same as before, add the primary key by following:
 
     ALTER TABLE team_membership ADD PRIMARY KEY (user_id, team_id); 
 
-If none of the existing columns or a combination of the existing columns can be used as the primary key then you should add a new separate id column.
+If none of the existing columns or a combination of the existing columns can not be used as the primary key, then you should add a new separate id column.
 
 .. code::
 
@@ -71,7 +75,7 @@ When executing the ``ALTER TABLE`` statement for a large table, you may encounte
     
     Creating index 'PRIMARY' required more than 'innodb_online_alter_log_max_size' bytes of modification log. Please try again.
 
-You will need to set a high enough value for the operation to succeed. Depending on the table size this could be a few gigabytes or even more for very large tables. You can change the ``innodb_online_alter_log_max_size`` by selecting your Aiven for MySQL service and go to *Overview* > **Advanced configuration** > **Change** > **Add configuration option** to add the parameter and make changes.
+You will need to set a high enough value for the operation to succeed. Depending on the table size this could be a few gigabytes or even more for very large tables. You can change the ``innodb_online_alter_log_max_size`` by selecting your Aiven for MySQL service and go to **Overview** > **Advanced configuration** > **Change** > **Add configuration option** to add the parameter and make changes.
 
 
 .. seealso::

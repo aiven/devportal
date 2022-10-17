@@ -10,7 +10,7 @@ When creating tables without primary keys is not allowed, you will get the follo
 
 If creating tables without primary keys is prevented and the table that you're trying to create is known to be small you may override this setting and create the table anyway. There are two possible options:
 
-* Setting ``sql_require_primary_key`` to zero with the following command:
+* Setting ``sql_require_primary_key`` to zero for the current session with the following command:
   
   .. code::
 
@@ -23,7 +23,9 @@ If creating tables without primary keys is prevented and the table that you're t
   #. Scroll down to the **Advanced configuration**, and click **Change**
   #. Select the ``mysql.sql_require_primary_key`` to ``Synced``. 
 
-  It is only recommended to use this approach when the table is created by an external application and using the session variable is not an option. To prevent more problematic tables from being unexpectedly created in the future you should change the setting back to ``Not synced`` once you finished creating the tables without primary keys.
+  .. warning::
+    
+    It is only recommended to use this approach when the table is created by an external application and using the session variable is not an option. To prevent more problematic tables from being unexpectedly created in the future you should change the setting back to ``Not synced`` once you finished creating the tables without primary keys.
 
 
 .. seealso::
