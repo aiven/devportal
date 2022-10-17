@@ -19,7 +19,7 @@ The goal is to make sense of the incoming stream of data.
 
     Check out the `video showing how to follow the instructions <https://video.aiven.io/watch/NKCxYtfMBYAJATfvRDXA5K>`_  to setup the environment and get ready for the rolling challenge.
 
-1. Create an Aiven free trial account: `sign up for free <https://console.aiven.io/signup/email?credit_code=AivenChallengeCURRENTNA22&trial_challenge=the_rolling_challenge>`_.
+1. Create an Aiven free trial account: `sign up for free <https://console.aiven.io/signup/email?credit_code=AivenChallengeBrlnStreamProcessingMeetup&trial_challenge=the_rolling_challenge>`_.
 
 2. Create an :doc:`Aiven for Apache Kafka® </docs/products/kafka/getting-started>` and :doc:`Aiven for Apache Flink® </docs/products/flink/getting-started>` service
 
