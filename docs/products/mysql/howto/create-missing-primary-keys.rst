@@ -1,7 +1,7 @@
 Create missing primary keys
 ===========================
 
-Find here strategies to create missing primary keys in your Aiven for MySQL service. First, you can determine which tables are missing primary keys by running:
+Primary keys are important for MySQL replication process, you can find more information :ref:`Replication Overview <myslq-replication-overview>`. In this article, you can find strategies to create missing primary keys in your Aiven for MySQL service. First, you can determine which tables are missing primary keys by running:
 
 .. code::
 
@@ -63,11 +63,16 @@ Same as before, add the primary key by following:
 
     ALTER TABLE team_membership ADD PRIMARY KEY (user_id, team_id); 
 
-If none of the existing columns or a combination of the existing columns can not be used as the primary key, then you should add a new separate id column.
+If none of the existing columns or a combination of the existing columns can not be used as the primary key, then you should add a new separate id column. See how to deal with it in the :ref:`Alter table error example <myslq-alter-table-error>`.
 
 .. code::
 
     ALTER TABLE mytable ADD id BIGINT PRIMARY KEY AUTO_INCREMENT;
+
+.. _myslq-alter-table-error:
+
+Example: alter table error ``innodb_online_alter_log_max_size``
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 When executing the ``ALTER TABLE`` statement for a large table, you may encounter an error like this:
 
