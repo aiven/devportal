@@ -1,5 +1,5 @@
 Get support in the Aiven console
-====================================
+=================================
 
 Aiven is committed to providing excellent and responsive support to all of our customers. We are constantly monitoring our services 24/7 and rapidly addressing any anomalies.
 
