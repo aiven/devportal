@@ -1,7 +1,7 @@
 Static IP address pricing 
 #############
 
-Aiven services are normally addressed by their hostname. There are some situations however where static IP addresses may be needed for your platform, and so these are also available for a small additional charge.
+Aiven services are normally addressed by their hostnames. There are some situations however where static IP addresses may be needed for your platform, and so these are also available for an additional charge.
 
 Amazon Web Services static IP pricing
 -------------------------------------
