@@ -8,7 +8,12 @@ When creating tables without primary keys is not allowed, you will get the follo
 .. code::
     Unable to create or change a table without a primary key, when the system variable 'sql_require_primary_key' is set. Add a primary key to the table or unset this variable to avoid this message. Note that tables without a primary key can cause performance problems in row-based replication, so please consult your DBA before changing this setting.
 
-If creating tables without primary keys is prevented and the table that you're trying to create is known to be small you may override this setting and create the table anyway. There are two possible options:
+If creating tables without primary keys is prevented and the table that you're trying to create is known to be small you may override this setting and create the table anyway. 
+
+.. seealso::
+    You can read more about MySQL replication in the :ref:`Replication Overview <myslq-replication-overview>` article.
+
+You have two options to create the tables:
 
 * Setting ``sql_require_primary_key`` to zero for the current session with the following command:
   

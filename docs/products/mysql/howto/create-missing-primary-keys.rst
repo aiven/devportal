@@ -1,7 +1,12 @@
 Create missing primary keys
 ===========================
 
-Primary keys are important for MySQL replication process, you can find more information :ref:`Replication Overview <myslq-replication-overview>`. In this article, you can find strategies to create missing primary keys in your Aiven for MySQL service. First, you can determine which tables are missing primary keys by running:
+Primary keys are important for MySQL replication process, you can find more information :ref:`Replication Overview <myslq-replication-overview>`. In this article, you can find strategies to create missing primary keys in your Aiven for MySQL service. 
+
+List tables without primary key
+'''''''''''''''''''''''''''''''
+
+Once you are connected to the MySQL database, you can determine which tables are missing primary keys by running the following commands:
 
 .. code::
 
@@ -26,7 +31,7 @@ To see the exact table definition for the problematic tables you can do:
 
     SHOW CREATE TABLE database_name.table_name;
 
-If your table already contains a column or set of columns that can be used as primary key or composite key, then using such column(s) is recommended. Here are some examples of tables definitions and how to create the missing primary keys:
+If your table already contains a column or set of columns that can be used as primary key or composite key, then using such column(s) is recommended. In the next articles, find some examples of tables definitions, and how to create the missing primary keys.
 
 Example: adding primary key
 '''''''''''''''''''''''''''
