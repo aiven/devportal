@@ -574,7 +574,7 @@ entries:
           - file: docs/products/clickhouse/reference/supported-table-engines
             title: Supported table engines
           - file: docs/products/clickhouse/reference/supported-input-output-formats
-            title: Supported data formats for input and output
+            title: Formats for ClickHouse®-Kafka® data exchange
           - file: docs/products/clickhouse/reference/advanced-params
             title: Advanced parameters
 
