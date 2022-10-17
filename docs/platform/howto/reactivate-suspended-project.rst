@@ -9,7 +9,7 @@ If you have bills past due and didn't set up a payment method, you may receive t
 
 Reactivate a suspended project
 -------------------------------------
-To get access to the project again, open a support case by emailing support@aiven.io with the following information:
+To get access to the project again, open a support case by emailing ``support@aiven.io`` with the following information:
 
 - Your full name
 - Name of the project
