@@ -10,7 +10,7 @@ CSV                              ``123,"Hello"``
 JSONASString                     ``{"x":123,"y":"hello"``
 JSONCompactEachRow               ``[123,"Hello"]``
 JSONCompactStringsEachRow        ``["123","Hello"]``
-JSONEachRow                      ``{"x":123,"y":"hello"}``                
+JSONEachRow                      ``{"x":123,"y":"hello"}``
 JSONStringsEachRow               ``{"x":"123","y":"hello"}``
 MsgPack                          ``{\xc4\x05hello``
 TSKV                             ``x=123\ty=hello``
