@@ -354,6 +354,7 @@ entries:
             - file: docs/products/kafka/kafka-connect/howto/jdbc-sink
             - file: docs/products/kafka/kafka-connect/howto/s3-sink-prereq
             - file: docs/products/kafka/kafka-connect/howto/s3-sink-connector-aiven
+            - file: docs/products/kafka/kafka-connect/howto/s3-iam-assume-role
             - file: docs/products/kafka/kafka-connect/howto/s3-sink-connector-confluent
             - file: docs/products/kafka/kafka-connect/howto/gcs-sink-prereq
             - file: docs/products/kafka/kafka-connect/howto/gcs-sink

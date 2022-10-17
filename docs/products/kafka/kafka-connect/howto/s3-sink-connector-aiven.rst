@@ -23,6 +23,10 @@ Furthermore you need to follow the steps :doc:`to prepare the AWS account and S3
 * ``AWS_USER_ACCESS_KEY_ID``: The AWS user access key ID
 * ``AWS_USER_SECRET_ACCESS_KEY``: The AWS user secret access key
 
+.. Tip::
+
+    If you want to secure your Kafka Connect to S3 using `AWS Assume role credentials <https://docs.aws.amazon.com/sdkref/latest/guide/feature-assume-role-credentials.html>`_, check out the :doc:`dedicated article <s3-iam-assume-role>`.
+
 Setup an S3 sink connector with Aiven CLI
 -----------------------------------------
 
