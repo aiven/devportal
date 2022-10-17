@@ -18,8 +18,7 @@ Enable Prometheus support on your Aiven project
 Aiven offers Prometheus endpoints for your services. To enable this feature,
 follow the steps below:
 
-#. | Navigate to the project ``Service Integrations`` section from the
-     side menu
+#. | Navigate to the project **Integration endpoints** page.
 
 #. | Add a ``Prometheus`` integration endpoint if one does not already
      exist.

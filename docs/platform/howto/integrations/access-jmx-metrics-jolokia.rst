@@ -14,7 +14,7 @@ Jolokia endpoint
 
 To enable Jolokia integration for Aiven services you first need to
 create a new Jolokia endpoint configuration. This can be created from
-the Service Integrations page. You only need to specify a display name
+the **Integration endpoints** page. You only need to specify a display name
 for the configuration and the system will automatically generate
 username and password for authentication. In most cases, you can re-use
 the same Jolokia endpoint configuration for all services within a
@@ -58,7 +58,7 @@ The file is identical for all endpoints and services in the same project.
 
 Please note to use port 6733 which is the default port Jolokia is
 listening on. ``joljkr2l:PWD`` are the values of the username/password from the Jolokia endpoint setup step. 
-You can find this endpoint details from the **Service Integrations --> Jolokia** page.
+You can find these endpoint details on the **Integration endpoints** page.
 
 .. code-block:: shell
 

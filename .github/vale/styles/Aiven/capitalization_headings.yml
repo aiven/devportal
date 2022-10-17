@@ -13,6 +13,8 @@ exceptions:
   - APIs
   - Aiven
   - Apache
+  - AWS Transit Gateway
+  - Auth0
   - Boot
   - Business
   - BYOA
@@ -21,6 +23,7 @@ exceptions:
   - CloudWatch
   - Connect
   - Connector
+  - Cookbook
   - Dashboards
   - Datadog
   - Debezium
@@ -75,13 +78,14 @@ exceptions:
   - PostgreSQL
   - Postman
   - Premium
+  - Project
   - Prometheus
   - Provectus
   - Python
   - Redis
   - Rivery
   - reStructuredText
-  - Setting up SAML with OneLogin
+  - SAML
   - Schema Registry
   - Simple Authentication and Security Layer
   - Skyvia
@@ -97,7 +101,7 @@ exceptions:
   - TimescaleDB
   - Transport Layer Security
   - United States
-  - VPC
+  - Virtual Private Cloud
   - Workbench
   - Zapier
   - ZooKeeper

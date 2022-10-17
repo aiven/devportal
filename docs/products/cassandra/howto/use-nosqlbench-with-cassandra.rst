@@ -34,7 +34,7 @@ Variable                Description
 Run nosqlbench against your Aiven for Apache Cassandra® service
 ---------------------------------------------------------------
 
-The following sections shows how to run several nosqlbench worlkloads against an Aiven for Cassandra service.
+The following sections shows how to run several nosqlbench worKloads against an Aiven for Cassandra service.
 
 Create a schema and load data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

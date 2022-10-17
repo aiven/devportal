@@ -5,7 +5,11 @@ The JDBC (Java Database Connectivity) sink connector enables you to move data fr
 
 .. Warning::
 
-    Since the JDBC sink connector is pushing data to relational databases, it can work only with topics having a schema, either defined in every message or in the schema registry features offered by `Karapace <https://help.aiven.io/en/articles/5651983>`_
+    Since the JDBC sink connector is pushing data to relational databases, it can work only with topics having a schema, either defined in every message or in the schema registry features offered by :doc:`Karapace </docs/products/kafka/karapace>`.
+
+.. note::
+
+    You can check the full set of available parameters and configuration options in the `connector's documentation <https://github.com/aiven/aiven-kafka-connect-jdbc/blob/master/docs/sink-connector.md>`_.
 
 .. _connect_jdbc_sink_prereq:
 

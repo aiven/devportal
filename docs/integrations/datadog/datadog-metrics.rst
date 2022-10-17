@@ -12,12 +12,12 @@ You will need a Datadog account and the following details handy:
 
 * A Datadog API key. Generate an API key by visiting **Organization settings** under your account menu, and then choose **API Keys**. The **New Key** button will give you an API key; you should copy this as you will need it shortly.
 
-Configure the service integration
----------------------------------
+Configure the service integration endpoint
+-------------------------------------------
 
-This section need only be completed once for each Datadog account you wish to use. Multiple services can then use this service integration.
+This section need only be completed once for each Datadog account you wish to use. Multiple services can then use this service integration endpoint.
 
-1. In the Aiven web console, click **Service Integrations** in the left hand menu. Select **Datadog** and then **Add new endpoint**.
+1. In the Aiven web console, click **Integration endpoints**. Select **Datadog** and then **Add new endpoint**.
 
 2. Configure the endpoint by adding a name for this integration, and the API key you copied earlier. Check that the correct region is selected.
 
@@ -43,4 +43,6 @@ Repeat these steps for each service whose metrics should be sent to Datadog.
 
 7. Return to your Datadog dashboard and after a few minutes, you should see the data start to arrive from your Aiven service(s).
 
-.. seealso:: Learn more about :doc:`/docs/integrations/datadog`.
+.. seealso:: 
+    - Learn more about :doc:`/docs/integrations/datadog`.
+    - For information on how to enable `Datadog Deep Database Monitoring <https://www.datadoghq.com/product/database-monitoring/>`_ for specific Datadog Metrics integration, see :doc:`Database monitoring with Datadog </docs/products/postgresql/howto/monitor-database-with-datadog>`. 

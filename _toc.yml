@@ -41,12 +41,14 @@ entries:
       - file: docs/platform/howto/list-user
         title: User/Access management
         entries:
+          - file: docs/platform/howto/manage-project
           - file: docs/platform/howto/change-your-email-address
           - file: docs/platform/howto/create_authentication_token
           - file: docs/platform/howto/create_new_service_user
           - file: docs/platform/howto/enable-aiven-password
           - file: docs/platform/howto/user-2fa
-          - file: docs/platform/howto/technical-emails            
+          - file: docs/platform/howto/technical-emails
+          - file: docs/platform/howto/reactivate-suspended-project            
       - file: docs/platform/howto/list-service
         title: Service management
         entries:
@@ -55,7 +57,8 @@ entries:
           - file: docs/platform/howto/pause-from-cli.rst
           - file: docs/platform/howto/rename-a-service.rst
           - file: docs/platform/howto/scale-services
-          - file: docs/platform/howto/migrate-services
+          - file: docs/platform/howto/migrate-services-cloud-region
+          - file: docs/platform/howto/migrate-services-vpc
           - file: docs/platform/howto/recover-a-deleted-service
           - file: docs/platform/howto/add-storage-space
           - file: docs/platform/howto/tag-resources
@@ -68,6 +71,10 @@ entries:
           - file: docs/platform/howto/public-access-in-vpc.rst
           - file: docs/platform/howto/static-ip-addresses.rst
           - file: docs/platform/howto/private-ip-resolution.rst
+          - file: docs/platform/howto/attach-vpc-aws-tgw
+          - file: docs/platform/howto/manage-vpc-peering
+          - file: docs/platform/howto/vpc-peering-gcp
+          - file: docs/platform/howto/use-aws-privatelinks.rst
       - file: docs/platform/howto/list-monitoring
         title: Monitoring management
         entries:
@@ -78,10 +85,12 @@ entries:
       - file: docs/platform/howto/list-billing
         title: Billing management
         entries:
+          - file: docs/platform/howto/access-suspended-due.rst-to-past-due-invoice
           - file: docs/platform/howto/manage-payment-card
           - file: docs/platform/howto/use-billing-groups
           - file: docs/platform/howto/change-billing-contact
           - file: docs/platform/howto/payment-issues-plan-upgrades
+          - file: docs/platform/howto/custom-plans
           - file: docs/platform/howto/billing-google-cloud-platform-marketplace-subscription
             title: Set up Google Cloud Marketplace
           - file: docs/platform/howto/move-to-gcp-marketplace-billing
@@ -96,6 +105,8 @@ entries:
             title: Setting up SAML with Azure
           - file: docs/platform/howto/saml/setup-saml-okta
             title: Setting up SAML with Okta
+          - file: docs/platform/howto/saml/setup-saml-auth0
+            title: Setting up SAML with Auth0  
     - file: docs/platform/reference
       title: Reference
       entries:
@@ -136,6 +147,7 @@ entries:
         - file: docs/tools/cli/account
           entries:
             - glob: docs/tools/cli/account/*
+        - file: docs/tools/cli/billing-group
         - file: docs/tools/cli/card
         - file: docs/tools/cli/cloud
         - file: docs/tools/cli/credits
@@ -167,7 +179,8 @@ entries:
             - file: docs/tools/terraform/howto/config-postgresql-provider
               title: Use PostgreSQL provider alongside Aiven Terraform Provider 
             - file: docs/tools/terraform/howto/promote-to-master-pg-rr
-              title: Promote PostgreSQL read replica to master 
+              title: Promote PostgreSQL read replica to master
+            - file: docs/tools/terraform/howto/upgrade-to-opensearch
         - file: docs/tools/terraform/concepts
           title: Concepts
           entries:
@@ -335,6 +348,7 @@ entries:
             - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-sql-server
             - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-mongodb
             - file: docs/products/kafka/kafka-connect/howto/cassandra-streamreactor-source
+            - file: docs/products/kafka/kafka-connect/howto/mqtt-source-connector
           - file: docs/products/kafka/kafka-connect/howto/list-sink-connectors
             entries:
             - file: docs/products/kafka/kafka-connect/howto/jdbc-sink
@@ -438,6 +452,7 @@ entries:
               - file: docs/products/postgresql/howto/manage-pool
               - file: docs/products/postgresql/howto/pgbouncer-stats
               - file: docs/products/postgresql/howto/use-dblink-extension
+              - file: docs/products/postgresql/howto/use-pg-repack-extension
               - file: docs/products/postgresql/howto/enable-jit
               - file: docs/products/postgresql/howto/repair-pg-index
               - file: docs/products/postgresql/howto/identify-pg-slow-queries
@@ -464,6 +479,7 @@ entries:
               - file: docs/products/postgresql/howto/connect-rivery
               - file: docs/products/postgresql/howto/connect-skyvia
               - file: docs/products/postgresql/howto/connect-zapier
+              - file: docs/products/postgresql/howto/monitor-database-with-datadog
               - file: docs/products/postgresql/howto/visualize-grafana
               - file: docs/products/postgresql/howto/report-metrics-grafana
               - file: docs/products/postgresql/howto/monitor-with-pgwatch2
@@ -559,7 +575,7 @@ entries:
           - file: docs/products/clickhouse/reference/supported-table-engines
             title: Supported table engines
           - file: docs/products/clickhouse/reference/supported-input-output-formats
-            title: Supported data formats for input and output
+            title: Formats for ClickHouse®-Kafka® data exchange
           - file: docs/products/clickhouse/reference/advanced-params
             title: Advanced parameters
 
@@ -586,7 +602,6 @@ entries:
           - file: docs/products/opensearch/howto/migrating_elasticsearch_data_to_aiven
           - file: docs/products/opensearch/howto/opensearch-log-integration
           - file: docs/products/opensearch/howto/upgrade-to-opensearch
-          - file: docs/products/opensearch/howto/upgrade-to-opensearch-with-terraform
           - file: docs/products/opensearch/howto/upgrade-clients-to-opensearch
           - file: docs/products/opensearch/howto/connect-with-nodejs
             title: Connect with NodeJS
@@ -600,7 +615,8 @@ entries:
             title: Aggregation with NodeJS
           - file: docs/products/opensearch/howto/control_access_to_content
           - file: docs/products/opensearch/howto/restore_opensearch_backup
-          - file: docs/products/opensearch/howto/import-opensearch-data-using-elasticsearch-dump
+          - file: docs/products/opensearch/howto/import-opensearch-data-elasticsearch-dump-to-aiven
+          - file: docs/products/opensearch/howto/import-opensearch-data-elasticsearch-dump-to-aws
           - file: docs/products/opensearch/howto/set_index_retention_patterns
           - file: docs/products/opensearch/howto/opensearch-alerting-api
           - file: docs/products/opensearch/howto/integrate-with-grafana
@@ -713,6 +729,7 @@ entries:
           - file: docs/products/redis/howto/estimate-max-number-of-connections
           - file: docs/products/redis/howto/manage-ssl-connectivity
           - file: docs/products/redis/howto/warning-overcommit_memory
+          - file: docs/products/redis/howto/benchmark-performance
       - file: docs/products/redis/reference
         title: Reference
         entries:
@@ -770,3 +787,5 @@ entries:
         title: Tips & Tricks
     - file: docs/community/challenge/catch-the-bus
       title: Catch the Bus - Aiven challenge with ClickHouse
+    - file: docs/community/challenge/the-rolling-challenge
+      title: Rolling - Aiven challenge with Apache Kafka and Apache Flink

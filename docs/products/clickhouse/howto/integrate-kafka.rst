@@ -20,7 +20,7 @@ You will need:
 
   .. Tip:: 
 
-    If you use the self-hosted Apache Kafka service, an external Apache Kafka endpoint should be configured in **Service Integrations**
+    If you use the self-hosted Apache Kafka service, an external Apache Kafka endpoint should be configured in **Integration endpoints**.
 
 * At least one topic in the Apache Kafka service
 

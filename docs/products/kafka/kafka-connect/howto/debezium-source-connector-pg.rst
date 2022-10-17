@@ -9,6 +9,10 @@ The Debezium source connector extracts the changes committed to the transaction 
     
     So if your system is completely idle (in which case Aiven for PostgreSQL still generates 16 MiB of WAL every 5 minutes) or changes only occur in databases Debezium is not connected to, PostgreSQL will not be able to clean up WAL and the service will eventually run out of disk space. Thus it is essential to ensure any database you connect to with Debezium is updated frequently enough.
 
+.. note::
+
+    You can check the full set of available parameters and configuration options in the `connector's documentation <https://debezium.io/documentation/reference/stable/connectors/postgresql.html>`_.
+
 .. _connect_debezium_pg_source_prereq:
 
 Prerequisites

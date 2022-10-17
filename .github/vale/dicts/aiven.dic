@@ -9,8 +9,10 @@ Apache
 API
 APIs
 ARN
+Auth0
 autovacuum
 Avro
+Azure
 binlog
 boolean
 boot
@@ -39,6 +41,7 @@ dashboards
 Debezium
 deserialize
 Dev
+Digitransit
 Distro
 Docker
 dockerized
@@ -59,6 +62,7 @@ Geomap
 geospatial
 GitHub
 go
+Google Cloud Platform
 Gradle
 Grafana
 hardcoded
@@ -150,7 +154,10 @@ reindexing
 reStructuredText
 rivery
 rsyslog
+safelist
+safelisting
 Sakila
+SAML
 Sarama
 schemaless
 scriptable
@@ -168,6 +175,7 @@ Stackdriver
 Statusmap
 Stunnel
 subnet
+subnets
 subprocess
 subprocesses
 subtab
@@ -187,6 +195,8 @@ unencrypted
 untrusted
 unaggregated
 upsert
+VPC
+VNet
 wget
 Workbench
 Worldmap

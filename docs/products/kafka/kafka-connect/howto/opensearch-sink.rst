@@ -7,6 +7,11 @@ The OpenSearch sink connector enables you to move data from an Aiven for Apache 
 
     This article describes how to create a sink connector to OpenSearch®. Similar instructions are available also for Elasticsearch® in the :doc:`dedicated article <elasticsearch-sink>`.
 
+.. note::
+
+    You can check the full set of available parameters and configuration options in the `connector's documentation <https://github.com/aiven/opensearch-connector-for-apache-kafka/blob/main/docs/opensearch-sink-connector-config-options.rst>`_.
+
+
 .. _connect_opensearch_sink_prereq:
 
 Prerequisites

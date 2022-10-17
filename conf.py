@@ -161,6 +161,10 @@ html_css_files = ['css/aiven.css']
 
 # -- Replacements -----------------------------------------------------------
 rst_epilog = """
+.. |icon-challenge-trophy| image:: /images/community/challenge-trophy.svg
+   :width: 24px
+   :class: no-scaled-link
+
 .. |icon-twitter| image:: /images/social_media/icon-twitter.svg
    :width: 24px
    :class: no-scaled-link
