@@ -1,7 +1,7 @@
-Formats for ClickHouse-Kafka data exchane
+Formats for ClickHouse®-Kafka® data exchane
 ======================================================
 
-When connecting ClickHouse to Kafka using Aiven integrations, data exchange is possible with the following formats only:
+When connecting ClickHouse® to Kafka® using Aiven integrations, data exchange is possible with the following formats only:
 
 ============================     ====================================================================================
 Format name                      Example
