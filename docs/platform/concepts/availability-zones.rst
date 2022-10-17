@@ -36,20 +36,24 @@ On top of spreading service's nodes across the availability zones (AZs) of a clo
 UpCloud availability zones
 ---------------------------
 
-With UpCloud, the only location where Aiven can automatically balance replicas of servces is ``upcloud-fi-hel``. For ``upcloud-fi-hel``, UpCloud provides two datacenters (*fi-hel1* and *fi-hel2*). With a two-node plan, for example, it will result in one of the servers in *fi-hel1* and the other in *fi-hel2*.
+With UpCloud, the only location where Aiven can automatically balance replicas of services is ``upcloud-fi-hel``. For ``upcloud-fi-hel``, UpCloud provides two datacenters (*fi-hel1* and *fi-hel2*). With a two-node plan, for example, it will result in one of the servers in *fi-hel1* and the other in *fi-hel2*.
 
-Azure regions with availability-zone suppport at Aiven
--------------------------------------------------------
+Azure availability zones
+------------------------
 
-Here are Azure cloud regions where Aiven supports availability zones (AZs):
+Aiven supports a subset of existing Azure cloud regions with availability zones. They are the following:
 
 - azure-australiaeast
 - azure-brazilsouth
 - azure-canadacentral
 - azure-centralus
+- azure-eastus2
 - azure-france-central
+- azure-germany-westcentral
 - azure-korea-central
 - azure-northeurope
+- azure-norway-east
+- azure-south-africa-north
 - azure-southeastasia
 - azure-switzerland-north
 - azure-uae-north
