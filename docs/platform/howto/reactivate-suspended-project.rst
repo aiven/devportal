@@ -1,5 +1,5 @@
 Reactivate suspended projects
-===================================
+=============================
 
 If you have bills past due and didn't set up a payment method, you may receive this error when trying to log in to the console:
 
@@ -8,7 +8,7 @@ If you have bills past due and didn't set up a payment method, you may receive t
   Project suspended, access prohibited
 
 Reactivate a suspended project
--------------------------------------
+------------------------------
 To get access to the project again, open a support case by emailing ``support@aiven.io`` with the following information:
 
 - Your full name
