@@ -1,4 +1,4 @@
-Rolling - Aiven challenge with Apache Kafka® and Apache Flink®
+Aiven "Rolling Challenge" with Apache Kafka® and Apache Flink®
 ==============================================================
 
 Welcome to Aiven's "Rolling" challenge, an easy way for you to explore Aiven for Apache Kafka® and Aiven for Apache Flink®. 
