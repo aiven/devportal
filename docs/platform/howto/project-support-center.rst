@@ -32,4 +32,4 @@ If other users want to track and manage a ticket, the owner can add them to an o
 #. Find the ticket you want to add users to in the list and click **Add follower**. 
 #. Select the user's email and click **Add follower**.
 
-You can also add users to a ticket by CCing them into the support ticket email. 
+You can also add users to a ticket by copying them into the support ticket email. 
