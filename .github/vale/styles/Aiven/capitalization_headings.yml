@@ -20,6 +20,7 @@ exceptions:
   - ClickHouse
   - CloudWatch
   - Connect
+  - Connector
   - Dashboards
   - Datadog
   - Debezium

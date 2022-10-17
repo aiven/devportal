@@ -50,6 +50,8 @@ To create a cross-account access role:
 8. To further secure the setting and limit access, you associate the newly created role to a unique full **IAM user** name. 
 
    You can do so, by editing the newly created role (``AivenKafkaConnectSink``) and navigate to **Trust relationships** -> **Edit trust relationship**
+9. In a policy document, the **IAM user** should be specified as ``Principal``.
+10. Copy the newly created **IAM role ARN**. It will be needed in the Kafka Connector configuration.
 
 Create a Kafka Connect S3 Sink connector
 -----------------------------------------
