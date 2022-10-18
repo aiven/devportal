@@ -1,48 +1,51 @@
-Aiven API overview
-==================
+Aiven API
+=========
 
-The Aiven API allows you to perform any tasks on Aiven from a client of your choice.
+Use the Aiven API to programmatically perform any task that you can do through the web interface. This is an ideal way to automate tasks involving Aiven at every stage of your workflow.
+
+Common use cases for the Aiven API:
+
+* Use with CI (Continuous Integration) to spin up data platforms on Aiven for use during test runs.
+
+* Integrate with other parts of your existing automation setup to achieve complex tasks.
+
+* Deploy and tear down development or demo platforms on a schedule.
+
+We make the API available to all Aiven users. It is also the engine behind the Aiven Console, so you should find that all operations are also available through the API.
+
 
 API quickstart
 --------------
 
-* Try `Aiven on Postman <https://www.postman.com/aiven-apis/workspace/aiven/documentation/21112408-1f6306ef-982e-49f8-bdae-4d9fdadbd6cd>`_ and make your first calls to our API.
+* **Postman**: Try `Aiven on Postman <https://www.postman.com/aiven-apis/workspace/aiven/documentation/21112408-1f6306ef-982e-49f8-bdae-4d9fdadbd6cd>`_ and start working with your data platform programmatically.
 
-* You will need an authentication token from the `profile section of your Aiven console <https://console.aiven.io/profile/auth>`_.
+* **API documentation**: Check the `API documentation and OpenAPI description <https://api.aiven.io/doc/>`_ to work with the API directly.
 
-* Check the `API docs and OpenAPI spec <https://api.aiven.io/doc/>`_ for more available endpoints.
+* **Examples**: See the API in action with some :doc:`api/examples`.
 
+Authentication
+--------------
 
-Calling the Aiven API
----------------------
+Most (but not all) endpoints require authentication. You'll need an authentication token from the `profile section of your Aiven console <https://console.aiven.io/profile/auth>`_.
 
-The `Aiven API <https://api.aiven.io/doc/>`_ is a traditional HTTP API. All our own tools, such as the `web console <https://console.aiven.io>`_ and ``avn`` CLI use this API.
+Send this token in the header, using a structure like this, and replacing ``TOKEN`` with your actual API token::
 
-.. mermaid::
+    Authorization: aivenv1 TOKEN
 
-    sequenceDiagram
-        participant Client
-        participant Aiven
-
-        Client->>Aiven: Request with access token
-        Aiven->>Client: Response {JSON}
-
-Authorization
-'''''''''''''
-
-Obtain an authentication token from your `Aiven console <https://console.aiven.io/profile/auth>`_. This will be sent as an ``Authorization`` header, like this::
-
-    Authorization: Bearer <TOKEN>
+Read more about :doc:`/docs/platform/concepts/authentication-tokens`.
 
 Handling JSON responses
-'''''''''''''''''''''''
+-----------------------
 
 The `Aiven API <https://api.aiven.io/doc/>`_ returns information in JSON format, sometimes a lot of
-information. This is perfect for machines but not ideal for humans. We like to
-use a tool like ``jq`` (https://stedolan.github.io/jq/) to make things easier to read and manipulate.
+information. This is perfect for machines but not ideal for humans. Try a tool
+like ``jq`` (https://stedolan.github.io/jq/) to make things easier to read and
+manipulate.
 
-Aiven API and Postman
-'''''''''''''''''''''''
+Further reading
+---------------
 
-If you prefer an even more friendly tool, we have a blog post about `using Postman with Aiven's API <https://aiven.io/blog/your-first-aiven-api-call>`_ including how to import a Postman collection and spin up Aiven services with Postman.
+Here are some more resources for you:
 
+* Some `API examples on the Aiven blog <https://aiven.io/blog/your-first-aiven-api-call>`_. This post also includes information about importing our OpenAPI description into Postman.
+* Learn more about the :doc:`/docs/tools/cli`.

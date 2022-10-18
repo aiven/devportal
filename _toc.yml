@@ -165,7 +165,7 @@ entries:
       - file: docs/tools/api
         title: Aiven API
         entries:
-        - glob: docs/tools/api/*
+          - file: docs/tools/api/examples
       - file: docs/tools/terraform
         title: Aiven Terraform provider
         entries:
