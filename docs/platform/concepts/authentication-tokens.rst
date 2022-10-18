@@ -1,7 +1,7 @@
 Authentication tokens
 =====================
 
-An authentication token allows a user to programmatically access resources instead of using their username and password. The usage of authentication tokens rather than user crednetials has many benefits:
+An authentication token allows a user to programmatically access resources instead of using their username and password. The usage of authentication tokens rather than user credentials has many benefits:
 
 - Multiple tokens can be generated for different apps or use cases unlike a single set of user credentials for everything.
 - The limited lifespan of authentication tokens reduce the security risk of being exposed.
