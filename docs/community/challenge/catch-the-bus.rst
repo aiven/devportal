@@ -13,7 +13,7 @@ Instructions
 ------------
 The goal is to find the best bus routes between the different KFC restaurants in Helsinki.
 
-1. Create an Aiven free trial account: `sign up for free <https://console.aiven.io/signup/email?credit_code=AivenChallengeBIGDATALDN22&trial_challenge=catch_the_bus>`_.
+1. Create an Aiven free trial account: `sign up for free <https://console.aiven.io/signup/email?credit_code=AivenChallengeLdnStreamProcessingMeetup&trial_challenge=catch_the_bus>`_.
 
 2. `Download the dataset <https://drive.google.com/file/d/1B4Scsuz4hTx2Hbd9seMIb0dDgbo-b0bf/view>`_.
 
@@ -21,13 +21,6 @@ The goal is to find the best bus routes between the different KFC restaurants in
 
 4. Find the routes and plot them on a map. Here's a `notebook <https://github.com/Ugbot/Clickhouse-challenge/blob/main/mapping_book.ipynb>`_ with a few optional queries and a mapping library to get you started. You can also check out the `ClickHouse docs <https://clickhouse.com/docs/en/sql-reference/>`_ for advanced SQL information.
 
-5. Once ready: 
-    * Tag us on Twitter with ``#aivencatchthebuschallenge`` (and ``#bigdatalondon22`` if you're at the conference) with a screenshot of a map with these routes plotted on it. 
-    * Or email us at `hacks@Aiven.io <mailto:hacks@aiven.io?subject=Solution for Aiven 'Catch the bus' challenge>`_.
+5. If you find the solution or need help, email us at `hacks@Aiven.io <mailto:hacks@aiven.io?subject=Solution for Aiven 'Catch the bus' challenge>`_.
 
-6. Lastly, collect your prize if you do the challenge before 21.11.2022: 
-    * If you do the challenge in connection with a conference, come visit us at our booth to collect your limited edition Aiven cap.
-    * Otherwise you'll receive a voucher for a nice piece of Aiven swag in your inbox upon submitting your solution.
-
-
-For any help or questions ping us on twitter @aiven_io or @Bengamble7. Good luck!
+Good luck!
