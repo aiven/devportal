@@ -11,21 +11,25 @@ Source connectors enable the integration of data from an existing technology int
 
 * `Couchbase <https://github.com/couchbase/kafka-connect-couchbase>`__
 
-* `Official MongoDB® <https://docs.mongodb.com/kafka-connector/current/>`__
+* :doc:`MongoDB® <../howto/mongodb-poll-source-connector>`
 
-* `Debezium for MongoDB® <https://debezium.io/docs/connectors/mongodb/>`__
+* :doc:`Debezium for MongoDB® <../howto/debezium-source-connector-mongodb>`
 
-* `Debezium for MySQL <https://debezium.io/docs/connectors/mysql/>`__ 
+* :doc:`Debezium for MySQL <../howto/debezium-source-connector-mysql>`
 
 * :doc:`Debezium for PostgreSQL® <../howto/debezium-source-connector-pg>`
 
-* `Debezium for SQL Server <https://debezium.io/docs/connectors/sqlserver/>`__ 
+* :doc:`Debezium for SQL Server <../howto/debezium-source-connector-sql-server>` 
 
 * `Google Cloud Pub/Sub <https://github.com/GoogleCloudPlatform/pubsub/tree/master/kafka-connector>`__ 
 
 * `Google Cloud Pub/Sub Lite <https://github.com/GoogleCloudPlatform/pubsub/>`_ 
 
-* `JDBC <https://github.com/aiven/aiven-kafka-connect-jdbc/blob/master/docs/source-connector.md>`__ 
+*  :doc:`JDBC for SQL Server <../howto/jdbc-source-connector-sql-server>` 
+
+*  :doc:`JDBC for PostgreSQL® <../howto/jdbc-source-connector-pg>` 
+
+*  :doc:`JDBC for MySQL <../howto/jdbc-source-connector-mysql>`
 
 * Schema Source 
 
@@ -48,7 +52,7 @@ Sink connectors enable the integration of data from an existing Apache Kafka top
 
 * :doc:`Elasticsearch </docs/products/kafka/kafka-connect/howto/elasticsearch-sink>`
 
-* `Google BigQuery <https://github.com/confluentinc/kafka-connect-bigquery>`__
+* :doc:`Google BigQuery <../howto/gcp-bigquery-sink>`
 
 * `Google Cloud Pub/Sub <https://github.com/GoogleCloudPlatform/pubsub/>`__
 
@@ -56,27 +60,25 @@ Sink connectors enable the integration of data from an existing Apache Kafka top
 
 * :doc:`Google Cloud Storage </docs/products/kafka/kafka-connect/howto/gcs-sink>`
 
-* `HTTP <https://github.com/aiven/aiven-kafka-connect-http>`__ |preview|
+* :doc:`HTTP <../howto/http-sink>`
 
-* `JDBC <https://github.com/aiven/aiven-kafka-connect-jdbc/blob/master/docs/sink-connector.md>`__
+* :doc:`JDBC <../howto/jdbc-sink>`
 
-* `Official MongoDB® <https://docs.mongodb.com/kafka-connector/current/>`__
+* :doc:`MongoDB® <../howto/mongodb-sink-mongo>`
 
-* `OpenSearch® <https://github.com/aiven/opensearch-connector-for-apache-kafka/blob/main/docs/opensearch-sink-connector-config-options.rst>`_ |preview|
-
-* `Snowflake <https://docs.snowflake.net/manuals/user-guide/kafka-connector.html>`__ |preview|
+* :doc:`Snowflake <../howto/snowflake-sink>`
 
 * `Splunk <https://github.com/splunk/kafka-connect-splunk>`__
 
-* `Stream Reactor Cassandra® <https://docs.lenses.io/connectors/sink/cassandra.html>`__
+* :doc:`Stream Reactor Cassandra® <../howto/cassandra-streamreactor-sink>`
 
 * `Stream Reactor InfluxDB® <https://docs.lenses.io/connectors/sink/influx.html>`__
 
-* `Stream Reactor MongoDB® <https://docs.lenses.io/connectors/sink/mongo.html>`__
+* :doc:`Stream Reactor MongoDB® <../howto/mongodb-sink-lenses>`
 
 * `Stream Reactor MQTT <https://docs.lenses.io/connectors/sink/mqtt.html>`__
 
-* `Stream Reactor Redis®* <https://docs.lenses.io/connectors/sink/redis.html>`__
+* :doc:`Stream Reactor Redis®* <../howto/redis-streamreactor-sink>`
 
 
 Preview connectors
