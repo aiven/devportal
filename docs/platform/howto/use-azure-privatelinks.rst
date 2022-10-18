@@ -123,7 +123,7 @@ Once the endpoint IP address is added, the connection's status changes to ``acti
 Step 3: Enable Private Link access for Aiven service components
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Finally, enable Private Link access on your Aiven services using either the Aiven CLI or Aiven Console.
+Finally, enable Private Link access on your Aiven services using either the Aiven CLI or `Aiven Console <https://console.aiven.io/>`_.
 
 **Aiven CLI**
 
@@ -135,7 +135,7 @@ To enable Private Link access for your service in the Aiven CLI, set ``user_conf
 
 **Aiven Console**
 
-To enable Private Link access in the Aiven Console:
+To enable Private Link access in the `Aiven Console <https://console.aiven.io/>`_:
 
 #. Select the service that you want to enable access to.
 #. On the **Overview** tab, in the **Advanced configuration** section, click **Change**.
@@ -147,7 +147,7 @@ To enable Private Link access in the Aiven Console:
 
     Each service component can be controlled separately. For example, you can enable Private Link access for your Aiven for Apache Kafka® service, while allowing Kafka® Connect to only be connected via VNet peering.
 
-After toggling the values your Private Link resource will be rebuilt with load balancer rules added for the service component's ports.Connection information like the URI or hostname and port to access the service through the private endpoint is available on the service's overview page in the Aiven Console. 
+After toggling the values your Private Link resource will be rebuilt with load balancer rules added for the service component's ports.Connection information like the URI or hostname and port to access the service through the private endpoint is available on the service's overview page in the `Aiven Console <https://console.aiven.io/>`_. 
 
 .. note:: For Aiven for Apache Kafka® services, the security group for the VPC endpoint must allow ingress in the port range ``10000-31000``. This is to accommodate the pool of Kafka broker ports used in the Private Link implementation.
 
