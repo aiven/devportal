@@ -1,19 +1,19 @@
-Use Azure Private Links with Aiven services
+Use Azure Private Link with Aiven services
 =============================================
 
-Azure Private Link lets you bring your Aiven services into your virtual network over a private endpoint. The endpoint creates a network interface into one of the subnets of the VNet and receives a private IP address from that subnet's IP range. The private endpoint is routed to your Aiven service.
+Azure Private Link lets you bring your Aiven services into your virtual network (VNet) over a private endpoint. The endpoint creates a network interface into one of the VNet subnets, and receives a private IP address from its IP range. The private endpoint is routed to your Aiven service.
 
 Prerequisites
 --------------
 
-* Aiven CLI is installed.
-* The Aiven service is in a project VPC. This ensures the service is not accessible from the public internet. 
+* :doc:`Aiven CLI <docs/tools/cli>`` is installed.
+* The Aiven service is in :doc:`a project VPC <docs/platform/howto/manage-vpc-peering>`. This ensures the service is not accessible from the public internet. 
   
   If you are not using regular VNet peerings, any private IP range can be used for the VPC. There is no network routing between your Azure subscription and the Aiven VPC, so overlapping IP ranges are not an issue.
 
 * The Aiven service is using :doc:`static IP addresses </docs/platform/howto/static-ip-addresses>`.
 
-  Even though services in a VPC only communicate using private IP addresses, Azure load balancers require standard SKU IP addresses for target virtual machines. Azure sends TCP health probes to load balancer target ports from a public IP address.
+  Even though services in a VPC only communicate using private IP addresses, Azure load balancers require `standard SKU IP addresses <https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-upgrade-portal>`_ for target virtual machines. Azure sends TCP health probes to load balancer target ports from a public IP address.
 
 Variables
 ------------
