@@ -72,11 +72,9 @@ Step 2: Create a private endpoint
 
 Azure resources in the Aiven service are now ready to be connected to your Azure subscription and virtual network.
 
-1. In the Azure web console or Azure CLI, `create a private endpoint <https://learn.microsoft.com/en-us/azure/private-link/create-private-endpoint-portal?tabs=dynamic-ip>`_.
+#. In the Azure web console or Azure CLI, `create a private endpoint <https://learn.microsoft.com/en-us/azure/private-link/create-private-endpoint-portal?tabs=dynamic-ip>`_. If you are using the console, select **Connect to an Azure resource by resource ID or alias** and enter the ``azure_service_alias`` or ``azure_service_id``.
 
-2. In the `Aiven Console <https://console.aiven.io/>`_, select **Connect to an Azure resource by resource ID or alias** and enter the ``azure_service_alias`` or ``azure_service_id``.
-
-3. Refresh the Aiven Private Link service:
+#. Refresh the Aiven Private Link service:
 
    .. code:: shell
 
@@ -86,7 +84,7 @@ Azure resources in the Aiven service are now ready to be connected to your Azure
    
     Azure does not provide notifications about endpoint connections and the Aiven API will not be aware of new endpoints until it's refreshed.
 
-4. In the Aiven CLI, check that the endpoint is connected to the service:
+#. In the Aiven CLI, check that the endpoint is connected to the service:
 
    .. code:: shell
 
@@ -100,7 +98,7 @@ Azure resources in the Aiven service are now ready to be connected to your Azure
        =========================  ==========================================================================================================================================================  =====================  ===============
        plc35843e8054b             /subscriptions/8eefec94-5d63-40c9-983c-03ab083b411d/resourceGroups/test-privatelink/providers/Microsoft.Network/privateEndpoints/my-endpoint                pending-user-approval  null
 
-5. Check that the endpoint ID matches the one created in your subscription and approve it:
+#. Check that the endpoint ID matches the one created in your subscription and approve it:
 
    .. code:: shell
 
@@ -108,9 +106,9 @@ Azure resources in the Aiven service are now ready to be connected to your Azure
 
    The endpoint in your Azure subscription is now connected to the Private Link service in the Aiven service. The state of the endpoint is ``pending``.
 
-6. In the Azure web console, go to the private endpoint and select **Network interface**. Copy the private IP address.
+#. In the Azure web console, go to the private endpoint and select **Network interface**. Copy the private IP address.
 
-7. In the Aiven CLI, add the endpoint's IP address you copied to the connection:
+#. In the Aiven CLI, add the endpoint's IP address you copied to the connection:
 
    .. code:: shell
 
