@@ -162,8 +162,6 @@ entries:
         title: Aiven API
         entries:
           - file: docs/tools/api/examples
-          - file: docs/tools/api/concepts/tokens
-            title: Auth tokens
       - file: docs/tools/terraform
         title: Aiven Terraform provider
         entries:
