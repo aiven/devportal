@@ -34,6 +34,7 @@ Cloud-specific VPC peering instructions
 -----------------------------------------------------
 
 - :ref:`Set up VPC peering on Google Cloud Platform (GCP) <vpc-peering-gcp>`.
+- :ref:`Set up VNet (VPC) peering on Microsoft Azure <vnet-peering-azure>`.
 
 Deploying new services to a VPC
 -------------------------------
