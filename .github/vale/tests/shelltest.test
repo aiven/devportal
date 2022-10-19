@@ -107,3 +107,13 @@ $ vale --output=line --sort .github/vale/tests/sentence_case_title_bad.rst
 .github/vale/tests/sentence_case_title_bad.rst:6:1:Aiven.capitalization_headings:'This is a subtitle Not in sentence case by Tony' should be in sentence case
 .github/vale/tests/sentence_case_title_bad.rst:11:1:Aiven.capitalization_headings:'Short and Bad' should be in sentence case
 >=0
+
+# ---------------------------------------------------------------
+# We always want :alt: in an image directive
+
+$ vale --output=line --sort .github/vale/tests/missing_image_alt.rst
+.github/vale/tests/missing_image_alt.rst:10:1:Aiven.missing_alt_in_image:Missing ':alt:' in '.. image:: images/image.png :width: 100% :fred: jim '
+.github/vale/tests/missing_image_alt.rst:16:1:Aiven.missing_alt_in_image:Missing ':alt:' in '.. image:: images/image.png '
+.github/vale/tests/missing_image_alt.rst:20:1:Aiven.missing_alt_in_image:Missing ':alt:' in '.. image:: images/eof.png :width: 100% '
+>=1
+

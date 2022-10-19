@@ -15,7 +15,8 @@ You can add services for Grafana in the Aiven web console.
 
 
 .. image:: /images/products/grafana/get-started-grafana.gif
-    :width: 500px
+   :width: 500px
+   :alt: Grafana in action
 
 
 To create a new Aiven for Grafana service:
