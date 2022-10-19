@@ -34,6 +34,7 @@ Cloud-specific VPC peering instructions
 -----------------------------------------------------
 
 - :ref:`Set up VPC peering on Google Cloud Platform (GCP) <vpc-peering-gcp>`.
+- :ref:`Set up VPC peering on Amazon Web Services (AWS) <vpc-peering-aws>`.
 
 Deploying new services to a VPC
 -------------------------------
