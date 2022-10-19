@@ -322,7 +322,6 @@ entries:
         - file: docs/products/kafka/kafka-connect/getting-started
         - file: docs/products/kafka/kafka-connect/concepts
           entries:
-          - file: docs/products/kafka/kafka-connect/concepts/list-of-connector-plugins
           - file: docs/products/kafka/kafka-connect/concepts/jdbc-source-modes
           - file: docs/products/kafka/kafka-connect/concepts/connect-plugin-list-not-available
 
@@ -337,6 +336,7 @@ entries:
             - file: docs/products/kafka/kafka-connect/howto/enable-automatic-restart
             - file: docs/products/kafka/kafka-connect/howto/manage-logging-level
               title: Manage Kafka Connect logging level
+            - file: docs/products/kafka/kafka-connect/howto/request-new-connector
           - file: docs/products/kafka/kafka-connect/howto/list-source-connectors
             entries:
             - file: docs/products/kafka/kafka-connect/howto/jdbc-source-connector-pg
