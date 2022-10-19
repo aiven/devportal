@@ -240,6 +240,7 @@ entries:
           - file: docs/products/kafka/concepts/partition-segments
           - file: docs/products/kafka/concepts/auth-types
           - file: docs/products/kafka/concepts/non-leader-for-partition
+          - file: docs/products/kafka/concepts/configuration-backup
       - file: docs/products/kafka/howto
         title: HowTo
         entries:
