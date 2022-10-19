@@ -11,7 +11,7 @@ In the `Aiven web console <https://console.aiven.io/>`_, follow these steps to c
 3. Select an Account to add the project to.
 4. In **Payment method** select a project to copy the billing details from, or select **Use a new credit card**.
 
-When you create a new project, you will need to enable :doc:`billing for creating new services <docs/platform/howto/list-billing>`.
+When you create a new project, you will need to enable :doc:`billing for creating new services </docs/platform/howto/list-billing>`.
 
 .. note::
     You can :ref:`create a project using the Aiven CLI <avn-create-update-project>` as well.
