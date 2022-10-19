@@ -78,6 +78,7 @@ exceptions:
   - PostgreSQL
   - Postman
   - Premium
+  - Private Link
   - Project
   - Prometheus
   - Provectus
