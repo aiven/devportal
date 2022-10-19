@@ -12,6 +12,7 @@ To create a new service:
    This opens a new page with the available service options.
 
    .. image:: /images/tools/console/console_create_service.png
+      :alt: Aiven Console view for creating a new service
 
 3. Select the main properties for your service:
 
@@ -49,6 +50,7 @@ To create a new service:
    The *Overview* page for the service opens.
 
    .. image:: /images/tools/console/console_service.png
+      :alt: Aiven Console service Overview page
 
    This view shows you the connection parameters for your service, its current status, and the configuration options.
 

@@ -8,7 +8,8 @@ Log in to Aiven for Grafana® to start monitoring your data sources.
 
 
 .. image:: /images/products/grafana/log-in-grafana.gif
-    :width: 500px
+   :width: 500px
+   :alt: Log in Grafana
 
 
 To log in:

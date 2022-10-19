@@ -45,6 +45,7 @@ To manage the connection pools, follow the steps below:
    This shows you the database connection settings for the pool, similar to the below
 
 .. image:: /images/products/postgresql/connection-pool-details.png
+   :alt: Connection pool details
 
 
 Connection pools for replicas
