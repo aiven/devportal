@@ -9,6 +9,7 @@ Prerequisites
 To download the latest nosqlbench release, search for "latest" in `nosqlbench GitHub repository <https://github.com/nosqlbench/nosqlbench/releases/latest>`_.
 Nosqlbench can be downloaded as a Linux binary executable called ``nb``. The ``nb`` executable is built with all java libraries and includes a number of sample scenarios ready to be run.
 
+
 .. Tip::
 
    You can read more about the nosqlbench core concepts and parameters in the `dedicated documentation <https://docs.nosqlbench.io/docs/nosqlbench/core-concepts/>`_
