@@ -93,7 +93,7 @@ to peer is located in:
    az ad sp create --id $user_app_id
 
 This creates a service principal to your subscription that may given
-permissions to peer your VNet. Save the ``objectId`` field from the
+permissions to peer your VNet. Save the ``id`` field from the json
 output - this will be referred to as ``$user_sp_id`` . Notice that this
 is different from the ``$user_app_id`` value earlier, which is also
 shown in the output.
@@ -178,7 +178,7 @@ principal in your subscription:
    az ad sp create --id 55f300d4-fc50-4c5e-9222-e90a6e2187fb
 
 The argument to ``--id`` field above is the ID of the Aiven application
-object. Save the ``objectId`` field from the output - it will be
+object, this is a fix id and the command must be run like that. Save the ``id`` field from the json output - (just above the ``info`` field) - it will be
 referred to as ``$aiven_sp_id`` later.
 
 If this fails with the error "When using this permission, the backing
@@ -339,8 +339,7 @@ connection to the Aiven Project VPC's VNet. Once this is detected, the
 state changes from ``PENDING_PEER`` to ``ACTIVE`` . After this services
 in the Project VPC can be reached through the peering. To check if the
 peering connection is ``ACTIVE`` , run the same Aiven CLI
-``avn vpc peering-connection get`` command from step 12. Note that it
-may take a few minutes for the state to update:
+``avn vpc peering-connection get`` command from step 12. In some cases it has taken up to 15 minutes for the state to update:
 
 ::
 
