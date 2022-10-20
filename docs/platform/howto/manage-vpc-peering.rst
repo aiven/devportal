@@ -1,5 +1,3 @@
-.. _platform_howto_setup_vpc_peering:
-
 Manage Virtual Private Cloud (VPC) peering
 ==========================================
 
@@ -33,8 +31,8 @@ When you create a new service, you can then place it in the VPC. The **VPC** tab
 Cloud-specific VPC peering instructions
 -----------------------------------------------------
 
-- :ref:`Set up VPC peering on Google Cloud Platform (GCP) <vpc-peering-gcp>`.
-- :ref:`Set up VPC peering on Amazon Web Services (AWS) <vpc-peering-aws>`.
+- :doc:`Set up VPC peering on Amazon Web Services (AWS) <docs/platform/howto/vpc-peering-aws>`
+- :doc:`Set up VPC peering on Google Cloud Platform (GCP) <docs/platform/howto/vpc-peering-gcp>`
 
 Deploying new services to a VPC
 -------------------------------
