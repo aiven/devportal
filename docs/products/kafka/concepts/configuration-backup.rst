@@ -23,7 +23,9 @@ Some of the key benefits of configuration backups include the following:
 
 * Configuration backups are automatically enabled and stored in the Cloud storage.
 * Configurations are backed up in 3 hours intervals.
-* It helps with speedy disaster recovery.
+* It helps with speedy disaster recovery in certain situations. 
+.. note:: 
+    In a rare scenario where all the nodes are lost, the configurations are lost and not accessible anymore.
 * It helps application users with a quick re-creation of Apache Kafka® services, allowing them to focus on development tasks rather than re-configuring the platform.
 
 Limitations
