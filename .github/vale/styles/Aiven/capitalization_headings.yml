@@ -14,8 +14,6 @@ exceptions:
   - Aiven
   - Apache
   - Auth0
-  - AZ
-  - AZs
   - Boot
   - Business
   - BYOA
@@ -101,9 +99,6 @@ exceptions:
   - United States
   - UpCloud
   - Virtual Private Cloud
-  - VPC
-  - VM
-  - VMs
   - Workbench
   - Zapier
   - ZooKeeper
