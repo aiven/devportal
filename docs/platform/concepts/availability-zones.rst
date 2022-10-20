@@ -43,22 +43,22 @@ Azure availability zones
 
 Aiven supports a subset of existing Azure cloud regions with availability zones. They are the following:
 
-- azure-australiaeast
-- azure-brazilsouth
-- azure-canadacentral
-- azure-centralus
-- azure-eastus2
-- azure-france-central
-- azure-germany-westcentral
-- azure-korea-central
-- azure-northeurope
-- azure-norway-east
-- azure-south-africa-north
-- azure-southeastasia
-- azure-switzerland-north
-- azure-uae-north
-- azure-westeurope
-- azure-westus2
+- ``azure-australiaeast``
+- ``azure-brazilsouth``
+- ``azure-canadacentral``
+- ``azure-centralus``
+- ``azure-eastus2``
+- ``azure-france-central``
+- ``azure-germany-westcentral``
+- ``azure-korea-central``
+- ``azure-northeurope``
+- ``azure-norway-east``
+- ``azure-south-africa-north``
+- ``azure-southeastasia``
+- ``azure-switzerland-north``
+- ``azure-uae-north``
+- ``azure-westeurope``
+- ``azure-westus2``
 
 Related reading
 ---------------
