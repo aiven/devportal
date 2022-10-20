@@ -1,15 +1,15 @@
 Dashboard preview for Aiven for Grafana®
 ========================================
 
-The Dashboard previews feature in Grafana provides a preview of all your dashboards. Instead of a list view of all your dashboards, you can now see previews for each dashboard configured. 
+Grafana's Dashboard Previews feature is a great way to get an overview of all your dashboards. Instead of a list view of all your dashboards, you can now see a graphical representation for each dashboard configured.
 
 The dashboard previews feature is an opt-in beta feature available in Grafana 9.0+. This feature is disabled by default on the Aiven for Grafana® service. 
 
 .. note:: 
     Dashboard previews are not available for Hobbyist and Startup-1 plans.
 
-Enable dashboard preview
-------------------------
+Enable dashboard previews
+-------------------------
 
 Follow these steps to enable dashboard previews for your Aiven for Grafana service:
 
@@ -33,7 +33,7 @@ Follow these steps to enable dashboard previews for your Aiven for Grafana servi
 Limitations
 -----------
 * Dashboard previews are not available for Hobbyist and Startup-1 plans.
-* Before changing to a lower service plan (hobbyist or Startup-1) where dashboard previews are unavailable, you need first to disable it on the current service.   
+* Before downgrading your service plan to Hobbyist or Startup-1, where dashboard previews are unavailable, you need first to disable it on the current service. 
 
 
-
+For more information on Dashboard previews, see `Grafana documentation <https://grafana.com/docs/grafana/latest/search/dashboard-previews/>`_. 
