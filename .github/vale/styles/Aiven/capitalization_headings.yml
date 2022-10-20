@@ -15,8 +15,6 @@ exceptions:
   - Apache
   - AWS Transit Gateway
   - Auth0
-  - AZ
-  - AZs
   - Boot
   - Business
   - BYOA
