@@ -1,5 +1,3 @@
-.. _vpc-peering-gcp:
-
 Set up Virtual Private Cloud (VPC) peering on Google Cloud Platform (GCP)
 =========================================================================
 
