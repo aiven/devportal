@@ -18,8 +18,6 @@ The row based replication works very well as long as the tables being replicated
 
 If a statement like the above matched 500 rows and the table had a million rows altogether, the row based replication format would contain 500 individual delete operations and the target server needed to do sequential scan over the one million rows for each of the individual deletions, which could take tens of minutes. If the table had a primary key, the same statement would likely be replicated in under a second.
 
-If, on the other side, t
-
 Replication use in Aiven for MySQL
 ----------------------------------
 
