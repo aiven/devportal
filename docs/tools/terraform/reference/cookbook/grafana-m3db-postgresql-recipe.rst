@@ -20,11 +20,60 @@ In the above diagram, the PostgreSQL service metrics are pushed to M3DB which is
 Let's cook!
 -----------
 
-Here is the sample Terraform file to deploy the three services and two service integrations. Keep in mind that some parameters and configurations will vary for your case. A reference to some of the advanced configurations is added at the end of this document.
+Be sure to check out the :doc:`getting started guide <../../get-started>` to learn about the common files required to execute the following recipe. For example, you'll need to declare the variables for ``project_name``, ``api_token``, and ``service_name_prefix``.
 
-.. Tip::
+.. dropdown:: Expand to check out the relevant common files needed for this recipe.
 
-    Be sure to check out the :doc:`getting started guide <../../get-started>` to learn about the common files required to execute the following recipe. For example, you'll need to declare the variables for ``project_name``, ``api_token``, and ``service_name_prefix``.
+    1. Add the following to a new ``provider.tf`` file:
+
+    .. code:: terraform
+
+       terraform {
+         required_providers {
+           aiven = {
+             source  = "aiven/aiven"
+             version = ">= 3.1"
+           }
+         }
+       }
+   
+       provider "aiven" {
+         api_token = var.aiven_api_token
+       }
+   
+    You can also set the environment variable ``AIVEN_TOKEN`` for the ``api_token`` property. With this, you don't need to pass the ``-var-file`` flag when executing Terraform commands.
+ 
+    2. To avoid including sensitive information in source control, the variables are defined here in the ``variables.tf`` file. You can then use a ``*.tfvars`` file with the actual values so that Terraform receives the values during runtime, and exclude it.
+
+    The ``variables.tf`` file defines both the API token, and the project name to use:
+
+    .. code:: terraform
+
+       variable "aiven_api_token" {
+         description = "Aiven console API token"
+         type        = string
+       }
+   
+       variable "project_name" {
+         description = "Aiven console project name"
+         type        = string
+       }
+
+       variable "service_name_prefix" {
+         description = "A string to prepend to the service name"
+         type        = string
+       }
+   
+   
+    3. The ``var-values.tfvars`` file holds the actual values and is passed to Terraform using the ``-var-file=`` flag.
+
+    ``var-values.tfvars`` file:
+
+    .. code:: terraform
+
+       aiven_api_token     = "<YOUR-AIVEN-AUTHENTICATION-TOKEN-GOES-HERE>"
+       project_name        = "<YOUR-AIVEN-CONSOLE-PROJECT-NAME-GOES-HERE>"
+       service_name_prefix = "<YOUR-CHOICE-OF-A-SERVICE-NAME-PREFIX>"
 
 ``services.tf`` file:
 
