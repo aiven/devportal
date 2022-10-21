@@ -12,6 +12,8 @@ ARN
 Auth0
 autovacuum
 Avro
+AZ
+AZs
 Azure
 binlog
 boolean
@@ -198,7 +200,10 @@ uncomment
 unencrypted
 untrusted
 unaggregated
+UpCloud
 upsert
+VM
+VMs
 VPC
 VNet
 wget
