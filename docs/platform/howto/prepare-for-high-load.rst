@@ -36,7 +36,7 @@ You can check the status and subscribe to Aiven's platform updates directly from
 Monitor the services
 --------------------
 
-It's difficult to prepare for high load if the usual load is not monitored. Check out how to setup adeguate monitoring for your needs in the :doc:`dedicated documentation <monitoring-services>`.
+It's difficult to prepare for high load if the usual load is not monitored. Check out how to setup adequate monitoring for your needs in the :doc:`dedicated documentation <monitoring-services>`.
 
 
 Modify the service plan
