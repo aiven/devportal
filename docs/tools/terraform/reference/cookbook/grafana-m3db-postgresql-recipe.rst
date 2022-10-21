@@ -24,6 +24,8 @@ Be sure to check out the :doc:`getting started guide <../../get-started>` to lea
 
 .. dropdown:: Expand to check out the relevant common files needed for this recipe.
 
+    Navigate to a new folder and add the following files.
+
     1. Add the following to a new ``provider.tf`` file:
 
     .. code:: terraform
@@ -45,7 +47,7 @@ Be sure to check out the :doc:`getting started guide <../../get-started>` to lea
  
     2. To avoid including sensitive information in source control, the variables are defined here in the ``variables.tf`` file. You can then use a ``*.tfvars`` file with the actual values so that Terraform receives the values during runtime, and exclude it.
 
-    The ``variables.tf`` file defines both the API token, and the project name to use:
+    The ``variables.tf`` file defines the API token, the project name to use, and the prefix for the service name:
 
     .. code:: terraform
 
@@ -148,6 +150,26 @@ Be sure to check out the :doc:`getting started guide <../../get-started>` to lea
     source_service_name      = aiven_grafana.demo-grafana.service_name
     destination_service_name = aiven_m3db.demo-m3db.service_name
   }
+
+.. dropdown:: Expand to check out how to execute the Terraform files.
+
+    The ``init`` command performs several different initialization steps in order to prepare the current working directory for use with Terraform. In our case, this command automatically finds, downloads, and installs the necessary Aiven Terraform provider plugins.
+    
+    .. code:: shell
+
+       terraform init
+
+    The ``plan`` command creates an execution plan and shows you the resources that will be created (or modified) for you. This command does not actually create any resource; this is more like a preview.
+
+    .. code:: bash
+
+       terraform plan -var-file=var-values.tfvars
+
+    If you're satisfied with the output of ``terraform plan``, go ahead and run the ``terraform apply`` command which actually does the task or creating (or modifying) your infrastructure resources. 
+
+    .. code:: bash
+
+       terraform apply -var-file=var-values.tfvars
 
 At first, ``aiven_pg``, ``aiven_m3db``, and ``aiven_grafana`` resources are created. Once these three services are running, the resources that bridge them ``aiven_service_integration`` are created.
 Note the different ``integration_type`` used for each of these service integrations. 
