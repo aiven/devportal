@@ -25,7 +25,7 @@ Follow these steps to enable dashboard previews for your Aiven for Grafana servi
 
 7. Using the **Service URI**, open the Grafana login page. 
 8. Enter the username and password, and click **Log in**. 
-9.  Click **Dashboards** on the left side menu, and you will see previews of all the dashboards.
+9.  Click **Dashboards** on the left side menu, and select the grid layout to view dashboard previews of all the dashboards. Dashboard previews are rendered as thumbnails and can be sorted alphabetically. 
 
 .. image:: /images/products/grafana/dashboard-previews-on-grafana.png
     :alt: Dashboard previews on Grafana
