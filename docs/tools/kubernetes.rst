@@ -1,7 +1,7 @@
 Aiven Operator for Kubernetes®
 ==============================
 
-Aiven Operator for Kubernetes® allows users to manage Aiven services through the Kubernetes® API by using `Custom Resource Definitions (CRDs) <https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/>`_.
+Aiven Operator for Kubernetes® allows users to manage Aiven services through the Kubernetes® API by using `Custom Resource Definitions (CRD) <https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/>`_.
 
 .. note::
     Only Aiven for PostgreSQL® and Aiven for Apache Kafka® are supported at this time.
@@ -62,7 +62,7 @@ Add the `Aiven Helm chart repository <https://github.com/aiven/aiven-charts/>`_ 
   helm repo add aiven https://aiven.github.io/aiven-charts
   helm repo update
 
-Now let's install the CRDs and then the operator itself:
+Now let's install the CRD and then the operator itself:
 
 .. code:: bash
 

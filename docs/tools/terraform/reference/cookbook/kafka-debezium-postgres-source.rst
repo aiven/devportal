@@ -149,7 +149,7 @@ Let's go over a few of these configurations and understand their functions:
 - ``group_id`` under ``kafka_connect_user_config`` is a unique ID that identifies the Kafka Connect cluster.
 - ``status_storage_topic`` and ``offset_storage_topic`` identify the name of the internal Kafka topics that store the connector status and the connector offsets respectively.
 - The Debezium source connector for PostgreSQL listens for all data changes on one or more tables, including schema changes. In our case, the table that is monitored for any data change is "tab1" in ``defaultdb`` database under ``public`` schema. The plugin used to capture changes is ``wal2json`` that converts WAL events (WAL stands for Write Ahead Logging) into JSON payload that is sent to the Kafka topic via the Kafka connect service. The Kafka topic that the Debezium connector creates has the name ``replicator.public.tab1``, where "replicator" is the logical database used by Debezium connector to monitor for data changes and "public" and "tab1" are the name of the PostgreSQL schema and table name respectively. 
-- The "depends_on" property establishes a dependency between the services creation in order to avoid failures.
+- The ``depends_on`` property establishes a dependency between the services creation in order to avoid failures.
 
 More resources
 --------------

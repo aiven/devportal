@@ -139,7 +139,7 @@ field removed. Any references to ``aiven_service.kafka.*`` should be updated to 
 
     terraform state list | grep kf
 
-3. Remove the service from Terraform's control, and write a backup of the state into your local directory::
+3. Remove the service from the control of Terraform, and write a backup of the state into your local directory::
 
     terraform state rm -backup=./ aiven_service.kafka
 
