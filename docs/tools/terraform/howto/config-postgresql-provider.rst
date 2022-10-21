@@ -65,7 +65,7 @@ Optionally, when the Aiven for PostgreSQL service is created within the same Ter
       connect_timeout = 15
     }
 
-3. Create a PostgreSQL role called **test_role** using the Terraform resource ``postgresql_role.my_role``. 
+3. Create a PostgreSQL role called ``test_role`` using the Terraform resource ``postgresql_role.my_role``. 
 
 .. code:: terraform
 
