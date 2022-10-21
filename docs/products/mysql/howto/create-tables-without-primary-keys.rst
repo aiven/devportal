@@ -1,9 +1,15 @@
 Create new tables without primary keys
 ======================================
 
-Depending on when your Aiven for MySQL service has been created, it may by default not allow creating new tables without primary keys. 
+If you Aiven for MySQL was created after 2020-06-03, then by default your Aiven for MySQL does not allow creating new tables without primary keys. You can check this by following those steps:
 
-When creating tables without primary keys is not allowed, you will get the following error message:
+#. Select the Aiven for MySQL service that you want to check.
+#. On the **Overview** tab, in the **Advanced configuration** section, click **Change**.
+#. Find the ``mysql.sql_require_primary_key`` parameter
+
+If you ``mysql.sql_require_primary_key`` is enabled, then your Aiven for MySQL does not allow to create new tables without primary keys.
+
+When this ``mysql.sql_require_primary_key`` is enabled, you won't be able to create tables without primary keys. You will get the following error message:
 
 .. code::
     Unable to create or change a table without a primary key, when the system variable 'sql_require_primary_key' is set. Add a primary key to the table or unset this variable to avoid this message. Note that tables without a primary key can cause performance problems in row-based replication, so please consult your DBA before changing this setting.
