@@ -75,7 +75,7 @@ The configuration file contains the following entries:
 * ``name``: the connector name
 * ``kafka-topic``: the target Apache Kafka topic name
 * ``cps.project``: the GCP project name where the target Google Pub/Sub is located
-* ``cps.subscription``: the name of the `Google Pub/Sub subscription <https://cloud.google.com/Pub/Sub/docs/create-subscription>`_
+* ``cps.subscription``: the name of the `Google Pub/Sub subscription <https://cloud.google.com/pubsub/docs/create-subscription>`_
 * ``gcp.credentials.json``: contains the GCP service account key, correctly escaped as defined in the :ref:`prerequisite phase <connect_pubsub_source_prereq>`
 * ``key.converter`` and ``value.converter``:  define the message data format in the Apache Kafka topic. The ``io.confluent.connect.avro.AvroConverter`` converter translates messages from the Avro format. To retrieve the message schema we use Aiven's `Karapace schema registry <https://github.com/aiven/karapace>`_, as specified by the ``schema.registry.url`` parameter and related credentials.
 
@@ -90,7 +90,7 @@ The configuration file contains the following entries:
      * ``value.converter.schema.registry.basic.auth.user.info``: passing the required schema registry credentials in the form of ``SCHEMA_REGISTRY_USER:SCHEMA_REGISTRY_PASSWORD`` with the ``SCHEMA_REGISTRY_USER`` and ``SCHEMA_REGISTRY_PASSWORD`` parameters :ref:`retrieved in the previous step <connect_pubsub_source_prereq>`.
 
   
-The full list of parameters is available in the `dedicated GitHub page <https://github.com/GoogleCloudPlatform/Pub/Sub/>`_.
+The full list of parameters is available in the `dedicated GitHub page <https://github.com/GoogleCloudPlatform/pubsub/>`_.
 
 Create a Kafka Connect connector with the Aiven Console
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''

@@ -17,7 +17,7 @@ To setup an Google Pub/Sub source connector, you need an Aiven for Apache Kafka 
 Furthermore you need to collect the following information about the target Google Pub/Sub upfront:
 
 * ``GCP_PROJECT_NAME``: The GCP project name where the target Google Pub/Sub Lite is located
-* ``GCP_SUBSCRIPTION``: the name of the `Google Pub/Sub Lite subscription <https://cloud.google.com/Pub/Sub/docs/create-subscription>`_
+* ``GCP_SUBSCRIPTION``: the name of the `Google Pub/Sub Lite subscription <https://cloud.google.com/pubsub/docs/create-subscription>`_
 * ``GCP_PUBSUB_LOCATION``: the name of the `Google Pub/Sub Lite location <https://cloud.google.com/pubsub/lite/docs/locations>`_
 * ``GCP_SERVICE_KEY``: A valid GCP service account key for the ``GCP_PROJECT_NAME``. To create the project key review the :ref:`dedicated document <gcp-bigquery-sink-connector-google-account>`
 
@@ -77,7 +77,7 @@ The configuration file contains the following entries:
 * ``name``: the connector name
 * ``kafka-topic``: the target Apache Kafka topic name
 * ``pubsublite.project``: the GCP project name where the target Google Pub/Sub is located
-* ``pubsublite.subscription``: the name of the `Google Pub/Sub lite subscription <https://cloud.google.com/Pub/Sub/docs/create-subscription>`_
+* ``pubsublite.subscription``: the name of the `Google Pub/Sub lite subscription <https://cloud.google.com/pubsub/docs/create-subscription>`_
 * ``pubsublite.location``: the name of the `Google Pub/Sub Lite location <https://cloud.google.com/pubsub/lite/docs/locations>`_
 * ``gcp.credentials.json``: contains the GCP service account key, correctly escaped as defined in the :ref:`prerequisite phase <connect_pubsub_lite_source_prereq>`
 * ``key.converter`` and ``value.converter``:  define the message data format in the Apache Kafka topic. The ``io.confluent.connect.avro.AvroConverter`` converter translates messages from the Avro format. To retrieve the message schema we use Aiven's `Karapace schema registry <https://github.com/aiven/karapace>`_, as specified by the ``schema.registry.url`` parameter and related credentials.
@@ -93,7 +93,7 @@ The configuration file contains the following entries:
      * ``value.converter.schema.registry.basic.auth.user.info``: passing the required schema registry credentials in the form of ``SCHEMA_REGISTRY_USER:SCHEMA_REGISTRY_PASSWORD`` with the ``SCHEMA_REGISTRY_USER`` and ``SCHEMA_REGISTRY_PASSWORD`` parameters :ref:`retrieved in the previous step <connect_pubsub_lite_source_prereq>`.
 
 
-The full list of parameters is available in the `dedicated GitHub page <https://github.com/GoogleCloudPlatform/Pub/Sub/>`_.
+The full list of parameters is available in the `dedicated GitHub page <https://github.com/GoogleCloudPlatform/pubsub/>`_.
 
 Create a Kafka Connect connector with the Aiven Console
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''
