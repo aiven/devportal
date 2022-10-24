@@ -34,8 +34,8 @@ Create a ClickHouse® service
 
   6. Service name
 
-  .. note:: 
-    The pricing for the same service may vary between different providers and regions. The **Service summary** box on the right side of the console shows the pricing for your selected options.
+.. note:: 
+  The pricing for the same service may vary between different providers and regions. The **Service summary** box on the right side of the console shows the pricing for your selected options.
 
 4. Verify your choices in the **Service summary** box and, if your setup looks as expected, select select **+ Create service** at the bottom of the box.
 
