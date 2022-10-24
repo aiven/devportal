@@ -371,6 +371,7 @@ entries:
             - file: docs/products/kafka/kafka-connect/howto/http-sink
             - file: docs/products/kafka/kafka-connect/howto/mongodb-sink-mongo
             - file: docs/products/kafka/kafka-connect/howto/mongodb-sink-lenses
+            - file: docs/products/kafka/kafka-connect/howto/influx-sink
             - file: docs/products/kafka/kafka-connect/howto/redis-streamreactor-sink
             - file: docs/products/kafka/kafka-connect/howto/cassandra-streamreactor-sink
 
