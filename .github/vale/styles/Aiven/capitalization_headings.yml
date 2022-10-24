@@ -42,6 +42,8 @@ exceptions:
   - Google Cloud Storage
   - Google Cloud SQL
   - Google Data Studio
+  - Google Pub/Sub
+  - Google Pub/Sub Lite
   - Grafana
   - Hobbyist
   - HowTo
