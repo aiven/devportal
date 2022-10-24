@@ -14,31 +14,28 @@ Create a ClickHouse® service
 
 .. raw:: html
 
-    <video controls src="_static/clickhouse-create-service.mov"></video>
+    <video controls src="_static/clickhouse-create-service.mp4"></video>
 
 1. Log in to the `Aiven web console <https://console.aiven.io/>`_.
 
 2. From **Current services** view, select **Create service**.
 
-   .. image:: /images/tools/console/console_create_service.png
-      :alt: Aiven Console view for creating a new service
-
 3. In the **Create service** view, set up your new service's properties.
 
-    1. Service type (**ClickHouse®**)
+  1. Service type (**ClickHouse®**)
     
-    2. Cloud provider
+  2. Cloud provider
 
-    3. Cloud region
+  3. Cloud region
 
-    4. Service plan (number of servers, kind of memory, CPU, and disk resources)
+  4. Service plan (number of servers, kind of memory, CPU, and disk resources)
 
-    5. :doc:`additional disk storage <../concepts/dynamic-disk-sizing>`
+  5. :doc:`additional disk storage <../concepts/dynamic-disk-sizing>`
 
-    6. Service name
+  6. Service name
 
-    .. note:: 
-	    The pricing for the same service may vary between different providers and regions. The **Service summary** box on the right side of the console shows the pricing for your selected options.
+  .. note:: 
+    The pricing for the same service may vary between different providers and regions. The **Service summary** box on the right side of the console shows the pricing for your selected options.
 
 4. Verify your choices in the **Service summary** box and, if your setup looks as expected, select select **+ Create service** at the bottom of the box.
 
