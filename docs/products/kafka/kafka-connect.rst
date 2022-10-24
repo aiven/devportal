@@ -35,9 +35,9 @@ Source connectors
        :shadow: md
        :margin: 2 2 0 0
 
-       `Google Cloud Pub/Sub <https://github.com/GoogleCloudPlatform/pubsub/tree/master/kafka-connector>`__ 
+       :doc:`Google Cloud Pub/Sub <kafka-connect/howto/gcp-pubsub-source>` 
 
-       `Google Cloud Pub/Sub Lite <https://github.com/GoogleCloudPlatform/pubsub/>`_ 
+       :doc:`Google Cloud Pub/Sub Lite <kafka-connect/howto/gcp-pubsub-lite-source>`
 
        :doc:`Stream Reactor Cassandra® <kafka-connect/howto/cassandra-streamreactor-source>`
 

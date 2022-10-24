@@ -1,5 +1,5 @@
 Create a Google Pub/Sub source connector
-=======================================
+========================================
 
 The `Google Pub/Sub source connector <https://github.com/GoogleCloudPlatform/Pub/Sub/>`_ enables you to push from a Google Pub/Sub subscription to an Aiven for Apache Kafka® topic. 
 
@@ -18,7 +18,7 @@ Furthermore you need to collect the following information about the target Googl
 
 * ``GCP_PROJECT_NAME``: The GCP project name where the target Google Pub/Sub is located
 * ``GCP_SUBSCRIPTION``: the name of the `Google Pub/Sub subscription <https://cloud.google.com/Pub/Sub/docs/create-subscription>`_
-* ``GCP_SERVICE_KEY``: A valid GCP service account key for the ``GCP_PROJECT_NAME``. To create the project key review the :ref:`dedicated document <gcp-Pub/Subquery-source-connector-google-account>`
+* ``GCP_SERVICE_KEY``: A valid GCP service account key for the ``GCP_PROJECT_NAME``. To create the project key review the :ref:`dedicated document <gcp-bigquery-sink-connector-google-account>`
 
   .. Warning::
 

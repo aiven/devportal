@@ -19,7 +19,7 @@ Furthermore you need to collect the following information about the target Googl
 * ``GCP_PROJECT_NAME``: The GCP project name where the target Google Pub/Sub Lite is located
 * ``GCP_SUBSCRIPTION``: the name of the `Google Pub/Sub Lite subscription <https://cloud.google.com/Pub/Sub/docs/create-subscription>`_
 * ``GCP_PUBSUB_LOCATION``: the name of the `Google Pub/Sub Lite location <https://cloud.google.com/pubsub/lite/docs/locations>`_
-* ``GCP_SERVICE_KEY``: A valid GCP service account key for the ``GCP_PROJECT_NAME``. To create the project key review the :ref:`dedicated document <gcp-Pub/Subquery-source-connector-google-account>`
+* ``GCP_SERVICE_KEY``: A valid GCP service account key for the ``GCP_PROJECT_NAME``. To create the project key review the :ref:`dedicated document <gcp-bigquery-sink-connector-google-account>`
 
   .. Warning::
 
@@ -90,7 +90,7 @@ The configuration file contains the following entries:
 
      * ``value.converter.schema.registry.url``: pointing to the Aiven for Apache Kafka schema registry URL in the form of ``https://APACHE_KAFKA_HOST:SCHEMA_REGISTRY_PORT`` with the ``APACHE_KAFKA_HOST`` and ``SCHEMA_REGISTRY_PORT`` parameters :ref:`retrieved in the previous step <connect_pubsub_lite_source_prereq>`.
      * ``value.converter.basic.auth.credentials.source``: to the value ``USER_INFO``, since you're going to login to the schema registry using username and password.
-     * ``value.converter.schema.registry.basic.auth.user.info``: passing the required schema registry credentials in the form of ``SCHEMA_REGISTRY_USER:SCHEMA_REGISTRY_PASSWORD`` with the ``SCHEMA_REGISTRY_USER`` and ``SCHEMA_REGISTRY_PASSWORD`` parameters :ref:`retrieved in the previous step <connect_elasticsearch_source_prereq>`.
+     * ``value.converter.schema.registry.basic.auth.user.info``: passing the required schema registry credentials in the form of ``SCHEMA_REGISTRY_USER:SCHEMA_REGISTRY_PASSWORD`` with the ``SCHEMA_REGISTRY_USER`` and ``SCHEMA_REGISTRY_PASSWORD`` parameters :ref:`retrieved in the previous step <connect_pubsub_lite_source_prereq>`.
 
 
 The full list of parameters is available in the `dedicated GitHub page <https://github.com/GoogleCloudPlatform/Pub/Sub/>`_.
