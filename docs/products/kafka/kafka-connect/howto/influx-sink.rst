@@ -1,5 +1,5 @@
 Create an InfluxDB® sink connector
-=======================================
+==================================
 
 The InfluxDB® sink connector enables you to move data from an Aiven for Apache Kafka® cluster to an InfluxDB instance for further processing and analysis.
 
@@ -22,7 +22,7 @@ Furthermore you need to collect the following information about the target influ
 * ``INFLUXDB_PORT``: the influxdb port
 * ``INFLUXDB_DATABASE_NAME``: The name of the influxdb database
 * ``TOPIC_LIST``: The list of topics to sink divided by comma
-* ``KCQL_TRANSFORMATION``: The KCQL syntax to parse the topic data, should be in the format:
+* ``KCQL_TRANSFORMATION``: The KCQL syntax to parse the topic data, should be in the format
 
   ::
 
