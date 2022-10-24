@@ -14,7 +14,7 @@ Create a ClickHouse® service
 
 .. raw:: html
 
-    <video controls src="_static/clickhouse-create-service.mp4"></video>
+    <video width="500px" height="500px" controls="controls"/><source src="_static/clickhouse-create-service.mp4" type="video/mp4"></video>
 
 1. Log in to the `Aiven web console <https://console.aiven.io/>`_.
 
