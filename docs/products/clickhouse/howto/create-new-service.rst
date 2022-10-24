@@ -1,15 +1,15 @@
-Creating and connecting to a managed ClickHouse serice
+Creating and connecting to a managed ClickHouse® service
 ==========================================
 
-Check out how to create a new ClickHouse service in the Aiven console. Learn how to add a database and connect to the service.
+Check out how to create a new ClickHouse® service in the Aiven console. Learn how to add a database and connect to the service.
 
 Prerequisites
 _____________
 
 * Aiven account
-* `Docker <https://www.docker.com/>`_ (to connect to the service with the ClickHouse client)
+* `Docker <https://www.docker.com/>`_ (to connect to the service with the ClickHouse® client)
 
-Create a ClickHouse service
+Create a ClickHouse® service
 ---------------------------
 
 .. raw:: html
@@ -25,7 +25,7 @@ Create a ClickHouse service
 
 3. In the **Create service** view, set up your new service's properties.
 
-    1. Service type (**ClickHouse**)
+    1. Service type (**ClickHouse®**)
     
     2. Cloud provider
 
@@ -59,10 +59,10 @@ Create a database
     All databases must be created through the web console.
 
 
-Connect to ClickHouse
+Connect to ClickHouse®
 ---------------------
 
-1. Get the latest Docker image of `the ClickHouse client from Docker Hub <https://hub.docker.com/r/clickhouse/clickhouse-client>`_
+1. Get the latest Docker image of `the ClickHouse® client from Docker Hub <https://hub.docker.com/r/clickhouse/clickhouse-client>`_
 
 2. Go to the *Overview* tab and copy the **Host**, **Port**, **User**, and **Password** parameters that you need for connecting to the service.
 
@@ -78,7 +78,7 @@ Connect to ClickHouse
        --port PORT                          \
        --secure
 
-For more information on using the ClickHouse client, see :doc:`this article <howto/use-cli>`.
+For more information on using the ClickHouse® client, see :doc:`this article <howto/use-cli>`.
 
 Next steps
 ----------
