@@ -452,6 +452,8 @@ entries:
               title: Kafka to Google Pub/Sub Lite
             - file: docs/products/kafka/kafka-connect/howto/splunk-sink
               title: Kafka to Splunk
+            - file: docs/products/kafka/kafka-connect/howto/mqtt-sink-connector
+              title: Kafka to MQTT
 
         - file: docs/products/kafka/kafka-connect/reference
           title: Reference
