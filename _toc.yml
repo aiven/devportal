@@ -355,6 +355,7 @@ entries:
             - file: docs/products/kafka/kafka-connect/howto/mqtt-source-connector
             - file: docs/products/kafka/kafka-connect/howto/gcp-pubsub-source
             - file: docs/products/kafka/kafka-connect/howto/gcp-pubsub-lite-source
+            - file: docs/products/kafka/kafka-connect/howto/couchbase-source
           - file: docs/products/kafka/kafka-connect/howto/list-sink-connectors
             entries:
             - file: docs/products/kafka/kafka-connect/howto/jdbc-sink
@@ -375,6 +376,7 @@ entries:
             - file: docs/products/kafka/kafka-connect/howto/mongodb-sink-lenses
             - file: docs/products/kafka/kafka-connect/howto/redis-streamreactor-sink
             - file: docs/products/kafka/kafka-connect/howto/cassandra-streamreactor-sink
+            - file: docs/products/kafka/kafka-connect/howto/couchbase-sink
 
         - file: docs/products/kafka/kafka-connect/reference
           title: Reference

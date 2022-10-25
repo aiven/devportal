@@ -47,7 +47,7 @@ Source connectors
        :margin: 2 2 0 0
        :shadow: md
 
-       `Couchbase <https://github.com/couchbase/kafka-connect-couchbase>`__
+       :doc:`Couchbase <kafka-connect/howto/couchbase-source>`
 
        :doc:`Official MongoDB® <kafka-connect/howto/mongodb-poll-source-connector>`
 
@@ -73,7 +73,7 @@ Sink connectors
        :margin: 2 2 0 0
        :shadow: md
 
-       `Couchbase® <https://github.com/couchbase/kafka-connect-couchbase>`__
+       :doc:`Couchbase® <kafka-connect/howto/couchbase-sink>`
 
        :doc:`Official MongoDB® <kafka-connect/howto/mongodb-sink-mongo>`
 
