@@ -30,7 +30,7 @@ Create a ClickHouse® service
 
   4. Service plan (number of servers, kind of memory, CPU, and disk resources)
 
-  5. :doc:`additional disk storage <../concepts/dynamic-disk-sizing>`
+  5. Additional disk space
 
   6. Service name
 
@@ -39,7 +39,7 @@ Create a ClickHouse® service
 
 4. Verify your choices in the **Service summary** box and, if your setup looks as expected, select select **+ Create service** at the bottom of the box.
 
-   As a result, **Overview** of your new service opens and you can see your service in the **Rebuilding** status,its connection parameters, and configuration options. Once the service is ready, the status changes to **Running**. While services typically start up in a couple of minutes, the performance varies between cloud providers and regions.
+   As a result, **Overview** of your new service opens and you can see your service in the **Rebuilding** status, its connection parameters, and configuration options. Once the service is ready, the status changes to **Running**. While services typically start up in a couple of minutes, the performance varies between cloud providers and regions.
 
 .. note::
     You can :ref:`create a service using the Aiven CLI <avn-cli-service-create>` as well.
