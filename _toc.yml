@@ -382,6 +382,8 @@ entries:
             - file: docs/products/kafka/kafka-connect/howto/redis-streamreactor-sink
             - file: docs/products/kafka/kafka-connect/howto/cassandra-streamreactor-sink
             - file: docs/products/kafka/kafka-connect/howto/couchbase-sink
+            - file: docs/products/kafka/kafka-connect/howto/gcp-pubsub-sink
+            - file: docs/products/kafka/kafka-connect/howto/gcp-pubsub-lite-sink
 
         - file: docs/products/kafka/kafka-connect/reference
           title: Reference

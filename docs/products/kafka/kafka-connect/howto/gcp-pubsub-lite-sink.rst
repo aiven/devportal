@@ -1,24 +1,25 @@
-Create a Google Pub/Sub Lite source connector
-=============================================
+Create a Google Pub/Sub Lite sink connector
+===========================================
 
-The `Google Pub/Sub Lite source connector <https://github.com/GoogleCloudPlatform/pubsub/>`_ enables you to push from a Google Pub/Sub subscription to an Aiven for Apache Kafka® topic. 
+The `Google Pub/Sub Lite sink connector <https://github.com/GoogleCloudPlatform/pubsub>`_ enables you to push data from an Aiven for Apache Kafka® topic to a Google Pub/Sub Lite topic. 
 
 .. note::
 
-    You can check the full set of available parameters and configuration options in the `connector's documentation <https://github.com/GoogleCloudPlatform/pubsub/>`_.
+    You can check the full set of available parameters and configuration options in the `connector's documentation <https://github.com/GoogleCloudPlatform/pubsub>`_.
 
-.. _connect_pubsub_lite_source_prereq:
+.. _connect_pubsub_lite_sink_prereq:
 
 Prerequisites
 -------------
 
-To setup an Google Pub/Sub source connector, you need an Aiven for Apache Kafka service :doc:`with Kafka Connect enabled <enable-connect>` or a :ref:`dedicated Aiven for Apache Kafka Connect cluster <apache_kafka_connect_dedicated_cluster>`. 
+To setup an Google Pub/Sub Lite sink connector, you need an Aiven for Apache Kafka service :doc:`with Kafka Connect enabled <enable-connect>` or a :ref:`dedicated Aiven for Apache Kafka Connect cluster <apache_kafka_connect_dedicated_cluster>`. 
 
-Furthermore you need to collect the following information about the target Google Pub/Sub upfront:
+Furthermore you need to collect the following information about the target Google Pub/Sub Lite upfront:
 
 * ``GCP_PROJECT_NAME``: The GCP project name where the target Google Pub/Sub Lite is located
-* ``GCP_SUBSCRIPTION``: the name of the `Google Pub/Sub Lite subscription <https://cloud.google.com/pubsub/docs/create-subscription>`_
+* ``GCP_TOPIC``: the name of the target Google Pub/Sub Lite topic
 * ``GCP_PUBSUB_LOCATION``: the name of the `Google Pub/Sub Lite location <https://cloud.google.com/pubsub/lite/docs/locations>`_
+
 
 * ``KAFKA_TOPIC``: The name of the target topic in Aiven for Apache Kafka
 * ``APACHE_KAFKA_HOST``: The hostname of the Apache Kafka service, only needed when using Avro as data format
@@ -33,55 +34,55 @@ Furthermore you need to collect the following information about the target Googl
 
     As of version 3.0, Aiven for Apache Kafka no longer supports Confluent Schema Registry. For more information, read `the article describing the replacement, Karapace <https://help.aiven.io/en/articles/5651983>`_
 
-Setup a Google Pub/Sub Lite source connector with Aiven Console
------------------------------------------------------------------
+Setup a Google Pub/Sub Lite sink connector with Aiven Console
+-------------------------------------------------------------
 
-The following example demonstrates how to setup a Google Pub/Sub source connector for Apache Kafka using the `Aiven Console <https://console.aiven.io/>`_.
+The following example demonstrates how to setup a Google Pub/Sub Lite sink connector for Apache Kafka using the `Aiven Console <https://console.aiven.io/>`_.
 
 Define a Kafka Connect configuration file
 '''''''''''''''''''''''''''''''''''''''''
 
-Define the connector configurations in a file (we'll refer to it with the name ``pubsub_lite_source.json``) with the following content:
+Define the connector configurations in a file (we'll refer to it with the name ``pubsub_sink.json``) with the following content:
 
 .. code-block:: json
 
     {
         "name":"CONNECTOR_NAME",
-        "connector.class": "com.google.pubsublite.kafka.source.PubSubLiteSourceConnector",
+        "connector.class": "com.google.pubsublite.kafka.sink.PubSubLiteSinkConnector",
+        "topics": "KAFKA_TOPIC",
         "pubsublite.project": "GCP_PROJECT_NAME",
-        "pubsublite.subscription": "GCP_SUBSCRIPTION",
         "pubsublite.location": "GCP_PUBSUB_LOCATION",
-        "kafka.topic": "KAFKA_TOPIC",
+        "pubsublite.topic": "GCP_TOPIC",
         "key.converter": "io.confluent.connect.avro.AvroConverter",
         "key.converter.schema.registry.url": "https://APACHE_KAFKA_HOST:SCHEMA_REGISTRY_PORT",
-        "key.converter.basic.auth.credentials.source": "USER_INFO",
+        "key.converter.basic.auth.credentials.sink": "USER_INFO",
         "key.converter.schema.registry.basic.auth.user.info": "SCHEMA_REGISTRY_USER:SCHEMA_REGISTRY_PASSWORD",
         "value.converter": "io.confluent.connect.avro.AvroConverter",
         "value.converter.schema.registry.url": "https://APACHE_KAFKA_HOST:SCHEMA_REGISTRY_PORT",
-        "value.converter.basic.auth.credentials.source": "USER_INFO",
+        "value.converter.basic.auth.credentials.sink": "USER_INFO",
         "value.converter.schema.registry.basic.auth.user.info": "SCHEMA_REGISTRY_USER:SCHEMA_REGISTRY_PASSWORD"
     }
 
 The configuration file contains the following entries:
 
 * ``name``: the connector name
-* ``kafka-topic``: the target Apache Kafka topic name
+* ``topics``: the source Apache Kafka topic names, divided by comma
 * ``pubsublite.project``: the GCP project name where the target Google Pub/Sub is located
-* ``pubsublite.subscription``: the name of the `Google Pub/Sub lite subscription <https://cloud.google.com/pubsub/docs/create-subscription>`_
 * ``pubsublite.location``: the name of the `Google Pub/Sub Lite location <https://cloud.google.com/pubsub/lite/docs/locations>`_
+* ``pubsublite.topic``: the name of the target Google Pub/Sub topic
 * ``key.converter`` and ``value.converter``:  define the message data format in the Apache Kafka topic. The ``io.confluent.connect.avro.AvroConverter`` converter translates messages from the Avro format. To retrieve the message schema we use Aiven's `Karapace schema registry <https://github.com/aiven/karapace>`_, as specified by the ``schema.registry.url`` parameter and related credentials.
 
   .. note::
 
-     The ``key.converter`` and ``value.converter`` sections are only needed when the source data is in Avro format. If omitted the messages will be read as binary format.
+     The ``key.converter`` and ``value.converter`` sections are only needed when the sink data is in Avro format. If omitted the messages will be read as binary format.
 
-     When using Avro as source data format, you need to set following parameters
+     When using Avro as sink data format, you need to set following parameters
 
-     * ``value.converter.schema.registry.url``: pointing to the Aiven for Apache Kafka schema registry URL in the form of ``https://APACHE_KAFKA_HOST:SCHEMA_REGISTRY_PORT`` with the ``APACHE_KAFKA_HOST`` and ``SCHEMA_REGISTRY_PORT`` parameters :ref:`retrieved in the previous step <connect_pubsub_lite_source_prereq>`.
-     * ``value.converter.basic.auth.credentials.source``: to the value ``USER_INFO``, since you're going to login to the schema registry using username and password.
-     * ``value.converter.schema.registry.basic.auth.user.info``: passing the required schema registry credentials in the form of ``SCHEMA_REGISTRY_USER:SCHEMA_REGISTRY_PASSWORD`` with the ``SCHEMA_REGISTRY_USER`` and ``SCHEMA_REGISTRY_PASSWORD`` parameters :ref:`retrieved in the previous step <connect_pubsub_lite_source_prereq>`.
+     * ``value.converter.schema.registry.url``: pointing to the Aiven for Apache Kafka schema registry URL in the form of ``https://APACHE_KAFKA_HOST:SCHEMA_REGISTRY_PORT`` with the ``APACHE_KAFKA_HOST`` and ``SCHEMA_REGISTRY_PORT`` parameters :ref:`retrieved in the previous step <connect_pubsub_lite_sink_prereq>`.
+     * ``value.converter.basic.auth.credentials.sink``: to the value ``USER_INFO``, since you're going to login to the schema registry using username and password.
+     * ``value.converter.schema.registry.basic.auth.user.info``: passing the required schema registry credentials in the form of ``SCHEMA_REGISTRY_USER:SCHEMA_REGISTRY_PASSWORD`` with the ``SCHEMA_REGISTRY_USER`` and ``SCHEMA_REGISTRY_PASSWORD`` parameters :ref:`retrieved in the previous step <connect_pubsub_lite_sink_prereq>`.
 
-
+  
 The full list of parameters is available in the `dedicated GitHub page <https://github.com/GoogleCloudPlatform/pubsub/>`_.
 
 Create a Kafka Connect connector with the Aiven Console
@@ -91,9 +92,9 @@ To create the connector, access the `Aiven Console <https://console.aiven.io/>`_
 
 1. Click on the **Connectors** tab
 2. Clink on **Create New Connector**, the button is enabled only for services :doc:`with Kafka Connect enabled <enable-connect>`.
-3. Select the **Google Pub/Sub source**
+3. Select the **Google Pub/Sub Lite sink**
 4. Under the *Common* tab, locate the **Connector configuration** text box and click on **Edit**
-5. Paste the connector configuration (stored in the ``pubsub_lite_source.json`` file) in the form
+5. Paste the connector configuration (stored in the ``pubsub_sink.json`` file) in the form
 6. Click on **Apply**
 
    .. note::
@@ -102,26 +103,25 @@ To create the connector, access the `Aiven Console <https://console.aiven.io/>`_
 
 7. After all the settings are correctly configured, click on **Create new connector**
 8. Verify the connector status under the **Connectors** tab
-9. Verify the presence of the data in the target Pub/Sub dataset, the table name is equal to the Apache Kafka topic name. If you need to change the target table name, you can do so using the Kafka Connect ``RegexRouter`` transformation.
+9. Verify the presence of the data in the target Pub/Sub Lite topic, the table name is equal to the Apache Kafka topic name.
 
    .. note::
 
       Connectors can be created also using the dedicated :ref:`Aiven CLI command <avn_service_connector_create>`.
 
-Example: Create a Google Pub/Sub source connector
+Example: Create a Google Pub/Sub sink connector
 -------------------------------------------------
 
-You have a Google Pub/Sub Lite subscription ``GCP_SUBSCRIPTION`` that you want to push to a Aiven for Apache Kafka topic named ``measurements`` you can create a source connector with the following configuration, after replacing the placeholders for ``GCP_PROJECT_NAME``, ``GCP_SERVICE_KEY`` and ``GCP_PUBSUB_LOCATION``:
+You have an Apache Kafka topic ``iot_metrics`` that you want to push to a Google Pub/Sub Lite topic ``iot_metrics_pubsub``, you can create a sink connector with the following configuration, after replacing the placeholders for ``GCP_PROJECT_NAME`` and ``GCP_PUBSUB_LOCATION``:
 
 .. code-block:: json
 
      {
         "name":"CONNECTOR_NAME",
-        "connector.class": "com.google.pubsub.kafka.source.CloudPubSubSourceConnector",
-        "kafka.topic": "measurements",
-        "cps.project": "GCP_PROJECT_NAME",
-        "cps.subscription": "GCP_SUBSCRIPTION",
+        "connector.class": "com.google.pubsublite.kafka.sink.PubSubLiteSinkConnector",
+        "topics": "iot_metrics",
+        "pubsublite.project": "GCP_PROJECT_NAME",
+        "pubsublite.location": "GCP_PUBSUB_LOCATION",
+        "pubsublite.topic": "iot_metrics_pubsub",
         "gcp.credentials.json": "GCP_SERVICE_KEY"
     }
-
-The Apache Kafka topic format will be the default bytes by default, you can use the AVRO schema by including the ``value.converter`` and ``key.converter`` properties defined previously.
