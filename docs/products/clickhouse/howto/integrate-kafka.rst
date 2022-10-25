@@ -36,7 +36,7 @@ Variable                         Description
 ``KAFKA_SERVICE_NAME``           Name of the Apache Kafka service you use for the integration.
 ``PROJECT``                      Name of Aiven project where your services are located.
 ``CONNECTOR_TABLE_NAME``         Name of the Kafka engine virtual table that is used as a connector.
-``DATA_FORMAT``                  Input/output data format in which data is accepted into Aiven for ClickHouse. See :ref:`Reference<Reference>`.
+``DATA_FORMAT``                  Input/output data format in which data is accepted into Aiven for ClickHouse. See :ref:`Reference<_reference>`.
 ``CONSUMER_GROUP_NAME``          Name of the consumer group. Each message is delivered once per consumer group.
 ============================     ==========================================================================================================
 
@@ -178,6 +178,7 @@ You can also bring the entries from ClickHouse table into the Apache Kafka topic
 
     Writing to more than one topic is not supported.
 
+.. _reference:
 
 Reference
 ----------
