@@ -139,7 +139,7 @@ Creates a new service.
   * - ``--no-fail-if-exists``
     - The create command will not fail if a service with the same name already exists
   * - ``--project-vpc-id``
-    - Id of the project VPC where to include the created service. The project VPC's cloud must match the service's cloud
+    - Id of the project VPC where to include the created service. The cloud of the project's VPC must match the service's cloud
   * - ``--no-project-vpc``
     - Stops the service to be included in the project VPC even if one is available in the selected cloud
   * - ``--enable-termination-protection``
@@ -758,7 +758,7 @@ Updates the settings for an Aiven service.
   * - ``--disable-termination-protection``
     - Disable termination protection
   * - ``--project-vpc-id``
-    - The ID of the project VPC to use for the service. The VPC's cloud must match the service's cloud.
+    - The ID of the project VPC to use for the service. The cloud of the project's VPC must match the service's cloud.
   * - ``--no-project-vpc``
     - The service will not use any VPC
   * - ``--force``

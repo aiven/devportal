@@ -7,7 +7,7 @@ To upgrade an existing Elasticsearch service to OpenSearch using Terraform:
 
 * Migrate the existing Elasticsearch resource to an OpenSearch resource.
 
-* Update Terraform's state to be aware of and manage the resource as an OpenSearch service.
+* Update the state of Terraform to be aware of and manage the resource as an OpenSearch service.
 
 Use the following steps to complete the upgrade safely:
 

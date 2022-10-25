@@ -11,6 +11,7 @@ entries:
       title: Concepts
       entries:
       - file: docs/platform/concepts/authentication-tokens
+      - file: docs/platform/concepts/availability-zones
       - file: docs/platform/concepts/list-billing
         title: Billing
         entries:
@@ -75,6 +76,7 @@ entries:
           - file: docs/platform/howto/manage-vpc-peering
           - file: docs/platform/howto/vpc-peering-gcp
           - file: docs/platform/howto/vpc-peering-aws
+          - file: docs/platform/howto/vnet-peering-azure
           - file: docs/platform/howto/use-aws-privatelinks.rst
           - file: docs/platform/howto/use-azure-privatelink
       - file: docs/platform/howto/list-monitoring
@@ -107,7 +109,8 @@ entries:
           - file: docs/platform/howto/saml/setup-saml-okta
             title: Setting up SAML with Okta
           - file: docs/platform/howto/saml/setup-saml-auth0
-            title: Setting up SAML with Auth0  
+            title: Setting up SAML with Auth0
+      - file: docs/platform/howto/project-support-center  
     - file: docs/platform/reference
       title: Reference
       entries:
@@ -595,6 +598,7 @@ entries:
           - file: docs/products/opensearch/concepts/backups
           - file: docs/products/opensearch/concepts/indices
           - file: docs/products/opensearch/concepts/aggregations
+          - file: docs/products/opensearch/concepts/high-availability-for-opensearch
           - file: docs/products/opensearch/concepts/opensearch-vs-elasticsearch
           - file: docs/products/opensearch/concepts/shards-number
           - file: docs/products/opensearch/concepts/when-create-index
@@ -695,7 +699,9 @@ entries:
           - file: docs/products/mysql/howto/identify-disk-usage-issues
           - file: docs/products/mysql/howto/disable-foreign-key-checks
           - file: docs/products/mysql/howto/enable-slow-queries
-          - file: docs/products/mysql/howto/migrate-database-mysqldump 
+          - file: docs/products/mysql/howto/migrate-database-mysqldump
+          - file: docs/products/mysql/howto/create-tables-without-primary-keys
+          - file: docs/products/mysql/howto/create-missing-primary-keys
       - file: docs/products/mysql/reference
         title: Reference
         entries:
@@ -757,6 +763,7 @@ entries:
               - file: docs/products/cassandra/howto/connect-go
           - file: docs/products/cassandra/howto/connect-cqlsh-cli
           - file: docs/products/cassandra/howto/use-nosqlbench-with-cassandra
+          - file: docs/products/cassandra/howto/use-dsbulk-with-cassandra
       - file: docs/products/cassandra/reference
         title: Reference
         entries:
