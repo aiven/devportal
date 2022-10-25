@@ -1,4 +1,4 @@
-Load sample data into Clickhouse®
+Load sample data into ClickHouse®
 =================================
 
 The official ClickHouse® website offers `a list of example datasets <https://clickhouse.com/docs/en/getting-started/example-datasets/>`_ to get you started. Each dataset has a description on how to download, inject, and transform the data samples as needed.
@@ -134,4 +134,4 @@ Another example uses some additional query features to find the longest lasting 
 See tables in the console
 -------------------------
 
-You can also use the database and added tables with the data in the `Aiven web console <https://console.aiven.io/>`_. You can find them on the *Databases & Tables* tab of your service.
+You can also use the database and added tables with the data in the `Aiven web console <https://console.aiven.io/>`_. You can find them on the **Databases & Tables** tab of your service.
