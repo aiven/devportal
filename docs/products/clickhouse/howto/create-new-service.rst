@@ -55,7 +55,6 @@ Create a database
 
     All databases must be created through the web console.
 
-
 Connect to ClickHouse®
 ---------------------
 
@@ -67,7 +66,7 @@ Connect to ClickHouse®
    :width: 500px
    :alt: Copy service parameters
 
-3. To connect to your service and run SQL queries on your database, run the folloing command substituting the placeholders for ``USERNAME``, ``PASSWORD``, ``HOST`` and ``PORT``:
+3. To connect to your service and run SQL queries on your database, run the following command substituting the placeholders for ``USERNAME``, ``PASSWORD``, ``HOST`` and ``PORT``:
 
    .. code:: bash
 
