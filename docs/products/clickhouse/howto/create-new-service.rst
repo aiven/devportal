@@ -12,10 +12,6 @@ _____________
 Create a ClickHouse® service
 ---------------------------
 
-.. raw:: html
-
-    <video width="500px" height="500px" controls="controls"/><source src="_static/clickhouse-create-service.mp4" type="video/mp4"></video>
-
 1. Log in to the `Aiven web console <https://console.aiven.io/>`_.
 
 2. From **Current services** view, select **Create service**.
@@ -34,6 +30,10 @@ Create a ClickHouse® service
 
   6. Service name
 
+.. image:: /images/products/clickhouse/ch-create-service.png
+   :width: 500px
+   :alt: Set up your service's properties
+
 .. note:: 
   The pricing for the same service may vary between different providers and regions. The **Service summary** box on the right side of the console shows the pricing for your selected options.
 
@@ -47,9 +47,9 @@ Create a ClickHouse® service
 Create a database
 -----------------
 
-1. When the service is running, go to the *Databases & Tables* tab.
+1. When the service is running, go to the **Databases & Tables** tab.
 
-2. Enter a name for your database, then click **Create database**.
+2. Enter a name for your database and select **Create database**.
 
 .. note::
 
@@ -59,11 +59,15 @@ Create a database
 Connect to ClickHouse®
 ---------------------
 
-1. Get the latest Docker image of `the ClickHouse® client from Docker Hub <https://hub.docker.com/r/clickhouse/clickhouse-client>`_
+1. Get the latest Docker image of `the ClickHouse® client from Docker Hub <https://hub.docker.com/r/clickhouse/clickhouse-client>`_.
 
-2. Go to the *Overview* tab and copy the **Host**, **Port**, **User**, and **Password** parameters that you need for connecting to the service.
+2. In the Aiven console, go to the **Overview** tab for your service and copy the **Host**, **Port**, **User**, and **Password** parameters.
 
-3. Run the following command to connect to your service and run SQL queries on your database, substitute the placeholders for ``USERNAME``, ``PASSWORD``, ``HOST`` and ``PORT``:
+.. image:: /images/products/clickhouse/ch-create-db.png
+   :width: 500px
+   :alt: Copy service parameters
+
+3. To connect to your service and run SQL queries on your database, run the folloing command substituting the placeholders for ``USERNAME``, ``PASSWORD``, ``HOST`` and ``PORT``:
 
    .. code:: bash
 
@@ -75,9 +79,9 @@ Connect to ClickHouse®
        --port PORT                          \
        --secure
 
-For more information on using the ClickHouse® client, see :doc:`this article <howto/use-cli>`.
+For more information on using the ClickHouse® client, see :doc:`this article </docs/products/clickhouse/howto/use-cli>`.
 
 Next steps
 ----------
 
-Now that you have your service and connection set up, see our :doc:`sample dataset article <sample-dataset>` to try out your service with actual data.
+Now that you have your service and connection set up, see our :doc:`sample dataset article </docs/products/clickhouse/sample-dataset>` to try out your service with actual data.
