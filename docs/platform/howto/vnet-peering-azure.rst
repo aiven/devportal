@@ -31,16 +31,8 @@ your network to Aiven once it's been given permissions to do so.
 Preparation
 ~~~~~~~~~~~
 
-The support for cross tenant peerings is relatively new, and the Azure
-portal does not yet have full support for this. Managing most of the
-resources in this guide currently only works with the `Azure
-CLI <https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest>`__
-, but can typically be viewed with the web console (tested on CLI
-v2.23.0 and above).
-
-Likewise the `Aiven CLI <https://github.com/aiven/aiven-client>`__ is
-needed to set up peering connections for Azure currently - web console
-support is coming soon.
+Please install the `Azure CLI <https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest>`__
+as well as the :doc:`Aiven CLI </docs/tools/cli>` to follow this guide.
 
 Log in with an Azure admin account
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
