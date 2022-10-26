@@ -325,6 +325,7 @@ entries:
         - file: docs/products/kafka/kafka-connect/getting-started
         - file: docs/products/kafka/kafka-connect/concepts
           entries:
+          - file: docs/products/kafka/kafka-connect/concepts/list-of-connector-plugins
           - file: docs/products/kafka/kafka-connect/concepts/jdbc-source-modes
           - file: docs/products/kafka/kafka-connect/concepts/connect-plugin-list-not-available
 

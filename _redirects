@@ -29,7 +29,6 @@ https://developer.aiven.io/* https://docs.aiven.io/:splat 301!
 /docs/platform/howto/renaming-a-service.html                            /docs/platform/howto/rename-a-service.html
 /docs/platform/howto/recovering-a-deleted-service.html                       /docs/platform/howto/recover-a-deleted-service.html
 /docs/products/opensearch/howto/upgrade-to-opensearch-with-terraform.html /docs/tools/terraform/howto/upgrade-to-opensearch.html
-/docs/products/kafka/kafka-connect/concepts/list-of-connector-plugins.html  /docs/products/kafka/kafka-connect.html
 
 # Redirect from .index.html to specific page names for landing
 
