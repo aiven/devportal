@@ -4,10 +4,10 @@ Create and connect to a managed ClickHouse® service
 Check out how to create a new ClickHouse® service in the Aiven console. Learn how to add a database and connect to the service.
 
 Prerequisites
-^^^^^^^^^^^^^
+-------------
 
-* Aiven account
-* `Docker <https://www.docker.com/>`_ (to connect to the service with the ClickHouse® client)
+* Aiven account (access to the console)
+* `Python 3.7 or later <https://www.python.org/downloads/>`_ and the `pip package manager <https://pypi.org/project/pip/>`_ (to connect to the service)
 
 Create a ClickHouse® service
 ---------------------------
@@ -31,7 +31,7 @@ Create a ClickHouse® service
   6. Service name
 
 .. image:: /images/products/clickhouse/ch-create-service.png
-   :width: 500px
+   :width: 800px
    :alt: Set up your service's properties
 
 .. note:: 
@@ -44,6 +44,8 @@ Create a ClickHouse® service
 .. note::
     You can :ref:`create a service using the Aiven CLI <avn-cli-service-create>` as well.
 
+.. _create db:
+
 Create a database
 -----------------
 
@@ -55,30 +57,35 @@ Create a database
 
     All databases must be created through the web console.
 
-Connect to ClickHouse®
----------------------
+Connect to ClickHouse® with Aiven CLI
+-------------------------------------
 
-1. Get the latest Docker image of `the ClickHouse® client from Docker Hub <https://hub.docker.com/r/clickhouse/clickhouse-client>`_.
+1. In your terminal, install Aiven CLI and authenticate as a user according to instructions in :doc:`Getting started </docs/tools/cli>`.
 
-2. In the Aiven console, go to the **Overview** tab for your service and copy the **Host**, **Port**, **User**, and **Password** parameters.
+   .. code:: bash
+      
+      python3 -m pip install aiven-client
 
-.. image:: /images/products/clickhouse/ch-create-db.png
-   :width: 500px
-   :alt: Copy service parameters
+      python3 -m aiven.client user login name.surname@example.io
 
-3. To connect to your service and run SQL queries on your database, run the following command substituting the placeholders for ``USERNAME``, ``PASSWORD``, ``HOST`` and ``PORT``:
+      python3 -m aiven.client user login name.surname@example.io --token
+
+2. Connect to the service by running command
 
    .. code:: bash
 
-       docker run -it                       \
-       --rm clickhouse/clickhouse-client    \
-       --user USERNAME                      \
-       --password PASSWORD                  \
-       --host HOST                          \
-       --port PORT                          \
-       --secure
+      python3 -m aiven.client service cli SERVICE-NAME
 
-For more information on using the ClickHouse® client, see :doc:`this article </docs/products/clickhouse/howto/use-cli>`.
+3. Verify if the :ref:`database you created <create db>` is there by running
+
+   .. code:: bash
+
+      avn service database-list SERVICE-NAME
+
+   In the output you should get a list of databases available for your service.
+
+.. seealso::
+   For more information, see the `Aiven CLI documentation <https://docs.aiven.io/docs/tools/cli.html>`_ or open an issue in the `Aiven CLI GitHub repository <https://github.com/aiven/aiven-client>`_.
 
 Next steps
 ----------
