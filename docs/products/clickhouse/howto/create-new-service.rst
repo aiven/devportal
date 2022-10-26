@@ -1,4 +1,4 @@
-Creating and connecting to a managed ClickHouse® service
+Create and connect to a managed ClickHouse® service
 ==========================================
 
 Check out how to create a new ClickHouse® service in the Aiven console. Learn how to add a database and connect to the service.
