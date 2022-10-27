@@ -11,8 +11,7 @@ Once you've created a :doc:`VPC on the Aiven platform <manage-vpc-peering>`, you
 
 4. In the Aiven web console, select the VPC connection that you created.
 
-5. Enter your AWS account ID and VPC ID, select the region for your AWS VPC, then click **Add peering connection**.
-This adds a new connection in your AWS Console with the Pending Acceptance status.
+5. Enter your AWS account ID and VPC ID, select the region for your AWS VPC, then click **Add peering connection**.  This adds a new connection in your AWS Console with the Pending Acceptance status.
 
 6. In your AWS Console, check that the account ID and VPC ID match those listed in the Aiven web console, then select **Actions** > **Accept Request**.
 
