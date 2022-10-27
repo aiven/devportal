@@ -58,9 +58,16 @@ Create a database
     All databases must be created through the web console.
 
 Connect to ClickHouse® with the ClickHouse® client
-------------------------------------------------
+--------------------------------------------------
+
+To use the ClickHous® client across different operating systems, we recommend utilizing `Docker <https://www.docker.com/>`_. You can get the latest image of the ClickHouse client directly from `the dedicated page in Docker hub <https://hub.docker.com/r/clickhouse/clickhouse-client>`_.
+
 
 1. Get the latest Docker image of `the ClickHouse® client from Docker Hub <https://hub.docker.com/r/clickhouse/clickhouse-client>`_.
+
+   .. note::
+      
+      For more ways of installing the ClickHouse client, see `the official ClickHouse documentation <https://clickhouse.com/docs/en/getting-started/install/#available-installation-options>`_.
 
 2. In the Aiven console, go to the **Overview** tab for your service and copy the **Host**, **Port**, **User**, and **Password** parameters.
 
