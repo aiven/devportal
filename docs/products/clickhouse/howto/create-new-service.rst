@@ -67,7 +67,7 @@ To use the ClickHous® client across different operating systems, we recommend u
 
    .. note::
       
-      For more ways of installing the ClickHouse client, see `the official ClickHouse documentation <https://clickhouse.com/docs/en/getting-started/install/#available-installation-options>`_.
+      For more ways of installing the ClickHouse client, see `the official ClickHouse documentation <https://clickhouse.com/docs/en/install/#available-installation-options>`_.
 
 2. In the Aiven console, go to the **Overview** tab for your service and copy the **Host**, **Port**, **User**, and **Password** parameters.
 
