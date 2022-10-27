@@ -7,7 +7,7 @@ Prerequisites
 -------------
 
 * Aiven account (access to the console)
-* `Python 3.7 or later <https://www.python.org/downloads/>`_ and the `pip package manager <https://pypi.org/project/pip/>`_ (to connect to the service)
+* `Docker <https://www.docker.com/>`_ (to connect to the service with the ClickHouse® client)
 
 Create a ClickHouse® service
 ---------------------------
@@ -57,37 +57,33 @@ Create a database
 
     All databases must be created through the web console.
 
-Connect to ClickHouse® with Aiven CLI
--------------------------------------
+Connect to ClickHouse® with the ClickHouse® client
+------------------------------------------------
 
-1. In your terminal, install Aiven CLI and authenticate as a user according to instructions in :doc:`Getting started </docs/tools/cli>`.
+1. Get the latest Docker image of `the ClickHouse® client from Docker Hub <https://hub.docker.com/r/clickhouse/clickhouse-client>`_.
 
-   .. code:: bash
-      
-      python3 -m pip install aiven-client
+2. In the Aiven console, go to the **Overview** tab for your service and copy the **Host**, **Port**, **User**, and **Password** parameters.
 
-      python3 -m aiven.client user login name.surname@example.io
+   .. image:: /images/products/clickhouse/ch-create-db.png
+      :width: 800px
+      :alt: Copy service parameters
 
-      python3 -m aiven.client user login name.surname@example.io --token
-
-2. Connect to the service by running command
+3. To connect to your service and run SQL queries on your database, run the following command substituting the placeholders for ``USERNAME``, ``PASSWORD``, ``HOST`` and ``PORT``:
 
    .. code:: bash
 
-      python3 -m aiven.client service cli SERVICE-NAME
-
-3. Verify if the :ref:`database you created <create db>` is there by running
-
-   .. code:: bash
-
-      avn service database-list SERVICE-NAME
-
-   In the output you should get a list of databases available for your service.
+       docker run -it                       \
+       --rm clickhouse/clickhouse-client    \
+       --user USERNAME                      \
+       --password PASSWORD                  \
+       --host HOST                          \
+       --port PORT                          \
+       --secure
 
 .. seealso::
-   For more information, see the `Aiven CLI documentation <https://docs.aiven.io/docs/tools/cli.html>`_ or open an issue in the `Aiven CLI GitHub repository <https://github.com/aiven/aiven-client>`_.
+   For more information on using the ClickHouse® client, see :doc:`Use the ClickHouse® client </docs/products/clickhouse/howto/use-cli>`.
 
 Next steps
 ----------
 
-Now that you have your service and connection set up, see our :doc:`sample dataset article </docs/products/clickhouse/sample-dataset>` to try out your service with actual data.
+Now that you have your service and connection set up, see :doc:`Sample dataset </docs/products/clickhouse/sample-dataset>` to try out your service with actual data.
