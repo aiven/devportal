@@ -5,7 +5,7 @@ To use the ClickHous® client across different operating systems, we recommend u
 
 .. note::
 
-    There are other installation options available for ClickHouse clients for certain operating systems. You can find them `in the official ClickHouse documentation <https://clickhouse.com/docs/en/install/>`_.
+    There are other installation options available for ClickHouse clients for certain operating systems. You can find them `in the official ClickHouse documentation <https://clickhouse.com/docs/en/integrations/sql-clients/clickhouse-client-local>`_.
 
 Connection properties
 ---------------------
