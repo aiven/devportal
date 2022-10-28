@@ -40,7 +40,7 @@ Furthermore you need to collect the following information about the target Influ
 
 .. Note::
 
-    The Apache Kafka related details are available in the `Aiven console <https://console.aiven.io/>`_ service *Overview tab* or via the dedicated ``avn service get`` command with the :ref:`Aiven CLI <avn_service_get>`.
+    The Apache Kafka and InfluxDB details are available in the `Aiven console <https://console.aiven.io/>`_ service *Overview tab* or via the dedicated ``avn service get`` command with the :ref:`Aiven CLI <avn_service_get>`.
 
     The ``SCHEMA_REGISTRY`` related parameters are available in the Aiven for Apache Kafka® service page, *Overview* tab, and *Schema Registry* subtab
 
@@ -80,7 +80,8 @@ Define the connector configurations in a file (we'll refer to it with the name `
 The configuration file contains the following entries:
 
 * ``name``: the connector name, replace ``CONNECTOR_NAME`` with the name you want to use for the connector.
-* ``connect.influx.connection``: sink parameters collected in the :ref:`prerequisite <connect_influx_lenses_sink_prereq>` phase. 
+* ``connect.influx.*``: sink parameters collected in the :ref:`prerequisite <connect_influx_lenses_sink_prereq>` phase. 
+* ``topics``: the comma-separated list of topics to sink
 
 * ``key.converter`` and ``value.converter``:  defines the messages data format in the Apache Kafka topic. The ``io.confluent.connect.avro.AvroConverter`` converter translates messages from the Avro format. To retrieve the messages schema we use Aiven's `Karapace schema registry <https://github.com/aiven/karapace>`_ as specified by the ``schema.registry.url`` parameter and related credentials.
 
