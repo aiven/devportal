@@ -24,6 +24,7 @@ exceptions:
   - Connect
   - Connector
   - Cookbook
+  - Couchbase
   - Dashboards
   - Datadog
   - Debezium
