@@ -25,7 +25,7 @@ Bear in mind that it may not be a good idea to use ``cpu_usage_system{cpu="cpu-t
 
 It is also worth monitoring ``cpu_usage_iowait{cpu="cpu-total"}``. If this number is high, it indicates the service node is working on something I/O intensive. For example, 40 means 40% of CPU time is waiting for disk or network I/O.
 
-The following tablel lists some important CPU-related metrics you can collect and monitor:
+The following table lists some important CPU-related metrics you can collect and monitor:
 
 
 .. list-table::
@@ -53,7 +53,7 @@ The following tablel lists some important CPU-related metrics you can collect an
   * - ``cpu_usage_guest``
     - The percentage of time the CPU is running for a guest OS.
   * - ``cpu_usage_guest_nice``
-    - The percentage of time the CPU is running for a guest OS, with low priotiy.
+    - The percentage of time the CPU is running for a guest OS, with low priority.
 
 These metrics are generated from the `telegraf plugin <https://github.com/influxdata/telegraf/tree/master/plugins/inputs/cpu>`_.
 
@@ -62,7 +62,7 @@ Disk usage
 
 Monitoring disk usage ensures that applications or processes will not fail due to insufficient disk storage. Consider monitoring ``disk_used_percent`` and ``disk_free``.
 
-The following tablel lists some important disk usage metrics you can collect and monitor:
+The following table lists some important disk usage metrics you can collect and monitor:
 
 .. list-table::
   :header-rows: 1
