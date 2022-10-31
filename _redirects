@@ -20,15 +20,25 @@ https://developer.aiven.io/* https://docs.aiven.io/:splat 301!
 
 # Renamed/deleted files
 /docs/products/flink/howto/real-time-alerting-solution-cli.html       /docs/products/flink/howto/real-time-alerting-solution.html
+/docs/products/flink/howto/real-time-alerting-solution-cli            /docs/products/flink/howto/real-time-alerting-solution
 /docs/platform/howto/disable-user-2fa.html                            /docs/platform/howto/user-2fa.html
+/docs/platform/howto/disable-user-2fa                                 /docs/platform/howto/user-2fa
 /docs/tools/terraform/upgrade-provider-v1-v2.html                     /docs/tools/terraform/howto/upgrade-provider-v1-v2.html
+/docs/tools/terraform/upgrade-provider-v1-v2                          /docs/tools/terraform/howto/upgrade-provider-v1-v2
 /docs/products/mysql/howto/max-number-of-connections.html             /docs/products/mysql/concepts/max-number-of-connections.html
+/docs/products/mysql/howto/max-number-of-connections                  /docs/products/mysql/concepts/max-number-of-connections
 /docs/products/postgresql/reference/plan-iops.html                    /docs/products/postgresql/reference/resource-capability.html
+/docs/products/postgresql/reference/plan-iops                         /docs/products/postgresql/reference/resource-capability
 /docs/products/kafka/howto/enable-schema-registry-authorization.html  /docs/products/kafka/karapace/howto/enable-schema-registry-authorization.html
+/docs/products/kafka/howto/enable-schema-registry-authorization       /docs/products/kafka/karapace/howto/enable-schema-registry-authorization
 /docs/products/kafka/howto/manage-schema-registry-authorization.html  /docs/products/kafka/karapace/howto/manage-schema-registry-authorization.html
-/docs/platform/howto/renaming-a-service.html                            /docs/platform/howto/rename-a-service.html
-/docs/platform/howto/recovering-a-deleted-service.html                       /docs/platform/howto/recover-a-deleted-service.html
+/docs/products/kafka/howto/manage-schema-registry-authorization       /docs/products/kafka/karapace/howto/manage-schema-registry-authorization
+/docs/platform/howto/renaming-a-service.html                          /docs/platform/howto/rename-a-service.html
+/docs/platform/howto/renaming-a-service                               /docs/platform/howto/rename-a-service
+/docs/platform/howto/recovering-a-deleted-service.html                /docs/platform/howto/recover-a-deleted-service.html
+/docs/platform/howto/recovering-a-deleted-service                     /docs/platform/howto/recover-a-deleted-service
 /docs/products/opensearch/howto/upgrade-to-opensearch-with-terraform.html /docs/tools/terraform/howto/upgrade-to-opensearch.html
+/docs/products/opensearch/howto/upgrade-to-opensearch-with-terraform      /docs/tools/terraform/howto/upgrade-to-opensearch
 
 # Redirect from .index.html to specific page names for landing
 
