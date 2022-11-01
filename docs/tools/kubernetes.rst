@@ -4,7 +4,7 @@ Aiven Operator for Kubernetes®
 Aiven Operator for Kubernetes® allows users to manage Aiven services through the Kubernetes® API by using `Custom Resource Definitions (CRD) <https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/>`_.
 
 .. note::
-    Only Aiven for PostgreSQL®, Aiven for Apache Kafka®, Aiven for ClickHouse®, Aiven for Redis®, and Aiven for OpenSearch® are supported at this time.
+    Only Aiven for PostgreSQL®, Aiven for Apache Kafka®, Aiven for ClickHouse®, Aiven for Redis®*, and Aiven for OpenSearch® are supported at this time.
 
 
 |
