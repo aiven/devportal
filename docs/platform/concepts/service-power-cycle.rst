@@ -1,18 +1,19 @@
 Service power cycle
 ===================
 
-Aiven serivce power off and power on is different from that on a tranditional platform. For better utilisation of resources on Aiven platform, idle resources will be released and only the necessary data will be kept after power off. The impact on the service is different depending on the service type and plan. 
+Aiven service power off and power on is different from that on a traditional platform. For better utilisation of resources on Aiven platform, idle resources will be released and only the necessary data will be kept after power off. The impact on the service is different depending on the service type and plan. 
 
 .. warning:: Data loss may happen during a service power off, so it is important for users to understand the consequence before powering off a service.
 
 Aiven service power off and power on can be done on `Aiven Console <https://console.aiven.io>`_ or through `Aiven CLI <https://docs.aiven.io/docs/platform/howto/pause-from-cli.html>`_.
 
+
 Power Off
-------------
+-------------
 
 After an Aiven service is powered off:
 
-* All virual machine(s) of the service will be **removed** from the public cloud.
+* All virtual machine(s) of the service will be **removed** from the public cloud.
 * The service information and configuration will be stored on Aiven Platform, while service data will be lost if there's no backup available .
 * If the service has ``time-based`` or ``PITR (Point in time recovery)`` backups, they will be kept on Aiven Platform. The backups are listed in the ``Backups`` tab of the service on Aiven Console. Absence of the tab means the service has no backups. For details on backups for different services of different plans, please refer to `Backups at Aiven <https://docs.aiven.io/docs/platform/concepts/service_backups.html>`_ .
 .. note:: Aiven does `periodic cleanup of powered-off services <https://help.aiven.io/en/articles/4578430-periodic-cleanup-of-powered-off-services>`_ on services powered off for longer than **180** consecutive days. Notification emails will be sent before actions are taken.
