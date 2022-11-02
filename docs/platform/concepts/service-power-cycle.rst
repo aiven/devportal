@@ -8,7 +8,7 @@ Aiven service power off and power on is different from that on a traditional pla
 Aiven service power off and power on can be done on `Aiven Console <https://console.aiven.io>`_ or through `Aiven CLI <https://docs.aiven.io/docs/platform/howto/pause-from-cli.html>`_.
 
 
-Power Off
+Power off
 -------------
 
 After an Aiven service is powered off:
@@ -25,7 +25,7 @@ After an Aiven service is powered off:
 .. warning:: For backup enabled Kafka services, topic configuration, schemas and connectors are all backed up, but not data in topics. Therefore all topic data will be lost on power off. For Kafka services without backups, topic configurations together with all topic data will be lost on power off.
 
 
-Power On
+Power on
 ------------
 
 When a service is powered on, the following things will happen:
