@@ -99,6 +99,8 @@ entries:
             title: Set up Google Cloud Marketplace
           - file: docs/platform/howto/move-to-gcp-marketplace-billing
             title: Move to Google Cloud Marketplace
+          - file: docs/platform/howto/billing-azure-marketplace-subscription
+            title: Set up Azure Marketplace
       - file: docs/platform/howto/list-saml
         title: SAML Authentication
         entries:
