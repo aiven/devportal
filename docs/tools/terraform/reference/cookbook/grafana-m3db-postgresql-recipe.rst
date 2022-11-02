@@ -34,7 +34,7 @@ Be sure to check out the :doc:`getting started guide <../../get-started>` to lea
          required_providers {
            aiven = {
              source  = "aiven/aiven"
-             version = ">= 3.1"
+             version = ">= 3.7"
            }
          }
        }
