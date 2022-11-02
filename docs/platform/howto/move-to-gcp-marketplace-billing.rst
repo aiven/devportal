@@ -11,7 +11,7 @@ Follow the steps to :doc:`set up Google Cloud Platform Marketplace for Aiven Ser
 Gather the required information
 -------------------------------
 
-Aiven will need some information from both your existing and your new subscriptions in order to perform the migration.
+Aiven will need some information from both your existing and new subscriptions in order to perform the migration.
 
 **From your existing Aiven account:**
 
@@ -19,7 +19,7 @@ Aiven will need some information from both your existing and your new subscripti
 
 **From your new GCP Marketplace subscription:**
 
-* Your Account ID (in the format ``E-1234-1234-1234-1234``), as shown in the Aiven GCP console "Settings" screen
+* Your Account ID (in the format ``E-1234-1234-1234-1234``), as shown in the Aiven GCP console **Settings** screen.
 
 Send the request to Aiven
 -------------------------
