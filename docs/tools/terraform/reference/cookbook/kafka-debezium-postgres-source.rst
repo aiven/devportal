@@ -102,7 +102,7 @@ The ``services.tf`` file for the provisioning of these three services, service i
       kafka_rest      = true
       kafka_connect   = false
       schema_registry = true
-      kafka_version   = "3.1"
+      kafka_version   = "3.2"
 
       kafka {
         auto_create_topics_enable  = true
