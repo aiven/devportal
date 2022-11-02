@@ -1,5 +1,5 @@
 =============================================================================================
-Security Update on OpenSSL X.509 Email Address Buffer Overflow (CVE-2022-3786, CVE-2022-3602)
+Security update on OpenSSL X.509 email address buffer overflow (CVE-2022-3786, CVE-2022-3602)
 =============================================================================================
 ********
 Overview
@@ -17,7 +17,7 @@ Our security, engineering, and operations teams have been investigating the pote
 
 
 *******************
-Further Information
+Further information
 *******************
 
 For more information about the vulnerability, see 
