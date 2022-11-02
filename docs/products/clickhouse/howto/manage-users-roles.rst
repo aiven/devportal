@@ -134,6 +134,6 @@ Run the following commands to see all available grants, users, and roles::
 
 
 Preview users and roles in the console
-----------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You can also see the users, their roles and permissions in the  `Aiven web console <https://console.aiven.io/>`_. You will find these on the *Users & Roles* tab of your service. Next to every user there is a **View Details & Grants** button that shows you a list of all grants for that user.
