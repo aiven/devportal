@@ -133,6 +133,26 @@ Here is the sample Terraform script to stand-up Aiven for Apache Kafka and relat
     topic        = aiven_kafka_topic.demo-kafka-topic.topic_name
   }
 
+.. dropdown:: Expand to check out how to execute the Terraform files.
+
+    The ``init`` command performs several different initialization steps in order to prepare the current working directory for use with Terraform. In our case, this command automatically finds, downloads, and installs the necessary Aiven Terraform provider plugins.
+    
+    .. code:: shell
+
+       terraform init
+
+    The ``plan`` command creates an execution plan and shows you the resources that will be created (or modified) for you. This command does not actually create any resource; this is more like a preview.
+
+    .. code:: bash
+
+       terraform plan -var-file=var-values.tfvars
+
+    If you're satisfied with the output of ``terraform plan``, go ahead and run the ``terraform apply`` command which actually does the task or creating (or modifying) your infrastructure resources. 
+
+    .. code:: bash
+
+       terraform apply -var-file=var-values.tfvars
+
 Let's go over a few of these configurations and understand their functions:
 
 ``aiven_kafka`` resource configurations:
