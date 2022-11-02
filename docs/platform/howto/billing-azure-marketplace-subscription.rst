@@ -14,7 +14,7 @@ Azure Marketplace setup
    :alt: Azure Marketplace listing tile for Aiven Managed Database Services
    :height: 342px 
 
-2. Select your desired Azure subscription resource group to organise your resources, give the subscription a name, and make sure that "Recurring billing" is turned on.  There is only one plan available, because all of the costs are managed by Aiven based on what you use during the month.
+2. Select your desired Azure subscription resource group to organise your resources, give the subscription a name, and make sure that "Recurring billing" is turned on.  There is only one plan available because all of the costs are managed by Aiven based on what you use during the month.
 
 3. Progress to the "Review + subscribe" screen, then read and agree to the terms of use.
 
@@ -39,5 +39,5 @@ Aiven account setup
    Note the URL is https://console.azure.aiven.io - this uses a different account system than https://console.aiven.io.  When coming back to Aiven in the future, you will need to use https://console.azure.aiven.io to login, and authenticate using Azure OAuth.
 
 .. note:: 
-   When you view the Aiven subscription on the Azure SaaS resource list, you will see a link **Open SaaS Account on publisher's site**.  You can use this link to complete the subscription process if anything goes wrong during the steps listed here.
+   When you view the Aiven subscription on the Azure SaaS resource list, you will see a link to **Open SaaS Account on publisher's site**.  You can use this link to complete the subscription process if anything goes wrong during the steps listed here.
 
