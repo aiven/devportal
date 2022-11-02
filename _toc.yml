@@ -24,6 +24,7 @@ entries:
       - file: docs/platform/concepts/projects_accounts_access
       - file: docs/platform/concepts/service-forking
       - file: docs/platform/concepts/service_backups
+      - file: docs/platform/concepts/service-power-cycle
       - file: docs/platform/concepts/service-memory-limits
       - file: docs/platform/concepts/out-of-memory-conditions
       - file: docs/platform/concepts/static-ips
