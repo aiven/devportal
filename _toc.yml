@@ -568,6 +568,7 @@ entries:
               - file: docs/products/clickhouse/howto/integrate-kafka
               - file: docs/products/clickhouse/howto/integrate-pg
               - file: docs/products/clickhouse/howto/connect-with-jdbc
+          - file: docs/products/clickhouse/howto/query-ch-dbs
           - file: docs/products/clickhouse/howto/manage-dbs-tables
           - file: docs/products/clickhouse/howto/manage-users-roles
 
