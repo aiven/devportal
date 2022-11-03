@@ -145,7 +145,7 @@ You can sink the ``measurements`` topic to InfluxDB with the following connector
         "connect.influx.db": "INFLUXDB_DATABASE_NAME",
         "connect.influx.username": "INFLUXDB_USERNAME",
         "connect.influx.password": "INFLUXDB_PASSWORD",
-        "connect.mongo.kcql": "select into measurements select ts, device_name, measurement from measurements",
+        "connect.influx.kcql": "insert into measurements select ts, device_name, measurement from measurements",
         "value.converter": "io.confluent.connect.avro.AvroConverter",
         "value.converter.schema.registry.url": "https://APACHE_KAFKA_HOST:SCHEMA_REGISTRY_PORT",
         "value.converter.basic.auth.credentials.source": "USER_INFO",
@@ -155,6 +155,6 @@ You can sink the ``measurements`` topic to InfluxDB with the following connector
 The configuration file contains the following peculiarities:
 
 * ``"topics": "measurements"``: setting the topic to sink
-* ``"connect.mongo.kcql": "select into measurements select ts, device_name, measurement from measurements"``: the connector logic is to insert every topic message as new document into a table called ``measurements``.
+* ``"connect.influx.kcql": "select into measurements select ts, device_name, measurement from measurements"``: the connector logic is to insert every topic message as new document into a table called ``measurements``.
 
 Once the connector is created successfully, you should see a table named ``measurements`` in the InfluxDB database referenced by the ``INFLUXDB_DB_NAME`` placeholder with the record in it.
