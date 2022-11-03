@@ -561,6 +561,7 @@ entries:
       - file: docs/products/clickhouse/howto
         title: HowTo
         entries:
+          - file: docs/products/clickhouse/howto/connect-to-ch-service
           - file: docs/products/clickhouse/howto/load-dataset
           - file: docs/products/clickhouse/howto/list-integrations
             entries:
