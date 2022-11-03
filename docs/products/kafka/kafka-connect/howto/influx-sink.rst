@@ -146,6 +146,10 @@ You can sink the ``measurements`` topic to InfluxDB with the following connector
         "connect.influx.username": "INFLUXDB_USERNAME",
         "connect.influx.password": "INFLUXDB_PASSWORD",
         "connect.influx.kcql": "insert into measurements select ts, device_name, measurement from measurements",
+        "key.converter": "io.confluent.connect.avro.AvroConverter",
+        "key.converter.schema.registry.url": "https://APACHE_KAFKA_HOST:SCHEMA_REGISTRY_PORT",
+        "key.converter.basic.auth.credentials.source": "USER_INFO",
+        "key.converter.schema.registry.basic.auth.user.info": "SCHEMA_REGISTRY_USER:SCHEMA_REGISTRY_PASSWORD"
         "value.converter": "io.confluent.connect.avro.AvroConverter",
         "value.converter.schema.registry.url": "https://APACHE_KAFKA_HOST:SCHEMA_REGISTRY_PORT",
         "value.converter.basic.auth.credentials.source": "USER_INFO",
