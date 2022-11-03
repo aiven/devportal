@@ -1,7 +1,7 @@
 Connect to a ClickHouse® cluster
 ================================
 
-You can connect to a ClickHouse® cluster with the ClickHouse® client.
+It's recommended to connect to a ClickHouse® cluster with the ClickHouse® client.
 
 Use the ClickHouse® client
 --------------------------
