@@ -1,7 +1,7 @@
 Manage ClickHouse® service and roles
 ====================================
 
-This article shows you how to create new user accounts for your service and how to manage user roles and permissions for an efficiently access control.
+This article shows you how to create new user accounts for your service and how to manage user roles and permissions for efficiently access control.
 
 Add a new user
 --------------
@@ -35,7 +35,7 @@ ClickHouse® supports a **Role Based Access Control** model and allows you to co
 This article shows you examples of how to create roles and grant privileges. The ClickHouse documentation includes  `detailed documentation for access rights <https://clickhouse.com/docs/en/operations/access-rights/>`_.
 
 Create a new role
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
 
 To create a new role named `auditor`, run the following command::
 
@@ -98,14 +98,14 @@ You can also specify a role to be activated by default when the user logs in::
     SET DEFAULT ROLE auditor, external TO Mary.Anderson, James.Miller;
 
 Delete a role
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
 
 If you no longer need a role, you can remove it::
 
     DROP ROLE auditor;
 
 Revoke permissions
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
 
 Remove all or specific privileges from users or roles::
 
@@ -118,7 +118,7 @@ Revoke all privileges to a table or database simultaneously::
 See the ClickHouse documentation `for more information on revoking privileges <https://clickhouse.com/docs/en/sql-reference/statements/revoke/>`_.
 
 Check permissions
-^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
 
 Run the following commands to see all available grants, users, and roles::
 

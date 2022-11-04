@@ -11,7 +11,7 @@ Prerequisites
 
 Variables
 --------------------
-You'll need a few variables for the setup. To learn their values, go to the Aiven console and navigate to **Overview** of your Aiven for ClickHouse® service (connection information for the HTTPS endpoint).
+You'll need a few variables for the setup. To get their values, go to the Aiven console and navigate to **Overview** of your Aiven for ClickHouse® service (connection information for the HTTPS endpoint).
 
 ============================     ==========================================================================================================
 Variable                         Description

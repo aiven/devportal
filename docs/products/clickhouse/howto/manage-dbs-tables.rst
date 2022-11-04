@@ -4,14 +4,7 @@ Manage ClickHouse® databases and tables
 About databases and tables
 --------------------------
 
-Databases and tables are at the core of any **Database Management System**. ClickHouse® is no different. In this article we will look at how to create and work with databases and tables in Aiven for ClickHouse®.
-
-.. note::
-
-    There are other installation options available for ClickHouse clients for certain operating systems. You can find them `in the official ClickHouse documentation <https://clickhouse.com/docs/en/integrations/sql-clients/clickhouse-client-local>`_.
-    Our managed service **Aiven for ClickHouse** has some minor differences comparing to "classical" ClickHouse. These difference are needed to ensure security, stability and proper replication of data.
-
-Aiven for ClickHouse® takes care of running queries in a distributed mode affecting entire cluster. In the "classical" ClickHouse the queries ``CREATE``, ``ALTER``, ``RENAME`` and ``DROP`` will only affect the server where they are run. In contrast, we ensure the proper distribution across all cluster machines behind the scenes. You don't need to remember using ``ON CLUSTER`` for every query.
+Databases and tables are at the core of any **Database Management System**. ClickHouse® is no different. In this article, we will look at how to create and work with databases and tables in Aiven for ClickHouse®.
 
 Create a database
 -----------------
@@ -19,8 +12,8 @@ Create a database
 Creating databases in an Aiven for ClickHouse service can only be done via the Aiven platform; the `admin` user is not allowed to create databases directly for security and reliability reasons. However, you can create a new database through the web interface of `Aiven console <https://console.aiven.io/>`_:
 
 #. Log in to `Aiven console <https://console.aiven.io/>`_ and select your service.
-#. On the service page, open the tab *Databases & Tables*.
-#. Enter your database name in *Create a new database* and select **Create database**.
+#. On the service page, open the **Databases & Tables** tab.
+#. Enter your database name in **Create a new database** and select **Create database**.
 
    You'll see the name of the database appear in the *Database List* section.
    On our side, we enable necessary customizations and run secondary queries to grant access to the admin user.
@@ -37,7 +30,7 @@ Similar to creating the database, removal should also be done through the Aiven 
 Create a table
 --------------
 
-Tables can be added with an SQL query, either with the help of :doc:`the web query editor <../howto/use-query-editor>` or with :doc:`the cli <../howto/use-cli>`. In both cases the SQL query will look the same. For example, below is a query to add a new table ``expenses`` to ``transactions`` database. To keep it simple this example has unrealistically small amount of columns:
+Tables can be added with an SQL query, either with the help of the web query editor or with CLI. In both cases, the SQL query looks the same. The example below shows a query to add new table ``expenses`` to ``transactions`` database. To keep it simple, this example has an unrealistically small amount of columns:
 
 .. code:: sql
 

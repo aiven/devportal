@@ -1,7 +1,7 @@
 Load sample data into ClickHouse®
 =================================
 
-The official ClickHouse® website offers `a list of example datasets <https://clickhouse.com/docs/en/getting-started/example-datasets/>`_ to get you started. Each dataset has a description on how to download, inject, and transform the data samples as needed.
+The official ClickHouse® website offers `a list of example datasets <https://clickhouse.com/docs/en/getting-started/example-datasets/>`_ to get you started. Each dataset has a description on how to download, upload, and transform the data samples as needed.
 
 This article takes a closer look at how to use the ``Anonymized Web Analytics Data`` `example dataset <https://clickhouse.com/docs/en/getting-started/example-datasets/metrica/>`_. This contains two tables:
 
@@ -58,7 +58,7 @@ Once you're connected, you can run queries from within the ClickHouse client.
 Create tables
 ---------------
 
-The next step is to add new tables to your newly created database. The ClickHouse documentation includes a sample ``CREATE TABLE`` command with `the recommended table structure <https://clickhouse.com/docs/en/getting-started/example-datasets/metrica>`_, use it to create the tables for both ``hits_v1`` and ``visits_v1``:
+The next step is to add new tables to your newly created database. The ClickHouse documentation includes sample ``CREATE TABLE`` commands with `the recommended table structure <https://clickhouse.com/docs/en/getting-started/example-datasets/metrica>`_, use it to create the tables for both ``hits_v1`` and ``visits_v1``:
 
 .. code:: sql
 
@@ -73,9 +73,9 @@ The next step is to add new tables to your newly created database. The ClickHous
     If no database is specified, the default one is used.
 
 Load data
-----------
+---------
 
-Now that you have a dataset with two empty tables, we'll inject data into each of the tables. However, because we need to access files outside the docker container, we'll run the command specifying ``--query`` parameter. To do this:
+Now that you have a dataset with two empty tables, we'll load data into each of the tables. However, because we need to access files outside the docker container, we'll run the command specifying ``--query`` parameter. To do this:
 
 1. Go to the folder where you stored the downloaded files for ``hits_v1.tsv`` and ``visits_v1.tsv``.
 
