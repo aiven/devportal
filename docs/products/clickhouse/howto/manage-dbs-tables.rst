@@ -1,111 +1,51 @@
-Manage ClickHouse® dababases and tables
+Manage ClickHouse® databases and tables
 =======================================
 
-Aiven supports a few tools enabling SQL commands. For managing your ClickHouse® databases and tables, you can choose between our query editor, the Play UI, and the ClickHouse® client.
-
-Use the query editor
---------------------
-
-Aiven for ClickHouse® includes a web-based query editor, which you can find on the *Query Editor* tab of your service in the  `Aiven web console <https://console.aiven.io/>`_.
-
-The requests that you run through the query editor are executed on behalf of the default user and rely on the permissions granted to this user.
-
-Examples of queries
-^^^^^^^^^^^^^^^^^^^
-
-Retrieve a list of current databases::
-
-    SHOW DATABASES
-
-Count rows::
-
-    SELECT COUNT(*) FROM transactions.accounts
-
-Create a new role::
-
-    CREATE ROLE accountant
-
-Alternatives
-^^^^^^^^^^^^
-
-The query editor is convenient if you want to run queries directly from the console on behalf of the default user. However, if you want to run requests using a different user, or if you expect a large size of the response, you can use :doc:`play <use-play>`, a built-in user interface accessible through HTTPS.
-
-Use the play UI
----------------
-
-ClickHouse® includes a built-in user interface for running SQL queries. You can access it from a web browser over the HTTPS protocol. Follow these steps to use it:
-
-1. Log in to the `Aiven web console <https://console.aiven.io/>`_, choose the right project, and select your Aiven for ClickHouse service.
-#. In the *Overview* tab, find *Connection information* and select **ClickHouse HTTPS**.
-#. Copy the Service URI and navigate to ``SERVICE_URI/play`` from a web browser.
-#. Set the *name* and the *password* of the user on whose behalf you want to run the queries.
-#. Enter the body of the query.
-#. Select **Run**.
-
-.. note::
-    The play interface is only available if you can connect directly to ClickHouse from your browser. If the service is :doc:`restricted by IP addresses </docs/platform/howto/restrict-access>` or in a :doc:`VPC without public access </docs/platform/howto/public-access-in-vpc>`, you can use the :doc:`query editor <use-query-editor>` instead.
-    The query editor can be accessed directly from the console to run requests on behalf of the default user.
-
-Use the ClickHouse® client
+About databases and tables
 --------------------------
 
-To use the ClickHous® client across different operating systems, we recommend utilizing `Docker <https://www.docker.com/>`_. You can get the latest image of the ClickHouse client directly from `the dedicated page in Docker hub <https://hub.docker.com/r/clickhouse/clickhouse-client>`_.
+Databases and tables are at the core of any **Database Management System**. ClickHouse® is no different. In this article we will look at how to create and work with databases and tables in **Aiven for ClickHouse**.
 
 .. note::
 
     There are other installation options available for ClickHouse clients for certain operating systems. You can find them `in the official ClickHouse documentation <https://clickhouse.com/docs/en/integrations/sql-clients/clickhouse-client-local>`_.
+    Our managed service **Aiven for ClickHouse** has some minor differences comparing to "classical" ClickHouse. These difference are needed to ensure security, stability and proper replication of data.
 
-Connection properties
-^^^^^^^^^^^^^^^^^^^^^
+Databases
+---------
 
-You will need to know the following properties to establish a secure connection with your Aiven for ClickHouse service: **Host**, **Port**, **User** and **Password**. You will find these in the *Connection information* section in the *Overview* page of your service in the `Aiven web console <https://console.aiven.io/>`_.
+Creating databases in an Aiven for ClickHouse service can only be done via the Aiven platform; the `admin` user is not allowed to create databases directly for security and reliability reasons. However, you can create a new database through the web interface of `Aiven console <https://console.aiven.io/>`_:
 
-Command template
-^^^^^^^^^^^^^^^^
+#. Log in to `Aiven console <https://console.aiven.io/>`_ and select your service.
+#. On the service page open the tab *Databases & Tables*.
+#. Enter your database name in *Create a new database* and click on **Create database**.
+#. You'll see the name of the database appear in the *Database List* section.
+#. On our side we enable necessary customizations and run secondary queries to grant access to the admin user.
 
-The command to connect to the service looks like this, substitute the placeholders for ``USERNAME``, ``PASSWORD``, ``HOST`` and ``PORT``:
+Similar to creating the database, removal should also be done through the Aiven platform. In the web interface of `Aiven console <https://console.aiven.io/>`_ you'll find delete button next to the database you created in the *Database List*.
 
-.. code:: bash
+.. note::
 
-    docker run -it \
-    --rm clickhouse/clickhouse-client \
-    --user USERNAME \
-    --password PASSWORD \
-    --host HOST \
-    --port PORT \
-    --secure
+    If you try adding or removing a database in **Aiven for ClickHouse** through the command line, you'll encounter an exception ``Not enough privileges.(ACCESS_DENIED)``. Please use the Aiven web interface to add or remove a database.
 
-This example includes the ``-it`` option (a combination of ``--interactive`` and ``--tty``) to take you inside the container and  the ``--rm`` option to automatically remove the container after exiting.
+Tables
+------
 
-The other parameters, such as ``--user``, ``--password``, ``--host``, ``--port``, ``--secure``, and ``--query`` are arguments accepted by the ClickHouse client. You can see the full list of command line options in `the ClickHouse CLI documentation <https://clickhouse.com/docs/en/interfaces/cli/#command-line-options>`_.
-
-Once you're connected to the server, you can type queries directly within the client, for example, to see the list of existing databases, run
+Tables can be added with an SQL query, either with the help of :doc:`the web query editor <../howto/use-query-editor>` or with :doc:`the cli <../howto/use-cli>`. In both cases the SQL query will look the same. For example, below is a query to add a new table ``expenses`` to ``transactions`` database. To keep it simple this example has unrealistically small amount of columns:
 
 .. code:: sql
 
-    SHOW DATABASES
+        CREATE TABLE transactions.expenses (
+            Title String,
+            Date DateTime,
+            UserID UInt64,
+            Amount UInt32
+        )
+        ENGINE = ReplicatedMergeTree ORDER BY Date;
 
+Part of the table definition includes a targeted table engine. The full list of supported table engines in **Aiven for ClickHouse** can be found :doc:`in this article <../reference/supported-table-engines>`. **Aiven for ClickHouse** uses "Replicated" variants of table engines to ensure high availability. Even if you select ``MergeTree`` engine, we will automatically use the replicated variant on our side.
 
-Alternatively, sometimes you might want to run individual queries and be able to access the command prompt outside the docker container. In this case you can set ``--interactive`` and  use ``--query`` parameter without entering the docker container:
+Additionally, **Aiven for ClickHouse** takes care of running queries in a distributed mode affecting entire cluster. In the "classical" ClickHouse the queries ``CREATE``, ``ALTER``, ``RENAME`` and ``DROP`` will only affect the server where they are run. In contrast, we ensure the proper distribution across all cluster machines behind the scenes. You don't need to remember using ``ON CLUSTER`` for every query.
 
-.. code:: bash
+With this knowledge try out an example dataset described :doc:`over here <../sample-dataset>`.
 
-    docker run --interactive            \
-    --rm clickhouse/clickhouse-client   \
-    --user USERNAME                     \
-    --password PASSWORD                 \
-    --host HOST                         \
-    --port PORT                         \
-    --secure                            \
-    --query="YOUR SQL QUERY GOES HERE"
-
-Similar to above example, you can request the list of present databases directly::
-
-    docker run --interactive            \
-    --rm clickhouse/clickhouse-client   \
-    --user USERNAME                     \
-    --password PASSWORD                 \
-    --host HOST                         \
-    --port PORT                         \
-    --secure                            \
-    --query="SHOW DATABASES"
