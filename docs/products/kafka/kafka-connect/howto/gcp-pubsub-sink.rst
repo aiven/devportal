@@ -73,7 +73,7 @@ Define the connector configurations in a file (we'll refer to it with the name `
 The configuration file contains the following entries:
 
 * ``name``: the connector name
-* ``topics``: the source Apache Kafka topic names, divied by comma
+* ``topics``: the source Apache Kafka topic names, divided by comma
 * ``cps.project``: the GCP project name where the target Google Pub/Sub is located
 * ``cps.topic``: the name of the target Google Pub/Sub topic
 * ``gcp.credentials.json``: contains the GCP service account key, correctly escaped as defined in the :ref:`prerequisite phase <connect_pubsub_sink_prereq>`
