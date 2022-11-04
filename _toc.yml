@@ -64,7 +64,6 @@ entries:
           - file: docs/platform/howto/add-storage-space
           - file: docs/platform/howto/tag-resources
           - file: docs/platform/howto/access-service-logs
-          - file: docs/platform/howto/prepare-for-high-load
       - file: docs/platform/howto/list-network
         title: Network management
         entries:
@@ -76,7 +75,6 @@ entries:
           - file: docs/platform/howto/attach-vpc-aws-tgw
           - file: docs/platform/howto/manage-vpc-peering
           - file: docs/platform/howto/vpc-peering-gcp
-          - file: docs/platform/howto/vpc-peering-aws
           - file: docs/platform/howto/vnet-peering-azure
           - file: docs/platform/howto/use-aws-privatelinks.rst
           - file: docs/platform/howto/use-azure-privatelink
@@ -99,8 +97,6 @@ entries:
             title: Set up Google Cloud Marketplace
           - file: docs/platform/howto/move-to-gcp-marketplace-billing
             title: Move to Google Cloud Marketplace
-          - file: docs/platform/howto/billing-azure-marketplace-subscription
-            title: Set up Azure Marketplace
       - file: docs/platform/howto/list-saml
         title: SAML Authentication
         entries:
@@ -329,7 +325,6 @@ entries:
         - file: docs/products/kafka/kafka-connect/getting-started
         - file: docs/products/kafka/kafka-connect/concepts
           entries:
-          - file: docs/products/kafka/kafka-connect/concepts/list-of-connector-plugins
           - file: docs/products/kafka/kafka-connect/concepts/jdbc-source-modes
           - file: docs/products/kafka/kafka-connect/concepts/connect-plugin-list-not-available
 
@@ -358,9 +353,6 @@ entries:
             - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-mongodb
             - file: docs/products/kafka/kafka-connect/howto/cassandra-streamreactor-source
             - file: docs/products/kafka/kafka-connect/howto/mqtt-source-connector
-            - file: docs/products/kafka/kafka-connect/howto/gcp-pubsub-source
-            - file: docs/products/kafka/kafka-connect/howto/gcp-pubsub-lite-source
-            - file: docs/products/kafka/kafka-connect/howto/couchbase-source
           - file: docs/products/kafka/kafka-connect/howto/list-sink-connectors
             entries:
             - file: docs/products/kafka/kafka-connect/howto/jdbc-sink
@@ -381,7 +373,6 @@ entries:
             - file: docs/products/kafka/kafka-connect/howto/mongodb-sink-lenses
             - file: docs/products/kafka/kafka-connect/howto/redis-streamreactor-sink
             - file: docs/products/kafka/kafka-connect/howto/cassandra-streamreactor-sink
-            - file: docs/products/kafka/kafka-connect/howto/couchbase-sink
 
         - file: docs/products/kafka/kafka-connect/reference
           title: Reference

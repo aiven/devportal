@@ -35,9 +35,9 @@ Source connectors
        :shadow: md
        :margin: 2 2 0 0
 
-       :doc:`Google Cloud Pub/Sub <kafka-connect/howto/gcp-pubsub-source>` 
+       `Google Cloud Pub/Sub <https://github.com/GoogleCloudPlatform/pubsub/tree/master/kafka-connector>`__ 
 
-       :doc:`Google Cloud Pub/Sub Lite <kafka-connect/howto/gcp-pubsub-lite-source>`
+       `Google Cloud Pub/Sub Lite <https://github.com/GoogleCloudPlatform/pubsub/>`_ 
 
        :doc:`Stream Reactor Cassandra® <kafka-connect/howto/cassandra-streamreactor-source>`
 
@@ -47,7 +47,7 @@ Source connectors
        :margin: 2 2 0 0
        :shadow: md
 
-       :doc:`Couchbase <kafka-connect/howto/couchbase-source>`
+       `Couchbase <https://github.com/couchbase/kafka-connect-couchbase>`__
 
        :doc:`Official MongoDB® <kafka-connect/howto/mongodb-poll-source-connector>`
 
@@ -73,7 +73,7 @@ Sink connectors
        :margin: 2 2 0 0
        :shadow: md
 
-       :doc:`Couchbase® <kafka-connect/howto/couchbase-sink>`
+       `Couchbase® <https://github.com/couchbase/kafka-connect-couchbase>`__
 
        :doc:`Official MongoDB® <kafka-connect/howto/mongodb-sink-mongo>`
 

@@ -1,3 +1,5 @@
+.. _platform_howto_setup_vpc_peering:
+
 Manage Virtual Private Cloud (VPC) peering
 ==========================================
 
@@ -16,7 +18,8 @@ To set up VPC peering for your Aiven project:
    .. note::
        You'll need either an **admin** or an **operator** user role to be able to create a VPC. For more information about Aiven project members and roles, refer to :doc:`../concepts/projects_accounts_access`.  
 
-4. Enter the IP range that you want to use for the VPC connection.  Use an IP range that does not overlap with any networks that you want to connect via VPC peering. For example, if your own networks use the range 10.0.0.0/8, you could set the range for your Aiven project's VPC to 192.168.0.0/24.
+4. Enter the IP range that you want to use for the VPC connection.
+Use an IP range that does not overlap with any networks that you want to connect via VPC peering. For example, if your own networks use the range 10.0.0.0/8, you could set the range for your Aiven project's VPC to 192.168.0.0/24.
 
 5. Click **Create VPC**.
 
@@ -30,9 +33,8 @@ When you create a new service, you can then place it in the VPC. The **VPC** tab
 Cloud-specific VPC peering instructions
 -----------------------------------------------------
 
-- :doc:`Set up VPC peering on Amazon Web Services (AWS) <vpc-peering-aws>`
-- :doc:`Set up VPC peering on Google Cloud Platform (GCP) <vpc-peering-gcp>`
-- :doc:`Set up VNet (VPC) peering on Microsoft Azure <vnet-peering-azure>`
+- :ref:`Set up VPC peering on Google Cloud Platform (GCP) <vpc-peering-gcp>`.
+- :ref:`Set up VNet (VPC) peering on Microsoft Azure <vnet-peering-azure>`.
 
 Deploying new services to a VPC
 -------------------------------

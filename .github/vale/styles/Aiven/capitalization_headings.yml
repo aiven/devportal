@@ -15,7 +15,6 @@ exceptions:
   - Apache
   - AWS Transit Gateway
   - Auth0
-  - Azure Marketplace
   - Boot
   - Business
   - BYOA
@@ -25,7 +24,6 @@ exceptions:
   - Connect
   - Connector
   - Cookbook
-  - Couchbase
   - Dashboards
   - Datadog
   - Debezium
@@ -44,8 +42,6 @@ exceptions:
   - Google Cloud Storage
   - Google Cloud SQL
   - Google Data Studio
-  - Google Pub/Sub
-  - Google Pub/Sub Lite
   - Grafana
   - Hobbyist
   - HowTo
@@ -108,7 +104,6 @@ exceptions:
   - United States
   - UpCloud
   - Virtual Private Cloud
-  - VNet
   - Workbench
   - Zapier
   - ZooKeeper

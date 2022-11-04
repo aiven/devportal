@@ -78,10 +78,8 @@ sitemap_url_scheme = "{link}"
 # The following pages are known to cause it problems.
 linkcheck_ignore = [
     # Kafka documentation anchors do not seem to be detected. We use the following:
-    'https://kafka.apache.org/documentation/#consumerconfigs_auto.offset.reset',
+   'https://kafka.apache.org/documentation/#consumerconfigs_auto.offset.reset',
     'https://kafka.apache.org/documentation/#design_consumerposition',
-    # Azure Marketplace uses internal links which confuses the checker, so ignoring these:
-    'https://portal.azure.com/#view/Microsoft_Azure_Marketplace/MarketplaceOffersBlade/selectedMenuItemId/home',
 ]
 
 # -- Options for HTML output -------------------------------------------------

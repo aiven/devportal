@@ -11,18 +11,10 @@ Follow the steps to :doc:`set up Google Cloud Platform Marketplace for Aiven Ser
 Gather the required information
 -------------------------------
 
-Aiven will need some information from both your existing and new subscriptions in order to perform the migration.
-
-**From your existing Aiven account:**
-
-* The name of the project (or projects) that contain the services you wish to move. 
-
-**From your new GCP Marketplace subscription:**
-
-* Your Account ID (in the format ``E-1234-1234-1234-1234``), as shown in the Aiven GCP console **Settings** screen.
+Aiven will need the name of the project which currently contains your services and the account name for the new project (in the format `E-1234-1234-1234-1234`) which is shown in the "Settings" screen for your new project in the Aiven GCP console (`https://console.gcp.aiven.io <https://console.gcp.aiven.io>`_).
 
 Send the request to Aiven
 -------------------------
 
-Once you have collected the information above, send it by email to `sales@Aiven.io <mailto:sales@Aiven.io>`_ and someone will be in touch to complete the process.
+Once you have the account ID, send this and the name of the project which contains the relevant services to `sales@Aiven.io <mailto:sales@Aiven.io>`_ and someone will be in touch to complete the process.
 
