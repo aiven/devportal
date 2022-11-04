@@ -59,7 +59,7 @@ templates_path = ['_templates']
 exclude_patterns = [
     '_build', 'Thumbs.db', '.DS_Store', 'README*', 'scripts', 'utils',
     'CONTRIBUTING.rst', 'REVIEWING.rst', 'includes',
-    '.github/vale', '.venv',
+    '.github/vale', '.venv', 'venv',
 ]
 
 # gitstamp config
