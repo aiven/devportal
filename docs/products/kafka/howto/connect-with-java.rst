@@ -52,7 +52,6 @@ Variable                     Description
 ``SASL_PASSWORD``            Password required to connect using SASL
 ``TRUSTSTORE_LOCATION``      Location of your truststore (named by default as client.truststore.jks)
 ``TRUSTSTORE_PASSWORD``      Password you used when creating a truststore
-``TRUSTSTORE_PASSWORD``      Password you used when creating a truststore
 ``KEYSTORE_LOCATION``        Location of you keystore (named by default as client.keystore.p12)
 ``KEYSTORE_PASSWORD``        Password you used when creating a keystore
 ``KEY_PASSWORD``             Password for the key in the keystore, if you chose a different password than the one for keystore
