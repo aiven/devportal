@@ -146,7 +146,7 @@ Here is the sample Terraform file to stand-up and connect all the services. Keep
       connector_name = "kafka-os-con1"
       config = {
         "topics" = aiven_kafka_topic.topic-logs-app-1.topic_name
-        "connector.class" : "io.aiven.kafka.connect.opensearch.OpensearchSinkConnector"
+        "connector.class" = "io.aiven.kafka.connect.opensearch.OpensearchSinkConnector"
         "type.name"                      = "os-connector"
         "name"                           = "kafka-os-con1"
         "connection.url"                 = "https://${aiven_opensearch.os-service1.service_host}:${aiven_opensearch.os-service1.service_port}"

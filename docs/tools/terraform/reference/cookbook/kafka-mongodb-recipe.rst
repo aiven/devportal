@@ -116,16 +116,16 @@ Be sure to check out the :doc:`getting started guide <../../get-started>` to lea
     service_name   = aiven_kafka.demo-kafka.service_name
     connector_name = "mongodb-source-connector"
     config = {
-      "name" : "mongodb-source-connector"
-      "connector.class" : "com.mongodb.kafka.connect.MongoSourceConnector"
+      "name" = "mongodb-source-connector"
+      "connector.class" = "com.mongodb.kafka.connect.MongoSourceConnector"
       "connection.uri" = var.mongodb_connection_uri
-      "database" : "sample_airbnb"
-      "collection" : "listingsAndReviews"
-      "copy.existing" : "true"
-      "poll.await.time.ms" : "1000"
-      "output.format.value" : "json"
-      "output.format.key" : "json"
-      "publish.full.document.only" : "true"
+      "database" = "sample_airbnb"
+      "collection" = "listingsAndReviews"
+      "copy.existing" = "true"
+      "poll.await.time.ms" = "1000"
+      "output.format.value" = "json"
+      "output.format.key" = "json"
+      "publish.full.document.only" = "true"
     }
   }
 
