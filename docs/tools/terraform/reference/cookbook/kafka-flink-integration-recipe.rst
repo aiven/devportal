@@ -28,6 +28,54 @@ If you relate the above diagram to the following example, both source and target
 Imagine that you are collecting CPU usage for hundreds of machines in your data centre and these metrics are populated in an Apache Kafka topic called ``cpu_measurements``. But you're interested in learning about those machines with CPU usages higher than 85%.
 For this, you'd like to run an Apache Flink job and write the filtered messages into a topic called ``cpu_high_usage``. The following Terraform script stands up both Apache Kafka and Apache Flink services, creates the service integration, source and target Apache Kafka topics, an Apache Flink job, and two Apache Flink tables. 
 
+.. dropdown:: Expand to check out the relevant common files needed for this recipe.
+
+    Navigate to a new folder and add the following files.
+
+    1. Add the following to a new ``provider.tf`` file:
+
+    .. code:: terraform
+
+       terraform {
+         required_providers {
+           aiven = {
+             source  = "aiven/aiven"
+             version = ">= 3.7"
+           }
+         }
+       }
+   
+       provider "aiven" {
+         api_token = var.aiven_api_token
+       }
+   
+    You can also set the environment variable ``AIVEN_TOKEN`` for the ``api_token`` property. With this, you don't need to pass the ``-var-file`` flag when executing Terraform commands.
+ 
+    2. To avoid including sensitive information in source control, the variables are defined here in the ``variables.tf`` file. You can then use a ``*.tfvars`` file with the actual values so that Terraform receives the values during runtime, and exclude it.
+
+    The ``variables.tf`` file defines the API token, the project name to use, and the prefix for the service name:
+
+    .. code:: terraform
+
+       variable "aiven_api_token" {
+         description = "Aiven console API token"
+         type        = string
+       }
+   
+       variable "project_name" {
+         description = "Aiven console project name"
+         type        = string
+       }
+      
+    3. The ``var-values.tfvars`` file holds the actual values and is passed to Terraform using the ``-var-file=`` flag.
+
+    ``var-values.tfvars`` file:
+
+    .. code:: terraform
+
+       aiven_api_token     = "<YOUR-AIVEN-AUTHENTICATION-TOKEN-GOES-HERE>"
+       project_name        = "<YOUR-AIVEN-CONSOLE-PROJECT-NAME-GOES-HERE>"
+
 ``services.tf`` file:
 
 .. code:: terraform
@@ -118,7 +166,27 @@ For this, you'd like to run an Apache Flink job and write the filtered messages 
           WHERE usage > 85
     EOF
   }
-  
+
+.. dropdown:: Expand to check out how to execute the Terraform files.
+
+    The ``init`` command performs several different initialization steps in order to prepare the current working directory for use with Terraform. In our case, this command automatically finds, downloads, and installs the necessary Aiven Terraform provider plugins.
+    
+    .. code:: shell
+
+       terraform init
+
+    The ``plan`` command creates an execution plan and shows you the resources that will be created (or modified) for you. This command does not actually create any resource; this is more like a preview.
+
+    .. code:: bash
+
+       terraform plan -var-file=var-values.tfvars
+
+    If you're satisfied with the output of ``terraform plan``, go ahead and run the ``terraform apply`` command which actually does the task or creating (or modifying) your infrastructure resources. 
+
+    .. code:: bash
+
+       terraform apply -var-file=var-values.tfvars
+
 The resource ``"aiven_flink"`` creates an Aiven for Apache Flink resource with the project name, choice of cloud, an Aiven service plan, and a specified service name. 
 ``"aiven_kafka"`` resource creates an Apache Kafka cluster and two Apache Kafka topics (``cpu_measurements`` and a ``cpu_high_usage``) are created using the ``"aiven_kafka_topic"`` resource.
 Similarly, the ``"aiven_service_integration"`` resource creates the integration between Apache Kafka and the Apache Flink service. Two ``"aiven_flink_table"``
