@@ -1,4 +1,4 @@
-Integrate with Apache Kafka®
+Connect Apache Kafka® to Aiven for ClickHouse®
 =============================
 
 You can integrate Aiven for ClickHouse® with either *Aiven for Apache Kafka®* service located in the same project, or *an external Apache Kafka endpoint*. A single Aiven for ClickHouse instance can connect to multiple Kafka clusters with different authentication mechanism and credentials.
@@ -12,7 +12,7 @@ Behind the scenes the integration between Aiven for ClickHouse and Apache Kafka 
 Prerequisites
 -------------
 
-You will need:
+You will need
 
 * Aiven for ClickHouse service
 * Aiven for Apache Kafka service or a self-hosted Apache Kafka service
@@ -36,7 +36,7 @@ Variable                         Description
 ``KAFKA_SERVICE_NAME``           Name of the Apache Kafka service you use for the integration.
 ``PROJECT``                      Name of Aiven project where your services are located.
 ``CONNECTOR_TABLE_NAME``         Name of the Kafka engine virtual table that is used as a connector.
-``DATA_FORMAT``                  Input/output data format in which data is accepted into Aiven for ClickHouse. See :doc:`../reference/supported-input-output-formats`
+``DATA_FORMAT``                  Input/output data format in which data is accepted into Aiven for ClickHouse. See :ref:`Reference <reference>`.
 ``CONSUMER_GROUP_NAME``          Name of the consumer group. Each message is delivered once per consumer group.
 ============================     ==========================================================================================================
 
@@ -177,3 +177,25 @@ You can also bring the entries from ClickHouse table into the Apache Kafka topic
 .. warning::
 
     Writing to more than one topic is not supported.
+
+.. _reference:
+
+Reference
+----------
+
+When connecting ClickHouse® to Kafka® using Aiven integrations, data exchange is possible with the following formats only:
+
+============================     ====================================================================================
+Format                           Example
+============================     ====================================================================================
+CSV                              ``123,"Hello"``
+JSONASString                     ``{"x":123,"y":"hello"}``
+JSONCompactEachRow               ``[123,"Hello"]``
+JSONCompactStringsEachRow        ``["123","Hello"]``
+JSONEachRow                      ``{"x":123,"y":"hello"}``
+JSONStringsEachRow               ``{"x":"123","y":"hello"}``
+MsgPack                          ``{\xc4\x05hello``
+TSKV                             ``x=123\ty=hello``
+TSV                              ``123\thello``
+TabSeparated                     ``123\thello``
+============================     ====================================================================================

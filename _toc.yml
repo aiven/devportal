@@ -570,18 +570,17 @@ entries:
       - file: docs/products/clickhouse/howto
         title: HowTo
         entries:
+          - file: docs/products/clickhouse/howto/connect-to-ch-service
+          - file: docs/products/clickhouse/howto/manage-users-roles
+          - file: docs/products/clickhouse/howto/load-dataset
+          - file: docs/products/clickhouse/howto/query-ch-dbs
+          - file: docs/products/clickhouse/howto/manage-dbs-tables
           - file: docs/products/clickhouse/howto/list-integrations
             entries:
               - file: docs/products/clickhouse/howto/connect-to-grafana
               - file: docs/products/clickhouse/howto/integrate-kafka
               - file: docs/products/clickhouse/howto/integrate-pg
               - file: docs/products/clickhouse/howto/connect-with-jdbc
-          - file: docs/products/clickhouse/howto/use-cli
-          - file: docs/products/clickhouse/howto/use-query-editor
-          - file: docs/products/clickhouse/howto/use-play
-          - file: docs/products/clickhouse/howto/add-service-users
-          - file: docs/products/clickhouse/howto/grant-privilege
-
 
       - file: docs/products/clickhouse/reference
         title: Reference
