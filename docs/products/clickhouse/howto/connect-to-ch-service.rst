@@ -1,11 +1,16 @@
-Use the ClickHouse® client
-==========================
+Connect to a ClickHouse® cluster
+================================
 
-To use the ClickHous® client across different operating systems, we recommend utilizing `Docker <https://www.docker.com/>`_. You can get the latest image of the ClickHouse client directly from `the dedicated page in Docker hub <https://hub.docker.com/r/clickhouse/clickhouse-client>`_.
+It's recommended to connect to a ClickHouse® cluster with the ClickHouse® client.
+
+Use the ClickHouse® client
+--------------------------
+
+To use the ClickHouse® client across different operating systems, we recommend utilizing `Docker <https://www.docker.com/>`_. You can get the latest image of the ClickHouse client directly from `the dedicated page in Docker hub <https://hub.docker.com/r/clickhouse/clickhouse-client>`_.
 
 .. note::
 
-    There are other installation options available for ClickHouse clients for certain operating systems. You can find them `in the official ClickHouse documentation <https://clickhouse.com/docs/en/integrations/sql-clients/clickhouse-client-local>`_.
+    There are other installation options available for ClickHouse clients for different operating systems. You can find them in `Install ClickHouse-client and ClickHouse-local <https://clickhouse.com/docs/en/integrations/sql-clients/clickhouse-client-local#install-clickhouse-client-and-clickhouse-local>`_ and `Available Installation Options <https://clickhouse.com/docs/en/install/#available-installation-options>`_ in the official ClickHouse documentation.
 
 Connection properties
 ---------------------
@@ -13,7 +18,7 @@ Connection properties
 You will need to know the following properties to establish a secure connection with your Aiven for ClickHouse service: **Host**, **Port**, **User** and **Password**. You will find these in the *Connection information* section in the *Overview* page of your service in the `Aiven web console <https://console.aiven.io/>`_.
 
 Command template
------------------
+----------------
 
 The command to connect to the service looks like this, substitute the placeholders for ``USERNAME``, ``PASSWORD``, ``HOST`` and ``PORT``:
 
@@ -61,5 +66,3 @@ Similar to above example, you can request the list of present databases directly
     --port PORT                         \
     --secure                            \
     --query="SHOW DATABASES"
-
-

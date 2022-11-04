@@ -1,12 +1,41 @@
-Grant privileges
-==================
+Manage ClickHouse® service and roles
+====================================
+
+This article shows you how to create new user accounts for your service and how to manage user roles and permissions for efficiently access control.
+
+Add a new user
+--------------
+
+To create a new user account for your service,
+
+1. Log in to the `Aiven web console <https://console.aiven.io/>`_ and select your ClickHouse® service.
+
+#. Select **Users & Roles**.
+
+   This page shows you a list of all the users that are currently available in your service. The default ``avnadmin`` user has all available access grants to the service.
+
+   .. tip::
+      To view the roles and grants for any of the listed users, click **View Details & Grants** for that user.
+
+#. Enter a name for the new user and select a role.
+
+   The role that you select defines the access grants that are assigned to the user. For more information on roles, :doc:`see this article <grant-privilege>`.
+
+#. Select **Add User**.
+
+   This creates the new user and shows you a summary of the information.
+
+#. Copy the password on screen to a safe place. It can't be accessed again in future, however it can be reset if needed.
+
+Manage roles and permissions
+----------------------------
 
 ClickHouse® supports a **Role Based Access Control** model and allows you to configure access privileges by using SQL statements. You can either :doc:`use the query editor <use-query-editor>` or rely on :doc:`the command-line interface <use-cli>`.
 
 This article shows you examples of how to create roles and grant privileges. The ClickHouse documentation includes  `detailed documentation for access rights <https://clickhouse.com/docs/en/operations/access-rights/>`_.
 
 Create a new role
-------------------
+^^^^^^^^^^^^^^^^^
 
 To create a new role named `auditor`, run the following command::
 
@@ -15,7 +44,7 @@ To create a new role named `auditor`, run the following command::
 You can find more information `on role creation here <https://clickhouse.com/docs/en/sql-reference/statements/create/role/>`_.
 
 Grant permissions
--------------------
+^^^^^^^^^^^^^^^^^
 
 You can grant permissions both to specific roles and to individual users. The grants can be also granular, targeting specific databases, tables, columns, or rows.
 
@@ -41,8 +70,6 @@ To allow the creation of new users::
 
 There are a variety of privileges that you can grant, and you can find `the full list in the ClickHouse documentation <https://clickhouse.com/docs/en/sql-reference/statements/grant/#privileges>`_.
 
-
-
 .. note ::
 
     You can grant permissions to a table that does not yet exist.
@@ -58,7 +85,7 @@ There are a variety of privileges that you can grant, and you can find `the full
 You can find the full list of supported functionality related `to grants in the ClickHouse documentation <https://clickhouse.com/docs/en/sql-reference/statements/grant/>`_.
 
 Set roles
-------------------
+^^^^^^^^^
 
 A single user can be assigned different roles, either individually or simultaneously.
 
@@ -71,14 +98,14 @@ You can also specify a role to be activated by default when the user logs in::
     SET DEFAULT ROLE auditor, external TO Mary.Anderson, James.Miller;
 
 Delete a role
--------------------
+^^^^^^^^^^^^^
 
 If you no longer need a role, you can remove it::
 
     DROP ROLE auditor;
 
 Revoke permissions
--------------------
+^^^^^^^^^^^^^^^^^^
 
 Remove all or specific privileges from users or roles::
 
@@ -90,8 +117,8 @@ Revoke all privileges to a table or database simultaneously::
 
 See the ClickHouse documentation `for more information on revoking privileges <https://clickhouse.com/docs/en/sql-reference/statements/revoke/>`_.
 
-See current permissions
------------------------
+Check permissions
+^^^^^^^^^^^^^^^^^
 
 Run the following commands to see all available grants, users, and roles::
 
@@ -106,14 +133,7 @@ Run the following commands to see all available grants, users, and roles::
     SHOW ROLES;
 
 
-See users and roles in the console
-----------------------------------
+Preview users and roles in the console
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You can also see the users, their roles and permissions in the  `Aiven web console <https://console.aiven.io/>`_. You will find these on the *Users & Roles* tab of your service. Next to every user there is a **View Details & Grants** button that shows you a list of all grants for that user.
-
-
-
-
-
-
-
