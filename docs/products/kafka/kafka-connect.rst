@@ -99,9 +99,9 @@ Sink connectors
        :margin: 2 2 0 0
        :shadow: md
 
-       `Google Cloud Pub/Sub <https://github.com/GoogleCloudPlatform/pubsub/>`__
+       :doc:`Google Cloud Pub/Sub </docs/products/kafka/kafka-connect/howto/gcp-pubsub-sink>`
 
-       `Google Cloud Pub/Sub Lite <https://github.com/GoogleCloudPlatform/pubsub/>`_
+       :doc:`Google Cloud Pub/Sub Lite </docs/products/kafka/kafka-connect/howto/gcp-pubsub-lite-sink>`
 
        :doc:`Stream Reactor Cassandra® <kafka-connect/howto/cassandra-streamreactor-sink>`
 
