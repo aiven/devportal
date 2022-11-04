@@ -83,14 +83,14 @@ For example, you'll need to declare the variables for ``project`` and ``api_toke
 The ``services.tf`` file for the provisioning of these three services, service integration, and related resource is this:
 
 .. code:: terraform
-
+  
   resource "aiven_pg" "demo-pg" {
     project      = var.project_name
     service_name = "demo-postgres"
     cloud_name   = "google-europe-north1"
     plan         = "business-4"
   }
-
+  
   resource "aiven_kafka" "demo-kafka" {
     project                 = var.project_name
     cloud_name              = "azure-norway-west"
@@ -103,21 +103,21 @@ The ``services.tf`` file for the provisioning of these three services, service i
       kafka_connect   = false
       schema_registry = true
       kafka_version   = "3.2"
-
+  
       kafka {
         auto_create_topics_enable  = true
         num_partitions             = 3
         default_replication_factor = 2
         min_insync_replicas        = 2
       }
-
+  
       kafka_authentication_methods {
         certificate = true
       }
-
+  
     }
   }
-
+  
   resource "aiven_kafka_connect" "demo-kafka-connect" {
     project                 = var.project_name
     cloud_name              = "google-europe-north1"
@@ -126,24 +126,24 @@ The ``services.tf`` file for the provisioning of these three services, service i
     service_name            = "demo-kafka-connect"
     maintenance_window_dow  = "monday"
     maintenance_window_time = "10:00:00"
-
+  
     kafka_connect_user_config {
       kafka_connect {
         consumer_isolation_level = "read_committed"
       }
-
+  
       public_access {
         kafka_connect = true
       }
     }
   }
-
+  
   resource "aiven_service_integration" "i1" {
     project                  = var.project_name
     integration_type         = "kafka_connect"
     source_service_name      = aiven_kafka.demo-kafka.service_name
     destination_service_name = aiven_kafka_connect.demo-kafka-connect.service_name
-
+  
     kafka_connect_user_config {
       kafka_connect {
         group_id             = "connect"
@@ -152,12 +152,12 @@ The ``services.tf`` file for the provisioning of these three services, service i
       }
     }
   }
-
+  
   resource "aiven_kafka_connector" "kafka-pg-source" {
     project        = var.project_name
     service_name   = aiven_kafka_connect.demo-kafka-connect.service_name
     connector_name = "kafka-pg-source"
-
+  
     config = {
       "name"                      = "kafka-pg-source"
       "connector.class"           = "io.debezium.connector.postgresql.PostgresConnector"
@@ -180,7 +180,7 @@ The ``services.tf`` file for the provisioning of these three services, service i
     }
     depends_on = [aiven_service_integration.i1]
   }
-
+  
 .. dropdown:: Expand to check out how to execute the Terraform files.
 
     The ``init`` command performs several different initialization steps in order to prepare the current working directory for use with Terraform. In our case, this command automatically finds, downloads, and installs the necessary Aiven Terraform provider plugins.

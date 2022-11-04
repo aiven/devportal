@@ -73,7 +73,7 @@ Here is the sample Terraform file to stand-up a single Apache Kafka server and c
 ``services.tf`` file:
 
 .. code:: terraform
-
+   
    resource "aiven_kafka" "demo-kafka" {
      project                 = var.project_name
      cloud_name              = "google-northamerica-northeast1"

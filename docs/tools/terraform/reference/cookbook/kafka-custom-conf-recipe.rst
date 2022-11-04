@@ -78,7 +78,7 @@ Here is the sample Terraform script to stand-up Aiven for Apache Kafka and relat
 ``services.tf`` file:
 
 .. code:: terraform
-
+  
   resource "aiven_kafka" "demo-kafka" {
     project                 = var.project_name
     cloud_name              = "google-europe-west1"
@@ -87,44 +87,44 @@ Here is the sample Terraform script to stand-up Aiven for Apache Kafka and relat
     maintenance_window_dow  = "sunday"
     maintenance_window_time = "01:00:00"
     default_acl             = false
-
+  
     kafka_user_config {
       kafka_rest      = true
       kafka_connect   = false
       schema_registry = true
       kafka_version   = "3.2"
-
+  
       kafka {
-        auto_create_topics_enable    = true
-        num_partitions               = 3
-        default_replication_factor   = 2
-        min_insync_replicas          = 2
+        auto_create_topics_enable  = true
+        num_partitions             = 3
+        default_replication_factor = 2
+        min_insync_replicas        = 2
       }
-
+  
       kafka_authentication_methods {
         certificate = true
       }
-
+  
       public_access {
-        kafka_rest    = true
+        kafka_rest = true
       }
     }
   }
-
+  
   resource "aiven_kafka_topic" "demo-kafka-topic" {
-    project                = var.project_name
-    service_name           = aiven_kafka.demo-kafka.service_name
-    topic_name             = "demo-kafka-topic"
-    partitions             = 5
-    replication            = 3
+    project      = var.project_name
+    service_name = aiven_kafka.demo-kafka.service_name
+    topic_name   = "demo-kafka-topic"
+    partitions   = 5
+    replication  = 3
   }
-
+  
   resource "aiven_kafka_user" "demo-kafka-user" {
     project      = var.project_name
     service_name = aiven_kafka.demo-kafka.service_name
     username     = var.kafka_user_name
   }
-
+  
   resource "aiven_kafka_acl" "demo-kafka-user-acl" {
     project      = var.project_name
     service_name = aiven_kafka.demo-kafka.service_name
@@ -132,7 +132,7 @@ Here is the sample Terraform script to stand-up Aiven for Apache Kafka and relat
     permission   = "read"
     topic        = aiven_kafka_topic.demo-kafka-topic.topic_name
   }
-
+  
 .. dropdown:: Expand to check out how to execute the Terraform files.
 
     The ``init`` command performs several different initialization steps in order to prepare the current working directory for use with Terraform. In our case, this command automatically finds, downloads, and installs the necessary Aiven Terraform provider plugins.

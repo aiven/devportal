@@ -77,7 +77,7 @@ Here is the sample Terraform file to stand-up and connect all the services. Keep
 ``services.tf`` file:
 
 .. code:: terraform
-
+    
     # Kafka service
     resource "aiven_kafka" "application-logs" {
       project                 = var.project_name
@@ -145,8 +145,8 @@ Here is the sample Terraform file to stand-up and connect all the services. Keep
       service_name   = aiven_kafka.application-logs.service_name
       connector_name = "kafka-os-con1"
       config = {
-        "topics" = aiven_kafka_topic.topic-logs-app-1.topic_name
-        "connector.class" = "io.aiven.kafka.connect.opensearch.OpensearchSinkConnector"
+        "topics"                         = aiven_kafka_topic.topic-logs-app-1.topic_name
+        "connector.class"                = "io.aiven.kafka.connect.opensearch.OpensearchSinkConnector"
         "type.name"                      = "os-connector"
         "name"                           = "kafka-os-con1"
         "connection.url"                 = "https://${aiven_opensearch.os-service1.service_host}:${aiven_opensearch.os-service1.service_port}"
@@ -172,7 +172,7 @@ Here is the sample Terraform file to stand-up and connect all the services. Keep
         opensearch_version = "1"
       }
     }
-
+    
 .. dropdown:: Expand to check out how to execute the Terraform files.
 
     The ``init`` command performs several different initialization steps in order to prepare the current working directory for use with Terraform. In our case, this command automatically finds, downloads, and installs the necessary Aiven Terraform provider plugins.

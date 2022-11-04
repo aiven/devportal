@@ -96,66 +96,66 @@ Be sure to check out the :doc:`getting started guide <../../get-started>` to lea
 ``services.tf`` file:
 
 .. code:: terraform
-
+  
   resource "aiven_kafka_mirrormaker" "mm" {
     project      = var.project_name
     cloud_name   = "google-europe-west1"
     plan         = "business-4"
     service_name = "mm"
-
+  
     kafka_mirrormaker_user_config {
       ip_filter = [
         "0.0.0.0/0"
       ]
-
-    kafka_mirrormaker {
-      refresh_groups_interval_seconds = 600
-      refresh_topics_enabled          = true
-      refresh_topics_interval_seconds = 600
+  
+      kafka_mirrormaker {
+        refresh_groups_interval_seconds = 600
+        refresh_topics_enabled          = true
+        refresh_topics_interval_seconds = 600
+      }
     }
-   }
   }
-
+  
   resource "aiven_service_integration" "source-kafka-to-mm" {
     project                  = var.project_name
     integration_type         = "kafka_mirrormaker"
     source_service_name      = aiven_kafka.source.service_name
     destination_service_name = aiven_kafka_mirrormaker.mm.service_name
-
+  
     kafka_mirrormaker_user_config {
       cluster_alias = "source"
     }
   }
-
+  
   resource "aiven_service_integration" "mm-to-target-kafka" {
     project                  = var.project_name
     integration_type         = "kafka_mirrormaker"
     source_service_name      = aiven_kafka.target.service_name
     destination_service_name = aiven_kafka_mirrormaker.mm.service_name
-
+  
     kafka_mirrormaker_user_config {
       cluster_alias = "target"
     }
   }
-
+  
   resource "aiven_mirrormaker_replication_flow" "mm-replication-flow" {
     project        = var.project_name
     service_name   = aiven_kafka_mirrormaker.mm.service_name
     source_cluster = aiven_service_integration.source-kafka-to-mm.kafka_mirrormaker_user_config[0].cluster_alias
     target_cluster = aiven_service_integration.mm-to-target-kafka.kafka_mirrormaker_user_config[0].cluster_alias
     enable         = true
-
+  
     topics = [
       ".*",
     ]
-
+  
     topics_blacklist = [
       ".*[\\-\\.]internal",
       ".*\\.replica",
       "__.*"
     ]
   }
-
+  
   resource "aiven_kafka" "source" {
     project                 = var.project_name
     cloud_name              = "google-europe-west1"
@@ -163,7 +163,7 @@ Be sure to check out the :doc:`getting started guide <../../get-started>` to lea
     service_name            = "source"
     maintenance_window_dow  = "monday"
     maintenance_window_time = "10:00:00"
-
+  
     kafka_user_config {
       kafka_version = "3.1"
       kafka {
@@ -172,7 +172,7 @@ Be sure to check out the :doc:`getting started guide <../../get-started>` to lea
       }
     }
   }
-
+  
   resource "aiven_kafka_topic" "source" {
     project      = var.project_name
     service_name = aiven_kafka.source.service_name
@@ -180,7 +180,7 @@ Be sure to check out the :doc:`getting started guide <../../get-started>` to lea
     partitions   = 3
     replication  = 2
   }
-
+  
   resource "aiven_kafka" "target" {
     project                 = var.project_name
     cloud_name              = "google-europe-west1"
@@ -188,7 +188,7 @@ Be sure to check out the :doc:`getting started guide <../../get-started>` to lea
     service_name            = "target"
     maintenance_window_dow  = "monday"
     maintenance_window_time = "10:00:00"
-
+  
     kafka_user_config {
       kafka_version = "3.1"
       kafka {
@@ -197,7 +197,7 @@ Be sure to check out the :doc:`getting started guide <../../get-started>` to lea
       }
     }
   }
-
+  
   resource "aiven_kafka_topic" "target" {
     project      = var.project_name
     service_name = aiven_kafka.target.service_name
@@ -205,7 +205,7 @@ Be sure to check out the :doc:`getting started guide <../../get-started>` to lea
     partitions   = 3
     replication  = 2
   }
-
+  
 .. dropdown:: Expand to check out how to execute the Terraform files.
 
     The ``init`` command performs several different initialization steps in order to prepare the current working directory for use with Terraform. In our case, this command automatically finds, downloads, and installs the necessary Aiven Terraform provider plugins.

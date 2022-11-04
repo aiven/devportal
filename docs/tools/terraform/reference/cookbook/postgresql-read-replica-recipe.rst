@@ -130,7 +130,7 @@ Be sure to check out the :doc:`getting started guide <../../get-started>` to lea
       aiven_pg.demo-postgresql-primary,
     ]
   }
-
+  
 .. dropdown:: Expand to check out how to execute the Terraform files.
 
     The ``init`` command performs several different initialization steps in order to prepare the current working directory for use with Terraform. In our case, this command automatically finds, downloads, and installs the necessary Aiven Terraform provider plugins.

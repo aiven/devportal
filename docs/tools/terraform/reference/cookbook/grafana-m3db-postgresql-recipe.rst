@@ -80,10 +80,10 @@ Be sure to check out the :doc:`getting started guide <../../get-started>` to lea
 ``services.tf`` file:
 
 .. code:: terraform
-
-    
+  
+  
   # PostgreSQL Service
-
+  
   resource "aiven_pg" "demo-pg" {
     project                 = var.project_name
     cloud_name              = "google-northamerica-northeast1"
@@ -93,9 +93,9 @@ Be sure to check out the :doc:`getting started guide <../../get-started>` to lea
     maintenance_window_dow  = "sunday"
     maintenance_window_time = "10:00:00"
   }
-
+  
   # M3DB Service
-
+  
   resource "aiven_m3db" "demo-m3db" {
     project                 = var.project_name
     cloud_name              = "google-northamerica-northeast1"
@@ -103,19 +103,19 @@ Be sure to check out the :doc:`getting started guide <../../get-started>` to lea
     service_name            = join("-", [var.service_name_prefix, "m3db"])
     maintenance_window_dow  = "sunday"
     maintenance_window_time = "10:00:00"
-
+  
     m3db_user_config {
       m3db_version = 1.1
-
+  
       namespaces {
         name = "my_ns1"
         type = "unaggregated"
       }
     }
   }
-
+  
   # Grafana Service
-
+  
   resource "aiven_grafana" "demo-grafana" {
     project                 = var.project_name
     cloud_name              = "google-northamerica-northeast1"
@@ -123,34 +123,34 @@ Be sure to check out the :doc:`getting started guide <../../get-started>` to lea
     service_name            = join("-", [var.service_name_prefix, "grafana"])
     maintenance_window_dow  = "sunday"
     maintenance_window_time = "10:00:00"
-
+  
     grafana_user_config {
       alerting_enabled = true
-
+  
       public_access {
         grafana = true
       }
     }
   }
-
+  
   # PostgreSQL-M3DB Metrics Service Integration
-
+  
   resource "aiven_service_integration" "postgresql_to_m3db" {
     project                  = var.project_name
     integration_type         = "metrics"
     source_service_name      = aiven_pg.demo-pg.service_name
     destination_service_name = aiven_m3db.demo-m3db.service_name
   }
-
+  
   # M3DB-Grafana Dashboard Service Integration
-
+  
   resource "aiven_service_integration" "m3db-to-grafana" {
     project                  = var.project_name
     integration_type         = "dashboard"
     source_service_name      = aiven_grafana.demo-grafana.service_name
     destination_service_name = aiven_m3db.demo-m3db.service_name
   }
-
+  
 .. dropdown:: Expand to check out how to execute the Terraform files.
 
     The ``init`` command performs several different initialization steps in order to prepare the current working directory for use with Terraform. In our case, this command automatically finds, downloads, and installs the necessary Aiven Terraform provider plugins.

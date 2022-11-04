@@ -101,10 +101,10 @@ Be sure to check out the :doc:`getting started guide <../../get-started>` to lea
       backup_minute             = 30
       shared_buffers_percentage = 40
   
-      ip_filter           = ["0.0.0.0/0"]
-      admin_username      = var.admin_username
-      admin_password      = var.admin_password
-      
+      ip_filter      = ["0.0.0.0/0"]
+      admin_username = var.admin_username
+      admin_password = var.admin_password
+  
       ## project_to_fork_from  = "source-project-name" 
       ## service_to_fork_from  = "source-pg-service"   
       ## pg_read_replica       = true                  
@@ -116,7 +116,7 @@ Be sure to check out the :doc:`getting started guide <../../get-started>` to lea
       }
     }
   }
-
+  
 .. dropdown:: Expand to check out how to execute the Terraform files.
 
     The ``init`` command performs several different initialization steps in order to prepare the current working directory for use with Terraform. In our case, this command automatically finds, downloads, and installs the necessary Aiven Terraform provider plugins.
