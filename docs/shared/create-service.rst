@@ -1,7 +1,9 @@
+rst_prolog = """
+.. |Service| replace:: Aiven for ClickHouse®
+"""
+
 Create a new |Service| service
 ==============================
-
-.. |Service| replace:: Aiven for ClickHouse®
 
 You can add services for the various Aiven products in the Aiven web console.
 
