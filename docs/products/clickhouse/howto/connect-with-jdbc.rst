@@ -30,7 +30,7 @@ You'll also need to provide user name and password to establish the connection. 
 
 .. raw:: html
 
-    <iframe width="712" height="400" src="https://youtube.com/embed/j1qNGLKdTJg" frameborder="0" allowfullscreen></iframe>
+    <iframe width="712" height="400" src="https://share.vidyard.com/watch/nw65VPavhbQtEUwa6am4iV?" frameborder="0" allowfullscreen></iframe>
 
 <img
   style="width: 100%; margin: auto; display: block;"
