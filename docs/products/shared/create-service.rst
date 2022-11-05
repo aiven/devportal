@@ -7,12 +7,9 @@ To create a new |Service| service:
 
 1. Log in to the `Aiven web console <https://console.aiven.io/>`_.
 
-2. On the *Services* page, click **Create a new service**.
+2. On the **Services** page, select **Create a new service**.
 
    This opens a new page with the available service options.
-
-   .. image:: /images/tools/console/console_create_service.png
-      :alt: Aiven Console view for creating a new service
 
 3. Select the main properties for your service:
 
@@ -41,16 +38,13 @@ To create a new |Service| service:
       A random name is provided by default, but you can enter a more recognizable name to distinguish it from other services.
 
 
-4. Click **Create Service** under the summary on the right side of the console.
+4. Select **Create Service** under the summary on the right side of the console.
 
    This brings you back to the **Services** view. Your new |Service| service is listed with a status indicator to show that it is being created.
 
 5. Click the service name.
 
-   The *Overview* page for the service opens.
-
-   .. image:: /images/tools/console/console_service.png
-      :alt: Aiven Console service Overview page
+   The **Overview** page for the service opens.
 
    This view shows you the connection parameters for your |Service| service, its current status, and the configuration options.
 
