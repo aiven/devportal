@@ -4,6 +4,10 @@ options:
 
 entries:
   # -------- PLATFORM-TOPICS --------
+  - file: docs/shared
+    title: Shared
+    entries:
+    - file: docs/shared/create-service.rst
   - file: docs/platform
     title: Platform
     entries:
