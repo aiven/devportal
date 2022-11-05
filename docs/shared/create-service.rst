@@ -1,6 +1,4 @@
-rst_prolog = """
 .. |Service| replace:: Aiven for ClickHouse®
-"""
 
 Create a new |Service| service
 ==============================
