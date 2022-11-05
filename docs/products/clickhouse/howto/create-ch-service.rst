@@ -1,1 +1,1 @@
-.. include:: /docs/shared/create-service/
+.. include:: /docs//shared/create-service.rst
