@@ -66,5 +66,3 @@ Similar to above example, you can request the list of present databases directly
     --port PORT                         \
     --secure                            \
     --query="SHOW DATABASES"
-
-<script type='text/javascript' async src='https://play.vidyard.com/embed/v4.js' data-playbackurl='play.vidyard.com'></script><img style='margin: auto; display: block; width: 100%; 'class='vidyard-player-embed' src='https://play.vidyard.com/2cQUuV7pxtSWabGMmwkGYJ.jpg' data-height='540' data-width='960' data-width='auto' data-controller='hubs' data-action='show' data-hub_path='hub' data-uuid='2cQUuV7pxtSWabGMmwkGYJ' data-type='inline' />
