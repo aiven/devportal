@@ -32,11 +32,13 @@ You'll also need to provide user name and password to establish the connection. 
 
     <iframe width="712" height="400" src="https://share.vidyard.com/watch/nw65VPavhbQtEUwa6am4iV?" frameborder="0" allowfullscreen></iframe>
 
-<img
-  style="width: 100%; margin: auto; display: block;"
-  class="vidyard-player-embed"
-  src="https://play.vidyard.com/nw65VPavhbQtEUwa6am4iV.jpg"
-  data-uuid="nw65VPavhbQtEUwa6am4iV"
-  data-v="4"
-  data-type="inline"
-/>
+.. raw:: html
+
+    <img
+    style="width: 100%; margin: auto; display: block;"
+    class="vidyard-player-embed"
+    src="https://play.vidyard.com/nw65VPavhbQtEUwa6am4iV.jpg"
+    data-uuid="nw65VPavhbQtEUwa6am4iV"
+    data-v="4"
+    data-type="inline"
+    />
