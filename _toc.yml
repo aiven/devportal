@@ -577,6 +577,7 @@ entries:
       - file: docs/products/clickhouse/howto
         title: HowTo
         entries:
+          - file: docs/products/clickhouse/howto/create-ch-service
           - file: docs/products/clickhouse/howto/connect-to-ch-service
           - file: docs/products/clickhouse/howto/manage-users-roles
           - file: docs/products/clickhouse/howto/load-dataset
