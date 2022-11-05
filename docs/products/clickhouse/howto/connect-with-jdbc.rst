@@ -25,8 +25,3 @@ Replace ``CLICKHOUSE_HTTPS_HOST`` and ``CLICKHOUSE_HTTPS_PORT`` with your connec
 You'll also need to provide user name and password to establish the connection. For example, if you use Java::
 
     Connection connection = dataSource.getConnection("CLICKHOUSE_USER", "CLICKHOUSE_PASSWORD");
-
-.. raw:: html
-
-    <iframe width="712" height="400" src="https://video.aiven.io/watch/2cQUuV7pxtSWabGMmwkGYJ?" frameborder="0" allowfullscreen></iframe>
-
