@@ -21,15 +21,15 @@ You can add services for the various Aiven products in the Aiven web console.
 
 .. raw:: html
 
-    <iframe width="750" height="550" src="https://video.aiven.io/watch/2cQUuV7pxtSWabGMmwkGYJ?" frameborder="0" allowfullscreen></iframe>
+    <iframe width="740" height="560" src="https://video.aiven.io/watch/2cQUuV7pxtSWabGMmwkGYJ?" frameborder="0" allowfullscreen></iframe>
 
 .. raw:: html
 
-    <iframe width="750" height="550" src="https://video.aiven.io/watch/2cQUuV7pxtSWabGMmwkGYJ?" frameborder="100" allowfullscreen></iframe>
+    <iframe width="730" height="570" src="https://video.aiven.io/watch/2cQUuV7pxtSWabGMmwkGYJ?" frameborder="100" allowfullscreen></iframe>
 
 .. raw:: html
 
-    <iframe width="750" height="550" src="https://video.aiven.io/watch/2cQUuV7pxtSWabGMmwkGYJ?" allowfullscreen></iframe>
+    <iframe width="720" height="580" src="https://video.aiven.io/watch/2cQUuV7pxtSWabGMmwkGYJ?" allowfullscreen></iframe>
 
 To create a new |Service| service:
 
