@@ -7,11 +7,17 @@ You can add services for the various Aiven products in the Aiven web console.
 
     <iframe width="730" height="600" src="https://video.aiven.io/watch/2cQUuV7pxtSWabGMmwkGYJ?" frameborder="0" allowfullscreen></iframe>
 
+.. note:: 
+	The pricing for the same service may vary between different providers and regions. The service summary on the right side of the console shows you the pricing for your selected options.
+
 This view shows you the connection parameters for your |Service| service, its current status, and the configuration options. The status is *Rebuilding* while the service is being created for you. Once the service is ready, the status changes to *Running*. While services typically start up in a couple of minutes, the performance varies between cloud providers and regions, and it may take longer in some circumstances.
 
 .. raw:: html
 
     <iframe width="720" height="600" src="https://video.aiven.io/watch/2cQUuV7pxtSWabGMmwkGYJ?" frameborder="0" allowfullscreen></iframe>
+
+.. note:: 
+	The pricing for the same service may vary between different providers and regions. The service summary on the right side of the console shows you the pricing for your selected options.
 
 This view shows you the connection parameters for your |Service| service, its current status, and the configuration options. The status is *Rebuilding* while the service is being created for you. Once the service is ready, the status changes to *Running*. While services typically start up in a couple of minutes, the performance varies between cloud providers and regions, and it may take longer in some circumstances.
 
@@ -19,11 +25,19 @@ This view shows you the connection parameters for your |Service| service, its cu
 
     <iframe width="740" height="600" src="https://video.aiven.io/watch/2cQUuV7pxtSWabGMmwkGYJ?" frameborder="0" allowfullscreen></iframe>
 
+.. note:: 
+	The pricing for the same service may vary between different providers and regions. The service summary on the right side of the console shows you the pricing for your selected options.
+
+
 This view shows you the connection parameters for your |Service| service, its current status, and the configuration options. The status is *Rebuilding* while the service is being created for you. Once the service is ready, the status changes to *Running*. While services typically start up in a couple of minutes, the performance varies between cloud providers and regions, and it may take longer in some circumstances.
 
 .. raw:: html
 
     <iframe width="750" height="600" src="https://video.aiven.io/watch/2cQUuV7pxtSWabGMmwkGYJ?" frameborder="0" allowfullscreen></iframe>
+
+.. note:: 
+	The pricing for the same service may vary between different providers and regions. The service summary on the right side of the console shows you the pricing for your selected options.
+
 
 This view shows you the connection parameters for your |Service| service, its current status, and the configuration options. The status is *Rebuilding* while the service is being created for you. Once the service is ready, the status changes to *Running*. While services typically start up in a couple of minutes, the performance varies between cloud providers and regions, and it may take longer in some circumstances.
 
