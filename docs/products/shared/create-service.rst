@@ -19,6 +19,18 @@ You can add services for the various Aiven products in the Aiven web console.
 
     <iframe width="800" height="400" src="https://video.aiven.io/watch/2cQUuV7pxtSWabGMmwkGYJ?" frameborder="50" allowfullscreen></iframe>
 
+.. raw:: html
+
+    <iframe width="750" height="550" src="https://video.aiven.io/watch/2cQUuV7pxtSWabGMmwkGYJ?" frameborder="0" allowfullscreen></iframe>
+
+.. raw:: html
+
+    <iframe width="750" height="550" src="https://video.aiven.io/watch/2cQUuV7pxtSWabGMmwkGYJ?" frameborder="100" allowfullscreen></iframe>
+
+.. raw:: html
+
+    <iframe width="750" height="550" src="https://video.aiven.io/watch/2cQUuV7pxtSWabGMmwkGYJ?" allowfullscreen></iframe>
+
 To create a new |Service| service:
 
 1. Log in to the `Aiven web console <https://console.aiven.io/>`_.
