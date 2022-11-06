@@ -5,31 +5,28 @@ You can add services for the various Aiven products in the Aiven web console.
 
 .. raw:: html
 
-    <iframe width="712" height="400" src="https://video.aiven.io/watch/2cQUuV7pxtSWabGMmwkGYJ?" frameborder="0" allowfullscreen></iframe>
+    <iframe width="730" height="600" src="https://video.aiven.io/watch/2cQUuV7pxtSWabGMmwkGYJ?" frameborder="0" allowfullscreen></iframe>
+
+This view shows you the connection parameters for your |Service| service, its current status, and the configuration options. The status is *Rebuilding* while the service is being created for you. Once the service is ready, the status changes to *Running*. While services typically start up in a couple of minutes, the performance varies between cloud providers and regions, and it may take longer in some circumstances.
 
 .. raw:: html
 
-    <iframe width="712" height="600" src="https://video.aiven.io/watch/2cQUuV7pxtSWabGMmwkGYJ?" frameborder="0" allowfullscreen></iframe>
+    <iframe width="720" height="600" src="https://video.aiven.io/watch/2cQUuV7pxtSWabGMmwkGYJ?" frameborder="0" allowfullscreen></iframe>
+
+This view shows you the connection parameters for your |Service| service, its current status, and the configuration options. The status is *Rebuilding* while the service is being created for you. Once the service is ready, the status changes to *Running*. While services typically start up in a couple of minutes, the performance varies between cloud providers and regions, and it may take longer in some circumstances.
 
 .. raw:: html
 
-    <iframe width="712" height="500" src="https://video.aiven.io/watch/2cQUuV7pxtSWabGMmwkGYJ?" allowfullscreen></iframe>
+    <iframe width="740" height="600" src="https://video.aiven.io/watch/2cQUuV7pxtSWabGMmwkGYJ?" frameborder="0" allowfullscreen></iframe>
+
+This view shows you the connection parameters for your |Service| service, its current status, and the configuration options. The status is *Rebuilding* while the service is being created for you. Once the service is ready, the status changes to *Running*. While services typically start up in a couple of minutes, the performance varies between cloud providers and regions, and it may take longer in some circumstances.
 
 .. raw:: html
 
-    <iframe width="800" height="400" src="https://video.aiven.io/watch/2cQUuV7pxtSWabGMmwkGYJ?" frameborder="50" allowfullscreen></iframe>
+    <iframe width="750" height="600" src="https://video.aiven.io/watch/2cQUuV7pxtSWabGMmwkGYJ?" frameborder="0" allowfullscreen></iframe>
 
-.. raw:: html
+This view shows you the connection parameters for your |Service| service, its current status, and the configuration options. The status is *Rebuilding* while the service is being created for you. Once the service is ready, the status changes to *Running*. While services typically start up in a couple of minutes, the performance varies between cloud providers and regions, and it may take longer in some circumstances.
 
-    <iframe width="740" height="560" src="https://video.aiven.io/watch/2cQUuV7pxtSWabGMmwkGYJ?" frameborder="0" allowfullscreen></iframe>
-
-.. raw:: html
-
-    <iframe width="730" height="570" src="https://video.aiven.io/watch/2cQUuV7pxtSWabGMmwkGYJ?" frameborder="100" allowfullscreen></iframe>
-
-.. raw:: html
-
-    <iframe width="720" height="580" src="https://video.aiven.io/watch/2cQUuV7pxtSWabGMmwkGYJ?" allowfullscreen></iframe>
 
 To create a new |Service| service:
 
