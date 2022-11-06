@@ -12,7 +12,7 @@ You can add services for the various Aiven products in the Aiven web console.
 
 .. raw:: html
 
-    <iframe width="735" height="600" src="https://play.vidyard.com/nw65VPavhbQtEUwa6am4iV?disable_popouts=1&disable_analytics=0&preload=auto&disable_larger_player=false&controller=hubs&action=show&type=inline&v=4.3.10" frameborder="0" allowfullscreen></iframe>
+    <iframe width="800" height="500" src="https://play.vidyard.com/nw65VPavhbQtEUwa6am4iV?disable_popouts=1&disable_analytics=0&preload=auto&disable_larger_player=false&controller=hubs&action=show&type=inline&v=4.3.10" frameborder="0" allowfullscreen></iframe>
 
 .. note:: 
 	The pricing for the same service may vary between different providers and regions. The service summary on the right side of the console shows you the pricing for your selected options.
