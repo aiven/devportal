@@ -10,7 +10,12 @@ You can add services for the various Aiven products in the Aiven web console.
 .. note:: 
 	The pricing for the same service may vary between different providers and regions. The service summary on the right side of the console shows you the pricing for your selected options.
 
-This view shows you the connection parameters for your |Service| service, its current status, and the configuration options. The status is *Rebuilding* while the service is being created for you. Once the service is ready, the status changes to *Running*. While services typically start up in a couple of minutes, the performance varies between cloud providers and regions, and it may take longer in some circumstances.
+.. raw:: html
+
+    <iframe width="735" height="600" src="https://play.vidyard.com/nw65VPavhbQtEUwa6am4iV?disable_popouts=1&disable_analytics=0&preload=auto&disable_larger_player=false&controller=hubs&action=show&type=inline&v=4.3.10" frameborder="0" allowfullscreen></iframe>
+
+.. note:: 
+	The pricing for the same service may vary between different providers and regions. The service summary on the right side of the console shows you the pricing for your selected options.
 
 .. raw:: html
 
@@ -65,3 +70,6 @@ To create a new |Service| service:
 
 .. note::
     You can :ref:`create a service using the Aiven CLI <avn-cli-service-create>` as well.
+
+
+https://play.vidyard.com/nw65VPavhbQtEUwa6am4iV?disable_popouts=1&disable_analytics=0&preload=auto&disable_larger_player=false&controller=hubs&action=show&type=inline&v=4.3.10
