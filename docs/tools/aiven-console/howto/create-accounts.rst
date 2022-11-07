@@ -16,8 +16,8 @@ Create a new account
 
 #. If you want to invite admin users to the account, select **Yes** and enter their email addresses. They will receive an email invitation with a confirmation link.
 
-   .. important:: When admin users accept the invitation they are added to the account owners team. Members of this team have full control over the account and the projects associated with it.
+   .. important:: When admin users accept the invitation, they are added to the account owners team. Members of this team have full control over the account and the projects associated with it.
 
 #. Click **Create new account**.
 
-The **Admin** page opens, where you can manage your projects, teams, authentication and other settings. 
+The **Admin** page opens, where you can manage your projects, teams, authentication, and other settings. 
