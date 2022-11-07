@@ -5,17 +5,26 @@ You can add services for the various Aiven products in the Aiven web console.
 
 .. raw:: html
 
-    <iframe width="735" height="600" src="https://video.aiven.io/watch/2cQUuV7pxtSWabGMmwkGYJ?" frameborder="0" allowfullscreen></iframe>
+    <iframe width="735" height="600" src="https://share.vidyard.com/watch/QkWsoDc1gTBJQZBzsRVsZv?" frameborder="0" allowfullscreen></iframe>
 
 .. note:: 
 	The pricing for the same service may vary between different providers and regions. The service summary on the right side of the console shows you the pricing for your selected options.
 
 .. raw:: html
 
-    <iframe width="800" height="460" src="https://play.vidyard.com/QkWsoDc1gTBJQZBzsRVsZv?disable_popouts=1&disable_analytics=0&preload=auto&disable_larger_player=false&controller=hubs&action=show&type=inline&v=4.3.10" frameborder="0" allowfullscreen></iframe>
+    <iframe width="735" height="600" src="https://video.aiven.io/watch/2cQUuV7pxtSWabGMmwkGYJ?" frameborder="0" allowfullscreen></iframe>
 
 .. note:: 
 	The pricing for the same service may vary between different providers and regions. The service summary on the right side of the console shows you the pricing for your selected options.
+
+..
+
+   .. raw:: html
+
+      <iframe width="800" height="460" src="https://play.vidyard.com/QkWsoDc1gTBJQZBzsRVsZv?disable_popouts=1&disable_analytics=0&preload=auto&disable_larger_player=false&controller=hubs&action=show&type=inline&v=4.3.10" frameborder="0" allowfullscreen></iframe>
+
+   .. note:: 
+      The pricing for the same service may vary between different providers and regions. The service summary on the right side of the console shows you the pricing for your selected options.
 
 .. raw:: html
 
