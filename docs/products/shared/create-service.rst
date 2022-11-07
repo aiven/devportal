@@ -5,7 +5,7 @@ You can add services for the various Aiven products in the Aiven web console.
 
 .. raw:: html
 
-   <iframe class="vidyard_iframe" src="//play.vidyard.com/QkWsoDc1gTBJQZBzsRVsZv.html?" width="800" height="450" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen></iframe>
+   <iframe class="vidyard_iframe" src="//play.vidyard.com/CJJnPF1RABkzGYsfnnzBkC.html?" width="800" height="450" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen></iframe>
 
 To create a new |Service| service:
 
