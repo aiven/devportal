@@ -81,16 +81,16 @@ Be sure to check out the :doc:`getting started guide <../../get-started>` to lea
 ``services.tf`` file:
 
 .. code:: terraform
- 
+  
   resource "aiven_m3db" "demo-m3db" {
     project      = var.project_name
     cloud_name   = "google-northamerica-northeast1"
     plan         = "business-8"
     service_name = join("-", [var.service_name_prefix, "m3db"])
-
+  
     m3db_user_config {
       m3db_version = 1.5
-
+  
       namespaces {
         name = "m3_default_unaggregated_ns"
         type = "unaggregated"
@@ -132,28 +132,28 @@ Be sure to check out the :doc:`getting started guide <../../get-started>` to lea
       }
     }
   }
-
-
+  
+  
   // Setting up aggregation
-
+  
   resource "aiven_m3aggregator" "demo-m3a" {
     project      = var.project_name
     cloud_name   = "google-northamerica-northeast1"
     plan         = "business-8"
     service_name = join("-", [var.service_name_prefix, "m3a"])
-
+  
     m3aggregator_user_config {
       m3aggregator_version = 1.5
     }
   }
-
+  
   resource "aiven_service_integration" "int-m3db-aggr" {
     project                  = var.project_name
     integration_type         = "m3aggregator"
     source_service_name      = aiven_m3db.demo-m3db.service_name
     destination_service_name = aiven_m3aggregator.demo-m3a.service_name
   }
-
+  
 .. dropdown:: Expand to check out how to execute the Terraform files.
 
     The ``init`` command performs several different initialization steps in order to prepare the current working directory for use with Terraform. In our case, this command automatically finds, downloads, and installs the necessary Aiven Terraform provider plugins.

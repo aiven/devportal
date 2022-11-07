@@ -79,7 +79,7 @@ For this, you'd like to run an Apache Flink job and write the filtered messages 
 ``services.tf`` file:
 
 .. code:: terraform
-
+  
   resource "aiven_flink" "flink" {
     project      = var.project_name
     cloud_name   = "google-europe-west1"
@@ -124,13 +124,13 @@ For this, you'd like to run an Apache Flink job and write the filtered messages 
     table_name     = "iot_measurements_table"
     kafka_topic    = aiven_kafka_topic.source.topic_name
     schema_sql     = <<-EOF
-          hostname STRING,
-          cpu STRING,
-          usage DOUBLE,
-          occurred_at BIGINT,
-          time_ltz AS TO_TIMESTAMP_LTZ(occurred_at, 3),
-          WATERMARK FOR time_ltz AS time_ltz - INTERVAL '10' SECOND
-    EOF
+            hostname STRING,
+            cpu STRING,
+            usage DOUBLE,
+            occurred_at BIGINT,
+            time_ltz AS TO_TIMESTAMP_LTZ(occurred_at, 3),
+            WATERMARK FOR time_ltz AS time_ltz - INTERVAL '10' SECOND
+      EOF
   }
   
   resource "aiven_flink_table" "sink" {
@@ -140,11 +140,11 @@ For this, you'd like to run an Apache Flink job and write the filtered messages 
     table_name     = "cpu_high_usage_table"
     kafka_topic    = aiven_kafka_topic.sink.topic_name
     schema_sql     = <<-EOF
-          time_ltz TIMESTAMP(3),
-          hostname STRING,
-          cpu STRING,
-          usage DOUBLE
-    EOF
+            time_ltz TIMESTAMP(3),
+            hostname STRING,
+            cpu STRING,
+            usage DOUBLE
+      EOF
   }
   
   resource "aiven_flink_job" "flink_job" {
@@ -156,17 +156,17 @@ For this, you'd like to run an Apache Flink job and write the filtered messages 
       aiven_flink_table.sink.table_id
     ]
     statement = <<-EOF
-          INSERT INTO ${aiven_flink_table.sink.table_name}
-          SELECT
-            time_ltz,
-            hostname,
-            cpu,
-            usage
-          FROM ${aiven_flink_table.source.table_name}
-          WHERE usage > 85
-    EOF
+            INSERT INTO ${aiven_flink_table.sink.table_name}
+            SELECT
+              time_ltz,
+              hostname,
+              cpu,
+              usage
+            FROM ${aiven_flink_table.source.table_name}
+            WHERE usage > 85
+      EOF
   }
-
+  
 .. dropdown:: Expand to check out how to execute the Terraform files.
 
     The ``init`` command performs several different initialization steps in order to prepare the current working directory for use with Terraform. In our case, this command automatically finds, downloads, and installs the necessary Aiven Terraform provider plugins.

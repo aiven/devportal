@@ -93,7 +93,7 @@ Be sure to check out the :doc:`getting started guide <../../get-started>` to lea
 ``services.tf`` file:
 
 .. code:: terraform
-
+  
   resource "aiven_kafka" "demo-kafka" {
     project                 = var.project_name
     cloud_name              = "google-northamerica-northeast1"
@@ -106,7 +106,7 @@ Be sure to check out the :doc:`getting started guide <../../get-started>` to lea
       kafka_rest    = true
       kafka_version = "3.1"
       kafka {
-        auto_create_topics_enable    = true
+        auto_create_topics_enable = true
       }
     }
   }
@@ -116,19 +116,19 @@ Be sure to check out the :doc:`getting started guide <../../get-started>` to lea
     service_name   = aiven_kafka.demo-kafka.service_name
     connector_name = "mongodb-source-connector"
     config = {
-      "name" : "mongodb-source-connector"
-      "connector.class" : "com.mongodb.kafka.connect.MongoSourceConnector"
-      "connection.uri" = var.mongodb_connection_uri
-      "database" : "sample_airbnb"
-      "collection" : "listingsAndReviews"
-      "copy.existing" : "true"
-      "poll.await.time.ms" : "1000"
-      "output.format.value" : "json"
-      "output.format.key" : "json"
-      "publish.full.document.only" : "true"
+      "name"                       = "mongodb-source-connector"
+      "connector.class"            = "com.mongodb.kafka.connect.MongoSourceConnector"
+      "connection.uri"             = var.mongodb_connection_uri
+      "database"                   = "sample_airbnb"
+      "collection"                 = "listingsAndReviews"
+      "copy.existing"              = "true"
+      "poll.await.time.ms"         = "1000"
+      "output.format.value"        = "json"
+      "output.format.key"          = "json"
+      "publish.full.document.only" = "true"
     }
   }
-
+  
 .. dropdown:: Expand to check out how to execute the Terraform files.
 
     The ``init`` command performs several different initialization steps in order to prepare the current working directory for use with Terraform. In our case, this command automatically finds, downloads, and installs the necessary Aiven Terraform provider plugins.

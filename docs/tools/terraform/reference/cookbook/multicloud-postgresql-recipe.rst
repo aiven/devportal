@@ -72,7 +72,7 @@ Here is the sample Terraform file to deploy all three services. Keep in mind tha
 ``services.tf`` file:
 
 .. code:: terraform
-
+   
    # European Postgres Service
    resource "aiven_pg" "aws-eu-pg" {
      project                = var.project_name
@@ -99,7 +99,7 @@ Here is the sample Terraform file to deploy all three services. Keep in mind tha
      service_name           = "postgres-as-gcp"
      termination_protection = true
    }
-
+   
 .. dropdown:: Expand to check out how to execute the Terraform files.
 
     The ``init`` command performs several different initialization steps in order to prepare the current working directory for use with Terraform. In our case, this command automatically finds, downloads, and installs the necessary Aiven Terraform provider plugins.
