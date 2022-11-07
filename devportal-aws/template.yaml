@@ -23,6 +23,7 @@ Globals:
     Environment:
       Variables:
         ES_URL: !Ref EnvironmentKey
+        PG_URL: !Ref EnvironmentKey
 
 # Resources declares the AWS resources that you want to include in the stack
 # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html
@@ -35,6 +36,18 @@ Resources:
       StageName: Prod
       EndpointConfiguration:
         Type: REGIONAL
+      Models:
+        FeedbackModel:
+          type: object
+          properties:
+            vote:
+              type: string
+            message:
+              type: string
+            created_at:
+              type: string
+            referrer:
+              type: string
 
   SearchFunction:
     Type: AWS::Serverless::Function
@@ -55,6 +68,27 @@ Resources:
             RestApiId:
               Ref: RestApi
 
+  CreateFeedbackFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: src/handlers/create-feedback.handler
+      Runtime: nodejs16.x
+      Architectures:
+        - x86_64
+      MemorySize: 128
+      Timeout: 60
+      Description: A simple POST function to submit a feedback
+      Events:
+        Search:
+          Type: Api
+          Properties:
+            Path: /createFeedback
+            Method: post
+            RestApiId:
+              Ref: RestApi
+            RequestModel:
+              Model: FeedbackModel
+              Required: true
 Outputs:
   WebEndpoint:
     Description: "API Gateway endpoint URL for Prod stage"
