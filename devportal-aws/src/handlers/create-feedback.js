@@ -35,7 +35,6 @@ exports.handler = async function (event) {
       ca: CA_CERT,
     },
   });
-  console.log("pg_url:", process.env.PG_URL);
   await client.connect();
 
   try {
@@ -57,6 +56,7 @@ exports.handler = async function (event) {
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Headers":
           "Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token",
+        "Access-Control-Allow-Methods": "OPTIONS,POST",
       },
       body: JSON.stringify(payload),
     };

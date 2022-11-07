@@ -13,7 +13,9 @@ Transform:
   - AWS::Serverless-2016-10-31
 
 Parameters:
-  EnvironmentKey:
+  OpenSearchURL:
+    Type: String
+  PostgresURL:
     Type: String
 
 Globals:
@@ -22,8 +24,8 @@ Globals:
     MemorySize: 128
     Environment:
       Variables:
-        ES_URL: !Ref EnvironmentKey
-        PG_URL: !Ref EnvironmentKey
+        ES_URL: !Ref OpenSearchURL
+        PG_URL: !Ref PostgresURL
 
 # Resources declares the AWS resources that you want to include in the stack
 # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html
