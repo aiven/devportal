@@ -16,7 +16,7 @@ The `Aiven Console <https://console.aiven.io>`_ gives you access to create and m
 Manage your user profile
 ------------------------
 
-To access your user information, user authentication settings, and payment options, click on the profile icon.
+To access your user information, user authentication settings, and payment options, click the **profile icon** in the upper right corner of the console.
 
 Name and email
 """"""""""""""

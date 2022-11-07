@@ -6,7 +6,7 @@ Create accounts
 Create a new account
 ------------------------------
 
-#. At the top of the page, click the account name and select **Create account**. 
+#. At the top right side of the page, click the account name and select **Create account**. 
 
    If you don't have an account yet, click **Create account**. 
 
