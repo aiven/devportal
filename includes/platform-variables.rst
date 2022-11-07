@@ -12,7 +12,7 @@
 
 ..
   MySQL Variables
-.. |mysql_max_connections| replace:: :math:`{\times ⌊usable\_memory⌋ } + { extra\_connection }`
+.. |mysql_max_connections| replace:: :math:`{\times RAM } + { extra\_connection }`
 .. |mysql_max_concurrency| replace:: :math:`({ service\_memory - global\_buffers })  / { thread\_buffers }`
 .. |mysql_connections_per_<4G| replace:: :math:`{75}`
 .. |mysql_connections_per_>4G| replace:: :math:`{100}`
