@@ -1,6 +1,6 @@
 {
-    "name": "delete-test-01",
-    "description": "delete-test-01-description",
+    "name": "devportal-aws-lambda",
+    "description": "devportal-aws-lambda-description",
     "version": "0.0.1",
     "private": true,
     "dependencies": {
@@ -12,6 +12,12 @@
         "jest": "^26.6.3"
     },
     "scripts": {
-        "test": "jest"
+        "test": "jest",
+        "watch": "nodemon --exec sam build",
+        "start": "sam local start-api -p 8080 --env-vars env.local.json",
+        "deploy": "sam deploy --guided",
+        "generate-event": "generate() { sam local generate-event apigateway aws-proxy --method \"$1\" > event.\"$2\".local.json; }; generate",
+        "invoke": "invoke() { sam local invoke \"$1\" --env-vars env.local.json -e event.\"$1\".local.json; }; invoke"
+
     }
 }
