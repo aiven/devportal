@@ -137,7 +137,11 @@ Use subtitles to break up the article if it's more than a couple of paragraphs, 
 Screenshots
 '''''''''''
 
-Screenshots can be helpful, especially where a user might have difficulty finding a particular element on a screen. They don't need a picture of every button they should click during a process, and whenever we make frontend changes to the web console, every screenshot must be updated. Therefore, use screenshots but only when needed.
+Screenshots might get outdated as soon as there's a visual change on the Aiven console. Although they can be helpful, especially where a user might have difficulty finding a particular element on a screen, use screenshots only when the textual instruction is not enough to help our audience.
+
+When adding screenshots, please add them to the appropriate sub-directory under `images`.
+
+Sometimes, the site cannot render `gif` properly, so it's better to avoid them.
 
 All images require alt text.
 
