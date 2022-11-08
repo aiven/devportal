@@ -4,8 +4,9 @@
     "version": "0.0.1",
     "private": true,
     "dependencies": {
-        "aws-sdk": "^2.799.0",
+        "@aws-sdk/client-secrets-manager": "^3.204.0",
         "@opensearch-project/opensearch": "^1.0.2",
+        "aws-sdk": "^2.799.0",
         "pg": "^8.7.3"
     },
     "devDependencies": {
@@ -13,11 +14,11 @@
     },
     "scripts": {
         "test": "jest",
-        "watch": "nodemon --exec sam build",
+        "watch": "nodemon -e js,json,yaml --exec sam build",
         "start": "sam local start-api -p 8080 --env-vars env.local.json",
         "deploy": "sam deploy --guided",
+        "quick-deploy": "sam deploy",
         "generate-event": "generate() { sam local generate-event apigateway aws-proxy --method \"$1\" > event.\"$2\".local.json; }; generate",
         "invoke": "invoke() { sam local invoke \"$1\" --env-vars env.local.json -e event.\"$1\".local.json; }; invoke"
-
     }
 }
