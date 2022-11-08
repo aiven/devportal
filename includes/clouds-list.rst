@@ -45,6 +45,9 @@ Amazon Web Services
     - ``aws-eu-west-3``
     - Europe, France 
   * - Middle East
+    - ``aws-me-central-1``
+    - Middle East, UAE 
+  * - Middle East
     - ``aws-me-south-1``
     - Middle East, Bahrain 
   * - North America
