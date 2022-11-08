@@ -17,6 +17,16 @@ Parameters:
     Type: String
   PostgresURL:
     Type: String
+  EnvironmentType:
+    Description: Environment Type
+    Default: dev
+    Type: String
+    AllowedValues: [dev, prod]
+    ConstraintDescription: Must specify 'dev' or 'prod'
+
+Conditions:
+  IsProd: !Equals [!Ref EnvironmentType, prod]
+  IsDev: !Equals [!Ref EnvironmentType, dev]
 
 Globals:
   Function:
@@ -26,6 +36,7 @@ Globals:
       Variables:
         ES_URL: !Ref OpenSearchURL
         PG_URL: !Ref PostgresURL
+        ENVIRONMENT: !Ref EnvironmentType
 
 # Resources declares the AWS resources that you want to include in the stack
 # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html
@@ -91,6 +102,14 @@ Resources:
             RequestModel:
               Model: FeedbackModel
               Required: true
+      Policies:
+      - Statement:
+        - Sid: ParameterDevPortalParameterAccess
+        Effect: Allow
+        Action:
+          - ssm:GetParameter*
+        Resource: !Sub 'arn:aws:ssm:${AWS::Region}:${AWS::AccountId}:parameter/${EnvironmentType}/devPortal*'
+
 Outputs:
   WebEndpoint:
     Description: "API Gateway endpoint URL for Prod stage"

@@ -1,4 +1,8 @@
 const { Client } = require("pg");
+const {
+  SecretsManagerClient,
+  GetSecretValueCommand,
+} = require("@aws-sdk/client-secrets-manager");
 
 const CA_CERT = `-----BEGIN CERTIFICATE-----
 MIIEMDCCApigAwIBAgIDE0djMA0GCSqGSIb3DQEBDAUAMDoxODA2BgNVBAMMLzgx
@@ -38,16 +42,37 @@ const headers = {
   "Access-Control-Allow-Methods": "OPTIONS,POST",
 };
 
+const SECRET_NAME = `${process.env.ENVIRONMENT}/devPortal/caCert`;
+
 exports.handler = async function (event) {
+  // AWS Secret Manager connection
+  const awsClient = new SecretsManagerClient({
+    region: "eu-north-1",
+  });
+  let secretResponse;
+  try {
+    secretResponse = await awsClient.send(
+      new GetSecretValueCommand({
+        SecretId: SECRET_NAME,
+        VersionStage: "AWSCURRENT", // VersionStage defaults to AWSCURRENT if unspecified
+      })
+    );
+  } catch (error) {
+    // For a list of exceptions thrown, see
+    // https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_GetSecretValue.html
+    throw error;
+  }
+  const cert = secretResponse.SecretString;
+  // Postgresql connection
   const client = new Client({
     // Don't include sslmode=require
     connectionString: process.env.PG_URL,
     ssl: {
-      ca: CA_CERT,
+      ca: cert,
     },
   });
-  await client.connect();
 
+  await client.connect();
   try {
     const payload = JSON.parse(event.body);
 
