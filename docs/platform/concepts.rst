@@ -23,6 +23,10 @@ Learn about some of the key concepts for working with Aiven platform:
 
   Learn about how Aiven manages backup for each service and its retention policies.
 
+* :doc:`Service power cycle </docs/platform/concepts/service-power-cycle>`.
+
+  Learn about how Aiven manages service power off and power on.
+
 * :doc:`Service forking </docs/platform/concepts/service-forking>`.
 
   Quickly and safely make a copy of your database or other service for testing, dry run upgrades, or anything else, without affecting your existing service.
