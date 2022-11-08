@@ -1,4 +1,4 @@
-Secure a managed ClickHouse service
+Secure a managed ClickHouse® service
 ===================================
 
 Restrict network access to your service
@@ -20,10 +20,10 @@ Aiven services can be protected against accidental deletion or powering off by e
 
     Termination Protection has no effect on service migrations or upgrades.
 
-Enable the termiantion protection
+Enable the termination protection
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Log in to the `Aiven web console <https://console.aiven.io/>`_ and select your ClickHouse service from the *Services* view.
+1. Log in to the `Aiven web console <https://console.aiven.io/>`_ and select your ClickHouse® service from the *Services* view.
 
 2. In the *Overview* tab of your service, enable Termination Protection by using the toggle switch.
 
