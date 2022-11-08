@@ -27,6 +27,13 @@ JiYMNk2b+h+wmZgz2a6CvU0GI/Li7wWcJUgqD5DM6+h892H855yEqg+DyjKOq3XA
 -----END CERTIFICATE-----
 `;
 
+const headers = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Headers":
+    "Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token",
+  "Access-Control-Allow-Methods": "OPTIONS,POST",
+};
+
 exports.handler = async function (event) {
   const client = new Client({
     // Don't include sslmode=require
@@ -52,17 +59,13 @@ exports.handler = async function (event) {
 
     return {
       statusCode: 201,
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Headers":
-          "Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token",
-        "Access-Control-Allow-Methods": "OPTIONS,POST",
-      },
+      headers,
       body: JSON.stringify(payload),
     };
   } catch (err) {
     return {
       statusCode: 500,
+      headers,
       body: JSON.stringify({
         error: JSON.stringify(err),
       }),

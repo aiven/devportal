@@ -105,9 +105,6 @@
         </label>
       </div>
     </div>
-    <p class="hidden">
-      <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-    </p>
     <div class="message-submit-container hidden">
       <p>
         <label>Anything specific you want to share? (Please don't share any personal
@@ -146,10 +143,7 @@
       event.preventDefault();
 
       var formData = new FormData(form.get()[0]);
-      var data = {
-        ...formData,
-        url: window.location.href
-      }
+      formData.append("url", window.location.href);
 
       fetch("https://xu1qi0xzua.execute-api.eu-north-1.amazonaws.com/Prod/createFeedback", {
           method: "POST",
