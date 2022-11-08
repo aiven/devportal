@@ -4,3 +4,4 @@ packaged.yaml
 .aws-sam/
 samconfig.toml
 events/*.json
+*.pem
