@@ -79,3 +79,13 @@ Periodic security evaluation
 -----------------------------
 
 Aiven services are periodically assessed, and penetration tested for any security issues by an independent professional cyber security vendor.
+
+
+SBOM(Software Bill of Materials)
+--------------------------------
+
+A SBOM is a list of all packages that are being used by Aiven in the services we provide. The list comprehend packages installed in the VM operating system and also the packages installed by the service itself.
+
+SBOM reports are being increasingly adopted and might be required for compliance or security assessment for example. We provide the report to be download through our :doc:`CLI <docs/tools/cli/project.rst>` as CSV of SPDX files.
+
+Note that the download of SBOM reports are only available to customers who have an enterprise support contract.

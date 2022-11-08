@@ -276,3 +276,33 @@ Removes a user with the supplied email address from the project.
 .. code:: shell
 
   avn project user-remove --project my-project alice@example.com
+
+
+Request project SBOM
+--------------------
+
+SBOM reports are generated per project and can be download given that the necessary permissions are set for the user/account.
+
+.. _avn_project_generate_sbom:
+
+``avn project generate-sbom``
+''''''''''''''''''''''
+
+Downloads the SBOM report for this project, the SBOM is saved in the file name you supply.
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``--project``
+    - The project to fetch details for
+  * - ``--sbom-filepath``
+    - File name, including path and extension(CSV or SPDX), to use
+
+**Example:** Download the SBOM report for the project "my-project", and save it in a file in the current directory called ``sbom.csv``.
+
+::
+
+  avn project generate-sbom --project my-project --sbom-filepath sbom.csv
