@@ -103,12 +103,11 @@ Resources:
               Model: FeedbackModel
               Required: true
       Policies:
-      - Statement:
-        - Sid: ParameterDevPortalParameterAccess
-        Effect: Allow
-        Action:
-          - ssm:GetParameter*
-        Resource: !Sub 'arn:aws:ssm:${AWS::Region}:${AWS::AccountId}:parameter/${EnvironmentType}/devPortal*'
+        - Statement:
+          - Effect: "Allow"
+            Action:
+              - "ssm:GetParameter*"
+            Resource: !Sub 'arn:aws:ssm:${AWS::Region}:${AWS::AccountId}:parameter/${EnvironmentType}/devPortal*'
 
 Outputs:
   WebEndpoint:
