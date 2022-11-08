@@ -14,7 +14,7 @@ Create a new account
 
 #. Select any **Projects** that you want to add to this account. You can search for projects by name.
 
-#. If you want to invite admin users to the account, select **Yes** and enter their email addresses. They will receive an email invitation with a confirmation link.
+#. If you want to invite admin users to the account, set the toggle to **Yes** and enter their email addresses. They will receive an email invitation with a confirmation link.
 
    .. important:: When admin users accept the invitation, they are added to the account owners team. Members of this team have full control over the account and the projects associated with it.
 
