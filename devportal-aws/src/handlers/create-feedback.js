@@ -27,8 +27,12 @@ JiYMNk2b+h+wmZgz2a6CvU0GI/Li7wWcJUgqD5DM6+h892H855yEqg+DyjKOq3XA
 -----END CERTIFICATE-----
 `;
 
+const allowedOrigins = [
+  "https://devportal.pages.dev",
+  "http://localhost:[0-9]*",
+];
+
 const headers = {
-  "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers":
     "Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token",
   "Access-Control-Allow-Methods": "OPTIONS,POST",
@@ -57,15 +61,30 @@ exports.handler = async function (event) {
 
     await client.end();
 
+    const origin = event.headers.Origin || event.headers.origin;
+    console.log({ event });
+    let isValidOrigin = false;
+    if (origin) {
+      isValidOrigin = allowedOrigins.some((item) => origin.match(item));
+    }
+
     return {
       statusCode: 201,
-      headers,
+      headers: {
+        ...headers,
+        "Access-Control-Allow-Origin": isValidOrigin
+          ? origin
+          : allowedOrigins[0],
+      },
       body: JSON.stringify(payload),
     };
   } catch (err) {
     return {
       statusCode: 500,
-      headers,
+      headers: {
+        ...headers,
+        "Access-Control-Allow-Origin": "*",
+      },
       body: JSON.stringify({
         error: JSON.stringify(err),
       }),
