@@ -11,7 +11,7 @@ To create a new service:
 
    This opens a new page with the available service options.
 
-   .. image:: /images/tools/console/console_create_service.png
+   .. image:: /images/platform/concepts/console_create_service.png
       :alt: Aiven Console view for creating a new service
 
 3. Select the main properties for your service:
