@@ -3,7 +3,7 @@ Service power cycle
 
 Aiven service power off and power on is more than stopping and starting a service on nodes. For better utilisation of resources on Aiven platform, idle resources will be released and only the necessary data will be kept after power off. The impact on the service is different depending on the service type and plan. 
 
-.. warning:: Depedning on service type and plan, data loss may happen during a service power off, so it is important for users to understand the consequences before powering off a service.
+.. warning:: Depending on service type and plan, data loss may happen during a service power off, so it is important for users to understand the consequences before powering off a service.
 
 Aiven service power off and power on can be done on `Aiven Console <https://console.aiven.io>`_ or through :doc:`Aiven CLI </docs/platform/howto/pause-from-cli>`.
 
