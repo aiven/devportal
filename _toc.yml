@@ -150,6 +150,14 @@ entries:
     - file: docs/integrations/send-logs-to-elasticsearch
   - file: docs/tools
     entries:
+      - file: docs/tools/aiven-console
+        title: Aiven Console
+        entries:
+        - file: docs/tools/aiven-console/howto
+          title: HowTo
+          entries:
+          - file: docs/tools/aiven-console/howto/create-accounts
+          - file: docs/tools/aiven-console/howto/create-manage-teams
       - file: docs/tools/cli
         entries:
         - file: docs/tools/cli/account
