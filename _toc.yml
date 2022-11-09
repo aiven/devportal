@@ -582,6 +582,7 @@ entries:
         title: HowTo
         entries:
           - file: docs/products/clickhouse/howto/connect-to-ch-service
+          - file: docs/products/clickhouse/howto/secure-ch-service
           - file: docs/products/clickhouse/howto/manage-users-roles
           - file: docs/products/clickhouse/howto/load-dataset
           - file: docs/products/clickhouse/howto/query-ch-dbs
