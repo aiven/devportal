@@ -1,0 +1,12 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "<stack_name>"
+s3_bucket = "<s3_bucket>"
+s3_prefix = "devportal-test"
+region = "eu-north-1"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
+image_repositories = []
+parameter_overrides = "OpenSearchURL=\"<ES_URL here>\" PostgresURL=\"<PG_URL here>\" PostgresCert=\"<CA_CERT here>\""
