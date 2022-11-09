@@ -4,6 +4,10 @@ options:
 
 entries:
   # -------- PLATFORM-TOPICS --------
+  - file: docs/shared
+    title: Shared
+    entries:
+    - file: docs/shared/create-service.rst
   - file: docs/platform
     title: Platform
     entries:
@@ -573,6 +577,7 @@ entries:
       - file: docs/products/clickhouse/howto
         title: HowTo
         entries:
+          - file: docs/products/clickhouse/howto/create-ch-service
           - file: docs/products/clickhouse/howto/connect-to-ch-service
           - file: docs/products/clickhouse/howto/manage-users-roles
           - file: docs/products/clickhouse/howto/load-dataset
