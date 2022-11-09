@@ -39,6 +39,7 @@ https://developer.aiven.io/* https://docs.aiven.io/:splat 301!
 /docs/platform/howto/recovering-a-deleted-service                     /docs/platform/howto/recover-a-deleted-service
 /docs/products/opensearch/howto/upgrade-to-opensearch-with-terraform.html /docs/tools/terraform/howto/upgrade-to-opensearch.html
 /docs/products/opensearch/howto/upgrade-to-opensearch-with-terraform      /docs/tools/terraform/howto/upgrade-to-opensearch
+/docs/platform/howto/migrate-services                                 /docs/platform/howto/migrate-services-cloud-region
 
 # Redirect from .index.html to specific page names for landing
 
