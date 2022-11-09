@@ -139,12 +139,11 @@ Screenshots
 
 Screenshots might get outdated as soon as there's a visual change on the Aiven console. Although they can be helpful, especially where a user might have difficulty finding a particular element on a screen, use screenshots only when the textual instruction is not enough to help our audience.
 
-When adding screenshots, please add them to the appropriate sub-directory under `images`.
-
-Sometimes, the site cannot render `gif` properly, so it's better to avoid them.
+The ``images`` folder reflects the structure of the ``docs`` folder, and the image should be in the folder matching the document that refers to it.
 
 All images require alt text.
 
+We do not use ``gif`` or animation in Aiven docs.
 
 Example values
 ''''''''''''''
