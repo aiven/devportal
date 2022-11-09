@@ -40,6 +40,16 @@ https://developer.aiven.io/* https://docs.aiven.io/:splat 301!
 /docs/products/opensearch/howto/upgrade-to-opensearch-with-terraform.html /docs/tools/terraform/howto/upgrade-to-opensearch.html
 /docs/products/opensearch/howto/upgrade-to-opensearch-with-terraform      /docs/tools/terraform/howto/upgrade-to-opensearch
 /docs/platform/howto/migrate-services                                 /docs/platform/howto/migrate-services-cloud-region
+/docs/products/clickhouse/howto/use-cli                                /docs/products/clickhouse/howto/connect-to-ch-service
+/docs/products/clickhouse/howto/use-cli.html                           /docs/products/clickhouse/howto/connect-to-ch-service.html
+/docs/products/clickhouse/howto/grant-privilege                        /docs/products/clickhouse/howto/manage-users-roles
+/docs/products/clickhouse/howto/grant-privilege.html                   /docs/products/clickhouse/howto/manage-users-roles.html
+/docs/products/clickhouse/howto/use-play                               /docs/products/clickhouse/howto/query-ch-dbs
+/docs/products/clickhouse/howto/use-play.html                          /docs/products/clickhouse/howto/query-ch-dbs.html
+/docs/products/clickhouse/howto/use-query-editor                       /docs/products/clickhouse/howto/query-ch-dbs
+/docs/products/clickhouse/howto/use-query-editor.html                  /docs/products/clickhouse/howto/query-ch-dbs.html
+/docs/products/clickhouse/howto/add-service-users                      /docs/products/clickhouse/howto/manage-users-roles
+/docs/products/clickhouse/howto/add-service-users.html                 /docs/products/clickhouse/howto/manage-users-roles.html
 
 # Redirect from .index.html to specific page names for landing
 
