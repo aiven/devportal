@@ -2,8 +2,8 @@ version = 0.1
 [default]
 [default.deploy]
 [default.deploy.parameters]
-stack_name = "<stack_name>"
-s3_bucket = "<s3_bucket>"
+stack_name = "devportal-test"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-fqbwexv2bra6"
 s3_prefix = "devportal-test"
 region = "eu-north-1"
 confirm_changeset = true
