@@ -587,6 +587,7 @@ entries:
           - file: docs/products/clickhouse/howto/load-dataset
           - file: docs/products/clickhouse/howto/query-ch-dbs
           - file: docs/products/clickhouse/howto/manage-dbs-tables
+          - file: docs/products/clickhouse/howto/materialized-views
           - file: docs/products/clickhouse/howto/list-integrations
             entries:
               - file: docs/products/clickhouse/howto/connect-to-grafana

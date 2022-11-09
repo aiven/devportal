@@ -155,9 +155,11 @@ Add a materialised view to bring the data from the connector:
     SELECT *
     FROM service_KAFKA_SERVICE_NAME.CONNECTOR_TABLE_NAME;
 
-
 Now the messages consumed from the Apache Kafka topic will be read automatically and sent into the destination table directly.
 
+.. seealso::
+
+    For more information on materialized views, see :doc:`Create materialized views in ClickHouse® </docs/products/clickhouse/howto/materialized-views>`.
 
 .. note::
 
