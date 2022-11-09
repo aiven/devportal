@@ -17,16 +17,8 @@ Parameters:
     Type: String
   PostgresURL:
     Type: String
-  EnvironmentType:
-    Description: Environment Type
-    Default: dev
+  PostgresCert:
     Type: String
-    AllowedValues: [dev, prod]
-    ConstraintDescription: Must specify 'dev' or 'prod'
-
-Conditions:
-  IsProd: !Equals [!Ref EnvironmentType, prod]
-  IsDev: !Equals [!Ref EnvironmentType, dev]
 
 Globals:
   Function:
@@ -36,7 +28,7 @@ Globals:
       Variables:
         ES_URL: !Ref OpenSearchURL
         PG_URL: !Ref PostgresURL
-        ENVIRONMENT: !Ref EnvironmentType
+        CA_CERT: !Ref PostgresCert
 
 # Resources declares the AWS resources that you want to include in the stack
 # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html
@@ -102,17 +94,6 @@ Resources:
             RequestModel:
               Model: FeedbackModel
               Required: true
-      Policies:
-        - Statement:
-          - Effect: "Allow"
-            Action:
-              - "secretsmanager:GetSecretValue"
-            Resource: !Sub 'arn:aws:secretsmanager:${AWS::Region}:${AWS::AccountId}::secret:dev/devPortal/caCert-wnyIUJ'
-        - Statement:
-          - Effect: "Allow"
-            Action:
-              - "secretsmanager:GetSecretValue"
-            Resource: !Sub 'arn:aws:secretsmanager:${AWS::Region}:${AWS::AccountId}:secret:prod/devPortal/caCert-dwQl2k'
 
 Outputs:
   WebEndpoint:
