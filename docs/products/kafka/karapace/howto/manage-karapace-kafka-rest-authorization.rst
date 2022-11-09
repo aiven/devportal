@@ -1,5 +1,5 @@
-Manage Karapace schema registry authorization
-=============================================
+Manage Karapace Kafka REST proxy schema registry authorization
+==============================================================
 
 Karapace Kafka REST proxy authorization allows you to use the RESTful interface to connect to Kafka clusters, produce and consume messages easily, and execute administrative activities using Aiven CLI. This feature is disabled by default, and you need to :doc:`enable Karapace Kafka REST authorization <../howto/enable-kafka-rest-authorization>`.
 
