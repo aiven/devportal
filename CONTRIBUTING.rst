@@ -137,10 +137,13 @@ Use subtitles to break up the article if it's more than a couple of paragraphs, 
 Screenshots
 '''''''''''
 
-Screenshots can be helpful, especially where a user might have difficulty finding a particular element on a screen. They don't need a picture of every button they should click during a process, and whenever we make frontend changes to the web console, every screenshot must be updated. Therefore, use screenshots but only when needed.
+Screenshots might get outdated as soon as there's a visual change on the Aiven console. Although they can be helpful, especially where a user might have difficulty finding a particular element on a screen, use screenshots only when the textual instruction is not enough to help our audience.
+
+The ``images`` folder reflects the structure of the ``docs`` folder, and the image should be in the folder matching the document that refers to it.
 
 All images require alt text.
 
+We do not use ``gif`` or animation in Aiven docs.
 
 Example values
 ''''''''''''''
