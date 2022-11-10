@@ -40,7 +40,7 @@ Sink connectors enable the integration of data from an existing Apache Kafka top
 
 * :doc:`Aiven for Apache Kafka® S3 Sink Connector <../howto/s3-sink-connector-aiven>`
 
-* `Confluent Amazon S3 Sink <https://developer.aiven.io/docs/products/kafka/kafka-connect/howto/s3-sink-connector-confluent>`__
+* `Confluent Amazon S3 Sink <https://docs.aiven.io/docs/products/kafka/kafka-connect/howto/s3-sink-connector-confluent>`__
 
 * `Couchbase® <https://github.com/couchbase/kafka-connect-couchbase>`__
 

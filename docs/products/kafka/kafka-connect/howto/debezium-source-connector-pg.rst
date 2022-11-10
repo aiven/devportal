@@ -31,7 +31,7 @@ Furthermore you need to collect the following information about the source Postg
 * ``PLUGIN_NAME``: The `logical decoding plugin <https://debezium.io/documentation/reference/stable/connectors/postgresql.html>`_, possible values are ``decoderbufs``, ``wal2json`` and ``pgoutput``
 * ``PG_TABLES``: The list of database tables to be included in Apache Kafka; the list must be in the form of ``schema_name1.table_name1,schema_name2.table_name2``
 * ``PG_PUBLICATION_NAME``: The name of the `PostgreSQL logical replication publication <https://www.postgresql.org/docs/current/logical-replication-publication.html>`_, if left empty, ``debezium`` is used as default
-* ``PG_SLOT_NAME``: name of the `PostgreSQL replication slot <https://developer.aiven.io/docs/products/postgresql/howto/setup-logical-replication>`_, if left empty, ``debezium`` is be used as default
+* ``PG_SLOT_NAME``: name of the `PostgreSQL replication slot <https://docs.aiven.io/docs/products/postgresql/howto/setup-logical-replication>`_, if left empty, ``debezium`` is be used as default
 * ``APACHE_KAFKA_HOST``: The hostname of the Apache Kafka service, only needed when using Avro as data format
 * ``SCHEMA_REGISTRY_PORT``: The Apache Kafka's schema registry port, only needed when using Avro as data format
 * ``SCHEMA_REGISTRY_USER``: The Apache Kafka's schema registry username, only needed when using Avro as data format

@@ -49,7 +49,7 @@ In addition to these `url` field should be provided with every document but it i
 
 ## Search function
 
-The OpenSearch® index is used through the Netlify function in [netlify/functions/search/search.js](netlify/functions/search/search.js). To call the function, make a GET request to the function URL and append your search term to the `query` parameter, like this: [https://developer.aiven.io/.netlify/functions/search?query=redis](https://developer.aiven.io/.netlify/functions/search?query=redis).
+The OpenSearch® index is used through the Netlify function in [netlify/functions/search/search.js](netlify/functions/search/search.js). To call the function, make a GET request to the function URL and append your search term to the `query` parameter, like this: [https://docs.aiven.io/.netlify/functions/search?query=redis](https://docs.aiven.io/.netlify/functions/search?query=redis).
 
 The query uses this overall approach:
 

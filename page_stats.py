@@ -47,7 +47,7 @@ def index_pages(es, base_url):
 
 
 if __name__ == "__main__":
-    tree = sitemap_tree_for_homepage('https://developer.aiven.io')
+    tree = sitemap_tree_for_homepage('https://docs.aiven.io')
     devportal_pages = sum(1 for _ in tree.all_pages())
     print("Aiven Developer sitemap page count: {:d}".format(devportal_pages))
 

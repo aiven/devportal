@@ -179,8 +179,8 @@ More resources
 
 You might find these related resources useful too:
 
-- `Configuration options for Aiven for Grafana <https://developer.aiven.io/docs/products/grafana/reference/advanced-params.html>`_
-- `Configuration options for Aiven for PostgreSQL <https://developer.aiven.io/docs/products/postgresql/reference/list-of-advanced-params.html>`_
-- `Configuration options for Aiven for M3DB <https://developer.aiven.io/docs/products/m3db/reference/advanced-params.html>`_
-- `Set up your first Aiven Terraform project <https://developer.aiven.io/docs/tools/terraform/get-started.html>`_
+- `Configuration options for Aiven for Grafana <https://docs.aiven.io/docs/products/grafana/reference/advanced-params.html>`_
+- `Configuration options for Aiven for PostgreSQL <https://docs.aiven.io/docs/products/postgresql/reference/list-of-advanced-params.html>`_
+- `Configuration options for Aiven for M3DB <https://docs.aiven.io/docs/products/m3db/reference/advanced-params.html>`_
+- `Set up your first Aiven Terraform project <https://docs.aiven.io/docs/tools/terraform/get-started.html>`_
 - `Metrics and graphs with M3 and Grafana <https://aiven.io/blog/metrics-and-graphs-with-m3-and-grafana>`_
