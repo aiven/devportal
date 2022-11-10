@@ -30,6 +30,6 @@ Integrate ClickHouse® with Grafana®
 #. Set *URL* to ``CLICKHOUSE_HTTPS_URI``.
 #. In *Auth* section, enable **Basic auth** and **With Credentials**.
 #. In *Basic Auth Details*, set your ``CLICKHOUSE_USER`` and ``CLICKHOUSE_PASSWORD``.
-#. Selec **Save & test**.
+#. Select **Save & test**.
 
 Now you can create a dashboard and panels to work with the data from your Aiven for ClickHouse® service.

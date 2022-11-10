@@ -50,7 +50,7 @@ Define the connector configurations in a file (we'll refer to it with the name `
         "couchbase.password": "COUCHBASE_PASSWORD",
         "couchbase.bucket": "COUCHBASE_BUCKET",
         "topics": "TOPIC_LIST"
-}
+    }
 
 The configuration file contains the following entries:
 
