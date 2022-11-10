@@ -1,7 +1,7 @@
 Apache Kafka® with MongoDB source connector
 ===========================================
 
-The `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_ is a great choice for provisioning an Aiven for Apache Kafka® cluster with Kafka Connect enabled and the `MongoDB source connector <https://developer.aiven.io/docs/products/kafka/kafka-connect/howto/mongodb-poll-source-connector.html>`_ configured.
+The `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_ is a great choice for provisioning an Aiven for Apache Kafka® cluster with Kafka Connect enabled and the `MongoDB source connector <https://docs.aiven.io/docs/products/kafka/kafka-connect/howto/mongodb-poll-source-connector.html>`_ configured.
 
 Let's check out the following diagram to understand the setup.
 
@@ -160,6 +160,6 @@ More resources
 
 Keep in mind that some parameters and configurations will vary for your case. A reference to some of the advanced Apache Kafka configurations and other related resources:
 
-- `List of advanced Apache Kafka configurations <https://developer.aiven.io/docs/products/kafka/kafka-connect/reference/advanced-params.html>`_
-- `Create a MongoDB source connector <https://developer.aiven.io/docs/products/kafka/kafka-connect/howto/mongodb-poll-source-connector.html>`_
-- `List of available Apache Kafka® Connect connectors <https://developer.aiven.io/docs/products/kafka/kafka-connect/concepts/list-of-connector-plugins.html>`_
+- `List of advanced Apache Kafka configurations <https://docs.aiven.io/docs/products/kafka/kafka-connect/reference/advanced-params.html>`_
+- `Create a MongoDB source connector <https://docs.aiven.io/docs/products/kafka/kafka-connect/howto/mongodb-poll-source-connector.html>`_
+- `List of available Apache Kafka® Connect connectors <https://docs.aiven.io/docs/products/kafka/kafka-connect/concepts/list-of-connector-plugins.html>`_

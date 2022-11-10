@@ -131,6 +131,6 @@ More resources
 
 You might find these related resources useful too:
 
-- `Configuration options for PostgreSQL <https://developer.aiven.io/docs/products/postgresql/reference/list-of-advanced-params.html>`_
-- `Set up your first Aiven Terraform project <https://developer.aiven.io/docs/tools/terraform/get-started.html>`_
+- `Configuration options for PostgreSQL <https://docs.aiven.io/docs/products/postgresql/reference/list-of-advanced-params.html>`_
+- `Set up your first Aiven Terraform project <https://docs.aiven.io/docs/tools/terraform/get-started.html>`_
 - `Benefits and challenges of multi-cloud <https://aiven.io/blog/getting-the-most-of-multi-cloud>`_

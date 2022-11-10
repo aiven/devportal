@@ -3,7 +3,7 @@ Connect to OpenSearch® cluster with NodeJS
 
 The most convenient way to work with the cluster when using NodeJS is to rely on `OpenSearch® JavaScript client  <https://github.com/opensearch-project/opensearch-js>`_. Follow its ``README`` file for installation instructions.
 
-To connect to the cluster, you'll need ``service_uri``, which you can find either in the service overview in the `Aiven console <https://console.aiven.io>`_ or get through the Aiven command line interface `service command <https://developer.aiven.io/docs/tools/cli/service.html#avn-service-get>`_. ``service_uri`` contains credentials, therefore should be treated with care.
+To connect to the cluster, you'll need ``service_uri``, which you can find either in the service overview in the `Aiven console <https://console.aiven.io>`_ or get through the Aiven command line interface `service command <https://docs.aiven.io/docs/tools/cli/service.html#avn-service-get>`_. ``service_uri`` contains credentials, therefore should be treated with care.
 
 We strongly recommend using environment variables for credential information. A good way to do this is to use ``dotenv``. You will find installation and usage instructions `on its library's project page <https://github.com/motdotla/dotenv>`_, but in short, you need to create ``.env`` file in the project and assign ``SERVICE_URI`` inside of this file.
 

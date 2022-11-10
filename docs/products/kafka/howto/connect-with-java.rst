@@ -25,7 +25,7 @@ Go to the *Overview* page of your Aiven for Apache Kafka service.
 
 * If you are going to connect using SASL authentication:
 
-  #. Follow the instructions at `Use SASL Authentication with Apache Kafka® <https://developer.aiven.io/docs/products/kafka/howto/kafka-sasl-auth.html>`_ to enable SASL.
+  #. Follow the instructions at `Use SASL Authentication with Apache Kafka® <https://docs.aiven.io/docs/products/kafka/howto/kafka-sasl-auth.html>`_ to enable SASL.
 
   #. In the *Connection Information* section
 

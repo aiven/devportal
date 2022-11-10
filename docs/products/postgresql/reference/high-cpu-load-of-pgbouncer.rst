@@ -1,7 +1,7 @@
 High CPU load when using PgBouncer
 ==================================
 
-PgBouncer is a lightweight connection pooler for PostgreSQL®. For the setup and configurations of PgBouncer please refer to this `help article. <https://developer.aiven.io/docs/products/postgresql/concepts/pg-connection-pooling.html>`_
+PgBouncer is a lightweight connection pooler for PostgreSQL®. For the setup and configurations of PgBouncer please refer to this `help article. <https://docs.aiven.io/docs/products/postgresql/concepts/pg-connection-pooling.html>`_
 
 During the usage of PgBouncer pooling, you may see a high percentage of CPU load by PgBouncer, which indicates a problem with the usage pattern.
 Historically, the reason for the high CPU usage in PgBouncer is most likely the high incoming SSL connection rate. SSL handshakes cost quite a bit when the user run the query and then disconnect/reconnect again for the next query.

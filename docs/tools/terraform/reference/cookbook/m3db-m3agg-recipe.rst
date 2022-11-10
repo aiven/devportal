@@ -1,7 +1,7 @@
 Setup M3-related services using Aiven Terraform Provider
 ========================================================
 
-`Aiven for M3DB <https://developer.aiven.io/docs/products/m3db>`_ is a powerful time-series database that can be used when handling very large volumes of metrics and scalability is a concern. `Aiven for M3 Aggregator <https://developer.aiven.io/docs/products/m3db/concepts/m3-components.html>`_ can store your data at various resolutions for different workloads at scale. 
+`Aiven for M3DB <https://docs.aiven.io/docs/products/m3db>`_ is a powerful time-series database that can be used when handling very large volumes of metrics and scalability is a concern. `Aiven for M3 Aggregator <https://docs.aiven.io/docs/products/m3db/concepts/m3-components.html>`_ can store your data at various resolutions for different workloads at scale. 
 Together, they are a perfect choice to aggregate, store, and query large time-series data like internet of things (IoT) sensor readings. 
 
 This example shows how to use the `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_  to create an Aiven for M3 service, an Aiven for M3 Aggregator service, and the related service integration programmatically. 
@@ -188,7 +188,7 @@ More resources
 
 You might find these related resources useful too:
 
-- `Configuration options for Aiven for M3DB <https://developer.aiven.io/docs/products/m3db/reference/advanced-params.html>`_
-- `Configuration options for Aiven for M3 Aggregator <https://developer.aiven.io/docs/products/m3db/reference/advanced-params-m3aggregator.html>`_
-- `Set up your first Aiven Terraform project <https://developer.aiven.io/docs/tools/terraform/get-started.html>`_
+- `Configuration options for Aiven for M3DB <https://docs.aiven.io/docs/products/m3db/reference/advanced-params.html>`_
+- `Configuration options for Aiven for M3 Aggregator <https://docs.aiven.io/docs/products/m3db/reference/advanced-params-m3aggregator.html>`_
+- `Set up your first Aiven Terraform project <https://docs.aiven.io/docs/tools/terraform/get-started.html>`_
 - `Metrics and graphs with M3 and Grafana® <https://aiven.io/blog/metrics-and-graphs-with-m3-and-grafana>`_

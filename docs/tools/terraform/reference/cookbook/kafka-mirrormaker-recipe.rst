@@ -242,6 +242,6 @@ More resources
 
 Keep in mind that some parameters and configurations will vary for your case. A reference to some of the advanced Apache Kafka configurations and other related resources:
 
-- `Configuration options for Aiven for Apache Kafka <https://developer.aiven.io/docs/products/kafka/reference/advanced-params.html>`_
-- `Aiven for Apache Kafka® MirrorMaker 2 Terminology <https://developer.aiven.io/docs/products/kafka/kafka-mirrormaker/reference/terminology.html>`_
+- `Configuration options for Aiven for Apache Kafka <https://docs.aiven.io/docs/products/kafka/reference/advanced-params.html>`_
+- `Aiven for Apache Kafka® MirrorMaker 2 Terminology <https://docs.aiven.io/docs/products/kafka/kafka-mirrormaker/reference/terminology.html>`_
 - `5 reasons why you should be using MirrorMaker 2.0 for data replication <https://aiven.io/blog/5-reasons-why-you-should-be-using-mirrormaker-2>`_

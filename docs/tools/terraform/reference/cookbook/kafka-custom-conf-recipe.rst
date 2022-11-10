@@ -196,7 +196,7 @@ More resources
 
 Keep in mind that some parameters and configurations will vary for your case. Some related resources are provided below:
 
-- `Configuration options for Aiven for Apache Kafka <https://developer.aiven.io/docs/products/kafka/reference/advanced-params.html>`_
-- `Aiven for Apache Kafka access control lists permission mapping <https://developer.aiven.io/docs/products/kafka/concepts/acl.html>`_
+- `Configuration options for Aiven for Apache Kafka <https://docs.aiven.io/docs/products/kafka/reference/advanced-params.html>`_
+- `Aiven for Apache Kafka access control lists permission mapping <https://docs.aiven.io/docs/products/kafka/concepts/acl.html>`_
 - `How to Manage Aiven for Apache Kafka Parameters <https://www.youtube.com/watch?v=pXQZWI0ddLg>`_
-- `Set up your first Aiven Terraform project <https://developer.aiven.io/docs/tools/terraform/get-started.html>`_
+- `Set up your first Aiven Terraform project <https://docs.aiven.io/docs/tools/terraform/get-started.html>`_

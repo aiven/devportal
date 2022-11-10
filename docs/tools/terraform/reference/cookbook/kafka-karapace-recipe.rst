@@ -4,7 +4,7 @@ Apache Kafka® with Karapace Schema Registry
 This example shows how to setup `Karapace <https://github.com/aiven/karapace>`_ - an open source HTTP API interface and schema registry, with Aiven for Apache Kafka® using `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_.
 
 You'll also enable the auto creation of Apache Kafka topics which will allow you to send message to topics that didn't exist already on the Apache Kafka cluster. In order to work directly with Kafka by producing and consuming messages over HTTP, the REST API feature will be enabled.
-To learn more, check out `Create Apache Kafka® topics automatically <https://developer.aiven.io/docs/products/kafka/howto/create-topics-automatically.html>`_ page.  
+To learn more, check out `Create Apache Kafka® topics automatically <https://docs.aiven.io/docs/products/kafka/howto/create-topics-automatically.html>`_ page.  
 
 .. mermaid::
 

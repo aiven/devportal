@@ -34,7 +34,7 @@ Variable                     Description
 
 .. _`the guide to set up properties to use the Apache Kafka toolbox`: toolbox_
 .. _`for Apache Kafka toolbox`: toolbox_
-.. _toolbox: https://developer.aiven.io/docs/products/kafka/howto/kafka-tools-config-file.html
+.. _toolbox: https://docs.aiven.io/docs/products/kafka/howto/kafka-tools-config-file.html
 
 In the command lines below, values in ``{`` and ``}`` are to be replaced - so ``{PORT}`` would be replaced by the appropriate port number, for instance ``12345``.
 
@@ -65,7 +65,7 @@ With ``kafka-avro-console-producer`` you can include the schema by connecting to
 
    1. The ``schema.registry.url`` value must be a full URL, typically starting with ``https://``
    2. Aiven's `Karapace <https://karapace.io/>`_ is an acceptable schema registry for this purpose.
-      See `Use Karapace with Aiven for Apache Kafka® <https://developer.aiven.io/docs/products/kafka/howto/enable-karapace.html>`_ for how to enable it for your Aiven for Kafka service. The ``SCHEMA_REGISTRY_`` values for the command line can be found on the service Overview page, on the **Schema registry** tab.
+      See `Use Karapace with Aiven for Apache Kafka® <https://docs.aiven.io/docs/products/kafka/howto/enable-karapace.html>`_ for how to enable it for your Aiven for Kafka service. The ``SCHEMA_REGISTRY_`` values for the command line can be found on the service Overview page, on the **Schema registry** tab.
 
 .. code::
 
