@@ -59,7 +59,7 @@ Define the connector configurations in a file (we'll refer to it with the name `
         "couchbase.collections": "COUCHBASE_COLLECTIONS",
         "couchbase.source.handler": "com.couchbase.connect.kafka.handler.source.RawJsonSourceHandler",
         "value.converter": "org.apache.kafka.connect.converters.ByteArrayConverter",
-}
+    }
 
 The configuration file contains the following entries:
 
