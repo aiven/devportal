@@ -277,7 +277,7 @@ as the ``aiven_tenant_id`` later. The ``to-network-id`` field from the
 output is referred to as the ``$aiven_vnet_id``
 
 13. create peering from your VNet to the VNet of the project VPC
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Log out the Azure user you logged in with in step 1 using
 
