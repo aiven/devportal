@@ -3,20 +3,20 @@ http://developer.aiven.io/*  https://docs.aiven.io/:splat 301!
 https://developer.aiven.io/* https://docs.aiven.io/:splat 301!
 
 # Convenience URLs
-/kafka              /docs/products/kafka/index.html
-/postgresql         /docs/products/postgresql/index.html
-/flink              /docs/products/flink/index.html
-/clickhouse         /docs/products/clickhouse/index.html
-/opensearch         /docs/products/opensearch/index.html
-/m3db               /docs/products/m3db/index.html
-/mysql              /docs/products/mysql/index.html
-/redis              /docs/products/redis/index.html
-/cassandra          /docs/products/cassandra/index.html
-/grafana            /docs/products/grafana/index.html
+/kafka              /docs/products/kafka
+/postgresql         /docs/products/postgresql
+/flink              /docs/products/flink
+/clickhouse         /docs/products/clickhouse
+/opensearch         /docs/products/opensearch
+/m3db               /docs/products/m3db
+/mysql              /docs/products/mysql
+/redis              /docs/products/redis
+/cassandra          /docs/products/cassandra
+/grafana            /docs/products/grafana
 
-/api                /docs/tools/api/index.html
+/api                /docs/tools/api
 /cli                /docs/tools/cli.html
-/terraform          /docs/tools/terraform/index.html
+/terraform          /docs/tools/terraform
 
 # Renamed/deleted files
 /docs/products/flink/howto/real-time-alerting-solution-cli.html       /docs/products/flink/howto/real-time-alerting-solution.html
@@ -54,16 +54,16 @@ https://developer.aiven.io/* https://docs.aiven.io/:splat 301!
 # Redirect from .index.html to specific page names for landing
 
 # with one section and no subsections, i. e. docs/platform
-# /docs/:section/index.html                                              /docs/:section
-# /docs/:section/index                                                   /docs/:section
-# /docs/:section/                                                        /docs/:section
+/docs/:section/index.html                                              /docs/:section
+/docs/:section/index                                                   /docs/:section
+/docs/:section/                                                        /docs/:section
 
-# # with one subsection, i. e. docs/products/cassandra
-# /docs/:section/:subsection/index.html                                  /docs/:section/:subsection
-# /docs/:section/:subsection/index                                       /docs/:section/:subsection
-# /docs/:section/:subsection/                                            /docs/:section/:subsection
+# with one subsection, i. e. docs/products/cassandra
+/docs/:section/:subsection/index.html                                  /docs/:section/:subsection
+/docs/:section/:subsection/index                                       /docs/:section/:subsection
+/docs/:section/:subsection/                                            /docs/:section/:subsection
 
-# # with a subsubsection, i. e. docs/products/opensearch/dashboards
-# /docs/:section/:subsection/:subsubsection/index.html                   /docs/:section/:subsection/:subsubsection
-# /docs/:section/:subsection/:subsubsection/index                        /docs/:section/:subsection/:subsubsection
-# /docs/:section/:subsection/:subsubsection/                             /docs/:section/:subsection/:subsubsection
+# with a subsubsection, i. e. docs/products/opensearch/dashboards
+/docs/:section/:subsection/:subsubsection/index.html                   /docs/:section/:subsection/:subsubsection
+/docs/:section/:subsection/:subsubsection/index                        /docs/:section/:subsection/:subsubsection
+/docs/:section/:subsection/:subsubsection/                             /docs/:section/:subsection/:subsubsection
