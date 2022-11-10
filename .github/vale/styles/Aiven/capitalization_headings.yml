@@ -16,6 +16,7 @@ exceptions:
   - Apache
   - AWS Transit Gateway
   - Auth0
+  - Azure
   - Azure Marketplace
   - Boot
   - Business
@@ -57,6 +58,8 @@ exceptions:
   - InnoDB
   - IPsec
   - Java
+  - JMX
+  - Jolokia
   - Kafdrop
   - Kafka
   - Karapace

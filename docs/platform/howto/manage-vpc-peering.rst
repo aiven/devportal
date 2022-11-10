@@ -14,6 +14,7 @@ To set up VPC peering for your Aiven project:
 3. On the right, click **Create VPC** button.
 
    .. note::
+   
        You'll need either an **admin** or an **operator** user role to be able to create a VPC. For more information about Aiven project members and roles, refer to :doc:`../concepts/projects_accounts_access`.  
 
 4. Enter the IP range that you want to use for the VPC connection.  Use an IP range that does not overlap with any networks that you want to connect via VPC peering. For example, if your own networks use the range `10.0.0.0/8`, you could set the range for your Aiven project's VPC to `192.168.0.0/24`.
@@ -25,6 +26,7 @@ Once you have created the VPC, Aiven automatically sets it up and updates the st
 When you create a new service, you can then place it in the VPC. The **VPC** tab in the *Select Service Cloud Region* section lists the available VPC. This also allows you to migrate a service to or from a VPC.
 
 .. note::
+
        Depending on the cloud provider that you selected for the VPC connection, you also have to accept a VPC peering connection request or set up a corresponding VPC peering connection to Aiven. 
 
 Cloud-specific VPC peering instructions
@@ -34,7 +36,7 @@ Cloud-specific VPC peering instructions
 - :doc:`Set up VPC peering on Google Cloud Platform (GCP) <vpc-peering-gcp>`
 - :doc:`Set up VNet (VPC) peering on Microsoft Azure <vnet-peering-azure>`
 
-Deploying new services to a VPC
+Deploy new services to a VPC
 -------------------------------
 
 When you create a new service, your peered VPC is available as a new geolocation on the **VPC** tab under *Select Service Cloud Region*.
@@ -44,13 +46,13 @@ It might take a few minutes for newly created VPC to appear for service deployme
 
        The service nodes use firewall rules to allow only connections from private IP ranges that originate from networks on the other end of VPC peering connections. You can only deploy services to a VPC if they belong to the project where that specific VPC was created.
 
-Deleting an existing VPC and VPC peering
+Delete an existing VPC and VPC peering
 ----------------------------------------
 
 Before deleting an existing VPC from Aiven console, you should move out any active services from that VPC. To delete a VPC, navigate to the Aiven console under the VPC section. You can find the **Delete** button as the last column for each VPC.
 Once the VPC is deleted, the cloud provider side of the peering connection will go to an inactive or deleted state.
 
-Migrating a public service to a VPC
+Migrate a public service to a VPC
 -----------------------------------
 
 You can migrate any Aiven service to or from a VPC.
@@ -70,7 +72,7 @@ You can migrate any Aiven service to or from a VPC.
        Once you migrate your service to an Aiven project-specific VPC, you can no longer access the service over the public internet. You can only access it from clients that are in a VPC that is peered to the VPC for the Aiven project.
 
 
-Accessing VPC services from the public internet
+Access VPC services from the public internet
 -----------------------------------------------
 
 When you move your service to a VPC, access from public networks is blocked by default unless you switch on public access, which generates a separate endpoint with a public- prefix that you can use.
