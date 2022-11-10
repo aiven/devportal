@@ -20,7 +20,7 @@ To set up VPC peering for your Aiven project:
 
    .. note::
 
-       You'll need either an **admin** or an **operator** user role to be able to create a VPC. For more information about Aiven project members and roles, refer to :doc:`../concepts/projects_accounts_access`.  
+       You'll need either an **admin** or an **operator** user role to be able to create a VPC. For more information about Aiven project members and roles, refer to :doc:`projects, accounts, and managing access permissions </docs/platform/concepts/projects_accounts_access>`.  
 
 4. Enter the IP range that you want to use for the VPC connection.  Use an IP range that does not overlap with any networks that you want to connect via VPC peering. For example, if your own networks use the range `10.0.0.0/8`, you could set the range for your Aiven project's VPC to `192.168.0.0/24`.
 
@@ -37,9 +37,9 @@ When you create a new service, you can then place it in the VPC. The **VPC** tab
 Cloud-specific VPC peering instructions
 -----------------------------------------------------
 
-- :doc:`Set up VPC peering on Amazon Web Services (AWS) <vpc-peering-aws>`
-- :doc:`Set up VPC peering on Google Cloud Platform (GCP) <vpc-peering-gcp>`
-- :doc:`Set up VNet (VPC) peering on Microsoft Azure <vnet-peering-azure>`
+- :doc:`Set up VPC peering on Amazon Web Services (AWS) </docs/platform/howto/vpc-peering-aws>`
+- :doc:`Set up VPC peering on Google Cloud Platform (GCP) </docs/platform/howto/vpc-peering-gcp>`
+- :doc:`Set up VNet (VPC) peering on Microsoft Azure </docs/platform/howto/vnet-peering-azure>`
 
 Deploy new services to a VPC
 -------------------------------
@@ -81,7 +81,7 @@ Access VPC services from the public internet
 -----------------------------------------------
 
 When you move your service to a VPC, access from public networks is blocked by default unless you switch on public access, which generates a separate endpoint with a public- prefix that you can use.
-You can switch on public internet access for your services in the service's *Overview* > *Advanced Configuration* section, but this option is switched off by default. As an example, see :doc:`how to enable public access in a VPC <public-access-in-vpc>`.
+You can switch on public internet access for your services in the service's *Overview* > *Advanced Configuration* section, but this option is switched off by default. As an example, see :doc:`how to enable public access in a VPC </docs/platform/howto/public-access-in-vpc>`.
 
 IP filtering (the Allowed IP Addresses list on the service overview page) is still available for a service deployed to a VPC where both public and private access are allowed. We recommend that you use IP filtering when your VPC service is also exposed to the public internet.
 

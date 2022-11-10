@@ -32,7 +32,7 @@ Where:
       - ``schema_registry_read``
       -  ``schema_registry_write``
   * - ``--resource``
-    - The resource format can be ``Config:`` or ``Subject:<subject>``. For more information, see :doc:`ACLs definition <karapace_schema_registry_acls>`.
+    - The resource format can be ``Config:`` or ``Subject:<subject>``. For more information, see :doc:`ACLs definition </docs/products/kafka/karapace/concepts/acl-definition>`.
   * - ``--username``
     - The name of a service user
 
