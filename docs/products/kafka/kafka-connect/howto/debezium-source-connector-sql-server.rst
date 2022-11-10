@@ -1,7 +1,7 @@
 Create a Debezium source connector for SQL Server
 ==================================================
 
-The SQL Server Debezium source connector is based on the `change data capture (CDC) feature <https://docs.microsoft.com/en-us/sql/relational-databases/track-changes/about-change-data-capture-sql-server?view=sql-server-2017>`_, extracts the database changes captured in specific `change tables <https://debezium.io/documentation/reference/stable/connectors/sqlserver.html>`_ on a polling interval, and writes them to an Apache Kafka® topic in a standard format where they can be transformed and read by multiple consumers.
+The SQL Server Debezium source connector is based on the `change data capture (CDC) feature <https://learn.microsoft.com/en-us/sql/relational-databases/track-changes/about-change-data-capture-sql-server?view=sql-server-2017>`_, extracts the database changes captured in specific `change tables <https://debezium.io/documentation/reference/stable/connectors/sqlserver.html>`_ on a polling interval, and writes them to an Apache Kafka® topic in a standard format where they can be transformed and read by multiple consumers.
 
 .. note::
 
@@ -52,7 +52,7 @@ The command above has the following parameters:
 
 * ``<DATABASE_NAME>``, ``<SCHEMA_NAME>``, ``<TABLE_NAME>``: the references to the table where CDC needs to be setup
 * ``<ROLE_NAME>``: the database role that will have access to the change tables. Leave it ``NULL`` to only allow access to members of ``sysadmin`` or ``db_owner`` groups
-* ``<FILEGROUP_NAME>``: Specifies the `file group <https://docs.microsoft.com/en-us/sql/relational-databases/databases/database-files-and-filegroups>`_ where the files will be written, needs to be pre-existing
+* ``<FILEGROUP_NAME>``: Specifies the `file group <https://learn.microsoft.com/en-us/sql/relational-databases/databases/database-files-and-filegroups>`_ where the files will be written, needs to be pre-existing
 
 .. Note::
 
