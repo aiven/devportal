@@ -1,7 +1,7 @@
 Create and manage teams
 =======================
 
-**Teams** let you create user groups and assign different access levels to specific projects in your account. When you :doc:`create an account </docs/platform/howto/create-accounts>`, an Account Owners team is automatically created with admin access to the account and its projects.
+**Teams** let you create user groups and assign different access levels to specific projects in your account. When you :doc:`create an account </docs/tools/aiven-console/howto/create-accounts>`, an Account Owners team is automatically created with admin access to the account and its projects.
 
 To create and manage teams for an account, click **Admin** and then select **Teams**.
 
