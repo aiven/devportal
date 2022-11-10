@@ -3,7 +3,7 @@ Bring your own Apache Kafka® Connect cluster
 
 Aiven provides Apache Kafka® Connect as a managed service in combination with the Aiven for Apache Kafka® managed service. However, there are circumstances where you may want to roll your own Kafka Connect cluster.
 
-The following article defines the necessary steps to integrate your own Apache Kafka Connect cluster with Aiven for Apache Kafka and use the schema registry offered by `Karapace <https://help.aiven.io/en/articles/5651983>`__. The example shows how to create a JDBC sink connector to a PostgreSQL® database.
+The following article defines the necessary steps to integrate your own Apache Kafka Connect cluster with Aiven for Apache Kafka and use the schema registry offered by `Karapace <https://docs.aiven.io/docs/products/kafka/karapace>`__. The example shows how to create a JDBC sink connector to a PostgreSQL® database.
 
 .. _bring_your_own_kafka_connect_prereq:
 
@@ -53,7 +53,7 @@ For the following example we assume:
 Configure the Aiven for Apache Kafka service
 ''''''''''''''''''''''''''''''''''''''''''''
 
-You need to enable the schema registry features offered by `Karapace <https://help.aiven.io/en/articles/5651983>`__. You can do it in the `Aiven Console <https://console.aiven.io/>`_ in the Aiven for Apache Kafka service Overview tab.
+You need to enable the schema registry features offered by `Karapace <https://docs.aiven.io/docs/products/kafka/karapace>`__. You can do it in the `Aiven Console <https://console.aiven.io/>`_ in the Aiven for Apache Kafka service Overview tab.
 
 1. Enable the **Schema Registry (Karapace)** and **Apache Kafka REST API (Karapace)**
 
