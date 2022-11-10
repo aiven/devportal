@@ -25,6 +25,10 @@ Install the dependencies::
 
     pip install -r requirements.txt
 
+.. note::
+
+    You might need to run ``brew install postgres@<VERSION>`` (or a similar command for your package manager) to install PostgreSQL® as a ``psycopg2`` build dependency. 
+
 Start the HTML version with::
 
     make livehtml
