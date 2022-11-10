@@ -25,7 +25,7 @@ Source connectors enable the integration of data from an existing technology int
 
 * `Google Cloud Pub/Sub Lite <https://github.com/GoogleCloudPlatform/pubsub/>`_ 
 
-* `JDBC <https://github.com/aiven/aiven-kafka-connect-jdbc/blob/master/docs/source-connector.md>`__ 
+* `JDBC <https://github.com/aiven/jdbc-connector-for-apache-kafka/blob/master/docs/source-connector.md>`__
 
 * Schema Source 
 
@@ -56,9 +56,9 @@ Sink connectors enable the integration of data from an existing Apache Kafka top
 
 * :doc:`Google Cloud Storage </docs/products/kafka/kafka-connect/howto/gcs-sink>`
 
-* `HTTP <https://github.com/aiven/aiven-kafka-connect-http>`__ |preview|
+* `HTTP <https://github.com/aiven/http-connector-for-apache-kafka>`__ |preview|
 
-* `JDBC <https://github.com/aiven/aiven-kafka-connect-jdbc/blob/master/docs/sink-connector.md>`__
+* `JDBC <https://github.com/aiven/jdbc-connector-for-apache-kafka/blob/master/docs/sink-connector.md>`__
 
 * `Official MongoDB® <https://docs.mongodb.com/kafka-connector/current/>`__
 
