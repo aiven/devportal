@@ -27,16 +27,3 @@ This page has other sections with more information:
 * On the **Credits** tab you can view and assign credit codes for the billing group.
 * The **Events** tab lists all the logged actions for the billing group.
 * On the **Billing information** tab you can add or update the payment method and other billing details for generating the invoices.
-
-  .. note:: In the settings for your account, you can set the primary billing group that new projects are assigned to by default, unless specified otherwise.
-
-Set the account's primary billing group
----------------------------------------
-
-When you set the **primary billing group** for an account, it is the default billing group for all future projects associated with this account unless otherwise specified. The default billing group is also used for any account-level costs or commitments.
-
-To set the **primary billing group** for an account:
-
-#. In the account, go to **Admin** > **Settings**.
-
-#. In the **Primary billing group** section choose a billing group from the list. Click **Confirm**.

@@ -11,7 +11,6 @@ An Aiven **Account** is the entry point for creating and managing billing groups
 
 - Within an account you can create one or more billing groups.
 - You can assign an account's projects to a billing group and move projects from one billing group to another.
-- You can set the :doc:`primary billing group </docs/platform/howto/use-billing-groups>`, which is the account's default billing group.
 
 Aiven credits are available for all projects associated with the account. You can choose to apply the credits to a specific project within the account.
 
