@@ -201,6 +201,6 @@ More resources
 
 You might find these related resources useful too:
 
-- `Configuration options for Kafka <https://developer.aiven.io/docs/products/kafka/reference/advanced-params.html>`_
-- `Configuration options for OpenSearch <https://developer.aiven.io/docs/products/opensearch/reference/advanced-params.html>`_
+- `Configuration options for Kafka <https://docs.aiven.io/docs/products/kafka/reference/advanced-params.html>`_
+- `Configuration options for OpenSearch <https://docs.aiven.io/docs/products/opensearch/reference/advanced-params.html>`_
 

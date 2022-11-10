@@ -166,6 +166,6 @@ More resources
 To learn how to get started with Aiven Terraform Provider and specific PostgreSQL configurations for you use case, check out the following resources:
 
 - `What is PostgreSQL®? <https://aiven.io/blog/an-introduction-to-postgresql>`_
-- `Configuration options for PostgreSQL <https://developer.aiven.io/docs/products/postgresql/reference/list-of-advanced-params.html>`_
-- `Create and use read-only replicas <https://developer.aiven.io/docs/products/postgresql/howto/create-read-replica>`_
-- `Set up your first Aiven Terraform project <https://developer.aiven.io/docs/tools/terraform/get-started.html>`_
+- `Configuration options for PostgreSQL <https://docs.aiven.io/docs/products/postgresql/reference/list-of-advanced-params.html>`_
+- `Create and use read-only replicas <https://docs.aiven.io/docs/products/postgresql/howto/create-read-replica>`_
+- `Set up your first Aiven Terraform project <https://docs.aiven.io/docs/tools/terraform/get-started.html>`_

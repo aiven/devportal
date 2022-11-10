@@ -36,7 +36,7 @@ To migrate your data using Bucardo:
      instructions <https://bucardo.org/Bucardo/installation/>`__ on the
      Bucardo site.
 
-#. | Install the ``aiven_extras`` `extension <https://developer.aiven.io/docs/products/postgresql/concepts/dba-tasks-pg.html#aiven-extras-extension>`_ to your current database.
+#. | Install the ``aiven_extras`` `extension <https://docs.aiven.io/docs/products/postgresql/concepts/dba-tasks-pg.html#aiven-extras-extension>`_ to your current database.
    | Bucardo requires the superuser role to set the
      ``session_replication_role`` parameter. Aiven uses the open source
      ``aiven_extras`` extension to allow you to run ``superuser``

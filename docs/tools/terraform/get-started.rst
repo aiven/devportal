@@ -7,13 +7,13 @@ Prepare the dependencies
 ''''''''''''''''''''''''
 - `Download and install Terraform <https://www.terraform.io/downloads.html>`_
 - `Sign up <https://console.aiven.io/signup?utm_source=github&utm_medium=organic&utm_campaign=devportal&utm_content=repo>`_ for Aiven if you haven't already
-- `Generate an authentication token <https://developer.aiven.io/docs/platform/howto/create_authentication_token.html>`_
+- `Generate an authentication token <https://docs.aiven.io/docs/platform/howto/create_authentication_token.html>`_
 
 .. Tip::
 
     Make sure that you have either the *Administrator* or *Operator* role when creating the API token. When you create a project, you automatically receive the *Administrator* access.
 
-    For more details, refer to the `Project members and roles page <https://developer.aiven.io/docs/platform/concepts/projects_accounts_access.html#project-members-and-roles>`_.
+    For more details, refer to the `Project members and roles page <https://docs.aiven.io/docs/platform/concepts/projects_accounts_access.html#project-members-and-roles>`_.
 
 Configure your project and services
 '''''''''''''''''''''''''''''''''''

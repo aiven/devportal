@@ -4,7 +4,7 @@ Rotating Grafana® service credentials
 In the interests of security, it is best practice to rotate credentials from time-to-time.
 
 For Grafana®, a few steps need to be performed manually to do this. You will need to have access to a web browser,
-and to have installed ``avn``, the `Aiven CLI tool <https://developer.aiven.io/docs/tools/cli.html>`_.
+and to have installed ``avn``, the `Aiven CLI tool <https://docs.aiven.io/docs/tools/cli.html>`_.
 
 1. In the web browser, go to the `Aiven Console <https://console.aiven.io/>`_ page for your Grafana service.
 

@@ -203,6 +203,6 @@ More resources
 The parameters and configurations will vary for your case. Please refer below for Apache Kafka and Apache Flink advanced parameters, a related blog, and how to get started with Aiven Terraform Provider:
 
 - `Build a Streaming SQL Pipeline with Apache Flink® and Apache Kafka® <https://aiven.io/blog/build-a-streaming-sql-pipeline-with-flink-and-kafka>`_
-- `Set up your first Aiven Terraform project <https://developer.aiven.io/docs/tools/terraform/get-started.html>`_
-- `Advanced parameters for Aiven for Apache Kafka® <https://developer.aiven.io/docs/products/kafka/reference/advanced-params.html>`_
-- `Advanced parameters for Aiven for Apache Flink® <https://developer.aiven.io/docs/products/flink/reference/advanced-params.html>`_
+- `Set up your first Aiven Terraform project <https://docs.aiven.io/docs/tools/terraform/get-started.html>`_
+- `Advanced parameters for Aiven for Apache Kafka® <https://docs.aiven.io/docs/products/kafka/reference/advanced-params.html>`_
+- `Advanced parameters for Aiven for Apache Flink® <https://docs.aiven.io/docs/products/flink/reference/advanced-params.html>`_
