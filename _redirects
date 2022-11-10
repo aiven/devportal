@@ -56,14 +56,11 @@ https://developer.aiven.io/* https://docs.aiven.io/:splat 301!
 # with one section and no subsections, i. e. docs/platform
 /docs/:section/index.html                                              /docs/:section
 /docs/:section/index                                                   /docs/:section
-/docs/:section/                                                        /docs/:section
 
 # with one subsection, i. e. docs/products/cassandra
 /docs/:section/:subsection/index.html                                  /docs/:section/:subsection
 /docs/:section/:subsection/index                                       /docs/:section/:subsection
-#/docs/:section/:subsection/                                            /docs/:section/:subsection
 
 # with a subsubsection, i. e. docs/products/opensearch/dashboards
 /docs/:section/:subsection/:subsubsection/index.html                   /docs/:section/:subsection/:subsubsection
 /docs/:section/:subsection/:subsubsection/index                        /docs/:section/:subsection/:subsubsection
-/docs/:section/:subsection/:subsubsection/                             /docs/:section/:subsection/:subsubsection
