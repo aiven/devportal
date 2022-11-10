@@ -19,7 +19,7 @@ To create a new user account for your service,
 
 #. Enter a name for the new user and select a role.
 
-   The role that you select defines the access grants that are assigned to the user. For more information on roles, :doc:`see this article <grant-privilege>`.
+   The role that you select defines the access grants that are assigned to the user. For more information on roles, see :ref:`Manage roles and permissions <manage-roles-and-permissions>`.
 
 #. Select **Add User**.
 
@@ -27,10 +27,12 @@ To create a new user account for your service,
 
 #. Copy the password on screen to a safe place. It can't be accessed again in future, however it can be reset if needed.
 
+.. _manage-roles-and-permissions:
+
 Manage roles and permissions
 ----------------------------
 
-ClickHouse® supports a **Role Based Access Control** model and allows you to configure access privileges by using SQL statements. You can either :doc:`use the query editor <use-query-editor>` or rely on :doc:`the command-line interface <use-cli>`.
+ClickHouse® supports a **Role Based Access Control** model and allows you to configure access privileges by using SQL statements. You can either :doc:`use the query editor <query-ch-dbs>` or rely on :doc:`the command-line interface <connect-to-ch-service>`.
 
 This article shows you examples of how to create roles and grant privileges. The ClickHouse documentation includes  `detailed documentation for access rights <https://clickhouse.com/docs/en/operations/access-rights/>`_.
 

@@ -55,7 +55,7 @@ The newly created database name has the following format: ``service_PG_SERVICE_N
 
 .. note::
 
-    When connecting to an Aiven for PostgreSQL, we connect as the main service user of that service, which has access to all the PostgreSQL tables. SELECT and INSERT privileges are granted to the main service user (``avnadmin``). It is up to the main service user to grant access to other users. Read more :doc:`how to grant privileges <grant-privilege>`.
+    When connecting to an Aiven for PostgreSQL, we connect as the main service user of that service, which has access to all the PostgreSQL tables. SELECT and INSERT privileges are granted to the main service user (``avnadmin``). It is up to the main service user to grant access to other users. Read more :doc:`how to grant privileges </docs/products/clickhouse/howto/manage-users-roles>`.
 
 
 Update PostgreSQL integration settings
