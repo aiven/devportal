@@ -11,7 +11,7 @@ Source connectors enable the integration of data from an existing technology int
 
 * `Couchbase <https://github.com/couchbase/kafka-connect-couchbase>`__
 
-* `Official MongoDB® <https://docs.mongodb.com/kafka-connector/current/>`__
+* `Official MongoDB® <https://www.mongodb.com/docs/kafka-connector/current/>`__
 
 * `Debezium for MongoDB® <https://debezium.io/docs/connectors/mongodb/>`__
 

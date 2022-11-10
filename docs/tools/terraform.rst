@@ -42,7 +42,7 @@ Learn more
 ----------
 Check out these resources to learn more about Terraform and our Provider:
 
-* `Learn Terraform <https://learn.hashicorp.com/collections/terraform/aws-get-started>`_
+* Terraform's `Get Started - AWS <https://developer.hashicorp.com/terraform/tutorials/aws-get-started>`_
 * `Aiven Terraform Provider documentation <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_
 
 Get involved
