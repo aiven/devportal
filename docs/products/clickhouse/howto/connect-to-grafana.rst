@@ -22,7 +22,7 @@ Variable                         Description
 ============================     ==========================================================================================================
 
 Integrate ClickHouse® with Grafana®
-----------------------------------
+-----------------------------------
 
 1. Log in to Aiven for Grafana® following :doc:`the instructions </docs/products/grafana/howto/log-in>`.
 #. From the **Configuration** menu, select **Data sources** > **Add data source**.

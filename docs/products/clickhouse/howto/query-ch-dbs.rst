@@ -8,7 +8,9 @@ Aiven supports a few tools that enables querying your ClickHouse databases.
     To ensure data security, stability, and its proper replication, we equip our managed Aiven for ClickHouse® service with specific features, some of them missing from the standard ClickHouse offer.
     Aiven for ClickHouse® takes care of running queries in the distributed mode over the entire cluster. In the standard ClickHouse, the queries ``CREATE``, ``ALTER``, ``RENAME`` and ``DROP`` only affect the server where they are run. In contrast, we ensure the proper distribution across all cluster machines behind the scenes. You don't need to remember using ``ON CLUSTER`` for every query.
     
-For querying your ClickHouse® databases, you can choose between our query editor, the Play UI, and :doc:`the ClickHouse® client </docs/clickhouse/howto/connect-to-ch-service>`.
+For querying your ClickHouse® databases, you can choose between our query editor, the Play UI, and :doc:`the ClickHouse® client </docs/products/clickhouse/howto/connect-to-ch-service>`.
+
+.. _use-query-editor:
 
 Use the query editor
 --------------------
@@ -36,6 +38,8 @@ Create a new role::
 
     CREATE ROLE accountant
 
+.. _play-iu:
+
 Play UI
 -------
 
@@ -47,7 +51,7 @@ When to use the play UI
 Use the play UI if you want to run requests using a non-default user or if you expect a large size of the response.
 
 Use the play UI
-^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
 
 1. Log in to the `Aiven web console <https://console.aiven.io/>`_, choose the right project, and select your Aiven for ClickHouse service.
 #. In the *Overview* tab, find *Connection information* and select **ClickHouse HTTPS**.
@@ -57,5 +61,5 @@ Use the play UI
 #. Select **Run**.
 
 .. note::
-    The play interface is only available if you can connect directly to ClickHouse from your browser. If the service is :doc:`restricted by IP addresses </docs/platform/howto/restrict-access>` or in a :doc:`VPC without public access </docs/platform/howto/public-access-in-vpc>`, you can use the :doc:`query editor <use-query-editor>` instead.
+    The play interface is only available if you can connect directly to ClickHouse from your browser. If the service is :doc:`restricted by IP addresses </docs/platform/howto/restrict-access>` or in a :doc:`VPC without public access </docs/platform/howto/public-access-in-vpc>`, you can use the :ref:`query editor <use-query-editor>` instead.
     The query editor can be accessed directly from the console to run requests on behalf of the default user.

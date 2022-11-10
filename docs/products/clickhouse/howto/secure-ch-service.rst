@@ -1,5 +1,5 @@
 Secure a managed ClickHouse® service
-===================================
+====================================
 
 Restrict network access to your service
 ---------------------------------------
