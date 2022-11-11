@@ -10,7 +10,7 @@ When a new Aiven service is created, the chosen cloud service provider will dyna
 
     Aiven also offer the ability to define :doc:`static IP addresses </docs/platform/concepts/static-ips>` in case you need them a service. For more information about how to obtain a static IP and assign it to a particular service, please check the :doc:`related guide </docs/platform/howto/static-ip-addresses>`.
 
-If you have your own cloud account and want to keep your Aiven services isolated from the public internet, you can however create a VPC and a peering connection to your own cloud account. For more information on how to setup the VPC peering, check `the related article <https://help.aiven.io/en/articles/778836-using-virtual-private-cloud-vpc-peering>`_.
+If you have your own cloud account and want to keep your Aiven services isolated from the public internet, you can however create a VPC and a peering connection to your own cloud account. For more information on how to setup the VPC peering, check `the related article <https://docs.aiven.io/docs/platform/howto/manage-vpc-peering>`_.
 
 Default service hostname
 ------------------------
