@@ -90,6 +90,7 @@ After creating the application in your IdP, go back to the Authentication page i
 
 #. Click **Edit method**. 
 
+
 Step 4. Log in with the SAML authentication method
 --------------------------------------------------
 

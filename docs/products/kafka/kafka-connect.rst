@@ -105,7 +105,7 @@ Sink connectors
 
        :doc:`Stream Reactor Cassandra® <kafka-connect/howto/cassandra-streamreactor-sink>`
 
-       `Stream Reactor InfluxDB® <https://docs.lenses.io/connectors/sink/influx.html>`__
+       :doc:`Stream Reactor InfluxDB® <kafka-connect/howto/influx-sink>`
 
        :doc:`Stream Reactor MongoDB® <kafka-connect/howto/mongodb-sink-lenses>`
 
@@ -156,7 +156,7 @@ Apache Kafka® Connect resources
 
 If you are new to Apache Kafka Connect, try these resources to learn more:
 
-* The main Apache Kafka project page: http://kafka.apache.org/
+* The main Apache Kafka project page: https://kafka.apache.org/
 
 * The Karapace schema registry that Aiven maintains and makes available for every Aiven for Apache Kafka service: https://karapace.io/
 
