@@ -47,6 +47,7 @@ entries:
           - file: docs/platform/howto/change-your-email-address
           - file: docs/platform/howto/create_authentication_token
           - file: docs/platform/howto/create_new_service_user
+          - file: docs/tools/aiven-console/howto/create-manage-teams
           - file: docs/platform/howto/enable-aiven-password
           - file: docs/platform/howto/user-2fa
           - file: docs/platform/howto/technical-emails
@@ -155,13 +156,6 @@ entries:
   - file: docs/tools
     entries:
       - file: docs/tools/aiven-console
-        title: Aiven Console
-        entries:
-        - file: docs/tools/aiven-console/howto
-          title: HowTo
-          entries:
-          - 
-          - file: docs/tools/aiven-console/howto/create-manage-teams
       - file: docs/tools/cli
         entries:
         - file: docs/tools/cli/account
