@@ -49,7 +49,7 @@ If you don't have an account, click **Create account** to :doc:`create your firs
 
 Account-level settings and options are available on the **Admin** page. Here you can:
 
-* :doc:`Manage the teams for this account</docs/platform/howto/create-manage-teams>`
+* :doc:`Manage the teams for this account </docs/platform/howto/create-manage-teams>`
 * Create new projects for this account
 * Configure :doc:`authentication methods for the account </docs/platform/howto/list-saml>`
 * View **Event logs** of account activity such as the adding or removing of team members, changing authentication methods, and more
