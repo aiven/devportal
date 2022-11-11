@@ -10,7 +10,7 @@ The `Aiven Console <https://console.aiven.io>`_ gives you access to create and m
 
 
 .. image:: /images/tools/console/console_services_switchaccount.png
-    :alt: The Services page of the Aiven Console with the account switcher menu open, showing one account and the option to create a new account. 
+    :alt: The Current services page of the Aiven Console. 
 
 
 Manage your user profile
