@@ -156,7 +156,7 @@ Apache Kafka® Connect resources
 
 If you are new to Apache Kafka Connect, try these resources to learn more:
 
-* The main Apache Kafka project page: http://kafka.apache.org/
+* The main Apache Kafka project page: https://kafka.apache.org/
 
 * The Karapace schema registry that Aiven maintains and makes available for every Aiven for Apache Kafka service: https://karapace.io/
 
