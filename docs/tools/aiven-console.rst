@@ -43,13 +43,13 @@ Account settings
 
 The account you are currently working with is displayed at the top of the page. You can switch accounts by clicking the account name to open the drop-down menu. You can also create a new account from this menu.
 
-If you don't have an account, click **Create account** to :doc:`create your first account </docs/tools/aiven-console/howto/create-accounts>`. 
+If you don't have an account, click **Create account** to :doc:`create your first account </docs/platform/howto/create-accounts>`. 
  
 .. note:: We strongly recommend creating an account. It makes managing your projects much easier and comes with many additional features, such as teams (user groups), billing groups, and SAML authentication.
 
 Account-level settings and options are available on the **Admin** page. Here you can:
 
-* :doc:`Manage the teams for this account</docs/tools/aiven-console/howto/create-manage-teams>`
+* :doc:`Manage the teams for this account</docs/platform/howto/create-manage-teams>`
 * Create new projects for this account
 * Configure :doc:`authentication methods for the account </docs/platform/howto/list-saml>`
 * View **Event logs** of account activity such as the adding or removing of team members, changing authentication methods, and more
