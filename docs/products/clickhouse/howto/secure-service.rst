@@ -1,15 +1,17 @@
 Secure a managed ClickHouse® service
 ====================================
 
+You can secure your Aiven for ClickHouse® service in a few different ways. This article guides you on how to protect your service by restricting network access, using Virtual Private Cloud (VPC), and enabling service termination protection.
+
 Restrict network access to your service
 ---------------------------------------
 
-    .. include:: /docs/platform/howto/restrict-access.rst
+One of the most fundamental ways to keep your service secure is managing its network access properly. By default the service is publicly available but you can restrict the access by following the instruction in :doc:`Restrict network access to your service </docs/platform/howto/restrict-access>`.
 
-Manage Virtual Private Cloud (VPC) peering
-------------------------------------------
+Use Virtual Private Cloud (VPC)
+-------------------------------
 
-    .. include:: /docs/platform/howto//manage-vpc-peering.rst
+With VPC, no public internet-based access is provided to the service and it can only be connected to from the customer's peered VPC using a private network address. Read more on using VPC in :ref:`Networking with VPC peering <networking-with-vpc-peering>` and check out how to create a VPC in :ref:`Configure VPC peering <platform_howto_setup_vpc_peering>`.
 
 Protect a service from termination
 ----------------------------------
