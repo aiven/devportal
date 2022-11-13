@@ -3,6 +3,8 @@ Manage ClickHouse® databases and tables
 
 Databases and tables are at the core of any **Database Management System**. ClickHouse® is no different. In this article, we will look at how to create and work with databases and tables in Aiven for ClickHouse®.
 
+.. _create-a-clickhouse-database:
+
 Create a database
 -----------------
 
