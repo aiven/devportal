@@ -1,11 +1,11 @@
-Monitor non-service-specific metrics using Prometheus
-========================================================
+Prometheus system metrics
+=========================
 
 Prometheus integration allows you to monitor your Aiven services and understand the resource usage. Additionally, using this integration, you can monitor/track some non-service-specific metrics that may be worth monitoring. 
 
 To start monitoring these metrics, you need the :doc:`Prometheus integration configured and set up the Prometheus server <../platform/howto/integrations/prometheus-metrics>`.
 
-The complete list of metric you can monitor are not listed here. However, you can get the complete list in the Prometheus service or by sending ``HTTP GET`` with ``cURL`` as shown below: 
+To discover the metrics available for your services, get the complete list in the Prometheus service or by making an HTTP ``GET`` request to this URL:
 
 .. code:: 
   
@@ -21,7 +21,7 @@ For a high-level view of CPU usage for a single CPU service, you can use
   
     100 - cpu_usage_idle{cpu="cpu-total"}
 
-Bear in mind that it may not be a good idea to use ``cpu_usage_system{cpu="cpu-total"}`` + ``cpu_usage_user{cpu="cpu-total"}`` to calculate total CPU usage, because they do not include ``cpu_usage_iowait``. Furthermore, a process with a ``nice`` value larger than 0 will be categorized as ``cpu_usage_nice``, which is not included in ``cpu_usage_user``.
+Keep in mind that it may not be a good idea to use ``cpu_usage_system{cpu="cpu-total"}`` + ``cpu_usage_user{cpu="cpu-total"}`` to calculate total CPU usage, because they do not include ``cpu_usage_iowait``. Furthermore, a process with a ``nice`` value larger than 0 will be categorized as ``cpu_usage_nice``, which is not included in ``cpu_usage_user``.
 
 It is also worth monitoring ``cpu_usage_iowait{cpu="cpu-total"}``. If this number is high, it indicates the service node is working on something I/O intensive. For example, 40 means 40% of CPU time is waiting for disk or network I/O.
 
@@ -35,13 +35,13 @@ The following table lists some important CPU-related metrics you can collect and
   * - Metics
     - Description
   * - ``cpu_usage_idle``
-    - The percentage of time the CPU is ideal. 
+    - The percentage of time the CPU is idle. 
   * - ``cpu_usage_system``
     - The percentage of time the Kernel code is consuming the CPU. 
   * - ``cpu_usage_user``
-    - The percentage of time the CPU is in user-space program with nice value <= 0.
+    - The percentage of time the CPU is in user-space program with ``nice`` value <= 0.
   * - ``cpu_usage_nice``
-    - The percentage of time the CPU is in user-space program with nice value > 0.
+    - The percentage of time the CPU is in user-space program with ``nice`` value > 0.
   * - ``cpu_usage_iowait``
     - The percentage of time waiting for I/O operations. 
   * - ``cpu_usage_steal``
@@ -55,7 +55,7 @@ The following table lists some important CPU-related metrics you can collect and
   * - ``cpu_usage_guest_nice``
     - The percentage of time the CPU is running for a guest OS, with low priority.
 
-These metrics are generated from the `telegraf plugin <https://github.com/influxdata/telegraf/tree/master/plugins/inputs/cpu>`_.
+These metrics are generated from the `Telegraf plugin <https://github.com/influxdata/telegraf/tree/master/plugins/inputs/cpu>`_.
 
 Disk usage
 ----------
@@ -77,7 +77,7 @@ The following table lists some important disk usage metrics you can collect and 
   * - ``disk_total``
     - The total space on disk (free and used space). 
   * - ``disk_used_percent``
-    - The percentage of the disk space used. The is equal to ``disk_used ``/ ``disk_total`` * 100. For example, 80 means 80% service disk usage. 
+    - The percentage of the disk space used. The is equal to ``disk_used / disk_total * 100``. For example, 80 means 80% service disk usage. 
   * - ``disk_inodes_free``
     - The number of index nodes available on service disk. 
   * - ``disk_inodes_used``
@@ -87,7 +87,7 @@ The following table lists some important disk usage metrics you can collect and 
 
 Memory usage
 ------------
-Monitoring memory consumption is also an essential metric to ensure the performance of your service.
+Metrics to monitoring memory consumption are also essential to ensure the performance of your service.
 Consider monitoring the ``mem_available`` (in bytes) or ``mem_available_percent``, as this is the estimated amount of memory available for application without swapping. Do not worry if ``mem_free`` is low because Linux automatically caches disk data in memory to speed-up read operations.
 
 Network usage
