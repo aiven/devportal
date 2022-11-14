@@ -39,7 +39,7 @@ To create the new database:
 Connect to the ClickHouse database
 ----------------------------------
 
-We will be using the ClickHouse client to connect to the server. Follow :doc:`the separate guide </docs/products/clickhouse/howto/connect-to-ch-service>` to familiarize yourself with how to set up and start using the ClickHouse client.
+We will be using the ClickHouse client to connect to the server. Follow :doc:`the separate guide </docs/products/clickhouse/howto/connect-with-clickhouse-cli>` to familiarize yourself with how to set up and start using the ClickHouse client.
 
 To connect to the server, use the connection details that you can find in the *Connection information* section of the *Overview* page in the Aiven web console. You will need **Host**, **Port**, **User**, and **Password**.
 

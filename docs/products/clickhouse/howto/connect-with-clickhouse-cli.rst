@@ -1,7 +1,7 @@
-Connect to a ClickHouse® cluster
-================================
+Connect to a ClickHouse® cluster with CLI
+=========================================
 
-It's recommended to connect to a ClickHouse® cluster with the ClickHouse® client.
+It's recommended to connect to a ClickHouse® cluster with the ClickHouse® client. From this article, you'll learn how to use the the ClickHouse® client command-line tool for that purpose.
 
 Use the ClickHouse® client
 --------------------------

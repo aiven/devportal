@@ -582,19 +582,30 @@ entries:
       - file: docs/products/clickhouse/howto
         title: HowTo
         entries:
-          - file: docs/products/clickhouse/howto/connect-to-ch-service
-          - file: docs/products/clickhouse/howto/secure-ch-service
+          - file: docs/products/clickhouse/howto/connect-with-clickhouse-cli
+            title: Connect with CLI
+          - file: docs/products/clickhouse/howto/secure-service
+            title: Secure a service
           - file: docs/products/clickhouse/howto/manage-users-roles
+            title: Manage users and roles
           - file: docs/products/clickhouse/howto/load-dataset
-          - file: docs/products/clickhouse/howto/query-ch-dbs
-          - file: docs/products/clickhouse/howto/manage-dbs-tables
+            title: Load data
+          - file: docs/products/clickhouse/howto/query-databases
+            title: Query databases
+          - file: docs/products/clickhouse/howto/manage-databases-tables
+            title: Manage databases and tables
           - file: docs/products/clickhouse/howto/materialized-views
+            title: Use materialized views
           - file: docs/products/clickhouse/howto/list-integrations
             entries:
               - file: docs/products/clickhouse/howto/connect-to-grafana
+                title: Connect to Grafana
               - file: docs/products/clickhouse/howto/integrate-kafka
-              - file: docs/products/clickhouse/howto/integrate-pg
+                title: Connect to Apache Kafka
+              - file: docs/products/clickhouse/howto/integrate-postgresql
+                title: Connect to PostgreSQL
               - file: docs/products/clickhouse/howto/connect-with-jdbc
+                title: Connect to external DBs with JDBC
 
       - file: docs/products/clickhouse/reference
         title: Reference
@@ -602,7 +613,7 @@ entries:
           - file: docs/products/clickhouse/reference/supported-table-engines
             title: Supported table engines
           - file: docs/products/clickhouse/reference/supported-input-output-formats
-            title: Formats for ClickHouse®-Kafka® data exchange
+            title: Formats for ClickHouse-Kafka data exchange
           - file: docs/products/clickhouse/reference/advanced-params
             title: Advanced parameters
 
