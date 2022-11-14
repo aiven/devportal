@@ -1,12 +1,12 @@
-ClickHouse® metrics exposed in Grafana®
-=======================================
+Aiven for ClickHouse® metrics exposed in Grafana®
+=================================================
 
-Learn what metrics are available via Grafana® for an Aiven for ClickHouse® service.
+Browse through metrics that are available via Grafana® for Aiven for ClickHouse® services.
 
 Current counts
 --------------
 
-The following metrics are displayed on dashboards as counts reflecting the current status:
+The following metrics are displayed on the monitoring dashboard as counts reflecting the current status:
 
 - ``Databases``: Number of databases
 - ``Tables``: Number of tables
@@ -20,7 +20,7 @@ The following metrics are displayed on dashboards as counts reflecting the curre
 Charts
 ------
 
-The following metrics are displayed on dashboards as charts reflecting data changes over time:
+The following metrics are displayed on the monitoring dashboard as charts reflecting data changes over time:
 
 ``Connections``
 ^^^^^^^^^^^^^^^
