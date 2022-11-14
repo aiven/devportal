@@ -76,7 +76,7 @@ The connector configurations in a file (we'll refer to it with the name ``s3_sin
 .. code-block:: json
 
     {
-        "name": "<CONECTOR_NAME>",
+        "name": "<CONNECTOR_NAME>",
         "connector.class": "io.aiven.kafka.connect.s3.AivenKafkaConnectS3SinkConnector",
         "key.converter": "org.apache.kafka.connect.converters.ByteArrayConverter"",
         "value.converter": "org.apache.kafka.connect.converters.ByteArrayConverter",
