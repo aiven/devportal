@@ -37,25 +37,24 @@ The index is described with the following JSON:
 }
 ```
 
-| Property      | Description                                                                                                                                              |
-| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| title         | Document title, used as the link text in search results                                                                                                  |
-| description   | Short document description, used in help center results under the title text                                                                             |
-| content       | Main document content                                                                                                                                    |
-| source        | Document source, currently either `devportal` or `helpcenter`                                                                                            |
+| Property      | Description                                                                                                                                           |
+| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| title         | Document title, used as the link text in search results                                                                                               |
+| description   | Short document description, used in help center results under the title text                                                                          |
+| content       | Main document content                                                                                                                                 |
+| source        | Document source, currently either `devportal` or `helpcenter`                                                                                         |
 | sort_priority | Document sort priority in search results, smaller priority documents are shown first and same priority documents are sorted by OpenSearch query score |
 
 In addition to these `url` field should be provided with every document but it is not indexed or used in search queries. `url` is used in search result `href`.
 
 ## Search function
 
-The OpenSearch® index is used through the Netlify function in [netlify/functions/search/search.js](netlify/functions/search/search.js). To call the function, make a GET request to the function URL and append your search term to the `query` parameter, like this: [https://developer.aiven.io/.netlify/functions/search?query=redis](https://developer.aiven.io/.netlify/functions/search?query=redis).
+The OpenSearch® index is used through the Netlify function in [netlify/functions/search/search.js](netlify/functions/search/search.js). To call the function, make a GET request to the function URL and append your search term to the `query` parameter, like this: [https://docs.aiven.io/.netlify/functions/search?query=redis](https://docs.aiven.io/.netlify/functions/search?query=redis).
 
 The query uses this overall approach:
 
 - use OR-style query matching `title`, `description` and `content` (with OS `match_phrase_prefix`)
 - give higher value to `title`
-
 
 # Creating the index
 
@@ -127,26 +126,23 @@ You might also need to take care of removing documents that no longer exist.
 
 # Synonyms
 
-If you want to alias one search term to another, then you can update the file `scripts/synonyms.json` with comma-separated lists of aliases.  For example:
+If you want to alias one search term to another, then you can update the file `scripts/synonyms.json` with comma-separated lists of aliases. For example:
+
 ```
 [
      "postgresql, postgres, pg",
      "kafka, kafak, kfaka"
 ]
 ```
+
 Note the lack of a trailing comma on the final term; this file must be valid JSON.
 
 The aliases are used at index-creation time, so if this file changes then the index needs to be re-created before it will take effect.
 
 # Testing changes to search functionality
 
-It seems like Netlify uses the deployed functions rather than the ones in a branch when building a preview, so we need to take care when testing these. A good approach is to use the [Netlify CLI](https://www.netlify.com/products/cli/) locally. For example, to test the search function:
-
-1. Create an OpenSearch® service on Aiven, copy the URL and then set it as the environment `ES_URL` in your terminal
+1. Create an OpenSearch® service on Aiven, copy the URL and then set it as the environment `ES_URL` in `aws/env.local.json`
 
 2. Run `make create-index` and then `make index-helpcenter` and `make index-devportal` to populate the OpenSearch® data (you can go browse with OpenSearch® dashboards at this point if you're interested)
 
-3. From the `netlify/` directory, run `netlify dev` - this starts a server on port 8888 (but won't serve the site itself because we don't have configuration to run it locally, I think it would be possible if we needed to though)
-
-4. The search function is now available at `http://localhost:8888/.netlify/functions/search` - add `?query=kafka` or whatever your search query should be, to check that the function works and returns the results you expect. The local server will show error logs if there are any.
-
+3. Follow the workflow as noted in [here](https://github.com/aiven/devportal/tree/feature/use-aws/aws#workflow) to test further after making changes.
