@@ -192,6 +192,8 @@ entries:
           entries:
             - file: docs/tools/terraform/howto/upgrade-provider-v1-v2
               title: Upgrade the Aiven Terraform Provider from v1 to v2
+            - file: docs/tools/terraform/howto/upgrade-provider-v2-v3
+              title: Upgrade the Aiven Terraform Provider from v2 to v3
             - file: docs/tools/terraform/howto/config-postgresql-provider
               title: Use PostgreSQL provider alongside Aiven Terraform Provider 
             - file: docs/tools/terraform/howto/promote-to-master-pg-rr
