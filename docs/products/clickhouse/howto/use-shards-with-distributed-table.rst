@@ -3,7 +3,7 @@ Enable reading and writing data across shards in Aiven for ClickHouse®
 
 If your Aiven for ClickHouse® service uses multiple shards, the data is replicated only between nodes of the same shard. When you read from one node, you see the data from the shard of this node. In this article, you'll learn how to create a `distributed table <https://clickhouse.com/docs/en/engines/table-engines/special/distributed/>`_ on top of your replicated table, which will not only allow you to see data from all the shards but also help spread the data evenly across all the cluster nodes.
 
-.. dropdown:: Expand to learn more details on what you'll achieve following the steps in this article.
+.. dropdown:: Expand to learn more on what you'll achieve following the steps in this article.
 
     The expected results of following the instruction are as follows: 
 
