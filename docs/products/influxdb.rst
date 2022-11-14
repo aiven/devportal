@@ -17,20 +17,13 @@ Get started with Aiven for InfluxDB®
 
 Take your first steps with Aiven for InfluxDB® by following our :doc:`/docs/products/influxdb/get-started` article, or browse through our full list of articles:
 
+.. grid::1 2
 
-.. grid:: 1 2 2 2
+        .. grid-item-card::
+                :shadow: md
+                :margin: 2 2 0 0
 
-    .. grid-item-card::
-        :shadow: md
-        :margin: 2 2 0 0
-
-        💻 :doc:`/docs/products/grafana/howto`
-
-    .. grid-item-card::
-        :shadow: md
-        :margin: 2 2 0 0
-
-        📖 :doc:`Reference </docs/products/grafana/reference>`
+                📚 :doc:`Concepts </docs/products/influxdb/concepts>`
 
 
 Integrates with your existing Aiven tools
@@ -41,11 +34,10 @@ InfluxDB is highly compatible with other Aiven products. For instance, with Aive
 Check out all the features on our `InfluxDB product page <https://aiven.io/influxdb>`_. 
 
 
-InfluxDB resources
+InfluxDB® resources
 ---------------------
 
-* `Open source Grafana page <https://grafana.com/oss/grafana/>`_
+If you are new to InfluxDB®, try these resources to learn more:
 
-* `Grafana docs <https://grafana.com/docs/>`_
-
-* `Aiven Terraform Provider - Grafana resource docs <https://registry.terraform.io/providers/aiven/aiven/latest/docs/resources/grafana>`_ and `Grafana data source docs <https://registry.terraform.io/providers/aiven/aiven/latest/docs/data-sources/grafana>`_
+* The `main InfluxDB project page <https://influxdata.com/>`_
+* The `documentation for InfluxDB OSS <https://docs.influxdata.com/influxdb/v2.2/>`_
