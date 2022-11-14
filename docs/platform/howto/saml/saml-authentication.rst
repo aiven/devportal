@@ -84,7 +84,7 @@ After creating the application in your IdP, go back to the Authentication page i
 
 #. On the page that opens, toggle on **Enable Authentication method**. You can also enable **IdP login**, allowing your users to initiate a login directly from your IdP.
 
-#. In the **SAML config** section, click **Edit**.
+#. In the **SAML configuration** section, click **Edit**.
 
 #. Enter the **IDP URL**, **Entity Id**, and **SAML Certificate** details.
 
