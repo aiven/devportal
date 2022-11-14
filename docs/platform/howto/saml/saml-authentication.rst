@@ -111,7 +111,7 @@ When a user clicks on the link, they will be redirected to a page to link their 
 * For existing users that are not logged into the Aiven Console
 
   #. Click on the **Login** button.  
-  #. On he login page of the Aiven Console, log in as usual. You are redirected to your SAML provider's authentication page.
+  #. On the login page of the Aiven Console, log in as usual. You are redirected to your SAML provider's authentication page.
   #. Once logged in to the provider, you are redirected back to the Aiven Console. The authentication method is linked to your profile.
 
 * For new users without an Aiven user account
