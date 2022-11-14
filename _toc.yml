@@ -816,8 +816,8 @@ entries:
       - file: docs/products/influxdb/concepts
         title: Concepts
         entries:
-          - docs/products/influxdb/concepts/influxdb-retention-policy
-          - docs/products/influxdb/concepts/continuous-queries
+          - file: docs/products/influxdb/concepts/influxdb-retention-policy
+          - file: docs/products/influxdb/concepts/continuous-queries
 
   # -------- AUXILIARY
   - file: docs/community
