@@ -25,9 +25,7 @@ Install the dependencies::
 
     pip install -r requirements.txt
 
-.. note::
-
-    You might need to run ``brew install postgres@<VERSION>`` (or a similar command for your package manager) to install PostgreSQL® as a ``psycopg2`` build dependency. 
+**Note:** You might need to run ``brew install postgresql@14`` to install PostgreSQL 14 (or a similar command for your package manager) to install PostgreSQL® as a ``psycopg2`` build dependency. 
 
 Start the HTML version with::
 
