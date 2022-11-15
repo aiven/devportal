@@ -39,7 +39,6 @@ jobs:
           files: doc/
 
       - name: List files
-        if: steps.renamed-dev.outputs.old_new_renamed_files == 'true'
         run: |
           for file in ${{ steps.renamed-dev.outputs.old_new_renamed_files }}; do
             echo $file
