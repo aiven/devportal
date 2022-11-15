@@ -1,49 +1,50 @@
-name: "Test"
-"on":
-  push:
-    branches:
-      - main
-    tags:
-      - "**"
-  pull_request: null
+name: Manual Test
+
+on:
   workflow_dispatch:
 
 jobs:
-  prose:
-    runs-on: ubuntu-latest
+  test:
+    name: Test changed-files
+    runs-on: ${{ matrix.platform }}
+    strategy:
+      fail-fast: false
+      max-parallel: 7
+      matrix:
+        platform:
+          [
+            ubuntu-latest,
+            ubuntu-22.04,
+            windows-latest,
+            macos-latest,
+            macos-11,
+            ubuntu-18.04,
+            windows-2022,
+          ]
+
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
         with:
+          submodules: true
           fetch-depth: 0
 
-      - name: Get changed files
+      - name: Run changed-files with defaults
         id: changed-files
-        uses: tj-actions/changed-files@v24
+        uses: ./
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: 3.8
-
-      - name: Install dependencies
+      - name: Show output
         run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          echo '${{ toJSON(steps.changed-files.outputs) }}'
 
-      - name: List renamed files
+      - name: Show output
         run: |
-          for file in ${{ steps.changed-files.outputs.renamed_files }}; do
-            echo "$file was renamed"
-          done
-
+          echo '${{ toJSON(steps.changed-files-glob.outputs) }}'
       - name: Run changed-files with glob filtering and all_old_new_renamed_files
         id: changed-files-glob-all-old-new-renamed-files
         uses: ./
         with:
           include_all_old_new_renamed_files: true
-          files: |
-            docs/*.rst
-
       - name: Show output
         run: |
           echo '${{ toJSON(steps.changed-files-glob-all-old-new-renamed-files.outputs) }}'
