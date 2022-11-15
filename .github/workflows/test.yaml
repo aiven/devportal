@@ -2,6 +2,9 @@ name: Manual Test
 
 on:
   workflow_dispatch:
+  pull_request:
+    branches:
+      - main
 
 jobs:
   test:
@@ -29,22 +32,15 @@ jobs:
           submodules: true
           fetch-depth: 0
 
-      - name: Run changed-files with defaults
-        id: changed-files
-        uses: ./
-
-      - name: Show output
-        run: |
-          echo '${{ toJSON(steps.changed-files.outputs) }}'
-
-      - name: Show output
-        run: |
-          echo '${{ toJSON(steps.changed-files-glob.outputs) }}'
-      - name: Run changed-files with glob filtering and all_old_new_renamed_files
-        id: changed-files-glob-all-old-new-renamed-files
-        uses: ./
+      - name: Get Renamed files
+        id: renamed-dev
+        uses: tj-actions/changed-files@v20
         with:
-          include_all_old_new_renamed_files: true
-      - name: Show output
+          files: doc/
+
+      - name: List files
+        if: steps.renamed-dev.outputs.any_changed == 'true'
         run: |
-          echo '${{ toJSON(steps.changed-files-glob-all-old-new-renamed-files.outputs) }}'
+          for file in ${{ steps.renamed-dev.outputs.old_new_renamed_files }}; do
+            echo $file
+          done
