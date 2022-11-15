@@ -583,7 +583,9 @@ entries:
         title: HowTo
         entries:
           - file: docs/products/clickhouse/howto/connect-with-clickhouse-cli
-            title: Connect with CLI
+            title: Connect with ClickHouse client
+          - file: docs/products/clickhouse/howto/connect-with-python
+            title: Connect with Python
           - file: docs/products/clickhouse/howto/secure-service
             title: Secure a service
           - file: docs/products/clickhouse/howto/manage-users-roles
