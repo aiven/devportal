@@ -595,14 +595,9 @@ entries:
           - file: docs/products/clickhouse/howto/manage-databases-tables
             title: Manage databases and tables
           - file: docs/products/clickhouse/howto/materialized-views
-<<<<<<< HEAD
             title: Use materialized views
           - file: docs/products/clickhouse/howto/use-shards-with-distributed-table
             title: Read and write data across shards
-=======
-          - file: docs/products/clickhouse/howto/use-shards-with-distributed-table
-            title: Read data across shards
->>>>>>> fee0a58a (implementing Olga's comments)
           - file: docs/products/clickhouse/howto/list-integrations
             entries:
               - file: docs/products/clickhouse/howto/connect-to-grafana
