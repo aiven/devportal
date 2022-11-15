@@ -25,7 +25,7 @@ Variable                Description
 ``PASSOWRD``            ``Password`` for the ClickHouse connection available in the Aiven console: Service **Overview** > **Connection information** > **ClickHouse native**
 ``HOST``                ``Host`` for the ClickHouse connection available in the Aiven console: Service **Overview** > **Connection information** > **ClickHouse native**
 ``NATIVE_PORT``         ``Port`` for the ClickHouse connection available in the Aiven console: Service **Overview** > **Connection information** > **ClickHouse native**
-``SELECT 1``            Smaple query
+``SELECT 1``            Sample query
 ==================      =====================================================================
 
 Connect to the service
