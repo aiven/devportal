@@ -1,4 +1,4 @@
-name: "LinkCheck - Changed files"
+name: "Test"
 "on":
   push:
     branches:
@@ -38,6 +38,7 @@ jobs:
 
       - name: Run changed-files with glob filtering and all_old_new_renamed_files
         id: changed-files-glob-all-old-new-renamed-files
+        uses: ./
         with:
           include_all_old_new_renamed_files: true
           files: |
