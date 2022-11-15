@@ -37,6 +37,7 @@ entries:
       - file: docs/platform/concepts/service-level-agreement
       - file: docs/platform/concepts/maintenance-window
       - file: docs/platform/concepts/service-resources
+      - file: docs/platform/concepts/service-integration
     - file: docs/platform/howto
       title: HowTo
       entries:
@@ -74,6 +75,7 @@ entries:
             title: Search for services
           - file: docs/platform/howto/access-service-logs
           - file: docs/platform/howto/prepare-for-high-load
+          - file: docs/platform/howto/create-service-integration
       - file: docs/platform/howto/list-network
         title: Network management
         entries:

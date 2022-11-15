@@ -2,7 +2,7 @@ Service integration
 ===================
 
 Service integrations provide additional functionality and features by connecting different Aiven services together. 
-This includes metrics integration which enables Aiven users to send advanced telemetry data to an `Aiven for PostgreSQL <https://aiven.io/postgresql>`_ database for metrics and visualize it in `Aiven for Grafana® <https://aiven.io/grafana>`_.
+This includes metrics integration which enables Aiven users to send advanced telemetry data to an `Aiven for PostgreSQL® <https://aiven.io/postgresql>`_ database for metrics and visualize it in `Aiven for Grafana® <https://aiven.io/grafana>`_.
 In addition to the metrics integration, log integration is supported that allows sending logs from any Aiven service to `Aiven for OpenSearch® <https://aiven.io/opensearch>`_.
 
 
