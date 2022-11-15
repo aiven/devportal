@@ -8,16 +8,16 @@ Set up a sharded service with a database
 
 1. :doc:`Create an Aiven for ClickHouse® service </docs/platform/howto/create_new_service>` with multiple shards.
 
-    .. note::
+.. note::
 
-        Shards are created automatically when you create an Aiven for ClickHouse services. The number of shards that your service gets depends on the plan you select for your service. You can calculate the shards number as follows: *number of shards = number of nodes / 3*.
+    Shards are created automatically when you create an Aiven for ClickHouse services. The number of shards that your service gets depends on the plan you select for your service. You can calculate the shards number as follows: *number of shards = number of nodes / 3*.
 
 2. :ref:`Create database <create-a-clickhouse-database>` *test_db* in your new service.
 
 Create a distributed table
 --------------------------
 
-1. :doc:`Connect to your database </docs/products/clickhouse/howto/connect-to-ch-service>`.
+1. :doc:`Connect to your database </docs/products/clickhouse/howto/connect-with-clickhouse-cli>`.
 
 2. Create a table with the `MergeTree engine <https://clickhouse.com/docs/en/engines/table-engines/mergetree-family/mergetree/>`_ as shown for the ``cash_flows`` table in the following example:
 
@@ -38,7 +38,7 @@ Create a distributed table
         
     With Aiven for ClickHouse, you can specify ``ENGINE`` either as ``MergeTree`` or as ``ReplicationMergeTree``. Both of them create a ReplicationMergeTree table.
 
-1. Create distributed table ``cash_flows_distributed`` with the distributed engine::
+3. Create distributed table ``cash_flows_distributed`` with the distributed engine::
 
 .. code:: sql
     
