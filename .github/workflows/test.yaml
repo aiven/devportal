@@ -35,3 +35,14 @@ jobs:
           for file in ${{ steps.changed-files.outputs.renamed_files }}; do
             echo "$file was renamed"
           done
+
+      - name: Run changed-files with glob filtering and all_old_new_renamed_files
+        id: changed-files-glob-all-old-new-renamed-files
+        with:
+          include_all_old_new_renamed_files: true
+          files: |
+            docs/*.rst
+
+      - name: Show output
+        run: |
+          echo '${{ toJSON(steps.changed-files-glob-all-old-new-renamed-files.outputs) }}'
