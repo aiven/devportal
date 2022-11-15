@@ -51,7 +51,9 @@ Aiven for OpenSearch® is the open source continuation of the original Elasticse
 
    =========== ============= ==================
    **Version** **Aiven EOL** **Upstream EOL**
-   1.x         2024-??-??    2023-12-31
+   1.x         20??-??-??    20??-??-??
+   =========== ============= ==================
+   2.x         20??-??-??    20??-??-??
    =========== ============= ==================
 
 
@@ -129,6 +131,25 @@ six months after it's made available on Aiven platform.
    | 3           | 2022-07-27    | 2022-04-27       | 2018-11-08       |
    +-------------+---------------+------------------+------------------+
    | 4           | N/A           | N/A              | 2021-12-09       |
+   +-------------+---------------+------------------+------------------+
+
+Aiven for M3DB
+--------------------
+
+Starting from v1.5, Aiven for M3DB version will reach EOL six months after **newer major/minor version** is made available on Aiven platform.
+
+.. container:: intercom-interblocks-table-container
+
+   +-------------+---------------+------------------+------------------+
+   | **Version** | **Aiven EOL** | **Availability   | **Availability   |
+   |             |               | end on Aiven     | start on Aiven   |
+   |             |               | Platform**       | Platform**       |
+   +-------------+---------------+------------------+------------------+
+   | 1.1         | 2023-05-01    | 2023-02-01       | 2021-02-23       |
+   +-------------+---------------+------------------+------------------+
+   | 1.2         | 2023-05-01    | 2023-02-01       | 2021-10-11       |
+   +-------------+---------------+------------------+------------------+
+   | 1.5         | N/A           | N/A              | 2022-05-05       |
    +-------------+---------------+------------------+------------------+
 
 Aiven service EOL policy for major versions
