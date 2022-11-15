@@ -50,7 +50,8 @@ entries:
           - file: docs/platform/howto/enable-aiven-password
           - file: docs/platform/howto/user-2fa
           - file: docs/platform/howto/technical-emails
-          - file: docs/platform/howto/reactivate-suspended-project            
+          - file: docs/platform/howto/reactivate-suspended-project
+          - file: docs/platform/howto/disable-platform-authentication            
       - file: docs/platform/howto/list-service
         title: Service management
         entries:
