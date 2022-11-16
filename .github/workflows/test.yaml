@@ -34,12 +34,14 @@ jobs:
 
       - name: Check renamed files
         run: |
-          for file in ${{ steps.changed-files.outputs.renamed_files }}; do
+          for file in ${{ steps.changed-files.outputs.renamed_files }}; 
+          do
             if [ "${file: -4}" == ".rst" ]
               file = "$file" | sed -e 's/\.[^.]*$//'
               then
                 var="$var $file"
             fi
+          done
           echo $var
           if [ -z "$var" ]
           then
