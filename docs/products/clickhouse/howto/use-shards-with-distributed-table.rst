@@ -66,4 +66,4 @@ As a response to this query, you can expect to receive a number of rows from all
         EventDate, SourceAccount, TargetAccount, Amount
     ) VALUES ('2022-01-02 03:04:05', 123, 456, 100.0)
 
-When you insert data into the distributed table, Aiven for ClickHouse® decides on which node the data should be stored and write it to the correct node making sure that a similar volume of data is written on all the nodes.
+When you insert data into the distributed table, ClickHouse® decides on which node the data should be stored and write it to the correct node making sure that a similar volume of data is written on all the nodes.
