@@ -44,3 +44,9 @@ jobs:
           done
           echo "renamed files"
           echo $var
+          if [ -z "$var" ]
+          then
+                echo "No *.rst changed files renamed."
+          else
+                make renamed_files="$var" redirects-for-renamed-files
+          fi

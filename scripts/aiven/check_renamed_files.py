@@ -6,6 +6,7 @@ PS. Fix the input
 import argparse
 import os
 import sys
+import re
 
 from typing import Set
 
@@ -45,10 +46,12 @@ def checks_renamed_files(renamed: Set[str]) -> bool:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Script to find missing redirects.")
-    parser.add_argument("-n", "--files", nargs="*", default=[])
+    parser.add_argument(
+        "--renamed_files", help="delimited list input", type=str, nargs="*", default=" "
+    )
     args = parser.parse_args()
     renamed = set(
-        args.files,
+        [re.sub("\.rst$", "", item) for item in args.renamed_files.split(" ")],
     )
 
     if not renamed:

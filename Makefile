@@ -101,5 +101,4 @@ cloud-list:
 
 redirects-for-renamed-files:
 	python "$(SOURCEDIR)/scripts/aiven/check_renamed_files.py" 
-	"docs/products/laysa.rst"
-#$(renamed_files)
+	$(renamed_files)
