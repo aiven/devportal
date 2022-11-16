@@ -1,7 +1,7 @@
 Connect to the Aiven for ClickHouse® service with Python
 ========================================================
 
-To connect to your Aiven for ClickHouse® service with Python, you can use either the native protocol or the HTTPS protocol. This article provides you with instructions for both the scenarios.
+To connect to your Aiven for ClickHouse® service with Python, you can use either the native protocol or the HTTPS protocol. This article provides you with instructions for both scenarios.
 
 Connect with the native protocol
 --------------------------------
@@ -9,7 +9,7 @@ Connect with the native protocol
 Pre-requisites
 ''''''''''''''
 
-* `Python 3.6 or later <https://www.python.org/downloads/>`_
+* `Python 3.5 or later <https://www.python.org/downloads/>`_
 
 * `ClickHouse Python Driver <https://pypi.org/project/clickhouse-driver/>`_
 
@@ -25,7 +25,7 @@ Variable                Description
 ``PASSOWRD``            ``Password`` for the ClickHouse connection available in the Aiven console: Service **Overview** > **Connection information** > **ClickHouse native**
 ``HOST``                ``Host`` for the ClickHouse connection available in the Aiven console: Service **Overview** > **Connection information** > **ClickHouse native**
 ``NATIVE_PORT``         ``Port`` for the ClickHouse connection available in the Aiven console: Service **Overview** > **Connection information** > **ClickHouse native**
-``SELECT 1``            Sample query
+``query``               Query you want to run, for example ``SELECT 1``
 ==================      =====================================================================
 
 Connect to the service
@@ -45,7 +45,7 @@ Connect with HTTPS
 Pre-requisites
 ''''''''''''''
 
-* `Python 3.6 or later <https://www.python.org/downloads/>`_
+* `Python 3.7 or later <https://www.python.org/downloads/>`_
 
 * `Requests HTTP library <https://pypi.org/project/requests/>`_
 
@@ -58,7 +58,7 @@ To run the code for connecting to your service, first identify values of the fol
 Variable                        Description
 ===========================     ======================================================================================
 ``https://HOST:HTTPS_PORT``     ``Host`` and ``Port`` for the ClickHouse connection available in the Aiven console: Service **Overview** > **Connection information** > **ClickHouse HTTPS & JDBC**
-``query``                       Smaple query you want to run, for example ``SELECT 1``
+``query``                       Query you want to run, for example ``SELECT 1``
 ``X-ClickHouse-Database``       ``Database Name`` available in the Aiven console: Service **Overview** > **Connection information** > **ClickHouse HTTPS & JDBC**, for example ``system``
 ``X-ClickHouse-User``           ``User`` for the ClickHouse connection available in the Aiven console: Service **Overview** > **Connection information** > **ClickHouse HTTPS & JDBC**
 ``X-ClickHouse-Key``            ``Password`` for the ClickHouse connection available in the Aiven console: Service **Overview** > **Connection information** > **ClickHouse HTTPS & JDBC**
