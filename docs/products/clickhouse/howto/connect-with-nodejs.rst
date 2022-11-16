@@ -32,23 +32,23 @@ Use the ``createClient`` factory to initiate a client instance.
 
 In the process of initiating the client instance, you can configure the following settings:
 
-=====================   =================================================   =========================================================================================================================   ==================
-Setting                 Data type                                           Description                                                                                                                 Default value
-=====================   =================================================   =========================================================================================================================   ==================
-host                    string                                              ClickHouse instance URL                                                                                                     http://localhost:8123
-connect_timeout         number                                              Timeout to set up a connection in milliseconds                                                                              10_000
-request_timeout         number                                              Request timeout in milliseconds                                                                                             30_000
-max_open_connections    number                                              Maximum number of sockets to allow per host                                                                                 Infinity
-compression             { response?: boolean; request?: boolean }           `Enables compression <https://clickhouse.com/docs/en/integrations/language-clients/nodejs/#compression>`_                   --
-username                string                                              Name of the user on whose behalf requests are made                                                                          default
-password                string                                              User password                                                                                                               ``''``
-application             string                                              Name of the application using the Node.js client                                                                            clickhouse-js
-database                string                                              Database name to use                                                                                                        default
-clickhouse_settings     ClickHouseSettings                                  ClickHouse settings to apply to all requests                                                                                {}
-log                     { enable?: boolean, LoggerClass?: Logger }          `Configure logging <https://clickhouse.com/docs/en/integrations/language-clients/nodejs/#logging>`_                         -- 
-tls                     { ca_cert: Buffer, cert?: Buffer, key?: Buffer }    `Configure TLS certificates <https://clickhouse.com/docs/en/integrations/language-clients/nodejs/#tls-certificates>`_       --
-session_id              string                                              Optional ClickHouse Session ID to send with every request                                                                   --
-=====================   =================================================   =========================================================================================================================   ==================
+========================    =================================================   =========================================================================================================================   =========================
+Setting                     Data type                                           Description                                                                                                                 Default value
+========================    =================================================   =========================================================================================================================   =========================
+``host``                    string                                              ClickHouse instance URL                                                                                                     ``http://localhost:8123``
+``connect_timeout``         number                                              Timeout to set up a connection in milliseconds                                                                              10_000
+``request_timeout``         number                                              Request timeout in milliseconds                                                                                             30_000
+``max_open_connections``    number                                              Maximum number of sockets to allow per host                                                                                 Infinity
+``compression``             { response?: boolean; request?: boolean }           `Enables compression <https://clickhouse.com/docs/en/integrations/language-clients/nodejs/#compression>`_                   --
+``username``                string                                              Name of the user on whose behalf requests are made                                                                          default
+``password``                string                                              User password                                                                                                               ``''``
+``application``             string                                              Name of the application using the Node.js client                                                                            clickhouse-js
+``database``                string                                              Database name to use                                                                                                        default
+``clickhouse_settings``     ClickHouseSettings                                  ClickHouse settings to apply to all requests                                                                                {}
+``log``                     { enable?: boolean, LoggerClass?: Logger }          `Configure logging <https://clickhouse.com/docs/en/integrations/language-clients/nodejs/#logging>`_                         -- 
+``tls``                     { ca_cert: Buffer, cert?: Buffer, key?: Buffer }    `Configure TLS certificates <https://clickhouse.com/docs/en/integrations/language-clients/nodejs/#tls-certificates>`_       --
+``session_id``              string                                              Optional ClickHouse Session ID to send with every request                                                                   --
+========================    =================================================   =========================================================================================================================   =========================
 
 Identify connection information
 -------------------------------
