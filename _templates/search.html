@@ -92,7 +92,7 @@
     var searchResults = $("#search-results .search");
     var pagination = $("#search-results .pagination");
 
-    $.get("https://xu1qi0xzua.execute-api.eu-north-1.amazonaws.com/Prod/search?" + $.param({
+    $.get("{{ api_url_search }}" + $.param({
         query: query,
         page: page
       }))

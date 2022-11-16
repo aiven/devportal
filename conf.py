@@ -242,3 +242,8 @@ rst_epilog = """
 .. |preview| replace:: :bdg-secondary:`preview`
 
 """
+
+html_context = {
+   'api_url_search': 'https://xu1qi0xzua.execute-api.eu-north-1.amazonaws.com/Prod/search',
+   'api_url_create_feedback': 'https://xu1qi0xzua.execute-api.eu-north-1.amazonaws.com/Prod/createFeedback'
+}

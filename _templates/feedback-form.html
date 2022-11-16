@@ -146,7 +146,7 @@
       var formData = new FormData(form.get()[0]);
       formData.append("url", window.location.href);
 
-      fetch("https://xu1qi0xzua.execute-api.eu-north-1.amazonaws.com/Prod/createFeedback", {
+      fetch("{{ api_url_create_feedback }}", {
           method: "POST",
           body: JSON.stringify(Object.fromEntries(formData))
         })
