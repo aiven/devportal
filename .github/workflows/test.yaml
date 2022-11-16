@@ -37,15 +37,10 @@ jobs:
           for file in ${{ steps.changed-files.outputs.renamed_files }}; 
           do
             if [ "${file: -4}" == ".rst" ]
-              file = "$file" | sed -e 's/\.[^.]*$//'
+              file="$file" | sed -e 's/\.[^.]*$//'
               then
                 var="$var $file"
             fi
           done
+          echo "renamed files"
           echo $var
-          if [ -z "$var" ]
-          then
-                echo "No renamed files to check."
-          else
-                make renamed_files="$var" check_renamed_files
-          fi
