@@ -1,7 +1,7 @@
 Upgrade the Aiven Terraform Provider from v2 to v3
 ==================================================
 
-This article will walk you through upgrading from Aiven Terraform Provider v2 to v3
+This article will walk you through upgrading the Aiven Terraform Provider from v2 to v3.
 
 Major changes in v3
 '''''''''''''''''''
@@ -20,7 +20,7 @@ editing the providers block of your script to include the latest version of
 the Aiven Terraform Provider (v3.8.1 at the time of writing):
 
 .. code:: terraform
-
+    
     terraform {
       required_providers {
         aiven = {
@@ -29,18 +29,14 @@ the Aiven Terraform Provider (v3.8.1 at the time of writing):
         }
       }
     }
-
-
+    
+    
 Update to provider specific VPC peering connection resource syntax
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-.. Tip::
-    You can follow a similar approach to update ``aiven_database`` and ``aiven_service_user`` resources,
-    which have been deprecated in v3 of the provider.
-
 V3 of the Aiven Terraform Provider moves away from using ``aiven_vpc_peering_connection`` as a resource,
 and instead provides provider specific resources such as ``aiven_azure_vpc_peering_connection``.
-Since we probably don't want to destroy the existing resources and making new ones,
+Since we probably don't want to destroy existing resources and make new ones,
 this guide will help you perform the migration safely.
 
 .. warning::
@@ -108,3 +104,6 @@ Here's an example showing the update in action::
 
     terraform apply
 
+.. Note::
+    You can follow a similar approach to update ``aiven_database`` and ``aiven_service_user`` resources,
+    which have been deprecated in v3 of the provider.
