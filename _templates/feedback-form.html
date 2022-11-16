@@ -84,7 +84,7 @@
 </style>
 
 <div class="feedback">
-  <form id="feedback-form" name="feedback" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+  <form id="feedback-form" name="feedback" method="POST">
     <div class="title-vote-container">
       <div>
         <span class="feedback-form-title">Did you find this useful?</span>
@@ -112,6 +112,7 @@
           <a href="mailto:support@aiven.io">support@aiven.io</a> is the best way
           to reach us.)<br /><textarea class="feedback-message" name="message" rows="5"></textarea>
         </label>
+        <input type="text" id="honeypot_password" name="honeypot_password" style="display:none !important" tabindex="-1" autocomplete="off">
       </p>
       <p>
         <button type="submit">Send</button>

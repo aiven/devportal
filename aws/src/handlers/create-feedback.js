@@ -3,7 +3,7 @@ const { Client } = require("pg");
 const allowedOrigins = [
   "https://docs.aiven.io",
   "http://localhost:[0-9]*",
-  "devportal.pages.dev",
+  "https://devportal.pages.dev",
 ];
 
 const headers = {
@@ -26,23 +26,23 @@ exports.handler = async function (event) {
   try {
     const payload = JSON.parse(event.body);
 
-    await client.query(
-      `
-    INSERT INTO feedback (referrer, vote, message, created_at)
-    VALUES ($1, $2, $3, $4)
-    `,
-      [payload.url, payload.vote, payload.message, new Date()]
-    );
+    // doesn't do anything if honeypot is triggered
+    if (!payload.honeypot_password) {
+      await client.query(
+        `
+      INSERT INTO feedback (referrer, vote, message, created_at)
+      VALUES ($1, $2, $3, $4)
+      `,
+        [payload.url, payload.vote, payload.message, new Date()]
+      );
 
-    await client.end();
-
-    const origin = event.headers.Origin || event.headers.origin;
-    console.log({ event });
+      await client.end();
+    }
+    const origin = (event.headers && event.headers.origin) || "";
     let isValidOrigin = false;
     if (origin) {
-      isValidOrigin = allowedOrigins.some((item) => origin.includes(item));
+      isValidOrigin = allowedOrigins.some((item) => origin.match(item));
     }
-
     return {
       statusCode: 201,
       headers: {
