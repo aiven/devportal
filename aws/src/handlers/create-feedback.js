@@ -1,8 +1,9 @@
 const { Client } = require("pg");
 
 const allowedOrigins = [
-  "https://devportal.pages.dev",
+  "https://docs.aiven.io",
   "http://localhost:[0-9]*",
+  "devportal.pages.dev",
 ];
 
 const headers = {
@@ -39,7 +40,7 @@ exports.handler = async function (event) {
     console.log({ event });
     let isValidOrigin = false;
     if (origin) {
-      isValidOrigin = allowedOrigins.some((item) => origin.match(item));
+      isValidOrigin = allowedOrigins.some((item) => origin.includes(item));
     }
 
     return {
