@@ -2,7 +2,13 @@
 Connect to the Aiven for ClickHouse® service with Go
 ====================================================
 
-To connect to your Aiven for ClickHouse® service with Go, you can use the native protocol or the HTTP protocol in specific cases. This article provides you with instructions for both scenarios. Make sure you have `Go installed <https://go.dev/dl/>`_ before getting started.
+To connect to your Aiven for ClickHouse® service with Go, you can use the native protocol or the HTTP protocol in specific cases. This article provides you with instructions for both scenarios.
+
+Prerequisites
+-------------
+
+* `Go installed <https://go.dev/dl/>`_
+* ``TLS`` option enabled
 
 Connect with the native protocol
 --------------------------------
