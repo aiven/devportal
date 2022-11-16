@@ -46,7 +46,16 @@ jobs:
           echo $var
           if [ -z "$var" ]
           then
-                echo "No *.rst changed files renamed."
+              echo "No *.rst changed files renamed."
           else
-                make renamed_files="$var" redirects-for-renamed-files
+              echo "renamed FILES"
+              echo $var
+              redirects_missing = make renamed_files="$var" redirects-for-renamed-files
+          fi
+
+          if [ -z "$redirects_missing" ]
+          then
+                echo "Redirects added correct."
+          else
+                echo "::error::Redirectis Missing _redirects for the files "$redirects_missing" "
           fi

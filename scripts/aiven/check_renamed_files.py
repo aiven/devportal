@@ -44,7 +44,7 @@ def checks_renamed_files(renamed: Set[str]) -> bool:
     return renamed.difference(redirected)
 
 
-if __name__ == "__main__":
+def main():
     parser = argparse.ArgumentParser(description="Script to find missing redirects.")
     parser.add_argument(
         "--renamed_files", help="delimited list input", type=str, nargs="*", default=" "
@@ -60,12 +60,18 @@ if __name__ == "__main__":
         sys.exit()
 
     missing_redirects = checks_renamed_files(renamed)
-    print("Missing redirects")
-    print(missing_redirects)
-    if missing_redirects:
-        raise MissingRedirection(
-            "Missing redirections for following files: "
-            + str(missing_redirects)
-            + "\n"
-            + "Add redirects at _redirects file."
-        )
+    return missing_redirects
+
+
+if __name__ == "__main__":
+    main()
+
+    # print("Missing redirects")
+    # print(missing_redirects)
+    # if missing_redirects:
+    #    raise MissingRedirection(
+    #        "Missing redirections for following files: "
+    #        + str(missing_redirects)
+    #        + "\n"
+    #        + "Add redirects at _redirects file."
+    #    )

@@ -100,5 +100,4 @@ cloud-list:
 	python "$(SOURCEDIR)/scripts/aiven/clouds.py" "includes/clouds-list.rst"
 
 redirects-for-renamed-files:
-	python "$(SOURCEDIR)/scripts/aiven/check_renamed_files.py" 
-	$(renamed_files)
+	python "$(SOURCEDIR)/scripts/aiven/check_renamed_files.py" --renamed_files $(renamed_files)
