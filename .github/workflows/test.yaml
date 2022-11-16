@@ -40,6 +40,7 @@ jobs:
               then
                 var="$var $file"
             fi
+          echo $var
           if [ -z "$var" ]
           then
                 echo "No renamed files to check."
