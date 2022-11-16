@@ -53,11 +53,15 @@ if __name__ == "__main__":
     renamed = set(
         [re.sub("\.rst$", "", item) for item in args.renamed_files.split(" ")],
     )
+    print("RENAMED FILES")
+    print(renamed)
 
     if not renamed:
         sys.exit()
 
     missing_redirects = checks_renamed_files(renamed)
+    print("Missing redirects")
+    print(missing_redirects)
     if missing_redirects:
         raise MissingRedirection(
             "Missing redirections for following files: "
