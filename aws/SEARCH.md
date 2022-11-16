@@ -141,8 +141,38 @@ The aliases are used at index-creation time, so if this file changes then the in
 
 # Testing changes to search functionality
 
+## Preparations
+
 1. Create an OpenSearch® service on Aiven, copy the URL and then set it as the environment `ES_URL` in `aws/env.local.json`
-
 2. Run `make create-index` and then `make index-helpcenter` and `make index-devportal` to populate the OpenSearch® data (you can go browse with OpenSearch® dashboards at this point if you're interested)
+3. Follow the workflow as noted in [here](https://github.com/aiven/devportal/tree/feature/use-aws/devportal-aws#workflow) to test further after making changes.
 
-3. Follow the workflow as noted in [here](https://github.com/aiven/devportal/tree/feature/use-aws/aws#workflow) to test further after making changes.
+## Development
+
+### One time testing
+
+Following the instructions [here](link) one should have a `event.SearchFunction.local.json` after running `npm run generate-event GET SearchFunction`. It looks like this
+
+```
+{
+	  "body": "eyJ0ZXN0IjoiYm9keSJ9",
+      "resource": "/{proxy+}",
+      "path": "/path/to/resource",
+      "httpMethod": "GET",
+      "isBase64Encoded": true,
+      "queryStringParameters": {
+        "foo": "bar"
+      },
+}
+```
+
+To invoke this API with valid parameters, one should edit the `queryStringParameters` to contain a valid parameter for the API e.g `"query": "kafka"`
+
+### Continuous testing
+
+Another way for continuous testing is to have a `env.local.json` with `ES_URL` filled. Then one can run `npm run watch` and `npm run start` (in different terminals) and test it with Postman or other API testing tools.
+
+## Gotchas
+
+- I ran `npm run generate-event GET SearchFunction` and `npm run invoke SearchFunction`. Terminal gave an error saying something about `ERROR ResponseError: x_content_parse_exception`?
+  - It's likely you haven't modified the `event.SearchFunction.local.json`to give a proper parameter to the API. In the field `queryStringParameters` there, try supplying some valid parameter like `"query": "kafka"`
