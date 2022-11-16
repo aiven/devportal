@@ -37,6 +37,7 @@ jobs:
                 var="$var $file"
             fi
           done
+          echo $var
           if [ -z "$var" ]
           then
                 echo "No *.rst changed files to check."
