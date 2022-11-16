@@ -56,7 +56,7 @@ Check if the distributed table you created is available and if you can use it to
 
     SELECT count() FROM test_db.cash_flows_distributed
 
-As a response to this query, you can expect to receive a number of rows from all the shards. This is because when you connect on one node and read from the distributed table, Aiven for ClickHouse® aggregates the data from all the shards and return it all.
+As a response to this query, you can expect to receive a number of rows from all the shards. This is because when you connect on one node and read from the distributed table, ClickHouse® aggregates the data from all the shards and return it all.
 
 2. Run a write query to insert new data into the distributed table::
 
