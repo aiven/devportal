@@ -68,6 +68,8 @@ Both of those can be obtained from [AWS Security Credentials section](https://us
 Commands to use:
 
 - `npm run deploy`: This runs a guided version of `sam deploy`.
+- ![image](https://user-images.githubusercontent.com/110401626/202171402-9819f989-6260-4b93-a6e1-d2c05d1b9113.png)
+
   - Be noted that while most of the fields are straight-forward, the `CA_CERT` field [could be too long](https://github.com/aws/aws-sam-cli/issues/1845) to paste here. One workaround is to fill it with a random string, then before the final step to deploy, cancel it, go into `samconfig.toml` to replace the random string with the copied string from `npm run get-cert` above. This would be a non-issue after the first deployment since all the settings are saved so no need to do this every deployment.
   - <img width="644" alt="Screenshot 2022-11-09 at 15 54 44" src="https://user-images.githubusercontent.com/110401626/200848401-c7e2fdc4-8341-4abe-bf56-61d3c618554b.png">
   - This also is to be run every time a new environment parameter / setting is introduced in the future.
@@ -75,8 +77,12 @@ Commands to use:
   - To be used when no new environment parameter / setting is introduced
 
 After a successful deployment, it'd show the endpoint for the deployed API like below. One can replace the API URL in the corresponding HTML files for testing with the local doc site.
+![image](https://user-images.githubusercontent.com/110401626/202171273-d6344b71-473b-4e2d-8b55-d2dc6bcf7f16.png)
+
 
 **Notes**: It's possible to check out the stack in AWS in AWS Cloudstack > Stacks > <stack name> for more details.
+  ![image](https://user-images.githubusercontent.com/110401626/202171301-0dd98fc8-f627-412a-a597-cf8d283e4ebf.png)
+
 
 ## Workflow
 
