@@ -74,6 +74,10 @@ Commands to use:
 - `npm run quick-deploy`: This runs `sam deploy` with the existing `samconfig.toml`
   - To be used when no new environment parameter / setting is introduced
 
+After a successful deployment, it'd show the endpoint for the deployed API like below. One can replace the API URL in the corresponding HTML files for testing with the local doc site.
+
+**Notes**: It's possible to check out the stack in AWS in AWS Cloudstack > Stacks > <stack name> for more details.
+
 ## Workflow
 
 A simple workflow for a new function called `foo.js` to fetch some data would be:
