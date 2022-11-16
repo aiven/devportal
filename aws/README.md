@@ -52,6 +52,8 @@ During development, we may want to supply our own services e.g. OpenSearch / Pos
 With the server running, one can also test the API inside the local documentation site. This is done by changing the API URL inside their corresponding `.html` files, like `_templates/search.html` and `feedback-form.html` to match the local API URL.
 (We're currently checking how to make this less manual)
 
+From there, one can run `make livehtml` in the root folder to serve the doc site, and test the functions directly there.
+
 ## Production
 
 We use `sam` to help deploy the changes as well. Be noted that if we change the AWS Lambda stack, we also have to change the API URL where it's used e.g. in `feedback-form.html` and in `search.html`.
