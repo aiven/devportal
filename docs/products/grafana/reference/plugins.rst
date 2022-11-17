@@ -53,7 +53,7 @@ Geomap
 Getting Started 
     Included with Grafana.
 
-Graph - `Grafana Docs <https://grafana.com/docs/grafana/latest/features/panels/graph/>`__
+Graph - `Grafana Docs <https://grafana.com/docs/grafana/next/panels-visualizations/visualizations//>`__
     Included with Grafana, provides a very rich set of graphing options.
 
 Heatmap - `Grafana <https://grafana.com/grafana/plugins/heatmap/>`__ | `Grafana Docs <https://docs.grafana.org/features/panels/heatmap/>`__
