@@ -29,7 +29,9 @@ the Aiven Terraform Provider (v3.8.1 at the time of writing):
         }
       }
     }
-    
+
+.. tip::
+    You might need to run ``terraform init -upgrade`` for the provider version upgrade to take place.
     
 Update to provider specific VPC peering connection resource syntax
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
