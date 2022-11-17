@@ -133,6 +133,10 @@ const searchHandler = async (event) => {
     return {
       statusCode: 500,
       body: "",
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
     };
   }
 };

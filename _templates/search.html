@@ -92,7 +92,7 @@
     var searchResults = $("#search-results .search");
     var pagination = $("#search-results .pagination");
 
-    $.get("{{ api_url_search }}" + $.param({
+    $.get("{{ api_url_search }}?" + $.param({
         query: query,
         page: page
       }))
