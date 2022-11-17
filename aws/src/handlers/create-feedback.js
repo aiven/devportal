@@ -4,6 +4,7 @@ const allowedOrigins = [
   "https://docs.aiven.io",
   "http://localhost:[0-9]*",
   "https://devportal.pages.dev",
+  "https://[a-zA-Z0-9]*.devportal.pages.dev",
 ];
 
 const headers = {
