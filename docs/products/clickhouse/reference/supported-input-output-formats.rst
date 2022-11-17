@@ -1,10 +1,13 @@
-Supported data formats for input and output
-============================================
+Formats for ClickHouse®-Kafka® data exchange
+======================================================
+
+When connecting ClickHouse® to Kafka® using Aiven integrations, data exchange is possible with the following formats only:
 
 ============================     ====================================================================================
 Format name                      Example
 ============================     ====================================================================================
 CSV                              ``123,"Hello"``
+JSONASString                     ``{"x":123,"y":"hello"}``
 JSONCompactEachRow               ``[123,"Hello"]``
 JSONCompactStringsEachRow        ``["123","Hello"]``
 JSONEachRow                      ``{"x":123,"y":"hello"}``

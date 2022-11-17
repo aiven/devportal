@@ -7,7 +7,7 @@ Here you'll find the full list of commands for ``avn vpc``.
 Manage project's VPC
 --------------------
 
-Commands for managing project's VPCs (Virtual Private Cloud) and using them with ``avn`` commands.
+Commands for managing project's VPC (Virtual Private Cloud) and using them with ``avn`` commands.
 
 
 ``avn vpc create``
@@ -78,7 +78,7 @@ The command output is:
 ``avn vpc list``
 ''''''''''''''''
 
-Lists all the project's VPCs.
+Lists all the project's VPC.
 
 .. list-table::
   :header-rows: 1
@@ -93,7 +93,7 @@ Lists all the project's VPCs.
   * - ``--verbose``
     - Retrieve the verbose output
 
-**Example:** List all project's VPCs.
+**Example:** List all project's VPC.
 
 ::
 

@@ -41,6 +41,7 @@ Communication between virtual machines within Aiven is secured with either TLS o
 
 Virtual machines network interfaces are protected by a dynamically configured iptables-based firewall that only allows connections from specific addresses both from the internal network (other VMs in the same service) or external public network (customer client connections).  The allowed source IP addresses for establishing connections is user controlled on per-service basis. 
 
+.. _networking-with-vpc-peering:
 
 Networking with VPC peering
 ---------------------------

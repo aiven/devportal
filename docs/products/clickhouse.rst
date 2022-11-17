@@ -60,4 +60,4 @@ If you are new to ClickHouse, try these resources to get you started with the pl
 
 * Follow :doc:`a guide to add a sample dataset </docs/products/clickhouse/sample-dataset>` to your service.
 
-* Find out :doc:`how to use the web-based query editor </docs/products/clickhouse/howto/use-query-editor>`, that comes as part of the ClickHouse service.
+* Find out :doc:`how to use the web-based query editor </docs/products/clickhouse/howto/query-databases>`, that comes as part of the ClickHouse service.

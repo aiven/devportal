@@ -3,46 +3,64 @@ http://developer.aiven.io/*  https://docs.aiven.io/:splat 301!
 https://developer.aiven.io/* https://docs.aiven.io/:splat 301!
 
 # Convenience URLs
-/kafka              /docs/products/kafka/index.html
-/postgresql         /docs/products/postgresql/index.html
-/flink              /docs/products/flink/index.html
-/clickhouse         /docs/products/clickhouse/index.html
-/opensearch         /docs/products/opensearch/index.html
-/m3db               /docs/products/m3db/index.html
-/mysql              /docs/products/mysql/index.html
-/redis              /docs/products/redis/index.html
-/cassandra          /docs/products/cassandra/index.html
-/grafana            /docs/products/grafana/index.html
+/kafka              /docs/products/kafka
+/postgresql         /docs/products/postgresql
+/flink              /docs/products/flink
+/clickhouse         /docs/products/clickhouse
+/opensearch         /docs/products/opensearch
+/m3db               /docs/products/m3db
+/mysql              /docs/products/mysql
+/redis              /docs/products/redis
+/cassandra          /docs/products/cassandra
+/grafana            /docs/products/grafana
 
-/api                /docs/tools/api/index.html
+/api                /docs/tools/api
 /cli                /docs/tools/cli.html
-/terraform          /docs/tools/terraform/index.html
+/terraform          /docs/tools/terraform
 
 # Renamed/deleted files
 /docs/products/flink/howto/real-time-alerting-solution-cli.html       /docs/products/flink/howto/real-time-alerting-solution.html
+/docs/products/flink/howto/real-time-alerting-solution-cli            /docs/products/flink/howto/real-time-alerting-solution
 /docs/platform/howto/disable-user-2fa.html                            /docs/platform/howto/user-2fa.html
+/docs/platform/howto/disable-user-2fa                                 /docs/platform/howto/user-2fa
 /docs/tools/terraform/upgrade-provider-v1-v2.html                     /docs/tools/terraform/howto/upgrade-provider-v1-v2.html
+/docs/tools/terraform/upgrade-provider-v1-v2                          /docs/tools/terraform/howto/upgrade-provider-v1-v2
 /docs/products/mysql/howto/max-number-of-connections.html             /docs/products/mysql/concepts/max-number-of-connections.html
+/docs/products/mysql/howto/max-number-of-connections                  /docs/products/mysql/concepts/max-number-of-connections
 /docs/products/postgresql/reference/plan-iops.html                    /docs/products/postgresql/reference/resource-capability.html
+/docs/products/postgresql/reference/plan-iops                         /docs/products/postgresql/reference/resource-capability
 /docs/products/kafka/howto/enable-schema-registry-authorization.html  /docs/products/kafka/karapace/howto/enable-schema-registry-authorization.html
+/docs/products/kafka/howto/enable-schema-registry-authorization       /docs/products/kafka/karapace/howto/enable-schema-registry-authorization
 /docs/products/kafka/howto/manage-schema-registry-authorization.html  /docs/products/kafka/karapace/howto/manage-schema-registry-authorization.html
-/docs/platform/howto/renaming-a-service.html                            /docs/platform/howto/rename-a-service.html
-/docs/platform/howto/recovering-a-deleted-service.html                       /docs/platform/howto/recover-a-deleted-service.html
+/docs/products/kafka/howto/manage-schema-registry-authorization       /docs/products/kafka/karapace/howto/manage-schema-registry-authorization
+/docs/platform/howto/renaming-a-service.html                          /docs/platform/howto/rename-a-service.html
+/docs/platform/howto/renaming-a-service                               /docs/platform/howto/rename-a-service
+/docs/platform/howto/recovering-a-deleted-service.html                /docs/platform/howto/recover-a-deleted-service.html
+/docs/platform/howto/recovering-a-deleted-service                     /docs/platform/howto/recover-a-deleted-service
 /docs/products/opensearch/howto/upgrade-to-opensearch-with-terraform.html /docs/tools/terraform/howto/upgrade-to-opensearch.html
+/docs/products/opensearch/howto/upgrade-to-opensearch-with-terraform      /docs/tools/terraform/howto/upgrade-to-opensearch
+/docs/platform/howto/migrate-services                                 /docs/platform/howto/migrate-services-cloud-region
+/docs/products/clickhouse/howto/use-cli                                /docs/products/clickhouse/howto/connect-with-clickhouse-cli
+/docs/products/clickhouse/howto/use-cli.html                           /docs/products/clickhouse/howto/connect-with-clickhouse-cli.html
+/docs/products/clickhouse/howto/grant-privilege                        /docs/products/clickhouse/howto/manage-users-roles
+/docs/products/clickhouse/howto/grant-privilege.html                   /docs/products/clickhouse/howto/manage-users-roles.html
+/docs/products/clickhouse/howto/use-play                               /docs/products/clickhouse/howto/query-databases
+/docs/products/clickhouse/howto/use-play.html                          /docs/products/clickhouse/howto/query-databases.html
+/docs/products/clickhouse/howto/use-query-editor                       /docs/products/clickhouse/howto/query-databases
+/docs/products/clickhouse/howto/use-query-editor.html                  /docs/products/clickhouse/howto/query-databases.html
+/docs/products/clickhouse/howto/add-service-users                      /docs/products/clickhouse/howto/manage-users-roles
+/docs/products/clickhouse/howto/add-service-users.html                 /docs/products/clickhouse/howto/manage-users-roles.html
 
 # Redirect from .index.html to specific page names for landing
 
 # with one section and no subsections, i. e. docs/platform
 /docs/:section/index.html                                              /docs/:section
 /docs/:section/index                                                   /docs/:section
-/docs/:section/                                                        /docs/:section
 
 # with one subsection, i. e. docs/products/cassandra
 /docs/:section/:subsection/index.html                                  /docs/:section/:subsection
 /docs/:section/:subsection/index                                       /docs/:section/:subsection
-/docs/:section/:subsection/                                            /docs/:section/:subsection
 
 # with a subsubsection, i. e. docs/products/opensearch/dashboards
 /docs/:section/:subsection/:subsubsection/index.html                   /docs/:section/:subsection/:subsubsection
 /docs/:section/:subsection/:subsubsection/index                        /docs/:section/:subsection/:subsubsection
-/docs/:section/:subsection/:subsubsection/                             /docs/:section/:subsection/:subsubsection

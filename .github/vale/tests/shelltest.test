@@ -107,3 +107,22 @@ $ vale --output=line --sort .github/vale/tests/sentence_case_title_bad.rst
 .github/vale/tests/sentence_case_title_bad.rst:6:1:Aiven.capitalization_headings:'This is a subtitle Not in sentence case by Tony' should be in sentence case
 .github/vale/tests/sentence_case_title_bad.rst:11:1:Aiven.capitalization_headings:'Short and Bad' should be in sentence case
 >=0
+
+# ---------------------------------------------------------------
+# We always want :alt: in an image directive
+
+$ vale --output=line --sort .github/vale/tests/missing_image_alt.rst
+.github/vale/tests/missing_image_alt.rst:10:1:Aiven.missing_alt_in_image:Missing ':alt:' in '.. image:: images/image.png :width: 100% :fred: jim '
+.github/vale/tests/missing_image_alt.rst:16:1:Aiven.missing_alt_in_image:Missing ':alt:' in '.. image:: images/image.png '
+.github/vale/tests/missing_image_alt.rst:20:1:Aiven.missing_alt_in_image:Missing ':alt:' in '.. image:: images/eof.png :width: 100% '
+>=1
+
+# ---------------------------------------------------------------
+# Markdown-style links don't work in reStructuredText, so report them
+
+$ vale --output=line --sort .github/vale/tests/markdown_links.rst
+>
+.github/vale/tests/markdown_links.rst:1:28:Aiven.markdown_links:Markdown links like '[Some text](https://example.com)' won't work in reStructuredText
+.github/vale/tests/markdown_links.rst:4:29:Aiven.markdown_links:Markdown links like '[]() (what would markdown do with that?)' won't work in reStructuredText
+.github/vale/tests/markdown_links.rst:8:18:Aiven.markdown_links:Markdown links like '[text](url)' won't work in reStructuredText
+>=1

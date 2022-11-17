@@ -20,9 +20,67 @@ Let's cook!
 
 The following sample Terraform script stands up the single PostgreSQL service with some custom configurations. 
 
-.. Tip::
+Be sure to check out the :doc:`getting started guide <../../get-started>` to learn about the common files required to execute the following recipe. For example, you'll need to declare the variables for ``project_name``, ``api_token``, ``admin_username``, and ``admin_password``.
 
-  Be sure to check out the :doc:`getting started guide <../../get-started>` to learn about the common files required to execute the following recipe. For example, you'll need to declare the variables for ``project_name``, ``api_token``, ``admin_username``, and ``admin_password``.
+.. dropdown:: Expand to check out the relevant common files needed for this recipe.
+
+    Navigate to a new folder and add the following files.
+
+    1. Add the following to a new ``provider.tf`` file:
+
+    .. code:: terraform
+
+       terraform {
+         required_providers {
+           aiven = {
+             source  = "aiven/aiven"
+             version = ">= 3.7"
+           }
+         }
+       }
+   
+       provider "aiven" {
+         api_token = var.aiven_api_token
+       }
+   
+    You can also set the environment variable ``AIVEN_TOKEN`` for the ``api_token`` property. With this, you don't need to pass the ``-var-file`` flag when executing Terraform commands.
+ 
+    2. To avoid including sensitive information in source control, the variables are defined here in the ``variables.tf`` file. You can then use a ``*.tfvars`` file with the actual values so that Terraform receives the values during runtime, and exclude it.
+
+    The ``variables.tf`` file defines the API token, the project name to use, and the prefix for the service name:
+
+    .. code:: terraform
+
+       variable "aiven_api_token" {
+         description = "Aiven console API token"
+         type        = string
+       }
+   
+       variable "project_name" {
+         description = "Aiven console project name"
+         type        = string
+       }
+   
+       variable "admin_username" {
+         description = "Your preferred username for the PostgreSQL service"
+         type        = string
+       }
+
+       variable "admin_password" {
+         description = "Your preferred password for the PostgreSQL service"
+         type        = string
+       }
+
+    3. The ``var-values.tfvars`` file holds the actual values and is passed to Terraform using the ``-var-file=`` flag.
+
+    ``var-values.tfvars`` file:
+
+    .. code:: terraform
+
+       aiven_api_token     = "<YOUR-AIVEN-AUTHENTICATION-TOKEN-GOES-HERE>"
+       project_name        = "<YOUR-AIVEN-CONSOLE-PROJECT-NAME-GOES-HERE>"
+       admin_username      = "<YOUR-PREFERRED-SERVICE-USERNAME>"
+       admin_password      = "<YOUR-PREFERRED-SERVICE-PASSWORD>"
 
 ``services.tf`` file:
 
@@ -43,10 +101,10 @@ The following sample Terraform script stands up the single PostgreSQL service wi
       backup_minute             = 30
       shared_buffers_percentage = 40
   
-      ip_filter           = ["0.0.0.0/0"]
-      admin_username      = var.admin_username
-      admin_password      = var.admin_password
-      
+      ip_filter      = ["0.0.0.0/0"]
+      admin_username = var.admin_username
+      admin_password = var.admin_password
+  
       ## project_to_fork_from  = "source-project-name" 
       ## service_to_fork_from  = "source-pg-service"   
       ## pg_read_replica       = true                  
@@ -59,6 +117,26 @@ The following sample Terraform script stands up the single PostgreSQL service wi
     }
   }
   
+.. dropdown:: Expand to check out how to execute the Terraform files.
+
+    The ``init`` command performs several different initialization steps in order to prepare the current working directory for use with Terraform. In our case, this command automatically finds, downloads, and installs the necessary Aiven Terraform provider plugins.
+    
+    .. code:: shell
+
+       terraform init
+
+    The ``plan`` command creates an execution plan and shows you the resources that will be created (or modified) for you. This command does not actually create any resource; this is more like a preview.
+
+    .. code:: bash
+
+       terraform plan -var-file=var-values.tfvars
+
+    If you're satisfied with the output of ``terraform plan``, go ahead and run the ``terraform apply`` command which actually does the task or creating (or modifying) your infrastructure resources. 
+
+    .. code:: bash
+
+       terraform apply -var-file=var-values.tfvars
+
 When running a database in production, there are lots of fine tunings that need to happen. Let's go over some of these optional custom configurations used and understand when to use them. 
 
 First, you can choose the PostgreSQL version using the ``pg_version`` parameter. A default version is chosen for you if you don't specify the version.
@@ -82,6 +160,6 @@ More resources
 To learn how to get started with Aiven Terraform Provider and specific PostgreSQL configurations for you use case, check out the following resources:
 
 - `What is PostgreSQL®? <https://aiven.io/blog/an-introduction-to-postgresql>`_
-- `Configuration options for PostgreSQL <https://developer.aiven.io/docs/products/postgresql/reference/list-of-advanced-params.html>`_
+- `Configuration options for PostgreSQL <https://docs.aiven.io/docs/products/postgresql/reference/list-of-advanced-params.html>`_
 - `PostgreSQL Resource Consumption <https://www.postgresql.org/docs/current/runtime-config-resource.html>`_
-- `Set up your first Aiven Terraform project <https://developer.aiven.io/docs/tools/terraform/get-started.html>`_
+- `Set up your first Aiven Terraform project <https://docs.aiven.io/docs/tools/terraform/get-started.html>`_

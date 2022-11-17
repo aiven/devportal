@@ -70,6 +70,7 @@ Lists all the projects that you have access to.
 
   avn project list
 
+.. _avn-create-update-project:
 
 ``avn project create`` and ``avn project update``
 '''''''''''''''''''''''''''''''''''''''''''''''''
@@ -139,7 +140,7 @@ Creates a new project with ``create`` or changes the settings with ``update``.
     --project my-project
     --name my-better-named-project
 
-
+.. _avn-delete-project:
 
 ``avn project delete``
 ''''''''''''''''''''''

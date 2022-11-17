@@ -71,7 +71,7 @@ Documentation contributors
 
 We love our documentation so much that we created documentation about the documentation! If you want to learn more about the platform, or contribute some changes of your own, everything you need is in the :doc:`/docs/community/documentation` section.
 
-Mini Challenges
+Mini challenges
 ---------------
 
 Get to know Aiven through our mini challenges, each introducing you to different open source technologies. 

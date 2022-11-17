@@ -1,4 +1,12 @@
 
+``additional_backup_regions``
+-----------------------------
+*array*
+
+**Additional Cloud Regions for Backup Replication** 
+
+
+
 ``custom_domain``
 -----------------
 *['string', 'null']*
@@ -524,6 +532,14 @@
 *boolean*
 
 **Send 'X-Grafana-User' header to data source** 
+
+
+
+``dashboard_previews_enabled``
+------------------------------
+*boolean*
+
+**Enable browsing of dashboards in grid (pictures) mode** This feature is new in Grafana 9 and is quite resource intensive. It may cause low-end plans to work more slowly while the dashboard previews are rendering.
 
 
 

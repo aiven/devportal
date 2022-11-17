@@ -46,7 +46,7 @@ Connect to ClickHouse
        --port PORT                          \
        --secure
 
-For more information on using the ClickHouse client, see :doc:`this article <howto/use-cli>`.
+For more information on using the ClickHouse client, see :doc:`this article <howto/connect-with-clickhouse-cli>`.
 
 Next steps
 ----------

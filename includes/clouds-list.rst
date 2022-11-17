@@ -11,21 +11,30 @@ Amazon Web Services
   * - Africa
     - ``aws-af-south-1``
     - Africa, South Africa 
+  * - Asia-Pacific
+    - ``aws-ap-east-1``
+    - Asia, Hong Kong 
+  * - Asia-Pacific
+    - ``aws-ap-northeast-1``
+    - Asia, Japan 
+  * - Asia-Pacific
+    - ``aws-ap-northeast-2``
+    - Asia, Korea 
+  * - Asia-Pacific
+    - ``aws-ap-northeast-3``
+    - Asia, Japan 
+  * - Asia-Pacific
+    - ``aws-ap-south-1``
+    - Asia, India 
+  * - Asia-Pacific
+    - ``aws-ap-southeast-1``
+    - Asia, Singapore 
+  * - Asia-Pacific
+    - ``aws-ap-southeast-3``
+    - Asia, Jakarta 
   * - Australia
     - ``aws-ap-southeast-2``
     - Australia, New South Wales 
-  * - East Asia
-    - ``aws-ap-east-1``
-    - Asia, Hong Kong 
-  * - East Asia
-    - ``aws-ap-northeast-1``
-    - Asia, Japan 
-  * - East Asia
-    - ``aws-ap-northeast-2``
-    - Asia, Korea 
-  * - East Asia
-    - ``aws-ap-northeast-3``
-    - Asia, Japan 
   * - Europe
     - ``aws-eu-central-1``
     - Europe, Germany 
@@ -44,6 +53,9 @@ Amazon Web Services
   * - Europe
     - ``aws-eu-west-3``
     - Europe, France 
+  * - Middle East
+    - ``aws-me-central-1``
+    - Middle East, UAE 
   * - Middle East
     - ``aws-me-south-1``
     - Middle East, Bahrain 
@@ -65,15 +77,6 @@ Amazon Web Services
   * - South America
     - ``aws-sa-east-1``
     - South America, Brazil 
-  * - South Asia
-    - ``aws-ap-south-1``
-    - Asia, India 
-  * - Southeast Asia
-    - ``aws-ap-southeast-1``
-    - Asia, Singapore 
-  * - Southeast Asia
-    - ``aws-ap-southeast-3``
-    - Asia, Jakarta 
 
 Azure
 -----------------------------------------------------
@@ -86,6 +89,33 @@ Azure
   * - Africa
     - ``azure-south-africa-north``
     - Africa, South Africa 
+  * - Asia-Pacific
+    - ``azure-eastasia``
+    - Asia, Hong Kong 
+  * - Asia-Pacific
+    - ``azure-india-central``
+    - Asia, India 
+  * - Asia-Pacific
+    - ``azure-india-south``
+    - Asia, India 
+  * - Asia-Pacific
+    - ``azure-india-west``
+    - Asia, India 
+  * - Asia-Pacific
+    - ``azure-japaneast``
+    - Asia, Japan 
+  * - Asia-Pacific
+    - ``azure-japanwest``
+    - Asia, Japan 
+  * - Asia-Pacific
+    - ``azure-korea-central``
+    - Asia, Korea 
+  * - Asia-Pacific
+    - ``azure-korea-south``
+    - Asia, Korea 
+  * - Asia-Pacific
+    - ``azure-southeastasia``
+    - Asia, Singapore 
   * - Australia
     - ``azure-australia-central``
     - Australia, Canberra 
@@ -95,18 +125,6 @@ Azure
   * - Australia
     - ``azure-australiasoutheast``
     - Australia, Victoria 
-  * - East Asia
-    - ``azure-japaneast``
-    - Asia, Japan 
-  * - East Asia
-    - ``azure-japanwest``
-    - Asia, Japan 
-  * - East Asia
-    - ``azure-korea-central``
-    - Asia, Korea 
-  * - East Asia
-    - ``azure-korea-south``
-    - Asia, Korea 
   * - Europe
     - ``azure-france-central``
     - Europe, France 
@@ -173,21 +191,6 @@ Azure
   * - South America
     - ``azure-brazilsouth``
     - South America, Brazil 
-  * - South Asia
-    - ``azure-india-central``
-    - Asia, India 
-  * - South Asia
-    - ``azure-india-south``
-    - Asia, India 
-  * - South Asia
-    - ``azure-india-west``
-    - Asia, India 
-  * - Southeast Asia
-    - ``azure-eastasia``
-    - Asia, Hong Kong 
-  * - Southeast Asia
-    - ``azure-southeastasia``
-    - Asia, Singapore 
 
 DigitalOcean
 -----------------------------------------------------
@@ -197,6 +200,12 @@ DigitalOcean
   * - Region
     - Cloud
     - Description
+  * - Asia-Pacific
+    - ``do-blr``
+    - Asia, India 
+  * - Asia-Pacific
+    - ``do-sgp``
+    - Asia, Singapore 
   * - Europe
     - ``do-ams``
     - Europe, Netherlands 
@@ -215,12 +224,6 @@ DigitalOcean
   * - North America
     - ``do-tor``
     - Canada, Ontario 
-  * - South Asia
-    - ``do-blr``
-    - Asia, India 
-  * - Southeast Asia
-    - ``do-sgp``
-    - Asia, Singapore 
 
 Google Cloud
 -----------------------------------------------------
@@ -230,27 +233,39 @@ Google Cloud
   * - Region
     - Cloud
     - Description
+  * - Asia-Pacific
+    - ``google-asia-east1``
+    - Asia, Taiwan 
+  * - Asia-Pacific
+    - ``google-asia-east2``
+    - Asia, Hong Kong 
+  * - Asia-Pacific
+    - ``google-asia-northeast1``
+    - Asia, Japan 
+  * - Asia-Pacific
+    - ``google-asia-northeast2``
+    - Asia, Japan 
+  * - Asia-Pacific
+    - ``google-asia-northeast3``
+    - Asia, Korea 
+  * - Asia-Pacific
+    - ``google-asia-south1``
+    - Asia, India 
+  * - Asia-Pacific
+    - ``google-asia-south2``
+    - Asia, India 
+  * - Asia-Pacific
+    - ``google-asia-southeast1``
+    - Asia, Singapore 
+  * - Asia-Pacific
+    - ``google-asia-southeast2``
+    - Asia, Indonesia 
   * - Australia
     - ``google-australia-southeast1``
     - Australia, New South Wales 
   * - Australia
     - ``google-australia-southeast2``
     - Australia, Victoria 
-  * - East Asia
-    - ``google-asia-east1``
-    - Asia, Taiwan 
-  * - East Asia
-    - ``google-asia-east2``
-    - Asia, Hong Kong 
-  * - East Asia
-    - ``google-asia-northeast1``
-    - Asia, Japan 
-  * - East Asia
-    - ``google-asia-northeast2``
-    - Asia, Japan 
-  * - East Asia
-    - ``google-asia-northeast3``
-    - Asia, Korea 
   * - Europe
     - ``google-europe-central2``
     - Europe, Poland 
@@ -320,18 +335,6 @@ Google Cloud
   * - South America
     - ``google-southamerica-west1``
     - South America, Chile 
-  * - South Asia
-    - ``google-asia-south1``
-    - Asia, India 
-  * - South Asia
-    - ``google-asia-south2``
-    - Asia, India 
-  * - Southeast Asia
-    - ``google-asia-southeast1``
-    - Asia, Singapore 
-  * - Southeast Asia
-    - ``google-asia-southeast2``
-    - Asia, Indonesia 
 
 UpCloud
 -----------------------------------------------------
@@ -341,6 +344,9 @@ UpCloud
   * - Region
     - Cloud
     - Description
+  * - Asia-Pacific
+    - ``upcloud-sg-sin``
+    - Asia, Singapore 
   * - Australia
     - ``upcloud-au-syd``
     - Australia, New South Wales 
@@ -368,6 +374,3 @@ UpCloud
   * - North America
     - ``upcloud-us-sjo``
     - United States, California 
-  * - Southeast Asia
-    - ``upcloud-sg-sin``
-    - Asia, Singapore 

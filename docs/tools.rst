@@ -16,7 +16,7 @@ You can use the Aiven platform in the way that best fits your workflow with our 
         
         Manage your Aiven services from a convenient and friendly web-based experience.
 
-        .. button-link:: https://console.aiven.io
+        .. button-link:: tools/aiven-console
             :align: right
             :color: primary
             :outline:

@@ -12,8 +12,12 @@ exceptions:
   - Amazon Web Services
   - APIs
   - Aiven
+  - Aiven Console
   - Apache
+  - AWS Transit Gateway
   - Auth0
+  - Azure
+  - Azure Marketplace
   - Boot
   - Business
   - BYOA
@@ -21,6 +25,9 @@ exceptions:
   - ClickHouse
   - CloudWatch
   - Connect
+  - Connector
+  - Cookbook
+  - Couchbase
   - Dashboards
   - Datadog
   - Debezium
@@ -31,6 +38,7 @@ exceptions:
   - Elasticsearch
   - European Union
   - Flink
+  - GiB
   - GitHub
   - Go
   - Google BigQuery
@@ -39,6 +47,8 @@ exceptions:
   - Google Cloud Storage
   - Google Cloud SQL
   - Google Data Studio
+  - Google Pub/Sub
+  - Google Pub/Sub Lite
   - Grafana
   - Hobbyist
   - HowTo
@@ -48,6 +58,8 @@ exceptions:
   - InnoDB
   - IPsec
   - Java
+  - JMX
+  - Jolokia
   - Kafdrop
   - Kafka
   - Karapace
@@ -75,6 +87,8 @@ exceptions:
   - PostgreSQL
   - Postman
   - Premium
+  - Private Link
+  - Project
   - Prometheus
   - Provectus
   - Python
@@ -97,7 +111,9 @@ exceptions:
   - TimescaleDB
   - Transport Layer Security
   - United States
+  - UpCloud
   - Virtual Private Cloud
+  - VNet
   - Workbench
   - Zapier
   - ZooKeeper

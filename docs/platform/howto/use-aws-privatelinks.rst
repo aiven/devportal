@@ -129,6 +129,7 @@ currently support AWS PrivateLink.
          want and switch it on.
 
          .. image:: /images/platform/howto/use-aws-privatelink_image1.png
+            :alt: Aiven Console private link configuration
 
       #. | Click **Save advanced configuration** .
 

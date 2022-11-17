@@ -84,11 +84,11 @@ In the Edit page, you need to input:
 
 Detailed instructions exist for the following providers:
 
-* `Okta <https://help.aiven.io/en/articles/3438800-setting-up-saml-authentication-with-okta>`_
+* `Okta <https://docs.aiven.io/docs/platform/howto/saml/setup-saml-okta>`_
 * `G-Suite <https://help.aiven.io/en/articles/3447699-setting-up-saml-authentication-with-google-g-suite>`_
-* `Azure AD <https://help.aiven.io/en/articles/3557077-setting-up-saml-authentication-with-azure>`_
-* `Auth0 <https://help.aiven.io/en/articles/3808083-setting-up-saml-with-auth0>`_
-* `Centrify <https://help.aiven.io/en/articles/4485814-setting-up-saml-with-centrify>`_
+* `Azure AD <https://docs.aiven.io/docs/platform/howto/saml/setup-saml-azure>`_
+* `Auth0 <https://docs.aiven.io/docs/platform/howto/saml/setup-saml-auth0>`_
+* `Centrify <https://docs.aiven.io/docs/platform/howto/list-saml>`_
 
 
 If your provider isn't in the list, please contact us at

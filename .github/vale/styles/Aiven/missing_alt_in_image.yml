@@ -1,0 +1,17 @@
+extends: existence
+message: Missing ':alt:' in '%s'
+level: error
+scope: raw
+ignorecase: true
+# We look for:
+#   * `.. image:: `
+#   * zero or more of:
+#     * newline
+#     * spaces
+#     * :<text that isn't alt>:
+#     * space
+#     * any text
+#   * two newlines or a newline at end of file
+# (you do alway end your file with a newline, don't you?)
+raw:
+  - '\.\. image::.*(\n\s*:((?!alt).*): .*)*\n(\n|$)'

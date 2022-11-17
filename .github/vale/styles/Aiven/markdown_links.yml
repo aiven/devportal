@@ -1,0 +1,7 @@
+extends: existence
+message: Markdown links like '%s' won't work in reStructuredText
+level: error
+scope: raw
+ignorecase: true
+raw:
+    - '\[.*\]\(.*\)'

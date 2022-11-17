@@ -374,7 +374,7 @@ So with ``slop`` parameter adjusted, you're may be able to find results even wit
 
 .. seealso::
 
-  Read more about ``slop`` parameter on the `OpenSearch project specifications <https://opensearch.org/docs/latest/opensearch/query-dsl/full-text#other-optional-query-fields>`_.
+  Read more about ``slop`` parameter on the `OpenSearch project specifications <https://opensearch.org/docs/latest/opensearch/query-dsl/full-text#other-advanced-options>`_.
 
 
 Use a ``term`` query

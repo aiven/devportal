@@ -286,7 +286,7 @@ Calculate percentiles for `calories`:
       }
     }
 
-From the returned result you can see that 50% of recipes have less than 331 calories. Interestingly, only one percent of the meals is more than 3256 calories. You must be curious what falls within that last percentile ;) Now that we know the value to look for, we can use `a range query <https://developer.aiven.io/docs/products/opensearch/howto/opensearch-and-nodejs.html#find-fields-with-a-value-within-a-range>`_ to find the recipes. Set the minimum value, but keep the maximum empty to allow no bounds:
+From the returned result you can see that 50% of recipes have less than 331 calories. Interestingly, only one percent of the meals is more than 3256 calories. You must be curious what falls within that last percentile ;) Now that we know the value to look for, we can use `a range query <https://docs.aiven.io/docs/products/opensearch/howto/opensearch-and-nodejs.html#find-fields-with-a-value-within-a-range>`_ to find the recipes. Set the minimum value, but keep the maximum empty to allow no bounds:
 
 ::
 

@@ -11,6 +11,7 @@ entries:
       title: Concepts
       entries:
       - file: docs/platform/concepts/authentication-tokens
+      - file: docs/platform/concepts/availability-zones
       - file: docs/platform/concepts/list-billing
         title: Billing
         entries:
@@ -23,6 +24,7 @@ entries:
       - file: docs/platform/concepts/projects_accounts_access
       - file: docs/platform/concepts/service-forking
       - file: docs/platform/concepts/service_backups
+      - file: docs/platform/concepts/service-power-cycle
       - file: docs/platform/concepts/service-memory-limits
       - file: docs/platform/concepts/out-of-memory-conditions
       - file: docs/platform/concepts/static-ips
@@ -41,12 +43,14 @@ entries:
       - file: docs/platform/howto/list-user
         title: User/Access management
         entries:
+          - file: docs/platform/howto/manage-project
           - file: docs/platform/howto/change-your-email-address
           - file: docs/platform/howto/create_authentication_token
           - file: docs/platform/howto/create_new_service_user
           - file: docs/platform/howto/enable-aiven-password
           - file: docs/platform/howto/user-2fa
-          - file: docs/platform/howto/technical-emails            
+          - file: docs/platform/howto/technical-emails
+          - file: docs/platform/howto/reactivate-suspended-project            
       - file: docs/platform/howto/list-service
         title: Service management
         entries:
@@ -61,6 +65,7 @@ entries:
           - file: docs/platform/howto/add-storage-space
           - file: docs/platform/howto/tag-resources
           - file: docs/platform/howto/access-service-logs
+          - file: docs/platform/howto/prepare-for-high-load
       - file: docs/platform/howto/list-network
         title: Network management
         entries:
@@ -69,9 +74,13 @@ entries:
           - file: docs/platform/howto/public-access-in-vpc.rst
           - file: docs/platform/howto/static-ip-addresses.rst
           - file: docs/platform/howto/private-ip-resolution.rst
+          - file: docs/platform/howto/attach-vpc-aws-tgw
           - file: docs/platform/howto/manage-vpc-peering
           - file: docs/platform/howto/vpc-peering-gcp
+          - file: docs/platform/howto/vpc-peering-aws
+          - file: docs/platform/howto/vnet-peering-azure
           - file: docs/platform/howto/use-aws-privatelinks.rst
+          - file: docs/platform/howto/use-azure-privatelink
       - file: docs/platform/howto/list-monitoring
         title: Monitoring management
         entries:
@@ -91,6 +100,8 @@ entries:
             title: Set up Google Cloud Marketplace
           - file: docs/platform/howto/move-to-gcp-marketplace-billing
             title: Move to Google Cloud Marketplace
+          - file: docs/platform/howto/billing-azure-marketplace-subscription
+            title: Set up Azure Marketplace
       - file: docs/platform/howto/list-saml
         title: SAML Authentication
         entries:
@@ -102,7 +113,8 @@ entries:
           - file: docs/platform/howto/saml/setup-saml-okta
             title: Setting up SAML with Okta
           - file: docs/platform/howto/saml/setup-saml-auth0
-            title: Setting up SAML with Auth0  
+            title: Setting up SAML with Auth0
+      - file: docs/platform/howto/project-support-center  
     - file: docs/platform/reference
       title: Reference
       entries:
@@ -138,6 +150,14 @@ entries:
     - file: docs/integrations/send-logs-to-elasticsearch
   - file: docs/tools
     entries:
+      - file: docs/tools/aiven-console
+        title: Aiven Console
+        entries:
+        - file: docs/tools/aiven-console/howto
+          title: HowTo
+          entries:
+          - file: docs/tools/aiven-console/howto/create-accounts
+          - file: docs/tools/aiven-console/howto/create-manage-teams
       - file: docs/tools/cli
         entries:
         - file: docs/tools/cli/account
@@ -161,7 +181,7 @@ entries:
       - file: docs/tools/api
         title: Aiven API
         entries:
-        - glob: docs/tools/api/*
+          - file: docs/tools/api/examples
       - file: docs/tools/terraform
         title: Aiven Terraform provider
         entries:
@@ -333,6 +353,7 @@ entries:
             - file: docs/products/kafka/kafka-connect/howto/enable-automatic-restart
             - file: docs/products/kafka/kafka-connect/howto/manage-logging-level
               title: Manage Kafka Connect logging level
+            - file: docs/products/kafka/kafka-connect/howto/request-new-connector
           - file: docs/products/kafka/kafka-connect/howto/list-source-connectors
             entries:
             - file: docs/products/kafka/kafka-connect/howto/jdbc-source-connector-pg
@@ -340,16 +361,21 @@ entries:
             - file: docs/products/kafka/kafka-connect/howto/jdbc-source-connector-sql-server
             - file: docs/products/kafka/kafka-connect/howto/mongodb-poll-source-connector
             - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-pg
+            - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-pg-node-replacement
             - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-mysql
             - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-sql-server
             - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-mongodb
             - file: docs/products/kafka/kafka-connect/howto/cassandra-streamreactor-source
             - file: docs/products/kafka/kafka-connect/howto/mqtt-source-connector
+            - file: docs/products/kafka/kafka-connect/howto/gcp-pubsub-source
+            - file: docs/products/kafka/kafka-connect/howto/gcp-pubsub-lite-source
+            - file: docs/products/kafka/kafka-connect/howto/couchbase-source
           - file: docs/products/kafka/kafka-connect/howto/list-sink-connectors
             entries:
             - file: docs/products/kafka/kafka-connect/howto/jdbc-sink
             - file: docs/products/kafka/kafka-connect/howto/s3-sink-prereq
             - file: docs/products/kafka/kafka-connect/howto/s3-sink-connector-aiven
+            - file: docs/products/kafka/kafka-connect/howto/s3-iam-assume-role
             - file: docs/products/kafka/kafka-connect/howto/s3-sink-connector-confluent
             - file: docs/products/kafka/kafka-connect/howto/gcs-sink-prereq
             - file: docs/products/kafka/kafka-connect/howto/gcs-sink
@@ -362,8 +388,12 @@ entries:
             - file: docs/products/kafka/kafka-connect/howto/http-sink
             - file: docs/products/kafka/kafka-connect/howto/mongodb-sink-mongo
             - file: docs/products/kafka/kafka-connect/howto/mongodb-sink-lenses
+            - file: docs/products/kafka/kafka-connect/howto/influx-sink
             - file: docs/products/kafka/kafka-connect/howto/redis-streamreactor-sink
             - file: docs/products/kafka/kafka-connect/howto/cassandra-streamreactor-sink
+            - file: docs/products/kafka/kafka-connect/howto/couchbase-sink
+            - file: docs/products/kafka/kafka-connect/howto/gcp-pubsub-sink
+            - file: docs/products/kafka/kafka-connect/howto/gcp-pubsub-lite-sink
 
         - file: docs/products/kafka/kafka-connect/reference
           title: Reference
@@ -455,6 +485,7 @@ entries:
               - file: docs/products/postgresql/howto/optimize-pg-slow-queries
               - file: docs/products/postgresql/howto/check-avoid-transaction-id-wraparound
               - file: docs/products/postgresql/howto/prevent-full-disk
+              
           - file: docs/products/postgresql/howto/list-replication-migration
             entries:
               - file: docs/products/postgresql/howto/create-read-replica
@@ -551,18 +582,30 @@ entries:
       - file: docs/products/clickhouse/howto
         title: HowTo
         entries:
+          - file: docs/products/clickhouse/howto/connect-with-clickhouse-cli
+            title: Connect with CLI
+          - file: docs/products/clickhouse/howto/secure-service
+            title: Secure a service
+          - file: docs/products/clickhouse/howto/manage-users-roles
+            title: Manage users and roles
+          - file: docs/products/clickhouse/howto/load-dataset
+            title: Load data
+          - file: docs/products/clickhouse/howto/query-databases
+            title: Query databases
+          - file: docs/products/clickhouse/howto/manage-databases-tables
+            title: Manage databases and tables
+          - file: docs/products/clickhouse/howto/materialized-views
+            title: Use materialized views
           - file: docs/products/clickhouse/howto/list-integrations
             entries:
               - file: docs/products/clickhouse/howto/connect-to-grafana
+                title: Connect to Grafana
               - file: docs/products/clickhouse/howto/integrate-kafka
-              - file: docs/products/clickhouse/howto/integrate-pg
+                title: Connect to Apache Kafka
+              - file: docs/products/clickhouse/howto/integrate-postgresql
+                title: Connect to PostgreSQL
               - file: docs/products/clickhouse/howto/connect-with-jdbc
-          - file: docs/products/clickhouse/howto/use-cli
-          - file: docs/products/clickhouse/howto/use-query-editor
-          - file: docs/products/clickhouse/howto/use-play
-          - file: docs/products/clickhouse/howto/add-service-users
-          - file: docs/products/clickhouse/howto/grant-privilege
-
+                title: Connect to external DBs with JDBC
 
       - file: docs/products/clickhouse/reference
         title: Reference
@@ -570,7 +613,7 @@ entries:
           - file: docs/products/clickhouse/reference/supported-table-engines
             title: Supported table engines
           - file: docs/products/clickhouse/reference/supported-input-output-formats
-            title: Supported data formats for input and output
+            title: Formats for ClickHouse-Kafka data exchange
           - file: docs/products/clickhouse/reference/advanced-params
             title: Advanced parameters
 
@@ -587,6 +630,7 @@ entries:
           - file: docs/products/opensearch/concepts/backups
           - file: docs/products/opensearch/concepts/indices
           - file: docs/products/opensearch/concepts/aggregations
+          - file: docs/products/opensearch/concepts/high-availability-for-opensearch
           - file: docs/products/opensearch/concepts/opensearch-vs-elasticsearch
           - file: docs/products/opensearch/concepts/shards-number
           - file: docs/products/opensearch/concepts/when-create-index
@@ -687,7 +731,9 @@ entries:
           - file: docs/products/mysql/howto/identify-disk-usage-issues
           - file: docs/products/mysql/howto/disable-foreign-key-checks
           - file: docs/products/mysql/howto/enable-slow-queries
-          - file: docs/products/mysql/howto/migrate-database-mysqldump 
+          - file: docs/products/mysql/howto/migrate-database-mysqldump
+          - file: docs/products/mysql/howto/create-tables-without-primary-keys
+          - file: docs/products/mysql/howto/create-missing-primary-keys
       - file: docs/products/mysql/reference
         title: Reference
         entries:
@@ -749,6 +795,7 @@ entries:
               - file: docs/products/cassandra/howto/connect-go
           - file: docs/products/cassandra/howto/connect-cqlsh-cli
           - file: docs/products/cassandra/howto/use-nosqlbench-with-cassandra
+          - file: docs/products/cassandra/howto/use-dsbulk-with-cassandra
       - file: docs/products/cassandra/reference
         title: Reference
         entries:

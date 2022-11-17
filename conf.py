@@ -59,7 +59,7 @@ templates_path = ['_templates']
 exclude_patterns = [
     '_build', 'Thumbs.db', '.DS_Store', 'README*', 'scripts', 'utils',
     'CONTRIBUTING.rst', 'REVIEWING.rst', 'includes',
-    '.github/vale', '.venv',
+    '.github/vale', '.venv', 'venv',
 ]
 
 # gitstamp config
@@ -69,7 +69,7 @@ gitstamp_fmt = "%B %Y"
 html_baseurl = 'https://docs.aiven.io'
 # Since we have `language='en'` set (further down) the URLs in the sitemap will
 # default to "{version}{lang}{link}", producing things like
-#    <url><loc>https://developer.aiven.io/en/docs/platform/howto/create_authentication_token.html</loc></url>
+#    <url><loc>https://docs.aiven.io/en/docs/platform/howto/create_authentication_token.html</loc></url>
 # That doesn't work because we do not produce pages with the `/en` in the URL.
 # We need to be explicit that we don't want {version} or {language} in the URLs
 sitemap_url_scheme = "{link}"
@@ -78,8 +78,10 @@ sitemap_url_scheme = "{link}"
 # The following pages are known to cause it problems.
 linkcheck_ignore = [
     # Kafka documentation anchors do not seem to be detected. We use the following:
-   'https://kafka.apache.org/documentation/#consumerconfigs_auto.offset.reset',
+    'https://kafka.apache.org/documentation/#consumerconfigs_auto.offset.reset',
     'https://kafka.apache.org/documentation/#design_consumerposition',
+    # Azure Marketplace uses internal links which confuses the checker, so ignoring these:
+    'https://portal.azure.com/#view/Microsoft_Azure_Marketplace/MarketplaceOffersBlade/selectedMenuItemId/home',
 ]
 
 # -- Options for HTML output -------------------------------------------------

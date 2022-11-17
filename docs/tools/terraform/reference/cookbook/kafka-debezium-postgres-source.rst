@@ -1,7 +1,7 @@
 Debezium source connector - PostgreSQL® to Apache Kafka® across clouds
 ======================================================================
 
-The `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_ is a great choice for provisioning an Aiven for Apache Kafka® cluster with Kafka Connect enabled and the `Debezium source connector for PostgreSQL® <https://developer.aiven.io/docs/products/kafka/kafka-connect/howto/debezium-source-connector-pg.html>`_ configured.
+The `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_ is a great choice for provisioning an Aiven for Apache Kafka® cluster with Kafka Connect enabled and the `Debezium source connector for PostgreSQL® <https://docs.aiven.io/docs/products/kafka/kafka-connect/howto/debezium-source-connector-pg.html>`_ configured.
 
 Let's check out the following diagram to understand the setup.
 
@@ -29,23 +29,68 @@ JSON payload and produce messages to the relevant Kafka topic. Some of these ser
 
     Aiven provides the option to run Kafka Connect on the same nodes as your Kafka cluster, sharing the resources. This is a low-cost way to get started with Kafka Connect. A standalone Aiven for Apache Kafka® Connect allows you to scale independently, offers more CPU time and memory for the Kafka Connect service and reduces load on nodes, making the cluster more stable.
 
+Be sure to check out the :doc:`getting started guide <../../get-started>` to learn about the common files required to execute the following recipe.
+For example, you'll need to declare the variables for ``project`` and ``api_token``.
 
-.. Tip::
+.. dropdown:: Expand to check out the relevant common files needed for this recipe.
 
-    Be sure to check out the :doc:`getting started guide <../../get-started>` to learn about the common files required to execute the following recipe.
-    For example, you'll need to declare the variables for ``project`` and ``api_token``.
+    Navigate to a new folder and add the following files.
+
+    1. Add the following to a new ``provider.tf`` file:
+
+    .. code:: terraform
+
+       terraform {
+         required_providers {
+           aiven = {
+             source  = "aiven/aiven"
+             version = ">= 3.7"
+           }
+         }
+       }
+   
+       provider "aiven" {
+         api_token = var.aiven_api_token
+       }
+   
+    You can also set the environment variable ``AIVEN_TOKEN`` for the ``api_token`` property. With this, you don't need to pass the ``-var-file`` flag when executing Terraform commands.
+ 
+    2. To avoid including sensitive information in source control, the variables are defined here in the ``variables.tf`` file. You can then use a ``*.tfvars`` file with the actual values so that Terraform receives the values during runtime, and exclude it.
+
+    The ``variables.tf`` file defines the API token, the project name to use, and the prefix for the service name:
+
+    .. code:: terraform
+
+       variable "aiven_api_token" {
+         description = "Aiven console API token"
+         type        = string
+       }
+   
+       variable "project_name" {
+         description = "Aiven console project name"
+         type        = string
+       }
+      
+    3. The ``var-values.tfvars`` file holds the actual values and is passed to Terraform using the ``-var-file=`` flag.
+
+    ``var-values.tfvars`` file:
+
+    .. code:: terraform
+
+       aiven_api_token     = "<YOUR-AIVEN-AUTHENTICATION-TOKEN-GOES-HERE>"
+       project_name        = "<YOUR-AIVEN-CONSOLE-PROJECT-NAME-GOES-HERE>"
 
 The ``services.tf`` file for the provisioning of these three services, service integration, and related resource is this:
 
 .. code:: terraform
-
+  
   resource "aiven_pg" "demo-pg" {
     project      = var.project_name
     service_name = "demo-postgres"
     cloud_name   = "google-europe-north1"
     plan         = "business-4"
   }
-
+  
   resource "aiven_kafka" "demo-kafka" {
     project                 = var.project_name
     cloud_name              = "azure-norway-west"
@@ -57,22 +102,22 @@ The ``services.tf`` file for the provisioning of these three services, service i
       kafka_rest      = true
       kafka_connect   = false
       schema_registry = true
-      kafka_version   = "3.1"
-
+      kafka_version   = "3.2"
+  
       kafka {
         auto_create_topics_enable  = true
         num_partitions             = 3
         default_replication_factor = 2
         min_insync_replicas        = 2
       }
-
+  
       kafka_authentication_methods {
         certificate = true
       }
-
+  
     }
   }
-
+  
   resource "aiven_kafka_connect" "demo-kafka-connect" {
     project                 = var.project_name
     cloud_name              = "google-europe-north1"
@@ -81,24 +126,24 @@ The ``services.tf`` file for the provisioning of these three services, service i
     service_name            = "demo-kafka-connect"
     maintenance_window_dow  = "monday"
     maintenance_window_time = "10:00:00"
-
+  
     kafka_connect_user_config {
       kafka_connect {
         consumer_isolation_level = "read_committed"
       }
-
+  
       public_access {
         kafka_connect = true
       }
     }
   }
-
+  
   resource "aiven_service_integration" "i1" {
     project                  = var.project_name
     integration_type         = "kafka_connect"
     source_service_name      = aiven_kafka.demo-kafka.service_name
     destination_service_name = aiven_kafka_connect.demo-kafka-connect.service_name
-
+  
     kafka_connect_user_config {
       kafka_connect {
         group_id             = "connect"
@@ -107,12 +152,12 @@ The ``services.tf`` file for the provisioning of these three services, service i
       }
     }
   }
-
+  
   resource "aiven_kafka_connector" "kafka-pg-source" {
     project        = var.project_name
     service_name   = aiven_kafka_connect.demo-kafka-connect.service_name
     connector_name = "kafka-pg-source"
-
+  
     config = {
       "name"                      = "kafka-pg-source"
       "connector.class"           = "io.debezium.connector.postgresql.PostgresConnector"
@@ -135,6 +180,26 @@ The ``services.tf`` file for the provisioning of these three services, service i
     }
     depends_on = [aiven_service_integration.i1]
   }
+  
+.. dropdown:: Expand to check out how to execute the Terraform files.
+
+    The ``init`` command performs several different initialization steps in order to prepare the current working directory for use with Terraform. In our case, this command automatically finds, downloads, and installs the necessary Aiven Terraform provider plugins.
+    
+    .. code:: shell
+
+       terraform init
+
+    The ``plan`` command creates an execution plan and shows you the resources that will be created (or modified) for you. This command does not actually create any resource; this is more like a preview.
+
+    .. code:: bash
+
+       terraform plan -var-file=var-values.tfvars
+
+    If you're satisfied with the output of ``terraform plan``, go ahead and run the ``terraform apply`` command which actually does the task or creating (or modifying) your infrastructure resources. 
+
+    .. code:: bash
+
+       terraform apply -var-file=var-values.tfvars
 
 .. Warning::
 
@@ -149,13 +214,13 @@ Let's go over a few of these configurations and understand their functions:
 - ``group_id`` under ``kafka_connect_user_config`` is a unique ID that identifies the Kafka Connect cluster.
 - ``status_storage_topic`` and ``offset_storage_topic`` identify the name of the internal Kafka topics that store the connector status and the connector offsets respectively.
 - The Debezium source connector for PostgreSQL listens for all data changes on one or more tables, including schema changes. In our case, the table that is monitored for any data change is "tab1" in ``defaultdb`` database under ``public`` schema. The plugin used to capture changes is ``wal2json`` that converts WAL events (WAL stands for Write Ahead Logging) into JSON payload that is sent to the Kafka topic via the Kafka connect service. The Kafka topic that the Debezium connector creates has the name ``replicator.public.tab1``, where "replicator" is the logical database used by Debezium connector to monitor for data changes and "public" and "tab1" are the name of the PostgreSQL schema and table name respectively. 
-- The "depends_on" property establishes a dependency between the services creation in order to avoid failures.
+- The ``depends_on`` property establishes a dependency between the services creation in order to avoid failures.
 
 More resources
 --------------
 
 Keep in mind that some parameters and configurations will vary for your case. A reference to some of the advanced Apache Kafka configurations and other related resources:
 
-- `List of advanced Apache Kafka configurations <https://developer.aiven.io/docs/products/kafka/kafka-connect/reference/advanced-params.html>`_
-- `Create a Debezium source connector <https://developer.aiven.io/docs/products/kafka/kafka-connect/howto/debezium-source-connector-pg.html>`_
-- `List of available Apache Kafka® Connect connectors <https://developer.aiven.io/docs/products/kafka/kafka-connect/concepts/list-of-connector-plugins.html>`_
+- `List of advanced Apache Kafka configurations <https://docs.aiven.io/docs/products/kafka/kafka-connect/reference/advanced-params.html>`_
+- `Create a Debezium source connector <https://docs.aiven.io/docs/products/kafka/kafka-connect/howto/debezium-source-connector-pg.html>`_
+- `List of available Apache Kafka® Connect connectors <https://docs.aiven.io/docs/products/kafka/kafka-connect/concepts/list-of-connector-plugins.html>`_

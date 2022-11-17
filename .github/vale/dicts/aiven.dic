@@ -8,9 +8,12 @@ Amazon
 Apache
 API
 APIs
+ARN
 Auth0
 autovacuum
 Avro
+AZ
+AZs
 Azure
 binlog
 boolean
@@ -29,6 +32,7 @@ Coralogix
 connect
 Couchbase
 CPU
+CRD
 cyber
 datacenter
 datacenters
@@ -46,6 +50,7 @@ Docker
 dockerized
 downsampled
 downsampling
+DSBulk
 Elasticsearch
 Epicurious
 etcd
@@ -64,6 +69,7 @@ go
 Google Cloud Platform
 Gradle
 Grafana
+Grafana's
 hardcoded
 HashiCorp
 Homebrew
@@ -126,6 +132,8 @@ Pagerduty
 Pagila
 Papertrail
 parallelization
+peering
+peerings
 Percona
 performant
 pgAdmin
@@ -174,6 +182,7 @@ Stackdriver
 Statusmap
 Stunnel
 subnet
+subnets
 subprocess
 subprocesses
 subtab
@@ -192,7 +201,10 @@ uncomment
 unencrypted
 untrusted
 unaggregated
+UpCloud
 upsert
+VM
+VMs
 VPC
 VNet
 wget

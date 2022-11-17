@@ -1,4 +1,4 @@
-Rolling - Aiven challenge with Apache Kafka® and Apache Flink®
+Aiven "rolling challenge" with Apache Kafka® and Apache Flink®
 ==============================================================
 
 Welcome to Aiven's "Rolling" challenge, an easy way for you to explore Aiven for Apache Kafka® and Aiven for Apache Flink®. 
@@ -19,7 +19,7 @@ The goal is to make sense of the incoming stream of data.
 
     Check out the `video showing how to follow the instructions <https://video.aiven.io/watch/NKCxYtfMBYAJATfvRDXA5K>`_  to setup the environment and get ready for the rolling challenge.
 
-1. Create an Aiven free trial account: `sign up for free <https://console.aiven.io/signup/email?credit_code=AivenChallengeCURRENTNA22&trial_challenge=the_rolling_challenge>`_.
+1. Create an Aiven free trial account: `sign up for free <https://console.aiven.io/signup/email?credit_code=AivenChallengeBrlnStreamProcessingMeetup&trial_challenge=the_rolling_challenge>`_.
 
 2. Create an :doc:`Aiven for Apache Kafka® </docs/products/kafka/getting-started>` and :doc:`Aiven for Apache Flink® </docs/products/flink/getting-started>` service
 
@@ -89,7 +89,7 @@ The goal is to make sense of the incoming stream of data.
             ts_ltz AS TO_TIMESTAMP_LTZ(ts, 3),
             WATERMARK FOR ts_ltz AS ts_ltz - INTERVAL '10' SECOND
 
-12. If you find the solution, email us at hacks@Aiven.io and come to the booth C10 to collect your prize
+12. If you find the solution, email us at hacks@Aiven.io
 
 Tips
 ----
