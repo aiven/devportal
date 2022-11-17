@@ -595,6 +595,8 @@ entries:
             title: Connect with Node.js
           - file: docs/products/clickhouse/howto/connect-with-php
             title: Connect with PHP
+          - file: docs/products/clickhouse/howto/connect-with-java
+            title: Connect with Java
           - file: docs/products/clickhouse/howto/secure-service
             title: Secure a service
           - file: docs/products/clickhouse/howto/manage-users-roles
