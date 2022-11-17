@@ -4,7 +4,7 @@ Aiven Docs uses custom OpenSearch based search. The files related to the search 
 
 - the search results page [\_templates/search.html](_templates/search.html)
 - the search form for the sidebar [\_templates/sidebar/search.html](_templates/sidebar/search.html)
-- the Netlify function that is used by the search results page [netlify/functions/search/search.js](netlify/functions/search/search.js)
+- the AWS function that is used by the search results page [aws/src/handlers/search.js](aws/src/handlers/search.js)
 - the python script that creates the index and index mapping [scripts/create_index.py](scripts/create_index.py)
 - the python script that parses and adds the Developer Portal pages to the index [scripts/index_developer_portal_pages.py](scripts/index_developer_portal_pages.py)
 - the python script that fetches, parses and adds the Help Center pages to the index [scripts/index_help_center_pages.py](scripts/index_help_center_pages.py)
@@ -49,7 +49,7 @@ In addition to these `url` field should be provided with every document but it i
 
 ## Search function
 
-The OpenSearch® index is used through the Netlify function in [netlify/functions/search/search.js](netlify/functions/search/search.js). To call the function, make a GET request to the function URL and append your search term to the `query` parameter, like this: [https://docs.aiven.io/.netlify/functions/search?query=redis](https://docs.aiven.io/.netlify/functions/search?query=redis).
+The OpenSearch® index is used through the AWS Lambda in [aws/src/handlers/search.js](aws/src/handlers/search.js). To call the function, make a GET request to the function URL and append your search term to the `query` parameter, like this: [https://docs.aiven.io/search.html?query=redis](https://docs.aiven.io/search.html?query=redis).
 
 The query uses this overall approach:
 

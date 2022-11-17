@@ -4,7 +4,7 @@
   "description": "Aiven Documentation",
   "private": true,
   "scripts": {
-    "dev": "netlify dev"
+    
   },
   "repository": {
     "type": "git",
