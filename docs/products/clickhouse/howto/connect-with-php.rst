@@ -31,8 +31,8 @@ Variable                        Description
 ``username``                    ``User`` for the ClickHouse connection available in the Aiven console: Service **Overview** > **Connection information** > **ClickHouse HTTPS & JDBC**
 ``password``                    ``Password`` for the ClickHouse connection available in the Aiven console: Service **Overview** > **Connection information** > **ClickHouse HTTPS & JDBC**
 ``database``                    ``Database Name`` in the ClickHouse service available in the Aiven console: Service **Overview** > **Connection information** > **ClickHouse HTTPS & JDBC**
-``setTimeout``                  Supports only intiger values, measured in seconds
-``setConnectTimeout``           Supports only intiger values, measured in seconds
+``setTimeout``                  Supports only integer values, measured in seconds
+``setConnectTimeout``           Supports only integer values, measured in seconds
 ``ping``                        Set to ``true`` to enable throwing an exception if a connection cannot be established
 ===========================     =======================================================================================
 
