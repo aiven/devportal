@@ -11,8 +11,8 @@ This project contains source code and supporting files for a serverless applicat
 
 # Preparation
 
-- Install [Docker](https://www.docker.com/) and [AWS SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-sam-cli.html)
-  - **Notes**: At the moment it seems newer versions of Docker doesn't work well with AWS SAM CLI, the latest safe version was [**4.7.0**](https://docs.docker.com/desktop/release-notes/#docker-desktop-470). It's possible this changes in future releases.
+- Install [Docker](https://www.docker.com/) and [AWS SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-sam-cli.html). We need Docker running in the background for AWS SAM to work. We don't need to interact directly with it.
+  - **Notes**: At the moment it seems some new versions of Docker may not work well with AWS SAM CLI, the latest safe version was [**4.7.0**](https://docs.docker.com/desktop/release-notes/#docker-desktop-470). It's possible newer versions may not have this issue. Recommended to install the latest first, then if AWS SAM complains about no Docker found, revert to the older version.
 - Run `npm i` inside this directory
 - Create a `env.local.json` file based on the existing `env.template.json`. This file helps run the API server with appropriate parameters during development
   - For example, `ES_URL` and `PG_URL` can be obtained directly from the corresponding Aiven services (OpenSearch & PostgreSQL)
@@ -75,16 +75,15 @@ Commands to use:
   - Be noted that while most of the fields are straight-forward, the `CA_CERT` field [could be too long](https://github.com/aws/aws-sam-cli/issues/1845) to paste here. One workaround is to fill it with a random string, then before the final step to deploy, cancel it, go into `samconfig.toml` to replace the random string with the copied string from `npm run get-cert` above. This would be a non-issue after the first deployment since all the settings are saved so no need to do this every deployment.
   - <img width="644" alt="Screenshot 2022-11-09 at 15 54 44" src="https://user-images.githubusercontent.com/110401626/200848401-c7e2fdc4-8341-4abe-bf56-61d3c618554b.png">
   - This also is to be run every time a new environment parameter / setting is introduced in the future.
+
 - `npm run quick-deploy`: This runs `sam deploy` with the existing `samconfig.toml`
   - To be used when no new environment parameter / setting is introduced
 
 After a successful deployment, it'd show the endpoint for the deployed API like below. One can replace the API URL in the corresponding HTML files for testing with the local doc site.
 ![image](https://user-images.githubusercontent.com/110401626/202171273-d6344b71-473b-4e2d-8b55-d2dc6bcf7f16.png)
 
-
 **Notes**: It's possible to check out the stack in AWS in AWS Cloudstack > Stacks > <stack name> for more details.
-  ![image](https://user-images.githubusercontent.com/110401626/202171301-0dd98fc8-f627-412a-a597-cf8d283e4ebf.png)
-
+![image](https://user-images.githubusercontent.com/110401626/202171301-0dd98fc8-f627-412a-a597-cf8d283e4ebf.png)
 
 ## Workflow
 
