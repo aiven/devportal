@@ -75,6 +75,7 @@ Commands to use:
   - Be noted that while most of the fields are straight-forward, the `CA_CERT` field [could be too long](https://github.com/aws/aws-sam-cli/issues/1845) to paste here. One workaround is to fill it with a random string, then before the final step to deploy, cancel it, go into `samconfig.toml` to replace the random string with the copied string from `npm run get-cert` above. This would be a non-issue after the first deployment since all the settings are saved so no need to do this every deployment.
   - <img width="644" alt="Screenshot 2022-11-09 at 15 54 44" src="https://user-images.githubusercontent.com/110401626/200848401-c7e2fdc4-8341-4abe-bf56-61d3c618554b.png">
   - This also is to be run every time a new environment parameter / setting is introduced in the future.
+  - **Notes**: To deploy to the same stack, make sure the `samconfig.toml` at the end matches the production version (could be found in 1Password > Aiven DevPortal).
 
 - `npm run quick-deploy`: This runs `sam deploy` with the existing `samconfig.toml`
   - To be used when no new environment parameter / setting is introduced
