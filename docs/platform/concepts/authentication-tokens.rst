@@ -54,3 +54,4 @@ Rotate tokens regularly
 
 It is also good practice to rotate your authorization tokens on a regular basis, for example each month. You can have as many tokens active at one time as you need, so you can create a new token, replace it as needed, check everything works, and then remove the old token once you are confident that all changes have completed successfully.
 
+Follow :doc:`Create an authentication token <../howto/create_authentication_token>` to check how you can create an authentication token from the Aiven console or the Aiven CLI.
