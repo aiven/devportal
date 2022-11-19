@@ -1,11 +1,8 @@
 name: "Check Renamed files"
 "on":
-  push:
+  pull_request:
     branches:
       - main
-    tags:
-      - "**"
-  pull_request: null
 
 jobs:
   prose:
@@ -52,6 +49,10 @@ jobs:
               echo "renamed FILES"
               echo $var
           fi
+
+          echo "Store: ${{ github.event.inputs.myInput }}"
+          INPUT_STORE=${{ steps.changed-files.outputs.all_old_new_renamed_files }} python3 test.py
+
           echo "All:"
           echo "${{ steps.changed-files.outputs.all_old_new_renamed_files }}"
           echo "Deleted:"
