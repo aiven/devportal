@@ -40,7 +40,13 @@ jobs:
           echo $var
           if [ -z "$var" ]
           then
-                echo "No *.rst changed files to check."
+                echo "No file from docs renamed."
           else
-                make files="$var" linkcheck-specified-files
+                files = make files="$var" linkcheck-specified-files
+          fi
+          if [ -z "$files" ]
+          then
+                echo "No file from docs renamed."
+          else
+                echo "::error::Redirectis Missing _redirects for the files "$files" "
           fi
