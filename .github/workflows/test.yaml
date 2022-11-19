@@ -52,14 +52,14 @@ jobs:
               echo $var
           fi
           echo "All:"
-          echo "${{ steps.changed-files.outputs.all }}"
+          echo "{{ steps.changed-files.outputs.all }}
           echo "Added:"
-          echo "${{ steps.changed-files.outputs.added }}"
+          echo "{{ steps.changed-files.outputs.added }}
           echo "Removed:"
-          echo "${{ steps.changed-files.outputs.removed }}"
+          echo "{{ steps.changed-files.outputs.removed }}
           echo "Renamed:"
-          echo "${{ steps.changed-files.outputs.renamed }}"
+          echo "{{ steps.changed-files.outputs.renamed }}
           echo "Modified:"
-          echo "${{ steps.changed-files.outputs.modified }}"
+          echo "{{ steps.changed-files.outputs.modified }}
           echo "Added+Modified:"
-          echo "${{ steps.changed-files.outputs.added_modified }}"
+          echo "{{ steps.changed-files.outputs.added_modified }}
