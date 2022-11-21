@@ -64,7 +64,7 @@ Configure common files
        project_name        = "<YOUR-AIVEN-CONSOLE-PROJECT-NAME-GOES-HERE>"
 
 Configure the ``services.tf`` file
-''''''''''''''''''''''''''''''
+''''''''''''''''''''''''''''''''''
 
 .. code:: terraform
 
