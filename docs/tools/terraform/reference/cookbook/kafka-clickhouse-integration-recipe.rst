@@ -134,7 +134,7 @@ For this, you'd like to setup a Aiven for ClickHouse database and write the filt
 Results
 '''''''
 
-The resource ``"aiven_clickhouse"`` creates an Aiven for ClickHouse resource with the project name, choice of cloud, an Aiven service plan, and a specified service name. The ``"aiven_clickhouse_database"`` resources creates a database which can be used to write raw kafka messages and create new tables and view processing them.
+The resource ``"aiven_clickhouse"`` creates an Aiven for ClickHouse resource with the project name, choice of cloud, an Aiven service plan, and a specified service name. The ``"aiven_clickhouse_database"`` resources creates a database which can be used to write raw Kafka messages and create new tables and view processing them.
 ``"aiven_kafka"`` resource creates an Apache Kafka cluster and a Apache Kafka topic ``iot_measurements`` is created using the ``"aiven_kafka_topic"`` resource.
 Similarly, the ``"aiven_service_integration"`` resource creates the integration between Apache Kafka and the Aiven for ClickHouse service.
 
