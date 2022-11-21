@@ -286,9 +286,9 @@ SBOM reports are generated per project and can be downloaded as long as the nece
 .. _avn_project_generate_sbom:
 
 ``avn project generate-sbom``
-''''''''''''''''''''''
+'''''''''''''''''''''''''''''
 
-Downloads the SBOM report for this project, the SBOM is saved in the target file supplied by the user.
+Gets the SBOM report download link for this project, in the chosen output format (CSV or SPDX).
 
 .. list-table::
   :header-rows: 1
@@ -298,11 +298,11 @@ Downloads the SBOM report for this project, the SBOM is saved in the target file
     - Information
   * - ``--project``
     - The project to fetch details for
-  * - ``--sbom-filepath``
-    - File name, including path and extension (CSV or SPDX), to use
+  * - ``--output``
+    - Output extension (CSV or SPDX), to use
 
-**Example:** Download the SBOM report for the project "my-project", and save it in a file in the current directory called ``sbom.csv``.
+**Example:** Get the SBOM report download link for the project "my-project" in ``csv``.
 
 ::
 
-  avn project generate-sbom --project my-project --sbom-filepath sbom.csv
+  avn project generate-sbom --project my-project --output csv
