@@ -10,7 +10,7 @@ Let's cook!
 
 Imagine that you are collecting CPU usage for hundreds of machines in your data centre and these metrics are populated in an Apache Kafka topic called ``cpu_measurements``. But you're interested in learning about those machines with CPU usages higher than 85%.
 
-For this, you'd like to setup a Aiven ClickHouse database and write the filtered messages into a table called ``cpu_high_usage``. The following Terraform script initializes up both Apache Kafka and Aiven ClickHouse services, creates the service integration, the source Apache Kafka topic and an Aiven ClickHouse database.
+For this, you'd like to setup a Aiven for ClickHouse database and write the filtered messages into a table called ``cpu_high_usage``. The following Terraform script initializes up both Apache Kafka and Aiven for ClickHouse services, creates the service integration, the source Apache Kafka topic and an Aiven for ClickHouse database.
 
 .. dropdown:: Expand to check out the relevant common files needed for this recipe.
 
@@ -134,14 +134,14 @@ For this, you'd like to setup a Aiven ClickHouse database and write the filtered
 Results
 '''''''
 
-The resource ``"aiven_clickhouse"`` creates an Aiven ClickHouse resource with the project name, choice of cloud, an Aiven service plan, and a specified service name. The ``"aiven_clickhouse_database"`` resources creates a database which can be used to write raw kafka messages and create new tables and view processing them.
+The resource ``"aiven_clickhouse"`` creates an Aiven for ClickHouse resource with the project name, choice of cloud, an Aiven service plan, and a specified service name. The ``"aiven_clickhouse_database"`` resources creates a database which can be used to write raw kafka messages and create new tables and view processing them.
 ``"aiven_kafka"`` resource creates an Apache Kafka cluster and a Apache Kafka topic ``iot_measurements`` is created using the ``"aiven_kafka_topic"`` resource.
-Similarly, the ``"aiven_service_integration"`` resource creates the integration between Apache Kafka and the Aiven ClickHouse service.
+Similarly, the ``"aiven_service_integration"`` resource creates the integration between Apache Kafka and the Aiven for ClickHouse service.
 
 More resources
 --------------
 
-The parameters and configurations will vary for your case. Please refer below for Apache Kafka and Aiven ClickHouse advanced parameters, a related blog, and how to get started with Aiven Terraform Provider:
+The parameters and configurations will vary for your case. Please refer below for Apache Kafka and Aiven for ClickHouse advanced parameters, a related blog, and how to get started with Aiven Terraform Provider:
 
 - `Set up your first Aiven Terraform project <https://docs.aiven.io/docs/tools/terraform/get-started.html>`_
 
