@@ -40,7 +40,7 @@ The following example demonstrates how to setup an Splunk sink connector for Apa
 Define a Kafka Connect configuration file
 '''''''''''''''''''''''''''''''''''''''''
 
-Define the connector configurations in a file (we'll refer to it with the name ``splunk_sink.json``) with the following content:
+Create a file (we'll refer to this one as ``splunk_sink.json``) to hold the connector configuration. As an example, here's some configuration for sending JSON payloads to Splunk:
 
 .. code-block:: json
 
@@ -50,7 +50,12 @@ Define the connector configurations in a file (we'll refer to it with the name `
         "splunk.hec.token": "SPLUNK_HEC_TOKEN",
         "splunk.hec.uri": "SPLUNK_HEC_URI",
         "splunk.indexes": "SPLUNK_INDEXES",
-        "topics": "TOPIC_LIST"
+        "topics": "TOPIC_LIST",
+        "splunk.hec.raw" : false,
+        "splunk.hec.ack.enabled" : false,
+        "splunk.hec.ssl.validate.certs": "false",
+        "config.splunk.hec.json.event.formatted": false,
+        "tasks.max":1
     }
 
 The configuration file contains the following entries:
