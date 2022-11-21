@@ -46,7 +46,7 @@ To connect to the server, use the connection details that you can find in the *C
 .. code:: bash
 
     docker run --interactive            \
-    --rm clickhouse/clickhouse-client   \
+    --rm clickhouse/clickhouse-server clickhouse-client   \
     --user USERNAME                     \
     --password PASSWORD                 \
     --host HOST                         \
@@ -83,7 +83,7 @@ Now that you have a dataset with two empty tables, we'll load data into each of 
 
         cat hits_v1.tsv | docker run        \
         --interactive                       \
-        --rm clickhouse/clickhouse-client   \
+        --rm clickhouse/clickhouse-server clickhouse-client  \
         --user USERNAME                     \
         --password PASSWORD                 \
         --host HOST                         \
@@ -98,7 +98,7 @@ Now that you have a dataset with two empty tables, we'll load data into each of 
 
         cat visits_v1.tsv | docker run      \
         --interactive                       \
-        --rm clickhouse/clickhouse-client   \
+        --rm clickhouse/clickhouse-server clickhouse-client   \
         --user USERNAME                     \
         --password PASSWORD                 \
         --host HOST                         \

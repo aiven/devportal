@@ -6,7 +6,7 @@ It's recommended to connect to a ClickHouse® cluster with the ClickHouse® clie
 Use the ClickHouse® client
 --------------------------
 
-To use the ClickHouse® client across different operating systems, we recommend utilizing `Docker <https://www.docker.com/>`_. You can get the latest image of the ClickHouse client directly from `the dedicated page in Docker hub <https://hub.docker.com/r/clickhouse/clickhouse-client>`_.
+To use the ClickHouse® client across different operating systems, we recommend utilizing `Docker <https://www.docker.com/>`_. You can get the latest image of the ClickHouse Server which contains the most recent ClickHouse Client directly from `the dedicated page in Docker hub <https://hub.docker.com/r/clickhouse/clickhouse-server>`_.
 
 .. note::
 
@@ -25,7 +25,7 @@ The command to connect to the service looks like this, substitute the placeholde
 .. code:: bash
 
     docker run -it \
-    --rm clickhouse/clickhouse-client \
+    --rm clickhouse/clickhouse-server clickhouse-client \
     --user USERNAME \
     --password PASSWORD \
     --host HOST \
@@ -48,7 +48,7 @@ Alternatively, sometimes you might want to run individual queries and be able to
 .. code:: bash
 
     docker run --interactive            \
-    --rm clickhouse/clickhouse-client   \
+    --rm clickhouse/clickhouse-server clickhouse-client \
     --user USERNAME                     \
     --password PASSWORD                 \
     --host HOST                         \
@@ -59,7 +59,7 @@ Alternatively, sometimes you might want to run individual queries and be able to
 Similar to above example, you can request the list of present databases directly::
 
     docker run --interactive            \
-    --rm clickhouse/clickhouse-client   \
+    --rm clickhouse/clickhouse-server clickhouse-client \
     --user USERNAME                     \
     --password PASSWORD                 \
     --host HOST                         \
