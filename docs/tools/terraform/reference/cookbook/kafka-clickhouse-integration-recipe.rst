@@ -59,12 +59,12 @@ Configure common files
     .. code:: terraform
 
        aiven_api_token     = "<YOUR-AIVEN-AUTHENTICATION-TOKEN-GOES-HERE>"
-       project_name        = "<YOUR-AIVEN-CONSOLE-PROJECT-NAME-GOES-HERE>" 
+       project_name        = "<YOUR-AIVEN-CONSOLE-PROJECT-NAME-GOES-HERE>"
 
 Configure the ``services.tf`` file
 ''''''''''''''''''''''''''''''''''
 
-The following Terraform script initializes both Apache Kafka and Aiven for ClickHouse services, creates the service integration, the source Apache Kafka topic and the Aiven ClickHouse database.
+The following Terraform script initializes both Apache Kafka and Aiven for ClickHouse services, creates the service integration, the source Apache Kafka topic and the Aiven for ClickHouse database.
 
 .. code:: terraform
 
@@ -133,14 +133,14 @@ Execute the Terraform files
 Check out the results
 ---------------------
 
-The resource ``"aiven_clickhouse"`` creates an Aiven ClickHouse resource with the project name, choice of cloud, an Aiven service plan, and a specified service name. The ``"aiven_clickhouse_database"`` resources creates a database which can be used to write raw kafka messages and create new tables and view processing them.
+The resource ``"aiven_clickhouse"`` creates an Aiven for ClickHouse resource with the project name, choice of cloud, an Aiven service plan, and a specified service name. The ``"aiven_clickhouse_database"`` resources creates a database which can be used to write raw Kafka messages and create new tables and view processing them.
 ``"aiven_kafka"`` resource creates an Apache Kafka cluster and a Apache Kafka topic ``iot_measurements`` is created using the ``"aiven_kafka_topic"`` resource.
-Similarly, the ``"aiven_service_integration"`` resource creates the integration between Apache Kafka and the Aiven ClickHouse service.
+Similarly, the ``"aiven_service_integration"`` resource creates the integration between Apache Kafka and the Aiven for ClickHouse service.
 
 Learn more
 ----------
 
-When you use this recipe, parameters and configurations will vary from those used in this article. For Apache Kafka and Aiven ClickHouse advanced parameters, a related blog, and instructions on how to get started with Aiven Terraform Provider, see `Set up your first Aiven Terraform project <https://docs.aiven.io/docs/tools/terraform/get-started.html>`_.
+When you use this recipe, parameters and configurations will vary from those used in this article. For Apache Kafka and Aiven for ClickHouse advanced parameters, a related blog, and instructions on how to get started with Aiven Terraform Provider, see `Set up your first Aiven Terraform project <https://docs.aiven.io/docs/tools/terraform/get-started.html>`_.
 
 Follow up
 ---------
