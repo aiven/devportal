@@ -17,17 +17,19 @@ Prerequisites
 Let's cook!
 -----------
 
-Imagine that you are collecting IoT measurements from thousands of sensors and these metrics are populated in an Apache Kafka® topic called ``iot_measurements``.
+Imagine that you are collecting IoT measurements from thousands of sensors and these metrics are populated in Apache Kafka® topic ``iot_measurements``.
 
 You may wish to create an Aiven for ClickHouse® service along with a database containing IoT sensor measurements and
-correct permissions for two roles: a writer role that will be allowed to insert data, and an analyst role that will
-be allowed to query data.
+correct permissions for two roles: the writer role (allowed to insert data) and the analyst role (allowed to query data).
+
+Configure common files
+''''''''''''''''''''''
 
 .. dropdown:: Expand to check out the relevant common files needed for this recipe.
 
-    Navigate to a new folder and add the following files.
+    Navigate to a new folder and add the following files:
 
-    1. Add the following to a new ``provider.tf`` file:
+    1. ``provider.tf`` file
 
     .. code:: terraform
 
@@ -44,11 +46,13 @@ be allowed to query data.
 	 api_token = var.aiven_api_token
        }
 
-    You can also set the environment variable ``AIVEN_TOKEN`` for the ``api_token`` property. With this, you don't need to pass the ``-var-file`` flag when executing Terraform commands.
+    .. tip::
+    
+      You can set environment variable ``AIVEN_TOKEN`` for the ``api_token`` property so that you don't need to pass the ``-var-file`` flag when executing Terraform commands.
 
-    2. To avoid including sensitive information in source control, the variables are defined here in the ``variables.tf`` file. You can then use a ``*.tfvars`` file with the actual values so that Terraform receives the values during runtime, and exclude it.
+    2. ``variables.tf`` file
 
-    The ``variables.tf`` file defines the API token, the project name to use, and the prefix for the service name:
+      Use it for defining the variables to avoid including sensitive information in source control. The ``variables.tf`` file defines the API token, the project name to use, and the prefix for the service name:
 
     .. code:: terraform
 
@@ -62,19 +66,19 @@ be allowed to query data.
 	 type        = string
        }
 
-    3. The ``var-values.tfvars`` file holds the actual values and is passed to Terraform using the ``-var-file=`` flag.
+    3. ``*.tfvars`` file
 
-    ``var-values.tfvars`` file:
+      Use it to indicate the actual values of variables so that they can be passed (with the ``-var-file=`` flag) to Terraform during runtime and excluded later on. Configure the ``var-values.tfvars`` file as follows:
 
     .. code:: terraform
 
        aiven_api_token     = "<YOUR-AIVEN-AUTHENTICATION-TOKEN-GOES-HERE>"
        project_name        = "<YOUR-AIVEN-CONSOLE-PROJECT-NAME-GOES-HERE>"
 
-Setup service and database
---------------------------
+Set up service and database
+'''''''''''''''''''''''''''
 
-``services.tf`` file:
+Configure the ``services.tf`` file as follows:
 
 .. code:: terraform
 
@@ -93,8 +97,10 @@ Setup service and database
     name                    = "iot_measurements"
   }
 
-The ``"aiven_clickhouse"`` resource creates an Aiven for ClickHouse service with the project name, choice of cloud, an
-Aiven service plan, and a specified service name. The ``"aiven_clickhouse_database"`` resource creates the measurements database.
+.. topic:: Expected result
+
+  * ``"aiven_clickhouse"`` resource creates an Aiven for ClickHouse service with the project name, choice of a cloud provider, an Aiven service plan, and a specified service name.
+  * ``"aiven_clickhouse_database"`` resource creates the measurements database.
 
 Grant user's permissions
 ------------------------
@@ -102,7 +108,7 @@ Grant user's permissions
 Administrator role - read & write access
 ''''''''''''''''''''''''''''''''''''''''
 
-``access-writer.tf`` file:
+Configure the ``access-writer.tf`` file as follows:
 
 .. code-block:: terraform
 
@@ -150,16 +156,18 @@ Administrator role - read & write access
     }
   }
 
-The ``"aiven_clickhouse_user"`` resource creates a user that can connect to the cluster. The
-``"aiven_clickhouse_role"`` resources creates a role can be granted fine-grained privileged at the table level. The
-``"aiven_clickhouse_grant"."writer_role"`` resource specifies the privileges and the scope of their application
-using the ``privilege_grant`` nested configuration. Finally, the ``"aiven_clickhouse_grant"."etl_user"`` assigns
-the ``writer`` role to the ``etl`` user.
+.. topic:: Expected result
+
+  * ``"aiven_clickhouse_user"`` resource creates a user that can connect to the cluster.
+  * ``"aiven_clickhouse_role"`` resources creates a role that can be granted fine-grained privileges at the table level.
+  * ``"aiven_clickhouse_grant"."writer_role"`` resource specifies the privileges and the scope of their application
+  using the ``privilege_grant`` nested configuration.
+  * ``"aiven_clickhouse_grant"."etl_user"`` assigns the ``writer`` role to the ``etl`` user.
 
 Analyst role - read access
 ''''''''''''''''''''''''''
 
-``access-analyst.tf`` file:
+Configure the ``access-analyst.tf`` file as follows:
 
 .. code-block:: terraform
 
@@ -201,22 +209,37 @@ Analyst role - read access
     }
   }
 
+Execute the Terraform files
+'''''''''''''''''''''''''''
+
 .. dropdown:: Expand to check out how to execute the Terraform files.
 
-    The ``init`` command performs several different initialization steps in order to prepare the current working directory for use with Terraform. In our case, this command automatically finds, downloads, and installs the necessary Aiven Terraform provider plugins.
+  1. Run the following command:
 
     .. code:: shell
 
        terraform init
 
-    The ``plan`` command creates an execution plan and shows you the resources that will be created (or modified) for you. This command does not actually create any resource; this is more like a preview.
+    .. topic:: Expected result
+
+      The ``init`` command performs several different initialization operations to prepare the current working directory for use with Terraform. For this recipe, ``init`` automatically finds, downloads, and installs the necessary Aiven Terraform Provider plugins.
+
+  2. Run the following command:
 
     .. code:: bash
 
        terraform plan -var-file=var-values.tfvars
 
-    If you're satisfied with the output of ``terraform plan``, go ahead and run the ``terraform apply`` command which actually does the task or creating (or modifying) your infrastructure resources.
+    .. topic:: Expected result
+
+      The ``plan`` command creates an execution plan and shows the resources that will be created (or modified). This command doesn't actually create any resource but gives you a heads-up on what's going to happen.
+
+  3. If the output of ``terraform plan`` looks as expected, run the following command:
 
     .. code:: bash
 
        terraform apply -var-file=var-values.tfvars
+
+    .. topic:: Expected result
+
+      The ``terraform apply`` command creates (or modifies) your infrastructure resources.
