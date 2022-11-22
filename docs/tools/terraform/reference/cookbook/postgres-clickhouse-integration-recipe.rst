@@ -1,21 +1,23 @@
-PostgreSQL as source for Aiven for ClickHouse®
-==============================================
+PostgreSQL® as source for Aiven for ClickHouse®
+===============================================
 
-This article shows by way of example how to integrate PostgreSQL® with Aiven for ClickHouse® using the `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_.
+This article shows by way of example how to integrate PostgreSQL® with Aiven for ClickHouse® using `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_.
 
-An PostgreSQL database is used as a data source and Aiven for ClickHouse can be used to read, transform, and execute joins using data from the PostgreSQL server.
+A PostgreSQL database is used as a data source and Aiven for ClickHouse can be used to read, transform, and execute jobs using data from the PostgreSQL server.
 
 Let's cook!
 -----------
 
-Imagine that you are collecting IoT measurements from thousands of sensors and these metrics are stored in a ClickHouse table called ``iot_measurements``.
+Imagine that you are collecting IoT measurements from thousands of sensors and these metrics are stored in ClickHouse table ``iot_measurements``.
 
-You may want to enrich the measurements using the sensor's location found in a ``sensors_dim`` table in PostgreSQL and filter by some city names.
+You may want to enrich the measurements using the sensor's location found in the ``sensors_dim`` table in PostgreSQL and filter by city names.
 
-For this, you'd like to setup a Aiven for ClickHouse database and insert your measurements data. Then, you'd like to
-join it with the related PostgreSQL dimension tables. The following Terraform script initializes up both PostgreSQL
-and Aiven for ClickHouse services, creates the service integration, the source PostgreSQL table and an Aiven for ClickHouse
-database.
+For this, you'd like to set up an Aiven for ClickHouse database and insert your measurements data. Then, you'd like to
+join it with the related PostgreSQL dimension tables. The following Terraform script initializes both PostgreSQL
+and Aiven for ClickHouse services, creates the service integration, the source PostgreSQL table and the Aiven for ClickHouse database.
+
+Configure common files
+''''''''''''''''''''''
 
 .. dropdown:: Expand to check out the relevant common files needed for this recipe.
 
@@ -65,7 +67,8 @@ database.
        aiven_api_token     = "<YOUR-AIVEN-AUTHENTICATION-TOKEN-GOES-HERE>"
        project_name        = "<YOUR-AIVEN-CONSOLE-PROJECT-NAME-GOES-HERE>"
 
-``services.tf`` file:
+Configure the ``services.tf`` file
+''''''''''''''''''''''''''''''''''
 
 .. code-block:: terraform
 
@@ -112,6 +115,8 @@ database.
     destination_service_name = aiven_clickhouse.clickhouse.service_name
   }
 
+Execute the Terraform files
+'''''''''''''''''''''''''''
 
 .. dropdown:: Expand to check out how to execute the Terraform files.
 
@@ -133,13 +138,19 @@ database.
 
        terraform apply -var-file=var-values.tfvars
 
-The resource ``"aiven_clickhouse"`` creates an Aiven for ClickHouse resource with the project name, choice of cloud, an Aiven service plan, and a specified service name. The ``"aiven_clickhouse_database"`` resources creates a database which can be used to write high-thoughput measurement data, create new tables and views to process them.
+Check out the results
+---------------------
+
+The resource ``"aiven_clickhouse"`` creates an Aiven for ClickHouse resource with the project name, choice of a cloud provider, an Aiven service plan, and a specified service name. The ``"aiven_clickhouse_database"`` resources creates a database which can be used to write high-thoughput measurement data, create new tables and views to process them.
 The ``"aiven_pg"`` resource creates an PostgreSQL service and a database ``sensors`` is created using the ``"aiven_pg_database"`` resource.
 The ``"aiven_service_integration"`` resource creates the integration between PostgreSQL and the Aiven for ClickHouse service.
 
-More resources
---------------
+Learn more
+----------
 
 The parameters and configurations will vary for your case. Please refer below for PostgreSQL and Aiven for ClickHouse advanced parameters, a related blog, and how to get started with Aiven Terraform Provider:
 
 - `Set up your first Aiven Terraform project <https://docs.aiven.io/docs/tools/terraform/get-started.html>`_
+
+Follow up
+---------
