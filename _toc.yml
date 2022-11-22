@@ -1,5 +1,5 @@
 root: index
-options:
+defaults:
   maxdepth: 1
 
 entries:
