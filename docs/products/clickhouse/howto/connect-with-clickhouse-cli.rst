@@ -6,7 +6,7 @@ It's recommended to connect to a ClickHouse® cluster with the ClickHouse® clie
 Use the ClickHouse® client
 --------------------------
 
-To use the ClickHouse® client across different operating systems, we recommend utilizing `Docker <https://www.docker.com/>`_. You can get the latest image of the ClickHouse Server which contains the most recent ClickHouse Client directly from `the dedicated page in Docker hub <https://hub.docker.com/r/clickhouse/clickhouse-server>`_.
+To use the ClickHouse® client across different operating systems, we recommend utilizing `Docker <https://www.docker.com/>`_. You can get the latest image of the ClickHouse server which contains the most recent ClickHouse client directly from `the dedicated page in Docker hub <https://hub.docker.com/r/clickhouse/clickhouse-server>`_.
 
 .. note::
 
