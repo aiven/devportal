@@ -27,9 +27,9 @@ Configure common files
 
 .. dropdown:: Expand to check out the relevant common files needed for this recipe.
 
-    Navigate to a new folder and add the following files:
+  Navigate to a new folder and add the following files:
 
-    1. ``provider.tf`` file
+  1. ``provider.tf`` file
 
     .. code:: terraform
 
@@ -46,13 +46,13 @@ Configure common files
 	 api_token = var.aiven_api_token
        }
 
-    .. tip::
+  .. tip::
     
-      You can set environment variable ``AIVEN_TOKEN`` for the ``api_token`` property so that you don't need to pass the ``-var-file`` flag when executing Terraform commands.
+    You can set environment variable ``AIVEN_TOKEN`` for the ``api_token`` property so that you don't need to pass the ``-var-file`` flag when executing Terraform commands.
 
-    2. ``variables.tf`` file
+  2. ``variables.tf`` file
 
-      Use it for defining the variables to avoid including sensitive information in source control. The ``variables.tf`` file defines the API token, the project name to use, and the prefix for the service name:
+  Use it for defining the variables to avoid including sensitive information in source control. The ``variables.tf`` file defines the API token, the project name to use, and the prefix for the service name:
 
     .. code:: terraform
 
@@ -66,9 +66,9 @@ Configure common files
 	 type        = string
        }
 
-    3. ``*.tfvars`` file
+  3. ``*.tfvars`` file
 
-      Use it to indicate the actual values of variables so that they can be passed (with the ``-var-file=`` flag) to Terraform during runtime and excluded later on. Configure the ``var-values.tfvars`` file as follows:
+  Use it to indicate the actual values of variables so that they can be passed (with the ``-var-file=`` flag) to Terraform during runtime and excluded later on. Configure the ``var-values.tfvars`` file as follows:
 
     .. code:: terraform
 
@@ -103,10 +103,10 @@ Configure the ``services.tf`` file as follows:
   * ``"aiven_clickhouse_database"`` resource creates the measurements database.
 
 Grant user's permissions
-------------------------
+''''''''''''''''''''''''
 
 Administrator role - read & write access
-''''''''''''''''''''''''''''''''''''''''
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Configure the ``access-writer.tf`` file as follows:
 
@@ -165,7 +165,7 @@ Configure the ``access-writer.tf`` file as follows:
   * ``"aiven_clickhouse_grant"."etl_user"`` assigns the ``writer`` role to the ``etl`` user.
 
 Analyst role - read access
-''''''''''''''''''''''''''
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Configure the ``access-analyst.tf`` file as follows:
 
@@ -220,9 +220,7 @@ Execute the Terraform files
 
        terraform init
 
-    .. topic:: Expected result
-
-      The ``init`` command performs several different initialization operations to prepare the current working directory for use with Terraform. For this recipe, ``init`` automatically finds, downloads, and installs the necessary Aiven Terraform Provider plugins.
+  The ``init`` command performs several different initialization operations to prepare the current working directory for use with Terraform. For this recipe, ``init`` automatically finds, downloads, and installs the necessary Aiven Terraform Provider plugins.
 
   2. Run the following command:
 
@@ -230,9 +228,7 @@ Execute the Terraform files
 
        terraform plan -var-file=var-values.tfvars
 
-    .. topic:: Expected result
-
-      The ``plan`` command creates an execution plan and shows the resources that will be created (or modified). This command doesn't actually create any resource but gives you a heads-up on what's going to happen.
+  The ``plan`` command creates an execution plan and shows the resources that will be created (or modified). This command doesn't actually create any resource but gives you a heads-up on what's going to happen.
 
   3. If the output of ``terraform plan`` looks as expected, run the following command:
 
@@ -240,6 +236,4 @@ Execute the Terraform files
 
        terraform apply -var-file=var-values.tfvars
 
-    .. topic:: Expected result
-
-      The ``terraform apply`` command creates (or modifies) your infrastructure resources.
+  The ``terraform apply`` command creates (or modifies) your infrastructure resources.
