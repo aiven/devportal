@@ -1,7 +1,7 @@
-Manage user's access for Terraform-deployed ClickHouse services
-===============================================================
+Manage user's access for Terraform-deployed ClickHouse® services
+================================================================
 
-This article shows by way of example how to set up user's permissions for a Terraform project containing a managed ClickHouse service. It details how to grant the administrator's (read and write) access and the analyst's (read) access.
+This article shows by way of example how to set up user's permissions for a Terraform project containing a managed ClickHouse® service. It details how to grant the administrator's (read and write) access and the analyst's (read) access.
 
 Prerequisites
 -------------
