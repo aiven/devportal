@@ -17,9 +17,9 @@ Prerequisites
 Let's cook!
 -----------
 
-Imagine that you are collecting IoT measurements from thousands of sensors and these metrics are populated in an Apache Kafka topic called ``iot_measurements``.
+Imagine that you are collecting IoT measurements from thousands of sensors and these metrics are populated in an Apache Kafka® topic called ``iot_measurements``.
 
-You may wish to create an Aiven for ClickHouse service along with a database containing IoT sensor measurements and
+You may wish to create an Aiven for ClickHouse® service along with a database containing IoT sensor measurements and
 correct permissions for two roles: a writer role that will be allowed to insert data, and an analyst role that will
 be allowed to query data.
 
@@ -93,7 +93,7 @@ Setup service and database
     name                    = "iot_measurements"
   }
 
-The ``"aiven_clickhouse"`` resource creates an Aiven ClickHouse service with the project name, choice of cloud, an
+The ``"aiven_clickhouse"`` resource creates an Aiven for ClickHouse service with the project name, choice of cloud, an
 Aiven service plan, and a specified service name. The ``"aiven_clickhouse_database"`` resource creates the measurements database.
 
 Grant user's permissions
