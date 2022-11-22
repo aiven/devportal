@@ -231,6 +231,8 @@ entries:
               title: M3 and M3 Aggregator
             - file: docs/tools/terraform/reference/cookbook/postgresql-read-replica-recipe
               title: PostgreSQL® Read Replica
+            - file: docs/tools/terraform/reference/cookbook/clickhouse-access-setup-recipe
+              title: Configure ClickHouse user's access
           - file: docs/tools/terraform/reference/troubleshooting
             entries:   
             - file: docs/tools/terraform/reference/troubleshooting/private-access-error
@@ -600,6 +602,8 @@ entries:
             title: Manage databases and tables
           - file: docs/products/clickhouse/howto/materialized-views
             title: Use materialized views
+          - file: docs/products/clickhouse/howto/configure-access-terraform-deployed
+            title: Manage access with Terraform
           - file: docs/products/clickhouse/howto/list-integrations
             entries:
               - file: docs/products/clickhouse/howto/connect-to-grafana

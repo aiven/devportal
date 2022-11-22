@@ -106,5 +106,12 @@ Each "recipe" includes an architecture diagram and the terraform sample code you
 
         |icon-postgres|
 
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
+
+        :doc:`ClickHouse with user's access configuration <cookbook/clickhouse-access-setup-recipe>`
+
+        |icon-clickhouse|
 
 
