@@ -53,7 +53,7 @@ Create a file (we'll refer to this one as ``splunk_sink.json``) to hold the conn
         "topics": "TOPIC_LIST",
         "splunk.hec.raw" : false,
         "splunk.hec.ack.enabled" : false,
-        "splunk.hec.ssl.validate.certs": "false",
+        "splunk.hec.ssl.validate.certs": "true",
         "config.splunk.hec.json.event.formatted": false,
         "tasks.max":1
     }
@@ -62,18 +62,13 @@ The configuration file contains the following entries:
 
 * ``name``: the connector name
 * ``splunk.hec.token`` and ``splunk.hec.uri``: remote Splunk server URI and authorization parameters collected in the :ref:`prerequisite <connect_splunk_sink_prereq>` phase. 
-* ``key.converter`` and ``value.converter``:  defines the message data format in the Apache Kafka topic. The ``io.confluent.connect.avro.AvroConverter`` converter translates messages from the Avro format. To retrieve the message schema we use Aiven's `Karapace schema registry <https://github.com/aiven/karapace>`_ as specified by the ``schema.registry.url`` parameter and related credentials.
+* ``splunk.hec.raw``: if set to `false` defines the data ingestion using the `/raw` HEC endpoing instead of the default `/event` one.
+* ``splunk.hec.ack.enabled``: if set to `true`, Kafka offset is checkpointed only after receiving the ACK for the POST call to Splunk.
+* ``config.splunk.hec.json.event.formatted``:  Defines if events are preformatted into the proper `HEC JSON format <https://docs.splunk.com/Documentation/KafkaConnect/2.0.2/User/Parameters>`_.
 
-.. Note::
+.. Tip::
 
-    The ``key.converter`` and ``value.converter`` sections define how the topic messages will be parsed and need to be included in the connector configuration.
-
-    When using Avro as source data format, you need to set the following parameters
-
-    * ``value.converter.schema.registry.url``: pointing to the Aiven for Apache Kafka schema registry URL in the form of ``https://APACHE_KAFKA_HOST:SCHEMA_REGISTRY_PORT`` with the ``APACHE_KAFKA_HOST`` and ``SCHEMA_REGISTRY_PORT`` parameters :ref:`retrieved in the previous step <connect_splunk_sink_prereq>`.
-    * ``value.converter.basic.auth.credentials.source``: to the value ``USER_INFO``, since you're going to login to the schema registry using username and password.
-    * ``value.converter.schema.registry.basic.auth.user.info``: passing the required schema registry credentials in the form of ``SCHEMA_REGISTRY_USER:SCHEMA_REGISTRY_PASSWORD`` with the ``SCHEMA_REGISTRY_USER`` and ``SCHEMA_REGISTRY_PASSWORD`` parameters :ref:`retrieved in the previous step <connect_splunk_sink_prereq>`. 
-
+    When using Splunk with self service SSL certificates it could be useful to set ``splunk.hec.ssl.validate.certs`` to ``false`` to disable HTTPS certification validation.
 
 Create a Kafka Connect connector with the Aiven Console
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''
