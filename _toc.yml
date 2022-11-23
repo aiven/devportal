@@ -64,6 +64,7 @@ entries:
           - file: docs/platform/howto/recover-a-deleted-service
           - file: docs/platform/howto/add-storage-space
           - file: docs/platform/howto/tag-resources
+          - file: docs/platform/howto/search-services
           - file: docs/platform/howto/access-service-logs
           - file: docs/platform/howto/prepare-for-high-load
       - file: docs/platform/howto/list-network
