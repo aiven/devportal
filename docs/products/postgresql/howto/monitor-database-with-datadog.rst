@@ -33,6 +33,16 @@ Using the ``avn service integration-list`` :ref:`Aiven CLI command <avn_service_
 
     avn service integration-update --user-config '{"datadog_dbm_enabled": true}' <INTEGRATION_UUID>
 
+* Check if user-config ``datadog_dbm_enabled`` set correctly::
+  
+    avn service integration-list --project <PROJECT_NAME> <SERVICE_NAME> --json | jq '.[] | select(.integration_type=="datadog").user_config'
+    
+  ``datadog_dbm_enabled`` should be set to true::
+
+    {
+    "datadog_dbm_enabled": true
+    }
+    
 .. seealso:: 
     - Learn more about :doc:`Datadog and Aiven </docs/integrations/datadog>`.
     - Learn more about `Datadog Deep Database Monitoring <https://www.datadoghq.com/product/database-monitoring/>`_ from their product page. 
