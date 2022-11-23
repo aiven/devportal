@@ -40,4 +40,4 @@ InfluxDB® resources
 If you are new to InfluxDB®, try these resources to learn more:
 
 * The `main InfluxDB project page <https://influxdata.com/>`_
-* The `documentation for InfluxDB OSS <https://docs.influxdata.com/influxdb/v2.2/>`_
+* The `documentation for InfluxDB <https://docs.influxdata.com/>`_
