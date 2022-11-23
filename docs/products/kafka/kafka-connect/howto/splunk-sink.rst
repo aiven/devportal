@@ -94,8 +94,8 @@ To create the connector, access the `Aiven Console <https://console.aiven.io/>`_
 
     Connectors can also be created using the dedicated :ref:`Aiven CLI command <avn_service_connector_create>`.
 
-Example: Create an Splunk sink connector with a server having no authorization
-----------------------------------------------------------------------------
+Example: Create a simple Splunk sink connector
+----------------------------------------------
 
 If you have a topic named ``data_logs`` that you want to sink to a Splunk server in the ``kafka_logs`` index:
 
