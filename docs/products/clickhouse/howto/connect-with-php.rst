@@ -48,19 +48,19 @@ Connect to the service
 
 Replace the placeholders in the code with meaningful information on your service connection and run the code.
 
-.. code:: php
+.. code-block:: php
 
-<?php
-    require_once 'vendor/autoload.php';
-    $db = new ClickHouseDB\Client([
-        'https' => true,
-        'host' => 'HOSTNAME',
-        'port' => 'HTTPS_PORT',
-        'username' => 'USERNAME',
-        'password' => 'PASSWORD'
-    ]);
-    $response = $db->select('SELECT 1');
-    print_r($response->rows());
+    <?php
+        require_once 'vendor/autoload.php';
+        $db = new ClickHouseDB\Client([
+            'https' => true,
+            'host' => 'HOSTNAME',
+            'port' => 'HTTPS_PORT',
+            'username' => 'USERNAME',
+            'password' => 'PASSWORD'
+        ]);
+        $response = $db->select('SELECT 1');
+        print_r($response->rows());
 
 .. topic:: Expected result
 
