@@ -6,7 +6,7 @@ This article shows by way of example how to integrate PostgreSQL® with Aiven fo
 Let's cook!
 -----------
 
-Imagine that you've been collecting IoT measurements from thousands of sensors and storing them in ClickHouse table ``iot_measurements``. Now, you'd like to enrich your metrics by adding the sensor's location measurement so that you can filter the metrics by the city name. The sensor's location data are avaialble in the ``sensors_dim`` table in PostgreSQL.
+Imagine that you've been collecting IoT measurements from thousands of sensors and storing them in ClickHouse table ``iot_measurements``. Now, you'd like to enrich your metrics by adding the sensor's location measurement so that you can filter the metrics by the city name. The sensor's location data are available in the ``sensors_dim`` table in PostgreSQL.
 
 This recipe calls for the following:
 
@@ -142,7 +142,7 @@ Execute the Terraform files
 Check out the results
 ---------------------
 
-* Resource ``"aiven_clickhouse"`` creates an Aiven for ClickHouse service with the project name, the cloud name (provider, regoin, zone), the Aiven service plan, and the service name as specified in the ``services.tf`` file.
+* Resource ``"aiven_clickhouse"`` creates an Aiven for ClickHouse service with the project name, the cloud name (provider, region, zone), the Aiven service plan, and the service name as specified in the ``services.tf`` file.
 * ``"aiven_clickhouse_database"`` resource creates a database that can be used to store high-throughput measurement data and to create new tables and views to process it.
 * ``"aiven_pg"`` resource creates an Aiven for PostgreSQL service.
 * * ``"aiven_pg_database"`` resource creates the ``sensors`` database.
@@ -151,5 +151,4 @@ Check out the results
 Learn more
 ----------
 
-When you use this recipe, parameters and configurations will vary from those used in this article. For Apache Kafka and Aiven for ClickHouse advanced parameters, a related blog, and instructions on how to get started with Aiven Terraform Provider, see `Set up your first Aiven Terraform project <https://docs.aiven.io/docs/tools/terraform/get-started.html>`_.
-
+When you use this recipe, parameters and configurations will vary from those used in this article. For Aiven for PostgreSQL and Aiven for ClickHouse advanced parameters, a related blog, and instructions on how to get started with Aiven Terraform Provider, see `Set up your first Aiven Terraform project <https://docs.aiven.io/docs/tools/terraform/get-started.html>`_.
