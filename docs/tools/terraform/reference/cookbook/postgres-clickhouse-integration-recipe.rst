@@ -1,32 +1,29 @@
-PostgreSQL® as source for Aiven for ClickHouse®
-===============================================
+Aiven for PostgreSQL® as a source for Aiven for ClickHouse®
+===========================================================
 
-This article shows by way of example how to integrate PostgreSQL® with Aiven for ClickHouse® using `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_.
-
-A PostgreSQL database is used as a data source and Aiven for ClickHouse can be used to read, transform, and execute jobs using data from the PostgreSQL server.
+This article shows by way of example how to integrate PostgreSQL® with Aiven for ClickHouse® using `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_. A PostgreSQL database is used as a data source and Aiven for ClickHouse is used to read, transform, and execute jobs using data from the PostgreSQL server.
 
 Let's cook!
 -----------
 
-Imagine that you are collecting IoT measurements from thousands of sensors and these metrics are stored in ClickHouse table ``iot_measurements``.
+Imagine that you've been collecting IoT measurements from thousands of sensors and storing them in ClickHouse table ``iot_measurements``. Now, you'd like to enrich your metrics by adding the sensor's location measurement so that you can filter the metrics by the city name. The sensor's location data are avaialble in the ``sensors_dim`` table in PostgreSQL.
 
-You may want to enrich the measurements using the sensor's location found in the ``sensors_dim`` table in PostgreSQL and filter by city names.
+This recipe calls for the following:
 
-For this, you'd like to set up an Aiven for ClickHouse database and insert your measurements data. Then, you'd like to
-join it with the related PostgreSQL dimension tables. The following Terraform script initializes both PostgreSQL
-and Aiven for ClickHouse services, creates the service integration, the source PostgreSQL table and the Aiven for ClickHouse database.
+1. Set up an Aiven for ClickHouse database.
+2. Insert your measurements data into the Aiven for ClickHouse database.
+3. Combine your measurements data in the Aiven for ClickHouse database with the related PostgreSQL dimension tables.
 
 Configure common files
 ''''''''''''''''''''''
 
 .. dropdown:: Expand to check out the relevant common files needed for this recipe.
 
-    Navigate to a new folder and add the following files.
+  Navigate to a new folder and add the following files:
 
-    1. Add the following to a new ``provider.tf`` file:
+  1. ``provider.tf`` file
 
     .. code-block:: terraform
-
        terraform {
 	 required_providers {
 	   aiven = {
@@ -40,14 +37,15 @@ Configure common files
 	 api_token = var.aiven_api_token
        }
 
-    You can also set the environment variable ``AIVEN_TOKEN`` for the ``api_token`` property. With this, you don't need to pass the ``-var-file`` flag when executing Terraform commands.
+  .. tip::
 
-    2. To avoid including sensitive information in source control, the variables are defined here in the ``variables.tf`` file. You can then use a ``*.tfvars`` file with the actual values so that Terraform receives the values during runtime, and exclude it.
+    You can set environment variable ``AIVEN_TOKEN`` for the ``api_token`` property so that you don't need to pass the ``-var-file`` flag when executing Terraform commands.
 
-    The ``variables.tf`` file defines the API token, the project name to use, and the prefix for the service name:
+  2. ``variables.tf`` file
 
-    .. code-block:: terraform
+  Use it for defining the variables to avoid including sensitive information in source control. The ``variables.tf`` file defines the API token, the project name to use, and the prefix for the service name:
 
+    .. code:: terraform
        variable "aiven_api_token" {
 	 description = "Aiven console API token"
 	 type        = string
@@ -58,20 +56,20 @@ Configure common files
 	 type        = string
        }
 
-    3. The ``var-values.tfvars`` file holds the actual values and is passed to Terraform using the ``-var-file=`` flag.
+  3. ``*.tfvars`` file
 
-    ``var-values.tfvars`` file:
+  Use it to indicate the actual values of variables so that they can be passed (with the ``-var-file=`` flag) to Terraform during runtime and excluded later on. Configure the ``var-values.tfvars`` file as follows:
 
     .. code-block:: terraform
-
        aiven_api_token     = "<YOUR-AIVEN-AUTHENTICATION-TOKEN-GOES-HERE>"
        project_name        = "<YOUR-AIVEN-CONSOLE-PROJECT-NAME-GOES-HERE>"
 
 Configure the ``services.tf`` file
 ''''''''''''''''''''''''''''''''''
 
-.. code-block:: terraform
+The following Terraform script initializes both Aiven for PostgreSQL and Aiven for ClickHouse services, creates the service integration, the source PostgreSQL table, and the Aiven for ClickHouse database.
 
+.. code-block:: terraform
 
   // Postgres service based in GCP US East
   resource "aiven_pg" "postgres" {
@@ -120,37 +118,38 @@ Execute the Terraform files
 
 .. dropdown:: Expand to check out how to execute the Terraform files.
 
-    The ``init`` command performs several different initialization steps in order to prepare the current working directory for use with Terraform. In our case, this command automatically finds, downloads, and installs the necessary Aiven Terraform provider plugins.
+  1. Run the following command:
 
     .. code-block:: shell
-
        terraform init
+  
+  The ``init`` command performs initialization operations to prepare the working directory for use with Terraform. For this recipe, ``init`` automatically finds, downloads, and installs the necessary Aiven Terraform Provider plugins.
 
-    The ``plan`` command creates an execution plan and shows you the resources that will be created (or modified) for you. This command does not actually create any resource; this is more like a preview.
+  2. Run the following command:
 
-    .. code-block:: shell
-
+    .. code-block:: bash
        terraform plan -var-file=var-values.tfvars
+  
+  The ``plan`` command creates an execution plan and shows the resources to be created (or modified). This command doesn't actually create any resources but gives you a heads-up on what's going to happen.
 
-    If you're satisfied with the output of ``terraform plan``, go ahead and run the ``terraform apply`` command which actually does the task or creating (or modifying) your infrastructure resources.
+  3. If the output of ``terraform plan`` looks as expected, run the following command:
 
-    .. code-block:: shell
-
+    .. code-block:: bash
        terraform apply -var-file=var-values.tfvars
+  
+  The ``terraform apply`` command creates (or modifies) your infrastructure resources.
 
 Check out the results
 ---------------------
 
-The resource ``"aiven_clickhouse"`` creates an Aiven for ClickHouse resource with the project name, choice of a cloud provider, an Aiven service plan, and a specified service name. The ``"aiven_clickhouse_database"`` resources creates a database which can be used to write high-thoughput measurement data, create new tables and views to process them.
-The ``"aiven_pg"`` resource creates an PostgreSQL service and a database ``sensors`` is created using the ``"aiven_pg_database"`` resource.
-The ``"aiven_service_integration"`` resource creates the integration between PostgreSQL and the Aiven for ClickHouse service.
+* Resource ``"aiven_clickhouse"`` creates an Aiven for ClickHouse service with the project name, the cloud name (provider, regoin, zone), the Aiven service plan, and the service name as specified in the ``services.tf`` file.
+* ``"aiven_clickhouse_database"`` resource creates a database that can be used to store high-throughput measurement data and to create new tables and views to process it.
+* ``"aiven_pg"`` resource creates an Aiven for PostgreSQL service.
+* * ``"aiven_pg_database"`` resource creates the ``sensors`` database.
+* ``"aiven_service_integration"`` resource creates the integration between the Aiven for PostgreSQL and Aiven for ClickHouse services.
 
 Learn more
 ----------
 
-The parameters and configurations will vary for your case. Please refer below for PostgreSQL and Aiven for ClickHouse advanced parameters, a related blog, and how to get started with Aiven Terraform Provider:
+When you use this recipe, parameters and configurations will vary from those used in this article. For Apache Kafka and Aiven for ClickHouse advanced parameters, a related blog, and instructions on how to get started with Aiven Terraform Provider, see `Set up your first Aiven Terraform project <https://docs.aiven.io/docs/tools/terraform/get-started.html>`_.
 
-- `Set up your first Aiven Terraform project <https://docs.aiven.io/docs/tools/terraform/get-started.html>`_
-
-Follow up
----------
