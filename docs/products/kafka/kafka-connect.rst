@@ -119,7 +119,7 @@ Sink connectors
 
        :doc:`HTTP <kafka-connect/howto/http-sink>`
 
-       `Splunk <https://github.com/splunk/kafka-connect-splunk>`__
+       :doc:`Splunk <kafka-connect/howto/splunk-sink>`
 
 
 
