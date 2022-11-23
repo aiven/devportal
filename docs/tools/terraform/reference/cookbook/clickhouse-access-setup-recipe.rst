@@ -75,8 +75,8 @@ Configure common files
        aiven_api_token     = "<YOUR-AIVEN-AUTHENTICATION-TOKEN-GOES-HERE>"
        project_name        = "<YOUR-AIVEN-CONSOLE-PROJECT-NAME-GOES-HERE>"
 
-Set up service and database
-'''''''''''''''''''''''''''
+Set up the service with the database
+''''''''''''''''''''''''''''''''''''
 
 Configure the ``services.tf`` file as follows:
 
@@ -99,8 +99,8 @@ Configure the ``services.tf`` file as follows:
 
 .. topic:: Expected result
 
-  * ``"aiven_clickhouse"`` resource creates an Aiven for ClickHouse service with the project name, choice of a cloud provider, an Aiven service plan, and a specified service name.
-  * ``"aiven_clickhouse_database"`` resource creates the measurements database.
+  * ``"aiven_clickhouse"`` resource creates an Aiven for ClickHouse service with the project name, the cloud name (provider, region, zone), the service plan, and the service name as specified in the ``services.tf`` file.
+  * ``"aiven_clickhouse_database"`` resource creates a database with the project name, the service name, and the database name as specified in the ``services.tf`` file.
 
 Grant user's permissions
 ''''''''''''''''''''''''
@@ -160,9 +160,8 @@ Configure the ``access-writer.tf`` file as follows:
 
   * ``"aiven_clickhouse_user"`` resource creates a user that can connect to the cluster.
   * ``"aiven_clickhouse_role"`` resources creates a role that can be granted fine-grained privileges at the table level.
-  * ``"aiven_clickhouse_grant"."writer_role"`` resource specifies the privileges and the scope of their application
-  using the ``privilege_grant`` nested configuration.
-  * ``"aiven_clickhouse_grant"."etl_user"`` assigns the ``writer`` role to the ``etl`` user.
+  * ``"aiven_clickhouse_grant"."writer_role"`` resource specifies the privileges and the scope of their application for the writer's role using the ``privilege_grant`` nested configuration.
+  * ``"aiven_clickhouse_grant"."etl_user"`` assigns the writer's role to the ``etl`` user.
 
 Analyst role - read access
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -209,6 +208,13 @@ Configure the ``access-analyst.tf`` file as follows:
     }
   }
 
+.. topic:: Expected result
+
+  * ``"aiven_clickhouse_user"`` resource creates a user that can connect to the cluster.
+  * ``"aiven_clickhouse_role"`` resources creates a role that can be granted fine-grained privileges at the table level.
+  * ``"aiven_clickhouse_grant"."reader_role"`` resource specifies the privileges and the scope of their application for the reader's role using the ``privilege_grant`` nested configuration.
+  * ``"aiven_clickhouse_grant"."analyst_user"`` assigns the writer's role to the ``analyst`` user.
+
 Execute the Terraform files
 '''''''''''''''''''''''''''
 
@@ -220,7 +226,7 @@ Execute the Terraform files
 
        terraform init
 
-  The ``init`` command performs several different initialization operations to prepare the current working directory for use with Terraform. For this recipe, ``init`` automatically finds, downloads, and installs the necessary Aiven Terraform Provider plugins.
+  The ``init`` command performs initialization operations to prepare the working directory for use with Terraform. For this recipe, ``init`` automatically finds, downloads, and installs the necessary Aiven Terraform Provider plugins.
 
   2. Run the following command:
 
@@ -228,7 +234,7 @@ Execute the Terraform files
 
        terraform plan -var-file=var-values.tfvars
 
-  The ``plan`` command creates an execution plan and shows the resources that will be created (or modified). This command doesn't actually create any resource but gives you a heads-up on what's going to happen.
+  The ``plan`` command creates an execution plan and shows the resources to be created (or modified). This command doesn't actually create any resources but gives you a heads-up on what's going to happen.
 
   3. If the output of ``terraform plan`` looks as expected, run the following command:
 
