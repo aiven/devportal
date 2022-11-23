@@ -38,9 +38,6 @@ Variable                        Description
 ``username``                    ``User`` for the ClickHouse connection available in the Aiven console: Service **Overview** > **Connection information** > **ClickHouse HTTPS & JDBC**
 ``password``                    ``Password`` for the ClickHouse connection available in the Aiven console: Service **Overview** > **Connection information** > **ClickHouse HTTPS & JDBC**
 ``database``                    ``Database Name`` in the ClickHouse service available in the Aiven console: Service **Overview** > **Connection information** > **ClickHouse HTTPS & JDBC**
-``setTimeout``                  Supports only integer values, measured in seconds
-``setConnectTimeout``           Supports only integer values, measured in seconds
-``ping``                        Set to ``true`` to enable throwing an exception if a connection cannot be established
 ===========================     =======================================================================================
 
 Connect to the service
@@ -59,6 +56,7 @@ Replace the placeholders in the code with meaningful information on your service
             'username' => 'USERNAME',
             'password' => 'PASSWORD'
         ]);
+        $db->database('DATABASE');
         $response = $db->select('SELECT 1');
         print_r($response->rows());
 
