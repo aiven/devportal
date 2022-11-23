@@ -13,42 +13,9 @@ Pre-requisites
 
     You can install the Node.js client for connecting to ClickHouse using
 
-    .. code:: java
+    .. code-block:: shell
 
         npm i @clickhouse/client
-
-Create a client instance
-------------------------
-
-Use the ``createClient`` factory to initiate a client instance.
-
-.. code:: javascript
-
-    import { createClient } from '@clickhouse/client'
-
-    const client = createClient({
-    /* configuration */
-    })
-
-In the process of initiating the client instance, you can configure the following settings:
-
-========================    =================================================   =========================================================================================================================   =========================
-Setting                     Data type                                           Description                                                                                                                 Default value
-========================    =================================================   =========================================================================================================================   =========================
-``host``                    string                                              ClickHouse instance URL                                                                                                     ``http://localhost:8123``
-``connect_timeout``         number                                              Timeout to set up a connection in milliseconds                                                                              10_000
-``request_timeout``         number                                              Request timeout in milliseconds                                                                                             30_000
-``max_open_connections``    number                                              Maximum number of sockets to allow per host                                                                                 Infinity
-``compression``             { response?: boolean; request?: boolean }           `Enables compression <https://clickhouse.com/docs/en/integrations/language-clients/nodejs/#compression>`_                   --
-``username``                string                                              Name of the user on whose behalf requests are made                                                                          default
-``password``                string                                              User password                                                                                                               ``''``
-``application``             string                                              Name of the application using the Node.js client                                                                            clickhouse-js
-``database``                string                                              Database name to use                                                                                                        default
-``clickhouse_settings``     ClickHouseSettings                                  ClickHouse settings to apply to all requests                                                                                {}
-``log``                     { enable?: boolean, LoggerClass?: Logger }          `Configure logging <https://clickhouse.com/docs/en/integrations/language-clients/nodejs/#logging>`_                         -- 
-``tls``                     { ca_cert: Buffer, cert?: Buffer, key?: Buffer }    `Configure TLS certificates <https://clickhouse.com/docs/en/integrations/language-clients/nodejs/#tls-certificates>`_       --
-``session_id``              string                                              Optional ClickHouse Session ID to send with every request                                                                   --
-========================    =================================================   =========================================================================================================================   =========================
 
 Identify connection information
 -------------------------------
@@ -68,15 +35,22 @@ Connect to the service
 
 Replace the placeholders in the code with meaningful information on your service connection and run the code.
 
-.. code:: javascript
+.. code-block:: javascript
 
     import { createClient } from '@clickhouse/client'
-
     const client = createClient({
-    host: process.env.CLICKHOUSE_HOST ?? 'http://localhost:8123',
-    user: process.env.CLICKHOUSE_USER ?? 'default',
-    password: process.env.CLICKHOUSE_PASSWORD ?? '',
+        host: "CLICKHOUSE_HOST",
+        username: "CLICKHOUSE_USER",
+        password: "CLICKHOUSE_PASSWORD",
+        database: "default",
     })
+    const response = await client.query({
+        query : "SELECT 1",
+        format: "JSONEachRow",
+        wait_end_of_query: 1,
+    })
+    const data = await response.json()
+    console.log(data)
 
 .. topic:: Expected result
 
@@ -85,4 +59,3 @@ Replace the placeholders in the code with meaningful information on your service
 .. seealso::
 
     For information on how to connect to the Aiven for Clickhouse service with the ClickHouse client, see :doc:`Connect with the ClickHouse client </docs/products/clickhouse/howto/connect-with-clickhouse-cli>`.
-
