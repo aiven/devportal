@@ -8,7 +8,4 @@ Enabling Apache Kafka REST proxy authorization directs Karapace to forward the H
 .. note:: 
     If the feature is **disabled**, Apache Kafka REST proxy authorization connects to Apache Kafka® using a special **superuser** with full access to all topics.
 
-Manage resources via Terraform
-------------------------------
-In :doc:`Terraform </docs/tools/terraform>`, you can toggle the Apache Kafka® REST proxy authorization feature on or off by setting the value of ``kafka_rest_authorization`` entry. However, authorization rules are defined using :doc:`Apache Kafka ACLs </docs/products/kafka/concepts/acl>`. For information, see `Aiven Kafka resource documentation <https://registry.terraform.io/providers/aiven/aiven/latest/docs/resources/kafka>`_.
 
