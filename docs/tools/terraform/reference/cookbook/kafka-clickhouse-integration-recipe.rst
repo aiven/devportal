@@ -37,6 +37,7 @@ Configure common files
        provider "aiven" {
          api_token = var.aiven_api_token
        }
+
   .. tip::
 
     You can set environment variable ``AIVEN_TOKEN`` for the ``api_token`` property so that you don't need to pass the ``-var-file`` flag when executing Terraform commands.
@@ -56,6 +57,7 @@ Configure common files
          description = "Aiven console project name"
          type        = string
        }
+
   3. ``*.tfvars`` file
 
   Use it to indicate the actual values of the variables so that they can be passed (with the ``-var-file=`` flag) to Terraform during runtime and excluded later on. Configure the ``var-values.tfvars`` file as follows:
