@@ -3,7 +3,7 @@ Manage user privileges for Terraform-deployed ClickHouse® services
 
 This article shows by way of example how to set up user permissions for a Terraform project containing a managed ClickHouse® service. It details how to grant
 
-* Read-and-write access for users who needs to write to the database (writer role)
+* Read-and-write access for users who need to write to the database (writer role)
 * Read-only access for users who need to read from the database (analyst role).
 
 Prerequisites
