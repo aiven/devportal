@@ -24,7 +24,12 @@ Take your first steps with Aiven for InfluxDB® by following our :doc:`/docs/pro
                 :margin: 2 2 0 0
 
                 📚 :doc:`Concepts </docs/products/influxdb/concepts>`
+                
+        .. grid-item-card::
+                :shadow: md
+                :margin: 2 2 0 0
 
+                📖 :doc:`Reference </docs/products/influxdba/reference>`
 
 Integrates with your existing Aiven tools
 ------------------------------------------
