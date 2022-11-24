@@ -19,6 +19,7 @@ This project contains source code and supporting files for a serverless applicat
   - **Notes**: The `CA_CERT` for development can be obtained by going to the Aiven PostgreSQL service, download the CA cert into `./aws` directory
   - ![Screenshot 2022-11-09 at 15 19 30](https://user-images.githubusercontent.com/110401626/200845923-0023847b-5f0d-45ef-ba19-d91975faeb3c.png)
   - then run `npm run get-cert <cert file name e.g. ca.pem>`, and paste to that field.
+- Create a `.env` file in the root directory storing values for `API_URL_SEARCH` and `API_URL_CREATE_FEEDBACK`. These values will be used later for testing with local documentation site (can be left empty for now or filled with production value).
 
 # Development & Production
 
