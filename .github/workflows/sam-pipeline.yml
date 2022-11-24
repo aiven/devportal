@@ -55,8 +55,8 @@ jobs:
             --stack-name ${{ steps.vars.outputs.environment }} \
             --s3-bucket ${{ steps.vars.outputs.environment }} \
             --parameter-overrides \
-              'ParameterKey=OpenSearchURL,ParameterValue=${{ AWS.ES_URL }} \
-              ParameterKey=PostgresURL,ParameterValue=${{ AWS.PG_URL }} \
-              ParameterKey=PostgresCert,ParameterValue=${{ AWS.CA_CERT }} \
+              'ParameterKey=OpenSearchURL,ParameterValue=${{ secrets.ES_URL }} \
+              ParameterKey=PostgresURL,ParameterValue=${{ secrets.PG_URL }} \
+              ParameterKey=PostgresCert,ParameterValue=${{ secrets.CA_CERT }} \
               ParameterKey=Version,ParameterValue=${{ steps.vars.outputs.version }}' \
             --capabilities CAPABILITY_IAM CAPABILITY_NAMED_IAM
