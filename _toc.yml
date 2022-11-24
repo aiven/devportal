@@ -834,6 +834,10 @@ entries:
         entries:
           - file: docs/products/influxdb/concepts/continuous-queries
           - file: docs/products/influxdb/concepts/influxdb-retention-policy
+      - file: docs/products/influxdb/reference
+        title: Reference
+        entries:
+          - glob: docs/products/influxdb/reference/*
 
   # -------- AUXILIARY
   - file: docs/community
