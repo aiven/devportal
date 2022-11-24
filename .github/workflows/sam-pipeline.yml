@@ -43,7 +43,7 @@ jobs:
           echo "The branch is $BRANCH"
       # sam build
       - name: SAM Build
-        run: sam build
+        run: sam build -t aws/template.yaml
 
 # Run Unit tests- Specify unit tests here 
 
