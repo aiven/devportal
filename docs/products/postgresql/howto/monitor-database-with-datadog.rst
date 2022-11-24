@@ -35,9 +35,11 @@ Using the ``avn service integration-list`` :ref:`Aiven CLI command <avn_service_
 
 * Check if user-config ``datadog_dbm_enabled`` set correctly::
   
-    avn service integration-list --project <PROJECT_NAME> <SERVICE_NAME> --json | jq '.[] | select(.integration_type=="datadog").user_config'
+    avn service integration-list <SERVICE_NAME> \
+        --project <PROJECT_NAME>  \
+        --json | jq '.[] | select(.integration_type=="datadog").user_config'
     
-  ``datadog_dbm_enabled`` should be set to true::
+  ``datadog_dbm_enabled`` should be set to ``true``::
 
     {
     "datadog_dbm_enabled": true
