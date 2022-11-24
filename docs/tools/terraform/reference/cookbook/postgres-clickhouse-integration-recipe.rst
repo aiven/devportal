@@ -1,12 +1,12 @@
 Aiven for PostgreSQL® as a source for Aiven for ClickHouse®
 ===========================================================
 
-This article shows by way of example how to integrate PostgreSQL® with Aiven for ClickHouse® using `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_. A PostgreSQL database is used as a data source and Aiven for ClickHouse is used to read, transform, and execute jobs using data from the PostgreSQL server.
+This article shows by way of example how to integrate Aiven for PostgreSQL® with Aiven for ClickHouse® using `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_. A PostgreSQL database is used as a data source and Aiven for ClickHouse is used to read, transform, and execute jobs using data from the PostgreSQL server.
 
 Let's cook!
 -----------
 
-Imagine that you've been collecting IoT measurements from thousands of sensors and storing them in ClickHouse table ``iot_measurements``. Now, you'd like to enrich your metrics by adding the sensor's location measurement so that you can filter the metrics by the city name. The sensor's location data are available in the ``sensors_dim`` table in PostgreSQL.
+Imagine that you've been collecting IoT measurements from thousands of sensors and storing them in ClickHouse table ``iot_measurements``. Now, you'd like to enrich your metrics by adding the sensor's location measurement so that you can filter the metrics by the city name. The sensor's location data is available in the ``sensors_dim`` table in PostgreSQL.
 
 This recipe calls for the following:
 
@@ -24,17 +24,18 @@ Configure common files
   1. ``provider.tf`` file
 
     .. code-block:: terraform
-       terraform {
-	 required_providers {
-	   aiven = {
-	     source  = "aiven/aiven"
-	     version = ">= 3.8"
-	   }
-	 }
-       }
 
+       terraform {
+         required_providers {
+           aiven = {
+             source  = "aiven/aiven"
+             version = ">= 3.7"
+           }
+         }
+       }
+   
        provider "aiven" {
-	 api_token = var.aiven_api_token
+         api_token = var.aiven_api_token
        }
 
   .. tip::
@@ -43,24 +44,26 @@ Configure common files
 
   2. ``variables.tf`` file
 
-  Use it for defining the variables to avoid including sensitive information in source control. The ``variables.tf`` file defines the API token, the project name to use, and the prefix for the service name:
+  Use it for defining the variables to avoid including sensitive information in source control. The ``variables.tf`` file defines the API token, the project name, and the prefix for the service name.
 
     .. code:: terraform
-       variable "aiven_api_token" {
-	 description = "Aiven console API token"
-	 type        = string
-       }
 
+       variable "aiven_api_token" {
+         description = "Aiven console API token"
+         type        = string
+       }
+   
        variable "project_name" {
-	 description = "Aiven console project name"
-	 type        = string
+         description = "Aiven console project name"
+         type        = string
        }
 
   3. ``*.tfvars`` file
 
-  Use it to indicate the actual values of variables so that they can be passed (with the ``-var-file=`` flag) to Terraform during runtime and excluded later on. Configure the ``var-values.tfvars`` file as follows:
+  Use it to indicate the actual values of the variables so that they can be passed (with the ``-var-file=`` flag) to Terraform during runtime and excluded later on. Configure the ``var-values.tfvars`` file as follows:
 
     .. code-block:: terraform
+
        aiven_api_token     = "<YOUR-AIVEN-AUTHENTICATION-TOKEN-GOES-HERE>"
        project_name        = "<YOUR-AIVEN-CONSOLE-PROJECT-NAME-GOES-HERE>"
 
@@ -105,7 +108,7 @@ The following Terraform script initializes both Aiven for PostgreSQL and Aiven f
     name         = "iot_measurements"
   }
 
-  // ClickHouse service integration for the PostgreSQL service as source
+  // ClickHouse service integration for the PostgreSQL service as a source
   resource "aiven_service_integration" "clickhouse_postgres_source" {
     project                  = var.project_name
     integration_type         = "clickhouse_postgresql"
@@ -121,6 +124,7 @@ Execute the Terraform files
   1. Run the following command:
 
     .. code-block:: shell
+
        terraform init
   
   The ``init`` command performs initialization operations to prepare the working directory for use with Terraform. For this recipe, ``init`` automatically finds, downloads, and installs the necessary Aiven Terraform Provider plugins.
@@ -128,13 +132,15 @@ Execute the Terraform files
   2. Run the following command:
 
     .. code-block:: bash
+
        terraform plan -var-file=var-values.tfvars
   
-  The ``plan`` command creates an execution plan and shows the resources to be created (or modified). This command doesn't actually create any resources but gives you a heads-up on what's going to happen.
+  The ``plan`` command creates an execution plan and shows the resources to be created (or modified). This command doesn't actually create any resources but gives you a heads-up on what's going to happen next.
 
   3. If the output of ``terraform plan`` looks as expected, run the following command:
 
     .. code-block:: bash
+
        terraform apply -var-file=var-values.tfvars
   
   The ``terraform apply`` command creates (or modifies) your infrastructure resources.
@@ -142,11 +148,11 @@ Execute the Terraform files
 Check out the results
 ---------------------
 
-* Resource ``"aiven_clickhouse"`` creates an Aiven for ClickHouse service with the project name, the cloud name (provider, region, zone), the Aiven service plan, and the service name as specified in the ``services.tf`` file.
-* ``"aiven_clickhouse_database"`` resource creates a database that can be used to store high-throughput measurement data and to create new tables and views to process it.
-* ``"aiven_pg"`` resource creates an Aiven for PostgreSQL service.
-* * ``"aiven_pg_database"`` resource creates the ``sensors`` database.
-* ``"aiven_service_integration"`` resource creates the integration between the Aiven for PostgreSQL and Aiven for ClickHouse services.
+* Resource ``aiven_clickhouse`` creates an Aiven for ClickHouse service with the project name, the cloud name (provider, region, zone), the Aiven service plan, and the service name as specified in the ``services.tf`` file.
+* ``aiven_clickhouse_database`` resource creates a database that can be used to store high-throughput measurement data and to create new tables and views to process this data.
+* ``aiven_pg`` resource creates an Aiven for PostgreSQL service.
+* * ``aiven_pg_database`` resource creates the ``sensors`` database.
+* ``aiven_service_integration`` resource creates the integration between the Aiven for PostgreSQL and Aiven for ClickHouse services.
 
 Learn more
 ----------
