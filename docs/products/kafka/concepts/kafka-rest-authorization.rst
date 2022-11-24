@@ -1,6 +1,5 @@
 Apache Kafka® REST proxy authorization
 ======================================
+The Apache Kafka® REST proxy authorization, when :doc:`enabled <../karapace/getting-started>` on your Aiven for Apache Kafka® service, allows the delegation of user authentication and authorization to Kafka. Apache Kafka® REST proxy authorization uses the authorization rules defined in :doc:`Apache Kafka® ACLs </docs/products/kafka/concepts/acl>`. 
 
-The Kafka REST authorization feature when enabled in :doc:`Karapace Kafka REST <../karapace/getting-started>` allows delegating of user authentication and authorization to Kafka. The Kafka ACL is used to define the authorization rules.
-
-For information on Kafka REST authorization for Aiven for Apache Kafka® services, see :doc:`Karapace Kafka REST authorization <../karapace/concepts/kafka-rest-authorization>`.
+For information on Apache Kafka® REST proxy authorization for Aiven for Apache Kafka® services, see :doc:`Apache Kafka® REST proxy authorization <../karapace/concepts/kafka-rest-proxy-authorization>`.

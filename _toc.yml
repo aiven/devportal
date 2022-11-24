@@ -232,6 +232,7 @@ entries:
             title: Scaling options
           - file: docs/products/kafka/concepts/acl
           - file: docs/products/kafka/concepts/schema-registry-authorization
+          - file: docs/products/kafka/concepts/kafka-rest-authorization
           - file: docs/products/kafka/concepts/log-compaction
           - file: docs/products/kafka/concepts/partition-segments
           - file: docs/products/kafka/concepts/auth-types
@@ -407,12 +408,15 @@ entries:
           entries:
             - file: docs/products/kafka/karapace/concepts/schema-registry-authorization
             - file: docs/products/kafka/karapace/concepts/acl-definition
+            - file: docs/products/kafka/karapace/concepts/kafka-rest-proxy-authorization
         - file: docs/products/kafka/karapace/howto
           title: HowTo
           entries:
             - file: docs/products/kafka/karapace/howto/enable-karapace
             - file: docs/products/kafka/karapace/howto/enable-schema-registry-authorization
+            - file: docs/products/kafka/karapace/howto/enable-kafka-rest-proxy-authorization
             - file: docs/products/kafka/karapace/howto/manage-schema-registry-authorization
+            - file: docs/products/kafka/karapace/howto/manage-kafka-rest-proxy-authorization
 
   - file: docs/products/postgresql
     title: PostgreSQL

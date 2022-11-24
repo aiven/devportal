@@ -7,7 +7,7 @@ Next steps
 -----------
 * Learn more about :doc:`Karapace schema registry authorization <../karapace/concepts/schema-registry-authorization>` and :doc:`ACLs definition <../karapace/concepts/acl-definition>`. 
 * Learn more about how to enable :doc:`Karapace schema registry authorization <../karapace/howto/enable-schema-registry-authorization>` and how to :doc:`manage Karapace schema registry authorization <../karapace/howto/manage-schema-registry-authorization>`.
-* Learn more about how to enable :doc:`Karapace Kafka REST authorization <../karapace/howto/enable-kafka-rest-authorization>` and how to :doc:`manage Karapace Kafka REST authorization <../karapace/howto/manage-kafka-rest-authorization>`.
+* Learn more about how to enable :doc:`Apache Kafka REST proxy authorization <../karapace/howto/enable-kafka-rest-proxy-authorization>` and how to :doc:`manage Karapace Kafka REST authorization <../karapace/howto/manage-kafka-rest-proxy-authorization>`.
 
 More resources
 --------------
