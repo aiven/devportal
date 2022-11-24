@@ -1,7 +1,10 @@
 Manage user privileges for Terraform-deployed ClickHouse® services
 ==================================================================
 
-This article shows by way of example how to set up user permissions for a Terraform project containing a managed ClickHouse® service. It details how to grant the read-and-write access for contributors and the read-only access for analysts.
+This article shows by way of example how to set up user permissions for a Terraform project containing a managed ClickHouse® service. It details how to grant
+
+* Read-and-write access for users who needs to write to the database (writer role)
+* Read-only access for users who need to read from the database (analyst role).
 
 Prerequisites
 -------------
@@ -20,7 +23,7 @@ Let's cook!
 Imagine that you are collecting IoT measurements from thousands of sensors and these metrics are populated in Apache Kafka® topic ``iot_measurements``.
 
 You may wish to create an Aiven for ClickHouse® service along with a database containing IoT sensor measurements and
-correct permissions for two roles: a contributor role (allowed to insert data) and an analyst role (allowed to query data).
+correct permissions for two roles: the writer role (allowed to insert data) and the analyst role (allowed to query data).
 
 Configure common files
 ''''''''''''''''''''''
@@ -105,10 +108,10 @@ Configure the ``services.tf`` file as follows:
 Grant user permissions
 ''''''''''''''''''''''
 
-Contributor role - write access
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Writer role - read-and-write access
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Configure the ``access-contributor.tf`` file as follows:
+Configure the ``access-writer.tf`` file as follows:
 
 .. code-block:: terraform
 
@@ -119,18 +122,18 @@ Configure the ``access-contributor.tf`` file as follows:
     username     = "etl"
   }
 
-  // Contributor role that will be granted insert privilege to the measurements DB
-  resource "aiven_clickhouse_role" "contributor" {
+  // Writer role that will be granted insert privilege to the measurements DB
+  resource "aiven_clickhouse_role" "writer" {
     project      = var.project_name
     service_name = aiven_clickhouse.clickhouse.service_name
-    role         = "contributor"
+    role         = "writer"
   }
 
-  // Contributor role's privileges
-  resource "aiven_clickhouse_grant" "contributor_role" {
+  // Writer role's privileges
+  resource "aiven_clickhouse_grant" "writer_role" {
     project      = aiven_clickhouse.clickhouse.project
     service_name = aiven_clickhouse.clickhouse.service_name
-    role         = aiven_clickhouse_role.contributor.role
+    role         = aiven_clickhouse_role.writer.role
 
     privilege_grant {
       privilege = "INSERT"
@@ -145,14 +148,14 @@ Configure the ``access-contributor.tf`` file as follows:
     }
   }
 
-  // Grant the contributor role to the ETL user
+  // Grant the writer role to the ETL user
   resource "aiven_clickhouse_grant" "etl_user" {
     project      = aiven_clickhouse.clickhouse.project
     service_name = aiven_clickhouse.clickhouse.service_name
     user         = aiven_clickhouse_user.etl.username
 
     role_grant {
-      role = aiven_clickhouse_role.contributor.role
+      role = aiven_clickhouse_role.writer.role
     }
   }
 
@@ -160,8 +163,8 @@ Configure the ``access-contributor.tf`` file as follows:
 
   * ``"aiven_clickhouse_user"`` resource creates a user that can connect to the cluster.
   * ``"aiven_clickhouse_role"`` resources creates a role that can be granted fine-grained privileges at the table level.
-  * ``"aiven_clickhouse_grant"."contributor_role"`` resource specifies the privileges and the scope of their application for the contributor role using the ``privilege_grant`` nested configuration.
-  * ``"aiven_clickhouse_grant"."etl_user"`` assigns the contributor role to the ``etl`` user.
+  * ``"aiven_clickhouse_grant"."writer_role"`` resource specifies the privileges and the scope of their application for the writer role using the ``privilege_grant`` nested configuration.
+  * ``"aiven_clickhouse_grant"."etl_user"`` assigns the writer role to the ``etl`` user.
 
 Analyst role - read access
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -213,7 +216,7 @@ Configure the ``access-analyst.tf`` file as follows:
   * ``"aiven_clickhouse_user"`` resource creates a user that can connect to the cluster.
   * ``"aiven_clickhouse_role"`` resources creates a role that can be granted fine-grained privileges at the table level.
   * ``"aiven_clickhouse_grant"."reader_role"`` resource specifies the privileges and the scope of their application for the reader's role using the ``privilege_grant`` nested configuration.
-  * ``"aiven_clickhouse_grant"."analyst_user"`` assigns the contributor role to the ``analyst`` user.
+  * ``"aiven_clickhouse_grant"."analyst_user"`` assigns the writer role to the ``analyst`` user.
 
 Execute the Terraform files
 '''''''''''''''''''''''''''
