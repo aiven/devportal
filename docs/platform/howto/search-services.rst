@@ -42,41 +42,41 @@ To filter the services by service type, use the filter values in this table.
     * - Service name
       - Filter value
     * - Cassandra®
-      - cassandra 
+      - ``cassandra`` 
     * - ClickHouse®
-      - clickhouse
+      - ``clickhouse``
     * - Flink®
-      - flink
+      - ``flink``
     * - Grafana®
-      - grafana
+      - ``grafana``
     * - InfluxDB®
-      - influxdb
+      - ``influxdb``
     * - Kafka®
-      - kafka   
+      - ``kafka``
     * - M3DB®
-      - m3db
+      - ``m3db``
     * - M3 Aggregator®
-      - m3aggregator 
+      - ``m3aggregator`` 
     * - M3 Coordinator®
-      - m3coordinator
+      - ``m3coordinator``
     * - MySQL®
-      - mysql 
+      - ``mysql`` 
     * - OpenSearch®
-      - opensearch 
+      - ``opensearch`` 
     * - PostgreSQL®
-      - pg 
+      - ``pg`` 
     * - Redis®
-      - redis  
+      - ``redis``  
 
 
 Filter by status
 ~~~~~~~~~~~~~~~~~
 You can filter the services to show only those that are running, powered off, rebuilding, or rebalancing. The values supported for the ``status`` filter are:
 
-* running
-* poweroff
-* rebuilding
-* rebalancing
+* ``running``
+* ``poweroff``
+* ``rebuilding``
+* ``rebalancing``
 
 
 Filter by cloud provider
@@ -92,24 +92,24 @@ To filter the services by the cloud provider they are hosted on, use the filter 
     * - Cloud provider
       - Filter value
     * - Amazon Web Services (AWS)
-      - aws 
+      - ``aws``
     * - Azure
-      - azure 
+      - ``azure``
     * - Digital Ocean
-      - do 
+      - ``do``
     * - Google Cloud Provider (GCP)
-      - google
+      - ``google``
     * - Exoscale
-      - exoscale 
+      - ``exoscale``
     * - UpCloud
-      - upcloud 
+      - ``upcloud``
     * - Vultr
-      - vultr
+      - ``vultr``
 
 
 Filter by cloud region
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-The supported values for the ``region`` filter are in the **Cloud** column of the tables on the :doc:`List of available cloud regions </docs/platform/reference/list_of_clouds>` page. For example, to see all services in the AWS eu-central-1 region you would use this filter::
+The supported values for the ``region`` filter are in the **Cloud** column of the tables on the :doc:`List of available cloud regions </docs/platform/reference/list_of_clouds>` page. For example, to see all services in the AWS ``eu-central-1`` region you would use this filter::
 
     region:aws-eu-central-1
