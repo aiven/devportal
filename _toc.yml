@@ -824,6 +824,17 @@ entries:
           - file: docs/products/grafana/reference/plugins
             title: Plugins
 
+  - file: docs/products/influxdb
+    title: InfluxDB 
+    entries: 
+      - file: docs/products/influxdb/get-started
+        title: Get started
+      - file: docs/products/influxdb/concepts
+        title: Concepts
+        entries:
+          - file: docs/products/influxdb/concepts/continuous-queries
+          - file: docs/products/influxdb/concepts/influxdb-retention-policy
+
   # -------- AUXILIARY
   - file: docs/community
     title: Community
