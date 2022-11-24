@@ -1,62 +1,66 @@
-Apache Kafka® as a source for Aiven for ClickHouse®
-===================================================
+Aiven for Apache Kafka® as a source for Aiven for ClickHouse®
+=============================================================
 
-This article shows by way of example how to integrate Aiven for Apache Kafka® with Aiven for ClickHouse® using `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_.
-
-An Apache Kafka® source topic is used as a data source and Aiven for ClickHouse® can be used to filter or transform the raw data with a materialized view before writing it to a regular table.
+This article shows by way of example how to integrate Aiven for Apache Kafka® with Aiven for ClickHouse® using `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_. An Apache Kafka® source topic is used as a data source and Aiven for ClickHouse® is used to filter or transform the raw data with a materialized view before writing it to a regular table.
 
 Let's cook!
 -----------
 
-Imagine that you are collecting IoT measurements from thousands of sensors and these metrics are populated in Apache Kafka topic ``iot_measurements``. For this, you'd like to set up an Aiven for ClickHouse database and write the filtered messages into table ``cpu_high_usage``.
+Imagine that you've been collecting IoT measurements from thousands of sensors and these metrics are populated in Apache Kafka topic ``iot_measurements``. Now, you'd like to set up an Aiven for ClickHouse database and write filtered messages into table ``cpu_high_usage``.
+
+This recipe calls for the following:
+
+1. Set up an Aiven for ClickHouse database for writing and processing raw data.
+2. Insert the measurements data from Apache Kafka topic ``iot_measurements`` into the Aiven for ClickHouse database.
+3. Filter the data and save the output to the new ``cpu_high_usage`` table.
 
 Configure common files
 ''''''''''''''''''''''
 
-.. dropdown:: Expand to check out the relevant common files needed for this recipe.
+.. dropdown:: Expand to check out the common files needed for this recipe.
 
-    Navigate to a new folder and add the following files.
+  Navigate to a new folder and add the following files:
 
-    1. Add the following to a new ``provider.tf`` file:
+  1. ``provider.tf`` file
 
-    .. code:: terraform
+    .. code-block:: terraform
 
        terraform {
-	 required_providers {
-	   aiven = {
-	     source  = "aiven/aiven"
-	     version = ">= 3.8"
-	   }
-	 }
+         required_providers {
+           aiven = {
+             source  = "aiven/aiven"
+             version = ">= 3.7"
+           }
+         }
        }
-
+   
        provider "aiven" {
-	 api_token = var.aiven_api_token
+         api_token = var.aiven_api_token
        }
+  .. tip::
 
-    You can also set the environment variable ``AIVEN_TOKEN`` for the ``api_token`` property. With this, you don't need to pass the ``-var-file`` flag when executing Terraform commands.
+    You can set environment variable ``AIVEN_TOKEN`` for the ``api_token`` property so that you don't need to pass the ``-var-file`` flag when executing Terraform commands.
 
-    2. To avoid including sensitive information in source control, the variables are defined here in the ``variables.tf`` file. You can then use a ``*.tfvars`` file with the actual values so that Terraform receives the values during runtime, and exclude it.
+  2. ``variables.tf`` file
 
-    The ``variables.tf`` file defines the API token, the project name to use, and the prefix for the service name:
+  Use it for defining the variables to avoid including sensitive information in source control. The ``variables.tf`` file defines the API token, the project name, and the prefix for the service name.
 
     .. code:: terraform
 
        variable "aiven_api_token" {
-	 description = "Aiven console API token"
-	 type        = string
+         description = "Aiven console API token"
+         type        = string
        }
-
+   
        variable "project_name" {
-	 description = "Aiven console project name"
-	 type        = string
+         description = "Aiven console project name"
+         type        = string
        }
+  3. ``*.tfvars`` file
 
-    3. The ``var-values.tfvars`` file holds the actual values and is passed to Terraform using the ``-var-file=`` flag.
+  Use it to indicate the actual values of the variables so that they can be passed (with the ``-var-file=`` flag) to Terraform during runtime and excluded later on. Configure the ``var-values.tfvars`` file as follows:
 
-    ``var-values.tfvars`` file:
-
-    .. code:: terraform
+    .. code-block:: terraform
 
        aiven_api_token     = "<YOUR-AIVEN-AUTHENTICATION-TOKEN-GOES-HERE>"
        project_name        = "<YOUR-AIVEN-CONSOLE-PROJECT-NAME-GOES-HERE>"
@@ -64,9 +68,9 @@ Configure common files
 Configure the ``services.tf`` file
 ''''''''''''''''''''''''''''''''''
 
-The following Terraform script initializes both Apache Kafka and Aiven for ClickHouse services, creates the service integration, the source Apache Kafka topic and the Aiven for ClickHouse database.
+The following Terraform script initializes both Aiven for Apache Kafka and Aiven for ClickHouse services, creates the service integration, the source Apache Kafka topic, and the Aiven for ClickHouse database.
 
-.. code:: terraform
+.. code-block:: terraform
 
   resource "aiven_kafka" "kafka" {
     project                 = var.project_name
@@ -112,38 +116,46 @@ Execute the Terraform files
 
 .. dropdown:: Expand to check out how to execute the Terraform files.
 
-    The ``init`` command performs several different initialization steps in order to prepare the current working directory for use with Terraform. In our case, this command automatically finds, downloads, and installs the necessary Aiven Terraform provider plugins.
+  1. Run the following command:
 
-    .. code:: shell
+    .. code-block:: shell
 
        terraform init
+  
+  The ``init`` command performs initialization operations to prepare the working directory for use with Terraform. For this recipe, ``init`` automatically finds, downloads, and installs the necessary Aiven Terraform Provider plugins.
 
-    The ``plan`` command creates an execution plan and shows you the resources that will be created (or modified) for you. This command does not actually create any resource; this is more like a preview.
+  2. Run the following command:
 
-    .. code:: bash
+    .. code-block:: bash
 
        terraform plan -var-file=var-values.tfvars
+  
+  The ``plan`` command creates an execution plan and shows the resources to be created (or modified). This command doesn't actually create any resources but gives you a heads-up on what's going to happen next.
 
-    If you're satisfied with the output of ``terraform plan``, go ahead and run the ``terraform apply`` command which actually does the task or creating (or modifying) your infrastructure resources.
+  3. If the output of ``terraform plan`` looks as expected, run the following command:
 
-    .. code:: bash
+    .. code-block:: bash
 
        terraform apply -var-file=var-values.tfvars
+  
+  The ``terraform apply`` command creates (or modifies) your infrastructure resources.
 
 Check out the results
 ---------------------
 
-The resource ``"aiven_clickhouse"`` creates an Aiven for ClickHouse resource with the project name, choice of cloud, an Aiven service plan, and a specified service name. The ``"aiven_clickhouse_database"`` resources creates a database which can be used to write raw Kafka messages and create new tables and view processing them.
-``"aiven_kafka"`` resource creates an Apache Kafka cluster and a Apache Kafka topic ``iot_measurements`` is created using the ``"aiven_kafka_topic"`` resource.
-Similarly, the ``"aiven_service_integration"`` resource creates the integration between Apache Kafka and the Aiven for ClickHouse service.
+* Resource ``aiven_clickhouse`` creates an Aiven for ClickHouse service with the project name, the cloud name (provider, region, zone), the Aiven service plan, and the service name as specified in the ``services.tf`` file.
+* Resource ``aiven_clickhouse_database`` resources creates a database for writing raw Kafka messages, where new tables and views are created based on the processed messages.
+* Resource ``aiven_kafka`` creates an Aiven for Apache Kafka cluster.
+* Resource ``aiven_kafka_topic`` creates Apache Kafka topic ``iot_measurements``.
+* Resource ``aiven_service_integration`` resource creates the integration between the Aiven for Apache Kafka and the Aiven for ClickHouse service.
 
 Learn more
 ----------
 
-When you use this recipe, parameters and configurations will vary from those used in this article. For Apache Kafka and Aiven for ClickHouse advanced parameters, a related blog, and instructions on how to get started with Aiven Terraform Provider, see `Set up your first Aiven Terraform project <https://docs.aiven.io/docs/tools/terraform/get-started.html>`_.
+When you use this recipe, parameters and configurations will vary from those used in this article. For Aiven for Apache Kafka and Aiven for ClickHouse advanced parameters, a related blog, and instructions on how to get started with Aiven Terraform Provider, see `Set up your first Aiven Terraform project <https://docs.aiven.io/docs/tools/terraform/get-started.html>`_.
 
 Follow up
 ---------
 
-* Now you can proceed to `creating databases and tables <https://docs.aiven.io/docs/products/clickhouse/howto/integrate-kafka.html#update-apache-kafka-integration-settings>`_ so that you can `read and store your data <https://docs.aiven.io/docs/products/clickhouse/howto/integrate-kafka.html#read-and-store-data>`_.
+* You can `create databases and tables <https://docs.aiven.io/docs/products/clickhouse/howto/integrate-kafka.html#update-apache-kafka-integration-settings>`_ so that you can `read and store your data <https://docs.aiven.io/docs/products/clickhouse/howto/integrate-kafka.html#read-and-store-data>`_.
 * You can also `create a materialized view <https://docs.aiven.io/docs/products/clickhouse/howto/materialized-views.html>`_ to store the Kafka® messages in Aiven for ClickHouse.
