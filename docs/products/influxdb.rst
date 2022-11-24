@@ -17,13 +17,20 @@ Get started with Aiven for InfluxDB®
 
 Take your first steps with Aiven for InfluxDB® by following our :doc:`/docs/products/influxdb/get-started` article, or browse through our full list of articles:
 
-.. grid::1 2
+.. grid:: 1 2 2 2
 
-        .. grid-item-card::
-                :shadow: md
-                :margin: 2 2 0 0
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
 
-                📚 :doc:`Concepts </docs/products/influxdb/concepts>`
+        📚 :doc:`Concepts </docs/products/influxdb/concepts>`
+
+
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
+
+        📖 :doc:`Reference </docs/products/influxdb/reference>`
 
 
 Integrates with your existing Aiven tools
