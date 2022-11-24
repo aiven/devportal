@@ -250,6 +250,6 @@ rst_epilog = """
 """
 
 html_context = {
-   'api_url_search': os.environ.get('API_URL_SEARCH'),
-   'api_url_create_feedback': os.environ.get('API_URL_CREATE_FEEDBACK')
+   'api_url_search': os.getenv('API_URL_SEARCH'),
+   'api_url_create_feedback': os.getenv('API_URL_CREATE_FEEDBACK')
 }
