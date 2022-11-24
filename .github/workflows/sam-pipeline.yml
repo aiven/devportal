@@ -1,8 +1,9 @@
+name: SAM Validate, Build, Test, Deploy
 on:
   push:
     branches:
       - main
-      - features/use-aws
+      - feature/use-aws
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
