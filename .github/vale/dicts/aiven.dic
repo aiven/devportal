@@ -54,6 +54,7 @@ DSBulk
 Elasticsearch
 Epicurious
 etcd
+Exoscale
 failover
 fileset
 filesets
@@ -207,6 +208,7 @@ VM
 VMs
 VPC
 VNet
+Vultr
 wget
 Workbench
 Worldmap
