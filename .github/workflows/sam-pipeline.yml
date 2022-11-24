@@ -42,6 +42,7 @@ jobs:
           echo "The region is ${{ secrets.AWS_REGION }}"
           echo "The repository is $REPOSITORY"
           echo "The environment is $ENVIRONMENT"
+          echo "The version key is $VERSIONKEY"
           echo "The branch is $BRANCH"
       # sam build
       - name: SAM Build
