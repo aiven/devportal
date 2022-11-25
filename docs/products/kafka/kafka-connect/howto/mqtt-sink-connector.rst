@@ -31,9 +31,7 @@ Furthermore you need to collect the following information about the sink MQTT se
 * ``PORT``: MQTT port (usually 1883)
 * ``KCQL_STATEMENT``: The KCQL statement to be used in the following format::
 
-    INSERT INTO <mqtt-topic>
-    SELECT FIELD, ... 
-    FROM <kafka-topic>
+    INSERT INTO <mqtt-topic> SELECT FIELD, ... FROM <kafka-topic>
 
 * ``APACHE_KAFKA_HOST``: The hostname of the Apache Kafka service, only needed when using Avro as data format
 * ``SCHEMA_REGISTRY_PORT``: The Apache Kafka's schema registry port, only needed when using Avro as data format
