@@ -173,6 +173,6 @@ The command output is like::
 
 For further information about WAL and checkpoints, read the `PostgreSQL documentation <https://www.postgresql.org/docs/current/wal-configuration.html>`_.
 
-.. important::
+.. note::
 
-    Replication slots are not recreated automatically when a maintenance update is applied or a failover occurs. Contact the Aiven support if you need to enable the recreation of replication slots.
+    The recreation of replication slots is enabled by defult. Replication slots are recreated automatically when a maintenance update is applied or a failover occurs.

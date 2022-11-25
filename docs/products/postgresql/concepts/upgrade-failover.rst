@@ -61,8 +61,5 @@ During maintenance updates, cloud migrations, or plan changes, the below procedu
 Recreation of replication slots
 -------------------------------
 
-In case of failover or controlled switchover of an Aiven for PostgreSQL service, the replication slots from the old primary server are not recreated in the new primary server by default.
+In case of failover or controlled switchover of an Aiven for PostgreSQL service, the replication slots from the old primary server are recreated in the new primary server by default.
 
-.. important::
-
-    Enable the recreation of replication slots in the new primary server before opening connections and redirecting the traffic.
