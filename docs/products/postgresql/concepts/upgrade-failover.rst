@@ -57,3 +57,12 @@ During maintenance updates, cloud migrations, or plan changes, the below procedu
 
 .. Note::
     The old primary server is kept alive for a short period of time (minimum 60 seconds) with a TCP forwarding setup pointing to the new primary server allowing clients to connect before learning the new IP address.
+
+Recreation of replication slots
+-------------------------------
+
+In case of failover or controlled switchover of an Aiven for PostgreSQL service, the replication slots from the old primary server are not recreated in the new primary server by default.
+
+.. important::
+
+    Enable the recreation of replication slots in the new primary server before opening connections and redirecting the traffic.
