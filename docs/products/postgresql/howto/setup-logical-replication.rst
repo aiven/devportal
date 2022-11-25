@@ -175,4 +175,4 @@ For further information about WAL and checkpoints, read the `PostgreSQL document
 
 .. important::
 
-    Replication slots are not recreated automatically when maintenance updates are applied or failovers occur. Contact the Aiven support if you need to enable the recreation of replication slots.
+    Replication slots are not recreated automatically when a maintenance update is applied or a failover occurs. Contact the Aiven support if you need to enable the recreation of replication slots.
