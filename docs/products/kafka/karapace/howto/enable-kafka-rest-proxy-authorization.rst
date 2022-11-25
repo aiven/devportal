@@ -12,4 +12,4 @@ Aiven for Apache Kafka® services have :doc:`Apache Kafka® REST proxy authoriza
     avn service update -c kafka_rest_authorization=False SERVICE_NAME
 
 .. warning:: 
-    Enabling Apache Kafka REST proxy authorization can disrupt access for users if the Kafka access control rules have not been configured to allow this. For more information, see :doc:`Manage Apache Kafka® REST proxy authorization <../howto/manage-kafka-rest-proxy-authorization>`.
+    Enabling Apache Kafka REST proxy authorization can disrupt access for users if the Kafka access control rules have not been configured properly. For more information, see :doc:`Manage Apache Kafka® REST proxy authorization <../howto/manage-kafka-rest-proxy-authorization>`.

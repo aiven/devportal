@@ -232,7 +232,7 @@ entries:
             title: Scaling options
           - file: docs/products/kafka/concepts/acl
           - file: docs/products/kafka/concepts/schema-registry-authorization
-          - file: docs/products/kafka/concepts/kafka-rest-authorization
+          - file: docs/products/kafka/concepts/kafka-rest-api
           - file: docs/products/kafka/concepts/log-compaction
           - file: docs/products/kafka/concepts/partition-segments
           - file: docs/products/kafka/concepts/auth-types
