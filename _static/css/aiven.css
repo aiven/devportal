@@ -275,7 +275,7 @@ a {
 }
 
 .sidebar-search-container::before {
-  z-index: 99;
+  z-index: 11;
 }
 
 .card {
@@ -419,6 +419,7 @@ h3 > code > .pre {
     gap: var(--sidebar-item-spacing-vertical);
     padding: var(--sidebar-item-spacing-vertical)
       var(--sidebar-item-spacing-horizontal);
+    margin-bottom: 200px;
   }
 
   .mobile-sidebar-actions .topnavbar-button-large {
