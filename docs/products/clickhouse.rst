@@ -1,5 +1,5 @@
 ClickHouse® |beta|
-===================================================================
+==================
 
 .. note::
    The Aiven for ClickHouse® service is currently available as a beta release and is intended for **non-production use**.

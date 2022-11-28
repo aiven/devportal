@@ -1,7 +1,7 @@
 About scaling M3
 ================
 
-`M3 <https://www.m3db.io/>`_ scales horizontally up to a really large number of nodes (at least in the low hundreds in a single cluster, and thousands overall); if you run out of resources in M3DB, you can always add more nodes (or change to larger nodes). The same applies also to M3Aggregator nodes.
+`M3 <https://m3db.io/>`_ scales horizontally up to a really large number of nodes (at least in the low hundreds in a single cluster, and thousands overall); if you run out of resources in M3DB, you can always add more nodes (or change to larger nodes). The same applies also to M3Aggregator nodes.
 
 The most important thing when managing resources is to understand how to make good use of the resources in use, and understand the implications of making changes such as adding more namespaces, or ingesting more data. This article outlines how resources are used and makes some recommendations about making good use of resources and managing load.
 

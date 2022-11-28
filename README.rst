@@ -25,6 +25,8 @@ Install the dependencies::
 
     pip install -r requirements.txt
 
+**Note:** If that fails because it can't install ``psycopg2-binary``, run ``brew install postgresql@14`` to install PostgreSQL 14 (or a similar command for your package manager) and then try again.
+
 Start the HTML version with::
 
     make livehtml
