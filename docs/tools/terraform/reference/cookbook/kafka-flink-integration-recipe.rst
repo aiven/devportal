@@ -94,8 +94,8 @@ For this, you'd like to run an Apache Flink job and write the filtered messages 
     service_name = "demo-kafka"
   
     kafka_user_config {
-        kafka_connect = true
-        kafka_rest    = true
+        kafka_connect = false
+        kafka_rest    = false
         kafka_version = "3.2"
         kafka {
           group_max_session_timeout_ms = 70000
