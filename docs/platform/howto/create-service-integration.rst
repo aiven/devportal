@@ -3,7 +3,7 @@ Create a service integration
 
 If you're not sure what a service integration is, follow :doc:`this guide <../concepts/service-integration>` for an overview. This article will guide you on how to create service integrations between different Aiven services and move telemetry data using these integrations. To get started, you will need three services:
 
-- Aiven for Apache Kafka® - The service that produces the telemetry data
+- Aiven for Apache Kafka® - The service that produces the telemetry data. We're using a Kafka service in our example, but this might be one of the other Aiven services available.
 - Aiven for PostgreSQL® - Database where the telemetry data is stored and can be queried from
 - Aiven for Grafana® - Dashboards for the telemetry data
 
