@@ -54,7 +54,7 @@ jobs:
       - name: SAM Deploy
         run: |
           # Run SAM Deploy
-          sam deploy --template-file .aws-sam/build/template.yaml \
+          sam deploy --debug --template-file .aws-sam/build/template.yaml \
             --stack-name ${{ steps.vars.outputs.environment }} \
             --s3-bucket ${{ steps.vars.outputs.environment }} \
             --parameter-overrides \
