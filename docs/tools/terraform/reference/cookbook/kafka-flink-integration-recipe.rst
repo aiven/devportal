@@ -40,7 +40,7 @@ For this, you'd like to run an Apache Flink job and write the filtered messages 
          required_providers {
            aiven = {
              source  = "aiven/aiven"
-             version = ">= 3.7"
+             version = "~> 3.8.1"
            }
          }
        }
@@ -92,6 +92,17 @@ For this, you'd like to run an Apache Flink job and write the filtered messages 
     cloud_name   = "google-europe-west1"
     plan         = "business-8"
     service_name = "demo-kafka"
+  
+    kafka_user_config {
+        kafka_connect = true
+        kafka_rest    = true
+        kafka_version = "3.2"
+        kafka {
+          group_max_session_timeout_ms = 70000
+          log_retention_bytes          = 1000000000
+        }
+      }
+  
   }
   
   resource "aiven_service_integration" "flink_to_kafka" {

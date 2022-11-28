@@ -42,7 +42,7 @@ Be sure to check out the :doc:`getting started guide <../../get-started>` to lea
          required_providers {
            aiven = {
              source  = "aiven/aiven"
-             version = ">= 3.7"
+             version = "~> 3.8.1"
            }
          }
        }
@@ -104,7 +104,7 @@ Be sure to check out the :doc:`getting started guide <../../get-started>` to lea
     kafka_user_config {
       kafka_connect = true
       kafka_rest    = true
-      kafka_version = "3.1"
+      kafka_version = "3.2"
       kafka {
         auto_create_topics_enable = true
       }

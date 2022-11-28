@@ -44,7 +44,7 @@ For example, you'll need to declare the variables for ``project`` and ``api_toke
          required_providers {
            aiven = {
              source  = "aiven/aiven"
-             version = ">= 3.7"
+             version = "~> 3.8.1"
            }
          }
        }
@@ -121,7 +121,7 @@ The ``services.tf`` file for the provisioning of these three services, service i
   resource "aiven_kafka_connect" "demo-kafka-connect" {
     project                 = var.project_name
     cloud_name              = "google-europe-north1"
-    project_vpc_id          = "proj1-demo/01a413b4-36df-4b1b-a697-fd7f87833494"
+    project_vpc_id          = "PROJECT_NAME/ABCD1234-AB12-AB12-AB12-ABCDEF123456"
     plan                    = "startup-4"
     service_name            = "demo-kafka-connect"
     maintenance_window_dow  = "monday"

@@ -36,7 +36,7 @@ Be sure to check out the :doc:`getting started guide <../../get-started>` to lea
          required_providers {
            aiven = {
              source  = "aiven/aiven"
-             version = ">= 3.7"
+             version = "~> 3.8.1"
            }
          }
        }
@@ -89,7 +89,7 @@ Here is the sample Terraform file to stand-up and connect all the services. Keep
       kafka_user_config {
         kafka_connect = true
         kafka_rest    = true
-        kafka_version = "3.0"
+        kafka_version = "3.2"
         kafka {
           group_max_session_timeout_ms = 70000
           log_retention_bytes          = 1000000000
@@ -169,7 +169,7 @@ Here is the sample Terraform file to stand-up and connect all the services. Keep
       maintenance_window_dow  = "monday"
       maintenance_window_time = "10:00:00"
       opensearch_user_config {
-        opensearch_version = "1"
+        opensearch_version = "2"
       }
     }
     

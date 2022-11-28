@@ -57,7 +57,7 @@ Be sure to check out the :doc:`getting started guide <../../get-started>` to lea
          required_providers {
            aiven = {
              source  = "aiven/aiven"
-             version = ">= 3.7"
+             version = "~> 3.8.1"
            }
          }
        }
@@ -165,7 +165,7 @@ Be sure to check out the :doc:`getting started guide <../../get-started>` to lea
     maintenance_window_time = "10:00:00"
   
     kafka_user_config {
-      kafka_version = "3.1"
+      kafka_version = "3.2"
       kafka {
         group_max_session_timeout_ms = 70000
         log_retention_bytes          = 1000000000
@@ -190,7 +190,7 @@ Be sure to check out the :doc:`getting started guide <../../get-started>` to lea
     maintenance_window_time = "10:00:00"
   
     kafka_user_config {
-      kafka_version = "3.1"
+      kafka_version = "3.2"
       kafka {
         group_max_session_timeout_ms = 70000
         log_retention_bytes          = 1000000000
