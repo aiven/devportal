@@ -99,12 +99,8 @@ To filter the services by the cloud provider they are hosted on, use the filter 
       - ``do``
     * - Google Cloud Provider (GCP)
       - ``google``
-    * - Exoscale
-      - ``exoscale``
     * - UpCloud
       - ``upcloud``
-    * - Vultr
-      - ``vultr``
 
 
 Filter by cloud region
