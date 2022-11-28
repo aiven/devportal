@@ -61,5 +61,25 @@ During maintenance updates, cloud migrations, or plan changes, the below procedu
 Recreation of replication slots
 -------------------------------
 
-In case of failover or controlled switchover of an Aiven for PostgreSQL service, the replication slots from the old primary server are recreated in the new primary server by default.
+In case of failover or controlled switchover of an Aiven for PostgreSQL service, the replication slots from the old primary server are automatically recreated in the new primary server.
+
+One-node cluster
+""""""""""""""""
+
+Before replacing a node in the one-node cluster, the new node acquires information on replication slots on the original service, re-creates them, and only then the failover is performed.
+
+Multi-node cluster
+""""""""""""""""""
+
+For multi-node setups, replication slots from the primary are synchronized to the standbys periodically. At regular time intervals
+
+* Dependencies for newly-created slots are installed in the corresponding databases (currently, every 30 seconds)
+* Positions (``confirmed_flush_lsn``) of the slots are synchronized on the primary and the standbys.
+
+At the time when a failover to a standby occurs, the standby already has active replication slots with fairly up-to-date positions from the primary (with a possible 5-second delay).
+
+.. note::
+
+    * In case of uncontrolled failover, slots created up to 30 seconds before the failover might be lost.
+    * Since, positions of recovered replication slots on the new primary might be several seconds delayed from the old primary, you might receive entities that you've already received before when connecting to the slot after the failover without specifying a position.
 
