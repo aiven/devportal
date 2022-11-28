@@ -41,24 +41,24 @@ To filter the services by service type, use the filter values in this table.
 
     * - Service name
       - Filter value
-    * - Cassandra®
+    * - Apache Cassandra®
       - ``cassandra`` 
-    * - ClickHouse®
-      - ``clickhouse``
-    * - Flink®
+    * - Apache Flink®
       - ``flink``
+    * - Apache Kafka®
+      - ``kafka``
+    * - ClickHouse®
+      - ``clickhouse``  
     * - Grafana®
       - ``grafana``
     * - InfluxDB®
       - ``influxdb``
-    * - Kafka®
-      - ``kafka``
-    * - M3DB®
-      - ``m3db``
     * - M3 Aggregator®
       - ``m3aggregator`` 
     * - M3 Coordinator®
       - ``m3coordinator``
+    * - M3DB®
+      - ``m3db``
     * - MySQL®
       - ``mysql`` 
     * - OpenSearch®
