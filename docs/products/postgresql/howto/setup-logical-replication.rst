@@ -175,4 +175,4 @@ For further information about WAL and checkpoints, read the `PostgreSQL document
 
 .. note::
 
-    The recreation of replication slots is enabled by defult. Replication slots are recreated automatically when a maintenance update is applied or a failover occurs.
+    The recreation of replication slots gets enabled automatically. Replication slots are recreated when a maintenance update is applied or a failover occurs.
