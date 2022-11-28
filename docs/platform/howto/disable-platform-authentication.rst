@@ -5,8 +5,12 @@ If you have already :doc:`set up a SAML authentication <saml/saml-authentication
 
 Here are the steps to follow to disable platform authentication:
 
-1. Log in to the Aiven Console using your alternative authentication (for example, SAML) method. You must not be logged in with any open sessions using the password-based platform authentication.
+1. Log in to the Aiven Console using your alternative authentication (for example, SAML) method. 
 
+.. warning::
+
+   You must not be logged in with any open sessions using the password-based platform authentication.
+   
 2. From the top-right corner of the console, click on **User information** and then click **Authentication** tab.
 
 3. Use the toggle switch under the *Authentication methods* section to turn off platform authentication for the **Aiven Password** method.
