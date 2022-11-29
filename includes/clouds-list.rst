@@ -206,6 +206,9 @@ DigitalOcean
   * - Asia-Pacific
     - ``do-sgp``
     - Asia, Singapore 
+  * - Australia
+    - ``do-syd``
+    - Australia, New South Wales 
   * - Europe
     - ``do-ams``
     - Europe, Netherlands 
@@ -296,6 +299,9 @@ Google Cloud
   * - Europe
     - ``google-europe-west9``
     - Europe, France 
+  * - Middle East
+    - ``google-me-west1``
+    - Middle East, Israel 
   * - North America
     - ``google-northamerica-northeast1``
     - Canada, Quebec 
