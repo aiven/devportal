@@ -28,7 +28,7 @@ Follow the below steps to configure and connect Aiven for Apache Kafka® with Kl
    -  **Protocol:** Select the protocol for your cluster
    
    .. note:: 
-      Based on the protocol selected, you need to perform :ref:`additional configurations <klaw-additional-configs>` to enable connection between Aiven for Apache Kafka® and Klaw clusters. 
+      Based on the protocol selected, you need to :ref:`configure Klaw application.properties file<klaw-application-properties-configs>` to enable connection between Aiven for Apache Kafka® and Klaw clusters. 
 
    -  **Kafka Flavor:** Select Aiven for Apache Kafka® as the flavor
    -  **Project Name:** Select the project name defined in the Aiven Console
@@ -57,12 +57,12 @@ Follow the below steps to configure and connect Aiven for Apache Kafka® with Kl
 
 If the connection based on the cluster and environment configurations are **successful**, the connection status displays a **blue thumbs-up icon** on the Environments page in the Klaw web interface.  If it is **unsuccessful**, a **red thumbs-down icon** is displayed. 
 
-For unsuccessful connections, check the authentication protocol configurations. See the :ref:`Additional configurations <klaw-additional-configs>` section for further details. After completing these configurations, check the connection status on the Environments page by clicking the thumbs-down icon to see if the setup was successful.
+For unsuccessful connections, check the authentication protocol configurations. See the :ref:`Configure Klaw application.properties file<klaw-application-properties-configs>` section for further details. After completing these configurations, check the connection status on the Environments page by clicking the thumbs-down icon to see if the setup was successful.
 
-.. _klaw-additional-configs:
+.. _klaw-application-properties-configs:
 
-Additional configurations
--------------------------
+Configure Klaw application.properties file
+-----------------------------------------------
 `Klaw <https://www.klaw-project.io/>`_ uses the ``application.properties`` file to configure any application-related properties, such as secret key and authentication protocol configurations. Connecting Aiven for Apache Kafka® with Klaw requires you to perform the following additional configurations in the ``application.properties`` file.
 
 Secret key configuration
