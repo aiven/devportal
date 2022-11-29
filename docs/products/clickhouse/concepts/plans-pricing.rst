@@ -1,23 +1,19 @@
 Aiven for ClickHouse® service plans
 ===================================
 
-Aiven for ClickHouse® is available in a few variants, each of them with a different feature offering. Explore the Aiven for ClickHouse service plans and find out what they cover so that you can identify the one that siuts your needs.
+Aiven for ClickHouse® is available in a few variants (plans or tiers), each of them offering a different set of features. Explore the Aiven for ClickHouse service plans and find out what they cover so that you can identify the one that suits your needs best.
 
 Service plans
 -------------
 
 Aiven for ClickHouse is a fully managed distributed columnar database based on open source ClickHouse - a fast resource effective solution tailored for warehousing data and generating real-time analytical data reports with advanced SQL queries.
 
-With Aiven for ClickHouse, you can choose either a single node or a high-availability cluster, all running on dedicated instances. Aiven for ClickHouse is packaged into four tiers, each including a range of plans to suit the size of your workloads.
+With Aiven for ClickHouse, you can choose either a single node or a high-availability cluster, each running on dedicated instances. Aiven for ClickHouse is packaged into four tiers, each including a range of plans to suit the size of your workloads.
 
 * Hobbyist - single node plan for small hobby projects
 * Startup - low-cost plan to experiment and prototype new ideas
 * Business - high-availability plan for business-focused apps and internal services
 * Premium - high-availability plan with multiple shards for mission-critical apps, handling high query rates and big data amounts. 
-
-.. note::
-
-    Some features may vary between plan tiers.
 
 .. To learn more, check out the `plan comparison <https://aiven.io/pricing?tab=plan-pricing&product=clickhouse>`_.
 
@@ -29,7 +25,7 @@ Aiven for ClickHouse plans are optimized for working well in the various clouds 
 Pricing model
 -------------
 
-Aiven for ClickHouse aims to deliver a unified pricing model to simplify cost forecasting. The price is all-inclusive and consis of the following charges:
+Aiven for ClickHouse aims to deliver a unified pricing model to simplify cost forecasting. The price is all-inclusive and consists of the following charges:
 
 * Virtual machine costs
 * Network costs
