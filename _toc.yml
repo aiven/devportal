@@ -591,6 +591,8 @@ entries:
             title: Connect with ClickHouse client
           - file: docs/products/clickhouse/howto/connect-with-python
             title: Connect with Python
+          - file: docs/products/clickhouse/howto/connect-with-nodejs
+            title: Connect with Node.js
           - file: docs/products/clickhouse/howto/connect-with-php
             title: Connect with PHP
           - file: docs/products/clickhouse/howto/secure-service
