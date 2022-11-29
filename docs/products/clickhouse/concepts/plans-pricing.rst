@@ -40,7 +40,7 @@ Aiven for ClickHouse aims to deliver a unified pricing model to simplify cost fo
 
 .. important::
 
-    Each individual Aiven service integrated with ClickHouse has its own cost. For more information, see `Pricing< https://aiven.io/pricing?tab=plan-pricing&product=clickhouse>`_.
+    Each individual Aiven service integrated with ClickHouse has its own cost. For more information, see `Pricing <https://aiven.io/pricing?tab=plan-pricing&product=clickhouse>`_.
 
 
 Billing
@@ -51,7 +51,7 @@ All Aiven services including Aiven for ClickHouse are billed based on actual usa
 The minimum hourly charge unit is one hour. Powering off or deleting a service stops the accumulation of charges immediately. We calculate your final bill based on your consumption over that period and deliver it as a single invoice per project. For generating a consolidated invoice across multiple projects, `manage billing groups in Aiven Console <https://docs.aiven.io/docs/platform/howto/use-billing-groups.html>`_.
 
 Billing on partial hours
-""""""""""""""""""""""'"
+''''''''''''''''''''''''
 
 Minutes of usage are rounded to the nearest hour. However, the one-hour minimum charge unit still applies.
 
