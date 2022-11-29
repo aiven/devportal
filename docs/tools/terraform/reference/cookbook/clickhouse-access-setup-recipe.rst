@@ -88,7 +88,7 @@ Configure the ``services.tf`` file as follows:
   resource "aiven_clickhouse" "clickhouse" {
     project                 = var.project_name
     cloud_name              = "google-europe-west1"
-    plan                    = "startup-16"
+    plan                    = "startup-beta-16" // A special plan name for the product being in beta
     service_name            = "clickhouse-gcp-eu"
     maintenance_window_dow  = "monday"
     maintenance_window_time = "10:00:00"
