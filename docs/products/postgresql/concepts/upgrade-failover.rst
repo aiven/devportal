@@ -78,8 +78,7 @@ For multi-node setups, replication slots from the primary are synchronized to th
 
 At the time when a failover to a standby occurs, the standby already has active replication slots with fairly up-to-date positions from the primary (with a possible 5-second delay).
 
-.. note::
-
+.. warning::
+    
     * In case of uncontrolled failover, slots created up to 30 seconds before the failover might be lost.
-    * Since, positions of recovered replication slots on the new primary might be several seconds delayed from the old primary, you might receive entities that you've already received before when connecting to the slot after the failover without specifying a position.
-
+    * Arrival of recovered replication slots positions from the old primary to the new primary might be several seconds delayed. If case of delay, you might receive the same entities that you've already received when you connected to the slot after the failover without specifying a position.
