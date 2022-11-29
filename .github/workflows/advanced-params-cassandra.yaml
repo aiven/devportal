@@ -3,6 +3,7 @@ name: Cassandra - Create PR to Update Advanced parameters
 on:
   schedule:
     - cron: "0 6 * * 2"
+  workflow_dispatch:
 
 jobs:
   advanced_params_cassandra:
@@ -28,6 +29,8 @@ jobs:
         uses: peter-evans/create-pull-request@v4
         with:
           commit-message: Cassandra - Update Advanced parameters
+          committer: GitHub <noreply@github.com>
+          author: GitHub <noreply@github.com>
           title: Cassandra - Update Advanced parameters
           body: Cassandra - update advanced parameters file
           base: main
