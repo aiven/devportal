@@ -63,6 +63,7 @@ exceptions:
   - Kafdrop
   - Kafka
   - Karapace
+  - Klaw
   - Kpow
   - ksqlDB
   - Kubernetes
