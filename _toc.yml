@@ -198,6 +198,7 @@ entries:
             - file: docs/tools/terraform/howto/promote-to-master-pg-rr
               title: Promote PostgreSQL read replica to master
             - file: docs/tools/terraform/howto/upgrade-to-opensearch
+            - file: docs/tools/terraform/howto/vnet-peering-azure
         - file: docs/tools/terraform/concepts
           title: Concepts
           entries:
