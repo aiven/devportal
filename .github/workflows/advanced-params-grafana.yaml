@@ -3,6 +3,7 @@ name: Grafana - Create PR to Update Advanced parameters
 on:
   schedule:
     - cron: "0 6 * * 2"
+  workflow_dispatch:
 
 jobs:
   advanced_params_grafana:
@@ -28,6 +29,8 @@ jobs:
         uses: peter-evans/create-pull-request@v4
         with:
           commit-message: Grafana - Update Advanced parameters
+          committer: GitHub <noreply@github.com>
+          author: GitHub <noreply@github.com>
           title: Grafana - Update Advanced parameters
           body: Grafana - update advanced parameters file
           base: main

@@ -3,6 +3,7 @@ name: Cloud - Create PR to update available list
 on:
   schedule:
     - cron: "0 6 * * 2"
+  workflow_dispatch:
 
 jobs:
   cloud_list:
@@ -28,6 +29,8 @@ jobs:
         uses: peter-evans/create-pull-request@v4
         with:
           commit-message: Cloud - Update available list
+          committer: GitHub <noreply@github.com>
+          author: GitHub <noreply@github.com>
           title: Cloud - Update available list
           body: Cloud - Update available list
           base: main
