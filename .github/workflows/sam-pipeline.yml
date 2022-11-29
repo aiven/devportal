@@ -28,13 +28,11 @@ jobs:
           REF: ${{ github.ref }}
         run: |
           # Set variables
-          BRANCH=${REF#refs/heads/}
           REPOSITORY=`echo $REPO | tr "/" "-"`
           VERSIONKEY="faded-deadbeef"
           ENVIRONMENT=$REPOSITORY-$VERSIONKEY-${{ secrets.AWS_REGION }}
           # In this step we are setting variables and persistenting them
           # into the environment so that they can be utilized in other steps
-          echo "::set-output name=branch::$BRANCH"
           echo "::set-output name=repository::$REPOSITORY"
           echo "::set-output name=versionkey::$VERSION_KEY"
           echo "::set-output name=environment::$ENVIRONMENT"
@@ -43,7 +41,6 @@ jobs:
           echo "The repository is $REPOSITORY"
           echo "The environment is $ENVIRONMENT"
           echo "The version key is $VERSIONKEY"
-          echo "The branch is $BRANCH"
       # sam build
       - name: SAM Build
         run: sam build -t aws/template.yaml
