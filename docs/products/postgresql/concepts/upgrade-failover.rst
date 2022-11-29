@@ -81,4 +81,4 @@ At the time when a failover to a standby occurs, the standby already has active 
 .. warning::
     
     * In case of uncontrolled failover, slots created up to 30 seconds before the failover might be lost.
-    * Arrival of recovered replication slots positions from the old primary to the new primary might be several seconds delayed. If case of delay, you might receive the same entities that you've already received when you connected to the slot after the failover without specifying a position.
+    * Arrival of recovered replication slots positions from the old primary to the new primary might be several seconds delayed. If delayed, you might receive the same entities that you've already received when you connected to the slot after the failover without specifying a position.
