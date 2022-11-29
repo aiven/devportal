@@ -63,6 +63,10 @@ Recreation of replication slots
 
 In case of failover or controlled switchover of an Aiven for PostgreSQL service, the replication slots from the old primary server are automatically recreated in the new primary server.
 
+.. important::
+
+    The recreation of replication slots feature is enabled automatically and doesn't require restarting the nodes.
+
 One-node cluster
 """"""""""""""""
 
