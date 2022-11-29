@@ -1,7 +1,7 @@
 Azure virtual network peering
 =============================
 
-This howto is based on original :doc:`article </docs/platform/howto/vnet-peering-azure>`
+This how-to is based on original :doc:`article </docs/platform/howto/vnet-peering-azure>`
 made for Aiven and Azure cli.
 It follows original chapter-by-chapter,
 I will find every step signed with the very same title below in the example.
@@ -133,7 +133,6 @@ Create or bind existing (using ``terraform import``) resources.
     # Yes, application_id is hardcoded.
     resource "azuread_service_principal" "aiven_app_principal" {
       application_id = "55f300d4-fc50-4c5e-9222-e90a6e2187fb"
-      use_existing   = true
     }
 
     # 8. Create a custom role for the Aiven application object
