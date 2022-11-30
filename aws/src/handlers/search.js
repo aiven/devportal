@@ -1,6 +1,7 @@
 const { Client } = require("@opensearch-project/opensearch");
 
 const client = new Client({
+  // OpenSearch service URL
   node: process.env.ES_URL,
 });
 
@@ -129,11 +130,11 @@ const searchHandler = async (event) => {
       },
     };
   } catch (error) {
-    console.error(error);
-
     return {
       statusCode: 500,
-      body: "",
+      body: JSON.stringify({
+        error,
+      }),
       headers: {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
