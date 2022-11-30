@@ -71,9 +71,6 @@ A disaster happens to K1 cluster and it becomes inaccessible for long time for a
 
 The clients (Producers 1 and Consumers 1) switch from K1 to K2. Consumers 1 continue consuming from the remote (i.e. replicated) topic K1.topic, Producers 1 start producing into topic.
 
-.. image:: /images/products/kafka/kafka-mirrormaker/Mirrormaker-Active-Active4.png
-    :alt: Mirrormaker Active-Active Setup
-
 When Consumers 1 finish consuming K1.topic, they switch to topic. All consumers act as one group now.
 
 .. image:: /images/products/kafka/kafka-mirrormaker/Mirrormaker-Active-Active5.png
