@@ -420,7 +420,13 @@ entries:
         - file: docs/products/kafka/kafka-mirrormaker/getting-started
         - file: docs/products/kafka/kafka-mirrormaker/concepts
           entries:
+          - file: docs/products/kafka/kafka-mirrormaker/concepts/knowledge-base
+          - file: docs/products/kafka/kafka-mirrormaker/concepts/disaster-recovery
+          - file: docs/products/kafka/kafka-mirrormaker/concepts/mirrormaker-migration-dr-highlevel-approach
+          - file: docs/products/kafka/kafka-mirrormaker/concepts/replication-in-mirrormaker2
           - file: docs/products/kafka/kafka-mirrormaker/concepts/replication-flow-topics-regex
+          - file: docs/products/kafka/kafka-mirrormaker/concepts/migration-concerns
+          - file: docs/products/kafka/kafka-mirrormaker/concepts/notes-on-internals
         - file: docs/products/kafka/kafka-mirrormaker/howto
           title: HowTo
           entries:

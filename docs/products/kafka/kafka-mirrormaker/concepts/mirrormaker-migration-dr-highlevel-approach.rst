@@ -1,7 +1,7 @@
-MirrorMaker migration and DR high level approach
+Apache Kafka® MirrorMaker 2 migration and DR high level approach
 #############
 
-MirrorMaker2 (MM2) is the standard replication tool packaged with the Apache Kafka and can be run as a managed service on the Aiven platform. Under the hood, MM2 utilizes Kafka Connect to both consume from one Kafka cluster and then simultaneously produce to a second cluster. MM2 can be used to enable either an Active-Passive disaster recovery (DR) architecture or an active-active (HA) architecture.
+MirrorMaker 2 (MM2) is the standard replication tool packaged with the Apache Kafka and can be run as a managed service on the Aiven platform. Under the hood, MM2 utilizes Kafka Connect to both consume from one Kafka cluster and then simultaneously produce to a second cluster. MM2 can be used to enable either an Active-Passive disaster recovery (DR) architecture or an active-active (HA) architecture.
 
 Set Up
 --------------
@@ -54,5 +54,3 @@ Checklist
    * This bug is expected to be fixed Q4/22
 * Offsets may not be preserved upon mirroring. This will be the case if some offsets have been deleted either through data age off or compaction.
 * MM2 will preserve the correlation between consumer offsets between clusters.
-
-

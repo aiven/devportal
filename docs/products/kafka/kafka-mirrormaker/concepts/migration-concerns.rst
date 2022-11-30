@@ -1,7 +1,7 @@
 Migration concerns and known issues
 #############
 
-Mirrormaker2 is translating the offsets incorrectly if LAG shows negative on the target cluster and these are know issues which are expected to be resolved in 3.3.0 and tuning can be done to minimize hitting this issue.
+MirrorMaker 2 is translating the offsets incorrectly if LAG shows negative on the target cluster and these are know issues which are expected to be resolved in 3.3.0 and tuning can be done to minimize hitting this issue.
 
 Known bugs:
 --------------
@@ -12,7 +12,7 @@ Known bugs:
 * https://github.com/apache/kafka/pull/11492
 
 
-MirrorMaker2 tuning:
+MirrorMaker 2 tuning:
 --------------
 
 * Using startup-32 as an example, change increase task workers in advanced options:
@@ -40,6 +40,6 @@ To validate MM2 is caught up on the messages, the following can be monitored:
 ---------------------------------
 
 * ``Metric kafka.consumer_lag``
-* ``jmx.kafka.connect.mirror.record_count``: When mirrormaker stops producing records to a topic then the value of this metric stops increasing and therefore a flat line is visible in the dashboard
+* ``jmx.kafka.connect.mirror.record_count``: When MirrorMaker 2 stops producing records to a topic then the value of this metric stops increasing and therefore a flat line is visible in the dashboard
 * With kt the following might be helpful to get the latest messages from all partitions: 
 ``kt consume -auth ./mykafka.conf -brokers service-project.aivencloud.com:24949 -topic topicname -offsets all=newest:newest | jq -c -s 'sort_by(.partition) | .[] | {partition: .partition, value: .value, timestamp: .timestamp}'``

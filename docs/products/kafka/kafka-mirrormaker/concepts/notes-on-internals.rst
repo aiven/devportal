@@ -24,4 +24,4 @@ OffsetSyncs are needed for checkpoints. They are just offset mapping between clu
 4. offset=102
 
 They are emitted when topics are out of sync.
-See `Ryanne Dolan’s talk <https://www.confluent.io/kafka-summit-lon19/disaster-recovery-with-mirrormaker-2-0/>` for details.
+See `Ryanne Dolan talk <https://www.confluent.io/kafka-summit-lon19/disaster-recovery-with-mirrormaker-2-0/>` for details.

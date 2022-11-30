@@ -1,0 +1,60 @@
+Disaster Recovery
+#############
+
+Disaster recovery is one of the primary use cases for MirrorMaker 2. MirrorMaker 2 replicates data between Kafka clusters, including clusters located in different data centres. Thus it's possible to minimize the period of unavailability of Apache Kafka®.
+
+However, it's important to remember that MirrorMaker 2 *doesn't provide synchronous replication*, so it's possible that the latest records accepted into a topic in the source cluster might not be replicated to the target cluster before the source cluster fails.
+
+Another important note is that planning disaster recovery scenarios with MirrorMaker 2, one should be prepared for dealing with out-of-order (can be mitigated with max.in.flight.requests.per.connection=1 probably) and duplicate records. So if the record interpretation depend on their strict order (even within a single partition), MirrorMaker 2 might not provide the desired solution.
+
+MirrorMaker 2 is still under active development and hopefully at some point it will be able to provide stricter guarantees.
+There is no one-size-fits-all disaster recovery solution. Various requirements such as the nature of the data, its volume, acceptable ops overhead, and costs should be taken into account. 
+
+*To create a disaster recovery procedure that is right for your data, several questions must be carefully answered:*
+
+1. What data needs replication? Some data may be less important or not important at all and replicating all of it will unnecessary consume resource.
+2. Is the strict order of the records important? What are the implications of out-of-order records?
+3. Can duplicate records be tolerated? What are the implications of duplicate records?
+MM2 can be set up using any Aiven standard provisioning method Console, API, CLI, and TF.
+
+Disaster recovery building blocks
+--------------------
+1. Data replication performed by MirrorMaker 2. The replication flow is the way for copying data between clusters.
+2. Offset translation performed by MirrorMaker 2.
+3. Monitoring of the replication process.
+4. Disaster recovery playbooks, that must be written and tested.
+
+Active-passive setup
+--------------------
+
+In this setup, there are two Kafka clusters: primary and secondary. Topic topic exists in primary.
+
+.. image:: /images/products/kafka/kafka-mirrormaker/Mirrormaker-Active-Passive.png
+    :alt: MirrorMaker 2 Active-Passive Setup
+
+All the clients (producers and consumers) work with primary. MirrorMaker 2 replicates topic from primary to secondary (the remote topic is primary.topic).
+
+A disaster happens to primary cluster and it becomes inaccessible for long time for all the clients and MirrorMaker 2 as well. The replication stops. Some data may remain un-replicated in primary cluster, i.e. not reach secondary before the disaster.\
+
+The clients switch to secondary cluster. Consumers continue consuming from the remote (i.e. replicated) topic primary.topic, producers start producing into it.
+
+Alternatively, topic identical to the namesake from primary cluster, can be created in secondary. The producers start producing into it directly and consumers switch to it when they are done processing remote primary.topic.
+This approach might be more convenient when the fallback to the primary cluster is needed in the future.
+
+Active-active setup
+--------------------
+
+In this setup, there are two actively used Kafka clusters: K1 and K2. Topic topic exists in both cluster.
+
+.. image:: /images/products/kafka/kafka-mirrormaker/Mirrormaker-Active-Active.png
+    :alt: Mirrormaker 2 Active-Active Setup
+
+Each cluster has it's own producers and consumers. Producers produce to topic. Consumers consume from topic using the same group.id. MirrorMaker 2 replicates data between clusters in both directions, therefore remote topics K1.topic and K2.topic exists in K2 and K1 correspondingly.
+
+A disaster happens to K1 cluster and it becomes inaccessible for long time for all the clients and MirrorMaker 2 as well. The replication stops. Some data may remain un-replicated in both clusters.
+
+The clients (Producers 1 and Consumers 1) switch from K1 to K2. Consumers 1 continue consuming from the remote (i.e. replicated) topic K1.topic, Producers 1 start producing into topic.
+
+When Consumers 1 finish consuming K1.topic, they switch to topic. All consumers act as one group now.
+
+When K1 is recovered, its clients can switch back. Data that have been produced by Producers 1 into topic in K2 will be processed by Consumers 2.
