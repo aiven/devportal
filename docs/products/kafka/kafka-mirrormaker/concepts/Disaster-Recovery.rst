@@ -33,19 +33,20 @@ In this setup, there are two Kafka clusters: primary and secondary. Topic topic 
 .. image:: /images/products/kafka/kafka-mirrormaker/Mirrormaker-Active-Passive.png
     :alt: Mirrormaker Active-Passive Setup
 
-![Mirrormaker-Active-Passive](https://user-images.githubusercontent.com/116186249/204849918-35389b79-ecd5-41c5-ba09-7fcb50431ca1.png)
-
 All the clients (producers and consumers) work with primary. MirrorMaker replicates topic from primary to secondary (the remote topic is primary.topic).
 
-![Mirrormaker-Active-Passive2](https://user-images.githubusercontent.com/116186249/204850494-f8191800-3625-42e5-88f9-17e94d2297c7.png)
+.. image:: /images/products/kafka/kafka-mirrormaker/Mirrormaker-Active-Passive2.png
+    :alt: Mirrormaker Active-Passive Setup
 
-A disaster happens to primary cluster and it becomes inaccessible for long time for all the clients and MirrorMaker as well. The replication stops. Some data may remain un-replicated in primary cluster, i.e. not reach secondary before the disaster.
+A disaster happens to primary cluster and it becomes inaccessible for long time for all the clients and MirrorMaker as well. The replication stops. Some data may remain un-replicated in primary cluster, i.e. not reach secondary before the disaster.\
 
-![Mirrormaker-Active-Passive3](https://user-images.githubusercontent.com/116186249/204850743-9f60ba42-6a14-4621-814e-685864e35e68.png)
+.. image:: /images/products/kafka/kafka-mirrormaker/Mirrormaker-Active-Passive3.png
+    :alt: Mirrormaker Active-Passive Setup
 
 The clients switch to secondary cluster. Consumers continue consuming from the remote (i.e. replicated) topic primary.topic, producers start producing into it.
 
-![Mirrormaker-Active-Passive4](https://user-images.githubusercontent.com/116186249/204850866-d890842a-8b56-482b-9526-d1d2fc3872ae.png)
+.. image:: /images/products/kafka/kafka-mirrormaker/Mirrormaker-Active-Passive4.png
+    :alt: Mirrormaker Active-Passive Setup
 
 Alternatively, topic identical to the namesake from primary cluster, can be created in secondary. The producers start producing into it directly and consumers switch to it when they are done processing remote primary.topic.
 This approach might be more convenient when the fallback to the primary cluster is needed in the future.
@@ -55,22 +56,27 @@ Active-active setup
 
 In this setup, there are two actively used Kafka clusters: K1 and K2. Topic topic exists in both cluster.
 
-![Mirrormaker-Active-Active](https://user-images.githubusercontent.com/116186249/204851026-a5423a83-ba82-48f2-8f93-bef6fe29f14f.png)
+.. image:: /images/products/kafka/kafka-mirrormaker/Mirrormaker-Active-Active.png
+    :alt: Mirrormaker Active-Active Setup
 
 Each cluster has it's own producers and consumers. Producers produce to topic. Consumers consume from topic using the same group.id. MirrorMaker replicates data between clusters in both directions, therefore remote topics K1.topic and K2.topic exists in K2 and K1 correspondingly.
 
-![Mirrormaker-Active-Active2](https://user-images.githubusercontent.com/116186249/204851227-a9ce5c56-123c-4c8f-af09-519e7a0075ae.png)
+.. image:: /images/products/kafka/kafka-mirrormaker/Mirrormaker-Active-Active2.png
+    :alt: Mirrormaker Active-Active Setup
 
 A disaster happens to K1 cluster and it becomes inaccessible for long time for all the clients and MirrorMaker as well. The replication stops. Some data may remain un-replicated in both clusters.
 
-![Mirrormaker-Active-Active3](https://user-images.githubusercontent.com/116186249/204851475-75d6802a-67ed-454c-9590-75f16963d9b9.png)
+.. image:: /images/products/kafka/kafka-mirrormaker/Mirrormaker-Active-Active3.png
+    :alt: Mirrormaker Active-Active Setup
 
 The clients (Producers 1 and Consumers 1) switch from K1 to K2. Consumers 1 continue consuming from the remote (i.e. replicated) topic K1.topic, Producers 1 start producing into topic.
 
-![Mirrormaker-Active-Active4](https://user-images.githubusercontent.com/116186249/204851641-62b1b73d-d819-41c1-b23d-6182da3a1c7f.png)
+.. image:: /images/products/kafka/kafka-mirrormaker/Mirrormaker-Active-Active4.png
+    :alt: Mirrormaker Active-Active Setup
 
 When Consumers 1 finish consuming K1.topic, they switch to topic. All consumers act as one group now.
 
-![Mirrormaker-Active-Active5](https://user-images.githubusercontent.com/116186249/204852039-8dbb6a42-d3d0-448c-afcc-8a816d847a75.png)
+.. image:: /images/products/kafka/kafka-mirrormaker/Mirrormaker-Active-Active5.png
+    :alt: Mirrormaker Active-Active Setup
 
 When K1 is recovered, its clients can switch back. Data that have been produced by Producers 1 into topic in K2 will be processed by Consumers 2.
