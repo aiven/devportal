@@ -1,5 +1,5 @@
 root: index
-options:
+defaults:
   maxdepth: 1
 
 entries:
@@ -47,10 +47,16 @@ entries:
           - file: docs/platform/howto/change-your-email-address
           - file: docs/platform/howto/create_authentication_token
           - file: docs/platform/howto/create_new_service_user
+          - file: docs/tools/aiven-console/howto/create-manage-teams
           - file: docs/platform/howto/enable-aiven-password
           - file: docs/platform/howto/user-2fa
           - file: docs/platform/howto/technical-emails
-          - file: docs/platform/howto/reactivate-suspended-project            
+          - file: docs/platform/howto/reactivate-suspended-project
+          - file: docs/platform/howto/disable-platform-authentication                     
+      - file: docs/platform/howto/list-account
+        title: Acccount management
+        entries: 
+          - file: docs/tools/aiven-console/howto/create-accounts
       - file: docs/platform/howto/list-service
         title: Service management
         entries:
@@ -151,13 +157,6 @@ entries:
   - file: docs/tools
     entries:
       - file: docs/tools/aiven-console
-        title: Aiven Console
-        entries:
-        - file: docs/tools/aiven-console/howto
-          title: HowTo
-          entries:
-          - file: docs/tools/aiven-console/howto/create-accounts
-          - file: docs/tools/aiven-console/howto/create-manage-teams
       - file: docs/tools/cli
         entries:
         - file: docs/tools/cli/account
@@ -231,6 +230,8 @@ entries:
               title: M3 and M3 Aggregator
             - file: docs/tools/terraform/reference/cookbook/postgresql-read-replica-recipe
               title: PostgreSQL® Read Replica
+            - file: docs/tools/terraform/reference/cookbook/clickhouse-access-setup-recipe
+              title: Configure ClickHouse user's access
           - file: docs/tools/terraform/reference/troubleshooting
             entries:   
             - file: docs/tools/terraform/reference/troubleshooting/private-access-error
@@ -282,6 +283,7 @@ entries:
               - file: docs/products/kafka/howto/kafdrop
               - file: docs/products/kafka/howto/provectus-kafka-ui
               - file: docs/products/kafka/howto/kpow
+              - file: docs/products/kafka/howto/kafka-klaw
           - file: docs/products/kafka/howto/list-security
             title: Security
             entries:
@@ -396,6 +398,7 @@ entries:
             - file: docs/products/kafka/kafka-connect/howto/couchbase-sink
             - file: docs/products/kafka/kafka-connect/howto/gcp-pubsub-sink
             - file: docs/products/kafka/kafka-connect/howto/gcp-pubsub-lite-sink
+            - file: docs/products/kafka/kafka-connect/howto/splunk-sink
 
         - file: docs/products/kafka/kafka-connect/reference
           title: Reference
@@ -585,9 +588,17 @@ entries:
         title: HowTo
         entries:
           - file: docs/products/clickhouse/howto/connect-with-clickhouse-cli
-            title: Connect with CLI
+            title: Connect with ClickHouse client
           - file: docs/products/clickhouse/howto/connect-with-go
             title: Connect with Go
+          - file: docs/products/clickhouse/howto/connect-with-python
+            title: Connect with Python
+          - file: docs/products/clickhouse/howto/connect-with-nodejs
+            title: Connect with Node.js
+          - file: docs/products/clickhouse/howto/connect-with-php
+            title: Connect with PHP
+          - file: docs/products/clickhouse/howto/connect-with-java
+            title: Connect with Java
           - file: docs/products/clickhouse/howto/secure-service
             title: Secure a service
           - file: docs/products/clickhouse/howto/manage-users-roles
@@ -600,6 +611,8 @@ entries:
             title: Manage databases and tables
           - file: docs/products/clickhouse/howto/materialized-views
             title: Use materialized views
+          - file: docs/products/clickhouse/howto/configure-access-terraform-deployed
+            title: Manage user privileges with Terraform
           - file: docs/products/clickhouse/howto/list-integrations
             entries:
               - file: docs/products/clickhouse/howto/connect-to-grafana
@@ -822,6 +835,21 @@ entries:
             title: Advanced parameters
           - file: docs/products/grafana/reference/plugins
             title: Plugins
+
+  - file: docs/products/influxdb
+    title: InfluxDB 
+    entries: 
+      - file: docs/products/influxdb/get-started
+        title: Get started
+      - file: docs/products/influxdb/concepts
+        title: Concepts
+        entries:
+          - file: docs/products/influxdb/concepts/continuous-queries
+          - file: docs/products/influxdb/concepts/influxdb-retention-policy
+      - file: docs/products/influxdb/reference
+        title: Reference
+        entries:
+          - glob: docs/products/influxdb/reference/*
 
   # -------- AUXILIARY
   - file: docs/community

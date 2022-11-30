@@ -1,5 +1,5 @@
-Getting started with Aiven for ClickHouse®
-==========================================
+Getting started with Aiven for ClickHouse® |beta|
+=================================================
 
 The first step in using Aiven for ClickHouse® is to create a service and a database that you can use to try out the service. You can do this in the `Aiven web console <https://console.aiven.io/>`_.
 

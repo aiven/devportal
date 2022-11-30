@@ -37,11 +37,35 @@
 
 **Allow access to selected service ports from private networks** 
 
+``kafka``
+~~~~~~~~~
+*boolean*
+
+**Allow clients to connect to kafka with a DNS name that always resolves to the service's private IP addresses. Only available in certain network locations** 
+
+``kafka_connect``
+~~~~~~~~~~~~~~~~~
+*boolean*
+
+**Allow clients to connect to kafka_connect with a DNS name that always resolves to the service's private IP addresses. Only available in certain network locations** 
+
+``kafka_rest``
+~~~~~~~~~~~~~~
+*boolean*
+
+**Allow clients to connect to kafka_rest with a DNS name that always resolves to the service's private IP addresses. Only available in certain network locations** 
+
 ``prometheus``
 ~~~~~~~~~~~~~~
 *boolean*
 
 **Allow clients to connect to prometheus with a DNS name that always resolves to the service's private IP addresses. Only available in certain network locations** 
+
+``schema_registry``
+~~~~~~~~~~~~~~~~~~~
+*boolean*
+
+**Allow clients to connect to schema_registry with a DNS name that always resolves to the service's private IP addresses. Only available in certain network locations** 
 
 
 
@@ -498,6 +522,14 @@
 *boolean*
 
 **Enable Schema-Registry service** 
+
+
+
+``kafka_rest_authorization``
+----------------------------
+*boolean*
+
+**Enable authorization in Kafka-REST service** 
 
 
 

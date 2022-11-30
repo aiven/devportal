@@ -1,5 +1,13 @@
 import argparse
-import psycopg2
+try:
+    import psycopg2
+except ImportError as e:
+    print(e)
+    print('To run this script, install psycopg2-binary. For instance:')
+    print('    pip install psycopg2-binary')
+    print('On some platforms, you may need to install PostgreSQL using your system')
+    print('package manager to make that work')
+    exit(1)
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--pg-url', help='PostgreSQL URL')
