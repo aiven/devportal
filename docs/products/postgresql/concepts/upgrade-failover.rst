@@ -85,16 +85,6 @@ At the time when a failover to a standby occurs, the standby already has active 
 .. warning::
     
     * In case of uncontrolled failover, slots created up to 30 seconds before the failover might be lost.
-    * In case of failover, when there is a huge lag between the primary and the standby (for example, if the master disappears), the positions of replication slots are outdated. The positions cannot be bigger than the position of the standby.
-    * Arrival of recovered replication slots positions from the old primary to the new primary might be several seconds delayed. If delayed, you might receive the same entities that you've already received when you connected to the slot after the failover without specifying a position.
+    * The position of recovered replication slots might be up to several seconds older than on the original primary, therefore when re-connecting to PG and reading from replication slots it's recommended to use start positions known to the client until which the data was already received, otherwise client might receive duplicate entries.
 
-When the client connects to a replication slot and starts reading from it, the client sends back information to the server on how much data the client read. The server moves the slot forward (``confirmed_flush_lsn``) to the position where the client stopped (paused) reading the data.
-
-When the client connects to the slot, it can specify the position from which it wants to continue reading. If the position is not specified, it starts receiving data from ``confirmed_flush_lsn`` on the server.
-
-.. topic:: Example
-
-    The client has read until position P1. It is stored on the server as ``confirmed_flush_lsn``. If the client disconnects and connects again, the client has two options: either connect without the starting position (it receives all the data from P1) or specify explicitly start position P1.
-
-    Now the client has read until P1 and, next, a failover happens. In such a case, the ``confirmed_flush_lsn`` on the new master might fallback to P0 (0 < P1 - P0 <~5 s). The failover triggers a client re-connection. If the client connects without a start position, it starts reading from P0 (not P1), so it receives whatever was sent between P0 and P1 again. To mitigate this, it should explicitly start reading from P1.
 
