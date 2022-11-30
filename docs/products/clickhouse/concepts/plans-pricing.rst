@@ -6,9 +6,7 @@ Aiven for ClickHouse® is available in a few variants (plans or tiers), each of 
 Service plans
 -------------
 
-Aiven for ClickHouse is a fully managed distributed columnar database based on open source ClickHouse - a fast resource effective solution tailored for warehousing data and generating real-time analytical data reports with advanced SQL queries.
-
-With Aiven for ClickHouse, you can choose either a single node or a high-availability cluster, each running on dedicated instances. Aiven for ClickHouse is packaged into four tiers, each including a range of plans to suit the size of your workloads.
+Aiven for ClickHouse is packaged into four tiers, each including a range of plans to suit the size of your workloads.
 
 * Hobbyist - single node plan for small hobby projects
 * Startup - low-cost plan to experiment and prototype new ideas
@@ -20,7 +18,7 @@ With Aiven for ClickHouse, you can choose either a single node or a high-availab
 Custom plans
 ------------
 
-Aiven for ClickHouse plans are optimized for working well in the various clouds supported by Aiven. The plans also enable easy migration between the clouds. Should any of the available plans not be an ideal fit for your workload, we're happy to tailor a custom plan for you to better suit your needs. Learn how to `request a custom plan <https://docs.aiven.io/docs/platform/howto/custom-plans.html>`_.
+Aiven for ClickHouse plans are optimized for working well in the various clouds supported by Aiven. The plans also enable easy migration between the clouds. Should any available plans not be an ideal fit for your workload, we're happy to tailor a custom plan to suit your needs better. Learn how to `request a custom plan <https://docs.aiven.io/docs/platform/howto/custom-plans.html>`_.
 
 Pricing model
 -------------
@@ -40,18 +38,17 @@ Aiven for ClickHouse aims to deliver a unified pricing model to simplify cost fo
 
 .. important::
 
-    Each individual Aiven service integrated with ClickHouse has its own cost. For more information, see `Pricing <https://aiven.io/pricing?tab=plan-pricing&product=clickhouse>`_.
+    Each Aiven service integrated with ClickHouse has its own cost. For more information, see `Pricing <https://aiven.io/pricing?tab=plan-pricing&product=clickhouse>`_.
 
 
 Billing
 -------
 
-All Aiven services including Aiven for ClickHouse are billed based on actual usage, which means you only pay for what you use: no up-front fees and no termination charges.
+All Aiven services, including Aiven for ClickHouse, are billed based on actual usage, which means you only pay for what you use: no up-front fees and no termination charges.
 
 The minimum hourly charge unit is one hour. Powering off or deleting a service stops the accumulation of charges immediately. We calculate your final bill based on your consumption over that period and deliver it as a single invoice per project. For generating a consolidated invoice across multiple projects, `manage billing groups in Aiven Console <https://docs.aiven.io/docs/platform/howto/use-billing-groups.html>`_.
 
 Billing on partial hours
 ''''''''''''''''''''''''
 
-Minutes of usage are rounded to the nearest hour. However, the one-hour minimum charge unit still applies.
-
+Minutes of usage is rounded to the nearest hour. However, the one-hour minimum charge unit still applies.
