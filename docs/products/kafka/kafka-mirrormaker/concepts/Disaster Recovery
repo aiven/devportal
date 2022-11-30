@@ -30,6 +30,9 @@ Active-passive setup
 
 In this setup, there are two Kafka clusters: primary and secondary. Topic topic exists in primary.
 
+.. image:: /images/products/kafka/kafka-mirrormaker/Mirrormaker-Active-Passive.png
+    :alt: Mirrormaker Active-Passive Setup
+
 ![Mirrormaker-Active-Passive](https://user-images.githubusercontent.com/116186249/204849918-35389b79-ecd5-41c5-ba09-7fcb50431ca1.png)
 
 All the clients (producers and consumers) work with primary. MirrorMaker replicates topic from primary to secondary (the remote topic is primary.topic).
