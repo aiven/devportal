@@ -63,6 +63,7 @@ exceptions:
   - Kafdrop
   - Kafka
   - Karapace
+  - Klaw
   - Kpow
   - ksqlDB
   - Kubernetes
@@ -101,6 +102,7 @@ exceptions:
   - Skyvia
   - Snowflake
   - Sphinx
+  - Splunk
   - Spring
   - SQL Server
   - Startup

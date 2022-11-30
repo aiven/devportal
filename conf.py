@@ -122,6 +122,28 @@ html_theme_options = {
         "color-sidebar-search-background": "#fff",
         "sd-color-card-background": "#f7f7fa",
         "sd-color-primary": "#4a4b57",
+        "sidebar-tree-space-above": "8px",
+
+        # Custom css variables
+        "color-search": "#19191D",
+        "color-search-focused": "#4A4B57",
+        "color-search-border": "#B4B4BB",
+        "color-search-border-focused": "#0174BA",
+        "color-search-container-outline-focused": "#B4E5FB",
+        "color-search-background": "#FFFFFF",
+        "color-topnav-background": "#FFFFFF",
+        "color-topnav-border": "#EDEEF3",
+        "color-topnav-link": "#E41A4A",
+        "color-topnav-theme-toggle-border": "rgba(0, 0, 0, 0.1)",
+        "color-topnav-button-primary": "#FFFFFF",
+        "color-topnav-button-primary-hover": "#FFFFFF",
+        "color-topnav-button-primary-background": "#E41A4A",
+        "color-topnav-button-primary-hover-background": "#C60443",
+        "color-topnav-button-secondary": "#E41A4A",
+        "color-topnav-button-secondary-border": "#E41A4A",
+        "color-topnav-button-secondary-hover": "#E41A4A",
+        "color-topnav-button-secondary-hover-border": "#E41A4A",
+        "color-topnav-button-secondary-hover-background": "#FFF9FC"
     },
     "dark_css_variables": {
         "color-brand-primary": "#d2d2d6",
@@ -151,6 +173,28 @@ html_theme_options = {
         "color-admonition-title-background--error": "#ff525240",
         "sd-color-card-background": "#0b0b14",
         "sd-color-primary": "#e1e1e3",
+        "sidebar-tree-space-above": "8px",
+
+        # Custom css variables
+        "color-search": "#F7F7FA",
+        "color-search-focused": "#FFFFFF",
+        "color-search-border": "#3A3A44",
+        "color-search-border-focused": "#7FD1F7",
+        "color-search-container-outline-focused": "#0174BA",
+        "color-search-background": "#11111E",
+        "color-topnav-background": "#0B0B14",
+        "color-topnav-border": "#3A3A44",
+        "color-topnav-link": "#F7F7FA",
+        "color-topnav-theme-toggle-border": "rgba(255, 255, 255, 0.1)",
+        "color-topnav-button-primary": "black",
+        "color-topnav-button-primary-hover": "black",
+        "color-topnav-button-primary-background": "#ffffff",
+        "color-topnav-button-primary-hover-background": "#EDEDF0",
+        "color-topnav-button-secondary": "#f7f7fa",
+        "color-topnav-button-secondary-border": "#f7f7fa",
+        "color-topnav-button-secondary-hover": "#f7f7fa",
+        "color-topnav-button-secondary-hover-border": "#f7f7fa",
+        "color-topnav-button-secondary-hover-background": "rgba(255, 255, 255, 0.1)"
     },
     "navigation_with_keys": True
 }
@@ -164,6 +208,16 @@ language = "en"
 html_extra_path = ['robots.txt', '_redirects']
 html_static_path = ['_static']
 html_css_files = ['css/aiven.css']
+html_sidebars = {
+    "**": [
+        "sidebar/scroll-start.html",
+        "sidebar/mobile-header.html",
+        "sidebar/mobile-search.html",
+        "sidebar/navigation.html",
+        "sidebar/mobile-actions.html",
+        "sidebar/scroll-end.html",
+    ]
+}
 
 # -- Replacements -----------------------------------------------------------
 rst_epilog = """

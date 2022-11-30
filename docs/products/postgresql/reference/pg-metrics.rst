@@ -123,7 +123,7 @@ The following metrics are shown
 PostgreSQL-specific metrics
 ---------------------------
 
-For most metrics, the metric name identifies the internal PostgreSQL statistics view. See the `PostgreSQL documentation <https://www.postgresql.org/docs/current/static/monitoring-stats.html>`_ for more detailed explanations of the various metric values.
+For most metrics, the metric name identifies the internal PostgreSQL statistics view. See the `PostgreSQL documentation <https://www.postgresql.org/docs/current/monitoring-stats.html>`_ for more detailed explanations of the various metric values.
 
 Metrics that are currently recorded but not shown in the default dashboard include ``postgresql.pg_stat_bgwriter`` and ``postgresql.pg_class`` metrics as a whole, as well as some individual values from other metrics.
 
