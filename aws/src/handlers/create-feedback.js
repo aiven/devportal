@@ -26,7 +26,6 @@ exports.handler = async function (event) {
   await client.connect();
   try {
     const payload = JSON.parse(event.body);
-    console.log("payload", JSON.stringify(payload));
 
     // doesn't do anything if honeypot is triggered
     if (!payload.honeypot_password) {
