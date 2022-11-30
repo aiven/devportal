@@ -114,4 +114,10 @@ Each "recipe" includes an architecture diagram and the terraform sample code you
 
         |icon-clickhouse|
 
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
 
+        :doc:`Apache Kafka and ClickHouse <cookbook/kafka-clickhouse-integration-recipe>`
+
+        |icon-clickhouse| |icon-kafka|
