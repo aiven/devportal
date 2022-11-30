@@ -1,12 +1,12 @@
 Aiven for Apache Kafka® as a source for Aiven for ClickHouse®
 =============================================================
 
-This article shows by way of example how to integrate Aiven for Apache Kafka® with Aiven for ClickHouse® using `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_. An Apache Kafka® source topic is used as a data source and Aiven for ClickHouse® is used to filter or transform the raw data with a materialized view before writing it to a regular table.
+This article shows by way of example how to integrate Aiven for Apache Kafka® with Aiven for ClickHouse® using `Terraform provider for Aiven <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_. An Apache Kafka® source topic is used as a data source and Aiven for ClickHouse® is used to filter or transform the raw data with a materialized view before writing it to a regular table.
 
 Let's cook!
 -----------
 
-Imagine that you've been collecting IoT measurements from thousands of sensors and these metrics are populated in Apache Kafka topic ``iot_measurements``. Now, you'd like to set up an Aiven for ClickHouse database and write filtered messages into table ``cpu_high_usage``.
+Imagine that you've been collecting IoT measurements from thousands of sensors and these metrics are being populated in an Apache Kafka topic called ``iot_measurements``. Now, you'd like to set up an Aiven for ClickHouse database and write filtered messages into table ``cpu_high_usage``.
 
 This recipe calls for the following:
 
@@ -29,7 +29,7 @@ Configure common files
          required_providers {
            aiven = {
              source  = "aiven/aiven"
-             version = ">= 3.7"
+             version = "~> 3.8.1"
            }
          }
        }
@@ -94,7 +94,7 @@ The following Terraform script initializes both Aiven for Apache Kafka and Aiven
   resource "aiven_clickhouse" "clickhouse" {
     project                 = var.project_name
     cloud_name              = "google-europe-west1"
-    plan                    = "startup-4"
+    plan                    = "startup-beta-8"
     service_name            = "clickhouse-gcp-eu"
     maintenance_window_dow  = "monday"
     maintenance_window_time = "10:00:00"
