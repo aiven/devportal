@@ -607,6 +607,8 @@ entries:
             title: Query databases
           - file: docs/products/clickhouse/howto/manage-databases-tables
             title: Manage databases and tables
+          - file: docs/products/clickhouse/howto/monitor-performance
+            title: Monitor performance
           - file: docs/products/clickhouse/howto/materialized-views
             title: Use materialized views
           - file: docs/products/clickhouse/howto/configure-access-terraform-deployed
@@ -627,6 +629,8 @@ entries:
         entries:
           - file: docs/products/clickhouse/reference/supported-table-engines
             title: Supported table engines
+          - file: docs/products/clickhouse/reference/metrics-list
+            title: ClickHouse metrics in Grafana
           - file: docs/products/clickhouse/reference/supported-input-output-formats
             title: Formats for ClickHouse-Kafka data exchange
           - file: docs/products/clickhouse/reference/advanced-params
