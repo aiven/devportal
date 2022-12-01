@@ -65,7 +65,7 @@ In case of failover or controlled switchover of an Aiven for PostgreSQL service,
 
 .. important::
 
-    The recreation of replication slots feature is enabled automatically and doesn't require restarting the nodes.
+    The recreation of replication slots feature is enabled automatically.
 
 One-node cluster
 """"""""""""""""
@@ -81,9 +81,13 @@ For multi-node setups, replication slots from the primary are synchronized to th
   When the new slot is created on a database and we want to re-create this slot on a standby, we use a functionality from the ``aiven_extras`` extension, which needs to be installed in the database. Therefore, every 30 seconds there is a job checking that this extension is installed on the databases with logical replication slots.
 * Positions (``confirmed_flush_lsn``) of the slots are synchronized between the primary and the standbys.
 
-When a failover to a standby occurs, the standby node already has active replication slots with an up-to-date (maximum 5-second delay) positions from the primary.
+When a failover to a standby occurs, the standby node already has replication slots with an up-to-date (maximum 5-second delay) positions from the primary.
 
 .. warning::
     
     * In case of uncontrolled failover, slots created up to 30 seconds before the failover might be lost.
+
+.. note::
+    
     * Position of recovered replication slots might be up to several seconds older than on the original primary. Therefore, when re-connecting to PostgreSQL and reading from replication slots, it's recommended to use start positions known to the client until which the data was already received. Otherwise, the client might receive duplicate entries.
+    * In case of failover with a huge lag between the primary node and the standby node (for example, when a master disappears), the position of the replication slot restored on a new master is not newer than the position on the standby node, even though the position of that slot on the old master was newer. 
