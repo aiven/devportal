@@ -1,7 +1,7 @@
 Disaster Recovery
 #############
 
-Disaster recovery is one of the primary use cases for MirrorMaker 2. MirrorMaker 2 replicates data between Kafka clusters, including clusters located in different data centres. Thus it's possible to minimize the period of unavailability of Apache Kafka®.
+**Disaster recovery** is one of the primary use cases for MirrorMaker 2. MirrorMaker 2 replicates data between Kafka clusters, including clusters located in different data centres. Thus it's possible to minimize the period of unavailability of Apache Kafka®.
 
 However, it's important to remember that MirrorMaker 2 *doesn't provide synchronous replication*, so it's possible that the latest records accepted into a topic in the source cluster might not be replicated to the target cluster before the source cluster fails.
 
@@ -10,15 +10,23 @@ Another important note is that planning disaster recovery scenarios with MirrorM
 MirrorMaker 2 is still under active development and hopefully at some point it will be able to provide stricter guarantees.
 There is no one-size-fits-all disaster recovery solution. Various requirements such as the nature of the data, its volume, acceptable ops overhead, and costs should be taken into account. 
 
-*To create a disaster recovery procedure that is right for your data, several questions must be carefully answered:*
+**To create a disaster recovery procedure that is right for your data, several questions must be carefully answered:**
+-----------------
 
-1. What data needs replication? Some data may be less important or not important at all and replicating all of it will unnecessary consume resource.
-2. Is the strict order of the records important? What are the implications of out-of-order records?
-3. Can duplicate records be tolerated? What are the implications of duplicate records?
-MM2 can be set up using any Aiven standard provisioning method Console, API, CLI, and TF.
+* **What data needs replication?**
+.. note:: Some data may be less important or not important at all and replicating all of it will unnecessary consume resource.
+
+* **Is the strict order of the records important?**
+
+* **What are the implications of out-of-order records?**
+
+* **Can duplicate records be tolerated?**
+
+* **What are the implications of duplicate records?**
+.. note:: MM2 can be set up using any Aiven standard provisioning method Console, API, CLI, and TF.
 
 Disaster recovery building blocks
---------------------
+---------
 1. Data replication performed by MirrorMaker 2. The replication flow is the way for copying data between clusters.
 2. Offset translation performed by MirrorMaker 2.
 3. Monitoring of the replication process.
@@ -47,7 +55,7 @@ Active-active setup
 In this setup, there are two actively used Kafka clusters: K1 and K2. Topic topic exists in both cluster.
 
 .. image:: /images/products/kafka/kafka-mirrormaker/Mirrormaker-Active-Active.png
-    :alt: Mirrormaker 2 Active-Active Setup
+    :alt: MirrorMaker 2 Active-Active Setup
 
 Each cluster has it's own producers and consumers. Producers produce to topic. Consumers consume from topic using the same group.id. MirrorMaker 2 replicates data between clusters in both directions, therefore remote topics K1.topic and K2.topic exists in K2 and K1 correspondingly.
 

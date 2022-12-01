@@ -1,5 +1,5 @@
 Replication in Apache Kafka® MirrorMaker 2
-=====================================
+===========================================
 
 **Q: What guarantees in replication does MirrorMaker 2 provide?**
 
@@ -12,20 +12,15 @@ A: The replication by MirrorMaker 2 is asynchronous in nature, which limits what
 
 A: Yes.
 
-``Discussion <https://lists.apache.org/thread/lvh8mpfvk66wvyxtbxons3dlxx9tk0lv>``
-
 **Q: Can it be guaranteed that replicated records will be in the same order as in the source topic?**
 
 A: No, unless max.in.flight.requests.per.connection=1 is set (will affect performance badly, most likely).
-
-``Discussion <https://lists.apache.org/thread/lvh8mpfvk66wvyxtbxons3dlxx9tk0lv>``
 
 **Q: Can it be guaranteed that there's no duplicates created during replication?**
 
 A: No. Duplicates are currently unavoidable.
 
-``Discussion <https://lists.apache.org/thread/lvh8mpfvk66wvyxtbxons3dlxx9tk0lv>``
-
+.. note:: Check `discussion <https://lists.apache.org/thread/lvh8mpfvk66wvyxtbxons3dlxx9tk0lv>`_ for the above questions
 
 **Q: Is it possible to map committed offsets from the source cluster to offsets in the target cluster, for example, to perform a switch-over?**
 
@@ -33,15 +28,11 @@ A: Yes, it's possible. MirrorMaker 2 sends offset checkpoints to the target clus
 
 **Q: Does MirrorMaker 2 treat compacted topics any differently?**
 
-A: No. Compaction doesn't change offsets of records, so offset mapping should work. As with normal topics, it can lose records due to long unavailability (e.g. tombstone records are collected from compacted topics eventually).
-
-``Discussion <https://lists.apache.org/thread/x84d1ggdyf48rv8hv9vzvdfq81d9z7qz>``
+A: No. Compaction doesn't change offsets of records, so offset mapping should work. As with normal topics, it can lose records due to long unavailability (e.g. tombstone records are collected from compacted topics eventually). Check `Mirrormaker 2.0 and compacted topics <https://lists.apache.org/thread/x84d1ggdyf48rv8hv9vzvdfq81d9z7qz>`_ for more information.
 
 **Q: Will all topic configurations be replicated to the target cluster?**
 
-A: By default, yes. It can't be configured, but not supported now.
-
-``Discussion <https://lists.apache.org/thread/z844wtpl411pbr4jrn41n02zv09w6fj4>``
+A: By default, yes. It can't be configured, but not supported at the moment. Check `Discussion <https://lists.apache.org/thread/z844wtpl411pbr4jrn41n02zv09w6fj4>`_ for more information.
 
 **Q: Will Aiven ACLs be replicated?**
 
@@ -49,9 +40,7 @@ A: No. Aiven ACLs are external to Kafka clusters, they won't be replicated by Mi
 
 **Q: Is it possible to throttle replication using quotas?**
 
-A: It is not implemented now.
-
-``Discussion <https://lists.apache.org/thread/0nbvjrchtjmgj5qf2l809svx40b87xtt>``
+A: It is not implemented at the moment. For more information check `MirrorMaker 2 throttling <https://lists.apache.org/thread/0nbvjrchtjmgj5qf2l809svx40b87xtt>`_
 
 **Q: Does MirrorMaker 2 start replication from the earliest offset in the topic of from the latest?**
 
