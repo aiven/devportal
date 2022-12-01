@@ -6,13 +6,13 @@ General
 
 **Q: How does MirrorMaker 2 work?**
 
-A: MirrorMaker 2 leverages Kafka Connect framework to run its code on it. It runs three types of connectors and its tasks: MirrorSourceConnector (replication itself), MirrorCheckpointConnector (committed offset checkpointing), and MirrorHeartbeatConnector (emitting heartbeat records that a replicated between clusters in order to check connectivity). All guarantees and limitations that Connect has, thus apply to MirrorMaker.
+A: MirrorMaker 2 leverages Apache Kafka® Connect framework to run its code on it. It runs three types of connectors and its tasks: MirrorSourceConnector (replication itself), MirrorCheckpointConnector (committed offset checkpointing), and MirrorHeartbeatConnector (emitting heartbeat records that a replicated between clusters in order to check connectivity). All guarantees and limitations that Connect has, thus apply to MirrorMaker 2.
 
-**Q: Can MirrorMaker 2 work with older Kafka clusters (2.3-)?**
+**Q: Can MirrorMaker 2 work with older Apache Kafka® clusters (2.3-)?**
 
-A: Yes. MirrorMaker 2 works with older version of Kafka. Reportedly even 0.10.2 with some limitation. 0.10.1 doesn't have OffsetFetch v2 API, which make checkpointing inoperable. 
+A: Yes. MirrorMaker 2 works with older version of Apache Kafka®. Reportedly even 0.10.2 with some limitation. 0.10.1 doesn't have OffsetFetch v2 API, which make checkpointing inoperable. 
 
-**Q: Is it necessary for the source and target cluster to run on the same version of Kafka?**
+**Q: Is it necessary for the source and target cluster to run on the same version of Apache Kafka®?**
 
 A: Not, it's not necessary.
 
@@ -36,14 +36,14 @@ A: If MirrorMaker 2 can't satisfy the replication factor or other parameters in 
 
 A: Each partition adds some overhead. If there are lots of partitions, some delay (minutes) might be observable before the replication starts after the restart of MirrorMaker 2.
 
-**Q: Does MirrorMaker 2 work with Kafka in Aiven VPC?**
+**Q: Does MirrorMaker 2 work with Apache Kafka® in Aiven VPC?**
 
-A: Yes. Any of Kafka services and MirrorMaker 2 itself can be located in any project's VPC or in a public cloud.
+A: Yes. Any of Apache Kafka® services and MirrorMaker 2 itself can be located in any project's VPC or in a public cloud.
 
-**Q: Does MirrorMaker 2 on Aiven support external Kafka cluster (not managed by Aiven)?**
+**Q: Does MirrorMaker 2 on Aiven support external Apache Kafka® cluster (not managed by Aiven)?**
 
 A: Yes. Documented :doc: `here <https://docs.aiven.io/docs/products/kafka/kafka-mirrormaker>`.
 
-**Q: Is it possible to integrate a Kafka service from a different Aiven project?**
+**Q: Is it possible to integrate a Apache Kafka® service from a different Aiven project?**
 
-A: Yes. A Kafka service from a different project can be integrated as an external Kafka (see above ⬆️).
+A: Yes. A Apache Kafka® service from a different project can be integrated as an external Kafka (see above ⬆️).
