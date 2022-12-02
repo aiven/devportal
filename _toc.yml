@@ -649,6 +649,7 @@ entries:
           - file: docs/products/opensearch/concepts/opensearch-vs-elasticsearch
           - file: docs/products/opensearch/concepts/shards-number
           - file: docs/products/opensearch/concepts/when-create-index
+          - file: docs/products/opensearch/concepts/cross-cluster-replication-opensearch
       - file: docs/products/opensearch/howto
         title: HowTo
         entries:
@@ -657,6 +658,7 @@ entries:
           - file: docs/products/opensearch/howto/opensearch-log-integration
           - file: docs/products/opensearch/howto/upgrade-to-opensearch
           - file: docs/products/opensearch/howto/upgrade-clients-to-opensearch
+          - file: docs/products/opensearch/howto/setup-cross-cluster-replication-opensearch
           - file: docs/products/opensearch/howto/connect-with-nodejs
             title: Connect with NodeJS
           - file: docs/products/opensearch/howto/connect-with-python
