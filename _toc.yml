@@ -623,7 +623,7 @@ entries:
       - file: docs/products/clickhouse/reference
         title: Reference
         entries:
-          - file: docs/products/clickhouse/concepts/plans-pricing
+          - file: docs/products/clickhouse/reference/plans-pricing
             title: Service plans
           - file: docs/products/clickhouse/reference/supported-table-engines
             title: Supported table engines
