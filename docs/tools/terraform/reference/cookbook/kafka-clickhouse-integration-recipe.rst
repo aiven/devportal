@@ -3,6 +3,19 @@ Aiven for Apache Kafka® as a source for Aiven for ClickHouse®
 
 This article shows by way of example how to integrate Aiven for Apache Kafka® with Aiven for ClickHouse® using `Terraform provider for Aiven <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_. An Apache Kafka® source topic is used as a data source and Aiven for ClickHouse® is used to filter or transform the raw data with a materialized view before writing it to a regular table.
 
+.. topic:: Sample of sensor data
+
+  First, check out how sensor data can look like for a better understanding of this recipe and the ``clickhouse_kafka_user_config`` Terraform block used in this article.
+
+  .. code-block:: javascript
+
+    {
+      "sensor_id": 10000001,
+      "ts": "2022-12-01T10:08:24.446369",
+      "key": "cpu_usage",
+      "value": 96.42
+    }
+
 Let's cook!
 -----------
 
@@ -86,7 +99,7 @@ The following Terraform script initializes both Aiven for Apache Kafka and Aiven
   resource "aiven_kafka_topic" "source" {
     project      = var.project_name
     service_name = aiven_kafka.kafka.service_name
-    partitions   = 2
+    partitions   = 50
     replication  = 3
     topic_name   = "iot_measurements"
   }
@@ -105,7 +118,32 @@ The following Terraform script initializes both Aiven for Apache Kafka and Aiven
     integration_type         = "clickhouse_kafka"
     source_service_name      = aiven_kafka.kafka.service_name
     destination_service_name = aiven_clickhouse.clickhouse.service_name
-  }
+    clickhouse_kafka_user_config {
+      tables {
+	      name        = "edge_measurements_raw"
+	      group_name  = "clickhouse-ingestion"
+	      data_format = "JSONEachRow"
+	      columns {
+	        name = "sensor_id"
+	        type = "UInt64"
+	      }
+	      columns {
+	        name = "ts"
+	        type = "DateTime64(6)"
+	      }
+	      columns {
+	        name = "key"
+	        type = "LowCardinality(String)"
+	      }
+	      columns {
+	        name = "value"
+	        type = "Float64"
+	      }
+	      topics {
+	        name = aiven_kafka_topic.source.topic_name
+	      }
+      }
+    }
 
   resource "aiven_clickhouse_database" "measurements" {
     project                 = var.project_name
@@ -146,10 +184,12 @@ Check out the results
 ---------------------
 
 * Resource ``aiven_clickhouse`` creates an Aiven for ClickHouse service with the project name, the cloud name (provider, region, zone), the Aiven service plan, and the service name as specified in the ``services.tf`` file.
-* Resource ``aiven_clickhouse_database`` resources creates a database for writing raw Kafka messages, where new tables and views are created based on the processed messages.
+* Resource ``aiven_clickhouse_database`` creates a database that can be used to further transform the ingested data and perform analytics on it.
 * Resource ``aiven_kafka`` creates an Aiven for Apache Kafka cluster.
 * Resource ``aiven_kafka_topic`` creates Apache Kafka topic ``iot_measurements``.
-* Resource ``aiven_service_integration`` resource creates the integration between the Aiven for Apache Kafka and the Aiven for ClickHouse service.
+* Resource ``aiven_service_integration`` creates the integration between the Aiven for Apache Kafka and the Aiven for ClickHouse service.
+
+The service integration creates a database to insert the ingested data to. In this instance, the database name is ``service_kafka-gcp-eu`` (it depends on the Kafka service name) and the table name is ``edge_measurements_raw`` as specified in the code.
 
 Learn more
 ----------
