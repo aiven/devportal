@@ -6,7 +6,7 @@ Replication in Apache Kafka® MirrorMaker 2
 A: The replication by MirrorMaker 2 is asynchronous in nature, which limits what can be guaranteed by it:
 * In case of the source cluster failure, it can't be guaranteed that all records accepted in the source cluster will be replicated to the target cluster. For example, the source cluster accepts records R1, R2, R3, MirrorMaker 2 replicates R1 and R2 and then the source cluster becomes unavailable. Record R3 will not reach the target cluster in this case.
 * It can't be guaranteed that when an offset is committed in a consumer group in the target cluster, the checkpoint for it immediately appear in the target cluster. It means, committed offset mapping between clusters is not absolutely precise and in case of failover some records that were consumed from the source cluster will be re-consumed from the target cluster.
-* It can't be guaranteed that a record's schema (from '_schema' topic) will be replicated to the target cluster before the record itself. In case of the source cluster failure, it can't be guaranteed that a schema will be replicated at all. So it's possible that a replicated record in the target cluster will not be deserialized at the moment of consumption due to its schema missing in the target cluster.
+* It can't be guaranteed that a record's schema (from '_schema' topic) will be replicated to the target cluster before the record itself. In case of the source cluster failure, it can't be guaranteed that a schema will be replicated at all. So it's possible that a replicated record in the target cluster will not deserialize at the moment of consumption due to its schema missing in the target cluster.
 
 **Q: Can it be guaranteed that no record is dropped during the replication?**
 
@@ -28,7 +28,7 @@ A: Yes, it's possible. MirrorMaker 2 sends offset checkpoints to the target clus
 
 **Q: Does MirrorMaker 2 treat compacted topics any differently?**
 
-A: No. Compaction doesn't change offsets of records, so offset mapping should work. As with normal topics, it can lose records due to long unavailability (e.g. tombstone records are collected from compacted topics eventually). Check `Mirrormaker 2.0 and compacted topics <https://lists.apache.org/thread/x84d1ggdyf48rv8hv9vzvdfq81d9z7qz>`_ for more information.
+A: No. Compaction doesn't change offsets of records, so offset mapping should work. As with normal topics, it can lose records due to long unavailability (e.g. tombstone records are collected from compacted topics eventually). Check `MirrorMaker 2.0 and compacted topics <https://lists.apache.org/thread/x84d1ggdyf48rv8hv9vzvdfq81d9z7qz>`_ for more information.
 
 **Q: Will all topic configurations be replicated to the target cluster?**
 
@@ -36,7 +36,7 @@ A: By default, yes. It can't be configured, but not supported at the moment. Che
 
 **Q: Will Aiven ACLs be replicated?**
 
-A: No. Aiven ACLs are external to Kafka clusters, they won't be replicated by MirrorMaker.
+A: No. Aiven ACLs are external to Kafka clusters, they won't be replicated by MirrorMaker 2.
 
 **Q: Is it possible to throttle replication using quotas?**
 
@@ -54,6 +54,6 @@ A: Yes, see https://app.intercom.com/a/apps/reo7593q/articles/articles/5411861/s
 
 A: The schema registry client (e.g. used by the Avro converter) won't be able to find schemas for prefixed topics with a default configuration. However, it's possible to specify a custom {key,value}.subject.name.strategy on the client side.
 
-**Q: What happens if one of the clusters MM is configured to work with is unaccessible?**
+**Q: What happens if one of the clusters MM is configured to work with is inaccessible?**
 
 A: The MirrorMaker 2 process will not run, i.e. a single bad replication flow kills the whole replication.
