@@ -591,6 +591,8 @@ entries:
         entries:
           - file: docs/products/clickhouse/howto/connect-with-clickhouse-cli
             title: Connect with ClickHouse client
+          - file: docs/products/clickhouse/howto/connect-with-go
+            title: Connect with Go
           - file: docs/products/clickhouse/howto/connect-with-python
             title: Connect with Python
           - file: docs/products/clickhouse/howto/connect-with-nodejs
