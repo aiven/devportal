@@ -1,5 +1,5 @@
-Setup cross cluster replication for Aiven for OpenSearch®
-=========================================================
+Setup cross cluster replication for Aiven for OpenSearch® (beta)
+================================================================
 
 .. note:: 
     - Cross cluster replication feature for Aiven for OpenSearch is a beta release. 
