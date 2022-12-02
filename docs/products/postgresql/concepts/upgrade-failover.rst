@@ -65,7 +65,7 @@ In case of failover or controlled switchover of an Aiven for PostgreSQL service,
 
 .. important::
 
-    The recreation of replication slots feature is enabled automatically.
+    The recreation of replication slots feature is enabled automatically and doesn't require restarting the nodes.
 
 One-node cluster
 """"""""""""""""
@@ -84,8 +84,11 @@ For multi-node setups, replication slots from the primary are synchronized to th
 When a failover to a standby occurs, the standby node already has replication slots with an up-to-date (maximum 5-second delay) positions from the primary.
 
 .. warning::
-    
-    * In case of uncontrolled failover, slots created up to 30 seconds before the failover might be lost.
+
+    Uncontrolled failover ramification
+
+    * Slots created up to 30 seconds before the failover might be lost.
+    * If due to a cloud provider failure, a node from the one-node cluster disappears, replication slots on a new replacement node cannot be restored since the replication slots information is lost.
 
 .. note::
     
