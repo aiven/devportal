@@ -6,13 +6,13 @@ This article shows by way of example how to integrate Aiven for PostgreSQL® wit
 Let's cook!
 -----------
 
-Imagine that you've been collecting IoT measurements from thousands of sensors and storing them in ClickHouse table ``iot_measurements``. Now, you'd like to enrich your metrics by adding the sensor's location measurement so that you can filter the metrics by the city name. The sensor's location data is available in the ``sensors_dim`` table in PostgreSQL.
+Imagine that you've been collecting IoT measurements from thousands of sensors and storing them in ClickHouse table ``iot_measurements``. Now, you'd like to enrich your metrics by adding the sensor's location measurement so that you can filter the metrics by the city name. The sensor's location data is available in the ``sensors_dim`` database in PostgreSQL.
 
 This recipe calls for the following:
 
 1. Set up an Aiven for ClickHouse database.
 2. Insert your measurements data into the Aiven for ClickHouse database.
-3. Combine your measurements data in the Aiven for ClickHouse database with the related PostgreSQL dimension tables.
+3. Combine your measurements data in the Aiven for ClickHouse database with the related PostgreSQL dimension database.
 
 Configure common files
 ''''''''''''''''''''''
@@ -70,7 +70,7 @@ Configure common files
 Configure the ``services.tf`` file
 ''''''''''''''''''''''''''''''''''
 
-The following Terraform script initializes both Aiven for PostgreSQL and Aiven for ClickHouse services, creates the service integration, the source PostgreSQL table, and the Aiven for ClickHouse database.
+The following Terraform script initializes both Aiven for PostgreSQL and Aiven for ClickHouse services, creates the service integration, the source PostgreSQL database, and the Aiven for ClickHouse database.
 
 .. code-block:: terraform
 
@@ -85,10 +85,10 @@ The following Terraform script initializes both Aiven for PostgreSQL and Aiven f
   }
 
   // Postgres sensors database
-  resource "aiven_pg_database" "mydatabase" {
+  resource "aiven_pg_database" "sensor_dims" {
     project       = var.project_name
     service_name  = aiven_pg.postgres.service_name
-    database_name = "sensors"
+    database_name = "sensor_dims"
   }
 
   // ClickHouse service based in the same region
@@ -96,7 +96,7 @@ The following Terraform script initializes both Aiven for PostgreSQL and Aiven f
     project                 = var.project_name
     service_name            = "clickhouse-gcp-us"
     cloud_name              = "google-us-east-4"
-    plan                    = "startup-4"
+    plan                    = "startup-beta-16"
     maintenance_window_dow  = "monday"
     maintenance_window_time = "10:00:00"
   }
@@ -114,6 +114,12 @@ The following Terraform script initializes both Aiven for PostgreSQL and Aiven f
     integration_type         = "clickhouse_postgresql"
     source_service_name      = aiven_pg.postgres.service_name
     destination_service_name = aiven_clickhouse.clickhouse.service_name
+    clickhouse_postgresql_user_config {
+      databases {
+        database = aiven_pg_database. sensor_dims.database_name
+        schema = "public"
+      }
+    }
   }
 
 Execute the Terraform files
@@ -151,8 +157,10 @@ Check out the results
 * Resource ``aiven_clickhouse`` creates an Aiven for ClickHouse service with the project name, the cloud name (provider, region, zone), the Aiven service plan, and the service name as specified in the ``services.tf`` file.
 * ``aiven_clickhouse_database`` resource creates a database that can be used to store high-throughput measurement data and to create new tables and views to process this data.
 * ``aiven_pg`` resource creates an Aiven for PostgreSQL service.
-* * ``aiven_pg_database`` resource creates the ``sensors`` database.
+* * ``aiven_pg_database`` resource creates the ``sensor_dims`` database.
 * ``aiven_service_integration`` resource creates the integration between the Aiven for PostgreSQL and Aiven for ClickHouse services.
+
+This results in the creation of the ``service_postgres-gcp-us_sensor_dims_public`` database in ClickHouse allowing you to access the ``sensor_dims`` database for the ``postgres-gcp-us`` service.
 
 Learn more
 ----------
