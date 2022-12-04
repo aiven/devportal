@@ -5,7 +5,9 @@ Apache Kafka® REST proxy authorization allows you to use the RESTful interface 
 
 When you enable Apache Kafka REST proxy authorization, Karapace sends the HTTP basic authentication credentials to Apache Kafka®. The authentication and authorization are then performed by Apache Kafka, depending on the ACL defined in Apache Kafka. To configure the ACLs for authorization, see :doc:`Kafka Access Control Lists (ACLs) </docs/products/kafka/concepts/acl>`.
 
-.. note:: 
-    If the feature is **disabled**, Apache Kafka REST proxy authorization connects to Apache Kafka® using a special **superuser** with full access to all topics.
+
+When Apache Kafka REST proxy authorization is enabled, a **super user** is created for the Apache Kafka REST proxy and added to the Apache Kafka ACLs. Any operation requested via the REST API uses this superuser, who has all the permissions to perform any operation without any restrictions. When Apache Kafka REST proxy authorization is disabled, the REST Proxy bypasses the Apache Kafka ACLs, so any operation via REST API call is performed without any restrictions.
+
+
 
 
