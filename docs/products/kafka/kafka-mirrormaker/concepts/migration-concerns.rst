@@ -10,7 +10,7 @@ Known bugs:
 * https://github.com/apache/kafka/pull/11748
 * https://issues.apache.org/jira/browse/KAFKA-13452 
 * https://github.com/apache/kafka/pull/11492
-
+* MirrorMaker 2 always set ``min.insync.replicas = 1`` in destination cluster topics
 
 MirrorMaker 2 tuning:
 -----------------------
@@ -41,3 +41,40 @@ To validate MM2 is caught up on the messages, the following can be monitored:
     * When MirrorMaker 2 stops producing records to a topic then the value of this metric stops increasing and therefore a flat line is visible in the dashboard
 3. With kt the following might be helpful to get the latest messages from all partitions:
     * ``kt consume -auth ./mykafka.conf -brokers service-project.aivencloud.com:24949 -topic topicname -offsets all=newest:newest | jq -c -s 'sort_by(.partition) | .[] | {partition: .partition, value: .value, timestamp: .timestamp}'``
+
+MirrorMaker 2 always set ``min.insync.replicas = 1`` in destination cluster topics
+--------------------------------------------------------------------------------
+
+**Description**
+
+If a topic on destination cluster is updated or pre-created with ``min.insync.replicas > 1`` , MirrorMaker 2 would always be overwritten with ``min.insync.replicas = 1`` in target topics. 
+The replication factor of target topics does not match the replication factor of source topics either when they are newly-created by MM2, or when they exist beforehand.
+
+Steps to reproduce:
+
+Create the following topics on destination kafka:
+
+* topic04 -  partitions: 3 replicas: 3 min.insync.replicas: 3
+* topic05 - partitions: 6 replicas: 3 min.insync.replicas: 3
+
+Create the following topics on source kafka:
+
+* topic04 -  partitions: 6 replicas: 2 min.insync.replicas: 1
+* topic05 - partitions: 6 replicas: 3 min.insync.replicas: 3
+
+Start MirrorMaker 2 with the following settings:
+
+* 4. after > 15 minutes
+
+topic configuration on destination kafka got updated as the following:
+
+* topic04 -  partitions: 6 replicas: 3 min.insync.replicas: 1
+* topic05 - partitions: 6 replicas: 3 min.insync.replicas: 1
+
+Findings:
+
+* replicas does not get updated by MM2
+* min.insync.replicas would be overwritten as 1 by MM2
+
+
+

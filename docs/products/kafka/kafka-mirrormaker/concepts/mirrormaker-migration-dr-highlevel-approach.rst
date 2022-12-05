@@ -17,11 +17,11 @@ Active-Passive setup
 
 To enable a DR scenario the backup cluster (Cluster B) must have topics with the exact same name as the primary cluster (Cluster A). By default this is not the case so all replication flows must use the org.apache.Kafka.connect.mirror.IdentityReplicationPolicy to guarantee this.
  
-When a replication flow is created it will mirror all topics based upon the allow list or deny list configuration of the replication flow. The allow list should be set .* to guarantee that all internal topics such as '__consumer_offsets' for Kafka Connectors and consumer groups, and '_schemas' for Karapace.
+When a replication flow is created it will mirror all topics based upon the allow list or deny list configuration of the replication flow. The allow list should be set .* to guarantee that all internal topics such as consumer offsets for Kafka Connectors and consumer groups, and schemas for Karapace.
 
 **Failover** 
 
-A cluster that is replicated using MM2 will have a different 'service_uri' as well as certificates which will need to be accounted for when transitioning applications to use the backup cluster instead of the primary.
+A cluster that is replicated using MM2 will have a different service uri as well as certificates which will need to be accounted for when transitioning applications to use the backup cluster instead of the primary.
 
 Given that Cluster B is designed for DR failover, in order to promote Cluster A as the primary cluster after a failover scenario, the data will have to be recreated in Cluster A from Cluster B using MM2 but in reverse.
 This will involve deleting existing data in Cluster A other than consumer offset data
@@ -46,7 +46,7 @@ Gotchas:
 
 **Failover**
 
-It is much easier to failover and failback in this scenario as data is actively replicated between the clusters at all times.
+It is much easier to failover in this scenario as data is actively replicated between the clusters at all times.
 
 Migration
 --------------------

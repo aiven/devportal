@@ -1,8 +1,8 @@
 Notes on internals
-#############
+##################
 
-Offset sync versus Checkpoints
---------------
+Comparison between MM2 offset sync and checkpoints
+---------------------------------------------------
 
 The offset sync records are used internally to create the checkpoint records. Hence, the checkpoint messages contains everything that's needed for offset
 translation.
