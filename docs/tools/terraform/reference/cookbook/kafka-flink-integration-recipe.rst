@@ -40,7 +40,7 @@ For this, you'd like to run an Apache Flink job and write the filtered messages 
          required_providers {
            aiven = {
              source  = "aiven/aiven"
-             version = "~> 3.8.1"
+             version = "~> 3.9.0"
            }
          }
        }
