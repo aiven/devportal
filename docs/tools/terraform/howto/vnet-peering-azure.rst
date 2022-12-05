@@ -59,7 +59,7 @@ For example:
     }
 
 
-1. Create or bind the resources
+Step 1: Create or bind the resources
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Create or bind the existing resources using ``terraform import`` using the steps in this example:
@@ -181,7 +181,7 @@ Create or bind the existing resources using ``terraform import`` using the steps
     }
 
 
-2. Create peering in Azure
+Step 2: Create peering in Azure
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Now create the connection using the credentials from the previous step.
