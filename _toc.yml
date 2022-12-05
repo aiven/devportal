@@ -234,6 +234,8 @@ entries:
               title: PostgreSQL® Read Replica
             - file: docs/tools/terraform/reference/cookbook/clickhouse-access-setup-recipe
               title: Configure ClickHouse user's access
+            - file: docs/tools/terraform/reference/cookbook/kafka-clickhouse-integration-recipe
+              title: Apache Kafka and ClickHouse
           - file: docs/tools/terraform/reference/troubleshooting
             entries:   
             - file: docs/tools/terraform/reference/troubleshooting/private-access-error
@@ -623,6 +625,8 @@ entries:
                 title: Connect to Grafana
               - file: docs/products/clickhouse/howto/integrate-kafka
                 title: Connect to Apache Kafka
+              - file: docs/products/clickhouse/howto/integrate-karka-terraform
+                title: Connect to Kafka with Terraform
               - file: docs/products/clickhouse/howto/integrate-postgresql
                 title: Connect to PostgreSQL
               - file: docs/products/clickhouse/howto/connect-with-jdbc
