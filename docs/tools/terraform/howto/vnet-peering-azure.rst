@@ -13,12 +13,12 @@ we'll have to break it up into two:
 2. Then we will configure Azure provider using data from step one
    to create the last resource and connect networks together
 
-Before we start
+Before you start
 ~~~~~~~~~~~~~~~
 
-Please setup `Aiven <https://registry.terraform.io/providers/aiven/aiven/latest/docs#authentication-token>`_
-and `Azure <https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs#authenticating-to-azure>`_
-(and `this <https://registry.terraform.io/providers/hashicorp/azuread/latest/docs#authenticating-to-azure-active-directory>`_) providers using official documentation.
+Create an  `Aiven authentication token </docs/platform/howto/create_authentication_token>`.
+Then set up `authentication for Azure <https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs#authenticating-to-azure>`_
+and `Azure Active Directory <https://registry.terraform.io/providers/hashicorp/azuread/latest/docs#authenticating-to-azure-active-directory>`_.
 For example:
 
 .. code-block::
@@ -59,10 +59,10 @@ For example:
     }
 
 
-Create necessary resources
+1. Create or bind the resources
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Create or bind existing (using ``terraform import``) resources.
+Create or bind the existing resources using ``terraform import`` using the steps in this example:
 
 .. code-block::
 
@@ -181,10 +181,10 @@ Create or bind existing (using ``terraform import``) resources.
     }
 
 
-Create peering in Azure
-~~~~~~~~~~~~~~~~~~~~~~~
+2. Create peering in Azure
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Now we need to create connection using credentials from the previous step.
+Now create the connection using the credentials from the previous step.
 Unfortunately terraform doesn't support `dynamic provider configuration <https://github.com/hashicorp/terraform/issues/25244>`_.
 
 .. code-block::
@@ -211,4 +211,3 @@ Unfortunately terraform doesn't support `dynamic provider configuration <https:/
 
     # 14. Wait until the Aiven peering connection is active
 
-Done.
