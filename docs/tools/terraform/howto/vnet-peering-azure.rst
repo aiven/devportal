@@ -186,6 +186,8 @@ Create or bind the existing resources using ``terraform import`` using the steps
 
 Now create the connection using the credentials from the previous step.
 Unfortunately terraform doesn't support `dynamic provider configuration <https://github.com/hashicorp/terraform/issues/25244>`_.
+In the same file, follow these steps to create the connection:
+
 
 .. code-block::
 
