@@ -144,7 +144,8 @@ The following Terraform script initializes both Aiven for Apache Kafka and Aiven
 	      }
       }
     }
-
+  }
+  
   resource "aiven_clickhouse_database" "measurements" {
     project                 = var.project_name
     service_name            = aiven_clickhouse.clickhouse.service_name
