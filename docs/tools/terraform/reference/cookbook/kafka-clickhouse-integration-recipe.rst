@@ -59,7 +59,7 @@ Configure common files
 
   Use it for defining the variables to avoid including sensitive information in source control. The ``variables.tf`` file defines the API token, the project name, and the prefix for the service name.
 
-    .. code:: terraform
+    .. code-block:: terraform
 
        variable "aiven_api_token" {
          description = "Aiven console API token"
