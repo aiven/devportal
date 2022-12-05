@@ -21,7 +21,7 @@ When a replication flow is created it will mirror all topics based upon the allo
 
 **Failover** 
 
-A cluster that is replicated using MM2 will have a different service uri as well as certificates which will need to be accounted for when transitioning applications to use the backup cluster instead of the primary.
+A cluster that is replicated using MM2 will have a different service URI as well as certificates which will need to be accounted for when transitioning applications to use the backup cluster instead of the primary.
 
 Given that Cluster B is designed for DR failover, in order to promote Cluster A as the primary cluster after a failover scenario, the data will have to be recreated in Cluster A from Cluster B using MM2 but in reverse.
 This will involve deleting existing data in Cluster A other than consumer offset data
