@@ -14,6 +14,21 @@ This recipe calls for the following:
 2. Insert your measurements data into the Aiven for ClickHouse database.
 3. Combine your measurements data in the Aiven for ClickHouse database with the related PostgreSQL dimension database.
 
+.. mermaid::
+
+   flowchart LR
+      ClickHouse[Aiven for ClickHouse]
+      Integration[Services \n integration]
+      PostgreSQL[Aiven for PostgreSQL]
+      Combined_data[sensor_dim + iot_measurements]
+      New_db[New database \n service_postgres-gcp-us_sensor_dims_public]
+      subgraph Aiven for ClickHouse
+      Combined_data-->New_db
+      end
+      ClickHouse ==>|iot_measurements| Integration
+      PostgreSQL ==>|sensors_dim| Integration
+      Integration ==> Combined_data
+
 Configure common files
 ''''''''''''''''''''''
 
@@ -160,7 +175,7 @@ Check out the results
 * * ``aiven_pg_database`` resource creates the ``sensor_dims`` database.
 * ``aiven_service_integration`` resource creates the integration between the Aiven for PostgreSQL and Aiven for ClickHouse services.
 
-This results in the creation of the ``service_postgres-gcp-us_sensor_dims_public`` database in ClickHouse allowing you to access the ``sensor_dims`` database for the ``postgres-gcp-us`` service.
+This results in the creation of the ``service_postgres-gcp-us_sensor_dims_public`` database in Aiven for ClickHouse allowing you to access the ``sensor_dims`` database for the ``postgres-gcp-us`` service.
 
 Learn more
 ----------
