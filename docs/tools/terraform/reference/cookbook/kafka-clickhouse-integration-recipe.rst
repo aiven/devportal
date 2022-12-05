@@ -7,7 +7,7 @@ This article shows by way of example how to integrate Aiven for Apache Kafka® w
 
   First, check out how sensor data can look like for a better understanding of this recipe and the ``clickhouse_kafka_user_config`` Terraform block used in this article.
 
-  .. code-block:: javascript
+  .. code-block:: shell
 
     {
       "sensor_id": 10000001,
