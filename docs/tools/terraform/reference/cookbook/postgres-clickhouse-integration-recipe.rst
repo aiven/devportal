@@ -1,7 +1,7 @@
 Aiven for PostgreSQL® as a source for Aiven for ClickHouse®
 ===========================================================
 
-This article shows by way of example how to integrate Aiven for PostgreSQL® with Aiven for ClickHouse® using `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_. A PostgreSQL database is used as a data source and Aiven for ClickHouse is used to read, transform, and execute jobs using data from the PostgreSQL server.
+You can use a PostgreSQL database as a data source and Aiven for ClickHouse - to read, transform, and execute jobs using data from the PostgreSQL server. For this purpose, you need to integrate Aiven for PostgreSQL® with Aiven for ClickHouse®. Check out this article to learn how to connect these services using `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_.
 
 Let's cook!
 -----------
@@ -29,7 +29,7 @@ Configure common files
          required_providers {
            aiven = {
              source  = "aiven/aiven"
-             version = ">= 3.7"
+             version = "~> 3.9.0"
            }
          }
        }
@@ -78,7 +78,7 @@ The following Terraform script initializes both Aiven for PostgreSQL and Aiven f
   resource "aiven_pg" "postgres" {
     project                 = var.project_name
     service_name            = "postgres-gcp-us"
-    cloud_name              = "google-us-east-4"
+    cloud_name              = "google-us-east4"
     plan                    = "business-8" // Primary + read replica
     maintenance_window_dow  = "monday"
     maintenance_window_time = "10:00:00"
@@ -95,7 +95,7 @@ The following Terraform script initializes both Aiven for PostgreSQL and Aiven f
   resource "aiven_clickhouse" "clickhouse" {
     project                 = var.project_name
     service_name            = "clickhouse-gcp-us"
-    cloud_name              = "google-us-east-4"
+    cloud_name              = "google-us-east4"
     plan                    = "startup-beta-16"
     maintenance_window_dow  = "monday"
     maintenance_window_time = "10:00:00"
