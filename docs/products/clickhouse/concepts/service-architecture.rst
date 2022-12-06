@@ -9,7 +9,7 @@ Deployment modes
 Aiven for ClickHouse can be deployed either as a single node, a single shard of three nodes, or multiple shards of three nodes each.
 
 * With a single shard, all data is present in all servers and all servers can be used for reads and writes (no main server, leader, or replica).
-* With multiple shards, the data is split between all shards, the data of each shard is present in all nodes of the shard.
+* With multiple shards, the data is split between all shards and the data of each shard is present in all nodes of the shard.
 
 Each Aiven for ClickHouse service is exposed as a single server URL pointing to all servers with connections going randomly to any of the servers. ClickHouse is responsible for replicating the writes between the servers.
 For synchronizing critical low-volume information between servers, Aiven for ClickHouse relies on :ref:`ZooKeeper <zookeeper>`, which runs on each ClickHouse server.
@@ -24,27 +24,34 @@ Each Aiven for Clickhouse node runs Clickhouse, ZooKeeper, and Astacus.
 ZooKeeper
 '''''''''
 
-ZooKeeper is responsible for coordination and synchronization across the nodes: one process per node, accessible only from within the cluster.
+ZooKeeper is responsible for the cross-nodes coordination and synchronization of the following replication processes:
 
-* By ClickHouse's ``Replicated`` :ref:`database engine <replicated-database-engine>`, to replicate database changes across the cluster (CREATE, UPDATE or ALTER TABLE)
-* By ClickHouse's ``ReplicatedMergeTree`` :ref:`table engine <replicated-table-engine>`, to coordinate replicating table data across the cluster. Data itself is not written to ZooKeeper, it is transferred directly between ClickHouse servers
-* By ClickHouse, to replicate the storage of Users, Roles, Quotas, Row Policies for the whole cluster.
+* Replication of database changes across the cluster: CREATE, UPDATE, or ALTER TABLE (by ClickHouse's ``Replicated`` :ref:`database engine <replicated-database-engine>`)
+* Replication of table data across the cluster (by ClickHouse's ``ReplicatedMergeTree`` :ref:`table engine <replicated-table-engine>`). Data itself is not written to ZooKeeper but transferred directly between ClickHouse servers.
+* Replication of the storage of Users, Roles, Quotas, Row Policies for the whole cluster (by ClickHouse).
 
   .. note::
 
     Storing entities such as Users, Roles, Quotas, and Row Policies in ZooKeeper ensures that Role Based Access Control (RBAC) is applied consistently over the entire cluster. This type of entity storage was developed at Aiven and is now part of the upstream ClickHouse.
 
+ZooKeeper handles one process per node and is accessible only from within the cluster.
+
+.. _astacus:
+
 Astacus
 '''''''
 
-Astacus is an open-source project originated at Aiven that coordinates backups of cluster databases, including ClickHouse.
+Astacus is an open-source project originated at Aiven for coordinating backups of cluster databases, including ClickHouse.
 
 Data architecture
 -----------------
 
-* Aiven for ClickHouse enforces full schema replication: all databases, tables, users & grants are the same on all nodes.
-* Aiven for ClickHouse enforces full data replication: table rows are the same on all nodes within a shard.
-* Astacus does most of the backup & restore operations.
+Aiven for ClickHouse enforces
+
+* Full schema replication: all databases, tables, users, and grants are the same on all nodes.
+* Full data replication: table rows are the same on all nodes within a shard.
+
+:ref:`Astacus <astacus>` does most of the backup and restore operations.
 
 Engines: database and table
 ---------------------------
