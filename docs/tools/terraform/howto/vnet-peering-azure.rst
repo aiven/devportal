@@ -17,8 +17,8 @@ Before you start
 ~~~~~~~~~~~~~~~~
 
 Create an  `Aiven authentication token </docs/platform/howto/create_authentication_token>`.
-Then set up `authentication for Azure <https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs#authenticating-to-azure>`_
-and `Azure Active Directory <https://registry.terraform.io/providers/hashicorp/azuread/latest/docs#authenticating-to-azure-active-directory>`_.
+Then set up `authentication for Azure <https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs>`_
+and `Azure Active Directory <https://registry.terraform.io/providers/hashicorp/azuread/latest/docs>`_.
 For example:
 
 .. code-block::
