@@ -625,7 +625,7 @@ entries:
                 title: Connect to Grafana
               - file: docs/products/clickhouse/howto/integrate-kafka
                 title: Connect to Apache Kafka
-              - file: docs/products/clickhouse/howto/integrate-karka-terraform
+              - file: docs/products/clickhouse/howto/integrate-kafka-terraform
                 title: Connect to Kafka with Terraform
               - file: docs/products/clickhouse/howto/integrate-postgresql
                 title: Connect to PostgreSQL
