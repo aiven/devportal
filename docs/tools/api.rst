@@ -42,6 +42,23 @@ information. This is perfect for machines but not ideal for humans. Try a tool
 like ``jq`` (https://stedolan.github.io/jq/) to make things easier to read and
 manipulate.
 
+Per-service configuration
+-------------------------
+
+Many of the API endpoints allow additional configuration that varies depending on the type of service you are using. Check out the documentation for each service to see the configuration options available:
+
+* :doc:`Apache Kafka configuration</docs/products/kafka/reference/advanced-params>`
+* :doc:`PostgreSQL configuration </docs/products/postgresql/reference/list-of-advanced-params>`
+* :doc:`Apache Flink configuration </docs/products/flink/reference/advanced-params>`
+* :doc:`ClickHouse configuration </docs/products/clickhouse/reference/advanced-params>`
+* :doc:`OpenSearch configuration </docs/products/opensearch/reference/advanced-params>`
+* :doc:`M3DB configuration </docs/products/m3db/reference/advanced-params>`
+* :doc:`MySQL configuration </docs/products/mysql/reference/advanced-params>`
+* :doc:`Redis configuration </docs/products/redis/reference/advanced-params>`
+* :doc:`Apache Cassandra configuration </docs/products/cassandra/reference/advanced-params>`
+* :doc:`Grafana configuration </docs/products/grafana/reference/advanced-params>`
+* :doc:`InfluxDB configuration </docs/products/influxdb/reference/advanced-params>`
+
 Further reading
 ---------------
 
