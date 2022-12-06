@@ -1,4 +1,4 @@
-Notes on internals
+MirrorMaker 2 Internals
 ##################
 
 Comparison between MM2 offset sync and checkpoints

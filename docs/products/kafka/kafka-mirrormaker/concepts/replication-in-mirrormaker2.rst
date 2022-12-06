@@ -1,4 +1,4 @@
-Replication in Apache Kafka® MirrorMaker 2
+Replication FAQ's
 ===========================================
 
 **Q: What guarantees in replication does MirrorMaker 2 provide?**
