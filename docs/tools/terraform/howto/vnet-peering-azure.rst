@@ -185,7 +185,9 @@ Step 2: Create peering in Azure
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Now create the connection using the credentials from the previous step.
-Unfortunately terraform doesn't support `dynamic provider configuration <https://github.com/hashicorp/terraform/issues/25244>`_.
+.. note::
+
+Terraform doesn't support dynamic provider configuration.
 In the same file, follow these steps to create the connection:
 
 
