@@ -131,7 +131,7 @@ The following Terraform script initializes both Aiven for PostgreSQL and Aiven f
     destination_service_name = aiven_clickhouse.clickhouse.service_name
     clickhouse_postgresql_user_config {
       databases {
-        database = aiven_pg_database. sensor_dims.database_name
+        database = aiven_pg_database.sensor_dims.database_name
         schema = "public"
       }
     }
