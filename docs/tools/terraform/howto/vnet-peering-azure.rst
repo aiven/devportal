@@ -14,7 +14,7 @@ we'll have to break it up into two:
    to create the last resource and connect networks together
 
 Before you start
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 Create an  `Aiven authentication token </docs/platform/howto/create_authentication_token>`.
 Then set up `authentication for Azure <https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs#authenticating-to-azure>`_
@@ -60,7 +60,7 @@ For example:
 
 
 Step 1: Create or bind the resources
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Create or bind the existing resources using ``terraform import`` using the steps in this example:
 
@@ -182,7 +182,7 @@ Create or bind the existing resources using ``terraform import`` using the steps
 
 
 Step 2: Create peering in Azure
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Now create the connection using the credentials from the previous step.
 .. note::
