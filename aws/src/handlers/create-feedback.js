@@ -59,7 +59,9 @@ exports.handler = async function (event) {
       statusCode: 500,
       headers: {
         ...headers,
-        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Origin": isValidOrigin
+          ? origin
+          : allowedOrigins[0],
       },
       body: JSON.stringify({
         error: JSON.stringify(err),
