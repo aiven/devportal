@@ -94,6 +94,6 @@ With the ``MergeTree`` engine, at least one new file is created for each INSERT 
 ``ReplicatedMergeTree`` engine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Each engine of the ``MergeTree`` family has a matching ``ReplicatedMergeTree`` engine, which additionally enables the replication of all writes using :ref:`ZooKeeper <zookeeper>`. The data itself doesn't travel through ZooKeeper and is actually fetched from one ClickHouse server to the other. A shared log of update queries is maintained with ZooKeeper. All nodes add entries to the queue and watch for changes to execute the queries.
+Each engine of the ``MergeTree`` family has a matching ``ReplicatedMergeTree`` engine, which additionally enables the replication of all writes using :ref:`ZooKeeper <zookeeper>`. The data itself doesn't travel through ZooKeeper and is actually fetched from one ClickHouse server to another. A shared log of update queries is maintained with ZooKeeper. All nodes add entries to the queue and watch for changes to execute the queries.
 
 When a query to create a table using the ``MergeTree`` engine arrives, Aiven for ClickHouse automatically rewrites the query to use the ``ReplicatedMergeTree`` engine so that all tables are replicated and all servers have the same table data, which in fact makes the group of servers a high-availability cluster.
