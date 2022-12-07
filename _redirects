@@ -1,7 +1,3 @@
-# Domain level redirect for path forwarding
-http://developer.aiven.io/*  https://docs.aiven.io/:splat 301!
-https://developer.aiven.io/* https://docs.aiven.io/:splat 301!
-
 # Convenience URLs
 /kafka              /docs/products/kafka
 /postgresql         /docs/products/postgresql
