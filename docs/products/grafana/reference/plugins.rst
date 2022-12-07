@@ -23,6 +23,9 @@ Bar gauge - `Grafana Docs <https://grafana.com/docs/grafana/latest/visualization
 Candlestick - `Grafana Docs <https://grafana.com/docs/grafana/latest/visualizations/candlestick/>`__
     Shows a chart that is typically used to describe price movements of a security, derivative, or currency.
 
+Canvas - `Grafana <https://grafana.com/grafana/plugins/canvas/>`__
+    Included with Grafana. Canvas visualizations are extensible form-built panels that allow you to explicitly place elements within static and dynamic layouts. Similar to UI and web design tools you may have used before.
+
 Carpet plot - `Grafana <https://grafana.com/grafana/plugins/petrslavotinek-carpetplot-panel/>`__
     Receives data series and divides all the data into individual buckets.
 
@@ -56,8 +59,8 @@ Getting Started
 Graph - `Grafana Docs <https://grafana.com/docs/grafana/next/panels-visualizations/visualizations//>`__
     Included with Grafana, provides a very rich set of graphing options.
 
-Heatmap - `Grafana <https://grafana.com/grafana/plugins/heatmap/>`__ | `Grafana Docs <https://docs.grafana.org/features/panels/heatmap/>`__
-    Allows you to view histograms over time.
+Heatmap - `Grafana <https://grafana.com/grafana/plugins/heatmap-new/>`__ | `Grafana Docs <https://docs.grafana.org/features/panels/heatmap/>`__
+    Allows you to view histograms over time. The legacy Heatmap plugin is also still available.
 
 Histogram - `Grafana <https://grafana.com/grafana/plugins/mtanda-histogram-panel/>`__ | `GitHub <https://github.com/mtanda/grafana-histogram-panel>`__
     Provides a histogram for time series data. 
@@ -71,7 +74,7 @@ News - `Grafana Docs <https://grafana.com/docs/grafana/latest/visualizations/new
 Node Graph
     Included with Grafana.
 
-Panel - `GitHub <https://github.com/NatelEnergy/grafana-plotly-panel>`__
+Panel / Plotly - `GitHub <https://github.com/NatelEnergy/grafana-plotly-panel>`__
     Render metrics using the plot.ly JavaScript framework.
 
 Pie Chart - `Grafana <https://grafana.com/grafana/plugins/grafana-piechart-panel/>`__ | `GitHub <https://github.com/grafana/piechart-panel>`__
@@ -113,6 +116,8 @@ Welcome
 Worldmap Panel - `GitHub <https://github.com/grafana/worldmap-panel>`__
     Displays time series data or geohash data from Elasticsearch overlaid on a world map.
 
+XY Chart - `Grafana <https://grafana.com/grafana/plugins/text/>`__
+    Native plugin that supports arbitrary X vs Y in graphs.
 
 Data source plugins
 -------------------
@@ -194,6 +199,9 @@ Other
 -----
 Grafana Image Renderer (Renderer) - `Grafana <https://grafana.com/grafana/plugins/grafana-image-renderer/>`__ | `GitHub <https://github.com/grafana/grafana-image-renderer>`__
     Handles rendering panels and dashboards to PNGs using a headless browser (Chromium).
+
+Traces (Application) - `Grafana <https://grafana.com/grafana/plugins/grafana-enterprise-traces-app/>`__
+    Grafana Enterprise Traces (GET) is a commercial offering based on Tempo, and allows you to deploy a highly-scalable, simple, and reliable traces cluster in your own data center.
 
 worldPing - `GitHub <https://github.com/raintank/worldping-app>`__
     Continually tests, stores and alerts on the global performance and availability of your Internet applications so you can pinpoint issues.

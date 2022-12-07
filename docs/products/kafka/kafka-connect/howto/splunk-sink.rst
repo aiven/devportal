@@ -62,8 +62,8 @@ The configuration file contains the following entries:
 
 * ``name``: the connector name
 * ``splunk.hec.token`` and ``splunk.hec.uri``: remote Splunk server URI and authorization parameters collected in the :ref:`prerequisite <connect_splunk_sink_prereq>` phase. 
-* ``splunk.hec.raw``: if set to `false` defines the data ingestion using the `/raw` HEC endpoing instead of the default `/event` one.
-* ``splunk.hec.ack.enabled``: if set to `true`, Kafka offset is checkpointed only after receiving the ACK for the POST call to Splunk.
+* ``splunk.hec.raw``: if set to ``false`` defines the data ingestion using the ``/raw`` HEC endpoint instead of the default ``/event`` one.
+* ``splunk.hec.ack.enabled``: if set to ``true``, Kafka offset is updated only after receiving the ACK for the POST call to Splunk.
 * ``config.splunk.hec.json.event.formatted``:  Defines if events are preformatted into the proper `HEC JSON format <https://docs.splunk.com/Documentation/KafkaConnect/2.0.2/User/Parameters>`_.
 
 .. Tip::

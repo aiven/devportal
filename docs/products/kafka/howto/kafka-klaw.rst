@@ -41,7 +41,7 @@ Follow the below steps to configure and connect Aiven for Apache Kafka® with Kl
    -  **Environment Name:** Select environment from the drop-down list
    
       .. note::  
-         To learn more, see `Clusters and environments <https://www.klaw-project.io/docs/clusters-environments>`_ in Klaw documentation.  
+         To learn more, see `Clusters and environments <https://www.klaw-project.io/docs/clusters-environments>`__ in Klaw documentation.  
 
    -  **Select Cluster:** Select the cluster you added from the drop-down list. The bootstrap servers and protocol details are automatically populated 
    -  **Default Partitions:** Enter the number of partitions based on your requirements. The default value is set to 2
@@ -51,7 +51,7 @@ Follow the below steps to configure and connect Aiven for Apache Kafka® with Kl
    -  **Topic prefix (optional):** Enter a topic prefix
    -  **Tenant:** The value is set to default Tenant
    
-      .. note:: Klaw is multi-tenant by default. Each tenant manages topics with their own teams in isolation. Every tenant has its own set of Apache Kafka® environments, and users of one tenant cannot view/access topics, or ACLS from other tenants. It provides isolation avoiding any security breach. For this topic, I have used the default tenant configuration. For more information, see `Klaw documentation <https://www.klaw-project.io/docs/get-started-kafka#configure-the-cluster-to-sync>`_. 
+      .. note:: Klaw is multi-tenant by default. Each tenant manages topics with their own teams in isolation. Every tenant has its own set of Apache Kafka® environments, and users of one tenant cannot view/access topics, or ACLS from other tenants. It provides isolation avoiding any security breach. For this topic, I have used the default tenant configuration. For more information, see `Klaw documentation <https://www.klaw-project.io/docs/get-started-kafka#configure-the-cluster-to-sync>`__. 
 
 8. Click **Save**. 
 
@@ -70,8 +70,8 @@ Secret key configuration
 
 Set the value of ``klaw.clusterapi.access.base64.secret`` with a secret key in the form of a Base64 encoded string in the ``application.properties`` file located in the following paths: 
 
-* `klaw/cluter-api/src/main/resources`
-* `klaw/core/src/main/resources`
+* ``klaw/cluter-api/src/main/resources``
+* ``klaw/core/src/main/resources``
 
 Configure authentication protocol
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -99,7 +99,7 @@ Configure SSL properties
 After retrieving the SSL certificate files and configuring the SSL keystore and truststore files, you need to configure these SSL values in the ``application.properties`` file.
 
 1. Get the **Cluster ID** by clicking the copy icon on the **Clusters** page in the **Klaw web interface**.  
-2. Next, open the application.properties file located in the **klaw/cluster-api/src/main/resources** directory. 
+2. Next, open the ``application.properties`` file located in the ``klaw/cluster-api/src/main/resources`` directory. 
 3. Configure the SSL properties to connect to Apache Kafka® clusters by editing the following lines:
 
    ::
@@ -136,5 +136,5 @@ Connect using SASL protocols
 To use protocols, such as ``SASL_PLAIN``, ``SASL_SSL/PLAIN``, and ``SASL_SSL/GSSAPI``, in the ``application.properties`` file, look for the lines starting with ``acc1.kafkasasl.jaasconfig.<>``, uncomment the line and enter the required values. Save the ``application.properties`` file. 
 
 .. seealso:: 
-   * For more information about Klaw, see `Klaw documentation <https://www.klaw-project.io/docs>`_. 
+   * For more information about Klaw, see `Klaw documentation <https://www.klaw-project.io/docs>`__. 
    * Additionally, checkout the `Klaw GitHub project repository <https://github.com/aiven/klaw>`_. 
