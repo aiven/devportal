@@ -17,7 +17,7 @@ The JS script in `feedback-form.html` would pick up `referrer`, `vote` and `mess
 
 ### One time testing
 
-Following the instructions [here](link) one should have a `event.CreateFeedbackFunction.local.json` after running `npm run generate-event POST CreateFeedbackFunction`. It looks like this
+Following the instructions [here](https://github.com/aiven/devportal/tree/feature/use-aws/aws#development) one should have a `event.CreateFeedbackFunction.local.json` after running `npm run generate-event POST CreateFeedbackFunction`. It looks like this
 
 ```
 {

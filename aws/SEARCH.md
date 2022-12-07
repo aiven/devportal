@@ -151,7 +151,7 @@ The aliases are used at index-creation time, so if this file changes then the in
 
 ### One time testing
 
-Following the instructions [here](link) one should have a `event.SearchFunction.local.json` after running `npm run generate-event GET SearchFunction`. It looks like this
+Following the instructions [here](https://github.com/aiven/devportal/tree/feature/use-aws/aws#development) one should have a `event.SearchFunction.local.json` after running `npm run generate-event GET SearchFunction`. It looks like this
 
 ```
 {
