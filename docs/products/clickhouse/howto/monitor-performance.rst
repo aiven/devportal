@@ -3,14 +3,14 @@ Monitor Aiven for ClickHouse® metrics with Grafana®
 
 As well as offering ClickHouse®-as-a-service, the Aiven platform gives you access to monitor the database. The metrics/dashboard integration in the Aiven console allows you to create an integration and monitoring dashboards in Aiven for Grafana®. For more information on the metrics, see :doc:`Aiven for ClickHouse® metrics exposed in Aiven for Grafana® <../reference/metrics-list>`.
 
-Push ClickHouse® metrics to InfluxDB®, M3DB, or PostgreSQL
-----------------------------------------------------------
+Push ClickHouse® metrics to InfluxDB®, M3DB, or PostgreSQL®
+-----------------------------------------------------------
 
 To collect metrics about your ClickHouse® service, you will need to configure a metrics integration and nominate somewhere to store the collected metrics.
 
 1. On the service **Overview** page for your ClickHouse® service, go to **Manage Integrations** and choose the **Metrics** option with *Send service metrics to InfluxDB, M3DB or PostgreSQL service* as its description.
 
-2. Choose either a new or existing InfluxDB®, M3DB, or PostgreSQL service.
+2. Choose either a new or existing InfluxDB®, M3DB, or PostgreSQL® service.
 
    - If you choose to use a new service, follow instructions on :doc:`how to create a service </docs/platform/howto/create_new_service>`.
    - If you're already using InfluxDB, M3DB, or PostgreSQL on Aiven, you can submit your ClickHouse® metrics to the existing service.

@@ -70,8 +70,8 @@ Secret key configuration
 
 Set the value of ``klaw.clusterapi.access.base64.secret`` with a secret key in the form of a Base64 encoded string in the ``application.properties`` file located in the following paths: 
 
-* `klaw/cluter-api/src/main/resources`
-* `klaw/core/src/main/resources`
+* ``klaw/cluter-api/src/main/resources``
+* ``klaw/core/src/main/resources``
 
 Configure authentication protocol
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -99,7 +99,7 @@ Configure SSL properties
 After retrieving the SSL certificate files and configuring the SSL keystore and truststore files, you need to configure these SSL values in the ``application.properties`` file.
 
 1. Get the **Cluster ID** by clicking the copy icon on the **Clusters** page in the **Klaw web interface**.  
-2. Next, open the application.properties file located in the **klaw/cluster-api/src/main/resources** directory. 
+2. Next, open the ``application.properties`` file located in the ``klaw/cluster-api/src/main/resources`` directory. 
 3. Configure the SSL properties to connect to Apache Kafka® clusters by editing the following lines:
 
    ::

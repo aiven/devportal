@@ -94,12 +94,12 @@ The change will be visible in the *Query* panel:
 * Before running the command, metrics start with ``elasticsearch_``:
 
   .. image:: /images/products/grafana/query-with-elasticsearch-prefix.png
-      :alt: A screenshot of the Grafana Dashboard query showing metrics prefixed with ``elasticsearch_``
+      :alt: A screenshot of the Grafana Dashboard query showing metrics with prefix
 
 * After running the command, metrics start with ``opensearch_``:
 
   .. image:: /images/products/grafana/query-with-opensearch-prefix.png
-      :alt: A screenshot of the Grafana Dashboard query showing metrics prefixed with ``opensearch_``
+      :alt: A screenshot of the Grafana Dashboard query showing metrics with prefix
 
 Use the version history to revert
 ---------------------------------
