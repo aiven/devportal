@@ -1,22 +1,22 @@
 Azure virtual network peering
 =============================
 
-This how-to is based on original :doc:`article </docs/platform/howto/vnet-peering-azure>`
-made for Aiven and Azure cli.
-It follows original chapter-by-chapter,
-I will find every step signed with the very same title below in the example.
+This help article contains step-by-step instructions for setting up peering in Azure. See the `Using VPC
+peering <https://docs.aiven.io/docs/platform/howto/manage-vpc-peering.html>`__
+article for how to set up a Project VPC.
 
-And while most of terraform manifestos can be applied in one go,
-we'll have to break it up into two:
+While most Terraform manifestos can be applied in one go,
+we'll have to break this up into two steps:
 
-1. First, we will create most of the necessary resources
-2. Then we will configure Azure provider using data from step one
-   to create the last resource and connect networks together
+1. First, we'll create most of the necessary resources.
+
+2. Then, we'll configure the Azure provider using data from step 1
+   to create the last resource and connect the networks together.
 
 Before you start
 ~~~~~~~~~~~~~~~~
 
-Create an  `Aiven authentication token </docs/platform/howto/create_authentication_token>`.
+Create an `Aiven authentication token </docs/platform/howto/create_authentication_token>`.
 Then set up `authentication for Azure <https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs>`_
 and `Azure Active Directory <https://registry.terraform.io/providers/hashicorp/azuread/latest/docs>`_.
 For example:
