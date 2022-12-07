@@ -1,12 +1,12 @@
 Aiven for PostgreSQL® as a source for Aiven for ClickHouse®
 ===========================================================
 
-You can use a PostgreSQL database as a data source and Aiven for ClickHouse - to read, transform, and execute jobs using data from the PostgreSQL server. For this purpose, you need to integrate Aiven for PostgreSQL® with Aiven for ClickHouse®. Check out this article to learn how to connect these services using `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_.
+You can use a PostgreSQL database as a data source and Aiven for ClickHouse® - to read, transform, and execute jobs using data from the PostgreSQL server. For this purpose, you need to integrate Aiven for PostgreSQL® with Aiven for ClickHouse®. Continue reading to learn how to connect these services using `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_.
 
 Let's cook!
 -----------
 
-Imagine that you've been collecting IoT measurements from thousands of sensors and storing them in ClickHouse database ``iot_measurements``. Now, you'd like to enrich your metrics by adding the sensor's location measurement so that you can filter the metrics by the city name. The sensor's location data is available in the ``sensors_dim`` database in PostgreSQL.
+Imagine that you've been collecting IoT measurements from thousands of sensors and storing them in ClickHouse database ``iot_measurements``. Now, you'd like to enrich your metrics by adding the sensor's location to the measurements so that you can filter the metrics by city name. The sensor's location data is available in the ``sensors_dim`` database in PostgreSQL.
 
 This recipe calls for the following:
 
@@ -96,7 +96,7 @@ The following Terraform script initializes both Aiven for PostgreSQL and Aiven f
     maintenance_window_time = "10:00:00"
   }
 
-  // Postgres sensors database
+  // Postgres sensor dimensions database
   resource "aiven_pg_database" "sensor_dims" {
     project       = var.project_name
     service_name  = aiven_pg.postgres.service_name
@@ -166,13 +166,13 @@ Execute the Terraform files
 Check out the results
 ---------------------
 
-* Resource ``aiven_clickhouse`` creates an Aiven for ClickHouse service with the project name, the cloud name (provider, region, zone), the Aiven service plan, and the service name as specified in the ``services.tf`` file.
-* ``aiven_clickhouse_database`` resource creates a database that can be used to store high-throughput measurement data and to create new tables and views to process this data.
-* ``aiven_pg`` resource creates an Aiven for PostgreSQL service.
-* * ``aiven_pg_database`` resource creates the ``sensor_dims`` database.
+* ``aiven_clickhouse`` resource creates an Aiven for ClickHouse service with the parameters specified in the ``services.tf`` file (project name, cloud name, service plan and service name)
+* ``aiven_clickhouse_database`` resource creates a database that can be used to store high-throughput measurement data as well as create new tables and views to process this data.
+* ``aiven_pg`` resource creates a highly-available Aiven for PostgreSQL service.
+* ``aiven_pg_database`` resource creates the ``sensor_dims`` database.
 * ``aiven_service_integration`` resource creates the integration between the Aiven for PostgreSQL and Aiven for ClickHouse services.
 
-This results in the creation of the ``service_postgres-gcp-us_sensor_dims_public`` database in Aiven for ClickHouse allowing you to access the ``sensor_dims`` database for the ``postgres-gcp-us`` service.
+This results in the creation of the ``service_postgres-gcp-us_sensor_dims_public`` database in Aiven for ClickHouse, allowing you to access the ``sensor_dims`` database for the ``postgres-gcp-us`` service.
 
 Learn more
 ----------
