@@ -238,8 +238,10 @@ entries:
               title: Configure ClickHouse user's access
             - file: docs/tools/terraform/reference/cookbook/kafka-clickhouse-integration-recipe
               title: Apache Kafka and ClickHouse
+            - file: docs/tools/terraform/reference/cookbook/postgres-clickhouse-integration-recipe
+              title: ClickHouse and PostgreSQL
           - file: docs/tools/terraform/reference/troubleshooting
-            entries:   
+            entries:
             - file: docs/tools/terraform/reference/troubleshooting/private-access-error
               title: Private access error when using VPC
       - file: docs/tools/kubernetes

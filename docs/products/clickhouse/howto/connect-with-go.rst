@@ -83,7 +83,7 @@ Connect with HTTPS
 
 .. important::
 
-    The HTTPS connection is supported for the database/sql API only. By default, connections are established over the native protocol. The HTTPS connection needs to be enabled either by modifying the DSN to include the HTTPS protocol or by specifying the protocol in the connection options.
+    The HTTPS connection is supported for the database/SQL API only. By default, connections are established over the native protocol. The HTTPS connection needs to be enabled either by modifying the DSN to include the HTTPS protocol or by specifying the protocol in the connection options.
 
 Identify connection information
 '''''''''''''''''''''''''''''''
