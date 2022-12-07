@@ -604,9 +604,9 @@ entries:
           - file: docs/products/clickhouse/howto/get-started
             title: Get started
             entries:
-              - file: docs/platform/howto/create_new_service
+              - file: docs/products/clickhouse/howto/get-started/create-service
                 title: Create service
-              - file: docs/products/clickhouse/howto/connect
+              - file: docs/products/clickhouse/howto/get-started/connect-to-service
                 title: Connect to service
               - file: docs/products/clickhouse/howto/get-started/load-dataset
                 title: Load data
@@ -640,27 +640,25 @@ entries:
                 title: Run queries
               - file: docs/products/clickhouse/howto/manage-service/materialized-views
                 title: Materialized views
-              - file: docs/products/clickhouse/howto/manage-service/use-shards-with-distributed-table
-                title: Shards
               - file: docs/products/clickhouse/howto/manage-service/monitor-performance
                 title: Monitor performance
           - file: docs/products/clickhouse/howto/manage-cluster
             title: Manage cluster
             entries:
-              - file: docs/products/clickhouse/howto/connect-with-clickhouse-cli
-                title: Monitor
-              - file: docs/products/clickhouse/howto/connect-with-clickhouse-cli
-                title: Tag
-              - file: docs/products/clickhouse/howto/connect-with-clickhouse-cli
-                title: Schedule updates
-              - file: docs/products/clickhouse/howto/connect-with-clickhouse-cli
-                title: Resize
-              - file: docs/products/clickhouse/howto/connect-with-clickhouse-cli
-                title: Migrate
-              - file: docs/products/clickhouse/howto/connect-with-clickhouse-cli
-                title: Fork
-              - file: docs/products/clickhouse/howto/connect-with-clickhouse-cli
-                title: Power off & delete
+              - file: docs/products/clickhouse/howto/manage-cluster/monitor
+                title: Monitor a managed service
+              - file: docs/products/clickhouse/howto/manage-cluster/tag
+                title: Tag a managed service
+              - file: docs/products/clickhouse/howto/manage-cluster/schedule-updates
+                title: Schedule maintenance updates
+              - file: docs/products/clickhouse/howto/manage-cluster/resize
+                title: Resize a managed service
+              - file: docs/products/clickhouse/howto/manage-cluster/migrate
+                title: Migrate a managed service
+              - file: docs/products/clickhouse/howto/manage-cluster/fork
+                title: Fork a managed service
+              - file: docs/products/clickhouse/howto/manage-cluster/delete
+                title: Power off & delete a managed service
           - file: docs/products/clickhouse/howto/integrate
             title: Integrate services
             entries:
@@ -671,13 +669,13 @@ entries:
               - file: docs/products/clickhouse/howto/integrate/connect-to-grafana
                 title: Grafana
               - file: docs/products/clickhouse/howto/integrate/connect-with-jdbc
-                title: External DBs with JDBC
+                title: External database with JDBC
               - file: docs/products/clickhouse/howto/integrate/terraform
                 title: Use Terraform
                 entries:
-                  - file: docs/tools/terraform/reference/cookbook/kafka-clickhouse-integration-recipe
+                  - file: docs/products/clickhouse/howto/integrate/terraform/kafka
                     title: Apache Kafka
-                  - file: docs/tools/terraform/reference/cookbook/postgresql-clickhouse-integration-recipe
+                  - file: docs/products/clickhouse/howto/integrate/terraform/postgresql
                     title: PostgreSQL
       - file: docs/products/clickhouse/reference
         title: Reference

@@ -1,0 +1,1 @@
+.. include:: /docs/platform/howto/create_new_service.rst
