@@ -1,0 +1,4 @@
+Manage a service
+================
+
+.. tableofcontents::

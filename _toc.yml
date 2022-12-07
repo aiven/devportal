@@ -632,7 +632,7 @@ entries:
             entries:
               - file: docs/products/clickhouse/howto/manage-service/manage-users-roles
                 title: Users and roles
-              - file: docs/products/clickhouse/howto/configure-access-terraform-deployed
+              - file: docs/products/clickhouse/howto/manage-service/configure-access-terraform-deployed
                 title: User permissions via Terraform
               - file: docs/products/clickhouse/howto/manage-service/manage-databases-tables
                 title: Databases and tables
