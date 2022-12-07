@@ -6,7 +6,7 @@ You can use a PostgreSQL database as a data source and Aiven for ClickHouse - to
 Let's cook!
 -----------
 
-Imagine that you've been collecting IoT measurements from thousands of sensors and storing them in ClickHouse table ``iot_measurements``. Now, you'd like to enrich your metrics by adding the sensor's location measurement so that you can filter the metrics by the city name. The sensor's location data is available in the ``sensors_dim`` database in PostgreSQL.
+Imagine that you've been collecting IoT measurements from thousands of sensors and storing them in ClickHouse database ``iot_measurements``. Now, you'd like to enrich your metrics by adding the sensor's location measurement so that you can filter the metrics by the city name. The sensor's location data is available in the ``sensors_dim`` database in PostgreSQL.
 
 This recipe calls for the following:
 
@@ -17,17 +17,14 @@ This recipe calls for the following:
 .. mermaid::
 
    flowchart LR
-      ClickHouse[Aiven for ClickHouse]
-      Integration[Services \n integration]
-      PostgreSQL[Aiven for PostgreSQL]
-      Combined_data[sensor_dim + iot_measurements]
-      New_db[New database \n service_postgres-gcp-us_sensor_dims_public]
-      subgraph Aiven for ClickHouse
-      Combined_data-->New_db
+      subgraph Aiven for PostgreSQL
+      id1[(sensors_dim database)]
       end
-      ClickHouse ==>|iot_measurements| Integration
-      PostgreSQL ==>|sensors_dim| Integration
-      Integration ==> Combined_data
+      subgraph Aiven for ClickHouse
+      id2[(iot_measurements database)]
+      id3[(service_postgres-gcp-us_sensor_dims_public database)]
+      end
+      id1 ==> |Service integration| id3
 
 Configure common files
 ''''''''''''''''''''''
