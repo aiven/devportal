@@ -89,7 +89,7 @@ With the ``MergeTree`` engine, at least one new file is created for each INSERT 
 
 * INSERT queries need to be batched to avoid handling a number of small parts.
 * UPDATE and DELETE queries need to be batched. Removing or updating a single row requires rewriting an entire part with all the rows except the one we want to remove or update.
-* SELECT queries are executed fast because all the data found in a part is valid and all files can be cached since they never change.
+* SELECT queries are executed rapidly because all the data found in a part is valid and all files can be cached since they never change.
 
 ``ReplicatedMergeTree`` engine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
