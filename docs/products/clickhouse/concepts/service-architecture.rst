@@ -41,7 +41,7 @@ ZooKeeper handles one process per node and is accessible only from within the cl
 Astacus
 '''''''
 
-Astacus is an open-source project originated at Aiven for coordinating backups of cluster databases, including ClickHouse.
+`Astacus <https://github.com/aiven/astacus>`_ is an open-source project originated at Aiven for coordinating backups of cluster databases, including ClickHouse.
 
 Data architecture
 -----------------
