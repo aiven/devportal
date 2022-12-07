@@ -580,14 +580,18 @@ entries:
   - file: docs/products/clickhouse
     title: ClickHouse
     entries:
+      - file: docs/products/clickhouse/overview
+        title: Overview
+        entries:
+          - file: docs/products/clickhouse/overview/service-architecture
+            title: Architecture
+          - file: docs/products/clickhouse/overview/plans-pricing
+            title: Plans & pricing
       - file: docs/products/clickhouse/getting-started
         title: Get started
-      - file: docs/products/clickhouse/sample-dataset
       - file: docs/products/clickhouse/concepts
         title: Concepts
         entries:
-          - file: docs/products/clickhouse/concepts/service-architecture
-            title: Service architecture
           - file: docs/products/clickhouse/concepts/olap
           - file: docs/products/clickhouse/concepts/databases-and-tables
           - file: docs/products/clickhouse/concepts/columnar-databases
@@ -595,52 +599,87 @@ entries:
       - file: docs/products/clickhouse/howto
         title: HowTo
         entries:
-          - file: docs/products/clickhouse/howto/connect-with-clickhouse-cli
-            title: Connect with ClickHouse client
-          - file: docs/products/clickhouse/howto/connect-with-go
-            title: Connect with Go
-          - file: docs/products/clickhouse/howto/connect-with-python
-            title: Connect with Python
-          - file: docs/products/clickhouse/howto/connect-with-nodejs
-            title: Connect with Node.js
-          - file: docs/products/clickhouse/howto/connect-with-php
-            title: Connect with PHP
-          - file: docs/products/clickhouse/howto/connect-with-java
-            title: Connect with Java
-          - file: docs/products/clickhouse/howto/secure-service
-            title: Secure a service
-          - file: docs/products/clickhouse/howto/manage-users-roles
-            title: Manage users and roles
-          - file: docs/products/clickhouse/howto/load-dataset
-            title: Load data
-          - file: docs/products/clickhouse/howto/query-databases
-            title: Query databases
-          - file: docs/products/clickhouse/howto/manage-databases-tables
-            title: Manage databases and tables
-          - file: docs/products/clickhouse/howto/monitor-performance
-            title: Monitor performance
-          - file: docs/products/clickhouse/howto/materialized-views
-            title: Use materialized views
-          - file: docs/products/clickhouse/howto/configure-access-terraform-deployed
-            title: Manage user privileges with Terraform
-          - file: docs/products/clickhouse/howto/list-integrations
+          - file: docs/products/clickhouse/howto/get-started
+            title: Get started
             entries:
-              - file: docs/products/clickhouse/howto/connect-to-grafana
-                title: Connect to Grafana
-              - file: docs/products/clickhouse/howto/integrate-kafka
-                title: Connect to Apache Kafka
-              - file: docs/products/clickhouse/howto/integrate-kafka-terraform
-                title: Connect to Kafka with Terraform
-              - file: docs/products/clickhouse/howto/integrate-postgresql
-                title: Connect to PostgreSQL
-              - file: docs/products/clickhouse/howto/connect-with-jdbc
-                title: Connect to external DBs with JDBC
-
+              - file: docs/platform/howto/create_new_service
+                title: Create service
+              - file: docs/products/clickhouse/howto/connect
+                title: Connect to service
+              - file: docs/products/clickhouse/howto/get-started/load-dataset
+                title: Load data
+              - file: docs/products/clickhouse/howto/get-started/secure-service
+                title: Secure service
+          - file: docs/products/clickhouse/howto/connect
+            title: Connect to service
+            entries:
+              - file: docs/products/clickhouse/howto/connect/connect-with-clickhouse-cli
+                title: Connect with ClickHouse client
+              - file: docs/products/clickhouse/howto/connect/connect-with-go
+                title: Connect with Go
+              - file: docs/products/clickhouse/howto/connect/connect-with-python
+                title: Connect with Python
+              - file: docs/products/clickhouse/howto/connect/connect-with-nodejs
+                title: Connect with Node.js
+              - file: docs/products/clickhouse/howto/connect/connect-with-php
+                title: Connect with PHP
+              - file: docs/products/clickhouse/howto/connect/connect-with-java
+                title: Connect with Java
+          - file: docs/products/clickhouse/howto/manage-service
+            title: Manage service
+            entries:
+              - file: docs/products/clickhouse/howto/manage-service/manage-users-roles
+                title: Users and roles
+              - file: docs/products/clickhouse/howto/configure-access-terraform-deployed
+                title: User permissions via Terraform
+              - file: docs/products/clickhouse/howto/manage-service/manage-databases-tables
+                title: Databases and tables
+              - file: docs/products/clickhouse/howto/manage-service/query-databases
+                title: Run queries
+              - file: docs/products/clickhouse/howto/manage-service/materialized-views
+                title: Materialized views
+              - file: docs/products/clickhouse/howto/manage-service/use-shards-with-distributed-table
+                title: Shards
+              - file: docs/products/clickhouse/howto/manage-service/monitor-performance
+                title: Monitor performance
+          - file: docs/products/clickhouse/howto/manage-cluster
+            title: Manage cluster
+            entries:
+              - file: docs/products/clickhouse/howto/connect-with-clickhouse-cli
+                title: Monitor
+              - file: docs/products/clickhouse/howto/connect-with-clickhouse-cli
+                title: Tag
+              - file: docs/products/clickhouse/howto/connect-with-clickhouse-cli
+                title: Schedule updates
+              - file: docs/products/clickhouse/howto/connect-with-clickhouse-cli
+                title: Resize
+              - file: docs/products/clickhouse/howto/connect-with-clickhouse-cli
+                title: Migrate
+              - file: docs/products/clickhouse/howto/connect-with-clickhouse-cli
+                title: Fork
+              - file: docs/products/clickhouse/howto/connect-with-clickhouse-cli
+                title: Power off & delete
+          - file: docs/products/clickhouse/howto/integrate
+            title: Integrate services
+            entries:
+              - file: docs/products/clickhouse/howto/integrate/integrate-kafka
+                title: Apache Kafka
+              - file: docs/products/clickhouse/howto/integrate/integrate-postgresql
+                title: PostgreSQL
+              - file: docs/products/clickhouse/howto/integrate/connect-to-grafana
+                title: Grafana
+              - file: docs/products/clickhouse/howto/integrate/connect-with-jdbc
+                title: External DBs with JDBC
+              - file: docs/products/clickhouse/howto/integrate/terraform
+                title: Use Terraform
+                entries:
+                  - file: docs/tools/terraform/reference/cookbook/kafka-clickhouse-integration-recipe
+                    title: Apache Kafka
+                  - file: docs/tools/terraform/reference/cookbook/postgresql-clickhouse-integration-recipe
+                    title: PostgreSQL
       - file: docs/products/clickhouse/reference
         title: Reference
         entries:
-          - file: docs/products/clickhouse/reference/plans-pricing
-            title: Service plans
           - file: docs/products/clickhouse/reference/supported-table-engines
             title: Supported table engines
           - file: docs/products/clickhouse/reference/metrics-list
