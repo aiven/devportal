@@ -644,21 +644,6 @@ entries:
                 title: Monitor performance
           - file: docs/products/clickhouse/howto/manage-cluster
             title: Manage cluster
-            entries:
-              - file: docs/products/clickhouse/howto/manage-cluster/monitor
-                title: Monitor a managed service
-              - file: docs/products/clickhouse/howto/manage-cluster/tag
-                title: Tag a managed service
-              - file: docs/products/clickhouse/howto/manage-cluster/schedule-updates
-                title: Schedule maintenance updates
-              - file: docs/products/clickhouse/howto/manage-cluster/resize
-                title: Resize a managed service
-              - file: docs/products/clickhouse/howto/manage-cluster/migrate
-                title: Migrate a managed service
-              - file: docs/products/clickhouse/howto/manage-cluster/fork
-                title: Fork a managed service
-              - file: docs/products/clickhouse/howto/manage-cluster/delete
-                title: Power off & delete a managed service
           - file: docs/products/clickhouse/howto/integrate
             title: Integrate services
             entries:
@@ -670,13 +655,6 @@ entries:
                 title: Grafana
               - file: docs/products/clickhouse/howto/integrate/connect-with-jdbc
                 title: External database with JDBC
-              - file: docs/products/clickhouse/howto/integrate/terraform
-                title: Use Terraform
-                entries:
-                  - file: docs/products/clickhouse/howto/integrate/terraform/kafka
-                    title: Apache Kafka
-                  - file: docs/products/clickhouse/howto/integrate/terraform/postgresql
-                    title: PostgreSQL
       - file: docs/products/clickhouse/reference
         title: Reference
         entries:
