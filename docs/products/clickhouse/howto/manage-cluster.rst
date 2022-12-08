@@ -5,11 +5,11 @@ Manage a cluster
 
 :doc:`Tag a managed service </docs/platform/howto/tag-resources>`
 
-:doc:`Schedule maintenance updates </docs/platform/howto/preapre-for-high-load>`
+:doc:`Schedule maintenance updates </docs/platform/howto/prepare-for-high-load>`
 
 :doc:`Resize a managed service </docs/platform/howto/scale-services>`
 
-:doc:`Migrate a managed service </docs/platform/howto/migrate-service-cloud-region>`
+:doc:`Migrate a managed service </docs/platform/howto/migrate-services-cloud-region>`
 
 :doc:`Fork a managed service </docs/platform/howto/console-fork-service>`
 
