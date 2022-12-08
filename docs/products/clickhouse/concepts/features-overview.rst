@@ -14,7 +14,7 @@ Aiven for ClickHouse provides the following:
 
   ClickHouse is built to process hundreds of millions of rows and tens of gigabytes of data per second, so you can keep up with the ever increasing speed of your business
 
-* Integrated analytics dataflows
+* Integrated analytics data flows
 
   Build high performance analytics pipelines with Aiven for ClickHouse, easily leveraging your data in other Aiven services
 
@@ -79,7 +79,7 @@ With Aiven for ClickHouse, you can focus on turning your data to actionable insi
 
 * Superior observability
 
-  * Use pre-integrated Aiven observability services for enhanced monitoring and logging with Grafana, M3, OpenSearch
+  * Use pre-integrated Aiven observability services for enhanced monitoring and logging with Grafana, M3, OpenSearch®
   * Integrate with your favorite external observability tooling — from Datadog to Prometheus, Jolokia, and more
 
 * Security & compliance
@@ -99,7 +99,7 @@ With Aiven for ClickHouse, you can focus on turning your data to actionable insi
   * Including network traffic, VPC setup and backup storage costs
   * Pay as you go
 
-* Devops friendliness
+* DevOps friendliness
 
   * Terraform Provider to manage Aiven clusters
   * Aiven Client for CLI access
