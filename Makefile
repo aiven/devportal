@@ -45,11 +45,6 @@ index-devportal: html
 		--es-url="$(ES_URL)" \
 		--html-build-dir="$(BUILDDIR)/html"
 
-# Index Help Center pages to Elasticsearch
-index-helpcenter:
-	python "$(SOURCEDIR)/scripts/index_help_center_pages.py" \
-		--es-url="$(ES_URL)"
-
 # Create feedback table to PG
 create-feedback-table:
 	python "$(SOURCEDIR)/scripts/create_feedback_table.py" \
