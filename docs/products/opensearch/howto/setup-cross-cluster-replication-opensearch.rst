@@ -15,8 +15,8 @@ Follow these steps to set up :doc:`cross cluster replication <../concepts/cross-
    * Select the desired cloud provider
    * Select the desired cloud region
    * Select the service plan
-      .. note:: 
-         During creation, the follower cluster service must have the same service plan as the leader cluster service. This ensures the follower cluster service has as much memory as the leader cluster. You can change the service plan as required later. 
+   .. note:: 
+      During creation, the follower cluster service must have the same service plan as the leader cluster service. This ensures the follower cluster service has as much memory as the leader cluster. You can change the service plan as required later. 
    
    * Add additional disk storage based on your business requirements
 4. Click **Create**.
