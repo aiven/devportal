@@ -588,6 +588,8 @@ entries:
       - file: docs/products/clickhouse/concepts
         title: Concepts
         entries:
+          - file: docs/products/clickhouse/concepts/features-overview
+            title: Features overview
           - file: docs/products/clickhouse/concepts/service-architecture
             title: Service architecture
           - file: docs/products/clickhouse/concepts/olap
