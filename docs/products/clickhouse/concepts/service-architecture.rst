@@ -1,7 +1,7 @@
 Aiven for ClickHouse® service architecture
 ==========================================
 
-Aiven for ClickHouse® is implemented as a multi-master cluster where the replication of data is managed by ClickHouse itself, the replication of schema and users is managed through ZooKeeper, and data backup and restoration is managed by Astacus. Discover the technical design behind Aiven for ClickHouse®: its structure and operation. This article helps you understand how Aiven for ClickHouse® is set up and configured to work as a managed service.
+Aiven for ClickHouse® is implemented as a multi-master cluster where the replication of data is managed by ClickHouse itself, the replication of schema and users is managed by ZooKeeper, and data backup and restoration is managed by Astacus. Discover the technical design behind Aiven for ClickHouse: its structure and operation. This article helps you understand how Aiven for ClickHouse is set up and configured to work as a managed service.
 
 Deployment modes
 ----------------
@@ -36,7 +36,7 @@ ZooKeeper is responsible for the cross-nodes coordination and synchronization of
 
 ZooKeeper handles one process per node and is accessible only from within the cluster.
 
-.. _astacus:
+.. _astacus-os:
 
 Astacus
 '''''''
@@ -51,7 +51,7 @@ Aiven for ClickHouse enforces
 * Full schema replication: all databases, tables, users, and grants are the same on all nodes.
 * Full data replication: table rows are the same on all nodes within a shard.
 
-:ref:`Astacus <astacus>` does most of the backup and restore operations.
+:ref:`Astacus <astacus-os>` does most of the backup and restore operations.
 
 Engines: database and table
 ---------------------------

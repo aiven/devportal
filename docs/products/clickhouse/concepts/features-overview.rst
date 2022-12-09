@@ -20,13 +20,11 @@ Aiven for ClickHouse provides the following:
 
 * High performance analytical queries
 
-  ClickHouse processes typical analytical queries two to three orders 
-  of magnitude faster than traditional row-oriented systems. 
-  Exceeds the speed of other columnar databases
+  ClickHouse processes typical analytical queries two to three orders of magnitude faster than traditional row-oriented systems. Exceeds the speed of other columnar databases.
 
 * Built-in data integrations
 
-  Integrate with other Aiven services at the click of a button. Use Aiven for Apache Kafka® as a data source. Access data in Aiven for PostgreSQL® through federated queries. Visualize results using Aiven for Grafana® or external BI tools
+  Integrate with other Aiven services at the click of a button. Use Aiven for Apache Kafka® as a data source. Access data in Aiven for PostgreSQL® through federated queries. Visualize results using Aiven for Grafana® or external BI tools.
 
 * Powerful SQL extensions
 
@@ -37,14 +35,12 @@ ClickHouse's purpose and application
 
 ClickHouse is designed for generation of detailed real-time analytical data reports using advanced SQL queries on large data-sets. ClickHouse is your top pick if
 
-* You work with enormous volumes of data (measured in terabytes) continuously written and read;
-* You have tables with the massive number of columns (ClickHouse loves large numbers of columns!), but column values are reasonably short;
-* Your data is well-structured and not yet aggregated;
-* You insert data in large batches over thousands of lines, a million is a good number;
-the vast majority of operations are reads with aggregations;
-for reads, you process large number of rows, but fairly low number of columns;
-* You don't need to modify data later;
-* You don't need to retrieve specific rows;
+* You work with enormous volumes of data (measured in terabytes) continuously written and read.
+* You have tables with a huge number of columns but column values are reasonably short.
+* Your data is well-structured and not yet aggregated.
+* You insert data in large batches over thousands of lines (for example, million); the vast majority of operations are reads with aggregations; for reads, you process large number of rows, but fairly low number of columns.
+* You don't need to modify data later.
+* You don't need to retrieve specific rows.
 * You don't need transactions.
 
 Common use cases for ClickHouse are
