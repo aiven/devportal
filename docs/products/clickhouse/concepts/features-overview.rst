@@ -6,7 +6,7 @@ What is Aiven for ClickHouse® and what are its key features? Why and when to us
 About Aiven for ClickHouse
 --------------------------
 
-Aiven for ClickHouse® is a fully managed distributed columnar database which is built on the open source ClickHouse datastore. It is a fast highly-scalable fault-tolerant solution designed for online analytical processing and data warehousing. Aiven for ClickHouse enables you to execute complex SQL queries on large datasets quickly and effectively to process large amounts of data in real time.
+Aiven for ClickHouse® is a fully managed distributed columnar database which is built on the open source ClickHouse solution. It is a fast highly-scalable fault-tolerant solution designed for online analytical processing and data warehousing. Aiven for ClickHouse enables you to execute complex SQL queries on large datasets quickly and effectively to process large amounts of data in real time.
 
 Aiven for ClickHouse provides the following:
 
@@ -80,14 +80,14 @@ With Aiven for ClickHouse, you can focus on turning your data to actionable insi
 * Superior observability
 
   * Use pre-integrated Aiven observability services for enhanced monitoring and logging with Grafana, M3, OpenSearch®
-  * Integrate with your favorite external observability tooling — from Datadog to Prometheus, Jolokia, and more
+  * Integrate with your favorite external observability tooling — from Datadog to Prometheus.
 
 * Security & compliance
 
   * Nodes run on dedicated VMs
   * End-to-end encryption
   * ISO 27001:2013, SOC2, GDPR, HIPAA and PCI/DSS compliant
-  * Secure networking with VPC peering, PrivateLink or Transit GW
+  * Secure networking with VPC peering, PrivateLink or AWS Transit Gateway
 
 * Zero lock-in
 
