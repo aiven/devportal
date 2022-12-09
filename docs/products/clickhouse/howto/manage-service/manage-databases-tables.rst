@@ -42,6 +42,6 @@ Tables can be added with an SQL query, either with the help of the web query edi
 Select a table engine
 ^^^^^^^^^^^^^^^^^^^^^
 
-Part of the table definition includes a targeted table engine. The full list of supported table engines in **Aiven for ClickHouse** can be found :doc:`in this article <../reference/supported-table-engines>`. **Aiven for ClickHouse** uses "Replicated" variants of table engines to ensure high availability. Even if you select ``MergeTree`` engine, we will automatically use the replicated variant on our side.
+Part of the table definition includes a targeted table engine. The full list of supported table engines in **Aiven for ClickHouse** can be found :doc:`in this article </docs/products/clickhouse/reference/supported-table-engines>`. **Aiven for ClickHouse** uses "Replicated" variants of table engines to ensure high availability. Even if you select ``MergeTree`` engine, we will automatically use the replicated variant on our side.
 
-With this knowledge, try out an example dataset described :doc:`over here <../sample-dataset>`.
+With this knowledge, you can try to :doc:`load a sample dataset into ClickHouse </docs/products/clickhouse/howto/get-started/load-dataset>`.

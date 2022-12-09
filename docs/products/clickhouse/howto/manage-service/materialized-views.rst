@@ -38,4 +38,4 @@ To store the Kafka® messages by creating a materialized view on top of the Kafk
 
 .. seealso::
 
-    For more information on how to integrate Aiven for ClickHouse® with Apache Kafka®, see :doc:`Connect Apache Kafka® to Aiven for ClickHouse® </docs/products/clickhouse/howto/integrate-kafka>`.
+    For more information on how to integrate Aiven for ClickHouse® with Apache Kafka®, see :doc:`Connect Apache Kafka® to Aiven for ClickHouse® </docs/products/clickhouse/howto/integrate/integrate-kafka>`.

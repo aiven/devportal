@@ -90,6 +90,6 @@ Replace the placeholders in the code with meaningful information on your service
 
 .. seealso::
 
-    For information on how to connect to the Aiven for Clickhouse service with the ClickHouse client, see :doc:`Connect with the ClickHouse client </docs/products/clickhouse/howto/connect-with-clickhouse-cli>`.
+    For information on how to connect to the Aiven for Clickhouse service with the ClickHouse client, see :doc:`Connect with the ClickHouse client </docs/products/clickhouse/howto/connect/connect-with-clickhouse-cli>`.
 
 

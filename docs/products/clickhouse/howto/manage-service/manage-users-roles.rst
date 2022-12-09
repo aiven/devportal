@@ -32,7 +32,7 @@ To create a new user account for your service,
 Manage roles and permissions
 ----------------------------
 
-ClickHouse® supports a **Role Based Access Control** model and allows you to configure access privileges by using SQL statements. You can either :doc:`use the query editor <query-databases>` or rely on :doc:`the command-line interface <connect-with-clickhouse-cli>`.
+ClickHouse® supports a **Role Based Access Control** model and allows you to configure access privileges by using SQL statements. You can either :doc:`use the query editor </docs/products/clickhouse/howto/manage-service/query-databases>` or rely on :doc:`the command-line interface </docs/products/clickhouse/howto/connect/connect-with-clickhouse-cli>`.
 
 This article shows you examples of how to create roles and grant privileges. The ClickHouse documentation includes  `detailed documentation for access rights <https://clickhouse.com/docs/en/operations/access-rights/>`_.
 

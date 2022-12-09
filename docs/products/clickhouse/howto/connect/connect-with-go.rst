@@ -140,9 +140,9 @@ Replace the placeholders in the code with meaningful information on your service
 
 .. topic:: Expected result
 
-    Now you have your service connection established and (possibly) configured. You can proceed to :doc:`uploading data into your database <load-dataset>`.
+    Now you have your service connection established and (possibly) configured. You can proceed to :doc:`uploading data into your database </docs/products/clickhouse/howto/get-started/load-dataset>`.
 
 .. seealso::
 
     * For instructions on how to configure connection settings, see `Connection settings <https://clickhouse.com/docs/en/integrations/go/clickhouse-go/clickhouse-api/#connection-settings>`_.
-    * For information on how to connect to the Aiven for Clickhouse service with the ClickHouse client, see :doc:`Connect with the ClickHouse client </docs/products/clickhouse/howto/connect-with-clickhouse-cli>`.
+    * For information on how to connect to the Aiven for Clickhouse service with the ClickHouse client, see :doc:`Connect with the ClickHouse client </docs/products/clickhouse/howto/connect/connect-with-clickhouse-cli>`.

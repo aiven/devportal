@@ -8,7 +8,7 @@ There are a few tools that enable querying ClickHouse databases. Find out which 
     To ensure data security, stability, and its proper replication, we equip our managed Aiven for ClickHouse® service with specific features, some of them missing from the standard ClickHouse offer.
     Aiven for ClickHouse® takes care of running queries in the distributed mode over the entire cluster. In the standard ClickHouse, the queries ``CREATE``, ``ALTER``, ``RENAME`` and ``DROP`` only affect the server where they are run. In contrast, we ensure the proper distribution across all cluster machines behind the scenes. You don't need to remember using ``ON CLUSTER`` for every query.
     
-For querying your ClickHouse® databases, you can choose between our query editor, the Play UI, and :doc:`the ClickHouse® client </docs/products/clickhouse/howto/connect-with-clickhouse-cli>`.
+For querying your ClickHouse® databases, you can choose between our query editor, the Play UI, and :doc:`the ClickHouse® client </docs/products/clickhouse/howto/connect/connect-with-clickhouse-cli>`.
 
 .. _use-query-editor:
 

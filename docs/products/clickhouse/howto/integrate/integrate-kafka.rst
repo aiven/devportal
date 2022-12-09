@@ -70,7 +70,7 @@ Next step is to configure the topic and data format options for the integration.
 * ``name`` - name of the connector table
 * ``columns`` - array of columns, with names and types
 * ``topics`` - array of topics, where you want to bring the data from
-* ``data_format`` - your preferred format for data input, see :doc:`../reference/supported-input-output-formats`
+* ``data_format`` - your preferred format for data input (see :doc:`Formats for ClickHouse-Kafka data exchange </docs/products/clickhouse/reference/supported-input-output-formats>`)
 * ``group_name`` - consumer group name, that will be created on your behalf
 
 Integration settings in a JSON format:
@@ -159,7 +159,7 @@ Now the messages consumed from the Apache Kafka topic will be read automatically
 
 .. seealso::
 
-    For more information on materialized views, see :doc:`Create materialized views in ClickHouse® </docs/products/clickhouse/howto/materialized-views>`.
+    For more information on materialized views, see :doc:`Create materialized views in ClickHouse® </docs/products/clickhouse/howto/manage-service/materialized-views>`.
 
 .. note::
 

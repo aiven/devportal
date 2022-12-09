@@ -75,9 +75,9 @@ Connect to the service
 
 .. topic:: Expected result
 
-    Now you have your service connection set up and you can proceed to :doc:`uploading data into your database <load-dataset>`.
+    Now you have your service connection set up and you can proceed to :doc:`uploading data into your database </docs/products/clickhouse/howto/get-started/load-dataset>`.
 
 .. seealso::
 
-    For information on how to connect to the Aiven for Clickhouse service with the ClickHouse client, see :doc:`Connect with the ClickHouse client </docs/products/clickhouse/howto/connect-with-clickhouse-cli>`.
+    For information on how to connect to the Aiven for Clickhouse service with the ClickHouse client, see :doc:`Connect with the ClickHouse client </docs/products/clickhouse/howto/connect/connect-with-clickhouse-cli>`.
 

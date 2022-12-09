@@ -46,9 +46,9 @@ Connect to ClickHouse
        --port PORT                          \
        --secure
 
-For more information on using the ClickHouse client, see :doc:`this article <howto/connect-with-clickhouse-cli>`.
+For more information on using the ClickHouse client, see :doc:`Connect to a ClickHouse cluster with CLI </docs/products/clickhouse/howto/connect/connect-with-clickhouse-cli>`.
 
 Next steps
 ----------
 
-Now that you have your service and connection set up, see our :doc:`sample dataset article <sample-dataset>` to try out your service with actual data.
+Now that you have your service and connection set up, see :doc:`Load sample data into ClickHouse </docs/products/clickhouse/howto/get-started/load-dataset>` to try out your service with actual data.

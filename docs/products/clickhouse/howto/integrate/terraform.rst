@@ -1,4 +1,0 @@
-Integrate via Terraform
-=======================
-
-.. tableofcontents::
