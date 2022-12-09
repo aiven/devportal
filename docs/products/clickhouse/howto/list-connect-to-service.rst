@@ -1,4 +1,4 @@
-Connect to your managed ClickHouse® service
-===========================================
+Connect to your service
+=======================
 
 .. tableofcontents::

@@ -1,4 +1,4 @@
-Aiven for CLickHouse® overview
-==============================
+Overview
+========
 
 .. tableofcontents::

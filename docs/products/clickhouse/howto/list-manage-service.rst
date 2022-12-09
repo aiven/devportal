@@ -1,4 +1,4 @@
-Manage your Aiven for ClickHouse® service
-=========================================
+Manage a service
+================
 
 .. tableofcontents::
