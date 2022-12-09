@@ -22,7 +22,7 @@ Some of the key benefits of cross-cluster replication include the following:
 Limitations
 -----------
 - Cross cluster replication is not available for Hobbyist and Startup plans.
-- Follower service needs to have the same service plan as the leader service.
+- During creation, the follower cluster service must have the same service plan as the leader cluster service. This ensures the follower cluster service has as much memory as the leader cluster. You can change the service plan as required later. 
 - To delete the cross cluster replication integration, you need to **delete** the follower cluster service.
 - Maintenance upgrade, major version upgrade needs to be done manually for both Leader and Follower service.
 - In case of a node recycle event, replication will be paused until the service is running again.
