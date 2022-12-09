@@ -2,7 +2,7 @@ name: "Redirects in renamed files"
 "on":
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   prose:
@@ -54,6 +54,3 @@ jobs:
           echo ${{env.MISSING_REDIRECTION}}
           echo "::error::Files were renamed with missing _redirects. Add redirect to renamed files to fix it. \n  ${{env.MISSING_REDIRECTION}}"
           exit 1
-
-#check_renamed_files.py --renamed_files ${{ steps.changed-files.outputs.renamed_files }}
-
