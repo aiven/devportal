@@ -26,6 +26,5 @@ jobs:
           body: |
             Automation to format python code using [psf/black](https://github.com/psf/black)
           labels: Maintenance, automated-pr
-          reviewers: laysauchoa
           base: ${{ github.head_ref }}
           branch: format-python-code-with-black
