@@ -1,4 +1,4 @@
-OpenSearch® cross-cluster replication (beta)
+OpenSearch® cross-cluster replication |beta|
 ============================================
 
 .. note:: 
@@ -21,6 +21,9 @@ Some of the key benefits of cross-cluster replication include the following:
 
 Limitations
 -----------
+
+Some limitations include:
+
 - Cross cluster replication is not available for Hobbyist and Startup plans.
 - During creation, the follower cluster service must have the same service plan as the leader cluster service. This ensures the follower cluster service has as much memory as the leader cluster. You can change the service plan as required later. 
 - To delete the cross cluster replication integration, you need to **delete** the follower cluster service.
