@@ -1,7 +1,7 @@
 name: Python formatting - Run psf/black
 on:
   schedule:
-    - cron: "0 6 * * 2"
+    - cron: "0 7 * * 2"
   workflow_dispatch:
 jobs:
   linter_name:
