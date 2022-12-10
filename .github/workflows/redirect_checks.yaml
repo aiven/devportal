@@ -44,7 +44,7 @@ jobs:
           done
           echo "$var"
           if ! [ -z "$var" ];then
-            python "scripts/aiven/check_renamed_files.py" --renamed_files ${{ steps.changed-files.outputs.renamed_files }}
+            python "scripts/check_renamed_files.py" --renamed_files ${{ steps.changed-files.outputs.renamed_files }}
           fi
 
       - name: Check env

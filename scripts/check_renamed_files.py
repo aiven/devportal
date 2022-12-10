@@ -5,10 +5,9 @@ import os, sys, argparse
 import coloredlogs, logging
 from typing import Dict, List
 
-p = os.path.abspath(os.path.join(__file__, "../../.."))
-os.chdir(p)
+myPath = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, myPath + "/../../")
 
-REDIRECTED_FILE = "_redirects"
 
 logger = logging.getLogger("check_renamed_files")
 logging.basicConfig(format="%(asctime)s - [%(levelname)s] - %(message)s")
@@ -42,6 +41,7 @@ def find_redirected() -> Dict:
     :returns: set with redirected files
     :rtype: set
     """
+    REDIRECTED_FILE = "_redirects"
     all_redirected_links = {}
     with open(REDIRECTED_FILE) as f:
         lines = f.readlines()
@@ -109,10 +109,10 @@ if __name__ == "__main__":
         sys.exit()
 
     res = ""
-    h = ["Previous Name", "Current Name"]
-    logger.error("{:<40s} {:<40s}".format(*h))
+    h = ["Previous Name", " Current Name"]
+    logger.error("{:<45s} {:<45s}".format(*h))
     for k, v in missing_redirects.items():
-        logger.error("/{:<40s} /{:<40s}".format(k, v))
+        logger.error("/{:<45s} /{:<45s}".format(k, v))
 
     logger.info("🚨 Seems like you forgot to add redirects for the renamed files. 🚨")
     logger.info(
