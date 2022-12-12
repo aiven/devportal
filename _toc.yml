@@ -615,7 +615,7 @@ entries:
           - file: docs/products/clickhouse/howto/list-connect-to-service
             entries:
               - file: docs/products/clickhouse/howto/connect-with-clickhouse-cli
-                title: Connect with ClickHouse client
+                title: Connect with the ClickHouse client
               - file: docs/products/clickhouse/howto/connect-with-go
                 title: Connect with Go
               - file: docs/products/clickhouse/howto/connect-with-python
