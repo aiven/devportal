@@ -166,7 +166,7 @@ Learn about the Aiven platform
         :shadow: md
         :margin: 2 2 0 0
 
-        |icon-clickhouse| **ClickHouse** A highly scalable, open source database that uses a column-oriented structure. :bdg-secondary:`beta`
+        |icon-clickhouse| **ClickHouse** A highly scalable, open source database that uses a column-oriented structure.
 
         .. button-link:: docs/products/clickhouse
             :align: right
