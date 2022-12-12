@@ -27,6 +27,17 @@ This recipe calls for the following:
 2. Insert the measurements data from Apache Kafka topic ``iot_measurements`` into the Aiven for ClickHouse database.
 3. Filter the data and save the output to the new ``cpu_high_usage`` table.
 
+.. mermaid::
+
+   flowchart LR
+      subgraph Apache Kafka
+      SourceTopic
+      end
+      subgraph Aiven for ClickHouse
+      SourceTopic-->|Services integration|Source_data_DB
+      Source_data_DB-->|Filter|Output_data_table
+      end
+
 Configure common files
 ''''''''''''''''''''''
 
