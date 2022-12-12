@@ -26,8 +26,8 @@ Let's cook!
       iot_measurements_topic
       end
       subgraph Aiven for ClickHouse
-      iot_measurements_topic-->|Services integration|iot_measurements_DB
-      iot_measurements_DB-->|Filter|cpu_high_usage_table
+      iot_measurements_topic-->|Services integration|edge_measurements_raw_table
+      edge_measurements_raw_table-->|Filter|cpu_high_usage_table
       end
 
 Imagine that you've been collecting IoT measurements from thousands of sensors and these metrics are being populated in an Apache Kafka topic called ``iot_measurements``. Now, you'd like to set up an Aiven for ClickHouse database and write filtered messages into table ``cpu_high_usage``.
