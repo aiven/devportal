@@ -106,5 +106,26 @@ Each "recipe" includes an architecture diagram and the terraform sample code you
 
         |icon-postgres|
 
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
 
+        :doc:`ClickHouse user access control <cookbook/clickhouse-access-setup-recipe>`
 
+        |icon-clickhouse|
+
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
+
+        :doc:`Apache Kafka and ClickHouse <cookbook/kafka-clickhouse-integration-recipe>`
+
+        |icon-clickhouse| |icon-kafka|
+
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
+
+        :doc:`PostgreSQL and ClickHouse <cookbook/postgres-clickhouse-integration-recipe>`
+
+        |icon-clickhouse| |icon-postgres|

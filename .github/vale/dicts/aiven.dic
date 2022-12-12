@@ -9,6 +9,7 @@ Apache
 API
 APIs
 ARN
+Astacus
 Auth0
 autovacuum
 Avro
@@ -100,6 +101,7 @@ keyspace
 keystore
 keystores
 Kibana
+Klaw
 Kpow
 Kubernetes
 kuromoji
@@ -145,6 +147,7 @@ Podman
 pooler
 PostgreSQL
 Postman
+preformatted
 privatelink
 Prometheus
 Protobuf

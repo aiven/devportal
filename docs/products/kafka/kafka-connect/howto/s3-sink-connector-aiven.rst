@@ -67,7 +67,7 @@ The configuration file contains the following entries:
 
 
 
-Check out the `GitHub repository parameters documentation <https://github.com/aiven/aiven-kafka-connect-s3>`_ for the full list of configuration options.
+Check out the `GitHub repository parameters documentation <https://github.com/aiven/s3-connector-for-apache-kafka>`_ for the full list of configuration options.
 
 
 Create an S3 sink connector with Aiven CLI

@@ -172,3 +172,7 @@ The command output is like::
         * 5% of disk write operations is reached (the ``max_wal_size`` value is set to 5% of the instance storage).
 
 For further information about WAL and checkpoints, read the `PostgreSQL documentation <https://www.postgresql.org/docs/current/wal-configuration.html>`_.
+
+.. note::
+
+    The recreation of replication slots gets enabled automatically. Replication slots are recreated when a maintenance update is applied or a failover occurs.

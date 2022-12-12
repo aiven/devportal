@@ -1,0 +1,38 @@
+<header class="topnavbar-common topnavbar">
+  <div class="topnavbar-content">
+    <div class="topnavbar-left">
+      {% include "topnavbar/logo.html" %}
+      {% include "topnavbar/aiven-link.html" %}
+      {% include "topnavbar/github-link.html" %}
+    </div>
+
+    <div class="topnavbar-right">
+      {% include "common/search.html" %}
+      {% include "topnavbar/login-button.html" %}
+      {% include "topnavbar/start-free-trial-button.html" %}
+      {% include "topnavbar/toggle-theme.html" %}
+    </div>
+  </div>
+</header>
+<header class="topnavbar-common mobile-topnavbar">
+  <div class="topnavbar-content">
+    <div class="topnavbar-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="topnavbar-center">
+      {% include "topnavbar/logo.html" %}
+    </div>
+    <div class="topnavbar-right">
+      <a
+        href="https://console.aiven.io/login"
+        target="_blank"
+        class="topnavbar-button-secondary topnavbar-button-large"
+      >
+        Start now
+      </a>
+    </div>
+  </div>
+</header>

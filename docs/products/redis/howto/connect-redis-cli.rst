@@ -19,7 +19,7 @@ Pre-requisites
 
 For this example you will need:
 
-1. The ``redis-cli`` client installed. You can install this as part of the `Redis server installation <https://redis.io/topics/quickstart>`_ or as standalone client.
+1. The ``redis-cli`` client installed. You can install this as part of the `Redis server installation <https://redis.io/docs/getting-started/tutorial/>`_ or as standalone client.
 
 
 Code

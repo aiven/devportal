@@ -1,37 +1,40 @@
 Enable SAML authentication
 ==========================
 
-SAML ( *Security Assertion Markup Language* ) is a standard for
+SAML (Security Assertion Markup Language) is a standard for
 exchanging authentication and authorization data between an identity
 provider and a service provider. You can operate it with Aiven so that you
 and your collaborators can use your company's favorite authentication
 service.
 
-Set up the SAML authentication method in the Aiven Console
-----------------------------------------------------------
+To set up a SAML authentication method with your organization's account in Aiven, there are three steps:
 
-SAML Authentication methods are configured at the *Account* level. To configure a new one:
-
-* Click the **downward facing arrow** next to your current project in the top-left of the Aiven Console.
-
-* In the popup that appears, select **See all projects and accounts**
-
-* Create a new **Account** or select the existing one for which you would like to setup SAML authentication.
-
-* In the *Account* page, select the **Authentication** tab and click on **Add authentication method**.
-
-* Choose a name for your method and, if relevant, select the **Team** that invited members will join automatically once signed up or logged in through this new authentication method.
-
-* You will be shown the following two parameter needed for the SAML authentication setup in your Identity Provider:
-
-  1. Metadata URL
-  2. ACS URL
+1. Configure the SAML authentication method in the Aiven Console
+2. Configure SAML on your Identity Provider (IdP)
+3. Enable the SAML authentication method in the Aiven Console
+4. Log in with the SAML authentication method
 
 
-Configure SAML on your Identity Provider (IdP)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Step 1. Set up the SAML authentication method in the Aiven Console
+-------------------------------------------------------------------
 
-Navigate to your Identity Provider and configure a new application. The table below shows how the configuration information provided by Aiven is referred to in the more popular Identity Providers.
+SAML Authentication methods are configured at the account level. To configure a new one:
+
+#. In the **Account**, click **Admin**.
+
+#. Select **Authentication** and click on **Add authentication method**.
+
+#. Enter a name and select SAML. You can also select the teams that users will be added to when they sign up or log in through this authentication method.
+
+You are shown the two parameter needed for the SAML authentication setup in your Identity Provider:
+
+* Metadata URL
+* ACS URL
+
+Step 2. Configure SAML on your Identity Provider
+------------------------------------------------
+
+In your Identity Provider (IdP), use the metadata URL and ACS URL to configure a new application. The table shows how the configuration information provided by Aiven is referred to in the more popular IdPs.
 
 .. list-table::
   :header-rows: 1
@@ -62,60 +65,57 @@ Navigate to your Identity Provider and configure a new application. The table be
     - ``user.mail``
     - ``LoginUser.email``
 
-Enable the SAML authentication method in the Aiven Console
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Setup instructions for specific providers are available on the following pages:
 
-Once created the application in your Identity Provider, select your authentication method in the Aiven console and click **Edit** next to *SAML configuration*.
+* :doc:`Set up SAML with OneLogin </docs/platform/howto/saml/setup-saml-onelogin>`
+* :doc:`Set up SAML with Microsoft Azure Active Directory </docs/platform/howto/saml/setup-saml-azure>`
+* :doc:`Set up SAML with Okta </docs/platform/howto/saml/setup-saml-okta>`
+* :doc:`Set up SAML with Auth0 </docs/platform/howto/saml/setup-saml-auth0>`
 
-In the Edit page, you need to input:
-
-* the URL of your Identity Provider
-* the Entity ID
-* the certificate details
-
-  .. Tip::
-
-    You can also toggle **Enable IdP login** allowing your users to initiate a login directly from your Identity Provider.
-
-* Save and click on **Enable authentication method**. Once active, you will see 2 URLs:
-
-  1. *Signup URL*: for **new users without an Aiven user account** to create a new Aiven user linked to the configured Identity Provider.
-  2. *Account link URL*: **for existing users with an Aiven user account** to link their Aiven user with the configured Identity Provider.
-
-Detailed instructions exist for the following providers:
-
-* `Okta <https://docs.aiven.io/docs/platform/howto/saml/setup-saml-okta>`_
-* `G-Suite <https://help.aiven.io/en/articles/3447699-setting-up-saml-authentication-with-google-g-suite>`_
-* `Azure AD <https://docs.aiven.io/docs/platform/howto/saml/setup-saml-azure>`_
-* `Auth0 <https://docs.aiven.io/docs/platform/howto/saml/setup-saml-auth0>`_
-* `Centrify <https://docs.aiven.io/docs/platform/howto/list-saml>`_
+If your provider isn't listed, contact us at support@Aiven.io so we can assist you with the configuration.
 
 
-If your provider isn't in the list, please contact us at
-support@Aiven.io so we can assist you with the configuration of the
-provider of your choice.
+Step 3. Enable the SAML authentication method in the Aiven Console
+-------------------------------------------------------------------
 
-Log in with a SAML authentication method
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+After creating the application in your IdP, go back to the Authentication page in the Aiven Console to enable the SAML authentication method:
 
-The first step is to link the authentication method to your existing Aiven user, if you have one, or create a new Aiven profile associated with it. You'll first need to get an invite link from your Account manager. Once you get the invite link, click on it and you will be taken to a page to manage your Aiven account with your SAML account.
+#. Select your authentication method's name.
 
-If you already have an Aiven profile and are already logged in the Aiven Console:
+#. On the page that opens, toggle on **Enable Authentication method**. You can also enable **IdP login**, allowing your users to initiate a login directly from your IdP.
 
-* Click on the **Link profile** button.
-* You will be redirected to your SAML provider's authentication page.
-* Once you've logged in to the provider, you will be redirected back to the Aiven Console, and the authentication method will be linked to your profile.
+#. In the **SAML configuration** section, click **Edit**.
 
-If you already have an Aiven profile and are not logged in the Aiven Console:
+#. Enter the **IDP URL**, **Entity Id**, and **SAML Certificate** details.
 
-* Click on the **Login** button.
-* You will be sent to the login page of the Aiven Console, where you can log in as usual, using your password, your configured SAML provider or Google OAuth.
-* After you're logged in to the Aiven Console, you will be redirected to your SAML provider's authentication page.
-* Once you've logged in to the provider, you will be redirected back to the Aiven Console, and the authentication method will be linked to your profile.
+#. Click **Edit method**. 
 
-If you don't have an Aiven profile:
 
-* Click on the **Sign up** button.
-* You will be redirected to your SAML provider's authentication page.
-* Once you've logged in to the provider, you will be redirected back to the Aiven sign page where you can finish the sign up process.
-* Once done, you will have your Aiven profile created and associated with your SAML authentication method.
+Step 4. Log in with the SAML authentication method
+--------------------------------------------------
+
+After the authentication method is enabled, there are 2 URLs in the **Signup and link accounts URLs** section:
+
+* **Signup URL**: For users that don't have an Aiven account to create a new Aiven user linked to the configured IdP.
+* **Account link URL**: For users that already have an Aiven user account to link their existing Aiven user with the configured IdP.
+
+Send the appropriate URL to link the authentication method to a new or existing Aiven user. 
+
+When a user clicks on the link, they will be redirected to a page to link their Aiven account with the SAML account:
+
+* For existing users that are already logged into the Aiven Console
+
+  #. Click on the **Link profile** button. You are redirected to your SAML provider's authentication page.
+  #. Once logged in to the provider, you will be redirected back to the Aiven Console. The authentication method is linked to your profile.
+
+* For existing users that are not logged into the Aiven Console
+
+  #. Click on the **Login** button.  
+  #. On the login page of the Aiven Console, log in as usual. You are redirected to your SAML provider's authentication page.
+  #. Once logged in to the provider, you are redirected back to the Aiven Console. The authentication method is linked to your profile.
+
+* For new users without an Aiven user account
+
+  #. Click **Sign up**. You are redirected to your SAML provider's authentication page.
+  #. Once logged in to the provider, you are redirected back to the Aiven sign up page.
+  #. Complete the sign up process. Your Aiven profile is linked with your SAML authentication method.

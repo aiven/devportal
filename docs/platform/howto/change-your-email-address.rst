@@ -1,31 +1,23 @@
 Change your email address
 =========================
 
-Migrate Aiven projects between email addresses
-----------------------------------------------
-
-It is not currently possible to change your account login email address directly. It is possible to migrate your Aiven resources from one account to another if you wish to start using another email address.
+It is not currently possible to change your login email address directly. It is possible, however, to migrate your Aiven resources to another email address.
 
 .. important::
     
     Aiven support personnel cannot change your email address nor migrate projects between email addresses from support requests.
 
-To start using an Aiven project from a new email address, invite your new email address to your existing project from the "Members" page of each project you wish to migrate.
+Migrate Aiven projects between email addresses
+----------------------------------------------
 
-Step by step:
+To start using an Aiven project from a new email address, invite your new email address to your existing project from the **Members** page of each project you wish to migrate:
 
-1. Click "Members" for the project
+1. In the project, click **Members**.
 
-2. Enter the email address of your new account. If you are switching emails, you will want to give your new account admin privileges.
+2. Enter your new email address and select a user role. 
 
-3. Click "Send Invitation"
+3. Click **Send invitation**. Your new email address will receive an invitation link to join the project. You need to do this for each of your projects. 
 
-.. image:: /images/platform/invite-member.png
-   :alt: Specify email address of user to invite and their role
+4. Once you have confirmed that your new email has the correct privileges, you can remove your old email from each of the projects by clicking **Remove user**. 
 
-Your new email address will receive an invitation to create an Aiven account which will then have access to the project. You need to do this for each of your projects. If your projects are managed by another user as part of an organization, then you may need to ask the administrator of those projects to add your new account and remove your old one.
-
-Once you have confirmed, your new account has correct privileges, you can remove your old email account from each of your projects by clicking on "Remove user":
-
-.. image:: /images/platform/remove-user.png
-   :alt: The "Remove user" button is at the right of each Member entry
+If your projects are managed by another user in your organization, then you may need to ask the administrator of those projects to migrate them to the new email address for you.

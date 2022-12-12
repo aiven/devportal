@@ -3,9 +3,6 @@
 {% block body -%}
 {{ super() }}
 {% include "partials/icons.html" %}
-<div class="sign-up-banner">Try Aiven for free for 30 days! <a href="https://console.aiven.io/signup" target="_blank" class="get-started-link">Get started -></a></div>
-<a class="gh-ribbon gray right" href="https://github.com/aiven/devportal" target="_blank">Fork me on GitHub!</a>
-<br />
 <input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
 <input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
 <label class="overlay sidebar-overlay" for="__navigation">
@@ -15,142 +12,103 @@
   <div class="visually-hidden">Hide table of contents sidebar</div>
 </label>
 
-{% if theme_announcement -%}
-<div class="announcement">
-  <aside class="announcement-content">
-    {% block announcement %} {{ theme_announcement }} {% endblock announcement %}
-  </aside>
-</div>
-{%- endif %}
-
 <div class="page">
-  <header class="mobile-header">
-    <div class="header-left">
-      <label class="nav-overlay-icon" for="__navigation">
-        <div class="visually-hidden">Toggle site navigation sidebar</div>
-        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
-      </label>
-    </div>
-    <div class="header-center">
-      <div class="logo-container-mobile">
-        <a href="{{ pathto(master_doc) }}">
-          <img class="only-light" src="{{ pathto('_static/' + theme_light_logo, 1) }}" alt="Light Logo"/>
-          <img class="only-dark" src="{{ pathto('_static/' + theme_dark_logo, 1) }}" alt="Dark Logo"/>
-        </a>
-      </div>
-    </div>
-    <div class="header-right">
-      <div class="theme-toggle-container theme-toggle-header">
-        <button class="theme-toggle">
-          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
-          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
-          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
-        </button>
-      </div>
-      <div class="toc-overlay-icon toc-header-icon{% if furo_hide_toc %} no-toc{% endif %}" for="__toc">
-        <div class="visually-hidden">Toggle table of contents sidebar</div>
-        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
-      </div>
-    </div>
-  </header>
-  <aside class="sidebar-drawer">
-    <div class="sidebar-container">
-      {% block left_sidebar %}
-      <div class="sidebar-sticky">
-
-        {%- for sidebar_section in sidebars %}
-          {%- include sidebar_section %}
-        {%- endfor %}
-      </div>
-      {% endblock left_sidebar %}
-    </div>
-  </aside>
-  <div class="main">
-    <div class="content">
-      <div class="article-container">
-        <a href="#" class="back-to-top muted-link">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
-          </svg>
-          <span>{% trans %}Back to top{% endtrans %}</span>
-        </a>
-        <div class="content-icon-container">
-          {% if theme_top_of_page_button == "edit" -%}
-          {%- include "components/edit-this-page.html" with context -%}
-          {%- elif theme_top_of_page_button != None -%}
-          {{ warning("Got an unsupported value for 'top_of_page_button'") }}
-          {%- endif -%}
-          {#- Theme toggle -#}
-          <div class="theme-toggle-container theme-toggle-content">
-            <button class="theme-toggle">
-              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
-              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
-              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
-            </button>
-          </div>
-          <label class="toc-overlay-icon toc-content-icon{% if furo_hide_toc %} no-toc{% endif %}" for="__toc">
-            <div class="visually-hidden">Toggle table of contents sidebar</div>
-            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
-          </label>
+  {% include "topnavbar.html" %}
+  <div class="main-wrapper">
+    <aside class="sidebar-drawer">
+      <div class="sidebar-container">
+        {% block left_sidebar %}
+        <div class="sidebar-sticky">
+          {%- for sidebar_section in sidebars %} {%- include sidebar_section %}
+          {%- endfor %}
         </div>
-        <article role="main">
-          {% block content %}{{ body }}{% endblock %}
-        </article>
+        {% endblock left_sidebar %}
       </div>
-      <footer>
-        {% include "feedback-form.html" %}
-        <div class="disclaimer"><p>Apache, Apache Kafka, Kafka, Apache Flink, Flink, Apache Cassandra, and Cassandra are either registered trademarks or trademarks of the Apache Software Foundation in the United States and/or other countries.
-          M3, M3 Aggregator, M3 Coordinator, OpenSearch, PostgreSQL, MySQL, InfluxDB, Grafana, Terraform, and Kubernetes are trademarks and property of their respective owners.
-         *Redis is a registered trademark of Redis Ltd. Any rights therein are reserved to Redis Ltd. Any use by Aiven is for referential purposes only and does not indicate any sponsorship, endorsement or affiliation between Redis and Aiven. All product and service names used in this website are for identification purposes only and do not imply endorsement.</p></div>
-        {% block footer %}
+    </aside>
+    <main class="main">
+      <div class="content">
+        <div class="article-container">
+          <a href="#" class="back-to-top muted-link">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path
+                d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"
+              ></path>
+            </svg>
+            <span>{% trans %}Back to top{% endtrans %}</span>
+          </a>
+          <div class="content-icon-container">
+            {% if theme_top_of_page_button == "edit" -%} {%- include
+            "components/edit-this-page.html" with context -%} {%- elif
+            theme_top_of_page_button != None -%} {{ warning("Got an unsupported
+            value for 'top_of_page_button'") }} {%- endif -%}
+            <label
+              class="toc-overlay-icon toc-content-icon{% if furo_hide_toc %} no-toc{% endif %}"
+              for="__toc"
+            >
+              <div class="visually-hidden">
+                Toggle table of contents sidebar
+              </div>
+              <i class="icon"
+                ><svg><use href="#svg-toc"></use></svg></i>
+            </label>
+          </div>
+          <article role="main">
+            {% block content %}{{ body }}{% endblock %}
+          </article>
+        </div>
+        <footer>
+          {% include "feedback-form.html" %}
+          <div class="disclaimer">
+            <p>
+              Apache, Apache Kafka, Kafka, Apache Flink, Flink, Apache
+              Cassandra, and Cassandra are either registered trademarks or
+              trademarks of the Apache Software Foundation in the United States
+              and/or other countries. M3, M3 Aggregator, M3 Coordinator,
+              OpenSearch, PostgreSQL, MySQL, InfluxDB, Grafana, Terraform, and
+              Kubernetes are trademarks and property of their respective owners.
+              *Redis is a registered trademark of Redis Ltd. Any rights therein
+              are reserved to Redis Ltd. Any use by Aiven is for referential
+              purposes only and does not indicate any sponsorship, endorsement
+              or affiliation between Redis and Aiven. All product and service
+              names used in this website are for identification purposes only
+              and do not imply endorsement.
+            </p>
+          </div>
+          {% block footer %}
 
-        <div class="related-information">
-          {%- if show_copyright %}
-            {%- if hasdoc('copyright') %}
-              {% trans path=pathto('copyright'), copyright=copyright|e -%}
-                <a href="{{ path }}">Copyright</a> &#169; {{ copyright }}.
-              {%- endtrans %}
-            {%- else %}
-              {% trans copyright=copyright|e -%}
-                Copyright &#169; {{ copyright }}
-              {%- endtrans %}
-            {%- endif %}
-          {%- endif %}
-          {%- if show_source and has_source and sourcename %}
-            |
-            <a class="muted-link" href="{{ pathto('_sources/' + sourcename, true)|e }}"
-               rel="nofollow">
+          <div class="related-information">
+            {%- if show_copyright %} {%- if hasdoc('copyright') %} {% trans
+            path=pathto('copyright'), copyright=copyright|e -%}
+            <a href="{{ path }}">Copyright</a> &#169; {{ copyright }}. {%-
+            endtrans %} {%- else %} {% trans copyright=copyright|e -%} Copyright
+            &#169; {{ copyright }} {%- endtrans %} {%- endif %} {%- endif %} {%-
+            if show_source and has_source and sourcename %} |
+            <a
+              class="muted-link"
+              href="{{ pathto('_sources/' + sourcename, true)|e }}"
+              rel="nofollow"
+            >
               {{ _('Show Source') }}
             </a>
-          {%- endif %}
-          {%- if gitstamp %}
-            |
-            Last updated: {{ gitstamp }}
-          {%- endif %}
-        </div>
-        {% endblock footer %}
-      </footer>
-    </div>
-    <aside class="toc-drawer{% if furo_hide_toc %} no-toc{% endif %}">
-      {% block right_sidebar %}
-      {% if not furo_hide_toc %}
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            {{ _("Contents") }}
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            {{ toc }}
+            {%- endif %} {%- if gitstamp %} | Last updated: {{ gitstamp }} {%-
+            endif %}
+          </div>
+          {% endblock footer %}
+        </footer>
+      </div>
+      <aside class="toc-drawer{% if furo_hide_toc %} no-toc{% endif %}">
+        {% block right_sidebar %} {% if not furo_hide_toc %}
+        <div class="toc-sticky toc-scroll">
+          <div class="toc-title-container">
+            <span class="toc-title"> {{ _("Contents") }} </span>
+          </div>
+          <div class="toc-tree-container">
+            <div class="toc-tree">{{ toc }}</div>
           </div>
         </div>
-      </div>
-      {% endif %}
-      {% endblock right_sidebar %}
-    </aside>
+        {% endif %} {% endblock right_sidebar %}
+      </aside>
+    </main>
   </div>
 </div>
 {%- endblock %}
