@@ -108,7 +108,7 @@ The following Terraform script initializes both Aiven for PostgreSQL and Aiven f
     project                 = var.project_name
     service_name            = "clickhouse-gcp-us"
     cloud_name              = "google-us-east4"
-    plan                    = "startup-beta-16"
+    plan                    = "startup-16"
     maintenance_window_dow  = "monday"
     maintenance_window_time = "10:00:00"
   }
