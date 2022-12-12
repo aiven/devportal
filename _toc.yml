@@ -71,6 +71,8 @@ entries:
         title: Monitoring management
         entries:
           - file: docs/platform/howto/monitoring-services
+          - file: docs/platform/howto/aiven-service-metrics
+          - file: docs/platform/howto/additional-service-metrics
           - file: docs/platform/howto/integrations/prometheus-metrics
           - file: docs/platform/howto/integrations/datadog-increase-metrics-limit
           - file: docs/platform/howto/integrations/access-jmx-metrics-jolokia
