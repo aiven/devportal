@@ -19,6 +19,17 @@ This article shows by way of example how to integrate Aiven for Apache Kafka® w
 Let's cook!
 -----------
 
+.. mermaid::
+
+   flowchart LR
+      subgraph Aiven for Apache Kafka
+      iot_measurements_topic
+      end
+      subgraph Aiven for ClickHouse
+      iot_measurements_topic-->|Services integration|iot_measurements_DB
+      iot_measurements_DB-->|Filter|cpu_high_usage_table
+      end
+
 Imagine that you've been collecting IoT measurements from thousands of sensors and these metrics are being populated in an Apache Kafka topic called ``iot_measurements``. Now, you'd like to set up an Aiven for ClickHouse database and write filtered messages into table ``cpu_high_usage``.
 
 This recipe calls for the following:
@@ -26,17 +37,6 @@ This recipe calls for the following:
 1. Set up an Aiven for ClickHouse database for writing and processing raw data.
 2. Insert the measurements data from Apache Kafka topic ``iot_measurements`` into the Aiven for ClickHouse database.
 3. Filter the data and save the output to the new ``cpu_high_usage`` table.
-
-.. mermaid::
-
-   flowchart LR
-      subgraph Apache Kafka
-      SourceTopic
-      end
-      subgraph Aiven for ClickHouse
-      SourceTopic-->|Services integration|Source_data_DB
-      Source_data_DB-->|Filter|Output_data_table
-      end
 
 Configure common files
 ''''''''''''''''''''''
