@@ -56,7 +56,7 @@ From there, one can run `make livehtml` in the root folder to serve the doc site
 
 ## Production
 
-When merging with master/main branch, GitHub Actions will take care of the deployment to AWS
+When merging with master/main branch, GitHub Actions will take care of the deployment to AWS. Note that this workflow only triggers when there's change in `aws` folder
 
 ## Workflow
 
