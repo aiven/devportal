@@ -5,7 +5,6 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
 from dotenv import load_dotenv
-
 load_dotenv()
 
 # -- Path setup --------------------------------------------------------------
