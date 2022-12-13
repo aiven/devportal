@@ -35,7 +35,7 @@ Let's cook!
       id3-->|Filter|id4
     end
   end
-  id1-->|Services integration|id2
+  id1-->|Service integration|id2
 
 Imagine that you've been collecting IoT measurements from thousands of sensors and these metrics are being populated in an Apache Kafka topic called ``iot_measurements``. Now, you'd like to set up an Aiven for ClickHouse database and write filtered messages into table ``cpu_high_usage``.
 
