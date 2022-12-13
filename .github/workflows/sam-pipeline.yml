@@ -4,6 +4,8 @@ on:
     branches:
       - main
       - feature/use-aws
+    paths:
+      - aws
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
