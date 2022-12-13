@@ -46,6 +46,7 @@
 /docs/products/clickhouse/howto/use-query-editor.html                  /docs/products/clickhouse/howto/query-databases.html
 /docs/products/clickhouse/howto/add-service-users                      /docs/products/clickhouse/howto/manage-users-roles
 /docs/products/clickhouse/howto/add-service-users.html                 /docs/products/clickhouse/howto/manage-users-roles.html
+/docs/products/clickhouse/sample-dataset.html                          /docs/products/clickhouse/howto/load-dataset.html
 
 # Redirect from .index.html to specific page names for landing
 

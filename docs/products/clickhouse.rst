@@ -55,6 +55,6 @@ If you are new to ClickHouse, try these resources to get you started with the pl
 
 * Our :doc:`/docs/products/clickhouse/getting-started` guide is a good way to get hands on with your first project.
 
-* Follow :doc:`a guide to add a sample dataset </docs/products/clickhouse/sample-dataset>` to your service.
+* Follow :doc:`a guide to add a sample dataset </docs/products/clickhouse/howto/load-dataset>` to your service.
 
 * Find out :doc:`how to use the web-based query editor </docs/products/clickhouse/howto/query-databases>`, that comes as part of the ClickHouse service.
