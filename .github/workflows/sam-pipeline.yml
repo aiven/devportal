@@ -5,7 +5,7 @@ on:
       - main
       - feature/use-aws
     paths:
-      - aws
+      - aws/**
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
