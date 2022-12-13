@@ -1,4 +1,4 @@
-Manage a service
-================
+Manage your service
+===================
 
 .. tableofcontents::

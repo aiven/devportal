@@ -1,5 +1,5 @@
-Get started with Aiven for ClickHouse®
-======================================
+Get started
+===========
 
 :doc:`Create a managed ClickHouse service </docs/platform/howto/create_new_service>`
 
