@@ -13,7 +13,7 @@ This article shows by way of example how to integrate Aiven for Apache Kafka® w
       "sensor_id": 10000001,
       "ts": "2022-12-01T10:08:24.446369",
       "key": "cpu_usage",
-      "value": 96.42
+      "value": 96
     }
 
 Let's cook!
