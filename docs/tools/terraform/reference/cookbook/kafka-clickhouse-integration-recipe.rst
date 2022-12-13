@@ -13,11 +13,29 @@ This article shows by way of example how to integrate Aiven for Apache Kafka® w
       "sensor_id": 10000001,
       "ts": "2022-12-01T10:08:24.446369",
       "key": "cpu_usage",
-      "value": 96.42
+      "value": 96
     }
 
 Let's cook!
 -----------
+
+.. mermaid::
+
+  flowchart LR
+  id1(iot_measurements_topic)
+  id2[(iot_measurements)]
+  id3(edge_measurements_raw_table)
+  id4(cpu_high_usage_table)
+  subgraph Aiven for Apache Kafka
+  id1
+  end
+  subgraph Aiven for ClickHouse
+    id2
+    subgraph iot_measurements DB
+      id3-->|Filter|id4
+    end
+  end
+  id1-->|Service integration|id2
 
 Imagine that you've been collecting IoT measurements from thousands of sensors and these metrics are being populated in an Apache Kafka topic called ``iot_measurements``. Now, you'd like to set up an Aiven for ClickHouse database and write filtered messages into table ``cpu_high_usage``.
 
