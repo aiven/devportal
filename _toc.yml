@@ -593,9 +593,9 @@ entries:
           - file: docs/products/clickhouse/concepts/service-architecture
             title: Architecture
           - file: docs/products/clickhouse/reference/plans-pricing
-            title: Plans & pricing
+            title: Plans and pricing
       - file: docs/products/clickhouse/getting-started
-        title: Get started
+        title: Quickstart
       - file: docs/products/clickhouse/concepts
         title: Concepts
         entries:
@@ -615,7 +615,7 @@ entries:
           - file: docs/products/clickhouse/howto/list-connect-to-service
             entries:
               - file: docs/products/clickhouse/howto/connect-with-clickhouse-cli
-                title: Connect with ClickHouse client
+                title: Connect with the ClickHouse client
               - file: docs/products/clickhouse/howto/connect-with-go
                 title: Connect with Go
               - file: docs/products/clickhouse/howto/connect-with-python
@@ -629,15 +629,15 @@ entries:
           - file: docs/products/clickhouse/howto/list-manage-service
             entries:
               - file: docs/products/clickhouse/howto/manage-users-roles
-                title: Users and roles
+                title: Manage users and roles
               - file: docs/products/clickhouse/howto/configure-access-terraform-deployed
-                title: User permissions with Terraform
+                title: Manage user permissions with Terraform
               - file: docs/products/clickhouse/howto/manage-databases-tables
-                title: Databases and tables
+                title: Manage databases and tables
               - file: docs/products/clickhouse/howto/query-databases
                 title: Query databases
               - file: docs/products/clickhouse/howto/materialized-views
-                title: Use materialized views
+                title: Create materialized views
               - file: docs/products/clickhouse/howto/monitor-performance
                 title: Monitor performance
               - file: docs/products/clickhouse/howto/use-shards-with-distributed-table
@@ -649,12 +649,8 @@ entries:
                 title: Connect to Grafana
               - file: docs/products/clickhouse/howto/integrate-kafka
                 title: Connect to Apache Kafka
-              - file: docs/products/clickhouse/howto/integrate-kafka-terraform
-                title: Connect to Kafka with Terraform
               - file: docs/products/clickhouse/howto/integrate-postgresql
                 title: Connect to PostgreSQL
-              - file: docs/products/clickhouse/howto/integrate-postgres-terraform
-                title: Connect to PostgreSQL with Terraform
               - file: docs/products/clickhouse/howto/connect-with-jdbc
                 title: Connect to external DBs with JDBC
       - file: docs/products/clickhouse/reference

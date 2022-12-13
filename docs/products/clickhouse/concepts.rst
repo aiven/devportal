@@ -1,6 +1,6 @@
-Guides for ClickHouse®
-======================
+Concepts
+========
 
-In this section you can find guides for working with Aiven for ClickHouse®.
+In this section, you can find information on concepts that Aiven for ClickHouse® uses as foundations for its operations. 
 
 .. tableofcontents::
