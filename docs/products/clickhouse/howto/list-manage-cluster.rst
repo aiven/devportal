@@ -1,5 +1,5 @@
-Manage a cluster
-================
+Manage your Aiven for ClickHouse® cluster
+=========================================
 
 :doc:`Monitor a managed service </docs/platform/howto/monitoring-services>`
 
