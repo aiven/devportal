@@ -39,4 +39,4 @@ Fully-managed distributed columnar database based on `open source ClickHouse <ht
         :shadow: md
         :margin: 2 2 0 0
 
-        Check out new features or latest improvements introduced to Aiven for ClickHouse.
+        Check out new features or latest improvements introduced to Aiven for ClickHouse and other Aiven services.
