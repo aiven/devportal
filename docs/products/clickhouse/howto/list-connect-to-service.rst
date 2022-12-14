@@ -1,4 +1,4 @@
-Connect to your service
-=======================
+Connect to your Aiven for ClickHouse® service
+=============================================
 
 .. tableofcontents::
