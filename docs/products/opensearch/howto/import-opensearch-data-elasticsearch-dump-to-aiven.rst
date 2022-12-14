@@ -31,7 +31,7 @@ OpenSearch cluster:
 Aiven for OpenSearch:
 
 * ``OUTPUT_INDEX_NAME``: the index that you want to have in your output with the copied data.
-* ``SERVICE_URI``: OpenSearch service URI. You can find it in Aiven's dashboard.
+* ``OUTPUT_SERVICE_URI``: your output OpenSearch service URI. You can find it in Aiven's dashboard.
 
 Import mapping
 ~~~~~~~~~~~~~~
@@ -42,7 +42,7 @@ The process of defining how a document and the fields are stored and indexed is 
 
     elasticdump \
     --input=INPUT_SERVICE_URI/INPUT_INDEX_NAME \
-    --output=SERVICE_URI/OUTPUT_INDEX_NAME \
+    --output=OUTPUT_SERVICE_URI/OUTPUT_INDEX_NAME \
     --type=mapping
 
 
@@ -55,7 +55,7 @@ This is how you can copy your index data from an OpenSearch cluster (can be in A
 
     elasticdump \
     --input=INPUT_SERVICE_URI/INPUT_INDEX_NAME \
-    --output=SERVICE_URI/OUTPUT_INDEX_NAME \
+    --output=OUTPUT_SERVICE_URI/OUTPUT_INDEX_NAME \
     --type=data
 
 When the dump is completed, you can check that the index is available in the OpenSearch service you send it to. You will be able to find it under the **Indexes** tab in your Aiven console.
