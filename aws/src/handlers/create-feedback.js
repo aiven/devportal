@@ -65,6 +65,9 @@ exports.handler = async function (event) {
       },
       body: JSON.stringify({
         error: JSON.stringify(err),
+        "Access-Control-Allow-Origin": isValidOrigin
+          ? origin
+          : allowedOrigins[0],
       }),
     };
   }
