@@ -5,6 +5,7 @@ const allowedOrigins = [
   "http://localhost:[0-9]*",
   "https://devportal.pages.dev",
   "https://[a-zA-Z0-9]*.devportal.pages.dev",
+  "https://[a-zA-Z0-9]*developer-aiven-io-preview.netlify.app", //temporary before DNS switch
 ];
 
 const headers = {
