@@ -9,6 +9,9 @@ on:
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v3
@@ -16,7 +19,7 @@ jobs:
       - uses: aws-actions/configure-aws-credentials@v1-node16
         with:
             role-to-assume: arn:aws:iam::428637134338:role/AivenMktDocsLambda
-            aws-region: ${{ secrets.AWS_REGION }}
+            aws-region: ${{ secrets.AWS_REGION }}  
       - name: SAM Validate
         run: |
           sam validate -t aws/template.yaml
