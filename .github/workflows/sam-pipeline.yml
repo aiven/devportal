@@ -6,6 +6,7 @@ on:
       - feature/use-aws
     paths:
       - aws/**
+      - .github/sam-pipeline.yml
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
