@@ -149,6 +149,13 @@ Learn about the Aiven platform
 
         |icon-influxdb| **InfluxDB®** Specialist time series database, with good tooling support.
 
+        .. button-link:: docs/products/influxdb
+            :align: right
+            :color: primary
+            :outline:
+
+            Read more
+
     .. grid-item-card::
         :shadow: md
         :margin: 2 2 0 0
