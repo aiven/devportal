@@ -125,35 +125,6 @@ Code samples should be autodetected (using `pygments <https://pygments.org/>`_) 
 
 Do not include a `$` before a command that the user should run, because it will get copied into the user's clipboard and cause the command to fail (this has been a common standard in the past).
 
-Importing content
------------------
-
-Some of the content for DevPortal came from a previous incarnation of documentation. There is an import script to help with this process.
-
-To set up the import tooling for the first time:
-
-* Install `pandoc <https://pandoc.org/>`_ and make sure the command is in your path
-* Change into the ``utils/`` directory
-* Run ``pip install -r requirements.txt``
-
-To bring in a page from the previous platform:
-
-* Run ``python import-help-article.py [paste a URL]``
-* Take the resulting ``*.rst`` file and any images, and place them as appropriate in the file structure of the project
-
-Migration status
------------------
-
-You can check the migration status from ``https://help.aiven.io/en`` articles to the ``https://docs.aiven.io/`` articles by using the ``page_stats.py`` script available in this repository. 
-
-Install the dependencies::
-
-    pip install -r requirements-dev.txt
-
-To run the ``page_status.py`` script::
-
-    python page_stats.py    
-
 License
 -------
 
