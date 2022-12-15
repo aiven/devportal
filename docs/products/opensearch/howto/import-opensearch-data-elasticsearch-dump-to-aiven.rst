@@ -25,21 +25,21 @@ Here are some information you need to collect to copy your data:
 
 OpenSearch cluster:
 
-* ``INPUT_SERVICE_URI``: OpenSearch cluster URI, for e.g. ``http://opensearch-url:9243/``
+* ``INPUT_SERVICE_URI``: OpenSearch cluster URI, in the format ``https://user:password@host:port``
 * ``INPUT_INDEX_NAME``: the index that you aim to copy from your input source.
 
 Aiven for OpenSearch:
 
-* ``OUTPUT_INDEX_NAME``: the index that you want to have in your output with the copied data.
 * ``OUTPUT_SERVICE_URI``: your output OpenSearch service URI. You can find it in Aiven's dashboard.
+* ``OUTPUT_INDEX_NAME``: the index that you want to have in your output with the copied data.
 
 .. note::
 
-    Use ``export`` command to assign your variables in the command line before running ``elasticdump`` command. For example, suppose your ``INPUT_SERVICE_URI`` is ``http://opensearch-url:9243/``:
+    Use ``export`` command to assign your variables in the command line before running ``elasticdump`` command. For example, suppose your ``INPUT_SERVICE_URI`` is ``myexample``:
 
     .. code::
 
-        export INPUT_SERVICE_URI=http://opensearch-url:9243/
+        export INPUT_INDEX_NAME=myexample
 
 
 Import mapping
