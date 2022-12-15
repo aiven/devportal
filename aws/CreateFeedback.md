@@ -1,6 +1,6 @@
 # Aiven Docs submitting feedback
 
-Feedback are submitted to a PostgreSQL database maintained by Aiven. Production URI can be found in Devportal 1Password.
+Feedback are submitted to a PostgreSQL database maintained by Aiven. Production URI can be found in 1Password under vault Aiven DevPortal.
 
 ## Data
 

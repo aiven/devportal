@@ -14,7 +14,7 @@ This project contains source code and supporting files for a serverless applicat
 - Install [Docker](https://www.docker.com/) and [AWS SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-sam-cli.html). We need Docker running in the background for AWS SAM to work. We don't need to interact directly with it.
   - **Notes**: At the moment it seems some new versions of Docker may not work well with AWS SAM CLI, the latest safe version was [**4.7.0**](https://docs.docker.com/desktop/release-notes/#docker-desktop-470). It's possible newer versions may not have this issue. Recommended to install the latest first, then if AWS SAM complains about no Docker found, revert to the older version.
 - Run `npm i` inside this directory
-- Create a `env.local.json` file based on the existing `env.template.json`. This file helps run the API server with appropriate parameters during development
+- Create a `env.local.json` file based on the existing `env.template.json`. This file helps run the API server with appropriate parameters during development. Production env are available in 1Password under vault Aiven DevPortal.
   - For example, `ES_URL` and `PG_URL` can be obtained directly from the corresponding development Aiven services (OpenSearch & PostgreSQL)
   - **Notes**: The `CA_CERT` for development can be obtained by going to the Aiven PostgreSQL service, download the CA cert into `./aws` directory
   - ![Screenshot 2022-11-09 at 15 19 30](https://user-images.githubusercontent.com/110401626/200845923-0023847b-5f0d-45ef-ba19-d91975faeb3c.png)
@@ -56,10 +56,7 @@ From there, one can run `make livehtml` in the root folder to serve the doc site
 
 ## Production
 
-When merging with master/main branch, GitHub Actions will take care of the deployment to AWS. 
-Note that this workflow only triggers when there's change in `aws` folder.
-
-If for some reason auto-deployment doesn't work and can't be fixed within a reasonable amount of time, check out this [Slab post](https://aiven.slab.com/posts/dev-portal-manual-deployment-to-aws-plan-b-fdaubgtp) for manual deployment. Requires IAM user role access to Aiven AWS "aivenmkt" account (428637134338) from AM team.
+When merging with master/main branch, GitHub Actions will take care of the deployment to AWS. Note that this workflow only triggers when there's change in `aws` folder. Secret key are added in GitHub and available in 1Password under vault Aiven DevPortal.
 
 ## Workflow
 
