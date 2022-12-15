@@ -18,7 +18,7 @@ jobs:
       - uses: aws-actions/setup-sam@v2
       - uses: aws-actions/configure-aws-credentials@v1-node16
         with:
-            role-to-assume: arn:aws:iam::428637134338:role/AivenMktDocsLambda
+            role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
             aws-region: ${{ secrets.AWS_REGION }}  
       - name: SAM Validate
         run: |
