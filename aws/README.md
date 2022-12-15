@@ -56,9 +56,10 @@ From there, one can run `make livehtml` in the root folder to serve the doc site
 
 ## Production
 
-When merging with master/main branch, GitHub Actions will take care of the deployment to AWS. Note that this workflow only triggers when there's change in `aws` folder.
+When merging with master/main branch, GitHub Actions will take care of the deployment to AWS. 
+Note that this workflow only triggers when there's change in `aws` folder.
 
-If for some reason auto-deployment doesn't work and can't be fixed within a reasonable amount of time, check out this [Slab post](https://aiven.slab.com/posts/dev-portal-manual-deployment-to-aws-plan-b-fdaubgtp) for manual deployment.
+If for some reason auto-deployment doesn't work and can't be fixed within a reasonable amount of time, check out this [Slab post](https://aiven.slab.com/posts/dev-portal-manual-deployment-to-aws-plan-b-fdaubgtp) for manual deployment. Requires IAM user role access to Aiven AWS "aivenmkt" account (428637134338).
 
 ## Workflow
 
