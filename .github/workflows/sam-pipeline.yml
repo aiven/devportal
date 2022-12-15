@@ -33,7 +33,7 @@ jobs:
         run: |
           # Set variables
           REPOSITORY=`echo $REPO | tr "/" "-"`
-          VERSIONKEY="faded-deadbeef"
+          VERSIONKEY=${{ secrets.AWS_VERSION_KEY }}
           ENVIRONMENT=$REPOSITORY-$VERSIONKEY-${{ secrets.AWS_REGION }}
           # In this step we are setting variables and persistenting them
           # into the environment so that they can be utilized in other steps
