@@ -17,11 +17,15 @@ const headers = {
 exports.handler = async function (event) {
   // Postgresql connection
   console.log("process.env", JSON.stringify(process.env));
+  const cert = `-----BEGIN CERTIFICATE-----
+  ${process.env.CA_CERT}
+  -----END CERTIFICATE-----
+  `;
   const client = new Client({
     // Don't include sslmode=require
     connectionString: process.env.PG_URL,
     ssl: {
-      ca: process.env.CA_CERT,
+      ca: cert,
     },
   });
 
@@ -63,7 +67,7 @@ exports.handler = async function (event) {
       },
       body: JSON.stringify({
         error: JSON.stringify(err),
-        cert: JSON.stringify(process.env.CA_CERT),
+        cert: JSON.stringify(cert),
       }),
     };
   }
