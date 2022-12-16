@@ -45,3 +45,48 @@ From the information about restrictions on using Aiven for ClickHouse, you can e
    * - Creating a database using SQL
      - You cannot create a database directly using SQL, for example, if you'd like to add a non-default database. You need to use the Aiven's public API for that purpose.
      - Use the Aiven's public API.
+
+Limits
+======
+
+Service limits are determined by a plan that this service uses.
+
+.. list-table::
+   :widths: 10 10 15 15 20
+   :header-rows: 1
+   :stub-columns: 1
+
+   * - Plan
+     - VMs
+     - CPU per VM
+     - RAM per VM
+     - Total storage
+   * - Hobbyist
+     - 1
+     - 1 (2 for AWS only)
+     - 4 GB
+     - 180 GB
+   * - Startup
+     - 1
+     - 2
+     - 16 GB
+     - 1150 GB
+   * - Business
+     - 3
+     - 2 - 8
+     - 16 - 64 GB
+     - 1150 - 4600 GB
+   * - Premium
+     - 6 - 30
+     - 2 - 8
+     - 16 - 64 GB
+     - 2300 - 46000 GB
+
+.. tip::
+
+    If you need a custom plan with capacity beyond the listed limits, `contact us <https://aiven.io/contact?department=1306714>`_.
+
+.. seealso::
+
+    * `Quotas for specific tiers of Business and Premium plans <https://aiven.io/pricing?tab=plan-pricing&product=clickhouse>`_
+    * `Plans comparison <https://aiven.io/pricing?tab=plan-comparison&product=clickhouse>`_
