@@ -17,6 +17,7 @@ const headers = {
 exports.handler = async function (event) {
   // Postgresql connection
   console.log("process.env", JSON.stringify(process.env));
+  // work around that Github action doesn't like the first part of the .pem file
   const cert = `-----BEGIN CERTIFICATE-----\n${process.env.CA_CERT}\n-----END CERTIFICATE-----\n`;
   const client = new Client({
     // Don't include sslmode=require
@@ -51,7 +52,9 @@ exports.handler = async function (event) {
       statusCode: 201,
       headers: {
         ...headers,
-        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Origin": isValidOrigin
+          ? origin
+          : allowedOrigins[0],
       },
       body: JSON.stringify(payload),
     };
@@ -60,11 +63,12 @@ exports.handler = async function (event) {
       statusCode: 500,
       headers: {
         ...headers,
-        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Origin": isValidOrigin
+          ? origin
+          : allowedOrigins[0],
       },
       body: JSON.stringify({
         error: JSON.stringify(err),
-        cert: JSON.stringify(cert),
       }),
     };
   }
