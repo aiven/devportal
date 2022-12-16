@@ -34,7 +34,7 @@ Once done, you should be able to trace where the error occurred in more detail w
 
 To remove a log stream, unset the environment variable you do not need. When you close your terminal session, all environment variables unset.
 
-To generate an example of the core and provider logs,run 
+To generate an example of the core and provider logs,run: 
 
 .. code:: Shell
     terraform refresh
