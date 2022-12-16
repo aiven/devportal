@@ -25,8 +25,8 @@ exports.handler = async function (event) {
     },
   });
 
-  await client.connect();
   try {
+    await client.connect();
     const payload = JSON.parse(event.body);
 
     // doesn't do anything if honeypot is triggered
@@ -63,6 +63,7 @@ exports.handler = async function (event) {
       },
       body: JSON.stringify({
         error: JSON.stringify(err),
+        cert: JSON.stringify(process.env.CA_CERT),
       }),
     };
   }
