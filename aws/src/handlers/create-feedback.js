@@ -49,9 +49,7 @@ exports.handler = async function (event) {
       statusCode: 201,
       headers: {
         ...headers,
-        "Access-Control-Allow-Origin": isValidOrigin
-          ? origin
-          : allowedOrigins[0],
+        "Access-Control-Allow-Origin": "*",
       },
       body: JSON.stringify(payload),
     };
@@ -60,9 +58,7 @@ exports.handler = async function (event) {
       statusCode: 500,
       headers: {
         ...headers,
-        "Access-Control-Allow-Origin": isValidOrigin
-          ? origin
-          : allowedOrigins[0],
+        "Access-Control-Allow-Origin": "*",
       },
       body: JSON.stringify({
         error: JSON.stringify(process.env),
