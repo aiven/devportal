@@ -16,6 +16,7 @@ const headers = {
 
 exports.handler = async function (event) {
   // Postgresql connection
+  console.log("process.env", JSON.stringify(process.env));
   const client = new Client({
     // Don't include sslmode=require
     connectionString: process.env.PG_URL,
