@@ -6,7 +6,7 @@ This article covers quotas for the Aiven for ClickHouse® service and restrictio
 Limitations
 -----------
 
-From the information about restrictions on using Aiven for ClickHouse, you can easily draw conclusions on how get your service to operate closer to its full potential. Use *Recommneded approach* as guidelines on how to work around specific restrictions.
+From the information about restrictions on using Aiven for ClickHouse, you can easily draw conclusions on how get your service to operate closer to its full potential. Use *Recommended approach* as guidelines on how to work around specific restrictions.
 
 .. list-table::
    :widths: 25 50 25
@@ -19,7 +19,7 @@ From the information about restrictions on using Aiven for ClickHouse, you can e
      - Aiven for ClickHouse service takes a single snapshot a day. Any data inserted before the next snapshot is be lost when nodes recycle.
      - None
    * - Service integrations
-     - You can integrate your Aiven for ClickHouse service with PostgreSQL and Kafka only.
+     - You can integrate your Aiven for ClickHouse service with PostgreSQL® and Kafka® only.
      - None
    * - Table engines availability
      - * Log engine is not supported in Aiven for ClickHouse.
@@ -40,7 +40,7 @@ From the information about restrictions on using Aiven for ClickHouse, you can e
      - If you have a sharded plan, you must use a Distributed view on top of your MergeTree table to query all the shards at the same time, and you should use it for inserts too.
      - Use the `Distributed` view with sharded plans.
    * - ON CLUSTER queries
-     - Aiven for Clickhouse doesn't support ON CLUSTER queries because it actually runs each query on all the servers of the cluster without using `ON CLUSTER`.
+     - Aiven for ClickHouse doesn't support ON CLUSTER queries because it actually runs each query on all the servers of the cluster without using `ON CLUSTER`.
      - Run queries without `ON CLUSTER`.
    * - Creating a database using SQL
      - You cannot create a database directly using SQL, for example, if you'd like to add a non-default database. You need to use the Aiven's public API for that purpose.
