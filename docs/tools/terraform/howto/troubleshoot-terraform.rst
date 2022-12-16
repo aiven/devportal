@@ -41,7 +41,4 @@ To generate an example of the core and provider logs,run
 
 Extra Resources:
 
-Digital Ocean Troubleshooting Documentation: <https://www.digitalocean.com/community/tutorials/how-to-troubleshoot-terraform>
-Hashicorp: <https://developer.hashicorp.com/terraform/tutorials/configuration-language/troubleshooting-workflow>
-Oracle: <https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/terraformtroubleshooting.htm>
 Logging Levels: <https://www.section.io/engineering-education/how-to-choose-levels-of-logging/>
