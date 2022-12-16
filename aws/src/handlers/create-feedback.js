@@ -62,7 +62,7 @@ exports.handler = async function (event) {
         "Access-Control-Allow-Origin": "*",
       },
       body: JSON.stringify({
-        error: JSON.stringify(process.env),
+        error: JSON.stringify(err),
       }),
     };
   }
