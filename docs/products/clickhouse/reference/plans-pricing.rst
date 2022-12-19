@@ -13,7 +13,9 @@ Aiven for ClickHouse is packaged into four tiers, each including a range of plan
 * Business - high-availability plan for business-focused apps and internal services
 * Premium - high-availability plan with multiple shards for mission-critical apps, handling high query rates and big data amounts. 
 
-.. To learn more, check out the `plan comparison <https://aiven.io/pricing?tab=plan-pricing&product=clickhouse>`_.
+.. seealso::
+
+    To compare the plans and learn their pricing details, see `Plan comparison <https://aiven.io/pricing?tab=plan-comparison&product=clickhouse>`_ and `Plan pricing <https://aiven.io/pricing?tab=plan-pricing&product=clickhouse>`_, respectively.
 
 Custom plans
 ------------
