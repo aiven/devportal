@@ -16,11 +16,16 @@ From the information about restrictions on using Aiven for ClickHouse, you can e
      - Description
      - Recommended approach
    * - Backups
-     - Aiven for ClickHouse service takes a single snapshot a day. Any data inserted before the next snapshot is be lost when nodes recycle.
-     - None
+     - Aiven for ClickHouse service takes a single snapshot a day, which is why
+       | * When powering off the service, all data after the last backup is lost.
+       | * We do not provide point in time recovery, we can only restore the database to the state of one of the daily backups.
+       | * When creating a database fork, you can only create a fork that match the state of one of the backups.
+       | * Any data inserted before the next snapshot is lost if all nodes in a given shard malfunction and need to be replaced.
+       | This limitation doesn't apply to patches, migrations, or scaling, which are handled safely and automatically.
+     - -
    * - Service integrations
      - You can integrate your Aiven for ClickHouse service with PostgreSQL® and Kafka® only.
-     - None
+     - -
    * - Table engines availability
      - * Log engine is not supported in Aiven for ClickHouse.
 
@@ -35,19 +40,19 @@ From the information about restrictions on using Aiven for ClickHouse, you can e
      - Use the available cloud providers.
    * - Kafka Schema Registry
      - Aiven for ClickHouse doesn't support Kafka Schema Registry, which allows to build stream processing pipelines with schemas.
-     - Coming soon...
+     - -
    * - Querying all shards at once
      - If you have a sharded plan, you must use a Distributed view on top of your MergeTree table to query all the shards at the same time, and you should use it for inserts too.
      - Use the `Distributed` view with sharded plans.
    * - ON CLUSTER queries
-     - Aiven for ClickHouse doesn't support ON CLUSTER queries because it actually runs each query on all the servers of the cluster without using `ON CLUSTER`.
+     - Aiven for ClickHouse doesn't support ON CLUSTER queries because it actually runs each data definition query on all the servers of the cluster without using `ON CLUSTER`.
      - Run queries without `ON CLUSTER`.
    * - Creating a database using SQL
      - You cannot create a database directly using SQL, for example, if you'd like to add a non-default database. You need to use the Aiven's public API for that purpose.
      - Use the Aiven's public API.
 
 Limits
-======
+------
 
 Service limits are determined by a plan that this service uses.
 
