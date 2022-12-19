@@ -595,6 +595,8 @@ entries:
             title: Architecture overview
           - file: docs/products/clickhouse/reference/plans-pricing
             title: Plans and pricing
+          - file: docs/products/clickhouse/reference/limitations
+            title: Limits and limitations
       - file: docs/products/clickhouse/getting-started
         title: Quickstart
       - file: docs/products/clickhouse/concepts
