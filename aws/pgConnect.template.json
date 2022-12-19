@@ -1,0 +1,14 @@
+{
+  "Servers": {
+    "1": {
+      "Name": "Aiven Devportal Dev DB",
+      "Group": "Devportal",
+      "Host": "<PostgreSQL Host Name>",
+      "Port": 12691,
+      "MaintenanceDB": "defaultdb",
+      "Username": "<username>",
+      "SSLMode": "require",
+      "Password": "<password from quickconnect>"
+    }
+  }
+}
