@@ -56,7 +56,12 @@ From there, one can run `make livehtml` in the root folder to serve the doc site
 
 ## Production
 
-When merging with master/main branch, GitHub Actions will take care of the deployment to AWS. Note that this workflow only triggers when there's change in `aws` folder. Secret key are added in GitHub and available in 1Password under vault Aiven DevPortal.
+When merging with master/main branch, GitHub Actions will take care of the deployment to AWS "aivenmkt" account (428637134338) with [OpenID Connect (OIDC)](https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-cloud-providers). Note that this workflow only triggers when there's change in `aws` folder. Secret key are added in GitHub and available in 1Password under vault Aiven DevPortal.
+
+### Access to AWS "aivenmkt" account (428637134338)
+
+Request via [JIRA Access Management](https://aiven.atlassian.net/jira/software/c/projects/AM/boards/26). 
+You will receive a Slack message from Hallmonitor with your credentials. Once you have created a password and configured MFA, you will be able to login to the AWS Console and [assume a role in the aivenmkt account](https://signin.aws.amazon.com/switchrole?roleName=AivenMktDocsManagementUserRole&account=428637134338).
 
 ## Workflow
 
