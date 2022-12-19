@@ -8,11 +8,13 @@ Core functionality
 
 Aiven for ClickHouse® is a fully managed distributed columnar database which is built on the open source ClickHouse solution. It is a fast highly-scalable fault-tolerant database designed for online analytical processing (OLAP) and data warehousing. Aiven for ClickHouse enables you to execute complex SQL queries on large datasets quickly and effectively to process large amounts of data in real time. On top of that, it supports built-in data integrations for Aiven for Kafka® and Aiven for PostgreSQL®.
 
-Effortless cluster provisioning and management
-----------------------------------------------
+Effortless setup and management
+-------------------------------
 
-Pre-configured
-''''''''''''''
+Effortless cluster provisioning and management
+
+Pre-configuration
+'''''''''''''''''
 
 The managed service is pre-configured with a rational set of parameters and settings appropriate for the plan you have selected. You can easily launch production-ready ClickHouse clusters in minutes in the cloud of your choice. If you desire additional control, you can tweak the settings via Advanced configuration options.
 
@@ -36,8 +38,8 @@ Observability
 
 * Notifications and alerts - The service is pre-configured to alert you based on resource usage triggers. Email notifications are sent to admins and technical contacts of the project under which your service is created. 
 
-Security & compliance
----------------------
+Security and compliance
+-----------------------
 
 * Single tenancy - Your service runs on dedicated instances, thus offering true data isolation that contributes to optimal protection and increased security.
 
@@ -52,8 +54,8 @@ Security & compliance
   * Compatibility with open source software (OSS) protects you from software and vendor lock-in.
   * Easy migration between clouds and regions
 
-DevOps friendly
----------------
+Strong DevOps
+-------------
 
 * Automation - AivenTerraform provider helps you automate orchestration of your Clickhouse clusters with ease.
 
