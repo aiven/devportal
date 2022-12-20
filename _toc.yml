@@ -192,6 +192,8 @@ entries:
         - file: docs/tools/terraform/howto
           title: HowTo
           entries:
+            - file: docs/tools/terraform/howto/terraform-logging
+              title: Enable debug logging
             - file: docs/tools/terraform/howto/upgrade-provider-v1-v2
               title: Upgrade the Aiven Terraform Provider from v1 to v2
             - file: docs/tools/terraform/howto/upgrade-provider-v2-v3
