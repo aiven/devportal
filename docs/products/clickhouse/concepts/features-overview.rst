@@ -11,12 +11,12 @@ Aiven for ClickHouse is a fully managed distributed columnar database which is b
 Effortless setup and management
 -------------------------------
 
-With the managed ClickHouse service, you can offload on Aiven all the time-consuming and laborious operations on your data infrastructure, such as database initialization and configuration, cluster provisioning and management, or your infrastructure maintenance and monitoring.
+With the managed ClickHouse service, you can offload on Aiven multiple time-consuming and laborious operations on your data infrastructure: database initialization and configuration, cluster provisioning and management, or your infrastructure maintenance and monitoring are off your shoulders.
 
-Pre-configuration
-'''''''''''''''''
+Pre-configured settings
+'''''''''''''''''''''''
 
-The managed ClickHouse service is pre-configured with a rational set of parameters and settings appropriate for the plan you have selected. You can easily launch production-ready ClickHouse clusters in minutes in the cloud of your choice. If you desire additional control, you can tweak the settings via advanced configuration options.
+The managed ClickHouse service is pre-configured with a rational set of parameters and settings appropriate for the plan you have selected. You can easily launch production-ready ClickHouse clusters in minutes in a cloud of your choice. If you desire additional control, you can tweak the settings via advanced configuration options.
 
 Scalability
 '''''''''''
@@ -57,8 +57,8 @@ Security and compliance
 Devops-friendly tools
 ---------------------
 
-* Automation - AivenTerraform provider helps you automate orchestration of your ClickHouse clusters with ease.
+* Automation - `Aiven Provider for Terraform <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_ helps you automate the orchestration of your ClickHouse clusters.
 
-* Command-line tooling - Aiven client provides greater flexibility of use for proficient administrators allowing scripting of repetitive actions with ease. 
+* Command-line tooling - :doc:`Aiven CLI </docs/tools/cli>` client provides greater flexibility of use for proficient administrators allowing scripting repetitive actions with ease. 
 
-* REST APIs - Aiven APIs allow you to manage Aiven resources in a programmatic way using HTTP requests. All functionality available via Aiven Console is also available via APIs enabling you to build custom integrations with ClickHouse and the Aiven platform.
+* REST APIs - :doc:`Aiven APIs </docs/tools/api>` allow you to manage Aiven resources in a programmatic way using HTTP requests. The whole functionality available via Aiven Console is also available via APIs enabling you to build custom integrations with ClickHouse and the Aiven platform.
