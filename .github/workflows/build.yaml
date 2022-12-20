@@ -6,6 +6,7 @@ name: "Build HTML"
       - main
     tags:
       - "**"
+  pull_request:
 
 jobs:
   run-checks:
