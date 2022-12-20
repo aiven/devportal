@@ -7,10 +7,6 @@ If you're not sure what a service integration is, see :doc:`this guide <../conce
 - Aiven for PostgreSQL® - Database where the telemetry data is stored and can be queried from
 - Aiven for Grafana® - Dashboards for the telemetry data
 
-.. note::
-
-    Currently these services need to be running in the same Aiven project, but this limitation will be removed in the future and you will be able to, for example, connect multiple Aiven for Apache Kafka® services from different projects to the same PostgreSQL® and Grafana® instances.
-
 Steps:
 
 1. From the Aiven console, follow :doc:`this guide <create_new_service>` to create three new services - Aiven for Apache Kafka®, Aiven for PostgreSQL®, and Aiven for Grafana®. You can choose your preferred cloud provider, region, and any plan from **startup** / **business** / **premium**.  
