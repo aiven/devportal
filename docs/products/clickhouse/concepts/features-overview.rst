@@ -54,8 +54,8 @@ Security and compliance
   * Compatibility with open source software (OSS) protects you from software and vendor lock-in.
   * Easy migration between clouds and regions
 
-DevOps-friendly tooling
------------------------
+DevOps-friendly tools
+---------------------
 
 * Automation - AivenTerraform provider helps you automate orchestration of your ClickHouse clusters with ease.
 
