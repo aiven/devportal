@@ -23,7 +23,7 @@ Scalability
   You can seamlessly :doc:`scale your ClickHouse cluster </docs/platform/howto/scale-services>` horizontally or vertically as your data and needs change using the pre-packaged plans. Aiven for ClickHouse also supports :doc:`sharding </docs/products/clickhouse/howto/use-shards-with-distributed-table>` as a horizontal cluster scaling strategy.
 
 Resource tags
-  You can assign metadata to your services in the form of tags. They help you organize, search, and filter Aiven resources. You can :doc:`tag your service <https://docs.aiven.io/docs/platform/howto/tag-resources.html>` by purpose, owner, environment, or any other criteria.
+  You can assign metadata to your services in the form of tags. They help you organize, search, and filter Aiven resources. You can :doc:`tag your service </docs/platform/howto/tag-resources>` by purpose, owner, environment, or any other criteria.
 
 Forking
   Forking an Aiven for ClickHouse service creates a new database service containing the latest snapshot of an existing service. Forks don't stay up-to-date with the parent database, but you can write to them. It provides a risk-free way of working with your production data and schema. For example, you can use them to test upgrades, new schema migrations, or load test your app with a different plan. Learn how to :doc:`fork an Aiven service </docs/platform/howto/console-fork-service>`.
