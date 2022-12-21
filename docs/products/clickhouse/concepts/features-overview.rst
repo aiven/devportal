@@ -1,102 +1,81 @@
 Aiven for ClickHouse® features overview
 =======================================
 
-What is Aiven for ClickHouse® and what are its key features? Why and when to use Aiven for ClickHouse? What are its most common use cases? This article helps you discover it all and more.
+Aiven for ClickHouse® is designed for developers to try out ClickHouse quickly and easily and develop analytics apps. Discover Aiven for ClickHouse's key features and attributes which let you focus on turning business data into actionable insights while Aiven takes care of managing ClickHouse.
 
-About Aiven for ClickHouse
---------------------------
+About the core functionality
+----------------------------
 
-Aiven for ClickHouse® is a fully managed distributed columnar database which is built on the open source ClickHouse solution. It is a fast highly-scalable fault-tolerant database designed for online analytical processing and data warehousing. Aiven for ClickHouse enables you to execute complex SQL queries on large datasets quickly and effectively to process large amounts of data in real time.
+Aiven for ClickHouse is a fully managed distributed columnar database which is built on the open source ClickHouse solution. It is a fast highly-scalable fault-tolerant database designed for online analytical processing (OLAP) and data warehousing. Aiven for ClickHouse enables you to execute complex SQL queries on large datasets quickly and effectively to process large amounts of data in real time. On top of that, it supports built-in data integrations for Aiven for Kafka® and Aiven for PostgreSQL®.
 
-Aiven for ClickHouse provides
+Effortless setup
+----------------
 
-* Fast insights at scale
+With the managed ClickHouse service, you can offload on Aiven multiple time-consuming and laborious operations on your data infrastructure: database initialization and configuration, cluster provisioning and management, or your infrastructure maintenance and monitoring are off your shoulders.
 
-  ClickHouse is built to process hundreds of millions of rows and tens of gigabytes of data per second.
+Pre-configured settings
+  The managed ClickHouse service is pre-configured with a rational set of parameters and settings appropriate for the plan you have selected. You can easily launch production-ready ClickHouse clusters in minutes in a cloud of your choice.
 
-* Integrated analytics data flows
+Easy management
+---------------
 
-  With Aiven for ClickHouse, you can build high-performance analytics pipelines, leveraging your data in other Aiven services.
+Scalability
+  You can seamlessly :doc:`scale your ClickHouse cluster </docs/platform/howto/scale-services>` horizontally or vertically as your data and needs change using the pre-packaged plans. Aiven for ClickHouse also supports :doc:`sharding </docs/products/clickhouse/howto/use-shards-with-distributed-table>` as a horizontal cluster scaling strategy.
 
-* High-performance analytical queries
+Resource tags
+  You can assign metadata to your services in the form of tags. They help you organize, search, and filter Aiven resources. You can :doc:`tag your service </docs/platform/howto/tag-resources>` by purpose, owner, environment, or any other criteria.
 
-  ClickHouse processes typical analytical queries two to three orders of magnitude faster than traditional row-oriented systems and exceeds the speed of other columnar databases.
+Forking
+  Forking an Aiven for ClickHouse service creates a new database service containing the latest snapshot of an existing service. Forks don't stay up-to-date with the parent database, but you can write to them. It provides a risk-free way of working with your production data and schema. For example, you can use them to test upgrades, new schema migrations, or load test your app with a different plan. Learn how to :doc:`fork an Aiven service </docs/platform/howto/console-fork-service>`.
 
-* Built-in data integrations
+Effective maintenance
+---------------------
 
-  You can integrate with other Aiven services at the click of a button. Use Aiven for Apache Kafka® as a data source. Access data in Aiven for PostgreSQL® through federated queries. Visualize results using Aiven for Grafana® or external BI tools.
+Automatic maintenance updates
+  With 99.99% SLA, Aiven makes sure that the ClickHouse software and the underlying platform stays up-to-date with the latest patches and updates with zero downtime. You can set :doc:`maintenance windows </docs/platform/concepts/maintenance-window>` for your service to make sure the changes occur during times that do not affect productivity.
 
-* Powerful SQL extensions
+Backups and disaster recovery
+  Aiven for ClickHouse has automatic backups taken every 24 hours. The retention period depends on your plan tier. Check out the details on `Plan comparison <https://aiven.io/pricing?product=clickhouse&tab=plan-comparison>`_.
 
-  Aiven for ClickHouse offer a rich set of analytics functions, enabling fast aggregations on large datasets using familiar SQL.
+Intelligent observability
+-------------------------
 
-ClickHouse's purpose and application
-------------------------------------
+Service health monitoring
+  Aiven for ClickHouse provides metrics and logs for your cluster at no additional charge. You can enable pre-integrated Aiven observability services, such as Grafana®, M3®, or OpenSearch® or push available metrics and logs to external observability tools, such as Prometheus, AWS CloudWatch, or Google Cloud Logging. For more details, see :doc:`Monitor Aiven for ClickHouse metrics </docs/products/clickhouse/howto/monitor-performance>`.
 
-ClickHouse is designed for generating detailed real-time analytical data reports using advanced SQL queries on large datasets. ClickHouse is your top pick if
+Notifications and alerts
+  The service is pre-configured to alert you on, for example, your disk running out of space or CPU consumption running high when resource usage thresholds are exceeded. Email notifications are sent to admins and technical contacts of the project under which your service is created. Check :doc:`Receive technical notifications </docs/platform/howto/technical-emails>` to learn how you can sign up for such alerts.
 
-* You work with enormous volumes of data (measured in terabytes) continuously written and read.
-* You have tables with a huge number of columns but column values are reasonably short.
-* Your data is well-structured and not yet aggregated.
-* You insert data in large batches over thousands of lines. The vast majority of operations are reads with aggregations. For reads, you process large number of rows but fairly low number of columns.
-* You don't need to modify data later.
-* You don't need to retrieve specific rows.
-* You don't need transactions.
+Security and compliance
+-----------------------
 
-Common use cases for ClickHouse are
+Single tenancy
+  Your service runs on dedicated instances, thus offering true data isolation that contributes to the optimal protection and an increased security.
 
-* Providing real-time customer-facing analytics
+Network isolation
+  Aiven platform supports VPC peering as a mechanism for connecting directly to your ClickHouse service via private IP, thus providing a more secure network setup. The platform also supports PrivateLink connectivity.
 
-  High-performance analytics views provided to your customers as part of your application and service
+Regulatory compliance
+  ClickHouse runs on Aiven platform that is ISO 27001:2013, SOC2, GDPR, HIPAA, and PCI/DSS compliant.
 
-* Gaining deep insights internally
+Role based Access Control (RBAC)
+To learn what kind of granular access is possible in Aiven for ClickHouse, check out :ref:`RBAC with Zookeeper <zookeeper>`.
 
-  Highly-scalable and performant analytics for user/ IoT device behavior: Report on aggregated data but collect and store it all so you can dig deeper into it with no risk of losing hidden insights.
+Zero lock-in
+  Aiven for ClickHouse offers compatibility with open source software (OSS), which protects you from software and vendor lock-in. You can easily migrate between clouds and regions.
 
-* Data store for near-real-time decision engines
+.. seealso::
+  
+  Check out more details on security and compliance in Aiven for ClickHouse in :doc:`Secure a managed ClickHouse® service </docs/products/clickhouse/howto/secure-service>`.
 
-  When building decision engines, for example a recommendation engine or a fraud detection engine, you need a high-performance data store to host all the necessary data. This ensures that your rules and machine learning models can act with the speed required for a great user experience.
+Devops-friendly tools
+---------------------
 
-Managed ClickHouse - database as a service
-------------------------------------------
+Automation
+  `Aiven Provider for Terraform <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_ helps you automate the orchestration of your ClickHouse clusters.
 
-With Aiven for ClickHouse, you can focus on turning your data to actionable insights, while Aiven takes care of managing your data warehouse infrastructure. As a fully managed service, Aiven for ClickHouse offers
+Command-line tooling
+  :doc:`Aiven CLI </docs/tools/cli>` client provides greater flexibility of use for proficient administrators allowing scripting repetitive actions with ease. 
 
-* Effortless provisioning
-
-  * Launch production-ready ClickHouse clusters in minutes in the cloud of your choice.
-  * Seamlessly scale your clusters as your data and needs change.
-  * Use the bring-your-own-account deployment model for strict control requirements
-
-* Reliable operations
-
-  * Self-healing platform with 99.99% SLA
-  * Zero downtime during scaling, upgrading, and other management operations
-
-* Superior observability
-
-  * Use pre-integrated Aiven observability services for enhanced monitoring and logging with Grafana, M3, or OpenSearch®.
-  * Integrate with your external observability tooling — from Datadog to Prometheus.
-
-* Security & compliance
-
-  * Nodes running on dedicated virtual machines (VMs)
-  * End-to-end encryption
-  * ISO 27001:2013, SOC2, GDPR, HIPAA and PCI/DSS compliant
-  * Secure networking with VPC peering, PrivateLink, or AWS Transit Gateway
-
-* Zero lock-in
-
-  * Compatibility with open source software (OSS) protects you from software and vendor lock-in.
-  * Easy migration between clouds and regions
-
-* All-inclusive pricing
-
-  * Network traffic, VPC setup, and backup storage costs covered
-  * Pay as you go
-
-* DevOps friendliness
-
-  * Terraform provider to manage Aiven clusters
-  * Aiven client for CLI access
-  * REST APIs for custom integrations
+REST APIs
+  :doc:`Aiven APIs </docs/tools/api>` allow you to manage Aiven resources in a programmatic way using HTTP requests. The whole functionality available via Aiven Console is also available via APIs enabling you to build custom integrations with ClickHouse and the Aiven platform.
