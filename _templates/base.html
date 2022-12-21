@@ -38,6 +38,7 @@ snowplow("newTracker", "at", "dc.aiven.io", {
   anonymousTracking: { withServerAnonymisation: true },
   stateStorageStrategy: 'none',
   eventMethod: 'post',
+  postPath: '/aiven/dc2',
   contexts: {
     webPage: true
   }
