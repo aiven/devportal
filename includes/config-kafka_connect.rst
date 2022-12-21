@@ -83,11 +83,29 @@
 
 **Offset flush timeout** Maximum number of milliseconds to wait for records to flush and partition offset data to be committed to offset storage before cancelling the process and restoring the offset data to be committed in a future attempt (defaults to 5000).
 
+``producer_batch_size``
+~~~~~~~~~~~~~~~~~~~~~~~
+*integer*
+
+**The batch size in bytes the producer will attempt to collect for the same partition before publishing to broker** This setting gives the upper bound of the batch size to be sent. If there are fewer than this many bytes accumulated for this partition, the producer will 'linger' for the linger.ms time waiting for more records to show up. A batch size of zero will disable batching entirely (defaults to 16384).
+
+``producer_buffer_memory``
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+*integer*
+
+**The total bytes of memory the producer can use to buffer records waiting to be sent to the broker** The total bytes of memory the producer can use to buffer records waiting to be sent to the broker (defaults to 33554432).
+
 ``producer_compression_type``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 *string*
 
 **The default compression type for producers** Specify the default compression type for producers. This configuration accepts the standard compression codecs ('gzip', 'snappy', 'lz4', 'zstd'). It additionally accepts 'none' which is the default and equivalent to no compression.
+
+``producer_linger_ms``
+~~~~~~~~~~~~~~~~~~~~~~
+*integer*
+
+**Wait for up to the given delay to allow batching records together** This setting gives the upper bound on the delay for batching: once there is batch.size worth of records for a partition it will be sent immediately regardless of this setting, however if there are fewer than this many bytes accumulated for this partition the producer will 'linger' for the specified time waiting for more records to show up. Defaults to 0.
 
 ``producer_max_request_size``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
