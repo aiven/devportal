@@ -37,6 +37,7 @@ Projects are a collection of services and user permissions. You can group your s
 
 Service access management
 --------------------------
+
 There are two ways that you can manage access to Aiven services:
 
 * Direct access via projects
@@ -108,14 +109,21 @@ You can invite people to work with you on a project, but you may not always want
 Teams
 ~~~~~
 
-You can also use teams within accounts to group project membership for a specific account instead of specifying them per project.
+You can also use teams within organizations or org unitsto control access to projects for a group of users instead of specifying them per project. When you create a team, you choose which projects to associate it to and define the roles.
 
-One example of this is to grant read-only access to all projects in an account for a team of external contractors. Even when you use teams, you can still apply individual memberships to projects as well.
+One example of this is to grant read-only access to all projects in an organization or org unit for a team of external contractors. You can use a mix of team and individual access rights for projects.
 
 .. important::
-    When you create an account, you are automatically added to the ``Account Owners`` team. This team has administrative access to the account itself, but you must still define access levels to projects.
-
-When you have created a team, you must manually associate projects and roles within the team.
+    When you create an organization, you are automatically added to a default team that has administrative access to the organization. You can still define additional access levels to the organization’s projects.
 
 Best practices for organizations
 ---------------------------------
+
+**Small organizations**
+Smaller organizations that have a limited number of projects, we recommend consolidating these within one organization. 
+
+**Medium and large organizations**
+For more complex cases, it's helpful to take advantage of the organizational units. Org units let you collect together related projects by, for example, your internal departments or other categories like testing, staging, and production environments. 
+
+**Enterprise organizations**
+For enterprise organizations, it's best to use organizations to group organizational units. By keeping all of your projects in organizational units you can define teams, support contracts, and billing groups for each org unit.
