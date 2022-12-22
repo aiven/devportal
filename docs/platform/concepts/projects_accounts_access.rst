@@ -63,17 +63,15 @@ You can use organizations and teams within the Aiven platform to implement :doc:
 Project members and roles
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can invite people to work with you on a project, but you may not always want to give them the same access that you have. You can specify the email addresses and permissions for members in the *Members* section of the Aiven web console, which you can find in the main menu on the left of the page.
+You can invite people to work with you on a project, but you may not always want to give them the same access that you have. You can define different levels of access for each projects member using roles:
 
-The roles and corresponding permissions that Aiven supports are:
+* **Administrator**: Can change and view billing information, remove members, and create, edit, and delete services. When you create a project, you automatically receive this access level. 
 
-* **Administrator**: When you create a project, you automatically receive this access level. You can change and view billing information, remove members, and create, edit, and delete services.
+* **Operator**: Full access to services, but can't modify billing information or project members.
 
-* **Operator**: This role provides full access to services but does not allow you to modify billing information or project members.
+* **Developer**: Can manage existing services (for example, creating databases and connecting to them), but can't make any changes that would affect billing (for example, starting or stopping services).
 
-* **Developer**: This allows you to manage existing services (for example, creating databases and connecting to them), but it does not allow you to make any changes that would affect billing (for example, starting or stopping services).
-
-* **Read Only**: This allows you to view services, but does not allow you to make any changes to the services.
+* **Read Only**: Can view services, but can't make any changes to them.
 
 
 .. list-table::
@@ -105,7 +103,7 @@ The roles and corresponding permissions that Aiven supports are:
      - 
      - 
 .. Note::
-    Read-Only role cannot view or copy service account passwords.  Administrator, Operator and Developer can fully manage service accounts.
+    The Read-Only role cannot view or copy service account passwords, but the Administrator, Operator and Developer roles have full access to manage service accounts.
 
 Teams
 ~~~~~
