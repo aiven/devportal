@@ -1,8 +1,42 @@
-Projects, accounts, and managing access permissions
-===================================================
+Organizations, projects, and managing access permissions
+=========================================================
 
-The Aiven platform uses accounts and projects to organize services and access to those services. This article describes those terms and how you can use them effectively based on your organization structure, deployment environments, and service security requirements.
+The Aiven platform uses organizations, organizational units, and projects to organize services and access to those services.This article describes how you can use these effectively to accommodate your organization’s structure.
 
+Organizations and organizational units
+---------------------------------------
+
+Organizations and organizational units are collections of projects. When you sign up to Aiven, an organization is created for you.
+
+You can use these to create a hierarchical structure that fits your needs. Organizational units (or org units) can be added to an organization. They can also be used to group projects. This gives you greater flexibility to organize your setup to meet your specific use cases. For example, you can easily split production and testing workloads into different org units that are in the same organization. 
+
+Having these centralized entities lets you manage settings like:
+
+* Authentication methods - Only available on the organization level
+
+* ACLs - Can be set on all levels (organization, organizational unit, and project)
+
+  * Plan enablement ACsL are inherited, meaning all projects within an organization or organizational unit will have the same service plan.
+
+* Teams - Specific to a single organization or organizational unit and cannot be shared between them
+
+* Support contracts - Specific to a single organization or organizational unit and cannot be shared between them
+
+* Billing groups - Specific to a single organization or organizational unit and cannot be shared between them
+
+Projects
+--------
+
+Projects are a collection of services and user permissions. You can group your services however you see fit. Each project must have a unique name within an organization. Some examples that we have seen:
+
+* Single project: One project containing services that are distinguished by their names. For example, services are named based on the type of environment: ``demo_pg_project.postgres-prod`` and ``demo_pg_project.postgres-staging``.
+
+* Environment-based projects: Each project represents a deployment environment, for example: ``dev``, ``qa``, and ``production``. This allows you to apply uniform network security, such as the use of virtual private clouds (VPCs), to all services within each environment. This also gives you more granular user permissions, such as developer access to production infrastructure.
+
+* Project-based: Each project contains all the services for an internal project, with naming that highlights the relevant environment; for example: ``customer-success-prod`` and ``business-analytics-test``.
+
+Service access management
+--------------------------
 There are two ways that you can manage access to Aiven services:
 
 * Direct access via projects
@@ -16,38 +50,16 @@ Smaller teams usually favor direct access while larger teams favor RBAC to simpl
 
         User-- Direct access --> Project;
         User-- RBAC --> Team;
-        Account-->Team;
+        Organization-->Team & B["Org unit"];
+        B["Org unit"]-->Team;
         Team-->Project;
         Project-->Service;
 
-You can use accounts and teams within the Aiven platform to implement Security Assertion Markup Language single sign-on (SAML SSO) using an identity provider such as Okta, GSuite, or AzureAD. Security-conscious teams usually favor a combination of SAML and RBAC regardless of the size of team.
-
-Projects
---------
-
-Projects are a collection of services and user permissions. You can organize your services however you see fit. Some examples that we have seen:
-
-* **Single project**: A project containing several services that are each named according to the relevant environment, for example ``demo_pg_project.postgres-prod`` and ``demo_pg_project.postgres-staging``.
-
-* **Environment-based projects**: Each project represents a deployment environment, for example ``dev``, ``qa``, and ``production``. This allows you to apply uniform network security, such as the use of virtual private clouds (VPCs), to all services within the environment. This also gives you more flexibility for user permissions, such as developer access to production infrastructure.
-
-* **Project-based**: A project that contains all the services for an internal project, with a suffix that highlights the relevant environment, for example ``customer-success-prod`` and ``business-analytics-test``.
-
-Each project must have a unique name within the Aiven platform. The project name is combined with the service names to create the host URLs for your deployed services.
-
-
-Accounts
---------
-
-An account is a collection of projects. When you first sign up to Aiven, there are no accounts, as you can use standalone projects without ever needing accounts.
-
-If you have several different departments that are using Aiven, you can use accounts to separate access between projects and departments.
-
-For example, you could use different accounts for different departments and their projects, or you could use accounts to separate the projects related to customer-specific systems.
+You can use organizations and teams within the Aiven platform to implement SAML single sign-on (SSO) using an identity provider such as Okta, GSuite, or AzureAD. Security-conscious teams usually favor a combination of SAML and RBAC regardless of the size of team.
 
 
 Project members and roles
--------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can invite people to work with you on a project, but you may not always want to give them the same access that you have. You can specify the email addresses and permissions for members in the *Members* section of the Aiven web console, which you can find in the main menu on the left of the page.
 
@@ -94,7 +106,7 @@ The roles and corresponding permissions that Aiven supports are:
     Read-Only role cannot view or copy service account passwords.  Administrator, Operator and Developer can fully manage service accounts.
 
 Teams
------
+~~~~~
 
 You can also use teams within accounts to group project membership for a specific account instead of specifying them per project.
 
@@ -105,3 +117,5 @@ One example of this is to grant read-only access to all projects in an account f
 
 When you have created a team, you must manually associate projects and roles within the team.
 
+Best practices for organizations
+---------------------------------
