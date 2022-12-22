@@ -42,7 +42,7 @@ There are two ways that you can manage access to Aiven services:
 * Direct access via projects
 * Indirectly via role-based access controls (RBAC)
 
-Smaller teams usually favor direct access while larger teams favor RBAC to simplify complex access requirements for large numbers of people.
+Smaller teams usually favor direct access, while larger teams favor RBAC to simplify complex access requirements.
 
 .. mermaid::
 
@@ -55,7 +55,9 @@ Smaller teams usually favor direct access while larger teams favor RBAC to simpl
         Team-->Project;
         Project-->Service;
 
-You can use organizations and teams within the Aiven platform to implement SAML single sign-on (SSO) using an identity provider such as Okta, GSuite, or AzureAD. Security-conscious teams usually favor a combination of SAML and RBAC regardless of the size of team.
+Aiven organizations help you organize and manage your projects and services. Within organizations you can have organizational units. The services you create are collected in projects, and each project can be in an organization or an organizational unit. 
+
+You can use organizations and teams within the Aiven platform to implement :doc:`SAML single sign-on (SSO) </docs/platform/howto/list-saml>`` using an identity provider such as Okta, GSuite, or AzureAD. For greater security, you may want to use a combination of SAML and RBAC regardless of the size of team.
 
 
 Project members and roles
