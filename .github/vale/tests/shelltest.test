@@ -2,7 +2,7 @@
 #
 # See https://github.com/simonmichael/shelltestrunner
 #
-# On a Mac, install with `brew install shelltest`
+# On a Mac, install with `brew install shelltestrunner`
 #
 # Also needs Vale (as used by `make spell` at the top level). Again, on a Mac
 # that can be installed with `brew install vale`
