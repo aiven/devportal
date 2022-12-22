@@ -1,7 +1,8 @@
 Create organizations and org units
 ===================================
 
-**Organizations** and **organizational units** (or **org units**) can be used to group projects and apply common settings like authentication and teams (user groups).
+**Organizations** and **organizational units** (or **org units**) can be used to group projects and apply common settings like authentication and teams (user groups). For details and recommendations on creating hierarchical organizations in Aiven, see :doc:`Organizations, projects, and managing access permissions </docs/platform/concepts/projects_accounts_access>`.
+
 
 Create a new organization
 --------------------------
