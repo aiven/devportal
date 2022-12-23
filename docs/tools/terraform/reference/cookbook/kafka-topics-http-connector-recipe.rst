@@ -204,8 +204,8 @@ this is then sent over HTTP.
 You could use this setup for relaying payloads to platforms that don't have
 specific connectors available. The HTTP sink connector is also an excellent
 tool for integrating with webhook-ready platforms like functions-as-a-service
-(`Amazon Lambda<https://aws.amazon.com/lambda/>`_, `Cloudflare
-Workers<https://workers.cloudflare.com/>`_) or `Zapier<https://zapier.com/>`_.
+(`Amazon Lambda <https://aws.amazon.com/lambda/>`_, `Cloudflare
+Workers <https://workers.cloudflare.com/>`_) or `Zapier <https://zapier.com/>`_.
 
 
 Further resources
