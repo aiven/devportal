@@ -22,7 +22,7 @@ Although we believe a W-8 form is not required to confirm this status, we're hap
 Please contact our `sales <sales@aiven.io>`_ to request one. 
 
 Rest of the world
------------------
+------------------
 
 No value-added tax is applied to services sold outside the European Union as described in Value-Added Tax Act of Finland section 69h. 
 Finland has tax treaties with most countries in the world, affirming this status.
