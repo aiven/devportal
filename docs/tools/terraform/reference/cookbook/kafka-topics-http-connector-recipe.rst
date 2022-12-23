@@ -29,7 +29,7 @@ something like the diagram below:
 The Aiven for Apache Kafka and Kafka Connect services are connected with a
 service integration. The Kafka Connect service has the HTTP sink configured and
 this connects the topic to the HTTP destination. The HTTP destination is an
-external location defined by `http.url` in the HTTP sink connector
+external location defined by ``http.url`` in the HTTP sink connector
 configuration.
 
 Define the setup
@@ -166,11 +166,11 @@ are likely to need changing to suit your use case.
 This example creates two Aiven services: one Aiven for Apache Kafka service,
 and a Kafka Connect service. It adds a service integration so that the the
 connectors can access the data in the Kafka cluster. There is a topic defined
-`user_activity`, and this is referred to by the Kafka connector configuration
+``user_activity``, and this is referred to by the Kafka connector configuration
 as the source of the data to send over HTTP. The connector also defines where
-the HTTP requests should be sent to, using the `http.url` setting.
+the HTTP requests should be sent to, using the ``http.url`` setting.
 
-To avoid any race conditions in this setup, the `depends_on` clause makes sure
+To avoid any race conditions in this setup, the ``depends_on`` clause makes sure
 that the connector will only be configured when both the Kafka Connect service
 and its integration to Kafka are in place.
 
@@ -198,16 +198,21 @@ Go ahead and plan and then apply the Terraform configuration.
            
 Try out this recipe by defining an HTTP endpoint where you can receive and
 acknowledge HTTP requests in the connector configuration. Then produce some
-data to the `user_activity` topic (any JSON data is fine), and observe that
+data to the ``user_activity`` topic (any JSON data is fine), and observe that
 this is then sent over HTTP.
 
-You could use this setup for relaying payloads to platforms that don't have specific connectors available. The HTTP sink connector is also an excellent tool for integrating with webhook-ready platforms like functions-as-a-service ([Amazon Lambda](https://aws.amazon.com/lambda/), [Cloudflare Workers](https://workers.cloudflare.com/)) or [Zapier](https://zapier.com/).
+You could use this setup for relaying payloads to platforms that don't have
+specific connectors available. The HTTP sink connector is also an excellent
+tool for integrating with webhook-ready platforms like functions-as-a-service
+(`Amazon Lambda<https://aws.amazon.com/lambda/>`_, `Cloudflare
+Workers<https://workers.cloudflare.com/>`_) or `Zapier<https://zapier.com/>`_.
 
 
 Further resources
 -----------------
 
-Here are some resources with additional information, examples and documentation for working with the technologies in this recipe:
+Here are some resources with additional information, examples and documentation
+for working with the technologies in this recipe:
 
 - :doc:`Configuration options for Kafka </docs/products/kafka/reference/advanced-params>`
 - :doc:`HTTP sink documentation and examples </docs/products/kafka/kafka-connect/howto/http-sink>`
