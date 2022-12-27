@@ -1,12 +1,12 @@
 String data type in Aiven for Clickhouse®
 =========================================
 
-ClickHouse databases can store diverse types of data, such as decimals, booleans, or arrays. This article focuses on strings and its usage in ClickHouse. Discover key functions and data type conversions required for working efficiently with strings in ClickHouse.
+Aiven for Clickhouse® uses ClickHouse databases, which can store diverse types of data, such as decimals, booleans, or arrays. This article focuses on strings and its usage in ClickHouse. Discover key functions and data type conversions required for working efficiently with strings in ClickHouse.
 
 About strings in ClickHouse
 ---------------------------
 
-ClickHouse allows strings of any length. Strings can contain an arbitrary amount of bytes, which are stored and output as-is. The string type replaces the types VARCHAR, BLOB, CLOB, and others from other DBMSs. When creating tables, numeric parameters for string fields can be set (e.g. TEXT(140)), but are ignored.
+ClickHouse allows strings of any length. Strings can contain an arbitrary amount of bytes, which are stored and output as-is. The string type replaces the types VARCHAR, BLOB, CLOB, and others from other DBMSs. When creating tables, numeric parameters for string fields can be set (for example, TEXT(140)), but are ignored.
 
 ClickHouse supports the following aliases for strings: LONGTEXT, MEDIUMTEXT, TINYTEXT, TEXT, LONGBLOB, MEDIUMBLOB, TINYBLOB, BLOB, VARCHAR, CHAR.
 
@@ -41,11 +41,11 @@ ClickHouse supports a wide range of functions for working with JSON. With specif
 
 .. topic:: Examples
 
-    `visitParamExtractString(params, name)`​
-    Parses the string in double quotes.
+    ``visitParamExtractString(params, name)``
+      Parse the string in double quotes.
 
-    `JSONExtractString(json[, indices_or_keys]…)`​
-    Parses a JSON and extract a string.
+    ``JSONExtractString(json[, indices_or_keys]…)``
+      Parse a JSON and extract a string.
 
-    `toJSONString`
-    Convert a value of any data type to its JSON representation.
+    ``toJSONString``
+      Convert a value of any data type to its JSON representation.
