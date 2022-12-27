@@ -1,7 +1,7 @@
 String data type in Aiven for ClickHouse®
 =========================================
 
-Aiven for Clickhouse® uses ClickHouse® databases, which can store diverse types of data, such as decimals, boolean data type, or arrays. This article focuses on strings and its usage in ClickHouse. Discover key functions and data type conversions required for working efficiently with strings in ClickHouse.
+Aiven for ClickHouse® uses ClickHouse® databases, which can store diverse types of data, such as decimals, boolean data type, or arrays. This article focuses on strings and its usage in ClickHouse. Discover key functions and data type conversions required for working efficiently with strings in ClickHouse.
 
 About strings in ClickHouse
 ---------------------------
@@ -49,3 +49,14 @@ ClickHouse supports a wide range of functions for working with JSON. With specif
 
     ``toJSONString``
       Convert a value of any data type to its JSON representation.
+
+More supported data types
+-------------------------
+
+Some other useful data types supported in Aiven for ClickHouse are 
+
+* `Parquet <https://parquet.apache.org/>`_
+    Column-oriented data format, efficient when accessing and reading specific fields and fast when searching for a specific data item
+* `Avro <https://avro.apache.org/>`_
+    Row-based data format (stores all the fields for each record together), used for storing, serializing, and transmitting data over messaging systems (for example, Apache Kafka®) 
+* JSONAsObject
