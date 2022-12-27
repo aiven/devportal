@@ -1,12 +1,12 @@
-String data type in Aiven for Clickhouse®
+String data type in Aiven for ClickHouse®
 =========================================
 
-Aiven for Clickhouse® uses ClickHouse databases, which can store diverse types of data, such as decimals, booleans, or arrays. This article focuses on strings and its usage in ClickHouse. Discover key functions and data type conversions required for working efficiently with strings in ClickHouse.
+Aiven for Clickhouse® uses ClickHouse® databases, which can store diverse types of data, such as decimals, boolean data type, or arrays. This article focuses on strings and its usage in ClickHouse. Discover key functions and data type conversions required for working efficiently with strings in ClickHouse.
 
 About strings in ClickHouse
 ---------------------------
 
-ClickHouse allows strings of any length. Strings can contain an arbitrary amount of bytes, which are stored and output as-is. The string type replaces the types VARCHAR, BLOB, CLOB, and others from other DBMSs. When creating tables, numeric parameters for string fields can be set (for example, TEXT(140)), but are ignored.
+ClickHouse allows strings of any length. Strings can contain an arbitrary amount of bytes, which are stored and output as-is. The string type replaces the types VARCHAR, BLOB, CLOB, and others from other DBMS. When creating tables, numeric parameters for string fields can be set (for example, TEXT(140)), but are ignored.
 
 ClickHouse supports the following aliases for strings: LONGTEXT, MEDIUMTEXT, TINYTEXT, TEXT, LONGBLOB, MEDIUMBLOB, TINYBLOB, BLOB, VARCHAR, CHAR.
 
