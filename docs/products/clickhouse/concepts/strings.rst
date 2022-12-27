@@ -1,25 +1,29 @@
 String data type in Aiven for Clickhouse®
 =========================================
 
-ClickHouse databases can store diverse types of data, such as decimals, booleans, or arrays. This article focuses on strings and its usage in Aiven for ClickHouse. Discover key functions and data type conversions required for working efficiently with strings in Aiven for ClickHouse.
+ClickHouse databases can store diverse types of data, such as decimals, booleans, or arrays. This article focuses on strings and its usage in ClickHouse. Discover key functions and data type conversions required for working efficiently with strings in ClickHouse.
 
 About strings in ClickHouse
 ---------------------------
 
-Aiven for ClickHouse allows strings of any length. Strings can contain an arbitrary amount of bytes, which are stored and output as-is. The String type replaces the types VARCHAR, BLOB, CLOB, and others from other DBMSs. When creating tables, numeric parameters for string fields can be set (e.g. TEXT(140)), but are ignored.
-Aiven for ClickHouse supports the following aliases for strings: LONGTEXT, MEDIUMTEXT, TINYTEXT, TEXT, LONGBLOB, MEDIUMBLOB, TINYBLOB, BLOB, VARCHAR, CHAR.
+ClickHouse allows strings of any length. Strings can contain an arbitrary amount of bytes, which are stored and output as-is. The string type replaces the types VARCHAR, BLOB, CLOB, and others from other DBMSs. When creating tables, numeric parameters for string fields can be set (e.g. TEXT(140)), but are ignored.
+
+ClickHouse supports the following aliases for strings: LONGTEXT, MEDIUMTEXT, TINYTEXT, TEXT, LONGBLOB, MEDIUMBLOB, TINYBLOB, BLOB, VARCHAR, CHAR.
 
 String handling functions
 -------------------------
 
-* `Functions for Working with Strings <https://clickhouse.com/docs/en/sql-reference/functions/string-functions/>`_
+* `Functions for working with strings <https://clickhouse.com/docs/en/sql-reference/functions/string-functions/>`_
 
-* `Functions for Searching in Strings <https://clickhouse.com/docs/en/sql-reference/functions/string-search-functions>`_
-The search is case-sensitive by default in all these functions. There are separate variants for case insensitive search.
+* `Functions for searching in strings <https://clickhouse.com/docs/en/sql-reference/functions/string-search-functions>`_
 
-* `Functions for Searching and Replacing in Strings <https://clickhouse.com/docs/en/sql-reference/functions/string-replace-functions>`_
+  .. note::
+    
+    By default, the search is case-sensitive in these functions, but case-insensitive search variants are also available.
 
-* `Functions for Splitting and Merging Strings and Arrays <https://clickhouse.com/docs/en/sql-reference/functions/splitting-merging-functions>`_
+* `Functions for searching and replacing in strings <https://clickhouse.com/docs/en/sql-reference/functions/string-replace-functions>`_
+
+* `Functions for splitting and merging strings and arrays <https://clickhouse.com/docs/en/sql-reference/functions/splitting-merging-functions>`_
 
 String conversions
 ------------------
