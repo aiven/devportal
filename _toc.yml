@@ -609,6 +609,8 @@ entries:
             title: Databases and tables
           - file: docs/products/clickhouse/concepts/columnar-databases
           - file: docs/products/clickhouse/concepts/indexing
+          - file: docs/products/clickhouse/concepts/strings
+            title: Strings
       - file: docs/products/clickhouse/howto
         title: HowTo
         entries:
