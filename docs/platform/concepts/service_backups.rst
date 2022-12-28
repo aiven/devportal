@@ -1,7 +1,7 @@
 Backups at Aiven
 ================
 
-This article provides information on general rules for handling service backups in Aiven. It also covers service-specific backup details, such as backup frequency and retention period per service. Learn about our backup-restore strategies for powering-off/on services and find out if Aiven allos accessing backups.
+This article provides information on general rules for handling service backups in Aiven. It also covers service-specific backup details, such as backup frequency and retention period per service. Learn about our backup-restore strategies for powering-off/on services and find out if Aiven allows accessing backups.
 
 About backups at Aiven
 ----------------------
@@ -116,12 +116,13 @@ We automatically backup InfluxDB®, encrypt it and then upload it to our S3 acco
 Access to backups
 -----------------
 
-The Aiven platform provides a centralised, managed platform for the services outlined above to run across many different cloud providers and regions. Tooling that we have built to provide these backups are open source and available for you to use in your own infrastructure. 
+The Aiven platform provides a centralised managed platform for Aiven services to run across many different cloud providers and regions. Tooling that built to provide the service backups are open source and available for you to use in your own infrastructure. 
 
-The nature of the Aiven platform is to manage the operational tasks of running complex software at scale so that you are able to focus your efforts on using the services, not maintaining them. This means that we take care of the availability, security, connectivity and backups.
-Access to backups of your services is not possible. The backups are encrypted and stored in object storage. If you do need to backup your services, this can be done with the standard tooling for that service. Below, we provide a list of the backup tools used for each service type.
+The nature of the Aiven platform is to manage the operational tasks of running complex software at scale so that you are able to focus your efforts on using the services, not maintaining them. Aiven takes care of service availability, security, connectivity, and backups.
 
-Note that these tools are merely recommendations and not intended to create a snapshot of your Aiven service; purely to provide access to the data.
+Access to backups of your services is not possible. The backups are encrypted and stored in the object storage. If you do need to backup your service, you can use the standard tooling for this service.
+
+Recommended backup tools per service are as follows:
 
 - `PostgreSQL <https://www.postgresql.org/docs/14/app-pgdump.html>`__: ``pgdump``
 - `MySQL <https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html>`_: ``mysqldump``
@@ -129,3 +130,7 @@ Note that these tools are merely recommendations and not intended to create a sn
 - `Cassandra <https://docs.datastax.com/en/archived/cql/3.3/cql/cql_reference/cqlshCopy.html>`_: ``cqlsh`` 
 - `OpenSearch <https://github.com/elasticsearch-dump/elasticsearch-dump>`_: ``elasticdump``
 - `InfluxDB <https://docs.influxdata.com/influxdb/v1.8/tools/influx-cli/>`_: ``influxd``
+
+.. note::
+    
+    The listed backup tools are merely recommendations and are not intended to create a snapshot of your Aiven service but to provide access to the data.
