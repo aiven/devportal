@@ -1,17 +1,28 @@
 Backups at Aiven
 ================
 
-All Aiven services, except for Apache Kafka® and M3 Aggregator/Coordinator, have time-based backups that are encrypted and securely stored. The backup retention times vary based on the service and the selected service plan. Backups we take for managing the service are not available for download for any service type, as they are compressed and encrypted by our management platform.
+This article provides information on general rules for handling service backups in Aiven. It also covers service-specific backup details, such as backup frequency and retention period per service. Learn about our backup-restore strategies for powering-off/on services and find out if Aiven allos accessing backups.
+
+About backups at Aiven
+----------------------
+
+All Aiven services, except for Apache Kafka® and M3 Aggregator/Coordinator, have time-based backups that are encrypted and securely stored. The backup retention times vary based on the service and the selected service plan. Backups we take for managing the service are not available for download for any service type as they are compressed and encrypted by our management platform.
+
+Service power-off/on backup policy
+------------------------------------
 
 Whenever a service is powered on from a powered-off state, we restore the latest backup available.
 
-We review any services that are powered off for longer than 180 days. We will send you a notification email in advance to take action before we perform house cleaning and delete the service and backup as part of `periodic cleanup of powered-off services <https://help.aiven.io/en/articles/4578430-periodic-cleanup-of-powered-off-services>`__. If you would still like to keep the powered off service for longer than 180 days, you can avoid this routine cleanup by powering on the service and then powering it back off again.
+We review any services that are powered off for longer than 180 days. We will send you a notification email in advance to take action before we perform house cleaning and delete the service and backup as part of `periodic cleanup of powered-off services <https://help.aiven.io/en/articles/4578430-periodic-cleanup-of-powered-off-services>`__. If you would still like to keep the powered off service for longer than 180 days, you can avoid this routine cleanup by powering on the service and then powering it back off.
 
-Depending on the service plan, each service provides different backups with different retention periods:
+Backup profile per service
+--------------------------
+
+Depending on the service plan, each service provides different backups with different retention periods. Check out the hourly and daily backups with the number of days of retention provided in the table.
 
 +---------------------------------------+------------------------------------------+---------------------------------------------------------+--------------------------------------------------------+--------------------------------------------------------+
-|                                       | Backup Retention Time based on Service Plan                                                                                                                                                                          |
-+ Service Type                          +------------------------------------------+---------------------------------------------------------+--------------------------------------------------------+--------------------------------------------------------+
+|                                       | Backup retention time based on service Plan                                                                                                                                                                          |
++ Service type                          +------------------------------------------+---------------------------------------------------------+--------------------------------------------------------+--------------------------------------------------------+
 |                                       | Hobbyist                                 | Startup                                                 | Business                                               | Premium                                                |
 +=======================================+==========================================+=========================================================+========================================================+========================================================+
 | Aiven for Apache Kafka®               | No backups                               | No backups                                              | No backups                                             | No backups                                             |
@@ -34,14 +45,13 @@ Depending on the service plan, each service provides different backups with diff
 +---------------------------------------+------------------------------------------+---------------------------------------------------------+--------------------------------------------------------+--------------------------------------------------------+
 | Aiven for Grafana®                    | Plan not available                       | Backup every 1 hour up to 1 day                         | Plan not available                                     | Plan not available                                     |
 +---------------------------------------+------------------------------------------+---------------------------------------------------------+--------------------------------------------------------+--------------------------------------------------------+
-| Aiven for ClickHouse®                 | Daily backups up to 2 days               | Daily backups up to 2 days                              | Daily backups up to 14 days                            | Daily backups up to 30 days                                     |
+| Aiven for ClickHouse®                 | Daily backups up to 2 days               | Daily backups up to 2 days                              | Daily backups up to 14 days                            | Daily backups up to 30 days                            |
 +---------------------------------------+------------------------------------------+---------------------------------------------------------+--------------------------------------------------------+--------------------------------------------------------+
 
-The above table describes only the hourly and daily backups with the number of days of retention. The following section deals with more specific backup strategies for particular service types.
-
+There are specific backup strategies for particular service types.
 
 Aiven for Apache Kafka®
-''''''''''''''''''''''''''''''
+'''''''''''''''''''''''
 We do not take backups and data durability is determined by the replication of data across the cluster, as in general it's more often used as a transport for data rather than a permanent store and the way Kafka stores data does not really allow reasonable backup to be implemented using traditional backup strategies.
 
 To back up data passing through Kafka, we recommend setting up :doc:`MirrorMaker 2<../../products/kafka/kafka-mirrormaker>` to replicate the data to another cluster, which could be an Aiven service or a Kafka cluster on your own infrastructure.
@@ -71,7 +81,7 @@ For more information refer to
 - :doc:`Create and use read-only replicas </docs/products/postgresql/howto/create-read-replica>`
 
 Aiven for MySQL
-'''''''''''''''''''''
+'''''''''''''''
 These databases are automatically backed-up, with full backups daily, and binary logs recorded continuously. All backups are encrypted. We use the open source `myhoard <https://github.com/aiven/myhoard>`_ software to do this.
 Myhoard uses `Percona XtraBackup <https://www.percona.com/>`_ internally for taking a full (or incremental) snapshot for MySQL.
 
@@ -80,7 +90,7 @@ You may modify the backup time configuration option in **Advanced Configuration*
 For more information refer to :doc:`MySQL Backups </docs/products/mysql/concepts/mysql-backups>`.
 
 Aiven for OpenSearch®
-''''''''''''''''''''''''''''
+'''''''''''''''''''''
 These databases are automatically backed up, encrypted, and stored securely in object storage. The backups are taken every hour and the retention period varies based on the service plan.
 
 For more information refer to
@@ -92,9 +102,8 @@ Aiven for Apache Cassandra®
 '''''''''''''''''''''''''''
 We currently support backups taken every 24 hours. The PITR feature is currently not available. Please contact support if you would to be notified once the PITR feature is available for Cassandra.
 
-
 Aiven for Redis®*
-''''''''''''''''''''''''
+'''''''''''''''''
 We offer backups that are taken every 12 hours, and for persistence we support **RBD** (Redis Database Backup). The persistence feature can be controlled by ``redis_persistence`` under **Advanced Configuration**. AOF persistence is currently not supported by the Aiven for Redis service.
 
 When persistence is set to ``rdb``, Redis does RDB dumps every 10 minutes if any key is changed. Also, RDB dumps are done according to the backup schedule for backup purposes. When persistence is ``off``, no RDB dumps or backups are done, so data can be lost at any moment if the service is restarted for any reason or if the service is powered off. This also means the service can't be forked.
@@ -104,15 +113,15 @@ Aiven for InfluxDB®
 We offer backups that are taken every 12 hours with 2.5 days of retention. 
 We automatically backup InfluxDB®, encrypt it and then upload it to our S3 account in the same region. When an instance has to be rebuilt, we download the backup and restore it to create the new instance.
 
-
 Access to backups
-'''''''''''''''''
+-----------------
+
 The Aiven platform provides a centralised, managed platform for the services outlined above to run across many different cloud providers and regions. Tooling that we have built to provide these backups are open source and available for you to use in your own infrastructure. 
 
 The nature of the Aiven platform is to manage the operational tasks of running complex software at scale so that you are able to focus your efforts on using the services, not maintaining them. This means that we take care of the availability, security, connectivity and backups.
 Access to backups of your services is not possible. The backups are encrypted and stored in object storage. If you do need to backup your services, this can be done with the standard tooling for that service. Below, we provide a list of the backup tools used for each service type.
 
-Please note that these tools are merely recommendations and not intended to create a snapshot of your Aiven service; purely to provide access to the data.
+Note that these tools are merely recommendations and not intended to create a snapshot of your Aiven service; purely to provide access to the data.
 
 - `PostgreSQL <https://www.postgresql.org/docs/14/app-pgdump.html>`__: ``pgdump``
 - `MySQL <https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html>`_: ``mysqldump``
