@@ -6,11 +6,11 @@ Aiven for ClickHouse® uses ClickHouse® databases, which can store diverse type
 About strings in ClickHouse
 ---------------------------
 
-ClickHouse allows strings of any length. Strings can contain an arbitrary amount of bytes, which are stored and output as-is. The string type replaces the types VARCHAR, BLOB, CLOB, and others from other DBMS. When creating tables, numeric parameters for string fields can be set (for example, TEXT(140)), but are ignored.
+ClickHouse allows strings of any length. Strings can contain an arbitrary amount of bytes, which are stored and output as-is. The string type replaces the types VARCHAR, BLOB, CLOB, and others from other database management systems (DBMS). When creating tables, numeric parameters for string fields can be set (for example, TEXT(140)) but are ignored.
 
 ClickHouse supports the following aliases for strings: LONGTEXT, MEDIUMTEXT, TINYTEXT, TEXT, LONGBLOB, MEDIUMBLOB, TINYBLOB, BLOB, VARCHAR, CHAR.
 
-String handling functions
+String-handling functions
 -------------------------
 
 * `Functions for working with strings <https://clickhouse.com/docs/en/sql-reference/functions/string-functions/>`_
@@ -28,10 +28,10 @@ String handling functions
 String conversions
 ------------------
 
-Any plain string types can be cast to different types using functions in `Type Conversion Functions <https://clickhouse.com/docs/en/sql-reference/functions/type-conversion-functions>`_.
+Any plain string type can be cast to a different type using functions in `Type Conversion Functions <https://clickhouse.com/docs/en/sql-reference/functions/type-conversion-functions>`_.
 
-String and JSON
----------------
+Strings and JSON
+----------------
 
 ClickHouse supports a wide range of functions for working with JSON. With specific functions, you can use strings for extracting JSON.
 
