@@ -230,6 +230,8 @@ entries:
               title: Apache Kafka MongoDB Source Connector
             - file: docs/tools/terraform/reference/cookbook/kafka-debezium-postgres-source
               title: Debezium Source Connector across clouds
+            - file: docs/tools/terraform/reference/cookbook/kafka-topics-http-connector-recipe.rst
+              title: Apache Kafka with topics and HTTP sink connector
             - file: docs/tools/terraform/reference/cookbook/kafka-custom-conf-recipe.rst
               title: Apache Kafka with custom configurations  
             - file: docs/tools/terraform/reference/cookbook/m3db-m3agg-recipe
