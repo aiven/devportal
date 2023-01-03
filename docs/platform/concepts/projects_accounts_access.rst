@@ -114,10 +114,17 @@ Best practices for organizations
 ---------------------------------
 
 **Small organizations**
-Smaller organizations that have a limited number of projects, we recommend consolidating these within one organization. 
+
+For smaller organizations that have a limited number of projects we recommend consolidating all of your projects within one organization. This will make it easier for your teams to navigate between projects and services.
+
+Good naming conventions also help with finding projects and services. For example, you can include the environment type - ``dev``, ``prod``, etc. - at the beginning of project names.
 
 **Medium and large organizations**
-For more complex cases, it's helpful to take advantage of the organizational units. Org units let you collect together related projects by, for example, your internal departments or other categories like testing, staging, and production environments. 
+
+For more complex cases, it's helpful to take advantage of the organizational units. Organizational units let you collect together related projects. 
+
+You could, for example, group projects into organizational units that correspond to your internal departments. Alternatively, you could group them by categories like testing, staging, and production environments. 
 
 **Enterprise organizations**
-For enterprise organizations, it's best to use organizations to group organizational units. By keeping all of your projects in organizational units you can define teams, support contracts, and billing groups for each org unit.
+
+For enterprise organizations, it's best to keep all of your projects in organizational units instead of organizations. Organizations group related organizational units together. By keeping all of your projects in organizational units you can define teams, support contracts, and billing groups for each org unit.
