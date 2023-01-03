@@ -49,22 +49,17 @@ Smaller teams usually favor direct access, while larger teams favor RBAC to simp
 
     graph LR;
 
-        User-- Direct access --> Project;
-        User-- RBAC --> Team;
-        Organization-->Team & B["Org unit"];
-        B["Org unit"]-->Team;
-        Team-->Project;
-        Project-->Service;
-
-Aiven organizations help you organize and manage your projects and services. Within organizations you can have organizational units. The services you create are collected in projects, and each project can be in an organization or an organizational unit. 
-
-You can use organizations and teams within the Aiven platform to implement :doc:`SAML single sign-on (SSO) </docs/platform/howto/list-saml>`` using an identity provider such as Okta, GSuite, or AzureAD. For greater security, you may want to use a combination of SAML and RBAC regardless of the size of team.
-
+        User -- Direct access --> Project;
+        User -- RBAC --> Team;
+        Organization--> Team & B["Org unit"];
+        B["Org unit"]--> Team;
+        Team --> Project;
+        Project --> Service;
 
 Project members and roles
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can invite people to work with you on a project, but you may not always want to give them the same access that you have. You can define different levels of access for each projects member using roles:
+You can define different levels of access for each project member using roles:
 
 * **Administrator**: Can change and view billing information, remove members, and create, edit, and delete services. When you create a project, you automatically receive this access level. 
 
@@ -109,12 +104,11 @@ You can invite people to work with you on a project, but you may not always want
 Teams
 ~~~~~
 
-You can also use teams within organizations or org unitsto control access to projects for a group of users instead of specifying them per project. When you create a team, you choose which projects to associate it to and define the roles.
+You can also use teams within organizations or org units to control access to projects for a group of users instead of specifying them per project. When you create a team, you choose which projects to associate it to and define the roles.
 
-One example of this is to grant read-only access to all projects in an organization or org unit for a team of external contractors. You can use a mix of team and individual access rights for projects.
+One example of this is to grant read-only access to all projects in an organization or org unit for a team of external contractors. The Aiven platform lets you use a mix of team and individual access rights for projects.
 
-.. important::
-    When you create an organization, you are automatically added to a default team that has administrative access to the organization. You can still define additional access levels to the organization’s projects.
+Another option is to set up :doc:`SAML single sign-on (SSO) </docs/platform/howto/list-saml>` for an organization that automatically adds users to a team when they sign up. For greater security, you may want to use a combination of SAML and RBAC regardless of the size of team.
 
 Best practices for organizations
 ---------------------------------
