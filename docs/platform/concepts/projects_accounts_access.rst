@@ -27,7 +27,7 @@ Grouping your projects in organizations and org units lets you centrally manage 
 Projects
 --------
 
-Projects are a collection of services and user permissions. You can group your services however you see fit. Each project must have a unique name within an organization. Some examples that we have seen:
+Projects are collections of services and user permissions. Each project must have a unique name within an organization. You can group your services however you see fit. These are some examples of how customers organize their services:
 
 * Single project: One project containing services that are distinguished by their names. For example, services are named based on the type of environment: ``demo_pg_project.postgres-prod`` and ``demo_pg_project.postgres-staging``.
 
