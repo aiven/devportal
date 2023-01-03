@@ -8,15 +8,15 @@ Organizations and organizational units
 
 Organizations and organizational units are collections of projects. When you sign up to Aiven, an organization is created for you.
 
-You can use these to create a hierarchical structure that fits your needs. Organizational units (or org units) can be added to an organization. They can also be used to group projects. This gives you greater flexibility to organize your setup to meet your specific use cases. For example, you can easily split production and testing workloads into different org units that are in the same organization. 
+You can use these to create a hierarchical structure that fits your needs. Organizational units (or org units) can be nested within an organization, adding another level to group your projects. This gives you greater flexibility to organize your setup to meet your specific use cases. For example, you can easily split production and testing workloads into different org units that are in the same organization. 
 
-Having these centralized entities lets you manage settings like:
+Grouping your projects in organizations and org units lets you centrally manage settings like:
 
 * Authentication methods - Only available on the organization level
 
 * ACLs - Can be set on all levels (organization, organizational unit, and project)
 
-  * Plan enablement ACsL are inherited, meaning all projects within an organization or organizational unit will have the same service plan.
+  * Plan enablement ACLs are inherited, meaning all projects within an organization or organizational unit will have the same service plan.
 
 * Teams - Specific to a single organization or organizational unit and cannot be shared between them
 
