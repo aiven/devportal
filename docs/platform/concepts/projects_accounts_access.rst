@@ -127,4 +127,4 @@ You could, for example, group projects into organizational units that correspond
 
 **Enterprise organizations**
 
-For enterprise organizations, it's best to keep all of your projects in organizational units instead of organizations. Organizations group related organizational units together. By keeping all of your projects in organizational units you can define teams, support contracts, and billing groups for each org unit.
+For enterprise organizations, it's best to keep all of your projects in organizational units instead of organizations. By keeping all of your projects in organizational units you can define teams, support contracts, and billing groups for each group of projects.
