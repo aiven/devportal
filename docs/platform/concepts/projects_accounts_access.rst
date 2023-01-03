@@ -1,7 +1,7 @@
 Organizations, projects, and managing access permissions
 =========================================================
 
-The Aiven platform uses organizations, organizational units, and projects to organize services and access to those services.This article describes how you can use these effectively to accommodate your organization’s structure.
+The Aiven platform uses organizations, organizational units, and projects to organize services and access to those services. Learn how you can use these effectively to accommodate your organization's structure.
 
 Organizations and organizational units
 ---------------------------------------
