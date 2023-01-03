@@ -1,5 +1,5 @@
-Azure virtual network peering
-=============================
+Set up Azure virtual network peering
+====================================
 
 This help article contains step-by-step instructions for setting up
 peering in Azure. See the `Using VPC

@@ -1,5 +1,5 @@
-Set Virtual Private Cloud (VPC) peering on AWS
-==============================================
+Set up Virtual Private Cloud (VPC) peering on AWS
+==================================================
 
 Once you've created a :doc:`VPC on the Aiven platform <manage-vpc-peering>`, you can follow this instruction to set up VPC peering on AWS.
 
