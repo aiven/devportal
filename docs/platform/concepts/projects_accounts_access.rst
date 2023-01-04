@@ -16,7 +16,7 @@ Grouping your projects in organizations and org units lets you centrally manage 
 
 * ACLs - Can be set on all levels (organization, organizational unit, and project)
 
-  * Plan enablement ACLs are inherited, meaning all projects within an organization or organizational unit will have the same service plan.
+  * ACLs for service plans are inherited, meaning all projects within an organization or organizational unit will have the same service plan.
 
 * Teams - Specific to a single organization or organizational unit and cannot be shared between them
 
