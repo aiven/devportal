@@ -3,7 +3,7 @@
 
 # You can set these variables from the command line, and also
 # from the environment for the first four.
-SPHINXOPTS    ?=
+SPHINXOPTS    ?= "-W"
 SPHINXBUILD   ?= sphinx-build
 ES_URL		  ?=
 PG_URL		  ?=
