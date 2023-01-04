@@ -40,7 +40,7 @@ Configure common files
 	 required_providers {
 	   aiven = {
 	     source  = "aiven/aiven"
-	     version = "~> 3.9.0"
+	     version = "~> 3.10.0"
 	   }
 	 }
        }
@@ -51,7 +51,7 @@ Configure common files
 
   .. tip::
     
-    You can set environment variable ``AIVEN_TOKEN`` for the ``api_token`` property so that you don't need to pass the ``-var-file`` flag when executing Terraform commands.
+    You can set environment variable ``TF_VAR_aiven_api_token`` for the ``api_token`` property so that you don't need to pass the ``-var-file`` flag when executing Terraform commands.
 
   2. ``variables.tf`` file
 

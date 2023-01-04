@@ -1,12 +1,13 @@
 const { Client } = require("@opensearch-project/opensearch");
 
 const client = new Client({
+  // OpenSearch service URL
   node: process.env.ES_URL,
 });
 
 const pageSize = 10;
 
-const handler = async (event) => {
+const searchHandler = async (event) => {
   try {
     const query = event.queryStringParameters.query;
     let currentPage = 1;
@@ -23,7 +24,7 @@ const handler = async (event) => {
       }
     }
 
-    let analyzer_name = "devportal_analyzer" // Needs to match what the index was created with
+    let analyzer_name = "devportal_analyzer"; // Needs to match what the index was created with
     const response = await client.search({
       index: "devportal",
       body: {
@@ -38,17 +39,17 @@ const handler = async (event) => {
                 match: {
                   source: {
                     query: "helpcenter",
-                    boost: 1
-                  }
-                }
+                    boost: 1,
+                  },
+                },
               },
               {
                 match: {
                   source: {
                     query: "devportal",
-                    boost: 2
-                  }
-                }
+                    boost: 2,
+                  },
+                },
               },
               {
                 match_phrase_prefix: {
@@ -64,7 +65,7 @@ const handler = async (event) => {
                 match: {
                   title: {
                     query: query,
-                    fuzziness: "AUTO"
+                    fuzziness: "AUTO",
                   },
                 },
               },
@@ -125,16 +126,21 @@ const handler = async (event) => {
       }),
       headers: {
         "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
       },
     };
   } catch (error) {
-    console.error(error);
-
     return {
       statusCode: 500,
-      body: "",
+      body: JSON.stringify({
+        error,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
     };
   }
 };
 
-module.exports = { handler };
+module.exports = { searchHandler };

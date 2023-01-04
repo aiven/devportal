@@ -37,6 +37,7 @@ entries:
       - file: docs/platform/concepts/service-level-agreement
       - file: docs/platform/concepts/maintenance-window
       - file: docs/platform/concepts/service-resources
+      - file: docs/platform/concepts/service-integration
     - file: docs/platform/howto
       title: HowTo
       entries:
@@ -74,6 +75,7 @@ entries:
             title: Search for services
           - file: docs/platform/howto/access-service-logs
           - file: docs/platform/howto/prepare-for-high-load
+          - file: docs/platform/howto/create-service-integration
       - file: docs/platform/howto/list-network
         title: Network management
         entries:
@@ -228,6 +230,8 @@ entries:
               title: Apache Kafka MongoDB Source Connector
             - file: docs/tools/terraform/reference/cookbook/kafka-debezium-postgres-source
               title: Debezium Source Connector across clouds
+            - file: docs/tools/terraform/reference/cookbook/kafka-topics-http-connector-recipe.rst
+              title: Apache Kafka with topics and HTTP sink connector
             - file: docs/tools/terraform/reference/cookbook/kafka-custom-conf-recipe.rst
               title: Apache Kafka with custom configurations  
             - file: docs/tools/terraform/reference/cookbook/m3db-m3agg-recipe
@@ -595,6 +599,8 @@ entries:
             title: Architecture overview
           - file: docs/products/clickhouse/reference/plans-pricing
             title: Plans and pricing
+          - file: docs/products/clickhouse/reference/limitations
+            title: Limits and limitations
       - file: docs/products/clickhouse/getting-started
         title: Quickstart
       - file: docs/products/clickhouse/concepts

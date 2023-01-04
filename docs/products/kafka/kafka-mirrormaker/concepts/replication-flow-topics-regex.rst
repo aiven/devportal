@@ -10,5 +10,5 @@ Example: topic inclusion and exclusion regular expressions
 
 If you need to define a replication flow including the topic ``warehouse.operations`` and any topic starting with ``customer.``, but excluding the topic ``customer.support`` then the following regular expression can be used:
 
-* **Topics**: ``customer\\..*`` and ``warehouse\\.operations``
-* **Topics Blacklist**: ``customer\\.support``
+* **Topics**: ``customer\..*`` and ``warehouse\.operations``
+* **Topics Blacklist**: ``customer\.support``

@@ -40,7 +40,7 @@ For this, you'd like to run an Apache Flink job and write the filtered messages 
          required_providers {
            aiven = {
              source  = "aiven/aiven"
-             version = "~> 3.9.0"
+             version = "~> 3.10.0"
            }
          }
        }
@@ -49,7 +49,7 @@ For this, you'd like to run an Apache Flink job and write the filtered messages 
          api_token = var.aiven_api_token
        }
    
-    You can also set the environment variable ``AIVEN_TOKEN`` for the ``api_token`` property. With this, you don't need to pass the ``-var-file`` flag when executing Terraform commands.
+    You can also set the environment variable ``TF_VAR_aiven_api_token`` for the ``api_token`` property. With this, you don't need to pass the ``-var-file`` flag when executing Terraform commands.
  
     2. To avoid including sensitive information in source control, the variables are defined here in the ``variables.tf`` file. You can then use a ``*.tfvars`` file with the actual values so that Terraform receives the values during runtime, and exclude it.
 
