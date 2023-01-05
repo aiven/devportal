@@ -6,6 +6,8 @@ About availability zones
 
 Availability zones (AZs) are physically isolated locations (data centers) where cloud services operate. There are multiple AZs within a region, each with independent power, cooling, and network infrastructure. The choice of AZs is usually affected by the latency/proximity to customers, compliance, SLA, redundancy/data security requirements, and cost. All AZs in a region are interconnected for an easy resource replication and application partitioning.
 
+.. _cross-zone data distro:
+
 Cross-availability-zone data distribution
 -----------------------------------------
 
