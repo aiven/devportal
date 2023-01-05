@@ -34,7 +34,7 @@ The restoration of a backup of an Aiven for ClickHouse service is performed on a
 Sharding
 --------
 
-Essentially, sharding is a technique of splitting database rows across multiple database nodes, which usually significantly increases performance. However, integrating sharding with database replication technologies, data can be replicated across shards of the sharded database. Replication at the shard level provides high availability and helps to achieve disaster recovery. A shardgroup can be replicated to one or more data centers, which improves the disaster recovery capability.
+Essentially, sharding is a technique of splitting database rows across multiple database nodes, which usually significantly increases performance. However, integrating sharding with database replication technologies, data can be replicated across shards of the sharded database. Replication at the shard level provides high availability and helps to achieve disaster recovery. A shard group can be replicated to one or more data centers, which improves the disaster recovery capability.
 
 .. note::
     
@@ -51,7 +51,7 @@ Aiven for ClickHouse has a few restrictions on the disaster recovery capability.
 
 * No backup to another region
 * No point in time recovery (PITR)
-* No support of Kafka as a service integration sink
+* No support of Apache Kafka® as a service integration sink
 * No option to write data directly to the local filesystem or S3
 
 .. seealso::
