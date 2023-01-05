@@ -1,4 +1,5 @@
-## Credit card fees
+Credit card fees
+=================
 
 The prices listed of our website and in your invoices are inclusive of all credit card and processing fees related to the charges that are visible to us and payable by us. This includes transaction fees with our credit card processor (Stripe) and the fees various card issuers charge from merchants.
 
