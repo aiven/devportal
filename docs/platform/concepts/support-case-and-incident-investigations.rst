@@ -34,8 +34,7 @@ Communication
 -------------
 
 The support team will be in contact with you for all open support cases.
-Please see `Aiven's support
-SLA's <https://help.aiven.io/en/articles/868101-aiven-support-details>`__
+Please see the `Aiven Support Services description <https://aiven.io/support-services>`__
 and reach out if you have any questions. Providing the information above
 helps with investigations and decrease time to recovery. Your account
 team will be notified if you are on a paid support plan.
