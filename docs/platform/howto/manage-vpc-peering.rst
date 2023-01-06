@@ -20,7 +20,7 @@ To set up VPC peering for your Aiven project:
 
    .. note::
 
-       You'll need either an **admin** or an **operator** user role to be able to create a VPC. For more information about Aiven project members and roles, refer to :doc:`projects, accounts, and managing access permissions </docs/platform/concepts/projects_accounts_access>`.  
+       You'll need either an **admin** or an **operator** user role to be able to create a VPC. For more information about Aiven project members and roles, refer to :doc:`Organizations, projects, and managing access permissions </docs/platform/concepts/projects_accounts_access>`.  
 
 4. Enter the IP range that you want to use for the VPC connection.  Use an IP range that does not overlap with any networks that you want to connect via VPC peering. For example, if your own networks use the range `10.0.0.0/8`, you could set the range for your Aiven project's VPC to `192.168.0.0/24`.
 
