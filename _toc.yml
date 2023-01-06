@@ -101,6 +101,7 @@ entries:
         entries:
           - file: docs/platform/howto/manage-payment-card
           - file: docs/platform/howto/use-billing-groups
+          - file: docs/platform/howto/use-billing-groups-via-cli
           - file: docs/platform/howto/change-billing-contact
           - file: docs/platform/howto/payment-issues-plan-upgrades
           - file: docs/platform/howto/custom-plans

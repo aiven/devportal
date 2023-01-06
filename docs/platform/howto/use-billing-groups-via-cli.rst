@@ -23,11 +23,15 @@ Start by listing your projects and billing groups:
 
     $ avn project list
 
-    
+.. image:: /images/platform/billing/user-billing-groups-via_cli_image1.png
+    :alt: list of projects
 
 ::
 
     $ avn billing-group list
+
+.. image:: /images/platform/billing/user-billing-groups-via_cli_image2.png
+    :alt: list of billing-groups
 
 In this case, we have two projects, and can see that there's a billing group for each. We have already configured billing information (credit card etc.) for project 'test', and would like 'another-project' to appear in the same invoice, and to be charged from the same card. 
 
@@ -41,6 +45,9 @@ The solution is to assign all of you projects to a single billing group, one by 
     $ avn billing-group assign-projects d30c8013-3712-45eb-ab93-371e8f47263d another-project
     $ avn billing-group get d30c8013-3712-45eb-ab93-371e8f47263d --verbose
 
+.. image:: /images/platform/billing/user-billing-groups-via_cli_image3.png
+    :alt: details of billing-group d30c8013-3712-45eb-ab93-371e8f47263d
+
 And that's it! When the month ends, you'll only receive a single invoice, containing both of your projects. Your credit card, if you're paying with a card, will only be charged once.
 
 Pretty names for billing groups
@@ -51,6 +58,10 @@ We can also give our billing group a nicer name if we want to, and finally delet
 ::
     $ avn billing-group update d30c8013-3712-45eb-ab93-371e8f47263d --name "My consolidated invoice" 
     $ avn billing-group list
+    $ avn billing-group delete d30c8013-3712-45eb-ab93-371e8f47263d
+
+.. image:: /images/platform/billing/user-billing-groups-via_cli_image4.png
+    :alt: details of command the three above commands
 
 If we later decide we'd like to have separate invoices after all, we can create a new billing group and assign one of the projects to it.
 
@@ -66,6 +77,9 @@ First, find out the ID of the billing group that should hold the new project:
 ::
     $ avn billing-group list BILLING_GROUP_ID BILLING_GROUP_NAME
 
+.. image:: /images/platform/billing/user-billing-groups-via_cli_image5.png
+    :alt: list of the  BILLING_GROUP_ID BILLING_GROUP_NAME and ACCOUNT_NAME
+
 Create your project, giving the ID of your billing group:
 
 ::
@@ -75,6 +89,9 @@ And when you now query the details of your billing group, your new project is a 
 
 ::
     $ avn billing-group get d30c8013-3712-45eb-ab93-371e8f47263d --verbose 
+
+.. image:: /images/platform/billing/user-billing-groups-via_cli_image6.png
+    :alt: details of billing-group
 
 Permissions
 ===========
@@ -106,8 +123,14 @@ and anything else that requires details beyond the total amount of the invoice.
 ::
     $ avn billing-group invoice-list d30c8013-3712-45eb-ab93-371e8f47263d 
 
+.. image:: /images/platform/billing/user-billing-groups-via_cli_image7.png
+    :alt: list of invoices for billing-group d30c8013-3712-45eb-ab93-371e8f47263d 
+
 ::
     $ avn billing-group invoice-lines d30c8013-3712-45eb-ab93-371e8f47263d f3397-1
+
+.. image:: /images/platform/billing/user-billing-groups-via_cli_image8.png
+    :alt: Invoice lines of an invoice
 
 Lines which correspond to a time interval (such as service_charge lines) have timestamp_begin and timestamp_end set. This interval is always fully within the billing month; if a service remains powered on during an interval that spans several months, the cost is split between separate lines on each month's invoice.
 
