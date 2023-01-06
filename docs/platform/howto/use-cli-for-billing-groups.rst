@@ -1,5 +1,5 @@
-Manage billing groups in the Aiven Console
-==========================================
+Manage billing groups via CLI
+=============================
 
 .. note::
     Please ensure that you have the latest version of Aiven Client.
