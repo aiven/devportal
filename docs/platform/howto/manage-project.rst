@@ -59,11 +59,15 @@ To move a project from one organization or organizational unit to another:
 Delete a project
 ----------------
 
-In order to delete a project, you need to removes the services in it first. Once all the services are removed:
+To delete a project, you first need to delete all of the services in it. Once the services are deleted:
 
-1. Select the project from the **Project** drop down.
-2. Click on **Settings**.
-3. Click on **Remove project**. 
+#. Select the project from the **Projects** drop down.
+
+#. Click **Settings**.
+
+#. Click **Delete project**. 
+
+#. Click **Confirm**.
 
 .. note::
-    You can :ref:`delete a project using the Aiven CLI <avn-delete-project>` as well.
+    You can also :ref:`delete a project using the Aiven CLI <avn-delete-project>`.
