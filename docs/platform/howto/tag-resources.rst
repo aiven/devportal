@@ -25,7 +25,7 @@ Add tags to projects
 
 You can add billing reference tags or project tags to projects. 
 
-Billing reference tags are returned in the Invoice API. They are also displayed on PDF invoices for the project. Project tags are returned for resources in the API and are also displayed in the list of projects for an account.
+Billing reference tags are returned in the Invoice API. They are also displayed on PDF invoices for the project. Project tags are returned for resources in the API and are also displayed in the list of projects.
 
 To add tags to a project: 
 
