@@ -1,10 +1,10 @@
 Aiven Console
 =============
 
-The `Aiven Console <https://console.aiven.io>`_ gives you access to create and manage Aiven services, update your user profile, manage account settings, set up billing groups, view invoices, and more. This article provides an overview of the main areas in the Aiven Console:
+The `Aiven Console <https://console.aiven.io>`_ gives you access to create and manage Aiven services, update your user profile, manage settings across projects, set up billing groups, view invoices, and more. This article provides an overview of the main areas in the Aiven Console:
 
 - User profile
-- Account settings
+- Organization and organizational unit settings
 - Projects and services
 - Billing groups
 
@@ -38,22 +38,22 @@ Payment cards
 """""""""""""
 In the **Payment Options** section, you can :doc:`add or update credit card details </docs/platform/howto/manage-payment-card>`, assign projects to a payment method, and update the :doc:`billing contact </docs/platform/howto/change-billing-contact>`.
 
-Account settings
------------------
+Organization and organizational unit settings
+----------------------------------------------
 
-The account you are currently working with is displayed at the top of the page. You can switch accounts by clicking the account name to open the drop-down menu. You can also create a new account from this menu.
+The organization or organizational unit (org unit) that you are currently working with is displayed at the top of the page. You can switch to another organization or org unit by clicking the name to open the drop-down menu. You can also create a new organization from this menu.
 
-If you don't have an account, click **Create account** to :doc:`create your first account</docs/tools/aiven-console/howto/create-accounts>`. 
+If you don't have an organization, click **Create organzation** to :doc:`create your first organization</docs/tools/aiven-console/howto/create-accounts>`. 
  
-.. note:: We strongly recommend creating an account. It makes managing your projects much easier and comes with many additional features, such as teams (user groups), billing groups, and SAML authentication.
+.. note:: We strongly recommend creating an organization. It makes managing your projects much easier and comes with many additional features, such as teams (user groups), billing groups, and SAML authentication.
 
-Account-level settings and options are available on the **Admin** page. Here you can:
+Organization and org unit settings are available on the **Admin** page. Here you can:
 
-* :doc:`Manage the teams</docs/tools/aiven-console/howto/create-manage-teams>` for this account
-* Create new projects for this account
-* Configure :doc:`authentication methods for the account </docs/platform/howto/list-saml>`
-* View **Event logs** of account activity such as the adding or removing of team members, changing authentication methods, and more
-* Access the account **Settings** to rename or delete an account 
+* :doc:`Manage the teams</docs/tools/aiven-console/howto/create-manage-teams>` 
+* Create new projects under an organization or org unit
+* Configure :doc:`authentication methods for an organization </docs/platform/howto/list-saml>`
+* View **Event logs** of activity such as the adding or removing of team members, changing authentication methods, and more
+* Access the **Settings** to rename or delete an organization or org unit 
 
 
 Projects and services
