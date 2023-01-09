@@ -14,7 +14,7 @@ An Aiven **Account** is the entry point for creating and managing billing groups
 
 Aiven credits are available for all projects associated with the account. You can choose to apply the credits to a specific project within the account.
 
-Create a new billing group
+Create a billing group
 --------------------------
 
 #. In the account that you want to add a billing group to, click **Billing**.
@@ -27,10 +27,10 @@ Create a new billing group
 
 #. Select the projects that you want to add to this billing group. You can also skip this and add projects later. Click **Continue**.
 
-#. Check the information on the **Summary**. You can edit the name, information, or projects by clicking **Edit**.
+#. Check the information in the **Summary** step. To make changes to any section, click **Edit**.
 
-#. When you have confirmed everything is correct, click **Create**.
+#. When you have confirmed everything is correct, click **Create &  Assign**.
 
-The costs of the projects assigned to this billing group will be consolidated into a single :doc:`invoice</docs/platform/howto/use-billing-groups>`.
+The costs of the projects assigned to a billing group are consolidated into a single :doc:`invoice</docs/platform/howto/use-billing-groups>`.
 
 
