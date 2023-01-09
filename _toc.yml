@@ -559,6 +559,19 @@ entries:
   - file: docs/products/flink
     title: Apache Flink
     entries:
+      - file: docs/products/flink/list-overview
+        title: Overview
+        entries:
+          - file: docs/products/flink/concepts/flink-features
+            title: Aiven for Apache Flink features
+          - file: docs/products/flink/concepts/managed-service-features
+            title: Managed service features overview
+          - file: docs/products/flink/concepts/flink-architecture
+            title: Architecture overview
+          - file: docs/products/flink/reference/plans-pricing
+            title: Plans and pricing
+          - file: docs/products/flink/reference/flink-limitations
+            title: Limits and limitations
       - file: docs/products/flink/getting-started
         title: Get started
       - file: docs/products/flink/concepts
