@@ -1,12 +1,11 @@
-Manage billing groups
-=====================
+Manage billing groups in the Aiven Console
+==========================================
 
-View and manage billing groups in the Aiven Console
----------------------------------------------------
+To view and manage your billing groups in the `Aiven Console <https://console.aiven.io/>`_.
 
-#. In the account that you want to manage, click **Billing**.
+#. In the account, click **Billing**.
 
-#. Click one of the listed billing groups to browse the details for that billing group.
+#. Select one of the listed billing groups to view its details.
 
 Billing group page overview
 """""""""""""""""""""""""""

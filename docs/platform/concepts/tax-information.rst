@@ -11,7 +11,7 @@ European Union
 Finnish law requires us to charge a value-added tax for services provided within the European Union (EU). 
 The value-added tax percentage depends on the domicile of the customer.
 
-For business customers in EU countries other than Finland we can apply the reverse charge mechanism of 2006/112/EC article 196 
+For business customers in EU countries other than Finland, we can apply the reverse charge mechanism of 2006/112/EC article 196 
 when a valid VAT ID :doc:`is added to the billing information </docs/platform/howto/update-tax-status>` for a billing group.
 
 United States
