@@ -70,6 +70,14 @@ Each "recipe" includes an architecture diagram and the terraform sample code you
         :shadow: md
         :margin: 2 2 0 0
 
+        :doc:`Apache Kafka with topics and HTTP sink connector <cookbook/kafka-topics-http-connector-recipe>`
+
+        |icon-kafka|
+
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
+
         :doc:`Apache Kafka MongoDB Source Connector <cookbook/kafka-mongodb-recipe>`
 
         |icon-kafka|

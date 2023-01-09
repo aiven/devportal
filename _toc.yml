@@ -106,6 +106,7 @@ entries:
           - file: docs/platform/howto/use-billing-groups
           - file: docs/platform/howto/change-billing-contact
           - file: docs/platform/howto/update-tax-status
+          - file: docs/platform/howto/billing-assign-projects
           - file: docs/platform/howto/payment-issues-plan-upgrades
           - file: docs/platform/howto/custom-plans
           - file: docs/platform/howto/billing-google-cloud-platform-marketplace-subscription
@@ -196,6 +197,8 @@ entries:
         - file: docs/tools/terraform/howto
           title: HowTo
           entries:
+            - file: docs/tools/terraform/howto/terraform-logging
+              title: Enable debug logging
             - file: docs/tools/terraform/howto/upgrade-provider-v1-v2
               title: Upgrade the Aiven Terraform Provider from v1 to v2
             - file: docs/tools/terraform/howto/upgrade-provider-v2-v3
@@ -232,6 +235,8 @@ entries:
               title: Apache Kafka MongoDB Source Connector
             - file: docs/tools/terraform/reference/cookbook/kafka-debezium-postgres-source
               title: Debezium Source Connector across clouds
+            - file: docs/tools/terraform/reference/cookbook/kafka-topics-http-connector-recipe.rst
+              title: Apache Kafka with topics and HTTP sink connector
             - file: docs/tools/terraform/reference/cookbook/kafka-custom-conf-recipe.rst
               title: Apache Kafka with custom configurations  
             - file: docs/tools/terraform/reference/cookbook/m3db-m3agg-recipe
@@ -611,6 +616,8 @@ entries:
             title: Databases and tables
           - file: docs/products/clickhouse/concepts/columnar-databases
           - file: docs/products/clickhouse/concepts/indexing
+          - file: docs/products/clickhouse/concepts/strings
+            title: Strings
       - file: docs/products/clickhouse/howto
         title: HowTo
         entries:

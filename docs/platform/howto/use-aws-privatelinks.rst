@@ -1,4 +1,4 @@
-Using AWS PrivateLink with Aiven services
+Use AWS PrivateLink with Aiven services
 =========================================
 
 AWS `PrivateLink <https://aws.amazon.com/privatelink/>`__ brings Aiven
