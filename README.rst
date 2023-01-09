@@ -25,8 +25,6 @@ Install the dependencies::
 
     pip install -r requirements.txt
 
-**Note:** If that fails because it can't install ``psycopg2-binary``, run ``brew install postgresql@14`` to install PostgreSQL 14 (or a similar command for your package manager) and then try again.
-
 Start the HTML version with::
 
     make livehtml
@@ -86,7 +84,7 @@ External links are used for external hyperlinks::
 
     `ReStructuredText <https://docutils.sourceforge.io/rst.html>`_
 
-If you get the warning ``Duplicate target name``, because of multiple links with the same label, see :doc:`Create anonymous links <docs/documentation/anonymus-links>`.
+If you get the warning ``Duplicate target name``, because of multiple links with the same label, `use an anonymous link <https://docs.aiven.io/docs/community/documentation/tips-tricks/anonymous-links.html>`_ .
 
 To link to another page on the site, use the `:doc: <https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html#cross-referencing-documents>`_ role::
 
@@ -126,35 +124,6 @@ Code samples
 Code samples should be autodetected (using `pygments <https://pygments.org/>`_) and also will automatically include the "click to copy" button in the top right thanks to `sphinx-copybutton <https://sphinx-copybutton.readthedocs.io>`_.
 
 Do not include a `$` before a command that the user should run, because it will get copied into the user's clipboard and cause the command to fail (this has been a common standard in the past).
-
-Importing content
------------------
-
-Some of the content for DevPortal came from a previous incarnation of documentation. There is an import script to help with this process.
-
-To set up the import tooling for the first time:
-
-* Install `pandoc <https://pandoc.org/>`_ and make sure the command is in your path
-* Change into the ``utils/`` directory
-* Run ``pip install -r requirements.txt``
-
-To bring in a page from the previous platform:
-
-* Run ``python import-help-article.py [paste a URL]``
-* Take the resulting ``*.rst`` file and any images, and place them as appropriate in the file structure of the project
-
-Migration status
------------------
-
-You can check the migration status from ``https://help.aiven.io/en`` articles to the ``https://docs.aiven.io/`` articles by using the ``page_stats.py`` script available in this repository. 
-
-Install the dependencies::
-
-    pip install -r requirements-dev.txt
-
-To run the ``page_status.py`` script::
-
-    python page_stats.py    
 
 License
 -------

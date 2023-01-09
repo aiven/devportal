@@ -34,7 +34,7 @@ Be sure to check out the :doc:`getting started guide <../../get-started>` to lea
          required_providers {
            aiven = {
              source  = "aiven/aiven"
-             version = ">= 3.7"
+             version = "~> 3.9.0"
            }
          }
        }
@@ -105,7 +105,7 @@ Be sure to check out the :doc:`getting started guide <../../get-started>` to lea
     maintenance_window_time = "10:00:00"
   
     m3db_user_config {
-      m3db_version = 1.1
+      m3db_version = 1.5
   
       namespaces {
         name = "my_ns1"

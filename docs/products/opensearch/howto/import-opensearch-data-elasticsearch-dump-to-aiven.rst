@@ -18,20 +18,29 @@ Prerequisites
 
 .. note::
     
-    The ``input`` and ``ouput`` can be either an OpenSearch URL or a file path (local or remote file storage). In this particular case, we are using both URLs, one from an **OpenSearch cluster** and the other one from **Aiven for OpenSearch cluster**. 
+    The ``input`` and ``ouput`` can be either an OpenSearch URI or a file path (local or remote file storage). In this particular case, we are using both URLs, one from an **OpenSearch cluster** and the other one from **Aiven for OpenSearch cluster**. 
 
 
 Here are some information you need to collect to copy your data:
 
 OpenSearch cluster:
 
-* ``INPUT_SERVICE_URI``: OpenSearch cluster URL, for e.g. ``http://opensearch-url:9243/``
+* ``INPUT_SERVICE_URI``: OpenSearch cluster URI, in the format ``https://user:password@host:port``
 * ``INPUT_INDEX_NAME``: the index that you aim to copy from your input source.
 
 Aiven for OpenSearch:
 
+* ``OUTPUT_SERVICE_URI``: your output OpenSearch service URI. You can find it in Aiven's dashboard.
 * ``OUTPUT_INDEX_NAME``: the index that you want to have in your output with the copied data.
-* ``SERVICE_URI``: OpenSearch service URI. You can find it in Aiven's dashboard.
+
+.. note::
+
+    Use ``export`` command to assign your variables in the command line before running ``elasticdump`` command. For example, suppose your ``INPUT_SERVICE_URI`` is ``myexample``:
+
+    .. code::
+
+        export INPUT_INDEX_NAME=myexample
+
 
 Import mapping
 ~~~~~~~~~~~~~~
@@ -41,8 +50,8 @@ The process of defining how a document and the fields are stored and indexed is 
 .. code-block:: shell
 
     elasticdump \
-    --input=INPUT_SERVICE_URI/INPUT_INDEX_NAME \
-    --output=SERVICE_URI/OUTPUT_INDEX_NAME \
+    --input=$INPUT_SERVICE_URI/$INPUT_INDEX_NAME \
+    --output=$OUTPUT_SERVICE_URI/$OUTPUT_INDEX_NAME \
     --type=mapping
 
 
@@ -54,8 +63,8 @@ This is how you can copy your index data from an OpenSearch cluster (can be in A
 .. code-block:: shell
 
     elasticdump \
-    --input=INPUT_SERVICE_URI/INPUT_INDEX_NAME \
-    --output=SERVICE_URI/OUTPUT_INDEX_NAME \
+    --input=$INPUT_SERVICE_URI/$INPUT_INDEX_NAME \
+    --output=$OUTPUT_SERVICE_URI/$OUTPUT_INDEX_NAME \
     --type=data
 
 When the dump is completed, you can check that the index is available in the OpenSearch service you send it to. You will be able to find it under the **Indexes** tab in your Aiven console.

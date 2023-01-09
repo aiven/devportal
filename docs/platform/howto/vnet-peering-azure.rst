@@ -11,6 +11,10 @@ instead of the Aiven cloud's public network.
 .. note:: 
    Microsoft Azure uses the term ``Virtual Network`` (VNet), which is the same as a ``Virtual Private Cloud`` (VPC). We use the terms interchangeably in this article.
 
+.. note::
+    You can create VPC peering using :doc:`Aiven Provider for Terraform </docs/tools/terraform/howto/vnet-peering-azure>` as well.
+
+
 Peer your network with the VPC
 ------------------------------
 

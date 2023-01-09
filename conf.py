@@ -4,13 +4,16 @@
 # list see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
+from dotenv import load_dotenv
+load_dotenv()
+
 # -- Path setup --------------------------------------------------------------
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
+import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
@@ -298,3 +301,8 @@ rst_epilog = """
 .. |preview| replace:: :bdg-secondary:`preview`
 
 """
+
+html_context = {
+   'api_url_search': os.getenv('API_URL_SEARCH'),
+   'api_url_create_feedback': os.getenv('API_URL_CREATE_FEEDBACK')
+}

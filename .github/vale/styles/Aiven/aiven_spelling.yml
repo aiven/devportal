@@ -4,5 +4,6 @@ message: "'%s' does not seem to be a recognised word"
 dicpath: .github/vale/dicts
 # We want to add our dictionary on top of the default dictionary
 append: true
+level: error
 dictionaries:
   - aiven

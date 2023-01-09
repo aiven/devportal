@@ -43,5 +43,5 @@ Part of the table definition includes a targeted table engine. The full list of 
 
 Additionally, **Aiven for ClickHouse** takes care of running queries in a distributed mode affecting entire cluster. In the "classical" ClickHouse the queries ``CREATE``, ``ALTER``, ``RENAME`` and ``DROP`` will only affect the server where they are run. In contrast, we ensure the proper distribution across all cluster machines behind the scenes. You don't need to remember using ``ON CLUSTER`` for every query.
 
-With this knowledge try out an example dataset described :doc:`over here <../sample-dataset>`.
+With this knowledge try out an example dataset described :doc:`over here </docs/products/clickhouse/howto/load-dataset>`.
 

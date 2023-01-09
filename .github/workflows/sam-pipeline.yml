@@ -1,0 +1,68 @@
+name: SAM Validate, Build, Test, Deploy
+on:
+  push:
+    branches:
+      - main
+      - feature/use-aws
+    paths:
+      - aws/**
+      - .github/workflows/sam-pipeline.yml
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
+      - uses: aws-actions/setup-sam@v2
+      - uses: aws-actions/configure-aws-credentials@v1-node16
+        with:
+            role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+            aws-region: ${{ secrets.AWS_REGION }}  
+      - name: SAM Validate
+        run: |
+          sam validate -t aws/template.yaml
+      - name: Configure variables
+        shell: bash
+        id: vars
+        env:
+          REPO: ${{ github.repository }}
+          HASH: ${{ github.sha }}
+          REF: ${{ github.ref }}
+        run: |
+          # Set variables
+          REPOSITORY=`echo $REPO | tr "/" "-"`
+          VERSIONKEY=${{ secrets.AWS_VERSION_KEY }}
+          ENVIRONMENT=$REPOSITORY-$VERSIONKEY-${{ secrets.AWS_REGION }}
+          # In this step we are setting variables and persistenting them
+          # into the environment so that they can be utilized in other steps
+          echo "repository=$REPOSITORY" >> $GITHUB_OUTPUT
+          echo "versionkey=$VERSION_KEY" >> $GITHUB_OUTPUT
+          echo "environment=$ENVIRONMENT" >> $GITHUB_OUTPUT
+          # Output variables to ensure their values are set correctly when ran
+          echo "The region is ${{ secrets.AWS_REGION }}"
+          echo "The repository is $REPOSITORY"
+          echo "The environment is $ENVIRONMENT"
+          echo "The version key is $VERSIONKEY"
+      # sam build
+      - name: SAM Build
+        run: sam build -t aws/template.yaml
+
+# Run Unit tests- Specify unit tests here 
+
+# sam deploy
+      - name: SAM Deploy
+        run: |
+          # Run SAM Deploy
+          sam deploy --debug --template-file .aws-sam/build/template.yaml \
+            --stack-name ${{ steps.vars.outputs.environment }} \
+            --s3-bucket ${{ steps.vars.outputs.environment }} \
+            --parameter-overrides \
+              'ParameterKey=OpenSearchURL,ParameterValue=${{ secrets.ES_URL }} \
+              ParameterKey=PostgresURL,ParameterValue=${{ secrets.PG_URL }} \
+              ParameterKey=PostgresCert,ParameterValue=${{ secrets.CA_CERT }} \
+              ParameterKey=Version,ParameterValue=${{ steps.vars.outputs.version }}' \
+            --no-fail-on-empty-changeset \
+            --capabilities CAPABILITY_IAM CAPABILITY_NAMED_IAM CAPABILITY_AUTO_EXPAND
