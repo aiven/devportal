@@ -1,9 +1,7 @@
 Assign projects to billing groups
 =================================
 
-When you create a new project, you can assign it to a billing group, which lets you :doc:`use the same payment card and consolidate costs</docs/platform/concepts/billing-groups>`. 
-
-You can also assign the project to another billing group later in the `Aiven Console <https://console.aiven.io/>`_. 
+When you create a new project, you can assign it to a billing group, which lets you :doc:`use the same payment card and consolidate costs</docs/platform/concepts/billing-groups>`. You can also assign the project to another billing group later in the `Aiven Console <https://console.aiven.io/>`_ using the instructions in this article. 
 
 .. note::
 
@@ -21,4 +19,6 @@ To assign projects to a billing group:
 
 #. Select the projects to assign to this billing group and click **Assign projects**.
 
-#. Click **Cancel** to close the dialog box. You will see the newly assigned projects listed in this billing group. 
+#. Click **Cancel** to close the dialog box. 
+
+You will see the newly assigned projects listed in this billing group. 
