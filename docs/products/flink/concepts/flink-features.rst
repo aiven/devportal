@@ -19,7 +19,7 @@ The interactive query feature in Aiven for Apache Flink allows you to preview th
 
 Built-in data flow integration with Aiven for Apache Kafka®
 -----------------------------------------------------------
-Aiven for Apache Flink provides built-in data flow integration with Aiven for Apache Kafka, allowing you to easily connect your Flink streaming applications with Apache Kafka as a source or sink for your data.
+Aiven for Apache Flink provides built-in data flow integration with Aiven for Apache Kafka®, allowing you to easily connect your Flink streaming applications with Apache Kafka as a source or sink for your data.
 
 - When you create data tables in Aiven for Apache Flink, the service provides auto-completion for finding existing topics in a connected Kafka service. 
 - You can also choose the table format when reading data from Kafka, including JSON, Apache Avro, Confluent Avro, and Debezium CDC.
