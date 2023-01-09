@@ -1,18 +1,18 @@
 Set up SAML with Auth0
 =========================
 
-SAML ( *Security Assertion Markup Language* ) is a standard for
+Security Assertion Markup Language (SAML) is a standard for
 exchanging authentication and authorization data between an identity
-provider and a service provider. To read more about SAML check the :doc:`dedicated page <saml-authentication>`.
+provider and a service provider. 
 
-The following is the procedure to setup SAML with `Auth0 <https://auth0.com/>`_.
+This article explains the steps to set up SAML for an organization in Aiven with `Auth0 <https://auth0.com/>`_. To learn more about SAML, read the :doc:`dedicated page <saml-authentication>` article.
 
 Prerequisite steps in Aiven
------------------------------------
+----------------------------
 
-1. Login to the `Aiven Console <https://console.aiven.io>`_
+1. Log in to the `Aiven Console <https://console.aiven.io>`_
 
-2. Under **Projects** in the top left, click the drop down arrow and
+2. Select **Projects** in the top left, click the drop down arrow and
 then on **See All Accounts**
 
 3. Click on the Account you want to edit or create a new one
