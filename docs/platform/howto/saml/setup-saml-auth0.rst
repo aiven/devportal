@@ -5,7 +5,7 @@ Security Assertion Markup Language (SAML) is a standard for
 exchanging authentication and authorization data between an identity
 provider and a service provider. 
 
-This article explains the steps to set up SAML for an organization in Aiven with `Auth0 <https://auth0.com/>`_. To learn more about SAML, read the :doc:`dedicated page <saml-authentication>` article.
+This article explains how to set up SAML for an organization in Aiven with `Auth0 <https://auth0.com/>`_. 
 
 Prerequisite steps in Aiven
 ----------------------------
