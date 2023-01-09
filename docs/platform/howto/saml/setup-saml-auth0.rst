@@ -50,7 +50,7 @@ Setup on Auth0
      "email": "email",
      "first_name": "first_name",
      "identity": "email",
-     "last_name": "last_name"
+     "last_name": "last_name",
      "mapUnknownClaimsAsIs": true
    }
 
