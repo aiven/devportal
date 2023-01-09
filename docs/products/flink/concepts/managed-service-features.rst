@@ -3,7 +3,7 @@ Aiven for Apache Flink® managed service features
 
 As a fully managed distributed data stream processing platform, deployable in the cloud of your choice, some of the key features of a managed Flink service include the following:
 
-Cluster Deployment mode
+Cluster deployment mode
 -----------------------
 Aiven for Apache Flink® is configured to use the `HashMap state backend <https://ci.apache.org/projects/flink/flink-docs-stable/api/java/org/apache/flink/runtime/state/hashmap/HashMapStateBackend.html>`_. This means that the `state <https://ci.apache.org/projects/flink/flink-docs-release-1.15/docs/concepts/stateful-stream-processing/#what-is-state>`_ is stored in memory, which can impact the performance of jobs that require keeping a very large state. We recommend you provision your platform accordingly.
 
@@ -38,8 +38,8 @@ Log and metrics integration to Aiven services are available for administrators t
 
 By enabling these integrations, you can:
 
-- Push service logs into an index in Aiven for OpenSearch.
-- Push service metrics to M3, InfluxDB, or PostgreSQL services on Aiven.
-- Create custom OpenSearch or Grafana dashboards to monitor the service. 
+- Push service logs into an index in Aiven for OpenSearch®.
+- Push service metrics to M3®, InfluxDB®, or PostgreSQL® services on Aiven.
+- Create custom OpenSearch or Grafana® dashboards to monitor the service. 
 
 The platform also has alert policies configured, so you are notified via email when a key metric rises above or below a threshold set, such as low memory or high CPU consumption.

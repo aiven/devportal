@@ -1,4 +1,4 @@
-Aiven for Apache Flink® Limitation
+Aiven for Apache Flink® limitation
 ==================================
 
 There are likely differences between Aiven for Apache Flink and an Apache Flink service you run yourself. This is because Aiven for Apache Flink is a fully managed service. Aiven takes care of the underlying infrastructure and configuration tasks required to run a stable and reliable Flink service. 
