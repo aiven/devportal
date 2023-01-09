@@ -55,7 +55,7 @@ entries:
           - file: docs/platform/howto/reactivate-suspended-project
           - file: docs/platform/howto/disable-platform-authentication                     
       - file: docs/platform/howto/list-account
-        title: Organization management
+        title: Organization and project management
         entries: 
           - file: docs/tools/aiven-console/howto/create-accounts
       - file: docs/platform/howto/list-service
