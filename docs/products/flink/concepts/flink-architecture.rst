@@ -1,4 +1,4 @@
-Aiven for Apache Flink® Architecture
+Aiven for Apache Flink® architecture
 ====================================
 
 Apache Flink is an open-source distributed stream processing framework that allows you to process data in real-time. At a high level, it has a runtime architecture consisting of two types of processes: a **JobManager** and one or more **TaskManager**.
@@ -13,7 +13,7 @@ The JobManager in Apache Flink consists of three main components: **ResourceMana
 
 TaskManger
 ----------
-TaskManager is responsible for executing the tasks assigned to them by the JobManager and exchanging data with other TaskManagers as needed. This direct communication between TaskManagers allows for efficient data exchange and helps improve the Flink runtime's performance.
+TaskManager is responsible for executing the tasks assigned to them by the JobManager and exchanging data with other TaskManagers as needed. This direct communication between TaskManagers allows for efficient data exchange and helps improve the Flink runtime performance.
 TaskManagers also communicate with the JobManager to report progress and request necessary resources. This enables the JobManager to monitor the progress of tasks and to allocate resources accordingly to ensure optimal performance.
 
 In addition to the JobManager and TaskManager processes, Apache Flink also has a number of other components, including **DataStream API** and **DataSet API** for submitting jobs to the Flink runtime, a configuration system for setting up and tuning the Flink runtime, and a number of libraries and connectors for working with various data sources and sinks.
