@@ -7,7 +7,7 @@ provider and a service provider. You can operate it with Aiven so that you
 and your collaborators can use your company's favorite authentication
 service.
 
-To set up a SAML authentication method with your organization's account in Aiven, there are three steps:
+To set up a SAML authentication method for your organization in Aiven, there are three steps:
 
 1. Configure the SAML authentication method in the Aiven Console
 2. Configure SAML on your Identity Provider (IdP)
@@ -18,9 +18,9 @@ To set up a SAML authentication method with your organization's account in Aiven
 Step 1. Set up the SAML authentication method in the Aiven Console
 -------------------------------------------------------------------
 
-SAML Authentication methods are configured at the account level. To configure a new one:
+SAML Authentication methods are configured at the organization level. To configure a new one:
 
-#. In the **Account**, click **Admin**.
+#. In the organization, click **Admin**.
 
 #. Select **Authentication** and click on **Add authentication method**.
 
@@ -96,12 +96,12 @@ Step 4. Log in with the SAML authentication method
 
 After the authentication method is enabled, there are 2 URLs in the **Signup and link accounts URLs** section:
 
-* **Signup URL**: For users that don't have an Aiven account to create a new Aiven user linked to the configured IdP.
+* **Signup URL**: For users that don't have an Aiven user account to create a new Aiven user linked to the configured IdP.
 * **Account link URL**: For users that already have an Aiven user account to link their existing Aiven user with the configured IdP.
 
 Send the appropriate URL to link the authentication method to a new or existing Aiven user. 
 
-When a user clicks on the link, they will be redirected to a page to link their Aiven account with the SAML account:
+When a user clicks on the link, they will be redirected to a page to link their Aiven user account with the SAML account:
 
 * For existing users that are already logged into the Aiven Console
 
