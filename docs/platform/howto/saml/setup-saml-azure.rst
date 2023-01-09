@@ -5,7 +5,7 @@ SAML ( *Security Assertion Markup Language* ) is a standard for
 exchanging authentication and authorization data between an identity
 provider and a service provider. To read more about SAML check the :doc:`dedicated page <saml-authentication>`.
 
-The following is the procedure to setup SAML with `Microsoft Azure Active Directory <https://azure.microsoft.com/en-us/services/active-directory/>`_.
+The following is the procedure to setup SAML with `Microsoft Azure Active Directory <https://azure.microsoft.com/en-us/products/active-directory/>`_.
 
 Prerequisite steps in Aiven
 ----------------------------

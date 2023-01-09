@@ -5,7 +5,7 @@ This example shows the setup for a Terraform project containing a single Redis®
 
 Prepare the dependencies 
 ''''''''''''''''''''''''
-- `Download and install Terraform <https://www.terraform.io/downloads.html>`_
+- `Download and install Terraform <https://www.terraform.io/downloads>`_
 - `Sign up <https://console.aiven.io/signup?utm_source=github&utm_medium=organic&utm_campaign=devportal&utm_content=repo>`_ for Aiven if you haven't already
 - `Generate an authentication token <https://docs.aiven.io/docs/platform/howto/create_authentication_token.html>`_
 
@@ -34,7 +34,7 @@ Add the following to a new ``provider.tf`` file:
      required_providers {
        aiven = {
          source  = "aiven/aiven"
-         version = ">= 3.1"
+         version = "~> 3.9.0"
        }
      }
    }

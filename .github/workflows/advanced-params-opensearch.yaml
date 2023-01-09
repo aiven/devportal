@@ -3,6 +3,7 @@ name: OpenSearch - Create PR to Update Advanced parameters
 on:
   schedule:
     - cron: "0 6 * * 2"
+  workflow_dispatch:
 
 jobs:
   advanced_params_opensearch:
@@ -28,6 +29,8 @@ jobs:
         uses: peter-evans/create-pull-request@v4
         with:
           commit-message: OpenSearch - Update Advanced parameters
+          committer: GitHub <noreply@github.com>
+          author: GitHub <noreply@github.com>
           title: OpenSearch - Update Advanced parameters
           body: OpenSearch - update advanced parameters file
           base: main

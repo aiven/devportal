@@ -40,7 +40,7 @@ Define the connector configurations in a file (we'll refer to it with the name `
 ::
 
     {
-        "name": "<CONECTOR_NAME>",
+        "name": "<CONNECTOR_NAME>",
         "connector.class": "io.aiven.kafka.connect.s3.AivenKafkaConnectS3SinkConnector",
         "key.converter": "org.apache.kafka.connect.converters.ByteArrayConverter"",
         "value.converter": "org.apache.kafka.connect.converters.ByteArrayConverter",
@@ -67,7 +67,7 @@ The configuration file contains the following entries:
 
 
 
-Check out the `GitHub repository parameters documentation <https://github.com/aiven/aiven-kafka-connect-s3>`_ for the full list of configuration options.
+Check out the `GitHub repository parameters documentation <https://github.com/aiven/s3-connector-for-apache-kafka>`_ for the full list of configuration options.
 
 
 Create an S3 sink connector with Aiven CLI

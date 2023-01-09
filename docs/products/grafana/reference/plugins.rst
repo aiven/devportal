@@ -23,6 +23,9 @@ Bar gauge - `Grafana Docs <https://grafana.com/docs/grafana/latest/visualization
 Candlestick - `Grafana Docs <https://grafana.com/docs/grafana/latest/visualizations/candlestick/>`__
     Shows a chart that is typically used to describe price movements of a security, derivative, or currency.
 
+Canvas - `Grafana <https://grafana.com/grafana/plugins/canvas/>`__
+    Included with Grafana. Canvas visualizations are extensible form-built panels that allow you to explicitly place elements within static and dynamic layouts. Similar to UI and web design tools you may have used before.
+
 Carpet plot - `Grafana <https://grafana.com/grafana/plugins/petrslavotinek-carpetplot-panel/>`__
     Receives data series and divides all the data into individual buckets.
 
@@ -32,7 +35,7 @@ Clock - `Grafana <https://grafana.com/grafana/plugins/grafana-clock-panel/>`__ |
 D3 Gauge - `Grafana <https://grafana.com/grafana/plugins/briangann-gauge-panel/>`__ | `GitHub <https://github.com/briangann/grafana-gauge-panel>`__
     Provides a D3-based gauge panel for Grafana 6.x/7.x
 
-Dashboard list - `Grafana <https://grafana.com/grafana/plugins/dashlist/>`__ | `Grafana Docs <http://docs.grafana.org/reference/dashlist/>`__
+Dashboard list - `Grafana <https://grafana.com/grafana/plugins/dashlist/>`__ | `Grafana Docs <https://docs.grafana.org/reference/dashlist/>`__
     Allows you to display dynamic links to other dashboards. The list can be configured to use starred dashboards, a search query and/or dashboard tags.
 
 Diagram - `Grafana <https://grafana.com/grafana/plugins/jdbranham-diagram-panel/>`__ | `GitHub <https://github.com/jdbranham/grafana-diagram>`__
@@ -53,11 +56,11 @@ Geomap
 Getting Started 
     Included with Grafana.
 
-Graph - `Grafana Docs <https://grafana.com/docs/grafana/latest/features/panels/graph/>`__
+Graph - `Grafana Docs <https://grafana.com/docs/grafana/next/panels-visualizations/visualizations//>`__
     Included with Grafana, provides a very rich set of graphing options.
 
-Heatmap - `Grafana <https://grafana.com/grafana/plugins/heatmap/>`__ | `Grafana Docs <http://docs.grafana.org/features/panels/heatmap/>`__ 
-    Allows you to view histograms over time.
+Heatmap - `Grafana <https://grafana.com/grafana/plugins/heatmap-new/>`__ | `Grafana Docs <https://docs.grafana.org/features/panels/heatmap/>`__
+    Allows you to view histograms over time. The legacy Heatmap plugin is also still available.
 
 Histogram - `Grafana <https://grafana.com/grafana/plugins/mtanda-histogram-panel/>`__ | `GitHub <https://github.com/mtanda/grafana-histogram-panel>`__
     Provides a histogram for time series data. 
@@ -71,7 +74,7 @@ News - `Grafana Docs <https://grafana.com/docs/grafana/latest/visualizations/new
 Node Graph
     Included with Grafana.
 
-Panel - `GitHub <https://github.com/NatelEnergy/grafana-plotly-panel>`__
+Panel / Plotly - `GitHub <https://github.com/NatelEnergy/grafana-plotly-panel>`__
     Render metrics using the plot.ly JavaScript framework.
 
 Pie Chart - `Grafana <https://grafana.com/grafana/plugins/grafana-piechart-panel/>`__ | `GitHub <https://github.com/grafana/piechart-panel>`__
@@ -83,7 +86,7 @@ Plugin list - `Grafana <https://grafana.com/grafana/plugins/pluginlist/>`__
 Singlestat Math - `Grafana <https://grafana.com/grafana/plugins/blackmirror1-singlestat-math-panel/>`__
     A modification of the native single stat panel to support math functions across series.
 
-Stat - `Grafana Docs <http://docs.grafana.org/reference/singlestat/>`__
+Stat - `Grafana Docs <https://docs.grafana.org/reference/singlestat/>`__
     Included with Grafana, allows you to show the one main summary stat of a SINGLE series.
 
 State timeline
@@ -113,6 +116,8 @@ Welcome
 Worldmap Panel - `GitHub <https://github.com/grafana/worldmap-panel>`__
     Displays time series data or geohash data from Elasticsearch overlaid on a world map.
 
+XY Chart - `Grafana <https://grafana.com/grafana/plugins/text/>`__
+    Native plugin that supports arbitrary X vs Y in graphs.
 
 Data source plugins
 -------------------
@@ -122,10 +127,10 @@ Altinity plugin for ClickHouse® - `GitHub <https://github.com/Altinity/clickhou
 Azure Monitor - `Grafana <https://grafana.com/grafana/plugins/grafana-azure-monitor-datasource/>`__ | `GitHub <https://github.com/grafana/azure-monitor-datasource>`__
     Provides a single source for monitoring Azure resources. 
 
-CloudWatch - `Grafana <https://grafana.com/grafana/plugins/cloudwatch/>`__ | `Grafana Docs <http://docs.grafana.org/datasources/cloudwatch/>`__
+CloudWatch - `Grafana <https://grafana.com/grafana/plugins/cloudwatch/>`__ | `Grafana Docs <https://docs.grafana.org/datasources/cloudwatch/>`__
     Build dashboards for your CloudWatch metrics.
 
-Elasticsearch - `Grafana <https://grafana.com/grafana/plugins/elasticsearch/>`__ | `Grafana Docs <http://docs.grafana.org/datasources/elasticsearch/>`__
+Elasticsearch - `Grafana <https://grafana.com/grafana/plugins/elasticsearch/>`__ | `Grafana Docs <https://docs.grafana.org/datasources/elasticsearch/>`__
     Performs Elasticsearch queries to visualize logs or metrics stored in Elasticsearch. Annotate your graphs with log events stored in Elasticsearch.
 
 GitHub - `GitHub <https://github.com/grafana/github-datasource>`__
@@ -137,10 +142,10 @@ Google BigQuery - `GitHub <https://github.com/doitintl/bigquery-grafana>`__
 Google Sheets - `Grafana <https://grafana.com/grafana/plugins/grafana-googlesheets-datasource/>`__ | `GitHub <https://github.com/grafana/google-sheets-datasource>`__
     Visualize your Google Spreadsheets in Grafana.
 
-Graphite - `Grafana <https://grafana.com/grafana/plugins/graphite/>`__ | `Grafana Docs <http://docs.grafana.org/datasources/graphite/>`__
+Graphite - `Grafana <https://grafana.com/grafana/plugins/graphite/>`__ | `Grafana Docs <https://docs.grafana.org/datasources/graphite/>`__
     Quickly navigate the metric space, add functions, change function parameters and more. 
 
-InfluxDB® - `Grafana <https://grafana.com/grafana/plugins/influxdb/>`__ | `Grafana Docs <http://docs.grafana.org/datasources/influxdb/>`__
+InfluxDB® - `Grafana <https://grafana.com/grafana/plugins/influxdb/>`__ | `Grafana Docs <https://docs.grafana.org/datasources/influxdb/>`__
 
 Instana - `Grafana <https://grafana.com/grafana/plugins/instana-datasource/>`__ | `GitHub <https://github.com/instana/instana-grafana-datasource>`__
     Shows metrics from Instana AI-Powered APM for dynamic applications.
@@ -154,22 +159,22 @@ Loki
 Microsoft SQL Server
     Grafana ships with a built-in Microsoft SQL Server (MSSQL) data source plugin that allows you to query and visualize data from any Microsoft SQL Server 2005 or newer.
 
-MySQL - `Grafana <https://grafana.com/grafana/plugins/mysql/>`__ | `Grafana Docs <http://docs.grafana.org/features/datasources/mysql/>`__
+MySQL - `Grafana <https://grafana.com/grafana/plugins/mysql/>`__ | `Grafana Docs <https://docs.grafana.org/features/datasources/mysql/>`__
     Allows you to query any visualize data from a MySQL compatible database.
 
 OpenSearch® - `Grafana <https://grafana.com/grafana/plugins/grafana-opensearch-datasource/>`__
     Runs many types of simple or complex OpenSearch queries to visualize logs or metrics stored in OpenSearch. Annotate your graphs with log events stored in OpenSearch. 
 
-OpenTSDB - `Grafana <https://grafana.com/grafana/plugins/opentsdb/>`__ | `Grafana Docs <http://docs.grafana.org/datasources/opentsdb/>`__ 
+OpenTSDB - `Grafana <https://grafana.com/grafana/plugins/opentsdb/>`__ | `Grafana Docs <https://docs.grafana.org/datasources/opentsdb/>`__
     OpenTSDB is a scalable, distributed time series database.
 
 Pagerduty - `Grafana <https://grafana.com/grafana/plugins/xginn8-pagerduty-datasource/>`__ | `GitHub <https://github.com/xginn8/grafana-pagerduty>`__
     Annotations-only datasource for Pagerduty events.
 
-PostgreSQL® - `Grafana <https://grafana.com/grafana/plugins/postgres/>`__ | `Grafana Docs <http://docs.grafana.org/features/datasources/postgres/>`__
+PostgreSQL® - `Grafana <https://grafana.com/grafana/plugins/postgres/>`__ | `Grafana Docs <https://docs.grafana.org/features/datasources/postgres/>`__
     Allows you to query and visualize data from a PostgreSQL compatible database.
 
-Prometheus - `Grafana <https://grafana.com/grafana/plugins/prometheus/>`__ | `Grafana Docs <http://docs.grafana.org/datasources/prometheus/>`__
+Prometheus - `Grafana <https://grafana.com/grafana/plugins/prometheus/>`__ | `Grafana Docs <https://docs.grafana.org/datasources/prometheus/>`__
     Work with the open-source service monitoring system and time series database.
 
 Prometheus AlertManager - `GitHub <https://github.com/camptocamp/grafana-prometheus-alertmanager-datasource>`__
@@ -194,6 +199,9 @@ Other
 -----
 Grafana Image Renderer (Renderer) - `Grafana <https://grafana.com/grafana/plugins/grafana-image-renderer/>`__ | `GitHub <https://github.com/grafana/grafana-image-renderer>`__
     Handles rendering panels and dashboards to PNGs using a headless browser (Chromium).
+
+Traces (Application) - `Grafana <https://grafana.com/grafana/plugins/grafana-enterprise-traces-app/>`__
+    Grafana Enterprise Traces (GET) is a commercial offering based on Tempo, and allows you to deploy a highly-scalable, simple, and reliable traces cluster in your own data center.
 
 worldPing - `GitHub <https://github.com/raintank/worldping-app>`__
     Continually tests, stores and alerts on the global performance and availability of your Internet applications so you can pinpoint issues.

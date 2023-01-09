@@ -1,5 +1,5 @@
-Getting started with Aiven for ClickHouse®
-==========================================
+Aiven for ClickHouse® quickstart guide
+=======================================
 
 The first step in using Aiven for ClickHouse® is to create a service and a database that you can use to try out the service. You can do this in the `Aiven web console <https://console.aiven.io/>`_.
 
@@ -46,9 +46,9 @@ Connect to ClickHouse
        --port PORT                          \
        --secure
 
-For more information on using the ClickHouse client, see :doc:`this article <howto/use-cli>`.
+For more information on using the ClickHouse client, see :doc:`this article <howto/connect-with-clickhouse-cli>`.
 
 Next steps
 ----------
 
-Now that you have your service and connection set up, see our :doc:`sample dataset article <sample-dataset>` to try out your service with actual data.
+Now that you have your service and connection set up, see our :doc:`sample dataset article </docs/products/clickhouse/howto/load-dataset>` to try out your service with actual data.

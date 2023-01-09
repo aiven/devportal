@@ -1,6 +1,6 @@
 extends: capitalization
 message: "'%s' should be in sentence case"
-level: warning
+level: error
 scope: heading
 # $title, $sentence, $lower, $upper, or a pattern.
 match: $sentence
@@ -63,6 +63,7 @@ exceptions:
   - Kafdrop
   - Kafka
   - Karapace
+  - Klaw
   - Kpow
   - ksqlDB
   - Kubernetes
@@ -101,6 +102,7 @@ exceptions:
   - Skyvia
   - Snowflake
   - Sphinx
+  - Splunk
   - Spring
   - SQL Server
   - Startup

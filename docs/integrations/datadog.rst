@@ -1,7 +1,7 @@
 Datadog and Aiven
 =================
 
-`Datadog <https://datadog.com>`_ is a monitoring platform, allowing you to keep an eye on all aspects of your cloud estate. Aiven has integrations that make it easy to include an Aiven service in your Datadog dashboards.
+`Datadog <https://datadoghq.com/>`_ is a monitoring platform, allowing you to keep an eye on all aspects of your cloud estate. Aiven has integrations that make it easy to include an Aiven service in your Datadog dashboards.
 
 Datadog for metrics
 -------------------

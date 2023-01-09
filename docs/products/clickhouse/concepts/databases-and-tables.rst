@@ -27,7 +27,7 @@ Similar to creating the database, removal should also be done through the Aiven 
 Tables
 ------
 
-Tables can be added with an SQL query, either with the help of :doc:`the web query editor <../howto/use-query-editor>` or with :doc:`the cli <../howto/use-cli>`. In both cases the SQL query will look the same. For example, below is a query to add a new table ``expenses`` to ``transactions`` database. To keep it simple this example has unrealistically small amount of columns:
+Tables can be added with an SQL query, either with the help of :doc:`the web query editor <../howto/query-databases>` or with :doc:`the cli <../howto/connect-with-clickhouse-cli>`. In both cases the SQL query will look the same. For example, below is a query to add a new table ``expenses`` to the ``transactions`` database. To keep it simple this example has an unrealistically small amount of columns:
 
 .. code:: sql
 
@@ -43,5 +43,5 @@ Part of the table definition includes a targeted table engine. The full list of 
 
 Additionally, **Aiven for ClickHouse** takes care of running queries in a distributed mode affecting entire cluster. In the "classical" ClickHouse the queries ``CREATE``, ``ALTER``, ``RENAME`` and ``DROP`` will only affect the server where they are run. In contrast, we ensure the proper distribution across all cluster machines behind the scenes. You don't need to remember using ``ON CLUSTER`` for every query.
 
-With this knowledge try out an example dataset described :doc:`over here <../sample-dataset>`.
+With this knowledge try out an example dataset described :doc:`over here </docs/products/clickhouse/howto/load-dataset>`.
 

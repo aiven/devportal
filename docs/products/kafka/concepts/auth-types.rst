@@ -10,7 +10,7 @@ Transport Layer Security
 **Transport Layer Security (TLS)**, also known as Secure Sockets
 Layer (SSL), is an established standard for securing internet traffic. This method
 relies on a certificate that is provided by a Certificate
-Authority (for example, `letsencrypt.org <http://letsencrypt.org>`_ ) for your domain.
+Authority (for example, `letsencrypt.org <https://letsencrypt.org>`_ ) for your domain.
 With this certificate and the right technical setup, you can use
 your domain to encrypt the traffic to your service.
 

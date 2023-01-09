@@ -3,6 +3,7 @@ name: M3Aggregator - Create PR to Update Advanced parameters
 on:
   schedule:
     - cron: "0 6 * * 2"
+  workflow_dispatch:
 
 jobs:
   advanced_params_m3_aggregator:
@@ -28,6 +29,8 @@ jobs:
         uses: peter-evans/create-pull-request@v4
         with:
           commit-message: M3Aggregator - Update Advanced parameters
+          committer: GitHub <noreply@github.com>
+          author: GitHub <noreply@github.com>
           title: M3Aggregator - Update Advanced parameters
           body: M3Aggregator - update advanced parameters file
           base: main

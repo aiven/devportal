@@ -11,18 +11,22 @@ instead of the Aiven cloud's public network.
 .. note:: 
    Microsoft Azure uses the term ``Virtual Network`` (VNet), which is the same as a ``Virtual Private Cloud`` (VPC). We use the terms interchangeably in this article.
 
+.. note::
+    You can create VPC peering using :doc:`Aiven Provider for Terraform </docs/tools/terraform/howto/vnet-peering-azure>` as well.
+
+
 Peer your network with the VPC
 ------------------------------
 
 For an Azure virtual network peering's state to become **connected**
 between networks A and B, a peering must be created both from network A
 to B and from B to A. See
-`this <https://docs.microsoft.com/en-us/azure/virtual-network/create-peering-different-subscriptions>`__
+`this <https://learn.microsoft.com/en-us/azure/virtual-network/create-peering-different-subscriptions>`__
 for an overview. In the case of Project VPCs, one of the networks is
 located in the Aiven subscription and the Aiven platform handles
 creating the peering from that network to the network you wish to peer.
 For this the Aiven platform's `Active Directory application
-object <https://docs.microsoft.com/en-us/azure/active-directory/develop/app-objects-and-service-principals>`__
+object <https://learn.microsoft.com/en-us/azure/active-directory/develop/app-objects-and-service-principals>`__
 needs permissions in your subscription. Because the peering is between
 subscriptions with different AD tenants, an application object is also
 needed to your AD tenant, which can be used to create the peering from
@@ -31,7 +35,7 @@ your network to Aiven once it's been given permissions to do so.
 Preparation
 ~~~~~~~~~~~
 
-Please install the `Azure CLI <https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest>`__
+Please install the `Azure CLI <https://learn.microsoft.com/en-us/cli/azure/?view=azure-cli-latest>`__
 as well as the :doc:`Aiven CLI </docs/tools/cli>` to follow this guide.
 
 1. log in with an Azure admin account

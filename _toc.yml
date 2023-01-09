@@ -1,5 +1,5 @@
 root: index
-options:
+defaults:
   maxdepth: 1
 
 entries:
@@ -37,6 +37,7 @@ entries:
       - file: docs/platform/concepts/service-level-agreement
       - file: docs/platform/concepts/maintenance-window
       - file: docs/platform/concepts/service-resources
+      - file: docs/platform/concepts/service-integration
     - file: docs/platform/howto
       title: HowTo
       entries:
@@ -47,10 +48,16 @@ entries:
           - file: docs/platform/howto/change-your-email-address
           - file: docs/platform/howto/create_authentication_token
           - file: docs/platform/howto/create_new_service_user
+          - file: docs/tools/aiven-console/howto/create-manage-teams
           - file: docs/platform/howto/enable-aiven-password
           - file: docs/platform/howto/user-2fa
           - file: docs/platform/howto/technical-emails
-          - file: docs/platform/howto/reactivate-suspended-project            
+          - file: docs/platform/howto/reactivate-suspended-project
+          - file: docs/platform/howto/disable-platform-authentication                     
+      - file: docs/platform/howto/list-account
+        title: Account management
+        entries: 
+          - file: docs/tools/aiven-console/howto/create-accounts
       - file: docs/platform/howto/list-service
         title: Service management
         entries:
@@ -64,8 +71,11 @@ entries:
           - file: docs/platform/howto/recover-a-deleted-service
           - file: docs/platform/howto/add-storage-space
           - file: docs/platform/howto/tag-resources
+          - file: docs/platform/howto/search-services
+            title: Search for services
           - file: docs/platform/howto/access-service-logs
           - file: docs/platform/howto/prepare-for-high-load
+          - file: docs/platform/howto/create-service-integration
       - file: docs/platform/howto/list-network
         title: Network management
         entries:
@@ -150,16 +160,10 @@ entries:
         - file: docs/integrations/rsyslog/loggly
           title: Loggly
     - file: docs/integrations/send-logs-to-elasticsearch
+    - file: docs/integrations/prometheus-system-metrics
   - file: docs/tools
     entries:
       - file: docs/tools/aiven-console
-        title: Aiven Console
-        entries:
-        - file: docs/tools/aiven-console/howto
-          title: HowTo
-          entries:
-          - file: docs/tools/aiven-console/howto/create-accounts
-          - file: docs/tools/aiven-console/howto/create-manage-teams
       - file: docs/tools/cli
         entries:
         - file: docs/tools/cli/account
@@ -194,11 +198,14 @@ entries:
           entries:
             - file: docs/tools/terraform/howto/upgrade-provider-v1-v2
               title: Upgrade the Aiven Terraform Provider from v1 to v2
+            - file: docs/tools/terraform/howto/upgrade-provider-v2-v3
+              title: Upgrade the Aiven Terraform Provider from v2 to v3
             - file: docs/tools/terraform/howto/config-postgresql-provider
               title: Use PostgreSQL provider alongside Aiven Terraform Provider 
             - file: docs/tools/terraform/howto/promote-to-master-pg-rr
               title: Promote PostgreSQL read replica to master
             - file: docs/tools/terraform/howto/upgrade-to-opensearch
+            - file: docs/tools/terraform/howto/vnet-peering-azure
         - file: docs/tools/terraform/concepts
           title: Concepts
           entries:
@@ -231,8 +238,14 @@ entries:
               title: M3 and M3 Aggregator
             - file: docs/tools/terraform/reference/cookbook/postgresql-read-replica-recipe
               title: PostgreSQL® Read Replica
+            - file: docs/tools/terraform/reference/cookbook/clickhouse-access-setup-recipe
+              title: Configure ClickHouse user's access
+            - file: docs/tools/terraform/reference/cookbook/kafka-clickhouse-integration-recipe
+              title: Apache Kafka and ClickHouse
+            - file: docs/tools/terraform/reference/cookbook/postgres-clickhouse-integration-recipe
+              title: ClickHouse and PostgreSQL
           - file: docs/tools/terraform/reference/troubleshooting
-            entries:   
+            entries:
             - file: docs/tools/terraform/reference/troubleshooting/private-access-error
               title: Private access error when using VPC
       - file: docs/tools/kubernetes
@@ -254,6 +267,7 @@ entries:
             title: Scaling options
           - file: docs/products/kafka/concepts/acl
           - file: docs/products/kafka/concepts/schema-registry-authorization
+          - file: docs/products/kafka/concepts/kafka-rest-api
           - file: docs/products/kafka/concepts/log-compaction
           - file: docs/products/kafka/concepts/partition-segments
           - file: docs/products/kafka/concepts/auth-types
@@ -282,6 +296,7 @@ entries:
               - file: docs/products/kafka/howto/kafdrop
               - file: docs/products/kafka/howto/provectus-kafka-ui
               - file: docs/products/kafka/howto/kpow
+              - file: docs/products/kafka/howto/kafka-klaw
           - file: docs/products/kafka/howto/list-security
             title: Security
             entries:
@@ -390,11 +405,13 @@ entries:
             - file: docs/products/kafka/kafka-connect/howto/http-sink
             - file: docs/products/kafka/kafka-connect/howto/mongodb-sink-mongo
             - file: docs/products/kafka/kafka-connect/howto/mongodb-sink-lenses
+            - file: docs/products/kafka/kafka-connect/howto/influx-sink
             - file: docs/products/kafka/kafka-connect/howto/redis-streamreactor-sink
             - file: docs/products/kafka/kafka-connect/howto/cassandra-streamreactor-sink
             - file: docs/products/kafka/kafka-connect/howto/couchbase-sink
             - file: docs/products/kafka/kafka-connect/howto/gcp-pubsub-sink
             - file: docs/products/kafka/kafka-connect/howto/gcp-pubsub-lite-sink
+            - file: docs/products/kafka/kafka-connect/howto/splunk-sink
 
         - file: docs/products/kafka/kafka-connect/reference
           title: Reference
@@ -438,12 +455,15 @@ entries:
           entries:
             - file: docs/products/kafka/karapace/concepts/schema-registry-authorization
             - file: docs/products/kafka/karapace/concepts/acl-definition
+            - file: docs/products/kafka/karapace/concepts/kafka-rest-proxy-authorization
         - file: docs/products/kafka/karapace/howto
           title: HowTo
           entries:
             - file: docs/products/kafka/karapace/howto/enable-karapace
             - file: docs/products/kafka/karapace/howto/enable-schema-registry-authorization
+            - file: docs/products/kafka/karapace/howto/enable-kafka-rest-proxy-authorization
             - file: docs/products/kafka/karapace/howto/manage-schema-registry-authorization
+            - file: docs/products/kafka/karapace/howto/manage-kafka-rest-proxy-authorization
 
   - file: docs/products/postgresql
     title: PostgreSQL
@@ -570,40 +590,91 @@ entries:
   - file: docs/products/clickhouse
     title: ClickHouse
     entries:
+      - file: docs/products/clickhouse/list-overview
+        title: Overview
+        entries:
+          - file: docs/products/clickhouse/concepts/features-overview
+            title: Features overview
+          - file: docs/products/clickhouse/concepts/service-architecture
+            title: Architecture overview
+          - file: docs/products/clickhouse/reference/plans-pricing
+            title: Plans and pricing
+          - file: docs/products/clickhouse/reference/limitations
+            title: Limits and limitations
       - file: docs/products/clickhouse/getting-started
-        title: Get started
-      - file: docs/products/clickhouse/sample-dataset
+        title: Quickstart
       - file: docs/products/clickhouse/concepts
         title: Concepts
         entries:
           - file: docs/products/clickhouse/concepts/olap
           - file: docs/products/clickhouse/concepts/databases-and-tables
+            title: Databases and tables
           - file: docs/products/clickhouse/concepts/columnar-databases
           - file: docs/products/clickhouse/concepts/indexing
       - file: docs/products/clickhouse/howto
         title: HowTo
         entries:
-          - file: docs/products/clickhouse/howto/connect-to-ch-service
-          - file: docs/products/clickhouse/howto/secure-ch-service
-          - file: docs/products/clickhouse/howto/manage-users-roles
-          - file: docs/products/clickhouse/howto/load-dataset
-          - file: docs/products/clickhouse/howto/query-ch-dbs
-          - file: docs/products/clickhouse/howto/manage-dbs-tables
-          - file: docs/products/clickhouse/howto/materialized-views
+          - file: docs/products/clickhouse/howto/list-get-started
+            title: Get started
+            entries:
+              - file: docs/products/clickhouse/howto/load-dataset
+                title: Load data
+              - file: docs/products/clickhouse/howto/secure-service
+                title: Secure a service
+          - file: docs/products/clickhouse/howto/list-connect-to-service
+            title: Connect to service
+            entries:
+              - file: docs/products/clickhouse/howto/connect-with-clickhouse-cli
+                title: Connect with the ClickHouse client
+              - file: docs/products/clickhouse/howto/connect-with-go
+                title: Connect with Go
+              - file: docs/products/clickhouse/howto/connect-with-python
+                title: Connect with Python
+              - file: docs/products/clickhouse/howto/connect-with-nodejs
+                title: Connect with Node.js
+              - file: docs/products/clickhouse/howto/connect-with-php
+                title: Connect with PHP
+              - file: docs/products/clickhouse/howto/connect-with-java
+                title: Connect with Java
+          - file: docs/products/clickhouse/howto/list-manage-service
+            title: Manage service
+            entries:
+              - file: docs/products/clickhouse/howto/manage-users-roles
+                title: Manage users and roles
+              - file: docs/products/clickhouse/howto/configure-access-terraform-deployed
+                title: Manage user permissions with Terraform
+              - file: docs/products/clickhouse/howto/manage-databases-tables
+                title: Manage databases and tables
+              - file: docs/products/clickhouse/howto/query-databases
+                title: Query databases
+              - file: docs/products/clickhouse/howto/materialized-views
+                title: Create materialized views
+              - file: docs/products/clickhouse/howto/monitor-performance
+                title: Monitor performance
+              - file: docs/products/clickhouse/howto/use-shards-with-distributed-table
+                title: Read and write data across shards
+          - file: docs/products/clickhouse/howto/list-manage-cluster
+            title: Manage cluster
           - file: docs/products/clickhouse/howto/list-integrations
+            title: Integrate service
             entries:
               - file: docs/products/clickhouse/howto/connect-to-grafana
+                title: Connect to Grafana
               - file: docs/products/clickhouse/howto/integrate-kafka
-              - file: docs/products/clickhouse/howto/integrate-pg
+                title: Connect to Apache Kafka
+              - file: docs/products/clickhouse/howto/integrate-postgresql
+                title: Connect to PostgreSQL
               - file: docs/products/clickhouse/howto/connect-with-jdbc
-
+                title: Connect to external DBs with JDBC
       - file: docs/products/clickhouse/reference
         title: Reference
         entries:
           - file: docs/products/clickhouse/reference/supported-table-engines
             title: Supported table engines
+          - file: docs/products/clickhouse/reference/metrics-list
+            title: ClickHouse metrics in Grafana
           - file: docs/products/clickhouse/reference/supported-input-output-formats
-            title: Formats for ClickHouse®-Kafka® data exchange
+            title: Formats for ClickHouse-Kafka data exchange
           - file: docs/products/clickhouse/reference/advanced-params
             title: Advanced parameters
 
@@ -624,6 +695,7 @@ entries:
           - file: docs/products/opensearch/concepts/opensearch-vs-elasticsearch
           - file: docs/products/opensearch/concepts/shards-number
           - file: docs/products/opensearch/concepts/when-create-index
+          - file: docs/products/opensearch/concepts/cross-cluster-replication-opensearch
       - file: docs/products/opensearch/howto
         title: HowTo
         entries:
@@ -632,6 +704,7 @@ entries:
           - file: docs/products/opensearch/howto/opensearch-log-integration
           - file: docs/products/opensearch/howto/upgrade-to-opensearch
           - file: docs/products/opensearch/howto/upgrade-clients-to-opensearch
+          - file: docs/products/opensearch/howto/setup-cross-cluster-replication-opensearch
           - file: docs/products/opensearch/howto/connect-with-nodejs
             title: Connect with NodeJS
           - file: docs/products/opensearch/howto/connect-with-python
@@ -808,6 +881,21 @@ entries:
             title: Advanced parameters
           - file: docs/products/grafana/reference/plugins
             title: Plugins
+
+  - file: docs/products/influxdb
+    title: InfluxDB 
+    entries: 
+      - file: docs/products/influxdb/get-started
+        title: Get started
+      - file: docs/products/influxdb/concepts
+        title: Concepts
+        entries:
+          - file: docs/products/influxdb/concepts/continuous-queries
+          - file: docs/products/influxdb/concepts/influxdb-retention-policy
+      - file: docs/products/influxdb/reference
+        title: Reference
+        entries:
+          - glob: docs/products/influxdb/reference/*
 
   # -------- AUXILIARY
   - file: docs/community

@@ -32,7 +32,7 @@ A restart can be performed manually either through the `Aiven Console <https://c
 
 .. Tip::
 
-   For automatically restarting tasks, you can set ``"_aiven.restart.on.failure": true`` in the connector's configuration ( `check the related article <https://help.aiven.io/en/articles/5088396-kafka-connect-auto-restart-on-failures>`__). Aiven automatically check tasks status for errors every 15 minutes but the interval can be customised if needed.
+   For automatically restarting tasks, you can set ``"_aiven.restart.on.failure": true`` in the connector's configuration ( `check the related article <https://docs.aiven.io/docs/products/kafka/kafka-connect/howto/enable-automatic-restart>`__). Aiven automatically check tasks status for errors every 15 minutes but the interval can be customised if needed.
 
 
 

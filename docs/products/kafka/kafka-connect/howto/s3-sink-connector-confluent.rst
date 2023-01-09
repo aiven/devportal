@@ -36,7 +36,7 @@ Define the connector configurations in a file (we'll refer to it with the name `
 ::
 
     {
-        "name": "<CONECTOR_NAME>",
+        "name": "<CONNECTOR_NAME>",
         "topics": "<TOPIC_NAME>",
         "connector.class": "io.confluent.connect.s3.S3SinkConnector",
         "key.converter": "org.apache.kafka.connect.converters.ByteArrayConverter"",
