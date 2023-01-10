@@ -3,7 +3,7 @@ Enable SAML authentication
 
 Security Assertion Markup Language (SAML) is a standard for
 exchanging authentication and authorization data between an identity
-provider (IdP) and a service provider. You can set up SAML authentication with Aiven with your company's favorite authentication
+provider (IdP) and a service provider. You can set up SAML authentication in Aiven with your company's favorite authentication
 service.
 
 To set up a SAML authentication method for your organization in Aiven, there are three steps:
@@ -17,7 +17,7 @@ To set up a SAML authentication method for your organization in Aiven, there are
 Step 1. Set up the SAML authentication method in the Aiven Console
 -------------------------------------------------------------------
 
-SAML Authentication methods are configured at the organization level. To configure a new one:
+SAML Authentication methods are configured at the organization level:
 
 #. In the organization, click **Admin**.
 
