@@ -6,22 +6,18 @@ This article explains how to set up SAML with `Auth0 <https://auth0.com/>`_ for 
 Prerequisite steps in the Aiven Console
 ----------------------------------------
 
-1. Log in to the `Aiven Console <https://console.aiven.io>`_
+#. In the organization, click **Admin**.
 
-2. Select **Projects** in the top left, click the drop down arrow and
-then on **See All Accounts**
+#. Select **Authentication**.
 
-3. Click on the Account you want to edit or create a new one
+#. Click **Add authentication method**.
 
-4. Select the **Authentication** tab
+#. Enter a name and select SAML. You can also select the teams that users will be added to when they sign up or log in through this authentication method.
 
-5. Create a new Authentication Method, call it `Auth0` (or similar), select *Method Type* to be **SAML**, and then
-choose the team to add invited people to (or leave it blank)
+You are shown two parameters needed to set up the SAML authentication in Auth0:
 
-6. Be sure to make a note of the configuration URLs (metadata URL and ACS URL)
-
-.. note::
-   At this point, the state will be ``Pending Configuration``.
+* Metadata URL
+* ACS URL
 
 Setup on Auth0
 ----------------
