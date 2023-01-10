@@ -13,8 +13,14 @@ Here are the steps to provision remote replica
 
 3. Click  the "Create a read replica" button
 
+.. image:: /images/products/mysql/mysql-create-read-only-replica.png
+   :alt: Screenshot of the Create Read-Only Replica 
+
 4. For the remote replica, give your service a name, select the cloud provider and region, and choose a suitable Aiven for MySQL plan.
 
 5. Click "Create"
+
+.. image:: /images/products/mysql/mysql-create-read-only-replica-choose-plan.png
+   :alt: Screenshot of the Create Read-Only Replica 
 
 That's it. You will see the read replica being created and listed as any other Aiven service on the Services page on the console.
