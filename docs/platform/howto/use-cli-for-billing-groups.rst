@@ -56,6 +56,7 @@ Pretty names for billing groups
 We can also give our billing group a nicer name if we want to, and finally delete the other billing group that's now empty.
 
 ::
+
     $ avn billing-group update d30c8013-3712-45eb-ab93-371e8f47263d --name "My consolidated invoice" 
     $ avn billing-group list
     $ avn billing-group delete d30c8013-3712-45eb-ab93-371e8f47263d
@@ -75,6 +76,7 @@ However, it's also possible to specify another billing group that the project sh
 First, find out the ID of the billing group that should hold the new project:
 
 ::
+
     $ avn billing-group list BILLING_GROUP_ID BILLING_GROUP_NAME
 
 .. image:: /images/platform/billing/use-billing-groups-via-cli-image5.png
@@ -83,11 +85,13 @@ First, find out the ID of the billing group that should hold the new project:
 Create your project, giving the ID of your billing group:
 
 ::
+
     $ avn project create --billing-group-id d30c8013-3712-45eb-ab93-371e8f47263d my-new-prod-project
 
 And when you now query the details of your billing group, your new project is a member:
 
 ::
+
     $ avn billing-group get d30c8013-3712-45eb-ab93-371e8f47263d --verbose 
 
 .. image:: /images/platform/billing/use-billing-groups-via-cli-image6.png
