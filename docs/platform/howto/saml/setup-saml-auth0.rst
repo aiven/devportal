@@ -19,22 +19,28 @@ You are shown two parameters needed to set up the SAML authentication in Auth0:
 * Metadata URL
 * ACS URL
 
-Setup on Auth0
+Set up on Auth0
 ----------------
 
-1. `Register <https://auth0.com/signup>`_ for an Auth0 account or sign into `your existing Auth0 account <https://manage.auth0.com>`_ 
+#. `Register <https://auth0.com/signup>`_ for an Auth0 account or sign into `your existing Auth0 account <https://manage.auth0.com>`_.
 
-2. Select **Applications** and then **Create Application** 
+#. Select **Applications** and **Create Application**. 
 
-3. Give your application a name (for example, "Aiven App"), choose **Regular Web Applications**, and hit **Create** 
+#. Enter an application name.
 
-3. Once your application has been created, go to the ``Addons`` tab and enable **SAML 2 WEB APP** option
+#. Choose **Regular Web Applications**.
 
-4. Click on the **SAML 2 WEB APP** option to open the ``Settings`` tab
+#. Click **Create**. 
 
-5. Set the ``Application Callback URL`` to the ``ACS URL`` provided by the Aiven Console
+#. After your application is created, go to the ``Addons`` tab.
 
-6. Under the ``Application Callback URL``, in the ``Settings`` section, remove existing configuration and add the following field mapping configuration:
+#. Enable the **SAML 2 WEB APP** option.
+
+#. Click on the **SAML 2 WEB APP** option. This opens the ``Settings`` tab.
+
+#. Set the ``Application Callback URL`` to the ``ACS URL`` provided by the Aiven Console.
+
+#. In the ``Settings`` section, under ``Application Callback URL``, remove the existing configuration and add the following field mapping configuration:
 
 .. code-block:: shell
 
@@ -46,11 +52,9 @@ Setup on Auth0
      "mapUnknownClaimsAsIs": true
    }
 
-7. Once done, click **Enable** and **Save**
+#. Click **Enable** and **Save**.
 
-8. From the **Usage** tab, make a note of the ``Identity Provider Login URL`` (This will need to be copied into the SAML configuration in the Aiven Console)
-
-9. You will also need the ``Issuer URN`` (we refer to it as the ``Entity ID``) and the ``Identity Provider Certificate``
+#. On the **Usage** tab, make a note of the ``Identity Provider Login URL``,  ``Issuer URN``, and the ``Identity Provider Certificate``. These are needed for the SAML configuration in the Aiven Console.
 
 Finish the configuration in Aiven
 ---------------------------------
