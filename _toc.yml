@@ -39,6 +39,7 @@ entries:
       - file: docs/platform/concepts/maintenance-window
       - file: docs/platform/concepts/service-resources
       - file: docs/platform/concepts/service-integration
+      - file: docs/platform/concepts/trial-project-features
     - file: docs/platform/howto
       title: HowTo
       entries:
