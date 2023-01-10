@@ -63,3 +63,8 @@ When the segment file reaches a certain size or age, Apache Kafka will create a 
 -  ``segment.bytes`` : creates a new segment when current segment becomes greater than this size. This setting can be set during topic creation and defaults to 1GB.
 
 -  ``segment.ms`` : forces the segment to roll over and create a new one when the segment becomes older than this value.
+
+
+.. Note::
+
+    Aiven for Apache Kafka® service is fully manageable, the partitions are rebalanced automatically when the cluster is scaled up or down.
