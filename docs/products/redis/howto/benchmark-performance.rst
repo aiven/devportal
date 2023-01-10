@@ -122,4 +122,4 @@ This example demonstrates what performance data ``memtier_benchmark`` can collec
 Running the same command on different Redis services or on the same service in different conditions can effectively benchmark the performance.
 
 .. Note::
-    Aiven has ``rate limit`` on services. By default it's ``300`` new connections per second per CPU core. Also be aware of the connection limit depending on memory size as explained in `Estimate maximum number of connection <https://docs.aiven.io/docs/products/redis/howto/estimate-max-number-of-connections.html>`_.
+    Aiven has ``rate limit`` on services. By default it's ``200`` new connections per 0.5 second per CPU core. Also be aware of the connection limit depending on memory size as explained in `Estimate maximum number of connection <https://docs.aiven.io/docs/products/redis/howto/estimate-max-number-of-connections.html>`_.
