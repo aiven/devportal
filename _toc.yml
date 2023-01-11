@@ -900,6 +900,10 @@ entries:
         entries:
           - file: docs/products/influxdb/concepts/continuous-queries
           - file: docs/products/influxdb/concepts/influxdb-retention-policy
+      - file: docs/products/influxdb/howto
+        title: HowTo
+        entries:
+          - file: docs/products/influxdb/howto/migrate-data-self-hosted-influxdb-aiven
       - file: docs/products/influxdb/reference
         title: Reference
         entries:
