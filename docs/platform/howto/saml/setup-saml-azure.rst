@@ -82,20 +82,26 @@ Configure SAML on Microsoft Azure
 Finish the configuration in Aiven
 ----------------------------------
 
-The data you need to finish the setup on Aiven is found in the **Single sign-on** settings. We are interested in the **Set up Aiven SAML** section
+#. In the Aiven console, click **Admin** and then **Authentication**.
 
-1. In the Aiven Console, edit your authentication method and provide the ``SAML IDP URL`` to the ``Login URL`` from Microsoft Azure
+#. Select the name of the Auth0 method that you created.
 
-2. Set the ``SAML Entity ID`` to the ``Azure AD Identifier`` from Microsoft Azure
+#. In the SAML configuration section, click **Edit**. 
 
-3. Paste the certificate you downloaded earlier into ``SAML Certificate``
+#. Add the configuration settings from Auth0:
 
-4. Click on Save 
+  * Set the ``SAML IDP URL`` to the ``Login URL`` from Azure
+  * Set the ``SAML Entity ID`` to the ``Azure AD Identifier`` from Azure 
+  * Paste the certificate from Azure into the ``SAML Certificate`` field
 
-5. Make sure the authentication method is **enabled**, then use the: 
+#. Click **Edit method** to save your changes.
 
-   * **Signup URL** to invite new people
-   * **Account link URL** for people already having an Aiven login
+#. Enable the method using the **Enable authentication method** at the top of the page. 
+
+You can use the **Signup URL** to invite new users, or the **Account link URL** for those that already have an Aiven user account.
+
+If you have issues, you can use the `SAML Tracer browser extension <https://addons.mozilla.org/firefox/addon/saml-tracer/>`_ to check the process step by step. 
+
 
 
 Troubleshooting
