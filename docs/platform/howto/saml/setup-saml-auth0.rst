@@ -3,8 +3,8 @@ Set up SAML with Auth0
 
 This article explains how to set up SAML with `Auth0 <https://auth0.com/>`_ for an organization in Aiven. For more information on SAML and instructions for other identity providers, see the :doc:`Enable SAML authentication </docs/platform/howto/saml/saml-authentication>` article.
 
-Prerequisite steps in the Aiven Console
-----------------------------------------
+Prerequisite steps in Aiven Console
+------------------------------------
 
 #. In the organization, click **Admin**.
 
