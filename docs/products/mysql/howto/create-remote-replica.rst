@@ -1,4 +1,4 @@
-Create MySQL Remote Replica
+Create MySQL remote replica
 ===========================
 
 The goal of the remote replica is to provide a read-only instance of your managed MySQL service in another geographically diverse region. 
