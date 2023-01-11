@@ -85,6 +85,7 @@ hyperloglogs
 hypertable
 hypertables
 InfluxDB
+influx
 InnoDB
 Instana
 io
