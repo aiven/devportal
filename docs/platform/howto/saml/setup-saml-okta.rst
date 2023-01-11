@@ -6,7 +6,6 @@ This article explains how to set up SAML with `Okta <https://www.okta.com/>`_ fo
 Prerequisite steps in the Aiven Console
 ---------------------=------------------
 
-
 #. In the organization, click **Admin**.
 
 #. Select **Authentication**.
@@ -20,21 +19,26 @@ You are shown two parameters needed to set up the SAML authentication in Auth0:
 * Metadata URL
 * ACS URL
 
-Setup on Okta
--------------
+Configure SAML on Okta
+-----------------------
 
-This is a two step process. We will first create the SAML SP-Initiated
+This is a two step process. You first create the SAML SP-Initiated
 authentication flow, then create a bookmark app that will redirect to
-the Aiven console's login page.
+the Aiven Console's login page.
 
-1. Login to the **Admin** portal and navigate to the **Applications** tab. 
-   Click on the **Create a new app integration** button. You should see the **Create SAML Integration** form
+#. Log in to the **Admin** portal.
 
-2. Select **SAML 2.0** for the **Sign on method**, then click **Next**
+#. Go to the **Applications** tab. 
 
-3. Give the app a name (e.g. "Aiven SAML"), a logo and set it's visibility for your Okta users, then click **Next**
+#. Click **Create a new app integration**. 
 
-4. Edit the app configuration setting the following values:
+#. Select **SAML 2.0** for the **Sign on method**, then click **Next**.
+
+#. Enter a name for the app and add a logo. 
+
+#. Set it's visibility for your Okta users, then click **Next**.
+
+#. Set the following values in the app configuration:
 
 
    .. list-table::
@@ -56,7 +60,7 @@ the Aiven console's login page.
           ``https://console.aws.aiven.io/`` when using Aiven AWS Marketplace Console
    
    .. important:: 
-      The ``Default RelayState`` is the homepage of the Aiven Console and is fundamental for IdP initiated sign-on to function correctly.
+      The ``Default RelayState`` is the homepage of the Aiven Console and is fundamental for IdP initiated sign on to function correctly.
 
    .. note::
       The ``Single sign on URL`` and ``Audience URI (SP Entity ID)`` values are visible in `Aiven Console <https://console.aiven.io/>`__ on the newly created Authentication method page.
@@ -75,7 +79,7 @@ the Aiven console's login page.
       * - ``value``
         - ``user.email``
 
-5. Click ``Next`` then ``Finish``. You will be redirect to your application in Okta.
+5. Click **Next** then **Finish**. You are redirected to your application in Okta.
 
 6. Once the application is created, collect the application data to finish the setup in the `Aiven Console <https://console.aiven.io/>`__. The application data can be found in the **Sign On** tab of the application on Okta, after clicking the **View Setup Instructions**.
 
