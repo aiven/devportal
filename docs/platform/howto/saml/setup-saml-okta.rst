@@ -62,7 +62,7 @@ the Aiven Console's login page.
    .. important:: 
       The ``Default RelayState`` is the homepage of the Aiven Console and is fundamental for IdP initiated sign on to function correctly.
 
-5. The **Attribute statements** should have an entry with:
+#. The **Attribute statements** should have an entry with:
    
    .. list-table::
       :widths: 10 90
@@ -76,9 +76,9 @@ the Aiven Console's login page.
       * - ``value``
         - ``user.email``
 
-5. Click **Next** then **Finish**. You are redirected to your application in Okta.
+#. Click **Next** then **Finish**. You are redirected to your application in Okta.
 
-6. Click the **View Setup Instructions** for the application.
+#. Click the **View Setup Instructions** for the application.
 
 #. Go to the **Sign On** tab and copy the application data to be used in the final configuration in Aiven:
 
@@ -91,18 +91,13 @@ the Aiven Console's login page.
 .. image:: /images/platform/howto/saml/okta/okta-saml-settings.png
    :alt: SAML settings in Okta showing the application data.
 
-Assign users to the Okta application
----------------------------------------
+#. Go to the **Assignments** tab 
 
-For your users to be able to login using SAML, you need to assign to the
-Okta application you just created. To do that, go to the ``Assignments``
-tab of the application. Then click on the ``Assign`` drop-down button and assign
-individual users or groups to the application.
+#. Click **Assign** to assign users or groups to the Okta application.
 
 .. note::
 
-   New users need to be assigned to the Aiven application in Okta for the login to be successful
-
+   New users need to be assigned to the Aiven application in Okta for the login to be successful.
 
 Finish the configuration in Aiven
 ---------------------------------
