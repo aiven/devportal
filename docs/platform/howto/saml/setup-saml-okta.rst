@@ -6,22 +6,19 @@ This article explains how to set up SAML with `Okta <https://www.okta.com/>`_ fo
 Prerequisite steps in the Aiven Console
 ---------------------=------------------
 
-1. Login to the `Aiven Console <https://console.aiven.io>`_
 
-2. Under *Projects* in the top left, click the drop down arrow and
-then on **See All Accounts**
+#. In the organization, click **Admin**.
 
-3. Click on the Account you want to edit or create a new one
+#. Select **Authentication**.
 
-4. Select the **Authentication** tab
+#. Click **Add authentication method**.
 
-5. Create a new Authentication Method, call it *Okta* (or similar) and then
-choose the team to add invited people to (or leave it blank)
+#. Enter a name and select SAML. You can also select the teams that users will be added to when they sign up or log in through this authentication method.
 
-.. image:: /images/platform/howto/saml/okta/okta-saml-configuration-urls.png
-   :alt: Configure authentication URLs in Aiven console
+You are shown two parameters needed to set up the SAML authentication in Auth0:
 
-.. _setup_saml_okta_setup_okta:
+* Metadata URL
+* ACS URL
 
 Setup on Okta
 -------------
