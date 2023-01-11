@@ -100,28 +100,21 @@ Finish the configuration in Aiven
 
 You can use the **Signup URL** to invite new users, or the **Account link URL** for those that already have an Aiven user account.
 
-If you have issues, you can use the `SAML Tracer browser extension <https://addons.mozilla.org/firefox/addon/saml-tracer/>`_ to check the process step by step. 
-
-
-
 Troubleshooting
 ---------------
 
 Contact your administrator
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you get an error message suggesting to "contact your administrator", check the following:
+If you get an error message suggesting you contact your administrator, try these steps: 
 
-1. Navigate to the Microsoft Azure Active Directory user profile for the users
-2. Check whether the **Contact Info** => **Email** field is populated or blank
-3. If it is blank, there are two possible solutions:
+#. Go to the Microsoft Azure AD user profile for the users.
+#. Check whether the **Contact Info** => **Email** field is blank.
 
-   * If the field **Identity** => **User Principal Name** is an email address.
-     
-     Change the **User Attributes & Claims** to be ``email = user.userprincipalname`` and try the login/registration flows again.
+If it is blank, there are two possible solutions:
 
-   * If all user accounts have the **Contact Info** => **Alternate email** populated
-  
-     Change the **User Attributes & Claims** to be ``email = user.othermail``
+   * If the field **Identity** => **User Principal Name** is an email address, try changing the **User Attributes & Claims** to ``email = user.userprincipalname``. 
 
-If you still have login issues, you can use the `SAML Tracer browser extension <https://addons.mozilla.org/firefox/addon/saml-tracer/>`_ to  check the process step by step. The errors shown in the tracker should help you to debug the issues. If it does not work, you can request help by sending an email at support@Aiven.io.
+   * If none of the user accounts have a blank **Contact Info** => **Alternate email** field, try changing the **User Attributes & Claims** to ``email = user.othermail``.
+
+If you still have login issues, you can use the `SAML Tracer browser extension <https://addons.mozilla.org/firefox/addon/saml-tracer/>`_ to check the process step by step. If this doesn't work, get in touch with our support team at support@Aiven.io.
