@@ -1,5 +1,5 @@
-Create a Google Pub/Sub Lite sink connector
-===========================================
+Create a sink connector from Apache Kafka® to Google Pub/Sub Lite
+=================================================================
 
 The `Google Pub/Sub Lite sink connector <https://github.com/GoogleCloudPlatform/pubsub>`_ enables you to push data from an Aiven for Apache Kafka® topic to a Google Pub/Sub Lite topic. 
 

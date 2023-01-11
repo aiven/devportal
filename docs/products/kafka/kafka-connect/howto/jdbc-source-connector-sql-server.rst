@@ -1,5 +1,5 @@
-Create a JDBC source connector for SQL Server
-==============================================
+Create a JDBC source connector from SQL Server to Apache Kafka®
+===============================================================
 
 The JDBC source connector pushes data from a relational database, such as SQL Server, to Apache Kafka® where can be transformed and read by multiple consumers.
 

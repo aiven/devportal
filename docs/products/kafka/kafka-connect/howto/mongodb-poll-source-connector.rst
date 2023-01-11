@@ -1,5 +1,5 @@
-Create a MongoDB source connector
-=================================
+Create a source connector from MongoDB to Apache Kafka®
+=======================================================
 
 The MongoDB source connector periodically queries MongoDB collections and copies the new documents to Apache Kafka® where they can be transformed and read by multiple consumers.
 

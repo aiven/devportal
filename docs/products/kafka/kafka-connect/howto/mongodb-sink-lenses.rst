@@ -1,5 +1,5 @@
-Create a MongoDB sink connector by Lenses.io
-============================================
+Create a sink connector by Lenses.io from Apache Kafka® to MongoDB
+==================================================================
 
 The MongoDB sink connector enables you to move data from an Aiven for Apache Kafka® cluster to a MongoDB database. The Lenses.io implementation enables you to write `KCQL transformations <https://docs.lenses.io/5.0/integrations/connectors/stream-reactor/sinks/mongosinkconnector/>`_ on the topic data before sending it to the MongoDB database.
 

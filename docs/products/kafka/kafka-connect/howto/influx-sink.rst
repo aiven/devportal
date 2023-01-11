@@ -1,5 +1,5 @@
-Create an InfluxDB® sink connector
-==================================
+Create a sink connector from Apache Kafka® to InfluxDB®
+=======================================================
 
 The InfluxDB® sink connector enables you to move data from an Aiven for Apache Kafka® cluster to an InfluxDB instance for further processing and analysis.
 

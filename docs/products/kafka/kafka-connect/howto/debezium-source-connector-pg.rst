@@ -1,5 +1,5 @@
-Create a Debezium source connector for PostgreSQL®
-==================================================
+Create a Debezium source connector from PostgreSQL® to Apache Kafka®
+====================================================================
 
 The Debezium source connector extracts the changes committed to the transaction log in a relational database, such as PostgreSQL®, and writes them to an Apache Kafka® topic in a standard format where they can be transformed and read by multiple consumers.
 

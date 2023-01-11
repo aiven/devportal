@@ -1,5 +1,5 @@
-Create a Google Pub/Sub sink connector
-========================================
+Create a sink connector from Apache Kafka® to Google Pub/Sub
+============================================================
 
 The `Google Pub/Sub sink connector <https://github.com/GoogleCloudPlatform/pubsub>`_ enables you to push data from an Aiven for Apache Kafka® topic to a Google Pub/Sub topic. 
 

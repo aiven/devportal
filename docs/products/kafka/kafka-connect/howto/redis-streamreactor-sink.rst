@@ -1,5 +1,5 @@
-Create a Redis®* stream reactor sink connector by Lenses.io
-===========================================================
+Create a stream reactor sink connector from Apache Kafka® to Redis®*
+====================================================================
 
 **The Redis stream reactor sink connector** enables you to move data from **an Aiven for Apache Kafka® cluster** to **a Redis®* database**. The Lenses.io implementation enables you to write `KCQL transformations <https://docs.lenses.io/connectors/sink/redis.html>`_ on the topic data before sending it to the Redis database.
 

@@ -1,5 +1,5 @@
-Create a Google BigQuery sink connector
-=======================================
+Create a sink connector from Apache Kafka® to Google BigQuery
+=============================================================
 
 The `Google BigQuery sink connector <https://github.com/confluentinc/kafka-connect-bigquery>`_ enables you to move data from an Aiven for Apache Kafka® cluster to a set of Google BigQuery tables for further processing and analysis. 
 

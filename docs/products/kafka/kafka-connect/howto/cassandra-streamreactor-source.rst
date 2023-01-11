@@ -1,5 +1,5 @@
-Create a Apache Cassandra® stream reactor source connector
-==========================================================
+Create a stream reactor source connector from Apache Cassandra® to Apache Kafka®
+================================================================================
 
 **The Apache Cassandra® stream reactor source connector** enables you to move data from **a Apache Cassandra® database** to **an Aiven for Apache Kafka® cluster**. The Lenses.io implementation enables you to write `KCQL transformations <https://docs.lenses.io/5.0/integrations/connectors/stream-reactor/sources/cassandrasourceconnector/>`_ on the topic data before sending it to the Apache Kafka cluster.
 
