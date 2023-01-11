@@ -1,5 +1,5 @@
-Enable SAML authentication
-==========================
+Set up SAML authentication
+===========================
 
 Security Assertion Markup Language (SAML) is a standard for
 exchanging authentication and authorization data between an identity

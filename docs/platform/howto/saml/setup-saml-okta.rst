@@ -1,5 +1,5 @@
 Set up SAML authentication with Okta
-========================================
+======================================
 
 SAML ( *Security Assertion Markup Language* ) is a standard for
 exchanging authentication and authorization data between an identity
