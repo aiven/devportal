@@ -74,8 +74,8 @@ Setup instructions for specific providers are available on the following pages:
 If your provider isn't listed, contact us at support@Aiven.io so we can assist you with the configuration.
 
 
-Step 3. Enable the SAML authentication method in the Aiven Console
--------------------------------------------------------------------
+Step 3. Finish the configuration in Aiven 
+------------------------------------------
 
 After creating the application in your IdP, go back to the Authentication page in the Aiven Console to enable the SAML authentication method:
 
