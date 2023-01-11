@@ -19,8 +19,8 @@ You are shown two parameters needed to set up the SAML authentication in Auth0:
 * Metadata URL
 * ACS URL
 
-Set up on Auth0
-----------------
+Configure SAML on Auth0
+------------------------
 
 #. `Register <https://auth0.com/signup>`_ for an Auth0 account or sign into `your existing Auth0 account <https://manage.auth0.com>`_.
 
