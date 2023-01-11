@@ -70,7 +70,7 @@ Finish the configuration in Aiven
 
   * Set the ``SAML IDP URL`` to the ``Identity Provider Login URL`` from Auth0
   * Set the ``SAML Entity ID`` to the ``Issuer URN`` from Auth0 
-  * Paste the certificate from Auth0 into ``SAML Certificate``
+  * Paste the certificate from Auth0 into the ``SAML Certificate`` field
 
 #. Click **Edit method** to save your changes.
 
