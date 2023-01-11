@@ -49,9 +49,9 @@ the Aiven Console's login page.
       * - Parameter
         - Value
       * - ``Single sign on URL``
-        - ``https://api.aiven.io/v1/sso/saml/account/{account_id}/method/{account_auth_method_id}/acs``
+        - ``ACS URL``
       * - ``Audience URI (SP Entity ID)``
-        - ``https://api.aiven.io/v1/sso/saml/account/{account_id}/method/{account_auth_method_id}/metadata``
+        - ``Metadata URL``
       * - ``Default RelayState``
         - ``https://console.aiven.io/`` when using the Aiven Console
 
@@ -61,9 +61,6 @@ the Aiven Console's login page.
    
    .. important:: 
       The ``Default RelayState`` is the homepage of the Aiven Console and is fundamental for IdP initiated sign on to function correctly.
-
-   .. note::
-      The ``Single sign on URL`` and ``Audience URI (SP Entity ID)`` values are visible in `Aiven Console <https://console.aiven.io/>`__ on the newly created Authentication method page.
 
 5. The **Attribute statements** should have an entry with:
    
@@ -81,12 +78,9 @@ the Aiven Console's login page.
 
 5. Click **Next** then **Finish**. You are redirected to your application in Okta.
 
-6. Once the application is created, collect the application data to finish the setup in the `Aiven Console <https://console.aiven.io/>`__. The application data can be found in the **Sign On** tab of the application on Okta, after clicking the **View Setup Instructions**.
+6. Click the **View Setup Instructions** for the application.
 
-   .. image:: /images/platform/howto/saml/okta/okta-view-saml-instructions.png
-      :alt: View SAML setup instructions in Okta
-
-   The required information to finalize the setup to use Okta with Aiven are the following:
+#. Go to the **Sign On** tab and copy the application data to be used in the final configuration in Aiven:
 
    * ``Identity Provider Signle Sign-On URL``
    
@@ -95,7 +89,7 @@ the Aiven Console's login page.
    * ``X.509 Certificate``
 
 .. image:: /images/platform/howto/saml/okta/okta-saml-settings.png
-   :alt: SAML settings in Okta
+   :alt: SAML settings in Okta showing the application data.
 
 Assign users to the Okta application
 ---------------------------------------
