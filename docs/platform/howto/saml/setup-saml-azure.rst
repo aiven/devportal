@@ -20,8 +20,8 @@ You are shown two parameters needed to set up the SAML authentication in Microso
 * Metadata URL
 * ACS URL
 
-Setup on Microsoft Azure
--------------------------
+Configure SAML on Microsoft Azure
+----------------------------------
 
 1. Log in to Microsoft Azure
 2. Navigate to **Enterprise applications** either by using the tiles or the search bar
