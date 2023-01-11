@@ -54,19 +54,28 @@ Set up on Auth0
 
 #. Click **Enable** and **Save**.
 
-#. On the **Usage** tab, make a note of the ``Identity Provider Login URL``,  ``Issuer URN``, and the ``Identity Provider Certificate``. These are needed for the SAML configuration in the Aiven Console.
+#. On the **Usage** tab, make a note of the ``Identity Provider Login URL``,  ``Issuer URN``, and ``Identity Provider Certificate``. These are needed for the SAML configuration in the Aiven Console.
+
 
 Finish the configuration in Aiven
----------------------------------
+----------------------------------
 
-1. From the Aiven console **Authentication** tab, click on **Set SAML configuration**
+#. In the Aiven console, click **Admin** and then **Authentication**.
 
-2. Set the ``SAML IDP URL`` as the ``Identity Provider Login URL`` from Auth0 
+#. Select the name of the Auth0 method that you created.
 
-3. Set the ``SAML Entity ID`` as the ``Issuer`` from Auth0 (example: ``urn:dev-i-fiqy2a.us.auth0.com``)
+#. In the SAML configuration section, click **Edit**. 
 
-4. Paste the certificate from Auth0 into ``SAML Certificate``
+#. Add the configuration settings from Auth0:
 
-5. Save that and you are good to go! Make sure the authentication method is enabled and you can then use the **Signup URL** to invite new people and **Account link URL** for those that already have an Aiven login.
+  * Set the ``SAML IDP URL`` to the ``Identity Provider Login URL`` from Auth0
+  * Set the ``SAML Entity ID`` to the ``Issuer URN`` from Auth0 
+  * Paste the certificate from Auth0 into ``SAML Certificate``
 
-If you have issues, you can use the `SAML Tracer browser extension <https://addons.mozilla.org/firefox/addon/saml-tracer/>`_ to  check the process step by step. The errors shown in the tracker should help you to debug the issues. If it does not work, you can request help by sending an email at support@Aiven.io.
+#. Click **Edit method** to save your changes.
+
+#. Enable the method using the **Enable authentication method** at the top of the page. 
+
+You can use the **Signup URL** to invite new users, or the **Account link URL** for those that already have an Aiven user account.
+
+If you have issues, you can use the `SAML Tracer browser extension <https://addons.mozilla.org/firefox/addon/saml-tracer/>`_ to check the process step by step. 
