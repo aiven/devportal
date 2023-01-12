@@ -1,7 +1,7 @@
 Migrate data from self-hosted InfluxDB® to Aiven
 ================================================
 You can migrate data from a self-hosted InfluxDB® 1.x service to an Aiven for InfluxDB® service by exporting the data in line protocol format using the ``influx_export`` command from the source service. 
-The exported file, which is in line protocol format, can then be imported into the target Aiven for InfluxDB® service using the influx client. This process is fast and compatible across different minor versions.
+The exported file, which is in line protocol format, can then be imported into the target Aiven for InfluxDB® service using the InfluxDB client. This process is fast and compatible across different minor versions.
 
 The process of migrating data from a self-hosted InfluxDB to Aiven for InfluxDB® service can be broken down into two main steps:
 
