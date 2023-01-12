@@ -165,7 +165,7 @@ Aiven for ClickHouse backups cover
 
 .. topic:: Part files
     
-    With the Aiven for Clickhouse's ReplicatedMergeTree table engine, each INSERT query results in creating a new file, so-called part, written only once and not modifiable.
+    With the Aiven for ClickHouse's ReplicatedMergeTree table engine, each INSERT query results in creating a new file, so-called part, written only once and not modifiable.
 
 Using part files allows incremental backups in Aiven for ClickHouse: only changed parts are backed up and files already available in the object storage are left out from the backup.
 
