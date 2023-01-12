@@ -11,7 +11,7 @@ The Flink cluster executes applications in `session mode <https://nightlies.apac
 
 Scaling a Flink cluster
 -----------------------
-Each node is equipped with a TaskManager and JobManager. We recommend scaling up your cluster to add more CPU and memory for the TaskManager before attempting to scale out so you make the best use of the resources available in the nodes.
+Each node is equipped with a TaskManager and JobManager. We recommend scaling up your cluster to add more CPU and memory for the TaskManager before attempting to scale out, so you make the best use of the resources with a minimum number of nodes. 
 
 By default, each TaskManager is configured with a single slot for maximum job isolation. It is highly recommended that you modify this option to match your requirements.
 
@@ -42,4 +42,3 @@ By enabling these integrations, you can:
 - Push service metrics to M3®, InfluxDB®, or PostgreSQL® services on Aiven.
 - Create custom OpenSearch or Grafana® dashboards to monitor the service. 
 
-The platform also has alert policies configured, so you are notified via email when a key metric rises above or below a threshold set, such as low memory or high CPU consumption.
