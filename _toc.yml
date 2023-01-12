@@ -617,6 +617,8 @@ entries:
             title: Databases and tables
           - file: docs/products/clickhouse/concepts/columnar-databases
           - file: docs/products/clickhouse/concepts/indexing
+          - file: docs/products/clickhouse/concepts/disaster-recovery
+            title: Disaster recovery
           - file: docs/products/clickhouse/concepts/strings
             title: Strings
       - file: docs/products/clickhouse/howto
