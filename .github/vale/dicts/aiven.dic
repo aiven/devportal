@@ -42,6 +42,7 @@ datasource
 Datastax
 datastore
 dashboards
+deallocation
 Debezium
 deserialize
 Dev
@@ -60,6 +61,7 @@ failover
 fileset
 filesets
 Flink
+Flink's
 Gantt
 geocoder
 geocoding
@@ -92,6 +94,7 @@ io
 IPsec
 Java
 JMX
+JobManager
 Jolokia
 Kaggle/M
 Kafdrop
@@ -210,6 +213,7 @@ Transport Layer Security
 truststore
 truststores
 Uber
+UDFs
 uncomment
 unencrypted
 untrusted
