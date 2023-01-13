@@ -1,5 +1,5 @@
-Create a Couchbase sink connector
-==============================================
+Create a sink connector from Apache Kafka® to Couchbase
+=======================================================
 
 The `Couchbase <https://www.couchbase.com/>`_ sink connector pushes Apache Kafka® data to the NoSQL database.
 

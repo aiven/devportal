@@ -380,44 +380,75 @@ entries:
           - file: docs/products/kafka/kafka-connect/howto/list-source-connectors
             entries:
             - file: docs/products/kafka/kafka-connect/howto/jdbc-source-connector-pg
-            - file: docs/products/kafka/kafka-connect/howto/jdbc-source-connector-mysql
-            - file: docs/products/kafka/kafka-connect/howto/jdbc-source-connector-sql-server
-            - file: docs/products/kafka/kafka-connect/howto/mongodb-poll-source-connector
+              title: PostgreSQL to Kafka
             - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-pg
-            - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-pg-node-replacement
+              title: PostgreSQL to Kafka with Debezium
+            - file: docs/products/kafka/kafka-connect/howto/jdbc-source-connector-mysql
+              title: MySQL to Kafka
             - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-mysql
+              title: MySQL to Kafka with Debezium
+            - file: docs/products/kafka/kafka-connect/howto/jdbc-source-connector-sql-server
+              title: SQL Server to Kafka
             - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-sql-server
+              title: SQL Server to Kafka with Debezium
+            - file: docs/products/kafka/kafka-connect/howto/mongodb-poll-source-connector
+              title: MongoDB to Kafka
+            - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-pg-node-replacement
             - file: docs/products/kafka/kafka-connect/howto/debezium-source-connector-mongodb
+              title: MongoDB to Kafka with Debezium
             - file: docs/products/kafka/kafka-connect/howto/cassandra-streamreactor-source
+              title: Cassandra to Kafka
             - file: docs/products/kafka/kafka-connect/howto/mqtt-source-connector
+              title: MQTT to Kafka
             - file: docs/products/kafka/kafka-connect/howto/gcp-pubsub-source
+              title: Google Pub/Sub to Kafka
             - file: docs/products/kafka/kafka-connect/howto/gcp-pubsub-lite-source
+              title: Google Pub/Sub Lite to Kafka
             - file: docs/products/kafka/kafka-connect/howto/couchbase-source
+              title: Couchbase to Kafka
           - file: docs/products/kafka/kafka-connect/howto/list-sink-connectors
             entries:
             - file: docs/products/kafka/kafka-connect/howto/jdbc-sink
+              title: Kafka to another database with JDBC
             - file: docs/products/kafka/kafka-connect/howto/s3-sink-prereq
             - file: docs/products/kafka/kafka-connect/howto/s3-sink-connector-aiven
+              title: Kafka to S3 (Aiven)
             - file: docs/products/kafka/kafka-connect/howto/s3-iam-assume-role
             - file: docs/products/kafka/kafka-connect/howto/s3-sink-connector-confluent
+              title: Kafka to S3 (Confluent)
             - file: docs/products/kafka/kafka-connect/howto/gcs-sink-prereq
             - file: docs/products/kafka/kafka-connect/howto/gcs-sink
+              title: Kafka to GCS
             - file: docs/products/kafka/kafka-connect/howto/gcp-bigquery-sink-prereq
             - file: docs/products/kafka/kafka-connect/howto/gcp-bigquery-sink
+              title: Kafka to Big Query
             - file: docs/products/kafka/kafka-connect/howto/opensearch-sink
+              title: Kafka to OpenSearch
             - file: docs/products/kafka/kafka-connect/howto/elasticsearch-sink
+              title: Kafka to Elasticsearch
             - file: docs/products/kafka/kafka-connect/howto/snowflake-sink-prereq
             - file: docs/products/kafka/kafka-connect/howto/snowflake-sink
+              title: Kakfa to Snowflake
             - file: docs/products/kafka/kafka-connect/howto/http-sink
+              title: Kafka to HTTP
             - file: docs/products/kafka/kafka-connect/howto/mongodb-sink-mongo
+              title: Kafka to MongoDB
             - file: docs/products/kafka/kafka-connect/howto/mongodb-sink-lenses
+              title: Kafka to MongoDB (by Lenses)
             - file: docs/products/kafka/kafka-connect/howto/influx-sink
+              title: Kafka to InfluxDB
             - file: docs/products/kafka/kafka-connect/howto/redis-streamreactor-sink
+              title: Kafka to Redis
             - file: docs/products/kafka/kafka-connect/howto/cassandra-streamreactor-sink
+              title: Kafka to Cassandra
             - file: docs/products/kafka/kafka-connect/howto/couchbase-sink
+              title: Kafka to Couchbase
             - file: docs/products/kafka/kafka-connect/howto/gcp-pubsub-sink
+              title: Kafka to Google Pub/Sub
             - file: docs/products/kafka/kafka-connect/howto/gcp-pubsub-lite-sink
+              title: Kafka to Google Pub/Sub Lite
             - file: docs/products/kafka/kafka-connect/howto/splunk-sink
+              title: Kafka to Splunk
 
         - file: docs/products/kafka/kafka-connect/reference
           title: Reference

@@ -1,5 +1,5 @@
-Create a Google Pub/Sub Lite source connector
-=============================================
+Create a Google Pub/Sub Lite source connector to Apache Kafka®
+==============================================================
 
 The `Google Pub/Sub Lite source connector <https://github.com/GoogleCloudPlatform/pubsub/>`_ enables you to push from a Google Pub/Sub subscription to an Aiven for Apache Kafka® topic. 
 

@@ -1,5 +1,5 @@
-Create an Elasticsearch sink connector
-=======================================
+Create a sink connector from Apache Kafka® to Elasticsearch
+===========================================================
 
 The Elasticsearch sink connector enables you to move data from an Aiven for Apache Kafka® cluster to an Elasticsearch instance for further processing and analysis.
 

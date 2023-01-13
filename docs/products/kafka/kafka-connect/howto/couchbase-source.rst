@@ -1,7 +1,7 @@
-Create a Couchbase source connector
-==============================================
+Create a source connector from Couchbase to Apache Kafka®
+=========================================================
 
-The `Couchbase <https://www.couchbase.com/>`_ source connector pushes data from the NoSQL database, to Apache Kafka® where can be transformed and read by multiple consumers.
+The `Couchbase <https://www.couchbase.com/>`_ source connector pushes data from the NoSQL database, to Apache Kafka® where it can be transformed and read by multiple consumers.
 
 .. Tip::
 

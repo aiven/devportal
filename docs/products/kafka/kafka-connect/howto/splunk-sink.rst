@@ -1,5 +1,5 @@
-Create Splunk sink connector
-=============================
+Create a sink connector from Apache Kafka® to Splunk
+====================================================
 
 The `Splunk <https://www.splunk.com/>`_ sink connector enables you to move data from an Aiven for Apache Kafka® cluster to a remote Splunk server via `HTTP event collector <https://docs.splunk.com/Documentation/Splunk/latest/Data/FormateventsforHTTPEventCollector>`_ (HEC).
 
