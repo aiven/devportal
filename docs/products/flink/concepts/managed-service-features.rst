@@ -25,7 +25,7 @@ For more information on available options, refer to `Apache Flink's fault tolera
 
 Disaster recovery
 -----------------
-Periodic checkpoints have been configured to be persisted externally in object storage. They allow Flink to recover states and positions in the streams by giving the application the same semantics as a failure-free execution. For information on checkpoints, see 
+Periodic checkpoints have been configured to be persisted externally in object storage. They allow Flink to recover states and positions in the streams by giving the application the same semantics as a failure-free execution. For information on checkpoints, see :doc:`Checkpoints <../concepts/checkpoints>`. 
 
 Security considerations
 -----------------------
