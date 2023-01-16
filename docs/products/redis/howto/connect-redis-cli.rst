@@ -32,7 +32,7 @@ Execute the following from a terminal window:
     redis-cli -u REDIS_URI
 
 
-This code connects to the Redis database.
+This code connects to the Redis®* database.
 
 To check the connection is working, execute the following code::
 

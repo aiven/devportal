@@ -18,8 +18,8 @@ Write-Ahead Log (WAL)
 
 .. _Terminology PGLookout:
 
-PGLookout
-    `PGLookout <https://github.com/aiven/pglookout>`_ is a PostgreSQL replication monitoring and failover daemon.
+pglookout
+    `pglookout <https://github.com/aiven/pglookout>`_ is a PostgreSQL replication monitoring and failover daemon.
 
 .. _Terminology PGHoard:
 

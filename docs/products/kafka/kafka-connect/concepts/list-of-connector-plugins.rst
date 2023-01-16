@@ -83,7 +83,7 @@ Preview connectors
 ------------------
 
 .. image:: /images/products/kafka/kafka-connect/preview-kafka-connect-connectors.png
-   :alt: Preview icon next to a OpenSearch Apache Kafka Connect connector
+   :alt: Preview icon next to an OpenSearch® Apache Kafka® Connect connector
 
 Some of the available connectors have the |preview| tag next to the name. **Preview connectors do not come under our SLA**, consider this before using them for production purposes. 
 Bugs should be reported to the code owner directly.

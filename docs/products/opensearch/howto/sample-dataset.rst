@@ -113,7 +113,7 @@ When no data structure is specified, which is our case as shown on :ref:`load th
     pprint(fields)
     pprint(schema)
 
-You should be able to see the fields's output:
+You should be able to see the fields' output:
 
 .. code-block:: bash
 
