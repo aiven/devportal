@@ -43,7 +43,7 @@ Organization and organizational unit settings
 
 The organization or organizational unit (org unit) that you are currently working with is displayed at the top of the page. You can switch to another organization or org unit by clicking the name to open the drop-down menu. You can also create a new organization from this menu.
 
-If you don't have an organization, click **Create organzation** to :doc:`create your first organization</docs/tools/aiven-console/howto/create-accounts>`. 
+If you don't have an organization, click **Create organization** to :doc:`create your first organization</docs/tools/aiven-console/howto/create-accounts>`. 
  
 .. note:: We strongly recommend creating an organization. It makes managing your projects much easier and comes with many additional features, such as teams (user groups), billing groups, and SAML authentication.
 
