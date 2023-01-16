@@ -98,6 +98,7 @@ the Aiven Console's login page.
 .. note::
 
    New users need to be assigned to the Aiven application in Okta for the login to be successful.
+   
 
 Finish the configuration in Aiven
 ---------------------------------
