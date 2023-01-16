@@ -59,6 +59,7 @@ exceptions:
   - IPsec
   - Java
   - JMX
+  - JobManager
   - Jolokia
   - Kafdrop
   - Kafka
