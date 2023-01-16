@@ -1,6 +1,6 @@
 Aiven for Apache Flink® features
 ================================
-Aiven for Apache Flink is powered by the open-source framework Apache Flink, a distributed processing engine for stateful computations over data streams. It enables you to easily get started with real-time stream processing using SQL.
+Aiven for Apache Flink® is powered by the open-source framework Apache Flink, a distributed processing engine for stateful computations over data streams. It enables you to easily get started with real-time stream processing using SQL.
 
 Some of the key features of Aiven for Apache Flink® include:
 
@@ -15,7 +15,7 @@ Applications in the Aiven for Apache Flink service are containers that hold ever
 
 Interactive queries
 -------------------
-The interactive query feature in Aiven for Apache Flink allows you to preview the data of a Flink table or job without outputting the rows to a sink table such as Kafka. This can be useful for testing and debugging purposes, as it allows you to quickly and easily see the data that is being processed by your Flink application.
+The interactive query feature in Aiven for Apache Flink allows you to preview the data of a Flink table or job without outputting the rows to a sink table such as Apache Kafka®. This can be useful for testing and debugging purposes, as it allows you to quickly and easily see the data that is being processed by your Flink application.
 
 Built-in data flow integration with Aiven for Apache Kafka®
 -----------------------------------------------------------

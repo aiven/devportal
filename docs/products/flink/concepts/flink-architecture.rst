@@ -18,7 +18,10 @@ Some of the responsibilities of the JobManager include:
 
 In a high-availability setup, there may be multiple JobManagers running in the cluster, with one JobManager designated as the leader and the others as standby JobManagers. 
 
-The JobManager in Apache Flink consists of three main components: **ResourceManager**, **Dispatcher**, and **JobMaster**. The ResourceManager is responsible for managing the allocation and deallocation of resources in the Flink cluster. Additionally, ResourceMaanger is responsible for managing **Task slots** - the unit of resource scheduling in a Flink cluster.
+The JobManager in Apache Flink consists of three main components:
+-  **ResourceManager:** The ResourceManager is responsible for managing the allocation and deallocation of resources in the Flink cluster. Additionally, ResourceManger is responsible for managing **Task slots** - the unit of resource scheduling in a Flink cluster.
+-  **Dispatcher:** The Dispatcher in Apache Flink ensures tasks run smoothly on the cluster by scheduling them on available task slots and ensuring that tasks are executed efficiently. 
+-  **JobMaster: ** The JobMaster in Apache Flink makes sure a specific job runs smoothly on the cluster by coordinating the tasks and executing them correctly and efficiently.
 
 TaskManager
 -----------

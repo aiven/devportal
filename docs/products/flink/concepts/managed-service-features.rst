@@ -5,9 +5,9 @@ As a fully managed distributed data stream processing platform, deployable in th
 
 Cluster deployment mode
 -----------------------
-Aiven for Apache Flink® is configured to use the `HashMap state backend <https://ci.apache.org/projects/flink/flink-docs-stable/api/java/org/apache/flink/runtime/state/hashmap/HashMapStateBackend.html>`_. This means that the `state <https://ci.apache.org/projects/flink/flink-docs-release-1.15/docs/concepts/stateful-stream-processing/#what-is-state>`_ is stored in memory, which can impact the performance of jobs that require keeping a very large state. We recommend you provision your platform accordingly.
+Aiven for Apache Flink® is configured to use the `HashMap state backend <https://ci.apache.org/projects/flink/flink-docs-stable/api/java/org/apache/flink/runtime/state/hashmap/HashMapStateBackend.html>`_. This means that the `state <https://nightlies.apache.org/flink/flink-docs-stable/docs/concepts/stateful-stream-processing/#what-is-state>`_ is stored in memory, which can impact the performance of jobs that require keeping a very large state. We recommend you provision your platform accordingly.
 
-The Flink cluster executes applications in `session mode <https://nightlies.apache.org/flink/flink-docs-release-1.13/docs/deployment/overview/#session-mode>`_ so you can deploy multiple Flink jobs on the same cluster, thus effectively utilizing the available resources.
+The Flink cluster executes applications in `session mode <https://nightlies.apache.org/flink/flink-docs-stable/docs/deployment/overview/#session-mode>`_ so you can deploy multiple Flink jobs on the same cluster, thus effectively utilizing the available resources.
 
 Scaling a Flink cluster
 -----------------------
@@ -15,17 +15,17 @@ Each node is equipped with a TaskManager and JobManager. We recommend scaling up
 
 By default, each TaskManager is configured with a single slot for maximum job isolation. It is highly recommended that you modify this option to match your requirements.
 
-.. note:: Adjusting the task slots per TaskManager requires a cluster restart.	
+.. warning:: Adjusting the task slots per TaskManager requires a cluster restart.	
 
 Cluster restart strategy
 ------------------------
-The cluster's default restart strategy is configured to Failure Rate. This controls Flink's restart behavior in cases of failures during the execution of jobs. Administrators can overwrite this setting in the service's advanced configuration options.
+The default restart strategy of the cluster is set to `Failure Rate`. This controls how Apache Flink restarts in case of failures during job execution. Administrators can change this setting in the advanced configuration options of the service.
 
 For more information on available options, refer to `Apache Flink's fault tolerance <https://nightlies.apache.org/flink/flink-docs-master/docs/deployment/config/#fault-tolerance>`_ documentation. 
 
 Disaster recovery
 -----------------
-Periodic checkpoints have been configured to be persisted externally in object storage. They allow Flink to recover states and positions in the streams by giving the application the same semantics as a failure-free execution. 
+Periodic checkpoints have been configured to be persisted externally in object storage. They allow Flink to recover states and positions in the streams by giving the application the same semantics as a failure-free execution. For information on checkpoints, see 
 
 Security considerations
 -----------------------
