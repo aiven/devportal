@@ -69,7 +69,8 @@ exclude_patterns = [
 gitstamp_fmt = "%B %Y"
 
 # sitemap config
-html_baseurl = 'https://docs.aiven.io'
+# No base url as we don't want to have .html extension in the canonical url. Custom set canonical tag in _template/base.html instead.
+html_baseurl = ''
 # Since we have `language='en'` set (further down) the URLs in the sitemap will
 # default to "{version}{lang}{link}", producing things like
 #    <url><loc>https://docs.aiven.io/en/docs/platform/howto/create_authentication_token.html</loc></url>

@@ -2,8 +2,8 @@
 
 {%- block extrahead %}
 {{ super() }}
-
 <meta name="description" content="{{ body|striptags|replace("\u00B6", '')|truncate(160) }}">
+<link rel="canonical" href="https://docs.aiven.io/{{ pagename }}" />
 
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary_large_image">
