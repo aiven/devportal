@@ -105,7 +105,7 @@ For the Aiven for OpenSearch® :doc:`index integration </docs/products/flink/how
     - The name of the  Aiven for OpenSearch® index to use
 
 
-**Example:** Create a Flink table named ``KAlert`` on top of an Aiven for Apache Kafka topic in **insert mode** with:
+**Example:** Create an Apache Flink® table named ``KAlert`` on top of an Aiven for Apache Kafka® topic in **insert mode** with:
 
 * ``alert`` as source Apache Kafka **topic**
 * ``kafka`` as connector type
@@ -131,7 +131,7 @@ For the Aiven for OpenSearch® :doc:`index integration </docs/products/flink/how
         \"schema_sql\":\"cpu FLOAT, node INT, cpu_percent INT, occurred_at TIMESTAMP_LTZ(3)\"    
     }"""
 
-**Example:** Create a Flink table named ``KAlert`` on top of an Aiven for Apache Kafka topic in **upsert mode** with:
+**Example:** Create an Apache Flink® table named ``KAlert`` on top of an Aiven for Apache Kafka® topic in **upsert mode** with:
 
 * ``alert`` as source Apache Kafka **topic**
 * ``upsert-kafka`` as connector type
@@ -155,9 +155,9 @@ For the Aiven for OpenSearch® :doc:`index integration </docs/products/flink/how
         \"schema_sql\":\"cpu FLOAT, node INT PRIMARY KEY, cpu_percent INT, occurred_at TIMESTAMP_LTZ(3)\"    
     }"""
 
-**Example:** Create a Flink table named ``KAlert`` on top of an Aiven for PostgreSQL table with:
+**Example:** Create an Apache Flink® table named ``KAlert`` on top of an Aiven for PostgreSQL® table with:
 
-* ``alert`` as source PostgreSQL **table**
+* ``alert`` as source PostgreSQL® **table**
 * ``jdbc`` as connector type
 * ``cpu FLOAT, node INT PRIMARY KEY, cpu_percent INT, occurred_at TIMESTAMP(3)`` as **SQL schema**
 * ``ab8dd446-c46e-4979-b6c0-1aad932440c9`` as integration ID
@@ -175,9 +175,9 @@ For the Aiven for OpenSearch® :doc:`index integration </docs/products/flink/how
         \"schema_sql\":\"cpu FLOAT, node INT PRIMARY KEY, cpu_percent INT, occurred_at TIMESTAMP(3)\"    
     }"""
 
-**Example:** Create a Flink table named ``KAlert`` on top of an Aiven for OpenSearch index with:
+**Example:** Create an Apache Flink® table named ``KAlert`` on top of an Aiven for OpenSearch® index with:
 
-* ``alert`` as source OpenSearch **index**
+* ``alert`` as source OpenSearch® **index**
 * ``opensearch`` as connector type
 * ``cpu FLOAT, node INT PRIMARY KEY, cpu_percent INT, occurred_at TIMESTAMP(3)`` as **SQL schema**
 * ``ab8dd446-c46e-4979-b6c0-1aad932440c9`` as integration ID
@@ -199,7 +199,7 @@ For the Aiven for OpenSearch® :doc:`index integration </docs/products/flink/how
 ``avn service flink table delete``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Deletes an existing Aiven for Apache Flink table.
+Deletes an existing Aiven for Apache Flink® table.
 
 .. list-table::
   :header-rows: 1
@@ -212,7 +212,7 @@ Deletes an existing Aiven for Apache Flink table.
   * - ``table_id``
     - The ID of the table to delete
 
-**Example:** Delete the Flink table with ID ``8b8ac2fe-b6eb-46bc-b327-fb4b84d27276`` belonging to the Aiven for Flink service ``flink-devportal-demo``.
+**Example:** Delete the Apache Flink® table with ID ``8b8ac2fe-b6eb-46bc-b327-fb4b84d27276`` belonging to the Aiven for Flink service ``flink-devportal-demo``.
 
 ::
   
@@ -221,7 +221,7 @@ Deletes an existing Aiven for Apache Flink table.
 ``avn service flink table get``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Retrieves the definition of an existing Aiven for Apache Flink table.
+Retrieves the definition of an existing Aiven for Apache Flink® table.
 
 .. list-table::
   :header-rows: 1
@@ -234,7 +234,7 @@ Retrieves the definition of an existing Aiven for Apache Flink table.
   * - ``table_id``
     - The ID of the table to retrieve
 
-**Example:** Retrieve the definition of the Flink table with ID ``8b8ac2fe-b6eb-46bc-b327-fb4b84d27276`` belonging to the Aiven for Flink service ``flink-devportal-demo``.
+**Example:** Retrieve the definition of the Apache Flink® table with ID ``8b8ac2fe-b6eb-46bc-b327-fb4b84d27276`` belonging to the Aiven for Flink service ``flink-devportal-demo``.
 
 ::
   
@@ -283,7 +283,7 @@ An example of ``avn service flink table get`` output:
 ``avn service flink table list``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Lists all the Aiven for Apache Flink tables in a selected service.
+Lists all the Aiven for Apache Flink® tables in a selected service.
 
 .. list-table::
   :header-rows: 1
@@ -294,7 +294,7 @@ Lists all the Aiven for Apache Flink tables in a selected service.
   * - ``service_name``
     - The name of the service
 
-**Example:** List all the Flink tables available in the Aiven for Flink service ``flink-devportal-demo``.
+**Example:** List all the Apache Flink® tables available in the Aiven for Flink service ``flink-devportal-demo``.
 
 ::
   
@@ -309,13 +309,13 @@ An example of ``avn service flink table list`` output:
   315fe8af-34d9-4d7e-8711-bc7b6841dc55  882ee0be-cb0b-4ccf-b4d1-89d2e4a34260  ttt5         "id INT,\nage int"
   77741d89-71f1-4de6-897a-fd83bce0ee62  f7bbe17b-ab47-46fd-83cb-2f5d23656018  testname445  "id INT,\nname string"
 
-Manage a Flink job
+Manage an Apache Flink® job
 --------------------------------------------------------
 
 ``avn service flink job create``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Creates a new Aiven for Apache Flink job.
+Creates a new Aiven for Apache Flink® job.
 
 .. list-table::
   :header-rows: 1
@@ -333,7 +333,7 @@ Creates a new Aiven for Apache Flink job.
     - Flink job SQL statement
  
 
-**Example:** Create a Flink job named ``JobExample`` with:
+**Example:** Create an Apache Flink® job named ``JobExample`` with:
 
 * ``KCpuIn`` (with id ``cac53785-d1b5-4856-90c8-7cbcc3efb2b6``) and ``KAlert`` (with id ``54c2f4e6-a446-4d62-8dc9-2b81179c6f43``) as source/sink **tables**
 * ``INSERT INTO KAlert SELECT * FROM KCpuIn WHERE cpu_percent > 70`` as **SQL statement**
@@ -348,7 +348,7 @@ Creates a new Aiven for Apache Flink job.
 ``avn service flink job cancel``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Cancels an existing Aiven for Apache Flink job.
+Cancels an existing Aiven for Apache Flink® job.
 
 .. list-table::
   :header-rows: 1
@@ -361,7 +361,7 @@ Cancels an existing Aiven for Apache Flink job.
   * - ``job_id``
     - The ID of the job to delete
 
-**Example:** Cancel the Flink job with ID ``8b8ac2fe-b6eb-46bc-b327-fb4b84d27276`` belonging to the Aiven for Flink service ``flink-devportal-demo``.
+**Example:** Cancel the Apache Flink® job with ID ``8b8ac2fe-b6eb-46bc-b327-fb4b84d27276`` belonging to the Aiven for Flink service ``flink-devportal-demo``.
 
 ::
   
@@ -370,7 +370,7 @@ Cancels an existing Aiven for Apache Flink job.
 ``avn service flink job get``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Retrieves the definition of an existing Aiven for Apache Flink job.
+Retrieves the definition of an existing Aiven for Apache Flink® job.
 
 .. list-table::
   :header-rows: 1
@@ -383,7 +383,7 @@ Retrieves the definition of an existing Aiven for Apache Flink job.
   * - ``job_id``
     - The ID of the job to retrieve
 
-**Example:** Retrieve the definition of the Flink job with ID ``8b8ac2fe-b6eb-46bc-b327-fb4b84d27276`` belonging to the Aiven for Flink service ``flink-devportal-demo``.
+**Example:** Retrieve the definition of the Apache Flink® job with ID ``8b8ac2fe-b6eb-46bc-b327-fb4b84d27276`` belonging to the Aiven for Flink service ``flink-devportal-demo``.
 
 ::
   
@@ -400,7 +400,7 @@ An example of ``avn service flink job get`` output:
 ``avn service flink job list``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Lists all the Aiven for Apache Flink jobs in a selected service.
+Lists all the Aiven for Apache Flink® jobs in a selected service.
 
 .. list-table::
   :header-rows: 1
@@ -411,7 +411,7 @@ Lists all the Aiven for Apache Flink jobs in a selected service.
   * - ``service_name``
     - The name of the service
 
-**Example:** List all the Flink jobs available in the Aiven for Flink service ``flink-devportal-demo``.
+**Example:** List all the Apache Flink® jobs available in the Aiven for Flink service ``flink-devportal-demo``.
 
 ::
   
