@@ -10,7 +10,7 @@ This section of the tutorial will showcase how to create and customise the neede
 5. :doc:`Create an Aiven for Apache Flink service<create-services/create-flink>`
 6. :doc:`Customise the Aiven for Apache Flink service<create-services/customise-flink>`
 
-.. button-link:: create-services/intro.html
+.. button-link:: create-services/intro
     :align: right
     :color: primary
     :outline:

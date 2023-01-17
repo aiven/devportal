@@ -15,7 +15,7 @@ This section of the tutorial will showcase how to create the needed Aiven servic
         id2(PostgreSQL)-- alerting threshold data -->id3;
         id3-. curated data .->id1(Kafka);
 
-.. button-link:: create-kafka.html
+.. button-link:: create-kafka
     :align: right
     :color: primary
     :outline:
