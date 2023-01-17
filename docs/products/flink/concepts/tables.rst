@@ -5,7 +5,7 @@ With Aiven for Apache Flink®, you can easily create and manage data pipelines u
 
 The interactive query feature on the table editor makes it easy for you to review the data structure of the tables. This feature also allows you to quickly validate the data ingested into your application, ensure accurate data transformation, and troubleshoot any issues that may arise.
 
-You can easily add and manage tables within the Flink application on your Aiven for Apache Flink service. You can also create tables for various data services integrations, such as Apache Kafka, PostgreSQL, and OpenSearch,  depending on the data source and the type of analysis you want to perform.
+You can easily add and manage tables within the Flink application on your Aiven for Apache Flink service. You can also create tables for various data services integrations, such as Aiven for Apache Kafka®, Aiven for PostgreSQL®, and Aiven for OpenSearch®, depending on the data source and the type of analysis you want to perform.
 
 .. seealso::
     For information on how to add, import, or edit tables in a Flink application, see :doc:`Manage tables in Flink applications<../howto/manage-flink-tables>`. 

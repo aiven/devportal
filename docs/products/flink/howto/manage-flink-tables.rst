@@ -23,12 +23,12 @@ Follow these steps add a new table to an application:
         If you already have a sink table listed, you must delete it before adding a new one.
 
 4. Select the **Integrated service** from the drop-down list in the **Add new source table** or **Add new sink table** screen, respectively.
-5. In the **Table SQL** section, enter the statement that will create the table. The interactive quesry feature if the editor will prompt you for error or invalid queries. 
+5. In the **Table SQL** section, enter the statement that will create the table. The interactive query feature if the editor will prompt you for error or invalid queries. 
 6. Click **Add table** to complete the process.
 
 Import an existing table
 -------------------------
-Follow these steps import an exisitng table from another application: 
+Follow these steps import an existing table from another application: 
 
 1. In the **Add source tables** or **Add sink tables** screen, click **Import existing table** to import a table to your application. 
     .. note::
@@ -60,7 +60,7 @@ Follow these steps to clone a table in an application:
 
 Edit table
 ----------
-Follow these steps edit an exisitng table in an application: 
+Follow these steps edit an existing table in an application: 
 1. In the **Add source tables** or **Add sink tables** screen, locate the table you want to edit and click **Edit** next to it.
 2. Make the necessary changes to the table and click **Save changes** to confirm the changes.
 
