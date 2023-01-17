@@ -151,27 +151,17 @@ Aiven for ClickHouse®
 
 Aiven for ClickHouse® provides automatic daily backups. The `Astacus <https://github.com/aiven/astacus>`_ backup manager for distributed databases runs on all nodes to coordinate backups of cluster databases.
 
-Each file to be backed up is encrypted, compressed, and uploaded to an object storage (Amazon S3 or Google Cloud Storage).
+Each file to be backed up is encrypted, compressed, and uploaded to an object storage (Amazon S3 or Google Cloud Storage) in the same region.
 
-Aiven for ClickHouse backups cover
-
-* Access entities (for example, users, roles, passwords, or secrets) stored in Zookeeper
-* Database definitions (DDL files)
-* Table definitions (DDL files)
-* Table schemas
-* Table content (:ref:`part files <part-files>`)
-
-.. _part-files:
-
-.. topic:: Part files
-    
-    With the Aiven for ClickHouse's ReplicatedMergeTree table engine, each INSERT query results in creating a new file, so-called part, written only once and not modifiable.
-
-Using part files allows incremental backups in Aiven for ClickHouse: only changed parts are backed up and files already available in the object storage are left out from the backup.
+Aiven for ClickHouse backups contain database lists, table schemas, table content, and access entities (such as users or roles). They are backed up incrementally: files already present in the object storage are not re-uploaded and only changed parts are backed up.
 
 .. note::
     
     Aiven for ClickHouse doesn't support so-called streaming backups: when a service is powered off, all data written after the last backup gets lost. For more information about limitations on Aiven for ClickHouse backups, see :doc:`Aiven for ClickHouse limitations </docs/products/clickhouse/reference/limitations>`.
+
+.. seealso::
+
+    For more information on Aiven for ClickHouse backups, see :ref:`Backup and restore <backup-and-restore>`.
 
 Access to backups
 -----------------

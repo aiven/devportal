@@ -14,13 +14,31 @@ With Aiven, HA for your service is supported in business and premium plans. See 
 
     :ref:`Cross-availability-zone data distribution <cross-zone data distro>` 
 
+.. _backup-and-restore:
+
 Backup and restore
 ------------------
 
 Backups
 '''''''
 
-Backups of Aiven for ClickHouse services happen daily and contain database lists, table schemas, table content, and access entities (such as users or roles). Aiven for ClickHouse supports incremental backups: files already present in the object storage are not re-uploaded and only changed parts are backed up.
+Backups of Aiven for ClickHouse services happen automatically on a daily basis.
+
+They cover the following:
+
+* Access entities (for example, users, roles, passwords, or secrets) stored in Zookeeper
+* Database definitions (DDL files)
+* Table definitions (DDL files)
+* Table schemas
+* Table content (:ref:`part files <part-files>`)
+
+.. _part-files:
+
+.. topic:: Part files
+    
+    With the ClickHouse's ReplicatedMergeTree table engine, each INSERT query results in creating a new file, so-called part, written only once and not modifiable.
+
+Using part files allows incremental backups in Aiven for ClickHouse: only changed parts are backed up and files already available in the object storage are left out from the backup.
 
 Recovery
 ''''''''
