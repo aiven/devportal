@@ -19,7 +19,7 @@ Create an Aiven for Apache Kafka® service
 
 6. Click **Create Service** under the summary on the right side of the console
 
-.. button-link:: customise-kafka
+.. button-ref:: customise-kafka
     :align: right
     :color: primary
     :outline:

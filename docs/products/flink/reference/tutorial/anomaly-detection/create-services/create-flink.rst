@@ -19,7 +19,7 @@ Create an Aiven for Apache Flink® service
 
 6. Click **Create Service** under the summary on the right side of the console
 
-.. button-link:: customise-flink
+.. button-ref:: customise-flink
     :align: right
     :color: primary
     :outline:

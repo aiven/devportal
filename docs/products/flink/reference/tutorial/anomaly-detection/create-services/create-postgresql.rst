@@ -19,7 +19,7 @@ Create an Aiven for PostgreSQL® service
 
 6. Click **Create Service** under the summary on the right side of the console
 
-.. button-link:: create-flink
+.. button-ref:: create-flink
     :align: right
     :color: primary
     :outline:

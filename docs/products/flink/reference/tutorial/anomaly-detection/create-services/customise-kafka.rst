@@ -13,7 +13,7 @@ After creating the service, you'll be redirected to the service details page. Yo
    .. Note:: 
     The ``kafka.auto_create_topics_enable`` setting allows you to create new Apache Kafka® topics as you configure your Apache Flink® data tables, so that you do not need to create the topics in advance.
 
-.. button-link:: create-postgresql
+.. button-ref:: create-postgresql
     :align: right
     :color: primary
     :outline:
