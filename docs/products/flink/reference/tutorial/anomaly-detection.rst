@@ -50,7 +50,7 @@ Prerequisites
 The tutorial uses all Aiven services, therefore you'll need a valid `Aiven account <https://console.aiven.io/signup>`_. The tutorial has also three external dependencies:
 
 * Docker, needed for the `fake data generator for Apache Kafka <https://github.com/aiven/fake-data-producer-for-apache-kafka-docker>`_  is the only dependancy. Check out the `related installation instructions <https://docs.docker.com/engine/install/>`_.
-* Slack Token: the output of a data pipeline sends out notifications to a slack channel, check out the needed steps to retrieve a `Slack authentication token <https://github.com/aiven/slack-connector-for-apache-flink#set-up-slack-application>`_
+* Slack Token: the output of a data pipeline sends out notifications to a slack channel, check out the needed steps to retrieve a `Slack authentication token <https://github.com/aiven/slack-connector-for-apache-flink>`_
 * `psql <https://www.postgresql.org/docs/current/app-psql.html>`_ a terminal based tool to interact with PostgreSQL
 
 .. button-link:: anomaly-detection/create-services
