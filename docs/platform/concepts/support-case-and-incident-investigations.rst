@@ -1,4 +1,4 @@
-Support Case and Incident Investigations
+Support case and incident investigations
 ========================================
 
 Please provide the following information to the Aiven support team
