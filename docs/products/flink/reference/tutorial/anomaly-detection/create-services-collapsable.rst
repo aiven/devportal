@@ -1,5 +1,5 @@
-Create the Aiven services collapsable
-=====================================
+Create the Aiven services hidden sections
+=========================================
 
 This section of the tutorial will showcase how to create the needed Aiven services via the `Aiven Console <https://console.aiven.io/>`_. We'll create three services:
 

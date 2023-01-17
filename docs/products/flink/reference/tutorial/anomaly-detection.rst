@@ -24,7 +24,7 @@ The tutorial includes:
 The tutorial is divided into several sections:
 
 * :doc:`Create the Aiven services <anomaly-detection/create-aiven-services>` provides the steps to create the needed Aiven for Apache Kafka and Aiven for Apache Flink
-* Create the Aiven token and start the fake IoT data generator starts a continous flow of data towards an Aiven for Apache Kafka topic
+* Create the Aiven token and start the fake IoT data generator starts a continuous flow of data towards an Aiven for Apache Kafka topic
 * Create a filtering data pipeline showcases an Apache Flink SQL to filter the dataset
 * Create an aggregation data pipeline provides an example of time bounded aggregation
 * Create a Slack notification data pipeline showcases how to send notifications using the Slack integration
@@ -49,7 +49,7 @@ Prerequisites
 
 The tutorial uses all Aiven services, therefore you'll need a valid `Aiven account <https://console.aiven.io/signup>`_. The tutorial has also three external dependencies:
 
-* Docker, needed for the `fake data generator for Apache Kafka <https://github.com/aiven/fake-data-producer-for-apache-kafka-docker>`_  is the only dependancy. Check out the `related installation instructions <https://docs.docker.com/engine/install/>`_.
+* Docker, needed for the `fake data generator for Apache Kafka <https://github.com/aiven/fake-data-producer-for-apache-kafka-docker>`_  is the only dependency. Check out the `related installation instructions <https://docs.docker.com/engine/install/>`_.
 * Slack Token: the output of a data pipeline sends out notifications to a slack channel, check out the needed steps to retrieve a `Slack authentication token <https://github.com/aiven/slack-connector-for-apache-flink>`_
 * `psql <https://www.postgresql.org/docs/current/app-psql.html>`_ a terminal based tool to interact with PostgreSQL
 

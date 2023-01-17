@@ -15,8 +15,8 @@ This section of the tutorial will showcase how to create the needed Aiven servic
         id2(PostgreSQL)-- alerting threshold data -->id3;
         id3-. curated data .->id1(Kafka);
 
-Create an Aiven for Apache Kafka service
-----------------------------------------
+Create an Aiven for Apache Kafka® service
+-----------------------------------------
 
 1. Log in to the `Aiven web console <https://console.aiven.io/>`_.
 2. On the *Services* page, click **Create a new service**.
@@ -51,7 +51,7 @@ After creating the service, you'll be redirected to the service details page. Yo
    .. Note:: 
     The ``kafka.auto_create_topics_enable`` setting allows you to create new Apache Kafka® topics as you configure your Apache Flink® data tables, so that you do not need to create the topics in advance.
 
-Create an Aiven for PostgreSQL service
+Create an Aiven for PostgreSQL® service
 ----------------------------------------
 
 1. Log in to the `Aiven web console <https://console.aiven.io/>`_.

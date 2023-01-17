@@ -1,5 +1,5 @@
-Customise the Aiven for Apache Kafka service
-============================================
+Customise the Aiven for Apache Kafka® service
+=============================================
 
 After creating the service, you'll be redirected to the service details page. You can now customise the service to enable the needed components in the *Overview* tab:
 
