@@ -608,6 +608,7 @@ entries:
           - file: docs/products/flink/concepts/windows
           - file: docs/products/flink/concepts/watermarks
           - file: docs/products/flink/concepts/checkpoints
+          - file: docs/products/flink/concepts/tables
       - file: docs/products/flink/howto
         title: HowTo
         entries:
@@ -618,6 +619,7 @@ entries:
           - file: docs/products/flink/howto/create-job
           - file: docs/products/flink/howto/timestamps_opensearch
           - file: docs/products/flink/howto/real-time-alerting-solution
+          - file: docs/products/flink/howto/manage-flink-tables
       - file: docs/products/flink/reference
         title: Reference
         entries:
