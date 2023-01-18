@@ -146,6 +146,23 @@ Aiven for InfluxDB®
 
 Aiven for InfluxDB backups are taken every 12 hours with 2.5 days of retention. InfluxDB® is automatically backed up, encrypted, and uploaded to the Aiven's S3 account in the same region. When an instance has to be rebuilt, the backup is downloaded and restored to create a new instance.
 
+Aiven for ClickHouse®
+'''''''''''''''''''''
+
+Aiven for ClickHouse® provides automatic daily backups. The `Astacus <https://github.com/aiven/astacus>`_ backup manager for distributed databases runs on all nodes to coordinate backups of cluster databases.
+
+Each file to be backed up is encrypted, compressed, and uploaded to an object storage (Amazon S3 or Google Cloud Storage) in the same region.
+
+Aiven for ClickHouse backups contain database lists, table schemas, table content, and access entities (such as users or roles). They are backed up incrementally: files already present in the object storage are not re-uploaded and only changed parts are backed up.
+
+.. note::
+    
+    Aiven for ClickHouse doesn't support so-called streaming backups: when a service is powered off, all data written after the last backup gets lost. For more information about limitations on Aiven for ClickHouse backups, see :doc:`Aiven for ClickHouse limitations </docs/products/clickhouse/reference/limitations>`.
+
+.. seealso::
+
+    For more information on Aiven for ClickHouse backups, see :ref:`Backup and restore <backup-and-restore>`.
+
 Access to backups
 -----------------
 
