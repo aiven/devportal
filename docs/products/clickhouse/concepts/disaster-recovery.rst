@@ -27,8 +27,7 @@ Backups of Aiven for ClickHouse services happen automatically on a daily basis.
 They cover the following:
 
 * Access entities (for example, users, roles, passwords, or secrets) stored in Zookeeper
-* Database definitions (DDL files)
-* Table definitions (DDL files)
+* Database definitions
 * Table schemas
 * Table content (:ref:`part files <part-files>`)
 
