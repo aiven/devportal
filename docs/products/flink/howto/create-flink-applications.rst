@@ -8,7 +8,7 @@ This article provides the information required to build and deploy applications 
 Create an application via the Aiven console
 --------------------------------------------
 
-Follow these steps to biuld your first Aiven for Flink application: 
+Follow these steps to build your first Aiven for Flink application: 
 
 1. In the `Aiven Console <https://console.aiven.io/>`_, open the Aiven for Flink service for which you want to create an application. 
 2. Go to the **Applications** tab and click **Create application** to create your first application. 
