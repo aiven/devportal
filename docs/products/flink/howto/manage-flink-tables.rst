@@ -5,7 +5,7 @@ Aiven for Apache Flink® allows you to map source and target data structures as 
 
 * Import existing tables
 * Add new tables
-* Clone tables
+* Clone table definitions from other applications
 * Edit tables
 * Delete tables
 
