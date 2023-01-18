@@ -20,7 +20,7 @@ Follow these steps add a new table to an application:
 2. Navigate to the **Add source tables** or **Add sink tables** screen within your application.
 3. Click the **Add new table** button to add a new table to your application.
    .. note:: 
-        If you already have a sink table listed, you must delete it before adding a new one.
+        If you already have a sink table listed, you must delete it before adding a new one, only one sink table is allowed per job.
 
 4. Select the **Integrated service** from the drop-down list in the **Add new source table** or **Add new sink table** screen, respectively.
 5. In the **Table SQL** section, enter the statement that will create the table. The interactive query feature if the editor will prompt you for error or invalid queries. 
