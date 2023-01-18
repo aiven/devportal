@@ -178,7 +178,7 @@ Prometheus - `Grafana <https://grafana.com/grafana/plugins/prometheus/>`__ | `Gr
     Work with the open-source service monitoring system and time series database.
 
 Prometheus AlertManager - `GitHub <https://github.com/camptocamp/grafana-prometheus-alertmanager-datasource>`__
-    Allows you to use the Alertmanager's API of Prometheus to create dashboards in Grafana.
+    Allows you to use the AlertManager API of Prometheus to create dashboards in Grafana.
 
 SimpleJson - `Grafana <https://grafana.com/grafana/plugins/grafana-simple-json-datasource/>`__ | `GitHub <https://github.com/grafana/simple-json-datasource>`__
 

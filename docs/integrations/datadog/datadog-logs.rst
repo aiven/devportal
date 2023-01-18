@@ -46,7 +46,7 @@ This is the format to use, replacing the variables listed. Don't edit the values
 
    DATADOG_API_KEY <%pri%>1 %timestamp:::date-rfc3339% %HOSTNAME%.AIVEN_PROJECT_NAME %app-name% - - - %msg%
 
-An example of the correct format, using an example API key and "my_project" as the project name:
+An example of the correct format, using an example API key and ``my_project`` as the project name:
 
 ``01234567890123456789abcdefabcdef <%pri%>1 %timestamp:::date-rfc3339% %HOSTNAME%.my_project %app-name% - - - %msg%``
 

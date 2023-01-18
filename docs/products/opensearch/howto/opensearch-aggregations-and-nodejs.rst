@@ -377,7 +377,7 @@ However, our method is narrowed down to a specific scenario. We want to refactor
 * move aggregation field and bucket ranges to the list of method parameters
 * use the rest parameter syntax to collect range values
 * transform the list of range values into ``ranges`` object in a format `from X` / `to Y` expected by OpenSearch API
-* use logAggs function, which we already created, to log the results
+* use the ``logAggs`` function, which we already created, to log the results
 * separate ``body`` into a variable for better readability
 
 
@@ -729,7 +729,7 @@ The returned  data for every year including a value ``moving_average``::
 
 Pay attention to the values of ``count`` and ``moving_average``. To understand better how those numbers were calculated, we can compute first several values on our own:
 
-.. list-table:: Making sense of moving_average result
+.. list-table:: Making sense of the ``moving_average`` result
    :header-rows: 1
 
    * - Year

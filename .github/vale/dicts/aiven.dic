@@ -32,7 +32,7 @@ Conduktor
 Coralogix
 connect
 Couchbase
-CPU
+CPU/MS
 CRD
 cyber
 datacenter
@@ -52,6 +52,7 @@ dockerized
 downsampled
 downsampling
 DSBulk
+DZone
 Elasticsearch
 Epicurious
 etcd
@@ -69,8 +70,8 @@ GitHub
 go
 Google Cloud Platform
 Gradle
-Grafana
-Grafana's
+Grafana/M
+GSuite
 hardcoded
 HashiCorp
 Homebrew
@@ -92,7 +93,7 @@ IPsec
 Java
 JMX
 Jolokia
-Kaggle
+Kaggle/M
 Kafdrop
 Kafka
 Karapace
@@ -118,11 +119,11 @@ MirrorMaker
 MongoDB
 MySQL
 myhoard
-namespace
-namespaces
+namespace/MS
 NodeJS
 nosqlbench
 npm
+NVMe
 OAuth
 Okta
 onboarding
@@ -140,8 +141,11 @@ Percona
 performant
 pgAdmin
 PgBouncer
+PGHoard
+pglookout
 plaintext
 plc
+PNG/S
 Plotly
 Podman
 pooler
@@ -179,9 +183,11 @@ Singlestat
 skyvia
 Snowflake
 Sphinx
+SLA/S
 Splunk
 spring
 Sql
+SSD/S
 Stackdriver
 Statusmap
 Stunnel
@@ -209,11 +215,12 @@ UpCloud
 upsert
 VM
 VMs
-VPC
+VPC/MS
 VNet
 wget
 Workbench
 Worldmap
+worldPing
 Zabbix
 zapier
 Zipkin
