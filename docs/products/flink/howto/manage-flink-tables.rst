@@ -37,7 +37,7 @@ Follow these steps import an existing table from another application:
 2. From the **Import existing source table** or **Import existing sink table** screen:
 
     - Select the application from which you want to import the table.
-    -  Select the version of the application.
+    - Select the version of the application.
     - Select the table you want to import. 
 
 3. Click **Next**.
