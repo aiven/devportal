@@ -33,7 +33,7 @@ Each "recipe" includes an architecture diagram and the terraform sample code you
         :doc:`Apache Kafka and Apache Flink <cookbook/kafka-flink-integration-recipe>`
 
         |icon-kafka| |icon-flink|
-
+        
     .. grid-item-card::
         :shadow: md
         :margin: 2 2 0 0
