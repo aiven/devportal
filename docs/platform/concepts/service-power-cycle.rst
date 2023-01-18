@@ -20,7 +20,7 @@ Whenever an Aiven service is powered off:
 
 .. Warning:: 
 
-    Aiven does `periodic cleanup of powered-off services <https://help.aiven.io/en/articles/4578430-periodic-cleanup-of-powered-off-services>`_ on services powered off for longer than **180** consecutive days. Notification emails will be sent before actions are taken.
+    Aiven does periodic cleanup of powered-off services on services powered off for longer than **180** consecutive days. Notification emails will be sent before actions are taken.
 
 * The message in the **Power Off Confirmation** window will give some hints on the consequence of the power off. Below is an example of powering off an Aiven for Redis®* service whose data since the latest backup will be lost because the service only has time-based but not PITR backups. 
 
