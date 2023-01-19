@@ -25,4 +25,18 @@ Limitations
 * **Concurrent applications:** You can create and run up to 4 concurrent applications in the Aiven for Apache Flink service.
 * **Savepoints:** You can store up to 10 savepoints history per application deployment, allowing you to easily roll back to previous versions of your application if necessary. If you exceed this limit, you must clear the savepoints history before creating a new application version.
 
+Flink Application status
+------------------------
+Flink applications can have different statuses based on their current execution status. The status of a Flink application is closely related to the state of its savepoints.
+
+* **Running:** Indicates that the application is currently running and can be viewed with its version.
+* **Finished:** Indicates that the application has been stopped with a savepoint.
+* **Canceled:** Status indicates that the application has been stopped without a savepoint,
+* **Failed:** Indicates that the application has failed to run.
+
+Additionally, there are transient statuses such as:
+
+* **SAVING_AND_STOP:** Indicates that the application version is being saved in a savepoint, and the application is being stopped.
+* **CANCELLING_REQUESTED:** Indicates that application is in the process of being stopped without a savepoint.
+* **DELETE_REQUESTE:** Indicates the application has been requested to be deleted.
 
