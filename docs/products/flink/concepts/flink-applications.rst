@@ -29,14 +29,23 @@ Flink Application status
 ------------------------
 Flink applications can have different statuses based on their current execution status. The status of a Flink application is closely related to the state of its savepoints.
 
-* **Running:** Indicates that the application is currently running and can be viewed with its version.
-* **Finished:** Indicates that the application has been stopped with a savepoint.
-* **Canceled:** Status indicates that the application has been stopped without a savepoint,
-* **Failed:** Indicates that the application has failed to run.
+* **INITIALIZING:** Indicates that the application is in the process of being initialized.
+* **CREATED:** Indicates that the application has been created but has yet to start running.
+* **RUNNING:** Indicates that the application is currently running and can be viewed with its version. 
+* **FINISHED:** Indicates that the application has been stopped with a savepoint. 
+* **CANCELED:** Indicates that the application has been stopped without a savepoint, 
+* **FAILED:** Indicates that the application has failed to run. 
+* **SUSPENDED:** Indicates that the application has been suspended.
 
 Additionally, there are transient statuses such as:
 
+* **SAVING_AND_STOP_REQUESTED:** Indicates that the application is in the process of creating a savepoint and stopping.
 * **SAVING_AND_STOP:** Indicates that the application version is being saved in a savepoint, and the application is being stopped.
 * **CANCELLING_REQUESTED:** Indicates that application is in the process of being stopped without a savepoint.
-* **DELETE_REQUESTE:** Indicates the application has been requested to be deleted.
+* **CANCELLING:** Indicates that the application is in the process of being cancelled.
+* **DELETE_REQUESTED:** Indicates the application has been requested to be deleted.
+* **DELETING:** Indicates that the application is in the process of being deleted.
+* **FAILING:** Indicates that the application is in the process of failing.
+* **RESTARTING:** Indicates that the application is in the process of being restarted.
+* **SAVING:** Indication that the application is in the process of creating a savepoint.
 
