@@ -1,6 +1,12 @@
 Create Apache Flink® integrations
 ===================================
 
+.. Warning::
+
+    As with many beta products, the Aiven for Apache Flink® experience, APIs and CLI calls are currently being redesigned, you might get error messages if using the currently documented ones.
+
+    We will be working to update all the examples in the documentation.
+
 Apache Flink® can create streaming data pipelines across services. Currently Aiven for Apache Flink® supports Aiven for Apache Kafka® and Aiven for PostgreSQL® as source and target for Flink jobs. Moreover it supports Aiven for OpenSearch® as target.
 
 To use Aiven for Apache Kafka, Aiven for PostgreSQL or Aiven for OpenSearch as a source or target of a Flink job, **the related service needs to be integrated with Aiven for Apache Flink**.

@@ -3,6 +3,12 @@
 
 Here you'll find the full list of commands for ``avn service flink``.
 
+.. Warning::
+
+    As with many beta products, the Aiven for Apache Flink® experience, APIs and CLI calls are currently being redesigned, you might get error messages if using the currently documented ones.
+
+    We will be working to update all the examples in the documentation.
+
 
 Manage an Apache Flink® table
 --------------------------------------------------------
