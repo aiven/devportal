@@ -1,7 +1,7 @@
 Checkpoints
 ===========
 
-Checkpoints in Aivne for Apache Flink® are a key feature for ensuring resiliency and fault tolerance in stateful functions. By periodically creating snapshots of the data stream and storing them, checkpoints enable Flink to quickly and efficiently recover the stream's state and position in the event of a failure, ensuring that applications can continue to execute without interruption.
+Checkpoints in Aiven for Apache Flink® are a key feature for ensuring resiliency and fault tolerance in stateful functions. By periodically creating snapshots of the data stream and storing them, checkpoints enable Flink to quickly and efficiently recover the stream's state and position in the event of a failure, ensuring that applications can continue to execute without interruption.
 
 In the event of a failure, Aiven for Apache Flink uses these checkpoints to restore the application's state and resume processing from the last recorded reading position, allowing the application to continue as if the failure had never occurred. 
 
