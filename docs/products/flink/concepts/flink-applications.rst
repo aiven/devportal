@@ -1,52 +1,56 @@
-Aiven for Flink applications
-============================
+Aiven for Apache Flink® applications
+====================================
 
-Aiven for Flink Applications are containers that include all elements related to a Flink job and help build your data processing pipeline, such as source and sink tables, data processing logic, and other necessary metadata. Applications are the starting point for running a Flink job within the Aiven Flink service. The `Aiven Console <https://console.aiven.io/>`_ provides a user-friendly, guided wizard to help you build and deploy applications, create source and sink tables, write transformation statements, and validate and ingest data using the interactive query feature.
+An Aiven for Apache Flink® Application is an abstraction layer on top of Apache Flink SQL that includes all the elements related to a Flink job to help building your data processing pipeline. An application contains the definition of source and sink tables, data processing logic, deployment parameters, and other necessary metadata. 
 
-Each application created and deployed in the Aiven for Apache Flink service performs a specific task making it easy to manage and understand different applications within the Aiven for Apache Flink service. For example, you can create an application to get user IDs from one topic and publish them on another topic.
+Applications are the starting point for running an Apache Flink job within the Aiven managed service. The `Aiven Console <https://console.aiven.io/>`_ provides a user-friendly, guided wizard to help you build and deploy applications, create source and sink tables, write transformation statements, and validate and ingest data using the interactive query feature.
 
-Additionally, you create new versions of an application for specific tasks or functions. However,  only one version of an application can run at a time. You can run multiple applications within the Aiven for Apache Flink service.
-Applications significantly improve the developer experience and simplify the development and deployment of Flink applications.
+Each application created and deployed in the Aiven for Apache Flink service performs a specific data transformation task allowing you to map and manage different workflows separately within the Aiven for Apache Flink service. For example, you can create an application to get user IDs from one topic and publish them on another topic. You can run multiple applications within the Aiven for Apache Flink service.
 
-Features of Aiven for Flink applications
-----------------------------------------
+Applications significantly improve the developer experience and simplify the development and deployment of Flink applications. Applications are **automatically versioned** on every edit of the underline definition (tables, or transformation SQL) allowing you to eperiment new transformation and revert to a previously stored definition if the result of the edits doesn't meet expectations. 
+
+Features of Aiven for Apache Flink applications
+-----------------------------------------------
+
 Some of key feature of Aiven for Flink applications include: 
 
-* **Intuitive Interface:** The Aiven console provides a user-friendly, guided wizard to help you quickly build and deploy your applications.
-* **Source and sink tables:** You can easily create source and sink tables and write transformation statements to transform data.
-* **Interactive query:**  The interactive query feature allows you to validate and preview your data before deploying it.
-* **Start and stop:** You can easily stop and start your application anytime.
-* **Versioning:** You can create new versions of your application for different purposes.
-* **Savepoints:** You can stop your application with savepoints, allowing you to restart it to a previous state at a later time.
+* **Intuitive Interface**: The `Aiven Console <https://console.aiven.io/>`_ provides a user-friendly, guided wizard to help you quickly build and deploy your applications.
+* **Source and sink tables** definition with **SQL autocomplete**: You can create source and sink tables, the SQL autocomplete feature allows you to start from a specific set of pre-filled parameters depending on the type of connector.
+* **Interactive query**: The interactive query feature allows you to validate and preview your data in the table or SQL tranformation before deploying it.
+* **Start and stop**: you can start and stop applications stop and start anytime.
+* **Automatic Versioning**: on every edit of the table or data transformation definition, a new application versions is automatically generated allowing you to keep track of the changes and revert to a previous version if necessary.
+* **Savepoints**: You can stop your application with a savepoint, allowing you to restart it from the previous state at a later time.
 * **Scalability:** You can scale your cluster depending on the demands of your specific application by parallelizing the applications into multiple tasks and executing them concurrently in a cluster.
 
 Limitations 
 ------------
+
 * **Concurrent applications:** You can create and run up to 4 concurrent applications in the Aiven for Apache Flink service.
 * **Savepoints:** You can store up to 10 savepoints history per application deployment, allowing you to easily roll back to previous versions of your application if necessary. If you exceed this limit, you must clear the savepoints history before creating a new application version.
 
-Flink Application status
-------------------------
+Aiven for Apache Flink application status
+-----------------------------------------
+
 Flink applications can have different statuses based on their current execution status. The status of a Flink application is closely related to the state of its savepoints. The most common statuses you will see in the application on Aiven Console include: 
 
-* **CANCELED:** Indicates that the application has been stopped without a savepoint. 
-* **CREATED:** Indicates that the application has been created but has yet to start running.
-* **FAILED:** Indicates that the application has failed to run. 
-* **FINISHED:** Indicates that the application has been stopped with a savepoint. 
-* **INITIALIZING:** Indicates that the application is in the process of being initialized.
-* **RUNNING:** Indicates that the application is currently running and can be viewed with its version.
-* **RESTARTING:** Indicates that the application is in the process of being restarted. 
-* **SAVING_AND_STOP:** Indicates that the application version is being saved in a savepoint, and the application is being stopped.
+* **CANCELED:** the application has been stopped without a savepoint. 
+* **CREATED:** the application has been created but has yet to start running.
+* **FAILED:** the application has failed to run. 
+* **FINISHED:** the application has been stopped with a savepoint. 
+* **INITIALIZING:** the application is in the process of being initialized.
+* **RUNNING:** the application is currently running and can be viewed with its version.
+* **RESTARTING:** the application is in the process of being restarted. 
+* **SAVING_AND_STOP:** the application version is being saved in a savepoint, and the application is being stopped.
 
 Other statuses and transient statuses include:
 
-* **CANCELLING_REQUESTED:** Indicates that application is in the process of being stopped without a savepoint.
-* **CANCELLING:** Indicates that the application is in the process of being cancelled.
-* **DELETE_REQUESTED:** Indicates the application has been requested to be deleted.
-* **DELETING:** Indicates that the application is in the process of being deleted.
-* **FAILING:** Indicates that the application is in the process of failing.
-* **RESTARTING:** Indicates that the application is in the process of being restarted.
-* **SAVING:** Indication that the application is in the process of creating a savepoint.
-* **SAVING_AND_STOP_REQUESTED:** Indicates that the application is in the process of creating a savepoint and stopping.
-* **SUSPENDED:** Indicates that the application has been suspended.
+* **CANCELLING_REQUESTED:** the application is in the process of being stopped without a savepoint.
+* **CANCELLING:** the application is in the process of being cancelled.
+* **DELETE_REQUESTED:** application has been requested to be deleted.
+* **DELETING:** the application is in the process of being deleted.
+* **FAILING:** the application is in the process of failing.
+* **RESTARTING:** the application is in the process of being restarted.
+* **SAVING:** the application is in the process of creating a savepoint.
+* **SAVING_AND_STOP_REQUESTED:** the application is in the process of creating a savepoint and stopping.
+* **SUSPENDED:** the application has been suspended.
 
