@@ -5,6 +5,12 @@ Create an Aiven for Apache Flink® application
 
 This article provides the information required to build and deploy applications on Aiven for Apache Flink service. 
 
+Prerequisites
+-------------
+
+* You must set up the data service integration before building applications. 
+
+
 Create an application via the Aiven console
 --------------------------------------------
 
@@ -34,9 +40,8 @@ Follow these steps to build your first Aiven for Flink application:
     
     * Select the **Integrated service** from the drop-down list. 
     * In the **Table SQL** section, enter the statement that will be used to create the table.  
-    * Optionally, click **Run** to view how data is being pulled from the data source. This could take some time based on the data and the connection. 
     * Click **Add table**. 
-9.  Click **Next** to enter the SQL statement that transforms the data from the source stream. Optionally, click **Run** to view how data is being pulled from the data source. 
+9.  Click **Next** to enter the **SQL statement** that transforms the data from the source stream. Optionally, click **Run** to view how data is being pulled from the data source. 
 10. Click **Save and deploy later** to save the application. You will see the application on the landing page that provides you with an overview of your application. 
 
     .. image:: /images/products/flink/application_landingpage_view.png
@@ -47,8 +52,8 @@ Follow these steps to build your first Aiven for Flink application:
     
     * Choose the version you wish to deploy. The default version for the first deployment is **Version: 1**. 
     * Choose the savepoint from where you want to deploy. No savepoints are available for the first application deployment. 
-    * Use the toggle for **Restart on failure** to enable or disable this option. 
-    * Enter the number of parallel instances you want to have for the task. 
+    * Use the toggle for **Restart on failure** to enable or disable the option of automatically restarting a Flink job in case it fails. 
+    * Enter the number of `parallel instances <https://nightlies.apache.org/flink/flink-docs-master/docs/dev/datastream/execution/parallel/>`_ you want to have for the task. 
 12. Click **Deploy without a savepoint** to deploy your application. 
 13. The deployment status will show **Initializing: version 1** and then **Running: version 1**.
 
