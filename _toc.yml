@@ -613,6 +613,8 @@ entries:
         title: HowTo
         entries:
           - file: docs/products/flink/howto/create-integration
+          - file: docs/products/flink/howto/manage-flink-applications
+            title: Manage Flink applications
           - file: docs/products/flink/howto/connect-kafka
           - file: docs/products/flink/howto/connect-pg
           - file: docs/products/flink/howto/connect-opensearch
