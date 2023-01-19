@@ -1,6 +1,12 @@
 Create an Apache Flink® job
 =================================
 
+.. Warning::
+
+    As with many beta products, the Aiven for Apache Flink® experience, APIs and CLI calls are currently being redesigned, you might get error messages if using the currently documented ones.
+
+    We will be working to update all the examples in the documentation.
+
 Prerequisites
 '''''''''''''
 

@@ -1,6 +1,13 @@
 Aiven "rolling challenge" with Apache Kafka® and Apache Flink®
 ==============================================================
 
+.. Warning::
+
+    As with many beta products, the Aiven for Apache Flink® experience, APIs and CLI calls are currently being redesigned, you might get error messages if using the currently documented ones.
+
+    We will be working to update all the examples in the documentation.
+    
+
 Welcome to Aiven's "Rolling" challenge, an easy way for you to explore Aiven for Apache Kafka® and Aiven for Apache Flink®. 
 
 With the launch of Aiven for Apache Flink® we added the a new way to manipulate your Apache Kafka® streaming data via SQL statements, providing the best combination of tools for real-time data transformation.

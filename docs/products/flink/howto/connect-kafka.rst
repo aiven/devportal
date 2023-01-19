@@ -1,6 +1,12 @@
 Create an Apache Kafka®-based Apache Flink® table
 ==================================================
 
+.. Warning::
+
+    As with many beta products, the Aiven for Apache Flink® experience, APIs and CLI calls are currently being redesigned, you might get error messages if using the currently documented ones.
+
+    We will be working to update all the examples in the documentation.
+
 To build data pipelines, Apache Flink® requires source and target data structures to `be mapped as Flink tables <https://ci.apache.org/projects/flink/flink-docs-release-1.15/docs/dev/table/sql/create/#create-table>`_. This functionality can be achieved via the `Aiven console <https://console.aiven.io/>`_ or :doc:`Aiven CLI </docs/tools/cli/service/flink>`.
 
 A Flink table can be defined over an existing or new Aiven for Apache Kafka® topic to be able to source or sink streaming data. To define a table over an Apache Kafka® topic, the topic name, columns data format and connector type need to be defined, together with the Flink table name to use as reference when building data pipelines.
