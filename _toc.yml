@@ -566,6 +566,8 @@ entries:
         entries:
           - file: docs/products/flink/concepts/flink-for-analysts
           - file: docs/products/flink/concepts/flink-for-operators
+          - file: docs/products/flink/concepts/flink-applications
+            title: Aiven for Apache Flink applications
           - file: docs/products/flink/concepts/kafka-connectors
           - file: docs/products/flink/concepts/kafka-connector-requirements
           - file: docs/products/flink/concepts/supported-syntax-sql-editor
@@ -579,6 +581,7 @@ entries:
         title: HowTo
         entries:
           - file: docs/products/flink/howto/create-integration
+          - file: docs/products/flink/howto/create-flink-applications
           - file: docs/products/flink/howto/manage-flink-applications
             title: Manage Aiven for Apache Flink applications
           - file: docs/products/flink/howto/connect-kafka
