@@ -32,18 +32,18 @@ To create a Apache Flink® table based on an Aiven for Apache Kafka® topic via 
 
    * The topic to be used as a source for the data pipeline. If you want to use a new topic that does not yet exist, write the topic name.
 
-    .. Warning::
+     .. Warning::
         By default, Flink will not be able to create Apache Kafka topics while pushing the first record automatically. To change this behavior, enable in the Aiven for Apache Kafka target service the ``kafka.auto_create_topics_enable`` option in **Advanced configuration** section.
 
    * Specify the **Kafka connector type**, between the **Apache Kafka SQL Connector** for standard topic reads/writes and the **Upsert Kafka SQL Connector** for changelog type of integration based on message key. 
    
-    .. note::
+     .. note::
         For more information on the connector types and the requirements for each, see the articles on :doc:`Kafka connector types </docs/products/flink/concepts/kafka-connectors>` and :doc:`the requirements for each connector type </docs/products/flink/concepts/kafka-connector-requirements>`.
     
    * Specify the **Key Data Format**. If a value other than **Key not used** is selected, specify the fields from the SQL schema to be used as key. This setting is specifically needed to set message keys for topics acting as target of data pipelines.
    * Specify the **Value Data Format**. Based on the message format in the Apache Kafka topic. 
 
-    .. note:: 
+     .. note:: 
         For Key and Value data format, the following options are available:  
 
         * `JSON <https://nightlies.apache.org/flink/flink-docs-master/docs/connectors/table/formats/json/>`_
@@ -52,7 +52,7 @@ To create a Apache Flink® table based on an Aiven for Apache Kafka® topic via 
         * `Debezium Avro <https://nightlies.apache.org/flink/flink-docs-master/docs/connectors/table/formats/debezium/>`_
         * `Debezium JSON <https://nightlies.apache.org/flink/flink-docs-master/docs/connectors/table/formats/debezium/>`_
 7. To create a sink table, click **Add sink tables** and repeat steps 4-6 for sink tables.
-8. Create a statement that defines the fields retrieved from each message in a topic, additional transformations such as format casting or timestamp extraction, and :doc:`watermark settings <../concepts/watermarks>`. 
+8. In the **Create statement** section, create a statement that defines the fields retrieved from each message in a topic, additional transformations such as format casting or timestamp extraction, and :doc:`watermark settings <../concepts/watermarks>`. 
 
 
 Example: Define a Flink table using the standard connector over topic in JSON format   
