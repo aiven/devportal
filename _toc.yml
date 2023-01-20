@@ -575,17 +575,22 @@ entries:
           - file: docs/products/flink/concepts/windows
           - file: docs/products/flink/concepts/watermarks
           - file: docs/products/flink/concepts/checkpoints
+          - file: docs/products/flink/concepts/tables
+          - file: docs/products/flink/concepts/savepoints
       - file: docs/products/flink/howto
         title: HowTo
         entries:
           - file: docs/products/flink/howto/create-integration
           - file: docs/products/flink/howto/create-flink-applications
+          - file: docs/products/flink/howto/manage-flink-applications
+            title: Manage Aiven for Apache Flink applications
           - file: docs/products/flink/howto/connect-kafka
           - file: docs/products/flink/howto/connect-pg
           - file: docs/products/flink/howto/connect-opensearch
           - file: docs/products/flink/howto/create-job
           - file: docs/products/flink/howto/timestamps_opensearch
           - file: docs/products/flink/howto/real-time-alerting-solution
+          - file: docs/products/flink/howto/manage-flink-tables
       - file: docs/products/flink/reference
         title: Reference
         entries:
