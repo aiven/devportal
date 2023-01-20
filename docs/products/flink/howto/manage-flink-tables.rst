@@ -46,7 +46,7 @@ Follow these steps import an existing table from another application:
 Clone table
 -----------
 
-Follow these steps to clone a table in an application: 
+Follow these steps to clone a table within an application: 
 
 1. In the **Add source tables** screen, locate the table you want to clone and click **Clone** next to it. 
     .. note::
