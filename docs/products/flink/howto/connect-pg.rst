@@ -39,7 +39,7 @@ To create a Flink table based on Aiven for PostgreSQL® via Aiven console:
 
    .. Warning::
 
-    When using a PostgreSQL® table as target of a Flink data pipeline, the table needs to exist before starting the Flink job otherwise it will fail.
+    When using a PostgreSQL® table as target of a Flink data pipeline, the table needs to exist before starting the Flink application otherwise it will fail.
 
    * Define the **Flink table name**; this name will represents the Flink reference to the topic and will be used during the data pipeline definition
 
