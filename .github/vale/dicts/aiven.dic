@@ -42,6 +42,7 @@ datasource
 Datastax
 datastore
 dashboards
+deallocation
 Debezium
 deserialize
 Dev
@@ -91,6 +92,7 @@ io
 IPsec
 Java
 JMX
+JobManager
 Jolokia
 Kaggle
 Kafdrop
@@ -204,6 +206,7 @@ Transport Layer Security
 truststore
 truststores
 Uber
+UDFs
 uncomment
 unencrypted
 untrusted
