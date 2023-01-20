@@ -5,10 +5,8 @@ Create an Aiven for Apache Flink® application
 
 This article provides the information required to build and deploy applications on Aiven for Apache Flink service. 
 
-Prerequisites
--------------
-
-* You must set up the data service integration before building applications. 
+.. note:: 
+    You must set up the :doc:`data service integration <../howto/create-integration>` before building applications. 
 
 
 Create an application via the Aiven console
