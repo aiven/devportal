@@ -574,6 +574,7 @@ entries:
           - file: docs/products/flink/concepts/watermarks
           - file: docs/products/flink/concepts/checkpoints
           - file: docs/products/flink/concepts/tables
+          - file: docs/products/flink/concepts/savepoints
       - file: docs/products/flink/howto
         title: HowTo
         entries:
