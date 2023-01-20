@@ -31,7 +31,7 @@ To create a new version of the application deployed, follow these steps:
 2. On the application landing screen, click on **Create new version**.
 3. In the create new version screen, make any desired changes to the create statement, source, or sink tables. 
 4. Click **Save and deploy later**. You can see the new version listed in the versions drop-down list on the left side of the screen. 
-5. To deploy the new version of the application, :ref:`stop <stop-application>` any existing version that is running.
+5. To deploy the new version of the application, :ref:`stop <stop-flink-application>` any existing version that is running.
 6. Click **Create deployment**, and on the **Create new deployment** screen:
 
    * Choose the version you want to deploy. 
