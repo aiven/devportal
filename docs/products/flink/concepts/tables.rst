@@ -1,7 +1,7 @@
 Tables in Aiven for Apache Flink® 
 =================================
 
-With Aiven for Apache Flink®, you can easily create and manage data pipelines using `Flink tables <https://nightlies.apache.org/flink/flink-docs-stable/docs/dev/table/sql/create/#create-table>`_. These tables are created within an application on your Aiven for Apache Flink service, allowing you to map source and target data structures, and making it easy to process and transform data.
+With Aiven for Apache Flink®, you can easily create and manage data pipelines using `Flink tables <https://nightlies.apache.org/flink/flink-docs-stable/docs/dev/table/sql/create/#create-table>`_. These tables are created within an application on your Aiven for Apache Flink service, allowing you to map source and target data structures, and facilitating the process of data processing and transformation.
 
 The interactive query feature on the table editor allows you to review the data structure of the tables. This feature therefore helps validating the data ingested into your application, ensure accurate data transformation, and troubleshoot any issues that may arise.
 
