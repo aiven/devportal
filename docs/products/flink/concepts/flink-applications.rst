@@ -20,7 +20,7 @@ Some of key feature of Aiven for Flink applications include:
 * **Start and stop**: You can start and stop applications stop and start anytime.
 * **Versioning**: By creating a new application version every time you edit the table or data transformation definition, you can keep track of changes and have the ability to revert to a previous version if needed.
 * **Savepoints**: You can stop your application with a savepoint, allowing you to restart it from the previous state at a later time.
-* **Scalability:** You can scale your cluster depending on the demands of your specific application by parallelizing the applications into multiple tasks and executing them concurrently in a cluster.
+* **Scalability:** You can parallelize the workload into multiple tasks and executing them concurrently in a cluster
 
 Limitations 
 ------------
