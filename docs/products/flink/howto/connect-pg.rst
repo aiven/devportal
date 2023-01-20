@@ -7,7 +7,7 @@ A Flink table can be defined over an existing or new Aiven for PostgreSQL® tabl
 
 .. Warning::
 
-    To define Flink's tables, an :doc:`existing integration <create-integration>`  must be available between the Aiven for Flink service and one or more Aiven for PostgreSQL® services. 
+    To define Flink tables, an :doc:`existing integration <create-integration>`  must be available between the Aiven for Flink service and one or more Aiven for PostgreSQL® services. 
 
 Create a PostgreSQL®-based Apache Flink® table with Aiven Console
 ------------------------------------------------------------------
