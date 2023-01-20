@@ -3,7 +3,7 @@ Manage Aiven for Flink® applications
 
 This section provides information on managing your Apache Flink applications on your Aiven for Apache Flink service.
 
-.. _stop-application:
+.. _stop-flink-application:
 
 Stop application deployment
 ---------------------------
