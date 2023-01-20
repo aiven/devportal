@@ -1,7 +1,7 @@
 Manage Aiven for Flink® applications
 ====================================
 
-This section provides information on managing your Apache Flink® applications on your Aiven for Apache Flink® service.
+This section provides information on managing your Aiven for Apache Flink® applications.
 
 Creating a new version of an application
 ----------------------------------------
