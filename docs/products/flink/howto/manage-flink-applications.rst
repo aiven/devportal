@@ -63,7 +63,7 @@ To learn about the different application statuses, see <Flink application status
 
 Delete application
 -------------------
-Before deleting an application, it is necessary to remove all associated :ref:`deployment history <deployment-history>`.
+Before deleting an application, it is necessary to remove all associated :ref:`deployment history <flink-deployment-history>`.
 
 1. In the **Applications tab** on Aiven for Apache Flink service, select the application you want to delete. 
 2. On the application landing screen, click on the **Application action menu** (ellipsis) located on the right side of the screen, and select **Delete application** from the menu options.
