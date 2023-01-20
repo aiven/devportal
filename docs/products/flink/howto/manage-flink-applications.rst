@@ -41,7 +41,7 @@ To create a new version of the application deployed, follow these steps:
 
 8. Click on **Deploy from a savepoint** or **Deploy without savepoint** depending on your previous selection.
 
-.. _deployment-history:
+.. _flink-deployment-history:
 
 Accessing deployment history
 ----------------------------
