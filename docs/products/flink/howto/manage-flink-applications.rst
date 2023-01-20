@@ -1,4 +1,4 @@
-Manage Aiven for Flink® applications
+Manage Aiven for Apache Flink® applications
 ====================================
 
 This section provides information on managing your Aiven for Apache Flink® applications.
