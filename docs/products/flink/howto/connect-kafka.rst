@@ -15,7 +15,7 @@ Create Apache Flink® table with Aiven Console
 To create a Apache Flink® table based on an Aiven for Apache Kafka® topic via the `Aiven Console <https://console.aiven.io/>`_:
 
 1. In the Aiven for Apache Flink service page, open the **Application** tab.
-2. :doc:`Create a new application <../howto/create-flink-applications>` or select an existing one with Aiven for Apache Kafka integration. 
+2. Create a new application or select an existing one with Aiven for Apache Kafka integration. 
 
 .. note:: 
     If editing an existing application, create a new version to make changes to the source or sink tables.
