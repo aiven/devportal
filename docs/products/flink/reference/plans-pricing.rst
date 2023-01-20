@@ -3,6 +3,7 @@ Aiven for Apache Flink® service plans
 
 Aiven for Apache Flink® is available in a few variants (plans or tiers), each offering a different set of features. Explore the Aiven for Apache Flink service plans and find out what they cover to identify the one that best suits your needs.
 
+To view and compare the different plans, and learn about their pricing details, take a look at the `plans and pricing <https://aiven.io/pricing?product=flink&tab=plan-pricing>`_ page.
 
 Service plans
 -------------
