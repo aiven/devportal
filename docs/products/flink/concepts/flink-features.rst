@@ -11,7 +11,11 @@ One of these features is the SQL editor, which is a built-in feature of the Aive
 
 Build applications to process data
 ----------------------------------
-Applications in the Aiven for Apache Flink service are containers that hold everything related to a Flink job, including the source and sink connectors and the data processing logic. They serve as the entry point for executing a Flink job within the Aiven for Apache Flink service. The Aiven console provides an intuitive interface and workflow to build applications. You can select the source and sink connectors and create statements for processing the data within your application. Additionally, you can create multiple versions of an application. Applications in Aiven for Apache Flink significantly improve the developer experience and make it easier to build and deploy Flink applications.
+An Aiven for Apache Flink® Application is an abstraction layer on top of Apache Flink SQL that includes all the elements related to a Flink job to help build your data processing pipeline. It contains all the components related to a Flink job, including the definition of source and sink tables, data processing logic, deployment parameters, and other relevant metadata.
+
+Applications are the starting point for running an Apache Flink job within the Aiven managed service. The `Aiven Console <https://console.aiven.io/>`_ provides a user-friendly, guided wizard to help you build and deploy applications, create source and sink tables, write transformation statements, and validate and ingest data using the interactive query feature. 
+
+For more information, see Aiven for Apache Flink® applications section. 
 
 Interactive queries
 -------------------
