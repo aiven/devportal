@@ -579,7 +579,7 @@ entries:
         entries:
           - file: docs/products/flink/howto/create-integration
           - file: docs/products/flink/howto/manage-flink-applications
-            title: Manage Flink applications
+            title: Manage Aiven for Apache Flink applications
           - file: docs/products/flink/howto/connect-kafka
           - file: docs/products/flink/howto/connect-pg
           - file: docs/products/flink/howto/connect-opensearch
