@@ -3,7 +3,7 @@ Aiven for Apache Flink® architecture
 
 Aiven for Apache Flink® is a fully managed service that leverages the power of the open-source Apache Flink framework to provide distributed, stateful stream processing capabilities, allowing users to perform real-time computation with SQL efficiently.
 
- At a high level, it has a runtime architecture consisting of two types of processes: a **JobManager** and one or more **TaskManager**.
+At a high level, it has a runtime architecture consisting of two types of processes: a **JobManager** and one or more **TaskManager**.
 
 JobManager
 -----------
