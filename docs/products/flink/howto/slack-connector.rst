@@ -3,7 +3,7 @@ Aiven Slack connector for Apache Flink®
 
 With Aiven's Slack Connector for Apache Flink®, you can create sink tables in your Flink application and set up statements to send alerts and notifications to your designated Slack channel. This allows for real-time monitoring and tracking of your Flink job progress and any potential issues that may arise. 
 
-You can access the open-source Slack connect for Apache Flink on Aiven's GitHub repository at `slack-connector-for-apache-flink <https://github.com/aiven/slack-connector-for-apache-flink>`_.
+You can access the open-source Slack connect for Apache Flink on Aiven's GitHub repository at `Slack Connector for Apache Flink® <https://github.com/aiven/slack-connector-for-apache-flink>`_.
 
 .. note:: 
     Before using Slack connector with your Flink application, ensure that you have the `Channel ID` and `token value` for the Slack connector.
@@ -13,7 +13,7 @@ Configure Slack as sink for Flink application
 -----------------------------------------------
 To configure Slack as the target using the Slack connector for Apache Flink, follow these steps: 
 
-1. On the Aiven for Apache Flink service page, navigate to the **Applicatio** tab.
+1. On the Aiven for Apache Flink service page, navigate to the **Application** tab.
 
 2. Create a new application or select an existing application for your desired :doc:`data service integration <../howto/create-integration>`. 
 
@@ -28,12 +28,12 @@ To configure Slack as the target using the Slack connector for Apache Flink, fol
 
 ::
 
-    CREATE TABLE special_orders_channel (
+    CREATE TABLE channel_name (
     channel_id STRING,
     message STRING
     ) WITH (
         'connector' = 'slack',
-        'token' = 'xoxb-401579122177-4295220600853-CNYfCw8Iomd9Ab358H9A50zt'
+        'token' = 'your_token_here'
     )
 
 6. Create the SQL statement to send notifications/alerts to the designated slack channel.
