@@ -7,9 +7,9 @@ In this setup, there are two Apache Kafka® clusters: primary and secondary. Top
 .. image:: /images/products/kafka/kafka-mirrormaker/Mirrormaker-Active-Passive.png
     :alt: MirrorMaker 2 Active-Passive Setup
 
-All the clients (producers and consumers) work with primary. MirrorMaker 2 replicates topic from primary to secondary (the remote topic name is primary.topic).
+All the clients (producers and consumers) work with primary. MirrorMaker 2 replicates topic from primary to secondary (the remote topic name is ``primary_alias.topic_name`` where `primary_alias` is remote topic name).
 
-In case a disaster happens to the primary cluster and it becomes inaccessible for a long time for all the clients as well as MirrorMaker 2, the replication stops and some data may remain un-replicated in primary cluster, i.e. not reach secondary before the disaster.
+In case a disaster happens to the primary cluster and it becomes inaccessible for a long time for all the clients as well as MirrorMaker 2, the replication stops and some data may remain un-replicated in the primary cluster, i.e. it may not reach secondary cluster before the disaster.
 
 The clients switch to secondary cluster. Consumers continue consuming from the remote (i.e. replicated) topic primary.topic, and the producers start producing into it.
 
