@@ -1,4 +1,4 @@
-Aivne for Apache Flink® |beta|
+Aiven for Apache Flink® |beta|
 ================================
 
 Aiven for Apache Flink® is a fully managed service that leverages the power of the `open-source Apache Flink framework <https://flink.apache.org/>`_ to provide distributed, stateful stream processing capabilities, allowing users to perform real-time computation with SQL efficiently.

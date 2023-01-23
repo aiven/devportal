@@ -3,7 +3,7 @@ Aiven for Apache Flink® quickstart guide |beta|
 
 The first step in using Aiven for Apache Flink® is to create a service. You can do this in the `Aiven web console <https://console.aiven.io/>`_ or with the `Aiven CLI <https://github.com/aiven/aiven-client>`_.
 
-This quickstart section provides you with the information you need to get started with Aiven for Apache Flink and build data pipelines to stream to analyze your data. Learn how to set up and configure Aiven for Flink, connect to your desired data sources, and start processing and analyzing your data in realtime.
+This quickstart section provides you with the information you need to get started with Aiven for Apache Flink and build data pipelines to stream to analyze your data. Learn how to set up and configure Aiven for Flink, connect to your desired data sources, and start processing and analyzing your data in real-time.
 
 
 Create an Apache for Apache Flink® service 
@@ -15,8 +15,8 @@ Create an Apache for Apache Flink® service
 
    Once the service is ready, the status changes to *Running*. Depending on your selected cloud provider and region, this generally takes a couple of minutes.
 
-Create data service intergrations
-----------------------------------
+Create data service integration
+--------------------------------
 Aiven for Apache Flink® allows you to build data pipelines that stream across different services. It currently supports integration with Aiven for Apache Kafka®, Aiven for PostgreSQL®, and Aiven for OpenSearch® as sources and targets for Flink applications.
 
 To create your first data service integration: 

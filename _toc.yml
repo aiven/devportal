@@ -652,7 +652,6 @@ entries:
                   - file: docs/products/flink/howto/connect-kafka
                   - file: docs/products/flink/howto/connect-pg
                   - file: docs/products/flink/howto/connect-opensearch
-          - file: docs/products/flink/howto/create-job
           - file: docs/products/flink/howto/timestamps_opensearch
             title: 
           - file: docs/products/flink/howto/real-time-alerting-solution
