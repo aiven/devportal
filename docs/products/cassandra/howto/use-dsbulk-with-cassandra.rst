@@ -19,15 +19,15 @@ Variables
 
 These are the placeholders you will need to replace in the code sample:
 
-==================      =============================================================
-Variable                Description
-==================      =============================================================
-``PASSWORD``            Password of the ``avnadmin`` user
-``HOST``                Host name for the connection
-``PORT``                Port number to use for the Cassandra service
-``SSL_CERTFILE``        Path of the `CA Certificate` for the Cassandra service
-``KEYSTORE_PASSWORD``   Password to secure your keystore.
-==================      =============================================================
+==================         =============================================================
+Variable                   Description
+=====================      =============================================================
+``PASSWORD``               Password of the ``avnadmin`` user
+``HOST``                   Host name for the connection
+``PORT``                   Port number to use for the Cassandra service
+``SSL_CERTFILE``           Path of the `CA Certificate` for the Cassandra service
+``KEYSTORE_PASSWORD``      Password to secure your keystore.
+=====================      =============================================================
 
 .. Tip::
 
