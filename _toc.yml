@@ -583,14 +583,14 @@ entries:
           - file: docs/products/flink/concepts/tables
             title: Flink tables
           - file: docs/products/flink/concepts/checkpoints
+          - file: docs/products/flink/concepts/savepoints
           - file: docs/products/flink/concepts/event-processing-time
           - file: docs/products/flink/concepts/watermarks
           - file: docs/products/flink/concepts/windows
-          - file: docs/products/flink/concepts/savepoints
           - file: docs/products/flink/concepts/kafka-connectors
           - file: docs/products/flink/concepts/kafka-connector-requirements
-          - file: docs/products/flink/concepts/flink-for-analysts
-          - file: docs/products/flink/concepts/flink-for-operators
+          
+          
           
       - file: docs/products/flink/howto
         title: HowTo
@@ -598,22 +598,30 @@ entries:
           - file: docs/products/flink/howto/list-get-started
             title: Get started
           - file: docs/products/flink/howto/create-integration
-            title: Create data service integrations
-          - file: docs/products/flink/howto/create-flink-applications
-            title: Create Apache Flink applications
-          - file: docs/products/flink/howto/manage-flink-applications
-            title: Manage Apache Flink applications
-          - file: docs/products/flink/howto/manage-flink-tables
-            title: Manage Flink tables
-          - file: docs/products/flink/howto/list-tables-flink-integrations
-            title: Create Flink tables with data sources
+            title: Data service integrations
+          - file: docs/products/flink/howto/list-flink-applications
+            title: Aiven Flink applications
             entries:
-              - file: docs/products/flink/howto/connect-kafka
-              - file: docs/products/flink/howto/connect-pg
-              - file: docs/products/flink/howto/connect-opensearch
+              - file: docs/products/flink/howto/create-flink-applications
+                title: Create Apache Flink applications
+              - file: docs/products/flink/howto/manage-flink-applications
+                title: Manage Apache Flink applications
+          - file: docs/products/flink/howto/list-flink-tables  
+            title: Flink tables
+            entries:
+              - file: docs/products/flink/howto/manage-flink-tables
+                title: Manage Flink tables
+              - file: docs/products/flink/howto/list-flink-table-integrations
+                title: Create Flink tables with data sources
+                entries:
+                  - file: docs/products/flink/howto/connect-kafka
+                  - file: docs/products/flink/howto/connect-pg
+                  - file: docs/products/flink/howto/connect-opensearch
           - file: docs/products/flink/howto/create-job
           - file: docs/products/flink/howto/timestamps_opensearch
+            title: 
           - file: docs/products/flink/howto/real-time-alerting-solution
+            title: Real-time alerting solution
           
       - file: docs/products/flink/reference
         title: Reference

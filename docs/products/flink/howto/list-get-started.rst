@@ -7,4 +7,4 @@ Get started with Aiven for Apache Flink® |beta|
 
 :doc:`Create Aiven for Apache Flink applications  </docs/products/flink/howto/create-flink-applications>`
 
-:doc:`Create Apache Flink® tables using different data sources </docs/products/flink/howto/list-tables-flink-integrations>`
+:doc:`Create Apache Flink® tables using different data sources </docs/products/flink/howto/list-flink-table-integrations>`
