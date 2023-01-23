@@ -37,12 +37,12 @@ To configure Slack as the target using the Slack connector for Apache Flink, fol
     message STRING
     ) WITH (
         'connector' = 'slack',
-        'token' = 'your_token_here'
+        'token' = '<TOKEN>'
     )
 
 .. note:: 
-    *  ``channel_id`` is the channel ID parameter.
-    *  Replace the token value with the token you received from Slack.
+    *  ``channel_id`` should contain the channel ID parameter.
+    *  Replace the `<TOKEN>` placeholder with the token you created in Slack during the prerequisites.
     
 6. Create the SQL statement to send notifications/alerts to the designated slack channel.
 
