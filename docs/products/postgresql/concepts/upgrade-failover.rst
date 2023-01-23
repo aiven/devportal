@@ -65,7 +65,7 @@ In case of failover or controlled switchover of an Aiven for PostgreSQL service,
 
 .. note::
 
-    The recreation of replication slots feature is enabled automatically and doesn't require restarting the nodes.
+    The recreation of replication slots feature is enabled automatically and doesn't require restarting the nodes for services that have been created or updated as of January 2023.  Additional details our outlined on `our blog post <https://aiven.io/blog/aiven-for-pg-recreates-logical-replication-slots>`_.
 
 .. important::
 
