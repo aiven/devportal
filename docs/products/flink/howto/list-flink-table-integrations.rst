@@ -6,8 +6,8 @@ This section provides information on creating `Apache Flink® tables <https://ni
 
 Learn how to: 
 
-* Create an Apache Kafka®-based Apache Flink® table
+* :doc:`Create an Apache Kafka®-based Apache Flink® table <../howto/connect-kafka>`
   
-* Create a PostgreSQL®-based Apache Flink® table 
+* :doc:`Create a PostgreSQL®-based Apache Flink® table <../howto/connect-pg>`
   
-* Create an OpenSearch®-based Apache Flink® table 
+* :doc:`Create an OpenSearch®-based Apache Flink® table <../howto/connect-opensearch>`
