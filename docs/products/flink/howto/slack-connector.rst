@@ -1,5 +1,5 @@
-Aiven Slack connector for Apache Flink®
-=======================================
+Create a slack-based Apache Flink® table
+========================================
 
 With Aiven's Slack Connector for Apache Flink®, you can create sink tables in your Flink application and set up statements to send alerts and notifications to your designated Slack channel. This allows for real-time monitoring and tracking of your Flink job progress and any potential issues that may arise. 
 
