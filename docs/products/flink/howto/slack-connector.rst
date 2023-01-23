@@ -8,7 +8,7 @@ You can access the open-source Slack connect for Apache Flink on Aiven's GitHub 
 Prerequisites
 -------------
 
-* Slack app created and ready for use. For more information, refer to the `Set-up Slack Application section <https://github.com/aiven/slack-connector-for-apache-flink#set-up-slack-application>`_ on the GitHub repository and the `Slack documentation <https://api.slack.com/start/building>`_.
+* Slack app created and ready for use. For more information, refer to the `Set-up Slack Application section <https://github.com/aiven/slack-connector-for-apache-flink>`_ on the GitHub repository and the `Slack documentation <https://api.slack.com/start/building>`_.
 * Note the **channel ID** and **token value**, as these will be required in the sink connector Table SQL when configuring the connection in your Flink application.
 
 
@@ -40,6 +40,10 @@ To configure Slack as the target using the Slack connector for Apache Flink, fol
         'token' = 'your_token_here'
     )
 
+.. note:: 
+    *  ``channel_id`` is the channel ID parameter.
+    *  Replace the token value with the token you received from Slack.
+    
 6. Create the SQL statement to send notifications/alerts to the designated slack channel.
 
 You can check the connection by running a query on the sink table. If the data flows into the slack channel, the connection is successful.
