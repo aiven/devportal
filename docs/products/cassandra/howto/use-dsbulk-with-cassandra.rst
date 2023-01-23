@@ -19,7 +19,7 @@ Variables
 
 These are the placeholders you will need to replace in the code sample:
 
-==================         =============================================================
+=====================      =============================================================
 Variable                   Description
 =====================      =============================================================
 ``PASSWORD``               Password of the ``avnadmin`` user
