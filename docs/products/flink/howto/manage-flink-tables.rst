@@ -36,9 +36,9 @@ Follow these steps import an existing table from another application:
 
 2. From the **Import existing source table** or **Import existing sink table** screen:
 
-    - Select the application from which you want to import the table.
-    - Select the version of the application.
-    - Select the table you want to import. 
+   - Select the application from which you want to import the table.
+   - Select the version of the application.
+   - Select the table you want to import. 
 
 3. Click **Next**.
 4. Verify the data on the **Add new source table** or **Add new sink table** screen and click **Add table** to complete the process.
@@ -49,13 +49,16 @@ Clone table
 Follow these steps to clone a table within an application: 
 
 1. In the **Add source tables** screen, locate the table you want to clone and click **Clone** next to it. 
-    .. note::
-        Clone option is not available sink tables. 
+
+.. note::
+    Clone option is not available sink tables. 
 
 2. Select the **Integrated service** from the drop-down list.
 3. In the **Table SQL** section, update the table name.
-    .. note:: 
-        You will not be able to add the table if there are errors within the statement. 
+
+.. note:: 
+    You will not be able to add the table if there are errors within the statement. 
+
 4. Click **Add table** to complete the process.
 
 Edit table
