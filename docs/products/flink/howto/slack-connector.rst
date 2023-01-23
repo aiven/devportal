@@ -5,8 +5,12 @@ With Aiven's Slack Connector for Apache Flink®, you can create sink tables in y
 
 You can access the open-source Slack connect for Apache Flink on Aiven's GitHub repository at `Slack Connector for Apache Flink® <https://github.com/aiven/slack-connector-for-apache-flink>`_.
 
-.. note:: 
-    Before using Slack connector with your Flink application, ensure that you have the `Channel ID` and `token value` for the Slack connector.
+Prerequisites
+-------------
+
+* Slack app created and ready for use. For more information, refer to the `Set-up Slack Application section <https://github.com/aiven/slack-connector-for-apache-flink#set-up-slack-application>`_ on the GitHub repo and the `Slack documentation <https://api.slack.com/start/building>`_.
+* Note the **channel ID** and **token value**, as these will be required in the sink connector Table SQL when configuring the connection in your Flink application.
+
 
 
 Configure Slack as sink for Flink application
