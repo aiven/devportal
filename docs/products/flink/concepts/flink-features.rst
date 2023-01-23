@@ -11,14 +11,14 @@ One of these features is the SQL editor, which is a built-in feature of the Aive
 
 Build applications to process data
 ----------------------------------
-An :doc:`Aiven for Apache Flink® Application <docs/products/flink/concepts/flink-applications>` is an abstraction layer on top of Apache Flink SQL that includes all the elements related to a Flink job to help build your data processing pipeline. It contains all the components related to a Flink job, including the definition of source and sink tables, data processing logic, deployment parameters, and other relevant metadata.
+An Aiven for Apache Flink® Application is an abstraction layer on top of Apache Flink SQL that includes all the elements related to a Flink job to help build your data processing pipeline. It contains all the components related to a Flink job, including the definition of source and sink tables, data processing logic, deployment parameters, and other relevant metadata.
 
 Applications are the starting point for running an Apache Flink job within the Aiven managed service. The `Aiven Console <https://console.aiven.io/>`_ provides a user-friendly, guided wizard to help you build and deploy applications, create source and sink tables, write transformation statements, and validate and ingest data using the interactive query feature. 
 
 
 Interactive queries
 -------------------
-The interactive query feature in Aiven for Apache Flink grants the ability to preview the data of a Flink table or job without outputting the rows to a sink table like Apache Kafka®. This can be useful for testing and debugging purposes, as it allows you to examine the data being processed by your :doc:`Flink application<concepts/flink-applications>`.
+The interactive query feature in Aiven for Apache Flink grants the ability to preview the data of a Flink table or job without outputting the rows to a sink table like Apache Kafka®. This can be useful for testing and debugging purposes, as it allows you to examine the data being processed by your Flink application<concepts/flink-applications>.
 
 Built-in data flow integration with Aiven for Apache Kafka®
 -----------------------------------------------------------
