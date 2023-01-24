@@ -1,7 +1,7 @@
 Create a real-time alerting solution - Aiven console
 ====================================================
 
-This tutorial shows you an example of how to combine Aiven for Apache Flink® with Aiven for Apache Kafka®, Aiven for PostgreSQL® and Aiven for OpenSearch® services to create a solution that provides real-time alerting data for CPU loads. 
+This article demonstrates how to integrate Aiven for Apache Flink® with Aiven for Apache Kafka®, Aiven for PostgreSQL®, and Aiven for OpenSearch® to create real-time alerting data for CPU loads.
 
 Architecture overview
 ---------------------
@@ -18,7 +18,7 @@ This example involves creating an Apache Kafka® source topic that provides a st
         id3-. filtered/aggregated data .->id5(PostgreSQL);
         id3-. filtered data .->id6(OpenSearch);
 
-This article includes the steps that you need when using the `Aiven web console <https://console.aiven.io>`_ along with a few different samples of how you can set thresholds for alerts. For connecting to your PostgreSQL® service, this example uses the `Aiven CLI <https://github.com/aiven/aiven-client>`_ calling `psql <https://www.postgresql.org/docs/current/app-psql.html>`_, but you can also use other tools if you prefer.
+This article includes the steps you need when using the `Aiven web console <https://console.aiven.io>`_ and a few different samples of how you can set thresholds for alerts. For connecting to your PostgreSQL® service, this example uses the `Aiven CLI <https://github.com/aiven/aiven-client>`_ calling `psql <https://www.postgresql.org/docs/current/app-psql.html>`_, but you can also use other tools if you prefer.
 
 In addition, the instructions show you how to use a separate Python-based tool, `Dockerized fake data producer for Aiven for Apache Kafka® <https://github.com/aiven/fake-data-producer-for-apache-kafka-docker>`_, to create sample records for your Apache Kafka® topic that provides the streamed data.
 
@@ -35,7 +35,7 @@ Set up Aiven services
 ---------------------
 
 
-1. Follow the steps in :doc:`this article </docs/platform/howto/create_new_service>` to create these services:
+1. Follow :doc:`these instructions </docs/platform/howto/create_new_service>` to create these services:
 
    - An Aiven for Apache Kafka® service with the *Business-4* service plan, named ``demo-kafka`` 
      This service provides the CPU load input streams
@@ -61,7 +61,7 @@ Set up Aiven services
      
       The ``kafka.auto_create_topics_enable`` setting allows you to create new Apache Kafka® topics as you configure your Apache Flink® data tables, so that you do not need to create the topics in advance.
 
-#. Select the ``demo-flink`` service and add the **service integrations**:
+#. Select the ``demo-flink`` service and add the data service integration:
 
    a. Click **Get started** on the banner at the top of the *Overview* page.
    b. Select **Aiven for Apache Kafka®** and then select the ``demo-kafka`` service.
@@ -77,7 +77,7 @@ Set up Aiven services
 Set up sample data
 ------------------
 
-These steps show you how to create sample records to provide streamed data that is processed by the data pipelines presented in this tutorial. You can also use other existing data, although many of the examples in this tutorial are based on the use of this sample data.
+These steps show you how to create sample records to provide streamed data that is processed by the data pipelines presented in this tutorial. You can also use other existing data, although many of the examples in this article are based on this sample data.
 
 Before you start, clone the `Dockerized fake data producer for Aiven for Apache Kafka® <https://github.com/aiven/fake-data-producer-for-apache-kafka-docker>`_ Git repository to your computer.
 
@@ -135,15 +135,14 @@ You need to configure:
 
 * A source table to read the metrics data from your Apache Kafka® topic
 * A sink table to send the processed messages to a separate Apache Kafka® topic
-* A Flink job to process the data
+* A Flink application to process the data
 
 To create the filtering data pipeline you can follow the steps below:
 
-1. In the Aiven web console, select the **Jobs & Data** tab in your Aiven for Apache Flink® service.
+1. In the `Aiven Console <https://console.aiven.io/>`_, open the Aiven for Apache Flink service and go to the **Applications** tab.
+2. Click **Create new application** to create your Flink application.
 
-#. Go to the **Data Tables** subtab.
-
-#. Create the source Apache Kafka® table:
+#. In the **Add source table**, create the source Apache Kafka® table:
 
    a. Select your Apache Kafka® service.
    b. Select ``cpu_load_stats_real`` as the topic.
@@ -156,9 +155,9 @@ To create the filtering data pipeline you can follow the steps below:
       .. literalinclude:: /code/products/flink/basic_cpu-in_table.md
          :language: sql
 
-   h. Click **Create Table**.
+   h. Click **Add table**.
 
-#. Create the sink Apache Kafka® table:
+#. In the **Add sink table**, create the sink Apache Kafka® table:
 
    a. Select your Apache Kafka® service.
    b. Enter ``cpu_load_stats_real_filter`` as the topic.
@@ -171,22 +170,18 @@ To create the filtering data pipeline you can follow the steps below:
       .. literalinclude:: /code/products/flink/basic_cpu-out-filter_table.md
          :language: sql
 
-   h. Click **Create Table**.
+   h. Click **Add table**.
 
-#. Go to the **Create SQL Job** subtab.
-
-#. Enter ``simple_filter`` as the job name, select ``CPU_IN`` and ``CPU_OUT_FILTER`` as the tables.
-
-#. Enter the following as the filtering SQL statement:
+#. In the **Create statement** screen, enter ``simple_filter`` as the job name, select ``CPU_IN`` and ``CPU_OUT_FILTER`` as the tables. Enter the following as the filtering SQL statement:
 
    .. literalinclude:: /code/products/flink/basic_job.md
       :language: sql
 
-#. click **Execute job**
+#. Click **Save and deploy later** and on the application landing screen, click **Create deployment**. 
 
-   The new job is added to the list on the **Jobs** subtab and starts automatically once a task slot is available. The status changes to *RUNNING* once the job starts.
-
-   When the job is running, you should start to see messages indicating hosts with high CPU loads in the ``cpu_load_stats_real_filter`` topic of your ``demo-kafka`` service.
+   The new application deployment status will show **Initializing** and then **Running**.
+   
+   When the application  is running, you should start to see messages indicating hosts with high CPU loads in the ``cpu_load_stats_real_filter`` topic of your ``demo-kafka`` service.
 
 Create a pipeline with windowing
 --------------------------------
@@ -203,13 +198,12 @@ The second example aggregates the CPU load over a configured time using :doc:`wi
 The example  reuses the ``CPU_IN`` Apache Kafka® source table previously created. In addition, you need to configure:
 
 * A new sink table to send the processed messages to a separate Apache Kafka® topic
-* A new Flink job to process the data
+* A new version of the Flink application to process the data
 
 To create the data pipeline you can follow the steps below:
 
-1. In the Aiven web console, select the **Jobs & Data** tab in your Aiven for Apache Flink® service.
-
-#. Go to the **Data Tables** subtab.
+1. In the `Aiven Console <https://console.aiven.io/>`_, open the Aiven for Apache Flink service and go to the **Applications** tab.
+2. Click **Create new version** and and click **Add sink tables**. 
 
 #. Create the sink Apache Kafka® table:
 
@@ -224,22 +218,18 @@ To create the data pipeline you can follow the steps below:
       .. literalinclude:: /code/products/flink/windowed_cpu-out-agg_table.md
          :language: sql
 
-   h. Click **Create Table**.
+   h. Click **Add table**.
 
-#. Go to the **Create SQL Job** subtab.
-
-#. Enter ``simple_agg`` as the job name, select ``CPU_OUT_AGG`` and ``CPU_IN`` as the tables.
-
-#. Enter the following as the filtering SQL statement:
+#. In the **Create statement** screen, enter ``simple_agg`` as the job name, select ``CPU_OUT_AGG`` and ``CPU_IN`` as the tables. Enter the following as the filtering SQL statement:
 
    .. literalinclude:: /code/products/flink/windowed_job.md
       :language: sql
 
-#. Click **Execute job**.
+#. Click **Save and deploy later** and on the application landing screen, click **Create deployment**. 
 
-   The new job is added to the list on the **Jobs** subtab and starts automatically once a task slot is available. The status changes to *RUNNING* once the job starts.
+   The new application deployment status will show **Initializing** and then **Running**.
 
-   When the job is running, you should start to see messages indicating hosts with high CPU loads in the ``cpu_load_stats_agg`` topic of your ``demo-kafka`` service.
+   When the application is running, you should start to see messages indicating hosts with high CPU loads in the ``cpu_load_stats_agg`` topic of your ``demo-kafka`` service.
 
 .. _flink_sample_pg_thresholds:
 
@@ -260,7 +250,7 @@ This uses the same ``CPU_IN`` Apache Kafka® source table that you created earli
 
 * A sink table to send the processed messages to a separate Apache Kafka® topic
 * A source table to get the PostgreSQL® threshold data
-* A Flink job to process the data.
+* A Flink application to process the data.
 
 To create the data pipeline you can follow the steps below:
 
@@ -306,11 +296,11 @@ To create the data pipeline you can follow the steps below:
       sneezy   |     80
       dopey    |     90
 
-#. In the Aiven web console, select the **Jobs & Data** tab in your Aiven for Apache Flink® service.
+#. In the `Aiven Console <https://console.aiven.io/>`_, open the Aiven for Apache Flink service and go to the **Applications** tab.
 
-#. Go to the **Data Tables** subtab.
+#. Click **Create new version** and and click **Add source tables**. 
 
-#. Create the Flink table pointing to the PostgreSQL® table
+#. Create the Flink source table pointing to the PostgreSQL® table
 
    a. Select your PostgreSQL® service
    b. Enter ``public.cpu_thresholds`` as the table
@@ -320,9 +310,9 @@ To create the data pipeline you can follow the steps below:
       .. literalinclude:: /code/products/flink/pgthresholds_source-thresholds_table.md
          :language: sql
 
-   e. click **Create Table**
+   e. click **Add table**
 
-#. Create the Flink sink table pointing to the Apache Kafka® topic:
+#. Click **Add sink table** and create the Flink sink table pointing to the Apache Kafka® topic:
 
    a. Select your Apache Kafka® service.
    b. Enter ``cpu_load_stats_real_filter_pg`` as the topic.
@@ -335,22 +325,21 @@ To create the data pipeline you can follow the steps below:
       .. literalinclude:: /code/products/flink/pgthresholds_cpu-out-filter-pg_table.md
          :language: sql
 
-   h. Click **Create Table**.
+   h. Click **Add table**.
 
-#. Create the Flink data pipeline joining the stream of CPU measurement with the host specific thresholds to filter high CPU samples
+#. Create the Flink data pipeline joining the stream of CPU measurement with the host specific thresholds to filter high CPU samples. In the **Create statement** screen,
    
-   a. Go to the **Create SQL Job** subtab
-   b. Enter ``simple_filter_pg`` as the name
-   c. Select the ``CPU_OUT_FILTER_PG``, ``CPU_IN``, and ``SOURCE_THRESHOLDS`` tables
-   d. Enter the following SQL statement to join the tables and filter:
+   a. Enter ``simple_filter_pg`` as the name
+   b. Select the ``CPU_OUT_FILTER_PG``, ``CPU_IN``, and ``SOURCE_THRESHOLDS`` tables
+   c. Enter the following SQL statement to join the tables and filter:
 
    .. literalinclude:: /code/products/flink/pgthresholds_job.md
          :language: sql
    
-   e. Click **Execute job**.
+   e. Click **Save and deploy later** and on the application landing screen, click **Create deployment**. 
 
-   The new job is added to the list on the **Jobs** subtab and starts automatically once a task slot is available. The status changes to *RUNNING* once the job starts.
-
+   The new application deployment status will show **Initializing** and then **Running**.
+   
    When the job is running, you should start to see messages indicating CPU loads that exceed the PostgreSQL®-defined thresholds in the ``cpu_load_stats_real_filter_pg`` topic of your ``demo-kafka`` service.
 
 
@@ -370,7 +359,7 @@ The fourth example highlights the instances where the average CPU load over a :d
 This uses the same ``CPU_IN`` Kafka source table and ``SOURCE_THRESHOLDS`` PostgreSQL® source table that you created earlier. In addition, you need to define:
 
 * A new sink table to store the processed data in PostgreSQL®
-* A new Flink job to process the data
+* A new Flink application to process the data
 
 To create the data pipeline you can follow the steps below:
 
@@ -388,9 +377,9 @@ To create the data pipeline you can follow the steps below:
    .. literalinclude:: /code/products/flink/combined_cpu-load-stats-agg-pg_table.md
       :language: sql
    
-#. In the Aiven web console, select the **Jobs & Data** tab in your Aiven for Apache Flink® service.
+#. In the `Aiven Console <https://console.aiven.io/>`_, open the Aiven for Apache Flink service and go to the **Applications** tab.
 
-#. Go to the **Data Tables** subtab.
+#. Click **Create new version** and and click **Add sink tables**. 
 
 #. Create a Flink table to sink data to the PostgreSQL® service
 
@@ -402,21 +391,20 @@ To create the data pipeline you can follow the steps below:
       .. literalinclude:: /code/products/flink/combined_cpu-out-agg-pg_table.md
          :language: sql
 
-   e. Click **Create Table**
+   e. Click **Add table**
 
-#. Create the Flink data pipeline calculating the CPU average over the time window and checking the value against the thresholds
+#. Create the Flink data pipeline calculating the CPU average over the time window and checking the value against the thresholds. In the **Create statement** screen,
 
-   a. Go to the **Create SQL Job** subtab
-   b. Enter ``simple_filter_pg_agg`` as the name
-   c. Select the ``CPU_OUT_AGG_PG``, ``CPU_IN``, and ``SOURCE_THRESHOLDS`` tables
-   d. Enter the following SQL to join the tables, calculate the average over a window and filter the high CPU average values:
+   a. Enter ``simple_filter_pg_agg`` as the name
+   b. Select the ``CPU_OUT_AGG_PG``, ``CPU_IN``, and ``SOURCE_THRESHOLDS`` tables
+   c. Enter the following SQL to join the tables, calculate the average over a window and filter the high CPU average values:
    
       .. literalinclude:: /code/products/flink/combined_job.md
          :language: sql
 
-   d. Click **Execute job**
+   d. Click **Save and deploy later** and on the application landing screen, click **Create deployment**. 
 
-      The new job is added to the list on the **Jobs** subtab and starts automatically once a task slot is available. The status changes to *RUNNING* once the job starts.
+      The new application deployment status will show **Initializing** and then **Running**.
 
       When the job is running, you should start to see entries indicating hosts with high CPU loads in the ``cpu_load_stats_agg_pg`` table of your ``demo-postgresql`` database.
 
@@ -435,13 +423,12 @@ The last example takes the list of filtered high CPU samples contained in the ``
 This uses the ``CPU_OUT_FILTER_PG`` Flink table defined during the :ref:`third example <flink_sample_pg_thresholds>` containing the list of CPU samples above the host-specific threshold defined in PostgreSQL®. In addition, you need to define:
 
 * A new sink table to store the filtered data in OpenSearch®
-* A new Flink job to process the data
+* A new Flink application to process the data
 
 To create the data pipeline you can follow the steps below:
 
-1. In the Aiven web console, select the **Jobs & Data** tab in your Aiven for Apache Flink® service.
-
-#. Go to the **Data Tables** subtab.
+1. In the `Aiven Console <https://console.aiven.io/>`_, open the Aiven for Apache Flink service and go to the **Applications** tab.
+2. Click **Create new version** and and click **Add sink tables**. 
 
 #. Create a Flink table to sink data to the OpenSearch® service
 
@@ -458,22 +445,21 @@ To create the data pipeline you can follow the steps below:
          We can reuse a similar definition to the ``CPU_OUT_FILTER_PG`` Flink table since they share the same columns.
          The only difference is the ``time_ltz`` column which is now ``STRING``, as we need to translate the Flink ``TIMESTAMP`` to the timestamp format accepted by OpenSearch®.
 
-   e. Click **Create Table**
+   e. Click **Add table**
 
-#. Create the Flink data pipeline calculating the CPU average over the time window and checking the value against the thresholds
+#. Create the Flink data pipeline calculating the CPU average over the time window and checking the value against the thresholds. In the **Create statement** screen,
 
-   a. Go to the **Create SQL Job** subtab
-   b. Enter ``data_filtering_replication`` as the name
-   c. Select the ``CPU_OUT_FILTER_PG`` and ``CPU_OUT_OS`` tables
-   d. Enter the following SQL to select from the source table, filter ``happy`` and ``sleepy`` hostnames and push the data to ``CPU_OUT_OS``:
+   a. Enter ``data_filtering_replication`` as the name
+   b. Select the ``CPU_OUT_FILTER_PG`` and ``CPU_OUT_OS`` tables
+   c. Enter the following SQL to select from the source table, filter ``happy`` and ``sleepy`` hostnames and push the data to ``CPU_OUT_OS``:
    
       .. literalinclude:: /code/products/flink/filter_job_os.md
          :language: sql
          
       The above SQL converts the ``local_ltz`` field to a string in the format ``yyyy/MM/dd hh:mm:ss`` which is recognised by OpenSearch as timestamp.
    
-   e. Click **Execute job**
+   e. Click **Save and deploy later** and on the application landing screen, click **Create deployment**. 
 
-      The new job is added to the list on the **Jobs** subtab and starts automatically once a task slot is available. The status changes to *RUNNING* once the job starts.
-
-      When the job is running, you should start to see entries indicating samples of the ``sleepy`` and ``happy`` hostnames with high CPU loads in the ``cpu_high_load`` table of your ``demo-opensearch`` OpenSearch service. You can use OpenSearch Dashboard to discover more about the datapoints and build advanced visualizations.
+   The new application deployment status will show **Initializing** and then **Running**.
+   
+   When the job is running, you should start to see entries indicating samples of the ``sleepy`` and ``happy`` hostnames with high CPU loads in the ``cpu_high_load`` table of your ``demo-opensearch`` OpenSearch service. You can use OpenSearch Dashboard to discover more about the datapoints and build advanced visualizations.
