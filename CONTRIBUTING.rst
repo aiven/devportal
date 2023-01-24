@@ -67,11 +67,11 @@ The instructions for setting up local development are in the ``README``.
 Style guide
 -----------
 
-These are the guidelines that we use for Aiven Docs; following them helps us keep all the content consistent and easy to follow for our audience. We review your pull request against these guidelines, so for fewer rounds of revisions, follow this advice!
+To keep all the content consistent and easy to follow for our audience, use `Google developer documentation style guide <https://developers.google.com/style>`_ for Aiven docs. On top of that, this section provides you with a few Aiven-specific guidelines you're requested to follow.
 
-.. note::
+.. tip::
 
-    For any style-related challenges not covered in this guide, `Google developer documentation style guide <https://developers.google.com/style>`_ applies.
+    Remember we review your pull request against these guidelines, so for fewer rounds of revisions, follow this advice!
 
 Use a specific template
 '''''''''''''''''''''''
