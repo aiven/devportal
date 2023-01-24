@@ -69,6 +69,10 @@ Style guide
 
 These are the guidelines that we use for Aiven Docs; following them helps us keep all the content consistent and easy to follow for our audience. We review your pull request against these guidelines, so for fewer rounds of revisions, follow this advice!
 
+.. note::
+
+    For any style-related challenges not covered in this guide, apply `Google developer documentation style guide <https://developers.google.com/style>`_.
+
 Use a specific template
 '''''''''''''''''''''''
 
