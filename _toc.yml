@@ -623,7 +623,10 @@ entries:
             title: 
           - file: docs/products/flink/howto/real-time-alerting-solution
             title: Real-time alerting solution
-          
+        
+          - file: docs/products/flink/howto/slack-connector
+          - file: docs/products/flink/howto/list-manage-cluster
+            title: Manage cluster
       - file: docs/products/flink/reference
         title: Reference
         entries:
