@@ -623,6 +623,7 @@ entries:
           - file: docs/products/flink/concepts/watermarks
           - file: docs/products/flink/concepts/windows
           - file: docs/products/flink/concepts/kafka-connectors
+            title: Stardand and upsert connectors
           - file: docs/products/flink/concepts/kafka-connector-requirements
           
           
@@ -635,7 +636,7 @@ entries:
           - file: docs/products/flink/howto/create-integration
             title: Data service integrations
           - file: docs/products/flink/howto/list-flink-applications
-            title: Aiven Flink applications
+            title: Aiven for Apache Flink applications
             entries:
               - file: docs/products/flink/howto/create-flink-applications
                 title: Create Apache Flink applications
@@ -652,11 +653,12 @@ entries:
                   - file: docs/products/flink/howto/connect-kafka
                   - file: docs/products/flink/howto/connect-pg
                   - file: docs/products/flink/howto/connect-opensearch
+                  - file: docs/products/flink/howto/slack-connector
           - file: docs/products/flink/howto/timestamps_opensearch
             title: 
           - file: docs/products/flink/howto/real-time-alerting-solution
-          - file: docs/products/flink/howto/manage-flink-tables
-          - file: docs/products/flink/howto/slack-connector
+            title: Real-time alerting solution
+          
       - file: docs/products/flink/reference
         title: Reference
         entries:

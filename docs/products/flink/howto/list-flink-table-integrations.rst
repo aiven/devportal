@@ -11,3 +11,5 @@ Learn how to:
 * :doc:`Create a PostgreSQL®-based Apache Flink® table <../howto/connect-pg>`
   
 * :doc:`Create an OpenSearch®-based Apache Flink® table <../howto/connect-opensearch>`
+  
+* :doc:`Create a Slack-based Apache Flink® table <../howto/slack-connector>`
