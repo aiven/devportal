@@ -18,7 +18,7 @@ Applications are the starting point for running an Apache Flink job within the A
 
 Interactive queries
 -------------------
-The interactive query feature in Aiven for Apache Flink grants the ability to preview the data of a Flink table or job without outputting the rows to a sink table like Apache Kafka®. This can be useful for testing and debugging purposes, as it allows you to examine the data being processed by your :doc:`Flink application <../concepts/flink-applications>`.
+The :doc:`interactive query <../concepts/supported-syntax-sql-editor>` feature in Aiven for Apache Flink grants the ability to preview the data of a Flink table or job without outputting the rows to a sink table like Apache Kafka®. This can be useful for testing and debugging purposes, as it allows you to examine the data being processed by your :doc:`Flink application <../concepts/flink-applications>`.
 
 Built-in data flow integration with Aiven for Apache Kafka®
 -----------------------------------------------------------

@@ -49,7 +49,7 @@ Follow these steps to build your first Aiven for Flink application:
 11. Click **Create deployment**. On the **Create new deployment** screen, 
     
     * Choose the version you wish to deploy. The default version for the first deployment is **Version: 1**. 
-    * Choose the savepoint from where you want to deploy. No savepoints are available for the first application deployment. 
+    * Choose the :doc:`savepoint <../concepts/savepoints>` from where you want to deploy. No savepoints are available for the first application deployment. 
     * Use the toggle for **Restart on failure** to enable or disable the option of automatically restarting a Flink job in case it fails. 
     * Enter the number of `parallel instances <https://nightlies.apache.org/flink/flink-docs-master/docs/dev/datastream/execution/parallel/>`_ you want to have for the task. 
 12. Click **Deploy without a savepoint** to deploy your application. 
