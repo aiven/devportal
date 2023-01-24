@@ -25,10 +25,10 @@ Follow these steps to build your first Aiven for Flink application:
 
 6. In the **Add new source table** screen, 
     
-    * Select the **Integrated service** from the drop-down list. 
-    * In the **Table SQL** section, enter the statement that will be used to create the table. 
-    * Optionally, click **Run** to view how data is being pulled from the data source. This could take some time based on the data and the connection. 
-    * Click **Add table**. 
+   * Select the **Integrated service** from the drop-down list. 
+   * In the **Table SQL** section, enter the statement that will be used to create the table. 
+   * Optionally, click **Run** to view how data is being pulled from the data source. This could take some time based on the data and the connection. 
+   * Click **Add table**. 
 7. Click **Next** to add the sink table, and then click **Add your first sink table**. 
    
    .. note::   
