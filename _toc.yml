@@ -608,12 +608,12 @@ entries:
               - file: docs/products/flink/howto/manage-flink-applications
                 title: Manage Apache Flink applications
           - file: docs/products/flink/howto/list-flink-tables  
-            title: Flink tables
+            title: Apache Flink tables
             entries:
               - file: docs/products/flink/howto/manage-flink-tables
-                title: Manage Flink tables
+                title: Manage Apache Flink tables
               - file: docs/products/flink/howto/list-flink-table-integrations
-                title: Create Flink tables with data sources
+                title: Create Apache Flink tables with data sources
                 entries:
                   - file: docs/products/flink/howto/connect-kafka
                   - file: docs/products/flink/howto/connect-pg
