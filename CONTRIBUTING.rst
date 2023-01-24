@@ -71,7 +71,7 @@ These are the guidelines that we use for Aiven Docs; following them helps us kee
 
 .. note::
 
-    For any style-related challenges not covered in this guide, apply `Google developer documentation style guide <https://developers.google.com/style>`_.
+    For any style-related challenges not covered in this guide, `Google developer documentation style guide <https://developers.google.com/style>`_ applies.
 
 Use a specific template
 '''''''''''''''''''''''
