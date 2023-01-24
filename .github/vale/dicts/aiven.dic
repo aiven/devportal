@@ -42,6 +42,7 @@ datasource
 Datastax
 datastore
 dashboards
+deallocation
 Debezium
 deserialize
 Dev
@@ -92,6 +93,7 @@ io
 IPsec
 Java
 JMX
+JobManager
 Jolokia
 Kaggle/M
 Kafdrop
@@ -173,6 +175,9 @@ safelisting
 Sakila
 SAML
 Sarama
+savepoint
+Savepoints
+savepoints
 schemaless
 scriptable
 sharded
@@ -207,6 +212,7 @@ Transport Layer Security
 truststore
 truststores
 Uber
+UDFs
 uncomment
 unencrypted
 untrusted

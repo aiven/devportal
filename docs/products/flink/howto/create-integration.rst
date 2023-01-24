@@ -1,39 +1,35 @@
-Create Apache Flink® integrations
-===================================
+Create Apache Flink® data service integrations
+==============================================
 
-.. Warning::
+With Apache Flink®, you can create streaming data pipelines across services. Aiven for Apache Flink® currently supports Aiven for Apache Kafka®, Aiven for PostgreSQL®, and Aiven for OpenSearch® as sources and targets for Flink applications.
 
-    As with many beta products, the Aiven for Apache Flink® experience, APIs and CLI calls are currently being redesigned, you might get error messages if using the currently documented ones.
+To use Aiven for Apache Kafka, Aiven for PostgreSQL, or Aiven for OpenSearch as a source or target for a Flink application, you will need to integrate the related service with Aiven for Apache Flink.
 
-    We will be working to update all the examples in the documentation.
 
-Apache Flink® can create streaming data pipelines across services. Currently Aiven for Apache Flink® supports Aiven for Apache Kafka® and Aiven for PostgreSQL® as source and target for Flink jobs. Moreover it supports Aiven for OpenSearch® as target.
+Create Apache Flink® data service integrations 
+----------------------------------------------
 
-To use Aiven for Apache Kafka, Aiven for PostgreSQL or Aiven for OpenSearch as a source or target of a Flink job, **the related service needs to be integrated with Aiven for Apache Flink**.
+You can easily create Aiven for Apache Flink® data service integrations via the `Aiven Console <https://console.aiven.io/>`_ by following these steps: 
 
-Create an Apache Flink integration via the Aiven Console
---------------------------------------------------------
-
-To create a Aiven for Apache Flink integration via `Aiven Console <https://console.aiven.io/>`_:
-
-1. Navigate to the Aiven for Apache Flink® service page
-2. If you're setting up the first integration for the selected Aiven for Apache Flink service,  click on the **Get Started** button available under the **Overview** tab.
+1. Navigate to the Aiven for Apache Flink® service page.
+2. If you are setting up the first integration for the selected Aiven for Apache Flink service, click on the **Get Started** button available under the **Overview** tab.
 
 .. image:: /images/products/flink/integrations-get-started.png
   :scale: 50 %
   :alt: Image of the Aiven for Apache Flink Overview page with focus on the Get Started Icon
 
-3. Select the Aiven for Apache Kafka, Aiven for PostgreSQL or Aiven for OpenSearch service to integrate, and click on the **Integrate** button
+3. To configure the data flow with Apache Flink®, select the Aiven for Apache Kafka®, Aiven for PostgreSQL®, or Aiven for OpenSearch® service that you wish to integrate. Click the **Integrate** button to complete the integration process.
 
 .. image:: /images/products/flink/integrations-select-services.png
    :scale: 50 %
    :alt: Image of the Aiven for Apache Flink Integration page showing an Aiven for Apache Kafka® and an Aiven for PostgreSQL® services 
 
-4. Additional integrations can be added using the **+** button in the **Data Flow** section
+4. You can include additional integrations using the plus(**+**) button in the **Data Flow** section
 
 .. image:: /images/products/flink/integrations-add.png
    :scale: 50 %
    :alt: Image of the Aiven for Apache Flink Integration page showing an existing Aiven for Apache Kafka integration and the + icon to add additional integrations
+
 
 
 
