@@ -19,18 +19,19 @@ Variables
 
 These are the placeholders you will need to replace in the code sample:
 
-==================      =============================================================
-Variable                Description
-==================      =============================================================
-``PASSWORD``            Password of the ``avnadmin`` user
-``HOST``                Host name for the connection
-``PORT``                Port number to use for the Cassandra service
-``SSL_CERTFILE``        Path of the `CA Certificate` for the Cassandra service
-==================      =============================================================
+=====================      =============================================================
+Variable                   Description
+=====================      =============================================================
+``PASSWORD``               Password of the ``avnadmin`` user
+``HOST``                   Host name for the connection
+``PORT``                   Port number to use for the Cassandra service
+``SSL_CERTFILE``           Path of the `CA Certificate` for the Cassandra service
+``KEYSTORE_PASSWORD``      Password to secure your keystore.
+=====================      =============================================================
 
 .. Tip::
 
-    All the above variables and the CA Certificate file can be found in the `Aiven Console <https://console.aiven.io/>`_, in the service detail page.
+    Most of the above variables and the CA Certificate file can be found in the `Aiven Console <https://console.aiven.io/>`_, in the service detail page.
 
 Preparation of the environment 
 ------------------------------
@@ -46,13 +47,13 @@ in a file called ``cassandra-certificate.pem`` in a directory on the linux syste
       -trustcacerts                   \ 
       -alias CARoot                   \
       -file cassandra-certificate.pem \
-      -keystore client.truststore
+      -keystore client.truststore \
+      -storepass KEYSTORE_PASSWORD
+
 
    A truststore file called ``client.truststore`` is created in the directory where the ``keytool`` command has been launched.
    
    The ``keytool`` command assumes the file ``cassandra-certificate.pem`` is in the same directory where you run ``keytool``. If that is not the case, provide a full path to ``cassandra-certificate.pem``.
-   
-   During creation of the truststore, you need to set a password that is required to access the truststore and retrieve the certificate.
 
 3. The next step is to create a configuration file with the connection information.
    
@@ -71,7 +72,7 @@ in a file called ``cassandra-certificate.pem`` in a directory on the linux syste
           }
           auth-provider {
             username = avnadmin
-            password = AVNS_JHMJgrFwIa-uPd7BwEB
+            password = PASSWORD
           }
         }
       }
@@ -115,17 +116,15 @@ Extract data from a Cassandra table in CSV format
 To extract the data from a table, you can use the following command::
 
    ./dsbulk unload        \
-    -f ../conf.file       \
+    -f /full/path/to/conf.file       \
     -k baselines          \
     -t keyvalue           \
     -h HOST               \
-    -port PORT
+    -port PORT             \
+    -url /directory_for_output
 
-This command will extract all records from the table and output in a CSV format. 
+This command will extract all records from the table and output in a CSV format to the directory specified in the ``-url`` parameter.
 
-.. Tip::
-
-  In order to download the data in a file, the output can be redirected to a file.
 
 Load data into a Cassandra table from a CSV file
 ------------------------------------------------
@@ -133,7 +132,7 @@ Load data into a Cassandra table from a CSV file
 To load data into a Cassandra table, the command line is very similar to the previous command::
 
    ./dsbulk load            \
-    -f ../conf.file         \
+    -f /full/path/to/conf.file         \
     -k baselines            \
     -t keyvalue             \
     -h HOST                 \ 
