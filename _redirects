@@ -48,8 +48,8 @@
 /docs/products/clickhouse/howto/add-service-users.html                 /docs/products/clickhouse/howto/manage-users-roles.html
 /docs/products/clickhouse/sample-dataset.html                          /docs/products/clickhouse/howto/load-dataset.html
 /docs/products/flink/howto/create-job.html                             /docs/products/flink/howto/create-job/create-flink-applications.html 
-/docs/products/flink/concepts/flink-for-analysts                       /docs/products/flink/list-overview.html
-/docs/products/flink/concepts/flink-for-operators                      /docs/products/flink/list-overview.html
+/docs/products/flink/concepts/flink-for-analysts.html                  /docs/products/flink/list-overview.html
+/docs/products/flink/concepts/flink-for-operators.html                 /docs/products/flink/list-overview.html
 
 # Redirect from .index.html to specific page names for landing
 
