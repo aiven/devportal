@@ -1,6 +1,6 @@
-Guides for Apache Flink®
-========================
+Aiven for Apache Flink® concepts
+================================
 
-In this section you can find guides for working with Aiven for Apache Flink®.
+In this section, you can find information on concepts that Aiven for Apache Flink® uses as foundations for its operations.
 
 .. tableofcontents::

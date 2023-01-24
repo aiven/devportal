@@ -1,4 +1,4 @@
-Requirements for Apache Kafka® connectors
+Settings for Apache Kafka® connectors
 =========================================
 
 This article outlines the required settings for standard and upsert Kafka connectors in Aiven for Apache Flink®.
