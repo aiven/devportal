@@ -619,12 +619,13 @@ entries:
                   - file: docs/products/flink/howto/connect-pg
                   - file: docs/products/flink/howto/connect-opensearch
                   - file: docs/products/flink/howto/slack-connector
-          - file: docs/products/flink/howto/timestamps_opensearch
-            title: 
-          - file: docs/products/flink/howto/real-time-alerting-solution
-            title: Real-time alerting solution
           - file: docs/products/flink/howto/list-manage-cluster
             title: Manage cluster
+          - file: docs/products/flink/howto/advanced-topics
+            entries:
+            - file: docs/products/flink/howto/timestamps_opensearch
+            - file: docs/products/flink/howto/real-time-alerting-solution
+              title: Real-time alerting solution 
       - file: docs/products/flink/reference
         title: Reference
         entries:
