@@ -3,9 +3,9 @@ Create an Aiven for Apache Flink® application
 
 .. Warning::
 
-    As with many beta products, the Aiven for Apache Flink® experience, APIs and CLI calls are currently being redesigned, you might get error messages if using the currently documented ones.
-
-    We will be working to update all the examples in the documentation.
+    As with many beta products, we are currently redesigning the Aiven for Apache Flink® experience, APIs, and CLI calls. 
+    
+    We are also updating all examples in the documentation to reflect these changes. During this process, you may encounter error messages as we introduce new improvements.
 
 :doc:`Aiven for Flink applications <../concepts/flink-applications>` in Aiven for Apache Flink® servers as a container that includes everything connected to a Flink job, including source and sink connections and data processing logic. The `Aiven Console <https://console.aiven.io/>`_ provides a guided wizard to help you build and deploy applications, simplifying the process of selecting the source and sink tables, writing data transformation statements, and validating and ingesting data through the interactive query feature.
 
