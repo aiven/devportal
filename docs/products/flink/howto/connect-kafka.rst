@@ -66,7 +66,7 @@ To create a Apache Flink® table based on an Aiven for Apache Kafka® topic via 
 
         * ``json``: `JSON <https://nightlies.apache.org/flink/flink-docs-master/docs/connectors/table/formats/json/>`_
         * ``avro``: `Apache Avro <https://nightlies.apache.org/flink/flink-docs-master/docs/connectors/table/formats/avro/>`_
-        * ``debezium-json``: `Debezium JSON <https://nightlies.apache.org/flink/flink-docs-master/docs/connectors/table/formats/debezium/>`_
+        
 7. To create a sink table, click **Add sink tables** and repeat steps 4-6 for sink tables.
 8. In the **Create statement** section, create a statement that defines the fields retrieved from each message in a topic, additional transformations such as format casting or timestamp extraction, and :doc:`watermark settings <../concepts/watermarks>`. 
 
@@ -164,7 +164,7 @@ We can define a ``metric_topic_tgt`` Flink table by selecting ``demo-kafka`` as 
 
 .. Note::
 
-    Unlikely the standard Apache Kafka SQL connector, when using the Upsert Kafka SQL connector the key fields are not defined. They are derived by the ``PRIMARY KEY`` definition in the SQL schema.
+    Unlikely the standard Apache Kafka SQL connector, when using the Upsert Kafka SQL connector the key fields are not defined. They are derived by the ``PRIMARY KEY``  definition in the SQL schema.
 
 .. Note::
 
