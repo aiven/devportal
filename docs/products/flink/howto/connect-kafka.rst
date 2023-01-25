@@ -28,29 +28,45 @@ To create a Apache Flink® table based on an Aiven for Apache Kafka® topic via 
 3. In the **Create new version** screen, click **Add source tables**.
 4. Click **Add new table** or click **Edit** if you want to edit an existing source table. 
 5. In the **Add new source table** or **Edit source table** screen, select the Aiven for Apache Kafka service as the integrated service. 
-6. In the **Table SQL** section, enter the SQL statement to create the Apache Kafka-based Apache Flink table with the following details: 
+6. In the **Table SQL** section, enter the SQL statement below to create the Apache Kafka-based Apache Flink:
 
-   * The topic to be used as a source for the data pipeline. If you want to use a new topic that does not yet exist, write the topic name.
+   ::
+
+        CREATE TABLE kafka (
+        
+        ) WITH (
+            'connector' = 'kafka',
+            'properties.bootstrap.servers' = '',
+            'scan.startup.mode' = 'earliest-offset',
+            'topic' = '',
+            'value.format' = 'json',
+            'value.format' = 'json'
+        )
+   
+   The following are the parameters:
+
+   * ``connector``: the **Kafka connector type**, between the **Apache Kafka SQL Connector** (value ``kafka``) for standard topic reads/writes and the **Upsert Kafka SQL Connector** (value ``upsert-kafka``) for changelog type of integration based on message key. 
+   
+     .. note::
+            For more information on the connector types and the requirements for each, see the articles on :doc:`Kafka connector types </docs/products/flink/concepts/kafka-connectors>` and :doc:`the requirements for each connector type </docs/products/flink/concepts/kafka-connector-requirements>`.
+
+   * ``properties.bootstrap.servers``: this parameter can be left empty since the connection details will be retrieved from the Aiven for Apache Kafka integration definition
+
+   * ``topic``: the topic to be used as a source for the data pipeline. If you want to use a new topic that does not yet exist, write the topic name.
 
      .. Warning::
         By default, Flink will not be able to create Apache Kafka topics while pushing the first record automatically. To change this behavior, enable in the Aiven for Apache Kafka target service the ``kafka.auto_create_topics_enable`` option in **Advanced configuration** section.
-
-   * Specify the **Kafka connector type**, between the **Apache Kafka SQL Connector** for standard topic reads/writes and the **Upsert Kafka SQL Connector** for changelog type of integration based on message key. 
-   
-     .. note::
-        For more information on the connector types and the requirements for each, see the articles on :doc:`Kafka connector types </docs/products/flink/concepts/kafka-connectors>` and :doc:`the requirements for each connector type </docs/products/flink/concepts/kafka-connector-requirements>`.
     
-   * Specify the **Key Data Format**. If a value other than **Key not used** is selected, specify the fields from the SQL schema to be used as key. This setting is specifically needed to set message keys for topics acting as target of data pipelines.
-   * Specify the **Value Data Format**. Based on the message format in the Apache Kafka topic. 
+   * ``key.format``: specifies the **Key Data Format**. If a value other than **Key not used** is selected, specify the fields from the SQL schema to be used as key. This setting is specifically needed to set message keys for topics acting as target of data pipelines.
+   
+   * ``value.format``: specifies the **Value Data Format**. Based on the message format in the Apache Kafka topic. 
 
      .. note:: 
         For Key and Value data format, the following options are available:  
 
-        * `JSON <https://nightlies.apache.org/flink/flink-docs-master/docs/connectors/table/formats/json/>`_
-        * `Apache Avro <https://nightlies.apache.org/flink/flink-docs-master/docs/connectors/table/formats/avro/>`_
-        * `Confluent Avro <https://nightlies.apache.org/flink/flink-docs-master/docs/connectors/table/formats/avro-confluent/>`_
-        * `Debezium Avro <https://nightlies.apache.org/flink/flink-docs-master/docs/connectors/table/formats/debezium/>`_
-        * `Debezium JSON <https://nightlies.apache.org/flink/flink-docs-master/docs/connectors/table/formats/debezium/>`_
+        * ``json``: `JSON <https://nightlies.apache.org/flink/flink-docs-master/docs/connectors/table/formats/json/>`_
+        * ``avro``: `Apache Avro <https://nightlies.apache.org/flink/flink-docs-master/docs/connectors/table/formats/avro/>`_
+        * ``debezium-json``: `Debezium JSON <https://nightlies.apache.org/flink/flink-docs-master/docs/connectors/table/formats/debezium/>`_
 7. To create a sink table, click **Add sink tables** and repeat steps 4-6 for sink tables.
 8. In the **Create statement** section, create a statement that defines the fields retrieved from each message in a topic, additional transformations such as format casting or timestamp extraction, and :doc:`watermark settings <../concepts/watermarks>`. 
 
@@ -67,24 +83,26 @@ The Aiven for Apache Kafka service named ``demo-kafka`` contains a topic named  
     {'hostname': 'happy', 'cpu': 'cpu2', 'usage': 77.90860728236156, 'occurred_at': 1637775078964}
     {'hostname': 'dopey', 'cpu': 'cpu4', 'usage': 81.17372993952847, 'occurred_at': 1637775079054}
 
-We can define a ``metrics_in`` Flink table with:
-
-* ``demo-kafka`` as integration service
-* ``metric-topic`` as Apache Kafka topic name
-* **Apache Kafka SQL Connector** since we want to threat every entry as unique events
-* **Key not used** as Key data format
-* **JSON** as Value data format
-* ``metrics_in`` as Flink table name
-* The following as SQL schema
+We can define a ``metrics_in`` Flink table by selecting ``demo-kafka`` as integration service and writing the following as SQL schema:
 
 .. code:: sql 
+    
+    CREATE TABLE metrics_in (
+        cpu VARCHAR,
+        hostname VARCHAR,
+        usage DOUBLE,
+        occurred_at BIGINT,
+        time_ltz AS TO_TIMESTAMP_LTZ(occurred_at, 3),
+        WATERMARK FOR time_ltz AS time_ltz - INTERVAL '10' SECOND
+        )
+    WITH (
+        'connector' = 'kafka',
+        'properties.bootstrap.servers' = '',
+        'topic' = 'metric-topic',
+        'value.format' = 'json',
+        'scan.startup.mode' = 'earliest-offset'
+        )  
 
-    cpu VARCHAR,
-    hostname VARCHAR,
-    usage DOUBLE,
-    occurred_at BIGINT,
-    time_ltz AS TO_TIMESTAMP_LTZ(occurred_at, 3),
-    WATERMARK FOR time_ltz AS time_ltz - INTERVAL '10' SECOND
 
 .. Note::
 
@@ -97,56 +115,56 @@ We can define a ``metrics_in`` Flink table with:
 Example: Define a Flink table using the standard connector over topic in Avro format   
 ------------------------------------------------------------------------------------
 
-In cases when target of the Flink data pipeline needs to write in Avro format to a topic named  ``metric-topic-tgt`` within the Aiven for Apache Kafka service named ``demo-kafka``.
+In cases when target of the Flink data pipeline needs to write in Avro format to a topic named  ``metric_topic_tgt`` within the Aiven for Apache Kafka service named ``demo-kafka``.
 
-We can define a ``metrics-out`` Flink table with:
-
-* ``demo-kafka`` as integration service
-* ``metric-topic-tgt`` as Apache Kafka topic name
-* **Apache Kafka SQL Connector** for the standard connection mode
-* **Confluent Avro** as Key data format
-* `hostname` as field to be used as key, the key in Apache Kafka is by default used for partition selection 
-* **Confluent Avro** as Value data format
-* ``metrics-out`` as Flink table name
-* The following as SQL schema
+We can define a ``metric_topic_tgt`` Flink table by selecting the ``demo-kafka`` as integration service and writing the following SQL schema:
 
 .. code:: sql 
 
-    cpu VARCHAR,
-    hostname VARCHAR,
-    usage DOUBLE
+    CREATE TABLE metric_topic_tgt (
+        cpu VARCHAR,
+        hostname VARCHAR,
+        usage DOUBLE
+        )
+    WITH (
+        'connector' = 'kafka',
+        'properties.bootstrap.servers' = '',
+        'topic' = 'metric-topic',
+        'value.format' = 'avro',
+        'scan.startup.mode' = 'earliest-offset'
+        ) 
 
 .. Note::
 
     The SQL schema includes the output message fields ``cpu``, ``hostname``, ``usage`` and the related `data type <https://nightlies.apache.org/flink/flink-docs-release-1.15/docs/dev/table/types/#list-of-data-types>`_.
 
 
-Example: Define a Flink table using the upsert connector over topic in Avro format   
+Example: Define a Flink table using the upsert connector over topic in JSON format   
 ------------------------------------------------------------------------------------
 
-In cases when target of the Flink pipeline needs to write in Avro format and upsert mode to a compacted topic named  ``metric-topic-tgt`` within the Aiven for Apache Kafka service named ``demo-kafka``.
+In cases when target of the Flink pipeline needs to write in JSON format and upsert mode to a compacted topic named  ``metric_topic_tgt`` within the Aiven for Apache Kafka service named ``demo-kafka``.
 
-We can define a ``metrics-out`` Flink table with:
-
-* ``demo-kafka`` as integration service
-* ``metric-topic-tgt`` as Apache Kafka topic name
-* **Upsert Kafka SQL Connector** for the changelog mode
-* **Confluent Avro** as Key data format
-
-.. Note::
-
-    Unlikely the standard Apache Kafka SQL connector, when using the Upsert Kafka SQL connector the key fields are not defined. They are derived by the `PRIMARY KEY` definition in the SQL schema.
-
-* **Confluent Avro** as Value data format
-* ``metrics-out`` as Flink table name
-* The following as SQL schema
+We can define a ``metric_topic_tgt`` Flink table by selecting ``demo-kafka`` as integration service and writing the following SQL schema:
 
 .. code:: sql 
 
-    cpu VARCHAR,
-    hostname VARCHAR,
-    max_usage DOUBLE,
-    PRIMARY KEY (cpu, hostname) NOT ENFORCED
+    CREATE TABLE metric_topic_tgt (
+        cpu VARCHAR,
+        hostname VARCHAR,
+        max_usage DOUBLE,
+        PRIMARY KEY (cpu, hostname) NOT ENFORCED
+        )
+    WITH (
+        'connector' = 'upsert-kafka',
+        'properties.bootstrap.servers' = '',
+        'topic' = 'metric-topic',
+        'value.format' = 'json',
+        'scan.startup.mode' = 'earliest-offset'
+        ) 
+
+.. Note::
+
+    Unlikely the standard Apache Kafka SQL connector, when using the Upsert Kafka SQL connector the key fields are not defined. They are derived by the ``PRIMARY KEY`` definition in the SQL schema.
 
 .. Note::
 

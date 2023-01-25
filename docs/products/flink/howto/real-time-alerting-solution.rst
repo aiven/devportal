@@ -142,35 +142,17 @@ To create the filtering data pipeline you can follow the steps below:
 1. In the `Aiven Console <https://console.aiven.io/>`_, open the Aiven for Apache Flink service and go to the **Applications** tab.
 2. Click **Create new application** to create your Flink application.
 
-#. In the **Add source table**, create the source Apache Kafka® table:
+#. In the **Add source table**, create the source Apache Kafka® table by selecting the related integration and pasting the following SQL:
 
-   a. Select your Apache Kafka® service.
-   b. Select ``cpu_load_stats_real`` as the topic.
-   c. Select **Kafka** as the connector type.
-   d. Select **Key not used** as the key.
-   e. Select **JSON** as the value data format.
-   f. Enter ``CPU_IN`` as the name
-   g. Enter the following as the ``CPU_IN`` SQL schema
+   .. literalinclude:: /code/products/flink/basic_cpu-in_table.md
+      :language: sql
 
-      .. literalinclude:: /code/products/flink/basic_cpu-in_table.md
+
+#. In the **Add sink table**, create the sink Apache Kafka® table by selecting the related integration and pasting the following SQL:
+
+   .. literalinclude:: /code/products/flink/basic_cpu-out-filter_table.md
          :language: sql
 
-   h. Click **Add table**.
-
-#. In the **Add sink table**, create the sink Apache Kafka® table:
-
-   a. Select your Apache Kafka® service.
-   b. Enter ``cpu_load_stats_real_filter`` as the topic.
-   c. Select **Kafka** as the connector type.
-   d. Select **Key not used** as the key.
-   e. Select **JSON** as the value data format.
-   f. Enter ``CPU_OUT_FILTER`` as the name
-   g. Enter the following as the ``CPU_OUT_FILTER`` SQL schema:
-
-      .. literalinclude:: /code/products/flink/basic_cpu-out-filter_table.md
-         :language: sql
-
-   h. Click **Add table**.
 
 #. In the **Create statement** screen, enter ``simple_filter`` as the job name, select ``CPU_IN`` and ``CPU_OUT_FILTER`` as the tables. Enter the following as the filtering SQL statement:
 
