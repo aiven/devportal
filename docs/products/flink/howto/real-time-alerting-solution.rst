@@ -1,6 +1,12 @@
 Create a real-time alerting solution - Aiven console
 ====================================================
 
+.. Warning::
+
+   As with many beta products, we are currently redesigning the Aiven for Apache Flink® experience, APIs, and CLI calls. 
+    
+   We are also updating all examples in the documentation to reflect these changes. During this process, you may encounter error messages as we introduce new improvements.
+
 This article demonstrates how to integrate Aiven for Apache Flink® with Aiven for Apache Kafka®, Aiven for PostgreSQL®, and Aiven for OpenSearch® to create real-time alerting data for CPU loads.
 
 Architecture overview

@@ -1,6 +1,12 @@
 Manage Aiven for Apache Flink® applications
 ===========================================
 
+.. Warning::
+
+    As with many beta products, we are currently redesigning the Aiven for Apache Flink® experience, APIs, and CLI calls. 
+    
+    We are also updating all examples in the documentation to reflect these changes. During this process, you may encounter error messages as we introduce new improvements.
+
 This section provides information on managing your Aiven for Apache Flink® applications.
 
 Creating a new version of an application
