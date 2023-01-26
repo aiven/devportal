@@ -215,7 +215,7 @@ To create the data pipeline you can follow the steps below:
 
 .. _flink_sample_pg_thresholds:
 
-Create a Flink SQL job using PostgreSQL® thresholds
+Create a Flink SQL job using PostgreSQL® thresholds 
 ---------------------------------------------------
 
 The third example defines host-specific thresholds in a PostgreSQL®  table. The thresholds table is joined with the inbound stream of CPU measurements by hostname to filter instances of CPU load going over the defined thresholds.
