@@ -597,31 +597,6 @@ entries:
         entries:
           - file: docs/products/flink/reference/advanced-params
             title: Advanced parameters
-          - file: docs/products/flink/reference/tutorial
-            title: Tutorials
-            entries:
-              - file: docs/products/flink/reference/tutorial/anomaly-detection
-                title: Streaming anomaly detection with Apache Flink, Apache Kafka and PostgreSQL
-                entries:
-                  - file: docs/products/flink/reference/tutorial/anomaly-detection/create-aiven-services
-                    title: Create the Aiven services
-                  - file: docs/products/flink/reference/tutorial/anomaly-detection/create-services-collapsable
-                    title: Create the Aiven services collapsable
-                  - file: docs/products/flink/reference/tutorial/anomaly-detection/create-services
-                    title: Create the Aiven services stepbystep
-                    entries:
-                      - file: docs/products/flink/reference/tutorial/anomaly-detection/create-services/intro
-                        title: Introduction
-                      - file: docs/products/flink/reference/tutorial/anomaly-detection/create-services/create-kafka
-                        title: Create an Aiven for Apache Kafka service
-                      - file: docs/products/flink/reference/tutorial/anomaly-detection/create-services/customise-kafka
-                        title: Customise the Aiven for Apache Kafka service
-                      - file: docs/products/flink/reference/tutorial/anomaly-detection/create-services/create-postgresql
-                        title: Create an Aiven for PostgreSQL service
-                      - file: docs/products/flink/reference/tutorial/anomaly-detection/create-services/create-flink
-                        title: Create an Aiven for Apache Flink service
-                      - file: docs/products/flink/reference/tutorial/anomaly-detection/create-services/customise-flink
-                        title: Customise the Aiven for Apache Flink service
 
   - file: docs/products/cassandra
     title: Apache Cassandra
@@ -1049,3 +1024,9 @@ entries:
       title: Catch the Bus - Aiven challenge with ClickHouse
     - file: docs/community/challenge/the-rolling-challenge
       title: Rolling - Aiven challenge with Apache Kafka and Apache Flink
+  
+  - file: docs/tutorials
+    title: Tutorials
+    entries:
+      - file: docs/tutorials/anomaly-detection
+        title: Streaming anomaly detection with Apache Flink, Apache Kafka and PostgreSQL
