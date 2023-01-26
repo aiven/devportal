@@ -164,7 +164,7 @@ The Aiven authentication token is needed to generate fake streaming IoT metric d
 Start the fake IoT data generator
 ''''''''''''''''''''''''''''''''''''
 
-In this step you will create a straming dataset producer to Apache Kafka. The dataset will contain random IoT metrics that will later be processed with Apache Flink. 
+In this step you will create a streaming dataset producer to Apache Kafka. The dataset will contain random IoT metrics that will later be processed with Apache Flink. 
 
 .. Note:: 
     You can also use other existing data, although many of the examples in this article are based on this sample data.
@@ -228,7 +228,7 @@ You can check the data flowing in the Aiven for Apache Kafka by:
       :alt: Aiven for Apache Kafka Topic tab, showing the ``cpu_load_stats_real`` topic being created and the location of the ``...`` icon
 
 5. Click on **Fetch Messages** button
-6. Taggle the **Decode from base64** option
+6. Toggle the **Decode from base64** option
 7. You should see the messages being pushed to the Apache Kafka topic
 
    .. image:: /images/tutorials/anomaly-detection/kafka-messages-detail.png
@@ -306,7 +306,7 @@ When the application  is running, you should start to see messages indicating ho
 Create an anomaly detection pipeline with windowing and threshold lookup
 ------------------------------------------------------------------------
 
-Sending an alert on every IoT measurement above a thresold might cause too much noise, you don't want to receive a notification every time your computer's CPU goes above 90%, but, if that happens continuously for a 10 minute interval there might be a problem. In the second example, you'll aggregate the CPU load over a configured time using :doc:`windows </docs/products/flink/concepts/windows>` and the :doc:`event time </docs/products/flink/concepts/event-processing-time>`. 
+Sending an alert on every IoT measurement above a threshold might cause too much noise, you don't want to receive a notification every time your computer's CPU goes above 90%, but, if that happens continuously for a 10 minute interval there might be a problem. In the second example, you'll aggregate the CPU load over a configured time using :doc:`windows </docs/products/flink/concepts/windows>` and the :doc:`event time </docs/products/flink/concepts/event-processing-time>`. 
 
 The averaged CPU value will then be checked across a reference table (stored in PostgreSQL) defining different thresholds for the various IoT devices based on their ``hostname``.
 
