@@ -590,8 +590,6 @@ entries:
           - file: docs/products/flink/howto/advanced-topics
             entries:
             - file: docs/products/flink/howto/timestamps_opensearch
-            - file: docs/products/flink/howto/real-time-alerting-solution
-              title: Real-time alerting solution 
       - file: docs/products/flink/reference
         title: Reference
         entries:
