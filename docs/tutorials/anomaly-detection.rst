@@ -454,7 +454,7 @@ To create the notification data pipeline you can follow the steps below:
      .. literalinclude:: /code/products/flink/windowed_cpu-in-agg_table.md
         :language: sql
 
-   *. Click **Add table**.
+   * Click **Add table**.
 
 5. To create a source table ``CPU_THRESHOLDS`` pointing to the PostgreSQL table ``cpu_thresholds``:
 
@@ -465,7 +465,7 @@ To create the notification data pipeline you can follow the steps below:
      .. literalinclude:: /code/products/flink/pgthresholds_source-thresholds_table.md
          :language: sql
 
-   *. Click **Add table**.
+   * Click **Add table**.
 
 6. Navigate to the **Add sink tables** tab
 7. To create a sink table ``SLACK_SINK`` pointing to a Slack channel for notifications:
