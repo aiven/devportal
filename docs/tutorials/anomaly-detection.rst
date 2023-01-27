@@ -1,14 +1,36 @@
-Tutorial: streaming anomaly detection with Apache Flink®, Apache Kafka® and PostgreSQL®
+Streaming anomaly detection with Apache Flink®, Apache Kafka® and PostgreSQL®
 ==============================================================================================
 
 .. Note::
 
     This tutorial doesn't assume any existing Apache Kafka®, PostgreSQL® or Apache Flink® knowledge
 
-Before we start
----------------
+What are you going to build
+---------------------------
 
-In this tutorial we will build a streaming anomaly detection system based on IoT type sensor readings. Even if the sample dataset and the data pipeline examples might seem basic, they offer a wide coverage on the integration and transformation options available with Apache Flink that can be applied to other, more complex, scenarios. 
+In this tutorial you will build a streaming anomaly detection system based on IoT sensor readings recording the CPU usage percentage for various devices. After setting up the various components and enabling the data flow, you'll then create a basic filtering pipeline to separate the usage values surpassing a fixed threshold (80%). 
+
+.. mermaid::
+
+    graph LR;
+
+        id1(IoT device)-- sensor reading -->id2(usage > 80%?);
+        id2-- yes -->id3(notification);
+
+However, receiving a notification on every sensor reading that surpasses a fixed threshold can be overwhelming and create false positives for short usage spikes. Therefore you'll create a second, more advanced, pipeline to average the sensor readings values over 30 seconds windows and then compare the results with host based thresholds coming from an external table.
+
+.. mermaid::
+
+    graph LR;
+
+        id1(IoT device)-- sensor reading -->id2(average 30 seconds);
+        id2-- average reading -->id4(over threshold?);
+        id4-- yes --> id5(notification);
+        id3(threshold table)-- thresholds --> id4;
+
+.. Note::
+
+    Even if the sample dataset and the data pipeline examples might seem basic, they offer a wide coverage on the integration and transformation options available with Apache Flink that can be applied to other, more complex, scenarios. 
 
 The tutorial includes:
 
@@ -19,44 +41,46 @@ The tutorial includes:
 
 .. Tip::
 
-    All the tools listed above are fully open source, and can therefore be installed and used locally. We're going to use the comparable Aiven services to avoid any network and integration complexities. 
+    All the tools listed above are fully open source, and can therefore be installed and used locally. You're going to use the comparable Aiven services to avoid any network and integration complexities. 
 
 Architecture overview
 ---------------------
 
-The tutorial showcases how to create an Apache Kafka® source topic that provides a stream of IoT metrics data, a PostgreSQL® database that contains data on the alerting thresholds, and an Apache Flink® service that combines these two services and pushes the filtered data to a separate Apache Kafka® topic, PostgreSQL® table or a Slack channel.
+The tutorial showcases how to create an Apache Kafka® source topic that provides a stream of IoT metrics data, a PostgreSQL® database that contains data on the alerting thresholds, and an Apache Flink® service that combines these two services and pushes the filtered data to a separate Apache Kafka® topic or a Slack channel.
 
 .. mermaid::
 
-    graph LR;
+    graph TD;
 
-        id1(Kafka)-- IoT metrics stream -->id3(Flink);
+        id1(Apache Kafka)-- IoT metrics stream -->id3(Apache Flink);
         id2(PostgreSQL)-- alerting threshold data -->id3;
-        id3-. filtered data .->id4(Kafka);
-        id3-. filtered/aggregated data .->id5(Kafka);
-        id3-. filtered data .->id7(Slack);
+        id3-- filtered data -->id4(Apache Kafka);
+        id3-- filtered/aggregated data -->id5(Apache Kafka);
+        id3-- filtered data -->id7(Slack);
 
 Prerequisites
 -------------
 
-The tutorial uses all Aiven services, therefore you'll need a valid `Aiven account <https://console.aiven.io/signup>`_. The tutorial has also three external dependencies:
+The tutorial uses Aiven services, therefore you'll need a valid `Aiven account <https://console.aiven.io/signup>`_. The tutorial has also three external dependencies:
 
-* **Docker**, needed for the `fake data generator for Apache Kafka <https://github.com/aiven/fake-data-producer-for-apache-kafka-docker>`_  is the only dependency. Check out the `related installation instructions <https://docs.docker.com/engine/install/>`_.
-* **Slack Token**: the output of a data pipeline sends out notifications to a slack channel, check out the needed steps to retrieve a `Slack authentication token <https://github.com/aiven/slack-connector-for-apache-flink>`_
-* `psql <https://www.postgresql.org/docs/current/app-psql.html>`_ a terminal based tool to interact with PostgreSQL
+* **Docker**, needed for the `fake data generator for Apache Kafka <https://github.com/aiven/fake-data-producer-for-apache-kafka-docker>`_. Check out the `related installation instructions <https://docs.docker.com/engine/install/>`_.
+* **Slack App and Token**: the data pipeline output is a notifications to a Slack channel, check out the needed steps to `set up a Slack app and retrieve the Slack authentication token <https://github.com/aiven/slack-connector-for-apache-flink>`_.
+* `psql <https://www.postgresql.org/docs/current/app-psql.html>`_ a terminal based tool to interact with PostgreSQL where the threshold data will be stored.
 
-Create the Aiven services
--------------------------
+1. Create the Aiven services
+----------------------------
 
-This section of the tutorial will showcase how to create the needed Aiven services via the `Aiven Console <https://console.aiven.io/>`_. We'll create three services:
+In this section you'll create the services needed to support the anomaly detection system via the `Aiven Console <https://console.aiven.io/>`_:
 
 * An :doc:`Aiven for Apache Kafka®</docs/products/kafka>` named ``demo-kafka`` for data streaming
 * An :doc:`Aiven for Apache Flink®</docs/products/flink>` named ``demo-flink`` for streaming data transformation
 * An :doc:`Aiven for PostgreSQL®</docs/products/postgresql>` named ``demo-postgresql`` for data storage and query
 
 
-Create an Aiven for Apache Kafka® service
-'''''''''''''''''''''''''''''''''''''''''
+1.1 Create an Aiven for Apache Kafka® service
+'''''''''''''''''''''''''''''''''''''''''''''
+
+The :doc:`Aiven for Apache Kafka </docs/products/kafka>` service is responsible to receive the inbound stream of IoT sensor readings. To create the service you need to:
 
 1. Log in to the `Aiven web console <https://console.aiven.io/>`_.
 2. On the *Services* page, click **Create a new service**.
@@ -94,6 +118,8 @@ After creating the service, you'll be redirected to the service details page. Yo
 Create an Aiven for PostgreSQL® service
 '''''''''''''''''''''''''''''''''''''''''
 
+The :doc:`PostgreSQL </docs/products/postgresql>` database is where you'll store the threshold data for each IoT device. To create the database:
+
 1. Log in to the `Aiven web console <https://console.aiven.io/>`_.
 2. On the *Services* page, click **Create a new service**.
 
@@ -110,6 +136,8 @@ Create an Aiven for PostgreSQL® service
 
 Create an Aiven for Apache Flink service
 '''''''''''''''''''''''''''''''''''''''''
+
+You will use :doc:`Apache Flink </docs/products/flink>` to define the streaming data pipelines. To create the service:
 
 1. Log in to the `Aiven web console <https://console.aiven.io/>`_.
 2. On the *Services* page, click **Create a new service**.
@@ -140,12 +168,12 @@ After creating the service, you'll be redirected to the service details page. Yo
 Set up the IoT metrics streaming dataset
 ----------------------------------------
 
-This section enables you to create a stream of fake IoT data against an Aiven for Apache Kafka topic.
+This section enables you to create a continous stream of fake IoT data that will be pushed to an Aiven for Apache Kafka topic.
 
 Create an Aiven authentication token
 ''''''''''''''''''''''''''''''''''''
 
-The Aiven authentication token is needed to generate fake streaming IoT metric data against to an Aiven for Apache Kafka topic. To create an authentication token:
+You will use the Aiven authentication token to generate fake streaming IoT metric data against to the Aiven for Apache Kafka topic. To create an authentication token:
 
 1. Log in to the `Aiven web console <https://console.aiven.io/>`_.
 2. Click the user icon in the top-right corner of the page.
@@ -164,12 +192,12 @@ The Aiven authentication token is needed to generate fake streaming IoT metric d
 Start the fake IoT data generator
 ''''''''''''''''''''''''''''''''''''
 
-In this step you will create a streaming dataset producer to Apache Kafka. The dataset will contain random IoT metrics that will later be processed with Apache Flink. 
+In this step you will create a streaming data producer to Apache Kafka. The dataset will contain random IoT metrics that will later be processed with Apache Flink. 
 
 .. Note:: 
-    You can also use other existing data, although many of the examples in this article are based on this sample data.
+    You can also use other existing data, although the examples in this tutorial are based on the IoT sample data.
 
-1. Clone the `Dockerized fake data producer for Aiven for Apache Kafka® <https://github.com/aiven/fake-data-producer-for-apache-kafka-docker>`_ Git repository to your computer::
+1. Clone the `Dockerized fake data producer for Aiven for Apache Kafka® <https://github.com/aiven/fake-data-producer-for-apache-kafka-docker>`_ repository to your computer::
 
     git clone https://github.com/aiven/fake-data-producer-for-apache-kafka-docker.git
 
@@ -217,7 +245,7 @@ In this step you will create a streaming dataset producer to Apache Kafka. The d
 Check the data in Apache Kafka
 ''''''''''''''''''''''''''''''
 
-You can check the data flowing in the Aiven for Apache Kafka by:
+Now that the fake data producer is running, you can check the data flowing in the Aiven for Apache Kafka topic by:
 
 1. Log in to the `Aiven web console <https://console.aiven.io/>`_.
 2. Click on the Aiven for Apache Kafka service name ``demo-kafka``.
@@ -236,8 +264,8 @@ You can check the data flowing in the Aiven for Apache Kafka by:
 
 8. Click again on the **Fetch Messages** button to refresh the visualization with new messages
 
-Create an anomaly detection pipeline with filtering
----------------------------------------------------
+Create a basic anomaly detection pipeline with filtering
+--------------------------------------------------------
 
 The first anomaly detection pipeline is based on filtering any instances of high CPU load based on a fixed threshold. The messages above the threshold are pushed to a separate Apache Kafka® topic.
 
@@ -248,7 +276,7 @@ The first anomaly detection pipeline is based on filtering any instances of high
         id1(Kafka topic: cpu_load_stats_real)-- IoT metrics stream -->id2(Flink application: filtering);
         id2-- high CPU -->id3(Kafka topic: cpu_load_stats_real_filter);
 
-You need to:
+To define the basic pipeline, you need to:
 
 * Create a new Aiven for Apache Flink application
 * Define a source table to read the metrics data from your Apache Kafka® topic
@@ -256,7 +284,7 @@ You need to:
 * Define a SQL transformation definition to process the data
 * Create an application deployment to execute the pipeline
 
-To create the filtering data pipeline you can follow the steps below:
+You can try yourself in the `Aiven Console <https://console.aiven.io/>`_, or follow the steps below:
 
 1. In the `Aiven Console <https://console.aiven.io/>`_, open the Aiven for Apache Flink service named ``demo-flink`` and go to the **Applications** tab.
 2. Click **Create new application** to create your Flink application.
@@ -271,8 +299,6 @@ To create the filtering data pipeline you can follow the steps below:
 
    .. Note::
         You can check that the columns are properly defined and aligned with the data in the Kafka topic using the interactive query capability. You need to click on the **Run** icon below the SQL definition box.
-
-
 
 5. Navigate to the **Add sink table** tab
 6. Create the sink table (named ``CPU_OUT_FILTER``) pointing to a new Apache Kafka® topic named ``cpu_load_stats_real_filter`` by:
@@ -300,13 +326,17 @@ To create the filtering data pipeline you can follow the steps below:
 
 12. The new application deployment status will show **Initializing** and then **Running: version 1**.
 
-When the application  is running, you should start to see messages indicating hosts with high CPU loads in the ``cpu_load_stats_real_filter`` topic of your ``demo-kafka`` service.
+When the application is running, you should start to see messages indicating hosts with high CPU loads in the ``cpu_load_stats_real_filter`` topic of your ``demo-kafka`` Apache Kafka service.
+
+.. Important::
+    
+    Congratulations! You created your first streaming anomaly detection pipeline!
 
 
-Create an anomaly detection pipeline with windowing and threshold lookup
-------------------------------------------------------------------------
+Create an advanced anomaly detection pipeline with windowing and threshold lookup
+---------------------------------------------------------------------------------
 
-Sending an alert on every IoT measurement above a threshold might cause too much noise, you don't want to receive a notification every time your computer's CPU goes above 90%, but, if that happens continuously for a 10 minute interval there might be a problem. In the second example, you'll aggregate the CPU load over a configured time using :doc:`windows </docs/products/flink/concepts/windows>` and the :doc:`event time </docs/products/flink/concepts/event-processing-time>`. 
+Sending an alert on every IoT measurement above a threshold might cause too much noise, you don't want to receive a notification every time your computer's CPU goes above 90%, but, if that happens continuously for a 30 seconds interval there might be a problem. In the second example, you'll aggregate the CPU load over a configured time using :doc:`windows </docs/products/flink/concepts/windows>` and the :doc:`event time </docs/products/flink/concepts/event-processing-time>`. 
 
 The averaged CPU value will then be checked across a reference table (stored in PostgreSQL) defining different thresholds for the various IoT devices based on their ``hostname``.
 
@@ -340,7 +370,7 @@ The steps below allows you to import the ``CPU_IN`` source table previously crea
 * Define a SQL transformation definition to process the data
 * Create an application deployment to execute the pipeline
 
-To create the windowing data pipeline you can follow the steps below:
+To create the windowing data pipeline, you can go ahead an try yourself or follow the steps below:
 
 1. In the `Aiven Console <https://console.aiven.io/>`_, open the Aiven for Apache Flink service and go to the **Applications** tab.
 2. Click on **Create new application** and name it ``cpu_agg``
@@ -440,7 +470,7 @@ To complete the example, you need to:
 * Define a SQL transformation definition to process the data
 * Create an application deployment to execute the pipeline
 
-To create the notification data pipeline you can follow the steps below:
+To create the notification data pipeline, you can go ahead an try yourself or follow the steps below:
 
 1. In the `Aiven Console <https://console.aiven.io/>`_, open the Aiven for Apache Flink service and go to the **Applications** tab.
 2. Click on **Create new application** and name it ``cpu_notification``
@@ -493,4 +523,8 @@ To create the notification data pipeline you can follow the steps below:
 
 13. The new application deployment status will show **Initializing** and then **Running: version 1**.
 
-When the application  is running, you should start to see messages containing the 30 seconds CPU average in the ``cpu_agg_stats`` topic of your ``demo-kafka`` service.
+When the application  is running, you should start to see notification about the IoT devices having CPU usage going over the defined thresholds in the Slack channel.
+
+.. Important::
+
+    Congratulations! You created an advanced streaming data pipeline including windowing, joining data coming from different technologies and a Slack notification system
