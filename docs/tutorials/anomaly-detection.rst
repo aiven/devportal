@@ -5,6 +5,18 @@ Streaming anomaly detection with Apache Flink®, Apache Kafka® and PostgreSQL®
 
     This tutorial doesn't assume any existing Apache Kafka®, PostgreSQL® or Apache Flink® knowledge
 
+What you will learn
+---------------------------
+
+The tutorial provides an example of a streaming anomaly detection system, by following it you'll learn:
+
+* How to create a fake streaming dataset
+* How to create and use Apache Kafka® for data streaming
+* How to create and use PostgreSQL® to store threshold data
+* How to create and use Apache Flink® to define streaming data pipelines
+* How to push the outcome of the anomaly detection system as a Slack notification
+
+
 What are you going to build
 ---------------------------
 
@@ -48,14 +60,14 @@ Architecture overview
 
 The tutorial showcases how to create an Apache Kafka® source topic that provides a stream of IoT metrics data, a PostgreSQL® database that contains data on the alerting thresholds, and an Apache Flink® service that combines these two services and pushes the filtered data to a separate Apache Kafka® topic or a Slack channel.
 
+
 .. mermaid::
 
     graph TD;
 
         id1(Apache Kafka)-- IoT metrics stream -->id3(Apache Flink);
         id2(PostgreSQL)-- alerting threshold data -->id3;
-        id3-- filtered data -->id4(Apache Kafka);
-        id3-- filtered/aggregated data -->id5(Apache Kafka);
+        id3-- filtered/aggregated data -->id1;
         id3-- filtered data -->id7(Slack);
 
 Prerequisites
