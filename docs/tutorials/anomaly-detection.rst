@@ -79,7 +79,7 @@ The tutorial uses Aiven services, therefore you'll need a valid `Aiven account <
 * **Slack App and Token**: the data pipeline output is a notifications to a Slack channel, check out the needed steps to `set up a Slack app and retrieve the Slack authentication token <https://github.com/aiven/slack-connector-for-apache-flink>`_.
 * `psql <https://www.postgresql.org/docs/current/app-psql.html>`_ a terminal based tool to interact with PostgreSQL where the threshold data will be stored.
 
-1. Create the Aiven services
+Create the Aiven services
 ----------------------------
 
 In this section you'll create the services needed to support the anomaly detection system via the `Aiven Console <https://console.aiven.io/>`_:
@@ -89,7 +89,7 @@ In this section you'll create the services needed to support the anomaly detecti
 * An :doc:`Aiven for PostgreSQL®</docs/products/postgresql>` named ``demo-postgresql`` for data storage and query
 
 
-1.1 Create an Aiven for Apache Kafka® service
+Create an Aiven for Apache Kafka® service
 '''''''''''''''''''''''''''''''''''''''''''''
 
 The :doc:`Aiven for Apache Kafka </docs/products/kafka>` service is responsible to receive the inbound stream of IoT sensor readings. To create the service you need to:
@@ -180,7 +180,7 @@ After creating the service, you'll be redirected to the service details page. Yo
 Set up the IoT metrics streaming dataset
 ----------------------------------------
 
-This section enables you to create a continous stream of fake IoT data that will be pushed to an Aiven for Apache Kafka topic.
+This section enables you to create a continuous stream of fake IoT data that will be pushed to an Aiven for Apache Kafka topic.
 
 Create an Aiven authentication token
 ''''''''''''''''''''''''''''''''''''
