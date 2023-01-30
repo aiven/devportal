@@ -113,9 +113,9 @@ You can also use the `Aiven command line tool <https://docs.aiven.io/docs/tools/
 Variables
 ---------
 
-========================            =======================================================================================================
+==================================  ===============================================================================================================================================================================
 Variable                            Description
-========================            =======================================================================================================
+==================================  ===============================================================================================================================================================================
 ``HOST``                            Host name for the connection
 ``USER_NAME`` or ``SASL_USERNAME``  Name of the user for the connection
 ``SSL_PORT``                        Port number to use for SSL
@@ -128,7 +128,7 @@ Variable                            Description
 ``KEY_PASSWORD``                    Password for the key in the keystore, if you chose a different password than the one for keystore
 ``SERIALIZER``                      How to serialize data, you can find available options  `in the Apache Kafka documentation <https://kafka.apache.org/0102/javadoc/org/apache/kafka/common/serialization/>`_.
 ``DESERIALIZER``                    How to de-serialize data, you can find available options  `in the Apache Kafka documentation <https://kafka.apache.org/0102/javadoc/org/apache/kafka/common/serialization/>`_.
-========================            =======================================================================================================
+==================================  ===============================================================================================================================================================================
 
 For consumers you will also need:
 
