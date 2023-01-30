@@ -22,8 +22,8 @@ Setup instructions for specific providers are available on the following pages:
 
 If your provider isn't listed, contact us at support@Aiven.io so we can assist you with the configuration.
 
-Step 1. Set up the SAML authentication method in the Aiven Console
--------------------------------------------------------------------
+Step 1. Set up the SAML authentication method in Aiven Console
+----------------------------------------------------------------
 
 SAML Authentication methods are configured at the organization level:
 

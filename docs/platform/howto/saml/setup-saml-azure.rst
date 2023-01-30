@@ -42,8 +42,11 @@ Configure SAML on Microsoft Azure
     The newly created application might not be visible yet. You can use the **All applications** filter to see the new application.  
     
 #. Click on the new application name to open the configuration.
+
 #. Select **Single sign-on** configuration.
+
 #. Select **SAML** as the single sign-on method.
+
 #. Add the following paramters to the **Basic SAML Configuration**:
 
 .. list-table::
@@ -61,7 +64,9 @@ Configure SAML on Microsoft Azure
 
 
 #. Click **Save**.
+
 #. In the **User Attributes & Claims**, click **Add a new claim**.
+
 #. Create an attribute with the following data:
 
 .. list-table::
@@ -97,9 +102,9 @@ Go back to the **Authentication** page in the `Aiven Console <https://console.ai
 
 #. Add the configuration settings from Azure:
 
-  * Set the ``SAML IDP URL`` to the ``Login URL`` from Azure
-  * Set the ``SAML Entity ID`` to the ``Azure AD Identifier`` from Azure 
-  * Paste the certificate from Azure into the ``SAML Certificate`` field
+  * Set the ``SAML IDP URL`` to the ``Login URL`` from Azure.
+  * Set the ``SAML Entity ID`` to the ``Azure AD Identifier`` from Azure.
+  * Paste the certificate from Azure into the ``SAML Certificate`` field.
 
 #. Click **Edit method** to save your changes.
 
@@ -116,6 +121,7 @@ Contact your administrator
 If you get an error message suggesting you contact your administrator, try these steps: 
 
 #. Go to the Microsoft Azure AD user profile for the users.
+
 #. Check whether the **Contact Info** => **Email** field is blank.
 
 If it is blank, there are two possible solutions:
