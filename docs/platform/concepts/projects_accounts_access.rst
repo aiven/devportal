@@ -31,7 +31,7 @@ Projects are collections of services and user permissions. Each project must hav
 
 * Single project: One project containing services that are distinguished by their names. For example, services are named based on the type of environment: ``demo_pg_project.postgres-prod`` and ``demo_pg_project.postgres-staging``.
 
-* Environment-based projects: Each project represents a deployment environment, for example: ``dev``, ``qa``, and ``production``. This allows you to apply uniform network security, such as the use of virtual private clouds (VPCs), to all services within each environment. This also gives you more granular user permissions, such as developer access to production infrastructure.
+* Environment-based projects: Each project represents a deployment environment, for example: ``dev``, ``qa``, and ``production``. This allows you to apply uniform network security, such as the use of virtual private clouds, to all services within each environment. This also gives you more granular user permissions, such as developer access to production infrastructure.
 
 * Project-based: Each project contains all the services for an internal project, with naming that highlights the relevant environment; for example: ``customer-success-prod`` and ``business-analytics-test``.
 
