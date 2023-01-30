@@ -1,7 +1,7 @@
 Set up SAML authentication with Auth0
 =====================================
 
-This article explains how to set up SAML with `Auth0 <https://auth0.com/>`_ for an organization in Aiven. For more information on SAML and instructions for other identity providers, see the :doc:`Enable SAML authentication </docs/platform/howto/saml/saml-authentication>` article.
+This article explains how to set up SAML with `Auth0 <https://auth0.com/>`_ for an organization in Aiven. For more information on SAML and instructions for other identity providers, see the :doc:`Set up SAML authentication </docs/platform/howto/saml/saml-authentication>` article.
 
 Prerequisite steps in the Aiven Console
 ----------------------------------------
@@ -22,25 +22,25 @@ You are shown two parameters needed to set up the SAML authentication in Auth0:
 Configure SAML on Auth0
 ------------------------
 
-#. `Register <https://auth0.com/signup>`_ for an Auth0 account or sign into `your existing Auth0 account <https://manage.auth0.com>`_.
+#. Log in to `your Auth0 account <https://manage.auth0.com>`_.
 
-#. Select **Applications** and **Create Application**. 
+#. Select **Applications**.
+
+#. Click **Create Application**. 
 
 #. Enter an application name.
 
-#. Choose **Regular Web Applications**.
-
-#. Click **Create**. 
+#. Choose **Regular Web Applications** and click **Create**. 
 
 #. After your application is created, go to the ``Addons`` tab.
 
 #. Enable the **SAML 2 WEB APP** option.
 
-#. Click on the **SAML 2 WEB APP** option. This opens the ``Settings`` tab.
+#. Click on the **SAML 2 WEB APP** option. The ``Settings`` tab opens.
 
-#. Set the ``Application Callback URL`` to the ``ACS URL`` provided by the Aiven Console.
+#. Set the ``Application Callback URL`` to the ``ACS URL`` from the Aiven Console.
 
-#. In the ``Settings`` section, under ``Application Callback URL``, remove the existing configuration and add the following field mapping configuration:
+#. In the ``Settings`` section under ``Application Callback URL``, remove the existing configuration and add the following field mapping configuration:
 
 .. code-block:: shell
 
@@ -60,7 +60,7 @@ Configure SAML on Auth0
 Finish the configuration in Aiven
 ----------------------------------
 
-#. In the Aiven console, click **Admin** and then **Authentication**.
+Go back to the **Authentication** page in the `Aiven Console <https://console.aiven.io/>`_ to enable the SAML authentication method:
 
 #. Select the name of the Auth0 method that you created.
 
@@ -74,7 +74,7 @@ Finish the configuration in Aiven
 
 #. Click **Edit method** to save your changes.
 
-#. Enable the method using the **Enable authentication method** at the top of the page. 
+#. Toggle on **Enable authentication method** at the top of the page. 
 
 You can use the **Signup URL** to invite new users, or the **Account link URL** for those that already have an Aiven user account.
 

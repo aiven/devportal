@@ -1,7 +1,7 @@
 Set up SAML with Microsoft Azure Active Directory
 =================================================
 
-This article explains how to set up SAML with `Microsoft Azure Active Directory (AD) <https://azure.microsoft.com/en-us/products/active-directory/>`_ for an organization in Aiven. For more information on SAML and instructions for other identity providers, see the :doc:`Enable SAML authentication </docs/platform/howto/saml/saml-authentication>` article.
+This article explains how to set up SAML with `Microsoft Azure Active Directory (AD) <https://azure.microsoft.com/en-us/products/active-directory/>`_ for an organization in Aiven. For more information on SAML and instructions for other identity providers, see the :doc:`Set up SAML authentication </docs/platform/howto/saml/saml-authentication>` article.
 
 
 Prerequisite steps in Aiven Console
@@ -23,11 +23,18 @@ You are shown two parameters needed to set up the SAML authentication in Microso
 Configure SAML on Microsoft Azure
 ----------------------------------
 
-#. Log in to Microsoft Azure.
-#. Got to **Enterprise applications** either by using the tiles or the search bar.
-#. Go to **All applications** and click **New application**.
-#. Select the **Add from the gallery** search bar to search and use the **Azure AD SAML Toolkit**.
+#. Log in to `Microsoft Azure <https://portal.azure.com/>`_.
+
+#. Got to **Enterprise applications**.
+
+#. Select **All applications**.
+
+#. Click **New application**.
+
+#. Select the **Add from the gallery** search bar and use the **Azure AD SAML Toolkit**.
+
 #. Click **Add**.
+
 #. Go back to the **Enterprise applications** list.
 
    .. Warning::
@@ -82,9 +89,9 @@ Configure SAML on Microsoft Azure
 Finish the configuration in Aiven
 ----------------------------------
 
-#. In the Aiven console, click **Admin** and then **Authentication**.
+Go back to the **Authentication** page in the `Aiven Console <https://console.aiven.io/>`_ to enable the SAML authentication method:
 
-#. Select the name of the Azure method that you created.
+#. Select the name of the Azure AD method that you created.
 
 #. In the SAML configuration section, click **Edit**. 
 
@@ -96,7 +103,7 @@ Finish the configuration in Aiven
 
 #. Click **Edit method** to save your changes.
 
-#. Enable the method using the **Enable authentication method** at the top of the page. 
+#. Toggle on **Enable authentication method** at the top of the page. 
 
 You can use the **Signup URL** to invite new users, or the **Account link URL** for those that already have an Aiven user account.
 
