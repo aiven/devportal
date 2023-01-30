@@ -356,4 +356,4 @@ With SASL authentication
 Next steps
 -----------
 
-Check out :doc:`more Aiven tutorials <../>` to learn about open-source data infrastructure. 
+Check out :doc:`more Aiven tutorials <../tutorials>` to learn about open-source data infrastructure. 
