@@ -30,7 +30,7 @@ Here is how the setup looks like:
         id5(Kafka Broker)--consuming messages-->id2(kafka-python library);
         id5(Kafka Broker)--consuming messages-->id3(kafka-clients java library);
 
-Under the hood, the libraries make use of the `Producer API <https://kafka.apache.org/documentation/#producerapi>`_ and the `Consumer API <https://kafka.apache.org/documentation/#consumerapi>`_. 
+Under the hood, the libraries make use of the `Producer API <https://kafka.apache.org/documentation>`_ and the `Consumer API <https://kafka.apache.org/documentation>`_. 
 
 .. Note::
 
@@ -264,7 +264,7 @@ With SASL authentication
 Talk to Kafka using Python
 --------------------------
 
-Install the Python `kafka-python <https://github.com/dpkp/kafka-python>`_ library:
+Install the Python `Kafka-python <https://github.com/dpkp/kafka-python>`_ library:
 
 .. code:: bash
 
