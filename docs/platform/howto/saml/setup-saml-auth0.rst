@@ -1,10 +1,10 @@
-Set up SAML authentication with Auth0
-=====================================
+Set up SAML with Auth0
+=======================
 
 This article explains how to set up SAML with `Auth0 <https://auth0.com/>`_ for an organization in Aiven. For more information on SAML and instructions for other identity providers, see the :doc:`Set up SAML authentication </docs/platform/howto/saml/saml-authentication>` article.
 
-Prerequisite steps in the Aiven Console
-----------------------------------------
+Prerequisite steps in Aiven Console
+------------------------------------
 
 #. In the organization, click **Admin**.
 
@@ -68,9 +68,9 @@ Go back to the **Authentication** page in the `Aiven Console <https://console.ai
 
 #. Add the configuration settings from Auth0:
 
-  * Set the ``SAML IDP URL`` to the ``Identity Provider Login URL`` from Auth0
-  * Set the ``SAML Entity ID`` to the ``Issuer URN`` from Auth0 
-  * Paste the certificate from Auth0 into the ``SAML Certificate`` field
+  * Set the ``SAML IDP URL`` to the ``Identity Provider Login URL`` from Auth0.
+  * Set the ``SAML Entity ID`` to the ``Issuer URN`` from Auth0 .
+  * Paste the certificate from Auth0 into the ``SAML Certificate`` field.
 
 #. Click **Edit method** to save your changes.
 

@@ -125,7 +125,7 @@ Go back to the **Authentication** page in the `Aiven Console <https://console.ai
 .. image:: /images/platform/howto/saml/okta/okta-edit-method.png
    :alt: Edit authentication method page in Aiven Console.
 
-#. Toggle on ``Enable IdP login`` and ``Enable authentication method``. 
+#. Toggle on ``IdP login`` and ``Enable authentication method``. 
 
 £. Click ``Edit Method`` to save the settings.
 
@@ -144,7 +144,7 @@ When launching Aiven SAML application getting the following error::
 
    Login failed.  Please contact your account administrator for more details.
 
-Check Okta authentication in Aiven console if **Enable IdP login** and **Enable authentication method** are
+Check Okta authentication in Aiven console if **IdP login** and **Enable authentication method** are
 enabled.
 
 
