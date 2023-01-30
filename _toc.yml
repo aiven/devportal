@@ -1009,3 +1009,9 @@ entries:
       title: Catch the Bus - Aiven challenge with ClickHouse
     - file: docs/community/challenge/the-rolling-challenge
       title: Rolling - Aiven challenge with Apache Kafka and Apache Flink
+
+- file: docs/tutorials
+    title: Tutorials
+    entries:
+      - file: docs/tutorials/talk-to-kafka
+        title: How to send and receive application data from Apache Kafka®?
