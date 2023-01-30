@@ -264,7 +264,7 @@ With SASL authentication
 Talk to Kafka using Python
 --------------------------
 
-Install the Python |kafka-python|_ library:
+Install the Python `kafka-python <https://github.com/dpkp/kafka-python>`_ library:
 
 .. code:: bash
 
