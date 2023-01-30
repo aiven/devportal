@@ -1014,4 +1014,5 @@ entries:
     title: Tutorials
     entries:
       - file: docs/tutorials/talk-to-kafka
-        title: How to send and receive application data from Apache Kafka®?
+        title: How to send and receive application data from Apache Kafka
+
