@@ -84,11 +84,11 @@ Finish the configuration in Aiven
 
 #. In the Aiven console, click **Admin** and then **Authentication**.
 
-#. Select the name of the Auth0 method that you created.
+#. Select the name of the Azure method that you created.
 
 #. In the SAML configuration section, click **Edit**. 
 
-#. Add the configuration settings from Auth0:
+#. Add the configuration settings from Azure:
 
   * Set the ``SAML IDP URL`` to the ``Login URL`` from Azure
   * Set the ``SAML Entity ID`` to the ``Azure AD Identifier`` from Azure 
