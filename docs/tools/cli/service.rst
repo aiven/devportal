@@ -645,6 +645,8 @@ An example ``avn service task-get`` ouput:
   =====================  =======  ====================================  ====================================================================================
   mysql_migration_check  true     e2df7736-66c5-4696-b6c9-d33a0fc4cbed  All pre-checks passed successfully, preferred migration method will be [Replication]
 
+.. _avn-cli-service-terminate:
+
 ``avn service terminate``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
