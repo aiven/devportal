@@ -1,10 +1,10 @@
 Set up SAML authentication with Okta
 ======================================
 
-This article explains how to set up SAML with `Okta <https://www.okta.com/>`_ for an organization in Aiven. For more information on SAML and instructions for other identity providers, see the :doc:`Enable SAML authentication </docs/platform/howto/saml/saml-authentication>` article. 
+This article explains how to set up SAML with `Okta <https://www.okta.com/>`_ for an organization in Aiven. For more information on SAML and instructions for other identity providers, see the :doc:`Set up SAML authentication </docs/platform/howto/saml/saml-authentication>` article. 
 
 Prerequisite steps in the Aiven Console
----------------------=------------------
+---------------------------------------
 
 #. In the organization, click **Admin**.
 
@@ -24,7 +24,7 @@ Configure SAML on Okta
 
 This is a two step process. First, you create the SAML SP-Initiated authentication flow and then you create a bookmark app that will redirect to the Aiven Console's login page.
 
-#. Log in to the Okta administrator console.
+#. Log in to the `Okta administrator console <https://login.okta.com/>`_.
 
 #. Go to the **Applications** tab.
 
@@ -34,9 +34,7 @@ This is a two step process. First, you create the SAML SP-Initiated authenticati
 
 #. Enter a name for the app and add a logo. 
 
-#. Set it's visibility for your Okta users.
-
-#. Click **Next**.
+#. Set it's visibility for your Okta users and click **Next**.
 
 #. Set the following values in the app configuration:
 
@@ -62,7 +60,7 @@ This is a two step process. First, you create the SAML SP-Initiated authenticati
    .. important:: 
       The ``Default RelayState`` is the homepage of the Aiven Console and is fundamental for IdP initiated sign on to function correctly.
 
-#. The **Attribute statements** should have an entry with:
+#. Add an entry to **Attribute statements** with:
    
    .. list-table::
       :widths: 10 90
@@ -76,9 +74,7 @@ This is a two step process. First, you create the SAML SP-Initiated authenticati
       * - ``value``
         - ``user.email``
 
-#. Click **Next**.
-
-#. click **Finish**. You are redirected to your application in Okta.
+#. Click **Next** and then click **Finish**. You are redirected to your application in Okta.
 
 #. Click the **View Setup Instructions** for the application.
 
@@ -105,7 +101,7 @@ This is a two step process. First, you create the SAML SP-Initiated authenticati
 Finish the configuration in Aiven
 ---------------------------------
 
-#. In `Aiven Console <https://console.aiven.io/>`__, click **Admin** and then **Authentication**.
+Go back to the **Authentication** page in the `Aiven Console <https://console.aiven.io/>`_ to enable the SAML authentication method:
 
 #. Select the name of the Okta method that you created. 
 
@@ -129,7 +125,7 @@ Finish the configuration in Aiven
 .. image:: /images/platform/howto/saml/okta/okta-edit-method.png
    :alt: Edit authentication method page in Aiven Console.
 
-#. Turn on the ``Enable IdP login`` and ``Enable authentication method`` toggles. 
+#. Toggle on ``Enable IdP login`` and ``Enable authentication method``. 
 
 £. Click ``Edit Method`` to save the settings.
 
