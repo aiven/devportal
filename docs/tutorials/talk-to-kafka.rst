@@ -29,6 +29,7 @@ To get started, you'll need:
 - An `Aiven account <https://console.aiven.io/signup>`_
 - `Python installed <https://www.python.org/downloads/>`_
 - `Kafka-python <https://github.com/dpkp/kafka-python>`_ library installed
+
 .. code:: bash
 
     pip install kafka-python
