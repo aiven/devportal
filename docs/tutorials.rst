@@ -1,2 +1,2 @@
-Aiven Tutorials
+Aiven tutorials
 ================
