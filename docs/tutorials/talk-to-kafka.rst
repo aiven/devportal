@@ -303,7 +303,7 @@ What would happen if there were two partitions in this case, `p0` and `p1`? In t
 
 Let's take a look at this setup where there are two consumers. `co0` and `co1` are registered to the same `consumer group A`. 
 
-In this setup, one consumer will be sitting idle. This highlights an important concept in Kafka - records are processed in parallel and same partition cannot be assigen to multiple consumers in the same consumer group.
+In this setup, one consumer will be sitting idle. This highlights an important concept in Kafka - records are processed in parallel and same partition cannot be assigned to multiple consumers in the same consumer group.
 
 .. mermaid::
     
