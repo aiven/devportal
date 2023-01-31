@@ -1,5 +1,5 @@
-Integrate ClickHouse with an open source BI tool
-=================================================
+Integrate ClickHouse®  with an open source BI tool
+==================================================
 
 Data analysis is a critical component of modern business operations. As organizations generate more and more data, it becomes increasingly difficult to extract meaningful insights from the raw information. That's where Business Intelligence (BI) tools can help us. BI tools allow organisations transform their data into visual, actionable insights that support informed decision-making.
 
@@ -7,7 +7,7 @@ In this tutorial, you'll learn how you can integrate ClickHouse database with an
 
 After all, a picture is worth a thousand words.
 
-Step 1. Preparing ClickHouse cluster and data
+Preparing ClickHouse cluster and data
 ---------------------------------------------
 
 We'll start on the ClickHouse side. In this section we'll set up the cluster and load the data that we can use for analysis.
@@ -31,9 +31,9 @@ Alternatively, you can use `a dataset from New York Public Library "What's on th
 We'll be utilizing the data from the "What's on the Menu?" dataset in the examples below. However, the same techniques are applicable to your data.
 
 .. image:: /images/tutorials/clickhouse-metabase/create.gif
-   :alt: Animated gif showing creation of a service
+   :alt: Animated GIF showing creation of a service
 
-Step 3. Setting up OSS version of Metabase
+Setting up OSS version of Metabase
 ------------------------------------------
 
 Depending on your operating system and preferences, you can choose among two approaches when `setting up the open source edition of Metabase <https://www.metabase.com/start/oss/>`_: using a Docker image and running Metabase as a jar.
@@ -45,7 +45,7 @@ If you don't have a license token for a paid version of Metabase and you don't n
 When starting your Docker container, make sure that you have access to the mounted folder. We'll need this folder for the next step.
 
 .. image:: /images/tutorials/clickhouse-metabase/docker.gif
-   :alt: Animated gif showing pulling latest docker image and running it
+   :alt: Animated GIF showing pulling latest docker image and running it
 
 Adding drivers
 ++++++++++++++
@@ -53,25 +53,25 @@ Metabase comes with a predefined set of supported database. ClickHouse is not in
 
 You can find ClickHouse driver (and extra documentation, in case you need it) in ClickHouse driver for Metabase `gitHub repository <https://github.com/ClickHouse/metabase-clickhouse-driver>`_.
 
-Load the driver by going `to the latest release <https://github.com/ClickHouse/metabase-clickhouse-driver/releases>`_ and selecting **clickhouse.metabase-driver.jar** from the list of assets.
+Load the driver by going `to the latest release <https://github.com/ClickHouse/metabase-clickhouse-driver/releases>`_ and selecting ``clickhouse.metabase-driver.jar`` from the list of assets.
 
 .. image:: /images/tutorials/clickhouse-metabase/driver.gif
-   :alt: Animated gif showing loading the driver for ClickHouse Metabase from the GitHub page
+   :alt: Animated GIF showing loading the driver for ClickHouse Metabase from the GitHub page
 
 Add this file to the folder that you mounted in the previous step. This will allow Metabase to access ClickHouse driver and therefore work with ClickHouse data.
 
-Step 4. Starting metabase
+Starting Metabase
 ----------------------------------
 
-Time to start Metabase! If you used the default ports when running the container, go to *http://localhost:3000/*, if you used a different port, adjust it accordingly.
+Time to start Metabase! If you used the default ports when running the container, go to ``http://localhost:3000``, if you used a different port, adjust it accordingly.
 
 The first time you open Metabase, it will ask you several questions. Remember the email and password you enter, they are needed for logins. Skip adding data, we'll do it separately in the next step
 
 .. image:: /images/tutorials/clickhouse-metabase/start.gif
-   :alt: Animated gif showing the setup form of Metabase
+   :alt: Animated GIF showing the setup form of Metabase
 
 
-Step 5. Connecting to ClickHouse
+Connecting to ClickHouse
 ----------------------------------
 
 In order to connect to ClickHouse server you need to add a database to Metabase and provide all necessary credentials for access. To add a database, click on **Add your own data**, this will navigate you to *Add Database* form.
@@ -81,10 +81,10 @@ If all went well installing a driver, you'll see **ClickHouse** in the list of a
 The connection between Metabase and ClickHouse happens over HTTPS. You can take all necessary properties (such as host, port and user credentials) from your *Aiven for ClickHouse* page in the section **ClickHouse HTTPS & JDBC**.
 
 .. image:: /images/tutorials/clickhouse-metabase/database.gif
-   :alt: Animated gif showing adding a database to Metabase
+   :alt: Animated GIF showing adding a database to Metabase
 
 
-Step 6. Visualising the data
+Visualising the data
 ----------------------------------
 
 Now we can run analysis and visualise the data. To start with something simple, check for most popular currencies used across the menus in the dataset we have.
@@ -101,10 +101,10 @@ The results will appear below the query editor. To visualise the findings, click
 Once you're happy with the visualisation, save it. Metabase will also suggest adding the visualisation to a dashboard. If you don't want to do it yet, you can add it later.
 
 .. image:: /images/tutorials/clickhouse-metabase/first.gif
-   :alt: Animated gif showing creation of a new visualisation
+   :alt: Animated GIF showing creation of a new visualisation
 
 Conclusions
 ------------
 In this tutorial we described how to use ClickHouse together with an open source BI tool, Metabase. We used open source edition of Metabase and a community-developer driver for ClickHouse.
 
-You can find more information about Aiven for ClickHouse in `our documentation <https://docs.aiven.io/>`.
+You can find more information about Aiven for ClickHouse in `our documentation <https://docs.aiven.io/>`_.
