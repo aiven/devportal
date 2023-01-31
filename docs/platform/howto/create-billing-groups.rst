@@ -1,23 +1,14 @@
 Create billing groups
 =====================
 
-With billing groups you can set up billing profiles to be used across multiple projects. A consolidated invoice is created for each billing group. To learn more about the key benefits of billing groups read the :doc:`related documentation <../concepts/billing-groups>`.
+With billing groups you can set up billing profiles to be used across all the projects in an organization. A consolidated :doc:`invoice</docs/platform/howto/use-billing-groups>` is created for each billing group. 
 
-
-Billing groups and Aiven accounts
----------------------------------
-
-An Aiven **Account** is the entry point for creating and managing billing groups:
-
-- Within an account you can create one or more billing groups.
-- You can assign an account's projects to a billing group and move projects from one billing group to another.
-
-Aiven credits are available for all projects associated with the account. You can choose to apply the credits to a specific project within the account.
+More information about billing groups is available in the :doc:`Billing groups article <../concepts/billing-groups>`.
 
 Create a billing group
---------------------------
+-----------------------
 
-#. In the account that you want to add a billing group to, click **Billing**.
+#. In the organization that you want to add a billing group to, click **Billing**.
 
 #. Click **Create billing group**.
 
@@ -29,8 +20,4 @@ Create a billing group
 
 #. Check the information in the **Summary** step. To make changes to any section, click **Edit**.
 
-#. When you have confirmed everything is correct, click **Create &  Assign**.
-
-The costs of the projects assigned to a billing group are consolidated into a single :doc:`invoice</docs/platform/howto/use-billing-groups>`.
-
-
+#. When you have confirmed everything is correct, click **Create**.
