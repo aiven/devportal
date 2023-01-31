@@ -3,38 +3,21 @@ Tutorial: Let's talk to Kafka. How to send and receive application data from Apa
 
 .. Note::
 
-    This tutorial doesn't assume any existing knowledge on Apache Kafka.
+    This tutorial assumes basic knowledge on Apache Kafka.
 
 Learning objectives
 --------------------
 
-- Ease of a managed Kafka service
-- How to make your app send and receive data to/from Kafka using Java?
-- How to make your app send and receive data to/from Kafka using Python?
+- Producing to and consuming from a single Apache Kafka topic
+- The concept of consumer groups. Single and multiple consumers reading from a topic
+- The need for a schema registry and the use of Karapace - the open-source tool to serve your Apache Kafka needs
 
 Overview
 --------
 
 Getting started with Apache Kafka can be simple as you download the binary and start the bootstrap server. However, getting a production-ready Kafka cluster stand up with security and high-availability is a different story. If your goal is to use Kafka to benefit your application or data needs and NOT to learn Kafka administration, you can consider using `a managed Kafka service <https://aiven.io/kafka>`_.
-In this tutorial, we will learn how to create an Aiven for Apache Kafka® service and transfer messages to and from the broker using commonly used programming languages.
-
-Here is how the setup looks like:
-
-.. mermaid::
-
-    graph LR;
-
-        id2(kafka-python library) --producing messages-->id5(Kafka Broker);
-        id3(kafka-clients java library) --producing messages-->id5(Kafka Broker);
-
-        id5(Kafka Broker)--consuming messages-->id2(kafka-python library);
-        id5(Kafka Broker)--consuming messages-->id3(kafka-clients java library);
-
-Under the hood, the libraries make use of the `Producer API <https://kafka.apache.org/documentation>`_ and the `Consumer API <https://kafka.apache.org/documentation>`_. 
-
-.. Note::
-
-    Although this tutorial covers two popular libraries for Python and Java, you can find one or more Kafka libraries for any modern programming language.
+In this tutorial, we will learn how to create an Aiven for Apache Kafka® service and go over the common tasks of producing and consuming messages as well as use a schema registry to manage your schemas and metadata. This tutorial will use Python programming language.
+Under the hood, the Python library will make use of the `Producer API <https://kafka.apache.org/documentation>`_ and the `Consumer API <https://kafka.apache.org/documentation>`_.
 
 Prerequisites
 -------------
@@ -43,10 +26,12 @@ While the entire tutorial can be completed using open-source Kafka, we're using 
 
 To get started, you'll need:
 
-- `Java installed <https://www.java.com/en/download/help/download_options.html>`_
-- `Python installed <https://www.python.org/downloads/>`_
 - An `Aiven account <https://console.aiven.io/signup>`_
+- `Python installed <https://www.python.org/downloads/>`_
+- `Kafka-python <https://github.com/dpkp/kafka-python>`_ library installed
+.. code:: bash
 
+    pip install kafka-python
 
 Create an Aiven for Apache Kafka® service
 -----------------------------------------
@@ -76,7 +61,7 @@ The blinking blue icon besides your service name will indicate that VMs are bein
 Making a note of the connection parameters
 ------------------------------------------
 
-Let's start by copying the connection information for the newly created Apache Kafka service in order to authenticate and authorize to the Kafka broker. This information will be used for both the programs we write in Java and Python.
+Let's start by copying the connection information for the newly created Apache Kafka service in order to authenticate and authorize to the Kafka broker. 
 
 .. image:: /images/tutorials/kafka-basics/kafka_service_overview.png
     :alt: Host, port, username, password and other 
@@ -102,7 +87,7 @@ Go to the *Overview* page of your Aiven for Apache Kafka service.
      #. Next to *CA Certificate*, click **Download** and save the ``ca.pem`` file
      #. Note the *Password* required for the SASL, we'll need it for authentication
 
-* Created the keystore ``client.keystore.p12`` and truststore ``client.truststore.jks`` by following  :doc:`our article on configuring Java SSL to access Kafka <../products/kafka/howto/keystore-truststore>`
+* Create the keystore ``client.keystore.p12`` and truststore ``client.truststore.jks`` by following  :doc:`our article on configuring Java SSL to access Kafka <../products/kafka/howto/keystore-truststore>`
 
 .. Warning::
 
@@ -153,132 +138,106 @@ For more information on ``auto_offset_reset``, see the Kafka documentation on
 and
 `Consumer Position <https://kafka.apache.org/documentation/#design_consumerposition>`_.
 
-Talk to Kafka using Java
---------------------------
+Create a topic
+---------------
 
-Connect a producer
-~~~~~~~~~~~~~~~~~~
+A topic in Kafka is a named stream of records that is stored within a Kafka cluster. Let's create a Kafka topic. From the **Topics** tab, click **Add topic**. Give the topic a name "demo-topic". Click **Add topic**.
+Once this topic is created, we can see that the number of partitions is 1. 
 
-Set up properties to connect to the cluster and create a producer:
+The concept of consumer group and consuming messages on Kafka
+------------------------------------------------------------------
 
-With SSL authentication
-"""""""""""""""""""""""
+Consumer group is the logical grouping of consumers. In Kafka, the consumer(s) must belong to a consumer group, even if it's the default consumer group. 
+For a Kafka cluster with multiple nodes, consumers within the same consumer group can exist on different nodes. 
 
-.. code::
+In this section, we'll explore different setups for consuming messages based on number of consumers and consumer groups:
 
-        Properties properties = new Properties();
-        properties.put("bootstrap.servers", "{HOST}:{SSL_PORT}");
-        properties.put("security.protocol", "SSL");
-        properties.put("ssl.truststore.location", "{TRUSTSTORE_LOCATION}");
-        properties.put("ssl.truststore.password", "{TRUSTSTORE_PASSWORD}");
-        properties.put("ssl.keystore.type", "PKCS12");
-        properties.put("ssl.keystore.location", "{KEYSTORE_LOCATION}");
-        properties.put("ssl.keystore.password", "{KEYSTORE_PASSWORD}");
-        properties.put("ssl.key.password", "{KEY_PASSWORD}");
-        properties.put("key.serializer", "{SERIALIZER}");
-        properties.put("value.serializer", "{SERIALIZER}");
+1 topic : 1 partition : 1 consumer : 1 consumer group
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-        // create a producer
-        KafkaProducer<String, String> producer = new KafkaProducer<>(properties);
+Let's start with a setup where we have a single producer writing to a single topic with one partition. 
+A consumer is reading messages from this topic which is part of a consumer group.
 
-With SASL authentication
-"""""""""""""""""""""""""
+.. mermaid::
+    
+    graph LR;
 
-.. code::    
-      
-        String sasl_username = "{USER_NAME}";
-        String sasl_password = "{SASL_PASSWORD}";
-        String jaasTemplate = "org.apache.kafka.common.security.scram.ScramLoginModule required username=\"%s\" password=\"%s\";";
-        String jaasConfig = String.format(jaasTemplate, sasl_username, sasl_password);
-          
-        Properties properties = new Properties();
-        properties.put("bootstrap.servers", "{HOST}:{SASL_PORT}");
-        properties.put("security.protocol", "SASL_SSL");
-        properties.put("sasl.mechanism", "SCRAM-SHA-256");
-        properties.put("sasl.jaas.config", jaasConfig);
-        properties.put("ssl.endpoint.identification.algorithm", ""); 
-        properties.put("ssl.truststore.type", "jks");
-        properties.put("ssl.truststore.location", "{TRUSTSTORE_LOCATION}");
-        properties.put("ssl.truststore.password", "{TRUSTSTORE_PASSWORD}");
-        properties.put("key.serializer", "{SERIALIZER}");
-        properties.put("value.serializer", "{SERIALIZER}");
-          
-        // create a producer
-        KafkaProducer<String, String> producer = new KafkaProducer<>(properties);
+        pr1(kafka producer pr1) -->p0(partition p0);
+        subgraph topic
+        p0
+        end
+        co1(kafka consumer co1)
+        subgraph consumer group A
+        co1
+        end
+        p0 -->co1
 
-Connect a consumer
-~~~~~~~~~~~~~~~~~~
+Set up a consumer instance to start listening for messages
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-Set up properties to connect to the cluster and create a consumer:
+With SSL authentication:
 
-With SSL authentication
-"""""""""""""""""""""""
+.. code:: python
 
-.. code::
+        # Import the required library
+        from kafka import KafkaConsumer
 
-        String group_id = "groupid";
+        # Create the consumer instance  
+        consumer = KafkaConsumer(
+            "demo-topic",
+            auto_offset_reset="earliest",
+            bootstrap_servers=f"{HOST}:{SSL_PORT}", # From the connection information
+            group_id="demo-consumer-group",
+            security_protocol="SSL",
+            ssl_cafile="ca.pem", # From the connection information
+            ssl_certfile="service.cert", # From the connection information
+            ssl_keyfile="service.key", # From the connection information
+            value_deserializer=lambda m: m.decode("utf-8"),
+            key_deserializer=lambda m: m.decode("utf-8"),
+        )
 
-        Properties properties = new Properties();
-        properties.put("bootstrap.servers", "{HOST}:{SSL_PORT}");
-        properties.put("security.protocol", "SSL");
-        properties.put("ssl.truststore.location", "{TRUSTSTORE_LOCATION}");
-        properties.put("ssl.truststore.password", "{TRUSTSTORE_PASSWORD}");
-        properties.put("ssl.keystore.type", "PKCS12");
-        properties.put("ssl.keystore.location", "{KEYSTORE_LOCATION}");
-        properties.put("ssl.keystore.password", "{KEYSTORE_PASSWORD}");
-        properties.put("ssl.key.password", "{KEY_PASSWORD}");
-        properties.put("key.deserializer", "{DESERIALIZER}");
-        properties.put("value.deserializer", "{DESERIALIZER}");
-        properties.put("group.id", group_id);
+        # Continuously poll for new messages
+        for msg in consumer:
+          print("Message: ", msg.value)
 
-        // create a consumer
-        KafkaConsumer<String, String> consumer = new KafkaConsumer<>(properties);
+With SASL authentication:
 
-With SASL authentication
-"""""""""""""""""""""""""
+.. code:: python
 
-.. code::
+        # Import the required library
+        from kafka import KafkaConsumer
 
-        String group_id = "groupid";
-        String sasl_username = "{USER_NAME}";
-        String sasl_password = "{SASL_PASSWORD}";
-        String jaasTemplate = "org.apache.kafka.common.security.scram.ScramLoginModule required username=\"%s\" password=\"%s\";";
-        String jaasConfig = String.format(jaasTemplate, sasl_username, sasl_password);
-          
-        Properties properties = new Properties();
-        properties.put("bootstrap.servers", "{HOST}:{SASL_PORT}");
-        properties.put("security.protocol", "SASL_SSL");
-        properties.put("sasl.mechanism", "SCRAM-SHA-256");
-        properties.put("sasl.jaas.config", jaasConfig);
-        properties.put("ssl.endpoint.identification.algorithm", ""); 
-        properties.put("ssl.truststore.type", "jks");
-        properties.put("ssl.truststore.location", "{TRUSTSTORE_LOCATION}");
-        properties.put("ssl.truststore.password", "{TRUSTSTORE_PASSWORD}");
-        properties.put("key.deserializer", "{DESERIALIZER}");
-        properties.put("value.deserializer", "{DESERIALIZER}");
-        properties.put("group.id", group_id);
+        # Choose an appropriate SASL mechanism, for instance:
+        SASL_MECHANISM = 'SCRAM-SHA-256'
 
-        // create a consumer
-        KafkaConsumer<String, String> consumer = new KafkaConsumer<>(properties);
+        consumer = KafkaConsumer(
+            "demo-topic",
+            auto_offset_reset="earliest",
+            bootstrap_servers = f'{HOST}:{SASL_PORT}', # From the connection information
+            group_id="demo-consumer-group",
+            sasl_mechanism = SASL_MECHANISM,
+            sasl_plain_username = SASL_USERNAME, # From the connection information
+            sasl_plain_password = SASL_PASSWORD, # From the connection information
+            security_protocol = "SASL_SSL",
+            ssl_cafile = "ca.pem" # From the connection information
+        )
 
-Talk to Kafka using Python
---------------------------
+        # Continuously poll for new messages
+        for msg in consumer:
+          print("Message: ", msg.value)
 
-Install the Python `Kafka-python <https://github.com/dpkp/kafka-python>`_ library:
+Set up a producer instance to send a message to the cluster
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-.. code:: bash
+The following Python code generates fake messages to the "demo-topic" topic using the `kafka-python` library:
 
-    pip install kafka-python
-
-Connect a producer
-------------------
-
-With SSL authentication
-~~~~~~~~~~~~~~~~~~~~~~~~
+With SSL authentication:
 
 .. code:: python
 
         from kafka import KafkaProducer
+        from faker import Faker
+        import time
 
         producer = KafkaProducer(
             bootstrap_servers=f"{HOST}:{SSL_PORT}",
@@ -286,14 +245,25 @@ With SSL authentication
             ssl_cafile="ca.pem",
             ssl_certfile="service.cert",
             ssl_keyfile="service.key",
+            value_serializer=lambda v: v.encode("utf-8"),
+            key_serializer=lambda k: k.encode("utf-8"),
         )
 
-With SASL authentication
-~~~~~~~~~~~~~~~~~~~~~~~~~
+        fake = Faker()
+
+        # Continuously generate fake messages every 4 seconds
+        while True:
+            message = fake.text()
+            producer.send("demo-topic", key="key", value=message)
+            time.sleep(4)
+
+With SASL authentication:
 
 .. code:: python
 
-         from kafka import KafkaProducer
+        from kafka import KafkaProducer
+        from faker import Faker
+        import time
 
          # Choose an appropriate SASL mechanism, for instance:
          SASL_MECHANISM = 'SCRAM-SHA-256'
@@ -305,53 +275,30 @@ With SASL authentication
             sasl_plain_password = SASL_PASSWORD,
             security_protocol="SASL_SSL",
             ssl_cafile="ca.pem",
+            value_serializer=lambda v: v.encode("utf-8"),
+            key_serializer=lambda k: k.encode("utf-8"),
          )
 
-Connect a consumer
-------------------
+        fake = Faker()
 
-With SSL authentication
-~~~~~~~~~~~~~~~~~~~~~~~~
+        # Continuously generate fake messages every 4 seconds
+        while True:
+            message = fake.text()
+            producer.send("demo-topic", key="key", value=message)
+            time.sleep(4)
 
-.. code:: python
+Observation
+"""""""""""
 
-        from kafka import KafkaConsumer
+You might have noticed key_deserializer, key_serializer, value_deserializer, and value_serializer in these programs. Since Kafka brokers don't know about the records and only deal in bytes, the programs need to serialize 
+and deserialize data before making sense of them. 
 
-        consumer = KafkaConsumer(
-            "TOPIC_NAME",
-            auto_offset_reset="START_FROM",
-            bootstrap_servers=f"{HOST}:{SSL_PORT}",
-            client_id = CONSUMER_CLIENT_ID,
-            group_id = CONSUMER_GROUP_ID,
-            security_protocol="SSL",
-            ssl_cafile="ca.pem",
-            ssl_certfile="service.cert",
-            ssl_keyfile="service.key",
-        )
+Once messages are produced, they are written to the single partition `p0` of `demo-topic`. All the messages will be consumed by the single consumer `co1` which is part of the single consumer group `consumer group A`. 
 
+To see this in action, run the consumer code in one terminal first and then execute the producer code in another. You will see the same record appear on the producer program terminal.
 
-With SASL authentication
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code:: python
-
-        from kafka import KafkaConsumer
-
-        # Choose an appropriate SASL mechanism, for instance:
-        SASL_MECHANISM = 'SCRAM-SHA-256'
-
-        consumer = KafkaConsumer(
-            "TOPIC_NAME",
-            auto_offset_reset = "START_FROM",
-            bootstrap_servers = f'{HOST}:{SASL_PORT}',
-            client_id = CONSUMER_CLIENT_ID,
-            group_id = CONSUMER_GROUP_ID,
-            sasl_mechanism = SASL_MECHANISM,
-            sasl_plain_username = SASL_USERNAME,
-            sasl_plain_password = SASL_PASSWORD,
-            security_protocol = "SASL_SSL",
-            ssl_cafile = "ca.pem"
-        )
+TODO: other consumer scenarios
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Next steps
 -----------
