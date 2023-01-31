@@ -299,7 +299,7 @@ To see this in action, run the consumer code in one terminal first and then exec
 What would happen if there were two partitions in this case, `p0` and `p1`? In this case, messages would be published to partition randomly. The consumer `co0` would take a round robin approach when consuming messages from this topic.
 
 1 topic : 1 partition : 2 consumers : 1 consumer group
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Let's take a look at this setup where there are two consumers. `co0` and `co1` are registered to the same `consumer group A`. 
 
