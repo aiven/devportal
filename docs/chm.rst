@@ -51,7 +51,7 @@ Adding drivers
 ++++++++++++++
 Metabase comes with a predefined set of supported database. ClickHouse is not in `the list of officially supported drivers <https://www.metabase.com/docs/latest/databases/connecting#connecting-to-supported-databases>`_, but we can include it `as a third-party community driver <https://www.metabase.com/docs/latest/developers-guide/partner-and-community-drivers#community-drivers>`_.
 
-You can find ClickHouse driver (and extra documentation, in case you need it) in ClickHouse driver for Metabase `gitHub repository <https://github.com/ClickHouse/metabase-clickhouse-driver>`_.
+You can find ClickHouse driver (and extra documentation, in case you need it) in ClickHouse driver for Metabase `GitHub repository <https://github.com/ClickHouse/metabase-clickhouse-driver>`_.
 
 Load the driver by going `to the latest release <https://github.com/ClickHouse/metabase-clickhouse-driver/releases>`_ and selecting ``clickhouse.metabase-driver.jar`` from the list of assets.
 
@@ -61,7 +61,7 @@ Load the driver by going `to the latest release <https://github.com/ClickHouse/m
 Add this file to the folder that you mounted in the previous step. This will allow Metabase to access ClickHouse driver and therefore work with ClickHouse data.
 
 Starting Metabase
-----------------------------------
+-----------------
 
 Time to start Metabase! If you used the default ports when running the container, go to ``http://localhost:3000``, if you used a different port, adjust it accordingly.
 
