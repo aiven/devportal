@@ -60,8 +60,8 @@ Load the driver by going `to the latest release <https://github.com/ClickHouse/m
 
 Add this file to the folder that you mounted in the previous step. This will allow Metabase to access ClickHouse driver and therefore work with ClickHouse data.
 
-Starting Metabase
------------------
+Starting the platform
+----------------------
 
 Time to start Metabase! If you used the default ports when running the container, go to ``http://localhost:3000``, if you used a different port, adjust it accordingly.
 
