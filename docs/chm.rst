@@ -8,7 +8,7 @@ In this tutorial, you'll learn how you can integrate ClickHouse database with an
 After all, a picture is worth a thousand words.
 
 Preparing ClickHouse cluster and data
----------------------------------------------
+--------------------------------------
 
 We'll start on the ClickHouse side. In this section we'll set up the cluster and load the data that we can use for analysis.
 
