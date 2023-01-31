@@ -30,8 +30,7 @@ Alternatively, you can use `a dataset from New York Public Library "What's on th
 
 We'll be utilizing the data from the "What's on the Menu?" dataset in the examples below. However, the same techniques are applicable to your data.
 
-.. image:: /images/tutorials/clickhouse-metabase/create.gif
-   :alt: Animated GIF showing creation of a service
+
 
 Setting up OSS version of Metabase
 ------------------------------------------
@@ -44,8 +43,7 @@ If you don't have a license token for a paid version of Metabase and you don't n
 
 When starting your Docker container, make sure that you have access to the mounted folder. We'll need this folder for the next step.
 
-.. image:: /images/tutorials/clickhouse-metabase/docker.gif
-   :alt: Animated GIF showing pulling latest docker image and running it
+
 
 Adding drivers
 ++++++++++++++
@@ -55,8 +53,7 @@ You can find ClickHouse driver (and extra documentation, in case you need it) in
 
 Load the driver by going `to the latest release <https://github.com/ClickHouse/metabase-clickhouse-driver/releases>`_ and selecting ``clickhouse.metabase-driver.jar`` from the list of assets.
 
-.. image:: /images/tutorials/clickhouse-metabase/driver.gif
-   :alt: Animated GIF showing loading the driver for ClickHouse Metabase from the GitHub page
+
 
 Add this file to the folder that you mounted in the previous step. This will allow Metabase to access ClickHouse driver and therefore work with ClickHouse data.
 
@@ -67,8 +64,7 @@ Time to start Metabase! If you used the default ports when running the container
 
 The first time you open Metabase, it will ask you several questions. Remember the email and password you enter, they are needed for logins. Skip adding data, we'll do it separately in the next step
 
-.. image:: /images/tutorials/clickhouse-metabase/start.gif
-   :alt: Animated GIF showing the setup form of Metabase
+
 
 
 Connecting to ClickHouse
@@ -80,8 +76,7 @@ If all went well installing a driver, you'll see **ClickHouse** in the list of a
 
 The connection between Metabase and ClickHouse happens over HTTPS. You can take all necessary properties (such as host, port and user credentials) from your *Aiven for ClickHouse* page in the section **ClickHouse HTTPS & JDBC**.
 
-.. image:: /images/tutorials/clickhouse-metabase/database.gif
-   :alt: Animated GIF showing adding a database to Metabase
+
 
 
 Visualising the data
@@ -100,8 +95,6 @@ The results will appear below the query editor. To visualise the findings, click
 
 Once you're happy with the visualisation, save it. Metabase will also suggest adding the visualisation to a dashboard. If you don't want to do it yet, you can add it later.
 
-.. image:: /images/tutorials/clickhouse-metabase/first.gif
-   :alt: Animated GIF showing creation of a new visualisation
 
 Conclusions
 ------------
