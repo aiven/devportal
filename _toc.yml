@@ -994,3 +994,8 @@ entries:
     - file: docs/community/challenge/the-rolling-challenge
       title: Rolling - Aiven challenge with Apache Kafka and Apache Flink
 
+
+  - file: docs/tutorials
+    title: Community
+    entries:
+    - file: docs/tutorials/clickhouse-metabase
