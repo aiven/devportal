@@ -8,9 +8,9 @@ Tutorial: Let's talk to Kafka. How to send and receive application data from Apa
 Learning objectives
 --------------------
 
-- Producing to and consuming from a single Apache Kafka topic
-- The concept of consumer groups. Single and multiple consumers reading from a topic
-- The need for a schema registry and the use of Karapace - the open-source tool to serve your Apache Kafka needs
+- Basic overview of Apache Kafka and creating an Aiven for Apache Kafka service
+- The concept of topic, partition, producer, consumer, and consumer groups explained by example
+- The need for a schema registry and the use of Karapace to work with Apache Kafka over HTTP
 
 Overview
 --------
@@ -151,8 +151,6 @@ The concept of consumer group and consuming messages on Kafka
 Consumer group is the logical grouping of consumers. In Kafka, the consumer(s) must belong to a consumer group, even if it's the default consumer group. 
 For a Kafka cluster with multiple nodes, consumers within the same consumer group can exist on different nodes. 
 
-In this section, we'll explore different setups for consuming messages based on number of consumers and consumer groups:
-
 1 topic : 1 partition : 1 consumer : 1 consumer group
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -163,15 +161,15 @@ A consumer is reading messages from this topic which is part of a consumer group
     
     graph LR;
 
-        pr1(kafka producer pr1) -->p0(partition p0);
+        pr0(kafka producer pr0) -->p0(partition p0);
         subgraph topic
         p0
         end
-        co1(kafka consumer co1)
+        co0(kafka consumer co0)
         subgraph consumer group A
-        co1
+        co0
         end
-        p0 -->co1
+        p0 -->co0
 
 Set up a consumer instance to start listening for messages
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -237,7 +235,6 @@ With SSL authentication:
 .. code:: python
 
         from kafka import KafkaProducer
-        from faker import Faker
         import time
 
         producer = KafkaProducer(
@@ -250,20 +247,20 @@ With SSL authentication:
             key_serializer=lambda k: k.encode("utf-8"),
         )
 
-        fake = Faker()
+        # Generate 10 messages in total with 1 second interval
+        for i in range(10):
+          message = f"Hello from Python using SSL {i + 1}!"
+          producer.send("demo-topic", message.encode('utf-8'))
+          print(f"Message sent: {message}")
+          time.sleep(1)
 
-        # Continuously generate fake messages every 4 seconds
-        while True:
-            message = fake.text()
-            producer.send("demo-topic", key="key", value=message)
-            time.sleep(4)
+        producer.close()
 
 With SASL authentication:
 
 .. code:: python
 
         from kafka import KafkaProducer
-        from faker import Faker
         import time
 
          # Choose an appropriate SASL mechanism, for instance:
@@ -280,13 +277,14 @@ With SASL authentication:
             key_serializer=lambda k: k.encode("utf-8"),
          )
 
-        fake = Faker()
+        # Generate 10 messages in total with 1 second interval
+        for i in range(10):
+          message = f"Hello from Python using SASL {i + 1}!"
+          producer.send("demo-topic", message.encode('utf-8'))
+          print(f"Message sent: {message}")
+          time.sleep(1)
 
-        # Continuously generate fake messages every 4 seconds
-        while True:
-            message = fake.text()
-            producer.send("demo-topic", key="key", value=message)
-            time.sleep(4)
+        producer.close()
 
 Observation
 """""""""""
@@ -294,12 +292,72 @@ Observation
 You might have noticed ``key_deserializer``, ``key_serializer``, ``value_deserializer``, and ``value_serializer`` in these programs. Since Kafka brokers don't know about the records and only deal in bytes, the programs need to serialize 
 and deserialize data before making sense of them. 
 
-Once messages are produced, they are written to the single partition `p0` of `demo-topic`. All the messages will be consumed by the single consumer `co1` which is part of the single consumer group `consumer group A`. 
+Once messages are produced, they are written to the single partition `p0` of `demo-topic`. All the messages will be consumed by the single consumer `co0` which is part of the single consumer group `consumer group A`. 
 
 To see this in action, run the consumer code in one terminal first and then execute the producer code in another. You will see the same record appear on the producer program terminal.
 
-TODO: other consumer scenarios
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+What would happen if there were two partitions in this case, `p0` and `p1`? In this case, messages would be published to partition randomly. The consumer `co0` would take a round robin approach when consuming messages from this topic.
+
+1 topic : 1 partition : 2 consumers : 1 consumer group
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Let's take a look at this setup where there are two consumers. `co0` and `co1` are registered to the same `consumer group A`. 
+
+In this setup, one consumer will be sitting idle. This highlights an important concept in Kafka - records are processed in parallel and same partition cannot be assigen to multiple consumers in the same consumer group.
+
+.. mermaid::
+    
+    graph LR;
+
+        pr0(kafka producer pr0) -->p0(partition p0);
+        subgraph topic
+        p0
+        end
+        co0(kafka consumer co0)
+        co1(kafka consumer co1)
+        subgraph consumer group A
+        co0
+        co1
+        end
+        p0 -->co0 
+
+If the first consumer `co0` crashes for some reason, the other consumer `co1` in the consumer group will begin consuming messages from the last committed offset of the partition. 
+
+.. mermaid::
+    
+    graph LR;
+
+        pr0(kafka producer pr0) -->p0(partition p0);
+        subgraph topic
+        p0
+        end
+        co0(CRASHED)
+        co1(kafka consumer co1)
+        subgraph consumer group A
+        co0
+        co1
+        end
+        p0 -->co1
+
+Karapace schema registry
+-------------------------
+
+Karapace is an open-source project for schema registry functionality with support for JSON Schema, Avro and Protobuf data formats. 
+Using a schema registry allows all components of an application to share a common data structure definition. Besides this, Karapace exposes
+RESTful API endpoints for Apache Kafka so that you can work with metadata, manage topics, messages, and producer/consumer information over the API.
+
+Enable Karapace schema registry and REST APIs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To enable **Karapace schema registry** and **REST APIs** for your ``demo-kafka`` service follow these steps from the Aiven Console: 
+
+1. In the `Aiven Console <https://console.aiven.io/>`_, click on the service to view its overview screen. 
+2. Look for **Schema Registry (Karapace)** or **Apache Kafka REST API (Karapace)**, and enable the setting for either one or both of the features based on your requirements. 
+
+TODO
+~~~~~
+
+How to use Karapace to manage Apache Kafka over REST endpoints.
 
 Next steps
 -----------
