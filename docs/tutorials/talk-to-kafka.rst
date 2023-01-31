@@ -230,7 +230,7 @@ With SASL authentication:
 Set up a producer instance to send a message to the cluster
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-The following Python code generates fake messages to the "demo-topic" topic using the `kafka-python` library:
+The following Python code generates fake messages to the "demo-topic" topic using the `Kafka-python` library:
 
 With SSL authentication:
 
@@ -291,7 +291,7 @@ With SASL authentication:
 Observation
 """""""""""
 
-You might have noticed key_deserializer, key_serializer, value_deserializer, and value_serializer in these programs. Since Kafka brokers don't know about the records and only deal in bytes, the programs need to serialize 
+You might have noticed ``key_deserializer``, ``key_serializer``, ``value_deserializer``, and ``value_serializer`` in these programs. Since Kafka brokers don't know about the records and only deal in bytes, the programs need to serialize 
 and deserialize data before making sense of them. 
 
 Once messages are produced, they are written to the single partition `p0` of `demo-topic`. All the messages will be consumed by the single consumer `co1` which is part of the single consumer group `consumer group A`. 
