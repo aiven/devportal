@@ -44,57 +44,8 @@ If you don't have a license token for a paid version of Metabase and you don't n
 
 When starting your Docker container, make sure that you have access to the mounted folder. We'll need this folder for the next step.
 
-
-
-Adding drivers
-++++++++++++++
-Metabase comes with a predefined set of supported database. ClickHouse is not in `the list of officially supported drivers <https://www.metabase.com/docs/latest/databases/connecting#connecting-to-supported-databases>`_, but we can include it `as a third-party community driver <https://www.metabase.com/docs/latest/developers-guide/partner-and-community-drivers#community-drivers>`_.
-
-You can find ClickHouse driver (and extra documentation, in case you need it) in ClickHouse driver for Metabase `GitHub repository <https://github.com/ClickHouse/metabase-clickhouse-driver>`_.
-
-Load the driver by going `to the latest release <https://github.com/ClickHouse/metabase-clickhouse-driver/releases>`_ and selecting ``clickhouse.metabase-driver.jar`` from the list of assets.
-
-
-
-Add this file to the folder that you mounted in the previous step. This will allow Metabase to access ClickHouse driver and therefore work with ClickHouse data.
-
-Starting Metabase
------------------
-
-Time to start Metabase! If you used the default ports when running the container, go to ``http://localhost:3000``, if you used a different port, adjust it accordingly.
-
-The first time you open Metabase, it will ask you several questions. Remember the email and password you enter, they are needed for logins. Skip adding data, we'll do it separately in the next step
-
-
-
-
-Connecting to ClickHouse
-----------------------------------
-
-In order to connect to ClickHouse server you need to add a database to Metabase and provide all necessary credentials for access. To add a database, click on **Add your own data**, this will navigate you to *Add Database* form.
-
-If all went well installing a driver, you'll see **ClickHouse** in the list of available types of databases. If you don't see ClickHouse there, try restarting the container.
-
-The connection between Metabase and ClickHouse happens over HTTPS. You can take all necessary properties (such as host, port and user credentials) from your *Aiven for ClickHouse* page in the section **ClickHouse HTTPS & JDBC**.
-
-
-
-
-Visualising the data
-----------------------------------
-
-Now we can run analysis and visualise the data. To start with something simple, check for most popular currencies used across the menus in the dataset we have.
-
-Click on the **New** button and select **SQL Query** from the list. Next, choose the database for your query (``AivenForClickHouse`` in our case) and you'll land onto the SQL query editor. You can use the same syntax here as running your usual ClickHouse queries.
-
-.. code:: sql
-
-    SELECT menu_currency_symbol, count() FROM menu_item_denorm
-    GROUP BY menu_currency
-
-The results will appear below the query editor. To visualise the findings, click on the button **Visualisation**. This will show you a set of possible options that fit your data. For this specific example, for example you can use a pie chart.
-
-Once you're happy with the visualisation, save it. Metabase will also suggest adding the visualisation to a dashboard. If you don't want to do it yet, you can add it later.
+.. image:: /images/tutorials/clickhouse-metabase/small.gif
+   :alt: Animated GIF showing pulling latest docker image and running it
 
 
 Conclusions
