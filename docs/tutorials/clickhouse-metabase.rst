@@ -30,7 +30,8 @@ Alternatively, you can use `a dataset from New York Public Library "What's on th
 
 We'll be utilizing the data from the "What's on the Menu?" dataset in the examples below. However, the same techniques are applicable to your data.
 
-
+.. image:: /images/tutorials/clickhouse-metabase/create.gif
+   :alt: Animated GIF showing creation of a service
 
 Setting up OSS version of Metabase
 ------------------------------------------
