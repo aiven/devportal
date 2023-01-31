@@ -69,6 +69,7 @@ exceptions:
   - ksqlDB
   - Kubernetes
   - M3
+  - Metabase
   - LogDNA
   - Loggly
   - Logtail
