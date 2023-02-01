@@ -543,6 +543,7 @@ entries:
               - file: docs/products/postgresql/howto/optimize-pg-slow-queries
               - file: docs/products/postgresql/howto/check-avoid-transaction-id-wraparound
               - file: docs/products/postgresql/howto/prevent-full-disk
+              - file: docs/products/postgresql/howto/troubleshooting-connection-pooling
               
           - file: docs/products/postgresql/howto/list-replication-migration
             entries:
@@ -572,24 +573,22 @@ entries:
       - file: docs/products/postgresql/reference
         title: Reference
         entries:
-          - file: docs/products/postgresql/reference/high-cpu-load-of-pgbouncer
-            title: High CPU load
           - file: docs/products/postgresql/reference/list-of-advanced-params
             title: Advanced parameters
-          - file: docs/products/postgresql/reference/list-of-extensions
-            title: Extensions
-          - file: docs/products/postgresql/reference/pg-metrics
-            title: Metrics exposed to Grafana
           - file: docs/products/postgresql/reference/pg-connection-limits
             title: Connection limits per plan
+          - file: docs/products/postgresql/reference/use-of-deprecated-tls-versions
+            title: Deprecated TLS versions
+          - file: docs/products/postgresql/reference/list-of-extensions
+            title: Extensions
+          - file: docs/products/postgresql/reference/idle-connections
+            title: Keep-alive connections parameters
+          - file: docs/products/postgresql/reference/pg-metrics
+            title: Metrics exposed to Grafana
           - file: docs/products/postgresql/reference/resource-capability
             title: Resource capability per plan
           - file: docs/products/postgresql/reference/terminology
             title: Terminology
-          - file: docs/products/postgresql/reference/idle-connections
-            title: Idle connections
-          - file: docs/products/postgresql/reference/use-of-deprecated-tls-versions
-            title: Use of deprecated TLS Versions
 
   - file: docs/products/flink
     title: Apache Flink
@@ -888,7 +887,6 @@ entries:
             title: Advanced parameters
           - file: docs/products/mysql/reference/resource-capability
             title: Resource capability per plan
-
 
   - file: docs/products/redis
     title: Redis
