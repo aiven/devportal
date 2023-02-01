@@ -50,7 +50,7 @@ Delete billing groups
 
 #. On the **Projects** tab, confirm that no projects are assigned to this billing group. If there are projects listed, move them to a different billing group.
 
-#. Click the three dots next to the current accumulated montly bill amount.
+#. Click the three dots next to the current accumulated monthly bill amount.
 
 #. Select **Delete** and **Confirm**.
 
