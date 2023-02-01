@@ -8,9 +8,9 @@ Organizations and organizational units
 
 Organizations and organizational units are collections of projects. When you sign up to Aiven, an organization is created for you.
 
-You can use these to create a hierarchical structure that fits your needs. Organizational units (or org units) can be nested within an organization, adding another level to group your projects. This gives you greater flexibility to organize your setup to meet your specific use cases. For example, you can easily split production and testing workloads into different org units that are in the same organization. 
+You can use these to create a hierarchical structure that fits your needs. Organizational units can be nested within an organization, adding another level to group your projects. This gives you greater flexibility to organize your setup to meet your specific use cases. For example, you can easily split production and testing workloads into different organizational units that are in the same organization. 
 
-Grouping your projects in organizations and org units lets you centrally manage settings like:
+Grouping your projects in organizations and organizational units lets you centrally manage settings like:
 
 * Authentication methods - Only available on the organization level
 
@@ -51,8 +51,8 @@ Smaller teams usually favor direct access, while larger teams favor RBAC to simp
 
         User -- Direct access --> Project;
         User -- RBAC --> Team;
-        Organization--> Team & B["Org unit"];
-        B["Org unit"]--> Team;
+        Organization--> Team & B["Unit"];
+        B["Unit"]--> Team;
         Team --> Project;
         Project --> Service;
 
@@ -104,9 +104,9 @@ You can define different levels of access for each project member using roles:
 Teams
 ~~~~~
 
-You can also use teams within organizations or org units to control access to projects for a group of users instead of specifying them per project. When you create a team, you choose which projects to associate it to and define the roles.
+You can also use teams within organizations or organizational units to control access to projects for a group of users instead of specifying them per project. When you create a team, you choose which projects to associate it to and define the roles.
 
-One example of this is to grant read-only access to all projects in an organization or org unit for a team of external contractors. The Aiven platform lets you use a mix of team and individual access rights for projects.
+One example of this is to grant read-only access to all projects in an organization or unit for a team of external contractors. The Aiven platform lets you use a mix of team and individual access rights for projects.
 
 Another option is to set up :doc:`SAML single sign-on (SSO) </docs/platform/howto/list-saml>` for an organization that automatically adds users to a team when they sign up. For greater security, you may want to use a combination of SAML and RBAC regardless of the size of team.
 
@@ -119,12 +119,12 @@ For smaller organizations that have a limited number of projects we recommend co
 
 Good naming conventions also help with finding projects and services. For example, you can include the environment type - ``dev``, ``prod``, etc. - at the beginning of project names.
 
-**Medium and large organizations**
+**Medium organizations**
 
 For more complex cases, it's helpful to take advantage of the organizational units. Organizational units let you collect together related projects. 
 
 You could, for example, group projects into organizational units that correspond to your internal departments. Alternatively, you could group them by categories like testing, staging, and production environments. 
 
-**Enterprise organizations**
+**Large organizations**
 
-For enterprise organizations, it's best to keep all of your projects in organizational units instead of organizations. By keeping all of your projects in organizational units you can define teams, support contracts, and billing groups for each group of projects.
+For large organizations, it's best to keep all of your projects in organizational units instead of organizations. By keeping all of your projects in organizational units you can define teams, support contracts, and billing groups for each group of projects.
