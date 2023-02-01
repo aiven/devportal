@@ -27,7 +27,7 @@ Prerequisites
 
 * Either:
 
-  * redis CLI and PG CLI (more general approach)
+  * Redis CLI and PG CLI (more general approach)
 
   or:
 
@@ -63,7 +63,7 @@ normally regarded as a fast operation, or one to repeat too often.
 
 Use the PG CLI to perform the equivalent SQL and calculate the value.
 
-Show the applcation in action, returning the same result.
+Show the application in action, returning the same result.
 
 
 Why do we want caching?
