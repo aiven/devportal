@@ -6,7 +6,7 @@ Proposed outline (from earlier)
 
 .. note:: *This outline will go away when the document is written!*
 
-We want a simple webapp fronting PG
+We want a simple web application fronting PG
 
 * Use either Flask or FastAPI (the latter is more fashionable?)
 * Show how to start up PG on Aiven, and how to populate it with some interesting data
@@ -18,7 +18,8 @@ We want a simple webapp fronting PG
 
 * Explain why caching is a good idea in general
 * Point out that a service doesn’t retain data between requests, and that a real backend may well be running multiple copies of a service, so there’s no way to share data in the application itself
-* Explain that Redis is very easy to use, a good match for typical programming language datastructures, and popular for this sort of task
+* Explain that Redis is very easy to use, a good match for typical programming
+  language data structures, and popular for this sort of task
 * Show how to start up a Redis service on Aiven
 * First approach: cache explicitly by writing simple code in the request method
 * Point out that we may have multiple hashes/dictionaries/maps in Redis for different purposes, and how Redis supports that
@@ -37,7 +38,7 @@ We want a simple webapp fronting PG
 
 * Explain how explicit code per method doesn’t work very well if there are
   multiple GET requests, and introduce a simple Python decorator
-* I don’t *think* we have scope to get into HTTP headers, ETAGs and other
+* I don’t *think* we have scope to get into HTTP headers, ``ETAG``s and other
   things…
 
 Maybe mention that many web frameworks come with hooks for this sort of thing,
