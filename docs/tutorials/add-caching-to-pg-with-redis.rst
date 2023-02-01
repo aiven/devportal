@@ -38,8 +38,8 @@ We want a simple web application fronting PG
 
 * Explain how explicit code per method doesn’t work very well if there are
   multiple GET requests, and introduce a simple Python decorator
-* I don’t *think* we have scope to get into HTTP headers, ``ETAG``s and other
-  things…
+* I don’t *think* we have scope to get into HTTP headers, ``ETAG``\s and other
+  things...
 
 Maybe mention that many web frameworks come with hooks for this sort of thing,
 and point to the blog post(s) on Aiven and Django, if both of them are out. If
