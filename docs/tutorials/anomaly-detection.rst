@@ -113,7 +113,7 @@ The :doc:`Aiven for Apache Kafka </docs/products/kafka>` service is responsible 
 Customise the Aiven for Apache Kafka service
 ''''''''''''''''''''''''''''''''''''''''''''
 
-Now that your service is created, you need to customise its functionality. In the **Overview** tab of your freshly created service, you'll see a bunch of toggles and properties. Change these two::
+Now that your service is created, you need to customise its functionality. In the **Overview** tab of your freshly created service, you'll see a bunch of toggles and properties. Change these two:
 
 1. **Kafka REST API (Karapace)** > **Enable**
 
@@ -124,7 +124,7 @@ Now that your service is created, you need to customise its functionality. In th
 2. **Advanced configuration** > **Add configuration option** > ``kafka.auto_create_topics_enable``, switch the setting on and then click **Save advanced configuration**
 
    .. Note::
-   
+
     The ``kafka.auto_create_topics_enable`` setting allows you to create new Apache Kafka® topics on the fly while pushing a first record. It avoids needing to create a topic in advance. To read more about the setting, check the :doc:`dedicated documentation </docs/products/kafka/howto/create-topics-automatically>`.
 
 Create an Aiven for PostgreSQL® service
