@@ -993,3 +993,9 @@ entries:
       title: Catch the Bus - Aiven challenge with ClickHouse
     - file: docs/community/challenge/the-rolling-challenge
       title: Rolling - Aiven challenge with Apache Kafka and Apache Flink
+
+
+  - file: docs/tutorials
+    title: Community
+    entries:
+    - file: docs/tutorials/add-caching-to-pg-with-redis
