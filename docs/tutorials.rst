@@ -11,4 +11,4 @@ Useful tutorials:
 
         :doc:`Add caching to your PostgreSQL® application using Redis®*<tutorials/add-caching-to-pg-with-redis>`
 
-        |icon-pg| |icon-redis|
+        |icon-postgres| |icon-redis|
