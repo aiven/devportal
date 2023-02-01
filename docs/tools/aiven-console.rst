@@ -41,19 +41,19 @@ In the **Payment Options** section, you can :doc:`add or update credit card deta
 Organization and organizational unit settings
 ----------------------------------------------
 
-The organization or organizational unit (org unit) that you are currently working with is displayed at the top of the page. You can switch to another organization or org unit by clicking the name to open the drop-down menu. You can also create a new organization from this menu.
+The organization or organizational unit that you are currently working with is displayed at the top of the page. You can switch to another organization or organizational unit by clicking the name to open the drop-down menu. You can also create a new organization from this menu.
 
 If you don't have an organization, click **Create organization** to :doc:`create your first organization</docs/tools/aiven-console/howto/create-accounts>`. 
  
 .. note:: We strongly recommend creating an organization. It makes managing your projects much easier and comes with many additional features, such as teams (user groups), billing groups, and SAML authentication.
 
-Organization and org unit settings are available on the **Admin** page. Here you can:
+Organization and organizational unit settings are available on the **Admin** page. Here you can:
 
 * :doc:`Manage the teams</docs/tools/aiven-console/howto/create-manage-teams>` 
-* Create new projects under an organization or org unit
+* Create new projects under an organization or organizational unit
 * Configure :doc:`authentication methods for an organization </docs/platform/howto/list-saml>`
 * View **Event logs** of activity such as the adding or removing of team members, changing authentication methods, and more
-* Access the **Settings** to rename or delete an organization or org unit 
+* Access the **Settings** to rename or delete an organization or organizational unit 
 
 
 Projects and services
