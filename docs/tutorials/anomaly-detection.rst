@@ -56,7 +56,7 @@ The tutorial includes:
 Architecture overview
 ---------------------
 
-In this tutorial you'll build a streaming data pipeline. The sources will be an Apache Kafka topic, containining the fake stream of IoT metrics data, and a PostgreSQL® database that containing the alerting thresholds. Then, an Apache Flink® service, will combine the data, apply some tranformation SQL to find the anomalies, and push the result to a separate Apache Kafka® topic or a Slack channel for team notification.
+In this tutorial you'll build a streaming data pipeline. The sources will be an Apache Kafka topic, containing the fake stream of IoT metrics data, and a PostgreSQL® database that containing the alerting thresholds. Then, an Apache Flink® service, will combine the data, apply some transformation SQL to find the anomalies, and push the result to a separate Apache Kafka® topic or a Slack channel for team notification.
 
 
 .. mermaid::
@@ -288,7 +288,7 @@ If your fake data producer is successfully running, you can head to Apache Kafka
 Create a basic anomaly detection pipeline with filtering
 --------------------------------------------------------
 
-The first anomaly detection pipeline that you'll create showcases a basic anomaly detection system: you want to flag any sensor reading exceding a fixed ``80%`` threshold since it could represent a heating anomany. You'll read the IoT sensor readings from the ``cpu_load_stats_real`` in Apache Kafka, build a filtering pipeline in Apache Flink, and push the readings above the ``80%`` threshold back to Apache Kafka, but in a separate ``cpu_load_stats_real_filter`` topic.
+The first anomaly detection pipeline that you'll create showcases a basic anomaly detection system: you want to flag any sensor reading exceeding a fixed ``80%`` threshold since it could represent a heating anomaly. You'll read the IoT sensor readings from the ``cpu_load_stats_real`` in Apache Kafka, build a filtering pipeline in Apache Flink, and push the readings above the ``80%`` threshold back to Apache Kafka, but in a separate ``cpu_load_stats_real_filter`` topic.
 
 .. mermaid::
 
@@ -310,7 +310,7 @@ If you feel brave, you can go ahead and try try yourself in the `Aiven Console <
 1. In the `Aiven Console <https://console.aiven.io/>`_, open the Aiven for Apache Flink service named ``demo-flink`` and go to the **Applications** tab.
 2. Click **Create new application** to create your Flink application.
 3. Name the new application ``filtering`` and click **Create application**
-4. In the **Add source tables** tab, create the source table (named ``CPU_IN``), pointing to the Apache Kafka® topic ````cpu_load_stats_real`` where the IoT sensor readigs are stored, by clicking on **Create first version** and:
+4. In the **Add source tables** tab, create the source table (named ``CPU_IN``), pointing to the Apache Kafka® topic ````cpu_load_stats_real`` where the IoT sensor readings are stored, by clicking on **Create first version** and:
    
    * Select ``Aiven for Apache Kafka - demo-kafka`` as `Integrated service`
    * Paste the following SQL:
@@ -387,7 +387,7 @@ In this step, you'll create a pipeline to average the CPU metrics figures in 30 
 
     In this section, you will be able to reuse ``CPU_IN`` source table definition created previously. Importing a working table definition, rather than re-defining it, is a good practice to avoid mistakes. 
 
-To complete the secion, you will perform the following steps:
+To complete the section, you will perform the following steps:
 
 * Create a new Aiven for Apache Flink application
 * Import the previously created ``CPU_IN`` source table to read the metrics data from your Apache Kafka® topic
@@ -476,7 +476,7 @@ You can create the thresholds table in the ``demo-postgresql`` service with the 
 Create the notification pipeline comparing average CPU data with the thresholds
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-At this point, you should have both a stream of the 30 seconds average CPU metrics coming from Apache Kafka, and a set of "per-device" thresholds stored in the PostgreSQL database. This section showcases how you can compare the usage with the thresholds and send a slack notification identifying anomaly situations of when the usage is exceeding the thresolds. 
+At this point, you should have both a stream of the 30 seconds average CPU metrics coming from Apache Kafka, and a set of "per-device" thresholds stored in the PostgreSQL database. This section showcases how you can compare the usage with the thresholds and send a slack notification identifying anomaly situations of when the usage is exceeding the thresholds. 
 
 .. mermaid::
 
