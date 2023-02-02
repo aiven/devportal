@@ -35,7 +35,7 @@ To get started, you'll need:
 
     pip install kafka-python
 
-If you already have a Kafka service, jump to :ref:`create-a-topic`section. 
+If you already have a Kafka service, jump to :ref:`create-a-topic` section. 
 
 Else, `sign up for an Aiven account <https://console.aiven.io/signup>`_ and follow the tutorial to create a Kafka service on Aiven.
 
