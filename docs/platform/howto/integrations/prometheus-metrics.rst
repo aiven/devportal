@@ -149,6 +149,6 @@ Other integrations
 
 Here are some links to learn more about integrations with Aiven:
 
-* :doc:`Aiven integrations </docs/platform/concepts/service-integration>`_
+* :doc:`Aiven integrations </docs/platform/concepts/service-integration>`
 
 * :doc:`Datadog integration </docs/integrations/datadog>`
