@@ -140,7 +140,7 @@ View full list of metrics
 
 Aiven provides the Prometheus client via the Telegraf plugin so all the same
 metrics that are available via the Aiven for InfluxDB® metrics integration are also
-available via the Prometheus integration. You can see the full list of metrics :doc:`here </docs/integrations/prometheus-system-metrics>`_.
+available via the Prometheus integration. You can see the full list of metrics :doc:`here </docs/integrations/prometheus-system-metrics>`.
 
 .. note:: Note that for some services the metrics provided by different hosts may vary depending on the host role. Most notably for Kafka® only one of the nodes provides metrics related to consumer group offsets.
 
