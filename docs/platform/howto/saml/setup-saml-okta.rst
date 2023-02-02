@@ -3,8 +3,8 @@ Set up SAML authentication with Okta
 
 This article explains how to set up SAML with `Okta <https://www.okta.com/>`_ for an organization in Aiven. For more information on SAML and instructions for other identity providers, see the :doc:`Set up SAML authentication </docs/platform/howto/saml/saml-authentication>` article. 
 
-Prerequisite steps in the Aiven Console
----------------------------------------
+Prerequisite steps in Aiven Console
+------------------------------------
 
 #. In the organization, click **Admin**.
 

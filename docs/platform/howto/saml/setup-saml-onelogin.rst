@@ -4,7 +4,7 @@ Set up SAML with OneLogin
 This article explains how to set up SAML with `OneLogin <https://www.onelogin.com/>`_ for an organization in Aiven. For more information on SAML and instructions for other identity providers, see the :doc:`Set up SAML authentication </docs/platform/howto/saml/saml-authentication>` article.
 
 Prerequisite steps in Aiven Console
--------------------------------------
+------------------------------------
 
 #. In the organization, click **Admin**.
 
@@ -68,7 +68,7 @@ Finish the configuration in Aiven
 
 Go back to the **Authentication** page in the `Aiven Console <https://console.aiven.io/>`_ to enable the SAML authentication method:
 
-#. Select the name of the Auth0 method that you created.
+#. Select the name of the OneLogin method that you created.
 
 #. In the SAML configuration section, click **Edit**. 
 
