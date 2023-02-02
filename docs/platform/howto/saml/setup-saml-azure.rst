@@ -23,31 +23,36 @@ You are shown two parameters needed to set up the SAML authentication in Microso
 Configure SAML on Microsoft Azure
 ----------------------------------
 
-#. Log in to `Microsoft Azure <https://portal.azure.com/>`_.
+First, you set up the application on Azure. Then, you add a claim and users.
 
-#. Got to **Enterprise applications**.
+Set up an Azure application
+""""""""""""""""""""""""""""
 
-#. Select **All applications**.
+1. Log in to `Microsoft Azure <https://portal.azure.com/>`_.
 
-#. Click **New application**.
+2. Got to **Enterprise applications**.
 
-#. Select the **Add from the gallery** search bar and use the **Azure AD SAML Toolkit**.
+3. Select **All applications**.
 
-#. Click **Add**.
+4. Click **New application**.
 
-#. Go back to the **Enterprise applications** list.
+5. Select the **Add from the gallery** search bar and use the **Azure AD SAML Toolkit**.
 
-   .. Warning::
+6. Click **Add**.
+
+7. Go back to the **Enterprise applications** list.
+
+   .. note::
 
     The newly created application might not be visible yet. You can use the **All applications** filter to see the new application.  
     
-#. Click on the new application name to open the configuration.
+8. Click on the name of the new application. The configuration opens.
 
-#. Select **Single sign-on** configuration.
+9. Select **Single sign-on** configuration.
 
-#. Select **SAML** as the single sign-on method.
+10. Select **SAML** as the single sign-on method.
 
-#. Add the following paramters to the **Basic SAML Configuration**:
+11. Add the following parameters to the **Basic SAML Configuration**:
 
 .. list-table::
       :header-rows: 1
@@ -63,11 +68,14 @@ Configure SAML on Microsoft Azure
         - ``https://console.aiven.io``
 
 
-#. Click **Save**.
+12. Click **Save**.
 
-#. In the **User Attributes & Claims**, click **Add a new claim**.
+Create a claim and add users
+""""""""""""""""""""""""""""
 
-#. Create an attribute with the following data:
+1. In the **User Attributes & Claims**, click **Add a new claim**.
+
+2. Create an attribute with the following data:
 
 .. list-table::
       :header-rows: 1
@@ -78,37 +86,37 @@ Configure SAML on Microsoft Azure
       * - ``Name``
         - ``email``
       * - ``Source``
-        - Select ``Attribute``
+        - ``Attribute``
       * - ``Source Attribute``
         - ``user.email``
 
-#. Download the **Certificate (Base64)** from the **SAML Signing Certificate** section.
+3. Download the **Certificate (Base64)** from the **SAML Signing Certificate** section.
 
-#. Go to **Users and groups** and click **Add user**. 
+4. Go to **Users and groups** and click **Add user**. 
 
-#. Select the users that you want to use Azure AD to log in to Aiven. 
+5. Select the users that you want to use Azure AD to log in to Aiven. 
 
-#. Click **Assign**.
+6. Click **Assign**.
 
 
 Finish the configuration in Aiven
 ----------------------------------
 
-Go back to the **Authentication** page in the `Aiven Console <https://console.aiven.io/>`_ to enable the SAML authentication method:
+Go back to the **Authentication** page in `Aiven Console <https://console.aiven.io/>`_ to enable the SAML authentication method:
 
-#. Select the name of the Azure AD method that you created.
+1. Select the name of the Azure AD method that you created.
 
-#. In the SAML configuration section, click **Edit**. 
+2. In the SAML configuration section, click **Edit**. 
 
-#. Add the configuration settings from Azure:
+3. Add the configuration settings from Azure:
 
-  * Set the ``SAML IDP URL`` to the ``Login URL`` from Azure.
-  * Set the ``SAML Entity ID`` to the ``Azure AD Identifier`` from Azure.
-  * Paste the certificate from Azure into the ``SAML Certificate`` field.
+* Set the ``SAML IDP URL`` to the ``Login URL`` from Azure.
+* Set the ``SAML Entity ID`` to the ``Azure AD Identifier`` from Azure.
+* Paste the certificate from Azure into the ``SAML Certificate`` field.
 
-#. Click **Edit method** to save your changes.
+4. Click **Edit method** to save your changes.
 
-#. Toggle on **Enable authentication method** at the top of the page. 
+5. Toggle on **Enable authentication method** at the top of the page. 
 
 You can use the **Signup URL** to invite new users, or the **Account link URL** for those that already have an Aiven user account.
 
@@ -116,18 +124,18 @@ Troubleshooting
 ---------------
 
 Error: contact your administrator
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+"""""""""""""""""""""""""""""""""
 
 If you get an error message suggesting you contact your administrator, try these steps: 
 
 #. Go to the Microsoft Azure AD user profile for the users.
 
-#. Check whether the **Contact Info** => **Email** field is blank.
+#. In **Contact Info**, check whether the **Email** field is blank.
 
 If it is blank, there are two possible solutions:
 
-   * If the field **Identity** => **User Principal Name** is an email address, try changing the **User Attributes & Claims** to ``email = user.userprincipalname``. 
+* In **User Principal Name**, if the **Identity** field is an email address, try changing the **User Attributes & Claims** to ``email = user.userprincipalname``. 
 
-   * If none of the user accounts have a blank **Contact Info** => **Alternate email** field, try changing the **User Attributes & Claims** to ``email = user.othermail``.
+* In **Contact Info**, if none of the **Alternate email** fields are blank, try changing the **User Attributes & Claims** to ``email = user.othermail``. 
 
 If you still have login issues, you can use the `SAML Tracer browser extension <https://addons.mozilla.org/firefox/addon/saml-tracer/>`_ to check the process step by step. If this doesn't work, get in touch with our support team at support@Aiven.io.
