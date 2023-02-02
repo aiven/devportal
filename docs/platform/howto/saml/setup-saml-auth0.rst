@@ -78,4 +78,7 @@ Go back to the **Authentication** page in the `Aiven Console <https://console.ai
 
 You can use the **Signup URL** to invite new users, or the **Account link URL** for those that already have an Aiven user account.
 
+Troubleshooting
+---------------
+
 If you have issues, you can use the `SAML Tracer browser extension <https://addons.mozilla.org/firefox/addon/saml-tracer/>`_ to check the process step by step. 

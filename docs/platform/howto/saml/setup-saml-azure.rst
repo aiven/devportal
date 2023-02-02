@@ -115,8 +115,8 @@ You can use the **Signup URL** to invite new users, or the **Account link URL** 
 Troubleshooting
 ---------------
 
-Contact your administrator
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Error: contact your administrator
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you get an error message suggesting you contact your administrator, try these steps: 
 
