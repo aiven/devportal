@@ -14,7 +14,7 @@ Prerequisite steps in Aiven Console
 
 #. Enter a name and select SAML. You can also select the teams that users will be added to when they sign up or log in through this authentication method.
 
-You are shown two parameters needed to set up the SAML authentication in Auth0:
+You are shown two parameters needed to set up the SAML authentication in OneLogin:
 
 * Metadata URL
 * ACS URL
@@ -30,7 +30,7 @@ Configure SAML on OneLogin
 
 #. Change the **Display Name** to ``Aiven``.
 
-#. Add any other visual configurations you like and click **Save**.
+#. Add any other visual configurations you want and click **Save**.
 
 #. In the **Configuration** section of the menu, set the following parameters:
 
@@ -43,7 +43,7 @@ Configure SAML on OneLogin
       * - ``ACS URL Validation``
         - ``[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)``
       * - ``ACS URL``
-        - the ``ACS URL`` displayed in the Aiven authentication method you created
+        - ``ACS URL`` from Aiven Console 
       * - ``Login URL``
         - ``https://console.aiven.io``
       * - ``SAML Initiator``
@@ -54,9 +54,9 @@ Configure SAML on OneLogin
 
 #. Click **Save**.
 
-#. In the **SSO** section of the menu, set ``SAML Signature Algorithm`` to ``SHA-256``.
+#. In the **SSO** section of the menu, set **SAML Signature Algorithm** to ``SHA-256``.
 
-#. Copy the certificate content, ``Issuer URL`` and ``SAML 2.0 Endpoint (HTTP)``. These are needed for the SAML configuration in the Aiven Console.
+#. Copy the certificate content, ``Issuer URL`` and ``SAML 2.0 Endpoint (HTTP)``. These are needed for the SAML configuration in Aiven Console.
 
 #. Click **Save**
 
@@ -66,23 +66,23 @@ Configure SAML on OneLogin
 Finish the configuration in Aiven
 ---------------------------------
 
-Go back to the **Authentication** page in the `Aiven Console <https://console.aiven.io/>`_ to enable the SAML authentication method:
+Go back to the **Authentication** page in `Aiven Console <https://console.aiven.io/>`_ to enable the SAML authentication method:
 
-#. Select the name of the OneLogin method that you created.
+1. Select the name of the OneLogin method that you created.
 
-#. In the SAML configuration section, click **Edit**. 
+2. In the SAML configuration section, click **Edit**. 
 
-#. Add the configuration settings from OneLogin: 
+3. Add the configuration settings from OneLogin: 
 
-  * Set the ``SAML IDP URL`` to the ``SAML 2.0 Endpoint (HTTP)`` from OneLogin. 
+* Set the ``SAML IDP URL`` to the ``SAML 2.0 Endpoint (HTTP)`` from OneLogin. 
 
-  * Set the ``SAML Entity ID`` to the ``Issuer URL`` from OneLogin.
+* Set the ``SAML Entity ID`` to the ``Issuer URL`` from OneLogin.
 
-#. Paste the certificate from OneLogin into ``SAML Certificate``.
+* Paste the certificate from OneLogin into ``SAML Certificate``.
 
-#. If you set ``SAML Initiator`` to ``OneLogin`` in your OneLogin application, then toggle on ``IdP login``.
+4. If you set ``SAML Initiator`` to ``OneLogin`` in your OneLogin application, then toggle on ``IdP login``.
 
-#. Toggle on **Enable authentication method** at the top of the page. 
+5. Toggle on **Enable authentication method** at the top of the page. 
 
 You can use the **Signup URL** to invite new users, or the **Account link URL** for those that already have an Aiven user account.
 

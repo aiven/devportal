@@ -32,15 +32,15 @@ Configure SAML on Auth0
 
 #. Choose **Regular Web Applications** and click **Create**. 
 
-#. After your application is created, go to the ``Addons`` tab.
+#. After your application is created, go to the **Add ons** tab.
 
 #. Enable the **SAML 2 WEB APP** option.
 
-#. Click on the **SAML 2 WEB APP** option. The ``Settings`` tab opens.
+#. Click on the **SAML 2 WEB APP** option. The **Settings** tab opens.
 
 #. Set the ``Application Callback URL`` to the ``ACS URL`` from the Aiven Console.
 
-#. In the ``Settings`` section under ``Application Callback URL``, remove the existing configuration and add the following field mapping configuration:
+#. In the **Settings** section for the Application Callback URL, remove the existing configuration and add the following field mapping configuration:
 
 .. code-block:: shell
 
@@ -54,27 +54,27 @@ Configure SAML on Auth0
 
 #. Click **Enable** and **Save**.
 
-#. On the **Usage** tab, make a note of the ``Identity Provider Login URL``,  ``Issuer URN``, and ``Identity Provider Certificate``. These are needed for the SAML configuration in the Aiven Console.
+#. On the **Usage** tab, make a note of the ``Identity Provider Login URL``,  ``Issuer URN``, and ``Identity Provider Certificate``. These are needed for the SAML configuration in Aiven Console.
 
 
 Finish the configuration in Aiven
 ----------------------------------
 
-Go back to the **Authentication** page in the `Aiven Console <https://console.aiven.io/>`_ to enable the SAML authentication method:
+Go back to the **Authentication** page in `Aiven Console <https://console.aiven.io/>`_ to enable the SAML authentication method:
 
-#. Select the name of the Auth0 method that you created.
+1. Select the name of the Auth0 method that you created.
 
-#. In the SAML configuration section, click **Edit**. 
+2. In the SAML configuration section, click **Edit**. 
 
-#. Add the configuration settings from Auth0:
+3. Add the configuration settings from Auth0:
 
-  * Set the ``SAML IDP URL`` to the ``Identity Provider Login URL`` from Auth0.
-  * Set the ``SAML Entity ID`` to the ``Issuer URN`` from Auth0 .
-  * Paste the certificate from Auth0 into the ``SAML Certificate`` field.
+* Set the ``SAML IDP URL`` to the ``Identity Provider Login URL`` from Auth0.
+* Set the ``SAML Entity ID`` to the ``Issuer URN`` from Auth0 .
+* Paste the certificate from Auth0 into the ``SAML Certificate`` field.
 
-#. Click **Edit method** to save your changes.
+4. Click **Edit method** to save your changes.
 
-#. Toggle on **Enable authentication method** at the top of the page. 
+5. Toggle on **Enable authentication method** at the top of the page. 
 
 You can use the **Signup URL** to invite new users, or the **Account link URL** for those that already have an Aiven user account.
 

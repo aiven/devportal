@@ -82,7 +82,7 @@ Go back to the **Authentication** page in the `Aiven Console <https://console.ai
 
 #. Select the name of the authentication method that you created.
 
-#. On the page that opens, toggle on **Enable Authentication method**. You can also enable **IdP login**, allowing your users to initiate a login directly from your IdP.
+#. Toggle on **Enable Authentication method**. To let users initiate a login directly from your IdP, toggle on **IdP login**. 
 
 #. In the **SAML configuration** section, click **Edit**.
 
