@@ -48,7 +48,7 @@ notfound_urls_prefix = ''
 # see all options at https://github.com/wpilibsuite/sphinxext-opengraph#options
 ogp_site_url = 'https://docs.aiven.io/'
 ogp_description_length = 200
-ogp_image = 'https://docs.aiven.io/_static/images/site-preview.png'
+ogp_image = '/_static/images/site-preview.png'
 
 # Mermaid version
 mermaid_version = "8.12.0"
