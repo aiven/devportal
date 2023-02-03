@@ -151,7 +151,7 @@ enabled.
 Invalid ``RelayState``
 ~~~~~~~~~~~~~~~~~~~~~~
 
-If you get the ``Invalid RelayState``, then you are attempting an IdP-initiated auth flow, for example by clicking the Aiven SAML app from the Okta UI. Previously, Aiven did not support IdP-initiated flows, but now it is possible if you set the ``Default RelayState`` in Okta to the corresponding console of your account as defined in the :ref:`setup Okta section <setup_saml_okta_setup_okta>`.
+If you get the ``Invalid RelayState``, then you are attempting an IdP-initiated auth flow, for example by clicking the Aiven SAML app from the Okta UI. Previously, Aiven did not support IdP-initiated flows, but now it is possible if you set the ``Default RelayState`` in Okta to the corresponding console of your account as defined in the Configure SAML on Okta section.
 
 The Okta password does not work
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
