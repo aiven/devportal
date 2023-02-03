@@ -350,7 +350,7 @@ Let's add a new Kafka user and limit their access to the schema registry and RES
 From the Aiven for Apache Kafka service page, navigate to the Access Control List (ACL) tab.
 With the schema registry and REST APIs enabled, you'll see two tabs: **ACL For Topic** and **ACL For Schema Registry**.
 
-Click **Add entry** from either of these tabs. For **ACL For Topic**, add *Username* (**dewan** in my case), add *Topic* (**demo-topic** for this example), and select permission level from the drop-down (I'll seelct **Consume** for read-only access). 
+Click **Add entry** from either of these tabs. For **ACL For Topic**, add *Username* (**dewan** in my case), add *Topic* (**demo-topic** for this example), and select permission level from the drop-down (I'll select **Consume** for read-only access). 
 Switch to **ACL For Schema Registry** where you use the same *Username* (**dewan** in my case), add **Subject:demo-topic** as the *Resource*, and **Read** as the *permission*. 
 
 How to use Karapace Schema Registry
@@ -358,7 +358,7 @@ How to use Karapace Schema Registry
 
 Export the schema registry URI as environment variables for the admin user and the user you just created.
 
-From the *Overview* tab, under *Connection information* --> *Schema Registry*, use the *Copy to clipboard* option to copy the service URI for the *avnadmin* user.
+From the *Overview* tab, under *Connection information* --> *Schema Registry*, use the *Copy to clipboard* option to copy the service URI for the ``avnadmin`` user.
 
 .. code:: bash
 
@@ -387,9 +387,9 @@ Once you execute the above command, you'll receive the following response:
 
     {"message": "Forbidden"}
 
-This is because the user **Dewan** has *schema_registry_read* access but the above curl command was making a write (POST) request.
+This is because the user **Dewan** has ``schema_registry_read`` access but the above curl command was making a write (POST) request.
 
-Let's retry the command using the admin (**avnadmin**) user.
+Let's retry the command using the admin (``avnadmin``) user.
 
 .. code:: bash
 
@@ -415,7 +415,7 @@ Response:
 
     []
 
-Let's create the **demo-topic** subject using the admin (**avnadmin**) user:
+Let's create the **demo-topic** subject using the admin (``avnadmin``) user:
 
 .. code:: bash
 
@@ -448,7 +448,7 @@ The user account has access to only **demo-topic**. Use the following command to
 
     {"configs": {"cleanup.policy": "delete", "compression.type": "producer", "delete.retention.ms": "86400000", "file.delete.delay.ms": "60000", "flush.messages": "9223372036854775807", "flush.ms": "9223372036854775807", "follower.replication.throttled.replicas": "", "index.interval.bytes": "4096", "leader.replication.throttled.replicas": "", "max.compaction.lag.ms": "9223372036854775807", "max.message.bytes": "1048588", "message.downconversion.enable": "true", "message.format.version": "3.0-IV1", "message.timestamp.difference.max.ms": "9223372036854775807", "message.timestamp.type": "CreateTime", "min.cleanable.dirty.ratio": "0.5", "min.compaction.lag.ms": "0", "min.insync.replicas": "1", "preallocate": "false", "retention.bytes": "1000000000", "retention.ms": "604800000", "segment.bytes": "209715200", "segment.index.bytes": "10485760", "segment.jitter.ms": "0", "segment.ms": "604800000", "unclean.leader.election.enable": "false"}, "name": "demo-topic", "partitions": [{"leader": 3, "partition": 0, "replicas": [{"broker": 3, "in_sync": true, "leader": true}, {"broker": 2, "in_sync": true, "leader": false}]}, {"leader": 2, "partition": 1, "replicas": [{"broker": 2, "in_sync": true, "leader": true}, {"broker": 3, "in_sync": true, "leader": false}]}, {"leader": 1, "partition": 2, "replicas": [{"broker": 1, "in_sync": true, "leader": true}, {"broker": 2, "in_sync": true, "leader": false}]}]}
 
-If the new user tries any other write operations from `the guide <https://www.karapace.io/quickstart#rest-api>`_ or tries to read a topic you don't have access to, they won't be able to. You can perform all operations using the **avnadmin** user.
+If the new user tries any other write operations from `the guide <https://www.karapace.io/quickstart#rest-api>`_ or tries to read a topic you don't have access to, they won't be able to. You can perform all operations using the ``avnadmin`` user.
 
 .. _kafka-tutorial-reference:
 
