@@ -58,13 +58,14 @@ The Aiven for PostgreSQL® service named ``pg-demo`` contains a table named ``st
 
 ::
 
-  student_id INT,
-  student_name VARCHAR
+  CREATE TABLE students_tbl (
+    student_id INT,
+    student_name VARCHAR
+    ) WITH (
+    'connector' = 'jdbc',
+    'url' = 'jdbc:postgresql://',
+    'table-name' = 'public.students'
+    )  
 
-We can define a ``students_tbl`` Flink table with:
 
-* ``pg-demo`` as the selected Aiven for PostgreSQL® service 
-* ``public.students`` as **JDBC table**
-* ``students_tbl`` as **Name**
-* ``student_id INT, student_name VARCHAR`` as **SQL schema** `mapping the existing columns <https://nightlies.apache.org/flink/flink-docs-master/docs/connectors/table/jdbc/#data-type-mapping>`_ in the PostgreSQL® table
-
+The ``url`` will be substituted with the appropriate address during runtime.
