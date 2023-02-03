@@ -1,7 +1,7 @@
 ``avn account``
 ==================================
 
-Here you’ll find the full list of commands for ``avn account``.
+This article has the full list of commands for ``avn account``. An account is the same as an organization or organizational unit.
 
 
 Manage account details
