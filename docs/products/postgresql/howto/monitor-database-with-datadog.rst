@@ -45,6 +45,9 @@ Using the ``avn service integration-list`` :ref:`Aiven CLI command <avn_service_
     "datadog_dbm_enabled": true
     }
     
+.. Note::
+    After completed the above steps successfully, Datadog Database Monitoring setup is ready.  These instructions replaced the steps in `Datadog Database Monitoring setup for PostgreSQL® <https://docs.datadoghq.com/database_monitoring/setup_postgres/>`_.
+
 .. seealso:: 
     - Learn more about :doc:`Datadog and Aiven </docs/integrations/datadog>`.
     - Learn more about `Datadog Deep Database Monitoring <https://www.datadoghq.com/product/database-monitoring/>`_ from their product page. 
