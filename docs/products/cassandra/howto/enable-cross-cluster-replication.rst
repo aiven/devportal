@@ -1,9 +1,5 @@
-Enable cross-cluster replication in Aiven for Apache Cassandra® |private beta|
-==============================================================================
-
-.. important::
-
-   This private beta feature is available on request only. Contact sales@Aiven.io or support@Aiven.io to opt in. 
+Enable cross-cluster replication in Aiven for Apache Cassandra® |beta|
+======================================================================
 
 Enabling the cross-cluster replication (CCR) feature requires building a CCR setup on the Aiven side and, next, configuring the replication on the Apache Cassandra side. This article covers the first part only by providing instructions on how to set up the CCR in your Aiven for Apache Cassandra® service on the Aiven side.
 
@@ -153,7 +149,7 @@ Understand parameters to be supplied:
 On a new service
 ''''''''''''''''
 
-Use the `Create a service <https://api.aiven.io/doc/#tag/Service/operation/ServiceCreate>`_ API to create a new service with CCR enabled. When constructing the API request, add the ``user_config`` object to the request body and nest inside it the ``service_to_join_with`` and ``datacenter`` fields.
+Use the `ServiceCreate <https://api.aiven.io/doc/#tag/Service/operation/ServiceCreate>`_ API to create a new service with CCR enabled. When constructing the API request, add the ``user_config`` object to the request body and nest inside it the ``service_to_join_with`` and ``datacenter`` fields.
 
 .. code-block:: bash
 
@@ -178,7 +174,7 @@ Use the `Create a service <https://api.aiven.io/doc/#tag/Service/operation/Servi
 On an existing service
 ''''''''''''''''''''''
 
-Use the `Update service configuration <https://api.aiven.io/doc/#tag/Service/operation/ServiceUpdate>`_ API to modify the configuration of your existing service so that it has CCR enabled. When constructing the API request, add the ``user_config`` object to the request body and nest the ``service_to_join_with`` field inside it.
+Use the `ServiceUpdate <https://api.aiven.io/doc/#tag/Service/operation/ServiceUpdate>`_ API to modify the configuration of your existing service so that it has CCR enabled. When constructing the API request, add the ``user_config`` object to the request body and nest the ``service_to_join_with`` field inside it.
 
 .. important::
 
