@@ -15,7 +15,7 @@ We'll start on the ClickHouse side. In this section we'll set up the cluster and
 Setting up Aiven for ClickHouse
 +++++++++++++++++++++++++++++++
 
-We recommend you use `Aiven for ClickHouse <https://aiven.io/clickhouse>`_ when following this tutorial. If you still don't have Aiven's account, `register over here <https://console.aiven.io/signup>`_. You'll get free credits that you can use for this tutorial.
+We recommend you use `Aiven for ClickHouse <https://aiven.io/clickhouse>`_ when following this tutorial. If you still don't have Aiven account, `register over here <https://console.aiven.io/signup>`_. You'll get free credits that you can use for this tutorial.
 
 Once you're logged into  Aiven platform, click on **Create service** and follow the wizard to set up the preferences.
 
@@ -87,21 +87,45 @@ The connection between Metabase and ClickHouse happens over HTTPS. You can take 
 Visualising the data
 ----------------------------------
 
-Now we can run analysis and visualise the data. To start with something simple, check for most popular currencies used across the menus in the dataset we have.
+Now we can run analysis and visualise the data. There are two ways you can create requests to the ClickHouse database. One is using SQL and another one is by relying on a visual editor. Below we try out both of these approaches.
+
+Querying data with SQL
+++++++++++++++++++++++
+
+To start with something simple, check for most popular currencies used across the menus in the dataset we have.
 
 Click on the **New** button and select **SQL Query** from the list. Next, choose the database for your query (``AivenForClickHouse`` in our case) and you'll land onto the SQL query editor. You can use the same syntax here as running your usual ClickHouse queries.
 
 .. code:: sql
 
-    SELECT menu_currency_symbol, count() FROM menu_item_denorm
+    SELECT menu_currency, count() FROM menu_item_denorm
     GROUP BY menu_currency
 
 The results will appear below the query editor. To visualise the findings, click on the button **Visualisation**. This will show you a set of possible options that fit your data. For this specific example, for example you can use a pie chart.
 
 Once you're happy with the visualisation, save it. Metabase will also suggest adding the visualisation to a dashboard. If you don't want to do it yet, you can add it later.
 
-.. image:: /images/tutorials/clickhouse-metabase/first.gif
-   :alt: Animated GIF showing creation of a new visualisation
+.. image:: /images/tutorials/clickhouse-metabase/query1.gif
+   :alt: Animated GIF showing creation of a new visualisation based on SQL query
+
+
+Using the visual editor
++++++++++++++++++++++++
+
+Alternatively, you can create a query using Metabase visual editor. For instance, out of curiosity we'll look at dishes that were popular before 1920, but then disappeared from the menu.
+
+Press on the **New** button and select **Question** from the available options.
+
+Metabase will ask you to pick the database and the table to run requests. Select **AivenForClickHouse** (or the name you gave to your database) and ``Menu Item Denorm``. Once data is selected you'll lend on the wizard with multiple options to shape the request.
+
+To find old menus in the *Filter* section press on **Add filters to narrow your answer** and select the field **Dish Last Appeared**. Use between function and set the year values to **1700** and **1920** (or even better - experiment and select your own values!). This will find only those dishes that disappeared before 1920.
+
+Next, we'll use *Summarize* section to get the most popular dishes among those that vanished. Pick the metric "Maximum of" and use the property **Dish Times Appeared**. Next to it pick **Dish Name** to group by.
+
+Finally, sort data by **Max of Dish Times Appeared** in descending order and click **Visualise**. You will now see the list of disappeared popular dishes.
+
+.. image:: /images/tutorials/clickhouse-metabase/query2.gif
+   :alt: Animated GIF showing creation of a query with the visual editor
 
 Conclusions
 ------------
