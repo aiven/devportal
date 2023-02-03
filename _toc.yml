@@ -996,6 +996,6 @@ entries:
 
 
   - file: docs/tutorials
-    title: Community
+    title: Tutorials
     entries:
     - file: docs/tutorials/clickhouse-metabase

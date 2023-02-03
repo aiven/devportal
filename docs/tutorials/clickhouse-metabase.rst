@@ -44,6 +44,16 @@ If you don't have a license token for a paid version of Metabase and you don't n
 
 When starting your Docker container, make sure that you have access to the mounted folder. We'll need this folder for the next step.
 
+.. code:: bash
+
+    docker run -d -p 3000:3000 --name metabase metabase/metabase
+
+.. code:: bash
+
+    docker run -d -p 3000:3000 \
+    --mount type=bind,source=/path-to-plugins-folder,destination=/plugins \
+    --name metabase metabase/metabase
+
 .. image:: /images/tutorials/clickhouse-metabase/docker.gif
    :alt: Animated GIF showing pulling latest docker image and running it
 
