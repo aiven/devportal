@@ -28,11 +28,11 @@ To create an Apache Flink table based on an Aiven for OpenSearch® index via Aiv
    .. note:: 
         If editing an existing application, create a new version to make changes to the source or sink tables.
 
-3. In the **Create new version** screen, click **Add source tables**.
+3. In the **Create new version** screen, click **Add sink tables**.
 
 4. Click **Add new table** or click **Edit** if you want to edit an existing source table. 
 
-5. In the **Add new source table** or **Edit source table** screen, select the Aiven for OpenSearch® as the integrated service. 
+5. In the **Add new sink table** or **Edit sink table** screen, select the Aiven for OpenSearch® as the integrated service. 
 
 6. In the **Table SQL** section, enter the SQL statement to create the OpenSearch-based Apache Flink table. 
 
@@ -52,7 +52,7 @@ We want to push the result of an Apache Flink® application to an index named  `
     {'hostname': 'happy', 'cpu': 'cpu2', 'usage': 77.90860728236156, 'occurred_at': 1637775078964}
     {'hostname': 'dopey', 'cpu': 'cpu4', 'usage': 81.17372993952847, 'occurred_at': 1637775079054}
 
-We can define a ``metrics-out`` Apache Flink® table with:
+We can define a ``metrics_out`` Apache Flink® table with:
 
 * ``demo-opensearch`` as integration service
 * ``metrics`` as OpenSearch® index name
@@ -61,9 +61,15 @@ We can define a ``metrics-out`` Apache Flink® table with:
 
 .. code:: sql 
 
+    CREATE TABLE metrics_out (
     cpu VARCHAR,
     hostname VARCHAR,
     usage DOUBLE,
     occurred_at BIGINT
+    ) WITH (
+    'connector' = 'elasticsearch-7',
+    'hosts' = '',
+    'index' = 'metrics'
+    )
 
-After clicking on the **Create** button, the ``metrics_out`` table should be visible in the table browser
+The ``hosts`` will be substituted with the appropriate address during runtime.
