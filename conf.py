@@ -298,8 +298,6 @@ rst_epilog = """
 
 .. |beta| replace:: :bdg-secondary:`beta`
 
-.. |private beta| replace:: :bdg-secondary:`private beta`
-
 .. |preview| replace:: :bdg-secondary:`preview`
 
 """

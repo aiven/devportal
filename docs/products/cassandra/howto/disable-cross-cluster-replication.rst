@@ -1,9 +1,5 @@
-Disable cross-cluster replication in Aiven for Apache Cassandra® |private beta|
-===============================================================================
-
-.. important::
-
-   This private beta feature is available on request only. Contact sales@Aiven.io or support@Aiven.io to opt in. 
+Disable cross-cluster replication in Aiven for Apache Cassandra® |beta|
+=======================================================================
 
 This article provides you with instructions on how to discontinue the cross-cluster replication (CCR) for your Aiven for Apache Cassandra® service.
 
