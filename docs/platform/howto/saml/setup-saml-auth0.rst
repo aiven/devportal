@@ -32,7 +32,7 @@ Configure SAML on Auth0
 
 #. Choose **Regular Web Applications** and click **Create**. 
 
-#. After your application is created, go to the **Add ons** tab.
+#. After your application is created, go to the **Addons** tab.
 
 #. Enable the **SAML 2 WEB APP** option.
 
