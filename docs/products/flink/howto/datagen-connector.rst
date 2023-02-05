@@ -15,7 +15,7 @@ To configure DataGen as the source using the DataGen built-in connector for Apac
 
 3. In the **Create new version** screen, click **Add source tables**.
 4. Click **Add new table** or click **Edit** if you want to edit an existing source table. 
-5. In the **Add new source table** or **Edit source table** screen, select the Aiven for Apache Kafka service as the integrated service. 
+5. In the **Add new source table** or **Edit source table** screen, select the Aiven for Apache Kafka® service as the integrated service. 
 6. In the **Table SQL** section, set the connector to **datagen** as shown in the example below:
 
 ::
