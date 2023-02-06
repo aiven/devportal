@@ -1,6 +1,21 @@
 Tutorial: Add caching to your PostgreSQL® app using Redis®*
 ===========================================================
 
+With any sufficiently complex application, performance becomes a primary concern to optimize for. One of the key metrics for measuring performance of any software is speed of reading and writing from a database. 
+
+Most applications repeatedly store (write) and retrieve (read) some kind of input from the user or other systems. In most cases, the amount of reads far exceeds the amount of writes. 
+
+Imagine, for example, a creating a customer profile for a store from a web form: the customer fills out their name, phone number, and address once and clicks submit. This creates one write to the database. However, during the checkout process, the application potentially reads that data many times: once to calculate shipping costs based on the customer's address, another time to pre-fill the payment details, and a third time to prompt the customer to receive SMS updates on their shipment. That's 3x the read operations, even in a simple example!
+
+As a result of this, improving read performance gives us a far greater increase in overall performance for our work. The tried and tested way to do this is through using a cache. This becomes especially relevant when we start developing applications in the cloud. When we start making our applications highly available – that is, duplicating various services, like our databases in multiple regions globally to manage speed, and within regions themselves, to manage traffic spikes – we suddenly have data that needs to be read and written to internally, by the application itself, to maintain data integrity, in addition to externally, to be served to our users so they can do things.
+
+Caching is the act of writing to a block of memory specifically designed for quick retrievals (reads) of common requests. In traditional hardware terms, the cache is typically a memory chip with particularly fast read and write access, like RAM. The computer uses a cache it kind of like a whiteboard: when it needs to, it writes a small amount of information to the cache quickly for a specific set of task, like retrieving a customer profiles. This lets the application access the customer's profile quickly for the many times it's needed during checkout, while only making the expensive and potentially slow call to the database once. The differences are mere milliseconds, but on the scale of global computing, those add up quickly!
+
+However, we're developing applications for the cloud, not directly onto our computer. This adds a few layers of complexity, but opens up some interesting opportunities to optimize our performance further. Instead of using a block of memory (and the unbounded, chaotic nature that entails), we can use two databases instead! We can use one database as a data store, and one as a cache. This lets us optimize our data store for things like concurrency control and our cache for speedy reads and writes, while still taking advantage of everything the cloud offers us in terms of scalability. 
+
+Setting up databases in the cloud is hard, so we'll use [Aiven for PostgreSQL®](https://aiven.io/postgresql) and [Aiven for Redis®](https://aiven.io/redis) in this tutorial. You can [sign up for a free trial](https://console.aiven.io/signup) to follow along!
+
+An application can cache both read operations and write operations. This tutorial will go through caching read operations, but we'll talk about the advantages of caching writes at the end as well. 
 
 Learning objectives
 -------------------
