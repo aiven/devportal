@@ -17,4 +17,5 @@ Follow this tutorial and you'll learn all the steps involved in an Apache KafkaÂ
 What are you going to build
 ---------------------------
 
-This tutorial is aimed at providing you all the touchpoints to perform an Apache Kafka migration. It being between on-premises systems or from/to a managed or self-hosted Apache Kafka cluster, the tutorial provides a set 
+This tutorial is aimed at providing you all the steps to perform an Apache Kafka migration. It being between on-premises systems or from/to a managed or self-hosted Apache Kafka cluster, the tutorial provides a set of checks, actions and processes to follow to perform a complete migration.
+
