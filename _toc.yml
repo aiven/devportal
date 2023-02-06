@@ -1039,9 +1039,12 @@ entries:
       title: Catch the Bus - Aiven challenge with ClickHouse
     - file: docs/community/challenge/the-rolling-challenge
       title: Rolling - Aiven challenge with Apache Kafka and Apache Flink
-  
+
   - file: docs/tutorials
     title: Tutorials
     entries:
       - file: docs/tutorials/anomaly-detection
         title: Streaming anomaly detection with Apache Flink, Apache Kafka and PostgreSQL
+      - file: docs/tutorials/kafka-migration
+        title: Apache Kafka migration
+
