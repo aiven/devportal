@@ -168,6 +168,8 @@ You can create the Aiven for Apache Flink service with the following steps:
 
 6. Click **Create Service** under the summary on the right side of the console
 
+
+
 Integrate Aiven for Apache Flink service with sources and sinks
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
@@ -179,12 +181,22 @@ After creating the service, you'll be redirected to the service details page. Ap
 You can define the service integrations, in the Aiven for Apache Flink **Overview** tab, with the following steps:
 
 1. Click **Get started** on the banner at the top of the *Overview* page.
+
+   .. image:: /images/tutorials/anomaly-detection/flink-console-integration.png
+      :alt: Aiven for Apache Flink Overview tab, showing the **Get started** button
+
 2. Select **Aiven for Apache Kafka®** and then select the ``demo-kafka`` service.
 3. Click **Integrate**.
 4. Click the **+** icon under *Data Flow*.
 5. Check the **Aiven for PostgreSQL** checkbox in the `Aiven Data Services` section.
 6. Select **Aiven for PostgreSQL®** and then select the ``demo-postgresql`` service.
 7. Click **Integrate**.
+
+Once the above steps are completed, your **Data Flow** section should be similar to the below
+
+.. image:: /images/tutorials/anomaly-detection/flink-integrations-done.png
+      :alt: Aiven for Apache Flink Overview tab, showing the Integrations to Aiven for Apache Kafka and Aiven for PostgreSQL
+
 
 Set up the IoT metrics streaming dataset
 ----------------------------------------
@@ -201,8 +213,16 @@ You can create an authentication token with the following steps:
 1. Log in to the `Aiven web console <https://console.aiven.io/>`_.
 2. Click the user icon in the top-right corner of the page.
 3. Click **Authentication** tab and scroll down to *Authentication tokens*.
+
+   .. image:: /images/tutorials/anomaly-detection/auth-tokens.png
+      :alt: Aiven Console showing the authentication tokens
+
 4. Click the **Generate token** button.
 5. Enter a description (optional) and a time limit (optional) for the token. Leave the *Max age hours* field empty if you do not want the token to expire.
+   
+   .. image:: /images/tutorials/anomaly-detection/generate-token.png
+      :alt: Aiven Console showing the authentication tokens
+
 6. Click **Generate token**.
 7. Click the **Copy** icon or select and copy the access token.
 
@@ -311,8 +331,16 @@ If you feel brave, you can go ahead and try try yourself in the `Aiven Console <
 
 1. In the `Aiven Console <https://console.aiven.io/>`_, open the Aiven for Apache Flink service named ``demo-flink`` and go to the **Applications** tab.
 2. Click **Create new application** to create your Flink application.
+
+   .. image:: /images/tutorials/anomaly-detection/create-application.png
+      :alt: The Apache Flink **Application** tab with the **Create Application** button
+
 3. Name the new application ``filtering`` and click **Create application**
-4. In the **Add source tables** tab, create the source table (named ``CPU_IN``), pointing to the Apache Kafka® topic ````cpu_load_stats_real`` where the IoT sensor readings are stored, by clicking on **Create first version** and:
+
+   .. image:: /images/tutorials/anomaly-detection/filtering-application-name.png
+      :alt: The Apache Flink **Application** named ``filtering``
+
+4. In the **Add source tables** tab, create the source table (named ``CPU_IN``), pointing to the Apache Kafka® topic ``cpu_load_stats_real`` where the IoT sensor readings are stored, by clicking on **Create first version** and:
    
    * Select ``Aiven for Apache Kafka - demo-kafka`` as `Integrated service`
    * Paste the following SQL:
@@ -323,6 +351,11 @@ If you feel brave, you can go ahead and try try yourself in the `Aiven Console <
    .. Note::
         You can check that the columns are properly defined and aligned with the data in the Apache Kafka topic using the interactive query capability. You need to click on the **Run** icon below the SQL definition box.
 
+   Once created, the source table tab should look like the following:
+
+   .. image:: /images/tutorials/anomaly-detection/CPU_IN_source.png
+      :alt: Source table tab with ``CPU_IN`` table defined
+
 5. Navigate to the **Add sink table** tab
 6. Create the sink table (named ``CPU_OUT_FILTER``), pointing to a new Apache Kafka® topic named ``cpu_load_stats_real_filter`` where the readings exceeding the ``80%`` threshold will land, by:
 
@@ -332,6 +365,11 @@ If you feel brave, you can go ahead and try try yourself in the `Aiven Console <
 
      .. literalinclude:: /code/products/flink/basic_cpu-out-filter_table.md
          :language: sql
+
+   Once created, the sink table tab should look like the following:
+
+   .. image:: /images/tutorials/anomaly-detection/CPU_OUT_target.png
+      :alt: Sink table tab with ``CPU_OUT`` table defined
 
 
 7. Navigate to the **Create statement** tab.
@@ -350,6 +388,7 @@ If you feel brave, you can go ahead and try try yourself in the `Aiven Console <
 12. The new application deployment status will show **Initializing** and then **Running: version 1**.
 
 Once the application is running, you should start to see messages indicating hosts with high CPU loads in the ``cpu_load_stats_real_filter`` topic of your ``demo-kafka`` Apache Kafka service.
+
 
 .. Important::
     
