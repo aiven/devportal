@@ -556,7 +556,7 @@ entries:
           - file: docs/products/postgresql/reference/use-of-deprecated-tls-versions
             title: Use of deprecated TLS Versions
           - file: docs/products/postgresql/reference/log-formats-supported
-            title: Log formats supported
+            title: Supported log formats
 
   - file: docs/products/flink
     title: Apache Flink
