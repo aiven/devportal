@@ -5,6 +5,8 @@ Database monitoring with Datadog
 
 Datadog Database Monitoring allows you to view query metrics and explain plans in a single place, with the ability to drill into precise execution details, along with query and host metrics correlation.
 
+This article replaces the instruction on how to set up Datadog Database Monitoring for Aiven for PostgreSQL that used to be available in `Setting up PostgreSQL <https://docs.datadoghq.com/database_monitoring/setup_postgres/>`_.
+
 Prerequisites
 -------------
 To use Datadog Database Monitoring with your Aiven for PostgreSQL® services, you must perform the following steps: 
@@ -45,6 +47,8 @@ Using the ``avn service integration-list`` :ref:`Aiven CLI command <avn_service_
     "datadog_dbm_enabled": true
     }
     
+Executing the steps successfully results in enabling Datadog Database Monitoring for your service.
+
 .. seealso:: 
     - Learn more about :doc:`Datadog and Aiven </docs/integrations/datadog>`.
     - Learn more about `Datadog Deep Database Monitoring <https://www.datadoghq.com/product/database-monitoring/>`_ from their product page. 
