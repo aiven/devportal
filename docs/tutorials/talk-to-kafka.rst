@@ -343,7 +343,7 @@ Setting up access control lists (ACLs) for Karapace schema registry and REST pro
 For `local installation <https://www.karapace.io/install>`_, configuring ACL for schema registry and REST proxy is not a must.
 For this case, Karapace schema registry will be available on ``http://localhost:8081`` and Karapace REST will be available on ``http://localhost:8082``.
 
-For a managed Kafka service, you'll need to :doc:`configure ACL </docs/products/kafka/karapace/concepts/acl-definition>`_ for Karapace.
+For a managed Kafka service, you'll need to :doc:`configure ACL </docs/products/kafka/karapace/concepts/acl-definition>` for Karapace.
 
 For Aiven for Apache Kafka, once you enable Karapace schema registry and REST APIs, the ``avnadmin`` user automatically gets full access on both ACL for topic and ACL for schema registry.
 Let's add a new Kafka user and limit their access to the schema registry and REST APIs. From the **Users** tab, enter your preferred username (I'll use ``Dewan``) under *Create a service user* and click **Add service user**. 
