@@ -17,3 +17,11 @@ In case of **Apache Kafka®** and **OpenSearch®** the service DNS address resol
 .. Note:: 
 
     While the DNS name remains the same, the IP address it points to, will change during a maintenance break. To know more about static IP addresses, check the :doc:`related documentation <static-ips>`.
+
+
+Maintenance updates
+===================
+
+Updates are initially available as optional, once it reaches the 6 months mark it becomes mandatory.
+
+Once updates are set to be mandatory, these updates would be applied on the next week's maintenance window or after, which gives at least 7 days in advance with exception of critical security related updates would be applied in the maintenance of the current week.
