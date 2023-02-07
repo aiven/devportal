@@ -470,16 +470,12 @@ entries:
         - file: docs/products/kafka/kafka-mirrormaker/getting-started
         - file: docs/products/kafka/kafka-mirrormaker/concepts
           entries:
-          - file: docs/products/kafka/kafka-mirrormaker/concepts/disaster-recovery
+          - file: docs/products/kafka/kafka-mirrormaker/concepts/disaster-recovery-migration
             entries:
-            - file: docs/products/kafka/kafka-mirrormaker/concepts/disaster-recovery/migration-and-dr-high-level-approach
-              title: Migration and DR high level approach
             - file: docs/products/kafka/kafka-mirrormaker/concepts/disaster-recovery/active-active-setup
               title: Active-Active Setup
             - file: docs/products/kafka/kafka-mirrormaker/concepts/disaster-recovery/active-passive-setup
               title: Active-Passive Setup
-            - file: docs/products/kafka/kafka-mirrormaker/concepts/disaster-recovery/checklist
-              title: Checklist
           - file: docs/products/kafka/kafka-mirrormaker/concepts/replication-flow-topics-regex
           - file: docs/products/kafka/kafka-mirrormaker/concepts/known-bugs
           - file: docs/products/kafka/kafka-mirrormaker/concepts/mirrormaker2-tuning
