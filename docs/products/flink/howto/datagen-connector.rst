@@ -15,8 +15,7 @@ To configure DataGen as the source using the DataGen built-in connector for Apac
 
 3. In the **Create new version** screen, click **Add source tables**.
 4. Click **Add new table** or click **Edit** if you want to edit an existing source table. 
-5. In the **Add new source table** or **Edit source table** screen, select the Aiven for Apache Kafka® service as the integrated service. 
-6. In the **Table SQL** section, set the connector to **datagen** as shown in the example below:
+5. In the **Table SQL** section of the **Add new source table** or **Edit source table** screen,  set the connector to **datagen** as shown in the example below:
 
 ::
 
@@ -36,5 +35,5 @@ Where:
 .. note::
     For more information on the connector types and the requirements for each, see the articles on :doc:`Kafka connector types </docs/products/flink/concepts/kafka-connectors>` and :doc:`the requirements for each connector type </docs/products/flink/concepts/kafka-connector-requirements>`.
 
-7. In the **Add sink tables** screen, click the option to add a new sink table or edit an existing one.
-8. In the **Create statement** section, write the statement to test your SQL queries using random data. 
+6. In the **Add sink tables** screen, click the option to add a new sink table or edit an existing one.
+7. In the **Create statement** section, write the statement to test your SQL queries using random data. 
