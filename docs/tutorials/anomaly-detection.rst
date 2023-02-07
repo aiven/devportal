@@ -359,7 +359,7 @@ If you feel brave, you can go ahead and try try yourself in the `Aiven Console <
    You can check the if the source definition matches the data in the topic by clicking on the triangle next to **Run**, you should see the populated data
 
    .. image:: /images/tutorials/anomaly-detection/cpu_in_table_preview.png
-      :alt: The Apache Flink source definition with sql preview of the data
+      :alt: The Apache Flink source definition with SQL preview of the data
 
 
 
@@ -388,7 +388,7 @@ If you feel brave, you can go ahead and try try yourself in the `Aiven Console <
    If you're curious, you can preview the output of the transformation by clicking on the triangle next to the **Run** section, the *Create statement* window should be similar to the following image.
 
    .. image:: /images/tutorials/anomaly-detection/filtering-preview.png
-      :alt: The Apache Flink data transformation with sql preview of the data
+      :alt: The Apache Flink data transformation with SQL preview of the data
 
 9. Click **Save and deploy later**
 10. Click **Create deployment**. 
@@ -402,7 +402,7 @@ If you feel brave, you can go ahead and try try yourself in the `Aiven Console <
 Once the application is running, you should start to see messages indicating hosts with high CPU loads in the ``cpu_load_stats_real_filter`` topic of your ``demo-kafka`` Apache Kafka service.
 
 .. image:: /images/tutorials/anomaly-detection/filtering-topic-preview.png
-      :alt: The Apache Flink data transformation with sql preview of the data
+      :alt: The Apache Flink data transformation with SQL preview of the data
 
 
 .. Important::
