@@ -17,6 +17,7 @@ Overview
 
 Getting started with Apache Kafka can be simple as you download the binary and start the bootstrap server. However, getting a production-ready Kafka cluster stand up with security and high-availability is a different story. 
 If your goal is to use Kafka to benefit your application or data needs and NOT to learn Kafka administration, you can consider using `a managed Kafka service <https://aiven.io/kafka>`_.
+
 In this tutorial, we will learn how to create a highly available Apache Kafka service, go over the common tasks of producing and consuming messages, use a schema registry to manage your schemas and metadata, and finally use REST API to communicate with your Kafka service. 
 This tutorial will use Python programming language.
 Under the hood, the Python library will make use of the `Producer API <https://kafka.apache.org/documentation>`_ and the `Consumer API <https://kafka.apache.org/documentation>`_.
@@ -29,13 +30,13 @@ To get started, you'll need:
 - A Kafka service - either local or managed 
 - `Karapace <https://www.karapace.io/install>`_ installed (if you're using a local Kafka instance)
 - `Python installed <https://www.python.org/downloads/>`_
-- `Kafka-python <https://github.com/dpkp/kafka-python>`_ library installed
+- `Kafka-python <https://github.com/dpkp/kafka-python>`_ library installed, you can install it with the following command
 
-.. code:: bash
+  .. code:: bash
 
     pip install kafka-python
 
-If you already have a Kafka service, jump to :ref:`create-a-topic` section. 
+If you already have a Kafka service, jump to :ref:`tutorial-kaka-python-create-a-topic` section. 
 
 Else, `sign up for an Aiven account <https://console.aiven.io/signup>`_ and follow the tutorial to create a Kafka service on Aiven.
 
@@ -103,7 +104,7 @@ You can also use the `Aiven command line tool <https://docs.aiven.io/docs/tools/
 
 Details on the Aiven for Apache Kafka configuration can be found under the :ref:`kafka-tutorial-reference` section.
 
-.. _create-a-topic:
+.. _tutorial-kaka-python-create-a-topic:
 
 Create a topic
 ---------------
@@ -270,18 +271,18 @@ Observation
 You might have noticed ``key_deserializer``, ``key_serializer``, ``value_deserializer``, and ``value_serializer`` in these programs. Since Kafka brokers don't know about the records and only deal in bytes, the programs need to serialize 
 and deserialize data before making sense of them. 
 
-Once messages are produced, they are written to the single partition `p0` of `demo-topic`. All the messages will be consumed by the single consumer `co0` which is part of the single consumer group `consumer group A`. 
+Once messages are produced, they are written to the single partition ``p0`` of ``demo-topic``. All the messages will be consumed by the single consumer ``co0`` which is part of the single consumer group `consumer group A`. 
 
 Once you run one of the above consumer program ``python consumer.py``, you'll see the program running in the terminal but not doing anything!
 That's because the consumer instance is listening for messages and currently, there's no message to print out. 
 To see some action on this terminal, run the producer code in another terminal. You will see the same record appear on the producer program terminal.
 
-What would happen if there were two partitions in this case, `p0` and `p1`? In this case, messages would be published to partition randomly. The consumer `co0` would take a round robin approach when consuming messages from this topic.
+What would happen if there were two partitions in this case, ``p0`` and ``p1``? In this case, messages would be published to partition randomly. The consumer ``co0`` would take a round robin approach when consuming messages from this topic.
 
 1 topic : 1 partition : 2 consumers : 1 consumer group
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Let's take a look at this setup where there are two consumers. `co0` and `co1` are registered to the same `consumer group A`. 
+Let's take a look at this setup where there are two consumers. ``co0`` and ``co1`` are registered to the same `consumer group A`. 
 
 In this setup, one consumer will be sitting idle. This highlights an important concept in Kafka - records are processed in parallel and same partition cannot be assigned to multiple consumers in the same consumer group.
 
@@ -301,7 +302,7 @@ In this setup, one consumer will be sitting idle. This highlights an important c
         end
         p0 -->co0 
 
-If the first consumer `co0` crashes for some reason, the other consumer `co1` in the consumer group will begin consuming messages from the last committed offset of the partition. 
+If the first consumer ``co0`` crashes for some reason, the other consumer ``co1`` in the consumer group will begin consuming messages from the last committed offset of the partition. 
 
 .. mermaid::
     
@@ -342,16 +343,16 @@ Setting up access control lists (ACLs) for Karapace schema registry and REST pro
 For `local installation <https://www.karapace.io/install>`_, configuring ACL for schema registry and REST proxy is not a must.
 For this case, Karapace schema registry will be available on ``http://localhost:8081`` and Karapace REST will be available on ``http://localhost:8082``.
 
-For a managed Kafka service, you'll need to `configure ACL <https://docs.aiven.io/docs/products/kafka/karapace/concepts/acl-definition>`_ for Karapace.
+For a managed Kafka service, you'll need to :doc:`configure ACL </docs/products/kafka/karapace/concepts/acl-definition>`_ for Karapace.
 
 For Aiven for Apache Kafka, once you enable Karapace schema registry and REST APIs, the ``avnadmin`` user automatically gets full access on both ACL for topic and ACL for schema registry.
-Let's add a new Kafka user and limit their access to the schema registry and REST APIs. From the **Users** tab, enter your preferred username (I'll use **Dewan**) under *Create a service user* and click **Add service user**. 
+Let's add a new Kafka user and limit their access to the schema registry and REST APIs. From the **Users** tab, enter your preferred username (I'll use ``Dewan``) under *Create a service user* and click **Add service user**. 
 
 From the Aiven for Apache Kafka service page, navigate to the Access Control List (ACL) tab.
 With the schema registry and REST APIs enabled, you'll see two tabs: **ACL For Topic** and **ACL For Schema Registry**.
 
-Click **Add entry** from either of these tabs. For **ACL For Topic**, add *Username* (**dewan** in my case), add *Topic* (**demo-topic** for this example), and select permission level from the drop-down (I'll select **Consume** for read-only access). 
-Switch to **ACL For Schema Registry** where you use the same *Username* (**dewan** in my case), add **Subject:demo-topic** as the *Resource*, and **Read** as the *permission*. 
+Click **Add entry** from either of these tabs. For **ACL For Topic**, add *Username* (``dewan`` in my case), add *Topic* (``demo-topic`` for this example), and select permission level from the drop-down (I'll select **Consume** for read-only access). 
+Switch to **ACL For Schema Registry** where you use the same *Username* (``dewan`` in my case), add **Subject:demo-topic** as the *Resource*, and **Read** as the *permission*. 
 
 How to use Karapace Schema Registry
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -387,7 +388,7 @@ Once you execute the above command, you'll receive the following response:
 
     {"message": "Forbidden"}
 
-This is because the user **Dewan** has ``schema_registry_read`` access but the above curl command was making a write (POST) request.
+This is because the user ``Dewan`` has ``schema_registry_read`` access but the above curl command was making a write (POST) request.
 
 Let's retry the command using the admin (``avnadmin``) user.
 
