@@ -31,7 +31,7 @@ The data migration will be performed using :doc:`MirrorMaker 2 </docs/products/k
 
 .. Warning:: 
 
-  MirrorMaker 2 provides an **asynchrounous** replication across clusters. Therefore, to perform a successful migration avoiding data loss, you need to ensure that the replication lag is 0 before pointing the new producers and consumers to the target Kafka environment. More information in the :ref:`monitor the MirrorMaker 2 replication flow lag <tutorial_kafka_migration_replication_flow_lag>` section.
+  MirrorMaker 2 provides an **asynchronous** replication across clusters. Therefore, to perform a successful migration avoiding data loss, you need to ensure that the replication lag is 0 before pointing the new producers and consumers to the target Kafka environment. More information in the :ref:`monitor the MirrorMaker 2 replication flow lag <tutorial_kafka_migration_replication_flow_lag>` section.
 
 
 Prerequisites
