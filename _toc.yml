@@ -477,7 +477,6 @@ entries:
             - file: docs/products/kafka/kafka-mirrormaker/concepts/disaster-recovery/active-passive-setup
               title: Active-Passive Setup
           - file: docs/products/kafka/kafka-mirrormaker/concepts/replication-flow-topics-regex
-          - file: docs/products/kafka/kafka-mirrormaker/concepts/known-bugs
           - file: docs/products/kafka/kafka-mirrormaker/concepts/mirrormaker2-tuning
           
         - file: docs/products/kafka/kafka-mirrormaker/howto

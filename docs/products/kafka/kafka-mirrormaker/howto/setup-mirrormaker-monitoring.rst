@@ -21,3 +21,19 @@ Once the integration is created the Apache Kafka MirrorMaker 2 metrics will flow
 
 .. image:: /images/products/kafka/kafka-mirrormaker/grafana-mirrormaker2-lag.png
    :alt: Grafana® Dashboard showing MirrorMaker 2 replica lag per topic
+
+
+Other methods to monitor the replication
+----------------------------------------
+
+* :doc:`JMX </docs/platform/howto/integrations/access-jmx-metrics-jolokia>` metric ``jmx.kafka.connect.mirror.record_count`` shows number of records replicated.
+  
+* Monitor the latest messages from all partitions.  
+   An example using ``kt`` and ``jq``:
+
+::
+
+    kt consume -auth ./kafka.conf -brokers service-project.aivencloud.com:24949 \
+    -topic topicname -offsets all=newest:newest | \
+    jq -c -s 'sort_by(.partition) | .[] | \
+    {partition: .partition, value: .value, timestamp: .timestamp}'
