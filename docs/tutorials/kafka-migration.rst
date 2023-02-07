@@ -152,12 +152,12 @@ The :doc:`Aiven for Apache Kafka MirrorMaker 2 </docs/products/kafka/kafka-mirro
    .. image:: /images/tutorials/kafka-migration/service-integrations.png
       :alt: Aiven Console, *Service integration* section and **Manage integrations** button
 
-4. Select **Apache Kafka MirrorMaker**.
+4. Select **Apache Kafka MirrorMaker** 2.
 
    .. image:: /images/tutorials/kafka-migration/list-integrations.png
       :alt: Aiven Console, list of available integrations
 
-5. In the *Which Apache Kafka MirrorMaker 2 service would you like to use for ``demo-kafka`` section, select **New Service** and click on **Continue**
+5. In the *Which Apache Kafka MirrorMaker 2 service would you like to use for ``demo-kafka``* section, select **New Service** and click on **Continue**
 
 6. Give the new service the ``demo-mm2`` name, select the cloud provider, region, and service plan. Then click on **Continue**
 
