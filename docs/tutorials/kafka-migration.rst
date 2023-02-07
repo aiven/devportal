@@ -11,7 +11,7 @@ Follow this tutorial and you'll learn all the steps involved in an Apache KafkaÂ
 * How to migrate Apache Kafka topic schemas
 * How to migrate Apache Kafka ACLs (Access Control Lists)
 * How to migrate Apache Kafka consumer group offsets
-* How to migrate clients and connectors
+* How to migrate Apache Kafka clients and connectors
 
 
 What are you going to build
