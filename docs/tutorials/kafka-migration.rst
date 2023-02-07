@@ -17,7 +17,7 @@ Follow this tutorial and you'll learn all the steps involved in an Apache KafkaÂ
 What are you going to build
 ---------------------------
 
-This tutorial is aimed at providing you all the steps to perform an Apache Kafka migration. It being between on-premises systems or from/to a managed or self-hosted Apache Kafka cluster, the tutorial provides a set of checks, actions and processes to follow to perform a complete migration. Despite the step descibed being generic, the tutorial will showcase an example on how to migrate to :doc:`Aiven for Apache Kafka </docs/products/kafka>`.
+This tutorial is aimed at providing you all the steps to perform an Apache Kafka migration. It being between on-premises systems or from/to a managed or self-hosted Apache Kafka cluster, the tutorial provides a set of checks, actions and processes to follow to perform a complete migration. Despite the step described being generic, the tutorial will showcase an example on how to migrate to :doc:`Aiven for Apache Kafka </docs/products/kafka>`.
 
 The data migration will be performed using :doc:`MirrorMaker 2 </docs/products/kafka/kafka-mirrormaker>`, a fully managed distributed Apache KafkaÂ® data replication utility.
 
@@ -55,8 +55,8 @@ The exact migration steps can vary, depending on the peculiar usage of the exist
 
     As part of the connectivity check you also need to ensure:
         
-    * That the **connection bandwidh** is enough to sync the data between environments
-    * That the needed networking setups are available in the target Apache Kafka cluster, some examples on how to define custom newtorking setups on Aiven:
+    * That the **connection bandwidth** is enough to sync the data between environments
+    * That the needed networking setups are available in the target Apache Kafka cluster, some examples on how to define custom networking setups on Aiven:
         * :doc:`Firewalls/security groups </docs/platform/concepts/cloud-security>`
         * :doc:`VPC peering </docs/platform/howto/manage-vpc-peering>`
         * :doc:`Privatelink </docs/platform/howto/use-aws-privatelinks>`
@@ -138,7 +138,7 @@ Now that your service is created, you need to customise its functionality. In th
 
 3. **Broker Configuration**: ensure you apply all the needed :doc:`advanced configuration </docs/products/kafka/reference/advanced-params>` to the target Apache Kafka cluster.
 4. **Enable SASL** (optional): you can enable :doc:`SASL </docs/products/kafka/howto/kafka-sasl-auth>` via the dedicated configuration option
-5. **VPC peering** (optional): if you need to deploy the Apache Kafka service within a VPC, you cna follow the :doc:`related documentation </docs/platform/howto/migrate-services-vpc>`
+5. **VPC peering** (optional): if you need to deploy the Apache Kafka service within a VPC, you can follow the :doc:`related documentation </docs/platform/howto/migrate-services-vpc>`
 
 Create an Aiven for Apache Kafka MirrorMaker 2 service
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -157,7 +157,7 @@ The :doc:`Aiven for Apache Kafka MirrorMaker 2 </docs/products/kafka/kafka-mirro
    .. image:: /images/tutorials/kafka-migration/list-integrations.png
       :alt: Aiven Console, list of available integrations
 
-5. In the *Which Apache Kafka MirrorMaker service would you like to use for demo-kafka?* section, select **New Service** and click on **Continue**
+5. In the *Which Apache Kafka MirrorMaker 2 service would you like to use for ``demo-kafka`` section, select **New Service** and click on **Continue**
 
 6. Give the new service the ``demo-mm2`` name, select the cloud provider, region, and service plan. Then click on **Continue**
 
