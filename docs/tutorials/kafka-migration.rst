@@ -157,7 +157,7 @@ The :doc:`Aiven for Apache Kafka MirrorMaker 2 </docs/products/kafka/kafka-mirro
    .. image:: /images/tutorials/kafka-migration/list-integrations.png
       :alt: Aiven Console, list of available integrations
 
-5. In the *Which Apache Kafka MirrorMaker 2 service would you like to use for ``demo-kafka``* section, select **New Service** and click on **Continue**
+5. In the new window popup, select the **New Service** option and click on **Continue**
 
 6. Give the new service the ``demo-mm2`` name, select the cloud provider, region, and service plan. Then click on **Continue**
 
@@ -206,7 +206,9 @@ Once the steps are done, you should be able to see the two aliases ``kafka-sourc
     :alt: Aiven Console, MirrorMaker 2 source and target integration enabled
 
 Start the MirrorMaker 2 replication flow
-'''''''''''''''''''''''''''''''''''''''''''''''''''
+''''''''''''''''''''''''''''''''''''''''
+
+In the previous steps you defined MirrorMaker 2 source and target aliases. Now it's time to define the replication flow.
 
 
 
