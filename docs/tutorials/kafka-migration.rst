@@ -205,5 +205,10 @@ Once the steps are done, you should be able to see the two aliases ``kafka-sourc
 .. image:: /images/tutorials/kafka-migration/source-target-integration-enabled.png
     :alt: Aiven Console, MirrorMaker 2 source and target integration enabled
 
+Start the MirrorMaker 2 replication flow
+'''''''''''''''''''''''''''''''''''''''''''''''''''
+
+
+
 
 
