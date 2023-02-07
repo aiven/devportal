@@ -1,5 +1,5 @@
-Apache Kafka® migration
-=======================
+Apache Kafka® migration using MirrorMaker 2
+===========================================
 
 What you will learn
 ---------------------------
