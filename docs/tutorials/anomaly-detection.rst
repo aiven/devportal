@@ -356,6 +356,13 @@ If you feel brave, you can go ahead and try try yourself in the `Aiven Console <
    .. image:: /images/tutorials/anomaly-detection/CPU_IN_source.png
       :alt: Source table tab with ``CPU_IN`` table defined
 
+   You can check the if the source definition matches the data in the topic by clicking on the triangle next to **Run**, you should see the populated data
+
+   .. image:: /images/tutorials/anomaly-detection/cpu_in_table_preview.png
+      :alt: The Apache Flink source definition with sql preview of the data
+
+
+
 5. Navigate to the **Add sink table** tab
 6. Create the sink table (named ``CPU_OUT_FILTER``), pointing to a new Apache Kafka® topic named ``cpu_load_stats_real_filter`` where the readings exceeding the ``80%`` threshold will land, by:
 
@@ -378,6 +385,11 @@ If you feel brave, you can go ahead and try try yourself in the `Aiven Console <
    .. literalinclude:: /code/products/flink/basic_job.md
       :language: sql
 
+   If you're curious, you can preview the output of the transformation by clicking on the triangle next to the **Run** section, the *Create statement* window should be similar to the following image.
+
+   .. image:: /images/tutorials/anomaly-detection/filtering-preview.png
+      :alt: The Apache Flink data transformation with sql preview of the data
+
 9. Click **Save and deploy later**
 10. Click **Create deployment**. 
 11. Accept the default deployment parameters and click on **Deploy without a savepoint**
@@ -388,6 +400,9 @@ If you feel brave, you can go ahead and try try yourself in the `Aiven Console <
 12. The new application deployment status will show **Initializing** and then **Running: version 1**.
 
 Once the application is running, you should start to see messages indicating hosts with high CPU loads in the ``cpu_load_stats_real_filter`` topic of your ``demo-kafka`` Apache Kafka service.
+
+.. image:: /images/tutorials/anomaly-detection/filtering-topic-preview.png
+      :alt: The Apache Flink data transformation with sql preview of the data
 
 
 .. Important::
@@ -590,6 +605,9 @@ To create the notification data pipeline, you can go ahead an try yourself or fo
 13. The new application deployment status will show **Initializing** and then **Running: version 1**.
 
 When the application  is running, you should start to see notifications about the IoT devices having CPU usage going over the defined thresholds in the Slack channel.
+
+.. image:: /images/tutorials/anomaly-detection/slack-notifications.png
+      :alt: A list of Slack notifications driven by the anomaly detection data pipeline
 
 .. Important::
 
