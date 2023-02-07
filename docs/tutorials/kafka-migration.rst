@@ -8,9 +8,9 @@ Follow this tutorial and you'll learn all the steps involved in an Apache KafkaÂ
 
 * What are the prerequisites? What should you pay attention to, before migrating?
 * How to sync data with MirrorMaker 2
-* How to migrate schemas
-* How to migrate ACLs (Access Control Lists)
-* How to migrate Consumer group offsets
+* How to migrate Apache Kafka topic schemas
+* How to migrate Apache Kafka ACLs (Access Control Lists)
+* How to migrate Apache Kafka consumer group offsets
 * How to migrate clients and connectors
 
 
@@ -205,12 +205,141 @@ Once the steps are done, you should be able to see the two aliases ``kafka-sourc
 .. image:: /images/tutorials/kafka-migration/source-target-integration-enabled.png
     :alt: Aiven Console, MirrorMaker 2 source and target integration enabled
 
+.. Warning::
+
+  In case of any connection problem to the source or target Apache Kafka cluster, you'll be able to see the following error message in the MirrorMaker 2 service overview page
+
+  .. image:: /images/tutorials/kafka-migration/error-connection.png
+    :alt: Aiven Console, MirrorMaker 2 service overview, error message stating that the connectio to a target Kafka service is not working
+
 Start the MirrorMaker 2 replication flow
 ''''''''''''''''''''''''''''''''''''''''
 
 In the previous steps you defined MirrorMaker 2 source and target aliases. Now it's time to define the replication flow.
 
+You first need to identify the set of topics you want to migrate to the new cluster, and create a :doc:`Java regular expression </docs/products/kafka/kafka-mirrormaker/concepts/replication-flow-topics-regex>` that includes them. As example, if you want to migrate all the topics starting with ``customer.`` your regular expression will be ``customer\..*``.
+
+.. Tip::
+
+  You can list both topics to be included and excluded in the allowlist and stoplist
+
+
+You can create a MirrorMaker 2 replication flow in the `Aiven Console <https://console.aiven.io/>`__ with:
+
+#. Navigate to the ``demo-mm2`` service page
+#. Click on the **Replication Flows** tab
+#. Click on **Create replication flow**
+#. Fill in the replication flow details:
+
+   * **Source cluster**: ``kafka-source`` - the alias defined for the source Kafka cluster
+   * **Target cluster**: ``kafka-target`` - the alias defined for the target Aiven for Apache Kafka cluster
+   * **Topics**: the :doc:`Java regular expression </docs/products/kafka/kafka-mirrormaker/concepts/replication-flow-topics-regex>` defining which topics to include. E.g. ``customer\..*`` to include all topics starting with ``customer.``
+   * **Topics blacklist**: the :doc:`Java regular expression </docs/products/kafka/kafka-mirrormaker/concepts/replication-flow-topics-regex>` defining which topics to exclude. E.g. ``inventory\..*`` to exclude all topics starting with ``inventory.``
+   * **Sync group offset**: to define whether to sync the topic containing the consumer group offset
+   * **Sync interval in seconds**: to define the frequency of the sync
+   * **Offset syncs topic location**: to provide offset translation, MirrorMaker2 uses the ``mm2-offset-syncs`` topic, that can be located either in the source or sink cluster
+   * **Replication policy class**: controls the prefix when replicating topics. ``DefaultReplicationPolicy`` sets the topic name in the target kafka service as ``source_cluster_alias.topic_name`` (prefixing the topic name with the source cluster alias), while ``IdentityReplicationPolicy`` sets the target topic name equal to the source topic name.
+   * **Emit heartbeats enabled**: allow MirrorMaker 2 to emit heartbeats to keep the connection open even in cases where no messages are replicated
+   * **Enable**: to enable the data sync job
+
+   The following represent an example of a replication flow setting
+
+   .. image:: /images/tutorials/kafka-migration/replication-flow-details.png
+    :alt: Aiven Console, replication flow details
+
+   .. Warning::
+
+    Before starting the replication flow, you might want to manually create the topics in the target Kafka cluster. MirrorMaker 2 replication flow will **not** recreate topics with the same configuration options. This step is specifically important if the topic needs to be :doc:`compacted </docs/products/kafka/concepts/log-compaction>` or if some settings (like partitioning) are key for the correct working of the data pipeline.
+
+#. Click on **Create**
+
+Once you followed all the above steps you should see the replication flow being enabled 
+
+.. image:: /images/tutorials/kafka-migration/replication-flow-enabled.png
+    :alt: Aiven Console, MirrorMaker 2 replication flow enabled
+
+And, browsing the target ``demo-kafka`` service, you should see the topics being replicated. The following image shows the replication (using the ``DefaultReplicationPolicy``) of the ``kafka-source.customer.clicks`` and ``kafka-source.customer.purchased`` topics together with MirrorMakers 2 internal topics
+
+.. image:: /images/tutorials/kafka-migration/replicated-topics.png
+    :alt: Aiven Console, target Aiven for Apache Kafka with the replicated ``kafka-source.customer.clicks`` and ``kafka-source.customer.purchased`` topics
+
+Monitor the MirrorMaker 2 replication flow lag
+''''''''''''''''''''''''''''''''''''''''''''''''
+
+After starting the replication flow, MirrorMaker 2 will start moving data between the source and target Kafka clusters. To measure how the replication is performing you might want to check the replication lag: the delay in synchronization between the source and target Apache Kafka cluster. Once the lag metric is `0`, the two Apache Kafka clusters are in sync.
+
+You can review how to create services integrations here. 
+
+The metric you want to track is called ``kafka_mirrormaker_summary.replication_lag``. The image below showcases a GrafanaÂ® dashboard showing the mean MirrorMaker 2 replication lag trending to ``0``.
+
+
+.. image:: /images/tutorials/kafka-migration/mirrormaker-replication-lag.png
+    :alt: Grafana dashboard showing the ``kafka_mirrormaker_summary.replication_lag`` metric
+
+Migrate topic schemas
+---------------------
+
+Apache Kafka topics schemas define the structure of the data in certain topics. They can be migrated in two different methods:
+
+#. by replicating the schemas topic stored in Apache Kafka (usually located in the ``_schemas`` topic)
+#. by extracting the schema information from the source and registering in the target environment using the appropriate APIs
+
+The second option offers much more control over what schemas are migrated. To register the schemas in an Aiven for Apache Kafka service you can:
+
+* Navigate in the `Aiven Console <https://console.aiven.io/>`__, service page, **Schemas** tab
+* Use the `Karapace rest APIs <https://api.aiven.io/doc/#tag/Service:_Kafka/operation/ServiceSchemaRegistrySubjectVersionPost>`_
+* Use :doc:`Aiven command line interface </docs/tools/cli>`
+
+
+Migrate Access Control List
+---------------------------
+
+Apache Kafka Access Control Lists (ACLs) define how various users can interact with the topics and schemas. To migrate ACLs we recommend to extract the ACL definition from the source Apache Kafka cluster and recreate them in the target cluster. 
+
+If the target of the migration is Aiven for Apache Kafka you can define the ACLs with:
+
+* the `Aiven Console <https://console.aiven.io/>`__, service page, **Access Control Lists (ACL)** tab 
+* the dedicated `Aiven REST API <https://api.aiven.io/doc/#tag/Service:_Kafka/operation/ServiceKafkaAclAdd>`__
+* the dedicated :doc:`Aiven CLI command </docs/tools/cli/service/acl>`
+
+
+Change clients settings
+-----------------------
+
+After the replication flow is running, with the schemas and ACLs are in place, you can then start repoint producers and consumers to the target Apache Kafka cluster. 
+
+.. Warning::
+
+  To avoid any Apache Kafka messages to be lost during the async migration performed with MirrorMaker 2, it is suggested to stop the producers, check that both the consumer lag in the source system and the MirrorMaker 2 replication lag is ``0`` and then repoint producers and consumers to the target Apache Kafka cluster. 
+  
+  The :ref:`migration process <tutorial_kafka_migration_migration_process>` provides a detailed series of steps to follow.
+
+If the target of the migration is Aiven for Apache Kafka, you can find how to download the required certificates and connect as producer or consumer in the :doc:`dedicated documentation </docs/products/kafka/howto/list-code-samples>`.
 
 
 
+.. _tutorial_kafka_migration_migration_process:
 
+Complete migration process
+--------------------------
+
+The following diagram showcases all the steps included in an Apache Kafka migration process.
+
+.. mermaid::
+
+    graph TD;
+
+        id1(Start Migration process)-->id2(Create target Apache Kafka service);
+        id2-->id3(Create Apache Kafka topics in the target cluster);
+        id3-->id4(Create Apache Kafka schemas in the target cluster);
+        id4-->id5(Create Apache Kafka ACLs in the target cluster);
+        id5-->id6(Create source Apache Kafka cluster endpoint);
+        id6-->id7(Create Apache Kafka MirrorMaker 2 service);
+        id7-->id8(Define MirrorMaker 2 aliases for source and target Apache Kafka clusters);
+        id8-->id9(Stop Apache Kafka producers on the original Apache Kafka cluster);
+        id9-->id10(Wait for consumer lag to go to 0 in the original Apache Kafka cluster);
+        id10-->id11(Wait for MirrorMaker 2 replication lag to go to 0);
+        id11-->id12(Stop consumers in the source Apache Kafka cluster);
+        id12-->id13(Point consumers to the target Apache Kafka cluster and start them);
+        id13-->id14(Point producers to the target Apache Kafka cluster and start them);
+        id14-->id15(End Migration process);
