@@ -141,9 +141,9 @@ You can create the Aiven for PostgreSQL database with the following steps:
 
 4. Select the cloud provider and region that you want to run your service on.
 
-5. Select `hobbyist` as service plan.
+5. Select `Startup-4` as service plan.
 
-5. Enter ``demo-posgresql`` as name for your service.
+5. Enter ``demo-postgresql`` as name for your service.
 
 6. Click **Create Service** under the summary on the right side of the console
 
