@@ -45,7 +45,7 @@ The ``application_properties`` parameter should contain the following common pro
   * - ``application_version``
     - (Optional)The version of the application
 
-Example: Creates an Aiven for Apache Flink application named ``DemoApp`` in the service ``flink-democli`` and project ``my-project``. 
+**Example:** Creates an Aiven for Apache Flink application named ``DemoApp`` in the service ``flink-democli`` and project ``my-project``. 
 
 ::
 
@@ -68,7 +68,7 @@ Lists all the Aiven for Apache Flink® applications in a specified project and s
   * - ``service_name``
     - The name of the service
 
-Example: Lists all the Aiven for Flink applications for the service ``flink-democli`` in the project ``my-project``. 
+**Example:** Lists all the Aiven for Flink applications for the service ``flink-democli`` in the project ``my-project``. 
 
 ::
 
@@ -91,7 +91,7 @@ Retrieves the information about the Aiven for Flink® applications in a specifie
   * - ``application-id``
     - The ID of the Aiven for Flink application to retrieve information about. 
 
-Example: Retrieves information about Aiven for Flink® application with application-id ``2a3841a3-bb04-4b74-b112-039af0fa0cbe`` for service ``flink-democli`` and project ``my-project`` 
+**Example:** Retrieves information about Aiven for Flink® application with application-id ``2a3841a3-bb04-4b74-b112-039af0fa0cbe`` for service ``flink-democli`` and project ``my-project`` 
 
 ::
   
@@ -129,7 +129,7 @@ The ``application_properties`` parameter should contain the following common pro
   * - ``name``
     -  The name of the application
 
-Example: Updates the name of the Aiven for Flink application from ``Demo`` to ``DemoApp`` for application-id ``986b2d5f-7eda-480c-bcb3-0f903a866222`` in the service ``flink-democli`` and project ``my-project``. 
+**Example:** Updates the name of the Aiven for Flink application from ``Demo`` to ``DemoApp`` for application-id ``986b2d5f-7eda-480c-bcb3-0f903a866222`` in the service ``flink-democli`` and project ``my-project``. 
 ::
   
   avn  service flink update-application --project my-project flink-democli --application-id 986b2d5f-7eda-480c-bcb3-0f903a866222  "{\"name\":\"DemoApp\"}"
@@ -153,7 +153,7 @@ Delete an Aiven for Flink® application in a specified project and service.
   * - ``application-id``
     - The ID of the Aiven for Flink application to delete 
 
-Example: Deletes the Aiven for Flink application with application-id  ``64192db8-d073-4e28-956b-82c71b016e3e`` for the service ``flink-democli`` in the project ``my-project``. 
+**Example:** Deletes the Aiven for Flink application with application-id  ``64192db8-d073-4e28-956b-82c71b016e3e`` for the service ``flink-democli`` in the project ``my-project``. 
 
 ::
   
@@ -203,7 +203,12 @@ The ``application_version_properties`` parameter should contain the following co
   * - ``statement``
     -  The transformation SQL statement of the application
 
-Example: 
+**Example:** Creates a new Aiven for Flink application version for application-id ``986b2d5f-7eda-480c-bcb3-0f903a866222``. 
+
+::
+  
+  avn service flink create-application-version --project my-project flink-democli --application-id 986b2d5f-7eda-480c-bcb3-0f903a866222  "{  \"sinks\": [ { \"create_table\": \"CREATE TABLE pizza_orders (id INT, shop VARCHAR, name VARCHAR, phoneNumber VARCHAR, address VARCHAR, pizzas ARRAY<ROW(pizzaName VARCHAR, additionalToppings ARRAY <VARCHAR>)>) WITH ('connector' = 'kafka', 'properties.bootstrap.servers' = '', 'scan.startup.mode' = 'earliest-offset', 'topic' = 'pizza_orders', 'value.format' = 'json')\", \"integration_id\": \"4ec23427-9e9f-4827-90fa-ea9e38c31bc3\" } ], \"sources\": [ { \"create_table\": \"CREATE TABLE special_orders (\tid INT, \tname VARCHAR, \ttopping VARCHAR) WITH ('connector' = 'kafka', 'properties.bootstrap.servers' = '', 'scan.startup.mode' = 'earliest-offset', 'value.fields-include' = 'ALL', 'topic' = 'special_orders', 'value.format' = 'json')\", \"integration_id\": \"4ec23427-9e9f-4827-90fa-ea9e38c31bc3\" } ], \"statement\": \"INSERT INTO special_orders SELECT id, name, c.topping FROM pizza_orders CROSS JOIN UNNEST(pizzas) b CROSS JOIN UNNEST(b.additionalToppings) AS c(topping) WHERE c.topping IN ('🍍 pineapple', '🍓 strawberry','🍌 banana')\"}"
+
 
 
 
@@ -252,7 +257,12 @@ The ``application_version_properties`` parameter should contain the following co
     -  The transformation SQL statement of the application
 
 
-Example: 
+**Example:** Validates the Aiven for Flink application version for the application-id ``986b2d5f-7eda-480c-bcb3-0f903a866222``. 
+
+::
+  
+  avn service flink validate-application-version --project dev-sandbox flink-democli-harshini --application-id 986b2d5f-7eda-480c-bcb3-0f903a866222  "{  \"sinks\": [ { \"create_table\": \"CREATE TABLE pizza_orders (id INT, shop VARCHAR, name VARCHAR, phoneNumber VARCHAR, address VARCHAR, pizzas ARRAY<ROW(pizzaName VARCHAR, additionalToppings ARRAY <VARCHAR>)>) WITH ('connector' = 'kafka', 'properties.bootstrap.servers' = '', 'scan.startup.mode' = 'earliest-offset', 'topic' = 'pizza_orders', 'value.format' = 'json')\", \"integration_id\": \"4ec23427-9e9f-4827-90fa-ea9e38c31bc3\" } ], \"sources\": [ { \"create_table\": \"CREATE TABLE special_orders (\tid INT, \tname VARCHAR, \ttopping VARCHAR) WITH ('connector' = 'kafka', 'properties.bootstrap.servers' = '', 'scan.startup.mode' = 'earliest-offset', 'value.fields-include' = 'ALL', 'topic' = 'special_orders', 'value.format' = 'json')\", \"integration_id\": \"4ec23427-9e9f-4827-90fa-ea9e38c31bc3\" } ], \"statement\": \"INSERT INTO special_orders SELECT id, name, c.topping FROM pizza_orders CROSS JOIN UNNEST(pizzas) b CROSS JOIN UNNEST(b.additionalToppings) AS c(topping) WHERE c.topping IN ('🍍 pineapple', '🍓 strawberry','🍌 banana')\"}"
+
 
 ``avn service flink get-application-version``
 ''''''''''''''''''''''''''''''''''''''''''''''
@@ -274,7 +284,7 @@ Retrieves information about a specific version of an Aiven for Flink® applicati
     - The ID of the Aiven for Flink application version to retrieve information about
 
 
-Example: Retrieves the information specific to the Aiven for Flink® application with application version id ``7a1c6266-64da-4f6f-a8b0-75207f997c8d``, and application id ``986b2d5f-7eda-480c-bcb3-0f903a866222`` for service ``flink-demo-cli`` and project ``my-project``. 
+**Example:** Retrieves the information specific to the Aiven for Flink® application with application version id ``7a1c6266-64da-4f6f-a8b0-75207f997c8d``, and application id ``986b2d5f-7eda-480c-bcb3-0f903a866222`` for service ``flink-demo-cli`` and project ``my-project``. 
 
 ::
   
@@ -301,7 +311,7 @@ Deletes a version of the Aiven for Flink® application in a specified project an
     - The ID of the Aiven for Flink application version to delete
 
 
-Example: Delete the Aiven for Flink application version with application version id ``7a1c6266-64da-4f6f-a8b0-75207f997c8d``, and application id ``986b2d5f-7eda-480c-bcb3-0f903a866222`` for service ``flink-demo-cli`` and project ``my-project``. 
+**Example:** Delete the Aiven for Flink application version with application version id ``7a1c6266-64da-4f6f-a8b0-75207f997c8d``, and application id ``986b2d5f-7eda-480c-bcb3-0f903a866222`` for service ``flink-demo-cli`` and project ``my-project``. 
 
 ::
   
@@ -325,7 +335,7 @@ Lists all the Aiven for Flink® application deployments in a specified project a
   * - ``application-id``
     - The ID of the Aiven for Flink application
 
-Example: Lists all the Aiven for Flink application deployments for application-id ``f171af72-fdf0-442c-947c-7f6a0efa83ad`` for the service ``flink-democli``, in the project ``my-project``. 
+**Example:** Lists all the Aiven for Flink application deployments for application-id ``f171af72-fdf0-442c-947c-7f6a0efa83ad`` for the service ``flink-democli``, in the project ``my-project``. 
 
 ::
   
@@ -352,7 +362,7 @@ Retrieves information about an Aiven for Flink® application deployment in a spe
     - The ID of the Aiven for Flink application deployment. This ID can be obtained from the output of the ``avn service flink list-application-deployments`` command
 
 
-Example: Retrieves the details of the Aiven for Flink application deployment for the application-id ``f171af72-fdf0-442c-947c-7f6a0efa83ad``, deployment-id ``bee0b5cb-01e7-49e6-bddb-a750caed4229`` for the service ``flink-democli``, in the project ``my-project``. 
+**Example:** Retrieves the details of the Aiven for Flink application deployment for the application-id ``f171af72-fdf0-442c-947c-7f6a0efa83ad``, deployment-id ``bee0b5cb-01e7-49e6-bddb-a750caed4229`` for the service ``flink-democli``, in the project ``my-project``. 
 
 ::
   
@@ -397,7 +407,7 @@ The ``deployment_properties`` parameter should contain the following common prop
   * - ``version_id``
     - The ID of the application version. 
 
-Example: Create a new Aiven for Flink application deployment for the application id ``986b2d5f-7eda-480c-bcb3-0f903a866222``.
+**Example:** Create a new Aiven for Flink application deployment for the application id ``986b2d5f-7eda-480c-bcb3-0f903a866222``.
 
 ::
 
@@ -423,7 +433,7 @@ Deletes an Aiven for Flink® application deployment in a specified project and s
   * - ``deployment-id``
     - The ID of the Aiven for Flink® application deployment to delete
 
-Example: Deletes the Aiven for Flink application deployment with application-id ``f171af72-fdf0-442c-947c-7f6a0efa83ad`` and deployment-id ``6d5e2c03-2235-44a5-ab8f-c544a4de04ef``.
+**Example:** Deletes the Aiven for Flink application deployment with application-id ``f171af72-fdf0-442c-947c-7f6a0efa83ad`` and deployment-id ``6d5e2c03-2235-44a5-ab8f-c544a4de04ef``.
 
 ::
   
@@ -450,7 +460,7 @@ Stops a running Aiven for Flink® application deployment in a specified project 
 
 
 
-Example: Stops the Aiven for Flink application deployment with application-id ``f171af72-fdf0-442c-947c-7f6a0efa83ad`` and deployment-id ``6d5e2c03-2235-44a5-ab8f-c544a4de04ef``.
+**Example:** Stops the Aiven for Flink application deployment with application-id ``f171af72-fdf0-442c-947c-7f6a0efa83ad`` and deployment-id ``6d5e2c03-2235-44a5-ab8f-c544a4de04ef``.
 
 ::
   
@@ -476,7 +486,7 @@ Cancels an Aiven for Flink® application deployment in a specified project and s
     - The ID of the Aiven for Flink application deployment to cancel
 
 
-Example: Cancels the Aiven for Flink application deployment with application-id ``f171af72-fdf0-442c-947c-7f6a0efa83ad`` and deployment-id ``6d5e2c03-2235-44a5-ab8f-c544a4de04ef``.
+**Example:** Cancels the Aiven for Flink application deployment with application-id ``f171af72-fdf0-442c-947c-7f6a0efa83ad`` and deployment-id ``6d5e2c03-2235-44a5-ab8f-c544a4de04ef``.
 
 ::
   
