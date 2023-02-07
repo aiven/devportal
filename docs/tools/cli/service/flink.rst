@@ -357,7 +357,7 @@ Retrieves information about an Aiven for Flink® application deployment in a spe
   * - ``service_name``
     - The name of the service
   * - ``application-id``
-    - The ID of the Aiven for Flink appplication
+    - The ID of the Aiven for Flink application
   * - ``deployment-id``
     - The ID of the Aiven for Flink application deployment. This ID can be obtained from the output of the ``avn service flink list-application-deployments`` command
 
@@ -385,7 +385,7 @@ Creates a new Aiven for Flink® application deployment in a specified project an
   * - ``service_name``
     - The name of the service
   * - ``application-id``
-    - The ID of the Aiven for Flink appplication
+    - The ID of the Aiven for Flink application
   * - ``deployment_properties``
     - The deployment properties definition for Aiven for Flink application, either as a JSON string or a file path (prefixed with '@') containing the JSON configuration
 
