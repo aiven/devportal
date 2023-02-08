@@ -32,40 +32,16 @@ Explore
 
 Learn about the Aiven platform
 
+
 .. grid:: 1 2 2 2
 
     .. grid-item-card::
         :shadow: md
         :margin: 2 2 0 0
 
-        |icon-postgres| **PostgreSQL®** Powerful relational database platform. We have the latest versions, and an excellent selection of extensions.
-
-        .. button-link:: docs/products/postgresql
-            :align: right
-            :color: primary
-            :outline:
-
-            Read more
-    
-
-    .. grid-item-card::
-        :shadow: md
-        :margin: 2 2 0 0
-
-        |icon-m3db| **M3** Distributed time-series database for scalable solutions, with M3 Coordinator included, and M3 Aggregator also available.
-
-        .. button-link:: docs/products/m3db
-            :align: right
-            :color: primary
-            :outline:
-
-            Read more
-    
-    .. grid-item-card::
-        :shadow: md
-        :margin: 2 2 0 0
-
-        |icon-kafka| **Apache Kafka®** Streaming data pipelines for the modern enterprise. Apache MirrorMaker2 and Kafka Connect also available.
+        |icon-kafka| **Apache Kafka®** 
+        
+        Streaming data pipelines for the modern enterprise. Apache MirrorMaker2 and Kafka Connect also available.
 
 
         .. button-link:: docs/products/kafka
@@ -74,15 +50,110 @@ Learn about the Aiven platform
             :outline:
 
             Read more
+
+
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
+
+        |icon-flink| **Apache Flink®** 
+        
+        Framework for definining powerful transformations of batch and streaming data sets. 
+
+        .. button-link:: docs/products/flink
+            :align: right
+            :color: primary
+            :outline:
+
+            Read more
+
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
+
+        |icon-cassandra| **Apache Cassandra®** 
+        
+        High performance storage solution for large data quantities. This specialist data solution is a partitioned row store.
+
+        .. button-link:: docs/products/cassandra
+            :align: right
+            :color: primary
+            :outline:
+
+            Read more
     
 
     .. grid-item-card::
         :shadow: md
         :margin: 2 2 0 0
 
-        |icon-flink| **Apache Flink®** Framework for definining powerful transformations of batch and streaming data sets. 
+        |icon-clickhouse| **ClickHouse** 
+        
+        A highly scalable, open source database that uses a column-oriented structure.
 
-        .. button-link:: docs/products/flink
+        .. button-link:: docs/products/clickhouse
+            :align: right
+            :color: primary
+            :outline:
+
+            Read more
+
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
+
+        |icon-grafana| **Grafana®** 
+        
+        The visualization tool you need to explore and understand your data. Grafana integrates with the other services in just a few clicks.
+
+        .. button-link:: docs/products/grafana
+            :align: right
+            :color: primary
+            :outline:
+
+            Read more
+    
+
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
+
+        |icon-influxdb| **InfluxDB®** 
+        
+        Specialist time series database, with good tooling support.
+
+        .. button-link:: docs/products/influxdb
+            :align: right
+            :color: primary
+            :outline:
+
+            Read more
+
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
+
+        |icon-m3db| **M3** 
+        
+        Distributed time-series database for scalable solutions, with M3 Coordinator included, and M3 Aggregator also available.
+
+        .. button-link:: docs/products/m3db
+            :align: right
+            :color: primary
+            :outline:
+
+            Read more
+    
+
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
+
+        |icon-mysql| **MySQL** 
+        
+        Popular and much-loved relational database platform.
+
+        .. button-link:: docs/products/mysql
             :align: right
             :color: primary
             :outline:
@@ -93,7 +164,9 @@ Learn about the Aiven platform
         :shadow: md
         :margin: 2 2 0 0
 
-        |icon-opensearch| **OpenSearch®** Document database with specialist search features, bring your freeform documents, logs or metrics, and make sense of them here.
+        |icon-opensearch| **OpenSearch®** 
+        
+        Document database with specialist search features, bring your freeform documents, logs or metrics, and make sense of them here.
 
         .. button-link:: docs/products/opensearch
             :align: right
@@ -107,9 +180,11 @@ Learn about the Aiven platform
         :shadow: md
         :margin: 2 2 0 0
 
-        |icon-cassandra| **Apache Cassandra®** High performance storage solution for large data quantities. This specialist data solution is a partitioned row store.
+        |icon-postgres| **PostgreSQL®** 
+        
+        Powerful relational database platform. We have the latest versions, and an excellent selection of extensions.
 
-        .. button-link:: docs/products/cassandra
+        .. button-link:: docs/products/postgresql
             :align: right
             :color: primary
             :outline:
@@ -120,7 +195,9 @@ Learn about the Aiven platform
         :shadow: md
         :margin: 2 2 0 0
 
-        |icon-redis| **Redis®\*** In-memory data store for all your high-peformance short-term storage and caching needs.
+        |icon-redis| **Redis®**
+        
+        In-memory data store for all your high-peformance short-term storage and caching needs.
 
         .. button-link:: docs/products/redis
             :align: right
@@ -129,58 +206,6 @@ Learn about the Aiven platform
 
             Read more
     
-
-    .. grid-item-card::
-        :shadow: md
-        :margin: 2 2 0 0
-
-        |icon-mysql| **MySQL** Popular and much-loved relational database platform.
-
-        .. button-link:: docs/products/mysql
-            :align: right
-            :color: primary
-            :outline:
-
-            Read more
-    
-    .. grid-item-card::
-        :shadow: md
-        :margin: 2 2 0 0
-
-        |icon-influxdb| **InfluxDB®** Specialist time series database, with good tooling support.
-
-        .. button-link:: docs/products/influxdb
-            :align: right
-            :color: primary
-            :outline:
-
-            Read more
-
-    .. grid-item-card::
-        :shadow: md
-        :margin: 2 2 0 0
-
-        |icon-grafana| **Grafana®** The visualization tool you need to explore and understand your data. Grafana integrates with the other services in just a few clicks.
-
-        .. button-link:: docs/products/grafana
-            :align: right
-            :color: primary
-            :outline:
-
-            Read more
-    
-    .. grid-item-card::
-        :shadow: md
-        :margin: 2 2 0 0
-
-        |icon-clickhouse| **ClickHouse** A highly scalable, open source database that uses a column-oriented structure.
-
-        .. button-link:: docs/products/clickhouse
-            :align: right
-            :color: primary
-            :outline:
-
-            Read more
 
 Tools
 -----
