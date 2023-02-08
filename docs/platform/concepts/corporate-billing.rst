@@ -55,4 +55,4 @@ Invoices must be paid within 10 days of receipt by a wire transfer to Aiven's ba
      - IE09 CITI 9900 5132 6532 19
      - CITIIE2X
 
-To switch from credit card charges to corporate billing, :doc:`make sure your billing group details </docs/platform/howto/use-billing-groups> and billing email addresses` are up to date in Aiven. Then, contact sales@Aiven.io to request invoice billing. 
+To switch from credit card charges to corporate billing, :doc:`make sure your billing group details and billing email addresses </docs/platform/howto/use-billing-groups>` are up to date in Aiven. Then, contact sales@Aiven.io to request invoice billing. 
