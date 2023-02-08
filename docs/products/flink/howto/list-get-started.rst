@@ -1,4 +1,4 @@
-Get started with Aiven for Apache Flink® |beta|
+Get started with Aiven for Apache Flink®
 ===============================================
 
 :doc:`Create a managed Apache Flink service </docs/platform/howto/create_new_service>`
