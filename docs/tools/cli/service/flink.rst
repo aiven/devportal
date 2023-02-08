@@ -6,7 +6,7 @@ Here you'll find the full list of commands for ``avn service flink``.
 
 .. Warning::
 
-    We changed the Aiven for Apache Flink® CLI commands, you need to use the ``aiven-client`` version ``2.18.0`` or above to run the following commands.
+    The Aiven for Apache Flink® CLI commands have been updated, and to execute them, you must use ``aiven-client`` version ``2.18.0``.
 
 
 Manage Aiven for Apache Flink® applications
