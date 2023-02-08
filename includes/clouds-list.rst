@@ -209,6 +209,9 @@ DigitalOcean
   * - Australia
     - ``do-syd``
     - Australia, New South Wales 
+  * - Australia
+    - ``do-syd1``
+    - Australia, New South Wales 
   * - Europe
     - ``do-ams``
     - Europe, Netherlands 
