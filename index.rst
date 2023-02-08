@@ -80,7 +80,7 @@ Learn about the Aiven platform
         :shadow: md
         :margin: 2 2 0 0
 
-        |icon-flink| **Apache Flink®** Framework for definining powerful transformations of batch and streaming data sets. :bdg-secondary:`beta`
+        |icon-flink| **Apache Flink®** Framework for definining powerful transformations of batch and streaming data sets. 
 
         .. button-link:: docs/products/flink
             :align: right
