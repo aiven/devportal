@@ -656,6 +656,7 @@ entries:
                   - file: docs/products/flink/howto/connect-pg
                   - file: docs/products/flink/howto/connect-opensearch
                   - file: docs/products/flink/howto/slack-connector
+                  - file: docs/products/flink/howto/datagen-connector
           - file: docs/products/flink/howto/list-manage-cluster
             title: Manage cluster
           - file: docs/products/flink/howto/advanced-topics
