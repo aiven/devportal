@@ -7,7 +7,7 @@ What you will learn
 Follow this tutorial and you'll learn how to build a streaming anomaly detection system. In particular, we'll cover the following:
 
 * How to create a fake streaming dataset
-* How to create and use Apache Kafka® for data streaming
+* How to create and use Apache Kafka for data streaming
 * How to create and use PostgreSQL® to store threshold data
 * How to create and use Apache Flink® to define streaming data pipelines
 * How to push the outcome of the anomaly detection system as a Slack notification
@@ -18,7 +18,9 @@ What are you going to build
 
 Anomaly detection is a way to find unusual or unexpected things in data. It is immensely helpful in a variety of fields, such as fraud detection, network security, quality control and others. By following this tutorial you will build your own streaming anomaly detection system. 
 
-First you'll need a continuous flow of data, and are going to create a fake generator of IoT sensor readings recording the CPU usage percentage for various devices. Once the data is flowing, you'll then create a basic filtering pipeline to separate the usage values surpassing a fixed threshold (80%). This example mimics a scenario where you might want to separate and generate alerts for anomalies in single events. As example, a sensor having a CPU utilization of 99% might create a heating problem and therefore you might want to notify the team in charge of the inventory to schedule the replacement.
+First you'll need a continuous flow of data, and for this we'll use a fake generator of IoT sensor readings that will produce CPU usage percentage for various devices. Once the data is flowing, you'll then create a basic filtering pipeline to separate the usage values surpassing a fixed threshold (80%). 
+
+This example mimics a scenario where you might want to separate and generate alerts for anomalies in single events. For instance, a sensor having a CPU utilization of 99% might create a heating problem and therefore you might want to notify the team in charge of the inventory to schedule the replacement.
 
 .. mermaid::
 
@@ -27,7 +29,9 @@ First you'll need a continuous flow of data, and are going to create a fake gene
         id1(IoT device)-- sensor reading -->id2(usage > 80%?);
         id2-- yes -->id3(notification);
 
-However, receiving a notification on every sensor reading that surpasses a fixed threshold can be overwhelming and create false positives for short usage spikes. Therefore you'll create a second, more advanced, pipeline to average the sensor readings values over 30 seconds windows and then compare the results with host based thresholds coming from an external table. In this second scenario, averaging CPU values over windows of 30 seconds will help avoiding false positive notification for single spikes, but still enable to flag components that are at potential risk of heating. The threshold lookup, enables a more precise definition of alert ranges depending on the device type.
+However, receiving a notification on every sensor reading that surpasses a fixed threshold can be overwhelming and create false positives for short usage spikes. Therefore you'll create a second, more advanced, pipeline to average the sensor readings values over 30 seconds windows and then compare the results with various thresholds, defined for every IoT device, and stored in a reference table.
+
+The improvement of averaging CPU values over windows of 30 seconds will help avoiding false positive notification for single spikes, but still enable to flag components that are at potential risk of heating. The threshold lookup enables a more precise definition of alert ranges depending on the device type.
 
 .. mermaid::
 
@@ -56,7 +60,7 @@ The tutorial includes:
 Architecture overview
 ---------------------
 
-In this tutorial you'll build a streaming data pipeline. The sources will be an Apache Kafka topic, containing the fake stream of IoT metrics data, and a PostgreSQL® database that containing the alerting thresholds. Then, an Apache Flink® service, will combine the data, apply some transformation SQL to find the anomalies, and push the result to a separate Apache Kafka® topic or a Slack channel for team notification.
+To build near real-time anomaly detection system, you'll build a streaming data pipeline that will be able to process the IoT sensor readings as soon as they are generated. The pipeline will rely on two sources: the first source is an Apache Kafka topic that contains the fake stream of IoT metrics data and second is a table in PostgreSQL® database containing alerting thresholds, defined for each IoT device. Then, an Apache Flink® service, will combine the data, apply some transformation SQL to find the anomalies, and push the result to a separate Apache Kafka® topic or a Slack channel for team notification.
 
 
 .. mermaid::
@@ -115,17 +119,15 @@ Customise the Aiven for Apache Kafka service
 
 Now that your service is created, you need to customise its functionality. In the **Overview** tab of your freshly created service, you'll see a bunch of toggles and properties. Change these two:
 
-1. **Kafka REST API (Karapace)** > **Enable**
+1. Enable the Apache Kafka REST APIs to manage and query via the Aiven Console. 
 
-   .. Note::
+   Navigate to **Kafka REST API (Karapace)** > **Enable**
 
-    The **Kafka REST API** allows you to manage and query Apache Kafka via REST APIs. You'll use it to inspect the data in Apache Kafka from the Aiven Console.
 
-2. **Advanced configuration** > **Add configuration option** > ``kafka.auto_create_topics_enable``, switch the setting on and then click **Save advanced configuration**
+2. Enable the :doc:`automatic creation of Apache Kafka topics </docs/products/kafka/howto/create-topics-automatically>` to create new Apache Kafka® topics on the fly while pushing a first record.
 
-   .. Note::
+   Navigate to **Advanced configuration** > **Add configuration option** > ``kafka.auto_create_topics_enable``, switch the setting on and then click **Save advanced configuration**
 
-    The ``kafka.auto_create_topics_enable`` setting allows you to create new Apache Kafka® topics on the fly while pushing a first record. It avoids needing to create a topic in advance. To read more about the setting, check the :doc:`dedicated documentation </docs/products/kafka/howto/create-topics-automatically>`.
 
 Create an Aiven for PostgreSQL® service
 '''''''''''''''''''''''''''''''''''''''''
@@ -206,7 +208,7 @@ Now that the plumbing of all the components is sorted, it's time for you to crea
 Create an Aiven authentication token
 ''''''''''''''''''''''''''''''''''''
 
-To generate the fake streaming IoT metric data against to the Aiven for Apache Kafka topic you'll use the `Dockerized fake data producer for Aiven for Apache Kafka® <https://github.com/aiven/fake-data-producer-for-apache-kafka-docker>`_ which requires an Aiven authentication token to fetch all the Apache Kafka connection parameters. 
+The `Dockerized fake data producer for Aiven for Apache Kafka® <https://github.com/aiven/fake-data-producer-for-apache-kafka-docker>`_, that you are going to use to generate the streaming IoT sensor readings dataset, requires an Aiven authentication token to fetch all the Apache Kafka connection parameters. 
 
 You can create an authentication token with the following steps:
 
@@ -310,22 +312,22 @@ If your fake data producer is successfully running, you can head to Apache Kafka
 Create a basic anomaly detection pipeline with filtering
 --------------------------------------------------------
 
-The first anomaly detection pipeline that you'll create showcases a basic anomaly detection system: you want to flag any sensor reading exceeding a fixed ``80%`` threshold since it could represent a heating anomaly. You'll read the IoT sensor readings from the ``cpu_load_stats_real`` in Apache Kafka, build a filtering pipeline in Apache Flink, and push the readings above the ``80%`` threshold back to Apache Kafka, but in a separate ``cpu_load_stats_real_filter`` topic.
+The first anomaly detection pipeline that you'll create showcases a basic anomaly detection system: you want to flag any sensor reading exceeding a fixed ``80%`` threshold since it could represent a heating anomaly. You'll read the IoT sensor readings from the ``cpu_load_stats_real`` in Apache Kafka, build a filtering pipeline in Apache Flink, and push the readings above the ``80%`` threshold back to Apache Kafka, but to a separate ``cpu_load_stats_real_filter`` topic.
 
 .. mermaid::
 
     graph TD;
 
         id1(Kafka topic: cpu_load_stats_real)-- IoT metrics stream -->id2(Flink application: filtering);
-        id2-- high CPU -->id3(Kafka topic: cpu_load_stats_real_filter);
+        id2-- is CPU high? -->id3(Kafka topic: cpu_load_stats_real_filter);
 
 The steps to create the filtering pipeline are the following:
 
-* Create a new Aiven for Apache Flink application
-* Define a source table to read the metrics data from your Apache Kafka® topic
-* Define a sink table to send the processed messages to a separate Apache Kafka® topic
-* Define a SQL transformation definition to process the data
-* Create an application deployment to execute the pipeline
+#. Create a new Aiven for Apache Flink application
+#. Define a source table to read the metrics data from your Apache Kafka® topic
+#. Define a sink table to send the processed messages to a separate Apache Kafka® topic
+#. Define a SQL transformation definition to process the data
+#. Create an application deployment to execute the pipeline
 
 If you feel brave, you can go ahead and try try yourself in the `Aiven Console <https://console.aiven.io/>`_. Otherwise you can follow the steps below:
 
@@ -340,7 +342,9 @@ If you feel brave, you can go ahead and try try yourself in the `Aiven Console <
    .. image:: /images/tutorials/anomaly-detection/filtering-application-name.png
       :alt: The Apache Flink **Application** named ``filtering``
 
-4. In the **Add source tables** tab, create the source table (named ``CPU_IN``), pointing to the Apache Kafka® topic ``cpu_load_stats_real`` where the IoT sensor readings are stored, by clicking on **Create first version** and:
+4. Create the first version of the application by clicking on **Create first version** button
+
+5. In the **Add source tables** tab, create the source table (named ``CPU_IN``), pointing to the Apache Kafka® topic ``cpu_load_stats_real`` where the IoT sensor readings are stored by:
    
    * Select ``Aiven for Apache Kafka - demo-kafka`` as `Integrated service`
    * Paste the following SQL:
@@ -348,23 +352,20 @@ If you feel brave, you can go ahead and try try yourself in the `Aiven Console <
      .. literalinclude:: /code/products/flink/basic_cpu-in_table.md
         :language: sql
 
-   .. Note::
-        You can check that the columns are properly defined and aligned with the data in the Apache Kafka topic using the interactive query capability. You need to click on the **Run** icon below the SQL definition box.
-
    Once created, the source table tab should look like the following:
 
    .. image:: /images/tutorials/anomaly-detection/CPU_IN_source.png
       :alt: Source table tab with ``CPU_IN`` table defined
 
-   You can check the if the source definition matches the data in the topic by clicking on the triangle next to **Run**, you should see the populated data
+   Before saving the source table definition, you can check if it matches the data in the topic by clicking on the triangle next to **Run**. You should see the populated data
 
    .. image:: /images/tutorials/anomaly-detection/cpu_in_table_preview.png
       :alt: The Apache Flink source definition with SQL preview of the data
 
 
 
-5. Navigate to the **Add sink table** tab
-6. Create the sink table (named ``CPU_OUT_FILTER``), pointing to a new Apache Kafka® topic named ``cpu_load_stats_real_filter`` where the readings exceeding the ``80%`` threshold will land, by:
+6. Navigate to the **Add sink table** tab
+7. Create the sink table (named ``CPU_OUT_FILTER``), pointing to a new Apache Kafka® topic named ``cpu_load_stats_real_filter`` where the readings exceeding the ``80%`` threshold will land, by:
 
    * Clicking on the **Add your first sink table**
    * Selecting ``Aiven for Apache Kafka - demo-kafka`` as `Integrated service`
@@ -379,8 +380,8 @@ If you feel brave, you can go ahead and try try yourself in the `Aiven Console <
       :alt: Sink table tab with ``CPU_OUT`` table defined
 
 
-7. Navigate to the **Create statement** tab.
-8. Enter the following as the transformation SQL statement, taking data from the ``CPU_IN`` table and pushing the samples over the ``80%`` threshold to ``CPU_OUT_FILTER``:
+8. Navigate to the **Create statement** tab.
+9. Enter the following as the transformation SQL statement, taking data from the ``CPU_IN`` table and pushing the samples over the ``80%`` threshold to ``CPU_OUT_FILTER``:
 
    .. literalinclude:: /code/products/flink/basic_job.md
       :language: sql
@@ -390,14 +391,14 @@ If you feel brave, you can go ahead and try try yourself in the `Aiven Console <
    .. image:: /images/tutorials/anomaly-detection/filtering-preview.png
       :alt: The Apache Flink data transformation with SQL preview of the data
 
-9. Click **Save and deploy later**
-10. Click **Create deployment**. 
-11. Accept the default deployment parameters and click on **Deploy without a savepoint**
+10. Click **Save and deploy later**
+11. Click **Create deployment**. 
+12. Accept the default deployment parameters and click on **Deploy without a savepoint**
 
     .. image:: /images/tutorials/anomaly-detection/filtering-application-deployment.png
         :alt: Detail of the new deployment screen showing the default version, savepoint and parallelism parameters
 
-12. The new application deployment status will show **Initializing** and then **Running: version 1**.
+13. The new application deployment status will show **Initializing** and then **Running: version 1**.
 
 Once the application is running, you should start to see messages indicating hosts with high CPU loads in the ``cpu_load_stats_real_filter`` topic of your ``demo-kafka`` Apache Kafka service.
 
@@ -407,15 +408,17 @@ Once the application is running, you should start to see messages indicating hos
 
 .. Important::
     
-    Congratulations! You created your first streaming anomaly detection pipeline!
+    Congratulations! You created your first streaming anomaly detection pipeline! 
+
+    The data is now available in the Apache Kafka topic named ``cpu_load_stats_real_filter``, from there you could either write your own :doc:`Apache Kafka consumer </docs/products/kafka/howto/list-code-samples>` to read the high sensor records or use :doc:`Kafka Connect </docs/products/kafka/kafka-connect>` to sink the data to a wide range of technologies.
 
 
-Create an advanced anomaly detection pipeline with windowing and threshold lookup
+Evolve the anomaly detection pipeline with windowing and threshold lookup
 ---------------------------------------------------------------------------------
 
 Sending an alert on every IoT measurement above a threshold might cause too much noise, you don't want to receive a notification every time your computer's CPU goes above 90%, but, if that happens continuously for a 30 seconds interval there might be a problem. In the second example, you'll aggregate the CPU load over a configured time using :doc:`windows </docs/products/flink/concepts/windows>` and the :doc:`event time </docs/products/flink/concepts/event-processing-time>`. By averaging the CPU values over a time window you can encompass short term spikes in usage, and flag only anomaly scenarios where the usage is consistently above a pre-defined threshold for a long period of time.
 
-To add a bit of complexity, and mimic a real scenario, you'll also move away from a fixed ``80%`` threshold, and compare the average utilization figures with the different thresholds, set in a reference table (stored in PostgreSQL), for the various IoT devices based on their ``hostname``. Every IoT device is different, and various devices usually have different alerting ranges. The reference table provides an example of variable, device dependant, thresholds. 
+To add a bit of complexity, and mimic a real scenario, it is better to move away from a fixed ``80%`` threshold, and compare the average utilization figures with the different thresholds, set in a reference table (stored in PostgreSQL), for the various IoT devices based on their ``hostname``. Every IoT device is different, and various devices usually have different alerting ranges. The reference table provides an example of variable, device dependant, thresholds. 
 
 .. mermaid::
 
@@ -502,7 +505,7 @@ You can create the thresholds table in the ``demo-postgresql`` service with the 
 2. In the **Overview** tab locate the **Service URI** parameter and copy the value
 3. Connect via ``psql`` to ``demo postgresql`` with the following terminal command, replacing the ``<SERVICE_URI>`` placeholder with the **Service URI** string copied in the step above::
 
-        psql <SERVICE_URI>
+        psql "<SERVICE_URI>"
 
 4. Create the ``cpu_thresholds`` table and populate the values with the following code:
 
