@@ -3,6 +3,15 @@ Manage billing groups
 
 To view your billing groups in the `Aiven Console <https://console.aiven.io/>`_ go to the organization and click **Billing**. 
 
+Rename billing groups
+""""""""""""""""""""""
+
+#. On the **Billing** page, find the billing group that you want to rename. 
+
+#. Click the three dots in the **Actions** column and select **Rename**.
+
+#. Enter the new name and click **Rename**.
+
 Download invoices
 """"""""""""""""""
 
