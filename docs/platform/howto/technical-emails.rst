@@ -1,7 +1,7 @@
 Get technical notifications
 ============================
 
-To stay up to date with the latest news about the services in a project, you can set up email or Slack notifications for technical contacts for the project. 
+To stay up to date with the latest news about the services in a project, you can set up notifications for technical contacts for the project. 
 
 Notifications include information about plan sizes, performance, outages and scheduled maintenance. High priority notifications (for example, a plan running out of space) are also sent to project admin users.
 
@@ -25,7 +25,8 @@ To get notifications in Slack, you can add a Slack channel's or DM email address
 
 #. Click **Settings**.
 
-#. In the **Technical Emails** section, add the email address of the Slack channel or  DM.
+#. In the **Technical Emails** section, add the email address that you created for the Slack channel or  DM.                
+
 
 #. Click **Save changes**. 
 
