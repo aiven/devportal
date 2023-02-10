@@ -45,6 +45,7 @@ dashboards
 deallocation
 Debezium
 deserialize
+deserializer
 Dev
 Digitransit
 Distro
@@ -180,6 +181,8 @@ Savepoints
 savepoints
 schemaless
 scriptable
+serde
+serializer
 sharded
 sharding
 signup
