@@ -5,16 +5,16 @@ With the Aiven platform there are several deployment models available to meet yo
 
 - VPC peering to securely peer the Aiven services to your cloud VPC
 
-- Enhanced Compliance Environments (ECE) to satisfy addtional compliance needs such as HIPPA and PCI-DSS
+- Enhanced Compliance Environments (ECE) to satisfy additional compliance needs such as HIPPA and PCI-DSS
 
 - Bring your own account (BYOA) which allows deployment of Aiven services directly into your cloud account
 
 In addition to the above, all data transmitted to the Aiven services is encrypted in transit and at rest. 
 
-In some cases however, there are additional compliance and legal needs which require the data to be encrypted prior to entering the Aiven for Kafka service. This can be achieved using a custom serializer and deserializer (commonly referred to as a "custom serde") .
+In some cases however, there are additional compliance and legal needs which require the data to be encrypted prior to entering the Aiven for Kafka® service. This can be achieved using a custom serializer and deserializer (commonly referred to as a "custom serde") .
 
 
-AES Encryption
+AES encryption
 --------------
 
 In this example, we will use AES encryption. AES provides numerous benefits for streaming systems such as Apache Kafka. 
@@ -25,7 +25,7 @@ In this example, we will use AES encryption. AES provides numerous benefits for 
 
 - As the algorithm relies on a symmetric key as it simplifies the key management. Asymmetrical algorithms require managing separate encryption/decryption keys for all the producers/consumers. 
 
-In this example, we will simply hardcode the key. This should never be done in practise. Instead a secure vault service such as HashiVault or native cloud vendor solution should be used to manage the keys. 
+In this example, we will simply hard code the key. This should never be done in practise. Instead a secure vault service such as HashiVault or native cloud vendor solution should be used to manage the keys. 
 
 .. Warning::
     You are responsible for the key. If the key is lost, it may be impossible to recover the data. 
