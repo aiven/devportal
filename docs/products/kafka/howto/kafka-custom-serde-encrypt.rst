@@ -9,7 +9,7 @@ With the Aiven platform there are several deployment models available to meet yo
 
 - Bring your own account (BYOA) which allows deployment of Aiven services directly into your cloud account
 
-In addition to the above, all data in transmitted to the Aiven services is encrypted in transit and at rest. 
+In addition to the above, all data transmitted to the Aiven services is encrypted in transit and at rest. 
 
 In some cases however, there are additional compliance and legal needs which require the data to be encrypted prior to entering the Aiven for Kafka service. This can be achieved using a custom serializer and deserializer (commonly referred to as a "custom serde") .
 
@@ -23,7 +23,7 @@ In this example, we will use AES encryption. AES provides numerous benefits for 
 
 - The algorithm is fast and efficient, making it well suited to real-time data processing use-cases
 
-- As the algorithm relies on a symmetric key it simplifies the key management. Asymmetrical algorithms require managing separate encryption/decryption keys for all the producers/consumers. 
+- As the algorithm relies on a symmetric key as it simplifies the key management. Asymmetrical algorithms require managing separate encryption/decryption keys for all the producers/consumers. 
 
 In this example, we will simply hardcode the key. This should never be done in practise. Instead a secure vault service such as HashiVault or native cloud vendor solution should be used to manage the keys. 
 
