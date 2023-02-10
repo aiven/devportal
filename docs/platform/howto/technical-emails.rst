@@ -21,6 +21,9 @@ To get notifications in Slack, you can add a Slack channel's or DM email address
 
 #. In Slack, `create an email address for a channel or DM <https://slack.com/help/articles/206819278-Send-emails-to-Slack#h_01F4WDZG8RTCTNAMR4KJ7D419V>`_.
 
+   .. note::
+       If you don't see the email integrations option, ask the owner or admin of the workspace or organization to `allow incoming emails <https://slack.com/help/articles/360053335433-Manage-incoming-emails-for-your-workspace-or-organization#manage-incoming-emails>`_.
+
 #. In the Aiven Console, go to the project that you want to get notifications for.
 
 #. Click **Settings**.
