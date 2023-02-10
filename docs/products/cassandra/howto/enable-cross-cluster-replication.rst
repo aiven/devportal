@@ -1,9 +1,9 @@
 Enable cross-cluster replication in Aiven for Apache Cassandra® |beta|
 ======================================================================
 
-Enabling the cross-cluster replication (CCR) feature requires building a CCR setup on the Aiven side and, next, configuring the replication on the Apache Cassandra side. This article covers the first part only by providing instructions on how to set up the CCR in your Aiven for Apache Cassandra® service on the Aiven side.
+Enabling the cross-cluster replication (CCR) feature requires building a CCR setup in the Aiven platform and, next, configuring the replication on the Apache Cassandra side. This article covers the first part only by providing instructions on how to set up CCR for your Aiven for Apache Cassandra® service on the Aiven side.
 
-For the other part - the configuration of the replication factor, which ultimately makes the replication work - see the instruction in **Set up the replication factor**.
+.. For the other part (the configuration of the replication factor on the Apache Cassandra side), which ultimately makes the replication work, see the instruction in **Set up the replication factor**.
 
 About enabling CCR
 ------------------
@@ -12,7 +12,7 @@ You can enable CCR either when creating a new Aiven for Apache Cassandra service
 
 .. note::
 
-   Enabling CCR on an existing service can affect your productions workload since CCR imposes restrictions on replication settings of the user's keyspace. Make sure you understand the impact before you enable CCR on your service.
+   Enabling CCR on an existing service is only possible if the service has ``NetworkTopologyStrategy`` set as a replication strategy for the keyspace.
 
 To enable CCR, you can use the following tools:
 
@@ -30,7 +30,7 @@ Prerequisites
   * `cURL` CLI tool
   * `Aiven CLI tool <https://github.com/aiven/aiven-client>`_
 
-* Aiven for Cassandra service (only if enabling CCR from an existing service)
+* For enabling CCR on an existing service, an Aiven for Apache Cassandrs service with ``NetworkTopologyStrategy`` set as a replication strategy for the keyspace.
 
 Enable CCR in the console
 -------------------------
@@ -62,6 +62,11 @@ On a new service
 On an existing service
 ''''''''''''''''''''''
 
+.. important::
+
+    * Your existing service has ``NetworkTopologyStrategy`` set as a replication strategy for its keyspace.
+    * Your existing service and the service you connect to (``service_to_join_with``) are hosted on different datacenters.
+
 1. Log in to the `Aiven console <https://console.aiven.io/>`_.
 2. From the **Current services** view, select an Aiven for Apache Cassandra service on which you'd like to enable CCR.
 3. In the **Overview** tab of your service's page, navigate to **Cross Cluster Replication** and select **Migrate to Cross Cluster**.
@@ -82,19 +87,16 @@ On an existing service
 Enable CCR with CLI
 -------------------
 
-You can enable CCR for your new or existing Aiven for Apache Cassandra service using the Aiven CLI.
+You can enable CCR for your new or existing Aiven for Apache Cassandra service using CLI.
 
-.. tip::
+.. note::
+   
+   In this instruction, the :doc:`Aiven CLI client </docs/tools/cli>` is used to interact with Aiven APIs.
 
-   Check out how to get started with the Aiven CLI in :doc:`Aiven CLI </docs/tools/cli>`.
+.. topic:: Understand parameters to be supplied
 
-Before you start
-''''''''''''''''
-
-Understand parameters to be supplied:
-
-* ``service_to_join_with`` parameter value needs to be set to a name of an existing service in the same project. The supplied service name indicates the service you connect to for enabling CCR. The two connected services create a CCR service pair.
-* ``cassandra.datacenter`` parameter value needs to be set to a name of a datacenter for your service. Make sure each of the two service constituting a CCR pair belongs to a different datacenter.
+   * ``service_to_join_with`` parameter value needs to be set to a name of an existing service in the same project. The supplied service name indicates the service you connect to for enabling CCR. The two connected services create a CCR service pair.
+   * ``cassandra.datacenter`` parameter value needs to be set to a name of a datacenter for your service. Make sure each of the two service constituting a CCR pair belongs to a different datacenter.
 
 On a new service
 ''''''''''''''''
@@ -114,11 +116,12 @@ Use the :ref:`avn service create <avn-cli-service-create>` command to create a n
 On an existing service
 ''''''''''''''''''''''
 
-Use the :ref:`avn service update <avn-cli-service-update>` command to modify your service configuration by adding the ``service_to_join_with`` parameter and set its value as needed.
-
 .. important::
 
-   Make sure that your primary service and the service you connect to (``service_to_join_with``) are hosted on different datacenters.
+    * Your existing service has ``NetworkTopologyStrategy`` set as a replication strategy for its keyspace.
+    * Your existing service and the service you connect to (``service_to_join_with``) are hosted on different datacenters.
+
+Use the :ref:`avn service update <avn-cli-service-update>` command to modify your service configuration by adding the ``service_to_join_with`` parameter and set its value as needed.
 
 .. code-block:: bash
 
@@ -128,23 +131,16 @@ Use the :ref:`avn service update <avn-cli-service-update>` command to modify you
 Enable CCR with API
 -------------------
 
-You can enable CCR for your new or existing Aiven for Apache Cassandra service using Aiven APIs.
+You can enable CCR for your new or existing Aiven for Apache Cassandra service using :doc:`Aiven APIs </docs/tools/api>`.
 
 .. note::
    
    In this instruction, the `curl` command line tool is used to interact with Aiven APIs.
 
-.. tip::
+.. topic:: Understand parameters to be supplied
 
-   Check out how to get started with Aiven APIs in :doc:`Aiven API </docs/tools/api>`.
-
-Before you start
-''''''''''''''''
-
-Understand parameters to be supplied:
-
-* ``service_to_join_with`` parameter value needs to be set to a name of an existing service in the same project. The supplied service name indicates the service you connect to for enabling CCR. The two connected services create a CCR service pair.
-* ``cassandra.datacenter`` parameter value needs to be set to a name of a datacenter for your service. Make sure each of the two service constituting a CCR pair belongs to a different datacenter.
+   * ``service_to_join_with`` parameter value needs to be set to a name of an existing service in the same project. The supplied service name indicates the service you connect to for enabling CCR. The two connected services create a CCR service pair.
+   * ``cassandra.datacenter`` parameter value needs to be set to a name of a datacenter for your service. Make sure each of the two service constituting a CCR pair belongs to a different datacenter.
 
 On a new service
 ''''''''''''''''
@@ -174,11 +170,12 @@ Use the `ServiceCreate <https://api.aiven.io/doc/#tag/Service/operation/ServiceC
 On an existing service
 ''''''''''''''''''''''
 
-Use the `ServiceUpdate <https://api.aiven.io/doc/#tag/Service/operation/ServiceUpdate>`_ API to modify the configuration of your existing service so that it has CCR enabled. When constructing the API request, add the ``user_config`` object to the request body and nest the ``service_to_join_with`` field inside it.
-
 .. important::
 
-   Make sure that your primary service and the service you connect to (``service_to_join_with``) are hosted on different datacenters.
+    * Your existing service has ``NetworkTopologyStrategy`` set as a replication strategy for its keyspace.
+    * Your existing service and the service you connect to (``service_to_join_with``) are hosted on different datacenters.
+
+Use the `ServiceUpdate <https://api.aiven.io/doc/#tag/Service/operation/ServiceUpdate>`_ API to modify the configuration of your existing service so that it has CCR enabled. When constructing the API request, add the ``user_config`` object to the request body and nest the ``service_to_join_with`` field inside it.
 
 .. code-block:: bash
 
