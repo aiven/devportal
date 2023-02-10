@@ -116,6 +116,7 @@ Consistency level
 Limitations
 -----------
 
+* Enabling CCR on an existing service is only possible if this service has a keyspace that uses ``NetworkTopologyStrategy`` as a replication strategy.
 * Two CCR services need to share one service plan and the same amount of dynamic disk space.
 * Limited replication configuration
   * ``SimpleReplicationStrategy`` not supported
