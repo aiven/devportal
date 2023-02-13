@@ -1,19 +1,12 @@
 ``avn card``
 ===============================
 
-Here you’ll find the full list of commands for ``avn card``.
-
-
-Manage credit cards
--------------------
-
-Commands for managing credit card details associated to Aiven projects.
-
+This article has the full list of commands for managing credit card details using ``avn account``. 
 
 ``avn card add``
 ''''''''''''''''
 
-Adds a new credit card to the Aiven account.
+Adds a new credit card.
 
 .. list-table::
   :header-rows: 1
@@ -34,27 +27,25 @@ Adds a new credit card to the Aiven account.
   * - ``--update-project``
     - Assign card to a project
 
-**Example:** Add a credit card to a named project.
+**Example:** Add a credit card:
 
-::
+.. code:: shell
 
   avn card add --cvc 123         \
     --exp-month 01               \
     --exp-year 2031              \
     --name "Name Surname"        \
-    --number 4111111111111111    \
-    --update-project my-project
-
+    --number 4111111111111111
 
 ``avn card list``
 '''''''''''''''''
 
-Lists credit cards associated with this account.
+Lists all credit cards.
 
 
-**Example:** List all credit cards associated with this account.
+**Example:** List credit cards:
 
-::
+.. code:: shell
 
   avn card list
 
@@ -62,7 +53,7 @@ Lists credit cards associated with this account.
 ``avn card remove``
 '''''''''''''''''''
 
-Removes a credit card associated with the Aiven account.
+Removes a credit card.
 
 .. list-table::
   :header-rows: 1
@@ -74,16 +65,16 @@ Removes a credit card associated with the Aiven account.
     - The ID shown for this card in the ``list`` command output
 
 
-**Example:** Remove a credit card associated with the Aiven account.
+**Example:** Remove a credit card:
 
-::
+.. code:: shell
 
   avn card remove AAAAAAAA-BBBB-CCCC-DDDD-0123456789AB
 
 ``avn card update``
 '''''''''''''''''''
 
-Updates a credit card associated with the account.
+Updates a credit card.
 
 .. list-table::
     :header-rows: 1
@@ -96,14 +87,14 @@ Updates a credit card associated with the account.
     * - ``--exp-month``
       - Card expiration month (1-12)
     * - ``--exp-year``
-      - Card expiration year
+      - Card expiration year (YYYY)
     * - ``--name``
       - Name on the credit card
 
 
-**Example:** Update a credit card associated with the Aiven account.
+**Example:** Update a credit card:
 
-::
+.. code:: shell
 
     avn card update AAAAAAAA-BBBB-CCCC-DDDD-0123456789AB \
         --exp-month 01                                   \
