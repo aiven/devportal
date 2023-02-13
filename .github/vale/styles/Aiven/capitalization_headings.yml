@@ -101,6 +101,7 @@ exceptions:
   - Schema Registry
   - Simple Authentication and Security Layer
   - Skyvia
+  - Slack
   - Snowflake
   - Sphinx
   - Splunk
