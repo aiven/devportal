@@ -12,7 +12,7 @@ However, it's important to remember that **MirrorMaker 2 does not offer synchron
 
 As MirrorMaker 2 is based on Kafka Connect, there are tradeoffs between throughput and out-of-order or duplicated records.
 
-It's important to understand that disaster recovery has no one-size-fits-all solution. Different requirements should be considered, such as the data's nature, volume, acceptable ops overhead, and costs.
+It's important to understand that disaster recovery has no one-size-fits-all solution. Different requirements should be considered, such as the nature of the data, volume, acceptable ops overhead, and costs.
 
 
 Migration
