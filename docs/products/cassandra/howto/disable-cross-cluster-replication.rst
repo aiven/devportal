@@ -14,11 +14,15 @@ When you enable CCR for your service, you connect it to another service, which r
 
 It's recommended to use the Aiven console for disabling CCR.
 
+.. warning::
+
+   As soon as you split the cluster, the two services constituting the CCR pair become independent. It's not possible to recreate the CCR pair connecting back to the same service. To enable CCR on your service again, you can create a new service and CCR-connect it to your existing service.
+
 Prerequisites
 -------------
 
 * Aiven account
-* Depending on the method you choose to use for enabling CCR
+* Depending on the method you choose to use for disabling CCR
 
   * Access to the `Aiven console <https://console.aiven.io/>`_
   * `cURL` CLI tool
@@ -37,12 +41,7 @@ Split the services
 1. Log in to the `Aiven console <https://console.aiven.io/>`_.
 2. From the **Current services** view, select the service for which you'd like to disable CCR.
 3. In the **Overview** tab of the service's page, navigate to **Cross Cluster Replication** and select **Split cluster**.
-
-   .. warning::
-
-      As soon as you split the cluster, the two services constituting the CCR pair become independent. It's not possible to recreate the CCR pair connecting back to the same service. To enable CCR on your service again, you can create a new service and CCR-connect it to your existing service.
-   
-4. When in the **Warning** popup, make sure you understand the impact and select **Split cluster**.
+4. In the **Warning** popup, get familiar with the consequences of splitting the cluster, make sure you understand the impact, and select **Split cluster**.
 
 .. topic:: Result
 
@@ -66,7 +65,7 @@ To disable CCR on your service, delete the service that is connected to your ser
 
 .. topic:: Result
 
-   You've disabled CCR on your service by deleting the service used as a sink for replicated data.
+   You've disabled CCR on your service by deleting one of the peer services in the CCR service pair.
 
 Disable CCR with CLI
 --------------------
