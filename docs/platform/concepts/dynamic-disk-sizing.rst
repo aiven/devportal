@@ -52,9 +52,9 @@ Limitations
 - Maximum storage size depends on the plan and the service type and can go as high as five times the base storage size of the plan. 
 - Storage optimization is performed at the next maintenance update after a change to the storage size. Due to limitations on the cloud provider, there is a limit on how many times storage can be increased between maintenance updates. If this limit is reached, you see a prompt to perform a maintenance update for performance optimization.
 
-  .. tip::
+  .. topic:: Avoid hitting the limit on times you increase the storage
     
-    To avoid reaching the limit on how many times storage can be increased between maintenance updates, plan with foresigt to add a sufficient amount of the disk capacity.
+    Each time your increase the storage size, plan with foresight so that the amount of the disk space you add is sufficient and you don't need to add it again any time soon.
 
 - If there is an ongoing maintenance update, you cannot add additional storage until the maintenance is completed.
 
