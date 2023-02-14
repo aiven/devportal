@@ -159,7 +159,7 @@ Deletes a billing group.
   * - ``id``
     - The billing group ID 
 
-**Example:** Delete the billing group with id ``55b0e547-58f9-48de-8808-807d385d1f95``:
+**Example:** Delete the billing group with ID ``55b0e547-58f9-48de-8808-807d385d1f95``:
 
 .. code:: shell
 
