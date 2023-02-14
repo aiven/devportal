@@ -15,9 +15,9 @@ Aiven-wise
 Tools
 '''''
 
-* To update the service plan or add an extra disk space, you need the `Aiven console <https://console.aiven.io/>`_.
-* To set up the replication factor, you need the ``cqlsh`` Cassandra client.
-* To set up the consistency level, you need either the ``cqlsh`` Cassandra client or your client software.
+* To update the service plan or add an extra disk space, use the `Aiven console <https://console.aiven.io/>`_.
+* To set up the replication factor on the database side, issue the CREATE KEYSPACE statement from `any supported client driver <https://cassandra.apache.org/doc/latest/cassandra/getting_started/drivers.html>`_. This guide uses the ``cqlsh`` Cassandra client for that purpose to ensure general applicability of the instruction.
+* To set up the consistency level on the client side, configure it in your software. This guide uses the ``cqlsh`` Cassandra client for that purpose to ensure general applicability of the instruction.
 
 Change the service plan
 -----------------------
@@ -73,11 +73,11 @@ Set up the replication factor
 -----------------------------
 
 You can specify how many replicas of your data you'd like to have on either of datacenters hosting your service.
-For that purpose, you need a new keystore where your data can be stored in tables. To create a keystore that supports CCR and defines the replication factor, you need to run the ``CREATE KEYSPACE`` query with a set of parameters configuring the keyspace as needed.
+For that purpose, you need a keyspace with the ``NetworkTopologyStrategy`` replication. To create a keyspace that supports CCR and defines the replication factor, you need to run the ``CREATE KEYSPACE`` query with a set of parameters configuring the keyspace as needed.
 
 .. note::
     
-    This instruction uses the ``cqlsh`` Cassandra CLI client to configure the replication factor.
+    This instruction uses the ``cqlsh`` Cassandra CLI client to configure the replication factor. ``cqlsh`` is used for demonstration purposes and the same statements can be executed using any `supported client driver <https://cassandra.apache.org/doc/latest/cassandra/getting_started/drivers.html>`_.
 
 1. :doc:`Connect to your service via cqlsh </docs/products/cassandra/howto/connect-cqlsh-cli>`.
 
@@ -128,11 +128,11 @@ For that purpose, you need a new keystore where your data can be stored in table
 Set up the consistency level
 ----------------------------
 
-For Apache Cassandra, you can set up the ``CONSISTENCY`` parameter, which regulates when the client can concern an operation as successfully completed. The ``CONSISTENCY`` parameter defines how many nodes need to confirm the operation as finalized before the client can acknowledge the operation as successfully completed.
+For Apache Cassandra, you can set up the ``CONSISTENCY`` parameter, which regulates when the client can consider an operation as successfully completed. The ``CONSISTENCY`` parameter defines how many nodes need to confirm the operation as finalized before the client can acknowledge the operation as successfully completed.
 
 .. note::
     
-    You can configure the consistency level in the shell or in a client library. While using the ``cqlsh`` CLI client is convenient for setting up keyspaces or testing, using a client software is recommended for operations in the production environment and bulk actions, such as data imports, data querying, or data reads/ writes from/ to databases.
+    You can configure the consistency level in the shell or in a client library. While using the ``cqlsh`` CLI client is convenient for setting up keyspaces or testing, configuring and using a `client driver <https://cassandra.apache.org/doc/latest/cassandra/getting_started/drivers.html>`_ is recommended for operations in the production environment, such as data imports, data querying, or data reads/ writes from/ to databases.
 
 In the shell
 ''''''''''''
@@ -146,22 +146,13 @@ In the shell
 
 .. topic:: Expected output
 
-    The query can return, for example, ``Current consistency level is ONE.``, which means that a conformation of an operation completion on one node is enough for this operation to be considered as successfully completed for your service.
+    The query can return, for example, ``Current consistency level is ONE.``, which means that a confirmation of an operation completion on one node is enough for this operation to be considered as successful.
 
-3. To set up the consistency level to a specific value, run the ``CONSISTENCY consistency_level_argument;`` query.
+1. To set up the consistency level to a specific value, run the ``CONSISTENCY consistency_level_argument;`` query.
 
 .. topic:: Allowed consistency level arguments
 
-    * ANY
-    * ONE
-    * TWO
-    * THREE
-    * QUORUM
-    * ALL
-    * LOCAL_QUORUM
-    * LOCAL_ONE
-    * SERIAL
-    * LOCAL_SERIAL
+    For the list of the allowed consistency level arguments for Apache Cassandra, see `CONSISTENCY <https://cassandra.apache.org/doc/4.1/cassandra/tools/cqlsh.html#consistency>`_ in the Apache Cassandra documentation.
 
 .. code-block:: bash
    :caption: Example
@@ -171,7 +162,21 @@ In the shell
 In a client library
 '''''''''''''''''''
 
-To configure the consistency level in a client library, add an extra parameter defining the consistency level on your object before running a particular query.
+To configure the consistency level in a client library, add an extra parameter or object to define the consistency level on your software component before running a particular query.
+
+.. topic:: Example::
+    
+    In Python, you have to use another object when you create the query:
+
+   .. code-block:: bash
+    
+      session.execute("LIST ROLES")
+
+   vs
+
+   .. code-block:: bash
+    
+      session.execute(SimpleStatement("LIST ROLES", consistency_level=ConsistencyLevel.ALL))
 
 .. topic:: Result
 
