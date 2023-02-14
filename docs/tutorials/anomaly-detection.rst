@@ -6,11 +6,11 @@ What you will learn
 
 Follow this tutorial and you'll learn how to build a streaming anomaly detection system. In particular, we'll cover the following:
 
-* How to create a fake streaming dataset
-* How to create and use Apache Kafka for data streaming
-* How to create and use PostgreSQL® to store threshold data
-* How to create and use Apache Flink® to define streaming data pipelines
-* How to push the outcome of the anomaly detection system as a Slack notification
+* How to create a fake streaming dataset.
+* How to create and use Apache Kafka for data streaming.
+* How to create and use PostgreSQL® to store threshold data.
+* How to create and use Apache Flink® to define streaming data pipelines.
+* How to push the outcome of the anomaly detection system as a Slack notification.
 
 
 What are you going to build
@@ -48,16 +48,14 @@ Reading the average CPU value in 30 second windows will improve your initial imp
         id4-- yes --> id5(notification);
         id3(threshold table)-- thresholds --> id4;
 
-.. Note::
 
-    Even if the sample dataset and the data pipeline examples might seem basic, they offer a wide coverage on the integration and transformation options available with Apache Flink that can be applied to other, more complex, scenarios. 
 
 The tutorial includes:
 
-* Apache Flink for data transformation
-* Apache Kafka for data streaming
-* PostgreSQL® for data storage/query
-* Slack as notification system
+* Apache Flink for data transformation.
+* Apache Kafka for data streaming.
+* PostgreSQL® for data storage/query.
+* Slack as notification system.
 
 In this tutorial we'll be using Aiven services, specifically `Aiven for Apache Flink® <https://aiven.io/flink>`_, `Aiven for Apache Kafka® <https://aiven.io/kafka>`_, and `Aiven for PostgreSQL® <https://aiven.io/postgresql>`_. All of these are open source tools widely available. We encourage you to `sign up for a free trial <https://console.aiven.io>`_ to follow along as it will reduce any issues you might have with networking and getting services to communicate with each other to nearly zero.
 
@@ -90,9 +88,9 @@ Create the Aiven services
 
 In this section you'll create all the services needed to define the anomaly detection system via the `Aiven Console <https://console.aiven.io/>`_:
 
-* An :doc:`Aiven for Apache Kafka®</docs/products/kafka>` named ``demo-kafka`` for data streaming, this is where the stream of IoT sensor readings will land
-* An :doc:`Aiven for Apache Flink®</docs/products/flink>` named ``demo-flink`` for streaming data transformation, to define the anomaly detection queries
-* An :doc:`Aiven for PostgreSQL®</docs/products/postgresql>` named ``demo-postgresql`` for alerting thresholds storage and query
+* An :doc:`Aiven for Apache Kafka®</docs/products/kafka>` named ``demo-kafka`` for data streaming, this is where the stream of IoT sensor readings will land.
+* An :doc:`Aiven for Apache Flink®</docs/products/flink>` named ``demo-flink`` for streaming data transformation, to define the anomaly detection queries.
+* An :doc:`Aiven for PostgreSQL®</docs/products/postgresql>` named ``demo-postgresql`` for alerting thresholds storage and query.
 
 
 Create an Aiven for Apache Kafka® service
@@ -112,7 +110,7 @@ The :doc:`Aiven for Apache Kafka </docs/products/kafka>` service is responsible 
 
 4. Select the cloud provider and region that you want to run your service on.
 
-5. Select `business-4` as service plan.
+5. Select `business-4` as service plan. The `business-4` plan allows you to define the service integrations needed to define Apache Flink streaming transformations over the Apache Kafka topic.
 
 5. Enter ``demo-kafka`` as name for your service.
 
@@ -125,12 +123,12 @@ Now that your service is created, you need to customise its functionality. In th
 
 1. Enable the Apache Kafka REST APIs to manage and query via the Aiven Console. 
 
-   Navigate to **Kafka REST API (Karapace)** > **Enable**
+   Navigate to **Kafka REST API (Karapace)** > **Enable**.
 
 
 2. Enable the :doc:`automatic creation of Apache Kafka topics </docs/products/kafka/howto/create-topics-automatically>` to create new Apache Kafka® topics on the fly while pushing a first record.
 
-   Navigate to **Advanced configuration** > **Add configuration option** > ``kafka.auto_create_topics_enable``, switch the setting on and then click **Save advanced configuration**
+   Navigate to **Advanced configuration** > **Add configuration option** > ``kafka.auto_create_topics_enable``, switch the setting on and then click **Save advanced configuration**.
 
 
 Create an Aiven for PostgreSQL® service
@@ -147,7 +145,7 @@ You can create the Aiven for PostgreSQL database with the following steps:
 
 4. Select the cloud provider and region that you want to run your service on.
 
-5. Select `Startup-4` as service plan.
+5. Select `Startup-4` as service plan. The `Startup-4` plan allows you to define the service integrations needed to define Apache Flink streaming transformations over the data in the PostgreSQL® table.
 
 5. Enter ``demo-postgresql`` as name for your service.
 
@@ -168,11 +166,11 @@ You can create the Aiven for Apache Flink service with the following steps:
 
 4. Select the cloud provider and region that you want to run your service on.
 
-5. Select `business-4` as service plan.
+5. Select `business-4` as service plan. The `business-4` is the minimal plan available for Aiven for Apache Flink, enough to define all the data transformations in this tutorial.
 
 5. Enter ``demo-flink`` as name for your service.
 
-6. Click **Create Service** under the summary on the right side of the console
+6. Click **Create Service** under the summary on the right side of the console.
 
 
 
@@ -181,8 +179,8 @@ Integrate Aiven for Apache Flink service with sources and sinks
 
 After creating the service, you'll be redirected to the service details page. Apache Flink doesn't work in isolation, it needs data sources and sinks. Therefore you'll need to define the integrations between Apache Flink service and: 
 
-* Aiven for Apache Kafka®, which contains the stream of IoT sensor readings 
-* Aiven for PostgreSQL®, which contains the alerting thresholds
+* Aiven for Apache Kafka®, which contains the stream of IoT sensor readings. 
+* Aiven for PostgreSQL®, which contains the alerting thresholds.
 
 You can define the service integrations, in the Aiven for Apache Flink® **Overview** tab, with the following steps:
 
@@ -198,7 +196,7 @@ You can define the service integrations, in the Aiven for Apache Flink® **Overv
 6. Select **Aiven for PostgreSQL®** and then select the ``demo-postgresql`` service.
 7. Click **Integrate**.
 
-Once the above steps are completed, your **Data Flow** section should be similar to the below
+Once the above steps are completed, your **Data Flow** section should be similar to the below:
 
 .. image:: /images/tutorials/anomaly-detection/flink-integrations-done.png
       :alt: Aiven for Apache Flink Overview tab, showing the Integrations to Aiven for Apache Kafka and Aiven for PostgreSQL
@@ -254,16 +252,16 @@ It's time to start streaming the fake IoT data that you'll later process with wi
 
 #. Edit the ``conf/env.conf`` file and update the following parameters:
 
-   * ``PROJECT_NAME`` to the Aiven project name where your services have been created
-   * ``SERVICE_NAME`` to the Aiven for Apache Kafka service name ``demo-kafka``
-   * ``TOPIC`` to ``cpu_load_stats_real``
-   * ``NR_MESSAGES`` to  ``0``
+   * ``PROJECT_NAME`` to the Aiven project name where your services have been created.
+   * ``SERVICE_NAME`` to the Aiven for Apache Kafka service name ``demo-kafka``.
+   * ``TOPIC`` to ``cpu_load_stats_real``.
+   * ``NR_MESSAGES`` to  ``0``.
 
      .. note::
         The ``NR_MESSAGES`` option defines the number of messages that the tool creates when you run it. Setting this parameter to ``0`` creates a continuous flow of messages that never stops.
 
-   * ``USERNAME`` to the username used to login in the Aiven console
-   * ``TOKEN`` to the Aiven token generated at the previous step of this tutorial
+   * ``USERNAME`` to the username used to login in the Aiven console.
+   * ``TOKEN`` to the Aiven token generated at the previous step of this tutorial.
 
    .. Note::
     
@@ -311,7 +309,7 @@ To check if your fake data producer is running, head to Apache Kafka in the Aive
    .. image:: /images/tutorials/anomaly-detection/kafka-messages-detail.png
       :alt: detail of the messages in the ``cpu_load_stats_real`` topic including both key and value in JSON format
 
-8. Click again on the **Fetch Messages** button to refresh the visualization with new messages,
+8. Click again on the **Fetch Messages** button to refresh the visualization with new messages.
 
 Create a basic anomaly detection pipeline with filtering
 --------------------------------------------------------
@@ -327,11 +325,11 @@ The first anomaly detection pipeline that you'll create showcases a basic anomal
 
 The steps to create the filtering pipeline are the following:
 
-#. Create a new Aiven for Apache Flink application
-#. Define a source table to read the metrics data from your Apache Kafka® topic
-#. Define a sink table to send the processed messages to a separate Apache Kafka® topic
-#. Define a SQL transformation definition to process the data
-#. Create an application deployment to execute the pipeline
+#. Create a new Aiven for Apache Flink application.
+#. Define a source table to read the metrics data from your Apache Kafka® topic.
+#. Define a sink table to send the processed messages to a separate Apache Kafka® topic.
+#. Define a SQL transformation definition to process the data.
+#. Create an application deployment to execute the pipeline.
 
 If you feel brave, you can go ahead and try try yourself in the `Aiven Console <https://console.aiven.io/>`_. Otherwise you can follow the steps below:
 
@@ -341,12 +339,12 @@ If you feel brave, you can go ahead and try try yourself in the `Aiven Console <
    .. image:: /images/tutorials/anomaly-detection/create-application.png
       :alt: The Apache Flink **Application** tab with the **Create Application** button
 
-3. Name the new application ``filtering`` and click **Create application**
+3. Name the new application ``filtering`` and click **Create application**.
 
    .. image:: /images/tutorials/anomaly-detection/filtering-application-name.png
       :alt: The Apache Flink **Application** named ``filtering``
 
-4. Create the first version of the application by clicking on **Create first version** button
+4. Create the first version of the application by clicking on **Create first version** button.
 
 5. In the **Add source tables** tab, create the source table (named ``CPU_IN``), pointing to the Apache Kafka® topic ``cpu_load_stats_real`` where the IoT sensor readings are stored by:
    
@@ -361,18 +359,18 @@ If you feel brave, you can go ahead and try try yourself in the `Aiven Console <
    .. image:: /images/tutorials/anomaly-detection/CPU_IN_source.png
       :alt: Source table tab with ``CPU_IN`` table defined
 
-   Before saving the source table definition, you can check if it matches the data in the topic by clicking on the triangle next to **Run**. You should see the populated data
+   Before saving the source table definition, you can check if it matches the data in the topic by clicking on the triangle next to **Run**. You should see the populated data.
 
    .. image:: /images/tutorials/anomaly-detection/cpu_in_table_preview.png
       :alt: The Apache Flink source definition with SQL preview of the data
 
 
 
-6. Navigate to the **Add sink table** tab
+6. Navigate to the **Add sink table** tab.
 7. Create the sink table (named ``CPU_OUT_FILTER``), pointing to a new Apache Kafka® topic named ``cpu_load_stats_real_filter`` where the readings exceeding the ``80%`` threshold will land, by:
 
-   * Clicking on the **Add your first sink table**
-   * Selecting ``Aiven for Apache Kafka - demo-kafka`` as `Integrated service`
+   * Clicking on the **Add your first sink table**.
+   * Selecting ``Aiven for Apache Kafka - demo-kafka`` as `Integrated service`.
    * Pasting the following SQL:
 
      .. literalinclude:: /code/products/flink/basic_cpu-out-filter_table.md
@@ -395,9 +393,9 @@ If you feel brave, you can go ahead and try try yourself in the `Aiven Console <
    .. image:: /images/tutorials/anomaly-detection/filtering-preview.png
       :alt: The Apache Flink data transformation with SQL preview of the data
 
-10. Click **Save and deploy later**
+10. Click **Save and deploy later**.
 11. Click **Create deployment**. 
-12. Accept the default deployment parameters and click on **Deploy without a savepoint**
+12. Accept the default deployment parameters and click on **Deploy without a savepoint**.
 
     .. image:: /images/tutorials/anomaly-detection/filtering-application-deployment.png
         :alt: Detail of the new deployment screen showing the default version, savepoint and parallelism parameters
@@ -420,7 +418,7 @@ Once the application is running, you should start to see messages indicating hos
 Evolve the anomaly detection pipeline with windowing and threshold lookup
 ---------------------------------------------------------------------------------
 
-In most production environments, you wouldn't want to send an alert on every measurement above the threshold. Sometimes CPUs spike momentarily, for example, and come back down in. useage milliseconds later. What's really useful to you in production is if a CPU spike is sustained over a certain period of tim.e 
+In most production environments, you wouldn't want to send an alert on every measurement above the threshold. Sometimes CPUs spike momentarily, for example, and come back down in useage milliseconds later. What's really useful to you in production is if a CPU spike is sustained over a certain period of time. 
 
 If a CPU useage spike happens continuously for a 30 seconds interval, there might be a problem. In this step, you'll aggregate the CPU load over a configured time using :doc:`windows </docs/products/flink/concepts/windows>` and the :doc:`event time </docs/products/flink/concepts/event-processing-time>`. By averaging the CPU values over a time window you can filter out short term spikes in usage, and flag only anomaly scenarios where the usage is consistently above a pre-defined threshold for a long period of time.
 
@@ -454,18 +452,18 @@ In this step, you'll create a pipeline to average the CPU metrics figures in 30 
 
 To complete the section, you will perform the following steps:
 
-* Create a new Aiven for Apache Flink application
-* Import the previously created ``CPU_IN`` source table to read the metrics data from your Apache Kafka® topic
-* Define a sink table to send the processed messages to a separate Apache Kafka® topic
-* Define a SQL transformation definition to process the data
-* Create an application deployment to execute the pipeline
+* Create a new Aiven for Apache Flink application.
+* Import the previously created ``CPU_IN`` source table to read the metrics data from your Apache Kafka® topic.
+* Define a sink table to send the processed messages to a separate Apache Kafka® topic.
+* Define a SQL transformation definition to process the data.
+* Create an application deployment to execute the pipeline.
 
 You can go ahead an try yourself to define the windowing pipeline. If, on the other side, you prefer a step by step approach, follow the instructions below:
 
 1. In the `Aiven Console <https://console.aiven.io/>`_, open the Aiven for Apache Flink service and go to the **Applications** tab.
-2. Click on **Create new application** and name it ``cpu_agg``
-3. Click on **Create first version**
-4. To import the source ``CPU_IN`` table from the previously created ``filtering`` application
+2. Click on **Create new application** and name it ``cpu_agg``.
+3. Click on **Create first version**.
+4. To import the source ``CPU_IN`` table from the previously created ``filtering`` application:
     * Click on **Import existing source table**
     * Select ``filtering`` as application, ``Version 1`` as version, ``CPU_IN`` as table and click **Next**
     * Click on **Add table**
@@ -473,8 +471,8 @@ You can go ahead an try yourself to define the windowing pipeline. If, on the ot
 5. Navigate to the **Add sink tables** tab. 
 6. Create the sink table (named ``CPU_OUT_AGG``) pointing to a new Apache Kafka® topic named ``cpu_agg_stats``, where the 30 second aggregated data will land, by:
 
-   * Clicking on the **Add your first sink table**
-   * Selecting ``Aiven for Apache Kafka - demo-kafka`` as `Integrated service`
+   * Clicking on the **Add your first sink table**.
+   * Selecting ``Aiven for Apache Kafka - demo-kafka`` as `Integrated service`.
    * Pasting the following SQL:
 
      .. literalinclude:: /code/products/flink/windowed_cpu-out-agg_table.md
@@ -482,15 +480,15 @@ You can go ahead an try yourself to define the windowing pipeline. If, on the ot
 
    * Click **Add table**.
 
-7. Navigate to the **Create statement** tab
+7. Navigate to the **Create statement** tab.
 8. Enter the following as the transformation SQL statement, taking data from the ``CPU_IN`` table, aggregating the data over a 30 seconds window, and pushing the output to ``CPU_OUT_AGG``:
 
    .. literalinclude:: /code/products/flink/windowed_job.md
       :language: sql
 
-9. Click **Save and deploy later**
-10. Click **Create deployment**
-11. Accept the default deployment parameters and click on **Deploy without a savepoint**
+9. Click **Save and deploy later**.
+10. Click **Create deployment**.
+11. Accept the default deployment parameters and click on **Deploy without a savepoint**.
 
 12. The new application deployment status will show **Initializing** and then **Running: version 1**.
 
@@ -507,8 +505,8 @@ You can create the thresholds table in the ``demo-postgresql`` service with the 
 
     The below instructions assume ``psql`` is installed in your local machine.
 
-1. In the `Aiven Console <https://console.aiven.io/>`_, open the Aiven for PostgreSQL service ``demo-postgresql``
-2. In the **Overview** tab locate the **Service URI** parameter and copy the value
+1. In the `Aiven Console <https://console.aiven.io/>`_, open the Aiven for PostgreSQL service ``demo-postgresql``.
+2. In the **Overview** tab locate the **Service URI** parameter and copy the value.
 3. Connect via ``psql`` to ``demo postgresql`` with the following terminal command, replacing the ``<SERVICE_URI>`` placeholder with the **Service URI** string copied in the step above::
 
         psql "<SERVICE_URI>"
@@ -554,21 +552,21 @@ At this point, you should have both a stream of the 30 seconds average CPU metri
 
 You can complete the section with the following steps:
 
-* Create a new Aiven for Apache Flink application
-* Create a source table to read the aggregated metrics data from your Apache Kafka® topic
-* Define a sink table to send the processed messages to a separate Slack channel
-* Define a SQL transformation definition to process the data
-* Create an application deployment to execute the pipeline
+* Create a new Aiven for Apache Flink application.
+* Create a source table to read the aggregated metrics data from your Apache Kafka® topic.
+* Define a sink table to send the processed messages to a separate Slack channel.
+* Define a SQL transformation definition to process the data.
+* Create an application deployment to execute the pipeline.
 
 To create the notification data pipeline, you can go ahead an try yourself or follow the steps below:
 
 1. In the `Aiven Console <https://console.aiven.io/>`_, open the Aiven for Apache Flink service and go to the **Applications** tab.
-2. Click on **Create new application** and name it ``cpu_notification``
-3. Click on **Create first version**
+2. Click on **Create new application** and name it ``cpu_notification``.
+3. Click on **Create first version**.
 4. To create a source table ``CPU_IN_AGG`` pointing to the Apache Kafka topic ``cpu_agg_stats``:
 
-   * Click on **Add your first source table**
-   * Select ``Aiven for Apache Kafka - demo-kafka`` as `Integrated service`
+   * Click on **Add your first source table**.
+   * Select ``Aiven for Apache Kafka - demo-kafka`` as `Integrated service`.
    * Paste the following SQL:
 
      .. literalinclude:: /code/products/flink/windowed_cpu-in-agg_table.md
@@ -578,8 +576,8 @@ To create the notification data pipeline, you can go ahead an try yourself or fo
 
 5. To create a source table ``CPU_THRESHOLDS`` pointing to the PostgreSQL table ``cpu_thresholds``:
 
-   * Click on **Add new table**
-   * Select ``Aiven for PostgreSQL - demo-postgresql`` as `Integrated service`
+   * Click on **Add new table**.
+   * Select ``Aiven for PostgreSQL - demo-postgresql`` as `Integrated service`.
    * Paste the following SQL:
      
      .. literalinclude:: /code/products/flink/pgthresholds_source-thresholds_table.md
@@ -587,17 +585,17 @@ To create the notification data pipeline, you can go ahead an try yourself or fo
 
    * Click **Add table**.
 
-6. Navigate to the **Add sink tables** tab
+6. Navigate to the **Add sink tables** tab.
 7. To create a sink table ``SLACK_SINK`` pointing to a Slack channel for notifications:
 
-   * Click on **Add your first sink table**
-   * Select **No integrated service** as **Integrated service**
+   * Click on **Add your first sink table**.
+   * Select **No integrated service** as **Integrated service**.
    * Paste the following SQL, replacing the ``<SLACK_TOKEN>`` placeholder with the Slack authentication token:
 
      .. literalinclude:: /code/products/flink/slack_sink.md
          :language: sql
 
-8. Navigate to the **Create statement** tab
+8. Navigate to the **Create statement** tab.
 9. Enter the following as the transformation SQL statement, taking data from the ``CPU_IN_AGG`` table, comparing it with the threshold values from ``CPU_THRESHOLDS`` and pushing the samples over the threshold to ``SLACK_SINK``:
 
    .. literalinclude:: /code/products/flink/slack_notification.md
@@ -607,9 +605,9 @@ To create the notification data pipeline, you can go ahead an try yourself or fo
 
         The ``<CHANNEL_ID>`` placeholder needs to be replaced by the Slack channel ID parameter.
 
-10. Click **Save and deploy later**
-11. Click **Create deployment**
-12. Accept the default deployment parameters and click on **Deploy without a savepoint**
+10. Click **Save and deploy later**.
+11. Click **Create deployment**.
+12. Accept the default deployment parameters and click on **Deploy without a savepoint**.
 
 13. The new application deployment status will show **Initializing** and then **Running: version 1**.
 
