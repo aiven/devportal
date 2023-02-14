@@ -48,10 +48,15 @@ The total price you see is the cost of the additional storage and any backups as
 
 Limitations
 ~~~~~~~~~~~
-- The maximum available additional storage capacity is based on your service plan and the cloud provider.
-- Each time additional storage is added to the running service, an additional disk is added to the corresponding nodes. Since the cloud providers may limit the maximum number of disks attached to a node, this limits the number of times you can add additional storage. If this limit is reached, you will see a prompt to perform a maintenance update for performance optimization. You can add additional storage two times until the maximum storage limit is reached.  Therefore, we advise you to plan to add a sufficient amount of disk capacity. 
-- If there is an ongoing Maintenance update, you will not be able to add additional storage until the maintenance is completed. 
 
+- Maximum storage size depends on the plan and the service type. It can go as high as five times the base storage size of the plan. 
+- Storage optimization is performed at the next maintenance update after a change to the storage size. Due to limitations on the cloud provider, there is a limit on how many times storage can be increased between two maintenance updates. If this limit is reached, you see a prompt to perform a maintenance update for performance optimization.
+
+.. topic:: Avoid hitting the limit of times you increase the storage
+    
+   Each time you increase the storage size, plan with foresight so that the amount of the disk space you add is sufficient and you don't need to add it again any time soon.
+
+- If there is an ongoing maintenance update, you cannot add additional storage until the maintenance is completed.
 
 Next steps
 ----------
