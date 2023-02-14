@@ -1,7 +1,7 @@
 ``avn card``
 ===============================
 
-This article has the full list of commands for managing credit card details using ``avn account``. 
+This article has the full list of commands for managing credit card details using ``avn card``. 
 
 ``avn card add``
 ''''''''''''''''
@@ -27,7 +27,7 @@ Adds a new credit card.
   * - ``--update-project``
     - Assign card to a project
 
-**Example:** Add a credit card:
+**Example:** 
 
 .. code:: shell
 
@@ -40,10 +40,7 @@ Adds a new credit card.
 ``avn card list``
 '''''''''''''''''
 
-Lists all credit cards.
-
-
-**Example:** List credit cards:
+Lists all credit cards:
 
 .. code:: shell
 
@@ -65,7 +62,7 @@ Removes a credit card.
     - The ID shown for this card in the ``list`` command output
 
 
-**Example:** Remove a credit card:
+**Example:** 
 
 .. code:: shell
 
@@ -92,7 +89,7 @@ Updates a credit card.
       - Name on the credit card
 
 
-**Example:** Update a credit card:
+**Example:** 
 
 .. code:: shell
 
