@@ -35,7 +35,7 @@ To get started, you'll need:
 
     pip install kafka-python
 
-- `confluent-kafka <https://github.com/confluentinc/confluent-kafka-python>`_ library installed, you can install it with the following command:  
+- `confluent-Kafka <https://github.com/confluentinc/confluent-kafka-python>`_ library installed, you can install it with the following command:  
 
   .. code:: bash
 
@@ -358,7 +358,7 @@ Avro is defined by a schema and the schema is written in JSON. You can consider 
 Setting up a consumer to listen to Avro messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Here's an example of a Kafka consumer in Python using the `confluent-kafka-python <https://github.com/confluentinc/confluent-kafka-python>`_ library to consume Avro-encoded messages.
+Here's an example of a Kafka consumer in Python using the `confluent-Kafka-python <https://github.com/confluentinc/confluent-kafka-python>`_ library to consume Avro-encoded messages.
 On a terminal window, run one of the following consumer code. You won't see anything happening yet since there's no message to consume yet. 
 Keep the program running and you'll create the producer program in the next section.
 
@@ -655,7 +655,7 @@ Producer program
 
 The producer program uses the ``confluent-kafka`` library to create an AvroProducer instance and send Avro messages to a Kafka broker. Here's a breakdown of what the program does:
 
-- Import the necessary libraries: confluent_kafka, confluent_kafka.avro, ssl, and io.
+- Import the necessary libraries: ``confluent_kafka``, ``confluent_kafka.avro``, ``ssl``, and ``io``.
 - Define the URL of the Kafka broker and the Avro schema for the message.
 - Set up SSL configuration by creating an SSL context and loading the client certificate, key, and CA certificate.
 - Define the AvroProducer configuration, including the SSL settings and the Avro schema.
