@@ -7,12 +7,12 @@ To view and compare the different plans, and learn about their pricing details, 
 
 Service plans
 -------------
-Aiven for Apache Flink is packaged into two tiers, each including a range of plans to suit the size of your workloads and currently available on AWS or GCP cloud environments. All services and infrastructure are single-tenant and dedicated solely to a single customer, which ensures a high level of security and isolation for your data.
+Aiven for Apache Flink is packaged into two tiers, each including a range of plans to suit the size of your workloads and currently available on AWS, GCP, and Microsoft Azure cloud environments. All services and infrastructure are single-tenant and dedicated solely to a single customer, which ensures a high level of security and isolation for your data.
 
-* Startup - low-cost plan to experiment and prototype new ideas
 * Business - high-availability plan for business-focused apps and internal services
+* Premium -  high-availability plan that can handle high query rates and large amounts of data for mission-critical applications.
 
-To compare the plans and learn their pricing details, see `Plan comparison <https://aiven.io/pricing?tab=plan-pricing&product=flink>`_.
+To view all the plans and learn their pricing details, see `Plan Pricing <https://aiven.io/pricing?tab=plan-pricing&product=flink>`_.
 
 
 Custom plans
