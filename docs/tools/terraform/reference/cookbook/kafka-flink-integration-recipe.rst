@@ -82,105 +82,105 @@ In order to do so, you'll need to use Aiven console or Aiven CLI.
 
 .. code:: terraform
   
-  # Flink service
+   # Flink service
   
-  resource "aiven_flink" "demo-flink" {
-    project      = var.project_name
-    cloud_name   = "google-northamerica-northeast1"
-    plan         = "business-8"
-    service_name = "demo-flink"
-  }
+   resource "aiven_flink" "demo-flink" {
+      project      = var.project_name
+      cloud_name   = "google-northamerica-northeast1"
+      plan         = "business-8"
+      service_name = "demo-flink"
+   }
 
-  # Kafka service
+   # Kafka service
 
-  resource "aiven_kafka" "demo-kafka" {
-    project      = var.project_name
-    cloud_name   = "google-northamerica-northeast1"
-    plan         = "business-8"
-    service_name = "demo-kafka"
-  }
+   resource "aiven_kafka" "demo-kafka" {
+     project      = var.project_name
+     cloud_name   = "google-northamerica-northeast1"
+     plan         = "business-8"
+     service_name = "demo-kafka"
+   }
 
-  # Flink-Kafka integration
+   # Flink-Kafka integration
 
-  resource "aiven_service_integration" "flink_to_kafka" {
-    project                  = var.project_name
-    integration_type         = "flink"
-    destination_service_name = aiven_flink.demo-flink.service_name
-    source_service_name      = aiven_kafka.demo-kafka.service_name
-  }
+   resource "aiven_service_integration" "flink_to_kafka" {
+     project                  = var.project_name
+     integration_type         = "flink"
+     destination_service_name = aiven_flink.demo-flink.service_name
+     source_service_name      = aiven_kafka.demo-kafka.service_name
+   }
 
-  # Flink application
+   # Flink application
 
-  resource "aiven_flink_application" "demo-flink-app" {
-    project      = var.project_name
-    service_name = aiven_flink.demo-flink.service_name
-    name         = "demo-flink-app"
-  }
+   resource "aiven_flink_application" "demo-flink-app" {
+     project      = var.project_name
+     service_name = aiven_flink.demo-flink.service_name
+     name         = "demo-flink-app"
+   }
 
-  # Flink application version (includes Flink table creation)
+   # Flink application version (includes Flink table creation)
 
-  resource "aiven_flink_application_version" "demo-flink-app-version" {
-    project        = var.project_name
-    service_name   = aiven_flink.demo-flink.service_name
-    application_id = aiven_flink_application.demo-flink-app.application_id
-    statement      = <<EOT
-    INSERT INTO cpu_high_usage_table SELECT * FROM iot_measurements_table WHERE usage > 85
-    EOT
-    sinks {
-      create_table   = <<EOT
-      CREATE TABLE cpu_high_usage_table (
-        time_ltz TIMESTAMP(3),
-        hostname STRING,
-        cpu STRING,
-        usage DOUBLE
-      ) WITH (
-        'connector' = 'kafka',
-        'properties.bootstrap.servers' = '',
-        'scan.startup.mode' = 'earliest-offset',
-        'topic' = 'cpu_high_usage',
-        'value.format' = 'json'
-      )
-    EOT
-      integration_id = aiven_service_integration.flink_to_kafka.integration_id
-    }
-    sources {
-      create_table   = <<EOT
-      CREATE TABLE iot_measurements_table (
-        time_ltz TIMESTAMP(3),
-        hostname STRING,
-        cpu STRING,
-        usage DOUBLE
-      ) WITH (
-        'connector' = 'kafka',
-        'properties.bootstrap.servers' = '',
-        'scan.startup.mode' = 'earliest-offset',
-        'topic' = 'iot_measurements',
-        'value.format' = 'json'
-      )
-      EOT
-      integration_id = aiven_service_integration.flink_to_kafka.integration_id
-    }
-  }
+   resource "aiven_flink_application_version" "demo-flink-app-version" {
+     project        = var.project_name
+     service_name   = aiven_flink.demo-flink.service_name
+     application_id = aiven_flink_application.demo-flink-app.application_id
+     statement      = <<EOT
+     INSERT INTO cpu_high_usage_table SELECT * FROM iot_measurements_table WHERE usage > 85
+     EOT
+     sinks {
+       create_table   = <<EOT
+       CREATE TABLE cpu_high_usage_table (
+         time_ltz TIMESTAMP(3),
+         hostname STRING,
+         cpu STRING,
+         usage DOUBLE
+       ) WITH (
+         'connector' = 'kafka',
+         'properties.bootstrap.servers' = '',
+         'scan.startup.mode' = 'earliest-offset',
+         'topic' = 'cpu_high_usage',
+         'value.format' = 'json'
+       )
+     EOT
+       integration_id = aiven_service_integration.flink_to_kafka.integration_id
+     }
+     sources {
+       create_table   = <<EOT
+       CREATE TABLE iot_measurements_table (
+         time_ltz TIMESTAMP(3),
+         hostname STRING,
+         cpu STRING,
+         usage DOUBLE
+       ) WITH (
+         'connector' = 'kafka',
+         'properties.bootstrap.servers' = '',
+         'scan.startup.mode' = 'earliest-offset',
+         'topic' = 'iot_measurements',
+         'value.format' = 'json'
+       )
+       EOT
+       integration_id = aiven_service_integration.flink_to_kafka.integration_id
+     }
+   }
 
-  # Kafka source topic
+   # Kafka source topic
 
-  resource "aiven_kafka_topic" "source" {
-    project      = var.project_name
-    service_name = aiven_kafka.demo-kafka.service_name
-    partitions   = 2
-    replication  = 3
-    topic_name   = "iot_measurements"
-  }
+   resource "aiven_kafka_topic" "source" {
+     project      = var.project_name
+     service_name = aiven_kafka.demo-kafka.service_name
+     partitions   = 2
+     replication  = 3
+     topic_name   = "iot_measurements"
+   }
 
-  # Kafka sink topic
+   # Kafka sink topic
 
-  resource "aiven_kafka_topic" "sink" {
-    project      = var.project_name
-    service_name = aiven_kafka.demo-kafka.service_name
-    partitions   = 2
-    replication  = 3
-    topic_name   = "cpu_high_usage"
-  }
+   resource "aiven_kafka_topic" "sink" {
+     project      = var.project_name
+     service_name = aiven_kafka.demo-kafka.service_name
+     partitions   = 2
+     replication  = 3
+     topic_name   = "cpu_high_usage"
+   }
   
 .. dropdown:: Expand to check out how to execute the Terraform files.
 
