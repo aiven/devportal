@@ -797,6 +797,8 @@ entries:
           - file: docs/products/mysql/howto/disable-foreign-key-checks
           - file: docs/products/mysql/howto/enable-slow-queries
           - file: docs/products/mysql/howto/migrate-database-mysqldump
+          - file: docs/products/mysql/howto/migrate-db-to-aiven-via-console
+            title: Migrate via console
           - file: docs/products/mysql/howto/create-tables-without-primary-keys
           - file: docs/products/mysql/howto/create-missing-primary-keys
       - file: docs/products/mysql/reference
