@@ -1,4 +1,4 @@
-Create a MQTT sink connector
+Create an MQTT sink connector
 ==============================
 
 The `MQTT sink connector <https://docs.lenses.io/5.0/integrations/connectors/stream-reactor/sinks/mqttsinkconnector/>`_ copies messages from an Apache Kafka® topic to an MQTT queue. 
