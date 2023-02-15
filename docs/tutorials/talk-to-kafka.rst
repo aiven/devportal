@@ -10,7 +10,7 @@ Learning objectives
 
 - Basic overview of Apache Kafka and creating a highly available Apache Kafka service
 - The concept of topic, partition, producer, consumer, and consumer groups explained by example
-- The need for a schema registry and the use of Karapace to work with Apache Kafka over HTTP
+- The need for data serialization in Kafka and use of Apache Avro™ to produce and consume messages
 
 Overview
 --------
@@ -342,6 +342,72 @@ If the first consumer ``co0`` crashes for some reason, the other consumer ``co1`
         co1
         end
         p0 -->co1
+
+Apache Avro™ to produce and consume messages
+---------------------------------------------
+
+The Kafka brokers understand data as stream of bytes so one needs to pick a serializer and deserializer to convert the bytes into meaningful messages. 
+Any format would do as long as it's consistent. For this tutorial, we're selecting Apache Avro which is an open-source project and one of the most popular serialization format.
+Avro is defined by a schema and the schema is written in JSON. You can consider Avro as JSON with a schema attached to it.
+
+Setting up a consumer to listen to Avro messages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Here's an example of a Kafka consumer in Python using the `confluent-kafka-python <https://github.com/confluentinc/confluent-kafka-python>`_ library to consume Avro-encoded messages:
+
+.. code:: python
+
+    import json
+
+    from confluent_kafka import avro, KafkaError
+    from confluent_kafka.avro import AvroConsumer
+
+    # Define the Avro schema for the message
+    schema = """
+    {
+        "namespace": "example.avro",
+        "type": "record",
+        "name": "User",
+        "fields": [
+            {"name": "name", "type": "string"},
+            {"name": "favorite_number",  "type": ["int", "null"]},
+            {"name": "favorite_color", "type": ["string", "null"]}
+        ]
+    }
+    """
+
+    # Create the Avro consumer
+    avro_consumer = AvroConsumer({
+        'bootstrap.servers': 'localhost:9092',
+        'group.id': 'my-group',
+        'schema.registry.url': 'http://localhost:8081'
+    }, default_value_schema=io.StringIO(schema))
+
+    # Subscribe to the desired topic
+    avro_consumer.subscribe(['my-topic'])
+
+    # Continuously poll for new messages
+    while True:
+        msg = avro_consumer.poll(1.0)
+
+    if msg is None:
+        # No message received, continue polling
+        continue
+    if msg.error():
+        if msg.error().code() == KafkaError._PARTITION_EOF:
+            # End of partition event
+            print("Reached end of partition.")
+        else:
+            # Handle any other error
+            print("Error while polling for messages: {}".format(msg.error()))
+    else:
+        # Print the received message value
+        print("Received message: {}".format(msg.value()))
+
+    # Close the Avro consumer
+    avro_consumer.close()
+
+
 
 .. _kafka-tutorial-reference:
 
