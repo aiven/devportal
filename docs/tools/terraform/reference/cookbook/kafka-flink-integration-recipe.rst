@@ -80,7 +80,7 @@ In order to do so, you'll need to use Aiven console or Aiven CLI.
 
 ``services.tf`` file:
 
-.. code:: terraform
+.. code:: shell
    
    # Flink service
    
@@ -182,7 +182,7 @@ In order to do so, you'll need to use Aiven console or Aiven CLI.
      topic_name   = "cpu_high_usage"
    }
    
-   
+
 .. dropdown:: Expand to check out how to execute the Terraform files.
 
     The ``init`` command performs several different initialization steps in order to prepare the current working directory for use with Terraform. In our case, this command automatically finds, downloads, and installs the necessary Aiven Terraform provider plugins.
