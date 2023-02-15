@@ -1,9 +1,9 @@
 Integrate ClickHouse®  with an open source BI tool
 ==================================================
 
-Data analysis is a critical component of modern business operations. As organizations generate more and more data, it becomes increasingly difficult to extract meaningful insights from the raw information. That's where Business Intelligence (BI) tools can help us. BI tools allow organisations transform their data into visual, actionable insights that support informed decision-making.
+Data analysis is a critical component of modern business operations. As organizations generate more and more data, it becomes increasingly difficult to extract meaningful insights from the raw information. That's where Business Intelligence (BI) tools can help us. BI tools allow organisations to transform their data into visual, actionable insights that support informed decision-making.
 
-In this tutorial, you'll learn how you can integrate ClickHouse database with an open source BI tool `Metabase <https://www.metabase.com/start/oss/>`_ to visualise the data stored in your databases. After completing this tutorial you'll have a dashboard in Metabase with insights from the data you have in ClickHouse.
+In this tutorial, you'll learn how you can integrate a ClickHouse database with the open source BI tool `Metabase <https://www.metabase.com/start/oss/>`_ to visualise the data stored in your database. After completing this tutorial you'll have a dashboard in Metabase with insights from the data you have in ClickHouse.
 
 After all, a picture is worth a thousand words.
 
@@ -15,12 +15,12 @@ We'll start on the ClickHouse side. In this section we'll set up the cluster and
 Setting up Aiven for ClickHouse
 +++++++++++++++++++++++++++++++
 
-We recommend you use `Aiven for ClickHouse <https://aiven.io/clickhouse>`_ when following this tutorial. If you still don't have Aiven account, `register over here <https://console.aiven.io/signup>`_. You'll get free credits that you can use for this tutorial.
+We recommend you use `Aiven for ClickHouse <https://aiven.io/clickhouse>`_ when following this tutorial. If you still don't have an Aiven account, `register over here <https://console.aiven.io/signup>`_. You'll get free credits that you can use for this tutorial.
 
-Once you're logged into  Aiven platform, click on **Create service** and follow the wizard to set up the preferences.
+Once you're logged into the Aiven platform, click on **Create service** and follow the wizard to set up the preferences.
 
 
-We also have `a documentation <https://docs.aiven.io/docs/products/clickhouse/getting-started>`_  for detailed instructions.
+We also have `documentation <https://docs.aiven.io/docs/products/clickhouse/getting-started>`_  for detailed instructions.
 
 Loading data
 ++++++++++++++
@@ -33,10 +33,10 @@ We'll be utilizing the data from the "What's on the Menu?" dataset in the exampl
 .. image:: /images/tutorials/clickhouse-metabase/create.gif
    :alt: Animated GIF showing creation of a service
 
-Setting up OSS version of Metabase
+Setting up the OSS version of Metabase
 ------------------------------------------
 
-Depending on your operating system and preferences, you can choose among two approaches when `setting up the open source edition of Metabase <https://www.metabase.com/start/oss/>`_: using a Docker image and running Metabase as a jar.
+Depending on your operating system and preferences, you can choose between two approaches when `setting up the open source edition of Metabase <https://www.metabase.com/start/oss/>`_: using a Docker image or running Metabase as a JAR.
 
 In this tutorial we'll be using `Docker <https://www.docker.com/>`_. However, similar results can be achieved using the ``.jar`` file.
 
@@ -51,24 +51,24 @@ When starting your Docker container, make sure that you have access to the mount
 .. code:: bash
 
     docker run -d -p 3000:3000 \
-    --mount type=bind,source=/path-to-plugins-folder,destination=/plugins \
-    --name metabase metabase/metabase
+      --mount type=bind,source=/path-to-plugins-folder,destination=/plugins \
+      --name metabase metabase/metabase
 
 .. image:: /images/tutorials/clickhouse-metabase/docker.gif
    :alt: Animated GIF showing pulling latest docker image and running it
 
 Adding drivers
 ++++++++++++++
-Metabase comes with a predefined set of supported database. ClickHouse is not in `the list of officially supported drivers <https://www.metabase.com/docs/latest/databases/connecting#connecting-to-supported-databases>`_, but we can include it `as a third-party community driver <https://www.metabase.com/docs/latest/developers-guide/partner-and-community-drivers#community-drivers>`_.
+Metabase comes with a predefined set of supported databases. ClickHouse is not in `the list of officially supported drivers <https://www.metabase.com/docs/latest/databases/connecting#connecting-to-supported-databases>`_, but we can include it `as a third-party community driver <https://www.metabase.com/docs/latest/developers-guide/partner-and-community-drivers#community-drivers>`_.
 
-You can find ClickHouse driver (and extra documentation, in case you need it) in ClickHouse driver for Metabase `GitHub repository <https://github.com/ClickHouse/metabase-clickhouse-driver>`_.
+You can find the ClickHouse driver (and extra documentation, in case you need it) in the ClickHouse driver for Metabase `GitHub repository <https://github.com/ClickHouse/metabase-clickhouse-driver>`_.
 
 Load the driver by going `to the latest release <https://github.com/ClickHouse/metabase-clickhouse-driver/releases>`_ and selecting ``clickhouse.metabase-driver.jar`` from the list of assets.
 
 .. image:: /images/tutorials/clickhouse-metabase/driver.gif
    :alt: Animated GIF showing loading the driver for ClickHouse Metabase from the GitHub page
 
-Add this file to the folder that you mounted in the previous step. This will allow Metabase to access ClickHouse driver and therefore work with ClickHouse data.
+Add this file to the folder that you mounted in the previous step. This will allow Metabase to access the ClickHouse driver and therefore work with ClickHouse data.
 
 Starting Metabase
 -----------------
@@ -84,11 +84,11 @@ The first time you open Metabase, it will ask you several questions. Remember th
 Connecting to ClickHouse
 ----------------------------------
 
-In order to connect to ClickHouse server you need to add a database to Metabase and provide all necessary credentials for access. To add a database, click on **Add your own data**, this will navigate you to *Add Database* form.
+In order to connect to the ClickHouse server you need to add a database to Metabase and provide all necessary credentials for access. To add a database, click on **Add your own data**, this will navigate you to the *Add Database* form.
 
-If all went well installing a driver, you'll see **ClickHouse** in the list of available types of databases. If you don't see ClickHouse there, try restarting the container.
+If all went well installing a driver, you'll see **ClickHouse** in the list of available databases types. If you don't see ClickHouse there, try restarting the container.
 
-The connection between Metabase and ClickHouse happens over HTTPS. You can take all necessary properties (such as host, port and user credentials) from your *Aiven for ClickHouse* page in the section **ClickHouse HTTPS & JDBC**.
+The connection between Metabase and ClickHouse happens over HTTPS. You can take all the necessary properties (such as host, port and user credentials) from your *Aiven for ClickHouse* page in the section **ClickHouse HTTPS & JDBC**.
 
 .. image:: /images/tutorials/clickhouse-metabase/database.gif
    :alt: Animated GIF showing adding a database to Metabase
@@ -97,7 +97,7 @@ The connection between Metabase and ClickHouse happens over HTTPS. You can take 
 Visualising the data
 ----------------------------------
 
-Now we can run analysis and visualise the data. There are two ways you can create requests to the ClickHouse database. One is using SQL and another one is by relying on a visual editor. Below we try out both of these approaches.
+Now we can run analysis and visualise the data. There are two ways you can create requests to the ClickHouse database. One is using SQL and another is by relying on a visual editor. Below we try out both of these approaches.
 
 Querying data with SQL
 ++++++++++++++++++++++
@@ -111,9 +111,9 @@ Click on the **New** button and select **SQL Query** from the list. Next, choose
     SELECT menu_currency, count() FROM menu_item_denorm
     GROUP BY menu_currency
 
-The results will appear below the query editor. To visualise the findings, click on the button **Visualisation**. This will show you a set of possible options that fit your data. For this specific example, for example you can use a pie chart.
+The results will appear below the query editor. To visualise the findings, click on the button **Visualisation**. This will show you a set of possible options that fit your data. For this specific example, for example, you can use a pie chart.
 
-Once you're happy with the visualisation, save it. Metabase will also suggest adding the visualisation to a dashboard. If you don't want to do it yet, you can add it later.
+Once you're happy with the visualisation, save it. Metabase will also suggest adding the visualisation to a dashboard. If you don't want to do that yet, you can add it later.
 
 .. image:: /images/tutorials/clickhouse-metabase/query1.gif
    :alt: Animated GIF showing creation of a new visualisation based on SQL query
@@ -122,15 +122,15 @@ Once you're happy with the visualisation, save it. Metabase will also suggest ad
 Using the visual editor
 +++++++++++++++++++++++
 
-Alternatively, you can create a query using Metabase visual editor. For instance, out of curiosity we'll look at dishes that were popular before 1920, but then disappeared from the menu.
+Alternatively, you can create a query using the Metabase visual editor. For instance, out of curiosity we'll look at dishes that were popular before 1920, but then disappeared from the menu.
 
 Press on the **New** button and select **Question** from the available options.
 
 Metabase will ask you to pick the database and the table to run requests. Select **AivenForClickHouse** (or the name you gave to your database) and ``Menu Item Denorm``. Once data is selected you'll lend on the wizard with multiple options to shape the request.
 
-To find old menus in the *Filter* section press on **Add filters to narrow your answer** and select the field **Dish Last Appeared**. Use between function and set the year values to **1700** and **1920** (or even better - experiment and select your own values!). This will find only those dishes that disappeared before 1920.
+To find old menus in the *Filter* section press on **Add filters to narrow your answer** and select the field **Dish Last Appeared**. Use the ``between`` function and set the year values to **1700** and **1920** (or even better - experiment and select your own values!). This will find only those dishes that disappeared before 1920.
 
-Next, we'll use *Summarize* section to get the most popular dishes among those that vanished. Pick the metric "Maximum of" and use the property **Dish Times Appeared**. Next to it pick **Dish Name** to group by.
+Next, we'll use the *Summarize* section to get the most popular dishes among those that vanished. Pick the metric "Maximum of" and use the property **Dish Times Appeared**. Next to it pick **Dish Name** to group by.
 
 Finally, sort data by **Max of Dish Times Appeared** in descending order and click **Visualise**. You will now see the list of disappeared popular dishes.
 
