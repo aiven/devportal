@@ -124,40 +124,40 @@ In order to do so, you'll need to use Aiven console or Aiven CLI.
      service_name   = aiven_flink.demo-flink.service_name
      application_id = aiven_flink_application.demo-flink-app.application_id
      statement      = <<EOT
-        INSERT INTO cpu_high_usage_table SELECT * FROM iot_measurements_table WHERE usage > 85
-        EOT
+           INSERT INTO cpu_high_usage_table SELECT * FROM iot_measurements_table WHERE usage > 85
+           EOT
      sinks {
        create_table   = <<EOT
-          CREATE TABLE cpu_high_usage_table (
-            time_ltz TIMESTAMP(3),
-            hostname STRING,
-            cpu STRING,
-            usage DOUBLE
-          ) WITH (
-            'connector' = 'kafka',
-            'properties.bootstrap.servers' = '',
-            'scan.startup.mode' = 'earliest-offset',
-            'topic' = 'cpu_high_usage',
-            'value.format' = 'json'
-          )
-        EOT
+             CREATE TABLE cpu_high_usage_table (
+               time_ltz TIMESTAMP(3),
+               hostname STRING,
+               cpu STRING,
+               usage DOUBLE
+             ) WITH (
+               'connector' = 'kafka',
+               'properties.bootstrap.servers' = '',
+               'scan.startup.mode' = 'earliest-offset',
+               'topic' = 'cpu_high_usage',
+               'value.format' = 'json'
+             )
+           EOT
        integration_id = aiven_service_integration.flink_to_kafka.integration_id
      }
      sources {
        create_table   = <<EOT
-          CREATE TABLE iot_measurements_table (
-            time_ltz TIMESTAMP(3),
-            hostname STRING,
-            cpu STRING,
-            usage DOUBLE
-          ) WITH (
-            'connector' = 'kafka',
-            'properties.bootstrap.servers' = '',
-            'scan.startup.mode' = 'earliest-offset',
-            'topic' = 'iot_measurements',
-            'value.format' = 'json'
-          )
-          EOT
+             CREATE TABLE iot_measurements_table (
+               time_ltz TIMESTAMP(3),
+               hostname STRING,
+               cpu STRING,
+               usage DOUBLE
+             ) WITH (
+               'connector' = 'kafka',
+               'properties.bootstrap.servers' = '',
+               'scan.startup.mode' = 'earliest-offset',
+               'topic' = 'iot_measurements',
+               'value.format' = 'json'
+             )
+             EOT
        integration_id = aiven_service_integration.flink_to_kafka.integration_id
      }
    }
