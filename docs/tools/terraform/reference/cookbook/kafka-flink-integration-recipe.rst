@@ -117,49 +117,49 @@ In order to do so, you'll need to use Aiven console or Aiven CLI.
      name         = "demo-flink-app"
    }
    
-   # Flink application version (includes Flink table creation)
+   # Flink application version
    
    resource "aiven_flink_application_version" "demo-flink-app-version" {
      project        = var.project_name
      service_name   = aiven_flink.demo-flink.service_name
      application_id = aiven_flink_application.demo-flink-app.application_id
      statement      = <<EOT
-           INSERT INTO cpu_high_usage_table SELECT * FROM iot_measurements_table WHERE usage > 85
-           EOT
-     sinks {
-       create_table   = <<EOT
-             CREATE TABLE cpu_high_usage_table (
-               time_ltz TIMESTAMP(3),
-               hostname STRING,
-               cpu STRING,
-               usage DOUBLE
-             ) WITH (
-               'connector' = 'kafka',
-               'properties.bootstrap.servers' = '',
-               'scan.startup.mode' = 'earliest-offset',
-               'topic' = 'cpu_high_usage',
-               'value.format' = 'json'
-             )
-           EOT
-       integration_id = aiven_service_integration.flink_to_kafka.integration_id
-     }
-     sources {
-       create_table   = <<EOT
-             CREATE TABLE iot_measurements_table (
-               time_ltz TIMESTAMP(3),
-               hostname STRING,
-               cpu STRING,
-               usage DOUBLE
-             ) WITH (
-               'connector' = 'kafka',
-               'properties.bootstrap.servers' = '',
-               'scan.startup.mode' = 'earliest-offset',
-               'topic' = 'iot_measurements',
-               'value.format' = 'json'
-             )
-             EOT
-       integration_id = aiven_service_integration.flink_to_kafka.integration_id
-     }
+      INSERT INTO cpu_high_usage_table SELECT * FROM iot_measurements_table WHERE usage > 85
+    EOT
+    sinks {
+      create_table   = <<EOT
+      CREATE TABLE cpu_high_usage_table (
+          time_ltz TIMESTAMP(3),
+          hostname STRING,
+          cpu STRING,
+          usage DOUBLE
+      ) WITH (
+          'connector' = 'kafka',
+          'properties.bootstrap.servers' = '',
+          'scan.startup.mode' = 'earliest-offset',
+          'topic' = 'cpu_high_usage',
+          'value.format' = 'json'
+      )
+    EOT
+      integration_id = aiven_service_integration.flink_to_kafka.integration_id
+    }
+    sources {
+      create_table   = <<EOT
+      CREATE TABLE iot_measurements_table (
+          time_ltz TIMESTAMP(3),
+          hostname STRING,
+          cpu STRING,
+          usage DOUBLE
+      ) WITH (
+          'connector' = 'kafka',
+          'properties.bootstrap.servers' = '',
+          'scan.startup.mode' = 'earliest-offset',
+          'topic' = 'iot_measurements',
+          'value.format' = 'json'
+      )
+      EOT
+      integration_id = aiven_service_integration.flink_to_kafka.integration_id
+    }
    }
    
    # Kafka source topic
@@ -181,6 +181,7 @@ In order to do so, you'll need to use Aiven console or Aiven CLI.
      replication  = 3
      topic_name   = "cpu_high_usage"
    }
+   
    
 .. dropdown:: Expand to check out how to execute the Terraform files.
 
