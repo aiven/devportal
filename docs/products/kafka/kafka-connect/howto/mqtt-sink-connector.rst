@@ -1,7 +1,7 @@
 Create a MQTT sink connector
 ==============================
 
-The `MQTT sink connector <https://docs.lenses.io/5.0/integrations/connectors/stream-reactor/sinks/mqttsinkconnector/>`_ copies messages from Apache Kafka® topic to a MQTT queue. 
+The `MQTT sink connector <https://docs.lenses.io/5.0/integrations/connectors/stream-reactor/sinks/mqttsinkconnector/>`_ copies messages from an Apache Kafka® topic to an MQTT queue. 
 
 .. note::
 
@@ -17,7 +17,7 @@ The `MQTT sink connector <https://docs.lenses.io/5.0/integrations/connectors/str
 Prerequisites
 -------------
 
-To set up a MQTT sink connector, you need an Aiven for Apache Kafka service :doc:`with Kafka Connect enabled <enable-connect>` or a :ref:`dedicated Aiven for Apache Kafka Connect cluster <apache_kafka_connect_dedicated_cluster>`. 
+To set up an MQTT sink connector, you need an Aiven for Apache Kafka service :doc:`with Kafka Connect enabled <enable-connect>` or a :ref:`dedicated Aiven for Apache Kafka Connect cluster <apache_kafka_connect_dedicated_cluster>`. 
 
 .. Tip::
 
@@ -39,7 +39,7 @@ Furthermore you need to collect the following information about the sink MQTT se
 * ``SCHEMA_REGISTRY_PASSWORD``: The Apache Kafka's schema registry user password, only needed when using Avro as data format
 
 
-Setup a MQTT sink connector with Aiven Console
+Setup an MQTT sink connector with Aiven Console
 ------------------------------------------------
 
 The following example demonstrates how to setup an Apache Kafka MQTT sink connector using the `Aiven Console <https://console.aiven.io/>`_.
@@ -47,7 +47,7 @@ The following example demonstrates how to setup an Apache Kafka MQTT sink connec
 Define a Kafka Connect configuration file
 '''''''''''''''''''''''''''''''''''''''''
 
-Define the connector configurations in a file (we'll refer to it with the name ``mqtt_sink.json``) with the following content, creating a file is not strictly necessary but allows to have all the information in one place before copy/pasting them in the `Aiven Console <https://console.aiven.io/>`_:
+Define the connector configurations in a file (we'll refer to it with the name ``mqtt_sink.json``) with the following content. Creating a file is not strictly necessary but allows to have all the information in one place before copy/pasting them in the `Aiven Console <https://console.aiven.io/>`_:
 
 ::
 
@@ -73,7 +73,7 @@ Check out the `dedicated documentation <https://docs.lenses.io/5.0/integrations/
 Create a Kafka Connect connector with the Aiven Console
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-To create the connector, access the `Aiven Console <https://console.aiven.io/>`_ and select the Aiven for Apache Kafka® or Aiven for Apache Kafka Connect® service where the connector needs to be defined, then:
+To create the connector, access the `Aiven Console <https://console.aiven.io/>`_ and select the Aiven for Apache Kafka® or Aiven for Apache Kafka® Connect service where the connector needs to be defined, then:
 
 1. Click on the **Connectors** tab
 2. Clink on **Create New Connector**, the button is enabled only for services :doc:`with Kafka Connect enabled <enable-connect>`.
@@ -82,9 +82,9 @@ To create the connector, access the `Aiven Console <https://console.aiven.io/>`_
 5. Paste the connector configuration (stored in the ``mqtt_sink.json`` file) in the form
 6. Click on **Apply**
 
-.. Note::
+   .. Note::
 
-    The Aiven Console parses the configuration file and fills the relevant UI fields. You can review the UI fields across the various tab and change them if necessary. The changes will be reflected in JSON format in the **Connector configuration** text box.
+       The Aiven Console parses the configuration file and fills the relevant UI fields. You can review the UI fields across the various tabs and change them if necessary. The changes will be reflected in JSON format in the **Connector configuration** text box.
 
 7. After all the settings are correctly configured, click on **Create new connector**
 8. Verify the connector status under the **Connectors** tab
@@ -92,4 +92,4 @@ To create the connector, access the `Aiven Console <https://console.aiven.io/>`_
 
 .. Tip::
 
-    Connectors can be created also using the dedicated :ref:`Aiven CLI command <avn_service_connector_create>`.
+    Connectors can also be created using the dedicated :ref:`Aiven CLI command <avn_service_connector_create>`.
