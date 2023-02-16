@@ -6,14 +6,16 @@ This article provides an overview of the cross-cluster replication (CCR) feature
 About cross-cluster replication
 -------------------------------
 
-Cross-cluster replication (CCR) is a process of reproducing resources from one datacenter to another (or, in the Aiven universe, from one service to another). It allows you to select a cloud provider and a cloud region for your data replica(s). CCR uses the multi-datacenter (multi-cloud) cluster deployment, enabling large and resilient Apache Cassandra clusters on Aiven.
+Cross-cluster replication (CCR) is a configuration of Apache Cassandra services on the Aiven platform that mirrors your data between different clouds and/or regions, providing increased durability and locality. You can choose which region to replicate your data to. CCR deploys a single multi-datacenter Apache Cassandra cluster accross two Aiven services. Apache Cassandra is configured to treat nodes from a single service as located in a single datacenter.
 
 Why use CCR
 -----------
 
-* CCR improves the disaster recovery capability for your service. Even if one service (cloud provider or region) goes down, your data stays safe and available in its replica (another service with a different cloud provider or region).
-* Enabling CCR on your service, you can set up your client to interact with the service that is geographically close. The data locality benefit translates into a lower latency and improved data processing performance.
-* CCR brings high availability benefits.
+Improved data availability
+  CCR improves the disaster recovery capability for your service. Even if one service (cloud provider or region) goes down, your data stays safe and available with the CCR peer, which is another service with a different cloud provider or region.
+
+Improved performance
+  Enabling CCR on your service, you can set up your client to interact with the service that is geographically close. The data locality benefit translates into a lower latency and improved data processing performance.
 
 Data flow architecture
 ----------------------
@@ -25,22 +27,22 @@ When you enable CCR on your Aiven for Apache Cassandra service, you connect to a
     flowchart LR
         subgraph Cluster_xy
         direction LR
-        cluster_info[[User keyspace with replication<br>- NetworkTopologyStrategy<br>- Separate token rings for X & Y]]
+        cluster_info[["User keyspace with replication:<br>NetworkTopologyStrategy {'service_x': 3, 'service_y': 3}"]]
         subgraph Service_x
         direction LR
-        service_info_x[[dc=google-west-X<br>rack=google-west-2-b]]
+        service_info_x[[cassandra.datacenter=service_x]]
         x1((node_x1)) --- x2((node_x2))
         x2((node_x2)) --- x3((node_x3))
         x3((node_x3)) --- x1((node_x1))
         end
         subgraph Service_y
         direction LR
-        service_info_y[[dc=aws-wtf-Y<br>rack=aws-wtf-9-z]]
+        service_info_y[[cassandra.datacenter=service_y]]
         y1((node_y1)) --- y2((node_y2))
         y2((node_y2)) --- y3((node_y3))
         y3((node_y3)) --- y1((node_y1))
         end
-        Service_x<-. data_replicatioin .->Service_y
+        Service_x<-. data_replication .->Service_y
         end
 
 How it works
@@ -51,16 +53,16 @@ Replication strategy
 
 Apache Cassandra allows specifying the replication strategy when creating a keyspace.
 
-.. note::
+.. topic:: What is the keyspace?
     
-    The keyspace is an entity that determines how data replicates in the tables that belong to this keyspace.
+    It is a namespace defining a replication strategy and particular options for a group of tables.
 
 With the replication strategy defined in the CREATE KEYSPACE query, every table in the keyspace is replicated within the cluster according to the specified strategy.
 
 ``NetworkTopologyStrategy``
 '''''''''''''''''''''''''''
 
-The replication strategy that allows CCR in Aiven for Apache Cassandra is called `NetworkTopologyStrategy <https://docs.datastax.com/en/cassandra-oss/3.0/cassandra/architecture/archDataDistributeReplication.html#archDataDistributeReplication__nts>`__.
+The replication strategy that allows CCR in Aiven for Apache Cassandra is called `NetworkTopologyStrategy <https://cassandra.apache.org/doc/4.1/cassandra/cql/ddl.html#networktopologystrategy>`__.
 
 ``NetworkTopologyStrategy`` can be set up as the replication strategy when creating a keyspace on the cluster. The same CREATE KEYSPACE query can be used to specify the replication factor and a datacenter that data can be replicated to.
 
@@ -85,11 +87,11 @@ To make CCR work on your services, you need a cluster comprising two Apache Cass
    CREATE KEYSPACE test WITH replication =  /
    {                                        /
     'class': 'NetworkTopologyStrategy',     /
-    'dc-1': 3,                              /
-    'dc-2': 3                               /
+    'service-1': 3,                         /
+    'service-2': 3                          /
    };
 
-Where ``dc-1`` and ``dc-2`` are the names of Apache Cassandra datacenter, which you can find in the Aiven console.
+Where ``service-1`` and ``service-2`` are the names of Apache Cassandra datacenter, which you can find in the Aiven console.
 
 CCR in action
 '''''''''''''
@@ -107,7 +109,7 @@ Consistency level
     * LOCAL_QUORUM consistency level
         The read is contained within the service you connect to (completes faster).
     * QUORUM consistency level
-        The read produces more consistent results (replies from nodes of both services are required).
+        Replies from nodes of both services are required. The read produces more consistent results but fails if one of the regions is unavailable.
 
 .. seealso::
 
@@ -116,11 +118,19 @@ Consistency level
 Limitations
 -----------
 
+* It is not possible to connect two existing services to become a CCR pair.
+
+.. topic:: But you still can 
+    
+   * Create a CCR pair from scratch or
+   * Add a new region to an existing service (create a new service that replicates from your existing service).
+
 * Enabling CCR on an existing service is only possible if this service has a keyspace that uses ``NetworkTopologyStrategy`` as a replication strategy.
+* it's not possible to connect two existing services to become a CCR pair, you can either create a CCR pair from scratch or add a new region to an existing service (create an empty service that replicates from it)
 * Two CCR services need to share one service plan and the same amount of dynamic disk space.
 * Limited replication configuration
   * ``SimpleReplicationStrategy`` not supported
-  * ``Unbalanced NetworkTopologyStrategy`` not supported (no different replication factors for different services)
+  * Unbalanced ``NetworkTopologyStrategy`` not supported (both CCR peer services need the same replication factor)
 * Once a CCR service pair is split, the clusters cannot be reconnected.
 
 Related reading
