@@ -20,6 +20,7 @@ There are 5 steps
    Privatelink
 
 .. image:: /images/platform/howto/5858370-aws-privatelink-setup-step-by-step-using-aiven-and-aws-web-console_image1.png
+   :alt: Image 1
 
 --------------
 
@@ -76,7 +77,7 @@ the final step.
    -  Press `Edit` to edit the configuration.
    -  Select the VPC that was created in the previous steps
    -  Select the subnet that refers to that VPC and make sure that "auto-assign public IP" is enabled to allow to SSH directly to the instance
-   -  In the `Firewall (security groups)` blcok, choose `Select existing security group` and choose the `default` security group (which we just edit to allow incoming SSH)
+   -  In the `Firewall (security groups)` block, choose `Select existing security group` and choose the `default` security group (which we just edit to allow incoming SSH)
    -  Press on `Launch instance` to start your instance
 
 .. _h_9950f9b97e:
@@ -93,6 +94,7 @@ Login to Aiven console, select "VPC" in the left panel and create project VPC in
 For now, we will describe AWS privatelink setup.
 
 .. image:: /images/platform/howto/5858370-aws-privatelink-setup-step-by-step-using-aiven-and-aws-web-console_image2.png
+   :alt: Image 2
 
 .. _h_dd69fc9964:
 
@@ -100,6 +102,7 @@ For now, we will describe AWS privatelink setup.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: /images/platform/howto/5858370-aws-privatelink-setup-step-by-step-using-aiven-and-aws-web-console_image3.png
+   :alt: Image 3
 
 .. _h_586bdede97:
 
@@ -111,11 +114,12 @@ types. While creating Aiven service, select cloud provider "AWS", region
 "VPC" and the VPC you just created.
 
 .. image:: /images/platform/howto/5858370-aws-privatelink-setup-step-by-step-using-aiven-and-aws-web-console_image4.png
+   :alt: Image 4
 
 .. _h_eb6fca0ecb:
 
-3. Enable Privatelink on an Aiven service
------------------------------------------
+3. Enable ``Privatelink`` on an Aiven service
+---------------------------------------------
 
 .. _h_37fe703fde:
 
@@ -126,6 +130,7 @@ Login AWS console. On the upper right corner, you will see your AWS
 account ID and IAM user name. You will need this information later.
 
 .. image:: /images/platform/howto/5858370-aws-privatelink-setup-step-by-step-using-aiven-and-aws-web-console_image5.png
+   :alt: Image 5
 
 .. _h_99bfb5711a:
 
@@ -135,6 +140,7 @@ account ID and IAM user name. You will need this information later.
 In Aiven console, click on the service created in point 2.3, select "Network" tab, and click "Create Privatelink"
 
 .. image:: /images/platform/howto/5858370-aws-privatelink-setup-step-by-step-using-aiven-and-aws-web-console_image6.png
+   :alt: Image 6
 
 .. _h_942c4da106:
 
@@ -144,6 +150,7 @@ In Aiven console, click on the service created in point 2.3, select "Network" ta
 A window asking for "principals" will appear.
 
 .. image:: /images/platform/howto/5858370-aws-privatelink-setup-step-by-step-using-aiven-and-aws-web-console_image7.png
+   :alt: Image 7
 
 Assuming your AWS account ID is 111122223333 and you'd like to allow
 anyone (e.g. you have multiple IAM users) in your AWS account to
@@ -190,7 +197,7 @@ In AWS VPC dashboard, select `Endpoints` from the panel on the left, and click o
 
 .. _h_2e5b8aa8d8:
 
-4.2 Link the vpc endpoint with your service
+4.2 Link the VPC endpoint with your service
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In the create ednpoint page:
@@ -201,13 +208,13 @@ In the create ednpoint page:
 .. image:: /images/platform/howto/5858370-aws-privatelink-setup-step-by-step-using-aiven-and-aws-web-console_image10.png
 
 - In `Service settings` put the name of the service as you find it in the Aiven console. The privatelink service name will be of the form ``com.amazonaws.vpce.ap-southeast-2.vpce-svc-00000000000000000``
-- Press `Verify service` and aws should respond with `Service name verified`
+- Press `Verify service` and AWS should respond with `Service name verified`
 - Next, select your AWS VPC that you want to access from your Aiven service, and press `Create endpoint`.
 
 .. _h_252e22ec88:
 
 4.5 Wait for the endpoint status change to become "available"
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Note it may take a few minutes to see the status: "available", you may see "pending acceptance" before that.
 
@@ -215,15 +222,15 @@ Note it may take a few minutes to see the status: "available", you may see "pend
 
 .. _h_956ceaf913:
 
-1. Configure Aiven service to accept incoming connections via Privatelink
--------------------------------------------------------------------------
+1. Configure Aiven service to accept incoming connections via ``Privatelink``
+-----------------------------------------------------------------------------
 
 .. _h_68754c72b7:
 
 5.1 Enable privatelink access
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Click on the service in Aiven console, select "network" tab, and turn on "Enable kafka access"
+Click on the service in Aiven console, select "network" tab, and turn on "Enable Kafka access"
 
 .. image:: /images/platform/howto/5858370-aws-privatelink-setup-step-by-step-using-aiven-and-aws-web-console_image12.png
 
