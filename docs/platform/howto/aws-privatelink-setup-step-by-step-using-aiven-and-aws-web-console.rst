@@ -26,8 +26,8 @@ There are 5 steps
 
 .. _h_da903a8920:
 
-1. Create VPC and EC2 instance in your AWS account
---------------------------------------------------
+Create VPC and EC2 instance in your AWS account
+-----------------------------------------------
 
 This is not directly related to Privatelink but you may use this
 checklist while creating VPC in AWS for testing purposes. This will also
@@ -36,8 +36,8 @@ the final step.
 
 .. _h_37c5633407:
 
-1.1 AWS VPC management console:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+AWS VPC management console:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Create VPC - pick a CIDR:
    -  In the search box in AWS console, search for VPC and open the VPC Service. A VPC Dashboard will open.
@@ -67,8 +67,8 @@ the final step.
 
 .. _h_cf3bb023be:
 
-1.2 AWS EC2 management console:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+AWS EC2 management console:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Go to `EC2  dashboard` - search EC2 in the search box if you don't know how to open the EC2 dashboard.
    
@@ -82,13 +82,13 @@ the final step.
 
 .. _h_9950f9b97e:
 
-1. Create (Aiven) project VPC and Aiven service
------------------------------------------------
+Create (Aiven) project VPC and Aiven service
+--------------------------------------------
 
 .. _h_eb163399cb:
 
-2.1 Create VPC in Aiven console
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Create VPC in Aiven console
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Login to Aiven console, select "VPC" in the left panel and create project VPC in any region in AWS cloud. To create a privatelink in other public clouds you must use the `avn` command line.
 For now, we will describe AWS privatelink setup.
@@ -98,16 +98,16 @@ For now, we will describe AWS privatelink setup.
 
 .. _h_dd69fc9964:
 
-2.2 Wait until the VPC becomes "active"
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Wait until the VPC becomes "active"
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: /images/platform/howto/5858370-aws-privatelink-setup-step-by-step-using-aiven-and-aws-web-console_image3.png
    :alt: Image 3
 
 .. _h_586bdede97:
 
-2.3. Create Aiven service in project VPC
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Create Aiven service in project VPC
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this example we will use Kafka®, but it's similar for other service
 types. While creating Aiven service, select cloud provider "AWS", region
@@ -118,13 +118,13 @@ types. While creating Aiven service, select cloud provider "AWS", region
 
 .. _h_eb6fca0ecb:
 
-3. Enable ``Privatelink`` on an Aiven service
----------------------------------------------
+Enable ``Privatelink`` on an Aiven service
+------------------------------------------
 
 .. _h_37fe703fde:
 
-3.1 Collect information from AWS account
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Collect information from AWS account
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Login AWS console. On the upper right corner, you will see your AWS
 account ID and IAM user name. You will need this information later.
@@ -134,8 +134,8 @@ account ID and IAM user name. You will need this information later.
 
 .. _h_99bfb5711a:
 
-3.2 Create privatelink for the service
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Create privatelink for the service
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In Aiven console, click on the service created in point 2.3, select "Network" tab, and click "Create Privatelink"
 
@@ -144,8 +144,8 @@ In Aiven console, click on the service created in point 2.3, select "Network" ta
 
 .. _h_942c4da106:
 
-3.3 Prepare the principals field
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Prepare the principals field
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A window asking for "principals" will appear.
 
@@ -154,7 +154,7 @@ A window asking for "principals" will appear.
 
 Assuming your AWS account ID is 111122223333 and you'd like to allow
 anyone (e.g. you have multiple IAM users) in your AWS account to
-establish Privatelink connection to access your Aiven resources, enter
+establish Privatelink connection to access your Aiven resources, ente
 ``arn:aws:iam::111122223333:root`` in `Principals`.
 
 If you only allow a specific user (e.g. yourself) to access your Aiven
@@ -171,8 +171,8 @@ You can also use IAM role. A valid principal looks like
 
 .. _h_05907748af:
 
-3.4 Wait privatelink status to be active
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Wait for ``Privatelink`` status to be active
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 After clicking "create", wait for the Privatelink status to change from
 "creating" to "active". You will also see the AWS service name, looks
@@ -184,13 +184,13 @@ You will need this in the next step.
 
 .. _h_cd615bc6ae:
 
-1. Create VPC endpoint in your AWS account
-------------------------------------------
+Create VPC endpoint in your AWS account
+---------------------------------------
 
 .. _h_d9d62c72b0:
 
-4.1 Create VPC endpoint
-~~~~~~~~~~~~~~~~~~~~~~~
+Create VPC endpoint
+~~~~~~~~~~~~~~~~~~~
 
 In AWS VPC dashboard, select `Endpoints` from the panel on the left, and click on `Create endpoint` button.
 
@@ -199,8 +199,8 @@ In AWS VPC dashboard, select `Endpoints` from the panel on the left, and click o
 
 .. _h_2e5b8aa8d8:
 
-4.2 Link the VPC endpoint with your service
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Link the VPC endpoint with your service
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In the create endpoint page:
 
@@ -216,8 +216,8 @@ In the create endpoint page:
 
 .. _h_252e22ec88:
 
-4.5 Wait for the endpoint status change to become "available"
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Wait for the endpoint status change to become "available"
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Note it may take a few minutes to see the status: "available", you may see "pending acceptance" before that.
 
@@ -226,12 +226,12 @@ Note it may take a few minutes to see the status: "available", you may see "pend
 
 .. _h_956ceaf913:
 
-1. Configure Aiven service to accept incoming connections via ``Privatelink``
------------------------------------------------------------------------------
+Configure Aiven service to accept incoming connections via ``Privatelink``
+--------------------------------------------------------------------------
 
 .. _h_68754c72b7:
 
-5.1 Enable privatelink access
+Enable ``Privatelink`` access
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Click on the service in Aiven console, select "network" tab, and turn on "Enable Kafka access"
@@ -241,7 +241,7 @@ Click on the service in Aiven console, select "network" tab, and turn on "Enable
 
 .. _h_e11a485025:
 
-5.2 URL used for privatelink
+URL used for ``Privatelink``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 While connecting to the service (e.g. from an EC2 instance in your AWS
