@@ -180,6 +180,7 @@ like ``com.amazonaws.vpce.ap-southeast-2.vpce-svc-00000000000000000`` .
 You will need this in the next step.
 
 .. image:: /images/platform/howto/5858370-aws-privatelink-setup-step-by-step-using-aiven-and-aws-web-console_image8.png
+   :alt: Image 8
 
 .. _h_cd615bc6ae:
 
@@ -194,18 +195,20 @@ You will need this in the next step.
 In AWS VPC dashboard, select `Endpoints` from the panel on the left, and click on `Create endpoint` button.
 
 .. image:: /images/platform/howto/5858370-aws-privatelink-setup-step-by-step-using-aiven-and-aws-web-console_image9.png
+   :alt: Image 9
 
 .. _h_2e5b8aa8d8:
 
 4.2 Link the VPC endpoint with your service
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In the create ednpoint page:
+In the create endpoint page:
 
 - Provide a new name for the endpoint
 - In `Service category` choose `PrivateLink Ready partner services`
 
 .. image:: /images/platform/howto/5858370-aws-privatelink-setup-step-by-step-using-aiven-and-aws-web-console_image10.png
+   :alt: Image 10
 
 - In `Service settings` put the name of the service as you find it in the Aiven console. The privatelink service name will be of the form ``com.amazonaws.vpce.ap-southeast-2.vpce-svc-00000000000000000``
 - Press `Verify service` and AWS should respond with `Service name verified`
@@ -219,6 +222,7 @@ In the create ednpoint page:
 Note it may take a few minutes to see the status: "available", you may see "pending acceptance" before that.
 
 .. image:: /images/platform/howto/5858370-aws-privatelink-setup-step-by-step-using-aiven-and-aws-web-console_image11.png
+   :alt: Image 11
 
 .. _h_956ceaf913:
 
@@ -233,6 +237,7 @@ Note it may take a few minutes to see the status: "available", you may see "pend
 Click on the service in Aiven console, select "network" tab, and turn on "Enable Kafka access"
 
 .. image:: /images/platform/howto/5858370-aws-privatelink-setup-step-by-step-using-aiven-and-aws-web-console_image12.png
+   :alt: Image 12
 
 .. _h_e11a485025:
 
@@ -244,3 +249,4 @@ VPC), make sure you're using the connection information for
 "Privatelink" access route.
 
 .. image:: /images/platform/howto/5858370-aws-privatelink-setup-step-by-step-using-aiven-and-aws-web-console_image13.png
+   :alt: Image 13
