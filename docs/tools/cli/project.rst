@@ -281,14 +281,13 @@ Removes a user with the supplied email address from the project.
 Request project SBOM
 --------------------
 
-SBOM reports are generated per project and can be downloaded as long as the necessary permissions are set for the user/account.
+SBOM reports are generated per project and can be downloaded as long as the necessary permissions are set for the user/account. You can get the SBOM report download link for a project using the following command:
 
-.. _avn_project_generate_sbom:
+``avn_project_generate_sbom``
 
 ``avn project generate-sbom``
 '''''''''''''''''''''''''''''
 
-Gets the SBOM report download link for this project, in the chosen output format (CSV or SPDX).
 
 .. list-table::
   :header-rows: 1
@@ -297,11 +296,11 @@ Gets the SBOM report download link for this project, in the chosen output format
   * - Parameter
     - Information
   * - ``--project``
-    - The project to fetch details for
+    - The project name
   * - ``--output``
-    - Output extension (CSV or SPDX), to use
+    - Output format (CSV or SPDX)
 
-**Example:** Get the SBOM report download link for the project "my-project" in ``csv``.
+**Example:** Get the SBOM report download link for the project ``my-project`` in ``csv`` format:
 
 ::
 
