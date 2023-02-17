@@ -24,6 +24,7 @@ exceptions:
   - Cassandra
   - ClickHouse
   - CloudWatch
+  - Cloud Logging
   - Connect
   - Connector
   - Cookbook
@@ -42,8 +43,9 @@ exceptions:
   - GitHub
   - Go
   - Google BigQuery
-  - Google Cloud Platform
+  - Google Cloud Logging
   - Google Cloud Marketplace
+  - Google Cloud Platform
   - Google Cloud Storage
   - Google Cloud SQL
   - Google Data Studio
