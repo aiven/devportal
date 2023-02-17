@@ -7,11 +7,11 @@ What you will learn
 Follow this tutorial and you'll learn all the steps involved in an Apache Kafka® migration:
 
 * What are the prerequisites? What should you pay attention to, before migrating?
-* How to sync data with MirrorMaker 2
-* How to migrate Apache Kafka topic schemas
-* How to migrate Apache Kafka ACLs (Access Control Lists)
-* How to migrate Apache Kafka consumer group offsets
-* How to migrate Apache Kafka clients and connectors
+* How to sync data with MirrorMaker 2.
+* How to migrate Apache Kafka topic schemas.
+* How to migrate Apache Kafka ACLs (Access Control Lists).
+* How to migrate Apache Kafka consumer group offsets.
+* How to migrate Apache Kafka clients and connectors.
 
 
 What are you going to build
@@ -43,13 +43,13 @@ The exact migration steps can vary, depending on the peculiar usage of the exist
 
   .. Note::
 
-    This guide doesn't include any steps to migrate clients versions
+    This guide doesn't include any steps to migrate clients versions.
 
 * Available **Apache Kafka configurations**: the custom settings needed in the source system, should be available as parameters in the target system. 
 
   .. Note::
 
-    You can find a list of Aiven for Apache Kafka advanced parameters in the :doc:`related documentation </docs/products/kafka/reference/advanced-params>`
+    You can find a list of Aiven for Apache Kafka advanced parameters in the :doc:`related documentation </docs/products/kafka/reference/advanced-params>`.
 
 * Available **Apache Kafka Connect connectors**: if you're planning to migrate a Kafka Connect cluster, review the list of :doc:`supported connectors </docs/products/kafka/kafka-connect>` or check out how to :doc:`bring your own Kafka Connect cluster </docs/products/kafka/kafka-connect/howto/bring-your-own-kafka-connect-cluster>`. 
 
@@ -59,11 +59,11 @@ The exact migration steps can vary, depending on the peculiar usage of the exist
 
     As part of the connectivity check you also need to ensure:
         
-    * That the **connection bandwidth** is enough to sync the data between environments
+    * That the **connection bandwidth** is enough to sync the data between environments.
     * That the needed networking setups are available in the target Apache Kafka cluster, some examples on how to define custom networking setups on Aiven:
-        * :doc:`Firewalls/security groups </docs/platform/concepts/cloud-security>`
-        * :doc:`VPC peering </docs/platform/howto/manage-vpc-peering>`
-        * :doc:`Privatelink </docs/platform/howto/use-aws-privatelinks>`
+        * :doc:`Firewalls/security groups </docs/platform/concepts/cloud-security>`.
+        * :doc:`VPC peering </docs/platform/howto/manage-vpc-peering>`.
+        * :doc:`Privatelink </docs/platform/howto/use-aws-privatelinks>`.
 
 
 Create an Apache Kafka integration endpoint
@@ -71,13 +71,13 @@ Create an Apache Kafka integration endpoint
 
 The first step you'll need to perform in the Apache Kafka migration is identifying the source Kafka cluster and create a connection to it. In Aiven, you can perform this action by:
 
-* Accessing the `Aiven Console <https://console.aiven.io/>`_
-* Clicking on the **Integration Endpoints**
+* Accessing the `Aiven Console <https://console.aiven.io/>`_.
+* Clicking on the **Integration Endpoints**.
   
   .. image:: /images/tutorials/kafka-migration/integration-endpoints.png
     :alt: The Aiven Console with the integration endpoints option highlighted
 
-* Select **External Apache Kafka** and click on **Create New**
+* Select **External Apache Kafka** and click on **Create New**.
 
   .. image:: /images/tutorials/kafka-migration/external-kafka.png
     :alt: The Aiven Console with the option to create an External Apache Kafka integration highlighted
@@ -89,15 +89,19 @@ The first step you'll need to perform in the Apache Kafka migration is identifyi
 
 .. Warning::
 
-    The external integration setup does **not** test the connectivity between Aiven and the source Apache Kafka cluster
+    The external integration setup does **not** test the connectivity between Aiven and the source Apache Kafka cluster.
+
+    It's worth checking with the team responsible for networking if additional firewall rules need to be setup to allow Mirromaker 2 to access your source Apache Kafka cluster.
+
+    Aiven allows you to associate :doc:`static IP addresses </docs/platform/concepts/static-ips>` to all the services, please `contact us <mailto:support@aiven.io>`_ if you need additional help.
 
 Create the Aiven services
 ----------------------------
 
 In this section you'll create all the services needed for the migration via the `Aiven Console <https://console.aiven.io/>`_:
 
-* An :doc:`Aiven for Apache Kafka®</docs/products/kafka>` named ``demo-kafka`` for data streaming, this is the target Kafka cluster for the migration
-* An :doc:`Aiven for Apache Kafka MirrorMaker 2</docs/products/kafka/kafka-mirrormaker>` named ``demo-mm2``, MirrorMaker 2 will be used to stream the data from the source Apache Kafka cluster to ``demo-kafka``
+* An :doc:`Aiven for Apache Kafka®</docs/products/kafka>` named ``demo-kafka`` for data streaming, this is the target Kafka cluster for the migration.
+* An :doc:`Aiven for Apache Kafka MirrorMaker 2</docs/products/kafka/kafka-mirrormaker>` named ``demo-mm2``, MirrorMaker 2 will be used to stream the data from the source Apache Kafka cluster to ``demo-kafka``.
 
 
 Create an Aiven for Apache Kafka® service
@@ -121,28 +125,28 @@ The :doc:`Aiven for Apache Kafka </docs/products/kafka>` service is acting as ta
 
 5. Enter ``demo-kafka`` as name for your service.
 
-6. Click **Create Service** under the summary on the right side of the console
+6. Click **Create Service** under the summary on the right side of the console.
 
 Customise the Aiven for Apache Kafka service
 ''''''''''''''''''''''''''''''''''''''''''''
 
 Now that your service is created, you need to customise its functionality. In the **Overview** tab of your freshly created service, you'll see a bunch of toggles and properties. Change these two:
 
-1. **Enable REST APIs**: via **Kafka REST API (Karapace)** > **Enable**
+1. **Enable REST APIs**: via **Kafka REST API (Karapace)** > **Enable**.
 
    .. Note::
 
     The **Kafka REST API** allows you to manage and query Apache Kafka via REST APIs. You'll use it to inspect the data in Apache Kafka from the Aiven Console.
 
-2. **Auto creation of topics**: via **Advanced configuration** > **Add configuration option** > ``kafka.auto_create_topics_enable``, switch the setting on and then click **Save advanced configuration**
+2. **Auto creation of topics**: via **Advanced configuration** > **Add configuration option** > ``kafka.auto_create_topics_enable``, switch the setting on and then click **Save advanced configuration**.
 
    .. Note::
 
     The ``kafka.auto_create_topics_enable`` setting allows you to create new Apache Kafka® topics on the fly while pushing a first record. It avoids needing to create a topic in advance. To read more about the setting, check the :doc:`dedicated documentation </docs/products/kafka/howto/create-topics-automatically>`.
 
 3. **Broker Configuration**: ensure you apply all the needed :doc:`advanced configuration </docs/products/kafka/reference/advanced-params>` to the target Apache Kafka cluster.
-4. **Enable SASL** (optional): you can enable :doc:`SASL </docs/products/kafka/howto/kafka-sasl-auth>` via the dedicated configuration option
-5. **VPC peering** (optional): if you need to deploy the Apache Kafka service within a VPC, you can follow the :doc:`related documentation </docs/platform/howto/migrate-services-vpc>`
+4. **Enable SASL** (optional): you can enable :doc:`SASL </docs/products/kafka/howto/kafka-sasl-auth>` via the dedicated configuration option.
+5. **VPC peering** (optional): if you need to deploy the Apache Kafka service within a VPC, you can follow the :doc:`related documentation </docs/platform/howto/migrate-services-vpc>`.
 
 Create an Aiven for Apache Kafka MirrorMaker 2 service
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -161,13 +165,13 @@ The :doc:`Aiven for Apache Kafka MirrorMaker 2 </docs/products/kafka/kafka-mirro
    .. image:: /images/tutorials/kafka-migration/list-integrations.png
       :alt: Aiven Console, list of available integrations
 
-5. In the new window popup, select the **New Service** option and click on **Continue**
+5. In the new window popup, select the **New Service** option and click on **Continue**.
 
-6. Give the new service the ``demo-mm2`` name, select the cloud provider, region, and service plan. Then click on **Continue**
+6. Give the new service the ``demo-mm2`` name, select the cloud provider, region, and service plan. Then click on **Continue**.
 
-7. Define the **Cluster alias**, this is the logical name you'll use to define the target ``demo-kafka`` cluster. Therefore input ``kafka-target``
+7. Define the **Cluster alias**, this is the logical name you'll use to define the target ``demo-kafka`` cluster. Therefore input ``kafka-target``.
 
-Once you follow all the steps, you should be able to see an active integration between ``demo-kafka`` and ``demo-mm2`` named ``kafka-target``
+Once you follow all the steps, you should be able to see an active integration between ``demo-kafka`` and ``demo-mm2`` named ``kafka-target``:
 
 .. image:: /images/tutorials/kafka-migration/mm2-active-integration.png
     :alt: Aiven Console, active MirrorMaker 2 integration
@@ -178,8 +182,8 @@ Create a data replication using MirrorMaker 2
 
 The next step in the migration journey is to create a data replication from the source cluster to the Aiven for Apache Kafka service named ``demo-kafka``. To create a replication you need to:
 
-* create an alias for the source Apache Kafka cluster (the target alias ``kafka-target`` was defined during the creation of the MirrorMaker 2 service)
-* define the replication follow
+* Create an alias for the source Apache Kafka cluster (the target alias ``kafka-target`` was defined during the creation of the MirrorMaker 2 service).
+* Define the replication follow.
 
 Create an alias for the source Apache Kafka cluster
 '''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -188,33 +192,37 @@ To create a MirrorMaker 2 replication flow, you need first to create an alias to
 
 To create the alias with the `Aiven Console <https://console.aiven.io/>`_ you can follow the steps below:
 
-1. Navigate to the MirrorMaker 2 ``demo-mm2`` service page
-2. Click on the **Integration** tab
-3. Scroll until you reach the **External integrations** section
-4. Select **Cluster for replication** within the available external integrations
+1. Navigate to the MirrorMaker 2 ``demo-mm2`` service page.
+2. Click on the **Integration** tab.
+3. Scroll until you reach the **External integrations** section.
+4. Select **Cluster for replication** within the available external integrations.
 
    .. Warning::
 
-    Selecting the **Cluster for replication** option from the *Aiven solutions* section will only allow you to integrate with Aiven for Apache Kafka services. Therefore, if your source Kafka cluster is not an Aiven service, you need to select the **Cluster for replication** from the **External integrations** section.
+    Selecting the **Cluster for replication** option from the *Aiven solutions* section will only allow you to integrate with Aiven for Apache Kafka services. 
     
-5. Select the endpoint name defined in a previous step (``mySourceKafkaCluster``) and click **Continue**
+    Therefore, if your source Kafka cluster is not an Aiven service, you need to select the **Cluster for replication** from the **External integrations** section.
+    
+5. Select the endpoint name defined in a previous step (``mySourceKafkaCluster``) and click **Continue**.
 
    .. image:: /images/tutorials/kafka-migration/external-endpoint-integration.png
     :alt: Aiven Console, MirrorMaker 2 alias definition for the external Apache Kafka endpoint integration
 
-6. Give the source cluster an alias name, as example ``kafka-source``, and click **Enable**
+6. Give the source cluster an alias name, as example ``kafka-source``, and click **Enable**.
 
-Once the steps are done, you should be able to see the two aliases ``kafka-source`` and ``kafka-target`` defined as integrations in the ``demo-mm2`` service
+Once the steps are done, you should be able to see the two aliases ``kafka-source`` and ``kafka-target`` defined as integrations in the ``demo-mm2`` service:
 
 .. image:: /images/tutorials/kafka-migration/source-target-integration-enabled.png
     :alt: Aiven Console, MirrorMaker 2 source and target integration enabled
 
 .. Warning::
 
-  In case of any connection problem to the source or target Apache Kafka cluster, you'll be able to see the following error message in the MirrorMaker 2 service overview page
+  In case of any connection problem to the source or target Apache Kafka cluster, you'll be able to see the following error message in the MirrorMaker 2 service overview page.
 
   .. image:: /images/tutorials/kafka-migration/error-connection.png
     :alt: Aiven Console, MirrorMaker 2 service overview, error message stating that the connection to a target Kafka service is not working
+
+  You can also review the service logs by clicking on the **Log** tab.
 
 Start the MirrorMaker 2 replication flow
 ''''''''''''''''''''''''''''''''''''''''
@@ -225,28 +233,33 @@ You first need to identify the set of topics you want to migrate to the new clus
 
 .. Tip::
 
-  You can list both topics to be included and excluded in the allow list and stop list
+  You can list both topics to be included and excluded in the allow list and stop list.
 
 
 You can create a MirrorMaker 2 replication flow in the `Aiven Console <https://console.aiven.io/>`__ with:
 
-#. Navigate to the ``demo-mm2`` service page
-#. Click on the **Replication Flows** tab
-#. Click on **Create replication flow**
+#. Navigate to the ``demo-mm2`` service page.
+#. Click on the **Replication Flows** tab.
+#. Click on **Create replication flow**.
 #. Fill in the replication flow details:
 
-   * **Source cluster**: ``kafka-source`` - the alias defined for the source Kafka cluster
-   * **Target cluster**: ``kafka-target`` - the alias defined for the target Aiven for Apache Kafka cluster
-   * **Topics**: the :doc:`Java regular expression </docs/products/kafka/kafka-mirrormaker/concepts/replication-flow-topics-regex>` defining which topics to include. E.g. ``customer\..*`` to include all topics starting with ``customer.``
-   * **Topics blacklist**: the :doc:`Java regular expression </docs/products/kafka/kafka-mirrormaker/concepts/replication-flow-topics-regex>` defining which topics to exclude. E.g. ``inventory\..*`` to exclude all topics starting with ``inventory.``
-   * **Sync group offset**: to define whether to sync the topic containing the consumer group offset
-   * **Sync interval in seconds**: to define the frequency of the sync
-   * **Offset syncs topic location**: to provide offset translation, MirrorMaker 2 uses the ``mm2-offset-syncs`` topic, that can be located either in the source or sink cluster
+   * **Source cluster**: ``kafka-source`` - the alias defined for the source Kafka cluster.
+   * **Target cluster**: ``kafka-target`` - the alias defined for the target Aiven for Apache Kafka cluster.
+   * **Topics**: the :doc:`Java regular expression </docs/products/kafka/kafka-mirrormaker/concepts/replication-flow-topics-regex>` defining which topics to include. 
+     
+     E.g. 
+     
+     * ``customer\..*`` to include all topics starting with ``customer.``.
+     * ``*\..europe\..*`` to include all topics including with ``.europe.``.
+   * **Topics blacklist**: the :doc:`Java regular expression </docs/products/kafka/kafka-mirrormaker/concepts/replication-flow-topics-regex>` defining which topics to exclude. E.g. ``*\..test`` to exclude all topics ending with ``test.``.
+   * **Sync group offset**: to define whether to sync the topic containing the consumer group offset.
+   * **Sync interval in seconds**: to define the frequency of the sync.
+   * **Offset syncs topic location**: to provide offset translation, MirrorMaker 2 uses the ``mm2-offset-syncs`` topic, that can be located either in the source or sink cluster.
    * **Replication policy class**: controls the prefix when replicating topics. ``DefaultReplicationPolicy`` sets the topic name in the target Kafka service as ``source_cluster_alias.topic_name`` (prefixing the topic name with the source cluster alias), while ``IdentityReplicationPolicy`` sets the target topic name equal to the source topic name.
-   * **Emit heartbeats enabled**: allow MirrorMaker 2 to emit heartbeats to keep the connection open even in cases where no messages are replicated
-   * **Enable**: to enable the data sync job
+   * **Emit heartbeats enabled**: allow MirrorMaker 2 to emit heartbeats to keep the connection open even in cases where no messages are replicated.
+   * **Enable**: to enable the data sync job.
 
-   The following represent an example of a replication flow setting
+   The following represent an example of a replication flow setting:
 
    .. image:: /images/tutorials/kafka-migration/replication-flow-details.png
     :alt: Aiven Console, replication flow details
@@ -257,15 +270,19 @@ You can create a MirrorMaker 2 replication flow in the `Aiven Console <https://c
 
 #. Click on **Create**
 
-Once you followed all the above steps you should see the replication flow being enabled 
+Once you followed all the above steps you should see the replication flow being enabled :
 
 .. image:: /images/tutorials/kafka-migration/replication-flow-enabled.png
     :alt: Aiven Console, MirrorMaker 2 replication flow enabled
 
-And, browsing the target ``demo-kafka`` service, you should see the topics being replicated. The following image shows the replication (using the ``DefaultReplicationPolicy``) of the ``kafka-source.customer.clicks`` and ``kafka-source.customer.purchases`` topics together with MirrorMakers 2 internal topics
+And, browsing the target ``demo-kafka`` service, you should see the topics being replicated. The following image shows the replication (using the ``DefaultReplicationPolicy``) of the ``kafka-source.customer.clicks`` and ``kafka-source.customer.purchases`` topics together with MirrorMakers 2 internal topics.
 
 .. image:: /images/tutorials/kafka-migration/replicated-topics.png
     :alt: Aiven Console, target Aiven for Apache Kafka with the replicated clicks and purchases topics
+
+.. Note::
+
+  Once you started the replication flow, it will continously check for topics matching the regular expression defined. Therefore, if you create new topics matching the regex in the source cluster, they'll appear also in the target cluster.
 
 .. _tutorial_kafka_migration_replication_flow_lag:
 
@@ -287,14 +304,14 @@ Migrate topic schemas
 
 Apache Kafka topics schemas define the structure of the data in certain topics. They can be migrated in two different methods:
 
-#. by replicating the schemas topic stored in Apache Kafka (usually located in the ``_schemas`` topic)
-#. by extracting the schema information from the source and registering in the target environment using the appropriate APIs
+#. By replicating the schemas topic stored in Apache Kafka (usually located in the ``_schemas`` topic).
+#. By extracting the schema information from the source and registering in the target environment using the appropriate APIs.
 
 The second option offers much more control over what schemas are migrated. To register the schemas in an Aiven for Apache Kafka service you can:
 
-* Navigate in the `Aiven Console <https://console.aiven.io/>`__, service page, **Schemas** tab
-* Use the `Karapace rest APIs <https://api.aiven.io/doc/#tag/Service:_Kafka/operation/ServiceSchemaRegistrySubjectVersionPost>`_
-* Use :doc:`Aiven command line interface </docs/tools/cli>`
+* Navigate in the `Aiven Console <https://console.aiven.io/>`__, service page, **Schemas** tab.
+* Use the `Karapace rest APIs <https://api.aiven.io/doc/#tag/Service:_Kafka/operation/ServiceSchemaRegistrySubjectVersionPost>`_.
+* Use :doc:`Aiven command line interface </docs/tools/cli>`.
 
 
 Migrate access control list
@@ -304,9 +321,9 @@ Apache Kafka Access Control Lists (ACLs) define how various users can interact w
 
 If the target of the migration is Aiven for Apache Kafka you can define the ACLs with:
 
-* the `Aiven Console <https://console.aiven.io/>`__, service page, **Access Control Lists (ACL)** tab 
-* the dedicated `Aiven REST API <https://api.aiven.io/doc/#tag/Service:_Kafka/operation/ServiceKafkaAclAdd>`__
-* the dedicated :doc:`Aiven CLI command </docs/tools/cli/service/acl>`
+* The `Aiven Console <https://console.aiven.io/>`__, service page, **Access Control Lists (ACL)** tab.
+* The dedicated `Aiven REST API <https://api.aiven.io/doc/#tag/Service:_Kafka/operation/ServiceKafkaAclAdd>`__.
+* The dedicated :doc:`Aiven CLI command </docs/tools/cli/service/acl>`.
 
 
 Change clients settings
