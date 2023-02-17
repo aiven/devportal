@@ -282,7 +282,7 @@ And, browsing the target ``demo-kafka`` service, you should see the topics being
 
 .. Note::
 
-  Once you started the replication flow, it will continuosly check for topics matching the regular expression defined. Therefore, if you create new topics matching the regex in the source cluster, they'll appear also in the target cluster.
+  Once you started the replication flow, it will continuously check for topics matching the regular expression defined. Therefore, if you create new topics matching the regex in the source cluster, they'll appear also in the target cluster.
 
 .. _tutorial_kafka_migration_replication_flow_lag:
 
