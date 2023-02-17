@@ -1,5 +1,5 @@
-Migrate from Redis®* to Aiven for Redis®*
-=========================================
+Migrate from Redis®* to Aiven for Redis®* using the CLI
+=======================================================
 
 Move your data from a source, standalone Redis®* data store to an Aiven-managed Redis service. The migration first attempts to use the ``replication`` method, and if it fails, it uses ``scan``.
 

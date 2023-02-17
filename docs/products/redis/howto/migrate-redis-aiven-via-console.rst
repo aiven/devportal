@@ -38,6 +38,11 @@ Follow these steps to migrate a Redis® database to Aiven for Redis® service:
 2. From the **Overview** tab, scroll down to the **Migrate database** section. 
 3. Select **Set up migration**.
 4. You will see a wizard that guides you through the database migration process. 
+
+   .. image:: /images/products/redis/redis-migration-wizard.png
+    :scale: 75 %
+    :alt: Screenshot of the database migration wizard
+    
 5. On the migration wizard, read through the guidelines and select **Get started** to proceed with the database migration.
 6. On the **Database connection and validation** screen, enter the following information to establish a connection to your source database:
    
@@ -64,5 +69,5 @@ Follow these steps to migrate a Redis® database to Aiven for Redis® service:
 Related articles
 ----------------
 
-* Migrate to Aiven for Redis® using CLI :doc:`/docs/products/redis/howto/migrate-aiven-redis` 
+*  :doc:`/docs/products/redis/howto/migrate-aiven-redis` 
 
