@@ -368,18 +368,17 @@ With SSL authentication:
 
     # Configure the Kafka consumer
     conf = {
-        'bootstrap.servers': 'dewan-demo-kafka-devrel-dewan.aivencloud.com:20766',
+        'bootstrap.servers': f"{HOST}:{SSL_PORT}",
         'group.id': 'demo-consumer-group',
         'auto.offset.reset': 'earliest',
         'security.protocol': 'SSL',
-        'ssl.ca.location': '/Users/dewan.ahmed/Downloads/ca.pem',
-        'ssl.key.location': '/Users/dewan.ahmed/Downloads/service.key',
-        # 'ssl.key.password': '<CLIENT_KEY_PASSWORD>',
-        'ssl.certificate.location': '/Users/dewan.ahmed/Downloads/service.cert'
+        'ssl.ca.location': 'ca.pem',
+        'ssl.key.location': 'service.key',
+        'ssl.certificate.location': 'service.cert'
     }
 
     # Configure the Avro schema registry
-    schema_registry_conf = {'url': 'https://avnadmin:AVNS_u1VPfdCUFC5q4Z9miyK@dewan-demo-kafka-devrel-dewan.aivencloud.com:20769'}
+    schema_registry_conf = {'url': f"{SCHEMA_REGISTRY_URI}"}
     schema_registry_client = SchemaRegistryClient(schema_registry_conf)
 
     # Define the Avro schema for the message
@@ -439,18 +438,18 @@ With SSL authentication:
 
     # Configure the Kafka producer
     conf = {
-        'bootstrap.servers': 'dewan-demo-kafka-devrel-dewan.aivencloud.com:20766',
+        'bootstrap.servers': f"{HOST}:{SSL_PORT}",
         'security.protocol': 'SSL',
-        'ssl.ca.location': '/Users/dewan.ahmed/Downloads/ca.pem',
-        'ssl.certificate.location': '/Users/dewan.ahmed/Downloads/service.cert',
-        'ssl.key.location': '/Users/dewan.ahmed/Downloads/service.key',
+        'ssl.ca.location': 'ca.pem',
+        'ssl.certificate.location': 'service.cert',
+        'ssl.key.location': 'service.key',
         'client.id': '0001',
         'acks': 1,
         'compression.type': 'gzip'
     }
 
     # Configure the Avro schema registry
-    schema_registry_conf = {'url': 'https://avnadmin:AVNS_u1VPfdCUFC5q4Z9miyK@dewan-demo-kafka-devrel-dewan.aivencloud.com:20769'}
+    schema_registry_conf = {'url': f"{SCHEMA_REGISTRY_URI}"}
     schema_registry_client = SchemaRegistryClient(schema_registry_conf)
 
     # Define the Avro schema for the message
