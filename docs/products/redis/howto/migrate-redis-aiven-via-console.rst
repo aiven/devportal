@@ -24,7 +24,7 @@ Before starting the migration process, ensure you have the following:
 
 * Update or disable firewalls between the databases: Make sure to update or disable firewalls that protect the source and target databases to allow traffic and connection between them. If needed, you can temporarily disable the firewalls.
 * A source Redis®* service that is secured with SSL, which is a default requirement for migration.
-* A publicly accessible source Redis®* service or a service with a VPC peering connection between private networks. Tthe VPC ID and cloud name are required for the migration process.
+* A publicly accessible source Redis®* service or a service with a VPC peering connection between private networks. The VPC ID and cloud name are required for the migration process.
 
 .. Note::
     AWS ElastiCache for Redis®* instances cannot have public IP addresses, and thus require project VPC and peering connection.
