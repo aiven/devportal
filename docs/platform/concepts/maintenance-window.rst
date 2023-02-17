@@ -1,5 +1,5 @@
 Maintenance window
-===========================
+==================
 
 The **maintenance window** is a time window during which the nodes behind Aiven services are switched to new upgraded version and, once the process is completed, the overall URI DNS name is pointed at the new location.
 
@@ -20,8 +20,8 @@ In case of **Apache Kafka®** and **OpenSearch®** the service DNS address resol
 
 
 Maintenance updates
-===================
+~~~~~~~~~~~~~~~~~~~
 
-Updates are initially available as optional, once it reaches the 6 months mark it becomes mandatory.
-
+Service quarterly patch updates are always mandatory with 6 months advance notice.  Other updates are initially optional. 
+After they have been available for six months, they become mandatory. 
 Once updates are set to be mandatory, these updates would be applied on the next week's maintenance window or after, which gives at least 7 days in advance with exception of critical security related updates would be applied in the maintenance of the current week.
