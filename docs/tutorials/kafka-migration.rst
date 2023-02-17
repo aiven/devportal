@@ -91,7 +91,7 @@ The first step you'll need to perform in the Apache Kafka migration is identifyi
 
     The external integration setup does **not** test the connectivity between Aiven and the source Apache Kafka cluster.
 
-    It's worth checking with the team responsible for networking if additional firewall rules need to be setup to allow Mirromaker 2 to access your source Apache Kafka cluster.
+    It's worth checking with the team responsible for networking if additional firewall rules need to be setup to allow MirrorMaker 2 to access your source Apache Kafka cluster.
 
     Aiven allows you to associate :doc:`static IP addresses </docs/platform/concepts/static-ips>` to all the services, please `contact us <mailto:support@aiven.io>`_ if you need additional help.
 
@@ -282,7 +282,7 @@ And, browsing the target ``demo-kafka`` service, you should see the topics being
 
 .. Note::
 
-  Once you started the replication flow, it will continously check for topics matching the regular expression defined. Therefore, if you create new topics matching the regex in the source cluster, they'll appear also in the target cluster.
+  Once you started the replication flow, it will continuosly check for topics matching the regular expression defined. Therefore, if you create new topics matching the regex in the source cluster, they'll appear also in the target cluster.
 
 .. _tutorial_kafka_migration_replication_flow_lag:
 
