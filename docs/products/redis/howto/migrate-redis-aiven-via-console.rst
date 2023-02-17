@@ -1,20 +1,20 @@
-Migrate from Redis® database to Aiven using Aiven Console
+Migrate from Redis®* database to Aiven using Aiven Console
 ==========================================================
 
-Redis® is an open source, in-memory data structure store used as a database, cache, message broker, and streaming engine. 
+Redis®* is an open source, in-memory data structure store used as a database, cache, message broker, and streaming engine. 
 
-Migrating your Redis® databases, whether on-premise or cloud-hosted, to Aiven for Redis® managed service is a straightforward process. The Aiven console provides a guided wizard to assist you with the migration process.
+Migrating your Redis®* databases, whether on-premise or cloud-hosted, to Aiven for Redis®* managed service is a straightforward process. The Aiven console provides a guided wizard to assist you with the migration process.
 
 .. Important::
 
-    Migrating from Google Cloud Memorystore for Redis® is not currently supported.
+    Migrating from Google Cloud Memorystore for Redis®* is not currently supported.
 
 
 Prerequisites
 -------------
 Before starting the migration process, ensure you have the following: 
 
-* A target Aiven for Redis® service. To create one, see :doc:`/docs/products/redis/get-started`.
+* A target Aiven for Redis®* service. To create one, see :doc:`/docs/products/redis/get-started`.
 * Source database information:
 
   * **Hostname or connection string:** This is the public hostname, connection string, or IP address used to connect to the database. Refer to :doc:`accessible from the public Internet </docs/platform/howto/public-access-in-vpc>`.
@@ -23,18 +23,18 @@ Before starting the migration process, ensure you have the following:
   * **Password:** - The password used to connect to the database.
 
 * Update or disable firewalls between the databases: Make sure to update or disable firewalls that protect the source and target databases to allow traffic and connection between them. If needed, you can temporarily disable the firewalls.
-* A source Redis® service that is secured with SSL, which is a default requirement for migration.
-* A publicly accessible source Redis® service or a service with a VPC peering connection between private networks. Tthe VPC ID and cloud name are required for the migration process.
+* A source Redis®* service that is secured with SSL, which is a default requirement for migration.
+* A publicly accessible source Redis®* service or a service with a VPC peering connection between private networks. Tthe VPC ID and cloud name are required for the migration process.
 
 .. Note::
-    AWS ElastiCache for Redis® instances cannot have public IP addresses, and thus require project VPC and peering connection.
+    AWS ElastiCache for Redis®* instances cannot have public IP addresses, and thus require project VPC and peering connection.
 
-Migrate Redis® database
+Migrate Redis®* database
 ------------------------
 
-Follow these steps to migrate a Redis® database to Aiven for Redis® service: 
+Follow these steps to migrate a Redis®* database to Aiven for Redis®* service: 
 
-1. Log in to the `Aiven Console <https://console.aiven.io/>`_, and select the target Aiven for Redis® service to which you want to migrate the Redis® database. 
+1. Log in to the `Aiven Console <https://console.aiven.io/>`_, and select the target Aiven for Redis®* service to which you want to migrate the Redis®* database. 
 2. From the **Overview** tab, scroll down to the **Migrate database** section. 
 3. Select **Set up migration**.
 4. You will see a wizard that guides you through the database migration process. 
