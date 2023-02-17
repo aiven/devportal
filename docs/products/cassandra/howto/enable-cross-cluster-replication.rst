@@ -15,9 +15,11 @@ You can enable CCR either when creating a new Aiven for Apache Cassandra service
 Limitations
 '''''''''''
 
+.. To be replaced with the link to the CCR concept article - the Limitation section
+
 * Enabling CCR on an existing service is only possible if this service has ``NetworkTopologyStrategy`` set as a replication strategy for all distributed keyspaces.
 * Each of the services in the CCR pair needs to be hosted on a different datacenter.
-* Two CCR peer services need to share one service plan and the same amount of dynamic disk space.
+* Two CCR peer services need to use an identical service plan and the same amount of dynamic disk space.
 
 Tools
 '''''
@@ -121,7 +123,6 @@ Create a new CCR service pair
 1. Use the :ref:`avn service create <avn-cli-service-create>` command to create a new service (``service_1``).
 
    .. code-block:: bash
-      :emphasize-lines: 5,6
 
       avn service create                                   \
          --service-type cassandra                          \
@@ -130,14 +131,13 @@ Create a new CCR service pair
          -c cassandra.datacenter=datacenter_1_name         \
          service_1_name
 
-2. Create another new service (``service_2``). This time, include the ``service_to_join_with`` parameter to connect it to ``service_1`` and create a CCR pair. Set the vaule of the ``service_to_join_with`` parameter to the name of ``service_1``.
+2. Create another new service (``service_2``). This time, include the ``service_to_join_with`` parameter to connect it to ``service_1`` and create a CCR pair. Set the value of the ``service_to_join_with`` parameter to the name of ``service_1``.
 
    .. important::
 
       See :ref:`Limitations <limitations>` before you set the parameters.
 
    .. code-block:: bash
-      :emphasize-lines: 5,6,7
 
       avn service create                                   \
          --service-type cassandra                          \
@@ -152,14 +152,13 @@ Create a new CCR service pair
 Add a CCR peer to an existing service
 '''''''''''''''''''''''''''''''''''''
 
-Use the :ref:`avn service create <avn-cli-service-create>` command to create a new service with CCR enabled. Use the ``service_to_join_with`` parameter to connect your new service to an existing service creating a CCR pair. Set the vaule of the ``service_to_join_with`` parameter to the name of the existing service.
+Use the :ref:`avn service create <avn-cli-service-create>` command to create a new service with CCR enabled. Use the ``service_to_join_with`` parameter to connect your new service to an existing service creating a CCR pair. Set the value of the ``service_to_join_with`` parameter to the name of the existing service.
 
 .. important::
 
    See :ref:`Limitations <limitations>` before you set the parameters.
 
 .. code-block:: bash
-   :emphasize-lines: 5,6,7
 
    avn service create                                   \
       --service-type cassandra                          \
@@ -196,7 +195,6 @@ Use the `ServiceCreate <https://api.aiven.io/doc/#tag/Service/operation/ServiceC
 1. Use the `ServiceCreate <https://api.aiven.io/doc/#tag/Service/operation/ServiceCreate>`_ API to create a new service (``service_1``).
 
    .. code-block:: bash
-      :emphasize-lines: 9
 
       curl --request POST                                                   \
          --url https://api.aiven.io/v1/project/YOUR_PROJECT_NAME/service    \
@@ -210,14 +208,13 @@ Use the `ServiceCreate <https://api.aiven.io/doc/#tag/Service/operation/ServiceC
                "service_type": "cassandra"
             }'
 
-2. Create another new service (``service_2``). This time when constructing the API request, add the ``user_config`` object to the request body and nest inside it the ``service_to_join_with`` and ``datacenter`` fields. Set the vaule of the ``service_to_join_with`` parameter to the name of ``service_1`` to connect both services and create a CCR pair.
+2. Create another new service (``service_2``). This time when constructing the API request, add the ``user_config`` object to the request body and nest inside it the ``service_to_join_with`` and ``datacenter`` fields. Set the value of the ``service_to_join_with`` parameter to the name of ``service_1`` to connect both services and create a CCR pair.
 
    .. important::
 
       See :ref:`Limitations <limitations>` before you set the parameters.
 
    .. code-block:: bash
-      :emphasize-lines: 11,12,13,14,15
 
       curl --request POST                                                   \
          --url https://api.aiven.io/v1/project/YOUR_PROJECT_NAME/service    \
@@ -242,32 +239,31 @@ Use the `ServiceCreate <https://api.aiven.io/doc/#tag/Service/operation/ServiceC
 Add a CCR peer to an existing service
 '''''''''''''''''''''''''''''''''''''
 
-Use the `ServiceCreate <https://api.aiven.io/doc/#tag/Service/operation/ServiceCreate>`_ API to create a new service with CCR enabled. When constructing the API request, add the ``user_config`` object to the request body and nest inside it the ``service_to_join_with`` and ``datacenter`` fields. Set the vaule of the ``service_to_join_with`` parameter to the name of your existing service to connect it to your new service and create a CCR pair.
+Use the `ServiceCreate <https://api.aiven.io/doc/#tag/Service/operation/ServiceCreate>`_ API to create a new service with CCR enabled. When constructing the API request, add the ``user_config`` object to the request body and nest inside it the ``service_to_join_with`` and ``datacenter`` fields. Set the value of the ``service_to_join_with`` parameter to the name of your existing service to connect it to your new service and create a CCR pair.
 
 .. important::
 
    See :ref:`Limitations <limitations>` before you set the parameters.
 
 .. code-block:: bash
-   :emphasize-lines: 11,12,13,14,15
 
-   curl --request POST                                                   \
-      --url https://api.aiven.io/v1/project/YOUR_PROJECT_NAME/service    \
-      --header 'Authorization: Bearer YOUR_BEARER_TOKEN'                 \
-      --header 'content-type: application/json'                          \
-      --data
-         '{
-            "cloud": "string",
-            "plan": "string",
-            "service_name": "new_service_name",
-            "service_type": "cassandra",
-            "user_config": {
-               "cassandra": {
-                  "datacenter": "datacenter_name"
-               },
-               "service_to_join_with": "existing_service_name"
-            }
-         }'
+      curl --request POST                                                   \
+         --url https://api.aiven.io/v1/project/YOUR_PROJECT_NAME/service    \
+         --header 'Authorization: Bearer YOUR_BEARER_TOKEN'                 \
+         --header 'content-type: application/json'                          \
+         --data
+            '{
+               "cloud": "string",
+               "plan": "string",
+               "service_name": "new_service_name",
+               "service_type": "cassandra",
+               "user_config": {
+                  "cassandra": {
+                     "datacenter": "datacenter_name"
+                  },
+                  "service_to_join_with": "existing_service_name"
+               }
+            }'
 
 Related reading
 ---------------
