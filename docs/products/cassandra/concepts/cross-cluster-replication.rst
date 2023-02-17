@@ -6,7 +6,7 @@ This article provides an overview of the cross-cluster replication (CCR) feature
 About cross-cluster replication
 -------------------------------
 
-Cross-cluster replication (CCR) is a configuration of Apache Cassandra services on the Aiven platform that mirrors your data between different clouds and/or regions, providing increased durability and locality. You can choose which region to replicate your data to. CCR deploys a single multi-datacenter Apache Cassandra cluster accross two Aiven services. Apache Cassandra is configured to treat nodes from a single service as located in a single datacenter.
+Cross-cluster replication (CCR) is a configuration of Apache Cassandra services on the Aiven platform that mirrors your data between different clouds and/or regions, providing increased durability and locality. You can choose which region to replicate your data to. CCR deploys a single multi-datacenter Apache Cassandra cluster across two Aiven services. Apache Cassandra is configured to treat nodes from a single service as located in a single datacenter.
 
 Why use CCR
 -----------
@@ -126,11 +126,16 @@ Limitations
    * Add a new region to an existing service (create a new service that replicates from your existing service).
 
 * Enabling CCR on an existing service is only possible if this service has a keyspace that uses ``NetworkTopologyStrategy`` as a replication strategy.
-* it's not possible to connect two existing services to become a CCR pair, you can either create a CCR pair from scratch or add a new region to an existing service (create an empty service that replicates from it)
-* Two CCR services need to share one service plan and the same amount of dynamic disk space.
+* Two CCR services need to use an identical service plan and the same amount of dynamic disk space.
 * Limited replication configuration
   * ``SimpleReplicationStrategy`` not supported
   * Unbalanced ``NetworkTopologyStrategy`` not supported (both CCR peer services need the same replication factor)
+* Value of the replication factor needs to be equal to or greater than ``2``.
+
+  .. warning::
+    
+     If you set the replication factor value below ``2``, you may have it changed automatically at any time.
+
 * Once a CCR service pair is split, the clusters cannot be reconnected.
 
 Related reading
