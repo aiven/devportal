@@ -62,6 +62,7 @@ Elasticsearch
 Epicurious
 etcd
 failover
+fastavro
 fileset
 filesets
 Flink
