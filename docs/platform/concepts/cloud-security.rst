@@ -27,7 +27,7 @@ Aiven at-rest data encryption covers both active service instances as well as se
 
 Service instances and the underlying VMs use full volume encryption using LUKS with a randomly generated ephemeral key per each instance and each volume. The key is never re-used and will be trashed at the destruction of the instance, so there's a natural key rotation with roll-forward upgrades. We use the LUKS2 default mode aes-xts-plain64:sha256 with a 512-bit key.
 
-Backups are encrypted with a randomly generated key per file. These keys are in turn encrypted with RSA key-encryption key-pair and stored in the header section of each backup segment. The file encryption is performed with AES-256 in CTR mode with HMAC-SHA256 for integrity protection. The RSA key-pair is randomly generated for each service. The key lengths are 256-bit for block encryption, 512-bit for the integrity protection and 3072-bits for the RSA key. 
+Backups are encrypted with a randomly generated key per file. These keys are in turn encrypted with RSA key-encryption key-pair and stored in the header section of each backup segment. The file encryption is performed with AES-256 in CTR mode with HMAC-SHA256 for integrity protection. The RSA key-pair is randomly generated for each service. The key lengths are 256-bit for block encryption, 512-bit for the integrity protection and 3072-bits for the RSA key.
 
 Aiven-encrypted backup files are stored in the object storage in the same region where the service virtual machines are located. For those cloud providers that do not provide object storage services (i.e. DigitalOcean, UpCloud), the nearest region from another cloud provider that provides an object storage is used.
 
@@ -39,7 +39,7 @@ Customer access to provided services is only provided over TLS encrypted connect
 
 Communication between virtual machines within Aiven is secured with either TLS or IPsec. There are no unencrypted plaintext connections.
 
-Virtual machines network interfaces are protected by a dynamically configured iptables-based firewall that only allows connections from specific addresses both from the internal network (other VMs in the same service) or external public network (customer client connections).  The allowed source IP addresses for establishing connections is user controlled on per-service basis. 
+Virtual machine network interfaces are protected by a dynamically configured iptables-based firewall that only allows connections from specific addresses both from the internal network (other VMs in the same service) or external public network (customer client connections).  The allowed source IP addresses for establishing connections are user controlled on a per-service basis.
 
 .. _networking-with-vpc-peering:
 
@@ -48,11 +48,11 @@ Networking with VPC peering
 
 When using VPC peering, no public internet based access is provided to the services. Service addresses are published in public DNS, but they can only be connected to from the customer's peered VPC using private network addresses.
 
-The service providing virtual machines are still contained under Aiven cloud provider accounts. An Aiven VPC is created per project and not shared between customers, organizations, organizational units, or other projects. When services are deployed in a VPC, the DNS names resolve to their Private IP. 
+The services providing virtual machines are still contained under Aiven cloud provider accounts. Aiven VPCs are created per project and not shared between customers, organizations, organizational units, or projects. When services are deployed in a VPC, the DNS names resolve to their Private IP.
 
 Some services allow both public and private access to be enabled while inside a VPC (for testing, for example) and you can find instructions for this in the :doc:`Enable public access in a VPC </docs/platform/howto/public-access-in-vpc>` article.
 
-Connections to Aiven services are always established from customer's VPC towards the peered Aiven VPC, and one can thus utilize VPC Firewall rules to prevent any ingress connections from Aiven side to customer's network. 
+Connections to Aiven services are always established from your VPC to the peered Aiven VPC. So, you can use VPC firewall rules to prevent any ingress connections from the Aiven side to your network.
 
 
 Operator access
@@ -68,9 +68,9 @@ No customer access to the virtual machine level is provided.
 Customer data privacy
 ----------------------
 
-Customer data privacy is of utmost importance for Aiven, and is covered by internal Security and Customer Privacy policies as well as the strict EU regulations. 
+Customer data privacy is of utmost importance to Aiven, and is covered by internal security and customer privacy policies as well as strict EU regulations.
 
-Aiven operators will never access the customer data, unless explicitly requested by the customer in order to troubleshoot a technical issue. 
+Aiven operators never access customer data, unless explicitly requested to do so by the customer in order to troubleshoot a technical issue.
 
 Aiven operations team has mandatory recurring training regarding the applicable policies.
 
@@ -79,3 +79,13 @@ Periodic security evaluation
 -----------------------------
 
 Aiven services are periodically assessed, and penetration tested for any security issues by an independent professional cyber security vendor.
+
+
+Software bill of materials (SBOM)
+----------------------------------
+
+The SBOM is a list of all packages that are being used by Aiven in the services we provide. The list details packages installed in the VM operating system, as well as packages installed by the service itself.
+
+SBOM reports are being widely adopted and may eventually be required for compliance or security assessments. We provide these reports as a file download via our :doc:`CLI </docs/tools/cli/project>`, in CSV or SPDX format.
+
+SBOM reports are only available to customers who have an enterprise support contract and all services within the project must have the latest maintenance patches applied.

@@ -1,7 +1,7 @@
 ``avn project``
 ================
 
-This article has the full list of commands for managing projects in Aiven using ``avn project``. 
+This article has the full list of commands for managing projects in Aiven using ``avn project``.
 
 Manage project details
 -----------------------
@@ -276,3 +276,29 @@ Removes a user with the supplied email address from the project.
 .. code:: shell
 
   avn project user-remove --project my-project alice@example.com
+
+
+Request project SBOM
+--------------------
+
+SBOM reports are generated per project and can be downloaded as long as the necessary permissions are set for the project. You can get the SBOM report download link for a project using the following command:
+
+``avn project generate-sbom``
+'''''''''''''''''''''''''''''
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``--project``
+    - The project name
+  * - ``--output``
+    - Output format (CSV or SPDX)
+
+**Example:** Get the SBOM report download link for the project ``my-project`` in ``csv`` format:
+
+::
+
+  avn project generate-sbom --project my-project --output csv
