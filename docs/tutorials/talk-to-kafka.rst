@@ -461,7 +461,7 @@ On a terminal window, run the following producer code. The program should execut
     producer.flush()
 
 Setting up a consumer to receive Avro-encoded messages
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 With the producer program completed on one terminal, open up another terminal and run the following consumer program.
 
