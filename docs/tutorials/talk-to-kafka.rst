@@ -175,60 +175,10 @@ A consumer is reading messages from this topic which is part of a consumer group
         end
         p0 -->co0
 
-Set up a consumer instance to start listening for messages
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+.. note::
 
-The following code samples include configuration related to SSL or SASL authentication. If you're running a local Kafka instance and not using SSL/SASL, you can exclude these configurations. 
-Please note that excluding SSL/SASL configurations is not suggested for production Kafka environments. 
-
-With SSL authentication:
-
-.. code:: python
-
-        # Import the required library
-        from kafka import KafkaConsumer
-
-        # Create the consumer instance  
-        consumer = KafkaConsumer(
-            "demo-topic",
-            auto_offset_reset="earliest",
-            bootstrap_servers=f"{HOST}:{SSL_PORT}", # From the connection information for managed service
-            group_id="demo-consumer-group",
-            security_protocol="SSL",
-            ssl_cafile="ca.pem", # From the connection information for managed service
-            ssl_certfile="service.cert", # From the connection information for managed service
-            ssl_keyfile="service.key", # From the connection information for managed service
-        )
-
-        # Continuously poll for new messages
-        for msg in consumer:
-          print("Message: ", msg.value)
-
-With SASL authentication:
-
-.. code:: python
-
-        # Import the required library
-        from kafka import KafkaConsumer
-
-        # Choose an appropriate SASL mechanism, for instance:
-        SASL_MECHANISM = 'SCRAM-SHA-256'
-
-        consumer = KafkaConsumer(
-            "demo-topic",
-            auto_offset_reset="earliest",
-            bootstrap_servers = f'{HOST}:{SASL_PORT}', # From the connection information for managed service
-            group_id="demo-consumer-group",
-            sasl_mechanism = SASL_MECHANISM,
-            sasl_plain_username = SASL_USERNAME, # From the connection information for managed service
-            sasl_plain_password = SASL_PASSWORD, # From the connection information for managed service
-            security_protocol = "SASL_SSL",
-            ssl_cafile = "ca.pem" # From the connection information for managed service
-        )
-
-        # Continuously poll for new messages
-        for msg in consumer:
-          print("Message: ", msg.value.decode("utf-8"))
+    The following code samples include configuration related to SSL or SASL authentication. If you're running a local Kafka instance and not using SSL/SASL, you can exclude these configurations. 
+    Please note that excluding SSL/SASL configurations is not suggested for production Kafka environments. 
 
 Set up a producer instance to send a message to the cluster
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -287,6 +237,59 @@ With SASL authentication:
 
         producer.close()
 
+Set up a consumer instance to start listening for messages
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+With the producer program executed, now run the consumer program for your chosen protocol. 
+
+With SSL authentication:
+
+.. code:: python
+
+        # Import the required library
+        from kafka import KafkaConsumer
+
+        # Create the consumer instance  
+        consumer = KafkaConsumer(
+            "demo-topic",
+            auto_offset_reset="earliest",
+            bootstrap_servers=f"{HOST}:{SSL_PORT}", # From the connection information for managed service
+            group_id="demo-consumer-group",
+            security_protocol="SSL",
+            ssl_cafile="ca.pem", # From the connection information for managed service
+            ssl_certfile="service.cert", # From the connection information for managed service
+            ssl_keyfile="service.key", # From the connection information for managed service
+        )
+
+        # Continuously poll for new messages
+        for msg in consumer:
+          print("Message: ", msg.value)
+
+With SASL authentication:
+
+.. code:: python
+
+        # Import the required library
+        from kafka import KafkaConsumer
+
+        # Choose an appropriate SASL mechanism, for instance:
+        SASL_MECHANISM = 'SCRAM-SHA-256'
+
+        consumer = KafkaConsumer(
+            "demo-topic",
+            auto_offset_reset="earliest",
+            bootstrap_servers = f'{HOST}:{SASL_PORT}', # From the connection information for managed service
+            group_id="demo-consumer-group",
+            sasl_mechanism = SASL_MECHANISM,
+            sasl_plain_username = SASL_USERNAME, # From the connection information for managed service
+            sasl_plain_password = SASL_PASSWORD, # From the connection information for managed service
+            security_protocol = "SASL_SSL",
+            ssl_cafile = "ca.pem" # From the connection information for managed service
+        )
+
+        # Continuously poll for new messages
+        for msg in consumer:
+          print("Message: ", msg.value.decode("utf-8"))
+
 Observation
 """""""""""
 
@@ -342,29 +345,133 @@ If the first consumer ``co0`` crashes for some reason, the other consumer ``co1`
         end
         p0 -->co1
 
-Apache Avro™ to produce and consume messages
----------------------------------------------
+Add schemas to messages with Apache Avro™
+-------------------------------------------
 
 The Kafka brokers understand data as stream of bytes so one needs to pick a serializer and deserializer to convert the bytes into meaningful messages. 
 Any format would do as long as it's consistent. For this tutorial, we're selecting Apache Avro which is an open-source project and one of the most popular serialization format.
 Avro is defined by a schema and the schema is written in JSON. You can consider Avro as JSON with a schema attached to it.
 
-Setting up a consumer to listen to Avro messages
+Both of these programs use SSL authentication. You can follow the previous examples of this tutorial if you'd like to use SASL authentication instead.
+
+Setting up a producer to send Avro-encoded messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Here's an example of a Kafka consumer in Python using the `confluent-Kafka-python <https://github.com/confluentinc/confluent-kafka-python>`_ library to consume Avro-encoded messages.
-On a terminal window, run the following consumer code. You won't see anything happening yet since there's no message to consume yet. 
-Keep the program running and you'll create the producer program in the next section.
-
-With SSL authentication:
+Here's an example of a Kafka consumer in Python using the `confluent-Kafka-python <https://github.com/confluentinc/confluent-kafka-python>`_ library to produce Avro-encoded messages.
+On a terminal window, run the following producer code. The program should execute and exit. You won't see anything yet since we need the consumer program to run next. 
 
 .. code:: python
 
-    # importing modules
+    from confluent_kafka import Producer
+    from confluent_kafka.serialization import StringSerializer, SerializationContext, MessageField
+    from confluent_kafka.schema_registry import SchemaRegistryClient
+    from confluent_kafka.schema_registry.avro import AvroSerializer
+
+    # Configure the Kafka producer
+    conf = {
+        "bootstrap.servers": f"{HOST}:{SSL_PORT}",
+        "security.protocol": "SSL",
+        "ssl.ca.location": "ca.pem",
+        "ssl.certificate.location": "service.cert",
+        "ssl.key.location": "service.key",
+        "client.id": "0001",
+        "acks": 1,
+        "compression.type": "gzip",
+    }
+
+    # Configure the Avro schema registry
+    schema_registry_conf = {
+        "url": f"{SCHEMA_REGISTRY_URI}"
+    }
+    schema_registry_client = SchemaRegistryClient(schema_registry_conf)
+
+    # Define the Avro schema for the message
+    value_str = """
+    {
+    "namespace": "example.avro",
+    "type": "record",
+    "name": "User",
+    "fields": [
+        {"name": "name", "type": "string"},
+        {"name": "age",  "type": ["int", "null"]}
+    ]
+    }
+    """
+
+    key_str = """
+    {
+    "namespace": "example.avro",
+    "type": "record",
+    "name": "Id",
+    "fields": [
+        {"name": "id", "type": "int"}
+    ]
+    }
+    """
+
+    class User(object):
+        def __init__(self, name, age):
+            self.name = name
+            self.age = age
+
+    class Key(object):
+        def __init__(self, id):
+            self.id = id
+
+    def user_to_dict(user, ctx):
+        return dict(
+            name=user.name,
+            age=user.age,
+        )
+
+    def key_to_dict(key, ctx):
+        return dict(id=key.id)
+
+    # Create the Avro serializer
+    avro_serializer_value = AvroSerializer(
+        schema_registry_client, value_str, user_to_dict
+    )
+    avro_serializer_key = AvroSerializer(
+        schema_registry_client, key_str, key_to_dict
+    )
+    # Create the string serializer for Key
+    string_serializer = StringSerializer("utf_8")
+
+    # Create the Kafka producer
+    producer = Producer(conf)
+
+    # Define the message key and payload
+    key = Key(id=1)
+    payload = User(name="John", age=30)
+
+    # Send the message to the Kafka topic
+    topic = "demo-topic"
+    producer.produce(
+        topic=topic,
+        key=avro_serializer_key(
+            key, SerializationContext(topic, MessageField.KEY)
+        ),
+        value=avro_serializer_value(
+            payload,
+            SerializationContext(topic, MessageField.VALUE),
+        ),
+    )
+
+    # Wait for any outstanding messages to be delivered and delivery reports to be received
+    producer.flush()
+
+Setting up a consumer to receive Avro-encoded messages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+With the producer program completed on one terminal, open up another terminal and run the following consumer program.
+
+.. code:: python
+
     from confluent_kafka import DeserializingConsumer
+    from confluent_kafka.serialization import SerializationContext, MessageField, StringSerializer
     from confluent_kafka.schema_registry import SchemaRegistryClient
     from confluent_kafka.schema_registry.avro import AvroDeserializer
-    from confluent_kafka.serialization import StringDeserializer
+
 
     # Configure the Kafka consumer
     conf = {
@@ -378,11 +485,13 @@ With SSL authentication:
     }
 
     # Configure the Avro schema registry
-    schema_registry_conf = {'url': f"{SCHEMA_REGISTRY_URI}"}
+    schema_registry_conf = {
+        "url": f"{SCHEMA_REGISTRY_URI}"
+    }
     schema_registry_client = SchemaRegistryClient(schema_registry_conf)
 
     # Define the Avro schema for the message
-    schema_str = """
+    value_str = """
     {
     "namespace": "example.avro",
     "type": "record",
@@ -394,8 +503,42 @@ With SSL authentication:
     }
     """
 
+    key_str = """
+    {
+    "namespace": "example.avro",
+    "type": "record",
+    "name": "Id",
+    "fields": [
+        {"name": "id", "type": "int"}
+    ]
+    }
+    """
+
+    class User(object):
+        def __init__(self, name, age):
+            self.name = name
+            self.age = age
+
+    class Key(object):
+        def __init__(self, id):
+            self.id = id
+
+    def dict_to_user(obj, ctx):
+        return User(name=obj['name'],
+                    age=obj['age']
+        )
+
+    def dict_to_key(obj, ctx):
+        return Key(id=obj["id"])
+
     # Create the Avro deserializer
-    avro_deserializer = AvroDeserializer(schema_registry_client, schema_str)
+    avro_deserializer_value = AvroDeserializer(
+        schema_registry_client, value_str, dict_to_user
+    )
+
+    avro_deserializer_key = AvroDeserializer(
+        schema_registry_client, key_str, dict_to_key
+    )
 
     # Create the Kafka consumer
     consumer = DeserializingConsumer(
@@ -407,99 +550,47 @@ With SSL authentication:
 
     # Consume messages from the Kafka topic
     while True:
-        msg = consumer.poll(1.0)
+        try:
+            msg = consumer.poll(1.0)
 
-        if msg is None:
-            continue
+            if msg is None:
+                continue
 
-        if msg.error():
-            print("Consumer error: {}".format(msg.error()))
-            continue
+            if msg.error():
+                print("Consumer error: {}".format(msg.error()))
+                continue
+            
+            user = avro_deserializer_value(
+                msg.value(), SerializationContext(msg.topic(), MessageField.VALUE)
+            )
+            key = avro_deserializer_key(
+                msg.key(), SerializationContext(msg.topic(), MessageField.KEY)
+            )
 
-        print('Received message: {}'.format(msg.value()))
-        # Do something with the Avro message here
-        
+            if user is not None and key is not None:
+                print(
+                    "Key --> {}\n"
+                    "User record --> name: {},"
+                    " age: {}\n".format(key.id, user.name, user.age)
+                )
+
+        except KeyboardInterrupt:
+                break
+
         # Commit the offset for the message
         consumer.commit()
-
-Setting up a producer to send Avro-encoded messages
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-With the consumer program running on a terminal, open up another terminal and run the following producer program.
-
-With SSL authentication:
-
-.. code:: python
-
-    from confluent_kafka import KafkaError, Producer
-    from confluent_kafka.schema_registry.avro import AvroSerializer
-    from confluent_kafka.schema_registry import SchemaRegistryClient
-    import ssl
-
-    # Configure the Kafka producer
-    conf = {
-        'bootstrap.servers': f"{HOST}:{SSL_PORT}",
-        'security.protocol': 'SSL',
-        'ssl.ca.location': 'ca.pem',
-        'ssl.certificate.location': 'service.cert',
-        'ssl.key.location': 'service.key',
-        'client.id': '0001',
-        'acks': 1,
-        'compression.type': 'gzip'
-    }
-
-    # Configure the Avro schema registry
-    schema_registry_conf = {'url': f"{SCHEMA_REGISTRY_URI}"}
-    schema_registry_client = SchemaRegistryClient(schema_registry_conf)
-
-    # Define the Avro schema for the message
-    schema_str = """
-    {
-    "namespace": "example.avro",
-    "type": "record",
-    "name": "User",
-    "fields": [
-        {"name": "name", "type": "string"},
-        {"name": "age",  "type": ["int", "null"]}
-    ]
-    }
-    """
-
-    # Create the Avro serializer
-    avro_serializer = AvroSerializer(schema_str, schema_registry_client)
-
-    # Create the Kafka producer
-    producer = Producer(conf)
-
-    # Define the message key and payload
-    key = 'key1'
-    payload = {'name': 'John', 'age': 30}
-
-    # Serialize the message payload in Avro format
-    serialized_payload = avro_serializer(key, payload)
-
-    # Send the message to the Kafka topic
-    producer.produce(topic='demo-topic', value=serialized_payload)
-
-    # Wait for any outstanding messages to be delivered and delivery reports to be received
-    producer.flush()
 
 Observation
 ~~~~~~~~~~~
 
-In the above examples, we're using ``confluent-kafka-python`` library to send and consume Avro messages to/from a Kafka broker. You can follow the SSL protocol example to create producer and consumer codes for SASL protocol. Here's an overview of what each program does:
+Once you execute the consumer program, you should see the following output on the second terminal while the consumer program stays running until you hit ``ctrl+C``:
 
-Consumer program
-"""""""""""""""""
-The consumer program uses the ``confluent-kafka`` library to create an AvroConsumer instance and receive Avro messages from a Kafka broker. Here's a breakdown of what the program does:
+.. code:: shell
 
-- Import the necessary libraries: ``confluent_kafka``, ``confluent_kafka.avro``, and ``ssl``.
-- Define the URL of the Kafka broker, the URL of the schema registry, and the Avro schema for the message.
-- Set up SSL configuration by creating an SSL context and loading the client certificate, key, and CA certificate.
-- Define the AvroConsumer configuration, including the SSL settings and the Avro schema.
-- Create an AvroConsumer instance and subscribe to the Kafka topic.
-- Consume messages from Kafka and deserialize them using the Avro schema.
-- Process the messages as desired.
+    Key --> 1
+    User record --> name: John, age: 30
+
+Here's an overview of what each program does:
 
 Producer program
 """"""""""""""""""
@@ -512,6 +603,18 @@ The producer program uses the ``confluent-kafka`` library to create an AvroProdu
 - Define the AvroProducer configuration, including the SSL settings and the Avro schema.
 - Create an AvroProducer instance.
 - Send a sample Avro message to the Kafka broker.
+
+Consumer program
+"""""""""""""""""
+The consumer program uses the ``confluent-kafka`` library to create an AvroConsumer instance and receive Avro messages from a Kafka broker. Here's a breakdown of what the program does:
+
+- Import the necessary libraries: ``confluent_kafka``, ``confluent_kafka.avro``, and ``ssl``.
+- Define the URL of the Kafka broker, the URL of the schema registry, and the Avro schema for the message.
+- Set up SSL configuration by creating an SSL context and loading the client certificate, key, and CA certificate.
+- Define the AvroConsumer configuration, including the SSL settings and the Avro schema.
+- Create an AvroConsumer instance and subscribe to the Kafka topic.
+- Consume messages from Kafka and deserialize them using the Avro schema.
+- Process the messages as desired.
 
 Overall, these two programs demonstrate how to use Avro serialization and SSL protocols to send and receive messages to/from a Kafka broker.
 
