@@ -45,16 +45,8 @@ There are two ways that you can manage access to Aiven services:
 
 Smaller teams usually favor direct access, while larger teams favor RBAC to simplify complex access requirements.
 
-.. mermaid::
-
-    graph LR;
-
-        User -- Direct access --> Project;
-        User -- RBAC --> Team;
-        Organization--> Team & B["Unit"];
-        B["Unit"]--> Team;
-        Team --> Project;
-        Project --> Service;
+.. image:: /images/platform/concepts/organizations_hierarchy.png
+  :alt: 
 
 Project members and roles
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
