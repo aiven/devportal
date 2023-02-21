@@ -3,6 +3,9 @@ Organizations, projects, and managing access permissions
 
 The Aiven platform uses organizations, organizational units, and projects to organize services and access to those services. Learn how you can use these effectively to accommodate your organization's structure.
 
+.. image:: /images/platform/concepts/organizations_hierarchy.png
+  :alt: Hierarchy showing two organizational units, each with two projects, nested within one organization.
+
 Organizations and organizational units
 ---------------------------------------
 
@@ -44,17 +47,6 @@ There are two ways that you can manage access to Aiven services:
 * Indirectly via role-based access controls (RBAC)
 
 Smaller teams usually favor direct access, while larger teams favor RBAC to simplify complex access requirements.
-
-.. mermaid::
-
-    graph LR;
-
-        User -- Direct access --> Project;
-        User -- RBAC --> Team;
-        Organization--> Team & B["Unit"];
-        B["Unit"]--> Team;
-        Team --> Project;
-        Project --> Service;
 
 Project members and roles
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
