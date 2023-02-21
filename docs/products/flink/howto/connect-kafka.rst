@@ -171,7 +171,7 @@ You can define a ``metric_topic_tgt`` Flink table by selecting ``demo-kafka`` as
 
 Example: Define a Flink table using the standard connector over topic in Confluent Avro format    
 ----------------------------------------------------------------------------------------------
-The Aiven for Apache Kafka service called ``demo-kafka`` includes a topic called ``metric-topict`` that holds a stream of student data in Confluent Avro format.
+The Aiven for Apache Kafka service called ``demo-kafka`` includes a topic called ``metric-topict`` that holds a stream of metrics in Confluent Avro format.
 
 You can define a ``metrics_in`` Flink table by selecting ``demo-kafka`` as the integration service and writing the following SQL schema:
 
