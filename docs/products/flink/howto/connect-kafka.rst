@@ -61,8 +61,7 @@ To create a Apache Flink® table based on an Aiven for Apache Kafka® topic via 
 
         * ``json``: `JSON <https://nightlies.apache.org/flink/flink-docs-master/docs/connectors/table/formats/json/>`_
         * ``avro``: `Apache Avro <https://nightlies.apache.org/flink/flink-docs-master/docs/connectors/table/formats/avro/>`_
-        * ``avro-confluent``: `Confluent Avro <https://nightlies.apache.org/flink/flink-docs-master/docs/connectors/table/formats/avro-confluent/>`_
-        
+        * ``avro-confluent``: `Confluent Avro <https://nightlies.apache.org/flink/flink-docs-master/docs/connectors/table/formats/avro-confluent/>`_. For information, see :doc:`/docs/products/flink/howto/flink-confluent-avro`. 
 7. To create a sink table, click **Add sink tables** and repeat steps 4-6 for sink tables.
 8. In the **Create statement** section, create a statement that defines the fields retrieved from each message in a topic, additional transformations such as format casting or timestamp extraction, and :doc:`watermark settings <../concepts/watermarks>`. 
 
@@ -169,28 +168,3 @@ You can define a ``metric_topic_tgt`` Flink table by selecting ``demo-kafka`` as
     * the output message fields ``cpu``, ``hostname``, ``max_usage`` and the related `data type <https://nightlies.apache.org/flink/flink-docs-release-1.16/docs/dev/table/types/#list-of-data-types>`_.
     * the ``PRIMARY KEY`` definition, driving the key part of the Apache Kafka message
 
-Example: Define a Flink table using the standard connector over topic in Confluent Avro format    
-----------------------------------------------------------------------------------------------
-The Aiven for Apache Kafka service called ``demo-kafka`` includes a topic called ``metric-topict`` that holds a stream of metrics in Confluent Avro format.
-
-You can define a ``metrics_in`` Flink table by selecting ``demo-kafka`` as the integration service and writing the following SQL schema:
-
-.. code:: 
-
-    CREATE TABLE metrics_in (
-        cpu VARCHAR,
-        hostname VARCHAR,
-        usage DOUBLE,
-        )
-    WITH (
-        'connector' = 'kafka',
-        'properties.bootstrap.servers' = '',
-        'scan.startup.mode' = 'earliest-offset',
-        'topic' = 'metric-topic',
-        'value.format' = 'avro-confluent',
-        'value.avro-confluent.url' = 'http://localhost:8082'
-        )
-
-.. Note::
-
-    The SQL schema includes the output message fields ``cpu``, ``hostname``, ``usage`` and the related `data type <https://nightlies.apache.org/flink/flink-docs-release-1.16/docs/dev/table/types/#list-of-data-types>`_.
