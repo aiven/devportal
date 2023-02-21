@@ -61,6 +61,7 @@ To create a Apache Flink® table based on an Aiven for Apache Kafka® topic via 
 
         * ``json``: `JSON <https://nightlies.apache.org/flink/flink-docs-master/docs/connectors/table/formats/json/>`_
         * ``avro``: `Apache Avro <https://nightlies.apache.org/flink/flink-docs-master/docs/connectors/table/formats/avro/>`_
+        * ``avro-confluent``: `Confluent Avro <https://nightlies.apache.org/flink/flink-docs-master/docs/connectors/table/formats/avro-confluent/>`_
         
 7. To create a sink table, click **Add sink tables** and repeat steps 4-6 for sink tables.
 8. In the **Create statement** section, create a statement that defines the fields retrieved from each message in a topic, additional transformations such as format casting or timestamp extraction, and :doc:`watermark settings <../concepts/watermarks>`. 
@@ -103,7 +104,7 @@ We can define a ``metrics_in`` Flink table by selecting ``demo-kafka`` as integr
 
     The SQL schema includes:
 
-    * the message fields ``cpu``, ``hostname``, ``usage``, ``occurred_at`` and the related `data type <https://nightlies.apache.org/flink/flink-docs-release-1.15/docs/dev/table/types/#list-of-data-types>`_. The order of fields in the SQL definition doesn't need to follow the order presented in the payload.
+    * the message fields ``cpu``, ``hostname``, ``usage``, ``occurred_at`` and the related `data type <https://nightlies.apache.org/flink/flink-docs-release-1.16/docs/dev/table/types/#list-of-data-types>`_. The order of fields in the SQL definition doesn't need to follow the order presented in the payload.
     * the definition of the field ``time_ltz`` as transformation to ``TIMESTAMP(3)`` from the ``occurred_at`` timestamp in Linux format.
     * the ``WATERMARK`` definition
 
@@ -112,7 +113,7 @@ Example: Define a Flink table using the standard connector over topic in Avro fo
 
 In cases when target of the Flink data pipeline needs to write in Avro format to a topic named  ``metric_topic_tgt`` within the Aiven for Apache Kafka service named ``demo-kafka``.
 
-We can define a ``metric_topic_tgt`` Flink table by selecting the ``demo-kafka`` as integration service and writing the following SQL schema:
+You can define a ``metric_topic_tgt`` Flink table by selecting the ``demo-kafka`` as integration service and writing the following SQL schema:
 
 .. code:: sql 
 
@@ -131,7 +132,7 @@ We can define a ``metric_topic_tgt`` Flink table by selecting the ``demo-kafka``
 
 .. Note::
 
-    The SQL schema includes the output message fields ``cpu``, ``hostname``, ``usage`` and the related `data type <https://nightlies.apache.org/flink/flink-docs-release-1.15/docs/dev/table/types/#list-of-data-types>`_.
+    The SQL schema includes the output message fields ``cpu``, ``hostname``, ``usage`` and the related `data type <https://nightlies.apache.org/flink/flink-docs-release-1.16/docs/dev/table/types/#list-of-data-types>`_.
 
 
 Example: Define a Flink table using the upsert connector over topic in JSON format   
@@ -139,7 +140,7 @@ Example: Define a Flink table using the upsert connector over topic in JSON form
 
 In cases when target of the Flink pipeline needs to write in JSON format and upsert mode to a compacted topic named  ``metric_topic_tgt`` within the Aiven for Apache Kafka service named ``demo-kafka``.
 
-We can define a ``metric_topic_tgt`` Flink table by selecting ``demo-kafka`` as integration service and writing the following SQL schema:
+You can define a ``metric_topic_tgt`` Flink table by selecting ``demo-kafka`` as integration service and writing the following SQL schema:
 
 .. code:: sql 
 
@@ -165,5 +166,31 @@ We can define a ``metric_topic_tgt`` Flink table by selecting ``demo-kafka`` as 
 
     The SQL schema includes:
     
-    * the output message fields ``cpu``, ``hostname``, ``max_usage`` and the related `data type <https://nightlies.apache.org/flink/flink-docs-release-1.15/docs/dev/table/types/#list-of-data-types>`_.
+    * the output message fields ``cpu``, ``hostname``, ``max_usage`` and the related `data type <https://nightlies.apache.org/flink/flink-docs-release-1.16/docs/dev/table/types/#list-of-data-types>`_.
     * the ``PRIMARY KEY`` definition, driving the key part of the Apache Kafka message
+
+Example: Define a Flink table using the standard connector over topic in Confluent Avro format    
+----------------------------------------------------------------------------------------------
+The Aiven for Apache Kafka service called ``demo-kafka`` includes a topic called ``metric-topict`` that holds a stream of student data in Confluent Avro format.
+
+You can define a ``metrics_in`` Flink table by selecting ``demo-kafka`` as the integration service and writing the following SQL schema:
+
+.. code:: 
+
+    CREATE TABLE metrics_in (
+        cpu VARCHAR,
+        hostname VARCHAR,
+        usage DOUBLE,
+        )
+    WITH (
+        'connector' = 'kafka',
+        'properties.bootstrap.servers' = '',
+        'scan.startup.mode' = 'earliest-offset',
+        'topic' = 'metric-topic',
+        'value.format' = 'avro-confluent',
+        'value.avro-confluent.url' = 'http://localhost:8082'
+        )
+
+.. Note::
+
+    The SQL schema includes the output message fields ``cpu``, ``hostname``, ``usage`` and the related `data type <https://nightlies.apache.org/flink/flink-docs-release-1.16/docs/dev/table/types/#list-of-data-types>`_.
