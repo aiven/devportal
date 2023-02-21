@@ -166,13 +166,7 @@ To configure the consistency level in a client library, add an extra parameter o
 
 .. topic:: Example::
     
-    In Python, you have to use another object when you create the query:
-
-   .. code-block:: bash
-    
-      session.execute("LIST ROLES")
-
-   vs
+    In Python, you can specify `consistency_level`` as a parameter for the `SimpleStatement` object.
 
    .. code-block:: bash
     
