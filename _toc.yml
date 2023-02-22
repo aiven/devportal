@@ -696,9 +696,9 @@ entries:
               - file: docs/products/clickhouse/howto/integrate-postgresql
                 title: Connect to PostgreSQL
               - file: docs/products/clickhouse/howto/data-service-integration
-                title: Integrate data services
+                title: Connect a service as a data source (Apache Kafka and PostgreSQL)
               - file: docs/products/clickhouse/howto/integration-databases
-                title: Integration databases
+                title: Connect services via integration databases
               - file: docs/products/clickhouse/howto/connect-with-jdbc
                 title: Connect to external DBs with JDBC
       - file: docs/products/clickhouse/reference

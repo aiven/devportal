@@ -104,6 +104,10 @@ View integration databases
    :width: 700px
    :alt: Preview integration databases
 
+.. note::
+   
+   PostgreSQL is currently only supported as a source.
+
 Edit integration databases
 --------------------------
 

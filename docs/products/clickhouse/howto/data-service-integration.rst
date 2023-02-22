@@ -25,7 +25,7 @@ You can create Aiven for ClickHouse® data service integrations in the `Aiven we
    
    When creating integrations in the **Data service integrations** wizard, you can also create integration databases connected to the services you are integrating with.
 
-   If you prefer to create a data service integration without adding integration databases, you can create integration databases for your service any time later. See :doc:`Manage Aiven for ClickHouse® integration databases </docs/products/clickhouse/howto/integration-databases>` for the guidelines on how to do that.
+   If you prefer to create a data service integration without adding integration databases, you can create integration databases for your service any time later. See :doc:`Manage Aiven for ClickHouse® integration databases </docs/products/clickhouse/howto/integration-databases>` for guidance on how to do that.
 
 Prerequisites
 -------------
