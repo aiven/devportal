@@ -135,7 +135,7 @@ Once this topic is created, we can see that the default number of partitions is 
 The concept of consumer group and consuming messages on Kafka
 ------------------------------------------------------------------
 
-Consumer group is the logical grouping of consumers. In Kafka, the consumer(s) must belong to a consumer group, even if it's the default consumer group. 
+Consumer group is the logical grouping of consumers. In Kafka, the consumer(s) must belong to a consumer group; if you don't define one, a random consumer group will be generated. 
 For a Kafka cluster with multiple nodes, consumers within the same consumer group can exist on different nodes. 
 
 .. mermaid::
