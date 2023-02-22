@@ -142,8 +142,8 @@ For a Kafka cluster with multiple nodes, consumers within the same consumer grou
 
     graph TD
 
-        A(Topic) -- Partition 3 --> D[/Consumer 3/]
-        A(Topic) -- Partition 4 --> E[/Consumer 4/]
+        A(Topic) -- Partition 1 --> D[/Consumer 3/]
+        A(Topic) -- Partition 2 --> E[/Consumer 4/]
         subgraph Consumer Group 2
         D
         E
@@ -156,10 +156,10 @@ For a Kafka cluster with multiple nodes, consumers within the same consumer grou
         C
         end
 
-In the above diagram, there are four consumers that are subscribed to a topic. ``Consumer 1`` and ``Consumer 2`` are part of ``Consumer Group 1`` and the other two consumers are part of ``Consumer Group 2``. Each consumer is assigned to a partition (``Consumer 1`` to ``Partition 1`` and so on). 
+In the above diagram, there are four consumers that are subscribed to a topic. ``Consumer 1`` and ``Consumer 2`` are part of ``Consumer Group 1`` and the other two consumers are part of ``Consumer Group 2``.  
 Now imagine a producer publishing messages to this topic. Messages within each partition are read in order but they are read in parallel across partitions. 
-Consumers read data in consumer groups and each consumer within a group reads from exclusive partitions. From this diagram, consumers within ``Consumer Group 1`` reads from ``Partition 1`` and ``Partition 2`` whereas consumers within ``Consumer Group 2`` reads from the other two partitions.
-A message will never be read by more than one customer in the group thanks to the consumer group concept.
+Consumers read data in consumer groups and each consumer within a group reads from exclusive partitions. From this diagram, both consumer groups read all the data across all partitions from a topic. Within ``Consumer Group 1``, ``Consumer 1`` and ``Consumer 2`` read from ``Partition 1`` and ``Partition 2`` and consumers within ``Consumer Group 2`` also read from these same two partitions.
+A message will never be read by more than one consumer in the group thanks to the consumer group concept.
 
 1 topic : 1 partition : 1 consumer : 1 consumer group
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
