@@ -74,7 +74,7 @@ To create an :doc:`Aiven for Apache Kafka </docs/products/kafka>` service, you n
 
 6. Click **Create Service** under the summary on the right side of the console.
 
-The blinking blue icon besides your service name will indicate that VMs are being provisioned. Once the icon turns solid green, your Apache Kafka service is up and running.
+The blinking blue icon besides your service name will indicate that service is being provisioned. Once the icon turns solid green, your Apache Kafka service is up and running.
 
 Making a note of the connection parameters
 ------------------------------------------
