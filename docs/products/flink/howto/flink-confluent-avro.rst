@@ -14,7 +14,7 @@ Prerequisites
 * :doc:`Aiven for Apache Flink service </docs/platform/howto/create_new_service>` with Aiven for Apache Kafka® integration. See :doc:`/docs/products/flink/howto/create-integration` for more information.  
 * Aiven for Apache Kafka® service with Karapace Schema registry enabled. See :doc:`/docs/products/kafka/karapace/getting-started` for more information.  
 
-Create an Apache Flink® Table with Confluent Avro
+Create an Apache Flink® table with Confluent Avro
 --------------------------------------------------
 
 1. In the Aiven for Apache Flink® service page, open the **Application** tab.
