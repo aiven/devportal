@@ -180,11 +180,11 @@ If all the checks pass with no error messages, you can trigger the migration by 
 Step 4 - replicating
 ''''''''''''''''''''
 
+.. _stop-migration-mysql:
+
 1. While the migration is in progress, you can
 
    * Let it proceed until completed by selecting **Close window**, which closes the wizard. You come back to check the status at any time.
-
-.. _stop-migration-mysql:
 
    * Discontinue the migration by selecting **Stop migration**, which retains the data already migrated. For information on how to follow up on a stopped migration process, see :ref:`Start over <start-over-mysql>`.
 
@@ -231,11 +231,11 @@ When the wizard communicates the completion of the migration without indicating 
 Start over
 ----------
 
-If you :ref:`stop a migration process <stop-migration-mysql>`, you cannot restart it. Still, data already migrated is retained in the target database.
+If you :ref:`stop a migration process <stop-migration-mysql>`, you cannot restart the same process. Still, the data already migrated is retained in the target database.
 
 .. warning::
    
-   If you start a new migration using the same connection details and your target database is no longer empty, the migration tool truncates your target database and an existing data set gets overwritten with the new data set.
+   If you start a new migration using the same connection details when your target database is not empty, the migration tool truncates your target database and an existing data set gets overwritten with the new data set.
 
 Related reading
 ---------------
