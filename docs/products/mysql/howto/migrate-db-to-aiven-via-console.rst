@@ -183,7 +183,10 @@ Step 4 - replicating
 1. While the migration is in progress, you can
 
    * Let it proceed until completed by selecting **Close window**, which closes the wizard. You come back to check the status at any time.
-   * Discontinue the migration by selecting **Cancel migration**, which retains the data already migrated. You cannot restart the stopped process and can only start a new migration.
+
+.. _stop-migration-mysql:
+
+   * Discontinue the migration by selecting **Stop migration**, which retains the data already migrated. For information on how to follow up on a stopped migration process, see :ref:`Start over <start-over-mysql>`.
 
    .. image:: /images/products/mysql/migration-in-progress-mysql.png
       :width: 700px
@@ -201,7 +204,7 @@ Step 4 - replicating
 
    If you happen to get such a notification, investigate potential causes of the failure and try to fix the issues. When you're ready, trigger the migration again by selecting **Start over**.
 
-2. When the wizard communicates the completion of the migration, select one of the following:
+1. When the wizard communicates the completion of the migration, select one of the following:
 
    * **Close connection** to disconnect the databases and stop the replication process if still active.
    * **Keep replicating** if the replication is still ongoing and you want to keep the connection open for data synchronization.
@@ -222,6 +225,17 @@ When the wizard communicates the completion of the migration without indicating 
 .. topic:: Result
 
    All the data in your database has been transferred to Aiven.
+
+.. _start-over-mysql:
+
+Start over
+----------
+
+If you :ref:`stop a migration process <stop-migration-mysql>`, you cannot restart it. Still, data already migrated is retained in the target database.
+
+.. warning::
+   
+   If you start a new migration using the same connection details and your target database is no longer empty, the migration tool truncates your target database and an existing data set gets overwritten with the new data set.
 
 Related reading
 ---------------
