@@ -16,7 +16,7 @@ Overview
 --------
 
 Getting started with Apache Kafka can be straightforward: you download the binary and start the bootstrap server. However, getting a production-ready Kafka cluster stand up with security and high-availability is a different story. 
-If your goal is to use Kafka to benefit your application or data needs and NOT to learn Kafka administration, you can consider using `a managed Kafka service <https://aiven.io/kafka>`_.
+If your goal is to use Kafka to benefit your application or data needs and NOT to learn Kafka administration, you can consider using `a managed Kafka service <https://aiven.io/kafka>`_, allowing you to start producing and consuming data in minutes.
 
 In this tutorial, we will learn how to create a highly available Apache Kafka service, go over the common tasks of producing and consuming messages, and finally use the popular Apache Avro specification to communicate with your Kafka service. 
 This tutorial will use Python programming language.
