@@ -130,7 +130,7 @@ If you have a local Kafka instance running, the command to create the topic migh
 
 For an Aiven for Apache Kafka service, you can create the topic from the Aiven console. 
 From the **Topics** tab or the Kafka service overview page, click **Add topic**. Give the topic a name ``demo-topic``. Click **Add topic**.
-Once this topic is created, we can see that the number of partitions is 1. 
+Once this topic is created, we can see that the default number of partitions is 1. 
 
 The concept of consumer group and consuming messages on Kafka
 ------------------------------------------------------------------
