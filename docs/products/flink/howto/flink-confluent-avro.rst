@@ -82,7 +82,7 @@ The Aiven for Apache Kafka service called ``demo-kafka`` includes a topic called
 
 You can define a ``students`` Flink table by selecting ``demo-kafka`` as the integration service and writing the following SQL schema:
 
-.. code:: sql
+.. code:: 
   
     CREATE TABLE students (
       id INT,
