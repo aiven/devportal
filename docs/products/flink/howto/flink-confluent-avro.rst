@@ -38,7 +38,7 @@ Create an Apache Flink® table with Confluent Avro
       'scan.startup.mode' = 'earliest-offset',
       'topic' = 'my_test.public.students',
       'value.format' = 'avro-confluent'
-      'avro-confluent.url' = 'http://<karapace-url>:8082',
+      'avro-confluent.url' = 'http://localhost:8082',
       "value.avro-confluent.basic-auth.credentials-source" = 'USER_INFO'
       "value.avro-confluent.basic-auth.user-info" = 'user_info'
     )
