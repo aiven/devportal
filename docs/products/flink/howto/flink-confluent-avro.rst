@@ -1,9 +1,9 @@
-Create Confluent Avro - based Apache Flink® table 
+Create Confluent Avro-based Apache Flink® table 
 =================================================
 
 `Confluent Avro <https://nightlies.apache.org/flink/flink-docs-release-1.16/docs/connectors/table/formats/avro-confluent/>`_ is a schema registry that enables the serialization and deserialization of data in a format that is language-agnostic, easy to read, and supports schema evolution. 
 
-Aiven for Apache Flink® simplifies the process of creating an Apache Flink® source table that uses the Confluent Avro data format with Karapace, an open-source schema registry for Apache Kafka that enables you to store and retrieve Avro schemas. With Aiven for Apache Flink, you can stream data in the Confluent Avro data format and perform real-time transformations. 
+Aiven for Apache Flink® simplifies the process of creating an Apache Flink® source table that uses the Confluent Avro data format with Karapace, an open-source schema registry for Apache Kafka® that enables you to store and retrieve Avro schemas. With Aiven for Apache Flink, you can stream data in the Confluent Avro data format and perform real-time transformations. 
 
 This article provides information on how to create an Apache Flink source table that uses Confluent Avro to stream Avro messages.
 
@@ -11,22 +11,22 @@ This article provides information on how to create an Apache Flink source table 
 Prerequisites
 --------------
 
-* :doc:`Aiven for Apache Flink service </docs/platform/howto/create_new_service>` with Aiven for Apache Kafka integration. See :doc:`/docs/products/flink/howto/create-integration` for more information.  
-* Aiven for Apache Kafka service with Karapace Schema registry enabled. See :doc:`/docs/products/kafka/karapace/getting-started` for more information.  
+* :doc:`Aiven for Apache Flink service </docs/platform/howto/create_new_service>` with Aiven for Apache Kafka® integration. See :doc:`/docs/products/flink/howto/create-integration` for more information.  
+* Aiven for Apache Kafka® service with Karapace Schema registry enabled. See :doc:`/docs/products/kafka/karapace/getting-started` for more information.  
 
 Create an Apache Flink® Table with Confluent Avro
 --------------------------------------------------
 
-1. In the Aiven for Apache Flink service page, open the **Application** tab.
-2. Create a new application or select an existing one with Aiven for Apache Kafka integration.
+1. In the Aiven for Apache Flink® service page, open the **Application** tab.
+2. Create a new application or select an existing one with Aiven for Apache Kafka® integration.
 
    .. note:: 
     If editing an existing application, create a new version to make changes to the source or sink tables.
 
 3. In the **Create new version** screen, click **Add source tables**.
 4. Click **Add new table** or click **Edit** if you want to edit an existing source table. 
-5. In the **Add new source table** or **Edit source table** screen, select the Aiven for Apache Kafka service as the integrated service. 
-6. In the **Table SQL** section, enter the SQL statement below to create an Apache Kafka-based Apache Flink table with Confluent Avro: 
+5. In the **Add new source table** or **Edit source table** screen, select the Aiven for Apache Kafka® service as the integrated service. 
+6. In the **Table SQL** section, enter the SQL statement below to create an Apache Kafka®-based Apache Flink® table with Confluent Avro: 
    
 .. code:: sql
 

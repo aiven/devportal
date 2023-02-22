@@ -30,6 +30,7 @@ CloudWatch
 codecs
 compliances
 Conduktor
+Confluent
 Coralogix
 connect
 Couchbase
@@ -48,6 +49,7 @@ dashboards
 deallocation
 Debezium
 deserialize
+deserialization
 deserializer
 Dev
 Digitransit
