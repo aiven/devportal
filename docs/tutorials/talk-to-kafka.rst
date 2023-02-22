@@ -35,7 +35,7 @@ To get started, you'll need:
 
     pip install kafka-python
 
-- `confluent-Kafka <https://github.com/confluentinc/confluent-kafka-python>`_ library installed, you can install it with the following command:  
+- `confluent-Kafka <https://github.com/confluentinc/confluent-kafka-python>`_ library installed that you'll use to produce messages in AVRO format, you can install it with the following command:  
 
   .. code:: bash
 
