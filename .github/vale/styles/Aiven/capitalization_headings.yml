@@ -26,6 +26,7 @@ exceptions:
   - CloudWatch
   - Connect
   - Connector
+  - Confluent Avro
   - Cookbook
   - Couchbase
   - Dashboards
