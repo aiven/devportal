@@ -82,7 +82,7 @@ In order to do so, you'll need to use Aiven console or Aiven CLI.
 
 ``services.tf`` file:
 
-.. code:: shell
+.. code:: terraform
    
    # Flink service
    
@@ -209,6 +209,7 @@ In order to do so, you'll need to use Aiven console or Aiven CLI.
 - ``"aiven_kafka"`` resource creates an Apache Kafka cluster and two Apache Kafka topics (``cpu_measurements`` and a ``cpu_high_usage``) are created using the ``"aiven_kafka_topic"`` resource.
 - Similarly, the ``"aiven_service_integration"`` resource creates the integration between Apache Kafka and the Apache Flink service.
 - ``aiven_flink_application`` resource ``demo-flink-app`` creates the Aiven for Apache Flink application whereas ``aiven_flink_application_version`` resource ``demo-flink-app-version`` contains all the necessary specifications.
+
 For example, the application version resource creates two Flink tables, ``iot_measurements_table`` as the source table and ``cpu_high_usage_table`` as the sink table with the specified schema.
 
 Once the Terraform script is run, all of the resources from the manifest are created. 
