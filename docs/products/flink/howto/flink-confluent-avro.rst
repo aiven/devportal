@@ -1,7 +1,7 @@
 Create Confluent Avro-based Apache Flink® table 
 =================================================
 
-`Confluent Avro <https://nightlies.apache.org/flink/flink-docs-release-1.16/docs/connectors/table/formats/avro-confluent/>`_ is a schema registry that enables the serialization and deserialization of data in a format that is language-agnostic, easy to read, and supports schema evolution. 
+`Confluent Avro <https://nightlies.apache.org/flink/flink-docs-release-1.16/docs/connectors/table/formats/avro-confluent/>`_ is a format that supports schema registry, allowing for data serialization and deserialization in a language-agnostic, easy-to-read format that supports schema evolution.
 
 Aiven for Apache Flink® simplifies the process of creating an Apache Flink® source table that uses the Confluent Avro data format with Karapace, an open-source schema registry for Apache Kafka® that enables you to store and retrieve Avro schemas. With Aiven for Apache Flink, you can stream data in the Confluent Avro data format and perform real-time transformations. 
 
@@ -59,8 +59,8 @@ The following are the parameters:
 
 * ``value.format``:  indicates that the value data format is in the Confluent Avro format.
 * ``avro-confluent.url``: this is the URL for the Karapace schema registry.
-* ``value.avro-confluent.basic-auth.credentials-source``: This specifies the source of the user credentials for accessing the Karapace schema registry. It should be set to USER_INFO.
-* ``value.avro-confluent.basic-auth.user-info``: This should be set to the ``user_info`` string you created earlier. 
+* ``value.avro-confluent.basic-auth.credentials-source``: this specifies the source of the user credentials for accessing the Karapace schema registry. It should be set to USER_INFO.
+* ``value.avro-confluent.basic-auth.user-info``: this should be set to the ``user_info`` string you created earlier. 
    
   .. important:: 
     The ``user_info`` is a string that contains the username and password for the Karapace schema registry user in the format of ``user_info = f"{username}:{password}"``. It is important to provide this information to authenticate and access the Karapace schema registry.
