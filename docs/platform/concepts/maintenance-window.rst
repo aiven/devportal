@@ -22,6 +22,4 @@ In case of **Apache Kafka®** and **OpenSearch®** the service DNS address resol
 Maintenance updates
 ~~~~~~~~~~~~~~~~~~~
 
-Service quarterly patch updates are always mandatory with 6 months advance notice.  Other updates are initially optional. 
-After they have been available for six months, they become mandatory. 
-Once updates are set to be mandatory, these updates would be applied on the next week's maintenance window or after, which gives at least 7 days in advance with exception of critical security related updates would be applied in the maintenance of the current week.
+Security updates, platform updates that affect reliability or stability of the service nodes, and quarterly patch updates are always mandatory. Other updates are initially optional. Advance notice is given for all updates. After optional updates have been available for six months, they become mandatory and are applied on the next week's maintenance window at the earliest. This means you have at least 7 days advance notice with exception of critical security updates. These critical updates are applied in the maintenance window of the current week.
