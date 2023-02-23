@@ -1,11 +1,11 @@
 Create Confluent Avro-based Apache Flink® table 
 =================================================
 
-`Confluent Avro <https://nightlies.apache.org/flink/flink-docs-release-1.16/docs/connectors/table/formats/avro-confluent/>`_ is a format that supports schema registry, allowing for data serialization and deserialization in a language-agnostic, easy-to-read format that supports schema evolution.
+`Confluent Avro <https://nightlies.apache.org/flink/flink-docs-release-1.16/docs/connectors/table/formats/avro-confluent/>`_ is a serialization format that requires integrating with a schema registry. This enables the serialization and deserialization of data in a format that is language-agnostic, easy to read, and supports schema evolution. 
 
 Aiven for Apache Flink® simplifies the process of creating an Apache Flink® source table that uses the Confluent Avro data format with Karapace, an open-source schema registry for Apache Kafka® that enables you to store and retrieve Avro schemas. With Aiven for Apache Flink, you can stream data in the Confluent Avro data format and perform real-time transformations. 
 
-This article provides information on how to create an Apache Flink source table that uses Confluent Avro to stream Avro messages.
+This article provides information on how to create an Apache Flink source table that uses Confluent Avro format to stream Avro messages.
 
 
 Prerequisites
@@ -13,6 +13,7 @@ Prerequisites
 
 * :doc:`Aiven for Apache Flink service </docs/platform/howto/create_new_service>` with Aiven for Apache Kafka® integration. See :doc:`/docs/products/flink/howto/create-integration` for more information.  
 * Aiven for Apache Kafka® service with Karapace Schema registry enabled. See :doc:`/docs/products/kafka/karapace/getting-started` for more information.  
+* By default, Flink cannot create Apache Kafka topics while pushing the first record automatically. To change this behavior, enable in the Aiven for Apache Kafka target service the ``kafka.auto_create_topics_enable`` option in **Advanced configuration** section.
 
 Create an Apache Flink® table with Confluent Avro
 --------------------------------------------------
@@ -28,45 +29,49 @@ Create an Apache Flink® table with Confluent Avro
 5. In the **Add new source table** or **Edit source table** screen, select the Aiven for Apache Kafka® service as the integrated service. 
 6. In the **Table SQL** section, enter the SQL statement below to create an Apache Kafka®-based Apache Flink® table with Confluent Avro: 
    
-.. code:: sql
+.. code:: sql 
 
-    CREATE TABLE kafka (
-      
-    ) WITH (
-      'connector' = 'kafka',
-      'properties.bootstrap.servers' = '',
-      'scan.startup.mode' = 'earliest-offset',
-      'topic' = 'my_test.public.students',
-      'value.format' = 'avro-confluent'
-      'avro-confluent.url' = 'http://localhost:8082',
-      "value.avro-confluent.basic-auth.credentials-source" = 'USER_INFO'
-      "value.avro-confluent.basic-auth.user-info" = 'user_info'
-    )
+  CREATE TABLE kafka (
+    -- specify the table columns
+  ) WITH (
+    'connector' = 'kafka',
+    'properties.bootstrap.servers' = '',
+    'scan.startup.mode' = 'earliest-offset',
+    'topic' = 'my_test.public.students',
+    'value.format' = 'avro-confluent', -- the value data format is Confluent Avro
+    'avro-confluent.url' = 'http://localhost:8082', -- the URL of the schema registry
+    'value.avro-confluent.basic-auth.credentials-source' = 'USER_INFO', -- the source of the user credentials for accessing the schema registry
+    'value.avro-confluent.basic-auth.user-info' = 'user_info' -- the user credentials for accessing the schema registry
+  )
 
 The following are the parameters:
 
 *  ``connector``: the **Kafka connector type**, between the **Apache Kafka SQL Connector** (value ``kafka``) for standard topic reads/writes and the **Upsert Kafka SQL Connector** (value ``upsert-kafka``) for changelog type of integration based on message key. 
-   
+
    .. note::
     For more information on the connector types and the requirements for each, see the articles on :doc:`Kafka connector types </docs/products/flink/concepts/kafka-connectors>` and :doc:`the requirements for each connector type </docs/products/flink/concepts/kafka-connector-requirements>`.
 
 * ``properties.bootstrap.servers``: this parameter can be left empty since the connection details will be retrieved from the Aiven for Apache Kafka integration definition
 
 * ``topic``: the topic to be used as a source for the data pipeline. If you want to use a new topic that does not yet exist, write the topic name.
-
-  .. Warning::
-    By default, Flink will not be able to create Apache Kafka topics while pushing the first record automatically. To change this behavior, enable in the Aiven for Apache Kafka target service the ``kafka.auto_create_topics_enable`` option in **Advanced configuration** section.
-
 * ``value.format``:  indicates that the value data format is in the Confluent Avro format.
+
+  .. note:: 
+    The ``key.format`` parameter can also be set to the ``avro-confluent`` format.
+
 * ``avro-confluent.url``: this is the URL for the Karapace schema registry.
-* ``value.avro-confluent.basic-auth.credentials-source``: this specifies the source of the user credentials for accessing the Karapace schema registry. It should be set to USER_INFO.
+* ``value.avro-confluent.basic-auth.credentials-source``: this specifies the source of the user credentials for accessing the Karapace schema registry. At present, only the ``USER_INFO`` value is supported for this parameter.
 * ``value.avro-confluent.basic-auth.user-info``: this should be set to the ``user_info`` string you created earlier. 
    
   .. important:: 
-    The ``user_info`` is a string that contains the username and password for the Karapace schema registry user in the format of ``user_info = f"{username}:{password}"``. It is important to provide this information to authenticate and access the Karapace schema registry.
+    To access the Karapace schema registry, the user needs to provide the username and password using the ``user_info`` parameter. The ``user_info`` parameter is a string formatted as ``user_info = f"{username}:{password}"``.
+    
+    Additionally, on the source table, the user only needs read permission to the subject containing the schema. However, on the sink table, if the schema does not exist, the user must have write permission for the schema registry.
 
-7. To create a sink table, click **Add sink tables** and repeat steps 4-6 for sink tables.
-8. In the **Create statement** section, create a statement that defines the fields retrieved from each message in a topic.
+    It is important to provide this information to authenticate and access the Karapace schema registry.
+
+1. To create a sink table, click **Add sink tables** and repeat steps 4-6 for sink tables.
+2. In the **Create statement** section, create a statement that defines the fields retrieved from each message in a topic.
 
 Example: Define a Flink table using the standard connector over topic in Confluent Avro format
 -----------------------------------------------------------------------------------------------
