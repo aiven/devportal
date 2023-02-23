@@ -18,13 +18,15 @@ Before looking at the Terraform script, let's visually realize how the services 
       end
       subgraph Aiven for Apache Flink Application
       SourceTopic-->|FlinkTableMapping|FlinkSourceTable
-      FlinkSourceTable-->|Filter/Transform|FlinkTargetTable
+      FlinkSourceTable --> SQLtransformation
+      SQLtransformation --> FlinkTargetTable
       end
       subgraph Aiven for Apache Kafka
       FlinkTargetTable-->|FlinkTableMapping|SinkTopic
       end
 
 Imagine that you are collecting CPU usage for hundreds of machines in your data centre and these metrics are populated in an Apache Kafka topic called ``cpu_measurements``. But you're interested in learning about those machines with CPU usages higher than 85% and write the filtered messages into a topic called ``cpu_high_usage``.
+
 If you relate the above diagram to this example, both source and target Apache Kafka topics are part of the same Apache Kafka cluster. To do the processing on the data, you'll be using an Aiven for Apache Flink Application which is an abstraction layer on top of Apache Flink SQL that includes all the elements related to a Flink job to help build your data processing pipeline. 
 
 The following Terraform script stands up both Apache Kafka and Apache Flink services, creates the service integration, source and target Apache Kafka topics, an Aiven for Apache Flink application, and the Aiven for Apache Flink application version. By design, you cannot manage the deployment resource using Aiven Terraform Provider. 
@@ -203,13 +205,17 @@ In order to do so, you'll need to use Aiven console or Aiven CLI.
 
        terraform apply -var-file=var-values.tfvars
 
-The resource ``"aiven_flink"`` creates an Aiven for Apache Flink resource with the project name, choice of cloud, an Aiven service plan, and a specified service name. 
-``"aiven_kafka"`` resource creates an Apache Kafka cluster and two Apache Kafka topics (``cpu_measurements`` and a ``cpu_high_usage``) are created using the ``"aiven_kafka_topic"`` resource.
-Similarly, the ``"aiven_service_integration"`` resource creates the integration between Apache Kafka and the Apache Flink service.
-``aiven_flink_application`` resource ``demo-flink-app`` creates the Aiven for Apache Flink application whereas ``aiven_flink_application_version`` resource ``demo-flink-app-version`` contains all the necessary specifications.
+- The resource ``"aiven_flink"`` creates an Aiven for Apache Flink resource with the project name, choice of cloud, an Aiven service plan, and a specified service name. 
+- ``"aiven_kafka"`` resource creates an Apache Kafka cluster and two Apache Kafka topics (``cpu_measurements`` and a ``cpu_high_usage``) are created using the ``"aiven_kafka_topic"`` resource.
+- Similarly, the ``"aiven_service_integration"`` resource creates the integration between Apache Kafka and the Apache Flink service.
+- ``aiven_flink_application`` resource ``demo-flink-app`` creates the Aiven for Apache Flink application whereas ``aiven_flink_application_version`` resource ``demo-flink-app-version`` contains all the necessary specifications.
 For example, the application version resource creates two Flink tables, ``iot_measurements_table`` as the source table and ``cpu_high_usage_table`` as the sink table with the specified schema.
 
-Once the Terraform script is run, all of the resources from the manifest are created but you'll need to create the deployment. From the Aiven console, go to the ``Application`` tab under the newly created Aiven for Apache Flink service. Click on ``demo-flink-app`` and click **Create deployment**. If this is your first deployment, you won't have an option for :doc:`savepoint <../../../../products/flink/concepts/savepoints>`.
+Once the Terraform script is run, all of the resources from the manifest are created. 
+You have declared your data pipeline, but the execution has not started yet. 
+For this, you need to create a deployment.
+
+From the Aiven console, go to the ``Application`` tab under the newly created Aiven for Apache Flink service. Click on ``demo-flink-app`` and click **Create deployment**. If this is your first deployment, you won't have an option to start from a previous state (stored as :doc:`savepoint <../../../../products/flink/concepts/savepoints>`).
 Accept the default setting or make necessary selection and then deploy. 
 
 To test the data streaming pipeline, you can use the `fake data producer for Apache Kafka on Docker <https://github.com/aiven/fake-data-producer-for-apache-kafka-docker>`_ making sure that in the ``conf/env.conf`` file you specify ``TOPIC="cpu_measurements"`` (same topic name defined in the resource ``"aiven_kafka_topic" "source"``) and ``SUBJECT="metric"`` together with the appropriate project name, service name and required credentials.
