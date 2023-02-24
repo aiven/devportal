@@ -57,7 +57,7 @@ Set up Cloud Logging integration using the CLI
 Step 1. Create the integration endpoint
 """"""""""""""""""""""""""""""""""""""""
 
-.. code:: shell
+.. code::
 
     avn service integration-endpoint-create --project your-project-name         \
         -d "Google Cloud Logging" -t external_google_cloud_logging              \
