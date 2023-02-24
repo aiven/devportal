@@ -64,12 +64,14 @@ Follow these steps to clone a table within an application:
 Edit table
 ----------
 Follow these steps edit an existing table in an application: 
+
 1. In the **Add source tables** or **Add sink tables** screen, locate the table you want to edit and click **Edit** next to it.
 2. Make the necessary changes to the table and click **Save changes** to confirm the changes.
 
 Delete table
 ------------
 Follow these steps to delete a table in an application: 
+
 1. In the **Add source tables** or **Add sink tables** screen, locate the table you want to delete and click the **Delete** icon next to it.
 2. Confirm the deletion by clicking **Confirm** in the pop-up window.
 
