@@ -14,7 +14,7 @@ Prerequisite steps in Aiven Console
 
 #. Enter a name and select SAML. You can also select the teams that users will be added to when they sign up or log in through this authentication method.
 
-You are shown two parameters needed to set up the SAML authentication in Auth0:
+You are shown two parameters needed to set up the SAML authentication in JumpCloud:
 
 * Metadata URL
 * ACS URL
@@ -54,7 +54,7 @@ Go back to the **Authentication** page in `Aiven Console <https://console.aiven.
 3. Add the configuration settings from JumpCloud:
 
 * Set the ``SAML IDP URL`` to the ``???`` from JumpCloud.
-* Set the ``SAML Entity ID`` to the ``??? `` from JumpCloud .
+* Set the ``SAML Entity ID`` to the ``???`` from JumpCloud .
 * Paste the certificate from JumpCloud into the ``SAML Certificate`` field.
 
 4. Click **Edit method** to save your changes.
