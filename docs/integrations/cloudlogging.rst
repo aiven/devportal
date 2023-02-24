@@ -63,7 +63,7 @@ Step 1. Create the integration endpoint
         -d "Google Cloud Logging" -t external_google_cloud_logging          \
         -c project_id=your-gcp-project-id                                   \
         -c log_id=my-aiven-service-logs                                     \
-        -c service_account_credentials='{"type": "service_account"...}      \
+        -c service_account_credentials='{"type": "service_account"...}      
 
 Step 2. Add the integration endpoint to your service
 """""""""""""""""""""""""""""""""""""""""""""""""""""
