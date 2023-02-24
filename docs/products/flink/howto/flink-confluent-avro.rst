@@ -39,7 +39,7 @@ Create an Apache Flink® table with Confluent Avro
     'scan.startup.mode' = 'earliest-offset',
     'topic' = 'my_test.public.students',
     'value.format' = 'avro-confluent', -- the value data format is Confluent Avro
-    'avro-confluent.url' = 'http://localhost:8082', -- the URL of the schema registry
+    'value.avro-confluent.url' = 'http://localhost:8082', -- the URL of the schema registry
     'value.avro-confluent.basic-auth.credentials-source' = 'USER_INFO', -- the source of the user credentials for accessing the schema registry
     'value.avro-confluent.basic-auth.user-info' = 'user_info' -- the user credentials for accessing the schema registry
   )
@@ -99,7 +99,7 @@ You can define a ``students`` Flink table by selecting ``demo-kafka`` as the int
       'scan.startup.mode' = 'earliest-offset',
       'topic' = 'my_test.public.students',
       'value.format' = 'avro-confluent'
-      'avro-confluent.url' = 'http://localhost:8082',
+      'value.avro-confluent.url' = 'http://localhost:8082',
       'value.avro-confluent.basic-auth.credentials-source'= 'USER_INFO',
       'value.avro-confluent.basic-auth.user-info" = 'user_info',
     )
