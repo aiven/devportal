@@ -22,7 +22,7 @@ You are shown two parameters needed to set up the SAML authentication in JumpClo
 Configure SAML on JumpCloud
 ----------------------------
 
-#. In `JumpCloud <https://console.jumpcloud.com/login>`_, go to **SSO**.
+#. In the `JumpCloud admin console <https://console.jumpcloud.com/login>`_, go to **SSO**.
 
 #. Select **Custom SAML App**.
 
@@ -34,7 +34,7 @@ Configure SAML on JumpCloud
 
 #. Add an entry in **Attribute statements** with ``name`` of ``email`` and ``value`` of ``email``.
 
-#. Set the ``Login URL`` to th ``ACS URL`` from the Aiven Console.
+#. Set the ``Login URL`` to the ``ACS URL`` from the Aiven Console.
 
 #. In **User Groups**, assign the application to your user groups. 
 
