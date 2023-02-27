@@ -57,7 +57,7 @@ Set up Cloud Logging integration using the CLI
 Step 1. Create the integration endpoint
 """"""""""""""""""""""""""""""""""""""""
 
-.. code::
+.. code-block:: shell
 
     avn service integration-endpoint-create --project your-project-name         \
         -d "Google Cloud Logging" -t external_google_cloud_logging              \
@@ -70,13 +70,13 @@ Step 2. Add the integration endpoint to your service
 
 1. Get the endpoint identifier:
 
-.. code:: shell
+.. code-block:: shell
 
     avn service integration-endpoint-list --project your-project-name
 
 2. Use the ``endpoint_id`` to attach the service to the endpoint:
 
-.. code:: shell
+.. code-block:: shell
 
     avn service integration-create --project your-project-name  \
     -t external_google_cloud_logging -s your-service            \
