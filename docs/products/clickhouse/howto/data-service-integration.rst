@@ -136,7 +136,7 @@ Stop data service integrations
 
 4. From the **Active data service integrations** list, select the service integration that you no longer need and select **Disconnect integration**.
 
-   .. image:: /images/products/clickhouse/data-integration/preview-data-integration.png
+   .. image:: /images/products/clickhouse/data-integration/select-for-disconnect.png
       :width: 700px
       :alt: Select an integrated service
 
