@@ -32,7 +32,7 @@ Create a new Aiven for Apache Kafka Connect dedicated service:
 
 7. Click **Create and enable** under the summary in the console. 
 
-At the top of the screen, you will notice the Apache Kafka Connect integration. Clicking on the service name will take you to the **Service overview** page, where you can monitor the service status. It's important to wait until the service status changes from *REBUILDING* to *RUNNING* on this page before using its full functionality.
+At the top of the screen, you will notice the Apache Kafka Connect integration. Clicking on the service name will take you to the **Service overview** page, where you can monitor the service status. It's important to wait until the service status changes from *REBUILDING* to *RUNNING* on this page before using it.
 
 Next steps
 ----------
