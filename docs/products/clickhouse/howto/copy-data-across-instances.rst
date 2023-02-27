@@ -24,3 +24,10 @@ Copy data
 
       INSERT INTO [db.]table [(c1, c2, c3)] SELECT ...
 
+   .. seealso::
+
+      For details on how to configure and use the INSERT query, see `Inserting the Results of SELECT <https://clickhouse.com/docs/en/sql-reference/statements/insert-into/#inserting-the-results-of-select>`_.
+
+.. topic:: Results
+
+    Your data has been copied from the remote (source) server to the new (target) servier.
