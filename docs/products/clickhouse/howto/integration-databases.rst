@@ -39,21 +39,15 @@ Create integration databases
 
 4. In **Create PostgreSQL integration database** wizard, select one of the following options:
 
-   * To add an integration database to a service that is not yet integrated, go to the **Create new integration** tab.
+   * To add an integration database to a service that is not yet integrated, go to the **New data service integration** tab.
 
      .. dropdown:: Expand for next steps
 
         1. Select a service from the list of services available for integration.
         2. Select **Continue**.
-        3. In the **Integration databases** view, select **Add databases**.
+        3. In the **Add integration databases** section, enter database names and schema names and select **Integrate & Create** when ready.
 
-        .. image:: /images/products/clickhouse/data-integration/enable-data-integration.png
-           :width: 700px
-           :alt: Add database
-
-        1. In the **Add integration databases** section, enter database names and schema names and select **Enable** when ready.
-
-        .. image:: /images/products/clickhouse/data-integration/enable-with-database.png
+        .. image:: /images/products/clickhouse/data-integration/integrate-and-create.png
            :width: 700px
            :alt: Enable database
 
@@ -63,35 +57,23 @@ Create integration databases
            :width: 700px
            :alt: Database created
 
-   * To add an integration database to an already integrated service, go to the **Manage integrations** tab.
+   * To add an integration database to an already integrated service, go to the **Existing integration** tab.
 
      .. dropdown:: Expand for next steps
 
         1. Select a service from the list of integrated services.
         2. Select **Continue**.
-        3. In the **Add integration databases** section, enter database names and schema names and select **Save changes** when ready.
+        3. In the **Add integration databases** section, enter database names and schema names and select **Create** when ready.
 
-        .. image:: /images/products/clickhouse/data-integration/enable-with-database.png
+        .. image:: /images/products/clickhouse/data-integration/new-db-existing-integration.png
            :width: 700px
            :alt: Enable database
 
         As a result, you can see the created databases in the **Databases & Tables** tab.
 
-        .. image:: /images/products/clickhouse/data-integration/preview-integration-database.png
+        .. image:: /images/products/clickhouse/data-integration/db-for-existing-integration.png
            :width: 700px
            :alt: Database created
-
-   * To create a new service, integrate it, and add integration databases, go to the **Manage integrations** tab.
-
-     .. dropdown:: Expand for next steps
-
-        1. In the **Manage integrations** view, select **Create service**.
-        2. Set up the new service.
-        3. Come back to your primary service and create an integration to the new service along with new integration databases.
-
-        .. image:: /images/products/clickhouse/data-integration/integrate-db-new-service.png
-           :width: 700px
-           :alt: Create new service for integration
 
 View integration databases
 --------------------------
