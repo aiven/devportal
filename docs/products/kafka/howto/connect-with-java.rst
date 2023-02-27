@@ -25,7 +25,7 @@ Go to the *Overview* page of your Aiven for Apache Kafka service.
 
 * If you are going to connect using SASL authentication:
 
-  #. Follow the instructions at `Use SASL Authentication with Apache Kafka® <https://developer.aiven.io/docs/products/kafka/howto/kafka-sasl-auth.html>`_ to enable SASL.
+  #. Follow the instructions at `Use SASL Authentication with Apache Kafka® <https://docs.aiven.io/docs/products/kafka/howto/kafka-sasl-auth.html>`_ to enable SASL.
 
   #. In the *Connection Information* section
 
@@ -52,7 +52,6 @@ Variable                     Description
 ``SASL_PASSWORD``            Password required to connect using SASL
 ``TRUSTSTORE_LOCATION``      Location of your truststore (named by default as client.truststore.jks)
 ``TRUSTSTORE_PASSWORD``      Password you used when creating a truststore
-``TRUSTSTORE_PASSWORD``      Password you used when creating a truststore
 ``KEYSTORE_LOCATION``        Location of you keystore (named by default as client.keystore.p12)
 ``KEYSTORE_PASSWORD``        Password you used when creating a keystore
 ``KEY_PASSWORD``             Password for the key in the keystore, if you chose a different password than the one for keystore
@@ -61,64 +60,107 @@ Variable                     Description
 ========================     =======================================================================================================
 
 
+Connect a producer
+------------------
+
+Set up properties to connect to the cluster and create a producer:
 
 With SSL authentication
------------------------
-
-Set up properties to connect to the cluster and create a producer and a consumer:
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
-    Properties properties = new Properties();
-    properties.put("bootstrap.servers", "{HOST}:{SSL_PORT}");
-    properties.put("security.protocol", "SSL");
-    properties.put("ssl.truststore.location", "{TRUSTSTORE_LOCATION}");
-    properties.put("ssl.truststore.password", "{TRUSTSTORE_PASSWORD}");
-    properties.put("ssl.keystore.type", "PKCS12");
-    properties.put("ssl.keystore.location", "{KEYSTORE_LOCATION}");
-    properties.put("ssl.keystore.password", "{KEYSTORE_PASSWORD}");
-    properties.put("ssl.key.password", "{KEY_PASSWORD}");
-    properties.put("key.serializer", "{SERIALIZER}");
-    properties.put("value.serializer", {SERIALIZER}");
-    properties.put("key.deserializer", "{DESERIALIZER}");
-    properties.put("value.deserializer", "{DESERIALIZER}");
+        Properties properties = new Properties();
+        properties.put("bootstrap.servers", "{HOST}:{SSL_PORT}");
+        properties.put("security.protocol", "SSL");
+        properties.put("ssl.truststore.location", "{TRUSTSTORE_LOCATION}");
+        properties.put("ssl.truststore.password", "{TRUSTSTORE_PASSWORD}");
+        properties.put("ssl.keystore.type", "PKCS12");
+        properties.put("ssl.keystore.location", "{KEYSTORE_LOCATION}");
+        properties.put("ssl.keystore.password", "{KEYSTORE_PASSWORD}");
+        properties.put("ssl.key.password", "{KEY_PASSWORD}");
+        properties.put("key.serializer", "{SERIALIZER}");
+        properties.put("value.serializer", "{SERIALIZER}");
 
-    // create a producer
-    KafkaProducer<String, String> producer = new KafkaProducer<>(properties);
-    // create a consumer
-    KafkaConsumer<String, String> consumer = new KafkaConsumer<>(properties);
+        // create a producer
+        KafkaProducer<String, String> producer = new KafkaProducer<>(properties);
 
-With SASL-SSL authentication
------------------------------
+With SASL authentication
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Set up properties to connect to the cluster and create a producer and a consumer:
+.. code::    
+      
+        String sasl_username = "{USER_NAME}";
+        String sasl_password = "{SASL_PASSWORD}";
+        String jaasTemplate = "org.apache.kafka.common.security.scram.ScramLoginModule required username=\"%s\" password=\"%s\";";
+        String jaasConfig = String.format(jaasTemplate, sasl_username, sasl_password);
+          
+        Properties properties = new Properties();
+        properties.put("bootstrap.servers", "{HOST}:{SASL_PORT}");
+        properties.put("security.protocol", "SASL_SSL");
+        properties.put("sasl.mechanism", "SCRAM-SHA-256");
+        properties.put("sasl.jaas.config", jaasConfig);
+        properties.put("ssl.endpoint.identification.algorithm", ""); 
+        properties.put("ssl.truststore.type", "jks");
+        properties.put("ssl.truststore.location", "{TRUSTSTORE_LOCATION}");
+        properties.put("ssl.truststore.password", "{TRUSTSTORE_PASSWORD}");
+        properties.put("key.serializer", "{SERIALIZER}");
+        properties.put("value.serializer", "{SERIALIZER}");
+          
+        // create a producer
+        KafkaProducer<String, String> producer = new KafkaProducer<>(properties);
+
+Connect a consumer
+------------------
+
+Set up properties to connect to the cluster and create a consumer:
+
+With SSL authentication
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
-    Properties properties = new Properties();
+        String group_id = "groupid";
 
-    String sasl_username = "{USER_NAME}";
-    String sasl_password = "{SASL_PASSWORD}";
+        Properties properties = new Properties();
+        properties.put("bootstrap.servers", "{HOST}:{SSL_PORT}");
+        properties.put("security.protocol", "SSL");
+        properties.put("ssl.truststore.location", "{TRUSTSTORE_LOCATION}");
+        properties.put("ssl.truststore.password", "{TRUSTSTORE_PASSWORD}");
+        properties.put("ssl.keystore.type", "PKCS12");
+        properties.put("ssl.keystore.location", "{KEYSTORE_LOCATION}");
+        properties.put("ssl.keystore.password", "{KEYSTORE_PASSWORD}");
+        properties.put("ssl.key.password", "{KEY_PASSWORD}");
+        properties.put("key.deserializer", "{DESERIALIZER}");
+        properties.put("value.deserializer", "{DESERIALIZER}");
+        properties.put("group.id", group_id);
 
-    String jaasTemplate = "org.apache.kafka.common.security.scram.ScramLoginModule required username=\"%s\" password=\"%s\";";
-    String jaasConfig = String.format(jaasTemplate, sasl_username, sasl_password);
+        // create a consumer
+        KafkaConsumer<String, String> consumer = new KafkaConsumer<>(properties);
 
-    properties.put("bootstrap.servers", "{HOST}:{SASL_PORT}");
-    properties.put("security.protocol", "SASL_SSL");
-    properties.put("sasl.mechanism", "SCRAM-SHA-256");
-    properties.put("sasl.jaas.config", jaasConfig);
-    properties.put("ssl.endpoint.identification.algorithm", "");
+With SASL authentication
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    properties.put("ssl.truststore.type", "jks");
-    properties.put("ssl.truststore.location", "{TRUSTSTORE_LOCATION}");
-    properties.put("ssl.truststore.password", "{TRUSTSTORE_PASSWORD}");
+.. code::
 
-    properties.put("key.serializer", "{SERIALIZER}");
-    properties.put("value.serializer", {SERIALIZER}");
-    properties.put("key.deserializer", "{DESERIALIZER}");
-    properties.put("value.deserializer", "{DESERIALIZER}");
+        String group_id = "groupid";
+        String sasl_username = "{USER_NAME}";
+        String sasl_password = "{SASL_PASSWORD}";
+        String jaasTemplate = "org.apache.kafka.common.security.scram.ScramLoginModule required username=\"%s\" password=\"%s\";";
+        String jaasConfig = String.format(jaasTemplate, sasl_username, sasl_password);
+          
+        Properties properties = new Properties();
+        properties.put("bootstrap.servers", "{HOST}:{SASL_PORT}");
+        properties.put("security.protocol", "SASL_SSL");
+        properties.put("sasl.mechanism", "SCRAM-SHA-256");
+        properties.put("sasl.jaas.config", jaasConfig);
+        properties.put("ssl.endpoint.identification.algorithm", ""); 
+        properties.put("ssl.truststore.type", "jks");
+        properties.put("ssl.truststore.location", "{TRUSTSTORE_LOCATION}");
+        properties.put("ssl.truststore.password", "{TRUSTSTORE_PASSWORD}");
+        properties.put("key.deserializer", "{DESERIALIZER}");
+        properties.put("value.deserializer", "{DESERIALIZER}");
+        properties.put("group.id", group_id);
 
-    // create a producer
-    KafkaProducer<String, String> producer = new KafkaProducer<>(properties);
-    // create a consumer
-    KafkaConsumer<String, String> consumer = new KafkaConsumer<>(properties);
+        // create a consumer
+        KafkaConsumer<String, String> consumer = new KafkaConsumer<>(properties);

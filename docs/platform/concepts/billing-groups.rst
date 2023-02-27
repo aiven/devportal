@@ -1,35 +1,10 @@
 Billing groups
 ==============
 
-Billing groups enable you to set a common billing profile for multiple
-projects and generate a consolidated invoice.
+Billing groups let you to set up common billing profiles in an organization that can then be used for any projects within that organization. This includes projects in organizational units under that organization. So, instead of entering the payment information every time you create a project, you can use the information saved in the billing group. 
 
-Key benefits of billing groups
-------------------------------
+Organization billing groups can only be used in one organization. This means that you will not be able to use that billing group for projects that are in other organizations. Aiven credits are also assigned to a billing group and are automatically used to cover charges of any project assigned to that billing group.
 
-The key benefits of using billing groups are:
+Billing groups make it easier to manage your costs. You receive a consolidated invoice for all projects assigned to a billing group. This means you can, for instance, combine costs based on your organization or IT environment (development, test, production) by creating billing groups for each of these.
 
--  **Receive a single invoice for all your projects.** When you have
-   several Aiven projects that use the same payment method, you can
-   receive a single invoice that consolidates all costs instead of
-   receiving a separate invoice for each project.
-
--  **Group costs based on your organization need.** You can merge costs
-   based on your organization or IT environment (development, test,
-   production) by creating billing groups for related projects. Each
-   billing group then generates a consolidated invoice.
-
--  **Minimize administrative setup of billing profiles shared between
-   projects.** Move projects that use the same payment card into a
-   billing group and designate a single billing profile to pay their
-   costs.
-
--  **Create dashboards in external Business Intelligence (BI) tools to
-   track spending.** Use the *Invoice API* to get the line item costs in
-   the invoice to export the cost information for Aiven projects to
-   external BI tools.
-
-.. Note::
-
-   By default, each project belongs to a billing group, and can only belong to a single billing group at a time. A billing group always generates a single invoice. Aiven credits are available in the billing group.
-
+You can also track spending by exporting cost information to business intelligence tools using the `invoice API <https://api.aiven.io/doc/#tag/BillingGroup>`_.

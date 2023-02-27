@@ -11,7 +11,7 @@ These examples show how to connect to an Aiven for Apache Kafka® service using 
 
 .. note:: The examples given here provide different options for the different authentication
    methods. For more information on the supported methods, see `our article on Kafka
-   authentication types <https://developer.aiven.io/docs/products/kafka/concepts/auth-types>`_.
+   authentication types <https://docs.aiven.io/docs/products/kafka/concepts/auth-types>`_.
 
 Pre-requisites
 --------------
@@ -35,7 +35,7 @@ Go to the *Overview* page of your Aiven for Apache Kafka service.
 
 * If you are going to connect using SASL authentication:
 
-  #. Follow the instructions at `Use SASL Authentication with Apache Kafka® <https://developer.aiven.io/docs/products/kafka/howto/kafka-sasl-auth.html>`_ to enable SASL.
+  #. Follow the instructions at `Use SASL Authentication with Apache Kafka® <https://docs.aiven.io/docs/products/kafka/howto/kafka-sasl-auth.html>`_ to enable SASL.
 
   #. In the *Connection Information* section
 
@@ -48,7 +48,7 @@ Note that the *CA Certificate* ``ca.pem`` file has the same contents by either r
 
   In the below examples, we just pass the name of the certificate files, but in actual use, the full path should be used.
 
-You can also use the `Aiven command line tool <https://developer.aiven.io/docs/tools/cli.html>`_ to download the files. See the documentation for `avn service user-creds-download <https://developer.aiven.io/docs/tools/cli/service/user.html#avn-service-user-creds-download>`_
+You can also use the `Aiven command line tool <https://docs.aiven.io/docs/tools/cli.html>`_ to download the files. See the documentation for `avn service user-creds-download <https://docs.aiven.io/docs/tools/cli/service/user.html#avn-service-user-creds-download>`_
 
 
 Variables

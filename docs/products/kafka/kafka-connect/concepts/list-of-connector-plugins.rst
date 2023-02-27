@@ -11,7 +11,7 @@ Source connectors enable the integration of data from an existing technology int
 
 * `Couchbase <https://github.com/couchbase/kafka-connect-couchbase>`__
 
-* `Official MongoDB® <https://docs.mongodb.com/kafka-connector/current/>`__
+* `Official MongoDB® <https://www.mongodb.com/docs/kafka-connector/current/>`__
 
 * `Debezium for MongoDB® <https://debezium.io/docs/connectors/mongodb/>`__
 
@@ -25,7 +25,7 @@ Source connectors enable the integration of data from an existing technology int
 
 * `Google Cloud Pub/Sub Lite <https://github.com/GoogleCloudPlatform/pubsub/>`_ 
 
-* `JDBC <https://github.com/aiven/aiven-kafka-connect-jdbc/blob/master/docs/source-connector.md>`__ 
+* `JDBC <https://github.com/aiven/jdbc-connector-for-apache-kafka/blob/master/docs/source-connector.md>`__
 
 * Schema Source 
 
@@ -40,7 +40,7 @@ Sink connectors enable the integration of data from an existing Apache Kafka top
 
 * :doc:`Aiven for Apache Kafka® S3 Sink Connector <../howto/s3-sink-connector-aiven>`
 
-* `Confluent Amazon S3 Sink <https://developer.aiven.io/docs/products/kafka/kafka-connect/howto/s3-sink-connector-confluent>`__
+* `Confluent Amazon S3 Sink <https://docs.aiven.io/docs/products/kafka/kafka-connect/howto/s3-sink-connector-confluent>`__
 
 * `Couchbase® <https://github.com/couchbase/kafka-connect-couchbase>`__
 
@@ -56,9 +56,9 @@ Sink connectors enable the integration of data from an existing Apache Kafka top
 
 * :doc:`Google Cloud Storage </docs/products/kafka/kafka-connect/howto/gcs-sink>`
 
-* `HTTP <https://github.com/aiven/aiven-kafka-connect-http>`__ |preview|
+* `HTTP <https://github.com/aiven/http-connector-for-apache-kafka>`__ |preview|
 
-* `JDBC <https://github.com/aiven/aiven-kafka-connect-jdbc/blob/master/docs/sink-connector.md>`__
+* `JDBC <https://github.com/aiven/jdbc-connector-for-apache-kafka/blob/master/docs/sink-connector.md>`__
 
 * `Official MongoDB® <https://docs.mongodb.com/kafka-connector/current/>`__
 
@@ -83,7 +83,7 @@ Preview connectors
 ------------------
 
 .. image:: /images/products/kafka/kafka-connect/preview-kafka-connect-connectors.png
-   :alt: Preview icon next to a OpenSearch Apache Kafka Connect connector
+   :alt: Preview icon next to an OpenSearch® Apache Kafka® Connect connector
 
 Some of the available connectors have the |preview| tag next to the name. **Preview connectors do not come under our SLA**, consider this before using them for production purposes. 
 Bugs should be reported to the code owner directly.

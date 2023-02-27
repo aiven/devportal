@@ -9,6 +9,7 @@ Prerequisites
 To download the latest nosqlbench release, search for "latest" in `nosqlbench GitHub repository <https://github.com/nosqlbench/nosqlbench/releases/latest>`_.
 Nosqlbench can be downloaded as a Linux binary executable called ``nb``. The ``nb`` executable is built with all java libraries and includes a number of sample scenarios ready to be run.
 
+
 .. Tip::
 
    You can read more about the nosqlbench core concepts and parameters in the `dedicated documentation <https://docs.nosqlbench.io/docs/nosqlbench/core-concepts/>`_
@@ -34,7 +35,7 @@ Variable                Description
 Run nosqlbench against your Aiven for Apache Cassandra® service
 ---------------------------------------------------------------
 
-The following sections shows how to run several nosqlbench worlkloads against an Aiven for Cassandra service.
+The following sections shows how to run several nosqlbench worKloads against an Aiven for Cassandra service.
 
 Create a schema and load data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

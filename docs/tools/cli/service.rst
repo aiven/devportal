@@ -139,7 +139,7 @@ Creates a new service.
   * - ``--no-fail-if-exists``
     - The create command will not fail if a service with the same name already exists
   * - ``--project-vpc-id``
-    - Id of the project VPC where to include the created service. The project VPC's cloud must match the service's cloud
+    - Id of the project VPC where to include the created service. The cloud of the project's VPC must match the service's cloud
   * - ``--no-project-vpc``
     - Stops the service to be included in the project VPC even if one is available in the selected cloud
   * - ``--enable-termination-protection``
@@ -219,12 +219,12 @@ Manages rules to OpenSearch® ACL and extended ACL configuration.
 
 More information on ``es-acl-add``, ``es-acl-del``, ``es-acl-disable``, ``es-acl-enable``, ``es-acl-extended-disable``, ``es-acl-extended-enable`` and ``es-acl-extended-list``  can be found in :doc:`the dedicated page <service/es-acl>`.
 
-``avn service flink`` |beta|
+``avn service flink``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Manages Aiven for Apache Flink® tables and jobs.
 
-More info on ``flink table create``, ``flink table delete``, ``flink table get``, ``flink table list``, ``flink job create``, ``flink job cancel``, ``flink job get`` and ``flink job list`` can be found in :doc:`the dedicated page <service/flink>`.
+More info on ``flink create-application``, ``flink list-applications``, ``flink get-application``, ``flink update-application``, ``flink delete-application``, ``flink create-application-version``, ``flink validate-application-version``, ``flink get-application-version``, ``flink delete-application-version``, ``flink list-application-deployments``, ``flink get-application-deployment``, ``flink create-application-deployment``, ``flink delete-application-deployment``, ``flink stop-application-deployment``, ``flink cancel-application-deployment`` can be found in :doc:`the dedicated page <service/flink>`.
 
 .. _avn_service_get:
 
@@ -271,10 +271,33 @@ Manages Aiven internal and external services integrations.
 
 More information on ``integration-delete``, ``integration-endpoint-create``, ``integration-endpoint-delete``, ``integration-endpoint-list``, ``integration-endpoint-types-list``, ``integration-endpoint-update``, ``integration-list``, ``integration-types-list`` and ``integration-update`` can be found in :doc:`the dedicated page <service/integration>`.
 
-``avn service keypair``
+``avn service keypair get``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Service keypair commands
+Service keypair commands. The use cases for this command are limited to accessing the keypair for an Aiven for Apache Cassandra® service that was started in ``migration mode``. For more information about this, see https://help.aiven.io/en/articles/3147884-using-sstableloader-to-migrate-your-existing-cassandra-cluster-to-aiven
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``service_name``
+    - The name of the service
+  * - ``keypair``
+    - The name of the keypair. Options are ``cassandra_migrate_sstableloader_user``
+  * - ``--key-filepath``
+    - The location to download the key to
+  * - ``--cert-filepath``
+    - The location to download the certificate to
+
+**Example:** Retrieve the keypair, and save them to the ``/tmp`` directory, for an Aiven for Apache Cassandra® service, called ``test-cass``, that was started in migration mode.
+
+::
+
+    avn service keypair get --key-filepath /tmp/keyfile --cert-filepath /tmp/certfile test-cass cassandra_migrate_sstableloader_user
+
+The output of this command results in 2 files (``keyfile`` and ``certfile``) saved to the ``/tmp`` directory.
 
 ``avn service list``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -548,10 +571,79 @@ More information on ``tags list``, ``tags replace`` and  ``tags update`` can be 
 
 Create a service task
 
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``service_name``
+    - The name of the service
+  * - ``--project``
+    - Project name (defaults to ``None``)
+  * - ``--operation``
+    - Task operation (default: ``upgrade_check``, possible values: ``migration_check``, ``upgrade_check``)
+  * - ``--target-version``
+    - Upgrade target version (used for PostgreSQL) (possible values: ``11``, ``12``, ``13``, ``14``)
+  * - ``--source-service-uri``
+    - Migration: source URI for migration
+  * - ``--ignore-dbs``
+    - Migration: comma-separated list of databases to be ignored (MySQL only)
+  * - ``--format``
+    - Format string for output, e.g. ``{name} {retention_hours}``
+  * - ``--json``
+    - Raw JSON output
+
+
+**Example:** Create a migration task to migrate a MySQL database to Aiven to the service ``mysql`` in project ``myproj``
+
+::
+
+  avn service task-create --operation migration_check --source-service-uri mysql://user:password@host:port/databasename --project myproj mysql
+
+An example ``avn service task-create`` output:
+
+.. code:: text
+
+  TASK_TYPE              SUCCESS  TASK_ID                             
+  =====================  =======  ====================================
+  mysql_migration_check  null     e2df7736-66c5-4696-b6c9-d33a0fc4cbed
+
 ``avn service task-get``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Create a service task
+Get details for a single task for your service
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``service_name``
+    - The name of the service
+  * - ``--project``
+    - Project name (defaults to ``None``)
+  * - ``--task-id``
+    - The task ID to check
+  * - ``--format``
+    - Format string for output, e.g. ``{name} {retention_hours}``
+  * - ``--json``
+    - Raw JSON output
+
+**Example:** Check the status of your migration task with id ``e2df7736-66c5-4696-b6c9-d33a0fc4cbed`` for the service named ``mysql`` in the ``myproj`` project
+
+::
+
+  avn service task-get --task-id e2df7736-66c5-4696-b6c9-d33a0fc4cbed --project myproj mysql
+
+An example ``avn service task-get`` ouput:
+
+.. code:: text
+
+  TASK_TYPE              SUCCESS  TASK_ID                               RESULT                                                                              
+  =====================  =======  ====================================  ====================================================================================
+  mysql_migration_check  true     e2df7736-66c5-4696-b6c9-d33a0fc4cbed  All pre-checks passed successfully, preferred migration method will be [Replication]
 
 ``avn service terminate``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -666,7 +758,7 @@ Updates the settings for an Aiven service.
   * - ``--disable-termination-protection``
     - Disable termination protection
   * - ``--project-vpc-id``
-    - The ID of the project VPC to use for the service. The VPC's cloud must match the service's cloud.
+    - The ID of the project VPC to use for the service. The cloud of the project's VPC must match the service's cloud.
   * - ``--no-project-vpc``
     - The service will not use any VPC
   * - ``--force``

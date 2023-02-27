@@ -1,6 +1,6 @@
 extends: capitalization
 message: "'%s' should be in sentence case"
-level: warning
+level: error
 scope: heading
 # $title, $sentence, $lower, $upper, or a pattern.
 match: $sentence
@@ -12,14 +12,24 @@ exceptions:
   - Amazon Web Services
   - APIs
   - Aiven
+  - Aiven Console
   - Apache
+  - AWS Transit Gateway
+  - Auth0
+  - Azure
+  - Azure Marketplace
   - Boot
   - Business
   - BYOA
   - Cassandra
   - ClickHouse
   - CloudWatch
+  - Cloud Logging
   - Connect
+  - Connector
+  - Confluent Avro
+  - Cookbook
+  - Couchbase
   - Dashboards
   - Datadog
   - Debezium
@@ -30,14 +40,18 @@ exceptions:
   - Elasticsearch
   - European Union
   - Flink
+  - GiB
   - GitHub
   - Go
   - Google BigQuery
-  - Google Cloud Platform
+  - Google Cloud Logging
   - Google Cloud Marketplace
+  - Google Cloud Platform
   - Google Cloud Storage
   - Google Cloud SQL
   - Google Data Studio
+  - Google Pub/Sub
+  - Google Pub/Sub Lite
   - Grafana
   - Hobbyist
   - HowTo
@@ -47,9 +61,13 @@ exceptions:
   - InnoDB
   - IPsec
   - Java
+  - JMX
+  - JobManager
+  - Jolokia
   - Kafdrop
   - Kafka
   - Karapace
+  - Klaw
   - Kpow
   - ksqlDB
   - Kubernetes
@@ -63,6 +81,7 @@ exceptions:
   - MySQL
   - New Relic
   - NodeJS
+  - Okta
   - OneLogin
   - OpenSearch
   - Operator
@@ -73,18 +92,22 @@ exceptions:
   - PostgreSQL
   - Postman
   - Premium
+  - Private Link
+  - Project
   - Prometheus
   - Provectus
   - Python
   - Redis
   - Rivery
   - reStructuredText
-  - Setting up SAML with OneLogin
+  - SAML
   - Schema Registry
   - Simple Authentication and Security Layer
   - Skyvia
+  - Slack
   - Snowflake
   - Sphinx
+  - Splunk
   - Spring
   - SQL Server
   - Startup
@@ -95,7 +118,9 @@ exceptions:
   - TimescaleDB
   - Transport Layer Security
   - United States
-  - VPC
+  - UpCloud
+  - Virtual Private Cloud
+  - VNet
   - Workbench
   - Zapier
   - ZooKeeper

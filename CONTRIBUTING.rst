@@ -67,7 +67,11 @@ The instructions for setting up local development are in the ``README``.
 Style guide
 -----------
 
-These are the guidelines that we use for Aiven Docs; following them helps us keep all the content consistent and easy to follow for our audience. We review your pull request against these guidelines, so for fewer rounds of revisions, follow this advice!
+To keep all the content consistent and easy to follow for our audience, use `Google developer documentation style guide <https://developers.google.com/style>`_ for Aiven docs. On top of that, this section provides you with a few Aiven-specific guidelines you're requested to follow.
+
+.. tip::
+
+    Remember we review your pull request against these guidelines, so for fewer rounds of revisions, follow this advice!
 
 Use a specific template
 '''''''''''''''''''''''
@@ -137,10 +141,13 @@ Use subtitles to break up the article if it's more than a couple of paragraphs, 
 Screenshots
 '''''''''''
 
-Screenshots can be helpful, especially where a user might have difficulty finding a particular element on a screen. They don't need a picture of every button they should click during a process, and whenever we make frontend changes to the web console, every screenshot must be updated. Therefore, use screenshots but only when needed.
+Screenshots might get outdated as soon as there's a visual change on the Aiven console. Although they can be helpful, especially where a user might have difficulty finding a particular element on a screen, use screenshots only when the textual instruction is not enough to help our audience.
+
+The ``images`` folder reflects the structure of the ``docs`` folder, and the image should be in the folder matching the document that refers to it.
 
 All images require alt text.
 
+We do not use ``gif`` or animation in Aiven docs.
 
 Example values
 ''''''''''''''

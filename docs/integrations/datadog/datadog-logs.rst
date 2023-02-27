@@ -17,10 +17,7 @@ Configure the integration
 
 Start by configuring the link between Aiven and Datadog for logs. This setup only needs to be done once.
 
-1. Choose **Service integrations** in the left hand menu of the web console, then choose **Syslog** and **Add a new endpoint**.
-
-.. image:: /images/integrations/configure-rsyslog-integration-datadog.png
-   :alt: Screenshot of configuration screen for rsyslog
+1. Click **Integration endpoints** in the web console, then **Syslog** and **Add a new endpoint**.
 
 2. Configure the settings for the new endpoint:
 
@@ -49,7 +46,7 @@ This is the format to use, replacing the variables listed. Don't edit the values
 
    DATADOG_API_KEY <%pri%>1 %timestamp:::date-rfc3339% %HOSTNAME%.AIVEN_PROJECT_NAME %app-name% - - - %msg%
 
-An example of the correct format, using an example API key and "my_project" as the project name:
+An example of the correct format, using an example API key and ``my_project`` as the project name:
 
 ``01234567890123456789abcdefabcdef <%pri%>1 %timestamp:::date-rfc3339% %HOSTNAME%.my_project %app-name% - - - %msg%``
 

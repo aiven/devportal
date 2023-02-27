@@ -1,11 +1,15 @@
-Create an S3 sink connector by Confluent
-========================================
+Create an Amazon S3 sink connector by Confluent from Apache Kafka®
+==================================================================
 
 The **Apache Kafka Connect® S3 sink connector by Aiven** enables you to move data from an **Aiven for Apache Kafka®** cluster to **Amazon S3** for long term storage.
 
 .. Note::
 
     There are two versions of S3 sink connector available with Aiven for Apache Kafka Connect®: One is developed by Aiven, another developed by Confluent. This article uses the Confluent version. To learn about Aiven sink connector check out :doc:`the dedicated page <s3-sink-connector-aiven>`.
+
+.. note::
+
+    You can check the full set of available parameters and configuration options in the `connector's documentation <https://docs.confluent.io/current/connect/kafka-connect-s3/>`_.
 
 Prerequisites
 -------------
@@ -19,8 +23,8 @@ Furthermore you need to follow the steps :doc:`to prepare the AWS account and S3
 * ``AWS_USER_ACCESS_KEY_ID``: The AWS user access key ID
 * ``AWS_USER_SECRET_ACCESS_KEY``: The AWS user secret access key
 
-Setup an S3 sink connector with Aiven CLI
------------------------------------------
+Set up an S3 sink connector with Aiven CLI
+------------------------------------------
 
 The following example demonstrates how to setup an Apache Kafka Connect® S3 sink connector using the :ref:`Aiven CLI dedicated command <avn_service_connector_create>`.
 
@@ -32,7 +36,7 @@ Define the connector configurations in a file (we'll refer to it with the name `
 ::
 
     {
-        "name": "<CONECTOR_NAME>",
+        "name": "<CONNECTOR_NAME>",
         "topics": "<TOPIC_NAME>",
         "connector.class": "io.confluent.connect.s3.S3SinkConnector",
         "key.converter": "org.apache.kafka.connect.converters.ByteArrayConverter"",

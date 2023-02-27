@@ -10,7 +10,7 @@ There are lots of other ways to learn more about Aiven, and interact with us.
         :shadow: md
         :margin: 2 2 0 0
 
-        🐦 **Twitter** We love to chat! Tell us what you're building with Aiven!
+        |icon-twitter| **Twitter** We love to chat! Tell us what you're building with Aiven!
 
         .. button-link:: https://twitter.com/aiven_io
             :align: right
@@ -23,7 +23,7 @@ There are lots of other ways to learn more about Aiven, and interact with us.
         :shadow: md
         :margin: 2 2 0 0
 
-        📖 **Blog** To read tech news, tutorials, and updates on what we're up to.
+        |icon-blog| **Blog** To read tech news, tutorials, and updates on what we're up to.
 
 
         .. button-link:: https://aiven.io/blog
@@ -37,7 +37,7 @@ There are lots of other ways to learn more about Aiven, and interact with us.
         :shadow: md
         :margin: 2 2 0 0
 
-        📺 **YouTube** If video is your thing, cool, it's ours too.
+        |icon-youtube| **YouTube** If video is your thing, cool, it's ours too.
 
         .. button-link:: https://www.youtube.com/c/Aiven_io
             :align: right
@@ -50,7 +50,7 @@ There are lots of other ways to learn more about Aiven, and interact with us.
         :shadow: md
         :margin: 2 2 0 0
 
-        🐱 **GitHub** Find our public repositories on GitHub, work on `open source <https://aiven.io/open-source>`_ with us! 
+        |icon-github| **GitHub** Find our public repositories on GitHub, work on `open source <https://aiven.io/open-source>`_ with us! 
 
 
         .. button-link:: https://github.com/aiven
@@ -61,6 +61,7 @@ There are lots of other ways to learn more about Aiven, and interact with us.
             To the code
 
 
+
 Check out the `Aiven Console <https://console.aiven.io>`_ for your Aiven web interface. New accounts get a free trial!
 
 ----------------
@@ -68,5 +69,12 @@ Check out the `Aiven Console <https://console.aiven.io>`_ for your Aiven web int
 Documentation contributors
 --------------------------
 
-We love our documentation that we created documentation about the documentation! If you want to learn more about the platform, or contribute some changes of your own, everything you need is in the :doc:`/docs/community/documentation` section.
+We love our documentation so much that we created documentation about the documentation! If you want to learn more about the platform, or contribute some changes of your own, everything you need is in the :doc:`/docs/community/documentation` section.
 
+Mini challenges
+---------------
+
+Get to know Aiven through our mini challenges, each introducing you to different open source technologies. 
+        
+* :doc:`Catch the bus (Clickhouse) </docs/community/challenge/catch-the-bus>`
+* :doc:`Rolling challenge (Apache Kafka & Flink) </docs/community/challenge/the-rolling-challenge>`

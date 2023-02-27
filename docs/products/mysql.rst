@@ -36,6 +36,12 @@ Our :doc:`getting started guide </docs/products/mysql/get-started>` will get you
 
         📖 :doc:`Reference </docs/products/mysql/reference>`
 
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
+
+        🧰 :doc:`Code samples </docs/products/mysql/howto/list-code-samples>`
+
 
 More MySQL resources
 ====================

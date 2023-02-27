@@ -172,3 +172,9 @@ The command output is like::
         * 5% of disk write operations is reached (the ``max_wal_size`` value is set to 5% of the instance storage).
 
 For further information about WAL and checkpoints, read the `PostgreSQL documentation <https://www.postgresql.org/docs/current/wal-configuration.html>`_.
+
+.. note::
+
+    The recreation of replication slots gets enabled automatically for services created or updated as of January 2023.  Additional details are outlined in `our blog post <https://aiven.io/blog/aiven-for-pg-recreates-logical-replication-slots>`_. 
+    
+    Replication slots are recreated when a maintenance update is applied or a failover occurs (for multi-node clusters), but they are not recovered after major version upgrades.

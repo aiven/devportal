@@ -6,7 +6,7 @@ Aiven for PostgreSQL® allows a series of pre-approved extensions to be installe
 Install an extension
 --------------------
 
-Any available can be installed by the ``avnadmin`` user with the following ``CREATE EXTENSION`` command::
+Any available extension can be installed by the ``avnadmin`` user with the following ``CREATE EXTENSION`` command::
 
   CREATE EXTENSION <EXTENSION_NAME> CASCADE;
 

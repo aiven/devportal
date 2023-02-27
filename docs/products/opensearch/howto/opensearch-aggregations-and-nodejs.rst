@@ -286,7 +286,7 @@ Calculate percentiles for `calories`:
       }
     }
 
-From the returned result you can see that 50% of recipes have less than 331 calories. Interestingly, only one percent of the meals is more than 3256 calories. You must be curious what falls within that last percentile ;) Now that we know the value to look for, we can use `a range query <https://developer.aiven.io/docs/products/opensearch/howto/opensearch-and-nodejs.html#find-fields-with-a-value-within-a-range>`_ to find the recipes. Set the minimum value, but keep the maximum empty to allow no bounds:
+From the returned result you can see that 50% of recipes have less than 331 calories. Interestingly, only one percent of the meals is more than 3256 calories. You must be curious what falls within that last percentile ;) Now that we know the value to look for, we can use `a range query <https://docs.aiven.io/docs/products/opensearch/howto/opensearch-and-nodejs.html#find-fields-with-a-value-within-a-range>`_ to find the recipes. Set the minimum value, but keep the maximum empty to allow no bounds:
 
 ::
 
@@ -377,7 +377,7 @@ However, our method is narrowed down to a specific scenario. We want to refactor
 * move aggregation field and bucket ranges to the list of method parameters
 * use the rest parameter syntax to collect range values
 * transform the list of range values into ``ranges`` object in a format `from X` / `to Y` expected by OpenSearch API
-* use logAggs function, which we already created, to log the results
+* use the ``logAggs`` function, which we already created, to log the results
 * separate ``body`` into a variable for better readability
 
 
@@ -729,7 +729,7 @@ The returned  data for every year including a value ``moving_average``::
 
 Pay attention to the values of ``count`` and ``moving_average``. To understand better how those numbers were calculated, we can compute first several values on our own:
 
-.. list-table:: Making sense of moving_average result
+.. list-table:: Making sense of the ``moving_average`` result
    :header-rows: 1
 
    * - Year

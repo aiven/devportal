@@ -29,7 +29,7 @@ Aiven for PostgreSQL is the perfect fit for your relational data. A scalable SQL
         :shadow: md
         :margin: 2 2 0 0
 
-        🧰 :doc:`/docs/products/postgresql/howto/list-code-samples`
+        🧰 :doc:`Code samples </docs/products/postgresql/howto/list-code-samples>`
 
 
 PostgreSQL resources

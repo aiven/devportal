@@ -90,7 +90,7 @@ The list of Apache Kafka Connect metrics is available in the :doc:`dedicated pag
 Apache Kafka broker
 -------------------
 
-The descriptions for the below metrics are available in the `Monitoring section of the Apache Kafka documentation <http://kafka.apache.org/documentation/#monitoring>`_.
+The descriptions for the below metrics are available in the `Monitoring section of the Apache Kafka documentation <https://kafka.apache.org/documentation/#monitoring>`_.
 
 .. Note::
 

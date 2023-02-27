@@ -118,7 +118,7 @@ Starting with the ``KafkaMusicExampleDriver.java`` follow the steps below:
 
    .. code:: java
 
-      props.put(ProducerConfig.SECURITY_PROTOCOL_CONFIG, "SSL");
+      props.put(CommonClientConfigs.SECURITY_PROTOCOL_CONFIG, "SSL");
       props.put(SslConfigs.SSL_TRUSTSTORE_LOCATION_CONFIG, "TRUSTSTORE_PATH/client.truststore.jks");
       props.put(SslConfigs.SSL_TRUSTSTORE_PASSWORD_CONFIG, "KEY_TRUST_SECRET");
       props.put(SslConfigs.SSL_KEYSTORE_TYPE_CONFIG, "PKCS12");
@@ -240,12 +240,17 @@ From the first terminal session you can start the ``KafkaMusicExampleDriver`` pr
    java -cp ./target/kafka-streams-examples-7.0.0-standalone.jar \
       io.confluent.examples.streams.interactivequeries.kafkamusic.KafkaMusicExampleDriver
 
+Check the target folder of your project and change the version of the command if necessary.
+
 From the second terminal session you can start the ``KafkaMusicExample`` Kafka streams application with:
 
 .. code:: shell
 
    java -cp ./target/kafka-streams-examples-7.0.0-standalone.jar \
       io.confluent.examples.streams.interactivequeries.kafkamusic.KafkaMusicExample 7070
+
+Change the port number 7070 to the actual Kafka Rest port of your Aiven for Apache Kafka service.
+
 
 Check the produced data
 '''''''''''''''''''''''

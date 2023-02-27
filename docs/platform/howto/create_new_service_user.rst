@@ -3,6 +3,13 @@
 
 Service users are users that only exist in the scope of the corresponding Aiven service. They are unique to this service and not shared with any other services, and can be granted restricted permissions compared to the default ``avnadmin`` user. You can add service users for all the Aiven services, with the exception of Aiven for Apache Flink® and Aiven for Grafana®.
 
+.. warning::
+   By default, the maximum amount of users allowed on a service is 50. 
+   
+      
+
+   If you would like to increase the maximum number of users allowed for a service, :doc:`create a support ticket </docs/platform/howto/project-support-center>` to request an increase.
+
 1. Log in to the `Aiven console <https://console.aiven.io/>`_.
 
 2. On the **Services** page, click on the service name.

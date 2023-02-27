@@ -1,28 +1,36 @@
 MySQL ``max_connections``
 =========================
 
-The number of simultaneous connections in Aiven for MySQL depends on the :doc:`usable memory </docs/platform/concepts/service-memory-limits>` on the server.
+``max_connections`` vs RAM
+--------------------------
 
-The ``usable memory`` is the total memory on the node minus the operating system and management overhead. This overhead is currently estimated as |vm_overhead|. 
-
-The ``usable memory`` value is then **rounded down to the nearest integer value of GiB**. 
-
-    :math:`⌊usable\_memory⌋ =` |vm_usable_memory|
+The maximum number of simultaneous connections in Aiven for MySQL® depends on how much RAM your service plan offers and is fixed for each service plan (`Hobbyist`, `Startup`, `Business`, `Premium`, or any other plan available under a specific cloud provider.)
 
 .. note::
-    Independent of the plan, an ``extra_connection`` with a value of ``1`` will be added for the system process.
+    Independent of the plan, an ``extra_connection`` with a value of ``1`` is added for the system process.
 
-**For plans under 4 GiB of usable memory**, the number of allowed connections is |mysql_connections_per_<4G| per GiB:
+Plans under 4 GiB
+-----------------
+
+For plans under 4 GiB of RAM, the number of allowed connections is |mysql_connections_per_<4G| per GiB:
 
     :math:`{max\_connections} =` |mysql_connections_per_<4G| |mysql_max_connections| 
 
-As an example, with 4 GiB of total memory, the maximum number of connections is:
+.. topic:: Example
 
-    :math:`{max\_connections} =` |mysql_connections_per_<4G| :math:`\times {⌊4 -}` |vm_fractional_overhead| :math:`{⌋ +1}`
+    With 2 GiB of RAM, the maximum number of connections is
+            :math:`{max\_connections} =` |mysql_connections_per_<4G| x 2 + 1
 
+Plans with 4 GiB or more
+------------------------
 
-**For plans higher or equal to 4 GiB**, the number of allowed connections is |mysql_connections_per_>4G| per GiB:
+For plans higher or equal to 4 GiB, the number of allowed connections is |mysql_connections_per_>4G| per GiB:
     
-    :math:`{max\_connections} =` |mysql_connections_per_>4G| |mysql_max_connections| 
+    :math:`{max\_connections} =` |mysql_connections_per_>4G| |mysql_max_connections|
+
+.. topic:: Example
+
+    With 7 GiB of RAM, the maximum number of connections is
+            :math:`{max\_connections} =` |mysql_connections_per_>4G| x 7 + 1
 
 .. include:: /includes/platform-variables.rst

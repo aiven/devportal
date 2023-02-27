@@ -1,11 +1,15 @@
-Create a JDBC source connector for PostgreSQL®
-===============================================
+Create a JDBC source connector from PostgreSQL® to Apache Kafka®
+================================================================
 
 The JDBC source connector pushes data from a relational database, such as PostgreSQL®, to Apache Kafka® where can be transformed and read by multiple consumers.
 
 .. Tip::
 
     Sourcing data from a database into Apache Kafka decouples the database from the set of consumers. Once the data is in Apache Kafka, multiple applications can access it without adding any additional query overhead to the source database.
+
+.. note::
+
+    You can check the full set of available parameters and configuration options in the `connector's documentation <https://github.com/aiven/aiven-kafka-connect-jdbc/blob/master/docs/source-connector.md>`_.
 
 .. _connect_jdbc_pg_source_prereq:
 

@@ -4,13 +4,16 @@
 # list see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
+from dotenv import load_dotenv
+load_dotenv()
+
 # -- Path setup --------------------------------------------------------------
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
+import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
@@ -45,7 +48,7 @@ notfound_urls_prefix = ''
 # see all options at https://github.com/wpilibsuite/sphinxext-opengraph#options
 ogp_site_url = 'https://docs.aiven.io/'
 ogp_description_length = 200
-ogp_image = '/_static/images/site-preview.png'
+ogp_image = 'https://docs.aiven.io/_static/images/site-preview.png'
 
 # Mermaid version
 mermaid_version = "8.12.0"
@@ -59,7 +62,7 @@ templates_path = ['_templates']
 exclude_patterns = [
     '_build', 'Thumbs.db', '.DS_Store', 'README*', 'scripts', 'utils',
     'CONTRIBUTING.rst', 'REVIEWING.rst', 'includes',
-    '.github/vale', '.venv',
+    '.github/vale', '.venv', 'venv',
 ]
 
 # gitstamp config
@@ -69,7 +72,7 @@ gitstamp_fmt = "%B %Y"
 html_baseurl = 'https://docs.aiven.io'
 # Since we have `language='en'` set (further down) the URLs in the sitemap will
 # default to "{version}{lang}{link}", producing things like
-#    <url><loc>https://developer.aiven.io/en/docs/platform/howto/create_authentication_token.html</loc></url>
+#    <url><loc>https://docs.aiven.io/en/docs/platform/howto/create_authentication_token.html</loc></url>
 # That doesn't work because we do not produce pages with the `/en` in the URL.
 # We need to be explicit that we don't want {version} or {language} in the URLs
 sitemap_url_scheme = "{link}"
@@ -78,8 +81,10 @@ sitemap_url_scheme = "{link}"
 # The following pages are known to cause it problems.
 linkcheck_ignore = [
     # Kafka documentation anchors do not seem to be detected. We use the following:
-   'https://kafka.apache.org/documentation/#consumerconfigs_auto.offset.reset',
+    'https://kafka.apache.org/documentation/#consumerconfigs_auto.offset.reset',
     'https://kafka.apache.org/documentation/#design_consumerposition',
+    # Azure Marketplace uses internal links which confuses the checker, so ignoring these:
+    'https://portal.azure.com/#view/Microsoft_Azure_Marketplace/MarketplaceOffersBlade/selectedMenuItemId/home',
 ]
 
 # -- Options for HTML output -------------------------------------------------
@@ -116,6 +121,28 @@ html_theme_options = {
         "color-sidebar-search-background": "#fff",
         "sd-color-card-background": "#f7f7fa",
         "sd-color-primary": "#4a4b57",
+        "sidebar-tree-space-above": "8px",
+
+        # Custom css variables
+        "color-search": "#19191D",
+        "color-search-focused": "#4A4B57",
+        "color-search-border": "#B4B4BB",
+        "color-search-border-focused": "#0174BA",
+        "color-search-container-outline-focused": "#B4E5FB",
+        "color-search-background": "#FFFFFF",
+        "color-topnav-background": "#FFFFFF",
+        "color-topnav-border": "#EDEEF3",
+        "color-topnav-link": "#E41A4A",
+        "color-topnav-theme-toggle-border": "rgba(0, 0, 0, 0.1)",
+        "color-topnav-button-primary": "#FFFFFF",
+        "color-topnav-button-primary-hover": "#FFFFFF",
+        "color-topnav-button-primary-background": "#E41A4A",
+        "color-topnav-button-primary-hover-background": "#C60443",
+        "color-topnav-button-secondary": "#E41A4A",
+        "color-topnav-button-secondary-border": "#E41A4A",
+        "color-topnav-button-secondary-hover": "#E41A4A",
+        "color-topnav-button-secondary-hover-border": "#E41A4A",
+        "color-topnav-button-secondary-hover-background": "#FFF9FC"
     },
     "dark_css_variables": {
         "color-brand-primary": "#d2d2d6",
@@ -145,6 +172,28 @@ html_theme_options = {
         "color-admonition-title-background--error": "#ff525240",
         "sd-color-card-background": "#0b0b14",
         "sd-color-primary": "#e1e1e3",
+        "sidebar-tree-space-above": "8px",
+
+        # Custom css variables
+        "color-search": "#F7F7FA",
+        "color-search-focused": "#FFFFFF",
+        "color-search-border": "#3A3A44",
+        "color-search-border-focused": "#7FD1F7",
+        "color-search-container-outline-focused": "#0174BA",
+        "color-search-background": "#11111E",
+        "color-topnav-background": "#0B0B14",
+        "color-topnav-border": "#3A3A44",
+        "color-topnav-link": "#F7F7FA",
+        "color-topnav-theme-toggle-border": "rgba(255, 255, 255, 0.1)",
+        "color-topnav-button-primary": "black",
+        "color-topnav-button-primary-hover": "black",
+        "color-topnav-button-primary-background": "#ffffff",
+        "color-topnav-button-primary-hover-background": "#EDEDF0",
+        "color-topnav-button-secondary": "#f7f7fa",
+        "color-topnav-button-secondary-border": "#f7f7fa",
+        "color-topnav-button-secondary-hover": "#f7f7fa",
+        "color-topnav-button-secondary-hover-border": "#f7f7fa",
+        "color-topnav-button-secondary-hover-background": "rgba(255, 255, 255, 0.1)"
     },
     "navigation_with_keys": True
 }
@@ -158,9 +207,39 @@ language = "en"
 html_extra_path = ['robots.txt', '_redirects']
 html_static_path = ['_static']
 html_css_files = ['css/aiven.css']
+html_sidebars = {
+    "**": [
+        "sidebar/scroll-start.html",
+        "sidebar/mobile-header.html",
+        "sidebar/mobile-search.html",
+        "sidebar/navigation.html",
+        "sidebar/mobile-actions.html",
+        "sidebar/scroll-end.html",
+    ]
+}
 
 # -- Replacements -----------------------------------------------------------
 rst_epilog = """
+.. |icon-challenge-trophy| image:: /images/community/challenge-trophy.svg
+   :width: 24px
+   :class: no-scaled-link
+
+.. |icon-twitter| image:: /images/social_media/icon-twitter.svg
+   :width: 24px
+   :class: no-scaled-link
+
+.. |icon-github| image:: /images/social_media/icon-github.svg
+   :width: 24px
+   :class: no-scaled-link
+
+.. |icon-blog| image:: /images/social_media/icon-blog.svg
+   :width: 24px
+   :class: no-scaled-link
+
+.. |icon-youtube| image:: /images/social_media/icon-youtube.svg
+   :width: 24px
+   :class: no-scaled-link
+
 .. |icon-postgres| image:: /images/icon-pg.svg
    :width: 24px
    :class: no-scaled-link
@@ -222,3 +301,8 @@ rst_epilog = """
 .. |preview| replace:: :bdg-secondary:`preview`
 
 """
+
+html_context = {
+   'api_url_search': os.getenv('API_URL_SEARCH'),
+   'api_url_create_feedback': os.getenv('API_URL_CREATE_FEEDBACK')
+}

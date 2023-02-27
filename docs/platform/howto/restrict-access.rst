@@ -1,5 +1,5 @@
 Restrict network access to your service
-=======================================
+========================================
 
 It is possible to restrict access to your service to a single IP, and address block, or any combination of both. By default the service is publicly accessible.
 

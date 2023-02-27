@@ -1,4 +1,4 @@
 User-agent: *
 
-Sitemap: https://developer.aiven.io/sitemap.xml
+Sitemap: https://docs.aiven.io/sitemap.xml
 

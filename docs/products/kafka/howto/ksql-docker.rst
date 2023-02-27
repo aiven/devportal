@@ -3,7 +3,7 @@ Use ksqlDB with Aiven for Apache Kafka®
 
 Aiven provides a managed Apache Kafka® solution together with a number of auxiliary services like Apache Kafka Connect, Kafka REST and Schema Registry via `Karapace <https://github.com/aiven/karapace>`_. A managed `ksqlDB <https://ksqldb.io/>`_ service in Aiven is, however, not supported. If you want to define streaming data pipelines with SQL, you have two options:
 
-* Use `Aiven for Apache Flink® <https://developer.aiven.io/docs/products/flink.html>`_
+* Use `Aiven for Apache Flink® <https://docs.aiven.io/docs/products/flink.html>`_
 * Run a self-hosted ksqlDB cluster.
 
 

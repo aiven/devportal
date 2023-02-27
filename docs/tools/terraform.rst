@@ -40,10 +40,10 @@ Check out the :doc:`getting started guide </docs/tools/terraform/get-started>` f
 
 Learn more
 ----------
-Check out these resources to learn more about Terraform and our Provider:
+Check out these resources to learn more:
 
-* `Learn Terraform <https://learn.hashicorp.com/collections/terraform/aws-get-started>`_
 * `Aiven Terraform Provider documentation <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_
+* `Terraform scripts and code samples on GitHub <https://github.com/aiven/aiven-examples/tree/main/terraform>`_
 
 Get involved
 ------------

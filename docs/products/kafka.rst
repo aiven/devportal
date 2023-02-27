@@ -49,15 +49,20 @@ Take your first steps with Aiven for Apache Kafka by following our :doc:`/docs/p
 
         📖 :doc:`/docs/products/kafka/reference`
 
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
+
+        🧰 :doc:`Code samples </docs/products/kafka/howto/list-code-samples>`
 
 Apache Kafka resources
 ----------------------
 
 If you are new to Apache Kafka, try these resources to learn more:
 
-* The main Apache Kafka project page: http://kafka.apache.org/
+* The main Apache Kafka project page: https://kafka.apache.org/
 
-* The Karapace schema registry that Aiven maintains and makes available for every Aiven for Apache Kafka service: https://karapace.io/
+* The Karapace schema registry that Aiven maintains and makes available for every Aiven for Apache Kafka service: https://www.karapace.io/
 
 * Our code samples repository, to get you started quickly: https://github.com/aiven/aiven-examples
 

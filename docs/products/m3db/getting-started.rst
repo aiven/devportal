@@ -13,6 +13,7 @@ If you're just trying out M3DB, a single-node setup is available with our startu
 Finally, give the service a name and then select "Create Service", and your shiny new M3 database will start building. While it does that, you can already visit the service overview page to see the details of the service.
 
 .. image:: /images/products/m3db/m3db-connection-details.png
+   :alt: M3DB connection details
 
 Connection details
 ------------------

@@ -13,18 +13,15 @@ Choosing when to create new indices
 
 As the number of indices affects the performance of your service, it's good to consider your strategy for creating new indices.
 
-Consider creating a new index for each customer, project, or entity if:
-
-* you have a limited number of entities (tens, not hundreds or thousands), and
-* it is very important that you can easily and efficiently delete all the data related to a single entity.
+Consider creating a new index for each customer, project, or entity if you have a limited number of entities (tens, not hundreds or thousands). It is also important that you can easily and efficiently delete all the data related to a single entity.
 
 For example, storing logs or other events to date-specific indices (``logs_2018-07-20``, ``logs_2018-07-21``, etc.) adds value as long as old indices are cleaned up. If you have low-volume logging and you want to keep indices for longer times (years rather than weeks), consider using weekly or monthly indices instead.
 
 Avoid creating a new index for each customer, project, or entity if:
 
 * you have a very large number (thousands) of entities, or
-* you have hundreds of entities and need multiple different indices for each and every one, or
-* you expect a large increase in the number of entities, or
+* you have hundreds of entities and need multiple different indices for each one, or
+* you expect a significant increase in the number of entities, or
 * you have no other reason than to separate different entities from each other.
 
 Instead of creating something like ``items_project_a``, consider using a single ``items`` index with a field for your project identifier and query the data with OpenSearch filtering. This is a far more efficient way to use your OpenSearch service.
@@ -48,23 +45,28 @@ Performance impact
 
 Having a large number of indices or shards affects the performance of your OpenSearch service.
 For OpenSearch clusters, Aiven allocates 50% of the available memory to the JVM heap; the remaining 50% is reserved for the underlying OS and caching in-memory data structures.
-20 shards, or fewer, per GB of heap memory should be set as per `shard count recommendation <https://www.elastic.co/guide/en/elasticsearch/reference/current/size-your-shards.html#shard-count-recommendation>`_.
+20 shards, or fewer, per GB of heap memory, should be set as per `shard count recommendation <https://www.elastic.co/guide/en/elasticsearch/reference/current/size-your-shards.html#shard-count-recommendation>`_.
 
 As an example, an OpenSearch business-8 cluster comes with 8GB RAM.
 20 x (8 x .5) = 80, or less, would be the recommended configuration for the number of shards.
 
-Size of shard impacts the recovery time after a failure, shard sizes between 10GB to 50GB should be set as per `shard size recommendation <https://www.elastic.co/guide/en/elasticsearch/reference/current/size-your-shards.html#shard-size-recommendation>`_.
+The size of the shard impacts the recovery time after a failure. Shard sizes between 10GB to 50GB should be set as per `shard size recommendation <https://www.elastic.co/guide/en/elasticsearch/reference/current/size-your-shards.html#shard-size-recommendation>`_.
 
-Aiven for OpenSearch takes a snapshot once every hour. With shards exceeding recommend configuration, the cluster is continuously taking new backups and deleting old backups from storage. This naturally affects the service performance, as part of the capacity is continuously allocated to managing backups.
+Aiven for OpenSearch takes a snapshot once every hour. With shards exceeding recommended configuration, the cluster continuously takes new backups and deletes old backups from storage. This naturally affects the service performance, as part of the capacity is constantly allocated to managing backups.
 
 
 OpenSearch plan calculator
 --------------------------
 
 To help calculate a good shard configuration to use, we've shared our plan
-calculator. By adding the values you know, about the nodes and RAM in your
-setup, you can get some recommended starter values to use for your own setup.
-This OpenSearch plan calculator can be used online or downloaded.
+calculator. This OpenSearch plan calculator can be used online or downloaded: 
+
+* `View on Google Docs <https://docs.google.com/spreadsheets/d/1wJwzSdnQiGIADcxb6yx1cFjDR0LEz-pg13U-Mt2PEHc>`_ - Make a copy to your Google drive to use it.
+
+* `Download XLSX <https://docs.google.com/spreadsheets/d/1wJwzSdnQiGIADcxb6yx1cFjDR0LEz-pg13U-Mt2PEHc/export>`_ - Download and use it locally.
+
+By adding the values you know about the nodes and RAM in your
+setup, you can get some recommended starter values to use for your setup.
 
 .. image:: /images/products/opensearch/opensearch-plan-calculator.png
    :alt: Screenshot of the spreadsheet: enter your information and get recommendations.
@@ -72,21 +74,16 @@ This OpenSearch plan calculator can be used online or downloaded.
 Yellow cells such as ``data node count``, ``CPUs``, ``RAM``, ``Max Shard Size`` and etc. are input values to calculate recommendation
 values for plan sizing.
 
-* `View on Google Docs <https://docs.google.com/spreadsheets/d/1wJwzSdnQiGIADcxb6yx1cFjDR0LEz-pg13U-Mt2PEHc>`_ - Make a copy to your Google drive to use it.
-
-* `Download XLSX <https://docs.google.com/spreadsheets/d/1wJwzSdnQiGIADcxb6yx1cFjDR0LEz-pg13U-Mt2PEHc/export>`_ - Download and use it locally.
-
-
 .. warning::
-    The Dashboards from Aiven for OpenSearch is not compatible across minor versions. Because of this, if existing current nodes of your service instance are of an older version, you can expect downtime during migration or plan changes.
+    The Dashboards from Aiven for OpenSearch are not compatible across minor versions. Because of this, if existing current nodes of your service instance are of an older version, you can expect a downtime during migration or plan changes.
 
 
 Using patterns to set index retention
 -------------------------------------
 
-The standard approach for index retention is to set the maximum number of indices to store, and once that number is exceeded, the oldest index is deleted. However, this has some limitations. For example, you might want to set the maximum to 5 for one type of index and 8 for another type.
+The standard index retention approach is setting the maximum number of indices to store. On exceeding that number, the oldest index is deleted. However, this has some limitations. For example, you might want to set the maximum to 5 for one type of index and 8 for another type.
 
-Aiven for OpenSearch services give you the option to create `glob-style <https://en.wikipedia.org/wiki/Glob_(programming)>`_ patterns and set a unique maximum for each pattern.
+Aiven for OpenSearch services gives you the option to create `glob-style <https://en.wikipedia.org/wiki/Glob_(programming)>`_ patterns and set a unique maximum for each pattern.
 
 Here are some examples of the patterns that you can use:
 
@@ -99,7 +96,7 @@ You can also use ``*`` as a catch-all pattern that matches all indices. However,
 
 For example, if you have log indices ``logs.1``, ``logs.2``, and so on, up to ``logs.34``, along with new ``test.1``, ``test.2``, and ``test.3`` indices that are intended for testing purposes but are not in use yet.
 
-If you then create a ``logs.*`` pattern with the maximum set to 8 and a ``*`` pattern with the maximum set to 3, the system iterates through your patterns one by one. First, it makes sure that it only keeps the 8 newest log indices based on your ``logs.*`` pattern. Then, it runs the ``*`` pattern, which affects all your indices, and since the test indices are the newest ones, it keeps those and deletes all your log indices. Keep this in mind and be careful when setting a catch-all pattern.
+If you create a ``logs.*`` pattern with the maximum set to 8 and a ``*`` pattern with the maximum set to 3, the system iterates through your patterns one by one. First, it makes sure that it only keeps the 8 newest log indices based on your ``logs.*`` pattern. Then, it runs the ``*`` pattern, which affects all your indices, and since the test indices are the newest ones, it keeps those and deletes all your log indices. Keep this in mind, and be careful when setting a catch-all pattern.
 
 Additionally, setting the maximum to 0 means that your pattern has no effect. The system ignores the maximum setting and does not delete anything. You can use this if you want to disable the pattern temporarily.
 
@@ -122,7 +119,7 @@ The replication factor is adjusted automatically:
 * If ``number_of_replicas`` is 0 on a multi-node cluster, it is automatically increased to 1.
 * If ``number_of_replicas`` is between 1 and the maximum value, it is not adjusted.
 
-When the replication factor (``number_of_replicas`` value) is greater than size of the cluster, ``number_of_replicas`` is automatically lowered, as it is not possible to replicate index shards to more nodes than there are on the cluster.
+When the replication factor (``number_of_replicas`` value) is greater than the size of the cluster, ``number_of_replicas`` is automatically lowered, as it is not possible to replicate index shards to more nodes than there are on the cluster.
 
 .. note::
     The replication factor is ``number_of_replicas`` + 1. For example, for a three-node cluster, the maximum ``number_of_replicas`` value is 2, which means that all shards on the index are replicated to all three nodes.

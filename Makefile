@@ -3,7 +3,7 @@
 
 # You can set these variables from the command line, and also
 # from the environment for the first four.
-SPHINXOPTS    ?=
+SPHINXOPTS    ?= "-W"
 SPHINXBUILD   ?= sphinx-build
 ES_URL		  ?=
 PG_URL		  ?=
@@ -44,11 +44,6 @@ index-devportal: html
 	python "$(SOURCEDIR)/scripts/index_developer_portal_pages.py" \
 		--es-url="$(ES_URL)" \
 		--html-build-dir="$(BUILDDIR)/html"
-
-# Index Help Center pages to Elasticsearch
-index-helpcenter:
-	python "$(SOURCEDIR)/scripts/index_help_center_pages.py" \
-		--es-url="$(ES_URL)"
 
 # Create feedback table to PG
 create-feedback-table:
@@ -92,8 +87,10 @@ service-type-config-opensearch:
 service-type-config-redis:
 	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "redis" "includes/config-redis.rst"
 
+service-type-config-influxdb:
+	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "influxdb" "includes/config-influxdb.rst"
+
 # TODO: add automation for "pg". See https://github.com/aiven/devportal/issues/1026
-# TODO: add automation for "influxdb". See https://github.com/aiven/devportal/issues/1097
 
 # (Re)Generate cloud listing
 cloud-list:

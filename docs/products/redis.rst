@@ -45,7 +45,7 @@ Take your first steps with Aiven for Redis by following our :doc:`getting starte
         :shadow: md
         :margin: 2 2 0 0
 
-        🧰 :doc:`/docs/products/redis/howto/list-code-samples`
+        🧰 :doc:`Code samples </docs/products/redis/howto/list-code-samples>`
 
 
 Ways to use Aiven for Redis

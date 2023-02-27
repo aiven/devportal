@@ -1,5 +1,5 @@
-Create a Debezium source connector for PostgreSQL®
-==================================================
+Create a Debezium source connector from PostgreSQL® to Apache Kafka®
+====================================================================
 
 The Debezium source connector extracts the changes committed to the transaction log in a relational database, such as PostgreSQL®, and writes them to an Apache Kafka® topic in a standard format where they can be transformed and read by multiple consumers.
 
@@ -8,6 +8,10 @@ The Debezium source connector extracts the changes committed to the transaction 
     Debezium only updates the PostgreSQL replication slot LSN positions when changes take place in the database it is connected to. PostgreSQL is unable to delete old WAL segments if there are any replication slots that have not acknowledged receiving them. 
     
     So if your system is completely idle (in which case Aiven for PostgreSQL still generates 16 MiB of WAL every 5 minutes) or changes only occur in databases Debezium is not connected to, PostgreSQL will not be able to clean up WAL and the service will eventually run out of disk space. Thus it is essential to ensure any database you connect to with Debezium is updated frequently enough.
+
+.. note::
+
+    You can check the full set of available parameters and configuration options in the `connector's documentation <https://debezium.io/documentation/reference/stable/connectors/postgresql.html>`_.
 
 .. _connect_debezium_pg_source_prereq:
 
@@ -27,7 +31,7 @@ Furthermore you need to collect the following information about the source Postg
 * ``PLUGIN_NAME``: The `logical decoding plugin <https://debezium.io/documentation/reference/stable/connectors/postgresql.html>`_, possible values are ``decoderbufs``, ``wal2json`` and ``pgoutput``
 * ``PG_TABLES``: The list of database tables to be included in Apache Kafka; the list must be in the form of ``schema_name1.table_name1,schema_name2.table_name2``
 * ``PG_PUBLICATION_NAME``: The name of the `PostgreSQL logical replication publication <https://www.postgresql.org/docs/current/logical-replication-publication.html>`_, if left empty, ``debezium`` is used as default
-* ``PG_SLOT_NAME``: name of the `PostgreSQL replication slot <https://developer.aiven.io/docs/products/postgresql/howto/setup-logical-replication>`_, if left empty, ``debezium`` is be used as default
+* ``PG_SLOT_NAME``: name of the `PostgreSQL replication slot <https://docs.aiven.io/docs/products/postgresql/howto/setup-logical-replication>`_, if left empty, ``debezium`` is be used as default
 * ``APACHE_KAFKA_HOST``: The hostname of the Apache Kafka service, only needed when using Avro as data format
 * ``SCHEMA_REGISTRY_PORT``: The Apache Kafka's schema registry port, only needed when using Avro as data format
 * ``SCHEMA_REGISTRY_USER``: The Apache Kafka's schema registry username, only needed when using Avro as data format

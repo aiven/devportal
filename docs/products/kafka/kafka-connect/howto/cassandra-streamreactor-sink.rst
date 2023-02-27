@@ -1,7 +1,11 @@
-Create a Apache Cassandra® stream reactor sink connector
-========================================================
+Create a stream reactor sink connector from Apache Kafka® to Apache Cassandra®
+==============================================================================
 
 **The Apache Cassandra® stream reactor sink connector** enables you to move data from **an Aiven for Apache Kafka® cluster** to **a Apache Cassandra® database**. The Lenses.io implementation enables you to write `KCQL transformations <https://docs.lenses.io/5.0/integrations/connectors/stream-reactor/sinks/cassandrasinkconnector/>`_ on the topic data before sending it to the Cassandra database.
+
+.. note::
+
+    You can check the full set of available parameters and configuration options in the `connector's documentation <https://docs.lenses.io/connectors/sink/cassandra.html>`_.
 
 
 .. _connect_cassandra_lenses_sink_prereq:

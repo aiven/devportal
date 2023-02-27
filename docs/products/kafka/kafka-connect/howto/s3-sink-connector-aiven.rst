@@ -1,11 +1,15 @@
-Create an S3 sink connector by Aiven
-====================================
+Create an Amazon S3 sink connector by Aiven from Apache Kafka®
+==============================================================
 
 The Apache Kafka Connect® S3 sink connector by Aiven enables you to move data from an Aiven for Apache Kafka® cluster to Amazon S3 for long term storage.
 
 .. Note::
 
     There are two versions of S3 sink connector available with Aiven for Apache Kafka Connect®: one is developed by Aiven, another developed by Confluent. This article uses the Aiven version. The S3 sink connector by Confluent is discussed in a :doc:`dedicated page <s3-sink-connector-confluent>`.
+
+.. note::
+
+    You can check the full set of available parameters and configuration options in the `connector's documentation <https://github.com/aiven/s3-connector-for-apache-kafka>`_.
 
 Prerequisites
 -------------
@@ -18,6 +22,10 @@ Furthermore you need to follow the steps :doc:`to prepare the AWS account and S3
 * ``AWS_S3_REGION``: The AWS region where the S3 bucket has been created
 * ``AWS_USER_ACCESS_KEY_ID``: The AWS user access key ID
 * ``AWS_USER_SECRET_ACCESS_KEY``: The AWS user secret access key
+
+.. Tip::
+
+    If you want to secure your Kafka Connect to S3 using `AWS Assume role credentials <https://docs.aws.amazon.com/sdkref/latest/guide/feature-assume-role-credentials.html>`_, check out the :doc:`dedicated article <s3-iam-assume-role>`.
 
 Setup an S3 sink connector with Aiven CLI
 -----------------------------------------
@@ -32,7 +40,7 @@ Define the connector configurations in a file (we'll refer to it with the name `
 ::
 
     {
-        "name": "<CONECTOR_NAME>",
+        "name": "<CONNECTOR_NAME>",
         "connector.class": "io.aiven.kafka.connect.s3.AivenKafkaConnectS3SinkConnector",
         "key.converter": "org.apache.kafka.connect.converters.ByteArrayConverter"",
         "value.converter": "org.apache.kafka.connect.converters.ByteArrayConverter",
@@ -59,7 +67,7 @@ The configuration file contains the following entries:
 
 
 
-Check out the `GitHub repository parameters documentation <https://github.com/aiven/aiven-kafka-connect-s3>`_ for the full list of configuration options.
+Check out the `GitHub repository parameters documentation <https://github.com/aiven/s3-connector-for-apache-kafka>`_ for the full list of configuration options.
 
 
 Create an S3 sink connector with Aiven CLI

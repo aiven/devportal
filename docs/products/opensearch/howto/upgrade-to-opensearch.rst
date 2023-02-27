@@ -39,6 +39,10 @@ To perform the upgrade, visit the service overview page and choose the button la
 
 When the operation completes, your Aiven for OpenSearch service should continue to operate much as your Elasticsearch service did.
 
+.. note::
+    You can upgrade to OpenSearch® using :doc:`Aiven Provider for Terraform </docs/tools/terraform/howto/upgrade-to-opensearch>` as well.
+
+
 More resources
 --------------
 

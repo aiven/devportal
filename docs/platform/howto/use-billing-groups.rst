@@ -1,63 +1,68 @@
-Manage billing groups in the Aiven Console
-==========================================
+Manage billing groups 
+======================
 
-Billing groups enable you to set a common billing profile for multiple
-projects and generate a consolidated invoice. To know more about the key benefits read the :doc:`related documentation <../concepts/billing-groups>`.
+To view your billing groups in the `Aiven Console <https://console.aiven.io/>`_ go to the organization and click **Billing**. 
 
-Billing groups and Aiven accounts
----------------------------------
+Rename billing groups
+""""""""""""""""""""""
 
-An Aiven **Account** is the entry point for creating and managing billing groups. The following are options available for billing groups via the `Aiven Console <https://console.aiven.io/>`_:
+#. On the **Billing** page, find the billing group that you want to rename. 
 
-- Within an Account you can create one or more billing groups, depending on the need
-- You can group projects under an Account into one or more billing groups
-- You can set a **primary billing group** for an Account. All future projects associated with this Account are then added to the primary billing group by default.
-- You can move projects under an Account from one billing group to another.
+#. Click the three dots in the **Actions** column and select **Rename**.
 
-Aiven credits are available for all projects associated with the Account. You can choose to apply the credits to a specific project within the Account.
+#. Enter the new name and click **Rename**.
 
-Manage billing groups
----------------------
+Download invoices
+""""""""""""""""""
 
-To view and manage billing groups in the `Aiven Console <https://console.aiven.io/>`_:
+#. Select the name of the billing group.
 
-#. Click the current project and select **See all projects & accounts**.
+#. On the **Invoices** tab, find the billing period that you want to download an invoice for. 
 
-#. Click an account that you want to manage and then click the **Billing** tab.
+#. Click the three dots in the **Actions** column and select **Download PDF** or **Download CSV**.
 
-   .. Tip::
-    This window allows you to create new billing groups and assign projects to your billing groups. For more information on creating billing groups, `see the related article <https://help.aiven.io/en/articles/4634847-getting-started-with-billing-groups>`__.
+Update your billing information
+""""""""""""""""""""""""""""""""
 
-#. Click one of the listed billing groups to browse the details for that billing group.
+To change the payment card, address, or other billing details:
 
-Navigate the billing group page
-'''''''''''''''''''''''''''''''
+#. Select the name of the billing group that you want to update.
 
-The billing group page contains multiple sections:
+#. On the **Billing information** tab click **Edit** to update the details for that section.
 
-* the **accumulated costs** of all projects that are assigned to the billing group in the top-right corner.
-* the *action menu* , available in the top-right corner, includes options to **rename or delete the billing group**. 
+.. note:: You can :doc:`add or update payment card details</docs/platform/howto/manage-payment-card/>` on the user information page. 
 
-  .. Note::
-    You can only delete a billing group that has no projects assigned to it.
+Assign projects to a billing group
+""""""""""""""""""""""""""""""""""
 
-* the **Overview** tab contains: 
-    * the projects assigned to this billing group
-    * the generated invoices
-    * the applied credits
-* the **Projects** tab lists the projects that are assigned to the billing group
+#. Select the name of the billing group that you want to assign projects to.
 
-  .. Tip::
-  
-    You can assign new projects to the billing group on this tab. If you have more than one billing group in the current account, you can also move projects between billing groups.
+#. On the **Projects** tab, click **Assign projects**.
 
-* the **Invoices** tab allows you to **view and download the invoices** generated for the billing group. The invoices include separate lines for each project and service assigned to the billing group.
-* the **Credits** tab allows you to view and assign credit codes for the billing group.
-* the **Events** tab lists all the logged actions for the billing group.
-* the **Billing information** tab allows you to add and update the payment method and billing details for generating the invoices.
+#. Select the projects to assign to the billing group and click **Assign**.
 
-.. note:: Under the Settings of your Account, you can set the **Primary Billing Group** so that new projects will be assigned by default, unless specified otherwise
+.. note:: Assigning a project that is already assigned to another billing group will unassign it from that billing group.
+
+Move a project to another billing group
+"""""""""""""""""""""""""""""""""""""""
+
+#. Select the name of the billing group.
+
+#. On the **Projects** tab, find the project that you want to move.
+
+#. Click the three dots for that project and select the billing group you want to move it to.
+
+Delete billing groups 
+""""""""""""""""""""""
+
+#. Select the name of the billing group that you want to delete.
+
+#. On the **Projects** tab, confirm that no projects are assigned to this billing group. If there are projects listed, move them to a different billing group.
+
+#. Click the three dots next to the current accumulated monthly bill amount.
+
+#. Select **Delete** and **Confirm**.
+
+You are taken back to the Billing page.
 
 
-For more information, see our `support page <https://help.aiven.io/>`__
-or contact us at support@Aiven.io .

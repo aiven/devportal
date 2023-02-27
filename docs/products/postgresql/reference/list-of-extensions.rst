@@ -231,7 +231,7 @@ The following extensions can only be installed by superusers, **and are not gene
 ``amcheck`` - https://www.postgresql.org/docs/current/amcheck.html
     Functions for verifying relation integrity.
 
-``autoinc`` - https://www.postgresql.org/docs/current/contrib-spi.html#id-1.11.7.47.6
+``autoinc`` - https://www.postgresql.org/docs/current/contrib-spi.html
     Functions for auto-incrementing fields.
 
 ``bool_plperlu`` - https://www.postgresql.org/docs/current/plperl-funcs.html
@@ -240,19 +240,22 @@ The following extensions can only be installed by superusers, **and are not gene
 ``dict_xsyn`` - https://www.postgresql.org/docs/current/dict-xsyn.html
     Text search dictionary template for extended synonym processing.
 
+``file_fdw`` - https://www.postgresql.org/docs/current/file-fdw.html
+    Foreign-data wrapper for flat file access.
+
 ``hstore_plperl`` - https://www.postgresql.org/docs/current/hstore.html
     Transform between ``hstore`` and ``plperl``.
 
 ``hstore_plperlu`` - https://www.postgresql.org/docs/current/hstore.html
     Transform between ``hstore`` and ``plperlu``.
 
-``insert_username`` - https://www.postgresql.org/docs/current/contrib-spi.html#id-1.11.7.47.7
+``insert_username`` - https://www.postgresql.org/docs/current/contrib-spi.html
     Functions for tracking who changed a table.
 
 ``jsonb_plperlu`` - https://www.postgresql.org/docs/current/datatype-json.html
     Transform between ``jsonb`` and ``plperlu``.
 
-``moddatetime`` - https://www.postgresql.org/docs/10/contrib-spi.html#id-1.11.7.46.9
+``moddatetime`` - https://www.postgresql.org/docs/10/contrib-spi.html
     Functions for tracking last modification time.
 
 ``old_snapshot`` - https://www.postgresql.org/docs/current/oldsnapshot.html
@@ -273,5 +276,5 @@ The following extensions can only be installed by superusers, **and are not gene
 ``plperlu`` - https://www.postgresql.org/docs/current/plperl-trusted.html
     PL/PerlU untrusted procedural language.
 
-``refint`` - https://www.postgresql.org/docs/current/contrib-spi.html#id-1.11.7.47.5
+``refint`` - https://www.postgresql.org/docs/current/contrib-spi.html
     Functions for implementing referential integrity (obsolete).

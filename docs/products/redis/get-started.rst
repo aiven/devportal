@@ -60,3 +60,7 @@ Check out more technical information:
 * :doc:`Lua scripts with Aiven for Redis <concepts/lua-scripts-redis>`.
 
   Learn about inbuilt support for running Lua scripts in Aiven for Redis service.
+
+* :doc:`Benchmark performance <howto/benchmark-performance>`
+
+  Learn how to benchmark the performance of Aiven for Redis service.

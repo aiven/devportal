@@ -1,25 +1,36 @@
-Receive technical notifications
-===============================
+Get technical notifications
+============================
 
-After creating services on Aiven you will want to make sure you stay
-up-to-date with what's happening to them.
+To stay up to date with the latest news about the services in a project, you can set up notifications for technical contacts for the project. 
 
-One way to do this is to add one or more email addresses as contacts in
-the Technical Emails section of the project settings.
+Notifications include information about plan sizes, performance, outages and scheduled maintenance. High priority notifications (for example, a plan running out of space) are also sent to project admin users.
 
-.. image:: /images/platform/howto/technical-emails.png
-   :alt: How to set technical emails
+Set up email notifications
+"""""""""""""""""""""""""""
 
-These users will receive notifications related to plan sizes,
-performance, outages and upcoming mandatory planned maintenance. If no
-emails are specified, we will still send some high-priority
-notifications (such as disks running out of space) to project admin
-users.
+#. In the project, click **Settings**.
 
-.. Tip::
-   Option to specify tags, tags are key-value pairs that allow you to categorize resources.
-   Read more about :doc:`Tag your Aiven resources <tag-resources>`.
-   
-   **Billing Reference Tags:** Billing reference tags are returned in the Invoice API and are displayed both in the **"Billing"** section and on PDF invoices for this project.
-   
-   **Project Tags:** These tags are returned for resources in the API and are also displayed in the **"Projects & Accounts"** section of this project.
+#. In the **Technical Emails** section, add the email addresses.
+
+#. Click **Save changes**. 
+
+Set up Slack notifications
+"""""""""""""""""""""""""""
+
+To get notifications in Slack, you can add a Slack channel's or DM email address to the technical contacts for an Aiven project:
+
+#. In Slack, `create an email address for a channel or DM <https://slack.com/help/articles/206819278-Send-emails-to-Slack#h_01F4WDZG8RTCTNAMR4KJ7D419V>`_.
+
+   .. note::
+       If you don't see the email integrations option, ask the owner or admin of the workspace or organization to `allow incoming emails <https://slack.com/help/articles/360053335433-Manage-incoming-emails-for-your-workspace-or-organization>`_.
+
+#. In the Aiven Console, go to the project that you want to get notifications for.
+
+#. Click **Settings**.
+
+#. In the **Technical Emails** section, add the email address that you created for the Slack channel or  DM.                
+
+
+#. Click **Save changes**. 
+
+Alternatively, you can `set up a Slackbot forwarding address <https://slack.com/help/articles/206819278-Send-emails-to-Slack#h_01F4WE06MBF06BBHQNZ1G0H2K5>`_ and use that to automatically forward Aiven's email notifications from your email client.

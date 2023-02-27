@@ -18,7 +18,7 @@ The new provider must be added to the ``required_providers`` block in the Terraf
       required_providers {
         aiven = {
           source  = "aiven/aiven"
-          version = ">= 3.1"
+          version = "~> 3.9.0"
         }
         postgresql = {
           source  = "cyrilgdn/postgresql"
@@ -65,7 +65,7 @@ Optionally, when the Aiven for PostgreSQL service is created within the same Ter
       connect_timeout = 15
     }
 
-3. Create a PostgreSQL role called **test_role** using the Terraform resource ``postgresql_role.my_role``. 
+3. Create a PostgreSQL role called ``test_role`` using the Terraform resource ``postgresql_role.my_role``. 
 
 .. code:: terraform
 
