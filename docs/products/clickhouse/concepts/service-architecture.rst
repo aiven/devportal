@@ -17,7 +17,7 @@ For synchronizing critical low-volume information between servers, Aiven for Cli
 Coordinating services
 ---------------------
 
-Each Aiven for Clickhouse node runs Clickhouse, ZooKeeper, and Astacus.
+Each Aiven for ClickHouse node runs ClickHouse, ZooKeeper, and Astacus.
 
 .. _zookeeper:
 
