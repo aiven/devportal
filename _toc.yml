@@ -574,10 +574,17 @@ entries:
                 title: Create Apache Flink tables with data sources
                 entries:
                   - file: docs/products/flink/howto/connect-kafka
+                    title: Apache Kafka®-based Apache Flink® table
+                  - file: docs/products/flink/howto/flink-confluent-avro
+                    title: Confluent Avro-based Apache Flink® table
                   - file: docs/products/flink/howto/connect-pg
+                    title: PostgreSQL®-based Apache Flink® table
                   - file: docs/products/flink/howto/connect-opensearch
+                    title: OpenSearch®-based Apache Flink® table
                   - file: docs/products/flink/howto/slack-connector
+                    title: Slack-based Apache Flink® table
                   - file: docs/products/flink/howto/datagen-connector
+                    title: DataGen-based Apache Flink® table
           - file: docs/products/flink/howto/list-manage-cluster
             title: Manage cluster
           - file: docs/products/flink/howto/advanced-topics

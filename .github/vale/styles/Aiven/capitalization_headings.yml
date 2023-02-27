@@ -27,6 +27,7 @@ exceptions:
   - Cloud Logging
   - Connect
   - Connector
+  - Confluent Avro
   - Cookbook
   - Couchbase
   - Dashboards
