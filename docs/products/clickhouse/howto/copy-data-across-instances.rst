@@ -1,16 +1,7 @@
-Copy data from one Aiven for ClickHouse® server to another
-==========================================================
+Copy data from one ClickHouse® server to another
+================================================
 
-This article details how to copy data from one Aiven for ClickHouse® server to another using the `remoteSecure()` function.
-
-Prerequisites
--------------
-
-* Aiven account
-* IP of the source (remote) ClickHouse server
-
-Copy data
----------
+You can copy data from one ClickHouse® server to another using the `remoteSecure()` function.
 
 1. From your target server(s), use the `remoteSecure()` function to select data from the source server.
 
