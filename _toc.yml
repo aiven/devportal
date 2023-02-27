@@ -145,7 +145,7 @@ entries:
         - file: docs/integrations/datadog/datadog-metrics
         - file: docs/integrations/datadog/datadog-logs
     - file: docs/integrations/cloudwatch
-      title: Amazon CloudWatch
+      title: Amazon CloudWatch 
       entries:
         - file: docs/integrations/cloudwatch/cloudwatch-metrics
           title: CloudWatch Metrics
@@ -154,6 +154,8 @@ entries:
           entries:
             - file: docs/integrations/cloudwatch/cloudwatch-logs-console
             - file: docs/integrations/cloudwatch/cloudwatch-logs-cli
+    - file: docs/integrations/cloudlogging
+      title: Google Cloud Logging
     - file: docs/integrations/rsyslog
       title: RSyslog
       entries:
