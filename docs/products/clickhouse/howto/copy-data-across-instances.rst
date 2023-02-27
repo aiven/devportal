@@ -30,4 +30,4 @@ Copy data
 
 .. topic:: Results
 
-    Your data has been copied from the remote (source) server to the new (target) servier.
+    Your data has been copied from the remote (source) server to the new (target) server.
