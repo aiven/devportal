@@ -691,7 +691,7 @@ entries:
                 title: Monitor performance
               - file: docs/products/clickhouse/howto/use-shards-with-distributed-table
                 title: Read and write data across shards
-              - file: docs/products/clickhouse/copy-data-across-instances
+              - file: docs/products/clickhouse/how-to/copy-data-across-instances
                 title: Copy data across ClickHouse servers
           - file: docs/products/clickhouse/howto/list-manage-cluster
             title: Manage cluster
