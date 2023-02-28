@@ -1,4 +1,4 @@
-CREATE TABLE CPU_OUT_AGG(
+CREATE TABLE CPU_IN_AGG(
     window_start TIMESTAMP(3),
     window_end TIMESTAMP(3),
     hostname STRING,

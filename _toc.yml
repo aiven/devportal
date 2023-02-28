@@ -590,8 +590,6 @@ entries:
           - file: docs/products/flink/howto/advanced-topics
             entries:
             - file: docs/products/flink/howto/timestamps_opensearch
-            - file: docs/products/flink/howto/real-time-alerting-solution
-              title: Real-time alerting solution 
       - file: docs/products/flink/reference
         title: Reference
         entries:
@@ -1024,3 +1022,9 @@ entries:
       title: Catch the Bus - Aiven challenge with ClickHouse
     - file: docs/community/challenge/the-rolling-challenge
       title: Rolling - Aiven challenge with Apache Kafka and Apache Flink
+  
+  - file: docs/tutorials
+    title: Tutorials
+    entries:
+      - file: docs/tutorials/anomaly-detection
+        title: Streaming anomaly detection with Apache Flink, Apache Kafka and PostgreSQL
