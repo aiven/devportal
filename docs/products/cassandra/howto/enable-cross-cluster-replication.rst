@@ -129,7 +129,7 @@ Create a new CCR service pair
 
    .. important::
 
-      See :ref:`Limitations <limitations>` before you set the parameters.
+      See :ref:`Limitations <ccr-limitations>` before you set the parameters.
 
    .. code-block:: bash
 
@@ -150,7 +150,7 @@ Use the :ref:`avn service create <avn-cli-service-create>` command to create a n
 
 .. important::
 
-   See :ref:`Limitations <limitations>` before you set the parameters.
+   See :ref:`Limitations <ccr-limitations>` before you set the parameters.
 
 .. code-block:: bash
 
@@ -206,7 +206,7 @@ Use the `ServiceCreate <https://api.aiven.io/doc/#tag/Service/operation/ServiceC
 
    .. important::
 
-      See :ref:`Limitations <limitations>` before you set the parameters.
+      See :ref:`Limitations <ccr-limitations>` before you set the parameters.
 
    .. code-block:: bash
 
@@ -237,7 +237,7 @@ Use the `ServiceCreate <https://api.aiven.io/doc/#tag/Service/operation/ServiceC
 
 .. important::
 
-   See :ref:`Limitations <limitations>` before you set the parameters.
+   See :ref:`Limitations <ccr-limitations>` before you set the parameters.
 
 .. code-block:: bash
 
