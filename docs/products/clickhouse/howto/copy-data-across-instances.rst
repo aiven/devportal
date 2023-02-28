@@ -3,11 +3,24 @@ Copy data from one ClickHouse® server to another
 
 You can copy data from one ClickHouse® server to another using the `remoteSecure()` function.
 
+Prerequisites
+-------------
+
+Details of the source (remote) server
+
+* Hostname
+* Port
+* Username
+* Password
+
+Copy data
+---------
+
 1. From your target server(s), use the `remoteSecure()` function to select data from the source server.
 
    .. code-block:: shell
 
-      SELECT * FROM remote('127.0.0.1', db.remote_engine_table) LIMIT 3;
+      SELECT * FROM remoteSecure('HOSTNAME:PORT', db.remote_engine_table, 'USERNAME', 'PASSWORD') LIMIT 3;
 
 2. Insert the selected data into the target server.
 
