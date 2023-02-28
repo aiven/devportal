@@ -103,6 +103,13 @@ To call the `ServiceDelete <https://api.aiven.io/doc/#tag/Service/operation/Serv
       --url https://api.aiven.io/v1/project/PROJECT_NAME/service/SERVICE_NAME \
       --header 'Authorization: Bearer YOUR_TOKEN'
 
+More on Apache Cassandra CCR
+----------------------------
+
+* :doc:`About cross-cluster replication on Aiven for Apache Cassandra </docs/products/cassandra/concepts/cross-cluster-replication>`
+* :doc:`Enable CCR on Aiven for Apache Cassandra </docs/products/cassandra/howto/enable-cross-cluster-replication>`
+* :doc:`Manage CCR on Aiven for Apache Cassandra </docs/products/cassandra/howto/manage-cross-cluster-replication>`
+
 Related reading
 ---------------
 

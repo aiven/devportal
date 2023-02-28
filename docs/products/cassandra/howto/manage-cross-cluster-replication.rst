@@ -180,6 +180,13 @@ To configure the consistency level in a client library, add an extra parameter o
 
     For more details on consistency levels for Apache Cassandra, see `CONSISTENCY <https://cassandra.apache.org/doc/4.1/cassandra/tools/cqlsh.html#consistency>`_ in the Apache Cassandra documentation.
 
+More on Apache Cassandra CCR
+----------------------------
+
+* :doc:`About cross-cluster replication on Aiven for Apache Cassandra </docs/products/cassandra/howto/cross-cluster-replication>`
+* :doc:`Enable CCR on Aiven for Apache Cassandra </docs/products/cassandra/howto/enable-cross-cluster-replication>`
+* :doc:`Disable CCR on Aiven for Apache Cassandra </docs/products/cassandra/howto/disable-cross-cluster-replication>`
+
 Related reading
 ---------------
 
