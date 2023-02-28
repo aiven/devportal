@@ -618,7 +618,7 @@ entries:
           - file: docs/products/cassandra/howto/connect-cqlsh-cli
           - file: docs/products/cassandra/howto/use-nosqlbench-with-cassandra
           - file: docs/products/cassandra/howto/use-dsbulk-with-cassandra
-          - file: docs/products/clickhouse/howto/list-cross-cluster-replication
+          - file: docs/products/cassandra/howto/list-cross-cluster-replication
             title: Cross-cluster replication
             entries:
               - file: docs/products/cassandra/howto/disable-cross-cluster-replication
