@@ -219,12 +219,12 @@ Manages rules to OpenSearch® ACL and extended ACL configuration.
 
 More information on ``es-acl-add``, ``es-acl-del``, ``es-acl-disable``, ``es-acl-enable``, ``es-acl-extended-disable``, ``es-acl-extended-enable`` and ``es-acl-extended-list``  can be found in :doc:`the dedicated page <service/es-acl>`.
 
-``avn service flink`` |beta|
+``avn service flink``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Manages Aiven for Apache Flink® tables and jobs.
 
-More info on ``flink table create``, ``flink table delete``, ``flink table get``, ``flink table list``, ``flink job create``, ``flink job cancel``, ``flink job get`` and ``flink job list`` can be found in :doc:`the dedicated page <service/flink>`.
+More info on ``flink create-application``, ``flink list-applications``, ``flink get-application``, ``flink update-application``, ``flink delete-application``, ``flink create-application-version``, ``flink validate-application-version``, ``flink get-application-version``, ``flink delete-application-version``, ``flink list-application-deployments``, ``flink get-application-deployment``, ``flink create-application-deployment``, ``flink delete-application-deployment``, ``flink stop-application-deployment``, ``flink cancel-application-deployment`` can be found in :doc:`the dedicated page <service/flink>`.
 
 .. _avn_service_get:
 

@@ -26,13 +26,14 @@ You can :doc:`add additional storage <../concepts/dynamic-disk-sizing>` to your 
    .. image:: /images/platform/howto/upgrade-service-disk-space.png
       :alt: Add additional storage using the slider
 
-5. Click **Save changes**. The additional storage is added  and available for immediate use.  
+5. Click **Save changes**. The additional storage is added and available for immediate use.  
 
 .. note:: 
    Depending on the service type, the amount of storage you can add in increments varies. For example, some services allow you to add storage in 10GB increments, while others allow 30GB increments. 
 
-.. warning:: 
-   The number of times you can add additional storage is limited to two times until the maximum storage limit is reached. When you exceed this limit, you will see a notification to perform a maintenance update to optimize disk performance. As a result, we recommend you plan to add sufficient disk capacity each time.
+.. warning::
+
+   Maximum storage size depends on the plan and the service type. It can go as high as five times the base storage size of the plan. A storage optimization is performed at the next maintenance update after a change to the storage size. Due to limitations on the cloud provider, there is a limit on how many times storage can be increased between two maintenance updates. If this limit is reached, you see a prompt to perform a maintenance update for performance optimization. Avoid hitting the limit of times you increase the storage: each time you increase the storage size, plan with foresight so that the amount of the disk space you add is sufficient and you don't need to add it again any time soon.
 
 Decrease or remove additional storage
 -------------------------------------

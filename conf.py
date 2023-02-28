@@ -171,6 +171,7 @@ html_theme_options = {
         "color-admonition-title-background--warning": "#ff910040",
         "color-admonition-title-background--error": "#ff525240",
         "sd-color-card-background": "#0b0b14",
+        "sd-color-card-header": "#0b0b14",
         "sd-color-primary": "#e1e1e3",
         "sidebar-tree-space-above": "8px",
 

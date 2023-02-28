@@ -1,42 +1,38 @@
 Set up SAML with OneLogin
-==============================
+==========================
 
-SAML ( *Security Assertion Markup Language* ) is a standard for
-exchanging authentication and authorization data between an identity
-provider and a service provider. To read more about SAML check the :doc:`dedicated page <saml-authentication>`.
+This article explains how to set up SAML with `OneLogin <https://www.onelogin.com/>`_ for an organization in Aiven. For more information on SAML and instructions for other identity providers, see the :doc:`Set up SAML authentication </docs/platform/howto/saml/saml-authentication>` article.
 
-The following is the procedure to setup SAML with `OneLogin <https://www.onelogin.com/>`_.
+Prerequisite steps in Aiven Console
+------------------------------------
 
-Prerequisite steps in Aiven
------------------------------------
+#. In the organization, click **Admin**.
 
-1. Login to the `Aiven Console <https://console.aiven.io>`_
+#. Select **Authentication**.
 
-2. Under **Projects** in the top left, click the drop down arrow and
-then on **See All Accounts**
+#. Click **Add authentication method**.
 
-3. Click on the Account you want to edit or create a new one
+#. Enter a name and select SAML. You can also select the teams that users will be added to when they sign up or log in through this authentication method.
 
-4. Select the **Authentication** tab
+You are shown two parameters needed to set up the SAML authentication in OneLogin:
 
-5. Create a new Authentication Method, call it `OneLogin` (or similar) and then
-choose the team to add invited people to (or leave it blank)
+* Metadata URL
+* ACS URL
 
-Setup on OneLogin
------------------
+Configure SAML on OneLogin
+---------------------------
 
-1. Enter OneLogin **Administration** portal (top right link by your username)
+#. Log in to the `OneLogin Admin console <https://app.onelogin.com/login>`_. 
 
-2. Select **Applications** and then **Add App**. 
+#. Select **Applications** and click **Add App**. 
 
-3. Search for **SAML Custom Connector (Advanced)** and select it.
+#. Search for **SAML Custom Connector (Advanced)** and select it.
 
-3. Change the Display Name to ``Aiven`` and add any other visual configurations you like and click **Save**.
+#. Change the **Display Name** to ``Aiven``.
 
-OneLogin configuration
-~~~~~~~~~~~~~~~~~~~~~~
+#. Add any other visual configurations you want and click **Save**.
 
-1. In the **Configuration** section of the menu, set the following parameters:
+#. In the **Configuration** section of the menu, set the following parameters:
 
    .. list-table::
       :header-rows: 1
@@ -47,7 +43,7 @@ OneLogin configuration
       * - ``ACS URL Validation``
         - ``[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)``
       * - ``ACS URL``
-        - the ``ACS URL`` displayed in the Aiven authentication method you created
+        - ``ACS URL`` from Aiven Console 
       * - ``Login URL``
         - ``https://console.aiven.io``
       * - ``SAML Initiator``
@@ -55,37 +51,52 @@ OneLogin configuration
       * - ``SAML nameID format``
         - ``Email``
    
-2. Click **Save**
 
-2. In the **SSO** section of the menu:
+#. Click **Save**.
 
-   1. Set ``SAML Signature Algorithm`` to ``SHA-256``
+#. In the **SSO** section of the menu, set **SAML Signature Algorithm** to ``SHA-256``.
 
-   2. View the certificate and copy the contents
+#. Copy the certificate content, ``Issuer URL`` and ``SAML 2.0 Endpoint (HTTP)``. These are needed for the SAML configuration in Aiven Console.
 
-   3. Copy the ``Issuer URL`` and the ``SAML 2.0 Endpoint (HTTP)``
+#. Click **Save**
 
-   4. Click **Save**
+#. Assign users to this application.
 
-3. Assign users to this application and head back to Aiven to complete the configuration
 
 Finish the configuration in Aiven
 ---------------------------------
 
-1. In the new authentication method, click *Edit* next to the SAML configuration
+Go back to the **Authentication** page in `Aiven Console <https://console.aiven.io/>`_ to enable the SAML authentication method:
 
-2. Set the ``SAML IDP URL`` as the ``SAML 2.0 Endpoint (HTTP)`` from OneLogin 
+1. Select the name of the OneLogin method that you created.
 
-3. Set the ``SAML Entity ID`` as the ``Issuer URL`` from OneLogin
+2. In the SAML configuration section, click **Edit**. 
 
-4. Paste the certificate from OneLogin into ``SAML Certificate``
+3. Add the configuration settings from OneLogin: 
 
-5. Do **not** enable ``Enable IdP login`` unless you set ``SAML Initiator`` to ``OneLogin`` in your OneLogin application
+* Set the ``SAML IDP URL`` to the ``SAML 2.0 Endpoint (HTTP)`` from OneLogin. 
 
-6. Save that and you are good to go! Make sure the authentication method is enabled and you can then use the **Signup URL** to invite new people and **Account link URL** for those that already have an Aiven login.
+* Set the ``SAML Entity ID`` to the ``Issuer URL`` from OneLogin.
 
+* Paste the certificate from OneLogin into ``SAML Certificate``.
+
+4. If you set ``SAML Initiator`` to ``OneLogin`` in your OneLogin application, then toggle on ``IdP login``.
+
+5. Toggle on **Enable authentication method** at the top of the page. 
+
+You can use the **Signup URL** to invite new users, or the **Account link URL** for those that already have an Aiven user account.
 
 .. note::
-   You will need to assign users in OneLogin before the connection will work. If you experience errors, try selecting **Reapply entitlement Mappings** under *More Actions* in the *Settings* of your OneLogin App.
+   You need to assign users in OneLogin for the connection to work. 
+   
+Troubleshooting
+----------------
 
-If you have issues, you can use the `SAML Tracer browser extension <https://addons.mozilla.org/firefox/addon/saml-tracer/>`_ to  check the process step by step. The errors shown in the tracker should help you to debug the issues. If it does not work, you can request help by sending an email at support@Aiven.io.
+If you are getting errors, try this:
+
+#. Go to the app in OneLogin and click **Settings**.
+
+#. Under **More Actions**, select **Reapply entitlement Mappings**.
+
+If you continue to have issues, you can use the `SAML Tracer browser extension <https://addons.mozilla.org/firefox/addon/saml-tracer/>`_ to check the process step by step. 
+

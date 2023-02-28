@@ -109,7 +109,7 @@ Sink connectors
 
        :doc:`Stream Reactor MongoDB® <kafka-connect/howto/mongodb-sink-lenses>`
 
-       `Stream Reactor MQTT <https://docs.lenses.io/connectors/sink/mqtt.html>`__
+       :doc:`Stream Reactor MQTT <kafka-connect/howto/mqtt-sink-connector>`
 
        :doc:`Stream Reactor Redis®* <kafka-connect/howto/redis-streamreactor-sink>`
 
