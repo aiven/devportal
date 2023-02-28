@@ -222,7 +222,7 @@ Interfaces
             :color: primary
             :outline:
 
-            Aiven Console Overview
+            Aiven Console overview
     
     .. grid-item-card::
         :shadow: md
@@ -237,7 +237,7 @@ Interfaces
             :color: primary
             :outline:
 
-            Aiven CLI Quickstart
+            Aiven CLI quickstart
 
 
 Automation
@@ -257,7 +257,7 @@ Automation
             :color: primary
             :outline:
 
-            API Quickstart
+            API quickstart
 
     .. grid-item-card::
         :shadow: md
