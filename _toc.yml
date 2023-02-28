@@ -618,6 +618,8 @@ entries:
           - file: docs/products/cassandra/howto/connect-cqlsh-cli
           - file: docs/products/cassandra/howto/use-nosqlbench-with-cassandra
           - file: docs/products/cassandra/howto/use-dsbulk-with-cassandra
+          - file: docs/products/cassandra/howto/enable-cross-cluster-replication
+            title: Enable CCR          
       - file: docs/products/cassandra/reference
         title: Reference
         entries:
