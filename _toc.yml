@@ -604,7 +604,10 @@ entries:
       - file: docs/products/cassandra/concepts
         title: Concepts
         entries:
-          - glob: docs/products/cassandra/concepts/*
+          - file: docs/products/cassandra/concepts/tombstones
+            title: Tombstones
+          - file: docs/products/cassandra/concepts/cross-cluster-replication
+            title: Cross-cluster replication
       - file: docs/products/cassandra/howto
         title: HowTo
         entries:
