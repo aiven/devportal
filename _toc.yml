@@ -165,6 +165,17 @@ entries:
           title: Rename custom cloud
         - file: docs/platform/howto/byoc/delete-custom-cloud
           title: Delete custom cloud
+    - file: docs/platform/howto/list-backup-to-another-region
+      title: Backup to another region
+      entries:
+        - file: docs/platform/concepts/backup-to-another-region
+          title: About cross-region backup
+        - file: docs/platform/howto/enable-backup-to-another-region
+          title: Add cross-region backup
+        - file: docs/platform/howto/manage-backup-to-another-region
+          title: Manage cross-region backup
+        - file: docs/platform/howto/disable-backup-to-another-region
+          title: Delete cross-region backup
     - file: docs/platform/concepts/enhanced-compliance-env
     - file: docs/platform/concepts/aiven-node-firewall-configuration
     - file: docs/platform/concepts/cloud-security
@@ -1403,4 +1414,3 @@ entries:
   # -------- SUPPORT --------
   - file: docs/platform/howto/project-support-center
     title: Support
-
