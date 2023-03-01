@@ -13,14 +13,14 @@ Caching is the act of writing to a block of memory specifically designed for qui
 
 However, we're developing applications for the cloud, not directly onto our computer. This adds a few layers of complexity, but opens up some interesting opportunities to optimize our performance further. Instead of using a block of memory (and the unbounded, chaotic nature that entails), we can use two databases instead! We can use one database as a data store, and one as a cache. This lets us optimize our data store for things like concurrency control and our cache for speedy reads and writes, while still taking advantage of everything the cloud offers us in terms of scalability. 
 
-Setting up databases in the cloud is hard, so we'll use [Aiven for PostgreSQL®](https://aiven.io/postgresql) and [Aiven for Redis®](https://aiven.io/redis) in this tutorial. You can [sign up for a free trial](https://console.aiven.io/signup) to follow along!
+Setting up databases in the cloud is hard, so we'll use [Aiven for PostgreSQL®](https://aiven.io/postgresql) and [Aiven for Redis®](https://aiven.io/redis) in this tutorial. You can [sign up for our free trial](https://console.aiven.io/signup) to follow along!
 
 An application can cache both read operations and write operations. This tutorial will go through caching read operations, but we'll talk about the advantages of caching writes at the end as well. 
 
-Learning objectives
--------------------
+What we'll learn
+-----------------
 
-* Creating a simple Python web application, that accesses data in a PostgreSQL database
+* Creating a simple Python web application that accesses data in a PostgreSQL database
 * Using ``curl`` at the command line to make GET and POST requests to that web
   application
 * Learning why caching the GET response is a good idea, and how to do that
@@ -36,33 +36,58 @@ Overview
 Prerequisites
 -------------
 
-* Python
+* CLI tooling: The [Redis CLI](https://redis.io/docs/ui/cli/) for Redis and [Psql](https://www.geeksforgeeks.org/postgresql-psql-commands/) for PostgreSQL are useful to know as they're transferrable anywhere you go. We built the [avn CLI](https://docs.aiven.io/docs/tools/cli) to take advantage of all the features Aiven offers for its products, and this works too! We'll provide examples with both in this tutorial. 
 
-* curl
+If you're following along without using Aiven, we still recommend deploying to a cloud provider like AWS or Google Cloud. This tutorial assumes the databases will be configured and deployed for you like Aiven does, and starts at the point where we connect to a running service.
 
-* Either:
-
-  * Redis CLI and PG CLI (more general approach)
-
-  or:
-
-  * ``avn`` CLI (Aiven specific, but easier to use?)
 
 Set up a Python virtual environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+We'll do our development in a Python virtual environment. This will prevent any of the work we're doing in this tutorial from affecting anything else you might be working on. 
+
+We'll also install the [FastAPI framework](https://fastapi.tiangolo.com/) in this step. We'll use FastAPI to build a quick service hooked up to our PostgreSQL database.
+
 .. code:: shell
 
    python -m venv venv
-   pip install fastapi    # is that correct?
+   pip install fastapi 
 
 Create an Aiven for PostgreSQL® service
 ---------------------------------------
 
+Next, let's navigate to the [Aiven console](https://console.aiven.io/). Sign up for our free trial if you haven't already, or log in if you have. 
+
+Click **Create service** and create an Aiven for PostgreSQL® service with the following parameters: 
+
+- **Service type:** PostgreSQL®
+- **Cloud provider:** Choose the cloud provider of your choice. If you aren't sure what to pick, we suggest DigitalOcean.
+- **Service cloud region:** Choose the region closest to you
+- **Service plan:** Choose **Hobbyist** or **Startup** 
+- **Service name:** Choose something meaningful - we're using `postgres-app-backend`
+
+When you're ready, click **Create service**.
+
+This initializes a PostgreSQL® database for us on the cloud and region you choose, with a small service plan.
+
+If you were building a real application, you'd want to pick a larger plan. 
 
 Make a note of the PostgreSQL connection parameters
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+When Aiven is done initializing your PostgreSQL service, it will direct you to the service's Overview page. 
+
+
+
+While we're here, note down the following:
+
+- **Service URI**
+- **Host** 
+- **Port** 
+- **User** 
+- **Password**
+
+You can return to this page any time using the **Services** menu on the left hand menu and selecting the service you want to view. You can also use the **Quick connect** button to get convenient copy-and-paste commandsd and code snippets in a variety of CLI tools and programming connections! 
 
 Put some data into the database
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
