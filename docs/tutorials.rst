@@ -11,7 +11,7 @@ Useful tutorials:
 
         :doc:`Streaming anomaly detection with Apache Flink®, Apache Kafka® and PostgreSQL® <tutorials/anomaly-detection>`
 
-        |icon-flink| |icon-kafka| |icon-postgres
+        |icon-flink| |icon-kafka| |icon-postgres|
 
     .. grid-item-card::
         :shadow: md
@@ -20,5 +20,5 @@ Useful tutorials:
         :doc:`Let's talk to Kafka. How to send and receive application data from Apache Kafka® <tutorials/talk-to-kafka>`
 
         |icon-kafka|
-        
+
         
