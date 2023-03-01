@@ -1013,6 +1013,8 @@ entries:
   - file: docs/tutorials
     title: Tutorials
     entries:
+    - file: docs/tutorials/anomaly-detection
+      title: Streaming anomaly detection with Apache Flink, Apache Kafka and PostgreSQL
     - file: docs/tutorials/talk-to-kafka
       title: How to send and receive application data from Apache Kafka
 
