@@ -3,23 +3,17 @@ Enable cross-cluster replication in Aiven for Apache Cassandra® |beta|
 
 Enabling the cross-cluster replication (CCR) feature requires building a CCR setup in the Aiven platform and, next, configuring the replication on the Apache Cassandra side. This article covers the first part only by providing instructions on how to set up CCR for your Aiven for Apache Cassandra® service on the Aiven side.
 
-.. For the other part (the configuration of the replication factor on the Apache Cassandra side), which ultimately makes the replication work, see the instruction in **Set up the replication factor**.
+For the other part (the configuration of the replication factor on the Apache Cassandra side), which ultimately makes the replication work, see the instruction in :ref:`Set up the replication factor <set-up-replication-factor>`.
 
 About enabling CCR
 ------------------
 
 You can enable CCR either when creating a new Aiven for Apache Cassandra service or for an existing service.
 
-.. _limitations:
-
 Limitations
 '''''''''''
 
-.. To be replaced with the link to the CCR concept article - the Limitation section
-
-* Enabling CCR on an existing service is only possible if this service has ``NetworkTopologyStrategy`` set as a replication strategy for all distributed keyspaces.
-* Each of the services in the CCR pair needs to be hosted on a different datacenter.
-* Two CCR peer services need to use an identical service plan and the same amount of dynamic disk space.
+See :ref:`CCR limitations <ccr-limitations>` for limitations that apply to CCR on Aiven for Apache Cassandra.
 
 Tools
 '''''
@@ -40,7 +34,7 @@ Prerequisites
   * `cURL` CLI tool
   * `Aiven CLI tool <https://github.com/aiven/aiven-client>`_
 
-* See :ref:`Limitations <limitations>`.
+* See :ref:`Limitations <ccr-limitations>`.
 
 Enable CCR in the console
 -------------------------
@@ -135,7 +129,7 @@ Create a new CCR service pair
 
    .. important::
 
-      See :ref:`Limitations <limitations>` before you set the parameters.
+      See :ref:`Limitations <ccr-limitations>` before you set the parameters.
 
    .. code-block:: bash
 
@@ -156,7 +150,7 @@ Use the :ref:`avn service create <avn-cli-service-create>` command to create a n
 
 .. important::
 
-   See :ref:`Limitations <limitations>` before you set the parameters.
+   See :ref:`Limitations <ccr-limitations>` before you set the parameters.
 
 .. code-block:: bash
 
@@ -212,7 +206,7 @@ Use the `ServiceCreate <https://api.aiven.io/doc/#tag/Service/operation/ServiceC
 
    .. important::
 
-      See :ref:`Limitations <limitations>` before you set the parameters.
+      See :ref:`Limitations <ccr-limitations>` before you set the parameters.
 
    .. code-block:: bash
 
@@ -243,7 +237,7 @@ Use the `ServiceCreate <https://api.aiven.io/doc/#tag/Service/operation/ServiceC
 
 .. important::
 
-   See :ref:`Limitations <limitations>` before you set the parameters.
+   See :ref:`Limitations <ccr-limitations>` before you set the parameters.
 
 .. code-block:: bash
 
@@ -265,10 +259,17 @@ Use the `ServiceCreate <https://api.aiven.io/doc/#tag/Service/operation/ServiceC
                }
             }'
 
+What's next
+-----------
+
+* :doc:`Manage CCR on Aiven for Apache Cassandra </docs/products/cassandra/howto/manage-cross-cluster-replication>`
+* :doc:`Disable CCR on Aiven for Apache Cassandra </docs/products/cassandra/howto/disable-cross-cluster-replication>`
+
 Related reading
 ---------------
 
+* :doc:`About cross-cluster replication on Aiven for Apache Cassandra </docs/products/cassandra/concepts/cross-cluster-replication>`
+* `Multi-master Replication: Versioned Data and Tunable Consistency <https://cassandra.apache.org/doc/latest/cassandra/architecture/dynamo.html#multi-master-replication-versioned-data-and-tunable-consistency>`_
 * :doc:`OpenSearch® cross-cluster replication</docs/products/opensearch/concepts/cross-cluster-replication-opensearch>`
 * :doc:`Set up cross-cluster replication for OpenSearch</docs/products/opensearch/howto/setup-cross-cluster-replication-opensearch>`
 * :doc:`Enabling cross-cluster replication for Apache Kafka® via Terraform</docs/tools/terraform/reference/cookbook/kafka-mirrormaker-recipe>`
-* `Multi-master Replication: Versioned Data and Tunable Consistency <https://cassandra.apache.org/doc/latest/cassandra/architecture/dynamo.html#multi-master-replication-versioned-data-and-tunable-consistency>`_

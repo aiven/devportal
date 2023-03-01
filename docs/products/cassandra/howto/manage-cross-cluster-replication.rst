@@ -69,6 +69,8 @@ Add an extra disk space
     
     You've added extra disk storage space for your CCR-enabled service and its CCR-replica service.
 
+.. _set-up-replication-factor:
+
 Set up the replication factor
 -----------------------------
 
@@ -180,10 +182,17 @@ To configure the consistency level in a client library, add an extra parameter o
 
     For more details on consistency levels for Apache Cassandra, see `CONSISTENCY <https://cassandra.apache.org/doc/4.1/cassandra/tools/cqlsh.html#consistency>`_ in the Apache Cassandra documentation.
 
-Related reading
----------------
+More on Apache Cassandra CCR
+----------------------------
+
+* :doc:`About cross-cluster replication on Aiven for Apache Cassandra </docs/products/cassandra/concepts/cross-cluster-replication>`
+* :doc:`Enable CCR on Aiven for Apache Cassandra </docs/products/cassandra/howto/enable-cross-cluster-replication>`
+* :doc:`Disable CCR on Aiven for Apache Cassandra </docs/products/cassandra/howto/disable-cross-cluster-replication>`
+
+More on CCR with Aiven
+----------------------
 
 * :doc:`OpenSearch® cross-cluster replication</docs/products/opensearch/concepts/cross-cluster-replication-opensearch>`
 * :doc:`Set up cross-cluster replication for OpenSearch</docs/products/opensearch/howto/setup-cross-cluster-replication-opensearch>`
 * :doc:`Enabling cross-cluster replication for Apache Kafka® via Terraform</docs/tools/terraform/reference/cookbook/kafka-mirrormaker-recipe>`
-* `Cassandra® documentation <https://cassandra.apache.org/doc/latest/>`_
+
