@@ -68,7 +68,7 @@ To create an :doc:`Aiven for Apache Kafka </docs/products/kafka>` service, you n
 
 4. Select the cloud provider and region that you want to run your service on.
 
-5. Select `business-4` as service plan.
+5. Select `Startup-2` as service plan.
 
 5. Enter ``demo-kafka`` as name for your service.
 
