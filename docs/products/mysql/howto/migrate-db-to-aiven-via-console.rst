@@ -242,6 +242,3 @@ Related reading
 
 - :doc:`Migrate to Aiven for MySQL from an external MySQL </docs/products/mysql/howto/migrate-from-external-mysql>`
 - :doc:`About aiven-db-migrate </docs/products/postgresql/concepts/aiven-db-migrate>`
-- :doc:`Migrate to Aiven for PostgreSQL® with aiven-db-migrate </docs/products/postgresql/howto/migrate-aiven-db-migrate>`
-- :doc:`Migrate to Aiven for PostgreSQL® with pg_dump and pg_restore </docs/products/postgresql/howto/migrate-pg-dump-restore>`
-- :doc:`Migrate between PostgreSQL® instances using aiven-db-migrate in Python </docs/products/postgresql/howto/run-aiven-db-migrate-python>`
