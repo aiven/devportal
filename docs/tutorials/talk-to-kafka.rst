@@ -212,6 +212,7 @@ With SSL authentication:
         from kafka import KafkaProducer
         import time
 
+        # Configuring the Kafka producer 
         producer = KafkaProducer(
             bootstrap_servers=f"{HOST}:{SSL_PORT}", # From the connection information for managed service
             security_protocol="SSL",
@@ -238,7 +239,8 @@ With SASL authentication:
 
          # Choose an appropriate SASL mechanism, for instance:
          SASL_MECHANISM = 'SCRAM-SHA-256'
-
+         
+         # Configuring the Kafka producer
          producer = KafkaProducer(
             bootstrap_servers=f"{HOST}:{SASL_PORT}", # From the connection information for managed service
             sasl_mechanism = SASL_MECHANISM,
@@ -268,7 +270,7 @@ With SSL authentication:
         # Import the required library
         from kafka import KafkaConsumer
 
-        # Create the consumer instance  
+        # Configuring the Kafka consumer  
         consumer = KafkaConsumer(
             "demo-topic",
             auto_offset_reset="earliest",
@@ -294,6 +296,7 @@ With SASL authentication:
         # Choose an appropriate SASL mechanism, for instance:
         SASL_MECHANISM = 'SCRAM-SHA-256'
 
+        # Configuring the Kafka consumer 
         consumer = KafkaConsumer(
             "demo-topic",
             auto_offset_reset="earliest",
@@ -382,6 +385,7 @@ On a terminal window, run the following producer code. The program should execut
 
 .. code:: python
 
+    # Import required libraries
     from confluent_kafka import Producer
     from confluent_kafka.serialization import StringSerializer, SerializationContext, MessageField
     from confluent_kafka.schema_registry import SchemaRegistryClient
@@ -429,21 +433,25 @@ On a terminal window, run the following producer code. The program should execut
     }
     """
 
+    # Define a class for the User object
     class User(object):
         def __init__(self, name, age):
             self.name = name
             self.age = age
 
+    # Define a class for the Key object
     class Key(object):
         def __init__(self, id):
             self.id = id
 
+    # Converting user object to key for AvroSerializer function
     def user_to_dict(user, ctx):
         return dict(
             name=user.name,
             age=user.age,
         )
 
+    # Converting key object to key for AvroSerializer function
     def key_to_dict(key, ctx):
         return dict(id=key.id)
 
@@ -487,6 +495,7 @@ With the producer program completed on one terminal, open up another terminal an
 
 .. code:: python
 
+    # Import required libraries
     from confluent_kafka import DeserializingConsumer
     from confluent_kafka.serialization import SerializationContext, MessageField, StringSerializer
     from confluent_kafka.schema_registry import SchemaRegistryClient
@@ -534,20 +543,24 @@ With the producer program completed on one terminal, open up another terminal an
     }
     """
 
+    # Define a class for the User object
     class User(object):
         def __init__(self, name, age):
             self.name = name
             self.age = age
 
+    # Define a class for the Key object
     class Key(object):
         def __init__(self, id):
             self.id = id
 
+    # Converting dict to User object for AvroDeserializer function
     def dict_to_user(obj, ctx):
         return User(name=obj['name'],
                     age=obj['age']
         )
 
+    # Converting dict to Key object for AvroDeserializer function
     def dict_to_key(obj, ctx):
         return Key(id=obj["id"])
 
