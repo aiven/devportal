@@ -224,7 +224,7 @@ More information on ``es-acl-add``, ``es-acl-del``, ``es-acl-disable``, ``es-acl
 
 Manages Aiven for Apache Flink® tables and jobs.
 
-More info on ``flink table create``, ``flink table delete``, ``flink table get``, ``flink table list``, ``flink job create``, ``flink job cancel``, ``flink job get`` and ``flink job list`` can be found in :doc:`the dedicated page <service/flink>`.
+More info on ``flink create-application``, ``flink list-applications``, ``flink get-application``, ``flink update-application``, ``flink delete-application``, ``flink create-application-version``, ``flink validate-application-version``, ``flink get-application-version``, ``flink delete-application-version``, ``flink list-application-deployments``, ``flink get-application-deployment``, ``flink create-application-deployment``, ``flink delete-application-deployment``, ``flink stop-application-deployment``, ``flink cancel-application-deployment`` can be found in :doc:`the dedicated page <service/flink>`.
 
 .. _avn_service_get:
 
@@ -644,6 +644,8 @@ An example ``avn service task-get`` ouput:
   TASK_TYPE              SUCCESS  TASK_ID                               RESULT                                                                              
   =====================  =======  ====================================  ====================================================================================
   mysql_migration_check  true     e2df7736-66c5-4696-b6c9-d33a0fc4cbed  All pre-checks passed successfully, preferred migration method will be [Replication]
+
+.. _avn-cli-service-terminate:
 
 ``avn service terminate``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''

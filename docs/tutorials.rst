@@ -1,7 +1,7 @@
 Tutorials
 =========
 
-Useful tutorials:
+A series of useful tutorials to solve common tasks using open source technologies:
 
 .. grid:: 1 2 2 2
 
@@ -21,4 +21,3 @@ Useful tutorials:
 
         |icon-kafka|
 
-        

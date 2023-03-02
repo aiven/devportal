@@ -145,7 +145,7 @@ entries:
         - file: docs/integrations/datadog/datadog-metrics
         - file: docs/integrations/datadog/datadog-logs
     - file: docs/integrations/cloudwatch
-      title: Amazon CloudWatch
+      title: Amazon CloudWatch 
       entries:
         - file: docs/integrations/cloudwatch/cloudwatch-metrics
           title: CloudWatch Metrics
@@ -154,6 +154,8 @@ entries:
           entries:
             - file: docs/integrations/cloudwatch/cloudwatch-logs-console
             - file: docs/integrations/cloudwatch/cloudwatch-logs-cli
+    - file: docs/integrations/cloudlogging
+      title: Google Cloud Logging
     - file: docs/integrations/rsyslog
       title: RSyslog
       entries:
@@ -572,17 +574,22 @@ entries:
                 title: Create Apache Flink tables with data sources
                 entries:
                   - file: docs/products/flink/howto/connect-kafka
+                    title: Apache Kafka®-based Apache Flink® table
+                  - file: docs/products/flink/howto/flink-confluent-avro
+                    title: Confluent Avro-based Apache Flink® table
                   - file: docs/products/flink/howto/connect-pg
+                    title: PostgreSQL®-based Apache Flink® table
                   - file: docs/products/flink/howto/connect-opensearch
+                    title: OpenSearch®-based Apache Flink® table
                   - file: docs/products/flink/howto/slack-connector
+                    title: Slack-based Apache Flink® table
                   - file: docs/products/flink/howto/datagen-connector
+                    title: DataGen-based Apache Flink® table
           - file: docs/products/flink/howto/list-manage-cluster
             title: Manage cluster
           - file: docs/products/flink/howto/advanced-topics
             entries:
             - file: docs/products/flink/howto/timestamps_opensearch
-            - file: docs/products/flink/howto/real-time-alerting-solution
-              title: Real-time alerting solution 
       - file: docs/products/flink/reference
         title: Reference
         entries:
@@ -597,7 +604,10 @@ entries:
       - file: docs/products/cassandra/concepts
         title: Concepts
         entries:
-          - glob: docs/products/cassandra/concepts/*
+          - file: docs/products/cassandra/concepts/tombstones
+            title: Tombstones
+          - file: docs/products/cassandra/concepts/cross-cluster-replication
+            title: Cross-cluster replication
       - file: docs/products/cassandra/howto
         title: HowTo
         entries:
@@ -608,6 +618,15 @@ entries:
           - file: docs/products/cassandra/howto/connect-cqlsh-cli
           - file: docs/products/cassandra/howto/use-nosqlbench-with-cassandra
           - file: docs/products/cassandra/howto/use-dsbulk-with-cassandra
+          - file: docs/products/cassandra/howto/list-cross-cluster-replication
+            title: Cross-cluster replication
+            entries:
+              - file: docs/products/cassandra/howto/disable-cross-cluster-replication
+                title: Disable CCR
+              - file: docs/products/cassandra/howto/manage-cross-cluster-replication
+                title: Manage CCR
+              - file: docs/products/cassandra/howto/enable-cross-cluster-replication
+                title: Enable CCR
       - file: docs/products/cassandra/reference
         title: Reference
         entries:
@@ -684,6 +703,8 @@ entries:
                 title: Monitor performance
               - file: docs/products/clickhouse/howto/use-shards-with-distributed-table
                 title: Read and write data across shards
+              - file: docs/products/clickhouse/howto/copy-data-across-instances
+                title: Copy data across ClickHouse servers
           - file: docs/products/clickhouse/howto/list-manage-cluster
             title: Manage cluster
           - file: docs/products/clickhouse/howto/list-integrations
@@ -695,6 +716,10 @@ entries:
                 title: Connect to Apache Kafka
               - file: docs/products/clickhouse/howto/integrate-postgresql
                 title: Connect to PostgreSQL
+              - file: docs/products/clickhouse/howto/data-service-integration
+                title: Connect a service as a data source (Apache Kafka and PostgreSQL)
+              - file: docs/products/clickhouse/howto/integration-databases
+                title: Connect services via integration databases
               - file: docs/products/clickhouse/howto/connect-with-jdbc
                 title: Connect to external DBs with JDBC
       - file: docs/products/clickhouse/reference
