@@ -36,6 +36,13 @@ Overview
 Prerequisites
 -------------
 
+We're going to be writing a web application in Python, and you'll need at
+least Python 3.7
+
+.. note:: [[note while editing]]``psycopg2`` and ``redis-py`` currently still
+          support 3.6, but ``fastapi`` requires at least 3.7, and honestly
+          that's already quite an old version of Python!
+
 * CLI tooling: The [Redis CLI](https://redis.io/docs/ui/cli/) for Redis and [Psql](https://www.geeksforgeeks.org/postgresql-psql-commands/) for PostgreSQL are useful to know as they're transferrable anywhere you go. We built the [avn CLI](https://docs.aiven.io/docs/tools/cli) to take advantage of all the features Aiven offers for its products, and this works too! We'll provide examples with both in this tutorial. 
 
 If you're following along without using Aiven, we still recommend deploying to a cloud provider like AWS or Google Cloud. This tutorial assumes the databases will be configured and deployed for you like Aiven does, and starts at the point where we connect to a running service.
@@ -44,14 +51,65 @@ If you're following along without using Aiven, we still recommend deploying to a
 Set up a Python virtual environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We'll do our development in a Python virtual environment. This will prevent any of the work we're doing in this tutorial from affecting anything else you might be working on. 
+We'll do our development at the command line, in a Python virtual environment. This will prevent any of the work we're doing in this tutorial from affecting anything else you might be working on.
 
 We'll also install the [FastAPI framework](https://fastapi.tiangolo.com/) in this step. We'll use FastAPI to build a quick service hooked up to our PostgreSQL database.
+
+First, let's set up the Python virtual environment:
 
 .. code:: shell
 
    python -m venv venv
-   pip install fastapi 
+   source venv/bin/activate
+
+and then install the Python libraries we're going to want to use:
+
+* ``fastapi`` (https://fastapi.tiangolo.com/) for writing our web application:
+
+  .. code:: shell
+
+    pip install fastapi
+
+* ``psycopg2`` (https://www.psycopg.org/) for talking to PostgreSQL®
+
+  .. code:: shell
+
+    pip install psycopg2
+
+* and ``redis-py`` (https://github.com/redis/redis-py) for talking to Redis®* (we're not going to need that quite
+  yet, but might as well install it now)
+
+  .. code:: shell
+
+    pip install redis[hiredis]
+
+  .. note:: We could just do ``pip install redis``, but the documentation
+            suggests installing ``redis[hiredis]`` to gain performance
+            improvements. For this tutorial, we probably won't notice any difference.
+
+You can quickly check all of those are installed correctly by starting up
+Python:
+
+.. code:: shell
+
+   python
+
+and then at the ``>>>`` prompt doing:
+
+.. code:: python
+
+   import fastapi
+   import psycopg2
+   import redis
+
+If you don't get any errors from those, then you're good to go. Exit the
+Python shell by typing:
+
+.. code:: python
+
+   exit()
+
+or (if you're on Unix/Mac) using ``CTRL-D``
 
 Create an Aiven for PostgreSQL® service
 ---------------------------------------
