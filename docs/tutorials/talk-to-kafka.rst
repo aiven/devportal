@@ -1,5 +1,5 @@
-Tutorial: Let's talk to Kafka. How to send and receive application data from Apache Kafka®?
-==============================================================================================
+Let's talk to Kafka. How to send and receive application data from Apache Kafka®?
+===================================================================================
 
 .. Note::
 
