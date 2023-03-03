@@ -10,21 +10,21 @@ You can migrate MySQL® databases to Aiven using either :doc:`CLI </docs/product
 About migrating via console
 ---------------------------
 
-* Console migration tool enables you to migrate MySQL databases to managed MySQL clusters in your Aiven account. You can migrate
+Console migration tool enables you to migrate MySQL databases to managed MySQL clusters in your Aiven account. You can migrate
 
-  * Existing on-premise MySQL databases
-  * Cloud-hosted MySQL databases
-  * Managed MySQL database clusters on Aiven.
+* Existing on-premise MySQL databases
+* Cloud-hosted MySQL databases
+* Managed MySQL database clusters on Aiven.
 
-* With the console migration tool, you can migrate your data using either the :ref:`continuous migration method <continuous-migration>` (default and recommended) or the :ref:`one-time snapshot method <mysqldump-migration>` (``mysqldump``).
+With the console migration tool, you can migrate your data using either the :ref:`continuous migration method <continuous-migration>` (default and recommended) or the :ref:`one-time snapshot method <mysqldump-migration>` (``mysqldump``).
 
 .. _continuous-migration:
 
-  * Recommended continuous migration method is used by default in the tool and taken as a method to follow in this guide. This method uses logical replication so that data transfer is possible not only for the data that has already been there in the source database when triggering the migration but also for any data written to the source database during the migration.
+* Recommended continuous migration method is used by default in the tool and taken as a method to follow in this guide. This method uses logical replication so that data transfer is possible not only for the data that has already been there in the source database when triggering the migration but also for any data written to the source database during the migration.
 
 .. _mysqldump-migration:
 
-  * ``mysqldump`` exports current contents of the source database into a text file and imports it to the target database. Any changes written to the source database during the migration are not transferred. When you trigger the migration setup in the console and initial checks detect that your source database does not support the logical replication, you are notified about it via wizard. To continue with the migration, you can select the alternative ``mysqldump`` migration method in the wizard.
+* ``mysqldump`` exports current contents of the source database into a text file and imports it to the target database. Any changes written to the source database during the migration are not transferred. When you trigger the migration setup in the console and initial checks detect that your source database does not support the logical replication, you are notified about it via wizard. To continue with the migration, you can select the alternative ``mysqldump`` migration method in the wizard.
 
 Prerequisites
 -------------
@@ -164,7 +164,7 @@ Step 2 - validation
       :width: 700px
       :alt: Connect to database
 
-2. Select the **SSL encryption (recommended)** checkbox.
+2. Select the **SSL encryption recommended** checkbox.
 
 3. Select **Run checks** to have the connection validated.
 
