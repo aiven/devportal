@@ -125,6 +125,91 @@ Python shell by typing:
 
 or (if you're on Unix/Mac) using ``CTRL-D``
 
+Installing command line tools to talk to PostgreSQL and Redis
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  **Note** [[editorial]] this is taken from an in-progress blog post talking
+  about Django and Redis, so needs extending to talk about PostgreSQL as well.
+  Also, the "which to choose" section should make it clearer that we are also
+  installing local PG and Redis service support, which can be useful when
+  writing tests (this may be something to address at the end of the post).
+
+We will want to be able to "talk" to the PostgreSQL and Redis servers.
+We can do that in either of two ways:
+
+1. Using the application specific tools, ``psql`` and ``redis-cli``
+2. Using the [Aiven CLI](https://docs.aiven.io/docs/tools/cli)
+
+Let's look at these in turn:
+
+Installing the application specific tools
+:::::::::::::::::::::::::::::::::::::::::
+
+PostgreSQL:
+
+https://www.postgresqltutorial.com/postgresql-getting-started/
+
+or
+
+.. code:: shell
+
+   brew install postgresql@14
+
+(for the moment, you have to specify a version of PG to install - use ``brew
+search postgresql`` to find out what versions are available)
+
+  **Note** we already know that doing this before doing ``pip install
+  psycopg2`` (at least used to) sometimes save problems with that pip
+  installation on Mac M1 machines. Is that still true?
+
+Redis:
+
+Using Redis' own tool, `redis-cli`, as described at [connect with redis-cli](https://developer.aiven.io/docs/products/redis/howto/connect-redis-cli.html)
+
+For instance, on on my Mac I can do install Redis locally:
+
+.. code:: shell
+
+  brew install redis
+
+and then run the command using the Redis service's URL from the service overview page:
+
+.. code::
+
+  redis-cli -u <REDIS-URI>
+
+Installing the Aiven CLI
+::::::::::::::::::::::::
+
+We can install the [Aiven CLI](https://docs.aiven.io/docs/tools/cli) using
+``pip``, still in our virtual environment:
+
+.. code:: shell
+
+  pip install aiven-cli
+
+and then connect to an Aiven for PostgreSQL service using the service name:
+
+.. code:: shell
+
+  avn cli service pg-demo
+
+and to an Aiven for Redis service using *its* service name:
+
+.. code:: shell
+
+  avn cli service redis-demo
+
+These will actually start up either ``psql`` or ``redis-cli`` for you.
+
+
+Which to choose?
+::::::::::::::::
+
+Using `redis-cli` is great if I want a local Redis server, for learning
+about Redis, testing, etc., whilst `avn` is great if one is working with
+Aiven already. Personally, I have both installed!
+
 Create an Aiven for PostgreSQL® service
 ---------------------------------------
 
@@ -161,8 +246,24 @@ While we're here, note down the following:
 
 You can return to this page any time using the **Services** menu on the left hand menu and selecting the service you want to view. You can also use the **Quick connect** button to get convenient copy-and-paste commandsd and code snippets in a variety of CLI tools and programming connections! 
 
+   **Note** [[editorial]] for the command line usage, we're going to want to
+   put the necessary values into shell variables, so the Python script can
+   look them up - this is better practice than embedding them in the script.
+
+   Do we do that here, or later on?
+
 Put some data into the database
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  **Note** [[editorial]] the simplest solution is to follow
+  https://docs.aiven.io/docs/products/postgresql/getting-started and use
+  ``psql`` to load the data. Of course, we can also use ``avn`` to connect.
+  This also means we get to install the appropriate command line tools nice
+  and early, which is quite good.
+
+  **Installing psql and **
+
+
 
 
 Create a simple web application
