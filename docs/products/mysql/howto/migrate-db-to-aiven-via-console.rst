@@ -16,16 +16,20 @@ About migrating via console
   * Cloud-hosted MySQL databases
   * Managed MySQL database clusters on Aiven.
 
-* Console migration tool can use either logical replication or physical replication.
+* With the console migration tool, you can migrate your data using either the :ref:`continuous migration method <continuous-migration>` (default and recommended) or the :ref:`one-time snapshot method <mysqldump-migration>` (``mysqldump``).
 
-  * Logical replication allows the continuous migration, which is recommended and used by default in the tool, hence, also detailed in this guide. With this method, data transfer is possible not only for the data that has already been there in the source database when triggering the migration but also for any data written to the source database during the migration.
+.. _continuous-migration:
 
-  * Physical replication allows the other migration method supported in the migration tool, ``mysqldump``. With this method, current contents of the database are copied into a file and transferred to the target database. Any changes written to the source database during the migration are not transferred. When you trigger the migration setup in the console and initial checks detect that your source database does not support the logical replication, you are notified about it via wizard. To continue with the migration, you can select the alternative ``mysqldump`` migration method in the wizard.
+  * Recommended continuous migration method is used by default in the tool and taken as a method to follow in this guide. This method uses logical replication so that data transfer is possible not only for the data that has already been there in the source database when triggering the migration but also for any data written to the source database during the migration.
+
+.. _mysqldump-migration:
+
+  * ``mysqldump`` exports current contents of the source database into a text file and imports it to the target database. Any changes written to the source database during the migration are not transferred. When you trigger the migration setup in the console and initial checks detect that your source database does not support the logical replication, you are notified about it via wizard. To continue with the migration, you can select the alternative ``mysqldump`` migration method in the wizard.
 
 Prerequisites
 -------------
 
-* To use the default migration method in the console tool, you have the logical replication enabled on your source database.
+* To use the default continuous migration method in the console tool, you have the logical replication enabled on your source database.
 * Source database's hostname or IP address are :doc:`accessible from the public Internet </docs/platform/howto/public-access-in-vpc>`.
 * You have the source database's credentials and reference data
   
