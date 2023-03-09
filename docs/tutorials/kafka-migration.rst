@@ -1,5 +1,5 @@
 Migrate an Apache Kafka® instance using MirrorMaker 2
-===========================================
+=====================================================
 
 What you will learn
 ---------------------------
@@ -69,11 +69,17 @@ The exact migration steps vary depending on the existing source Kafka system. Th
         * :doc:`VPC peering </docs/platform/howto/manage-vpc-peering>`.
         * :doc:`Privatelink </docs/platform/howto/use-aws-privatelinks>`.
 
-
 Create an Apache Kafka integration endpoint
 -------------------------------------------
 
-The first step you'll need to perform in the Apache Kafka migration is identifying the source Kafka cluster and create a connection to it. In Aiven:
+The first step you'll need to perform in the Apache Kafka migration is identifying the source Kafka cluster where the data is migrated from and create a connection to it. 
+
+.. Note::
+
+  If you're running Apache Kafka MirrorMaker 2 standalone, you'll need to define the source Apache Kafka cluster in the `mm2.properties` file, as defined in the `MirrorMaker documentation <https://github.com/apache/kafka/blob/trunk/connect/mirror/README.md>`_. 
+
+If you're using Aiven for Apache Kafka, you need to define the source Kafka cluster as **External Integration** following the steps below:
+
 
 * Go to the `Aiven Console <https://console.aiven.io/>`_.
 * Click on **Integration Endpoints**.
@@ -97,10 +103,10 @@ The first step you'll need to perform in the Apache Kafka migration is identifyi
 
     Always check if additional firewall rules need to be set up to allow MirrorMaker 2 to access your source Apache Kafka cluster.
 
-    Aiven allows you to associate :doc:`static IP addresses </docs/platform/concepts/static-ips>` to all the services, please `contact us <mailto:support@aiven.io>`_ if you need additional help.
+    Aiven allows you to associate :doc:`static IP addresses </docs/platform/concepts/static-ips>` to all the services. It could be usefor to associate static IP addresses to Aiven for MirrorMaker 2 to narrow down the list of IPs allowed to reach the source Apache Kafka cluster.
 
 Create the target Kafka cluster and MirrorMaker 2 instance
-----------------------------
+----------------------------------------------------------
 
 Next, create the Apache Kafka cluster to migrate to, and the MirrorMaker instance we'll use to sync the two clusters. 
 
@@ -232,7 +238,9 @@ Start the MirrorMaker 2 replication flow
 
 In the previous steps you defined MirrorMaker 2 source and target aliases. Now it's time to define the replication flow.
 
-You first need to identify the set of topics you want to migrate to the new cluster, and create a :doc:`Java regular expression </docs/products/kafka/kafka-mirrormaker/concepts/replication-flow-topics-regex>` that includes them. As example, if you want to migrate all the topics starting with ``customer.`` your regular expression will be ``customer\..*``.
+You first need to identify the set of topics you want to migrate to the new cluster, and create a :doc:`Java regular expression </docs/products/kafka/kafka-mirrormaker/concepts/replication-flow-topics-regex>` that includes them. 
+
+As example, if you want to migrate all the topics starting with ``customer.`` and the ones containing ``.logistic.`` you can add the two regular expressions ``customer\..*`` and ``.*\.logistic\..*``.
 
 .. Tip::
 
@@ -294,7 +302,7 @@ Monitor the MirrorMaker 2 replication flow lag
 
 After starting the replication flow, MirrorMaker 2 starts moving data between the source and target Kafka clusters in asynchronous mode. To measure how the replication is performing you might want to check the replication lag: the delay in synchronization between the source and target Apache Kafka cluster. Once the lag is `0`, the two Apache Kafka clusters are in sync.
 
-You can review how to create services integrations here. 
+Follow the documentation to review :doc:`how to create services integrations </docs/platform/howto/create-service-integration>`. 
 
 The metric you want to track is called ``kafka_mirrormaker_summary.replication_lag``. The image below showcases a Grafana® dashboard showing the mean MirrorMaker 2 replication lag trending to ``0``.
 
@@ -369,3 +377,14 @@ The following diagram showcases all the steps included in an Apache Kafka migrat
         id12-->id13(Point consumers to the target Apache Kafka cluster and start them);
         id13-->id14(Point producers to the target Apache Kafka cluster and start them);
         id14-->id15(End Migration process);
+
+Check the migration results
+---------------------------
+
+Once the migration process is terminated you should check, in the target Apache Kafka cluster, that:
+
+* All the ACLs are in place, in the `Aiven Console <https://console.aiven.io/>`_ service page -> **Access Control List (ACL)** Tab. 
+* All the schemas are present in the target schema registry (Karapace for Aiven for Apache Kafka), in the `Aiven Console <https://console.aiven.io/>`_ service page -> **Schemas** Tab.  
+* All the topics included in the replication flows defined are present, and the data is flowing, in the `Aiven Console <https://console.aiven.io/>`_ service page -> **Topics** Tab. 
+* All the producers and consumers are pointing to the target cluster and correctly pushing/consuming data
+
