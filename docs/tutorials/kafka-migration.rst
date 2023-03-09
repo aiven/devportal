@@ -76,7 +76,7 @@ The first step you'll need to perform in the Apache Kafka migration is identifyi
 
 .. Note::
 
-  If you're running Apache Kafka MirrorMaker 2 standalone, you'll need to define the source Apache Kafka cluster in the `mm2.properties` file, as defined in the `MirrorMaker documentation <https://github.com/apache/kafka/blob/trunk/connect/mirror/README.md>`_. 
+  If you're running Apache Kafka MirrorMaker 2 standalone, you'll need to define the source Apache Kafka cluster in the `mm2.properties` file, as defined in the `MirrorMaker 2 documentation <https://github.com/apache/kafka/blob/trunk/connect/mirror/README.md>`_. 
 
 If you're using Aiven for Apache Kafka, you need to define the source Kafka cluster as **External Integration** following the steps below:
 
@@ -103,12 +103,12 @@ If you're using Aiven for Apache Kafka, you need to define the source Kafka clus
 
     Always check if additional firewall rules need to be set up to allow MirrorMaker 2 to access your source Apache Kafka cluster.
 
-    Aiven allows you to associate :doc:`static IP addresses </docs/platform/concepts/static-ips>` to all the services. It could be usefor to associate static IP addresses to Aiven for MirrorMaker 2 to narrow down the list of IPs allowed to reach the source Apache Kafka cluster.
+    Aiven allows you to associate :doc:`static IP addresses </docs/platform/concepts/static-ips>` to all the services. It could be useful to associate static IP addresses to Aiven for MirrorMaker 2 to narrow down the list of IP addresses allowed to reach the source Apache Kafka cluster.
 
 Create the target Kafka cluster and MirrorMaker 2 instance
 ----------------------------------------------------------
 
-Next, create the Apache Kafka cluster to migrate to, and the MirrorMaker instance we'll use to sync the two clusters. 
+Next, create the Apache Kafka cluster to migrate to, and the MirrorMaker 2 instance we'll use to sync the two clusters. 
 
 We'll create these services in Aiven for the purposes of this tutorial.
 
