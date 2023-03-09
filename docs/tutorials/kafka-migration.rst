@@ -19,11 +19,11 @@ What are you going to build
 
 This tutorial outlines you all common the steps to migrate an existing Apache Kafka® cluster to a new service provider using MirrorMaker 2. 
 
-All migrations are different, but the usual use case is to migrate between an on-premises systems to a managed or self-hosted Apache Kafka cluster or vice versa. This tutorial outlines a set of checks, actions and processes to follow to perform a complete migration. 
+All migrations are different, but the usual use case is migrating between an on-premises systems to a managed or self-hosted Apache Kafka cluster or vice versa. This tutorial outlines a set of checks, actions and processes to follow to perform a complete migration. 
 
 In this tutorial, we'll be migrating to :doc:`Aiven for Apache Kafka® </docs/products/kafka>`, but the steps described should work with any other Apache Kafka service. 
 
-The data migration will be performed using :doc:`MirrorMaker 2 </docs/products/kafka/kafka-mirrormaker>`, a fully managed distributed Apache Kafka® data replication utility.
+We'll use :doc:`MirrorMaker 2 </docs/products/kafka/kafka-mirrormaker>`, to migrate the data. MirrorMaker 2 a fully managed distributed Apache Kafka® data replication utility.
 
 
 .. mermaid::
@@ -41,7 +41,7 @@ The data migration will be performed using :doc:`MirrorMaker 2 </docs/products/k
 Prerequisites
 -------------
 
-The exact migration steps can vary, depending on the particular use of the existing source Kafka system. That said, as a general pre-requisite, the source and target system need to have the compatible version numbers, feature sets, and connectivity requirements. This tutorial however assumes the following pre-requisites:
+The exact migration steps vary depending on the existing source Kafka system. That said, as a general pre-requisite, the source and target system need to have the compatible version numbers, feature sets, and connectivity requirements. To break this down further, the tutorial assumes:
 
 * **Client compatibility**: Any client interacting with Apache Kafka must be compatible with the version chosen as migration target.
 
@@ -138,7 +138,7 @@ The :doc:`Aiven for Apache Kafka </docs/products/kafka>` service is the target c
 Customize the Aiven for Apache Kafka service
 ''''''''''''''''''''''''''''''''''''''''''''
 
-Now you've created your target cluster, you need to customize its functionality. In the **Overview** tab of your freshly created service, you'll see a bunch of toggles and properties. Change these two:
+Now you've created your target cluster, you need to customize it's functionality. In the **Overview** tab of your freshly created service, you'll see a bunch of toggles and properties. Change these two:
 
 1. **Enable REST APIs**: via **Kafka REST API (Karapace)** > **Enable**.
 
@@ -190,8 +190,8 @@ Create a data replication using MirrorMaker 2
 
 The next step in the migration journey is to create a data replication from the source cluster to the Aiven for Apache Kafka service named ``demo-kafka``. To create a replication you need to:
 
-* Create an alias for the source Apache Kafka cluster (the target alias ``kafka-target`` was defined during the creation of the MirrorMaker 2 service).
-* Define the replication follow.
+* Create an alias for the source Apache Kafka cluster (the target alias ``kafka-target``).
+* Define the replication flow.
 
 Create an alias for the source Apache Kafka cluster
 '''''''''''''''''''''''''''''''''''''''''''''''''''
