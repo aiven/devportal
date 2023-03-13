@@ -35,7 +35,7 @@ snowplow("newTracker", "at", "dc.aiven.io", {
   forceSecureTracker: true,
   discoverRootDomain: true,
   cookieSameSite: 'Lax',
-  anonymousTracking: { withServerAnonymisation: true },
+  anonymousTracking: { withSessionTracking: true, withServerAnonymisation: true },
   stateStorageStrategy: 'none',
   eventMethod: 'post',
   postPath: '/aiven/dc2',
@@ -62,7 +62,7 @@ function OptanonWrapper() {
     snowplow('disableAnonymousTracking', { stateStorageStrategy: 'cookieAndLocalStorage' });
   } else {
     // enable fully anonymous tracking
-    snowplow('clearUserData');
+    snowplow('clearUserData', { preserveSession: true, preserveUser: true });
   }
 
   if (window.firstTimeVisit) {
