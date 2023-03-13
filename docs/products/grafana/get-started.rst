@@ -1,61 +1,42 @@
-Get started with Aiven for Grafana®
-===================================
+Aiven for Grafana® quickstart
+==============================
 
-Get up and running with Aiven for Grafana®. This article shows you how to set up a Grafana service in Aiven, connect to it, view your default dashboards.
+To start using Aiven for Grafana®, the first step is to create a service. You can do this in the `Aiven web console <https://console.aiven.io/>`_ or with the `Aiven CLI <https://github.com/aiven/aiven-client>`_.
 
+This quickstart section provides the steps to create an Aiven for Grafana service and how to log in to Aiven for Grafana®. 
 
-.. Add Step 1: Check the basics
- 
-
-
-Step 1: Create a new Aiven service
+Create an Aiven for Grafana service
 -----------------------------------
 
-You can add services for Grafana in the Aiven web console.
+1. Log in to the `Aiven Console <https://console.aiven.io/>`_.
 
-To create a new Aiven for Grafana service:
+2. Follow :doc:`these instructions </docs/platform/howto/create_new_service>` to create a new Aiven for Grafana service.
 
-1. Log in to the `Aiven web console <https://console.aiven.io/>`_.
+Once the service is ready, the status changes to *Running*. Depending on your selected cloud provider and region, this generally takes a couple of minutes.
 
-2. On the *Services* page, click **Create a new service**.
+Log in to Grafana
+-----------------
+After starting the Aiven for Grafana service, you can follow these steps to access Grafana:
 
-   This opens a new page with the available service options.
+1. From the `Aiven Console <https://console.aiven.io/>`_, access your Aiven for Grafana service.
+2. In the **Overview** tab, copy or click on the **Service URI** to launch the Grafana login page in a browser.
+3. On the login page, enter or copy and paste the **User** and **Password** details from the *Connection information* section, and select **Log in**. 
 
-3. Select the main properties for your service:
+You can begin visualizing your data sources using the default dashboards or create your own.
 
-   a. Select the service type.
+Integrates with your existing Aiven tools
+------------------------------------------
 
-      If there are several versions available, select the version that you want to use. By default, the latest available version is selected.
-
-   b. Select the cloud provider and region that you want to run your service on.
-
-      .. Note::
-          The pricing for the same service may vary between different providers and regions. The service summary on the right side of the console shows you the pricing for your selected options.
-          
-   c. Select a service plan.
-
-      This defines the number of servers and what kind of memory, CPU, and disk resources are allocated to your service.
-
-   d. Enter a name for your service.
-
-      A random name is provided by default, but you can enter a more recognizable name to distinguish it from other services.
+Grafana is highly compatible with other Aiven products. You can set up your other Aiven services as data sources for Grafana, and monitor their health.
 
 
-4. Click **Create Service** under the summary on the right side of the console.
+Check out all the features on our `Grafana product page <https://aiven.io/grafana>`_. 
 
-   This brings you back to the **Services** view. Your new service is listed with a status indicator to show that it is being created.
+Grafana resources
+---------------------
 
-5. Click the service name.
+* `Open source Grafana page <https://grafana.com/oss/grafana/>`_
 
-   The *Overview* page for the service opens. This view shows you the connection parameters for your service, its current status, and the configuration options.
+* `Grafana docs <https://grafana.com/docs/>`_
 
-   The status is *REBUILDING* while the service is being created for you. Once the service is ready, the status changes to *RUNNING*. While services typically start up in a couple of minutes, the performance varies between cloud providers and regions, and it may take longer in some circumstances.
-
-
-
-Step 2: Log in to Grafana
---------------------------
-
-You can log in easily to your Aiven for Grafana service from the console. See :doc:`how to log in <howto/log-in>`.
-
-.. Add the following (Step 4: Display default dashboards in Aiven for Grafana)
+* `Aiven Terraform Provider - Grafana resource docs <https://registry.terraform.io/providers/aiven/aiven/latest/docs/resources/grafana>`_ and `Grafana data source docs <https://registry.terraform.io/providers/aiven/aiven/latest/docs/data-sources/grafana>`_

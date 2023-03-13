@@ -737,12 +737,25 @@ entries:
   - file: docs/products/grafana
     title: Grafana
     entries:
+      - file: docs/products/grafana/list-overview
+        title: Overview
+        entries:
+        - file: docs/products/grafana/concepts/grafana-features
+          title: Features overview
+        - file: docs/products/grafana/reference/plans-pricing
+          title: Plans and pricing
       - file: docs/products/grafana/get-started
-        title: Get started
+        title: Quickstart
       - file: docs/products/grafana/howto
         title: HowTo
         entries:
-          - glob: docs/products/grafana/howto/*
+          - file: docs/products/grafana/howto/log-in
+            title: Log in to Aiven for Grafana
+          - file: docs/products/grafana/howto/dashboard-previews
+            title: Dashboard previews
+          - file: docs/products/grafana/howto/replace-expression-string
+          - file: docs/products/grafana/howto/rotating-grafana-service-credentials
+          - file: docs/products/grafana/howto/send-emails
       - file: docs/products/grafana/reference
         title: Reference
         entries:
