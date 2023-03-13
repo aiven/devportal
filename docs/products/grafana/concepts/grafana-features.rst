@@ -11,24 +11,23 @@ With Aiven for Grafana, you can enjoy a quick and flexible deployment process, e
 
 Integration with data infrastructure
 -------------------------------------
-With Aiven, you can seamlessly integrate your data infrastructure with Aiven services and easily monitor them using pre-built dashboards. The pre-built dashboards help you to monitor the health of Aiven services. Aiven provides various options for secure network connectivity, such as `VPC peering <docs/platform/howto/manage-vpc-peering>`, `PrivateLink <docs/tools/cli/service/privatelink>`, and TransitGateway technologies. 
+With Aiven, you can seamlessly integrate your data infrastructure with Aiven services and easily monitor them using pre-built dashboards. The pre-built dashboards help you to monitor the health of Aiven services. Aiven provides various options for secure network connectivity, such as :doc:`VPC peering </docs/platform/howto/manage-vpc-peering>`, :doc:`PrivateLink </docs/tools/cli/service/privatelink>`, and TransitGateway technologies. 
 
 Log management
 -------------------
 You can also integrate with popular logs management solutions such as OpenSearch and Google Cloud Logging, which help monitor your system performance. 
 
-Monitoring with dashboards and plugins
-------------------------------------------
-
-With Aiven for Grafana, you can monitor your data using ready-made dashboards. Benefit from over 60 advanced panel and `data source plugins <../reference/plugins>` that provide a high level of customization to your monitoring solution. 
+Monitoring with dashboards, plugins, and alerting
+-------------------------------------------------
+Dashboards and plugins
+  With Aiven for Grafana, you can monitor your data using ready-made dashboards. Benefit from over 60 advanced panel and :doc:`data source plugins <../reference/plugins>` that provide a high level of customization to your monitoring solution. 
 
 Monitoring and alerting
---------------------------
-Aiven for Grafana allows you to create monitoring solutions for all teams, enabling everyone to keep track of critical metrics. Additionally, you can implement an observability platform with alerting, ensuring that you are promptly notified in case of any issues.
+  Aiven for Grafana allows you to create monitoring solutions for all teams, enabling everyone to keep track of critical metrics. Additionally, you can implement an observability platform with alerting, ensuring that you are promptly notified in case of any issues.
 
 Automation
 --------------
-You can also automate the process of building, configuring, and managing Aiven services by including your Aiven infrastructure in your `Terraform </docs/tools/terraform/get-started>` tooling. 
+You can also automate the process of building, configuring, and managing Aiven services by including your Aiven infrastructure in your :doc:`Terraform </docs/tools/terraform/get-started>` tooling. 
 
 
 

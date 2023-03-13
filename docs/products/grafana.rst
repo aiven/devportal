@@ -6,11 +6,11 @@ Aiven for Grafana® is a fully managed analytics and monitoring solution, deploy
 
 .. grid:: 1 2 2 2
 
-    .. grid-item-card:: :doc:`Quickstart </docs/products/grafana/getting-started>`
+    .. grid-item-card:: :doc:`Quickstart </docs/products/grafana/get-started>`
         :shadow: md
         :margin: 2 2 0 0
 
-        Learn how to create a Grafana service 
+        Learn how to create and log in to Aiven for Grafana service.
 
     .. grid-item-card:: :doc:`Overview </docs/products/grafana/list-overview>`
         :shadow: md
@@ -56,50 +56,3 @@ Aiven for Grafana® is a fully managed analytics and monitoring solution, deploy
 
 
 
-Why Grafana?
-------------
-
-Grafana is a multi-platform open source analytics and interactive visualization web application. It provides charts, graphs, and alerts for the web when connected to supported data sources.
-
-Read more about `the open source Grafana <https://grafana.com/oss/grafana/>`_ or check out the `Grafana GitHub repository <https://github.com/grafana/grafana>`_.
-
-
-Get started with Aiven for Grafana
---------------------------------------
-
-Take your first steps with Aiven for Grafana by following our :doc:`/docs/products/grafana/get-started` article, or browse through our full list of articles:
-
-
-.. grid:: 1 2 2 2
-
-    .. grid-item-card::
-        :shadow: md
-        :margin: 2 2 0 0
-
-        💻 :doc:`/docs/products/grafana/howto`
-
-    .. grid-item-card::
-        :shadow: md
-        :margin: 2 2 0 0
-
-        📖 :doc:`Reference </docs/products/grafana/reference>`
-
-
-Integrates with your existing Aiven tools
-------------------------------------------
-
-Grafana is highly compatible with other Aiven products. You can set up your other Aiven services as data sources for Grafana, and monitor their health.
-
-
-Check out all the features on our `Grafana product page <https://aiven.io/grafana>`_. 
-
-
-
-Grafana resources
----------------------
-
-* `Open source Grafana page <https://grafana.com/oss/grafana/>`_
-
-* `Grafana docs <https://grafana.com/docs/>`_
-
-* `Aiven Terraform Provider - Grafana resource docs <https://registry.terraform.io/providers/aiven/aiven/latest/docs/resources/grafana>`_ and `Grafana data source docs <https://registry.terraform.io/providers/aiven/aiven/latest/docs/data-sources/grafana>`_
