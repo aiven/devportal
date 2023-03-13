@@ -15,7 +15,7 @@ With Aiven, you can seamlessly integrate your data infrastructure with Aiven ser
 
 Log management
 -------------------
-You can also integrate with popular logs management solutions such as OpenSearch and Google Cloud Logging, which help monitor your system performance. 
+You can also integrate with popular logs management solutions such as OpenSearch® and Google Cloud Logging, which help monitor your system performance. 
 
 Monitoring with dashboards, plugins, and alerting
 -------------------------------------------------
