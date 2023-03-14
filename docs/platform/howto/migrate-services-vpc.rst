@@ -36,7 +36,7 @@ Note that steps 3, 4, 6, 7, 8 are optional but highly recommended.
 Following these steps ensures that networking configuration and
 firewall rules are set up correctly.
 
-#. Initial setup
+1. Initial setup
 ---------------------
 
 Ensure that you have the VPC created and peering is active. This is
@@ -47,7 +47,7 @@ on the Aiven platform.
 We will be using the ``google-us-east1`` VPC for testing. Ensure that the
 VPC and peering are both in an ``Active`` state.
 
-#. Testing the connection
+2. Testing the connection
 ------------------------------
 
 First we want to ensure that we can connect to with a non-critical
@@ -65,7 +65,7 @@ on Ubuntu 20.04 LTS and should work for most Linux distributions.
 
 -  ``nc -vz {host} {port}``
 
-#. Enable public access
+3. Enable public access
 ----------------------------
 
 Enable the ``public_access.{service type}`` configuration on all of your services in the
@@ -78,7 +78,7 @@ by selecting the ``Public`` "Access Route"
 Ensure that you can connect to each host/port combination.
 
 
-#. Configure and redeploy application
+4. Configure and redeploy application
 ------------------------------------------
 
 It is highly recommended to configure your applications to use the
@@ -87,7 +87,7 @@ services while moving into a private network. In dual access mode, you
 can test all connections and ports before finally cutting over to use
 the private hostname(s) and underlying private IP addresses.
 
-#. Migrate Aiven service to your VPC
+5. Migrate Aiven service to your VPC
 ------------------------------------------
 
 Use the "Cloud and VPC" section on the service overview to migrate your
@@ -99,19 +99,19 @@ dedicated VPC for your project.
 Ensure that you see the ``Project VPC`` tag after migration. You can
 monitor the migration status on the service details page.
 
-#. Testing the service connections
+6. Testing the service connections
 ---------------------------------------
 
 After the migration, you will see some private IP addresses if you use
 the ``nslookup`` command. Ensure that you can connect to the private
 hostnames and ports, i.e. firewall rules and routing works.
 
-#. Configure and redeploy your application(s)
+7. Configure and redeploy your application(s)
 --------------------------------------------------
 
 Now you can convert your application to use the private hostname again.
 
-#. Cleanup by disabling public access
+8. Cleanup by disabling public access
 -------------------------------------------
 
 Disable the ``public_access.{service type}`` configuration on all of your services in
