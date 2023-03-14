@@ -26,13 +26,15 @@ Configure SAML on JumpCloud
 
 #. Select **Custom SAML App**.
 
+#. Set the ``IdP Entity ID`` to the ``Metadata URL`` from the Aiven Console.
+
 #. Set the ``Audience URI (SP Entity ID)`` to the ``Metadata URL`` from the Aiven Console.
 
 #. Set the ``ACS URL`` to the one from the Aiven Console.
 
 #. Set the ``Default RelayState`` to the homepage of the Aiven Console, https://console.aiven.io.
 
-#. Add an entry in **Attribute statements** with ``name`` of ``email`` and ``value`` of ``email``.
+#. Add an entry in **Attribute statements** with ``Service Provider Attribute Name`` of ``email`` and ``JumpCloud Attribute Name`` of ``email``.
 
 #. Set the ``Login URL`` to the ``ACS URL`` from the Aiven Console.
 
@@ -51,15 +53,17 @@ Go back to the **Authentication** page in `Aiven Console <https://console.aiven.
 
 2. In the SAML configuration section, click **Edit**. 
 
-3. Add the configuration settings from JumpCloud:
+3. Toggle on **IdP login**.
 
-* Set the ``SAML IDP URL`` to the ``???`` from JumpCloud.
-* Set the ``SAML Entity ID`` to the ``???`` from JumpCloud .
+4. Add the configuration settings from JumpCloud:
+
+* Set the ``SAML IDP URL`` to the ``IDP URL`` from JumpCloud.
+* Set the ``SAML Entity ID`` to the ``IdP Entity ID`` from JumpCloud .
 * Paste the certificate from JumpCloud into the ``SAML Certificate`` field.
 
-4. Click **Edit method** to save your changes.
+5. Click **Edit method** to save your changes.
 
-5. Toggle on **Enable authentication method** at the top of the page. 
+6. Toggle on **Enable authentication method** at the top of the page. 
 
 You can use the **Signup URL** to invite new users, or the **Account link URL** for those that already have an Aiven user account.
 
