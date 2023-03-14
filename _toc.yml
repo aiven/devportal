@@ -613,7 +613,7 @@ entries:
       - file: docs/products/cassandra/howto
         title: HowTo
         entries:
-          - file: docs/products/cassandra/get-started
+          - file: docs/products/cassandra/howto/setup
             title: Get started
           - file: docs/products/cassandra/howto/list-code-samples
             title: Connect to service
