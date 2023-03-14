@@ -372,7 +372,7 @@ Add schemas to messages with Apache Avro™
 -------------------------------------------
 
 The Kafka brokers understand data as stream of bytes so one needs to pick a serializer and deserializer to convert the bytes into meaningful messages. 
-Any format would do as long as it's consistent. For this tutorial, we're selecting Apache Avro which is an open-source project and one of the most popular serialization format.
+Any format will do as long as it's consistent. For this tutorial, we're selecting Apache Avro, which is an open-source project and one of the most popular serialization format.
 Avro is defined by a schema and the schema is written in JSON. You can consider Avro as JSON with a schema attached to it.
 
 Both of these programs use SSL authentication. You can follow the previous examples of this tutorial if you'd like to use SASL authentication instead.
