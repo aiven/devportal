@@ -49,7 +49,7 @@ To get started, you'll need:
     
 If you already have a Kafka service, jump to :ref:`tutorial-kaka-python-create-a-topic` section. 
 
-Else, `sign up for an Aiven account <https://console.aiven.io/signup>`_ and follow the tutorial to create a Kafka service on Aiven.
+Otherwise, `sign up for an Aiven account <https://console.aiven.io/signup>`_ and follow the tutorial to create a Kafka service on Aiven.
 
 Create an Aiven for Apache Kafka® service
 -----------------------------------------
