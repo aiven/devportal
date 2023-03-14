@@ -3,7 +3,7 @@ Let's talk to Kafka. How to send and receive application data from Apache KafkaÂ
 
 .. Note::
 
-    This tutorial assumes basic knowledge on Apache Kafka.
+    This tutorial assumes basic knowledge of Apache Kafka.
 
 Learning objectives
 --------------------
