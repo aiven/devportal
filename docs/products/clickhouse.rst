@@ -1,7 +1,7 @@
 Aiven for ClickHouse®
 =====================
 
-Aiven for ClickHouse® is a fully managed distributed columnar database based on open source ClickHouse® – a fast, resource effective solution tailored for data warehouse and generation of real-time analytical data reports using advanced SQL queries.
+Aiven for ClickHouse® is a fully managed distributed columnar database based on open source ClickHouse – a fast, resource effective solution tailored for data warehouse and generation of real-time analytical data reports using advanced SQL queries.
 
 -------------------
 
@@ -23,10 +23,22 @@ Aiven for ClickHouse® is a fully managed distributed columnar database based on
         :shadow: md
         :margin: 2 2 0 0
 
-        Discover step-by-step instructions on the common use cases.
+        Discover step-by-step instructions on common use cases.
 
     .. grid-item-card:: :doc:`Concepts </docs/products/clickhouse/concepts>`
         :shadow: md
         :margin: 2 2 0 0
 
-        Get familiar with the core concepts of Aiven for ClickHouse®.
+        Get familiar with the core concepts of Aiven for ClickHouse.
+
+    .. grid-item-card:: :doc:`Reference </docs/products/clickhouse/reference>`
+        :shadow: md
+        :margin: 2 2 0 0
+
+        Look up parameters, metrics, or formats supported by Aiven for ClickHouse.
+
+    .. grid-item-card:: `What's new <https://aiven.io/changelog>`_
+        :shadow: md
+        :margin: 2 2 0 0
+
+        Check out new features or latest improvements introduced to Aiven for ClickHouse and other Aiven services.

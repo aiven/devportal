@@ -599,8 +599,10 @@ entries:
   - file: docs/products/cassandra
     title: Apache Cassandra
     entries:
+      - file: docs/products/cassandra/overview
+        title: Overview
       - file: docs/products/cassandra/get-started
-        title: Get started
+        title: Quickstart
       - file: docs/products/cassandra/concepts
         title: Concepts
         entries:
@@ -611,13 +613,26 @@ entries:
       - file: docs/products/cassandra/howto
         title: HowTo
         entries:
+          - file: docs/products/cassandra/howto/setup
+            title: Get started
           - file: docs/products/cassandra/howto/list-code-samples
+            title: Connect to service
             entries:
+              - file: docs/products/cassandra/howto/connect-cqlsh-cli
+                title: Connect with cqlsh
               - file: docs/products/cassandra/howto/connect-python
+                title: Connect with Python
               - file: docs/products/cassandra/howto/connect-go
-          - file: docs/products/cassandra/howto/connect-cqlsh-cli
-          - file: docs/products/cassandra/howto/use-nosqlbench-with-cassandra
-          - file: docs/products/cassandra/howto/use-dsbulk-with-cassandra
+                title: Connect with Go
+          - file: docs/products/cassandra/howto/list-manage-service
+            title: Manage service
+            entries:
+              - file: docs/products/cassandra/howto/use-dsbulk-with-cassandra
+                title: Manage data with DSBULK
+              - file: docs/products/cassandra/howto/use-nosqlbench-with-cassandra
+                title: Stress test with nosqlbench
+          - file: docs/products/cassandra/howto/list-manage-cluster
+            title: Manage cluster
           - file: docs/products/cassandra/howto/list-cross-cluster-replication
             title: Cross-cluster replication
             entries:
