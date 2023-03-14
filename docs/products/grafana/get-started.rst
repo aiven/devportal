@@ -24,13 +24,6 @@ After starting the Aiven for Grafana service, you can follow these steps to acce
 
 You can begin visualizing your data sources using the default dashboards or create your own.
 
-Integrates with your existing Aiven tools
-------------------------------------------
-
-Grafana is highly compatible with other Aiven products. You can set up your other Aiven services as data sources for Grafana, and monitor their health.
-
-
-Check out all the features on our `Grafana product page <https://aiven.io/grafana>`_. 
 
 Grafana resources
 ---------------------
