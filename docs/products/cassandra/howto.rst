@@ -1,5 +1,5 @@
-Aiven for Apache Cassandra® how-tos
-===================================
+Aiven for Apache Cassandra® HowTo
+=================================
 
 .. dropdown:: Getting started
 
