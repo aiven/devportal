@@ -26,8 +26,6 @@ Configure SAML on JumpCloud
 
 #. Select **Custom SAML App**.
 
-#. Set the ``IdP Entity ID`` to the ``Metadata URL`` from the Aiven Console.
-
 #. Set the ``Audience URI (SP Entity ID)`` to the ``Metadata URL`` from the Aiven Console.
 
 #. Set the ``ACS URL`` to the one from the Aiven Console.
