@@ -599,8 +599,10 @@ entries:
   - file: docs/products/cassandra
     title: Apache Cassandra
     entries:
+      - file: docs/products/cassandra/overview
+        title: Overview
       - file: docs/products/cassandra/get-started
-        title: Get started
+        title: Quickstart
       - file: docs/products/cassandra/concepts
         title: Concepts
         entries:

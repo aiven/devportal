@@ -1,6 +1,9 @@
-Reference
-=========
+Aiven for Apache Cassandra® reference
+=====================================
 
-Additional reference information for Aiven for Apache Cassandra®:
+.. grid:: 1 2 2 2
 
-.. tableofcontents::
+    .. grid-item-card:: :doc:`Advanced parameters for Aiven for Apache Cassandra </docs/products/cassandra/reference/advanced-params>`
+        :shadow: md
+        :margin: 2 2 0 0
+

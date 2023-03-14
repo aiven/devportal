@@ -1,51 +1,32 @@
 Aiven for Apache Cassandra®
 ===========================
 
-What is Apache Cassandra®?
---------------------------
-
 `Apache Cassandra® <https://cassandra.apache.org/_/index.html>`_ is an open source, NoSQL database. It is specifically designed to be highly available, performant, and scalable. It supports a distributed architecture with asynchronous replication and is highly fault tolerant.
 
-Apache Cassandra originated from Facebook, and since then has had a strong history with some of the most demanding data platforms around while being in the care of the Apache project. From this strong history comes a robust database with an emphasis on security, and the ability to scale up to meet the needs of even the largest data platforms.
-
-Aiven for Apache Cassandra builds on the open source offering, adding management features and updates so that you can rely on the database your organisation needs to succeed.
-
-Why Aiven for Apache Cassandra®?
---------------------------------
-
-Apache Cassandra® is designed to handle large volumes of writes to the database; this is one of the key reasons we see for adopting Apache Cassandra over some of the other options in a similar problem space.
-
-It is a truly distributed database where the individual nodes can communicate with one another without referencing any master node. This improves both its scalability and its fault tolerance, two key capabilities of Apache Cassandra.
-
-Get started with Aiven for Apache Cassandra
--------------------------------------------
-
-Take your first steps with Aiven for Apache Cassandra® by following our :doc:`/docs/products/cassandra/get-started` article, or browse through our full list of articles:
+-------------------
 
 .. grid:: 1 2 2 2
 
-    .. grid-item-card::
+    .. grid-item-card:: :doc:`Quickstart </docs/products/cassandra/get-started>`
         :shadow: md
         :margin: 2 2 0 0
 
-        📚 :doc:`Concepts </docs/products/cassandra/concepts>`
+        Create your first cluster and learn how to connect to Aiven for Apache Cassandra.
 
-    .. grid-item-card::
+    .. grid-item-card:: :doc:`Overview </docs/products/cassandra/overview>`
         :shadow: md
         :margin: 2 2 0 0
 
-        💻 :doc:`/docs/products/cassandra/howto`
+        Discover Aiven for Apache Cassandra's features and use cases. 
 
-    .. grid-item-card::
+    .. grid-item-card:: :doc:`How-Tos </docs/products/cassandra/howto>`
         :shadow: md
         :margin: 2 2 0 0
 
-        📖 :doc:`/docs/products/cassandra/reference`
+        Explore step-by-step instructions for common operations on Aiven for Apache Cassandra.
 
-    .. grid-item-card::
+    .. grid-item-card:: :doc:`Concepts </docs/products/cassandra/concepts>`
         :shadow: md
         :margin: 2 2 0 0
 
-        🧰 :doc:`Code samples </docs/products/cassandra/howto/list-code-samples>`
-
-
+        Get familiar with core concepts of Aiven for Apache Cassandra.
