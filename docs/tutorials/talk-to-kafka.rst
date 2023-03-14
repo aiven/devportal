@@ -120,7 +120,7 @@ Details on the Aiven for Apache Kafka configuration can be found under the :ref:
 Create a topic
 ---------------
 
-A topic in Kafka is a named stream of records that is stored within a Kafka cluster. Let's create a Kafka topic. 
+A topic in Kafka is a named stream of records that is stored within a Kafka cluster. A record is a key-value pair associated with a timestamp and other metadata. Records and topics can represent whatever you need from a business perspective: in general, records represent events that happen in a system, and a topic is a grouping of similar events. Let's create a Kafka topic. 
 
 If you have a local Kafka instance running, the command to create the topic might be something like this:
 
