@@ -1,4 +1,4 @@
-Let's talk to Kafka. How to send and receive application data from Apache Kafka®?
+Let's talk to Apache Kafka®: sending and receiving application data
 ===================================================================================
 
 .. Note::
