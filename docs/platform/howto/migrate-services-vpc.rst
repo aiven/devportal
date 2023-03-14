@@ -37,7 +37,7 @@ Following these steps ensures that networking configuration and
 firewall rules are set up correctly.
 
 Step 1. Initial setup
----------------------
+----------------------
 
 Ensure that you have the VPC created and peering is active. This is
 simple to do and can be automated via terraform if needed. Please check out
@@ -48,7 +48,7 @@ We will be using the ``google-us-east1`` VPC for testing. Ensure that the
 VPC and peering are both in an ``Active`` state.
 
 Step 2. Testing the connection
-------------------------------
+-------------------------------
 
 First we want to ensure that we can connect to with a non-critical
 service to ensure that the networks are peered. In this case, I am going
@@ -66,7 +66,7 @@ on Ubuntu 20.04 LTS and should work for most Linux distributions.
 -  ``nc -vz {host} {port}``
 
 Step 3. Enable public access
-----------------------------
+-----------------------------
 
 Enable the ``public_access.{service type}`` configuration on all of your services in the
 "Advanced Configuration" section. For example, the configuration name is ``public_access.kafka`` for Aiven for Apache Kafka®. This will create a new hostname and
@@ -79,7 +79,7 @@ Ensure that you can connect to each host/port combination.
 
 
 Step 4. Configure and redeploy application
-------------------------------------------
+-------------------------------------------
 
 It is highly recommended to configure your applications to use the
 public access route during migration. This ensures access to the
@@ -100,7 +100,7 @@ Ensure that you see the ``Project VPC`` tag after migration. You can
 monitor the migration status on the service details page.
 
 Step 6. Testing the service connections
----------------------------------------
+----------------------------------------
 
 After the migration, you will see some private IP addresses if you use
 the ``nslookup`` command. Ensure that you can connect to the private
