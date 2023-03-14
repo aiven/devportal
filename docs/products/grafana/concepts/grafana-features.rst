@@ -9,7 +9,7 @@ Quick and flexible deployment options
 -------------------------------------
 With Aiven for Grafana, you can enjoy a quick and flexible deployment process, ensuring production-ready Grafana clusters are available in 10 minutes. You have the flexibility to choose your preferred public cloud platform for deployment from over 100 regions supported. The deployment process also includes high-performance nodes to enhance performance. Aiven supports the Bring-Your-Own-Account (BYOA) deployment model, enabling you to meet strict control requirements. 
 
-Integrate with exisitng Aiven tools and data infrastructure
+Integrate with existing Aiven tools and data infrastructure
 --------------------------------------------------------------
 Aiven for Grafana seamlessly integrates various services and your existing Aiven tools. You can easily set up your Aiven services as data sources for Grafana and monitor their health in real time. This integration allows you to leverage the full potential of your data infrastructure, making it easier to manage and monitor.
 In addition to integration with Aiven services, Aiven also offers pre-built dashboards that allow you to monitor the health of your Aiven services. These dashboards provide valuable insights into the performance of your infrastructure, making it easier to identify and address potential issues.
