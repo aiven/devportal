@@ -9,9 +9,15 @@ Quick and flexible deployment options
 -------------------------------------
 With Aiven for Grafana, you can enjoy a quick and flexible deployment process, ensuring production-ready Grafana clusters are available in 10 minutes. You have the flexibility to choose your preferred public cloud platform for deployment from over 100 regions supported. The deployment process also includes high-performance nodes to enhance performance. Aiven supports the Bring-Your-Own-Account (BYOA) deployment model, enabling you to meet strict control requirements. 
 
-Integration with data infrastructure
--------------------------------------
-With Aiven, you can seamlessly integrate your data infrastructure with Aiven services and easily monitor them using pre-built dashboards. The pre-built dashboards help you to monitor the health of Aiven services. Aiven provides various options for secure network connectivity, such as :doc:`VPC peering </docs/platform/howto/manage-vpc-peering>`, :doc:`PrivateLink </docs/tools/cli/service/privatelink>`, and TransitGateway technologies. 
+Integrate with exisitng Aiven tools and data infrastructure
+--------------------------------------------------------------
+Aiven for Grafana seamlessly integrates various services and your existing Aiven tools. You can easily set up your Aiven services as data sources for Grafana and monitor their health in real time. This integration allows you to leverage the full potential of your data infrastructure, making it easier to manage and monitor.
+In addition to integration with Aiven services, Aiven also offers pre-built dashboards that allow you to monitor the health of your Aiven services. These dashboards provide valuable insights into the performance of your infrastructure, making it easier to identify and address potential issues.
+
+
+Secure network connectivity
+----------------------------
+Aiven offers various options for secure network connectivity, including :doc:`VPC peering </docs/platform/howto/manage-vpc-peering>`, :doc:`PrivateLink </docs/tools/cli/service/privatelink>`, and TransitGateway technologies.  These options allow you to securely connect your data infrastructure to Aiven services and ensure the highest level of data security.
 
 Log management
 -------------------
