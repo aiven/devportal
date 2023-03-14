@@ -216,9 +216,9 @@ With SSL authentication:
         producer = KafkaProducer(
             bootstrap_servers=f"{HOST}:{SSL_PORT}", # From the connection information for the managed service
             security_protocol="SSL",
-            ssl_cafile="ca.pem", # From the connection information for managed service
-            ssl_certfile="service.cert", # From the connection information for managed service
-            ssl_keyfile="service.key", # From the connection information for managed service
+            ssl_cafile="ca.pem", # From the connection information for the managed service
+            ssl_certfile="service.cert", # From the connection information for the managed service
+            ssl_keyfile="service.key", # From the connection information for the managed service
         )
 
         # Generate 10 messages in total with 1 second interval
