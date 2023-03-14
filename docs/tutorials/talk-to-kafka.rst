@@ -214,7 +214,7 @@ With SSL authentication:
 
         # Configuring the Kafka producer 
         producer = KafkaProducer(
-            bootstrap_servers=f"{HOST}:{SSL_PORT}", # From the connection information for managed service
+            bootstrap_servers=f"{HOST}:{SSL_PORT}", # From the connection information for the managed service
             security_protocol="SSL",
             ssl_cafile="ca.pem", # From the connection information for managed service
             ssl_certfile="service.cert", # From the connection information for managed service
