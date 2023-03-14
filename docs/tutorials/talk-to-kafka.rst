@@ -242,12 +242,12 @@ With SASL authentication:
          
          # Configuring the Kafka producer
          producer = KafkaProducer(
-            bootstrap_servers=f"{HOST}:{SASL_PORT}", # From the connection information for managed service
+            bootstrap_servers=f"{HOST}:{SASL_PORT}", # From the connection information for the managed service
             sasl_mechanism = SASL_MECHANISM,
-            sasl_plain_username = SASL_USERNAME, # From the connection information for managed service
-            sasl_plain_password = SASL_PASSWORD, # From the connection information for managed service
+            sasl_plain_username = SASL_USERNAME, # From the connection information for the managed service
+            sasl_plain_password = SASL_PASSWORD, # From the connection information for the managed service
             security_protocol="SASL_SSL", 
-            ssl_cafile="ca.pem", # From the connection information for managed service
+            ssl_cafile="ca.pem", # From the connection information for the managed service
          )
 
         # Generate 10 messages in total with 1 second interval
