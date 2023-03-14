@@ -30,3 +30,15 @@ Aiven for Apache Cassandra®
         :margin: 2 2 0 0
 
         Get familiar with core concepts of Aiven for Apache Cassandra.
+
+    .. grid-item-card:: :doc:`Reference </docs/products/cassandra/reference>`
+        :shadow: md
+        :margin: 2 2 0 0
+
+        Look up parameters, metrics, or formats supported by Aiven for Apache Cassandra.
+
+    .. grid-item-card:: `What's new <https://aiven.io/changelog>`_
+        :shadow: md
+        :margin: 2 2 0 0
+
+        Check out new features or latest improvements introduced to Aiven for Apache Cassandra and other Aiven services.
