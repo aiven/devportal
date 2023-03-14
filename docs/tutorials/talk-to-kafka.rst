@@ -109,7 +109,7 @@ Go to the *Overview* page of your Aiven for Apache Kafka service.
 
 .. Warning::
 
-  In the below examples, we just pass the name of the keystore and truststore files, but in actual use, the full path should be used.
+  In the below examples, we just pass the name of the keystore and truststore files, but in production, use the full path.
 
 You can also use the `Aiven command line tool <https://docs.aiven.io/docs/tools/cli.html>`_ to download the files. See the documentation for `avn service user-creds-download <https://docs.aiven.io/docs/tools/cli/service/user.html#avn-service-user-creds-download>`_
 
