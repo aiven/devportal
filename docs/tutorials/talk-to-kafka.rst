@@ -205,6 +205,10 @@ Set up a producer instance to send a message to the cluster
 
 The following Python code generates some messages to the "demo-topic" topic using the `Kafka-python` library:
 
+.. note::
+
+    Ensure that the certificate files you downloaded above are in the same directory as this Python script.
+
 With SSL authentication:
 
 .. code:: python
