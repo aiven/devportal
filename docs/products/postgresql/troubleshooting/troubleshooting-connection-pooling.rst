@@ -18,7 +18,7 @@ Transaction pooling
 
   .. warning::
 
-    This mode breaks a few session-based features of PostgreSQL. Use it only when the application cooperates without using the features that break. For imcompatible features, see `PostgreSQL feature map for pooling modes <https://www.pgbouncer.org/features>`_.
+    This mode breaks a few session-based features of PostgreSQL. Use it only when the application cooperates without using the features that break. For incompatible features, see `PostgreSQL feature map for pooling modes <https://www.pgbouncer.org/features>`_.
 
 Statement pooling
   This is the most restrictive method, which disallows multi-statement transactions. This is meant to enforce the ``autocommit`` mode on the client and is mostly targeted at PL/Proxy.
