@@ -307,10 +307,10 @@ With SASL authentication:
             bootstrap_servers = f'{HOST}:{SASL_PORT}', # From the connection information for managed service
             group_id="demo-consumer-group",
             sasl_mechanism = SASL_MECHANISM,
-            sasl_plain_username = SASL_USERNAME, # From the connection information for managed service
-            sasl_plain_password = SASL_PASSWORD, # From the connection information for managed service
+            sasl_plain_username = SASL_USERNAME, # From the connection information for the managed service
+            sasl_plain_password = SASL_PASSWORD, # From the connection information for the managed service
             security_protocol = "SASL_SSL",
-            ssl_cafile = "ca.pem" # From the connection information for managed service
+            ssl_cafile = "ca.pem" # From the connection information for the managed service
         )
 
         # Continuously poll for new messages
