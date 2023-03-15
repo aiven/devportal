@@ -55,8 +55,6 @@ Variable                     Description
 ``KEYSTORE_LOCATION``        Location of you keystore (named by default as client.keystore.p12)
 ``KEYSTORE_PASSWORD``        Password you used when creating a keystore
 ``KEY_PASSWORD``             Password for the key in the keystore, if you chose a different password than the one for keystore
-``SERIALIZER``               How to serialize data, you can find available options  `in the Apache Kafka documentation <https://kafka.apache.org/0102/javadoc/org/apache/kafka/common/serialization/>`_.
-``DESERIALIZER``             How to de-serialize data, you can find available options  `in the Apache Kafka documentation <https://kafka.apache.org/0102/javadoc/org/apache/kafka/common/serialization/>`_.
 ========================     =======================================================================================================
 
 
@@ -73,17 +71,16 @@ With SSL authentication
         Properties properties = new Properties();
         properties.put("bootstrap.servers", "{HOST}:{SSL_PORT}");
         properties.put("security.protocol", "SSL");
-        properties.put("ssl.truststore.location", "{TRUSTSTORE_LOCATION}");
-        properties.put("ssl.truststore.password", "{TRUSTSTORE_PASSWORD}");
         properties.put("ssl.keystore.type", "PKCS12");
         properties.put("ssl.keystore.location", "{KEYSTORE_LOCATION}");
         properties.put("ssl.keystore.password", "{KEYSTORE_PASSWORD}");
         properties.put("ssl.key.password", "{KEY_PASSWORD}");
-        properties.put("key.serializer", "{SERIALIZER}");
-        properties.put("value.serializer", "{SERIALIZER}");
+        properties.put("ssl.truststore.type", "JKS");
+        properties.put("ssl.truststore.location", "{TRUSTSTORE_LOCATION}");
+        properties.put("ssl.truststore.password", "{TRUSTSTORE_PASSWORD}");
 
-        // create a producer
-        KafkaProducer<String, String> producer = new KafkaProducer<>(properties);
+        // create a producer with String Serializer for key and value
+        KafkaProducer<String, String> producer = new KafkaProducer<>(properties, new StringSerializer(), new StringSerializer());
 
 With SASL authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -100,15 +97,12 @@ With SASL authentication
         properties.put("security.protocol", "SASL_SSL");
         properties.put("sasl.mechanism", "SCRAM-SHA-256");
         properties.put("sasl.jaas.config", jaasConfig);
-        properties.put("ssl.endpoint.identification.algorithm", ""); 
-        properties.put("ssl.truststore.type", "jks");
+        properties.put("ssl.truststore.type", "JKS");
         properties.put("ssl.truststore.location", "{TRUSTSTORE_LOCATION}");
         properties.put("ssl.truststore.password", "{TRUSTSTORE_PASSWORD}");
-        properties.put("key.serializer", "{SERIALIZER}");
-        properties.put("value.serializer", "{SERIALIZER}");
-          
-        // create a producer
-        KafkaProducer<String, String> producer = new KafkaProducer<>(properties);
+
+        // create a producer with String Serializer for key and value
+        KafkaProducer<String, String> producer = new KafkaProducer<>(properties, new StringSerializer(), new StringSerializer());
 
 Connect a consumer
 ------------------
@@ -125,18 +119,17 @@ With SSL authentication
         Properties properties = new Properties();
         properties.put("bootstrap.servers", "{HOST}:{SSL_PORT}");
         properties.put("security.protocol", "SSL");
-        properties.put("ssl.truststore.location", "{TRUSTSTORE_LOCATION}");
-        properties.put("ssl.truststore.password", "{TRUSTSTORE_PASSWORD}");
         properties.put("ssl.keystore.type", "PKCS12");
         properties.put("ssl.keystore.location", "{KEYSTORE_LOCATION}");
         properties.put("ssl.keystore.password", "{KEYSTORE_PASSWORD}");
         properties.put("ssl.key.password", "{KEY_PASSWORD}");
-        properties.put("key.deserializer", "{DESERIALIZER}");
-        properties.put("value.deserializer", "{DESERIALIZER}");
+        properties.put("ssl.truststore.type", "JKS");
+        properties.put("ssl.truststore.location", "{TRUSTSTORE_LOCATION}");
+        properties.put("ssl.truststore.password", "{TRUSTSTORE_PASSWORD}");
         properties.put("group.id", group_id);
 
-        // create a consumer
-        KafkaConsumer<String, String> consumer = new KafkaConsumer<>(properties);
+        // create a consumer with String Serializer for key and value
+        KafkaConsumer<String, String> consumer = new KafkaConsumer<>(properties, new StringDeserializer(), new StringDeserializer());
 
 With SASL authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -154,13 +147,10 @@ With SASL authentication
         properties.put("security.protocol", "SASL_SSL");
         properties.put("sasl.mechanism", "SCRAM-SHA-256");
         properties.put("sasl.jaas.config", jaasConfig);
-        properties.put("ssl.endpoint.identification.algorithm", ""); 
-        properties.put("ssl.truststore.type", "jks");
+        properties.put("ssl.truststore.type", "JKS");
         properties.put("ssl.truststore.location", "{TRUSTSTORE_LOCATION}");
         properties.put("ssl.truststore.password", "{TRUSTSTORE_PASSWORD}");
-        properties.put("key.deserializer", "{DESERIALIZER}");
-        properties.put("value.deserializer", "{DESERIALIZER}");
         properties.put("group.id", group_id);
 
-        // create a consumer
-        KafkaConsumer<String, String> consumer = new KafkaConsumer<>(properties);
+        // create a consumer with String Serializer for key and value
+        KafkaConsumer<String, String> consumer = new KafkaConsumer<>(properties, new StringDeserializer(), new StringDeserializer());
