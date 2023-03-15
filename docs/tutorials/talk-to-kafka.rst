@@ -278,12 +278,12 @@ With SSL authentication:
         consumer = KafkaConsumer(
             "demo-topic",
             auto_offset_reset="earliest",
-            bootstrap_servers=f"{HOST}:{SSL_PORT}", # From the connection information for managed service
+            bootstrap_servers=f"{HOST}:{SSL_PORT}", # From the connection information for the managed service
             group_id="demo-consumer-group",
             security_protocol="SSL",
-            ssl_cafile="ca.pem", # From the connection information for managed service
-            ssl_certfile="service.cert", # From the connection information for managed service
-            ssl_keyfile="service.key", # From the connection information for managed service
+            ssl_cafile="ca.pem", # From the connection information for the managed service
+            ssl_certfile="service.cert", # From the connection information for the managed service
+            ssl_keyfile="service.key", # From the connection information for the managed service
         )
 
         # Continuously poll for new messages
