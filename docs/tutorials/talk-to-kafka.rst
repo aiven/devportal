@@ -323,7 +323,7 @@ Observation
 You might have noticed ``key_deserializer``, ``key_serializer``, ``value_deserializer``, and ``value_serializer`` in these programs. Since Kafka brokers don't know about the records and only deal in bytes, the programs need to serialize 
 and deserialize data before making sense of them. 
 
-Once messages are produced, they are written to the single partition ``p0`` of ``demo-topic``. All the messages will be consumed by the single consumer ``co0`` which is part of the single consumer group `consumer group A`. 
+Once messages are produced, they are written to the single partition ``p0`` of ``demo-topic``. All the messages are consumed by the single consumer ``co0`` which is part of the single consumer group `consumer group A`. 
 
 Once you run one of the above consumer program ``python consumer.py``, you'll see the program running in the terminal but not doing anything!
 That's because the consumer instance is listening for messages and currently, there's no message to print out. 
