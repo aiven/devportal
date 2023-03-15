@@ -385,7 +385,7 @@ Setting up a producer to send Avro-encoded messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Here's an example of a Kafka consumer in Python using the `confluent-Kafka-python <https://github.com/confluentinc/confluent-kafka-python>`_ library to produce Avro-encoded messages.
-On a terminal window, run the following producer code. The program should execute and exit. You won't see anything yet since we need the consumer program to run next. 
+In a terminal window, run the following producer code. The program should execute and exit. You won't see anything yet since we need the consumer program to run next. 
 
 .. code:: python
 
