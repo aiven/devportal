@@ -655,6 +655,7 @@ The consumer program uses the ``confluent-kafka`` library to create an AvroConsu
 - Consume messages from Kafka and deserialize them using the Avro schema.
 - Process the messages as desired.
 
+You might have noticed ``avro_serializer_key``, ``avro_serializer_value``, ``avro_deserializer_key``, and ``avro_deserializer_value`` in these programs. Since Kafka brokers don't know about the records and only deal in bytes, the programs need to serialize and deserialize data before making sense of them. 
 Overall, these two programs demonstrate how to use Avro serialization and SSL protocols to send and receive messages to/from a Kafka broker.
 
 Wrap up
