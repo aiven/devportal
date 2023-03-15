@@ -1,12 +1,6 @@
 Create a PostgreSQL®-based Apache Flink® table
 ==============================================
 
-.. warning:: 
-    As with many beta products, we are currently redesigning the Aiven for Apache Flink® experience, APIs, and CLI calls. 
-    
-    We are also updating all examples in the documentation to reflect these changes. During this process, you may encounter error messages as we introduce new improvements.
-
-
 To build data pipelines, Apache Flink® requires source and target data structures to `be mapped as Flink tables <https://ci.apache.org/projects/flink/flink-docs-release-1.15/docs/dev/table/sql/create/#create-table>`_. This functionality can be achieved via the `Aiven console <https://console.aiven.io/>`_ or :doc:`Aiven CLI </docs/tools/cli/service/flink>`.
 
 A Flink table can be defined over an existing or new Aiven for PostgreSQL® table to be able to source or sink streaming data. To define a table over an PostgreSQL® table, the table name and columns data format need to be defined, together with the Flink table name to use as reference when building data pipelines.
@@ -58,13 +52,14 @@ The Aiven for PostgreSQL® service named ``pg-demo`` contains a table named ``st
 
 ::
 
-  student_id INT,
-  student_name VARCHAR
+  CREATE TABLE students_tbl (
+    student_id INT,
+    student_name VARCHAR
+    ) WITH (
+    'connector' = 'jdbc',
+    'url' = 'jdbc:postgresql://',
+    'table-name' = 'public.students'
+    )  
 
-We can define a ``students_tbl`` Flink table with:
 
-* ``pg-demo`` as the selected Aiven for PostgreSQL® service 
-* ``public.students`` as **JDBC table**
-* ``students_tbl`` as **Name**
-* ``student_id INT, student_name VARCHAR`` as **SQL schema** `mapping the existing columns <https://nightlies.apache.org/flink/flink-docs-master/docs/connectors/table/jdbc/#data-type-mapping>`_ in the PostgreSQL® table
-
+The ``url`` will be substituted with the appropriate address during runtime.

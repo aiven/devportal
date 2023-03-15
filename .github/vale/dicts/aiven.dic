@@ -1,6 +1,7 @@
 188
 ACL
 ACLs
+Addons
 Aiven
 Aiven's
 Altinity
@@ -29,6 +30,7 @@ CloudWatch
 codecs
 compliances
 Conduktor
+Confluent
 Coralogix
 connect
 Couchbase
@@ -38,6 +40,8 @@ cyber
 datacenter
 datacenters
 Datadog
+Datagen
+datagen
 datasource
 Datastax
 datastore
@@ -45,6 +49,8 @@ dashboards
 deallocation
 Debezium
 deserialize
+deserialization
+deserializer
 Dev
 Digitransit
 Distro
@@ -101,6 +107,7 @@ Kafka
 Karapace
 keypair
 keyspace
+keyspaces
 keystore
 keystores
 Kibana
@@ -175,12 +182,15 @@ safelist
 safelisting
 Sakila
 SAML
+SBOM
 Sarama
 savepoint
 Savepoints
 savepoints
 schemaless
 scriptable
+serde
+serializer
 sharded
 sharding
 signup
@@ -190,6 +200,7 @@ skyvia
 Snowflake
 Sphinx
 SLA/S
+Slackbot
 Splunk
 spring
 Sql
@@ -214,6 +225,7 @@ truststore
 truststores
 Uber
 UDFs
+unassign
 uncomment
 unencrypted
 untrusted

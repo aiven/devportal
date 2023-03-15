@@ -36,14 +36,38 @@ Renaming a project is possible **only** when all the services in the project are
 .. note::
     You can :ref:`rename a project using the Aiven CLI <avn-create-update-project>` as well.
 
+Move a project
+---------------
+
+To move a project from one organization or organizational unit to another:
+
+#. Open the organization or organizational unit that has the project using the drop-down menu in the top right.
+
+#. Click **Admin**.
+
+#. Select the **Projects** tab.
+
+#. Find the project you want to move and click **Move project**.
+
+#. Select the organization or organizational unit that you want to move the project to.
+
+#. Choose a billing group.
+
+#. Click **Move project**.
+
+
 Delete a project
 ----------------
 
-In order to delete a project, you need to removes the services in it first. Once all the services are removed:
+To delete a project, you first need to delete all of the services in it. Once the services are deleted:
 
-1. Select the project from the **Project** drop down.
-2. Click on **Settings**.
-3. Click on **Remove project**. 
+#. Select the project from the **Projects** drop down.
+
+#. Click **Settings**.
+
+#. Click **Delete project**. 
+
+#. Click **Confirm**.
 
 .. note::
-    You can :ref:`delete a project using the Aiven CLI <avn-delete-project>` as well.
+    You can also :ref:`delete a project using the Aiven CLI <avn-delete-project>`.

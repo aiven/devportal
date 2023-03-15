@@ -1,4 +1,4 @@
-Aiven for Apache Flink® quickstart guide |beta|
+Aiven for Apache Flink® quickstart guide 
 ===============================================
 
 The first step in using Aiven for Apache Flink® is to create a service. You can do this in the `Aiven web console <https://console.aiven.io/>`_ or with the `Aiven CLI <https://github.com/aiven/aiven-client>`_.

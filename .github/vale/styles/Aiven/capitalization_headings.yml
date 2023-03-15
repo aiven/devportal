@@ -24,8 +24,10 @@ exceptions:
   - Cassandra
   - ClickHouse
   - CloudWatch
+  - Cloud Logging
   - Connect
   - Connector
+  - Confluent Avro
   - Cookbook
   - Couchbase
   - Dashboards
@@ -42,8 +44,9 @@ exceptions:
   - GitHub
   - Go
   - Google BigQuery
-  - Google Cloud Platform
+  - Google Cloud Logging
   - Google Cloud Marketplace
+  - Google Cloud Platform
   - Google Cloud Storage
   - Google Cloud SQL
   - Google Data Studio
@@ -102,6 +105,7 @@ exceptions:
   - Schema Registry
   - Simple Authentication and Security Layer
   - Skyvia
+  - Slack
   - Snowflake
   - Sphinx
   - Splunk

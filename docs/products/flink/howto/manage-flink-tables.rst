@@ -1,12 +1,6 @@
 Manage tables in Aiven for Apache Flink® applications
 =====================================================
 
-.. Warning::
-
-    As with many beta products, we are currently redesigning the Aiven for Apache Flink® experience, APIs, and CLI calls. 
-    
-    We are also updating all examples in the documentation to reflect these changes. During this process, you may encounter error messages as we introduce new improvements.
-
 Aiven for Apache Flink® allows you to map source and target data structures as `Flink tables <https://nightlies.apache.org/flink/flink-docs-stable/docs/dev/table/sql/create/#create-table>`_ and use transformation statements to reshape, filter or aggregate data. Some of the operations you can perform on a table include:
 
 * Import existing tables
@@ -70,12 +64,14 @@ Follow these steps to clone a table within an application:
 Edit table
 ----------
 Follow these steps edit an existing table in an application: 
+
 1. In the **Add source tables** or **Add sink tables** screen, locate the table you want to edit and click **Edit** next to it.
 2. Make the necessary changes to the table and click **Save changes** to confirm the changes.
 
 Delete table
 ------------
 Follow these steps to delete a table in an application: 
+
 1. In the **Add source tables** or **Add sink tables** screen, locate the table you want to delete and click the **Delete** icon next to it.
 2. Confirm the deletion by clicking **Confirm** in the pop-up window.
 

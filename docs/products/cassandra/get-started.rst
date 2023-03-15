@@ -28,4 +28,5 @@ In order to launch a service, decide on the service plan, cloud provider, and re
          --project PROJECT_NAME 
 
 .. note::
-   See the full list of default flags with the following command: ``avn service create -h``. Additionally, there are some type specific options, which you can see executing the following command: ``avn service types -v``
+
+   See the full list of default flags using the ``avn service create -h`` command. Additionally, there are some type-specific options, which you can see executing the ``avn service types -v`` command.

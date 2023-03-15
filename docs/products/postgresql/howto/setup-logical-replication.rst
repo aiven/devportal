@@ -175,4 +175,6 @@ For further information about WAL and checkpoints, read the `PostgreSQL document
 
 .. note::
 
-    The recreation of replication slots gets enabled automatically. Replication slots are recreated when a maintenance update is applied or a failover occurs, but they are not recovered after major version upgrades.
+    The recreation of replication slots gets enabled automatically for services created or updated as of January 2023.  Additional details are outlined in `our blog post <https://aiven.io/blog/aiven-for-pg-recreates-logical-replication-slots>`_. 
+    
+    Replication slots are recreated when a maintenance update is applied or a failover occurs (for multi-node clusters), but they are not recovered after major version upgrades.

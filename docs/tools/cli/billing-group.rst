@@ -1,19 +1,12 @@
 ``avn billing-group``
-==================================
+=====================
 
-Here you'll find the full list of commands for ``avn billing-group``.
-
-
-Work with billing groups
--------------------------
-
-Commands for managing billing groups and using them with ``avn`` commands.
-
+This article has the full list of commands for managing billing groups assigned to organizations using ``avn billing-group``. An account is the same as an :doc:`organization </docs/platform/concepts/projects_accounts_access>`.
 
 ``avn billing-group assign-projects``
 '''''''''''''''''''''''''''''''''''''
 
-Adds the given projects to the given billing group
+Adds projects to a billing group.
 
 .. list-table::
   :header-rows: 1
@@ -24,11 +17,11 @@ Adds the given projects to the given billing group
   * - ``id``
     - The ID of your billing group
   * - ``projects``
-    - Name(s) of projects to assign (separated by spaces)
+    - Names of the projects to assign, separated by spaces
 
 **Example:** Add the project ``new-project`` to the existing billing group with id ``55b0e547-58f9-48de-8808-807d385d1f95``
 
-::
+.. code:: shell
 
   avn biling-group assign-projects 55b0e547-58f9-48de-8808-807d385d1f95 new-project
 
@@ -36,7 +29,7 @@ Adds the given projects to the given billing group
 ``avn billing-group create`` and ``avn billing-group update``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Creates a new billing group with ``create`` or amend it with ``update``
+Creates a new billing group with ``create`` or amends a billing group with ``update``.
 
 .. list-table::
   :header-rows: 1
@@ -49,15 +42,15 @@ Creates a new billing group with ``create`` or amend it with ``update``
   * - ``ID`` (required for ``update``)
     - Note: This is a positional argument, not a switch
   * - ``--account-id``
-    - The account ID to create the billing group in
+    - The ID of the organization or unit to create the billing group in
   * - ``--card-id``
     - The card ID (see ``avn card``)
   * - ``--vat-id``
     - VAT ID for this billing group
   * - ``--billing-currency``
-    - The currency to bill in. The choices are: "AUD" "CAD" "CHF" "DKK" "EUR" "GBP" "NOK" "SEK" "USD"
+    - The currency to bill in: ``AUD``, ``CAD``, ``CHF``, ``DKK``, ``EUR``, ``GBP``, ``NOK``, ``SEK``, or ``USD``
   * - ``--billing-extra-text``
-    - Information to include with an invoice such as a cost center number
+    - Information to include in an invoice (for example, a cost center number)
   * - ``--billing-email``
     - Email for the billing contact
   * - ``--company``
@@ -73,7 +66,7 @@ Creates a new billing group with ``create`` or amend it with ``update``
   * - ``--zip-code``
     - ZIP / Post Code
 
-**Example:** Create a billing-group named ``qa-dept`` under the account with ID ``c59dde4j9`` with the following properties:
+**Example:** Create a billing group named ``qa-dept`` in the organization that has the account ID ``c59dde4j9`` and give it the following properties:
 
 * currency: ``EUR``
 * e-mail address: ``billing@testers.dev``
@@ -82,7 +75,7 @@ Creates a new billing group with ``create`` or amend it with ``update``
 * country code: ``SE``
 * city: ``Stockholm``
 
-::
+.. code:: shell
 
   avn billing-group create qa-dept        \
     --account-id c59dde4j9                \
@@ -95,7 +88,7 @@ Creates a new billing group with ``create`` or amend it with ``update``
 
 **Example:** Rename your ``qa-dept`` billing group with ID ``55b0e547-58f9-48de-8808-807d385d1f95`` to ``qa-department``.
 
-::
+.. code:: shell
 
   avn billing-group update               \
     55b0e547-58f9-48de-8808-807d385d1f95 \
@@ -104,7 +97,7 @@ Creates a new billing group with ``create`` or amend it with ``update``
 ``avn billing-group credits-claim``
 ''''''''''''''''''''''''''''''''''''
 
-Claim a credit code within your biling-group
+Claims a credit code within your biling-group.
 
 .. list-table::
   :header-rows: 1
@@ -113,13 +106,13 @@ Claim a credit code within your biling-group
   * - Parameter
     - Information
   * - ``id``
-    - The ID of your billing group
+    - The billing group ID 
   * - ``code``
     - Credit Code
 
-**Example:** Claim the credit code ``sneaky-crab`` in the billing-group having ID ``55b0e547-58f9-48de-8808-807d385d1f95``
+**Example:** Claim the credit code ``sneaky-crab`` in the billing group with ID ``55b0e547-58f9-48de-8808-807d385d1f95``:
 
-::
+.. code:: shell
 
   avn billing-group credits-claim 55b0e547-58f9-48de-8808-807d385d1f95 sneaky-crab
 
@@ -137,9 +130,9 @@ Lists all the credits redeemed in your billing-group
   * - ``id``
     - The ID of your billing group
 
-**Example:** List credits claimed in the billing-group with ID ``55b0e547-58f9-48de-8808-807d385d1f95``
+**Example:** List credits claimed in the billing group with ID ``55b0e547-58f9-48de-8808-807d385d1f95``
 
-::
+.. code:: shell
 
   avn billing-group credits-list 55b0e547-58f9-48de-8808-807d385d1f95
 
@@ -155,7 +148,7 @@ An example of ``avn billing-group credits-list`` output:
 ``avn billing-group delete``
 ''''''''''''''''''''''''''''''''''''
 
-Deletes a billing-group
+Deletes a billing group.
 
 .. list-table::
   :header-rows: 1
@@ -164,18 +157,18 @@ Deletes a billing-group
   * - Parameter
     - Information
   * - ``id``
-    - The ID of your billing group
+    - The billing group ID 
 
-**Example:** Delete your billing-group with id ``55b0e547-58f9-48de-8808-807d385d1f95``
+**Example:** Delete the billing group with ID ``55b0e547-58f9-48de-8808-807d385d1f95``:
 
-::
+.. code:: shell
 
   avn billing-group delete 55b0e547-58f9-48de-8808-807d385d1f95
 
 ``avn billing-group events``
 '''''''''''''''''''''''''''''
 
-List the events that have occurred for a given billing-group 
+Lists the activity for a given billing group.
 
 .. list-table::
   :header-rows: 1
@@ -184,11 +177,11 @@ List the events that have occurred for a given billing-group
   * - Parameter
     - Information
   * - ``id``
-    - The ID of your billing group
+    - The billing group ID 
 
-**Example:** List events in the billing-group with ID ``55b0e547-58f9-48de-8808-807d385d1f95``
+**Example:** List activity for the billing group with ID ``55b0e547-58f9-48de-8808-807d385d1f95``:
 
-::
+.. code:: shell
 
   avn billing-group events 55b0e547-58f9-48de-8808-807d385d1f95
 
@@ -216,7 +209,7 @@ An example of ``avn billing-group events`` output:
 ``avn billing-group get``
 ''''''''''''''''''''''''''
 
-Gets the details for a given billing-group
+Gets the details for a given billing group.
 
 .. list-table::
   :header-rows: 1
@@ -225,11 +218,11 @@ Gets the details for a given billing-group
   * - Parameter
     - Information
   * - ``id``
-    - The ID of your billing group
+    - The billing group ID
 
-**Example:** Get details for the billing-group with ID ``55b0e547-58f9-48de-8808-807d385d1f95``
+**Example:** Get details for the billing group with ID ``55b0e547-58f9-48de-8808-807d385d1f95``:
 
-::
+.. code:: shell
 
   avn billing-group get 55b0e547-58f9-48de-8808-807d385d1f95
 
@@ -258,16 +251,16 @@ Retrieve the lines for a given invoice
   * -  ``invoice```
     - The number of the invoice
 
-**Example:** Retrieve lines from the invoice ``94885-2`` for the billing group with id ``55b0e547-58f9-48de-8808-807d385d1f95``
+**Example:** Retrieve lines from the invoice ``94885-2`` for the billing group with ID ``55b0e547-58f9-48de-8808-807d385d1f95``:
 
-::
+.. code:: shell
 
   avn billing-group invoice-lines 55b0e547-58f9-48de-8808-807d385d1f95 94885-2
 
 ``avn billing-group invoice-list``
 ''''''''''''''''''''''''''''''''''''
 
-List all invoices for a given billing group
+Lists all invoices for a billing group:
 
 .. list-table::
   :header-rows: 1
@@ -278,9 +271,9 @@ List all invoices for a given billing group
   * - ``id``
     - The ID of your billing group
 
-**Example:** List invoices for billing-group with ID ``55b0e547-58f9-48de-8808-807d385d1f95``
+**Example:** List all invoices for the billing group with ID ``55b0e547-58f9-48de-8808-807d385d1f95``:
 
-::
+.. code:: shell
 
   avn billing-group invoice-list 55b0e547-58f9-48de-8808-807d385d1f95
 
@@ -296,11 +289,11 @@ An example of ``avn billing-group invoice-list`` output:
 ``avn billing-group list``
 '''''''''''''''''''''''''''
 
-Lists all of your billing-groups
+Lists all of your billing-groups.
 
-**Example:** List all of your billing-groups
+**Example:** List all billing-groups:
 
-::
+.. code:: shell
 
   avn billing-group list
 

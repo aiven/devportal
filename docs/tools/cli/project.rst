@@ -1,14 +1,10 @@
 ``avn project``
-==================================
+================
 
-Here you'll find the full list of commands for ``avn project``.
+This article has the full list of commands for managing projects in Aiven using ``avn project``.
 
-
-Work with project details
--------------------------
-
-Commands for managing projects and using them with ``avn`` commands.
-
+Manage project details
+-----------------------
 
 ``avn project details``
 '''''''''''''''''''''''
@@ -24,16 +20,16 @@ Fetches project details.
   * - ``--project``
     - The project to fetch details for
 
-**Example:** Show the details of the currently selected project.
+**Example:** Show the details of the currently selected project:
 
-::
+.. code:: shell
 
   avn project details
 
 
-**Example:** Show the details of a named project.
+**Example:** Show the details of a project:
 
-::
+.. code :: shell
 
   avn project details --project my-project
 
@@ -41,7 +37,7 @@ Fetches project details.
 ``avn project switch``
 ''''''''''''''''''''''
 
-Sets the default project to use with ``avn``.
+Sets the default project to use when one is not specified in an ``avn`` command.
 
 .. list-table::
   :header-rows: 1
@@ -50,11 +46,11 @@ Sets the default project to use with ``avn``.
   * - Parameter
     - Information
   * - ``--project``
-    - The project to use when a project isn't specified for an ``avn`` command
+    - The project name
 
-**Example:** Change to use the project called ``my-project`` as default for all commands where the ``--project`` parameter isn't supplied.
+**Example:** Make the project named ``my-project`` the default for all commands where the ``--project`` parameter isn't supplied:
 
-::
+.. code:: shell
 
   avn project switch --project my-project
 
@@ -64,9 +60,9 @@ Sets the default project to use with ``avn``.
 
 Lists all the projects that you have access to.
 
-**Example:** List all the projects available to use with a ``--project`` command switch.
+**Example:** List all the projects available to use with a ``--project`` command switch:
 
-::
+.. code:: shell
 
   avn project list
 
@@ -75,7 +71,7 @@ Lists all the projects that you have access to.
 ``avn project create`` and ``avn project update``
 '''''''''''''''''''''''''''''''''''''''''''''''''
 
-Creates a new project with ``create`` or changes the settings with ``update``.
+Creates a new project with ``create`` or changes the settings with ``update``. An account is the same as an :doc:`organization or organizational unit </docs/platform/concepts/projects_accounts_access>`.
 
 .. list-table::
   :header-rows: 1
@@ -90,7 +86,7 @@ Creates a new project with ``create`` or changes the settings with ``update``.
   * - ``--name`` (``update`` only)
     - Supply a new name for the project
   * - ``--account-id``
-    - The account to create the project in
+    - The organization or unit to create the project in
   * - ``--billing-group-id``
     - Billing group ID to use
   * - ``--card-id``
@@ -116,15 +112,15 @@ Creates a new project with ``create`` or changes the settings with ``update``.
   * - ``--tech-email``
     - Email for the technical contact
 
-**Example:** Create a project named ``my-project``.
+**Example:** Create a project named ``my-project``:
 
-::
+.. code:: shell
 
   avn project create my-project
 
-**Example:** Create a project in a specific account using ``my-project`` as a template and set the email address for the technical contact.
+**Example:** Create a project in an organization using ``my-project`` as a template and set the email address for the technical contact:
 
-::
+.. code:: shell
 
   avn project create \
     --create-project-from my-project \
@@ -132,9 +128,9 @@ Creates a new project with ``create`` or changes the settings with ``update``.
     --tech-email geek@example.com \
     my-other-project
 
-**Example:** Rename a project.
+**Example:** Rename a project:
 
-::
+.. code:: shell
 
   avn project update
     --project my-project
@@ -143,16 +139,16 @@ Creates a new project with ``create`` or changes the settings with ``update``.
 .. _avn-delete-project:
 
 ``avn project delete``
-''''''''''''''''''''''
+'''''''''''''''''''''''
 
-Deletes an empty project. If the project isn't empty, it removes the services in it first.
+Deletes a project. If the project isn't empty, it removes the services in it first.
 
 .. Note::
     Aiven doesn't allow the deletion of non-empty projects as safeguard against accidental code execution.
 
-**Example:** Delete ``my-project``.
+**Example:** Delete ``my-project``:
 
-::
+.. code:: shell
 
   avn project delete my-project
 
@@ -180,9 +176,9 @@ Downloads the CA certificate for this project, the certificate is saved in the f
   * - ``--target-filepath``
     - File name, including path, to use
 
-**Example:** Download the CA certificate for the current project, and save it in a file in the current directory called ``ca.pem``.
+**Example:** Download the CA certificate for the current project, and save it in a file in the current directory called ``ca.pem``:
 
-::
+.. code:: shell
 
   avn project ca-get --target-filepath ca.pem
 
@@ -206,9 +202,9 @@ Lists the open invitations to the project.
   * - ``--project``
     - The project to show invitations for
 
-**Example:** List the invitations for the current project.
+**Example:** List the invitations for the current project:
 
-::
+.. code:: shell
 
   avn project invite-list
 
@@ -216,7 +212,7 @@ Lists the open invitations to the project.
 ``avn project user-list``
 '''''''''''''''''''''''''
 
-Lists the users with access to the project
+Lists the users with access to the project.
 
 .. list-table::
   :header-rows: 1
@@ -228,16 +224,16 @@ Lists the users with access to the project
     - The project to show users for
 
 
-**Example:** List the users with access to project ``my-project``.
+**Example:** List the users with access to project ``my-project``:
 
-::
+.. code:: shell
 
   avn project user-list --project my-project
 
 ``avn project user-invite``
 '''''''''''''''''''''''''''
 
-Sends an invitation to a user (by email) to join a project.
+Sends an email invitation to a user to join a project.
 
 .. list-table::
   :header-rows: 1
@@ -252,9 +248,9 @@ Sends an invitation to a user (by email) to join a project.
   * - ``--role``
     - Can be "operator", "developer" or "admin"
 
-**Example:** Invite an important person to be an admin on the currently-selected project.
+**Example:** Invite an important person to be an admin on the currently-selected project:
 
-::
+.. code:: shell
 
   avn project user-invite --role admin boss@example.com
 
@@ -275,8 +271,34 @@ Removes a user with the supplied email address from the project.
   * - ``--project``
     - The project to remove the user from
 
-**Example:** Remove the user with email ``alice@example.com`` from project ``my-project``.
+**Example:** Remove the user with email ``alice@example.com`` from project ``my-project``:
+
+.. code:: shell
+
+  avn project user-remove --project my-project alice@example.com
+
+
+Request project SBOM
+--------------------
+
+SBOM reports are generated per project and can be downloaded as long as the necessary permissions are set for the project. You can get the SBOM report download link for a project using the following command:
+
+``avn project generate-sbom``
+'''''''''''''''''''''''''''''
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Parameter
+    - Information
+  * - ``--project``
+    - The project name
+  * - ``--output``
+    - Output format (CSV or SPDX)
+
+**Example:** Get the SBOM report download link for the project ``my-project`` in ``csv`` format:
 
 ::
 
-  avn project user-remove --project my-project alice@example.com
+  avn project generate-sbom --project my-project --output csv
