@@ -1,7 +1,7 @@
 Aiven for PostgreSQL® shared buffers
 ====================================
 
-Learn what Aiven for PostgreSQL® shared buffers are and why use them. Find out how using shared buffers impacts performance and how to set them up properly. Finally, discover how to inspect the database cache performanceand and the query cache performance and check out how to put data into cache manually.
+Learn what Aiven for PostgreSQL® shared buffers are and why use them. Find out how using shared buffers impacts performance and how to set them up properly. Finally, discover how to inspect the database cache performance and and the query cache performance and check out how to put data into cache manually.
 
 About shared buffers
 --------------------
