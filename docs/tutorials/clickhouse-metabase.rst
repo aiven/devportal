@@ -42,17 +42,15 @@ In this tutorial we'll be using `Docker <https://www.docker.com/>`_. However, si
 
 If you don't have a license token for a paid version of Metabase and you don't need a production installation, these steps `for the quick start <https://www.metabase.com/docs/latest/installation-and-operation/running-metabase-on-docker#open-source-quick-start>`_ plus a minor adjustment `to include a ClickHouse driver <https://www.metabase.com/docs/latest/installation-and-operation/running-metabase-on-docker#adding-external-dependencies-or-plugins>`_ is what you need.
 
-When starting your Docker container, make sure that you have access to the mounted folder. We'll need this folder for the next step.
-
-.. code:: bash
-
-    docker run -d -p 3000:3000 --name metabase metabase/metabase
+When starting your Docker container, make sure that you have access to the mounted folder located in `/path-to-plugins-folder`. We'll need this folder for the next step.
 
 .. code:: bash
 
     docker run -d -p 3000:3000 \
       --mount type=bind,source=/path-to-plugins-folder,destination=/plugins \
       --name metabase metabase/metabase
+
+Here is a preview of how that should work:
 
 .. image:: /images/tutorials/clickhouse-metabase/docker.gif
    :alt: Animated GIF showing pulling latest docker image and running it
