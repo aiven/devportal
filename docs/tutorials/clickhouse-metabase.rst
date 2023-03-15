@@ -126,7 +126,7 @@ Alternatively, you can create a query using the Metabase visual editor. For inst
 
 Press on the **New** button and select **Question** from the available options.
 
-Metabase will ask you to pick the database and the table to run requests. Select **AivenForClickHouse** (or the name you gave to your database) and ``Menu Item Denorm``. Once data is selected you'll lend on the wizard with multiple options to shape the request.
+Metabase will ask you to pick the database and the table to run requests. Select **AivenForClickHouse** (or the name you gave to your database) and ``Menu Item Denorm``. Once data is selected you'll use the wizard with multiple options to shape the request.
 
 To find old menus in the *Filter* section press on **Add filters to narrow your answer** and select the field **Dish Last Appeared**. Use the ``between`` function and set the year values to **1700** and **1920** (or even better - experiment and select your own values!). This will find only those dishes that disappeared before 1920.
 
