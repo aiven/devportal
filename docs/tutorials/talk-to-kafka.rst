@@ -202,7 +202,7 @@ A consumer is reading messages from this topic which is part of a consumer group
 
 Set up a producer instance to send a message to the cluster
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
+In Kafka, a producer is any application which generates and sends records to a Kafka cluster. 
 The following Python code generates some messages to the "demo-topic" topic using the `Kafka-python` library:
 
 .. note::
