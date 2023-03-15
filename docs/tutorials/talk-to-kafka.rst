@@ -16,7 +16,9 @@ Overview
 --------
 
 Getting started with Apache Kafka can be straightforward: you download the binary and start the bootstrap server. However, getting a production-ready Kafka cluster stand up with security and high-availability is a different story. 
-If your goal is to use Kafka to benefit your application or data needs and NOT to learn Kafka administration, you can consider using `a managed Kafka service <https://aiven.io/kafka>`_, allowing you to start producing and consuming data in minutes.
+Have you added multiple Kafka brokers to ensure high availability while maintaining a low network latency? How about the default replication factor? How are you ensuring the security and access control for your Kafka brokers? 
+
+Because administering production-ready Kafka clusters is difficult, we at Aiven created a managed Kafka service <https://aiven.io/kafka>`_ with a free trial to avoid some of the hassle. This lets you focus on producing and consuming data with Kafka, rather than becoming a cluster administrator. 
 
 In this tutorial, we will learn how to create a highly available Apache Kafka service, go over the common tasks of producing and consuming messages, and finally use the popular Apache Avro™ specification to communicate with your Kafka service. 
 This tutorial will use Python programming language.
@@ -320,14 +322,14 @@ With SASL authentication:
 Observation
 """""""""""
 
-You might have noticed ``key_deserializer``, ``key_serializer``, ``value_deserializer``, and ``value_serializer`` in these programs. Since Kafka brokers don't know about the records and only deal in bytes, the programs need to serialize 
-and deserialize data before making sense of them. 
-
 Once messages are produced, they are written to the single partition ``p0`` of ``demo-topic``. All the messages are consumed by the single consumer ``co0`` which is part of the single consumer group `consumer group A`. 
 
 Once you run one of the above consumer program ``python consumer.py``, you'll see the program running in the terminal but not doing anything!
 That's because the consumer instance is listening for messages and currently, there's no message to print out. 
+
 To see some action on this terminal, run the producer code in another terminal. You will see the same record appear on the producer program terminal.
+
+Note that Kafka gives you a nicely packaged ``KafkaConsumer`` object which continually checks for new messages at an interval of your choosing. You didn't have to write custom application logic for this part.
 
 What would happen if there were two partitions in this case, ``p0`` and ``p1``? In this case, messages would be published to partition randomly. The consumer ``co0`` would take a round robin approach when consuming messages from this topic.
 
@@ -354,7 +356,7 @@ In this setup, one consumer sits idle. This highlights an important concept in K
         end
         p0 -->co0 
 
-If the first consumer ``co0`` crashes for some reason, the other consumer ``co1`` in the consumer group will begin consuming messages from the last committed offset of the partition. 
+If the first consumer ``co0`` crashes for some reason, the other consumer ``co1`` in the consumer group then begins consuming messages from the last committed offset of the partition. This is what makes a cluster highly available.
 
 .. mermaid::
     
