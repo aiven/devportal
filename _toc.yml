@@ -599,8 +599,10 @@ entries:
   - file: docs/products/cassandra
     title: Apache Cassandra
     entries:
+      - file: docs/products/cassandra/overview
+        title: Overview
       - file: docs/products/cassandra/get-started
-        title: Get started
+        title: Quickstart
       - file: docs/products/cassandra/concepts
         title: Concepts
         entries:
@@ -611,13 +613,26 @@ entries:
       - file: docs/products/cassandra/howto
         title: HowTo
         entries:
+          - file: docs/products/cassandra/howto/setup
+            title: Get started
           - file: docs/products/cassandra/howto/list-code-samples
+            title: Connect to service
             entries:
+              - file: docs/products/cassandra/howto/connect-cqlsh-cli
+                title: Connect with cqlsh
               - file: docs/products/cassandra/howto/connect-python
+                title: Connect with Python
               - file: docs/products/cassandra/howto/connect-go
-          - file: docs/products/cassandra/howto/connect-cqlsh-cli
-          - file: docs/products/cassandra/howto/use-nosqlbench-with-cassandra
-          - file: docs/products/cassandra/howto/use-dsbulk-with-cassandra
+                title: Connect with Go
+          - file: docs/products/cassandra/howto/list-manage-service
+            title: Manage service
+            entries:
+              - file: docs/products/cassandra/howto/use-dsbulk-with-cassandra
+                title: Manage data with DSBULK
+              - file: docs/products/cassandra/howto/use-nosqlbench-with-cassandra
+                title: Stress test with nosqlbench
+          - file: docs/products/cassandra/howto/list-manage-cluster
+            title: Manage cluster
           - file: docs/products/cassandra/howto/list-cross-cluster-replication
             title: Cross-cluster replication
             entries:
@@ -737,12 +752,25 @@ entries:
   - file: docs/products/grafana
     title: Grafana
     entries:
+      - file: docs/products/grafana/list-overview
+        title: Overview
+        entries:
+        - file: docs/products/grafana/concepts/grafana-features
+          title: Features overview
+        - file: docs/products/grafana/reference/plans-pricing
+          title: Plans and pricing
       - file: docs/products/grafana/get-started
-        title: Get started
+        title: Quickstart
       - file: docs/products/grafana/howto
         title: HowTo
         entries:
-          - glob: docs/products/grafana/howto/*
+          - file: docs/products/grafana/howto/log-in
+            title: Log in to Aiven for Grafana
+          - file: docs/products/grafana/howto/dashboard-previews
+            title: Dashboard previews
+          - file: docs/products/grafana/howto/replace-expression-string
+          - file: docs/products/grafana/howto/rotating-grafana-service-credentials
+          - file: docs/products/grafana/howto/send-emails
       - file: docs/products/grafana/reference
         title: Reference
         entries:
@@ -814,14 +842,19 @@ entries:
               - file: docs/products/mysql/howto/connect-with-php
           - file: docs/products/mysql/howto/create-database
           - file: docs/products/mysql/howto/connect-from-mysql-workbench
-          - file: docs/products/mysql/howto/migrate-from-external-mysql
           - file: docs/products/mysql/howto/do-check-service-migration
+            title: Run pre-migration checks
+          - file: docs/products/mysql/howto/migrate-from-external-mysql
+            title: Migrate to Aiven with CLI
+          - file: docs/products/mysql/howto/migrate-db-to-aiven-via-console
+            title: Migrate to Aiven via console
+          - file: docs/products/mysql/howto/migrate-database-mysqldump
+            title: Backup and restore with mysqldump
           - file: docs/products/mysql/howto/prevent-disk-full
           - file: docs/products/mysql/howto/reclaim-disk-space
           - file: docs/products/mysql/howto/identify-disk-usage-issues
           - file: docs/products/mysql/howto/disable-foreign-key-checks
           - file: docs/products/mysql/howto/enable-slow-queries
-          - file: docs/products/mysql/howto/migrate-database-mysqldump
           - file: docs/products/mysql/howto/create-tables-without-primary-keys
           - file: docs/products/mysql/howto/create-missing-primary-keys
       - file: docs/products/mysql/reference
