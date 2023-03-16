@@ -11,7 +11,7 @@ Create an Aiven for OpenSearch® service
 
 1. Log in to the `Aiven Console <https://console.aiven.io/>`_.
 
-2. Follow :doc:`these instructions </docs/platform/howto/create_new_service>` to create a new Aiven for Grafana service.
+2. Follow :doc:`these instructions </docs/platform/howto/create_new_service>` to create a new Aiven for OpenSearch service.
 
 Once the service is ready, the status changes to *Running*. Depending on your selected cloud provider and region, this generally takes a couple of minutes.
 
@@ -29,7 +29,7 @@ To access OpenSearch Dashboards, follow these steps:
 
 After logging in, you can explore and interact with your data, as well as add sample data and utilize OpenSearch API features.
 
-For more informtion, see :doc:`OpenSearch Dashboards </docs/products/opensearch/dashboards>` section. 
+For more information, see :doc:`OpenSearch Dashboards </docs/products/opensearch/dashboards>` section. 
 
 Connect to OpenSearch
 ----------------------
