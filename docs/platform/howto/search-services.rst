@@ -47,6 +47,10 @@ To filter the services by service type, use the filter values in this table.
       - ``flink``
     * - Apache Kafka®
       - ``kafka``
+    * - Apache Kafka® Connect
+      - ``kafkaconnect``
+    * - Apache Kafka® MirrorMaker
+      - ``mirrormaker``
     * - ClickHouse®
       - ``clickhouse``  
     * - Grafana®
