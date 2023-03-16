@@ -880,8 +880,16 @@ entries:
     title: OpenSearch
     entries:
       - file: docs/products/opensearch/getting-started
-        title: Get started
-      - file: docs/products/opensearch/howto/sample-dataset
+        title: Quickstart
+        entries:
+        - file: docs/products/opensearch/howto/sample-dataset
+      - file: docs/products/opensearch/list-overview
+        title: Overview
+        entries:
+        - file: docs/products/opensearch/concepts/service-overview
+          title: Service overview
+        - file: docs/products/opensearch/reference/plans-pricing
+          title: Plans and pricing
       - file: docs/products/opensearch/concepts
         title: Concepts
         entries:
@@ -897,30 +905,52 @@ entries:
       - file: docs/products/opensearch/howto
         title: HowTo
         entries:
-          - file: docs/products/opensearch/howto/opensearch-with-curl
-          - file: docs/products/opensearch/howto/migrating_elasticsearch_data_to_aiven
-          - file: docs/products/opensearch/howto/opensearch-log-integration
-          - file: docs/products/opensearch/howto/upgrade-to-opensearch
-          - file: docs/products/opensearch/howto/upgrade-clients-to-opensearch
-          - file: docs/products/opensearch/howto/setup-cross-cluster-replication-opensearch
-          - file: docs/products/opensearch/howto/connect-with-nodejs
-            title: Connect with NodeJS
-          - file: docs/products/opensearch/howto/connect-with-python
-            title: Connect with Python
-          - file: docs/products/opensearch/howto/opensearch-search-and-python
-            title: Search with Python
-          - file: docs/products/opensearch/howto/opensearch-and-nodejs
-            title: Search with NodeJS
-          - file: docs/products/opensearch/howto/opensearch-aggregations-and-nodejs
-            title: Aggregation with NodeJS
           - file: docs/products/opensearch/howto/control_access_to_content
-          - file: docs/products/opensearch/howto/restore_opensearch_backup
-          - file: docs/products/opensearch/howto/import-opensearch-data-elasticsearch-dump-to-aiven
-          - file: docs/products/opensearch/howto/import-opensearch-data-elasticsearch-dump-to-aws
-          - file: docs/products/opensearch/howto/set_index_retention_patterns
-          - file: docs/products/opensearch/howto/opensearch-alerting-api
-          - file: docs/products/opensearch/howto/integrate-with-grafana
-          - file: docs/products/opensearch/howto/handle-low-disk-space
+            title: Access control
+          - file: docs/products/opensearch/howto/list-connect-to-service
+            title: Connect with service
+            entries:
+            - file: docs/products/opensearch/howto/opensearch-with-curl
+              title: Connect with cURL
+            - file: docs/products/opensearch/howto/connect-with-nodejs
+              title: Connect with NodeJS
+            - file: docs/products/opensearch/howto/connect-with-python
+              title: Connect with Python
+          - file: docs/products/opensearch/howto/list-data-management
+            title: Data management 
+            entries:  
+            - file: docs/products/opensearch/howto/import-opensearch-data-elasticsearch-dump-to-aiven
+            - file: docs/products/opensearch/howto/import-opensearch-data-elasticsearch-dump-to-aws
+          - file: docs/products/opensearch/howto/list-search-service
+            title: Search and aggregation
+            entries:
+            - file: docs/products/opensearch/howto/opensearch-search-and-python
+              title: Search with Python
+            - file: docs/products/opensearch/howto/opensearch-and-nodejs
+              title: Search with NodeJS
+            - file: docs/products/opensearch/howto/opensearch-aggregations-and-nodejs
+              title: Aggregation with NodeJS
+          - file: docs/products/opensearch/howto/migrating_elasticsearch_data_to_aiven
+            title: Migrate Elasticsearch data
+          - file: docs/products/opensearch/howto/setup-cross-cluster-replication-opensearch
+            title: Cross-cluster replication
+          - file: docs/products/opensearch/howto/list-manage-service
+            title: Manage service
+            entries:
+            - file: docs/products/opensearch/howto/restore_opensearch_backup
+            - file: docs/products/opensearch/howto/set_index_retention_patterns
+            - file: docs/products/opensearch/howto/opensearch-alerting-api
+            - file: docs/products/opensearch/howto/handle-low-disk-space
+          - file: docs/products/opensearch/howto/list-integrations
+            title: Integrate service
+            entries:
+            - file: docs/products/opensearch/howto/opensearch-log-integration
+            - file: docs/products/opensearch/howto/integrate-with-grafana
+          - file: docs/products/opensearch/howto/list-upgrade
+            title: Upgrade to OpenSearch
+            entries:
+            - file: docs/products/opensearch/howto/upgrade-to-opensearch
+            - file: docs/products/opensearch/howto/upgrade-clients-to-opensearch
       - file: docs/products/opensearch/dashboards
         title: OpenSearch Dashboards
         entries:

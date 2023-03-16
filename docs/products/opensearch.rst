@@ -1,74 +1,51 @@
 Aiven for OpenSearch®
 =====================
 
-`OpenSearch® <https://opensearch.org>`_ is an open source search and analytics suite including search engine, NoSQL document database, and visualization interface. OpenSearch offers a distributed, full-text search engine based on `Apache Lucene® <https://lucene.apache.org/>`_ with a RESTful API interface and support for JSON documents. Aiven for OpenSearch and Aiven for OpenSearch Dashboards are available on a cloud of your choice.
+Aiven for OpenSearch® is a fully managed distributed search and analytics suite, deployable in the cloud of your choice. Ideal for logs management, application and website search, analytical aggregations and more. OpenSearch is an open source fork derived from Elasticsearch.
 
-.. note::
-    OpenSearch and OpenSearch Dashboards projects were forked in 2021 from the formerly open source projects Elasticsearch and Kibana.
+-------------------
 
-Aiven for OpenSearch comes with OpenSearch Dashboards included, giving a fully-featured user interface and visualization platform for your data.
-
-Why OpenSearch?
----------------
-
-OpenSearch is a very useful addition to almost any data platform. It is designed to be robust, scalable and to be able to handle a variety of data types and structures. It provides high-performance search functionality for data of any size or type, and with schemaless storage, can index a variety of sources with different data structures.
-
-OpenSearch is widely used for log ingestion and analysis, particularly because it can handle the data volumes involved, and because OpenSearch Dashboards provides a powerful interface to the data, including search, aggregation and analysis functionality.
-
-Get started with Aiven for OpenSearch
--------------------------------------
-
-Try the :doc:`sample recipes dataset </docs/products/opensearch/howto/sample-dataset>` or browse the other articles available:
 
 .. grid:: 1 2 2 2
 
-    .. grid-item-card::
+    .. grid-item-card:: :doc:`Quickstart </docs/products/opensearch/getting-started>`
         :shadow: md
         :margin: 2 2 0 0
 
-        📚 :doc:`/docs/products/opensearch/concepts`
+        Create your OpenSearch service and learn how to connect to it.  
 
-    .. grid-item-card::
+    .. grid-item-card:: :doc:`Overview </docs/products/opensearch/list-overview>`
         :shadow: md
         :margin: 2 2 0 0
 
-        💻 :doc:`/docs/products/opensearch/howto`
+        Understand the features, availability, plans, pricing, and more of Aiven for OpenSearch®.
 
-    .. grid-item-card::
+    .. grid-item-card:: :doc:`Concepts </docs/products/opensearch/concepts>`
         :shadow: md
         :margin: 2 2 0 0
 
-        📖 :doc:`Reference </docs/products/opensearch/reference>`
-
-    .. grid-item-card::
+        Learn about the core concepts of OpenSearch®.
+    
+    .. grid-item-card:: :doc:`How-Tos </docs/products/opensearch/howto>`
         :shadow: md
         :margin: 2 2 0 0
 
-        🧰 :doc:`Code samples </docs/products/opensearch/howto/opensearch-with-curl>`
+        View step-by-step instructions on how to use Aiven for OpenSearch and guidance for other common use cases.
 
 
-Ways to use OpenSearch
-----------------------
 
-OpenSearch is ideal for working with various types of unstructured data, where you need to be able to find things quickly. The most common examples include:
 
-* Send your **logs** to OpenSearch so that you can quickly identify and diagnose problems if they arise.
 
-  .. tip::
-    Check how to send logs from a service to your OpenSearch service :doc:`by enabling log integration </docs/products/opensearch/howto/opensearch-log-integration>` feature.
 
-* Use OpenSearch to index documents, so that you can get meaningful **search results** from a large body of knowledge.
 
-OpenSearch resources
---------------------
 
-* Work with your OpenSearch service :doc:`using cURL </docs/products/opensearch/howto/opensearch-with-curl>`
 
-* Check the `API documentation <https://opensearch.org/docs/opensearch/rest-api/index>`_ for detailed information about the HTTP endpoints.
 
-* There's a :doc:`list of plugins </docs/products/opensearch/reference/plugins>` supported by Aiven for OpenSearch.
 
-* Got a question about the OpenSearch project itself? They have an `FAQ <https://opensearch.org/faq/>`_ for that.
+
+
+
+
 
 --------
 
