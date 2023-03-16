@@ -764,13 +764,22 @@ entries:
       - file: docs/products/grafana/howto
         title: HowTo
         entries:
-          - file: docs/products/grafana/howto/log-in
-            title: Log in to Aiven for Grafana
-          - file: docs/products/grafana/howto/dashboard-previews
-            title: Dashboard previews
-          - file: docs/products/grafana/howto/replace-expression-string
-          - file: docs/products/grafana/howto/rotating-grafana-service-credentials
+          - file: docs/products/grafana/howto/list-user-access
+            title: User access
+            entries:
+            - file: docs/products/grafana/howto/log-in
+              title: Log in to Aiven for Grafana
+            - file: docs/products/grafana/howto/rotating-grafana-service-credentials
+          - file: docs/products/grafana/howto/list-manage-dashboards
+            title: Manage dashboards
+            entries:
+            - file: docs/products/grafana/howto/dashboard-previews
+              title: Dashboard previews
+            - file: docs/products/grafana/howto/replace-expression-string
           - file: docs/products/grafana/howto/send-emails
+            title: Alerts and notifcations
+          - file: docs/products/grafana/howto/list-manage-cluster
+            title: Manage cluster
       - file: docs/products/grafana/reference
         title: Reference
         entries:
