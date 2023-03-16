@@ -52,6 +52,7 @@
 /docs/products/flink/concepts/flink-for-operators.html                 /docs/products/flink/list-overview.html
 /docs/products/flink/howto/real-time-alerting-solution                 /docs/tutorials/anomaly-detection
 /docs/products/flink/howto/real-time-alerting-solution.html            /docs/tutorials/anomaly-detection.html
+/docs/products/postgresql/reference/high-cpu-load-of-pgbouncer.html    /docs/products/postgresql/troubleshooting/troubleshooting-connection-pooling.html
 
 # Redirect from .index.html to specific page names for landing
 

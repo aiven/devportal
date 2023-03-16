@@ -67,6 +67,20 @@
 
 
 
+``m3``
+------
+*object*
+
+**M3 specific configuration options** 
+
+``tag_options``
+~~~~~~~~~~~~~~~
+*object*
+
+**M3 Tag Options** 
+
+
+
 ``m3coordinator_enable_graphite_carbon_ingest``
 -----------------------------------------------
 *boolean*
