@@ -599,8 +599,10 @@ entries:
   - file: docs/products/cassandra
     title: Apache Cassandra
     entries:
+      - file: docs/products/cassandra/overview
+        title: Overview
       - file: docs/products/cassandra/get-started
-        title: Get started
+        title: Quickstart
       - file: docs/products/cassandra/concepts
         title: Concepts
         entries:
@@ -611,13 +613,26 @@ entries:
       - file: docs/products/cassandra/howto
         title: HowTo
         entries:
+          - file: docs/products/cassandra/howto/setup
+            title: Get started
           - file: docs/products/cassandra/howto/list-code-samples
+            title: Connect to service
             entries:
+              - file: docs/products/cassandra/howto/connect-cqlsh-cli
+                title: Connect with cqlsh
               - file: docs/products/cassandra/howto/connect-python
+                title: Connect with Python
               - file: docs/products/cassandra/howto/connect-go
-          - file: docs/products/cassandra/howto/connect-cqlsh-cli
-          - file: docs/products/cassandra/howto/use-nosqlbench-with-cassandra
-          - file: docs/products/cassandra/howto/use-dsbulk-with-cassandra
+                title: Connect with Go
+          - file: docs/products/cassandra/howto/list-manage-service
+            title: Manage service
+            entries:
+              - file: docs/products/cassandra/howto/use-dsbulk-with-cassandra
+                title: Manage data with DSBULK
+              - file: docs/products/cassandra/howto/use-nosqlbench-with-cassandra
+                title: Stress test with nosqlbench
+          - file: docs/products/cassandra/howto/list-manage-cluster
+            title: Manage cluster
           - file: docs/products/cassandra/howto/list-cross-cluster-replication
             title: Cross-cluster replication
             entries:
@@ -982,29 +997,32 @@ entries:
               - file: docs/products/postgresql/howto/monitor-with-pgwatch2
               - file: docs/products/postgresql/howto/datasource-integration
               - file: docs/products/postgresql/howto/analyze-with-google-data-studio
+      - file: docs/products/postgresql/troubleshooting
+        title: Troubleshooting
+        entries:
+          - file: docs/products/postgresql/troubleshooting/troubleshooting-connection-pooling
+            title: Connection pooling
       - file: docs/products/postgresql/reference
         title: Reference
         entries:
-          - file: docs/products/postgresql/reference/high-cpu-load-of-pgbouncer
-            title: High CPU load
           - file: docs/products/postgresql/reference/list-of-advanced-params
             title: Advanced parameters
-          - file: docs/products/postgresql/reference/list-of-extensions
-            title: Extensions
-          - file: docs/products/postgresql/reference/pg-metrics
-            title: Metrics exposed to Grafana
           - file: docs/products/postgresql/reference/pg-connection-limits
             title: Connection limits per plan
+          - file: docs/products/postgresql/reference/use-of-deprecated-tls-versions
+            title: Deprecated TLS versions
+          - file: docs/products/postgresql/reference/list-of-extensions
+            title: Extensions
+          - file: docs/products/postgresql/reference/idle-connections
+            title: Keep-alive connections parameters
+          - file: docs/products/postgresql/reference/pg-metrics
+            title: Metrics exposed to Grafana
           - file: docs/products/postgresql/reference/resource-capability
             title: Resource capability per plan
-          - file: docs/products/postgresql/reference/terminology
-            title: Terminology
-          - file: docs/products/postgresql/reference/idle-connections
-            title: Idle connections
-          - file: docs/products/postgresql/reference/use-of-deprecated-tls-versions
-            title: Use of deprecated TLS Versions
           - file: docs/products/postgresql/reference/log-formats-supported
             title: Supported log formats
+          - file: docs/products/postgresql/reference/terminology
+            title: Terminology
 
   - file: docs/products/redis
     title: Redis
