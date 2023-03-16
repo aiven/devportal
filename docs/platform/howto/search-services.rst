@@ -49,7 +49,7 @@ To filter the services by service type, use the filter values in this table.
       - ``kafka``
     * - Apache Kafka® Connect
       - ``kafkaconnect``
-    * - Apache Kafka® MirrorMaker
+    * - Apache Kafka® MirrorMaker 2
       - ``mirrormaker``
     * - ClickHouse®
       - ``clickhouse``  
