@@ -43,7 +43,7 @@ entries:
       title: HowTo
       entries:
       - file: docs/platform/howto/list-user
-        title: User/Access management
+        title: User and authentication management
         entries:
           - file: docs/platform/howto/change-your-email-address
           - file: docs/platform/howto/create_authentication_token
