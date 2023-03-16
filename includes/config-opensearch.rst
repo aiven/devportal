@@ -275,19 +275,19 @@
 ~~~~~~~~~~~~~~~~~~~~~
 *['string']*
 
-**Sender email name placeholder to be used in Opensearch Dashboards and Opensearch keystore** This should be identical to the Sender name defined in Opensearch dashboards
+**Sender name placeholder to be used in Opensearch Dashboards and Opensearch keystore** This should be identical to the Sender name defined in Opensearch dashboards
 
 ``email_sender_username``
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 *['string']*
 
-**Sender email address for Opensearch alerts** 
+**Sender username for Opensearch alerts** 
 
 ``email_sender_password``
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 *['string']*
 
-**Sender email password for Opensearch alerts to authenticate with SMTP server** Sender email password for Opensearch alerts to authenticate with SMTP server
+**Sender password for Opensearch alerts to authenticate with SMTP server** Sender password for Opensearch alerts to authenticate with SMTP server
 
 
 
