@@ -17,13 +17,13 @@ Follow this tutorial and you'll learn all the steps involved in an Apache Kafka�
 What are you going to build
 ---------------------------
 
-This tutorial outlines you all common the steps to migrate an existing Apache Kafka® cluster to a new service provider using MirrorMaker 2. 
+This tutorial outlines all common the steps to migrate an existing Apache Kafka® cluster to a new service provider using MirrorMaker 2. 
 
-All migrations are different, but the usual use case is migrating between an on-premises systems to a managed or self-hosted Apache Kafka cluster or vice versa. This tutorial outlines a set of checks, actions and processes to follow to perform a complete migration. 
+All migrations are different, but the usual use case is migrating between on-premises systems to a managed or self-hosted Apache Kafka cluster or vice versa. This tutorial outlines a set of checks, actions and processes to follow to perform a complete migration. 
 
 In this tutorial, we'll be migrating to :doc:`Aiven for Apache Kafka® </docs/products/kafka>`, but the steps described should work with any other Apache Kafka service. 
 
-We'll use :doc:`MirrorMaker 2 </docs/products/kafka/kafka-mirrormaker>`, to migrate the data. MirrorMaker 2 a fully managed distributed Apache Kafka® data replication utility.
+We'll use :doc:`MirrorMaker 2 </docs/products/kafka/kafka-mirrormaker>` to migrate the data. MirrorMaker 2 a fully managed distributed Apache Kafka® data replication utility.
 
 
 .. mermaid::
@@ -41,7 +41,7 @@ We'll use :doc:`MirrorMaker 2 </docs/products/kafka/kafka-mirrormaker>`, to migr
 Prerequisites
 -------------
 
-The exact migration steps vary depending on the existing source Kafka system. That said, as a general pre-requisite, the source and target system need to have the compatible version numbers, feature sets, and connectivity requirements. To break this down further, the tutorial assumes:
+The exact migration steps vary depending on the existing source Kafka system. As a general pre-requisite, the source and target system need to have compatible version numbers, feature sets, and connectivity requirements. To break this down further, the tutorial assumes:
 
 * **Client compatibility**: Any client interacting with Apache Kafka must be compatible with the version chosen as migration target.
 
@@ -57,7 +57,7 @@ The exact migration steps vary depending on the existing source Kafka system. Th
 
 * Available **Apache Kafka Connect connectors**: if you're planning to migrate a Kafka Connect cluster, review the list of :doc:`supported connectors </docs/products/kafka/kafka-connect>` or check out how to :doc:`bring your own Kafka Connect cluster </docs/products/kafka/kafka-connect/howto/bring-your-own-kafka-connect-cluster>`. 
 
-* **Connectivity**: the source and target clusters need to be connected via MirrorMaker 2 for the data migration, therefore a proper connection needs to be established. Moreover, you need to ensure all the clients reading or writing to Apache Kafka can connect to the brokers as well as any self hosted Kafka connect cluster. 
+* **Connectivity**: the source and target clusters need to be connected via MirrorMaker 2 for the data migration. Moreover, you need to ensure all the clients reading or writing to Apache Kafka can connect to the brokers as well as any self hosted Kafka connect cluster. 
 
   .. Warning::
 
@@ -92,7 +92,7 @@ If you're using Aiven for Apache Kafka, you need to define the source Kafka clus
   .. image:: /images/tutorials/kafka-migration/external-kafka.png
     :alt: The Aiven Console with the option to create an External Apache Kafka integration highlighted
 
-* Give the endpoint a **name** (like ``mySourceKafkaCluster``), this will later be used as reference by MirrorMaker 2. Moreover list the **bootstrap servers** and the **Security protocol** that need to be used to connect.
+* Give the endpoint a **name** (like ``mySourceKafkaCluster``), this will later be used as reference by MirrorMaker 2. Next, list the **bootstrap servers** and the **Security protocol** that need to be used to connect.
 
   .. image:: /images/tutorials/kafka-migration/external-kafka-details.png
     :alt: The list of parameters (endpoint name, bootstrap servers, security protocol) needed to define an External Apache Kafka integration
@@ -103,7 +103,7 @@ If you're using Aiven for Apache Kafka, you need to define the source Kafka clus
 
     Always check if additional firewall rules need to be set up to allow MirrorMaker 2 to access your source Apache Kafka cluster.
 
-    Aiven allows you to associate :doc:`static IP addresses </docs/platform/concepts/static-ips>` to all the services. It could be useful to associate static IP addresses to Aiven for MirrorMaker 2 to narrow down the list of IP addresses allowed to reach the source Apache Kafka cluster.
+    Aiven can associate :doc:`static IP addresses </docs/platform/concepts/static-ips>` to all services. It could be useful to associate static IP addresses to Aiven for MirrorMaker 2 to narrow down the list of IP addresses allowed to reach the source Apache Kafka cluster.
 
 Create the target Kafka cluster and MirrorMaker 2 instance
 ----------------------------------------------------------
@@ -144,7 +144,7 @@ The :doc:`Aiven for Apache Kafka </docs/products/kafka>` service is the target c
 Customize the Aiven for Apache Kafka service
 ''''''''''''''''''''''''''''''''''''''''''''
 
-Now you've created your target cluster, you need to customize it's functionality. In the **Overview** tab of your freshly created service, you'll see a bunch of toggles and properties. Change these two:
+Now that you've created your target cluster, you need to customize it's functionality. In the **Overview** tab of your freshly created service, you'll see a bunch of toggles and properties. Change these two:
 
 1. **Enable REST APIs**: via **Kafka REST API (Karapace)** > **Enable**.
 
@@ -313,12 +313,12 @@ The metric you want to track is called ``kafka_mirrormaker_summary.replication_l
 Migrate topic schemas
 ---------------------
 
-Apache Kafka topics schemas define the structure of the data in certain topics. They can be migrated in two different methods:
+Apache Kafka topics schemas define the structure of the data in certain topics. They can be migrated two different ways:
 
 #. By replicating the schemas topic stored in Apache Kafka (usually located in the ``_schemas`` topic).
 #. By extracting the schema information from the source and registering in the target environment using the appropriate APIs.
 
-The second option offers much more control over what schemas are migrated. To register the schemas in an Aiven for Apache Kafka service you can:
+The second option offers much more control over which schemas are migrated. To register the schemas in an Aiven for Apache Kafka service you can:
 
 * Navigate in the `Aiven Console <https://console.aiven.io/>`__, service page, **Schemas** tab.
 * Use the `Karapace rest APIs <https://api.aiven.io/doc/#tag/Service:_Kafka/operation/ServiceSchemaRegistrySubjectVersionPost>`_.
