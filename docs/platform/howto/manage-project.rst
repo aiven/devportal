@@ -39,9 +39,9 @@ Renaming a project is possible **only** when all the services in the project are
 Move a project
 ---------------
 
-To move a project from one organization or organizational unit to another:
+To move a project from one  organizational unit to another:
 
-#. Open the organization or organizational unit that has the project using the drop-down menu in the top right.
+#. Open the organizational unit that has the project using the drop-down menu in the top right.
 
 #. Click **Admin**.
 
@@ -49,7 +49,10 @@ To move a project from one organization or organizational unit to another:
 
 #. Find the project you want to move and click **Move project**.
 
-#. Select the organization or organizational unit that you want to move the project to.
+#. Select the organizational unit that you want to move the project to.
+
+   .. note:: 
+        Projects cannot be moved to other organizations or to organizational units that are in other organizations.
 
 #. Choose a billing group.
 
