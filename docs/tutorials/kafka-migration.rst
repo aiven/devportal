@@ -6,12 +6,12 @@ What you will learn
 
 Follow this tutorial and you'll learn all the steps involved in an Apache Kafka® migration:
 
-* What are the prerequisites? What should you pay attention to, before migrating?
-* How to sync data with MirrorMaker 2.
-* How to migrate Apache Kafka topic schemas.
-* How to migrate Apache Kafka ACLs (Access Control Lists).
-* How to migrate Apache Kafka consumer group offsets.
-* How to migrate Apache Kafka clients and connectors.
+* Prerequisites: what should you pay attention to before migrating?
+* Syncing data with MirrorMaker 2
+* Migrating Apache Kafka topic schemas
+* Migrating Apache Kafka ACLs (Access Control Lists)
+* Migrating Apache Kafka consumer group offsets
+* Migrating Apache Kafka clients and connectors
 
 
 What are you going to build
@@ -19,11 +19,11 @@ What are you going to build
 
 This tutorial outlines all common the steps to migrate an existing Apache Kafka® cluster to a new service provider using MirrorMaker 2. 
 
-All migrations are different, but the usual use case is migrating between on-premises systems to a managed or self-hosted Apache Kafka cluster or vice versa. This tutorial outlines a set of checks, actions and processes to follow to perform a complete migration. 
+All migrations are different, but the usual scenario is migrating between on-premises systems to a managed or self-hosted Apache Kafka cluster or vice versa. This tutorial outlines a set of checks, actions and processes to follow to perform a complete migration. 
 
 In this tutorial, we'll be migrating to :doc:`Aiven for Apache Kafka® </docs/products/kafka>`, but the steps described should work with any other Apache Kafka service. 
 
-We'll use :doc:`MirrorMaker 2 </docs/products/kafka/kafka-mirrormaker>` to migrate the data. MirrorMaker 2 a fully managed distributed Apache Kafka® data replication utility.
+We'll use :doc:`MirrorMaker 2 </docs/products/kafka/kafka-mirrormaker>` to migrate the data. MirrorMaker 2 is a fully managed distributed Apache Kafka® data replication utility.
 
 
 .. mermaid::
@@ -240,7 +240,7 @@ In the previous steps you defined MirrorMaker 2 source and target aliases. Now i
 
 You first need to identify the set of topics you want to migrate to the new cluster, and create a :doc:`Java regular expression </docs/products/kafka/kafka-mirrormaker/concepts/replication-flow-topics-regex>` that includes them. 
 
-As example, if you want to migrate all the topics starting with ``customer.`` and the ones containing ``.logistic.`` you can add the two regular expressions ``customer\..*`` and ``.*\.logistic\..*``.
+For example, if you want to migrate all the topics starting with ``customer.`` and the ones containing ``.logistic.`` you can add the two regular expressions: ``customer\..*`` and ``.*\.logistic\..*``.
 
 .. Tip::
 
@@ -270,7 +270,7 @@ Next, create a MirrorMaker 2 replication flow in the `Aiven Console <https://con
    * **Emit heartbeats enabled**: allow MirrorMaker 2 to emit heartbeats to keep the connection open even in cases where no messages are replicated.
    * **Enable**: to enable the data sync job.
 
-   The following represent an example of a replication flow setting:
+   The following represents an example of a replication flow setting:
 
    .. image:: /images/tutorials/kafka-migration/replication-flow-details.png
     :alt: Aiven Console, replication flow details
@@ -281,7 +281,7 @@ Next, create a MirrorMaker 2 replication flow in the `Aiven Console <https://con
 
 #. Click on **Create**
 
-Once you followed all the above steps you should see the enabled replication flow:
+After following the steps above, you should see the enabled replication flow:
 
 .. image:: /images/tutorials/kafka-migration/replication-flow-enabled.png
     :alt: Aiven Console, MirrorMaker 2 replication flow enabled
@@ -293,7 +293,7 @@ Browsing the target ``demo-kafka`` service, you should see the topics being repl
 
 .. Note::
 
-  Once you start the replication flow, MirrorMaker 2 continuously checks for topics matching the regular expression defined. Therefore, if you create new topics matching the regex in the source cluster, they'll appear also in the target cluster.
+  Once you start the replication flow, MirrorMaker 2 continuously checks for topics matching the regular expression defined. If you create new topics matching the regex in the source cluster, they'll appear also in the target cluster.
 
 .. _tutorial_kafka_migration_replication_flow_lag:
 
@@ -313,7 +313,7 @@ The metric you want to track is called ``kafka_mirrormaker_summary.replication_l
 Migrate topic schemas
 ---------------------
 
-Apache Kafka topics schemas define the structure of the data in certain topics. They can be migrated two different ways:
+Apache Kafka topic schemas define the structure of the data in certain topics. They can be migrated two different ways:
 
 #. By replicating the schemas topic stored in Apache Kafka (usually located in the ``_schemas`` topic).
 #. By extracting the schema information from the source and registering in the target environment using the appropriate APIs.
@@ -328,7 +328,7 @@ The second option offers much more control over which schemas are migrated. To r
 Migrate access control list
 ---------------------------
 
-Apache Kafka Access Control Lists (ACLs) define how various users are allowed to interact with the topics and schemas. To migrate ACLs we recommend extracting the ACL definition from the source Apache Kafka cluster and recreate the ACL in the target cluster. 
+Apache Kafka Access Control Lists (ACLs) define how various users are allowed to interact with the topics and schemas. To migrate ACLs, we recommend extracting the ACL definition from the source Apache Kafka cluster, then recreating the ACL in the target cluster. 
 
 If the target of the migration is Aiven for Apache Kafka, you can define the ACLs with:
 
@@ -344,7 +344,7 @@ After the replication flow is running and the schemas and ACLs are in place, you
 
 .. Warning::
 
-  To avoid losing Apache Kafka messages during the asynchronous MirrorMaker 2 migration, we suggest to stopping the producers, checking that both the consumer lag in the source system and the MirrorMaker 2 replication lag is ``0`` and then pointing producers and consumers to the target Apache Kafka cluster. 
+  To avoid losing Apache Kafka messages during the asynchronous MirrorMaker 2 migration, we suggest stopping the producers, checking that both the consumer lag in the source system and the MirrorMaker 2 replication lag is ``0``, and then pointing producers and consumers to the target Apache Kafka cluster. 
   
   The :ref:`migration process <tutorial_kafka_migration_migration_process>` provides a detailed series of steps to follow.
 
@@ -381,10 +381,10 @@ The following diagram showcases all the steps included in an Apache Kafka migrat
 Check the migration results
 ---------------------------
 
-Once the migration process is terminated you should check, in the target Apache Kafka cluster, that:
+When the migration process terminates, check the target Apache cluster to ensure that:
 
-* All the ACLs are in place, in the `Aiven Console <https://console.aiven.io/>`_ service page -> **Access Control List (ACL)** Tab. 
-* All the schemas are present in the target schema registry (Karapace for Aiven for Apache Kafka), in the `Aiven Console <https://console.aiven.io/>`_ service page -> **Schemas** Tab.  
-* All the topics included in the replication flows defined are present, and the data is flowing, in the `Aiven Console <https://console.aiven.io/>`_ service page -> **Topics** Tab. 
+* All the ACLs are in place: in the `Aiven Console <https://console.aiven.io/>`_ service page -> **Access Control List (ACL)** Tab. 
+* All the schemas are present in the target schema registry (Karapace for Aiven for Apache Kafka): in the `Aiven Console <https://console.aiven.io/>`_ service page -> **Schemas** Tab.  
+* All the topics included in the replication flows defined are present, and the data is flowing: in the `Aiven Console <https://console.aiven.io/>`_ service page -> **Topics** Tab. 
 * All the producers and consumers are pointing to the target cluster and correctly pushing/consuming data
 
