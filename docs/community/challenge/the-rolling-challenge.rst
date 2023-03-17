@@ -1,16 +1,9 @@
 Aiven "rolling challenge" with Apache Kafka® and Apache Flink®
 ==============================================================
 
-.. Warning::
+Welcome to Aiven's "Rolling" challenge, an easy way for you to explore Aiven for Apache Kafka® and Aiven for Apache Flink®.
 
-    As with many beta products, the Aiven for Apache Flink® experience, APIs and CLI calls are currently being redesigned, you might get error messages if using the currently documented ones.
-
-    We will be working to update all the examples in the documentation.
-    
-
-Welcome to Aiven's "Rolling" challenge, an easy way for you to explore Aiven for Apache Kafka® and Aiven for Apache Flink®. 
-
-With the launch of Aiven for Apache Flink® we added the a new way to manipulate your Apache Kafka® streaming data via SQL statements, providing the best combination of tools for real-time data transformation.
+With the launch of Aiven for Apache Flink® we added a new way to manipulate your Apache Kafka® streaming data via SQL statements, providing the best combination of tools for real-time data transformation.
 
 For this challenge, we'll be using `Aiven fake data generator on Docker <https://github.com/aiven/fake-data-producer-for-apache-kafka-docker>`_ to generate a series of symbols. The challenge consists of understanding the overall meaning of the symbols by transforming the original series of data with Apache Flink.
 
@@ -22,11 +15,8 @@ Instructions
 
 The goal is to make sense of the incoming stream of data.
 
-.. Tip::
 
-    Check out the `video showing how to follow the instructions <https://video.aiven.io/watch/NKCxYtfMBYAJATfvRDXA5K>`_  to setup the environment and get ready for the rolling challenge.
-
-1. Create an Aiven free trial account: `sign up for free <https://console.aiven.io/signup/email?credit_code=AivenChallengeBrlnStreamProcessingMeetup&trial_challenge=the_rolling_challenge>`_.
+1. Create an Aiven free trial account: `sign up for free <https://console.aiven.io/signup/email?&trial_challenge=the_rolling_challenge>`_.
 
 2. Create an :doc:`Aiven for Apache Kafka® </docs/products/kafka/getting-started>` and :doc:`Aiven for Apache Flink® </docs/products/flink/getting-started>` service
 
@@ -84,17 +74,27 @@ The goal is to make sense of the incoming stream of data.
 
 10. In the `Aiven Console <https://console.aiven.io/>`_, navigate to the Aiven for Apache Flink service page
 
-11. Play with the Aiven for Apache Flink **Jobs & Data** tab and try to make sense of the data. 
+11. Play with the Aiven for Apache Flink **Application** tab and try to make sense of the data. 
 
     .. Tip:: 
     
         The source table can be mapped in Aiven for Apache Flink with the following SQL, using the ``rolling`` topic as source::
 
             
-            ts BIGINT,
-            val string,
-            ts_ltz AS TO_TIMESTAMP_LTZ(ts, 3),
-            WATERMARK FOR ts_ltz AS ts_ltz - INTERVAL '10' SECOND
+            CREATE TABLE ROLLING_IN(
+                ts BIGINT,
+                val string,
+                ts_ltz AS TO_TIMESTAMP_LTZ(ts, 3),
+                WATERMARK FOR ts_ltz AS ts_ltz - INTERVAL '10' SECOND
+                )
+            WITH (
+                'connector' = 'kafka',
+                'properties.bootstrap.servers' = '',
+                'topic' = 'rolling',
+                'value.format' = 'json',
+                'scan.startup.mode' = 'earliest-offset'
+                )
+
 
 12. If you find the solution, email us at hacks@Aiven.io
 
