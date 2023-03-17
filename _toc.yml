@@ -1068,16 +1068,24 @@ entries:
   - file: docs/products/redis
     title: Redis
     entries:
+      - file: docs/products/redis/concepts/overview
+        title: Overview
       - file: docs/products/redis/get-started
-        title: Get started
+        title: Quickstart
       - file: docs/products/redis/concepts
         title: Concepts
         entries:
-          - glob: docs/products/redis/concepts/*
+          - file: docs/products/redis/concepts/high-availability-redis
+            title: High availablilty
+          - file: docs/products/redis/concepts/lua-scripts-redis
+            title: Lua scripts
+          - file: docs/products/redis/concepts/memory-usage
+            title: Memory management and persistence 
       - file: docs/products/redis/howto
         title: HowTo
         entries:
           - file: docs/products/redis/howto/list-code-samples
+            title: Connect to service
             entries:
               - file: docs/products/redis/howto/connect-redis-cli
               - file: docs/products/redis/howto/connect-go

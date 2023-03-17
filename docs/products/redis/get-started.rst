@@ -3,20 +3,22 @@ Get started with Aiven for Redis®*
 
 The first step in using Aiven for Redis®* is to create a service. You can do so either using the `Aiven Web Console <https://console.aiven.io/>`_ or the `Aiven CLI <https://github.com/aiven/aiven-client>`_.
 
-Create a Redis®* service using the Aiven web console
+Create a Redis®* service using the Aiven Console
 ----------------------------------------------------
-1. Log in to the `Aiven web console <https://console.aiven.io/>`_.
+1. Log in to the `Aiven Console <https://console.aiven.io/>`_.
 
 2. Follow :doc:`these instructions </docs/platform/howto/create_new_service>` to create a new Redis service.
 
-   Once the service is ready, the status changes to *Running*. This typically takes a couple of minutes, depending on your selected cloud provider and region.
+Once the service is ready, the status changes to *Running*. Depending on your selected cloud provider and region, this generally takes a couple of minutes.
+
 
 Create a Redis®* service using the Aiven CLI
 --------------------------------------------
 
-If you prefer launching a new service from the CLI, `Aiven CLI <https://github.com/aiven/aiven-client>`_ includes a command for doing so. 
+`Aiven CLI <https://github.com/aiven/aiven-client>`_ provides a simple and efficient way to create an Aiven Redis®* service. If you prefer launching a new service from the CLI, follow these steps:
 
-In order to launch a service, decide on the service plan, cloud provider, and region you want to run your service on. Then run the following command to create a **Redis®\*** service named ``demo-redis``: 
+1. Determine the service plan, cloud provider, and region you want to use for your Redis®* service.
+2. Run the following command to create a Redis®* service named demo-redis:
 
 ::
 
@@ -27,19 +29,27 @@ In order to launch a service, decide on the service plan, cloud provider, and re
          --project PROJECT_NAME 
 
 .. note::
-   See the full list of default flags with the following command: ``avn service create -h``. Additionally, there are some type specific options, which you can see executing the following command: ``avn service types -v`` 
+    There are additional options available to you, which you can view by running the following commands:
 
-Next steps
-----------
+    * For a full list of default flags: ``avn service create -h``
+    * For type-specific options: ``avn service types -v`` 
 
-* Learn how to connect to Aiven for Redis by either using ``redis-cli`` or different programming languages:
-   - :doc:`redis-cli<howto/connect-redis-cli>`
-   - :doc:`Go <howto/connect-go>`
-   - :doc:`Node <howto/connect-node>`
-   - :doc:`PHP <howto/connect-php>`
-   - :doc:`Python <howto/connect-python>`
 
-Check out more technical information:
+Connect to Aiven for Redis
+-----------------------------
+
+Learn how to connect to Aiven for Redis using different programming languages or through ``redis-cli``: 
+
+- :doc:`redis-cli<howto/connect-redis-cli>`
+- :doc:`Go <howto/connect-go>`
+- :doc:`Node <howto/connect-node>`
+- :doc:`PHP <howto/connect-php>`
+- :doc:`Python <howto/connect-python>`
+
+
+Explore other resources for Aiven for Redis
+----------------------------------------------
+
 
 * :doc:`High availability in Aiven for Redis <concepts/high-availability-redis>`.
 
