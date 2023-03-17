@@ -1,4 +1,4 @@
-Replacing a string in Grafana® dashboards
+Replace strings in Grafana® dashboards
 #########################################
 
 Sometimes, it is useful to replace all occurrences of a string in Grafana® metric expressions.

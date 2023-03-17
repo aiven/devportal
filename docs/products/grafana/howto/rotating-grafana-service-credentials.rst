@@ -1,7 +1,7 @@
-Rotating Grafana® service credentials
+Update Grafana® service credentials
 =====================================
 
-In the interests of security, it is best practice to rotate credentials from time-to-time.
+For improved security, it is recommended to periodically update your credentials.
 
 For Grafana®, a few steps need to be performed manually to do this. You will need to have access to a web browser,
 and to have installed ``avn``, the `Aiven CLI tool <https://docs.aiven.io/docs/tools/cli.html>`_.

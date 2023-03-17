@@ -43,7 +43,7 @@ entries:
       title: HowTo
       entries:
       - file: docs/platform/howto/list-user
-        title: User/Access management
+        title: User and authentication management
         entries:
           - file: docs/platform/howto/change-your-email-address
           - file: docs/platform/howto/create_authentication_token
@@ -764,13 +764,22 @@ entries:
       - file: docs/products/grafana/howto
         title: HowTo
         entries:
-          - file: docs/products/grafana/howto/log-in
-            title: Log in to Aiven for Grafana
-          - file: docs/products/grafana/howto/dashboard-previews
-            title: Dashboard previews
-          - file: docs/products/grafana/howto/replace-expression-string
-          - file: docs/products/grafana/howto/rotating-grafana-service-credentials
+          - file: docs/products/grafana/howto/list-user-access
+            title: User access
+            entries:
+            - file: docs/products/grafana/howto/log-in
+              title: Log in to Aiven for Grafana
+            - file: docs/products/grafana/howto/rotating-grafana-service-credentials
+          - file: docs/products/grafana/howto/list-manage-dashboards
+            title: Manage dashboards
+            entries:
+            - file: docs/products/grafana/howto/dashboard-previews
+              title: Dashboard previews
+            - file: docs/products/grafana/howto/replace-expression-string
           - file: docs/products/grafana/howto/send-emails
+            title: Alerts and notifcations
+          - file: docs/products/grafana/howto/list-manage-cluster
+            title: Manage cluster
       - file: docs/products/grafana/reference
         title: Reference
         entries:
@@ -841,6 +850,8 @@ entries:
               - file: docs/products/mysql/howto/connect-with-java
               - file: docs/products/mysql/howto/connect-with-php
           - file: docs/products/mysql/howto/create-database
+          - file: docs/products/mysql/howto/create-remote-replica
+            title: Create remote replicas
           - file: docs/products/mysql/howto/connect-from-mysql-workbench
           - file: docs/products/mysql/howto/do-check-service-migration
             title: Run pre-migration checks
@@ -869,8 +880,16 @@ entries:
     title: OpenSearch
     entries:
       - file: docs/products/opensearch/getting-started
-        title: Get started
-      - file: docs/products/opensearch/howto/sample-dataset
+        title: Quickstart
+        entries:
+        - file: docs/products/opensearch/howto/sample-dataset
+      - file: docs/products/opensearch/list-overview
+        title: Overview
+        entries:
+        - file: docs/products/opensearch/concepts/service-overview
+          title: Service overview
+        - file: docs/products/opensearch/reference/plans-pricing
+          title: Plans and pricing
       - file: docs/products/opensearch/concepts
         title: Concepts
         entries:
@@ -886,30 +905,52 @@ entries:
       - file: docs/products/opensearch/howto
         title: HowTo
         entries:
-          - file: docs/products/opensearch/howto/opensearch-with-curl
-          - file: docs/products/opensearch/howto/migrating_elasticsearch_data_to_aiven
-          - file: docs/products/opensearch/howto/opensearch-log-integration
-          - file: docs/products/opensearch/howto/upgrade-to-opensearch
-          - file: docs/products/opensearch/howto/upgrade-clients-to-opensearch
-          - file: docs/products/opensearch/howto/setup-cross-cluster-replication-opensearch
-          - file: docs/products/opensearch/howto/connect-with-nodejs
-            title: Connect with NodeJS
-          - file: docs/products/opensearch/howto/connect-with-python
-            title: Connect with Python
-          - file: docs/products/opensearch/howto/opensearch-search-and-python
-            title: Search with Python
-          - file: docs/products/opensearch/howto/opensearch-and-nodejs
-            title: Search with NodeJS
-          - file: docs/products/opensearch/howto/opensearch-aggregations-and-nodejs
-            title: Aggregation with NodeJS
           - file: docs/products/opensearch/howto/control_access_to_content
-          - file: docs/products/opensearch/howto/restore_opensearch_backup
-          - file: docs/products/opensearch/howto/import-opensearch-data-elasticsearch-dump-to-aiven
-          - file: docs/products/opensearch/howto/import-opensearch-data-elasticsearch-dump-to-aws
-          - file: docs/products/opensearch/howto/set_index_retention_patterns
-          - file: docs/products/opensearch/howto/opensearch-alerting-api
-          - file: docs/products/opensearch/howto/integrate-with-grafana
-          - file: docs/products/opensearch/howto/handle-low-disk-space
+            title: Access control
+          - file: docs/products/opensearch/howto/list-connect-to-service
+            title: Connect with service
+            entries:
+            - file: docs/products/opensearch/howto/opensearch-with-curl
+              title: Connect with cURL
+            - file: docs/products/opensearch/howto/connect-with-nodejs
+              title: Connect with NodeJS
+            - file: docs/products/opensearch/howto/connect-with-python
+              title: Connect with Python
+          - file: docs/products/opensearch/howto/list-data-management
+            title: Data management 
+            entries:  
+            - file: docs/products/opensearch/howto/import-opensearch-data-elasticsearch-dump-to-aiven
+            - file: docs/products/opensearch/howto/import-opensearch-data-elasticsearch-dump-to-aws
+          - file: docs/products/opensearch/howto/list-search-service
+            title: Search and aggregation
+            entries:
+            - file: docs/products/opensearch/howto/opensearch-search-and-python
+              title: Search with Python
+            - file: docs/products/opensearch/howto/opensearch-and-nodejs
+              title: Search with NodeJS
+            - file: docs/products/opensearch/howto/opensearch-aggregations-and-nodejs
+              title: Aggregation with NodeJS
+          - file: docs/products/opensearch/howto/migrating_elasticsearch_data_to_aiven
+            title: Migrate Elasticsearch data
+          - file: docs/products/opensearch/howto/setup-cross-cluster-replication-opensearch
+            title: Cross-cluster replication
+          - file: docs/products/opensearch/howto/list-manage-service
+            title: Manage service
+            entries:
+            - file: docs/products/opensearch/howto/restore_opensearch_backup
+            - file: docs/products/opensearch/howto/set_index_retention_patterns
+            - file: docs/products/opensearch/howto/opensearch-alerting-api
+            - file: docs/products/opensearch/howto/handle-low-disk-space
+          - file: docs/products/opensearch/howto/list-integrations
+            title: Integrate service
+            entries:
+            - file: docs/products/opensearch/howto/opensearch-log-integration
+            - file: docs/products/opensearch/howto/integrate-with-grafana
+          - file: docs/products/opensearch/howto/list-upgrade
+            title: Upgrade to OpenSearch
+            entries:
+            - file: docs/products/opensearch/howto/upgrade-to-opensearch
+            - file: docs/products/opensearch/howto/upgrade-clients-to-opensearch
       - file: docs/products/opensearch/dashboards
         title: OpenSearch Dashboards
         entries:
@@ -997,29 +1038,32 @@ entries:
               - file: docs/products/postgresql/howto/monitor-with-pgwatch2
               - file: docs/products/postgresql/howto/datasource-integration
               - file: docs/products/postgresql/howto/analyze-with-google-data-studio
+      - file: docs/products/postgresql/troubleshooting
+        title: Troubleshooting
+        entries:
+          - file: docs/products/postgresql/troubleshooting/troubleshooting-connection-pooling
+            title: Connection pooling
       - file: docs/products/postgresql/reference
         title: Reference
         entries:
-          - file: docs/products/postgresql/reference/high-cpu-load-of-pgbouncer
-            title: High CPU load
           - file: docs/products/postgresql/reference/list-of-advanced-params
             title: Advanced parameters
-          - file: docs/products/postgresql/reference/list-of-extensions
-            title: Extensions
-          - file: docs/products/postgresql/reference/pg-metrics
-            title: Metrics exposed to Grafana
           - file: docs/products/postgresql/reference/pg-connection-limits
             title: Connection limits per plan
+          - file: docs/products/postgresql/reference/use-of-deprecated-tls-versions
+            title: Deprecated TLS versions
+          - file: docs/products/postgresql/reference/list-of-extensions
+            title: Extensions
+          - file: docs/products/postgresql/reference/idle-connections
+            title: Keep-alive connections parameters
+          - file: docs/products/postgresql/reference/pg-metrics
+            title: Metrics exposed to Grafana
           - file: docs/products/postgresql/reference/resource-capability
             title: Resource capability per plan
-          - file: docs/products/postgresql/reference/terminology
-            title: Terminology
-          - file: docs/products/postgresql/reference/idle-connections
-            title: Idle connections
-          - file: docs/products/postgresql/reference/use-of-deprecated-tls-versions
-            title: Use of deprecated TLS Versions
           - file: docs/products/postgresql/reference/log-formats-supported
             title: Supported log formats
+          - file: docs/products/postgresql/reference/terminology
+            title: Terminology
 
   - file: docs/products/redis
     title: Redis

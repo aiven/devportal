@@ -107,13 +107,13 @@ In the generated code, ``DataStreamJob`` is the main entry point, and has alread
 
         Properties props = new Properties();
         props.put("security.protocol", "SSL");
-        props.put("ssl.endpoint.identification.algorithm", "");
-        props.put("ssl.truststore.location", "TRUSTSTORE_PATH/client.truststore.jks");
-        props.put("ssl.truststore.password", "KEY_TRUST_SECRET");
         props.put("ssl.keystore.type", "PKCS12");
         props.put("ssl.keystore.location", "KEYSTORE_PATH/client.keystore.p12");
         props.put("ssl.keystore.password", "KEY_TRUST_SECRET");
         props.put("ssl.key.password", "KEY_TRUST_SECRET");
+        props.put("ssl.truststore.type", "JKS");
+        props.put("ssl.truststore.location", "TRUSTSTORE_PATH/client.truststore.jks");
+        props.put("ssl.truststore.password", "KEY_TRUST_SECRET");
 
         KafkaSource<String> source = KafkaSource.<String>builder()
             .setBootstrapServers("APACHE_KAFKA_HOST:APACHE_KAFKA_PORT")
