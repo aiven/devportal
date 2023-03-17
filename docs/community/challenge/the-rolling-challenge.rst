@@ -22,9 +22,6 @@ Instructions
 
 The goal is to make sense of the incoming stream of data.
 
-.. Tip::
-
-    Check out the `video showing how to follow the instructions <https://video.aiven.io/watch/NKCxYtfMBYAJATfvRDXA5K>`_  to setup the environment and get ready for the rolling challenge.
 
 1. Create an Aiven free trial account: `sign up for free <https://console.aiven.io/signup/email?&trial_challenge=the_rolling_challenge>`_.
 
