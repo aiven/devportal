@@ -19,7 +19,7 @@ Aiven for Redis has many features that make it easy and stress-free to use:
 
 * **Managed service:** Aiven for Redis is fully managed, so you don't have to worry about setup, management, or updates. Aiven provides tools and integrations to help you easily use Redis in your data pipelines.
 
-* **Fast and easy deployment:** Aiven for Redis provides production-ready Redis clusters within a few mins. You can deploy Redis to the cloud of your choice from 5 public clouds and over 100 regions. Aiven uses high-performance clusters with carefully selected instance types and storage options for top-notch performance. A Bring-your-own-account (BYOA) deployment model is available for strict control requirements.
+* **Fast and easy deployment:** Aiven for Redis provides production-ready Redis clusters within a few minutes. You can deploy Redis to the cloud of your choice from 5 public clouds and over 100 regions. Aiven uses high-performance clusters with carefully selected instance types and storage options for top-notch performance. A Bring-your-own-account (BYOA) deployment model is available for strict control requirements.
 
 * **Integration with data infrastructure:** Aiven ensures secure network connectivity using VPC peering, PrivateLink, or TransitGateway technologies. Aiven integrates with various observability tooling, including Datadog, Prometheus, and Jolokia, or you can use Aiven's observability tools for improved monitoring and logging.
 
