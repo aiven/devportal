@@ -39,7 +39,7 @@ Renaming a project is possible **only** when all the services in the project are
 Move a project
 ---------------
 
-To move a project from one  organizational unit to another:
+To move a project from one organizational unit to another:
 
 #. Open the organizational unit that has the project using the drop-down menu in the top right.
 
