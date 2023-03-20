@@ -15,7 +15,7 @@ Once the service is ready, the status changes to *Running*. Depending on your se
 Create a Redis®* service using the Aiven CLI
 --------------------------------------------
 
-`Aiven CLI <https://github.com/aiven/aiven-client>`_ provides a simple and efficient way to create an Aiven Redis®* service. If you prefer launching a new service from the CLI, follow these steps:
+`Aiven CLI <https://github.com/aiven/aiven-client>`_ provides a simple and efficient way to create an Aiven for Redis®* service. If you prefer launching a new service from the CLI, follow these steps:
 
 1. Determine the service plan, cloud provider, and region you want to use for your Redis®* service.
 2. Run the following command to create a Redis®* service named demo-redis:
