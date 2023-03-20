@@ -1183,6 +1183,8 @@ entries:
             title: Upgrade and failover procedures
           - file: docs/products/postgresql/concepts/pgvector
             title: AI-powered search with pgvector
+          - file: docs/products/postgresql/concepts/pg-audit-logging
+            title: Audit logging
       - file: docs/products/postgresql/howto
         title: HowTo
         entries:
@@ -1227,6 +1229,8 @@ entries:
               - file: docs/products/postgresql/howto/use-pgvector
                 title: Enable and use pgvector
               - file: docs/products/postgresql/howto/pg-object-size
+              - file: docs/products/postgresql/howto/pgaudit-logging
+                title: Audit logs
           - file: docs/products/postgresql/howto/list-replication-migration
             title: Migrate
             entries:

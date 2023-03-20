@@ -40,6 +40,7 @@ Aiven for PostgreSQL® how-tos
     - :doc:`Prevent PostgreSQL® full disk issues </docs/products/postgresql/howto/prevent-full-disk>`
     - :doc:`Enable and use pgvector on Aiven for PostgreSQL® </docs/products/postgresql/howto/use-pgvector>`
     - :doc:`Check size of a database, a table or an index </docs/products/postgresql/howto/pg-object-size>`
+    - :doc:`Collect audit logs in Aiven for PostgreSQL® </docs/products/postgresql/howto/pgaudit-logging>`
 
 .. dropdown:: Migration
 

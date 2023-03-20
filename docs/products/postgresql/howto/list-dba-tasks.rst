@@ -74,3 +74,6 @@ Database administration tasks
     .. grid-item-card:: :doc:`Check size of a database, a table or an index </docs/products/postgresql/howto/pg-object-size>`
         :shadow: md
         :margin: 2 2 0 0
+    .. grid-item-card:: :doc:`Collect audit logs in Aiven for PostgreSQL® </docs/products/postgresql/howto/pgaudit-logging>`
+        :shadow: md
+        :margin: 2 2 0 0

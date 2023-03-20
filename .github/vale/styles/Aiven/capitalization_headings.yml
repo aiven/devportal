@@ -101,6 +101,7 @@ exceptions:
   - Out of Memory Killer
   - Pagila
   - pgAdmin
+  - PGAudit
   - PgBouncer
   - pgvector
   - PostgreSQL

@@ -38,3 +38,7 @@ Aiven for PostgreSQL® concepts
     .. grid-item-card:: :doc:`Upgrade and failover procedures </docs/products/postgresql/concepts/upgrade-failover>`
         :shadow: md
         :margin: 2 2 0 0
+
+    .. grid-item-card:: :doc:`Aiven for PostgreSQL audit logging </docs/products/postgresql/concepts/pg-audit-logging>`
+        :shadow: md
+        :margin: 2 2 0 0
