@@ -18,11 +18,11 @@ Create a Redis®* service using the Aiven CLI
 `Aiven CLI <https://github.com/aiven/aiven-client>`_ provides a simple and efficient way to create an Aiven for Redis®* service. If you prefer launching a new service from the CLI, follow these steps:
 
 1. Determine the service plan, cloud provider, and region you want to use for your Redis®* service.
-2. Run the following command to create a Redis®* service named demo-redis:
+2. Run the following command to create a Redis®* service named demo-Redis:
 
 ::
 
-      avn service create demo-redis       \
+      avn service create demo-Redis       \
          --service-type redis             \
          --cloud CLOUD_AND_REGION         \
          --plan PLAN                      \
