@@ -1,20 +1,39 @@
 Get Started with Aiven for OpenSearch®
 ======================================
 
-Aiven for OpenSearch® is available in the `Aiven console <https://console.aiven.io>`_.
+To start using Aiven for OpenSearch®, the first step is to create a service. You can do this on the `Aiven Console <https://console.aiven.io/>`_ or with the `Aiven CLI <https://github.com/aiven/aiven-client>`_.
 
-Choose the OpenSearch® version, your cloud provider and location to deploy to, then choose which plan to use.
+This quickstart section provides the steps to create an Aiven for OpenSearch® service. 
 
-Finally, give the service a name and then select **Create Service**, and your shiny new OpenSearch database will start building. While it does that, you can already visit the service overview page to see the details of the service.
 
-OpenSearch Dashboards is included
+Create an Aiven for OpenSearch® service
+-----------------------------------------
+
+1. Log in to the `Aiven Console <https://console.aiven.io/>`_.
+
+2. Follow :doc:`these instructions </docs/platform/howto/create_new_service>` to create a new Aiven for OpenSearch service.
+
+Once the service is ready, the status changes to *Running*. Depending on your selected cloud provider and region, this generally takes a couple of minutes.
+
+
+Access OpenSearch Dashboards 
 ---------------------------------
+When you create an Aiven for OpenSearch service, you will automatically get access to OpenSearch Dashboards. This enables you to quickly and easily visualize data from your OpenSearch service with minimal effort.
 
-When you create an Aiven for OpenSearch service, you will also get an OpenSearch Dashboards service alongside it. This means you can quickly and easily visualize the data in an OpenSearch service.
+To access OpenSearch Dashboards, follow these steps:
 
-Get up and running
-------------------
+1. On the **Overview** page of your Aiven for OpenSearch service, click **OpenSearch Dashboards**.
+2. Copy or click on the Service URI to open OpenSearch Dashboards in your browser.
+3. Enter the username and password from the connection information screen when prompted.
+4. Click **Sign In** to view the OpenSearch Dashboards.
 
-Connect to your OpenSearch service and start working with data. Try :doc:`connecting with cURL <howto/opensearch-with-curl>` as great place to start with your services. The connection details are in the service overview.
+After logging in, you can explore and interact with your data, as well as add sample data and utilize OpenSearch API features.
 
-For inspiration, there's a :doc:`recipes dataset <howto/sample-dataset>` that would be an excellent starting point if you are new to OpenSearch.
+For more information, see :doc:`OpenSearch Dashboards </docs/products/opensearch/dashboards>` section. 
+
+Connect to OpenSearch
+----------------------
+
+To start working with your data in OpenSearch, you need to first connect to your service. A good starting point is to learn how to :doc:`connect with cURL <howto/opensearch-with-curl>`. You can find the necessary connection details in the service overview.
+
+If you're new to OpenSearch and looking for inspiration, recommend checking out our :doc:`sample dataset <howto/sample-dataset>`, which provides a great starting point for exploring the capabilities of the platform.
