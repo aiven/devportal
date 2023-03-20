@@ -1,16 +1,32 @@
-Enable Aiven password
-=====================
+Enable or disable password authentication
+==========================================
 
-If you prefer to authenticate directly in the `Aiven web console <https://console.aiven.io/>`_ without using third party information, it is possible. You can log in directly by enabling your Aiven password. You can follow these steps to enable your password:
+Enable your Aiven password
+---------------------------
 
-1. Log in to the `Aiven web console <https://console.aiven.io/>`_.
-2. Click **User information**, then select **Authentication** tab
-3. Scroll down on **Authentication methods**, and select **Aiven Password**
-4. Enable your **Aiven Password**
+You can authenticate directly with your email and password in the `Aiven Console <https://console.aiven.io/>`_ by enabling your Aiven password:
 
-To make sure it works:
+1. In the `Aiven Console <https://console.aiven.io/>`_, click the **User information** icon.
+2. Click **Authentication methods**.
+3. On the **Aiven Password** card, click the toggle to enable it. 
 
-1. Log out from the `Aiven web console <https://console.aiven.io/>`_.
-2. Log in to the `Aiven web console <https://console.aiven.io/>`_, and select **Log in with Password** option.
+You will receive an email to reset your password and complete the process of enabling the password.
 
-If you can log in using your Aiven password, then it worked. Otherwise, contact the support team via ``support@aiven.io`` to assist you.
+Disable your Aiven password
+---------------------------
+
+If you :doc:`set up a SAML authentication method <saml/saml-authentication>` and want to disable the password authentication to prevent it being used to access projects within your organization:
+
+1. Log in to the `Aiven Console <https://console.aiven.io/>`_ using your alternative authentication method. 
+
+2. Click on the **User information** icon.
+
+3. Click **Authentication methods**.
+
+4. On the **Aiven Password** card, click the toggle to disable it.
+
+.. warning::
+
+    Once disabled, you'll get an error if you try to log in using the Aiven CLI without a token. 
+
+.. note:: You can also view and update authentication methods :doc:`using the Aiven CLI <../../tools/cli/account/account-authentication-method>`.
