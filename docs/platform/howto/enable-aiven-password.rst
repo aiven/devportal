@@ -1,8 +1,8 @@
 Enable or disable password authentication
 ==========================================
 
-Enable your Aiven password
----------------------------
+Enable password authentication
+-------------------------------
 
 You can authenticate directly with your email and password in the `Aiven Console <https://console.aiven.io/>`_ by enabling your Aiven password:
 
@@ -12,8 +12,8 @@ You can authenticate directly with your email and password in the `Aiven Console
 
 You will receive an email to reset your password and complete the process of enabling the password.
 
-Disable your Aiven password
----------------------------
+Disable password authentication
+--------------------------------
 
 If you :doc:`set up a SAML authentication method <saml/saml-authentication>` and want to disable the password authentication to prevent it being used to access projects within your organization:
 
