@@ -123,8 +123,7 @@ Go to the *Overview* page of your Aiven for Apache Kafka service.
             for authentication
 -   Create the keystore `client.keystore.p12` and truststore
     `client.truststore.jks` by following
-    `our article on configuring Java SSL to access Kafka <../products/kafka/howto/keystore-truststore>`{.interpreted-text
-    role="doc"}
+    [our article on configuring Java SSL to access Kafka](https://docs.aiven.io/docs/products/kafka/howto/keystore-truststore)
 
 > **Warning**
 > In the below examples, we just pass the name of the keystore and
@@ -136,7 +135,7 @@ See the documentation for [avn service
 user-creds-download](https://docs.aiven.io/docs/tools/cli/service/user.html#avn-service-user-creds-download)
 
 Details on the Aiven for Apache Kafka configuration can be found under
-the `kafka-tutorial-reference`{.interpreted-text role="ref"} section.
+the [reference](#reference) section.
 
 ## Create a topic
 
@@ -144,7 +143,7 @@ A topic in Kafka is a named stream of records that is stored within a
 Kafka cluster. A record is a key-value pair associated with a timestamp
 and other metadata. Records and topics can represent whatever you need
 from a business perspective: in general, records represent events that
-happen in a system, and a topic is a grouping of similar events. Let\'s
+happen in a system, and a topic is a grouping of similar events. Let's
 create a Kafka topic.
 
 If you have a local Kafka instance running, the command to create the
@@ -177,7 +176,7 @@ partitions is 1.
 
 A consumer group is the logical grouping of consumers. A consumer is
 usually a client application that reads (consumes) events from Kafka. In
-Kafka, the consumer(s) must belong to a consumer group. If you don\'t
+Kafka, the consumer(s) must belong to a consumer group. If you don't
 define one, Kafka generates a random consumer group. For a Kafka cluster
 with multiple nodes, consumers within the same consumer group can exist
 on different nodes.
@@ -244,8 +243,8 @@ environments.
 
 In Kafka, a producer is any application which generates and sends
 records to a Kafka cluster. The following Python code generates some
-messages to the \"demo-topic\" topic using the
-[Kafka-python]{.title-ref} library:
+messages to the "demo-topic" topic using the
+`Kafka-python` library:
 
 > **Note**
 > Ensure that the certificate files you downloaded above are in the same
@@ -364,8 +363,7 @@ for msg in consumer:
 
 Once messages are produced, they are written to the single partition
 `p0` of `demo-topic`. All the messages are consumed by the single
-consumer `co0` which is part of the single consumer group [consumer
-group A]{.title-ref}.
+consumer `co0` which is part of the single consumer group `consumer group A`.
 
 Once you run one of the above consumer program `python consumer.py`,
 you'll see the program running in the terminal but not doing anything!
@@ -388,7 +386,7 @@ messages from this topic.
 ### 1 topic : 1 partition : 2 consumers : 1 consumer group
 
 Let's take a look at this setup where there are two consumers. `co0`
-and `co1` are registered to the same [consumer group A]{.title-ref}.
+and `co1` are registered to the same `consumer group A`.
 
 In this setup, one consumer sits idle. This highlights an important
 concept in Kafka - records are processed in parallel and the same
@@ -700,7 +698,7 @@ Here's an overview of what each program does:
 #### Producer program
 
 The producer program uses the `confluent-kafka` library to create an
-AvroProducer instance and send Avro messages to a Kafka broker. Here\'s
+AvroProducer instance and send Avro messages to a Kafka broker. Here's
 a breakdown of what the program does:
 
 -   Import the necessary libraries: `confluent_kafka`,
@@ -735,7 +733,7 @@ Here's a breakdown of what the program does:
 
 You might have noticed `avro_serializer_key`, `avro_serializer_value`,
 `avro_deserializer_key`, and `avro_deserializer_value` in these
-programs. Since Kafka brokers don\'t know about the records and only
+programs. Since Kafka brokers don't know about the records and only
 deal in bytes, the programs need to serialize and deserialize data
 before making sense of them. Overall, these two programs demonstrate how
 to use Avro serialization and SSL protocols to send and receive messages
@@ -750,26 +748,26 @@ serialization in Kafka and use of Apache Avro™ to produce and consume
 messages. Finally, we validated our understanding by creating multiple
 Python programs to send and receive messages to/from Kafka.
 
-## Reference {#kafka-tutorial-reference}
+## Reference
 
 ### Variables
 
-  Variable                         Description
-  -------------------------------- -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  `HOST`                           Host name for the connection
-  `USER_NAME` or `SASL_USERNAME`   Name of the user for the connection
-  `SSL_PORT`                       Port number to use for SSL
-  `SASL_PORT`                      Port number to use for SASL
-  `SCHEMA_REGISTRY_HOST`           Host address for the schema registry
-  `SCHEMA_REGISTRY_PORT`           Port number for the schema registry
-  `SASL_PASSWORD`                  Password required to connect using SASL
-  `TRUSTSTORE_LOCATION`            Location of your truststore (named by default as client.truststore.jks)
-  `TRUSTSTORE_PASSWORD`            Password you used when creating a truststore
-  `KEYSTORE_LOCATION`              Location of you keystore (named by default as client.keystore.p12)
-  `KEYSTORE_PASSWORD`              Password you used when creating a keystore
-  `KEY_PASSWORD`                   Password for the key in the keystore, if you chose a different password than the one for keystore
-  `SERIALIZER`                     How to serialize data, you can find available options [in the Apache Kafka documentation](https://kafka.apache.org/0102/javadoc/org/apache/kafka/common/serialization/).
-  `DESERIALIZER`                   How to de-serialize data, you can find available options [in the Apache Kafka documentation](https://kafka.apache.org/0102/javadoc/org/apache/kafka/common/serialization/).
+| Variable  | Description  |
+|---|---|
+| `HOST`  | Host name for the connection  |
+| `USER_NAME` or `SASL_USERNAME`  | Name of the user for the connection  |
+| `SSL_PORT`  | Port number to use for SSL  |
+| `SASL_PORT`  | Port number to use for SASL  |
+| `SCHEMA_REGISTRY_HOST`  | Host address for the schema registry  |
+| `SCHEMA_REGISTRY_PORT`  | Port number for the schema registry  |
+| `SASL_PASSWORD`  | Password required to connect using SASL  |
+| `TRUSTSTORE_LOCATION`  | Location of your truststore (named by default as client.truststore.jks)  |
+| `TRUSTSTORE_PASSWORD`  | Password you used when creating a truststore  |
+| `KEYSTORE_LOCATION`  | Location of you keystore (named by default as client.keystore.p12)  |
+| `KEYSTORE_PASSWORD`  | Password you used when creating a keystore  |
+| `KEY_PASSWORD`  | Password for the key in the keystore, if you chose a different password than the one for keystore  |
+| `SERIALIZER`  | How to serialize data, you can find available options [in the Apache Kafka documentation](https://kafka.apache.org/0102/javadoc/org/apache/kafka/common/serialization/)  |
+| `DESERIALIZER`  | How to de-serialize data, you can find available options [in the Apache Kafka documentation](https://kafka.apache.org/0102/javadoc/org/apache/kafka/common/serialization/)  |
 
 For consumers you will also need:
 
@@ -807,5 +805,4 @@ Position](https://kafka.apache.org/documentation/#design_consumerposition).
 
 ## Next steps
 
-Check out `more Aiven tutorials <../tutorials>`{.interpreted-text
-role="doc"} to learn about open-source data infrastructure.
+Check out [more Aiven tutorials](https://docs.aiven.io/docs/tutorials) to learn about open-source data infrastructure.
