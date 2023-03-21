@@ -27,7 +27,7 @@ of the [Producer API](https://kafka.apache.org/documentation/#producerapi) and t
 
 ## Prerequisites
 
-To get started, you\'ll need:
+To get started, you'll need:
 
 -   A Kafka service - either local or managed
 
@@ -55,9 +55,7 @@ To get started, you\'ll need:
     pip3 install fastavro
     ```
 
-If you already have a Kafka service, jump to
-`tutorial-kaka-python-create-a-topic`{.interpreted-text role="ref"}
-section.
+If you already have a Kafka service, jump to [Create a topic](#create-a-topic) section.
 
 Otherwise, [sign up for an Aiven
 account](https://console.aiven.io/signup) and follow the tutorial to
@@ -140,7 +138,7 @@ user-creds-download](https://docs.aiven.io/docs/tools/cli/service/user.html#avn-
 Details on the Aiven for Apache Kafka configuration can be found under
 the `kafka-tutorial-reference`{.interpreted-text role="ref"} section.
 
-## Create a topic {#tutorial-kaka-python-create-a-topic}
+## Create a topic
 
 A topic in Kafka is a named stream of records that is stored within a
 Kafka cluster. A record is a key-value pair associated with a timestamp
