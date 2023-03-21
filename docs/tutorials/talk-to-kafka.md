@@ -64,8 +64,7 @@ create a Kafka service on Aiven.
 ## Create an Aiven for Apache Kafka® service
 
 To create an
-`Aiven for Apache Kafka </docs/products/kafka>`{.interpreted-text
-role="doc"} service, you need to:
+[Aiven for Apache Kafka](https://docs.aiven.io/docs/products/kafka) service, you need to:
 
 1.  Log in to the [Aiven web console](https://console.aiven.io/).
 
@@ -771,31 +770,10 @@ Python programs to send and receive messages to/from Kafka.
 
 For consumers you will also need:
 
-+----------------------------------+----------------------------------+
-| Variable                         | Description                      |
-+==================================+==================================+
-| `TOPIC_NAME`                     | The name of the topic to read    |
-|                                  | from                             |
-+----------------------------------+----------------------------------+
-| \                                | \-\-\-\-\-\-\-\-\-\-\-\-\        |
-| -\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-- | -\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\ |
-|                                  | -\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\ |
-|                                  | -\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-- |
-+----------------------------------+----------------------------------+
-| `START_FROM`                     | The value to use for the         |
-|                                  | `auto_offset_reset` parameter,   |
-|                                  | which says which message to      |
-|                                  | start consuming from.            |
-|                                  |                                  |
-|                                  | Allowed values are:              |
-|                                  |                                  |
-|                                  | -   `latest` - consume from the  |
-|                                  |     end of the topic partition.  |
-|                                  |     This is the default.         |
-|                                  | -   `earliest` - consume from    |
-|                                  |     the beginning of the topic   |
-|                                  |     partition                    |
-+----------------------------------+----------------------------------+
+| Variable  | Description  |
+|---|---|
+| `TOPIC_NAME`  | The name of the topic to read from  |
+| `START_FROM`  | The value to use for the `auto_offset_reset` parameter, which says which message to start consuming from |
 
 For more information on `auto_offset_reset`, see the Kafka documentation
 on
