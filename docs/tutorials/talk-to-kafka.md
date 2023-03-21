@@ -773,7 +773,7 @@ For consumers you will also need:
 | Variable  | Description  |
 |---|---|
 | `TOPIC_NAME`  | The name of the topic to read from  |
-| `START_FROM`  | The value to use for the `auto_offset_reset` parameter, which says which message to start consuming from |
+| `START_FROM`  | The value to use for the `auto_offset_reset` parameter |
 
 For more information on `auto_offset_reset`, see the Kafka documentation
 on
