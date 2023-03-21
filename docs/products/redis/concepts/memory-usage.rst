@@ -1,5 +1,9 @@
-Memory usage, on-disk persistence and replication in Aiven for Redis®*
+Memory Management and persistence in Aiven for Redis®*
 ======================================================================
+
+Learn how Aiven for Redis®* addresses the challenges of high memory usage and high change rate in Redis®*.
+
+Redis®* is commonly used as a database cache, where data is written to Redis whenever it is fetched from a database. As a result, the system experiences high memory usage and a high rate of change. In this topic, explore how Aiven for Redis®* solves these issues by implementing robust memory management and persistence strategies.
 
 Here we show you how Aiven for Redis®* solves the challenges related to high memory usage and high change rate.
 
