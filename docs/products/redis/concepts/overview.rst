@@ -38,8 +38,6 @@ Ways to use Aiven for Redis
 Redis resources
 ----------------
 
-* `Main Redis page <https://redis.io/>`_
-
 * `Redis documentation <https://redis.io/documentation>`_
 
 * `Redis refcard on DZone <https://dzone.com/refcardz/getting-started-with-redis>`_
