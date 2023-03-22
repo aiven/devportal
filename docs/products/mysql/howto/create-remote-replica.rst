@@ -8,7 +8,7 @@ About remote replicas
 
 Aiven for MySQL read-only replicas provide a great way to reduce the load on the primary server by enabling read-only queries to be performed against the replica. It is also a good way to optimise query response times across different geographical locations since, with Aiven, the replica can be placed in different regions or even different cloud providers.
 
-Using read-only replicas works as an extra measure to protect your data from the unlikely event that a whole region would go down. It can also improve performance if a read replica is placed closer to your end-users that read from the database.
+Using read-only replicas works as an extra measure to protect your data from the unlikely event that a whole region would go down. It can also improve performance if a read-only replica is placed closer to your end-users that read from the database.
 
 Create a remote replica
 -----------------------
@@ -19,7 +19,7 @@ Take the following steps to provision a remote replica:
 
 2. Navigate to Aiven for MySQL services for which you wish to create a remote replica.
 
-3. Select **Create a read replica**.
+3. Select **Create replica**.
 
 .. image:: /images/products/mysql/mysql-create-read-only-replica.png
    :alt: Start creating a read-only replica 
@@ -29,8 +29,8 @@ Take the following steps to provision a remote replica:
 5. Select **Create**.
 
 .. image:: /images/products/mysql/mysql-create-read-only-replica-choose-plan.png
-   :alt: Create read-only replica wizard
+   :alt: Create replica wizard
 
 .. topic:: Result
 
-   You can see the read replica being created and listed as any other Aiven service on the **Services** page in the console.
+   You can see the read-only replica being created and listed as any other Aiven service on the **Services** page in the console.

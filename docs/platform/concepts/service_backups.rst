@@ -81,7 +81,7 @@ For Aiven for PostgreSQL, full daily backups are taken and WAL segments are cons
 * For a business or premium plan, Aiven can reconstruct the latest state from a replica
 * For a startup plan, Aiven can reconstruct the latest state from the latest base backup and replay the latest WAL segments on top of that.
 
-You can supplement this with a remote read replica service, which you can run in a different cloud region or with another cloud provider and promote to master if needed.
+You can supplement this with a remote read-only replica service, which you can run in a different cloud region or with another cloud provider and promote to master if needed.
 
 To shift the backup schedule to a new time, you can modify the backup time configuration option in **Advanced Configuration** in the Aiven console. If there has been a recent backup taken, it may take another backup cycle before the new backup time takes effect.
 
