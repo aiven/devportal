@@ -21,7 +21,7 @@ To set up a remote replica:
 .. image:: /images/products/postgresql/read-replica-create.png
     :alt: Create replica button
 
-1. Enter a name for the remote replica and select the cloud provider, region, and Aiven for PostgreSQL service plan that you want to use, then click **Create**
+4. Enter a name for the remote replica and select the cloud provider, region, and Aiven for PostgreSQL service plan that you want to use, then click **Create**
 
 The read-only replica is created and added to the list of services in your project. The **Overview** page of the replica indicates the name of the primary service for the replica.
 
