@@ -1,4 +1,4 @@
-Aiven Servuces Nodes Firewall Configuration
+Aiven Service Nodes Firewall Configuration
 #############################################
 
 Overview
