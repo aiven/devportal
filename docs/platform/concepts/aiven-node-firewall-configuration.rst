@@ -12,7 +12,7 @@ Service ports that customers can connect to depend on what service and deploymen
 * Has the customer configured IP ranges in  user_config.ip_filter?
 * Has the customer enabled public internet access for otherwise private-only services?
 
-Commonly Opened Ports
+Commonly opened ports
 ----------------------
 Aiven services commonly assign the following ports for services when deployed without any special configuration:
 
