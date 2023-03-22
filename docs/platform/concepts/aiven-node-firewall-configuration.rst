@@ -41,8 +41,10 @@ Cloud Management
 ----------------
 Local access to metadata address is allowed to 169.254.169.254/32. This includes ports 123 and 52 for services like NTP and local DNS.
 Azure health checks, DHCP and DNS are allowed from IP 168.63.129.16/32 using ports 67 and 53. This is an Azure-specific management address.
-ECE environments
-In ECE environments, there is additional filtering at VPC level and a socks5 proxy. ECE environments have more variable configurations due to the fact that customers have more flexibility on setting configuration requirements. Typically ECE nodes are accessible only over VPC connections and are not exposed to the internet. This results in layered firewalling with cloud-provider SDN firewalls being in use in addition to individual node-specific iptables rules.
+
+Enhanced Compliance Environments
+------------------
+In `Enhanced Compliance Environments (ECE) <https://docs.aiven.io/docs/platform/concepts/enhanced-compliance-env>`_, there is additional filtering at VPC level and a socks5 proxy. ECE environments have more variable configurations due to the fact that customers have more flexibility on setting configuration requirements. Typically ECE nodes are accessible only over VPC connections and are not exposed to the internet. This results in layered firewalling with cloud-provider SDN firewalls being in use in addition to individual node-specific iptables rules.
 
 BYOA Environments
 -----------------
