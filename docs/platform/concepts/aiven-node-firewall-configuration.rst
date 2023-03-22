@@ -1,8 +1,8 @@
 Aiven Service Nodes Firewall Configuration
-#############################################
+##########################################
 
 Overview
--------------
+--------
 Aiven nodes are built using Linux. Firewall configuration is managed using native Linux kernel-level iptables rules that limit connectivity to nodes.
 The iptables configuration is generated dynamically at runtime depending on service type, deployment parameters and user preferences. Rules are updated when required, for example when deploying multi-node clusters of services.
 For intra-node connections, connections are limited to point-to-point connections to specific IP address. All traffic to ports that are not required for the service to function is rejected instead of dropped to avoid timeouts.
@@ -43,7 +43,7 @@ Local access to metadata address is allowed to 169.254.169.254/32. This includes
 Azure health checks, DHCP and DNS are allowed from IP 168.63.129.16/32 using ports 67 and 53. This is an Azure-specific management address.
 
 Enhanced Compliance Environments
-------------------
+--------------------------------
 In `Enhanced Compliance Environments (ECE) <https://docs.aiven.io/docs/platform/concepts/enhanced-compliance-env>`_, there is additional filtering at VPC level and a socks5 proxy. ECE environments have more variable configurations due to the fact that customers have more flexibility on setting configuration requirements. Typically ECE nodes are accessible only over VPC connections and are not exposed to the internet. This results in layered firewalling with cloud-provider SDN firewalls being in use in addition to individual node-specific iptables rules.
 
 BYOA Environments
