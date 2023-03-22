@@ -3,7 +3,7 @@ Aiven Service Nodes Firewall Configuration
 
 Overview
 -------------
-Aiven nodes run various versions of Fedora Linux. Firewall configuration is managed using native Linux kernel-level iptables rules that limit connectivity to nodes.
+Aiven nodes are built using Linux. Firewall configuration is managed using native Linux kernel-level iptables rules that limit connectivity to nodes.
 The iptables configuration is generated dynamically at runtime depending on service type, deployment parameters and user preferences. Rules are updated when required, for example when deploying multi-node clusters of services.
 For intra-node connections, connections are limited to point-to-point connections to specific IP address. All traffic to ports that are not required for the service to function is rejected instead of dropped to avoid timeouts.
 Service ports that customers can connect to depend on what service and deployment type is in question and what configuration the customer has defined, including:
@@ -21,13 +21,13 @@ Port                            Description
 =============================   =============================================================
 22                              Aiven management plane traffic over ssh
 80 (proxy, not open on nodes)   Redirect http web traffic to https
-                                Web user interface traffic
+443                             Web user interface traffic
 
                                 *  Kafka Connect
                                 *  Flink
                                 *  Grafana
                                 *  OpenSearch Dashboards
-30287                           Almond management port (Aiven internal tooling)
+30287                           Aiven Platform management port
 500, 4500 (UDP)                 IPSec (IKE, IPSEC NAT-T)
 =============================   =============================================================
 
