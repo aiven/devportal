@@ -87,7 +87,9 @@ hobbyist
 hostname
 hostnames
 Hillyer
+HTTP
 httpie
+HTTPS
 hyperloglog
 hyperloglogs
 hypertable
@@ -97,6 +99,7 @@ InnoDB
 Instana
 io
 IPsec
+iptables
 Java
 JMX
 JobManager
