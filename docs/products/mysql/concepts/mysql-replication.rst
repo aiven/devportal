@@ -12,7 +12,7 @@ The statement format is more compact but can't represent all changes because som
 
 The row based replication works very well as long as the tables being replicated have a primary key. MySQL primary key look ups are very fast and the target server can find the rows to update and delete very quickly. However, when the table being replicated is lacking a primary key, the target server needs to make a sequential table scan for each individual update or delete statement and the replication can become extremely slow if the table is large.
 
-.. code::
+.. code-block:: bash
 
     DELETE FROM nopk WHERE modified_time > '2022-01-13' 
 
