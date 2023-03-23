@@ -38,7 +38,7 @@ If a base port number is not defined, the service is assigned a random port numb
 
 Cloud management
 ----------------
-Local access to metadata address is allowed to 169.254.169.254/32. This includes ports 123 and 52 for services like NTP and local DNS.
+Local access to the metadata address is allowed via 169.254.169.254/32. This includes ports 123 and 52 for services like NTP and local DNS.
 Azure health checks, DHCP and DNS are allowed from IP 168.63.129.16/32 using ports 67 and 53. This is an Azure-specific management address.
 
 Enhanced compliance environments
