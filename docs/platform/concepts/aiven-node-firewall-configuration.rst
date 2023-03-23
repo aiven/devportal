@@ -6,7 +6,7 @@ The iptables configuration is generated dynamically at runtime depending on serv
 Intra-node connections are limited to point-to-point connections to specific IP addresses. All traffic to ports that are not required for the service to function is rejected instead of dropped to avoid timeouts.
 Service ports that you can connect to depend on the service type and deployment type. The configuration can also affect the ports that are available:
 
-* Is the service in a public network, dedicated VPC, virtual cloud account, or a `BYOA <https://docs.aiven.io/docs/platform/concepts/byoa>`_ setup ?
+* Is the service in a public network, :doc:`dedicated VPC </docs/platform/howto/manage-vpc-peering>`, virtual cloud account, or a  :doc:`Bring Your Own Account (BYOA) </docs/platform/concepts/byoa>` setup ?
 * Has the customer configured IP ranges in  user_config.ip_filter?
 * Has the customer enabled public internet access for otherwise private-only services?
 
