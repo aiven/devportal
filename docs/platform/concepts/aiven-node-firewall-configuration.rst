@@ -18,7 +18,7 @@ Aiven services commonly assign the following ports for services when deployed wi
 Port                            Description
 =============================   =============================================================
 22                              Aiven management plane traffic over ssh
-80 (proxy, not open on nodes)   Redirect http web traffic to https
+80 (proxy, not open on nodes)   Redirect HTTP web traffic to HTTPS
 443                             Web user interface traffic
 
                                 *  Kafka® Connect
