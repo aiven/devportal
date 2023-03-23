@@ -1,7 +1,7 @@
 # Let's talk to Apache Kafka®: sending and receiving application data
 
 > **Note**
-> This tutorial assumes basic knowledge of Apache Kafka.
+> This tutorial assumes basic knowledge of Apache Kafka®.
 
 ## Learning objectives
 
@@ -11,7 +11,7 @@
 
 ## Overview
 
-Getting started with Apache Kafka can be straightforward: you download the binary and start the bootstrap server. However, getting a production-ready Kafka cluster stand up with security and high-availability is a different story. Have you added multiple Kafka brokers to ensure high availability while maintaining a low network
+Getting started with Apache Kafka can be straightforward: you download the binary and start the bootstrap server. However, standing up a production-ready Kafka cluster with security and high-availability is a different story. Have you added multiple Kafka brokers to ensure high availability while maintaining a low network
 latency? How about the default replication factor? How are you ensuring the security and access control for your Kafka brokers?
 
 Because administering production-ready Kafka clusters is difficult, we
@@ -20,7 +20,7 @@ at Aiven created a [managed Kafka service](https://aiven.io/kafka) with a free t
 In this tutorial, we will learn how to create a highly available Apache
 Kafka service, go over the common tasks of producing and consuming
 messages, and finally use the popular Apache Avro™ specification to
-communicate with your Kafka service. This tutorial will use Python
+communicate with your Kafka service. This tutorial will use the Python
 programming language. Under the hood, the Python library will make use
 of the [Producer API](https://kafka.apache.org/documentation/#producerapi) and the
 [Consumer API](https://kafka.apache.org/documentation/#consumerapi).
@@ -86,7 +86,7 @@ To create an
 7.  Click **Create Service** under the summary on the right side of the
     console.
 
-The blinking blue icon besides your service name will indicate that
+The blinking blue icon beside your service name will indicate that
 service is being provisioned. Once the icon turns solid green, your
 Apache Kafka service is up and running.
 
@@ -171,7 +171,7 @@ partitions is 1.
 
 ![Image showing default number of partitions for the Kafka topic](/images/tutorials/kafka-basics/number_of_partitions.png)
 
-## The concept of consumer group and consuming messages on Kafka
+## Consumer groups and consuming messages on Kafka
 
 A consumer group is the logical grouping of consumers. A consumer is
 usually a client application that reads (consumes) events from Kafka. In
@@ -431,7 +431,7 @@ graph LR;
 
 ## Add schemas to messages with Apache Avro™
 
-The Kafka brokers understand data as stream of bytes so one needs to
+The Kafka brokers understand data as stream of bytes, so one needs to
 pick a serializer and deserializer to convert the bytes into meaningful
 messages. Any format will do as long as it's consistent. For this
 tutorial, we're selecting Apache Avro, which is an open-source project
@@ -697,8 +697,7 @@ Here's an overview of what each program does:
 #### Producer program
 
 The producer program uses the `confluent-kafka` library to create an
-AvroProducer instance and send Avro messages to a Kafka broker. Here's
-a breakdown of what the program does:
+AvroProducer instance and send Avro messages to a Kafka broker. The program will:
 
 -   Import the necessary libraries: `confluent_kafka`,
     `confluent_kafka.avro`, `ssl`, and `io`.
@@ -715,7 +714,7 @@ a breakdown of what the program does:
 
 The consumer program uses the `confluent-kafka` library to create an
 AvroConsumer instance and receive Avro messages from a Kafka broker.
-Here's a breakdown of what the program does:
+The program will:
 
 -   Import the necessary libraries: `confluent_kafka`,
     `confluent_kafka.avro`, and `ssl`.
