@@ -43,7 +43,7 @@ Azure health checks, DHCP, and DNS are allowed from IP 168.63.129.16/32 using po
 
 Enhanced compliance environments
 --------------------------------
-In `Enhanced Compliance Environments (ECE) <https://docs.aiven.io/docs/platform/concepts/enhanced-compliance-env>`_, there is additional filtering at VPC level and a socks5 proxy. ECE environments have more variable configurations due to the fact that customers have more flexibility on setting configuration requirements. Typically ECE nodes are accessible only over VPC connections and are not exposed to the internet. This results in layered firewalls with cloud-provider SDN firewalls being in use in addition to individual node-specific iptables rules.
+In `Enhanced Compliance Environments (ECE) <https://docs.aiven.io/docs/platform/concepts/enhanced-compliance-env>`_, there is additional filtering at VPC level and a SOCKS5 proxy. ECE environments have more variable configurations because we provide more flexibility for configuring these to meet your requirements. Typically, ECE nodes are accessible only over VPC connections and are not exposed to the internet. This results in layered firewalls with cloud-provider SDN firewalls and individual node-specific iptables rules.
 
 BYOA environments
 -----------------
