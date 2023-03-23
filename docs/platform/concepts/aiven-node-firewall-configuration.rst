@@ -47,4 +47,4 @@ In `Enhanced Compliance Environments (ECE) <https://docs.aiven.io/docs/platform/
 
 BYOA environments
 -----------------
-BYOA stands for Bring-Your-Own-Account. In this deployment model, customers deploy Aiven services under their own cloud accounts. Customers gain greater control over deployment configuration, but the VM-level firewall configurations are set at deployment time according to Aiven base configurations. In BYOA configurations, customers can apply additional firewalls using their cloud service provider's configuration options.
+With the BYOA deployment model, you deploy Aiven services under your own cloud accounts. This gives you greater control over deployment configuration, but the VM-level firewall configurations are set at deployment time according to Aiven base configurations. You can apply additional firewalls using your cloud service provider's configuration options.
