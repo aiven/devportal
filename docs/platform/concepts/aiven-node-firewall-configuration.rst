@@ -25,7 +25,7 @@ Port                            Description
                                 *  Flink®
                                 *  Grafana®
                                 *  OpenSearch® Dashboards
-30287                           Aiven Platform management port
+30287                           Aiven platform management port
 500, 4500 (UDP)                 IPSec (IKE, IPSEC NAT-T)
 =============================   =============================================================
 
