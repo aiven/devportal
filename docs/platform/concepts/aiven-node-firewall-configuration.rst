@@ -8,7 +8,7 @@ Service ports that you can connect to depend on the service type and deployment 
 
 * Is the service in a public network, :doc:`dedicated VPC </docs/platform/howto/manage-vpc-peering>`, virtual cloud account, or a  :doc:`Bring Your Own Account (BYOA) </docs/platform/concepts/byoa>` setup ?
 * Have you configured IP ranges in  user_config.ip_filter?
-* Has the customer enabled public internet access for otherwise private-only services?
+* Have you :doc:`enabled public internet access for services in a VPC </docs/platform/howto/public-access-in-vpc>`?
 
 Commonly opened ports
 ----------------------
