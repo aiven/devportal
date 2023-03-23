@@ -1,7 +1,6 @@
 Aiven service nodes firewall configuration
 ##########################################
 
-Overview
 --------
 Aiven nodes are built using Linux. Firewall configuration is managed using native Linux kernel-level iptables rules that limit connectivity to nodes.
 The iptables configuration is generated dynamically at runtime depending on service type, deployment parameters and user preferences. Rules are updated when required, for example when deploying multi-node clusters of services.
