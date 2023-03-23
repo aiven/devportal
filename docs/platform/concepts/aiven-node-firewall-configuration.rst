@@ -26,7 +26,7 @@ Port                            Description
                                 *  Grafana®
                                 *  OpenSearch® Dashboards
 30287                           Aiven platform management port
-500, 4500 (UDP)                 IPSec (IKE, IPSEC NAT-T)
+500, 4500 (UDP)                 IPsec (IKE, IPsec NAT-T)
 =============================   =============================================================
 
 Service ports
