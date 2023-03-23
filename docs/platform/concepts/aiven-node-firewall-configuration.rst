@@ -17,7 +17,7 @@ Aiven services commonly assign the following ports for services when deployed wi
 =============================   =============================================================
 Port                            Description
 =============================   =============================================================
-22                              Aiven management plane traffic over ssh
+22                              Aiven management plane traffic over SSH
 80 (proxy, not open on nodes)   Redirect HTTP web traffic to HTTPS
 443                             Web user interface traffic
 
