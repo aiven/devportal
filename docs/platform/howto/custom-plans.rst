@@ -9,7 +9,7 @@ Sometimes, for special use cases like very high throughput clusters, the stock p
 
    Custom plans can be made available for all the Aiven services types (as example Aiven for Apache Kafka® or Aiven for PostgreSQL®). 
    
-   The custom plan starting price is 500 USD/month.
+   The custom plan starting price is 5000 USD/month.
 
 Custom plan variables
 ---------------------
