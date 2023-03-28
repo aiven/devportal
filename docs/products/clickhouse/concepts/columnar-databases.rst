@@ -1,7 +1,7 @@
 ClickHouse® as a columnar database
 ==================================
 
-Learn how columnar databases handles data and what benefits this apprach has. Check out characteristics and capabilities of ClickHouse® as a columnar database.
+Learn how columnar databases handles data and what benefits this approach has. Check out characteristics and capabilities of ClickHouse® as a columnar database.
 
 Fast data reading
 -----------------
@@ -13,8 +13,8 @@ Enhanced query performance
 
 Storing the data of each column independently minimizes disk access and improves query performance by reading only the data columns that are relevant to a specific query.
 
-Data compression and queiries aggregation
------------------------------------------
+Data compression and queries aggregation
+----------------------------------------
 
 This storage approach also provides better options for data compression, for example by the ability to better utilize similarities between adjacent data. Columnar databases are also better at aggregating queries that involve large sets of data. 
 

@@ -46,6 +46,8 @@ datasource
 Datastax
 datastore
 dashboards
+DBMS
+DBMSs
 deallocation
 Debezium
 deserialize
