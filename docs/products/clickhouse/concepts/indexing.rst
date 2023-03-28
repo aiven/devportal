@@ -1,5 +1,5 @@
-Indexing and data processing
-=============================
+Indexing and data processing in ClickHouse®
+===========================================
 
 This article helps you understand how ClickHouse® processes data and how it differs from the way the other database management systems (DBMS) do that. Discover spare and skipping indexes and check out what the vector computation engine is used for.
 
