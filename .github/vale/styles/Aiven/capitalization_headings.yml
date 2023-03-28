@@ -43,6 +43,7 @@ exceptions:
   - GiB
   - GitHub
   - Go
+  - Google
   - Google BigQuery
   - Google Cloud Logging
   - Google Cloud Marketplace
@@ -94,6 +95,7 @@ exceptions:
   - Postman
   - Premium
   - Private Link
+  - Private Service Connect
   - Project
   - Prometheus
   - Provectus
