@@ -145,8 +145,10 @@ Rollback is not available since old nodes are deleted once they are removed from
 .. Note::
 
     Nodes are not removed from the cluster while they hold data. If an upgrade doesn't progress, the nodes are not removed since that would lead to data loss. 
-    
-In case of an upgrade procedure due to a plan change, the old plan can be restored via the :doc:`Aiven Console </docs/platform/howto/scale-services>` or the :ref:`Aiven CLI <avn-cli-service-update>`.
+
+It is possible to downgrade from a larger service plan back to a smaller service plan, if there is enough disk capacity on the smaller plan, via the :doc:`Aiven Console </docs/platform/howto/scale-services>` or the :ref:`Aiven CLI <avn-cli-service-update>`.
+
+The same upgrade procedure is used for all service plan changes whenever the node type is changed.  When the service plan is downgraded to use nodes with less CPUs, memory or disk, all newly-created nodes are always launched with the latest system software versions, and the data is transferred to new nodes using the upgrade mechanism described in this document.
 
 Upgrade impact and risks
 ------------------------
