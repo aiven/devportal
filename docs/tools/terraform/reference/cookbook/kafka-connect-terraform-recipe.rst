@@ -77,7 +77,7 @@ Here is the sample Terraform file to stand-up and connect all the services. Keep
 ``services.tf`` file:
 
 .. code:: terraform
-
+  
   # Kafka service
   resource "aiven_kafka" "application-logs" {
     project                 = var.project_name
