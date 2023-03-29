@@ -150,8 +150,8 @@ Here is the sample Terraform file to stand-up and connect all the services. Keep
         "type.name"                      = "os-connector"
         "name"                           = "kafka-os-con1"
         "connection.url"                 = "https://${aiven_opensearch.os-service1.service_host}:${aiven_opensearch.os-service1.service_port}"
-        "connection.username"            = aiven_opensearch.os-service1.service_username
-        "connection.password"            = aiven_opensearch.os-service1.service_password
+        "connection.username"            = sensitive(aiven_opensearch.os-service1.service_username)
+        "connection.password"            = sensitive(aiven_opensearch.os-service1.service_password)
         "key.converter"                  = "org.apache.kafka.connect.storage.StringConverter"
         "value.converter"                = "org.apache.kafka.connect.json.JsonConverter"
         "tasks.max"                      = 1
