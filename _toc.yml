@@ -10,6 +10,7 @@ entries:
     - file: docs/platform/concepts
       title: Concepts
       entries:
+      - file: docs/platform/concepts/aiven-node-firewall-configuration
       - file: docs/platform/concepts/authentication-tokens
       - file: docs/platform/concepts/availability-zones
       - file: docs/platform/concepts/list-billing
@@ -45,15 +46,14 @@ entries:
       - file: docs/platform/howto/list-user
         title: User and authentication management
         entries:
+          - file: docs/platform/howto/add-authentication-method
           - file: docs/platform/howto/change-your-email-address
           - file: docs/platform/howto/create_authentication_token
           - file: docs/platform/howto/create_new_service_user
           - file: docs/tools/aiven-console/howto/create-manage-teams
-          - file: docs/platform/howto/enable-aiven-password
           - file: docs/platform/howto/user-2fa
           - file: docs/platform/howto/technical-emails
-          - file: docs/platform/howto/reactivate-suspended-project
-          - file: docs/platform/howto/disable-platform-authentication                     
+          - file: docs/platform/howto/reactivate-suspended-project                    
       - file: docs/platform/howto/list-account
         title: Organization and project management
         entries: 
@@ -128,6 +128,8 @@ entries:
             title: Setting up SAML with Okta
           - file: docs/platform/howto/saml/setup-saml-auth0
             title: Setting up SAML with Auth0
+          - file: docs/platform/howto/saml/setup-saml-jumpcloud
+            title: Setting up SAML with JumpCloud
       - file: docs/platform/howto/project-support-center  
     - file: docs/platform/reference
       title: Reference
@@ -668,8 +670,6 @@ entries:
         title: Concepts
         entries:
           - file: docs/products/clickhouse/concepts/olap
-          - file: docs/products/clickhouse/concepts/databases-and-tables
-            title: Databases and tables
           - file: docs/products/clickhouse/concepts/columnar-databases
           - file: docs/products/clickhouse/concepts/indexing
           - file: docs/products/clickhouse/concepts/disaster-recovery
@@ -1075,16 +1075,24 @@ entries:
   - file: docs/products/redis
     title: Redis
     entries:
+      - file: docs/products/redis/concepts/overview
+        title: Overview
       - file: docs/products/redis/get-started
-        title: Get started
+        title: Quickstart
       - file: docs/products/redis/concepts
         title: Concepts
         entries:
-          - glob: docs/products/redis/concepts/*
+          - file: docs/products/redis/concepts/high-availability-redis
+            title: High availablilty
+          - file: docs/products/redis/concepts/lua-scripts-redis
+            title: Lua scripts
+          - file: docs/products/redis/concepts/memory-usage
+            title: Memory management and persistence 
       - file: docs/products/redis/howto
         title: HowTo
         entries:
           - file: docs/products/redis/howto/list-code-samples
+            title: Connect to service
             entries:
               - file: docs/products/redis/howto/connect-redis-cli
               - file: docs/products/redis/howto/connect-go

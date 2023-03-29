@@ -30,4 +30,9 @@ The JSON service key will be used in the connector configuration
 Grant the service account access to the GCS bucket
 --------------------------------------------------
 
-Navigate in the GCS bucket detail page, in the **Permissions** tab and grant access to the newly created service account to the bucket. The **Storage Object Creator** role is sufficient for the connector.
+Navigate in the GCS bucket detail page, in the **Permissions** tab and grant access to the newly created service account to the bucket. The following object permissions must be enabled in the bucket:
+
+* `storage.objects.create`
+* `storage.objects.delete` (needed for overwriting, for example on re-processing)
+
+The connector should be granted these permissions via a custom role or the standard role **Storage Legacy Bucket Writer**. You also need to ensure the bucket doesn't have a retention policy that prohibits overwriting.

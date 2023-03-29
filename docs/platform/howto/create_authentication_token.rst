@@ -1,33 +1,26 @@
 Create an authentication token
 ==============================
 
-You can use the Aiven web console to create an authentication token for use with the Aiven command-line interface (CLI) or API. 
-To learn more about using authentication token for Aiven resources, refer to :doc:`../concepts/authentication-tokens`.
+Create an authentication token in the Aiven Console for use with the Aiven CLI or API. To learn more about using authentication tokens, refer to :doc:`../concepts/authentication-tokens`.
 
 To create an authentication token:
 
-1. Log in to the `Aiven web console <https://console.aiven.io/>`_.
+#. In the `Aiven Console <https://console.aiven.io/>`_, click the user information icon to open the **User profile**.
 
-2. Click the user icon in the top-right corner of the page.
+#. Click **Tokens**.
 
-3. Click **Authentication** tab and scroll down to *Authentication tokens*.
+#. Click **Generate token**.
 
-4. Click the **Generate token** button.
+#. Enter a description and set an expiration time in the **Max. age** field. Leave **Max. age** empty if you don't want the token to expire.
 
-5. Enter a description (optional) and a time limit (optional) for the token. Leave the *Max age hours* field empty if you do not want the token to expire.
+#. Click **Generate token**.
 
-6. Click **Generate token**.
+#. Click the **Copy** icon and save your token somewhere safe.
 
-7. Click the **Copy** icon or select and copy the access token.
+   .. important::
+       You cannot view the token after you close this window.
 
-   .. note::
-       You cannot get the token later after you close this view.
-
-8. Store the token safely and treat this just like a password.
-
-9. Click **Close**.
-
-You can now use the authentication token to access your Aiven resources from the CLI or API.
+#. Click **Close**.
 
 .. note::
-    You can :ref:`create an authentication token using the Aiven CLI <avn-user-access-token-create>` as well.
+    You can also :ref:`create an authentication token using the Aiven CLI <avn-user-access-token-create>`.

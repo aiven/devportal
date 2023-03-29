@@ -30,7 +30,7 @@ User authentication
 
 On the **Authentication** tab of the **User profile**, you can also manage your password and authentication settings, including:
 
-- :doc:`Enabling Aiven passwords </docs/platform/howto/enable-aiven-password>`
+- :doc:`Adding authentication methods </docs/platform/howto/add-authentication-method>`
 - :doc:`Managing two-factor authentication </docs/platform/howto/user-2fa>`
 - :doc:`Generating authentication tokens </docs/platform/concepts/authentication-tokens>`
 
