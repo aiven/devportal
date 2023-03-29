@@ -5,7 +5,7 @@ Enable OpenSearch® Security management for Aiven for OpenSearch®
 
 This article provides information on how to enable OpenSearch Security from the Aiven Console. 
 
-Considerations before enabling OpenSearch Security managament
+Considerations before enabling OpenSearch Security management
 -------------------------------------------------------------
 
 Before enabling OpenSearch Security management on your Aiven for OpenSearch service, please note the following important details:

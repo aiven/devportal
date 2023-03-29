@@ -54,4 +54,4 @@ Enabling OpenSearch Security management on your Aiven for OpenSearch service thr
 * As an ``os-sec-admin`` user, you can add or remove users from pre-generated roles, but some roles cannot be changed or deleted.
 * Aiven's internal users and their permissions/roles, which are necessary for managing and operating the service, are hidden and reserved from customer view and modification.
 
-For information on how to enable OpenSearch Securtiy management on Aiven Console, see :doc:`Enable OpenSearch® Security management for Aiven for OpenSearch® <../howto/enable-opensearch-security>`. 
+For information on how to enable OpenSearch Security management on Aiven Console, see :doc:`Enable OpenSearch® Security management for Aiven for OpenSearch® <../howto/enable-opensearch-security>`. 
