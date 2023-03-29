@@ -45,7 +45,7 @@ A good primary index should help limit the number of items you need to read to p
 ClickHouse data skipping indexes
 --------------------------------
 
-Skipping indexes are secondary indexes in ClickHouse, but they work quite differently to the secondary indexes used in other DBMSs.
+Although skipping indexes are used in ClickHouse as secondary indexes, they work quite differently to secondary indexes used in other DBMSs.
 
 Skipping indexes help boost performance by skipping some irrelevant rows in advance, when it can be predicted that these rows do not satisfy query conditions.
 
