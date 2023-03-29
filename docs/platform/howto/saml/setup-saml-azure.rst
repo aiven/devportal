@@ -88,7 +88,7 @@ Create a claim and add users
       * - ``Source``
         - ``Attribute``
       * - ``Source Attribute``
-        - ``user.email``
+        - ``user.mail``
 
 3. Download the **Certificate (Base64)** from the **SAML Signing Certificate** section.
 
@@ -97,7 +97,6 @@ Create a claim and add users
 5. Select the users that you want to use Azure AD to log in to Aiven. 
 
 6. Click **Assign**.
-
 
 Finish the configuration in Aiven
 ----------------------------------
