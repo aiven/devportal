@@ -88,7 +88,7 @@ Create a claim and add users
       * - ``Source``
         - ``Attribute``
       * - ``Source Attribute``
-        - ``user.email``
+        - ``user.mail``
 
 3. Download the **Certificate (Base64)** from the **SAML Signing Certificate** section.
 
