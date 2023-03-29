@@ -894,6 +894,10 @@ entries:
         title: Concepts
         entries:
           - file: docs/products/opensearch/concepts/access_control
+            title: Access control
+            entries:
+              - file: docs/products/opensearch/concepts/users-access-controls
+              - file: docs/products/opensearch/concepts/os-security
           - file: docs/products/opensearch/concepts/backups
           - file: docs/products/opensearch/concepts/indices
           - file: docs/products/opensearch/concepts/aggregations
@@ -905,8 +909,11 @@ entries:
       - file: docs/products/opensearch/howto
         title: HowTo
         entries:
-          - file: docs/products/opensearch/howto/control_access_to_content
-            title: Access control
+          - file: docs/products/opensearch/howto/list-access-control
+            title: Manage access control
+            entries:  
+            - file: docs/products/opensearch/howto/control_access_to_content
+            - file: docs/products/opensearch/howto/enable-opensearch-security
           - file: docs/products/opensearch/howto/list-connect-to-service
             title: Connect with service
             entries:
