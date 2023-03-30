@@ -13,8 +13,8 @@ With access control enabled, you can customize the access control lists for each
 
 For more information about access control, patterns and permissions, see :doc:`Understanding access control in Aiven for OpenSearch® <../concepts/users-access-controls>`. 
 
-Method 2: Enable OpenSearch® Security management
----------------------------------------------------
+Method 2: Enable OpenSearch® Security management |beta|
+--------------------------------------------------------
 Another way to manage user accounts, access control, roles, and permissions for your Aiven for OpenSearch® service is by :doc:`enabling OpenSearch® Security management <../howto/enable-opensearch-security>`. This method lets you use the OpenSearch dashboard to manage all aspects of your service's security. 
 
 You can use advanced features such as fine-grained access control with OpenSearch Security. This allows you to specify the exact actions that each user can take within your OpenSearch service. OpenSearch Security also supports SAML integrations, which provide single sign-on (SSO) authentication and authorization for your OpenSearch Service.
