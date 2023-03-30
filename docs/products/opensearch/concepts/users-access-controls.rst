@@ -1,7 +1,7 @@
 Understanding access control in Aiven for OpenSearch®
 =====================================================
 
-Implementing access control and permissions is essential in maintaining secure access to data stored in Aiven for OpenSearch®. This article provides an overview of how access control works in Aivne for OpenSearch®, including the different types of permissions that can be used to control access.
+Implementing access control and permissions is essential in maintaining secure access to data stored in Aiven for OpenSearch®. This article provides an overview of how access control works in Aiven for OpenSearch®, including the different types of permissions that can be used to control access.
 
 Patterns and permissions
 -------------------------
