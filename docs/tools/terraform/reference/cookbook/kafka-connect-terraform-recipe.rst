@@ -76,7 +76,7 @@ Here is the sample Terraform file to stand-up and connect all the services. Keep
 
 ``services.tf`` file:
 
-.. code::
+.. code:: terraform
   
   # Kafka service
   resource "aiven_kafka" "application-logs" {
@@ -87,13 +87,13 @@ Here is the sample Terraform file to stand-up and connect all the services. Keep
     maintenance_window_dow  = "monday"
     maintenance_window_time = "10:00:00"
     kafka_user_config {
-      kafka_connect = true
-      kafka_rest    = true
-      kafka_version = "3.2"
-      kafka {
+        kafka_connect = true
+        kafka_rest    = true
+        kafka_version = "3.2"
+        kafka {
         group_max_session_timeout_ms = 70000
         log_retention_bytes          = 1000000000
-      }
+        }
     }
   }
   
@@ -115,12 +115,12 @@ Here is the sample Terraform file to stand-up and connect all the services. Keep
     maintenance_window_dow  = "monday"
     maintenance_window_time = "10:00:00"
     kafka_connect_user_config {
-      kafka_connect {
-        consumer_isolation_level = "read_committed"
-      }
-      public_access {
-        kafka_connect = true
-      }
+        kafka_connect {
+          consumer_isolation_level = "read_committed"
+        }
+        public_access {
+          kafka_connect = true
+        }
     }
   }
   
@@ -131,11 +131,11 @@ Here is the sample Terraform file to stand-up and connect all the services. Keep
     source_service_name      = aiven_kafka.application-logs.service_name
     destination_service_name = aiven_kafka_connect.logs-connector.service_name
     kafka_connect_user_config {
-      kafka_connect {
-        group_id             = "connect"
-        status_storage_topic = "__connect_status"
-        offset_storage_topic = "__connect_offsets"
-      }
+        kafka_connect {
+          group_id             = "connect"
+          status_storage_topic = "__connect_status"
+          offset_storage_topic = "__connect_offsets"
+        }
     }
   }
   
@@ -145,18 +145,18 @@ Here is the sample Terraform file to stand-up and connect all the services. Keep
     service_name   = aiven_kafka.application-logs.service_name
     connector_name = "kafka-os-con1"
     config = {
-      "topics"                         = aiven_kafka_topic.topic-logs-app-1.topic_name
-      "connector.class"                = "io.aiven.kafka.connect.opensearch.OpensearchSinkConnector"
-      "type.name"                      = "os-connector"
-      "name"                           = "kafka-os-con1"
-      "connection.url"                 = "https://${aiven_opensearch.os-service1.service_host}:${aiven_opensearch.os-service1.service_port}"
-      "connection.username"            = sensitive(aiven_opensearch.os-service1.service_username)
-      "connection.password"            = sensitive(aiven_opensearch.os-service1.service_password)
-      "key.converter"                  = "org.apache.kafka.connect.storage.StringConverter"
-      "value.converter"                = "org.apache.kafka.connect.json.JsonConverter"
-      "tasks.max"                      = 1
-      "schema.ignore"                  = true
-      "value.converter.schemas.enable" = false
+        "topics"                         = aiven_kafka_topic.topic-logs-app-1.topic_name
+        "connector.class"                = "io.aiven.kafka.connect.opensearch.OpensearchSinkConnector"
+        "type.name"                      = "os-connector"
+        "name"                           = "kafka-os-con1"
+        "connection.url"                 = "https://${aiven_opensearch.os-service1.service_host}:${aiven_opensearch.os-service1.service_port}"
+        "connection.username"            = sensitive(aiven_opensearch.os-service1.service_username)
+        "connection.password"            = sensitive(aiven_opensearch.os-service1.service_password)
+        "key.converter"                  = "org.apache.kafka.connect.storage.StringConverter"
+        "value.converter"                = "org.apache.kafka.connect.json.JsonConverter"
+        "tasks.max"                      = 1
+        "schema.ignore"                  = true
+        "value.converter.schemas.enable" = false
     }
   }
   
@@ -169,7 +169,7 @@ Here is the sample Terraform file to stand-up and connect all the services. Keep
     maintenance_window_dow  = "monday"
     maintenance_window_time = "10:00:00"
     opensearch_user_config {
-      opensearch_version = "2"
+        opensearch_version = "2"
     }
   }
 
