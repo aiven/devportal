@@ -172,7 +172,7 @@ Here is the sample Terraform file to stand-up and connect all the services. Keep
       opensearch_version = "2"
     }
   }
-    
+
 .. dropdown:: Expand to check out how to execute the Terraform files.
 
     The ``init`` command performs several different initialization steps in order to prepare the current working directory for use with Terraform. In our case, this command automatically finds, downloads, and installs the necessary Aiven Terraform provider plugins.
