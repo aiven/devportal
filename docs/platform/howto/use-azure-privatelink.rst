@@ -3,6 +3,17 @@ Use Azure Private Link with Aiven services |beta|
 
 Azure Private Link lets you bring your Aiven services into your virtual network (VNet) over a private endpoint. The endpoint creates a network interface into one of the VNet subnets, and receives a private IP address from its IP range. The private endpoint is routed to your Aiven service.
 
+Azure Private Link is supported for the following services:
+
+* Aiven for Apache Kafka®
+* Aiven for Apache Kafka Connect®
+* Aiven for Grafana®
+* Aiven for InfluxDB®
+* Aiven for MySQL®
+* Aiven for OpenSearch®
+* Aiven for PostgreSQL®
+* Aiven for Redis®*
+
 Prerequisites
 --------------
 

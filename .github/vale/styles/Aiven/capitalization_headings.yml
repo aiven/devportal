@@ -64,6 +64,7 @@ exceptions:
   - JMX
   - JobManager
   - Jolokia
+  - JumpCloud
   - Kafdrop
   - Kafka
   - Karapace

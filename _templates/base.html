@@ -44,6 +44,12 @@ snowplow("newTracker", "at", "dc.aiven.io", {
   }
 });
 
+// Must be called before snowplow('trackPageView')
+snowplow('enableActivityTracking', { 
+  minimumVisitLength: 10, 
+  heartbeatDelay: 10 
+});
+
 </script>
 <!-- End Snowplow Analytics -->
 
