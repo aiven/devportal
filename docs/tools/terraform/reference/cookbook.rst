@@ -110,7 +110,7 @@ Each "recipe" includes an architecture diagram and the terraform sample code you
         :shadow: md
         :margin: 2 2 0 0
 
-        :doc:`PostgreSQL® Read Replica <cookbook/postgresql-read-replica-recipe>`
+        :doc:`PostgreSQL® Read-only replica <cookbook/postgresql-read-replica-recipe>`
 
         |icon-postgres|
 

@@ -81,7 +81,7 @@ For Aiven for PostgreSQL, full daily backups are taken and WAL segments are cons
 * For a business or premium plan, Aiven can reconstruct the latest state from a replica
 * For a startup plan, Aiven can reconstruct the latest state from the latest base backup and replay the latest WAL segments on top of that.
 
-You can supplement this with a remote read replica service, which you can run in a different cloud region or with another cloud provider and promote to master if needed.
+You can supplement this with a remote read-only replica service, which you can run in a different cloud region or with another cloud provider and promote to master if needed.
 
 To shift the backup schedule to a new time, you can modify the backup time configuration option in **Advanced Configuration** in the Aiven console. If there has been a recent backup taken, it may take another backup cycle before the new backup time takes effect.
 
@@ -176,7 +176,7 @@ Recommended backup tools per service are as follows:
 
 * `PostgreSQL <https://www.postgresql.org/docs/14/app-pgdump.html>`__: ``pgdump``
 * `MySQL <https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html>`_: ``mysqldump``
-* `Redis <https://redis.io/docs/manual/cli/#remote-backups-of-rdb-files>`_: ``redis-cli`` 
+* `Redis <https://redis.io/docs/ui/cli/#remote-backups-of-rdb-files>`_: ``redis-cli`` 
 * `Cassandra <https://docs.datastax.com/en/archived/cql/3.3/cql/cql_reference/cqlshCopy.html>`_: ``cqlsh`` 
 * `OpenSearch <https://github.com/elasticsearch-dump/elasticsearch-dump>`_: ``elasticdump``
 * `InfluxDB <https://docs.influxdata.com/influxdb/v1.8/tools/influx-cli/>`_: ``influxd``
