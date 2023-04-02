@@ -4,6 +4,11 @@ OpenSearch Security is a powerful feature that enhances the security of your Ope
 
 With OpenSearch Security enabled, you can manage user access and permissions directly from the :doc:`OpenSearch Dashboard <../dashboards>`, giving you full control over your service's security.
 
+.. warning:: 
+  * Once you have enabled OpenSearch Security management, you can no longer use `Aiven Console <https://console.aiven.io/>`_, `Aiven API <https://api.aiven.io/doc/>`_, :doc:`Aiven CLI </docs/tools/cli>`, :doc:`Aiven Terraform provider </docs/tools/terraform>` or :doc:`Aiven Operator for Kubernetes® </docs/tools/kubernetes>` to manage access controls.
+  * You must use the OpenSearch Security Dashboard or OpenSearch Security API for managing user authentication and access control after enabling OpenSearch Security management.
+  * Once enabled, OpenSearch Security management cannot be disabled. If you need assistance disabling OpenSearch Security management, contact `Aiven support <https://aiven.io/support-services>`_.
+
 OpenSearch Security use cases
 --------------------------------
 OpenSearch Security is a versatile and valuable feature that can meet the needs of a wide range of customers. Some common use cases for this feature include:
@@ -47,13 +52,6 @@ OpenSearch Security in Aiven for OpenSearch service offers a range of features t
 OpenSearch Security management changes and impacts
 ----------------------------------------------------
 Enabling OpenSearch Security management on your Aiven for OpenSearch service through the Aiven console triggers several changes:
-
-.. warning:: 
-  * Once you have enabled OpenSearch Security management, you can no longer use `Aiven Console <https://console.aiven.io/>`_, `Aiven API <https://api.aiven.io/doc/>`_, :doc:`Aiven CLI <../tools/cli>`, :doc:`Aiven Terraform provider <../tools/terraform>` or :doc:`Aiven Operator for Kubernetes® <../tools/kubernetes>` to manage access controls.
-  * You must use the OpenSearch Security Dashboard or OpenSearch Security API for managing user authentication and access control after enabling OpenSearch Security management.
-  * Once enabled, OpenSearch Security management cannot be disabled. If you need assistance disabling OpenSearch Security management, contact `Aiven support <https://aiven.io/support-services>`_.
-
-
 
 * All user authentication and access control will be managed through the OpenSearch Security Dashboard or OpenSearch Security API. You have the ability to add or remove users from pre-generated roles, while some roles remain reserved for Aiven's internal use.
 

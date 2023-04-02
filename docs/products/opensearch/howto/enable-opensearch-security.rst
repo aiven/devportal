@@ -14,7 +14,7 @@ Before enabling OpenSearch Security management on your Aiven for OpenSearch serv
 * Fine-grained user access control can be managed through the OpenSearch Dashboard after enabling OpenSearch Security management for the service.  
 * Any existing user roles and permissions will be automatically transferred to the OpenSearch Dashboard.
 * To ensure the security of your OpenSearch service, managing the security features of OpenSearch is limited only to a dedicated administrator role.
-* 
+* Once you have enabled OpenSearch Security management, you can no longer use `Aiven Console <https://console.aiven.io/>`_, `Aiven API <https://api.aiven.io/doc/>`_, :doc:`Aiven CLI </docs/tools/cli>`, :doc:`Aiven Terraform provider </docs/tools/terraform>` or :doc:`Aiven Operator for Kubernetes® </docs/tools/kubernetes>` to manage access controls.
 
 
 Enable OpenSearch® Security management
