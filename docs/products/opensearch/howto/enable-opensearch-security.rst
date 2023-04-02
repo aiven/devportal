@@ -10,10 +10,11 @@ Considerations before enabling OpenSearch Security management
 
 Before enabling OpenSearch Security management on your Aiven for OpenSearch service, please note the following important details:
 
-* OpenSearch Security management cannot be disabled once enabled. Therefore, ensure that you thoroughly understand the security features and implications before proceeding.
+* OpenSearch Security management cannot be disabled once enabled. Therefore, ensure that you thoroughly understand the security features and implications before proceeding. If you need assistance disabling OpenSearch Security management, contact `Aiven support <https://aiven.io/support-services>`_.
 * Fine-grained user access control can be managed through the OpenSearch Dashboard after enabling OpenSearch Security management for the service.  
 * Any existing user roles and permissions will be automatically transferred to the OpenSearch Dashboard.
 * To ensure the security of your OpenSearch service, managing the security features of OpenSearch is limited only to a dedicated administrator role.
+* 
 
 
 Enable OpenSearch® Security management

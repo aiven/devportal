@@ -48,7 +48,15 @@ OpenSearch Security management changes and impacts
 ----------------------------------------------------
 Enabling OpenSearch Security management on your Aiven for OpenSearch service through the Aiven console triggers several changes:
 
-* All user authentication and access control will be managed through the OpenSearch security Dashboard or OpenSearch Security API. You have the ability to add or remove users from pre-generated roles, while some roles remain reserved for Aiven's internal use.
+.. warning:: 
+  * Once you have enabled OpenSearch Security management, you can no longer use `Aiven Console <https://console.aiven.io/>`_, `Aiven API <https://api.aiven.io/doc/>`_, :doc:`Aiven CLI <../tools/cli>`, :doc:`Aiven Terraform provider <../tools/terraform>` or :doc:`Aiven Operator for Kubernetes® <../tools/kubernetes>` to manage access controls.
+  * You must use the OpenSearch Security Dashboard or OpenSearch Security API for managing user authentication and access control after enabling OpenSearch Security management.
+  * Once enabled, OpenSearch Security management cannot be disabled. If you need assistance disabling OpenSearch Security management, contact `Aiven support <https://aiven.io/support-services>`_.
+
+
+
+* All user authentication and access control will be managed through the OpenSearch Security Dashboard or OpenSearch Security API. You have the ability to add or remove users from pre-generated roles, while some roles remain reserved for Aiven's internal use.
+
 * All service users defined at the time of enabling OS security will be classified as internal users of OpenSearch, with the attribute ``Aiven_managed: False`` assigned to most users. However, the ``avnadmin`` and ``os-sec-admin`` users will have the attribute ``Aiven_managed:true``.
 * The ``os-sec-admin`` user will be mapped to the pre-generated role ``aiven_security_admin_access``, which provides unrestricted access to the service, including the OpenSearch Security API and Dashboard. Other users are not mapped to this role.
 * As an ``os-sec-admin`` user, you can add or remove users from pre-generated roles, but some roles cannot be changed or deleted.
