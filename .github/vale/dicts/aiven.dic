@@ -46,6 +46,8 @@ datasource
 Datastax
 datastore
 dashboards
+DBMS
+DBMSs
 deallocation
 Debezium
 deserialize
@@ -104,6 +106,7 @@ Java
 JMX
 JobManager
 Jolokia
+JumpCloud
 Kaggle/M
 Kafdrop
 Kafka

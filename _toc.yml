@@ -92,6 +92,7 @@ entries:
           - file: docs/platform/howto/vnet-peering-azure
           - file: docs/platform/howto/use-aws-privatelinks.rst
           - file: docs/platform/howto/use-azure-privatelink
+          - file: docs/platform/howto/use-google-private-service-connect
       - file: docs/platform/howto/list-monitoring
         title: Monitoring management
         entries:
@@ -128,6 +129,8 @@ entries:
             title: Setting up SAML with Okta
           - file: docs/platform/howto/saml/setup-saml-auth0
             title: Setting up SAML with Auth0
+          - file: docs/platform/howto/saml/setup-saml-jumpcloud
+            title: Setting up SAML with JumpCloud
       - file: docs/platform/howto/project-support-center  
     - file: docs/platform/reference
       title: Reference
@@ -209,7 +212,7 @@ entries:
             - file: docs/tools/terraform/howto/config-postgresql-provider
               title: Use PostgreSQL provider alongside Aiven Terraform Provider 
             - file: docs/tools/terraform/howto/promote-to-master-pg-rr
-              title: Promote PostgreSQL read replica to master
+              title: Promote PostgreSQL read-only replica to master
             - file: docs/tools/terraform/howto/upgrade-to-opensearch
             - file: docs/tools/terraform/howto/vnet-peering-azure
         - file: docs/tools/terraform/concepts
@@ -245,7 +248,7 @@ entries:
             - file: docs/tools/terraform/reference/cookbook/m3db-m3agg-recipe
               title: M3 and M3 Aggregator
             - file: docs/tools/terraform/reference/cookbook/postgresql-read-replica-recipe
-              title: PostgreSQL® Read Replica
+              title: PostgreSQL® read-only replica
             - file: docs/tools/terraform/reference/cookbook/clickhouse-access-setup-recipe
               title: Configure ClickHouse user's access
             - file: docs/tools/terraform/reference/cookbook/kafka-clickhouse-integration-recipe
@@ -636,12 +639,12 @@ entries:
           - file: docs/products/cassandra/howto/list-cross-cluster-replication
             title: Cross-cluster replication
             entries:
-              - file: docs/products/cassandra/howto/disable-cross-cluster-replication
-                title: Disable CCR
-              - file: docs/products/cassandra/howto/manage-cross-cluster-replication
-                title: Manage CCR
               - file: docs/products/cassandra/howto/enable-cross-cluster-replication
                 title: Enable CCR
+              - file: docs/products/cassandra/howto/manage-cross-cluster-replication
+                title: Manage CCR
+              - file: docs/products/cassandra/howto/disable-cross-cluster-replication
+                title: Disable CCR
       - file: docs/products/cassandra/reference
         title: Reference
         entries:
@@ -668,8 +671,6 @@ entries:
         title: Concepts
         entries:
           - file: docs/products/clickhouse/concepts/olap
-          - file: docs/products/clickhouse/concepts/databases-and-tables
-            title: Databases and tables
           - file: docs/products/clickhouse/concepts/columnar-databases
           - file: docs/products/clickhouse/concepts/indexing
           - file: docs/products/clickhouse/concepts/disaster-recovery

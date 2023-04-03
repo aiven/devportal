@@ -1,9 +1,9 @@
-PostgreSQL® read replica using Terraform
-========================================================
+PostgreSQL® read-only replica using Terraform
+=============================================
 
-A PostgreSQL® read replica can be used to offload read requests like the analytics traffic from the primary instance. In this example, you'll create two Aiven for PostgreSQL® services - a primary service and the other one as its read replica. 
-Both services will be provisioned programmatically using the `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_. The same process can be followed for setting up MySQL read replica as well. 
-The following diagram shows the typical client interaction when a read replica is in place.
+A PostgreSQL® read-only replica can be used to offload read requests like the analytics traffic from the primary instance. In this example, you'll create two Aiven for PostgreSQL® services - a primary service and the other one as its read-only replica. 
+Both services will be provisioned programmatically using the `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_. The same process can be followed for setting up MySQL read-only replica as well. 
+The following diagram shows the typical client interaction when a read-only replica is in place.
 
 .. mermaid::
 
@@ -32,7 +32,7 @@ The following diagram shows the typical client interaction when a read replica i
 Let's cook!
 '''''''''''''''''''''''''''''''''''
 
-The following sample Terraform script stands up the primary PostgreSQL service and a read replica for that service using service integration. 
+The following sample Terraform script stands up the primary PostgreSQL service and a read-only replica for that service using service integration. 
 
 Be sure to check out the :doc:`getting started guide <../../get-started>` to learn about the common files required to execute the following recipe. For example, you'll need to declare the variables for ``project_name`` and ``api_token``.
 

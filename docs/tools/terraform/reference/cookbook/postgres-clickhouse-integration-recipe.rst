@@ -91,7 +91,7 @@ The following Terraform script initializes both Aiven for PostgreSQL and Aiven f
     project                 = var.project_name
     service_name            = "postgres-gcp-us"
     cloud_name              = "google-us-east4"
-    plan                    = "business-8" // Primary + read replica
+    plan                    = "business-8" // Primary + read-only replica
     maintenance_window_dow  = "monday"
     maintenance_window_time = "10:00:00"
   }

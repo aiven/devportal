@@ -143,7 +143,7 @@ General parameters
       The default value is: ``200ms``
   * - ``pg_read_replica`` (deprecated)
     - boolean
-    - Defines the forked service as a read replica. **The setting is deprecated**. Use ``read-replica`` service integration instead.
+    - Defines the forked service as a read-only replica. **The setting is deprecated**. Use ``read-replica`` service integration instead.
   * - ``pg_service_to_fork_from`` (deprecated)
     - string
     - The name of the PostgreSQL service from which to fork. **The setting is deprecated**. Use ``service_to_fork_from`` instead.
