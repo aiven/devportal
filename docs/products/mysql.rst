@@ -7,7 +7,7 @@ Aiven for MySQL® is a fully-managed relational database service, deployable in 
 
 .. grid:: 1 2 2 2
 
-    .. grid-item-card:: :doc:`Concepts </docs/products/mysql/get-started>`
+    .. grid-item-card:: :doc:`Quickstart </docs/products/mysql/get-started>`
         :shadow: md
         :margin: 2 2 0 0
 
@@ -19,13 +19,13 @@ Aiven for MySQL® is a fully-managed relational database service, deployable in 
 
         Discover Aiven for MySQL's features and use cases. 
 
-    .. grid-item-card:: :doc:`Reference </docs/products/mysql/howto>`
+    .. grid-item-card:: :doc:`How-Tos </docs/products/mysql/howto>`
         :shadow: md
         :margin: 2 2 0 0
 
         Explore step-by-step instructions for common operations on Aiven for MySQL.
 
-    .. grid-item-card:: :doc:`Code samples </docs/products/mysql/concepts>`
+    .. grid-item-card:: :doc:`Concepts </docs/products/mysql/concepts>`
         :shadow: md
         :margin: 2 2 0 0
 
