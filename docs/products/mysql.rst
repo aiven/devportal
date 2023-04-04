@@ -1,50 +1,44 @@
-Aiven for MySQL
-###############
+Aiven for MySQL®
+================
 
-What is Aiven for MySQL?
-========================
+Aiven for MySQL® is a fully-managed relational database service, deployable in the cloud of your choice. It is fast, reliable, scalable, and user-friendly. With Aiven for MySQL, you can easily store, retrieve, or modify your data.
 
-Aiven for MySQL is a full managed relational database service, deployable in the cloud of your choice. It is available at a size to suit your needs, from single-node starter plans to highly-available production platforms. MySQL has been a key part of the open source database landscape for a long time and it's a popular and reliable database platform. Aiven takes care of the management side and provides a MySQL that you can use.
-
-Why MySQL?
-==========
-
-MySQL is a traditional open source relational database that plays nicely with many well-established applications. Whether you are building something new or looking for a modern platform for your existing applications, Aiven for MySQL is a friendly and scalable offering of one of the best open source databases around.
-
-Get started with Aiven for MySQL
-================================
-
-Our :doc:`getting started guide </docs/products/mysql/get-started>` will get you up and running quickly.
+-------------------
 
 .. grid:: 1 2 2 2
 
-    .. grid-item-card::
+    .. grid-item-card:: :doc:`Concepts </docs/products/mysql/get-started>`
         :shadow: md
         :margin: 2 2 0 0
 
-        📚 :doc:`Concepts </docs/products/mysql/concepts>`
+        Create your first cluster and learn how to connect to Aiven for MySQL.
 
-    .. grid-item-card::
+    .. grid-item-card:: :doc:`Overview </docs/products/mysql/overview>`
         :shadow: md
         :margin: 2 2 0 0
 
-        💻 :doc:`HowTo </docs/products/mysql/howto>`
+        Discover Aiven for MySQL's features and use cases. 
 
-    .. grid-item-card::
+    .. grid-item-card:: :doc:`Reference </docs/products/mysql/howto>`
         :shadow: md
         :margin: 2 2 0 0
 
-        📖 :doc:`Reference </docs/products/mysql/reference>`
+        Explore step-by-step instructions for common operations on Aiven for MySQL.
 
-    .. grid-item-card::
+    .. grid-item-card:: :doc:`Code samples </docs/products/mysql/concepts>`
         :shadow: md
         :margin: 2 2 0 0
 
-        🧰 :doc:`Code samples </docs/products/mysql/howto/list-code-samples>`
+        Get familiar with core concepts of Aiven for MySQL.
 
+    .. grid-item-card:: :doc:`Reference </docs/products/mysql/reference>`
+        :shadow: md
+        :margin: 2 2 0 0
 
-More MySQL resources
-====================
+        Look up parameters, metrics, or formats supported by Aiven for MySQL.
 
-* Documentation for MySQL itself: https://dev.mysql.com/doc/refman/8.0/en/
-* Read a `blog post about MyHoard <https://aiven.io/blog/introducing-myhoard-your-single-solution-to-mysql-backups-and-restoration>`_, our MySQL backup and restore tool, or check out the `GitHub repository for the project <https://github.com/aiven/myhoard>`_.
+    .. grid-item-card:: `What's new <https://aiven.io/changelog>`_
+        :shadow: md
+        :margin: 2 2 0 0
+
+        Check out new features or latest improvements introduced to Aiven for MySQL and other Aiven services.

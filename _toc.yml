@@ -834,12 +834,23 @@ entries:
   - file: docs/products/mysql
     title: MySQL
     entries:
+      - file: docs/products/mysql/overview
+        title: Overview
       - file: docs/products/mysql/get-started
-        title: Get started
+        title: Quickstart
       - file: docs/products/mysql/concepts                   
         title: Concepts                           
         entries:                                  
-          - glob: docs/products/mysql/concepts/*
+          - file: docs/products/mysql/concepts/max-number-of-connections
+            title: max_connections
+          - file: docs/products/mysql/concepts/mysql-backups
+            title: Backups
+          - file: docs/products/mysql/concepts/mysql-memory-usage
+            title: Memory usage
+          - file: docs/products/mysql/concepts/mysql-replication
+            title: Replication
+          - file: docs/products/mysql/concepts/mysql-tuning-and-concurrency
+            title: Tuning for concurrency
       - file: docs/products/mysql/howto
         title: HowTo
         entries:
