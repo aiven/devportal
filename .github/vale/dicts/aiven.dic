@@ -52,6 +52,7 @@ DBMS
 DBMSs
 deallocation
 Debezium
+depends_on
 deserialize
 deserialization
 deserializer
