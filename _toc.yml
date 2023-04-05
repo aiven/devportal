@@ -854,32 +854,56 @@ entries:
       - file: docs/products/mysql/howto
         title: HowTo
         entries:
+          - file: docs/products/mysql/howto/list-get-started
+            title: Get started
+            entries:
+              - file: docs/products/mysql/howto/setup
+                title: Quickstart
+              - file: docs/platform/howto/create_new_service
+                title: Create a service
+              - file: docs/products/mysql/howto/list-code-samples
+                title: Connect to a service
+              - file: docs/products/mysql/howto/create-database
+                title: Ceate a database
           - file: docs/products/mysql/howto/list-code-samples
+            title: Connect to a service
             entries:
               - file: docs/products/mysql/howto/connect-from-cli
               - file: docs/products/mysql/howto/connect-with-python
               - file: docs/products/mysql/howto/connect-using-mysqlx-with-python
               - file: docs/products/mysql/howto/connect-with-java
               - file: docs/products/mysql/howto/connect-with-php
-          - file: docs/products/mysql/howto/create-database
-          - file: docs/products/mysql/howto/create-remote-replica
-            title: Create remote replicas
-          - file: docs/products/mysql/howto/connect-from-mysql-workbench
-          - file: docs/products/mysql/howto/do-check-service-migration
-            title: Run pre-migration checks
-          - file: docs/products/mysql/howto/migrate-from-external-mysql
-            title: Migrate to Aiven with CLI
-          - file: docs/products/mysql/howto/migrate-db-to-aiven-via-console
-            title: Migrate to Aiven via console
-          - file: docs/products/mysql/howto/migrate-database-mysqldump
-            title: Backup and restore with mysqldump
-          - file: docs/products/mysql/howto/prevent-disk-full
-          - file: docs/products/mysql/howto/reclaim-disk-space
-          - file: docs/products/mysql/howto/identify-disk-usage-issues
-          - file: docs/products/mysql/howto/disable-foreign-key-checks
-          - file: docs/products/mysql/howto/enable-slow-queries
-          - file: docs/products/mysql/howto/create-tables-without-primary-keys
-          - file: docs/products/mysql/howto/create-missing-primary-keys
+              - file: docs/products/mysql/howto/connect-from-mysql-workbench
+          - file: docs/products/mysql/howto/list-manage-database
+            title: Database management
+            entries:
+              - file: docs/products/mysql/howto/create-database
+                title: Create a database
+              - file: docs/products/mysql/howto/create-remote-replica
+                title: Create remote replicas
+              - file: docs/products/mysql/howto/migrate-database-mysqldump
+                title: Backup and restore with mysqldump
+              - file: docs/products/mysql/howto/disable-foreign-key-checks
+              - file: docs/products/mysql/howto/enable-slow-queries
+              - file: docs/products/mysql/howto/create-tables-without-primary-keys
+              - file: docs/products/mysql/howto/create-missing-primary-keys
+          - file: docs/products/mysql/howto/list-migrate-data
+            title: Data migration
+            entries:
+              - file: docs/products/mysql/howto/do-check-service-migration
+                title: Run pre-migration checks
+              - file: docs/products/mysql/howto/migrate-from-external-mysql
+                title: Migrate to Aiven with CLI
+              - file: docs/products/mysql/howto/migrate-db-to-aiven-via-console
+                title: Migrate to Aiven via console
+          - file: docs/products/mysql/howto/list-manage-disk-space
+            title: Disk space management
+            entries:
+              - file: docs/products/mysql/howto/prevent-disk-full
+              - file: docs/products/mysql/howto/reclaim-disk-space
+              - file: docs/products/mysql/howto/identify-disk-usage-issues
+          - file: docs/products/mysql/howto/list-manage-cluster
+            title: Cluster management
       - file: docs/products/mysql/reference
         title: Reference
         entries:
