@@ -859,8 +859,6 @@ entries:
             entries:
               - file: docs/products/mysql/howto/setup
                 title: Quickstart
-              - file: docs/platform/howto/create_new_service
-                title: Create a service
               - file: docs/products/mysql/howto/list-code-samples
                 title: Connect to a service
               - file: docs/products/mysql/howto/create-database
