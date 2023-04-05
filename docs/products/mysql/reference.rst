@@ -1,5 +1,5 @@
-Aiven for MySQL reference
-=========================
+Aiven for MySQL® reference
+==========================
 
 .. grid:: 1 2 2 2
 

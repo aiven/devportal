@@ -11,7 +11,6 @@ Aiven for MySQL® how-tos
 
     - :doc:`Create a database in Aiven for MySQL® </docs/products/mysql/howto/create-database>`
     - :doc:`Create remote replicas </docs/products/mysql/howto/create-remote-replica>`
-    - :doc:`Connect with MySQL Workbench </docs/products/mysql/howto/connect-from-mysql-workbench>`
     - :doc:`Backup and restore with mysqldump </docs/products/mysql/howto/migrate-database-mysqldump>`
     - :doc:`Disable foreign key checks </docs/products/mysql/howto/disable-foreign-key-checks>`
     - :doc:`Enable slow query logging </docs/products/mysql/howto/enable-slow-queries>`
