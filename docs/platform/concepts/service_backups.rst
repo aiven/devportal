@@ -6,14 +6,18 @@ This article provides information on general rules for handling service backups 
 About backups at Aiven
 ----------------------
 
-All Aiven services, except for Apache Kafka® and M3 Aggregator/Coordinator, have time-based backups that are encrypted and securely stored. The backup retention times vary based on the service and the selected service plan. Backups we take for managing the service are not available for download for any service type as they are compressed and encrypted by our management platform.
+All Aiven services, except for Apache Kafka® and M3 Aggregator/Coordinator, have time-based backups that are encrypted and securely stored. The backup retention times vary based on the service and the selected service plan. 
+
+Backups taken by Aiven for managing the service are not available for download for any service type. This is because they are compressed and encrypted by our management platform.
 
 Service power-off/on backup policy
 ------------------------------------
 
-Whenever a service is powered on from a powered-off state, we restore the latest backup available.
+Whenever a service is powered on from a powered-off state, the latest available backup is restored.
 
-We review any services that are powered off for longer than 180 days. We will send you a notification email in advance to take action before we perform house cleaning and delete the service and backup as part of `periodic cleanup of powered-off services <https://help.aiven.io/en/articles/4578430-periodic-cleanup-of-powered-off-services>`__. If you would still like to keep the powered off service for longer than 180 days, you can avoid this routine cleanup by powering on the service and then powering it back off.
+Services that have been powered off for more than 180 days are reviewed. A notification email will be sent to you to provide time for taking action before the service and backup are deleted as part of the :doc:`periodic cleanup of powered-off services <../howto/cleanup-powered-off-services>`.
+
+If you wish to keep the powered-off service for more than 180 days, simply power on the service and then power it off again to avoid the routine cleanup.
 
 Backup profile per service
 --------------------------
@@ -53,12 +57,12 @@ There are specific backup strategies for particular service types.
 Aiven for Apache Kafka®
 '''''''''''''''''''''''
 
-Aiven for Apache Kafka is usually used as a transport tool for data rather than a permanent store and the way it stores data doesn't really allow reasonable backup to be implemented using traditional backup strategies. Hence, Aiven doesn't take backups for managed Apache Kafka services and data durability is determined by the replication of data across the cluster.
+Aiven for Apache Kafka is usually used as a transport tool for data rather than a permanent store. Due to the way it stores data, traditional backup strategies are not feasible. As a result, Aiven does not perform backups for managed Apache Kafka services, and data durability is determined by data replication across the cluster.
 
 To back up data passing through Kafka, we recommend using one of the following tools:
 
-* :doc:`MirrorMaker 2<../../products/kafka/kafka-mirrormaker>` to replicate the data to another cluster, which could be an Aiven service or a Kafka cluster on your own infrastructure. Using MirrorMaker 2, the backup cluster is running as an independent Kafka service, so you have complete freedom of choice in which zone to base the service.
-
+* :doc:`MirrorMaker 2<../../products/kafka/kafka-mirrormaker>` to replicate the data to another cluster, which could be an Aiven service or a Kafka cluster on your own infrastructure. With MirrorMaker 2, the backup cluster operates as an independent Kafka service, giving you complete freedom in choosing which zone to locate the service.
+  
   .. note::
         
       MirrorMaker 2 provides tools for mapping between the source and target offset, so you don't need to make this calculation. For more details, see section *Offset Mapping* in blog post `A look inside Kafka MirrorMaker 2 <https://blog.cloudera.com/a-look-inside-kafka-mirrormaker-2/>`__.
@@ -76,14 +80,14 @@ To back up data passing through Kafka, we recommend using one of the following t
 Aiven for PostgreSQL®
 '''''''''''''''''''''
 
-For Aiven for PostgreSQL, full daily backups are taken and WAL segments are constantly archived to the cloud object storage. In case of node failure,
+For Aiven for PostgreSQL, full daily backups are taken, and WAL segments are constantly archived to the cloud object storage. In case of node failure,
 
 * For a business or premium plan, Aiven can reconstruct the latest state from a replica
 * For a startup plan, Aiven can reconstruct the latest state from the latest base backup and replay the latest WAL segments on top of that.
 
 You can supplement this with a remote read replica service, which you can run in a different cloud region or with another cloud provider and promote to master if needed.
 
-To shift the backup schedule to a new time, you can modify the backup time configuration option in **Advanced Configuration** in the Aiven console. If there has been a recent backup taken, it may take another backup cycle before the new backup time takes effect.
+To shift the backup schedule to a new time, you can modify the backup time configuration option in **Advanced Configuration** in the Aiven console. f a recent backup has been taken, it may take another backup cycle before the new backup time takes effect.
 
 .. seealso::
     
@@ -98,7 +102,7 @@ Aiven for MySQL®
 
 Aiven for MySQL databases are automatically backed up with full daily backups and binary logs recorded continuously. All backups are encrypted with the open source `myhoard <https://github.com/aiven/myhoard>`_ software. Myhoard uses `Percona XtraBackup <https://www.percona.com/>`_ internally for taking full (or incremental) snapshots for MySQL.
 
-To shift the backup schedule to a new time, you can modify the backup time configuration option in **Advanced Configuration** in the Aiven console. If there has been a recent backup taken, it may take another backup cycle before the new backup time takes effect.
+To shift the backup schedule to a new time, you can modify the backup time configuration option in **Advanced Configuration** in the Aiven console. If a recent backup has been taken, it may take another backup cycle before the new backup time takes effect.
 
 .. seealso::
     
@@ -107,7 +111,7 @@ To shift the backup schedule to a new time, you can modify the backup time confi
 Aiven for OpenSearch®
 '''''''''''''''''''''
 
-Aiven for OpenSearch databases are automatically backed up, encrypted, and stored securely in the object storage. The backups are taken every hour and the retention period varies based on the service plan.
+Aiven for OpenSearch databases are automatically backed up, encrypted, and stored securely in the object storage. The backups are taken every hour, and the retention period varies based on the service plan.
 
 .. seealso::
 
@@ -123,7 +127,7 @@ Aiven for Apache Cassandra backups are taken every 24 hours. The point-in-time r
 
 .. note::
     
-    If you'd like to be notified once the PITR feature is available for Cassandra, contact the Aiven support.
+    If you'd like to be notified once the PITR feature is available for Cassandra, contact Aiven support.
 
 Aiven for Redis™*
 '''''''''''''''''
@@ -139,12 +143,12 @@ You can control the persistence feature using ``redis_persistence`` under **Adva
 
 .. note::
 
-    AOF persistence is currently not supported by the Aiven for the managed Redis service.
+    AOF persistence is currently not supported by Aiven for the managed Redis service.
 
 Aiven for InfluxDB®
 '''''''''''''''''''
 
-Aiven for InfluxDB backups are taken every 12 hours with 2.5 days of retention. InfluxDB® is automatically backed up, encrypted, and uploaded to the Aiven's S3 account in the same region. When an instance has to be rebuilt, the backup is downloaded and restored to create a new instance.
+Aiven for InfluxDB backups are taken every 12 hours with 2.5 days of retention. InfluxDB® is automatically backed up, encrypted, and uploaded to Aiven's S3 account in the same region. When an instance has to be rebuilt, the backup is downloaded and restored to create a new instance.
 
 Aiven for ClickHouse®
 '''''''''''''''''''''
@@ -166,11 +170,12 @@ Aiven for ClickHouse backups contain database lists, table schemas, table conten
 Access to backups
 -----------------
 
-The Aiven platform provides a centralised managed platform for Aiven services to run across many different cloud providers and regions. Tooling that built to provide the service backups are open source and available for you to use in your own infrastructure. 
+The Aiven platform provides a centralized managed platform for Aiven services, enabling them to run on various cloud providers and regions. The open-source tooling provided for service backups is also available for use in your own infrastructure.
 
-The nature of the Aiven platform is to manage the operational tasks of running complex software at scale so that you are able to focus your efforts on using the services, not maintaining them. Aiven takes care of service availability, security, connectivity, and backups.
+The Aiven platform is designed to handle the operational aspects of running complex software at scale, allowing you to focus on using the services instead of maintaining them. Aiven handles service availability, security, connectivity, and backups.
 
-Access to backups of your services is not possible. The backups are encrypted and stored in the object storage. If you do need to backup your service, you can use the standard tooling for this service.
+Access to backups of your services is not possible due to their encryption and storage in object storage. However, if you do need to backup your service, you can use the standard tooling for this service.
+
 
 Recommended backup tools per service are as follows:
 
