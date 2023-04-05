@@ -59,6 +59,7 @@ entries:
         entries: 
           - file: docs/tools/aiven-console/howto/create-accounts
           - file: docs/platform/howto/manage-project
+          - file: docs/platform/howto/manage-unassigned-projects
       - file: docs/platform/howto/list-service
         title: Service management
         entries:
