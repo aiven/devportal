@@ -616,7 +616,7 @@ entries:
       - file: docs/products/cassandra/howto
         title: HowTo
         entries:
-          - file: docs/products/cassandra/howto/setup
+          - file: docs/products/cassandra/howto/list-get-started
             title: Get started
           - file: docs/products/cassandra/howto/list-code-samples
             title: Connect to service
@@ -854,7 +854,7 @@ entries:
       - file: docs/products/mysql/howto
         title: HowTo
         entries:
-          - file: docs/products/mysql/howto/setup
+          - file: docs/products/mysql/howto/list-get-started
             title: Get started
           - file: docs/products/mysql/howto/list-code-samples
             title: Connect to a service
