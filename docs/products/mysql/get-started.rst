@@ -16,7 +16,7 @@ Start a service
    
 3. You can make changes to the service configuration in the **Overview** tab, even while the service is being built.
 
-   You can find the available configuration options in the :doc:`reference article <reference/advanced-params>`.
+   You can find the available configuration options in the :doc:`reference article </docs/products/mysql/reference/advanced-params>`.
 
 The **Status** indicator says **REBUILDING** while the service is being created. Once the service is up and running, the light changes to green and the indicator says **RUNNING**.
 
@@ -27,11 +27,11 @@ Next steps
 ----------
 
 * Learn how to connect to MySQL:
-    - :doc:`From the command line <howto/connect-from-cli>`
-    - :doc:`With MySQL workbench <howto/connect-from-mysql-workbench>`
+    - :doc:`From the command line </docs/products/mysql/howto/connect-from-cli>`
+    - :doc:`With MySQL workbench </docs/products/mysql/howto/connect-from-mysql-workbench>`
 
 * Create additional databases:
-    - :doc:`Create your database <howto/create-database>`
+    - :doc:`Create your database </docs/products/mysql/howto/create-database>`
 
-* Connect from your own :doc:`Python application <howto/connect-with-python>`.
+* Connect from your own :doc:`Python application </docs/products/mysql/howto/connect-with-python>`.
 
