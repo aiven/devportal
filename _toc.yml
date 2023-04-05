@@ -854,15 +854,8 @@ entries:
       - file: docs/products/mysql/howto
         title: HowTo
         entries:
-          - file: docs/products/mysql/howto/list-get-started
+          - file: docs/products/mysql/howto/setup
             title: Get started
-            entries:
-              - file: docs/products/mysql/howto/setup
-                title: Quickstart
-              - file: docs/products/mysql/howto/list-code-samples
-                title: Connect to a service
-              - file: docs/products/mysql/howto/create-database
-                title: Ceate a database
           - file: docs/products/mysql/howto/list-code-samples
             title: Connect to a service
             entries:
