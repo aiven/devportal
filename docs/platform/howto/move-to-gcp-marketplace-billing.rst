@@ -17,9 +17,9 @@ Aiven will need some information from both your existing and new subscriptions i
 
 * The name of the project (or projects) that contain the services you wish to move. 
 
-**From your new GCP Marketplace subscription:**
+**From your new Aiven account with the GCP marketplace subscription:**
 
-* Your Account ID (in the format ``E-1234-1234-1234-1234``), as shown in the Aiven GCP console **Settings** screen.
+* Your Account ID (in the format ``E-1234-1234-1234-1234``), as shown at the top of the `Aiven GCP console <https://console.gcp.aiven.io/>`_.
 
 Send the request to Aiven
 -------------------------
