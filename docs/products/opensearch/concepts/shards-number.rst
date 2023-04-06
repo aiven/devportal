@@ -1,34 +1,37 @@
 Optimal number of shards
-========================
+==========================
 
-OpenSearch® has a default shard count limit per index (1024) and Aiven does not place any additional restrictions on the number of shards that you can use for your OpenSearch service. However, maintaining higher count of shards comes with the performance cost, and can make the cluster less efficient. In this article we'll give advice on how to determine number of shards you need.
+A key component of using OpenSearch is determining the optimal number of shards for your index. This article provides helpful insights on choosing the appropriate number of shards and maximizing performance.
 
-The number of suggested shards depends heavily on the amount of data you have.
-Somewhere between a few gigabytes and a few tens of gigabytes per shard
-is a good rule of thumb.
+Considerations for optimal shard count 
+----------------------------------------
+OpenSearch has a default shard count limit of 1024 per index, and Aiven imposes no additional restrictions on the number of shards for your OpenSearch service. 
 
--  If you know you will have a very small amount of data but many
-   indexes, start with 1 shard, and split the index if necessary.
+The ideal number of shards largely depends on your data volume, usage patterns, and expected data growth in OpenSearch. As a general rule of thumb, aim for a shard size between a few gigabytes and tens of gigabytes. It's better to have a slightly higher number of shards, but avoid overdoing it, as OpenSearch will issue warnings for excessively large or numerous shards.
 
--  If you estimate you will have tens of gigabytes of data, start with 5
-   shards per index in order to avoid splitting the index for a long
-   time.
+Determining shard count
+------------------------
+Consider the following recommendations for selecting the appropriate number of shards for your OpenSearch index:
 
--  If you estimate you will have hundreds of gigabytes of data, calculate the starting number of shards as
-
+* **Small data volumes with many indexes:** Start with one shard and split the index if necessary.
+* **Tens of gigabytes of data:** Begin with five shards per index to avoid splitting the index for an extended period.
+* **Hundreds of gigabytes of data:** Calculate the starting number of shards by dividing the amount of data by 10. 
+   
    .. math:: 
    
       number\_of\_shards = amount\_of\_data\_in\_gigabytes / 10 
    
-   For example: for 250GB index, that would be 25 shards.
+  For example, a 250GB index would need 25 shards.
 
--  If you estimate you will have terabytes of data, increase the shard size compared to the previous example. 
+* **Terabytes of data:** Consider increasing the shard size accordingly. For example, a 1TB index might require 50 shards.
 
-   For example, for 1TB index 50 shards could be a relevant suggestion.
+These suggestions are only indicative, and optimal values depend on your usage patterns and anticipated data growth in OpenSearch. Monitoring disk and CPU usage and upgrading when necessary to ensure optimal performance is essential.
 
-These suggestions are only indicative - optimal values depend heavily on
-your usage pattern and anticipated growth of data in OpenSearch.
 
-.. Tip::
+Adjusting shard count
+----------------------
 
-   You can change the number of shards without losing your data, but this process requires a brief downtime while the index is rewritten.
+You can change the number of shards without losing your data, but this process requires a brief downtime while the index is rewritten. 
+
+OpenSearch manages the distribution and organization of shards across nodes. If you need to change the number of shards, you can reindex your data. However, modifying existing indexes can be challenging, and therefore it is best to aim for an optimal shard count from the beginning. If a shard grows significantly larger than the others, OpenSearch will attempt to redistribute them to balance the node load.
+
