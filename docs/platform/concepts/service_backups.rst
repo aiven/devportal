@@ -87,7 +87,7 @@ For Aiven for PostgreSQL, full daily backups are taken, and WAL segments are con
 
 You can supplement this with a remote read replica service, which you can run in a different cloud region or with another cloud provider and promote to master if needed.
 
-To shift the backup schedule to a new time, you can modify the backup time configuration option in **Advanced Configuration** in the Aiven console. f a recent backup has been taken, it may take another backup cycle before the new backup time takes effect.
+To shift the backup schedule to a new time, you can modify the backup time configuration option in **Advanced Configuration** in the Aiven console. If a recent backup has been taken, it may take another backup cycle before the new backup time takes effect.
 
 .. seealso::
     
