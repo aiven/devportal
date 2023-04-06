@@ -170,7 +170,7 @@ Aiven for ClickHouse backups contain database lists, table schemas, table conten
 Access to backups
 -----------------
 
-The Aiven platform provides a centralized managed platform for Aiven services, enabling them to run on various cloud providers and regions. The open-source tooling provided for service backups is also available for use in your own infrastructure.
+The Aiven platform provides a centralized managed platform for Aiven services, enabling them to run on various cloud providers and regions. The open-source tools used for service backups can be leveraged in your own infrastructure. 
 
 The Aiven platform is designed to handle the operational aspects of running complex software at scale, allowing you to focus on using the services instead of maintaining them. Aiven handles service availability, security, connectivity, and backups.
 
