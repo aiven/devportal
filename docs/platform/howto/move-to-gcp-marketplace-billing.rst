@@ -6,7 +6,7 @@ Aiven makes its services available through the Google Cloud Platform Marketplace
 Create a new account using a Google Cloud Platform Marketplace subscription
 ---------------------------------------------------------------------------
 
-Follow the steps to :doc:`set up Google Cloud Platform Marketplace for Aiven Services <billing-google-cloud-platform-marketplace-subscription>`.  This will create a new empty project, which is where your services will be moved to.
+Follow the steps to :doc:`set up Google Cloud Platform Marketplace for Aiven Services <billing-google-cloud-platform-marketplace-subscription>`.  This will create a new account, which is where your project will be moved to.
 
 Gather the required information
 -------------------------------
