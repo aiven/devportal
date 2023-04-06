@@ -1,7 +1,7 @@
 Optimal number of shards
 ==========================
 
-A key component of using OpenSearch is determining the optimal number of shards for your index. This article provides helpful insights on choosing the appropriate number of shards and maximizing performance.
+A key component of using OpenSearch® is determining the optimal number of shards for your index. This article provides helpful insights on choosing the appropriate number of shards and maximizing performance.
 
 Considerations for optimal shard count 
 ----------------------------------------
