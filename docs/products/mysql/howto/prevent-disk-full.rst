@@ -1,20 +1,22 @@
-Prevent MySQL disk full
-=======================
+Prevent running out of disk space
+=================================
 
-In the event that your MySQL server runs out of disk space, the service will start malfunctioning. Running out of disk space will also prevent backups from being properly created.
+In the event that your MySQL server runs out of disk space, the service starts malfunctioning. Running out of disk space also prevents backups from being properly created. Check out how Aiven prevents those from happening and how you can make more space available on your disk when needed.
 
-To prevent this from happening, Aiven will automatically detect when your service is running out of free space, and prevent further writes to it. This process is done by setting the MySQL ``@@GLOBAL.read_only`` flag to ``1``. The threshold for moving to this state is when your disk usage is at 97% or higher.
+Switch to the read-only mode 
+----------------------------
 
-Once your service has been made ``read-only``, the service will report errors when you attempt to insert, update, or delete data::
+Aiven automatically detects when your service is running out of free space and prevents further writes to it. This process is done by setting the MySQL ``@@GLOBAL.read_only`` flag to ``1``. The threshold for moving to this state is when your disk usage is at 97% or higher.
+
+Once your service is made ``read-only``, the service reports errors when you attempt to insert, update, or delete data::
 
     ERROR 1290 (HY000): The MySQL server is running with the --read-only option so it cannot execute this statement  
 
+Free up disk space
+------------------
 
-Actions to make more space available
-------------------------------------
-
-Identify and optimize problem tables
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Optimize problem tables
+~~~~~~~~~~~~~~~~~~~~~~~
 
 InnoDB does not reclaim unused disk space by default and this can cause a disk to become full. 
 
