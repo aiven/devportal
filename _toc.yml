@@ -71,6 +71,7 @@ entries:
           - file: docs/platform/howto/migrate-services-cloud-region
           - file: docs/platform/howto/migrate-services-vpc
           - file: docs/platform/howto/recover-a-deleted-service
+          - file: docs/platform/howto/cleanup-powered-off-services
           - file: docs/platform/howto/add-storage-space
           - file: docs/platform/howto/tag-resources
           - file: docs/platform/howto/search-services
