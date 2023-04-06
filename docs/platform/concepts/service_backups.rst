@@ -8,7 +8,7 @@ About backups at Aiven
 
 All Aiven services, except for Apache Kafka® and M3 Aggregator/Coordinator, have time-based backups that are encrypted and securely stored. The backup retention times vary based on the service and the selected service plan. 
 
-Backups taken by Aiven for managing the service are not available for download for any service type. This is because they are compressed and encrypted by our management platform.
+Aiven takes service backups for managing purposes. These backups are compressed and encrypted by the Aiven management platform and, as such, are not available for download for any service type.
 
 Service power-off/on backup policy
 ------------------------------------
@@ -17,7 +17,7 @@ Whenever a service is powered on from a powered-off state, the latest available 
 
 Services that have been powered off for more than 180 days are reviewed. A notification email will be sent to you to provide time for taking action before the service and backup are deleted as part of the :doc:`periodic cleanup of powered-off services <../howto/cleanup-powered-off-services>`.
 
-If you wish to keep the powered-off service for more than 180 days, simply power on the service and then power it off again to avoid the routine cleanup.
+If you wish to keep the powered-off service for more than 180 days, power on the service and then power it off again to avoid the routine cleanup.
 
 Backup profile per service
 --------------------------
@@ -59,9 +59,9 @@ Aiven for Apache Kafka®
 
 Aiven for Apache Kafka is usually used as a transport tool for data rather than a permanent store. Due to the way it stores data, traditional backup strategies are not feasible. As a result, Aiven does not perform backups for managed Apache Kafka services, and data durability is determined by data replication across the cluster.
 
-To back up data passing through Kafka, we recommend using one of the following tools:
+To back up data passing through Apache Kafka, we recommend using one of the following tools:
 
-* :doc:`MirrorMaker 2<../../products/kafka/kafka-mirrormaker>` to replicate the data to another cluster, which could be an Aiven service or a Kafka cluster on your own infrastructure. With MirrorMaker 2, the backup cluster operates as an independent Kafka service, giving you complete freedom in choosing which zone to locate the service.
+* :doc:`MirrorMaker 2<../../products/kafka/kafka-mirrormaker>` to replicate the data to another cluster, which could be an Aiven service or a Apache Kafka cluster on your own infrastructure. With MirrorMaker 2, the backup cluster operates as an independent Apache Kafka service. You can freely choose a zone for your backup service since it operates independently from the primary service.
   
   .. note::
         
@@ -127,7 +127,7 @@ Aiven for Apache Cassandra backups are taken every 24 hours. The point-in-time r
 
 .. note::
     
-    If you'd like to be notified once the PITR feature is available for Cassandra, contact Aiven support.
+    If you'd like to be notified once the PITR feature is available for Cassandra, contact the Aiven support.
 
 Aiven for Redis™*
 '''''''''''''''''
@@ -170,11 +170,11 @@ Aiven for ClickHouse backups contain database lists, table schemas, table conten
 Access to backups
 -----------------
 
-The Aiven platform provides a centralized managed platform for Aiven services, enabling them to run on various cloud providers and regions. The open-source tools used for service backups can be leveraged in your own infrastructure. 
+The Aiven platform takes care of all maintenance operations required for running complex software at scale, allowing you to focus on using your services. The open-source tools used for service backups can be leveraged in your own infrastructure. 
 
 The Aiven platform is designed to handle the operational aspects of running complex software at scale, allowing you to focus on using the services instead of maintaining them. Aiven handles service availability, security, connectivity, and backups.
 
-Access to backups of your services is not possible due to their encryption and storage in object storage. However, if you do need to backup your service, you can use the standard tooling for this service.
+Since service backups are encrypted and stored in the object storage, accessing them is not possible. If you do need to backup your service, use the standard tooling for this service.
 
 
 Recommended backup tools per service are as follows:
