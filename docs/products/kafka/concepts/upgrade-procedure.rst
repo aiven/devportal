@@ -12,6 +12,7 @@ The upgrade procedure is executed during:
     
 All the above operations involve creating new broker nodes to replace existing ones.
 
+
 Upgrade procedure steps
 ---------------------------
 
@@ -148,7 +149,7 @@ Rollback is not available since old nodes are deleted once they are removed from
 
 It is possible to downgrade from a larger service plan back to a smaller service plan, if there is enough disk capacity on the smaller plan, via the :doc:`Aiven Console </docs/platform/howto/scale-services>` or the :ref:`Aiven CLI <avn-cli-service-update>`.
 
-The same upgrade procedure is used for all service plan changes whenever the node type is changed.  When the service plan is downgraded to use nodes with less CPUs, memory or disk, all newly-created nodes are always launched with the latest system software versions, and the data is transferred to new nodes using the upgrade mechanism described in this document.
+When changing the node type during a service plan change, the upgrade procedure remains the same. In case of downgrading to a service plan with nodes having lesser CPUs, memory, or disk, the latest system software versions will be used for all newly created nodes. The upgrade mechanism, as explained in this document, will be employed to transfer data to the new nodes.
 
 Upgrade impact and risks
 ------------------------
