@@ -67,7 +67,7 @@ Delta base backups
 
 Aiven for PostgreSQL uses delta base backups, which allow storing only the data files which have been changed since the last backup and leave out the unchanged files. It's particularly beneficial for databases that include considerable portions of static data. Compared to the regular base backups, delta base backups are more efficient bringing an improved performance and speeding up backup and restore operations.
 
-Since delta base backups don't take all the data files, they are faster and easier to perform on large databases with huge volumes of data. Because performing a delta base backup doesn't last long, the frequency of taking backups can be increaed if needed. With the increased backup frequency, service restoration and node repacement are faster for highly updated services as less WAL files need to be restored since the last backup (WAL restoration in PostgreSQL is single-threaded and, therefore, slow).
+Since delta base backups don't take all the data files, they are faster and easier to perform on large databases with huge volumes of data. Because performing a delta base backup doesn't last long, the frequency of taking backups can be increased if needed. With the increased backup frequency, service restoration and node replacement are faster for highly updated services as less WAL files need to be restored since the last backup (WAL restoration in PostgreSQL is single-threaded and, therefore, slow).
 
 .. seealso::
 
