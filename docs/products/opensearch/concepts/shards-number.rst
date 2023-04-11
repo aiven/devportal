@@ -29,13 +29,12 @@ Consider the following recommendations for selecting the appropriate number of s
 
 These suggestions are only indicative, and optimal values depend on your usage patterns and anticipated data growth in OpenSearch®. Monitoring disk and CPU usage and upgrading when necessary to ensure optimal performance is essential.
 
-Additionally, if you are using OpenSearch® for daily logs or similar use cases, you could consider adding more shards per index to new indexes. Doing so will increase the number of shards per index for subsequent days, providing an alternative option for managing your data. 
 
 
 Adjusting shard count
 ----------------------
 
-You can change the number of shards without losing your data, but this process requires a brief downtime while the index is rewritten. 
+You can change the number of shards without losing your data, but this process requires a brief downtime while the index is rewritten. Additionally, if you are using OpenSearch® for daily logs or similar use cases, you could consider adding more shards per index to new indexes. Doing so will increase the number of shards per index for subsequent days, providing an alternative option for managing your data. 
 
 OpenSearch® streamlines the distribution and organization of shards across nodes by automating the allocation and rebalancing processes, simplifying scaling up or down. If you need to change the number of shards, you can re-index your data. However, modifying existing indexes can be challenging, and therefore it is best to aim for an optimal shard count from the beginning. If a shard grows significantly larger than the others, OpenSearch® will attempt to redistribute them to balance the node load.
 
