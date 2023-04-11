@@ -11,14 +11,9 @@ The sstableloader utility is run on the source cluster nodes. It reads the raw d
 Create an Aiven for Apache Cassandra service in the migration mode
 ------------------------------------------------------------------
 
-|To be able to connect to the internode ports from outside the service
-  nodes, the Aiven for Apache Cassandra service must be created in migration mode.
-  This configures the service to use the external IP addresses of the
-  service and allows connections there using an SSL client certificate.
-|Using `Aiven CLI client <https://github.com/aiven/aiven-client>`__ ,
-  create a new Cassandra service in migration mode with
+To be able to connect to the internode ports from outside the service nodes, the Aiven for Apache Cassandra service must be created in the migration mode. This configures the service to use the external IP addresses of the service and allows connections there using an SSL client certificate. Using `Aiven CLI client <https://github.com/aiven/aiven-client>`__ , create a new Cassandra service in migration mode with
 
-::
+.. code-block:: bash
 
    avn service create -t cassandra -p <plan> -c migrate_sstableloader=true <service name>
 
@@ -30,7 +25,7 @@ schema for any uploaded tables must be created first. This can be done
 using the ``cqlsh`` command line client. Dump the schema for each
 keyspace to be migrated into a file with
 
-::
+.. code-block:: bash
 
    cqlsh <source cassandra address> -e "DESCRIBE KEYSPACE mykeyspace" > mykeyspace-schema.cql
 
@@ -45,7 +40,7 @@ keyspace to be migrated into a file with
   ``NetworkTopologyStrategy`` and the desired number of replicas for
   datacenter ``aiven`` . For example:
 
-::
+.. code-block:: bash
 
    CREATE KEYSPACE mykeyspace WITH replication = {'class': 'NetworkTopologyStrategy', 'aiven': '3'}  AND durable_writes = true
 
@@ -57,7 +52,7 @@ keyspace to be migrated into a file with
   for how to connect to the target Aiven for Apache Cassandra service and recreate
   the schema in the target service with
 
-::
+.. code-block:: bash
 
    SSL_CERTFILE=ca.pem cqlsh --ssl -u avnadmin -p f5v60s7ngaid02aa target-cassandra-myfirstcloudhub.aivencloud.com 24510 -f mykeyspace-schema.cql
 
@@ -75,7 +70,7 @@ CA certificate of the service nodes, and creates a ``cassandra.yaml``
 file for sstableloader pointing to the keystore and truststore. To
 retrieve the credentials into the current working directory run:
 
-::
+.. code-block:: bash
 
    avn service sstableloader get-credentials <service name>
 
@@ -84,13 +79,13 @@ each node in your source cluster, or run the command on each node. Then
 run the following command to print the sstableloader command to run on
 the nodes:
 
-::
+.. code-block:: bash
 
    avn service sstableloader command <service name>
 
 The output should be for example
 
-::
+.. code-block:: bash
 
    sstableloader -f cassandra.yaml -d target-cassandra-myfirstcloudhub.aivencloud.com -ssp 24512 -p 24510 -u avnadmin -pw f5v60s7ngaid02aa
 
@@ -112,7 +107,7 @@ Run sstableloader
 | After that, run the sstableloader command printed above giving it a
   Cassandra table data directory as the argument:
 
-::
+.. code-block:: bash
 
    sstableloader -f cassandra.yaml -d target-cassandra-myfirstcloudhub.aivencloud.com -ssp 24512 -p 24510 -u avnadmin -pw f5v60s7ngaid02aa cassandra/data/mykeyspace/mytable-3f6bcf70a6f111e98926edc04ce26602
 
@@ -135,7 +130,7 @@ Turn off migration mode
 Finally, turn off the sstableloader migration mode from the target Aiven
 Cassandra service with:
 
-::
+.. code-block:: bash
 
    avn service update -c migrate_sstableloader=false <service name>
 
