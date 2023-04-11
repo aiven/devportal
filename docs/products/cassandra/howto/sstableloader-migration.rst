@@ -8,8 +8,8 @@ About sstableloader
 
 The sstableloader utility is run on the source cluster nodes. It reads the raw data files for tables that you want to migrate and uploads them efficiently to the target cluster by connecting directly to the target nodes' internode port that is normally used only for communication between the cluster's nodes.
 
-Create an Aiven for Apache Cassandra service in the migration mode
-------------------------------------------------------------------
+Create an Aiven service in the migration mode
+---------------------------------------------
 
 To be able to connect to the internode ports from outside the service nodes, the Aiven for Apache Cassandra service must be created in the migration mode. This configures the service to use the external IP addresses of the service and allows connections there using an SSL client certificate.
 
@@ -44,12 +44,12 @@ Migrate the schema
 
 3. :doc:`Connect to the target Aiven for Apache Cassandra service </docs/products/cassandra/howto/list-code-samples>` and recreate the schema in the target service with
 
-.. code-block:: bash
+   .. code-block:: bash
 
-   SSL_CERTFILE=ca.pem cqlsh --ssl -u avnadmin -p f5v60s7ngaid02aa target-cassandra-myfirstcloudhub.aivencloud.com 24510 -f mykeyspace-schema.cql
+      SSL_CERTFILE=ca.pem cqlsh --ssl -u avnadmin -p f5v60s7ngaid02aa target-cassandra-myfirstcloudhub.aivencloud.com 24510 -f mykeyspace-schema.cql
 
-Retrieve the client certificate and configuration for sstableloader
--------------------------------------------------------------------
+Retrieve the client certificate and configuration
+-------------------------------------------------
 
 Connecting to the internode port requires a client certificate. One has been created for the target service since it is in the migration mode.
 
@@ -105,8 +105,8 @@ Run sstableloader
       
       The command must be run on every node of the source cluster as not all rows are present on every node of the source cluster.
 
-Verify the target service contains all data
--------------------------------------------
+Verify the target service
+-------------------------
 
 It's recommended to check the target service using your Cassandra client of choice to make sure all data to be migrated is there. It's possible to re-run sstableloader on the same tables again. This uploads any mutations in the source service nodes' data directories to be applied in the target Cassandra service.
 
