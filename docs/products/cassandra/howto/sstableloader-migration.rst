@@ -51,44 +51,39 @@ Migrate the schema
 Retrieve the client certificate and configuration for sstableloader
 -------------------------------------------------------------------
 
-As mentioned earlier, connecting to the internode port requires a client
-certificate. One has been created for the target service since it is in
-migration mode. The `Aiven CLI
-client <https://github.com/aiven/aiven-client>`__ command below
-retrieves the client certificate and creates a Java keystore file
-``sstableloader.keystore.p12`` suitable for sstableloader to use. It
-also creates a truststore file ``sstableloader.truststore.jks`` with the
-CA certificate of the service nodes, and creates a ``cassandra.yaml``
-file for sstableloader pointing to the keystore and truststore. To
-retrieve the credentials into the current working directory run:
+Connecting to the internode port requires a client certificate. One has been created for the target service since it is in the migration mode.
 
-.. code-block:: bash
+1. To retrieve the credentials into the current working directory, run
 
-   avn service sstableloader get-credentials <service name>
+   .. code-block:: bash
 
-Either upload the keystore, truststore and ``cassandra.yaml`` files to
-each node in your source cluster, or run the command on each node. Then
-run the following command to print the sstableloader command to run on
-the nodes:
+      avn service sstableloader get-credentials <service name>
 
-.. code-block:: bash
+   This `Aiven CLI client <https://github.com/aiven/aiven-client>`_ command
 
-   avn service sstableloader command <service name>
+   * Retrieves the client certificate
+   * Creates a Java keystore file ``sstableloader.keystore.p12`` suitable for sstableloader to use
+   * Creates a truststore file ``sstableloader.truststore.jks`` with the CA certificate of the service nodes
+   * Creates a ``cassandra.yaml`` file for sstableloader pointing to the keystore and truststore.
 
-The output should be for example
+   Either upload the keystore, truststore, and ``cassandra.yaml`` files to each node in your source cluster or run the command on each node.
 
-.. code-block:: bash
+2. Run the following command to print the sstableloader command to run on the nodes:
 
-   sstableloader -f cassandra.yaml -d target-cassandra-myfirstcloudhub.aivencloud.com -ssp 24512 -p 24510 -u avnadmin -pw f5v60s7ngaid02aa
+   .. code-block:: bash
 
-The ``-p`` option points to the Cassandra client port which
-sstableloader uses to determine the addresses of cluster nodes it needs
-to upload data to. ``-ssp`` points to the SSL storage port, ie. the
-internode port number used when connecting to upload the data to nodes.
-The username and password are needed for authenticating to the client
-port, while ``cassandra.yaml`` configures sstableloader to use the
-client certificate retrieved earlier to authenticate with the internode
-port.
+      avn service sstableloader command <service name>
+
+   You can expect an output similar to the following:
+
+   .. code-block:: bash
+
+      sstableloader -f cassandra.yaml -d target-cassandra-myfirstcloudhub.aivencloud.com -ssp 24512 -p 24510 -u avnadmin -pw f5v60s7ngaid02aa
+
+   * ``-p`` option points to the Cassandra client port which sstableloader uses to determine the addresses of cluster nodes it needs to upload data to.
+   * ``-ssp`` points to the SSL storage port, which is the internode port number used when connecting to upload the data to nodes.
+   * Username and password are needed for authenticating to the client port.
+   * ``cassandra.yaml`` configures sstableloader to use the client certificate retrieved earlier to authenticate with the internode port.
 
 Run sstableloader
 -----------------
