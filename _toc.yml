@@ -638,6 +638,9 @@ entries:
                 title: Stress test with nosqlbench
           - file: docs/products/cassandra/howto/list-manage-cluster
             title: Manage cluster
+            entries:
+              - file: docs/products/cassandra/howto/sstableloader-migration
+                title: Migrate with sstableloader
           - file: docs/products/cassandra/howto/list-cross-cluster-replication
             title: Cross-cluster replication
             entries:

@@ -22,6 +22,7 @@ Aiven for Apache Cassandra® HowTo
     - :doc:`Tag a managed Aiven for Apache Cassandra service </docs/platform/howto/tag-resources>`
     - :doc:`Power-off and delete a managed Aiven for Apache Cassandra service </docs/platform/howto/pause-from-cli>`
     - :doc:`Migrate a managed Aiven for Apache Cassandra service </docs/platform/howto/migrate-services-cloud-region>`
+    - :doc:`Use sstableloader to migrate your existing Cassandra cluster to Aiven </docs/products/cassandra/howto/sstableloader-migration>`
     - :doc:`Fork a managed Aiven for Apache Cassandra service </docs/platform/howto/console-fork-service>`
 
 .. dropdown:: Cross-cluster replication
