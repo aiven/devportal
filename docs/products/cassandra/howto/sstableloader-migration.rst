@@ -1,22 +1,21 @@
 Using sstableloader to migrate your existing Cassandra® cluster to Aiven
 ========================================================================
 
-While it's possible to migrate a Cassandra® cluster to Aiven by inserting
-rows using a regular Cassandra client, there is an alternative which
-scales better for large amounts of data. The sstableloader utility is
-run on the source cluster nodes and reads the raw data files for tables
-that you want to migrate, and uploads them efficiently to the target
-cluster by connecting directly to the target nodes'  internode port that
-is normally used only for communication between the cluster's nodes.
+While it's possible to migrate a Cassandra® cluster to Aiven by inserting rows using a regular Cassandra client, using sstableloader is an alternative which scales better for large amounts of data. Check out how to migrate your Cassandra cluster into Aiven using sstableloader.
 
-Create Aiven Cassandra service in migration mode
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+About sstableloader
+-------------------
 
-| To be able to connect to the internode ports from outside the service
-  nodes, the Aiven Cassandra service must be created in migration mode.
+The sstableloader utility is run on the source cluster nodes. It reads the raw data files for tables that you want to migrate and uploads them efficiently to the target cluster by connecting directly to the target nodes' internode port that is normally used only for communication between the cluster's nodes.
+
+Create an Aiven for Apache Cassandra service in the migration mode
+------------------------------------------------------------------
+
+|To be able to connect to the internode ports from outside the service
+  nodes, the Aiven for Apache Cassandra service must be created in migration mode.
   This configures the service to use the external IP addresses of the
   service and allows connections there using an SSL client certificate.
-| Using `Aiven CLI client <https://github.com/aiven/aiven-client>`__ ,
+|Using `Aiven CLI client <https://github.com/aiven/aiven-client>`__ ,
   create a new Cassandra service in migration mode with
 
 ::
@@ -53,9 +52,9 @@ keyspace to be migrated into a file with
 | Note that skipping changing the replication strategy in the schema
   leads to inserted data not being replicated to any of the service
   nodes!
-| Please see `Getting started with Aiven Cassandra of how to
+| Please see `Getting started with Aiven for Apache Cassandra of how to
   connect <https://help.aiven.io/en/articles/1803299-getting-started-with-aiven-cassandra>`__
-  for how to connect to the target Aiven Cassandra service and recreate
+  for how to connect to the target Aiven for Apache Cassandra service and recreate
   the schema in the target service with
 
 ::
@@ -142,15 +141,5 @@ Cassandra service with:
 
 This closes the internode port for external access and changes the
 Cassandra service to use IPsec for more efficient internode
-communication (See
-https://help.aiven.io/en/articles/977466-cloud-security-overview for
-details), and enables the `Aiven service to be migrated to another cloud
-or
-network <https://help.aiven.io/en/articles/493382-can-i-migrate-my-service-to-another-cloud-or-region>`__
-later.
-
-*Got here by accident? Learn how Aiven simplifies working with Apache
-Cassandra:*
-
--  `Managed and Hosted Apache Cassandra as a
-   service <https://aiven.io/cassandra>`__
+communication (See :doc:`Cloud security </docs/platform/concepts/cloud-security>` for
+details), and enables the :doc:`the Aiven service to be migrated to another cloud or region </docs/platform/howto/migrate-services-cloud-region>` later.
