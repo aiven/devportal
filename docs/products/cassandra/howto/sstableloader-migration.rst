@@ -88,40 +88,39 @@ Connecting to the internode port requires a client certificate. One has been cre
 Run sstableloader
 -----------------
 
-| Now ssh into each node of the source cluster, and run
-  ``nodetool flush`` . This forces Cassandra to write any mutations that
-  are only in memory to disk, so that all data on the node is uploaded.
-| After that, run the sstableloader command printed above giving it a
-  Cassandra table data directory as the argument:
+1. ``ssh`` into each node of the source cluster.
+2. Run ``nodetool flush``.
 
-.. code-block:: bash
+   This forces Cassandra to write any mutations that are only in memory to disk, so that all data on the node is uploaded.
 
-   sstableloader -f cassandra.yaml -d target-cassandra-myfirstcloudhub.aivencloud.com -ssp 24512 -p 24510 -u avnadmin -pw f5v60s7ngaid02aa cassandra/data/mykeyspace/mytable-3f6bcf70a6f111e98926edc04ce26602
+3. Run the sstableloader command with a Cassandra table data directory as the argument.
 
-This uploads the data files for that table from the node to the target.
-Note that the command must be run on every node of the source cluster,
-as not all rows are present on every node of the source cluster.
+   .. code-block:: bash
+
+      sstableloader -f cassandra.yaml -d target-cassandra-myfirstcloudhub.aivencloud.com -ssp 24512 -p 24510 -u avnadmin -pw f5v60s7ngaid02aa cassandra/data/mykeyspace/mytable-3f6bcf70a6f111e98926edc04ce26602
+
+   This uploads the data files for that table from the node to the target.
+
+   .. note::
+      
+      The command must be run on every node of the source cluster as not all rows are present on every node of the source cluster.
 
 Verify the target service contains all data
 -------------------------------------------
 
-It's recommended to check the target service using your Cassandra client
-of choice to make sure all data to be migrated is there. It's possible
-to re-run sstableloader on the same tables again. This will simply
-upload any mutations in the source service's nodes' data directories to
-be applied in the target Cassandra service.
+It's recommended to check the target service using your Cassandra client of choice to make sure all data to be migrated is there. It's possible to re-run sstableloader on the same tables again. This uploads any mutations in the source service nodes' data directories to be applied in the target Cassandra service.
 
 Turn off the migration mode
 ---------------------------
 
-Finally, turn off the sstableloader migration mode from the target Aiven
-Cassandra service with:
+Turn off the sstableloader migration mode from the target Aiven for Apache Cassandra service with
 
 .. code-block:: bash
 
    avn service update -c migrate_sstableloader=false <service name>
 
-This closes the internode port for external access and changes the
-Cassandra service to use IPsec for more efficient internode
-communication (See :doc:`Cloud security </docs/platform/concepts/cloud-security>` for
-details), and enables the :doc:`the Aiven service to be migrated to another cloud or region </docs/platform/howto/migrate-services-cloud-region>` later.
+As a result
+
+* Internode port gets closed for external access
+* Cassandra service starts using IPsec for more efficient internode communication (see :doc:`Cloud security </docs/platform/concepts/cloud-security>` for details)
+* Aiven service can be :doc:`migrated to another cloud or region </docs/platform/howto/migrate-services-cloud-region>` any time.
