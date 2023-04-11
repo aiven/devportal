@@ -29,6 +29,8 @@ Consider the following recommendations for selecting the appropriate number of s
 
 These suggestions are only indicative, and optimal values depend on your usage patterns and anticipated data growth in OpenSearch®. Monitoring disk and CPU usage and upgrading when necessary to ensure optimal performance is essential.
 
+Additionally, if you are using OpenSearch® for daily logs or similar use cases, you could consider adding more shards per index to new indexes. Doing so will increase the number of shards per index for subsequent days, providing an alternative option for managing your data. 
+
 
 Adjusting shard count
 ----------------------
