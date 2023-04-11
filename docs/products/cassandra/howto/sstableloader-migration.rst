@@ -1,5 +1,5 @@
-Using sstableloader to migrate your existing Cassandra® cluster to Aiven
-========================================================================
+Migrate your Cassandra® cluster to Aiven with sstableloader
+===========================================================
 
 While it's possible to migrate a Cassandra® cluster to Aiven by inserting rows using a regular Cassandra client, using sstableloader is an alternative which scales better for large amounts of data. Check out how to migrate your Cassandra cluster into Aiven using sstableloader.
 
@@ -11,53 +11,45 @@ The sstableloader utility is run on the source cluster nodes. It reads the raw d
 Create an Aiven for Apache Cassandra service in the migration mode
 ------------------------------------------------------------------
 
-To be able to connect to the internode ports from outside the service nodes, the Aiven for Apache Cassandra service must be created in the migration mode. This configures the service to use the external IP addresses of the service and allows connections there using an SSL client certificate. Using `Aiven CLI client <https://github.com/aiven/aiven-client>`__ , create a new Cassandra service in migration mode with
+To be able to connect to the internode ports from outside the service nodes, the Aiven for Apache Cassandra service must be created in the migration mode. This configures the service to use the external IP addresses of the service and allows connections there using an SSL client certificate.
+
+Using `Aiven CLI client <https://github.com/aiven/aiven-client>`__, create a new Cassandra service in the migration mode with
 
 .. code-block:: bash
 
    avn service create -t cassandra -p <plan> -c migrate_sstableloader=true <service name>
 
-Migrate schema
-~~~~~~~~~~~~~~
+Migrate the schema
+------------------
 
-Because sstableloader only uploads data files to the target cluster, the
-schema for any uploaded tables must be created first. This can be done
-using the ``cqlsh`` command line client. Dump the schema for each
-keyspace to be migrated into a file with
+1. Because sstableloader only uploads data files to the target cluster, the schema for any uploaded tables must be created first. This can be done using the ``cqlsh`` command line client.
 
-.. code-block:: bash
+   Dump the schema for each keyspace to be migrated into a file with
 
-   cqlsh <source cassandra address> -e "DESCRIBE KEYSPACE mykeyspace" > mykeyspace-schema.cql
+   .. code-block:: bash
 
-| Now before using the commands in the file to recreate the schema in
-  the target Aiven service, the replication settings need to be adjusted
-  first. The first non-empty line in the file is a ``CREATE KEYSPACE``
-  query, which defines which replication strategy to use for the
-  keyspace and related settings.
-| To distribute replicas evenly across Availability Zones and to use the
-  datacenter name your Aiven service nodes are using, change the
-  ``WITH replication`` part of the query to use
-  ``NetworkTopologyStrategy`` and the desired number of replicas for
-  datacenter ``aiven`` . For example:
+      cqlsh <source cassandra address> -e "DESCRIBE KEYSPACE mykeyspace" > mykeyspace-schema.cql
 
-.. code-block:: bash
+2. Before using the commands in the file to recreate the schema in the target Aiven service, the replication settings need to be adjusted. The first non-empty line in the file is a ``CREATE KEYSPACE`` query, which defines which replication strategy to use for the keyspace and related settings.
+   
+   To distribute replicas evenly across availability zones and to use the datacenter name your Aiven service nodes are using, change the ``WITH replication`` part of the query to use ``NetworkTopologyStrategy`` and the desired number of replicas for datacenter ``aiven``. For example
 
-   CREATE KEYSPACE mykeyspace WITH replication = {'class': 'NetworkTopologyStrategy', 'aiven': '3'}  AND durable_writes = true
+   .. code-block:: bash
 
-| Note that skipping changing the replication strategy in the schema
-  leads to inserted data not being replicated to any of the service
-  nodes!
-| Please see `Getting started with Aiven for Apache Cassandra of how to
-  connect <https://help.aiven.io/en/articles/1803299-getting-started-with-aiven-cassandra>`__
-  for how to connect to the target Aiven for Apache Cassandra service and recreate
-  the schema in the target service with
+      CREATE KEYSPACE mykeyspace WITH replication = {'class': 'NetworkTopologyStrategy', 'aiven': '3'}  AND durable_writes = true
+
+   .. note::
+      
+      Skipping changing the replication strategy in the schema leads to inserted data not being replicated to any of the service nodes.
+
+3. :doc:`Connect to the target Aiven for Apache Cassandra service </docs/products/cassandra/howto/list-code-samples>` and recreate the schema in the target service with
 
 .. code-block:: bash
 
    SSL_CERTFILE=ca.pem cqlsh --ssl -u avnadmin -p f5v60s7ngaid02aa target-cassandra-myfirstcloudhub.aivencloud.com 24510 -f mykeyspace-schema.cql
 
-Retrieve client certificate and configuration for sstableloader
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Retrieve the client certificate and configuration for sstableloader
+-------------------------------------------------------------------
 
 As mentioned earlier, connecting to the internode port requires a client
 certificate. One has been created for the target service since it is in
@@ -99,7 +91,7 @@ client certificate retrieved earlier to authenticate with the internode
 port.
 
 Run sstableloader
-~~~~~~~~~~~~~~~~~
+-----------------
 
 | Now ssh into each node of the source cluster, and run
   ``nodetool flush`` . This forces Cassandra to write any mutations that
@@ -115,8 +107,8 @@ This uploads the data files for that table from the node to the target.
 Note that the command must be run on every node of the source cluster,
 as not all rows are present on every node of the source cluster.
 
-Verify target service contains all data
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Verify the target service contains all data
+-------------------------------------------
 
 It's recommended to check the target service using your Cassandra client
 of choice to make sure all data to be migrated is there. It's possible
@@ -124,8 +116,8 @@ to re-run sstableloader on the same tables again. This will simply
 upload any mutations in the source service's nodes' data directories to
 be applied in the target Cassandra service.
 
-Turn off migration mode
-~~~~~~~~~~~~~~~~~~~~~~~
+Turn off the migration mode
+---------------------------
 
 Finally, turn off the sstableloader migration mode from the target Aiven
 Cassandra service with:
