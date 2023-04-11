@@ -13,6 +13,7 @@ entries:
       - file: docs/platform/concepts/aiven-node-firewall-configuration
       - file: docs/platform/concepts/authentication-tokens
       - file: docs/platform/concepts/availability-zones
+      - file: docs/platform/concepts/free-plan
       - file: docs/platform/concepts/list-billing
         title: Billing
         entries:
