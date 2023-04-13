@@ -103,11 +103,11 @@ Finish the configuration in Aiven
 
 Go back to the **Authentication** page in the `Aiven Console <https://console.aiven.io/>`_ to enable the SAML authentication method:
 
-#. Select the name of the Okta method that you created. 
+1. Select the name of the Okta method that you created. 
 
-#. In the SAML configuration section, click **Edit**.
+2. In the SAML configuration section, click **Edit**.
 
-#. Add the configuration settings from Okta: 
+3. Add the configuration settings from Okta: 
 
 .. list-table::
    :header-rows: 1
@@ -122,15 +122,14 @@ Go back to the **Authentication** page in the `Aiven Console <https://console.ai
    * - ``SAML Certificate`` 
      - ``X.509 Certificate``
 
-   .. image:: /images/platform/howto/saml/okta/okta-edit-method.png
-      :alt: Edit authentication method page in Aiven Console.
+.. image:: /images/platform/howto/saml/okta/okta-edit-method.png
+   :alt: Edit authentication method page in Aiven Console.
 
-#. Toggle on ``IdP login`` and ``Enable authentication method``. 
+4. Toggle on ``IdP login`` and ``Enable authentication method``. 
 
-#. Click ``Edit Method`` to save the settings.
+5. Click ``Edit Method`` to save the settings.
 
 You can use the **Signup URL** to invite new users, or the **Account link URL** for those that already have an Aiven user account.
-
 
 Troubleshooting
 ---------------
