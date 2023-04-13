@@ -86,8 +86,8 @@ This is a two step process. First, you create the SAML SP-Initiated authenticati
 
    * ``X.509 Certificate``
 
-.. image:: /images/platform/howto/saml/okta/okta-saml-settings.png
-   :alt: SAML settings in Okta showing the application data.
+   .. image:: /images/platform/howto/saml/okta/okta-saml-settings.png
+      :alt: SAML settings in Okta showing the application data.
 
 #. Go to the **Assignments** tab.
 
@@ -122,12 +122,12 @@ Go back to the **Authentication** page in the `Aiven Console <https://console.ai
    * - ``SAML Certificate`` 
      - ``X.509 Certificate``
 
-.. image:: /images/platform/howto/saml/okta/okta-edit-method.png
-   :alt: Edit authentication method page in Aiven Console.
+   .. image:: /images/platform/howto/saml/okta/okta-edit-method.png
+      :alt: Edit authentication method page in Aiven Console.
 
 #. Toggle on ``IdP login`` and ``Enable authentication method``. 
 
-£. Click ``Edit Method`` to save the settings.
+#. Click ``Edit Method`` to save the settings.
 
 You can use the **Signup URL** to invite new users, or the **Account link URL** for those that already have an Aiven user account.
 

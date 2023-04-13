@@ -42,15 +42,15 @@ Configure SAML on Auth0
 
 #. In the **Settings** section for the Application Callback URL, remove the existing configuration and add the following field mapping configuration:
 
-.. code-block:: shell
+    .. code-block:: shell
 
-   {
-     "email": "email",
-     "first_name": "first_name",
-     "identity": "email",
-     "last_name": "last_name",
-     "mapUnknownClaimsAsIs": true
-   }
+      {
+        "email": "email",
+        "first_name": "first_name",
+        "identity": "email",
+        "last_name": "last_name",
+        "mapUnknownClaimsAsIs": true
+      }
 
 #. Click **Enable** and **Save**.
 
