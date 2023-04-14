@@ -62,8 +62,6 @@ Sink connectors enable the integration of data from an existing Apache Kafka top
 
 * `Official MongoDB® <https://docs.mongodb.com/kafka-connector/current/>`__
 
-* `OpenSearch® <https://github.com/aiven/opensearch-connector-for-apache-kafka/blob/main/docs/opensearch-sink-connector-config-options.rst>`_ |preview|
-
 * `Snowflake <https://docs.snowflake.net/manuals/user-guide/kafka-connector.html>`__ |preview|
 
 * `Splunk <https://github.com/splunk/kafka-connect-splunk>`__
