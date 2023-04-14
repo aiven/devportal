@@ -51,7 +51,7 @@ In this example, the ``aiven_database`` field is updated to the service-specific
 
 1. Update ``aiven_database`` references to ``aiven_pg_database`` as in this example file:
 
-.. code:: terraform
+.. code::
 
     - resource "aiven_database" "mydatabase" {
         project       = aiven_project.myproject.project
