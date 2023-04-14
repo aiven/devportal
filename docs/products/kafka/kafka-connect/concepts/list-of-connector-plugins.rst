@@ -66,7 +66,7 @@ Sink connectors enable the integration of data from an existing Apache Kafka top
 
 * `Splunk <https://github.com/splunk/kafka-connect-splunk>`__
 
-* `Stream Reactor Cassandra® <https://docs.lenses.io/5.1/connectors/sinks/cassandrasinkconnector/`__
+* `Stream Reactor Cassandra® <https://docs.lenses.io/5.1/connectors/sinks/cassandrasinkconnector/>`__
 
 * `Stream Reactor InfluxDB® <https://docs.lenses.io/5.1/connectors/sinks/influxsinkconnector/>`__
 
