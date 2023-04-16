@@ -6,7 +6,7 @@ The first step in using Aiven for Apache Flink® is to create a service. You can
 This quickstart section provides you with the information you need to get started with Aiven for Apache Flink and build data pipelines to stream to analyze your data. Learn how to set up and configure Aiven for Flink, connect to your desired data sources, and start processing and analyzing your data in real-time.
 
 
-Create an Apache for Apache Flink® service 
+Create an Aiven for Apache Flink® service 
 ------------------------------------------
 
 1. Log in to the `Aiven web console <https://console.aiven.io/>`_.
