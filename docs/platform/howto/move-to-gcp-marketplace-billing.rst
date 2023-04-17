@@ -6,7 +6,7 @@ Aiven makes its services available through the Google Cloud Platform Marketplace
 Create a new account using a Google Cloud Platform Marketplace subscription
 ---------------------------------------------------------------------------
 
-Follow the steps to :doc:`set up Google Cloud Platform Marketplace for Aiven Services <billing-google-cloud-platform-marketplace-subscription>`.  This will create a new empty project, which is where your services will be moved to.
+Follow the steps to :doc:`set up Google Cloud Platform Marketplace for Aiven Services <billing-google-cloud-platform-marketplace-subscription>`.  This will create a new Aiven organization, which is where your project will be moved to.
 
 Gather the required information
 -------------------------------
@@ -15,11 +15,11 @@ Aiven will need some information from both your existing and new subscriptions i
 
 **From your existing Aiven account:**
 
-* The name of the project (or projects) that contain the services you wish to move. 
+* The name of the Aiven project (or projects) that contain the services you wish to move. 
 
-**From your new GCP Marketplace subscription:**
+**From your new Aiven organization with the GCP marketplace subscription:**
 
-* Your Account ID (in the format ``E-1234-1234-1234-1234``), as shown in the Aiven GCP console **Settings** screen.
+* Your new Aiven organization name, as shown at the top of the `Aiven GCP console <https://console.gcp.aiven.io/>`_.
 
 Send the request to Aiven
 -------------------------
