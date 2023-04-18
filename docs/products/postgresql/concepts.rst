@@ -15,7 +15,7 @@ Aiven for PostgreSQL® concepts
         :shadow: md
         :margin: 2 2 0 0
 
-    .. grid-item-card:: :doc:`Backups </docs/products/mysql/concepts/postgresql/concepts/pg-backups>`
+    .. grid-item-card:: :doc:`Backups </docs/products/postgresql/concepts/pg-backups>`
         :shadow: md
         :margin: 2 2 0 0
 
@@ -31,7 +31,7 @@ Aiven for PostgreSQL® concepts
         :shadow: md
         :margin: 2 2 0 0
 
-    .. grid-item-card:: :doc:`TimescaleDB </docs/products/mysql/concepts/postgresql/concepts/timescaledb>`
+    .. grid-item-card:: :doc:`TimescaleDB </docs/products/postgresql/concepts/timescaledb>`
         :shadow: md
         :margin: 2 2 0 0
 
