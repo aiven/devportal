@@ -14,7 +14,7 @@ Configure integration using CLI
 
 To configure integration using Aiven CLI, follow these steps: 
 
-Step 1. Create a Aiven for Apache Flink Service
+Step 1. Create a Aiven for Apache Flink service
 `````````````````````````````````````````````````
 Use the following command to create an Aiven for Apache Flink service: 
 
