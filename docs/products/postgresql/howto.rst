@@ -43,7 +43,7 @@ Aiven for PostgreSQL® how-tos
 
 .. dropdown:: Migration
 
-    - :doc:`Enable logical replication on Google Cloud SQL </docs/products/postgresql/howto/migrate-aiven-db-migrate>`
+    - :doc:`Migrate to Aiven for PostgreSQL® with aiven-db-migrate </docs/products/postgresql/howto/migrate-aiven-db-migrate>`
     - :doc:`Migrate to Aiven for PostgreSQL® with pg_dump and pg_restore </docs/products/postgresql/howto/migrate-pg-dump-restore>`
     - :doc:`Migrating to Aiven for PostgreSQL® using Bucardo </docs/products/postgresql/howto/migrate-using-bucardo>`
     - :doc:`Migrate between PostgreSQL® instances using aiven-db-migrate in Python </docs/products/postgresql/howto/run-aiven-db-migrate-python>`
