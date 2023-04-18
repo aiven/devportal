@@ -562,8 +562,13 @@ entries:
         entries:
           - file: docs/products/flink/howto/list-get-started
             title: Get started
-          - file: docs/products/flink/howto/create-integration
-            title: Data service integrations
+          - file: docs/products/flink/howto/list-integrations
+            title: Integrate service
+            entries:
+              - file: docs/products/flink/howto/create-integration
+                title: Data service integrations
+              - file: docs/products/flink/howto/ext-kafka-flink-integration
+                title: Connect to Apache Kafka
           - file: docs/products/flink/howto/list-flink-applications
             title: Aiven for Apache Flink applications
             entries:
