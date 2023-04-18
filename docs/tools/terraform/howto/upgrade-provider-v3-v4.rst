@@ -68,7 +68,7 @@ In this example, the ``aiven_database`` field is updated to the service-specific
 
 2. View a list of all resources in the state file::
 
-    terraform state list | grep azure
+    terraform state list
 
 3. Remove the resource from the control of Terraform::
 
@@ -79,7 +79,7 @@ In this example, the ``aiven_database`` field is updated to the service-specific
 
 4. Add the resource back to Terraform by importing it as a new resource::
 
-    terraform import aiven_pg_database project_name/ ???
+    terraform import aiven_pg_database project_name/service_name/db_name
 
 5. Check that the import is going to run as you expect::
 
