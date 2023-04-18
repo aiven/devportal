@@ -20,7 +20,40 @@ Aiven for PostgreSQL® how-tos
     - :doc:`Connect with Skyvia </docs/products/postgresql/howto/connect-skyvia>`
     - :doc:`Connect with Zapier </docs/products/postgresql/howto/connect-zapier>`
 
-.. dropdown:: Integrations
+.. dropdown:: Database administration
+
+    - :doc:`Connect with Go </docs/products/postgresql/howto/connect-go>`
+    - :doc:`Connect with Java </docs/products/postgresql/howto/connect-java>`
+    - :doc:`Connect with NodeJS </docs/products/postgresql/howto/connect-node>`
+    - :doc:`Connect with Go </docs/products/postgresql/howto/connect-go>`
+    - :doc:`Connect with Java </docs/products/postgresql/howto/connect-java>`
+    - :doc:`Connect with NodeJS </docs/products/postgresql/howto/connect-node>`
+    - :doc:`Connect with PHP </docs/products/postgresql/howto/connect-php>`
+    - :doc:`Connect with Python </docs/products/postgresql/howto/connect-python>`
+    - :doc:`Connect with psql </docs/products/postgresql/howto/connect-psql>`
+    - :doc:`Connect with pgAdmin </docs/products/postgresql/howto/connect-pgadmin>`
+    - :doc:`Connect with Rivery </docs/products/postgresql/howto/connect-rivery>`
+    - :doc:`Connect with Skyvia </docs/products/postgresql/howto/connect-skyvia>`
+    - :doc:`Connect with Zapier </docs/products/postgresql/howto/connect-zapier>`
+    - :doc:`Connect with psql </docs/products/postgresql/howto/connect-psql>`
+    - :doc:`Connect with pgAdmin </docs/products/postgresql/howto/connect-pgadmin>`
+    - :doc:`Connect with Rivery </docs/products/postgresql/howto/connect-rivery>`
+    - :doc:`Connect with Skyvia </docs/products/postgresql/howto/connect-skyvia>`
+    - :doc:`Connect with Zapier </docs/products/postgresql/howto/connect-zapier>`
+
+.. dropdown:: Migration
+
+    - :doc:`Connect with Go </docs/products/postgresql/howto/connect-go>`
+    - :doc:`Connect with Java </docs/products/postgresql/howto/connect-java>`
+    - :doc:`Connect with NodeJS </docs/products/postgresql/howto/connect-node>`
+    - :doc:`Connect with NodeJS </docs/products/postgresql/howto/connect-node>`
+
+.. dropdown:: Replication
+
+    - :doc:`Connect with Go </docs/products/postgresql/howto/connect-go>`
+    - :doc:`Connect with Java </docs/products/postgresql/howto/connect-java>`
+
+.. dropdown:: Integration
 
     - :doc:`Monitor PostgreSQL metrics with Datadog </docs/products/postgresql/howto/monitor-database-with-datadog>`
     - :doc:`Monitor PostgreSQL metrics with Grafana® </docs/products/postgresql/howto/report-metrics-grafana>`
