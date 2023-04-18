@@ -3,7 +3,7 @@ Aiven for PostgreSQL® concepts
 
 .. grid:: 1 2 2 2
 
-    .. grid-item-card:: :doc:```aiven-db-migrate`` </docs/products/postgresql/concepts/aiven-db-migrate>`
+    .. grid-item-card:: :doc:`aiven-db-migrate </docs/products/postgresql/concepts/aiven-db-migrate>`
         :shadow: md
         :margin: 2 2 0 0
 

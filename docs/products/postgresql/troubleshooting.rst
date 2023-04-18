@@ -1,6 +1,8 @@
 Troubleshooting common issues
 =============================
 
-Check out how to solve common issues you may come across while working with Aiven for PostgrSQL®.
+.. grid:: 1 2 2 2
 
-.. tableofcontents::
+    .. grid-item-card:: :doc:`Connection pooling </docs/products/postgresql/troubleshooting/troubleshooting-connection-pooling>`
+        :shadow: md
+        :margin: 2 2 0 0

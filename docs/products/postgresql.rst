@@ -3,32 +3,6 @@ Aiven for PostgreSQL®
 
 Aiven for PostgreSQL® is is a fully-managed and hosted relational database service. It's a high-performance data warehouse that offers maximum flexibility and functionality with a variety of advanced extensions out of the box.
 
-.. grid:: 1 2 2 2
-
-    .. grid-item-card::
-        :shadow: md
-        :margin: 2 2 0 0
-
-        📚 :doc:`/docs/products/postgresql/concepts`
-
-    .. grid-item-card::
-        :shadow: md
-        :margin: 2 2 0 0
-
-        💻 :doc:`/docs/products/postgresql/howto`
-
-    .. grid-item-card::
-        :shadow: md
-        :margin: 2 2 0 0
-
-        📖 :doc:`/docs/products/postgresql/reference`
-
-    .. grid-item-card::
-        :shadow: md
-        :margin: 2 2 0 0
-
-        🧰 :doc:`Code samples </docs/products/postgresql/howto/list-code-samples>`
-
 -------------------
 
 .. grid:: 1 2 2 2
