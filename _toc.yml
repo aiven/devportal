@@ -1008,8 +1008,6 @@ entries:
         title: Overview
       - file: docs/products/postgresql/getting-started
         title: Quickstart
-      - file: docs/products/postgresql/howto/pagila
-        title: "Sample dataset: Pagila"
       - file: docs/products/postgresql/concepts
         title: Concepts
         entries:
@@ -1034,13 +1032,24 @@ entries:
       - file: docs/products/postgresql/howto
         title: HowTo
         entries:
+          - file: docs/products/postgresql/howto/list-get-started
+            title: Get started
+            entries:
+              - file: docs/products/postgresql/howto/pagila
+                title: Load sample dataset
           - file: docs/products/postgresql/howto/list-code-samples
+            title: Connect to service
             entries:
               - file: docs/products/postgresql/howto/connect-go
               - file: docs/products/postgresql/howto/connect-java
               - file: docs/products/postgresql/howto/connect-node
               - file: docs/products/postgresql/howto/connect-php
               - file: docs/products/postgresql/howto/connect-python
+              - file: docs/products/postgresql/howto/connect-psql
+              - file: docs/products/postgresql/howto/connect-pgadmin
+              - file: docs/products/postgresql/howto/connect-rivery
+              - file: docs/products/postgresql/howto/connect-skyvia
+              - file: docs/products/postgresql/howto/connect-zapier
           - file: docs/products/postgresql/howto/list-dba-tasks
             entries:
               - file: docs/products/postgresql/howto/create-database
@@ -1061,7 +1070,6 @@ entries:
               - file: docs/products/postgresql/howto/optimize-pg-slow-queries
               - file: docs/products/postgresql/howto/check-avoid-transaction-id-wraparound
               - file: docs/products/postgresql/howto/prevent-full-disk
-              
           - file: docs/products/postgresql/howto/list-replication-migration
             entries:
               - file: docs/products/postgresql/howto/create-read-replica
@@ -1074,13 +1082,11 @@ entries:
               - file: docs/products/postgresql/howto/migrate-pg-dump-restore
               - file: docs/products/postgresql/howto/migrate-using-bucardo
               - file: docs/products/postgresql/howto/run-aiven-db-migrate-python
+          - file: docs/products/postgresql/howto/list-manage-cluster
+            title: Manage cluster
           - file: docs/products/postgresql/howto/list-integrations
+            title: Integrations
             entries:
-              - file: docs/products/postgresql/howto/connect-psql
-              - file: docs/products/postgresql/howto/connect-pgadmin
-              - file: docs/products/postgresql/howto/connect-rivery
-              - file: docs/products/postgresql/howto/connect-skyvia
-              - file: docs/products/postgresql/howto/connect-zapier
               - file: docs/products/postgresql/howto/monitor-database-with-datadog
               - file: docs/products/postgresql/howto/visualize-grafana
               - file: docs/products/postgresql/howto/report-metrics-grafana

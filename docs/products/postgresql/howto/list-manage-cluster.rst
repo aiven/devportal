@@ -1,5 +1,5 @@
-Manage your Aiven for MySQL® cluster
-====================================
+Manage your Aiven for PostgreSQL® cluster
+=========================================
 
 :doc:`Monitor a managed service </docs/platform/howto/monitoring-services>`
 
