@@ -22,36 +22,39 @@ Aiven for PostgreSQL® how-tos
 
 .. dropdown:: Database administration
 
-    - :doc:`Connect with Go </docs/products/postgresql/howto/connect-go>`
-    - :doc:`Connect with Java </docs/products/postgresql/howto/connect-java>`
-    - :doc:`Connect with NodeJS </docs/products/postgresql/howto/connect-node>`
-    - :doc:`Connect with Go </docs/products/postgresql/howto/connect-go>`
-    - :doc:`Connect with Java </docs/products/postgresql/howto/connect-java>`
-    - :doc:`Connect with NodeJS </docs/products/postgresql/howto/connect-node>`
-    - :doc:`Connect with PHP </docs/products/postgresql/howto/connect-php>`
-    - :doc:`Connect with Python </docs/products/postgresql/howto/connect-python>`
-    - :doc:`Connect with psql </docs/products/postgresql/howto/connect-psql>`
-    - :doc:`Connect with pgAdmin </docs/products/postgresql/howto/connect-pgadmin>`
-    - :doc:`Connect with Rivery </docs/products/postgresql/howto/connect-rivery>`
-    - :doc:`Connect with Skyvia </docs/products/postgresql/howto/connect-skyvia>`
-    - :doc:`Connect with Zapier </docs/products/postgresql/howto/connect-zapier>`
-    - :doc:`Connect with psql </docs/products/postgresql/howto/connect-psql>`
-    - :doc:`Connect with pgAdmin </docs/products/postgresql/howto/connect-pgadmin>`
-    - :doc:`Connect with Rivery </docs/products/postgresql/howto/connect-rivery>`
-    - :doc:`Connect with Skyvia </docs/products/postgresql/howto/connect-skyvia>`
-    - :doc:`Connect with Zapier </docs/products/postgresql/howto/connect-zapier>`
+    - :doc:`Create additional PostgreSQL® databases </docs/products/postgresql/howto/create-database>`
+    - :doc:`Perform a PostgreSQL® major version upgrade </docs/products/postgresql/howto/upgrade>`
+    - :doc:`Install or update an extension </docs/products/postgresql/howto/manage-extensions>`
+    - :doc:`Create manual PostgreSQL® backups </docs/products/postgresql/howto/create-manual-backups>`
+    - :doc:`Restore PostgreSQL® from a backup </docs/products/postgresql/howto/restore-backup>`
+    - :doc:`Migrate to a different cloud provider or region </docs/products/postgresql/howto/migrate-cloud-region>`
+    - :doc:`Claim public schema ownership </docs/products/postgresql/howto/claim-public-schema-ownership>`
+    - :doc:`Manage connection pooling </docs/products/postgresql/howto/manage-pool>`
+    - :doc:`Access PgBouncer statistics </docs/products/postgresql/howto/pgbouncer-stats>`
+    - :doc:`Use the PostgreSQL® dblink extension </docs/products/postgresql/howto/use-dblink-extension>`
+    - :doc:`Use the PostgreSQL® pg_repack extension </docs/products/postgresql/howto/use-pg-repack-extension>`
+    - :doc:`Enable JIT in PostgreSQL® </docs/products/postgresql/howto/enable-jit>`
+    - :doc:`Identify and repair issues with PostgreSQL® indexes with REINDEX </docs/products/postgresql/howto/repair-pg-index>`
+    - :doc:`Identify PostgreSQL® slow queries </docs/products/postgresql/howto/identify-pg-slow-queries>`
+    - :doc:`Detect and terminate long-running queries </docs/products/postgresql/howto/pg-long-running-queries>`
+    - :doc:`Optimize PostgreSQL® slow queries </docs/products/postgresql/howto/optimize-pg-slow-queries>`
+    - :doc:`Check and avoid transaction ID wraparound </docs/products/postgresql/howto/check-avoid-transaction-id-wraparound>`
+    - :doc:`Prevent PostgreSQL® full disk issues </docs/products/postgresql/howto/prevent-full-disk>`
 
 .. dropdown:: Migration
 
-    - :doc:`Connect with Go </docs/products/postgresql/howto/connect-go>`
-    - :doc:`Connect with Java </docs/products/postgresql/howto/connect-java>`
-    - :doc:`Connect with NodeJS </docs/products/postgresql/howto/connect-node>`
-    - :doc:`Connect with NodeJS </docs/products/postgresql/howto/connect-node>`
+    - :doc:`Enable logical replication on Google Cloud SQL </docs/products/postgresql/howto/migrate-aiven-db-migrate>`
+    - :doc:`Migrate to Aiven for PostgreSQL® with pg_dump and pg_restore </docs/products/postgresql/howto/migrate-pg-dump-restore>`
+    - :doc:`Migrating to Aiven for PostgreSQL® using Bucardo </docs/products/postgresql/howto/migrate-using-bucardo>`
+    - :doc:`Migrate between PostgreSQL® instances using aiven-db-migrate in Python </docs/products/postgresql/howto/run-aiven-db-migrate-python>`
 
 .. dropdown:: Replication
 
-    - :doc:`Connect with Go </docs/products/postgresql/howto/connect-go>`
-    - :doc:`Connect with Java </docs/products/postgresql/howto/connect-java>`
+    - :doc:`Create and use read-only replicas </docs/products/postgresql/howto/create-read-replica>`
+    - :doc:`Set up logical replication to Aiven for PostgreSQL® </docs/products/postgresql/howto/setup-logical-replication>`
+    - :doc:`Enable logical replication on Amazon Aurora PostgreSQL® </docs/products/postgresql/howto/logical-replication-aws-aurora>`
+    - :doc:`Enable logical replication on Amazon RDS PostgreSQL® </docs/products/postgresql/howto/logical-replication-aws-rds>`
+    - :doc:`Enable logical replication on Google Cloud SQL </docs/products/postgresql/howto/logical-replication-gcp-cloudsql>`
 
 .. dropdown:: Integration
 
