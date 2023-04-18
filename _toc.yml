@@ -1004,14 +1004,33 @@ entries:
   - file: docs/products/postgresql
     title: PostgreSQL
     entries:
+      - file: docs/products/postgresql/overview
+        title: Overview
       - file: docs/products/postgresql/getting-started
-        title: Get started
+        title: Quickstart
       - file: docs/products/postgresql/howto/pagila
         title: "Sample dataset: Pagila"
       - file: docs/products/postgresql/concepts
         title: Concepts
         entries:
-          - glob: docs/products/postgresql/concepts/*
+          - file: docs/products/postgresql/concepts/aiven-db-migrate
+            title: aiven-db-migrate
+          - file: docs/products/postgresql/concepts/dba-tasks-pg
+            title: DBA-type tasks
+          - file: docs/products/postgresql/concepts/high-availability
+            title: High availability
+          - file: docs/products/postgresql/concepts/pg-backups
+            title: Backups
+          - file: docs/products/postgresql/concepts/pg-connection-pooling
+            title: Connection pooling
+          - file: docs/products/postgresql/concepts/pg-disk-usage
+            title: Disk usage
+          - file: docs/products/postgresql/concepts/pg-shared-buffers
+            title: Shared buffers
+          - file: docs/products/postgresql/concepts/timescaledb
+            title: TimescaleDB
+          - file: docs/products/postgresql/concepts/upgrade-failover
+            title: Upgrade and failover procedures
       - file: docs/products/postgresql/howto
         title: HowTo
         entries:
