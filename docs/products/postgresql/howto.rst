@@ -33,7 +33,6 @@ Aiven for PostgreSQL® how-tos
     - :doc:`Use the PostgreSQL® dblink extension </docs/products/postgresql/howto/use-dblink-extension>`
     - :doc:`Use the PostgreSQL® pg_repack extension </docs/products/postgresql/howto/use-pg-repack-extension>`
     - :doc:`Enable JIT in PostgreSQL® </docs/products/postgresql/howto/enable-jit>`
-    - :doc:`Identify and repair issues with PostgreSQL® indexes with REINDEX </docs/products/postgresql/howto/repair-pg-index>`
     - :doc:`Identify PostgreSQL® slow queries </docs/products/postgresql/howto/identify-pg-slow-queries>`
     - :doc:`Detect and terminate long-running queries </docs/products/postgresql/howto/pg-long-running-queries>`
     - :doc:`Optimize PostgreSQL® slow queries </docs/products/postgresql/howto/optimize-pg-slow-queries>`

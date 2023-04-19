@@ -1051,6 +1051,7 @@ entries:
               - file: docs/products/postgresql/howto/connect-skyvia
               - file: docs/products/postgresql/howto/connect-zapier
           - file: docs/products/postgresql/howto/list-dba-tasks
+            title: Administer database
             entries:
               - file: docs/products/postgresql/howto/create-database
               - file: docs/products/postgresql/howto/upgrade
@@ -1069,6 +1070,7 @@ entries:
               - file: docs/products/postgresql/howto/check-avoid-transaction-id-wraparound
               - file: docs/products/postgresql/howto/prevent-full-disk
           - file: docs/products/postgresql/howto/list-replication-migration
+            title: Migrate
             entries:
               - file: docs/products/postgresql/howto/migrate-cloud-region
               - file: docs/products/postgresql/howto/migrate-aiven-db-migrate
@@ -1076,6 +1078,7 @@ entries:
               - file: docs/products/postgresql/howto/migrate-using-bucardo
               - file: docs/products/postgresql/howto/run-aiven-db-migrate-python
           - file: docs/products/postgresql/howto/list-replication
+            title: Replicate
             entries:
               - file: docs/products/postgresql/howto/create-read-replica
               - file: docs/products/postgresql/howto/setup-logical-replication
@@ -1085,7 +1088,7 @@ entries:
           - file: docs/products/postgresql/howto/list-manage-cluster
             title: Manage cluster
           - file: docs/products/postgresql/howto/list-integrations
-            title: Integrations
+            title: Integrate
             entries:
               - file: docs/products/postgresql/howto/monitor-database-with-datadog
               - file: docs/products/postgresql/howto/visualize-grafana
