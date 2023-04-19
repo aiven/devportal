@@ -1057,14 +1057,12 @@ entries:
               - file: docs/products/postgresql/howto/manage-extensions
               - file: docs/products/postgresql/howto/create-manual-backups
               - file: docs/products/postgresql/howto/restore-backup
-              - file: docs/products/postgresql/howto/migrate-cloud-region
               - file: docs/products/postgresql/howto/claim-public-schema-ownership
               - file: docs/products/postgresql/howto/manage-pool
               - file: docs/products/postgresql/howto/pgbouncer-stats
               - file: docs/products/postgresql/howto/use-dblink-extension
               - file: docs/products/postgresql/howto/use-pg-repack-extension
               - file: docs/products/postgresql/howto/enable-jit
-              - file: docs/products/postgresql/howto/repair-pg-index
               - file: docs/products/postgresql/howto/identify-pg-slow-queries
               - file: docs/products/postgresql/howto/pg-long-running-queries
               - file: docs/products/postgresql/howto/optimize-pg-slow-queries
@@ -1072,6 +1070,7 @@ entries:
               - file: docs/products/postgresql/howto/prevent-full-disk
           - file: docs/products/postgresql/howto/list-replication-migration
             entries:
+              - file: docs/products/postgresql/howto/migrate-cloud-region
               - file: docs/products/postgresql/howto/migrate-aiven-db-migrate
               - file: docs/products/postgresql/howto/migrate-pg-dump-restore
               - file: docs/products/postgresql/howto/migrate-using-bucardo
@@ -1099,6 +1098,8 @@ entries:
         entries:
           - file: docs/products/postgresql/troubleshooting/troubleshooting-connection-pooling
             title: Connection pooling
+          - file: docs/products/postgresql/howto/repair-pg-index
+            title: Repair index
       - file: docs/products/postgresql/reference
         title: Reference
         entries:

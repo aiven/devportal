@@ -27,7 +27,6 @@ Aiven for PostgreSQL® how-tos
     - :doc:`Install or update an extension </docs/products/postgresql/howto/manage-extensions>`
     - :doc:`Create manual PostgreSQL® backups </docs/products/postgresql/howto/create-manual-backups>`
     - :doc:`Restore PostgreSQL® from a backup </docs/products/postgresql/howto/restore-backup>`
-    - :doc:`Migrate to a different cloud provider or region </docs/products/postgresql/howto/migrate-cloud-region>`
     - :doc:`Claim public schema ownership </docs/products/postgresql/howto/claim-public-schema-ownership>`
     - :doc:`Manage connection pooling </docs/products/postgresql/howto/manage-pool>`
     - :doc:`Access PgBouncer statistics </docs/products/postgresql/howto/pgbouncer-stats>`
@@ -43,6 +42,7 @@ Aiven for PostgreSQL® how-tos
 
 .. dropdown:: Migration
 
+    - :doc:`Migrate to a different cloud provider or region </docs/products/postgresql/howto/migrate-cloud-region>`
     - :doc:`Migrate to Aiven for PostgreSQL® with aiven-db-migrate </docs/products/postgresql/howto/migrate-aiven-db-migrate>`
     - :doc:`Migrate to Aiven for PostgreSQL® with pg_dump and pg_restore </docs/products/postgresql/howto/migrate-pg-dump-restore>`
     - :doc:`Migrating to Aiven for PostgreSQL® using Bucardo </docs/products/postgresql/howto/migrate-using-bucardo>`

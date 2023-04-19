@@ -23,10 +23,6 @@ Database administration tasks
         :shadow: md
         :margin: 2 2 0 0
 
-    .. grid-item-card:: :doc:`Migrate to a different cloud provider or region </docs/products/postgresql/howto/migrate-cloud-region>`
-        :shadow: md
-        :margin: 2 2 0 0
-
     .. grid-item-card:: :doc:`Claim public schema ownership </docs/products/postgresql/howto/claim-public-schema-ownership>`
         :shadow: md
         :margin: 2 2 0 0
@@ -48,10 +44,6 @@ Database administration tasks
         :margin: 2 2 0 0
 
     .. grid-item-card:: :doc:`Enable JIT in PostgreSQL® </docs/products/postgresql/howto/enable-jit>`
-        :shadow: md
-        :margin: 2 2 0 0
-
-    .. grid-item-card:: :doc:`Identify and repair issues with PostgreSQL® indexes with REINDEX </docs/products/postgresql/howto/repair-pg-index>`
         :shadow: md
         :margin: 2 2 0 0
 
