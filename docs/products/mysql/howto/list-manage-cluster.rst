@@ -1,5 +1,5 @@
-Manage your Aiven for Apache MySQL® cluster
-===========================================
+Manage your Aiven for MySQL® cluster
+====================================
 
 :doc:`Monitor a managed service </docs/platform/howto/monitoring-services>`
 

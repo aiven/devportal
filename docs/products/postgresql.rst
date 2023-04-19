@@ -1,47 +1,44 @@
-PostgreSQL® welcome
-===================
+Aiven for PostgreSQL®
+=====================
 
-PostgreSQL® is an open source, **relational database**. It's ideal for organisations that need a well organised tabular datastore.
-On top of the strict table and columns formats, PostgreSQL also offers solutions for nested datasets with the native ``jsonb`` format and advanced set of extensions including `PostGIS <https://postgis.net/>`_, a spatial database extender for location queries.
-Aiven for PostgreSQL is the perfect fit for your relational data. A scalable SQL database solution that can be up and running within a few minutes.
+Aiven for PostgreSQL® is is a fully-managed and hosted relational database service. It's a high-performance data warehouse that offers maximum flexibility and functionality with a variety of advanced extensions out of the box.
+
+-------------------
 
 .. grid:: 1 2 2 2
 
-    .. grid-item-card::
+    .. grid-item-card:: :doc:`Quickstart </docs/products/postgresql/getting-started>`
         :shadow: md
         :margin: 2 2 0 0
 
-        📚 :doc:`/docs/products/postgresql/concepts`
+        Create your first cluster and learn how to connect to Aiven for PostgreSQL.
 
-    .. grid-item-card::
+    .. grid-item-card:: :doc:`Overview </docs/products/postgresql/overview>`
         :shadow: md
         :margin: 2 2 0 0
 
-        💻 :doc:`/docs/products/postgresql/howto`
+        Discover Aiven for PostgreSQL's features and use cases. 
 
-    .. grid-item-card::
+    .. grid-item-card:: :doc:`How-Tos </docs/products/postgresql/howto>`
         :shadow: md
         :margin: 2 2 0 0
 
-        📖 :doc:`/docs/products/postgresql/reference`
+        Explore step-by-step instructions for common operations on Aiven for PostgreSQL.
 
-    .. grid-item-card::
+    .. grid-item-card:: :doc:`Concepts </docs/products/postgresql/concepts>`
         :shadow: md
         :margin: 2 2 0 0
 
-        🧰 :doc:`Code samples </docs/products/postgresql/howto/list-code-samples>`
+        Get familiar with core concepts of Aiven for PostgreSQL.
 
+    .. grid-item-card:: :doc:`Reference </docs/products/postgresql/reference>`
+        :shadow: md
+        :margin: 2 2 0 0
 
-PostgreSQL resources
---------------------
+        Look up parameters, metrics, or formats supported by Aiven for PostgreSQL.
 
-If you are new to PostgreSQL then there are lots of great resources out there to get you started with the platform. Here's our recommended reading list:
+    .. grid-item-card:: :doc:`Troubleshooting </docs/products/postgresql/troubleshooting>`
+        :shadow: md
+        :margin: 2 2 0 0
 
-* `PostgreSQL Project website <https://www.postgresql.org/>`_ providing a comprehensive per-release documentation
-
-* `PostGIS website <https://postgis.net/>`_ to read about location queries and the spatial extension
-
-Starter project
----------------
-
-If you don't have a dataset to play with, try our `Exoplanet example <https://aiven.io/blog/discover-exoplanets-with-postgresql?utm_source=github&utm_medium=organic&utm_campaign=devportal&utm_content=repo>`_
+        Check how to solve common issues encountered when working with Aiven for PostgrSQL.

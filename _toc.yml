@@ -1011,64 +1011,92 @@ entries:
   - file: docs/products/postgresql
     title: PostgreSQL
     entries:
+      - file: docs/products/postgresql/overview
+        title: Overview
       - file: docs/products/postgresql/getting-started
-        title: Get started
-      - file: docs/products/postgresql/howto/pagila
-        title: "Sample dataset: Pagila"
+        title: Quickstart
       - file: docs/products/postgresql/concepts
         title: Concepts
         entries:
-          - glob: docs/products/postgresql/concepts/*
+          - file: docs/products/postgresql/concepts/aiven-db-migrate
+            title: aiven-db-migrate
+          - file: docs/products/postgresql/concepts/dba-tasks-pg
+            title: DBA-type tasks
+          - file: docs/products/postgresql/concepts/high-availability
+            title: High availability
+          - file: docs/products/postgresql/concepts/pg-backups
+            title: Backups
+          - file: docs/products/postgresql/concepts/pg-connection-pooling
+            title: Connection pooling
+          - file: docs/products/postgresql/concepts/pg-disk-usage
+            title: Disk usage
+          - file: docs/products/postgresql/concepts/pg-shared-buffers
+            title: Shared buffers
+          - file: docs/products/postgresql/concepts/timescaledb
+            title: TimescaleDB
+          - file: docs/products/postgresql/concepts/upgrade-failover
+            title: Upgrade and failover procedures
       - file: docs/products/postgresql/howto
         title: HowTo
         entries:
+          - file: docs/products/postgresql/howto/list-get-started
+            title: Get started
+            entries:
+              - file: docs/products/postgresql/howto/pagila
+                title: Load sample dataset
           - file: docs/products/postgresql/howto/list-code-samples
+            title: Connect to service
             entries:
               - file: docs/products/postgresql/howto/connect-go
               - file: docs/products/postgresql/howto/connect-java
               - file: docs/products/postgresql/howto/connect-node
               - file: docs/products/postgresql/howto/connect-php
               - file: docs/products/postgresql/howto/connect-python
+              - file: docs/products/postgresql/howto/connect-psql
+              - file: docs/products/postgresql/howto/connect-pgadmin
+              - file: docs/products/postgresql/howto/connect-rivery
+              - file: docs/products/postgresql/howto/connect-skyvia
+              - file: docs/products/postgresql/howto/connect-zapier
           - file: docs/products/postgresql/howto/list-dba-tasks
+            title: Administer database
             entries:
               - file: docs/products/postgresql/howto/create-database
               - file: docs/products/postgresql/howto/upgrade
               - file: docs/products/postgresql/howto/manage-extensions
               - file: docs/products/postgresql/howto/create-manual-backups
               - file: docs/products/postgresql/howto/restore-backup
-              - file: docs/products/postgresql/howto/migrate-cloud-region
               - file: docs/products/postgresql/howto/claim-public-schema-ownership
               - file: docs/products/postgresql/howto/manage-pool
               - file: docs/products/postgresql/howto/pgbouncer-stats
               - file: docs/products/postgresql/howto/use-dblink-extension
               - file: docs/products/postgresql/howto/use-pg-repack-extension
               - file: docs/products/postgresql/howto/enable-jit
-              - file: docs/products/postgresql/howto/repair-pg-index
               - file: docs/products/postgresql/howto/identify-pg-slow-queries
               - file: docs/products/postgresql/howto/pg-long-running-queries
               - file: docs/products/postgresql/howto/optimize-pg-slow-queries
               - file: docs/products/postgresql/howto/check-avoid-transaction-id-wraparound
               - file: docs/products/postgresql/howto/prevent-full-disk
-              
           - file: docs/products/postgresql/howto/list-replication-migration
+            title: Migrate
             entries:
-              - file: docs/products/postgresql/howto/create-read-replica
-              - file: docs/products/postgresql/howto/setup-logical-replication
+              - file: docs/products/postgresql/howto/migrate-cloud-region
               - file: docs/products/postgresql/howto/migrate-aiven-db-migrate
-                entries:
-                - file: docs/products/postgresql/howto/logical-replication-aws-aurora
-                - file: docs/products/postgresql/howto/logical-replication-aws-rds
-                - file: docs/products/postgresql/howto/logical-replication-gcp-cloudsql
               - file: docs/products/postgresql/howto/migrate-pg-dump-restore
               - file: docs/products/postgresql/howto/migrate-using-bucardo
               - file: docs/products/postgresql/howto/run-aiven-db-migrate-python
-          - file: docs/products/postgresql/howto/list-integrations
+          - file: docs/products/postgresql/howto/list-replication
+            title: Replicate
             entries:
-              - file: docs/products/postgresql/howto/connect-psql
-              - file: docs/products/postgresql/howto/connect-pgadmin
-              - file: docs/products/postgresql/howto/connect-rivery
-              - file: docs/products/postgresql/howto/connect-skyvia
-              - file: docs/products/postgresql/howto/connect-zapier
+              - file: docs/products/postgresql/howto/create-read-replica
+              - file: docs/products/postgresql/howto/setup-logical-replication
+              - file: docs/products/postgresql/howto/logical-replication-aws-aurora
+              - file: docs/products/postgresql/howto/logical-replication-aws-rds
+              - file: docs/products/postgresql/howto/logical-replication-gcp-cloudsql
+          - file: docs/products/postgresql/howto/list-manage-cluster
+            title: Manage cluster
+          - file: docs/products/postgresql/howto/list-integrations
+            title: Integrate
+            entries:
               - file: docs/products/postgresql/howto/monitor-database-with-datadog
               - file: docs/products/postgresql/howto/visualize-grafana
               - file: docs/products/postgresql/howto/report-metrics-grafana
@@ -1080,6 +1108,8 @@ entries:
         entries:
           - file: docs/products/postgresql/troubleshooting/troubleshooting-connection-pooling
             title: Connection pooling
+          - file: docs/products/postgresql/howto/repair-pg-index
+            title: Repair index
       - file: docs/products/postgresql/reference
         title: Reference
         entries:
