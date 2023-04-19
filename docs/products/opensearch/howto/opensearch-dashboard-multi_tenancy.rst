@@ -10,7 +10,7 @@ Prerequisites
 * Administrative access to both the Aiven for OpenSearch service and OpenSearch Dashboard
 
 Configure multi-tenancy in OpenSearch® Dashboard
------------------------------------------------
+-------------------------------------------------
 
 This section provides information on configuring multi-tenancy in OpenSearch Dashboard, which involves enabling OpenSearch Security management, creating tenants, assigning roles, and mapping roles to users.
 
