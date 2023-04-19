@@ -1,16 +1,32 @@
-Manage your Aiven for PostgreSQL® cluster
-=========================================
+Cluster management
+==================
 
-:doc:`Monitor a managed service </docs/platform/howto/monitoring-services>`
+.. grid:: 1 2 2 2
 
-:doc:`Tag a managed service </docs/platform/howto/tag-resources>`
+    .. grid-item-card:: :doc:`Monitor a managed service </docs/platform/howto/monitoring-services>`
+        :shadow: md
+        :margin: 2 2 0 0
 
-:doc:`Schedule maintenance updates </docs/platform/howto/prepare-for-high-load>`
+    .. grid-item-card:: :doc:`Tag a managed service </docs/platform/howto/tag-resources>`
+        :shadow: md
+        :margin: 2 2 0 0
 
-:doc:`Resize a managed service </docs/platform/howto/scale-services>`
+    .. grid-item-card:: :doc:`Schedule maintenance updates </docs/platform/howto/prepare-for-high-load>`
+        :shadow: md
+        :margin: 2 2 0 0
 
-:doc:`Migrate a managed service </docs/platform/howto/migrate-services-cloud-region>`
+    .. grid-item-card:: :doc:`Resize a managed service </docs/platform/howto/scale-services>`
+        :shadow: md
+        :margin: 2 2 0 0
 
-:doc:`Fork a managed service </docs/platform/howto/console-fork-service>`
+    .. grid-item-card:: :doc:`Migrate a managed service </docs/platform/howto/migrate-services-cloud-region>`
+        :shadow: md
+        :margin: 2 2 0 0
 
-:doc:`Power off & delete a managed service </docs/platform/howto/pause-from-cli>`
+    .. grid-item-card:: :doc:`Fork a managed service </docs/platform/howto/console-fork-service>`
+        :shadow: md
+        :margin: 2 2 0 0
+
+    .. grid-item-card:: :doc:`Power off & delete a managed service </docs/platform/howto/pause-from-cli>`
+        :shadow: md
+        :margin: 2 2 0 0
