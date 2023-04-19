@@ -18,13 +18,13 @@ To upgrade your organization's support tier to the Priority, Business, or Enterp
 
 #. Select a **Start date**. 
     
-    .. note::
-        If you select the current month, you will be charged a percentage of the total service spend for the whole month, starting from the 1st.
+   .. note::
+    If you select the current month, you will be charged a percentage of the total service spend for the whole month, starting from the 1st.
 
 #. Select a **Billing group**. 
 
    .. important::
-    The support costs for all current and future services in this organization and all of its organizational units will be added to the invoice for this billing group.
+    The support costs for all current and future services in the selected organization and all of its organizational units will be added to the invoice for this billing group.
 
 #. Click **Upgrade tier**.
 
