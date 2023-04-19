@@ -13,6 +13,7 @@ entries:
       - file: docs/platform/concepts/aiven-node-firewall-configuration
       - file: docs/platform/concepts/authentication-tokens
       - file: docs/platform/concepts/availability-zones
+      - file: docs/platform/concepts/free-plan
       - file: docs/platform/concepts/list-billing
         title: Billing
         entries:
@@ -59,6 +60,7 @@ entries:
         entries: 
           - file: docs/tools/aiven-console/howto/create-accounts
           - file: docs/platform/howto/manage-project
+          - file: docs/platform/howto/manage-unassigned-projects
       - file: docs/platform/howto/list-service
         title: Service management
         entries:
@@ -70,6 +72,7 @@ entries:
           - file: docs/platform/howto/migrate-services-cloud-region
           - file: docs/platform/howto/migrate-services-vpc
           - file: docs/platform/howto/recover-a-deleted-service
+          - file: docs/platform/howto/cleanup-powered-off-services
           - file: docs/platform/howto/add-storage-space
           - file: docs/platform/howto/tag-resources
           - file: docs/platform/howto/search-services
@@ -92,6 +95,7 @@ entries:
           - file: docs/platform/howto/vnet-peering-azure
           - file: docs/platform/howto/use-aws-privatelinks.rst
           - file: docs/platform/howto/use-azure-privatelink
+          - file: docs/platform/howto/use-google-private-service-connect
       - file: docs/platform/howto/list-monitoring
         title: Monitoring management
         entries:
@@ -211,10 +215,12 @@ entries:
               title: Upgrade the Aiven Terraform Provider from v1 to v2
             - file: docs/tools/terraform/howto/upgrade-provider-v2-v3
               title: Upgrade the Aiven Terraform Provider from v2 to v3
+            - file: docs/tools/terraform/howto/upgrade-provider-v3-v4
+              title: Upgrade the Aiven Terraform Provider from v3 to v4
             - file: docs/tools/terraform/howto/config-postgresql-provider
               title: Use PostgreSQL provider alongside Aiven Terraform Provider 
             - file: docs/tools/terraform/howto/promote-to-master-pg-rr
-              title: Promote PostgreSQL read replica to master
+              title: Promote PostgreSQL read-only replica to master
             - file: docs/tools/terraform/howto/upgrade-to-opensearch
             - file: docs/tools/terraform/howto/vnet-peering-azure
         - file: docs/tools/terraform/concepts
@@ -250,7 +256,7 @@ entries:
             - file: docs/tools/terraform/reference/cookbook/m3db-m3agg-recipe
               title: M3 and M3 Aggregator
             - file: docs/tools/terraform/reference/cookbook/postgresql-read-replica-recipe
-              title: PostgreSQL® Read Replica
+              title: PostgreSQL® read-only replica
             - file: docs/tools/terraform/reference/cookbook/clickhouse-access-setup-recipe
               title: Configure ClickHouse user's access
             - file: docs/tools/terraform/reference/cookbook/kafka-clickhouse-integration-recipe
@@ -561,8 +567,13 @@ entries:
         entries:
           - file: docs/products/flink/howto/list-get-started
             title: Get started
-          - file: docs/products/flink/howto/create-integration
-            title: Data service integrations
+          - file: docs/products/flink/howto/list-integrations
+            title: Integrate service
+            entries:
+              - file: docs/products/flink/howto/create-integration
+                title: Data service integrations
+              - file: docs/products/flink/howto/ext-kafka-flink-integration
+                title: Connect to Apache Kafka
           - file: docs/products/flink/howto/list-flink-applications
             title: Aiven for Apache Flink applications
             entries:
@@ -618,7 +629,7 @@ entries:
       - file: docs/products/cassandra/howto
         title: HowTo
         entries:
-          - file: docs/products/cassandra/howto/setup
+          - file: docs/products/cassandra/howto/list-get-started
             title: Get started
           - file: docs/products/cassandra/howto/list-code-samples
             title: Connect to service
@@ -641,12 +652,12 @@ entries:
           - file: docs/products/cassandra/howto/list-cross-cluster-replication
             title: Cross-cluster replication
             entries:
-              - file: docs/products/cassandra/howto/disable-cross-cluster-replication
-                title: Disable CCR
-              - file: docs/products/cassandra/howto/manage-cross-cluster-replication
-                title: Manage CCR
               - file: docs/products/cassandra/howto/enable-cross-cluster-replication
                 title: Enable CCR
+              - file: docs/products/cassandra/howto/manage-cross-cluster-replication
+                title: Manage CCR
+              - file: docs/products/cassandra/howto/disable-cross-cluster-replication
+                title: Disable CCR
       - file: docs/products/cassandra/reference
         title: Reference
         entries:
@@ -673,8 +684,6 @@ entries:
         title: Concepts
         entries:
           - file: docs/products/clickhouse/concepts/olap
-          - file: docs/products/clickhouse/concepts/databases-and-tables
-            title: Databases and tables
           - file: docs/products/clickhouse/concepts/columnar-databases
           - file: docs/products/clickhouse/concepts/indexing
           - file: docs/products/clickhouse/concepts/disaster-recovery
@@ -838,41 +847,67 @@ entries:
   - file: docs/products/mysql
     title: MySQL
     entries:
+      - file: docs/products/mysql/overview
+        title: Overview
       - file: docs/products/mysql/get-started
-        title: Get started
+        title: Quickstart
       - file: docs/products/mysql/concepts                   
         title: Concepts                           
         entries:                                  
-          - glob: docs/products/mysql/concepts/*
+          - file: docs/products/mysql/concepts/max-number-of-connections
+            title: max_connections
+          - file: docs/products/mysql/concepts/mysql-backups
+            title: Backups
+          - file: docs/products/mysql/concepts/mysql-memory-usage
+            title: Memory usage
+          - file: docs/products/mysql/concepts/mysql-replication
+            title: Replication
+          - file: docs/products/mysql/concepts/mysql-tuning-and-concurrency
+            title: Tuning for concurrency
       - file: docs/products/mysql/howto
         title: HowTo
         entries:
+          - file: docs/products/mysql/howto/list-get-started
+            title: Get started
           - file: docs/products/mysql/howto/list-code-samples
+            title: Connect to a service
             entries:
               - file: docs/products/mysql/howto/connect-from-cli
               - file: docs/products/mysql/howto/connect-with-python
               - file: docs/products/mysql/howto/connect-using-mysqlx-with-python
               - file: docs/products/mysql/howto/connect-with-java
               - file: docs/products/mysql/howto/connect-with-php
-          - file: docs/products/mysql/howto/create-database
-          - file: docs/products/mysql/howto/create-remote-replica
-            title: Create remote replicas
-          - file: docs/products/mysql/howto/connect-from-mysql-workbench
-          - file: docs/products/mysql/howto/do-check-service-migration
-            title: Run pre-migration checks
-          - file: docs/products/mysql/howto/migrate-from-external-mysql
-            title: Migrate to Aiven with CLI
-          - file: docs/products/mysql/howto/migrate-db-to-aiven-via-console
-            title: Migrate to Aiven via console
-          - file: docs/products/mysql/howto/migrate-database-mysqldump
-            title: Backup and restore with mysqldump
-          - file: docs/products/mysql/howto/prevent-disk-full
-          - file: docs/products/mysql/howto/reclaim-disk-space
-          - file: docs/products/mysql/howto/identify-disk-usage-issues
-          - file: docs/products/mysql/howto/disable-foreign-key-checks
-          - file: docs/products/mysql/howto/enable-slow-queries
-          - file: docs/products/mysql/howto/create-tables-without-primary-keys
-          - file: docs/products/mysql/howto/create-missing-primary-keys
+              - file: docs/products/mysql/howto/connect-from-mysql-workbench
+          - file: docs/products/mysql/howto/list-manage-database
+            title: Database management
+            entries:
+              - file: docs/products/mysql/howto/create-database
+                title: Create a database
+              - file: docs/products/mysql/howto/create-remote-replica
+                title: Create remote replicas
+              - file: docs/products/mysql/howto/migrate-database-mysqldump
+                title: Backup and restore with mysqldump
+              - file: docs/products/mysql/howto/disable-foreign-key-checks
+              - file: docs/products/mysql/howto/enable-slow-queries
+              - file: docs/products/mysql/howto/create-tables-without-primary-keys
+              - file: docs/products/mysql/howto/create-missing-primary-keys
+          - file: docs/products/mysql/howto/list-migrate-data
+            title: Data migration
+            entries:
+              - file: docs/products/mysql/howto/do-check-service-migration
+                title: Run pre-migration checks
+              - file: docs/products/mysql/howto/migrate-from-external-mysql
+                title: Migrate to Aiven with CLI
+              - file: docs/products/mysql/howto/migrate-db-to-aiven-via-console
+                title: Migrate to Aiven via console
+          - file: docs/products/mysql/howto/list-manage-disk-space
+            title: Disk space management
+            entries:
+              - file: docs/products/mysql/howto/prevent-disk-full
+              - file: docs/products/mysql/howto/reclaim-disk-space
+              - file: docs/products/mysql/howto/identify-disk-usage-issues
+          - file: docs/products/mysql/howto/list-manage-cluster
+            title: Cluster management
       - file: docs/products/mysql/reference
         title: Reference
         entries:

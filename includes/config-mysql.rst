@@ -245,7 +245,7 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 *integer*
 
-**innodb_lock_wait_timeout** The length of time in seconds an InnoDB transaction waits for a row lock before giving up.
+**innodb_lock_wait_timeout** The length of time in seconds an InnoDB transaction waits for a row lock before giving up. Default is 120.
 
 ``innodb_log_buffer_size``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -1,10 +1,10 @@
-Terraform to apply "promote to master" on PostgreSQL® read replica
-##################################################################
+Terraform to apply "promote to master" on PostgreSQL® read-only replica
+#######################################################################
 
-On the Aiven console, if you use "service integrations" to create a read replica from an existing PostgreSQL or MySQL service, there is an option for the read replica service to promote to master using the 
-**Promote to master** button under the *Overview* tab. While the Terraform documentation does not explicitly mention how to promote the read replica to master, you can remove the service integration between services to accomplish the task.
+On the Aiven console, if you use "service integrations" to create a read-only replica from an existing PostgreSQL or MySQL service, there is an option for the read-only replica service to promote to master using the 
+**Promote to master** button under the *Overview* tab. While the Terraform documentation does not explicitly mention how to promote the read-only replica to master, you can remove the service integration between services to accomplish the task.
 
-Let's create Aiven for PostgreSQL® primary and a read replica using the following Terraform file:
+Let's create Aiven for PostgreSQL® primary and a read-only replica using the following Terraform file:
 
 .. code:: terraform
   
@@ -44,7 +44,7 @@ Let's create Aiven for PostgreSQL® primary and a read replica using the followi
     destination_service_name = aiven_pg.demo-postgresql-read-replica.service_name
   }
   
-You can get the read replica promoted to master by removing the resource ``aiven_service_integration``, the code blocks ``service_integrations`` and ``depends_on`` under ``demo-postgresql-read-replica`` resource above.
+You can get the read-only replica promoted to master by removing the resource ``aiven_service_integration``, the code blocks ``service_integrations`` and ``depends_on`` under ``demo-postgresql-read-replica`` resource above.
 Once you remove these code blocks, your Terraform script will look something like this:
 
 .. code:: terraform
@@ -69,10 +69,10 @@ Once you remove these code blocks, your Terraform script will look something lik
     termination_protection  = false
   }
   
-Run ``terraform apply`` to have the read replica promoted to master and both Aiven for PostgreSQL services will run as independent services.
+Run ``terraform apply`` to have the read-only replica promoted to master and both Aiven for PostgreSQL services will run as independent services.
 
 .. note::
-    In order for the promotion to master to succeed, the resource ``aiven_service_integration`` must be used when creating the primary and read replica services and subsequently removed. 
+    In order for the promotion to master to succeed, the resource ``aiven_service_integration`` must be used when creating the primary and read-only replica services and subsequently removed. 
 
 
   

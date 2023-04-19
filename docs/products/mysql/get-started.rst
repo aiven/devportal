@@ -1,37 +1,37 @@
-Getting started with Aiven for MySQL
-====================================
+Getting started with Aiven for MySQL®
+=====================================
 
-Aiven for MySQL services are managed from the `Aiven
-Console <https://console.aiven.io/>`__ .
+Aiven for MySQL® services are managed from the `Aiven Console <https://console.aiven.io/>`__ .
 
-You can start an Aiven for MySQL service by following the steps laid out
-in :doc:`this article </docs/platform/howto/create_new_service>`.
+Start a service
+---------------
 
-The view returns to the service list, where the new service is shown
-with an indicator that it is being created.
+1. Start an Aiven for MySQL service by following the steps in :doc:`this article </docs/platform/howto/create_new_service>`.
 
-Click the service name in the list to go to the " **Overview** " page.
-This view shows the connection parameters for your MySQL service and its
-current status. You can make changes to the service configuration here,
-even while the service is being built. You can find the available
-configuration options on the :doc:`reference page <reference/advanced-params>`.
+   Upon creating a service, the view returns to the service list, where the new service is shown with an indicator that it is being created.
 
-The "Status" indicator says " **REBUILDING** " while the service is
-being created. Once the service is up and running, the light changes to
-green and the indicator says " **RUNNING** ".
+2. Select the service name in the list to go to the **Overview** page.
+
+   This view shows the connection parameters for your MySQL service and its current status.
+   
+3. You can make changes to the service configuration in the **Overview** tab, even while the service is being built.
+
+   You can find the available configuration options in the :doc:`reference article </docs/products/mysql/reference/advanced-params>`.
+
+The **Status** indicator says **REBUILDING** while the service is being created. Once the service is up and running, the light changes to green and the indicator says **RUNNING**.
 
 .. note::
    Services typically start in a couple of minutes, the performance between clouds varies and it can take longer under some circumstances.
 
-Next steps with Aiven for MySQL
--------------------------------
+Next steps
+----------
 
 * Learn how to connect to MySQL:
-    - :doc:`from the command line <howto/connect-from-cli>`
-    - :doc:`with MySQL workbench <howto/connect-from-mysql-workbench>`
+    - :doc:`From the command line </docs/products/mysql/howto/connect-from-cli>`
+    - :doc:`With MySQL workbench </docs/products/mysql/howto/connect-from-mysql-workbench>`
 
 * Create additional databases:
-    - :doc:`create your database <howto/create-database>`
+    - :doc:`Create your database </docs/products/mysql/howto/create-database>`
 
-* Connect from your own :doc:`Python application <howto/connect-with-python>`.
+* Connect from your own :doc:`Python application </docs/products/mysql/howto/connect-with-python>`.
 

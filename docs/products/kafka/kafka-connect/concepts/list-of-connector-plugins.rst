@@ -29,9 +29,9 @@ Source connectors enable the integration of data from an existing technology int
 
 * Schema Source 
 
-* `Stream Reactor Cassandra® <https://docs.lenses.io/connectors/source/cassandra.html>`__
+* `Stream Reactor Cassandra® <https://docs.lenses.io/5.1/connectors/sources/cassandrasourceconnector/>`__
 
-* `Stream Reactor MQTT <https://docs.lenses.io/connectors/source/mqtt.html>`__ 
+* `Stream Reactor MQTT <https://docs.lenses.io/5.1/connectors/sources/mqttsourceconnector/>`__ 
 
 Sink connectors
 -----------------
@@ -62,21 +62,19 @@ Sink connectors enable the integration of data from an existing Apache Kafka top
 
 * `Official MongoDB® <https://docs.mongodb.com/kafka-connector/current/>`__
 
-* `OpenSearch® <https://github.com/aiven/opensearch-connector-for-apache-kafka/blob/main/docs/opensearch-sink-connector-config-options.rst>`_ |preview|
-
 * `Snowflake <https://docs.snowflake.net/manuals/user-guide/kafka-connector.html>`__ |preview|
 
 * `Splunk <https://github.com/splunk/kafka-connect-splunk>`__
 
-* `Stream Reactor Cassandra® <https://docs.lenses.io/connectors/sink/cassandra.html>`__
+* `Stream Reactor Cassandra® <https://docs.lenses.io/5.1/connectors/sinks/cassandrasinkconnector/>`__
 
-* `Stream Reactor InfluxDB® <https://docs.lenses.io/connectors/sink/influx.html>`__
+* `Stream Reactor InfluxDB® <https://docs.lenses.io/5.1/connectors/sinks/influxsinkconnector/>`__
 
-* `Stream Reactor MongoDB® <https://docs.lenses.io/connectors/sink/mongo.html>`__
+* `Stream Reactor MongoDB® <https://docs.lenses.io/5.1/connectors/sinks/mongosinkconnector/>`__
 
-* `Stream Reactor MQTT <https://docs.lenses.io/connectors/sink/mqtt.html>`__
+* `Stream Reactor MQTT <https://docs.lenses.io/5.1/connectors/sinks/mqttsinkconnector/>`__
 
-* `Stream Reactor Redis®* <https://docs.lenses.io/connectors/sink/redis.html>`__
+* `Stream Reactor Redis®* <https://docs.lenses.io/5.1/connectors/sinks/redissinkconnector/>`__
 
 
 Preview connectors
