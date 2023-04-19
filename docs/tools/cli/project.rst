@@ -45,15 +45,14 @@ Sets the default project to use when one is not specified in an ``avn`` command.
 
   * - Parameter
     - Information
-  * - ``--project``
-    - The project name
+  * - ``project_name``
+    - Required positional argument
 
 **Example:** Make the project named ``my-project`` the default for all commands where the ``--project`` parameter isn't supplied:
 
 .. code:: shell
 
-  avn project switch --project my-project
-
+  avn project switch my-project
 
 ``avn project list``
 ''''''''''''''''''''
