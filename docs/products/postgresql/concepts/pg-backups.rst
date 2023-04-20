@@ -65,9 +65,13 @@ Differences between logical and full backups
 Delta base backups
 ------------------
 
-Aiven for PostgreSQL uses delta base backups, which allows to store data files that have been changed since the last backup and leave out the unchanged files. It's particularly beneficial for databases that include considerable portions of static data. Compared to regular base backups, delta base backups are more efficient, bringing improved performance and speeding up backup and restore operations.
+Aiven for PostgreSQL uses delta base backups, which allows to store data files that have been changed since the last backup and leave out the unchanged files. It's particularly beneficial for databases that include considerable portions of static data. Compared to regular base backups, delta base backups are more efficient, bringing improved performance and speeding up backup operations (unless all the data is updated constantly).
 
-Since delta base backups don't take all the data files, they are faster and easier to perform on large databases with huge volumes of data. Because performing a delta base backup doesn't last long, the frequency of taking backups can be increased if needed. With the increased backup frequency, service restoration and node replacement are faster for highly updated services because fewer WAL files need to be restored since the last backup (WAL restoration in PostgreSQL is single-threaded and, therefore, slow).
+Since delta base backups don't take all the data files, they are faster and easier to perform on large databases with huge volumes of data. Because performing a delta base backup doesn't last long, Aiven can back up data more frequently if required and applicable to specific datasets. With the increased backup frequency, service restoration and node replacement potentially can be faster for highly updated services because fewer WAL files need to be restored since the last backup (WAL restoration in PostgreSQL is single-threaded and, therefore, slow).
+
+.. note:: 
+
+  Currently, the delta base backup feature is enabled for newly-created services only. The scope is going to be extended to existing services soon.
 
 .. seealso::
 
