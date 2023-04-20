@@ -11,7 +11,7 @@ Prerequisites
 * OpenSearch Security management enabled for the Aiven for OpenSearch service 
 
 
-Enable Audit logs
+Enable audit logs
 ---------------------
 To enable audit logs in OpenSearch® Security dashboard, follow these steps: 
 
@@ -24,7 +24,7 @@ To enable audit logs in OpenSearch® Security dashboard, follow these steps:
     You can configure the storage location and storage types for OpenSearch audit logs by modifying the ``opensearch.yml`` file. By default, the logs are stored in an index called ``internal_opensearch`` on the same cluster.
 
 
-Audit Log event types
+Audit log event types
 -----------------------
 OpenSearch® enables audit logging for HTTP requests(REST) and the transport layer, capturing various events related to user authentication, privileges, security, and more.
 
@@ -52,7 +52,7 @@ General settings
 Compliance settings 
 `````````````````````
 * **Compliance mode**: This enables logging of all events in a tamper-evident manner, which prevents deletion or modification of logs, ensuring compliance with specific regulations or standards.
-* **Config option**: This enables logging of changes to OpenSearch Security configuration files, allowing you to monitor security policies and settings changes.
+* **Config**: This enables logging of changes to OpenSearch Security configuration files, allowing you to monitor security policies and settings changes.
 * **Internal config logging**: This enables logging of events on the internal security index, allowing you to monitor changes to the OpenSearch Security configuration made by internal users or processes.
 * **External config logging**: This enables logging of external configuration changes, allowing you to monitor changes to external authentication providers or other systems integrated with OpenSearch Security.
 * **Read metadata and write metadata options**: This enables metadata logging for read and write operations. You can also exclude specific users or watched fields from being logged.
@@ -81,7 +81,7 @@ To access and visualize audit logs in OpenSearch, follow the steps below:
 
 2. **Create a visualization**: 
    
-   a. Select **Visualize** in the OpenSearch Dashboards left side menu, and sthen select **Create new visualization** or **Create visualization** if there are already saved visualizations.
+   a. Select **Visualize** in the OpenSearch Dashboards left side menu, and then select **Create new visualization** or **Create visualization** if there are already saved visualizations.
    b. Choose the type of visualization you want to create and select the index pattern you created in the previous step.
    c. Choose the specific fields you want to display in your visualization.
 
