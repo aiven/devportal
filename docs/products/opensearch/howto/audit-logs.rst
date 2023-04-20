@@ -93,7 +93,7 @@ To access and visualize audit logs in OpenSearch, follow the steps below:
 
 4. **Modify visualization**: 
    
-   To make changes to a visualization, select the pencil icon next to the visualization you want to modify on the **Visualization** screen, make the desired modifications, and save them.
+   To make changes to a visualization, in the **Visualization** screen, select the pencil icon next to the visualization you want to modify, make the desired changes, and save them.
 
 
 Related reading
