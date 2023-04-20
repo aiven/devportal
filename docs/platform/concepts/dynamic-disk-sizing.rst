@@ -1,9 +1,9 @@
 Dynamic Disk Sizing
 ====================
 
-Dynamic Disk Sizing (DDS) allows you to add or remove additional storage to your services from within the `Aiven Console <https://console.aiven.io/>`_. You can add additional storage during service creation or on-demand without interruption to meet the growing business needs. 
+Dynamic Disk Sizing (DDS) allows you to add storage to or remove storage from your services. You can add storage during service creation or later when service is running service without interruption. 
 
-Dynamic Disk Sizing (DDS) is available for the following services:
+DDS is available for the following services:
 
 - Aiven for Apache Kafka®
 - Aiven for PostgreSQL®
@@ -18,33 +18,29 @@ Dynamic Disk Sizing (DDS) is available for the following services:
 
 Why dynamic disk sizing?
 ------------------------
-When creating a service on Aiven, you have a fixed pre-defined storage allocation based on your plan selection. However, when running your service, there is a possibility that you may soon realize the need for scaling up the storage alone.
+When creating a service on Aiven, you have a fixed storage allocation based on your plan selection. When running your service, you may want to scale up only the storage.
 
-Predicting future growth and storage requirements can sometimes be challenging, and upgrading your service plans for additional storage requirements alone may not be feasible. Upgrading the service plans means paying for more compute resources (or RAM) that your current usage does not require. 
-
-To cater to the needs of additional storage requirements on-demand, Aiven provides you the option of Dynamic Disk Sizing to manage storage dynamically.  
+Predicting future growth and storage requirements can sometimes be challenging, and upgrading your service plans for additional storage requirements alone may not be feasible. Upgrading the service plans means paying for more compute resources (or RAM) that your current usage does not require. DDS lets you add storage to meet your requirements.
 
 Using DDS provides the following benefits: 
 
 - Provides an easy way to increase the disk storage available with the selected service plan.
-- You can dynamically add or remove additional storage without disrupting your running service.
-- It is cost-effective, as you pay only for the additional storage, not the compute resources that would have been part of an upgraded service plan. 
+- You can dynamically add or remove storage without disrupting your running service.
+- It is cost-effective as you pay only for the additional storage not the compute resources that are part of an upgraded service plan. 
 
 How does Dynamic Disk Sizing work?
 ----------------------------------
-You can add additional disk storage to your service plan when you :doc:`create a new service <../howto/create_new_service>` on the `Aiven Console <https://console.aiven.io/>`_ or on-demand when you need more storage while :doc:`running your service<../howto/add-storage-space>`. Adding additional storage will not affect or interrupt the operations of your service. 
+You can add disk storage to your service plan when you :doc:`create a new service <../howto/create_new_service>` or on demand when you need more storage while :doc:`running your service<../howto/add-storage-space>`. Adding storage will not affect or interrupt the operations of your service. 
 
-When you add additional storage to your service, the Aiven platform provisions additional disk storage and dynamically adds it to your running instances. The total amount of additional storage you can add to your service is based on your service plan and the cloud provider.
+When you add storage to your service, the Aiven platform provisions the extra disk space and dynamically adds it to your running instances. The total amount of storage you can add to your service is based on your service plan and the cloud provider.
 
-In a clustered service (Apache Cassandra or Apache Kafka), the additional storage added will be equally divided between the nodes. In a shared service, each node receives the total shared capacity of the additional storage added. All the additional storage added will remain usable.
+In a clustered service such as Apache Cassandra or Apache Kafka, the additional storage is equally divided between the nodes. In a shared service, each node receives the total shared capacity of the added storage. 
 
 Pricing for dynamic disk sizing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Suppose you add additional storage at the time of service creation. In that case, the cost is calculated based on the total amount of additional storage added in GB and included as part of your service's total cost. It is also visible in the service summary.
+If you add storage when you create a service, the cost is included as part of your service's total cost and is shown in the service summary. The cost of adding storage to a running service is shown in the Aiven Console when you add it. 
 
-Likewise, the cost of adding storage on-demand when your service is running is visible on the Aiven web console when you add storage. 
-
-The total price you see is the cost of the additional storage and any backups associated with it. You can also see the additional storage usage costs in your invoices.
+The total price you see is the cost of the additional storage and any backups associated with it. You can also see these storage usage costs in your invoices.
 
 Limitations
 ~~~~~~~~~~~
@@ -56,14 +52,10 @@ Limitations
     
    Each time you increase the storage size, plan with foresight so that the amount of the disk space you add is sufficient and you don't need to add it again any time soon.
 
-- If there is an ongoing maintenance update, you cannot add additional storage until the maintenance is completed.
+- If there is an ongoing maintenance update, you cannot add storage until the maintenance is completed.
+
+It is unlikely that any performance degradation from additional disk storage would be noticeable in your clients, but it is possible.
 
 Next steps
 ----------
-For information on how to add additional disk storage to your service from the `Aiven Console <https://console.aiven.io/>`_, see :doc:`Add additional storage <../howto/add-storage-space>`. 
-
-
-.. note:: 
-
-    It is unlikely that any performance degradation from additional disk storage would be noticeable in your clients, but it is possible.
-
+For instructions on how to add or remove disk storage in the Aiven Console, see :doc:`Add or remove storage <../howto/add-storage-space>`. 

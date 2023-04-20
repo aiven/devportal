@@ -1,56 +1,48 @@
-Add additional storage 
+Add or remove storage 
 =======================
 
-You can add additional storage at the time of new service creation or on-demand to a running service. This section provides you with information on how to add additional storage. 
-For more information, see :doc:`Dynamic disk sizing <../concepts/dynamic-disk-sizing>` . 
+With :doc:`Dynamic disk sizing <../concepts/dynamic-disk-sizing>` you can add or remove disk storage both when you create a service and later on-demand for a running service. This feature is not available for all service plans.
 
-Add additional storage during new service creation
---------------------------------------------------
-You can add additional storage when creating a new service. For information on how to add additional storage during new service creation, see :doc:`Create a new service <../howto/create_new_service>`. 
-
-Add additional storage to running service
+Add storage during new service creation
 -----------------------------------------
-You can :doc:`add additional storage <../concepts/dynamic-disk-sizing>` to your running service from the Aiven web console without interrupting the service. 
+You can add disk storage when :doc:`creating a new service <../howto/create_new_service>`. 
 
-1. Log in to the `Aiven Console <https://console.aiven.io/>`_, and go to **Services** to select your running service. 
-2. In the **Overview** tab, scroll down to **Service plan**.
-3. Click **Add storage**. 
+Add storage to a running service
+---------------------------------
+You can add storage to your running service from the `Aiven Console <https://console.aiven.io/>`_ without interrupting the service. 
 
-   .. image:: /images/platform/howto/add-addition-storage.png
-      :alt: Add additional storage 
+#. In **Services**, select the service.
 
-   .. note:: 
-      This feature is not available for all service plans. 
-4. In the **Upgrade service disk space** pop-up window, use the slider under **Additional disk storage** to add extra disk capacity. As you add storage, you can also see the cost associated with the storage. The price you see is the cost of the storage, as well as any backup associated with it.
-   
-   .. image:: /images/platform/howto/upgrade-service-disk-space.png
-      :alt: Add additional storage using the slider
+#. On the **Overview** tab in the **Service plan** section, click **Add storage**. 
 
-5. Click **Save changes**. The additional storage is added and available for immediate use.  
+4. On the **Upgrade service disk space** window, use the slider to add disk storage. The price shown for the additional storage includes backup costs.
 
-.. note:: 
-   Depending on the service type, the amount of storage you can add in increments varies. For example, some services allow you to add storage in 10GB increments, while others allow 30GB increments. 
+5. Click **Save changes**. 
+
+The additional storage is available for immediate use.  
 
 .. warning::
 
-   Maximum storage size depends on the plan and the service type. It can go as high as five times the base storage size of the plan. A storage optimization is performed at the next maintenance update after a change to the storage size. Due to limitations on the cloud provider, there is a limit on how many times storage can be increased between two maintenance updates. If this limit is reached, you see a prompt to perform a maintenance update for performance optimization. Avoid hitting the limit of times you increase the storage: each time you increase the storage size, plan with foresight so that the amount of the disk space you add is sufficient and you don't need to add it again any time soon.
+   Storage optimization is performed at the next maintenance update after a change to the storage size. Due to cloud provider limitations, there is a limit on how many times storage can be increased between two maintenance updates. When this limit is reached, you need to perform a maintenance update for performance optimization. It's best to carefully plan increases to avoid reaching this limit.
 
-Decrease or remove additional storage
--------------------------------------
-Depending on the business requirements, you can decrease or remove additional storage added.
+Remove additional storage
+---------------------------
+You can remove storage that you previously added to a service. Before you remove storage: 
 
-Before you decrease or remove the additional storage on your service: 
+- Make sure the data in your service does not exceed your service plan's allocated storage. If it does, you will not be able to remove the additional storage. 
+- Plan for the time it takes to recycle the nodes. The service will be in a rebalancing state after removing storage. The time it takes depends on the service. 
 
-- Ensure the amount of data in the additional storage does not exceed your service plan's allocated storage. If the data exceeds the allocated storage, you will not be able to decrease or remove the additional storage. 
-- Decreasing the additional storage capacity or setting it to **None** recycles the nodes and, therefore, can take a moderate amount of time, depending on the service. We advise you to plan this task.   
+Follow these steps to remove added storage:
 
-Follow these steps to decrease or remove the added storage:
+#. In **Services**, select the service.
 
-1. In the `Aiven Console <https://console.aiven.io/>`_, select your **Service**. 
-2. In the **Overview** tab of the service, scroll down to **Service plan**. 
-3. Click **Edit** next to **Additional disk storage**. 
-4. On the **Upgrade service disk space** pop-up window, use the slider under **Additional disk storage** to reduce the additional disk storage capacity or set it to None. 
+#. On the **Overview** tab in the **Service plan** section, click **Edit** next to **Additional disk storage**. 
+
+4. On the **Upgrade service disk space** window, use the slider to remove disk storage. 
+
+   .. note::
+      You can only remove storage that you previously added using this feature. If you want to downgrade further, you can :doc:`change your service plan </docs/platform/howto/scale-services>`.
+
 5. Click **Save changes**. 
 
-   Your service will be in a **Rebalancing** state, indicating the nodes are being recycled. 
-
+Your service will be in a **Rebalancing** state while the nodes are being recycled. 
