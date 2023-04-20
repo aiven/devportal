@@ -18,8 +18,8 @@ This section provides information on configuring multi-tenancy in OpenSearch Das
 
 Step 1: Enable OpenSearch® Security management
 ```````````````````````````````````````````````
-The first step in setting up multi-tenancy in OpenSearch Dashboard is to enable OpenSearch Security management on your Aiven for OpenSearch service. Security provides authentication and authorization features that are required for multi-tenancy.  
-To enable OpenSearch Security management, see docs <link pending update>. 
+The first step in setting up multi-tenancy in OpenSearch Dashboard is to enable OpenSearch Security management on your Aiven for OpenSearch service. OpenSearch Security management provides authentication and authorization features that are required for multi-tenancy.  
+To enable OpenSearch Security management, see enable OpenSearch . 
 
 Step 2: Create a tenant
 `````````````````````````
@@ -65,6 +65,9 @@ To map roles to internal users, follow these steps:
 3. Select the **Mapped Users** tab and then select  **Map users**  (or **Manage mapping** if users are already mapped). 
 4. In the **Users** section, choose the internal user you wish to assign to the role from the dropdown list.
 5. Select **Map** to add the selected user to the mapped user list.
+
+.. note:: 
+   If you have enabled SAML SSO authentication in your Aiven for OpenSearch service, you can use SAML integration to map users roles. 
 
 Step 5: Manage tenant
 ```````````````````````
