@@ -1,7 +1,10 @@
 Add or remove storage 
 =======================
 
-With :doc:`Dynamic disk sizing <../concepts/dynamic-disk-sizing>` you can add or remove disk storage both when you create a service and later on-demand for a running service. This feature is not available for all service plans.
+With :doc:`dynamic disk sizing <../concepts/dynamic-disk-sizing>` you can add or remove disk storage both when you create a service and later for a running service. 
+
+.. note::
+   This feature is not available for all service plans.
 
 Add storage during new service creation
 -----------------------------------------
@@ -9,7 +12,7 @@ You can add disk storage when :doc:`creating a new service <../howto/create_new_
 
 Add storage to a running service
 ---------------------------------
-You can add storage to your running service from the `Aiven Console <https://console.aiven.io/>`_ without interrupting the service. 
+You can add storage to your running service in the `Aiven Console <https://console.aiven.io/>`_ without interrupting the service. 
 
 #. In **Services**, select the service.
 
@@ -22,7 +25,6 @@ You can add storage to your running service from the `Aiven Console <https://con
 The additional storage is available for immediate use.  
 
 .. warning::
-
    Storage optimization is performed at the next maintenance update after a change to the storage size. Due to cloud provider limitations, there is a limit on how many times storage can be increased between two maintenance updates. When this limit is reached, you need to perform a maintenance update for performance optimization. It's best to carefully plan increases to avoid reaching this limit.
 
 Remove additional storage
