@@ -21,7 +21,7 @@ To enable audit logs in OpenSearch® Security dashboard, follow these steps:
 4. Toggle the switch next to **Enable audit logging** to the on position.
 
 .. note:: 
-    You can configure the storage location and storage types for OpenSearch audit logs by modifying the ``opensearch.yml`` file. By default, the logs are stored in an index called ``internal_opensearch`` on the same cluster.
+   The storage location for audit logs on your Aiven for OpenSearch service is configured to be stored on the cluster's storage and cannot be changed.
 
 
 Audit log event types
@@ -56,6 +56,11 @@ Compliance settings
 * **Internal config logging**: This enables logging of events on the internal security index, allowing you to monitor changes to the OpenSearch Security configuration made by internal users or processes.
 * **External config logging**: This enables logging of external configuration changes, allowing you to monitor changes to external authentication providers or other systems integrated with OpenSearch Security.
 * **Read metadata and write metadata options**: This enables metadata logging for read and write operations. You can also exclude specific users or watched fields from being logged.
+
+..note: 
+   
+   * You cannot modify the name of the audit log index for your Aiven for OpenSearch service as it is set to the default name ``auditlog-YYYY.MM.dd``. 
+   * You cannot change the size of the thread pool using ``OpenSearch.yml``. 
 
 Optimize audit log configuration
 `````````````````````````````````
