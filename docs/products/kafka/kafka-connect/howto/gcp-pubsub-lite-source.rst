@@ -1,11 +1,11 @@
 Create a Google Pub/Sub Lite source connector to Apache Kafka®
 ==============================================================
 
-The `Google Pub/Sub Lite source connector <https://github.com/GoogleCloudPlatform/pubsub/>`_ enables you to push from a Google Pub/Sub subscription to an Aiven for Apache Kafka® topic. 
+The `Google Pub/Sub Lite source connector <https://github.com/googleapis/java-pubsub-group-kafka-connector/>`_ enables you to push from a Google Pub/Sub subscription to an Aiven for Apache Kafka® topic.
 
 .. note::
 
-    You can check the full set of available parameters and configuration options in the `connector's documentation <https://github.com/GoogleCloudPlatform/pubsub/>`_.
+    You can check the full set of available parameters and configuration options in the `connector's documentation <https://github.com/googleapis/java-pubsub-group-kafka-connector/>`_.
 
 .. _connect_pubsub_lite_source_prereq:
 
@@ -82,7 +82,7 @@ The configuration file contains the following entries:
      * ``value.converter.schema.registry.basic.auth.user.info``: passing the required schema registry credentials in the form of ``SCHEMA_REGISTRY_USER:SCHEMA_REGISTRY_PASSWORD`` with the ``SCHEMA_REGISTRY_USER`` and ``SCHEMA_REGISTRY_PASSWORD`` parameters :ref:`retrieved in the previous step <connect_pubsub_lite_source_prereq>`.
 
 
-The full list of parameters is available in the `dedicated GitHub page <https://github.com/GoogleCloudPlatform/pubsub/>`_.
+The full list of parameters is available in the `dedicated GitHub page <https://github.com/googleapis/java-pubsub-group-kafka-connector/>`_.
 
 Create a Kafka Connect connector with the Aiven Console
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''
