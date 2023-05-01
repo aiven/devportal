@@ -8,7 +8,7 @@ Aiven for PostgreSQL® instances limit the number of allowed connections to make
 
    * - Plan
      - Max Connections
-   * - Hobbyist (GCP, DigitalOcean, and UpCloud only)
+   * - Hobbyist (Google Cloud, DigitalOcean, and UpCloud only)
      - 25
    * - Startup/Business/Premium-4
      - 100
