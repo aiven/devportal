@@ -134,7 +134,12 @@ entries:
             title: Setting up SAML with Auth0
           - file: docs/platform/howto/saml/setup-saml-jumpcloud
             title: Setting up SAML with JumpCloud
-      - file: docs/platform/howto/project-support-center  
+      - file: docs/platform/howto/list-support
+        title: Support
+        entries:
+          - file: docs/platform/howto/project-support-center  
+          - file: docs/platform/howto/change-support-tier
+            title: Upgrade your support tier
     - file: docs/platform/reference
       title: Reference
       entries:
