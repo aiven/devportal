@@ -5,7 +5,7 @@ The MongoDB source connector periodically queries MongoDB collections and copies
 
 .. Tip::
 
-    The query bases approach used by this MongoDB source connector periodically pulls the new changes from a collection. The polling interval can be set as a parameter. For a log based change data capture please check the Debezium source connector for MongoDB.
+    The MongoDB source connector uses change streams to capture changes in MongoDB data at set intervals. Rather than directly polling the collection, the connector pulls new changes from a change stream using a query-based approach. You can set the polling interval as a parameter to determine how often changes are emitted from the stream. For a log-based change data capture method, use the `Debezium source connector for MongoDB <https://debezium.io/documentation/reference/stable/connectors/mongodb.html>`_ instead.
 
 .. note::
 

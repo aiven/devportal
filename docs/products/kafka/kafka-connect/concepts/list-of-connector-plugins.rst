@@ -21,9 +21,9 @@ Source connectors enable the integration of data from an existing technology int
 
 * `Debezium for SQL Server <https://debezium.io/docs/connectors/sqlserver/>`__ 
 
-* `Google Cloud Pub/Sub <https://github.com/GoogleCloudPlatform/pubsub/tree/master/kafka-connector>`__ 
+* `Google Cloud Pub/Sub <https://github.com/googleapis/java-pubsub-group-kafka-connector/>`__
 
-* `Google Cloud Pub/Sub Lite <https://github.com/GoogleCloudPlatform/pubsub/>`_ 
+* `Google Cloud Pub/Sub Lite <https://github.com/googleapis/java-pubsub-group-kafka-connector/>`_
 
 * `JDBC <https://github.com/aiven/jdbc-connector-for-apache-kafka/blob/master/docs/source-connector.md>`__
 
@@ -50,9 +50,9 @@ Sink connectors enable the integration of data from an existing Apache Kafka top
 
 * `Google BigQuery <https://github.com/confluentinc/kafka-connect-bigquery>`__
 
-* `Google Cloud Pub/Sub <https://github.com/GoogleCloudPlatform/pubsub/>`__
+* `Google Cloud Pub/Sub <https://github.com/googleapis/java-pubsub-group-kafka-connector/>`__
 
-* `Google Cloud Pub/Sub Lite <https://github.com/GoogleCloudPlatform/pubsub/>`_
+* `Google Cloud Pub/Sub Lite <https://github.com/googleapis/java-pubsub-group-kafka-connector/>`_
 
 * :doc:`Google Cloud Storage </docs/products/kafka/kafka-connect/howto/gcs-sink>`
 

@@ -34,7 +34,7 @@ Add the following to a new ``provider.tf`` file:
      required_providers {
        aiven = {
          source  = "aiven/aiven"
-         version = "~> 3.11.0"
+         version = ">=4.0.0, < 5.0.0"
        }
      }
    }

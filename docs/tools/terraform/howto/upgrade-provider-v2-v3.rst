@@ -25,7 +25,7 @@ the Aiven Terraform Provider (v3.8.1 at the time of writing):
       required_providers {
         aiven = {
           source  = "aiven/aiven"
-          version = ">= 3.9.0"
+          version = ">=3.0.0, < 4.0.0"
         }
       }
     }
