@@ -978,6 +978,7 @@ entries:
             - file: docs/products/opensearch/howto/set_index_retention_patterns
             - file: docs/products/opensearch/howto/opensearch-alerting-api
             - file: docs/products/opensearch/howto/handle-low-disk-space
+            - file: docs/products/opensearch/howto/saml-sso-authentication
           - file: docs/products/opensearch/howto/list-integrations
             title: Integrate service
             entries:
