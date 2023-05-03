@@ -116,6 +116,7 @@ exceptions:
   - Spring
   - SQL Server
   - Startup
+  - 'Step \d+: \w+'
   - Sumo Logic
   - TaskManager
   - Telegraf

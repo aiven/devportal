@@ -70,7 +70,7 @@ To map roles to internal users, follow these steps:
    If you have enabled SAML SSO authentication in your Aiven for OpenSearch service, you can use SAML integration to map users roles. 
 
 Step 5: Manage tenants
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 To manage tenants in the OpenSearch dashboard, you can follow these steps:
 
 * **Access the tenant list**: Navigate to the Security section in the OpenSearch dashboard and select the Tenant option to view the available tenants and create new ones.
