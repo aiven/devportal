@@ -42,7 +42,7 @@ Define the connector configurations in a file (we'll refer to it with the name `
     {
         "name": "<CONNECTOR_NAME>",
         "connector.class": "io.aiven.kafka.connect.s3.AivenKafkaConnectS3SinkConnector",
-        "key.converter": "org.apache.kafka.connect.converters.ByteArrayConverter"",
+        "key.converter": "org.apache.kafka.connect.converters.ByteArrayConverter",
         "value.converter": "org.apache.kafka.connect.converters.ByteArrayConverter",
         "topics": "<TOPIC_NAME>",
         "aws.access.key.id": "<AWS_USER_ACCESS_KEY_ID>",
