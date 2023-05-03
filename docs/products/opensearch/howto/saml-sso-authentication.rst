@@ -16,7 +16,7 @@ Prerequisites
 Configure SAML on IdP
 ---------------------
 
-Enabling SAML SSO Authentication for Aiven for OpenSearch requires the configuration of SAML with an Identity Provider (IdP). Since Aiven for OpenSearch supports multiple IdPs, the steps for configuring SAML with your IdP may differ depending on the IdP you are using. It is recommended to refer to your IdP's documentation for detailed instructions on configuring SAML applications.
+Enabling SAML SSO Authentication for Aiven for OpenSearch requires the configuration of SAML with an Identity Provider (IdP). Since Aiven for OpenSearch supports multiple IdPs, the steps for configuring SAML with your IdP may differ depending on the IdP you are using. It is recommended to refer to your identity provider's documentation for detailed instructions on configuring SAML applications.
 
 To enable SAML SSO authentication, make sure you have correctly configured your IdP and have the following two critical parameters:
 
