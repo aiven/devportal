@@ -52,7 +52,7 @@ example, you'll need to declare the variables for ``project_name`` and
          required_providers {
            aiven = {
              source  = "aiven/aiven"
-             version = "~> 3.10.0"
+             version = ">=4.0.0, < 5.0.0"
            }
          }
        }

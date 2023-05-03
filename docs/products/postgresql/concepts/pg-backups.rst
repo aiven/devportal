@@ -1,9 +1,16 @@
-PostgreSQL® backups
-===================
+Aiven for PostgreSQL® backups
+=============================
+
+About backups in Aiven for PostgreSQL®
+--------------------------------------
 
 Aiven for PostgreSQL® databases are automatically backed up, with **full backups** made daily, and **write-ahead logs (WAL)** copied at 5 minute intervals, or for every new file generated. All backups are encrypted using ``pghoard``, an open source tool developed and maintained by Aiven, that you can find `on GitHub <https://github.com/aiven/pghoard>`_.
 
 The time of day when the daily backups are made is initially randomly selected, but can be customised by setting the ``backup_hour`` and ``backup_minute`` advanced parameters, see :doc:`../reference/list-of-advanced-params`.
+
+.. note::
+
+    The size of backups and the Aiven backup size shown on the Aiven web console differ, in some cases significantly. The backup sizes shown in the Aiven web console are for daily backups, before encryption and compression.
 
 Backup retention time by plan
 -----------------------------
@@ -55,7 +62,17 @@ Differences between logical and full backups
       - Almost instantaneous, restore backup and replay delta WAL files
       - Long restoration process, replay of all SQL statements is needed to generate schema object and insert data
 
-.. Tip::
-    The size of backups and the Aiven backup size shown on the Aiven web console differ, in some cases significantly. The backup sizes shown in the Aiven web console are for daily backups, before encryption and compression.
+Delta base backups
+------------------
 
-To restore a backup, see :doc:`../howto/restore-backup`.
+Aiven for PostgreSQL uses delta base backups, which allows to store data files that have been changed since the last backup and leave out the unchanged files. It's particularly beneficial for databases that include considerable portions of static data. Compared to regular base backups, delta base backups are more efficient, bringing improved performance and speeding up backup operations (unless all the data is updated constantly).
+
+Since delta base backups don't take all the data files, they are faster and easier to perform on large databases with huge volumes of data. Because performing a delta base backup doesn't last long, Aiven can back up data more frequently if required and applicable to specific datasets. With the increased backup frequency, service restoration and node replacement potentially can be faster for highly updated services because fewer WAL files need to be restored since the last backup (WAL restoration in PostgreSQL is single-threaded and, therefore, slow).
+
+.. note:: 
+
+  Currently, the delta base backup feature is enabled for newly-created services only. The scope is going to be extended to existing services soon.
+
+.. seealso::
+
+   To restore a backup, see :doc:`../howto/restore-backup`.
