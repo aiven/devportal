@@ -93,11 +93,19 @@ The configuration file contains the following entries:
      * ``value.converter.basic.auth.credentials.source``: to the value ``USER_INFO``, since you're going to login to the schema registry using username and password.
      * ``value.converter.schema.registry.basic.auth.user.info``: passing the required schema registry credentials in the form of ``SCHEMA_REGISTRY_USER:SCHEMA_REGISTRY_PASSWORD`` with the ``SCHEMA_REGISTRY_USER`` and ``SCHEMA_REGISTRY_PASSWORD`` parameters :ref:`retrieved in the previous step <connect_elasticsearch_sink_prereq>`.
 
-* ``autoCreateTables``: enables the auto creation of the target BigQuery tables if they don't exist 
+* ``autoCreateTables``: enables the auto creation of the target BigQuery tables if they do not yet exist.
+* ``allBQFieldsNullable``: sets any created column of produced BigQuery schema as NULLABLE instead of REQUIRED (even from Avro fields defined as non-nullable).
+
+  .. note::
+
+     Additional configuration parameters enable the BigQuery sink connector to automatically evolve tables in response to new incoming messages from the source topic. Specifically, these parameters provide the following functionalities: :
+
+     * ``allowNewBigQueryFields``: new fields can be added to BigQuery tables during subsequent schema updates.
+     * ``allowBigQueryRequiredFieldRelaxation``: fields in BigQuery schema can be changed back from REQUIRED to NULLABLE.
 
   .. warning::
 
-     Enabling the flag ``autoCreateTables`` (and additionally ``autoUpdate`` and ``allowNewBigQueryFields``, see `dedicate documentation <https://github.com/wepay/kafka-connect-bigquery/wiki/Connector-Configuration>`_ for more info) allows the connector to automatically create and evolve BigQuery tables based on the incoming topic messages. In such cases, there is less overall control over the tables, columns and data types definition possibly resulting in errors especially if the messages evolve beyond BigQuery compatibility.
+     When the connector automatically performs subsequent schema changes on tables, columns, and data type definitions, it reduces the control database users have over these changes. This could lead to unexpected errors, particularly if message evolution exceeds the compatibility limits of BigQuery and its associated applications.
 
 * ``keySource``: defines the format of the GCP key, the value should be ``JSON`` if the key is generated in JSON format
 * ``keyfile``: contains the GCP service account key, correctly escaped as defined in the :ref:`prerequisite phase <connect_bigquery_sink_prereq>`
