@@ -98,14 +98,14 @@ The configuration file contains the following entries:
 
   .. note::
 
-     Further configuration parameters allow the connector to automatically evolve BigQuery tables based on new incoming topic messages:
+     Additional configuration parameters enable the BigQuery sink connector to automatically evolve tables in response to new incoming messages from the source topic. Specifically, these parameters provide the following functionalities: :
 
      * ``allowNewBigQueryFields``: new fields can be added to BigQuery tables during subsequent schema updates.
      * ``allowBigQueryRequiredFieldRelaxation``: fields in BigQuery schema can be changed back from REQUIRED to NULLABLE.
 
   .. warning::
 
-     The more subsequent schema changes can be automatically performed by the connector on tables, columns and data types definition, the less control is left over it from the database user perspective. This might result in unexpected errors, especially if messages evolve beyond the compatibility of BigQuery and its applications.
+     When the connector automatically performs subsequent schema changes on tables, columns, and data type definitions, it reduces the control database users have over these changes. This could lead to unexpected errors, particularly if message evolution exceeds the compatibility limits of BigQuery and its associated applications.
 
 * ``keySource``: defines the format of the GCP key, the value should be ``JSON`` if the key is generated in JSON format
 * ``keyfile``: contains the GCP service account key, correctly escaped as defined in the :ref:`prerequisite phase <connect_bigquery_sink_prereq>`
