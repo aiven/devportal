@@ -53,11 +53,13 @@ OpenSearch Security management changes and impacts
 ----------------------------------------------------
 Enabling OpenSearch Security management on your Aiven for OpenSearch service through the Aiven console triggers several changes:
 
-* All user authentication and access control will be managed through the OpenSearch Security Dashboard or OpenSearch Security API. You have the ability to add or remove users from pre-generated roles, while some roles remain reserved for Aiven's internal use.
+* Users and role-based access control will be managed through the OpenSearch Security dashboard or OpenSearch Security API.
 
-* All service users defined at the time of enabling OS security will be classified as internal users of OpenSearch, with the attribute ``Aiven_managed: False`` assigned to most users. However, the ``avnadmin`` and ``os-sec-admin`` users will have the attribute ``Aiven_managed:true``.
-* The ``os-sec-admin`` user will be mapped to the pre-generated role ``aiven_security_admin_access``, which provides unrestricted access to the service, including the OpenSearch Security API and Dashboard. Other users are not mapped to this role.
-* As an ``os-sec-admin`` user, you can add or remove users from pre-generated roles, but some roles cannot be changed or deleted.
-* Aiven's internal users and their permissions/roles, which are necessary for managing and operating the service, are hidden and reserved from customer view and modification.
+* The ``os-sec-admin`` user will initially be mapped to the pre-defined role ``service_security_admin_access``, which provides unrestricted access to the service, including the OpenSearch Security API and OpenSearch Security dashboard.
+
+* As an ``os-sec-admin`` user, you can add or remove users from pre-defined roles, and create new roles and assignments, but some pre-defined roles cannot be changed or deleted.
+
+* All service users defined before enabling OS Security management are included in OpenSearch's internal users, with the attribute ``provider_managed: False``. However, the users ``avnadmin`` and ``os-sec-admin``,  are still managed by the service platform and have the attribute ``provider_managed:true``. While service platform management of these users is limited to password changes, they can still be assigned to different roles as needed in the OpenSearch Security dashboard.
+
 
 For information on how to enable OpenSearch Security management on Aiven Console, see :doc:`Enable OpenSearch® Security management for Aiven for OpenSearch® <../howto/enable-opensearch-security>`. 
