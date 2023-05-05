@@ -223,6 +223,7 @@ subtab
 syslog
 TaskManager
 Telegraf
+Tenant
 Terraform
 Terraforming
 TimescaleDB
