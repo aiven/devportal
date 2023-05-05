@@ -145,6 +145,7 @@ OAuth
 Okta
 onboarding
 OpenSearch
+OpenSearch Security
 operator
 overcommit
 overcommitted
@@ -196,6 +197,7 @@ Savepoints
 savepoints
 schemaless
 scriptable
+Security
 serde
 serializer
 sharded
