@@ -989,6 +989,9 @@ entries:
             - file: docs/products/opensearch/howto/opensearch-alerting-api
             - file: docs/products/opensearch/howto/handle-low-disk-space
 
+            - file: docs/products/opensearch/howto/saml-sso-authentication
+
+
             - file: docs/products/opensearch/howto/audit-logs
               title: Audit logs
 
