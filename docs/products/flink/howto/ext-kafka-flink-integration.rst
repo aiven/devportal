@@ -202,8 +202,8 @@ Step 7: Create Aiven for Apache Flink applications
 With the integration ID obtained from the previous step, you can now create an application that uses the integration. For information on how to create Aiven for Apache Flink applications, see :ref:`avn service flink create-application <avn service flink create-application>`. 
 
 
-Configre integration using Aiven Console
------------------------------------------
+Configure integration using Aiven Console
+--------------------------------------------
 
 If you have an external Apache Kafka service already running, you can integrate it with Aiven for Apache Flink using the `Aiven Console <https://console.aiven.io/>`_ by following these steps:
 
