@@ -47,6 +47,50 @@
 
 
 
+``saml``
+--------
+*object*
+
+**OpenSearch SAML configuration** 
+
+``enabled``
+~~~~~~~~~~~
+*boolean*
+
+**Enable or disable OpenSearch SAML authentication** Enables or disables SAML-based authentication for OpenSearch. When enabled, users can authenticate using SAML with an Identity Provider.
+
+``idp_metadata_url``
+~~~~~~~~~~~~~~~~~~~~
+*string*
+
+**Identity Provider (IdP) SAML metadata URL** The URL of the SAML metadata for the Identity Provider (IdP). This is used to configure SAML-based authentication with the IdP.
+
+``idp_entity_id``
+~~~~~~~~~~~~~~~~~
+*string*
+
+**Identity Provider Entity ID** The unique identifier for the Identity Provider (IdP) entity that is used for SAML authentication. This value is typically provided by the IdP.
+
+``sp_entity_id``
+~~~~~~~~~~~~~~~~
+*string*
+
+**Service Provider Entity ID** The unique identifier for the Service Provider (SP) entity that is used for SAML authentication. This value is typically provided by the SP.
+
+``subject_key``
+~~~~~~~~~~~~~~~
+*['string', 'null']*
+
+**SAML response subject attribute** Optional. Specifies the attribute in the SAML response where the subject identifier is stored. If not configured, the NameID attribute is used by default.
+
+``roles_key``
+~~~~~~~~~~~~~
+*['string', 'null']*
+
+**SAML response role attribute** Optional. Specifies the attribute in the SAML response where role information is stored, if available. Role attributes are not required for SAML authentication, but can be included in SAML assertions by most Identity Providers (IdPs) to determine user access levels or permissions.
+
+
+
 ``index_patterns``
 ------------------
 *array*
