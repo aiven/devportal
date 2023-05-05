@@ -939,7 +939,8 @@ entries:
             title: Access control
             entries:
               - file: docs/products/opensearch/concepts/users-access-controls
-              - file: docs/products/opensearch/concepts/os-security
+          - file: docs/products/opensearch/concepts/os-security
+            title: Security 
           - file: docs/products/opensearch/concepts/backups
           - file: docs/products/opensearch/concepts/indices
           - file: docs/products/opensearch/concepts/aggregations
@@ -955,7 +956,7 @@ entries:
             title: Manage access control
             entries:  
             - file: docs/products/opensearch/howto/control_access_to_content
-            - file: docs/products/opensearch/howto/enable-opensearch-security
+            
           - file: docs/products/opensearch/howto/list-connect-to-service
             title: Connect with service
             entries:
@@ -970,6 +971,8 @@ entries:
             entries:  
             - file: docs/products/opensearch/howto/import-opensearch-data-elasticsearch-dump-to-aiven
             - file: docs/products/opensearch/howto/import-opensearch-data-elasticsearch-dump-to-aws
+            - file: docs/products/opensearch/howto/migrating_elasticsearch_data_to_aiven
+              title: Migrate Elasticsearch data
           - file: docs/products/opensearch/howto/list-search-service
             title: Search and aggregation
             entries:
@@ -979,8 +982,17 @@ entries:
               title: Search with NodeJS
             - file: docs/products/opensearch/howto/opensearch-aggregations-and-nodejs
               title: Aggregation with NodeJS
-          - file: docs/products/opensearch/howto/migrating_elasticsearch_data_to_aiven
-            title: Migrate Elasticsearch data
+          - file: docs/products/opensearch/howto/list-opensearch-security
+            title: Manage OpenSearch Security
+            entries:
+              - file: docs/products/opensearch/howto/enable-opensearch-security
+                title: Enable OpenSearch Security management
+              - file: docs/products/opensearch/howto/saml-sso-authentication
+                title: SAML authentication
+              - file: docs/products/opensearch/howto/audit-logs
+                title: Audit logs
+              - file: docs/products/opensearch/howto/opensearch-dashboard-multi_tenancy
+                title: OpenSearch Dashboard multi-tenancy
           - file: docs/products/opensearch/howto/list-manage-service
             title: Manage service
             entries:
@@ -988,18 +1000,8 @@ entries:
             - file: docs/products/opensearch/howto/set_index_retention_patterns
             - file: docs/products/opensearch/howto/opensearch-alerting-api
             - file: docs/products/opensearch/howto/handle-low-disk-space
-
-            - file: docs/products/opensearch/howto/saml-sso-authentication
-
-
-            - file: docs/products/opensearch/howto/audit-logs
-              title: Audit logs
-
             - file: docs/products/opensearch/howto/setup-cross-cluster-replication-opensearch
               title: Cross-cluster replication
-            - file: docs/products/opensearch/howto/opensearch-dashboard-multi_tenancy
-              title: OpenSearch Dashboard multi-tenancy
-
           - file: docs/products/opensearch/howto/list-integrations
             title: Integrate service
             entries:

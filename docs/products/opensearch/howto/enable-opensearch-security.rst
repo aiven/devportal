@@ -24,14 +24,16 @@ Follow these steps to activate OpenSearch Security management for your Aiven for
 
 1. Log in to the `Aiven Console <https://console.aiven.io/>`_ and access the Aiven for OpenSearch service for which you want to enable security.
 2. Navigate to the **Users** tab within the service.
-3. Click the **Enable** button in the OpenSearch Security management banner.
+3. Select **Enable** in the OpenSearch Security management banner.
 4. Review the information presented on the **Enable OpenSearch Security for this service** screen and confirm by selecting the checkbox.
 5. In the OpenSearch Security administrator section, enter and confirm a password for the user.
 
-.. note:: 
-   * The username for the OpenSearch Security administrator is set by default and cannot be changed.
-   * In case you forget the password, it can only be reset by contacting Aiven support.
+   .. note:: 
+     * The username for the OpenSearch Security administrator is set by default and cannot be changed.
+     * In case you forget the password, it can only be reset by contacting Aiven support.
 
-6. Click the **Enable** button to activate the OpenSearch Security administrator user.
+6. Select **Enable** to activate the OpenSearch Security administrator user.
 
-After activating OpenSearch Security, you will be redirected to the **Users** screen, where you can verify that the security feature is enabled. Next, log in to the OpenSearch Dashboard using your security admin credentials to access OpenSearch Security, where you can manage user permissions and other security settings.
+After activating OpenSearch Security, you will be redirected to the **Users** screen, where you can verify that the security feature is enabled. 
+
+Next, log in to the :doc:`OpenSearch Dashboard <../dashboards>` using your security admin credentials to access OpenSearch Security, where you can manage user permissions and other security settings.
