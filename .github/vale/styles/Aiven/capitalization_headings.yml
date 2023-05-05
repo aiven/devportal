@@ -86,6 +86,8 @@ exceptions:
   - Okta
   - OneLogin
   - OpenSearch
+  - OpenSearch®* Dashboard
+  - OpenSearch®* Security
   - Operator
   - Out of Memory Killer
   - Pagila
@@ -114,6 +116,7 @@ exceptions:
   - Spring
   - SQL Server
   - Startup
+  - 'Step \d+: \w+'
   - Sumo Logic
   - TaskManager
   - Telegraf
