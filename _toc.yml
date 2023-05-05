@@ -134,7 +134,12 @@ entries:
             title: Setting up SAML with Auth0
           - file: docs/platform/howto/saml/setup-saml-jumpcloud
             title: Setting up SAML with JumpCloud
-      - file: docs/platform/howto/project-support-center  
+      - file: docs/platform/howto/list-support
+        title: Support
+        entries:
+          - file: docs/platform/howto/project-support-center  
+          - file: docs/platform/howto/change-support-tier
+            title: Upgrade your support tier
     - file: docs/platform/reference
       title: Reference
       entries:
@@ -969,8 +974,6 @@ entries:
               title: Aggregation with NodeJS
           - file: docs/products/opensearch/howto/migrating_elasticsearch_data_to_aiven
             title: Migrate Elasticsearch data
-          - file: docs/products/opensearch/howto/setup-cross-cluster-replication-opensearch
-            title: Cross-cluster replication
           - file: docs/products/opensearch/howto/list-manage-service
             title: Manage service
             entries:
@@ -978,7 +981,18 @@ entries:
             - file: docs/products/opensearch/howto/set_index_retention_patterns
             - file: docs/products/opensearch/howto/opensearch-alerting-api
             - file: docs/products/opensearch/howto/handle-low-disk-space
+
             - file: docs/products/opensearch/howto/saml-sso-authentication
+
+
+            - file: docs/products/opensearch/howto/audit-logs
+              title: Audit logs
+
+            - file: docs/products/opensearch/howto/setup-cross-cluster-replication-opensearch
+              title: Cross-cluster replication
+            - file: docs/products/opensearch/howto/opensearch-dashboard-multi_tenancy
+              title: OpenSearch Dashboard multi-tenancy
+
           - file: docs/products/opensearch/howto/list-integrations
             title: Integrate service
             entries:

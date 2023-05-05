@@ -31,6 +31,8 @@ codecs
 compliances
 Conduktor
 Confluent
+Config
+config
 Coralogix
 connect
 Couchbase
@@ -223,6 +225,7 @@ subtab
 syslog
 TaskManager
 Telegraf
+Tenant
 Terraform
 Terraforming
 TimescaleDB
