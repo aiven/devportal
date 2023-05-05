@@ -31,7 +31,7 @@ Be sure to check out the :doc:`getting started guide <../../get-started>` to lea
          required_providers {
            aiven = {
              source  = "aiven/aiven"
-             version = "~> 3.10.0"
+             version = ">=4.0.0, < 5.0.0"
            }
          }
        }
@@ -77,7 +77,7 @@ Here is the sample Terraform file to deploy all three services. Keep in mind tha
    resource "aiven_pg" "aws-eu-pg" {
      project                = var.project_name
      cloud_name             = "aws-eu-west-2" # London
-     plan                   = "business-8"    # Primary + read replica
+     plan                   = "business-8"    # Primary + read-only replica
      service_name           = "postgres-eu-aws"
      termination_protection = true
    }
@@ -86,7 +86,7 @@ Here is the sample Terraform file to deploy all three services. Keep in mind tha
    resource "aiven_pg" "do-us-pg" {
      project                = var.project_name
      cloud_name             = "do-nyc"     # New York
-     plan                   = "business-8" # Primary + read replica
+     plan                   = "business-8" # Primary + read-only replica
      service_name           = "postgres-us-do"
      termination_protection = true
    }
@@ -95,7 +95,7 @@ Here is the sample Terraform file to deploy all three services. Keep in mind tha
    resource "aiven_pg" "gcp-as-pg" {
      project                = var.project_name
      cloud_name             = "google-asia-southeast1" # Singapore
-     plan                   = "business-8"             # Primary + read replica
+     plan                   = "business-8"             # Primary + read-only replica
      service_name           = "postgres-as-gcp"
      termination_protection = true
    }

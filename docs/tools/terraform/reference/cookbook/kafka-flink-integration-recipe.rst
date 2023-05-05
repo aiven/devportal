@@ -44,7 +44,7 @@ In order to do so, you'll need to use Aiven console or Aiven CLI.
          required_providers {
            aiven = {
              source  = "aiven/aiven"
-             version = "~> 3.12.0"
+             version = ">=4.0.0, < 5.0.0"
            }
          }
        }

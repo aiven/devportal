@@ -18,7 +18,7 @@ The new provider must be added to the ``required_providers`` block in the Terraf
       required_providers {
         aiven = {
           source  = "aiven/aiven"
-          version = "~> 3.9.0"
+          version = ">=4.0.0, < 5.0.0"
         }
         postgresql = {
           source  = "cyrilgdn/postgresql"

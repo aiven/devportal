@@ -1,7 +1,7 @@
 Create new tables without primary keys
 ======================================
 
-If you Aiven for MySQL was created after 2020-06-03, then by default your Aiven for MySQL does not allow creating new tables without primary keys. You can check this by following those steps:
+If your Aiven for MySQL service was created after 2020-06-03, then by default your Aiven for MySQL does not allow creating new tables without primary keys. You can check this by following those steps:
 
 #. Select the Aiven for MySQL service that you want to check.
 #. On the **Overview** tab, in the **Advanced configuration** section, click **Change**.
