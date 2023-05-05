@@ -16,13 +16,12 @@ Prerequisites
 Configure SAML on IdP
 ---------------------
 
-Enabling SAML SSO Authentication for Aiven for OpenSearch requires the configuration of SAML with an Identity Provider (IdP). Since Aiven for OpenSearch supports multiple IdPs, the steps for configuring SAML with your IdP may differ depending on the IdP you are using. It is recommended to refer to your identity provider's documentation for detailed instructions on configuring SAML applications.
+To enable SAML SSO Authentication for Aiven for OpenSearch, you need to configure SAML with an Identity Provider (IdP). As Aiven for OpenSearch is designed to work with various SAML IdPs, the configuration steps may differ depending on your IdP. Refer to your IdP's documentation for detailed instructions on configuring SAML applications.
 
 To enable SAML SSO authentication, make sure you have correctly configured your IdP and have the following two critical parameters:
 
 * **IdP Metadata URL**: The IdP metadata URL provides essential metadata about your IdP, including the certificate used for signing the SAML response.
-* **IdP Entity ID** : The IdP Entity ID is the identifier that the IdP uses to recognize itself. To establish trust between Aiven and OpenSearch, Aiven uses the Entity ID value for OpenSearch.
-
+* **IdP Entity ID** : The IdP Entity ID is the identifier that the IdP uses to recognize itself. To establish trust between Aiven and OpenSearch, Aiven uses the Entity ID value for OpenSearch. You can find the *IdP Entity ID* in your Identity Provider's metadata or configuration settings.
 
 
 Enable SAML SSO authentication via Aiven Console
@@ -36,7 +35,12 @@ To enable SAML authentication for your Aiven for OpenSearch service, follow thes
    * **SSO URL**: This is a distinct URL assigned to each Aiven for OpenSearch service and serves as the destination where the Identity Provider (IdP) sends SAML responses after a user has been authenticated successfully. It is a fixed URL that cannot be modified.
    * **IdP Metadata URL**: Enter the URL of your SAML Identity Provider's (IdP) metadata that Aiven will use to authenticate users.
    * **IdP Entity ID**: Enter the unique identifier assigned to your Identity Provider (IdP). This identifier assists Aiven in distinguishing between various IdPs.
-   * **SP Entity ID**: E Enter the unique identifier the IdP uses to recognize and authenticate Aiven for OpenSearch as the service provider.
+   * **SP Entity ID**: Enter a unique identifier the IdP uses to recognize and authenticate Aiven for OpenSearch as the service provider. 
+   
+     .. note:: 
+      
+      The SP Entity ID can be any arbitrary value defined by the user. Additionally, OpenSearch suggests creating a new application for OpenSearch Dashboards and using the URL of your OpenSearch Dashboards as the SP entity ID.
+   
    * **SAML roles key**: This is an optional field that allows you to map SAML roles to Aiven for OpenSearch roles.
    * **SAML subject key**: This is also an optional field that allows you to map SAML subject to Aiven for OpenSearch users.
 
