@@ -1,5 +1,5 @@
 Query Statistics
-================================
+================
 
 Usually, Query statistics in ClickHouse can be obtained using the ``system.query_log`` table, which stores statistics of each executed query, including memory usage and duration. Aiven for ClickHouse® currently do not give access to the table ``system.query_log`` table, in order to directly query the table for the required statistics.
 
