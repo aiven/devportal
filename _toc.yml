@@ -940,7 +940,7 @@ entries:
             entries:
               - file: docs/products/opensearch/concepts/users-access-controls
           - file: docs/products/opensearch/concepts/os-security
-            title: Security 
+            title: OpenSearch Security
           - file: docs/products/opensearch/concepts/backups
           - file: docs/products/opensearch/concepts/indices
           - file: docs/products/opensearch/concepts/aggregations
@@ -983,7 +983,7 @@ entries:
             - file: docs/products/opensearch/howto/opensearch-aggregations-and-nodejs
               title: Aggregation with NodeJS
           - file: docs/products/opensearch/howto/list-opensearch-security
-            title: Manage OpenSearch Security
+            title: Manage OpenSearch Security |beta|
             entries:
               - file: docs/products/opensearch/howto/enable-opensearch-security
                 title: Enable OpenSearch Security management
