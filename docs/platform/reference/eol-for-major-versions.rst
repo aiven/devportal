@@ -9,12 +9,6 @@ upstream projects. Once the upstream project retires a specific version,
 they do not receive security updates and critical bug fixes anymore by
 the maintainers.
 
-Continued use of outdated services means that they no longer offer our
-customers the level of protection their business needs. Therefore, by
-following the upstream project's EOL schedule, we ensure that Aiven
-services are always running on supported versions of the open source
-software.
-
 **Version numbering**
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -194,6 +188,18 @@ When Aiven defines the EOL date for a service major version,
 
 -  Email reminders will be sent to customers on a monthly cadence. On
    the month of the EOL date, the cadence shifts to weekly reminders.
+
+What happens to the outdated services beyond EOL?
+-------------------------------------------------
+
+Continued use of outdated services means that they no longer offer our
+customers the level of protection their business needs. Therefore, by
+following the upstream project's EOL schedule, we ensure that Aiven
+services are always running on supported versions of the open source
+software. The following two scenarios will be observed beyond EOL:
+
+1. If the service is powered-on, it will be auto-upgraded to the latest version.
+2. If the service is powered-off, it will be deleted.
 
 Our recommendation
 ------------------
