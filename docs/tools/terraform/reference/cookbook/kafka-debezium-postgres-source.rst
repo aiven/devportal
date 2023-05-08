@@ -82,7 +82,7 @@ For example, you'll need to declare the variables for ``project`` and ``api_toke
 
 The ``services.tf`` file for the provisioning of these three services, service integration, and related resource is this:
 
-.. code:: terraform
+::
   
   resource "aiven_pg" "demo-pg" {
     project      = var.project_name
