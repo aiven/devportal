@@ -1,4 +1,4 @@
-SAML authentication on Aiven for OpenSearch® 
+SAML authentication on Aiven for OpenSearch® |beta|
 ====================================================
 
 SAML (Security Assertion Markup Language) is a standard protocol for exchanging authentication and authorization data between an identity provider (IdP) and a Service Provider (SP). SAML enables users to authenticate themselves to a service provider with credentials from a trusted third-party identity provider without the need to create and manage separate user accounts for each service provider.
@@ -9,7 +9,7 @@ SAML authentication on Aiven for OpenSearch® can enhance the authentication pro
 Prerequisites
 ---------------
 * Aiven for OpenSearch® version 2.4 or later is required. If you are using an earlier version, upgrade to the latest version.
-* OpenSearch Security management must be enabled on the Aiven for OpenSearch® service.
+* OpenSearch Security management must be :doc:`enabled <../howto/enable-opensearch-security>` on the Aiven for OpenSearch® service.
 * You will need a SAML identity provider (IdP), the Metadata URL, and IdP entity ID.
 
 
