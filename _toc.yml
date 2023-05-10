@@ -225,6 +225,7 @@ entries:
               title: Promote PostgreSQL read-only replica to master
             - file: docs/tools/terraform/howto/upgrade-to-opensearch
             - file: docs/tools/terraform/howto/vnet-peering-azure
+            - file: docs/tools/terraform/howto/vpc-peering-gcp
         - file: docs/tools/terraform/concepts
           title: Concepts
           entries:
