@@ -14,6 +14,10 @@ Set up email notifications
 
 #. Click **Save changes**. 
 
+.. note::
+        if the `technical email` is not configured for a project, all the email notifications will be sent to users with `admin` and `operator` permission.
+
+
 Set up Slack notifications
 """""""""""""""""""""""""""
 
