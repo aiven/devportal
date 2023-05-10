@@ -56,13 +56,13 @@ Sink connectors enable the integration of data from an existing Apache Kafka top
 
 * :doc:`Google Cloud Storage </docs/products/kafka/kafka-connect/howto/gcs-sink>`
 
-* `HTTP <https://github.com/aiven/http-connector-for-apache-kafka>`__ |preview|
+* `HTTP <https://github.com/aiven/http-connector-for-apache-kafka>`__
 
 * `JDBC <https://github.com/aiven/jdbc-connector-for-apache-kafka/blob/master/docs/sink-connector.md>`__
 
 * `Official MongoDB® <https://docs.mongodb.com/kafka-connector/current/>`__
 
-* `Snowflake <https://docs.snowflake.net/manuals/user-guide/kafka-connector.html>`__ |preview|
+* `Snowflake <https://docs.snowflake.net/manuals/user-guide/kafka-connector.html>`__ 
 
 * `Splunk <https://github.com/splunk/kafka-connect-splunk>`__
 
