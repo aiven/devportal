@@ -1,9 +1,9 @@
 Get technical notifications
 ============================
 
-To stay up to date with the latest news about the services in a project, you can set up notifications for technical contacts for the project. 
+To stay up to date with the latest news about the services in a project, you can set up notifications for technical contacts for the project. If you don't add a technical email for a project, email notifications will still be sent to users with admin and operator roles.
 
-Notifications include information about plan sizes, performance, outages and scheduled maintenance. High priority notifications (for example, a plan running out of space) are also sent to project admin users.
+Notifications include information about plan sizes, performance, outages and scheduled maintenance. High priority notifications (for example, a plan running out of space) are also sent to project admin users. 
 
 Set up email notifications
 """""""""""""""""""""""""""
@@ -13,9 +13,6 @@ Set up email notifications
 #. In the **Technical Emails** section, add the email addresses.
 
 #. Click **Save changes**. 
-
-.. note::
-        if the `technical email` is not configured for a project, all the email notifications will be sent to users with `admin` and `operator` permission.
 
 Set up Slack notifications
 """""""""""""""""""""""""""
