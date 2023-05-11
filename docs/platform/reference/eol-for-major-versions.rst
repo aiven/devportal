@@ -196,10 +196,10 @@ Continued use of outdated services means that they no longer offer our
 customers the level of protection their business needs. Therefore, by
 following the upstream project's EOL schedule, we ensure that Aiven
 services are always running on supported versions of the open source
-software. The following two scenarios will be observed beyond EOL:
+software. After the EOL date:
 
-1. If the service is powered-on, it will be auto-upgraded to the latest version.
-2. If the service is powered-off, it will be deleted.
+1. If the service is powered on, it's auto-upgraded to the latest version.
+2. If the service is powered off, it's deleted.
 
 Our recommendation
 ------------------
