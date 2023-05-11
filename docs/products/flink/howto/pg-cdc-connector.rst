@@ -1,9 +1,9 @@
-Create a PostgreSQL CDC connector-based Apache Flink®
+Create a PostgreSQL® CDC connector-based Apache Flink®
 ===========================================================
 
-Change Data Capture (CDC) is a technique that enables the tracking and capturing of changes made to data within a PostgreSQL database. By identifying and capturing changes at the granular row level, CDC enables applications to react and promptly process these changes in real time. This ensures up-to-date data accuracy and minimizes the latency involved in processing updates.
+Change Data Capture (CDC) is a technique that enables the tracking and capturing of changes made to data within a PostgreSQL® database. By identifying and capturing changes at the granular row level, CDC enables applications to react and promptly process these changes in real time. This ensures up-to-date data accuracy and minimizes the latency involved in processing updates.
 
-When using Aiven for Apache Flink, you can seamlessly leverage the power of the PostgreSQL CDC Connector to stream and process real-time data changes from PostgreSQL databases. Integrated with the Debezium engine, the CDC connector captures changes at the granular level of each table within an event stream. 
+When using Aiven for Apache Flink®, you can seamlessly leverage the power of the PostgreSQL CDC Connector to stream and process real-time data changes from PostgreSQL databases. Integrated with the Debezium engine, the CDC connector captures changes at the granular level of each table within an event stream. 
 
 This article provides you with information on how to create a PostgreSQL CDC connector-based Apache Flink® table. 
 
