@@ -88,7 +88,7 @@ Troubleshooting
 
 If you encounter the ``must be superuser to create FOR ALL TABLES publication`` error when setting up a PostgreSQL CDC source connector in Aiven for PostgreSQL using the ``pgoutput`` plugin, follow these steps to resolve the issue:
 
-1. Install the aiven-extras extension by executing the SQL command: 
+1. Install the ``aiven-extras`` extension by executing the SQL command: 
 
 .. code:: 
 
