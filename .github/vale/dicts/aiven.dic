@@ -12,6 +12,7 @@ APIs
 ARN
 Astacus
 Auth0
+autojoin
 autovacuum
 Avro
 AZ
@@ -72,6 +73,7 @@ failover
 fileset
 filesets
 Flink
+FusionAuth
 Gantt
 geocoder
 geocoding

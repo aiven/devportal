@@ -40,6 +40,7 @@ exceptions:
   - Elasticsearch
   - European Union
   - Flink
+  - FusionAuth
   - GiB
   - GitHub
   - Go
