@@ -5,6 +5,9 @@ SAML (Security Assertion Markup Language) is a standard protocol for exchanging 
 
 SAML authentication on Aiven for OpenSearch® can enhance the authentication process for users, providing increased security and a more streamlined experience. With SAML, OpenSearch can delegate authentication and authorization to a trusted external identity provider, reducing security risks and simplifying user management. Additionally, SAML allows for Single Sign-On (SSO) functionality, enabling users to access several OpenSearch instances without the need to log in multiple times.
 
+.. important:: 
+   When you fork an OpenSearch service, any Single Sign-On (SSO) methods configured at the service level, such as SAML, must be explicitly reconfigured for the forked service. SSO configurations are linked to specific URLs and endpoints, which change during forking. Failing to reconfigure SSO methods for the forked service can lead to authentication problems and potentially disrupt user access. 
+
 
 Prerequisites
 ---------------

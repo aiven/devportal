@@ -23,6 +23,10 @@ You can fork the following Aiven services:
 - Apache Cassandra® (Limitation: you cannot fork to a lower amount of nodes)
 - Elasticsearch
 - OpenSearch®
+   
+  .. important:: 
+        When you fork an OpenSearch service, any Single Sign-On (SSO) methods configured at the service level, such as SAML, must be explicitly reconfigured for the forked service. SSO configurations are linked to specific URLs and endpoints, which change during forking. Failing to reconfigure SSO methods for the forked service can lead to authentication problems and potentially disrupt user access. 
+
 - InfluxDB®
 - M3DB
 - Grafana®
