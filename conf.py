@@ -30,6 +30,7 @@ html_title = 'Aiven'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'sphinx_sitemap',
     'sphinx_design',
     'sphinxcontrib.mermaid',
     'sphinx_external_toc',
@@ -37,8 +38,7 @@ extensions = [
     'sphinx_gitstamp',
     'sphinxext.opengraph',
     'notfound.extension',
-    'pagename_remove_html',
-    'sphinx_sitemap',
+    'override_canonical',
 ]
 
 # Not Found configuration
