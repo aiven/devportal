@@ -73,6 +73,8 @@ To keep all the content consistent and easy to follow for our audience, use `Goo
 
     Remember we review your pull request against these guidelines, so for fewer rounds of revisions, follow this advice!
 
+Where possible, these rules are checked automatically using Vale.  For more information on how this is setup, see the `Vale readme file <.github/vale/README.rst>`_.
+
 Use a specific template
 '''''''''''''''''''''''
 
@@ -86,6 +88,8 @@ Rather than using Capital Letters for Almost Every Word, titles are written like
 Example: Get partition details of an Apache Kafka topic
 
  - only the first letter, and the proper noun for the product name, are capitalized
+
+The automated check for this can get confused by proper nouns; for information on how to fix this case-by-case, see the `Vale readme file <.github/vale/README.rst>`_.
 
 Add hyperlinks
 ''''''''''''''
