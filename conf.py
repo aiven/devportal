@@ -38,6 +38,7 @@ extensions = [
     'sphinx_gitstamp',
     'sphinxext.opengraph',
     'notfound.extension',
+    'override_canonical',
 ]
 
 # Not Found configuration
