@@ -736,8 +736,8 @@ entries:
                 title: Read and write data across shards
               - file: docs/products/clickhouse/howto/copy-data-across-instances
                 title: Copy data across ClickHouse servers
-              - file: docs/products/clickhouse/howto/query-stats
-                title: Query Statistics
+              - file: docs/products/clickhouse/howto/fetch-query-statistics.rst
+                title: Fetch query statistics
           - file: docs/products/clickhouse/howto/list-manage-cluster
             title: Manage cluster
           - file: docs/products/clickhouse/howto/list-integrations
