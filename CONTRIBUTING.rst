@@ -89,7 +89,7 @@ Example: Get partition details of an Apache Kafka topic
 
  - only the first letter, and the proper noun for the product name, are capitalized
 
-The automated check for this can get confused by proper nouns; for information on how to fix this case-by-case, see the `Vale readme file <.github/vale/README.rst>`_.
+You may get errors from the automated checks when using proper nouns. In these cases, you might need to add the words as an exception or add them to the dictionary file. For information on how to do this, see the `Vale readme file <.github/vale/README.rst>`_.
 
 Add hyperlinks
 ''''''''''''''
