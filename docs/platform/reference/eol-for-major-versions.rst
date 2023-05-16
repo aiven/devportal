@@ -212,7 +212,7 @@ Our recommendation
 We **highly recommend** customers to perform the version upgrade well
 before EOL so that they can test compatibility for any breaking changes,
 plan for unforeseen issues, and migrate to the newer version at their
-own schedule.After the EOL date:
+own schedule. After the EOL date:
 
 1. If the service is powered on, it's auto-upgraded to the latest version.
 2. If the service is powered off, it's deleted.
