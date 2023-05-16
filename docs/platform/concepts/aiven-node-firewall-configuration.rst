@@ -6,7 +6,7 @@ The iptables configuration is generated dynamically at runtime depending on serv
 Intra-node connections are limited to point-to-point connections to specific IP addresses. All traffic to ports that are not required for the service to function is rejected instead of dropped to avoid timeouts.
 Service ports that you can connect to depend on the service type and deployment type. The configuration can also affect the ports that are available:
 
-* Is the service in a public network, :doc:`dedicated VPC </docs/platform/howto/manage-vpc-peering>`, virtual cloud account, or a  :doc:`Bring Your Own Account (BYOA) </docs/platform/concepts/byoa>` setup ?
+* Is the service in a public network, :doc:`dedicated VPC </docs/platform/howto/manage-vpc-peering>`, virtual cloud account, or a  :doc:`Bring Your Own Cloud (BYOC) </docs/platform/concepts/byoa>` setup ?
 * Have you configured IP ranges in  user_config.ip_filter?
 * Have you :doc:`enabled public internet access for services in a VPC </docs/platform/howto/public-access-in-vpc>`?
 
@@ -45,6 +45,6 @@ Enhanced compliance environments
 --------------------------------
 In `Enhanced Compliance Environments (ECE) <https://docs.aiven.io/docs/platform/concepts/enhanced-compliance-env>`_, there is additional filtering at VPC level and a SOCKS5 proxy. ECE environments have more variable configurations because we provide more flexibility for configuring these to meet your requirements. Typically, ECE nodes are accessible only over VPC connections and are not exposed to the internet. This results in layered firewalls with cloud-provider SDN firewalls and individual node-specific iptables rules.
 
-BYOA environments
+BYOC environments
 -----------------
-With the BYOA deployment model, you deploy Aiven services under your own cloud accounts. This gives you greater control over deployment configuration, but the VM-level firewall configurations are set at deployment time according to Aiven base configurations. You can apply additional firewalls using your cloud service provider's configuration options.
+With the BYOC deployment model, you deploy Aiven services under your own cloud accounts. This gives you greater control over deployment configuration, but the VM-level firewall configurations are set at deployment time according to Aiven base configurations. You can apply additional firewalls using your cloud service provider's configuration options.

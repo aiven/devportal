@@ -21,6 +21,7 @@ exceptions:
   - Boot
   - Business
   - BYOA
+  - BYOC
   - Cassandra
   - ClickHouse
   - CloudWatch
