@@ -73,7 +73,7 @@ To keep all the content consistent and easy to follow for our audience, use `Goo
 
     Remember we review your pull request against these guidelines, so for fewer rounds of revisions, follow this advice!
 
-Where possible, these rules are checked automatically using Vale.  For more information on how this is setup, see the `Vale readme file <.github/vale/README.rst>`_.
+Where possible, these rules are checked automatically using Vale.  For more information on how this is set up, see the `Vale readme file <.github/vale/README.rst>`_.
 
 Use a specific template
 '''''''''''''''''''''''
