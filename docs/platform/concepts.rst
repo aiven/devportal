@@ -51,7 +51,7 @@ Learn about some of the key concepts for working with Aiven platform:
 
   Add (and remove) storage on the fly without upgrading your plan.
 
-* :doc:`Bring your own cloud (BYOC) </docs/platform/concepts/byoa>`.
+* :doc:`Bring your own cloud (BYOC) </docs/platform/concepts/byoc>`.
 
   BYOC is an optional setup feature that allows you to purchase your Aiven services through your existing Cloud Provider.
 

@@ -32,7 +32,7 @@ entries:
       - file: docs/platform/concepts/out-of-memory-conditions
       - file: docs/platform/concepts/static-ips
       - file: docs/platform/concepts/tls-ssl-certificates
-      - file: docs/platform/concepts/byoa
+      - file: docs/platform/concepts/byoc
       - file: docs/platform/concepts/dynamic-disk-sizing
       - file: docs/platform/concepts/enhanced-compliance-env
       - file: docs/platform/concepts/disaster-recovery-test-scenarios

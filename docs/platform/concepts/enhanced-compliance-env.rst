@@ -67,7 +67,7 @@ Although not exhaustive, Aiven is capable of supporting both the Health Insuranc
 Accountability Act (HIPAA) and the Payment Card Industry Data Security Standard (PCI DSS)
 compliances. If you require compliance beyond these please contact our sales department so we
 can better understand your specific needs. Additionally, we also offer an alternative deployment
-option -- :doc:`Bring Your Own Cloud (BYOC) </docs/platform/concepts/byoa>`.
+option -- :doc:`Bring Your Own Cloud (BYOC) </docs/platform/concepts/byoc>`.
 
 Migrating
 ----------------

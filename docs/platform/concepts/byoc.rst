@@ -64,7 +64,7 @@ With BYOC, you can use any standard Aiven method (e.g. :doc:`CLI </docs/tools/cl
 BYOC standard
 '''''''''''''
 
-.. image:: /images/platform/byoa-standard.png
+.. image:: /images/platform/byoc-standard.png
    :alt: Overview architecture diagram with VPC set up
 
 A standard BYOC deployment requires the customer to create a Virtual Private Cloud (VPC)
@@ -87,7 +87,7 @@ object storage configurations.
 BYOC with IPsec ingress
 '''''''''''''''''''''''
 
-.. image:: /images/platform/byoa-ipsec-ingress.png
+.. image:: /images/platform/byoc-ipsec-ingress.png
    :alt: Overview architecture diagram with IPsec tunnel
 
 A slight variation on a standard BYOC deployment enables Aiven to manage a customer's
@@ -97,7 +97,7 @@ the public internet is infeasible or adds additional complexity.
 BYOC with direct IPsec ingress
 ''''''''''''''''''''''''''''''
 
-.. image:: /images/platform/byoa-ipsec-ingress-direct.png
+.. image:: /images/platform/byoc-ipsec-ingress-direct.png
    :alt: Overview architecture diagram with direct IPsec access
 
 Again a slight variation on a standard BYOC deployment enables Aiven to manage a customer's
