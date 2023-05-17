@@ -30,3 +30,7 @@ Manage your Aiven for ClickHouse® service
     .. grid-item-card:: :doc:`Read and write data across shards </docs/products/clickhouse/howto/use-shards-with-distributed-table>`
         :shadow: md
         :margin: 2 2 0 0
+
+    .. grid-item-card:: :doc:`Fetch query statistics for Aiven for ClickHouse® </docs/products/clickhouse/howto/fetch-query-statistics>`
+        :shadow: md
+        :margin: 2 2 0 0
