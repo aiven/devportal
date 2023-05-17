@@ -134,7 +134,15 @@ When creating a Debezium source connector pointing to Aiven for PostgreSQL using
 
     Caused by: org.postgresql.util.PSQLException: ERROR: must be superuser to create FOR ALL TABLES publication
     
-The error is due to Debezium trying to create a publication and failing because ``avnadmin`` is not a superuser. To avoid the problem you need to create the publication on the source database before configuring the connector by:
+The error is due to Debezium trying to create a publication and failing because ``avnadmin`` is not a superuser. To avoid the problem you either:
+
+* add the `"publication.autocreate.mode": "filtered"` parameter to the Debezium connector configuration to enable the publication creation only for the tables defined in the `table.include.list` parameter
+* create the publication on the source database before configuring the connector as defined in the section below.
+
+Create the publication in PostgreSQL
+''''''''''''''''''''''''''''''''''''
+
+To create the publication in PostgreSQL:
 
 * Installing the ``aiven-extras`` extension:
 
