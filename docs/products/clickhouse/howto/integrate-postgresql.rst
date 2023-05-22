@@ -41,26 +41,9 @@ Variable                         Description
 Create an integration
 ----------------------
 
-You can create an integration with the help of :ref:`Aiven CLI <avn_service_integration_create>` or through the `Aiven console <https://console.aiven.io/>`_ by following these steps:
+To connect Aiven for ClickHouse and Aiven for PostgreSQL by enabling a data service integration, see :ref:`Create data service integrations <create-data-service-integration>`.
 
-1. Log in to the `Aiven web console <https://console.aiven.io/>`_, choose the right project, and select your Aiven for ClickHouse service.
-2. In the **Overview** tab, navigate to the **Service integrations** section and select **Manage integrations**.
-3. In the **Integrations** view, navigate to the **Aiven solutions** section and select **Store Metrics**.
-4. In the **Metrics integration** window, specify what service you want to integrate with.
-
-   .. note::
-
-      This instruction covers integrating with an existing Aiven for PostgreSQL service. However, in the **Metrics integration** window, you can also start setting up a new Aiven for PostgreSQL service for integration purposes.
-
-   1. Select one of the projects from the **Project name** dropdown list.
-   2. Select one of the existing Aiven for PostgreSQL services from the **Service name** dropdown list.
-   3. Select **Enable**.
-
-As a result
-
-* Your Aiven for PostgreSQL service is added to the list of enabled service integrations in the **Integrations** view.
-* **Metrics** database is created in the newly-integrated Aiven for PostgreSQL service.
-* Your Aiven for ClickHouse service starts sending service metrics to the **Metrics** database.
+The newly created database name has the following format: ``service_PG_SERVICE_NAME_PG_DATABASE_PG_SCHEMA``, for example, ``service_myPGService_myDatabase_mySchema``.
 
 .. note::
 

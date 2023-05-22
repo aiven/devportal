@@ -33,6 +33,8 @@ Prerequisites
 * Aiven account
 * Access to `Aiven web console <https://console.aiven.io/>`_
 
+.. _create-data-service-integration:
+
 Create data service integrations
 --------------------------------
 
