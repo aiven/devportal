@@ -946,6 +946,9 @@ entries:
               - file: docs/products/opensearch/concepts/users-access-controls
           - file: docs/products/opensearch/concepts/os-security
             title: OpenSearch Security
+            entries:  
+            - file: docs/products/opensearch/concepts/opensearch-security-considerations
+              title: Key considerations
           - file: docs/products/opensearch/concepts/backups
           - file: docs/products/opensearch/concepts/indices
           - file: docs/products/opensearch/concepts/aggregations
