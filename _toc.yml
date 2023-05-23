@@ -728,6 +728,8 @@ entries:
             title: Strings
           - file: docs/products/clickhouse/concepts/federated-queries
             title: Federated queries
+          - file: docs/products/clickhouse/concepts/clickhouse-tiered-storage
+            title: Tiered storage
       - file: docs/products/clickhouse/howto
         title: HowTo
         entries:
@@ -791,6 +793,17 @@ entries:
                 title: Connect services via integration databases
               - file: docs/products/clickhouse/howto/connect-with-jdbc
                 title: Connect to external DBs with JDBC
+          - file: docs/products/clickhouse/howto/list-tiered-storage
+            title: Tiered storage
+            entries:
+              - file: docs/products/clickhouse/howto/enable-tiered-storage
+                title: Enable tiered storage
+              - file: docs/products/clickhouse/howto/configure-tiered-storage
+                title: Configure tiered storage
+              - file: docs/products/clickhouse/howto/check-data-tiered-storage
+                title: Check tiered storage status
+              - file: docs/products/clickhouse/howto/transfer-data-tiered-storage
+                title: Transfer data in tiered storage
       - file: docs/products/clickhouse/reference
         title: Reference
         entries:

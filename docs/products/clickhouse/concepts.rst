@@ -22,6 +22,10 @@ Aiven service
         :shadow: md
         :margin: 2 2 0 0
 
+    .. grid-item-card:: :doc:`Tiered storage in Aiven for ClickHouse® </docs/products/clickhouse/concepts/clickhouse-tiered-storage>`
+        :shadow: md
+        :margin: 2 2 0 0
+
 General
 -------
 
