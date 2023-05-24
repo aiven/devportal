@@ -19,6 +19,7 @@ There are three major reasons to utilize BYOC:
 1. **Compliance**: Aiven offers managed environments for several standard compliance regulations such as HIPAA, PCI DSS and GDPR. However, if you have strict regulatory requirements, or special compliance requirements, BYOC may be the best option for you.
 2. **Network auditing**: If you require visibility of all traffic within any VPC you operate in or need frequent auditing capabilities, BYOC is potentially a good fit. BYOC gives you the ability to audit network metadata but not the actual contents.
 3. **Fine grained network control**: BYOC requires only some specific network access (e.g. service management and troubleshooting), otherwise allowing you to customize your network to meet any internal requirements or requirements of your customers.
+4. **Cost optimization**: Depending on your cloud provider, with Aiven BYOC you can use reserved instances, cost savings plans, committed use discounts, or other strategies to save on compute and storage infrastructure costs related to Aiven services.
 
 Who is eligible?
 ----------------
@@ -40,8 +41,7 @@ BYOC deployments are not automated and they add additional complexity for commun
 to the Aiven control plane, service management, key management and security.
 
 In most cases customers can meet their regulatory and business requirements by utilizing
-a standard Aiven deployment or :doc:`Enhanced Compliance Environment </docs/platform/concepts/enhanced-compliance-env>`. In fact, 99% of Aiven
-customers are able to meet their requirements without BYOC. If you would like to understand
+a standard Aiven deployment or :doc:`Enhanced Compliance Environment </docs/platform/concepts/enhanced-compliance-env>`. If you would like to understand
 BYOC better or are unsure which deployment model is the best fit for you, please contact our sales department Sales@Aiven.io.
 
 Pricing and billing
