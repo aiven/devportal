@@ -12,15 +12,6 @@ Rename billing groups
 
 #. Enter the new name and click **Rename**.
 
-Download invoices
-""""""""""""""""""
-
-#. Select the name of the billing group.
-
-#. On the **Invoices** tab, find the billing period that you want to download an invoice for. 
-
-#. Click the three dots in the **Actions** column and select **Download PDF** or **Download CSV**.
-
 Update your billing information
 """"""""""""""""""""""""""""""""
 
