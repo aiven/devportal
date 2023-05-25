@@ -149,6 +149,9 @@ NVMe
 OAuth
 Okta
 onboarding
+Opensearch_acl_config
+Opensearch_acl_rule
+Opensearch_user
 OpenSearch
 OpenSearch Security
 operator

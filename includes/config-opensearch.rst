@@ -89,6 +89,12 @@
 
 **SAML response role attribute** Optional. Specifies the attribute in the SAML response where role information is stored, if available. Role attributes are not required for SAML authentication, but can be included in SAML assertions by most Identity Providers (IdPs) to determine user access levels or permissions.
 
+``idp_pemtrustedcas_content``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*['string', 'null']*
+
+**PEM-encoded root CA Content for SAML IdP server verification** This parameter specifies the PEM-encoded root certificate authority (CA) content for the SAML identity provider (IdP) server verification. The root CA content is used to verify the SSL/TLS certificate presented by the server.
+
 
 
 ``index_patterns``

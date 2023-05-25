@@ -142,6 +142,8 @@ EOL one year after it's made available on Aiven platform.
    +-------------+---------------+------------------+------------------+
    | 3.3         | 2023-12-12    | 2023-09-12       | 2022-12-23       |
    +-------------+---------------+------------------+------------------+
+   | 3.4         | 2024-05-13    | 2024-02-15       | 2022-05-15       |
+   +-------------+---------------+------------------+------------------+
 
 .. _h_0f2929c770:
 
@@ -210,7 +212,10 @@ Our recommendation
 We **highly recommend** customers to perform the version upgrade well
 before EOL so that they can test compatibility for any breaking changes,
 plan for unforeseen issues, and migrate to the newer version at their
-own schedule.
+own schedule. After the EOL date:
+
+1. If the service is powered on, it's auto-upgraded to the latest version.
+2. If the service is powered off, it's deleted.
 
 Aiven platform offers database forking as an efficient tool to verify
 the version upgrade so that customers can safely test compatibility
