@@ -156,7 +156,6 @@ Step 2 - validation
 
    * Hostname
    * Port
-   * Database name
    * Username
    * Password
 
@@ -166,7 +165,9 @@ Step 2 - validation
 
 2. Select the **SSL encryption recommended** checkbox.
 
-3. Select **Run checks** to have the connection validated.
+3. In the **Exclude databses** field, enter names of databases that you don't want to migrate (if any).
+
+4. Select **Run checks** to have the connection validated.
 
 .. topic:: Unable to use logical replication?
 
