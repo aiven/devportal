@@ -94,4 +94,4 @@ SBOM reports are only available to customers who have an enterprise support cont
 Time synchronization
 --------------------
 
-All Aiven backend and customer services are configured to use trusted NTP servers of that cloud provider where the service is deployed.
+All Aiven backend and customer services are configured to use trusted NTP (Network Time Protocol) servers of the respective cloud provider where each service is deployed.
