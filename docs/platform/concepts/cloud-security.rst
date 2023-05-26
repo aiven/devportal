@@ -89,3 +89,9 @@ The SBOM is a list of all packages that are being used by Aiven in the services 
 SBOM reports are being widely adopted and may eventually be required for compliance or security assessments. We provide these reports as a file download via our :doc:`CLI </docs/tools/cli/project>`, in CSV or SPDX format.
 
 SBOM reports are only available to customers who have an enterprise support contract and all services within the project must have the latest maintenance patches applied.
+
+
+Time synchronization
+--------------------
+
+All Aiven backend and customer services are configured to use trusted NTP (Network Time Protocol) servers of the respective cloud provider where each service is deployed.
