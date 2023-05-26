@@ -99,7 +99,7 @@ If you encounter the ``must be superuser to create FOR ALL TABLES publication`` 
 .. code:: 
   
     SELECT * FROM aiven_extras.pg_create_publication_for_all_tables(
-        'my_test_publication',
+        'dbz_publication',
         'INSERT,UPDATE,DELETE'
         );
 
