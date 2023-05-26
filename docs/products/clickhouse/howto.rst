@@ -39,5 +39,5 @@ Aiven for ClickHouse® how-tos
     - :doc:`Connect Apache Kafka® to Aiven for ClickHouse® </docs/products/clickhouse/howto/integrate-kafka>`
     - :doc:`Connect PostgreSQL® to Aiven for ClickHouse® </docs/products/clickhouse/howto/integrate-postgresql>`
     - :doc:`Connect to external database via JDBC </docs/products/clickhouse/howto/connect-with-jdbc>`
-    - :doc: `Manage Aiven for ClickHouse® data service integrations </docs/products/clickhouse/howto/data-service-integration>`
-    - :doc: `Manage Aiven for ClickHouse® integration databases </docs/products/clickhouse/howto/integration-databases>`
+    - :doc:`Manage Aiven for ClickHouse® data service integrations </docs/products/clickhouse/howto/data-service-integration>`
+    - :doc:`Manage Aiven for ClickHouse® integration databases </docs/products/clickhouse/howto/integration-databases>`
