@@ -43,16 +43,7 @@ Variable                         Description
 Create an integration
 ----------------------
 
-You can create an integration with the help of :ref:`Aiven CLI <avn_service_integration_create>`, or through the `Aiven console <https://console.aiven.io/>`_ by following these steps:
-
-1. Log in to the `Aiven web console <https://console.aiven.io/>`_, choose the right project, and select your Aiven for ClickHouse service.
-#. In the *Overview* tab, scroll till the section *Service integrations* and click on **Set up integration**. A modal window with available integration options will appear.
-#. Select Apache Kafka from the list of the options.
-#. Choose your service from the list. This is also a place where you can trigger creation of a new Aiven for Apache Kafka service.
-#. Click on **Enable**.
-#. Your Apache Kafka service will be added to the list of enabled service integrations.
-#. You can now close *Service integrations* modal window.
-#. The Kafka integration database will now be added.
+To connect Aiven for ClickHouse and Aiven for Apache Kafka by enabling a data service integration, see :ref:`Create data service integrations <create-data-service-integration>`.
 
 The newly created database name has the following format: `service_KAFKA_SERVICE_NAME`, where KAFKA_SERVICE_NAME is the name of your Apache Kafka service.
 

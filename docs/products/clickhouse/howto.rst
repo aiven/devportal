@@ -14,6 +14,7 @@ Aiven for ClickHouse® how-tos
     - :doc:`Query Aiven for ClickHouse® database </docs/products/clickhouse/howto/query-databases>`
     - :doc:`Create materialised views in Aiven for ClickHouse® </docs/products/clickhouse/howto/materialized-views>`
     - :doc:`Monitor Aiven for ClickHouse® performance </docs/products/clickhouse/howto/monitor-performance>`
+    - :doc:`Fetch query statistics for Aiven for ClickHouse® </docs/products/clickhouse/howto/fetch-query-statistics>`
 
 .. dropdown:: Cluster management
 
@@ -38,3 +39,5 @@ Aiven for ClickHouse® how-tos
     - :doc:`Connect Apache Kafka® to Aiven for ClickHouse® </docs/products/clickhouse/howto/integrate-kafka>`
     - :doc:`Connect PostgreSQL® to Aiven for ClickHouse® </docs/products/clickhouse/howto/integrate-postgresql>`
     - :doc:`Connect to external database via JDBC </docs/products/clickhouse/howto/connect-with-jdbc>`
+    - :doc:`Manage Aiven for ClickHouse® data service integrations </docs/products/clickhouse/howto/data-service-integration>`
+    - :doc:`Manage Aiven for ClickHouse® integration databases </docs/products/clickhouse/howto/integration-databases>`

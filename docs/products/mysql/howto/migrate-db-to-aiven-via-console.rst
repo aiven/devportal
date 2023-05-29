@@ -156,7 +156,6 @@ Step 2 - validation
 
    * Hostname
    * Port
-   * Database name
    * Username
    * Password
 
@@ -166,7 +165,9 @@ Step 2 - validation
 
 2. Select the **SSL encryption recommended** checkbox.
 
-3. Select **Run checks** to have the connection validated.
+3. In the **Exclude databases** field, enter names of databases that you don't want to migrate (if any).
+
+4. Select **Run checks** to have the connection validated.
 
 .. topic:: Unable to use logical replication?
 
@@ -186,32 +187,32 @@ Step 4 - replicating
 
 .. _stop-migration-mysql:
 
-1. While the migration is in progress, you can
+While the migration is in progress, you can
 
-   * Let it proceed until completed by selecting **Close window**, which closes the wizard. You come back to check the status at any time.
+* Let it proceed until completed by selecting **Close window**, which closes the wizard. You come back to check the status at any time.
 
-   * Discontinue the migration by selecting **Stop migration**, which retains the data already migrated. For information on how to follow up on a stopped migration process, see :ref:`Start over <start-over-mysql>`.
+* Discontinue the migration by selecting **Stop migration**, which retains the data already migrated. For information on how to follow up on a stopped migration process, see :ref:`Start over <start-over-mysql>`.
 
-   .. image:: /images/products/mysql/migration-in-progress-mysql.png
-      :width: 700px
-      :alt: Set up migration
+.. image:: /images/products/mysql/migration-in-progress-mysql.png
+   :width: 700px
+   :alt: Set up migration
 
-   .. warning::
+.. warning::
 
-      To avoid conflicts and replication issues while the migration is ongoing
+   To avoid conflicts and replication issues while the migration is ongoing
 
-      * Do not write to any tables in the target database that are being processed by the migration tool.
-      * Do not change the replication configuration of the source database manually. Don't modify ``wal_level`` or reduce ``max_replication_slots``.
-      * Do not make database changes that could disrupt or prevent the connection between the source database and the target database. Do not change the source database's listen address and do not modify or enable firewalls on the databases.
+   * Do not write to any tables in the target database that are being processed by the migration tool.
+   * Do not change the replication configuration of the source database manually. Don't modify ``wal_level`` or reduce ``max_replication_slots``.
+   * Do not make database changes that could disrupt or prevent the connection between the source database and the target database. Do not change the source database's listen address and do not modify or enable firewalls on the databases.
 
 .. topic:: Migration attempt failed?
 
    If you happen to get such a notification, investigate potential causes of the failure and try to fix the issues. When you're ready, trigger the migration again by selecting **Start over**.
 
-1. When the wizard communicates the completion of the migration, select one of the following:
+When the wizard communicates the completion of the migration, select one of the following:
 
-   * **Close connection** to disconnect the databases and stop the replication process if still active.
-   * **Keep replicating** if the replication is still ongoing and you want to keep the connection open for data synchronization.
+* **Close connection** to disconnect the databases and stop the replication process if still active.
+* **Keep replicating** if the replication is still ongoing and you want to keep the connection open for data synchronization.
 
 .. topic:: Replication mode active?
 

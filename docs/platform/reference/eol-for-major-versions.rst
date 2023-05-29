@@ -56,15 +56,17 @@ Aiven for OpenSearch® is the open source continuation of the original Elasticse
 .. container:: intercom-interblocks-table-container
 
 
-   +-------------+---------------+------------------+------------------+
-   | **Version** | **Aiven EOL** | **Availability   | **Upstream EOL** |
-   |             |               | end on Aiven     |                  |
-   |             |               | Platform**       |                  |
-   +-------------+---------------+------------------+------------------+
-   | 1.x         | 2023-12-31    | 2023-09-30       | 2023-12-31       |
-   +-------------+---------------+------------------+------------------+
-   | 2.x         | 20??-??-??    | 20??-??-??       | 20??-??-??       |
-   +-------------+---------------+------------------+------------------+
+   +-------------+------------------------+------------------+------------------+
+   | **Version** | **Aiven EOL**          | **Availability   | **Upstream EOL** |
+   |             |                        | end on Aiven     |                  |
+   |             |                        | Platform**       |                  |
+   +-------------+------------------------+------------------+------------------+
+   | 1.x         | 2023-12-31             | 2023-09-30       | 2023-12-31       |
+   +-------------+------------------------+------------------+------------------+
+   | 2.x         | `TBA*`                 | `TBA`            | `TBA`            |
+   +-------------+------------------------+------------------+------------------+
+   
+   `*` To be announced
 
 
 Aiven for PostgreSQL®
@@ -212,7 +214,10 @@ Our recommendation
 We **highly recommend** customers to perform the version upgrade well
 before EOL so that they can test compatibility for any breaking changes,
 plan for unforeseen issues, and migrate to the newer version at their
-own schedule.
+own schedule. After the EOL date:
+
+1. If the service is powered on, it's auto-upgraded to the latest version.
+2. If the service is powered off, it's deleted.
 
 Aiven platform offers database forking as an efficient tool to verify
 the version upgrade so that customers can safely test compatibility

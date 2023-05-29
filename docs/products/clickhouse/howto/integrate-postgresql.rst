@@ -12,11 +12,12 @@ Behind the scenes the integration between Aiven for ClickHouse and PostgreSQL re
 Prerequisites
 -------------
 
-To connect Aiven for ClickHouse to PostgreSQL you will need:
+To connect Aiven for ClickHouse to PostgreSQL, you need the following:
 
 * Aiven for ClickHouse service
 * Aiven for PostgreSQL service or a self-hosted PostgreSQL service
-* These instructions assume that you have at least one table in your PostgreSQL service
+
+These instructions assume that you have at least one table in your PostgreSQL service.
 
 .. tip::
 
@@ -40,23 +41,13 @@ Variable                         Description
 Create an integration
 ----------------------
 
-You can create an integration with the help of :ref:`Aiven CLI <avn_service_integration_create>`, or through the `Aiven console <https://console.aiven.io/>`_ by following these steps:
-
-1. Log in to the `Aiven web console <https://console.aiven.io/>`_, choose the right project, and select your Aiven for ClickHouse service.
-#. In the *Overview* tab, scroll till the section *Service integrations* and click on **Set up integration**. A modal window with available integration options will appear.
-#. Select PostgreSQL from the list of the options.
-#. Choose your service from the list. This is also a place where you can trigger creation of a new Aiven for PostgreSQL service.
-#. Click on **Enable**.
-#. Your PostgreSQL service will be added to the list of enabled service integrations.
-#. You can now close *Service integrations* modal window.
-#. The PostgreSQL integration database will now be added.
+To connect Aiven for ClickHouse and Aiven for PostgreSQL by enabling a data service integration, see :ref:`Create data service integrations <create-data-service-integration>`.
 
 The newly created database name has the following format: ``service_PG_SERVICE_NAME_PG_DATABASE_PG_SCHEMA``, for example, ``service_myPGService_myDatabase_mySchema``.
 
 .. note::
 
     When connecting to an Aiven for PostgreSQL, we connect as the main service user of that service, which has access to all the PostgreSQL tables. SELECT and INSERT privileges are granted to the main service user (``avnadmin``). It is up to the main service user to grant access to other users. Read more :doc:`how to grant privileges </docs/products/clickhouse/howto/manage-users-roles>`.
-
 
 Update PostgreSQL integration settings
 -----------------------------------------
