@@ -5,10 +5,15 @@ with open('./_build/html/sitemap.xml', 'r') as f:
 
 soup = BeautifulSoup(contents, 'lxml')
 
-locs = soup.find_all('loc')
+urls = soup.find_all('url')
 
-for loc in locs:
+for url in urls:
+    loc = url.find('loc')
     text = loc.string
+    # Remove the 'gen' and '404' pages
+    if '404' in text:
+        url.decompose()
+        continue
     if text.endswith('index.html'):
         loc.string = text[:-10]  # removes the "index.html"
     elif text.endswith('.html'):
