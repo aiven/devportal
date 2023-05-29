@@ -5,21 +5,14 @@ with open('./_build/html/sitemap.xml', 'r') as f:
 
 soup = BeautifulSoup(contents, 'lxml')
 
-urls = soup.find_all('loc')
+locs = soup.find_all('loc')
 
-for url in urls:
-    text = url.string
-    # Skip the 404 page and the genindex page
-    if '404' in text or 'genindex' in text:
-        continue
+for loc in locs:
+    text = loc.string
     if text.endswith('index.html'):
-        url.string = text[:-10]  # removes the "index.html"
+        loc.string = text[:-10]  # removes the "index.html"
     elif text.endswith('.html'):
-        url.string = text[:-5]  # removes the ".html"
-
-# Remove all URLs that contain '404' or 'genindex'
-urls = [url for url in urls if '404' not in url.string and 'genindex' not in url.string]
+        loc.string = text[:-5]  # removes the ".html"
 
 with open('./_build/html/sitemap.xml', 'w') as f:
-    for url in urls:
-        f.write(str(url))
+    f.write(str(soup))
