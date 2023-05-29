@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 
-with open('./_build/sitemap.xml', 'r') as f:
+with open('./_build/html/sitemap.xml', 'r') as f:
     contents = f.read()
 
 soup = BeautifulSoup(contents, 'lxml')
@@ -20,6 +20,6 @@ for url in urls:
 # Remove all URLs that contain '404' or 'genindex'
 urls = [url for url in urls if '404' not in url.string and 'genindex' not in url.string]
 
-with open('./_build/sitemap.xml', 'w') as f:
+with open('./_build/html/sitemap.xml', 'w') as f:
     for url in urls:
         f.write(str(url))
