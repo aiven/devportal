@@ -14,7 +14,9 @@ for url in urls:
     if '404' in text:
         url.decompose()
         continue
-    if text.endswith('index.html'):
+    if 'genindex.html' in text:
+        loc.string = text[:-5]  # removes the ".html"
+    elif text.endswith('index.html'):
         loc.string = text[:-10]  # removes the "index.html"
     elif text.endswith('.html'):
         loc.string = text[:-5]  # removes the ".html"
