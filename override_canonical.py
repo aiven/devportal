@@ -5,7 +5,7 @@
 # the canonical URL in future releases.
 def override_canonical(app, pagename, templatename, context, doctree):
     final_pagename = pagename
-    if pagename.endswith('index'):
+    if pagename != 'genindex' and pagename.endswith('index'):
         final_pagename = pagename[:-5]  # remove 'index' from the pagename 
     context['pageurl'] = "https://docs.aiven.io/{}".format(final_pagename)
 
