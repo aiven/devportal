@@ -991,7 +991,7 @@ entries:
             - file: docs/products/opensearch/howto/opensearch-aggregations-and-nodejs
               title: Aggregation with NodeJS
           - file: docs/products/opensearch/howto/list-opensearch-security
-            title: Manage OpenSearch Security |beta|
+            title: Manage OpenSearch Security
             entries:
               - file: docs/products/opensearch/howto/enable-opensearch-security
                 title: Enable OpenSearch Security management
