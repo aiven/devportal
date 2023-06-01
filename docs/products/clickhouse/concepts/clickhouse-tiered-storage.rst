@@ -10,8 +10,11 @@ The tiered storage feature introduces a method of organizing and storing data in
 
 The tiered storage in Aiven for ClickHouse consists of the following two layers:
 
-* SSD - so called *hot storage*, the higher tier for fresh, frequently-accessed and valuable data, a fast but costly storage device
-* Object storage - so called *cold storage*, Amazon S3, the lower tier for older, less valuable or rarely-accessed data, a slower but more affordable storage device
+SSD - the first tier
+  For fresh, frequently-accessed and valuable data, a fast but costly storage device
+
+Object storage - the second tier
+  For older, less valuable or rarely-accessed data, a slower but more affordable storage device
 
 Why use it
 ----------
@@ -30,17 +33,17 @@ Regardless of what data retention control mechanism you choose, you receive a no
 .. mermaid:: 
 
     sequenceDiagram
-        Application->>+SSD (hot data): writing data
-        SSD (hot data)->>S3 (cold data): moving data based <br> on storage policies 
-        par Application to SSD (hot data)
-            Application-->>SSD (hot data): querying data
-        and Application to S3 (cold data)
-            Application-->>S3 (cold data): querying data
+        Application->>+SSD: writing data
+        SSD->>Object storage: moving data based <br> on storage policies 
+        par Application to SSD
+            Application-->>SSD: querying data
+        and Application to Object storage
+            Application-->>Object storage: querying data
         end
-        alt if stored in S3
-            S3 (cold data)->>Application: reading data
+        alt if stored in Object storage
+            Object storage->>Application: reading data
         else if stored in SSD
-            SSD (hot data)->>Application: reading data
+            SSD->>Application: reading data
         end
 
 .. note:: 
@@ -63,7 +66,7 @@ Limitations
 
     As a workaround, you can create a new table (without enabling the tiered storage) and copy the data from the original table (with the tiered storage :doc:`enabled </docs/products/clickhouse/howto/enable-tiered-storage>`) to the new table. As soon as the data is copied to the new table, you can remove the original table.
 
-* With the tiered storage feature :doc:`enabled </docs/products/clickhouse/howto/enable-tiered-storage>`, it's not possible to connect to an external existing S3 or cloud storage bucket.
+* With the tiered storage feature :doc:`enabled </docs/products/clickhouse/howto/enable-tiered-storage>`, it's not possible to connect to an external existing object storage or cloud storage bucket.
 
 What's next
 -----------
