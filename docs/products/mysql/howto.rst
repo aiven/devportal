@@ -20,8 +20,8 @@ Aiven for MySQL® how-tos
 .. dropdown:: Data migration
 
     - :doc:`Perform a pre-migration check </docs/products/mysql/howto/do-check-service-migration>`
-    - :doc:`Migrate to Aiven from an external MySQL with CLI </docs/products/mysql/howto/migrate-from-external-mysql>`
-    - :doc:`Migrate MySQL databases using Aiven Console </docs/products/mysql/howto/migrate-db-to-aiven-via-console>`
+    - :doc:`Migrate to Aiven from an external MySQL® with CLI </docs/products/mysql/howto/migrate-from-external-mysql>`
+    - :doc:`Migrate MySQL® databases using Aiven Console </docs/products/mysql/howto/migrate-db-to-aiven-via-console>`
 
 .. dropdown:: Disk space management
 
@@ -31,11 +31,11 @@ Aiven for MySQL® how-tos
 
 .. dropdown:: Cluster management
 
-    - :doc:`Monitor a managed Aiven for ClickHouse® service </docs/platform/howto/monitoring-services>`
-    - :doc:`Resize a managed Aiven for ClickHouse® service </docs/platform/howto/scale-services>`
+    - :doc:`Monitor a managed Aiven for MySQL® service </docs/platform/howto/monitoring-services>`
+    - :doc:`Resize a managed Aiven for MySQL® service </docs/platform/howto/scale-services>`
     - :doc:`Schedule automatic maintenance updates </docs/platform/howto/prepare-for-high-load>`
-    - :doc:`Upgrade a managed Aiven for ClickHouse® service </docs/platform/howto/scale-services>`
-    - :doc:`Tag a managed Aiven for ClickHouse® service </docs/platform/howto/tag-resources>`
-    - :doc:`Power-off and delete a managed Aiven for ClickHouse® service </docs/platform/howto/pause-from-cli>`
-    - :doc:`Migrate a managed Aiven for ClickHouse® service </docs/platform/howto/migrate-services-cloud-region>`
-    - :doc:`Fork a managed Aiven for ClickHouse® service </docs/platform/howto/console-fork-service>`
+    - :doc:`Upgrade a managed Aiven for MySQL® service </docs/platform/howto/scale-services>`
+    - :doc:`Tag a managed Aiven for MySQL® service </docs/platform/howto/tag-resources>`
+    - :doc:`Power-off and delete a managed Aiven for MySQL® service </docs/platform/howto/pause-from-cli>`
+    - :doc:`Migrate a managed Aiven for MySQL® service </docs/platform/howto/migrate-services-cloud-region>`
+    - :doc:`Fork a managed Aiven for MySQL® service </docs/platform/howto/console-fork-service>`
