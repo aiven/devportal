@@ -93,6 +93,7 @@ exceptions:
   - Pagila
   - pgAdmin
   - PgBouncer
+  - pgvector
   - PostgreSQL
   - Postman
   - Premium

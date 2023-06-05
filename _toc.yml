@@ -1068,6 +1068,8 @@ entries:
             title: TimescaleDB
           - file: docs/products/postgresql/concepts/upgrade-failover
             title: Upgrade and failover procedures
+          - file: docs/products/postgresql/concepts/pgvector
+            title: AI-powered search with pgvector
       - file: docs/products/postgresql/howto
         title: HowTo
         entries:
@@ -1108,6 +1110,8 @@ entries:
               - file: docs/products/postgresql/howto/optimize-pg-slow-queries
               - file: docs/products/postgresql/howto/check-avoid-transaction-id-wraparound
               - file: docs/products/postgresql/howto/prevent-full-disk
+              - file: docs/products/postgresql/howto/use-pgvector
+                title: Enable and use pgvector
           - file: docs/products/postgresql/howto/list-replication-migration
             title: Migrate
             entries:
