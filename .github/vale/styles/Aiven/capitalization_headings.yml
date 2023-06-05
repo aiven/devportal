@@ -20,7 +20,7 @@ exceptions:
   - Azure Marketplace
   - Boot
   - Business
-  - BYOA
+  - BYOC
   - Cassandra
   - ClickHouse
   - CloudWatch

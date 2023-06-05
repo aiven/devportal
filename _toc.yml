@@ -32,7 +32,7 @@ entries:
       - file: docs/platform/concepts/out-of-memory-conditions
       - file: docs/platform/concepts/static-ips
       - file: docs/platform/concepts/tls-ssl-certificates
-      - file: docs/platform/concepts/byoa
+      - file: docs/platform/concepts/byoc
       - file: docs/platform/concepts/dynamic-disk-sizing
       - file: docs/platform/concepts/enhanced-compliance-env
       - file: docs/platform/concepts/disaster-recovery-test-scenarios
@@ -991,7 +991,7 @@ entries:
             - file: docs/products/opensearch/howto/opensearch-aggregations-and-nodejs
               title: Aggregation with NodeJS
           - file: docs/products/opensearch/howto/list-opensearch-security
-            title: Manage OpenSearch Security |beta|
+            title: Manage OpenSearch Security
             entries:
               - file: docs/products/opensearch/howto/enable-opensearch-security
                 title: Enable OpenSearch Security management
