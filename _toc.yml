@@ -78,6 +78,7 @@ entries:
           - file: docs/platform/howto/search-services
             title: Search for services
           - file: docs/platform/howto/access-service-logs
+          - file: docs/platform/howto/service-metrics
           - file: docs/platform/howto/prepare-for-high-load
           - file: docs/platform/howto/create-service-integration
       - file: docs/platform/howto/list-network
