@@ -238,109 +238,109 @@ Google Cloud
     - Description
   * - Asia-Pacific
     - ``google-asia-east1``
-    - Taiwan 
+    - Asia, Taiwan 
   * - Asia-Pacific
     - ``google-asia-east2``
-    - Hong Kong 
+    - Asia, Hong Kong 
   * - Asia-Pacific
     - ``google-asia-northeast1``
-    - Tokyo 
+    - Asia, Japan 
   * - Asia-Pacific
     - ``google-asia-northeast2``
-    - Osaka 
+    - Asia, Japan 
   * - Asia-Pacific
     - ``google-asia-northeast3``
-    - Seoul 
+    - Asia, Korea 
   * - Asia-Pacific
     - ``google-asia-south1``
-    - Mumbai 
+    - Asia, India 
   * - Asia-Pacific
     - ``google-asia-south2``
-    - Delhi 
+    - Asia, India 
   * - Asia-Pacific
     - ``google-asia-southeast1``
-    - Singapore 
+    - Asia, Singapore 
   * - Asia-Pacific
     - ``google-asia-southeast2``
-    - Jakarta 
+    - Asia, Indonesia 
   * - Australia
     - ``google-australia-southeast1``
-    - Sydney 
+    - Australia, New South Wales 
   * - Australia
     - ``google-australia-southeast2``
-    - Melbourne 
+    - Australia, Victoria 
   * - Europe
     - ``google-europe-central2``
-    - Warsaw 
+    - Europe, Poland 
   * - Europe
     - ``google-europe-north1``
-    - Finland 
+    - Europe, Finland 
   * - Europe
     - ``google-europe-southwest1``
-    - Madrid 
+    - Europe, Madrid 
   * - Europe
     - ``google-europe-west1``
-    - Belgium 
+    - Europe, Belgium 
   * - Europe
     - ``google-europe-west2``
-    - London 
+    - Europe, England 
   * - Europe
     - ``google-europe-west3``
-    - Frankfurt 
+    - Europe, Germany 
   * - Europe
     - ``google-europe-west4``
-    - Netherlands 
+    - Europe, Netherlands 
   * - Europe
     - ``google-europe-west6``
-    - Zurich 
+    - Europe, Switzerland 
   * - Europe
     - ``google-europe-west8``
-    - Milan 
+    - Europe, Italy 
   * - Europe
     - ``google-europe-west9``
-    - Paris 
+    - Europe, France 
   * - Middle East
     - ``google-me-west1``
-    - Tel Aviv 
+    - Middle East, Israel 
   * - North America
     - ``google-northamerica-northeast1``
-    - Montreal 
+    - Canada, Quebec 
   * - North America
     - ``google-northamerica-northeast2``
-    - Toronto 
+    - Canada, Ontario 
   * - North America
     - ``google-us-central1``
-    - Iowa 
+    - United States, Iowa 
   * - North America
     - ``google-us-east1``
-    - South Carolina 
+    - United States, South Carolina 
   * - North America
     - ``google-us-east4``
-    - N. Virginia 
+    - United States, Virginia 
   * - North America
     - ``google-us-east5``
-    - Columbus 
+    - United States, Ohio 
   * - North America
     - ``google-us-south1``
-    - Dallas 
+    - United States, Texas 
   * - North America
     - ``google-us-west1``
-    - Oregon 
+    - United States, Oregon 
   * - North America
     - ``google-us-west2``
-    - Los Angeles 
+    - United States, California 
   * - North America
     - ``google-us-west3``
-    - Salt Lake City 
+    - United States, Utah 
   * - North America
     - ``google-us-west4``
-    - Las Vegas 
+    - United States, Nevada 
   * - South America
     - ``google-southamerica-east1``
-    - Sao Paulo 
+    - South America, Brazil 
   * - South America
     - ``google-southamerica-west1``
-    - Santiago 
+    - South America, Chile 
 
 UpCloud
 -----------------------------------------------------
