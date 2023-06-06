@@ -60,4 +60,4 @@ What's next
 Related reading
 ---------------
 
-`pgvector's README on GitHub <https://github.com/pgvector/pgvector/blob/master/README.md>`_
+`pgvector README on GitHub <https://github.com/pgvector/pgvector/blob/master/README.md>`_
