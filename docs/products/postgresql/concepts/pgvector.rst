@@ -30,10 +30,10 @@ Vectorizing
   You generate embeddings for your data, for example, for products catalog.
 Storing
   You store the embeddings in Aiven for PostgreSQL using the pgvector extension.
-Querying 
-  You use the embeddings for the vector similarity search on products catalog.
 Indexing
   By default, pgvector executes the *exact* nearest neighbor search, which gives the perfect recall. If you add an index to use the *approximate* nearest neighbor search, you can speed up your search, trading off some recall for performance.
+Querying 
+  You use the embeddings for the vector similarity search on products catalog.
 
 Why use pgvector
 ----------------
