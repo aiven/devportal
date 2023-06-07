@@ -45,10 +45,11 @@ entries:
       title: HowTo
       entries:
       - file: docs/platform/howto/list-user
-        title: User and authentication management
+        title: User and access management
         entries:
-          - file: docs/platform/howto/add-authentication-method
+          - file: docs/platform/howto/edit-user-profile
           - file: docs/platform/howto/change-your-email-address
+          - file: docs/platform/howto/add-authentication-method
           - file: docs/platform/howto/create_authentication_token
           - file: docs/platform/howto/create_new_service_user
           - file: docs/tools/aiven-console/howto/create-manage-teams
