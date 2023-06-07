@@ -154,7 +154,7 @@ A window asking for "principals" will appear.
 
 Assuming your AWS account ID is 111122223333 and you'd like to allow
 anyone (e.g. you have multiple IAM users) in your AWS account to
-establish Privatelink connection to access your Aiven resources, ente
+establish Privatelink connection to access your Aiven resources, enter
 ``arn:aws:iam::111122223333:root`` in `Principals`.
 
 If you only allow a specific user (e.g. yourself) to access your Aiven
