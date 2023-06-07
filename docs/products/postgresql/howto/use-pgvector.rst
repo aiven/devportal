@@ -60,15 +60,15 @@ Store embeddings
 Perform similarity search
 -------------------------
 
-1. To calculate similarity, run the SELECT statements using the built-in vector operators.
+To calculate similarity, run the SELECT statements using the built-in vector operators.
 
-   .. code-block:: bash
+.. code-block:: bash
 
-      SELECT * FROM items ORDER BY embedding <-> '[3,1,2]' LIMIT 5;
+   SELECT * FROM items ORDER BY embedding <-> '[3,1,2]' LIMIT 5;
 
-   .. note:: 
+.. note:: 
 
-    As a result, the query computes the L2 distance between the selected vector and the vectors stored in the ``items`` table, arrange the results based on the calculated distance, and outputs its top five nearest neighbors (most similar items).
+   As a result, the query computes the L2 distance between the selected vector and the vectors stored in the ``items`` table, arrange the results based on the calculated distance, and outputs its top five nearest neighbors (most similar items).
 
 .. topic:: Operators for calculating similarity
 
@@ -83,22 +83,22 @@ You can add an index on the vector column to use the *approximate* nearest neigh
 
 To add an index, run a query similar to the following:
 
-   .. code-block:: bash
+.. code-block:: bash
 
-      CREATE INDEX ON items USING ivfflat (embedding vector_l2_ops) WITH (lists = 100);
+   CREATE INDEX ON items USING ivfflat (embedding vector_l2_ops) WITH (lists = 100);
 
-   .. note:: 
+.. note:: 
 
-    As a result, the index is added to the ``embedding`` column for the L2 distance function.
+   As a result, the index is added to the ``embedding`` column for the L2 distance function.
 
 Disable pgvector
 ----------------
 
 To stop the pgvector extension and remove it from a database, run the following SQL command:
 
-   .. code-block:: bash
+.. code-block:: bash
 
-      DROP EXTENSION vector;
+   DROP EXTENSION vector;
 
 Related reading
 ---------------

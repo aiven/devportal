@@ -26,14 +26,16 @@ In most cases, vector similarity calculations use distance metrics, for example,
 How pgvector works
 ------------------
 
-Vectorizing
-  You generate embeddings for your data, for example, for products catalog.
-Storing
+Enabling pgvector
+  You enable the extension on your database.
+Vectorizing data
+  You generate embeddings for your data, for example, for a products catalog using tools such as the `OpenAI API <https://platform.openai.com/docs/api-reference/embeddings/create>`_ client.
+Storing embeddings
   You store the embeddings in Aiven for PostgreSQL using the pgvector extension.
-Indexing
+Querying embeddings
+  You use the embeddings for the vector similarity search on the products catalog.
+Adding indices
   By default, pgvector executes the *exact* nearest neighbor search, which gives the perfect recall. If you add an index to use the *approximate* nearest neighbor search, you can speed up your search, trading off some recall for performance.
-Querying 
-  You use the embeddings for the vector similarity search on products catalog.
 
 Why use pgvector
 ----------------
