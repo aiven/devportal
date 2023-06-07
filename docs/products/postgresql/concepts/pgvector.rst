@@ -1,14 +1,14 @@
 pgvector for AI-powered search in Aiven for PostgreSQL®
 =======================================================
 
-To represent data in an optimized way, machine learning (ML) models often use vectors, which are data structures with at least two components: magnitude and direction. In most cases, vectorizing the data is therefore essential before building an ML model. On the vectorized data, you can perform AI-powered operations (such as model training or data augmentation) using different tools, one of them being pgvector.
+In machine learning (ML) models, all data items in a particular data set are mapped into one unified n-dimensional vector space, no matter how big the input data set is. This optimized way of data representation allows for high performance of AI algorithms. Mapping regular data into a vector space requires so called data vectorizing, which is transforming data items into vectors (data structures with at least two components: magnitude and direction). On the vectorized data, you can perform AI-powered operations (such as model training or data augmentation) using different instruments, one of them being pgvector.
 
 Discover the pgvector extension to Aiven for PostgreSQL® and learn how it works. Check why you might need it and what benefits you get using it. 
 
 About pgvector
 --------------
 
-pgvector is an open-source vector tool for similarity search. It's available as an extension to your Aiven for PostgreSQL® services. pgvector introduces capabilities to store and search over data of the vector type (ML-generated embeddings). Applying a specific index type for querying a table, the extension enables you to search for vector's exact nearest or approximate nearest neighbors (data items). 
+pgvector is an open-source vector extension for similarity search. It's available as an extension to your Aiven for PostgreSQL® services. pgvector introduces capabilities to store and search over data of the vector type (ML-generated embeddings). Applying a specific index type for querying a table, the extension enables you to search for vector's exact nearest or approximate nearest neighbors (data items). 
 
 
 Vector embeddings
@@ -27,9 +27,14 @@ In most cases, vector similarity calculations use distance metrics, for example,
 How pgvector works
 ------------------
 
-1. You generate embeddings for your data, for example, for products catalog.
-2. You store the embeddings in Aiven for PostgreSQL using the pgvector extension.
-3. You use the embeddings for the vector similarity search on products catalog.
+Vectorizing
+  You generate embeddings for your data, for example, for products catalog.
+Storing
+  You store the embeddings in Aiven for PostgreSQL using the pgvector extension.
+Querying 
+  You use the embeddings for the vector similarity search on products catalog.
+Indexing
+  By default, pgvector executes the *exact* nearest neighbor search, which gives the perfect recall. If you add an index to use the *approximate* nearest neighbor search, you can speed up your search, trading off some recall for performance.
 
 Why use pgvector
 ----------------
