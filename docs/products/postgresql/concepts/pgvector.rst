@@ -38,7 +38,7 @@ Indexing
 Why use pgvector
 ----------------
 
-With the pgvector extension, you can perform the vector similarity search and use embeddings techniques directly in Aiven for PostgreSQL. pgvector allows for efficient handling of high-dimensional vector data within the Aiven for PostgreSQL database for tasks such as similarity search, clustering, model training, data augmentation, or machine learning.
+With the pgvector extension, you can perform the vector similarity search and use embedding techniques directly in Aiven for PostgreSQL. pgvector allows for efficient handling of high-dimensional vector data within the Aiven for PostgreSQL database for tasks such as similarity search, clustering, model training, data augmentation, or machine learning.
 
 pgvector helps you optimize and personalize the similarity search experience by improving searching speed and accuracy (also by adding indices).
 
