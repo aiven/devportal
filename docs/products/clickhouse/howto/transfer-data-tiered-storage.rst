@@ -49,7 +49,7 @@ Use the MOVE statement `MOVE PARTITION|PART <https://clickhouse.com/docs/en/sql-
 
    .. code-block:: bash
 
-      ALTER TABLE table_name MOVE PARTITION partition_expr TO VOLUME 'disk_name'
+      ALTER TABLE table_name MOVE PARTITION partition_expr TO VOLUME 'default'
 
 .. topic:: Result
 

@@ -24,11 +24,9 @@ By :doc:`enabling </docs/products/clickhouse/howto/enable-tiered-storage>` and p
 How it works
 ------------
 
-With the tiered storage :doc:`enabled </docs/products/clickhouse/howto/enable-tiered-storage>`, by default Aiven for ClickHouse stores data on your SSD until it reaches 80% of its capacity. After exceeding this size-based threshold, the data is stored in the object storage. in the object storage depending on the following.
+With the tiered storage :doc:`enabled </docs/products/clickhouse/howto/enable-tiered-storage>`, by default Aiven for ClickHouse stores data on your SSD until it reaches 80% of its capacity. After exceeding this size-based threshold, the data is stored in the object storage.
 
 Optionally, you can :doc:`configure the time-based threshold </docs/products/clickhouse/howto/configure-tiered-storage>` in the tiered storage. Based on the time-based threshold, the data is moved for your SSD to the object storage after a specified time period.
-
-Regardless of what data retention control mechanism you choose, you receive a notification when a threshold is reached.
 
 .. mermaid:: 
 

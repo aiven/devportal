@@ -8,9 +8,9 @@ About data retention control
 
 If you have the tiered storage feature :doc:`enabled </docs/products/clickhouse/howto/enable-tiered-storage>` on your Aiven for ClickHouse service, your data is distributed between two storage devices (tiers). The data is stored either on SSD or in the object storage, depending on whether and how you configure this behavior. If you don't, by default the data is moved from SSD to the object storage when SSD reaches 80% of its capacity (default size-based data retention policy).
 
-You may want to change this default data distribution behavior and configure your table's design so that all the data that is there on your SSD for over a specific period of time is moved to the object storage, regardless of how much of the SSD capacity is still available.
+You may want to change this default data distribution behavior by :ref:`configuring your table's schema by adding a TTL (time-to-live) clause <time-based-retention-config>`. Such a configuration allows ignoring the SSD-capacity threshold and moving the data from SSD to the object storage based on how long the data is there on your SSD.
 
-To enable this time-based data distribution mechanism, you can set up a retention policy (threshold) on a table level by using the TTL (time-to-live) clause. You can include the TTL clause after a column definition and/ or at the end of the table definition. For data retention control purposes, the TTL clause uses the following:
+To enable this time-based data distribution mechanism, you can set up a retention policy (threshold) on a table level by using the TTL clause. For data retention control purposes, the TTL clause uses the following:
 
 * Data item of the `Date` or `DateTime` type as a reference point in time
 * INTERVAL clause as a time period to elapse between the reference point and the data transfer to the object storage
@@ -21,6 +21,8 @@ Prerequisites
 * Aiven account
 * Tiered storage feature :doc:`enabled </docs/products/clickhouse/howto/enable-tiered-storage>` on an Aiven for ClickHouse service level and on a table level
 * Command line tool (:doc:`ClickHouse client </docs/products/clickhouse/howto/connect-with-clickhouse-cli>`)
+
+.. _time-based-retention-config:
 
 Configure time-based data retention
 -----------------------------------
@@ -53,24 +55,20 @@ Create a new table with the ``storage_policy`` setting set to ``tiered`` (to :do
 Add TTL to an existing table
 ''''''''''''''''''''''''''''
 
-Add TTL to a column of an existing table.
+Use the MODIFY TTL clause:
 
 .. code-block:: shell
 
-    ALTER TABLE example_table
-        MODIFY COLUMN
-        c String TTL d + INTERVAL 1 WEEK;
+    ALTER TABLE database_name.table_name MODIFY TTL ttl_expression;
 
 Update TTL to an existing table
 '''''''''''''''''''''''''''''''
 
-Change an already configured TTL of a column of an existing table.
+Change an already configured TTL in an existing table by using the ALTER TABLE MODIFY TTL clause:
 
 .. code-block:: shell
 
-    ALTER TABLE example_table
-        MODIFY COLUMN
-        c String TTL d + INTERVAL 1 DAY;    
+    ALTER TABLE database_name.table_name MODIFY TTL ttl_expression; 
 
 .. topic:: Result
    

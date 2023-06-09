@@ -1,7 +1,7 @@
 Enable tiered storage in Aiven for ClickHouse® |beta|
 =====================================================
 
-Learn how to enable the tiered storage feature on your Aiven for CliockHouse® service and activate it for specific tables.
+Learn how to enable the tiered storage feature on your Aiven for ClickHouse® service and activate it for specific tables.
 
 .. seealso::
 
@@ -11,7 +11,7 @@ About enabling tiered storage
 -----------------------------
 
 You can enable the tiered storage feature in Aiven for ClickHouse either for a new service or for an existing one.
-To enable the feature, you need to activate it on a service level in Aiven Console and, next, set it up on a table level, which is done using CLI (SQL).
+To enable the feature, you need to activate it on a service level in Aiven Console and, next, set it up on a table level, which is done using SQL (via CLI, for example).
 
 Limitations
 '''''''''''
@@ -24,7 +24,7 @@ Tools
 To enable the tiered storage, you need to use the following:
 
 * `Aiven Console <https://console.aiven.io/>`_
-* CLI (SQL)
+* SQL and an SQL client (for example, ClickHouse CLI client)
 
 Prerequisites
 -------------
