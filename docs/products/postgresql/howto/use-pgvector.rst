@@ -12,8 +12,8 @@ Prerequisites
 -------------
 
 * Aiven account
-* Aiven for PostgreSQL service
-* psql client (CLI)
+* Aiven for PostgreSQL service running on PostgreSQL 15 or newer PostgreSQL versions
+* psql and a psql CLI client
 * Vector embeddings generated (for example, with the `OpenAI API <https://platform.openai.com/docs/api-reference/embeddings/create>`_ client)
 
 Enable pgvector
