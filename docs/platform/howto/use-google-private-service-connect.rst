@@ -111,7 +111,7 @@ To approve the connection, run the following approval command:
 
 .. code:: shell
 
-    avn privatelink google connection approve MY_SERVICE_NAME --privatelink-connection-id PRIVATELINK_CONNECTION_ID --user-ip-address PSC_ENDPOINT_IP_ADDRESS
+    avn service privatelink google connection approve MY_SERVICE_NAME --privatelink-connection-id PRIVATELINK_CONNECTION_ID --user-ip-address PSC_ENDPOINT_IP_ADDRESS
 
 As a result, the connection initially transitions to the user-approved state.
 
