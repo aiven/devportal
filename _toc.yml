@@ -44,6 +44,7 @@ entries:
     - file: docs/platform/howto
       title: HowTo
       entries:
+      - file: docs/platform/howto/feature-preview 
       - file: docs/platform/howto/list-user
         title: User and authentication management
         entries:
