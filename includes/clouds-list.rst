@@ -39,11 +39,17 @@ Amazon Web Services
     - ``aws-eu-central-1``
     - Europe, Germany 
   * - Europe
+    - ``aws-eu-central-2``
+    - Europe, Zurich 
+  * - Europe
     - ``aws-eu-north-1``
     - Europe, Sweden 
   * - Europe
     - ``aws-eu-south-1``
     - Europe, Italy 
+  * - Europe
+    - ``aws-eu-south-2``
+    - Europe, Spain 
   * - Europe
     - ``aws-eu-west-1``
     - Europe, Ireland 
@@ -188,6 +194,9 @@ Azure
   * - North America
     - ``azure-westus2``
     - United States, Washington 
+  * - North America
+    - ``azure-westus3``
+    - United States, Arizona 
   * - South America
     - ``azure-brazilsouth``
     - South America, Brazil 
