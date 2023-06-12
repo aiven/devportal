@@ -10,7 +10,7 @@ There are lots of other ways to learn more about Aiven, and interact with us.
         :shadow: md
         :margin: 2 2 0 0
 
-        |icon-twitter| **Twitter** We love to chat! Tell us what you're building with Aiven!
+        |icon-twitter| **Twitter** We love to hear from you! Tell us what you're building with Aiven?
 
         .. button-link:: https://twitter.com/aiven_io
             :align: right
@@ -59,6 +59,34 @@ There are lots of other ways to learn more about Aiven, and interact with us.
             :outline:
 
             To the code
+
+        .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
+
+        **Forum** Ask questions about the tools in our `free plans <https://aiven.io/blog/free-plans-postgresql-mysql-redis>`_, and find resources from our meetups! 
+
+
+        .. button-link:: https://aiven.io/community/forum/
+            :align: right
+            :color: primary
+            :outline:
+
+            To the forum
+
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
+
+        **Meetup** Find an Open Source Data Infrastructure meetup in your area, and network with peers! 
+
+
+        .. button-link:: https://www.meetup.com/pro/open-source-data-infrastructure-community/
+            :align: right
+            :color: primary
+            :outline:
+
+            To the meetups
 
 
 
