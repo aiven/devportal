@@ -29,17 +29,17 @@ h1,
 h2,
 h3 {
   color: var(--color-foreground-primary);
-  font-family: "Poppins";
+  font-family: "Poppins",sans-serif;
 }
 
 p {
   color: var(--color-content-foreground);
-  font-family: "Inter";
+  font-family: "Inter",sans-serif;
 }
 
 a {
   color: var(--color-link);
-  font-family: "Inter";
+  font-family: "Inter",sans-serif;
   text-decoration-color: var(--color-link--hover);
 }
 
