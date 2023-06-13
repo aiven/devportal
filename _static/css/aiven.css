@@ -142,6 +142,22 @@ a.muted-link {
   text-decoration: none !important;
 }
 
+.sd-btn.sd-btn-primary, 
+.sd-btn.sd-btn-outline-primary {
+  border-radius: 2px;
+  color: var(--color-topnav-button-secondary);
+  border: 1px solid var(--color-topnav-button-secondary-border);
+  background: transparent;
+}
+
+.sd-btn.sd-btn-primary:hover, 
+.sd-btn.sd-btn-outline-primary:hover, 
+.sd-btn.sd-btn-outline-primary:focus {
+  color: var(--color-topnav-button-secondary);
+  border: 1px solid var(--color-topnav-button-secondary-hover-border);
+  background: transparent;
+}
+
 .topnavbar-button-primary {
   color: var(--color-topnav-button-primary);
   background: var(--color-topnav-button-primary-background);
