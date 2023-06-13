@@ -146,17 +146,15 @@ a.muted-link {
 .sd-btn.sd-btn-primary, 
 .sd-btn.sd-btn-outline-primary {
   border-radius: 2px;
-  color: var(--color-topnav-button-secondary);
-  border: 1px solid var(--color-topnav-button-secondary-border);
-  background: transparent;
+  border-color: var(--color-topnav-button-secondary-border) !important;
 }
 
 .sd-btn.sd-btn-primary:hover, 
 .sd-btn.sd-btn-outline-primary:hover, 
 .sd-btn.sd-btn-outline-primary:focus {
-  color: var(--color-topnav-button-secondary);
-  border: 1px solid var(--color-topnav-button-secondary-hover-border);
-  background: transparent;
+  color: var(--color-topnav-button-secondary) !important;
+  border-color: var(--color-topnav-button-secondary-hover-border) !important;
+  background-color: transparent !important;
 }
 
 .topnavbar-button-primary {
