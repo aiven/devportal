@@ -35,13 +35,11 @@ p {
 a {
   color: var(--color-link);
   font-family: Inter;
-  text-decoration: none;
+  text-decoration-color: var(--color-link--hover);
 }
 
 a:hover {
   color: var(--color-link--hover);
-  text-decoration: underline;
-  text-decoration-color: var(--color-link--hover);
 }
 
 a.muted-link {
