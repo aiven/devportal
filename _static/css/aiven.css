@@ -160,6 +160,7 @@ a.muted-link {
 }
 
 .topnavbar-link:hover {
+  color: var(--color-topnav-link);
   text-decoration: underline;
   text-decoration-color: var(--color-topnav-link);
 }
