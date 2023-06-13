@@ -20,21 +20,26 @@
   src: url(../fonts/Inter-Medium.ttf);
 }
 
+@font-face {
+  font-family: Poppins;
+  src: url(../fonts/Poppins-SemiBold.ttf);
+}
+
 h1,
 h2,
 h3 {
   color: var(--color-foreground-primary);
-  font-family: InterBold;
+  font-family: "Poppins";
 }
 
 p {
   color: var(--color-content-foreground);
-  font-family: Inter;
+  font-family: "Inter";
 }
 
 a {
   color: var(--color-link);
-  font-family: Inter;
+  font-family: "Inter";
   text-decoration-color: var(--color-link--hover);
 }
 
