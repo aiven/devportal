@@ -123,8 +123,10 @@ html_theme_options = {
         "color-sidebar-background": "#FFFFFF",
         "color-sidebar-background-border": "#EDEDF0",
         "color-sidebar-search-background": "#fff",
-        "sd-color-card-background": "#f7f7fa",
+        "color-card-border": "#E1E1E3",
+        "sd-color-card-background": "#fff",
         "sd-color-primary": "#343745",
+        "sd-color-shadow": "none",
         "sidebar-tree-space-above": "8px",
 
         # Custom css variables
@@ -180,9 +182,11 @@ html_theme_options = {
         "color-admonition-title-background--note": "#00b0ff40",
         "color-admonition-title-background--warning": "#ff910040",
         "color-admonition-title-background--error": "#ff525240",
-        "sd-color-card-background": "#0b0b14",
+        "sd-color-card-background": "#161825",
         "sd-color-card-header": "#0b0b14",
         "sd-color-primary": "#3A3A44",
+        "sd-color-shadow": "none",
+        "color-card-border": "#3A3A44",
         "sidebar-tree-space-above": "8px",
 
         # Custom css variables
