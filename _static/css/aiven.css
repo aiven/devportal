@@ -136,6 +136,7 @@ a.muted-link {
   border-radius: 2px;
   cursor: pointer;
   text-decoration: none !important;
+  font-weight: 600;
 }
 
 .topnavbar-button-large:hover {
