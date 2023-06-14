@@ -151,7 +151,7 @@ html_theme_options = {
         "color-topnav-button-secondary-hover-border": "#4F5366",
         "color-topnav-button-secondary-hover-background": "transparent",
         "color-toc-item-text--active": "#007cc2",
-        "color-highlight-on-target": "#EDEEF3",
+        "color-highlight-on-target": "#F8F9FB",
     },
     "dark_css_variables": {
         "color-brand-primary": "#FF5200",
@@ -211,7 +211,7 @@ html_theme_options = {
         "color-topnav-button-secondary-hover-border": "#f7f7fa",
         "color-topnav-button-secondary-hover-background": "transparent",
         "color-toc-item-text--active": "#6DCDF8",
-        "color-highlight-on-target": "#EDEEF3",
+        "color-highlight-on-target": "#161825",
     },
     "navigation_with_keys": True
 }
