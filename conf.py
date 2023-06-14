@@ -20,7 +20,7 @@ sys.path.insert(0, os.path.abspath('.'))
 # -- Project information -----------------------------------------------------
 
 project = 'Aiven Docs'
-copyright = '2022, Aiven Team'
+copyright = '2023, Aiven Team'
 author = 'Aiven Team'
 html_title = 'Aiven'
 
