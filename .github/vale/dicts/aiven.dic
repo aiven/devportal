@@ -170,6 +170,7 @@ PgBouncer
 PGHoard
 pglookout
 pgoutput
+pgvector
 plaintext
 plc
 PNG/S
@@ -251,6 +252,7 @@ untrusted
 unaggregated
 UpCloud
 upsert
+vectorizing
 VM
 VMs
 VPC/MS
