@@ -1,6 +1,6 @@
 Manage quotas
 ==============
-This section provides you with information on how to add and manage quotas for your Aiven for Apache Kafka service using the Aiven Console. 
+This section provides you with information on how to add and manage quotas for your Aiven for Apache Kafka® service using the Aiven Console. 
 
 For an overview of quotas, see :doc:`Quotas in Aiven for Apache Kafka <../concepts/kafka-quotas>` section for more information.
 
