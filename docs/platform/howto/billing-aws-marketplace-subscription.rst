@@ -13,24 +13,21 @@ AWS Marketplace setup
 .. image:: /images/platform/howto/aws-marketplace-listing.png
    :alt: AWS Marketplace purchase options button for Aiven Managed Database Services
 
-2. When you are ready, click the **Subscribe** button on the page.  You will NOT be charged by clicking this button; this only sets up a billing subscription between AWS and Aiven.  You will only be charged after deploying Aiven services.
+2. When you are ready, click the **Subscribe** button on the page. You will NOT be charged by clicking this button; this only sets up a billing subscription between AWS and Aiven. You will only be charged after deploying Aiven services.
 
-3. You should now see a button inviting you to "Set up your account".  This will take you to the Aiven website to complete the process; proceed to step 4 below.
+3. Click **Set up your account**.  This takes you to the Aiven Console to complete the process.
 
 Aiven account setup
 -------------------
 
-4. You should now be on the AWS signup page at Aiven, asking you to sign up or log in.  As this is probably your first visit to Aiven via the AWS subscription, choose the "Sign up" button.
+4. You should now be on the AWS signup page at Aiven, asking you to sign up or log in. 
 
-5. After entering your email address and completing the registration, you will be able to log in to the `Aiven AWS console <https://console.aws.aiven.io/>`_.
+5. After registering or logging in, choose or create an Aiven organization to use the AWS subscription for. If you have any existing Aiven projects that you want to be moved to this AWS subscription, this organization name is the one you will need for that.
 
-6. The first time you log in, you will see a button labelled "Complete subscription" - this will create the link between your Aiven account and your AWS account.  After pressing this button, you will be able to choose your Aiven organization name and your first Aiven project name.  If you have any existing Aiven projects which you want to be moved to your new AWS subscription, this organization name is the one which you will need for that migration.
+If you have any issues linking Aiven to your AWS subscription, you can try the process again in the AWS web console by finding the Aiven subscription and clicking **Set up your account**.
 
-7. You are now ready to create your first project and deploy services.
-
-.. note:: 
-   Note the URL is https://console.aws.aiven.io - this uses a different account system than https://console.aiven.io.  When coming back to Aiven in the future, you will need to use https://console.aws.aiven.io to login.
 
 .. note:: 
-   When you view the Aiven subscription in your AWS web console, you will see a link to **Set up your account**.  You can use this link to complete the subscription process if anything goes wrong during the steps listed here.
+    The URL that you log in to for your AWS subscription is https://console.aws.aiven.io. This is different from the Aiven Console (https://console.aiven.io). 
+
 

@@ -19,7 +19,7 @@ Aiven will need some information from both your existing and new subscriptions i
 
 **From your new Aiven organization with the GCP marketplace subscription:**
 
-* Your new Aiven organization name, as shown at the top right of the `Aiven GCP console <https://console.gcp.aiven.io/>`_.
+* Your new Aiven organization name, as shown in the `Aiven GCP console <https://console.gcp.aiven.io/>`_.
 
 Send the request to Aiven
 -------------------------

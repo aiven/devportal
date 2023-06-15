@@ -1,25 +1,25 @@
 Move from Aiven direct billing to Azure Marketplace
 ===================================================
 
-Aiven makes its services available through the Azure Marketplace.  If you already have some services running in a project which is billed directly through Aiven but you would like to move to an Azure Marketplace subscription without disrupting your services, this article shows the steps needed to gather the relevant information and submit the request.
+Aiven makes its services available through the Azure Marketplace. If you already have some services running in a project which is billed directly through Aiven but you would like to move to an Azure Marketplace subscription without disrupting your services, this article shows the steps needed to gather the relevant information and submit the request.
 
-Create a new account using an Azure Marketplace subscription
-------------------------------------------------------------
+Set up an Azure Marketplace subscription for Aiven
+--------------------------------------------------
 
-Follow the steps to :doc:`set up Azure Marketplace for Aiven Services <billing-azure-marketplace-subscription>`.  This will create a new Aiven organization, which is where your project will be moved to.
+Follow the steps to :doc:`set up Azure Marketplace for Aiven services <billing-azure-marketplace-subscription>`. This will create a new Aiven organization, which is where your projects will be moved to.
 
 Gather the required information
 -------------------------------
 
-Aiven will need some information from both your existing and new subscriptions in order to perform the migration.
+Aiven will need some information from both your existing user account and your new subscription in order to perform the migration.
 
-**From your existing Aiven account:**
+**From your existing Aiven user account:**
 
-* The name of the Aiven project (or projects) that contain the services you wish to move. 
+* The name of the Aiven projects that have the services you wish to move. 
 
 **From your new Aiven organization with the Azure marketplace subscription:**
 
-* Your new Aiven organization name, as shown at the top right of the `Aiven Azure console <https://console.azure.aiven.io/>`_.
+* The name of the new organization.
 
 Send the request to Aiven
 -------------------------
