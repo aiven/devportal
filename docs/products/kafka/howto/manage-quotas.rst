@@ -1,0 +1,52 @@
+Manage quotas
+==============
+This section provides you with information on how to add and manage quotas for your Aiven for Apache Kafka service using the Aiven Console. 
+
+For an overview of quotas, see :doc:`Quotas in Aiven for Apache Kafka <../concepts/kafka-quotas>` section for more information.
+
+Add quota
+------------
+
+To add quota to your Aiven for Apache Kafka service, follow these steps:
+
+1. Log in to Aiven Console and select the Aiven for Apache Kafka service you want to manage. 
+2. Select the Quotas tab and click Add quota. 
+3. Enter the Client ID or User for which you want to set the quota.
+4. Choose one of the following quota types and enter the desired value for the selected quota type:
+   
+   * **Consumer throttle** (quota limit in bytes per second): Specify the maximum data transfer rate allowed for the consumer.
+   * **Producer throttle** (quota limit in bytes per second): Specify the maximum data transfer rate allowed for the producer.
+   * **CPU throttle** (quota limit as a percentage): Specify the maximum CPU usage allowed for the client.
+  
+   .. note:: 
+   
+       Aiven also supports **default** quotas, which can be applied to all clients and/or users by using the keyword **default** in either the client ID or user field.
+  
+5. Select **Add** to add quota. 
+
+Additionally, you can add more quotas by selecting the **Add quota** option on the right-side.
+
+Update quota
+--------------
+
+To update an existing quota, follow these steps:
+
+1. Access the **Quotas** tab within the Aiven Console for your Apache Kafka service.
+2. Locate the quota you want to update.
+3. Select **Update**  next to the quota to open the **Update quota** screen.
+4. Modify the quota value as needed.
+5. Select **Save changes** to ave the changes and update the quota.
+
+Delete quota
+---------------
+To remove a quota, follow these steps: 
+
+1.  Access the **Quotas** tab within the Aiven Console for your Apache Kafka service.
+2.  Locate the quota you want to delete.
+3.  Select **Delete**  next to the quota.
+4.  On the confirmation dialog, select **Confirm** to delete quota. 
+
+
+
+
+
