@@ -3,7 +3,7 @@ Set up AWS Marketplace for Aiven services
 
 Aiven makes its services available through the Amazon AWS Marketplace. This article shows the steps needed to create a subscription that links the accounts.
 
-First, there are some steps that need to be completed on the AWS Marketplace page before heading over to the Aiven console and finishing the process.
+First, there are some steps that need to be completed on the AWS Marketplace page before heading over to the Aiven Console and finishing the process.
 
 AWS Marketplace setup
 ---------------------
