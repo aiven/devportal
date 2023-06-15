@@ -15,6 +15,7 @@ exceptions:
   - Aiven Console
   - Apache
   - AWS Transit Gateway
+  - AWS Marketplace
   - Auth0
   - Azure
   - Azure Marketplace
