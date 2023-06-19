@@ -4,6 +4,7 @@ This section provides you with information on how to add and manage quotas for y
 
 For an overview of quotas, see :doc:`Quotas in Aiven for Apache Kafka <../concepts/kafka-quotas>` section for more information.
 
+
 Add quota
 ------------
 
