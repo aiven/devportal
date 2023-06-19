@@ -38,7 +38,7 @@ When a client exceeds its quota, the broker calculates the necessary delay to br
 
 Quota violations are swiftly detected using short measurement windows, typically 30 windows of 1 second each. This ensures timely correction and prevents bursts of traffic followed by long delays, ensuring a better user experience.
 
-For more information, refer to the `Enforcement <https://kafka.apache.org/documentation/#design_quotasenforcement>`_ in Apache Kafka® official documentation.
+For more information, refer to the `Enforcement <https://kafka.apache.org/documentation/#design_quotas>`_ in Apache Kafka® official documentation.
 
 .. seealso:: 
     * :doc:`How to add and manage quotas <../howto/manage-quotas>`
