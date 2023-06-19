@@ -11,8 +11,8 @@ Add quota
 To add quota to your Aiven for Apache Kafka service, follow these steps:
 
 1. Log in to Aiven Console and select the Aiven for Apache Kafka service you want to manage. 
-2. Select the Quotas tab and click Add quota. 
-3. Enter the Client ID or User for which you want to set the quota.
+2. Select the Quotas tab and click **Add quota**. 
+3. Enter the **Client ID** or **User** for which you want to set the quota. The *Client ID* represents a unique identifier assigned to a Kafka client, while the *User* refers to the user or user group associated with the client.
 4. Choose one of the following quota types and enter the desired value for the selected quota type:
    
    * **Consumer throttle** (quota limit in bytes per second): Specify the maximum data transfer rate allowed for the consumer.
@@ -36,7 +36,7 @@ To update an existing quota, follow these steps:
 2. Locate the quota you want to update.
 3. Select **Update**  next to the quota to open the **Update quota** screen.
 4. Modify the quota value as needed.
-5. Select **Save changes** to ave the changes and update the quota.
+5. Select **Save changes** to save the changes and update the quota.
 
 Delete quota
 ---------------
