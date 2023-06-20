@@ -1,11 +1,12 @@
-Enable tiered storage in Aiven for ClickHouse® |beta|
-=====================================================
+Enable tiered storage in Aiven for ClickHouse®
+==============================================
 
 Learn how to enable the tiered storage feature on your Aiven for ClickHouse® service and activate it for specific tables.
+To check what the tiered storage is, how it works, and why use it, see :doc:`Tiered storage in Aiven for ClickHouse® </docs/products/clickhouse/concepts/clickhouse-tiered-storage>`.
 
-.. seealso::
+.. topic:: Feature availability
 
-    Check what the tiered storage is, how it works, and why use it in :doc:`Tiered storage in Aiven for ClickHouse® </docs/products/clickhouse/concepts/clickhouse-tiered-storage>`.
+    Currently, the access to this feature is limited. Contact `sales@Aiven.io <mailto:sales@Aiven.io>`_ for details.
 
 About enabling tiered storage
 -----------------------------
