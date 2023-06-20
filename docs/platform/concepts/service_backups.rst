@@ -167,6 +167,14 @@ Aiven for ClickHouse backups contain database lists, table schemas, table conten
 
     For more information on Aiven for ClickHouse backups, see :ref:`Backup and restore <backup-and-restore>`.
 
+Where do we store the backups?
+------------------------------
+
+The backups are stored encrypted in the object storage of the cloud region where the service is running at (Example: S3 for AWS, GCS for GCP). The location of the backups can be seen under **Backups** tab in Aiven Console as shown below,
+
+.. image:: /images/platform/concepts/backup_location_preview.png
+    :alt: Backup location preview on console
+
 Access to backups
 -----------------
 
