@@ -1,7 +1,11 @@
-Check data distribution between storage devices in Aiven for ClickHouse®'s tiered storage |beta|
-================================================================================================
+Check data distribution between storage devices in Aiven for ClickHouse®'s tiered storage
+=========================================================================================
 
 Verify how your data is distributed between the two layers of your tiered storage: SSD and object storage.
+
+.. topic:: Feature availability
+
+    Currently, the access to this feature is limited. Contact `sales@Aiven.io <mailto:sales@Aiven.io>`_ for details.
 
 About checking data distribution
 --------------------------------
