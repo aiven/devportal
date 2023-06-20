@@ -80,12 +80,12 @@ Also note that safelisting applies to both internal and external traffic. If you
 Troubleshoot VPC connection issues
 -------------------------------------
 
-If there have been network changes that were made on VPC peered hosts external from Aiven, it can cause issues with routing to your Aiven services hosted in a VPC.  In such scenarios, you can follow the steps below:
+Any network changes to VPC peered hosts external from Aiven can cause issues with routing to your Aiven services hosted in a VPC. To troubleshoot such issues, take the following steps:
 
-1. In the Aiven console, click **VPC**.
-2. Locate the VPC ID that is affected and click on the appropriate ID under **Internal ID** column.
-3. Click **Refresh VPC connections** button.
+1. In `Aiven Console <https://console.aiven.io/>`_, select **VPC**.
+2. Find the ID of the affected VPC and select it from the **Internal ID** column.
+3. Select **Refresh VPC connections**.
 
-Performing the above will have the platform check the VPC peering connection and rebuild the peering connection state if there are any changes detected.
+As a result, the platform checks the VPC peering connection and rebuilds the peering connection state if there are any changes detected.
 
-For any other issues, you may open a support ticket on the Aiven console to get in touch with the support team and they can assist you from there.  More information can be found on our :doc:`Get support in the Aiven Console </docs/platform/howto/project-support-center>` documentation.
+For any other issues, open a support ticket from Aiven Console to get in touch with the support team and/or see :doc:`Get support in the Aiven Console </docs/platform/howto/project-support-center>`.
