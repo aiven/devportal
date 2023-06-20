@@ -7,7 +7,7 @@ With the Aiven platform there are several deployment models available to meet yo
 
 - Enhanced Compliance Environments (ECE) to satisfy additional compliance needs such as HIPPA and PCI-DSS
 
-- Bring your own account (BYOA) which allows deployment of Aiven services directly into your cloud account
+- Bring your own cloud (BYOC) which allows deployment of Aiven services directly into your cloud account
 
 In addition to the above, all data transmitted to the Aiven services is encrypted in transit and at rest. 
 

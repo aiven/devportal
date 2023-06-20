@@ -15,12 +15,13 @@ exceptions:
   - Aiven Console
   - Apache
   - AWS Transit Gateway
+  - AWS Marketplace
   - Auth0
   - Azure
   - Azure Marketplace
   - Boot
   - Business
-  - BYOA
+  - BYOC
   - Cassandra
   - ClickHouse
   - CloudWatch
@@ -93,6 +94,7 @@ exceptions:
   - Pagila
   - pgAdmin
   - PgBouncer
+  - pgvector
   - PostgreSQL
   - Postman
   - Premium

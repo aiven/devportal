@@ -39,6 +39,9 @@ Data types
 ``ltree`` - https://www.postgresql.org/docs/current/ltree.html
     Data type for hierarchical tree-like structures.
 
+``pgvector`` - https://github.com/pgvector/pgvector
+    Type for vector similarity search.  |PG13onwards|
+
 ``seg`` - https://www.postgresql.org/docs/current/seg.html
     Data type for representing line segments or floating-point intervals.
 

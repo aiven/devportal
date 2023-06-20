@@ -7,7 +7,7 @@ Key features of Aiven for Grafana® include:
 
 Quick and flexible deployment options
 -------------------------------------
-With Aiven for Grafana, you can enjoy a quick and flexible deployment process, ensuring production-ready Grafana clusters are available in 10 minutes. You have the flexibility to choose your preferred public cloud platform for deployment from over 100 regions supported. The deployment process also includes high-performance nodes to enhance performance. Aiven supports the Bring-Your-Own-Account (BYOA) deployment model, enabling you to meet strict control requirements. 
+With Aiven for Grafana, you can enjoy a quick and flexible deployment process, ensuring production-ready Grafana clusters are available in 10 minutes. You have the flexibility to choose your preferred public cloud platform for deployment from over 100 regions supported. The deployment process also includes high-performance nodes to enhance performance. Aiven supports the Bring-Your-Own-Cloud (BYOC) deployment model, enabling you to meet strict control requirements. 
 
 Integrate with existing Aiven tools and data infrastructure
 --------------------------------------------------------------

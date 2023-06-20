@@ -52,3 +52,5 @@ When a service is powered on, the following things will happen:
 
     Depending on the service plan, backups have different retention periods. Data will be lost after the retention period.
 
+.. Note:: 
+    Maintenance updates are automatically applied when a service is powered on as new virtual machines are created for the service to run on. 
