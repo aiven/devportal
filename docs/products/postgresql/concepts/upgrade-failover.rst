@@ -59,7 +59,7 @@ During maintenance updates, cloud migrations, or plan changes, the below procedu
     The old primary server is kept alive for a short period of time (minimum 60 seconds) with a TCP forwarding setup pointing to the new primary server allowing clients to connect before learning the new IP address.
 
 .. Note::
-    If the service plan is changed from a business plan that has two (2) nodes to a startup plan which only has one (1) node, the standby node will be removed while the primary node will be retained and connections to the primary are not affected by the downgrade.  Similarly, upgrading the service plan from startup to business will simply add a standby node to the service cluster and connections to the primar node are unaffected.
+    If the service plan is changed from a business plan that has two (2) nodes to a startup plan which only has one (1) node, the standby node will be removed while the primary node will be retained and connections to the primary are not affected by the downgrade.  Similarly, upgrading the service plan from startup to business will simply add a standby node to the service cluster and connections to the primary node are unaffected.
 
 Recreation of replication slots
 -------------------------------
