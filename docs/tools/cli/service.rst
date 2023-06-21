@@ -743,6 +743,8 @@ Updates the settings for an Aiven service.
     - The name of the service
   * - ``--cloud``
     - The name of the cloud region where to deploy the service; check :ref:`avn-cloud-list` for more information
+  * - ``-c KEY=VALUE``
+    - Apply a configuration setting. See 'avn service types -v' for available values.
   * - ``--disk-space-gib``
     - Total amount of disk space for data storage (GiB)
   * - ``--plan``
@@ -791,6 +793,14 @@ Updates the settings for an Aiven service.
 
 .. note:: There is no whitespace between the IP addresses and comma in the command.
 
+**Example:** Update the Kafka version of the service named ``kafka-service``. 
+
+::
+
+    avn service update \ 
+      kafka-service -c kafka_version=X.X
+
+.. note:: This also works for other service types. To see a full list of configuration parameters, have a look at ``avn service types -v``
 
 ``avn service user``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
