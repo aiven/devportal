@@ -47,5 +47,5 @@ To remove a quota, follow these steps:
 1.  Access the **Quotas** tab within the Aiven Console for your Apache Kafka service.
 2.  Locate the quota you want to delete.
 3.  From the ellipsis menu, select **Delete**. 
-4.  On the confirmation dialog, select **Delete quota** to delete quota. 
+4.  On the confirmation dialog, select **Delete quota** to delete the quota. 
 
