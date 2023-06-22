@@ -11,7 +11,9 @@ All Aiven services, except for Apache Kafka® and M3 Aggregator/Coordinator, hav
 .. image:: /images/platform/concepts/backup_location_preview.png
     :alt: Backup location preview on console
 
-The backup retention times vary based on the service and the selected service plan. Aiven takes service backups for managing purposes. These backups are compressed and encrypted by the Aiven management platform and, as such, are not available for download for any service type.
+The backup retention times vary based on the service and the selected service plan. 
+
+Aiven takes service backups for managing purposes. These backups are compressed and encrypted by the Aiven management platform and, as such, are not available for download for any service type.
 
 Service power-off/on backup policy
 ------------------------------------
