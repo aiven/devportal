@@ -6,9 +6,12 @@ This article provides information on general rules for handling service backups 
 About backups at Aiven
 ----------------------
 
-All Aiven services, except for Apache Kafka® and M3 Aggregator/Coordinator, have time-based backups that are encrypted and securely stored. The backup retention times vary based on the service and the selected service plan. 
+All Aiven services, except for Apache Kafka® and M3 Aggregator/Coordinator, have time-based backups that are encrypted and securely stored. Backups at Aiven are stored in the object storage of the cloud region where a service runs (for example, S3 for AWS or GCS for GCP). You can check the location of your service's backups in `Aiven Console <https://console.aiven.io/>`_ > your service's homepage > **Backups** tab.
 
-Aiven takes service backups for managing purposes. These backups are compressed and encrypted by the Aiven management platform and, as such, are not available for download for any service type.
+.. image:: /images/platform/concepts/backup_location_preview.png
+    :alt: Backup location preview on console
+
+The backup retention times vary based on the service and the selected service plan. Aiven takes service backups for managing purposes. These backups are compressed and encrypted by the Aiven management platform and, as such, are not available for download for any service type.
 
 Service power-off/on backup policy
 ------------------------------------
@@ -166,14 +169,6 @@ Aiven for ClickHouse backups contain database lists, table schemas, table conten
 .. seealso::
 
     For more information on Aiven for ClickHouse backups, see :ref:`Backup and restore <backup-and-restore>`.
-
-Where do we store the backups?
-------------------------------
-
-The backups are stored encrypted in the object storage of the cloud region where the service is running at (Example: S3 for AWS, GCS for GCP). The location of the backups can be seen under **Backups** tab in Aiven Console as shown below,
-
-.. image:: /images/platform/concepts/backup_location_preview.png
-    :alt: Backup location preview on console
 
 Access to backups
 -----------------
