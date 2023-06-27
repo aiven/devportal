@@ -3,7 +3,7 @@ Create a custom cloud in Aiven |beta|
 
 Learn how to add a :doc:`custom cloud </docs/platform/concepts/byoc>` to your Aiven organization, and check out how it works.
 
-.. topic:: Before you start
+.. important::
 
    * To create a custom cloud in your Aiven organization, you need the bring your own cloud (BYOC) feature enabled for this organization.
    * BYOC is a beta feature, and its availability is limited. To enable BYOC for your Aiven organization, contact `sales@Aiven.io <mailto:sales@Aiven.io>`_.
@@ -41,7 +41,9 @@ Navigate to BYOC in Aiven Console
 Generate an infrastructure template
 '''''''''''''''''''''''''''''''''''
 
-In the **Create custom cloud** wizard, take the following steps:
+In this step, an infrastructure-as-code (IaC) template is generated. For that purpose, AWS CloudFormation or Terraform can be used.
+
+In the **Create custom cloud** wizard, proceed as follows:
 
 1. Specify the following:
 
@@ -71,17 +73,19 @@ In the **Create custom cloud** wizard, take the following steps:
 Acquire ``Role ARN``
 ''''''''''''''''''''
 
-Role ARN (Amazon Resource Name) is an `identifier of the role <https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html>`_ created when running the infrastructure template. Aiven uses Role ARN to `assume the role <https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html>`_ and run operations such as creating VMs for service nodes in your BYOC account.
+Role ARN (Amazon Resource Name) is an `identifier of the role <https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html>`_ created when running the infrastructure template in your AWS account. Aiven uses Role ARN to `assume the role <https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html>`_ and run operations such as creating VMs for service nodes in your BYOC account.
 
-Use the generate template to determine your Role ARN. For that purpose, you need to deploy the template. How you do that depends on the type of the template. As soon as you acquire Role ARN, enter it into the **Role ARN** field in the **Create custom cloud** wizard and select **Next** to proceed.
+Use the generate template to create your Role ARN by deploying the template in your AWS account. How you do that depends on the type of the template.
 
-.. topic:: AWS CloudFormation template
+.. topic:: Deploying the IaC template in the AWS account
 
-   To acquire Role ARN using an AWS CloudFormation template, take the following steps:
+   To run a Terraform template or an AWS CloudFormation template, use dedicated command line tools. Additionally, you can deploy the AWS CloudFormation template in the AWS console by taking the following steps:
 
    1. Go to the AWS console > the AWS CloudFormation service.
    2. Create a stack, and upload the Aiven-generated template into AWS.
    3. Deploy the template in AWS, and get your Role ARN.
+
+As soon as you acquire Role ARN, enter it into the **Role ARN** field in the **Create custom cloud** wizard, and select **Next** to proceed.
 
 .. note::
    
