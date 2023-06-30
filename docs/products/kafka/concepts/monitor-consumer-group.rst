@@ -1,7 +1,7 @@
 Monitoring consumer groups in Aiven for Apache Kafka®
 ======================================================
 
-With Aiven Kafka dashboards and telemetry, you can monitor the performance and system resources of your Aiven for Apache Kafka service. Aiven provides pre-built dashboards and telemetry for your service, allowing you to collect and visualize telemetry data using InfluxDB® and Grafana®. Aiven streamlines the process by automatically configuring the dashboards for each of your Aiven Kafka instances.
+With Aiven for Apache Kafka® dashboards and telemetry, you can monitor the performance and system resources of your Aiven for Apache Kafka service. Aiven provides pre-built dashboards and telemetry for your service, allowing you to collect and visualize telemetry data using InfluxDB® and Grafana®. Aiven streamlines the process by automatically configuring the dashboards for each of your Aiven Kafka instances.
 
 This section builds on the :doc:`service integrations </docs/platform/concepts/service-integration>` documentation and provides an in-depth look at consumer group graphs and related key terminology in Aiven for Apache Kafka®. Consumer group graphs offer valuable insights into the behavior of Apache Kafka consumers, which is crucial for maintaining a continuously running production Kafka system.
 
@@ -14,7 +14,7 @@ Topic partitions
 -----------------
 The storage of messages for an Apache Kafka® topic can be spread across one or more topic partitions. For instance, in a topic that has 100 messages and is set up to have 5 partitions, 20 messages would be assigned to each partition.
 
-Consumer Groups
+Consumer groups
 ----------------
 
 Apache Kafka® allows multiple consumers to read messages from a Kafka topic. This improves the message consumption rate and overall performance. Organizing consumers into consumer groups identified by a group ID is common practice. Consumer groups consume messages from a topic with messages spread across multiple partitions. Apache Kafka ensures that each message is consumed by only one consumer, which is essential for certain classes of business applications.
