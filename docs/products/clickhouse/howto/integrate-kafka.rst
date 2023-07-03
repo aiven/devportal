@@ -70,8 +70,6 @@ For each table, you need to define the following:
 * ``data_format`` - your preferred format for data input, see :doc:`../reference/supported-input-output-formats`
 * ``group_name`` - consumer group name, that will be created on your behalf
 
-Integration settings in a JSON format:
-
 .. topic:: JSON format
 
     .. code-block:: json
@@ -98,9 +96,9 @@ For each table, you can define the following:
 
 * ``auto_offset_reset`` - action to take when there is no initial offset in the offset store or the desired offset is out of range; default: ``earliest``
 
-* ``date_time_input_format`` - the method to read ``DateTime`` from text input formats, default: ``basic``
+* ``date_time_input_format`` - the method to read ``DateTime`` from text input formats; default: ``basic``
 
-* ``handle_error_mode`` - the method to handle errors for the Kafka engine, default: ``default``
+* ``handle_error_mode`` - the method to handle errors for the Kafka engine; default: ``default``
 
 * ``max_block_size`` - the number of rows collected by poll(s) for flushing data from Kafka
 
