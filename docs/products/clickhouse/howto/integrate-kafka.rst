@@ -55,8 +55,14 @@ The newly created database name has the following format: `service_KAFKA_SERVICE
 Update Apache Kafka integration settings
 -----------------------------------------
 
-Next step is to configure the topic and data format options for the integration. This will create a virtual table in Aiven for ClickHouse that can receive and send messages from multiple topics. You can have as many of such tables as you need. You need to define for each table following:
+Next step is to configure the topic and data format options for the integration. This will create a virtual table in Aiven for ClickHouse that can receive and send messages from multiple topics. You can have as many of such tables as you need.
 
+For each table, there are mandatory and optional setting to be defined.
+
+Mandatory settings
+''''''''''''''''''
+
+For each table, you need to define the following:
 
 * ``name`` - name of the connector table
 * ``columns`` - array of columns, with names and types
@@ -66,22 +72,65 @@ Next step is to configure the topic and data format options for the integration.
 
 Integration settings in a JSON format:
 
-.. code:: json
+.. topic:: JSON format
 
-    {
-        "tables": [
-            {
-                "name": "CONNECTOR_TABLE_NAME",
-                "columns": [
-                    {"name": "id", "type": "UInt64"},
-                    {"name": "name", "type": "String"}
-                ],
-                "topics": [{"name": "topic1"}, {"name": "topic2"}],
-                "data_format": "DATA_FORMAT",
-                "group_name": "CONSUMER_NAME"
-            }
-        ]
-    }
+    .. code-block:: json
+
+        {
+            "tables": [
+                {
+                    "name": "CONNECTOR_TABLE_NAME",
+                    "columns": [
+                        {"name": "id", "type": "UInt64"},
+                        {"name": "name", "type": "String"}
+                    ],
+                    "topics": [{"name": "topic1"}, {"name": "topic2"}],
+                    "data_format": "DATA_FORMAT",
+                    "group_name": "CONSUMER_NAME"
+                }
+            ]
+        }
+
+Optional settings
+'''''''''''''''''
+
+For each table, you can define the following:
+
+* ``auto_offset_reset`` - action to take when there is no initial offset in the offset store or the desired offset is out of range; default: ``earliest``
+
+* ``date_time_input_format`` - the method to read ``DateTime`` from text input formats, default: ``basic``
+
+* ``handle_error_mode`` - the method to handle errors for the Kafka engine, default: ``default``
+
+* ``max_block_size`` - the number of rows collected by poll(s) for flushing data from Kafka
+
+* ``max_rows_per_message`` - the maximum number of rows produced in one Kafka message for row-based formats
+
+* ``num_consumers`` - the number of consumers per table per replica
+
+* ``poll_max_batch_size`` - the maximum amount of messages to be polled in a single Kafka poll
+
+* ``skip_broken_messages`` - the minimum number of broken messages from Kafka topic per block to be skipped
+
+.. topic:: JSON format
+
+    .. code-block:: json
+
+        {
+            "tables": [
+                {
+                    "name": "CONNECTOR_TABLE_NAME",
+                    "columns": [
+                        {"name": "id", "type": "UInt64"},
+                        {"name": "name", "type": "String"}
+                    ],
+                    "topics": [{"name": "topic1"}, {"name": "topic2"}],
+                    "data_format": "DATA_FORMAT",
+                    "group_name": "CONSUMER_NAME",
+                    "auto_offset_reset": "earliest"
+                }
+            ]
+        }
 
 Configure integration with CLI
 --------------------------------
