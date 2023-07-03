@@ -1,7 +1,7 @@
 Monitoring consumer groups in Aiven for Apache Kafka®
 ======================================================
 
-With Aiven for Apache Kafka® dashboards and telemetry, you can monitor the performance and system resources of your Aiven for Apache Kafka service. Aiven provides pre-built dashboards and telemetry for your service, allowing you to collect and visualize telemetry data using InfluxDB® and Grafana®. Aiven streamlines the process by automatically configuring the dashboards for each of your Aiven Kafka instances.
+With Aiven for Apache Kafka® dashboards and telemetry, you can monitor the performance and system resources of your Aiven for Apache Kafka service. Aiven provides pre-built dashboards and telemetry for your service, allowing you to collect and visualize telemetry data using InfluxDB® and Grafana®. Aiven streamlines the process by automatically configuring the dashboards for each of your Aiven for Apache Kafka instances.
 
 This section builds on the :doc:`service integrations </docs/platform/concepts/service-integration>` documentation and provides an in-depth look at consumer group graphs and related key terminology in Aiven for Apache Kafka®. Consumer group graphs offer valuable insights into the behavior of Apache Kafka consumers, which is crucial for maintaining a continuously running production Kafka system.
 
