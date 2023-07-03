@@ -96,8 +96,8 @@ linkcheck_ignore = [
 html_favicon = './_static/images/favicon.ico'
 html_theme = 'furo'
 html_theme_options = {
-    "light_logo": "images/logoLightPride.png",
-    "dark_logo": "images/logoDarkPride.png",
+    "light_logo": "images/logoLight.png",
+    "dark_logo": "images/logoDark.png",
     "light_css_variables": {
         "color-brand-primary": "#FF5200",
         "color-brand-content": "#343745",
