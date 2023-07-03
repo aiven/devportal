@@ -1,76 +1,84 @@
 Set up SAML with Auth0
-=========================
+=======================
 
-SAML ( *Security Assertion Markup Language* ) is a standard for
-exchanging authentication and authorization data between an identity
-provider and a service provider. To read more about SAML check the :doc:`dedicated page <saml-authentication>`.
+This article explains how to set up SAML with `Auth0 <https://auth0.com/>`_ for an organization in Aiven. For more information on SAML and instructions for other identity providers, see the :doc:`Set up SAML authentication </docs/platform/howto/saml/saml-authentication>` article.
 
-The following is the procedure to setup SAML with `Auth0 <https://auth0.com/>`_.
+Prerequisite steps in Aiven Console
+------------------------------------
 
-Prerequisite steps in Aiven
------------------------------------
+#. In the organization, click **Admin**.
 
-1. Login to the `Aiven Console <https://console.aiven.io>`_
+#. Select **Authentication**.
 
-2. Under **Projects** in the top left, click the drop down arrow and
-then on **See All Accounts**
+#. Click **Add authentication method**.
 
-3. Click on the Account you want to edit or create a new one
+#. Enter a name and select SAML. You can also select the teams that users will be added to when they sign up or log in through this authentication method.
 
-4. Select the **Authentication** tab
+You are shown two parameters needed to set up the SAML authentication in Auth0:
 
-5. Create a new Authentication Method, call it `Auth0` (or similar), select *Method Type* to be **SAML**, and then
-choose the team to add invited people to (or leave it blank)
+* Metadata URL
+* ACS URL
 
-6. Be sure to make a note of the configuration URLs (metadata URL and ACS URL)
+Configure SAML on Auth0
+------------------------
 
-.. note::
-   At this point, the state will be ``Pending Configuration``.
+1. Log in to `your Auth0 account <https://manage.auth0.com>`_.
 
-Setup on Auth0
-----------------
+2. Select **Applications**.
 
-1. `Register <https://auth0.com/signup>`_ for an Auth0 account or sign into `your existing Auth0 account <https://manage.auth0.com>`_ 
+3. Click **Create Application**. 
 
-2. Select **Applications** and then **Create Application** 
+4. Enter an application name.
 
-3. Give your application a name (for example, "Aiven App"), choose **Regular Web Applications**, and hit **Create** 
+5. Choose **Regular Web Applications** and click **Create**. 
 
-3. Once your application has been created, go to the ``Addons`` tab and enable **SAML 2 WEB APP** option
+6. After your application is created, go to the **Addons** tab.
 
-4. Click on the **SAML 2 WEB APP** option to open the ``Settings`` tab
+7. Enable the **SAML 2 WEB APP** option.
 
-5. Set the ``Application Callback URL`` to the ``ACS URL`` provided by the Aiven Console
+8. Click on the **SAML 2 WEB APP** option. The **Settings** tab opens.
 
-6. Under the ``Application Callback URL``, in the ``Settings`` section, remove existing configuration and add the following field mapping configuration:
+9. Set the ``Application Callback URL`` to the ``ACS URL`` from the Aiven Console.
+
+10. In the **Settings** section for the Application Callback URL, remove the existing configuration and add the following field mapping configuration:
 
 .. code-block:: shell
 
-   {
-     "email": "email",
-     "first_name": "first_name",
-     "identity": "email",
-     "last_name": "last_name",
-     "mapUnknownClaimsAsIs": true
-   }
+  {
+    "email": "email",
+    "first_name": "first_name",
+    "identity": "email",
+    "last_name": "last_name",
+    "mapUnknownClaimsAsIs": true
+  }
 
-7. Once done, click **Enable** and **Save**
+11. Click **Enable** and **Save**.
 
-8. From the **Usage** tab, make a note of the ``Identity Provider Login URL`` (This will need to be copied into the SAML configuration in the Aiven Console)
+12. On the **Usage** tab, make a note of the ``Identity Provider Login URL``,  ``Issuer URN``, and ``Identity Provider Certificate``. These are needed for the SAML configuration in Aiven Console.
 
-9. You will also need the ``Issuer URN`` (we refer to it as the ``Entity ID``) and the ``Identity Provider Certificate``
 
 Finish the configuration in Aiven
----------------------------------
+----------------------------------
 
-1. From the Aiven console **Authentication** tab, click on **Set SAML configuration**
+Go back to the **Authentication** page in `Aiven Console <https://console.aiven.io/>`_ to enable the SAML authentication method:
 
-2. Set the ``SAML IDP URL`` as the ``Identity Provider Login URL`` from Auth0 
+1. Select the name of the Auth0 method that you created.
 
-3. Set the ``SAML Entity ID`` as the ``Issuer`` from Auth0 (example: ``urn:dev-i-fiqy2a.us.auth0.com``)
+2. In the SAML configuration section, click **Edit**. 
 
-4. Paste the certificate from Auth0 into ``SAML Certificate``
+3. Add the configuration settings from Auth0:
 
-5. Save that and you are good to go! Make sure the authentication method is enabled and you can then use the **Signup URL** to invite new people and **Account link URL** for those that already have an Aiven login.
+* Set the ``SAML IDP URL`` to the ``Identity Provider Login URL`` from Auth0.
+* Set the ``SAML Entity ID`` to the ``Issuer URN`` from Auth0 .
+* Paste the certificate from Auth0 into the ``SAML Certificate`` field.
 
-If you have issues, you can use the `SAML Tracer browser extension <https://addons.mozilla.org/firefox/addon/saml-tracer/>`_ to  check the process step by step. The errors shown in the tracker should help you to debug the issues. If it does not work, you can request help by sending an email at support@Aiven.io.
+4. Click **Edit method** to save your changes.
+
+5. Toggle on **Enable authentication method** at the top of the page. 
+
+You can use the **Signup URL** to invite new users, or the **Account link URL** for those that already have an Aiven user account.
+
+Troubleshooting
+---------------
+
+If you have issues, you can use the `SAML Tracer browser extension <https://addons.mozilla.org/firefox/addon/saml-tracer/>`_ to check the process step by step. 

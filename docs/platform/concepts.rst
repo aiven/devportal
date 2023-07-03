@@ -9,7 +9,7 @@ Learn about some of the key concepts for working with Aiven platform:
 
 * :doc:`Billing </docs/platform/concepts/list-billing>`.
 
-  Understand how to set up and manage billing profile for your Aiven accounts.
+  Understand how to set up and manage billing profiles.
 
 * :doc:`Beta services </docs/platform/concepts/beta_services>`.
 
@@ -39,9 +39,9 @@ Learn about some of the key concepts for working with Aiven platform:
 
   How Aiven protects your service from the Out Of Memory Killer when memory is overcommitted.
 
-* :doc:`Projects and access management </docs/platform/concepts/projects_accounts_access>`.
+* :doc:`Organizations, projects, and managing access </docs/platform/concepts/projects_accounts_access>`.
 
-  Understand how to set up users, accounts and access management for your Aiven projects.
+  Understand organizations, organizational units, access management, and best practices for structuring your Aiven projects.
 
 * :doc:`TLS/SSL certificates </docs/platform/concepts/tls-ssl-certificates>`.
 
@@ -51,9 +51,9 @@ Learn about some of the key concepts for working with Aiven platform:
 
   Add (and remove) storage on the fly without upgrading your plan.
 
-* :doc:`Bring your own account (BYOA) </docs/platform/concepts/byoa>`.
+* :doc:`Bring your own cloud (BYOC) </docs/platform/concepts/byoc>`.
 
-  BYOA is an optional setup feature that allows you to purchase your Aiven services through your existing Cloud Provider.
+  BYOC is an optional setup feature that allows you to purchase your Aiven services through your existing Cloud Provider.
 
 * :doc:`Enhanced Compliance Environments (ECE) </docs/platform/concepts/enhanced-compliance-env>`.
 

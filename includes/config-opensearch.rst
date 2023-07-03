@@ -47,6 +47,56 @@
 
 
 
+``saml``
+--------
+*object*
+
+**OpenSearch SAML configuration** 
+
+``enabled``
+~~~~~~~~~~~
+*boolean*
+
+**Enable or disable OpenSearch SAML authentication** Enables or disables SAML-based authentication for OpenSearch. When enabled, users can authenticate using SAML with an Identity Provider.
+
+``idp_metadata_url``
+~~~~~~~~~~~~~~~~~~~~
+*string*
+
+**Identity Provider (IdP) SAML metadata URL** The URL of the SAML metadata for the Identity Provider (IdP). This is used to configure SAML-based authentication with the IdP.
+
+``idp_entity_id``
+~~~~~~~~~~~~~~~~~
+*string*
+
+**Identity Provider Entity ID** The unique identifier for the Identity Provider (IdP) entity that is used for SAML authentication. This value is typically provided by the IdP.
+
+``sp_entity_id``
+~~~~~~~~~~~~~~~~
+*string*
+
+**Service Provider Entity ID** The unique identifier for the Service Provider (SP) entity that is used for SAML authentication. This value is typically provided by the SP.
+
+``subject_key``
+~~~~~~~~~~~~~~~
+*['string', 'null']*
+
+**SAML response subject attribute** Optional. Specifies the attribute in the SAML response where the subject identifier is stored. If not configured, the NameID attribute is used by default.
+
+``roles_key``
+~~~~~~~~~~~~~
+*['string', 'null']*
+
+**SAML response role attribute** Optional. Specifies the attribute in the SAML response where role information is stored, if available. Role attributes are not required for SAML authentication, but can be included in SAML assertions by most Identity Providers (IdPs) to determine user access levels or permissions.
+
+``idp_pemtrustedcas_content``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*['string', 'null']*
+
+**PEM-encoded root CA Content for SAML IdP server verification** This parameter specifies the PEM-encoded root certificate authority (CA) content for the SAML identity provider (IdP) server verification. The root CA content is used to verify the SSL/TLS certificate presented by the server.
+
+
+
 ``index_patterns``
 ------------------
 *array*
@@ -275,19 +325,19 @@
 ~~~~~~~~~~~~~~~~~~~~~
 *['string']*
 
-**Sender email name placeholder to be used in Opensearch Dashboards and Opensearch keystore** This should be identical to the Sender name defined in Opensearch dashboards
+**Sender name placeholder to be used in Opensearch Dashboards and Opensearch keystore** This should be identical to the Sender name defined in Opensearch dashboards
 
 ``email_sender_username``
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 *['string']*
 
-**Sender email address for Opensearch alerts** 
+**Sender username for Opensearch alerts** 
 
 ``email_sender_password``
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 *['string']*
 
-**Sender email password for Opensearch alerts to authenticate with SMTP server** Sender email password for Opensearch alerts to authenticate with SMTP server
+**Sender password for Opensearch alerts to authenticate with SMTP server** Sender password for Opensearch alerts to authenticate with SMTP server
 
 
 

@@ -64,7 +64,7 @@ The configuration file contains the following entries:
 
 * ``name``: the connector name, replace ``CONNECTOR_NAME`` with the name you want to use for the connector.
 * ``connect.mqtt.hosts``, ``connect.mqtt.kcql``, ``connect.mqtt.username`` and ``connect.mqtt.password``: source MQTT parameters collected in the :ref:`prerequisite <connect_mqtt_rbmq_source_prereq>` phase. 
-* ``key.converter`` and ``value.converter``: The data converter used for this example Jason converter is used.
+* ``key.converter`` and ``value.converter``: The data converter used for this example JSON converter is used.
 * ``connect.mqtt.service.quality``: Specifies the ``Mqtt`` quality of service.  
     
 Check out the `dedicated documentation <https://docs.lenses.io/5.0/integrations/connectors/stream-reactor/sources/mqttsourceconnector/#options>`_ for the full list of parameters.

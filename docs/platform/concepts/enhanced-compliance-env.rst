@@ -8,8 +8,8 @@ businesses by providing specialized enhanced compliance environments (ECE) that 
 of the most common compliance requirements.
 
 An enhanced compliance environment will run on Aiven managed infrastructure with the additional
-compliance requirement that no ECE VPC is shared and the managed account is logically separated
-from the standard Aiven deployment account. This decreases the blast radius of the environment
+compliance requirement that no ECE VPC is shared and the managed environment is logically separated
+from the standard Aiven deployment environment. This decreases the blast radius of the environment
 to prevent inadvertent data sharing. Furthermore, users of an ECE **must** encrypt all data prior
 to reaching an Aiven service. As part of the increased compliance of the environment, enhanced logging
 is enabled for – ``stderr``, ``stout``, and ``stdin``.
@@ -67,7 +67,7 @@ Although not exhaustive, Aiven is capable of supporting both the Health Insuranc
 Accountability Act (HIPAA) and the Payment Card Industry Data Security Standard (PCI DSS)
 compliances. If you require compliance beyond these please contact our sales department so we
 can better understand your specific needs. Additionally, we also offer an alternative deployment
-option -- :doc:`Bring Your Own Account (BYOA) </docs/platform/concepts/byoa>`.
+option -- :doc:`Bring Your Own Cloud (BYOC) </docs/platform/concepts/byoc>`.
 
 Migrating
 ----------------

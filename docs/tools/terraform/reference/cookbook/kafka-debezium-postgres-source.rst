@@ -44,7 +44,7 @@ For example, you'll need to declare the variables for ``project`` and ``api_toke
          required_providers {
            aiven = {
              source  = "aiven/aiven"
-             version = "~> 3.10.0"
+             version = ">=4.0.0, < 5.0.0"
            }
          }
        }
@@ -82,7 +82,7 @@ For example, you'll need to declare the variables for ``project`` and ``api_toke
 
 The ``services.tf`` file for the provisioning of these three services, service integration, and related resource is this:
 
-.. code:: terraform
+::
   
   resource "aiven_pg" "demo-pg" {
     project      = var.project_name
@@ -162,10 +162,10 @@ The ``services.tf`` file for the provisioning of these three services, service i
       "name"                      = "kafka-pg-source"
       "connector.class"           = "io.debezium.connector.postgresql.PostgresConnector"
       "snapshot.mode"             = "initial"
-      "database.hostname"         = aiven_pg.demo-pg.service_host
-      "database.port"             = aiven_pg.demo-pg.service_port
-      "database.password"         = aiven_pg.demo-pg.service_password
-      "database.user"             = aiven_pg.demo-pg.service_username
+      "database.hostname"         = sensitive(aiven_pg.demo-pg.service_host)
+      "database.port"             = sensitive(aiven_pg.demo-pg.service_port)
+      "database.password"         = sensitive(aiven_pg.demo-pg.service_password)
+      "database.user"             = sensitive(aiven_pg.demo-pg.service_username)
       "database.dbname"           = "defaultdb"
       "database.server.name"      = "replicator"
       "database.ssl.mode"         = "require"

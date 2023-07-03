@@ -10,15 +10,17 @@ entries:
     - file: docs/platform/concepts
       title: Concepts
       entries:
+      - file: docs/platform/concepts/aiven-node-firewall-configuration
       - file: docs/platform/concepts/authentication-tokens
       - file: docs/platform/concepts/availability-zones
+      - file: docs/platform/concepts/free-plan
       - file: docs/platform/concepts/list-billing
         title: Billing
         entries:
+          - file: docs/platform/concepts/hourly-billing-model
           - file: docs/platform/concepts/tax-information
           - file: docs/platform/concepts/billing-groups
           - file: docs/platform/concepts/corporate-billing
-          - file: docs/platform/concepts/hourly-billing-model
       - file: docs/platform/concepts/beta_services
       - file: docs/platform/concepts/cloud-security
       - file: docs/platform/concepts/logs-metrics-alerts
@@ -30,7 +32,7 @@ entries:
       - file: docs/platform/concepts/out-of-memory-conditions
       - file: docs/platform/concepts/static-ips
       - file: docs/platform/concepts/tls-ssl-certificates
-      - file: docs/platform/concepts/byoa
+      - file: docs/platform/concepts/byoc
       - file: docs/platform/concepts/dynamic-disk-sizing
       - file: docs/platform/concepts/enhanced-compliance-env
       - file: docs/platform/concepts/disaster-recovery-test-scenarios
@@ -42,23 +44,25 @@ entries:
     - file: docs/platform/howto
       title: HowTo
       entries:
+      - file: docs/platform/howto/feature-preview 
       - file: docs/platform/howto/list-user
-        title: User/Access management
+        title: User and authentication management
         entries:
-          - file: docs/platform/howto/manage-project
+          - file: docs/platform/howto/manage-org-users
+          - file: docs/platform/howto/add-authentication-method
           - file: docs/platform/howto/change-your-email-address
           - file: docs/platform/howto/create_authentication_token
           - file: docs/platform/howto/create_new_service_user
           - file: docs/tools/aiven-console/howto/create-manage-teams
-          - file: docs/platform/howto/enable-aiven-password
           - file: docs/platform/howto/user-2fa
           - file: docs/platform/howto/technical-emails
-          - file: docs/platform/howto/reactivate-suspended-project
-          - file: docs/platform/howto/disable-platform-authentication                     
+          - file: docs/platform/howto/reactivate-suspended-project                    
       - file: docs/platform/howto/list-account
-        title: Account management
+        title: Organization and project management
         entries: 
           - file: docs/tools/aiven-console/howto/create-accounts
+          - file: docs/platform/howto/manage-project
+          - file: docs/platform/howto/manage-unassigned-projects
       - file: docs/platform/howto/list-service
         title: Service management
         entries:
@@ -70,11 +74,13 @@ entries:
           - file: docs/platform/howto/migrate-services-cloud-region
           - file: docs/platform/howto/migrate-services-vpc
           - file: docs/platform/howto/recover-a-deleted-service
+          - file: docs/platform/howto/cleanup-powered-off-services
           - file: docs/platform/howto/add-storage-space
           - file: docs/platform/howto/tag-resources
           - file: docs/platform/howto/search-services
             title: Search for services
           - file: docs/platform/howto/access-service-logs
+          - file: docs/platform/howto/service-metrics
           - file: docs/platform/howto/prepare-for-high-load
           - file: docs/platform/howto/create-service-integration
       - file: docs/platform/howto/list-network
@@ -92,6 +98,7 @@ entries:
           - file: docs/platform/howto/vnet-peering-azure
           - file: docs/platform/howto/use-aws-privatelinks.rst
           - file: docs/platform/howto/use-azure-privatelink
+          - file: docs/platform/howto/use-google-private-service-connect
       - file: docs/platform/howto/list-monitoring
         title: Monitoring management
         entries:
@@ -110,12 +117,18 @@ entries:
           - file: docs/platform/howto/billing-assign-projects
           - file: docs/platform/howto/payment-issues-plan-upgrades
           - file: docs/platform/howto/custom-plans
+          - file: docs/platform/howto/billing-aws-marketplace-subscription
+            title: Set up AWS Marketplace
+          - file: docs/platform/howto/move-to-aws-marketplace-billing
+            title: Move to AWS Marketplace
           - file: docs/platform/howto/billing-google-cloud-platform-marketplace-subscription
             title: Set up Google Cloud Marketplace
           - file: docs/platform/howto/move-to-gcp-marketplace-billing
             title: Move to Google Cloud Marketplace
           - file: docs/platform/howto/billing-azure-marketplace-subscription
             title: Set up Azure Marketplace
+          - file: docs/platform/howto/move-to-azure-marketplace-billing
+            title: Move to Azure Marketplace
       - file: docs/platform/howto/list-saml
         title: SAML Authentication
         entries:
@@ -128,7 +141,14 @@ entries:
             title: Setting up SAML with Okta
           - file: docs/platform/howto/saml/setup-saml-auth0
             title: Setting up SAML with Auth0
-      - file: docs/platform/howto/project-support-center  
+          - file: docs/platform/howto/saml/setup-saml-jumpcloud
+            title: Setting up SAML with JumpCloud
+      - file: docs/platform/howto/list-support
+        title: Support
+        entries:
+          - file: docs/platform/howto/project-support-center  
+          - file: docs/platform/howto/change-support-tier
+            title: Upgrade your support tier
     - file: docs/platform/reference
       title: Reference
       entries:
@@ -145,7 +165,7 @@ entries:
         - file: docs/integrations/datadog/datadog-metrics
         - file: docs/integrations/datadog/datadog-logs
     - file: docs/integrations/cloudwatch
-      title: Amazon CloudWatch
+      title: Amazon CloudWatch 
       entries:
         - file: docs/integrations/cloudwatch/cloudwatch-metrics
           title: CloudWatch Metrics
@@ -154,6 +174,8 @@ entries:
           entries:
             - file: docs/integrations/cloudwatch/cloudwatch-logs-console
             - file: docs/integrations/cloudwatch/cloudwatch-logs-cli
+    - file: docs/integrations/cloudlogging
+      title: Google Cloud Logging
     - file: docs/integrations/rsyslog
       title: RSyslog
       entries:
@@ -204,12 +226,17 @@ entries:
               title: Upgrade the Aiven Terraform Provider from v1 to v2
             - file: docs/tools/terraform/howto/upgrade-provider-v2-v3
               title: Upgrade the Aiven Terraform Provider from v2 to v3
+            - file: docs/tools/terraform/howto/upgrade-provider-v3-v4
+              title: Upgrade the Aiven Terraform Provider from v3 to v4
+            - file: docs/tools/terraform/howto/update-deprecated-resources
             - file: docs/tools/terraform/howto/config-postgresql-provider
               title: Use PostgreSQL provider alongside Aiven Terraform Provider 
             - file: docs/tools/terraform/howto/promote-to-master-pg-rr
-              title: Promote PostgreSQL read replica to master
+              title: Promote PostgreSQL read-only replica to master
             - file: docs/tools/terraform/howto/upgrade-to-opensearch
             - file: docs/tools/terraform/howto/vnet-peering-azure
+            - file: docs/tools/terraform/howto/vpc-peering-gcp
+            - file: docs/tools/terraform/howto/vpc-peering-aws
         - file: docs/tools/terraform/concepts
           title: Concepts
           entries:
@@ -243,7 +270,7 @@ entries:
             - file: docs/tools/terraform/reference/cookbook/m3db-m3agg-recipe
               title: M3 and M3 Aggregator
             - file: docs/tools/terraform/reference/cookbook/postgresql-read-replica-recipe
-              title: PostgreSQL® Read Replica
+              title: PostgreSQL® read-only replica
             - file: docs/tools/terraform/reference/cookbook/clickhouse-access-setup-recipe
               title: Configure ClickHouse user's access
             - file: docs/tools/terraform/reference/cookbook/kafka-clickhouse-integration-recipe
@@ -279,6 +306,8 @@ entries:
           - file: docs/products/kafka/concepts/auth-types
           - file: docs/products/kafka/concepts/non-leader-for-partition
           - file: docs/products/kafka/concepts/configuration-backup
+          - file: docs/products/kafka/concepts/kafka-quotas
+            title: Quotas
       - file: docs/products/kafka/howto
         title: HowTo
         entries:
@@ -330,6 +359,7 @@ entries:
               - file: docs/products/kafka/howto/prevent-full-disks
               - file: docs/products/kafka/howto/use-zookeeper
               - file: docs/products/kafka/howto/avoid-out-of-memory-error
+              - file: docs/products/kafka/howto/manage-quotas
 
           - file: docs/products/kafka/howto/list-integration
             title: Integrations
@@ -452,6 +482,8 @@ entries:
               title: Kafka to Google Pub/Sub Lite
             - file: docs/products/kafka/kafka-connect/howto/splunk-sink
               title: Kafka to Splunk
+            - file: docs/products/kafka/kafka-connect/howto/mqtt-sink-connector
+              title: Kafka to MQTT
 
         - file: docs/products/kafka/kafka-connect/reference
           title: Reference
@@ -552,8 +584,13 @@ entries:
         entries:
           - file: docs/products/flink/howto/list-get-started
             title: Get started
-          - file: docs/products/flink/howto/create-integration
-            title: Data service integrations
+          - file: docs/products/flink/howto/list-integrations
+            title: Integrate service
+            entries:
+              - file: docs/products/flink/howto/create-integration
+                title: Data service integrations
+              - file: docs/products/flink/howto/ext-kafka-flink-integration
+                title: Connect to Apache Kafka
           - file: docs/products/flink/howto/list-flink-applications
             title: Aiven for Apache Flink applications
             entries:
@@ -570,17 +607,24 @@ entries:
                 title: Create Apache Flink tables with data sources
                 entries:
                   - file: docs/products/flink/howto/connect-kafka
+                    title: Apache Kafka-based Apache Flink table
+                  - file: docs/products/flink/howto/flink-confluent-avro
+                    title: Confluent Avro-based Apache Flink table
                   - file: docs/products/flink/howto/connect-pg
+                    title: PostgreSQL-based Apache Flink table
                   - file: docs/products/flink/howto/connect-opensearch
+                    title: OpenSearch-based Apache Flink table
+                  - file: docs/products/flink/howto/pg-cdc-connector
+                    title: PostgreSQL CDC connector-based Apache Flink table
                   - file: docs/products/flink/howto/slack-connector
+                    title: Slack-based Apache Flink table
                   - file: docs/products/flink/howto/datagen-connector
+                    title: DataGen-based Apache Flink table
           - file: docs/products/flink/howto/list-manage-cluster
             title: Manage cluster
           - file: docs/products/flink/howto/advanced-topics
             entries:
             - file: docs/products/flink/howto/timestamps_opensearch
-            - file: docs/products/flink/howto/real-time-alerting-solution
-              title: Real-time alerting solution 
       - file: docs/products/flink/reference
         title: Reference
         entries:
@@ -590,22 +634,49 @@ entries:
   - file: docs/products/cassandra
     title: Apache Cassandra
     entries:
+      - file: docs/products/cassandra/overview
+        title: Overview
       - file: docs/products/cassandra/get-started
-        title: Get started
+        title: Quickstart
       - file: docs/products/cassandra/concepts
         title: Concepts
         entries:
-          - glob: docs/products/cassandra/concepts/*
+          - file: docs/products/cassandra/concepts/tombstones
+            title: Tombstones
+          - file: docs/products/cassandra/concepts/cross-cluster-replication
+            title: Cross-cluster replication
       - file: docs/products/cassandra/howto
         title: HowTo
         entries:
+          - file: docs/products/cassandra/howto/list-get-started
+            title: Get started
           - file: docs/products/cassandra/howto/list-code-samples
+            title: Connect to service
             entries:
+              - file: docs/products/cassandra/howto/connect-cqlsh-cli
+                title: Connect with cqlsh
               - file: docs/products/cassandra/howto/connect-python
+                title: Connect with Python
               - file: docs/products/cassandra/howto/connect-go
-          - file: docs/products/cassandra/howto/connect-cqlsh-cli
-          - file: docs/products/cassandra/howto/use-nosqlbench-with-cassandra
-          - file: docs/products/cassandra/howto/use-dsbulk-with-cassandra
+                title: Connect with Go
+          - file: docs/products/cassandra/howto/list-manage-service
+            title: Manage service
+            entries:
+              - file: docs/products/cassandra/howto/use-dsbulk-with-cassandra
+                title: Manage data with DSBULK
+              - file: docs/products/cassandra/howto/use-nosqlbench-with-cassandra
+                title: Stress test with nosqlbench
+          - file: docs/products/cassandra/howto/list-manage-cluster
+            title: Manage cluster
+          - file: docs/products/cassandra/howto/list-cross-cluster-replication
+            title: Cross-cluster replication
+            entries:
+              - file: docs/products/cassandra/howto/enable-cross-cluster-replication
+                title: Enable CCR
+              - file: docs/products/cassandra/howto/manage-cross-cluster-replication
+                title: Manage CCR
+              - file: docs/products/cassandra/howto/disable-cross-cluster-replication
+                title: Disable CCR
       - file: docs/products/cassandra/reference
         title: Reference
         entries:
@@ -632,8 +703,6 @@ entries:
         title: Concepts
         entries:
           - file: docs/products/clickhouse/concepts/olap
-          - file: docs/products/clickhouse/concepts/databases-and-tables
-            title: Databases and tables
           - file: docs/products/clickhouse/concepts/columnar-databases
           - file: docs/products/clickhouse/concepts/indexing
           - file: docs/products/clickhouse/concepts/disaster-recovery
@@ -682,6 +751,10 @@ entries:
                 title: Monitor performance
               - file: docs/products/clickhouse/howto/use-shards-with-distributed-table
                 title: Read and write data across shards
+              - file: docs/products/clickhouse/howto/copy-data-across-instances
+                title: Copy data across ClickHouse servers
+              - file: docs/products/clickhouse/howto/fetch-query-statistics.rst
+                title: Fetch query statistics
           - file: docs/products/clickhouse/howto/list-manage-cluster
             title: Manage cluster
           - file: docs/products/clickhouse/howto/list-integrations
@@ -693,6 +766,10 @@ entries:
                 title: Connect to Apache Kafka
               - file: docs/products/clickhouse/howto/integrate-postgresql
                 title: Connect to PostgreSQL
+              - file: docs/products/clickhouse/howto/data-service-integration
+                title: Connect a service as a data source (Apache Kafka and PostgreSQL)
+              - file: docs/products/clickhouse/howto/integration-databases
+                title: Connect services via integration databases
               - file: docs/products/clickhouse/howto/connect-with-jdbc
                 title: Connect to external DBs with JDBC
       - file: docs/products/clickhouse/reference
@@ -710,12 +787,34 @@ entries:
   - file: docs/products/grafana
     title: Grafana
     entries:
+      - file: docs/products/grafana/list-overview
+        title: Overview
+        entries:
+        - file: docs/products/grafana/concepts/grafana-features
+          title: Features overview
+        - file: docs/products/grafana/reference/plans-pricing
+          title: Plans and pricing
       - file: docs/products/grafana/get-started
-        title: Get started
+        title: Quickstart
       - file: docs/products/grafana/howto
         title: HowTo
         entries:
-          - glob: docs/products/grafana/howto/*
+          - file: docs/products/grafana/howto/list-user-access
+            title: User access
+            entries:
+            - file: docs/products/grafana/howto/log-in
+              title: Log in to Aiven for Grafana
+            - file: docs/products/grafana/howto/rotating-grafana-service-credentials
+          - file: docs/products/grafana/howto/list-manage-dashboards
+            title: Manage dashboards
+            entries:
+            - file: docs/products/grafana/howto/dashboard-previews
+              title: Dashboard previews
+            - file: docs/products/grafana/howto/replace-expression-string
+          - file: docs/products/grafana/howto/send-emails
+            title: Alerts and notifcations
+          - file: docs/products/grafana/howto/list-manage-cluster
+            title: Manage cluster
       - file: docs/products/grafana/reference
         title: Reference
         entries:
@@ -769,34 +868,67 @@ entries:
   - file: docs/products/mysql
     title: MySQL
     entries:
+      - file: docs/products/mysql/overview
+        title: Overview
       - file: docs/products/mysql/get-started
-        title: Get started
+        title: Quickstart
       - file: docs/products/mysql/concepts                   
         title: Concepts                           
         entries:                                  
-          - glob: docs/products/mysql/concepts/*
+          - file: docs/products/mysql/concepts/max-number-of-connections
+            title: max_connections
+          - file: docs/products/mysql/concepts/mysql-backups
+            title: Backups
+          - file: docs/products/mysql/concepts/mysql-memory-usage
+            title: Memory usage
+          - file: docs/products/mysql/concepts/mysql-replication
+            title: Replication
+          - file: docs/products/mysql/concepts/mysql-tuning-and-concurrency
+            title: Tuning for concurrency
       - file: docs/products/mysql/howto
         title: HowTo
         entries:
+          - file: docs/products/mysql/howto/list-get-started
+            title: Get started
           - file: docs/products/mysql/howto/list-code-samples
+            title: Connect to a service
             entries:
               - file: docs/products/mysql/howto/connect-from-cli
               - file: docs/products/mysql/howto/connect-with-python
               - file: docs/products/mysql/howto/connect-using-mysqlx-with-python
               - file: docs/products/mysql/howto/connect-with-java
               - file: docs/products/mysql/howto/connect-with-php
-          - file: docs/products/mysql/howto/create-database
-          - file: docs/products/mysql/howto/connect-from-mysql-workbench
-          - file: docs/products/mysql/howto/migrate-from-external-mysql
-          - file: docs/products/mysql/howto/do-check-service-migration
-          - file: docs/products/mysql/howto/prevent-disk-full
-          - file: docs/products/mysql/howto/reclaim-disk-space
-          - file: docs/products/mysql/howto/identify-disk-usage-issues
-          - file: docs/products/mysql/howto/disable-foreign-key-checks
-          - file: docs/products/mysql/howto/enable-slow-queries
-          - file: docs/products/mysql/howto/migrate-database-mysqldump
-          - file: docs/products/mysql/howto/create-tables-without-primary-keys
-          - file: docs/products/mysql/howto/create-missing-primary-keys
+              - file: docs/products/mysql/howto/connect-from-mysql-workbench
+          - file: docs/products/mysql/howto/list-manage-database
+            title: Database management
+            entries:
+              - file: docs/products/mysql/howto/create-database
+                title: Create a database
+              - file: docs/products/mysql/howto/create-remote-replica
+                title: Create remote replicas
+              - file: docs/products/mysql/howto/migrate-database-mysqldump
+                title: Backup and restore with mysqldump
+              - file: docs/products/mysql/howto/disable-foreign-key-checks
+              - file: docs/products/mysql/howto/enable-slow-queries
+              - file: docs/products/mysql/howto/create-tables-without-primary-keys
+              - file: docs/products/mysql/howto/create-missing-primary-keys
+          - file: docs/products/mysql/howto/list-migrate-data
+            title: Data migration
+            entries:
+              - file: docs/products/mysql/howto/do-check-service-migration
+                title: Run pre-migration checks
+              - file: docs/products/mysql/howto/migrate-from-external-mysql
+                title: Migrate to Aiven with CLI
+              - file: docs/products/mysql/howto/migrate-db-to-aiven-via-console
+                title: Migrate to Aiven via console
+          - file: docs/products/mysql/howto/list-manage-disk-space
+            title: Disk space management
+            entries:
+              - file: docs/products/mysql/howto/prevent-disk-full
+              - file: docs/products/mysql/howto/reclaim-disk-space
+              - file: docs/products/mysql/howto/identify-disk-usage-issues
+          - file: docs/products/mysql/howto/list-manage-cluster
+            title: Cluster management
       - file: docs/products/mysql/reference
         title: Reference
         entries:
@@ -809,12 +941,28 @@ entries:
     title: OpenSearch
     entries:
       - file: docs/products/opensearch/getting-started
-        title: Get started
-      - file: docs/products/opensearch/howto/sample-dataset
+        title: Quickstart
+        entries:
+        - file: docs/products/opensearch/howto/sample-dataset
+      - file: docs/products/opensearch/list-overview
+        title: Overview
+        entries:
+        - file: docs/products/opensearch/concepts/service-overview
+          title: Service overview
+        - file: docs/products/opensearch/reference/plans-pricing
+          title: Plans and pricing
       - file: docs/products/opensearch/concepts
         title: Concepts
         entries:
           - file: docs/products/opensearch/concepts/access_control
+            title: Access control
+            entries:
+              - file: docs/products/opensearch/concepts/users-access-controls
+          - file: docs/products/opensearch/concepts/os-security
+            title: OpenSearch Security
+            entries:  
+            - file: docs/products/opensearch/concepts/opensearch-security-considerations
+              title: Key considerations
           - file: docs/products/opensearch/concepts/backups
           - file: docs/products/opensearch/concepts/indices
           - file: docs/products/opensearch/concepts/aggregations
@@ -826,30 +974,66 @@ entries:
       - file: docs/products/opensearch/howto
         title: HowTo
         entries:
-          - file: docs/products/opensearch/howto/opensearch-with-curl
-          - file: docs/products/opensearch/howto/migrating_elasticsearch_data_to_aiven
-          - file: docs/products/opensearch/howto/opensearch-log-integration
-          - file: docs/products/opensearch/howto/upgrade-to-opensearch
-          - file: docs/products/opensearch/howto/upgrade-clients-to-opensearch
-          - file: docs/products/opensearch/howto/setup-cross-cluster-replication-opensearch
-          - file: docs/products/opensearch/howto/connect-with-nodejs
-            title: Connect with NodeJS
-          - file: docs/products/opensearch/howto/connect-with-python
-            title: Connect with Python
-          - file: docs/products/opensearch/howto/opensearch-search-and-python
-            title: Search with Python
-          - file: docs/products/opensearch/howto/opensearch-and-nodejs
-            title: Search with NodeJS
-          - file: docs/products/opensearch/howto/opensearch-aggregations-and-nodejs
-            title: Aggregation with NodeJS
-          - file: docs/products/opensearch/howto/control_access_to_content
-          - file: docs/products/opensearch/howto/restore_opensearch_backup
-          - file: docs/products/opensearch/howto/import-opensearch-data-elasticsearch-dump-to-aiven
-          - file: docs/products/opensearch/howto/import-opensearch-data-elasticsearch-dump-to-aws
-          - file: docs/products/opensearch/howto/set_index_retention_patterns
-          - file: docs/products/opensearch/howto/opensearch-alerting-api
-          - file: docs/products/opensearch/howto/integrate-with-grafana
-          - file: docs/products/opensearch/howto/handle-low-disk-space
+          - file: docs/products/opensearch/howto/list-access-control
+            title: Manage access control
+            entries:  
+            - file: docs/products/opensearch/howto/control_access_to_content
+            
+          - file: docs/products/opensearch/howto/list-connect-to-service
+            title: Connect with service
+            entries:
+            - file: docs/products/opensearch/howto/opensearch-with-curl
+              title: Connect with cURL
+            - file: docs/products/opensearch/howto/connect-with-nodejs
+              title: Connect with NodeJS
+            - file: docs/products/opensearch/howto/connect-with-python
+              title: Connect with Python
+          - file: docs/products/opensearch/howto/list-data-management
+            title: Data management 
+            entries:  
+            - file: docs/products/opensearch/howto/import-opensearch-data-elasticsearch-dump-to-aiven
+            - file: docs/products/opensearch/howto/import-opensearch-data-elasticsearch-dump-to-aws
+            - file: docs/products/opensearch/howto/migrating_elasticsearch_data_to_aiven
+              title: Migrate Elasticsearch data
+          - file: docs/products/opensearch/howto/list-search-service
+            title: Search and aggregation
+            entries:
+            - file: docs/products/opensearch/howto/opensearch-search-and-python
+              title: Search with Python
+            - file: docs/products/opensearch/howto/opensearch-and-nodejs
+              title: Search with NodeJS
+            - file: docs/products/opensearch/howto/opensearch-aggregations-and-nodejs
+              title: Aggregation with NodeJS
+          - file: docs/products/opensearch/howto/list-opensearch-security
+            title: Manage OpenSearch Security
+            entries:
+              - file: docs/products/opensearch/howto/enable-opensearch-security
+                title: Enable OpenSearch Security management
+              - file: docs/products/opensearch/howto/saml-sso-authentication
+                title: SAML authentication
+              - file: docs/products/opensearch/howto/audit-logs
+                title: Audit logs
+              - file: docs/products/opensearch/howto/opensearch-dashboard-multi_tenancy
+                title: OpenSearch Dashboard multi-tenancy
+          - file: docs/products/opensearch/howto/list-manage-service
+            title: Manage service
+            entries:
+            - file: docs/products/opensearch/howto/restore_opensearch_backup
+            - file: docs/products/opensearch/howto/set_index_retention_patterns
+            - file: docs/products/opensearch/howto/opensearch-alerting-api
+            - file: docs/products/opensearch/howto/handle-low-disk-space
+            - file: docs/products/opensearch/howto/setup-cross-cluster-replication-opensearch
+              title: Cross-cluster replication
+          - file: docs/products/opensearch/howto/list-integrations
+            title: Integrate service
+            entries:
+            - file: docs/products/opensearch/howto/opensearch-log-integration
+            - file: docs/products/opensearch/howto/integrate-with-grafana
+          - file: docs/products/opensearch/howto/list-upgrade
+            title: Upgrade to OpenSearch
+            entries:
+            - file: docs/products/opensearch/howto/upgrade-to-opensearch
+            - file: docs/products/opensearch/howto/upgrade-clients-to-opensearch
       - file: docs/products/opensearch/dashboards
         title: OpenSearch Dashboards
         entries:
@@ -873,107 +1057,152 @@ entries:
   - file: docs/products/postgresql
     title: PostgreSQL
     entries:
+      - file: docs/products/postgresql/overview
+        title: Overview
       - file: docs/products/postgresql/getting-started
-        title: Get started
-      - file: docs/products/postgresql/howto/pagila
-        title: "Sample dataset: Pagila"
+        title: Quickstart
       - file: docs/products/postgresql/concepts
         title: Concepts
         entries:
-          - glob: docs/products/postgresql/concepts/*
+          - file: docs/products/postgresql/concepts/aiven-db-migrate
+            title: aiven-db-migrate
+          - file: docs/products/postgresql/concepts/dba-tasks-pg
+            title: DBA-type tasks
+          - file: docs/products/postgresql/concepts/high-availability
+            title: High availability
+          - file: docs/products/postgresql/concepts/pg-backups
+            title: Backups
+          - file: docs/products/postgresql/concepts/pg-connection-pooling
+            title: Connection pooling
+          - file: docs/products/postgresql/concepts/pg-disk-usage
+            title: Disk usage
+          - file: docs/products/postgresql/concepts/pg-shared-buffers
+            title: Shared buffers
+          - file: docs/products/postgresql/concepts/timescaledb
+            title: TimescaleDB
+          - file: docs/products/postgresql/concepts/upgrade-failover
+            title: Upgrade and failover procedures
+          - file: docs/products/postgresql/concepts/pgvector
+            title: AI-powered search with pgvector
       - file: docs/products/postgresql/howto
         title: HowTo
         entries:
+          - file: docs/products/postgresql/howto/list-get-started
+            title: Get started
+            entries:
+              - file: docs/products/postgresql/howto/pagila
+                title: Load sample dataset
           - file: docs/products/postgresql/howto/list-code-samples
+            title: Connect to service
             entries:
               - file: docs/products/postgresql/howto/connect-go
               - file: docs/products/postgresql/howto/connect-java
               - file: docs/products/postgresql/howto/connect-node
               - file: docs/products/postgresql/howto/connect-php
               - file: docs/products/postgresql/howto/connect-python
+              - file: docs/products/postgresql/howto/connect-psql
+              - file: docs/products/postgresql/howto/connect-pgadmin
+              - file: docs/products/postgresql/howto/connect-rivery
+              - file: docs/products/postgresql/howto/connect-skyvia
+              - file: docs/products/postgresql/howto/connect-zapier
           - file: docs/products/postgresql/howto/list-dba-tasks
+            title: Administer database
             entries:
               - file: docs/products/postgresql/howto/create-database
               - file: docs/products/postgresql/howto/upgrade
               - file: docs/products/postgresql/howto/manage-extensions
               - file: docs/products/postgresql/howto/create-manual-backups
               - file: docs/products/postgresql/howto/restore-backup
-              - file: docs/products/postgresql/howto/migrate-cloud-region
               - file: docs/products/postgresql/howto/claim-public-schema-ownership
               - file: docs/products/postgresql/howto/manage-pool
               - file: docs/products/postgresql/howto/pgbouncer-stats
               - file: docs/products/postgresql/howto/use-dblink-extension
               - file: docs/products/postgresql/howto/use-pg-repack-extension
               - file: docs/products/postgresql/howto/enable-jit
-              - file: docs/products/postgresql/howto/repair-pg-index
               - file: docs/products/postgresql/howto/identify-pg-slow-queries
               - file: docs/products/postgresql/howto/pg-long-running-queries
               - file: docs/products/postgresql/howto/optimize-pg-slow-queries
               - file: docs/products/postgresql/howto/check-avoid-transaction-id-wraparound
               - file: docs/products/postgresql/howto/prevent-full-disk
-              
+              - file: docs/products/postgresql/howto/use-pgvector
+                title: Enable and use pgvector
           - file: docs/products/postgresql/howto/list-replication-migration
+            title: Migrate
             entries:
-              - file: docs/products/postgresql/howto/create-read-replica
-              - file: docs/products/postgresql/howto/setup-logical-replication
+              - file: docs/products/postgresql/howto/migrate-cloud-region
               - file: docs/products/postgresql/howto/migrate-aiven-db-migrate
-                entries:
-                - file: docs/products/postgresql/howto/logical-replication-aws-aurora
-                - file: docs/products/postgresql/howto/logical-replication-aws-rds
-                - file: docs/products/postgresql/howto/logical-replication-gcp-cloudsql
               - file: docs/products/postgresql/howto/migrate-pg-dump-restore
               - file: docs/products/postgresql/howto/migrate-using-bucardo
               - file: docs/products/postgresql/howto/run-aiven-db-migrate-python
-          - file: docs/products/postgresql/howto/list-integrations
+          - file: docs/products/postgresql/howto/list-replication
+            title: Replicate
             entries:
-              - file: docs/products/postgresql/howto/connect-psql
-              - file: docs/products/postgresql/howto/connect-pgadmin
-              - file: docs/products/postgresql/howto/connect-rivery
-              - file: docs/products/postgresql/howto/connect-skyvia
-              - file: docs/products/postgresql/howto/connect-zapier
+              - file: docs/products/postgresql/howto/create-read-replica
+              - file: docs/products/postgresql/howto/setup-logical-replication
+              - file: docs/products/postgresql/howto/logical-replication-aws-aurora
+              - file: docs/products/postgresql/howto/logical-replication-aws-rds
+              - file: docs/products/postgresql/howto/logical-replication-gcp-cloudsql
+          - file: docs/products/postgresql/howto/list-manage-cluster
+            title: Manage cluster
+          - file: docs/products/postgresql/howto/list-integrations
+            title: Integrate
+            entries:
               - file: docs/products/postgresql/howto/monitor-database-with-datadog
               - file: docs/products/postgresql/howto/visualize-grafana
               - file: docs/products/postgresql/howto/report-metrics-grafana
               - file: docs/products/postgresql/howto/monitor-with-pgwatch2
               - file: docs/products/postgresql/howto/datasource-integration
               - file: docs/products/postgresql/howto/analyze-with-google-data-studio
+      - file: docs/products/postgresql/troubleshooting
+        title: Troubleshooting
+        entries:
+          - file: docs/products/postgresql/troubleshooting/troubleshooting-connection-pooling
+            title: Connection pooling
+          - file: docs/products/postgresql/howto/repair-pg-index
+            title: Repair index
       - file: docs/products/postgresql/reference
         title: Reference
         entries:
-          - file: docs/products/postgresql/reference/high-cpu-load-of-pgbouncer
-            title: High CPU load
           - file: docs/products/postgresql/reference/list-of-advanced-params
             title: Advanced parameters
-          - file: docs/products/postgresql/reference/list-of-extensions
-            title: Extensions
-          - file: docs/products/postgresql/reference/pg-metrics
-            title: Metrics exposed to Grafana
           - file: docs/products/postgresql/reference/pg-connection-limits
             title: Connection limits per plan
+          - file: docs/products/postgresql/reference/use-of-deprecated-tls-versions
+            title: Deprecated TLS versions
+          - file: docs/products/postgresql/reference/list-of-extensions
+            title: Extensions
+          - file: docs/products/postgresql/reference/idle-connections
+            title: Keep-alive connections parameters
+          - file: docs/products/postgresql/reference/pg-metrics
+            title: Metrics exposed to Grafana
           - file: docs/products/postgresql/reference/resource-capability
             title: Resource capability per plan
-          - file: docs/products/postgresql/reference/terminology
-            title: Terminology
-          - file: docs/products/postgresql/reference/idle-connections
-            title: Idle connections
-          - file: docs/products/postgresql/reference/use-of-deprecated-tls-versions
-            title: Use of deprecated TLS Versions
           - file: docs/products/postgresql/reference/log-formats-supported
             title: Supported log formats
+          - file: docs/products/postgresql/reference/terminology
+            title: Terminology
 
   - file: docs/products/redis
     title: Redis
     entries:
+      - file: docs/products/redis/concepts/overview
+        title: Overview
       - file: docs/products/redis/get-started
-        title: Get started
+        title: Quickstart
       - file: docs/products/redis/concepts
         title: Concepts
         entries:
-          - glob: docs/products/redis/concepts/*
+          - file: docs/products/redis/concepts/high-availability-redis
+            title: High availablilty
+          - file: docs/products/redis/concepts/lua-scripts-redis
+            title: Lua scripts
+          - file: docs/products/redis/concepts/memory-usage
+            title: Memory management and persistence 
       - file: docs/products/redis/howto
         title: HowTo
         entries:
           - file: docs/products/redis/howto/list-code-samples
+            title: Connect to service
             entries:
               - file: docs/products/redis/howto/connect-redis-cli
               - file: docs/products/redis/howto/connect-go
@@ -1008,3 +1237,9 @@ entries:
       title: Catch the Bus - Aiven challenge with ClickHouse
     - file: docs/community/challenge/the-rolling-challenge
       title: Rolling - Aiven challenge with Apache Kafka and Apache Flink
+  
+  - file: docs/tutorials
+    title: Tutorials
+    entries:
+      - file: docs/tutorials/anomaly-detection
+        title: Streaming anomaly detection with Apache Flink, Apache Kafka and PostgreSQL

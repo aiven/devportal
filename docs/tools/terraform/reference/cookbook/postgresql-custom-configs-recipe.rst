@@ -34,7 +34,7 @@ Be sure to check out the :doc:`getting started guide <../../get-started>` to lea
          required_providers {
            aiven = {
              source  = "aiven/aiven"
-             version = "~> 3.10.0"
+             version = ">=4.0.0, < 5.0.0"
            }
          }
        }
@@ -146,7 +146,7 @@ To learn more about these settings, please refer to the PostgreSQL resource cons
 The ``ip_filter`` parameter filters incoming connections based on the mentioned IP addresses. The example of **"0.0.0.0/0"** is an allow-all value. 
 If there are only specific IP addresses that you'd like to allow for clients, you'd put those IP addresses on this list. When you create an Aiven for PostgreSQL service, the database admin username and password are generated for you. You can set your preferred values by using ``admin_username`` and ``admin_password`` parameters.
 
-If you wanted this PostgreSQL service to be a read replica of an existing PostgreSQL service, you could do that by declaring the ``project_to_fork_from``, ``service_to_fork_from`` and setting the value of ``pg_read_replica`` to **true**. Since the service in this example is not a read replica, these configuration lines are commented out.
+If you wanted this PostgreSQL service to be a read-only replica of an existing PostgreSQL service, you could do that by declaring the ``project_to_fork_from``, ``service_to_fork_from`` and setting the value of ``pg_read_replica`` to **true**. Since the service in this example is not a read-only replica, these configuration lines are commented out.
 If you choose to set ``pg_read_replica`` to **true**, then the custom ``admin_username`` and ``admin_password`` will no longer work because the configurations from the master node will be used.
  
 If a transaction is waiting for a client query, there might be a time limit after which you want the session to time out. This is exactly what ``idle_in_transaction_session_timeout`` will do for you if you set a limit. Keep in mind that a value of zero, which is the default value, will disable the timeout.

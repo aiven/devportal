@@ -134,7 +134,26 @@ When creating a Debezium source connector pointing to Aiven for PostgreSQL using
 
     Caused by: org.postgresql.util.PSQLException: ERROR: must be superuser to create FOR ALL TABLES publication
     
-The error is due to Debezium trying to create a publication and failing because ``avnadmin`` is not a superuser. To avoid the problem you need to create the publication on the source database before configuring the connector by:
+The error is due to Debezium trying to create a publication and failing because ``avnadmin`` is not a superuser. There are 2 different ways of working around this issue:
+
+* either add the ``"publication.autocreate.mode": "filtered"`` parameter to the Debezium connector configuration to enable the publication creation only for the tables defined in the ``table.include.list`` parameter
+* or create the publication on the source database before configuring the connector as defined in the section further below.
+
+Note that with older versions of Debezium, there was a bug preventing the addition of more tables to the filter with ``filtered`` mode. As a result, this configuration was not conflicting with a publication ``FOR ALL TABLES``. Starting with Debezium 1.9.7, those configurations are conflicting and you could get the following error:
+
+::
+
+    Caused by: org.postgresql.util.PSQLException: ERROR: publication "dbz_publication" is defined as FOR ALL TABLES
+       Detail: Tables cannot be added to or dropped from FOR ALL TABLES publications.
+
+The error is due to Debezium attempting to include more tables into the publication which is incompatible with ``FOR ALL TABLES``.
+
+You can get rid of this error by removing ``publication.autocreate.mode`` configuration, which will default to ``all_tables``. In case you want to maintain ``filtered`` mode for some reason, then the publication should be recreated accordingly, so as the replication slot.
+
+Create the publication in PostgreSQL
+''''''''''''''''''''''''''''''''''''
+
+To create the publication in PostgreSQL:
 
 * Installing the ``aiven-extras`` extension:
 

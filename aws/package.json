@@ -6,7 +6,7 @@
   "dependencies": {
     "@aws-sdk/client-secrets-manager": "^3.204.0",
     "@opensearch-project/opensearch": "^1.0.2",
-    "aws-sdk": "^2.799.0",
+    "aws-sdk": "^2.1364.0",
     "pg": "^8.7.3"
   },
   "devDependencies": {

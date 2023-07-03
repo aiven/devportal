@@ -23,8 +23,7 @@ If your Aiven for PostgreSQL® service is running a *Business* or *Premium* plan
 
 To reduce the effect of slow queries on the primary node, you can redirect read-only queries to the additional :doc:`read-only <create-read-replica>` nodes by directly connecting via the **read-only replica URL** .
 
-Move read-only queries to a remote read replica
------------------------------------------------
+Move read-only queries to a remote read-only replica
+----------------------------------------------------
 
-You can also create a :doc:`remote read replica <create-read-replica>` services in the same or different cloud/region providing a dedicated read-only service that you can use to reduce the query load on the primary service for read-only queries.
-
+You can also create a :doc:`remote read-only replica <create-read-replica>` services in the same or different cloud/region providing a dedicated read-only service that you can use to reduce the query load on the primary service for read-only queries.

@@ -50,6 +50,12 @@
 /docs/products/flink/howto/create-job.html                             /docs/products/flink/howto/create-job/create-flink-applications.html 
 /docs/products/flink/concepts/flink-for-analysts.html                  /docs/products/flink/list-overview.html
 /docs/products/flink/concepts/flink-for-operators.html                 /docs/products/flink/list-overview.html
+/docs/products/flink/howto/real-time-alerting-solution                 /docs/tutorials/anomaly-detection
+/docs/products/flink/howto/real-time-alerting-solution.html            /docs/tutorials/anomaly-detection.html
+/docs/products/postgresql/reference/high-cpu-load-of-pgbouncer.html    /docs/products/postgresql/troubleshooting/troubleshooting-connection-pooling.html
+/docs/products/clickhouse/concepts/databases-and-tables.html           /docs/products/clickhouse/howto/manage-databases-tables.html
+/docs/products/clickhouse/howto/integrate-pg.html                      /docs/products/clickhouse/howto/integrate-postgresql.html
+/docs/platform/concepts/byoa.html                                      /docs/platform/concepts/byoc.html
 
 # Redirect from .index.html to specific page names for landing
 

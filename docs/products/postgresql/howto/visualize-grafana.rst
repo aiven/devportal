@@ -7,7 +7,7 @@ PostgreSQL® can hold a wide variety of types of data, and creating visualisatio
 Integrate PostgreSQL and Grafana
 --------------------------------
 
-1. On the service overview page for your PostgreSQL service, go to **Manage Integrations** and choose the **datasource** option.
+1. On the service overview page for your PostgreSQL service, go to **Manage Integrations** and choose the **Monitor Data in Grafana** option.
 
 2. Choose either a new or existing Grafana service.
 

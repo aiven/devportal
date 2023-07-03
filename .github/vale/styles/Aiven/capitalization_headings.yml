@@ -15,17 +15,20 @@ exceptions:
   - Aiven Console
   - Apache
   - AWS Transit Gateway
+  - AWS Marketplace
   - Auth0
   - Azure
   - Azure Marketplace
   - Boot
   - Business
-  - BYOA
+  - BYOC
   - Cassandra
   - ClickHouse
   - CloudWatch
+  - Cloud Logging
   - Connect
   - Connector
+  - Confluent Avro
   - Cookbook
   - Couchbase
   - Dashboards
@@ -41,9 +44,11 @@ exceptions:
   - GiB
   - GitHub
   - Go
+  - Google
   - Google BigQuery
-  - Google Cloud Platform
+  - Google Cloud Logging
   - Google Cloud Marketplace
+  - Google Cloud Platform
   - Google Cloud Storage
   - Google Cloud SQL
   - Google Data Studio
@@ -61,6 +66,7 @@ exceptions:
   - JMX
   - JobManager
   - Jolokia
+  - JumpCloud
   - Kafdrop
   - Kafka
   - Karapace
@@ -81,15 +87,19 @@ exceptions:
   - Okta
   - OneLogin
   - OpenSearch
+  - OpenSearch®* Dashboard
+  - OpenSearch®* Security
   - Operator
   - Out of Memory Killer
   - Pagila
   - pgAdmin
   - PgBouncer
+  - pgvector
   - PostgreSQL
   - Postman
   - Premium
   - Private Link
+  - Private Service Connect
   - Project
   - Prometheus
   - Provectus
@@ -108,6 +118,7 @@ exceptions:
   - Spring
   - SQL Server
   - Startup
+  - 'Step \d+: \w+'
   - Sumo Logic
   - TaskManager
   - Telegraf

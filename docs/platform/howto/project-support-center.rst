@@ -1,35 +1,38 @@
-Get support in the Aiven console
+Get support in the Aiven Console
 =================================
 
-Aiven is committed to providing excellent and responsive support to all of our customers. We are constantly monitoring our services 24/7 and rapidly addressing any anomalies.
+Aiven is committed to providing excellent and responsive support to all of our customers. We monitor our services 24/7 and rapidly address any anomalies.
 
-In addition to our standard support, we offer three additional tiers that include faster response times and phone support. For more information about support plans, please see `Aiven support details page <https://aiven.io/support-services>`_ or contact sales@Aiven.io to discuss premium support.
+The Basic support tier is provided to all customers on paid plans. If you are using a free service, you can ask questions in the Aiven Community Forum. 
 
+In addition to the Basic support tier, we offer three additional tiers that offer faster response times, phone support, and other services. For more information about support plans, please see `Aiven support details page <https://aiven.io/support-services>`_ or contact sales@Aiven.io to discuss the paid support options.
 
-You can create and track support tickets in the Project Support Center in the `Aiven Console <https://console.aiven.io/>`_.
+You can create and track support tickets in the `Aiven Console <https://console.aiven.io/>`_ following the instructions on this page. For other services included in your support tier - such as business reviews or disaster recovery planning - contact the sales team at sales@Aiven.io.
 
 Create a support ticket
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 To create support tickets in the `Aiven Console <https://console.aiven.io/>`_:
 
-#. Click **Support** to open the Project Support Center.
-#. Click **Open support ticket**. 
-#. Enter a title and detailed description of the issue that you're experiencing. 
-#. Select the affected service and a severity level.
+#. Click **Support**.
+
 #. Click **Create ticket**. 
 
-Your new ticket is sent to our support team for review and you also receive an confirmation email. You can reply to this email to update your ticket with new information. Replies from the Aiven support team will be sent directly to your email.
+#. Enter a **Subject** and detailed **Description** of the issue. 
 
-You can also track the status of your tickets and review them from the project support center.
+   .. note::
 
-Add followers to an open ticket
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Include the following information in the description to help the support team provide timely assistance:
+   
+    * The affected functionality (for example, networking, metrics, deployment)
+    * Steps to reproduce the problem
+    * Any error messages
+    * Any languages or frameworks you are using
 
-If other users want to track and manage a ticket, the owner can add them to an open ticket by the owner of the ticket:
+#. Select the affected project, service, and a severity level.
 
-#. Click **Support** to open the Project Support Center.
-#. Find the ticket you want to add users to in the list and click **Add follower**. 
-#. Select the user's email and click **Add follower**.
+#. Click **Create ticket**. 
 
-You can also add users to a ticket by copying them into the support ticket email. 
+The new support ticket is sent to our support team for review and you also receive a confirmation email. `Response times <https://aiven.io/support-services>`_ vary by case severity and support tier. 
+
+You can track the status of your tickets from the project support center, but information and updates are sent directly to your email address. You can update your ticket's details and communicate with the support team by replying to these emails. If you are on a paid support tier, your account team is also notified.

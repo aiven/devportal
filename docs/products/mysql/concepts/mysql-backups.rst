@@ -8,6 +8,10 @@ The number of stored backups and backup retention time depends on your `Aiven se
     
     One thing to consider is that you may modify the backup time configuration option in **Advanced Configuration** in the `Aiven web console <https://console.aiven.io>`_ which will begin shifting the backup schedule to the new time. If there was a recent backup taken, it may take another backup cycle before it starts applying new backup time.
 
+.. note::
+    
+    To be able to safely make backups, MySQL INSTANT ALTER TABLE always use the INPLACE or COPY algorithm instead of INSTANT. Specifying ALGORITHM=INSTANT does not fail but automatically falls back to INPLACE or COPY as needed.
+
 MySQL backups and encryption
 ----------------------------
 
