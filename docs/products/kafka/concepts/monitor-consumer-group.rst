@@ -32,7 +32,7 @@ Consumer group graph: consumer group replication lag
 ```````````````````````````````````````````````````````
 Consumer group lag is an important metric in your Apache Kafka dashboard. It shows how far behind the consumers in a group are in consuming messages on the topic. A significant lag could indicate one of two scenarios - terminated consumers or consumers who are alive but unable to keep up with the rate of incoming messages. Persistent lag for long durations may indicate that the system is not behaving according to plan, requiring investigation and follow-up actions to resolve the issue.
 
-The terms ``Consumer group lag`` and ``Consumer group replication lag`` can be used interchangeably. Consumer Group Lag is typically a metric provided by the client side, while Aiven computes its metric known as Consumer Group Replication Lag (``kafka_consumer_group_rep_lag``) by fetching information about partitions and consumer groups. This metric captures the difference between the latest published offset (high watermark) and the consumer group offset for the same partition.
+The terms ``Consumer group lag`` and ``Consumer group replication lag`` can be used interchangeably. Consumer Group Lag is typically a metric provided by the client side, while Aiven computes its metric known as Consumer Group Replication Lag (``kafka_consumer_group_rep_lag``) by fetching information about partitions and consumer groups from broker side. This metric captures the difference between the latest published offset (high watermark) and the consumer group offset for the same partition.
 
 The consumer group graph below, which is enabled by default, provides valuable insights into consumer behavior. It displays the consumer group replication lag, indicating how far behind the consumers are in consuming messages from a topic. This graph provides information about consumer behavior, enabling you to take appropriate action if necessary.
 
@@ -43,7 +43,7 @@ The consumer group graph below, which is enabled by default, provides valuable i
 
 Consumer group offset telemetry
 `````````````````````````````````
-In Apache Kafka, partitions are divided into individual units called cells, and each cell is assigned a unique incremental number called the offset. These offsets indicate the exact position of messages within the partition.
+In Apache Kafka, messages are written into a partition as append-only logs and each message is assigned a unique incremental number called the offset. These offsets indicate the exact position of messages within the partition.
 
 Aiven for Apache Kafka provides offset telemetry, which can help understand message consumption patterns and troubleshoot issues. The ``kafka_consumer_group_offset`` metric identifies the consumer group's most recent committed offset, which can be used to determine its relative position within the assigned partitions.
 
