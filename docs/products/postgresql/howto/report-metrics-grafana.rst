@@ -9,7 +9,7 @@ Push PostgreSQL metrics to InfluxDB® or M3DB
 
 To collect metrics about your PostgreSQL service you will need to configure a metrics integration and nominate somewhere to store the collected metrics.
 
-1. On the service overview page for your PostgreSQL service, go to "Manage Integrations" and choose the "Metrics" option with "**Send** service metrics to InfluxDB or M3DB service" as its description.
+1. In the **Overview** page of your Aiven for PostgreSQL service, go to **Manage integrations** and choose the **Store Metrics** option with **Store service metrics in a time-series database** as its description.
 
 2. Choose either a new or existing InfluxDB® or M3DB service.
 
@@ -19,20 +19,20 @@ To collect metrics about your PostgreSQL service you will need to configure a me
 Provision and configure Grafana
 -------------------------------
 
-3. Select the target InfluxDB or M3DB service and go to its service page. Under "Manage Integrations", choose the "Dashboard" option to make the metrics available on that platform.
+1. Select the target InfluxDB, M3DB or PostgreSQL database service and go to its service page. Under **Manage integrations**, choose the **Monitor Data in Grafana** option to make the metrics available on that platform.
 
-4. Choose either a new or existing Grafana service.
+2. Choose either a new or existing Grafana service.
     - A new service will ask you to select the cloud, region and plan to use. You should also give your service a name. The service overview page shows the nodes rebuilding, and then indicates when they are ready.
     - If you're already using Grafana on Aiven, you can integrate your M3DB as an additional data source for that existing Grafana.
 
-5. On the service overview page for your Grafana service, click the "Service URI" link. The username and password for your Grafana service is also available on the service overview page.
+3. On the **Overview** page for your Aiven for Grafana service, select the **Service URI** link. The username and password for your Grafana service is also available on the service's **Overview** page.
 
 Now your Grafana service is connected to M3DB as a data source and you can go ahead and visualize your PostgreSQL metrics.
 
 Open PostgreSQL metrics prebuilt dashboard
 ------------------------------------------
 
-In Grafana, go to "Dashboards" and "Manage" and double click on the dashboard that bears name of the metrics database.
+In Grafana, go to **Dashboards** and **Manage**, and double click on the dashboard that bears name of the metrics database.
 
 .. image:: /images/products/postgresql/metrics-dashboard-manage.png
    :alt: Screenshot of a Grafana Manage Dashboards panel

@@ -19,11 +19,11 @@ You can upgrade the Aiven for PostgreSQL service plan via the `Aiven console <ht
 
 To perform a plan upgrade via the `Aiven console <https://console.aiven.io/>`_:
 
-#. Go to the Aiven for PostgreSQL service page
-#. In the *Overview* tab scroll down to the **Service plan** section and click on **Upgrade Plan**
-#. Select the new plan with higher capacity and click **Upgrade**.
+1. Log in to `Aiven Console <https://console.aiven.io/>`_, and select your Aiven for PostgreSQL service.
+2. In the **Overview** page of your service, scroll down to the **Service plan** section, and select **Change plan**.
+3. In the **Change service plan** window, select a new plan with a higher capacity, and select **Change**.
 
-Once the new nodes with increased disk capacity are up and running, the disk usage returns to below the critical level and the system automatically sets the ``default_transaction_read_only`` parameter to ``OFF`` allowing write operations again.
+Once the new nodes with the increased disk capacity are up and running, the disk usage drops below the critical level and the system automatically sets the ``default_transaction_read_only`` parameter to ``OFF`` allowing write operations again.
 
 .. Note::
 

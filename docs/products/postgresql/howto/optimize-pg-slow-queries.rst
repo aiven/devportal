@@ -13,8 +13,7 @@ Handle an increase in database connections
 
 When your application code scales horizontally to accommodate high loads, you might find that you inadvertently reach the :doc:`connection limits <../reference/pg-connection-limits>` for your plan. Each connection in PostgreSQL runs in a separate process, and this makes them more expensive (compared to threads, for example) in terms of inter-process communication and memory usage, since each connection consumes a certain amount of RAM.
 
-In such cases, you can use the :doc:`connection pooling <../concepts/pg-connection-pooling>`, based on `PgBouncer <https://www.pgbouncer.org>`_, to handle an increase in database connections. You can add and configure the connection pooling for your service on the **Pools** tab in the Aiven console.
-
+In such cases, you can use the :doc:`connection pooling <../concepts/pg-connection-pooling>`, based on `PgBouncer <https://www.pgbouncer.org>`_, to handle an increase in database connections. You can add and configure the connection pooling for your service in the **Pools** view in `Aiven Console <https://console.aiven.io/>`_.
 
 Move read-only queries to standby nodes
 ---------------------------------------

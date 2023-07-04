@@ -7,14 +7,14 @@ PostgreSQL® can hold a wide variety of types of data, and creating visualisatio
 Integrate PostgreSQL and Grafana
 --------------------------------
 
-1. On the service overview page for your PostgreSQL service, go to **Manage Integrations** and choose the **Monitor Data in Grafana** option.
+1. On the **Overview** page for your Aiven for PostgreSQL service, go to **Manage integrations** and choose the **Monitor Data in Grafana** option.
 
 2. Choose either a new or existing Grafana service.
 
    - A new service will ask you to select the cloud, region and plan to use. You should also give your service a name. The service overview page shows the nodes rebuilding, and then indicates when they are ready.
    - If you're already using Grafana on Aiven, you can integrate your PostgreSQL as a data source for that existing Grafana.
 
-3. On the service overview page for your Grafana service, click the "Service URI" link. The username and password for your Grafana service is also available on the service overview page.
+3. On the **Overview** page for your Aiven for Grafana service, select the **Service URI** link. The username and password for your Grafana service is also available on the service's **Overview** page.
 
 Now your Grafana service is connected to PostgreSQL as a data source and you can go ahead and visualise your data.
 
