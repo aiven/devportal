@@ -1,5 +1,5 @@
-Migrate from Redis®* database using Aiven Console
-==========================================================
+Migrate from Redis®* to Aiven for Redis®* using Aiven Console
+===============================================ß================
 
 Redis®* is an open-source, in-memory data structure store used as a database, cache, message broker, and streaming engine.
 
@@ -39,7 +39,7 @@ Follow these steps to migrate a Redis®* database to Aiven for Redis®* service:
 3. Select **Set up migration**.
 4. You will see a wizard that guides you through the database migration process. 
 
-Step 1 - Configure
+Step 1: Configure
 `````````````````````
 Read through the guidelines on the Redis migration wizard and select **Get started** to proceed with the database migration.
 
@@ -47,7 +47,7 @@ Read through the guidelines on the Redis migration wizard and select **Get start
     :width: 500px
     :alt: Screenshot of the database migration wizard
 
-Step 2 - Validation
+Step 2: Validation
 `````````````````````
 1. On the **Database connection and validation** screen, enter the following information to establish a connection to your source database:
 
@@ -64,7 +64,7 @@ Step 2 - Validation
        :width: 500px
        :alt: Connect to database
 
-Step 3 - Migration
+Step 3: Migration
 ```````````````````
 On the **Database migration** screen, select **Start Migration** to begin the migration.
 
