@@ -94,7 +94,7 @@ Optional settings
 
 For each table, you can define the following:
 
-.. list-table:: Optional settings
+.. list-table::
    :widths: 10 30 5 5 5 5
    :header-rows: 1
 
@@ -108,20 +108,20 @@ For each table, you can define the following:
      - Action to take when there is no initial offset in the offset store or the desired offset is out of range
      - ``earliest``
      - ``smallest``, ``earliest``, ``beginning``, ``largest``, ``latest``, ``end``
-     - -
-     - -
+     - --
+     - --
    * - ``date_time_input_format``
      - Method to read ``DateTime`` from text input formats
      - ``basic``
      - ``basic``, ``best_effort``, ``best_effort_us``
-     - -
-     - -
+     - --
+     - --
    * - ``handle_error_mode``
      - Method to handle errors for the Kafka engine
      - ``default``
      - ``default``, ``stream``
-     - -
-     - -
+     - --
+     - --
    * - ``max_block_size``
      - Number of rows collected by poll(s) for flushing data from Kafka
      - ``0``
