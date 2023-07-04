@@ -104,49 +104,49 @@ For each table, you can define the following:
      - Allowed values
      - Minimum value
      - Maximum value
-   * - auto_offset_reset
+   * - ``auto_offset_reset``
      - Action to take when there is no initial offset in the offset store or the desired offset is out of range
      - earliest
      - smallest, earliest, beginning, largest, latest, end
      - -
      - -
-   * - date_time_input_format
+   * - ``date_time_input_format``
      - Method to read ``DateTime`` from text input formats
      - basic
      - basic, best_effort, best_effort_us
      - -
      - -
-   * - handle_error_mode
+   * - ``handle_error_mode``
      - Method to handle errors for the Kafka engine
      - default
      - default, stream
      - -
      - -
-   * - max_block_size
+   * - ``max_block_size``
      - Number of rows collected by poll(s) for flushing data from Kafka
      - 0
      - 0 - 1_000_000_000
      - 0
      - 1_000_000_000
-   * - max_rows_per_message
+   * - ``max_rows_per_message``
      - Maximum number of rows produced in one Kafka message for row-based formats
      - 1
      - 1 - 1_000_000_000
      - 1
      - 1_000_000_000
-   * - num_consumers
+   * - ``num_consumers``
      - Number of consumers per table per replica
      - 1
      - 1 - 10
      - 1
      - 10
-   * - poll_max_batch_size
+   * - ``poll_max_batch_size``
      - Maximum amount of messages to be polled in a single Kafka poll
      - 0
      - 0 - 1_000_000_000
      - 0
      - 1_000_000_000
-   * - skip_broken_messages
+   * - ``skip_broken_messages``
      - Minimum number of broken messages from Kafka topic per block to be skipped
      - 0
      - 0 - 1_000_000_000
