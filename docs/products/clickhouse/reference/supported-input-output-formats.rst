@@ -6,9 +6,12 @@ When connecting ClickHouse® to Kafka® using Aiven integrations, data exchange 
 ============================     ====================================================================================
 Format name                      Notes
 ============================     ====================================================================================
-Avro                             Only supports binary Avro format with embedded schema.
+Avro                             Binary Avro format with embedded schema.
 
                                  Libraries and documentation: https://avro.apache.org/
+AvroConfluent                    Binary Avro with schema registry.
+
+                                 Requires the Karapace Schema Registry to be enabled in the Kafka service.
 CSV                              Example: ``123,"Hello"``
 JSONASString                     Example: ``{"x":123,"y":"hello"}``
 JSONCompactEachRow               Example: ``[123,"Hello"]``
