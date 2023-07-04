@@ -76,3 +76,16 @@ You can enable public internet access for your services by following the :doc:`E
 IP filtering (the Allowed IP Addresses list on the service overview page) is still available for a service deployed to a VPC where both public and private access are allowed. We recommend that you use IP filtering when your VPC service is also exposed to the public internet.
 
 Also note that safelisting applies to both internal and external traffic. If you safelist an external IP address and want to keep traffic flowing with the internal (peered) connections, make sure that you safelist the CIDR blocks of the peered networks as well to avoid disruptions to the service.
+
+Troubleshoot VPC connection issues
+-------------------------------------
+
+Any network changes to VPC peered hosts external from Aiven can cause issues with routing to your Aiven services hosted in a VPC. To troubleshoot such issues, take the following steps:
+
+1. In `Aiven Console <https://console.aiven.io/>`_, select **VPC**.
+2. Find the ID of the affected VPC and select it from the **Internal ID** column.
+3. Select **Refresh VPC connections**.
+
+As a result, the platform checks the VPC peering connection and rebuilds the peering connection state if there are any changes detected.
+
+For any other issues, open a support ticket from Aiven Console to get in touch with the support team and/or see :doc:`Get support in the Aiven Console </docs/platform/howto/project-support-center>`.
