@@ -121,7 +121,7 @@
 ---------------
 *['integer', 'null']*
 
-**The hour of day (in UTC) when backup for the service is started. New backup is only started if previous backup has already completed.** 
+**Hour of the day (in UTC) when the backup for the service is started. A new backup is only started if the previous backup has already completed.** 
 
 
 
@@ -129,7 +129,7 @@
 -----------------
 *['integer', 'null']*
 
-**The minute of an hour when backup for the service is started. New backup is only started if previous backup has already completed.** 
+**Minute of the hour when the backup for the service is started. A new backup is only started if the previous backup has already completed.** 
 
 
 
