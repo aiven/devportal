@@ -92,7 +92,7 @@ For each table, you need to define the following:
 Optional settings
 '''''''''''''''''
 
-For each table, you can define the following:
+For each table, you can define the following optional settings:
 
 .. list-table::
    :widths: 10 30 5 5 5 5
