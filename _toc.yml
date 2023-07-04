@@ -1213,8 +1213,11 @@ entries:
           - file: docs/products/redis/howto/list-dba-tasks
             entries:
               - file: docs/products/redis/howto/configure-acl-permissions
-              - file: docs/products/redis/howto/migrate-aiven-redis
-              - file: docs/products/redis/howto/migrate-redis-aiven-via-console
+              - file: docs/products/redis/howto/migrate-redis-db
+                title: Data migration
+                entries:
+                - file: docs/products/redis/howto/migrate-aiven-redis
+                - file: docs/products/redis/howto/migrate-redis-aiven-via-console
           - file: docs/products/redis/howto/estimate-max-number-of-connections
           - file: docs/products/redis/howto/manage-ssl-connectivity
           - file: docs/products/redis/howto/warning-overcommit_memory
