@@ -306,6 +306,7 @@ entries:
           - file: docs/products/kafka/concepts/auth-types
           - file: docs/products/kafka/concepts/non-leader-for-partition
           - file: docs/products/kafka/concepts/configuration-backup
+          - file: docs/products/kafka/concepts/monitor-consumer-group
           - file: docs/products/kafka/concepts/kafka-quotas
             title: Quotas
       - file: docs/products/kafka/howto
