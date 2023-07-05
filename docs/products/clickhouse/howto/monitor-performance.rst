@@ -8,7 +8,7 @@ Push ClickHouse® metrics to InfluxDB®, M3DB, or PostgreSQL®
 
 To collect metrics about your ClickHouse® service, you will need to configure a metrics integration and nominate somewhere to store the collected metrics.
 
-1. On the service **Overview** page for your ClickHouse® service, go to **Manage Integrations** and choose the **Metrics** option with *Send service metrics to InfluxDB, M3DB or PostgreSQL service* as its description.
+1. On the service **Overview** page for your ClickHouse® service, go to **Manage integrations** and choose the **Store Metrics** option with **Store service metrics in a time-series database** as its description.
 
 2. Choose either a new or existing InfluxDB®, M3DB, or PostgreSQL® service.
 
@@ -18,7 +18,7 @@ To collect metrics about your ClickHouse® service, you will need to configure a
 Provision and configure Grafana®
 --------------------------------
 
-1. Select the target InfluxDB, M3DB, or PostgreSQL database service and go to its service page. Under **Manage Integrations**, select **Dashboard** to make the metrics available on that platform.
+1. Select the target InfluxDB, M3DB, or PostgreSQL database service and go to its service page. Under **Manage integrations**, select **Grafana Metrics Dashboard** to make the metrics available on that platform.
 
 2. Choose either a new or existing Grafana® service.
 

@@ -8,20 +8,22 @@ Add a new user
 
 To create a new user account for your service,
 
-1. Log in to the `Aiven web console <https://console.aiven.io/>`_ and select your ClickHouse® service.
+1. Log in to the `Aiven web console <https://console.aiven.io/>`_ and, select your ClickHouse® service.
 
-#. Select **Users & Roles**.
+#. Select **Users and roles** from the sidebar of your service's page.
 
    This page shows you a list of all the users that are currently available in your service. The default ``avnadmin`` user has all available access grants to the service.
 
    .. tip::
-      To view the roles and grants for any of the listed users, click **View Details & Grants** for that user.
+      To view the roles and grants for any of the listed users, select **View details & grants** for that user.
 
-#. Enter a name for the new user and select a role.
+#. In the **Users and roles** page, select **Add user**.
+
+#. In the **Create a new service user** window, enter a name for the new user and select a role.
 
    The role that you select defines the access grants that are assigned to the user. For more information on roles, see :ref:`Manage roles and permissions <manage-roles-and-permissions>`.
 
-#. Select **Add User**.
+#. Select **Add user**.
 
    This creates the new user and shows you a summary of the information.
 
@@ -138,4 +140,4 @@ Run the following commands to see all available grants, users, and roles::
 Preview users and roles in the console
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can also see the users, their roles and permissions in the  `Aiven web console <https://console.aiven.io/>`_. You will find these on the *Users & Roles* tab of your service. Next to every user there is a **View Details & Grants** button that shows you a list of all grants for that user.
+You can also see the users, their roles, and permissions in the  `Aiven web console <https://console.aiven.io/>`_. Go to your service page, and select **Users and roles** from the sidebar. Next to every user listed, there is a **View details & grants** button, which shows you a list of all grants for that user.
