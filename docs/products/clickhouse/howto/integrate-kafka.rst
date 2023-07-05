@@ -264,21 +264,6 @@ You can also bring the entries from ClickHouse table into the Apache Kafka topic
 .. _reference:
 
 Reference
-----------
+---------
 
-When connecting ClickHouse® to Kafka® using Aiven integrations, data exchange is possible with the following formats only:
-
-============================     ====================================================================================
-Format                           Example
-============================     ====================================================================================
-CSV                              ``123,"Hello"``
-JSONASString                     ``{"x":123,"y":"hello"}``
-JSONCompactEachRow               ``[123,"Hello"]``
-JSONCompactStringsEachRow        ``["123","Hello"]``
-JSONEachRow                      ``{"x":123,"y":"hello"}``
-JSONStringsEachRow               ``{"x":"123","y":"hello"}``
-MsgPack                          ``{\xc4\x05hello``
-TSKV                             ``x=123\ty=hello``
-TSV                              ``123\thello``
-TabSeparated                     ``123\thello``
-============================     ====================================================================================
+When connecting ClickHouse® to Kafka® using Aiven integrations, data exchange requires using specific formats. Check the supported formats for input and output data in :doc:`Formats for ClickHouse®-Kafka® data exchange </docs/products/clickhouse/reference/supported-input-output-formats>`.
