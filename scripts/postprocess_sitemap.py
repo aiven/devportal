@@ -23,4 +23,3 @@ for url in urls:
 
 with open('./_build/html/sitemap.xml', 'w') as f:
     f.write(str(soup))
-    
