@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 with open('./_build/html/sitemap.xml', 'r') as f:
     contents = f.read()
 
-soup = BeautifulSoup(contents, 'lxml')
+soup = BeautifulSoup(contents, 'xml')
 
 urls = soup.find_all('url')
 
