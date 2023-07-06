@@ -31,9 +31,11 @@ Pre-requisites
 * MySQL JDBC Driver, which could be downloaded in the following ways:
 
   * Manually from `MySQL Community Downloads <https://dev.mysql.com/downloads/connector/j/>`_
-  * Or using maven::
+  * Or using maven
 
-    mvn org.apache.maven.plugins:maven-dependency-plugin:2.8:get -Dartifact=mysql:mysql-connector-java:8.0.28:jar -Ddest=mysql-driver-8.0.28.jar
+    .. code-block:: mvn
+
+       mvn org.apache.maven.plugins:maven-dependency-plugin:2.8:get -Dartifact=mysql:mysql-connector-java:8.0.28:jar -Ddest=mysql-driver-8.0.28.jar
 
 Code
 ''''

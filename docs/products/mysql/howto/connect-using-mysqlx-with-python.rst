@@ -1,7 +1,7 @@
 Connect to Aiven for MySQL® using MySQLx with Python
 ====================================================
 
-Enabling the MySQLx protocol support allows yout to use your MySQL instance as a document store. This example shows how to connect to your Aiven for MySQL® instance using MySQLx protocol.
+Enabling the MySQLx protocol support allows you to use your MySQL instance as a document store. This example shows how to connect to your Aiven for MySQL® instance using MySQLx protocol.
 
 .. note::
 
