@@ -39,20 +39,12 @@ Create data service integrations
 --------------------------------
 
 1. Log in to the `Aiven web console <https://console.aiven.io/>`_.
-2. From the **Current services** list, select an Aiven for ClickHouse service you want to integrate with a data service.
-3. Select **Get started** from the **Integrate your Aiven for ClickHouse** section in the **Overview** tab of your service.
-
-   .. image:: /images/products/clickhouse/data-integration/start-data-integration.png
-      :width: 700px
-      :alt: Start data service integration
+2. In the **Services** page, select an Aiven for ClickHouse service you want to integrate with a data service.
+3. Select **Get started** from the **Integrate your Aiven for ClickHouse** section in the **Overview** page of your service.
 
 4. In the **Data service integrations** wizard, select one of the following options:
 
 * To create a new service and integrate it, make sure the checkboxes for both service types are unchecked.
-
-  .. image:: /images/products/clickhouse/data-integration/new-data-integration-service.png
-     :width: 700px
-     :alt: Create new service to integrate with
 
   .. dropdown:: Expand for next steps
 
@@ -66,10 +58,6 @@ Create data service integrations
 
 * To create an integration with an existing service, select a type of service you want to integrate with (Aiven for Apache Kafka or Aiven for PostgreSQL).
 
-  .. image:: /images/products/clickhouse/data-integration/select-data-service.png
-     :width: 700px
-     :alt: Select data service
-
   .. dropdown:: Expand for next steps
 
     1. Select a service of the chosen type from the list of services available for integration.
@@ -79,74 +67,38 @@ Create data service integrations
 
 5. In the **Integration databases** view, select either **Enable without databases** or **Add databases** depending on whether you want to enable your integration with databases.
 
-   .. image:: /images/products/clickhouse/data-integration/enable-data-integration.png
-      :width: 700px
-      :alt: Enable integration
-
    .. dropdown:: Expand for enabling your integration with databases
 
       1. In the **Integration databases** view, select **Add databases**.
       2. In the **Add integration databases** section, enter database names and schema names and select **Enable** when ready.
 
-      .. image:: /images/products/clickhouse/data-integration/enable-with-database.png
-         :width: 700px
-         :alt: Enable with database
-
-      As a result, you can see the created databases in the **Databases & Tables** tab.
-
-      .. image:: /images/products/clickhouse/data-integration/preview-integration-database.png
-         :width: 700px
-         :alt: Enabled with database
+      You can preview the created databases by selecting **Databases  tables** from the sidebar.
 
    .. dropdown:: Expand for enabling your integration without databases
 
       In the **Integration databases** view, select **Enable without databases**.
       
-      As a result, you can see the created integration in the **Overview** tab.
-
-      .. image:: /images/products/clickhouse/data-integration/enabled-no-database.png
-         :width: 700px
-         :alt: Integration created
+      You can preview the created integration by selecting **Overview** from the sidebar.
 
 View data service integrations
 ------------------------------
 
 1. Log in to the `Aiven web console <https://console.aiven.io/>`_.
-2. From the **Current services** list, select an Aiven for ClickHouse service you want to check integrations for.
-3. Navigate to the **Data service integration** section in the **Overview** tab of your service to discover your integrations grouped according to service types (PostgreSQL or Apache Kafka).
-
-   .. image:: /images/products/clickhouse/data-integration/enabled-no-database.png
-      :width: 700px
-      :alt: Integrations overview
+2. In the **Services** page, select an Aiven for ClickHouse service you want to check integrations for.
+3. In the **Overview** page of your service, find the **Data service integration** section at the top and discover your integrations grouped according to service types (PostgreSQL or Apache Kafka).
 
 4. Select the meatball menu for a particular service group to preview active data service integrations within that group.
-
-   .. image:: /images/products/clickhouse/data-integration/preview-data-integration.png
-      :width: 700px
-      :alt: Preview data integrations
 
 Stop data service integrations
 ------------------------------
 
 1. Log in to the `Aiven web console <https://console.aiven.io/>`_.
-2. From the **Current services** list, select an Aiven for ClickHouse service you want to stop integrations for.
-3. Navigate to the **Data service integration** section in the **Overview** tab of your service and select the meatball menu for a service group that your unwanted integration belongs to.
-
-   .. image:: /images/products/clickhouse/data-integration/enabled-no-database.png
-      :width: 700px
-      :alt: Select an integration group
+2. In the **Services** page, select an Aiven for ClickHouse service you want to stop integrations for.
+3. In the **Overview** page of your service, find the **Data service integration** section at the top and select the meatball menu for a service group that your unwanted integration belongs to.
 
 4. From the **Active data service integrations** list, select the service integration that you no longer need and select **Disconnect integration**.
 
-   .. image:: /images/products/clickhouse/data-integration/select-for-disconnect.png
-      :width: 700px
-      :alt: Select an integrated service
-
 5. In the **Warning** popup, study the impact of disconnecting from a service and select **Disconnect integration** if you accept erasing all the databases and configuration information.
-
-   .. image:: /images/products/clickhouse/data-integration/disconnect-integration.png
-      :width: 700px
-      :alt: Disconnect integration
 
 .. topic:: Result
 
