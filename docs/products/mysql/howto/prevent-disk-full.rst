@@ -25,7 +25,7 @@ Read the help article `MySQL disk usage <https://docs.aiven.io/docs/products/mys
 Upgrade to a larger plan
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-This can be done from within the Aiven console or with Aiven CLI client. New nodes with more disk capacity will be launched, and your existing data will be synced to those new nodes. Once the migration is completed, the disk usage will return to below the critical level and the read-only state will be canceled, allowing writes to be made once more.
+This can be done from within `Aiven Console <https://console.aiven.io/>`__ or with the :doc:`Aiven CLI </docs/tools/cli>` client. New nodes with more disk capacity are launched, and your existing data is synced to those new nodes. Once the migration is completed, the disk usage drops below the critical level and the read-only state is canceled, allowing writes to be made once more.
 
 Delete data
 ~~~~~~~~~~~
