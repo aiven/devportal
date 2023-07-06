@@ -12,7 +12,7 @@ Nosqlbench can be downloaded as a Linux binary executable called ``nb``. The ``n
 
 .. Tip::
 
-   You can read more about the nosqlbench core concepts and parameters in the `dedicated documentation <https://docs.nosqlbench.io/docs/nosqlbench/core-concepts/>`_
+   You can read more about the nosqlbench core concepts and parameters in the `dedicated documentation <https://docs.nosqlbench.io/introduction/core-concepts/>`_
 
 Variables
 -------------

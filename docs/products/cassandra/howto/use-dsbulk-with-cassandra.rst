@@ -12,7 +12,7 @@ To install the latest release of DSBulk, download the ``.zip`` or ``.tar.gz`` fi
 
 .. Tip::
 
-   You can read more about the DSBulk different use cases and manual pages in the `dedicated documentation <https://docs.datastax.com/en/dsbulk/docs/getStartedDsbulk.html>`_
+   You can read more about the DSBulk different use cases and manual pages in the `dedicated documentation <https://docs.datastax.com/en/dsbulk/docs/getting-started/getting-started.html>`_
 
 Variables
 ---------

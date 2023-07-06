@@ -28,7 +28,7 @@ Here are the steps to upgrade a PostgreSQL service:
 
 2. In the **Overview** page of your service, scroll down to the **PostgreSQL version** section, and select **Upgrade version**.
 
-3. In the **Upgrade Aiven PostgreSQL Confirmation** window, select the version that you want to upgrade to from the dropdown menu.
+3. In the **Upgrade Aiven for PostgreSQL Confirmation** window, select the version that you want to upgrade to from the dropdown menu.
 
 .. Note::
     When you select the version, the system checks the compatibility of the upgrade.
