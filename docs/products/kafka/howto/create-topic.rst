@@ -1,28 +1,24 @@
 Creating an Apache Kafka® topic
 ===============================
 
-While you can set Apache Kafka® to :doc:`automatically create a topic when the a message is produced to a topic that does not exist <create-topics-automatically>`, creating topics beforehand is generally considered a preferred practice and recommended for production environments:
+When working with Apache Kafka®, while it is possible to configure it to :doc:`automatically create topics when a message is produced to a non-existent topic <create-topics-automatically>`, it is generally recommended to create topics beforehand, especially in production environments. This approach offers several advantages:
 
-* it lets you to define granular topic settings such as the number of partitions, the replication factor, the retention period and more.
-* It prevents the wrong topic being generated (for instance with typos).
+* It allows you to define specific topic settings, such as the number of partitions, replication factor, retention period, and more.
+* It helps prevent the generation of incorrect topics due to typos or other mistakes.
 
-Create an Apache Kafka® topic via Aiven Console
------------------------------------------------
 
-To create a new topic via the `Aiven Console <https://console.aiven.io/>`_:
+Create an Apache Kafka® topic
+-------------------------------
 
-1. On the **Services** page, click on the Aiven for Apache Kafka® service where you want to crate the topic.
+To create a new topic using the `Aiven Console <https://console.aiven.io/>`_, follow these steps: 
 
-2. Select the **Topics** tab:
-
-   a. In the *Add new topic* section, enter a name for your topic.
-
-   b. In the **Advanced configuration** you can set the replication factor, number of partitions and other advanced settings. These can be modified later.
-
-3. Click **Add Topic** on the right hand side of the console.
-
+1. Log in to `Aiven Console <https://console.aiven.io/>`_ and select the Aiven for Apache Kafka® service where you want to create the topic.
+2. From the left sidebase, select **Topics**. 
+3. Select **Add topic** to create a new topic and enter a name for the topic. 
+4. If required, enable advanced configurations for the topic by toggling the corresponding option.
+5. In the **Topic advanced configuration** section, you can set properties such as the replication factor, number of partitions, and other settings. These settings can be modified later if needed.
+6. Select **Add topic**. 
    The new topic will be visible immediately, but may take a few minutes before you can update its settings.
 
 
-
-You can also use the :ref:`dedicated topic-create function <avn_cli_service_topic_create>` to create a new topic via the :doc:`Aiven CLI </docs/tools/cli>`.
+You can also use the :ref:`topic-create <avn_cli_service_topic_create>` command to create a new topic using :doc:`Aiven CLI </docs/tools/cli>`.
