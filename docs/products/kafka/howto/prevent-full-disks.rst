@@ -17,7 +17,7 @@ When the disk space is insufficient, and the ACL blocks write operations, you wi
 Upgrade to a larger service plan
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Login to the `Aiven changeonsole <https://console.aiven.io/>`_ and select your service.
+#. Login to the `Aiven Console <https://console.aiven.io/>`_ and select your service.
 
 #. On the **Overview** page, scroll down to **Service plan** and select **Change plan**. 
 
