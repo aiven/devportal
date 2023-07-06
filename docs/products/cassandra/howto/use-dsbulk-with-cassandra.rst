@@ -31,15 +31,14 @@ Variable                   Description
 
 .. Tip::
 
-    Most of the above variables and the CA Certificate file can be found in the `Aiven Console <https://console.aiven.io/>`_, in the service detail page.
+    Most of the above variables and the CA Certificate file can be found in `Aiven Console <https://console.aiven.io/>`_, in the service detail page.
 
 Preparation of the environment 
 ------------------------------
 
 In order for ``dsbulk`` to read the security certificate to connect to Aiven service for Cassandra, the certificate must be imported in a truststore.
 
-1. Download the certificate from the service overview page of your Aiven for Apache Cassandra service. Save the CA certificate 
-in a file called ``cassandra-certificate.pem`` in a directory on the linux system where ``dsbulk`` runs.
+1. Go to `Aiven Console <https://console.aiven.io/>`_ and download the certificate from the **Overview** page of your Aiven for Apache Cassandra service. Save the CA certificate in a file called ``cassandra-certificate.pem`` in a directory on the linux system where ``dsbulk`` runs.
 
 2. Run this command line to create a truststore file and import the certificate in it::
 
@@ -90,7 +89,7 @@ Run a ``dsbulk`` command to count records in a Cassandra table
 
 Once the configuration file is created, you can run the ``dsbulk``. 
 
-1. Navigate to the `bin` subdirectory of the downloaded ``dsbulk`` package
+1. Navigate to the `bin` subdirectory of the downloaded ``dsbulk`` package.
 
 2. Run the following command::
 
@@ -111,7 +110,7 @@ Once the configuration file is created, you can run the ``dsbulk``.
 
 
 Extract data from a Cassandra table in CSV format
-------------------------------------------------------------
+-------------------------------------------------
 
 To extract the data from a table, you can use the following command::
 
