@@ -50,7 +50,7 @@ To migrate your data using Bucardo:
      ``/usr/local/share/perl5/5.32/Bucardo.pm`` , for example.
 
    a. Scroll down until you see a ``disable_triggers`` function, on line
-      `5324 <https://github.com/bucardo/bucardo/blob/1ff4d32d1924f3437af3fbcc1a50c1a5b21d5f5c/Bucardo.pm#L5324>`_.
+      :ref:`5324 <https://github.com/bucardo/bucardo/blob/1ff4d32d1924f3437af3fbcc1a50c1a5b21d5f5c/Bucardo.pm#L5324>`.
 
    b. On line :ref:`5359 <https://github.com/bucardo/bucardo/blob/1ff4d32d1924f3437af3fbcc1a50c1a5b21d5f5c/Bucardo.pm#L5359>`, change ``SET session_replication_role = default`` to
       the following:
@@ -59,7 +59,7 @@ To migrate your data using Bucardo:
 
          $dbh->do(q{select aiven_extras.session_replication_role('replica');});
 
-   c. Scroll down to the ``enable_triggers`` function at line `5395 <https://github.com/bucardo/bucardo/blob/1ff4d32d1924f3437af3fbcc1a50c1a5b21d5f5c/Bucardo.pm#L5395>`_.
+   c. Scroll down to the ``enable_triggers`` function at line :ref:`5395 <https://github.com/bucardo/bucardo/blob/1ff4d32d1924f3437af3fbcc1a50c1a5b21d5f5c/Bucardo.pm#L5395>`.
 
    d. On line 5428, change ``SET session_replication_role = default`` to
       the following:
