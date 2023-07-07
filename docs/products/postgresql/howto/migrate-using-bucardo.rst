@@ -52,7 +52,7 @@ To migrate your data using Bucardo:
    a. Scroll down until you see a ``disable_triggers`` function, on line
       `5324 <https://github.com/bucardo/bucardo/blob/1ff4d32d1924f3437af3fbcc1a50c1a5b21d5f5c/Bucardo.pm#L5324>`_.
 
-   b. On line `5359 <https://github.com/bucardo/bucardo/blob/1ff4d32d1924f3437af3fbcc1a50c1a5b21d5f5c/Bucardo.pm#L5359>`_, change ``SET session_replication_role = default`` to
+   b. On line :ref:`5359 <https://github.com/bucardo/bucardo/blob/1ff4d32d1924f3437af3fbcc1a50c1a5b21d5f5c/Bucardo.pm#L5359>`, change ``SET session_replication_role = default`` to
       the following:
 
       ::
