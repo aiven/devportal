@@ -17,12 +17,12 @@ In this example, you will learn how to send logs from an Aiven for PostgreSQL® 
 Set up Apache Kafka to receive the logs
 ----------------------------------------
 
-Verify that :doc: `Apache Kafka REST API <../kafka/concepts/kafka-rest-api>` is enabled and create a Kafka topic where you want to receive the logs.
+Verify that :doc:`Apache Kafka REST API </docs/products/kafka/concepts/kafka-rest-api>` is enabled and create a Kafka topic where you want to receive the logs.
 
 Add a new integration to the source service
 -------------------------------------------
 
-1. Log in to `Aiven Console <https://console.aiven.io/>`_ and select your source PostgreSQL service.
+1. Log in to `Aiven console <https://console.aiven.io>`_ and select your source PostgreSQL service.
 2. On the **Overview page**, scroll to **Service integrations**.
 3. Select **Manage Integrations**. You will be redirected to the **Integrations** screen, where you can see a list of available integrations for your service.
 4. Select **Apache Kafka Logs** from this list.
