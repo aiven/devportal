@@ -21,6 +21,13 @@ help:
 %: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
+# This will overwrite the generated sitemap bu sphinx_sitemap to 
+# exclude index.html or .html extension in the <url>. This is to prevent
+# redirect loop (issue for search engine) since Cloudflare Pages redirect all .html to it's parent
+html:
+	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)	
+	python "$(SOURCEDIR)/scripts/postprocess_sitemap.py"
+
 livehtml:
 	sphinx-autobuild "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 

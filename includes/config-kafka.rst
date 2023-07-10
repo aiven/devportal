@@ -575,6 +575,12 @@
 
 **producer.linger.ms** Wait for up to the given delay to allow batching records together
 
+``producer_max_request_size``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*integer*
+
+**producer.max.request.size** The maximum size of a request in bytes. Note that Kafka broker can also cap the record batch size.
+
 ``consumer_enable_auto_commit``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 *boolean*

@@ -55,8 +55,14 @@ The newly created database name has the following format: `service_KAFKA_SERVICE
 Update Apache Kafka integration settings
 -----------------------------------------
 
-Next step is to configure the topic and data format options for the integration. This will create a virtual table in Aiven for ClickHouse that can receive and send messages from multiple topics. You can have as many of such tables as you need. You need to define for each table following:
+Next step is to configure the topic and data format options for the integration. This will create a virtual table in Aiven for ClickHouse that can receive and send messages from multiple topics. You can have as many of such tables as you need.
 
+For each table, there are mandatory and optional setting to be defined.
+
+Mandatory settings
+''''''''''''''''''
+
+For each table, you need to define the following:
 
 * ``name`` - name of the connector table
 * ``columns`` - array of columns, with names and types
@@ -64,24 +70,108 @@ Next step is to configure the topic and data format options for the integration.
 * ``data_format`` - your preferred format for data input, see :doc:`../reference/supported-input-output-formats`
 * ``group_name`` - consumer group name, that will be created on your behalf
 
-Integration settings in a JSON format:
+.. topic:: JSON format
 
-.. code:: json
+    .. code-block:: json
 
-    {
-        "tables": [
-            {
-                "name": "CONNECTOR_TABLE_NAME",
-                "columns": [
-                    {"name": "id", "type": "UInt64"},
-                    {"name": "name", "type": "String"}
-                ],
-                "topics": [{"name": "topic1"}, {"name": "topic2"}],
-                "data_format": "DATA_FORMAT",
-                "group_name": "CONSUMER_NAME"
-            }
-        ]
-    }
+        {
+            "tables": [
+                {
+                    "name": "CONNECTOR_TABLE_NAME",
+                    "columns": [
+                        {"name": "id", "type": "UInt64"},
+                        {"name": "name", "type": "String"}
+                    ],
+                    "topics": [{"name": "topic1"}, {"name": "topic2"}],
+                    "data_format": "DATA_FORMAT",
+                    "group_name": "CONSUMER_NAME"
+                }
+            ]
+        }
+
+Optional settings
+'''''''''''''''''
+
+For each table, you can define the following optional settings:
+
+.. list-table::
+   :widths: 10 30 5 5 5 5
+   :header-rows: 1
+
+   * - Name
+     - Description
+     - Default value
+     - Allowed values
+     - Minimum value
+     - Maximum value
+   * - ``auto_offset_reset``
+     - Action to take when there is no initial offset in the offset store or the desired offset is out of range
+     - ``earliest``
+     - ``smallest``, ``earliest``, ``beginning``, ``largest``, ``latest``, ``end``
+     - --
+     - --
+   * - ``date_time_input_format``
+     - Method to read ``DateTime`` from text input formats
+     - ``basic``
+     - ``basic``, ``best_effort``, ``best_effort_us``
+     - --
+     - --
+   * - ``handle_error_mode``
+     - Method to handle errors for the Kafka engine
+     - ``default``
+     - ``default``, ``stream``
+     - --
+     - --
+   * - ``max_block_size``
+     - Number of rows collected by poll(s) for flushing data from Kafka
+     - ``0``
+     - ``0`` - ``1_000_000_000``
+     - ``0``
+     - ``1_000_000_000``
+   * - ``max_rows_per_message``
+     - Maximum number of rows produced in one Kafka message for row-based formats
+     - ``1``
+     - ``1`` - ``1_000_000_000``
+     - ``1``
+     - ``1_000_000_000``
+   * - ``num_consumers``
+     - Number of consumers per table per replica
+     - ``1``
+     - ``1`` - ``10``
+     - ``1``
+     - ``10``
+   * - ``poll_max_batch_size``
+     - Maximum amount of messages to be polled in a single Kafka poll
+     - ``0``
+     - ``0`` - ``1_000_000_000``
+     - ``0``
+     - ``1_000_000_000``
+   * - ``skip_broken_messages``
+     - Minimum number of broken messages from Kafka topic per block to be skipped
+     - ``0``
+     - ``0`` - ``1_000_000_000``
+     - ``0``
+     - ``1_000_000_000``
+
+.. topic:: JSON format
+
+    .. code-block:: json
+
+        {
+            "tables": [
+                {
+                    "name": "CONNECTOR_TABLE_NAME",
+                    "columns": [
+                        {"name": "id", "type": "UInt64"},
+                        {"name": "name", "type": "String"}
+                    ],
+                    "topics": [{"name": "topic1"}, {"name": "topic2"}],
+                    "data_format": "DATA_FORMAT",
+                    "group_name": "CONSUMER_NAME",
+                    "auto_offset_reset": "earliest"
+                }
+            ]
+        }
 
 Configure integration with CLI
 --------------------------------
@@ -174,21 +264,6 @@ You can also bring the entries from ClickHouse table into the Apache Kafka topic
 .. _reference:
 
 Reference
-----------
+---------
 
-When connecting ClickHouse® to Kafka® using Aiven integrations, data exchange is possible with the following formats only:
-
-============================     ====================================================================================
-Format                           Example
-============================     ====================================================================================
-CSV                              ``123,"Hello"``
-JSONASString                     ``{"x":123,"y":"hello"}``
-JSONCompactEachRow               ``[123,"Hello"]``
-JSONCompactStringsEachRow        ``["123","Hello"]``
-JSONEachRow                      ``{"x":123,"y":"hello"}``
-JSONStringsEachRow               ``{"x":"123","y":"hello"}``
-MsgPack                          ``{\xc4\x05hello``
-TSKV                             ``x=123\ty=hello``
-TSV                              ``123\thello``
-TabSeparated                     ``123\thello``
-============================     ====================================================================================
+When connecting ClickHouse® to Kafka® using Aiven integrations, data exchange requires using specific formats. Check the supported formats for input and output data in :doc:`Formats for ClickHouse®-Kafka® data exchange </docs/products/clickhouse/reference/supported-input-output-formats>`.

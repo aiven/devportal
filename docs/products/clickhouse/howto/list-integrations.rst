@@ -20,3 +20,11 @@ This section provides instructions on how to integrate your Aiven for ClickHouse
     .. grid-item-card:: :doc:`Connect to external DBs with JDBC </docs/products/clickhouse/howto/connect-with-jdbc>`
         :shadow: md
         :margin: 2 2 0 0
+
+    .. grid-item-card:: :doc:`Manage Aiven for ClickHouse® data service integrations </docs/products/clickhouse/howto/data-service-integration>`
+        :shadow: md
+        :margin: 2 2 0 0
+
+    .. grid-item-card:: :doc:`Manage Aiven for ClickHouse® integration databases </docs/products/clickhouse/howto/integration-databases>`
+        :shadow: md
+        :margin: 2 2 0 0

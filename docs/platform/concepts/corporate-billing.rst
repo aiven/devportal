@@ -8,7 +8,7 @@ Credit card payments
 
 The default billing method for all new Aiven customers is credit card. All costs accrued over a calendar month are charged on the first day of the following month. 
 
-Services are billed by the hour. The costs are automatically calculated based on the services running in a project. Each project is charged separately.
+Services are billed by the hour. The costs are automatically calculated based on the services running in a project. Each project is charged separately, but the charges for multiple projects can be consolidated by assigning them to a :doc:`billing group </docs/platform/concepts/billing-groups>`. Likewise, :doc:`organizations </docs/platform/concepts/projects_accounts_access>` can have multiple billing groups. 
 
 Credit card fees
 """"""""""""""""""

@@ -23,6 +23,7 @@ boolean
 boot
 Bucardo
 business
+BYOC
 Cassandra
 Centrify
 checkpointing
@@ -107,6 +108,7 @@ Instana
 IdP
 IdPs
 io
+iops
 IPsec
 iptables
 Java
@@ -170,6 +172,7 @@ PgBouncer
 PGHoard
 pglookout
 pgoutput
+pgvector
 plaintext
 plc
 PNG/S
@@ -251,6 +254,7 @@ untrusted
 unaggregated
 UpCloud
 upsert
+vectorizing
 VM
 VMs
 VPC/MS
