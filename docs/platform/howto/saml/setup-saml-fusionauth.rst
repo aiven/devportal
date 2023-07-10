@@ -6,21 +6,6 @@ This article explains how to set up SAML with `FusionAuth <https://fusionauth.io
 Prerequisite steps in Aiven Console
 ------------------------------------
 
-First, we need to create a team that the created users will be part of.
-
-#. In the organization, click **Admin**.
-
-#. Select **Organization**.
-
-#. Click **Create team** in the organization details section.
-
-#. Set the **Team name** as ``Developers`` and click **Create team**.
-
-#. After arriving back to the teams page, click on the newly created team and go to the **Projects and Roles** tab.
-
-#. Click **Add projects**, select the project, the desired **Permission level** (e.g. ``Developer``) and click **Add project** to finish setting up the team.
-
-
 #. In the organization, click **Admin**.
 
 #. Select **Authentication**.
@@ -40,6 +25,7 @@ Configure SAML on FusionAuth
 ----------------------------
 
 The setup on FusionAuth has three parts: 
+
 * create an API key
 * generate a custom RSA certificate 
 * create an application
@@ -56,25 +42,29 @@ First you need to create an API Key in your FusionAuth instance:
   
 #. Toggle on **POST**.
 
- #. Click the **Save** icon.
+#. Click the **Save** icon.
 
-.. image:: /images/platform/howto/saml/fusionauth/create-api-key.png
-   :alt: Creating API Key.
+   .. image:: /images/platform/howto/saml/fusionauth/create-api-key.png
+      :alt: Creating API Key.
 
 #. On the **API Keys** page, find your new key and click on the value in the **Key** column. 
 
- #. Copy the whole key. You’ll use this for the script.
+#. Copy the whole key. You’ll use this for the script.
 
-.. image:: /images/platform/howto/saml/fusionauth/grab-api-key.png
-   :alt: Grabbing API Key.
+   .. image:: /images/platform/howto/saml/fusionauth/grab-api-key.png
+      :alt: Grabbing API Key.
 
-Now that your application is ready, clone `this GitHub repository <https://github.com/FusionAuth/fusionauth-example-scripts>`__ and execute the script located in ``rsa-certificate``.
+#. Clone `the FusionAuth example scripts GitHub repository <https://github.com/FusionAuth/fusionauth-example-scripts>`__.
 
-.. code:: shell
+   .. code:: shell
+      git clone git@github.com:FusionAuth/fusionauth-example-scripts.git
+      cd fusionauth-example-scripts/v3-certificate
 
-   git clone git@github.com:FusionAuth/fusionauth-example-scripts.git
-   cd fusionauth-example-scripts/rsa-certificate
-   ./generate-certificate
+#. Run the ``generate-certificate`` script.
+
+   .. code:: shell
+
+      ./generate-certificate
 
 #. Give the key a meaningful name (for example, "Aiven key"). 
 
@@ -82,9 +72,9 @@ Now that your application is ready, clone `this GitHub repository <https://githu
 
 Next, create an application in your FusionAuth instance:
 
- #. In **Applications**, click the **Add** icon. 
+#. In **Applications**, click the **Add** icon.
  
- #. Enter a name for the application (for example, "Aiven").
+#. Enter a name for the application (for example, "Aiven").
  
 #. On the **SAML** tab, and toggle on the **Enabled** switch.
 
@@ -134,7 +124,7 @@ Go back to the **Authentication** page in `Aiven Console <https://console.aiven.
 You can use the **Signup URL** to invite new users, or the **Account link URL** for those that already have an Aiven user account.
 
 
-
+.. image:: /images/platform/howto/saml/fusionauth/login-sso.png
    :alt: Logging in to Aiven.
 
 
