@@ -1,11 +1,9 @@
 Getting started
 ===============
 
-To create an Aiven for Apache Kafka® Connect service, you must have existing Aiven for Apache Kafka® running services in your project. If your project doesn't have any Aiven for Apache Kafka services, you must create one before attempting to create an Aiven for Apache Kafka Connect service.
+To create an Aiven for Apache Kafka® Connect service, make sure you have existing Aiven for Apache Kafka® running services in your project. If your project doesn't have any Aiven for Apache Kafka services, you must :doc:`create one <../platform/howto/create_new_service>` before attempting to create an Aiven for Apache Kafka Connect service.
 
-To create an Aiven for Apache Kafka® service, log in to the console using your email address and password, and follow the steps in the :doc:`Getting Start with Aiven for Apache Kafka section </docs/products/kafka/getting-started>`.
-
-Aiven services are managed in the Aiven `web console <https://console.aiven.io/>`__ . When you first log into the console with your email address and password, you will see the **Services** view, which shows you all the services in the currently selected project.
+To create an Aiven for Apache Kafka® service, log in to the Aiven Console using your email address and password. Follow the steps in the :doc:Getting Started with Aiven for Apache Kafka section </docs/products/kafka/getting-started>.
 
 
 .. _apache_kafka_connect_dedicated_cluster:
@@ -13,15 +11,15 @@ Aiven services are managed in the Aiven `web console <https://console.aiven.io/>
 Create a dedicated Aiven for Apache Kafka® Connect service
 -------------------------------------------------------------
 
-Create a new Aiven for Apache Kafka Connect dedicated service:
+To create a new Aiven for Apache Kafka Connect dedicated service:
 
-1. Select the **Aiven for Apache Kafka** service for which you want to create a dedicated Aiven for Apache Kafka Connect service. 
+1. Log into `Aiven Console <https://console.aiven.io>`_ and select the **Aiven for Apache Kafka** service for which you want to create a dedicated Aiven for Apache Kafka Connect service. 
 
-2. Click on the **Connectors** tab and select **Integrate standalone service**.
+2. Select **Connectors** from left sidebase and select **Integrate standalone service**.
 
 3. Enter a name for your service. A random name is provided by default, but you can enter a more recognizable name to distinguish it from other services.
 
-5. Select the cloud provider and region that you want to run your service on.
+5. Select the cloud provider and region on which you want to run your service.
 
 .. note:: The pricing for the same service may vary between
     different providers and regions. The service summary on the
@@ -30,9 +28,9 @@ Create a new Aiven for Apache Kafka Connect dedicated service:
 
 6. Select a service plan. This defines how many servers and what kind of memory, CPU, and disk resources are allocated to your service.
 
-7. Click **Create and enable** under the summary in the console. 
+7. Select **Create and enable** under the summary in the console. 
 
-At the top of the screen, you will notice the Apache Kafka Connect integration. Clicking on the service name will take you to the **Service overview** page, where you can monitor the service status. It's important to wait until the service status changes from *REBUILDING* to *RUNNING* on this page before using it.
+At the top of the screen, you will notice the Apache Kafka Connect integration. Selecting the service name will take you to the **Service Overview** page to monitor the service status. Before using it, it's important to wait until the service status changes from *REBUILDING* to *RUNNING* on this page.
 
 Next steps
 ----------
