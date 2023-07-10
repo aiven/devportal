@@ -25,14 +25,14 @@ Create a new Aiven for Apache Kafka MirrorMaker 2 dedicated service:
 
 5. Provide a name for your service. By default, a random name is generated, but you can enter a more identifiable name to distinguish it from other services.
 
-6. Select the cloud provider aand region where you want to deploy the service.
+6. Select the cloud provider and region where you want to deploy the service.
 
 .. note:: 
     Pricing may vary across providers and regions.
 
 7. Select a service plan. This defines how many servers and what kind of memory, CPU, and disk resources are allocated to your service.
 
-8. Specify a **Cluster alias**. This alias is a name assigned to an Apache Kafka cluster within MirrorMaker. It helps identify and differentiate the source and target clusters used for replication. Ensure careful selection, as the cluster alias cannot be modified once the integration is created.
+8. Specify a **Cluster alias**. This alias is a name assigned to an Apache Kafka cluster within MirrorMaker 2. It helps identify and differentiate the source and target clusters used for replication. Ensure careful selection, as the cluster alias cannot be modified once the integration is created.
 
 9.  Select **Create and enable** under the summary on the right side of the console. 
 

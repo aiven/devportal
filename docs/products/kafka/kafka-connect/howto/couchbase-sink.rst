@@ -75,7 +75,7 @@ To create a Apache Kafka Connect connector, follow these steps:
       The Aiven Console parses the configuration file and fills the relevant UI fields. You can review the UI fields across the various tabs and change them if necessary. The changes will be reflected in JSON format in the **Connector configuration** text box.
 
 8. After all the settings are correctly configured, select **Create connector**.
-9. Verify the connector status under the **Connectors** screnn. 
+9. Verify the connector status under the **Connectors** screen. 
 10. Verify the presence of the data in the target Couchbase bucket.
 
 .. note::
