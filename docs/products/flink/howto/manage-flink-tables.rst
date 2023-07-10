@@ -11,14 +11,14 @@ Aiven for Apache Flink® allows you to map source and target data structures as 
 
 .. important:: 
 
-    Before performing any operation on a table in a Flink application, you must **stop** the application. To stop an application, navigate to the **Applications** fron the left sidebase on your Aiven for Apache Flink® service, select the desired application from the list, and select **Stop Deployment**.
+    Before performing any operation on a table in a Flink application, you must **stop** the application. To stop an application, navigate to the **Applications** from the left sidebar on your Aiven for Apache Flink® service, select the desired application from the list, and select **Stop Deployment**.
 
 Add new table
 --------------
 
 Follow these steps add a new table to an application using the `Aiven Console <https://console.aiven.io/>`_ : 
 
-1. Select **Applications** from the left sidebar on your Aiven for Apache Flink service, and select the application to which you want to add a new table. Make sure the application deplyment is stopped. 
+1. Select **Applications** from the left sidebar on your Aiven for Apache Flink service, and select the application to which you want to add a new table. Make sure the application deployment is stopped. 
 2. Select **Create new version**. 
 3. On the **Create new version** screen, navigate to the **Add source tables** or **Add sink tables** screen within your application.
 4. Select **Add new table** to add a new table to your application.
