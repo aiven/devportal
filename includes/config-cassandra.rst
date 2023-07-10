@@ -117,3 +117,19 @@
 
 
 
+``backup_hour``
+---------------
+*['integer', 'null']*
+
+**Hour of the day (in UTC) when the backup for the service is started. A new backup is only started if the previous backup has already completed.** 
+
+
+
+``backup_minute``
+-----------------
+*['integer', 'null']*
+
+**Minute of the hour when the backup for the service is started. A new backup is only started if the previous backup has already completed.** 
+
+
+
