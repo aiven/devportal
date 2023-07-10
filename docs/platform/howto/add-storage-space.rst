@@ -67,4 +67,4 @@ Remove added storage
 
 .. topic:: Result
 
-   Your additioanl disk space has been removed. The service is in the **Rebalancing** state while the nodes are being recycled. 
+   Your additional disk space has been removed. The service is in the **Rebalancing** state while the nodes are being recycled. 

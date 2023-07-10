@@ -12,7 +12,7 @@ When creating a new Aiven service, you are not tied to a plan. Your services can
 
 .. topic:: Result
 
-   Your service is in the *Rebuilding* state. Once the rebuilding is over, your new serive plan will be active on your service. The service is still accessible through the plan-change process. 
+   Your service is in the *Rebuilding* state. Once the rebuilding is over, your new service plan will be active on your service. The service is still accessible through the plan-change process. 
 
 .. note::
 

@@ -31,7 +31,7 @@ Subscribe to platform status updates
 
 The Aiven services are managed by the Aiven platform, therefore is a good idea to check its status and receive notifications in case of platform wide incidents. You can follow the RSS feed, subscribe for email or SMS notifications, or use the Slack integration to get notified where your team is already.
 
-You can check the status of the the Aiven platform and subscribe to updates on incidents directly from `status.aiven.io <https://status.aiven.io/>`_.
+You can check the status of the the Aiven platform and subscribe to updates on incidents directly from `status.Aiven.io <https://status.aiven.io/>`_.
 
 Monitor the services
 --------------------

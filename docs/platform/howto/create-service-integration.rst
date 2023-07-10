@@ -27,7 +27,7 @@ Create an integration
 
 4. Open the Grafana dashboard to see the Aiven for Apache Kafka metrics data.
 
-   1. In `Aiven Console <https://console.aiven.io/>`_, select your Aiven for Grafana servie from the **Services** view.
+   1. In `Aiven Console <https://console.aiven.io/>`_, select your Aiven for Grafana service from the **Services** view.
    2. In the **Overview** page of your service, navigate to the **Connection information** section.
    3. Use **Service URI** from the **Connection information** section to access the Grafana service in your browser. To log in, use the credentials available in the the **Connection information** section (the ``avnadmin`` user and the password).
 
