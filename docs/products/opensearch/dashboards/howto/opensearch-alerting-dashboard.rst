@@ -55,7 +55,8 @@ Configure authentication for email destination
 This section shows how to authenticate the sender account before sending email messages. To authenticate when sending emails, the credentials need to be added first to the OpenSearch keystore. Perform this step before configuring an email destination that requires authentication.
 
 1. In **Overview** screen of your OpenSearch service, scroll to the **Advanced configuration** section. 
-2. Select **Change** and **+Add configurationoption** . Enter details for the following fieldssave:
+2. Select **Change** and **+Add configuration option**. 
+3. Select the following configuration options and provide the corresponding details for each field:
 
    - ``email_sender_name``
    - ``email_sender_username``
@@ -63,11 +64,11 @@ This section shows how to authenticate the sender account before sending email m
 
    At the end of this step the email account credentials will be added to the OpenSearch keystore. That is, the steps-by-step procedure that follows need to be completed in OpenSearch Dashboards.
 
-2. Select **Save advanced configuration**. 
+4. Select **Save advanced configuration**. 
    
-3. Open the **Destination** tab in the OpenSearch Dashboard and select **Add destination**.
+5. Open the **Destination** tab in the OpenSearch Dashboard and select **Add destination**.
 
-4. Fill in the fields under **Destination**
+6. Fill in the fields under **Destination**
 
    Fill ``email-test`` as the **Name**
 
@@ -79,7 +80,7 @@ This section shows how to authenticate the sender account before sending email m
 
    Fill in the information required by the form and select SSL or TLS in **Encryption method**.
 
-5. Lastly you need to complete the form with the recipients, by creating email groups in **Manage email groups** if necessary.
+7. Lastly you need to complete the form with the recipients, by creating email groups in **Manage email groups** if necessary.
 
 Create a monitor
 ''''''''''''''''
