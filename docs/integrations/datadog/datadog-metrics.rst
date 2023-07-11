@@ -38,7 +38,7 @@ To enable the Datadog metrics integration for each service that requires metric 
 2. In the service **Overview** page, scroll to **Service integrations** and select **Manage integrations**. 
 3. In the **Integrations** screen, select **Datadog**.
 
-4. Select the Datadon endpoint you want to use from the drop-down list and select **Enable**.
+4. Select the Datadog endpoint you want to use from the drop-down list and select **Enable**.
 
 .. Tip::
 
