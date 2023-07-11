@@ -11,7 +11,7 @@ Create user and configure ACLs using console
 Follow the steps below to create a Redis user and configure ACLs: 
 
 1. Log in to `Aiven Console <https://console.aiven.io/>`_ and select your Aiven for Redis service from the list of available services.
-2. From the **Overview** page of your Redis service, navigate to the **Users** tab.
+2. Select **Users** from the left sidebar.
 3. Select **Create user**, and provide the following details: 
    
    * **Username:** Specify a username for the user.
@@ -29,20 +29,20 @@ You have various management options available for Aiven for Redis users. Follow 
 
 Reset password
 `````````````````
-1. In the **Users** tab, locate the user you want to reset the password and select the ellipses next to their row.
+1. Select **Users** from the left sidebar, locate the user you want to reset the password and select the ellipses next to their row.
 2. Select **Reset password** from the drop-down menu.
 3. Confirm the password reset by selecting **Reset** on the confirmation screen.
 
 Edit ACL rules
 ```````````````
-1. In the **Users** tab, locate the user you want to edit ACL rules and select the ellipses next to their row.
+1. Select **Users** from the left sidebar, locate the user you want to edit ACL rules and select the ellipses next to their row.
 2. Select **Edit ACL rules** from the drop-down menu.
 3. Make the desired changes to the ACL rules on the **Edit access control** screen.
 4. Select the **Save**  to apply the modifications.
 
 Duplicate user
 ```````````````
-1. In the **Users** tab, locate the user you want to duplicate and select the icon next to their row.
+1. Select **Users** from the left sidebar, locate the user you want to duplicate and select the icon next to their row.
 2. Select **Duplicate user** from the options in the drop-down menu.
 3. Enter a name for the new user in the **Duplicate user** screen.
 4. Click on the **Add user** button to create a duplicate user.
