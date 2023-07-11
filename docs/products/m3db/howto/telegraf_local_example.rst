@@ -78,7 +78,7 @@ Create Aiven for Grafana service
 3. On the **Integrations** page, select **Grafana Metrics Dashboard** to establish a connection between your M3 instance and a new Grafana dashboard service.
 4. In the pop-up modal, select **New service** and select **Continue**.
 5. Fill out the required details and follow similar steps to create the service. This will initiate the startup process for your Aiven for Grafana service, which will automatically connect to the M3 database to display metrics.
-6. On the **Intragrations** page on your M3DB service, you will find a link to the Grafana dashboard. Select the link to view the new Grafana service. 
+6. On the **Integrations** page on your M3DB service, you will find a link to the Grafana dashboard. Select the link to view the new Grafana service. 
 7. Once service is running, select the Service URI and login with the user / password from the connection information.
 
 
