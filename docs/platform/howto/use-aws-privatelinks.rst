@@ -202,7 +202,7 @@ Deleting a privatelink connection
 
    #. Select **Network** from the sidebar on your service's page.
 
-   #. Select the trashbin icon on the right of the **AWS PrivateLink** row.
+   #. Select the trash can icon on the right of the **AWS PrivateLink** row.
 
    #. Select **Confirm** .
 
