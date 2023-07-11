@@ -141,7 +141,7 @@ The Syslog Endpoint to use for ``server`` depends on your account:
 -  if it ends with ``.us`` use ``syslogserver.coralogix.us``
 -  if it ends with ``.in`` use ``syslogserver.app.coralogix.in``
 
-See the Coralogix `Rsyslog <https://coralogix.com/docs/rsyslog/>`_ documentation for more information.
+See the Coralogix `Rsyslog <https://coralogix.com/docs/>`_ documentation for more information.
 
 ::
 
