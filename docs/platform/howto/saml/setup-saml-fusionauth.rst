@@ -57,8 +57,9 @@ First you need to create an API Key in your FusionAuth instance:
 #. Clone `the FusionAuth example scripts GitHub repository <https://github.com/FusionAuth/fusionauth-example-scripts>`__.
 
    .. code:: shell
-      git clone git@github.com:FusionAuth/fusionauth-example-scripts.git
-      cd fusionauth-example-scripts/v3-certificate
+
+       git clone git@github.com:FusionAuth/fusionauth-example-scripts.git
+       cd fusionauth-example-scripts/v3-certificate
 
 #. Run the ``generate-certificate`` script.
 
@@ -66,7 +67,7 @@ First you need to create an API Key in your FusionAuth instance:
 
       ./generate-certificate
 
-#. Give the key a meaningful name (for example, "Aiven key"). 
+#. Give the key a meaningful name (for example, "Aiven key").
 
 #. Copy the generated certificate that the script creates. You now have a certificate in the **Key Master** in your FusionAuth instance. 
 
