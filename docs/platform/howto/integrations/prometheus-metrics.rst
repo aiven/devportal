@@ -18,39 +18,32 @@ Enable Prometheus support on your Aiven project
 Aiven offers Prometheus endpoints for your services. To enable this feature,
 follow the steps below:
 
-#. | Navigate to the project **Integration endpoints** page.
+#. | In the `Aiven console <https://console.aiven.io/>`_, select Projects at the top and select your project. 
+#. | Select **Integration endpoints** from the left sidebar.
 
-#. | Add a ``Prometheus`` integration endpoint if one does not already
-     exist.
-
+#. | Select **Prometheus** from the list available integration endpoints 
+#. | Select **Add new endpoint** and enter the details for the endpoint. Select **Create**. 
+ 
    | Usually you only need one of these per project (as it can be used
      for all services in the same project) so if you can see one has
      already been created then you can skip this step.
 
-#. | Navigate to your service that you
-     would like to monitor and click ``Manage integrations``
+#. | Next, navigate to the service that you would like to monitor and select **Manage integrations** from the service overview page. 
 
-#. | Choose the ``Prometheus`` service integration by clicking
-     ``Use integration``
-
-#. | Confirm you have selected the Prometheus endpoint configured
-     earlier in step 2 and click ``Enable``
+#. | In the **Integrations** screen, select **Prometheus**. 
+#. | Select the endpoint name you created from the drop-down list and select **Enable**. At the top of the **Integrations** page, you will see the Prometheus integration listed and the status ``Active``. 
 
    .. image:: /images/platform/integrations/prometheus-endpoint-select.png
       :alt: Dialog box to select already configured Prometheus endpoints
 
-#. | Check the service overview page to see that the integration has
-     been successfully enabled and is now ``Active``
-
-#. | Copy the Prometheus connection information found from the top of
-     the service overview page under the new ``Prometheus`` tab
+#. | Select **Overview** from the left sidebar, and then select **Prometheus** tab within the **Connection information** section. 
+     
+#. | Copy the **Service URI** for the Prometheus connection information to log in to the browser and access the Prometheus dashboard.
 
    .. image:: /images/platform/integrations/prometheus-service-info.png
       :alt: Screenshot of Prometheus connection information in service overview page
 
-At this point, the system will start an HTTP server on all nodes of the service
-that provide access to the metrics. Note that there can be roughly one minute
-delay until the metrics are available.
+Once configured, the system will initiate an HTTP server on all service nodes, granting access to the metrics. It is important to note that there might be a slight delay of approximately one minute before the metrics become available.
 
 Accessing Prometheus in a VPC
 ''''''''''''''''''''''''''''''
