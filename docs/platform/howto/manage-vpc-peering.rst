@@ -12,7 +12,7 @@ In Aiven, VPC peering is configured as a project and region-specific setting. Th
 
 To set up VPC peering for your Aiven project:
 
-1. Log in to `Aiven Console <https://console.aiven.io>`_, and select **VPCs** from the sidebar on the **Services** page.
+1. Log in to `Aiven Console <https://console.aiven.io/>`_, and select **VPCs** from the sidebar on the **Services** page.
 
 2. Click **Create VPC**.
 
@@ -52,7 +52,7 @@ When you create a new service, your peered VPC is available as a new geolocation
 Delete an existing VPC and VPC peering
 ----------------------------------------
 
-Before deleting an existing VPC from Aiven console, you should move out any active services from that VPC. To delete a VPC, navigate to `Aiven Console <https://console.aiven.io>`_ > **VPCs**. Find your VPC and select **Delete** from the meatballs menu for this VPC.
+Before deleting an existing VPC from `Aiven Console <https://console.aiven.io/>`_, you should move out any active services from that VPC. To delete a VPC, navigate to `Aiven Console <https://console.aiven.io/>`_ > **VPCs**. Find your VPC and select **Delete** from the meatballs menu for this VPC.
 Once the VPC is deleted, the cloud provider side of the peering connection will go to an inactive or deleted state.
 
 Migrate a public service to a VPC
@@ -60,7 +60,7 @@ Migrate a public service to a VPC
 
 You can migrate any Aiven service to a different VPC:
 
-#. In `Aiven Console <https://console.aiven.io>`_, go to your service.
+#. In `Aiven Console <https://console.aiven.io/>`_, go to your service.
 
 #. On the **Overview** page of your service, go in to **Cloud and VPC** section, click **Migrate cloud**.
 

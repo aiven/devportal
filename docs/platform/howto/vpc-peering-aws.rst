@@ -17,7 +17,7 @@ Set up VPC peering
 
 3. Go to the VPC service to find the VPC that you want to connect and copy the ID for that VPC.
 
-4. In `Aiven Console <https://console.aiven.io>`_, select **VPCs** from the sidebar on the **Services** page.
+4. In `Aiven Console <https://console.aiven.io/>`_, select **VPCs** from the sidebar on the **Services** page.
 
 5. On the **Virtual private clouds** page, select the VPC connection that you created.
 
