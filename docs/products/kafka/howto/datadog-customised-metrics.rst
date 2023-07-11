@@ -35,7 +35,7 @@ Variable               Description
 Customise Apache Kafka® metrics sent to Datadog
 -----------------------------------------------
 
-Before customising the metrics, make sure that you have a Datadog endpoint configured and enabled in your Aiven for Apache Kafka service. For details on how to set up the Datadog integration, check the :doc:`dedicated article </docs/integrations/datadog/datadog-metrics>`.
+Before customising the metrics, make sure that you have a Datadog endpoint configured and enabled in your Aiven for Apache Kafka service. For details on how to set up the Datadog integration, check the :doc:`dedicated article </docs/integrations/datadog/datadog-metrics>`.  Please note that in all the below parameters a 'comma separated list' has the following format: ``['value0','value1','value2','...']``.
 
 To customise the metrics sent to Datadog, you can use the ``service integration-update`` passing the following customised parameters:
 
@@ -53,9 +53,9 @@ To customise the metrics sent to Datadog, you can use the ``service integration-
 
 As example to sent the ``kafka.log.log_size`` and ``kafka.log.log_end_offset`` metrics for ``topic1`` and ``topic2`` execute the following code::
 
-    avn service integration-update                                          \
-        -c kafka_custom_metrics=kafka.log.log_size,kafka.log.log_end_offset \
-        -c include_topics=topic1,topic2                                     \
+    avn service integration-update                                                \
+        -c kafka_custom_metrics=['kafka.log.log_size','kafka.log.log_end_offset'] \
+        -c include_topics=['topic1','topic2']                                     \
         INTEGRATION_ID
 
 Once the update is successful and metrics have been collected and pushed, you should see them in your Datadog explorer.
