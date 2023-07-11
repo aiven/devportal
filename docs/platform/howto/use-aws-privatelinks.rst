@@ -18,7 +18,7 @@ routing between the VPC, you can use any private IP range for the VPC,
 unless you also want to connect to the project VPC using VPC peering
 connections. This means that overlaps in the IP range are not an issue.
 
-You can use either the `Aiven web console <https://console.aiven.io>`__
+You can use either the `Aiven Console <https://console.aiven.io>`__
 or the :doc:`Aiven CLI </docs/tools/cli>` to set up
 AWS PrivateLink. You also need the AWS CLI to create a VPC endpoint.
 
@@ -47,15 +47,16 @@ currently support AWS PrivateLink.
 
          $ avn service privatelink aws create --principal arn:aws:iam::012345678901:user/mwf my-kafka
 
-   -  Using the Aiven web console:
+   -  Using `Aiven Console <https://console.aiven.io>`__:
 
-      #. Log in to the Aiven web console and select the service that you
+      #. Log in to `Aiven Console <https://console.aiven.io>`__ and select the service that you
          want to use.
 
-      #. Select the **Network** tab and click **Create Privatelink** .
+      #. On the **Overview** page of your service, select **Network** from the sidebar.
 
-      #. | Enter the Amazon Resource Names (ARN) for the principals that
-           you want to use, then click **Create** .
+      #. On the **Network** page, select **Create Privatelink** .
+
+      #. In the **Create Privatelink** window, enter the Amazon Resource Names (ARN) for the principals that you want to use, and select **Create** .
 
    | This creates an AWS network load balancer dedicated to your Aiven
      service and attaches it to an AWS VPC endpoint service that you can
@@ -75,7 +76,7 @@ currently support AWS PrivateLink.
 
    | 
    | Replace the ``--service-name`` value with the value shown next to
-     **Network** > **AWS service name** in the Aiven web console or by
+     **Network** > **AWS service name** in `Aiven Console <https://console.aiven.io>`__ or by
      running the following command in the Aiven CLI:
 
    ::
@@ -88,11 +89,8 @@ currently support AWS PrivateLink.
      the instances that are allowed to connect to the endpoint network
      interfaces created by AWS into the specified subnets.
 
-   | Alternatively, you can create the VPC endpoint in the AWS web
-     console under **VPC** > **Endpoints** > **Create endpoint** . See
-     the `AWS
-     documentation <https://docs.aws.amazon.com/vpc/latest/userguide/vpce-interface.html#create-interface-endpoint>`__
-     for details.
+   | Alternatively, you can create the VPC endpoint in `Aiven Console <https://console.aiven.io>`__ under **Integration endpoints** > **Add new endpoint** . See the `AWS documentation <https://docs.aws.amazon.com/vpc/latest/userguide/vpce-interface.html#create-interface-endpoint>`__ for details.
+
    | **Note:** For Aiven for Apache Kafka® services, the security group
      for the VPC endpoint must allow ingress in the port range
      ``10000-31000`` to accommodate the pool of Kafka broker ports used
@@ -120,18 +118,18 @@ currently support AWS PrivateLink.
          $ avn service update -c privatelink_access.kafka_rest=true $Aiven_service_name
          $ avn service update -c privatelink_access.schema_registry=true $Aiven_service_name
 
-   -  In the Aiven web console:
+   -  In `Aiven Console <https://console.aiven.io>`__:
 
-      #. Select the **Overview** tab and scroll down to *Advanced
-         configuration* .
+      #. Go to the **Overview** page of your service, and scroll down to **Advanced
+         configuration**.
 
-      #. Click **Add configuration** , select the component that you
-         want and switch it on.
+      #. Select **Change**, add the components that you
+         want, and switch them on.
 
          .. image:: /images/platform/howto/use-aws-privatelink_image1.png
             :alt: Aiven Console private link configuration
 
-      #. | Click **Save advanced configuration** .
+      #. Select **Save advanced configuration** .
 
    It takes a couple of minutes before connectivity is available after
    you enable a service component. This is because AWS requires an AWS
@@ -149,8 +147,8 @@ Connection information
 ----------------------
 
 Once you have enabled PrivateLink access for a service component, a
-switch for the ``privatelink`` access route appears under *Connection
-information* on the *Overview* tab in the web console. The ``host`` -
+switch for the ``privatelink`` access route appears under **Connection
+information** on the **Overview** page in `Aiven Console <https://console.aiven.io>`__. The ``host`` -
 and for some service components such as Kafka, ``port`` - values differ
 from the default ``dynamic`` access route that is used to connect to the
 service. You can use the same credentials with any access route.
@@ -171,13 +169,17 @@ allowed to connect a VPC endpoint:
 
    | **Note:** When you add an entry, also include the ``--principal`` arguments for existing entries.
 
--  In the Aiven web console:
+-  In `Aiven Console <https://console.aiven.io>`__:
 
-   #. Select the **Network** tab and click **Edit principals** .
+   #. Select your service from the **Services** page.
+
+   #. Select **Network** from the sidebar.
+
+   #. In the **Network** page, select **Edit principals**.
 
    #. Enter the principals that you want to include.
 
-   #. Click **Save** .
+   #. Select **Save** .
 
 .. _h_8de68d5894:
 
@@ -196,12 +198,12 @@ Deleting a privatelink connection
       ========================== ======================================================= ================================== ========
       vpce-svc-0b16e88f3b706aaf1 com.amazonaws.vpce.eu-west-1.vpce-svc-0b16e88f3b
 
--  Using the Aiven web console:
+-  Using `Aiven Console <https://console.aiven.io>`__:
 
-   #. Select the **Network** tab.
+   #. Select **Network** from the sidebar on your service's page.
 
-   #. Click the delete icon on the right of the *AWS PrivateLink* row.
+   #. Select the trashbin icon on the right of the **AWS PrivateLink** row.
 
-   #. Click **Confirm** .
+   #. Select **Confirm** .
 
 This deletes the AWS load balancer and VPC service endpoint.
