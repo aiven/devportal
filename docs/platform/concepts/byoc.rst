@@ -38,7 +38,7 @@ a standard Aiven deployment or :doc:`Enhanced Compliance Environment </docs/plat
 
 .. tip::
    
-   If you would like to understand BYOC better or are unsure which deployment model is the best fit for you, contact sales@Aiven.io.
+   If you would like to understand BYOC better or are unsure which deployment model is the best fit for you, contact Sales@Aiven.io.
 
 Pricing and billing
 -------------------

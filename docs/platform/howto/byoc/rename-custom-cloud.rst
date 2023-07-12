@@ -10,7 +10,7 @@ This article details how to change the name of your custom cloud in `Aiven Conso
 About renaming custom clouds
 ----------------------------
 
-While :doc:`setting up a custom cloud in Aiven </docs/platform/howto/byoc/create-custom-cloud>`, you specify its name, which is a part of the initial custom cloud's configuration. Later, you can come back to the **Rename** setting in your cloud's page in `Aiven Console <https://console.aiven.io/>`_ and update the name you initially specified.
+With the BYOC feature enabled, you can :doc:`create custom clouds </docs/platform/howto/byoc/create-custom-cloud>` in your Aiven organizations. While :doc:`setting up a custom cloud in Aiven </docs/platform/howto/byoc/create-custom-cloud>`, you specify its name, which is a part of the initial custom cloud's configuration. Later, you can come back to the **Rename** setting in your cloud's page in `Aiven Console <https://console.aiven.io/>`_ and update the name you initially specified.
 
 Prerequisites
 -------------
@@ -25,7 +25,7 @@ Rename your cloud
 1. Log in to `Aiven Console <https://console.aiven.io/>`_ as an administrator.
 2. From the left sidebar, select **Bring your own cloud**.
 3. In the **Bring you own cloud** view, select one of the clouds available on the list.
-4. In the selected cloud's page, use the meatballs (**...**) menu in the top right corner to select **Rename**.
+4. In the selected cloud's page, use the ellipsis (**...**) menu in the top right corner to select **Rename**.
 5. In the **Rename custom cloud** window, enter a new name into the **Custom cloud name** field and select **Rename**.
 
 .. topic:: Result

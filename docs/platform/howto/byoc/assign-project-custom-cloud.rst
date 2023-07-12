@@ -10,7 +10,7 @@ This article details how to update the list of projects assigned to your custom 
 About assigning projects to your custom cloud
 ---------------------------------------------
 
-While :doc:`setting up a custom cloud in Aiven </docs/platform/howto/byoc/create-custom-cloud>`, you add projects for this cloud, which is a part of the initial custom cloud's configuration. Later, you can come back to the **Projects availability** tab in your cloud's page in `Aiven Console <https://console.aiven.io/>`_ and update the projects list you initially created for your cloud.
+With the BYOC feature enabled, you can :doc:`create custom clouds </docs/platform/howto/byoc/create-custom-cloud>` in your Aiven organizations. While :doc:`setting up a custom cloud in Aiven </docs/platform/howto/byoc/create-custom-cloud>`, you add projects for this cloud, which is a part of the initial custom cloud's configuration. Later, you can come back to the **Projects availability** tab in your cloud's page in `Aiven Console <https://console.aiven.io/>`_ and update the projects list you initially created for your cloud.
 
 Prerequisites
 -------------

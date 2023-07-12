@@ -10,7 +10,7 @@ This article details how to update the list of customer contacts for your custom
 About updating customer contacts
 --------------------------------
 
-While :doc:`setting up a custom cloud in Aiven </docs/platform/howto/byoc/create-custom-cloud>`, you add customer contacts for this cloud, which is a part of the initial custom cloud's configuration. Later, you can come back to the the **Customer contact** setting in your cloud's page in `Aiven Console <https://console.aiven.io/>`_ and update the contacts list you initially created for your cloud.
+With the BYOC feature enabled, you can :doc:`create custom clouds </docs/platform/howto/byoc/create-custom-cloud>` in your Aiven organizations. While setting up a custom cloud in Aiven, you add customer contacts for this cloud, which is a part of the initial custom cloud's configuration. Later, you can come back to the the **Customer contact** setting in your cloud's page in `Aiven Console <https://console.aiven.io/>`_ and update the contacts list you initially created for your cloud.
 
 Prerequisites
 -------------
@@ -25,7 +25,7 @@ Update the contacts list
 1. Log in to `Aiven Console <https://console.aiven.io/>`_ as an administrator.
 2. From the left sidebar, select **Bring your own cloud**.
 3. In the **Bring you own cloud** view, select one of the clouds available on the list.
-4. In the selected cloud's page, use the meatballs (**...**) menu in the top right corner to select **Customer contact**.
+4. In the selected cloud's page, use the ellipsis (**...**) menu in the top right corner to select **Customer contact**.
 5. In the **Customer contact** window, select a new contact's role from the dropdown menu, enter the email address, and select **+** to add the provided contact's details.
 
    .. note::
@@ -46,8 +46,8 @@ You can preview the updated list of contacts by taking the following steps:
 1. Log in to `Aiven Console <https://console.aiven.io/>`_ as an administrator.
 2. From the left sidebar, select **Bring your own cloud**.
 3. In the **Bring you own cloud** view, select one of the clouds available on the list.
-4. In the selected cloud's page, use the meatballs (**...**) menu in the top right corner.
-5. Select **Customer contact** from the options available on the the meatballs (**...**) menu.
+4. In the selected cloud's page, use the ellipsis (**...**) menu in the top right corner.
+5. Select **Customer contact** from the options available on the the ellipsis (**...**) menu.
 
 Related reading
 ---------------
