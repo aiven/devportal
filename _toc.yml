@@ -819,6 +819,8 @@ entries:
             title: Alerts and notifcations
           - file: docs/products/grafana/howto/list-manage-cluster
             title: Manage cluster
+          - file: docs/products/grafana/howto/pitr-process-for-grafana
+            title: Point-in-time recovery process 
       - file: docs/products/grafana/reference
         title: Reference
         entries:
