@@ -20,7 +20,7 @@ Limitations
 '''''''''''
 
 * Administrator's role is required for creating custom clouds.
-* You need to use AWS as a cloud provider.
+* BYOC beta version supports the AWS cloud provider only.
 * You need to use the :ref:`BYOC standard deployment <byoc-standard>` as a deployment model for your custom cloud.
 
 Prerequisites
@@ -40,10 +40,14 @@ Navigate to BYOC in Aiven Console
 2. From the left sidebar, select **Bring you own cloud**.
 3. In the **Bring you own cloud** view, select **Create custom cloud**.
 
+.. _generate-infra-template:
+
 Generate an infrastructure template
 '''''''''''''''''''''''''''''''''''
 
-In this step, an infrastructure-as-code (IaC) template is generated. For that purpose, AWS CloudFormation or Terraform can be used.
+In this step, an infrastructure-as-code (IaC) template is generated. In :ref:`the step that follows <acquire-role-arn>`, you'll deploy this template in your AWS account to acquire Role ARN (Amazon Resource Name), which you need for configuring your custom cloud.
+
+The AWS CloudFormation and Terraform formats are supported for the template.
 
 In the **Create custom cloud** wizard, proceed as follows:
 
@@ -70,14 +74,16 @@ In the **Create custom cloud** wizard, proceed as follows:
    
 .. topic:: Result
 
-    Your infrastructure template gets generated based on your inputs. You can view, copy, or download it.
+    Your infrastructure template gets generated based on your inputs. You can view, copy, or download it. Now, you can use the template to :ref:`acquire Role ARN <acquire-role-arn>`.
 
-Acquire ``Role ARN``
-''''''''''''''''''''
+.. _acquire-role-arn:
+
+Deploy the template to acquire ``Role ARN``
+'''''''''''''''''''''''''''''''''''''''''''
 
 Role ARN (Amazon Resource Name) is an `identifier of the role <https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html>`_ created when running the infrastructure template in your AWS account. Aiven uses Role ARN to `assume the role <https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html>`_ and run operations such as creating VMs for service nodes in your BYOC account.
 
-Use the generate template to create your Role ARN by deploying the template in your AWS account. How you do that depends on the type of the template.
+Use the template generated in step :ref:`Generate an infrastructure template <generate-infra-template>` to create your Role ARN by deploying the template in your AWS account. How you do that depends on the type of the template.
 
 .. topic:: Deploying the IaC template in the AWS account
 
