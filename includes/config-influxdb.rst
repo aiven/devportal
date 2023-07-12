@@ -87,6 +87,12 @@
 
 **influxdb.conf configuration values** 
 
+``query_log_enabled``
+~~~~~~~~~~~~~~~~~~~~~
+*boolean*
+
+**Whether queries should be logged before execution. May log sensitive data contained within a query.** 
+
 ``log_queries_after``
 ~~~~~~~~~~~~~~~~~~~~~
 *integer*
