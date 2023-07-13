@@ -744,7 +744,7 @@ Updates the settings for an Aiven service.
   * - ``--cloud``
     - The name of the cloud region where to deploy the service; check :ref:`avn-cloud-list` for more information
   * - ``-c KEY=VALUE``
-    - Apply a configuration setting. See 'avn service types -v' for available values.
+    - Apply a configuration setting. Run ``avn service types -v`` to view available values.
   * - ``--disk-space-gib``
     - Total amount of disk space for data storage (GiB)
   * - ``--plan``
