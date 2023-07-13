@@ -1,5 +1,5 @@
-Connect to MySQL from the command line
---------------------------------------
+Connect to Aiven for MySQL® from the command line
+=================================================
 
 Here, you can find how to connect to your MySQL via the command line with a choice of tools:
 
@@ -24,15 +24,12 @@ These are the placeholders you will need to replace in the code sample:
   * - Variable
     - Description
   * - ``SERVICE_URI``
-    - URL for MySQL connection, from the service overview page
+    - URL for the MySQL connection, from `Aiven Console <https://console.aiven.io/>`__ > the **Overview** page of your service
 
 Prerequisites
 ~~~~~~~~~~~~~
 
-For this example you will need:
-
-1. The ``mysqlsh`` client installed. You can install this by following the `MySQL shell installation documentation <https://dev.mysql.com/doc/mysql-shell/8.0/en/mysql-shell-install.html>`_.
-
+For this example you need the ``mysqlsh`` client installed. You can install this by following the `MySQL shell installation documentation <https://dev.mysql.com/doc/mysql-shell/8.0/en/mysql-shell-install.html>`_.
 
 Code
 ~~~~
@@ -55,15 +52,13 @@ You can execute this query to test:
    +-------+
    1 row in set (0.0539 sec)
 
-
-
 Using ``mysql``
 ---------------
 
 Variables
 ~~~~~~~~~
 
-These are the placeholders you will need to replace in the code sample:
+These are the placeholders you need to replace in the code sample:
 
 .. list-table::
   :header-rows: 1
@@ -86,14 +81,12 @@ These are the placeholders you will need to replace in the code sample:
 Prerequisites
 ~~~~~~~~~~~~~
 
-For this example you will need:
-
-1. The ``mysql`` client installed. You can install it by following the `MySQL client installation documentation <https://dev.mysql.com/doc/refman/8.0/en/mysql.html>`_.
+For this example you need the ``mysql`` client installed. You can install it by following the `MySQL client installation documentation <https://dev.mysql.com/doc/refman/8.0/en/mysql.html>`_.
 
 Code
 ~~~~
 
-This step requires to manually specify individual parameters. You can find those parameters in the `Aiven Console <https://console.aiven.io>`_ for your service. 
+This step requires to manually specify individual parameters. You can find those parameters in `Aiven Console <https://console.aiven.io>`_ > the **Overview** page of your service.
 
 Once you have these parameters, execute the following from a terminal window to connect to the MySQL database:
 

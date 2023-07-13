@@ -1,12 +1,12 @@
-Connect to MySQL with Java
-============================
+Connect to Aiven for MySQL® with Java
+=====================================
 
-This example connects your Java application to a MySQL service.
+This example connects your Java application to an Aiven for MySQL® service.
 
 Variables
 '''''''''
 
-These are the placeholders you will need to replace in the code sample:
+These are the placeholders you need to replace in the code sample:
 
 .. list-table::
    :widths: 20 80
@@ -15,9 +15,9 @@ These are the placeholders you will need to replace in the code sample:
    * - Variable
      - Description
    * - ``MYSQL_HOST``
-     - Host name for the connection, from the service overview page
+     - Host name for the connection, from `Aiven Console <https://console.aiven.io/>`__ > the **Overview** page of your service > the **Connection information** section
    * - ``MYSQL_PORT``
-     - Port number to use, from the service overview page
+     - Port number to use, from `Aiven Console <https://console.aiven.io/>`__ > the **Overview** page of your service > the **Connection information** section
    * - ``MYSQL_PASSWORD``
      - Password for ``avnadmin`` user
    * - ``MYSQL_DATABASE``
@@ -26,15 +26,16 @@ These are the placeholders you will need to replace in the code sample:
 Pre-requisites
 ''''''''''''''
 
-For this example you will need:
-
 * JDK 1.8+
 
-* MySQL JDBC Driver which could be downloaded manually from `MySQL Community Downloads <https://dev.mysql.com/downloads/connector/j/>`_
-  or it could be downloaded with maven like::
+* MySQL JDBC Driver, which could be downloaded in the following ways:
 
-    mvn org.apache.maven.plugins:maven-dependency-plugin:2.8:get -Dartifact=mysql:mysql-connector-java:8.0.28:jar -Ddest=mysql-driver-8.0.28.jar
+  * Manually from `MySQL Community Downloads <https://dev.mysql.com/downloads/connector/j/>`_
+  * Or using maven
 
+    .. code-block:: bash
+
+       mvn org.apache.maven.plugins:maven-dependency-plugin:2.8:get -Dartifact=mysql:mysql-connector-java:8.0.28:jar -Ddest=mysql-driver-8.0.28.jar
 
 Code
 ''''
@@ -43,7 +44,6 @@ Add the following to ``MySqlExample.java``:
 
 .. literalinclude:: /code/products/mysql/connect.java
    :language: java
-
 
 This code creates a MySQL client and connects to the database. It fetches version of MySQL and prints it the output.
 
@@ -56,4 +56,3 @@ If the script runs successfully, the output will be the values that were inserte
     Version: 8.0.26
 
 Now that your application is connected, you are all set to use Java with Aiven for MySQL.
-

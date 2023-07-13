@@ -18,21 +18,20 @@ Create a ClickHouse service
 Create a database
 -----------------
 
-1. When the service is running, go to the *Databases & Tables* tab.
-
-2. Enter a name for your database, then click **Create database**.
+1. When the service is running, select **Databases and tables** from the sidebar of your service's page.
+2. In the **Databases and tables** page, select **Create database** > **ClickHouse database**.
+3. In the **Create ClickHouse database** window, enter a name for your database and select **Create database**.
 
 .. note::
 
     All databases must be created through the web console.
-
 
 Connect to ClickHouse
 ---------------------
 
 1. Get the latest Docker image of `the ClickHouse client from Docker Hub <https://hub.docker.com/r/clickhouse/clickhouse-client>`_
 
-2. Go to the *Overview* tab and copy the **Host**, **Port**, **User**, and **Password** parameters that you need for connecting to the service.
+2. Go to the **Overview** page of your service, and copy the **Host**, **Port**, **User**, and **Password**, which you need for connecting to the service.
 
 3. Run the following command to connect to your service and run SQL queries on your database, substitute the placeholders for ``USERNAME``, ``PASSWORD``, ``HOST`` and ``PORT``:
 

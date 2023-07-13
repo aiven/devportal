@@ -8,9 +8,8 @@ Whenever a service node needs to be recycled, e.g. for maintenance, a new node i
 Integrate two PostgreSQL services
 ---------------------------------
 
-1. On the service overview page for your PostgreSQL service, go to **Manage Integrations** and choose the **IP Allow-List** option.
+1. On the **Overview** page for your Aiven for PostgreSQL service, go to **Manage integrations** and choose the **IP Allow-List** option.
 
-2. Choose either a new or existing PostgreSQL service.
+2. Choose either a new or existing Aiven for PostgreSQL service.
 
-Now your PostgreSQL will allow IP traffic from the chosen PostgreSQL service, regardless of what its IP address is.
-
+Now your Aiven for PostgreSQL allows IP traffic from the chosen PostgreSQL service, regardless of what its IP address is.

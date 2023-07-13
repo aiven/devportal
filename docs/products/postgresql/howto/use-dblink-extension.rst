@@ -18,7 +18,7 @@ To create a ``dblink`` foreign data wrapper you need the following information a
 
 .. Note::
 
-    If you're using Aiven for PostgreSQL as remote server, the above details are available in the `Aiven console <https://console.aiven.io/>`_ service Overview tab or via the dedicated ``avn service get`` command with the :ref:`Aiven CLI <avn_service_get>`.
+    If you're using Aiven for PostgreSQL as remote server, the above details are available in the `Aiven console <https://console.aiven.io/>`_ > the service's **Overview** page or via the dedicated ``avn service get`` command with the :ref:`Aiven CLI <avn_service_get>`.
 
 
 Enable ``dblink`` extension on Aiven for PostgreSQL
@@ -26,7 +26,7 @@ Enable ``dblink`` extension on Aiven for PostgreSQL
 
 To enable the ``dblink`` extension on an Aiven for PostgreSQL service:
 
-* Connect to the database with the ``avnadmin`` user. The following shows how to do it with ``psql``, the service URI can be found in the `Aiven console <https://console.aiven.io/>`_ service Overview page:
+* Connect to the database with the ``avnadmin`` user. The following shows how to do it with ``psql``, the service URI can be found in the `Aiven console <https://console.aiven.io/>`_ the service's **Overview** page:
 
 ::
 
@@ -47,7 +47,7 @@ Create a foreign data wrapper using ``dblink_fdw``
 
 To create a foreign data wrapper using the ``dblink_fwd`` you need to perform the following steps:
 
-*  Connect to the database with the ``avnadmin`` user. The following shows how to do it with ``psql``, the service URI can be found in the `Aiven console <https://console.aiven.io/>`_ service Overview page:
+*  Connect to the database with the ``avnadmin`` user. The following shows how to do it with ``psql``, the service URI can be found in the `Aiven console <https://console.aiven.io/>`_ the service's **Overview** page:
 
 ::
 
