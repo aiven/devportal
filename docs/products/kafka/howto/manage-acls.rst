@@ -1,10 +1,8 @@
 Manage users and access control lists
 =======================================
+Aiven for Apache Kafka® uses access control lists (ACL) and user definitions to grant specific rights for producing or consuming topics. For detailed information on permission mapping, see  :doc:`Access control lists and permission mapping <../concepts/acl>` section. 
 
-Aiven for Apache Kafka® uses access control lists (ACL) and user definitions in order to establish individual rights to produce or consume a topic.
-More information about permissions mapping can be found in the :doc:`dedicated documentation <../concepts/acl>`. 
-
-You can manage users and ACL entries in the corresponding tabs of the service page in the `Aiven web console <https://console.aiven.io/>`_.
+To manage users and ACL entries, access the corresponding sections in the left sidebar of the service page within the `Aiven Console <https://console.aiven.io/>`_. 
 
 Add a user
 ----------
@@ -15,30 +13,44 @@ Add a user
     
     All other permissions related to a topic (``Alter``, ``Delete``) **only** apply to the topics matching the pattern that you specify.
 
-You can add a new user via the `Aiven console <https://console.aiven.io/>`_ with:
+To add a new user, follow these steps: 
 
-#. Log in to the Aiven web console and select your service.
+#. Log in to `Aiven Console <https://console.aiven.io/>`_ and select your service.
 
-#. Click the **Users** tab.
+#. Select **Users** from the left sidebar.
 
-#. Enter a name for the new user and then click **Add service user**.
+#. Enter a name for the new user and then select **Add service user**.
 
 #. The new user appears on the *Users* page, with links to the user-specific access key and certificate.
+
 
 Add a new ACL grant
 -------------------
 
-You can add a new access control list grant via the `Aiven console <https://console.aiven.io/>`_ with:
+To add new access control list, follow these steps: 
 
-1. Click the **ACL** tab.
+You can add a new access control list grant via the `Aiven Console <https://console.aiven.io/>`_ with:
 
-2. Enter the username and topic that the grant applies to.
+1. Log in to `Aiven Console <https://console.aiven.io/>`_ and select your service.
 
-3. Select the **Permission** that you want to apply.
-   
-   Details of each available option are described in the :doc:`permission mapping documentation <../concepts/acl>`
+2. Select **ACL** from the left sidebar and select **Add entry**. 
+3. On the **Add access control entry** screen, select the desired ACL type:
 
-4. Click **Add ACL entry**.
+    a. For **ACL for Topics**, enter the following details:
+    
+        * Username
+        * Topic
+        * Permissions
+
+    b. For ACL for Schema Registry, enter the following details:
+    
+        * Username
+        * Resources
+        * Permissions
+
+    Refer to  :doc:`Access control lists and permission mapping <../concepts/acl>` section for more information on permission mapping.
+
+6. Click **Add ACL entry**.
 
 .. Tip:: 
     

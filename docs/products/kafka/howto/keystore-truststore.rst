@@ -7,7 +7,7 @@ right tools to be able to communicate with the Aiven services.
 Keystores and truststores are password-protected files accessible by the client that interacts with the service. 
 To create these files:
 
-1. Log into the `Aiven web console <https://console.aiven.io/>`_ and select your Aiven for Apache Kafka service.
+1. Log in to `Aiven Console <https://console.aiven.io/>`_ and select your Aiven for Apache Kafka service.
 
 2. Download the **Access Key**, **Access Certificate** and **CA Certificate**. The resulting ``service.key``, ``service.cert`` and ``ca.pem`` are going to be used in the following steps.
 

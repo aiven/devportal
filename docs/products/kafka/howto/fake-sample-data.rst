@@ -23,7 +23,7 @@ To learn data streaming, you need a continuous flow of data and for that you can
 
 2. Copy the file ``conf/env.conf.sample`` to ``conf/env.conf``
 
-3. Create a new access token via the `Aiven console <https://console.aiven.io/>`_ or the following command in the :doc:`Aiven CLI </docs/tools/cli/account>`, changing the ``max-age-seconds`` appropriately for the duration of your test:
+3. Create a new access token via the `Aiven Console <https://console.aiven.io/>`_ or the following command in the :doc:`Aiven CLI </docs/tools/cli/account>`, changing the ``max-age-seconds`` appropriately for the duration of your test:
 
 ::
 
@@ -60,4 +60,4 @@ To learn data streaming, you need a continuous flow of data and for that you can
 
     docker run fake-data-producer-for-apache-kafka-docker
 
-7. Once the Docker image is running, check in the target Aiven for Apache Kafka® service that the topic is populated. This can be done with the `Aiven console <https://console.aiven.io/>`_, if the Kafka REST option is enabled, in the *Topics* tab. Alternatively you can use tools like :doc:`kcat <kcat>` to achieve the same.
+7. Once the Docker image is running, check in the target Aiven for Apache Kafka® service that the topic is populated. This can be done with the `Aiven Console <https://console.aiven.io/>`_, if the Kafka REST option is enabled, in the *Topics* tab. Alternatively you can use tools like :doc:`kcat <kcat>` to achieve the same.

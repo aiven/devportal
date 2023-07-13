@@ -114,6 +114,7 @@ IPsec
 iptables
 Java
 JMX
+json
 JobManager
 Jolokia
 JumpCloud
