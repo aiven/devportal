@@ -22,9 +22,9 @@ Aiven for Apache Flink® allows you to build data pipelines that stream across d
 To create your first data service integration: 
 
 1. Open your Aiven for Apache Flink. 
-2. In the **Overview** tab, click the **Get Started** button.
+2. In the service **Overview** screen, select **Get Started**.
 3. Choose the service you wish to integrate: Aiven for Apache Kafka®, Aiven for PostgreSQL®, or Aiven for OpenSearch®.
-4. Click the **Integrate** button to complete the integration process.
+4. Select **Integrate** to complete the integration process.
 
 For detailed steps, see :doc:`Create Apache Flink® data service integrations <howto/create-integration>`. 
 
