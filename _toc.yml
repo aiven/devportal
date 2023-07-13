@@ -46,12 +46,13 @@ entries:
       entries:
       - file: docs/platform/howto/feature-preview 
       - file: docs/platform/howto/list-user
-        title: User and authentication management
+        title: User and access management
         entries:
-          - file: docs/platform/howto/manage-org-users
-          - file: docs/platform/howto/add-authentication-method
+          - file: docs/platform/howto/edit-user-profile
           - file: docs/platform/howto/change-your-email-address
+          - file: docs/platform/howto/add-authentication-method
           - file: docs/platform/howto/create_authentication_token
+          - file: docs/platform/howto/manage-org-users
           - file: docs/platform/howto/create_new_service_user
           - file: docs/tools/aiven-console/howto/create-manage-teams
           - file: docs/platform/howto/user-2fa
@@ -133,16 +134,18 @@ entries:
         title: SAML Authentication
         entries:
           - file: docs/platform/howto/saml/saml-authentication
-          - file: docs/platform/howto/saml/setup-saml-onelogin
-            title: Setting up SAML with OneLogin
-          - file: docs/platform/howto/saml/setup-saml-azure
-            title: Setting up SAML with Azure
-          - file: docs/platform/howto/saml/setup-saml-okta
-            title: Setting up SAML with Okta
           - file: docs/platform/howto/saml/setup-saml-auth0
             title: Setting up SAML with Auth0
+          - file: docs/platform/howto/saml/setup-saml-azure
+            title: Setting up SAML with Azure
+          - file: docs/platform/howto/saml/setup-saml-fusionauth
+            title: Setting up SAML with FusionAuth
           - file: docs/platform/howto/saml/setup-saml-jumpcloud
             title: Setting up SAML with JumpCloud
+          - file: docs/platform/howto/saml/setup-saml-okta
+            title: Setting up SAML with Okta
+          - file: docs/platform/howto/saml/setup-saml-onelogin
+            title: Setting up SAML with OneLogin
       - file: docs/platform/howto/list-support
         title: Support
         entries:
