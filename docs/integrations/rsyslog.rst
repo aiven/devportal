@@ -91,7 +91,7 @@ button.
 You should be able to select your previously configured Rsyslog service
 integration by clicking **Use integration** in the modal window.
 
-.. image:: /images/integrations/remote-syslog-service-integrations.png
+.. image:: /images/integrations/rsyslog-service-integration.png
    :alt: The page that shows the integrations available for a service
 
 Alternately, with the Aiven Client, first you need the id of the
@@ -141,7 +141,7 @@ The Syslog Endpoint to use for ``server`` depends on your account:
 -  if it ends with ``.us`` use ``syslogserver.coralogix.us``
 -  if it ends with ``.in`` use ``syslogserver.app.coralogix.in``
 
-See the Coralogix `Rsyslog <https://coralogix.com/docs/rsyslog/>`_ documentation for more information.
+See the Coralogix `Rsyslog <https://coralogix.com/docs/>`_ documentation for more information.
 
 ::
 
