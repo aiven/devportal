@@ -5,14 +5,14 @@ The MySQL Debezium source connector extracts the changes committed to the databa
 
 .. note::
 
-    You can check the full set of available parameters and configuration options in the `connector's documentation <https://debezium.io/docs/connectors/mysql/>`_.
+    You can check the complete set of available parameters and configuration options in the `connector's documentation <https://debezium.io/docs/connectors/mysql/>`_.
 
 .. _connect_debezium_mysql_schema_versioning:
 
 Schema versioning
 -----------------
 
-Database table's schema can evolve over time by adding, modifying or removing columns. The MySQL Debezium source connector keeps track of schema changes by storing them in a separate "history" topic that you can setup with dedicated ``history.*`` configuration parameters.
+Database table's schema can evolve over time by adding, modifying, or removing columns. The MySQL Debezium source connector keeps track of schema changes by storing them in a separate "history" topic that you can set up with dedicated ``history.*`` configuration parameters.
 
 .. Warning::
 
@@ -24,9 +24,9 @@ Database table's schema can evolve over time by adding, modifying or removing co
 Prerequisites
 -------------
 
-To setup a Debezium source connector pointing to MySQL, you need an Aiven for Apache Kafka service :doc:`with Kafka Connect enabled <enable-connect>` or a :ref:`dedicated Aiven for Apache Kafka Connect cluster <apache_kafka_connect_dedicated_cluster>`. 
+To set up a Debezium source connector pointing to MySQL, you need an Aiven for Apache Kafka service :doc:`with Kafka Connect enabled <enable-connect>` or a :ref:`dedicated Aiven for Apache Kafka Connect cluster <apache_kafka_connect_dedicated_cluster>`. 
 
-Furthermore you need to collect the following information about the source MySQL database upfront:
+Furthermore, you need to collect the following information about the source MySQL database upfront:
 
 * ``MYSQL_HOST``: The database hostname
 * ``MYSQL_PORT``: The database port
@@ -37,24 +37,24 @@ Furthermore you need to collect the following information about the source MySQL
 * ``MYSQL_TABLES``: The list of database tables to be included in Apache Kafka; the list must be in the form of ``schema_name1.table_name1,schema_name2.table_name2``
 * ``APACHE_KAFKA_HOST``: The hostname of the Apache Kafka service, needed when storing the :ref:`schema definition changes <connect_debezium_mysql_schema_versioning>`
 * ``APACHE_KAFKA_PORT``: The port of the Apache Kafka service, needed when storing the :ref:`schema definition changes <connect_debezium_mysql_schema_versioning>`
-* ``SCHEMA_REGISTRY_PORT``: The Apache Kafka's schema registry port, only needed when using Avro as data format
-* ``SCHEMA_REGISTRY_USER``: The Apache Kafka's schema registry username, only needed when using Avro as data format
-* ``SCHEMA_REGISTRY_PASSWORD``: The Apache Kafka's schema registry user password, only needed when using Avro as data format
+* ``SCHEMA_REGISTRY_PORT``: The Apache Kafka's schema registry port is only needed when using Avro as a data format
+* ``SCHEMA_REGISTRY_USER``: The Apache Kafka's schema registry username is only needed when using Avro as a data format
+* ``SCHEMA_REGISTRY_PASSWORD``: The Apache Kafka's schema registry user password is only needed when using Avro as a data format
 
 
 .. Note::
 
-    If you're using Aiven for MySQL and Aiven for Apache Kafka the above details are available in the `Aiven console <https://console.aiven.io/>`_ service Overview tab or via the dedicated ``avn service get`` command with the :ref:`Aiven CLI <avn_service_get>`.
+    If you're using Aiven for MySQL and Aiven for Apache Kafka, the above details are available in the `Aiven console <https://console.aiven.io/>`_ service Overview tab or via the dedicated ``avn service get`` command with the :ref:`Aiven CLI <avn_service_get>`.
 
 Setup a MySQL Debezium source connector with Aiven Console
 -----------------------------------------------------------
 
-The following example demonstrates how to setup a Debezium source Connector for Apache Kafka to a MySQL database using the `Aiven Console <https://console.aiven.io/>`_.
+The following example demonstrates how to set up a Debezium source Connector for Apache Kafka to a MySQL database using the `Aiven Console <https://console.aiven.io/>`_.
 
 Define a Kafka Connect configuration file
 '''''''''''''''''''''''''''''''''''''''''
 
-Define the connector configurations in a file (we'll refer to it with the name ``debezium_source_mysql.json``) with the following content, creating a file is not strictly necessary but allows to have all the information in one place before copy/pasting them in the `Aiven Console <https://console.aiven.io/>`_:
+Define the connector configurations in a file (we'll refer to it with the name ``debezium_source_mysql.json``) with the following content. Creating a file is not strictly necessary but allows to have all the information in one place before copy/pasting them in the `Aiven Console <https://console.aiven.io/>`_:
 
 .. code-block:: json
 
@@ -123,28 +123,29 @@ The configuration file contains the following entries:
 Create a Kafka Connect connector with the Aiven Console
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-To create the connector, access the `Aiven Console <https://console.aiven.io/>`_ and select the Aiven for Apache Kafka® or Aiven for Apache Kafka Connect® service where the connector needs to be defined, then:
+To create a Kafka Connect connector, follow these steps: 
 
-1. Click on the **Connectors** tab
-2. Clink on **Create New Connector**, the button is enabled only for services :doc:`with Kafka Connect enabled <enable-connect>`.
-3. Select the **Debezium - MySQL**
-4. Under the *Common* tab, locate the **Connector configuration** text box and click on **Edit**
-5. Paste the connector configuration (stored in the ``debezium_source_mysql.json`` file) in the form
-6. Click on **Apply**
+1. Log in to the `Aiven Console <https://console.aiven.io/>`_ and select the Aiven for Apache Kafka® or Aiven for Apache Kafka Connect® service where the connector needs to be defined. 
+2. Select **Connectors** from the left sidebar. 
+3. Select **Create New Connector**, the button is enabled only for services :doc:`with Kafka Connect enabled <enable-connect>`.
+4. Select the **Debezium - MySQL**.
+5. In the **Common** tab, locate the **Connector configuration** text box and select on **Edit**.
+6. Paste the connector configuration (stored in the ``debezium_source_mysql.json`` file) in the form.
+7. Select **Apply**.
 
    .. note::
 
     The Aiven Console parses the configuration file and fills the relevant UI fields. You can review the UI fields across the various tabs and change them if necessary. The changes will be reflected in JSON format in the **Connector configuration** text box.
 
-7. After all the settings are correctly configured, click on **Create new connector**
+8. After all the settings are correctly configured, select **Create connector**
 
    .. Tip::
 
     If you're using Aiven for Apache Kafka, topics will not be created automatically. Either create them manually following the ``database.server.name.schema_name.table_name`` naming pattern or enable the ``kafka.auto_create_topics_enable`` advanced parameter.
 
-8. Verify the connector status under the **Connectors** tab
-9. Verify the presence of the data in the target Apache Kafka topic coming from the MySQL dataset. The topic name is equal to concatenation of the database and table name. If you need to change the target table name, you can do so using the Kafka Connect ``RegexRouter`` transformation.
+9. Verify the connector status under the **Connectors** screen.
+10. Verify the presence of the data in the target Apache Kafka topic coming from the MySQL dataset. The topic name is equal to concatenation of the database and table name. If you need to change the target table name, you can do so using the Kafka Connect ``RegexRouter`` transformation.
 
 .. note::
 
-    Connectors can be created also using the dedicated :ref:`Aiven CLI command <avn_service_connector_create>`.
+    You can also create connectors using the :ref:`Aiven CLI command <avn_service_connector_create>`.
