@@ -1,12 +1,27 @@
 Restrict network access to your service
 ========================================
 
-It is possible to restrict access to your service to a single IP, and address block, or any combination of both. By default the service is publicly accessible.
+By default, Aiven services are publicly accessible, but you can restrict access to your service to a single IP, an address block, or any combination of both.
+
+.. important::
+
+     IP filters apply to publicly-accessible endpoints only.
 
 1. Log in to `Aiven Console <https://console.aiven.io>`_.
-2. Go to your **Services**, and open the service you want to restrict.
-3. On the **Overview** page of your service, scroll down to **Allowed IP addresses**, and click **Change**. 
-4. Enter your address or address block using the CIDR notation. You can specify several addresses or blocks or combination of both in a single change.
-5. Click **Save Changes**.
+2. On the **Services** page, select the service you want to restrict.
+3. On the **Overview** page of your service, scroll down to **Allowed IP addresses**, and select **Change**. 
+4. In the **Allowed inbound IP addresses** window, enter your address or address block using the CIDR notation, and select the **+** icon to add it to the list of the trusted IP addresses.
 
-You can also use the :ref:`dedicated service update function <avn-cli-service-update>` to create or update the IP filter for your service via the :doc:`Aiven CLI </docs/tools/cli>`.
+   .. note::
+   
+      You can add multiple addresses or address blocks or combination of both at once.
+
+5. Select **Close**.
+
+.. topic:: Result
+
+    Now your service can be accessed from the specified IP addresses only.
+
+.. seealso::
+
+   You can use the :ref:`dedicated service update function <avn-cli-service-update>` to create or update the IP filter for your service via the :doc:`Aiven CLI </docs/tools/cli>`.
