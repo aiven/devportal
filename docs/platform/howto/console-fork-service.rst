@@ -8,16 +8,19 @@ Learn more :doc:`about service forking <../concepts/service-forking>`.
 Fork a service using the console
 --------------------------------
 
-1. Log in to the Aiven console. 
-2. Go to your **Services**, and open the service you want to fork.
-3. On the **Overview** tab, scroll down to **Fork Database** > **New database fork**. 
-4. Select the new service region and plan. 
-5. Click **Create fork**.
+1. Log in to `Aiven Console <https://console.aiven.io/>`_. 
+2. Go to your **Services**, and select the service you want to fork.
+3. On the **Overview** page of your service, scroll down to **Fork Database** > **New database fork**. 
+4. In the **New Database Fork** window, select the new service region and plan. 
+5. Select **Create fork**.
 
-You have now copied your Aiven service.
+.. topic:: Result
+    
+   You have now copied your Aiven service.
 
-You can now apply any integrations you may need for the copy. 
-
+.. tip::
+    
+    You can now apply any integrations you may need for the copy. 
 
 Fork a service using the Aiven client (CLI)
 -------------------------------------------
@@ -33,6 +36,10 @@ For example, if you want to create a fork of your ``forker`` PostgreSQL® servic
 
     avn service create forked -t pg --plan business-4 -c service_to_fork_from=forker
     
-You have now copied your Aiven service.
+.. topic:: Result
+    
+    You have now copied your Aiven service.
 
-You can now apply any integrations you may need for the copy.
+.. tip::
+    
+    You can now apply any integrations you may need for the copy.

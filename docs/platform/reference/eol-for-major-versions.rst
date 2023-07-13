@@ -21,7 +21,7 @@ software.
 Aiven services inherit the upstream project’s software versioning
 scheme. Depending on the service, a major version can be either a single
 digit (e.g. PostgreSQL® 14) or ``major.minor`` (e.g. Kafka® 3.2). The
-exact version of the service is visible in the Aiven console once the
+exact version of the service is visible in `Aiven Console <https://console.aiven.io/>`_ once the
 service is up and running.
 
 Aiven for Elasticsearch
@@ -203,7 +203,7 @@ When Aiven defines the EOL date for a service major version,
 -  Customers will receive an EOL email announcement along with
    instructions on the next steps.
 
--  Aiven Console will also show an EOL alert for affected services.
+-  `Aiven Console <https://console.aiven.io/>`_ will also show an EOL alert for affected services.
 
 -  Email reminders will be sent to customers on a monthly cadence. On
    the month of the EOL date, the cadence shifts to weekly reminders.
