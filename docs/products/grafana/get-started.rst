@@ -19,7 +19,7 @@ Log in to Grafana
 After starting the Aiven for Grafana service, you can follow these steps to access Grafana:
 
 1. From the `Aiven Console <https://console.aiven.io/>`_, access your Aiven for Grafana service.
-2. In the **Overview** tab, copy or click on the **Service URI** to launch the Grafana login page in a browser.
+2. In the service **Overview** screen, copy or select the **Service URI** to launch the Grafana login page in a browser.
 3. On the login page, enter or copy and paste the **User** and **Password** details from the *Connection information* section, and select **Log in**. 
 
 You can begin visualizing your data sources using the default dashboards or create your own.
