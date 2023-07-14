@@ -22,6 +22,10 @@ By default, Aiven services are publicly accessible, but you can restrict access 
 
     Now your service can be accessed from the specified IP addresses only.
 
+.. topic:: Alternative
+
+   You can also use the :ref:`dedicated service update function <avn-cli-service-update>` to create or update the IP filter for your service via the :doc:`Aiven CLI </docs/tools/cli>`.
+
 .. seealso::
 
-   You can use the :ref:`dedicated service update function <avn-cli-service-update>` to create or update the IP filter for your service via the :doc:`Aiven CLI </docs/tools/cli>`.
+   For more ways of securing your service, check information on Virtual Private Cloud (VPC) in :ref:`Networking with VPC peering <networking-with-vpc-peering>` and :ref:`Configure VPC peering <platform_howto_setup_vpc_peering>`.
