@@ -22,7 +22,7 @@ By default, Aiven services are publicly accessible, but you can restrict access 
 
     Now your service can be accessed from the specified IP addresses only.
 
-.. topic:: Alternative
+.. topic:: Alternative method
 
    You can also use the :ref:`dedicated service update function <avn-cli-service-update>` to create or update the IP filter for your service via the :doc:`Aiven CLI </docs/tools/cli>`.
 
