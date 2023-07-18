@@ -16,7 +16,6 @@ Delete a powered-off service
 ------------------------------
 
 1. In `Aiven Console <https://console.aiven.io/>`_, select **Services** in the left navigation bar to display a list of all services.
-2. Use the search bar to locate a specific powered off service or the filter to display a list of services with status **Powered off**.
-3. Select the powered off service to access its **Overview** page, and select **Delete Service**.
-4. On the confirmation dialog, enter the name of the service to delete and select **Delete** to confirm the action.
-
+2. On the **Services** page, use the search bar to locate a specific powered off service or the filter to display a list of services with status **Powered off**.
+3. Select the powered off service to access its **Overview** page, and select **Delete service** from the meatballs menu in the top right corner.
+4. In the **Delete confirmation** window, enter the name of the service to delete and select **Delete** to confirm the action.

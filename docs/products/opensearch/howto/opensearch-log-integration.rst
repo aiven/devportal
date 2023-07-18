@@ -14,9 +14,9 @@ Enable log integration
 
 Here are the steps needed to enable logs integration. This allows you to send your service's logs to your Aiven for OpenSearch® from another Aiven service.
 
-1. On the **Services** page, click a service name.
+1. Log in to the `Aiven Console <https://console.aiven.io/>`_, and select the Aiven for OpenSearch service for which you want to enable log integration. 
 
-2. On the **Logs** tab, click on **Enable logs integration**.
+2. Select **Logs** from the left sidebar, and select **Enable logs integration**.
 
 3. Select an existing OpenSearch instance or create a new one, then select **Continue**.
     - When creating a new service you will need to select the cloud, region and plan to use. You should also give your service a name. The service overview page shows the nodes rebuilding, and then indicates when they are ready.
@@ -44,31 +44,28 @@ There are two parameters that you can adjust when integrating logs to your OpenS
 
 You can change the configuration of the ``index prefix`` and ``index retention limit`` after the integration is enabled.
 
-1. On the **Services** page, click a service name.
+1. Log in to the `Aiven Console <https://console.aiven.io/>`_, and select the Aiven for OpenSearch service.
    
-2. On the **Overview** page, scroll down to the **Service integrations**.
+2. On the service's **Overview** screen, scroll to **Service integrations**, and select **Manage integrations**.
 
-3. Click on **Manage integrations**.
+4. From the list in the **Integrations** screen, find the service to configure.
 
-4. On the **Enabled service integrations** list, find the service to configure.
+5. Select **Edit** from the drop-down menu (ellipsis), and make the necessary changes to the parameters.
 
-5. Click **Edit**, and edit the parameters.
+6. Select **Edit** to save your changes. 
 
-6. Once the parameters are chosen, click **Edit**.
-
-Your log integration parameters should be updated after those steps.
 
 Disable logs integration
 ------------------------
 
-In case, you are no longer interested in sending the logs from your service to OpenSearch, follow those steps to disable the integration:
+If you no longer wish to send logs from your service to OpenSearch, follow these steps to disable the integration:
 
 1. On the **Overview** page, scroll down to the **Service integrations**.
 
-2. Click on **Manage integrations**.
+2. Select **Manage integrations**.
 
-3. On the **Enabled service integrations** list, find the service to disable the integration.
+3. From the list in the **Integrations** screen, find the service to disable the integration.
 
-4. Click **Delete**.
+4. Select **Disconnect** from the drop-down menu (ellipsis).
 
-Your log integration for OpenSearch should be successfully disabled after those steps.
+Your log integration for OpenSearch will be disabled. 

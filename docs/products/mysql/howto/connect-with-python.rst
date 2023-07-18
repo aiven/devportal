@@ -1,24 +1,24 @@
-Connect to MySQL with Python
-============================
+Connect to Aiven for MySQL® with Python
+=======================================
 
-This example connects your Python application to a MySQL service, using the `PyMySQL <https://github.com/PyMySQL/PyMySQL>`__ library.
+This example connects your Python application to an Aiven for MySQL® service, using the `PyMySQL <https://github.com/PyMySQL/PyMySQL>`__ library.
 
 Variables
 '''''''''
 
-These are the placeholders you will need to replace in the code sample:
+These are the placeholders you need to replace in the code sample:
 
-==================      =============================================================
+==================      ========================================================================================================================
 Variable                Description
-==================      =============================================================
-``MYSQL_HOST``          Host name for the connection, from the service overview page
-------------------      -------------------------------------------------------------
-``MYSQL_PORT``          Port number to use, from the service overview page
-------------------      -------------------------------------------------------------
+==================      ========================================================================================================================
+``MYSQL_HOST``          Host name for the connection, from `Aiven Console <https://console.aiven.io/>`__ > the **Overview** page of your service
+------------------      ------------------------------------------------------------------------------------------------------------------------
+``MYSQL_PORT``          Port number to use, from `Aiven Console <https://console.aiven.io/>`__ > the **Overview** page of your service
+------------------      ------------------------------------------------------------------------------------------------------------------------
 ``MYSQL_USERNAME``      User to connect with
-------------------      -------------------------------------------------------------
+------------------      ------------------------------------------------------------------------------------------------------------------------
 ``MYSQL_PASSWORD``      Password for this user
-==================      =============================================================
+==================      ========================================================================================================================
 
 Pre-requisites
 ''''''''''''''
@@ -35,7 +35,6 @@ For this example you will need:
 
    pip install cryptography
 
-
 Code
 ''''
 
@@ -43,7 +42,6 @@ Add the following to ``main.py`` and replace the placeholders with values for yo
 
 .. literalinclude:: /code/products/mysql/connect.py
    :language: python
-
 
 This code creates a MySQL client and connects to the database. It creates a table, inserts some values, fetches them and prints the output.
 

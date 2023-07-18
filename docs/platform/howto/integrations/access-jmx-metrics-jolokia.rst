@@ -9,16 +9,15 @@ Access JMX metrics via Jolokia
 
     Only Aiven for Apache Kafka® has support for Jolokia integration. 
 
-Jolokia endpoint
-----------------
+Jolokia endpoint configuration
+-------------------------------
 
-To enable Jolokia integration for Aiven services you first need to
-create a new Jolokia endpoint configuration. This can be created from
-the **Integration endpoints** page. You only need to specify a display name
-for the configuration and the system will automatically generate
-username and password for authentication. In most cases, you can re-use
-the same Jolokia endpoint configuration for all services within a
-project.
+To enable Jolokia integration for Aiven services, follow these steps to create a new Jolokia endpoint configuration:
+
+1. Log in to the `Aiven console <https://console.aiven.io/>`_ , and from the **Services** page, select **Integration endpoints** on the left sidebar. 
+2. In the **Integrations** page, select **Jolokia**, and then select **Add new endpoint**. 
+3. Enter an **Endpoint name** for the new Jolokia endpoint and select **Create**. The system will automatically generate a username and password for authentication. In most cases, you can reuse the same Jolokia endpoint configuration for all services within a project.
+
 
    .. image:: /images/integrations/jolokia-service-integration-image-1.png
       :alt: Jolokia service integration endpoint
@@ -28,23 +27,21 @@ project.
 .. note::
     You can :ref:`create a new service endpoint using the Aiven CLI <avn_service_integration_endpoint_create>` as well.
 
-Next, to enable Jolokia integration, you need to go to the
-Service Overview page of each service you want to enable the integration
-for. Click the **Set up integration** button under *Service integrations*
-and then click **Use integration** under Jolokia from the popup. After finishing the wizard the
-system will configure the endpoint on all nodes of the service that provide access to the metrics.
+Enabling Jolokia integration
+------------------------------
+To enable Jolokia integration for a specific service, follow these steps:
 
-Aiven Jolokia integration is configured to allow HTTP POST request to
-read values from the service specific metrics. Bulk requests are
-supported for batch collection as well. For further information on the
-protocol, can refer to `Jolokia
+1. In the `Aiven console <https://console.aiven.io/>`_, open the service for which you want to enable Jolokia integration.
+2. In the service **Overview** page, scroll to **Service integrations** and select **Manage integrations**. 
+3. In the **Integrations** page, select **Jolokia** from the list. 
+4. Select the Jolokia endpoint you created and select **Enable**. The system will configure the Jolokia endpoint on all service nodes, providing access to the metrics.
+
+
+The Aiven Jolokia integration enables HTTP POST requests to retrieve values from service-specific metrics. It also supports bulk requests for batch collection of metrics. For more detailed information on the Jolokia protocol, refer to `Jolokia
 documentation <https://jolokia.org/reference/html/protocol.html>`__ .
 
-Please do note that many of the metrics are specific to a Kafka® broker,
-so you may need to query each individual node for the full picture. Node
-IP is represented by a single DNS name. In a command line you can use
-``host`` command (Unix systems) or ``nslookup`` command (Windows systems) 
-to get the list of IP addresses associated with a DNS name:
+Several metrics are specific to a Kafka® broker. Therefore, you may need to query each node to obtain a comprehensive overview. The node IP is represented by a single DNS name. You can use the ``host`` command on Unix systems or the ``nslookup`` command on Windows systems to retrieve the list of IP addresses associated with a DNS name.
+
 
 .. code-block:: shell
 
@@ -53,12 +50,13 @@ to get the list of IP addresses associated with a DNS name:
    kafka-67bd7c5-myproject.aivencloud.com has address 35.228.234.106
    kafka-67bd7c5-myproject.aivencloud.com has address 35.228.157.197
 
-Here's a quick example of a cURL request. :doc:`Download the CA certificate </docs/platform/howto/download-ca-cert>` first before executing the cURL request.
-The file is identical for all endpoints and services in the same project.
 
-Please note to use port 6733 which is the default port Jolokia is
-listening on. ``joljkr2l:PWD`` are the values of the username/password from the Jolokia endpoint setup step. 
-You can find these endpoint details on the **Integration endpoints** page.
+Example cURL requests
+-----------------------
+Here is an example of a cURL request for accessing JMX metrics using Jolokia. Before executing the cURL request,:doc:`download the CA certificate </docs/platform/howto/download-ca-cert>` specific to your project. The CA certificate file is identical for all endpoints and services within the same project.
+Performing a cURL request to read a specific metric:
+
+Ensure that you use port 6733, the default port for Jolokia. Replace ``joljkr2l:PWD`` with the username and password obtained during the Jolokia endpoint setup step. You can find these endpoint details on the **Integration endpoints** page.
 
 .. code-block:: shell
 

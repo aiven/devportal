@@ -17,7 +17,7 @@ The steps for each of these options are detailed in this article.
 Fork an existing Elasticsearch to OpenSearch
 --------------------------------------------
 
-1. In the service overview of the web console, choose the **New database fork** button to create a new service from a backup.
+1. In the Elasticsearch service overview on `Aiven Console <https://console.aiven.io/>`_, select **New database fork**  to create a new service from a backup.
 2. When forking Aiven for Elasticsearch services, there in an additional option to specify the **Service type** as either Elasticsearch or OpenSearch. Choose OpenSearch and give your new service a name.
 
 Use the new OpenSearch service to test your application against before performing an upgrade. We recommend upgrading any dependencies at the same time.

@@ -68,7 +68,9 @@ No customer access to the virtual machine level is provided.
 Customer data privacy
 ----------------------
 
-Customer data privacy is of utmost importance to Aiven, and is covered by internal security and customer privacy policies as well as strict EU regulations.
+Customer data privacy is of utmost importance to Aiven, and is covered by internal security and customer privacy policies as well as strict EU regulations.  
+
+Aiven has partnered with GitHub in scanning for service token leaks and will inform customers of tokens being made public through an email notification.  For more details, check `Improving security: Aiven and GitHub's secret scanning partnership <https://aiven.io/blog/aiven-and-github's-secret-scanning-partnership>`_.
 
 Aiven operators never access customer data, unless explicitly requested to do so by the customer in order to troubleshoot a technical issue.
 
