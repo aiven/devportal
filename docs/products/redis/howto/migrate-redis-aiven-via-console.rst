@@ -18,9 +18,9 @@ Before starting the migration process, ensure you have the following:
 * Source database information:
 
   * **Hostname or connection string:** This is the public hostname, connection string, or IP address used to connect to the database. Refer to :doc:`accessible from the public Internet </docs/platform/howto/public-access-in-vpc>`.
-  * **Port:** - The port used to connect to the database. 
-  * **Username:** - The username used to connect to the database. Ensure this user has sufficient permissions to access the data you want to migrate.
-  * **Password:** - The password used to connect to the database.
+  * **Port:** The port used to connect to the database. 
+  * **Username:** The username used to connect to the database. Ensure this user has sufficient permissions to access the data you want to migrate.
+  * **Password:** The password used to connect to the database.
 
 * To enable traffic and connection between the source and target databases, ensure that you update or disable the firewalls that protect them. If necessary, you can temporarily disable the firewalls.
 * A source Redis®* service that is secured with SSL is a default migration requirement.
@@ -53,7 +53,6 @@ Step 2: Validation
 
    * **Hostname:** This is the public hostname, connection string, or IP address used to connect to the database.
    * **Port:** The port used to connect to the database.
-   * **Database name:** Name of the database you want to migrate.
    * **Username:** The username used to connect to the database.
    * **Password:** The password used to connect to the database.
 
