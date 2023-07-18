@@ -119,7 +119,7 @@
 -----------------------------
 *integer*
 
-**Number of redis databases** Set number of Redis databases. Changing this will cause a restart of the Redis service.
+**Number of Redis databases** Set number of Redis databases. Changing this will cause a restart of the Redis service.
 
 
 
@@ -127,7 +127,7 @@
 --------------------
 *integer*
 
-**Redis IO thread count**  Set Redis IO thread count. Changing this will cause a restart of the Redis service.
+**Redis IO thread count** Set Redis IO thread count. Changing this will cause a restart of the Redis service.
 
 
 
