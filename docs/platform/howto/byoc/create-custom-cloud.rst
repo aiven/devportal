@@ -1,7 +1,7 @@
 Create a custom cloud in Aiven |beta|
 =====================================
 
-A custom cloud is your own cloud infarstructre integrated with your Aiven organization (as opposed to an Aiven-managed infrastructure). Using a custom cloud in Aiven may be the optimal solution if you have specific business needs or project requirements, such as a strict regulatory compliance. With a custom cloud, you can manage your own infrastructure based on your expectations and tailor it to your budget.
+A custom cloud is your own cloud infrastructre integrated with your Aiven organization (as opposed to an Aiven-managed infrastructure). Using a custom cloud in Aiven may be the optimal solution if you have specific business needs or project requirements, such as a strict regulatory compliance. With a custom cloud, you can manage your own infrastructure based on your expectations and tailor it to your budget.
 
 Learn how to add a :doc:`custom cloud </docs/platform/concepts/byoc>` to your Aiven organization, and check out how it works.
 
