@@ -47,7 +47,7 @@ Generate an infrastructure template
 
 In this step, an infrastructure-as-code (IaC) template is generated. In :ref:`the step that follows <acquire-role-arn>`, you'll deploy this template in your AWS account to acquire Role ARN (Amazon Resource Name), which you need for configuring your custom cloud.
 
-The AWS CloudFormation and Terraform formats are supported for the template.
+The `AWS CloudFormation <https://docs.aws.amazon.com/cloudformation/?icmpid=docs_homepage_mgmtgov>`_ and Terraform formats are supported for the template.
 
 In the **Create custom cloud** wizard, proceed as follows:
 
@@ -87,7 +87,7 @@ Use the template generated in step :ref:`Generate an infrastructure template <ge
 
 .. topic:: Deploying the IaC template in the AWS account
 
-   To run a Terraform template or an AWS CloudFormation template, use dedicated command line tools. Additionally, you can deploy the AWS CloudFormation template in the AWS console by taking the following steps:
+   To run a Terraform template or an AWS CloudFormation template, use dedicated command line tools. Additionally, you can `deploy the AWS CloudFormation template <https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-guide.html>`_ in the AWS console by taking the following steps:
 
    1. Go to the AWS console > the AWS CloudFormation service.
    2. Create a stack, and upload the Aiven-generated template into AWS.
