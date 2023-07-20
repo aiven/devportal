@@ -1,14 +1,14 @@
 30-day trials
 ==============
 
-Aiven offers a free trial for 30 days to explore the platform and the `Aiven services <https://docs.aiven.io/>`_. You don't need a credit card to sign up.
+Aiven offers a free trial for 30 days to explore the platform - including the `Aiven Console <https://console.aiven.io/>`_, :doc:`API </docs/tools/api>`, :doc:`CLI </docs/tools/cli>`, :doc:`Aiven Terraform provider </docs/tools/terraform>`, and :doc:`Aiven Operator for Kubernetes </docs/tools/kubernetes>` - and the `Aiven services <https://docs.aiven.io/>`_. You don't need a credit card to sign up.
 
 If you create services on the :doc:`free plan </docs/platform/concepts/free-plan>`, they will continue to run alongside your free 30-day trial without affecting your trial credits. Free plan services also continue running after the trial has expired.
 
 Trial features and limitations
 -------------------------------
 
-The 30-day trial gives you full access to the `Aiven Console <https://console.aiven.io/>`_, :doc:`API </docs/tools/api>`, :doc:`CLI </docs/tools/cli>`, :doc:`Aiven Terraform provider </docs/tools/terraform>`, and :doc:`Aiven Operator for Kubernetes </docs/tools/kubernetes>`. The credits can be used on any service types and plan sizes. 
+The trial credits can be used for any paid services and plan sizes as well functionality like virtual private cloud peering.
 
 Trials include:
 
@@ -21,7 +21,9 @@ Trials include:
 
 There are some limitations:
 
-* Trial projects are automatically created and cannot be renamed
+* You can only have one trial
+
+* Trials can only be started in your default project, which is created when you sign up
 
 * Trial credits cannot be transferred to another project
 
