@@ -20,7 +20,7 @@ About migrating via console
 
 * With the console migration tool, you can migrate PostgreSQL® databases either using the continuous migration method, which is the one recommended and detailed in this guide, or using the dump method (``pg_dump``).
 
-  * Continuous migration keeps the source database operational during the migration but requires either superuser permissions or the `aiven_extras` extention installed on the source database.
+  * Continuous migration keeps the source database operational during the migration but requires either superuser permissions or the ``aiven_extras`` extension installed on the source database.
   * Dump is a point-in-time snapshot. The data written to the source database after initiating the dump during the migration process are not migrated to the target database. When you start a dump migration, make sure no data is written to the source database by the time the dump is over.
 
 .. dropdown:: Expand to check out how to verify that you have superuser permissions.
@@ -42,29 +42,29 @@ About migrating via console
 
     Identify your role name in the ``Role name`` column and check if it has the ``Superuser`` attribute assigned in the ``Attributes`` column. If not, request it from your system administrator.
 
-.. topic:: No superuser permissions? Install `aiven_extras`.
+.. topic:: No superuser permissions? Install ``aiven_extras``.
 
-   If you don't have superuser permissions, but you still want to use the continuous migration, you can install the `aiven_extras` extension on the source database using the following command:
+   If you don't have superuser permissions, but you still want to use the continuous migration, you can install the ``aiven_extras`` extension on the source database using the following command:
 
    .. code-block:: bash
 
-      CREATE EXTENSION aiven_extras CASCADE;
+      CREATE EXTENSION `aiven_extras` CASCADE;
 
-.. topic:: No superuser permissions and no `aiven_extras`? Migrate using the dump method.
+.. topic:: No superuser permissions and no ``aiven_extras``? Migrate using the dump method.
 
-   Without superuser permissions or `aiven_extras` installed, you cannot use the continuous migration. In that case, you can migrate your database using the dump method if you have the following permissions:
+   Without superuser permissions or ``aiven_extras`` installed, you cannot use the continuous migration. In that case, you can migrate your database using the dump method if you have the following permissions:
 
    * Connect
    * Select on all tables in the database
    * Select on all the sequences in the database
 
-   For the instruciton on how to perform a dump, skip a few sections that follow and go straight to :ref:`Migrate a database <migrate-in-console>`.
+   For the instruction on how to perform a dump, skip a few sections that follow and go straight to :ref:`Migrate a database <migrate-in-console>`.
 
 Prerequisites
 -------------
 
 * Logical replication is enabled on the source database.
-* You have superuser permissions or the `aiven_extras` extention installed on the source database.
+* You have superuser permissions or the ``aiven_extras`` extension installed on the source database.
 * Source database's hostname or IP address are :doc:`accessible from the public Internet </docs/platform/howto/public-access-in-vpc>`.
 * You have the source database's credentials and reference data
   
@@ -195,13 +195,13 @@ Migrate a database
 3. On the **Overview** page of the selected service, scroll down to the **Migrate database** section and select **Set up migration**.
 4. Guided by the **PostgreSQL migration configuration guide** wizard, go through all the migration steps.
 
-Step 1 - Configure
-''''''''''''''''''
+Configure
+'''''''''
 
 Get familiar with the guidelines provided in the migration wizard and select **Get started**.
 
-Step 2 - Validation
-'''''''''''''''''''
+Validation
+''''''''''
 
 1. To establish a connection to your source database, enter required database details in the **Database connection and validation** window:
 
@@ -221,13 +221,13 @@ Step 2 - Validation
 
    If your connection test returns such a warning, either resolve the issues or give up the continuous migration and opt for the dump method by selecting **Start the migration using a one-time snapshot (dump method)** > **Run check** > **Start migration**.
 
-Step 3 - Migration
-''''''''''''''''''
+Migration
+'''''''''
 
 If all the checks pass with no error messages, you can trigger the migration by selecting **Start migration** in the **Database migration** window.
 
-Step 5 - close
-''''''''''''''
+Close
+'''''
 
 While the migration is in progress, you can
 
