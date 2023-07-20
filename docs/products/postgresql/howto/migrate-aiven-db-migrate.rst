@@ -11,7 +11,7 @@ Logical replication is the default method which keeps the two databases synchron
 
 .. topic:: Restrictions on logical replication
 
-   Before you use the logical replication method, make sure you know and understand all the restrictions it has. For details, check out `Logical replication restrictions <https://www.postgresql.org/docs/15/logical-replication-restrictions.html>`_.
+   Before you use the logical replication method, make sure you know and understand all the restrictions it has. For details, check out `Logical replication restrictions <https://www.postgresql.org/docs/current/logical-replication-restrictions.html>`_.
 
 If the preconditions for logical replication are not met for a database, the migration falls back to using ``pg_dump``.
 
