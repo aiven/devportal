@@ -8,11 +8,11 @@ About disabling CCR
 
 When you enable CCR for your service, you connect it to another service, which results in creating a CCR pair of services. You can disable CCR for your service either by splitting the services constituting the CCR pair or by deleting one of them.
 
-* `Aiven console <https://console.aiven.io/>`_
+* `Aiven Console <https://console.aiven.io/>`_
 * CLI
 * API
 
-It's recommended to use the Aiven console for disabling CCR.
+It's recommended to use Aiven Console for disabling CCR.
 
 .. warning::
 
@@ -24,7 +24,7 @@ Prerequisites
 * Aiven account
 * Depending on the method you choose to use for disabling CCR
 
-  * Access to the `Aiven console <https://console.aiven.io/>`_
+  * Access to `Aiven Console <https://console.aiven.io/>`_
   * `cURL` CLI tool
   * `Aiven CLI tool <https://github.com/aiven/aiven-client>`_
 
@@ -38,9 +38,9 @@ In the console, use either of the two following methods to disable CCR on your s
 Split the services
 ''''''''''''''''''
 
-1. Log in to the `Aiven console <https://console.aiven.io/>`_.
-2. From the **Current services** view, select the service for which you'd like to disable CCR.
-3. In the **Overview** tab of the service's page, navigate to **Cross Cluster Replication** and select **Split cluster**.
+1. Log in to `Aiven Console <https://console.aiven.io/>`_.
+2. From the **Services** page, select the service for which you'd like to disable CCR.
+3. In the **Overview** page of the service, navigate to **Cross Cluster Replication** and select **Split cluster**.
 4. In the **Warning** popup, get familiar with the consequences of splitting the cluster, make sure you understand the impact, and select **Split cluster**.
 
 .. topic:: Result
@@ -52,10 +52,10 @@ Delete a service
 
 To disable CCR on your service, delete the service that is connected to your services for CCR purposes.
 
-1. Log in to the `Aiven console <https://console.aiven.io/>`_.
-2. From the **Current services** view, select an Aiven for Apache Cassandra service on which you'd like to enable CCR.
-3. In the **Overview** tab of the service's page, navigate to the **Cross Cluster Replication** section and select the name of the service provided in the CCR description, which is supposed to take you to the service's page.
-4. In the **Overview** tab of the service, select **Delete service** from the top right corner.
+1. Log in to `Aiven Console <https://console.aiven.io/>`_.
+2. From the **Services** page, select an Aiven for Apache Cassandra service on which you'd like to enable CCR.
+3. In the **Overview** page of the service, navigate to the **Cross Cluster Replication** section and select the name of the service provided in the CCR description, which is supposed to take you to the service's page.
+4. In the **Overview** page of the service, select **Delete service** from the meatballs menu in the top right corner.
 
    .. warning::
 

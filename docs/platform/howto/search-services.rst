@@ -1,19 +1,19 @@
 Search for services in Aiven Console
 ====================================
 
-On the **Current services** page in `Aiven Console <https://console.aiven.io/>`_ you can search for services by keywords and narrow down the results using filters.
+On the **Services** page in `Aiven Console <https://console.aiven.io/>`_, you can search for services by keywords and narrow down the results using filters.
 
 Search by keyword
 ------------------
 
-When you search by keyword, Aiven Console will show all services that have the matching words in the service name, plan, cloud provider, and tags.
+When you search by keyword, `Aiven Console <https://console.aiven.io/>`_ shows all services that have the matching words in the service name, plan, cloud provider, and tags.
 
 Filter search results
 ----------------------
 
-You can narrow down your search results by clicking **Filter list** and selecting the services, statuses, and providers to filter by.
+You can narrow down your search results by selecting **Filter list** and selecting the services, statuses, and providers to filter by.
 
-You can also add filters to the search field yourself. The supported filters are:
+You can also add filters to the search field yourself. The supported filters are the following:
 
 * ``service``
 * ``status``
@@ -24,10 +24,9 @@ You can add multiple values to filters separated by a comma. For example, this i
 
     service:pg status:running provider:aws,google
 
-You can use these filters alongside keyword searches. For example, to see all powered off Kafka® services with "production" in the name you could use::
+You can use these filters alongside keyword searches. For example, to see all powered off Kafka® services with *production* in the name, you could use the following:::
 
     production service:kafka status:poweroff 
-
 
 Filter by service type
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -72,16 +71,15 @@ To filter the services by service type, use the filter values in this table.
     * - Redis®*
       - ``redis``  
 
-
 Filter by status
 ~~~~~~~~~~~~~~~~~
-You can filter the services to show only those that are running, powered off, rebuilding, or rebalancing. The values supported for the ``status`` filter are:
+
+You can filter the services to show only those that are running, powered off, rebuilding, or rebalancing. The values supported for the ``status`` filter are the following:
 
 * ``running``
 * ``poweroff``
 * ``rebuilding``
 * ``rebalancing``
-
 
 Filter by cloud provider
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -106,10 +104,9 @@ To filter the services by the cloud provider they are hosted on, use the filter 
     * - UpCloud
       - ``upcloud``
 
-
 Filter by cloud region
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-The supported values for the ``region`` filter are in the **Cloud** column of the tables on the :doc:`List of available cloud regions </docs/platform/reference/list_of_clouds>` page. For example, to see all services in the AWS ``eu-central-1`` region you would use this filter::
+Find the supported values for the ``region`` filter in the *Cloud* column of the tables in :doc:`List of available cloud regions </docs/platform/reference/list_of_clouds>`. For example, to see all services in the AWS ``eu-central-1`` region, you use this filter::
 
     region:aws-eu-central-1

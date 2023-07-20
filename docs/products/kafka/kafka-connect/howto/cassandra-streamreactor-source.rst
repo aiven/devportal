@@ -116,26 +116,27 @@ The configuration file contains the following entries:
 Create a Kafka Connect connector with the Aiven Console
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-To create the connector, access the `Aiven Console <https://console.aiven.io/>`_ and select the Aiven for Apache Kafka® or Aiven for Apache Kafka Connect® service where the connector needs to be defined, then:
+To create a Kafka Connect connector, follow these steps: 
 
-1. Click on the **Connectors** tab
-2. Clink on **Create New Connector**, the button is enabled only for services :doc:`with Kafka Connect enabled <enable-connect>`.
-3. Select the **Stream Reactor Cassandra Source**
-4. Under the *Common* tab, locate the **Connector configuration** text box and click on **Edit**
-5. Paste the connector configuration (stored in the ``cassandra_source.json`` file) in the form
-6. Click on **Apply**
+1. Log in to the `Aiven Console <https://console.aiven.io/>`_ and select the Aiven for Apache Kafka® or Aiven for Apache Kafka Connect® service where the connector needs to be defined. 
+2. Select **Connectors** from the left sidebar. 
+3. Select **Create New Connector**, the button is enabled only for services :doc:`with Kafka Connect enabled <enable-connect>`.
+4. Select **Stream Reactor Cassandra Source**. 
+5. In the **Common** tab, locate the **Connector configuration** text box and select on **Edit**.
+6. Paste the connector configuration (stored in the ``cassandra_source.json`` file) in the form.
+7. Select **Apply**.
 
 .. Note::
 
     The Aiven Console parses the configuration file and fills the relevant UI fields. You can review the UI fields across the various tab and change them if necessary. The changes will be reflected in JSON format in the **Connector configuration** text box.
 
-7. After all the settings are correctly configured, click on **Create new connector**
-8. Verify the connector status under the **Connectors** tab
-9. Verify the presence of the data in the target Cassandra service
+8. After all the settings are correctly configured, select **Create new connector**. 
+9. Verify the connector status under the **Connectors** screen. 
+10. Verify the presence of the data in the target Cassandra service. 
 
 .. Note::
 
-    Connectors can be created also using the dedicated :ref:`Aiven CLI command <avn_service_connector_create>`.
+    You can also create connectors using the :ref:`Aiven CLI command <avn_service_connector_create>`.
 
 Example: Create a Cassandra source connector
 -------------------------------------------------------

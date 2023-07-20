@@ -1,9 +1,9 @@
+..
+    ``additional_backup_regions``
+    -----------------------------
+    *array*
 
-``additional_backup_regions``
------------------------------
-*array*
-
-**Additional Cloud Regions for Backup Replication** 
+    **Additional Cloud Regions for Backup Replication** 
 
 
 
@@ -114,6 +114,22 @@
 *['string', 'null']*
 
 **Name of another project to fork a service from. This has effect only when a new service is being created.** 
+
+
+
+``backup_hour``
+---------------
+*['integer', 'null']*
+
+**The hour of day (in UTC) when backup for the service is started. New backup is only started if previous backup has already completed.** 
+
+
+
+``backup_minute``
+-----------------
+*['integer', 'null']*
+
+**The minute of an hour when backup for the service is started. New backup is only started if previous backup has already completed.** 
 
 
 

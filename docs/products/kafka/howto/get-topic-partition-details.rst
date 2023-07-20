@@ -8,10 +8,11 @@ With Aiven console
 
 In the Aiven Console follow these steps:
 
-1. Log in to the Aiven web console and select your Apache Kafka service.
-2. On the **Topics** tab click the three dots next to the topic you wish to inspect.
-3. In the appeared menu click on the **Info** entry, it will open a modal window with topic details.
-4. Navigate to the **Partitions** tab.
+1. Log in to `Aiven Console <https://console.aiven.io/>`_ and select your Aiven for Apache Kafka service.
+2. Select **Topics** from the left sidebar. 
+3. Select a specific topic in the **Topics** screen or click on the ellipsis (More options).
+4. On the **Topics info** screen, select **Partitions** to view detailed information about the partitions.
+
 
 With Aiven API
 --------------

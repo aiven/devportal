@@ -17,9 +17,10 @@ Configure the integration
 
 Start by configuring the link between Aiven and Datadog for logs. This setup only needs to be done once.
 
-1. Click **Integration endpoints** in the web console, then **Syslog** and **Add a new endpoint**.
+1. Log in to the `Aiven Console <https://console.aiven.io/>`_, and select  **Integration endpoints** from the left sidebar in the project page.  
+2. Select **Syslog** from the list in the **Integration endpoints** screen, and then select **Add new endpoint**.
 
-2. Configure the settings for the new endpoint:
+3. Configure the settings for the new endpoint:
 
    * **Endpoint name** is how you will refer to this logs integration when linking it to other Aiven services
 
@@ -30,7 +31,7 @@ Start by configuring the link between Aiven and Datadog for logs. This setup onl
 
    * **Format** set to "custom"
 
-3. Configure the **Log Template** field. You will need to replace the following values:
+4. Configure the **Log Template** field. You will need to replace the following values:
 
 .. list-table::
   :header-rows: 1
@@ -53,21 +54,21 @@ An example of the correct format, using an example API key and ``my_project`` as
 .. note::  Metrics and logs are correlated in Datadog by hostname. The metrics integration is currently configured to append the project name to the hostname in order to disambiguate between services that have the same name in different projects. Adding the project name to the hostname in the syslog integration to Datadog assures that they can be correlated again in the Datadog dashboard. Not doing so will not result in missing logs, but the logs that appear in Datadog will miss tags that come from this correlation with the metrics. See https://docs.datadoghq.com/integrations/rsyslog.
 
 
-4. Save the settings.
+4. Select **Create** to save the endpoint.
 
 Send logs from an Aiven service to Datadog
 ------------------------------------------
 
 Follow the steps in this section for each of the services whose logs should be sent to Datadog.
 
-4. From the **Service Overview** page, select **Manage integrations** and choose the **Rsyslog** option.
+1. From the **Service Overview** page, select **Manage integrations** and choose the **Rsyslog** option.
 
 .. image:: /images/integrations/rsyslog-service-integration.png
    :alt: Screenshot of system integrations including rsyslog
 
-5. Pick the log integration you created earlier from the dropdown and choose **Enable**.
+2. Pick the log integration you created earlier from the dropdown and choose **Enable**.
 
-6. Visit Datadog and look under "Logs" to see the data flowing within a few minutes.
+3. Visit Datadog and look under "Logs" to see the data flowing within a few minutes.
 
 .. seealso:: Learn more about :doc:`/docs/integrations/datadog`.
 

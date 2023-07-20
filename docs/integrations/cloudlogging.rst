@@ -42,7 +42,7 @@ Step 2. Add the integration endpoint to your service
 
 #. Go to the service you want to add the logs integration to.
 
-#. Select the **Integrations** tab.
+#. Select the **Integrations** from the left sidebar.
 
 #. Select **Google Cloud Logging**.
 
