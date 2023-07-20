@@ -49,17 +49,16 @@ To migrate your data using Bucardo:
      system, but you might find it in
      ``/usr/local/share/perl5/5.32/Bucardo.pm`` , for example.
 
-   a. Scroll down until you see a ``disable_triggers`` function, on line
-      `5324 <https://github.com/bucardo/bucardo/blob/1ff4d32d1924f3437af3fbcc1a50c1a5b21d5f5c/Bucardo.pm#L5324>`__.
+   a. Scroll down until you see a ``disable_triggers`` function, in line 5324 in `Bucardo.pm <https://github.com/bucardo/bucardo/blob/1ff4d32d1924f3437af3fbcc1a50c1a5b21d5f5c/Bucardo.pm>`_.
 
-   b. On line `5359 <https://github.com/bucardo/bucardo/blob/1ff4d32d1924f3437af3fbcc1a50c1a5b21d5f5c/Bucardo.pm#L5359>`__, change ``SET session_replication_role = default`` to
+   b. In line 5359 in `Bucardo.pm <https://github.com/bucardo/bucardo/blob/1ff4d32d1924f3437af3fbcc1a50c1a5b21d5f5c/Bucardo.pm>`_, change ``SET session_replication_role = default`` to
       the following:
 
       ::
 
          $dbh->do(q{select aiven_extras.session_replication_role('replica');});
 
-   c. Scroll down to the ``enable_triggers`` function at line `5395 <https://github.com/bucardo/bucardo/blob/1ff4d32d1924f3437af3fbcc1a50c1a5b21d5f5c/Bucardo.pm#L5395>`__.
+   c. Scroll down to the ``enable_triggers`` function in line 5395 in `Bucardo.pm <https://github.com/bucardo/bucardo/blob/1ff4d32d1924f3437af3fbcc1a50c1a5b21d5f5c/Bucardo.pm>`_.
 
    d. On line 5428, change ``SET session_replication_role = default`` to
       the following:
@@ -109,7 +108,7 @@ To migrate your data using Bucardo:
 #. | Start Bucardo and run the ``status`` command. When ``Current state`` is ``Good`` , the data is flowing to your
      Aiven database.
 
-#. | Log in to the `Aiven web console <https://console.aiven.io>`_ and go to the **Current Queries** tab for your Aiven for PostgreSQL service. This shows you that the ``bucardo`` process is inserting data.
+#. | Log in to the `Aiven web console <https://console.aiven.io>`_, select your Aiven for PostgreSQL service from the **Services** list, and select **Current Queries** from the sidebar in your service's page. This shows you that the ``bucardo`` process is inserting data.
 
 #. Once all your data is synchronized, switch the database connection
    for your applications to Aiven for PostgreSQL.

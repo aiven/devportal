@@ -15,22 +15,11 @@ Create a remote replica
 
 Take the following steps to provision a remote replica:
 
-1. Log in to the `Aiven console <https://console.aiven.io/>`_  using your credentials.
-
-2. Navigate to Aiven for MySQL services for which you wish to create a remote replica.
-
-3. In the **Overview** tab, go to section **Read-only replicas** and select **Create replica**.
-
-.. image:: /images/products/mysql/create-replica.png
-   :alt: Start creating a read-only replica 
-
-1. For the remote replica, give your service a name, select the cloud provider and region, and choose a suitable Aiven for MySQL plan.
-
-2. Select **Create**.
-
-.. image:: /images/products/mysql/mysql-create-read-only-replica-choose-plan.png
-   :alt: Create replica wizard
+1. Log in to `Aiven Console <https://console.aiven.io/>`_ using your credentials.
+2. In the **Services** page, select an Aiven for MySQL service for which you wish to create a remote replica.
+3. In the **Overview** page of your service, go to section **Read-only replicas** and select **Create replica**.
+4. In the **Create a MySQL read replica** window, give your service a name, select the cloud provider and region, and choose a suitable Aiven for MySQL plan. Select **Create** to add the defined replica.
 
 .. topic:: Result
 
-   You can see the read-only replica being created and listed as any other Aiven service on the **Services** page in the console.
+   You can see the read-only replica being created and listed next to other Aiven service in the **Services** page in `Aiven Console <https://console.aiven.io/>`_.

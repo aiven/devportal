@@ -31,7 +31,7 @@ Enable SAML SSO authentication via Aiven Console
 --------------------------------------------------
 To enable SAML authentication for your Aiven for OpenSearch service, follow these steps: 
 
-1. On your Aiven for OpenSearch service, navigate to the **Users** tab.
+1. On your Aiven for OpenSearch service, select **Users** from the left sidebar.
 2. In the **SAML SSO Authentication** section, select **Enable SAML**. 
 3. On the **Configure SAML Authentication** screen, enter the following details: 
    

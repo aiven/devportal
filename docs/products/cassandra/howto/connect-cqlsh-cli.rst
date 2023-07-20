@@ -28,7 +28,7 @@ Variable                Description
 
 .. Tip::
 
-    All the above variables and the CA Certificate file can be found in the `Aiven Console <https://console.aiven.io/>`_, in the service detail page.
+    All the above variables and the CA Certificate file can be found in `Aiven Console <https://console.aiven.io/>`_, in the service detail page.
 
 
 Code

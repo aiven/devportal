@@ -6,14 +6,15 @@ Aiven for PostgreSQL® databases are automatically backed up and can be restored
 .. Note::
     Aiven for PostgreSQL doesn't allow a service to be rolled back to a backup in-place since it creates alternative timelines for the database, adding complexity for the user.
 
-To restore a PostgreSQL database:
+To restore a PostgreSQL database, take the following steps:
 
-1. Access the service detail page of the PostgreSQL database
-2. Click on the "New database fork"
-3. Enter a service name and choose a project name, database version, cloud region and plan for the new instance
-4. Select the "Source service state" defining the backup point, the options are
-    * Latest transaction
-    * Another point in time - the date selector allows to chose a precise point in time within the available backup retention period.
+1. Log in to the `Aiven web console <https://console.aiven.io/>`_.
+2. Select your Aiven for PostgreSQL service from the **Services** page.
+3. In the **Overview** page of your service, select **New database fork**.
+4. Enter a service name and choose a project name, database version, cloud region and plan for the new instance.
+5. Select the **Source service state** defining the backup point, the options are as follows:
+    * **Latest transaction**
+    * **Point in time** - the date selector allows to chose a precise point in time within the available backup retention period.
 
 Once the new service is running, you can change your application’s connection settings to point to it.
 

@@ -1,16 +1,30 @@
 Change data retention period
 ==============================
 
-To avoid running out of disk space, by default Apache Kafka® drops the oldest messages from the beginning of each log after their retention period expires. **Aiven for Apache Kafka®** allows you to configure the retention period for each topic.
+To avoid running out of disk space, by default, Apache Kafka® drops the oldest messages from the beginning of each log after their retention period expires. **Aiven for Apache Kafka®** allows you to configure the retention period for each topic.
 
-The retention period can be set at a service and at a topic level. The setting at service level will be taken into use when no retention period is defined for a specific topic (the default is 168 hours). The change of service retention period overwrites the retention period of previously created topics.
+The retention period can be configured at both the service and topic levels. If no retention period is specified for a particular topic, the service-level setting will be applied, with a default value of 168 hours. When modifying the service retention period, it will override the retention period of any previously created topics.
 
 For a single topic
 ~~~~~~~~~~~~~~~~~~~~~
 
-#. Log in to the Aiven web console and select your service.
+To change the retention period for a single topic, follow these steps:
 
-#. Click the **Topics** tab and then click the topic that you want to modify.
+#. Log in to `Aiven Console <https://console.aiven.io/>`_ and select your Aiven for Apache Kafka® service.
+
+#. Select **Topics** from the left sidebar.
+
+#. Select the topic from the **Topics** screen for which you want to modify the retention period.
+
+#. In the **Topic info** screen, select **Modify**. 
+
+#. In the modify topic screen, update the value of **Retention ms** to the desired retention length in milliseconds. If you cannot find **Retention ms**, use the search bar to locate it
+
+.. note:: 
+    The **Retention ms** option is displayed in the modify topic screen for topics where advanced configuration was enabled during topic creation.
+
+#. Select **Update** to save your changes. 
+
 
 #. In the *Advanced configuration* view find **Retention ms**.
 
@@ -24,11 +38,13 @@ For a single topic
 At a service level
 ~~~~~~~~~~~~~~~~~~~
 
-#. Log in to the Aiven web console and select your service.
+#.  Log in to `Aiven Console <https://console.aiven.io/>`_ and select your Aiven for Apache Kafka® service.
+#.  On the **Overview** page, scroll down to **Advanced configuration** and select **Change**. 
+#.  In the **Edit advanced configuration** screen, select **Add configuration option**.
+#.  You have two options to configure the retention period for Apache Kafka® logs. 
 
-#. In the *Overview* page scroll down to *Advanced configuration* and click on **Add configuration option**.
-
-#. Select either ``kafka.log_retention_hours`` or ``kafka.log_retention_ms`` and assigning desirable length of time. Alternatively specify the value for ``kafka.log_retention_bytes`` if you prefer to limit amount of data retained based on the storage usage.
+    * You can either select ``kafka.log_retention_hours`` or ``kafka.log_retention_ms`` and set the desired length of time for retention.
+    *  Alternatively, if you prefer to limit the amount of data retained based on storage usage, you can specify the value for ``kafka.log_retention_bytes``.
 
 #. Click on **Save advanced configuration**.
 

@@ -86,7 +86,7 @@ Replace the placeholders in the code with meaningful information on your service
 
 .. topic:: Expected result
 
-    Now you have your service connection set up and you can proceed to :doc: `uploading data into your database <load-dataset>`.
+    Now you have your service connection set up and you can proceed to :doc:`uploading data into your database </docs/products/clickhouse/howto/load-dataset>`.
 
 .. seealso::
 

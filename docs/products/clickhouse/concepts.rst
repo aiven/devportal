@@ -6,10 +6,6 @@ Aiven service
 
 .. grid:: 1 2 2 2
 
-    .. grid-item-card:: :doc:`Aiven for ClickHouse® service lifecycle </docs/products/clickhouse/concepts/service-architecture>`
-        :shadow: md
-        :margin: 2 2 0 0
-
     .. grid-item-card:: :doc:`Disaster recovery </docs/products/clickhouse/concepts/disaster-recovery>`
         :shadow: md
         :margin: 2 2 0 0

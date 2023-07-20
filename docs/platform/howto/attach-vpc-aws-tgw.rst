@@ -15,7 +15,7 @@ Set up a VPC attachment for your Project VPC
 Install the Aiven CLI
 ~~~~~~~~~~~~~~~~~~~~~
 
-These instructions apply to the :doc:`Aiven CLI </docs/tools/cli>`, but the same configuration can also be managed using the Aiven web console.
+These instructions apply to the :doc:`Aiven CLI </docs/tools/cli>`, but the same configuration can also be managed using `Aiven Console <https://console.aiven.io>`_.
 
 Locate your AWS account and AWS Transit Gateway ID
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

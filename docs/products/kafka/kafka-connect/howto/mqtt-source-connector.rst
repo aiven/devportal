@@ -1,5 +1,5 @@
-Create a sink connector from Apache Kafka® to MQTT
-==================================================
+Create a source connector from Apache Kafka® to MQTT
+=======================================================
 
 The `MQTT source connector <https://docs.lenses.io/5.0/integrations/connectors/stream-reactor/sources/mqttsourceconnector/>`_ copies messages from the MQTT topic into Apache Kafka® where they can be transformed and read by multiple consumers. Then, the Stream Reactor MQTT source connector creates a queue and binds it to the ``amq.topic`` defined in the KCQL statement, then messages are copied to the Apache Kafka® service. 
 
@@ -71,24 +71,30 @@ Check out the `dedicated documentation <https://docs.lenses.io/5.0/integrations/
 
 Create a Kafka Connect connector with the Aiven Console
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''
+To create a Apache Kafka Connect connector, follow these steps: 
 
-To create the connector, access the `Aiven Console <https://console.aiven.io/>`_ and select the Aiven for Apache Kafka® or Aiven for Apache Kafka Connect® service where the connector needs to be defined, then:
+1. Log in to the `Aiven Console <https://console.aiven.io/>`_ and select the Aiven for Apache Kafka® or Aiven for Apache Kafka Connect® service where the connector needs to be defined. 
+2. Select **Connectors** from the left sidebar. 
+3. Select **Create New Connector**, the button is enabled only for services :doc:`with Kafka Connect enabled <enable-connect>`.
+4. Select **Stream Reactor MQTT Source Connector**.
+5. In the **Common** tab, locate the **Connector configuration** text box and select on **Edit**.
+6. Paste the connector configuration (stored in the ``mqtt_source.json`` file) in the form.
+7. Select **Apply**.
 
-1. Click on the **Connectors** tab
-2. Clink on **Create New Connector**, the button is enabled only for services :doc:`with Kafka Connect enabled <enable-connect>`.
-3. Select the **Stream Reactor MQTT Source Connector**
-4. Under the *Common* tab, locate the **Connector configuration** text box and click on **Edit**
-5. Paste the connector configuration (stored in the ``mqtt_source.json`` file) in the form
-6. Click on **Apply**
+To create the connector, access the `Aiven Console <https://console.aiven.io/>`_ and select the Aiven for Apache Kafka® or Aiven for Apache Kafka® Connect service where the connector needs to be defined, then:
 
-.. Note::
+   .. Note::
 
-    The Aiven Console parses the configuration file and fills the relevant UI fields. You can review the UI fields across the various tab and change them if necessary. The changes will be reflected in JSON format in the **Connector configuration** text box.
+       The Aiven Console parses the configuration file and fills the relevant UI fields. You can review the UI fields across the various tabs and change them if necessary. The changes will be reflected in JSON format in the **Connector configuration** text box.
 
-7. After all the settings are correctly configured, click on **Create new connector**
-8. Verify the connector status under the **Connectors** tab
-9. Verify the presence of the data in the target Apache Kafka topic, the topic name is the one defined in the ``KCQL_STATEMENT``
+8. After all the settings are correctly configured, select **Create connector**.
+9. Verify the connector status under the **Connectors** screen.
+10. Verify the presence of the data in the target Apache Kafka topic, the topic name is the one defined in the ``KCQL_STATEMENT``.
 
 .. Tip::
 
-    Connectors can be created also using the dedicated :ref:`Aiven CLI command <avn_service_connector_create>`.
+    You can also create connectors using the :ref:`Aiven CLI command <avn_service_connector_create>`.
+
+
+
+

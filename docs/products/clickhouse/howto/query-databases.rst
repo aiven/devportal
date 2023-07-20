@@ -15,7 +15,7 @@ For querying your ClickHouse® databases, you can choose between our query edito
 Use the query editor
 --------------------
 
-Aiven for ClickHouse® includes a web-based query editor, which you can find on the **Query Editor** tab of your service in the  `Aiven web console <https://console.aiven.io/>`_.
+Aiven for ClickHouse® includes a web-based query editor, which you can find in `Aiven Console <https://console.aiven.io/>`_ by selecting **Query editor** from the sidebar of your service's page.
 
 When to use the query editor
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -53,10 +53,10 @@ Use the play UI if you want to run requests using a non-default user or if you e
 Use the play UI
 ^^^^^^^^^^^^^^^
 
-1. Log in to the `Aiven web console <https://console.aiven.io/>`_, choose the right project, and select your Aiven for ClickHouse service.
-#. In the *Overview* tab, find *Connection information* and select **ClickHouse HTTPS**.
-#. Copy the Service URI and navigate to ``SERVICE_URI/play`` from a web browser.
-#. Set the *name* and the *password* of the user on whose behalf you want to run the queries.
+1. Log in to `Aiven Console <https://console.aiven.io/>`_, choose the right project, and select your Aiven for ClickHouse service.
+#. In the **Overview** page of your service, find the **Connection information** section and select **ClickHouse HTTPS & JDBC**.
+#. Copy **Service URI** and navigate to ``YOUR_SERVICE_URI/play`` from a web browser.
+#. Set the name and the password of the user on whose behalf you want to run the queries.
 #. Enter the body of the query.
 #. Select **Run**.
 
