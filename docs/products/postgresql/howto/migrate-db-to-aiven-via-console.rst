@@ -12,16 +12,16 @@ About migrating via console
 
 * With the console migration tool, you can migrate existing on-premise or cloud-hosted PostgreSQL databases to clusters in your Aiven account.
 
-  .. note:: 
-    
-     The console migration tool doesn't support migrating managed database clusters on Aiven to other managed database clusters on Aiven.
-
 * Console migration tool uses `logical replication <https://www.postgresql.org/docs/current/logical-replication.html>`_ by default.
+
+  .. important::
+
+      Before you use the logical replication method, make sure you know and understand all the restrictions it has. For details, check out `Logical replication restrictions <https://www.postgresql.org/docs/current/logical-replication-restrictions.html>`_.
 
 * With the console migration tool, you can migrate PostgreSQL® databases either using the continuous migration method, which is the one recommended and detailed in this guide, or using the dump method (``pg_dump``).
 
-  * Continuous migration keeps the source database operational during the migration but requires superuser permissions.
-  * Dump is a point-in-time snapshot and requires the source database to be offline or in the maintenance mode during the migration process since any data it gets after initiating the dump are not migrated to the target database.
+  * Continuous migration keeps the source database operational during the migration but requires either superuser permissions or the `aiven_extras` extention installed on the source database.
+  * Dump is a point-in-time snapshot. The data written to the source database after initiating the dump during the migration process are not migrated to the target database. When you start a dump migration, make sure no data is written to the source database by the time the dump is over.
 
 .. dropdown:: Expand to check out how to verify that you have superuser permissions.
 
@@ -36,27 +36,35 @@ About migrating via console
 
        Role name |                      Attributes                            |                 Member of
        ----------+------------------------------------------------------------+-----------------------------------------
-       _dodb     | Superuser, Replication                                     | {}
+       _source_db     | Superuser, Replication                                     | {}
        example   | Create role, Create DB, Replication, Bypass RLS            | {pg_read_all_stats,pg_stat_scan_tables,pg_signal_backend}
        postgres  | Superuser, Create role, Create DB, Replication, Bypass RLS | {}
 
     Identify your role name in the ``Role name`` column and check if it has the ``Superuser`` attribute assigned in the ``Attributes`` column. If not, request it from your system administrator.
 
-.. topic:: No superuser permissions? Migrate using the dump method.
+.. topic:: No superuser permissions? Install `aiven_extras`.
 
-   If you don't have superuser permissions required for the continuous migration, you can still migrate your database using the dump method if you have the following permissions:
+   If you don't have superuser permissions, but you still want to use the continuous migration, you can install the `aiven_extras` extension on the source database using the following command:
+
+   .. code-block:: bash
+
+      CREATE EXTENSION aiven_extras CASCADE;
+
+.. topic:: No superuser permissions and no `aiven_extras`? Migrate using the dump method.
+
+   Without superuser permissions or `aiven_extras` installed, you cannot use the continuous migration. In that case, you can migrate your database using the dump method if you have the following permissions:
 
    * Connect
    * Select on all tables in the database
    * Select on all the sequences in the database
 
-   To perform the dump, make sure your source database is offline or under maintenance and skip to the final part of this guide for the instruction on how to set up the migration in the console.
+   For the instruciton on how to perform a dump, skip a few sections that follow and go straight to :ref:`Migrate a database <migrate-in-console>`.
 
 Prerequisites
 -------------
 
 * Logical replication is enabled on the source database.
-* You have superuser permissions on the source database.
+* You have superuser permissions or the `aiven_extras` extention installed on the source database.
 * Source database's hostname or IP address are :doc:`accessible from the public Internet </docs/platform/howto/public-access-in-vpc>`.
 * You have the source database's credentials and reference data
   
@@ -175,35 +183,27 @@ Pre-configure the source
   
   .. code-block:: bash
 
-     sudo service postgresql stop
-     sudo service postgresql start
+     sudo service postgresql restart
+
+.. _migrate-in-console:
 
 Migrate a database
 ------------------
 
-1. Log in to the `Aiven web console <https://console.aiven.io/>`_.
-2. From the **Current services** list, select the service where your target database is located.
-3. In the **Overview** tab of the selected service, navigate to the **Migrate database** section and select **Set up migration**.
-
-   .. image:: /images/products/postgresql/set-up-migration.png
-      :width: 700px
-      :alt: Set up migration
-
+1. Log in to the `Aiven Console <https://console.aiven.io/>`_.
+2. On the **Services** page, select the service where your target database is located.
+3. On the **Overview** page of the selected service, scroll down to the **Migrate database** section and select **Set up migration**.
 4. Guided by the **PostgreSQL migration configuration guide** wizard, go through all the migration steps.
 
-Step 1 - configure
+Step 1 - Configure
 ''''''''''''''''''
 
 Get familiar with the guidelines provided in the migration wizard and select **Get started**.
 
-.. image:: /images/products/postgresql/start-migration.png
-   :width: 700px
-   :alt: Set up migration
+Step 2 - Validation
+'''''''''''''''''''
 
-Step 2 - connect
-''''''''''''''''
-
-1. To establish a connection to your source database, enter required database details into the wizard:
+1. To establish a connection to your source database, enter required database details in the **Database connection and validation** window:
 
    * Hostname
    * Port
@@ -211,28 +211,20 @@ Step 2 - connect
    * Username
    * Password
 
-   .. image:: /images/products/postgresql/connect-source.png
-      :width: 700px
-      :alt: Set up migration
-
 2. Select the **SSL encryption (recommended)** checkbox.
 
-3. If you prefer to use the dump method for the migration, select the **Start the migration using a one-time snapshot (dump method)** checkbox.
+3. Optionally, exclude specific databases from the migration by entering their names (separated with spaces) into the **Exclude databases** field.
 
-4. Select **Test connection**.
+4. Select **Run check**.
 
 .. topic:: Unable to use logical replication?
 
    If your connection test returns such a warning, either resolve the issues or give up the continuous migration and opt for the dump method by selecting **Start the migration using a one-time snapshot (dump method)** > **Run check** > **Start migration**.
 
-Step 3 - migrate
-''''''''''''''''
+Step 3 - Migration
+''''''''''''''''''
 
-If all the checks pass with no error messages, you can trigger the migration by selecting **Start migration**.
-
-.. image:: /images/products/postgresql/ready-to-migrate.png
-   :width: 700px
-   :alt: Set up migration
+If all the checks pass with no error messages, you can trigger the migration by selecting **Start migration** in the **Database migration** window.
 
 Step 5 - close
 ''''''''''''''
@@ -242,10 +234,6 @@ While the migration is in progress, you can
 * Let it proceed until completed by selecting **Close window**, which closes the wizard. You come back to check the status at any time.
 * Write to the target database.
 * Discontinue the migration by selecting **Cancel migration**, which retains the data already migrated. You cannot restart the stopped process and can only start a new migration.
-
-.. image:: /images/products/postgresql/migration-in-progress.png
-   :width: 700px
-   :alt: Set up migration
 
 .. warning::
 
