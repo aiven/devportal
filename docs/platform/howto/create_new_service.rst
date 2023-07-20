@@ -13,27 +13,27 @@ Follow these steps to create a new service in `Aiven Console <https://console.ai
 
 #. On the **Create service** page
 
-   1. Select the cloud provider and region that you want to run your service on.
+   * Select the cloud provider and region that you want to run your service on.
 
-      .. note:: 
+     .. note:: 
 
 	      The pricing for the same service may vary between different providers and regions. The service summary shows you the pricing for your selected options.
 
-   2. Select a service plan.
+   * Select a service plan.
 
-      .. note::
+     .. note::
 
          This determines the number of servers and what kind of memory, CPU, and disk resources are allocated to your service. Check out `Plans & Pricing <https://aiven.io/pricing?product=pg>`_ for details.
 
-   3. Add :doc:`disk storage <../concepts/dynamic-disk-sizing>` for your service by using the slider, if needed. The cost for the additional storage is in the service summary section.  
+   * Add :doc:`disk storage <../concepts/dynamic-disk-sizing>` for your service by using the slider, if needed. The cost for the additional storage is in the service summary section.  
 
-      .. note::
+     .. note::
 
          It's not possible to add storage space for all cloud environments and service plans.
 
-   4. Enter a name for your service. 
+   * Enter a name for your service. 
 
-   5. Select **Create service** from the right-side **Service Summary** card.
+   * Select **Create service** from the right-side **Service Summary** card.
 
 .. topic:: Result
 
