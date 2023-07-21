@@ -1,5 +1,5 @@
-Aiven Console
-=============
+Aiven Console overview
+=======================
 
 The `Aiven Console <https://console.aiven.io>`_ gives you access to create and manage Aiven services, update your user profile, manage settings across projects, set up billing groups, view invoices, and more. This article provides an overview of the main areas in the Aiven Console:
 
