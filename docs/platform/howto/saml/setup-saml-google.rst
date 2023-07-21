@@ -22,19 +22,19 @@ You are shown two parameters needed to set up the SAML authentication in Google:
 Configure SAML on Google
 ------------------------
 
-1. Log in to Google Admin console
+1. Log in to Google Admin console.
 
-2. Go to Menu -> Apps -> Web and mobile apps
+2. Go to Menu -> Apps -> Web and mobile apps.
 
-3. Click Add App -> Add custom SAML app
+3. Click Add App -> Add custom SAML app.
 
-4. On the App Details page, enter a name for the Aiven profile
+4. On the App Details page, enter a name for the Aiven profile.
 
-5. Click Continue
+5. Click Continue.
 
 6. On the Google Identity Provider details page, Copy the **SSO URL**, **Entity ID** and the **Certificate**. These are needed later for the SAML configuration in Aiven Console.
 
-7. Click Continue
+7. Click Continue.
 
 8. In the Service Provider Details window, set the following parameters:
 
@@ -53,9 +53,9 @@ Configure SAML on Google
       * - ``App attributes``
         - ``email``
 
-9. Click Finish
+9. Click Finish.
 
-10. Configure the User access for the Aiven SAML app
+10. Turn on your SAML app.
 
 Finish the configuration in Aiven
 ----------------------------------
