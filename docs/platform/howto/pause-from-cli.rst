@@ -5,7 +5,7 @@ One of the nice things about cloud services is that they can be created and dest
 
 One option is to power the service off temporarily. This way you can come back and play with the cluster later without wasting your credits while the service is idle.
 
-You can update the state of your service either through the service overview page in the `Aiven console <https://console.aiven.io>`_ or by using Aiven command line interface:
+You can update the state of your service either through the service overview page in `Aiven Console <https://console.aiven.io>`_ or by using Aiven command line interface:
 
 ::
 

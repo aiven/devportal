@@ -20,7 +20,7 @@ Tools
 
 To enable CCR, you can use the following tools:
 
-* `Aiven console <https://console.aiven.io/>`_
+* `Aiven Console <https://console.aiven.io/>`_
 * CLI
 * API
 
@@ -30,7 +30,7 @@ Prerequisites
 * Aiven account
 * Depending on the method you choose to use for enabling CCR
 
-  * Access to the `Aiven console <https://console.aiven.io/>`_
+  * Access to `Aiven Console <https://console.aiven.io/>`_
   * `cURL` CLI tool
   * `Aiven CLI tool <https://github.com/aiven/aiven-client>`_
 
@@ -39,7 +39,7 @@ Prerequisites
 Enable CCR in the console
 -------------------------
 
-Using the `Aiven web console <https://console.aiven.io/>`_, you can enable CCR for
+Using `Aiven Console <https://console.aiven.io/>`_, you can enable CCR for
 
 * New Aiven for Apache Cassandra service by :ref:`creating a totally new CCR service pair <new-pair>` or
 * Existing Aiven for Apache Cassandra service by :ref:`adding a CCR peer service in another region to an existing service <new-peer>`.
@@ -49,8 +49,8 @@ Using the `Aiven web console <https://console.aiven.io/>`_, you can enable CCR f
 Create a new CCR service pair
 '''''''''''''''''''''''''''''
 
-1. Log in to the `Aiven console <https://console.aiven.io/>`_.
-2. From the **Current services** view, select **+Create service**.
+1. Log in to `Aiven Console <https://console.aiven.io/>`_.
+2. From the **Services** page, select **+Create service**.
 3. In the **Create service** view
 
    1. Select Apache Cassandra® and, next, a cloud provider and a cloud region for your service.
@@ -68,16 +68,16 @@ Create a new CCR service pair
 
 .. topic:: Result
    
-   You've created two new services that are connected for CCR purposes. You can preview CCR details for your services in the **Overview** tab under **Cross Cluster replication**.
+   You've created two new services that are connected for CCR purposes. You can preview CCR details for your services by selecting **Overview** from the sidebar and going to the **Cross Cluster replication** section.
 
 .. _new-peer:
 
 Add a CCR peer to an existing service
 '''''''''''''''''''''''''''''''''''''
 
-1. Log in to the `Aiven console <https://console.aiven.io/>`_.
-2. From the **Current services** view, select an Aiven for Apache Cassandra service on which you'd like to enable CCR.
-3. In the **Overview** tab of your service's page, navigate to **Cross Cluster Replication** and select **Migrate to Cross Cluster**.
+1. Log in to `Aiven Console <https://console.aiven.io/>`_.
+2. From the **Services** page, select an Aiven for Apache Cassandra service on which you'd like to enable CCR.
+3. In the **Overview** page of your service, navigate to the **Cross Cluster Replication** section and select **Migrate to Cross Cluster**.
 
    .. note::
       
@@ -90,7 +90,7 @@ Add a CCR peer to an existing service
 
 .. topic:: Result
    
-   CCR has been enabled by connecting your service to another new service, which is now visible in the **Overview** tab under **Cross Cluster replication**.
+   CCR has been enabled by connecting your service to another new service, which is now visible in the **Overview** page in the **Cross Cluster replication** section.
 
 Enable CCR with CLI
 -------------------

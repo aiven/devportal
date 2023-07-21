@@ -11,18 +11,22 @@ Once you've created a :doc:`VPC on the Aiven platform <manage-vpc-peering>`, you
 
 4. Under *VPC Networks*, make note of the VPC Network Name.
 
-5. In the Aiven web console, select the VPC connection that you created.
+5. In `Aiven Console <https://console.aiven.io>`_, select **VPCs** from the sidebar on the **Services** page.
 
-6. Enter the project ID and VPC network name from GCP, then click **Add peering connection**.
-This adds a new connection with the *Pending Peer* status.
+6. On the **Virtual private clouds** page, select the VPC connection that you created.
 
-.. note::
-       Click the blue Pending peer icon and make a note of the Aiven project name and the network name.
+7. On the **VPC Peering connections** page, enter the project ID and VPC network name from GCP, then click **Add peering connection**.
 
-7. In your GCP Console, go to **VPC** > **VPC network peering** and select **Create Connection**.
+   This adds a new connection with the *Pending Peer* status.
 
-8. Enter a name for the peering connection and enter the same project ID and network name that you found on step6.
+   .. note::
 
-9. Click **Create**.
+      Click the blue Pending peer icon and make a note of the Aiven project name and the network name.
 
-When the peering is successful, it is active in both the Aiven web console and your GCP Console.
+8. In your GCP Console, go to **VPC** > **VPC network peering** and select **Create Connection**.
+
+9. Enter a name for the peering connection, and enter the same project ID and network name that you found in step 7.
+
+10. Click **Create**.
+
+When the peering is successful, it is active in both `Aiven Console <https://console.aiven.io>`_ and your GCP Console.

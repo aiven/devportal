@@ -35,7 +35,7 @@ Configure the PostgreSQL CDC connector
 ---------------------------------------
 Follow these steps to configure the PostgreSQL CDC Connector in the Aiven for Flink application table using the `Aiven Console <https://console.aiven.io/>`_:
 
-1. In the Aiven for Apache Flink service page, open the **Application** tab.
+1.  In the Aiven for Apache Flink service page, select **Application** from the left sidebar.
 2. Select **Create new application**, enter the name of your application, and select **Create application**. 
 
 .. note::    
@@ -99,7 +99,7 @@ If you encounter the ``must be superuser to create FOR ALL TABLES publication`` 
 .. code:: 
   
     SELECT * FROM aiven_extras.pg_create_publication_for_all_tables(
-        'my_test_publication',
+        'dbz_publication',
         'INSERT,UPDATE,DELETE'
         );
 

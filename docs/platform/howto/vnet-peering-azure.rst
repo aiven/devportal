@@ -108,7 +108,7 @@ as ``$user_app_secret`` below
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This can be found in the Azure portal in "Virtual networks" -> name of
-your network -> "Properties" -> "Resource ID", or using
+your network -> “JSON View” -> "Resource ID", or using
 
 ::
 
@@ -129,7 +129,8 @@ Also grab
    the output. Save this for later as ``$user_vnet_name``
 
 ``$user_vnet_id`` should have the format
-``/subscriptions/$user_subscription_id/resourceGroups/$user_resource_group/providers/Microsoft.Network/virtualNetworks/$user_vnet_name``
+``/subscriptions/$user_subscription_id/
+resourceGroups/$user_resource_group/providers/Microsoft.Network/virtualNetworks/$user_vnet_name``
 
 6. grant your service principal permissions to peer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

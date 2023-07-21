@@ -68,7 +68,9 @@ No customer access to the virtual machine level is provided.
 Customer data privacy
 ----------------------
 
-Customer data privacy is of utmost importance to Aiven, and is covered by internal security and customer privacy policies as well as strict EU regulations.
+Customer data privacy is of utmost importance to Aiven, and is covered by internal security and customer privacy policies as well as strict EU regulations.  
+
+Aiven has partnered with GitHub in scanning for service token leaks and will inform customers of tokens being made public through an email notification.  For more details, check `Improving security: Aiven and GitHub's secret scanning partnership <https://aiven.io/blog/aiven-and-github's-secret-scanning-partnership>`_.
 
 Aiven operators never access customer data, unless explicitly requested to do so by the customer in order to troubleshoot a technical issue.
 
@@ -89,3 +91,9 @@ The SBOM is a list of all packages that are being used by Aiven in the services 
 SBOM reports are being widely adopted and may eventually be required for compliance or security assessments. We provide these reports as a file download via our :doc:`CLI </docs/tools/cli/project>`, in CSV or SPDX format.
 
 SBOM reports are only available to customers who have an enterprise support contract and all services within the project must have the latest maintenance patches applied.
+
+
+Time synchronization
+--------------------
+
+All Aiven backend and customer services are configured to use trusted NTP (Network Time Protocol) servers of the respective cloud provider where each service is deployed.

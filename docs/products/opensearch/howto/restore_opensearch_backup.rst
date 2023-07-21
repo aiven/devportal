@@ -7,9 +7,9 @@ To restore a backup:
 
 #. Log in to the `Aiven web console <https://console.aiven.io>`_ and select your OpenSearch service.
 
-#. Click the **Backups** tab.
+#. Select **Backups** from the left sidebar.
 
-#. Click **Restore**.
+#. Select **Fork & restore**.
 
    This opens the *New Database Fork* view where you can create the fork for the backup that you want to restore.
 

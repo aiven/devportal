@@ -12,6 +12,7 @@ APIs
 ARN
 Astacus
 Auth0
+autojoin
 autovacuum
 Avro
 AZ
@@ -22,6 +23,7 @@ boolean
 boot
 Bucardo
 business
+BYOC
 Cassandra
 Centrify
 checkpointing
@@ -38,6 +40,7 @@ connect
 Couchbase
 CPU/MS
 CRD
+cURL
 cyber
 datacenter
 datacenters
@@ -72,6 +75,7 @@ failover
 fileset
 filesets
 Flink
+FusionAuth
 Gantt
 geocoder
 geocoding
@@ -105,16 +109,19 @@ Instana
 IdP
 IdPs
 io
+iops
 IPsec
 iptables
 Java
 JMX
+json
 JobManager
 Jolokia
 JumpCloud
 Kaggle/M
 Kafdrop
 Kafka
+kafka
 Karapace
 keypair
 keyspace
@@ -168,6 +175,7 @@ PgBouncer
 PGHoard
 pglookout
 pgoutput
+pgvector
 plaintext
 plc
 PNG/S
@@ -249,6 +257,7 @@ untrusted
 unaggregated
 UpCloud
 upsert
+vectorizing
 VM
 VMs
 VPC/MS

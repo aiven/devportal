@@ -37,7 +37,6 @@ Get started with Aiven's fully-managed services.
 
 
         .. button-link:: docs/products/kafka
-            :align: right
             :color: primary
             :outline:
 
@@ -53,7 +52,6 @@ Get started with Aiven's fully-managed services.
         Framework for definining powerful transformations of batch and streaming data sets. 
 
         .. button-link:: docs/products/flink
-            :align: right
             :color: primary
             :outline:
 
@@ -68,7 +66,6 @@ Get started with Aiven's fully-managed services.
         High performance storage solution for large data quantities. This specialist data solution is a partitioned row store.
 
         .. button-link:: docs/products/cassandra
-            :align: right
             :color: primary
             :outline:
 
@@ -84,7 +81,6 @@ Get started with Aiven's fully-managed services.
         A highly scalable, open source database that uses a column-oriented structure.
 
         .. button-link:: docs/products/clickhouse
-            :align: right
             :color: primary
             :outline:
 
@@ -99,7 +95,6 @@ Get started with Aiven's fully-managed services.
         The visualization tool you need to explore and understand your data. Grafana integrates with the other services in just a few clicks.
 
         .. button-link:: docs/products/grafana
-            :align: right
             :color: primary
             :outline:
 
@@ -115,7 +110,6 @@ Get started with Aiven's fully-managed services.
         Specialist time series database, with good tooling support.
 
         .. button-link:: docs/products/influxdb
-            :align: right
             :color: primary
             :outline:
 
@@ -130,7 +124,6 @@ Get started with Aiven's fully-managed services.
         Distributed time-series database for scalable solutions, with M3 Coordinator included, and M3 Aggregator also available.
 
         .. button-link:: docs/products/m3db
-            :align: right
             :color: primary
             :outline:
 
@@ -146,7 +139,6 @@ Get started with Aiven's fully-managed services.
         Popular and much-loved relational database platform.
 
         .. button-link:: docs/products/mysql
-            :align: right
             :color: primary
             :outline:
 
@@ -161,7 +153,6 @@ Get started with Aiven's fully-managed services.
         Document database with specialist search features, bring your freeform documents, logs or metrics, and make sense of them here.
 
         .. button-link:: docs/products/opensearch
-            :align: right
             :color: primary
             :outline:
 
@@ -177,7 +168,6 @@ Get started with Aiven's fully-managed services.
         Powerful relational database platform. We have the latest versions, and an excellent selection of extensions.
 
         .. button-link:: docs/products/postgresql
-            :align: right
             :color: primary
             :outline:
 
@@ -192,7 +182,6 @@ Get started with Aiven's fully-managed services.
         In-memory data store for all your high-peformance short-term storage and caching needs.
 
         .. button-link:: docs/products/redis
-            :align: right
             :color: primary
             :outline:
 
@@ -218,7 +207,6 @@ Interfaces
         Web-based graphical interface for creating and managing your services.
 
         .. button-link:: docs/tools/aiven-console
-            :align: center
             :color: primary
             :outline:
 
@@ -233,7 +221,6 @@ Interfaces
         Command line client for the Aiven platform.
 
         .. button-link:: docs/tools/cli
-            :align: center
             :color: primary
             :outline:
 
@@ -253,7 +240,6 @@ Automation
         A public API you can use for programmatic integrations.
 
         .. button-link:: docs/tools/api
-            :align: right
             :color: primary
             :outline:
 
@@ -268,7 +254,6 @@ Automation
         An infrastructure-as-code tool for lifecycle management of your Aiven resources. 
 
         .. button-link:: docs/tools/terraform
-            :align: right
             :color: primary
             :outline:
 
@@ -283,7 +268,6 @@ Automation
         Provision and manage Aiven services from your Kubernetes cluster.
 
         .. button-link:: https://docs.aiven.io/docs/tools/kubernetes.html
-            :align: right
             :color: primary
             :outline:
 

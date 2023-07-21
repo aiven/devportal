@@ -14,13 +14,14 @@ entries:
       - file: docs/platform/concepts/authentication-tokens
       - file: docs/platform/concepts/availability-zones
       - file: docs/platform/concepts/free-plan
+      - file: docs/platform/concepts/free-trial
       - file: docs/platform/concepts/list-billing
         title: Billing
         entries:
+          - file: docs/platform/concepts/hourly-billing-model
           - file: docs/platform/concepts/tax-information
           - file: docs/platform/concepts/billing-groups
           - file: docs/platform/concepts/corporate-billing
-          - file: docs/platform/concepts/hourly-billing-model
       - file: docs/platform/concepts/beta_services
       - file: docs/platform/concepts/cloud-security
       - file: docs/platform/concepts/logs-metrics-alerts
@@ -32,7 +33,7 @@ entries:
       - file: docs/platform/concepts/out-of-memory-conditions
       - file: docs/platform/concepts/static-ips
       - file: docs/platform/concepts/tls-ssl-certificates
-      - file: docs/platform/concepts/byoa
+      - file: docs/platform/concepts/byoc
       - file: docs/platform/concepts/dynamic-disk-sizing
       - file: docs/platform/concepts/enhanced-compliance-env
       - file: docs/platform/concepts/disaster-recovery-test-scenarios
@@ -44,12 +45,15 @@ entries:
     - file: docs/platform/howto
       title: HowTo
       entries:
+      - file: docs/platform/howto/feature-preview
       - file: docs/platform/howto/list-user
-        title: User and authentication management
+        title: User and access management
         entries:
-          - file: docs/platform/howto/add-authentication-method
+          - file: docs/platform/howto/edit-user-profile
           - file: docs/platform/howto/change-your-email-address
+          - file: docs/platform/howto/add-authentication-method
           - file: docs/platform/howto/create_authentication_token
+          - file: docs/platform/howto/manage-org-users
           - file: docs/platform/howto/create_new_service_user
           - file: docs/tools/aiven-console/howto/create-manage-teams
           - file: docs/platform/howto/user-2fa
@@ -78,6 +82,7 @@ entries:
           - file: docs/platform/howto/search-services
             title: Search for services
           - file: docs/platform/howto/access-service-logs
+          - file: docs/platform/howto/service-metrics
           - file: docs/platform/howto/prepare-for-high-load
           - file: docs/platform/howto/create-service-integration
       - file: docs/platform/howto/list-network
@@ -114,26 +119,34 @@ entries:
           - file: docs/platform/howto/billing-assign-projects
           - file: docs/platform/howto/payment-issues-plan-upgrades
           - file: docs/platform/howto/custom-plans
+          - file: docs/platform/howto/billing-aws-marketplace-subscription
+            title: Set up AWS Marketplace
+          - file: docs/platform/howto/move-to-aws-marketplace-billing
+            title: Move to AWS Marketplace
           - file: docs/platform/howto/billing-google-cloud-platform-marketplace-subscription
             title: Set up Google Cloud Marketplace
           - file: docs/platform/howto/move-to-gcp-marketplace-billing
             title: Move to Google Cloud Marketplace
           - file: docs/platform/howto/billing-azure-marketplace-subscription
             title: Set up Azure Marketplace
+          - file: docs/platform/howto/move-to-azure-marketplace-billing
+            title: Move to Azure Marketplace
       - file: docs/platform/howto/list-saml
         title: SAML Authentication
         entries:
           - file: docs/platform/howto/saml/saml-authentication
-          - file: docs/platform/howto/saml/setup-saml-onelogin
-            title: Setting up SAML with OneLogin
-          - file: docs/platform/howto/saml/setup-saml-azure
-            title: Setting up SAML with Azure
-          - file: docs/platform/howto/saml/setup-saml-okta
-            title: Setting up SAML with Okta
           - file: docs/platform/howto/saml/setup-saml-auth0
             title: Setting up SAML with Auth0
+          - file: docs/platform/howto/saml/setup-saml-azure
+            title: Setting up SAML with Azure
+          - file: docs/platform/howto/saml/setup-saml-fusionauth
+            title: Setting up SAML with FusionAuth
           - file: docs/platform/howto/saml/setup-saml-jumpcloud
             title: Setting up SAML with JumpCloud
+          - file: docs/platform/howto/saml/setup-saml-okta
+            title: Setting up SAML with Okta
+          - file: docs/platform/howto/saml/setup-saml-onelogin
+            title: Setting up SAML with OneLogin
           - file: docs/platform/howto/saml/setup-saml-google
             title: Setting up SAML with Google
       - file: docs/platform/howto/list-support
@@ -156,6 +169,7 @@ entries:
       title: Datadog
       entries:
         - file: docs/integrations/datadog/datadog-metrics
+        - file: docs/integrations/datadog/add-custom-tags-to-datadog
         - file: docs/integrations/datadog/datadog-logs
     - file: docs/integrations/cloudwatch
       title: Amazon CloudWatch 
@@ -221,6 +235,7 @@ entries:
               title: Upgrade the Aiven Terraform Provider from v2 to v3
             - file: docs/tools/terraform/howto/upgrade-provider-v3-v4
               title: Upgrade the Aiven Terraform Provider from v3 to v4
+            - file: docs/tools/terraform/howto/update-deprecated-resources
             - file: docs/tools/terraform/howto/config-postgresql-provider
               title: Use PostgreSQL provider alongside Aiven Terraform Provider 
             - file: docs/tools/terraform/howto/promote-to-master-pg-rr
@@ -228,6 +243,7 @@ entries:
             - file: docs/tools/terraform/howto/upgrade-to-opensearch
             - file: docs/tools/terraform/howto/vnet-peering-azure
             - file: docs/tools/terraform/howto/vpc-peering-gcp
+            - file: docs/tools/terraform/howto/vpc-peering-aws
         - file: docs/tools/terraform/concepts
           title: Concepts
           entries:
@@ -297,6 +313,9 @@ entries:
           - file: docs/products/kafka/concepts/auth-types
           - file: docs/products/kafka/concepts/non-leader-for-partition
           - file: docs/products/kafka/concepts/configuration-backup
+          - file: docs/products/kafka/concepts/monitor-consumer-group
+          - file: docs/products/kafka/concepts/kafka-quotas
+            title: Quotas
       - file: docs/products/kafka/howto
         title: HowTo
         entries:
@@ -348,6 +367,7 @@ entries:
               - file: docs/products/kafka/howto/prevent-full-disks
               - file: docs/products/kafka/howto/use-zookeeper
               - file: docs/products/kafka/howto/avoid-out-of-memory-error
+              - file: docs/products/kafka/howto/manage-quotas
 
           - file: docs/products/kafka/howto/list-integration
             title: Integrations
@@ -993,7 +1013,7 @@ entries:
             - file: docs/products/opensearch/howto/opensearch-aggregations-and-nodejs
               title: Aggregation with NodeJS
           - file: docs/products/opensearch/howto/list-opensearch-security
-            title: Manage OpenSearch Security |beta|
+            title: Manage OpenSearch Security
             entries:
               - file: docs/products/opensearch/howto/enable-opensearch-security
                 title: Enable OpenSearch Security management
@@ -1070,6 +1090,8 @@ entries:
             title: TimescaleDB
           - file: docs/products/postgresql/concepts/upgrade-failover
             title: Upgrade and failover procedures
+          - file: docs/products/postgresql/concepts/pgvector
+            title: AI-powered search with pgvector
       - file: docs/products/postgresql/howto
         title: HowTo
         entries:
@@ -1110,6 +1132,8 @@ entries:
               - file: docs/products/postgresql/howto/optimize-pg-slow-queries
               - file: docs/products/postgresql/howto/check-avoid-transaction-id-wraparound
               - file: docs/products/postgresql/howto/prevent-full-disk
+              - file: docs/products/postgresql/howto/use-pgvector
+                title: Enable and use pgvector
           - file: docs/products/postgresql/howto/list-replication-migration
             title: Migrate
             entries:
@@ -1197,7 +1221,11 @@ entries:
           - file: docs/products/redis/howto/list-dba-tasks
             entries:
               - file: docs/products/redis/howto/configure-acl-permissions
-              - file: docs/products/redis/howto/migrate-aiven-redis
+              - file: docs/products/redis/howto/migrate-redis-db
+                title: Data migration
+                entries:
+                - file: docs/products/redis/howto/migrate-aiven-redis
+                - file: docs/products/redis/howto/migrate-redis-aiven-via-console
           - file: docs/products/redis/howto/estimate-max-number-of-connections
           - file: docs/products/redis/howto/manage-ssl-connectivity
           - file: docs/products/redis/howto/warning-overcommit_memory

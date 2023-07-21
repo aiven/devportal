@@ -1,4 +1,4 @@
-DBA tasks
-=========
+Administer database
+====================
 
 .. tableofcontents::

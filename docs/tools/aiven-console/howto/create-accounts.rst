@@ -36,9 +36,9 @@ Create an organization
    
    Creating a new organization requires you to manually configure organization-level settings again such as :doc:`billing groups, authentication settings, and teams </docs/platform/concepts/projects_accounts_access>`.
 
-#. At the top right side, click the organization name and select **Create organization**. 
+#. Click the user information icon and select **Organizations**. 
 
-   If you don't have an organization yet, click **Create organization**. 
+#. On the **Organizations** tab of the **User profile**, click **Create organization**.
 
 #. Enter a name for the organization.
 

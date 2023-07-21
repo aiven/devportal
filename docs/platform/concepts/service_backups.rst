@@ -6,7 +6,9 @@ This article provides information on general rules for handling service backups 
 About backups at Aiven
 ----------------------
 
-All Aiven services, except for Apache Kafka® and M3 Aggregator/Coordinator, have time-based backups that are encrypted and securely stored. The backup retention times vary based on the service and the selected service plan. 
+All Aiven services, except for Apache Kafka® and M3 Aggregator/Coordinator, have time-based backups that are encrypted and securely stored. Backups at Aiven are stored in the object storage of the cloud region where a service runs (for example, S3 for AWS or GCS for GCP). You can check the location of your service's backups in `Aiven Console <https://console.aiven.io/>`_ > your service's homepage > **Backups**.
+
+The backup retention times vary based on the service and the selected service plan. 
 
 Aiven takes service backups for managing purposes. These backups are compressed and encrypted by the Aiven management platform and, as such, are not available for download for any service type.
 
@@ -87,7 +89,7 @@ For Aiven for PostgreSQL, full daily backups are taken, and WAL segments are con
 
 You can supplement this with a remote read-only replica service, which you can run in a different cloud region or with another cloud provider and promote to master if needed.
 
-To shift the backup schedule to a new time, you can modify the backup time configuration option in **Advanced Configuration** in the Aiven console. If a recent backup has been taken, it may take another backup cycle before the new backup time takes effect.
+To shift the backup schedule to a new time, you can modify the backup time configuration option in **Advanced configuration** in `Aiven Console <https://console.aiven.io/>`_ (the service's **Overview** page). If a recent backup has been taken, it may take another backup cycle before the new backup time takes effect.
 
 .. seealso::
     
@@ -102,7 +104,7 @@ Aiven for MySQL®
 
 Aiven for MySQL databases are automatically backed up with full daily backups and binary logs recorded continuously. All backups are encrypted with the open source `myhoard <https://github.com/aiven/myhoard>`_ software. Myhoard uses `Percona XtraBackup <https://www.percona.com/>`_ internally for taking full (or incremental) snapshots for MySQL.
 
-To shift the backup schedule to a new time, you can modify the backup time configuration option in **Advanced Configuration** in the Aiven console. If a recent backup has been taken, it may take another backup cycle before the new backup time takes effect.
+To shift the backup schedule to a new time, you can modify the backup time configuration option in **Advanced configuration** in `Aiven Console <https://console.aiven.io/>`_ (the service's **Overview** page). If a recent backup has been taken, it may take another backup cycle before the new backup time takes effect.
 
 .. seealso::
     
@@ -136,7 +138,7 @@ Aiven for Redis backups are taken every 12 hours.
 
 For persistence, Aiven supports Redis Database Backup (RDB).
 
-You can control the persistence feature using ``redis_persistence`` under **Advanced Configuration** in the Aiven console:
+You can control the persistence feature using ``redis_persistence`` under **Advanced configuration** in `Aiven Console <https://console.aiven.io/>`_ (the service's **Overview** page):
 
 * When ``redis_persistence`` is set to ``rdb``, Redis does RDB dumps every 10 minutes if any key is changed. Also, RDB dumps are done according to the backup schedule for backup purposes.
 * When ``redis_persistence`` is ``off``, no RDB dumps or backups are done, so data can be lost at any moment if the service is restarted for any reason or if the service is powered off. This also means the service can't be forked.

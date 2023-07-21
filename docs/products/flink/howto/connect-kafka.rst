@@ -14,14 +14,14 @@ Create Apache Flink® table with Aiven Console
 
 To create a Apache Flink® table based on an Aiven for Apache Kafka® topic via the `Aiven Console <https://console.aiven.io/>`_:
 
-1. In the Aiven for Apache Flink service page, open the **Application** tab.
+1. In the Aiven for Apache Flink service page, select **Application** from the left sidebar.
 2. Create a new application or select an existing one with Aiven for Apache Kafka integration. 
 
 .. note:: 
     If editing an existing application, create a new version to make changes to the source or sink tables.
 
-3. In the **Create new version** screen, click **Add source tables**.
-4. Click **Add new table** or click **Edit** if you want to edit an existing source table. 
+3. In the **Create new version** screen, select **Add source tables**.
+4. Select **Add new table** or select **Edit** if you want to edit an existing source table. 
 5. In the **Add new source table** or **Edit source table** screen, select the Aiven for Apache Kafka service as the integrated service. 
 6. In the **Table SQL** section, enter the SQL statement below to create the Apache Kafka-based Apache Flink:
 
@@ -62,7 +62,7 @@ To create a Apache Flink® table based on an Aiven for Apache Kafka® topic via 
         * ``json``: `JSON <https://nightlies.apache.org/flink/flink-docs-master/docs/connectors/table/formats/json/>`_
         * ``avro``: `Apache Avro <https://nightlies.apache.org/flink/flink-docs-master/docs/connectors/table/formats/avro/>`_
         * ``avro-confluent``: `Confluent Avro <https://nightlies.apache.org/flink/flink-docs-master/docs/connectors/table/formats/avro-confluent/>`_. For information, see :doc:`/docs/products/flink/howto/flink-confluent-avro`. 
-7. To create a sink table, click **Add sink tables** and repeat steps 4-6 for sink tables.
+7. To create a sink table, select **Add sink tables** and repeat steps 4-6 for sink tables.
 8. In the **Create statement** section, create a statement that defines the fields retrieved from each message in a topic, additional transformations such as format casting or timestamp extraction, and :doc:`watermark settings <../concepts/watermarks>`. 
 
 

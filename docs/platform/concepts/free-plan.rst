@@ -3,6 +3,8 @@ Free plans
 
 The free plan is available for Aiven for PostgreSQL®, Aiven for MySQL, and Aiven for Redis®* services. You don't need a credit card to sign up and you can create one free service for each type. This means you can create one free PostgreSQL, one free MySQL, and one free Redis service.
 
+If you want to try a different service, you may want to consider a 30-day :doc:`free trial </docs/platform/concepts/free-trial>`, which gives you $300 USD of free credits.
+
 You can run free plan services alongside a free 30-day trial without affecting your trial credits. Free plan services also continue running after the trial has expired.
 
 Free plan features and limitations

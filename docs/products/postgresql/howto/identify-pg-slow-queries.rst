@@ -5,14 +5,14 @@ PostgreSQL® allows you to keep track of queries with certain performance metric
 
 .. Tip::
 
-    When using Aiven for PostgreSQL®, you can check the **Query Statistics** tab for your service in the `Aiven Console <https://console.aiven.io/>`_ to identify long running queries.
+    When using Aiven for PostgreSQL®, you can check the **Query statistics** page for your service in the `Aiven Console <https://console.aiven.io/>`_ to identify long running queries.
 
-Under the hood, the Query Statistics tab uses the ``pg_stat_statements`` `extension <https://www.postgresql.org/docs/current/pgstatstatements.html>`_, a module that provides a means for tracking the planning and execution statistics of all SQL statements executed by your PostgreSQL® server, to provide you with the basic information that can be useful for identifying slow queries.
+Under the hood, the **Query statistics** page uses the ``pg_stat_statements`` `extension <https://www.postgresql.org/docs/current/pgstatstatements.html>`_, a module that provides a means for tracking the planning and execution statistics of all SQL statements executed by your PostgreSQL® server, to provide you with the basic information that can be useful for identifying slow queries.
 
 Query statistics
 ''''''''''''''''
 
-These are the entries provided by the Query Statistics which are deduced via the ``pg_stat_statements``:
+These are the entries provided by **Query statistics** which are deduced via the ``pg_stat_statements``:
 
 ==================      =======================================================================
 Column Type                Description

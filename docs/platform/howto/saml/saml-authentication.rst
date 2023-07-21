@@ -15,10 +15,11 @@ To set up a SAML authentication method for your organization in Aiven, there are
 
 Setup instructions for specific providers are available on the following pages:
 
-* :doc:`Set up SAML with OneLogin </docs/platform/howto/saml/setup-saml-onelogin>`
+* :doc:`Set up SAML with Auth0 </docs/platform/howto/saml/setup-saml-auth0>`
+* :doc:`Set up SAML with FusionAuth </docs/platform/howto/saml/setup-saml-fusionauth>`
 * :doc:`Set up SAML with Microsoft Azure Active Directory </docs/platform/howto/saml/setup-saml-azure>`
 * :doc:`Set up SAML with Okta </docs/platform/howto/saml/setup-saml-okta>`
-* :doc:`Set up SAML with Auth0 </docs/platform/howto/saml/setup-saml-auth0>`
+* :doc:`Set up SAML with OneLogin </docs/platform/howto/saml/setup-saml-onelogin>`
 * :doc:`Set up SAML with Google </docs/platform/howto/saml/setup-saml-google>`
 
 If your provider isn't listed, contact us at support@Aiven.io so we can assist you with the configuration.
