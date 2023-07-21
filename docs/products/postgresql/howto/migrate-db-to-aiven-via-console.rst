@@ -193,15 +193,15 @@ Migrate a database
 1. Log in to the `Aiven Console <https://console.aiven.io/>`_.
 2. On the **Services** page, select the service where your target database is located.
 3. On the **Overview** page of the selected service, scroll down to the **Migrate database** section and select **Set up migration**.
-4. Guided by the **PostgreSQL migration configuration guide** wizard, go through all the migration steps.
+4. Guided by the migration wizard, go through all the migration steps.
 
-Configure
-'''''''''
+Step 1: Configure
+'''''''''''''''''
 
-Get familiar with the guidelines provided in the migration wizard and select **Get started**.
+Get familiar with the guidelines provided in the **PostgreSQL migration configuration guide** window and select **Get started**.
 
-Validation
-''''''''''
+Step 2: Validation
+''''''''''''''''''
 
 1. To establish a connection to your source database, enter required database details in the **Database connection and validation** window:
 
@@ -217,23 +217,28 @@ Validation
 
 4. Select **Run check**.
 
-.. topic:: Unable to use logical replication?
+.. topic:: Cannot migrate the database using logical replication?
 
-   If your connection test returns such a warning, either resolve the issues or give up the continuous migration and opt for the dump method by selecting **Start the migration using a one-time snapshot (dump method)** > **Run check** > **Start migration**.
+   If your connection test returns information that you cannot migrate the database using logical replication due to the missing superuser permissions or ``aiven_extras`` extension, you can still migrate your data using the dump method.
 
-Migration
-'''''''''
+   To start a dump, select checkbox **Start the migration using a one-time snapshot (dump method)**.
 
-If all the checks pass with no error messages, you can trigger the migration by selecting **Start migration** in the **Database migration** window.
+Step 3: Migration
+'''''''''''''''''
 
-Close
-'''''
+If all the checks pass with no error messages, you are ready to start the migration. Before you do that, make sure you understand its limitations and consequences.
 
-While the migration is in progress, you can
+.. topic:: Impact on target databases
 
-* Let it proceed until completed by selecting **Close window**, which closes the wizard. You come back to check the status at any time.
+   It's recommended to migrate into an empty database. If you migrate into a populated database, colliding tables with primary keys are not affected, but tables without primary keys are appended. Check other limitations in `Logical replication restrictions <https://www.postgresql.org/docs/current/logical-replication-restrictions.html>`_.
+
+Trigger the migration by selecting **Start migration** in the **Database migration** window.
+
+While the migration is in progress, you can take the following actions:
+
+* Let it proceed until completed by selecting **Close window**, which closes the wizard. You come back to check the status at any time on the **Overview** page of the service in the **Migrate database** section.
 * Write to the target database.
-* Discontinue the migration by selecting **Cancel migration**, which retains the data already migrated. You cannot restart the stopped process and can only start a new migration.
+* Discontinue the migration by selecting **Stop migration**, which retains the data already migrated. You cannot restart the stopped process and can only start a new migration.
 
 .. warning::
 
@@ -247,14 +252,21 @@ While the migration is in progress, you can
 
    If you happen to get such a notification, investigate potential causes of the failure and try to fix the issues. When you are ready, trigger the migration again by selecting **Start over**.
 
-When the wizard communicates the completion of the migration, select one of the following:
+Step 4: Close
+'''''''''''''
 
-* **Close connection** if there is no replication in progress.
-* **Keep replicating** if the replication is still ongoing.
+As soon as the wizard communicates the completion of the migration, check if there's also information about the replication mode being active.
 
-.. topic:: Replication mode active?
+.. topic:: Replication mode active
 
-   Your data has been transferred to Aiven but some new data is still continuously being synced between the connected databases.
+   This information in the wizard means that your data has been transferred to Aiven but some new data is still continuously being synced between the connected databases.
+
+* If there is no replication in progress, select **Close connection** in the migration wizard to finalize the migration process. As a result, on the **Overview** page of the service, in the **Migrate database** section, you'll see the **Ready** tag.
+* If the replication mode is active, you can select **Keep replicating**. As a result, on the **Overview** page of the service, in the **Migrate database** section, you'll see the **Syncing** tag, and you'll be able to check the status of the migration process by selecting **Status update**.
+
+.. topic:: Result
+
+   You have successfully migrated your PostgreSQL database into you Aiven for PostgreSQL service.
 
 Related reading
 ---------------
