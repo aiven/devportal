@@ -22,3 +22,7 @@ Migration
     .. grid-item-card:: :doc:`Migrate between PostgreSQL® instances using aiven-db-migrate in Python </docs/products/postgresql/howto/run-aiven-db-migrate-python>`
         :shadow: md
         :margin: 2 2 0 0
+
+    .. grid-item-card:: :doc:`Migrate PostgreSQL® databases to Aiven using the console </docs/products/postgresql/howto/migrate-db-to-aiven-via-console>`
+        :shadow: md
+        :margin: 2 2 0 0
