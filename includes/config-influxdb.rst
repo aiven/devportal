@@ -1,9 +1,9 @@
+..
+    ``additional_backup_regions``
+    -----------------------------
+    *array*
 
-``additional_backup_regions``
------------------------------
-*array*
-
-**Additional Cloud Regions for Backup Replication** 
+    **Additional Cloud Regions for Backup Replication** 
 
 
 
@@ -86,6 +86,12 @@
 *object*
 
 **influxdb.conf configuration values** 
+
+``query_log_enabled``
+~~~~~~~~~~~~~~~~~~~~~
+*boolean*
+
+**Whether queries should be logged before execution. May log sensitive data contained within a query.** 
 
 ``log_queries_after``
 ~~~~~~~~~~~~~~~~~~~~~

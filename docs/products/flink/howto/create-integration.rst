@@ -12,7 +12,7 @@ Create data service integration
 You can easily create Aiven for Apache Flink® data service integrations via the `Aiven Console <https://console.aiven.io/>`_ by following these steps: 
 
 1. Navigate to the Aiven for Apache Flink® service page.
-2. If you are setting up the first integration for the selected Aiven for Apache Flink service, click on the **Get Started** button available under the **Overview** tab.
+2. If you are setting up the first integration for the selected Aiven for Apache Flink service, select **Get Started** in the service **Overview** screen.
 
 .. image:: /images/products/flink/integrations-get-started.png
   :scale: 80 %

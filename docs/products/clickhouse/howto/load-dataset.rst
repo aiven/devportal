@@ -31,17 +31,19 @@ If you don't yet have an Aiven for ClickHouse service, follow the steps in our :
 
 When you create a service, a default database was already added. However, you can create separate databases specific to your use case. We will create a database with the name ``datasets``, keeping it the same as in the ClickHouse documentation.
 
-To create the new database:
+To create the new database, take the following steps:
 
-* go to the  `Aiven web console <https://console.aiven.io/>`_ and click the **Databases & Tables** tab of your service page
-* create the database ``datasets``.
+1. Log in to the  `Aiven web console <https://console.aiven.io/>`_, and select your service from the **Services** page.
+2. In your service's page, select **Databases and tables** from the sidebar.
+3. In the **Databases and tables** page, select **Create database** > **ClickHouse database**.
+4. In the **Create ClickHouse database** window, enter name ``datasets`` for your database and select **Create database**.
 
 Connect to the ClickHouse database
 ----------------------------------
 
 We will be using the ClickHouse client to connect to the server. Follow :doc:`the separate guide </docs/products/clickhouse/howto/connect-with-clickhouse-cli>` to familiarize yourself with how to set up and start using the ClickHouse client.
 
-To connect to the server, use the connection details that you can find in the *Connection information* section of the *Overview* page in the Aiven web console. You will need **Host**, **Port**, **User**, and **Password**.
+To connect to the server, use the connection details that you can find in the **Connection information** section of the **Overview** page in the Aiven web console. You will need **Host**, **Port**, **User**, and **Password**.
 
 .. code:: bash
 
@@ -131,7 +133,7 @@ Another example uses some additional query features to find the longest lasting 
     LIMIT 10
 
 
-See tables in the console
--------------------------
+View tables in the console
+--------------------------
 
-You can also use the database and added tables with the data in the `Aiven web console <https://console.aiven.io/>`_. You can find them on the **Databases & Tables** tab of your service.
+You can also use the database and added tables with the data in the `Aiven web console <https://console.aiven.io/>`_. You can find them by selecting **Databases & Tables** from the sidebar of your service's page in `Aiven Console <https://console.aiven.io/>`_.

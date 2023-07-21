@@ -3,25 +3,29 @@ Getting started with Aiven for PostgreSQL®
 
 Aiven for PostgreSQL® is available in the `Aiven console <https://console.aiven.io>`_.
 
-Choose the PostgreSQL® version, your cloud provider and location to deploy to, then choose which plan to use.
+Create an Aiven for PostgreSQL® service
+---------------------------------------
 
-.. note::
-    If you're just trying out PostgreSQL, a single-node setup is available with our startup and hobbyist plans. This isn't recommended for production use however; for that you should try the high availability pairs provided on the business plans, or a premium plan to meet your needs.
+1. Log in to the `Aiven web console <https://console.aiven.io/>`_.
 
-Finally, give the service a name and then select "Create Service", and your shiny new PostgreSQL database will start building. While it does that, you can already visit the service overview page to see the details of the service.
+2. Follow :doc:`these instructions </docs/platform/howto/create_new_service>` to create a new Aiven for PostgreSQL service.
 
-.. image:: /images/products/postgresql/pg-connection-details.png
-    :alt: PostgreSQL service overview tab in Aiven's console
-
+   Once the service is ready, the status changes to *Running*. This typically takes a couple of minutes, depending on your selected cloud provider and region.
 
 Connect to PostgreSQL with ``psql``
 -----------------------------------
 
-The direct PostgreSQL connection endpoint can be found under the **Service URI** connection information on the main service overview tab. To understand more about direct connections and connection pooling visit the dedicated :doc:`page <concepts/pg-connection-pooling>`
+1. Log in to `Aiven Console <https://console.aiven.io>`_.
+2. Navigate to your service's page, and select **Overview** for the left sidebar.
+3. In the **Connection information** section, identify **Service URI**, which is the direct PostgreSQL connection endpoint.
 
-With :doc:`psql <howto/connect-psql>` you can connect to the PostgreSQL instance with the following command, by replacing the ``SERVICE_URI`` parameter::
+    .. seealso::
+        
+        For more information on direct connections and connection pooling, visit the dedicated :doc:`page <concepts/pg-connection-pooling>`.
 
-    psql SERVICE_URI
+4. Use :doc:`psql <howto/connect-psql>` to connect to the PostgreSQL instance by the following command::
+
+    psql SERVICE_URI_OF_YOUR_SERVICE
 
 Load a test dataset in PostgreSQL
 ---------------------------------

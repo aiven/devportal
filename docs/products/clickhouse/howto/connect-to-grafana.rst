@@ -11,7 +11,7 @@ Prerequisites
 
 Variables
 --------------------
-You'll need a few variables for the setup. To get their values, go to the Aiven console and navigate to **Overview** of your Aiven for ClickHouse® service (connection information for the HTTPS endpoint).
+You'll need a few variables for the setup. To get their values, go to `Aiven Console <https://console.aiven.io/>`_ and navigate to **Overview** of your Aiven for ClickHouse® service (**Connection information** > **ClickHouse HTTPS & JDBC**).
 
 ============================     ==========================================================================================================
 Variable                         Description
@@ -27,9 +27,9 @@ Integrate ClickHouse® with Grafana®
 1. Log in to Aiven for Grafana® following :doc:`the instructions </docs/products/grafana/howto/log-in>`.
 #. From the **Configuration** menu, select **Data sources** > **Add data source**.
 #. Find **Altinity plugin for ClickHouse** in the list and select it.
-#. Set *URL* to ``CLICKHOUSE_HTTPS_URI``.
-#. In *Auth* section, enable **Basic auth** and **With Credentials**.
-#. In *Basic Auth Details*, set your ``CLICKHOUSE_USER`` and ``CLICKHOUSE_PASSWORD``.
+#. Set **URL** to ``CLICKHOUSE_HTTPS_URI``.
+#. In **Auth** section, enable **Basic auth** and **With Credentials**.
+#. In **Basic Auth Details**, set your ``CLICKHOUSE_USER`` and ``CLICKHOUSE_PASSWORD``.
 #. Select **Save & test**.
 
 Now you can create a dashboard and panels to work with the data from your Aiven for ClickHouse® service.

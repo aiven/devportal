@@ -12,17 +12,13 @@ To identify and terminate such long-running queries, you can do it from either:
 Terminate long running queries from the Aiven Console
 -----------------------------------------------------
 
-In the `Aiven Console <https://console.aiven.io/>`_, you can go to the **Current Queries** tab for your service.
-
-.. image:: /images/products/postgresql/pg-long-running-queries.png
-    :alt: PostgreSQL® service overview tab in Aiven's console
-
-
-On the Current Queries page, you can check the query duration and click **Terminate** to stop any long-running queries.
-
+1. Log in to the `Aiven Console <https://console.aiven.io/>`_.
+2. From the **Services** page, select your Aiven for PostgreSQL service.
+3. In your service's page, select **Current queries** from the sidebar.
+4. In the **Current queries** page, you can check the query duration and select **Terminate** to stop any long-running queries.
 
 Detect and terminate long running queries with ``psql``
---------------------------------------------------------
+-------------------------------------------------------
 
 You can :doc:`login to your service <./connect-psql>`  by running on the terminal ``psql <service_uri>``.  Once connected, you can call the following function on the ``psql`` shell to terminate a query manually::
 
@@ -35,17 +31,14 @@ You can then use the following query to monitor currently running queries::
 
     SELECT * FROM pg_stat_activity WHERE state <> 'idle';
 
-
 Client applications can use the ``statement_timeout`` session variable to voluntarily request the server to automatically cancel any query using the current connection that runs over a specified length of time. For example, the following would cancel any query that runs for more 15 seconds automatically::
 
     SET statement_timeout = 15000
 
-
 You may check the `client connection defaults <https://www.postgresql.org/docs/current/runtime-config-client.html>`_ documentation for more information on the available session variables.
 
-
 Database user error
------------------------------------------------------
+-------------------
 
 If you run the above command using a database user not being a member of the database you're connecting to, you will encounter the error::
 

@@ -1,10 +1,7 @@
 Download a CA certificate
 =========================
 
-If your service needs a CA certificate, download it through the Aiven `web console <https://console.aiven.io>`_ by accessing the overview page for the specific service, and clicking on the **Download** button on the ``CA Certificate`` line.
-
-.. image:: /images/platform/ca-download.png
-    :alt: A screenshot of the Aiven web console service page, showing where is the CA certificate download button.
+If your service needs a CA certificate, download it through the `Aiven Console <https://console.aiven.io>`_ by accessing the **Overview** page for the specific service. In the **Connection information** section, find **CA Certificate**, and select the download icon in the same line.
 
 Or, you can use the ``avn`` :doc:`command-line tool </docs/tools/cli>` with the following command::
 

@@ -14,6 +14,7 @@ entries:
       - file: docs/platform/concepts/authentication-tokens
       - file: docs/platform/concepts/availability-zones
       - file: docs/platform/concepts/free-plan
+      - file: docs/platform/concepts/free-trial
       - file: docs/platform/concepts/list-billing
         title: Billing
         entries:
@@ -166,6 +167,7 @@ entries:
       title: Datadog
       entries:
         - file: docs/integrations/datadog/datadog-metrics
+        - file: docs/integrations/datadog/add-custom-tags-to-datadog
         - file: docs/integrations/datadog/datadog-logs
     - file: docs/integrations/cloudwatch
       title: Amazon CloudWatch 
@@ -1219,7 +1221,11 @@ entries:
           - file: docs/products/redis/howto/list-dba-tasks
             entries:
               - file: docs/products/redis/howto/configure-acl-permissions
-              - file: docs/products/redis/howto/migrate-aiven-redis
+              - file: docs/products/redis/howto/migrate-redis-db
+                title: Data migration
+                entries:
+                - file: docs/products/redis/howto/migrate-aiven-redis
+                - file: docs/products/redis/howto/migrate-redis-aiven-via-console
           - file: docs/products/redis/howto/estimate-max-number-of-connections
           - file: docs/products/redis/howto/manage-ssl-connectivity
           - file: docs/products/redis/howto/warning-overcommit_memory

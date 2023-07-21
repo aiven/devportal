@@ -50,7 +50,7 @@ Follow the steps in this section for each of the services whose metrics should b
 .. image:: /images/integrations/cloudwatch-overview-integrations.png
    :alt: Screenshot of system integrations including AWS CloudWatch Metrics
 
-5. Choose the endpoint by the **Endpoint name** you created earlier from the dropdown and choose **Enable**.
+5. Choose the endpoint by the **Endpoint name** you created earlier from the dropdown and choose **Continue**.
 
 6. Customize which metrics you want to send to the CloudWatch. To do this, toggle a metric group or individual metric field.
 

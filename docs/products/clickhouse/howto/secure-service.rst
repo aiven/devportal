@@ -25,13 +25,9 @@ Aiven services can be protected against accidental deletion or powering off by e
 Enable the termination protection
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Log in to the `Aiven web console <https://console.aiven.io/>`_ and select your ClickHouse® service from the *Services* view.
+1. Log in to the `Aiven web console <https://console.aiven.io/>`_, and select your ClickHouse® service from the **Services** view.
 
-2. In the *Overview* tab of your service, enable Termination Protection by using the toggle switch.
-
-.. image:: /images/products/clickhouse/termination-prevention.png
-   :width: 800px
-   :alt: Termination protection
+2. In the **Overview** page of your service, scroll down to the **Termination protection** section and enable this feature using the toggle switch.
 
 .. topic:: Result
 

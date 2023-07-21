@@ -38,7 +38,7 @@ Pricing
 ~~~~~~~~
 If you add storage when you create a service, the cost is included as part of your service's total cost and is shown in the service summary. 
 
-The cost of adding storage to a running service is shown in the Aiven Console when you add it. The total price you see is the cost of the additional storage and any backups associated with it. You can also see these storage usage costs in your invoices.
+The cost of adding storage to a running service is shown in `Aiven Console <https://console.aiven.io/>`_ when you add it. The total price you see is the cost of the additional storage and any backups associated with it. You can also see these storage usage costs in your invoices.
 
 Limitations
 ~~~~~~~~~~~
@@ -51,4 +51,4 @@ It is unlikely that any performance degradation from additional disk storage wou
 
 Next steps
 ----------
-For instructions on how to add or remove disk storage in the Aiven Console, see :doc:`Add or remove storage <../howto/add-storage-space>`. 
+For instructions on how to add or remove disk storage in `Aiven Console <https://console.aiven.io/>`_, see :doc:`Add or remove storage <../howto/add-storage-space>`. 

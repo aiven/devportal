@@ -1,7 +1,7 @@
-Backup and restore MySQL data using ``mysqldump``
-=================================================
+Backup and restore Aiven for MySQL® data using ``mysqldump``
+============================================================
 
-Backing up your MySQL data to another storage service is a good way to ensure access to your data in case a failure occurs. This article shows you how to copy your Aiven for MySQL data to a file, back it up to another Aiven for MySQL database, and restore it using the ``mysqldump`` `tool <https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html>`__.
+Backing up your Aiven for MySQ® data to another storage service is a good way to ensure access to your data in case a failure occurs. This article shows you how to copy your Aiven for MySQL data to a file, back it up to another Aiven for MySQL database, and restore it using the ``mysqldump`` `tool <https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html>`__.
 
 Prerequisites
 -------------
@@ -16,8 +16,7 @@ Prerequisites
 
     For the restore process, we recommend you pick a plan size that is large enough to store your data, so you can limit the downtime if you're performing a migration.
 
-The below example uses Aiven for MySQL databases for both the ``source-db`` and ``target-db``. You can create the databases by going to your running service for **Aiven for MySQL** > **Databases** > **Create a new database**.
-
+The below example uses Aiven for MySQL databases for both the ``source-db`` and ``target-db``. You can create the databases by following the instruction in :doc:`Create additional Aiven for MySQL® databases </docs/products/mysql/howto/create-database>`.
 
 Back up the data
 ----------------
@@ -25,7 +24,7 @@ Back up the data
 Variables
 '''''''''
 
-To backup the ``source-db`` data to a file called ``mydb_backup.sql`` you need to collect some information about your Aiven for MySQL ``source-db`` database. Go to your Aiven ``source-db`` service, from **Overview** page, find the following information:
+To backup the ``source-db`` data to a file called ``mydb_backup.sql`` you need to collect some information about your Aiven for MySQL ``source-db`` database. Go to `Aiven Console <https://console.aiven.io/>`__ > your Aiven for MySQL ``source-db`` service > **Overview** > the **Connection information** section and find the following information:
 
 .. list-table::
    :widths: 20 80
@@ -72,7 +71,7 @@ Restore the data
 Variables
 '''''''''
 
-To restore data saved in a file to an Aiven for MySQL database, you need to include the connection information for the service in the ``mysqldump`` command. Go to your Aiven ``target-db`` service, on the **Overview** page find the following information:
+To restore data saved in a file to an Aiven for MySQL database, you need to include the connection information for the service in the ``mysqldump`` command. Go to `Aiven Console <https://console.aiven.io/>`__ > your Aiven for MySQL ``target-db`` service > **Overview** > the **Connection information** section and find the following information:
 
 .. list-table::
    :widths: 20 80
@@ -105,7 +104,6 @@ Run the following command to load your saved data into your Aiven for MySQL data
     --password < mydb_backup.sql
 
 The password will be requested at the prompt. You can paste ``TARGET_DB_PASSWORD`` into the terminal. Your data should be stored in your Aiven for MySQL ``target-db``. You can check out ``mysqlcheck`` `command <https://dev.mysql.com/doc/refman/8.0/en/mysqlcheck.html>`_ to perform further analysis of your current MySQL data.
-
 
 Read more about migrations
 --------------------------

@@ -3,44 +3,26 @@ Telegraf to M3 to Grafana® Example
 
 Aiven for M3 + Telegraf set up
 ------------------------------
-At a high level, here’s how to set up Telegraf to push metrics to Aiven for M3.
+At a high level, here is how to set up Telegraf to push metrics to Aiven for M3.
 
-1. Create Aiven for M3 Service
-2. Install and configure Telegraf Agent
-3. Setup Aiven for Grafana® instance for visualization of telegraph metrics
-4. Enjoy the fruits of your labor!
+1. Log into `Aiven Console <https://console.aiven.io>`_ and :doc: `create an Aiven for M3 Service </docs/platform/howto/create_new_service>`.
+2. Install and configure Telegraf Agent.
+3. Setup Aiven for Grafana® instance for visualization of telegraph metrics.
+
 
 Create Aiven for M3 service
 ---------------------------
-If you don’t have an existing Aiven account, please follow this link to sign up for a free 30 day trial with
-$300 of credits: https://console.aiven.io/signup
+
+If you don't have an existing Aiven account, you can sign up for a free 30-day trial with $300 credits using the `Aiven Console <https://console.aiven.io>`_ link. 
 
 Within your existing Aiven project, create a new M3 service.
 
-1. Under Create Service, select M3.
-2. Select a cloud provider
-3. Select a region
+1. Log in to the `Aiven web console <https://console.aiven.io/>`_.
 
-.. image:: /images/products/m3db/telegraf-m3-example/m3_telegraph_01.png
-   :alt: Screenshot creating M3 service
-
-4. Select a service plan type. Startup-8 will be fine for this demo.
-
-.. tip::
-	Aiven never charges for networking costs. What you see for the price is what you will pay at the end of the month!
-
-
-5. Enter a name for the service.
-6. Click the Create Service button.
-
-.. image:: /images/products/m3db/telegraf-m3-example/m3_telegraph_02.png
-   :alt: Screenshot creating M3 service
-
-Navigate to the newly created M3 service via the left-side menu and the service listing, and click the **InfluxDB®** tab.
-You will use several values from this page including the **Service URI, user, and password** when configuring Telegraf in the next section of this blog.
-
-.. image:: /images/products/m3db/telegraf-m3-example/m3_telegraph_03.png
-   :alt: M3 Endpoint
+2. Follow :doc:`these instructions </docs/platform/howto/create_new_service>` to create a new Aiven for M3DB® service.
+   
+Open the newly created M3 service and select the **InfluxDB®** tab in the **Connection information** section. 
+You will use several values from this page including the **Service URI, user, and password**. You will need these values when configuring Telegraf in the next section.
 
 Install Telegraf
 ----------------
@@ -90,49 +72,15 @@ Wait 10 seconds or so (the default collection interval) to see if there are any 
 
 Create Aiven for Grafana service
 --------------------------------
-In the Aiven Console, navigate to the M3 service and click the ‘Manage integrations’.
-Connect your M3 instance to a new Grafana dashboard service.
 
-.. image:: /images/products/m3db/telegraf-m3-example/m3_telegraph_04.png
-	 :alt: M3 Manage Integrations
+1. In the `Aiven Console <https://console.aiven.io>`_ , and access the M3DB service. 
+2. In the **Service integrations** section, select **Manage integrations**.
+3. On the **Integrations** page, select **Grafana Metrics Dashboard** to establish a connection between your M3 instance and a new Grafana dashboard service.
+4. In the pop-up modal, select **New service** and select **Continue**.
+5. Fill out the required details and follow similar steps to create the service. This will initiate the startup process for your Aiven for Grafana service, which will automatically connect to the M3 database to display metrics.
+6. On the **Integrations** page on your M3DB service, you will find a link to the Grafana dashboard. Select the link to view the new Grafana service. 
+7. Once service is running, select the Service URI and login with the user / password from the connection information.
 
-Click the “Use Integrations” button on the Dashboard modal.
-
-.. image:: /images/products/m3db/telegraf-m3-example/m3_telegraph_05.png
-   :alt: M3 Dashboard
-
-In the pop-up modal, select “New Service” and click the Continue button.
-
-.. image:: /images/products/m3db/telegraf-m3-example/m3_telegraph_06.png
-   :alt: M3 New Integration
-
-Follow similar steps to create the service by filling in the:
-
-1. Name
-2. Cloud
-3. Region
-4. Service Plan (Startup-1 is OK)
-5. And then click the Create and enable button.
-
-.. image:: /images/products/m3db/telegraf-m3-example/m3_telegraph_07.png
-   :scale: 50%
-   :alt: M3 create new Grafana Integration
-
-.. image:: /images/products/m3db/telegraf-m3-example/m3_telegraph_08.png
-   :scale: 50%
-   :alt: M3 create new Grafana Integration
-
-A new Grafana service will now be starting up and automatically connect to the M3 database to display metrics.
-
-Click on the name of the service to navigate to the new service.
-
-.. image:: /images/products/m3db/telegraf-m3-example/m3_telegraph_09.png
-   :alt: M3 navigate to new Grafana Integration
-
-Once the service is running, click on the Service URI and login with the user / password from the connection information.
-
-.. image:: /images/products/m3db/telegraf-m3-example/m3_telegraph_10.png
-   :alt: Grafana Service Login
 
 Visualizing metrics
 -------------------

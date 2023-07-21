@@ -12,13 +12,13 @@ Create using Dashboards UI
 
 In order to create an alert via OpenSearch Dashboards interface, follow these steps:
 
-1. Log in to the `Aiven web console <https://console.aiven.io>`_ and select your OpenSearch service.
+1. Log in to the `Aiven Console <https://console.aiven.io>`_ and select your OpenSearch service.
 
-2. Click the **Overview** tab and under `Connection Information` click on **OpenSearch Dashboards** tab.
+2. On the service's **Overview** screen, in the **Connection information** section and select the **OpenSearch Dashboards** tab.
 
    This opens the OpenSearch Dashboard
 
-3. In OpenSearch Dashboard open the left side panel and under `OpenSearch Plugins` click on **Alerting**.
+3. Within the OpenSearch Dashboard, access the left side panel and select **Alerting** under the OpenSearch Plugins section.
 
 
 To configure each alert the following needs to be created, we will walk-through configuration of each section.
@@ -54,7 +54,9 @@ Configure authentication for email destination
 
 This section shows how to authenticate the sender account before sending email messages. To authenticate when sending emails, the credentials need to be added first to the OpenSearch keystore. Perform this step before configuring an email destination that requires authentication.
 
-1. In **Overview** tab of your OpenSearch service, **Advanced configuration** section, fill in the following fields and save:
+1. In **Overview** screen of your OpenSearch service, scroll to the **Advanced configuration** section. 
+2. Select **Change** and **+Add configuration option**. 
+3. Select the following configuration options and provide the corresponding details for each field:
 
    - ``email_sender_name``
    - ``email_sender_username``
@@ -62,9 +64,11 @@ This section shows how to authenticate the sender account before sending email m
 
    At the end of this step the email account credentials will be added to the OpenSearch keystore. That is, the steps-by-step procedure that follows need to be completed in OpenSearch Dashboards.
 
-2. Open the **Destination** tab and click on **Add destination**
+4. Select **Save advanced configuration**. 
+   
+5. Open the **Destination** tab in the OpenSearch Dashboard and select **Add destination**.
 
-3. Fill in the fields under **Destination**
+6. Fill in the fields under **Destination**
 
    Fill ``email-test`` as the **Name**
 
@@ -76,7 +80,7 @@ This section shows how to authenticate the sender account before sending email m
 
    Fill in the information required by the form and select SSL or TLS in **Encryption method**.
 
-4. Lastly you need to complete the form with the recipients, by creating email groups in **Manage email groups** if necessary.
+7. Lastly you need to complete the form with the recipients, by creating email groups in **Manage email groups** if necessary.
 
 Create a monitor
 ''''''''''''''''
@@ -121,7 +125,7 @@ Create a trigger
 ''''''''''''''''
 Triggers is a defined conditions from the queries results from monitor.  If conditions are met, alerts are generated.
 
-1. Click on **Add trigger**
+1. Select **Add trigger**
 
    Fill ``high_cpu`` as the **Trigger name**
 
@@ -150,6 +154,6 @@ Alert message
 
 **Message** can be adjusted as needed, check **Message Preview** to see the sample and use **Send test message** to validate notification delivery
 
-Click on **Create** and your monitor is ready!
+Select **Create** and your monitor is ready!
 
 * For further details on `alerting monitors configuration <https://opensearch.org/docs/latest/monitoring-plugins/alerting/monitors/>`_

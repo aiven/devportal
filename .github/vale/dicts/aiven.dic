@@ -40,6 +40,7 @@ connect
 Couchbase
 CPU/MS
 CRD
+cURL
 cyber
 datacenter
 datacenters
@@ -113,12 +114,14 @@ IPsec
 iptables
 Java
 JMX
+json
 JobManager
 Jolokia
 JumpCloud
 Kaggle/M
 Kafdrop
 Kafka
+kafka
 Karapace
 keypair
 keyspace
