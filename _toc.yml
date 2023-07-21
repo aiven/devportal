@@ -44,20 +44,27 @@ entries:
     - file: docs/platform/howto
       title: HowTo
       entries:
-      - file: docs/platform/howto/feature-preview 
-      - file: docs/platform/howto/list-user
-        title: User and access management
-        entries:
-          - file: docs/platform/howto/edit-user-profile
-          - file: docs/platform/howto/change-your-email-address
-          - file: docs/platform/howto/add-authentication-method
-          - file: docs/platform/howto/create_authentication_token
-          - file: docs/platform/howto/manage-org-users
-          - file: docs/platform/howto/create_new_service_user
-          - file: docs/tools/aiven-console/howto/create-manage-teams
-          - file: docs/platform/howto/user-2fa
-          - file: docs/platform/howto/technical-emails
-          - file: docs/platform/howto/reactivate-suspended-project                    
+        - file: docs/platform/howto/feature-preview 
+        - file: docs/platform/howto/list-user
+          title: User and access management
+          entries:
+            - file: docs/platform/howto/manage-org-users
+            - file: docs/platform/howto/create_new_service_user
+            - file: docs/platform/howto/technical-emails
+            - file: docs/platform/howto/reactivate-suspended-project
+            - file: docs/platform/howto/list-user-profile
+              entries:
+                - file: docs/platform/howto/edit-user-profile
+                - file: docs/platform/howto/change-your-email-address
+            - file: docs/platform/howto/list-authentication
+              entries:
+                - file: docs/platform/howto/add-authentication-method
+                - file: docs/platform/howto/user-2fa
+                - file: docs/platform/howto/create_authentication_token
+            - file: docs/platform/howto/list-groups
+              entries: 
+                - file: docs/platform/howto/manage-groups.rst
+                - file: docs/tools/aiven-console/howto/create-manage-teams                    
       - file: docs/platform/howto/list-account
         title: Organization and project management
         entries: 
