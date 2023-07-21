@@ -1,5 +1,5 @@
-Aiven Console
-=============
+Aiven Console overview
+=======================
 
 The `Aiven Console <https://console.aiven.io>`_ gives you access to create and manage Aiven services, update your user profile, manage settings across organizations and projects, set up billing groups, view invoices, and more. This article provides an overview of the main areas in the console:
 
@@ -27,7 +27,6 @@ On the **Authentication methods** tab of the **User profile**, you can manage yo
 
 - :doc:`Adding authentication methods </docs/platform/howto/add-authentication-method>`
 - :doc:`Managing two-factor authentication </docs/platform/howto/user-2fa>`
-- :doc:`Generating authentication tokens </docs/platform/concepts/authentication-tokens>`
 
 Authentication tokens 
 """"""""""""""""""""""
@@ -57,7 +56,7 @@ Organization and organizational unit settings are available on the **Admin** pag
 Projects and services
 ----------------------
 
-To navigate between different projects or view all projects click the **Projects** drop-down menu. This menu shows only the projects within the organization or organizational unit that :ref:`you are currently working in <orgs-units-settings>`. Selecting a project opens the **Services** page with a list of all services in that project. Here you can view the status of the services and :doc:`create new services </docs/platform/howto/create_new_service>`.
+To navigate between different projects or view all projects click the **Projects** drop-down menu. This menu shows only the projects within the organization or organizational unit that you are currently working in. Selecting a project opens the **Services** page with a list of all services in that project. Here you can view the status of the services and :doc:`create new services </docs/platform/howto/create_new_service>`.
 
 On the **Services** page you can also access the :doc:`integration endpoints</docs/integrations>`, VPCs, project logs, list of project members, and project settings.
 

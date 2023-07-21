@@ -1,5 +1,5 @@
-Set up AWS Marketplace for Aiven services
-===========================================
+Set up AWS Marketplace subscriptions
+=====================================
 
 Aiven makes its services available through the Amazon AWS Marketplace. This article shows the steps needed to create a subscription that links the accounts.
 
