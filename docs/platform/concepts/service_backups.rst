@@ -60,6 +60,9 @@ Aiven for Apache Kafka®
 '''''''''''''''''''''''
 
 Aiven for Apache Kafka is usually used as a transport tool for data rather than a permanent store. Due to the way it stores data, traditional backup strategies are not feasible. As a result, Aiven does not perform backups for managed Apache Kafka services, and data durability is determined by data replication across the cluster.
+But, we include :doc:`configuration backups </docs/products/kafka/concepts/configuration-backup>` that automatically back up key Apache Kafka® service configurations for you without any additional costs. 
+
+Suppose the Apache Kafka® service is powered off/on or an incident causes the Apache Kafka cluster to stop functioning. In that case, the configuration backup enables the restoration of your Apache Kafka® service to its previous state.
 
 To back up data passing through Apache Kafka, we recommend using one of the following tools:
 
@@ -78,6 +81,7 @@ To back up data passing through Apache Kafka, we recommend using one of the foll
     * :doc:`Aiven for Apache Kafka® MirrorMaker 2 </docs/products/kafka/kafka-mirrormaker>`
     * Cloudera's `A look inside Kafka MirrorMaker 2 <https://blog.cloudera.com/a-look-inside-kafka-mirrormaker-2/>`_
     * :doc:`Configure AWS for an S3 sink connector </docs/products/kafka/kafka-connect/howto/s3-sink-prereq>`
+    * :doc:`Configuration Backups </docs/products/kafka/concepts/configuration-backup>`
 
 Aiven for PostgreSQL®
 '''''''''''''''''''''
