@@ -23,7 +23,7 @@ With the console migration tool, you can migrate your data using either the :ref
 Continuous migration
 ''''''''''''''''''''
 
-The recommended continuous migration method is used by default in the tool and taken as a method to follow in this guide. The continuous migration keeps the source database operational during the migration. This method uses `logical replication <https://www.postgresql.org/docs/current/logical-replication.html>`_, which enables data transfer not only for the data that has already been there in the source database when triggering the migration but also for any data written to the source database during the migration.
+The continuous migration method is used by default in the console and taken as a method to follow in this guide. The continuous migration keeps the source database operational during the migration. This method uses `logical replication <https://www.postgresql.org/docs/current/logical-replication.html>`_, which enables data transfer not only for the data that has already been there in the source database when triggering the migration but also for any data written to the source database during the migration.
 
 .. important::
 
@@ -63,7 +63,9 @@ Using the continuous migration requires either superuser permissions or the ``ai
 Dump migration
 ''''''''''''''
 
-``pg_dump`` is a point-in-time snapshot. The data written to the source database after initiating the dump during the migration process are not migrated to the target database. When you start a dump migration, make sure no data is written to the source database by the time the dump is over. When you trigger the migration setup in the console and initial checks detect that your source database does not support the logical replication, you are notified about it via wizard. To continue with the migration, you can select the alternative ``pg_dump`` migration method in the wizard.
+``pg_dump`` is a point-in-time snapshot. The data written to the source database during the migration process (after initiating the dump) is not migrated to the target database. When you start a dump migration, make sure no data is written to the source database by the time the dumping process is over.
+
+When you trigger the migration setup in the console and initial checks detect that your source database does not support the logical replication, you are notified about it via wizard. To continue with the migration, you can select the alternative ``pg_dump`` migration method in the wizard.
 
 .. topic:: No superuser permissions and no ``aiven_extras``? Migrate using the dump method.
 
@@ -78,23 +80,23 @@ For the instruction on how to perform a dump, skip a few sections that follow an
 Prerequisites
 -------------
 
-* To use the default continuous migration method in the console tool, you have the logical replication enabled on your source database either with superuser permissions or the ``aiven_extras`` extension.
-* Source database's hostname or IP address are :doc:`accessible from the public Internet </docs/platform/howto/public-access-in-vpc>`.
-* You have the source database's credentials and reference data
+* To use the default continuous migration method in the console, you need to have the logical replication enabled on your source database either with superuser permissions or the ``aiven_extras`` extension.
+* Source database's hostname or IP address needs to be :doc:`accessible from the public Internet </docs/platform/howto/public-access-in-vpc>`.
+* You need to have the following source database's credentials and reference data:
   
   * Public hostname or connection string, or IP address used to connect to the database
   * Port used to connect to the database
   * Username (for a user with superuser permissions)
-  * Password
+  * Password.
 
-* Firewalls protecting the source database and the target databases are open to allow the traffic and connection between the databases (update or disable the firewalls temporarily if needed).
+* Firewalls protecting the source database and the target databases need to be open to allow the traffic and connection between the databases (update or disable the firewalls temporarily if needed).
 
 Pre-configure the source
 ------------------------
 
 * Allow remote connections on the source database.
 
-  Check that your database allows all remote connections, use ``psql`` to run the following query:
+  Check that your database allows all remote connections by using ``psql`` to run the following query:
 
   .. code-block:: bash
 
@@ -123,7 +125,7 @@ Pre-configure the source
 
      SHOW hba_file;
 
-  Open ``pg_hba.conf`` in a text editor of your choice, for example, Visual Studio Code:
+  Open ``pg_hba.conf`` in a text editor of your choice, for example, Visual Studio Code.
 
   .. code-block:: bash
 
@@ -148,7 +150,7 @@ Pre-configure the source
 
   For cloud-hosted databases, the logical replication is usually enabled by default, while databases hosted on-premises can have the logical replication not enabled.
 
-  To check that the logical replication is enabled, use ``psql`` to run the following query:
+  Check that the logical replication is enabled using ``psql`` to run the following query:
 
   .. code-block:: bash
 
@@ -185,15 +187,15 @@ Pre-configure the source
      <number of slots, e.g. 8>
      (1 row)
 
-  If ``number of slots`` is smaller than the number of databases in your PostgreSQL server, modify it.
+  If ``number of slots`` is smaller than the number of databases in your PostgreSQL server, modify it using the following query:
 
   .. code-block:: bash
 
      ALTER SYSTEM SET max_replication_slots = use_your_number;
 
-  where ``use_your_number`` = the number of databases in your server
+  where ``use_your_number`` stands for the number of databases in your server.
 
-* Restart your PostgreSQL server.
+* Restart your PostgreSQL server using the following command:
   
   .. code-block:: bash
 
@@ -233,7 +235,7 @@ Step 2: Validation
 
 .. topic:: Cannot migrate the database using logical replication?
 
-   If your connection test returns information that you cannot migrate the database using logical replication due to the missing superuser permissions or ``aiven_extras`` extension, you can still migrate your data using the dump method.
+   If your connection test returns information that you cannot migrate the database using the logical replication due to the missing superuser permissions or ``aiven_extras`` extension, you can still migrate your data using the dump method.
 
    To start a dump, select checkbox **Start the migration using a one-time snapshot (dump method)**.
 
@@ -250,13 +252,13 @@ Trigger the migration by selecting **Start migration** in the **Database migrati
 
 While the migration is in progress, you can take the following actions:
 
-* Let it proceed until completed by selecting **Close window**, which closes the wizard. You come back to check the status at any time on the **Overview** page of the service in the **Migrate database** section.
+* Let it proceed until completed by selecting **Close window**, which closes the wizard. You can come back to check the status at any time on the **Overview** page of the service in the **Migrate database** section.
 * Write to the target database.
-* Discontinue the migration by selecting **Stop migration**, which retains the data already migrated. You cannot restart the stopped process and can only start a new migration.
+* Discontinue the migration by selecting **Stop migration**. Although the data already migrated is retained, you cannot restart the stopped process. To continue with the migration, you need to start a new migration process from scratch.
 
 .. warning::
 
-   To avoid conflicts and replication issues while the migration is ongoing
+   To avoid conflicts and replication issues while the migration is ongoing, take the following precautions:
 
    * Do not write to any tables in the target database that are being processed by the migration tool.
    * Do not change the replication configuration of the source database manually. Do not modify ``wal_level`` or reduce ``max_replication_slots``.
@@ -273,10 +275,10 @@ As soon as the wizard communicates the completion of the migration, check if the
 
 .. topic:: Replication mode active
 
-   This information in the wizard means that your data has been transferred to Aiven but some new data is still continuously being synced between the connected databases.
+   This information in the wizard means that your data has been transferred to Aiven, but some new data is still continuously being synced between the connected databases.
 
-* If there is no replication in progress, select **Close connection** in the migration wizard to finalize the migration process. As a result, on the **Overview** page of the service, in the **Migrate database** section, you'll see the **Ready** tag.
-* If the replication mode is active, you can select **Keep replicating**. As a result, on the **Overview** page of the service, in the **Migrate database** section, you'll see the **Syncing** tag, and you'll be able to check the status of the migration process by selecting **Status update**.
+* If there is no replication in progress, select **Close connection** in the migration wizard to finalize the migration process. As a result, on the **Overview** page of the service > the **Migrate database** section, you'll see the **Ready** tag.
+* If the replication mode is active, you can select **Keep replicating**. As a result, on the **Overview** page of the service > the **Migrate database** section, you'll see the **Syncing** tag, and you'll be able to check the status of the migration process by selecting **Status update**.
 
 .. topic:: Result
 
