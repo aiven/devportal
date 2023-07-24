@@ -15,10 +15,10 @@ The tiered storage feature introduces a method of organizing and storing data in
 The tiered storage in Aiven for ClickHouse consists of the following two layers:
 
 SSD - the first tier
-  For fresh, frequently-accessed and valuable data, a fast but costly storage device
+  Fast storage device with limited capacity, better suited for fresh and frequently queried data, relatively costly to use
 
 Object storage - the second tier
-  For older, less valuable or rarely-accessed data, a slower but more affordable storage device
+  Affordable storage device with unlimited capability, better suited for historical and more rarely queried data, relatively slower
 
 Why use it
 ----------
