@@ -11,7 +11,16 @@ The Point-in-Time Recovery (PITR) process allows you to restore your Grafana ser
 .. image:: /images/products/grafana/grafana-pitr-fork-restore.png
     :alt: click 'Fork & restore' from backup tab of Grafana service from Aiven console
 
-3. After you have clicked the button, a new popup will appear to change specifics for the service restore
+3. In the **New Database Fork** screen, 
+
+     - Provide a name for the new service.
+     - Verify that the appropriate Project name is chosen.
+     - Select the desired backup from the available options using the drop-down list.
+      
+       .. Tip::
+            If your service has multiple backup files, ensure that you select the correct PITR backup from the dropdown list. 
+     - Choose your cloud provider, preferred cloud region, and the service plan accordingly.
+    
 
 .. image:: /images/products/grafana/grafana-pitr-new-db-fork-popup.png
     :alt: popup for setting specifics of the service restore.
