@@ -1,7 +1,7 @@
 Migrate PostgreSQL® databases to Aiven using the console 
 ========================================================
 
-You can migrate PostgreSQL® databases to Aiven using either CLI (``aiven-db-migrate``) or the Aiven web console. This article addresses the latter scenario by providing guidelines on how to use the Aiven console to migrate PostgreSQL databases to the Aiven platform.
+You can migrate PostgreSQL® databases to Aiven using either :doc:`CLI </docs/products/postgresql/howto/migrate-aiven-db-migrate>` (``aiven-db-migrate``) or `Aiven Console <https://console.aiven.io/>`_. This article addresses the latter scenario by providing guidelines on how to use `Aiven Console <https://console.aiven.io/>`_ to migrate PostgreSQL databases to the Aiven platform.
 
 .. seealso::
 
@@ -10,18 +10,26 @@ You can migrate PostgreSQL® databases to Aiven using either CLI (``aiven-db-mig
 About migrating via console
 ---------------------------
 
-* With the console migration tool, you can migrate existing on-premise or cloud-hosted PostgreSQL databases to clusters in your Aiven account.
+The console migration tool enables you to migrate PostgreSQL databases to managed PostgreSQL clusters in your Aiven organization. You can migrate the following:
 
-* Console migration tool uses `logical replication <https://www.postgresql.org/docs/current/logical-replication.html>`_ by default.
+* Existing on-premise PostgreSQL databases
+* Cloud-hosted PostgreSQL databases
+* Managed PostgreSQL database clusters on Aiven.
 
-  .. important::
+With the console migration tool, you can migrate your data using either the :ref:`continuous migration method <pg-continuous-migration>` (default and recommended) or the :ref:`one-time snapshot method <pg-dump-migration>` (``pg_dump``).
 
-      Before you use the logical replication method, make sure you know and understand all the restrictions it has. For details, check out `Logical replication restrictions <https://www.postgresql.org/docs/current/logical-replication-restrictions.html>`_.
+.. _pg-continuous-migration:
 
-* With the console migration tool, you can migrate PostgreSQL® databases either using the continuous migration method, which is the one recommended and detailed in this guide, or using the dump method (``pg_dump``).
+Continuous migration
+''''''''''''''''''''
 
-  * Continuous migration keeps the source database operational during the migration but requires either superuser permissions or the ``aiven_extras`` extension installed on the source database.
-  * Dump is a point-in-time snapshot. The data written to the source database after initiating the dump during the migration process are not migrated to the target database. When you start a dump migration, make sure no data is written to the source database by the time the dump is over.
+The recommended continuous migration method is used by default in the tool and taken as a method to follow in this guide. The continuous migration keeps the source database operational during the migration. This method uses `logical replication <https://www.postgresql.org/docs/current/logical-replication.html>`_, which enables data transfer not only for the data that has already been there in the source database when triggering the migration but also for any data written to the source database during the migration.
+
+.. important::
+
+   Before you use the logical replication, make sure you know and understand all the restrictions it has. For details, check out `Logical replication restrictions <https://www.postgresql.org/docs/current/logical-replication-restrictions.html>`_.
+
+Using the continuous migration requires either superuser permissions or the ``aiven_extras`` extension installed on the source database.
 
 .. dropdown:: Expand to check out how to verify that you have superuser permissions.
 
@@ -50,21 +58,27 @@ About migrating via console
 
       CREATE EXTENSION `aiven_extras` CASCADE;
 
+.. _pg-dump-migration:
+
+Dump migration
+''''''''''''''
+
+``pg_dump`` is a point-in-time snapshot. The data written to the source database after initiating the dump during the migration process are not migrated to the target database. When you start a dump migration, make sure no data is written to the source database by the time the dump is over. When you trigger the migration setup in the console and initial checks detect that your source database does not support the logical replication, you are notified about it via wizard. To continue with the migration, you can select the alternative ``pg_dump`` migration method in the wizard.
+
 .. topic:: No superuser permissions and no ``aiven_extras``? Migrate using the dump method.
 
-   Without superuser permissions or ``aiven_extras`` installed, you cannot use the continuous migration. In that case, you can migrate your database using the dump method if you have the following permissions:
+   Without superuser permissions or ``aiven_extras`` installed, you cannot use the logical replication and migrate in a continuous manner. In that case, you can migrate your database using the dump method if you have the following permissions:
 
    * Connect
    * Select on all tables in the database
    * Select on all the sequences in the database
 
-   For the instruction on how to perform a dump, skip a few sections that follow and go straight to :ref:`Migrate a database <migrate-in-console>`.
+For the instruction on how to perform a dump, skip a few sections that follow and go straight to :ref:`Migrate a database <migrate-in-console>`.
 
 Prerequisites
 -------------
 
-* Logical replication is enabled on the source database.
-* You have superuser permissions or the ``aiven_extras`` extension installed on the source database.
+* To use the default continuous migration method in the console tool, you have the logical replication enabled on your source database either with superuser permissions or the ``aiven_extras`` extension.
 * Source database's hostname or IP address are :doc:`accessible from the public Internet </docs/platform/howto/public-access-in-vpc>`.
 * You have the source database's credentials and reference data
   
@@ -78,7 +92,7 @@ Prerequisites
 Pre-configure the source
 ------------------------
 
-* Allow remote connections.
+* Allow remote connections on the source database.
 
   Check that your database allows all remote connections, use ``psql`` to run the following query:
 
@@ -130,11 +144,11 @@ Pre-configure the source
    
      For more details on the configuration file's syntax, see `The pg_hba.conf File <https://www.postgresql.org/docs/14/auth-pg-hba-conf.html>`_.
 
-* Enable logical replication.
+* Enable the logical replication.
 
   For cloud-hosted databases, the logical replication is usually enabled by default, while databases hosted on-premises can have the logical replication not enabled.
 
-  Check that the logical replication is enabled, use ``psql`` to run the following query:
+  To check that the logical replication is enabled, use ``psql`` to run the following query:
 
   .. code-block:: bash
 
@@ -177,7 +191,7 @@ Pre-configure the source
 
      ALTER SYSTEM SET max_replication_slots = use_your_number;
 
-  where ``use_your_number`` is the number of databases in your server.
+  where ``use_your_number`` = the number of databases in your server
 
 * Restart your PostgreSQL server.
   
