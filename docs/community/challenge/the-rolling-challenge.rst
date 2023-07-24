@@ -96,7 +96,7 @@ The goal is to make sense of the incoming stream of data.
                 )
 
 
-12. If you find the solution, email us at hacks@Aiven.io
+12. When you find the solution, email us a screenshot to hacks@Aiven.io
 
 Tips
 ----
