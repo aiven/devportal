@@ -3,8 +3,6 @@ Point-in-time recovery (PITR) process for Aiven for Grafana®
 
 The Point-in-Time Recovery (PITR) process allows you to restore your Grafana service using a backup from a specific point in time. When you initiate the restore using the PITR backup for Grafana, a new service will be created to host the restored data. Follow the steps below to perform PITR for Aiven for Grafana:
 
-Steps
------
 
 1. Navigate to the backup tab of Grafana service
 
