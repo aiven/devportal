@@ -43,3 +43,8 @@ For more information, refer to `Enforcement <https://kafka.apache.org/documentat
 
 .. seealso:: 
     * :doc:`How to add and manage quotas <../howto/manage-quotas>`
+
+
+Further reading
+----------------
+For a more in-depth understanding of Kafka quotas in Aiven for Apache Kafka, read the comprehensive blog post on this topic - `Introducing Kafka Quotas in Aiven for Apache Kafka <https://aiven.io/blog/introducing-kafka-quotas-in-aiven-for-apache-kafka>`_. The blog post provides a deep dive into the workings, advantages, and practical application of Kafka quotas in Kafka deployments. 
