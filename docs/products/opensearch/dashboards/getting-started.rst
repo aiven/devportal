@@ -3,6 +3,9 @@ Getting started
 
 To start using **Aiven for OpenSearch® Dashboards**, :doc:`create Aiven for OpenSearch® service first</docs/products/opensearch/getting-started>` and OpenSearch Dashboards service will be added alongside it. Once the Aiven for OpenSearch service is running you can find connection information to your OpenSearch Dashboards in the service overview page and use your favourite browser to access OpenSearch Dashboards service.
 
+.. warning:: 
+    OpenSearch Dashboard will be **unavailable** during a **maintenance update** that consists of a version update to your Aiven for OpenSearch service. The duration of the maintenance window can vary based on the updates. Once the maintenance update is completed, the OpenSearch Dashboard will be available again.
+
 Load sample data
 *****************
 
