@@ -8,9 +8,9 @@ Two-factor authentication (also known as 2-step verification or 2FA) in Aiven pr
 Enable two-factor authentication
 --------------------------------
 
-#. In the `Aiven Console <https://console.aiven.io>`_, click the **User Information** icon.
+To enable two-factor authentication on the `Aiven Console <https://console.aiven.io/>`_:
 
-#. Click **Authentication methods**.
+#. Click the **User information** icon in the top right and select **Authentication**.
 
 #. On the **Aiven Password** method, toggle on **Two-factor authentication**. 
 
@@ -31,13 +31,13 @@ If you want to change the  mobile device that you use for two-factor authenticat
 Disable two-factor authentication
 ----------------------------------
 
-1. In the `Aiven Console <https://console.aiven.io>`_, click the **User Information** icon.
+To disable two-factor authentication on the Aiven Console:
 
-2. Click **Authentication methods**.
+#. Click the **User information** icon in the top right and select **Authentication**.
 
-3. On the **Aiven Password** method, toggle off **Two-factor authentication**. 
+#. On the **Aiven Password** method, toggle off **Two-factor authentication**. 
 
-4. Enter your password and click **Disable Two-Factor Authentication**.
+#. Enter your password and click **Disable Two-Factor Authentication**.
 
 .. warning::
     
@@ -48,9 +48,14 @@ Reset two-factor authentication
 
 If you have lost access to your mobile device or authenticator app, you can regain access to your account by resetting your Aiven password: 
 
-#. Log out of `Aiven Console <https://console.aiven.io>`_.
+#. Log out of Aiven Console.
+
 #. Enter your login email and click **Log in**.
+
 #. Click **Forgot password?**. 
+
 #. Enter your login email and click **Reset your password**.
+
 #. Follow the instructions in the password reset email to set a new password.
+
 #. :ref:`Enable two-factor authentication <enable-2fa>` on your new mobile device or authenticator app.
