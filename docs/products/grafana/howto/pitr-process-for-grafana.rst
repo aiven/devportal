@@ -16,7 +16,7 @@ The Point-in-Time Recovery (PITR) process allows you to restore your Grafana ser
 .. image:: /images/products/grafana/grafana-pitr-new-db-fork-popup.png
     :alt: popup for setting specifics of the service restore.
 
-4. Once you have confirmed all the relevant selections, scroll down to the bottom of the popup and click 'Create fork' 
+4. Click **Create fork** to create the new forked service.
 
 5. You will be redirected to the **Overview** page of the newly forked service. The service is in the **Rebuilding** status while it is being created. Once the service is ready, the status changes to **Running**. 
 
