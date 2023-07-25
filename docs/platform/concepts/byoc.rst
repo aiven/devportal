@@ -14,7 +14,7 @@ their own security posture and keep their data in their own cloud.
 When to consider bringing your own cloud
 ----------------------------------------
 
-There are three major reasons to utilize BYOC:
+There are a few major reasons to utilize BYOC:
 
 1. **Compliance**: Aiven offers managed environments for several standard compliance regulations such as HIPAA, PCI DSS and GDPR. However, if you have strict regulatory requirements, or special compliance requirements, BYOC may be the best option for you.
 2. **Network auditing**: If you require visibility of all traffic within any VPC you operate in or need frequent auditing capabilities, BYOC is potentially a good fit. BYOC gives you the ability to audit network metadata but not the actual contents.

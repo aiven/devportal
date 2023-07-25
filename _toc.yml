@@ -3,6 +3,22 @@ defaults:
   maxdepth: 1
 
 entries:
+  # -------- GET STARTED --------
+  - file: docs/get-started
+    title: Get started
+    entries:
+    - file: docs/platform/concepts/free-plan
+    - file: docs/platform/concepts/free-trial
+    - file: docs/marketplace-setup
+      entries:
+      - file: docs/platform/howto/billing-aws-marketplace-subscription
+        title: Set up AWS Marketplace subscriptions
+      - file: docs/platform/howto/billing-azure-marketplace-subscription
+        title: Set up Azure Marketplace subscriptions
+      - file: docs/platform/howto/billing-google-cloud-platform-marketplace-subscription
+        title: Set up Google Cloud Marketplace subscriptions
+    - file: docs/tools/aiven-console
+    - file: docs/platform/howto/feature-preview 
   # -------- PLATFORM-TOPICS --------
   - file: docs/platform
     title: Platform
@@ -13,8 +29,6 @@ entries:
       - file: docs/platform/concepts/aiven-node-firewall-configuration
       - file: docs/platform/concepts/authentication-tokens
       - file: docs/platform/concepts/availability-zones
-      - file: docs/platform/concepts/free-plan
-      - file: docs/platform/concepts/free-trial
       - file: docs/platform/concepts/list-billing
         title: Billing
         entries:
@@ -45,7 +59,6 @@ entries:
     - file: docs/platform/howto
       title: HowTo
       entries:
-      - file: docs/platform/howto/feature-preview
       - file: docs/platform/howto/list-user
         title: User and access management
         entries:
@@ -119,16 +132,10 @@ entries:
           - file: docs/platform/howto/billing-assign-projects
           - file: docs/platform/howto/payment-issues-plan-upgrades
           - file: docs/platform/howto/custom-plans
-          - file: docs/platform/howto/billing-aws-marketplace-subscription
-            title: Set up AWS Marketplace
           - file: docs/platform/howto/move-to-aws-marketplace-billing
             title: Move to AWS Marketplace
-          - file: docs/platform/howto/billing-google-cloud-platform-marketplace-subscription
-            title: Set up Google Cloud Marketplace
           - file: docs/platform/howto/move-to-gcp-marketplace-billing
             title: Move to Google Cloud Marketplace
-          - file: docs/platform/howto/billing-azure-marketplace-subscription
-            title: Set up Azure Marketplace
           - file: docs/platform/howto/move-to-azure-marketplace-billing
             title: Move to Azure Marketplace
       - file: docs/platform/howto/list-saml
@@ -194,7 +201,6 @@ entries:
     - file: docs/integrations/prometheus-system-metrics
   - file: docs/tools
     entries:
-      - file: docs/tools/aiven-console
       - file: docs/tools/cli
         entries:
         - file: docs/tools/cli/account
@@ -823,6 +829,8 @@ entries:
             title: Alerts and notifcations
           - file: docs/products/grafana/howto/list-manage-cluster
             title: Manage cluster
+          - file: docs/products/grafana/howto/pitr-process-for-grafana
+            title: Point-in-time recovery process 
       - file: docs/products/grafana/reference
         title: Reference
         entries:

@@ -1,5 +1,5 @@
-Set up Azure Marketplace for Aiven services
-===========================================
+Set up Azure Marketplace subscriptions
+=======================================
 
 Aiven makes its services available through the Microsoft Azure Marketplace. This article shows the steps needed to create a subscription that links the accounts.
 
