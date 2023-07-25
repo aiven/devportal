@@ -154,6 +154,8 @@ entries:
             title: Setting up SAML with Okta
           - file: docs/platform/howto/saml/setup-saml-onelogin
             title: Setting up SAML with OneLogin
+          - file: docs/platform/howto/saml/setup-saml-google
+            title: Setting up SAML with Google
       - file: docs/platform/howto/list-support
         title: Support
         entries:
