@@ -14,26 +14,26 @@ Prerequisites
 Configure multi-tenancy in OpenSearch® Dashboard
 -------------------------------------------------
 
-This section provides information on configuring multi-tenancy in OpenSearch Dashboard, which involves enabling OpenSearch Security management, creating tenants, assigning roles, and mapping roles to users.
+This section provides information on configuring multi-tenancy in OpenSearch Dashboard, which involves enabling OpenSearch Security management, creating custom tenants, assigning roles, and mapping roles to users.
 
 Step 1: Enable OpenSearch® Security management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-To set up multi-tenancy in OpenSearch Dashboard, the initial step is to :doc:`enable OpenSearch Security management <../howto/enable-opensearch-security>` on your Aiven for OpenSearch service. This will provide necessary authentication and authorization features required for multi-tenancy. 
-To enable OpenSearch Security management, see enable OpenSearch . 
+
+If you use the default tenants (Private and Global) in OpenSearch Dashboard, you do not need to enable OpenSearch Security management on your Aiven for OpenSearch service. However, if you want to support custom tenants, enabling OpenSearch Security management is required as it provides necessary authentication and authorization features.
+
+To enable OpenSearch Security management for Aiven for OpenSearch, refer to :doc:`Enable OpenSearch Security management <../howto/enable-opensearch-security>`.
 
 Step 2: Create a tenant
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-After enabling OpenSearch Security management on your Aiven for OpenSearch service, the next step is to configure tenants. A tenant is a logical grouping of users and data, each with its own set of users, roles, and permissions.
+A tenant is a logical grouping of users and data, each with its own set of users, roles, and permissions. OpenSearch users can access two default tenants: *Global* and *Private*, which are available even without enabling OpenSearch Security management. All users share the Global Tenant, and the Private Tenant is exclusively available to a single user and cannot be shared.
 
-OpenSearch users have access to two default tenants: Global and Private. The Global Tenant is shared by all users, and the Private Tenant is exclusively available to a single user and cannot be shared.
-
-To create a new tenant, follow these steps: 
+If you have enabled OpenSearch Security management and wish to create a custom tenant, follow these steps: 
 
 1. Log in to OpenSearch Dashboard with administrative access. 
 2. From the left navigation menu, select **Security** and select **Tenants**. 
 3. Select **Create tenant** to create a new tenant. 
 4. In the **Create Tenant** screen, enter a name and description for your new tenant.
-5. Select **Create** to save your new tenant.
+5. Select **Create** to save your new custom tenant.
 
 Step 3: Assign tenant to roles
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
