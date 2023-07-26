@@ -1,5 +1,7 @@
-Beta services
-=============
+Service and feature release stages
+===================================
+
+The lifecycle for new Aiven services and features
 
 Aiven releases new services at the beta stage for all customers so that you have the opportunity to test and validate your business needs for these new services.
 
