@@ -2,11 +2,6 @@
 Create and manage teams
 =======================
 
-.. important::
-    **Teams are becoming groups**
-    
-    Teams will be removed soon and groups will be used to control access to organizations and organizational units. To avoid users losing access, create new groups with the same users and permissions that are currently in your teams.
-
 **Teams** let you create user groups and assign different access levels to specific projects in your organization or org unit. When you :doc:`create an organization or organizational unit </docs/tools/aiven-console/howto/create-accounts>`, a team is automatically created with admin access to the organization or org unit and its projects.
 
 Users must be part of an organization before being added to a team. To create and manage teams, click **Admin** and then select **Teams**.
