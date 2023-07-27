@@ -210,7 +210,7 @@ Limited availability note template
 For features that are in the limited availability stage, add the following admonition directly undert the article title:
 
 .. important:: 
-    {feature name} is a limited availability feature. If you're interested in trying out this feature, contact your account team or the Aiven support team at support@Aiven.io.
+    {feature name} is a limited availability feature. If you're interested in trying out this feature, contact the sales team at sales@Aiven.io.
 
 
 Early availability note template
