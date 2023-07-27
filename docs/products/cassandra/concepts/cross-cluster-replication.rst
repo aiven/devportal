@@ -1,5 +1,9 @@
-Cross-cluster replication with Aiven for Apache Cassandra® |beta|
-=================================================================
+Cross-cluster replication with Aiven for Apache Cassandra®
+==========================================================
+
+.. important::
+
+    Aiven for Apache Cassandra® cross-cluster replication (CCR) is a limited availability feature. If you're interested in trying out this feature, contact the sales team at `sales@Aiven.io <mailto:sales@Aiven.io>`_.
 
 This article provides an overview of the cross-cluster replication (CCR) feature for Aiven for Apache Cassandra®. Learn what CCR is and how it works. Discover how you can benefit from this feature and what limits and limitations it has.
 
