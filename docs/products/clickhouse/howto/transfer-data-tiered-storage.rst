@@ -1,11 +1,11 @@
 Transfer data between storage devices in Aiven for ClickHouse®'s tiered storage
 ===============================================================================
 
+.. important::
+
+Aiven for ClickHouse® tiered storage is a limited availability feature. If you're interested in trying out this feature, contact the sales team at `sales@Aiven.io <mailto:sales@Aiven.io>`_.
+
 Check out this article for instructions on transferring data outside and inside your SSD for an Aiven for ClickHouse® service.
-
-.. topic:: Feature availability
-
-    Currently, the access to this feature is limited. Contact `sales@Aiven.io <mailto:sales@Aiven.io>`_ for details.
 
 About moving data between storage devices
 -----------------------------------------
