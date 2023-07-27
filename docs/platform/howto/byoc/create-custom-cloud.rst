@@ -1,15 +1,13 @@
-Create a custom cloud in Aiven |beta|
-=====================================
+Create a custom cloud in Aiven
+==============================
+
+.. important::
+
+    Creating custom clouds in your Aiven organization requires enabling :doc:`the bring your own cloud (BYOC) feature </docs/platform/concepts/byoc>`, which is a limited availability feature. If you're interested in trying it out, contact the sales team at `sales@Aiven.io <mailto:sales@Aiven.io>`_.
 
 A custom cloud is your own cloud infrastructure integrated with your Aiven organization (as opposed to an Aiven-managed infrastructure). Using a custom cloud in Aiven may be the optimal solution if you have specific business needs or project requirements, such as a strict regulatory compliance. With a custom cloud, you can manage your own infrastructure based on your expectations and tailor it to your budget.
 
 Learn how to add a :doc:`custom cloud </docs/platform/concepts/byoc>` to your Aiven organization, and check out how it works.
-
-.. important::
-
-   * To create a custom cloud in your Aiven organization, you need the bring your own cloud (BYOC) feature enabled for this organization.
-   * BYOC is a beta feature, and its availability is limited. To enable BYOC for your Aiven organization, contact `sales@Aiven.io <mailto:sales@Aiven.io>`_.
-   * For more information on BYOC, see :doc:`Bring your own cloud </docs/platform/concepts/byoc>`. 
 
 About creating a custom cloud
 -----------------------------

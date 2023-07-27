@@ -1,9 +1,9 @@
-Assign a project to your custom cloud |beta|
-============================================
+Assign a project to your custom cloud
+=====================================
 
-.. topic:: Before you start
+.. important::
 
-    Creating custom clouds in your Aiven organization requires enabling the bring your own cloud (BYOC) feature. BYOC is a beta feature, and its availability is limited. To enable BYOC for your Aiven organization, contact `sales@Aiven.io <mailto:sales@Aiven.io>`_. For more information on BYOC, see :doc:`Bring your own cloud </docs/platform/concepts/byoc>`.
+    Creating custom clouds in your Aiven organization requires enabling :doc:`the bring your own cloud (BYOC) feature </docs/platform/concepts/byoc>`, which is a limited availability feature. If you're interested in trying it out, contact the sales team at `sales@Aiven.io <mailto:sales@Aiven.io>`_.
 
 This article details how to update the list of projects assigned to your custom cloud using `Aiven Console <https://console.aiven.io/>`_.
 
