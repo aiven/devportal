@@ -603,6 +603,8 @@ entries:
                 title: Data service integrations
               - file: docs/products/flink/howto/ext-kafka-flink-integration
                 title: Connect to Apache Kafka
+              - file: docs/products/flink/howto/connect-bigquery
+                title: Connect to Google BigQuery
           - file: docs/products/flink/howto/list-flink-applications
             title: Aiven for Apache Flink applications
             entries:
