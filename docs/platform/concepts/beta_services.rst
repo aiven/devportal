@@ -1,32 +1,32 @@
-Service and feature release stages
-===================================
+Service and feature releases
+=============================
 
-The lifecycle for new Aiven services and features
-
-Aiven releases new services at the beta stage for all customers so that you have the opportunity to test and validate your business needs for these new services.
-
-The reason for the wide availability is that we believe that customer feedback is critical during the development cycle, and the feedback that we receive during the beta stage helps us shape the products that you use.
+Before an official release, the lifecycle of new services and features includes a limited availability stage and an early availability stage.
 
 
-What does beta mean?
---------------------
+Limited availability
+---------------------
 
-Any service tagged as beta is intended as early access for use in non-production environments. You can however test them with production-like workloads so that you can gauge how the service behaves under heavy loads.
-
-Issues raised for beta services are considered low severity issues and are handled according to our support SLAs.
-
-Using a beta service means that you consent to us contacting you to request qualitative feedback and to test the service to help Aiven improve its product offering.
+The limited availability stage is an initial release that customers can try out. If you are interested in trying a service or feature in this stage, contact the sales team at sales@Aiven.io.
 
 
-How long will it be in beta?
-----------------------------
+Early availability
+-------------------
 
-An Aiven service will advance from beta status and become generally available once we are confident that it is ready for production use at scale.
+Features and services in the early availability stage are released to all users with some restrictions on the functionality and `service level agreement <https://aiven.io/sla>`_. They are intended for use in non-production environments, but you can test them with production-like workloads to gauge their behavior under heavy loads. Issues raised for these services and features are considered `low severity <https://aiven.io/support-services>`_.
 
-The duration of the beta period largely depends on how quickly the service has been adopted by our customers and what changes are required to address the key issues that are discovered.
+You can enable most early availability features yourself on the :doc:`feature preview page </docs/platform/howto/feature-preview>` in the user profile. This is also where you can provide feedback about the feature after trying it out.
+
+Using a service in this stage means that you consent to us contacting you to request qualitative feedback. The feedback we receive helps us shape the products you use.
 
 
-Billing for beta services
--------------------------
+General availability
+---------------------
 
-We provide campaign credit codes to encourage you to try out our beta services. Once the campaign code expires or you have used the credit in full, we charge you for the service according to the normal rate.
+New services and features become generally available once we are confident that they are ready for production use at scale. The duration of the early stages depends on how quickly the service or feature has been adopted by our customers and what changes are required to address the key issues that are discovered.
+
+
+Billing for limited and early availability services
+----------------------------------------------------
+
+Aiven provides credits for you to try out limited and early availability services. Once the credit code expires or you have used all of the credits, you are charged for the service according to the normal rate.
