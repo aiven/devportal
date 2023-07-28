@@ -1,12 +1,12 @@
-Connect Apache Kafka® to Aiven for Apache Flink®
-==================================================
+Integrate Aiven for Apache Flink® with Apache Kafka® 
+=====================================================
 Integrating external/self-hosted Apache Kafka® with Aiven for Apache Flink® allows users to leverage the power of both technologies to build scalable and robust real-time streaming applications. 
 
 This section provides instructions on integrating external/self-hosted Apache Kafka with Aiven for Apache Flink® using :doc:`Aiven client </docs/tools/cli>` and `Aiven Console <https://console.aiven.io/>`_. 
 
 Prerequisites
 ---------------
-* Aiven for Flink service 
+* Aiven for Apache Flink service 
 * External/self-hosted Apache Kafka service
 
 Configure integration using CLI
@@ -51,9 +51,10 @@ To create a PLAINTEXT protocol type endpoint, use the following command:
 
 .. code:: 
 
-    avn service integration-endpoint-create --endpoint-name demo-ext-kafka \
-    --endpoint-type external_kafka  \
-    --user-config-json  '{"bootstrap_servers":"servertest:123","security_protocol":"PLAINTEXT"}'
+    avn service integration-endpoint-create 
+        --endpoint-name demo-ext-kafka 
+        --endpoint-type external_kafka  
+        --user-config-json  '{"bootstrap_servers":"servertest:123","security_protocol":"PLAINTEXT"}'
 
 Where : 
 
@@ -160,13 +161,19 @@ To integrate Aiven for Apache Flink with the integration endpoint for external A
 
 .. code:: 
 
-    avn service integration-create --source-endpoint-id <source-endpoint-id> --dest-service <flink-service-name> -t flink_external_kafka
+    avn service integration-create 
+        --source-endpoint-id <source-endpoint-id> 
+        --dest-service <flink-service-name> 
+        -t flink_external_kafka
 
 For example, 
 
 .. code:: 
 
-    avn service integration-create --source-endpoint-id eb870a84-b91c-4fd7-bbbc-3ede5fafb9a2 --dest-service flink-1 -t flink_kafka
+    avn service integration-create 
+        --source-endpoint-id eb870a84-b91c-4fd7-bbbc-3ede5fafb9a2 
+        --dest-service flink-1 
+        -t flink_kafka
 
 where: 
 

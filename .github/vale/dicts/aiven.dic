@@ -215,6 +215,7 @@ scriptable
 Security
 serde
 serializer
+service_account
 sharded
 sharding
 signup
