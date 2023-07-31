@@ -19,8 +19,15 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-    - name: Index devportal pages
+    - name: Index pages to OpenSearch
       run: |
         make index-devportal
       env:
         ES_URL: ${{ secrets.ES_URL }}
+    - name: Index pages to Algolia for aiven.io search
+    run: |
+      make index-algolia
+    env:
+      ALGOLIA_APPLICATION_ID: ${{ secrets.ALGOLIA_APPLICATION_ID }}
+      ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
+      ALGOLIA_INDEX_NAME: ${{ secrets.ALGOLIA_INDEX_NAME }}
