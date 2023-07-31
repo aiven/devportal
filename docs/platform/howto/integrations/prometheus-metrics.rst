@@ -20,7 +20,7 @@ Check Prometheus support on your service
 
 Usually one Prometheus integration endpoint can be used for all services in the same project. To check if Prometheus is supported on your service, you need to verify if the project for this service has a Prometheus integration endpoint created. For this purpose, take the following steps:
 
-#. | Log in to `Aiven Console <https://console.aiven.io/>`_, go to **Projects** on the top navigation bar, and select your project from the dropdown list.
+#. | Log in to `Aiven Console <https://console.aiven.io/>`_, go to **Projects** in the top navigation bar, and select your project from the dropdown list.
 #. | On the **Services** page, select **Integration endpoints** from the left sidebar.
 #. | On the **Integration endpoints** page, select **Prometheus** from the list available integration endpoints, and check if there is any endpoint available under **Endpoint Name**.
 
@@ -33,7 +33,7 @@ Enable Prometheus on your Aiven project
 
 Aiven offers Prometheus endpoints for your services. To enable this feature, take the following steps:
 
-#. | Log in to `Aiven Console <https://console.aiven.io/>`_, go to **Projects** on the top navigation bar, and select your project from the dropdown list.
+#. | Log in to `Aiven Console <https://console.aiven.io/>`_, go to **Projects** in the top navigation bar, and select your project from the dropdown list.
 #. | On the **Services** page, select **Integration endpoints** from the left sidebar.
 #. | On the **Integration endpoints** page, select **Prometheus** from the list available integration endpoints, and select **Add new endpoint**.
 #. | In the **Create new Prometheus endpoint** window, enter the details for the endpoint, and select **Create**. 
@@ -42,12 +42,11 @@ Aiven offers Prometheus endpoints for your services. To enable this feature, tak
 #. | On the **Integrations** page, select **Prometheus**. 
 #. | In the **Prometheus integration** window, select the endpoint name you created from the dropdown list, and select **Enable**.
 
-     .. note::
+   .. note::
       
-        At the top of the **Integrations** page, you will see the Prometheus integration listed and status ``active``. 
+      At the top of the **Integrations** page, you will see the Prometheus integration listed and status ``active``. 
 
 #. | From the **Integrations** page, go to the **Overview** page > the **Connection information** section > the **Prometheus** tab.
-     
 #. | Copy **Service URI**, and use it in your browser to access the Prometheus dashboard.
 
 .. topic:: Result
@@ -83,7 +82,7 @@ For single-node services, configure the following in your ``scrape_config`` job 
 
      You can download the CA certificate using the `Aiven command line client <https://github.com/aiven/aiven-client/>`_ and command ``avn project ca-get --target-filepath ca.pem``.
 
-.. topic:: Expected result
+.. topic:: Sample configuration
 
     .. code-block:: bash
 
@@ -112,9 +111,9 @@ Multi-node services
   
    Prometheus resolves all the IP addresses associated with the DNS name and query all of those IP addresses directly. A side effect of using this IP resolution is that Prometheus expects the TLS certificate to be bound to the IP addresses of the hosts, not to the DNS name.
    
-1. Enable the ``insecure_skip_verify`` setting so that Prometheus wouldn't verify if the TLS certificate is bound to the IP addresses of the hosts.
+2. Enable the ``insecure_skip_verify`` setting so that Prometheus wouldn't verify if the TLS certificate is bound to the IP addresses of the hosts.
 
-    .. code-block:: bash
+   .. code-block:: bash
 
       scrape_configs:
         - job_name: aivenmetrics
