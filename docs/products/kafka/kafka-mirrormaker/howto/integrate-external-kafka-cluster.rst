@@ -20,4 +20,4 @@ You can define an external Apache Kafka® service integration endpoint using the
 
 5. The external Apache Kafka cluster is now available under the alias defined in the **Endpoint name** parameter
 
-.. note::  Configure the ACLs for both the source and target cluster such that the MirrorMaker 2 service can describe and create topics, as well as produce and consume messages. ß
+.. note::  Configure the ACLs for both the source and target cluster such that the MirrorMaker 2 service can describe and create topics, as well as produce and consume messages.
