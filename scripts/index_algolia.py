@@ -66,6 +66,8 @@ def parse_pages(html_build_dir):
                 'facetingType': 'documentation',
                 'popularity': 1,
                 '_type': 'documentation',
+                '__i18n_lang': 'en',
+                'endDate_timestemp': '4845516182350', # 100 years ahead
                 'objectID': hashlib.sha256(relative_path.encode("utf-8")).hexdigest()  # Use the URL hash as the objectID
             })
 
@@ -76,11 +78,8 @@ def parse_pages(html_build_dir):
 def index_pages(client, index_name, pages):
     index = client.init_index(index_name)
 
-    # Delete existing objects from the index
-    index.clear_objects()
-
-    # Add new objects to the index
-    index.save_objects(pages)
+    # Add new objects to the index or update existing ones
+    index.save_objects(pages, {'autoGenerateObjectIDIfNotExist': True})
 
     print(f"Indexed {len(pages)} pages.")
 
