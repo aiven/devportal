@@ -1,13 +1,13 @@
 Service and feature releases
 =============================
 
-Before general availability, the lifecycle of new services and features includes a limited availability stage and an early availability stage.
+Before general availability, the lifecycle of new services and features includes a limited availability (beta) stage and an early availability stage.
 
 
-Limited availability
----------------------
+Limited availability (beta)
+---------------------------
 
-The limited availability stage is an initial release that customers can try out. If you are interested in trying a service or feature in this stage, contact the sales team at sales@Aiven.io.
+The limited availability (beta) stage is an initial release that customers can try out. If you are interested in trying a service or feature in this stage, contact the sales team at sales@Aiven.io.
 
 
 Early availability
