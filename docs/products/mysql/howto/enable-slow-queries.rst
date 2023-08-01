@@ -27,8 +27,8 @@ Your Aiven for MySQL service can now log slow queries. If you want to simulate s
 
 .. warning::
 
-    Aiven managed Mysql services use table output for the slow query log.
-    This means that the slow query log will not work on a read-only replica.
+    Aiven managed MySQL services use table output for the slow query log.
+    This means that the slow query log will not function on a read-only replica.
 
 Simulate slow queries
 ---------------------
