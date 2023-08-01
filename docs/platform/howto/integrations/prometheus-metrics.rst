@@ -15,8 +15,8 @@ challenge than using the more common push approach, it does have the benefit of
 making the metrics available not just for Prometheus but for any application that can
 read the Prometheus format from the HTTP server running on Aiven nodes.
 
-Check Prometheus support on your service
-----------------------------------------
+Check Prometheus support for your service
+-----------------------------------------
 
 Usually one Prometheus integration endpoint can be used for all services in the same project. To check if Prometheus is supported on your service, you need to verify if the project for this service has a Prometheus integration endpoint created. For this purpose, take the following steps:
 
@@ -28,8 +28,8 @@ If there is a Prometheus endpoint available, your service supports Prometheus. I
 
 .. _enable-prometheus:
 
-Enable Prometheus on your Aiven project
----------------------------------------
+Enable Prometheus
+-----------------
 
 Aiven offers Prometheus endpoints for your services. To enable this feature, take the following steps:
 
@@ -38,7 +38,7 @@ Aiven offers Prometheus endpoints for your services. To enable this feature, tak
 #. | On the **Integration endpoints** page, select **Prometheus** from the list available integration endpoints, and select **Add new endpoint**.
 #. | In the **Create new Prometheus endpoint** window, enter the details for the endpoint, and select **Create**. 
 #. | Select **Services** from the sidebar, and navigate to the service that you would like to monitor.
-#. On the **Overview** page of your service, go to the **Service integrations** section, and select **Manage integrations**.
+#. | On the **Overview** page of your service, go to the **Service integrations** section, and select **Manage integrations**.
 #. | On the **Integrations** page, select **Prometheus**. 
 #. | In the **Prometheus integration** window, select the endpoint name you created from the dropdown list, and select **Enable**.
 
