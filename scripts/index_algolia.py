@@ -13,18 +13,6 @@ parser.add_argument('--html-build-dir', help='Sphinx HTML build directory')
 # Path relative to build dir
 INDEX_BLACKLIST = ["search.html", "genindex.html"]
 
-def create_index(client, index_name):
-    # Initialize your index
-    index = client.init_index(index_name)
-
-    # Configure the settings for your index
-    settings = {
-        'searchableAttributes': ['title', 'body'],
-        'attributesForFaceting': ['facetingType'],
-        'customRanking': ['desc(popularity)']
-    }
-    index.set_settings(settings)
-
 def parse_pages(html_build_dir):
     pages = []
 
@@ -101,7 +89,9 @@ def index_pages(client, index_name, pages):
 if __name__ == '__main__':
     args = parser.parse_args()
 
+    # Connect and authenticate with your Algolia app
     client = SearchClient.create(args.algolia_app_id, args.algolia_api_key)
-    create_index(client, args.algolia_index_name)
+
+    # Create a new index and add a record
     pages = parse_pages(args.html_build_dir)
     index_pages(client, args.algolia_index_name, pages)
