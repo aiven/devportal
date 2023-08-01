@@ -1,7 +1,7 @@
 Service and feature releases
 =============================
 
-Before an official release, the lifecycle of new services and features includes a limited availability stage and an early availability stage.
+Before general availability, the lifecycle of new services and features includes a limited availability stage and an early availability stage.
 
 
 Limited availability
@@ -23,7 +23,7 @@ Using a service in this stage means that you consent to us contacting you to req
 General availability
 ---------------------
 
-New services and features become generally available once we are confident that they are ready for production use at scale. The duration of the early stages depends on how quickly the service or feature has been adopted by our customers and what changes are required to address the key issues that are discovered.
+New services and features become generally available once they are ready for production use at scale. The duration of the early and limited availability stages depends on how quickly the service or feature has been adopted by our customers and what changes are required to address the key issues that are discovered.
 
 
 Billing for limited and early availability services
