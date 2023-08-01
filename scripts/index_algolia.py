@@ -39,8 +39,22 @@ def parse_pages(html_build_dir):
         with open(filepath) as file:
             doc = BeautifulSoup(file.read(), 'html.parser')
 
-            title = doc.title.text
             elements = doc.select('div.article-container')[0]
+
+            # Extract title from h1 tag and remove it
+            for h1 in elements.select('h1'):
+                # Decompose the a tag in the h1 tag
+                for a in h1.select('a'):
+                    a.decompose()
+
+                title = h1.text.strip()
+                h1.decompose()
+
+            # Extract text from the first p tag and remove it
+            for first_p in elements.select('p'):
+                subtitle = first_p.text.strip()
+                first_p.decompose()
+                break  # we only want the first paragraph    
 
             # remove tables of contents
             for toc in elements.select('div.toctree-wrapper'):
@@ -60,14 +74,15 @@ def parse_pages(html_build_dir):
             body = elements.text.strip()
             pages.append({
                 'title': title,
-                'subtitle': body[:160],
+                'subtitle': subtitle,
                 'body': body,
                 'slug': full_path,
                 'facetingType': 'documentation',
-                'popularity': 1,
+                'popularity': 4,
                 '_type': 'documentation',
                 '__i18n_lang': 'en',
-                'endDate_timestemp': '4845516182350', # 100 years ahead
+                'isHidden': False,
+                'endDate_timestemp': 4845516771877, # 100 years from now
                 'objectID': hashlib.sha256(relative_path.encode("utf-8")).hexdigest()  # Use the URL hash as the objectID
             })
 
