@@ -3,7 +3,7 @@ Tiered storage in Aiven for ClickHouse®
 
 .. important::
 
-    Aiven for ClickHouse® tiered storage is a limited availability feature. If you're interested in trying out this feature, contact the sales team at `sales@Aiven.io <mailto:sales@Aiven.io>`_.
+    Aiven for ClickHouse® tiered storage is a :doc:`limited availability feature </docs/platform/concepts/beta_services>`. If you're interested in trying out this feature, contact the sales team at `sales@Aiven.io <mailto:sales@Aiven.io>`_.
 
 Discover the tiered storage capability in Aiven for ClickHouse®. Learn how it works and explore its use cases. Check why you might need it and what benefits you get using it.
 
@@ -30,7 +30,7 @@ How it works
 
 With the tiered storage :doc:`enabled </docs/products/clickhouse/howto/enable-tiered-storage>`, by default Aiven for ClickHouse stores data on your SSD until it reaches 80% of its capacity. After exceeding this size-based threshold, the data is stored in the object storage.
 
-Optionally, you can :doc:`configure the time-based threshold </docs/products/clickhouse/howto/configure-tiered-storage>` in the tiered storage. Based on the time-based threshold, the data is moved for your SSD to the object storage after a specified time period.
+Optionally, you can :doc:`configure the time-based threshold </docs/products/clickhouse/howto/configure-tiered-storage>` in the tiered storage. Based on the time-based threshold, the data is moved from your SSD to the object storage after a specified time period.
 
 .. mermaid:: 
 
@@ -55,7 +55,7 @@ Optionally, you can :doc:`configure the time-based threshold </docs/products/cli
 Typical use case
 ----------------
 
-In your Aiven for ClickHouse service, there is a significant amount of data that is there for a while and is hardly ever accessed. It's stored on SSD and, thus, high-priced. You decide to :doc:`enable </docs/products/clickhouse/howto/enable-tiered-storage>` the tiered storage for your service to make your data storage more efficient and reduce the costs. For that purpose, you select a plan for your service that supports the tiered storage and you :doc:`enable </docs/products/clickhouse/howto/enable-tiered-storage>` the feature on particular tables. You :doc:`configure the time-based threshold </docs/products/clickhouse/howto/configure-tiered-storage>` the time-based threshold for controlling how your data is stored in the two layers.
+In your Aiven for ClickHouse service, there is a significant amount of data that is there for a while and is hardly ever accessed. It's stored on SSD and, thus, high-priced. You decide to :doc:`enable </docs/products/clickhouse/howto/enable-tiered-storage>` the tiered storage for your service to make your data storage more efficient and reduce the costs. For that purpose, you select a plan for your service that supports the tiered storage and you :doc:`enable </docs/products/clickhouse/howto/enable-tiered-storage>` the feature on particular tables. You :doc:`configure </docs/products/clickhouse/howto/configure-tiered-storage>` the time-based threshold for controlling how your data is stored in the two layers.
 
 .. _tiered-storage-limitations:
 

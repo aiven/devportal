@@ -3,9 +3,9 @@ Configure data retention thresholds in Aiven for ClickHouse®'s tiered storage
 
 .. important::
 
-    Aiven for ClickHouse® tiered storage is a limited availability feature. If you're interested in trying out this feature, contact the sales team at `sales@Aiven.io <mailto:sales@Aiven.io>`_.
+    Aiven for ClickHouse® tiered storage is a :doc:`limited availability feature </docs/platform/concepts/beta_services>`. If you're interested in trying out this feature, contact the sales team at `sales@Aiven.io <mailto:sales@Aiven.io>`_.
 
-Learn to control how your data is distributed between storage devices in the tiered storage of an Aiven for ClickHosue service. Check out how to configure tables so that your data is automatically written either to SSD or the object storage as needed.
+Learn to control how your data is distributed between storage devices in the tiered storage of an Aiven for ClickHouse service. Check out how to configure tables so that your data is automatically written either to SSD or the object storage as needed.
 
 About data retention control
 ----------------------------
