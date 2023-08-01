@@ -13,7 +13,7 @@ To discover the metrics available for your services, make an HTTP ``GET`` reques
 
 Then make a request like the one below to get a snapshot of your metrics, replacing the placeholders with the values for your service:
 
-.. code-block::
+.. code-block:: bash
 
     curl -k --user USERNAME:PASSWORD PROMETHEUS_URL/metrics
 
@@ -25,16 +25,17 @@ CPU usage
 CPU usage metrics are helpful in determining if the CPU is constantly being maxed out.
 For a high-level view of CPU usage for a single CPU service, you can use
 
-.. code-block::
+.. code-block:: bash
 
     100 - cpu_usage_idle{cpu="cpu-total"}
 
-.. tip:: A process with a ``nice`` value larger than 0 will be categorized as ``cpu_usage_nice``, which is not included in ``cpu_usage_user``.
+.. tip::
+
+   A process with a ``nice`` value larger than 0 will be categorized as ``cpu_usage_nice``, which is not included in ``cpu_usage_user``.
 
 It can be useful to monitor ``cpu_usage_iowait{cpu="cpu-total"}``. If this number is high, it indicates the service node is working on something I/O intensive. For example, 40 means 40% of CPU time is waiting for disk or network I/O.
 
 The following table lists some important CPU-related metrics you can collect and monitor:
-
 
 .. list-table::
   :header-rows: 1
@@ -68,7 +69,11 @@ These metrics are generated from the `Telegraf plugin <https://github.com/influx
 Disk usage
 ----------
 
-Monitoring disk usage ensures that applications or processes will not fail due to insufficient disk storage. Consider monitoring ``disk_used_percent`` and ``disk_free``.
+Monitoring the disk usage ensures that applications or processes don't fail due to an insufficient disk storage.
+
+.. tip::
+
+   Consider monitoring ``disk_used_percent`` and ``disk_free``.
 
 The following table lists some important disk usage metrics you can collect and monitor:
 
@@ -79,33 +84,34 @@ The following table lists some important disk usage metrics you can collect and 
   * - Metics
     - Description
   * - ``disk_free``
-    - Free space on service disk.
+    - Free space on the service disk
   * - ``disk_used``
-    - Used space on disk. For example, 8.0e+9 means 8,000,000,000 bytes.
+    - Used space on the disk, for example, ``8.0e+9`` (8,000,000,000 bytes)
   * - ``disk_total``
-    - The total space on disk (free and used space).
+    - Total space on the disk (free and used)
   * - ``disk_used_percent``
-    - The percentage of the disk space used. The is equal to ``disk_used / disk_total * 100``. For example, 80 means 80% service disk usage.
+    - Percentage of the disk space used equal to ``disk_used / disk_total * 100``, for example, ``80`` (80% service disk usage)
   * - ``disk_inodes_free``
-    - The number of index nodes available on service disk.
+    - Number of index nodes available on the service disk
   * - ``disk_inodes_used``
-    - The number of index nodes used on service disk.
+    - Number of index nodes used on the service disk
   * - ``disk_inodes_total``
-    - The total number of index nodes on service disk.
+    - Total number of index nodes on the service disk
 
 Memory usage
 ------------
 
-Metrics to monitoring memory consumption are also essential to ensure the performance of your service.
-Consider monitoring the ``mem_available`` (in bytes) or ``mem_available_percent``, as this is the estimated amount of memory available for application without swapping.
+Metrics for monitoring the memory consumption are essential to ensure the performance of your service.
+
+.. tip::
+
+   Consider monitoring ``mem_available`` (in bytes) or ``mem_available_percent``, as this is the estimated amount of memory available for application without swapping.
 
 Network usage
 -------------
 
 Monitoring the network provides visibility of your network and an understanding of the network utilization and traffic, allowing you to act immediately in case of network issues.
 
-It may be worth monitoring the number of established TCP sessions available in the ``netstat_tcp_established`` metric.
+.. tip::
 
-
-
-
+   It may be worth monitoring the number of established TCP sessions available in the ``netstat_tcp_established`` metric.
