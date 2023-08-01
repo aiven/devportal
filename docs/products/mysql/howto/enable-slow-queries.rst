@@ -11,6 +11,7 @@ You need an Aiven organization with an Aiven for MySQL service running.
 Configure slow queries in Aiven Console
 ---------------------------------------
 
+
 Follow these steps to enable your slow queries in your Aiven for MySQL service via `Aiven Console <https://console.aiven.io/>`_:
 
 1. Log in to `Aiven Console <https://console.aiven.io/>`_.
@@ -23,6 +24,11 @@ Follow these steps to enable your slow queries in your Aiven for MySQL service v
    3. Select **Save advanced configuration**.
 
 Your Aiven for MySQL service can now log slow queries. If you want to simulate slow queries to check this feature, check the next section.
+
+.. warning::
+
+    Aiven managed Mysql services use table output for the slow query log.
+    This means that the slow query log will not work on a read-only replica.
 
 Simulate slow queries
 ---------------------
@@ -64,3 +70,5 @@ You can expect to receive an output similar to the following:
 .. warning::
 
    Disabling the ``mysql.slow_query_log`` setting truncates the ``mysql.slow_query_log`` table. Make sure to back up the data from the ``mysql.slow_query_log`` table in case you need it for further analysis.
+
+
