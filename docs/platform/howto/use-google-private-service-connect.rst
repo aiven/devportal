@@ -1,11 +1,11 @@
-Use Google Private Service Connect with Aiven services |beta|
-=============================================================
+Use Google Private Service Connect with Aiven services 
+=======================================================
 
 Discover Google Private Service Connect and benefits of using it with your Aiven services. Learn how to enable Google Private Service Connect for Aiven services.
 
 .. important::
 
-   Google Private Service Connect is in beta, and it is currently supported for Aiven for Apache Kafka®. Contact support@Aiven.io to enable it on your Aiven projects.
+    Google Private Service Connect is a :doc:`limited availability feature </docs/platform/concepts/beta_services>`. It's only supported for Aiven for Apache Kafka®. Contact support@Aiven.io to enable it on your Aiven projects.
 
 About Private Service Connect
 -----------------------------

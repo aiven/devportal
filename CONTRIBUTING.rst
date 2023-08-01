@@ -209,14 +209,18 @@ Limited availability note template
 
 For features that are in the limited availability stage, add the following admonition directly undert the article title:
 
-.. important:: 
-    {feature name} is a limited availability feature. If you're interested in trying out this feature, contact the sales team at sales@Aiven.io.
+::
+
+    .. important:: 
+        {feature name} is a :doc:`limited availability feature </docs/platform/concepts/beta_services>`. If you're interested in trying out this feature, contact the sales team at sales@Aiven.io.
 
 
 Early availability note template
 '''''''''''''''''''''''''''''''''''
 
-For features that are in the early availability stage, add the following admonition directly undert the article title:
+For features that are in the early availability stage and can be enabled in the Console, add the following admonition directly under the article title:
 
-.. important:: 
-    {feature name} is an early availability feature. To use it, :doc:`enable the feature preview </docs/platform/howto/feature-preview.html>` in your user profile.
+::
+
+    .. important:: 
+        {feature name} is an :doc:`early availability feature </docs/platform/concepts/beta_services>`. To use it, :doc:`enable the feature preview </docs/platform/howto/feature-preview.html>` in your user profile.
