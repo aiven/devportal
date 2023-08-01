@@ -130,11 +130,11 @@ Search
 
 Docs search
 ''''''''''''
-Aiven Docs uses custom OpenSearch based search. More [aws/SEARCH.md](details here).
+Aiven Docs uses `custom OpenSearch <aws/SEARCH.md>`_ based search.
 
 Aiven.io search
 ''''''''''''
-[https://aiven.io/search](Aiven.io global search) are powered by Algolia and it includes index from Aiven Docs pages. Using the python script that creates, parses and adds the Docs pages to Algolia index [scripts/index_algolia.py](scripts/index_algolia.py)
+`Aiven.io global search <https://aiven.io/search>`_ are powered by Algolia and it includes index from Aiven Docs pages. Using the python script that creates, parses and adds the Docs pages to Algolia index `(scripts/index_algolia.py) <scripts/index_algolia.py>`_
 
 License
 -------
