@@ -2,7 +2,7 @@ Manage users in an organization
 ================================
 
 .. important::
-    Organization users are available as a feature preview and must be :doc:`enabled in the user profile </docs/platform/howto/feature-preview>`.
+    Organization users is an early availability feature. To use it, :doc:`enable the feature preview </docs/platform/howto/feature-preview>` in your user profile.
 
 Adding users to your organization lets you give them access to specific organizational units, projects, and services within that organization. 
 

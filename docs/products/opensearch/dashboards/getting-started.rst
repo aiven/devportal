@@ -5,7 +5,7 @@ To start using **Aiven for OpenSearch® Dashboards**, :doc:`create Aiven for Ope
 
 .. warning:: 
 
-    OpenSearch Dashboard will be **not accessible** during a **maintenance update** that also consists of version updates to your Aiven for OpenSearch service. The duration of the maintenance window can vary based on the updates. Once the maintenance update is completed, the OpenSearch Dashboard will be available again.
+    OpenSearch Dashboards will be **not accessible** during a **maintenance update** that also consists of version updates to your Aiven for OpenSearch service. The duration of the maintenance window can vary based on the updates.The dashboards will be accessible again once the update is completed.
 
 
 Load sample data
