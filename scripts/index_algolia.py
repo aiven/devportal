@@ -93,6 +93,7 @@ def index_pages(client, index_name, pages):
 if __name__ == '__main__':
     args = parser.parse_args()
 
+    # https://www.algolia.com/doc/api-client/getting-started/install/python/?client=python
     # Connect and authenticate with your Algolia app
     client = SearchClient.create(args.algolia_app_id, args.algolia_api_key)
 
