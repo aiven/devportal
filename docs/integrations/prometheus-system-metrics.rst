@@ -17,9 +17,9 @@ To discover the metrics available for your services, make an HTTP ``GET`` reques
 
 1. Once your Prometheus integration is configured, collect the following Prometheus service details from `Aiven Console <https://console.aiven.io/>`_ > your service's the **Overview** page > the **Connection information** section > the **Prometheus** tab:
 
-  * Prometheus URL
-  * Username
-  * Password
+ * Prometheus URL
+ * Username
+ * Password
 
 2. Make a request to get a snapshot of your metrics, replacing the placeholders in the following code with the values for your service:
 
