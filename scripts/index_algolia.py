@@ -42,12 +42,6 @@ def parse_pages(html_build_dir):
             for admonition in elements.select('div.admonition'):
                 admonition.decompose()
 
-            # Extract text from the first p tag and remove it
-            for first_p in elements.select('p'):
-                subtitle = first_p.text.strip()
-                first_p.decompose()
-                break  # we only want the first paragraph    
-
             # remove tables of contents
             for toc in elements.select('div.toctree-wrapper'):
                 toc.decompose()
@@ -66,7 +60,6 @@ def parse_pages(html_build_dir):
             body = elements.text.strip()
             pages.append({
                 'title': title,
-                'subtitle': subtitle[:160] + '...' if len(subtitle) > 160 else subtitle,
                 'body': body,
                 'slug': full_path,
                 'facetingType': 'documentation',
