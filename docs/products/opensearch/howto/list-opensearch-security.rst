@@ -3,7 +3,7 @@ OpenSearch® Security management in Aiven for OpenSearch®
 
 .. important::
 
-    OpenSearch Security for Aiven for Apache OpenSearch® is a limited availability (private beta) feature. If you're interested in trying out this feature, contact the sales team at `sales@Aiven.io <mailto:sales@Aiven.io>`_.
+    OpenSearch Security for Aiven for Apache OpenSearch® is a :doc:`limited availability feature </docs/platform/concepts/beta_services>`. If you're interested in trying out this feature, contact the sales team at `sales@Aiven.io <mailto:sales@Aiven.io>`_.
 
 Using OpenSearch Security can significantly strengthen the security of your service. By enabling and leveraging this feature for your Aiven for OpenSearch service, you gain access to a wide range of advanced functionalities that will allow you to manage security and access control effectively. 
 
