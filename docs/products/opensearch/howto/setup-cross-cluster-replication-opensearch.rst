@@ -1,6 +1,10 @@
 Setup cross cluster replication for Aiven for OpenSearch® |beta|
 ================================================================
 
+.. important::
+
+   Aiven for OpenSearch® cross-cluster replication (CCR) is a limited availability feature. If you're interested in trying out this feature, contact the sales team at `sales@Aiven.io <mailto:sales@Aiven.io>`_.
+
 .. note:: 
     - Cross cluster replication feature for Aiven for OpenSearch is a beta release. 
     - Cross cluster replication is not available for Hobbyist and Startup plans.
