@@ -3,7 +3,7 @@ Enable, configure, and visualize OpenSearch® Audit logs
 
 .. important::
 
-   Enabling OpenSearch Security management is necessary to create custom tenants for OpenSearch® Dashboards. OpenSearch Security management for Aiven for OpenSearch is a limited availability feature. If you're interested in trying out this feature, contact the sales team at `sales@Aiven.io <mailto:sales@Aiven.io>`_.
+   OpenSearch Security management for Aiven for OpenSearch is a limited availability (private beta) feature. If you're interested in trying out this feature, contact the sales team at `sales@Aiven.io <mailto:sales@Aiven.io>`_.
 
 
 

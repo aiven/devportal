@@ -3,7 +3,7 @@ Set up OpenSearch® Dashboard multi-tenancy |beta|
 
 .. important::
 
-   To create custom tenants for OpenSearch® Dashboards, enabling OpenSearch Security management is required. OpenSearch Security management for Aiven for OpenSearch is a limited availability feature. If you're interested in trying out this feature, contact the sales team at `sales@Aiven.io <mailto:sales@Aiven.io>`_.
+   To create custom tenants for OpenSearch® Dashboards, enabling OpenSearch Security management is required. OpenSearch Security management for Aiven for OpenSearch is a limited availability (private beta) feature. If you're interested in trying out this feature, contact the sales team at `sales@Aiven.io <mailto:sales@Aiven.io>`_.
 
 
 Aiven for OpenSearch® provides support for multi-tenancy through OpenSearch Security Dashboard. Multi-tenancy in OpenSearch Security enables multiple users or groups to securely access the same OpenSearch cluster while maintaining their distinct permissions and data access levels. With multi-tenancy, each tenant has its own isolated space for working with indexes, visualizations, dashboards, and other OpenSearch objects, ensuring tenant-specific data and resources are protected from unauthorized access. 
