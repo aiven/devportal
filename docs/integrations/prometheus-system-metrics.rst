@@ -1,6 +1,8 @@
 Prometheus system metrics
 =========================
 
+Learn how to check what metrics are available for monitoring your service using Prometheus, and find out which of the available metrics are particularly worth monitoring and why.
+
 About the Prometheus integration
 --------------------------------
 

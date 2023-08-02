@@ -1,6 +1,8 @@
 Use Prometheus with Aiven
 =========================
 
+Discover Prometheus as a tool for monitoring your Aiven services. Check why use it and how it works. Learn how to enable and configure Prometheus on your project.
+
 About Prometheus
 ----------------
 
