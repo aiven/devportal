@@ -28,3 +28,9 @@ Billing for limited and early availability services
 ----------------------------------------------------
 
 Aiven provides credits for you to try out limited and early availability services. Once the credit code expires or you have used all of the credits, you are charged for the service according to the normal rate.
+
+
+Feature roadmap
+----------------
+
+`Aiven Ideas <https://ideas.aiven.io/>`_ is a portal for users to submit, vote on, and discuss your ideas to shape the future of the product. It's also where you can view the status and progress of each feature on the roadmap.
