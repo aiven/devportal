@@ -28,7 +28,7 @@ In addition to the above, gather the following information about the source Post
 * ``Decoding plugin name``: The decoding plugin name to use for capturing the changes. For PostgreSQL CDC, set it as ``pgoutput``.
 
 .. important:: 
-    To create a PostgreSQL CDC source connector in Aiven for Apache Flink with Aiven for PostgreSQL using the pgoutput plugin, you need to have superuser priviledges. For more information, see :ref:`Troubleshooting`. 
+    To create a PostgreSQL CDC source connector in Aiven for Apache Flink with Aiven for PostgreSQL using the pgoutput plugin, you need to have superuser privileges. For more information, see :ref:`Troubleshooting`. 
 
 
 Configure the PostgreSQL CDC connector 
@@ -77,7 +77,7 @@ Where:
 
 .. Note::
 
-    The PostgreSQL CDC connector will use or create a publication named ``dbz_publication`` tracking the changes of one or more tables. Therefore either the publication need to already exist in PostgreSQL or the connecting user needs to have enough priviledges to create it.
+    The PostgreSQL CDC connector will use or create a publication named ``dbz_publication`` tracking the changes of one or more tables. Therefore either the publication need to already exist in PostgreSQL or the connecting user needs to have enough privileges to create it.
 
 8. Select **Next** to add the sink table, and then select **Add your first sink table**. Select *Aiven for Apache Kafka®* as the integrated service from the drop-down list.
 9.  In the **Table SQL** section, input the SQL statement for creating the sink table where the PostgreSQL CDC connector will send the data. Select **Add table**.
