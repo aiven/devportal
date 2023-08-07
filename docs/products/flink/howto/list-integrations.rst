@@ -13,4 +13,7 @@ This section provides instructions on how to integrate your Aiven for Apache Fli
         :shadow: md
         :margin: 2 2 0 0
 
+    .. grid-item-card:: :doc:`Connect to Google BigQuery </docs/products/flink/howto/connect-bigquery>`
+        :shadow: md
+        :margin: 2 2 0 0
 
