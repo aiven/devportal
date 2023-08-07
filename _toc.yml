@@ -63,7 +63,6 @@ entries:
       title: Payment problems when upgrading
     - file: docs/platform/howto/custom-plans
 
-
   # -------- USERS AND ACCESS --------
   - file: docs/platform/howto/list-user
     title: User and access management
@@ -136,12 +135,8 @@ entries:
     - file: docs/platform/howto/service-metrics
     - file: docs/platform/howto/migrate-services-cloud-region
     - file: docs/platform/howto/migrate-services-vpc
-    - file: docs/platform/concepts/service-integration
-    - file: docs/platform/howto/create-service-integration
     - file: docs/platform/reference/eol-for-major-versions
-    - file: docs/platform/concepts/service-level-agreement
     - file: docs/platform/concepts/maintenance-window
-    
 
   # -------- NETWORKING AND SECURITY --------
   - file: docs/platform/howto/list-network
@@ -171,57 +166,54 @@ entries:
     - file: docs/platform/howto/use-azure-privatelink
     - file: docs/platform/howto/use-google-private-service-connect
 
-  # -------- MONITORING MANAGEMENT --------
+  # -------- MONITORING AND LOGS --------
   - file: docs/platform/howto/list-monitoring
-    title: Monitoring management
     entries:
-    - file: docs/platform/concepts/logs-metrics-alerts
     - file: docs/platform/howto/monitoring-services
-    - file: docs/platform/howto/integrations/prometheus-metrics
-    - file: docs/platform/howto/integrations/datadog-increase-metrics-limit
-    - file: docs/platform/howto/integrations/access-jmx-metrics-jolokia
-
-
-  # -------- SUPPORT --------
-  - file: docs/platform/howto/list-support
-    title: Support
-    entries:
-    - file: docs/platform/howto/project-support-center  
-    - file: docs/platform/howto/change-support-tier
-      title: Upgrade your support tier
-    - file: docs/platform/concepts/beta_services
-
-  # --------- GLOBAL -----------
-  - file: docs/integrations
-    title: Integrations
-    entries:
-    - file: docs/integrations/datadog
-      title: Datadog
-      entries:
-        - file: docs/integrations/datadog/datadog-metrics
-        - file: docs/integrations/datadog/add-custom-tags-to-datadog
-        - file: docs/integrations/datadog/datadog-logs
+    - file: docs/platform/concepts/logs-metrics-alerts
     - file: docs/integrations/cloudwatch
       title: Amazon CloudWatch 
       entries:
         - file: docs/integrations/cloudwatch/cloudwatch-metrics
-          title: CloudWatch Metrics
+          title: CloudWatch metrics
         - file: docs/integrations/cloudwatch/list-cloudwatch-logs
           title: CloudWatch Logs
           entries:
             - file: docs/integrations/cloudwatch/cloudwatch-logs-console
             - file: docs/integrations/cloudwatch/cloudwatch-logs-cli
+    - file: docs/integrations/datadog
+      title: Datadog
+      entries:
+      - file: docs/integrations/datadog/datadog-metrics
+      - file: docs/platform/howto/integrations/datadog-increase-metrics-limit
+      - file: docs/integrations/datadog/datadog-logs
+      - file: docs/integrations/datadog/add-custom-tags-to-datadog
+    - file: docs/integrations/send-logs-to-elasticsearch
+      title: Elasticsearch logs
     - file: docs/integrations/cloudlogging
       title: Google Cloud Logging
     - file: docs/integrations/rsyslog
       title: RSyslog
       entries:
-        - file: docs/integrations/rsyslog/logtail
-          title: Logtail
-        - file: docs/integrations/rsyslog/loggly
-          title: Loggly
-    - file: docs/integrations/send-logs-to-elasticsearch
-    - file: docs/integrations/prometheus-system-metrics
+      - file: docs/integrations/rsyslog/logtail
+        title: Logtail
+      - file: docs/integrations/rsyslog/loggly
+        title: Loggly
+    - file: docs/platform/howto/integrations/access-jmx-metrics-jolokia
+      title: Jolokia metrics
+    - file: docs/platform/howto/integrations/prometheus-metrics
+      title: Prometheus metrics
+      entries:
+      - file: docs/integrations/prometheus-system-metrics
+
+  # --------- INTEGRATIONS -----------
+  - file: docs/integrations
+    title: Integrations
+    entries:
+    - file: docs/platform/concepts/service-integration
+    - file: docs/platform/howto/create-service-integration
+  
+    # -------- TOOLS --------
   - file: docs/tools
     entries:
       - file: docs/tools/cli
@@ -320,7 +312,7 @@ entries:
       - file: docs/tools/kubernetes
         title: Aiven Operator for Kubernetes
 
-  # -------- PRODUCT-SPECIFIC --------
+  # -------- KAFKA --------
   - file: docs/products/kafka
     title: Apache Kafka
     entries:
@@ -582,6 +574,7 @@ entries:
             - file: docs/products/kafka/karapace/howto/manage-schema-registry-authorization
             - file: docs/products/kafka/karapace/howto/manage-kafka-rest-proxy-authorization
 
+  # -------- FLINK --------
   - file: docs/products/flink
     title: Apache Flink
     entries:
@@ -670,6 +663,7 @@ entries:
           - file: docs/products/flink/reference/advanced-params
             title: Advanced parameters
 
+  # -------- CASSANDRA --------
   - file: docs/products/cassandra
     title: Apache Cassandra
     entries:
@@ -722,6 +716,7 @@ entries:
           - file: docs/products/cassandra/reference/advanced-params
             title: Advanced parameters
 
+  # -------- CLICKHOUSE --------
   - file: docs/products/clickhouse
     title: ClickHouse
     entries:
@@ -822,7 +817,8 @@ entries:
             title: Formats for ClickHouse-Kafka data exchange
           - file: docs/products/clickhouse/reference/advanced-params
             title: Advanced parameters
-
+  
+  # -------- GRAFANA --------
   - file: docs/products/grafana
     title: Grafana
     entries:
@@ -864,6 +860,7 @@ entries:
           - file: docs/products/grafana/reference/plugins
             title: Plugins
 
+  # -------- INFLUXDB --------
   - file: docs/products/influxdb
     title: InfluxDB 
     entries: 
@@ -882,7 +879,8 @@ entries:
         title: Reference
         entries:
           - glob: docs/products/influxdb/reference/*
-
+  
+  # -------- M3DB --------
   - file: docs/products/m3db
     title: M3DB
     entries:
@@ -905,7 +903,8 @@ entries:
             title: Advanced parameters
           - file: docs/products/m3db/reference/advanced-params-m3aggregator
             title: Advanced parameters M3Aggregator
-
+  
+  # -------- MYSQL --------
   - file: docs/products/mysql
     title: MySQL
     entries:
@@ -978,6 +977,7 @@ entries:
           - file: docs/products/mysql/reference/resource-capability
             title: Resource capability per plan
 
+  # -------- OPENSEARCH --------
   - file: docs/products/opensearch
     title: OpenSearch
     entries:
@@ -1094,7 +1094,8 @@ entries:
           - file: docs/products/opensearch/reference/index-replication
           - file: docs/products/opensearch/reference/restapi-limited-access
           - file: docs/products/opensearch/reference/low-space-watermarks
-
+  
+  # -------- POSTGRESQL --------
   - file: docs/products/postgresql
     title: PostgreSQL
     entries:
@@ -1222,7 +1223,8 @@ entries:
             title: Supported log formats
           - file: docs/products/postgresql/reference/terminology
             title: Terminology
-
+  
+  # -------- REDIS --------
   - file: docs/products/redis
     title: Redis
     entries:
@@ -1268,8 +1270,18 @@ entries:
         entries:
           - file: docs/products/redis/reference/advanced-params
             title: Advanced parameters
+  
+  # -------- SUPPORT --------
+  - file: docs/platform/howto/list-support
+    title: Support
+    entries:
+    - file: docs/platform/howto/project-support-center  
+    - file: docs/platform/howto/change-support-tier
+      title: Upgrade your support tier
+    - file: docs/platform/concepts/service-level-agreement
+    - file: docs/platform/concepts/beta_services
 
-  # -------- AUXILIARY
+  # -------- COMMUNITY --------
   - file: docs/community
     title: Community
     entries:
@@ -1281,7 +1293,8 @@ entries:
       title: Catch the Bus - Aiven challenge with ClickHouse
     - file: docs/community/challenge/the-rolling-challenge
       title: Rolling - Aiven challenge with Apache Kafka and Apache Flink
-  
+
+  # -------- TUTORIALS --------
   - file: docs/tutorials
     title: Tutorials
     entries:
