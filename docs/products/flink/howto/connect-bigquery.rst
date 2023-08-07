@@ -2,6 +2,8 @@ Integrate Aiven for Apache Flink® with Google BigQuery
 ========================================================
 Aiven for Apache Flink® is a fully managed service that provides distributed, stateful stream processing capabilities. Google BigQuery is a cloud-based data warehouse that is easy to use, can handle large amounts of data without needing servers, and is cost-effective. By connecting Aiven for Apache Flink® with Google BigQuery, you can stream data from Aiven for Apache Flink® to Google BigQuery, where it can be stored and analyzed.
 
+Aiven for Apache Flink® uses `BigQuery Connector for Apache Flink <https://github.com/aiven/bigquery-connector-for-apache-flink>`_ as the connector to connect to Google BigQuery.
+
 
 Learn how to connect Aiven for Apache Flink® with Google BigQuery as a sink using the Aiven CLI.
 
@@ -112,7 +114,7 @@ where:
         "auth_uri": "https://accounts.google.com/o/oauth2/auth",
         "client_email": "bigquery-test@project.iam.gserviceaccount.com",
         "client_id": "284765298137902130451",
-        "client_x509_cert_url": ""client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/bigquery-test%40project.iam.gserviceaccount.com",
+        "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/bigquery-test%40project.iam.gserviceaccount.com",
         "private_key": "ADD_PRIVATE_KEY_PATH",
         "private_key_id": "ADD_PRIVE_KEY_ID_PATH",
         "project_id": "my-bigquery-project",
