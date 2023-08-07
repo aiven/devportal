@@ -1,7 +1,7 @@
 Amazon CloudWatch and Aiven
 ===========================
 
-`Amazon CloudWatch (AWS) <https://aws.amazon.com/cloudwatch/>`_ is an AWS monitoring service that helps to observe your applications and infrastructure resources. Aiven provides integrations to enable you to to include an Aiven service data in your AWS CloudWatch.
+`Amazon CloudWatch (AWS) <https://aws.amazon.com/cloudwatch/>`_ is an AWS monitoring service that helps to observe your applications and infrastructure resources. Aiven provides integrations that enable you to include Aiven service data into Amazon CloudWatch metrics and logs.
 
 CloudWatch metrics
 ------------------
