@@ -13,7 +13,9 @@ Learn more about the Aiven platform.
 
 * :doc:`Networking and security </docs/platform/howto/list-network>`
 
-* :doc:`Monitoring management </docs/platform/howto/list-monitoring>`
+* :doc:`Monitoring and logs </docs/platform/howto/list-monitoring>`
+
+* :doc:`Integrations </docs/integrations>`
 
 
 
