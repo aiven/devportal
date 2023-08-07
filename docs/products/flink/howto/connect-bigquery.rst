@@ -112,7 +112,7 @@ where:
         "auth_uri": "https://accounts.google.com/o/oauth2/auth",
         "client_email": "bigquery-test@project.iam.gserviceaccount.com",
         "client_id": "284765298137902130451",
-        "client_x509_cert_url": ""client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/bigquery-test%40project.iam.gserviceaccount.com",
+        "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/bigquery-test%40project.iam.gserviceaccount.com",
         "private_key": "ADD_PRIVATE_KEY_PATH",
         "private_key_id": "ADD_PRIVE_KEY_ID_PATH",
         "project_id": "my-bigquery-project",
