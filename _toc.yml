@@ -1295,7 +1295,12 @@ entries:
         entries:
           - file: docs/products/redis/reference/advanced-params
             title: Advanced parameters
-  
+      - file: docs/products/redis/troubleshooting
+        title: Troubleshooting
+        entries:
+          - file: docs/products/redis/troubleshooting/troubleshoot-redis-connection-issues
+            title: Troubleshoot connection issues
+
   # -------- SUPPORT --------
   - file: docs/platform/howto/list-support
     title: Support
@@ -1305,7 +1310,7 @@ entries:
       title: Upgrade your support tier
     - file: docs/platform/concepts/service-level-agreement
     - file: docs/platform/concepts/beta_services
-
+    
   # -------- COMMUNITY --------
   - file: docs/community
     title: Community
