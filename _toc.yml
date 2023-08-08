@@ -86,7 +86,7 @@ entries:
       - file: docs/platform/concepts/authentication-tokens
       - file: docs/platform/howto/create_authentication_token
       - file: docs/platform/howto/list-saml
-        title: SAML Authentication
+        title: SAML authentication
         entries:
         - file: docs/platform/howto/saml/saml-authentication
         - file: docs/platform/howto/saml/setup-saml-auth0
