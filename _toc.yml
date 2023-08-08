@@ -1257,6 +1257,11 @@ entries:
         entries:
           - file: docs/products/redis/reference/advanced-params
             title: Advanced parameters
+      - file: docs/products/redis/troubleshooting
+        title: Troubleshooting
+        entries:
+          - file: docs/products/redis/troubleshooting/troubleshoot-redis-connection-issues
+            title: Troubleshoot connection issues
 
   # -------- AUXILIARY
   - file: docs/community
