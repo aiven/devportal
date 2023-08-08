@@ -5,7 +5,7 @@ It is a best practice that OpenSearch® shard size should not go above 50GB for 
 
 The limit for shard size is not directly enforced by OpenSearch. However, if you go above this limit you can find that OpenSearch is unable to relocate or recover index shards (with the consequence of possible loss of data).
 
-At Aiven, we monitor the size of the shard for all OpenSearch services. We will send out a user alert ``user_alert_resource_usage_es_shard_too_large`` to the customer if we found the service's shard is too large. Below are some information on what to do if you received the user alert.
+At Aiven, we monitor the size of the shard for all OpenSearch services. We will send out a user alert ``user_alert_resource_usage_es_shard_too_large`` to the customer if we find the service's shard is too large. You can find information on what to do if you receive this user alert below.
 
 How to resolve this issue
 -------------------------
