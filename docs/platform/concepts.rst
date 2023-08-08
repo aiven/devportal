@@ -15,5 +15,5 @@ Learn more about the Aiven platform.
 
 * :doc:`Service integrations </docs/integrations>`
 
-* :doc:`Get support <docs/platform/howto/project-support-center>`
+* :doc:`Get support </docs/platform/howto/project-support-center>`
 
