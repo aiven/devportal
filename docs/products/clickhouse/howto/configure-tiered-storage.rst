@@ -22,7 +22,7 @@ To enable this time-based data distribution mechanism, you can set up a retentio
 Prerequisites
 -------------
 
-* Aiven account
+* Aiven organization
 * Tiered storage feature :doc:`enabled </docs/products/clickhouse/howto/enable-tiered-storage>` on an Aiven for ClickHouse service level and on a table level
 * Command line tool (:doc:`ClickHouse client </docs/products/clickhouse/howto/connect-with-clickhouse-cli>`)
 
