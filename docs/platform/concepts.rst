@@ -5,17 +5,15 @@ Learn more about the Aiven platform.
 
 * :doc:`Get started with the Aiven platform </docs/get-started>` 
 
-* :doc:`Billing and payments </docs/platform/concepts/list-billing>`
+* :doc:`Billing overvieww </docs/platform/concepts/hourly-billing-model>`
 
-* :doc:`Organizations, units, and projects </docs/platform/concepts/projects_accounts_access>`.
+* :doc:`Organizations, units, and projects </docs/platform/concepts/projects_accounts_access>`
 
-* :doc:`Service management </docs/platform/howto/list-service>`
+* :doc:`Manage users in an organization </docs/platform/howto/manage-org-users>`
 
-* :doc:`Networking and security </docs/platform/howto/list-network>`
+* :doc:`Monitoring services </docs/platform/howto/monitoring-services>`
 
-* :doc:`Monitoring and logs </docs/platform/howto/list-monitoring>`
+* :doc:`Service integrations </docs/integrations>`
 
-* :doc:`Integrations </docs/integrations>`
-
-
+* :doc:`Get support <docs/platform/howto/project-support-center>`
 

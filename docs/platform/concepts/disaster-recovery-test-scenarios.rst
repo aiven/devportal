@@ -1,4 +1,4 @@
-Disaster Recovery testing scenarios
+Disaster recovery testing scenarios
 ===================================
 
 `Disaster Recovery <https://en.wikipedia.org/wiki/Disaster_recovery>`_ (DR) is the ability of software and/or services to handle extreme scenarios; this could be the failure of the software itself or an outage within a datacenter.

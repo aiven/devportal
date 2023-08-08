@@ -15,5 +15,3 @@ Find instructions for common Aiven platform tasks for the following categories:
 
 * :doc:`Integrations </docs/integrations>`
 
-
-

@@ -1,4 +1,4 @@
-﻿Attach a VPC to an AWS Transit Gateway
+﻿Attach VPCs to AWS Transit Gateways
 =======================================
 
 `AWS Transit Gateway (TGW) <https://aws.amazon.com/transit-gateway/>`_ enables transitive routing from on-premises networks through VPN and from other VPC. 

@@ -19,6 +19,11 @@ entries:
         title: Set up Google Cloud Marketplace subscriptions
     - file: docs/tools/aiven-console
     - file: docs/platform/howto/feature-preview
+    - file: docs/platform
+      entries:
+      - file: docs/platform/concepts
+      - file: docs/platform/howto
+      - file: docs/platform/reference
 
   # -------- ORGANIZATIONS, UNITS, PROJECTS --------
   - file: docs/platform/howto/list-account
@@ -85,19 +90,12 @@ entries:
         entries:
         - file: docs/platform/howto/saml/saml-authentication
         - file: docs/platform/howto/saml/setup-saml-auth0
-          title: Setting up SAML with Auth0
         - file: docs/platform/howto/saml/setup-saml-azure
-          title: Setting up SAML with Azure
         - file: docs/platform/howto/saml/setup-saml-fusionauth
-          title: Setting up SAML with FusionAuth
         - file: docs/platform/howto/saml/setup-saml-jumpcloud
-          title: Setting up SAML with JumpCloud
         - file: docs/platform/howto/saml/setup-saml-okta
-          title: Setting up SAML with Okta
         - file: docs/platform/howto/saml/setup-saml-onelogin
-          title: Setting up SAML with OneLogin
         - file: docs/platform/howto/saml/setup-saml-google
-          title: Setting up SAML with Google
     - file: docs/platform/howto/list-groups
       entries: 
       - file: docs/platform/howto/manage-groups
