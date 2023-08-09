@@ -208,7 +208,7 @@ If the integration is successfully created, the service credentials and project 
 Configure integration using Aiven Console
 --------------------------------------------
 
-If you're using Google BigQuery for your data storage and analysis, you can seamlessly integrate it as a sink for Aiven for Apache Kafka streams. To achieve this via the `Aiven Console <https://console.aiven.io/>`_, follow these steps:
+If you're using Google BigQuery for your data storage and analysis, you can seamlessly integrate it as a sink for Aiven for Apache Flink streams. To achieve this via the `Aiven Console <https://console.aiven.io/>`_, follow these steps:
 
 1. Log in to `Aiven Console <https://console.aiven.io/>`_ and choose your project. 
 2. From the **Services** page, you can either :doc:`create a new Aiven for Apache Flink </docs/platform/howto/create_new_service>` service or select an existing service.
@@ -219,9 +219,9 @@ If you're using Google BigQuery for your data storage and analysis, you can seam
    * Select **Google Cloud BigQuery** from the list, and then select **Add new endpoint** or **Create new**. 
    * Enter an *Endpoint name*, *GCP Project ID*, *Google Service Account Credentials*, and select **Create**.
 
-4. Select **Services** and access the Aiven for Apache Flink service where you plan to integrate the external Apache Kafka endpoint.
-5. If it is the first integration for the selected Aiven for Apache Flink service, select **Get Started** in the **Overview** page, or use the plus (+) button to add a new integration in the **Data Flow** section.
-6. On the **Data Service integrations** screen, select the **Create external integration endpoint** tab. 
+4. Select **Services** and access the Aiven for Apache Flink service where you plan to integrate the Goolge BigQuery endpoint.
+5. If you're integrating with Aiven for Apache Flink for the first time, on the **Overview** page and select **Get Started**. Alternatively, you can add a new integration in the **Data Flow** section by using the plus (+) button.
+6.  On the **Data Service integrations** screen, select the **Create external integration endpoint** tab. 
 7. Select the checkbox next to BigQuery, and choose the BigQuery endpoint from the list to integrate.
 8. Select **Integrate**.
 
