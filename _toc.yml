@@ -73,7 +73,6 @@ entries:
     title: User and access management
     entries:
     - file: docs/platform/howto/manage-org-users
-    - file: docs/platform/howto/create_new_service_user
     - file: docs/platform/howto/list-user-profile
       entries:
       - file: docs/platform/howto/edit-user-profile
@@ -111,24 +110,25 @@ entries:
     entries:
     - file: docs/platform/concepts/choosing-timeseries-database
     - file: docs/platform/howto/create_new_service
-    - file: docs/platform/howto/console-fork-service.rst
-    - file: docs/platform/howto/pause-from-cli.rst
     - file: docs/platform/howto/rename-a-service.rst
+    - file: docs/platform/howto/tag-resources
+    - file: docs/platform/howto/search-services
+      title: Search for services
+    - file: docs/platform/howto/recover-a-deleted-service
+    - file: docs/platform/howto/create_new_service_user
     - file: docs/platform/concepts/service-forking
+    - file: docs/platform/howto/console-fork-service.rst
     - file: docs/platform/concepts/service_backups
     - file: docs/platform/concepts/service-power-cycle
+    - file: docs/platform/howto/pause-from-cli.rst
     - file: docs/platform/concepts/service-resources
     - file: docs/platform/concepts/service-memory-limits
     - file: docs/platform/concepts/out-of-memory-conditions
     - file: docs/platform/howto/prepare-for-high-load
     - file: docs/platform/howto/scale-services
     - file: docs/platform/concepts/dynamic-disk-sizing
-    - file: docs/platform/howto/recover-a-deleted-service
     - file: docs/platform/howto/cleanup-powered-off-services
     - file: docs/platform/howto/add-storage-space
-    - file: docs/platform/howto/tag-resources
-    - file: docs/platform/howto/search-services
-      title: Search for services
     - file: docs/platform/howto/access-service-logs
     - file: docs/platform/howto/service-metrics
     - file: docs/platform/howto/migrate-services-cloud-region
