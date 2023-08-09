@@ -5,7 +5,7 @@ This section provides instructions on how to integrate your Aiven for Apache Fli
 
 .. grid:: 1 2 2 2
 
-    .. grid-item-card:: :doc:`Data service ingrations </docs/products/flink/howto/create-integration>`
+    .. grid-item-card:: :doc:`Data service integrations </docs/products/flink/howto/create-integration>`
         :shadow: md
         :margin: 2 2 0 0
 
@@ -13,4 +13,7 @@ This section provides instructions on how to integrate your Aiven for Apache Fli
         :shadow: md
         :margin: 2 2 0 0
 
+    .. grid-item-card:: :doc:`Connect to Google BigQuery </docs/products/flink/howto/connect-bigquery>`
+        :shadow: md
+        :margin: 2 2 0 0
 
