@@ -833,6 +833,8 @@ entries:
             - file: docs/products/grafana/howto/log-in
               title: Log in to Aiven for Grafana
             - file: docs/products/grafana/howto/rotating-grafana-service-credentials
+            - file: docs/products/grafana/howto/oauth-configuration
+              title: OAuth configuration
           - file: docs/products/grafana/howto/list-manage-dashboards
             title: Manage dashboards
             entries:

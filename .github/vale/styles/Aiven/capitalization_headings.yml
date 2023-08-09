@@ -86,6 +86,7 @@ exceptions:
   - MySQL
   - New Relic
   - NodeJS
+  - OAuth
   - Okta
   - OneLogin
   - OpenSearch
