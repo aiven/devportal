@@ -6,20 +6,20 @@ on:
       - test-workflow-deploy-cloudflare-pages
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      
-      # Use this step if your project needs a build script
-      - name: Build static pages
-        run: |
-          make html
-      
-      - name: Deploy to Cloudflare Pages
+    - uses: actions/checkout@v3
+    - name: Build HTML
+      uses: ammaraskar/sphinx-action@master
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: html-docs
+        path: /_build/html
+     - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@1.3.0
         with:
           apiToken: ${{ secrets.CLOUDFLARE_PAGES_API }}
-          buildOutputDirectory: '/_build/html'
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy --project-name=devportal
