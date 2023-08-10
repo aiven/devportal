@@ -17,9 +17,9 @@ jobs:
       with:
         name: html-docs
         path: /_build/html
-     - name: Deploy to Cloudflare Pages
-        uses: cloudflare/wrangler-action@1.3.0
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_PAGES_API }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy --project-name=devportal
+    - name: Deploy to Cloudflare Pages
+      uses: cloudflare/wrangler-action@1.3.0
+      with:
+        apiToken: ${{ secrets.CLOUDFLARE_PAGES_API }}
+        accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        command: pages deploy --project-name=devportal
