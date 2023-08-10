@@ -10,10 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Set GIT_PYTHON_GIT_EXECUTABLE
-      run: echo "GIT_PYTHON_GIT_EXECUTABLE=$(which git)" >> $GITHUB_ENV
-    - name: Install gitpython
-      run: pip install gitpython
     - name: Build HTML
       uses: ammaraskar/sphinx-action@master
       with:
