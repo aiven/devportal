@@ -95,4 +95,4 @@ It is possible to get the disk usage for a table and its corresponding indexes, 
     
     Relevant documentation is available on following links:  
     `PostgreSQL interactive terminal <https://www.postgresql.org/docs/15/app-psql.html>`_ and
-    `Database Object Management Functions <https://www.postgresql.org/docs/current/functions-admin.html#FUNCTIONS-ADMIN-DBOBJECT/>`_
+    `Database Object Management Functions <https://www.postgresql.org/docs/current/functions-admin.html#FUNCTIONS-ADMIN-DBOBJECT>`_
