@@ -997,6 +997,7 @@ entries:
             - file: docs/products/opensearch/concepts/opensearch-security-considerations
               title: Key considerations
           - file: docs/products/opensearch/concepts/backups
+            title: OpenSearch backups
           - file: docs/products/opensearch/concepts/indices
           - file: docs/products/opensearch/concepts/aggregations
           - file: docs/products/opensearch/concepts/high-availability-for-opensearch
