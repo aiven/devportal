@@ -89,7 +89,7 @@ It is possible to get the disk usage for a table and its corresponding indexes, 
     (1 row)     
 
 .. Warning:: 
-    It is not recommended to use the ``pg_relation_size`` function as it computes the disk space used by one “fork” of the specified relation. (Note that for most purposes it is more convenient to use the higher-level functions pg_total_relation_size or pg_table_size, which sum the sizes of all forks.)
+    It is not recommended to use the ``pg_relation_size`` function as it computes the disk space used by one “fork” of the specified relation. (Note that for most purposes it is more convenient to use the higher-level functions ``pg_total_relation_size`` or ``pg_table_size``, which sum the sizes of all forks.)
 .. Tip::
     WAL files will also contribute to the service disk usage for additional information see: :doc:`../concepts/pg-disk-usage`.
     
