@@ -80,7 +80,7 @@ The function ``pg_indexes_size`` can be used to query the size for **all the ind
     
 Get table and its indexes size
 --------------------------------
-It is possible to get the disk usage for a table and its corresponding indexes, for the examples used above the function ``pg_total_relation_size`` computes the total disk space used by the specified table, including all indexes and TOAST data::
+It is possible to get the disk usage for a table and its corresponding indexes, the function ``pg_total_relation_size`` computes the total disk space used by the specified table, including all indexes and TOAST data::
 
     testdb2=> select pg_size_pretty(pg_total_relation_size('mytable1')); 
      pg_size_pretty 
@@ -93,6 +93,6 @@ It is possible to get the disk usage for a table and its corresponding indexes, 
 .. Tip::
     WAL files will also contribute to the service disk usage for additional information see: :doc:`../concepts/pg-disk-usage`.
     
-    Find relevant documentation in the following links:  
+    Relevant documentation is available on following links:  
     `PostgreSQL interactive terminal <https://www.postgresql.org/docs/15/app-psql.html>`_ and
     `Database Object Management Functions <https://www.postgresql.org/docs/current/functions-admin.html#FUNCTIONS-ADMIN-DBOBJECT/>`_
