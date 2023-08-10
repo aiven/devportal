@@ -12,7 +12,9 @@ Learn how to add a :doc:`custom cloud </docs/platform/concepts/byoc>` to your Ai
 About creating a custom cloud
 -----------------------------
 
-If you enable BYOC and you have the administrator's role in your organization, you can create a custom cloud using `Aiven Console <https://console.aiven.io/>`_. For this purpose, you'll use the **Create custom cloud** wizard to generate a Terraform infrastructure-as-code (IaC) template. Next, you'll deploy this template in your AWS account to acquire Role ARN (Amazon Resource Name). You'll suppy your Role ARN into the **Create custom cloud** wizard, which will give Aiven the permissions to securely access your AWS account and create resources. Finally, you'll assign projects and add customer contacts for your custom cloud.
+If you have the administrator's role in your Aiven organization and you enable BYOC, you can create a custom cloud on the Aiven platform. For this purpose, you'll need to configure your custom cloud setup in `Aiven Console <https://console.aiven.io/>`_ and prepare your own Amazon Web Services (AWS) account so that Aiven can access it.
+
+In `Aiven Console <https://console.aiven.io/>`_, you'll use the **Create custom cloud** wizard to generate a Terraform infrastructure-as-code (IaC) template. Next, you'll deploy this template in your AWS account to acquire Role ARN (Amazon Resource Name). You'll suppy your Role ARN into the **Create custom cloud** wizard, which will give Aiven the permissions to securely access your AWS account and create resources. Finally, you'll assign projects and add customer contacts for your custom cloud.
 
 Limitations
 '''''''''''
@@ -35,19 +37,16 @@ Navigate to BYOC in Aiven Console
 '''''''''''''''''''''''''''''''''
 
 1. Log in to `Aiven Console <https://console.aiven.io/>`_ as an administrator.
-2. From the left sidebar, select **Bring you own cloud**.
-3. In the **Bring you own cloud** view, select **Create custom cloud**.
+2. From the top navigation bar, select **Admin**.
+3. From the left sidebar, select **Bring you own cloud**.
+4. In the **Bring you own cloud** view, select **Create custom cloud**.
 
 .. _generate-infra-template:
 
 Generate an infrastructure template
 '''''''''''''''''''''''''''''''''''
 
-In this step, an IaC template is generated. In :ref:`the next step <acquire-role-arn>`, you'll deploy this template in your AWS account to acquire Role ARN (Amazon Resource Name), which you need for configuring your custom cloud.
-
-.. note::
-
-   The Terraform format is supported for the IaC template.
+In this step, an IaC template is generated in the Terraform format. In :ref:`the next step <acquire-role-arn>`, you'll deploy this template in your AWS account to acquire Role ARN (Amazon Resource Name), which Aiven needs for accessing your AWS account.
 
 In the **Create custom cloud** wizard, proceed as follows:
 
@@ -55,6 +54,11 @@ In the **Create custom cloud** wizard, proceed as follows:
 
    * Custom cloud name
    * Cloud provider
+
+     .. important::
+
+        `Amazon Web Services (AWS)` is the only option supported currently.
+
    * Region
    * CIDR
 
@@ -71,11 +75,15 @@ In the **Create custom cloud** wizard, proceed as follows:
 
      The deployment model determines how resources within your Aiven organization are arranged. It also imposes the method of connectivity between Aiven's control plane and networks under your cloud provider account.
 
+     .. important::
+
+        `BYOC Standard` is the only option supported currently.
+
 2. Select **Next**.
    
 .. topic:: Result
 
-    Your infrastructure template gets generated based on your inputs. You can view, copy, or download it. Now, you can use the template to :ref:`acquire Role ARN <acquire-role-arn>`.
+    Your IaC Terraform template gets generated based on your inputs. You can view, copy, or download it. Now, you can use the template to :ref:`acquire Role ARN <acquire-role-arn>`.
 
 .. _acquire-role-arn:
 
@@ -84,16 +92,7 @@ Deploy the template to acquire ``Role ARN``
 
 Role ARN is an `identifier of the role <https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html>`_ created when running the infrastructure template in your AWS account. Aiven uses Role ARN to `assume the role <https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html>`_ and run operations such as creating VMs for service nodes in your BYOC account.
 
-Use the template generated in step :ref:`Generate an infrastructure template <generate-infra-template>` to create your Role ARN by deploying your Terraform template in your AWS account.
-
-..
-   .. topic:: Deploying the IaC template in the AWS account
-
-      To run a Terraform template or an AWS CloudFormation template, use dedicated command line tools. Additionally, you can `deploy the AWS CloudFormation template <https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-guide.html>`_ in the AWS console by taking the following steps:
-
-      1. Go to the AWS console > the AWS CloudFormation service.
-      2. Create a stack, and upload the Aiven-generated template into AWS.
-      3. Deploy the template in AWS, and get your Role ARN.
+Use the Terrafrom template generated in step :ref:`Generate an infrastructure template <generate-infra-template>` to create your Role ARN by deploying the template in your AWS account.
 
 As soon as you acquire Role ARN, enter it into the **Role ARN** field in the **Create custom cloud** wizard, and select **Next** to proceed.
 
@@ -121,8 +120,6 @@ Continue working in the **Create custom cloud** wizard by taking the following s
 
 Complete the cloud setup
 ''''''''''''''''''''''''
-..
-   Now, Aiven needs up to three business days for your setup verification and cloud creation.
 
 You're all set. You'll be notified via email when your custom cloud is ready to use.
 
@@ -131,18 +128,6 @@ Select **Done** to close the **Create custom cloud** wizard.
 .. topic:: Result
 
     As soon as we confirm your custom cloud's availability via email, you'll be able to see it on the list of your custom clouds in the **Bring you own cloud** view.
-
-..
-   Check how it works
-   ------------------
-
-   After you create a custom cloud, you can use it for multiple purposes on Aiven platform, such as the following:
-
-   * Creating services
-   * Forking services
-   * Migrating services
-
-   Your custom cloud is available for different operations from `Aiven Console <https://console.aiven.io/>`_. It's visible as the separate **Customer cloud** tab when selecting service regions in a console wizard for specific operation you're performing on your service. 
 
 Related reading
 ---------------
