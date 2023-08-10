@@ -385,6 +385,7 @@ entries:
               - file: docs/products/kafka/howto/prevent-full-disks
               - file: docs/products/kafka/howto/use-zookeeper
               - file: docs/products/kafka/howto/avoid-out-of-memory-error
+              - file: docs/products/kafka/howto/optimizing-resource-usage-for-kafka-startup-plan
               - file: docs/products/kafka/howto/manage-quotas
 
           - file: docs/products/kafka/howto/list-integration
@@ -833,6 +834,8 @@ entries:
             - file: docs/products/grafana/howto/log-in
               title: Log in to Aiven for Grafana
             - file: docs/products/grafana/howto/rotating-grafana-service-credentials
+            - file: docs/products/grafana/howto/oauth-configuration
+              title: OAuth configuration
           - file: docs/products/grafana/howto/list-manage-dashboards
             title: Manage dashboards
             entries:
@@ -1052,6 +1055,8 @@ entries:
             - file: docs/products/opensearch/howto/set_index_retention_patterns
             - file: docs/products/opensearch/howto/opensearch-alerting-api
             - file: docs/products/opensearch/howto/handle-low-disk-space
+            - file: docs/products/opensearch/howto/resolve-shards-too-large
+              title: Manage large shards
             - file: docs/products/opensearch/howto/setup-cross-cluster-replication-opensearch
               title: Cross-cluster replication
           - file: docs/products/opensearch/howto/list-integrations
