@@ -1,7 +1,7 @@
 Tutorials
 =========
 
-A series of useful tutorials to solve common tasks using open source technologies:
+A list of useful tutorials to solve common tasks using open source technologies:
 
 .. grid:: 1 2 2 2
 
