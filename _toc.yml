@@ -385,6 +385,7 @@ entries:
               - file: docs/products/kafka/howto/prevent-full-disks
               - file: docs/products/kafka/howto/use-zookeeper
               - file: docs/products/kafka/howto/avoid-out-of-memory-error
+              - file: docs/products/kafka/howto/optimizing-resource-usage-for-kafka-startup-plan
               - file: docs/products/kafka/howto/manage-quotas
 
           - file: docs/products/kafka/howto/list-integration
@@ -996,6 +997,7 @@ entries:
             - file: docs/products/opensearch/concepts/opensearch-security-considerations
               title: Key considerations
           - file: docs/products/opensearch/concepts/backups
+            title: OpenSearch backups
           - file: docs/products/opensearch/concepts/indices
           - file: docs/products/opensearch/concepts/aggregations
           - file: docs/products/opensearch/concepts/high-availability-for-opensearch
@@ -1054,6 +1056,8 @@ entries:
             - file: docs/products/opensearch/howto/set_index_retention_patterns
             - file: docs/products/opensearch/howto/opensearch-alerting-api
             - file: docs/products/opensearch/howto/handle-low-disk-space
+            - file: docs/products/opensearch/howto/resolve-shards-too-large
+              title: Manage large shards
             - file: docs/products/opensearch/howto/setup-cross-cluster-replication-opensearch
               title: Cross-cluster replication
           - file: docs/products/opensearch/howto/list-integrations

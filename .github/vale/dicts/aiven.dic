@@ -71,6 +71,7 @@ DZone
 Elasticsearch
 Epicurious
 etcd
+event_type
 failover
 fileset
 filesets
@@ -197,6 +198,7 @@ rebalancing
 Redis
 Redli
 refcard
+reindex
 reindexing
 reStructuredText
 rivery
