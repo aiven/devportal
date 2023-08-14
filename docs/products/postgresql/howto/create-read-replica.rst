@@ -57,3 +57,7 @@ If the above command returns ``TRUE`` if you are connected to the replica, and `
 .. Warning::
 
     Aiven for PostgreSQL uses asynchronous replication and so a small lag is expected. When running an ``INSERT`` operation on the primary node, a minimal delay (usually less than a second) can be expected for the change to be propagated to the replica and to be visible there.
+
+Read-replica for disaster recovery
+----------------------------------
+In case of high-availability, distribution occurs across the available availability zones within a single region. While a default multi-region service, with node allocation spanning multiple regions, is not provided, this capability can still be attained. This can be accomplished by initially establishing a high-availability Postgres service within a single region. Subsequently, a remote read replica can be configured in a different region or even on an alternate cloud platform.This approach introduces an additional node in the distinct region/cloud, although it does not function as a hot standby node. It can, however, be manually promoted to a "primary" role, operating as an independent standalone service.
