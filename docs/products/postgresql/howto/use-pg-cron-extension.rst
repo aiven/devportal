@@ -20,7 +20,7 @@ The schedule uses the standard cron syntax, in which * means "run every time per
 	│ │ │ │ │
 	* * * * *
 
-Howto enable ``pg_cron`` for specific users
+Enable ``pg_cron`` for specific users
 --------------------------------------------
 
 To use the ``pg_cron`` extension: 
@@ -38,8 +38,8 @@ To use the ``pg_cron`` extension:
 
 
 
-Howto setup the cron job
-------------------------
+Setup the cron job
+------------------
 
 * List all the jobs
 
