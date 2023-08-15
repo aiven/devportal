@@ -1,7 +1,7 @@
 Create organizations and organizational units
 ==============================================
 
-**Organizations** and **organizational units** (or **units**) can be used to group projects and apply common settings like authentication and teams (user groups). For details and recommendations on creating hierarchical organizations in Aiven, see :doc:`Organizations, projects, and managing access permissions </docs/platform/concepts/projects_accounts_access>`.
+**Organizations** and **organizational units** (or **units**) can be used to group projects and apply common settings like authentication and access for groups of users. For details and recommendations on creating hierarchical organizations in Aiven, see :doc:`Organizations, projects, and managing access permissions </docs/platform/concepts/projects_accounts_access>`.
 
 Create an organizational unit
 ---------------------------------
@@ -22,7 +22,7 @@ You can create an organizational unit within an organization to group your proje
 
 #. Click **Create organizational unit**.
 
-Your organizational unit is shown in the **Organizational units** section. Click the unit name to view and manage it's teams and projects. 
+Your organizational unit is shown in the **Organizational units** section. Click the unit name to view and manage it's groups and projects. 
 
 .. note::
    Only one level of nesting is supported. This means that organizational units cannot be created within other units.
@@ -34,7 +34,7 @@ Create an organization
 .. important::
    We recommend using **only one organization** and creating organizational units to group your projects. 
    
-   Creating a new organization requires you to manually configure organization-level settings again such as :doc:`billing groups, authentication settings, and teams </docs/platform/concepts/projects_accounts_access>`.
+   Creating a new organization requires you to manually configure organization-level settings again such as :doc:`billing groups, authentication settings, and groups </docs/platform/concepts/projects_accounts_access>`.
 
 #. Click the user information icon and select **Organizations**. 
 
@@ -46,8 +46,8 @@ Create an organization
 
 #. If you want to invite admin users to the organization, set the toggle to **Yes** and enter their email addresses. They will receive an email invitation with a confirmation link.
 
-   .. important:: When admin users accept the invitation, they are added to the default team that has full control over the organization and the projects assigned to it.
+   .. important:: Admin users have full control over the organization and the projects assigned to it after they accept the invitation,.
 
 #. Click **Create organization**.
 
-The **Admin** page opens, where you can add organizational units, and manage teams, projects, and other settings. 
+The **Admin** page opens, where you can add organizational units, and manage groups, projects, and other settings. 

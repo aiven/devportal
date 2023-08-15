@@ -43,14 +43,14 @@ The :doc:`organization or organizational unit </docs/platform/concepts/projects_
 
 If you don't have an organization, click **Create organization** to :doc:`create your first organization</docs/tools/aiven-console/howto/create-accounts>`. 
  
-.. note:: We strongly recommend creating an organization. It makes managing your projects much easier and comes with many additional features, such as teams (user groups), billing groups, and SAML authentication.
+.. note:: We strongly recommend creating an organization. It makes managing your projects much easier and comes with many additional features, such as groups, billing groups, and SAML authentication.
 
 Organization and organizational unit settings are available on the **Admin** page. Here you can:
 
-* :doc:`Manage your teams</docs/tools/aiven-console/howto/create-manage-teams>` 
+* :doc:`Manage your groups</docs/platform/howto/manage-groups>` 
 * Create new projects under an organization or organizational unit
 * Configure :doc:`authentication methods for an organization </docs/platform/howto/list-saml>`
-* View logs of activity such as the adding or removing of team members, changing authentication methods, and more
+* View logs of activity such as the adding or removing of users, changing authentication methods, and more
 * Rename or delete an organization or organizational unit 
 
 Projects and services

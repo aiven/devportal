@@ -21,6 +21,8 @@ Grouping your projects in organizations and organizational units lets you centra
 
   * ACLs for service plans are inherited, meaning all projects within an organization or organizational unit will have the same service plan.
 
+* Groups - User groups managed at the organization level and assigned to projects
+
 * Teams - Specific to a single organization or organizational unit and cannot be shared between them
 
 * Support contracts - Specific to a single organization or organizational unit and cannot be shared between them
@@ -38,69 +40,27 @@ Projects are collections of services and user permissions. Each project must hav
 
 * Project-based: Each project contains all the services for an internal project, with naming that highlights the relevant environment; for example: ``customer-success-prod`` and ``business-analytics-test``.
 
-Service access management
---------------------------
+Project and service access management
+--------------------------------------
 
-There are two ways that you can manage access to Aiven services:
+You can grant users access to services at the project level by adding them as project members, either individually or in :doc:`groups </docs/platform/howto/add-groups-projects>`.
 
-* Direct access via projects
-* Indirectly via role-based access controls (RBAC)
+The Aiven platform lets you use a mix of group and individual access rights for projects. One example of this is to grant read-only access to all projects in an organization or unit for a group of external contractors. 
 
-Smaller teams usually favor direct access, while larger teams favor RBAC to simplify complex access requirements.
+Groups
+~~~~~~
 
-Project members and roles
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-You can define different levels of access for each project member using roles:
-
-* **Administrator**: Can change and view billing information, remove members, and create, edit, and delete services. When you create a project, you automatically receive this access level. 
-
-* **Operator**: Full access to services, but can't modify billing information or project members.
-
-* **Developer**: Can manage existing services (for example, creating databases and connecting to them), but can't make any changes that would affect billing (for example, starting or stopping services).
-
-* **Read Only**: Can view services, but can't make any changes to them.
-
-
-.. list-table::
-   :header-rows: 1
-
-   * - Role
-     - View status
-     - Connect
-     - Deploy
-     - Billing/editing access
-   * - Administrator
-     - |tick|
-     - |tick|
-     - |tick|
-     - |tick|
-   * - Operator
-     - |tick|
-     - |tick|
-     - |tick|
-     - 
-   * - Developer
-     - |tick|
-     - |tick|
-     - 
-     - 
-   * - Read Only
-     - |tick|
-     - 
-     - 
-     - 
-.. Note::
-    The Read-Only role cannot view or copy service account passwords, but the Administrator, Operator and Developer roles have full access to manage service accounts.
+:doc:`Organization users </docs/platform/howto/manage-org-users>` can be :doc:`added to groups </docs/platform/howto/manage-groups>`, making it easy to control access to the services in a project. When you :doc:`add a group to a project </docs/platform/howto/add-groups-projects>`, you also select the role for that group. This role gives all users in that group the same level of access to all services in the project.
 
 Teams
 ~~~~~
 
-You can also use teams within organizations or organizational units to control access to projects for a group of users instead of specifying them per project. When you create a team, you choose which projects to associate it to and define the roles.
+.. important::
+    **Teams are becoming groups**
+    
+    :doc:`Groups </docs/platform/howto/manage-groups>` are an easier way to control access to your organization's projects and services for a group of users.
 
-One example of this is to grant read-only access to all projects in an organization or unit for a team of external contractors. The Aiven platform lets you use a mix of team and individual access rights for projects.
-
-Another option is to set up :doc:`SAML single sign-on (SSO) </docs/platform/howto/list-saml>` for an organization that automatically adds users to a team when they sign up. For greater security, you may want to use a combination of SAML and RBAC regardless of the size of team.
+You can also use teams within organizations or organizational units to control access to projects for a group of users. When you create a team, you choose which projects to add it to. Another option is to set up :doc:`SAML single sign-on (SSO) </docs/platform/howto/list-saml>` for an organization that automatically adds users to a team when they sign up. For greater security, you may want to use a combination of SAML and RBAC regardless of the size of team.
 
 Best practices for organizations
 ---------------------------------
@@ -119,4 +79,4 @@ You could, for example, group projects into organizational units that correspond
 
 **Large organizations**
 
-For large organizations, it's best to keep all of your projects in organizational units instead of organizations. By keeping all of your projects in organizational units you can define teams, support contracts, and billing groups for each group of projects.
+For large organizations, it's best to keep all of your projects in organizational units instead of organizations. By keeping all of your projects in organizational units you can centrally manage things like support contracts and billing groups for each group of projects.
