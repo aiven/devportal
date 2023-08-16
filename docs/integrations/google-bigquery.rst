@@ -7,13 +7,13 @@ Prerequisites
 --------------
 Before you begin, make sure you have the following:
 
-* **Google Project ID**: Ensure you have a Google Project ID. More information, see `Google Cloud documentation <https://cloud.google.com/resource-manager/docs/creating-managing-projects>`_.
+* **Google Project ID**: You have a Google Project ID. For more information, see `Google Cloud documentation <https://cloud.google.com/resource-manager/docs/creating-managing-projects>`_.
 * **Google Cloud Service Account Credentials**: You have Google Cloud service account credentials in JSON format to authenticate with the Google Cloud Platform. For instructions on how to create and get service account credentials, see `Google Cloud's documentation <https://developers.google.com/workspace/guides/create-credentials>`_.
-* **Service account permissions**: Ensure that your service account is granted the necessary permissions to create log entries. For information on access control with IAM, see `Google Cloud's access control documentation <https://cloud.google.com/logging/docs/access-control>`_.
+* **Service account permissions**: Your service account is granted the necessary permissions to create log entries. For information on access control with IAM, see `Google Cloud's access control documentation <https://cloud.google.com/logging/docs/access-control>`_.
 
 
 Set up Google BigQuery integration using Aiven Console
-------------------------------------------------------
+-------------------------------------------------------
 
 Step 1: Create integration endpoints
 `````````````````````````````````````
