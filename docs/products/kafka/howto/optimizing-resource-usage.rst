@@ -1,12 +1,12 @@
-Optimizing resource usage for Kafka® Startup-2 Plan
-===================================================
+Optimizing resource usage for Aiven for Apache Kafka® 
+=======================================================
 
-The Kafka Startup-2 Plan has been optimized for lightweight operations, making it ideal for applications that handle fewer messages per second and don't demand high throughput. But sometimes, you might encounter an alert showing high resource usage. This alert is generally triggered when the Kafka broker memory drops too low and CPU idle time is less than 15%. Understanding the reasons behind these alerts and their mitigation ensures optimized Kafka usage and consistent application performance.
+Aiven for Apache Kafka® service plans with CPUs of 2 or less are optimized for lightweight operations, making them suitable for applications that handle fewer messages per second and do not require high throughput. However, you might sometimes encounter an alert showing high resource usage. These alerts typically arise when the Kafka broker memory drops too low, and the CPU idle time is less than 15%. Understanding the reasons behind these alerts and their mitigation ensures optimized Kafka usage and consistent application performance.
 
 What triggers high resource usage?
 ----------------------------------
 
-There are a few things that can trigger high resource usage on the Kafka Startup-2 plan:
+Several factors can lead to high resource usage across Aiven for Apache Kafka plans:
 
 - **High Kafka Traffic:**
   Heavy traffic due to too many producer/consumer requests can cause an overload, leading to increased CPU and memory usage on the Kafka broker. When a Kafka cluster is overloaded, it may struggle to correctly assign leadership for a partition, potentially causing service disruptions.
@@ -21,7 +21,7 @@ Additional causes of high resource usage
 ----------------------------------------
 
 - **Datadog Integration:**
-  While Datadog provides valuable monitoring, its agent is IO-heavy. On a Startup-2 Plan not designed for high IO operations, Datadog can significantly increase the IO load. Moreover, Datadog load increases with the number of topic partitions in your Kafka service.
+  Datadog offers essential monitoring, but its agent is IO-intensive. Especially on plans not designed for high IO operations, Datadog can notably increase the IO load. The load from Datadog also increases with the number of topic partitions in your Kafka service.
 
 - **Karapace Integration:**
   Karapace provides a REST API for Kafka, but this can consume a substantial amount of memory and contribute to a high load when REST API is used in high demand.
@@ -39,7 +39,7 @@ Strategies to minimize resource usage
   Quotas can manage the resources consumed by clients, preventing any single client from using too much of the broker's resources.
 
 - **Limit the Number of Integrations:**
-  For smaller plans like the Startup-2, consider limiting the number of integrations to manage resource consumption effectively.
+  For smaller plans such as the Startup-2, consider limiting the number of integrations to manage resource consumption effectively.
 
 - **Upgrade Your Plan:**
   If your application demands more resources, upgrading to a larger Kafka plan can ensure stable operation.
@@ -47,4 +47,4 @@ Strategies to minimize resource usage
 Integration advisory for Kafka Startup-2 plan
 -----------------------------------------------
 
-The Kafka Startup-2 plan runs on relatively small machines. Enabling integrations like Datadog or Karapace may consume more resources than this plan can handle, affecting your cluster's performance. If you notice any issues with your cluster or need more resources for your integrations, consider upgrading to a higher plan.
+Aiven for Apache Kafka service plans with CPUs of 2 or less operate on relatively small machines. Enabling integrations like Datadog or Karapace might exceed the resources these plans offer, impacting your cluster's performance. If you experience issues with your cluster or require more resources for your integrations, consider upgrading to a higher plan.
