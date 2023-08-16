@@ -202,6 +202,8 @@ entries:
             - file: docs/integrations/cloudwatch/cloudwatch-logs-cli
     - file: docs/integrations/cloudlogging
       title: Google Cloud Logging
+    - file: docs/integrations/google-bigquery
+      title: Google BigQuery
     - file: docs/integrations/rsyslog
       title: RSyslog
       entries:
