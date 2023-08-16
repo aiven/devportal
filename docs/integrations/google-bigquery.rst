@@ -77,7 +77,7 @@ To create a new integration endpoint that can be used to connect to a BigQuery s
 where:
 
 * ``--project``: Name of the Google project where you want to create the integration endpoint.
-* ``--endpoint-name``: Name of the integration endpoint you are creating. Replace your_endpoint_name with your desired endpoint name.
+* ``--endpoint-name``: Name of the integration endpoint you are creating. Replace ``your_endpoint_name`` with your desired endpoint name.
 * ``--endpoint-type``: The type of integration endpoint. For example, if it's an external BigQuery service, enter ``external_bigquery``.
 * ``--user-config-json``: A JSON object with custom configurations for the integration endpoint. The JSON object should include the following fields:
 
