@@ -45,10 +45,10 @@ Step 2: Link the integration endpoint to your service
 4. Choose the endpoint that you created.
 5. Click **Enable**.
 
-Set up Google BigQuery Integration using Aiven CLI
+Set up Google BigQuery integration using Aiven CLI
 ---------------------------------------------------
 
-Step 1. Create integration Endpoints
+Step 1. Create integration endpoints
 ``````````````````````````````````````
 To create a new integration endpoint that can be used to connect to a BigQuery service, use the :ref:`avn service integration-endpoint-create <avn_service_integration_endpoint_create>` command with the required parameters.
 
@@ -99,7 +99,7 @@ where:
 
 Step 2: Add your service to the integration endpoint
 ``````````````````````````````````````````````````````
-1. Retrive the endpoint identifier using the following command: 
+1. Retrieve the endpoint identifier using the following command: 
 
    ::
     
