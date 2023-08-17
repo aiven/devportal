@@ -238,7 +238,7 @@ If you're using Google BigQuery for your data storage and analysis, you can seam
      * Select **Create**.
 
 4. Select **Services** and access the Aiven for Apache Flink service where you plan to integrate the Google BigQuery endpoint.
-5. If you're integrating with Aiven for Apache Flink for the first time, select **Get Started** on the **Overview** page. Alternatively, you can add a new integration in the **Data Flow** section by using the plus (+) button.
+5. If you're integrating with Aiven for Apache Flink for the first time, select **Create data pipeline** on the **Overview** page. Alternatively, you can add a new integration in the **Data Flow** section by using the plus (+) button.
 6. On the **Data Service integrations** screen, select the **Create external integration endpoint** tab. 
 7. Select the checkbox next to BigQuery, and choose the BigQuery endpoint from the list to integrate.
 8. Select **Integrate**.
