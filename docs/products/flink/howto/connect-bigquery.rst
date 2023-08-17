@@ -233,7 +233,7 @@ If you're using Google BigQuery for your data storage and analysis, you can seam
         }
 
         
-       For more information, see :doc:`Integrate Google BigQuery endpoints with Aiven services <../integrations/google-bigquery>`. 
+       For more information, see :doc:`Integrate Google BigQuery endpoints with Aiven services </docs/integrations/google-bigquery>`. 
 
      * Select **Create**.
 
