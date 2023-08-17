@@ -48,7 +48,7 @@ Creates a new billing group with ``create`` or amends a billing group with ``upd
   * - ``--vat-id``
     - VAT ID for this billing group
   * - ``--billing-currency``
-    - The currency to bill in: ``AUD``, ``CAD``, ``CHF``, ``DKK``, ``EUR``, ``GBP``, ``NOK``, ``SEK``, or ``USD``
+    - The currency to bill in: ``AUD``, ``CAD``, ``CHF``, ``DKK``, ``EUR``, ``GBP``, ``JPY``, ``NOK``, ``NZD``, ``SEK``, ``SGD``, or ``USD``
   * - ``--billing-extra-text``
     - Information to include in an invoice (for example, a cost center number)
   * - ``--billing-email``
