@@ -30,7 +30,7 @@ To use the ``pg_cron`` extension:
 
 	CREATE EXTENSION pg_cron;
 
-2. Optionally you can grant usage to regular users
+2. As a optional step, you can grant usage permission to regular users
 ::	
 	
 	GRANT USAGE ON SCHEMA cron TO janedoe;
@@ -41,7 +41,9 @@ To use the ``pg_cron`` extension:
 Setup the cron job
 ------------------
 
-* List all the jobs
+List all the jobs
+```````````````````
+To view the full list of existing jobs, you can run the following query:
 
 ::
 
@@ -52,24 +54,39 @@ Setup the cron job
 	  1   | 59 23 * * * | vacuum freeze pgbench_accounts | localhost | 8192     | postgres | adminuser | t      | manual vacuum
 	(2 rows)  
 
-* Schedule a job
+
+Schedule a job
+```````````````
+You can schedule a new job with the following command. In this example, the job is set to vacuum daily at 10:00am (GMT):
 
 ::
 
 	###Vacuum every day at 10:00am (GMT)
 	SELECT cron.schedule('nightly-vacuum', '0 10 * * *', 'VACUUM');
 
-* Unschedule a job
+
+Unschedule a job
+``````````````````
+To stop scheduling a job, you have two options:
+
+1. By using the jobname:
 
 ::
 
 	###Stop scheduling jobs using jobname
 	SELECT cron.unschedule('nightly-vacuum' );
 
+2. By using the jobid:
+
+::
+
 	###Stop scheduling jobs using jobid
 	SELECT cron.unschedule(1);
 
-* List all the completed jobs
+  
+View completed jobs
+```````````````````````
+To view a list of all completed job runs, you can use the following query:
 
 ::
 
