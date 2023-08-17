@@ -15,9 +15,8 @@ If you have the tiered storage feature :doc:`enabled </docs/products/clickhouse/
 Prerequisites
 -------------
 
-* Aiven organization
 * Access to `Aiven Console <https://console.aiven.io/>`_
-* Tiered storage feature :doc:`enabled </docs/products/clickhouse/howto/enable-tiered-storage>` on an Aiven for ClickHouse service level and on a table level
+* Tiered storage feature :doc:`enabled </docs/products/clickhouse/howto/enable-tiered-storage>`
 * Command line tool (:doc:`ClickHouse client </docs/products/clickhouse/howto/connect-with-clickhouse-cli>`)
 
 Check data distribution in Aiven Console
@@ -25,7 +24,7 @@ Check data distribution in Aiven Console
 
 You can use `Aiven Console <https://console.aiven.io/>`_ to check if the tiered storage is enabled on your service and, if so, how much storage has been used for each type of the disks (the local SSD and the remote object storage) by particular tables.
 
-To check the tiered storage's status information, go to `Aiven Console <https://console.aiven.io/>`_ > your Aiven for ClickHouse service > the **Overview** page > the **Tiered storage** section.
+To check the tiered storage's status information, go to `Aiven Console <https://console.aiven.io/>`_ > your Aiven for ClickHouse service > the **Databases and tables** page > your database > your table > **View details** > **Storage details**.
 
 Run a data distribution check with the ClickHouse client (CLI)
 --------------------------------------------------------------
@@ -66,7 +65,7 @@ Run a data distribution check with the ClickHouse client (CLI)
 
 .. topic:: Result
    
-   The query returns a table with data distribution details for all databases and tables that belong to your service: storage device they use, their total sizes as well as parts' counts and sizing.
+   The query returns a table with data distribution details for all databases and tables that belong to your service: the storage device they use, their total sizes as well as parts counts and sizing.
 
 What's next
 -----------
