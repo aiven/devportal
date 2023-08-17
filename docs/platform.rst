@@ -1,43 +1,23 @@
 Aiven platform
 ==================
 
-What is the Aiven platform?
-----------------------------
-
 Aiven provides managed open source data technologies on all major clouds. Through Aiven, developers can do what they do best: create applications. Meanwhile, Aiven does what it does best; manage cloud data infrastructure. 
 
-Aiven platform consists of Aiven tools, and the following Aiven products:
-Apache Kafka®,
-Apache Cassandra®,
-PostgreSQL®,
-Apache Flink®,
-ClickHouse®,
-OpenSearch®,
-MySQL,
-Redis®*,
-InfluxDB®,
-Grafana®,
-and M3 - all available in more than 80 regions around the world on AWS, GCP, Microsoft Azure, DigitalOcean, and UpCloud cloud platforms.
+The Aiven platform consists of the :doc:`Aiven Console </docs/tools/aiven-console>`, :doc:`tools </docs/tools>`, and Aiven services:
 
-Learn more about the Aiven platform
-------------------------------------
+* Apache Kafka®
+* Apache Flink®
+* Apache Cassandra®
+* ClickHouse®
+* Grafana®
+* InfluxDB®
+* M3
+* MySQL
+* OpenSearch®
+* PostgreSQL®
+* Redis®*
 
-.. grid:: 1 2 2 2
+The services are available in more than 80 regions around the world on AWS, GCP, Microsoft Azure, DigitalOcean, and UpCloud.
 
-    .. grid-item-card::
-        :shadow: md
-        :margin: 2 2 0 0
+:doc:`Get started with the Aiven platform </docs/get-started>` 
 
-        📚 :doc:`Concepts </docs/platform/concepts>`
-
-    .. grid-item-card::
-        :shadow: md
-        :margin: 2 2 0 0
-
-        💻 :doc:`HowTo </docs/platform/howto>`
-
-    .. grid-item-card::
-        :shadow: md
-        :margin: 2 2 0 0
-
-        📖 :doc:`Reference </docs/platform/reference>`

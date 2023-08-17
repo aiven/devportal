@@ -1,5 +1,5 @@
-Restrict network access to your service
-========================================
+Restrict network access to services
+====================================
 
 By default, Aiven services are publicly accessible, but you can restrict access to your service to a single IP, an address block, or any combination of both.
 
