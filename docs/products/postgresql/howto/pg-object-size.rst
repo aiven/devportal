@@ -128,9 +128,3 @@ To get disk space usage for a table and its indexes, you can use the ``pg_total_
 .. seealso::     
     * `PostgreSQL interactive terminal <https://www.postgresql.org/docs/15/app-psql.html>`_
     * `Database Object Management Functions <https://www.postgresql.org/docs/current/functions-admin.html#FUNCTIONS-ADMIN-DBOBJECT>`_
-
-
-Related reading
----------------
-* :doc:`../howto`
-* :doc:`list-dba-tasks`
