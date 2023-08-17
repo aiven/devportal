@@ -69,14 +69,14 @@ Unschedule a job
 ``````````````````
 To stop scheduling a job, you have two options:
 
-1. By using the jobname:
+1. By using the ``jobname``:
 
 ::
 
 	###Stop scheduling jobs using jobname
 	SELECT cron.unschedule('nightly-vacuum' );
 
-2. By using the jobid:
+2. By using the ``jobid``:
 
 ::
 
