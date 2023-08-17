@@ -55,7 +55,7 @@ Optionally, you can :doc:`configure the time-based threshold </docs/products/cli
 Typical use case
 ----------------
 
-In your Aiven for ClickHouse service, there is a significant amount of data that is there for a while and is hardly ever accessed. It's stored on SSD and, thus, high-priced. You decide to :doc:`enable </docs/products/clickhouse/howto/enable-tiered-storage>` the tiered storage for your service to make your data storage more efficient and reduce the costs. For that purpose, you select a plan for your service that supports the tiered storage and you :doc:`enable </docs/products/clickhouse/howto/enable-tiered-storage>` the feature on particular tables. You :doc:`configure </docs/products/clickhouse/howto/configure-tiered-storage>` the time-based threshold for controlling how your data is stored in the two layers.
+In your Aiven for ClickHouse service, there is a significant amount of data that is there for a while and is hardly ever accessed. It's stored on SSD and, thus, high-priced. You decide to :doc:`enable </docs/products/clickhouse/howto/enable-tiered-storage>` the tiered storage for your service to make your data storage more efficient and reduce the costs. For that purpose, you contact the sales team at `sales@Aiven.io <mailto:sales@Aiven.io>`_ to have it enabled on your project, and you :doc:`enable </docs/products/clickhouse/howto/enable-tiered-storage>` the feature on particular tables. You :doc:`configure </docs/products/clickhouse/howto/configure-tiered-storage>` the time-based threshold for controlling how your data is stored in the two layers.
 
 .. _tiered-storage-limitations:
 
