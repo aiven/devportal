@@ -6,7 +6,7 @@ Use the PostgreSQL® ``pg_cron`` extension
 .. note:: 
 	``pg_cron`` can run multiple jobs in parallel, but it runs at most one instance of a job at a time. If a second run is supposed to start before the first one finishes, then the second run is queued and started as soon as the first run completes.
 
-The schedule uses the standard cron syntax, in which * means "run every time period", and a specific number means "but only at this time":
+The schedule uses the standard cron syntax, where an asterisk (*) signifies "execute at every time interval", and a specific number indicates "execute exclusively at this specific time":
 
 ::
 
