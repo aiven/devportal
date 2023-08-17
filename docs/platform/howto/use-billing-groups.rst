@@ -15,7 +15,7 @@ Rename billing groups
 Update your billing information
 """"""""""""""""""""""""""""""""
 
-To change the payment card, address, or other billing details:
+To change the payment card, address, billing contacts, or other billing details:
 
 #. Select the name of the billing group that you want to update.
 

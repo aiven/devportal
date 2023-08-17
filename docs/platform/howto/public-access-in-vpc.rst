@@ -1,4 +1,4 @@
-Enable public access in a VPC
+Enable public access in VPCs
 ==============================
 
 To enable public access for a service which is running within a virtual private cloud (VPC), follow these steps:

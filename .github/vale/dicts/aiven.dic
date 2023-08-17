@@ -218,6 +218,7 @@ Security
 serde
 serializer
 service_account
+serverless
 sharded
 sharding
 signup

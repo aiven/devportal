@@ -1,5 +1,5 @@
-﻿Create a new Aiven service user
-================================
+﻿Create service users
+=====================
 
 Service users are users that only exist in the scope of the corresponding Aiven service. They are unique to this service and not shared with any other services, and can be granted restricted permissions compared to the default ``avnadmin`` user. You can add service users for all the Aiven services, with the exception of Aiven for Apache Flink® and Aiven for Grafana®.
 

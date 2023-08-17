@@ -1,10 +1,7 @@
 Set up SAML authentication
 ===========================
 
-Security Assertion Markup Language (SAML) is a standard for
-exchanging authentication and authorization data between an identity
-provider (IdP) and a service provider. You can set up SAML authentication in Aiven with your company's favorite authentication
-service.
+Security Assertion Markup Language (SAML) is a standard for exchanging authentication and authorization data between an identity provider (IdP) and a service provider. You can set up SAML authentication in Aiven with your company's preferred IdP.
 
 To set up a SAML authentication method for your organization in Aiven, there are three steps:
 

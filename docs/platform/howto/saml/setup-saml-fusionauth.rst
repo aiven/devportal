@@ -1,5 +1,5 @@
-Set up SAML authentication with FusionAuth
-==========================================
+Set up SAML with FusionAuth
+============================
 
 This article explains how to set up SAML with `FusionAuth <https://fusionauth.io/>`_ for an organization in Aiven. For more information on SAML and instructions for other identity providers, see the :doc:`Set up SAML authentication </docs/platform/howto/saml/saml-authentication>` article.
 
