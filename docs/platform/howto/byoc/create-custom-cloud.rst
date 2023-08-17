@@ -14,7 +14,7 @@ About creating a custom cloud
 
 If you have the administrator's role in your Aiven organization and you enable BYOC, you can create a custom cloud on the Aiven platform. For this purpose, you'll need to configure your custom cloud setup in `Aiven Console <https://console.aiven.io/>`_ and prepare your own Amazon Web Services (AWS) account so that Aiven can access it.
 
-In `Aiven Console <https://console.aiven.io/>`_, you'll use the **Create custom cloud** wizard to generate a Terraform infrastructure-as-code (IaC) template. Next, you'll deploy this template in your AWS account to acquire Role ARN (Amazon Resource Name). You'll suppy your Role ARN into the **Create custom cloud** wizard, which will give Aiven the permissions to securely access your AWS account and create resources. Finally, you'll assign projects and add customer contacts for your custom cloud.
+In `Aiven Console <https://console.aiven.io/>`_, you'll use the **Create custom cloud** wizard to generate a Terraform infrastructure-as-code (IaC) template. Next, you'll deploy this template in your AWS account to acquire Role ARN (Amazon Resource Name). You'll supply your Role ARN into the **Create custom cloud** wizard, which will give Aiven the permissions to securely access your AWS account and create resources. Finally, you'll assign projects and add customer contacts for your custom cloud.
 
 Limitations
 '''''''''''
@@ -92,7 +92,7 @@ Deploy the template to acquire ``Role ARN``
 
 Role ARN is an `identifier of the role <https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html>`_ created when running the infrastructure template in your AWS account. Aiven uses Role ARN to `assume the role <https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html>`_ and run operations such as creating VMs for service nodes in your BYOC account.
 
-Use the Terrafrom template generated in step :ref:`Generate an infrastructure template <generate-infra-template>` to create your Role ARN by deploying the template in your AWS account.
+Use the Terraform template generated in step :ref:`Generate an infrastructure template <generate-infra-template>` to create your Role ARN by deploying the template in your AWS account.
 
 As soon as you acquire Role ARN, enter it into the **Role ARN** field in the **Create custom cloud** wizard, and select **Next** to proceed.
 
