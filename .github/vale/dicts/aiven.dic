@@ -40,6 +40,7 @@ connect
 Couchbase
 CPU/MS
 CRD
+cron
 cURL
 cyber
 datacenter
@@ -257,6 +258,7 @@ UDFs
 unassign
 uncomment
 unencrypted
+Unschedule
 untrusted
 unaggregated
 UpCloud
