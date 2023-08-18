@@ -62,6 +62,8 @@ deserialization
 deserializer
 Dev
 Digitransit
+diskio_io_time
+diskio_iops_in_progress
 Distro
 Docker
 dockerized
@@ -107,6 +109,7 @@ hypertable
 hypertables
 InfluxDB
 InnoDB
+inodes
 Instana
 IdP
 IdPs
@@ -114,12 +117,14 @@ io
 iops
 IPsec
 iptables
+java_lang_Memory
 Java
 JMX
 json
 JobManager
 Jolokia
 JumpCloud
+JVM's
 Kaggle/M
 Kafdrop
 Kafka
@@ -227,6 +232,7 @@ signups
 Singlestat
 skyvia
 Snowflake
+softirqs
 Sphinx
 SLA/S
 Slackbot
@@ -264,6 +270,7 @@ unaggregated
 UpCloud
 upsert
 vectorizing
+virtualized
 VM
 VMs
 VPC/MS
