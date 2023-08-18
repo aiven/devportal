@@ -1,7 +1,7 @@
 Create a custom cloud in Aiven
 ==============================
 
-A custom cloud is your own cloud infrastructure integrated with your Aiven organization. Using a custom cloud in Aiven may be the optimal solution if you have specific business needs or project requirements, such as a strict regulatory compliance. With a custom cloud, you can manage your own infrastructure based on your expectations and tailor it to your budget.
+A custom cloud is your own cloud infrastructure integrated with your Aiven organization. Using a custom cloud in Aiven may be the optimal solution if you have specific business needs or project requirements, such as a strict regulatory compliance. With a custom cloud, you can manage your own infrastructure depending on your expectations and tailor it to your budget.
 
 .. important::
 
@@ -12,7 +12,7 @@ Learn how to add a :doc:`custom cloud </docs/platform/concepts/byoc>` to your Ai
 About creating a custom cloud
 -----------------------------
 
-If you have the administrator's role in your Aiven organization and you enable BYOC, you can create a custom cloud on the Aiven platform. For this purpose, you'll need to configure your custom cloud setup in `Aiven Console <https://console.aiven.io/>`_ and prepare your own Amazon Web Services (AWS) account so that Aiven can access it.
+If you have the administrator's role in your Aiven organization, and you enable BYOC, you can create a custom cloud on the Aiven platform. For this purpose, you'll need to configure your custom cloud setup in `Aiven Console <https://console.aiven.io/>`_ and prepare your own Amazon Web Services (AWS) account so that Aiven can access it.
 
 In `Aiven Console <https://console.aiven.io/>`_, you'll use the **Create custom cloud** wizard to generate a Terraform infrastructure-as-code (IaC) template. Next, you'll deploy this template in your AWS account to acquire Role ARN (Amazon Resource Name). You'll supply your Role ARN into the **Create custom cloud** wizard, which will give Aiven the permissions to securely access your AWS account and create resources. Finally, you'll assign projects and add customer contacts for your custom cloud.
 
@@ -27,8 +27,10 @@ Prerequisites
 -------------
 
 * Administrator's role for your Aiven organization
-* BYOC feature enabled from `sales@Aiven.io <mailto:sales@Aiven.io>`_
+* AWS account
+* BYOC feature enabled for your Aiven organization by the sales team (`sales@Aiven.io <mailto:sales@Aiven.io>`_)
 * Access to `Aiven Console <https://console.aiven.io/>`_
+* Terraform
 
 Create a custom cloud
 ---------------------
@@ -57,19 +59,16 @@ In the **Create custom cloud** wizard, proceed as follows:
 
      .. important::
 
-        `Amazon Web Services (AWS)` is the only option supported currently.
+        **Amazon Web Services (AWS)** is the only option supported currently.
 
    * Region
    * CIDR
 
      Aiven needs CIDR for the `CIDR block of the VPC <https://docs.aws.amazon.com/vpc/latest/userguide/vpc-cidr-blocks.html>`_ that will be created in your AWS account.
 
-     Specify inbound rules with the CIDR block notation, for example: 200.1.2.3/32 (allowing 200.1.2.3 as a single address), 0.0.0.0/0 (allowing traffic from anywhere), or 100.1.0.0/16 (allowing traffic from 100.1..).
-
-     Note the following:
-
+     * Specify inbound rules with the CIDR block notation, for example: 200.1.2.3/32 (allowing 200.1.2.3 as a single address), 0.0.0.0/0 (allowing traffic from anywhere), or 100.1.0.0/16 (allowing traffic from 100.1..).
      * To create VPC peerings with that VPC, choose a CIDR block that doesn't overlap with CIDR blocks of peer VPCs.
-     * CIDR block needs be large enough so that, after splitting it into per-region subnets, each subnet has enough addresses to fit required services.
+     * Keep in mind that CIDR block needs be large enough so that, after splitting it into per-region subnets, each subnet has enough addresses to fit required services.
 
    * :ref:`Deployment model <byoc-deployment>`
 
@@ -77,9 +76,9 @@ In the **Create custom cloud** wizard, proceed as follows:
 
      .. important::
 
-        `BYOC Standard` is the only option supported currently.
+        **BYOC standard** is the only option supported currently.
 
-2. Select **Next**.
+1. Select **Next**.
    
 .. topic:: Result
 
@@ -127,7 +126,7 @@ Select **Done** to close the **Create custom cloud** wizard.
 
 .. topic:: Result
 
-    As soon as we confirm your custom cloud's availability via email, you'll be able to see it on the list of your custom clouds in the **Bring you own cloud** view.
+    As soon as your custom cloud's availability is confirmed via email, you'll be able to see it on the list of your custom clouds in the **Bring you own cloud** view.
 
 Related reading
 ---------------

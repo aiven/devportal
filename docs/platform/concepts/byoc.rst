@@ -13,8 +13,8 @@ Why use BYOC
 
 There a few major reasons to utilize BYOC:
 
-1. **Compliance**: Aiven offers managed environments for several standard compliance regulations such as HIPAA, PCI DSS and GDPR. However, if you have strict regulatory requirements, or special compliance requirements, BYOC may be the best option for you.
-2. **Network auditing**: If you require visibility of all traffic within any VPC you operate in or need frequent auditing capabilities, BYOC is potentially a good fit. BYOC gives you the ability to audit network metadata but not the actual contents.
+1. **Compliance**: Aiven offers managed environments for several standard compliance regulations, such as HIPAA, PCI DSS, and GDPR. However, if you have strict regulatory requirements or special compliance requirements, BYOC may be the best option for you.
+2. **Network auditing**: If you require the visibility of all traffic within any VPC you operate in or need frequent auditing capabilities, BYOC is potentially a good fit. BYOC gives you the ability to audit network metadata but not the actual contents.
 3. **Fine-grained network control**: BYOC requires only some specific network access (for example, service management and troubleshooting), otherwise allowing you to customize your network to meet any internal requirements or requirements of your customers.
 4. **Cost optimization**: Depending on your cloud provider, with BYOC you can use reserved instances, cost savings plans, committed use discounts, or other strategies to save on compute and storage infrastructure costs related to Aiven services.
 
@@ -30,11 +30,9 @@ The BYOC setup is a bespoke service offered on a case-by-case basis, and not all
 When to use a standard Aiven deployment
 ---------------------------------------
 
-BYOC deployments are not automated, and they add additional complexity for communicating
-to the Aiven control plane, service management, key management and security.
+BYOC deployments are not automated, and they add additional complexity to communicating to the Aiven control plane, service management, key management, and security.
 
-In most cases, you can meet your regulatory and business requirements by utilizing
-a standard Aiven deployment or :doc:`Enhanced Compliance Environment </docs/platform/concepts/enhanced-compliance-env>`.
+In most cases, you can meet your regulatory and business requirements by utilizing a standard Aiven deployment or :doc:`Enhanced Compliance Environment </docs/platform/concepts/enhanced-compliance-env>`.
 
 .. tip::
    
@@ -43,23 +41,21 @@ a standard Aiven deployment or :doc:`Enhanced Compliance Environment </docs/plat
 Pricing and billing
 -------------------
 
-Unlike Aiven's standard all-inclusive pricing, the BYOC setup has custom
-pricing depending on the nature of your requirements. If you enter this
-arrangement, you are responsible for all cloud infrastructure and network traffic
+Unlike Aiven's standard all-inclusive pricing, the BYOC setup has custom pricing depending on the nature of your requirements. If you enter this arrangement, you are responsible for all cloud infrastructure and network traffic
 charges.
 
-You receive two separate monthly invoices, one from Aiven for their managed services and another from the cloud service provider for the cloud infrastructure costs. This enables you to use any cloud commit you may have and potentially leverage CUDs in certain cases.
+You receive two separate monthly invoices, one from Aiven for their managed services and another from the cloud service provider for the cloud infrastructure costs. This enables you to use any cloud commit you may have and potentially leverage committed use discounts (CUDs) in certain cases.
 
 .. note::
 
-   For a cost estimate and analysis, contact Sales@Aiven.io.
+   For a cost estimate and analysis, contact sales@Aiven.io.
 
 .. _byoc-deployment:
 
 Architecture of BYOC deployments
 --------------------------------
 
-With BYOC, you can use any standard Aiven method (for example, :doc:`CLI </docs/tools/cli>`, :doc:`Terraform </docs/tools/terraform>`) to manage your services and generally have the same user experience as with the regular Aiven deployment model.
+With BYOC, you can use any standard Aiven method (for example, :doc:`CLI </docs/tools/cli>` or :doc:`Terraform </docs/tools/terraform>`) to manage your services and generally have the same user experience as with the regular Aiven deployment model.
 
 .. _byoc-standard:
 
@@ -69,24 +65,15 @@ BYOC standard
 .. image:: /images/platform/byoc-standard.png
    :alt: Overview architecture diagram with VPC set up
 
-A standard BYOC deployment requires you to create a Virtual Private Cloud (VPC)
-dedicated to Aiven services within each region you want to operate. Aiven accesses these
-VPCs via a static IP address and then routes traffic through a proxy for additional security.
-To accomplish this, Aiven utilizes a bastion host, logically separated from the
-Aiven services you deploy. As the user of these services (for example, Aiven for Apache Kafka®),
-you are able to utilize them through standard VPC peering techniques. Although the bastion
-host and the service nodes reside in your managed VPC, they are not be accessible
-(for example, SSH) to anyone outside Aiven.
+A standard BYOC deployment requires you to create a Virtual Private Cloud (VPC) dedicated to Aiven services within each region you want to operate in. Aiven accesses these VPCs via a static IP address and then routes traffic through a proxy for additional security. To accomplish this, Aiven utilizes a bastion host logically separated from the
+Aiven services you deploy. As the user of these services (for example, Aiven for Apache Kafka®), you are able to utilize them through standard VPC peering techniques. Although the bastion host and the service nodes reside in your managed VPC, they are not accessible (for example, SSH) to anyone outside Aiven.
 
-Depending on the service being used, Aiven takes regular backups to enable forking,
-Point in Time Recovery (PITR), and disaster recovery. These backups by default do not
-reside in your cloud. If there is a requirement to have all backups
-in your own cloud, it's still possible. To accomplish this, Aiven will need object storage and
-read-write permissions.
+Depending on the service used, Aiven takes regular backups to enable forking, point in time recovery (PITR), and disaster recovery. These backups by default do not reside in your cloud. If there is a requirement to have all backups
+in your own cloud, it's still possible. To accomplish this, Aiven needs an object storage and read-write permissions.
 
 .. important::
    
-   All backups are encrypted using Aiven-managed keys, and you will be responsible for managing object storage configurations.
+   All backups are encrypted using Aiven-managed keys, and you are responsible for managing object storage configurations.
 
 BYOC with IPsec ingress
 '''''''''''''''''''''''
@@ -94,9 +81,7 @@ BYOC with IPsec ingress
 .. image:: /images/platform/byoc-ipsec-ingress.png
    :alt: Overview architecture diagram with IPsec tunnel
 
-A slight variation on a standard BYOC deployment enables Aiven to manage your
-services through an IPsec tunnel. This deployment can be beneficial if management over
-the public internet is infeasible or adds additional complexity.
+A slight variation on a standard BYOC deployment enables Aiven to manage your services through an IPsec tunnel. This deployment can be beneficial if management over the public Internet is infeasible or adds additional complexity.
 
 BYOC with direct IPsec ingress
 ''''''''''''''''''''''''''''''
@@ -104,9 +89,7 @@ BYOC with direct IPsec ingress
 .. image:: /images/platform/byoc-ipsec-ingress-direct.png
    :alt: Overview architecture diagram with direct IPsec access
 
-Again a slight variation on a standard BYOC deployment enables Aiven to manage your
-services through a direct IPsec tunnel. This deployment can be beneficial if there is a
-desire to reduce the number of Aiven managed components.
+A slight variation on a standard BYOC deployment enables Aiven to manage your services through a direct IPsec tunnel. This deployment can be beneficial if there is a desire to reduce the number of Aiven managed components.
 
 What's next
 -----------
