@@ -23,7 +23,7 @@ Prerequisites
 -------------
 
 * Aiven organization
-* Tiered storage feature :doc:`enabled </docs/products/clickhouse/howto/enable-tiered-storage>` on an Aiven for ClickHouse service level and on a table level
+* Tiered storage feature :doc:`enabled </docs/products/clickhouse/howto/enable-tiered-storage>` on the project level and on the table level
 * Command line tool (:doc:`ClickHouse client </docs/products/clickhouse/howto/connect-with-clickhouse-cli>`)
 
 .. _time-based-retention-config:

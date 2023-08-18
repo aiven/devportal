@@ -10,13 +10,13 @@ Check out this article for instructions on transferring data outside and inside 
 About moving data between storage devices
 -----------------------------------------
 
-You may want to :doc:`enable </docs/products/clickhouse/howto/enable-tiered-storage>` the tiered storage feature, move your data from SSD to the object storage, and size down your SSD, which allows changing a service plan to one with less SSD capacity. Also, you may want to move your date from the object storage back to your SSD. Both the operations can be performed using SQL statements on a table level.
+You may want to :doc:`enable </docs/products/clickhouse/howto/enable-tiered-storage>` the tiered storage feature, move your data from SSD to the object storage, and size down your SSD, which allows changing a service plan to one with less SSD capacity. Also, you may want to move your data from the object storage back to your SSD. Both the operations can be performed using SQL statements on the table level.
 
 Prerequisites
 -------------
 
-* Aiven account
-* Tiered storage feature :doc:`enabled </docs/products/clickhouse/howto/enable-tiered-storage>` on an Aiven for ClickHouse service level
+* Aiven organization
+* Tiered storage feature :doc:`enabled </docs/products/clickhouse/howto/enable-tiered-storage>` on the project level
 * Command line tool (:doc:`ClickHouse client </docs/products/clickhouse/howto/connect-with-clickhouse-cli>`)
 
 Transfer data from SSD to object storage
