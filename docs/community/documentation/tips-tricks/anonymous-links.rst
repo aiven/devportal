@@ -1,6 +1,8 @@
 Create anonymous links
 ======================
 
+:orphan:
+
 If in a page you have multiple links having the same label, for instance:
 
 .. code:: reStructuredText
