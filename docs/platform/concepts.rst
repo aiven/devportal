@@ -1,7 +1,7 @@
+:orphan:
+
 Concepts
 ========
-
-:orphan:
 
 Learn more about the Aiven platform. 
 
