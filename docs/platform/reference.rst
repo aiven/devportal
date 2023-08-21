@@ -1,6 +1,8 @@
 Reference
 =========
 
+:orphan:
+
 Reference materials for working with the Aiven platform using the Aiven tools:
 
 * :doc:`Aiven Console </docs/tools/aiven-console>` 

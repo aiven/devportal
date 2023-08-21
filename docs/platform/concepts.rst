@@ -1,6 +1,8 @@
 Concepts
 ========
 
+:orphan:
+
 Learn more about the Aiven platform. 
 
 * :doc:`Get started with the Aiven platform </docs/get-started>` 

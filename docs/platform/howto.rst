@@ -1,6 +1,8 @@
 How-To
 =======
 
+:orphan:
+
 Find instructions for common Aiven platform tasks for the following categories:
 
 * :doc:`Billing and payments </docs/platform/concepts/list-billing>`
