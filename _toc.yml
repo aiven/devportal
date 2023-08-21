@@ -19,7 +19,6 @@ entries:
         title: Set up Google Cloud Marketplace subscriptions
     - file: docs/tools/aiven-console
     - file: docs/platform/howto/feature-preview
-    - file: docs/platform
 
   # -------- ORGANIZATIONS, UNITS, PROJECTS --------
   - file: docs/platform/howto/list-account
