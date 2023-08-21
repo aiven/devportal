@@ -1,7 +1,7 @@
+:orphan:
+
 Create orphan pages
 ===================
-
-:orphan:
 
 By default any pages created need to be added in the ``_toc.yml`` file and therefore appear in the left navigation section. However you might want to create **orphan** pages which can be linked by other pages but are not present in the main navigation panel. 
 

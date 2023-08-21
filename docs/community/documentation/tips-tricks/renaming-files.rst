@@ -1,7 +1,7 @@
+:orphan:
+
 Rename files and adding redirects
 ===================================
-
-:orphan:
 
 The project supports a redirects file, named ``_redirects``; the format is `source` and `destination` as paths relative to the root of the project. Here's an example::
 

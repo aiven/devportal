@@ -1,7 +1,7 @@
+:orphan:
+
 Documentation
 =============
-
-:orphan:
 
 This documentation is powered by a `public GitHub repository <https://github.com/aiven/devportal>`_, and contributions are always welcome.
 
