@@ -11,8 +11,8 @@ To fetch query statistics in Aiven for ClickHouse, you can use either Aiven Cons
 Use Aiven Console
 -----------------
 
-1. Log in to the `Aiven web console <https://console.aiven.io/>`_, choose the right project, and select your Aiven for ClickHouse service.
-2. Navigate to the **Query Statistics** tab and view the content in the dashboard.
+1. Log in to the `Aiven Console <https://console.aiven.io/>`_, choose the right project, and select your Aiven for ClickHouse service.
+2. In your service's page, select **Query statistics** from the sidebar and view the content in the dashboard.
 
 Use Aiven API
 -------------

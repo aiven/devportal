@@ -12,6 +12,7 @@ APIs
 ARN
 Astacus
 Auth0
+autojoin
 autovacuum
 Avro
 AZ
@@ -39,6 +40,8 @@ connect
 Couchbase
 CPU/MS
 CRD
+cron
+cURL
 cyber
 datacenter
 datacenters
@@ -69,10 +72,12 @@ DZone
 Elasticsearch
 Epicurious
 etcd
+event_type
 failover
 fileset
 filesets
 Flink
+FusionAuth
 Gantt
 geocoder
 geocoding
@@ -111,12 +116,14 @@ IPsec
 iptables
 Java
 JMX
+json
 JobManager
 Jolokia
 JumpCloud
 Kaggle/M
 Kafdrop
 Kafka
+kafka
 Karapace
 keypair
 keyspace
@@ -170,6 +177,7 @@ PgBouncer
 PGHoard
 pglookout
 pgoutput
+pgvector
 plaintext
 plc
 PNG/S
@@ -191,6 +199,7 @@ rebalancing
 Redis
 Redli
 refcard
+reindex
 reindexing
 reStructuredText
 rivery
@@ -209,6 +218,8 @@ scriptable
 Security
 serde
 serializer
+service_account
+serverless
 sharded
 sharding
 signup
@@ -247,10 +258,12 @@ UDFs
 unassign
 uncomment
 unencrypted
+Unschedule
 untrusted
 unaggregated
 UpCloud
 upsert
+vectorizing
 VM
 VMs
 VPC/MS

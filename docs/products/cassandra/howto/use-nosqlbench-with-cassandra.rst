@@ -12,7 +12,7 @@ Nosqlbench can be downloaded as a Linux binary executable called ``nb``. The ``n
 
 .. Tip::
 
-   You can read more about the nosqlbench core concepts and parameters in the `dedicated documentation <https://docs.nosqlbench.io/docs/nosqlbench/core-concepts/>`_
+   You can read more about the nosqlbench core concepts and parameters in the `dedicated documentation <https://docs.nosqlbench.io/introduction/core-concepts/>`_
 
 Variables
 -------------
@@ -30,7 +30,7 @@ Variable                Description
 
 .. Tip::
 
-    All the above variables and the CA Certificate file can be found in the `Aiven Console <https://console.aiven.io/>`_, in the service detail page.
+    All the above variables and the CA Certificate file can be found in `Aiven Console <https://console.aiven.io/>`_ > your service's **Overview** page > **Connection information** section.
 
 Run nosqlbench against your Aiven for Apache Cassandra® service
 ---------------------------------------------------------------

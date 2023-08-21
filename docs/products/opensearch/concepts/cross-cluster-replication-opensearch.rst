@@ -1,8 +1,9 @@
-OpenSearch® cross-cluster replication |beta|
+OpenSearch® cross-cluster replication
 ============================================
 
-.. note:: 
-    Cross-cluster replication feature for Aiven for OpenSearch is a beta release. 
+.. important::
+
+    Aiven for OpenSearch® cross-cluster replication (CCR) is a :doc:`limited availability feature </docs/platform/concepts/beta_services>`. If you're interested in trying out this feature, contact the sales team at `sales@Aiven.io <mailto:sales@Aiven.io>`_.
 
 Cross-cluster replication in Aiven for OpenSearch allows you to replicate the entire cluster, including all of its indexes, mappings, and metadata, from one service to another across different regions and cloud providers. 
 

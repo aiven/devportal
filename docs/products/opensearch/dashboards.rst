@@ -11,6 +11,8 @@ Get started with Aiven for OpenSearch Dashboards
 
 Take your first steps with Aiven for OpenSearch Dashboards by following our :doc:`/docs/products/opensearch/dashboards/getting-started` article.
 
+.. warning:: 
+    OpenSearch Dashboards will be **not accessible** during a **maintenance update** that also consists of version updates to your Aiven for OpenSearch service. The duration of the maintenance window can vary based on the updates. The dashboards will be accessible again once the update is completed.
 
 Ways to use OpenSearch Dashboards
 ---------------------------------

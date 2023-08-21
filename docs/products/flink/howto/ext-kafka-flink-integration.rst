@@ -1,12 +1,12 @@
-Connect Apache Kafka® to Aiven for Apache Flink®
-==================================================
+Integrate Aiven for Apache Flink® with Apache Kafka® 
+=====================================================
 Integrating external/self-hosted Apache Kafka® with Aiven for Apache Flink® allows users to leverage the power of both technologies to build scalable and robust real-time streaming applications. 
 
 This section provides instructions on integrating external/self-hosted Apache Kafka with Aiven for Apache Flink® using :doc:`Aiven client </docs/tools/cli>` and `Aiven Console <https://console.aiven.io/>`_. 
 
 Prerequisites
 ---------------
-* Aiven for Flink service 
+* Aiven for Apache Flink service 
 * External/self-hosted Apache Kafka service
 
 Configure integration using CLI
@@ -51,9 +51,10 @@ To create a PLAINTEXT protocol type endpoint, use the following command:
 
 .. code:: 
 
-    avn service integration-endpoint-create --endpoint-name demo-ext-kafka \
-    --endpoint-type external_kafka  \
-    --user-config-json  '{"bootstrap_servers":"servertest:123","security_protocol":"PLAINTEXT"}'
+    avn service integration-endpoint-create 
+        --endpoint-name demo-ext-kafka 
+        --endpoint-type external_kafka  
+        --user-config-json  '{"bootstrap_servers":"servertest:123","security_protocol":"PLAINTEXT"}'
 
 Where : 
 
@@ -160,13 +161,19 @@ To integrate Aiven for Apache Flink with the integration endpoint for external A
 
 .. code:: 
 
-    avn service integration-create --source-endpoint-id <source-endpoint-id> --dest-service <flink-service-name> -t flink_external_kafka
+    avn service integration-create 
+        --source-endpoint-id <source-endpoint-id> 
+        --dest-service <flink-service-name> 
+        -t flink_external_kafka
 
 For example, 
 
 .. code:: 
 
-    avn service integration-create --source-endpoint-id eb870a84-b91c-4fd7-bbbc-3ede5fafb9a2 --dest-service flink-1 -t flink_kafka
+    avn service integration-create 
+        --source-endpoint-id eb870a84-b91c-4fd7-bbbc-3ede5fafb9a2 
+        --dest-service flink-1 
+        -t flink_kafka
 
 where: 
 
@@ -207,17 +214,20 @@ Configure integration using Aiven Console
 
 If you have an external Apache Kafka service already running, you can integrate it with Aiven for Apache Flink using the `Aiven Console <https://console.aiven.io/>`_ by following these steps:
 
-1. In the `Aiven Console <https://console.aiven.io/>`_, :doc:`create a new Aiven for Apache Flink </docs/platform/howto/create_new_service>` service or select an existing service.
-2. Next, configure an external Apache Kafka service integration endpoint:
+1. Log in to `Aiven Console <https://console.aiven.io/>`_ and choose your project. 
+2. From the **Services** page, you can either :doc:`create a new Aiven for Apache Flink </docs/platform/howto/create_new_service>` service or select an existing service.
+3. Next, configure an external Apache Kafka service integration endpoint:
   
-   * From the left side menu, select **Integration Endpoints**. 
-   * Select **External Apache Kafka** from the list, and then select  **Add a new endpoint**. 
+   * Navigate to the Projects screen where all the services are listed. 
+   * From the left sidebar, select **Integration endpoints**. 
+   * Select **External Apache Kafka** from the list, and then select **Add new endpoint**. 
    * Enter an *Endpoint name* and the *Bootstrap servers*. Then, choose a *Security protocol* from the dropdown list and select **Create**.
 
-3. Access the Aiven for Apache Flink service where you plan to integrate the external Apache Kafka endpoint.
-4. If it is the first integration for the selected service, click the **Get Started** button under the **Overview** tab, or use the plus (+) button to add a new integration in the **Data Flow** section.
-5. On the **Data Service integrations** screen, select the checkbox next to Aiven for Apache Kafka, and choose the external Apache Kafka endpoint from the list to integrate.
-6. Click **Integrate**.
+4. Select **Services** from the left sidebar, and access the Aiven for Apache Flink service where you plan to integrate the external Apache Kafka endpoint.
+5. If you're integrating with Aiven for Apache Flink for the first time, on the **Overview** page and select **Get Started**. Alternatively, you can add a new integration in the **Data Flow** section by using the plus (+) button.
+6. On the **Data Service integrations** screen, select the **Create external integration endpoint** tab. 
+7. Select the checkbox next to **Apache Kafka**, and choose the external Apache Kafka endpoint from the list to integrate.
+8. Select **Integrate**.
 
 Once you have completed these steps, the integration will be ready, and you can start creating :doc:`Aiven for Apache Flink applications <..//howto/create-flink-applications>` that use the external Apache Kafka service as either a source or sink.
 

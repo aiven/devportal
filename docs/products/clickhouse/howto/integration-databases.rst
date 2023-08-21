@@ -3,9 +3,9 @@ Manage Aiven for ClickHouse® integration databases
 
 Aiven for ClickHouse supports :doc:`regular integrations </docs/products/clickhouse/howto/list-integrations>` and :doc:`data service integrations </docs/products/clickhouse/howto/data-service-integration>`.
 
-You can create Aiven for ClickHouse® integrations databases in the `Aiven web console <https://console.aiven.io/>`_ either when :ref:`creating a new data service integration <integration-db>` or from the the **Databases & Tables** view of your service.
+You can create Aiven for ClickHouse® integrations databases in the `Aiven web console <https://console.aiven.io/>`_ either when :ref:`creating a new data service integration <integration-db>` or from the the **Databases and tables** view of your service.
 
-This article details how to set up and manage integration databases from the the **Databases & Tables** view of your Aiven for ClickHouse service.
+This article details how to set up and manage integration databases from the the **Databases and tables** view of your Aiven for ClickHouse service.
 
 .. seealso::
 
@@ -30,14 +30,10 @@ Create integration databases
     You can create both PostgrSQL and Apache Kafka integration databases for Aiven for ClickHouse. This instruction uses *PostgreSQL* as an example.
 
 1. Log in to the `Aiven web console <https://console.aiven.io/>`_.
-2. From the **Current services** list, select an Aiven for ClickHouse service you want to add integration databases to.
-3. In your service homepage, navigate to the **Databases & Tables** tab and select **Create database** > **PostgreSQL integration database**.
-
-   .. image:: /images/products/clickhouse/data-integration/create-integration-db.png
-      :width: 700px
-      :alt: Create database
-
-4. In **Create PostgreSQL integration database** wizard, select one of the following options:
+2. In the **Services** page, select an Aiven for ClickHouse service you want to add integration databases to.
+3. In your service's page, select **Databases and tables** from the sidebar.
+4. In the **Databases and tables** view, select **Create database** > **PostgreSQL integration database**.
+5. In **Create PostgreSQL integration database** wizard, select one of the following options:
 
    * To add an integration database to a service that is not yet integrated, go to the **New data service integration** tab.
 
@@ -47,15 +43,7 @@ Create integration databases
         2. Select **Continue**.
         3. In the **Add integration databases** section, enter database names and schema names and select **Integrate & Create** when ready.
 
-        .. image:: /images/products/clickhouse/data-integration/integrate-and-create.png
-           :width: 700px
-           :alt: Enable database
-
-        As a result, you can see the created databases in the **Databases & Tables** tab.
-
-        .. image:: /images/products/clickhouse/data-integration/preview-integration-database.png
-           :width: 700px
-           :alt: Database created
+        You can preview the created databases by selecting **Databases and tables** from the sidebar.
 
    * To add an integration database to an already integrated service, go to the **Existing integration** tab.
 
@@ -65,26 +53,14 @@ Create integration databases
         2. Select **Continue**.
         3. In the **Add integration databases** section, enter database names and schema names and select **Create** when ready.
 
-        .. image:: /images/products/clickhouse/data-integration/new-db-existing-integration.png
-           :width: 700px
-           :alt: Enable database
-
-        As a result, you can see the created databases in the **Databases & Tables** tab.
-
-        .. image:: /images/products/clickhouse/data-integration/db-for-existing-integration.png
-           :width: 700px
-           :alt: Database created
+        You can preview the created databases by selecting **Databases and tables** from the sidebar.
 
 View integration databases
 --------------------------
 
 1. Log in to the `Aiven web console <https://console.aiven.io/>`_.
-2. From the **Current services** list, select an Aiven for ClickHouse service you want to check integration databases for.
-3. In your service homepage, navigate to the **Databases & Tables** tab to discover your integration databases in the **Databases** list.
-
-.. image:: /images/products/clickhouse/data-integration/preview-integration-database.png
-   :width: 700px
-   :alt: Preview integration databases
+2. In the **Services** page, select an Aiven for ClickHouse service you want to check integration databases for.
+3. In your service's page, select **Databases and tables** from the sidebar to discover your integration databases in the **Databases and tables** list.
 
 .. note::
    
@@ -98,23 +74,14 @@ Edit integration databases
    You can only edit Apache Kafka integration databases and tables.
 
 1. Log in to the `Aiven web console <https://console.aiven.io/>`_.
-2. From the **Current services** list, select an Aiven for ClickHouse service you want to edit integration databases for.
-3. In your service homepage, navigate to the **Databases & Tables** tab > the **Databases** list.
-4. From the **Databases** list, select a pencil icon for an Apache Kafka integration database you want to edit.
-
-   .. image:: /images/products/clickhouse/data-integration/integration-db-edit.png
-      :width: 700px
-      :alt: Edit database
-
+2. In the **Services** page, select an Aiven for ClickHouse service you want to edit integration databases for.
+3. In your service's page, select **Databases and tables** from the sidebar to find the **Databases and tables** list.
+4. From the **Databases and tables** list, select a pencil icon for an Apache Kafka integration database you want to edit.
 5. In the **Edit database** wizard, find a table that you want to edit in the **Configured tables** list and expand its details by selecting the angle brackets icon.
 
    .. note::
 
       You can also create a new table for the database you are editing by selecting **Add another table**.
-
-   .. image:: /images/products/clickhouse/data-integration/integration-db-details.png
-      :width: 700px
-      :alt: Edit database details
 
 6. In the table details section, update any of the following fields:
 
@@ -123,10 +90,6 @@ Edit integration databases
    * Topics
    * Data format
    * Table columns
-
-   .. image:: /images/products/clickhouse/data-integration/integration-db-save.png
-      :width: 700px
-      :alt: Save updated database
 
 7. Select **Update table details** > **Save changes**.
 
@@ -138,23 +101,17 @@ Delete integration databases
 ----------------------------
 
 1. Log in to the `Aiven web console <https://console.aiven.io/>`_.
-2. From the **Current services** list, select an Aiven for ClickHouse service you want to delete integration databases for.
-3. In your service homepage, navigate to the **Databases & Tables** tab > the **Databases** list.
-4. From the **Databases** list, select the trash bin icon for the integration database you want to remove.
-
-   .. image:: /images/products/clickhouse/data-integration/delete-integration-database.png
-      :width: 700px
-      :alt: Delete integration database
-
+2. In the **Services** page, select an Aiven for ClickHouse service you want to delete integration databases for.
+3. In your service's page, select **Databases & Tables** from the sidebar to find the **Databases and tables** list.
+4. From the **Databases and tables** list, select the trash bin icon for the integration database you want to remove.
 5. In the **Delete database confirmation** popup, study the impact and select **Confirm** if you accept removing the database along with the tables inside it.
 
 .. topic:: Result
 
-   Your integration database has been removed from the **Databases** list.
+   Your integration database has been removed from the **Databases and tables** list.
 
 Related reading
 ---------------
 
 * :doc:`Manage Aiven for ClickHouse® data service integrations </docs/products/clickhouse/howto/data-service-integration>`
 * :doc:`Integrate your Aiven for ClickHouse® service </docs/products/clickhouse/howto/list-integrations>`
-

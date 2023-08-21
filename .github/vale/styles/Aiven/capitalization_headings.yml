@@ -15,6 +15,7 @@ exceptions:
   - Aiven Console
   - Apache
   - AWS Transit Gateway
+  - AWS Marketplace
   - Auth0
   - Azure
   - Azure Marketplace
@@ -30,6 +31,7 @@ exceptions:
   - Confluent Avro
   - Cookbook
   - Couchbase
+  - cURL
   - Dashboards
   - Datadog
   - Debezium
@@ -40,6 +42,7 @@ exceptions:
   - Elasticsearch
   - European Union
   - Flink
+  - FusionAuth
   - GiB
   - GitHub
   - Go
@@ -83,6 +86,7 @@ exceptions:
   - MySQL
   - New Relic
   - NodeJS
+  - OAuth
   - Okta
   - OneLogin
   - OpenSearch
@@ -93,6 +97,7 @@ exceptions:
   - Pagila
   - pgAdmin
   - PgBouncer
+  - pgvector
   - PostgreSQL
   - Postman
   - Premium

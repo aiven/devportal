@@ -7,26 +7,17 @@ console with your email address and password, you will see the
 **Services** view, which shows you all the services in the currently
 selected project.
 
-Create a new Aiven for Apache Kafka® service:
+Aiven for Apache Kafka® is a managed service offered by Aiven. The first step in using Aiven for Apache Kafka® is to create a service. You can do so using the `Aiven Console <https://console.aiven.io/>`_ or the :doc:`Aiven CLI </docs/tools/cli>`.
 
-1. Select **Kafka** as the service type. You can also select the version that you want to use.
+Create an Aiven for Apache Kafka® service
+--------------------------------------------
 
-2. Select the cloud provider and region that you want to run your service on.
+1. Log in to the `Aiven Console <https://console.aiven.io/>`_.
 
-.. note:: The pricing for the same service may vary between
-    different providers and regions. The service summary on the
-    right side of the console shows you the pricing for your
-    selected options.
+2. Follow :doc:`these instructions </docs/platform/howto/create_new_service>` to create a new Aiven for Apache Kafka service.
 
-3. Select a service plan. This defines how many servers and what kind of memory, CPU, and disk resources are allocated to your service.
+   Once the service is ready, the status changes to *Running*. Depending on your selected cloud provider and region, this generally takes a couple of minutes.
 
-4. Enter a name for your service. A random name is provided by default, but you can enter a more recognizable name to distinguish it from other services.
-
-5. Click **Create Service** under the summary on the right side of the console. This brings you back to the **Services** view. Your new service is listed with a status indicator to show that it is being created.
-
-
-While your service is being built, you can visit the **Service overview** page and
-see the status change from *REBUILDING* to *RUNNING*.
 
 Next steps
 ----------

@@ -1,9 +1,9 @@
+..
+    ``additional_backup_regions``
+    -----------------------------
+    *array*
 
-``additional_backup_regions``
------------------------------
-*array*
-
-**Additional Cloud Regions for Backup Replication** 
+    **Additional Cloud Regions for Backup Replication** 
 
 
 
@@ -515,7 +515,7 @@
 ~~~~~~~~~~~~~~~~~~~~~~
 *integer*
 
-**The timeout used to detect failures when using Kafka’s group management facilities** The timeout in milliseconds used to detect failures when using Kafka’s group management facilities (defaults to 10000).
+**The timeout used to detect failures when using Kafka’s group management facilities** The timeout in milliseconds used to detect failures when using Kafka’s group management facilities (defaults to 45000).
 
 
 
@@ -574,6 +574,12 @@
 *integer*
 
 **producer.linger.ms** Wait for up to the given delay to allow batching records together
+
+``producer_max_request_size``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*integer*
+
+**producer.max.request.size** The maximum size of a request in bytes. Note that Kafka broker can also cap the record batch size.
 
 ``consumer_enable_auto_commit``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

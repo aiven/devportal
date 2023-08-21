@@ -1,15 +1,15 @@
 Set Apache ZooKeeper™ configuration
 ===================================
 
-Apache ZooKeeper™ is used both by Apache Kafka® and by Aiven management software to coordinate work within the cluster. However, to assure the stability of the cluster the access to ZooKeeper is by default restricted.
-
+Apache ZooKeeper™ is a crucial component used by Apache Kafka® and Aiven management software to facilitate efficient cluster operations. By default, access to ZooKeeper is restricted to ensure cluster stability. However, it is possible to modify the ZooKeeper configuration properties as needed. 
 
 In order to change ZooKeeper configuration properties follow these steps:
 
-#. Log in to the Aiven web console and select your **Aiven for Apache Kafka** service.
-#. On the *Overview* page, scroll down to the *Advanced configuration* section and click **Add configuration option**.
-#. Select the setting you want to change and modify the value.
-#. Click **Save advanced configuration**.
+#. Log in to `Aiven Console <https://console.aiven.io/>`_ and select your service.
+#. On the **Overview** page, scroll down to the **Advanced configuration** section. 
+#. Select **Change** to add configuration option. 
+#. On the **Edit advanced configuration** screen, select **+ Add configuration option** to add new configurations or modify the values of existing configurations.
+#. Select  **Save advanced configuration**.
 
 The service configuration will be then updated.
 

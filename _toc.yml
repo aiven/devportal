@@ -3,183 +3,219 @@ defaults:
   maxdepth: 1
 
 entries:
-  # -------- PLATFORM-TOPICS --------
-  - file: docs/platform
-    title: Platform
+  # -------- GET STARTED --------
+  - file: docs/get-started
+    title: Get started
     entries:
-    - file: docs/platform/concepts
-      title: Concepts
+    - file: docs/platform/concepts/free-plan
+    - file: docs/platform/concepts/free-trial
+    - file: docs/marketplace-setup
       entries:
-      - file: docs/platform/concepts/aiven-node-firewall-configuration
+      - file: docs/platform/howto/billing-aws-marketplace-subscription
+        title: Set up AWS Marketplace subscriptions
+      - file: docs/platform/howto/billing-azure-marketplace-subscription
+        title: Set up Azure Marketplace subscriptions
+      - file: docs/platform/howto/billing-google-cloud-platform-marketplace-subscription
+        title: Set up Google Cloud Marketplace subscriptions
+    - file: docs/tools/aiven-console
+    - file: docs/platform/howto/feature-preview
+    - file: docs/platform
+      entries:
+      - file: docs/platform/concepts
+      - file: docs/platform/howto
+      - file: docs/platform/reference
+
+  # -------- ORGANIZATIONS, UNITS, PROJECTS --------
+  - file: docs/platform/howto/list-account
+    entries: 
+    - file: docs/platform/concepts/projects_accounts_access
+    - file: docs/tools/aiven-console/howto/create-accounts
+    - file: docs/platform/howto/manage-project
+    - file: docs/platform/reference/project-member-privileges
+    - file: docs/platform/howto/manage-unassigned-projects
+
+  # -------- BILLING --------
+  - file: docs/platform/concepts/list-billing
+    title: Billing and payments
+    entries:
+    - file: docs/platform/concepts/hourly-billing-model
+    - file: docs/platform/concepts/corporate-billing
+    - file: docs/platform/concepts/tax-information
+    - file: docs/platform/howto/update-tax-status
+    - file: docs/platform/howto/list-billing
+      title: Payment methods
+      entries:
+      - file: docs/platform/howto/manage-payment-card
+      - file: docs/platform/howto/list-marketplace-payments
+        title: Marketplace subscriptions
+        entries:
+        - file: docs/platform/howto/move-to-aws-marketplace-billing
+          title: Move to AWS Marketplace
+        - file: docs/platform/howto/move-to-azure-marketplace-billing
+          title: Move to Azure Marketplace
+        - file: docs/platform/howto/move-to-gcp-marketplace-billing
+          title: Move to Google Cloud Marketplace
+    - file: docs/platform/howto/list-billing-groups
+      title: Billing groups
+      entries:
+      - file: docs/platform/concepts/billing-groups
+        title: Billing groups overview
+      - file: docs/platform/howto/create-billing-groups
+      - file: docs/platform/howto/use-billing-groups
+      - file: docs/platform/howto/billing-assign-projects
+      - file: docs/platform/howto/change-billing-contact
+    - file: docs/platform/howto/payment-issues-plan-upgrades
+      title: Payment problems when upgrading
+    - file: docs/platform/howto/custom-plans
+
+  # -------- USERS AND ACCESS --------
+  - file: docs/platform/howto/list-user
+    title: User and access management
+    entries:
+    - file: docs/platform/howto/manage-org-users
+    - file: docs/platform/howto/list-user-profile
+      entries:
+      - file: docs/platform/howto/edit-user-profile
+      - file: docs/platform/howto/change-your-email-address
+    - file: docs/platform/howto/list-authentication
+      entries:
+      - file: docs/platform/howto/add-authentication-method
+      - file: docs/platform/reference/password-policy
+      - file: docs/platform/howto/user-2fa
       - file: docs/platform/concepts/authentication-tokens
-      - file: docs/platform/concepts/availability-zones
-      - file: docs/platform/concepts/free-plan
-      - file: docs/platform/concepts/list-billing
-        title: Billing
-        entries:
-          - file: docs/platform/concepts/hourly-billing-model
-          - file: docs/platform/concepts/tax-information
-          - file: docs/platform/concepts/billing-groups
-          - file: docs/platform/concepts/corporate-billing
-      - file: docs/platform/concepts/beta_services
-      - file: docs/platform/concepts/cloud-security
-      - file: docs/platform/concepts/logs-metrics-alerts
-      - file: docs/platform/concepts/projects_accounts_access
-      - file: docs/platform/concepts/service-forking
-      - file: docs/platform/concepts/service_backups
-      - file: docs/platform/concepts/service-power-cycle
-      - file: docs/platform/concepts/service-memory-limits
-      - file: docs/platform/concepts/out-of-memory-conditions
-      - file: docs/platform/concepts/static-ips
-      - file: docs/platform/concepts/tls-ssl-certificates
-      - file: docs/platform/concepts/byoc
-      - file: docs/platform/concepts/dynamic-disk-sizing
-      - file: docs/platform/concepts/enhanced-compliance-env
-      - file: docs/platform/concepts/disaster-recovery-test-scenarios
-      - file: docs/platform/concepts/choosing-timeseries-database
-      - file: docs/platform/concepts/service-level-agreement
-      - file: docs/platform/concepts/maintenance-window
-      - file: docs/platform/concepts/service-resources
-      - file: docs/platform/concepts/service-integration
-    - file: docs/platform/howto
-      title: HowTo
-      entries:
-      - file: docs/platform/howto/list-user
-        title: User and authentication management
-        entries:
-          - file: docs/platform/howto/add-authentication-method
-          - file: docs/platform/howto/change-your-email-address
-          - file: docs/platform/howto/create_authentication_token
-          - file: docs/platform/howto/create_new_service_user
-          - file: docs/tools/aiven-console/howto/create-manage-teams
-          - file: docs/platform/howto/user-2fa
-          - file: docs/platform/howto/technical-emails
-          - file: docs/platform/howto/reactivate-suspended-project                    
-      - file: docs/platform/howto/list-account
-        title: Organization and project management
-        entries: 
-          - file: docs/tools/aiven-console/howto/create-accounts
-          - file: docs/platform/howto/manage-project
-          - file: docs/platform/howto/manage-unassigned-projects
-      - file: docs/platform/howto/list-service
-        title: Service management
-        entries:
-          - file: docs/platform/howto/create_new_service
-          - file: docs/platform/howto/console-fork-service.rst
-          - file: docs/platform/howto/pause-from-cli.rst
-          - file: docs/platform/howto/rename-a-service.rst
-          - file: docs/platform/howto/scale-services
-          - file: docs/platform/howto/migrate-services-cloud-region
-          - file: docs/platform/howto/migrate-services-vpc
-          - file: docs/platform/howto/recover-a-deleted-service
-          - file: docs/platform/howto/cleanup-powered-off-services
-          - file: docs/platform/howto/add-storage-space
-          - file: docs/platform/howto/tag-resources
-          - file: docs/platform/howto/search-services
-            title: Search for services
-          - file: docs/platform/howto/access-service-logs
-          - file: docs/platform/howto/service-metrics
-          - file: docs/platform/howto/prepare-for-high-load
-          - file: docs/platform/howto/create-service-integration
-      - file: docs/platform/howto/list-network
-        title: Network management
-        entries:
-          - file: docs/platform/howto/download-ca-cert
-          - file: docs/platform/howto/restrict-access
-          - file: docs/platform/howto/public-access-in-vpc.rst
-          - file: docs/platform/howto/static-ip-addresses.rst
-          - file: docs/platform/howto/private-ip-resolution.rst
-          - file: docs/platform/howto/attach-vpc-aws-tgw
-          - file: docs/platform/howto/manage-vpc-peering
-          - file: docs/platform/howto/vpc-peering-gcp
-          - file: docs/platform/howto/vpc-peering-aws
-          - file: docs/platform/howto/vnet-peering-azure
-          - file: docs/platform/howto/use-aws-privatelinks.rst
-          - file: docs/platform/howto/use-azure-privatelink
-          - file: docs/platform/howto/use-google-private-service-connect
-      - file: docs/platform/howto/list-monitoring
-        title: Monitoring management
-        entries:
-          - file: docs/platform/howto/monitoring-services
-          - file: docs/platform/howto/integrations/prometheus-metrics
-          - file: docs/platform/howto/integrations/datadog-increase-metrics-limit
-          - file: docs/platform/howto/integrations/access-jmx-metrics-jolokia
-      - file: docs/platform/howto/list-billing
-        title: Billing management
-        entries:
-          - file: docs/platform/howto/manage-payment-card
-          - file: docs/platform/howto/create-billing-groups
-          - file: docs/platform/howto/use-billing-groups
-          - file: docs/platform/howto/change-billing-contact
-          - file: docs/platform/howto/update-tax-status
-          - file: docs/platform/howto/billing-assign-projects
-          - file: docs/platform/howto/payment-issues-plan-upgrades
-          - file: docs/platform/howto/custom-plans
-          - file: docs/platform/howto/billing-google-cloud-platform-marketplace-subscription
-            title: Set up Google Cloud Marketplace
-          - file: docs/platform/howto/move-to-gcp-marketplace-billing
-            title: Move to Google Cloud Marketplace
-          - file: docs/platform/howto/billing-azure-marketplace-subscription
-            title: Set up Azure Marketplace
+      - file: docs/platform/howto/create_authentication_token
       - file: docs/platform/howto/list-saml
-        title: SAML Authentication
+        title: SAML authentication
         entries:
-          - file: docs/platform/howto/saml/saml-authentication
-          - file: docs/platform/howto/saml/setup-saml-onelogin
-            title: Setting up SAML with OneLogin
-          - file: docs/platform/howto/saml/setup-saml-azure
-            title: Setting up SAML with Azure
-          - file: docs/platform/howto/saml/setup-saml-okta
-            title: Setting up SAML with Okta
-          - file: docs/platform/howto/saml/setup-saml-auth0
-            title: Setting up SAML with Auth0
-          - file: docs/platform/howto/saml/setup-saml-jumpcloud
-            title: Setting up SAML with JumpCloud
-      - file: docs/platform/howto/list-support
-        title: Support
-        entries:
-          - file: docs/platform/howto/project-support-center  
-          - file: docs/platform/howto/change-support-tier
-            title: Upgrade your support tier
-    - file: docs/platform/reference
-      title: Reference
-      entries:
-        - glob: docs/platform/reference/*
+        - file: docs/platform/howto/saml/saml-authentication
+        - file: docs/platform/howto/saml/setup-saml-auth0
+        - file: docs/platform/howto/saml/setup-saml-azure
+        - file: docs/platform/howto/saml/setup-saml-fusionauth
+        - file: docs/platform/howto/saml/setup-saml-jumpcloud
+        - file: docs/platform/howto/saml/setup-saml-okta
+        - file: docs/platform/howto/saml/setup-saml-onelogin
+        - file: docs/platform/howto/saml/setup-saml-google
+    - file: docs/platform/howto/list-groups
+      entries: 
+      - file: docs/platform/howto/manage-groups
+        title: Create and manage groups
+      - file: docs/platform/howto/add-groups-projects
+      - file: docs/tools/aiven-console/howto/create-manage-teams
+    - file: docs/platform/howto/technical-emails
+    - file: docs/platform/howto/reactivate-suspended-project
 
-
-  # --------- GLOBAL -----------
-  - file: docs/integrations
-    title: Integrations
+  # -------- SERVICE MANAGEMENT --------
+  - file: docs/platform/howto/list-service
+    title: Service management
     entries:
-    - file: docs/integrations/datadog
-      title: Datadog
-      entries:
-        - file: docs/integrations/datadog/datadog-metrics
-        - file: docs/integrations/datadog/datadog-logs
+    - file: docs/platform/concepts/choosing-timeseries-database
+    - file: docs/platform/howto/create_new_service
+    - file: docs/platform/howto/rename-a-service.rst
+    - file: docs/platform/howto/tag-resources
+    - file: docs/platform/howto/search-services
+      title: Search for services
+    - file: docs/platform/howto/recover-a-deleted-service
+    - file: docs/platform/howto/create_new_service_user
+    - file: docs/platform/concepts/service-forking
+    - file: docs/platform/howto/console-fork-service.rst
+    - file: docs/platform/concepts/service_backups
+    - file: docs/platform/concepts/service-power-cycle
+    - file: docs/platform/howto/pause-from-cli.rst
+    - file: docs/platform/concepts/service-resources
+    - file: docs/platform/concepts/service-memory-limits
+    - file: docs/platform/concepts/out-of-memory-conditions
+    - file: docs/platform/howto/prepare-for-high-load
+    - file: docs/platform/howto/scale-services
+    - file: docs/platform/concepts/dynamic-disk-sizing
+    - file: docs/platform/howto/cleanup-powered-off-services
+    - file: docs/platform/howto/add-storage-space
+    - file: docs/platform/howto/access-service-logs
+    - file: docs/platform/howto/service-metrics
+    - file: docs/platform/howto/migrate-services-cloud-region
+    - file: docs/platform/howto/migrate-services-vpc
+    - file: docs/platform/reference/eol-for-major-versions
+    - file: docs/platform/concepts/maintenance-window
+
+  # -------- NETWORKING AND SECURITY --------
+  - file: docs/platform/howto/list-network
+    title: Networking and security
+    entries:
+    - file: docs/platform/reference/list_of_clouds
+    - file: docs/platform/concepts/availability-zones
+    - file: docs/platform/concepts/byoc
+    - file: docs/platform/concepts/enhanced-compliance-env
+    - file: docs/platform/concepts/aiven-node-firewall-configuration
+    - file: docs/platform/concepts/cloud-security
+    - file: docs/platform/concepts/disaster-recovery-test-scenarios
+    - file: docs/platform/concepts/tls-ssl-certificates
+    - file: docs/platform/howto/download-ca-cert
+    - file: docs/platform/howto/restrict-access
+    - file: docs/platform/howto/public-access-in-vpc.rst
+    - file: docs/platform/concepts/static-ips
+    - file: docs/platform/reference/service-ip-address
+    - file: docs/platform/howto/static-ip-addresses.rst
+    - file: docs/platform/howto/private-ip-resolution.rst
+    - file: docs/platform/howto/attach-vpc-aws-tgw
+    - file: docs/platform/howto/manage-vpc-peering
+    - file: docs/platform/howto/vpc-peering-gcp
+    - file: docs/platform/howto/vpc-peering-aws
+    - file: docs/platform/howto/vnet-peering-azure
+    - file: docs/platform/howto/use-aws-privatelinks.rst
+    - file: docs/platform/howto/use-azure-privatelink
+    - file: docs/platform/howto/use-google-private-service-connect
+
+  # -------- MONITORING AND LOGS --------
+  - file: docs/platform/howto/list-monitoring
+    entries:
+    - file: docs/platform/howto/monitoring-services
+    - file: docs/platform/concepts/logs-metrics-alerts
     - file: docs/integrations/cloudwatch
       title: Amazon CloudWatch 
       entries:
         - file: docs/integrations/cloudwatch/cloudwatch-metrics
-          title: CloudWatch Metrics
+          title: CloudWatch metrics
         - file: docs/integrations/cloudwatch/list-cloudwatch-logs
           title: CloudWatch Logs
           entries:
             - file: docs/integrations/cloudwatch/cloudwatch-logs-console
             - file: docs/integrations/cloudwatch/cloudwatch-logs-cli
+    - file: docs/integrations/datadog
+      title: Datadog
+      entries:
+      - file: docs/integrations/datadog/datadog-metrics
+      - file: docs/platform/howto/integrations/datadog-increase-metrics-limit
+      - file: docs/integrations/datadog/datadog-logs
+      - file: docs/integrations/datadog/add-custom-tags-to-datadog
+    - file: docs/integrations/send-logs-to-elasticsearch
+      title: Elasticsearch logs
     - file: docs/integrations/cloudlogging
       title: Google Cloud Logging
+    - file: docs/integrations/google-bigquery
+      title: Google BigQuery
     - file: docs/integrations/rsyslog
       title: RSyslog
       entries:
-        - file: docs/integrations/rsyslog/logtail
-          title: Logtail
-        - file: docs/integrations/rsyslog/loggly
-          title: Loggly
-    - file: docs/integrations/send-logs-to-elasticsearch
-    - file: docs/integrations/prometheus-system-metrics
+      - file: docs/integrations/rsyslog/logtail
+        title: Logtail
+      - file: docs/integrations/rsyslog/loggly
+        title: Loggly
+    - file: docs/platform/howto/integrations/access-jmx-metrics-jolokia
+      title: Jolokia metrics
+    - file: docs/platform/howto/integrations/prometheus-metrics
+      title: Prometheus metrics
+      entries:
+      - file: docs/integrations/prometheus-system-metrics
+
+  # --------- INTEGRATIONS -----------
+  - file: docs/integrations
+    title: Integrations
+    entries:
+    - file: docs/platform/concepts/service-integration
+    - file: docs/platform/howto/create-service-integration
+  
+    # -------- TOOLS --------
   - file: docs/tools
     entries:
-      - file: docs/tools/aiven-console
       - file: docs/tools/cli
         entries:
         - file: docs/tools/cli/account
@@ -276,7 +312,7 @@ entries:
       - file: docs/tools/kubernetes
         title: Aiven Operator for Kubernetes
 
-  # -------- PRODUCT-SPECIFIC --------
+  # -------- KAFKA --------
   - file: docs/products/kafka
     title: Apache Kafka
     entries:
@@ -298,6 +334,9 @@ entries:
           - file: docs/products/kafka/concepts/auth-types
           - file: docs/products/kafka/concepts/non-leader-for-partition
           - file: docs/products/kafka/concepts/configuration-backup
+          - file: docs/products/kafka/concepts/monitor-consumer-group
+          - file: docs/products/kafka/concepts/kafka-quotas
+            title: Quotas
       - file: docs/products/kafka/howto
         title: HowTo
         entries:
@@ -349,6 +388,9 @@ entries:
               - file: docs/products/kafka/howto/prevent-full-disks
               - file: docs/products/kafka/howto/use-zookeeper
               - file: docs/products/kafka/howto/avoid-out-of-memory-error
+              - file: docs/products/kafka/howto/optimizing-resource-usage
+                title: Optimizing resource usage
+              - file: docs/products/kafka/howto/manage-quotas
 
           - file: docs/products/kafka/howto/list-integration
             title: Integrations
@@ -534,6 +576,7 @@ entries:
             - file: docs/products/kafka/karapace/howto/manage-schema-registry-authorization
             - file: docs/products/kafka/karapace/howto/manage-kafka-rest-proxy-authorization
 
+  # -------- FLINK --------
   - file: docs/products/flink
     title: Apache Flink
     entries:
@@ -566,7 +609,7 @@ entries:
           - file: docs/products/flink/concepts/watermarks
           - file: docs/products/flink/concepts/windows
           - file: docs/products/flink/concepts/kafka-connectors
-            title: Stardand and upsert connectors
+            title: Standard and upsert connectors
           - file: docs/products/flink/concepts/kafka-connector-requirements
       - file: docs/products/flink/howto
         title: HowTo
@@ -579,7 +622,9 @@ entries:
               - file: docs/products/flink/howto/create-integration
                 title: Data service integrations
               - file: docs/products/flink/howto/ext-kafka-flink-integration
-                title: Connect to Apache Kafka
+                title: Integrate with Apache Kafka
+              - file: docs/products/flink/howto/connect-bigquery
+                title: Integrate with Google BigQuery
           - file: docs/products/flink/howto/list-flink-applications
             title: Aiven for Apache Flink applications
             entries:
@@ -620,6 +665,7 @@ entries:
           - file: docs/products/flink/reference/advanced-params
             title: Advanced parameters
 
+  # -------- CASSANDRA --------
   - file: docs/products/cassandra
     title: Apache Cassandra
     entries:
@@ -672,6 +718,7 @@ entries:
           - file: docs/products/cassandra/reference/advanced-params
             title: Advanced parameters
 
+  # -------- CLICKHOUSE --------
   - file: docs/products/clickhouse
     title: ClickHouse
     entries:
@@ -772,7 +819,8 @@ entries:
             title: Formats for ClickHouse-Kafka data exchange
           - file: docs/products/clickhouse/reference/advanced-params
             title: Advanced parameters
-
+  
+  # -------- GRAFANA --------
   - file: docs/products/grafana
     title: Grafana
     entries:
@@ -794,6 +842,8 @@ entries:
             - file: docs/products/grafana/howto/log-in
               title: Log in to Aiven for Grafana
             - file: docs/products/grafana/howto/rotating-grafana-service-credentials
+            - file: docs/products/grafana/howto/oauth-configuration
+              title: OAuth configuration
           - file: docs/products/grafana/howto/list-manage-dashboards
             title: Manage dashboards
             entries:
@@ -804,6 +854,8 @@ entries:
             title: Alerts and notifcations
           - file: docs/products/grafana/howto/list-manage-cluster
             title: Manage cluster
+          - file: docs/products/grafana/howto/pitr-process-for-grafana
+            title: Point-in-time recovery process 
       - file: docs/products/grafana/reference
         title: Reference
         entries:
@@ -812,6 +864,7 @@ entries:
           - file: docs/products/grafana/reference/plugins
             title: Plugins
 
+  # -------- INFLUXDB --------
   - file: docs/products/influxdb
     title: InfluxDB 
     entries: 
@@ -830,7 +883,8 @@ entries:
         title: Reference
         entries:
           - glob: docs/products/influxdb/reference/*
-
+  
+  # -------- M3DB --------
   - file: docs/products/m3db
     title: M3DB
     entries:
@@ -853,7 +907,8 @@ entries:
             title: Advanced parameters
           - file: docs/products/m3db/reference/advanced-params-m3aggregator
             title: Advanced parameters M3Aggregator
-
+  
+  # -------- MYSQL --------
   - file: docs/products/mysql
     title: MySQL
     entries:
@@ -926,6 +981,7 @@ entries:
           - file: docs/products/mysql/reference/resource-capability
             title: Resource capability per plan
 
+  # -------- OPENSEARCH --------
   - file: docs/products/opensearch
     title: OpenSearch
     entries:
@@ -953,6 +1009,7 @@ entries:
             - file: docs/products/opensearch/concepts/opensearch-security-considerations
               title: Key considerations
           - file: docs/products/opensearch/concepts/backups
+            title: OpenSearch backups
           - file: docs/products/opensearch/concepts/indices
           - file: docs/products/opensearch/concepts/aggregations
           - file: docs/products/opensearch/concepts/high-availability-for-opensearch
@@ -1011,6 +1068,8 @@ entries:
             - file: docs/products/opensearch/howto/set_index_retention_patterns
             - file: docs/products/opensearch/howto/opensearch-alerting-api
             - file: docs/products/opensearch/howto/handle-low-disk-space
+            - file: docs/products/opensearch/howto/resolve-shards-too-large
+              title: Manage large shards
             - file: docs/products/opensearch/howto/setup-cross-cluster-replication-opensearch
               title: Cross-cluster replication
           - file: docs/products/opensearch/howto/list-integrations
@@ -1042,7 +1101,8 @@ entries:
           - file: docs/products/opensearch/reference/index-replication
           - file: docs/products/opensearch/reference/restapi-limited-access
           - file: docs/products/opensearch/reference/low-space-watermarks
-
+  
+  # -------- POSTGRESQL --------
   - file: docs/products/postgresql
     title: PostgreSQL
     entries:
@@ -1071,6 +1131,8 @@ entries:
             title: TimescaleDB
           - file: docs/products/postgresql/concepts/upgrade-failover
             title: Upgrade and failover procedures
+          - file: docs/products/postgresql/concepts/pgvector
+            title: AI-powered search with pgvector
       - file: docs/products/postgresql/howto
         title: HowTo
         entries:
@@ -1105,12 +1167,16 @@ entries:
               - file: docs/products/postgresql/howto/pgbouncer-stats
               - file: docs/products/postgresql/howto/use-dblink-extension
               - file: docs/products/postgresql/howto/use-pg-repack-extension
+              - file: docs/products/postgresql/howto/use-pg-cron-extension
               - file: docs/products/postgresql/howto/enable-jit
               - file: docs/products/postgresql/howto/identify-pg-slow-queries
               - file: docs/products/postgresql/howto/pg-long-running-queries
               - file: docs/products/postgresql/howto/optimize-pg-slow-queries
               - file: docs/products/postgresql/howto/check-avoid-transaction-id-wraparound
               - file: docs/products/postgresql/howto/prevent-full-disk
+              - file: docs/products/postgresql/howto/use-pgvector
+                title: Enable and use pgvector
+              - file: docs/products/postgresql/howto/pg-object-size
           - file: docs/products/postgresql/howto/list-replication-migration
             title: Migrate
             entries:
@@ -1166,7 +1232,8 @@ entries:
             title: Supported log formats
           - file: docs/products/postgresql/reference/terminology
             title: Terminology
-
+  
+  # -------- REDIS --------
   - file: docs/products/redis
     title: Redis
     entries:
@@ -1198,7 +1265,11 @@ entries:
           - file: docs/products/redis/howto/list-dba-tasks
             entries:
               - file: docs/products/redis/howto/configure-acl-permissions
-              - file: docs/products/redis/howto/migrate-aiven-redis
+              - file: docs/products/redis/howto/migrate-redis-db
+                title: Data migration
+                entries:
+                - file: docs/products/redis/howto/migrate-aiven-redis
+                - file: docs/products/redis/howto/migrate-redis-aiven-via-console
           - file: docs/products/redis/howto/estimate-max-number-of-connections
           - file: docs/products/redis/howto/manage-ssl-connectivity
           - file: docs/products/redis/howto/warning-overcommit_memory
@@ -1208,8 +1279,18 @@ entries:
         entries:
           - file: docs/products/redis/reference/advanced-params
             title: Advanced parameters
+  
+  # -------- SUPPORT --------
+  - file: docs/platform/howto/list-support
+    title: Support
+    entries:
+    - file: docs/platform/howto/project-support-center  
+    - file: docs/platform/howto/change-support-tier
+      title: Upgrade your support tier
+    - file: docs/platform/concepts/service-level-agreement
+    - file: docs/platform/concepts/beta_services
 
-  # -------- AUXILIARY
+  # -------- COMMUNITY --------
   - file: docs/community
     title: Community
     entries:
@@ -1221,7 +1302,8 @@ entries:
       title: Catch the Bus - Aiven challenge with ClickHouse
     - file: docs/community/challenge/the-rolling-challenge
       title: Rolling - Aiven challenge with Apache Kafka and Apache Flink
-  
+
+  # -------- TUTORIALS --------
   - file: docs/tutorials
     title: Tutorials
     entries:

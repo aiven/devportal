@@ -33,9 +33,6 @@ Aiven Docs uses the `Diátaxis Framework <https://diataxis.fr/>`_ as the basis o
 * **Reference** starts with an overview of what can be found in this section, and then usually a list of some kind. We use this type of article for lists of extensions, configuration parameters, and that sort of bookmark-it-for-reference type of content.
     - Example: https://docs.aiven.io/docs/products/kafka/reference/advanced-params.html
 
-* **Tutorial** describes a complete project for a developer to build themselves. It usually covers more than one product and/or 3rd party tool, presents a scenario, and enables a developer to create a working system by the end of the tutorial.
-    - Template: `Tutorial template`_
-
 Pull request process
 --------------------
 
@@ -67,29 +64,18 @@ The instructions for setting up local development are in the ``README``.
 Style guide
 -----------
 
-To keep all the content consistent and easy to follow for our audience, use `Google developer documentation style guide <https://developers.google.com/style>`_ for Aiven docs. On top of that, this section provides you with a few Aiven-specific guidelines you're requested to follow.
+To keep all the content consistent and easy to follow for our audience, use `Google developer documentation style guide <https://developers.google.com/style>`_ for Aiven docs. This sections has exceptions and Aiven-specific guidelines.
 
 .. tip::
 
     Remember we review your pull request against these guidelines, so for fewer rounds of revisions, follow this advice!
 
-Where possible, these rules are checked automatically using Vale.  For more information on how this is set up, see the `Vale readme file <.github/vale/README.rst>`_.
+Where possible, these rules are checked automatically using Vale. For more information on how this is set up, see the `Vale readme file <.github/vale/README.rst>`_.
 
 Use a specific template
 '''''''''''''''''''''''
 
-See the `Content types`_ section and work out whether you are writing a HowTo, Concept or Reference document. You might be writing more than one to cover the feature you have in mind! Tutorials are also welcome, but always discuss those with us first.
-
-Headings should be in sentence case
-'''''''''''''''''''''''''''''''''''
-
-Rather than using Capital Letters for Almost Every Word, titles are written like sentences.
-
-Example: Get partition details of an Apache Kafka topic
-
- - only the first letter, and the proper noun for the product name, are capitalized
-
-You may get errors from the automated checks when using proper nouns. In these cases, you might need to add the words as an exception or add them to the dictionary file. For information on how to do this, see the `Vale readme file <.github/vale/README.rst>`_.
+See the `Content types`_ section and work out whether you are writing a HowTo, Concept or Reference document. You might be writing more than one to cover the feature you have in mind! If you want to create a tutorial, please discuss that with us first.
 
 Add hyperlinks
 ''''''''''''''
@@ -100,16 +86,10 @@ If we have other resources that might help a developer, point them out! Whether 
 
     All links should have text that makes it clear where the link goes to. Never use "here" as link text, instead try "the Grafana documentation for the sparkles plugin" or something else descriptive.
 
-
-Use active wording
-''''''''''''''''''
-
-This section was not titled "Using active wording", use the form of language that sounds like a direct order. It's not intended to be rude, but to be very clear about what is needed. Think of commanding Alexa/Siri/[insert voice interface bot here].
-
-Example: Install the excellent tool
-
 Formatting guidelines
 '''''''''''''''''''''
+
+Advice on marking up elements correctly can be found in the `README <README.rst>`_. Other useful tips and tricks for working with Sphinx and reStructuredText can be found in the :doc:`documentation section <docs/documentation/index>`.
 
 Always use ``literal`` formatting for commands, function names, and config options. One limitation is that this can't be used inside links; please reword to work arond this.
 
@@ -120,27 +100,6 @@ Use **bold text** for interactive UI elements, such as buttons. Use *italic text
 On the *Overview* page, scroll down to the *Advanced configuration* section and click **Add configuration option**.
 
 Use admonitions "note", "tip", and "warning". Avoid the rest of the available admonition types (especially "danger" which traditionally would imply danger to life, which is not a usual feature of a data platform).
-
-Positive and respectful language
-''''''''''''''''''''''''''''''''
-
-This is of course, entirely subjective! Some tips that we often give at review time:
-
-- explain (especially in titles) what the user *can* do "install ``aiven-extras``" rather than what they can't do "you can't have root access".
-- don't use "just", "simply" or other minimising words, this can easily discourage a user who is already struggling.
-- keep empty phrases to a minimum, such as "at the end of the day", if the sentence would make sense without it then we don't need it.
-
-Keep the user in mind, and you won't go far wrong.
-
-Titles
-''''''
-
-* Howto articles start with a verb: use present, imperative tense. Example: Claim public schema ownership
-
-* Concept articles often use "About" in their titles. Example: About PostgreSQL disk usage
-
-Use subtitles to break up the article if it's more than a couple of paragraphs, these headings are used in the right hand navigation and really help users to find their way around a longer document.
-
 
 Screenshots
 '''''''''''
@@ -169,12 +128,10 @@ The following items are only allowed in strict moderation:
 * exclamation marks
 * questions, especially in headlines
 
-Formatting tips
-'''''''''''''''
+Troubleshooting linting errors 
+'''''''''''''''''''''''''''''''
 
-Advice on marking up elements correctly can be found in the `README <README.rst>`_.
-
-Other useful tips and tricks for working with Sphinx and reStructuredText can be found in the :doc:`documentation section <docs/documentation/index>`.
+You may get errors from the automated checks when using proper nouns. In these cases, you might need to add the words as an exception or add them to the dictionary file. For information on how to do this, see the `Vale readme file <.github/vale/README.rst>`_.
 
 
 Further reading
@@ -247,43 +204,23 @@ Title template: *About [subject]* (if this is a background information for a tas
     (optional) Share some links related to the topic. This could be more detailed upstream documentation, a task article that uses this knowledge. More links are good!
 
 
-Tutorial template
-'''''''''''''''''
+Limited availability note template
+'''''''''''''''''''''''''''''''''''
 
-Title template: *[Verb] a [noun] with [insert list of technologies here]* , e.g. *Fit an OpenSearch box to your Flask app* or *Build a temperature monitoring dashboard with InfluxDB and Grafana*
+For features that are in the limited availability stage, add the following admonition directly undert the article title:
 
 ::
 
-   Tutorial title 
-   ###############
+    .. important:: 
+        {feature name} is a :doc:`limited availability feature </docs/platform/concepts/beta_services>`. If you're interested in trying out this feature, contact the sales team at sales@Aiven.io.
 
-   Explain what the user will be building in this tutorial. Include the problem we are solving and the components or tools that will be used to solve it. Remember that the example "problem" can be silly as long as it is easy to understand. Random pet name generator, office tea rota, plant watering system ... you decide. Whatever it is, the user knows where they are going and what they will see when they get there.
 
-   Pre-requisites
-   --------------
+Early availability note template
+'''''''''''''''''''''''''''''''''''
 
-   If there are tools, accounts, licenses or particular dependencies that need to be installed before we start, let's get those out of the way first. If it requires Python 22 and the user doesn't live in the future, they know not to start spinning up all the other pieces of the puzzle. Don't forget to prompt the user to sign up for Aiven with the free trial, if appropriate.
+For features that are in the early availability stage and can be enabled in the Console, add the following admonition directly under the article title:
 
-   Bear in mind the expected experience level of the user. Our experienced technical audience does not need help installing python, handling dependencies, understanding what a text editor is. You should assume that level of knowledge and move on; the user will either enjoy getting into the interesting bits more quickly, or spend time filling in the gaps in their knowledge with materials from other excellent websites.
+::
 
-   First component
-   ---------------
-
-   Introduce the first piece of the puzzle. Tutorials need to be as logical as possible, which means making as few steps, or as few context changes as possible. For example, don't download a data file, create a database, install some code dependencies, import the data into the file, set some code up locally and then go back to the database for credentials. Instead, make the database, get and import the data, then set up the code with dependencies and connection information to build the app.
-
-   At each stage, if the user can DO something, that builds confidence and a sense of achievement. So if there's a "SHOW TABLES" command or something else to affirm that something is going well, have them do that, and explain how it fits the big picture, before you move on.
-
-   Second component
-   ----------------
-
-   There will be many sections to a tutorial. Remember that titles should be things like "Create some initial data" or "Set up the indexes". These subheadings are shown in the secondary navigation and really help a user to navigate through a longer tutorial, either looking for something particular or just trying to keep track of where they got up to. If you are adding code snippets, make sure that it is clear with each snippet where in the project it should be added, and what its function is.
-
-   Look it works!
-   --------------
-
-   Don't forget to tell the user how to run their finished project, or how to see it in action! We sometimes call this the "ta-da!" moment. Some sample output or a screenshot might also be appropriate at this point. Then go on to recap what problem we solved, and what technology we used and why.
-
-   Further reading
-   ---------------
-
-   This optional section can be added if we have extra resources that are similar or related, that we think someone might want to read. You can think of it as a very low tech recommendations engine. If you have a repo of the project in the tutorial, or any other related integrations or sample apps, this is a great place to share them.
+    .. important:: 
+        {feature name} is an :doc:`early availability feature </docs/platform/concepts/beta_services>`. To use it, :doc:`enable the feature preview </docs/platform/howto/feature-preview.html>` in your user profile.

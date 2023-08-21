@@ -17,7 +17,7 @@ An authentication token allows a user to programmatically access resources inste
 How Aiven manages user sessions using authentication tokens
 -----------------------------------------------------------
 
-Each time a user signs in to Aiven either via the web console, Aiven command line client, or direct REST API call, the server creates a new authentication token associated with the user.
+Each time a user signs in to Aiven either via `Aiven Console <https://console.aiven.io/>`_, Aiven command line client, or direct REST API call, the server creates a new authentication token associated with the user.
 
 The user can configure the expiry when requesting the token. It is also possible to configure the token to extend its expiry when it is used, so that it will remain valid while it is in active use.
 
@@ -26,7 +26,7 @@ Token counts
 
 The system has hard limits for how many valid authentication tokens are allowed per user. This limit is different for tokens that are created as a result of sign in operation and for tokens created explicitly. The max token count is **10** for user created tokens but the system never invalidates the tokens unless they expire or they are explicitly revoked. For automatically created tokens the limit is **1000** but when this limit is reached the system automatically deletes tokens that have been used least recently to avoid going above the limit.
 
-Therefore, an old token can stop working even if it hasn't expired nor been explicitly revoked. To avoid running into problems with this behavior, configure your tokens with expiry times that suit their use case. This is mostly relevant for automation which automatically creates a new token each time it runs. The Aiven web console automatically revokes the current token when signing out and the Aiven command line client also provides a sign out command (``avn user logout``).
+Therefore, an old token can stop working even if it hasn't expired nor been explicitly revoked. To avoid running into problems with this behavior, configure your tokens with expiry times that suit their use case. This is mostly relevant for automation which automatically creates a new token each time it runs. `Aiven Console <https://console.aiven.io/>`_ automatically revokes the current token when signing out and the Aiven command line client also provides a sign out command (``avn user logout``).
 
 Considerations for working with tokens
 --------------------------------------
@@ -57,4 +57,4 @@ It is also good practice to rotate your authorization tokens on a regular basis,
 
 .. note::
 
-    Follow :doc:`Create an authentication token <../howto/create_authentication_token>` to create an authentication token from the Aiven console or the Aiven CLI.
+    Follow :doc:`Create an authentication token <../howto/create_authentication_token>` to create an authentication token from `Aiven Console <https://console.aiven.io/>`_ or the Aiven CLI.

@@ -125,6 +125,17 @@ Code samples should be autodetected (using `pygments <https://pygments.org/>`_) 
 
 Do not include a `$` before a command that the user should run, because it will get copied into the user's clipboard and cause the command to fail (this has been a common standard in the past).
 
+Search
+-----------------
+
+Docs search
+''''''''''''
+Aiven Docs uses `custom OpenSearch <aws/SEARCH.md>`_ based search.
+
+Aiven.io search
+''''''''''''
+`Aiven.io global search <https://aiven.io/search>`_ are powered by Algolia and it includes index from Aiven Docs pages. Using the python script that creates, parses and adds the Docs pages to Algolia index `(scripts/index_algolia.py) <scripts/index_algolia.py>`_
+
 License
 -------
 

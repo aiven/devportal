@@ -1,4 +1,4 @@
-﻿Attach a VPC to an AWS Transit Gateway
+﻿Attach VPCs to an AWS Transit Gateway
 =======================================
 
 `AWS Transit Gateway (TGW) <https://aws.amazon.com/transit-gateway/>`_ enables transitive routing from on-premises networks through VPN and from other VPC. 
@@ -15,7 +15,7 @@ Set up a VPC attachment for your Project VPC
 Install the Aiven CLI
 ~~~~~~~~~~~~~~~~~~~~~
 
-These instructions apply to the :doc:`Aiven CLI </docs/tools/cli>`, but the same configuration can also be managed using the Aiven web console.
+These instructions apply to the :doc:`Aiven CLI </docs/tools/cli>`, but the same configuration can also be managed using `Aiven Console <https://console.aiven.io>`_.
 
 Locate your AWS account and AWS Transit Gateway ID
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

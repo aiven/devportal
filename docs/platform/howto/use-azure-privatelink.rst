@@ -1,5 +1,9 @@
-Use Azure Private Link with Aiven services |beta|
-=================================================
+Use Azure Private Link with Aiven services 
+===========================================
+
+.. important
+
+    Azure Private Link is an :doc:`early availability feature </docs/platform/concepts/beta_services>`.
 
 Azure Private Link lets you bring your Aiven services into your virtual network (VNet) over a private endpoint. The endpoint creates a network interface into one of the VNet subnets, and receives a private IP address from its IP range. The private endpoint is routed to your Aiven service.
 
@@ -144,21 +148,23 @@ To enable Private Link access for your service in the Aiven CLI, set ``user_conf
 
 **Aiven Console**
 
-To enable Private Link access in the `Aiven Console <https://console.aiven.io/>`_:
+To enable Private Link access in `Aiven Console <https://console.aiven.io/>`_:
 
 #. Select the service that you want to enable access to.
-#. On the **Overview** tab, in the **Advanced configuration** section, click **Change**.
-#. Click **Add configuration option** and select the ``privatelink_access.<service component>`` option for the components that you want to enable.
+#. On the **Overview** page of your service, in the **Advanced configuration** section, select **Change**.
+#. Select **Add configuration option** > ``privatelink_access.<service component>`` for the components that you want to enable.
 #. Toggle the switch next to the components to set the values to true.
-#. Click **Save advanced configuration**.
+#. Select **Save advanced configuration**.
 
 .. Tip::
 
     Each service component can be controlled separately. For example, you can enable Private Link access for your Aiven for Apache Kafka® service, while allowing Kafka® Connect to only be connected via VNet peering.
 
-After toggling the values your Private Link resource will be rebuilt with load balancer rules added for the service component's ports.Connection information like the URI or hostname and port to access the service through the private endpoint is available on the service's overview page in the `Aiven Console <https://console.aiven.io/>`_. 
+After toggling the values your Private Link resource will be rebuilt with load balancer rules added for the service component's ports. Connection information like the URI or hostname and port to access the service through the private endpoint is available on the service's **Overview** page in `Aiven Console <https://console.aiven.io/>`_. 
 
-.. note:: For Aiven for Apache Kafka® services, the security group for the VPC endpoint must allow ingress in the port range ``10000-31000``. This is to accommodate the pool of Kafka broker ports used in the Private Link implementation.
+.. note::
+  
+  For Aiven for Apache Kafka® services, the security group for the VPC endpoint must allow ingress in the port range ``10000-31000``. This is to accommodate the pool of Kafka broker ports used in the Private Link implementation.
 
 Update subscription list
 --------------------------

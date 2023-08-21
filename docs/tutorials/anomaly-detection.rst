@@ -99,7 +99,7 @@ Create an Aiven for Apache Kafka® service
 The :doc:`Aiven for Apache Kafka </docs/products/kafka>` service is responsible for receiving the inbound stream of IoT sensor readings. Create the service with the following steps:
 
 1. Log in to the `Aiven web console <https://console.aiven.io/>`_.
-2. On the *Services* page, click **Create a new service**.
+2. On the *Services* page, click **Create service**.
 
    This opens a new page with the available service options.
 
@@ -114,7 +114,7 @@ The :doc:`Aiven for Apache Kafka </docs/products/kafka>` service is responsible 
 
 5. Enter ``demo-kafka`` as name for your service.
 
-6. Click **Create Service** under the summary on the right side of the console
+6. Click **Create service** under the summary on the right side of the console
 
 Customise the Aiven for Apache Kafka service
 ''''''''''''''''''''''''''''''''''''''''''''
@@ -139,7 +139,7 @@ The :doc:`PostgreSQL </docs/products/postgresql>` database is where you'll store
 You can create the Aiven for PostgreSQL database with the following steps:
 
 1. Log in to the `Aiven web console <https://console.aiven.io/>`_.
-2. On the *Services* page, click **Create a new service**.
+2. On the *Services* page, click **Create service**.
 
 3. Select **PostgreSQL®**.
 
@@ -149,7 +149,7 @@ You can create the Aiven for PostgreSQL database with the following steps:
 
 5. Enter ``demo-postgresql`` as name for your service.
 
-6. Click **Create Service** under the summary on the right side of the console
+6. Click **Create service** under the summary on the right side of the console
 
 
 Create an Aiven for Apache Flink service
@@ -214,13 +214,9 @@ The `Dockerized fake data producer for Aiven for Apache Kafka® <https://github.
 
 You can create an authentication token with the following steps:
 
-1. Log in to the `Aiven web console <https://console.aiven.io/>`_.
+1. Log in to the `Aiven Console <https://console.aiven.io/>`_.
 2. Click the user icon in the top-right corner of the page.
-3. Click **Authentication** tab and scroll down to *Authentication tokens*.
-
-   .. image:: /images/tutorials/anomaly-detection/auth-tokens.png
-      :alt: Aiven Console showing the authentication tokens
-
+3. Click **Tokens** tab.
 4. Click the **Generate token** button.
 5. Enter a description (optional) and a time limit (optional) for the token. Leave the *Max age hours* field empty if you do not want the token to expire.
    
@@ -296,7 +292,7 @@ To check if your fake data producer is running, head to Apache Kafka in the Aive
 
 1. Log in to the `Aiven web console <https://console.aiven.io/>`_.
 2. Click on the Aiven for Apache Kafka service name ``demo-kafka``.
-3. Click on the **Topics** tab.
+3. Click on the **Topics** from the left sidebar.
 4. On the ``cpu_load_stats_real`` line, select the ``...`` symbol and then click on **Topic messages**.
 
    .. image:: /images/tutorials/anomaly-detection/view-kafka-topic-messages.png
@@ -333,7 +329,7 @@ The steps to create the filtering pipeline are the following:
 
 If you feel brave, you can go ahead and try try yourself in the `Aiven Console <https://console.aiven.io/>`_. Otherwise you can follow the steps below:
 
-1. In the `Aiven Console <https://console.aiven.io/>`_, open the Aiven for Apache Flink service named ``demo-flink`` and go to the **Applications** tab.
+1. In the `Aiven Console <https://console.aiven.io/>`_, open the Aiven for Apache Flink service named ``demo-flink`` and go to the **Applications** from the left sidebar.
 2. Click **Create new application** to create your Flink application.
 
    .. image:: /images/tutorials/anomaly-detection/create-application.png

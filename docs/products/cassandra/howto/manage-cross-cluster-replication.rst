@@ -1,5 +1,9 @@
-Manage cross-cluster replication in Aiven for Apache Cassandra® |beta|
-======================================================================
+Manage cross-cluster replication in Aiven for Apache Cassandra®
+===============================================================
+
+.. important::
+
+    Aiven for Apache Cassandra® cross-cluster replication (CCR) is a :doc:`limited availability feature </docs/platform/concepts/beta_services>`. If you're interested in trying out this feature, contact the sales team at `sales@Aiven.io <mailto:sales@Aiven.io>`_.
 
 Learn how to update Apache Cassandra® services that has cross-cluster replication (CCR) enabled: change the service plan and add an extra disk space. Find out how to set up the replication factor and the consistency level for your CCR-enabled Apache Cassandra® services.
 
@@ -15,7 +19,7 @@ Aiven-wise
 Tools
 '''''
 
-* To update the service plan or add an extra disk space, use the `Aiven console <https://console.aiven.io/>`_.
+* To update the service plan or add an extra disk space, use `Aiven Console <https://console.aiven.io/>`_.
 * To set up the replication factor on the database side, issue the CREATE KEYSPACE statement from `any supported client driver <https://cassandra.apache.org/doc/latest/cassandra/getting_started/drivers.html>`_. This guide uses the ``cqlsh`` Cassandra client for that purpose to ensure general applicability of the instruction.
 * To set up the consistency level on the client side, configure it in your software. This guide uses the ``cqlsh`` Cassandra client for that purpose to ensure general applicability of the instruction.
 
@@ -30,9 +34,9 @@ Change the service plan
     
     It's recommended to use the `Aiven console <https://console.aiven.io/>`_ for changing the plan for a CCR-enabled service.
 
-1. Log in to the `Aiven console <https://console.aiven.io/>`_.
-2. From the **Current services** view, select a CCR-enabled Aiven for Apache Cassandra service that you want to update.
-3. In the **Overview** tab of your service's page, navigate to **Service plan** and select **Change plan**.
+1. Log in to `Aiven Console <https://console.aiven.io/>`_.
+2. From the **Services** page, select a CCR-enabled Aiven for Apache Cassandra service that you want to update.
+3. In the **Overview** page of your service, navigate to **Service plan** and select **Change plan**.
 4. In the **Change service plan** view, select a new plan you want to use for your service.
 
    .. tip::
@@ -54,11 +58,11 @@ Add an extra disk space
 
 .. note::
     
-    It's recommended to use the `Aiven console <https://console.aiven.io/>`_ for adding storage space for CCR-enabled services.
+    It's recommended to use `Aiven Console <https://console.aiven.io/>`_ for adding storage space for CCR-enabled services.
 
-1. Log in to the `Aiven console <https://console.aiven.io/>`_.
-2. From the **Current services** view, select a CCR-enabled Aiven for Apache Cassandra service that you want to update.
-3. In the **Overview** tab of your service's page, navigate to the **Service plan** section and select **Add storage**.
+1. Log in to `Aiven Console <https://console.aiven.io/>`_.
+2. From the **Services** page, select a CCR-enabled Aiven for Apache Cassandra service that you want to update.
+3. In the **Overview** page of your service, navigate to the **Service plan** section and select **Add storage**.
 4. In the **Upgrade service storage** view, use the slider to add extra disk space for your service.
 
    .. tip::
@@ -134,7 +138,7 @@ For Apache Cassandra, you can set up the ``CONSISTENCY`` parameter, which regula
 
 .. note::
     
-    You can configure the consistency level in the shell or in a client library. While using the ``cqlsh`` CLI client is convenient for setting up keyspaces or testing, configuring and using a `client driver <https://cassandra.apache.org/doc/latest/cassandra/getting_started/drivers.html>`_ is recommended for operations in the production environment, such as data imports, data querying, or data reads/ writes from/ to databases.
+    You can configure the consistency level in the shell or in a client library. While using the ``cqlsh`` CLI client is convenient for setting up keyspaces or testing, configuring and using a `client driver <https://cassandra.apache.org/doc/latest/cassandra/getting_started/drivers.html>`_ is recommended for operations in the production environment, such as data imports, data querying, or data reads/writes from/to databases.
 
 In the shell
 ''''''''''''
@@ -195,4 +199,3 @@ More on CCR with Aiven
 * :doc:`OpenSearch® cross-cluster replication</docs/products/opensearch/concepts/cross-cluster-replication-opensearch>`
 * :doc:`Set up cross-cluster replication for OpenSearch</docs/products/opensearch/howto/setup-cross-cluster-replication-opensearch>`
 * :doc:`Enabling cross-cluster replication for Apache Kafka® via Terraform</docs/tools/terraform/reference/cookbook/kafka-mirrormaker-recipe>`
-

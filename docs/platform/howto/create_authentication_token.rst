@@ -1,13 +1,11 @@
-Create an authentication token
+Create authentication tokens
 ==============================
 
 Create an authentication token in the Aiven Console for use with the Aiven CLI or API. To learn more about using authentication tokens, refer to :doc:`../concepts/authentication-tokens`.
 
-To create an authentication token:
+To create an authentication token on the `Aiven Console <https://console.aiven.io/>`_:
 
-#. In the `Aiven Console <https://console.aiven.io/>`_, click the user information icon to open the **User profile**.
-
-#. Click **Tokens**.
+#. Click the **User information** icon in the top right and select **Tokens**.
 
 #. Click **Generate token**.
 

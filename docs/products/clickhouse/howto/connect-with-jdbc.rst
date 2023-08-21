@@ -3,7 +3,7 @@ Connect Aiven for ClickHouse® to external databases via JDBC
 
 You can use `ClickHouse JDBC driver <https://github.com/ClickHouse/clickhouse-jdbc/tree/master/clickhouse-jdbc>`_ to connect external sources to your Aiven for ClickHouse database.
 
-You will need Aiven for ClickHouse® service, accessible by HTTPS. The connection values you'll need can be found in your Aiven for ClickHouse® service page in the connection information for *HTTPS endpoint*.
+You will need Aiven for ClickHouse® service, accessible by HTTPS. The connection values you need can be found in `Aiven Console <https://console.aiven.io/>`_ > your service's page > **Overview** > **Connection information** > **ClickHouse HTTPS & JDBC**.
 
 ============================     ==========================================================================================================
 Variable                         Description
