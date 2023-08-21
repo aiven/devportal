@@ -60,4 +60,9 @@ If the above command returns ``TRUE`` if you are connected to the replica, and `
 
 Read-replica for disaster recovery
 ----------------------------------
-In case of high-availability, distribution occurs across the available availability zones within a single region. While a default multi-region service, with node allocation spanning multiple regions, is not provided, this capability can still be attained. This can be accomplished by initially establishing a high-availability PostgreSQL service within a single region. Subsequently, a remote read replica can be configured in a different region or even on an alternate cloud platform.This approach introduces an additional node in the distinct region/cloud, although it does not function as a hot standby node. It can, however, be manually promoted to a "primary" role, operating as an independent standalone service.
+High availability enables data distribution across availability zones within a single region. To accomplish that without a default multi-region service with node allocation spanning multiple regions, you can take the following steps:
+
+- Establish a high-availability Aiven for PostgreSQL service within a single region.
+- Configure a remote read-only replica in a different region or even on an alternate cloud platform.
+
+As a result, you introduce an additional node in the distinct region/cloud. Since this node does not work as a hot standby node, you might want to promote it manually to the primary role, which makes it operate as an independent standalone service.
