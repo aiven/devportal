@@ -1,8 +1,6 @@
 Aiven platform
 ==================
 
-:orphan:
-
 Aiven provides managed open source data technologies on all major clouds. Through Aiven, developers can do what they do best: create applications. Meanwhile, Aiven does what it does best; manage cloud data infrastructure. 
 
 The Aiven platform consists of the :doc:`Aiven Console </docs/tools/aiven-console>`, :doc:`tools </docs/tools>`, and Aiven services:
