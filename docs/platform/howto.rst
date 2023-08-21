@@ -1,7 +1,7 @@
+:orphan:
+
 How-To
 =======
-
-:orphan:
 
 Find instructions for common Aiven platform tasks for the following categories:
 
