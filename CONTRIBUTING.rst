@@ -154,12 +154,12 @@ To achieve this and avoid build failures, you just need to add the ``:orphan:`` 
 
 .. code:: reStructuredText
 
+    :orphan:
+
     Page title
     ==========
 
-    :orphan:
-
-    Rest of the page content
+    Body content
 
 The ``:orphan:`` section tells Sphinx not to include this page in any contents list, and therefore no warning is issued about the page not being added in the  ``_toc.yaml`` file.
 
