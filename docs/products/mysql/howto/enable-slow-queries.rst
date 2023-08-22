@@ -5,7 +5,9 @@ You can identify inefficient or time-consuming queries by enabling `slow query l
 
 .. warning::
 
-    The slow query log is not supported on read-only replicas because Aiven for MySQL services use table output for the slow query log.
+    Since the output of the slow query log is written to the mysql.slow_log table on a particular server (of the service or its replica), the slow query logging is not supported on read-only replicas, which don't allow any writes.
+
+
 
 Prerequisites
 -------------
