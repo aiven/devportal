@@ -16,7 +16,7 @@ There a few major reasons to utilize BYOC:
 1. **Compliance**: Aiven offers managed environments for several standard compliance regulations, such as HIPAA, PCI DSS, and GDPR. However, if you have strict regulatory requirements or special compliance requirements, BYOC may be the best option for you.
 2. **Network auditing**: If you require the visibility of all traffic within any VPC you operate in or need frequent auditing capabilities, BYOC is potentially a good fit. BYOC gives you the ability to audit network metadata but not the actual contents.
 3. **Fine-grained network control**: BYOC requires only some specific network access (for example, service management and troubleshooting), otherwise allowing you to customize your network to meet any internal requirements or requirements of your customers.
-4. **Cost optimization**: Depending on your cloud provider, with BYOC you can use reserved instances, cost savings plans, committed use discounts, or other strategies to save on compute and storage infrastructure costs related to Aiven services.
+4. **Cost optimization**: Depending on your cloud provider, with BYOC you can use cost savings plans, committed use discounts, or other strategies to save on compute and storage infrastructure costs related to Aiven services.
 
 Who is eligible
 ---------------
