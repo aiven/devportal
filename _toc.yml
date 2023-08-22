@@ -90,6 +90,7 @@ entries:
         - file: docs/platform/howto/saml/setup-saml-okta
         - file: docs/platform/howto/saml/setup-saml-onelogin
         - file: docs/platform/howto/saml/setup-saml-google
+        - file: docs/platform/howto/saml/saml-change-identity-provider
     - file: docs/platform/howto/list-groups
       entries: 
       - file: docs/platform/howto/manage-groups
