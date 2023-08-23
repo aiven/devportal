@@ -1,7 +1,7 @@
 Create a custom cloud in Aiven
 ==============================
 
-A custom cloud is your own cloud infrastructure integrated with your Aiven organization. Using a custom cloud in Aiven may be the optimal solution if you have specific business needs or project requirements, such as a strict regulatory compliance. With a custom cloud, you can manage your own infrastructure depending on your expectations and tailor it to your budget.
+A custom cloud is your own cloud infrastructure integrated with your Aiven organization. Using a custom cloud in Aiven may be the optimal solution if you have specific business needs or project requirements, such as a strict regulatory compliance.
 
 .. important::
 
@@ -14,7 +14,7 @@ About creating a custom cloud
 
 If you have the administrator's role in your Aiven organization, and you enable BYOC, you can create a custom cloud on the Aiven platform. For this purpose, you'll need to configure your custom cloud setup in `Aiven Console <https://console.aiven.io/>`_ and prepare your own Amazon Web Services (AWS) account so that Aiven can access it.
 
-In `Aiven Console <https://console.aiven.io/>`_, you'll use the **Create custom cloud** wizard to generate a Terraform infrastructure-as-code (IaC) template. Next, you'll deploy this template in your AWS account to acquire Role ARN (Amazon Resource Name). You'll supply your Role ARN into the **Create custom cloud** wizard, which will give Aiven the permissions to securely access your AWS account and create resources. Finally, you'll assign projects and add customer contacts for your custom cloud.
+In `Aiven Console <https://console.aiven.io/>`_, you'll use the **Create custom cloud** workflow to generate a Terraform infrastructure-as-code (IaC) template. Next, you'll deploy this template in your AWS account to acquire Role ARN (Amazon Resource Name). You'll supply your Role ARN into the **Create custom cloud** workflow, which will give Aiven the permissions to securely access your AWS account, create resources, and manage them onwards. Finally, you'll assign projects and add customer contacts for your custom cloud.
 
 Limitations
 '''''''''''
@@ -50,7 +50,7 @@ Generate an infrastructure template
 
 In this step, an IaC template is generated in the Terraform format. In :ref:`the next step <acquire-role-arn>`, you'll deploy this template in your AWS account to acquire Role ARN (Amazon Resource Name), which Aiven needs for accessing your AWS account.
 
-In the **Create custom cloud** wizard, proceed as follows:
+In the **Create custom cloud** workflow, proceed as follows:
 
 1. Specify the following:
 
@@ -93,7 +93,7 @@ Role ARN is an `identifier of the role <https://docs.aws.amazon.com/IAM/latest/U
 
 Use the Terraform template generated in step :ref:`Generate an infrastructure template <generate-infra-template>` to create your Role ARN by deploying the template in your AWS account.
 
-As soon as you acquire Role ARN, enter it into the **Role ARN** field in the **Create custom cloud** wizard, and select **Next** to proceed.
+As soon as you acquire Role ARN, enter it into the **Role ARN** field in the **Create custom cloud** workflow, and select **Next** to proceed.
 
 .. note::
    
@@ -102,31 +102,29 @@ As soon as you acquire Role ARN, enter it into the **Role ARN** field in the **C
 Assign projects and customer contacts
 '''''''''''''''''''''''''''''''''''''
 
-Continue working in the **Create custom cloud** wizard by taking the following steps:
+Continue working in the **Create custom cloud** workflow by taking the following steps:
 
 1. From the **Assign projects** dropdown menu, select projects for which you want your custom cloud to be available.
-2. To add customer contacts, select their roles using the **Role** dropdown menu, and provide email addresses in the **Email** field.
+2. To add customer contacts, select their roles using the **Role** dropdown menu, and provide email addresses in the **Email** field. Using **+**, add as many customer contacts as needed for your custom cloud.
 
-   .. note:: 
+   .. note::
 
-      You can add multiple customer contacts for your custom cloud using **+**.
+      The customer contact information is used by the Aiven support team to contact you in case any technical issue with the custom cloud needs fixing.
 
 3. Select **Finish**.
 
 .. topic:: Result
 
-     The custom cloud process has been initiated for you, which is communicated in the the **Create custom cloud** wizard.
+     The custom cloud process has been initiated for you, which is communicated in the the **Create custom cloud** workflow.
 
 Complete the cloud setup
 ''''''''''''''''''''''''
 
-You're all set. You'll be notified via email when your custom cloud is ready to use.
-
-Select **Done** to close the **Create custom cloud** wizard.
+You're all set. Select **Done** to close the **Create custom cloud** workflow.
 
 .. topic:: Result
 
-    As soon as your custom cloud's availability is confirmed via email, you'll be able to see it on the list of your custom clouds in the **Bring you own cloud** view.
+   The deployment of your new custom cloud might take a few minutes. As soon as it's over, and your custom cloud is ready to use, you'll be able to see it on the list of your custom clouds in the **Bring you own cloud** view.
 
 Related reading
 ---------------

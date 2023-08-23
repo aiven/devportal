@@ -4,9 +4,9 @@ Bring your own cloud (BYOC)
 About BYOC
 ----------
 
-Aiven services are usually deployed on Aiven-managed infrastructure, using Aiven-managed security protocols, and backed by Aiven-managed storage and backups. This provides the most seamless straightforward de-risked approach to deploying Aiven services. However, this *one-size-fits-all* approach may be not optimal for all business needs and project requirements, for example, when seeking a strict regulatory compliance.
+Aiven services are usually deployed on Aiven-managed infrastructure, using Aiven-managed security protocols, and backed by Aiven-managed storage and backups. This provides the most seamless straightforward de-risked approach to deploying Aiven services. However, you might need a different configuration if your business, project, or organization has specific requirements for strict regulatory compliance, fine-grained network access control, or cloud purchase commitments in place, for instance.
 
-This is where the bring your own cloud (BYOC) feature comes in. With BYOC, Aiven offers you the ability to use your own cloud infrastructure instead of using the Aiven-managed infrastructure. By creating so called *custom clouds* in your Aiven organization, you can manage your infrastructure on the Aiven platform while keeping your data in your own cloud.
+This is where the bring your own cloud (BYOC) feature comes in as the optimal solution. With BYOC, Aiven offers you the ability to use your own cloud infrastructure instead of using the Aiven-managed infrastructure. BYOC allows you to create a custom cloud in your Aiven organization. With the custom cloud, your Aiven organization gets connected with your cloud provider account, which allows you to manage your infrastructure on the Aiven platform while keeping your data in your own cloud.
 
 Why use BYOC
 ------------
