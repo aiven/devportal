@@ -246,7 +246,7 @@ Migration parameters
     - number
     - The fraction of the table size to add to ``autovacuum_analyze_threshold`` when deciding whether to trigger an ``ANALYZE``.
 
-      The default value is: 0.2 (20% of table size)
+      The default value is: 0.1 (10% of table size)
 
       A valid range is: 0-1
   * - ``pg.autovacuum_analyze_threshold``

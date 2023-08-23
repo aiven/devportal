@@ -1,5 +1,5 @@
-Billing groups
-==============
+Billing groups overview
+========================
 
 Billing groups let you to set up common billing profiles in an organization that can then be used for any projects within that organization. This includes projects in organizational units under that organization. So, instead of entering the payment information every time you create a project, you can use the information saved in the billing group. 
 

@@ -11,13 +11,13 @@ Currently, the following default keep-alive timeouts are used on the `server-sid
 +---------------------------+-------+-----------------------------------------------------------------------+
 | Parameter (server)        | Value | Description                                                           | 
 +===========================+=======+=======================================================================+ 
-|``tcp_keepalives_idle``    |7200   |Specifies the amount of time with no network activity after which the  |
+|``tcp_keepalives_idle``    |180    |Specifies the amount of time with no network activity after which the  |
 |                           |       |operating system should send a TCP ``keepalive`` message to the client.|
 +---------------------------+-------+-----------------------------------------------------------------------+
-|``tcp_keepalive_count``    |9      |Specifies the number of TCP ``keepalive`` messages that can be lost    |
+|``tcp_keepalives_count``   |6      |Specifies the number of TCP ``keepalive`` messages that can be lost    |
 |                           |       |before the server's connection to the client is considered dead.       |
 +---------------------------+-------+-----------------------------------------------------------------------+
-|``tcp_keepalives_interval``|5      |Specifies the amount of time after which a TCP ``keepalive`` message   |
+|``tcp_keepalives_interval``|10     |Specifies the amount of time after which a TCP ``keepalive`` message   |
 |                           |       |that has not been acknowledged by the client should be retransmitted.  |
 +---------------------------+-------+-----------------------------------------------------------------------+
 

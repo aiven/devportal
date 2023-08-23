@@ -40,6 +40,7 @@ connect
 Couchbase
 CPU/MS
 CRD
+cron
 cURL
 cyber
 datacenter
@@ -71,6 +72,7 @@ DZone
 Elasticsearch
 Epicurious
 etcd
+event_type
 failover
 fileset
 filesets
@@ -197,6 +199,7 @@ rebalancing
 Redis
 Redli
 refcard
+reindex
 reindexing
 reStructuredText
 rivery
@@ -216,6 +219,7 @@ Security
 serde
 serializer
 service_account
+serverless
 sharded
 sharding
 signup
@@ -254,6 +258,7 @@ UDFs
 unassign
 uncomment
 unencrypted
+Unschedule
 untrusted
 unaggregated
 UpCloud

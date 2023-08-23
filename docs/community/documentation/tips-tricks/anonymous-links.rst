@@ -1,3 +1,5 @@
+:orphan:
+
 Create anonymous links
 ======================
 

@@ -5,8 +5,6 @@ Aiven for Apache Kafka® includes **configuration backups** that automatically b
 
 Suppose the Apache Kafka® service is powered off/on or an incident causes the Apache Kafka cluster to stop functioning. In that case, the configuration backup enables the restoration of your Apache Kafka® service to its previous state.
 
-.. note:: 
-    The configuration backups feature is currently available for all new projects within Aiven and for newly added Aiven for Apache Kafka® services.
 
 Whats included in configuration backups
 ----------------------------------------
