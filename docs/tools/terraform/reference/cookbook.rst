@@ -1,4 +1,4 @@
-Aiven Terraform cookbook
+Aiven Terraform Cookbook
 ========================
 
 Sometimes an example is easier to understand than a long tutorial or detailed configuration documentation. We've put together some of the most common Terraform setups. Use them as they are, or combine them to cook up something new and tasty for your own needs.

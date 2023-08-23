@@ -274,7 +274,7 @@ entries:
             - file: docs/tools/terraform/howto/vpc-peering-gcp
               title: Set up Google Cloud Platform virtual network peering
         - file: docs/tools/terraform/reference/cookbook
-          title: Terraform cookbook
+          title: Terraform Cookbook
           entries:
           - file: docs/tools/terraform/reference/cookbook/kafka-connect-terraform-recipe
             title: Apache Kafka and OpenSearch  
