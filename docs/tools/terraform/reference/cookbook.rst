@@ -1,12 +1,12 @@
-Aiven Terraform Cookbook
+Aiven Terraform cookbook
 ========================
 
-Sometimes an example is easier to understand than a long tutorial or detailed configuration documentation. We've put together some of the most common terraform setups, and listed them here. Use them as they are, or combine them to cook up something new and tasty for your own needs.
+Sometimes an example is easier to understand than a long tutorial or detailed configuration documentation. We've put together some of the most common Terraform setups. Use them as they are, or combine them to cook up something new and tasty for your own needs.
 
 Recipes
 -------
 
-Each "recipe" includes an architecture diagram and the terraform sample code you need to build the setup yourself.
+Each recipe includes an architecture diagram and the terraform sample code you need to build the setup yourself.
 
 .. grid:: 1 3 3 3
 

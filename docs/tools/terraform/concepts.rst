@@ -1,3 +1,5 @@
+:orphan:
+
 Understanding the Aiven Terraform provider
 ==========================================
 
