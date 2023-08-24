@@ -122,12 +122,13 @@ Go back to the **Authentication** page in `Aiven Console <https://console.aiven.
 
 6. Toggle on **Enable authentication method** at the top of the page.
 
-You can use the **Signup URL** to invite new users, or the **Account link URL** for those that already have an Aiven user account.
+7. In the **Signup and link accounts URLs** section, copy the appropriate link and send it to your users to switch them to the new IdP:
+  
+* **Signup URL**: For users that don't have an Aiven user account and need to create a new Aiven user linked to this IdP.
+* **Account link URL**: For users that already have an Aiven user account to link their existing Aiven user with the configured IdP. 
 
-
-.. image:: /images/platform/howto/saml/fusionauth/login-sso.png
-   :alt: Logging in to Aiven.
-
+  .. note::
+    If you set up a SAML authentication method before and are now switching to a new IdP, existing users need to log in with the new account link URL to finish the setup.
 
 Troubleshooting
 ---------------
