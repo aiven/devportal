@@ -1,5 +1,12 @@
-Run federated queries from Aiven for ClickHouse®
-================================================
+Run federated queries in Aiven for ClickHouse®
+==============================================
+
+With federated queries in Aiven for ClickHouse®, you can read and pull data from an external S3-compatible object storage or any web resource accessible over HTTP. Learn more about capabilities and applications of federated queries in :doc:`Read and pull data from external S3 with federated queries </docs/products/clickhouse/concepts/federated-queries>`.
+
+This article shows how to run federated queries in Aiven for ClickHouse.
+
+Before you start
+----------------
 
 .. _access-permissions:
 
@@ -14,6 +21,116 @@ To run a federated query, the ClickHouse service user connecting to the cluster 
 
 
 The CREATE TEMPORARY TABLE grant is required for both sources. Adding WITH GRANT OPTION allows the user to further transfer the privileges.
+
+Limitations
+'''''''''''
+
+* Federated queries in Aiven for ClickHouse only support S3-compatible object storage providers for the time being. More external data sources coming soon!
+* Virtual tables are only supported for URL sources, using the URL table engine. Stay tuned for us supporting the S3 table engine in the future!
+
+Run a federated query
+---------------------
+
+To run a federated query, just write a query over an external S3-compatible object storage including relevant S3 bucket details. A properly-constructed federated query returns a specific output.
+
+Sample federated queries
+------------------------
+
+Check of the examples of running federated queries to read and pull data from external S3-compatible object storages.
+
+SQL SELECT statements using the S3 and URL functions are able to query public resources using the URL of the resource.
+For instance, let's explore the network connectivity measurement data provided by Open Observatory of Network Interference (OONI).
+
+.. code-block:: bash
+
+   WITH ooni_data_sample AS
+      (
+         SELECT *
+         FROM s3('https://ooni-data-eu-fra.s3.eu-central-1.amazonaws.com/clickhouse_export/csv/fastpath_202308.csv.zstd')
+         LIMIT 100000
+      )
+   SELECT
+      probe_cc,
+      test_name,
+      countIf(anomaly = 't') AS num_anomalies
+   FROM ooni_data_sample
+   GROUP BY
+      probe_cc,
+      test_name
+   HAVING num_anomalies > 10
+   ORDER BY num_anomalies DESC
+   LIMIT 50
+
+
+Using the s3Cluster function allows all the cluster’s nodes to participate in the query execution to compute aggregations.
+
+Private buckets can be accessed by providing the access token and secret as function parameters.
+
+.. code-block:: bash
+
+   SELECT * 
+   FROM s3('https://private-bucket.s3.eu-west-3.amazonaws.com/dataset-prefix/partition-name.csv','some_aws_access_key_id', 'some_aws_secret_access_key')
+
+Depending on the format, the schema can be automatically detected. If it isn’t, you may also provide the column types as function parameters.
+
+.. code-block:: bash
+
+   SELECT * 
+   FROM s3('https://private-bucket.s3.eu-west-3.amazonaws.com/orders-dataset/partition-name.csv',
+   'access_token', 
+   'secret_token', 
+   'CSVWithNames', 
+   "`order_id` UInt64, `quantity` Decimal(9, 18), `order_datetime` DateTime"
+   )
+
+Here is an example of a select using the URL function:
+
+.. code-block:: bash
+
+   SELECT *
+   FROM url('https://interesting-public-csv-that-wont-change.some-agency-or-ngo-we-like.org', 'CSVWithNames')
+
+Inserts generate a POST request in the case of the URL function. This can be used to interact with APIs having public endpoints. For instance, if your application has a “ingest-csv” endpoint accepting CSV data, you could insert a row using the following statement:
+
+.. code-block:: bash
+
+   INSERT INTO FUNCTION url('https://app-name.company-name.cloud/api/ingest-csv, 'CSVWithNames') VALUES ('column1-value', 'column2-value');
+
+When executing an insert statement into the S3 function, the rows are appended to the corresponding object if the table structure matches:
+
+.. code-block:: bash
+
+   INSERT INTO FUNCTION
+   s3(‘https://<bucket-name>.s3.<region-name>.amazonaws.com/<dataset-name>/landing/<todays-date>/raw-data.csv’, 'CSVWithNames') 
+   VALUES (‘column1-value’, 'column2-value');
+
+Instead of specifying the URL of the resource in every query, it’s possible to create a virtual table using the URL table engine. Here is an example DDL creation statement:
+
+.. code-block:: bash
+
+   CREATE TABLE trips_export_endpoint_table (
+      `trip_id` UInt32,
+      `vendor_id` UInt32,
+      `pickup_datetime` DateTime,
+      `dropoff_datetime` DateTime,
+      `trip_distance` Float64,
+      `fare_amount` Float32
+   )
+   ENGINE=URL('https://app-name.company-name.cloud/api/trip-csv-export’, CSV)
+
+Once the table is defined, selects and inserts execute GET and POST requests to the URL respectively:
+
+.. code-block:: bash
+
+   SELECT
+   toDate(pickup_datetime) as pickup_date,
+   median(fare_amount) as median_fare_amount,
+   max(fare_amount) as max_fare_amount
+   FROM trips_export_endpoint_table 
+   GROUP BY pickup_date
+
+   INSERT INTO trips_export_endpoint_table 
+   VALUES (8765, 10, now() - INTERVAL 15 MINUTE, now(), 50, 20)
 
 Related reading
 ---------------
