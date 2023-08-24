@@ -108,7 +108,7 @@ With the URL function, INSERT statements generate a POST request, which can be u
 
    INSERT INTO FUNCTION url('https://app-name.company-name.cloud/api/ingest-csv', 'CSVWithNames') VALUES ('column1-value', 'column2-value');
 
-Query using INSERT and the URL function
+Query using INSERT and the S3 function
 '''''''''''''''''''''''''''''''''''''''
 
 When executing an INSERT statement into the S3 function, the rows are appended to the corresponding object if the table structure matches:
