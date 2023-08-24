@@ -1,5 +1,5 @@
-Read and pull data from external S3 with federated queries
-==========================================================
+Federated queries in Aiven for ClickHouse®
+==========================================
 
 Discover federated queries and their capabilities in Aiven for ClickHouse®. Check why you might need to use them, for example, how they simplify and speed up migrating into Aiven from external data sources. Learn how federated queries work and how you can run them properly.
 
