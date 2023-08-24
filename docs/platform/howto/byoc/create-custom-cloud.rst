@@ -78,7 +78,7 @@ In the **Create custom cloud** workflow, proceed as follows:
 
         **BYOC standard** is the only option supported currently.
 
-1. Select **Next**.
+2. Select **Next**.
    
 .. topic:: Result
 
