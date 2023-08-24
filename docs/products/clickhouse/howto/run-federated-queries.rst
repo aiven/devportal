@@ -38,6 +38,9 @@ Sample federated queries
 
 Check of the examples of running federated queries to read and pull data from external S3-compatible object storages.
 
+Query using SELECT and the S3 function
+''''''''''''''''''''''''''''''''''''''
+
 SQL SELECT statements using the S3 and URL functions are able to query public resources using the URL of the resource.
 For instance, let's explore the network connectivity measurement data provided by Open Observatory of Network Interference (OONI).
 
@@ -61,8 +64,13 @@ For instance, let's explore the network connectivity measurement data provided b
    ORDER BY num_anomalies DESC
    LIMIT 50
 
+Query using SELECT and the s3Cluster function
+'''''''''''''''''''''''''''''''''''''''''''''
 
-Using the s3Cluster function allows all the cluster’s nodes to participate in the query execution to compute aggregations.
+Using the s3Cluster function allows all the cluster's nodes to participate in the query execution to compute aggregations.
+
+Query a private S3 bucket
+'''''''''''''''''''''''''
 
 Private buckets can be accessed by providing the access token and secret as function parameters.
 
@@ -71,7 +79,7 @@ Private buckets can be accessed by providing the access token and secret as func
    SELECT * 
    FROM s3('https://private-bucket.s3.eu-west-3.amazonaws.com/dataset-prefix/partition-name.csv','some_aws_access_key_id', 'some_aws_secret_access_key')
 
-Depending on the format, the schema can be automatically detected. If it isn’t, you may also provide the column types as function parameters.
+Depending on the format, the schema can be automatically detected. If it isn't, you may also provide the column types as function parameters.
 
 .. code-block:: bash
 
@@ -83,28 +91,38 @@ Depending on the format, the schema can be automatically detected. If it isn’t
    "`order_id` UInt64, `quantity` Decimal(9, 18), `order_datetime` DateTime"
    )
 
-Here is an example of a select using the URL function:
+Query using SELECT and the URL function
+'''''''''''''''''''''''''''''''''''''''
 
 .. code-block:: bash
 
    SELECT *
    FROM url('https://interesting-public-csv-that-wont-change.some-agency-or-ngo-we-like.org', 'CSVWithNames')
 
-Inserts generate a POST request in the case of the URL function. This can be used to interact with APIs having public endpoints. For instance, if your application has a “ingest-csv” endpoint accepting CSV data, you could insert a row using the following statement:
+Query using INSERT and the URL function
+'''''''''''''''''''''''''''''''''''''''
+
+With the URL function, INSERT statements generate a POST request, which can be used to interact with APIs having public endpoints. For instance, if your application has a ``ingest-csv`` endpoint accepting CSV data, you can insert a row using the following statement:
 
 .. code-block:: bash
 
-   INSERT INTO FUNCTION url('https://app-name.company-name.cloud/api/ingest-csv, 'CSVWithNames') VALUES ('column1-value', 'column2-value');
+   INSERT INTO FUNCTION url('https://app-name.company-name.cloud/api/ingest-csv', 'CSVWithNames') VALUES ('column1-value', 'column2-value');
 
-When executing an insert statement into the S3 function, the rows are appended to the corresponding object if the table structure matches:
+Query using INSERT and the URL function
+'''''''''''''''''''''''''''''''''''''''
+
+When executing an INSERT statement into the S3 function, the rows are appended to the corresponding object if the table structure matches:
 
 .. code-block:: bash
 
    INSERT INTO FUNCTION
-   s3(‘https://<bucket-name>.s3.<region-name>.amazonaws.com/<dataset-name>/landing/<todays-date>/raw-data.csv’, 'CSVWithNames') 
-   VALUES (‘column1-value’, 'column2-value');
+   s3('https://<bucket-name>.s3.<region-name>.amazonaws.com/<dataset-name>/landing/<todays-date>/raw-data.csv', 'CSVWithNames') 
+   VALUES ('column1-value', 'column2-value');
 
-Instead of specifying the URL of the resource in every query, it’s possible to create a virtual table using the URL table engine. Here is an example DDL creation statement:
+Query a virtual table
+'''''''''''''''''''''
+
+Instead of specifying the URL of the resource in every query, it's possible to create a virtual table using the URL table engine. This can be achieved by running a DDL CREATE statement similar to the following:
 
 .. code-block:: bash
 
@@ -116,9 +134,9 @@ Instead of specifying the URL of the resource in every query, it’s possible to
       `trip_distance` Float64,
       `fare_amount` Float32
    )
-   ENGINE=URL('https://app-name.company-name.cloud/api/trip-csv-export’, CSV)
+   ENGINE=URL('https://app-name.company-name.cloud/api/trip-csv-export', CSV)
 
-Once the table is defined, selects and inserts execute GET and POST requests to the URL respectively:
+Once the table is defined, SELECT and INSERT statements execute GET and POST requests to the URL respectively:
 
 .. code-block:: bash
 
