@@ -726,6 +726,8 @@ entries:
             title: Disaster recovery
           - file: docs/products/clickhouse/concepts/strings
             title: Strings
+          - file: docs/products/clickhouse/concepts/federated-queries
+            title: Federated queries
       - file: docs/products/clickhouse/howto
         title: HowTo
         entries:
@@ -768,8 +770,10 @@ entries:
                 title: Read and write data across shards
               - file: docs/products/clickhouse/howto/copy-data-across-instances
                 title: Copy data across ClickHouse servers
-              - file: docs/products/clickhouse/howto/fetch-query-statistics.rst
+              - file: docs/products/clickhouse/howto/fetch-query-statistics
                 title: Fetch query statistics
+              - file: docs/products/clickhouse/howto/run-federated-queries
+                title: Run federated queries
           - file: docs/products/clickhouse/howto/list-manage-cluster
             title: Manage cluster
           - file: docs/products/clickhouse/howto/list-integrations

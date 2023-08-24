@@ -17,8 +17,8 @@ Why use federated queries
 
 There are a few reasons why you might want to use federated queries:
 
-* Query remote data from your Clickhouse service. Ingest it into Aiven for ClickHouse or only reference external data sources as part of an analytics query. In the context of an increasing footprint of connected data sources, federated queries can help you better understand how your customers use your products.
-* Simplify and speed up the import of your data into the Aiven for Clickhouse instance from a legacy data source, avoiding a long and sometimes complex migration path.
+* Query remote data from your ClickHouse service. Ingest it into Aiven for ClickHouse or only reference external data sources as part of an analytics query. In the context of an increasing footprint of connected data sources, federated queries can help you better understand how your customers use your products.
+* Simplify and speed up the import of your data into the Aiven for ClickHouse instance from a legacy data source, avoiding a long and sometimes complex migration path.
 * Improve the migration of data in Aiven for ClickHouse, and extend analysis over external data sources with a relatively low effort in comparison to enabling distributed tables and `the remote and remoteSecure functionalities <https://clickhouse.com/docs/en/sql-reference/table-functions/remote>`_.
 
 .. note::
