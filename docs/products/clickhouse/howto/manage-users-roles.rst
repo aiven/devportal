@@ -141,3 +141,8 @@ Preview users and roles in the console
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You can also see the users, their roles, and permissions in the  `Aiven web console <https://console.aiven.io/>`_. Go to your service page, and select **Users and roles** from the sidebar. Next to every user listed, there is a **View details & grants** button, which shows you a list of all grants for that user.
+
+Manage using Terraform
+--------------
+
+You can also manage user roles and access using the `Aiven Terraform Provider</docs/tools/terraform>`. See `The Aiven Terraform Provider Cookbook recipe: Manage user privileges for Aiven for Clickhouse® services using Terraform"<https://aiven.io/developer/manage-user-privileges-clickhouse-terraform>` for more information.

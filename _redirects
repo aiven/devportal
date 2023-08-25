@@ -73,6 +73,7 @@
 /docs/tools/terraform/reference/cookbook/m3db-m3agg-recipe                      https://aiven.io/developer/m3-aggregator-integration
 /docs/tools/terraform/reference/cookbook/postgresql-read-replica-recipe         https://aiven.io/developer/postgresql-read-only-terraform
 /docs/tools/terraform/reference/cookbook/clickhouse-access-setup-recipe         https://aiven.io/developer/manage-user-privileges-clickhouse-terraform
+/docs/products/clickhouse/howto/configure-access-terraform-deployed             https://aiven.io/developer/manage-user-privileges-clickhouse-terraform
 /docs/tools/terraform/reference/cookbook/kafka-clickhouse-integration-recipe    https://aiven.io/developer/kafka-source-for-clickhouse
 /docs/tools/terraform/reference/cookbook/postgres-clickhouse-integration-recipe     https://aiven.io/developer/postgresql-source-for-clickhouse
 
