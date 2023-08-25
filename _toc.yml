@@ -222,6 +222,8 @@ entries:
     # -------- TOOLS --------
   - file: docs/tools
     entries:
+
+      # -------- CLI --------
       - file: docs/tools/cli
         entries:
         - file: docs/tools/cli/account
@@ -242,79 +244,87 @@ entries:
           entries:
             - glob: docs/tools/cli/user/*
         - file: docs/tools/cli/vpc
+      
+      # -------- API --------
       - file: docs/tools/api
         title: Aiven API
         entries:
           - file: docs/tools/api/examples
+      
+      # -------- TERRAFORM --------
       - file: docs/tools/terraform
-        title: Aiven Terraform provider
+        title: Aiven Provider for Terraform
         entries:
         - file: docs/tools/terraform/get-started
           title: Get started
-        - file: docs/tools/terraform/howto
-          title: HowTo
+        - file: docs/tools/terraform/concepts/data-sources
+        - file: docs/tools/terraform/howto/terraform-logging
+          title: Enable debug logging
+        - file: docs/tools/terraform/howto/promote-to-master-pg-rr
+          title: Promote PostgreSQL read-only replica to primary
+        - file: docs/tools/terraform/howto/config-postgresql-provider
+          title: Use PostgreSQL Provider with Aiven Provider 
+        - file: docs/tools/terraform/list-upgrade-terraform
+          title: Upgrade Aiven Provider
           entries:
-            - file: docs/tools/terraform/howto/terraform-logging
-              title: Enable debug logging
             - file: docs/tools/terraform/howto/upgrade-provider-v1-v2
-              title: Upgrade the Aiven Terraform Provider from v1 to v2
+              title: Upgrade from v1 to v2
             - file: docs/tools/terraform/howto/upgrade-provider-v2-v3
-              title: Upgrade the Aiven Terraform Provider from v2 to v3
+              title: Upgrade from v2 to v3
             - file: docs/tools/terraform/howto/upgrade-provider-v3-v4
-              title: Upgrade the Aiven Terraform Provider from v3 to v4
-            - file: docs/tools/terraform/howto/update-deprecated-resources
-            - file: docs/tools/terraform/howto/config-postgresql-provider
-              title: Use PostgreSQL provider alongside Aiven Terraform Provider 
-            - file: docs/tools/terraform/howto/promote-to-master-pg-rr
-              title: Promote PostgreSQL read-only replica to master
+              title: Upgrade from v3 to v4
             - file: docs/tools/terraform/howto/upgrade-to-opensearch
-            - file: docs/tools/terraform/howto/vnet-peering-azure
-            - file: docs/tools/terraform/howto/vpc-peering-gcp
+            - file: docs/tools/terraform/howto/update-deprecated-resources
+        - file: docs/tools/terraform/list-vpc-terraform
+          title: Virtual network peering
+          entries:
             - file: docs/tools/terraform/howto/vpc-peering-aws
-        - file: docs/tools/terraform/concepts
-          title: Concepts
+              title: Set up AWS virtual network peering
+            - file: docs/tools/terraform/howto/vnet-peering-azure
+              title: Set up Azure virtual network peering
+            - file: docs/tools/terraform/howto/vpc-peering-gcp
+              title: Set up Google Cloud Platform virtual network peering
+        - file: docs/tools/terraform/reference/cookbook
+          title: Terraform Cookbook
           entries:
-            - glob: docs/tools/terraform/concepts/*
-        - file: docs/tools/terraform/reference
+          - file: docs/tools/terraform/reference/cookbook/kafka-connect-terraform-recipe
+            title: Apache Kafka and OpenSearch  
+          - file: docs/tools/terraform/reference/cookbook/multicloud-postgresql-recipe
+            title: Multicloud PostgreSQL
+          - file: docs/tools/terraform/reference/cookbook/kafka-flink-integration-recipe
+            title: Apache Kafka and Apache Flink  
+          - file: docs/tools/terraform/reference/cookbook/kafka-mirrormaker-recipe
+            title: Apache Kafka and Apache MirrorMaker
+          - file: docs/tools/terraform/reference/cookbook/kafka-karapace-recipe
+            title: Apache Kafka with Karapace
+          - file: docs/tools/terraform/reference/cookbook/grafana-m3db-postgresql-recipe
+            title: Visualize PostgreSQL metrics with Grafana  
+          - file: docs/tools/terraform/reference/cookbook/postgresql-custom-configs-recipe
+            title: PostgreSQL with custom configs
+          - file: docs/tools/terraform/reference/cookbook/kafka-mongodb-recipe
+            title: Apache Kafka MongoDB Source Connector
+          - file: docs/tools/terraform/reference/cookbook/kafka-debezium-postgres-source
+            title: Debezium Source Connector across clouds
+          - file: docs/tools/terraform/reference/cookbook/kafka-topics-http-connector-recipe.rst
+            title: Apache Kafka with topics and HTTP sink connector
+          - file: docs/tools/terraform/reference/cookbook/kafka-custom-conf-recipe.rst
+            title: Apache Kafka with custom configurations  
+          - file: docs/tools/terraform/reference/cookbook/m3db-m3agg-recipe
+            title: M3 and M3 Aggregator
+          - file: docs/tools/terraform/reference/cookbook/postgresql-read-replica-recipe
+            title: PostgreSQL® read-only replica
+          - file: docs/tools/terraform/reference/cookbook/clickhouse-access-setup-recipe
+            title: Configure ClickHouse user's access
+          - file: docs/tools/terraform/reference/cookbook/kafka-clickhouse-integration-recipe
+            title: Apache Kafka and ClickHouse
+          - file: docs/tools/terraform/reference/cookbook/postgres-clickhouse-integration-recipe
+            title: ClickHouse and PostgreSQL
+        - file: docs/tools/terraform/reference/troubleshooting
           entries:
-          - file: docs/tools/terraform/reference/cookbook
-            entries:
-            - file: docs/tools/terraform/reference/cookbook/kafka-connect-terraform-recipe
-              title: Apache Kafka and OpenSearch  
-            - file: docs/tools/terraform/reference/cookbook/multicloud-postgresql-recipe
-              title: Multicloud PostgreSQL
-            - file: docs/tools/terraform/reference/cookbook/kafka-flink-integration-recipe
-              title: Apache Kafka and Apache Flink  
-            - file: docs/tools/terraform/reference/cookbook/kafka-mirrormaker-recipe
-              title: Apache Kafka and Apache MirrorMaker
-            - file: docs/tools/terraform/reference/cookbook/kafka-karapace-recipe
-              title: Apache Kafka with Karapace
-            - file: docs/tools/terraform/reference/cookbook/grafana-m3db-postgresql-recipe
-              title: Visualize PostgreSQL metrics with Grafana  
-            - file: docs/tools/terraform/reference/cookbook/postgresql-custom-configs-recipe
-              title: PostgreSQL with custom configs
-            - file: docs/tools/terraform/reference/cookbook/kafka-mongodb-recipe
-              title: Apache Kafka MongoDB Source Connector
-            - file: docs/tools/terraform/reference/cookbook/kafka-debezium-postgres-source
-              title: Debezium Source Connector across clouds
-            - file: docs/tools/terraform/reference/cookbook/kafka-topics-http-connector-recipe.rst
-              title: Apache Kafka with topics and HTTP sink connector
-            - file: docs/tools/terraform/reference/cookbook/kafka-custom-conf-recipe.rst
-              title: Apache Kafka with custom configurations  
-            - file: docs/tools/terraform/reference/cookbook/m3db-m3agg-recipe
-              title: M3 and M3 Aggregator
-            - file: docs/tools/terraform/reference/cookbook/postgresql-read-replica-recipe
-              title: PostgreSQL® read-only replica
-            - file: docs/tools/terraform/reference/cookbook/clickhouse-access-setup-recipe
-              title: Configure ClickHouse user's access
-            - file: docs/tools/terraform/reference/cookbook/kafka-clickhouse-integration-recipe
-              title: Apache Kafka and ClickHouse
-            - file: docs/tools/terraform/reference/cookbook/postgres-clickhouse-integration-recipe
-              title: ClickHouse and PostgreSQL
-          - file: docs/tools/terraform/reference/troubleshooting
-            entries:
-            - file: docs/tools/terraform/reference/troubleshooting/private-access-error
-              title: Private access error when using VPC
+          - file: docs/tools/terraform/reference/troubleshooting/private-access-error
+            title: Private access error when using VPC
+            
+      # -------- KUBERNETES --------
       - file: docs/tools/kubernetes
         title: Aiven Operator for Kubernetes
 

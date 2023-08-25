@@ -1,5 +1,5 @@
-Azure virtual network peering
-=============================
+Set up Azure virtual network peering with Terraform
+====================================================
 
 This help article contains step-by-step instructions for setting up peering in Azure. See the `Using VPC
 peering <https://docs.aiven.io/docs/platform/howto/manage-vpc-peering.html>`__

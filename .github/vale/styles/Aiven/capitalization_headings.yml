@@ -13,6 +13,8 @@ exceptions:
   - APIs
   - Aiven
   - Aiven Console
+  - Aiven Provider 
+  - Aiven Provider for Terraform
   - Apache
   - AWS Transit Gateway
   - AWS Marketplace
