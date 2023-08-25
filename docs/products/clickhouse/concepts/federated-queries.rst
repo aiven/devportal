@@ -38,7 +38,7 @@ Federated queries read from external S3-compatible object storage utilizing the 
 
 .. seealso::
 
-    For more details on how to run federated querie in Aiven for ClickHouse, check :doc:`Run a federated query from Aiven for ClickHouse </docs/products/clickhouse/howto/run-federated-queries>`.
+    For more details on how to run federated querie in Aiven for ClickHouse, check :doc:`Read and pull data from S3 object storages and web resources over HTTP </docs/products/clickhouse/howto/run-federated-queries>`.
 
 Limitations
 -----------
@@ -49,7 +49,7 @@ Limitations
 Related reading
 ---------------
 
-* :doc:`Run a federated query from Aiven for ClickHouse </docs/products/clickhouse/howto/run-federated-queries>`
+* :doc:`Read and pull data from S3 object storages and web resources over HTTP </docs/products/clickhouse/howto/run-federated-queries>`
 * `Cloud Compatibility | ClickHouse Docs <https://clickhouse.com/docs/en/whats-new/cloud-compatibility#federated-queries>`_
 * `Integrating S3 with ClickHouse <https://clickhouse.com/docs/en/integrations/s3>`_
 * `remote, remoteSecure | ClickHouse Docs <https://clickhouse.com/docs/en/sql-reference/table-functions/remote>`_
