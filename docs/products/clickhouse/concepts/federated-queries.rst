@@ -1,5 +1,5 @@
-Queries for reading and pulling data external to Aiven for ClickHouse®
-======================================================================
+About querying external data in Aiven for ClickHouse®
+=====================================================
 
 Discover federated queries and their capabilities in Aiven for ClickHouse®. Check why you might need to use them, for example, how they simplify and speed up migrating into Aiven from external data sources. Learn how federated queries work and how you can run them properly.
 
