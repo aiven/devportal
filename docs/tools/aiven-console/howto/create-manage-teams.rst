@@ -8,9 +8,7 @@ Create and manage teams
     :doc:`Groups </docs/platform/howto/manage-groups>` are an easier way to control access to your organization's projects and services for a group of users.
 
 
-**Teams** let you create user groups and assign different access levels to specific projects in your organization or org unit. When you :doc:`create an organization or organizational unit </docs/tools/aiven-console/howto/create-accounts>`, a team is automatically created with admin access to the organization or org unit and its projects.
-
-Users must be part of an organization before being added to a team. To create and manage teams, click **Admin** and then select **Teams**.
+**Teams** let you create user groups and assign different access levels to specific projects. Users must be part of an organization before being added to a team. To create and manage teams, click **Admin** and then select **Teams**.
 
 Create a new team
 --------------------------
@@ -33,7 +31,10 @@ Add users to a team
 The user will get an email with an invitation link. 
 
 Add projects and roles to a team
--------------------------------------------
+----------------------------------
+
+.. important::
+    Teams cannot be assigned to units. 
 
 For each team you can specify which projects they can access and the level of permissions:
 
