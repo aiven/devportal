@@ -3,7 +3,12 @@ Read and pull data from S3 object storages and web resources over HTTP
 
 With federated queries in Aiven for ClickHouse®, you can read and pull data from an external S3-compatible object storage or any web resource accessible over HTTP. Learn more about capabilities and applications of federated queries in :doc:`About querying external data in Aiven for ClickHouse® </docs/products/clickhouse/concepts/federated-queries>`.
 
-This article shows how to run federated queries in Aiven for ClickHouse. It provides multiple examples of querying external resouces using the SELECT and INSERT statements and the S3 and HTML functions.
+This article shows how to run federated queries in Aiven for ClickHouse. It provides multiple examples of querying external resources using the SELECT and INSERT statements and the S3 and HTML functions.
+
+About running federated queries
+-------------------------------
+
+Federated queries are written using specific SQL statements and can be run from CLI, for instance. To run a federated query, just send a query over an external S3-compatible object storage including relevant S3 bucket details. A properly-constructed federated query returns a specific output.
 
 Before you start
 ----------------
@@ -30,11 +35,6 @@ Limitations
 
 Run a federated query
 ---------------------
-
-To run a federated query, just write a query over an external S3-compatible object storage including relevant S3 bucket details. A properly-constructed federated query returns a specific output.
-
-Sample federated queries
-------------------------
 
 Check of the examples of running federated queries to read and pull data from external S3-compatible object storages.
 
