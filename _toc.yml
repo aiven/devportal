@@ -791,8 +791,6 @@ entries:
             entries:
               - file: docs/products/clickhouse/howto/manage-users-roles
                 title: Manage users and roles
-              - file: docs/products/clickhouse/howto/configure-access-terraform-deployed
-                title: Manage user permissions with Terraform
               - file: docs/products/clickhouse/howto/manage-databases-tables
                 title: Manage databases and tables
               - file: docs/products/clickhouse/howto/query-databases
