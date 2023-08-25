@@ -20,13 +20,17 @@ These plugins are enabled on all Aiven for OpenSearch services by default:
 * `Index Management <https://opensearch.org/docs/im-plugin/index/>`__
 * `k-NN <https://opensearch.org/docs/search-plugins/knn/index/>`__
 * `Notebooks <https://opensearch.org/docs/dashboards/notebooks/>`__
-* `Performance Analyzer <https://opensearch.org/docs/monitoring-plugins/pa/index/>`__
 * `OpenSearch Dashboards Reports <https://github.com/opensearch-project/dashboards-reports>`__
 * `Scheduler for Dashboards Reports <https://github.com/opensearch-project/dashboards-reports>`__
 * `OpenSearch Dashboards Gantt Charts <https://opensearch.org/docs/latest/dashboards/gantt/>`__
 * `OpenSearch Dashboards Trace Analytics <https://opensearch.org/docs/latest/monitoring-plugins/trace/index/>`__
 * `ML Commons plugin <https://opensearch.org/docs/latest/ml-commons-plugin/index/>`_
-
+* `OpenSearch observability <https://opensearch.org/docs/latest/observing-your-data/index/>`__
+* `OpenSearch security <https://opensearch.org/docs/latest/security/index/>`__
+* `OpenSearch security analytics <https://opensearch.org/docs/latest/security-analytics/index/>`__
+* `OpenSearch cross cluster replication <https://opensearch.org/docs/latest/tuning-your-cluster/replication-plugin/index/>`__
+* `OpenSearch neural search <https://opensearch.org/docs/latest/search-plugins/neural-search/>`__
+* `OpenSearch notifications <https://opensearch.org/docs/latest/observing-your-data/notifications/index/>`__
 
 ------
 
