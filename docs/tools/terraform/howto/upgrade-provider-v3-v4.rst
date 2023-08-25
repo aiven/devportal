@@ -1,4 +1,4 @@
-Upgrade the Aiven Terraform Provider from v3 to v4
+Upgrade Aiven Provider for Terraform from v3 to v4
 ===================================================
 
 The Aiven Terraform Provider version 4.0.0 was released in February 2023. If you previously upgraded the Terraform provider from version 2 to version 3, then no other actions are needed. Otherwise, this article has information on how to upgrade to version 4. 

@@ -1,4 +1,4 @@
-Upgrade the Aiven Terraform Provider from v1 to v2
+Upgrade Aiven Provider for Terraform from v1 to v2
 ==================================================
 
 Version 2 of the Aiven Terraform Provider was released in `October of
