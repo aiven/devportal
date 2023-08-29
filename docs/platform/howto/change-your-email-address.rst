@@ -19,4 +19,4 @@ You can't change your login email address directly. Instead, you can create a ne
 
 #. Remove the old email address from all groups and :doc:`add the new user to those groups </docs/platform/howto/manage-groups>`.
 
-#. After accepting the invite and confirming the new user has the correct access, remove the old user from the organization. 
+#. After the invite is accepted and you confirmed that the new user has the correct access, :doc:`remove the old user </docs/platform/howto/manage-org-users>` from the organization. 
