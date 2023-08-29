@@ -1197,6 +1197,8 @@ entries:
             title: Migrate
             entries:
               - file: docs/products/postgresql/howto/migrate-cloud-region
+              - file: docs/products/postgresql/howto/migrate-db-to-aiven-via-console
+                title: Migrate PostgreSQL databases to Aiven via console
               - file: docs/products/postgresql/howto/migrate-aiven-db-migrate
               - file: docs/products/postgresql/howto/migrate-pg-dump-restore
               - file: docs/products/postgresql/howto/migrate-using-bucardo
