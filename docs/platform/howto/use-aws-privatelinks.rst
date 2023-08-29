@@ -3,7 +3,7 @@ Use AWS PrivateLink with Aiven services
 
 .. important::
 
-    AWS PrivateLink is a :doc:`limited availability feature </docs/platform/concepts/beta_services>`, which you can request from the sales team (sales@Aiven.io) or your account manager. During the limited availability stage, you can use the feature at no cost. If you want to continue using AWS PrivateLink after it gets generally available, you'll start being charged according to the latest applicable price.
+    AWS PrivateLink is a :doc:`limited availability feature </docs/platform/concepts/beta_services>`, which you can request from the sales team (sales@Aiven.io) or your account manager. During the limited availability stage, you can use the feature at no cost. If you want to continue using AWS PrivateLink after it reaches general availability, you'll be billed according to the latest applicable price.
 
 AWS `PrivateLink <https://aws.amazon.com/privatelink/>`__ brings Aiven
 services to the selected virtual private cloud (VPC) in your AWS
