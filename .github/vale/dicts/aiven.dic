@@ -40,6 +40,7 @@ connect
 Couchbase
 CPU/MS
 CRD
+cron
 cURL
 cyber
 datacenter
@@ -196,6 +197,7 @@ rebalance
 rebalances
 rebalancing
 Redis
+redis_timeout
 Redli
 refcard
 reindex
@@ -243,6 +245,7 @@ subprocesses
 subtab
 syslog
 TaskManager
+Tcpdump
 Telegraf
 Tenant
 Terraform
@@ -257,6 +260,7 @@ UDFs
 unassign
 uncomment
 unencrypted
+Unschedule
 untrusted
 unaggregated
 UpCloud
@@ -267,6 +271,7 @@ VMs
 VPC/MS
 VNet
 wget
+Wireshark
 Workbench
 Worldmap
 worldPing

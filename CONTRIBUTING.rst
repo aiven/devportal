@@ -93,13 +93,7 @@ Advice on marking up elements correctly can be found in the `README <README.rst>
 
 Always use ``literal`` formatting for commands, function names, and config options. One limitation is that this can't be used inside links; please reword to work arond this.
 
-Use **bold text** for interactive UI elements, such as buttons. Use *italic text* for non-interactive items such as section headings. Here's an example from the VPC access article::
-
-    On the *Overview* page, scroll down to the *Advanced configuration* section and click **Add configuration option**.
-
-On the *Overview* page, scroll down to the *Advanced configuration* section and click **Add configuration option**.
-
-Use admonitions "note", "tip", and "warning". Avoid the rest of the available admonition types (especially "danger" which traditionally would imply danger to life, which is not a usual feature of a data platform).
+Use **bold text** for interactive UI elements, such as buttons. 
 
 Screenshots
 '''''''''''
@@ -127,6 +121,64 @@ The following items are only allowed in strict moderation:
 * emoji :smile:
 * exclamation marks
 * questions, especially in headlines
+
+Working with Sphinx and reStructuredText
+'''''''''''''''''''''''''''''''''''''''''
+
+Aiven docs are built using `Sphinx <https://www.sphinx-doc.org/en/master/>`_ with pages written in reStructuredText. The following are some useful tips for working with Sphinx and reStructuredText.
+
+**Create anonymous links**
+
+If in a page you have multiple links having the same label, for instance:
+
+.. code:: reStructuredText
+
+    `docs <http//docs.com>`_
+    `docs <http//docs2.com>`_
+
+You'll see a warning in the logs stating ``Duplicate target name``. To resolve the warning you can either
+
+* change the link labels to be different, or
+* create an anonymous link by adding two ``_`` at the end of the link, for instance:
+
+  .. code:: reStructuredText
+
+     `docs <http//docs2.com>`__
+
+
+**Create orphan pages**
+
+By default any pages created need to be added in the ``_toc.yml`` file and therefore appear in the left navigation section. However you might want to create **orphan** pages which can be linked by other pages but are not present in the main navigation panel. 
+
+To achieve this and avoid build failures, you just need to add the ``:orphan:`` directive in the page like:
+
+.. code:: reStructuredText
+
+    :orphan:
+
+    Page title
+    ==========
+
+    Body content
+
+The ``:orphan:`` section tells Sphinx not to include this page in any contents list, and therefore no warning is issued about the page not being added in the  ``_toc.yaml`` file.
+
+**Rename files and adding redirects**
+
+The project supports a redirects file, named ``_redirects``; the format is `source` and `destination` as paths relative to the root of the project. Here's an example::
+
+    /docs/products/flink/howto/real-time-alerting-solution-cli.html    /docs/products/flink/howto/real-time-alerting-solution.html
+
+If you are moving or renaming a file, put the old and new URLs into the file. If you are deleting a file, use the old URL and choose a good alternative landing place, such as a similar article, or a section homepage.
+
+.. tip:: You can also create shortcut convenience URLs, but please use these sparingly.
+
+
+Troubleshooting linting errors 
+'''''''''''''''''''''''''''''''
+
+You may get errors from the automated checks when using proper nouns. In these cases, you might need to add the words as an exception or add them to the dictionary file. For information on how to do this, see the `Vale readme file <.github/vale/README.rst>`_.
+
 
 Troubleshooting linting errors 
 '''''''''''''''''''''''''''''''

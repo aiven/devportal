@@ -39,6 +39,7 @@ Aiven for PostgreSQL® how-tos
     - :doc:`Check and avoid transaction ID wraparound </docs/products/postgresql/howto/check-avoid-transaction-id-wraparound>`
     - :doc:`Prevent PostgreSQL® full disk issues </docs/products/postgresql/howto/prevent-full-disk>`
     - :doc:`Enable and use pgvector on Aiven for PostgreSQL® </docs/products/postgresql/howto/use-pgvector>`
+    - :doc:`Check size of a database, a table or an index </docs/products/postgresql/howto/pg-object-size>`
 
 .. dropdown:: Migration
 
@@ -47,6 +48,7 @@ Aiven for PostgreSQL® how-tos
     - :doc:`Migrate to Aiven for PostgreSQL® with pg_dump and pg_restore </docs/products/postgresql/howto/migrate-pg-dump-restore>`
     - :doc:`Migrating to Aiven for PostgreSQL® using Bucardo </docs/products/postgresql/howto/migrate-using-bucardo>`
     - :doc:`Migrate between PostgreSQL® instances using aiven-db-migrate in Python </docs/products/postgresql/howto/run-aiven-db-migrate-python>`
+    - :doc:`Migrate PostgreSQL® databases to Aiven using the console </docs/products/postgresql/howto/migrate-db-to-aiven-via-console>`
 
 .. dropdown:: Replication
 
