@@ -52,6 +52,8 @@ OpenSearch Security in Aiven for OpenSearch service offers a range of features t
   .. note:: 
     Aiven for OpenSearch provides basic SAML integration for the beta release, and certain features, such as logout support and request signing, is not be included.
 
+* **OpenID Connect integration**: Aiven for OpenSearch enables you to securely authenticate and authorize users through OpenID Connect, enhancing authentication options. 
+
 * **OpenSearch Dashboard multi-tenancy:** OpenSearch Security provides OpenSearch Dashboard multi-tenancy, which allows you to have different tenants on your OpenSearch Dashboard. 
 
 * **OpenSearch audit-logs:** Aiven for OpenSearch Security includes OpenSearch Audit-logs, which allow you to document a historical record of activity for compliance purposes and other business policy enforcement.
