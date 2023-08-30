@@ -3,7 +3,7 @@ Aiven for Apache Kafka® metrics available via Prometheus
 
 The following list only contains the most common metrics available via Prometheus for an Aiven for Apache Kafka® service.
 
-You can retrieve the complete list of available metrics for your specific service by making a request to the Prometheus endpoint, substituting:
+You can retrieve the complete list of available metrics for your specific service by requesting the Prometheus endpoint, substituting:
 
 * the Aiven project certificate (``ca.pem``)
 * the Prometheus credentials (``<PROMETHEUS_USER>:<PROMETHEUS_PASSWORD>``)
@@ -24,7 +24,7 @@ CPU utilization
 ---------------
 
 * ``cpu_usage_guest``: CPU time spent running a virtual CPU for guest operating systems.
-* ``cpu_usage_guest_nice``: The amount of time that the CPU is running a virtual CPU for a guest operating system, which is low-priority and can be interrupted by other processes. This metric is measured in hundredths of a second.
+* ``cpu_usage_guest_nice``: The amount of time the CPU runs a virtual CPU for a guest operating system, which is low-priority and can be interrupted by other processes. This metric is measured in hundredths of a second.
 * ``cpu_usage_idle``: Time the CPU spends doing nothing.
 * ``cpu_usage_iowait``: Time waiting for I/O to complete.
 * ``cpu_usage_irq``: Time servicing interrupts.
@@ -53,7 +53,8 @@ Disk space utilization
 
 Disk input and output
 ---------------------
-Metrics like diskio_io_time, diskio_iops_in_progress, etc., provide insights into disk I/O operations, such as read/write operations, time taken for these operations, bytes read/written, etc.
+Metrics such as diskio_io_time, diskio_iops_in_progress, etc., offer valuable insights into disk I/O operations. These metrics encompass read/write operations, the duration of these operations, bytes read/written, and more.
+
 
 * ``diskio_io_time``
 * ``diskio_iops_in_progress``
@@ -69,7 +70,7 @@ Metrics like diskio_io_time, diskio_iops_in_progress, etc., provide insights int
 
 Garbage collector ``MXBean``
 ----------------------------
-Metrics starting with java_lang_GarbageCollector provide insights into the JVM's garbage collection process, such as the number of collections, time taken for collections, etc.
+Metrics associated with the java_lang_GarbageCollector provide insights into the JVM's garbage collection process. These metrics encompass details such as the collection count, duration of collections, and more.
 
 * ``java_lang_GarbageCollector_G1_Young_Generation_CollectionCount``: returns the total number of collections that have occurred
 * ``java_lang_GarbageCollector_G1_Young_Generation_CollectionTime``: returns the approximate accumulated collection elapsed time in milliseconds
@@ -88,7 +89,7 @@ Metrics starting with java_lang_Memory provide insights into the JVM's memory us
 Apache Kafka Connect
 --------------------
 
-The list of Apache Kafka Connect metrics is available in the :doc:`dedicated page <../kafka-connect/reference/connect-metrics-prometheus>`.
+The Apache Kafka Connect metrics list is available in the :doc:`dedicated page <../kafka-connect/reference/connect-metrics-prometheus>`.
 
 Apache Kafka broker
 -------------------
@@ -101,7 +102,7 @@ The descriptions for the below metrics are available in the `Monitoring section 
 
     Note that a metric like ``kafka_server_BrokerTopicMetrics_MessagesInPerSec_Count`` is a cumulative count of incoming messages despite the ``PerSec`` suffix in the metric name.
 
-    To see the rate of change of these ``_Count`` metrics, a function can be applied, e.g. the ``rate()`` function in PromQL.
+    To see the rate of change of these ``_Count`` metrics, you can apply a function such as the ``rate()`` function in PromQL.
 
 Apache Kafka controller
 '''''''''''''''''''''''
@@ -109,7 +110,7 @@ Apache Kafka controller
 .. Note::
     These metrics with ``kafka_controller_ControllerStats_LeaderElectionRateAndTimeMs_XthPercentile`` (where X can be 50th, 75th, 95th, etc.) represent the time taken for leader elections to complete at various percentiles. It helps in understanding the distribution of leader election times.
 
-    Metrics below with ``kafka_controller_ControllerStats_LeaderElectionRateAndTimeMs_`` (FifteenMinuteRate, FiveMinuteRate, etc) represent the rate of leader elections over different time intervals.
+    Metrics below with ``kafka_controller_ControllerStats_LeaderElectionRateAndTimeMs_`` (FifteenMinuteRate, FiveMinuteRate, etc.) represent the rate of leader elections over different time intervals.
 
     Metrics below with ``kafka_controller_ControllerStats_LeaderElectionRateAndTimeMs_`` (Max/Mean/Min/StdDev) provide statistical measures about the leader election times.
 
@@ -144,7 +145,7 @@ Apache Kafka controller
 ``Jolokia`` collector collect time
 ''''''''''''''''''''''''''''''''''
 
-* ``kafka_jolokia_collector_collect_time``: Represents the time taken by the Jolokia collector to collect metrics. Jolokia is a JMX-HTTP bridge giving an alternative to native JMX access.
+* ``kafka_jolokia_collector_collect_time``: Represents the time taken by the Jolokia collector to collect metrics. Jolokia is a JMX-HTTP bridge, giving an alternative to native JMX access.
 
 
 Apache Kafka log
@@ -206,7 +207,7 @@ Apache Kafka server
 
 * ``kafka_server_BrokerTopicMetrics_BytesInPerSec_Count``: Byte in (from the clients) rate per topic. Omitting 'topic=(...)' will yield the all-topic rate.
 * ``kafka_server_BrokerTopicMetrics_BytesOutPerSec_Count``: Byte out (to the clients) rate per topic. Omitting 'topic=(...)' will yield the all-topic rate.
-* ``kafka_server_BrokerTopicMetrics_BytesRejectedPerSec_Count``: Rejected byte rate per topic, due to the record batch size being greater than max.message.bytes configuration. Omitting 'topic=(...)' will yield the all-topic rate.
+* ``kafka_server_BrokerTopicMetrics_BytesRejectedPerSec_Count``: Rejected byte rate per topic due to the record batch size being greater than max.message.bytes configuration. Omitting 'topic=(...)' will yield the all-topic rate.
 * ``kafka_server_BrokerTopicMetrics_FailedFetchRequestsPerSec_Count``: Failed Fetch request (from clients or followers) rate per topic. Omitting 'topic=(...)' will yield the all-topic rate.
 * ``kafka_server_BrokerTopicMetrics_FailedProduceRequestsPerSec_Count``: Failed Produce request rate per topic. Omitting 'topic=(...)' will yield the all-topic rate.
 * ``kafka_server_BrokerTopicMetrics_FetchMessageConversionsPerSec_Count``: Message format conversion rate, for Produce or Fetch requests, per topic. Omitting 'topic=(...)' will yield the all-topic rate.
@@ -242,7 +243,7 @@ Kernel
 
 .. Note::
 
-    Metrics below like ``kernel_boot_time``, ``kernel_context_switches``, etc., provide insights into the underlying system's kernel operations.
+    Metrics below, like ``kernel_boot_time``, ``kernel_context_switches``, etc., provide insights into the underlying system's kernel operations.
 
 * ``kernel_boot_time``
 * ``kernel_context_switches``
