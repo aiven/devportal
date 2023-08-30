@@ -7,7 +7,7 @@ Manage your Aiven for ClickHouse® service
         :shadow: md
         :margin: 2 2 0 0
 
-    .. grid-item-card:: :doc:`Manage user permissions with Terraform </docs/products/clickhouse/howto/configure-access-terraform-deployed>`
+    .. grid-item-card:: `Manage user permissions with Terraform  <https://aiven.io/developer/manage-user-privileges-clickhouse-terraform>`_
         :shadow: md
         :margin: 2 2 0 0
 
