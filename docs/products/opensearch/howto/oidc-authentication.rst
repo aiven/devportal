@@ -35,7 +35,7 @@ Enable OpenID Connect authentication via Aiven Console
    * **IdP URL**: Enter the URL of your OpenID Connect Identity Provider. This is the URL that Aiven will use to redirect users to your IdP for authentication.
    * **Client ID**: Enter the ID you obtained during your IdP registration. This ID is used to authenticate your Aiven application with your IdP.
    * **Client Secret**: Enter the secret associated with the Client ID. This secret is used to encrypt communications between your Aiven application and your IdP.
-   * **Scope**: The scope of the claims. This is the set of permissions that you are requesting from your IdP. For example, you might request the openid, profile, and email scopes to get the user's identity, profile information, and email address.
+   * **Scope**: The scope of the claims. This is the set of permissions that you are requesting from your IdP. For example, you can request the ``openid``, ``profile``, and ``email`` scopes to get the user's identity, profile information, and email address.
    * **Roles key**: The key in the returned JSON that stores the user's roles. This key is used by Aiven to determine the user's permissions.
    * **Subject key**: This refers to the specific key within the returned JSON that holds the user's name or identifying subject. Aiven uses this key to recognize and authenticate the user. By default, this key is labeled as ``Subject``.
 
@@ -51,7 +51,7 @@ Enable OpenID Connect authentication via Aiven Console
        * **Parameter name**: Enter the specific URL parameter that will carry the authentication token.
 
    * **Refresh limit count**: Maximum number of unrecognized JWT key IDs allowed within 10 seconds. Enter the value for the Refresh Limit Count parameter. The default value is 10.
-   * **Refresh limit window (ms)**: Timeframe (in milliseconds) for checking unrecognized JWT key IDs. Enter the value for the Refresh Limit Window parameter. The default value is 10,000 (10 seconds).
+   * **Refresh limit window (ms)**: This is the interval, measured in milliseconds, during which the system will verify unrecognized JWT key IDs. Enter the value for the Refresh Limit Window parameter. The default value is 10,000 (10 seconds).
 
 6. Select **Enable**  to complete the setup and activate the configuration.
 
