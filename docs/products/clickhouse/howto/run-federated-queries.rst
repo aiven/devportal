@@ -100,21 +100,17 @@ Query using SELECT and the URL function
       replace(code, '"', '') AS `ISO country code`,
       growth_proj AS `Forecasted annualized rate of growth`,
       toInt32(replace(sitc_eci_rank, '"', '')) AS `Economic Complexity Index ranking`
-   FROM url('https://dataverse.harvard.edu/api/access/datafile/7259657?format=tab', 'TSV') -- [1]_
+   FROM url('https://dataverse.harvard.edu/api/access/datafile/7259657?format=tab', 'TSV') --[1]
    WHERE year = 2021
    ORDER BY `Economic Complexity Index ranking` ASC
    LIMIT 20
 
-.. rubric:: Footnotes
-
-.. [1] Text
+[1] URL in this example belongs to the `Growth Projections and Complexity Rankings <https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/XTAQMC&version=4.0>`_ dataset.
 
 Query using INSERT and the URL function
 '''''''''''''''''''''''''''''''''''''''
 
-With the URL function, [Ref]_ INSERT statements generate a POST request, which can be used to interact with APIs having public endpoints. For instance, if your application has a ``ingest-csv`` endpoint accepting CSV data, you can insert a row using the following statement:
-
-.. [Ref] Book
+With the URL function, INSERT statements generate a POST request, which can be used to interact with APIs having public endpoints. For instance, if your application has a ``ingest-csv`` endpoint accepting CSV data, you can insert a row using the following statement:
 
 .. code-block:: bash
 
