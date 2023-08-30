@@ -42,7 +42,7 @@ Query using SELECT and the S3 function
 ''''''''''''''''''''''''''''''''''''''
 
 SQL SELECT statements using the S3 and URL functions are able to query public resources using the URL of the resource.
-For instance, let's explore the network connectivity measurement data provided by Open Observatory of Network Interference (OONI).
+For instance, let's explore the network connectivity measurement data provided by the `Open Observatory of Network Interference (OONI) <https://ooni.org/data/>`_.
 
 .. code-block:: sql
 
