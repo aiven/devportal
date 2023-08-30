@@ -284,41 +284,6 @@ entries:
               title: Set up Azure virtual network peering
             - file: docs/tools/terraform/howto/vpc-peering-gcp
               title: Set up Google Cloud Platform virtual network peering
-        - file: docs/tools/terraform/reference/cookbook
-          title: Terraform Cookbook
-          entries:
-          - file: docs/tools/terraform/reference/cookbook/kafka-connect-terraform-recipe
-            title: Apache Kafka and OpenSearch  
-          - file: docs/tools/terraform/reference/cookbook/multicloud-postgresql-recipe
-            title: Multicloud PostgreSQL
-          - file: docs/tools/terraform/reference/cookbook/kafka-flink-integration-recipe
-            title: Apache Kafka and Apache Flink  
-          - file: docs/tools/terraform/reference/cookbook/kafka-mirrormaker-recipe
-            title: Apache Kafka and Apache MirrorMaker
-          - file: docs/tools/terraform/reference/cookbook/kafka-karapace-recipe
-            title: Apache Kafka with Karapace
-          - file: docs/tools/terraform/reference/cookbook/grafana-m3db-postgresql-recipe
-            title: Visualize PostgreSQL metrics with Grafana  
-          - file: docs/tools/terraform/reference/cookbook/postgresql-custom-configs-recipe
-            title: PostgreSQL with custom configs
-          - file: docs/tools/terraform/reference/cookbook/kafka-mongodb-recipe
-            title: Apache Kafka MongoDB Source Connector
-          - file: docs/tools/terraform/reference/cookbook/kafka-debezium-postgres-source
-            title: Debezium Source Connector across clouds
-          - file: docs/tools/terraform/reference/cookbook/kafka-topics-http-connector-recipe.rst
-            title: Apache Kafka with topics and HTTP sink connector
-          - file: docs/tools/terraform/reference/cookbook/kafka-custom-conf-recipe.rst
-            title: Apache Kafka with custom configurations  
-          - file: docs/tools/terraform/reference/cookbook/m3db-m3agg-recipe
-            title: M3 and M3 Aggregator
-          - file: docs/tools/terraform/reference/cookbook/postgresql-read-replica-recipe
-            title: PostgreSQL® read-only replica
-          - file: docs/tools/terraform/reference/cookbook/clickhouse-access-setup-recipe
-            title: Configure ClickHouse user's access
-          - file: docs/tools/terraform/reference/cookbook/kafka-clickhouse-integration-recipe
-            title: Apache Kafka and ClickHouse
-          - file: docs/tools/terraform/reference/cookbook/postgres-clickhouse-integration-recipe
-            title: ClickHouse and PostgreSQL
         - file: docs/tools/terraform/reference/troubleshooting
           entries:
           - file: docs/tools/terraform/reference/troubleshooting/private-access-error
@@ -791,8 +756,6 @@ entries:
             entries:
               - file: docs/products/clickhouse/howto/manage-users-roles
                 title: Manage users and roles
-              - file: docs/products/clickhouse/howto/configure-access-terraform-deployed
-                title: Manage user permissions with Terraform
               - file: docs/products/clickhouse/howto/manage-databases-tables
                 title: Manage databases and tables
               - file: docs/products/clickhouse/howto/query-databases
@@ -1197,6 +1160,8 @@ entries:
             title: Migrate
             entries:
               - file: docs/products/postgresql/howto/migrate-cloud-region
+              - file: docs/products/postgresql/howto/migrate-db-to-aiven-via-console
+                title: Migrate PostgreSQL databases to Aiven via console
               - file: docs/products/postgresql/howto/migrate-aiven-db-migrate
               - file: docs/products/postgresql/howto/migrate-pg-dump-restore
               - file: docs/products/postgresql/howto/migrate-using-bucardo

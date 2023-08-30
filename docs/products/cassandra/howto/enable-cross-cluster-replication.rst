@@ -276,4 +276,4 @@ Related reading
 * `Multi-master Replication: Versioned Data and Tunable Consistency <https://cassandra.apache.org/doc/latest/cassandra/architecture/dynamo.html#multi-master-replication-versioned-data-and-tunable-consistency>`_
 * :doc:`OpenSearch® cross-cluster replication</docs/products/opensearch/concepts/cross-cluster-replication-opensearch>`
 * :doc:`Set up cross-cluster replication for OpenSearch</docs/products/opensearch/howto/setup-cross-cluster-replication-opensearch>`
-* :doc:`Enabling cross-cluster replication for Apache Kafka® via Terraform</docs/tools/terraform/reference/cookbook/kafka-mirrormaker-recipe>`
+* `Cross-cluster replication for Apache Kafka® with Terraform <https://aiven.io/developer/kafka-mirrormaker-crosscluster>`_

@@ -45,7 +45,7 @@ Add the following to a new ``provider.tf`` file:
    
 You can also set the environment variable ``AIVEN_TOKEN`` for the ``api_token`` property. With this, you don't need to pass the ``-var-file`` flag when executing Terraform commands.
  
-2.  The following Terraform script deploys a single-node Redis service. This is a minimal example which you can swap out with your own Terraform scripts or other advanced recipes from :doc:`the Terraform cookbook <reference/cookbook>`.
+2.  The following Terraform script deploys a single-node Redis service. This is a minimal example which you can swap out with your own Terraform scripts or other advanced recipes from `the Terraform cookbook <https://aiven.io/developer/terraform>`_.
 
 The contents of the ``redis.tf`` file should look like this:
 

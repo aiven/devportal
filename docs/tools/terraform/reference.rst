@@ -3,5 +3,5 @@
 Reference
 =========
 
-:doc:`Aiven Terraform Cookbook </docs/tools/terraform/reference/cookbook>`
+`Aiven Terraform Cookbook <https://aiven.io/developer/terraform>`_.
 :doc:`Troubleshooting </docs/tools/terraform/reference/troubleshooting>`
