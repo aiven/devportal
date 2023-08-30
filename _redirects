@@ -57,6 +57,26 @@
 /docs/products/clickhouse/howto/integrate-pg.html                      /docs/products/clickhouse/howto/integrate-postgresql.html
 /docs/platform/concepts/byoa.html                                      /docs/platform/concepts/byoc.html
 
+# Moved to https://aiven.io/developer 
+/docs/tools/terraform/reference/cookbook                                        https://aiven.io/developer/terraform 
+/docs/tools/terraform/reference/cookbook/kafka-connect-terraform-recipe         https://aiven.io/developer/apache-kafka-to-opensearch-terraform
+/docs/tools/terraform/reference/cookbook/multicloud-postgresql-recipe           https://aiven.io/developer/multicloud-postgresql-terraform
+/docs/tools/terraform/reference/cookbook/kafka-flink-integration-recipe         https://aiven.io/developer/kafka-source-sink-flink-integration
+/docs/tools/terraform/reference/cookbook/kafka-mirrormaker-recipe               https://aiven.io/developer/kafka-mirrormaker-crosscluster
+/docs/tools/terraform/reference/cookbook/kafka-karapace-recipe                  https://aiven.io/developer/apache-kafka-karapace
+/docs/tools/terraform/reference/cookbook/grafana-m3db-postgresql-recipe         https://aiven.io/developer/grafana-visualize-postgresql
+/docs/tools/terraform/reference/cookbook/postgresql-custom-configs-recipe       https://aiven.io/developer/postgresql-custom-config-terraform
+/docs/tools/terraform/reference/cookbook/kafka-mongodb-recipe                   https://aiven.io/developer/apache-kafka-with-mongodb
+/docs/tools/terraform/reference/cookbook/kafka-debezium-postgres-source         https://aiven.io/developer/debezium-source-postgresql-kafka-across-clouds
+/docs/tools/terraform/reference/cookbook/kafka-topics-http-connector-recipe     https://aiven.io/developer/kafka-with-http-sink
+/docs/tools/terraform/reference/cookbook/kafka-custom-conf-recipe                https://aiven.io/developer/apache-kafka-with-custom-configurations
+/docs/tools/terraform/reference/cookbook/m3db-m3agg-recipe                      https://aiven.io/developer/m3-aggregator-integration
+/docs/tools/terraform/reference/cookbook/postgresql-read-replica-recipe         https://aiven.io/developer/postgresql-read-only-terraform
+/docs/tools/terraform/reference/cookbook/clickhouse-access-setup-recipe         https://aiven.io/developer/manage-user-privileges-clickhouse-terraform
+/docs/products/clickhouse/howto/configure-access-terraform-deployed             https://aiven.io/developer/manage-user-privileges-clickhouse-terraform
+/docs/tools/terraform/reference/cookbook/kafka-clickhouse-integration-recipe    https://aiven.io/developer/kafka-source-for-clickhouse
+/docs/tools/terraform/reference/cookbook/postgres-clickhouse-integration-recipe     https://aiven.io/developer/postgresql-source-for-clickhouse
+
 # Redirect from .index.html to specific page names for landing
 
 # with one section and no subsections, i. e. docs/platform

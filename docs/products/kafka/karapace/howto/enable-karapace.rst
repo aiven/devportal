@@ -13,5 +13,5 @@ To learn more about Karapace and its features, see the `Karapace homepage <https
 
 More resources
 --------------
-For more information on how to setup Karapace with Aiven for Apache Kafka® using `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_, see :doc:`Apache Kafka® with Karapace Schema Registry </docs/tools/terraform/reference/cookbook/kafka-karapace-recipe>`.
+For more information on how to setup Karapace with Aiven for Apache Kafka® using `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_, see `Apache Kafka® with Karapace Schema Registry <https://aiven.io/developer/apache-kafka-karapace>`_.
   

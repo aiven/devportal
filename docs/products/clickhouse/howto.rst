@@ -30,9 +30,8 @@ Aiven for ClickHouse® how-tos
 
 .. dropdown:: Terraform provider cookbooks
 
-    - :doc:`Aiven for ClickHouse® service cookbook </docs/tools/terraform/reference/cookbook/clickhouse-access-setup-recipe>`
-    - :doc:`Aiven for ClickHouse®-Apache Kafka® integration cookbook </docs/tools/terraform/reference/cookbook/kafka-clickhouse-integration-recipe>`
-    - :doc:`Aiven for ClickHouse®-PostgreSQL® integration cookbook </docs/tools/terraform/reference/cookbook/postgres-clickhouse-integration-recipe>`
+    - `Aiven for ClickHouse®-Apache Kafka® integration cookbook <https://aiven.io/developer/kafka-source-for-clickhouse>`_.
+    - `Aiven for ClickHouse®-PostgreSQL® integration cookbook <https://aiven.io/developer/postgresql-source-for-clickhouse>`_.
 
 .. dropdown:: Integrations
 

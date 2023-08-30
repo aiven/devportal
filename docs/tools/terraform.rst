@@ -32,12 +32,6 @@ Check out the :doc:`get started guide </docs/tools/terraform/get-started>` for y
 
         📖 :doc:`/docs/tools/terraform/reference`
 
-    .. grid-item-card::
-        :shadow: md
-        :margin: 2 2 0 0
-
-        👨‍🍳 :doc:`/docs/tools/terraform/reference/cookbook`
-
 Learn more
 ----------
 Check out these resources to learn more:
