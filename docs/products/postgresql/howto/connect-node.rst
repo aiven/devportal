@@ -8,11 +8,15 @@ Variables
 
 These are the placeholders you will need to replace in the code sample:
 
-==================      =============================================================
+==================      =======================================================================
 Variable                Description
-==================      =============================================================
-``POSTGRESQL_URI``      URL for PostgreSQL connection, from the service overview page
-==================      =============================================================
+==================      =======================================================================
+``USER``                PostgreSQL username, from the service overview page
+``PASSWORD``            PostgreSQL password, from the service overview page
+``HOST``                Hostname for PostgreSQL connection, from the service overview page
+``PORT``                Port for PostgreSQL connection, from the service overview page
+``DATABASE``            Database Name for PostgreSQL connection, from the service overview page
+==================      =======================================================================
 
 Pre-requisites
 ''''''''''''''
@@ -28,15 +32,12 @@ For this example you will need:
 Code
 ''''
 
-Add the following to ``index.js`` and replace the placeholder with the PostgreSQL URI:
+Add the following to ``index.js`` and replace the connection parameters with the ones from the service overview page:
 
 .. literalinclude:: /code/products/postgresql/connect.js
    :language: javascript
 
 This code creates a PostgreSQL client and opens a connection to the database. Then runs a query checking the database version and prints the response.
-
-.. note::
-    This example removes ``?sslmode=require`` from the URL string to avoid running into `this bug <https://github.com/brianc/node-postgres/issues/2558>`_. Adding the ``rejectUnauthorized: true`` configuration ensures that the certificate is checked.
 
 To run the code::
 
