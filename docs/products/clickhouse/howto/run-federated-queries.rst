@@ -100,10 +100,14 @@ Query using SELECT and the URL function
       replace(code, '"', '') AS `ISO country code`,
       growth_proj AS `Forecasted annualized rate of growth`,
       toInt32(replace(sitc_eci_rank, '"', '')) AS `Economic Complexity Index ranking`
-   FROM url('https://dataverse.harvard.edu/api/access/datafile/7259657?format=tab', 'TSV')
+   FROM url('https://dataverse.harvard.edu/api/access/datafile/7259657?format=tab', 'TSV') -- [1]_
    WHERE year = 2021
    ORDER BY `Economic Complexity Index ranking` ASC
    LIMIT 20
+
+.. rubric:: Footnotes
+
+.. [1] Text
 
 Query using INSERT and the URL function
 '''''''''''''''''''''''''''''''''''''''
@@ -119,15 +123,7 @@ With the URL function, [Ref]_ INSERT statements generate a POST request, which c
 Query using INSERT and the S3 function
 '''''''''''''''''''''''''''''''''''''''
 
-When executing an INSERT statement into the [1]_ S3 function, the rows are appended to the corresponding object if the table structure matches:
-
-.. rubric:: Footnotes
-
-.. [1] Text 
-
-.. rubric:: Footnotes
-
-   .. [1] Text 
+When executing an INSERT statement into the S3 function, the rows are appended to the corresponding object if the table structure matches:
 
 .. code-block:: bash
 
