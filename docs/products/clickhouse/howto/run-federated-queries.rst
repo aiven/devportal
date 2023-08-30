@@ -96,13 +96,21 @@ Query using SELECT and the URL function
 
 .. code-block:: bash
 
-   SELECT *
-   FROM url('https://interesting-public-csv-that-wont-change.some-agency-or-ngo-we-like.org', 'CSVWithNames')
+   SELECT
+      replace(code, '"', '') AS `ISO country code`,
+      growth_proj AS `Forecasted annualized rate of growth`,
+      toInt32(replace(sitc_eci_rank, '"', '')) AS `Economic Complexity Index ranking`
+   FROM url('https://dataverse.harvard.edu/api/access/datafile/7259657?format=tab', 'TSV')
+   WHERE year = 2021
+   ORDER BY `Economic Complexity Index ranking` ASC
+   LIMIT 20
 
 Query using INSERT and the URL function
 '''''''''''''''''''''''''''''''''''''''
 
-With the URL function, INSERT statements generate a POST request, which can be used to interact with APIs having public endpoints. For instance, if your application has a ``ingest-csv`` endpoint accepting CSV data, you can insert a row using the following statement:
+With the URL function, [Ref]_ INSERT statements generate a POST request, which can be used to interact with APIs having public endpoints. For instance, if your application has a ``ingest-csv`` endpoint accepting CSV data, you can insert a row using the following statement:
+
+.. [Ref] Book
 
 .. code-block:: bash
 
@@ -111,7 +119,15 @@ With the URL function, INSERT statements generate a POST request, which can be u
 Query using INSERT and the S3 function
 '''''''''''''''''''''''''''''''''''''''
 
-When executing an INSERT statement into the S3 function, the rows are appended to the corresponding object if the table structure matches:
+When executing an INSERT statement into the [1]_ S3 function, the rows are appended to the corresponding object if the table structure matches:
+
+.. rubric:: Footnotes
+
+.. [1] Text 
+
+.. rubric:: Footnotes
+
+   .. [1] Text 
 
 .. code-block:: bash
 
