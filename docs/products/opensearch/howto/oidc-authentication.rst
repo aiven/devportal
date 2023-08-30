@@ -5,7 +5,7 @@ OpenID Connect (OIDC) is an authentication protocol that builds on top of the OA
 
 Prerequisites
 ---------------
-* Aiven for OpenSearch® version 2.4 or later is required. If you are using an earlier version, upgrade to the latest version.
+* Aiven for OpenSearch® version 2 or later is required. If you are using an earlier version, upgrade to the latest version.
 * OpenSearch Security management must be :doc:`enabled <../howto/enable-opensearch-security>` on the Aiven for OpenSearch® service.
 * An OpenID provider (IdP) that supports the OpenID Connect protocol.
 
@@ -19,9 +19,11 @@ To successfully set up OpenID Connect authentication, the following parameters f
 * **IdP URL**: The URL of your Identity Provider (IdP), which will be used to authenticate users.
 * **Client ID**: Credentials your IdP provides when registering Aiven for OpenSearch as a client application. This credential is used to authenticate your Aiven for OpenSearch client application against the IdP and facilitate secure communication.
 * **Client Secret**: Credentials your IdP provides when you register Aiven for OpenSearch as a client application.
-* **Redirect URL**: The URL that your IdP will redirect users to after they are authenticated. This URL should point to a location where your OpenSearch Dashboards instance can process the authentication token provided by the IdP.
 * **Scope**: The scope of the authentication request specifies the permissions that you want to request from the Identity Provider (IdP). The available and required scopes may vary depending on the IdP you are using. Some common scopes include ``openid``, ``profile``, ``email``. 
 * **Roles key and subject key**: Keys that help Aiven for OpenSearch Dashboards understand which part of the returned token contains role information and which part contains the user's identity or name.
+
+.. note:: 
+  The **Redirect URL** is automatically generated and available in the Aiven Console. This is the URL to which the Identity Provider (IdP) will redirect users after successful authentication. For more information on how to obtain this URL, see the next section.
 
 Enable OpenID Connect authentication via Aiven Console
 --------------------------------------------------------
@@ -55,37 +57,8 @@ Enable OpenID Connect authentication via Aiven Console
 
 6. Select **Enable**  to complete the setup and activate the configuration.
 
-SSO authentication and authorization sequence
--------------------------------------------------
 
-Learn how Aiven for OpenSearch uses OpenID Connect for secure Single Sign-On (SSO) with robust authentication and role-based authorization.
+Additional resources
+---------------------
 
-1. **User Access Request**: A user tries to access the OpenSearch Dashboard provided by their Aiven for OpenSearch service.
-
-2. **Aiven Authentication Check**: Aiven's service checks whether the user already has an active session. If not, it prepares to initiate the SSO process.
-
-3. **Redirect to IdP**: Aiven for OpenSearch redirects the user to the configured OpenID Connect Identity Provider for authentication.
-
-4. **User Authentication**: At the IdP interface, the user provides their credentials. This could be a username and password, a one-time pin, or another form of authentication supported by the IdP.
-
-5. **Generation of ID Token**: Once the user is successfully authenticated, the IdP generates and sends an ID token (JWT) to Aiven. This token contains claims about the user's identity and possibly additional information.
-
-6. **Token Verification**: Aiven for OpenSearch verifies the ID token to ensure it's legitimately issued by the trusted IdP. It validates the token's signature, checks its expiration time, and may assess other token attributes.
-
-7. **Extraction of User Details**: After validating the token, Aiven extracts the user's information, using claims from the JWT, to understand the user's identity and roles.
-
-8. **Authorization Process**: With the user's identity verified, Aiven for OpenSearch references the roles or permissions, either embedded within the ID token or fetched separately from the IdP. Using these roles, Aiven determines what resources or actions the user can access within the OpenSearch Dashboard.
-
-9. **Access Decision**: Depending on the user's roles and permissions, Aiven for OpenSearch either grants or denies access to the OpenSearch Dashboard or specific features within it.
-
-10. **Session Creation**: If the user is authorized, Aiven establishes a session for the user in the OpenSearch Dashboard. This means the user won't need to re-authenticate for a specific duration, even if they navigate away and return shortly after.
-
-11. **Session End**: After a defined period of inactivity or upon user logout, Aiven terminates the session. For subsequent access, the user would be prompted to re-authenticate through the SSO process.
-
-
-
-
-
-
-
-
+* `OpenSearch OpenID Connect documentation <https://opensearch.org/docs/latest/security/authentication-backends/openid-connect/>`_
