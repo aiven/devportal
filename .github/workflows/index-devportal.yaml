@@ -2,7 +2,7 @@ name: Index devportal pages
 
 on:
   push:
-    branches: [ main ]
+    branches: [ fix-algolia-index-title-refer ]
 
 jobs:
   build:
