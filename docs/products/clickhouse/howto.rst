@@ -15,6 +15,7 @@ Aiven for ClickHouse® how-tos
     - :doc:`Create materialised views in Aiven for ClickHouse® </docs/products/clickhouse/howto/materialized-views>`
     - :doc:`Monitor Aiven for ClickHouse® performance </docs/products/clickhouse/howto/monitor-performance>`
     - :doc:`Fetch query statistics for Aiven for ClickHouse® </docs/products/clickhouse/howto/fetch-query-statistics>`
+    - :doc:`Run federated queries in Aiven for ClickHouse® </docs/products/clickhouse/howto/run-federated-queries>`
 
 .. dropdown:: Cluster management
 
