@@ -1036,6 +1036,8 @@ entries:
                 title: Enable OpenSearch Security management
               - file: docs/products/opensearch/howto/saml-sso-authentication
                 title: SAML authentication
+              - file: docs/products/opensearch/howto/oidc-authentication
+                title: OpenID Connect
               - file: docs/products/opensearch/howto/audit-logs
                 title: Audit logs
               - file: docs/products/opensearch/howto/opensearch-dashboard-multi_tenancy
