@@ -34,3 +34,7 @@ Manage your Aiven for ClickHouse® service
     .. grid-item-card:: :doc:`Fetch query statistics for Aiven for ClickHouse® </docs/products/clickhouse/howto/fetch-query-statistics>`
         :shadow: md
         :margin: 2 2 0 0
+
+    .. grid-item-card:: :doc:`Run federated in Aiven for ClickHouse® </docs/products/clickhouse/howto/run-federated-queries>`
+        :shadow: md
+        :margin: 2 2 0 0

@@ -18,6 +18,10 @@ Aiven service
         :shadow: md
         :margin: 2 2 0 0
 
+    .. grid-item-card:: :doc:`Read and pull data from external S3 with federated queries </docs/products/clickhouse/concepts/federated-queries>`
+        :shadow: md
+        :margin: 2 2 0 0
+
 General
 -------
 

@@ -26,38 +26,40 @@ def parse_pages(html_build_dir):
 
         with open(filepath) as file:
             doc = BeautifulSoup(file.read(), 'html.parser')
-
+            #set initial value for title
+            title = doc.title.text
             elements = doc.select('div.article-container')[0]
 
-            # Extract title from h1 tag and remove it
-            for h1 in elements.select('h1'):
-                # Decompose the a tag in the h1 tag
-                for a in h1.select('a'):
-                    a.decompose()
+            if elements:
+                # Extract title from h1 tag and remove it
+                for h1 in elements.select('h1'):
+                    # Decompose the a tag in the h1 tag
+                    for a in h1.select('a'):
+                        a.decompose()
 
-                title = h1.text.strip()
-                h1.decompose()
+                    title = h1.text.strip()
+                    h1.decompose()
 
-            # remove admonition
-            for admonition in elements.select('div.admonition'):
-                admonition.decompose()
+                # remove admonition
+                for admonition in elements.select('div.admonition'):
+                    admonition.decompose()
 
-            # remove tables of contents
-            for toc in elements.select('div.toctree-wrapper'):
-                toc.decompose()
+                # remove tables of contents
+                for toc in elements.select('div.toctree-wrapper'):
+                    toc.decompose()
 
-            # remove header links
-            for headerlink in elements.select('a.headerlink'):
-                headerlink.decompose()
+                # remove header links
+                for headerlink in elements.select('a.headerlink'):
+                    headerlink.decompose()
 
-            # remove preamble links etc
-            for backtotop in elements.select('a.back-to-top'):
-                backtotop.decompose()
+                # remove preamble links etc
+                for backtotop in elements.select('a.back-to-top'):
+                    backtotop.decompose()
 
-            for icons in elements.select('div.content-icon-container'):
-                icons.decompose()
+                for icons in elements.select('div.content-icon-container'):
+                    icons.decompose()
 
-            body = elements.text.strip()
+                body = elements.text.strip()
             pages.append({
                 'title': title,
                 'body': body,
