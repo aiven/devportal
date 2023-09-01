@@ -69,7 +69,7 @@ Aiven for OpenSearch® is the open source continuation of the original Elasticse
    `*` To be announced
 
 .. note:: 
-   The availability end date for OpenSearch minor version 1.3 on Aiven platform is yet to be decided. The EOL for Aiven for OpenSearch® is generally dependent on the upstream project.
+   The EOL for Aiven for OpenSearch® is generally dependent on the upstream project.
 
 
 Aiven for PostgreSQL®
