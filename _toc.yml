@@ -1080,6 +1080,10 @@ entries:
           - file: docs/products/opensearch/reference/index-replication
           - file: docs/products/opensearch/reference/restapi-limited-access
           - file: docs/products/opensearch/reference/low-space-watermarks
+      - file: docs/products/opensearch/troubleshooting
+        title: Troubleshooting
+        entries:
+          - file: docs/products/opensearch/troubleshooting/troubleshooting-opensearch-dashboards.rst
   
   # -------- POSTGRESQL --------
   - file: docs/products/postgresql
