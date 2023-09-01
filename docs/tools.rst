@@ -58,9 +58,9 @@ You can use the Aiven platform in the way that best fits your workflow with our 
         :shadow: md
         :margin: 2 2 0 0
 
-        **Aiven Terraform Provider** 
+        **Aiven Provider for Terraform** 
         
-        An infrastructure-as-code tool to manage cloud infrastructure.
+        An infrastructure as code tool to manage cloud infrastructure.
 
         .. button-link:: tools/terraform
             :align: right

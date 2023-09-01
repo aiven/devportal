@@ -1,7 +1,7 @@
 Get started with Aiven Provider for Terraform
 ==============================================
 
-This example shows the setup for a Terraform project containing a single Redis®* service, and shows off some useful commands to stand up (and destroy) your Aiven data infrastructure.
+This example shows you how to use the Aiven Provider to set up your Aiven data infrastructure by creating a :doc:`project </docs/platform/concepts/projects_accounts_access>` with a single Aiven for Redis®* service. 
 
 .. caution::
 
@@ -12,21 +12,18 @@ This example shows the setup for a Terraform project containing a single Redis®
 
 Prerequisities  
 '''''''''''''''
-- `Download and install Terraform <https://www.terraform.io/downloads>`_
 - `Sign up for Aiven <https://console.aiven.io/signup?utm_source=github&utm_medium=organic&utm_campaign=devportal&utm_content=repo>`_ 
+- `Download and install Terraform <https://www.terraform.io/downloads>`_
 - `Create an authentication token <https://docs.aiven.io/docs/platform/howto/create_authentication_token.html>`_
-
 
 Configure your project and services
 '''''''''''''''''''''''''''''''''''
 
-In this section, you'll learn how to structure a simple Terraform project. 
+In this section, you'll learn how to structure a simple Terraform project. Terraform files declare the structure of the infrastructure, the dependencies, and configuration. These can be grouped together in one file, but it's ideal to put them in separate files.
 
-Terraform files declare the structure of the infrastructure, the dependencies, and configuration. These can be grouped together in one file, but it's ideal to put them in separate files.
+In an empty folder and follow these steps to define your Aiven project and Redis®* service: 
 
-Start with an empty folder, and follow these steps to define and then create your Aiven services.
-
-1. Create a new Terraform file, ``provider.tf``. This will be used to declar a dependency on the Aiven Provider for Terraform.
+1. Create a new Terraform file, ``provider.tf``. This will be used to declare a dependency on the Aiven Provider for Terraform.
 
 2. In the ``required_providers`` block, add the source of the provider and specify the version. In the provider configuration block, ``api_token`` is the only parameter.
 
