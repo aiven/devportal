@@ -12,7 +12,7 @@ The backup retention times vary based on the service and the selected service pl
 
 Aiven takes service backups for managing purposes. These backups are compressed and encrypted by the Aiven management platform and, as such, are not available for download for any service type.
 
-.. note::  In case of a change of cloud provider or availability zone for a service, its backups are not migrated with it.
+.. note::  If you change a cloud provider or an availability zone for your service, its backups are not migrated from their original location.
 
 Service power-off/on backup policy
 ------------------------------------
