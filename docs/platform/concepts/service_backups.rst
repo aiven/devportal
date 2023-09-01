@@ -6,7 +6,7 @@ This article provides information on general rules for handling service backups 
 About backups at Aiven
 ----------------------
 
-All Aiven services, except for Apache Kafka® and M3 Aggregator/Coordinator, have time-based backups that are encrypted and securely stored. Backups at Aiven are stored in the object storage of the cloud region where a service runs (for example, S3 for AWS or GCS for GCP). You can check the location of your service's backups in `Aiven Console <https://console.aiven.io/>`_ > your service's homepage > **Backups**.
+All Aiven services, except for Apache Kafka® and M3 Aggregator/Coordinator, have time-based backups that are encrypted and securely stored. Backups at Aiven are stored in the object storage of the cloud region where the service is first created (for example, S3 for AWS or GCS for GCP). Notice that the backups are not migrated with the service in case of a change of cloud provider or AZ. You can check the location of your service's backups in `Aiven Console <https://console.aiven.io/>`_ > your service's homepage > **Backups**.
 
 The backup retention times vary based on the service and the selected service plan. 
 
