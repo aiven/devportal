@@ -1,9 +1,6 @@
 Create and manage groups in an organization
 ============================================
 
-.. important::
-    Groups are available as a feature preview and must be :doc:`enabled in the user profile </docs/platform/howto/feature-preview>`.
-
 Create groups of users in your organization to make it easier to :doc:`give users with similar roles access to projects </docs/platform/howto/add-groups-projects>`. You need to :doc:`invite users to your organization </docs/platform/howto/manage-org-users>` before adding them to a group.
 
 Create a group 
