@@ -41,6 +41,14 @@ spell:
 	vale $(SOURCEDIR)/index.rst
 	vale $(SOURCEDIR)/docs
 
+# Create and push index to Algolia
+index-algolia: html
+	python "$(SOURCEDIR)/scripts/index_algolia.py" \
+		--algolia-app-id="$(ALGOLIA_APPLICATION_ID)" \
+		--algolia-api-key="$(ALGOLIA_ADMIN_KEY)" \
+		--algolia-index-name="$(ALGOLIA_INDEX_NAME)" \
+		--html-build-dir="$(BUILDDIR)/html"	
+
 # Create Elasticsearch index
 create-index:
 	python "$(SOURCEDIR)/scripts/create_index.py" \

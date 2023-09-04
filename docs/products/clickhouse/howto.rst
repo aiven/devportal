@@ -15,6 +15,7 @@ Aiven for ClickHouse® how-tos
     - :doc:`Create materialised views in Aiven for ClickHouse® </docs/products/clickhouse/howto/materialized-views>`
     - :doc:`Monitor Aiven for ClickHouse® performance </docs/products/clickhouse/howto/monitor-performance>`
     - :doc:`Fetch query statistics for Aiven for ClickHouse® </docs/products/clickhouse/howto/fetch-query-statistics>`
+    - :doc:`Run federated queries in Aiven for ClickHouse® </docs/products/clickhouse/howto/run-federated-queries>`
 
 .. dropdown:: Cluster management
 
@@ -30,9 +31,8 @@ Aiven for ClickHouse® how-tos
 
 .. dropdown:: Terraform provider cookbooks
 
-    - :doc:`Aiven for ClickHouse® service cookbook </docs/tools/terraform/reference/cookbook/clickhouse-access-setup-recipe>`
-    - :doc:`Aiven for ClickHouse®-Apache Kafka® integration cookbook </docs/tools/terraform/reference/cookbook/kafka-clickhouse-integration-recipe>`
-    - :doc:`Aiven for ClickHouse®-PostgreSQL® integration cookbook </docs/tools/terraform/reference/cookbook/postgres-clickhouse-integration-recipe>`
+    - `Aiven for ClickHouse®-Apache Kafka® integration cookbook <https://aiven.io/developer/kafka-source-for-clickhouse>`_.
+    - `Aiven for ClickHouse®-PostgreSQL® integration cookbook <https://aiven.io/developer/postgresql-source-for-clickhouse>`_.
 
 .. dropdown:: Integrations
 

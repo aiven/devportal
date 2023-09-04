@@ -1,5 +1,5 @@
-Data sources in Terraform
-=========================
+Data sources 
+=============
 
 It is common to want your Terraform configuration to refer to information beyond the current Terraform definition, either because it is defined in a separate Terraform project, or because the item is not under the control of Terraform. This is supported in Terraform by a concept called `data sources <https://www.terraform.io/language/data-sources>`_. Providers offer data sources alongside their data types, and in the Aiven Terraform provider, you will find that there are many situations where the same item appears as both a managed resource and a read-only data source.
 

@@ -6,11 +6,13 @@ This article provides information on general rules for handling service backups 
 About backups at Aiven
 ----------------------
 
-All Aiven services, except for Apache Kafka® and M3 Aggregator/Coordinator, have time-based backups that are encrypted and securely stored. Backups at Aiven are stored in the object storage of the cloud region where a service runs (for example, S3 for AWS or GCS for GCP). You can check the location of your service's backups in `Aiven Console <https://console.aiven.io/>`_ > your service's homepage > **Backups**.
+All Aiven services, except for Apache Kafka® and M3 Aggregator/Coordinator, have time-based backups that are encrypted and securely stored. Backups at Aiven are stored in the object storage of the cloud region where the service is first created (for example, S3 for AWS or GCS for GCP). You can check the location of your service's backups in `Aiven Console <https://console.aiven.io/>`_ > your service's homepage > **Backups**.
 
 The backup retention times vary based on the service and the selected service plan. 
 
 Aiven takes service backups for managing purposes. These backups are compressed and encrypted by the Aiven management platform and, as such, are not available for download for any service type.
+
+.. note::  If you change a cloud provider or an availability zone for your service, its backups are not migrated from their original location.
 
 Service power-off/on backup policy
 ------------------------------------
@@ -61,6 +63,9 @@ Aiven for Apache Kafka®
 
 Aiven for Apache Kafka is usually used as a transport tool for data rather than a permanent store. Due to the way it stores data, traditional backup strategies are not feasible. As a result, Aiven does not perform backups for managed Apache Kafka services, and data durability is determined by data replication across the cluster.
 
+However, automatic backups for essential Apache Kafka® service configurations are offered through :doc:`configuration backups </docs/products/kafka/concepts/configuration-backup>`, and they come at no extra cost.
+If the Apache Kafka® service is powered off/on or if any incidents lead to the cluster's failure, the configuration backup facilitates restoring your Apache Kafka® service to its previous state.
+
 To back up data passing through Apache Kafka, we recommend using one of the following tools:
 
 * :doc:`MirrorMaker 2<../../products/kafka/kafka-mirrormaker>` to replicate the data to another cluster, which could be an Aiven service or a Apache Kafka cluster on your own infrastructure. With MirrorMaker 2, the backup cluster operates as an independent Apache Kafka service. You can freely choose a zone for your backup service since it operates independently from the primary service.
@@ -78,6 +83,7 @@ To back up data passing through Apache Kafka, we recommend using one of the foll
     * :doc:`Aiven for Apache Kafka® MirrorMaker 2 </docs/products/kafka/kafka-mirrormaker>`
     * Cloudera's `A look inside Kafka MirrorMaker 2 <https://blog.cloudera.com/a-look-inside-kafka-mirrormaker-2/>`_
     * :doc:`Configure AWS for an S3 sink connector </docs/products/kafka/kafka-connect/howto/s3-sink-prereq>`
+    * :doc:`Configuration Backups </docs/products/kafka/concepts/configuration-backup>`
 
 Aiven for PostgreSQL®
 '''''''''''''''''''''

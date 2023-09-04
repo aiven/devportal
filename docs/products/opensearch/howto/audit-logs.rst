@@ -1,4 +1,4 @@
-Enable, configure, and visualize OpenSearch® Audit logs |beta|
+Enable, configure, and visualize OpenSearch® Audit logs
 ===============================================================
 
 Aiven for OpenSearch® enables audit logging functionality via the OpenSearch Security dashboard, which allows OpenSearch Security administrators to track system events, security-related events, and user activity. These audit logs contain information about user actions, such as login attempts, API calls, index operations, and other security-related events. 

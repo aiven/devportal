@@ -1,4 +1,4 @@
-Create an authentication token
+Create authentication tokens
 ==============================
 
 Create an authentication token in the Aiven Console for use with the Aiven CLI or API. To learn more about using authentication tokens, refer to :doc:`../concepts/authentication-tokens`.

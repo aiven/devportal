@@ -1,6 +1,7 @@
+:orphan:
+
 Reference
 =========
 
-Aiven Terraform provider reference contents.
-
-.. tableofcontents::
+`Aiven Terraform Cookbook <https://aiven.io/developer/terraform>`_.
+:doc:`Troubleshooting </docs/tools/terraform/reference/troubleshooting>`

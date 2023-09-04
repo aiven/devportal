@@ -1,5 +1,9 @@
-Disable cross-cluster replication in Aiven for Apache Cassandra® |beta|
-=======================================================================
+Disable cross-cluster replication in Aiven for Apache Cassandra®
+================================================================
+
+.. important::
+
+    Aiven for Apache Cassandra® cross-cluster replication (CCR) is a :doc:`limited availability feature </docs/platform/concepts/beta_services>`. If you're interested in trying out this feature, contact the sales team at `sales@Aiven.io <mailto:sales@Aiven.io>`_.
 
 This article provides you with instructions on how to discontinue the cross-cluster replication (CCR) for your Aiven for Apache Cassandra® service.
 
@@ -115,4 +119,4 @@ More on CCR with Aiven
 
 * :doc:`OpenSearch® cross-cluster replication</docs/products/opensearch/concepts/cross-cluster-replication-opensearch>`
 * :doc:`Set up cross-cluster replication for OpenSearch</docs/products/opensearch/howto/setup-cross-cluster-replication-opensearch>`
-* :doc:`Enabling cross-cluster replication for Apache Kafka® via Terraform</docs/tools/terraform/reference/cookbook/kafka-mirrormaker-recipe>`
+* `Enabling cross-cluster replication for Apache Kafka® via Terraform <https://aiven.io/developer/kafka-mirrormaker-crosscluster>`_.
