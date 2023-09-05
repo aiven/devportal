@@ -158,6 +158,6 @@ This runs ``terraform plan`` in destroy mode and shows you the proposed changes 
 
 Next steps 
 '''''''''''
-* Try `another sample project <https://registry.terraform.io/providers/aiven/aiven/latest/docs/guides/sample-project>`_ to set up Kafka, PostgreSQL, InfluxDB, and Grafana.
+* Try `another sample project <https://github.com/aiven/terraform-provider-aiven/blob/main/sample_project/sample.tf>`_ to set up integrated Kafka, PostgreSQL, InfluxDB, and Grafana services.
 
 * Read the `Terraform Docs <https://www.terraform.io/language/modules/develop/structure>`_ to learn about more complex project structures. 
