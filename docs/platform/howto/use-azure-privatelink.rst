@@ -64,7 +64,7 @@ Step 1: Create a Private Link service
 
    .. code:: shell
 
-        avn service privatelink azure create --user-subscription-id SUBSCRIPTION_ID
+      avn service privatelink azure create AIVEN_SERVICE --user-subscription-id SUBSCRIPTION_ID
 
    This creates an `Azure Standard Internal Load Balancer <https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview>`_ dedicated to your Aiven service and attaches it to an Azure Private Link service. Connections from other subscriptions are automatically rejected.
 
