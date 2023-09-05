@@ -13,6 +13,8 @@ Start using Aiven Provider
         :margin: 2 2 0 0
 
         :doc:`Get started </docs/tools/terraform/get-started>`
+        
+        Follow an example to learn how to set up a Terraform project.
 
     .. grid-item-card::
         :shadow: md
@@ -20,12 +22,18 @@ Start using Aiven Provider
 
         `Aiven Provider documentation <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_
 
+        Details on the data sources and resources supported by the Aiven Provider.
+
+
     .. grid-item-card::
         :shadow: md
         :margin: 2 2 0 0
 
         `Aiven Terraform Cookbook <https://aiven.io/developer/terraform>`_
 
+        Sample code for different use cases available on the Aiven Developer Center.
+
+
 Get involved
 -------------
-To report issues, give feedback, or to contribute to the tool, join us on the `GitHub repository <https://github.com/aiven/terraform-provider-aiven>`_.
+To report issues, give feedback, or to contribute to the tool join us on the `GitHub repository <https://github.com/aiven/terraform-provider-aiven>`_.

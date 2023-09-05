@@ -1,7 +1,7 @@
 Get started with Aiven Provider for Terraform
 ==============================================
 
-This example shows you how to use the Aiven Provider to set up your Aiven data infrastructure by creating a :doc:`project </docs/platform/concepts/projects_accounts_access>` with a single Aiven for Redis®* service. 
+This example shows you how to use the Aiven Provider to set up your data infrastructure by creating an :doc:`Aiven project </docs/platform/concepts/projects_accounts_access>` with a single Aiven for Redis®* service. 
 
 .. caution::
 
@@ -156,7 +156,8 @@ This runs ``terraform plan`` in destroy mode and shows you the proposed changes 
    terraform destroy -var-file=var-values.tfvars
 
 
-Further reference
-'''''''''''''''''
+Next steps 
+'''''''''''
+* Try `another sample project <https://registry.terraform.io/providers/aiven/aiven/latest/docs/guides/sample-project>`_ to set up Kafka, PostgreSQL, InfluxDB, and Grafana.
 
-This article outlined a simple Terraform project structure. For a more complex project structure, refer to the `Terraform Docs <https://www.terraform.io/language/modules/develop/structure>`_. 
+* Read the `Terraform Docs <https://www.terraform.io/language/modules/develop/structure>`_ to learn about more complex project structures. 
