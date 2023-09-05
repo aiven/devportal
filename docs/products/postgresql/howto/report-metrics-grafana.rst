@@ -4,17 +4,20 @@ Monitor PostgreSQL® metrics with Grafana®
 As well as offering PostgreSQL-as-a-service, the Aiven platform gives you access to monitor the database. The metrics/dashboard integration in the Aiven console lets you send PostgreSQL® metrics to an external endpoint like Datadog or to create an integration and a :doc:`prebuilt dashboard <../reference/pg-metrics>` in Aiven for Grafana®. Get detailed information about the metrics and dashboard sections in :doc:`../reference/pg-metrics`.
 
 
-Push PostgreSQL metrics to InfluxDB® or M3DB 
---------------------------------------------
+Push PostgreSQL metrics to InfluxDB®, M3DB or PostgreSQL
+--------------------------------------------------------
 
 To collect metrics about your PostgreSQL service you will need to configure a metrics integration and nominate somewhere to store the collected metrics.
 
 1. In the **Overview** page of your Aiven for PostgreSQL service, go to **Manage integrations** and choose the **Store Metrics** option with **Store service metrics in a time-series database** as its description.
 
-2. Choose either a new or existing InfluxDB® or M3DB service.
+2. Choose either a new or existing InfluxDB®, M3DB or PostgreSQL service.
 
    - A new service will ask you to select the cloud, region and plan to use. You should also give your service a name. The service overview page shows the nodes rebuilding, and then indicates when they are ready.
-   - If you're already using InfluxDB or M3DB on Aiven, you can submit your PostgreSQL metrics to the existing service.
+   - If you're already using InfluxDB, M3DB or PostgreSQL on Aiven, you can submit your PostgreSQL metrics to the existing service.
+
+.. Warning::
+    You can send your PostgreSQL service metrics to the same instance. This is not recommended since it increases the load on the monitored system and could also be affected in the event of problems with the database.
 
 Provision and configure Grafana
 -------------------------------
