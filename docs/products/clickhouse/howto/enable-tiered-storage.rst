@@ -56,7 +56,7 @@ When you have the tiered storage feature enabled on your project, you can move o
 
    .. code-block:: bash
 
-      ALTER TABLE database-name.table-name SET storage_policy=”tiered”
+      ALTER TABLE database-name.table-name MODIFY SETTING storage_policy = 'tiered'
 
 .. topic:: Result
    
