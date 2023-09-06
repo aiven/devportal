@@ -25,12 +25,7 @@ In an empty folder and follow these steps to define your Aiven project and Redis
 
 1. Create a new Terraform file, ``provider.tf``. This will be used to declare a dependency on the Aiven Provider for Terraform.
 
-2. In the ``required_providers`` block, add the source of the provider and specify the version. In the provider configuration block, ``api_token`` is the only parameter.
-
-.. tip::
-  View the latest version on the `Aiven Provider page <https://registry.terraform.io/providers/aiven/aiven/latest>`_.
-
-Add the following code to the ``provider.tf`` file:
+Add the following code to the file and specify the version in the ``required_providers`` block:
 
 .. code:: terraform
 
@@ -46,13 +41,13 @@ Add the following code to the ``provider.tf`` file:
   provider "aiven" {
     api_token = var.aiven_api_token
   }
-  
+
 .. tip::
-  Set the environment variable ``AIVEN_TOKEN`` for the ``api_token`` property so that you you don't need to pass the ``-var-file`` flag when executing Terraform commands.
+  View the latest version on the `Aiven Provider page <https://registry.terraform.io/providers/aiven/aiven/latest>`_.
 
 3. Create a file named ``redis.tf`` to define the configuration of an Aiven for Redis®* service.
 
-4. Add the following block for a single-node Redis service to the ``redis.tf`` file:
+Add the following block for a single-node Redis service:
 
 .. code:: terraform
 
@@ -78,7 +73,7 @@ Add the following code to the ``provider.tf`` file:
     
 5. Create a new file named ``variables.tf``. This is used to avoid including sensitive information in source control. 
 
-It defines both the API token and the project name:
+Add the following code to define both the API token and the project name:
 
 .. code:: terraform
 
@@ -93,14 +88,14 @@ It defines both the API token and the project name:
    }
    
    
-6. Create a file named ``var-values.tfvars`` to hold the actual values of the sensitive information. The values are passed to Terraform using the ``-var-file=`` flag.
+6. Create a file named ``var-values.tfvars`` to hold the actual values of the sensitive information. The values are passed to Terraform using the ``-var-file`` flag.
 
-Add your API token and project name to the ``var-values.tfvars`` file:
+Add the following code, replacing ``AIVEN_AUTHENTICATION_TOKEN`` with your API token and ``AIVEN_PROJECT_NAME`` with the name of your project:
 
 .. code:: terraform
 
-   aiven_api_token = "<YOUR-AIVEN-AUTHENTICATION-TOKEN-GOES-HERE>"
-   project_name    = "<YOUR-AIVEN-CONSOLE-PROJECT-NAME-GOES-HERE>"
+   aiven_api_token = "AIVEN_AUTHENTICATION_TOKEN"
+   project_name    = "AIVEN_PROJECT_NAME"
    
 
 Apply the Terraform configuration
