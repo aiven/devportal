@@ -62,7 +62,7 @@ When you have the tiered storage feature enabled on your project, you can move o
    
    The tiered storage is enabled on your table and data in this table is now distributed between two tiers: SSD and object storage.
 
-   You can check if the tiered storage is now supported (**Active** / **Not active**) on your table in `Aiven Console <https://console.aiven.io/>`_ > **Databases & Tables** > **Databases lists** > Your database > Your table > the **Tiered storage** column.
+   You can check if the tiered storage is now supported (**Active** / **Inactive**) on your table in `Aiven Console <https://console.aiven.io/>`_ > **Databases & Tables** > **Databases lists** > Your database > Your table > the **Tiered storage** column.
 
 What's next
 -----------
