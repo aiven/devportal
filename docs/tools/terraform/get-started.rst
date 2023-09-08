@@ -112,7 +112,7 @@ Plan and apply the configuration
 
    terraform plan
 
-3. To create the Redis service, run:
+3. To create the resources, run:
 
 .. code:: bash
 
@@ -131,13 +131,13 @@ Clean up
 
 To delete the service and its data:
 
-1. To create a destroy plan to preview the changes using the following command, run:
+1. To create a destroy plan and preview the changes to your infrastructure, run:
 
 .. code:: bash
 
    terraform plan -destroy
 
-2. To delete the resource and all data, run: 
+2. To delete the resources and all data, run: 
 
 .. code:: bash
 
