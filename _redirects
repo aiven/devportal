@@ -58,7 +58,8 @@
 /docs/platform/concepts/byoa.html                                      /docs/platform/concepts/byoc.html
 
 # Moved to https://aiven.io/developer 
-/docs/tools/terraform/reference/cookbook                                        https://aiven.io/developer/terraform 
+/docs/tools/terraform/reference/cookbook                                        https://aiven.io/developer/terraform
+/docs/tools/terraform/reference/cookbook.html                                   https://aiven.io/developer/terraform 
 /docs/tools/terraform/reference/cookbook/kafka-connect-terraform-recipe         https://aiven.io/developer/apache-kafka-to-opensearch-terraform
 /docs/tools/terraform/reference/cookbook/multicloud-postgresql-recipe           https://aiven.io/developer/multicloud-postgresql-terraform
 /docs/tools/terraform/reference/cookbook/kafka-flink-integration-recipe         https://aiven.io/developer/kafka-source-sink-flink-integration
