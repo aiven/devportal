@@ -318,6 +318,17 @@ entries:
           - file: docs/products/kafka/concepts/monitor-consumer-group
           - file: docs/products/kafka/concepts/kafka-quotas
             title: Quotas
+          - file: docs/products/kafka/concepts/kafka-tiered-storage
+            title: Tiered storage
+            entries: 
+              - file: docs/products/kafka/concepts/tiered-storage-how-it-works
+                title: How it works
+              - file: docs/products/kafka/concepts/tiered-storage-guarantees
+                title: Guarantees
+              - file: docs/products/kafka/concepts/tiered-storage-limitations
+                title: Limitations
+        
+
       - file: docs/products/kafka/howto
         title: HowTo
         entries:
