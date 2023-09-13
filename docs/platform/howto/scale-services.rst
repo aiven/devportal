@@ -17,4 +17,4 @@ When creating a new Aiven service, you are not tied to a plan. Your services can
 .. note::
 
     - You can also use the :ref:`dedicated service update function <avn-cli-service-update>` to scale your service plan via the :doc:`Aiven CLI </docs/tools/cli>`.
-    - When you perform a service upgrade or downgrade horizontally, it is required to include any additional disk existing on the service. For example, ``Startup-4`` to ``Business-4`` or ``Business-4`` to ``Startup-4``.
+    - When you perform a service upgrade or downgrade horizontally, remember to include all additional disks the service uses. For example, when switching from ``Startup-4`` to ``Business-4`` or from ``Business-4`` to ``Startup-4``, include all the additional disks available for this service.
