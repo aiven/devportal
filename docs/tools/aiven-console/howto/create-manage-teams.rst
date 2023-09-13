@@ -5,7 +5,9 @@ Create and manage teams
 .. important::
     **Teams are becoming groups**
     
-    :doc:`Groups </docs/platform/howto/manage-groups>` are an easier way to control access to your organization's projects and services for a group of users.
+    :doc:`Groups </docs/platform/howto/manage-groups>` are an easier way to control access to your organization's projects and services for a group of users. 
+    
+    :ref:`migrate_teams_to_groups`
 
 
 **Teams** let you create user groups and assign different access levels to specific projects. Users must be part of an organization before being added to a team. To create and manage teams, click **Admin** and then select **Teams**.
@@ -20,7 +22,7 @@ Create a new team
 #. Click **Create team**.
 
 Add users to a team
---------------------------
+--------------------
 
 #. Click the name of the team that you want to add users to.
 
@@ -54,3 +56,17 @@ To add projects and roles to a team:
 #. Click **Add project to team**.
 
 You can edit the permissions or delete the project from this team by clicking the more options menu for the project.
+
+.. _migrate_teams_to_groups:
+
+Migrate teams to groups
+------------------------
+
+To help you get started using groups, the migration feature creates new groups from the existing teams in your organization all at once.
+
+You can do this in two places:
+
+* In the organization, go to **Admin** > **Organization** > **Teams** .
+* In a project, go to **Members** > **Teams**.
+
+As part of the migration, the members of the account owners team for an organization are made super admin. Super admin have full access to an organization's admin, billing, units, projects, and services.
