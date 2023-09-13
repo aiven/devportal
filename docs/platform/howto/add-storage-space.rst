@@ -1,7 +1,7 @@
 Add or remove storage 
 =======================
 
-With :doc:`dynamic disk sizing <../concepts/dynamic-disk-sizing>`, you can add or remove disk storage (by factor of 10 GBs only) both when you create a service and later for a running service. But, it is not possible to add or remove storage when the service nodes are rebalancing.(i.e, during maintenance update, service upgrade, etc.)
+With :doc:`dynamic disk sizing <../concepts/dynamic-disk-sizing>`, you can add or remove disk storage (by factor of 10 GiB only) both when you create a service and later for a running service. But, it is not possible to add or remove storage when the service nodes are rebalancing.(i.e, during maintenance update, service upgrade, etc.)
 
 .. note::
    This feature is not available for all service plans.
@@ -73,7 +73,7 @@ Remove added storage
 Using Aiven CLI
 ---------------
 
-It is possible to use :doc:`Aiven CLI </docs/tools/cli>` ro add or remove additional storage by :ref:`updating the service configuration <avn-cli-service-update>` using the flag ``--disk-space-gib``. The value here is the total disk space that your service would like to have.
+It is possible to use :doc:`Aiven CLI </docs/tools/cli>` to add or remove additional storage by :ref:`updating the service configuration <avn-cli-service-update>` using the flag ``--disk-space-gib``. The value here is the total disk space that your service would like to have.
 For example, if you are using a ``Startup-4`` plan which has 80GB disk space by default and you would like to add extra 10GB disk. The value to be given for the flag ``--disk-space-gib`` is 90 GB.
 ::
 
