@@ -7,7 +7,7 @@ With :doc:`dynamic disk sizing <../concepts/dynamic-disk-sizing>`, you can add o
    - You cannot add or remove storage when service nodes are in the rebalancing state, for example, during a maintenance update or a service upgrade.
    - This feature is not available for all service plans.
 
-Use Aiven console
+Use Aiven Console
 -----------------
 
 Add storage during new service creation
@@ -21,19 +21,19 @@ Add storage to a running service
 
 You can add storage to your running service in `Aiven Console <https://console.aiven.io/>`_ without interrupting the service. 
 
-#. Log in to `Aiven Console <https://console.aiven.io/>`_, and go to your project.
+1. Log in to `Aiven Console <https://console.aiven.io/>`_, and go to your project.
 
-#. On the **Services** page, select your service.
+2. On the **Services** page, select your service.
 
-#. On the **Overview** page of your service, go to the **Service plan** section, and select **Add storage**. 
+3. On the **Overview** page of your service, go to the **Service plan** section, and select **Add storage**. 
 
-#. In the **Upgrade service storage** window, use the slider to add disk storage.
-
-#. Select **Save changes**.
+4. In the **Upgrade service storage** window, use the slider to add disk storage.
 
 .. note::
       
       The price shown for the additional storage includes backup costs.
+
+5. Select **Save changes**.
 
 .. topic:: Result
    
