@@ -1,22 +1,17 @@
 Project member roles
 =====================
 
-User permissions are assigned at the project level by role. Each user added to a project - individually or as part of a :doc:`group </docs/platform/howto/manage-groups>` - is assigned a role for that project.
+User permissions are assigned at the project level by role. Each user added to a project - individually or as part of a :doc:`group </docs/platform/howto/manage-groups>` - becomes a project member and is assigned a role for that project.
 
-.. important::
+You can grant different levels of access to project members using roles:
 
-    Roles can only be managed by project **Admin** users on the **Members** page.
-
-Project roles and their permissions
-------------------------------------
-
-The project roles and their permissions are:
 
 * **Admin**: Full access to the project and its services. 
   
   * Do not have access to organization settings such as billing. 
   * Are the only users allowed to add more users to the project.
-  
+  * When you create a project, you automatically have this access level.
+
   .. note::
   
     Every project must have at least one admin user.
@@ -36,3 +31,43 @@ The project roles and their permissions are:
 * **Read-only**: Only allowed to view services.
   
   * Cannot make any changes to the project or its services.
+
+
+.. list-table::
+   :header-rows: 1
+
+   * - Role
+     - View services
+     - Create services
+     - Manage services
+     - Connect
+     - Power services on/off
+     - Edit members and roles
+   * - Administrator
+     - |tick|
+     - |tick|
+     - |tick|
+     - |tick|
+     - |tick|
+     - |tick|
+   * - Operator
+     - |tick|
+     - |tick|
+     - |tick|
+     - |tick|
+     - |tick|
+     - 
+   * - Developer
+     - |tick|
+     - |tick|
+     - |tick|
+     - |tick|
+     - 
+     - 
+   * - Read Only
+     - |tick|
+     - 
+     - 
+     - 
+     - 
+     - 

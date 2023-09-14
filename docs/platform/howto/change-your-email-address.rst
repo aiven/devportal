@@ -1,23 +1,22 @@
 Change your email address
-=========================
+==========================
 
-It is not currently possible to change your login email address directly. It is possible, however, to migrate your Aiven resources to another email address.
+You can't change your login email address directly. Instead, you can create a new user with the new email address and then remove the user with the old email address. You must be an organization admin to do this.
 
 .. important::
     
-    Aiven support personnel cannot change your email address nor migrate projects between email addresses from support requests.
+    Aiven support cannot change your email address.
 
-Migrate Aiven projects between email addresses
-----------------------------------------------
+#. In the organization, click **Admin**.
 
-To start using an Aiven project from a new email address, invite your new email address to your existing project from the **Members** page of each project you wish to migrate:
+#. Click **Users**. 
 
-1. In the project, click **Members**.
+#. Click **Invite users**.
 
-2. Enter your new email address and select a user role. 
+#. Enter the new email address. 
 
-3. Click **Send invitation**. Your new email address will receive an invitation link to join the project. You need to do this for each of your projects. 
+#. Click **Invite users**.
 
-4. Once you have confirmed that your new email has the correct privileges, you can remove your old email from each of the projects by clicking **Remove user**. 
+#. Remove the old user from all groups and :doc:`add the new user to those groups </docs/platform/howto/manage-groups>`.
 
-If your projects are managed by another user in your organization, then you may need to ask the administrator of those projects to migrate them to the new email address for you.
+#. After the invite is accepted and you confirm that the new user has the correct access, :doc:`remove the old user </docs/platform/howto/manage-org-users>` from the organization. 

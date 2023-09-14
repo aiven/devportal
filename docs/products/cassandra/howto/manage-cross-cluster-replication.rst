@@ -198,4 +198,4 @@ More on CCR with Aiven
 
 * :doc:`OpenSearch® cross-cluster replication</docs/products/opensearch/concepts/cross-cluster-replication-opensearch>`
 * :doc:`Set up cross-cluster replication for OpenSearch</docs/products/opensearch/howto/setup-cross-cluster-replication-opensearch>`
-* :doc:`Enabling cross-cluster replication for Apache Kafka® via Terraform</docs/tools/terraform/reference/cookbook/kafka-mirrormaker-recipe>`
+* `Enabling cross-cluster replication for Apache Kafka® via Terraform <https://aiven.io/developer/kafka-mirrormaker-crosscluster>`_.

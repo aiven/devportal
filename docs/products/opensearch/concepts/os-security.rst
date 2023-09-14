@@ -1,11 +1,6 @@
 OpenSearch Security for Aiven for OpenSearch®
 =====================================================
 
-.. important::
-
-  OpenSearch Security for Aiven for Apache OpenSearch® is a :doc:`limited availability feature </docs/platform/concepts/beta_services>`. If you're interested in trying out this feature, contact the sales team at `sales@Aiven.io <mailto:sales@Aiven.io>`_.
-
-
 OpenSearch Security is a powerful feature that enhances the security of your OpenSearch service. By :doc:`enabling OpenSearch Security management <../howto/enable-opensearch-security>`, you can implement fine-grained access controls, SAML authentication, and audit logging to track and analyze activities within your OpenSearch environment. 
 
 With OpenSearch Security enabled, you can manage user access and permissions directly from the :doc:`OpenSearch Dashboard <../dashboards>`, giving you full control over your service's security.
@@ -51,6 +46,8 @@ OpenSearch Security in Aiven for OpenSearch service offers a range of features t
 
   .. note:: 
     Aiven for OpenSearch provides basic SAML integration for the beta release, and certain features, such as logout support and request signing, is not be included.
+
+* **OpenID Connect integration**: Aiven for OpenSearch enables you to securely authenticate and authorize users through OpenID Connect, enhancing authentication options. 
 
 * **OpenSearch Dashboard multi-tenancy:** OpenSearch Security provides OpenSearch Dashboard multi-tenancy, which allows you to have different tenants on your OpenSearch Dashboard. 
 

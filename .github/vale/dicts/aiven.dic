@@ -62,6 +62,8 @@ deserialization
 deserializer
 Dev
 Digitransit
+diskio_io_time
+diskio_iops_in_progress
 Distro
 Docker
 dockerized
@@ -107,6 +109,7 @@ hypertable
 hypertables
 InfluxDB
 InnoDB
+inodes
 Instana
 IdP
 IdPs
@@ -114,12 +117,14 @@ io
 iops
 IPsec
 iptables
+java_lang_Memory
 Java
 JMX
 json
 JobManager
 Jolokia
 JumpCloud
+JVM's
 Kaggle/M
 Kafdrop
 Kafka
@@ -197,10 +202,12 @@ rebalance
 rebalances
 rebalancing
 Redis
+redis_timeout
 Redli
 refcard
 reindex
 reindexing
+remoteSecure
 reStructuredText
 rivery
 rsyslog
@@ -227,6 +234,7 @@ signups
 Singlestat
 skyvia
 Snowflake
+softirqs
 Sphinx
 SLA/S
 Slackbot
@@ -236,6 +244,7 @@ Sql
 SSD/S
 Stackdriver
 Statusmap
+storages
 Stunnel
 subnet
 subnets
@@ -244,6 +253,7 @@ subprocesses
 subtab
 syslog
 TaskManager
+Tcpdump
 Telegraf
 Tenant
 Terraform
@@ -264,11 +274,13 @@ unaggregated
 UpCloud
 upsert
 vectorizing
+virtualized
 VM
 VMs
 VPC/MS
 VNet
 wget
+Wireshark
 Workbench
 Worldmap
 worldPing

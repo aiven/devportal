@@ -1,6 +1,6 @@
+:orphan:
+
 HowTo
 =====
 
-A collection of helpful guides for performing tasks with Aiven Terraform Provider.
-
-.. tableofcontents::
+:doc:`Get started with Aiven Provider for Terraform </docs/tools/terraform/get-started>`

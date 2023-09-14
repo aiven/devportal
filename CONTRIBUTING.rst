@@ -64,11 +64,7 @@ The instructions for setting up local development are in the ``README``.
 Style guide
 -----------
 
-To keep all the content consistent and easy to follow for our audience, use `Google developer documentation style guide <https://developers.google.com/style>`_ for Aiven docs. This sections has exceptions and Aiven-specific guidelines.
-
-.. tip::
-
-    Remember we review your pull request against these guidelines, so for fewer rounds of revisions, follow this advice!
+We follow `Google developer documentation style guide <https://developers.google.com/style>`_. Exceptions and Aiven-specific guidelines are detailed in this section.
 
 Where possible, these rules are checked automatically using Vale. For more information on how this is set up, see the `Vale readme file <.github/vale/README.rst>`_.
 
@@ -89,11 +85,9 @@ If we have other resources that might help a developer, point them out! Whether 
 Formatting guidelines
 '''''''''''''''''''''
 
-Advice on marking up elements correctly can be found in the `README <README.rst>`_. Other useful tips and tricks for working with Sphinx and reStructuredText can be found in the :doc:`documentation section <docs/documentation/index>`.
+Use **bold text** for UI elements, such as page titles and buttons. 
 
-Always use ``literal`` formatting for commands, function names, and config options. One limitation is that this can't be used inside links; please reword to work arond this.
-
-Use **bold text** for interactive UI elements, such as buttons. 
+Advice on marking up elements correctly can be found in the `README <README.rst>`_. Other useful tips and tricks are available in the `working with Sphinx and reStructuredText section <https://github.com/aiven/devportal/blob/main/CONTRIBUTING.rst#working-with-sphinx-and-restructuredtext>`_.
 
 Screenshots
 '''''''''''
@@ -109,9 +103,9 @@ We do not use ``gif`` or animation in Aiven docs.
 Example values
 ''''''''''''''
 
-Example values should not be "foo" or "bar. Instead, if it's a username, try "Alice". If it's an email address use ``someone@example.com``. A user can quickly identify which variable goes where if they look like the values they represent.
+Example values should not be "foo" or "bar". Instead, if it's a username, try "Alice". If it's an email address use ``someone@example.com``. A user can quickly identify which variable goes where if they look like the values they represent.
 
-When using placeholders in code examples, we use all uppercase. For example: https://docs.aiven.io/docs/products/postgresql/howto/connect-python.html
+When using placeholders in code examples, follow the Google developer documentation style guide's rules for `formatting placeholders <https://developers.google.com/style/placeholders>`_.
 
 What not to do
 ''''''''''''''

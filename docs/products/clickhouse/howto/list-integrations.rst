@@ -1,7 +1,7 @@
 Integrate your Aiven for ClickHouse® service
 ============================================
 
-This section provides instructions on how to integrate your Aiven for ClickHouse® service with other services or external databases. If you'd like to use Terraform for this purpose, see integration recipes in :doc:`Aiven Terraform Cookbook </docs/tools/terraform/reference/cookbook>`.
+This section provides instructions on how to integrate your Aiven for ClickHouse® service with other services or external databases. If you'd like to use Terraform for this purpose, see integration recipes in `Aiven Terraform Cookbook <https://aiven.io/developer/terraform>`_.
 
 .. grid:: 1 2 2 2
 

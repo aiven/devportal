@@ -41,11 +41,11 @@ If you don't have any organization yet, you can create one:
 
 #. If you want to invite admin users to the organization, set the toggle to **Yes** and enter their email addresses. They will receive an email invitation with a confirmation link.
 
-   .. important:: When admin users accept the invitation, they are added to the default team that has full control over the organization and the projects assigned to it.
+   .. important:: When admin users accept the invitation, they have full control over the organization and the projects assigned to it.
 
 #. Click **Create organization**.
 
-The **Admin** page opens, where you can add organizational units, and manage teams, projects, and other settings. 
+The **Admin** page opens, where you can add organizational units, and manage users, groups, and other settings. 
 
 
 Manage unassigned projects with the API 
