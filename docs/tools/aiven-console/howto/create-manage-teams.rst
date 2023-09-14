@@ -66,7 +66,7 @@ To help you get started using groups, the migration feature creates new groups f
 
 You can do this in two places:
 
-* In the organization, go to **Admin** > **Organization** > **Teams** .
-* In a project, go to **Members** > **Teams**.
+* In the organization, go to **Admin**, select **Organization**, and then the **Teams** tab.
+* In a project, select **Members** and then the **Teams** tab.
 
 As part of the migration, the members of the account owners team for an organization are made super admin. Super admin have full access to an organization's admin, billing, units, projects, and services.
