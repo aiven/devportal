@@ -10,7 +10,7 @@ With Aiven for Apache Kafka®'s tiered storage, there are two primary types of d
 Example
 --------
 
-Let's say you have a topic with a total retention threshold of 1000 bytes and a local retention threshold of 200 GB. This means that:
+Let's say you have a topic with a total retention threshold of 1000 GB and a local retention threshold of 200 GB. This means that:
 
 * All data for the topic will be retained, regardless of whether it is stored locally or remotely, as long as the total size of the data does not exceed 1000 GB.
 * If the total size of the data exceeds 200 GB, Kafka will move older segments to the remote storage and delete them from the local disk. No data will be deleted from local storage until it has been safely transferred to remote storage.
