@@ -52,12 +52,6 @@ From the information about restrictions on using Aiven for ClickHouse, you can e
    * - Creating a database using SQL
      - You cannot create a database directly using SQL, for example, if you'd like to add a non-default database.
      - Use the Aiven's public API.
-   * - Loading data from S3 (coming soon)
-     - You cannot load your data from S3 into Aiven for ClickHouse directly using SQL.
-     - There are many ways to work around this limitation, for instance:
-
-       * Use `Vector <https://vector.dev/>`_.
-       * Use a local ClickHouse server and run the SELECT/INSERT query using both ``s3()`` and ``remote()`` functions to pull from S3 and push to Aiven.
 
 Limits
 ------
