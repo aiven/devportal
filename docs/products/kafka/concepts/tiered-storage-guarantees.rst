@@ -1,6 +1,6 @@
 Guarantees
 ============
-With Aiven for Apache Kafka's tiered storage, there are two primary types of data retention guarantees: *total retention* and *local retention*.
+With Aiven for Apache Kafka®'s tiered storage, there are two primary types of data retention guarantees: *total retention* and *local retention*.
 
 **Total retention**: Tiered storage ensures that your data will be available up to the limit defined by the total retention threshold, regardless of whether it is stored locally or remotely. This means that your data will not be deleted until the total retention threshold, whether on local or remote storage, is reached.
 
