@@ -5,8 +5,8 @@ Discover the tiered storage capability in Aiven for Apache Kafka®. Learn how it
 
 Overview
 ---------
+Tiered storage in Aiven for Apache Kafka® lets you manage your data more efficiently by leveraging multiple storage types—local disk and remote cloud storage options like AWS S3 and Google Cloud Storage. This feature offers a tailored approach to data storage, allowing you to allocate frequently accessed data to high-speed local disks while offloading less critical or infrequently accessed data to more cost-effective remote storage solutions. Tiered storage enables you to indefinitely store data on specific topics without running out of space. Once enabled, it is configured per topic, giving you granular control over data storage.
 
-Tiered storage in Aiven for Apache Kafka® lets you manage your data more efficiently by leveraging multiple storage types—local disk and remote cloud storage options like AWS S3 and Google Cloud Storage. This feature offers a tailored approach to data storage, allowing you to allocate frequently accessed data to high-speed local disks while offloading less critical or infrequently accessed data to more cost-effective remote storage solutions. Tiered storage allows you to store data on specific topics indefinitely without running out of space. Once enabled, it is configured on a per-topic basis, giving you granular control over data storage.
 
 .. note:: 
     Azure blob storage is not yet supported for tiered storage in Aiven for Apache Kafka.
