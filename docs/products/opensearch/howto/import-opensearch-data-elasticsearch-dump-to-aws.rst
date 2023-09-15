@@ -57,4 +57,4 @@ Aiven for OpenSearch databases are automatically backed up, so you can check mor
    "elasticsearch" so it is probably polite to include the following
    disclaimer
 
-*Elasticsearch is a trademark of Elasticsearch B.V., registered in the U.S. and in other countries.*
+
