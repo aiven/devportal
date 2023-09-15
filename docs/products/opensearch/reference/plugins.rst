@@ -36,4 +36,4 @@ These plugins are enabled on all Aiven for OpenSearch services by default:
 .. note::
     The **Notebooks** and **OpenSearch notification** plugins are part of **OpenSearch observability**.
 
-*Elasticsearch is a trademark of Elasticsearch B.V., registered in the U.S. and in other countries.*
+
