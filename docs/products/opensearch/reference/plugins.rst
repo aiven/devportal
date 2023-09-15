@@ -28,10 +28,12 @@ These plugins are enabled on all Aiven for OpenSearch services by default:
 * `OpenSearch observability <https://opensearch.org/docs/latest/observing-your-data/index/>`__
 * `OpenSearch security <https://opensearch.org/docs/latest/security/index/>`__
 * `OpenSearch security analytics <https://opensearch.org/docs/latest/security-analytics/index/>`__
-* `OpenSearch cross cluster replication <https://opensearch.org/docs/latest/tuning-your-cluster/replication-plugin/index/>`__
 * `OpenSearch neural search <https://opensearch.org/docs/latest/search-plugins/neural-search/>`__
 * `OpenSearch notifications <https://opensearch.org/docs/latest/observing-your-data/notifications/index/>`__
 
 ------
+
+.. note::
+    The **Notebooks** and **OpenSearch notification** plugins are par of **OpenSearch observability** 
 
 *Elasticsearch is a trademark of Elasticsearch B.V., registered in the U.S. and in other countries.*
