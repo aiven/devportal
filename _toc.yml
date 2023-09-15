@@ -68,6 +68,7 @@ entries:
     title: User and access management
     entries:
     - file: docs/platform/howto/manage-org-users
+    - file: docs/platform/howto/make-super-admin
     - file: docs/platform/howto/list-user-profile
       entries:
       - file: docs/platform/howto/edit-user-profile
