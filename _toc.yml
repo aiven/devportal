@@ -67,9 +67,9 @@ entries:
   - file: docs/platform/howto/list-user
     title: User and access management
     entries:
-    - file: docs/platform/howto/managed-users
     - file: docs/platform/howto/manage-org-users
       title: Invite and remove organization users
+    - file: docs/platform/concepts/managed-users
     - file: docs/platform/howto/list-user-profile
       entries:
       - file: docs/platform/howto/edit-user-profile
@@ -80,6 +80,7 @@ entries:
       - file: docs/platform/reference/password-policy
       - file: docs/platform/howto/user-2fa
       - file: docs/platform/howto/set-authentication-policies
+        title: Set authentication policies
       - file: docs/platform/concepts/authentication-tokens
       - file: docs/platform/howto/create_authentication_token
       - file: docs/platform/howto/list-saml
