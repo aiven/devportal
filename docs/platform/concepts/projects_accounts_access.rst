@@ -29,6 +29,12 @@ Grouping your projects in organizations and organizational units lets you centra
 
 * Billing groups - Specific to a single organization or organizational unit and cannot be shared between them
 
+Super admin
+~~~~~~~~~~~~
+
+Super admin have full access to the organization, including all organizational units, projects, and services. Users are automatically made super admin when they create an organization, and they can :doc:`make other users super admin <>`.
+
+
 Projects
 --------
 
