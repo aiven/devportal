@@ -5,12 +5,12 @@ Check data distribution between storage devices in Aiven for ClickHouse®'s tier
 
     Aiven for ClickHouse® tiered storage is a :doc:`limited availability feature </docs/platform/concepts/beta_services>`. If you're interested in trying out this feature, contact the sales team at `sales@Aiven.io <mailto:sales@Aiven.io>`_.
 
-Verify how your data is distributed between the two layers of your tiered storage: SSD and object storage.
+Monitor how your data is distributed between the two layers of your tiered storage: SSD and object storage.
 
 About checking data distribution
 --------------------------------
 
-If you have the tiered storage feature :doc:`enabled </docs/products/clickhouse/howto/enable-tiered-storage>` on your project, your data in Aiven for ClickHouse is distributed between two storage devices (tiers). You can learn on what storage devices specific databases and tables are stored. You can also preview their total sizes as well as part counts, minimum part sizes, median part sizes, and maximum part sizes.
+If you have the tiered storage feature :doc:`enabled </docs/products/clickhouse/howto/enable-tiered-storage>` on your project, your data in Aiven for ClickHouse is distributed between two storage devices (tiers). You can check on what storage devices your databases and tables are stored. You can also preview their total sizes as well as part counts, minimum part sizes, median part sizes, and maximum part sizes.
 
 Prerequisites
 -------------
@@ -22,9 +22,9 @@ Prerequisites
 Check data distribution in Aiven Console
 ----------------------------------------
 
-You can use `Aiven Console <https://console.aiven.io/>`_ to check if the tiered storage is enabled on your service and, if so, how much storage has been used for each type of the disks (the local SSD and the remote object storage) by particular tables.
+You can use `Aiven Console <https://console.aiven.io/>`_ to check if tiered storage is enabled on your service and, if it is, how much storage is used on each tier (local SSD and remote object storage) for particular tables.
 
-To check the tiered storage's status information, go to `Aiven Console <https://console.aiven.io/>`_ > your Aiven for ClickHouse service > the **Databases and tables** page > your database > your table > **View details** > **Storage details**.
+To access tiered storage's status information, go to `Aiven Console <https://console.aiven.io/>`_ > your Aiven for ClickHouse service > the **Databases and tables** page > your database > your table > **View details** > **Storage details**.
 
 Run a data distribution check with the ClickHouse client (CLI)
 --------------------------------------------------------------

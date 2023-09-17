@@ -5,19 +5,19 @@ Configure data retention thresholds in Aiven for ClickHouse®'s tiered storage
 
     Aiven for ClickHouse® tiered storage is a :doc:`limited availability feature </docs/platform/concepts/beta_services>`. If you're interested in trying out this feature, contact the sales team at `sales@Aiven.io <mailto:sales@Aiven.io>`_.
 
-Learn to control how your data is distributed between storage devices in the tiered storage of an Aiven for ClickHouse service. Check out how to configure tables so that your data is automatically written either to SSD or the object storage as needed.
+Learn to control how your data is distributed between storage devices in the tiered storage of an Aiven for ClickHouse service. Check out how to configure tables so that your data is automatically written either to SSD or object storage as needed.
 
 About data retention control
 ----------------------------
 
-If you have the tiered storage feature :doc:`enabled </docs/products/clickhouse/howto/enable-tiered-storage>` on your Aiven for ClickHouse service, your data is distributed between two storage devices (tiers). The data is stored either on SSD or in the object storage, depending on whether and how you configure this behavior. If you don't, by default the data is moved from SSD to the object storage when SSD reaches 80% of its capacity (default size-based data retention policy).
+If you have the tiered storage feature :doc:`enabled </docs/products/clickhouse/howto/enable-tiered-storage>` on your Aiven for ClickHouse service, your data is distributed between two storage devices (tiers). The data is stored either on SSD or in object storage, depending on whether and how you configure this behavior. By default, data is moved from SSD to object storage when SSD reaches 80% of its capacity (default size-based data retention policy).
 
-You may want to change this default data distribution behavior by :ref:`configuring your table's schema by adding a TTL (time-to-live) clause <time-based-retention-config>`. Such a configuration allows ignoring the SSD-capacity threshold and moving the data from SSD to the object storage based on how long the data is there on your SSD.
+You may want to change this default data distribution behavior by :ref:`configuring your table's schema by adding a TTL (time-to-live) clause <time-based-retention-config>`. Such a configuration allows ignoring the SSD-capacity threshold and moving the data from SSD to object storage based on how long the data is there on your SSD.
 
 To enable this time-based data distribution mechanism, you can set up a retention policy (threshold) on a table level by using the TTL clause. For data retention control purposes, the TTL clause uses the following:
 
 * Data item of the `Date` or `DateTime` type as a reference point in time
-* INTERVAL clause as a time period to elapse between the reference point and the data transfer to the object storage
+* INTERVAL clause as a time period to elapse between the reference point and the data transfer to object storage
 
 Prerequisites
 -------------
@@ -76,7 +76,7 @@ Change an already configured TTL in an existing table by using the ALTER TABLE M
 
 .. topic:: Result
    
-   You have your time-based data retention policy set up. Now when a piece of data is there on your SSD for a specified time period, it's moved to the object storage, regardless of how much of the SSD capacity is still available.
+   You have your time-based data retention policy set up. From now on, when data is on your SSD longer than a specified time period, it's moved to object storage, regardless of how much of SSD capacity is still available.
 
 What's next
 -----------
