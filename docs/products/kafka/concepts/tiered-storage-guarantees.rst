@@ -13,6 +13,6 @@ Example
 Let's say you have a topic with a total retention threshold of 1000 GB and a local retention threshold of 200 GB. This means that:
 
 * All data for the topic will be retained, regardless of whether it is stored locally or remotely, as long as the total size of the data does not exceed 1000 GB.
-* If the total size of the data exceeds 200 GB, Kafka will move older segments to the remote storage and delete them from the local disk. No data will be deleted from local storage until it has been safely transferred to remote storage.
+* If tiered storage is enabled per topic, older segments will be uploaded immediately to remote storage, irrespective of whether the local retention threshold of 200 GB is exceeded. Data will be deleted from local storage only after it has been safely transferred to remote storage.
 * If the total size of the data exceeds 1000 GB, Apache Kafka will begin deleting the oldest data from remote storage.
 

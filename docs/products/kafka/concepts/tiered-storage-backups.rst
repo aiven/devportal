@@ -10,4 +10,3 @@ To ensure security, Aiven for Apache Kafka employs client-side encryption at res
 
 Metadata backups are automatically restored during regular power cycles, but significant incidents may require manual operator intervention. The backup and restoration procedures for local storage remain separate and unchanged.
 
-As active segments are not uploaded to the remote storage, the data stored in them will be lost after powering off the service.

@@ -31,7 +31,11 @@ The replication factor is not considered during the upload process, and only one
 
 Data retrieval
 -----------------
-When consumers fetch records stored in remote storage, the broker downloads and caches these records locally. This allows for quicker access in subsequent retrieval operations. You can configure the retention time and the maximum size of the cache.
+When consumers fetch records stored in remote storage, the broker downloads and caches these records locally. This allows for quicker access in subsequent retrieval operations. 
 
+
+Security
+--------
+Segments are encrypted with 256-bit AES encryption before being uploaded to the remote storage. The encryption keys are not shared with the cloud storage provider and generally do not leave Aiven machines.
 
 
