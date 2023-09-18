@@ -1,7 +1,7 @@
 Migrate to Aiven for Apache Cassandra® with no downtime using ZDM Proxy
 =======================================================================
 
-Zero Downtime Migration (ZDM) Proxy is an open-source component developed in Go and based on client-server archtecture. It enables you to migrate from one Apache Cassandra® cluster to another without downtime or code changes in the application client.
+Zero Downtime Migration (ZDM) Proxy is an open-source component developed in Go and based on client-server architecture. It enables you to migrate from one Apache Cassandra® cluster to another without downtime or code changes in the application client.
 
 .. seealso::
 
@@ -12,7 +12,7 @@ Check out this article to learn how to enable and use ZDM Proxy to migrate to Ai
 How it works
 ------------
 
-When using ZDM Proxy, the client connects to the proxy rather than to the source cluster. The proxy connects both to the source cluster and the target cluster. It sends read requests to the source cluster only, while write requests are forwrded to both clusters.
+When using ZDM Proxy, the client connects to the proxy rather than to the source cluster. The proxy connects both to the source cluster and the target cluster. It sends read requests to the source cluster only, while write requests are forwarded to both clusters.
 
 .. seealso::
 
@@ -36,7 +36,7 @@ Connect to the target
 Create keyspaces and tables
 '''''''''''''''''''''''''''
 
-In your target service, create the same keyspaces and tables you have in your source Cassandra instance. For ``replication_factor``, specify the number of nodes that the taget cluster has.
+In your target service, create the same keyspaces and tables you have in your source Cassandra instance. For ``replication_factor``, specify the number of nodes that the target cluster has.
 
 .. code-block:: bash
 
@@ -108,13 +108,13 @@ Check how it works
 Check data at the proxy
 '''''''''''''''''''''''
 
-To connect to ZDM Proxy, use, for exmaple, ``cqlsh`` and provide connection details. If your source or target require authentication, specify target username and password.
+To connect to ZDM Proxy, use, for example, ``cqlsh`` and provide connection details. If your source or target require authentication, specify target username and password.
 
 .. seealso::
     
     Check more details on using the credentials in `Client application credentials <https://docs.datastax.com/en/astra-serverless/docs/migrate/connect-clients-to-proxy.html#_client_application_credentials>`_.
 
-The port that ZDM Proxy uses is 14002, which can be overriden.
+The port that ZDM Proxy uses is 14002, which can be overridden.
 
 .. code-block:: bash
 
