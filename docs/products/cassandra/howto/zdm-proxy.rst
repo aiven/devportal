@@ -21,7 +21,7 @@ When using ZDM Proxy, the client connects to the proxy rather than to the source
 Prerequisites
 -------------
 
-* Migration source - an Apache Cassandra instance outside the Aiven platform
+* Migration source - an Apache Cassandra cluster outside the Aiven platform
 * Migration target - an Aiven for Apache Cassandra service
 * ``cqlsh`` installed
 
@@ -36,7 +36,7 @@ Connect to the target
 Create keyspaces and tables
 '''''''''''''''''''''''''''
 
-In your target service, create the same keyspaces and tables you have in your source Cassandra instance. For ``replication_factor``, specify the number of nodes that the target cluster has.
+In your target service, create the same keyspaces and tables you have in your source Cassandra cluster. For ``replication_factor``, specify the number of nodes that the target cluster has.
 
 .. code-block:: bash
 
@@ -52,12 +52,10 @@ You can expect to receive output similar to the following:
 
 .. code-block:: bash
 
-    Connected to a1b2c3d4-1a2b-3c4d-5e6f-a1b2c3d4e5f6 at cassandra-instance-name.a.avns.net:12345
+    Connected to a1b2c3d4-1a2b-3c4d-5e6f-a1b2c3d4e5f6 at cassandra-target-cluster-name.a.avns.net:12345
     [cqlsh 6.1.0 | Cassandra 4.0.11 | CQL spec 3.4.5 | Native protocol v5]
-    Use HELP for help.
-    avnadmin@cqlsh> create keyspace KEYSPACE_NAME with replication = {'class': 'SimpleStrategy', 'replication_factor': 3};
-    avnadmin@cqlsh> create table TABLE_NAME.DATABASE_NAME (n_id int, value int, primary key (n_id));
-    avnadmin@cqlsh>
+    create keyspace KEYSPACE_NAME with replication = {'class': 'SimpleStrategy', 'replication_factor': 3};
+    create table TABLE_NAME.DATABASE_NAME (n_id int, value int, primary key (n_id));
 
 Download the binary
 '''''''''''''''''''
@@ -69,11 +67,10 @@ Download the ZDM Proxy's binary from `ZDM Proxy releases <https://github.com/dat
     wget https://github.com/datastax/zdm-proxy/releases/download/v2.1.0/zdm-proxy-linux-amd64-v2.1.0.tgz
     tar xf zdm-proxy-linux-amd64-v2.1.0.tgz
 
-You can expect to receive output similar to the following:
+Check if the binary has been downloaded successfully using ``ls`` in the relevant directory. You can expect to receive output similar to the following:
 
 .. code-block:: bash
 
-    [john.doe@localhost zdm]$ ls
     LICENSE  zdm-proxy-linux-amd64-v2.1.0.tgz  zdm-proxy-v2.1.0
 
 Run ZDM Proxy
@@ -88,7 +85,7 @@ To run ZDM Proxy, specify connection information by setting ZDM_* environment va
     export ZDM_SOURCE_PASSWORD=cassandra
     export ZDM_SOURCE_PORT=1234
 
-    export ZDM_TARGET_CONTACT_POINTS=cassandra-instance-name.a.avns.net
+    export ZDM_TARGET_CONTACT_POINTS=cassandra-target-cluster-name.a.avns.net
     export ZDM_TARGET_USERNAME=avnadmin
     export ZDM_TARGET_PASSWORD=YOUR_SECRET_PASSWORD
     export ZDM_TARGET_PORT=54321
@@ -108,7 +105,7 @@ Verify that it works
 Check data at the proxy
 '''''''''''''''''''''''
 
-To connect to ZDM Proxy, use, for example, ``cqlsh`` and provide connection details. If your source or target require authentication, specify target username and password.
+To connect to ZDM Proxy, use, for example, ``cqlsh``. Provide connection details and, if your source or target require authentication, specify target username and password.
 
 .. seealso::
     
@@ -116,102 +113,132 @@ To connect to ZDM Proxy, use, for example, ``cqlsh`` and provide connection deta
 
 The port that ZDM Proxy uses is 14002, which can be overridden.
 
-.. code-block:: bash
+1. Connect to ZDM Proxy.
 
-    cqlsh -u avnadmin -p YOUR_SECRET_PASSWORD localhost 14002
+    .. code-block:: bash
 
-You can expect to receive output similar to the following:
+        cqlsh -u avnadmin -p YOUR_SECRET_PASSWORD localhost 14002
 
-.. code-block:: bash
+    You can expect to receive output similar to the following:
 
-    Connected to CLUSTER_NAME at localhost:14002
-    [cqlsh 6.1.0 | Cassandra 4.1.3 | CQL spec 3.4.6 | Native protocol v4]
-    Use HELP for help.
-    avnadmin@cqlsh>
+    .. code-block:: bash
 
-Check if the data is in the table:
+        Connected to SOURCE_CLUSTER_NAME at localhost:14002
+        [cqlsh 6.1.0 | Cassandra 4.1.3 | CQL spec 3.4.6 | Native protocol v4]
 
-.. code-block:: bash
+2. Check data in the table.
 
-    select * from TABLE_NAME.DATABASE_NAME;
+    .. code-block:: bash
 
-You can expect to receive output similar to the following:
+        select * from TABLE_NAME.DATABASE_NAME;
 
-.. code-block:: bash
+    You can expect to receive output similar to the following:
 
-    n_id | value
-    ------+-------
-        1 |    42
-        2 |    44
-        3 |    46
+    .. code-block:: bash
 
-    (3 rows)
-    avnadmin@cqlsh>
+        n_id | value
+        ------+-------
+            1 |    42
+            2 |    44
+            3 |    46
 
-Try to insert more data into the table and check again data inside the table:
+        (3 rows)
 
-.. code-block:: bash
+3. Insert more data into the table.
 
-    insert into TABLE_NAME.DATABASE_NAME (n_id, value) values (4, 48);
-    insert into TABLE_NAME.DATABASE_NAME (n_id, value) values (5, 50);
-    select * from TABLE_NAME.DATABASE_NAME;
+    .. code-block:: bash
 
-You can expect to receive output similar to the following:
+        insert into TABLE_NAME.DATABASE_NAME (n_id, value) values (4, 48);
+        insert into TABLE_NAME.DATABASE_NAME (n_id, value) values (5, 50);
 
-.. code-block:: bash
+4. Check again data inside the table.
 
-    n_id | value
-    ------+-------
-        5 |    50
-        1 |    42
-        2 |    44
-        4 |    48
-        3 |    46
+    .. code-block:: bash
 
-    (5 rows)
-    avnadmin@cqlsh> exit
+        select * from TABLE_NAME.DATABASE_NAME;
+
+    You can expect to receive output similar to the following:
+
+    .. code-block:: bash
+
+        n_id | value
+        ------+-------
+            5 |    50
+            1 |    42
+            2 |    44
+            4 |    48
+            3 |    46
+
+        (5 rows)
 
 Check data in the source
 ''''''''''''''''''''''''
 
-.. code-block:: bash
+1. Connect to the source:
 
-    [john.doe@localhost zdm-proxy]$ cqlsh localhost 9042
-    Connected to CLUSTER_NAME at localhost:9042
-    [cqlsh 6.1.0 | Cassandra 4.1.3 | CQL spec 3.4.6 | Native protocol v5]
-    Use HELP for help.
-    cqlsh> select * from TABLE_NAME.DATABASE_NAME;
+    .. code-block:: bash
 
-    n_id | value
-    ------+-------
-        5 |    50
-        1 |    42
-        2 |    44
-        4 |    48
-        3 |    46
+        cqlsh localhost 1234
 
-    (5 rows)
-    cqlsh>
+    You can expect to receive output similar to the following:
+
+    .. code-block:: bash
+
+        Connected to SOURCE_CLUSTER_NAME at localhost:1234
+        [cqlsh 6.1.0 | Cassandra 4.1.3 | CQL spec 3.4.6 | Native protocol v5]
+
+2. Check data in the table:
+
+    .. code-block:: bash
+
+        select * from TABLE_NAME.DATABASE_NAME;
+
+    You can expect to receive output similar to the following:
+
+    .. code-block:: bash
+
+        n_id | value
+        ------+-------
+            5 |    50
+            1 |    42
+            2 |    44
+            4 |    48
+            3 |    46
+
+        (5 rows)
 
 Check data in the target
 ''''''''''''''''''''''''
 
-.. code-block:: bash
+1. Connect to the target.
 
-    [john.doe@localhost zdm-proxy]$ cqlsh --ssl -u avnadmin -p YOUR_SECRET_PASSWORD cassandra-cluster-name.a.avns.net 24756
+    .. code-block:: bash
 
-    Connected to d4e5c00e-1fb1-473f-805f-9c5c53b6828f at cassandra-cluster-name.a.avns.net:24756
-    [cqlsh 6.1.0 | Cassandra 4.0.11 | CQL spec 3.4.5 | Native protocol v5]
-    Use HELP for help.
-    avnadmin@cqlsh> select * from TABLE_NAME.DATABASE_NAME;
+        cqlsh --ssl -u avnadmin -p YOUR_SECRET_PASSWORD cassandra-target-cluster-name.a.avns.net 12345
 
-    n_id | value
-    ------+-------
-        5 |    50
-        4 |    48
+    You can expect to receive output similar to the following:
 
-    (2 rows)
-    avnadmin@cqlsh>
+    .. code-block:: bash
+
+        Connected to a1b2c3d4-1a2b-3c4d-5e6f-a1b2c3d4e5f6 at cassandra-target-cluster-name.a.avns.net:12345
+        [cqlsh 6.1.0 | Cassandra 4.0.11 | CQL spec 3.4.5 | Native protocol v5]
+
+2. Check data in the table.
+
+    .. code-block:: bash
+
+        select * from TABLE_NAME.DATABASE_NAME;
+
+    You can expect to receive output similar to the following:
+
+    .. code-block:: bash
+
+        n_id | value
+        ------+-------
+            5 |    50
+            4 |    48
+
+        (2 rows)
 
 Related reading
 ---------------
