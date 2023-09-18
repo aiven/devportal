@@ -1,67 +1,42 @@
 Migrate to Aiven for Apache Cassandra® with no downtime using ZDM Proxy
 =======================================================================
 
-Learn how to enable and use Zero Downtime Migration (ZDM) Proxy to migrate to Aiven for Apache Cassandra®.
+Zero Downtime Migration (ZDM) Proxy is an open-source component developed in Go and based on client-server archtecture. It enables you to migrate from one Apache Cassandra® cluster to another without downtime or code changes in the application client.
 
-About enabling ZDM Proxy
-------------------------
+.. seealso::
 
-You can enable CCR either when creating a new Aiven for Apache Cassandra service or for an existing service.
+   For details on ZDM Proxy, check out `zdm-proxy GitHub <https://github.com/datastax/zdm-proxy>`_.
 
-Limitations
-'''''''''''
+Check out this article to learn how to enable and use ZDM Proxy to migrate to Aiven for Apache Cassandra®.
 
-See :ref:`CCR limitations <ccr-limitations>` for limitations that apply to CCR on Aiven for Apache Cassandra.
+How it works
+------------
 
-Tools
-'''''
+When using ZDM Proxy, the client connects to the proxy rather than to the source cluster. The proxy connects both to the source cluster and the target cluster. It sends read requests to the source cluster only, while write requests are forwrded to both clusters.
 
-To enable CCR, you can use the following tools:
+.. seealso::
 
-* `Aiven Console <https://console.aiven.io/>`_
-* CLI
-* API
+   For details on how ZDM Proxy works, check out `Introduction to Zero Downtime Migration <https://docs.datastax.com/en/astra-serverless/docs/migrate/introduction.html>`_.
 
 Prerequisites
 -------------
 
-* Aiven account
+* Aiven organization
 * Depending on the method you choose to use for enabling CCR
 
   * Access to `Aiven Console <https://console.aiven.io/>`_
   * `cURL` CLI tool
   * `Aiven CLI tool <https://github.com/aiven/aiven-client>`_
 
-* See :ref:`Limitations <ccr-limitations>`.
-
-Enable ZDM Proxy
+Set up the source cluster
 -------------------------
-
-Check how it works
-------------------
-
-What's next
------------
-
-Related reading
----------------
-
-* :doc:`zdm-proxy GitHub <https://github.com/datastax/zdm-proxy>`_
-
-# Intro
-
-We're going to demonstrate a process of using [ZDM Proxy](https://github.com/datastax/zdm-proxy) to migrate data to Aiven for Apache Cassandra.
-
-You can read more about how ZDM Proxy works [here](https://docs.datastax.com/en/astra-serverless/docs/migrate/introduction.html), here is a very short explanation: we redirect our clients from origin Cassandra cluster to proxy and since then the proxy will duplicate all writes both to origin and target Cassandra clusters, so that we can migrate the old data and make sure that target is keeping up with origin.
-
-
-# Source Cassandra
 
 For demonstration purposes we'll use a simple Cassandra instance running in a container, so that it’s easy to follow the document if you don’t have or don’t want to touch any real service. If you have another source - you can use it instead.
 
 I'm using podman to run Cassandra container. You can find installation instructions [here](https://podman.io/docs/installation) (or use docker instead, the syntax is the same, just replace `podman` with `docker`).
 
-## Create test cluster
+Create a test cluster
+'''''''''''''''''''''
 
 First we need to pull the image:
 
@@ -106,7 +81,8 @@ Let's add some toy data. To get into the container we use:
 podman exec -it test_cassandra bash
 ```
 
-## Insert some test data
+Insert test data
+''''''''''''''''
 
 Make sure that Cassandra has started. You can check logs:
 
@@ -170,7 +146,8 @@ exit
 (Do not forget to exit the container shell)
 
 
-## Connecting with cqlsh from outside of the container
+Connect with ``cqlsh`` from outside of the container
+''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 At this point you should be able to connect to localhost:9042 using cqlsh
 
@@ -198,11 +175,11 @@ alias cqlsh='podman run -it --rm --network=host --entrypoint="" cassandra cqlsh'
 cqlsh
 ```
 
+Set up the target cluster
+-------------------------
 
-# Target Cassandra
-
-
-## Create service
+Create a service
+''''''''''''''''
 
 We’re migrating to Aiven, so let’s create a service:
 
@@ -227,8 +204,8 @@ SERVICE_NAME             SERVICE_TYPE  STATE    CLOUD_NAME     PLAN       CREATE
 cassandra-denis-potapov  cassandra     RUNNING  aws-eu-west-1  startup-4  2023-09-14T10:28:26Z  2023-09-14T13:39:49Z
 ```
 
-
-## Get credentials and connection information
+Get credentials and connection information
+''''''''''''''''''''''''''''''''''''''''''
 
 We need username and password:
 
@@ -263,7 +240,8 @@ cassandra-denis-potapov-test-denis-potapov-test.a.avns.net:24756
 So in this example the host is `cassandra-denis-potapov-test-denis-potapov-test.a.avns.net` and the port is `24756`.
 
 
-## Connecting with cqlsh
+Connect with ``cqlsh``
+''''''''''''''''''''''
 
 You should be able to connect using cqlsh
 
@@ -277,7 +255,8 @@ If you do not have cqlsh installed, you can use cqlsh from cassandra container i
 alias cqlsh='podman run -it --rm --network=host --entrypoint="" -e SSL_CERTFILE -v${SSL_CERTFILE}:${SSL_CERTFILE}:z cassandra cqlsh'
 ```
 
-## Creating required keyspaces and tables
+Create keyspaces and tables
+'''''''''''''''''''''''''''
 
 ZDM Proxy requires the same keyspaces and tables on target to exist, so let's create them:
 
@@ -302,10 +281,11 @@ avnadmin@cqlsh> create table test_migration.data (n_id int, value int, primary k
 avnadmin@cqlsh> 
 ```
 
+Run ZDM Proxy
+---------------
 
-# Running ZDM Proxy
-
-## Download
+Download the binary
+'''''''''''''''''''
 
 You can download ZDM Proxy binary [here](https://github.com/datastax/zdm-proxy/releases)
 
@@ -323,7 +303,8 @@ The result should look something like:
 LICENSE  zdm-proxy-linux-amd64-v2.1.0.tgz  zdm-proxy-v2.1.0
 ```
 
-## Run
+Run it
+''''''
 
 To run ZDM Proxy we need to specify connection information by setting ZDM_* environment variables and then just run the binary.
 
@@ -346,8 +327,8 @@ export ZDM_TARGET_ENABLE_HOST_ASSIGNMENT=false
 
 ZDM_TARGET_ENABLE_HOST_ASSIGNMENT variable is particularly important for Aiven target cluster. Otherwise ZDM Proxy will try to connect to one of internal addresses of the cluster nodes (and internal addresses are obviously unavailable from outside). If you have the similar situation with the origin cluster, you should set `ZDM_ORIGIN_ENABLE_HOST_ASSIGNMENT=false`.
 
-
-## Testing
+Check how it works
+------------------
 
 Proxy works on port 14002 (can be overriden) and we can use cqlsh to connect. In our case both origin and target has authentication - this means we must specify target username and password. You can see more details [here](https://docs.datastax.com/en/astra-serverless/docs/migrate/connect-clients-to-proxy.html#_client_application_credentials).
 
@@ -451,3 +432,9 @@ avnadmin@cqlsh> select * from test_migration.data;
 (2 rows)
 avnadmin@cqlsh> 
 ```
+
+Related reading
+---------------
+
+* `zdm-proxy GitHub <https://github.com/datastax/zdm-proxy>`_
+* `Introduction to Zero Downtime Migration <https://docs.datastax.com/en/astra-serverless/docs/migrate/introduction.html>`_
