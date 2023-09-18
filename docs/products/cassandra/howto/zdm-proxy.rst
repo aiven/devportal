@@ -1,5 +1,5 @@
-Migrate to Aiven for Apache Cassandra® with no downtime using ZDM Proxy
-=======================================================================
+Migrate to Aiven for Apache Cassandra® with no downtime
+=======================================================
 
 Zero Downtime Migration (ZDM) Proxy is an open-source component developed in Go and based on client-server architecture. It enables you to migrate from one Apache Cassandra® cluster to another without downtime or code changes in the application client.
 
@@ -115,130 +115,130 @@ The port that ZDM Proxy uses is 14002, which can be overridden.
 
 1. Connect to ZDM Proxy.
 
-    .. code-block:: bash
+.. code-block:: bash
 
-        cqlsh -u avnadmin -p YOUR_SECRET_PASSWORD localhost 14002
+    cqlsh -u avnadmin -p YOUR_SECRET_PASSWORD localhost 14002
 
-    You can expect to receive output similar to the following:
+You can expect to receive output similar to the following:
 
-    .. code-block:: bash
+.. code-block:: bash
 
-        Connected to SOURCE_CLUSTER_NAME at localhost:14002
-        [cqlsh 6.1.0 | Cassandra 4.1.3 | CQL spec 3.4.6 | Native protocol v4]
+    Connected to SOURCE_CLUSTER_NAME at localhost:14002
+    [cqlsh 6.1.0 | Cassandra 4.1.3 | CQL spec 3.4.6 | Native protocol v4]
 
 2. Check data in the table.
 
-    .. code-block:: bash
+.. code-block:: bash
 
-        select * from TABLE_NAME.DATABASE_NAME;
+    select * from TABLE_NAME.DATABASE_NAME;
 
-    You can expect to receive output similar to the following:
+You can expect to receive output similar to the following:
 
-    .. code-block:: bash
+.. code-block:: bash
 
-        n_id | value
-        ------+-------
-            1 |    42
-            2 |    44
-            3 |    46
+    n_id | value
+    ------+-------
+        1 |    42
+        2 |    44
+        3 |    46
 
-        (3 rows)
+    (3 rows)
 
 3. Insert more data into the table.
 
-    .. code-block:: bash
+.. code-block:: bash
 
-        insert into TABLE_NAME.DATABASE_NAME (n_id, value) values (4, 48);
-        insert into TABLE_NAME.DATABASE_NAME (n_id, value) values (5, 50);
+    insert into TABLE_NAME.DATABASE_NAME (n_id, value) values (4, 48);
+    insert into TABLE_NAME.DATABASE_NAME (n_id, value) values (5, 50);
 
 4. Check again data inside the table.
 
-    .. code-block:: bash
+.. code-block:: bash
 
-        select * from TABLE_NAME.DATABASE_NAME;
+    select * from TABLE_NAME.DATABASE_NAME;
 
-    You can expect to receive output similar to the following:
+You can expect to receive output similar to the following:
 
-    .. code-block:: bash
+.. code-block:: bash
 
-        n_id | value
-        ------+-------
-            5 |    50
-            1 |    42
-            2 |    44
-            4 |    48
-            3 |    46
+    n_id | value
+    ------+-------
+        5 |    50
+        1 |    42
+        2 |    44
+        4 |    48
+        3 |    46
 
-        (5 rows)
+    (5 rows)
 
 Check data in the source
 ''''''''''''''''''''''''
 
 1. Connect to the source:
 
-    .. code-block:: bash
+.. code-block:: bash
 
-        cqlsh localhost 1234
+    cqlsh localhost 1234
 
-    You can expect to receive output similar to the following:
+You can expect to receive output similar to the following:
 
-    .. code-block:: bash
+.. code-block:: bash
 
-        Connected to SOURCE_CLUSTER_NAME at localhost:1234
-        [cqlsh 6.1.0 | Cassandra 4.1.3 | CQL spec 3.4.6 | Native protocol v5]
+    Connected to SOURCE_CLUSTER_NAME at localhost:1234
+    [cqlsh 6.1.0 | Cassandra 4.1.3 | CQL spec 3.4.6 | Native protocol v5]
 
 2. Check data in the table:
 
-    .. code-block:: bash
+.. code-block:: bash
 
-        select * from TABLE_NAME.DATABASE_NAME;
+    select * from TABLE_NAME.DATABASE_NAME;
 
-    You can expect to receive output similar to the following:
+You can expect to receive output similar to the following:
 
-    .. code-block:: bash
+.. code-block:: bash
 
-        n_id | value
-        ------+-------
-            5 |    50
-            1 |    42
-            2 |    44
-            4 |    48
-            3 |    46
+    n_id | value
+    ------+-------
+        5 |    50
+        1 |    42
+        2 |    44
+        4 |    48
+        3 |    46
 
-        (5 rows)
+    (5 rows)
 
 Check data in the target
 ''''''''''''''''''''''''
 
 1. Connect to the target.
 
-    .. code-block:: bash
+.. code-block:: bash
 
-        cqlsh --ssl -u avnadmin -p YOUR_SECRET_PASSWORD cassandra-target-cluster-name.a.avns.net 12345
+    cqlsh --ssl -u avnadmin -p YOUR_SECRET_PASSWORD cassandra-target-cluster-name.a.avns.net 12345
 
-    You can expect to receive output similar to the following:
+You can expect to receive output similar to the following:
 
-    .. code-block:: bash
+.. code-block:: bash
 
-        Connected to a1b2c3d4-1a2b-3c4d-5e6f-a1b2c3d4e5f6 at cassandra-target-cluster-name.a.avns.net:12345
-        [cqlsh 6.1.0 | Cassandra 4.0.11 | CQL spec 3.4.5 | Native protocol v5]
+    Connected to a1b2c3d4-1a2b-3c4d-5e6f-a1b2c3d4e5f6 at cassandra-target-cluster-name.a.avns.net:12345
+    [cqlsh 6.1.0 | Cassandra 4.0.11 | CQL spec 3.4.5 | Native protocol v5]
 
 2. Check data in the table.
 
-    .. code-block:: bash
+.. code-block:: bash
 
-        select * from TABLE_NAME.DATABASE_NAME;
+    select * from TABLE_NAME.DATABASE_NAME;
 
-    You can expect to receive output similar to the following:
+You can expect to receive output similar to the following:
 
-    .. code-block:: bash
+.. code-block:: bash
 
-        n_id | value
-        ------+-------
-            5 |    50
-            4 |    48
+    n_id | value
+    ------+-------
+        5 |    50
+        4 |    48
 
-        (2 rows)
+    (2 rows)
 
 Related reading
 ---------------
