@@ -102,8 +102,8 @@ To run ZDM Proxy, specify connection information by setting ZDM_* environment va
 
     Make sure you set the ZDM_TARGET_ENABLE_HOST_ASSIGNMENT variable. Otherwise, ZDM Proxy tries to connect to one of internal addresses of the cluster nodes, which are unavailable from outside. If this occurs to your source cluster, set ``ZDM_SOURCE_ENABLE_HOST_ASSIGNMENT=false``.
 
-Check how it works
-------------------
+Verify that it works
+--------------------
 
 Check data at the proxy
 '''''''''''''''''''''''
