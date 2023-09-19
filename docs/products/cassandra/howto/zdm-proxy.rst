@@ -7,7 +7,7 @@ Zero Downtime Migration (ZDM) Proxy is an open-source component developed in Go 
 
    For details on ZDM Proxy, check out `zdm-proxy GitHub <https://github.com/datastax/zdm-proxy>`_.
 
-Check out this article to learn how to enable and use ZDM Proxy to migrate to Aiven for Apache Cassandra®.
+This article shows how to use ZDM Proxy to migrate your Apache Cassandra instances to Aiven.
 
 How it works
 ------------
