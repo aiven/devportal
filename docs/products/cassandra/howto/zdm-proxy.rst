@@ -23,7 +23,7 @@ Prerequisites
 
 * Apache Cassandra instance that you want to migrate to the Aiven platform (migration source)
 * Aiven for Apache Cassandra service where you want to migrate your external instance (migration target)
-* :doc:`Aiven CLI client installed </docs/tools/cli#aiven-cli>`
+* :doc:`Aiven CLI client installed </docs/tools/cli>`
 * ``cqlsh`` `installed <https://cassandra.apache.org/doc/latest/cassandra/getting_started/installing.html>`_
 
 Migrate to Aiven
