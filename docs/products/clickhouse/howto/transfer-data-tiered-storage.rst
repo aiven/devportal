@@ -30,7 +30,7 @@ If you :doc:`enable </docs/products/clickhouse/howto/enable-tiered-storage>` the
 
    .. code-block:: bash
 
-      ALTER TABLE database-name.tablename SET storage_policy=”tiered”
+      ALTER TABLE database-name.tablename MODIFY SETTING storage_policy = 'tiered'
 
 .. topic:: Result
 
