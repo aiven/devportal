@@ -21,9 +21,10 @@ When using ZDM Proxy, the client connects to the proxy rather than to the source
 Prerequisites
 -------------
 
-* Migration source - an Apache Cassandra cluster outside the Aiven platform
-* Migration target - an Aiven for Apache Cassandra service
-* ``cqlsh`` installed
+* Apache Cassandra instance that you want to migrate to the Aiven platform (migration source)
+* Aiven for Apache Cassandra service where you want to migrate your external instance (migration target)
+* :doc:`Aiven CLI client installed </docs/tools/cli#aiven-cli>`
+* ``cqlsh`` `installed <https://cassandra.apache.org/doc/latest/cassandra/getting_started/installing.html>`_
 
 Migrate to Aiven
 ----------------
@@ -33,20 +34,9 @@ Connect to the target
 
 :doc:`Connect to your Aiven for Apache Cassandra service </docs/products/cassandra/howto/connect-cqlsh-cli>` using ``cqlsh``, for example.
 
-Create keyspaces and tables
-'''''''''''''''''''''''''''
-
-In your target service, create the same keyspaces and tables you have in your source Cassandra cluster. For ``replication_factor``, specify the number of nodes that the target cluster has.
-
 .. code-block:: bash
 
-    create keyspace SOURCE_KEYSPACE_NAME with replication = {'class': 'SimpleStrategy', 'replication_factor': NUMBER_OF_NODES_OF_TARGET};
-    create table SOURCE_TABLE_NAME.SOURCE_DATABASE_NAME (n_id int, value int, primary key (n_id));
-
-Reconnect to the target
-'''''''''''''''''''''''
-
-:doc:`Connect to your Aiven for Apache Cassandra service </docs/products/cassandra/howto/connect-cqlsh-cli>` again using ``cqlsh``, for example.
+    cqlsh --ssl -u avnadmin -p YOUR_SECRET_PASSWORD cassandra-target-cluster-name.a.avns.net 12345
 
 You can expect to receive output similar to the following:
 
@@ -54,8 +44,16 @@ You can expect to receive output similar to the following:
 
     Connected to a1b2c3d4-1a2b-3c4d-5e6f-a1b2c3d4e5f6 at cassandra-target-cluster-name.a.avns.net:12345
     [cqlsh 6.1.0 | Cassandra 4.0.11 | CQL spec 3.4.5 | Native protocol v5]
-    create keyspace KEYSPACE_NAME with replication = {'class': 'SimpleStrategy', 'replication_factor': 3};
-    create table TABLE_NAME.DATABASE_NAME (n_id int, value int, primary key (n_id));
+
+Create keyspaces and tables
+'''''''''''''''''''''''''''
+
+In your target service, create the same keyspaces and tables you have in your source Apache Cassandra cluster. For ``replication_factor``, specify the number of nodes that the target cluster has.
+
+.. code-block:: bash
+
+    create keyspace SOURCE_KEYSPACE_NAME with replication = {'class': 'SimpleStrategy', 'replication_factor': NUMBER_OF_NODES_OF_TARGET};
+    create table SOURCE_TABLE_NAME.SOURCE_DATABASE_NAME (n_id int, value int, primary key (n_id));
 
 Download the binary
 '''''''''''''''''''
@@ -88,7 +86,7 @@ To run ZDM Proxy, specify connection information by setting ZDM_* environment va
     export ZDM_TARGET_CONTACT_POINTS=cassandra-target-cluster-name.a.avns.net
     export ZDM_TARGET_USERNAME=avnadmin
     export ZDM_TARGET_PASSWORD=YOUR_SECRET_PASSWORD
-    export ZDM_TARGET_PORT=54321
+    export ZDM_TARGET_PORT=12345
     export ZDM_TARGET_TLS_SERVER_CA_PATH="/tmp/ca.pem"
 
     export ZDM_TARGET_ENABLE_HOST_ASSIGNMENT=false
@@ -102,8 +100,8 @@ To run ZDM Proxy, specify connection information by setting ZDM_* environment va
 Verify that it works
 --------------------
 
-Check data at the proxy
-'''''''''''''''''''''''
+Add more data using the proxy
+'''''''''''''''''''''''''''''
 
 To connect to ZDM Proxy, use, for example, ``cqlsh``. Provide connection details and, if your source or target require authentication, specify target username and password.
 
@@ -113,7 +111,7 @@ To connect to ZDM Proxy, use, for example, ``cqlsh``. Provide connection details
 
 The port that ZDM Proxy uses is 14002, which can be overridden.
 
-1. Connect to ZDM Proxy.
+1. Connect using ZDM Proxy.
 
 .. code-block:: bash
 
@@ -123,7 +121,7 @@ You can expect to receive output similar to the following:
 
 .. code-block:: bash
 
-    Connected to SOURCE_CLUSTER_NAME at localhost:14002
+    Connected to CLUSTER_NAME at localhost:14002
     [cqlsh 6.1.0 | Cassandra 4.1.3 | CQL spec 3.4.6 | Native protocol v4]
 
 2. Check data in the table.
@@ -144,7 +142,7 @@ You can expect to receive output similar to the following:
 
     (3 rows)
 
-3. Insert more data into the table.
+3. Insert more data into the table to test how ZDM Proxy handles writre request.
 
 .. code-block:: bash
 
@@ -191,7 +189,7 @@ You can expect to receive output similar to the following:
 
 .. code-block:: bash
 
-    select * from TABLE_NAME.DATABASE_NAME;
+    select * from SOURCE_TABLE_NAME.SOURCE_DATABASE_NAME;
 
 You can expect to receive output similar to the following:
 
@@ -207,10 +205,14 @@ You can expect to receive output similar to the following:
 
     (5 rows)
 
+.. topic:: Result
+
+    ZDM Proxy has forwarded both the write request and the read request to the source cluster. As a result, all the values are there: both newly-added ones (``50`` and ``48``) and previously-added ones (``42``, ``44``, and ``46``).
+
 Check data in the target
 ''''''''''''''''''''''''
 
-1. Connect to the target.
+1. Connect to the target service.
 
 .. code-block:: bash
 
@@ -227,7 +229,7 @@ You can expect to receive output similar to the following:
 
 .. code-block:: bash
 
-    select * from TABLE_NAME.DATABASE_NAME;
+    select * from TARGET_TABLE_NAME.TARGET_DATABASE_NAME;
 
 You can expect to receive output similar to the following:
 
@@ -239,6 +241,10 @@ You can expect to receive output similar to the following:
         4 |    48
 
     (2 rows)
+
+.. topic:: Result
+
+    ``50`` and ``48`` are there in the target table since ZDM Proxy has forwarded the write request to the target service. ``42``, ``44``, and ``46`` are not there since ZDM Proxy has not sent the read request to the target service.
 
 Related reading
 ---------------
