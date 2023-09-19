@@ -142,7 +142,7 @@ You can expect to receive output similar to the following:
 
     (3 rows)
 
-3. Insert more data into the table to test how ZDM Proxy handles writre request.
+3. Insert more data into the table to test how ZDM Proxy handles write request.
 
 .. code-block:: bash
 
