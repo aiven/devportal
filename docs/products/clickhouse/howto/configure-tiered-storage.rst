@@ -53,7 +53,7 @@ Create a new table with the ``storage_policy`` setting set to ``tiered`` (to :do
     ENGINE = MergeTree
     ORDER BY (SearchDate, SearchID)
     PARTITION BY toYYYYMM(SearchDate)
-    TTL SearchDate + INTERVAL 1 WEEK TO VOLUME 'tiered'
+    TTL SearchDate + INTERVAL 1 WEEK TO VOLUME 'remote'
     SETTINGS storage_policy = 'tiered';
 
 Add TTL to an existing table
