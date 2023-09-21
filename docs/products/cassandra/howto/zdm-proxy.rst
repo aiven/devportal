@@ -48,11 +48,11 @@ You can expect to receive output similar to the following:
 Create keyspaces and tables
 '''''''''''''''''''''''''''
 
-In your target service, create the same keyspaces and tables you have in your source Apache Cassandra cluster. For ``replication_factor``, specify the number of nodes that the target cluster has.
+In your target service, create the same keyspaces and tables you have in your source Apache Cassandra cluster.
 
 .. code-block:: bash
 
-    create keyspace SOURCE_KEYSPACE_NAME with replication = {'class': 'SimpleStrategy', 'replication_factor': NUMBER_OF_NODES_OF_TARGET};
+    create keyspace SOURCE_KEYSPACE_NAME with replication = {'class': 'SimpleStrategy', 'replication_factor': 3};
     create table SOURCE_TABLE_NAME.SOURCE_DATABASE_NAME (n_id int, value int, primary key (n_id));
 
 Download the binary
