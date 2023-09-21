@@ -682,6 +682,8 @@ entries:
                 title: Manage data with DSBULK
               - file: docs/products/cassandra/howto/use-nosqlbench-with-cassandra
                 title: Stress test with nosqlbench
+              - file: docs/products/cassandra/howto/zdm-proxy
+                title: Migrate to Aiven
           - file: docs/products/cassandra/howto/list-manage-cluster
             title: Manage cluster
           - file: docs/products/cassandra/howto/list-cross-cluster-replication

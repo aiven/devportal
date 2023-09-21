@@ -136,4 +136,5 @@ exceptions:
   - VNet
   - Workbench
   - Zapier
+  - ZDM Proxy
   - ZooKeeper
