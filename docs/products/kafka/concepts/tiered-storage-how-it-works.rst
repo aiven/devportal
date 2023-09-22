@@ -17,6 +17,9 @@ Local vs. remote data retention
 ---------------------------------
 When tiered storage is enabled, data is initially stored on the local disk of the Kafka broker. Data is then asynchronously transferred to remote storage based on the pre-defined local retention threshold. During periods of high data ingestion or transient errors, such as network connectivity issues, the local storage might temporarily hold more data than specified by the local retention threshold.
 
+.. image:: /images/products/kafka/tiered-storage/data-retention.png
+  :alt: Diagram depicting the concept of local vs. remote data retention in a tiered storage system.
+
 Segment management
 -------------------
 Data is organized into segments, which are uploaded to remote storage individually. The active (newest) segment remains in local storage, which means that the segment size can also influence local data retention. For instance, if the local retention threshold is 1 GB, but the segment size is 2 GB, the local storage will exceed the 1 GB limit until the active segment is rolled over and uploaded to remote storage.
@@ -25,6 +28,7 @@ Data is organized into segments, which are uploaded to remote storage individual
 Asynchronous uploads and replication
 --------------------------------------
 Data is transferred to remote storage asynchronously and does not interfere with the producer activity. While the broker aims to move data as swiftly as possible, certain conditions, such as high-throughput or connectivity issues, may cause more data to be stored in the local storage than the specified local retention policy.
+
 Any data exceeding the local retention threshold will not be purged by the log cleaner until it is successfully uploaded to remote storage.
 The replication factor is not considered during the upload process, and only one copy of each segment is uploaded to the remote storage. Most remote storage options have their own measures, including data replication, to ensure data durability.
 
