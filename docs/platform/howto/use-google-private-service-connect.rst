@@ -5,7 +5,7 @@ Use Google Private Service Connect with Aiven services
 
     Google Private Service Connect is a :doc:`limited availability feature </docs/platform/concepts/beta_services>`, which you can request from the sales team (sales@Aiven.io). During the limited availability stage, you can use the feature at no cost. If you want to continue using Google Private Service Connect after it reaches general availability, you'll be billed according to the latest applicable price.
 
-    Google Private Service Connect is only supported for Aiven for Apache Kafka®.
+    Google Private Service Connect is supported for Aiven for Apache Kafka® and Aiven for ClickHouse® only.
 
 Discover Google Private Service Connect and benefits of using it with your Aiven services. Learn how to enable Google Private Service Connect for Aiven services.
 
