@@ -11,6 +11,7 @@ Azure Private Link is supported for the following services:
 
 * Aiven for Apache Kafka®
 * Aiven for Apache Kafka Connect®
+* Aiven for ClickHouse®
 * Aiven for Grafana®
 * Aiven for InfluxDB®
 * Aiven for MySQL®
