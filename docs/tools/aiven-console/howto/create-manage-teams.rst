@@ -62,7 +62,7 @@ You can edit the permissions or delete the project from this team by clicking th
 Migrate teams to groups
 ------------------------
 
-Replace your existing teams with groups:
+To get started using organization groups, replace your existing teams with groups:
 
 #. In the organization, click **Admin** 
 
