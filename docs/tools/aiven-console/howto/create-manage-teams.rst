@@ -62,11 +62,18 @@ You can edit the permissions or delete the project from this team by clicking th
 Migrate teams to groups
 ------------------------
 
-To help you get started using groups, the migration feature creates new groups from the existing teams in your organization all at once.
+Replace your existing teams with groups:
 
-You can do this in two places:
+#. In the organization, click **Admin** 
 
-* In the organization, go to **Admin**, select **Organization**, and then the **Teams** tab.
-* In a project, select **Members** and then the **Teams** tab.
+#. Click **Organization** and on the **Teams** tab view each team to make a note of: 
 
-As part of the migration, the members of the account owners team for an organization are made super admin. Super admin have full access to an organization's admin, billing, units, projects, and services.
+* which users are members of the team
+* which projects the team is assigned to
+* the permission level that is assigned for each project
+
+#. Click **Groups** and then **Create group**. 
+
+#. Enter the name of one of the teams and assign the same users to this group. Do this for each of your organization's teams.
+
+#. :doc:`Add each new group to the same projects </docs/platform/howto/add-groups-projects>` that the teams are assigned to. Set the role to the same permission level that is used for the team.
