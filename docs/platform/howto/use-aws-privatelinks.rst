@@ -172,7 +172,7 @@ Each endpoint (connection) has PRIVATELINK_CONNECTION_ID, which you can check us
 
    avn service connection-info UTILITY_NAME SERVICE_NAME -p PRIVATELINK_CONNECTION_ID
 
-Where
+.. topic:: Where
 
   * UTILITY_NAME is ``kcat``, for example
   * SERVICE_NAME is ``kafka-12a3b4c5``, for example
@@ -184,7 +184,7 @@ Where
 
    avn service connection-info UTILITY_NAME SERVICE_NAME -p PRIVATELINK_CONNECTION_ID -a sasl
 
-Where
+.. topic:: Where
 
   * UTILITY_NAME is ``kcat``, for example
   * SERVICE_NAME is ``kafka-12a3b4c5``, for example
