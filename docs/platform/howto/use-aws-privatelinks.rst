@@ -142,13 +142,15 @@ currently support AWS PrivateLink.
    successful heartbeats before they transition from the ``initial``
    state to ``healthy`` and are included in the active forwarding rules of the load balancer.
 
-   | **Note:** Currently, you can only create one VPC endpoint for each
-     Aiven service.
-
 .. _h_b6605132ff:
 
-Connection information
-----------------------
+Acquire connection information
+------------------------------
+
+.. _one-connection:
+
+One AWS PrivateLink connection
+''''''''''''''''''''''''''''''
 
 Once you have enabled PrivateLink access for a service component, a
 switch for the ``privatelink`` access route appears under **Connection
@@ -157,10 +159,45 @@ and for some service components such as Kafka, ``port`` - values differ
 from the default ``dynamic`` access route that is used to connect to the
 service. You can use the same credentials with any access route.
 
+Multiple connections
+''''''''''''''''''''
+
+If you have more than one AWS PrivateLink connection, you can get connection information for the first connection as described in :ref:`One AWS PrivateLink connection <one-connection>` from in `Aiven Console <https://console.aiven.io>`__. For connection information on the remaining connections, you need to use CLI.
+
+Each endpoint (connection) has PRIVATELINK_CONNECTION_ID, which you can check using the ``avn service privatelink aws connection list SERVICE_NAME`` command.
+
+* To acquire SSL connection information for your service using AWS PrivateLink, run the following command:
+
+.. code-block:: bash
+
+   avn service connection-info UTILITY_NAME SERVICE_NAME -p PRIVATELINK_CONNECTION_ID
+
+Where
+
+  * UTILITY_NAME is ``kcat``, for example
+  * SERVICE_NAME is ``kafka-12a3b4c5``, for example
+  * PRIVATELINK_CONNECTION_ID is ``plc39413abcdef``, for example
+
+* To acquire connection information for your service using AWS PrivateLink with SASL enabled, run the following command:
+
+.. code-block:: bash
+
+   avn service connection-info UTILITY_NAME SERVICE_NAME -p PRIVATELINK_CONNECTION_ID -a sasl
+
+Where
+
+  * UTILITY_NAME is ``kcat``, for example
+  * SERVICE_NAME is ``kafka-12a3b4c5``, for example
+  * PRIVATELINK_CONNECTION_ID is ``plc39413abcdef``, for example
+
+.. note::
+
+   SSL certificates and SASL credentials are the same for all the connections.
+
 .. _h_2a1689a687:
 
-Updating the allowed principals list
-------------------------------------
+Update the allowed principals list
+----------------------------------
 
 To change the list of AWS accounts or IAM users or roles that are
 allowed to connect a VPC endpoint:
