@@ -955,6 +955,7 @@ entries:
               - file: docs/products/mysql/howto/enable-slow-queries
               - file: docs/products/mysql/howto/create-tables-without-primary-keys
               - file: docs/products/mysql/howto/create-missing-primary-keys
+              - file: docs/products/mysql/howto/mysql-long-running-queries
           - file: docs/products/mysql/howto/list-migrate-data
             title: Data migration
             entries:
