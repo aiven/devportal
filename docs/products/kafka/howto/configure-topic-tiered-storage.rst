@@ -29,12 +29,12 @@ For a new topic
 .. note:: 
     If you leave the value as **Default**, it implies that tiered storage is enabled for this topic.
 
-5. Additionally, you can also set the values for **local_retention_ms** and **local_retention_bytes** using the respective options from the drop-down list.
+5. Additionally, you can also set the values for ``local_retention_ms`` and ``local_retention_bytes`` using the respective options from the drop-down list.
 
 .. important:: 
-    If the values for **local_retention_bytes** and **local_retention_ms** are not set, they default to -2 or take the configuration from the service level.
+    If the values for ``local_retention_bytes`` and ``local_retention_ms`` are not set, they default to -2 or take the configuration from the service level.
 
-    When set to -2, the rentention in local storage will match the total retention. In this scenario, the data segments sent to remote storage are also retained locally.The remote storage will contain older data segements than in the local storage only when the total rentention is set to be greater than the local rentention. 
+    When set to -2, the retention in local storage will match the total retention. In this scenario, the data segments sent to remote storage are also retained locally.The remote storage will contain older data segements than in the local storage only when the total retention is set to be greater than the local retention. 
 
 6. Select **Add topic** to save your changes and add the topic with tiered storage.
 
@@ -44,12 +44,12 @@ For an existing topic
 1. From the **Topics** page, select the topic for which you wish to enable tiered storage.
 2. Use the ellipsis or open the topic and choose **Modify**.
 3. In the **Modify** page, choose ``remote_storage_enable`` from the drop-down list, followed by selecting **True** from the **Remote storage enable** drop-down.
-4. Additionally, you can also set the values for **local_retention_ms** and **local_retention_bytes** using the respective options from the drop-down list.
+4. Additionally, you can also set the values for ``local_retention_ms`` and ``local_retention_bytes`` using the respective options from the drop-down list.
 
 .. important:: 
-    If the values for **local_retention_bytes** and **local_retention_ms** are not set, they default to -2 or take the configuration from the service level. 
+    If the values for ``local_retention_bytes`` and ``local_retention_ms`` are not set, they default to -2 or take the configuration from the service level. 
 
-    When set to -2, the rentention in local storage will match the total retention. In this scenario, the data segments sent to remote storage are also retained locally.The remote storage will contain older data segements than in the local storage only when the total rentention is set to be greater than the local rentention. 
+    When set to -2, the retention in local storage will match the total retention. In this scenario, the data segments sent to remote storage are also retained locally.The remote storage will contain older data segements than in the local storage only when the total retention is set to be greater than the local retention. 
 
 
 5. Select **Update** to save your changes and activate tiered storage.
