@@ -1,7 +1,7 @@
 Set up Virtual Private Cloud peering on UpCloud
 ===============================================
 
-Virtual Private Cloud (VPC) peerings enable traffic between two networks on different accounts or platforms. A peering needs to be establised from both connecting components to be activated.
+Virtual Private Cloud (VPC) peerings enable traffic between two networks on different accounts or platforms. A peering needs to be established from both connecting components to be activated.
 
 Learn how to establish a VPC peering connection between Aiven and UpCloud.
 
@@ -56,10 +56,10 @@ Attributes
 ===================== ============================== =============== ========== =============================================================
 Attribute             Accepted values                Default value   Required   Description
 ===================== ============================== =============== ========== =============================================================
-configured_status     ``active`` or ``disabled``     ``active``      no         Controls whether the peering is administratively up or down.
-name                  String with length 1 to 255                    yes        Descriptive name for the peering.
-network.uuid          Valid network UUID                             yes        Sets the local network of the peering.
-peer_network.uuid     Valid network UUID                             yes        Sets the peer network of the peering.
+``configured_status`` ``active`` or ``disabled``     ``active``      no         Controls whether the peering is administratively up or down.
+``name``              String with length 1 to 255                    yes        Descriptive name for the peering.
+``network.uuid``      Valid network UUID                             yes        Sets the local network of the peering.
+``peer_network.uuid`` Valid network UUID                             yes        Sets the peer network of the peering.
 ===================== ============================== =============== ========== =============================================================
 
 Expected response
@@ -100,7 +100,7 @@ Expected response
 
 .. note::
 
-    The above describes a response of a peering that has not been established both ways. Refer to [Get network peering details](#get-network-peering-details) for description of the states.
+    The above describes a response of a peering that has not been established both ways.
 
 Error responses
 '''''''''''''''
