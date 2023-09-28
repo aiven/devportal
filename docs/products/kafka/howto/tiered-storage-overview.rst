@@ -1,7 +1,7 @@
 Tiered storage overview in Aiven Console
 ========================================
 
-Aiven for Apache Kafka offers a comprehensive overview of tiered storage, allowing you to understand its usage and make informed decisions. This overview provides insights into various aspects of tiered storage, including billing, settings, and storage details.
+Aiven for Apache Kafka® offers a comprehensive overview of tiered storage, allowing you to understand its usage and make informed decisions. This overview provides insights into various aspects of tiered storage, including billing, settings, and storage details.
 
 .. important:: 
     
@@ -53,8 +53,8 @@ Graphical view of tiered storage costs
 
 Gain a visual understanding of your tiered storage expenses:
 
-- **Hourly Expense**: Visualize your hourly expenses through graphical representation.
-- **Total Cost and Forecast**: Get a clear picture of your overall costs and receive a forecast based on current trends.
+- **Hourly expense**: Visualize your hourly expenses through graphical representation.
+- **Total Cost and forecast**: Get a clear picture of your overall costs and receive a forecast based on current trends.
 
 Detailed storage overview
 -------------------------
