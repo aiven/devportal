@@ -180,7 +180,7 @@ If you have Azure Private Link enabled for one service component, you can previe
 Multiple Azure Private Link connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you have more than one Azure Private Link connection, you can get connection information for the first connection as described in :ref:`One Azure Private Link connection <one-privatelink-connectio>` from `Aiven Console <https://console.aiven.io>`__. For connection information on the remaining connections, you need to use CLI.
+If you have more than one Azure Private Link connection, you can get connection information for the first connection as described in :ref:`One Azure Private Link connection <one-privatelink-connection>` from `Aiven Console <https://console.aiven.io>`__. For connection information on the remaining connections, you need to use CLI.
 
 Each endpoint (connection) has PRIVATELINK_CONNECTION_ID, which you can check using the ``avn service privatelink azure connection list SERVICE_NAME`` command.
 
