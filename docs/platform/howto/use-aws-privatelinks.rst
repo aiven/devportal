@@ -152,21 +152,22 @@ Acquire connection information
 One AWS PrivateLink connection
 ''''''''''''''''''''''''''''''
 
-Once you have enabled PrivateLink access for a service component, a
-switch for the ``privatelink`` access route appears under **Connection
-information** on the **Overview** page in `Aiven Console <https://console.aiven.io>`__. The ``host`` -
-and for some service components such as Kafka, ``port`` - values differ
-from the default ``dynamic`` access route that is used to connect to the
-service. You can use the same credentials with any access route.
+Once you have enabled AWS PrivateLink access for a service component, the toggle switch for the ``privatelink`` access route is available in the **Connection information** section on the **Overview** page in `Aiven Console <https://console.aiven.io>`__. Values for ``host`` and ``port`` (for some service components, such as Kafka) differ from those for the default ``dynamic`` access route used to connect to the service.
+
+.. note::
+
+   You can use the same credentials with any access route.
 
 Multiple AWS PrivateLink connections
-''''''''''''''''''''''''''''''''''''
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you have more than one AWS PrivateLink connection, you can get connection information for the first connection as described in :ref:`One AWS PrivateLink connection <one-connection>` from `Aiven Console <https://console.aiven.io>`__. For connection information on the remaining connections, you need to use CLI.
+If you have more than one AWS PrivateLink connection, you can get connection information for the first endpoint as described in :ref:`One AWS PrivateLink connection <one-connection>` (from `Aiven Console <https://console.aiven.io>`__). For connection information for the remaining endpoints, you need to use CLI.
 
-Each endpoint (connection) has PRIVATELINK_CONNECTION_ID, which you can check using the ``avn service privatelink aws connection list SERVICE_NAME`` command.
+Each endpoint (connection) has PRIVATELINK_CONNECTION_ID, which you can check using the :doc:`avn service privatelink aws connection list SERVICE_NAME </docs/tools/cli/service/privatelink>` command.
 
-* To acquire SSL connection information for your service using AWS PrivateLink, run the following command:
+To acquire connection information for your service component using AWS PrivateLink, run the :doc:`avn service connection-info </docs/tools/cli/service/connection-info>` command.
+
+* For SSL connection information for your service component using AWS PrivateLink, run the following command:
 
 .. code-block:: bash
 
@@ -178,7 +179,7 @@ Each endpoint (connection) has PRIVATELINK_CONNECTION_ID, which you can check us
   * SERVICE_NAME is ``kafka-12a3b4c5``, for example
   * PRIVATELINK_CONNECTION_ID is ``plc39413abcdef``, for example
 
-* To acquire connection information for your service using AWS PrivateLink with SASL enabled, run the following command:
+* For connection information for your service component using AWS PrivateLink with SASL enabled, run the following command:
 
 .. code-block:: bash
 

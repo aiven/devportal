@@ -180,11 +180,13 @@ If you have Azure Private Link enabled for one service component, you can previe
 Multiple Azure Private Link connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you have more than one Azure Private Link connection, you can get connection information for the first connection as described in :ref:`One Azure Private Link connection <one-privatelink-connection>` from `Aiven Console <https://console.aiven.io>`__. For connection information on the remaining connections, you need to use CLI.
+If you have more than one Azure Private Link connection, you can get connection information for the first endpoint as described in :ref:`One Azure Private Link connection <one-private-service-connection>` (from `Aiven Console <https://console.aiven.io>`__). For connection information for the remaining endpoints, you need to use CLI.
 
-Each endpoint (connection) has PRIVATELINK_CONNECTION_ID, which you can check using the ``avn service privatelink azure connection list SERVICE_NAME`` command.
+Each endpoint (connection) has PRIVATELINK_CONNECTION_ID, which you can check using the :doc:`avn service privatelink azure connection list SERVICE_NAME </docs/tools/cli/service/privatelink>` command.
 
-* To acquire SSL connection information for your service using Azure Private Link, run the following command:
+To acquire connection information for your service component using Azure Private Link, run the :doc:`avn service connection-info </docs/tools/cli/service/connection-info>` command.
+
+* For SSL connection information for your service component using Azure Private Link, run the following command:
 
 .. code-block:: bash
 
@@ -196,7 +198,7 @@ Each endpoint (connection) has PRIVATELINK_CONNECTION_ID, which you can check us
   * SERVICE_NAME is ``kafka-12a3b4c5``, for example
   * PRIVATELINK_CONNECTION_ID is ``plc39413abcdef``, for example
 
-* To acquire connection information for your service using Azure Private Link with SASL enabled, run the following command:
+* For connection information for your service component using Azure Private Link with SASL enabled, run the following command:
 
 .. code-block:: bash
 
