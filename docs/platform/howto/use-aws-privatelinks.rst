@@ -162,7 +162,7 @@ service. You can use the same credentials with any access route.
 Multiple AWS PrivateLink connections
 ''''''''''''''''''''''''''''''''''''
 
-If you have more than one AWS PrivateLink connection, you can get connection information for the first connection as described in :ref:`One AWS PrivateLink connection <one-connection>` from in `Aiven Console <https://console.aiven.io>`__. For connection information on the remaining connections, you need to use CLI.
+If you have more than one AWS PrivateLink connection, you can get connection information for the first connection as described in :ref:`One AWS PrivateLink connection <one-connection>` from `Aiven Console <https://console.aiven.io>`__. For connection information on the remaining connections, you need to use CLI.
 
 Each endpoint (connection) has PRIVATELINK_CONNECTION_ID, which you can check using the ``avn service privatelink aws connection list SERVICE_NAME`` command.
 
