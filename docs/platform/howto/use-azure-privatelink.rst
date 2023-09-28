@@ -173,12 +173,12 @@ Acquire connection information
 .. _one-privatelink-connection:
 
 One Azure Private Link connection
-'''''''''''''''''''''''''''''''''
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you have Azure Private Link enabled for one service component, you can preview its connection information (URI, hostname, or port required to access the service through the private endpoint) on the service's **Overview** page in `Aiven Console <https://console.aiven.io/>`_.
 
 Multiple Azure Private Link connections
-'''''''''''''''''''''''''''''''''''''''
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you have more than one Azure Private Link connection, you can get connection information for the first connection as described in :ref:`One Azure Private Link connection <one-privatelink-connectio>` from `Aiven Console <https://console.aiven.io>`__. For connection information on the remaining connections, you need to use CLI.
 
