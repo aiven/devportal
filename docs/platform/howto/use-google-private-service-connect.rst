@@ -176,8 +176,52 @@ To enable Private Link access in `Aiven Console <https://console.aiven.io/>`_, t
 
     Each service component can be controlled separately. For example, you can enable Private Service Connect access for your Aiven for Apache Kafka® service while allowing Kafka® Connect to only be connected via VNet peering.
 
+Acquire connection information
+------------------------------
+
+.. _one-private-service-connection:
+
+One Private Service Connect connection
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you have Private Service Connect enabled for one service component, you can preview its connection information (URI, hostname, or port required to access the service through the private endpoint) on the service's **Overview** page in `Aiven Console <https://console.aiven.io/>`_.
+
+Multiple Private Service Connect connections
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you have more than one Private Service Connect connection, you can get connection information for the first endpoint as described in :ref:`One Private Service Connect connection <one-private-service-connection>` (from `Aiven Console <https://console.aiven.io>`__). For connection information for the remaining endpoints, you need to use CLI.
+
+Each endpoint (connection) has PRIVATELINK_CONNECTION_ID, which you can check using the :doc:`avn service privatelink google connection list SERVICE_NAME </docs/tools/cli/service/privatelink#avn-service-privatelink>` command.
+
+To acquire connection information for your service component using Private Service Connect, run the :doc:`avn service connection-info </docs/tools/cli/service/connection-info>` command.
+
+* For SSL connection information for your service component using Private Service Connect, run the following command:
+
+.. code-block:: bash
+
+   avn service connection-info UTILITY_NAME SERVICE_NAME -p PRIVATELINK_CONNECTION_ID
+
+.. topic:: Where
+
+  * UTILITY_NAME is ``kcat``, for example
+  * SERVICE_NAME is ``kafka-12a3b4c5``, for example
+  * PRIVATELINK_CONNECTION_ID is ``plc39413abcdef``, for example
+
+* For connection information for your service component using Private Service Connect with SASL enabled, run the following command:
+
+.. code-block:: bash
+
+   avn service connection-info UTILITY_NAME SERVICE_NAME -p PRIVATELINK_CONNECTION_ID -a sasl
+
+.. topic:: Where
+
+  * UTILITY_NAME is ``kcat``, for example
+  * SERVICE_NAME is ``kafka-12a3b4c5``, for example
+  * PRIVATELINK_CONNECTION_ID is ``plc39413abcdef``, for example
+
 .. note::
-   Connection information, such as the service URI or hostname and port to access the service through the private endpoint, is available on the service's **Overview** page in `Aiven Console <https://console.aiven.io/>`_.
+
+   SSL certificates and SASL credentials are the same for all the connections.
 
 Delete a Private Link service
 ------------------------------
