@@ -191,7 +191,7 @@ Multiple Private Service Connect connections
 
 If you have more than one Private Service Connect connection, you can get connection information for the first endpoint as described in :ref:`One Private Service Connect connection <one-private-service-connection>` (from `Aiven Console <https://console.aiven.io>`__). For connection information for the remaining endpoints, you need to use CLI.
 
-Each endpoint (connection) has PRIVATELINK_CONNECTION_ID, which you can check using the :doc:`avn service privatelink google connection list SERVICE_NAME </docs/tools/cli/service/privatelink#avn-service-privatelink>` command.
+Each endpoint (connection) has PRIVATELINK_CONNECTION_ID, which you can check using the :doc:`avn service privatelink google connection list SERVICE_NAME </docs/tools/cli/service/privatelink>` command.
 
 To acquire connection information for your service component using Private Service Connect, run the :doc:`avn service connection-info </docs/tools/cli/service/connection-info>` command.
 
