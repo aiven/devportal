@@ -34,6 +34,8 @@ Super admin
 
 Super admin have full access to the organization, including all organizational units, projects, and services. Users are automatically made super admin when they create an organization, and they can :doc:`make other users super admin </docs/platform/howto/make-super-admin>`.
 
+Super admin are the same as account owners. Adding a user to the account owners team makes them a super admin. Likewise, when you make a user a super admin, they are added to the account owners team.
+
 
 Projects
 --------
