@@ -16,7 +16,7 @@ To set an authentication policy for all users in an organization:
 
 #. Click **Authentication**.
 
-#. Click the toggle for each authentication method that you want to allow. 
+#. Click the toggle for each authentication method that you want to allow.
 
 #. Click **Save changes**.
 

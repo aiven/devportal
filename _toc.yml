@@ -69,7 +69,6 @@ entries:
     entries:
     - file: docs/platform/howto/manage-org-users
       title: Invite and remove organization users
-    - file: docs/platform/concepts/managed-users
     - file: docs/platform/howto/list-user-profile
       entries:
       - file: docs/platform/howto/edit-user-profile
