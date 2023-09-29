@@ -8,7 +8,7 @@ This article shows how to establish a network peering connection between Aiven a
 About establishing Aiven-Upcloud peering
 ----------------------------------------
 
-To set up a peering connection between Aiven and UpCloud, you need a VPC created for your Aiven project in `Aiven Console <https://console.aiven.io/>`_. On the UpCloud side, you can set up the peering connection via API. Since the API takes UUIDs of both networks as attrbutes, you need to identify the network UUIDs before calling the API.
+To set up a peering connection between Aiven and UpCloud, you need a VPC created for your Aiven project in `Aiven Console <https://console.aiven.io/>`_. On the UpCloud side, you can set up the peering connection via API. Since the API takes UUIDs of both networks as attributes, you need to identify the network UUIDs before calling the API.
 
 Limitations
 -----------
