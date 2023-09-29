@@ -1,7 +1,7 @@
-Set up SDN network peering between Aiven and UpCloud
-====================================================
+Set up network peering between Aiven and UpCloud
+================================================
 
-SDN network peerings enable traffic between two networks on different accounts or platforms. A peering needs to be established from both connecting components to be activated.
+Network peerings enable traffic between two networks from different accounts or platforms. A peering needs to be established from both connecting components to be activated.
 
 This article shows how to establish a network peering connection between Aiven and UpCloud.
 
