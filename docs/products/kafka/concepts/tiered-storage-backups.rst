@@ -1,7 +1,7 @@
 Tiered storage backups
 ========================
 
-In Aiven for Apache Kafka®'s tiered storage, data that resides in topics with tiered storage will persist across power cycles. However, this is not the same as a conventional backup system. Only topics with tiered storage get copied to remote locations, while active data segments remain on local storage due to limitations with Apache Kafka.
+In Aiven for Apache Kafka's tiered storage, data that resides in topics with tiered storage will persist across power cycles, as long as segments have been successfully synchronized to the remote storage. Only topics with tiered storage get copied to remote locations, while active data segments remain on local storage due to limitations with Apache Kafka.
 
 .. note:: 
     Remote data can remain vulnerable to accidental or intentional deletions as it stays connected to Apache Kafka brokers. 
