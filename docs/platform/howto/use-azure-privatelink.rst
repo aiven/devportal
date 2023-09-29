@@ -173,7 +173,7 @@ Acquire connection information
 One Azure Private Link connection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you have one private endpoint connected to your Aiven service, you can preview the connection information (URI, hostname, or port required to access the service through the private endpoint) in `Aiven Console <https://console.aiven.io/>`_ > the service's **Overview** page > the **Connection information** section, where you'll also find the toggle switch for the ``privatelink`` access route. Azure Private Link values for ``host`` and ``port`` differ from those for the default ``dynamic`` access route used to connect to the service.
+If you have one private endpoint connected to your Aiven service, you can preview the connection information (URI, hostname, or port required to access the service through the private endpoint) in `Aiven Console <https://console.aiven.io/>`_ > the service's **Overview** page > the **Connection information** section, where you'll also find the switch for the ``privatelink`` access route. ``privatelink``-access-route values for ``host`` and ``port`` differ from those for the ``dynamic`` access route used by default to connect to the service.
 
 Multiple Azure Private Link connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
