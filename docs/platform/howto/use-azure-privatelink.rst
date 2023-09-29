@@ -170,17 +170,15 @@ After toggling the values, your Private Link resource will be rebuilt with load 
 Acquire connection information
 ------------------------------
 
-.. _one-privatelink-connection:
-
 One Azure Private Link connection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you have Azure Private Link enabled for one service component, you can preview its connection information (URI, hostname, or port required to access the service through the private endpoint) on the service's **Overview** page in `Aiven Console <https://console.aiven.io/>`_.
+If you have one private endpoint connected to your Aiven service, you can preview the connection information (URI, hostname, or port required to access the service through the private endpoint) on the service's **Overview** page in `Aiven Console <https://console.aiven.io/>`_.
 
 Multiple Azure Private Link connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you have more than one Azure Private Link connection, you can get connection information for the first endpoint as described in :ref:`One Azure Private Link connection <one-private-service-connection>` (from `Aiven Console <https://console.aiven.io>`__). For connection information for the remaining endpoints, you need to use CLI.
+Use CLI to acquire connection information for more than one AWS PrivateLink connnection.
 
 Each endpoint (connection) has PRIVATELINK_CONNECTION_ID, which you can check using the :doc:`avn service privatelink azure connection list SERVICE_NAME </docs/tools/cli/service/privatelink>` command.
 

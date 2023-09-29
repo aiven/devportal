@@ -179,17 +179,15 @@ To enable Private Link access in `Aiven Console <https://console.aiven.io/>`_, t
 Acquire connection information
 ------------------------------
 
-.. _one-private-service-connection:
-
 One Private Service Connect connection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you have Private Service Connect enabled for one service component, you can preview its connection information (URI, hostname, or port required to access the service through the private endpoint) on the service's **Overview** page in `Aiven Console <https://console.aiven.io/>`_.
+If you have one private endpoint connected to your Aiven service, you can preview the connection information (URI, hostname, or port required to access the service through the private endpoint) on the service's **Overview** page in `Aiven Console <https://console.aiven.io/>`_.
 
 Multiple Private Service Connect connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you have more than one Private Service Connect connection, you can get connection information for the first endpoint as described in :ref:`One Private Service Connect connection <one-private-service-connection>` (from `Aiven Console <https://console.aiven.io>`__). For connection information for the remaining endpoints, you need to use CLI.
+Use CLI to acquire connection information for more than one Private Service Connect connnection.
 
 Each endpoint (connection) has PRIVATELINK_CONNECTION_ID, which you can check using the :doc:`avn service privatelink google connection list SERVICE_NAME </docs/tools/cli/service/privatelink>` command.
 

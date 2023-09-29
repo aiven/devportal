@@ -147,8 +147,6 @@ currently support AWS PrivateLink.
 Acquire connection information
 ------------------------------
 
-.. _one-connection:
-
 One AWS PrivateLink connection
 ''''''''''''''''''''''''''''''
 
@@ -161,7 +159,7 @@ Once you have enabled AWS PrivateLink access for a service component, the toggle
 Multiple AWS PrivateLink connections
 ''''''''''''''''''''''''''''''''''''
 
-If you have more than one AWS PrivateLink connection, you can get connection information for the first endpoint as described in :ref:`One AWS PrivateLink connection <one-connection>` (from `Aiven Console <https://console.aiven.io>`__). For connection information for the remaining endpoints, you need to use CLI.
+Use CLI to acquire connection information for more than one AWS PrivateLink connnection.
 
 Each endpoint (connection) has PRIVATELINK_CONNECTION_ID, which you can check using the :doc:`avn service privatelink aws connection list SERVICE_NAME </docs/tools/cli/service/privatelink>` command.
 
@@ -171,29 +169,29 @@ To acquire connection information for your service component using AWS PrivateLi
 
 .. code-block:: bash
 
-   avn service connection-info UTILITY_NAME SERVICE_NAME -p PRIVATELINK_CONNECTION_ID
+   avn service connection-info UTILITY_NAME SERVICE_NAME --privatelink-connection-id PRIVATELINK_CONNECTION_ID
 
 .. topic:: Where
 
-  * UTILITY_NAME is ``kcat``, for example
-  * SERVICE_NAME is ``kafka-12a3b4c5``, for example
-  * PRIVATELINK_CONNECTION_ID is ``plc39413abcdef``, for example
+  * UTILITY_NAME for Aiven for Apache Kafka®, for example, can be ``kcat``.
+  * SERVICE_NAME for Aiven for Apache Kafka®, for example, can be ``kafka-12a3b4c5``.
+  * PRIVATELINK_CONNECTION_ID can be ``plc39413abcdef``.
 
 * For connection information for your service component using AWS PrivateLink with SASL enabled, run the following command:
 
 .. code-block:: bash
 
-   avn service connection-info UTILITY_NAME SERVICE_NAME -p PRIVATELINK_CONNECTION_ID -a sasl
+   avn service connection-info UTILITY_NAME SERVICE_NAME --privatelink-connection-id PRIVATELINK_CONNECTION_ID -a sasl
 
 .. topic:: Where
 
-  * UTILITY_NAME is ``kcat``, for example
-  * SERVICE_NAME is ``kafka-12a3b4c5``, for example
-  * PRIVATELINK_CONNECTION_ID is ``plc39413abcdef``, for example
+  * UTILITY_NAME for Aiven for Apache Kafka®, for example, can be ``kcat``.
+  * SERVICE_NAME for Aiven for Apache Kafka®, for example, can be ``kafka-12a3b4c5``.
+  * PRIVATELINK_CONNECTION_ID can be ``plc39413abcdef``.
 
 .. note::
 
-   SSL certificates and SASL credentials are the same for all the connections.
+   SSL certificates and SASL credentials are the same for all the connections. You can use the same credentials with any access route.
 
 .. _h_2a1689a687:
 
