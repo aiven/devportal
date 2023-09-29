@@ -177,7 +177,7 @@ To acquire connection information for your service component using AWS PrivateLi
   * SERVICE_NAME for Aiven for Apache Kafka®, for example, can be ``kafka-12a3b4c5``.
   * PRIVATELINK_CONNECTION_ID can be ``plc39413abcdef``.
 
-* For connection information for your service component using AWS PrivateLink with SASL enabled, run the following command:
+* For SASL connection information for Aiven for Apache Kafka® service components using AWS PrivateLink, run the following command:
 
 .. code-block:: bash
 

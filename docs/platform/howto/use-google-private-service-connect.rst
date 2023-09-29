@@ -205,7 +205,7 @@ To acquire connection information for your service component using Private Servi
   * SERVICE_NAME is ``kafka-12a3b4c5``, for example
   * PRIVATELINK_CONNECTION_ID is ``plc39413abcdef``, for example
 
-* For connection information for your service component using Private Service Connect with SASL enabled, run the following command:
+* For SASL connection information for Aiven for Apache Kafka® service components using using Private Service Connect, run the following command:
 
 .. code-block:: bash
 
