@@ -33,20 +33,19 @@ Before establishing a peering connection with the UpCloud API, you need to find 
 UpCloud SDN network UUID
 ''''''''''''''''''''''''
 
+To check the UpCloud SDN network UUID, send a request to `get network details <https://developers.upcloud.com/1.3/13-networks/#get-network-details>`_ UpCloud API endpoint. In the response, you'll get the network's UUID.
+
 Aiven VPC network UUID
 ''''''''''''''''''''''
 
-1. In `Aiven Console <https://console.aiven.io/>`_, select **VPCs** from the sidebar on the **Services** page.
+You can check the Aiven VPC network UUID in `Aiven Console <https://console.aiven.io/>`_.
 
-2. On the **Virtual private clouds** page, select the VPC connection that you created.
-
-3. On the **VPC Peering connections** page, enter your AWS account ID and VPC ID, select the region for your AWS VPC, and select **Add peering connection**.
-
-   .. note::
-    
-    As a result, a new connection with the **Pending Acceptance** status is added in your AWS Console.
-
-4. In your AWS Console, check that the account ID and VPC ID match those listed in the `Aiven Console <https://console.aiven.io/>`_ and, if so, select **Actions** > **Accept Request**.
+1. Log in to `Aiven Console <https://console.aiven.io/>`_, navigate to the organization and project you want to use.
+2. On the **Services** page, select **VPCs** from the sidebar.
+3. On the **Virtual private clouds** page, select the ID of the VPC connection you want to use for the peering.
+4. On the **VPC peering connections** page, in the **Add peering connection** section, populate **Network ID** field with your UpCloud SDN network UUIDs.
+5. Select **Add peering connection**. This adds a new connection to the VPC peering connections list.
+6. Wait until you see the ``peer_pending`` state in the **State** column of the of the VPC peering connections list. At this point, the Aiven VPC network UUID should show up as ``state_info`` right next to the state itself.
 
 Set up VPC peering
 ------------------
