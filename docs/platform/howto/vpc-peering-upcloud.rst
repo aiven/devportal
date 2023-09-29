@@ -28,26 +28,22 @@ Prerequisites
 Set up VPC peering
 ------------------
 
-Request
-'''''''
+To establish a VPC peering from UpCloud to Aiven, use `UpCloud API <https://developers.upcloud.com/1.3/>`_ to send the following request:
 
-.. code-block:: http
+.. code-block:: bash
 
     POST /1.3/network-peering HTTP/1.1
-
-.. code-block:: json
-
     {
-    "network_peering": {
+      "network_peering": {
         "configured_status": "active",
         "name": "Peering A->B",
         "network": {
-        "uuid": "03126dc1-a69f-4bc2-8b24-e31c22d64712"
+          "uuid": "03126dc1-a69f-4bc2-8b24-e31c22d64712"
         },
         "peer_network": {
-        "uuid": "03585987-bf7d-4544-8e9b-5a1b4d74a333"
+          "uuid": "03585987-bf7d-4544-8e9b-5a1b4d74a333"
         }
-    }
+      }
     }
 
 Attributes
@@ -56,51 +52,48 @@ Attributes
 ===================== ============================== =============== ========== =============================================================
 Attribute             Accepted values                Default value   Required   Description
 ===================== ============================== =============== ========== =============================================================
-``configured_status`` ``active`` or ``disabled``     ``active``      no         Controls whether the peering is administratively up or down.
-``name``              String with length 1 to 255                    yes        Descriptive name for the peering.
-``network.uuid``      Valid network UUID                             yes        Sets the local network of the peering.
-``peer_network.uuid`` Valid network UUID                             yes        Sets the peer network of the peering.
+``configured_status`` ``active`` or ``disabled``     ``active``      No         Controls whether the peering is administratively up or down.
+``name``              String of 1-255 characters                     Yes        Descriptive name for the peering
+``network.uuid``      Valid network UUID                             Yes        Sets the local network of the peering.
+``peer_network.uuid`` Valid network UUID                             Yes        Sets the peer network of the peering.
 ===================== ============================== =============== ========== =============================================================
 
 Expected response
 '''''''''''''''''
 
-.. code-block:: http
+.. note::
+
+    The sample response provided describes a peering established one way only.
+
+.. code-block:: bash
 
     HTTP/1.1 201 Created
-
-.. code-block:: json
-
     {
-    "network_peering": {
+      "network_peering": {
         "configured_status": "active",
         "name": "Peering A->B",
         "network": {
-        "ip_networks": {
+          "ip_networks": {
             "ip_network": [
-            {
+              {
                 "address": "192.168.0.0/24",
                 "family": "IPv4"
-            },
-            {
+              },
+              {
                 "address": "fc02:c4f3::/64",
                 "family": "IPv6"
-            }
+              }
             ]
-        },
-        "uuid": "03126dc1-a69f-4bc2-8b24-e31c22d64712"
+          },
+          "uuid": "03126dc1-a69f-4bc2-8b24-e31c22d64712"
         },
         "peer_network": {
-        "uuid": "03585987-bf7d-4544-8e9b-5a1b4d74a333"
+          "uuid": "03585987-bf7d-4544-8e9b-5a1b4d74a333"
         },
         "state": "pending-peer",
         "uuid": "0f7984bc-5d72-4aaf-b587-90e6a8f32efc"
+      }
     }
-    }
-
-.. note::
-
-    The above describes a response of a peering that has not been established both ways.
 
 Error responses
 '''''''''''''''
@@ -110,6 +103,6 @@ HTTP status       Error code               Description
 ================= ======================== ===================================================
 409 Conflict      LOCAL_NETWORK_NO_ROUTER  The local network has no router.
 404 Not found     NETWORK_NOT_FOUND        The local network was not found.
-404 Not found     PEER_NETWORK_NOT_FOUND   Peer network was not found.
-409 Conflict      PEERING_CONFLICT         The peering between these accounts already exists.
+404 Not found     PEER_NETWORK_NOT_FOUND   The peer network was not found.
+409 Conflict      PEERING_CONFLICT         The peering already exists.
 ================= ======================== ===================================================
