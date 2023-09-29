@@ -104,6 +104,7 @@ exceptions:
   - Postman
   - Premium
   - Private Link
+  - PrivateLink
   - Private Service Connect
   - Project
   - Prometheus
