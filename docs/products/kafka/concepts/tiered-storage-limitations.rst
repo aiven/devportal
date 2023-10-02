@@ -11,3 +11,10 @@ Limitations
 * Increasing the local retention threshold won't move segments already uploaded to remote storage back to local storage. This change only affects new data segments.
 * If you enable tiered storage on a service, you can't migrate the service to a different region or cloud, except for moving to a virtual cloud in the same region. For migration to a different region or cloud, contact `Aiven support <mailto:support@aiven.io>`_.
 
+
+Related reading
+----------------
+
+* :doc:`Tiered storage in Aiven for Apache Kafka® overview </docs/products/kafka/concepts/kafka-tiered-storage>`
+* :doc:`How tiered storage works in Aiven for Apache Kafka® </docs/products/kafka/concepts/tiered-storage-how-it-works>`
+* Enabled tiered storage for Aiven for Apache Kafka® service

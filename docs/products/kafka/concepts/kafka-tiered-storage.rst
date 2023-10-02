@@ -1,14 +1,20 @@
-Tiered storage overview
-==========================
+Tiered storage in Aiven for Apache Kafka® overview
+=====================================================
 
 Tiered storage in Aiven for Apache Kafka® allows you to manage your data more efficiently by leveraging two distinct storage types—local disk and remote cloud storage options like AWS S3 and Google Cloud Storage. This feature offers a tailored approach to data storage, allowing you to allocate frequently accessed data to high-speed local disks while offloading less critical or infrequently accessed data to more cost-effective remote storage solutions. Tiered storage enables you to indefinitely store data on specific topics without running out of space. Once enabled, it is configured per topic, giving you granular control over data storage needs.
 
+.. important:: 
+
+    Aiven for Apache Kafka® tiered storage is an early availability feature, which means it has some restrictions on the functionality and service level agreement. It is intended for non-production environments, but you can test it with production-like workloads to assess the performance. To enable this feature, navigate to the :doc:`Feature preview </docs/platform/howto/feature-preview>` page within your user profile.
+
 
 .. note:: 
-    - Tiered storage for Aiven for Apache Kafka® is support from Apache Kafka version 3.6 or higher
+    - Tiered storage for Aiven for Apache Kafka® is supported starting from Apache Kafka® version 3.6.
     - Azure blob storage is not yet supported for tiered storage in Aiven for Apache Kafka.
 
 
+Benefits of tiered storage
+----------------------------
 Tiered storage offers multiple benefits, including:
 
 * **Scalability:** With tiered storage in Aiven for Apache Kafka, storage and computing are effectively decoupled, enabling them to scale independently. This flexibility ensures that while the storage capacity can expand almost infinitely with cloud solutions, compute resources can also be adjusted based on demand, thus eliminating any concerns about storage or processing limitations.
@@ -42,4 +48,5 @@ Related reading
 * :doc:`Guarantees </docs/products/kafka/concepts/tiered-storage-guarantees>`
 * :doc:`Backups </docs/products/kafka/concepts/tiered-storage-backups>`
 * :doc:`Limiations </docs/products/kafka/concepts/tiered-storage-limitations>`
+* Enabled tiered storage for Aiven for Apache Kafka® service
 

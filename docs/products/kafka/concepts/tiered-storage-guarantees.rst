@@ -16,3 +16,10 @@ Let's say you have a topic with a **total retention threshold** of **1000 GB** a
 * If tiered storage is enabled per topic, older segments will be uploaded immediately to remote storage, irrespective of whether the local retention threshold of 200 GB is exceeded. Data will be deleted from local storage only after it has been safely transferred to remote storage.
 * If the total size of the data exceeds 1000 GB, Apache Kafka will begin deleting the oldest data from remote storage.
 
+
+Related reading
+----------------
+
+* :doc:`Tiered storage in Aiven for Apache Kafka® overview </docs/products/kafka/concepts/kafka-tiered-storage>`
+* :doc:`How tiered storage works in Aiven for Apache Kafka® </docs/products/kafka/concepts/tiered-storage-how-it-works>`
+* Enabled tiered storage for Aiven for Apache Kafka® service
