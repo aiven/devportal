@@ -9,7 +9,7 @@ Aiven for Apache Kafka® offers flexibility in configuring tiered storage and se
 
 Prerequisite
 ------------
-* :doc:`Tiered storage enabled for the Aiven for Apache Kafka service <docs/products/kafka/howto/enable-kafka-tiered-storage>`.
+* :doc:`Tiered storage enabled for the Aiven for Apache Kafka service </docs/products/kafka/howto/enable-kafka-tiered-storage>`.
 
 Configure tiered storage for topics
 ------------------------------------
