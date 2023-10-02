@@ -4,55 +4,51 @@ Manage projects
 Create a project
 ----------------
 
-In the `Aiven web console <https://console.aiven.io/>`_, follow these steps to create a new project:
+In the `Aiven Console <https://console.aiven.io/>`_, follow these steps to create a new project:
 
-1. Click on **Project** drop down and click on **Create new project**.
-2. Give the new project a name.
-3. Select an Account to add the project to.
-4. In **Payment method** select a project to copy the billing details from, or select **Use a new credit card**.
+#. Click **Project** and select **Create project**.
 
-When you create a new project, you will need to enable :doc:`billing for creating new services </docs/platform/howto/list-billing>`.
+#. Enter a name for the project.
+
+#. Select an organization or orgnizational unit to add the project to.
+
+#. Select a :doc:`billing group </docs/platform/concepts/billing-groups>`.  The costs from all services within this project will be charted to the payment method for that billing group.
 
 .. note::
-    You can :ref:`create a project using the Aiven CLI <avn-create-update-project>` as well.
+    You can also :ref:`create a project using the Aiven CLI <avn-create-update-project>`.
 
 
 Rename a project
 ----------------
 
-Renaming a project is possible **only** when all the services in the project are powered-off. To rename a project in the `Aiven web console <https://console.aiven.io/>`_:
-
-1. Select the project from the **Project** drop down.
-2. Click on **Settings**. 
-3. Type in the new project name in the *Project Name* field.
-4. Click on **Save changes**. 
-
 .. important:: 
    
-   - Except for Aiven for Apache Kafka®, all service types have backups which are restored once you power them back on.
-   - Renaming the project will invalidate all of the project's pending invitations.
-   - The project name in your existing DNS records will not be updated.
+   - Except for Aiven for Apache Kafka®, all services have backups that are restored when you power them back on.
+   - The project name in your DNS records will not be updated.
+
+To rename a project in the `Aiven Console <https://console.aiven.io/>`_:
+
+#. Power off all services in the project.
+#. In the **Project**, click **Settings**. 
+#. Edit the **Project name**.
+#. Click **Save changes**. 
 
 .. note::
-    You can :ref:`rename a project using the Aiven CLI <avn-create-update-project>` as well.
+    You can also :ref:`rename a project using the Aiven CLI <avn-create-update-project>`.
 
 Move a project
 ---------------
 
 To move a project from one organizational unit to another:
 
-#. Open the organizational unit that has the project using the drop-down menu in the top right.
+#. Click **Admin** and select the organizational unit with the project you want to move.
 
-#. Click **Admin**.
+#. Click the actions menu for the project you want to move and select **Move project**.
 
-#. Select the **Projects** tab.
-
-#. Find the project you want to move and click **Move project**.
-
-#. Select the organizational unit that you want to move the project to.
+#. Select the organizational unit that you want to move the project to. You can also move the project up a level to the organization.
 
    .. note:: 
-        Projects cannot be moved to other organizations or to organizational units that are in other organizations.
+        Projects cannot be moved to other organizations. They cannot be moved to organizational units that are in other organizations.
 
 #. Choose a billing group.
 
@@ -62,13 +58,13 @@ To move a project from one organizational unit to another:
 Delete a project
 ----------------
 
-To delete a project, you first need to delete all of the services in it. Once the services are deleted:
+To delete a project:
 
-#. Select the project from the **Projects** drop down.
+#. Delete all of the services in the project.
 
 #. Click **Settings**.
 
-#. Click **Delete project**. 
+#. Click **Delete**. 
 
 #. Click **Confirm**.
 
