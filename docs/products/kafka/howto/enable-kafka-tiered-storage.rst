@@ -9,7 +9,7 @@ Learn how to enable tiered storage capability of Aiven for Apache Kafka®. This 
 Prerequisites
 --------------
 * Aiven account and a project set up in the Aiven Console
-* Aiven for Apache Kafka® service with Apache Kafka version 3.6
+* Aiven for Apache Kafka® service with Apache Kafka version 3.6. Tiered storage on Aiven for Apache Kafka is currently not available on all plans and regions. View the `plans and pricing page <https://aiven.io/pricing?product=kafka>`_ for a comprehensive list of supported plans and regions.
 * Aiven CLI
 
 
@@ -18,22 +18,23 @@ Enable tiered storage via Aiven Console
 Follow these steps to enable tiered storage for your service using the Aiven Console. 
 
 1. Access the  `Aiven console <https://console.aiven.io/>`_, and select your project.
-2. Create a new :doc:`Aiven for Apache Kafka service </docs/platform/howto/create_new_service>` or choose an existing one.  
+2. Create a new Aiven for Apache Kafka service or choose an existing one.  
 
-   - If you are creating a new service:
+   - If you are :doc:`creating a new service </docs/platform/howto/create_new_service>`:
 
      a. On the **Create Apache Kafka® service** page, scroll down to the **Tiered storage** section.
      b. To enable tiered storage, select the **Enable tiered storage** toggle.
+     c. In the **Service summary**, you can view the pricing for tiered storage. 
    
    - If you are using an existing service:
 
      a. Go to the service's **Overview** page, scroll down to the **Tiered storage** section.
      b. To enable tiered storage, select the **Enable tiered storage** toggle.
+     
+   
+3. Select the **Activate tiered storage** to save your settings and enable tiered storage for the service. 
 
-3. Enter the value for **Local cache size (bytes)**. This value indicates the amount of memory reserved for storing frequently accessed data, enhancing the speed of reading data from remote storage.
-
-4. Select the **Activate tiered storage** to save your settings and enable tiered storage for the service. 
-
+Once you have enabled tiered storage and it's in use, access the :doc:`Tiered storage overview </docs/products/kafka/howto/tiered-storage-overview>` on the left sidebar to get an overview of the overall usage and cost details.
 
 Configuring default retention policies at service-level
 `````````````````````````````````````````````````````````````````````````````
@@ -44,10 +45,11 @@ Configuring default retention policies at service-level
 4. To set the retention policy for Aiven for Apache Kafka tiered storage, select ``kafka.log_local_retention_ms`` for time-specific retention or ``kafka.log_local_retention_bytes`` for size-specific retention.
 5. Select **Save advanced configuration** to apply your changes.
 
+Additionally, you can configure the retention policies from the :ref:`Tiered storage overview <modify-retention-polices>` page.
 
 Enable tiered storage via Aiven CLI 
 -----------------------------------------
-Follow these steps to enable tiered storage for your Aiven for Apache Kafka service using the:doc:`Aiven CLI </docs/tools/cli>`:
+Follow these steps to enable tiered storage for your Aiven for Apache Kafka service using the :doc:`Aiven CLI </docs/tools/cli>`:
 
 1. Retrieve the project information using the following command: 
    
@@ -75,15 +77,14 @@ Follow these steps to enable tiered storage for your Aiven for Apache Kafka serv
    .. code-block:: bash
 
         avn service update --project demo-kafka-project demo-kafka-service -c 
-        tiered_storage.enabled=true -c tiered_storage.local_cache.size=5368709120
-
+        tiered_storage.enabled=true 
 
 Where: 
 
 - ``--project demo-kafka-project``: Specifies the project name, in this example ``demo-kafka-project``.
 - ``demo-kafka-service``: Refers to the Kafka service you're updating, in this example ``demo-kafka-service``.
 - ``-c tiered_storage.enabled=true``: Enables tiered storage for the Kafka service.
-- ``-c tiered_storage.local_cache.size=5368709120``: Sets the local cache size for tiered storage, in this example to 5 GB.
+
 
 
 

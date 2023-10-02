@@ -9,7 +9,7 @@ Aiven for Apache Kafka® offers flexibility in configuring tiered storage and se
 
 Prerequisite
 ------------
-* Tiered storage enabled for the Aiven for Apache Kafka service.
+* :doc:`Tiered storage enabled for the Aiven for Apache Kafka service <docs/products/kafka/howto/enable-kafka-tiered-storage>`.
 
 Configure tiered storage for topics
 ------------------------------------
@@ -25,16 +25,12 @@ For a new topic
 2. Enable advanced configurations by setting the **Do you want to enable advanced configuration?** option to **Yes**.
 3. In the **Topic advanced configuration** drop-down, choose ``remote_storage_enable``. This action will reveal the **Remote storage enabled** drop-down. 
 4. Select **True** to activate tiered storage for the topic.
-
-.. note:: 
-    If you leave the value as **Default**, it implies that tiered storage is enabled for this topic.
-
 5. Additionally, you can also set the values for ``local_retention_ms`` and ``local_retention_bytes`` using the respective options from the drop-down list.
 
 .. important:: 
     If the values for ``local_retention_bytes`` and ``local_retention_ms`` are not set, they default to -2 or take the configuration from the service level.
 
-    When set to -2, the retention in local storage will match the total retention. In this scenario, the data segments sent to remote storage are also retained locally.The remote storage will contain older data segments than in the local storage only when the total retention is set to be greater than the local retention. 
+    When set to -2, the retention in local storage will match the total retention. In this scenario, the data segments sent to remote storage are also retained locally. The remote storage will contain older data segments than in the local storage only when the total retention is set to be greater than the local retention. 
 
 6. Select **Add topic** to save your changes and add the topic with tiered storage.
 
@@ -49,7 +45,7 @@ For an existing topic
 .. important:: 
     If the values for ``local_retention_bytes`` and ``local_retention_ms`` are not set, they default to -2 or take the configuration from the service level. 
 
-    When set to -2, the retention in local storage will match the total retention. In this scenario, the data segments sent to remote storage are also retained locally.The remote storage will contain older data segments than in the local storage only when the total retention is set to be greater than the local retention. 
+    When set to -2, the retention in local storage will match the total retention. In this scenario, the data segments sent to remote storage are also retained locally. The remote storage will contain older data segments than in the local storage only when the total retention is set to be greater than the local retention. 
 
 
 5. Select **Update** to save your changes and activate tiered storage.

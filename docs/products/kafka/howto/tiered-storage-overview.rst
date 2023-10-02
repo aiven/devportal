@@ -29,22 +29,25 @@ Get a quick snapshot of the essential metrics and details related to tiered stor
 Current tiered storage configurations
 ---------------------------------------------
 
-View of the current configurations for tiered storage:
+This section provides an overview of the current local cache details and retention policy configurations for tiered storage:
 
-- **Local Cache**: Shows the current cache configuration.
-- **Default Local Retention Time (ms)**: Shows the current local data retention set in milliseconds.
-- **Default Local Retention Bytes**: Shows the configured volume of data, in bytes, for local retention.
+- **Local cache**: Shows the current cache configuration.
+- **Default local retention time (ms)**: Shows the current local data retention set in milliseconds.
+- **Default local retention bytes**: Shows the configured volume of data, in bytes, for local retention.
 
+.. _modify-retention-polices:
 
-To modify these settings:
+Modify retention policies 
+`````````````````````````````````
 
-1. In the **Tiered storage settings** section, select the ellipsis (three dots) and choose **Update tiered storage settings**.
+1. In the **Tiered storage settings** section, select the ellipsis (three dots) and select **Update tiered storage settings**.
 2. Within **Update tiered storage settings** page, adjust the values for:
    
    - Local Cache
    - Default Local Retention Time (ms)
    - Default Local Retention Bytes
-3. Confirm by selecting **Save changes**.
+  
+3. Confirm your adjustments by selecting **Save changes**.
 
 
 
@@ -56,11 +59,22 @@ Gain a visual understanding of your tiered storage expenses:
 - **Hourly expense**: Visualize your hourly expenses through graphical representation.
 - **Total Cost and forecast**: Get a clear picture of your overall costs and receive a forecast based on current trends.
 
+
+
+Graphical view of tiered storage costs
+------------------------------------------
+
+Gain a visual understanding of your tiered storage expenses:
+
+- **Hourly expense**: Visualize your hourly expenses through graphical representation.
+- **Total cost and forecast**: Gain insights into your overall costs and receive a forecast. This forecast is an estimate based on your most recent usage patterns and trends. It provides an indicative projection and should not be considered as an exact or fixed value.
+
+
 Detailed storage overview
 -------------------------
 
 Explore the specifics of your storage usage and configurations:
 
-- **Used object storage and SSD storage**: Dive deep into the storage mediums in use.
+- **Used object storage and SSD storage**:Take a deep dive into the storage mediums in use.
 - **Filter by topic**: Narrow down your view to specific topics for focused insights.
 
