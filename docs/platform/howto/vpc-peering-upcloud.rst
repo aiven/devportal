@@ -13,7 +13,8 @@ To set up a peering connection between Aiven and UpCloud, you need a VPC created
 Limitations
 -----------
 
-Peering connections are only supported between networks of type ``private``.
+* Peering connections are only supported between networks of type ``private``.
+* You cannot initiate a peering between two networks with overlapping CIDR ranges.
 
 .. important::
 
@@ -23,7 +24,7 @@ Prerequisites
 -------------
 
 * You have :doc:`created a VPC for your Aiven project <manage-vpc-peering>` in `Aiven Console <https://console.aiven.io/>`_.
-* Each of the two networks to be peered has a router attached.
+* Make sure that CIDR ranges of the networks you want to peer do not overlap.
 
 Identify networks' UUIDs
 ------------------------
