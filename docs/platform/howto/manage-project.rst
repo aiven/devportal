@@ -39,7 +39,7 @@ To rename a project in the `Aiven Console <https://console.aiven.io/>`_:
 Move a project
 ---------------
 
-To move a project from one organizational unit to another:
+To move a project from one organizational unit to another in the `Aiven Console <https://console.aiven.io/>`_:
 
 #. Click **Admin** and select the organizational unit with the project you want to move.
 
@@ -58,7 +58,7 @@ To move a project from one organizational unit to another:
 Delete a project
 ----------------
 
-To delete a project:
+To delete a project in the `Aiven Console <https://console.aiven.io/>`_:
 
 #. Delete all of the services in the project.
 
