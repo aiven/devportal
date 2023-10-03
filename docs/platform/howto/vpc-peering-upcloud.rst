@@ -8,13 +8,17 @@ This article shows how to establish a network peering connection between Aiven a
 About establishing Aiven-Upcloud peering
 ----------------------------------------
 
-To set up a peering connection between Aiven and UpCloud, you need a VPC created for your Aiven project in `Aiven Console <https://console.aiven.io/>`_. On the UpCloud side, you can set up the peering connection via API. Since the API takes UUIDs of both networks as attributes, you need to identify the network UUIDs before calling the API.
+Peering Aiven and UpCloud networks requires establishing the connection on both ends: Aiven and UpCloud.
+
+* To set up a peering from Aiven to UpCloud, you can use `Aiven Console <https://console.aiven.io/>`_ to create a VPC for your Aiven project and add a peering connection to UpCloud. For this purpose, you need to identify the UpCloud SDN network UUID first.
+* To set up a peering from UpCloud to Aiven, you can use UpCloud API. Since the API takes UUIDs of both networks as attributes, you need to identify the network UUIDs before calling the API.
 
 Limitations
 -----------
 
 * Peering connections are only supported between networks of type ``private``.
 * You cannot initiate a peering between two networks with overlapping CIDR ranges.
+* The networks to be peered need to be in the same cloud zone.
 
 .. important::
 
@@ -26,30 +30,31 @@ Prerequisites
 * You have :doc:`created a VPC for your Aiven project <manage-vpc-peering>` in `Aiven Console <https://console.aiven.io/>`_.
 * Make sure that CIDR ranges of the networks you want to peer do not overlap.
 
-Identify networks' UUIDs
-------------------------
+.. _upcloud-uuid:
 
-Before establishing a peering connection with the UpCloud API, you need to find UUIDs for each of the two networks to be peered.
+Get UpCloud SDN network UUID
+----------------------------
 
-UpCloud SDN network UUID
-''''''''''''''''''''''''
+Before establishing a peering connection from Aiven to UpCloud, you need to find your UpCloud SDN network UUID.
 
 To check the UpCloud SDN network UUID, send a request to `get network details <https://developers.upcloud.com/1.3/13-networks/#get-network-details>`_ UpCloud API endpoint. In the response, you'll get the network's UUID.
 
-Aiven VPC network UUID
-''''''''''''''''''''''
+.. _aiven-uuid:
 
-You can check the Aiven VPC network UUID in `Aiven Console <https://console.aiven.io/>`_.
+Set up VPC peering from Aiven
+-----------------------------
+
+You can establish a peering connection from Aiven to UpCloud using `Aiven Console <https://console.aiven.io/>`_.
 
 1. Log in to `Aiven Console <https://console.aiven.io/>`_, navigate to the organization and project you want to use.
 2. On the **Services** page, select **VPCs** from the sidebar.
 3. On the **Virtual private clouds** page, select the ID of the VPC connection you want to use for the peering.
-4. On the **VPC peering connections** page, in the **Add peering connection** section, populate **Network ID** field with your UpCloud SDN network UUIDs.
+4. On the **VPC peering connections** page, in the **Add peering connection** section, populate **Peer network ID** field with your UpCloud SDN network UUIDs.
 5. Select **Add peering connection**. This adds a new connection to the VPC peering connections list.
-6. Wait until you see the ``peer_pending`` state in the **State** column of the of the VPC peering connections list. At this point, the Aiven VPC network UUID should show up as ``state_info`` right next to the state itself.
+6. Wait until you see the ``peer_pending`` state in the **State** column of the of the VPC peering connections table. At this point, the Aiven VPC network UUID should be available in the **Aiven network ID** column of the of the VPC peering connections table.
 
-Set up VPC peering
-------------------
+Set up VPC peering from UpCloud
+-------------------------------
 
 To establish a VPC peering from UpCloud to Aiven, use `UpCloud API <https://developers.upcloud.com/1.3/>`_ to send the following request:
 
@@ -59,15 +64,21 @@ To establish a VPC peering from UpCloud to Aiven, use `UpCloud API <https://deve
     {
       "network_peering": {
         "configured_status": "active",
-        "name": "Peering A->B",
+        "name": "NAME_OF_YOUR_PEERING",
         "network": {
-          "uuid": "03126dc1-a69f-4bc2-8b24-e31c22d64712"
+          "uuid": "UPCLOUD_SDN_NETWORK_UUID"
         },
         "peer_network": {
-          "uuid": "03585987-bf7d-4544-8e9b-5a1b4d74a333"
+          "uuid": "AIVEN_VPC_NETWORK_UUID"
         }
       }
     }
+
+.. topic:: Where
+
+   * NAME_OF_YOUR_PEERING is an arbitrary name you give to your peering, for example ``peering upcloud->aiven``.
+   * UPCLOUD_SDN_NETWORK_UUID is the UUID you acquired in :ref:`UpCloud SDN network UUID <upcloud-uuid>`, for example ``03126dc1-a69f-4bc2-8b24-e31c22d64712``.
+   * AIVEN_VPC_NETWORK_UUID is the UUID you acquired in :ref:`Aiven VPC network UUID <aiven-uuid>`, for example ``03585987-bf7d-4544-8e9b-5a1b4d74a333``.
 
 Attributes
 ''''''''''
@@ -88,13 +99,15 @@ Expected response
 
     The sample response provided describes a peering established one way only.
 
+If your peering API request is successful, you can extect a response similar to the following:
+
 .. code-block:: bash
 
     HTTP/1.1 201 Created
     {
       "network_peering": {
         "configured_status": "active",
-        "name": "Peering A->B",
+        "name": "NAME_OF_YOUR_PEERING",
         "network": {
           "ip_networks": {
             "ip_network": [
@@ -108,15 +121,22 @@ Expected response
               }
             ]
           },
-          "uuid": "03126dc1-a69f-4bc2-8b24-e31c22d64712"
+          "uuid": "UPCLOUD_SDN_NETWORK_UUID"
         },
         "peer_network": {
-          "uuid": "03585987-bf7d-4544-8e9b-5a1b4d74a333"
+          "uuid": "AIVEN_VPC_NETWORK_UUID"
         },
         "state": "pending-peer",
-        "uuid": "0f7984bc-5d72-4aaf-b587-90e6a8f32efc"
+        "uuid": "PEERING_UUID"
       }
     }
+
+.. topic:: Where
+
+   * NAME_OF_YOUR_PEERING is an arbitrary name you give to your peering, for example ``peering upcloud->aiven``.
+   * UPCLOUD_SDN_NETWORK_UUID is the UUID you acquired in :ref:`UpCloud SDN network UUID <upcloud-uuid>`, for example ``03126dc1-a69f-4bc2-8b24-e31c22d64712``.
+   * AIVEN_VPC_NETWORK_UUID is the UUID you acquired in :ref:`Aiven VPC network UUID <aiven-uuid>`, for example ``03585987-bf7d-4544-8e9b-5a1b4d74a333``.
+   * PEERING_UUID is the UUID of your new peering, for example ``0f7984bc-5d72-4aaf-b587-90e6a8f32efc``.
 
 Error responses
 '''''''''''''''
