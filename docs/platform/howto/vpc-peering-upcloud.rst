@@ -74,23 +74,17 @@ To establish a VPC peering from UpCloud to Aiven, use `UpCloud API <https://deve
       }
     }
 
-.. topic:: Where
-
-   * NAME_OF_YOUR_PEERING is an arbitrary name you give to your peering, for example ``peering upcloud->aiven``.
-   * UPCLOUD_SDN_NETWORK_UUID is the UUID you acquired in :ref:`Get UpCloud SDN network UUID <upcloud-uuid>`, for example ``03126dc1-a69f-4bc2-8b24-e31c22d64712``.
-   * AIVEN_VPC_NETWORK_UUID is the UUID you acquired in :ref:`Set up VPC peering from Aiven <avn-uuid>`, for example ``03585987-bf7d-4544-8e9b-5a1b4d74a333``.
-
 Attributes
 ''''''''''
 
-===================== ============================== =============== ========== =============================================================
-Attribute             Accepted values                Default value   Required   Description
-===================== ============================== =============== ========== =============================================================
-``configured_status`` ``active`` or ``disabled``     ``active``      No         Controls whether the peering is administratively up or down.
-``name``              String of 1-255 characters                     Yes        Descriptive name for the peering
-``network.uuid``      Valid network UUID                             Yes        Sets the local network of the peering.
-``peer_network.uuid`` Valid network UUID                             Yes        Sets the peer network of the peering.
-===================== ============================== =============== ========== =============================================================
+===================== ============================== =============== ========== ======================================================================================================================= ========================================
+Attribute             Accepted values                Default value   Required   Description                                                                                                             Example value
+===================== ============================== =============== ========== ======================================================================================================================= ========================================
+``configured_status`` ``active`` or ``disabled``     ``active``      No         Controls whether the peering is administratively up or down.                                                            ``active``
+``name``              String of 1-255 characters     -               Yes        Descriptive name for the peering                                                                                        ``peering upcloud->aiven``
+``network.uuid``      Valid network UUID             -               Yes        Sets the local network of the peering. Use the UUID you acquired in :ref:`Get UpCloud SDN network UUID <upcloud-uuid>`. ``03126dc1-a69f-4bc2-8b24-e31c22d64712``
+``peer_network.uuid`` Valid network UUID             -               Yes        Sets the peer network of the peering. Use the UUID you acquired in :ref:`Set up VPC peering from Aiven <avn-uuid>`.     ``03585987-bf7d-4544-8e9b-5a1b4d74a333``
+===================== ============================== =============== ========== ======================================================================================================================= ========================================
 
 Expected response
 '''''''''''''''''
@@ -130,13 +124,6 @@ If your peering API request is successful, you can expect a response similar to 
         "uuid": "PEERING_UUID"
       }
     }
-
-.. topic:: Where
-
-   * NAME_OF_YOUR_PEERING is an arbitrary name you give to your peering, for example ``peering upcloud->aiven``.
-   * UPCLOUD_SDN_NETWORK_UUID is the UUID you acquired in :ref:`Get UpCloud SDN network UUID <upcloud-uuid>`, for example ``03126dc1-a69f-4bc2-8b24-e31c22d64712``.
-   * AIVEN_VPC_NETWORK_UUID is the UUID you acquired in :ref:`Set up VPC peering from Aiven <avn-uuid>`, for example ``03585987-bf7d-4544-8e9b-5a1b4d74a333``.
-   * PEERING_UUID is the UUID of your new peering, for example ``0f7984bc-5d72-4aaf-b587-90e6a8f32efc``.
 
 Error responses
 '''''''''''''''
