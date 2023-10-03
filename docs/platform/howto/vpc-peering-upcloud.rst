@@ -39,7 +39,7 @@ Before establishing a peering connection from Aiven to UpCloud, you need to find
 
 To check the UpCloud SDN network UUID, send a request to `get network details <https://developers.upcloud.com/1.3/13-networks/#get-network-details>`_ UpCloud API endpoint. In the response, you'll get the network's UUID.
 
-.. _aiven-uuid:
+.. _avn-uuid:
 
 Set up VPC peering from Aiven
 -----------------------------
@@ -78,7 +78,7 @@ To establish a VPC peering from UpCloud to Aiven, use `UpCloud API <https://deve
 
    * NAME_OF_YOUR_PEERING is an arbitrary name you give to your peering, for example ``peering upcloud->aiven``.
    * UPCLOUD_SDN_NETWORK_UUID is the UUID you acquired in :ref:`Get UpCloud SDN network UUID <upcloud-uuid>`, for example ``03126dc1-a69f-4bc2-8b24-e31c22d64712``.
-   * AIVEN_VPC_NETWORK_UUID is the UUID you acquired in :ref:`Set up VPC peering from Aiven <aiven-uuid>`, for example ``03585987-bf7d-4544-8e9b-5a1b4d74a333``.
+   * AIVEN_VPC_NETWORK_UUID is the UUID you acquired in :ref:`Set up VPC peering from Aiven <avn-uuid>`, for example ``03585987-bf7d-4544-8e9b-5a1b4d74a333``.
 
 Attributes
 ''''''''''
@@ -99,7 +99,7 @@ Expected response
 
     The sample response provided describes a peering established one way only.
 
-If your peering API request is successful, you can extect a response similar to the following:
+If your peering API request is successful, you can expect a response similar to the following:
 
 .. code-block:: bash
 
@@ -135,7 +135,7 @@ If your peering API request is successful, you can extect a response similar to 
 
    * NAME_OF_YOUR_PEERING is an arbitrary name you give to your peering, for example ``peering upcloud->aiven``.
    * UPCLOUD_SDN_NETWORK_UUID is the UUID you acquired in :ref:`Get UpCloud SDN network UUID <upcloud-uuid>`, for example ``03126dc1-a69f-4bc2-8b24-e31c22d64712``.
-   * AIVEN_VPC_NETWORK_UUID is the UUID you acquired in :ref:`Set up VPC peering from Aiven <aiven-uuid>`, for example ``03585987-bf7d-4544-8e9b-5a1b4d74a333``.
+   * AIVEN_VPC_NETWORK_UUID is the UUID you acquired in :ref:`Set up VPC peering from Aiven <avn-uuid>`, for example ``03585987-bf7d-4544-8e9b-5a1b4d74a333``.
    * PEERING_UUID is the UUID of your new peering, for example ``0f7984bc-5d72-4aaf-b587-90e6a8f32efc``.
 
 Error responses
