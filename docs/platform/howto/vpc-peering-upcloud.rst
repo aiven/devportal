@@ -28,7 +28,7 @@ Prerequisites
 -------------
 
 * You have :doc:`created a VPC for your Aiven project <manage-vpc-peering>` in `Aiven Console <https://console.aiven.io/>`_.
-* Make sure that CIDR ranges of the networks you want to peer do not overlap.
+* CIDR ranges of the networks you want to peer do not overlap.
 
 .. _upcloud-uuid:
 
