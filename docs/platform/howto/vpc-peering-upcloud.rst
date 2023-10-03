@@ -11,7 +11,7 @@ About establishing Aiven-Upcloud peering
 Peering Aiven and UpCloud networks requires establishing the connection on both ends: Aiven and UpCloud.
 
 * To set up a peering from Aiven to UpCloud, you can use `Aiven Console <https://console.aiven.io/>`_ to create a VPC for your Aiven project and add a peering connection to UpCloud. For this purpose, you need to identify the UpCloud SDN network UUID first.
-* To set up a peering from UpCloud to Aiven, you can use UpCloud API. Since the API takes UUIDs of both networks as attributes, you need to identify the network UUIDs before calling the API.
+* To set up a peering from UpCloud to Aiven, you can use `UpCloud API <https://developers.upcloud.com/1.3/>`_. Since the API takes UUIDs of both networks as attributes, you need to identify the network UUIDs before calling the API.
 
 Limitations
 -----------
@@ -136,3 +136,11 @@ HTTP status       Error code               Description
 404 Not found     PEER_NETWORK_NOT_FOUND   The peer network was not found.
 409 Conflict      PEERING_CONFLICT         The peering already exists.
 ================= ======================== ===================================================
+
+Related reading
+---------------
+
+* :doc:`Manage Virtual Private Cloud (VPC) peering </docs/platform/howto/manage-vpc-peering>`
+* :doc:`Set up Virtual Private Cloud (VPC) peering on AWS </docs/platform/howto/vpc-peering-aws>`
+* :doc:`Set up Virtual Private Cloud (VPC) peering on Google Cloud Platform (GCP) </docs/platform/howto/vpc-peering-gcp>`
+* :doc:`Set up Azure virtual network peering </docs/platform/howto/vnet-peering-azure>`
