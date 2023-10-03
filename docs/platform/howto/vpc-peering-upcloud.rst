@@ -78,12 +78,12 @@ Attributes
 ''''''''''
 
 ===================== ============================== =============== ========== ======================================================================================================================= ========================================
-Attribute             Accepted values                Default value   Required   Description                                                                                                             Example value
+Attribute             Accepted value                 Default value   Required   Description                                                                                                             Example value
 ===================== ============================== =============== ========== ======================================================================================================================= ========================================
 ``configured_status`` ``active`` or ``disabled``     ``active``      No         Controls whether the peering is administratively up or down.                                                            ``active``
-``name``              String of 1-255 characters     -               Yes        Descriptive name for the peering                                                                                        ``peering upcloud->aiven``
-``network.uuid``      Valid network UUID             -               Yes        Sets the local network of the peering. Use the UUID you acquired in :ref:`Get UpCloud SDN network UUID <upcloud-uuid>`. ``03126dc1-a69f-4bc2-8b24-e31c22d64712``
-``peer_network.uuid`` Valid network UUID             -               Yes        Sets the peer network of the peering. Use the UUID you acquired in :ref:`Set up VPC peering from Aiven <avn-uuid>`.     ``03585987-bf7d-4544-8e9b-5a1b4d74a333``
+``name``              String of 1-255 characters     None            Yes        Descriptive name for the peering                                                                                        ``peering upcloud->aiven``
+``network.uuid``      Valid network UUID             None            Yes        Sets the local network of the peering. Use the UUID you acquired in :ref:`Get UpCloud SDN network UUID <upcloud-uuid>`. ``03126dc1-a69f-4bc2-8b24-e31c22d64712``
+``peer_network.uuid`` Valid network UUID             None            Yes        Sets the peer network of the peering. Use the UUID you acquired in :ref:`Set up VPC peering from Aiven <avn-uuid>`.     ``03585987-bf7d-4544-8e9b-5a1b4d74a333``
 ===================== ============================== =============== ========== ======================================================================================================================= ========================================
 
 Expected response
