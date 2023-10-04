@@ -70,20 +70,27 @@ Follow these steps to enable tiered storage for your Aiven for Apache Kafka serv
 
        avn service list
 
-   Make a note of the ``SERVICE_NAME`` corresponding to your Kafka service.
+   Make a note of the ``SERVICE_NAME`` corresponding to your Aiven for Apache Kafka service.
 
 3. Enable tiered storage using the command below:
    
    .. code-block:: bash
 
-        avn service update --project demo-kafka-project demo-kafka-service -c 
-        tiered_storage.enabled=true 
+        avn service update \
+           --project demo-kafka-project \
+           demo-kafka-service \
+           -c tiered_storage.enabled=true
 
-Where: 
 
-- ``--project demo-kafka-project``: Specifies the project name, in this example ``demo-kafka-project``.
-- ``demo-kafka-service``: Refers to the Kafka service you're updating, in this example ``demo-kafka-service``.
-- ``-c tiered_storage.enabled=true``: Enables tiered storage for the Kafka service.
+
+
+In this command:
+
+* ``--project demo-kafka-project`` refers to the name of your project. In this example, it's ``demo-kafka-project``.
+* ``demo-kafka-service`` denotes the Aiven for Apache Kafka® service you intend to update. 
+* ``-c tiered_storage.enabled=true`` is the configuration flag that activates tiered storage for your Aiven for Apache Kafka service.
+
+
 
 
 
