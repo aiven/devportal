@@ -25,6 +25,6 @@ Additional reference information for Aiven for ClickHouse®:
         :shadow: md
         :margin: 2 2 0 0
 
-    .. grid-item-card:: :doc:`Table functions supported in Aiven for ClickHouse® </docs/products/clickhouse/reference/table-functions>`
+    .. grid-item-card:: :doc:`Table functions supported in Aiven for ClickHouse® </docs/products/clickhouse/reference/supported-table-functions>`
         :shadow: md
         :margin: 2 2 0 0
