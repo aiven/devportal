@@ -13,5 +13,5 @@ The `S3 table function <https://clickhouse.com/docs/en/sql-reference/table-funct
 
 .. seealso::
 
-    * :doc:`Table functions supported in Aiven for ClickHouse® </docs/products/clickhouse/reference/table-functions>`
+    * :doc:`Table functions supported in Aiven for ClickHouse® </docs/products/clickhouse/reference/supported-table-functions>`
     * :doc:`Read and pull data from S3 object storages and web resources over HTTP </docs/products/clickhouse/howto/run-federated-queries>`
