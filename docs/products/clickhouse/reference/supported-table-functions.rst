@@ -1,12 +1,14 @@
 Table functions supported in Aiven for ClickHouse®
 ==================================================
 
-`Table functions <https://clickhouse.com/docs/en/sql-reference/table-functions>`_ can be used to construct tables, for example, in a `FROM` clause of a query or in an `INSERT INTO TABLE FUNCTION` statement.
+`Table functions <https://clickhouse.com/docs/en/sql-reference/table-functions>`_ can be used to construct tables, for example, in a FROM clause of a query or in an INSERT INTO TABLE FUNCTION statement.
 
-.. code-block:: bash
+.. topic:: Sample usage of the S3 table function
 
-   SELECT *
-   FROM deltaLake('s3://bucket/path/to/lake')
+   .. code-block:: bash
+
+      SELECT *
+      FROM deltaLake('s3://bucket/path/to/lake')
 
 Aiven for ClickHouse® supports the following table functions:
 

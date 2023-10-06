@@ -812,7 +812,7 @@ entries:
         title: Reference
         entries:
           - file: docs/products/clickhouse/reference/supported-table-engines
-            title: Supported table engines
+            title: Table engines
           - file: docs/products/clickhouse/reference/metrics-list
             title: ClickHouse metrics in Grafana
           - file: docs/products/clickhouse/reference/supported-table-functions
