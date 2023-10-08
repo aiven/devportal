@@ -36,8 +36,8 @@ The replication factor is not considered during the upload process, and only one
 Data retrieval
 -----------------
 When consumers fetch records stored in remote storage, the broker downloads and caches these records locally. This allows for quicker access in subsequent retrieval operations.
-Aiven will use a small amount of disk (between 2GB and 16GB, based on the 5% of disk available on the broker) to store records fetched temporally.
 
+Aiven allocates a small amount of disk space, ranging from 2GB to 16GB, equivalent to 5% of the broker's total available disk, for the temporary storage of fetched records.
 
 Security
 --------
