@@ -812,9 +812,13 @@ entries:
         title: Reference
         entries:
           - file: docs/products/clickhouse/reference/supported-table-engines
-            title: Supported table engines
+            title: Table engines
           - file: docs/products/clickhouse/reference/metrics-list
             title: ClickHouse metrics in Grafana
+          - file: docs/products/clickhouse/reference/supported-table-functions
+            title: Table functions
+          - file: docs/products/clickhouse/reference/s3-supported-file-formats
+            title: S3 file formats
           - file: docs/products/clickhouse/reference/supported-input-output-formats
             title: Formats for ClickHouse-Kafka data exchange
           - file: docs/products/clickhouse/reference/advanced-params
