@@ -1,9 +1,9 @@
-..
-    ``additional_backup_regions``
-    -----------------------------
-    *array*
 
-    **Additional Cloud Regions for Backup Replication** 
+``additional_backup_regions``
+-----------------------------
+*array*
+
+**Additional Cloud Regions for Backup Replication** 
 
 
 
@@ -94,6 +94,86 @@
 *['string', 'null']*
 
 **PEM-encoded root CA Content for SAML IdP server verification** This parameter specifies the PEM-encoded root certificate authority (CA) content for the SAML identity provider (IdP) server verification. The root CA content is used to verify the SSL/TLS certificate presented by the server.
+
+
+
+``openid``
+----------
+*object*
+
+**OpenSearch OpenID Connect Configuration** 
+
+``enabled``
+~~~~~~~~~~~
+*boolean*
+
+**Enable or disable OpenSearch OpenID Connect authentication** Enables or disables OpenID Connect authentication for OpenSearch. When enabled, users can authenticate using OpenID Connect with an Identity Provider.
+
+``connect_url``
+~~~~~~~~~~~~~~~
+*string*
+
+**OpenID Connect metadata/configuration URL** The URL of your IdP where the Security plugin can find the OpenID Connect metadata/configuration settings.
+
+``roles_key``
+~~~~~~~~~~~~~
+*['string', 'null']*
+
+**The key in the JSON payload that stores the user’s roles** The key in the JSON payload that stores the user’s roles. The value of this key must be a comma-separated list of roles. Required only if you want to use roles in the JWT
+
+``subject_key``
+~~~~~~~~~~~~~~~
+*['string', 'null']*
+
+**The key in the JSON payload that stores the user’s name** The key in the JSON payload that stores the user’s name. If not defined, the subject registered claim is used. Most IdP providers use the preferred_username claim. Optional.
+
+``jwt_header``
+~~~~~~~~~~~~~~
+*['string', 'null']*
+
+**The HTTP header that stores the token** The HTTP header that stores the token. Typically the Authorization header with the Bearer schema: Authorization: Bearer <token>. Optional. Default is Authorization.
+
+``jwt_url_parameter``
+~~~~~~~~~~~~~~~~~~~~~
+*['string', 'null']*
+
+**URL JWT token.** If the token is not transmitted in the HTTP header, but as an URL parameter, define the name of the parameter here. Optional.
+
+``refresh_rate_limit_count``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*['integer', 'null']*
+
+**The maximum number of unknown key IDs in the time frame** The maximum number of unknown key IDs in the time frame. Default is 10. Optional.
+
+``refresh_rate_limit_time_window_ms``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*['integer', 'null']*
+
+**The time frame to use when checking the maximum number of unknown key IDs, in milliseconds** The time frame to use when checking the maximum number of unknown key IDs, in milliseconds. Optional.Default is 10000 (10 seconds).
+
+``client_id``
+~~~~~~~~~~~~~
+*string*
+
+**The ID of the OpenID Connect client** The ID of the OpenID Connect client configured in your IdP. Required.
+
+``client_secret``
+~~~~~~~~~~~~~~~~~
+*string*
+
+**The client secret of the OpenID Connect** The client secret of the OpenID Connect client configured in your IdP. Required.
+
+``scope``
+~~~~~~~~~
+*string*
+
+**The scope of the identity token issued by the IdP** The scope of the identity token issued by the IdP. Optional. Default is openid profile email address phone.
+
+``header``
+~~~~~~~~~~
+*string*
+
+**HTTP header name of the JWT token** HTTP header name of the JWT token. Optional. Default is Authorization.
 
 
 
@@ -225,6 +305,12 @@
 
 **action.auto_create_index** Explicitly allow or block automatic creation of indices. Defaults to true
 
+``auth_failure_listeners``
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+*object*
+
+**Opensearch Security Plugin Settings** 
+
 ``thread_pool_search_size``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 *integer*
@@ -338,6 +424,42 @@
 *['string']*
 
 **Sender password for Opensearch alerts to authenticate with SMTP server** Sender password for Opensearch alerts to authenticate with SMTP server
+
+``ism_enabled``
+~~~~~~~~~~~~~~~
+*['boolean', 'null']*
+
+**Specifies whether ISM is enabled or not** 
+
+``ism_history_enabled``
+~~~~~~~~~~~~~~~~~~~~~~~
+*['boolean', 'null']*
+
+**Specifies whether audit history is enabled or not. The logs from ISM are automatically indexed to a logs document.** 
+
+``ism_history_max_age``
+~~~~~~~~~~~~~~~~~~~~~~~
+*['integer', 'null']*
+
+**The maximum age before rolling over the audit history index in hours** 
+
+``ism_history_max_docs``
+~~~~~~~~~~~~~~~~~~~~~~~~
+*['integer', 'null']*
+
+**The maximum number of documents before rolling over the audit history index.** 
+
+``ism_history_rollover_check_period``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*['integer', 'null']*
+
+**The time between rollover checks for the audit history index in hours.** 
+
+``ism_history_rollover_retention_period``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*['integer', 'null']*
+
+**How long audit history indices are kept in days.** 
 
 
 
