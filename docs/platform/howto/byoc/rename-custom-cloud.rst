@@ -23,10 +23,12 @@ Rename your cloud
 -----------------
 
 1. Log in to `Aiven Console <https://console.aiven.io/>`_ as an administrator.
-2. From the left sidebar, select **Bring your own cloud**.
-3. In the **Bring you own cloud** view, select one of the clouds available on the list.
-4. In the selected cloud's page, use the ellipsis (**...**) menu in the top right corner to select **Rename**.
-5. In the **Rename custom cloud** window, enter a new name into the **Custom cloud name** field and select **Rename**.
+2. Select the organization you want to use from the dropdown menu in the top right corner.
+3. From the top navigation bar, select **Admin**.
+4. From the left sidebar, select **Bring your own cloud**.
+5. In the **Bring your own cloud** view, select one of the clouds available on the list.
+6. In the selected cloud's page, use the ellipsis (**...**) menu in the top right corner to select **Rename**.
+7. In the **Rename custom cloud** window, enter a new name into the **Custom cloud name** field and select **Rename**.
 
 .. topic:: Result
 
@@ -38,8 +40,10 @@ Check it out
 You can preview the updated name of your cloud by taking the following steps:
 
 1. Log in to `Aiven Console <https://console.aiven.io/>`_ as an administrator.
-2. From the left sidebar, select **Bring your own cloud**.
-3. In the **Bring you own cloud** view, see the list of the available clouds and identify the cloud with the name you updated.
+2. Select the organization you want to use from the dropdown menu in the top right corner.
+3. From the top navigation bar, select **Admin**.
+4. From the left sidebar, select **Bring your own cloud**.
+5. In the **Bring your own cloud** view, see the list of the available clouds and identify the cloud with the name you updated.
 
 Related reading
 ---------------

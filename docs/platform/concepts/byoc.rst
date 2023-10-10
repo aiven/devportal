@@ -18,6 +18,8 @@ There a few major reasons to utilize BYOC:
 3. **Fine-grained network control**: BYOC requires only some specific network access (for example, service management and troubleshooting), otherwise allowing you to customize your network to meet any internal requirements or requirements of your customers.
 4. **Cost optimization**: Depending on your cloud provider, with BYOC you can use cost savings plans, committed use discounts, or other strategies to save on compute and storage infrastructure costs related to Aiven services.
 
+.. _eligible-for-byoc:
+
 Who is eligible for BYOC
 ------------------------
 
@@ -25,7 +27,7 @@ The BYOC setup is a bespoke service offered on a case-by-case basis, and not all
 
 - You use one of the following public clouds: Amazon Web Services (AWS), Google Cloud Platform (GCP), or Microsoft Azure (excluding Azure Germany).
 - Your total monthly spend is greater than $5,000.
-- You have an active enterprise support contract.
+- You use at least the `Priority tier of Aiven support services <https://aiven.io/support-services>`_.
 
 When to use the regular Aiven deployment
 ----------------------------------------

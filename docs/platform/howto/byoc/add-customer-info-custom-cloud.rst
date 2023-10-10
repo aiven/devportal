@@ -23,16 +23,18 @@ Update the contacts list
 ------------------------
 
 1. Log in to `Aiven Console <https://console.aiven.io/>`_ as an administrator.
-2. From the left sidebar, select **Bring your own cloud**.
-3. In the **Bring you own cloud** view, select one of the clouds available on the list.
-4. In the selected cloud's page, use the ellipsis (**...**) menu in the top right corner to select **Customer contact**.
-5. In the **Customer contact** window, select a new contact's role from the dropdown menu, enter the email address, and select **+** to add the provided contact's details.
+2. Select the organization you want to use from the dropdown menu in the top right corner.
+3. From the top navigation bar, select **Admin**.
+4. From the left sidebar, select **Bring your own cloud**.
+5. In the **Bring your own cloud** view, select one of the clouds available on the list.
+6. In the selected cloud's page, use the ellipsis (**...**) menu in the top right corner to select **Customer contact**.
+7. In the **Customer contact** window, select a new contact's role from the dropdown menu, enter the email address, and select **+** to add the provided contact's details.
 
    .. note::
     
     You can add multiple customer contacts for your custom cloud.
     
-6. When you're done adding all the contacts, select **Save changes**.
+8. When you're done adding all the contacts, select **Save changes**.
 
 .. topic:: Result
 
@@ -44,10 +46,12 @@ Check it out
 You can preview the updated list of contacts by taking the following steps:
 
 1. Log in to `Aiven Console <https://console.aiven.io/>`_ as an administrator.
-2. From the left sidebar, select **Bring your own cloud**.
-3. In the **Bring you own cloud** view, select one of the clouds available on the list.
-4. In the selected cloud's page, use the ellipsis (**...**) menu in the top right corner.
-5. Select **Customer contact** from the options available on the the ellipsis (**...**) menu.
+2. Select the organization you want to use from the dropdown menu in the top right corner.
+3. From the top navigation bar, select **Admin**.
+4. From the left sidebar, select **Bring your own cloud**.
+5. In the **Bring your own cloud** view, select one of the clouds available on the list.
+6. In the selected cloud's page, use the ellipsis (**...**) menu in the top right corner.
+7. Select **Customer contact** from the options available on the the ellipsis (**...**) menu.
 
 Related reading
 ---------------
