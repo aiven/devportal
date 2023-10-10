@@ -1,9 +1,25 @@
 
+``additional_backup_regions``
+-----------------------------
+*array*
+
+**Additional Cloud Regions for Backup Replication** 
+
+
+
 ``ip_filter``
 -------------
 *array*
 
 **IP filter** Allow incoming connections from CIDR address block, e.g. '10.20.0.0/16'
+
+
+
+``static_ips``
+--------------
+*boolean*
+
+**Static IP addresses** Use static public IP addresses
 
 
 
