@@ -1,9 +1,9 @@
-..
-    ``additional_backup_regions``
-    -----------------------------
-    *array*
 
-    **Additional Cloud Regions for Backup Replication** 
+``additional_backup_regions``
+-----------------------------
+*array*
+
+**Additional Cloud Regions for Backup Replication** 
 
 
 
@@ -259,6 +259,18 @@
 
 **log.index.size.max.bytes** The maximum size in bytes of the offset index
 
+``log_local_retention_ms``
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+*integer*
+
+**log.local.retention.ms** The number of milliseconds to keep the local log segments before it gets eligible for deletion. If set to -2, the value of log.retention.ms is used. The effective value should always be less than or equal to log.retention.ms value.
+
+``log_local_retention_bytes``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*integer*
+
+**log.local.retention.bytes** The maximum size of local log segments that can grow for a partition before it gets eligible for deletion. If set to -2, the value of log.retention.bytes is used. The effective value should always be less than or equal to log.retention.bytes value.
+
 ``log_message_downconversion_enable``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 *boolean*
@@ -511,11 +523,17 @@
 
 **The maximum size of a request in bytes** This setting will limit the number of record batches the producer will send in a single request to avoid sending huge requests.
 
+``scheduled_rebalance_max_delay_ms``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*integer*
+
+**The maximum delay of rebalancing connector workers** The maximum delay that is scheduled in order to wait for the return of one or more departed workers before rebalancing and reassigning their connectors and tasks to the group. During this period the connectors and tasks of the departed workers remain unassigned.  Defaults to 5 minutes.
+
 ``session_timeout_ms``
 ~~~~~~~~~~~~~~~~~~~~~~
 *integer*
 
-**The timeout used to detect failures when using Kafka’s group management facilities** The timeout in milliseconds used to detect failures when using Kafka’s group management facilities (defaults to 45000).
+**The timeout used to detect failures when using Kafka’s group management facilities** The timeout in milliseconds used to detect failures when using Kafka’s group management facilities (defaults to 10000).
 
 
 
@@ -604,6 +622,20 @@
 *integer*
 
 **simpleconsumer.pool.size.max** Maximum number of SimpleConsumers that can be instantiated per broker
+
+
+
+``tiered_storage``
+------------------
+*object*
+
+**Tiered storage configuration** 
+
+``enabled``
+~~~~~~~~~~~
+*boolean*
+
+**Enabled** Whether to enable the tiered storage functionality
 
 
 
