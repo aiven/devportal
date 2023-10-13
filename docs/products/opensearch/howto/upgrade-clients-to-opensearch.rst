@@ -14,7 +14,7 @@ In order to upgrade the Elasticsearch clients to OpenSearch follow these steps:
 
 
 .. note::
-    You can migrate your cluster from Elasticsearch to OpenSearch  either before or after switching the clients. 
+    You can migrate your cluster from Elasticsearch to OpenSearch either before or after switching the clients. 
 
 
 What if you can't upgrade immediately?
