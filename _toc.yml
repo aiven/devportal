@@ -1084,11 +1084,8 @@ entries:
             entries:
             - file: docs/products/opensearch/howto/opensearch-log-integration
             - file: docs/products/opensearch/howto/integrate-with-grafana
-          - file: docs/products/opensearch/howto/list-upgrade
-            title: Upgrade to OpenSearch
-            entries:
-            - file: docs/products/opensearch/howto/upgrade-to-opensearch
-            - file: docs/products/opensearch/howto/upgrade-clients-to-opensearch
+          - file: docs/products/opensearch/howto/upgrade-clients-to-opensearch
+            title: Upgrade Elasticsearch clients
       - file: docs/products/opensearch/dashboards
         title: OpenSearch Dashboards
         entries:
