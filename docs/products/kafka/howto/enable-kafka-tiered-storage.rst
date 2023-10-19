@@ -36,6 +36,11 @@ Follow these steps to enable tiered storage for your service using the Aiven Con
 
 Once you have enabled tiered storage and it's in use, access the :doc:`Tiered storage overview </docs/products/kafka/howto/tiered-storage-overview>` on the left sidebar to get an overview of the overall usage and cost details.
 
+.. note:: 
+   
+   If tiered storage is not yet enabled for your service, clicking **Tiered storage** from the sidebar provides you with the option to activate tiered storage.
+
+
 Configuring default retention policies at service-level
 `````````````````````````````````````````````````````````````````````````````
 
