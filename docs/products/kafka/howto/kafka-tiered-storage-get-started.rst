@@ -12,9 +12,7 @@ For an in-depth understanding of tiered storage, how it works, and its benefits,
 
 Enable tiered storage for service
 ----------------------------------
-To use tiered storage, you need to enable it for your Aiven for Apache Kafka service® service. This foundational step ensures that the necessary infrastructure is in place.
-
-For detailed instructions, see :doc:`Enable tiered storage for Aiven for Apache Kafka® </docs/products/kafka/howto/enable-kafka-tiered-storage>`.
+To use tiered storage, you need to first :doc:`enable </docs/products/kafka/howto/enable-kafka-tiered-storage>` it for your Aiven for Apache Kafka service® service. This foundational step ensures that the necessary infrastructure is in place.
 
 .. important:: 
     Tiered storage is supported on Aiven for Apache Kafka services with Apache Kafka version 3.6.
