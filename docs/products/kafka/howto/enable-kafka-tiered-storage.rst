@@ -40,6 +40,9 @@ Once you have enabled tiered storage and it's in use, access the :doc:`Tiered st
    
    If tiered storage is not yet enabled for your service, clicking **Tiered storage** from the sidebar provides you with the option to activate tiered storage.
 
+.. warning:: 
+   If you power off a service with tiered storage active, all remote data will be permanently deleted. You will not be billed for tiered storage usage during the powered-off period.
+
 
 Configuring default retention policies at service-level
 `````````````````````````````````````````````````````````````````````````````
