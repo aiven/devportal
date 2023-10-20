@@ -1,4 +1,4 @@
-Enable and configuring tiered storage for topics
+Enable and configure tiered storage for topics
 ===========================================================================
 
 Aiven for Apache Kafka® offers flexibility in configuring tiered storage and setting retention policies. This guide will walk you through the process of configuring tiered storage for individual topic and configuring local retention policies. 
