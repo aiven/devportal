@@ -327,8 +327,6 @@ entries:
                 title: How it works
               - file: docs/products/kafka/concepts/tiered-storage-guarantees
                 title: Guarantees
-              - file: docs/products/kafka/concepts/tiered-storage-backups
-                title: Backups
               - file: docs/products/kafka/concepts/tiered-storage-limitations
                 title: Limitations
         
