@@ -318,6 +318,8 @@ entries:
           - file: docs/products/kafka/concepts/non-leader-for-partition
           - file: docs/products/kafka/concepts/configuration-backup
           - file: docs/products/kafka/concepts/monitor-consumer-group
+          - file: docs/products/kafka/concepts/consumer-lag-predictor
+            title: Consumer lag predictor
           - file: docs/products/kafka/concepts/kafka-quotas
             title: Quotas
       - file: docs/products/kafka/howto
@@ -373,6 +375,8 @@ entries:
               - file: docs/products/kafka/howto/avoid-out-of-memory-error
               - file: docs/products/kafka/howto/optimizing-resource-usage
                 title: Optimizing resource usage
+              - file: docs/products/kafka/howto/enabled-consumer-lag-predictor
+                title: Enable consumer lag predictor
               - file: docs/products/kafka/howto/manage-quotas
 
           - file: docs/products/kafka/howto/list-integration
