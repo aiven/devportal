@@ -46,7 +46,7 @@ Failure handling
 ----------------
 
 - **Minor failures**: Aiven automatically handles minor failures, such as service process crashes or temporary loss of network access, without any significant changes to the service deployment. In all plans, the service instantly restores normal operation by automatically restarting the crashed process or restoring the network access once available.
-- **Severe failure**: In case of severe hardware or software problems, such as losing an entire node, it requires more drastic recovery measures. An entire node (virtual machine) may be lost due to hardware failure or a severe software issue. Aiven's monitoring infrastructure automatically detects a failing node when it reports problems with its self-diagnostics or stops communicating altogether. The monitoring infrastructure then schedules the creation of a new replacement node.
+- **Severe failures**: In case of severe hardware or software problems, such as losing an entire node, more drastic recovery measures are required. Aiven's monitoring infrastructure automatically detects a failing node when it reports problems with its self-diagnostics or stops communicating altogether. The monitoring infrastructure then schedules the creation of a new replacement node.
 
 
 .. Note::
