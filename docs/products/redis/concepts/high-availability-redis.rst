@@ -53,7 +53,7 @@ Failure handling
         In case of database failover, your service's **Service URI** remains the same—only the IP address changes to point to the new primary node.
 
 
-Highly available business, premium and custom service plans
+Highly available business, premium, and custom service plans
 ------------------------------------------------------------
 
 If a Redis node fails and is a **standby**, node, the **primary** node continues to run normally, providing uninterrupted service to client applications. Once a new replacement standby node is ready and synchronized with the main, it replicates it in real time until the situation returns to normal.
