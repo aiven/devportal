@@ -133,7 +133,7 @@ Multi-node services
 
 .. note::
   
-   For Aiven for PostgreSQL® services with multiple nodes, the primary DNS name does not include standby IP addresses. To track those, make sure to include the replica DNS names in the list. If your ``<PROMETHEUS_SERVICE_URI>`` is ``example.aivencloud.com``, you need to add ``replica-example.aivencloud.com``.
+   For Aiven services with multiple nodes and a Replica URI, the primary DNS name does not include standby IP addresses. To track those, make sure to include the replica DNS names in the list. If you have ``<PROMETHEUS_SERVICE_URI>`` as ``public-example.aivencloud.com``, then you will need to add ``public-replica-example.aivencloud.com``. This applies to PostgreSQL®, MySQL®, and Redis®* services.
 
 View full list of metrics
 ''''''''''''''''''''''''''
