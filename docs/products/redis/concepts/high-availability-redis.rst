@@ -50,7 +50,7 @@ Failure handling
 
 
 .. Note::
-        In case of database failover, your service's **Service URI** remains the same—only the IP address changes to point to the new master node.
+        In case of database failover, your service's **Service URI** remains the same—only the IP address changes to point to the new primary node.
 
 
 Highly available business, premium and custom service plans
