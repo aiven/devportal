@@ -10,7 +10,7 @@ In the `Aiven Console <https://console.aiven.io/>`_, follow these steps to creat
 
 #. Enter a name for the project.
 
-#. Select an organization or orgnizational unit to add the project to.
+#. Select an organization or organizational unit to add the project to.
 
 #. Select a :doc:`billing group </docs/platform/concepts/billing-groups>`.  The costs from all services within this project will be charted to the payment method for that billing group.
 
