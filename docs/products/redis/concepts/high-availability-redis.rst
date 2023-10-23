@@ -56,7 +56,7 @@ Failure handling
 Highly available business, premium, and custom service plans
 ------------------------------------------------------------
 
-If a Redis node fails and is a **standby**, node, the **primary** node continues to run normally, providing uninterrupted service to client applications. Once a new replacement standby node is ready and synchronized with the main, it replicates it in real time until the situation returns to normal.
+If a Redis node fails and is a standby node, the primary node continues to run normally, providing uninterrupted service to client applications. Once a new replacement standby node is ready and synchronized with the primary, it replicates it in real time until the situation returns to normal.
 
 When the failed node is a Redis **primary**, the combined information from the Aiven monitoring infrastructure and the standby node is used to make a failover decision. The standby node is promoted as the new primary and immediately serves clients. A new replacement node is automatically scheduled and becomes the new standby node.
 
