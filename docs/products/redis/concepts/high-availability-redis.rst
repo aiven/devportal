@@ -60,7 +60,7 @@ If a Redis node fails and is a standby node, the primary node continues to run n
 
 When the failed node is a Redis **primary**, the combined information from the Aiven monitoring infrastructure and the standby node is used to make a failover decision. The standby node is promoted as the new primary and immediately serves clients. A new replacement node is automatically scheduled and becomes the new standby node.
 
-If both the **primary** and **standby** nodes fail simultaneously, new nodes will be created automatically to take their place as the new primary and standby. However, this process will involve some degree of data loss since the primary node will be restored from the most recent backup available. Therefore, any writes made to the database since the last backup will be lost.
+If both the **primary** and **standby** nodes fail simultaneously, new nodes will be created automatically to take their place as the new primary and standby. However, this process involves some degree of data loss since the primary node is restored from the most recent backup available. Therefore, any writes made to the database since the last backup will be lost.
 
 .. Note::
         The amount of time it takes to replace a failed node depends mainly on the used **cloud region** and the **amount of data** that needs to be restored. However, in the case of services with two or more node Business, Premium and Custom plans the surviving nodes will keep on serving clients even during the recreation of the other node. All of this is automatic and requires no administrator intervention.
