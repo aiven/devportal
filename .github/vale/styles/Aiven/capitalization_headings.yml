@@ -10,6 +10,7 @@ exceptions:
   - Amazon
   - Amazon Aurora
   - Amazon Web Services
+  - API
   - APIs
   - Aiven
   - Aiven Console
@@ -104,6 +105,7 @@ exceptions:
   - Postman
   - Premium
   - Private Link
+  - PrivateLink
   - Private Service Connect
   - Project
   - Prometheus
@@ -132,8 +134,11 @@ exceptions:
   - Transport Layer Security
   - United States
   - UpCloud
+  - UUID
+  - UUIDs
   - Virtual Private Cloud
   - VNet
   - Workbench
   - Zapier
+  - ZDM Proxy
   - ZooKeeper

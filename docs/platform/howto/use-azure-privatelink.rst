@@ -11,6 +11,7 @@ Azure Private Link is supported for the following services:
 
 * Aiven for Apache Kafka®
 * Aiven for Apache Kafka Connect®
+* Aiven for ClickHouse®
 * Aiven for Grafana®
 * Aiven for InfluxDB®
 * Aiven for MySQL®
@@ -160,14 +161,59 @@ To enable Private Link access in `Aiven Console <https://console.aiven.io/>`_:
 
     Each service component can be controlled separately. For example, you can enable Private Link access for your Aiven for Apache Kafka® service, while allowing Kafka® Connect to only be connected via VNet peering.
 
-After toggling the values your Private Link resource will be rebuilt with load balancer rules added for the service component's ports. Connection information like the URI or hostname and port to access the service through the private endpoint is available on the service's **Overview** page in `Aiven Console <https://console.aiven.io/>`_. 
+After toggling the values, your Private Link resource will be rebuilt with load balancer rules added for the service component's ports.
 
 .. note::
   
   For Aiven for Apache Kafka® services, the security group for the VPC endpoint must allow ingress in the port range ``10000-31000``. This is to accommodate the pool of Kafka broker ports used in the Private Link implementation.
 
+Acquire connection information
+------------------------------
+
+One Azure Private Link connection
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you have one private endpoint connected to your Aiven service, you can preview the connection information (URI, hostname, or port required to access the service through the private endpoint) in `Aiven Console <https://console.aiven.io/>`_ > the service's **Overview** page > the **Connection information** section, where you'll also find the switch for the ``privatelink`` access route. ``privatelink``-access-route values for ``host`` and ``port`` differ from those for the ``dynamic`` access route used by default to connect to the service.
+
+Multiple Azure Private Link connections
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Use CLI to acquire connection information for more than one AWS PrivateLink connection.
+
+Each endpoint (connection) has PRIVATELINK_CONNECTION_ID, which you can check using the :doc:`avn service privatelink azure connection list SERVICE_NAME </docs/tools/cli/service/privatelink>` command.
+
+To acquire connection information for your service component using Azure Private Link, run the :doc:`avn service connection-info </docs/tools/cli/service/connection-info>` command.
+
+* For SSL connection information for your service component using Azure Private Link, run the following command:
+
+.. code-block:: bash
+
+   avn service connection-info UTILITY_NAME SERVICE_NAME -p PRIVATELINK_CONNECTION_ID
+
+.. topic:: Where
+
+  * UTILITY_NAME is ``kcat``, for example
+  * SERVICE_NAME is ``kafka-12a3b4c5``, for example
+  * PRIVATELINK_CONNECTION_ID is ``plc39413abcdef``, for example
+
+* For SASL connection information for Aiven for Apache Kafka® service components using Azure Private Link, run the following command:
+
+.. code-block:: bash
+
+   avn service connection-info UTILITY_NAME SERVICE_NAME -p PRIVATELINK_CONNECTION_ID -a sasl
+
+.. topic:: Where
+
+  * UTILITY_NAME is ``kcat``, for example
+  * SERVICE_NAME is ``kafka-12a3b4c5``, for example
+  * PRIVATELINK_CONNECTION_ID is ``plc39413abcdef``, for example
+
+.. note::
+
+   SSL certificates and SASL credentials are the same for all the connections.
+
 Update subscription list
---------------------------
+------------------------
 In the Aiven CLI, you can update the list of Azure subscriptions that have access to Aiven service endpoints:
 
 .. code:: shell
@@ -175,7 +221,7 @@ In the Aiven CLI, you can update the list of Azure subscriptions that have acces
     avn service privatelink azure update AIVEN_SERVICE SUBSCRIPTION_ID
 
 Delete a Private Link service
-------------------------------
+-----------------------------
 Use the Aiven CLI to delete the Azure Load Balancer and Private Link service:
 
 .. code:: shell

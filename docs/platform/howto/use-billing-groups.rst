@@ -21,8 +21,6 @@ To change the payment card, address, billing contacts, or other billing details:
 
 #. On the **Billing information** tab click **Edit** to update the details for that section.
 
-.. note:: You can :doc:`add or update payment card details</docs/platform/howto/manage-payment-card/>` on the user information page. 
-
 Assign projects to a billing group
 """"""""""""""""""""""""""""""""""
 

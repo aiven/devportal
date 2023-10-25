@@ -387,6 +387,12 @@ UpCloud
     - ``upcloud-fi-hel``
     - Europe, Finland 
   * - Europe
+    - ``upcloud-fi-hel1``
+    - Europe, Finland 
+  * - Europe
+    - ``upcloud-fi-hel2``
+    - Europe, Finland 
+  * - Europe
     - ``upcloud-nl-ams``
     - Europe, Netherlands 
   * - Europe

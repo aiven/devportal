@@ -273,6 +273,8 @@ untrusted
 unaggregated
 UpCloud
 upsert
+UUID
+UUIDs
 vectorizing
 virtualized
 VM
@@ -286,5 +288,6 @@ Worldmap
 worldPing
 Zabbix
 zapier
+zdm-proxy
 Zipkin
 ZooKeeper

@@ -142,25 +142,61 @@ currently support AWS PrivateLink.
    successful heartbeats before they transition from the ``initial``
    state to ``healthy`` and are included in the active forwarding rules of the load balancer.
 
-   | **Note:** Currently, you can only create one VPC endpoint for each
-     Aiven service.
-
 .. _h_b6605132ff:
 
-Connection information
-----------------------
+Acquire connection information
+------------------------------
 
-Once you have enabled PrivateLink access for a service component, a
-switch for the ``privatelink`` access route appears under **Connection
-information** on the **Overview** page in `Aiven Console <https://console.aiven.io>`__. The ``host`` -
-and for some service components such as Kafka, ``port`` - values differ
-from the default ``dynamic`` access route that is used to connect to the
-service. You can use the same credentials with any access route.
+One AWS PrivateLink connection
+''''''''''''''''''''''''''''''
+
+If you have one private endpoint connected to your Aiven service, you can preview the connection information (URI, hostname, or port required to access the service through the private endpoint) in `Aiven Console <https://console.aiven.io/>`_ > the service's **Overview** page > the **Connection information** section, where you'll also find the switch for the ``privatelink`` access route. ``privatelink``-access-route values for ``host`` and ``port`` differ from those for the ``dynamic`` access route used by default to connect to the service.
+
+.. note::
+
+   You can use the same credentials with any access route.
+
+Multiple AWS PrivateLink connections
+''''''''''''''''''''''''''''''''''''
+
+Use CLI to acquire connection information for more than one AWS PrivateLink connection.
+
+Each endpoint (connection) has PRIVATELINK_CONNECTION_ID, which you can check using the :doc:`avn service privatelink aws connection list SERVICE_NAME </docs/tools/cli/service/privatelink>` command.
+
+To acquire connection information for your service component using AWS PrivateLink, run the :doc:`avn service connection-info </docs/tools/cli/service/connection-info>` command.
+
+* For SSL connection information for your service component using AWS PrivateLink, run the following command:
+
+.. code-block:: bash
+
+   avn service connection-info UTILITY_NAME SERVICE_NAME --privatelink-connection-id PRIVATELINK_CONNECTION_ID
+
+.. topic:: Where
+
+  * UTILITY_NAME for Aiven for Apache Kafka®, for example, can be ``kcat``.
+  * SERVICE_NAME for Aiven for Apache Kafka®, for example, can be ``kafka-12a3b4c5``.
+  * PRIVATELINK_CONNECTION_ID can be ``plc39413abcdef``.
+
+* For SASL connection information for Aiven for Apache Kafka® service components using AWS PrivateLink, run the following command:
+
+.. code-block:: bash
+
+   avn service connection-info UTILITY_NAME SERVICE_NAME --privatelink-connection-id PRIVATELINK_CONNECTION_ID -a sasl
+
+.. topic:: Where
+
+  * UTILITY_NAME for Aiven for Apache Kafka®, for example, can be ``kcat``.
+  * SERVICE_NAME for Aiven for Apache Kafka®, for example, can be ``kafka-12a3b4c5``.
+  * PRIVATELINK_CONNECTION_ID can be ``plc39413abcdef``.
+
+.. note::
+
+   SSL certificates and SASL credentials are the same for all the connections. You can use the same credentials with any access route.
 
 .. _h_2a1689a687:
 
-Updating the allowed principals list
-------------------------------------
+Update the allowed principals list
+----------------------------------
 
 To change the list of AWS accounts or IAM users or roles that are
 allowed to connect a VPC endpoint:
