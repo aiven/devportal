@@ -65,8 +65,9 @@ Follow these steps to enable the consumer lag predictor for your Aiven for Apach
    
    .. code:: 
    
-    avn service update <SERVICE_NAME> --user-config kafka_lag_predictor=true
+    avn service update <SERVICE_NAME> -c kafka_lag_predictor.enabled=true
 
+   Replace <SERVICE_NAME> with your actual service name.
 
    .. note::
     This enables the lag predictor to compute predictions for all consumer groups across all topics.
@@ -75,11 +76,16 @@ Follow these steps to enable the consumer lag predictor for your Aiven for Apach
 
    .. code:: 
    
-    avn service update <SERVICE_NAME> --user-config group_filters='["example_consumer_group_1", "example_consumer_group_2"]'
+    avn service update <SERVICE_NAME> \
+    -c kafka_lag_predictor.group_filters=\
+     '["example_consumer_group_1", "example_consumer_group_2"]'
+
+
+
 
    - Replace ``<SERVICE_NAME>`` with the actual name or ID of your Aiven for Apache Kafka® service.
    - Replace ``example_consumer_group_1`` and ``example_consumer_group_2`` with your actual consumer group names.
-   - The ``--user-config`` flag is used to update the specified configuration for your service.
+
 
 Monitor metrics with Prometheus
 -------------------------------
