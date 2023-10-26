@@ -19,6 +19,10 @@ Before proceeding with the setup, ensure you have:
   - **Issuer URL or Identifier**: Identifies and verifies the JWT issuer.
   - **Audience Identifier(s)**: Validates the JWT's intended recipients. For multiple audiences, make a note of all.
 
+.. warning:: 
+
+  Applying the OIDC configurations will restart the service. To avoid disruptions, schedule this during a maintenance window or at a time when it will have minimal impact on your operations.
+
 
 .. _console-authentication:
 
