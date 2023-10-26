@@ -148,6 +148,7 @@ To delete the service and its data:
 3. Enter "yes" to confirm. The output will be similar to the following:
 
 .. code:: bash
+
   Do you really want to destroy all resources?
   Terraform will destroy all your managed infrastructure, as shown above.
   There is no undo. Only 'yes' will be accepted to confirm.
