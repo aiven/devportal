@@ -3,8 +3,8 @@ Aiven Provider for Terraform
 
 With Aiven's `Terraform <https://www.terraform.io>`_ provider, you can use an open source infrastructure as code tool to declare and manage your cloud services.
 
-Start using Aiven Provider
----------------------------
+Start using Aiven Provider for Terraform
+-----------------------------------------
 
 .. grid:: 2 2 2 2
 
@@ -22,7 +22,7 @@ Start using Aiven Provider
 
         `Aiven Provider documentation <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_
 
-        Details on the data sources and resources supported by the Aiven Provider.
+        Details on the data sources and resources supported by the Aiven Provider for Terraform.
 
 
     .. grid-item-card::

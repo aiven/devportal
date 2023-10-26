@@ -5,9 +5,9 @@ This example shows you how to use the Aiven Provider to set up your data infrast
 
 .. caution::
 
-  Recreating stateful services with Terraform may delete the service and all its data before creating it again. Some properties, like project and resource name, cannot be changed and it will trigger a resource replacement. Check the Terraform plan to find out whether a service will be deleted or replaced.
+  Recreating stateful services with Terraform may delete the service and all its data before creating it again. Some properties, like project and resource name, cannot be changed and it will trigger a resource replacement. Run the Terraform :ref:`plan command <plan-and-apply>` to find out whether a service will be deleted or replaced.
 
-  You can set the ``termination_protection`` property to true on all production services to prevent Terraform from removing services. However, logical databases, topics, or other configurations may still be removed with this setting enabled.
+  You can set the ``termination_protection`` property to true on production services, topics, and databases to prevent Terraform from removing them. However, logical databases, topics, or other configurations may still be removed with this setting enabled.
 
 
 Prerequisites  
@@ -97,6 +97,8 @@ Add the following code, replacing ``AIVEN_AUTHENTICATION_TOKEN`` with your API t
    project_name    = "AIVEN_PROJECT_NAME"
    
 
+.. _plan-and-apply:
+
 Plan and apply the configuration
 '''''''''''''''''''''''''''''''''
 
@@ -106,7 +108,7 @@ Plan and apply the configuration
 
    terraform init 
 
-2. Run the ``plan`` command to create an execution plan and view the resources that will be created or modified. This command does not create any resources. 
+2. Run the ``plan`` command to create an execution plan and preview the changes that will be made (for example, what resources will be created or modified).
 
 .. code:: bash
 
@@ -124,14 +126,14 @@ The output will be similar to the following:
   
   Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
 
-You can also see the service in the `Aiven Console <https://console.aiven.io>`_.
+You can also see the Redis service in the `Aiven Console <https://console.aiven.io>`_.
 
 Clean up
 ''''''''
 
 To delete the service and its data:
 
-1. To create a destroy plan and preview the changes to your infrastructure, run:
+1. Create a destroy plan and preview the changes to your infrastructure with the following command:
 
 .. code:: bash
 
