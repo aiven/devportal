@@ -7,7 +7,7 @@ This example shows you how to use the Aiven Provider to set up your data infrast
 
   Recreating stateful services with Terraform may delete the service and all its data before creating it again. Some properties, like project and resource name, cannot be changed and it will trigger a resource replacement. Run the Terraform :ref:`plan command <plan-and-apply>` to find out whether a service will be deleted or replaced.
 
-  You can set the ``termination_protection`` property to true on production services, topics, and databases to prevent Terraform from removing them. However, logical databases, topics, or other configurations may still be removed with this setting enabled.
+  You can set the ``termination_protection`` property to true on production services, topics, and databases to prevent Terraform from removing them. However, logical databases, topics, or other configurations may still be removed even with this setting enabled.
 
 
 Prerequisites  
@@ -108,7 +108,7 @@ Plan and apply the configuration
 
    terraform init 
 
-2. Run the ``plan`` command to create an execution plan and preview the changes that will be made (for example, what resources will be created or modified).
+2. Run the ``plan`` command to create an execution plan and preview the changes that will be made (for example, what resources will be created or modified):
 
 .. code:: bash
 
@@ -118,7 +118,7 @@ Plan and apply the configuration
 
 .. code:: bash
 
-   terraform apply
+   terraform apply --auto-approve
 
 The output will be similar to the following:
 
@@ -126,7 +126,7 @@ The output will be similar to the following:
   
   Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
 
-You can also see the Redis service in the `Aiven Console <https://console.aiven.io>`_.
+You can also see the new Redis service in the `Aiven Console <https://console.aiven.io>`_.
 
 Clean up
 ''''''''
@@ -145,6 +145,16 @@ To delete the service and its data:
 
    terraform destroy
 
+3. Enter "yes" to confirm. The output will be similar to the following:
+
+.. code:: bash
+  Do you really want to destroy all resources?
+  Terraform will destroy all your managed infrastructure, as shown above.
+  There is no undo. Only 'yes' will be accepted to confirm.
+
+  Enter a value: yes
+  ...
+  Destroy complete! Resources: 1 destroyed.
 
 Next steps 
 '''''''''''
