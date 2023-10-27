@@ -4,7 +4,7 @@ Enable the consumer lag predictor for Aiven for Apache Kafka®
 The :doc:`consumer lag predictor </docs/products/kafka/concepts/consumer-lag-predictor>` in Aiven for Apache Kafka® provides visibility into the time between message production and consumption, allowing for improved cluster performance and scalability.
 
 .. important::
-    Consumer Lag Predictor for Aiven for Apache Kafka* is a limited availability feature. If you’re interested in trying out this feature, contact the sales team at sales@Aiven.io.
+    Consumer Lag Predictor for Aiven for Apache Kafka® is a limited availability feature. If you’re interested in trying out this feature, contact the sales team at sales@Aiven.io.
 
 
 Prerequisites
@@ -32,7 +32,8 @@ Enable via Aiven Console
    - Find ``kafka_lag_predictor.group_filters`` and enter the desired consumer group pattern. This specifies which consumer groups to consider during lag prediction calculations.
 
    .. note::
-    By default, the consumer lag predictor calculates for all consumer groups. If you want to restrict this and focus on specific groups, use the ``kafka_lag_predictor.group_filters`` option.
+    
+     By default, the consumer lag predictor calculates the lag of all consumer groups. To restrict the calculation to specific groups, use the ``kafka_lag_predictor.group_filters`` option.
 
 5. Select **Save configurations** to save your changes and enable consumer lag prediction.
 
