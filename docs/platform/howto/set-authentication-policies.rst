@@ -18,8 +18,8 @@ To set an authentication policy for all users in an organization:
 
 #. Click the toggle for each authentication method that you want to allow.
 
-* Passoword authentication: users log in using their email address and password
-* Third-party authentication: users can log in using one of the supported providers (Google, Mircosoft, or GitHub)
+* Password authentication: users log in using their email address and password
+* Third-party authentication: users can log in using one of the supported providers (Google, Microsoft, or GitHub)
 * Organization SSO: users from a :doc:`verified domain </docs/platform/howto/manage-domains>` can log in using an identity provider
 
 #. Click **Save changes**.
