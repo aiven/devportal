@@ -11,23 +11,23 @@ Organizations and organizational units
 
 Organizations and organizational units are collections of projects. When you sign up to Aiven, an organization is created for you.
 
-You can use these to create a hierarchical structure that fits your needs. Organizational units can be nested within an organization, adding another level to group your projects. This gives you greater flexibility to organize your setup to meet your specific use cases. For example, you can easily split production and testing workloads into different organizational units that are in the same organization. 
+You can use your organization to create a hierarchical structure that fits your needs. Organizational units can be nested within an organization, adding another level to group your projects. This gives you greater flexibility to organize your infrastructure based on your specific use cases. For example, you can easily split production and testing workloads into different organizational units. 
 
 Grouping your projects in organizations and organizational units lets you centrally manage settings like:
 
-* Authentication methods - Only available on the organization level
+* Authentication methods: Only available on the organization level
 
-* ACLs - Can be set on all levels (organization, organizational unit, and project)
+* Access control lists (ACLs): Can be set on all levels (organization, organizational unit, and project)
 
   * ACLs for service plans are inherited, meaning all projects within an organization or organizational unit will have the same service plan.
 
-* Groups - User groups managed at the organization level and assigned to projects
+* Groups: Managed at the organization level and assigned to projects
 
-* Teams - Specific to a single organization or organizational unit and cannot be shared between them
+* Teams: Specific to a single organization or organizational unit and cannot be shared between them
 
-* Support contracts - Specific to a single organization or organizational unit and cannot be shared between them
+* Support contracts: Specific to a single organization and cannot be shared between them
 
-* Billing groups - Specific to a single organization or organizational unit and cannot be shared between them
+* Billing groups: Specific to a single organization and cannot be shared between them
 
 Super admin
 ~~~~~~~~~~~~
@@ -40,11 +40,11 @@ Super admin are the same as account owners. Adding a user to the account owners 
 Projects
 --------
 
-Projects are collections of services and user permissions. Each project must have a unique name within an organization. You can group your services however you see fit. These are some examples of how customers organize their services:
+Projects are collections of services and user permissions. Each project must have a unique name. You can group your services however you see fit. These are some examples of how customers organize their services:
 
 * Single project: One project containing services that are distinguished by their names. For example, services are named based on the type of environment: ``demo_pg_project.postgres-prod`` and ``demo_pg_project.postgres-staging``.
 
-* Environment-based projects: Each project represents a deployment environment, for example: ``dev``, ``qa``, and ``production``. This allows you to apply uniform network security, such as the use of virtual private clouds, to all services within each environment. This also gives you more granular user permissions, such as developer access to production infrastructure.
+* Environment-based: Each project represents a deployment environment, for example: ``dev``, ``qa``, and ``production``. This allows you to apply uniform network security, such as the use of virtual private clouds, to all services within each environment. This also gives you more granular user permissions, such as developer access to production infrastructure.
 
 * Project-based: Each project contains all the services for an internal project, with naming that highlights the relevant environment; for example: ``customer-success-prod`` and ``business-analytics-test``.
 
