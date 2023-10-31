@@ -1,9 +1,9 @@
-..
-    ``additional_backup_regions``
-    -----------------------------
-    *array*
 
-    **Additional Cloud Regions for Backup Replication** 
+``additional_backup_regions``
+-----------------------------
+*array*
+
+**Additional Cloud Regions for Backup Replication** 
 
 
 
@@ -49,6 +49,12 @@
 
 **Allow clients to connect to clickhouse_https with a DNS name that always resolves to the service's private IP addresses. Only available in certain network locations** 
 
+``clickhouse_mysql``
+~~~~~~~~~~~~~~~~~~~~
+*boolean*
+
+**Allow clients to connect to clickhouse_mysql with a DNS name that always resolves to the service's private IP addresses. Only available in certain network locations** 
+
 ``prometheus``
 ~~~~~~~~~~~~~~
 *boolean*
@@ -75,6 +81,12 @@
 
 **Enable clickhouse_https** 
 
+``clickhouse_mysql``
+~~~~~~~~~~~~~~~~~~~~
+*boolean*
+
+**Enable clickhouse_mysql** 
+
 ``prometheus``
 ~~~~~~~~~~~~~~
 *boolean*
@@ -100,6 +112,12 @@
 *boolean*
 
 **Allow clients to connect to clickhouse_https from the public internet for service nodes that are in a project VPC or another type of private network** 
+
+``clickhouse_mysql``
+~~~~~~~~~~~~~~~~~~~~
+*boolean*
+
+**Allow clients to connect to clickhouse_mysql from the public internet for service nodes that are in a project VPC or another type of private network** 
 
 ``prometheus``
 ~~~~~~~~~~~~~~
