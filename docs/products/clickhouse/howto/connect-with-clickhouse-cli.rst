@@ -10,7 +10,7 @@ To use the ClickHouse® client across different operating systems, we recommend 
 
 .. note::
 
-    There are other installation options available for ClickHouse clients for different operating systems. You can find them in `clickhouse-local <https://clickhouse.com/docs/en/operations/utilities/clickhouse-local>`_ and `install ClickHouse <https://clickhouse.com/docs/en/install>`_ in the official ClickHouse documentation.
+    There are other installation options available for ClickHouse clients for different operating systems. You can find them in `ClickHouse local <https://clickhouse.com/docs/en/operations/utilities/clickhouse-local>`_ and `Install ClickHouse <https://clickhouse.com/docs/en/install>`_ in the official ClickHouse documentation.
 
 Connection properties
 ---------------------
