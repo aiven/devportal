@@ -398,6 +398,9 @@ UpCloud
   * - Europe
     - ``upcloud-pl-waw``
     - Europe, Poland 
+  * - Europe
+    - ``upcloud-se-sto``
+    - Europe, Sweden 
   * - North America
     - ``upcloud-us-chi``
     - United States, Illinois 
