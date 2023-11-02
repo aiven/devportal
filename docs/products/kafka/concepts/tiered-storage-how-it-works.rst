@@ -10,7 +10,7 @@ In Aiven for Apache Kafka's tiered storage architecture, **remote storage** refe
 
 Tiered storage operates in a way that is seamless for both Apache Kafka producers and consumers. This means that producers and consumers interact with Apache Kafka in the same way, regardless of whether tiered storage is enabled or not. 
 
-Administrators can configure Tiered storage per topic by defining the retention period and retention bytes to specify how much data should be retained on the local disk instead of remote storage.
+Administrators can configure tiered storage per topic by defining the retention period and retention bytes to specify how much data should be retained on the local disk instead of remote storage.
 
 
 Local vs. remote data retention
