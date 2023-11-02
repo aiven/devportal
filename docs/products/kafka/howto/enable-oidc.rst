@@ -52,7 +52,7 @@ Enable OAuth2/OIDC via Aiven Console
      * *Description*: Validates the intended JWT audience for the broker. Corresponds to the Apache Kafka parameter ``sasl.oauthbearer.expected.audience``. This is optional and is used if your OIDC provider specifies an audience.
      * *Value*: Input the audience identifier(s) given by your OIDC provider. If there are multiple audiences, separate them with commas.
    
-   For more information on each corresponding Apache Kafka parameter, see `Apache Kafka documentation <https://kafka.apache.org/documentation/#configuration_sasl.oauthbearer>`_ on configuration options starting with ``sasl.oauthbearer``.
+   For more information on each corresponding Apache Kafka parameter, see `Apache Kafka documentation <https://kafka.apache.org/documentation/>`_ on configuration options starting with ``sasl.oauthbearer``.
 
 
    .. warning:: 
