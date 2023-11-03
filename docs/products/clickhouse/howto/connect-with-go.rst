@@ -144,5 +144,5 @@ Replace the placeholders in the code with meaningful information on your service
 
 .. seealso::
 
-    * For instructions on how to configure connection settings, see `Connection settings <https://clickhouse.com/docs/en/integrations/go/clickhouse-go/clickhouse-api/#connection-settings>`_.
+    * For instructions on how to configure connection settings, see `Connection Details <https://clickhouse.com/docs/en/integrations/go#connection-details>`_.
     * For information on how to connect to the Aiven for Clickhouse service with the ClickHouse client, see :doc:`Connect with the ClickHouse client </docs/products/clickhouse/howto/connect-with-clickhouse-cli>`.

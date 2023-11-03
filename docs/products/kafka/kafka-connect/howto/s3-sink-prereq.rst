@@ -63,4 +63,4 @@ In the **Permission** section, associate the IAM policy created in the previous 
 
 .. Note::
 
-    In case of ``Access Denied`` errors while starting the connector, check the dedicated `AWS access troubleshooting guide <https://aws.amazon.com/premiumsupport/knowledge-center/s3-troubleshoot-403/>`_.
+    In case of ``Access Denied`` errors while starting the connector, check the dedicated `AWS access troubleshooting guide <https://docs.aws.amazon.com/AmazonS3/latest/userguide/troubleshoot-403-errors.html>`_.
