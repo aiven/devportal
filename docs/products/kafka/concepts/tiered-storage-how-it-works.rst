@@ -27,7 +27,7 @@ Data is organized into segments, which are uploaded to remote storage individual
 
 Asynchronous uploads and replication
 --------------------------------------
-Data is transferred to remote storage asynchronously and does not interfere with the producer activity. While the broker aims to move data as swiftly as possible, certain conditions, such as high-throughput or connectivity issues, may cause more data to be stored in the local storage than the specified local retention policy.
+Data is transferred to remote storage asynchronously and does not interfere with the producer activity. While the broker aims to move data as swiftly as possible, certain conditions, such as high ingestion rate or connectivity issues, may cause more data to be stored in the local storage than the specified local retention policy.
 
 Any data exceeding the local retention threshold will not be purged by the log cleaner until it is successfully uploaded to remote storage.
 The replication factor is not considered during the upload process, and only one copy of each segment is uploaded to the remote storage. Most remote storage options have their own measures, including data replication, to ensure data durability.
