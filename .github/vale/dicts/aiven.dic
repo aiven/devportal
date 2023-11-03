@@ -75,6 +75,7 @@ Elasticsearch
 Epicurious
 etcd
 event_type
+European Union
 failover
 fileset
 filesets
@@ -255,6 +256,7 @@ subprocesses
 subtab
 syslog
 TaskManager
+taxability
 Tcpdump
 Telegraf
 Tenant
@@ -270,11 +272,14 @@ UDFs
 unassign
 uncomment
 unencrypted
+United States
 Unschedule
 untrusted
 unaggregated
 UpCloud
 upsert
+UUID
+UUIDs
 vectorizing
 virtualized
 VM
@@ -288,5 +293,6 @@ Worldmap
 worldPing
 Zabbix
 zapier
+zdm-proxy
 Zipkin
 ZooKeeper

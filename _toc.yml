@@ -68,6 +68,7 @@ entries:
     title: User and access management
     entries:
     - file: docs/platform/howto/manage-org-users
+    - file: docs/platform/howto/delete-user
     - file: docs/platform/howto/list-user-profile
       entries:
       - file: docs/platform/howto/edit-user-profile
@@ -166,6 +167,7 @@ entries:
     - file: docs/platform/howto/vpc-peering-gcp
     - file: docs/platform/howto/vpc-peering-aws
     - file: docs/platform/howto/vnet-peering-azure
+    - file: docs/platform/howto/vpc-peering-upcloud
     - file: docs/platform/howto/use-aws-privatelinks.rst
     - file: docs/platform/howto/use-azure-privatelink
     - file: docs/platform/howto/use-google-private-service-connect
@@ -316,8 +318,23 @@ entries:
           - file: docs/products/kafka/concepts/non-leader-for-partition
           - file: docs/products/kafka/concepts/configuration-backup
           - file: docs/products/kafka/concepts/monitor-consumer-group
+          - file: docs/products/kafka/concepts/consumer-lag-predictor
+            title: Consumer lag predictor
           - file: docs/products/kafka/concepts/kafka-quotas
             title: Quotas
+          - file: docs/products/kafka/concepts/list-kafka-tiered-storage
+            title: Tiered storage
+            entries: 
+              - file: docs/products/kafka/concepts/kafka-tiered-storage
+                title: Overview
+              - file: docs/products/kafka/concepts/tiered-storage-how-it-works
+                title: How it works
+              - file: docs/products/kafka/concepts/tiered-storage-guarantees
+                title: Guarantees
+              - file: docs/products/kafka/concepts/tiered-storage-limitations
+                title: Limitations
+        
+
       - file: docs/products/kafka/howto
         title: HowTo
         entries:
@@ -371,6 +388,8 @@ entries:
               - file: docs/products/kafka/howto/avoid-out-of-memory-error
               - file: docs/products/kafka/howto/optimizing-resource-usage
                 title: Optimizing resource usage
+              - file: docs/products/kafka/howto/enabled-consumer-lag-predictor
+                title: Enable consumer lag predictor
               - file: docs/products/kafka/howto/manage-quotas
 
           - file: docs/products/kafka/howto/list-integration
@@ -692,6 +711,8 @@ entries:
                 title: Manage data with DSBULK
               - file: docs/products/cassandra/howto/use-nosqlbench-with-cassandra
                 title: Stress test with nosqlbench
+              - file: docs/products/cassandra/howto/zdm-proxy
+                title: Migrate to Aiven
           - file: docs/products/cassandra/howto/list-manage-cluster
             title: Manage cluster
           - file: docs/products/cassandra/howto/list-cross-cluster-replication
@@ -738,6 +759,8 @@ entries:
             title: Strings
           - file: docs/products/clickhouse/concepts/federated-queries
             title: Federated queries
+          - file: docs/products/clickhouse/concepts/clickhouse-tiered-storage
+            title: Tiered storage
       - file: docs/products/clickhouse/howto
         title: HowTo
         entries:
@@ -801,13 +824,28 @@ entries:
                 title: Connect services via integration databases
               - file: docs/products/clickhouse/howto/connect-with-jdbc
                 title: Connect to external DBs with JDBC
+          - file: docs/products/clickhouse/howto/list-tiered-storage
+            title: Tiered storage
+            entries:
+              - file: docs/products/clickhouse/howto/enable-tiered-storage
+                title: Enable tiered storage
+              - file: docs/products/clickhouse/howto/configure-tiered-storage
+                title: Configure tiered storage
+              - file: docs/products/clickhouse/howto/check-data-tiered-storage
+                title: Check tiered storage status
+              - file: docs/products/clickhouse/howto/transfer-data-tiered-storage
+                title: Transfer data in tiered storage
       - file: docs/products/clickhouse/reference
         title: Reference
         entries:
           - file: docs/products/clickhouse/reference/supported-table-engines
-            title: Supported table engines
+            title: Table engines
           - file: docs/products/clickhouse/reference/metrics-list
             title: ClickHouse metrics in Grafana
+          - file: docs/products/clickhouse/reference/supported-table-functions
+            title: Table functions
+          - file: docs/products/clickhouse/reference/s3-supported-file-formats
+            title: S3 file formats
           - file: docs/products/clickhouse/reference/supported-input-output-formats
             title: Formats for ClickHouse-Kafka data exchange
           - file: docs/products/clickhouse/reference/advanced-params
@@ -949,6 +987,7 @@ entries:
               - file: docs/products/mysql/howto/enable-slow-queries
               - file: docs/products/mysql/howto/create-tables-without-primary-keys
               - file: docs/products/mysql/howto/create-missing-primary-keys
+              - file: docs/products/mysql/howto/mysql-long-running-queries
           - file: docs/products/mysql/howto/list-migrate-data
             title: Data migration
             entries:
@@ -1072,11 +1111,8 @@ entries:
             entries:
             - file: docs/products/opensearch/howto/opensearch-log-integration
             - file: docs/products/opensearch/howto/integrate-with-grafana
-          - file: docs/products/opensearch/howto/list-upgrade
-            title: Upgrade to OpenSearch
-            entries:
-            - file: docs/products/opensearch/howto/upgrade-to-opensearch
-            - file: docs/products/opensearch/howto/upgrade-clients-to-opensearch
+          - file: docs/products/opensearch/howto/upgrade-clients-to-opensearch
+            title: Upgrade Elasticsearch clients
       - file: docs/products/opensearch/dashboards
         title: OpenSearch Dashboards
         entries:

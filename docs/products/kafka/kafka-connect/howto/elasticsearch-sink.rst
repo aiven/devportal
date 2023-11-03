@@ -248,4 +248,4 @@ The configuration file contains the following peculiarities:
 
 ------
 
-*Elasticsearch is a trademark of Elasticsearch B.V., registered in the U.S. and in other countries.*
+

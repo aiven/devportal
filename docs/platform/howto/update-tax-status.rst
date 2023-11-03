@@ -1,7 +1,7 @@
 Update your tax status
 ======================
 
-You can add your VAT ID in the billing information in the Aiven Console:
+You can add your VAT ID in the billing information in the `Aiven Console <https://console.aiven.io>`_:
 
 #. Click **Billing**. 
 #. Click **Billing groups**.

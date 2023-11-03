@@ -7,6 +7,14 @@
 
 
 
+``static_ips``
+--------------
+*boolean*
+
+**Static IP addresses** Use static public IP addresses
+
+
+
 ``flink_version``
 -----------------
 *['string', 'null']*

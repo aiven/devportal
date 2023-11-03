@@ -107,6 +107,6 @@ To ensure that client applications that depend on events captured by Debezium ge
 
 .. Tip::
 
-   The example contained in the `dedicated Aiven repository <https://github.com/aiven/debezium-pg-kafka-connect-test/blob/53da8ee8fde8bf7802fd5bbb6aa39359cd1c0877/bin/python_scripts/debezium_pg_producer.py#L66>`__ demonstrates this implementation.
+   The example contained in the `dedicated Aiven repository <https://github.com/aiven/debezium-pg-kafka-connect-test/blob/main/bin/python_scripts/debezium_pg_producer.py>`__ demonstrates this implementation.
 
 As per above guideline, setting ``"_aiven.restart.on.failure": true`` on all Debezium connectors ensures that failed tasks are automatically restarted in case they fail. By default tasks status is checked every 15 minutes but the interval can be customised if needed.

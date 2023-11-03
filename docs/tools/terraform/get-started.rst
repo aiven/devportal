@@ -1,57 +1,56 @@
-Set up your first Aiven Terraform project
-=========================================
+Get started with Aiven Provider for Terraform
+==============================================
 
-This example shows the setup for a Terraform project containing a single Redis®* service, and shows off some useful commands to stand up (and destroy) your Aiven data infrastructure.
+This example shows you how to use the Aiven Provider to set up your data infrastructure by creating a single Aiven for Redis®* service in an :doc:`Aiven project </docs/platform/concepts/projects_accounts_access>`. 
 
-Prepare the dependencies 
-''''''''''''''''''''''''
+.. caution::
+
+  Recreating stateful services with Terraform may delete the service and all its data before creating it again. Some properties, like project and resource name, cannot be changed and it will trigger a resource replacement. Run the Terraform :ref:`plan command <plan-and-apply>` to find out whether a service will be deleted or replaced.
+
+  You can set the ``termination_protection`` property to true on production services, topics, and databases to prevent Terraform from removing them. However, logical databases, topics, or other configurations may still be removed even with this setting enabled.
+
+
+Prerequisites  
+''''''''''''''
+- `Sign up for Aiven <https://console.aiven.io/signup?utm_source=github&utm_medium=organic&utm_campaign=devportal&utm_content=repo>`_ 
 - `Download and install Terraform <https://www.terraform.io/downloads>`_
-- `Sign up <https://console.aiven.io/signup?utm_source=github&utm_medium=organic&utm_campaign=devportal&utm_content=repo>`_ for Aiven if you haven't already
-- `Generate an authentication token <https://docs.aiven.io/docs/platform/howto/create_authentication_token.html>`_
-
-.. Tip::
-
-    Make sure that you have either the *Administrator* or *Operator* role when creating the API token. When you create a project, you automatically receive the *Administrator* access.
-
-    For more details, refer to the `Project members and roles page <https://docs.aiven.io/docs/platform/concepts/projects_accounts_access.html#project-members-and-roles>`_.
+- `Create an authentication token <https://docs.aiven.io/docs/platform/howto/create_authentication_token.html>`_
 
 Configure your project and services
 '''''''''''''''''''''''''''''''''''
 
-Your Terraform files declare the structure of your infrastructure as well as required dependencies and configuration. While you can stuff these together in one file, it's ideal to keep those as separate files.
 In this section, you'll learn how to structure a simple Terraform project. 
 
-Start with an empty folder, and follow these steps to define and then create your Aiven services.
+Terraform files declare the structure of the infrastructure, the dependencies, and configuration. These can be grouped together in one file, but it's ideal to put them in separate files.
 
-1. First we declare a dependency on the *Aiven Terraform Provider*. Within the ``required_providers`` block, you mention the source of the provider and specify a certain version (check which are the current versions and update accordingly).
-Following `Aiven Terraform Provider documentation <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_, ``api_token`` is the only parameter for the provider configuration.
+Set up the Terraform project in an empty folder: 
 
-Add the following to a new ``provider.tf`` file:
+1. Create a new Terraform file, ``provider.tf``, to declare a dependency on the Aiven Provider for Terraform.
 
-.. code:: terraform
-
-   terraform {
-     required_providers {
-       aiven = {
-         source  = "aiven/aiven"
-         version = ">=4.0.0, < 5.0.0"
-       }
-     }
-   }
-   
-   provider "aiven" {
-     api_token = var.aiven_api_token
-   }
-   
-You can also set the environment variable ``AIVEN_TOKEN`` for the ``api_token`` property. With this, you don't need to pass the ``-var-file`` flag when executing Terraform commands.
- 
-2.  The following Terraform script deploys a single-node Redis service. This is a minimal example which you can swap out with your own Terraform scripts or other advanced recipes from `the Terraform cookbook <https://aiven.io/developer/terraform>`_.
-
-The contents of the ``redis.tf`` file should look like this:
+Add the following code to the file and specify the version in the ``required_providers`` block. You can find the latest version on the `Aiven Provider page <https://registry.terraform.io/providers/aiven/aiven/latest>`_.
 
 .. code:: terraform
 
-    # A single-node Redis service
+  terraform {
+    required_providers {
+      aiven = {
+        source  = "aiven/aiven"
+        version = ">=4.0.0, < 5.0.0"
+      }
+    }
+  }
+  
+  provider "aiven" {
+    api_token = var.aiven_api_token
+  }
+
+3. Create a file named ``redis.tf``. 
+
+Add the following code to define the configuration of a single-node Aiven for Redis®* service:
+
+.. code:: terraform
+
+    # Redis service
     
     resource "aiven_redis" "single-node-aiven-redis" {
       project                 = var.project_name
@@ -71,9 +70,9 @@ The contents of the ``redis.tf`` file should look like this:
     }
     
     
-3. To avoid including sensitive information in source control, the variables are defined here in the ``variables.tf`` file. You can then use a ``*.tfvars`` file with the actual values so that Terraform receives the values during runtime, and exclude it.
+5. Create a file named ``variables.tf``. This is used to avoid including sensitive information in source control. 
 
-The ``variables.tf`` file defines both the API token, and the project name to use:
+Add the following code to declare the API token and project name variables:
 
 .. code:: terraform
 
@@ -88,64 +87,80 @@ The ``variables.tf`` file defines both the API token, and the project name to us
    }
    
    
-The ``var-values.tfvars`` file holds the actual values and is passed to Terraform using the ``-var-file=`` flag.
+6. Create a file named ``terraform.tfvars`` to define the values of the sensitive information. 
 
-``var-values.tfvars`` file:
+Add the following code, replacing ``AIVEN_AUTHENTICATION_TOKEN`` with your API token and ``AIVEN_PROJECT_NAME`` with the name of your project:
 
 .. code:: terraform
 
-   aiven_api_token = "<YOUR-AIVEN-AUTHENTICATION-TOKEN-GOES-HERE>"
-   project_name    = "<YOUR-AIVEN-CONSOLE-PROJECT-NAME-GOES-HERE>"
+   aiven_api_token = "AIVEN_AUTHENTICATION_TOKEN"
+   project_name    = "AIVEN_PROJECT_NAME"
    
-Edit the file and replace the ``<..>`` sections with the API token you created earlier, and the name of the Aiven project that resources should be created in.
 
+.. _plan-and-apply:
 
-Apply the Terraform configuration
+Plan and apply the configuration
 '''''''''''''''''''''''''''''''''
 
-
-The ``init`` command performs several different initialization steps in order to prepare the current working directory for use with Terraform. In our case, this command automatically finds, downloads, and installs the necessary Aiven Terraform provider plugins.
+1. The ``init`` command prepares the working directly for use with Terraform. Run this command to automatically find, download, and install the necessary Aiven Provider plugins:
 
 .. code:: bash
 
    terraform init 
 
-The ``plan`` command creates an execution plan and shows you the resources that will be created (or modified) for you. This command does not actually create any resource; this is more like a preview.
+2. Run the ``plan`` command to create an execution plan and preview the changes that will be made (for example, what resources will be created or modified):
 
 .. code:: bash
 
-   terraform plan -var-file=var-values.tfvars
+   terraform plan
 
-If you're satisfied with the output of ``terraform plan``, go ahead and run the ``terraform apply`` command which actually does the task or creating (or modifying) your infrastructure resources. 
+3. To create the resources, run:
 
 .. code:: bash
 
-   terraform apply -var-file=var-values.tfvars
+   terraform apply --auto-approve
 
-The output will show you if everything worked well. You can now visit the `Aiven web console <https://console.aiven.io>`_ and admire your new services.
+The output will be similar to the following:
+
+.. code:: bash
+  
+  Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+
+You can also see the new Redis service in the `Aiven Console <https://console.aiven.io>`_.
 
 Clean up
 ''''''''
 
-If this was a test environment, be sure to delete the resources once you're done to avoid consuming unwanted bills. To be confident about the service termination, you can create a speculative destroy plan by running the following command:
+To delete the service and its data:
+
+1. Create a destroy plan and preview the changes to your infrastructure with the following command:
 
 .. code:: bash
 
    terraform plan -destroy
 
-This will run ``terraform plan`` in destroy mode and show you the proposed destroy changes without executing them.
-
-.. warning::
-
-   Use the following command with caution. This will actually delete resources that might have important data.
+2. To delete the resources and all data, run: 
 
 .. code:: bash
 
-   terraform destroy -var-file=var-values.tfvars
+   terraform destroy
 
-By destroying your services when you don't need them, for example in a testing environment, you can be confident that no unnecessary services are left running up the bills.
+3. Enter "yes" to confirm. The output will be similar to the following:
 
-Further reference
-'''''''''''''''''
+.. code:: bash
 
-This article outlined a simple Terraform project structure. For a more complex project structure, please refer to the `Terraform Docs <https://www.terraform.io/language/modules/develop/structure>`_. 
+  Do you really want to destroy all resources?
+  Terraform will destroy all your managed infrastructure, as shown above.
+  There is no undo. Only 'yes' will be accepted to confirm.
+
+  Enter a value: yes
+  ...
+  Destroy complete! Resources: 1 destroyed.
+
+Next steps 
+'''''''''''
+* Try `another sample project <https://github.com/aiven/terraform-provider-aiven/blob/main/sample_project/sample.tf>`_ to set up integrated Aiven for Kafka®, PostgreSQL®, InfluxDB®, and Grafana® services.
+
+* Read the `Terraform Docs <https://www.terraform.io/language/modules/develop/structure>`_ to learn about more complex project structures.
+
+* `Import your existing Aiven resources <https://registry.terraform.io/providers/aiven/aiven/latest/docs/guides/importing-resources>`_ to Terraform.

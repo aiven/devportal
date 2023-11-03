@@ -56,6 +56,8 @@
 /docs/products/clickhouse/concepts/databases-and-tables.html           /docs/products/clickhouse/howto/manage-databases-tables.html
 /docs/products/clickhouse/howto/integrate-pg.html                      /docs/products/clickhouse/howto/integrate-postgresql.html
 /docs/platform/concepts/byoa.html                                      /docs/platform/concepts/byoc.html
+/docs/products/opensearch/howto/list-upgrade                            /docs/products/opensearch/howto
+/docs/products/opensearch/howto/upgrade-to-opensearch                  /docs/products/opensearch/concepts/opensearch-vs-elasticsearch
 
 # Moved to https://aiven.io/developer 
 /docs/tools/terraform/reference/cookbook                                        https://aiven.io/developer/terraform
