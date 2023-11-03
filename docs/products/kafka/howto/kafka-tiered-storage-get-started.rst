@@ -4,7 +4,7 @@ Get started with tiered storage for Aiven for Apache Kafka®
 
 Aiven for Apache Kafka®'s tiered storage optimizes resources by keeping recent data—typically the most accessed—on faster local disks. As data becomes less active, it's transferred to more economical, slower storage, balancing performance with cost efficiency.
 
-For an in-depth understanding of tiered storage, how it works, and its benefits, see `Tiered storage in Aiven for Apache Kafka®`.
+For an in-depth understanding of tiered storage, how it works, and its benefits, see :doc:`Tiered storage in Aiven for Apache Kafka® </docs/products/kafka/concepts/kafka-tiered-storage>`.
 
 .. important:: 
     
