@@ -369,6 +369,8 @@ entries:
               - file: docs/products/kafka/howto/monitor-logs-acl-failure
               - file: docs/products/kafka/howto/kafka-sasl-auth
               - file: docs/products/kafka/howto/renew-ssl-certs
+              - file: docs/products/kafka/howto/enable-oidc
+                title: Enable OAUTH2/OIDC authentication
               - file: docs/products/kafka/howto/kafka-custom-serde-encrypt
                 title: Encrypt data using a custom serde
           - file: docs/products/kafka/howto/list-admin
