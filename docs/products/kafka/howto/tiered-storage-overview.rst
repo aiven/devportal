@@ -63,7 +63,7 @@ Gain a visual understanding of your tiered storage expenses:
 - **Total cost and forecast**: Gain insights into your overall costs and receive a forecast. This forecast is an estimate based on your most recent usage patterns and trends. It provides an indicative projection and should not be considered as an exact or fixed value.
 
 
-Detailed storage overview
+Remote storage overview
 -------------------------
 
 Explore the specifics of your storage usage and configurations:
