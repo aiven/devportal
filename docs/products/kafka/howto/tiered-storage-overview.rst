@@ -27,7 +27,7 @@ Get a quick snapshot of the essential metrics and details related to tiered stor
 
 - **Current billing expenses in USD**: Stay informed about your current tiered storage expenses.
 - **Forecasted month cost in USD**: Estimate your upcoming monthly costs based on current usage.
-- **Data tiered in bytes**: View the volume of data that has been tiered.
+- **Remote tier usage in bytes**: View the volume of data that has been tiered.
 - **Storage overview**: Understand the specifics of the storage mediums in use, including details about the used object storage and SSD storage.
 
 
