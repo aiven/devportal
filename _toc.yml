@@ -412,6 +412,16 @@ entries:
               - file: docs/products/kafka/howto/get-topic-partition-details
               - file: docs/products/kafka/howto/schema-registry
               - file: docs/products/kafka/howto/change-retention-period
+          - file: docs/products/kafka/howto/kafka-tiered-storage-get-started
+            title: Tiered storage
+            entries:
+            - file: docs/products/kafka/howto/enable-kafka-tiered-storage
+              title: Enable tiered storage
+            - file: docs/products/kafka/howto/configure-topic-tiered-storage
+              title: Configure tiered storage for topic
+            - file: docs/products/kafka/howto/tiered-storage-overview-page
+              title: Tiered storage overview page
+
 
       - file: docs/products/kafka/reference
         title: Reference
