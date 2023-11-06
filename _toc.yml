@@ -417,8 +417,8 @@ entries:
               title: Enable tiered storage
             - file: docs/products/kafka/howto/configure-topic-tiered-storage
               title: Configure tiered storage for topic
-            - file: docs/products/kafka/howto/tiered-storage-overview
-              title: Tiered storage overview
+            - file: docs/products/kafka/howto/tiered-storage-overview-page
+              title: Tiered storage overview page
 
 
       - file: docs/products/kafka/reference
