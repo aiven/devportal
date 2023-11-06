@@ -22,4 +22,4 @@ Related reading
 
 * :doc:`Tiered storage in Aiven for Apache Kafka® overview </docs/products/kafka/concepts/kafka-tiered-storage>`
 * :doc:`How tiered storage works in Aiven for Apache Kafka® </docs/products/kafka/concepts/tiered-storage-how-it-works>`
-* Enabled tiered storage for Aiven for Apache Kafka® service
+* :doc:`Enabled tiered storage for Aiven for Apache Kafka® service </docs/products/kafka/howto/enable-kafka-tiered-storage>`
