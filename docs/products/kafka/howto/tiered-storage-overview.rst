@@ -68,6 +68,6 @@ Remote storage overview
 
 Explore the specifics of your storage usage and configurations:
 
-- **Used object storage and SSD storage**:Take a deep dive into the storage mediums in use.
+- **Remote storage usage by topics**: Take a deep dive into how much tiered storage is used per topic.
 - **Filter by topic**: Narrow down your view to specific topics for focused insights.
 
