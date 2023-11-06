@@ -1,14 +1,10 @@
 Use AWS PrivateLink with Aiven services
 =======================================
 
-.. important::
-
-    AWS PrivateLink is a :doc:`limited availability feature </docs/platform/concepts/beta_services>`, which you can request from the sales team (sales@Aiven.io) or your account manager. During the limited availability stage, you can use the feature at no cost. If you want to continue using AWS PrivateLink after it reaches general availability, you'll be billed according to the latest applicable price.
-
 AWS `PrivateLink <https://aws.amazon.com/privatelink/>`__ brings Aiven
 services to the selected virtual private cloud (VPC) in your AWS
 account. In a traditional setup that uses :ref:`VPC peering <platform_howto_setup_vpc_peering>`, traffic is routed through an AWS VPC peering connection to your Aiven
-services. With PrivateLink, you can create a VPC endpoint to your own
+services. With PrivateLink, you can create a VPC endpoint in your own
 VPC and access an Aiven service from that. The VPC endpoint creates
 network interfaces (NIC) to the subnets and availability zones that you
 choose and receives the private IP addresses that belong to the IP range
@@ -24,7 +20,7 @@ connections. This means that overlaps in the IP range are not an issue.
 
 You can use either the `Aiven Console <https://console.aiven.io>`__
 or the :doc:`Aiven CLI </docs/tools/cli>` to set up
-AWS PrivateLink. You also need the AWS CLI to create a VPC endpoint.
+AWS PrivateLink. You also need the AWS console or CLI to create a VPC endpoint.
 
 **Note:** Aiven for Apache Cassandra® and Aiven for M3 services do not
 currently support AWS PrivateLink.
@@ -93,7 +89,7 @@ currently support AWS PrivateLink.
      the instances that are allowed to connect to the endpoint network
      interfaces created by AWS into the specified subnets.
 
-   | Alternatively, you can create the VPC endpoint in `Aiven Console <https://console.aiven.io>`__ under **Integration endpoints** > **Add new endpoint** . See the `AWS documentation <https://docs.aws.amazon.com/vpc/latest/userguide/vpce-interface.html#create-interface-endpoint>`__ for details.
+   | Alternatively, you can create the VPC endpoint in `AWS Console <https://console.aws.amazon.com>`__ under **VPC** > **Endpoints** > **Create endpoint** . See the `AWS documentation <https://docs.aws.amazon.com/vpc/latest/userguide/vpce-interface.html#create-interface-endpoint>`__ for details.
 
    | **Note:** For Aiven for Apache Kafka® services, the security group
      for the VPC endpoint must allow ingress in the port range
