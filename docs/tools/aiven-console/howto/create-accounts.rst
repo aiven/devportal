@@ -34,7 +34,7 @@ Create an organization
 
 To create an organization in the `Aiven Console <https://console.aiven.io>`_:
 
-#. Click the user information icon and select **Organizations**. 
+#. Click the user information icon in the top right and select **Organizations**. 
 
 #. Click **Create organization**.
 
