@@ -28,10 +28,10 @@ Get a quick snapshot of the essential metrics and details related to tiered stor
 - **Current billing expenses in USD**: Stay informed about your current tiered storage expenses.
 - **Forecasted month cost in USD**: Estimate your upcoming monthly costs based on current usage.
 - **Remote tier usage in bytes**: View the volume of data that has been tiered.
-- **Storage overview**: Understand the specifics of the storage mediums in use, including details about the used object storage and SSD storage.
+- **Storage overview**: View how topics use :ref:`remote storage <remote-storage-overview>`.
 
 
-Current tiered storage configurations
+Current tiered storage settings
 ---------------------------------------------
 
 This section provides an overview of the current local cache details and retention policy configurations for tiered storage:
@@ -53,14 +53,7 @@ Modify retention policies
   
 3. Confirm your adjustments by selecting **Save changes**.
 
-
-Graphical view of tiered storage costs
-------------------------------------------
-
-Gain a visual understanding of your tiered storage expenses:
-
-- **Hourly expense**: Visualize your hourly expenses through graphical representation.
-
+.. _remote-storage-overview:
 
 Remote storage overview
 -------------------------
