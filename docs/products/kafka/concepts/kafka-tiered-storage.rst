@@ -46,6 +46,6 @@ Related reading
 
 * :doc:`How tiered storage works in Aiven for Apache Kafka® </docs/products/kafka/concepts/tiered-storage-how-it-works>`
 * :doc:`Guarantees </docs/products/kafka/concepts/tiered-storage-guarantees>`
-* :doc:`Limiations </docs/products/kafka/concepts/tiered-storage-limitations>`
+* :doc:`Limitations </docs/products/kafka/concepts/tiered-storage-limitations>`
 * Enabled tiered storage for Aiven for Apache Kafka® service
 

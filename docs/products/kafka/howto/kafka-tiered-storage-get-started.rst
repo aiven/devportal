@@ -30,7 +30,7 @@ Tiered storage usage overview
 ------------------------------
 Gain insights into tiered storage usage from the **Tiered Storage Overview** page in your Aiven for Apache Kafka service. This includes details on billing, settings, and specific storage aspects.
 
-For more information, see :doc:`Tiered Storage Overview in Aiven Console </docs/products/kafka/howto/tiered-storage-overview>`.
+For more information, see :doc:`Tiered Storage Overview in Aiven Console </docs/products/kafka/howto/tiered-storage-overview-page>`.
 
 
 
