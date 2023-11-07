@@ -90,3 +90,7 @@ To enable OAuth2/OIDC authentication for your Aiven for Apache Kafka service usi
 For detailed explanations on the OIDC parameters, refer to the :ref:`console-authentication` section above.
 
 
+
+See also
+--------
+- :doc:`Enable OAuth2/OIDC support for Apache Kafka® REST proxy </docs/products/kafka/karapace/howto/enable-oauth-oidc-kafka-rest-proxy.rst>`

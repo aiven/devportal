@@ -587,6 +587,7 @@ entries:
             - file: docs/products/kafka/karapace/howto/enable-kafka-rest-proxy-authorization
             - file: docs/products/kafka/karapace/howto/manage-schema-registry-authorization
             - file: docs/products/kafka/karapace/howto/manage-kafka-rest-proxy-authorization
+            - file: docs/products/kafka/karapace/howto/enable-oauth-oidc-kafka-rest-proxy
 
   # -------- FLINK --------
   - file: docs/products/flink
