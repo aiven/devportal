@@ -39,7 +39,7 @@ Database administration tasks
         :shadow: md
         :margin: 2 2 0 0
 
-    .. grid-item-card:: :doc:`Use the PostgreSQL® pg_repack extension </docs/products/postgresql/howto/use-pg-repack-extension>`
+    .. grid-item-card:: :doc:`Use the PostgreSQL® pg_repack extension </docs/productspostgresql/howto/use-pg-repack-extension>`
         :shadow: md
         :margin: 2 2 0 0
 
@@ -72,5 +72,9 @@ Database administration tasks
         :margin: 2 2 0 0
 
     .. grid-item-card:: :doc:`Check size of a database, a table or an index </docs/products/postgresql/howto/pg-object-size>`
+        :shadow: md
+        :margin: 2 2 0 0
+
+    .. grid-item-card:: :doc:`Restrict access to databases or tables in Aiven for PostgreSQL®". </docs/products/postgresql/howto/readonly-user>`
         :shadow: md
         :margin: 2 2 0 0
