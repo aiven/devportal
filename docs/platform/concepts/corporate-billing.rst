@@ -17,12 +17,12 @@ Some credit card issuers add extra charges on top of these fees. The most common
 
 These fees are not added by Aiven. They are not visible to Aiven or our credit card processor, so we're unable to include them in our prices or waive them.
 
-Email invoices 
+Bank transfers 
 """""""""""""""
 
-Customers who have at least 1,000 USD in monthly recurring revenue (MRR) can request monthly invoicing. With this payment method, your billing contact gets monthly invoices in PDF format by email. These invoices are generated at the end of the month based on actual usage. You can :doc:`set the billing contacts </docs/platform/howto/use-billing-groups>` in your billing groups. Payment is made through bank transfers.
+Customers who have at least 1,000 USD in monthly recurring revenue (MRR) can :doc:`request to pay invoices by bank transfers </docs/platform/howto/pay-by-bank-transfer>`. With this payment method enabled, your billing contact gets monthly invoices in PDF format by email. These invoices are generated at the end of the month based on actual usage. 
 
-Prices for Aiven services are always in US dollars, but invoices can also be sent in other currencies. Invoices in different currencies are created based on the exchange rates on the date of the invoice:
+Prices for Aiven services are always in US dollars, but invoices can also be sent in the following currencies. Invoices in different currencies are created based on the exchange rates on the date of the invoice.
 
 * Australian dollars
 
@@ -44,6 +44,4 @@ Prices for Aiven services are always in US dollars, but invoices can also be sen
 
 * Swedish kronor
 
-*  US dollars
-
-To add email invoices as a payment method, :doc:`make sure your billing group details and billing email addresses </docs/platform/howto/use-billing-groups>` are up to date in Aiven. Then, contact the sales team at sales@Aiven.io to request invoice billing.
+* US dollars
