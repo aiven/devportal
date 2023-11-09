@@ -1,7 +1,7 @@
 Aiven documentation
 ===================
 
-Aiven is the trusted open source data platform for open source data solutions including Apache Kafka®, Apache Flink®, Apache Cassandra®, ClickHouse®, Grafana®, InfluxDB®, M3DB, MySQL, OpenSearch®, PostgreSQL®, and Redis®*.
+Aiven is the trusted open source data platform for data solutions including Apache Kafka®, Apache Flink®, Apache Cassandra®, ClickHouse®, Grafana®, InfluxDB®, M3DB, MySQL, OpenSearch®, PostgreSQL®, and Redis®*.
 
 
 ----------------
