@@ -41,6 +41,7 @@ entries:
       title: Payment methods
       entries:
       - file: docs/platform/howto/manage-payment-card
+      - file: docs/platform/howto/pay-by-bank-transfer
       - file: docs/platform/howto/list-marketplace-payments
         title: Marketplace subscriptions
         entries:
