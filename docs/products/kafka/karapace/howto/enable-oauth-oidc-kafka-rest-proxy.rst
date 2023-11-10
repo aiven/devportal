@@ -12,8 +12,11 @@ Karapace processes the JSON Web Token (JWT) obtained from the Authorization HTTP
 Authorization enforcement
 ----------------------------
 
-The underlying Aiven for Apache Kafka® service uses the ``sub`` claim from the JWT as the username, checking it against configured Access Control Lists (ACLs) to authorize operations on Kafka resources.
+In the underlying Aiven for Apache Kafka® service, the default mechanism for authorization, uses the ``sub`` claim from the JWT as the username. This username is then verified against the configured Access Control Lists (ACLs) to authorize user operations on Kafka resources.
 
+While the ``sub`` claim is the default identifier, this setting is configurable. You can specify a different JWT claim for authentication by adjusting the ``kafka.sasl_oauthbearer_sub_claim_name`` parameter. For more information on configuring this, see :ref:`console-authentication`.
+
+To authenticate and authorize a user in Aiven for Apache Kafka, the JWT claim value and corresponding service user must be explicitly present in the ACL. This means that the identity of the user making the request with the JWT claim value must match the service user in the system.
 
 Managing token expiry
 ------------------------------
