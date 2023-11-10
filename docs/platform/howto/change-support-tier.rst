@@ -8,7 +8,7 @@ You can upgrade your support tier within the Aiven Console. If you have question
 Upgrade your support tier
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To upgrade your organization's support tier to the Priority, Business, or Enterprise tier in the `Aiven Console <https://console.aiven.io/>`_:
+To upgrade your organization's support tier to the Essential, Advanced, or Enterprise tier in the `Aiven Console <https://console.aiven.io/>`_:
 
 #. In the organization, click **Support**.
 
