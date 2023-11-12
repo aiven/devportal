@@ -33,7 +33,7 @@ There are some limitations of the free plan services:
 * No VPC peering
 * No external service integrations
 * No forking
-* For PostgreSQL and MySQL: no connection pooling
+* For PostgreSQL: no connection pooling
 * Support only through the `Aiven Community Forum <https://aiven.io/community/forum/>`_
 * Only a limited number of AWS regions, no other cloud providers
 * Only one service per service type per user and :doc:`organization </docs/platform/concepts/projects_accounts_access>`

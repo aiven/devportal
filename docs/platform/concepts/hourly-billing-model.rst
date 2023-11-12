@@ -1,8 +1,9 @@
 Billing overview
 =================
 
-In the **Billing** section of `Aiven Console <https://console.aiven.io>`_, you can manage your :doc:`billing groups </docs/platform/concepts/billing-groups>`, :doc:`payment cards </docs/platform/howto/manage-payment-card>`, and view and download your invoices.
+In the **Billing** section of the `Aiven Console <https://console.aiven.io>`_, you can manage your :doc:`billing groups </docs/platform/concepts/billing-groups>`, :doc:`payment cards </docs/platform/howto/manage-payment-card>`, and view and download your invoices.
 
+To access billing features, you must be a super admin or account owner.
 
 Service charges
 ----------------

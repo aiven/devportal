@@ -1,4 +1,5 @@
 
+
 ``custom_domain``
 -----------------
 *['string', 'null']*
@@ -377,6 +378,30 @@
 
 **producer.purgatory.purge.interval.requests** The purge interval (in number of requests) of the producer request purgatory(defaults to 1000).
 
+``sasl_oauthbearer_expected_audience``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*string*
+
+**sasl.oauthbearer.expected.audience** The (optional) comma-delimited setting for the broker to use to verify that the JWT was issued for one of the expected audiences.
+
+``sasl_oauthbearer_expected_issuer``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*string*
+
+**sasl.oauthbearer.expected.issuer** Optional setting for the broker to use to verify that the JWT was created by the expected issuer.
+
+``sasl_oauthbearer_jwks_endpoint_url``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*string*
+
+**sasl.oauthbearer.jwks.endpoint.url** OIDC JWKS endpoint URL. By setting this the SASL SSL OAuth2/OIDC authentication is enabled. See also other options for SASL OAuth2/OIDC. 
+
+``sasl_oauthbearer_sub_claim_name``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*string*
+
+**sasl.oauthbearer.sub.claim.name** Name of the scope from which to extract the subject claim from the JWT. Defaults to sub.
+
 ``socket_request_max_bytes``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 *integer*
@@ -648,6 +673,14 @@
 *boolean*
 
 **leader_eligibility** If true, Karapace / Schema Registry on the service nodes can participate in leader election. It might be needed to disable this when the schemas topic is replicated to a secondary cluster and Karapace / Schema Registry there must not participate in leader election. Defaults to `true`.
+
+
+
+``aiven_kafka_topic_messages``
+------------------------------
+*boolean*
+
+**Allow access to read Kafka topic messages in the Aiven Console and REST API.** 
 
 
 

@@ -318,8 +318,23 @@ entries:
           - file: docs/products/kafka/concepts/non-leader-for-partition
           - file: docs/products/kafka/concepts/configuration-backup
           - file: docs/products/kafka/concepts/monitor-consumer-group
+          - file: docs/products/kafka/concepts/consumer-lag-predictor
+            title: Consumer lag predictor
           - file: docs/products/kafka/concepts/kafka-quotas
             title: Quotas
+          - file: docs/products/kafka/concepts/list-kafka-tiered-storage
+            title: Tiered storage
+            entries: 
+              - file: docs/products/kafka/concepts/kafka-tiered-storage
+                title: Overview
+              - file: docs/products/kafka/concepts/tiered-storage-how-it-works
+                title: How it works
+              - file: docs/products/kafka/concepts/tiered-storage-guarantees
+                title: Guarantees
+              - file: docs/products/kafka/concepts/tiered-storage-limitations
+                title: Limitations
+        
+
       - file: docs/products/kafka/howto
         title: HowTo
         entries:
@@ -355,6 +370,8 @@ entries:
               - file: docs/products/kafka/howto/monitor-logs-acl-failure
               - file: docs/products/kafka/howto/kafka-sasl-auth
               - file: docs/products/kafka/howto/renew-ssl-certs
+              - file: docs/products/kafka/howto/enable-oidc
+                title: Enable OAUTH2/OIDC authentication
               - file: docs/products/kafka/howto/kafka-custom-serde-encrypt
                 title: Encrypt data using a custom serde
           - file: docs/products/kafka/howto/list-admin
@@ -374,6 +391,8 @@ entries:
               - file: docs/products/kafka/howto/avoid-out-of-memory-error
               - file: docs/products/kafka/howto/optimizing-resource-usage
                 title: Optimizing resource usage
+              - file: docs/products/kafka/howto/enabled-consumer-lag-predictor
+                title: Enable consumer lag predictor
               - file: docs/products/kafka/howto/manage-quotas
 
           - file: docs/products/kafka/howto/list-integration
@@ -394,6 +413,16 @@ entries:
               - file: docs/products/kafka/howto/get-topic-partition-details
               - file: docs/products/kafka/howto/schema-registry
               - file: docs/products/kafka/howto/change-retention-period
+          - file: docs/products/kafka/howto/kafka-tiered-storage-get-started
+            title: Tiered storage
+            entries:
+            - file: docs/products/kafka/howto/enable-kafka-tiered-storage
+              title: Enable tiered storage
+            - file: docs/products/kafka/howto/configure-topic-tiered-storage
+              title: Configure tiered storage for topic
+            - file: docs/products/kafka/howto/tiered-storage-overview-page
+              title: Tiered storage overview page
+
 
       - file: docs/products/kafka/reference
         title: Reference

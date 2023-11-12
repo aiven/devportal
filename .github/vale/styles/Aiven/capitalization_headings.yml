@@ -90,6 +90,7 @@ exceptions:
   - New Relic
   - NodeJS
   - OAuth
+  - OIDC
   - Okta
   - OneLogin
   - OpenSearch
