@@ -77,7 +77,7 @@ Where:
 
 .. Note::
 
-    The PostgreSQL CDC connector will use or create a publication named ``dbz_publication`` tracking the changes of one or more tables. Therefore either the publication need to already exist in PostgreSQL or the connecting user needs to have enough privileges to create it.
+    The PostgreSQL CDC connector will use or create a publication named ``dbz_publication`` tracking the changes of one or more tables. Therefore, the publication must already exist in PostgreSQL, or the connecting user must have enough privileges to create it.
 
 8. Select **Next** to add the sink table, and then select **Add your first sink table**. Select *Aiven for Apache Kafka®* as the integrated service from the drop-down list.
 9.  In the **Table SQL** section, input the SQL statement for creating the sink table where the PostgreSQL CDC connector will send the data. Select **Add table**.
