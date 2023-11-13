@@ -140,7 +140,7 @@ HTTP status       Error code               Description
 Renew a DHCP lease
 ------------------
 
-You only need to take this step if any of your VMs has been created before setting up the network peering. In that case, you need to refresh the DHCP lease for a relevant network interface to get new routes.
+You only need to take this step if any of your VMs has been created before setting up the network peering. In that case, you need to refresh the Dynamic Host Configuration Protocol (DHCP) lease for a relevant network interface to get new routes.
 
 .. warning::
   
