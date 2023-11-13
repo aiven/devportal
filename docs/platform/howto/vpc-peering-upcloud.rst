@@ -146,15 +146,15 @@ You only need to take this step if any of your VMs has been created before setti
   
   A peering connection between an Aiven VPC and VMs created before the peering setup won't work unless you refresh the DHCP lease for a relevant network interface.
 
-To refresh the DHCP lease for a network interface, take the following steps:
+To refresh the DHCP lease for a network interface, run the following commands:
 
-1. Run
+1. To clear the existing DHCP lease
 
     .. code-block:: bash
 
         dhclient -r NETWORK_INTERFACE_NAME
 
-2. Run
+2. To request a renewal of the DHCP lease
 
     .. code-block:: bash
 
