@@ -75,6 +75,10 @@ Where:
 * ``database-name``: The name of the database where the source table resides, which is set to ``defaultdb`` in the example.
 * ``decoding.plugin.name``: The decoding plugin to be used by the CDC connector, which is set to ``pgoutput`` in the example.
 
+.. Note::
+
+    The PostgreSQL CDC connector will use or create a publication named ``dbz_publication`` tracking the changes of one or more tables. Therefore, the publication must already exist in PostgreSQL, or the connecting user must have enough privileges to create it.
+
 8. Select **Next** to add the sink table, and then select **Add your first sink table**. Select *Aiven for Apache Kafka®* as the integrated service from the drop-down list.
 9.  In the **Table SQL** section, input the SQL statement for creating the sink table where the PostgreSQL CDC connector will send the data. Select **Add table**.
 10. In the **Create statement** section, write the SQL schema that defines the fields retrieved from the PostgreSQL® table and any additional transformations.
@@ -103,6 +107,8 @@ If you encounter the ``must be superuser to create FOR ALL TABLES publication`` 
         'INSERT,UPDATE,DELETE'
         );
 
+.. Note::
 
+    The publication name must be ``dbz_publication`` for the PostgreSQL CDC connector to work
 
 
