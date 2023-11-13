@@ -16,7 +16,9 @@ In the underlying Aiven for Apache Kafka® service, the default mechanism for au
 
 While the ``sub`` claim is the default identifier, this setting is configurable. You can specify a different JWT claim for authentication by adjusting the ``kafka.sasl_oauthbearer_sub_claim_name`` parameter. For more information on configuring this, see :ref:`console-authentication`.
 
-To authenticate and authorize a user in Aiven for Apache Kafka, the JWT claim value and corresponding service user must be explicitly present in the ACL. This means that the identity of the user making the request with the JWT claim value must match the service user in the system.
+To authenticate and authorize a user in Aiven for Apache Kafka, both a service user and an ACL entry describing the permissions are required. The JWT claim value used for authentication must explicitly match the service user in the system. Furthermore, this service user must be associated with an ACL entry that outlines their permissions, ensuring that the identity of the user making the request aligns with both the service user and the ACL entry.
+
+
 
 Managing token expiry
 ------------------------------
