@@ -3,10 +3,10 @@ Restricted Aiven for Redis®* commands
 
 In this section, you can find information about Redis commands that are restricted or modified in our Aiven for Redis* service. These restrictions are in place to ensure the stability and security of the Redis environment. Understanding these limitations is essential for effectively managing and usingAiven for Redis* service.
 
-Restricted Commands
+Restricted commands
 -------------------
 
-Disabled Commands
+Disabled commands
 ^^^^^^^^^^^^^^^^^
 
 The following Redis commands are completely disabled in our service:
@@ -14,13 +14,13 @@ The following Redis commands are completely disabled in our service:
 - ``bgrewriteaof``: Initiates a background append-only file rewrite.
 - ``cluster``: Manages Redis cluster commands.
 - ``command``: Provides details about all Redis commands.
-- ``debug``: Contains subcommands for debugging Redis.
+- ``debug``: Contains sub-commands for debugging Redis.
 - ``failover``: Manages manual failover of a master to a replica.
 - ``migrate``: Atomically transfers a key from a Redis instance to another one.
 - ``role``: Returns the role of the instance in the context of replication.
 - ``slaveof``: Makes the server a replica of another instance, or promotes it as master.
 
-Admin Commands
+Admin commands
 ^^^^^^^^^^^^^^
 
 The following commands are reserved for administrative use and have been renamed:
@@ -34,7 +34,7 @@ The following commands are reserved for administrative use and have been renamed
 - ``save``: Synchronously saves the dataset to disk.
 - ``shutdown``: Synchronously saves the dataset to disk and then shuts down the server.
 
-Eval Commands
+Eval commands
 ^^^^^^^^^^^^^
 
 Script evaluation commands may be restricted based on service configuration:
@@ -49,5 +49,5 @@ Script evaluation commands may be restricted based on service configuration:
 - ``script``: Manages the script cache.
 
 
-.... note:: 
+.. note:: 
     For enhanced security, certain admin commands are renamed. The renaming involves appending a suffix to the command name. This suffix is determined by the service configuration and is typically known only to our administrative team.
