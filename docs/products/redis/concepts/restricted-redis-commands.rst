@@ -1,7 +1,7 @@
 Restricted Aiven for Redis®* commands 
 ======================================
 
-In this section, you can find information about Redis commands that are restricted or modified in our Aiven for Redis* service. These restrictions are in place to ensure the stability and security of the Redis environment. Understanding these limitations is essential for effectively managing and usingAiven for Redis* service.
+This section contains information about Redis commands that are restricted or modified in the Aiven for Redis* service. These restrictions are in place to ensure the stability and security of the Redis environment. Understanding these limitations is essential for effectively managing and using Aiven for Redis* service.
 
 Restricted commands
 -------------------
@@ -9,7 +9,7 @@ Restricted commands
 Disabled commands
 ^^^^^^^^^^^^^^^^^
 
-The following Redis commands are completely disabled in our service:
+The Aiven for Redis* service completely disables the following Redis commands:
 
 - ``bgrewriteaof``: Initiates a background append-only file rewrite.
 - ``cluster``: Manages Redis cluster commands.
@@ -50,4 +50,4 @@ Script evaluation commands may be restricted based on service configuration:
 
 
 .. note:: 
-    For enhanced security, certain admin commands are renamed. The renaming involves appending a suffix to the command name. This suffix is determined by the service configuration and is typically known only to our administrative team.
+    For enhanced security, certain admin commands are renamed. Renaming involves appending a suffix to the command name, determined by the service configuration and typically known only to the administrative team.
