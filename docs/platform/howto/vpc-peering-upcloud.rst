@@ -137,6 +137,29 @@ HTTP status       Error code               Description
 409 Conflict      PEERING_CONFLICT         The peering already exists.
 ================= ======================== ===================================================
 
+Renew a DHCP lease
+------------------
+
+You only need to take this step if any of your VMs has been created before setting up the network peering. In that case, you need to refresh the Dynamic Host Configuration Protocol (DHCP) lease for a relevant network interface to get new routes.
+
+.. warning::
+  
+  A peering connection between an Aiven VPC and VMs created before the peering setup won't work unless you refresh the DHCP lease for a relevant network interface.
+
+To refresh the DHCP lease for a network interface, run the following commands:
+
+1. To clear the existing DHCP lease
+
+    .. code-block:: bash
+
+        dhclient -r NETWORK_INTERFACE_NAME
+
+2. To request a renewal of the DHCP lease
+
+    .. code-block:: bash
+
+        dhclient NETWORK_INTERFACE_NAME
+
 Related reading
 ---------------
 
