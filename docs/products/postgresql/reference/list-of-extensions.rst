@@ -197,6 +197,9 @@ Utilities
 ``pg_prometheus`` - https://github.com/timescale/pg_prometheus
     Prometheus metrics for PostgreSQL.  |PG12earlier|
 
+``pg_qualstats`` - https://github.com/powa-team/pg_qualstats
+    Enable this extension to get automatic recommendations for creating indices to optimize database performance.
+
 ``pg_repack`` - https://pgxn.org/dist/pg_repack/1.4.6/
     Reorganize tables in PostgreSQL databases with minimal locks.
 

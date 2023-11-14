@@ -1214,6 +1214,8 @@ entries:
               - file: docs/products/postgresql/howto/prevent-full-disk
               - file: docs/products/postgresql/howto/use-pgvector
                 title: Enable and use pgvector
+              - file: docs/products/postgresql/howto/use-pg_qualstats
+                title: Enable and use pg_qualstats
               - file: docs/products/postgresql/howto/pg-object-size
           - file: docs/products/postgresql/howto/list-replication-migration
             title: Migrate

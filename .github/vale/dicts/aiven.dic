@@ -72,6 +72,7 @@ downsampling
 DSBulk
 DZone
 Elasticsearch
+enablement
 Epicurious
 etcd
 event_type
@@ -181,6 +182,8 @@ peering
 peerings
 Percona
 performant
+pg_catalog
+pg_qualstats
 pgAdmin
 PgBouncer
 PGHoard
@@ -195,6 +198,7 @@ Podman
 pooler
 PostgreSQL
 Postman
+powa-team
 preformatted
 privatelink
 Prometheus
@@ -202,6 +206,7 @@ Protobuf
 Provectus
 psql
 Python
+readme
 rebalance
 rebalances
 rebalancing

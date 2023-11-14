@@ -74,3 +74,7 @@ Database administration tasks
     .. grid-item-card:: :doc:`Check size of a database, a table or an index </docs/products/postgresql/howto/pg-object-size>`
         :shadow: md
         :margin: 2 2 0 0
+
+    .. grid-item-card:: :doc:`Enable and use pg_qualstats in Aiven for PostgreSQL® </docs/products/postgresql/howto/use-pg_qualstats>`
+        :shadow: md
+        :margin: 2 2 0 0
