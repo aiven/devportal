@@ -1,3 +1,7 @@
+
+
+
+
 ``opensearch_version``
 ----------------------
 *['string', 'null']*
@@ -271,6 +275,18 @@
 *integer*
 
 **indices.memory.index_buffer_size** Percentage value. Default is 10%. Total amount of heap used for indexing buffer, before writing segments to disk. This is an expert setting. Too low value will slow down indexing; too high value will increase indexing performance but causes performance issues for query performance.
+
+``indices_memory_min_index_buffer_size``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*integer*
+
+**indices.memory.min_index_buffer_size** Absolute value. Default is 48mb. Doesn't work without indices.memory.index_buffer_size. Minimum amount of heap used for query cache, an absolute indices.memory.index_buffer_size minimal hard limit.
+
+``indices_memory_max_index_buffer_size``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*integer*
+
+**indices.memory.max_index_buffer_size** Absolute value. Default is unbound. Doesn't work without indices.memory.index_buffer_size. Maximum amount of heap used for query cache, an absolute indices.memory.index_buffer_size maximum hard limit.
 
 ``indices_queries_cache_size``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
