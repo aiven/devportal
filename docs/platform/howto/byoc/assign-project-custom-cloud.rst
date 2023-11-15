@@ -1,5 +1,5 @@
-Enable your AWS custom cloud for your Aiven organization, units, or projects
-============================================================================
+Enable your AWS custom cloud in Aiven organizations, units, or projects
+=======================================================================
 
 .. topic:: Custom clouds
 
