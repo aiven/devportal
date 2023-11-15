@@ -31,9 +31,10 @@ These plugins are enabled on all Aiven for OpenSearch services by default:
 * `OpenSearch neural search <https://opensearch.org/docs/latest/search-plugins/neural-search/>`__
 * `OpenSearch notifications <https://opensearch.org/docs/latest/observing-your-data/notifications/index/>`__
 
-------
-
 .. note::
     The **Notebooks** and **OpenSearch notification** plugins are part of **OpenSearch observability**.
 
 
+Can't find the plugin you need?
+`````````````````````````````````````````````
+If you need a plugin but don't see it here, submit your request through our `Aiven Ideas <https://ideas.aiven.io/>`_ portal. We're always looking to expand our offerings, and your feedback and ideas are important in shaping the future updates of our product.
