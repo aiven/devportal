@@ -1,11 +1,11 @@
 Enable bring your own cloud (BYOC)
 ==================================
 
-Enabling :doc:`the bring your own cloud (BYOC) feature </docs/platform/concepts/byoc>` allows you to :doc:`create custom clouds </docs/platform/howto/byoc/create-custom-cloud>` in your Aiven organization.
+Enabling :doc:`the bring your own cloud (BYOC) feature </docs/platform/concepts/byoc>` allows you to :doc:`create custom clouds </docs/platform/howto/byoc/create-custom-cloud>` in your Aiven organization. A :doc:`custom cloud </docs/platform/concepts/byoc>` is your own cloud infrastructure integrated with your Aiven organization. Using a custom cloud in Aiven may be the optimal solution if you have specific business needs or project requirements, such as a strict regulatory compliance.
 
 .. note::
 
-   Enabling :doc:`the BYOC feature </docs/platform/concepts/byoc>` or creating custom clouds in your Aiven environment does not affect your existing organizations, projects, or services. This only makes the new BYOC capabilities available in your environment.
+   Enabling :doc:`the BYOC feature </docs/platform/concepts/byoc>` or creating custom clouds in your Aiven environment does not affect the configuration of your existing organizations, projects, or services. This only makes the new BYOC capabilities available in your environment.
 
 This article provides you with instructions on how to request enabling BYOC in your Aiven organization.
 
