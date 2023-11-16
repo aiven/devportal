@@ -11,7 +11,7 @@ Passwords and two-factor authentication
 
 With password authentication enabled, users log in with their email address and password. For an added layer of security, you can enforce two-factor authentication (2FA) for password logins for all users in your organization.
 
-When two-factor authentication is required, users will be prompted to set up 2FA using an authenticator app. They won't be able to access any resources in your organization until they do this.
+When two-factor authentication is required, users won't be able to access any resources in your organization until they set up 2FA.
 
 Third-party authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
