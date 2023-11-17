@@ -145,4 +145,4 @@ You can also see the users, their roles, and permissions in the  `Aiven web cons
 Manage using Terraform
 ------------------------
 
-You can also manage user roles and access using the `Aiven Provider for Terraform </docs/tools/terraform>`. Try the Aiven Terraform Provider Cookbook recipe, Manage user privileges for Aiven for ClickHouse® services using Terraform<https://aiven.io/developer/manage-user-privileges-clickhouse-terraform>`.
+You can also manage user roles and access using the :doc:`Aiven Provider for Terraform </docs/tools/terraform>`. Try Aiven Terraform Provider Cookbook recipe `Manage user privileges for Aiven for ClickHouse® services using Terraform <https://aiven.io/developer/manage-user-privileges-clickhouse-terraform>`_.
