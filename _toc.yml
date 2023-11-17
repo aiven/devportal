@@ -178,7 +178,7 @@ entries:
     - file: docs/platform/howto/monitoring-services
     - file: docs/platform/concepts/logs-metrics-alerts
     - file: docs/tutorials/anomaly-detection
-      title: Streaming anomaly detection with Apache Flink, Apache Kafka and PostgreSQL
+      title: Streaming anomaly detection
     - file: docs/integrations/cloudwatch
       title: Amazon CloudWatch
       entries:
