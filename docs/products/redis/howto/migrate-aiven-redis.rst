@@ -31,8 +31,10 @@ Create a service and perform the migration
 
 1. Check the Aiven configuration options and Redis connection details:
 
-   - for Aiven configuration options, type::
+   - For Aiven configuration options, type:
 
+     .. code::
+      
          avn service types -v
 
          ...
@@ -51,7 +53,9 @@ Create a service and perform the migration
          User name for authentication with the server where to migrate data from
              => -c migration.username=<string>
 
-   - for the VPC information, type::
+   - for the VPC information, type:
+   
+     .. code::
 
          avn vpc list --project test
 
@@ -59,43 +63,51 @@ Create a service and perform the migration
          ====================================  =============
          40ddf681-0e89-4bce-bd89-25e246047731  aws-eu-west-1
 
-   .. Note::
+     .. Note::
           Here are your required values for the hostname, port and password of the source Redis service, as well as the VPD ID and cloud name. 
 
-2. Create the Aiven for Redis service (if you don't have one yet), and migrate::
+2. Create the Aiven for Redis service (if you don't have one yet), and migrate:
+   
+   .. code::
+     
+      avn service create --project test -t redis -p hobbyist --cloud aws-eu-west-1 --project-vpc-id 40ddf681-0e89-4bce-bd89-25e246047731 -c migration.host="master.jappja-redis.kdrxxz.euw1.cache.amazonaws.com" -c migration.port=6379 -c migration.password=<password> redis
 
-    avn service create --project test -t redis -p hobbyist --cloud aws-eu-west-1 --project-vpc-id 40ddf681-0e89-4bce-bd89-25e246047731 -c migration.host="master.jappja-redis.kdrxxz.euw1.cache.amazonaws.com" -c migration.port=6379 -c migration.password=<password> redis
+   .. Tip::
 
-.. Tip::
+      If the source Redis server is publicly accessible, the project-vpc-id and cloud parameters are not needed.
 
-   If the source Redis server is publicly accessible, the project-vpc-id and cloud parameters are not needed.
+3. Check the migration status:
+   
+   .. code::
+    
+      avn service migration-status --project test redis
 
-3. Check the migration status::
-
-    avn service migration-status --project test redis
-
-    STATUS  METHOD  ERROR
-    ======  ======  =====
-    done    scan    null
+      STATUS  METHOD  ERROR
+      ======  ======  =====
+      done    scan    null
 
 
-.. Note::
+   .. Note::
 
-   Status can be one of ``done``, ``failed`` or ``running``. In case of failure, the error contains the error message::
+      Status can be one of ``done``, ``failed`` or ``running``. In case of failure, the error contains the error message:
+      
+      .. code:: 
+            
+          avn service migration-status --project test redis
 
-            avn service migration-status --project test redis
-
-            STATUS  METHOD  ERROR           
-            ======  ======  ================
-            failed  scan    invalid password
+          STATUS  METHOD  ERROR           
+          ======  ======  ================
+          failed  scan    invalid password
 
 
 Migrate to an existing Aiven for Redis service
 ----------------------------------------------------
 
-Migrate to an existing Aiven for Redis service by updating the service configuration::
+Migrate to an existing Aiven for Redis service by updating the service configuration:
 
-    avn service update --project test -c migration.host="master.jappja-redis.kdrxxz.euw1.cache.amazonaws.com" -c migration.port=6379 -c migration.password=<password> redis
+.. code::
+
+   avn service update --project test -c migration.host="master.jappja-redis.kdrxxz.euw1.cache.amazonaws.com" -c migration.port=6379 -c migration.password=<password> redis
 
 Remove migration from configuration
 ---------------------------------------------

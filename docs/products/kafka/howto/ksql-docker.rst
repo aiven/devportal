@@ -102,8 +102,10 @@ You can run ksqlDB on Docker with the following command, by replacing the placeh
 
 .. Warning::
 
-    Some docker setups have issues using the ``-v`` mounting options. In those cases copying the Keystore and Truststore in the container can be an easier option. This can be achieved with the following::
+    Some docker setups have issues using the ``-v`` mounting options. In those cases copying the Keystore and Truststore in the container can be an easier option. This can be achieved with the following:
 
+    .. code:: 
+      
         docker container create --name ksql  \
             -p 127.0.0.1:8088:8088 \
             -e KSQL_BOOTSTRAP_SERVERS=APACHE_KAFKA_HOST:APACHE_KAFKA_PORT \
@@ -130,6 +132,8 @@ You can run ksqlDB on Docker with the following command, by replacing the placeh
 
 
 
-Once the Docker image is up and running you should be able to access ksqlDB at ``localhost:8088`` or connect via terminal with the following command::
+Once the Docker image is up and running you should be able to access ksqlDB at ``localhost:8088`` or connect via terminal with the following command:
 
-    docker exec -it ksql ksql
+.. code::
+
+   docker exec -it ksql ksql

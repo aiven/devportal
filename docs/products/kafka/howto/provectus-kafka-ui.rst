@@ -28,21 +28,27 @@ Share keystores with non-root user
 
 Since container for Provectus® UI for Apache Kafka® uses non-root user, to avoid permission problems, while keeping the secrets safe, perform the following steps (see example commands below):
 
-1. Create separate directory for secrets::
+1. Create separate directory for secrets:
 
-    mkdir SSL_STORE_FOLDER
+   .. code::
+     
+      mkdir SSL_STORE_FOLDER
 
-2. Restrict the directory to current user::
+2. Restrict the directory to current user:
 
-    chmod 700 SSL_STORE_FOLDER
+   .. code::
+     
+      chmod 700 SSL_STORE_FOLDER
 
 3. Copy secrets there (replace the ``SSL_KEYSTORE_FILE_NAME`` and ``SSL_TRUSTSTORE_FILE_NAME`` with the keystores and truststores file names)::
 
     cp SSL_KEYSTORE_FILE_NAME SSL_TRUSTSTORE_FILE_NAME SSL_STORE_FOLDER
 
-4. Give read permissions for secret files for everyone::
+4. Give read permissions for secret files for everyone:
 
-    chmod +r SSL_STORE_FOLDER/*
+   .. code::
+    
+      chmod +r SSL_STORE_FOLDER/*
 
 
 Execute Provectus® UI for Apache Kafka® on Docker or Podman

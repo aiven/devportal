@@ -86,7 +86,9 @@ Auto schema compilation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 With auto, the schema is compiled during the project build with, for example, ``maven-avro-plugin`` or ``gradle-avro-plugin``.
-The following is a configuration example for ``maven-avro-plugin`` when ``ClickRecord.avsc`` is stored in the path ``src/main/avro/ClickRecord.avsc``::
+The following is a configuration example for ``maven-avro-plugin`` when ``ClickRecord.avsc`` is stored in the path ``src/main/avro/ClickRecord.avsc``:
+
+.. code::
 
     <plugin>
         <groupId>org.apache.avro</groupId>
@@ -116,7 +118,9 @@ Set consumer and producer properties for schema registry
 
 The full code to create consumer and producers using the Schema Registry in Aiven for Apache Kafka can be found in the `Aiven examples GitHub repository <https://github.com/aiven/aiven-examples/tree/master/solutions/kafka-schema-registry>`_. The following contains a list of the properties required.
 
-For producers you need to specify::
+For producers you need to specify:
+
+.. code::
 
       props.put(CommonClientConfigs.BOOTSTRAP_SERVERS_CONFIG, [BOOTSTRAPSERVERS]);
       props.put(CommonClientConfigs.SECURITY_PROTOCOL_CONFIG, "SSL");
@@ -132,7 +136,9 @@ For producers you need to specify::
       props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
       props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, KafkaAvroSerializer.class.getName());
 
-For consumers you need to specify::
+For consumers you need to specify:
+
+.. code::
 
       props.put(CommonClientConfigs.BOOTSTRAP_SERVERS_CONFIG, [BOOTSTRAPSERVERS]);
       props.put(CommonClientConfigs.SECURITY_PROTOCOL_CONFIG, "SSL");

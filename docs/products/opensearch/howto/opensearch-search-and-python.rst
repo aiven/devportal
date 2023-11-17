@@ -60,15 +60,19 @@ Upload data to OpenSearch using Python
 
 Once you're connected, the next step should be to :ref:`inject data into our cluster <load-data-with-python>`. This is done in our demo with the `load_data function <https://github.com/aiven/demo-opensearch-python/blob/main/index.py>`__.
 
-You can inject the data to your cluster by running::
+You can inject the data to your cluster by running:
 
-  python index.py load-data
+.. code::
+ 
+   python index.py load-data
 
 Once the data is loaded, we can :ref:`retrieve the data mapping <get-mapping-with-python>` to explore the structure of the data, with their respective fields and types. You can find the code implementation in the `get_mapping function <https://github.com/aiven/demo-opensearch-python/blob/main/index.py>`__.
 
-Check the structure of your data by running::
+Check the structure of your data by running:
 
-  python index.py get-mapping
+.. code::
+
+   python index.py get-mapping
 
 You should be able to see the fields' output:
 
@@ -121,10 +125,11 @@ Use the ``search()`` method
 
 You have an OpenSearch client and data injected in your cluster, so you can start writing search queries. Python OpenSearch client has a handy method called ``search()``, which we'll use to run our queries.
 
-We can check the method signature to understand the function and which parameters we'll use.  As you can see, all the parameters are optional in the ``search()`` method. Find below the method signature::
+We can check the method signature to understand the function and which parameters we'll use.  As you can see, all the parameters are optional in the ``search()`` method. Find below the method signature:
 
-  client.search: (body=None, index=None, doc_type=None, params=None, headers=None)
+.. code::
 
+   client.search: (body=None, index=None, doc_type=None, params=None, headers=None)
 
 To run the search queries, we'll use two of these parameters - ``index`` and ``body``:
 
@@ -161,9 +166,11 @@ For the **Query DSL**, the field ``body`` expects a dictionary object which can 
                     }
                   }
 
-In this example, we are searching for "Garlic-Lemon" across ``title`` and ``ingredients`` fields. Try out yourself using our demo::
+In this example, we are searching for "Garlic-Lemon" across ``title`` and ``ingredients`` fields. Try out yourself using our demo:
   
-  python search.py multi-match title ingredients Garlic-Lemon
+.. code::
+
+   python search.py multi-match title ingredients Garlic-Lemon
 
 Check what comes out from this interesting combination 🧄 🍋 :
 

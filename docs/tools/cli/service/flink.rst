@@ -274,28 +274,34 @@ The ``application_version_properties`` parameter should contain the following co
 
 **Example:** Creates a new Aiven for Flink application version for application-id ``986b2d5f-7eda-480c-bcb3-0f903a866222`` with the following details:
 
-* **Source**: a table, named ``special_orders`` coming from an Apache Kafka® topic named ``special_orders_topic`` using the integration with id ``4ec23427-9e9f-4827-90fa-ea9e38c31bc3`` and the following columns::
+* **Source**: a table, named ``special_orders`` coming from an Apache Kafka® topic named ``special_orders_topic`` using the integration with id ``4ec23427-9e9f-4827-90fa-ea9e38c31bc3`` and the following columns:
 
-    id INT, 
-    name VARCHAR, 
-    topping VARCHAR
+   .. code::
 
-* **Sink**: a table, called ``pizza_orders``, writing to an Apache Kafka® topic named ``pizza_orders_topic`` using the integration with id ``4ec23427-9e9f-4827-90fa-ea9e38c31bc3`` and the following columns::
+      id INT, 
+      name VARCHAR, 
+      topping VARCHAR
 
-    id INT, 
-    name VARCHAR, 
-    topping VARCHAR
+* **Sink**: a table, called ``pizza_orders``, writing to an Apache Kafka® topic named ``pizza_orders_topic`` using the integration with id ``4ec23427-9e9f-4827-90fa-ea9e38c31bc3`` and the following columns:
 
-* **SQL statement**::
+   .. code::
+    
+      id INT, 
+      name VARCHAR, 
+      topping VARCHAR
 
-    INSERT INTO special_orders 
-    SELECT id, 
-      name, 
-      c.topping 
-    FROM pizza_orders 
-      CROSS JOIN UNNEST(pizzas) b 
-      CROSS JOIN UNNEST(b.additionalToppings) AS c(topping) 
-    WHERE c.topping IN ('🍍 pineapple', '🍓 strawberry','🍌 banana')
+* **SQL statement**:
+
+  .. code::
+
+      INSERT INTO special_orders 
+      SELECT id, 
+        name, 
+        c.topping 
+      FROM pizza_orders 
+        CROSS JOIN UNNEST(pizzas) b 
+        CROSS JOIN UNNEST(b.additionalToppings) AS c(topping) 
+      WHERE c.topping IN ('🍍 pineapple', '🍓 strawberry','🍌 banana')
 
 .. code::
   
@@ -353,8 +359,6 @@ The ``application_version_properties`` parameter should contain the following co
     }"""
 
 
-
-
 ``avn service flink validate-application-version``
 ''''''''''''''''''''''''''''''''''''''''''''''''''
 Validates the Aiven for Flink® application version in a specified project and service.
@@ -369,12 +373,14 @@ Validates the Aiven for Flink® application version in a specified project and s
 
   Sinking data using the :doc:`Slack connector </docs/products/flink/howto/slack-connector>`, doesn't need an integration.
 
-  **Example**: to create an integration between an Aiven for Apache Flink service named ``flink-democli`` and an Aiven for Apache Kafka service named ``demo-kafka`` you can use the following command::
-
-    avn service integration-create    \
-      --integration-type flink        \
-      --dest-service flink-democli    \
-      --source-service demo-kafka
+  **Example**: to create an integration between an Aiven for Apache Flink service named ``flink-democli`` and an Aiven for Apache Kafka service named ``demo-kafka`` you can use the following command:
+  
+  .. code::
+     
+     avn service integration-create    \
+       --integration-type flink        \
+       --dest-service flink-democli    \
+       --source-service demo-kafka
   
   All the available command integration options can be found in the :ref:`dedicated document <avn_service_integration_create>`
 

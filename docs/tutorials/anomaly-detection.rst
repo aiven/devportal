@@ -503,9 +503,11 @@ You can create the thresholds table in the ``demo-postgresql`` service with the 
 
 1. In the `Aiven Console <https://console.aiven.io/>`_, open the Aiven for PostgreSQL service ``demo-postgresql``.
 2. In the **Overview** tab locate the **Service URI** parameter and copy the value.
-3. Connect via ``psql`` to ``demo postgresql`` with the following terminal command, replacing the ``<SERVICE_URI>`` placeholder with the **Service URI** string copied in the step above::
-
-        psql "<SERVICE_URI>"
+3. Connect via ``psql`` to ``demo postgresql`` with the following terminal command, replacing the ``<SERVICE_URI>`` placeholder with the **Service URI** string copied in the step above:
+   
+   .. code::
+   
+      psql "<SERVICE_URI>"
 
 4. Create the ``cpu_thresholds`` table and populate the values with the following code:
 

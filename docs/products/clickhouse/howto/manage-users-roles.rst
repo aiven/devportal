@@ -41,9 +41,11 @@ This article shows you examples of how to create roles and grant privileges. The
 Create a new role
 ^^^^^^^^^^^^^^^^^
 
-To create a new role named `auditor`, run the following command::
+To create a new role named `auditor`, run the following command:
 
-    CREATE ROLE auditor;
+.. code::
+
+   CREATE ROLE auditor;
 
 You can find more information `on role creation here <https://clickhouse.com/docs/en/sql-reference/statements/create/role/>`_.
 

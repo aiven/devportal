@@ -56,7 +56,9 @@ Alternatively, sometimes you might want to run individual queries and be able to
     --secure                            \
     --query="YOUR SQL QUERY GOES HERE"
 
-Similar to above example, you can request the list of present databases directly::
+Similar to above example, you can request the list of present databases directly:
+
+.. code::
 
     docker run --interactive            \
     --rm clickhouse/clickhouse-server clickhouse-client \
