@@ -17,7 +17,7 @@ You can rebuild corrupted indexes that do not have ``UNIQUE`` in their definitio
     Re-indexing applies locks to the table and may interfere with normal use of the database. 
     In some cases, it can be useful to manually build a second index concurrently alongside the old index and then remove the old index:
 
-    ::
+    .. code::
 
         CREATE INDEX CONCURRENTLY foo_index_new ON table_a (...);
         DROP INDEX CONCURRENTLY foo_index_old;

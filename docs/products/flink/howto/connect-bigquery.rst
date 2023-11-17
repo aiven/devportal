@@ -220,7 +220,7 @@ If you're using Google BigQuery for your data storage and analysis, you can seam
      * **GCP Project ID**: The identifier associated with your Google Cloud Project where BigQuery is set up. For example, ``my-gcp-project-12345``.
      * **Google Service Account Credentials**: The JSON formatted credentials obtained from your Google Cloud Console for service account authentication. For example:
   
-       ::
+       .. code::
 
         {
             "type": "service_account",

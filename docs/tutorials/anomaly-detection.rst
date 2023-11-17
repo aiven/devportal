@@ -265,19 +265,19 @@ It's time to start streaming the fake IoT data that you'll later process with wi
 
 #. Run the following command to build the Docker image:
 
-   ::
+   .. code::
 
         docker build -t fake-data-producer-for-apache-kafka-docker .
 
 #. Run the following command to run the Docker image:
 
-   ::
+   .. code::
 
         docker run fake-data-producer-for-apache-kafka-docker
 
    You should now see the above command pushing IoT sensor reading events to the ``cpu_load_stats_real`` topic in your Apache Kafka® service:
 
-   ::
+   .. code::
 
       {"hostname": "dopey", "cpu": "cpu4", "usage": 98.3335306302198, "occurred_at": 1633956789277}
       {"hostname": "sleepy", "cpu": "cpu2", "usage": 87.28240549074823, "occurred_at": 1633956783483}
@@ -514,13 +514,13 @@ You can create the thresholds table in the ``demo-postgresql`` service with the 
 
 5. Enter the following command to check that the threshold values are correctly populated:
 
-   ::
+   .. code::
 
       SELECT * FROM cpu_thresholds;
 
    The output shows you the content of the table:
 
-   ::
+   .. code::
 
       hostname | allowed_top
       ---------+------------

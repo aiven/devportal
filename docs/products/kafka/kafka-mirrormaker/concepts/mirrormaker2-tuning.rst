@@ -41,7 +41,7 @@ To ensure MirrorMaker 2 is up-to-date with message processing, monitor these:
 3. **Retrieve latest messages with `kt`**:
    Use `kt <https://github.com/fgeller/kt>`_  to retrieve the latest messages from all partitions with the following command:
    
-   ::
+   .. code::
    
         kt consume -auth ./mykafka.conf \
         -brokers SERVICE-PROJECT.aivencloud.com:PORT \

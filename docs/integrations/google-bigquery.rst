@@ -25,7 +25,7 @@ Step 1: Create integration endpoints
    * **GCP Project ID**: The identifier associated with your Google Cloud Project where BigQuery is set up. For example, ``my-gcp-project-12345``.
    * **Google Service Account Credentials**: The JSON formatted credentials obtained from your Google Cloud Console for service account authentication. For example: 
 
-   ::
+   .. code::
     
         {
             "type": "service_account",
@@ -100,13 +100,13 @@ Step 2: Add your service to the integration endpoint
 ``````````````````````````````````````````````````````
 1. Retrieve the endpoint identifier using the following command: 
 
-   ::
+   .. code::
     
     avn service integration-endpoint-list --project your-project-name
 
 2. Using this ``endpoint_id``,  connect your Aiven service to the endpoint with the following command:
    
-   ::
+   .. code::
 
     avn service integration-create --project your-project-name \
     -t external_google_bigquery -s your-service-name \

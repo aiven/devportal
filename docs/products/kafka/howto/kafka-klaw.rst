@@ -102,7 +102,7 @@ After retrieving the SSL certificate files and configuring the SSL keystore and 
 2. Next, open the ``application.properties`` file located in the ``klaw/cluster-api/src/main/resources`` directory. 
 3. Configure the SSL properties to connect to Apache Kafka® clusters by editing the following lines:
 
-   ::
+   .. code::
 
       klawssl.kafkassl.keystore.location=client.keystore.p12
       klawssl.kafkassl.keystore.pwd=klaw1234
@@ -119,7 +119,7 @@ After retrieving the SSL certificate files and configuring the SSL keystore and 
 
    The following is an example of an ``application.properties`` file configured with Klaw Cluster ID, keystore, and truststore paths and passwords. 
 
-   ::
+   .. code::
 
       demo_cluster.kafkassl.keystore.location=/Users/demo.user/Documents/Klaw/demo-certs/client.keystore.p12
       demo_cluster.kafkassl.keystore.pwd=Aiventest123!

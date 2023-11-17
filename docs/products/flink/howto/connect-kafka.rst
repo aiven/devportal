@@ -25,7 +25,7 @@ To create a Apache Flink® table based on an Aiven for Apache Kafka® topic via 
 5. In the **Add new source table** or **Edit source table** screen, select the Aiven for Apache Kafka service as the integrated service. 
 6. In the **Table SQL** section, enter the SQL statement below to create the Apache Kafka-based Apache Flink:
 
-   ::
+   .. code::
 
         CREATE TABLE kafka (
         

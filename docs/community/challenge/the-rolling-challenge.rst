@@ -60,13 +60,13 @@ The goal is to make sense of the incoming stream of data.
 
 7. Build the Docker image
 
-   ::
+   .. code::
     
     docker build -t fake-data-producer-for-apache-kafka-docker .
 
 8. Run the Docker image
 
-   ::
+   .. code::
     
     docker run fake-data-producer-for-apache-kafka-docker
 
