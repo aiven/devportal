@@ -68,7 +68,7 @@ Run the following SQL command to remove your table:
 
 .. code-block:: bash
 
-        DROP TABLE NAME_OF_YOUR_DATABASE.NAME_OF_YOUR_TABLE;
+   DROP TABLE NAME_OF_YOUR_DATABASE.NAME_OF_YOUR_TABLE;
 
 Remove a table in the console
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
