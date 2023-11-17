@@ -197,7 +197,7 @@ Howto article template
 
 Title template: Start with a verb (e.g. *Connect with Go*, *Install or upgrade an extension*).
 
-::
+.. code::
 
     Article title
     #############
@@ -227,7 +227,7 @@ Concept article template
 Title template: *About [subject]* (if this is a background information for a task, e.g. *About migrating to Aiven*) / *Subject* (use noun or noun phrase, e.g. *Authentication*, *High availability*)
 
 
-::
+.. code::
 
     Article title
     #############
@@ -255,7 +255,7 @@ Limited availability note template
 
 For features that are in the limited availability stage, add the following admonition directly undert the article title:
 
-::
+.. code::
 
     .. important:: 
         {feature name} is a :doc:`limited availability feature </docs/platform/concepts/beta_services>`. If you're interested in trying out this feature, contact the sales team at sales@Aiven.io.
@@ -266,7 +266,7 @@ Early availability note template
 
 For features that are in the early availability stage and can be enabled in the Console, add the following admonition directly under the article title:
 
-::
+.. code::
 
     .. important:: 
         {feature name} is an :doc:`early availability feature </docs/platform/concepts/beta_services>`. To use it, :doc:`enable the feature preview </docs/platform/howto/feature-preview.html>` in your user profile.

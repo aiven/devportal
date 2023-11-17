@@ -103,7 +103,7 @@ The columns ``created_date`` and ``modified_date`` can be used as timestamp colu
 
 The following polls will append a ``WHERE`` condition to the query selecting only rows with ``modified_date`` or ``created_date`` greater than the previously recorded maximum value using the ``COALESCENCE`` function. In the example below, the condition will be:
 
-::
+.. code::
  
   WHERE COALESCENCE(modified_date, created_date) > '2021-04-06'
   

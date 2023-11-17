@@ -119,7 +119,7 @@ Create daily Elasticsearch indices
 You might need to create a new Elasticsearch index on daily basis to store the Apache Kafka messages. 
 Adding the following ``TimestampRouter`` transformation in the connector properties file provides a way to define the index name as concatenation of the topic name and message date.
 
-::
+.. code::
 
     "transforms": "TimestampRouter",
     "transforms.TimestampRouter.topic.format": "${topic}-${timestamp}",

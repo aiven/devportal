@@ -23,7 +23,7 @@ We use ``Typer`` Python `library <ttps://typer.tiangolo.com/>`_ to create CLI co
 
 1. Clone the repository and install the dependencies
 
-::
+.. code::
 
     git clone https://github.com/aiven/demo-opensearch-python
     pip install -r requirements.txt
@@ -292,7 +292,7 @@ In our demo, we have a function called `search_multi_match() <https://github.com
 
 Suppose you are looking for citrus recipes 🍋. For example, recipes with ingredients and lemon in the title, you can run your query from our `demo <https://github.com/aiven/demo-opensearch-python/>`_ as:
 
-::
+.. code::
 
   python search.py multi-match title ingredients lemon
 
@@ -323,7 +323,7 @@ If you know exactly which phrases you're looking for, you can try out our ``matc
 
 For example, try searching for ``pannacotta with lemon marmalade`` in the title:
 
-::
+.. code::
 
   python search.py match-phrase title "Pannacotta with lemon marmalade"
 
@@ -402,7 +402,7 @@ You can look the `search_term() <https://github.com/aiven/demo-opensearch-python
 
 Run the search query yourself to find recipes with zero sodium on it, for example:
 
-::
+.. code::
 
   python search.py term sodium 0
 
@@ -447,7 +447,7 @@ You can construct range queries with combinations of inclusive and exclusive par
 
 Try to find recipes in a certain range of sodium, for example:
 
-::
+.. code::
 
     python search.py range sodium 0 10
 

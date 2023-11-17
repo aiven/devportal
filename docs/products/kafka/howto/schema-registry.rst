@@ -48,7 +48,7 @@ Create version 1 of the Avro schema
 
 To create an Avro schema, you need a definition file. As example you can use a **click record** schema defined in JSON and stored in a file named ``ClickRecord.avsc`` containing the following:
 
-::
+.. code::
 
     {"type": "record",
       "name": "ClickRecord",

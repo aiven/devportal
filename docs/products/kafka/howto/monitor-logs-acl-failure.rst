@@ -11,7 +11,7 @@ Failed producer
 
 A producer creates the following log in case the client has no privilege to write to a specific topic:
 
-::
+.. code::
 
    HOSTNAME: kafka-pi-3141592-75
    SYSTEMD_UNIT: kafka.service
@@ -22,7 +22,7 @@ Failed consumer
 
 A consumer creates the following log in case the client has no privilege to describe a specific topic:
 
-::
+.. code::
 
    HOSTNAME: kafka-pi-3141592-74
    SYSTEMD_UNIT: kafka.service
@@ -35,7 +35,7 @@ Valid certificate with invalid key
 
 A client creates the following log when using a valid certificate with an invalid key to perform a describe operation over a topic:
 
-::
+.. code::
 
    HOSTNAME: kafka-pi-3141592-75
    SYSTEMD_UNIT: kafka.service

@@ -16,7 +16,7 @@ When dealing with excessively large shards, you can consider the one of the foll
 `````````````````````````````````
 If your application permits, permanently delete records, such as old logs or unnecessary records, from your index. For example, to delete records older than five days, use the following query:
 
-::
+.. code::
 
    POST /my-index/_delete_by_query
    {

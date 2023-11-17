@@ -33,7 +33,7 @@ Creates a new authentication method. More information about authentication metho
 
 **Example:** Create a new ``saml`` authentication method named ``My Authentication Method`` for the account id ``123456789123``.
 
-::
+.. code::
 
   avn account authentication-method create 123456789123 \
     --name "My Authentication Method"                   \
@@ -57,7 +57,7 @@ Deletes an existing authentication method.
 
 **Example:** Delete the authentication method with id ``88888888888`` belonging to the account id ``123456789123``.
 
-::
+.. code::
 
   avn account authentication-method delete 123456789123 88888888888
 
@@ -77,7 +77,7 @@ Lists the existing authentication methods.
 
 **Example:** List all the authentication methods belonging to the account id ``123456789123``.
 
-::
+.. code::
 
   avn account authentication-method list 123456789123
 
@@ -121,6 +121,6 @@ Updates an existing authentication method.
 
 **Example:** Disable the authentication method with id ``am2exxxxxxxxx`` for the account id ``123456789123``.
 
-::
+.. code::
 
   avn account authentication-method update 123456789123 am2exxxxxxxxx --disable

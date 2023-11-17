@@ -73,7 +73,7 @@ You can run ksqlDB on Docker with the following command, by replacing the placeh
 * ``TRUSTSTORE_SCHEMA_REGISTRY_FILE_NAME``
 * ``TRUSTSTORE_SCHEMA_REGISTRY_PASSWORD``
 
-::
+.. code::
 
     docker run -d --name ksql  \
         -v SSL_STORE_FOLDER/:/ssl_settings/ \

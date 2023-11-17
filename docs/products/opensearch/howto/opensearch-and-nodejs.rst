@@ -134,7 +134,7 @@ One of the examples of a term-level query is searching for all entries containin
       );
     };
 
-::
+.. code::
 
     run-func search term sodium 0
 
@@ -174,7 +174,7 @@ When dealing with numeric values, naturally we want to be able to search for cer
       );
     };
 
-::
+.. code::
 
     run-func search range sodium 0 10
 
@@ -216,7 +216,7 @@ When searching for terms inside text fields, we can take into account typos and 
 
 See if you can find recipes with misspelled pineapple 🍍
 
-::
+.. code::
 
     run-func search fuzzy title pinapple 2
 
@@ -255,7 +255,7 @@ To see ``match`` in action use the method below to search for "Tomato garlic sou
       );
     };
 
-::
+.. code::
 
     run-func search match title 'Tomato-garlic soup with dill'
 
@@ -300,7 +300,7 @@ When the order of the words is important, use ``match_phrase`` instead of ``matc
 
 We can use this method to find some recipes for pizza with pineapple. I learned from my Italian colleague that this considered a combination only for tourists, not a true pizza recipe. We'll do it by searching the ``directions`` field for words "pizza" and "pineapple" with top-most distance of 10 words in between.
 
-::
+.. code::
 
     run-func search slop directions "pizza pineapple" 10
 
@@ -345,7 +345,7 @@ This example also sets ``size`` to demonstrate how we can get more than 10 resul
 
 To find recipes with tomato, salmon or tuna and no onion run this query:
 
-::
+.. code::
 
     run-func search query ingredients "(salmon|tuna) +tomato -onion" 100
 
@@ -389,7 +389,7 @@ In the next method we combine what we learned so far, using both term-level and 
       );
     };
 
-::
+.. code::
 
     run-func search boolean
 

@@ -17,7 +17,7 @@ To create these files:
 3. Use the ``openssl`` utility to create the keystore with the ``service.key`` and
    ``service.cert`` files downloaded previously:
 
-::
+.. code::
 
     openssl pkcs12 -export       \
         -inkey service.key       \
@@ -32,7 +32,7 @@ To create these files:
 
 6. In the folder where the certificates are stored, use the ``keytool`` utility to create the truststore with the ``ca.pem`` file as input:
 
-::
+.. code::
     
     keytool -import  \
         -file ca.pem \

@@ -45,7 +45,7 @@ Kpow supports both :doc:`SASL and SSL authentication methods<../concepts/auth-ty
 
 Once the keystore and truststore are created, define a Kpow configuration file named ``kpow.env`` with the following content, replacing the ``APACHE_KAFKA_HOST``, ``APACHE_KAFKA_PORT``,  ``KPOW_LICENSE_ID``, ``KPOW_LICENSE_CODE``, ``KPOW_LICENSEE``, ``KPOW_LICENSE_EXPIRY_DATE``, ``KPOW_LICENSE_SIGNATURE``, ``SSL_KEYSTORE_FILE_NAME``, ``SSL_KEYSTORE_PASSWORD``, ``SSL_KEY_PASSWORD``, ``SSL_TRUSTSTORE_FILE_NAME`` and ``SSL_TRUSTSTORE_PASSWORD``  with the the respective values taken from the prerequisites section:
 
-::
+.. code::
 
     BOOTSTRAP=APACHE_KAFKA_HOST:APACHE_KAFKA_PORT
     LICENSE_ID=KPOW_LICENSE_ID
@@ -71,7 +71,7 @@ Run Kpow on Docker
 
 You can run Kpow in a Docker/Podman container with the following command, by replacing the ``SSL_STORE_FOLDER`` with the name of the folder containing the Java keystore and truststore:
 
-::
+.. code::
 
     docker run -p 3000:3000 -m2G \
         -v SSL_STORE_FOLDER:/ssl \

@@ -51,7 +51,7 @@ Step 1. Create integration endpoints
 ``````````````````````````````````````
 To create a new integration endpoint that can be used to connect to a BigQuery service, use the :ref:`avn service integration-endpoint-create <avn_service_integration_endpoint_create>` command with the required parameters.
 
-::
+.. code::
 
     avn service integration-endpoint-create \
     --project <project_name> \

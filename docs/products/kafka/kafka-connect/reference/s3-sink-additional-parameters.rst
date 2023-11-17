@@ -15,7 +15,7 @@ S3 naming format
 
 The Apache Kafka Connect® S3 sink connector by Aiven stores a series of files as objects in the specified S3 bucket. By default, each object is named using the pattern:
 
-::
+.. code::
 
     <AWS_S3_PREFIX><TOPIC_NAME>-<PARTITION_NUMBER>-<START_OFFSET>.<FILE_EXTENSION>
 
@@ -46,7 +46,7 @@ You can define the output data fields with the ``format.output.fields`` connecto
 
 For example, setting ``format.output.fields`` to ``value,key,timestamp`` results in rows in the S3 files like the following:
 
-::
+.. code::
 
     bWVzc2FnZV9jb250ZW50,cGFydGl0aW9uX2tleQ==,1511801218777 
 

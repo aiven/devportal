@@ -8,7 +8,7 @@ File name format
 
 The connector uses the following format for output files (blobs)
 
-::
+.. code::
 
     <prefix><topic>-<partition>-<start-offset>[.gz]
     

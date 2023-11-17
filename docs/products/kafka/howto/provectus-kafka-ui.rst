@@ -59,7 +59,7 @@ You can run Provectus® UI for Apache Kafka® in a Docker/Podman container with 
 * ``SSL_TRUSTSTORE_PASSWORD``
 
 
-::
+.. code::
 
     docker run -p 8080:8080 \
         -v SSL_STORE_FOLDER/SSL_TRUSTSTORE_FILE_NAME:/client.truststore.jks:ro \

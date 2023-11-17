@@ -34,6 +34,6 @@ The :ref:`Aiven CLI service update command <avn-cli-service-update>` enables to 
 
 You can enable the automatic creation of topics on an existing Aiven for Apache Kafka service by using the `Aiven CLI service update <avn-cli-service-update>`command. Set the ``auto_create_topics_enable`` parameter to ``true`` with the following command, replacing ``SERVICE_NAME`` with the name of your service:
 
-::
+.. code::
 
     avn service update SERVICE_NAME -c kafka.auto_create_topics_enable=true

@@ -127,7 +127,7 @@ Run the method from the command line::
 
 You'll see a calculated numeric value, the average of all values from the rating field across the documents.
 
-::
+.. code::
 
     { value: 3.7130597014925373 }
 
@@ -192,7 +192,7 @@ Other simple metrics
 
 We can use the method we created to run other types of metric aggregations, for example, to find what the minimum sodium value is, in any of the recipes:
 
-::
+.. code::
 
     run-func aggregate metric min sodium
 
@@ -205,11 +205,11 @@ Another interesting single-value metric is ``cardinality``. Cardinality is an es
 
 For example, by calculating the cardinality of the rating field, you will learn that there are only eight distinct rating values over all 20k recipes. Which makes me suspect that the rating data was added artificially later into the data set. The cardinality of `calories`, `sodium` and `fat` field contain more realistic diversity:
 
-::
+.. code::
 
     run-func aggregate metric cardinality rating
 
-::
+.. code::
 
     { value: 8 }
 
@@ -222,21 +222,21 @@ A multi-value aggregation returns an object rather than a single value. An examp
 
 Get a set of metrics (``avg``, ``count``, ``max``, ``min`` and ``sum``) by using ``stats`` aggregation type:
 
-::
+.. code::
 
     run-func aggregate metric stats rating
 
-::
+.. code::
 
     { count: 20100, min: 0, max: 5, avg: 3.7130597014925373, sum: 74632.5 }
 
 To get additional information, such as standard deviation, variance and bounds, use ``extended_stats``:
 
-::
+.. code::
 
     run-func aggregate metric extended_stats rating
 
-::
+.. code::
 
     {
       count: 20100,
@@ -268,11 +268,11 @@ Another example of a multi-value aggregation are ``percentiles``. Percentiles ar
 
 Calculate percentiles for `calories`:
 
-::
+.. code::
 
     run-func aggregate metric percentiles calories
 
-::
+.. code::
 
     {
       values: {
@@ -288,11 +288,11 @@ Calculate percentiles for `calories`:
 
 From the returned result you can see that 50% of recipes have less than 331 calories. Interestingly, only one percent of the meals is more than 3256 calories. You must be curious what falls within that last percentile ;) Now that we know the value to look for, we can use `a range query <https://docs.aiven.io/docs/products/opensearch/howto/opensearch-and-nodejs.html#find-fields-with-a-value-within-a-range>`_ to find the recipes. Set the minimum value, but keep the maximum empty to allow no bounds:
 
-::
+.. code::
 
     run-func search range calories 3256
 
-::
+.. code::
 
     [
       'Ginger Crunch Cake with Strawberry Sauce ',
@@ -549,7 +549,7 @@ You can use the ``rare_terms`` aggregation! This creates a set of buckets sorted
     };
 
 
-::
+.. code::
 
     run-func aggregate rareTerms categories.keyword 3
 
@@ -591,7 +591,7 @@ The format of the histogram aggregation is similar to what we saw so far, so we 
 
 Values for the interval field can be from `minute` up to a `year`.
 
-::
+.. code::
 
     run-func aggregate dateHistogram date year
 
@@ -764,7 +764,7 @@ We used one of existing built-in functions ``MovingFunctions.unweightedAvg(value
 
 You can also use other functions such as max(), min(), stdDev() and sum(). Additionally, you can write your own functions, such as
 
-::
+.. code::
 
     moving_fn: {
         script: "return values.length === 1 ? 1 : 0"

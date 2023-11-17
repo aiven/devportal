@@ -49,7 +49,7 @@ Define a Kafka Connect configuration file
 
 Define the connector configurations in a file (we'll refer to it with the name ``mqtt_sink.json``) with the following content. Creating a file is not strictly necessary but allows to have all the information in one place before copy/pasting them in the `Aiven Console <https://console.aiven.io/>`_:
 
-::
+.. code::
 
     {
         "name": "CONNECTOR_NAME",

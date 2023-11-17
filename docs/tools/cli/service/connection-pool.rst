@@ -37,7 +37,7 @@ Creates a new :doc:`PgBouncer connection pool </docs/products/postgresql/concept
 * pool-size of ``10`` connections 
 * ``transaction`` pool-mode
 
-::
+.. code::
 
   avn service connection-pool-create demo-pg \
     --pool-name cp-analytics-it             \
@@ -64,7 +64,7 @@ Deletes a :doc:`PgBouncer connection pool </docs/products/postgresql/concepts/pg
 
 **Example:** In the service ``demo-pg`` delete a connection pool named ``cp-analytics-it``.
 
-::
+.. code::
 
   avn service connection-pool-delete demo-pg \
     --pool-name cp-analytics-it             
@@ -85,7 +85,7 @@ Lists the :doc:`PgBouncer connection pool </docs/products/postgresql/concepts/pg
 
 **Example:** List the connection pools available in the service ``demo-pg``.
 
-::
+.. code::
 
   avn service connection-pool-list demo-pg
 
@@ -128,7 +128,7 @@ Updates a :doc:`PgBouncer connection pool </docs/products/postgresql/concepts/pg
 * pool-size of ``20`` connections 
 * ``session`` pool-mode
 
-::
+.. code::
 
   avn service connection-pool-update demo-pg \
     --pool-name cp-analytics-it             \

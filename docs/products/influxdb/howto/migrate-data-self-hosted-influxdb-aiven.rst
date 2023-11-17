@@ -14,7 +14,7 @@ Create the data export file
 To export the data from a self-hosted InfluxDB service, you will first need to run the ``influx_inspect export`` command. This command will create a dump file of your data.
 
 The following is an example command:
-::
+.. code::
 
     influx_inspect export -datadir "/var/lib/influxdb/data" -waldir "/var/lib/influxdb/wal" -out "/scratch/weather.influx.gz" -database weather -compress
 
@@ -44,9 +44,10 @@ Now that you have successfully created the export file, you can proceed to impor
     The ``avnadmin`` admin user does not have full superuser access, so it is necessary to pre-create the database before transferring the data. 
 
 3. **Import the data:** You can now push the exported data to the destination Aiven service using the ``influx -import`` command. You will need to specify the host, port, username, and password of the Aiven for InfluxDB service and the path to the exported data. The following is an example command: 
-::
 
-    influx -import -host influx-testuser-business-demo.aivencloud.com -port 12691 -username 'avnadmin' -password 'secret' -ssl -precision rfc3339 -compressed -path ./weather.influx.gz
+   .. code::
+
+      influx -import -host influx-testuser-business-demo.aivencloud.com -port 12691 -username 'avnadmin' -password 'secret' -ssl -precision rfc3339 -compressed -path ./weather.influx.gz
 
 where, 
 

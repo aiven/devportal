@@ -13,7 +13,7 @@ An Apache Kafka topic represents a continuous stream of messages that typically 
 
 For example, if there is a topic containing a user's home address, on every update, a message is sent using ``user_id`` as the primary key and home address as the value:
 
-::
+.. code::
 
    1001 -> "4 Privet Dr"
    1002 -> "221B Baker Street"

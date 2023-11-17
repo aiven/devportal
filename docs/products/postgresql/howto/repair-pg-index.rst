@@ -8,7 +8,7 @@ Rebuild non-unique indexes
 
 You can rebuild corrupted indexes that do not have ``UNIQUE`` in their definition using the following command, that creates a new index replacing the old one:
 
-::
+.. code::
 
     REINDEX INDEX <index-name>;
 
@@ -42,7 +42,7 @@ To identify conflicting duplicate rows, you need to run a query that counts the 
 
 For example, the following ``route`` table has a ``unique_route_index`` index defining unique rows based on the combination of the ``source`` and ``destination`` columns:
 
-::
+.. code::
 
     CREATE TABLE route(
         source TEXT, 
@@ -55,7 +55,7 @@ For example, the following ``route`` table has a ``unique_route_index`` index de
 
 If the ``unique_route_index`` is corrupted, you can find duplicated rows in the ``route`` table by issuing the following query:
 
-::
+.. code::
 
     SELECT 
         source, 

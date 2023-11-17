@@ -93,7 +93,7 @@ Set roles
 
 A single user can be assigned different roles, either individually or simultaneously.
 
-::
+.. code::
 
     SET ROLE auditor;
 
@@ -128,11 +128,11 @@ Run the following commands to see all available grants, users, and roles::
 
     SHOW GRANTS;
 
-::
+.. code::
 
     SHOW USERS;
 
-::
+.. code::
 
     SHOW ROLES;
 
