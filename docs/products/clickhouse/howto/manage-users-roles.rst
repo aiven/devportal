@@ -97,9 +97,11 @@ A single user can be assigned different roles, either individually or simultaneo
 
     SET ROLE auditor;
 
-You can also specify a role to be activated by default when the user logs in::
+You can also specify a role to be activated by default when the user logs in:
 
-    SET DEFAULT ROLE auditor, external TO Mary.Anderson, James.Miller;
+.. code::
+  
+   SET DEFAULT ROLE auditor, external TO Mary.Anderson, James.Miller;
 
 Delete a role
 ^^^^^^^^^^^^^

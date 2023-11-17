@@ -100,6 +100,8 @@ Migrate to an existing Aiven for Redis service by updating the service configura
 Remove migration from configuration
 ---------------------------------------------
 
-Migration is one-time operation - once the status is ``done``, the migration cannot be restarted. If you need to run migration again, you should first remove it from the configuration, and then configure it again::
+Migration is one-time operation - once the status is ``done``, the migration cannot be restarted. If you need to run migration again, you should first remove it from the configuration, and then configure it again:
 
-    avn service update --project test --remove-option migration redis
+.. code::
+  
+   avn service update --project test --remove-option migration redis
