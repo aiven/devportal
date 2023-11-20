@@ -37,13 +37,13 @@ currently support AWS PrivateLink.
    -  Using the Aiven CLI, run the following command including your AWS
       account ID, the access scope, and the name of your Aiven service:
 
-      ::
+      .. code::
 
          $ avn service privatelink aws create --principal arn:aws:iam::$AWS_account_ID:$access_scope $Aiven_service_name
 
       For example:
 
-      ::
+      .. code::
 
          $ avn service privatelink aws create --principal arn:aws:iam::012345678901:user/mwf my-kafka
 
@@ -70,7 +70,7 @@ currently support AWS PrivateLink.
 
 #. In the AWS CLI, run the following command to create a VPC endpoint:
 
-   ::
+   .. code::
 
       $ aws ec2 --region eu-west-1 create-vpc-endpoint --vpc-endpoint-type Interface --vpc-id $your_vpc_id --subnet-ids $space_separated_list_of_subnet_ids --security-group-ids $security_group_ids --service-name com.amazonaws.vpce.eu-west-1.vpce-svc-0b16e88f3b706aaf1
 
@@ -79,7 +79,7 @@ currently support AWS PrivateLink.
      **Network** > **AWS service name** in `Aiven Console <https://console.aiven.io>`__ or by
      running the following command in the Aiven CLI:
 
-   ::
+   .. code::
 
       $ avn service privatelink aws get aws_service_name
 
@@ -111,7 +111,7 @@ currently support AWS PrivateLink.
       ``user_config.privatelink_access.<service component>`` to ``true``
       for the components that you want to enable. For example:
 
-      ::
+      .. code::
 
          $ avn service update -c privatelink_access.kafka=true $Aiven_service_name
          $ avn service update -c privatelink_access.kafka_connect=true $Aiven_service_name
@@ -199,7 +199,7 @@ allowed to connect a VPC endpoint:
 
 -  Use the ``update`` command of the Aiven CLI:
 
-   ::
+   .. code::
 
       # avn service privatelink aws update --principal arn:aws:iam::$AWS_account_ID:$access_scope $Aiven_service_name
 
@@ -224,11 +224,11 @@ Deleting a privatelink connection
 
 -  Using the Aiven CLI, run the following command:
 
-   ::
+   .. code::
 
       $ avn service privatelink aws delete $Aiven_service_name
 
-   ::
+   .. code::
 
       AWS_SERVICE_ID             AWS_SERVICE_NAME                                        PRINCIPALS                         STATE
       ========================== ======================================================= ================================== ========

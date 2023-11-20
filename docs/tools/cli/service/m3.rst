@@ -50,7 +50,7 @@ Adds a new :doc:`Aiven for M3 namespace </docs/products/m3db/concepts/namespaces
 * 28 days (``28d``) of retention
 * avoiding including aggregated writes in the commit log
 
-::
+.. code::
   
   avn service m3 namespace add  demo-m3 weekly_agg \
     --ns-type aggregated                           \
@@ -76,7 +76,7 @@ Deletes an existing :doc:`Aiven for M3 namespace </docs/products/m3db/concepts/n
 
 **Example:** In the M3 service ``demo-m3``, delete the M3 namespace named ``weekly_agg``.
 
-::
+.. code::
   
   avn service m3 namespace delete demo-m3 weekly_agg
 
@@ -96,7 +96,7 @@ Retrieves the details of all existing :doc:`Aiven for M3 namespaces </docs/produ
 
 **Example:** Retrieve the definition of all namespaces defined in the M3 service ``demo-m3``.
 
-::
+.. code::
   
   avn service m3 namespace list demo-m3
 
@@ -150,7 +150,7 @@ Updates an existing :doc:`Aiven for M3 namespace </docs/products/m3db/concepts/n
 * 15 days (``15d``) of retention
 * avoiding including aggregated writes in the commit log
 
-::
+.. code::
   
   avn service m3 namespace update demo-m3 weekly_agg \
     --ns-resolution 5m                               \

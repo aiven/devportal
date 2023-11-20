@@ -17,9 +17,11 @@ Variable                Description
 Pre-requisites
 ''''''''''''''
 
-Install the ``predis`` library::
+Install the ``predis`` library:
 
-    composer require predis/predis
+.. code::
+  
+   composer require predis/predis
 
 Code
 ''''
@@ -30,10 +32,14 @@ Create a new file named ``index.php``, add the following content and replace the
 
 This code creates a key named ``key`` with the value ``hello world`` and no expiration time. Then, it gets the key back from Redis and prints its value.
 
-Run the code::
+Run the code:
 
-    php index.php
+.. code::
+   
+   php index.php
 
-If the script runs successfully, the outputs should be::
+If the script runs successfully, the outputs should be:
 
-    The value of key is: hello world
+.. code::
+
+   The value of key is: hello world

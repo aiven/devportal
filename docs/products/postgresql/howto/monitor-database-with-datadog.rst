@@ -13,7 +13,7 @@ To use Datadog Database Monitoring with your Aiven for PostgreSQL® services, yo
 * Ensure the :doc:`Datadog Metrics integration </docs/integrations/datadog/datadog-metrics>` is enabled. 
 * The :doc:`PostgreSQL extensions <../reference/list-of-extensions>` - ``pg_stat_statements`` and ``aiven_extras``, must be enabled by executing the following `CREATE EXTENSION <https://www.postgresql.org/docs/current/sql-createextension.html>`_ SQL commands directly on the Aiven for PostgreSQL® database service.
 
-::
+.. code::
 
     CREATE EXTENSION pg_stat_statements;   
     CREATE EXTENSION aiven_extras;
@@ -33,17 +33,21 @@ Using the ``avn service integration-list`` :ref:`Aiven CLI command <avn_service_
 
     avn service integration-update --user-config '{"datadog_dbm_enabled": true}' <INTEGRATION_UUID>
 
-* Check if user-config ``datadog_dbm_enabled`` set correctly::
+* Check if user-config ``datadog_dbm_enabled`` set correctly:
+
+  .. code::
   
-    avn service integration-list <SERVICE_NAME> \
+     avn service integration-list <SERVICE_NAME> \
         --project <PROJECT_NAME>  \
         --json | jq '.[] | select(.integration_type=="datadog").user_config'
     
-  ``datadog_dbm_enabled`` should be set to ``true``::
+  ``datadog_dbm_enabled`` should be set to ``true``:
+  
+  .. code::
 
-    {
-    "datadog_dbm_enabled": true
-    }
+     {
+       "datadog_dbm_enabled": true
+     }
     
 Executing the steps successfully results in enabling Datadog Database Monitoring for your service.
 

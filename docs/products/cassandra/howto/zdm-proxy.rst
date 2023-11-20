@@ -74,7 +74,7 @@ Check if the binary has been downloaded successfully using ``ls`` in the relevan
 Run ZDM Proxy
 '''''''''''''
 
-To run ZDM Proxy, specify connection information by setting ZDM_* environment variables using the ``export`` command. Next, run the binary.
+To run ZDM Proxy, specify connection information by setting ``ZDM_*`` environment variables using the ``export`` command. Next, run the binary.
 
 .. code-block:: bash
 

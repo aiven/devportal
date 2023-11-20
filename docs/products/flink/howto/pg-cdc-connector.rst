@@ -28,7 +28,8 @@ In addition to the above, gather the following information about the source Post
 * ``Decoding plugin name``: The decoding plugin name to use for capturing the changes. For PostgreSQL CDC, set it as ``pgoutput``.
 
 .. important:: 
-    To create a PostgreSQL CDC source connector in Aiven for Apache Flink with Aiven for PostgreSQL using the pgoutput plugin, you need to have superuser privileges. For more information, see :ref:`Troubleshooting`. 
+    To create a PostgreSQL CDC source connector in Aiven for Apache Flink with Aiven for PostgreSQL using the pgoutput plugin, you need to have superuser privileges.
+    For more information, see :ref:`Troubleshooting`. 
 
 
 Configure the PostgreSQL CDC connector 

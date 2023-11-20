@@ -157,7 +157,7 @@ The configuration file contains the following peculiarities:
 
 Once the connector is created successfully, you should see the following three entries in the target Redis database.
 
-::
+.. code::
 
     1) "students-1" containing "{\"name\":\"carlo\",\"id\":1,\"age\":77}"
     2) "students-2" containing "{\"name\":\"lucy\",\"id\":2,\"age\":21}"

@@ -8,13 +8,13 @@ These situations are uncommon but can have a huge impact, so they need to be pre
 What is a Disaster Recovery scenario?
 -----------------------------------------------------------
 
-This is a preset scenario where an Aiven specialist will simulate an issue with your service and `sabotage` one (or more) of your Virtual Machines. For example, with an Aiven for PostgreSQL® service, we can `sabotage` the Primary instance and test the failover functionality or we can sabotage both nodes to test recovery time for a complete outage.
+This is a preset scenario where an Aiven specialist will simulate an issue with your service and ``sabotage`` one (or more) of your Virtual Machines. For example, with an Aiven for PostgreSQL® service, we can ``sabotage`` the Primary instance and test the failover functionality or we can sabotage both nodes to test recovery time for a complete outage.
 
 What is needed?
 -----------------------------------------------------------
 
 1. At least 7 working days notice and the time (plus timezone) that you would like this carried out.
-2. A `throwaway` service (i.e. one that is created specifically for this scenario and not a service used in Production).
+2. A ``throwaway`` service (i.e. one that is created specifically for this scenario and not a service used in Production).
 3. The virtual machine and/or the availability zone that you would like to target.
 4. An Enterprise Support contract.
 

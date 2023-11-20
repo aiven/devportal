@@ -8,7 +8,7 @@ Databases and tables are at the core of any Database Management System. ClickHou
 Create a database
 -----------------
 
-Creating databases in an Aiven for ClickHouse service can only be done via the Aiven platform; the `admin` user is not allowed to create databases directly for security and reliability reasons. However, you can create a new database through the web interface of `Aiven console <https://console.aiven.io/>`_:
+Creating databases in an Aiven for ClickHouse service can only be done via the Aiven platform; the ``admin`` user is not allowed to create databases directly for security and reliability reasons. However, you can create a new database through the web interface of `Aiven console <https://console.aiven.io/>`_:
 
 1. Log in to the  `Aiven Console <https://console.aiven.io/>`_, and select your service from the **Services** page.
 2. In your service's page, select **Databases and tables** from the sidebar.

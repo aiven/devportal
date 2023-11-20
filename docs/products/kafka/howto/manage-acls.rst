@@ -31,35 +31,35 @@ To add new access control list, follow these steps:
 
 You can add a new access control list grant via the `Aiven Console <https://console.aiven.io/>`_ with:
 
-1. Log in to `Aiven Console <https://console.aiven.io/>`_ and select your service.
+#. Log in to `Aiven Console <https://console.aiven.io/>`_ and select your service.
 
-2. Select **ACL** from the left sidebar and select **Add entry**. 
-3. On the **Add access control entry** screen, select the desired ACL type:
+#. Select **ACL** from the left sidebar and select **Add entry**. 
+#. On the **Add access control entry** screen, select the desired ACL type:
 
-    a. For **ACL for Topics**, enter the following details:
+   a. For **ACL for Topics**, enter the following details:
     
-        * Username
-        * Topic
-        * Permissions
+      * Username
+      * Topic
+      * Permissions
 
-    b. For ACL for Schema Registry, enter the following details:
+   b. For ACL for Schema Registry, enter the following details:
     
-        * Username
-        * Resources
-        * Permissions
+      * Username
+      * Resources
+      * Permissions
 
-    Refer to  :doc:`Access control lists and permission mapping <../concepts/acl>` section for more information on permission mapping.
+    Refer to the :doc:`Access control lists and permission mapping <../concepts/acl>` section for more information.
 
-6. Click **Add ACL entry**.
+#. Click **Add ACL entry**.
 
-.. Tip:: 
+   .. Tip:: 
     
-    When using the :doc:`Aiven Terraform Provider </docs/tools/terraform>`, you can add the ``default_acl`` key to your ``resource`` and set it to ``false`` if you do not want to create the admin user with wildcard permissions.
+      When using the :doc:`Aiven Terraform Provider </docs/tools/terraform>`, you can add the ``default_acl`` key to your ``resource`` and set it to ``false`` if you do not want to create the admin user with wildcard permissions.
 
-5. Once you start defining custom ACLs, it's recommended to delete the default ``avnadmin`` rule by clicking the **Remove** icon. 
+#. Once you start defining custom ACLs, it's recommended to delete the default ``avnadmin`` rule by clicking the **Remove** icon. 
 
-.. Warning:: 
+   .. Warning:: 
 
-    ACL restrictions currently do not apply to Kafka REST. Rules are applied based on the username and topic names, but there are no restrictions on consumer group names.
+      ACL restrictions currently do not apply to Kafka REST. Rules are applied based on the username and topic names, but there are no restrictions on consumer group names.
 
-    We are working on extending the same restrictions to Kafka REST.
+      We are working on extending the same restrictions to Kafka REST.

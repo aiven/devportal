@@ -107,13 +107,13 @@ Create a Kafka Connect connector with Aiven CLI
 
 To create the connector, execute the following :ref:`Aiven CLI command <avn_service_connector_create>`, replacing the ``SERVICE_NAME`` with the name of the Aiven service where the connector needs to run:
 
-:: 
+.. code:: 
 
     avn service connector create SERVICE_NAME @debezium_source_pg.json
 
 Check the connector status with the following command, replacing the ``SERVICE_NAME`` with the Aiven service and the ``CONNECTOR_NAME`` with the name of the connector defined before:
 
-::
+.. code::
 
     avn service connector status SERVICE_NAME CONNECTOR_NAME
 
@@ -130,7 +130,7 @@ Solve the error ``must be superuser to create FOR ALL TABLES publication``
 
 When creating a Debezium source connector pointing to Aiven for PostgreSQL using the ``pgoutput`` plugin, you could get the following error:
 
-::
+.. code::
 
     Caused by: org.postgresql.util.PSQLException: ERROR: must be superuser to create FOR ALL TABLES publication
     
@@ -141,7 +141,7 @@ The error is due to Debezium trying to create a publication and failing because 
 
 Note that with older versions of Debezium, there was a bug preventing the addition of more tables to the filter with ``filtered`` mode. As a result, this configuration was not conflicting with a publication ``FOR ALL TABLES``. Starting with Debezium 1.9.7, those configurations are conflicting and you could get the following error:
 
-::
+.. code::
 
     Caused by: org.postgresql.util.PSQLException: ERROR: publication "dbz_publication" is defined as FOR ALL TABLES
        Detail: Tables cannot be added to or dropped from FOR ALL TABLES publications.
@@ -157,13 +157,13 @@ To create the publication in PostgreSQL:
 
 * Installing the ``aiven-extras`` extension:
 
-::
+.. code::
 
     CREATE EXTENSION aiven_extras CASCADE;
 
 * Create a publication (with name e.g. ``my_test_publication``) for all the tables:
 
-::
+.. code::
 
     SELECT * 
     FROM aiven_extras.pg_create_publication_for_all_tables(

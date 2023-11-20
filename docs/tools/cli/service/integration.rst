@@ -48,7 +48,7 @@ Creates a new service integration.
 
 **Example:** Create a new ``kafka_logs`` service integration to send the logs of the service named ``demo-pg`` to an Aiven for Kafka service named ``demo-kafka`` in the topic ``test_log``.
 
-::
+.. code::
 
   avn service integration-create            \
     --integration-type kafka_logs           \
@@ -72,7 +72,7 @@ Deletes a service integration.
 
 **Example:** Delete the integration with id ``8e752fa9-a0c1-4332-892b-f1757390d53f``.
 
-::
+.. code::
 
     avn service integration-delete 8e752fa9-a0c1-4332-892b-f1757390d53f
 
@@ -100,7 +100,7 @@ Creates an external service integration endpoint.
 
 **Example:** Create an external Apache Kafka® endpoint named ``demo-ext-kafka``.
 
-::
+.. code::
 
     avn service integration-endpoint-create --endpoint-name demo-ext-kafka \
         --endpoint-type external_kafka  \
@@ -108,7 +108,7 @@ Creates an external service integration endpoint.
 
 **Example:** Create an external Loggly endpoint named ``Loggly-ext``.
 
-::
+.. code::
 
     avn service integration-endpoint-create         \
       --endpoint-name Loggly-ext                    \
@@ -137,7 +137,7 @@ Deletes a service integration endpoint.
 
 **Example:** Delete the endpoint with ID ``97590813-4a58-4c0c-91fd-eef0f074873b``.
 
-::
+.. code::
 
     avn service integration-endpoint-delete 97590813-4a58-4c0c-91fd-eef0f074873b
 
@@ -150,7 +150,7 @@ Lists all service integration endpoints available in a selected project.
 
 **Example:** Lists all service integration endpoints available in the selected project.
 
-::
+.. code::
 
     avn service integration-endpoint-list
 
@@ -173,7 +173,7 @@ Lists all available integration endpoint types for given project.
 
 **Example:** Lists all service integration endpoint types available in the selected project.
 
-::
+.. code::
 
     avn service integration-endpoint-types-list
 
@@ -215,7 +215,7 @@ Updates a service integration endpoint.
 
 **Example:** Update an external Apache Kafka® endpoint with id ``821e0144-1503-42db-aa9f-b4aa34c4af6b``.
 
-::
+.. code::
 
     avn service integration-endpoint-update 821e0144-1503-42db-aa9f-b4aa34c4af6b \
         --user-config-json  '{"bootstrap_servers":"servertestABC:123","security_protocol":"PLAINTEXT"}'
@@ -238,7 +238,7 @@ Lists the integrations defined for a selected service.
   
 **Example:** List all integrations for the service named ``demo-pg``.
 
-::
+.. code::
 
     avn service integration-list demo-pg
 
@@ -263,7 +263,7 @@ Lists all available integration types for given project.
   
 **Example:** List all integration types for the currently selected project.
 
-::
+.. code::
 
     avn service integration-types-list
 
@@ -307,7 +307,7 @@ Updates an existing service integration.
 
 **Example:** Update the service integration with ID  ``8e752fa9-a0c1-4332-892b-f1757390d53f`` changing the Aiven for Kafka topic storing the logs to ``test_pg_log``.
 
-::
+.. code::
 
   avn service integration-update 8e752fa9-a0c1-4332-892b-f1757390d53f \
     -c 'kafka_topic=test_pg_log'

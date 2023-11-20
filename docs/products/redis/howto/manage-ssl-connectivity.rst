@@ -31,7 +31,8 @@ Set up ``stunnel`` process
 If you want to keep SSL settings on database side, but hide it from the client side, you can set up a ``stunnel`` process on the client to handle encryption.
 
 You can use the following ``stunnel`` configuration, for example ``stunnel.conf``, to set up a ``stunnel`` process.
-::
+
+.. code::
 
     client = yes
     foreground = yes

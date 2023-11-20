@@ -29,7 +29,7 @@ Prerequisites
 * Depending on the method you choose to use for disabling CCR
 
   * Access to `Aiven Console <https://console.aiven.io/>`_
-  * `cURL` CLI tool
+  * ``cURL`` CLI tool
   * `Aiven CLI tool <https://github.com/aiven/aiven-client>`_
 
 * CCR enabled on a pair of Aiven for Apache Cassandra services
@@ -93,7 +93,7 @@ You can disable CCR for your Aiven for Apache Cassandra service(s) by calling th
 
 .. note::
    
-   In this instruction, the `curl` command line tool is used to interact with Aiven APIs.
+   In this instruction, the ``curl`` command line tool is used to interact with Aiven APIs.
 
 .. tip::
 

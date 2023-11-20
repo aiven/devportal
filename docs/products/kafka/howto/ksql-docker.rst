@@ -34,17 +34,21 @@ ksqlDB by default uses the ``ssl.truststore`` settings for the Schema Registry c
 
 To have ksqlDB working with Aiven's `Karapace <https://karapace.io/>`__ Schema Registry you need to explicitly define a truststore that contains the commonly trusted root CA of Schema Registry server. To create such a truststore:
 
-1. Obtain the root CA of the server with the following ``openssl`` command by replacing the ``APACHE_KAFKA_HOST`` and ``SCHEMA_REGISTRY_PORT`` placeholders::
+1. Obtain the root CA of the server with the following ``openssl`` command by replacing the ``APACHE_KAFKA_HOST`` and ``SCHEMA_REGISTRY_PORT`` placeholders:
 
-    openssl s_client -connect APACHE_KAFKA_HOST:SCHEMA_REGISTRY_PORT \
+   .. code::
+
+      openssl s_client -connect APACHE_KAFKA_HOST:SCHEMA_REGISTRY_PORT \
         -showcerts < /dev/null 2>/dev/null | \
         awk '/BEGIN CERT/{s=1}; s{t=t "\n" $0};
             /END CERT/ {last=t; t=""; s=0}; END{print last}' \
         > ca_schema_registry.cert
 
-2. Create the truststore with the following ``keytool`` command  by replacing the ``TRUSTSTORE_SCHEMA_REGISTRY_FILE_NAME`` and ``TRUSTSTORE_SCHEMA_REGISTRY_PASSWORD`` placeholders::
+2. Create the truststore with the following ``keytool`` command  by replacing the ``TRUSTSTORE_SCHEMA_REGISTRY_FILE_NAME`` and ``TRUSTSTORE_SCHEMA_REGISTRY_PASSWORD`` placeholders:
 
-    keytool -import -file ca_schema_registry.cert \
+   .. code:: 
+    
+      keytool -import -file ca_schema_registry.cert \
         -alias CA \
         -keystore TRUSTSTORE_SCHEMA_REGISTRY_FILE_NAME \
         -storepass TRUSTSTORE_SCHEMA_REGISTRY_PASSWORD \
@@ -73,7 +77,7 @@ You can run ksqlDB on Docker with the following command, by replacing the placeh
 * ``TRUSTSTORE_SCHEMA_REGISTRY_FILE_NAME``
 * ``TRUSTSTORE_SCHEMA_REGISTRY_PASSWORD``
 
-::
+.. code::
 
     docker run -d --name ksql  \
         -v SSL_STORE_FOLDER/:/ssl_settings/ \
@@ -102,8 +106,10 @@ You can run ksqlDB on Docker with the following command, by replacing the placeh
 
 .. Warning::
 
-    Some docker setups have issues using the ``-v`` mounting options. In those cases copying the Keystore and Truststore in the container can be an easier option. This can be achieved with the following::
+    Some docker setups have issues using the ``-v`` mounting options. In those cases copying the Keystore and Truststore in the container can be an easier option. This can be achieved with the following:
 
+    .. code:: 
+      
         docker container create --name ksql  \
             -p 127.0.0.1:8088:8088 \
             -e KSQL_BOOTSTRAP_SERVERS=APACHE_KAFKA_HOST:APACHE_KAFKA_PORT \
@@ -130,6 +136,8 @@ You can run ksqlDB on Docker with the following command, by replacing the placeh
 
 
 
-Once the Docker image is up and running you should be able to access ksqlDB at ``localhost:8088`` or connect via terminal with the following command::
+Once the Docker image is up and running you should be able to access ksqlDB at ``localhost:8088`` or connect via terminal with the following command:
 
-    docker exec -it ksql ksql
+.. code::
+
+   docker exec -it ksql ksql

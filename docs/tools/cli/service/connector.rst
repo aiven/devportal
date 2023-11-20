@@ -27,7 +27,7 @@ Lists Apache Kafka® Connect connector plugins available in a given Aiven for Ap
 
 **Example:** List the Kafka Connect connector plugins available for the service ``kafka-demo``.
 
-::
+.. code::
 
   avn service connector available kafka-demo
 
@@ -51,7 +51,7 @@ Creates a new Apache Kafka® Connect connector in a given Aiven for Apache Kafka
 
 **Example:** Create a new JDBC source Kafka Connect connector in the service ``kafka-demo`` passing the JSON configuation string.
 
-::
+.. code::
 
   avn service connector create kafka-demo '{
     "name": "pg-bulk-invoices-source",
@@ -84,7 +84,7 @@ Deletes an Apache Kafka® Connect connector in a given Aiven for Apache Kafka® 
 
 **Example:** Delete the Kafka Connect connector named ``pg-bulk-invoices-source`` in the service ``kafka-demo``.
 
-::
+.. code::
 
    avn service connector delete kafka-demo pg-bulk-invoices-source 
 
@@ -104,7 +104,7 @@ Lists Apache Kafka® Connect connectors in a given Aiven for Apache Kafka® serv
 
 **Example:** List all Kafka Connect connectors in the service ``kafka-demo``.
 
-::
+.. code::
 
     avn service connector list kafka-demo
 
@@ -158,7 +158,7 @@ Pauses an Apache Kafka® Connect connector in a given Aiven for Apache Kafka® s
 
 **Example:** Pause the Kafka Connect connector named ``pg-bulk-invoices-source`` in the service ``kafka-demo``.
 
-::
+.. code::
 
    avn service connector pause kafka-demo pg-bulk-invoices-source 
 
@@ -181,7 +181,7 @@ Restarts an Apache Kafka® Connect connector in a given Aiven for Apache Kafka®
 
 **Example:** Restart the Kafka Connect connector named ``pg-bulk-invoices-source`` in the service ``kafka-demo``.
 
-::
+.. code::
 
    avn service connector restart kafka-demo pg-bulk-invoices-source 
 
@@ -205,7 +205,7 @@ Restarts an Apache Kafka® Connect connector task in a given Aiven for Apache Ka
 
 **Example:** Restart the task with id ``0`` in the Kafka Connect connector named ``pg-bulk-invoices-source`` belonging to the service ``kafka-demo``.
 
-::
+.. code::
 
     avn service connector restart-task kafka-demo pg-bulk-invoices-source 0
 
@@ -227,7 +227,7 @@ Resumes an Apache Kafka® Connect connector in a given Aiven for Apache Kafka® 
 
 **Example:** Resume the Kafka Connect connector named ``pg-bulk-invoices-source`` belonging to the service ``kafka-demo``.
 
-::
+.. code::
 
     avn service connector resume kafka-demo pg-bulk-invoices-source
 
@@ -249,7 +249,7 @@ Retrieves the configuration information for an Apache Kafka® Connect connector 
 
 **Example:** Retrieve the schema for the Kafka Connect plugin with class ``io.debezium.connector.sqlserver.SqlServerConnector`` belonging to the service ``kafka-demo``.
 
-::
+.. code::
 
     avn service connector schema kafka-demo io.debezium.connector.sqlserver.SqlServerConnector
 
@@ -271,7 +271,7 @@ Gets an Apache Kafka® Connect connector status in a given Aiven for Apache Kafk
 
 **Example:** Check the status of a Kafka Connect connector named ``pg-bulk-invoices-source`` belonging to the service ``kafka-demo``.
 
-::
+.. code::
 
     avn service connector status kafka-demo pg-bulk-invoices-source
 
@@ -312,6 +312,6 @@ Updates an Apache Kafka® Connect connector in a given Aiven for Apache Kafka® 
 
 **Example:** Update a the JDBC source Kafka Connect connector named ``pg-bulk-invoices-source`` in the service ``kafka-demo`` with the JSON configuation string contained in the file ``kafka-connect-config.json``.
 
-::
+.. code::
 
     avn service connector update kafka-demo pg-bulk-invoices-source @kafka-connect-config.json

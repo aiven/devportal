@@ -68,7 +68,7 @@ Query using SELECT and the s3Cluster function
 '''''''''''''''''''''''''''''''''''''''''''''
 
 The ``s3Cluster`` function allows all cluster nodes to participate in the query execution.
-Using `default` for the cluster name parameter, we can compute the same aggregations as above as follows:
+Using ``default`` for the cluster name parameter, we can compute the same aggregations as above as follows:
 
 .. code-block:: sql
 

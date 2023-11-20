@@ -30,7 +30,7 @@ To configure Slack as the target using the Slack connector for Apache Flink, fol
 
 5. In the **Table SQL** section, set the connector to **slack** and enter the necessary token as shown in the example below:
 
-::
+.. code::
 
     CREATE TABLE channel_name (
     channel_id STRING,

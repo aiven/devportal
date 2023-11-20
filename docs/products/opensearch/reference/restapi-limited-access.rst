@@ -4,7 +4,7 @@ For operational reasons, Aiven for OpenSearch® limits access to REST API endpoi
 
 The following endpoints are allowed:
 
-::
+.. code::
 
    GET /_cluster/health
    GET /_cluster/pending_tasks
@@ -17,7 +17,7 @@ The following endpoints are allowed:
 The following API endpoint hierarchies are
 blocked:
 
-::
+.. code::
 
    /_cat/repositories
    /_cluster

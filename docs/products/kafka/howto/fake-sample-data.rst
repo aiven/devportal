@@ -17,7 +17,7 @@ To learn data streaming, you need a continuous flow of data and for that you can
 
 1. Clone the repository:
 
-::
+.. code::
 
     git clone https://github.com/aiven/fake-data-producer-for-apache-kafka-docker
 
@@ -25,7 +25,7 @@ To learn data streaming, you need a continuous flow of data and for that you can
 
 3. Create a new access token via the `Aiven Console <https://console.aiven.io/>`_ or the following command in the :doc:`Aiven CLI </docs/tools/cli/account>`, changing the ``max-age-seconds`` appropriately for the duration of your test:
 
-::
+.. code::
 
     avn user access-token create                            \
     --description "Token used by Fake data generator"       \
@@ -46,7 +46,7 @@ To learn data streaming, you need a continuous flow of data and for that you can
 
 5. Build the Docker image with:
 
-::
+.. code::
 
     docker build -t fake-data-producer-for-apache-kafka-docker .
 
@@ -56,7 +56,7 @@ To learn data streaming, you need a continuous flow of data and for that you can
 
 6. Start the streaming data flow with:
 
-::
+.. code::
 
     docker run fake-data-producer-for-apache-kafka-docker
 
