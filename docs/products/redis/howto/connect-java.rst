@@ -35,11 +35,15 @@ Create a new file named ``RedisExample.java``:
 
 This code creates a key named ``key`` with the value ``hello world`` and no expiration time. Then, it gets the key back from Redis and prints its value.
 
-Replace the placeholder with the **Redis URI** and compile and run the code::
+Replace the placeholder with the **Redis URI** and compile and run the code:
 
-    javac -cp lib/*:. RedisExample.java && java -cp lib/*:. RedisExample REDIS_URI
+.. code::
+
+   javac -cp lib/*:. RedisExample.java && java -cp lib/*:. RedisExample REDIS_URI
 
 
-If the command runs successfully, the outputs should be::
+If the command runs successfully, the outputs should be:
 
-    The value of key is: hello world
+.. code::
+ 
+   The value of key is: hello world
