@@ -14,24 +14,23 @@ Plans under 4 GiB
 
 For plans under 4 GiB of RAM, the number of allowed connections is |mysql_connections_per_<4G| per GiB:
 
-:math:`{max\_connections} =` |mysql_connections_per_<4G| |mysql_max_connections| 
+    :math:`{max\_connections} =` |mysql_connections_per_<4G| |mysql_max_connections| 
 
 .. topic:: Example
 
     With 2 GiB of RAM, the maximum number of connections is
-    
-    :math:`{max\_connections} =` |mysql_connections_per_<4G| x 2 + 1
+            :math:`{max\_connections} =` |mysql_connections_per_<4G| x 2 + 1
 
 Plans with 4 GiB or more
 ------------------------
 
 For plans higher or equal to 4 GiB, the number of allowed connections is |mysql_connections_per_>4G| per GiB:
     
-:math:`{max\_connections} =` |mysql_connections_per_>4G| |mysql_max_connections|
+    :math:`{max\_connections} =` |mysql_connections_per_>4G| |mysql_max_connections|
 
 .. topic:: Example
 
     With 7 GiB of RAM, the maximum number of connections is
-   :math:`{max\_connections} =` |mysql_connections_per_>4G| x 7 + 1
+            :math:`{max\_connections} =` |mysql_connections_per_>4G| x 7 + 1
 
 .. include:: /includes/platform-variables.rst
