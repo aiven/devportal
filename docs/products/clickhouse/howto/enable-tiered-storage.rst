@@ -49,7 +49,7 @@ When you have tiered storage enabled on your project, you can move on to enablin
 Enable in Aiven Console
 '''''''''''''''''''''''
 
-1. Log in to `Aiven Console <https://console.aiven.io/>`_, and go to your organzation > project > service.
+1. Log in to `Aiven Console <https://console.aiven.io/>`_, and go to your organization > project > service.
 2. On the **Overview** page of your service, select **Databases and tables** from the sidebar.
 3. In the **Databases and tables** view, find a table on which you'd like to enable tiered storage, and select **Enable tiered storage** from the **Actions** menu (**...**).
 4. In the **Enable tiered storage** window, confirm you want to activate tiered storage on the table and understand the impact by selecting **Enable**.

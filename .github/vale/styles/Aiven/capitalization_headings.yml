@@ -125,6 +125,7 @@ exceptions:
   - Sphinx
   - Splunk
   - Spring
+  - SQL
   - SQL Server
   - Startup
   - 'Step \d+: \w+'
