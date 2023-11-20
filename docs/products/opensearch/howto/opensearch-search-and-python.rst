@@ -251,7 +251,7 @@ This is possible because `full-text queries <https://opensearch.org/docs/latest/
                   }
                 }
 
-The default standard analyzer drops most punctuation, breaks up text into individual words, and lower cases them to optimize the search. If you want to choose a different analyzer, check out the available ones in the `OpenSearch documentation <https://opensearch.org/docs/latest/opensearch/query-dsl/full-text/#match>`__. 
+The default standard analyzer drops most punctuation, breaks up text into individual words, and lower cases them to optimize the search. If you want to choose a different analyzer, check out the available ones in the `OpenSearch documentation <https://opensearch.org/docs/latest/query-dsl/full-text/match/>`__. 
 
 You can find out how a customized match query can be written with your Python OpenSearch client in the `search_match() <https://github.com/aiven/demo-opensearch-python/blob/main/search.py>`__ function. You can run yourself the code to explore the ``match`` function. For example, if you want to find out recipes with the name "Spring" on them:
 
@@ -278,7 +278,7 @@ As a result of the "Spring" search recipes, you'll find:
 
 .. seealso::
   
-  Find out more about `match queries <https://opensearch.org/docs/latest/opensearch/query-dsl/full-text/#match>`_.
+  Find out more about `match queries <https://opensearch.org/docs/latest/query-dsl/full-text/match/>`_.
 
 Use a ``multi_match`` query
 ---------------------------
@@ -344,7 +344,7 @@ Match phrases and add some ``slop``
 You can use the ``slop`` parameter to create more flexible searches. Suppose you're searching for ``pannacotta marmalade`` with the ``match_phrase`` query, and no results are found. This happens because you are looking for exact phrases, as discussed in :ref:`match phrase query <match-phrase-query>` section.
 You can expand your searches by configuring the ``slop`` parameter. The default value for the ``slop`` parameter is 0. 
 
-The ``slop`` parameter allows to control the degree of disorder in your search as explained in the `OpenSearch documentation for the slop feature <https://opensearch.org/docs/latest/opensearch/query-dsl/full-text/#match>`_: 
+The ``slop`` parameter allows to control the degree of disorder in your search as explained in the `OpenSearch documentation for the slop feature <https://opensearch.org/docs/latest/query-dsl/full-text/match/>`_: 
 
       ``slop`` is the number of other words allowed between words in the query phrase. For example, to switch the order of two words requires two moves (the first move places the words atop one another), so to permit re-orderings of phrases, the slop must be at least two. A value of zero requires an exact match.
 
@@ -381,13 +381,13 @@ So with ``slop`` parameter adjusted, you're may be able to find results even wit
 
 .. seealso::
 
-  Read more about ``slop`` parameter on the `OpenSearch project specifications <https://opensearch.org/docs/latest/opensearch/query-dsl/full-text#other-advanced-options>`_.
+  Read more about ``slop`` parameter on the `OpenSearch project specifications <https://opensearch.org/docs/latest/query-dsl/full-text/index/>`_.
 
 
 Use a ``term`` query
 --------------------
 
-If you want results with a precise value in a ``field``, the `term query <https://opensearch.org/docs/latest/opensearch/query-dsl/term/#term>`_ is the right choice. The term query can be used to find documents according to a precise value such as a price or product ID, for example.
+If you want results with a precise value in a ``field``, the `term query <https://opensearch.org/docs/latest/query-dsl/term/term/>`_ is the right choice. The term query can be used to find documents according to a precise value such as a price or product ID, for example.
 
 This query can be constructed as:
 
@@ -460,7 +460,7 @@ Try to find recipes in a certain range of sodium, for example:
 
 .. seealso::
 
-  See more about the range query in the `OpenSearch documentation <https://opensearch.org/docs/latest/opensearch/query-dsl/term/#range-query>`_.
+  See more about the range query in the `OpenSearch documentation <https://opensearch.org/docs/latest/query-dsl/term/range/>`_.
 
 .. _fuzzy-query:
 
