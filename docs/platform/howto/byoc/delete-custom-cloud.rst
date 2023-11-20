@@ -24,7 +24,7 @@ The deletion impacts mostly resources on the Aiven site, such as cloud configura
 Impact on your AWS account resources
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A bastion service and the corresponding EC2 instance are deleted as a consequesnce of your custom cloud's removal. As for resources created when applying the Terraform template to create the custom cloud, they are not removed after deleting your custom cloud.Unless you've removed them earlier, you're advised to do that if deleting your cloud.
+A bastion service and the corresponding EC2 instance are deleted as a consequence of your custom cloud's removal. As for resources created when applying the Terraform template to create the custom cloud, they are not removed after deleting your custom cloud.Unless you've removed them earlier, you're advised to do that if deleting your cloud.
 
 Prerequisites
 -------------
@@ -43,7 +43,7 @@ Delete your cloud
 4. From the left sidebar, select **Bring your own cloud**.
 5. In the **Bring your own cloud** view, select one of the clouds available on the list.
 6. In the selected cloud's page, use the ellipsis (**...**) menu in the top right corner to select **Delete**.
-7. Make sure you understand the impact and, if so, confirm that you want to delete the cloud by selecing **Delete** in the **Warning** window.
+7. Make sure you understand the impact and, if so, confirm that you want to delete the cloud by selecting **Delete** in the **Warning** window.
 
 .. topic:: Result
 
@@ -51,7 +51,7 @@ Delete your cloud
 
 .. important::
 
-    Remember to remove the resources created in your AWS account when applying the Terraform template to create the custom cloud. They are not removed automatically after deleting the cloud. Unless you've removed them earlier, use the ``terraform destroy`` comand to delete them. See the guidelines on how to use the ``destroy`` command in `Command: destroy <https://developer.hashicorp.com/terraform/cli/commands/destroy>`_.
+    Remember to remove the resources created in your AWS account when applying the Terraform template to create the custom cloud. They are not removed automatically after deleting the cloud. Unless you've removed them earlier, use the ``terraform destroy`` command to delete them. See the guidelines on how to use the ``destroy`` command in `Command: destroy <https://developer.hashicorp.com/terraform/cli/commands/destroy>`_.
 
 Check it out
 ------------
