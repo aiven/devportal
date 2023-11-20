@@ -3,7 +3,9 @@ Create Apache Kafka® topics automatically
 
 Apache Kafka® provides the capability to automatically create topics when a message is produced to a topic that does not exist. By default, this feature is disabled in Aiven for Apache Kafka as a precaution against accidental topic creation. When a message is produced to a non-existent topic, the common error message is as follows:
 
-    KafkaTimeoutError: Failed to update metadata after 60.0 secs.
+.. code::
+   
+   KafkaTimeoutError: Failed to update metadata after 60.0 secs.
 
 In such cases, you have two options available:
 
@@ -32,7 +34,7 @@ Enable automatic topic creation with Aiven CLI
 
 The :ref:`Aiven CLI service update command <avn-cli-service-update>` enables to modify service parameters on an existing service. To enable the automatic creation of topics on an existing Aiven for Apache Kafka service set the ``auto_create_topics_enable`` to ``true`` by using the following command replacing the ``SERVICE_NAME`` with the name of your service:
 
-You can enable the automatic creation of topics on an existing Aiven for Apache Kafka service by using the `Aiven CLI service update <avn-cli-service-update>`command. Set the ``auto_create_topics_enable`` parameter to ``true`` with the following command, replacing ``SERVICE_NAME`` with the name of your service:
+You can enable the automatic creation of topics on an existing Aiven for Apache Kafka service by using the :ref:`Aiven CLI service update <avn-cli-service-update>` command. Set the ``auto_create_topics_enable`` parameter to ``true`` with the following command, replacing ``SERVICE_NAME`` with the name of your service:
 
 .. code::
 

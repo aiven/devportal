@@ -36,49 +36,49 @@ Configure the PostgreSQL CDC connector
 ---------------------------------------
 Follow these steps to configure the PostgreSQL CDC Connector in the Aiven for Flink application table using the `Aiven Console <https://console.aiven.io/>`_:
 
-1.  In the Aiven for Apache Flink service page, select **Application** from the left sidebar.
+1. In the Aiven for Apache Flink service page, select **Application** from the left sidebar.
 2. Select **Create new application**, enter the name of your application, and select **Create application**. 
 
-.. note::    
-    If editing an existing application, create a new version to make changes to the source or sink tables.
+   .. note::    
+      If editing an existing application, create a new version to make changes to the source or sink tables.
 
 3. Select **Create first version** to create the first version of the application.
 4. Select **Add your first source table** to add a source table.
 5. In the **Add new source table** screen, select the *Aiven for PostgreSQL®* service as the integrated service.
 6. In the **Table SQL** section, enter the SQL statement to create the PostgreSQL-based Apache Flink table with CDC connector. For example: 
 
-.. code:: 
+    .. code:: 
 
-    CREATE TABLE test_table (
-        column1 INT,
-        column2 VARCHAR
-        ) WITH (
-        'connector' = 'postgres-cdc',
-        'hostname' = 'test-project-test.avns.net',
-        'username' = 'username',
-        'password' = '12345',
-        'schema-name' = 'public',
-        'table-name' = 'test-1',
-        'port' = '12709',
-        'database-name' = 'defaultdb',
-        'decoding.plugin.name' = 'pgoutput'
-        )
+        CREATE TABLE test_table (
+            column1 INT,
+            column2 VARCHAR
+            ) WITH (
+            'connector' = 'postgres-cdc',
+            'hostname' = 'test-project-test.avns.net',
+            'username' = 'username',
+            'password' = '12345',
+            'schema-name' = 'public',
+            'table-name' = 'test-1',
+            'port' = '12709',
+            'database-name' = 'defaultdb',
+            'decoding.plugin.name' = 'pgoutput'
+            )
 
-Where: 
+    Where: 
 
-* ``connector``: The connector type to be used, which is ``postgres-cdc`` in this case.
-* ``hostname``: The hostname or address of the PostgreSQL database server. 
-* ``username``: The username to authenticate with the PostgreSQL database.
-* ``password``: The password for the provided username.
-* ``schema-name``: The name of the schema where the source table is located, which is set to ``public`` in the example.
-* ``table-name``: The name of the source table to be captured by the CDC connector, which is set to ``test-1`` in the example.
-* ``port``: The port number of the PostgreSQL database server.
-* ``database-name``: The name of the database where the source table resides, which is set to ``defaultdb`` in the example.
-* ``decoding.plugin.name``: The decoding plugin to be used by the CDC connector, which is set to ``pgoutput`` in the example.
+    * ``connector``: The connector type to be used, which is ``postgres-cdc`` in this case.
+    * ``hostname``: The hostname or address of the PostgreSQL database server. 
+    * ``username``: The username to authenticate with the PostgreSQL database.
+    * ``password``: The password for the provided username.
+    * ``schema-name``: The name of the schema where the source table is located, which is set to ``public`` in the example.
+    * ``table-name``: The name of the source table to be captured by the CDC connector, which is set to ``test-1`` in the example.
+    * ``port``: The port number of the PostgreSQL database server.
+    * ``database-name``: The name of the database where the source table resides, which is set to ``defaultdb`` in the example.
+    * ``decoding.plugin.name``: The decoding plugin to be used by the CDC connector, which is set to ``pgoutput`` in the example.
 
-.. Note::
+    .. Note::
 
-    The PostgreSQL CDC connector will use or create a publication named ``dbz_publication`` tracking the changes of one or more tables. Therefore, the publication must already exist in PostgreSQL, or the connecting user must have enough privileges to create it.
+        The PostgreSQL CDC connector will use or create a publication named ``dbz_publication`` tracking the changes of one or more tables. Therefore, the publication must already exist in PostgreSQL, or the connecting user must have enough privileges to create it.
 
 8. Select **Next** to add the sink table, and then select **Add your first sink table**. Select *Aiven for Apache Kafka®* as the integrated service from the drop-down list.
 9.  In the **Table SQL** section, input the SQL statement for creating the sink table where the PostgreSQL CDC connector will send the data. Select **Add table**.
@@ -95,17 +95,17 @@ If you encounter the ``must be superuser to create FOR ALL TABLES publication`` 
 
 1. Install the ``aiven-extras`` extension by executing the SQL command: 
 
-.. code:: 
+   .. code:: 
 
-    CREATE EXTENSION aiven_extras CASCADE;
+      CREATE EXTENSION aiven_extras CASCADE;
 
 2. Create a publication for all tables in the source database: Execute the SQL command:
   
-.. code:: 
+   .. code:: 
   
-    SELECT * FROM aiven_extras.pg_create_publication_for_all_tables(
-        'dbz_publication',
-        'INSERT,UPDATE,DELETE'
+      SELECT * FROM aiven_extras.pg_create_publication_for_all_tables(
+         'dbz_publication',
+         'INSERT,UPDATE,DELETE'
         );
 
 .. Note::
