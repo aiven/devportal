@@ -1,10 +1,6 @@
 Enable tiered storage in Aiven for ClickHouse®
 ==============================================
 
-.. important::
-
-   Aiven for ClickHouse® tiered storage is a :doc:`limited availability feature </docs/platform/concepts/beta_services>`. If you're interested in trying out this feature, contact the sales team at `sales@Aiven.io <mailto:sales@Aiven.io>`_.
-
 Find out how to enable the tiered storage feature on your project and activate it for specific tables.
 To learn what tiered storage is, how it works, and why use it, see :doc:`Tiered storage in Aiven for ClickHouse® </docs/products/clickhouse/concepts/clickhouse-tiered-storage>`.
 
@@ -48,7 +44,18 @@ To enable tiered storage on your project, request it from the sales team at `sal
 Enable tiered storage on a table
 --------------------------------
 
-When you have tiered storage enabled on your project, you can move on to enabling it on your tables, both new and existing ones.
+When you have tiered storage enabled on your project, you can move on to enabling it on your tables, both new and existing ones. For that purpose, you can use either SQL or `Aiven Console <https://console.aiven.io/>`_.
+
+Enable in Aiven Console
+'''''''''''''''''''''''
+
+1. Log in to `Aiven Console <https://console.aiven.io/>`_, and go to your organzation > project > service.
+2. On the **Overview** page of your service, select **Databases and tables** from the sidebar.
+3. In the **Databases and tables** view, find a table on which you'd like to enable tiered storage, and select **Enable tiered storage** from the **Actions** menu (**...**).
+4. In the **Enable tiered storage** window, confirm you want to activate tiered storage on the table and understand the impact by selecting **Enable**.
+
+Enable with SQL
+'''''''''''''''
 
 1. :doc:`Connect to your Aiven for ClickHouse service </docs/products/clickhouse/howto/list-connect-to-service>` using, for example, the ClickHouse client (CLI).
 
