@@ -52,4 +52,4 @@ For example, setting ``format.output.fields`` to ``value,key,timestamp`` results
 
 .. Tip::
 
-    You can disable the `Base64` encoding by setting the ``format.output.fields.value.encoding`` to ``none``
+    You can disable the ``Base64`` encoding by setting the ``format.output.fields.value.encoding`` to ``none``

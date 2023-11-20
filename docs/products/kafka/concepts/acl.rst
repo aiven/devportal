@@ -33,7 +33,7 @@ Examples:
 
 .. Warning:: 
 
-  By default, Aiven adds an ``avnadmin`` service user to every new service and adds `admin` permission for all topics to that user. When you create your own ACLs to restrict access, you probably want to remove this ACL entry.
+  By default, Aiven adds an ``avnadmin`` service user to every new service and adds ``admin`` permission for all topics to that user. When you create your own ACLs to restrict access, you probably want to remove this ACL entry.
 
 .. Note::
 

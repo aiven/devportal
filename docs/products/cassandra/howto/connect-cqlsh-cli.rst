@@ -34,7 +34,7 @@ Variable                Description
 Code
 ''''
 
-Set the `SSL_CERTFILE` environment variable to the location of the *CA Certificate* for the Cassandra service:
+Set the ``SSL_CERTFILE`` environment variable to the location of the *CA Certificate* for the Cassandra service:
 
 .. code::
 

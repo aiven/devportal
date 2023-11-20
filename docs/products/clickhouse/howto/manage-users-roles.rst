@@ -54,7 +54,7 @@ Grant permissions
 
 You can grant permissions both to specific roles and to individual users. The grants can be also granular, targeting specific databases, tables, columns, or rows.
 
-For example, the following request grants the `auditor` role permissions to select data from the `transactions` database::
+For example, the following request grants the ``auditor`` role permissions to select data from the ``transactions`` database::
 
     GRANT SELECT ON transactions.* TO auditor;
 
@@ -66,7 +66,7 @@ Or to particular columns of a table::
 
     GRANT SELECT(date,description,amount) ON transactions.expenses TO auditor
 
-To grant the `auditor` and `external` roles to several users, run::
+To grant the ``auditor`` and ``external`` roles to several users, run::
 
     GRANT auditor, external TO Mary.Anderson, James.Miller;
 

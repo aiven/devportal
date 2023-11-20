@@ -116,7 +116,7 @@ Calculate how many blocks from tables (r), indexes (i), sequences (S), and other
   ---------+---------+----------+-----------------+---------------------
    records | r       | 781 MB   |            99.7 |                27.2
 
-Relations with object IDs (``oid``) below `16384` are reserved system objects.
+Relations with object IDs (``oid``) below ``16384`` are reserved system objects.
 
 Inspecting the query cache performance
 --------------------------------------

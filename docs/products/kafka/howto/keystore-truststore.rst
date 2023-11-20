@@ -41,7 +41,7 @@ To create these files:
 
 7. Enter a password to protect the truststores, when prompted
 
-8. Reply to `yes` to confirm trusting the CA certificate, when prompted
+8. Reply to ``yes`` to confirm trusting the CA certificate, when prompted
 
 The result are the keystore named ``client.keystore.p12`` and truststore named ``client.truststore.jks`` that can be used for client applications configuration.
 

@@ -23,7 +23,7 @@ where,
 
 * ``-datadir`` and ``-waldir`` :  specifies the directories where your data and write-ahead log files are stored, respectively. These paths may differ on your system, so double-check your settings before running the command.
 * ``-out``: specifies where the export file will be saved. 
-* ``-database``:  specifies which database you want to export. In this example, the database named `weather` is being exported.
+* ``-database``:  specifies which database you want to export. In this example, the database named ``weather`` is being exported.
 * ``-compress``: implies the command to compress the data.
 
 If you have a large database and only need a specific part of the data, you can optionally define a time span using the ``-start`` and ``-end`` switches to reduce the dump size. This will make the export process faster and take up less space.

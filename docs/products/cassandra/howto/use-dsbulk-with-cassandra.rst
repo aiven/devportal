@@ -93,7 +93,7 @@ Run a ``dsbulk`` command to count records in a Cassandra table
 
 Once the configuration file is created, you can run the ``dsbulk``. 
 
-1. Navigate to the `bin` subdirectory of the downloaded ``dsbulk`` package.
+1. Navigate to the ``bin`` subdirectory of the downloaded ``dsbulk`` package.
 
 2. Run the following command:
 

@@ -16,7 +16,7 @@ You may want to change this default data distribution behavior by :ref:`configur
 
 To enable this time-based data distribution mechanism, you can set up a retention policy (threshold) on a table level by using the TTL clause. For data retention control purposes, the TTL clause uses the following:
 
-* Data item of the `Date` or `DateTime` type as a reference point in time
+* Data item of the ``Date`` or ``DateTime`` type as a reference point in time
 * INTERVAL clause as a time period to elapse between the reference point and the data transfer to object storage
 
 Prerequisites

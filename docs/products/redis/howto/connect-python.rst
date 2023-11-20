@@ -40,7 +40,7 @@ Run the code:
 
 .. note::
 
-   Note that on some systems you will need to use `python3` to get Python3 rather than the previous Python2
+   Note that on some systems you will need to use ``python3`` to get Python3 rather than the previous Python2
 
 If the script runs successfully, the outputs should be:
 

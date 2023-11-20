@@ -538,7 +538,7 @@ Did you notice that the buckets created with the help of ``terms`` aggregation a
 
 You can use the ``rare_terms`` aggregation! This creates a set of buckets sorted by number of documents in ascending order. As a result, the most rarely used items will be at the top of the response.
 
-``rare_terms`` request is very similar to ``terms``, however, instead of `size` property which defines total number of created buckets, ``rare_terms`` relies on ``max_doc_count``, which sets upper limit for number of documents per bucket.
+``rare_terms`` request is very similar to ``terms``, however, instead of ``size`` property which defines total number of created buckets, ``rare_terms`` relies on ``max_doc_count``, which sets upper limit for number of documents per bucket.
 
 .. code-block:: javascript
 
@@ -577,7 +577,7 @@ The result will return us all the categories with at most three documents each. 
 Histograms
 ----------
 
-The story of bucket aggregations won't be complete without speaking about histograms. Histograms aggregate date based on provided interval. And since we have a `date` property, we'll build a date histogram.
+The story of bucket aggregations won't be complete without speaking about histograms. Histograms aggregate date based on provided interval. And since we have a ``date`` property, we'll build a date histogram.
 
 The format of the histogram aggregation is similar to what we saw so far, so we can create a new method almost identical to previous ones:
 
