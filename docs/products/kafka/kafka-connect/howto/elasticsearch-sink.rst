@@ -111,7 +111,7 @@ To create a Kafka Connect connector, follow these steps:
 
 .. Note::
 
-    You can also create connectors using the :ref:`Aiven CLI command <avn_service_connector_create>`.
+   You can also create connectors using the :ref:`Aiven CLI command <avn_service_connector_create>`.
 
 Create daily Elasticsearch indices
 ----------------------------------

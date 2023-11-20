@@ -34,17 +34,21 @@ ksqlDB by default uses the ``ssl.truststore`` settings for the Schema Registry c
 
 To have ksqlDB working with Aiven's `Karapace <https://karapace.io/>`__ Schema Registry you need to explicitly define a truststore that contains the commonly trusted root CA of Schema Registry server. To create such a truststore:
 
-1. Obtain the root CA of the server with the following ``openssl`` command by replacing the ``APACHE_KAFKA_HOST`` and ``SCHEMA_REGISTRY_PORT`` placeholders::
+1. Obtain the root CA of the server with the following ``openssl`` command by replacing the ``APACHE_KAFKA_HOST`` and ``SCHEMA_REGISTRY_PORT`` placeholders:
 
-    openssl s_client -connect APACHE_KAFKA_HOST:SCHEMA_REGISTRY_PORT \
+   .. code::
+
+      openssl s_client -connect APACHE_KAFKA_HOST:SCHEMA_REGISTRY_PORT \
         -showcerts < /dev/null 2>/dev/null | \
         awk '/BEGIN CERT/{s=1}; s{t=t "\n" $0};
             /END CERT/ {last=t; t=""; s=0}; END{print last}' \
         > ca_schema_registry.cert
 
-2. Create the truststore with the following ``keytool`` command  by replacing the ``TRUSTSTORE_SCHEMA_REGISTRY_FILE_NAME`` and ``TRUSTSTORE_SCHEMA_REGISTRY_PASSWORD`` placeholders::
+2. Create the truststore with the following ``keytool`` command  by replacing the ``TRUSTSTORE_SCHEMA_REGISTRY_FILE_NAME`` and ``TRUSTSTORE_SCHEMA_REGISTRY_PASSWORD`` placeholders:
 
-    keytool -import -file ca_schema_registry.cert \
+   .. code:: 
+    
+      keytool -import -file ca_schema_registry.cert \
         -alias CA \
         -keystore TRUSTSTORE_SCHEMA_REGISTRY_FILE_NAME \
         -storepass TRUSTSTORE_SCHEMA_REGISTRY_PASSWORD \

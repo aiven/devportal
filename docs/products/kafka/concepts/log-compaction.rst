@@ -158,10 +158,10 @@ The compaction thread then scans the **tail**, removing every record having a ke
     - Key
     - Value
   * - 1
-    - 1001 :bdg-secondary:`delete`
+    - 1001 (``delete``)
     - 4 Privet Dr
   * - 2
-    - 1002 :bdg-secondary:`delete`
+    - 1002 (``delete``)
     - 221B Baker Street
   * - 3
     - 1003

@@ -114,13 +114,17 @@ The configuration file contains the following entries:
 
      The configuration of the BigQuery connector in Aiven has a non-backward-compatible change between versions ``1.2.0`` and ``1.6.5``:
 
-     * version ``1.2.0`` uses the ``credentials`` field to specify the Google Cloud credentials in JSON format::
+     * version ``1.2.0`` uses the ``credentials`` field to specify the Google Cloud credentials in JSON format:
+     
+       .. code::
 
           ...
           "credentials": "{...}",
           ...
 
-     * from version ``1.6.5`` on, use the ``keyfield`` field and set the ``keySource`` parameter to ``JSON``::
+     * from version ``1.6.5`` on, use the ``keyfield`` field and set the ``keySource`` parameter to ``JSON``:
+     
+       .. code::
 
           ...
           "keyfile": "{...}",
