@@ -494,15 +494,22 @@ Role ARN is an `identifier of the role <https://docs.aws.amazon.com/IAM/latest/U
 Use the Terraform template generated in step :ref:`Generate an infrastructure template <generate-infra-template>` to create your Role ARN by deploying the template in your AWS account. Continue working in the **Create custom cloud** wizard by taking the following steps:
 
 1. Copy or download the template and the variables file from the **Create custom cloud** wizard.
-2. In your AWS account, run the template with the variables using Terraform.
+
+2. Optionally, modify the template as needed.
+
+.. topic:: Accessing services in custom clouds across security groups and from IP address ranges
+
+   To be able to connect to a custom-cloud service from different security groups (other than the one dedicated for the custom cloud) or from IP address ranges you need to add specific ingress rules before you apply a Terraform infrastructure template in your AWS account in the process of creating a custom cloud resources. Before adding ingress rules, check out examples of how this can be done provided in the Terraform template you generated and downloaded from `Aiven Console <https://console.aiven.io/>`_.
+
+3. In your AWS account, run the template with the variables using Terraform.
 
    .. important::
 
       When running ``terraform plan`` and ``terraform apply``, make sure you add ``-var-file=FILE_NAME.vars`` as an option.
 
-3. Find the role identifier (Role ARN) in the output script after running the template. 
-4. Enter Role ARN into the **Role ARN** field in the **Create custom cloud** wizard.
-5. Select **Next** to proceed or park your cloud setup here and save your current configuration as a draft by selecting **Save draft**. You can resume creating your cloud later.
+4. Find the role identifier (Role ARN) in the output script after running the template. 
+5. Enter Role ARN into the **Role ARN** field in the **Create custom cloud** wizard.
+6. Select **Next** to proceed or park your cloud setup here and save your current configuration as a draft by selecting **Save draft**. You can resume creating your cloud later.
 
 Set up your custom cloud's availability
 '''''''''''''''''''''''''''''''''''''''
