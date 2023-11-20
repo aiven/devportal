@@ -854,7 +854,23 @@ entries:
           - file: docs/products/clickhouse/reference/advanced-params
             title: Advanced parameters
   
-  # -------- GRAFANA --------
+# ---------Dragonfly --------------
+
+  - file: docs/products/dragonfly
+    title: Dragonfly
+    entries:
+      - file: docs/products/dragonfly/concepts/overview
+        title: Overview
+      - file: docs/products/dragonfly/get-started
+        title: Quickstart
+      - file: docs/products/dragonfly/concepts
+        title: Concepts
+      - file: docs/products/dragonfly/howto
+        title: HowTo
+
+
+
+# -------- GRAFANA --------
   - file: docs/products/grafana
     title: Grafana
     entries:
