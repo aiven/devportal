@@ -80,7 +80,7 @@ Enable on a database
 
    .. code-block:: bash
 
-      ALTER DATABASE DATABASE_NAME SET pg_qualstats.enabled = 'yes'
+      ALTER DATABASE DATABASE_NAME set pg_qualstats.enabled = 'on'
 
 Enable for a user
 '''''''''''''''''
@@ -91,7 +91,7 @@ Enable for a user
 
    .. code-block:: bash
 
-      ALTER ROLE ROLE_NAME SET pg_qualstats.enabled = 'yes'
+      ALTER ROLE ROLE_NAME SET pg_qualstats.enabled = 'on'
 
 Enable on a DB for a user
 '''''''''''''''''''''''''
@@ -102,13 +102,13 @@ Enable on a DB for a user
 
    .. code-block:: bash
 
-      ALTER ROLE ROLE_NAME IN DATABASE DATABASE_NAME SET pg_qualstats.enabled = 'yes'
+      ALTER ROLE ROLE_NAME IN DATABASE DATABASE_NAME SET pg_qualstats.enabled = 'on'
 
 Enable with Aiven API
 ~~~~~~~~~~~~~~~~~~~~~
 
 You can use `Aiven API <https://api.aiven.io/doc/>`_ to enable pg_qualstats on your service. Call the
-`ServiceUpdate <https://api.aiven.io/doc/#tag/Service/operation/ServiceUpdate>`_ endpoint passing ``pg_qualstats.enabled = 'yes'`` in the ``user_config`` object.
+`ServiceUpdate <https://api.aiven.io/doc/#tag/Service/operation/ServiceUpdate>`_ endpoint passing ``{"pg_qualstats": {"enabled": true}}`` in the ``user_config`` object.
 
 Enable with Aiven CLI
 ~~~~~~~~~~~~~~~~~~~~~
@@ -123,10 +123,6 @@ Configure pg_qualstats
 ----------------------
 
 Pg_qualstats is pre-configured with default settings but you can modify its configuration parameters in `Aiven Console <https://console.aiven.io/>`_, with SQL, using Aiven API, or Aiven CLI.
-
-.. note::
-
-   A service restart might be triggered after modifying particular configuration parameters. You'll get a warning before a potential service restart so that you can decide if you want to proceed with the parameter modification.
 
 You might want to configure the following parameters:
 
@@ -285,7 +281,7 @@ Disable on a database
 
    .. code-block:: bash
 
-      ALTER DATABASE DATABASE_NAME SET pg_qualstats.enabled = 'no'
+      ALTER DATABASE DATABASE_NAME SET pg_qualstats.enabled = 'off'
 
 Disable for a user
 ''''''''''''''''''
@@ -296,7 +292,7 @@ Disable for a user
 
    .. code-block:: bash
 
-      ALTER ROLE ROLE_NAME SET pg_qualstats.enabled = 'on'
+      ALTER ROLE ROLE_NAME SET pg_qualstats.enabled = 'off'
 
 Disable on a DB for a user
 ''''''''''''''''''''''''''
@@ -307,13 +303,13 @@ Disable on a DB for a user
 
    .. code-block:: bash
 
-      ALTER ROLE ROLE_NAME IN DATABASE DATABASE_NAME SET pg_qualstats.enabled = 'no'
+      ALTER ROLE ROLE_NAME IN DATABASE DATABASE_NAME SET pg_qualstats.enabled = 'off'
 
 Disable with Aiven API
 ~~~~~~~~~~~~~~~~~~~~~~
 
 You can use `Aiven API <https://api.aiven.io/doc/>`_ to disable pg_qualstats on your service. Call the
-`ServiceUpdate <https://api.aiven.io/doc/#tag/Service/operation/ServiceUpdate>`_ endpoint passing ``pg_qualstats.enabled = 'no'`` in the ``user_config`` object.
+`ServiceUpdate <https://api.aiven.io/doc/#tag/Service/operation/ServiceUpdate>`_ endpoint passing ``{"pg_qualstats": {"enabled": false}}`` in the ``user_config`` object.
 
 Disable with Aiven CLI
 ~~~~~~~~~~~~~~~~~~~~~~
