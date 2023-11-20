@@ -6,17 +6,21 @@ Aiven for PostgreSQL® allows a series of pre-approved extensions to be installe
 Install an extension
 --------------------
 
-Any available extension can be installed by the ``avnadmin`` user with the following ``CREATE EXTENSION`` command::
+Any available extension can be installed by the ``avnadmin`` user with the following ``CREATE EXTENSION`` command:
 
-  CREATE EXTENSION <EXTENSION_NAME> CASCADE;
+.. code::
+
+   CREATE EXTENSION <EXTENSION_NAME> CASCADE;
 
 
 Update an extension
 -------------------
 
-To upgrade an already-installed extension to the latest version available, run as the ``avnadmin`` user::
+To upgrade an already-installed extension to the latest version available, run as the ``avnadmin`` user:
 
-  ALTER EXTENSION <EXTENSION_NAME> UPDATE;
+.. code::
+
+   ALTER EXTENSION <EXTENSION_NAME> UPDATE;
 
 If you want to experiment with upgrading, remember that you can fork your existing database to try this operation on a copy rather than your live database.
 
@@ -31,5 +35,6 @@ We are always open to suggestions of additional extensions that could be useful 
 * which database service and user database should have them
 
 .. warning::
-    "Untrusted" language extensions such as ``plpythonu`` cannot be supported as they would compromise our ability to guarantee the highest possible service level.
+   
+   "Untrusted" language extensions such as ``plpythonu`` cannot be supported as they would compromise our ability to guarantee the highest possible service level.
 

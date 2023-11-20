@@ -76,7 +76,9 @@ To list the indices do:
 Add an item to the index
 ''''''''''''''''''''''''
 
-OpenSearch is a document database so there is no enforced schema structure for the data you store. To add an item, ``POST`` the JSON data that should be stored::
+OpenSearch is a document database so there is no enforced schema structure for the data you store. To add an item, ``POST`` the JSON data that should be stored:
+
+.. code::
 
     curl -H "Content-Type: application/json" \
     OPENSEARCH_URI/shopping-list/_doc \
@@ -85,7 +87,9 @@ OpenSearch is a document database so there is no enforced schema structure for t
         "quantity": 2
         }'
 
-Other data fields don't need to match in format::
+Other data fields don't need to match in format:
+
+.. code::
 
     curl -H "Content-Type: application/json" \
     OPENSEARCH_URI/shopping-list/_doc \
@@ -123,15 +127,19 @@ Search results include some key fields to look at when you try this example:
 Simple search
 '''''''''''''
  
-For the most simple search to match a string, you can use::
+For the most simple search to match a string, you can use:
 
-    curl OPENSEARCH_URI/_search?q=apple
+.. code::
+
+   curl OPENSEARCH_URI/_search?q=apple
 
 Advanced search options
 '''''''''''''''''''''''
 
-For more advanced searches, you can send a more detailed payload to specify which fields to search among other options::
+For more advanced searches, you can send a more detailed payload to specify which fields to search among other options:
 
+.. code::
+  
     curl -H "Content-Type: application/json" \
     OPENSEARCH_URI/_search \
     -d '{

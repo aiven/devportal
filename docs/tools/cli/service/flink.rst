@@ -179,6 +179,7 @@ The ``application_properties`` parameter should contain the following common pro
     -  The name of the application
 
 **Example:** Updates the name of the Aiven for Flink application from ``Demo`` to ``DemoApp`` for application-id ``986b2d5f-7eda-480c-bcb3-0f903a866222`` in the service ``flink-democli`` and project ``my-project``. 
+
 .. code::
   
   avn  service flink update-application flink-democli     \

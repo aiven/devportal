@@ -34,9 +34,10 @@ If your application permits, permanently delete records, such as old logs or unn
 
 2. Re-index into several small indices
 ```````````````````````````````````````
-You can split your index into several smaller indices based on certain criteria. For example, to create an index for each ``event_type``, you can use following script::
+You can split your index into several smaller indices based on certain criteria. For example, to create an index for each ``event_type``, you can use following script:
 
-
+.. code::
+  
    POST _reindex
    {
 
