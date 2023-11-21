@@ -15,7 +15,7 @@ Commands for managing Aiven services via ``avn`` commands.
 
 Manages the Aiven for Apache Kafka® ACL entries.
 
-More information on ``acl-add``, ``acl-delete`` and ``acl-list`` can be found in :doc:`the dedicated page </docs/tools/cli/service/acl.html>`.
+More information on ``acl-add``, ``acl-delete`` and ``acl-list`` can be found in :doc:`the dedicated page </docs/tools/cli/service/acl>`.
 
 ``avn service backup-list``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
