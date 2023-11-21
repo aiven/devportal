@@ -732,6 +732,8 @@ entries:
         entries:
           - file: docs/products/cassandra/reference/advanced-params
             title: Advanced parameters
+          - file: docs/products/cassandra/reference/cassandra-metrics-prometheus
+            title: Metrics available via Prometheus
 
   # -------- CLICKHOUSE --------
   - file: docs/products/clickhouse
