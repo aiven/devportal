@@ -40,11 +40,11 @@ Connect to Aiven for Redis
 
 Learn how to connect to Aiven for Redis using different programming languages or through ``redis-cli``: 
 
-- :doc:`redis-cli<howto/connect-redis-cli>`
+- :doc:`redis-cli <howto/connect-redis-cli>`
 - :doc:`Go <howto/connect-go>`
 - :doc:`Node <howto/connect-node>`
 - :doc:`PHP <howto/connect-php>`
-- :doc:`Python <howto/connect-python>`
+- :doc:`Python <howto/connect-python>` 
 
 
 Explore other resources for Aiven for Redis

@@ -865,8 +865,13 @@ entries:
         title: Quickstart
       - file: docs/products/dragonfly/concepts
         title: Concepts
+        entries:
+        - file:  docs/products/dragonfly/concepts/test-concept
       - file: docs/products/dragonfly/howto
         title: HowTo
+        entries:
+        - file:  docs/products/dragonfly/howto/test-howto
+
 
 
 
