@@ -43,7 +43,7 @@ Furthermore you need to collect the following information about the source Postg
     If you're using Aiven for PostgreSQL and Aiven for Apache Kafka the above details are available in the `Aiven console <https://console.aiven.io/>`_ service Overview tab or via the dedicated ``avn service get`` command with the :ref:`Aiven CLI <avn_service_get>`.
 
 Set up a PostgreSQL Debezium source connector with Aiven CLI
------------------------------------------------------------
+------------------------------------------------------------
 
 The following example demonstrates how to setup a Debezium source Connector for Apache Kafka to a PostgreSQL database using the `Aiven CLI dedicated command </docs/tools/cli/service/connector.html#avn-service-connector-create>`_.
 
