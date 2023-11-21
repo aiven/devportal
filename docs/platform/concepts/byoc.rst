@@ -6,7 +6,7 @@ About BYOC
 
 Aiven services are usually deployed on Aiven-managed infrastructure, using Aiven-managed security protocols, and backed by Aiven-managed storage and backups. This provides the most seamless straightforward de-risked approach to deploying Aiven services. However, you might need a different configuration if your business, project, or organization has specific requirements for strict regulatory compliance, fine-grained network access control, or cloud purchase commitments in place, for instance.
 
-This is where the bring your own cloud (BYOC) feature comes in enabling you to use your own cloud infrastructure instead of using the Aiven-managed infrastructure. With BYOC, your Aiven organization gets connected with your cloud provider account by creating custom clouds in your Aiven organization. This allows you to manage your infrastructure on the Aiven platform while keeping your data in your own cloud.
+This is where the bring your own cloud (BYOC) feature comes in enabling you to use your own cloud infrastructure instead of using the Aiven-managed infrastructure. With BYOC, your Aiven organization gets connected with your cloud provider account by creating custom clouds in your Aiven organization. A custom cloud is a secure environment within your cloud provider account to run Aiven-managed data services. By enabling BYOC, creating custom clouds, and setting up Aiven services within the custom clouds, you can manage your infrastructure on the Aiven platform while keeping your data in your own cloud.
 
 Why use BYOC
 ------------
@@ -15,7 +15,7 @@ There a few major reasons to utilize BYOC:
 
 1. **Compliance**: Aiven offers managed environments for several standard compliance regulations, such as HIPAA, PCI DSS, and GDPR. However, if you have strict regulatory requirements or special compliance requirements, BYOC may be the best option for you.
 2. **Network auditing**: If you require the visibility of all traffic within any VPC you operate in or need frequent auditing capabilities, BYOC is potentially a good fit. BYOC gives you the ability to audit network metadata but not the actual contents.
-3. **Fine-grained network control**: BYOC requires only some specific network access (for example, service management and troubleshooting), otherwise allowing you to customize your network to meet any internal requirements or requirements of your customers.
+3. **Fine-grained network control**: BYOC only requires specific network access for Aiven (for example, service management or troubleshooting) to deploy and manage open source data services, otherwise allowing you to customize your network to meet any internal requirements or requirements of your customers.
 4. **Cost optimization**: Depending on your cloud provider, with BYOC you can use cost savings plans, committed use discounts, or other strategies to save on compute and storage infrastructure costs related to Aiven services.
 
 .. _eligible-for-byoc:
@@ -26,7 +26,7 @@ Who is eligible for BYOC
 The BYOC setup is a bespoke service offered on a case-by-case basis, and not all cloud providers support it yet. You need to meet a few requirements to be eligible for BYOC:
 
 - You use one of the following public clouds: Amazon Web Services (AWS), Google Cloud Platform (GCP), or Microsoft Azure (excluding Azure Germany).
-- Your total monthly spend is greater than $5,000.
+- Your total monthly spend is at least $5,000.00 for at least 12 months.
 - You use at least the `Priority tier of Aiven support services <https://aiven.io/support-services>`_.
 
 When to use the regular Aiven deployment

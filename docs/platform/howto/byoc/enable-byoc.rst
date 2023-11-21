@@ -1,18 +1,18 @@
 Enable bring your own cloud (BYOC)
 ==================================
 
-Enabling :doc:`the bring your own cloud (BYOC) feature </docs/platform/concepts/byoc>` allows you to :doc:`create custom clouds </docs/platform/howto/byoc/create-custom-cloud>` in your Aiven organization. A :doc:`custom cloud </docs/platform/concepts/byoc>` is your own cloud infrastructure integrated with your Aiven organization. Using a custom cloud in Aiven may be the optimal solution if you have specific business needs or project requirements, such as a strict regulatory compliance.
+Enabling :doc:`the bring your own cloud (BYOC) feature </docs/platform/concepts/byoc>` allows you to :doc:`create custom clouds </docs/platform/howto/byoc/create-custom-cloud>` in your Aiven organization. A :doc:`custom cloud </docs/platform/concepts/byoc>` is a secure environment within your cloud provider account to run Aiven-managed data services. Using a custom cloud in Aiven may be the optimal solution if you have specific business needs or project requirements, such as a strict regulatory compliance.
 
 .. note::
 
-   Enabling :doc:`the BYOC feature </docs/platform/concepts/byoc>` or creating custom clouds in your Aiven environment does not affect the configuration of your existing organizations, projects, or services. This only makes the new BYOC capabilities available in your environment.
+   Enabling :doc:`the BYOC feature </docs/platform/concepts/byoc>` or creating custom clouds in your Aiven environment does not affect the configuration of your existing Aiven organizations, projects, or services. This only allows you to run Aiven services in your cloud provider account.
 
 This article provides you with instructions on how to request enabling BYOC in your Aiven organization.
 
 About enabling BYOC
 -------------------
 
-To be able to create custom clouds on the Aiven platform, first you need to enable the BYOC feature. `Aiven Console <https://console.aiven.io/>`_ offers a quick and easy way to set up a short call with the Aiven sales team to confirm your requirements and expectations. In the call, you make sure BYOC can address them and check your environment eligibility for the feature.
+To be able to create custom clouds on the Aiven platform, first you need to enable the BYOC feature. `Aiven Console <https://console.aiven.io/>`_ offers a quick and easy way to set up a short call with the Aiven sales team to identify your use cases and confirm the requirements. In the call, we make sure BYOC can address them, and we check your environment eligibility for the feature.
 
 .. important::
     
