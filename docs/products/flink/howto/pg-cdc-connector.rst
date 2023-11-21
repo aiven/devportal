@@ -14,7 +14,7 @@ Before setting up the PostgreSQL CDC Connector with Aiven for Apache Flink, ensu
 * Running Aiven for Apache Flink® Service
 * Running Aiven for PostgreSQL® Service
 * Running Aiven for Apache Kafka® Service or any other service of your choice as the sink for your data. 
-* :doc:`Integration <../howto/create-integration>` between Aiven for Flink and Aiven for PostgreSQL: Establish the necessary integration between your Aiven for Apache Flink service and Aiven for PostgreSQL service. 
+* `Integration </docs/products/flink/howto/create-integration>`_ between Aiven for Flink and Aiven for PostgreSQL: Establish the necessary integration between your Aiven for Apache Flink service and Aiven for PostgreSQL service. 
 
 In addition to the above, gather the following information about the source PostgreSQL database:
 
