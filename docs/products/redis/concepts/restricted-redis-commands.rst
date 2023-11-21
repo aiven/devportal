@@ -26,7 +26,7 @@ The Aiven for Redis* service has disabled the following Redis commands:
 - ``save``: Synchronously saves the dataset to disk.	
 - ``shutdown``: Synchronously saves the dataset to disk and then shuts down the server.
 
-Disabled Eval commands	
+Disabled eval commands	
 -------------------------
 The following script evaluation commands in the Aiven for Redis* service are disabled. If you require these commands to be enabled, contact Aiven support.
 
