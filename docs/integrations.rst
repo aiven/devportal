@@ -14,8 +14,8 @@ Available integrations
 
         **Data Flow**
 
-        + :doc:`/docs/products/kafka/kafka-connect`
-        + :doc:`/docs/products/flink`
+        + :doc:`Aiven for Apache Kafka® Connect </docs/products/kafka/kafka-connect>`
+        + :doc:`Aiven for Apache Flink® </docs/products/flink>`
 
     .. grid-item-card::
         :shadow: md
@@ -34,7 +34,7 @@ Available integrations
 
         **Logs**
 
-        + :doc:`/docs/products/opensearch/howto/opensearch-log-integration`
+        + :doc:`Manage OpenSearch® log integration </docs/products/opensearch/howto/opensearch-log-integration>`
         + :doc:`Datadog </docs/integrations/datadog>`
         + :doc:`Amazon CloudWatch </docs/integrations/cloudwatch>`
         + :doc:`RSyslog integration </docs/integrations/rsyslog>`

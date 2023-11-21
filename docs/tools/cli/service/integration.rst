@@ -21,7 +21,7 @@ Creates a new service integration.
   * - Parameter
     - Information
   * - ``--integration-type``
-    - The type of integration (check :ref:`the command details<avn service integration types>` for more details)
+    - The type of integration (check :ref:`the command details</docs/tools/cli/service/integration#avn-service-integration-types>` for more details)
   * - ``--source-service``
     - The integration source service
   * - ``--dest-service``

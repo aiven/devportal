@@ -129,11 +129,11 @@ Creates a new service.
   * - ``service_name``
     - The name of the service
   * - ``--service-type``
-    - The type of service; the :doc:`service types command </docs/tools/cli/service#avn-cli-service-type>` has the available values
+    - The type of service; the :any:`service types command </docs/tools/cli/service#avn-cli-service-type>` has the available values
   * - ``--plan``
-    - Aiven subscription plan name; check :doc:`avn_service_plan </docs/tools/cli/service#avn-service-plan>` for more information
+    - Aiven subscription plan name; check :any:`avn_service_plan </docs/tools/cli/service#avn-service-plan>` for more information
   * - ``--cloud``
-    - The cloud region name; check :doc:`avn-cloud-list </docs/tools/cli/cloud.html#avn-cloud-list>` for more information
+    - The cloud region name; check :any:`avn-cloud-list </docs/tools/cli/cloud.html#avn-cloud-list>` for more information
   * - ``--disk-space-gib``
     - Total amount of disk space for data storage (GiB)
   * - ``--no-fail-if-exists``
