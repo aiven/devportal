@@ -5,27 +5,33 @@ Similarly to how you can work with the OpenSearch® service :doc:`using cURL <..
 
 To get you started, check out the various examples of requests that are included below. You can see that these are  same requests as in our article :doc:`on how to use cURL <../../howto/opensearch-with-curl>`, but in a pure `DSL query form <https://opensearch.org/docs/latest/opensearch/query-dsl/index/>`_. This interface is helpful when you want to quickly populate index with sample data, or run a test query.
 
-Use **POST** method to add a new item to an index called ``shopping-list``. If the index doesn't exist yet, it will be created::
+Use **POST** method to add a new item to an index called ``shopping-list``. If the index doesn't exist yet, it will be created:
 
-    POST shopping-list/_doc
-    {
-        "item": "apple",
-        "quantity": 2
-    }
+.. code::
 
-Follow by adding another item with a different set of fields::
+   POST shopping-list/_doc
+   {
+      "item": "apple",
+      "quantity": 2
+   }
 
-    POST shopping-list/_doc
-    {
-        "item": "bucket",
-        "color": "blue",
-        "quantity": 5,
-        "notes": "the one with the metal handle"
-    }
+Follow by adding another item with a different set of fields:
+
+.. code::
+  
+   POST shopping-list/_doc
+   {
+       "item": "bucket",
+       "color": "blue",
+       "quantity": 5,
+       "notes": "the one with the metal handle"
+   }
 
 
-You can see the command output after running the query describing created item::
+You can see the command output after running the query describing created item:
 
+.. code::
+    
     {
       "_index" : "shopping-list",
       "_type" : "_doc",
@@ -42,7 +48,9 @@ You can see the command output after running the query describing created item::
     }
 
 
-Use **GET** method to send a query to find items with an apple::
+Use **GET** method to send a query to find items with an apple:
+
+.. code::
 
     GET _search
     {
@@ -54,8 +62,10 @@ Use **GET** method to send a query to find items with an apple::
         }
     }
 
-In the output you can see the full response from OpenSearch engine::
+In the output you can see the full response from OpenSearch engine:
 
+.. code::
+  
     {
       "took" : 35,
       "timed_out" : false,
@@ -89,4 +99,5 @@ In the output you can see the full response from OpenSearch engine::
 Additionally, you can navigate through the history of queries and run them again.
 
 .. note::
-    **Dev Tools** supports keyboard shortcuts, to see the full list of supported commands open the help panel, which you can find as part of the menu.
+
+   **Dev Tools** supports keyboard shortcuts, to see the full list of supported commands open the help panel, which you can find as part of the menu.

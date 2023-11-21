@@ -18,7 +18,7 @@ Start from the **Service Overview** page of the service you would like to monito
       If you are a member of multiple Aiven projects with *operator* or *admin* access right, you need to choose the project first then your target M3DB services.
 
 
-To visualize the collected metrics effectively, Grafana® is a highly recommended tool. We have a dedicated article that guides you on how to :doc:`grafana`.
+To visualize the collected metrics effectively, Grafana® is a highly recommended tool. See :doc:`Visualize M3DB data with Grafana® </docs/products/m3db/howto/grafana>`.
 
 
 

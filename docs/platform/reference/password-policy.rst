@@ -33,5 +33,3 @@ The following are some suggestions for creating or resetting your Aiven password
 -  Use passphrases since these are harder to guess
 
 -  Do not use the same password for multiple services
-
-

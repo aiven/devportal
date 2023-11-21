@@ -7,7 +7,7 @@ systems that support rsyslog protocol, including `Loggly <https://www.loggly.com
 To integrate your service with Loggly, a new endpoint needs to be added
 into the project that contains the service you want to integrate. This
 can be done using through Aiven console or command line using
-`Aiven CLI </docs/tools/cli>_`.
+:doc:`Aiven CLI </docs/tools/cli>`.
 
 Prerequisites
 -------------

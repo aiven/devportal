@@ -21,7 +21,7 @@ Creates a new service integration.
   * - Parameter
     - Information
   * - ``--integration-type``
-    - The type of integration (check :ref:`the command details<avn service integration types>` for more details)
+    - The type of integration (check :ref:`the command details <avn-service-integration-types>` for more details)
   * - ``--source-service``
     - The integration source service
   * - ``--dest-service``
@@ -92,7 +92,7 @@ Creates an external service integration endpoint.
   * - ``--endpoint-name``
     - The name of the endpoint
   * - ``--endpoint-type``
-    - The type of endpoint (check :ref:`the command details<avn service integration endpoint types>` for more details)
+    - The type of endpoint (check :ref:`the command details <avn service integration endpoint types>` for more details)
   * - ``--user-config-json``
     - The endpoint configuration in JSON format or as path to a file (preceded by ``@``)
   * - ``-c KEY=VALUE``
@@ -254,7 +254,7 @@ An example of ``account service integration-list`` output:
     8e752fa9-a0c1-4332-892b-f1757390d53f  demo-pg       demo-kafka  kafka_logs        true     true    Send logs to Kafka
     (integration not enabled)             demo-pg       demo-pg     metrics           false    false   Send service metrics to InfluxDB, M3 or PostgreSQL service
 
-.. _avn service integration types:
+.. _avn-service-integration-types:
 
 ``avn service integration-types-list``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''

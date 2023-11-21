@@ -1,7 +1,7 @@
 ``avn service schema-registry-acl``
 ============================================
 
-Here you’ll find the full list of commands for ``avn service schema-registry-acl``.
+Here you'll find the full list of commands for ``avn service schema-registry-acl``.
 
 
 Manage Karapace schema registry access control lists for Apache Kafka®
