@@ -166,7 +166,7 @@ To configure the consistency level in a client library, add an extra parameter o
 
 .. topic:: Example::
     
-    In Python, you can specify `consistency_level`` as a parameter for the ``SimpleStatement`` object.
+    In Python, you can specify ``consistency_level`` as a parameter for the ``SimpleStatement`` object.
 
    .. code-block:: bash
     

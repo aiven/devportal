@@ -36,7 +36,7 @@ From the information about restrictions on using Aiven for ClickHouse, you can e
        * Some engines are remapped to their ``Replicated`` alternatives, for example, ``MergeTree`` **>** ``ReplicatedMergeTree``.
      - * For storing data, use the `Buffer engine <https://clickhouse.com/docs/en/engines/table-engines/special/buffer/>`_ instead of the Log engine.
 
-       * Use the available table engines listed in :doc:`Supported table engines in Aiven for ClickHouse </docs/products/clickhouse/reference/supported-table-engines>`.
+       * Use the available table engines listed in `Supported table engines in Aiven for ClickHouse </docs/products/clickhouse/reference/supported-table-engines>`_.
    * - Cloud availability
      - Available on AWS, GCP, and Azure only
      - Use the available cloud providers.
