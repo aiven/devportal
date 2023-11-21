@@ -62,16 +62,18 @@ The command above has the following parameters:
 
 .. Note::
 
-    If you're using GCP Cloud SQL for SQL Server, you can enable database CDC on a table with::
+   If you're using GCP Cloud SQL for SQL Server, you can enable database CDC on a table with:
+    
+   .. code::
 
-        EXEC sys.sp_cdc_enable_table
-        @source_schema = N'<SCHEMA_NAME>',
-        @source_name = N'<TABLE_NAME>',
-        @role_name = N'<ROLE_NAME>'
+      EXEC sys.sp_cdc_enable_table
+      @source_schema = N'<SCHEMA_NAME>',
+      @source_name = N'<TABLE_NAME>',
+      @role_name = N'<ROLE_NAME>'
 
 .. Warning::
 
-    When evolving table schemas in online mode, new columns information might be lost until the CDC is re-enabled for the table. More information are available in the `related Debezium documentation <https://debezium.io/documentation/reference/stable/connectors/sqlserver.html#sqlserver-schema-evolution>`_.
+   When evolving table schemas in online mode, new columns information might be lost until the CDC is re-enabled for the table. More information are available in the `related Debezium documentation <https://debezium.io/documentation/reference/stable/connectors/sqlserver.html#sqlserver-schema-evolution>`_.
 
 
 .. _connect_debezium_sql_server_source_prereq:
