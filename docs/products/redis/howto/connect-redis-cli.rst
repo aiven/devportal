@@ -27,7 +27,7 @@ Code
 
 Execute the following from a terminal window:
 
-::
+.. code::
 
     redis-cli -u REDIS_URI
 

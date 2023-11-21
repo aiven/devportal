@@ -45,7 +45,7 @@ times as you need to create enough IP addresses for your service. Specify the
 name of the cloud that the IP address should be created in, to match the
 service that will use it.
 
-::
+.. code::
 
    avn static-ip create --cloud azure-westeurope
 
@@ -95,7 +95,7 @@ Configure service to use static IP
 Enable static IP addresses for the service by setting the ``static_ips`` user
 configuration option:
 
-::
+.. code::
 
    avn service update -c static_ips=true my-static-pg
 
@@ -125,13 +125,13 @@ Static IP addresses are removed by first dissociating them from a service,
 while they are not in use. This returns them back to the ``created`` state to
 either be associated with another service, or deleted.
 
-::
+.. code::
 
    avn static-ip dissociate ip358375b2765
 
 To delete a static IP:
 
-::
+.. code::
 
    avn static-ip delete ip358375b2765
 

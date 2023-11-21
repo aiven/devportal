@@ -30,15 +30,19 @@ To simplify this example, we will install the Telegraf agent on a MacBook to col
 Of course, Telegraf can also be installed on `Windows and Linux <https://docs.influxdata.com/telegraf/v1.19/introduction/installation/>`_ machines.
 
 Assuming you have Homebrew installed on a MacBook, simply run the following command at the Terminal
-to install Telegraf (https://formulae.brew.sh/formula/telegraf)::
+to install Telegraf (https://formulae.brew.sh/formula/telegraf):
 
-    brew update && brew install telegraf
+   .. code::
+
+      brew update && brew install telegraf
 
 Configure Telegraf and integrate it with M3
 -------------------------------------------
-Use the Telegraf agent to generate a default configuration file for editing::
+Use the Telegraf agent to generate a default configuration file for editing:
 
-    telegraf config > telegraf.conf
+.. code::
+
+   telegraf config > telegraf.conf
 
 Modify the ``telegraf.conf`` configuration file to change the output endpoint to that of our M3 instance.
 
@@ -46,7 +50,9 @@ Change the URL under the ``outputs.influxdb`` section to that of your Aiven for 
 **NOTE:** The URL prefix should simply be ``https://`` and remove the ``username:password`` from the URI (see snippet below).
 
 Specify the service username/password and set the database name to ``default``
-(the database that is automatically created when your service is provisioned)::
+(the database that is automatically created when your service is provisioned):
+
+.. code::
 
 		[[outputs.influxdb]]
 		  urls = ["https://my-M3-service-my-project.aivencloud.com:24947/api/v1/influxdb"]

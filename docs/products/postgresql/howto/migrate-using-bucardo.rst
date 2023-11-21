@@ -54,7 +54,7 @@ To migrate your data using Bucardo:
    b. In line 5359 in `Bucardo.pm <https://github.com/bucardo/bucardo/blob/1ff4d32d1924f3437af3fbcc1a50c1a5b21d5f5c/Bucardo.pm>`_, change ``SET session_replication_role = default`` to
       the following:
 
-      ::
+      .. code::
 
          $dbh->do(q{select aiven_extras.session_replication_role('replica');});
 
@@ -63,7 +63,7 @@ To migrate your data using Bucardo:
    d. On line 5428, change ``SET session_replication_role = default`` to
       the following:
 
-      ::
+      .. code::
 
          $dbh->do(q{select aiven_extras.session_replication_role('origin');});
 
@@ -72,7 +72,7 @@ To migrate your data using Bucardo:
 #. | Add your source and destination databases.
    | For example:
 
-   ::
+   .. code::
 
       bucardo add db srcdb dbhost=0.0.0.0 dbport=5432 dbname=all_your_base dbuser=$DBUSER dbpass=$DBPASS
 
@@ -80,7 +80,7 @@ To migrate your data using Bucardo:
 
 #. Add the tables that you want to replicate:
 
-   ::
+   .. code::
 
       bucardo add table belong to us herd=$HERD db=srcdb
 
@@ -88,7 +88,7 @@ To migrate your data using Bucardo:
 
 #. Dump and restore the database from your source to your Aiven service:
 
-   ::
+   .. code::
 
       pg_dump --schema-only --no-owner all_your_base > base.sql
       psql "$AIVEN_DB_URL" < base.sql
@@ -98,7 +98,7 @@ To migrate your data using Bucardo:
 
 #. Create the ``dbgroup`` for Bucardo:
 
-   ::
+   .. code::
 
       bucardo add dbgroup src_to_dest srcdb:source destdb:target
       bucardo add sync sync_src_to_dest relgroup=$HERD db=srcdb,destdb

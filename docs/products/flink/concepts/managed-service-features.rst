@@ -19,7 +19,7 @@ By default, each TaskManager is configured with a single slot for maximum job is
 
 Cluster restart strategy
 ------------------------
-The default restart strategy of the cluster is set to `Failure Rate`. This controls how Apache Flink restarts in case of failures during job execution. Administrators can change this setting in the advanced configuration options of the service.
+The default restart strategy of the cluster is set to ``Failure Rate``. This controls how Apache Flink restarts in case of failures during job execution. Administrators can change this setting in the advanced configuration options of the service.
 
 For more information on available options, refer to `Apache Flink fault tolerance <https://nightlies.apache.org/flink/flink-docs-master/docs/deployment/config/#fault-tolerance>`_ documentation. 
 

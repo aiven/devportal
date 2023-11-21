@@ -50,7 +50,7 @@ Example: Define a Flink table over a PostgreSQL® table
 
 The Aiven for PostgreSQL® service named ``pg-demo`` contains a table named ``students`` in the ``public`` schema with the following structure:
 
-::
+.. code::
 
   CREATE TABLE students_tbl (
     student_id INT,

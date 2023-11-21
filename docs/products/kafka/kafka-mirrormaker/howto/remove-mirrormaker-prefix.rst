@@ -15,7 +15,7 @@ Remove topic prefix from a replication flow
 
 To remove the source cluster alias as topic prefix in an existing replication flow via the :doc:`Aiven CLI </docs/tools/cli>` execute the following command, replacing the ``<MIRRORMAKER_SERVICE_NAME>``, ``<SOURCE_CLUSTER_ALIAS>`` and ``<TARGET_CLUSTER_ALIAS>`` placeholders:
 
-::
+.. code::
 
     avn MirrorMaker replication-flow update <MIRRORMAKER_SERVICE_NAME> \
         --source-cluster <SOURCE_CLUSTER_ALIAS>                         \

@@ -31,7 +31,7 @@ Adds an Aiven for Apache Kafka® ACL entry.
 
 **Example:** Add an ACLs for users with username ending with ``userA`` to ``readwrite`` on topics having name starting with ``topic2020`` in the service ``kafka-doc``.
 
-::
+.. code::
 
   avn service acl-add kafka-doc --username *userA --permission readwrite --topic topic2020*
 
@@ -56,7 +56,7 @@ Deletes an Aiven for Apache Kafka® ACL entry.
 
 **Example:** Delete the ACLs with id ``acl3604f96c74a`` on the Aiven for Apache Kafka instance named ``kafka-doc``.
 
-::
+.. code::
 
   avn service acl-delete kafka-doc acl3604f96c74a
 
@@ -76,7 +76,7 @@ Lists Aiven for Apache Kafka® ACL entries.
 
 **Example:** List the ACLs defined for a service named ``kafka-doc``.
 
-::
+.. code::
 
   avn service acl-list kafka-doc
 

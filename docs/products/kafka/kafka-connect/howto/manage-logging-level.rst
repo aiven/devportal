@@ -21,7 +21,7 @@ Get the Kafka Connect nodes connection URI
 
 To update the logging level in all the Kafka Connect nodes, you need to get their connection URI using the :ref:`Aiven CLI service get command <avn_service_get>`
 
-::
+.. code::
 
     avn service get SERVICE_NAME  --format '{connection_info}'
 
@@ -34,7 +34,7 @@ Retrieve the list of loggers and connectors
 
 You can retrieve the list of loggers, connectors and their current logging level on each worker using the dedicated ``/admin/loggers`` Kafka Connect API
 
-::
+.. code::
 
     curl https://avnadmin:PASSWORD@IP_ADDRESS:PORT/admin/loggers --insecure
 
@@ -69,7 +69,7 @@ Change the logging level for a particular logger
 
 To change the logging level for a particular logger you can use the same ``admin/loggers`` endpoint, specifying the logger name (``LOGGER_NAME`` in the following command)
 
-::
+.. code::
 
     curl -X PUT -H "Content-Type:application/json"          \
         -d '{"level": "TRACE"}'                             \

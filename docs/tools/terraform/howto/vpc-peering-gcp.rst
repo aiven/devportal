@@ -12,7 +12,7 @@ Prerequisites:
 
 * Create an :doc:`Aiven authentication token </docs/platform/howto/create_authentication_token>`.
 
-* Install the Google Cloud SDK from https://cloud.google.com/sdk/docs/install.
+* `Install the Google Cloud SDK <https://cloud.google.com/sdk/docs/install>`_.
 
 * Authenticate using the following command
 

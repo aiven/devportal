@@ -40,7 +40,7 @@ Where:
 
 The following example shows you how to add an ACL entry to grant a user (``user_1``) read options (``schema_registry_read``) to subject ``s1``. Replace the placeholders ``PROJECT_NAME`` and ``APACHE_KAFKA_SERVICE_NAME`` with the name of the project and the Aiven for Apache Kafka® service.
 
-::
+.. code::
 
   avn service schema-registry-acl-add kafka-doc \
     --username 'user_1'                        \
@@ -71,7 +71,7 @@ Where:
 
 **Example**
 The following example deletes the Karapace schema registry ACL with ID ``acl3604f96c74a`` on the Aiven for Apache Kafka® instance named ``kafka-doc``.
-::
+.. code::
 
   avn service schema-registry-acl-delete kafka-doc acl3604f96c74a
 
@@ -95,7 +95,7 @@ Where:
 **Example:** 
 The following example lists the ACLs defined for an Aiven for Apache Kafka® service named ``kafka-doc``.
 
-::
+.. code::
 
   avn service schema-registry-acl-list kafka-doc
 

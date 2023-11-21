@@ -17,7 +17,9 @@ To use the Debezium source connector for SQL server, you need to enabled at data
 Enable CDC at database level
 ''''''''''''''''''''''''''''
 
-To enable the CDC at database level, you can use the following command::
+To enable the CDC at database level, you can use the following command:
+
+.. code::
 
     USE <DATABASE_NAME>
     GO
@@ -26,16 +28,20 @@ To enable the CDC at database level, you can use the following command::
 
 .. Note::
 
-    If you're using GCP Cloud SQL for SQL Server, you can enable database CDC with::
+    If you're using GCP Cloud SQL for SQL Server, you can enable database CDC with:
     
-        EXEC msdb.dbo.gcloudsql_cdc_enable_db '<DATABASE_NAME>'
+    .. code::
+    
+       EXEC msdb.dbo.gcloudsql_cdc_enable_db '<DATABASE_NAME>'
 
 Once the CDC is enabled, a new schema called ``cdc`` is created for the target database, containing all the required tables.
 
 Enable CDC at table level
 '''''''''''''''''''''''''
 
-To enable CDC for a table you can execute the following command::
+To enable CDC for a table you can execute the following command:
+
+.. code::
 
     USE <DATABASE_NAME>
     GO

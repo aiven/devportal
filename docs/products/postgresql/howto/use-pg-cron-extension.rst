@@ -8,7 +8,7 @@ Use the PostgreSQL® ``pg_cron`` extension
 
 The schedule uses the standard cron syntax, where an asterisk (*) signifies "execute at every time interval", and a specific number indicates "execute exclusively at this specific time":
 
-::
+.. code::
 
        	┌───────────── min (0 - 59)
 	│ ┌────────────── hour (0 - 23)
@@ -26,17 +26,16 @@ Enable ``pg_cron`` for specific users
 To use the ``pg_cron`` extension: 
 
 1. Connect to the database as ``avnadmin`` user and make sure to use the ``defaultdb`` database
-:: 
 
-	CREATE EXTENSION pg_cron;
+   .. code:: 
+
+    	CREATE EXTENSION pg_cron;
 
 2. As a optional step, you can grant usage permission to regular users
-::	
+
+   .. code::	
 	
-	GRANT USAGE ON SCHEMA cron TO janedoe;
-
-
-
+	    GRANT USAGE ON SCHEMA cron TO janedoe;
 
 Setup the cron job
 ------------------
@@ -45,7 +44,7 @@ List all the jobs
 ```````````````````
 To view the full list of existing jobs, you can run the following query:
 
-::
+.. code::
 
 	postgres=> SELECT * FROM cron.job;
 	jobid | schedule    | command                        | nodename  | nodeport | database | username  | active | jobname
@@ -59,7 +58,7 @@ Schedule a job
 ```````````````
 You can schedule a new job with the following command. In this example, the job is set to vacuum daily at 10:00am (GMT):
 
-::
+.. code::
 
 	###Vacuum every day at 10:00am (GMT)
 	SELECT cron.schedule('nightly-vacuum', '0 10 * * *', 'VACUUM');
@@ -71,14 +70,14 @@ To stop scheduling a job, you have two options:
 
 1. By using the ``jobname``:
 
-::
+.. code::
 
 	###Stop scheduling jobs using jobname
 	SELECT cron.unschedule('nightly-vacuum' );
 
 2. By using the ``jobid``:
 
-::
+.. code::
 
 	###Stop scheduling jobs using jobid
 	SELECT cron.unschedule(1);
@@ -88,7 +87,7 @@ View completed jobs
 ```````````````````````
 To view a list of all completed job runs, you can use the following query:
 
-::
+.. code::
 
 	select * from cron.job_run_details order by start_time desc limit 5;
 	+------------------------------------------------------------------------------------------------------------------------------------------------------------------+

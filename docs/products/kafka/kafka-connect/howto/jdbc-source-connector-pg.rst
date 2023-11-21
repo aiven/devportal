@@ -42,7 +42,7 @@ Define a Kafka Connect configuration file
 
 Define the connector configurations in a file (we'll refer to it with the name ``jdbc_source_pg.json``) with the following content:
 
-::
+.. code::
 
     {
         "name":"CONNECTOR_NAME",
@@ -78,13 +78,13 @@ Create a Kafka Connect connector with Aiven CLI
 
 To create the connector, execute the following :ref:`Aiven CLI command <avn_service_connector_create>`, replacing the ``SERVICE_NAME`` with the name of the Aiven service where the connector needs to run:
 
-:: 
+.. code:: 
 
     avn service connector create SERVICE_NAME @jdbc_source_pg.json
 
 Check the connector status with the following command, replacing the ``SERVICE_NAME`` with the Aiven service and the ``CONNECTOR_NAME`` with the name of the connector defined before:
 
-::
+.. code::
 
     avn service connector status SERVICE_NAME CONNECTOR_NAME
 
@@ -108,7 +108,7 @@ The example creates an :doc:`incremental <../concepts/jdbc-source-modes>` JDBC c
 
 The connector configuration is the following:
 
-::
+.. code::
 
     {
         "name":"jdbc_source_pg_increment",
@@ -126,6 +126,6 @@ The connector configuration is the following:
 
 With the above configuration stored in a ``jdbc_incremental_source_pg.json`` file, you can create the connector in the ``demo-kafka`` instance with:
 
-::
+.. code::
 
     avn service connector create demo-kafka @jdbc_incremental_source_pg.json

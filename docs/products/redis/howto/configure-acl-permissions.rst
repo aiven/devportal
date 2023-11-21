@@ -63,13 +63,13 @@ To create a user and configure ACLs using the Aiven CLI, follow these steps:
 
 2. Create a user named ``mynewuser`` with read-only access to the ``mykeys.*`` keys using the following command:
 
-   ::
+   .. code::
 
       avn service user-create --project myproject myservicename --username mynewuser --redis-acl-keys 'mykeys.*' --redis-acl-commands '+get' --redis-acl-categories ''
 
 3. Confirm the ACL is applied by connecting to the service using the new username and password: 
    
-   ::
+   .. code::
 
       redis-cli --user mynewuser --pass ... --tls -h myservice-myproject.aivencloud.com -p 12719
 

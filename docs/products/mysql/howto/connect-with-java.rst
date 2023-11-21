@@ -47,9 +47,11 @@ Add the following to ``MySqlExample.java``:
 
 This code creates a MySQL client and connects to the database. It fetches version of MySQL and prints it the output.
 
-Run the code after replacement of the placeholders with values for your project::
+Run the code after replacement of the placeholders with values for your project:
 
-    javac MySqlExample.java && java -cp mysql-driver-8.0.28.jar:. MySqlExample -host MYSQL_HOST -port MYSQL_PORT -database MYSQL_DATABASE -username avnadmin -password MYSQL_PASSWORD
+.. code::
+
+   javac MySqlExample.java && java -cp mysql-driver-8.0.28.jar:. MySqlExample -host MYSQL_HOST -port MYSQL_PORT -database MYSQL_DATABASE -username avnadmin -password MYSQL_PASSWORD
 
 If the script runs successfully, the output will be the values that were inserted into the table::
 

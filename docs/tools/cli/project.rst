@@ -298,6 +298,6 @@ SBOM reports are generated per project and can be downloaded as long as the nece
 
 **Example:** Get the SBOM report download link for the project ``my-project`` in ``csv`` format:
 
-::
+.. code::
 
   avn project generate-sbom --project my-project --output csv

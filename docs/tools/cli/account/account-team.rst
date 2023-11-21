@@ -27,7 +27,7 @@ Creates a new account team.
 
 **Example:** Create a new team named ``clickstream analytics`` for the account id ``123456789123``.
 
-::
+.. code::
 
   avn account team create 123456789123 --team-name "clickstream analytics"
 
@@ -49,7 +49,7 @@ Deletes an existing account team.
 
 **Example:** Delete the team with id ``at31d79d311b3`` for the account id ``123456789123``.
 
-::
+.. code::
 
   avn account team delete 123456789123 --team-id at31d79d311b3
 
@@ -70,7 +70,7 @@ Lists an existing account teams.
 
 **Example:** List all the teams belonging to the account id ``123456789123``.
 
-::
+.. code::
 
   avn account team list 123456789123 
 
@@ -108,7 +108,7 @@ Attaches an existing account team to a project.
 
 **Example:** Attach the team with id ``at3exxxxxxxxx`` belonging to the account ``123456789123`` to the project named ``testing-sandbox`` granting ``operator`` access.
 
-::
+.. code::
 
   avn account team project-attach 123456789123  \
     --team-id at3exxxxxxxxx                     \
@@ -136,7 +136,7 @@ Detaches an existing account team from a project.
 
 **Example:** Detach the team with id ``at3exxxxxxxxx`` belonging to the account ``123456789123`` from the project named ``testing-sandbox``.
 
-::
+.. code::
 
   avn account team project-detach 123456789123  \
     --team-id at3exxxxxxxxx                     \
@@ -162,7 +162,7 @@ Invites a new user to an Aiven team.
 
 **Example:** Invite the user ``jane.doe@example.com`` to the team id ``at3exxxxxxxxx`` belonging to the account ``123456789123``.
 
-::
+.. code::
 
   avn account team user-invite 123456789123 jane.doe@example.com  --team-id at3exxxxxxxxx
 
@@ -186,7 +186,7 @@ Deletes an existing user from an Aiven team.
 
 **Example:** Remove the user with id ``x5dxxxxxxxxx`` from the team id ``at3exxxxxxxxx`` belonging to the account ``123456789123``.
 
-::
+.. code::
 
   avn account team user-delete 123456789123 --team-id at3exxxxxxxxx --user-id x5dxxxxxxxxx
 
@@ -208,7 +208,7 @@ Lists the existing users in an Aiven team.
 
 **Example:** List all the users in the team id ``at3exxxxxxxxx`` belonging to the account ``123456789123``.
 
-::
+.. code::
 
   avn account team user-list 123456789123 --team-id at3exxxxxxxxx 
 
@@ -242,7 +242,7 @@ Lists the users with pending invitation from an Aiven team. Unacknowledged invit
 
 **Example:** List all the users with pending invitations for the team id ``at3exxxxxxxxx`` belonging to the account ``123456789123``.
 
-::
+.. code::
 
   avn account team user-list-pending 123456789123 --team-id at3exxxxxxxxx 
 

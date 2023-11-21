@@ -17,7 +17,7 @@ To configure DataGen as the source using the DataGen built-in connector for Apac
 4. Select **Add new table** or select **Edit** if you want to edit an existing source table. 
 5. In the **Table SQL** section of the **Add new source table** or **Edit source table** screen,  set the connector to **datagen** as shown in the example below:
 
-::
+.. code::
 
     CREATE TABLE `gen_me` 
     ( 

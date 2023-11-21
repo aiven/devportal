@@ -37,7 +37,7 @@ Creates a new user for the selected service.
 
 **Example:** Create a new user named ``janedoe`` for a service named ``pg-demo``.
 
-::
+.. code::
 
   avn service user-create pg-demo --username janedoe
 
@@ -61,7 +61,7 @@ Acknowledges the usage of the :doc:`renewed SSL certificate </docs/products/kafk
 
 **Example:** Acknowledge the usage of the new SSL certificate for the user ``janedoe`` belonging to a service named ``kafka-demo``.
 
-::
+.. code::
 
   avn service user-creds-acknowledge kafka-demo --username janedoe
 
@@ -87,7 +87,7 @@ Downloads the SSL certificate, key and CA certificate for the selected service.
 
 **Example:** Download the SSL certificate, key and CA certificate in a folder named ``/tmp/certs`` for the user ``janedoe`` belonging to a service named ``kafka-demo``.
 
-::
+.. code::
 
   avn service user-creds-download kafka-demo --username janedoe -d /tmp/certs
 
@@ -111,7 +111,7 @@ Delete a service in a given Aiven service.
 
 **Example:** Delete the user ``janedoe`` defined in a service named ``kafka-demo``.
 
-::
+.. code::
 
   avn service user-delete kafka-demo --username janedoe
 
@@ -135,7 +135,7 @@ Retrieves the details for a single user in a given Aiven service.
 
 **Example:** Retrieve the details for the user ``janedoe`` defined for a service named ``kafka-demo``.
 
-::
+.. code::
 
   avn service user-get kafka-demo --username janedoe
 
@@ -169,7 +169,7 @@ Downloads the SSL certificate, key and CA certificate and creates a Java keystor
 
 **Example:** Download the SSL certificate, key and CA certificate in a folder named ``/tmp/certs`` for the user ``janedoe`` belonging to a service named ``kafka-demo``. Furthermore, secure the Java keystore and truststore with the password ``safePassword123``.
 
-::
+.. code::
 
   avn service user-kafka-java-creds kafka-demo --username janedoe -d /tmp/certs --password safePassword123
 
@@ -191,7 +191,7 @@ Lists the users defined for the selected service, and the related type (``primar
 
 **Example:** List the users defined for a service named ``pg-doc``.
 
-::
+.. code::
 
   avn service user-list pg-doc
 
@@ -225,7 +225,7 @@ Resets or changes the service user password.
 
 **Example:** Change the password for the ``avnadmin`` user of the service named ``pg-doc`` to ``VerySecurePwd123``.
 
-::
+.. code::
 
   avn service user-password-reset pg-doc --username avnadmin --new-password VerySecurePwd123
 

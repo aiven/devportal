@@ -27,14 +27,14 @@ Lists cloud regions with related geographical region, latitude and longitude.
 
 **Example:** Show the clouds available to the currently selected project.
 
-::
+.. code::
 
   avn cloud list
 
 
 **Example:** Show the clouds available to a named project.
 
-::
+.. code::
 
   avn cloud list --project my-project
 

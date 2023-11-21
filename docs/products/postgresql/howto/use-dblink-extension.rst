@@ -28,7 +28,7 @@ To enable the ``dblink`` extension on an Aiven for PostgreSQL service:
 
 * Connect to the database with the ``avnadmin`` user. The following shows how to do it with ``psql``, the service URI can be found in the `Aiven console <https://console.aiven.io/>`_ the service's **Overview** page:
 
-::
+.. code::
 
     psql "postgres://avnadmin:[AVNADMIN_PWD]@[PG_HOST]:[PG_PORT]/[PG_DB_NAME]?sslmode=require"
 
@@ -38,7 +38,7 @@ To enable the ``dblink`` extension on an Aiven for PostgreSQL service:
 
 * Create the ``dblink`` extension
 
-::
+.. code::
 
     CREATE EXTENSION dblink;
 
@@ -49,20 +49,20 @@ To create a foreign data wrapper using the ``dblink_fwd`` you need to perform th
 
 *  Connect to the database with the ``avnadmin`` user. The following shows how to do it with ``psql``, the service URI can be found in the `Aiven console <https://console.aiven.io/>`_ the service's **Overview** page:
 
-::
+.. code::
 
     psql "postgres://avnadmin:[AVNADMIN_PWD]@[PG_HOST]:[PG_PORT]/[PG_DB_NAME]?sslmode=require"
 
 
 * Create a user ``user1`` that will be access the ``dblink``
 
-::
+.. code::
 
     CREATE USER user1 PASSWORD 'secret1'
 
 * Create a remote server definition (named ``pg_remote``)  using ``dblink_fdw`` and the target PostgreSQL connection details 
 
-::
+.. code::
 
     CREATE SERVER pg_remote
         FOREIGN DATA WRAPPER dblink_fdw
@@ -74,7 +74,7 @@ To create a foreign data wrapper using the ``dblink_fwd`` you need to perform th
 
 * Create a user mapping for the ``user1`` to automatically authenticate as the ``TARGET_PG_USER`` when using the ``dblink``
 
-::
+.. code::
 
     CREATE USER MAPPING FOR user1
         SERVER pg_remote
@@ -85,7 +85,7 @@ To create a foreign data wrapper using the ``dblink_fwd`` you need to perform th
 
 * Enable ``user1`` to use the remote PostgreSQL connection ``pg_remote``
 
-::
+.. code::
 
     GRANT USAGE ON FOREIGN SERVER pg_remote TO user1;
 
@@ -98,13 +98,13 @@ To query a foreign data wrapper you must be a database user having the necessary
 
 * Establish the ``dblink`` connection to the remote target
 
-::
+.. code::
 
     SELECT dblink_connect('my_new_conn', 'pg_remote');
 
 * Execute the query passing the foreign server definition as parameter
 
-::
+.. code::
 
     SELECT * FROM dblink('pg_remote','SELECT item_id FROM inventory') 
         AS target_inventory(target_item_id int);
