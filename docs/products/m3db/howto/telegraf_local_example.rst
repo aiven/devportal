@@ -5,7 +5,7 @@ Aiven for M3 + Telegraf set up
 ------------------------------
 At a high level, here is how to set up Telegraf to push metrics to Aiven for M3.
 
-1. Log into `Aiven Console <https://console.aiven.io>`_ and `create an Aiven for M3 Service </docs/platform/howto/create_new_service>`_.
+1. Log into `Aiven Console <https://console.aiven.io>`_ and :doc:`create an Aiven for M3 Service </docs/platform/howto/create_new_service>`.
 2. Install and configure Telegraf Agent.
 3. Setup Aiven for Grafana® instance for visualization of telegraph metrics.
 

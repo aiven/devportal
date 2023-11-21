@@ -50,4 +50,4 @@ To run the code:
    
    python main.py
 
-If the script outputs ``True`` then there is data in your M3DB. See `Visualize M3DB data with Grafana </docs/products/m3db/howto/grafana>`_.
+If the script outputs ``True`` then there is data in your M3DB. See :doc:`Visualize M3DB data with Grafana </docs/products/m3db/howto/grafana>`.

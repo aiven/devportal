@@ -129,11 +129,11 @@ Creates a new service.
   * - ``service_name``
     - The name of the service
   * - ``--service-type``
-    - The type of service; the :any:`service types command </docs/tools/cli/service#avn-cli-service-type>` has the available values
+    - The type of service; the :ref:`service types command <avn-cli-service-type>` has the available values
   * - ``--plan``
-    - Aiven subscription plan name; check :any:`avn_service_plan </docs/tools/cli/service#avn-service-plan>` for more information
+    - Aiven subscription plan name; check :ref:`avn_service_plan <avn-service-plan>` for more information
   * - ``--cloud``
-    - The cloud region name; check :any:`avn-cloud-list </docs/tools/cli/cloud.html#avn-cloud-list>` for more information
+    - The cloud region name; check :ref:`avn-cloud-list <avn-cloud-list>` for more information
   * - ``--disk-space-gib``
     - Total amount of disk space for data storage (GiB)
   * - ``--no-fail-if-exists``
@@ -447,7 +447,7 @@ Retrieves the metrics for a defined service in Google chart compatible format. T
 
 Get migration status
 
-.. _avn_service_plan:
+.. _avn-service-plan:
 
 ``avn service plans``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -461,7 +461,7 @@ Lists the service plans available in a selected project for a defined service ty
   * - Parameter
     - Information
   * - ``--service-type``
-    - The type of service, check :doc:`avn-cli-service-type </docs/tools/cli/service#avn-cli-service-type>` for more information
+    - The type of service, check :ref:`avn-cli-service-type <avn-cli-service-type>` for more information
   * - ``--cloud``
     - The cloud region
   * - ``--monthly``
@@ -656,7 +656,7 @@ Permanently deletes a service.
 
   The ``terminate`` command deletes the service and the associated data. The data is not recoverable. 
   To temporarily shut down the service use the
-  :doc:`service update command </docs/tools/cli/service#avn-cli-service-update>`:
+  :ref:`service update command <avn-cli-service-update>`:
   ``avn service update SERVICE_NAME --power-off``
 
 .. list-table::
@@ -678,7 +678,7 @@ Permanently deletes a service.
 
 .. Note::
 
-  To avoid accidental service deletion, enable the termination protection during service :doc:`creation </docs/tools/cli/service#avn-cli-service-create>`  or :doc:`update </docs/tools/cli/service#avn-cli-service-update>` by using the ``--enable-termination-protection`` flag 
+  To avoid accidental service deletion, enable the termination protection during service :ref:`creation <avn-cli-service-create>`  or :ref:`update <avn-cli-service-update>` by using the ``--enable-termination-protection`` flag 
 
 ``avn service topic``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -746,13 +746,13 @@ Updates the settings for an Aiven service.
   * - ``service_name``
     - The name of the service
   * - ``--cloud``
-    - The name of the cloud region where to deploy the service; check :doc:`avn-cloud-list </docs/tools/cli/cloud.html#avn-cloud-list>`.
+    - The name of the cloud region where to deploy the service; check :ref:`avn-cloud-list <avn-cloud-list>`.
   * - ``-c KEY=VALUE``
     - Apply a configuration setting. Run ``avn service types -v`` to view available values.
   * - ``--disk-space-gib``
     - Total amount of disk space for data storage (GiB)
   * - ``--plan``
-    - Aiven subscription plan name. See :doc:`avn_service_plan </docs/tools/cli/service#avn-service-plan>`.
+    - Aiven subscription plan name. See :ref:`avn_service_plan <avn-service-plan>`.
   * - ``--power-on``
     - Power on the service
   * - ``--power-off``
