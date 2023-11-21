@@ -6,7 +6,7 @@ Aiven does not terminate any customer queries even if they run indefinitely, but
 To identify and terminate such long-running queries, you can do it from either:
 
 * `Aiven Console <https://console.aiven.io>`__
-* :doc:`MySQL shell <./connect-from-cli>` (``mysql``)
+* :doc:`MySQL shell </docs/products/mysql/howto/connect-from-cli>` (``mysql``)
 
 
 Terminate long running queries from the Aiven Console
@@ -20,7 +20,7 @@ Terminate long running queries from the Aiven Console
 Detect and terminate long running queries via CLI
 -------------------------------------------------
 
-You can :doc:`login to your service <./connect-from-cli>` using ``mysqlsh`` or ``mysql``.  Once connected, you can call the following command on the ``mysql`` shell to view all running queries:
+You can :doc:`login to your service </docs/products/mysql/howto/connect-from-cli>` using ``mysqlsh`` or ``mysql``.  Once connected, you can call the following command on the ``mysql`` shell to view all running queries:
 
 .. code-block:: shell
     
@@ -34,6 +34,6 @@ You can terminate a query manually using:
 
     KILL QUERY pid
 
-where the ``pid`` is the process ID output by the `SHOW PROCESSLIST` command above.
+where the ``pid`` is the process ID output by the ``SHOW PROCESSLIST`` command above.
 
 You can learn more about the ``KILL QUERY`` command from the `MySQL KILL documentation <https://dev.mysql.com/doc/refman/8.0/en/kill.html>`_.

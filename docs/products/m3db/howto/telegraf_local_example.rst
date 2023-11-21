@@ -5,7 +5,7 @@ Aiven for M3 + Telegraf set up
 ------------------------------
 At a high level, here is how to set up Telegraf to push metrics to Aiven for M3.
 
-1. Log into `Aiven Console <https://console.aiven.io>`_ and :doc: `create an Aiven for M3 Service </docs/platform/howto/create_new_service>`.
+1. Log into `Aiven Console <https://console.aiven.io>`_ and `create an Aiven for M3 Service </docs/platform/howto/create_new_service>`_.
 2. Install and configure Telegraf Agent.
 3. Setup Aiven for Grafana® instance for visualization of telegraph metrics.
 
@@ -19,7 +19,7 @@ Within your existing Aiven project, create a new M3 service.
 
 1. Log in to the `Aiven web console <https://console.aiven.io/>`_.
 
-2. Follow :doc:`these instructions </docs/platform/howto/create_new_service>` to create a new Aiven for M3DB® service.
+2. Follow :doc:`create a new Aiven for M3DB® </docs/platform/howto/create_new_service>`.
    
 Open the newly created M3 service and select the **InfluxDB®** tab in the **Connection information** section. 
 You will use several values from this page including the **Service URI, user, and password**. You will need these values when configuring Telegraf in the next section.
@@ -32,9 +32,9 @@ Of course, Telegraf can also be installed on `Windows and Linux <https://docs.in
 Assuming you have Homebrew installed on a MacBook, simply run the following command at the Terminal
 to install Telegraf (https://formulae.brew.sh/formula/telegraf):
 
-   .. code::
+.. code::
 
-      brew update && brew install telegraf
+   brew update && brew install telegraf
 
 Configure Telegraf and integrate it with M3
 -------------------------------------------

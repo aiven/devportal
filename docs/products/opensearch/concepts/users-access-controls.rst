@@ -119,4 +119,4 @@ Enabling ACLs does not restrict access to OpenSearch Dashboards. However, all re
 
 Next steps
 ----------
-Learn how to :doc: `enable and manage access control <../howto/control_access_to_content>` for your Aiven for OpenSearch® service. 
+Learn how to `enable and manage access control </docs/products/opensearch/howto/control_access_to_content>`_ for your Aiven for OpenSearch® service. 

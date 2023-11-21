@@ -21,9 +21,11 @@ Pre-requisites
 
 For this example you will need:
 
-1. The PHP InfluxDB library. You can install this with ``composer``::
+1. The PHP InfluxDB library. You can install this with ``composer``:
 
-    composer require influxdata/influxdb-client-php
+   .. code:: 
+     
+      composer require influxdata/influxdb-client-php
 
 
 .. note::
@@ -46,4 +48,4 @@ To run the code:
 
    php -f index.php
 
-If the script outputs ``bool(true)`` then there is data in your M3DB. If you'd like to you can take a look at :doc:`grafana` to see how to inspect your data with Grafana®.
+If the script outputs ``bool(true)`` then there is data in your M3DB. See `Visualize M3DB data with Grafana </docs/products/m3db/howto/grafana>`_.
