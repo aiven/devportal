@@ -81,9 +81,11 @@ Creating a new role is strongly suggested to provide the minimal amount of privi
 
     grant role aiven_snowflake_sink_connector_role to user aiven;
 
-4. Run the following query to alter the user making the new role default when logging in::
+4. Run the following query to alter the user making the new role default when logging in:
 
-    alter user aiven set default_role=aiven_snowflake_sink_connector_role;
+   .. code::
+    
+      alter user aiven set default_role=aiven_snowflake_sink_connector_role;
 
 Grant the Snowflake role access to the required database
 --------------------------------------------------------

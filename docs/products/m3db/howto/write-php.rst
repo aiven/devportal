@@ -40,8 +40,10 @@ Add the following to ``index.php`` and replace the placeholders with values for 
 
 This code creates an InfluxDBClient and connects to the InfluxDB-literate endpoint on the M3DB. Then the code constructs the expected data format, and writes it to the client.
 
-To run the code::
+To run the code:
 
-    php -f index.php
+.. code::
+
+   php -f index.php
 
 If the script outputs ``bool(true)`` then there is data in your M3DB. If you'd like to you can take a look at :doc:`grafana` to see how to inspect your data with Grafana®.

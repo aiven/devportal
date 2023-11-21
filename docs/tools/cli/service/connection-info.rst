@@ -42,7 +42,7 @@ Retrieves the ``kcat`` command necessary to connect to an Aiven for Apache Kafka
 
 **Example:** Retrieve the ``kcat`` command to connect to an Aiven for Apache Kafka service named ``demo-kafka`` with SSL authentication (``certificate``), download the certificates necessary for the connection:
 
-::
+.. code::
 
   avn service connection-info kafkacat demo-kafka --write
 
@@ -85,7 +85,7 @@ Retrieves the connection parameters for a certain Aiven for PostgreSQL® service
 
 **Example:** Retrieve the connection parameters for an Aiven for PostgreSQL® service named ``demo-pg``:
 
-::
+.. code::
 
   avn service connection-info pg string demo-pg
 
@@ -125,7 +125,7 @@ Retrieves the connection URI for an Aiven for PostgreSQL® service.
 
 **Example:** Retrieve the connection URI for an Aiven for PostgreSQL® service named ``demo-pg``:
 
-::
+.. code::
 
   avn service connection-info pg uri demo-pg
 
@@ -164,7 +164,7 @@ Retrieves the ``psql`` command needed to connect to an Aiven for PostgreSQL® se
 
 **Example:** Retrieve the ``psql`` command needed to connect to an Aiven for PostgreSQL® service named ``demo-pg``:
 
-::
+.. code::
 
   avn service connection-info psql demo-pg
 
@@ -201,7 +201,7 @@ Retrieves the connection URI needed to connect to an Aiven for Redis®* service.
 
 **Example:** Retrieve the connection URI needed to connect to an Aiven for Redis® service named ``demo-redis``:
 
-::
+.. code::
 
   avn service connection-info redis uri demo-redis
 

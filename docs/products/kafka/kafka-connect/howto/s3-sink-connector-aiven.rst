@@ -37,7 +37,7 @@ Define a Kafka Connect® configuration file
 
 Define the connector configurations in a file (we'll refer to it with the name ``s3_sink.json``) with the following content:
 
-::
+.. code::
 
     {
         "name": "<CONNECTOR_NAME>",
@@ -75,13 +75,13 @@ Create an S3 sink connector with Aiven CLI
 
 To create the connector, execute the following :ref:`Aiven CLI command <avn_service_connector_create>`, replacing the ``SERVICE_NAME`` with the name of the existing Aiven for Apache Kafka® service where the connector needs to run:
 
-:: 
+.. code:: 
 
     avn service connector create SERVICE_NAME @s3_sink.json
 
 Check the connector status with the following command, replacing the ``SERVICE_NAME`` with the existing Aiven for Apache Kafka® service and the ``CONNECTOR_NAME`` with the name of the connector defined before:
 
-::
+.. code::
 
     avn service connector status SERVICE_NAME CONNECTOR_NAME
 
@@ -102,7 +102,7 @@ The example creates an S3 sink connector with the following properties:
 
 The connector configuration is the following:
 
-::
+.. code::
 
     {
         "name": "my_s3_sink",
@@ -118,6 +118,6 @@ The connector configuration is the following:
 
 With the above configuration stored in a ``s3_sink.json`` file, you can create the connector in the ``demo-kafka`` instance with:
 
-::
+.. code::
 
     avn service connector create demo-kafka @s3_sink.json

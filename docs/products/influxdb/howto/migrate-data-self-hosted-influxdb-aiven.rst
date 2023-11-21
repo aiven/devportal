@@ -14,7 +14,7 @@ Create the data export file
 To export the data from a self-hosted InfluxDB service, you will first need to run the ``influx_inspect export`` command. This command will create a dump file of your data.
 
 The following is an example command:
-::
+.. code::
 
     influx_inspect export -datadir "/var/lib/influxdb/data" -waldir "/var/lib/influxdb/wal" -out "/scratch/weather.influx.gz" -database weather -compress
 
@@ -23,7 +23,7 @@ where,
 
 * ``-datadir`` and ``-waldir`` :  specifies the directories where your data and write-ahead log files are stored, respectively. These paths may differ on your system, so double-check your settings before running the command.
 * ``-out``: specifies where the export file will be saved. 
-* ``-database``:  specifies which database you want to export. In this example, the database named `weather` is being exported.
+* ``-database``:  specifies which database you want to export. In this example, the database named ``weather`` is being exported.
 * ``-compress``: implies the command to compress the data.
 
 If you have a large database and only need a specific part of the data, you can optionally define a time span using the ``-start`` and ``-end`` switches to reduce the dump size. This will make the export process faster and take up less space.
@@ -44,9 +44,10 @@ Now that you have successfully created the export file, you can proceed to impor
     The ``avnadmin`` admin user does not have full superuser access, so it is necessary to pre-create the database before transferring the data. 
 
 3. **Import the data:** You can now push the exported data to the destination Aiven service using the ``influx -import`` command. You will need to specify the host, port, username, and password of the Aiven for InfluxDB service and the path to the exported data. The following is an example command: 
-::
 
-    influx -import -host influx-testuser-business-demo.aivencloud.com -port 12691 -username 'avnadmin' -password 'secret' -ssl -precision rfc3339 -compressed -path ./weather.influx.gz
+   .. code::
+
+      influx -import -host influx-testuser-business-demo.aivencloud.com -port 12691 -username 'avnadmin' -password 'secret' -ssl -precision rfc3339 -compressed -path ./weather.influx.gz
 
 where, 
 

@@ -42,9 +42,11 @@ Perform the migration
 Aiven automatically creates a ``defaultdb`` database and ``avnadmin`` user account, which are used by default.
 
 
-2. Run the ``pg_dump`` command substituting the ``SRC_SERVICE_URI`` with the service URI of your source PostgreSQL service, and ``DUMP_FOLDER`` with the folder where you want to store the dump in::
+2. Run the ``pg_dump`` command substituting the ``SRC_SERVICE_URI`` with the service URI of your source PostgreSQL service, and ``DUMP_FOLDER`` with the folder where you want to store the dump in:
 
-    pg_dump -d 'SRC_SERVICE_URI' --jobs 4 --format directory -f DUMP_FOLDER
+   .. code::
+    
+      pg_dump -d 'SRC_SERVICE_URI' --jobs 4 --format directory -f DUMP_FOLDER
 
 The ``--jobs`` option in this command instructs the operation to use 4 CPUs to dump the database. Depending on the number of CPUs you have available, you can use this option to adjust the performance to better suit your server.
 

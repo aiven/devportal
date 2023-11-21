@@ -31,7 +31,7 @@ A ``kcat`` configuration file enabling the connection to an Aiven for Apache Kaf
 
 An example of the ``kcat`` configuration file is provided below:
 
-::
+.. code::
 
    bootstrap.servers=demo-kafka.my-demo-project.aivencloud.com:17072
    security.protocol=ssl
@@ -41,13 +41,13 @@ An example of the ``kcat`` configuration file is provided below:
 
 Once the content is stored in a file named ``kcat.config``, this can be referenced using the ``-F`` flag:
 
-::
+.. code::
 
    kcat -F kcat.config
 
 Alternatively, the same settings can be specified directly on the command line with:
 
-::
+.. code::
 
    kcat \
        -b demo-kafka.my-demo-project.aivencloud.com:17072 \
@@ -58,7 +58,7 @@ Alternatively, the same settings can be specified directly on the command line w
 
 If :doc:`SASL authentication <kafka-sasl-auth>` is enabled, then the ``kcat`` configuration file requires the following entries:
 
-::
+.. code::
 
    bootstrap.servers=demo-kafka.my-demo-project.aivencloud.com:17072
    ssl.ca.location=ca.pem
@@ -76,7 +76,7 @@ Produce data to an Apache Kafka® topic
 
 Use the following code to produce a single message into topic named ``test-topic``:
 
-::
+.. code::
     
     echo test-message-content | kcat -F kcat.config -P -t test-topic -k test-message-key
 
@@ -95,7 +95,7 @@ Consume data from an Apache Kafka® topic
 
 Use the following code to consume messages coming from a topic named ``test-topic``:
 
-::
+.. code::
 
    kcat -F kcat.config -C -t test-topic -o -1 -e
 

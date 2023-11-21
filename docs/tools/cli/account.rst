@@ -30,13 +30,13 @@ To create a new organizational unit, specify the parent organization using ``--p
 
 **Example:** Create an organizational unit for production in an organization with the ID ``123456789123``. 
 
-::
+.. code::
 
   avn account create --name "Production" --parent-account-id 123456789123
 
 **Example:** Create a new organization for the billing analytics department.
 
-::
+.. code::
 
   avn account create --name "Billing Analytics"
 
@@ -57,7 +57,7 @@ Deletes an organization or organizational unit.
 
 **Example:** Delete the organization with id ``123456789123``.
 
-::
+.. code::
 
   avn account delete 123456789123
 
@@ -100,6 +100,6 @@ Changes the name of an organization or organizational unit.
 
 **Example:** Change the name of organizational unit with the ID ``123456789123`` to ``Billing Analytics Account``.
 
-::
+.. code::
 
   avn account update 123456789123 --name "Billing Analytics Account"

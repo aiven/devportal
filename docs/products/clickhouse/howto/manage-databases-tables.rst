@@ -8,7 +8,7 @@ Databases and tables are at the core of any Database Management System. ClickHou
 Create a database
 -----------------
 
-Creating databases in an Aiven for ClickHouse service can only be done via the Aiven platform; the `admin` user is not allowed to create databases directly for security and reliability reasons. However, you can create a new database through the web interface of `Aiven console <https://console.aiven.io/>`_:
+Creating databases in an Aiven for ClickHouse service can only be done via the Aiven platform; the ``admin`` user is not allowed to create databases directly for security and reliability reasons. However, you can create a new database through the web interface of `Aiven console <https://console.aiven.io/>`_:
 
 1. Log in to the  `Aiven Console <https://console.aiven.io/>`_, and select your service from the **Services** page.
 2. In your service's page, select **Databases and tables** from the sidebar.
@@ -48,3 +48,33 @@ Select a table engine
 Part of the table definition includes a targeted table engine. The full list of supported table engines in Aiven for ClickHouse can be found :doc:`in this article <../reference/supported-table-engines>`. Aiven for ClickHouse uses ``replicated`` variants of table engines to ensure high availability. Even if you select ``MergeTree`` engine, we will automatically use the replicated variant on our side.
 
 With this knowledge, try out an example dataset described :doc:`over here </docs/products/clickhouse/howto/load-dataset>`.
+
+Remove a table
+--------------
+
+A table can be removed using either CLI or `Aiven Console <https://console.aiven.io/>`_.
+
+.. note::
+
+   You can remove a table of any size if you have the ``DROP`` permission since parameters
+   ``max_table_size_to_drop`` and ``max_partition_size_to_drop`` are disabled for Aiven
+   services. Consider :doc:`granting
+   </docs/products/clickhouse/howto/manage-users-roles>` only necessary permissions to your database users.
+
+Remove a table with CLI
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Run the following SQL command to remove your table:
+
+.. code-block:: bash
+
+   DROP TABLE NAME_OF_YOUR_DATABASE.NAME_OF_YOUR_TABLE;
+
+Remove a table in the console
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To remove your table in `Aiven Console <https://console.aiven.io/>`_, take the following steps:
+
+1. Log in to the  `Aiven Console <https://console.aiven.io/>`_.
+2. Navigate to the table you want to remove: organization > project > service > **Databases and tables**.
+3. In the **Databases and tables** view, navigate to the table and select **Actions** menu (**...**) > **Remove** > **Delete table**.

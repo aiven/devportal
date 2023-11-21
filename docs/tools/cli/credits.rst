@@ -28,14 +28,14 @@ Add an Aiven credit code to a project.
 
 **Example:** Add a credit code to the currently selected project.
 
-::
+.. code::
 
   avn credits claim "credit-code-123"
 
 
 **Example:** Add a credit code to a named project.
 
-::
+.. code::
 
   avn credits claim "credit-code-123"  --project my-project
 
@@ -57,12 +57,12 @@ List the credit codes associated with a project.
 
 **Example:** List all credit codes associated with the currently selected project.
 
-::
+.. code::
 
   avn credits list
 
 **Example:** List all credit codes associated with a named project.
 
-::
+.. code::
 
   avn credits list --project my-project

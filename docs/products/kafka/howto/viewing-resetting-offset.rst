@@ -18,7 +18,7 @@ List active consumer groups
 
 To list the currently active consumer groups use the following command replacing the ``demo-kafka.my-project.aivencloud.com:17072`` with your service URI:
 
-::
+.. code::
 
     kafka-consumer-groups.sh \
         --bootstrap-server demo-kafka.my-project.aivencloud.com:17072 \
@@ -30,7 +30,7 @@ Retrieve the details of a consumer group
 
 To retrieve the details of a consumer group use the following command replacing the ``demo-kafka.my-project.aivencloud.com:17072`` with the Aiven for Apache Kafka service URI and the ``my-group`` with the required consumer group name:
 
-::
+.. code::
 
     kafka-consumer-groups.sh \
         --bootstrap-server demo-kafka.my-project.aivencloud.com:17072 \
@@ -50,7 +50,7 @@ List the current members of a consumer group
 
 To retrieve the current members of a consumer group use the following command replacing the ``demo-kafka.my-project.aivencloud.com:17072`` with the Aiven for Apache Kafka service URI and the ``my-group`` with the required consumer group name:
 
-::
+.. code::
 
     kafka-consumer-groups.sh \
         --bootstrap-server demo-kafka.my-project.aivencloud.com:17072 \
@@ -82,7 +82,7 @@ To reset the offset use the following command replacing:
 
     The consumer group must be inactive when you make offset changes.
 
-::
+.. code::
 
    kafka-consumer-groups.sh \
        --bootstrap-server demo-kafka.my-project.aivencloud.com:17072 \

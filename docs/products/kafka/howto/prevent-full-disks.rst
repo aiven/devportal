@@ -11,7 +11,9 @@ If any node in the service surpasses the critical threshold of disk usage (more 
 
 When the disk space is insufficient, and the ACL blocks write operations, you will encounter an error. For example, if you are using the Python client for Apache Kafka, you may receive the following error message:
 
-   TopicAuthorizationFailedError: [Error 29] TopicAuthorizationFailedError: you-topic
+.. code::
+
+   TopicAuthorizationFailedError: [Error 29] TopicAuthorizationFailedError: your-topic
 
 
 Upgrade to a larger service plan

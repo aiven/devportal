@@ -1292,6 +1292,8 @@ entries:
             title: Lua scripts
           - file: docs/products/redis/concepts/memory-usage
             title: Memory management and persistence
+          - file: docs/products/redis/concepts/restricted-redis-commands
+            title: Restrict Redis commands
       - file: docs/products/redis/howto
         title: HowTo
         entries:

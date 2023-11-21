@@ -32,14 +32,14 @@ Creates a new user.
 
 **Example:** Create a new user.
 
-::
+.. code::
 
   avn user create john.doe@example.com
 
 
 **Example:** Create a new user specifying the real name.
 
-::
+.. code::
 
   avn user create john.doe@example.com --real-name "John Doe"
 
@@ -59,7 +59,7 @@ Retrieves the current user information such as:
 
 **Example:** Retrieve the information for the currently logged user.
 
-::
+.. code::
 
   avn user info
 
@@ -91,7 +91,7 @@ Logs the user in.
     - Logs in the user with a pre-created token 
 
 **Example:** Log the ``john.doe@example.com`` user in, and prompt for password.      
-::
+.. code::
 
   avn user login john.doe@example.com
 
@@ -99,7 +99,7 @@ The user will be prompted to insert the password.
 
 
 **Example:** Log the ``john.doe@example.com`` user in, using a pre-created authentication token.
-::
+.. code::
 
   avn user login john.doe@example.com --token 
 
@@ -112,7 +112,7 @@ Logs the user out.
 
 
 **Example:** Log the user out.      
-::
+.. code::
 
   avn user logout
 
@@ -125,7 +125,7 @@ Makes all the authentication tokens associated with the user expired.
 
 
 **Example:** Make all the authentication tokens expired.      
-::
+.. code::
 
   avn user tokens-expire
 

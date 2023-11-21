@@ -115,7 +115,7 @@ You should now see the two tables in your database and you are ready to try out 
 Run queries
 -----------
 
-Once the data is loaded, you can run queries against the sample data you imported. For example, here is a command to query the number of items in the `hits_v1` table:
+Once the data is loaded, you can run queries against the sample data you imported. For example, here is a command to query the number of items in the ``hits_v1`` table:
 
 .. code:: sql
 

@@ -18,7 +18,7 @@ The same can be achieved using the ``kafka-topics.sh`` script included in the `A
 4. Create a :doc:`client configuration file <kafka-tools-config-file>` pointing at the keystore and truststore created at the previous steps
 5. Run the following command to check the connectivity to the Aiven for Apache Kafka service, replacing the ``<KAFKA_SERVICE_URI>`` with the URI of the service available in the `Aiven Console <https://console.aiven.io/>`_.
    
-   ::
+   .. code::
 
         ./kafka-topics.sh                           \
             --bootstrap-server <KAFKA_SERVICE_URI>  \
@@ -31,7 +31,7 @@ The same can be achieved using the ``kafka-topics.sh`` script included in the `A
 6. Run the following command to create a new topic named ``new-test-topic`` with a retention rate of 30 minutes.
    Use the kafka-topics script for this and set the retention value in milliseconds ``((100 * 60) * 30 = 180000)``.
 
-   ::
+   .. code::
 
         ./kafka-topics.sh  \
             --bootstrap-server <KAFKA_SERVICE_URI>  \

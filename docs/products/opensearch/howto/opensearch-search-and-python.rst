@@ -23,7 +23,7 @@ We use ``Typer`` Python `library <ttps://typer.tiangolo.com/>`_ to create CLI co
 
 1. Clone the repository and install the dependencies
 
-::
+.. code::
 
     git clone https://github.com/aiven/demo-opensearch-python
     pip install -r requirements.txt
@@ -60,15 +60,19 @@ Upload data to OpenSearch using Python
 
 Once you're connected, the next step should be to :ref:`inject data into our cluster <load-data-with-python>`. This is done in our demo with the `load_data function <https://github.com/aiven/demo-opensearch-python/blob/main/index.py>`__.
 
-You can inject the data to your cluster by running::
+You can inject the data to your cluster by running:
 
-  python index.py load-data
+.. code::
+ 
+   python index.py load-data
 
 Once the data is loaded, we can :ref:`retrieve the data mapping <get-mapping-with-python>` to explore the structure of the data, with their respective fields and types. You can find the code implementation in the `get_mapping function <https://github.com/aiven/demo-opensearch-python/blob/main/index.py>`__.
 
-Check the structure of your data by running::
+Check the structure of your data by running:
 
-  python index.py get-mapping
+.. code::
+
+   python index.py get-mapping
 
 You should be able to see the fields' output:
 
@@ -121,10 +125,11 @@ Use the ``search()`` method
 
 You have an OpenSearch client and data injected in your cluster, so you can start writing search queries. Python OpenSearch client has a handy method called ``search()``, which we'll use to run our queries.
 
-We can check the method signature to understand the function and which parameters we'll use.  As you can see, all the parameters are optional in the ``search()`` method. Find below the method signature::
+We can check the method signature to understand the function and which parameters we'll use.  As you can see, all the parameters are optional in the ``search()`` method. Find below the method signature:
 
-  client.search: (body=None, index=None, doc_type=None, params=None, headers=None)
+.. code::
 
+   client.search: (body=None, index=None, doc_type=None, params=None, headers=None)
 
 To run the search queries, we'll use two of these parameters - ``index`` and ``body``:
 
@@ -161,9 +166,11 @@ For the **Query DSL**, the field ``body`` expects a dictionary object which can 
                     }
                   }
 
-In this example, we are searching for "Garlic-Lemon" across ``title`` and ``ingredients`` fields. Try out yourself using our demo::
+In this example, we are searching for "Garlic-Lemon" across ``title`` and ``ingredients`` fields. Try out yourself using our demo:
   
-  python search.py multi-match title ingredients Garlic-Lemon
+.. code::
+
+   python search.py multi-match title ingredients Garlic-Lemon
 
 Check what comes out from this interesting combination 🧄 🍋 :
 
@@ -244,7 +251,7 @@ This is possible because `full-text queries <https://opensearch.org/docs/latest/
                   }
                 }
 
-The default standard analyzer drops most punctuation, breaks up text into individual words, and lower cases them to optimize the search. If you want to choose a different analyzer, check out the available ones in the `OpenSearch documentation <https://opensearch.org/docs/latest/opensearch/query-dsl/full-text/#match>`__. 
+The default standard analyzer drops most punctuation, breaks up text into individual words, and lower cases them to optimize the search. If you want to choose a different analyzer, check out the available ones in the `OpenSearch documentation <https://opensearch.org/docs/latest/query-dsl/full-text/match/>`__. 
 
 You can find out how a customized match query can be written with your Python OpenSearch client in the `search_match() <https://github.com/aiven/demo-opensearch-python/blob/main/search.py>`__ function. You can run yourself the code to explore the ``match`` function. For example, if you want to find out recipes with the name "Spring" on them:
 
@@ -271,7 +278,7 @@ As a result of the "Spring" search recipes, you'll find:
 
 .. seealso::
   
-  Find out more about `match queries <https://opensearch.org/docs/latest/opensearch/query-dsl/full-text/#match>`_.
+  Find out more about `match queries <https://opensearch.org/docs/latest/query-dsl/full-text/match/>`_.
 
 Use a ``multi_match`` query
 ---------------------------
@@ -292,7 +299,7 @@ In our demo, we have a function called `search_multi_match() <https://github.com
 
 Suppose you are looking for citrus recipes 🍋. For example, recipes with ingredients and lemon in the title, you can run your query from our `demo <https://github.com/aiven/demo-opensearch-python/>`_ as:
 
-::
+.. code::
 
   python search.py multi-match title ingredients lemon
 
@@ -323,7 +330,7 @@ If you know exactly which phrases you're looking for, you can try out our ``matc
 
 For example, try searching for ``pannacotta with lemon marmalade`` in the title:
 
-::
+.. code::
 
   python search.py match-phrase title "Pannacotta with lemon marmalade"
 
@@ -337,7 +344,7 @@ Match phrases and add some ``slop``
 You can use the ``slop`` parameter to create more flexible searches. Suppose you're searching for ``pannacotta marmalade`` with the ``match_phrase`` query, and no results are found. This happens because you are looking for exact phrases, as discussed in :ref:`match phrase query <match-phrase-query>` section.
 You can expand your searches by configuring the ``slop`` parameter. The default value for the ``slop`` parameter is 0. 
 
-The ``slop`` parameter allows to control the degree of disorder in your search as explained in the `OpenSearch documentation for the slop feature <https://opensearch.org/docs/latest/opensearch/query-dsl/full-text/#match>`_: 
+The ``slop`` parameter allows to control the degree of disorder in your search as explained in the `OpenSearch documentation for the slop feature <https://opensearch.org/docs/latest/query-dsl/full-text/match/>`_: 
 
       ``slop`` is the number of other words allowed between words in the query phrase. For example, to switch the order of two words requires two moves (the first move places the words atop one another), so to permit re-orderings of phrases, the slop must be at least two. A value of zero requires an exact match.
 
@@ -374,13 +381,13 @@ So with ``slop`` parameter adjusted, you're may be able to find results even wit
 
 .. seealso::
 
-  Read more about ``slop`` parameter on the `OpenSearch project specifications <https://opensearch.org/docs/latest/opensearch/query-dsl/full-text#other-advanced-options>`_.
+  Read more about ``slop`` parameter on the `OpenSearch project specifications <https://opensearch.org/docs/latest/query-dsl/full-text/index/>`_.
 
 
 Use a ``term`` query
 --------------------
 
-If you want results with a precise value in a ``field``, the `term query <https://opensearch.org/docs/latest/opensearch/query-dsl/term/#term>`_ is the right choice. The term query can be used to find documents according to a precise value such as a price or product ID, for example.
+If you want results with a precise value in a ``field``, the `term query <https://opensearch.org/docs/latest/query-dsl/term/term/>`_ is the right choice. The term query can be used to find documents according to a precise value such as a price or product ID, for example.
 
 This query can be constructed as:
 
@@ -402,7 +409,7 @@ You can look the `search_term() <https://github.com/aiven/demo-opensearch-python
 
 Run the search query yourself to find recipes with zero sodium on it, for example:
 
-::
+.. code::
 
   python search.py term sodium 0
 
@@ -447,13 +454,13 @@ You can construct range queries with combinations of inclusive and exclusive par
 
 Try to find recipes in a certain range of sodium, for example:
 
-::
+.. code::
 
     python search.py range sodium 0 10
 
 .. seealso::
 
-  See more about the range query in the `OpenSearch documentation <https://opensearch.org/docs/latest/opensearch/query-dsl/term/#range-query>`_.
+  See more about the range query in the `OpenSearch documentation <https://opensearch.org/docs/latest/query-dsl/term/range/>`_.
 
 .. _fuzzy-query:
 

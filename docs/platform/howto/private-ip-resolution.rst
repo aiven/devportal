@@ -22,13 +22,13 @@ DNS-rebinding protection on your network. To verify this assumption:
    ``8.8.8.8``. This has no rebinding protection so serves as a good test. You can
    use the ``dig`` command:
 
-::
+.. code::
 
     dig +short myservice-myproject.aivencloud.com @8.8.8.8 
 
 3. Compare the output of the above command with the response from your default DNS resolver:
 
-::
+.. code::
 
     dig +short myservice-myproject.aivencloud.com
 

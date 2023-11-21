@@ -6,7 +6,7 @@ Before general availability, the lifecycle of new services and features includes
 Limited availability (private beta)
 -----------------------------------
 
-The limited availability (private beta) stage is an initial release of a new functionality that you can try out by invitation only. If you are interested in trying a service or feature in this stage, contact the sales team at sales@Aiven.io.
+The limited availability (private beta) stage is an initial release of a new functionality that you can try out by invitation only. If you are interested in trying a service or feature in this stage, contact the `sales team <sales@aiven.io>`_ .
 
 Early availability (public beta)
 --------------------------------
