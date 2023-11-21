@@ -22,7 +22,7 @@ entries:
 
   # -------- ORGANIZATIONS, UNITS, PROJECTS --------
   - file: docs/platform/howto/list-account
-    entries: 
+    entries:
     - file: docs/platform/concepts/projects_accounts_access
     - file: docs/tools/aiven-console/howto/create-accounts
     - file: docs/platform/howto/manage-project
@@ -92,7 +92,7 @@ entries:
         - file: docs/platform/howto/saml/setup-saml-onelogin
         - file: docs/platform/howto/saml/setup-saml-google
     - file: docs/platform/howto/list-groups
-      entries: 
+      entries:
       - file: docs/platform/howto/manage-groups
         title: Create and manage groups
       - file: docs/platform/howto/add-groups-projects
@@ -177,8 +177,10 @@ entries:
     entries:
     - file: docs/platform/howto/monitoring-services
     - file: docs/platform/concepts/logs-metrics-alerts
+    - file: docs/tutorials/anomaly-detection
+      title: Streaming anomaly detection
     - file: docs/integrations/cloudwatch
-      title: Amazon CloudWatch 
+      title: Amazon CloudWatch
       entries:
         - file: docs/integrations/cloudwatch/cloudwatch-metrics
           title: CloudWatch metrics
@@ -220,7 +222,7 @@ entries:
     entries:
     - file: docs/platform/concepts/service-integration
     - file: docs/platform/howto/create-service-integration
-  
+
     # -------- TOOLS --------
   - file: docs/tools
     entries:
@@ -246,13 +248,13 @@ entries:
           entries:
             - glob: docs/tools/cli/user/*
         - file: docs/tools/cli/vpc
-      
+
       # -------- API --------
       - file: docs/tools/api
         title: Aiven API
         entries:
           - file: docs/tools/api/examples
-      
+
       # -------- TERRAFORM --------
       - file: docs/tools/terraform
         title: Aiven Provider for Terraform
@@ -265,7 +267,7 @@ entries:
         - file: docs/tools/terraform/howto/promote-to-master-pg-rr
           title: Promote PostgreSQL read-only replica to primary
         - file: docs/tools/terraform/howto/config-postgresql-provider
-          title: Use PostgreSQL Provider with Aiven Provider 
+          title: Use PostgreSQL Provider with Aiven Provider
         - file: docs/tools/terraform/list-upgrade-terraform
           title: Upgrade Aiven Provider
           entries:
@@ -290,7 +292,7 @@ entries:
           entries:
           - file: docs/tools/terraform/reference/troubleshooting/private-access-error
             title: Private access error when using VPC
-            
+
       # -------- KUBERNETES --------
       - file: docs/tools/kubernetes
         title: Aiven Operator for Kubernetes
@@ -324,7 +326,7 @@ entries:
             title: Quotas
           - file: docs/products/kafka/concepts/list-kafka-tiered-storage
             title: Tiered storage
-            entries: 
+            entries:
               - file: docs/products/kafka/concepts/kafka-tiered-storage
                 title: Overview
               - file: docs/products/kafka/concepts/tiered-storage-how-it-works
@@ -333,7 +335,7 @@ entries:
                 title: Guarantees
               - file: docs/products/kafka/concepts/tiered-storage-limitations
                 title: Limitations
-        
+
 
       - file: docs/products/kafka/howto
         title: HowTo
@@ -556,7 +558,7 @@ entries:
               title: Active-Passive Setup
           - file: docs/products/kafka/kafka-mirrormaker/concepts/replication-flow-topics-regex
           - file: docs/products/kafka/kafka-mirrormaker/concepts/mirrormaker2-tuning
-          
+
         - file: docs/products/kafka/kafka-mirrormaker/howto
           title: HowTo
           entries:
@@ -587,7 +589,7 @@ entries:
             - file: docs/products/kafka/karapace/howto/enable-oauth-oidc-kafka-rest-proxy
             - file: docs/products/kafka/karapace/howto/manage-schema-registry-authorization
             - file: docs/products/kafka/karapace/howto/manage-kafka-rest-proxy-authorization
-            
+
 
   # -------- FLINK --------
   - file: docs/products/flink
@@ -645,7 +647,7 @@ entries:
                 title: Create Apache Flink applications
               - file: docs/products/flink/howto/manage-flink-applications
                 title: Manage Apache Flink applications
-          - file: docs/products/flink/howto/list-flink-tables  
+          - file: docs/products/flink/howto/list-flink-tables
             title: Apache Flink tables
             entries:
               - file: docs/products/flink/howto/manage-flink-tables
@@ -853,7 +855,7 @@ entries:
             title: Formats for ClickHouse-Kafka data exchange
           - file: docs/products/clickhouse/reference/advanced-params
             title: Advanced parameters
-  
+
   # -------- GRAFANA --------
   - file: docs/products/grafana
     title: Grafana
@@ -889,7 +891,7 @@ entries:
           - file: docs/products/grafana/howto/list-manage-cluster
             title: Manage cluster
           - file: docs/products/grafana/howto/pitr-process-for-grafana
-            title: Point-in-time recovery process 
+            title: Point-in-time recovery process
       - file: docs/products/grafana/reference
         title: Reference
         entries:
@@ -900,8 +902,8 @@ entries:
 
   # -------- INFLUXDB --------
   - file: docs/products/influxdb
-    title: InfluxDB 
-    entries: 
+    title: InfluxDB
+    entries:
       - file: docs/products/influxdb/get-started
         title: Get started
       - file: docs/products/influxdb/concepts
@@ -917,7 +919,7 @@ entries:
         title: Reference
         entries:
           - glob: docs/products/influxdb/reference/*
-  
+
   # -------- M3DB --------
   - file: docs/products/m3db
     title: M3DB
@@ -941,7 +943,7 @@ entries:
             title: Advanced parameters
           - file: docs/products/m3db/reference/advanced-params-m3aggregator
             title: Advanced parameters M3Aggregator
-  
+
   # -------- MYSQL --------
   - file: docs/products/mysql
     title: MySQL
@@ -950,9 +952,9 @@ entries:
         title: Overview
       - file: docs/products/mysql/get-started
         title: Quickstart
-      - file: docs/products/mysql/concepts                   
-        title: Concepts                           
-        entries:                                  
+      - file: docs/products/mysql/concepts
+        title: Concepts
+        entries:
           - file: docs/products/mysql/concepts/max-number-of-connections
             title: max_connections
           - file: docs/products/mysql/concepts/mysql-backups
@@ -1040,7 +1042,7 @@ entries:
               - file: docs/products/opensearch/concepts/users-access-controls
           - file: docs/products/opensearch/concepts/os-security
             title: OpenSearch Security
-            entries:  
+            entries:
             - file: docs/products/opensearch/concepts/opensearch-security-considerations
               title: Key considerations
           - file: docs/products/opensearch/concepts/backups
@@ -1057,9 +1059,9 @@ entries:
         entries:
           - file: docs/products/opensearch/howto/list-access-control
             title: Manage access control
-            entries:  
+            entries:
             - file: docs/products/opensearch/howto/control_access_to_content
-            
+
           - file: docs/products/opensearch/howto/list-connect-to-service
             title: Connect with service
             entries:
@@ -1070,8 +1072,8 @@ entries:
             - file: docs/products/opensearch/howto/connect-with-python
               title: Connect with Python
           - file: docs/products/opensearch/howto/list-data-management
-            title: Data management 
-            entries:  
+            title: Data management
+            entries:
             - file: docs/products/opensearch/howto/import-opensearch-data-elasticsearch-dump-to-aiven
             - file: docs/products/opensearch/howto/import-opensearch-data-elasticsearch-dump-to-aws
             - file: docs/products/opensearch/howto/migrating_elasticsearch_data_to_aiven
@@ -1139,7 +1141,7 @@ entries:
         title: Troubleshooting
         entries:
           - file: docs/products/opensearch/troubleshooting/troubleshooting-opensearch-dashboards.rst
-  
+
   # -------- POSTGRESQL --------
   - file: docs/products/postgresql
     title: PostgreSQL
@@ -1272,7 +1274,7 @@ entries:
             title: Supported log formats
           - file: docs/products/postgresql/reference/terminology
             title: Terminology
-  
+
   # -------- REDIS --------
   - file: docs/products/redis
     title: Redis
@@ -1289,7 +1291,7 @@ entries:
           - file: docs/products/redis/concepts/lua-scripts-redis
             title: Lua scripts
           - file: docs/products/redis/concepts/memory-usage
-            title: Memory management and persistence 
+            title: Memory management and persistence
           - file: docs/products/redis/concepts/restricted-redis-commands
             title: Restrict Redis commands
       - file: docs/products/redis/howto
@@ -1331,12 +1333,12 @@ entries:
   - file: docs/platform/howto/list-support
     title: Support
     entries:
-    - file: docs/platform/howto/project-support-center  
+    - file: docs/platform/howto/project-support-center
     - file: docs/platform/howto/change-support-tier
       title: Upgrade your support tier
     - file: docs/platform/concepts/service-level-agreement
     - file: docs/platform/concepts/beta_services
-    
+
   # -------- COMMUNITY --------
   - file: docs/community
     title: Community
@@ -1345,10 +1347,3 @@ entries:
       title: Catch the Bus - Aiven challenge with ClickHouse
     - file: docs/community/challenge/the-rolling-challenge
       title: Rolling - Aiven challenge with Apache Kafka and Apache Flink
-
-  # -------- TUTORIALS --------
-  - file: docs/tutorials
-    title: Tutorials
-    entries:
-      - file: docs/tutorials/anomaly-detection
-        title: Streaming anomaly detection with Apache Flink, Apache Kafka and PostgreSQL

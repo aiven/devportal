@@ -8,9 +8,9 @@ You can grant different levels of access to project members using roles:
 
 * **Admin**: Full access to the project and its services. 
   
-  * Do not have access to organization settings such as billing. 
-  * Are the only users allowed to add more users to the project.
-  * When you create a project, you automatically have this access level.
+  * This role is automatically granted to users who create a project. 
+  * Does not have access to organization settings such as billing. 
+  * Can add and remove project members.
 
   .. note::
   
@@ -25,8 +25,8 @@ You can grant different levels of access to project members using roles:
   
   * Can make changes to services and databases, for example: creating databases, connecting to databases, removing Aiven for OpenSearch® indexes, creating and modifying Aiven for Apache Kafka® topics, and creating and modifying Aiven for PostgreSQL® connection pools.
   * Can create and change service database users.
-  * Cannot add or change project members.
-  * Cannot make changes that affect billing like powering services on or off.
+  * Cannot make changes to the project members.
+  * Cannot make changes that affect billing (such as powering services on or off).
 
 * **Read-only**: Only allowed to view services.
   
