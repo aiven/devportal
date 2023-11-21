@@ -48,4 +48,4 @@ To run the code:
 
    php -f index.php
 
-If the script outputs ``bool(true)`` then there is data in your M3DB. See `Visualize M3DB data with Grafana </docs/products/m3db/howto/grafana>`_.
+If the script outputs ``bool(true)`` then there is data in your M3DB. See :doc:`Visualize M3DB data with Grafana </docs/products/m3db/howto/grafana>`.
