@@ -18,19 +18,19 @@ API quickstart
 --------------
 
 * **Postman**: Try `Aiven on Postman <https://www.postman.com/aiven-apis/workspace/aiven/documentation/21112408-1f6306ef-982e-49f8-bdae-4d9fdadbd6cd>`_ and start working with your data platform programmatically.
-
 * **API documentation**: Check the `API documentation and OpenAPI description <https://api.aiven.io/doc/>`_ to work with the API directly.
-
-* **Examples**: See the API in action with some :doc:`api/examples`.
+* **Examples**: See the API in action with some `API examples </docs/tools/api/examples>`_.
 
 Authentication
 --------------
 
 Most (but not all) endpoints require authentication. You'll need an authentication token from the `profile section of your Aiven console <https://console.aiven.io/profile/auth>`_.
 
-Send this token in the header, using a structure like this, and replacing ``TOKEN`` with your actual API token::
+Send this token in the header, using a structure like this, and replacing ``TOKEN`` with your actual API token:
 
-    Authorization: aivenv1 TOKEN
+.. code::
+
+   Authorization: aivenv1 TOKEN
 
 Read more about :doc:`/docs/platform/concepts/authentication-tokens`.
 
@@ -48,4 +48,4 @@ Further reading
 Here are some more resources for you:
 
 * Some `API examples on the Aiven blog <https://aiven.io/blog/your-first-aiven-api-call>`_. This post also includes information about importing our OpenAPI description into Postman.
-* Learn more about the :doc:`/docs/tools/cli`.
+* Learn more about the `Aven CLI </docs/tools/cli>`_.
