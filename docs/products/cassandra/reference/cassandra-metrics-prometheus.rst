@@ -1,20 +1,26 @@
 Aiven for Apache Cassandra® metrics available via Prometheus
 ============================================================
 
-The following list contains all metrics available via Prometheus for an Aiven for Apache Cassandra® service.
+This article provides the list of all metrics available via Prometheus for Aiven for Apache Cassandra® services.
 
-You can retrieve the complete list of available metrics for your specific service by requesting the Prometheus endpoint, substituting:
-
-* the Aiven project certificate (``ca.pem``)
-* the Prometheus credentials (``<PROMETHEUS_USER>:<PROMETHEUS_PASSWORD>``)
-* the Aiven for Apache Cassandra hostname (``<CASSANDRA_HOSTNAME>``)
-* the Prometheus port (``<PROMETHEUS_PORT>``)
+You can retrieve the complete list of available metrics for your service by requesting the Prometheus endpoint as follows:
 
 .. code-block:: bash
 
     curl --cacert ca.pem \
         --user '<PROMETHEUS_USER>:<PROMETHEUS_PASSWORD>' \
         'https://<CASSANDRA_HOSTNAME>:<PROMETHEUS_PORT>/metrics'
+
+Where you substitute the following:
+
+* Aiven project certificate for ``ca.pem``
+* Prometheus credentials for ``<PROMETHEUS_USER>:<PROMETHEUS_PASSWORD>``
+* Aiven for Apache Cassandra hostname for ``<CASSANDRA_HOSTNAME>``
+* Prometheus port for ``<PROMETHEUS_PORT>``
+
+.. Tip::
+
+    You can check how to use Prometheus with Aiven in :doc:`Prometheus metrics </docs/platform/howto/integrations/prometheus-metrics>`.
 
 .. code-block:: shell
 
