@@ -38,39 +38,22 @@ Create a Dragonfly service using the Aiven CLI
 Connect to Aiven for Redis
 -----------------------------
 
-Learn how to connect to Aiven for Redis using different programming languages or through ``redis-cli``: 
+Learn how to connect to Aiven for Redis using different programming languages or through CLI: 
 
-- :doc:`redis-cli <howto/connect-redis-cli>`
-- :doc:`Go <howto/connect-go>`
-- :doc:`Node <howto/connect-node>`
-- :doc:`PHP <howto/connect-php>`
-- :doc:`Python <howto/connect-python>`
 
 
 Explore other resources for Aiven for Redis
 ----------------------------------------------
 
 
-* :doc:`High availability in Aiven for Redis <concepts/high-availability-redis>`.
+* Learn about how Aiven for Redis supports high availability.
 
-  Learn about how Aiven for Redis supports high availability.
+* Check how Aiven for Redis supports SSL connections and how can be configured.
 
-* :doc:`Manage SSL connectivity <howto/manage-ssl-connectivity>`.
+* See how Aiven for Redis solves the challenges related to high memory usage and high change rate.
 
-  Check how Aiven for Redis supports SSL connections and how can be configured.
+* Learn how estimate the max number of simultaneous connections in Aiven for Redis service.
 
-* :doc:`Memory usage, on-disk persistence and replication in Aiven for Redis <concepts/memory-usage>`.
+* Learn about inbuilt support for running Lua scripts in Aiven for Redis service.
 
-  See how Aiven for Redis solves the challenges related to high memory usage and high change rate.
-
-* :doc:`Estimate maximum number of connections in Aiven for Redis <howto/estimate-max-number-of-connections>`.
-
-  Learn how estimate the max number of simultaneous connections in Aiven for Redis service.
-
-* :doc:`Lua scripts with Aiven for Redis <concepts/lua-scripts-redis>`.
-
-  Learn about inbuilt support for running Lua scripts in Aiven for Redis service.
-
-* :doc:`Benchmark performance <howto/benchmark-performance>`
-
-  Learn how to benchmark the performance of Aiven for Redis service.
+* Learn how to benchmark the performance of Aiven for Redis service.
