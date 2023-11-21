@@ -82,16 +82,16 @@ Next, create an application in your FusionAuth instance:
 #. Paste the **Metadata URL** and **ACS URL** you copied from the Aiven Console to the **Issuer** and
 **Authorized redirect URLs** fields in your FusionAuth application, respectively.
 
-.. list-table::
-  :header-rows: 1
-  :align: left
+   .. list-table::
+     :header-rows: 1
+     :align: left
 
-  * - Aiven
-    - FusionAuth
-  * - Metadata URL
-    - Issuer
-  * - ACS URL
-    - Authorized redirect URLs
+     * - Aiven
+       - FusionAuth
+     * - Metadata URL
+       - Issuer
+     * - ACS URL
+       - Authorized redirect URLs
 
 #. In the **Authentication response** section, change the **Signing key** to the API key you created.
 
@@ -114,9 +114,9 @@ Go back to the **Authentication** page in `Aiven Console <https://console.aiven.
 
 4. Add the configuration settings from FusionAuth:
 
-* Set the ``SAML IDP Url`` to the ``Login URL`` from FusionAuth.
-* Set the ``SAML Entity ID`` to the ``Entity Id`` from FusionAuth.
-* Paste the certificate from the ``Generating certificate`` in FusionAuth into the `SAML Certificate`` field.
+   * Set the ``SAML IDP Url`` to the ``Login URL`` from FusionAuth.
+   * Set the ``SAML Entity ID`` to the ``Entity Id`` from FusionAuth.
+   * Paste the certificate from the ``Generating certificate`` in FusionAuth into the `SAML Certificate`` field.
 
 5. Click **Edit method** to save your changes.
 
@@ -124,11 +124,12 @@ Go back to the **Authentication** page in `Aiven Console <https://console.aiven.
 
 7. In the **Signup and link accounts URLs** section, copy the appropriate link and send it to your users to switch them to the new IdP:
   
-* **Signup URL**: For users that don't have an Aiven user account and need to create a new Aiven user linked to this IdP.
-* **Account link URL**: For users that already have an Aiven user account to link their existing Aiven user with the configured IdP. 
+   * **Signup URL**: For users that don't have an Aiven user account and need to create a new Aiven user linked to this IdP.
+   * **Account link URL**: For users that already have an Aiven user account to link their existing Aiven user with the configured IdP. 
 
-  .. note::
-    If you set up a SAML authentication method before and are now switching to a new IdP, existing users need to log in with the new account link URL to finish the setup.
+.. note::
+        
+           If you set up a SAML authentication method before and are now switching to a new IdP, existing users need to log in with the new account link URL to finish the setup.
 
 Troubleshooting
 ---------------
