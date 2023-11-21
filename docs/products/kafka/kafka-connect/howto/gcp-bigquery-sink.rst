@@ -158,7 +158,7 @@ To create a Kafka Connect connector, follow these steps:
 
     .. note::
 
-       You can also create connectors using the `Aiven CLI command </docs/tools/cli/service/connector#avn-service-connector-create>`_.
+       You can also create connectors using the :doc:`Aiven CLI command </docs/tools/cli/service/connector#avn-service-connector-create>`.
 
 Example: Create a Google BigQuery sink connector on a topic with a JSON schema
 ------------------------------------------------------------------------------

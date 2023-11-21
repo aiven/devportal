@@ -30,4 +30,4 @@ Manual restoration should only be necessary when data is accidentally corrupted 
     The Hobbyist service plan does not support database forking, so you have to use an external tool, such as ``pg_dump``, to perform a backup.
 
 To perform a manual backup, see
-`Create manual PostgreSQL® backups </docs/products/postgresql/howto/create-manual-backups>`_.
+:doc:`Create manual PostgreSQL® backups </docs/products/postgresql/howto/create-manual-backups>`.

@@ -45,7 +45,7 @@ Furthermore you need to collect the following information about the source Postg
 Set up a PostgreSQL Debezium source connector with Aiven CLI
 ------------------------------------------------------------
 
-The following example demonstrates how to setup a Debezium source Connector for Apache Kafka to a PostgreSQL database using the `Aiven CLI dedicated command </docs/tools/cli/service/connector.html#avn-service-connector-create>`_.
+The following example demonstrates how to setup a Debezium source Connector for Apache Kafka to a PostgreSQL database using the :doc:`Aiven CLI dedicated command </docs/tools/cli/service/connector.html#avn-service-connector-create>`.
 
 Define a Kafka Connect configuration file
 '''''''''''''''''''''''''''''''''''''''''
