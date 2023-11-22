@@ -34,7 +34,7 @@ In order to use the **logical replication** method, you'll need the following:
 * An available replication slot on the destination cluster for each database migrated from the source cluster.
 
 
-1. If you don't have an Aiven for PostgreSQL database yet, run the following command to create a couple of PostgreSQL services via :doc:`../../../tools/cli` substituting the parameters accordingly:
+1. If you don't have an Aiven for PostgreSQL database yet, run the following command to create a couple of PostgreSQL services via :doc:`/docs/tools/cli` substituting the parameters accordingly:
    
    .. code::
    
@@ -89,7 +89,7 @@ Perform the migration with ``aiven-db-migrate``
 Run ``aiven-db-migrate`` using the Aiven CLI  
 ''''''''''''''''''''''''''''''''''''''''''''
 
-You can initiate a migration to an Aiven for PostgreSQL® service with the :doc:`../../../tools/cli` and the following command, substituting the placeholders accordingly:
+You can initiate a migration to an Aiven for PostgreSQL® service with the :doc:`/docs/tools/cli` and the following command, substituting the placeholders accordingly:
 
 .. code:: bash
 
@@ -161,7 +161,7 @@ The output should be similar to the following, which mentions that the ``pg_dump
 Stop the migration process using the Aiven CLI
 ''''''''''''''''''''''''''''''''''''''''''''''
 
-Once the migration is finished, you can stop the related process using the :doc:`../../../tools/cli`.
+Once the migration is finished, you can stop the related process using the :doc:`/docs/tools/cli`.
 
 .. Warning::
 
