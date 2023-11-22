@@ -11,7 +11,7 @@ With OpenSearch Security enabled, you can manage user access and permissions dir
   * Once enabled, OpenSearch Security management cannot be disabled. If you need assistance disabling OpenSearch Security management, contact `Aiven support <https://aiven.io/support-services>`_.
 
 .. note:: 
-  * To implement basic and simplified access control, you can use :doc:`Aiven's Access Control Lists (ACL)`/docs/products/opensearch/howto/control_access_to_content` to manage user roles and permissions.
+  * To implement basic and simplified access control, you can use :doc:`Aiven's Access Control Lists (ACL) </docs/products/opensearch/howto/control_access_to_content>` to manage user roles and permissions.
   
 OpenSearch Security use cases
 --------------------------------
