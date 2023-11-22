@@ -1,7 +1,7 @@
 Access PgBouncer statistics
 ===========================
 
-PgBouncer is used at Aiven for :doc:`../concepts/pg-connection-pooling`.
+PgBouncer is used at Aiven for :doc:`/docs/products/postgresql/concepts/pg-connection-pooling`.
 
 Get PgBouncer URL
 ------------------
