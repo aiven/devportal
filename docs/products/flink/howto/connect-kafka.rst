@@ -63,7 +63,7 @@ To create a Apache Flink® table based on an Aiven for Apache Kafka® topic via 
         * ``avro``: `Apache Avro <https://nightlies.apache.org/flink/flink-docs-master/docs/connectors/table/formats/avro/>`_
         * ``avro-confluent``: `Confluent Avro <https://nightlies.apache.org/flink/flink-docs-master/docs/connectors/table/formats/avro-confluent/>`_. For information, see :doc:`/docs/products/flink/howto/flink-confluent-avro`. 
 7. To create a sink table, select **Add sink tables** and repeat steps 4-6 for sink tables.
-8. In the **Create statement** section, create a statement that defines the fields retrieved from each message in a topic, additional transformations such as format casting or timestamp extraction, and :doc:`watermark settings <../concepts/watermarks>`. 
+8. In the **Create statement** section, create a statement that defines the fields retrieved from each message in a topic, additional transformations such as format casting or timestamp extraction, and :doc:`watermark settings `/docs/products/flink/concepts/watermarks`. 
 
 
 Example: Define a Flink table using the standard connector over topic in JSON format   

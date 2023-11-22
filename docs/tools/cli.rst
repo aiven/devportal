@@ -39,7 +39,7 @@ For security reasons, it is recommended to use an access token, especially if yo
 
 .. tip::
  
-   To learn how to create an authentication token refer to :doc:`../platform/howto/create_authentication_token`
+   To learn how to create an authentication token refer to :doc:`/docs/platform/howto/create_authentication_token`
 
 This command will prompt you for a token rather than a password.
 

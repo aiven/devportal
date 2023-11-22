@@ -1,12 +1,12 @@
 Create an Aiven for Apache Flink® application 
 ==============================================
 
-:doc:`Aiven for Flink applications <../concepts/flink-applications>` in Aiven for Apache Flink® servers as a container that includes everything connected to a Flink job, including source and sink connections and data processing logic. The `Aiven Console <https://console.aiven.io/>`_ provides a guided wizard to help you build and deploy applications, simplifying the process of selecting the source and sink tables, writing data transformation statements, and validating and ingesting data through the interactive query feature.
+:doc:`Aiven for Flink applications `/docs/products/flink/concepts/flink-applications` in Aiven for Apache Flink® servers as a container that includes everything connected to a Flink job, including source and sink connections and data processing logic. The `Aiven Console <https://console.aiven.io/>`_ provides a guided wizard to help you build and deploy applications, simplifying the process of selecting the source and sink tables, writing data transformation statements, and validating and ingesting data through the interactive query feature.
 
 This article provides the information required to build and deploy applications on Aiven for Apache Flink service. 
 
 .. note:: 
-    You must set up the :doc:`data service integration <../howto/create-integration>` before building applications. 
+    You must set up the :doc:`data service integration `/docs/products/flink/howto/create-integration` before building applications. 
 
 
 Create an application via the Aiven console
@@ -49,7 +49,7 @@ Follow these steps to build your first Aiven for Flink application:
 11. Select **Create deployment**. On the **Create new deployment** screen, 
     
     * Choose the version you wish to deploy. The default version for the first deployment is **Version: 1**. 
-    * Choose the :doc:`savepoint <../concepts/savepoints>` from where you want to deploy. No savepoints are available for the first application deployment. 
+    * Choose the :doc:`savepoint `/docs/products/flink/concepts/savepoints` from where you want to deploy. No savepoints are available for the first application deployment. 
     * Use the toggle for **Restart on failure** to enable or disable the option of automatically restarting a Flink job in case it fails. 
     * Enter the number of `parallel instances <https://nightlies.apache.org/flink/flink-docs-master/docs/dev/datastream/execution/parallel/>`_ you want to have for the task. 
 12. Select **Deploy without a savepoint** to deploy your application. 

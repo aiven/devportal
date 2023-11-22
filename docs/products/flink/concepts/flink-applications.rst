@@ -3,14 +3,14 @@ Aiven for Apache Flink® applications
 
 An Aiven for Apache Flink® Application is an abstraction layer on top of Apache Flink SQL that includes all the elements related to a Flink job to help build your data processing pipeline. An application contains the definition of source and sink tables, data processing logic, deployment parameters, and other necessary metadata. 
 
-:doc:`Applications <../howto/create-flink-applications>` are the starting point for running an Apache Flink job within the Aiven managed service. The `Aiven Console <https://console.aiven.io/>`_ provides a user-friendly, guided wizard to help you build and deploy applications, create source and sink tables, write transformation statements, and validate and ingest data using the interactive query feature.
+:doc:`Applications `/docs/products/flink/howto/create-flink-applications` are the starting point for running an Apache Flink job within the Aiven managed service. The `Aiven Console <https://console.aiven.io/>`_ provides a user-friendly, guided wizard to help you build and deploy applications, create source and sink tables, write transformation statements, and validate and ingest data using the interactive query feature.
 
 Each application created and deployed in the Aiven for Apache Flink service performs a specific data transformation task allowing you to map and manage different workflows separately within the Aiven for Apache Flink service. For example, you can create an application to get user IDs from one topic and publish them on another topic. You can run multiple applications within the Aiven for Apache Flink service.
 
 Applications significantly improve the developer experience and simplify the development and deployment of Flink applications. Applications are **automatically versioned** on every edit of the underline definition (tables, or transformation SQL), allowing you to experiment with new transformations and revert to a previously stored definition if the result of the edits doesn't meet expectations. 
 
 .. seealso::
-    For infromation on how to create applications, see :doc:`Create an Aiven for Apache Flink® application <../howto/create-flink-applications>`
+    For infromation on how to create applications, see :doc:`Create an Aiven for Apache Flink® application `/docs/products/flink/howto/create-flink-applications`
 
 
 Features of Aiven for Apache Flink applications
