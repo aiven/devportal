@@ -8,4 +8,4 @@ The interactive query feature on the table editor allows you to review the data 
 You can :doc:`add and manage tables`/docs/products/flink/howto/manage-flink-tables` within the Flink application on your Aiven for Apache Flink service. You can also create tables for various data services integrations, such as Aiven for Apache Kafka®, Aiven for PostgreSQL®, and Aiven for OpenSearch®, depending on the data source and the type of analysis you want to perform.
 
 .. seealso::
-    For information on how to add, import, or edit tables in a Flink application, see :doc:`Manage tables in Flink applications`/docs/products/flink/howto/manage-flink-tables`. 
+    For information on how to add, import, or edit tables in a Flink application, see :doc:`Manage tables in Flink applications </docs/products/flink/howto/manage-flink-tables>`. 

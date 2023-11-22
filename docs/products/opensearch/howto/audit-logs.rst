@@ -8,7 +8,7 @@ This article details the steps required to enable, configure, and visualize Open
 Prerequisites
 --------------
 * Aiven for OpenSearch® service
-* :doc:`OpenSearch Security management enabled `/docs/products/opensearch/howto/enable-opensearch-security` for the Aiven for OpenSearch service 
+* :doc:`OpenSearch Security management enabled </docs/products/opensearch/howto/enable-opensearch-security>` for the Aiven for OpenSearch service 
 
 
 Enable audit logs

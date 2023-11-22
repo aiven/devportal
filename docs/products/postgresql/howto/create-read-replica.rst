@@ -25,7 +25,7 @@ To set up a remote replica:
 
 The read-only replica is created and added to the list of services in your project. The **Overview** page of the replica indicates the name of the primary service for the replica.
 
-Read-only replicas can be manually promoted to become the master database if the need arises. For more complex high availability and failover scenarios check the :doc:`related documentation `/docs/products/postgresql/concepts/high-availability`.
+Read-only replicas can be manually promoted to become the master database if the need arises. For more complex high availability and failover scenarios check the :doc:`related documentation </docs/products/postgresql/concepts/high-availability>`.
 
 .. Tip::
     

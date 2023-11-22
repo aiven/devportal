@@ -63,6 +63,6 @@ Disable REST proxy authorization, use:
     avn service update -c kafka_rest_authorization=false SERVICE_NAME
 
 .. warning:: 
-    Enabling Apache Kafka REST proxy authorization can disrupt access for users if the Kafka access control rules have not been configured properly. For more information, see :doc:`Manage Apache Kafka® REST proxy authorization `/docs/products/kafka/karapace/howto/manage-kafka-rest-proxy-authorization`.
+    Enabling Apache Kafka REST proxy authorization can disrupt access for users if the Kafka access control rules have not been configured properly. For more information, see :doc:`Manage Apache Kafka® REST proxy authorization </docs/products/kafka/karapace/howto/manage-kafka-rest-proxy-authorization>`.
 
 

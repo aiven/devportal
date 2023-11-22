@@ -32,7 +32,7 @@ You can also create custom queries using the ``pg_stat_statements`` view and use
 Pre-requisites
 ''''''''''''''
 
-To query the ``pg_stat_statements`` view, you'll need to create the ``pg_stat_statements`` extension (included in the :doc:`list of available extensions `/docs/products/postgresql/reference/list-of-extensions`) that can be done via the following ``CREATE EXTENSION`` command::
+To query the ``pg_stat_statements`` view, you'll need to create the ``pg_stat_statements`` extension (included in the :doc:`list of available extensions </docs/products/postgresql/reference/list-of-extensions>`) that can be done via the following ``CREATE EXTENSION`` command::
 
   CREATE EXTENSION pg_stat_statements;
 
@@ -180,4 +180,4 @@ the number of shared memory blocks marked as "dirty" during a request needed to 
 
     Once you have identified slow queries, you can inspect the query plan and execution using `EXPLAIN ANALYZE <https://www.postgresql.org/docs/current/using-explain.html>`_ to understand how you can optimise your design to improve the performance. 
     
-    The :doc:`how to optimize slow PostgreSQL® queries `/docs/products/postgresql/howto/optimize-pg-slow-queries` contains some common suggestion for query optimisation.
+    The :doc:`how to optimize slow PostgreSQL® queries </docs/products/postgresql/howto/optimize-pg-slow-queries>` contains some common suggestion for query optimisation.

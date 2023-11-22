@@ -1,7 +1,7 @@
 Enable OpenSearch® Security management for Aiven for OpenSearch® 
 ========================================================================
 
-:doc:`OpenSearch Security `/docs/products/opensearch/concepts/os-security` provides a range of security features, including fine-grained access controls, SAML authentication, and audit logging to monitor activity within your OpenSearch service. By enabling this, you can easily manage user permissions, roles, and other security aspects through the OpenSearch Dashboard.
+:doc:`OpenSearch Security </docs/products/opensearch/concepts/os-security>` provides a range of security features, including fine-grained access controls, SAML authentication, and audit logging to monitor activity within your OpenSearch service. By enabling this, you can easily manage user permissions, roles, and other security aspects through the OpenSearch Dashboard.
 
 This article provides information on how to enable OpenSearch Security from the Aiven Console. 
 
@@ -36,4 +36,4 @@ Follow these steps to activate OpenSearch Security management for your Aiven for
 
 After activating OpenSearch Security, you will be redirected to the **Users** screen, where you can verify that the security feature is enabled. 
 
-Next, log in to the :doc:`OpenSearch Dashboard `/docs/products/opensearch/dashboards` using your security admin credentials to access OpenSearch Security, where you can manage user permissions and other security settings.
+Next, log in to the :doc:`OpenSearch Dashboard </docs/products/opensearch/dashboards>` using your security admin credentials to access OpenSearch Security, where you can manage user permissions and other security settings.

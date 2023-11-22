@@ -29,7 +29,7 @@ When a user requests access to a resource, the schema registry checks to see if 
 The schema registry responds with HTTP status code 401 Unauthorized message if no ACL entries grant access.
 
 .. Note:: 
-  Enabling or disabling Karapace schema registry authorization, and managing the ACLs, is done using the Aiven CLI (requires version 2.16 or later). For more information, see :doc:`Enable Karapace schema registry authorization `/docs/products/kafka/karapace/howto/enable-schema-registry-authorization`. 
+  Enabling or disabling Karapace schema registry authorization, and managing the ACLs, is done using the Aiven CLI (requires version 2.16 or later). For more information, see :doc:`Enable Karapace schema registry authorization </docs/products/kafka/karapace/howto/enable-schema-registry-authorization>`. 
  
 
 Securing endpoints with ACL
@@ -73,5 +73,5 @@ The following table provides you with examples:
 
 The user that manages the ACLs is a superuser with write access to everything in the schema registry. In the Aiven Console, the superuser can view and modify all schemas in the Schema tab of a Kafka service. The superuser and its ACL entries are not visible in the Console but are added automatically by the Aiven platform. 
 
-The schema registry authorization feature enabled in :doc:`Karapace schema registry `/docs/products/kafka/karapace/getting-started` allows you to both authenticate the user, and additionally grant or deny access to individual `Karapace schema registry REST API endpoints <https://github.com/aiven/karapace>`_ and filter the content the endpoints return.
+The schema registry authorization feature enabled in :doc:`Karapace schema registry </docs/products/kafka/karapace/getting-started>` allows you to both authenticate the user, and additionally grant or deny access to individual `Karapace schema registry REST API endpoints <https://github.com/aiven/karapace>`_ and filter the content the endpoints return.
 

@@ -21,7 +21,7 @@ Why connection pooling?
 
 A high number of backend connections can become a problem with PostgreSQL, as the resource cost per connection is quite high due to how PostgreSQL manages client connections. PostgreSQL creates a separate backend process for each connection, and the unnecessary memory usage caused by the processes will start affecting the total throughput of the system at some point. Moreover, if each connection is very active, the performance can be affected by the high number of parallel executing tasks.
 
-It makes sense to have enough connections so that each CPU core on the server has something to do (each connection can only utilise a single CPU core), but a hundred connections per CPU core may be too much. All this is workload-specific, but often a good number of connections to have is roughly 3-5 times the CPU core count. Aiven enforces :doc:`connection limits `/docs/products/postgresql/reference/pg-connection-limits` to avoid overloading the PostgreSQL database.
+It makes sense to have enough connections so that each CPU core on the server has something to do (each connection can only utilise a single CPU core), but a hundred connections per CPU core may be too much. All this is workload-specific, but often a good number of connections to have is roughly 3-5 times the CPU core count. Aiven enforces :doc:`connection limits </docs/products/postgresql/reference/pg-connection-limits>` to avoid overloading the PostgreSQL database.
 
 
 

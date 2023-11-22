@@ -240,5 +240,5 @@ If you're using Google BigQuery for your data storage and analysis, you can seam
 7. Select the checkbox next to BigQuery, and choose the BigQuery endpoint from the list to integrate.
 8. Select **Integrate**.
 
-Once you have completed these steps, the integration will be ready. You can now start creating :doc:`Aiven for Apache Flink applications `/docs/products/flink/howto/create-flink-applications` that use Google BigQuery as a sink. 
+Once you have completed these steps, the integration will be ready. You can now start creating :doc:`Aiven for Apache Flink applications </docs/products/flink/howto/create-flink-applications>` that use Google BigQuery as a sink. 
 

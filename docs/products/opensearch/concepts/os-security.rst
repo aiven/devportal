@@ -1,9 +1,9 @@
 OpenSearch Security for Aiven for OpenSearch®
 =====================================================
 
-OpenSearch Security is a powerful feature that enhances the security of your OpenSearch service. By :doc:`enabling OpenSearch Security management `/docs/products/opensearch/howto/enable-opensearch-security`, you can implement fine-grained access controls, SAML authentication, and audit logging to track and analyze activities within your OpenSearch environment. 
+OpenSearch Security is a powerful feature that enhances the security of your OpenSearch service. By :doc:`enabling OpenSearch Security management </docs/products/opensearch/howto/enable-opensearch-security>`, you can implement fine-grained access controls, SAML authentication, and audit logging to track and analyze activities within your OpenSearch environment. 
 
-With OpenSearch Security enabled, you can manage user access and permissions directly from the :doc:`OpenSearch Dashboard `/docs/products/opensearch/dashboards`, giving you full control over your service's security.
+With OpenSearch Security enabled, you can manage user access and permissions directly from the :doc:`OpenSearch Dashboard </docs/products/opensearch/dashboards>`, giving you full control over your service's security.
 
 .. warning:: 
   * Once you have enabled OpenSearch Security management, you can no longer use `Aiven Console <https://console.aiven.io/>`_, `Aiven API <https://api.aiven.io/doc/>`_, :doc:`Aiven CLI </docs/tools/cli>`, :doc:`Aiven Terraform provider </docs/tools/terraform>` or :doc:`Aiven Operator for Kubernetes® </docs/tools/kubernetes>` to manage access controls.
@@ -68,4 +68,4 @@ Enabling OpenSearch Security management on your Aiven for OpenSearch service thr
 * All service users defined before enabling OS Security management are included in OpenSearch's internal users, with the attribute ``provider_managed: False``. However, the users ``avnadmin`` and ``os-sec-admin``,  are still managed by the service platform and have the attribute ``provider_managed:true``. While service platform management of these users is limited to password changes, they can still be assigned to different roles as needed in the OpenSearch Security dashboard.
 
 
-For information on how to enable OpenSearch Security management on Aiven Console, see :doc:`Enable OpenSearch® Security management for Aiven for OpenSearch® `/docs/products/opensearch/howto/enable-opensearch-security`. 
+For information on how to enable OpenSearch Security management on Aiven Console, see :doc:`Enable OpenSearch® Security management for Aiven for OpenSearch® </docs/products/opensearch/howto/enable-opensearch-security>`. 

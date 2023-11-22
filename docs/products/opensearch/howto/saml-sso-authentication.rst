@@ -12,7 +12,7 @@ SAML authentication on Aiven for OpenSearch® can enhance the authentication pro
 Prerequisites
 ---------------
 * Aiven for OpenSearch® version 2.4 or later is required. If you are using an earlier version, upgrade to the latest version.
-* OpenSearch Security management must be :doc:`enabled `/docs/products/opensearch/howto/enable-opensearch-security` on the Aiven for OpenSearch® service.
+* OpenSearch Security management must be :doc:`enabled </docs/products/opensearch/howto/enable-opensearch-security>` on the Aiven for OpenSearch® service.
 * You will need a SAML identity provider (IdP), the Metadata URL, and IdP entity ID.
 
 

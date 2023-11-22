@@ -31,4 +31,4 @@ Inactive replication slots can cause indefinite increase in WAL log size.
 To resolve the issue, you can perform one of the following options:
 
 * Have a client connect to the replication slot so that the WAL files would be rotated and purged  
-* Manually remove the unused replication slots (see our "Remove unused replication setup" under :doc:`Setup logical replication slots `/docs/products/postgresql/howto/setup-logical-replication` documentation)
+* Manually remove the unused replication slots (see our "Remove unused replication setup" under :doc:`Setup logical replication slots </docs/products/postgresql/howto/setup-logical-replication>` documentation)
