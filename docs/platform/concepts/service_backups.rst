@@ -189,7 +189,7 @@ Recommended backup tools per service are as follows:
 
 * `PostgreSQL <https://www.postgresql.org/docs/14/app-pgdump.html>`__: ``pgdump``
 * `MySQL <https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html>`_: ``mysqldump``
-* `Redis <https://redis.io/docs/ui/cli/#remote-backups-of-rdb-files>`_: ``redis-cli`` 
+* `Redis <https://redis.io/docs/connect/cli/#remote-backups-of-rdb-files>`_: ``redis-cli`` 
 * `Cassandra <https://docs.datastax.com/en/archived/cql/3.3/cql/cql_reference/cqlshCopy.html>`_: ``cqlsh`` 
 * `OpenSearch <https://github.com/elasticsearch-dump/elasticsearch-dump>`_: ``elasticdump``
 * `InfluxDB <https://docs.influxdata.com/influxdb/v1.8/tools/influx-cli/>`_: ``influxd``
