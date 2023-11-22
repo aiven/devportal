@@ -19,7 +19,7 @@ Service power-off/on backup policy
 
 Whenever a service is powered on from a powered-off state, the latest available backup is restored.
 
-Services that have been powered off for more than 180 days are reviewed. A notification email will be sent to you to provide time for taking action before the service and backup are deleted as part of the :doc:`periodic cleanup of powered-off services <../howto/cleanup-powered-off-services>`.
+Services that have been powered off for more than 180 days are reviewed. A notification email will be sent to you to provide time for taking action before the service and backup are deleted as part of the :doc:`periodic cleanup of powered-off services </docs/platform/howto/cleanup-powered-off-services>`.
 
 If you wish to keep the powered-off service for more than 180 days, power on the service and then power it off again to avoid the routine cleanup.
 
@@ -68,7 +68,7 @@ If the Apache Kafka® service is powered off/on or if any incidents lead to the 
 
 To back up data passing through Apache Kafka, we recommend using one of the following tools:
 
-* :doc:`MirrorMaker 2<../../products/kafka/kafka-mirrormaker>` to replicate the data to another cluster, which could be an Aiven service or a Apache Kafka cluster on your own infrastructure. With MirrorMaker 2, the backup cluster operates as an independent Apache Kafka service. You can freely choose a zone for your backup service since it operates independently from the primary service.
+* :doc:`MirrorMaker 2 </docs/products/kafka/kafka-mirrormaker>` to replicate the data to another cluster, which could be an Aiven service or a Apache Kafka cluster on your own infrastructure. With MirrorMaker 2, the backup cluster operates as an independent Apache Kafka service. You can freely choose a zone for your backup service since it operates independently from the primary service.
   
   .. note::
         

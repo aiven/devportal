@@ -28,7 +28,7 @@ Using DDS provides the following benefits:
 
 How does DDS work?
 -------------------
-You can add disk storage to your service plan when you :doc:`create a new service <../howto/create_new_service>` or on demand when you need more storage while :doc:`running your service<../howto/add-storage-space>`. Adding storage will not affect or interrupt the operations of your service. 
+You can add disk storage to your service plan when you :doc:`create a new service </docs/platform/howto/create_new_service>` or on demand when you need more storage while :doc:`running your service </docs/platform/howto/add-storage-space>`. Adding storage will not affect or interrupt the operations of your service. 
 
 When you add storage to your service, the Aiven platform provisions the extra disk space and dynamically adds it to your running instances. The total amount of storage you can add to your service is based on your service plan and the cloud provider.
 
@@ -51,4 +51,4 @@ It is unlikely that any performance degradation from additional disk storage wou
 
 Next steps
 ----------
-For instructions on how to add or remove disk storage in `Aiven Console <https://console.aiven.io/>`_, see :doc:`Add or remove storage <../howto/add-storage-space>`. 
+For instructions on how to add or remove disk storage in `Aiven Console <https://console.aiven.io/>`_, see :doc:`Add or remove storage </docs/platform/howto/add-storage-space>`. 

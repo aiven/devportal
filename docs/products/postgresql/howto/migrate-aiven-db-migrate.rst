@@ -109,7 +109,7 @@ You can initiate a migration to an Aiven for PostgreSQL® service with the :doc:
 Check the migration status using the Aiven CLI
 ''''''''''''''''''''''''''''''''''''''''''''''
 
-You can check the migration status using the :doc:`Aiven CLI <../../../tools/cli>` and the following call:
+You can check the migration status using the :doc:`Aiven CLI </docs/tools/cli>` and the following call:
 
 .. code:: bash
 
