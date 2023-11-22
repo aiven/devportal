@@ -44,9 +44,9 @@ In order to use the **logical replication** method, you'll need the following:
 
 3. Set the ``wal_level`` to ``logical`` on source database. Check the following examples for the main managed databases:
 
-   * :doc:`Amazon Aurora <./logical-replication-aws-aurora>`
-   * :doc:`Amazon RDS <./logical-replication-aws-rds>`
-   * :doc:`Google Cloud SQL <./logical-replication-gcp-cloudsql>`
+   * :doc:`Amazon Aurora </docs/products/postgresql/howto/logical-replication-aws-aurora>`
+   * :doc:`Amazon RDS </docs/products/postgresql/howto/logical-replication-aws-rds>`
+   * :doc:`Google Cloud SQL </docs/products/postgresql/howto/logical-replication-gcp-cloudsql>`
 
    .. Note::
     

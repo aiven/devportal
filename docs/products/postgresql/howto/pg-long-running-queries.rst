@@ -20,7 +20,7 @@ Terminate long running queries from the Aiven Console
 Detect and terminate long running queries with ``psql``
 -------------------------------------------------------
 
-You can :doc:`login to your service <./connect-psql>`  by running on the terminal ``psql <service_uri>``.  Once connected, you can call the following function on the ``psql`` shell to terminate a query manually:
+You can :doc:`login to your service </docs/products/postgresql/howto/connect-psql>`  by running on the terminal ``psql <service_uri>``.  Once connected, you can call the following function on the ``psql`` shell to terminate a query manually:
 
 .. code::
 

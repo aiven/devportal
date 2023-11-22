@@ -34,4 +34,4 @@ After selecting one of the available log formats from the drop down menu, you ca
 
 At the moment, the formats available are known to be compatible with majority of the log analysis tools.
 
-For additional information on how to check the service logs, you can visit our :doc:`access service logs <../../../platform/howto/access-service-logs>` documentation.
+For additional information on how to check the service logs, you can visit our :doc:`access service logs </docs/platform/howto/access-service-logs>` documentation.

@@ -398,7 +398,7 @@ Now it's your turn to experiment! Create your own boolean query, using what we l
 What's next?
 ************
 
-Now that you learned how to work with search queries, have a look at :doc:`our tutorial for aggregations <opensearch-aggregations-and-nodejs>`. Or, if you're done for a day, see :doc:`how you can pause the service <../../../platform/howto/pause-from-cli>`.
+Now that you learned how to work with search queries, have a look at :doc:`our tutorial for aggregations <opensearch-aggregations-and-nodejs>`. Or, if you're done for a day, see :doc:`how you can pause the service </docs/platform/howto/pause-from-cli>`.
 
 Resources
 *********
