@@ -1,7 +1,7 @@
 Create service integrations
 ============================
 
-If you're not sure what a service integration is, see :doc:`Service integration <../concepts/service-integration>` for an overview. This article will guide you on how to create service integrations between different Aiven services and move telemetry data using these integrations.
+If you're not sure what a service integration is, see :doc:`Service integration </docs/platform/concepts/service-integration>` for an overview. This article will guide you on how to create service integrations between different Aiven services and move telemetry data using these integrations.
 
 Prerequisites
 -------------

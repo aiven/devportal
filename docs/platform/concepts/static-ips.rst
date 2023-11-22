@@ -35,4 +35,4 @@ To create, delete, associate or dissociate IP addresses, use the :doc:`/docs/too
 
 .. note:: The ``static_ip`` configuration can only be enabled when enough static IP addresses have been created *and associated* with the service.
 
-For more information, read the step-by-step process :doc:`../howto/static-ip-addresses`
+For more information, read the step-by-step process :doc:`/docs/platform/howto/static-ip-addresses`

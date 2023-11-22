@@ -67,7 +67,7 @@ The configuration file contains the following entries:
 
 .. Tip::
 
-    You can define GCS sink connector naming and data formats by setting the :doc:`dedicated parameters <../reference/gcs-sink-formats>`.
+    You can define GCS sink connector naming and data formats by setting the :doc:`dedicated parameters </docs/products/kafka/kafka-connect/reference/gcs-sink-formats>`.
 
 
 Check out the `GitHub repository parameters documentation <https://github.com/aiven/gcs-connector-for-apache-kafka>`_ for the full list of configuration options.

@@ -63,7 +63,7 @@ The configuration file contains the following entries:
 
 .. Tip::
 
-    You can define S3 sink connector naming and data formats by setting the :doc:`dedicated parameters <../reference/s3-sink-additional-parameters>`.
+    You can define S3 sink connector naming and data formats by setting the :doc:`dedicated parameters </docs/products/kafka/kafka-connect/reference/s3-sink-additional-parameters>`.
 
 
 
