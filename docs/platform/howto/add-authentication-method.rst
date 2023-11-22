@@ -13,4 +13,4 @@ To add an authentication method for your user account in the `Aiven Console <htt
 After authorizing access, the new method is shown in the list.
 
 .. note:: 
-    You can also add and update authentication methods :doc:`using the Aiven CLI <../../tools/cli/account/account-authentication-method>`.
+    You can also add and update authentication methods :doc:`using the Aiven CLI </docs/tools/cli/account/account-authentication-method>`.
