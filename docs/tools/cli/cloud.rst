@@ -1,7 +1,7 @@
 ``avn cloud``
 ==================================
 
-Here you’ll find the full list of commands for ``avn cloud``.
+Here you'll find the full list of commands for ``avn cloud``.
 
 
 List cloud region details

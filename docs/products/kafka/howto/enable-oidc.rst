@@ -6,7 +6,7 @@ OpenID Connect (OIDC) is an authentication protocol built on OAuth 2.0. Aiven fo
 
 Prerequisites
 -------------
-Aiven for Apache Kafka integrates with a wide range of OpenID Connect identity providers (IdPs). However, the exact configuration steps can differ based on your chosen IdP. Refer to your Identity Provider’s official documentation for specific configuration guidelines. 
+Aiven for Apache Kafka integrates with a wide range of OpenID Connect identity providers (IdPs). However, the exact configuration steps can differ based on your chosen IdP. Refer to your Identity Provider's official documentation for specific configuration guidelines. 
 
 Before proceeding with the setup, ensure you have:
 

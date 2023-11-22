@@ -1,7 +1,7 @@
 ``avn service connection-pool``
 ==================================================
 
-Here you’ll find the full list of commands for ``avn service connection-pool``.
+Here you'll find the full list of commands for ``avn service connection-pool``.
 
 
 Manage PgBouncer connection pools

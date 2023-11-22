@@ -1,7 +1,7 @@
 ``avn service privatelink``
 ==============================================
 
-Here you’ll find the full list of commands for ``avn service privatelink``.
+Here you'll find the full list of commands for ``avn service privatelink``.
 
 
 Manage Aiven privatelink service for AWS and Azure

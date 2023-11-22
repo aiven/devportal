@@ -1,7 +1,7 @@
 Write search queries with OpenSearch® and NodeJS
 ================================================
 
-Learn how the OpenSearch® JavaScript client gives a clear and useful interface to communicate with an OpenSearch cluster and run search queries. To make it more delicious we’ll be using a recipe dataset from Kaggle 🍕.
+Learn how the OpenSearch® JavaScript client gives a clear and useful interface to communicate with an OpenSearch cluster and run search queries. To make it more delicious we'll be using a recipe dataset from Kaggle 🍕.
 
 Prepare the playground
 **********************
@@ -22,7 +22,7 @@ To organise our development space we'll use these files:
 - ``helpers.js`` to contain utilities for logging responses,
 - ``search.js`` for methods specific to search requests.
 
-We’ll be adding code into these files and running the methods from the command line.
+We'll be adding code into these files and running the methods from the command line.
 
 Connect to the cluster and load data
 ------------------------------------

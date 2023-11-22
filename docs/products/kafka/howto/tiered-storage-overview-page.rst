@@ -5,7 +5,7 @@ Aiven for Apache Kafka® offers a comprehensive overview of tiered storage, allo
 
 .. important:: 
    
-   Aiven for Apache Kafka® tiered storage is a :doc:`limited availability feature </docs/platform/concepts/beta_services>`. If you’re interested in trying out this feature, contact the sales team at sales@Aiven.io.
+   Aiven for Apache Kafka® tiered storage is a :doc:`limited availability feature </docs/platform/concepts/beta_services>`. If you're interested in trying out this feature, contact the sales team at sales@Aiven.io.
 
 
 Access tiered storage overview

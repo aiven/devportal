@@ -1,7 +1,7 @@
 ``avn account authentication-method``
 ========================================================
 
-Here you’ll find the full list of commands for ``avn account authentication-method``.
+Here you'll find the full list of commands for ``avn account authentication-method``.
 
 
 Manage account authentication methods
