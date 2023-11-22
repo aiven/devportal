@@ -68,9 +68,9 @@ To get started using organization groups, replace your existing teams with group
 
 #. Click **Organization** and on the **Teams** tab view each team to make a note of: 
 
-* which users are members of the team
-* which projects the team is assigned to
-* the permission level that is assigned for each project
+   * which users are members of the team
+   * which projects the team is assigned to
+   * the permission level that is assigned for each project
 
 #. Click **Groups** and then **Create group**. 
 
@@ -78,7 +78,7 @@ To get started using organization groups, replace your existing teams with group
 
 #. :doc:`Add each new group to the same projects </docs/platform/howto/add-groups-projects>` that the teams are assigned to. Set the role to the same permission level that is used for the team.
 
-.. important::
+   .. important::
     Users on the account owners team automatically become super admin. To give them the same permission level, after deleting the account owners team :doc:`make them super admin </docs/platform/howto/make-super-admin>`.
 
 #. After confirming all users have the correct access, delete the teams.
