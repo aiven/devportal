@@ -10,12 +10,12 @@ By default, in every PostgreSQL instance, an ``avnadmin`` database user is creat
 
 * Databases (``CREATE DATABASE``, ``DROP DATABASE``)
 * Database users (``CREATE USER/ROLE``, ``DROP USER/ROLE``)
-* Extensions (``CREATE EXTENSION``), you can also view the :doc:`list of available extensions <../reference/list-of-extensions>`
+* Extensions (``CREATE EXTENSION``), you can also view the :doc:`list of available extensions </docs/products/postgresql/reference/list-of-extensions>`
 * Access permissions (``GRANT``, ``REVOKE``)
 * Logical replication with the ``REPLICATION`` privilege
 
 .. Tip::
-    You can also manage databases and users in the Aiven web console or though our :doc:`REST API <../../../tools/api>`.
+    You can also manage databases and users in the Aiven web console or though our :doc:`REST API </docs/tools/api>`.
 
 .. _aiven_extras_extension:
 
@@ -27,7 +27,7 @@ The ``aiven_extras`` extension, developed and maintained by Aiven, enables the `
 * Manage `subscriptions <https://www.postgresql.org/docs/current/catalog-pg-subscription.html>`_
 * Manage ``auto_explain`` `functionality <https://www.postgresql.org/docs/current/auto-explain.html>`_
 * Manage `publications <https://www.postgresql.org/docs/current/sql-createpublication.html>`_
-* :doc:`Claim public schema ownership <../howto/claim-public-schema-ownership>`
+* :doc:`Claim public schema ownership </docs/products/postgresql/howto/claim-public-schema-ownership>`
 
 You can install the ``aiven_extras`` extension executing the following command with the ``avnadmin`` user::
 

@@ -43,7 +43,7 @@ The following example demonstrates how to setup a local Apache Kafka Connect clu
 Setup the truststore and keystore
 ''''''''''''''''''''''''''''''''''
 
-Create a :doc:`Java keystore and truststore <../../howto/keystore-truststore>` for the Aiven for Apache Kafka service.
+Create a :doc:`Java keystore and truststore </docs/products/kafka/howto/keystore-truststore>` for the Aiven for Apache Kafka service.
 For the following example we assume:
 
 * The keystore is available at ``KEYSTORE_PATH/client.keystore.p12``

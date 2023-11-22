@@ -26,7 +26,7 @@ You can also integrate with popular logs management solutions such as OpenSearch
 Monitoring with dashboards, plugins, and alerting
 -------------------------------------------------
 Dashboards and plugins
-  With Aiven for Grafana, you can monitor your data using ready-made dashboards. Benefit from over 60 advanced panel and :doc:`data source plugins <../reference/plugins>` that provide a high level of customization to your monitoring solution. 
+  With Aiven for Grafana, you can monitor your data using ready-made dashboards. Benefit from over 60 advanced panel and :doc:`data source plugins </docs/products/grafana/reference/plugins>` that provide a high level of customization to your monitoring solution. 
 
 Monitoring and alerting
   Aiven for Grafana allows you to create monitoring solutions for all teams, enabling everyone to keep track of critical metrics. Additionally, you can implement an observability platform with alerting, ensuring that you are promptly notified in case of any issues.

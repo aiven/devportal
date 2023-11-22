@@ -1,7 +1,7 @@
 Monitor Aiven for ClickHouse® metrics with Grafana®
 ===================================================
 
-As well as offering ClickHouse®-as-a-service, the Aiven platform gives you access to monitor the database. The metrics/dashboard integration in the Aiven console allows you to create an integration and monitoring dashboards in Aiven for Grafana®. For more information on the metrics, see :doc:`Aiven for ClickHouse® metrics exposed in Aiven for Grafana® <../reference/metrics-list>`.
+As well as offering ClickHouse®-as-a-service, the Aiven platform gives you access to monitor the database. The metrics/dashboard integration in the Aiven console allows you to create an integration and monitoring dashboards in Aiven for Grafana®. For more information on the metrics, see :doc:`Aiven for ClickHouse® metrics exposed in Aiven for Grafana® </docs/products/clickhouse/reference/metrics-list>`.
 
 Push ClickHouse® metrics to InfluxDB®, M3DB, or PostgreSQL®
 -----------------------------------------------------------

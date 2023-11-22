@@ -49,7 +49,7 @@ Here are the steps to upgrade a PostgreSQL service:
 .. Note::
    A full backup of a large database may take a long time to complete. It may take some time before the standby node becomes available, as they can only be launched when a backup taken from the new version is available.
 
-More information about upgrade and failover procedures can be found in the :doc:`dedicated page <../concepts/upgrade-failover>`.
+More information about upgrade and failover procedures can be found in the :doc:`dedicated page </docs/products/postgresql/concepts/upgrade-failover>`.
 
 .. Warning::
     Once the upgrade is started, the PostgreSQL instance can't be restored to the previous version. Similarly, the pre-existing backups cannot be used for procedures such as Point In Time Recovery since they were created with an earlier version of PostgreSQL.

@@ -72,7 +72,7 @@ It is important to note that when SSL is in use, HAProxy will be responsible for
 Allow plain-text connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-An alternative is disable database SSL allowing allow plain-text connections. To allow plain-text connections, you can change this setting on **Overview** in the **Advanced configuration** section, or using the :doc:`Aiven Command Line interface<../../../tools/cli>`.
+An alternative is disable database SSL allowing allow plain-text connections. To allow plain-text connections, you can change this setting on **Overview** in the **Advanced configuration** section, or using the :doc:`Aiven Command Line interface</docs/tools/cli>`.
 
 .. Warning::
 

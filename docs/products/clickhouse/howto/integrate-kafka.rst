@@ -67,7 +67,7 @@ For each table, you need to define the following:
 * ``name`` - name of the connector table
 * ``columns`` - array of columns, with names and types
 * ``topics`` - array of topics, where you want to bring the data from
-* ``data_format`` - your preferred format for data input, see :doc:`../reference/supported-input-output-formats`
+* ``data_format`` - your preferred format for data input, see :doc:`/docs/products/clickhouse/reference/supported-input-output-formats`
 * ``group_name`` - consumer group name, that will be created on your behalf
 
 .. topic:: JSON format

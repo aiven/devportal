@@ -32,7 +32,7 @@ Variable                  Description
 Perform the migration
 '''''''''''''''''''''
 
-1. If you don't have an Aiven for PostgreSQL database yet, run the following command to create a couple of PostgreSQL services via :doc:`../../../tools/cli` substituting the parameters accordingly:
+1. If you don't have an Aiven for PostgreSQL database yet, run the following command to create a couple of PostgreSQL services via :doc:`/docs/tools/cli` substituting the parameters accordingly:
 
    .. code::
 

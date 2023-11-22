@@ -6,7 +6,7 @@ Learn how the OpenSearch® JavaScript client gives a clear and useful interface 
 Prepare the playground
 **********************
 
-You can create an OpenSearch cluster either with the visual interface or with the command line. Depending on your preference follow the instructions for :doc:`getting started with the console for Aiven for Opensearch <../getting-started>` or see :doc:`how to create a service with the help of Aiven command line interface <../../../tools/cli/service>`.
+You can create an OpenSearch cluster either with the visual interface or with the command line. Depending on your preference follow the instructions for :doc:`getting started with the console for Aiven for Opensearch </docs/products/opensearch/getting-started>` or see :doc:`how to create a service with the help of Aiven command line interface </docs/tools/cli/service>`.
 
 .. note::
 
@@ -398,7 +398,7 @@ Now it's your turn to experiment! Create your own boolean query, using what we l
 What's next?
 ************
 
-Now that you learned how to work with search queries, have a look at :doc:`our tutorial for aggregations <opensearch-aggregations-and-nodejs>`. Or, if you're done for a day, see :doc:`how you can pause the service <../../../platform/howto/pause-from-cli>`.
+Now that you learned how to work with search queries, have a look at :doc:`our tutorial for aggregations <opensearch-aggregations-and-nodejs>`. Or, if you're done for a day, see :doc:`how you can pause the service </docs/platform/howto/pause-from-cli>`.
 
 Resources
 *********

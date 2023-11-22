@@ -29,7 +29,7 @@ If you want to experiment with upgrading, remember that you can fork your existi
 Request a new extension
 -----------------------
 
-We are always open to suggestions of additional extensions that could be useful to many of our customers, and there are a few that can be enabled on request if you need them. For any extensions not on the :doc:`../reference/list-of-extensions` approved list, please open a support ticket and let us know:
+We are always open to suggestions of additional extensions that could be useful to many of our customers, and there are a few that can be enabled on request if you need them. For any extensions not on the :doc:`/docs/products/postgresql/reference/list-of-extensions` approved list, please open a support ticket and let us know:
 
 * which extension is requested
 * which database service and user database should have them

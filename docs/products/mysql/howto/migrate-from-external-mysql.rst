@@ -57,7 +57,7 @@ Perform the migration
     grant replication slave on *.* TO 'SRC_USERNAME'@'%';
     grant select, process, event on *.* to 'SRC_USERNAME'@'%'
 
-2. If you don't have an Aiven for MySQL database yet, create it via :doc:`Aiven Console <../get-started>` or the dedicated :ref:`Aiven CLI command <avn-cli-service-create>`
+2. If you don't have an Aiven for MySQL database yet, create it via :doc:`Aiven Console </docs/products/mysql/get-started>` or the dedicated :ref:`Aiven CLI command <avn-cli-service-create>`
 
 3. Set the migration details via the ``avn service update`` :ref:`Aiven CLI command <avn-cli-service-update>` substituting the parameters accordingly::
 

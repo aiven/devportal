@@ -1,7 +1,7 @@
 Monitor PostgreSQL® metrics with Grafana®
 =========================================
 
-As well as offering PostgreSQL-as-a-service, the Aiven platform gives you access to monitor the database. The metrics/dashboard integration in the Aiven console lets you send PostgreSQL® metrics to an external endpoint like Datadog or to create an integration and a :doc:`prebuilt dashboard <../reference/pg-metrics>` in Aiven for Grafana®. Get detailed information about the metrics and dashboard sections in :doc:`../reference/pg-metrics`.
+As well as offering PostgreSQL-as-a-service, the Aiven platform gives you access to monitor the database. The metrics/dashboard integration in the Aiven console lets you send PostgreSQL® metrics to an external endpoint like Datadog or to create an integration and a :doc:`prebuilt dashboard </docs/products/postgresql/reference/pg-metrics>` in Aiven for Grafana®. Get detailed information about the metrics and dashboard sections in :doc:`/docs/products/postgresql/reference/pg-metrics`.
 
 
 Push PostgreSQL metrics to InfluxDB®, M3DB, or PostgreSQL
@@ -40,7 +40,7 @@ In Grafana, go to **Dashboards** and **Manage**, and double click on the dashboa
 .. image:: /images/products/postgresql/metrics-dashboard-manage.png
    :alt: Screenshot of a Grafana Manage Dashboards panel
 
-Browse the prebuilt dashboard or create your own monitoring views. More info about the dashboard and pushed metrics can be found at :doc:`../reference/pg-metrics`
+Browse the prebuilt dashboard or create your own monitoring views. More info about the dashboard and pushed metrics can be found at :doc:`/docs/products/postgresql/reference/pg-metrics`
 
 .. image:: /images/products/postgresql/metrics-dashboard-global.png
    :alt: Screenshot of the PostgreSQL Metrics Dashboard for Grafana
