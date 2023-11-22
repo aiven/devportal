@@ -34,9 +34,9 @@ Variable                Description
 Code
 ''''
 
-Set the `SSL_CERTFILE` environment variable to the location of the *CA Certificate* for the Cassandra service:
+Set the ``SSL_CERTFILE`` environment variable to the location of the *CA Certificate* for the Cassandra service:
 
-::
+.. code::
 
     export SSL_CERTFILE=<PATH>
     
@@ -47,7 +47,7 @@ Set the `SSL_CERTFILE` environment variable to the location of the *CA Certifica
 
 Navigate to the directory of your local Cassandra installation and execute the following from a terminal window:
 
-::
+.. code::
 
     ./cqlsh --ssl -u avnadmin -p <PASSWORD> <HOST> <PORT> 
 

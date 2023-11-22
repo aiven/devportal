@@ -7,7 +7,7 @@ Pre-requisites
 --------------
 
 * `Node.js <https://nodejs.org/en/download/>`_ in your environment
-* `Node.js client for connecting to ClickHouse <https://clickhouse.com/docs/en/integrations/language-clients/nodejs/>`_
+* `Node.js client for connecting to ClickHouse <https://clickhouse.com/docs/en/integrations/language-clients/javascript#environment-requirements-nodejs>`_
 
 .. tip::
 

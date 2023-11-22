@@ -17,11 +17,15 @@ Variable                         Description
 Connection string
 --------------------
 
-Replace ``CLICKHOUSE_HTTPS_HOST`` and ``CLICKHOUSE_HTTPS_PORT`` with your connection values::
+Replace ``CLICKHOUSE_HTTPS_HOST`` and ``CLICKHOUSE_HTTPS_PORT`` with your connection values:
 
-    jdbc:ch://CLICKHOUSE_HTTPS_HOST:CLICKHOUSE_HTTPS_PORT?ssl=true&sslmode=STRICT
+.. code::
+ 
+   jdbc:ch://CLICKHOUSE_HTTPS_HOST:CLICKHOUSE_HTTPS_PORT?ssl=true&sslmode=STRICT
 
 
-You'll also need to provide user name and password to establish the connection. For example, if you use Java::
+You'll also need to provide user name and password to establish the connection. For example, if you use Java:
 
-    Connection connection = dataSource.getConnection("CLICKHOUSE_USER", "CLICKHOUSE_PASSWORD");
+.. code::
+  
+   Connection connection = dataSource.getConnection("CLICKHOUSE_USER", "CLICKHOUSE_PASSWORD");

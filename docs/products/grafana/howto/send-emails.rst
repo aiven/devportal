@@ -28,9 +28,11 @@ Configure the SMTP server for Grafana
 
 To configure the Aiven for Grafana service:
 
-1. Open the Aiven client, and log in::
+1. Open the Aiven client, and log in:
 
-    avn user login <you@example.com> --token
+   .. code::
+    
+      avn user login <you@example.com> --token
 
 2. configure the service using your own SMTP values::
 

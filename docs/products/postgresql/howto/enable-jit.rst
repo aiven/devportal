@@ -21,7 +21,7 @@ To enable JIT in the `Aiven console <https://console.aiven.io/>`_, take the foll
 
 To enable JIT via :doc:`Aiven CLI </docs/tools/cli>`, you can use the :ref:`service update command <avn-cli-service-update>`:
 
-::
+.. code::
 
     avn service update -c pg.jit=true PG_SERVICE_NAME
 
@@ -32,13 +32,13 @@ You might not want to use JIT for most simple queries since it would increase th
 
 1. Connect to the database where you want to enable JIT. E.g. with ``psql`` and the service URI available in the Aiven for PostgreSQL service overview console page
 
-::
+.. code::
 
     psql PG_CONNECTION_URI
 
 2. Alter the database (in the example ``mytestdb``) and enable JIT
 
-::
+.. code::
 
     alter database mytestdb set jit=on;
 
@@ -53,13 +53,13 @@ JIT can be enabled also for a specific user:
 
 1. Connect to the database where you want to enable JIT using, for example, ``psql`` and the service URI available in `Aiven Console <https://console.aiven.io/>`_ > the **Overview** page of your Aiven for PostgreSQL service.
 
-::
+.. code::
 
     psql PG_CONNECTION_URI
 
 2. Alter the role (in the example: ``mytestrole``), and enable JIT.
 
-::
+.. code::
 
     alter role mytestrole set jit=on;
 
@@ -69,13 +69,13 @@ JIT can be enabled also for a specific user:
 
 3. Start a new session with the role, and check that JIT is running.
 
-::
+.. code::
 
     show jit;
 
 The result should be:
 
-::
+.. code::
 
      jit 
     -----
@@ -84,7 +84,7 @@ The result should be:
 
 4. Run a simple query to test JIT is applied properly.
 
-::
+.. code::
 
     defaultdb=> explain analyze select sum(row) from table;
                                                                 QUERY PLAN                                                     

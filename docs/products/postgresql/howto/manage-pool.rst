@@ -1,7 +1,7 @@
 Manage connection pooling
 =========================
 
-Connection Pooling allows you to maintain very large numbers of connections to a database while minimizing the consumption of server resources. Read more about it on :doc:`../concepts/pg-connection-pooling`.
+Connection Pooling allows you to maintain very large numbers of connections to a database while minimizing the consumption of server resources. Read more about it on :doc:`/docs/products/postgresql/concepts/pg-connection-pooling`.
 
 Connection pooling tips
 -----------------------------

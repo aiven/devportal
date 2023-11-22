@@ -11,9 +11,9 @@ To use Datadog Database Monitoring with your Aiven for PostgreSQL® services, yo
 
 * Apply any outstanding maintenance updates mentioning the Datadog integration. 
 * Ensure the :doc:`Datadog Metrics integration </docs/integrations/datadog/datadog-metrics>` is enabled. 
-* The :doc:`PostgreSQL extensions <../reference/list-of-extensions>` - ``pg_stat_statements`` and ``aiven_extras``, must be enabled by executing the following `CREATE EXTENSION <https://www.postgresql.org/docs/current/sql-createextension.html>`_ SQL commands directly on the Aiven for PostgreSQL® database service.
+* The :doc:`PostgreSQL extensions </docs/products/postgresql/reference/list-of-extensions>` - ``pg_stat_statements`` and ``aiven_extras``, must be enabled by executing the following `CREATE EXTENSION <https://www.postgresql.org/docs/current/sql-createextension.html>`_ SQL commands directly on the Aiven for PostgreSQL® database service.
 
-::
+.. code::
 
     CREATE EXTENSION pg_stat_statements;   
     CREATE EXTENSION aiven_extras;
@@ -25,29 +25,38 @@ You can individually enable Datadog Database Monitoring for the specific :doc:`D
 
 Using the ``avn service integration-list`` :ref:`Aiven CLI command <avn_service_integration_list>`, you can obtain the Datadog Metric integration you want to monitor and enable the Datadog Database monitoring functionality by using the ``datadog_dbm_enabled`` configuration parameter. For example: 
 
-* Find the UUID of the Datadog Metrics integration for a particular service::
+* Find the UUID of the Datadog Metrics integration for a particular service:
 
-    avn service integration-list --project <project name> <service name>
+  .. code::
 
-* Enable the Datadog Database Monitoring for the Datadog Metrics integration with the following command, substituting the ``<INTEGRATION_UUID>`` with the integration UUID retrieved at the previous step::
+     avn service integration-list --project <project name> <service name>
 
-    avn service integration-update --user-config '{"datadog_dbm_enabled": true}' <INTEGRATION_UUID>
+* Enable the Datadog Database Monitoring for the Datadog Metrics integration with the following command, substituting the ``<INTEGRATION_UUID>`` with the integration UUID retrieved at the previous step:
 
-* Check if user-config ``datadog_dbm_enabled`` set correctly::
+  .. code::
+   
+     avn service integration-update --user-config '{"datadog_dbm_enabled": true}' <INTEGRATION_UUID>
+
+* Check if user-config ``datadog_dbm_enabled`` set correctly:
+
+  .. code::
   
-    avn service integration-list <SERVICE_NAME> \
+     avn service integration-list <SERVICE_NAME> \
         --project <PROJECT_NAME>  \
         --json | jq '.[] | select(.integration_type=="datadog").user_config'
     
-  ``datadog_dbm_enabled`` should be set to ``true``::
+  ``datadog_dbm_enabled`` should be set to ``true``:
+  
+  .. code::
 
-    {
-    "datadog_dbm_enabled": true
-    }
+     {
+       "datadog_dbm_enabled": true
+     }
     
 Executing the steps successfully results in enabling Datadog Database Monitoring for your service.
 
 .. seealso:: 
-    - Learn more about :doc:`Datadog and Aiven </docs/integrations/datadog>`.
-    - Learn more about `Datadog Deep Database Monitoring <https://www.datadoghq.com/product/database-monitoring/>`_ from their product page. 
+  
+   - Learn more about :doc:`Datadog and Aiven </docs/integrations/datadog>`.
+   - Learn more about `Datadog Deep Database Monitoring <https://www.datadoghq.com/product/database-monitoring/>`_ from their product page. 
 

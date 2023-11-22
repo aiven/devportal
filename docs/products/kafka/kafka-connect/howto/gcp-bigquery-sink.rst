@@ -114,13 +114,17 @@ The configuration file contains the following entries:
 
      The configuration of the BigQuery connector in Aiven has a non-backward-compatible change between versions ``1.2.0`` and ``1.6.5``:
 
-     * version ``1.2.0`` uses the ``credentials`` field to specify the Google Cloud credentials in JSON format::
+     * version ``1.2.0`` uses the ``credentials`` field to specify the Google Cloud credentials in JSON format:
+     
+       .. code::
 
           ...
           "credentials": "{...}",
           ...
 
-     * from version ``1.6.5`` on, use the ``keyfield`` field and set the ``keySource`` parameter to ``JSON``::
+     * from version ``1.6.5`` on, use the ``keyfield`` field and set the ``keySource`` parameter to ``JSON``:
+     
+       .. code::
 
           ...
           "keyfile": "{...}",
@@ -152,9 +156,9 @@ To create a Kafka Connect connector, follow these steps:
 9. Verify the connector status under the **Connectors** screen.
 10. Verify the presence of the data in the target BigQuery dataset, the table name is equal to the Apache Kafka topic name. If you need to change the target table name, you can do so using the Kafka Connect ``RegexRouter`` transformation.
 
-   .. note::
+    .. note::
 
-      You can also create connectors using the :ref:`Aiven CLI command <avn_service_connector_create>`.
+       You can also create connectors using the :doc:`Aiven CLI command </docs/tools/cli/service/connector>`.
 
 Example: Create a Google BigQuery sink connector on a topic with a JSON schema
 ------------------------------------------------------------------------------

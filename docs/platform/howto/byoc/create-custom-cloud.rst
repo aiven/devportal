@@ -21,7 +21,7 @@ Limitations
 
 * Administrator's role is required for creating custom clouds.
 * :doc:`BYOC limited availability version </docs/platform/concepts/beta_services>` supports the AWS cloud provider only.
-* You need to use the :ref:`BYOC standard deployment <byoc-standard>` as a deployment model for your custom cloud.
+* BYOC is supported with the :ref:`standard deployment <byoc-deployment>` model only.
 
 Prerequisites
 -------------
@@ -71,14 +71,6 @@ In the **Create custom cloud** workflow, proceed as follows:
      * Specify inbound rules with the CIDR block notation, for example: 200.1.2.3/32 (allowing 200.1.2.3 as a single address), 0.0.0.0/0 (allowing traffic from anywhere), or 100.1.0.0/16 (allowing traffic from 100.1..).
      * To create VPC peerings with that VPC, choose a CIDR block that doesn't overlap with CIDR blocks of peer VPCs.
      * Keep in mind that CIDR block needs be large enough so that, after splitting it into per-region subnets, each subnet has enough addresses to fit required services.
-
-   * :ref:`Deployment model <byoc-deployment>`
-
-     The deployment model determines how resources within your Aiven organization are arranged. It also imposes the method of connectivity between Aiven's control plane and networks under your cloud provider account.
-
-     .. important::
-
-        **BYOC standard** is the only option supported currently.
 
 2. Select **Next**.
    

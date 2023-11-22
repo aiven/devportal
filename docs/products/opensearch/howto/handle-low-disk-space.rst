@@ -1,7 +1,7 @@
 Handle low disk space
 ======================
 
-OpenSearch® relies on the watermarks to respond to low disk space. Read more about each of them :doc:`in the dedicated article <../reference/low-space-watermarks>`.
+OpenSearch® relies on the watermarks to respond to low disk space. Read more about each of them :doc:`in the dedicated article </docs/products/opensearch/reference/low-space-watermarks>`.
 
 When you're running low on disk space using Aiven for OpenSearch, you can take one of these actions:
 

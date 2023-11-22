@@ -39,4 +39,4 @@ To run the code::
 
     go run main.go
 
-If the script outputs ``Status code: 200`` then there is data in your M3DB. If you'd like to you can take a look at :doc:`grafana` to see how to inspect your data with Grafana®.
+If the script outputs ``Status code: 200`` then there is data in your M3DB. See :doc:`Visualize M3DB data with Grafana </docs/products/m3db/howto/grafana>`.

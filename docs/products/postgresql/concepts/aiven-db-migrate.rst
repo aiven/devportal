@@ -61,4 +61,4 @@ The ``aiven-db-migrate`` migration tool checks the following requirements before
 Next steps
 ''''''''''
 
-There's a detailed guide for performing the migration: :doc:`../howto/migrate-aiven-db-migrate`
+There's a detailed guide for performing the migration: :doc:`/docs/products/postgresql/howto/migrate-aiven-db-migrate`

@@ -74,11 +74,15 @@ DZone
 Elasticsearch
 Epicurious
 etcd
+eval
 event_type
+European Union
 failover
 fileset
 filesets
 Flink
+Forecast
+Forecasted
 FusionAuth
 Gantt
 geocoder
@@ -125,6 +129,7 @@ JobManager
 Jolokia
 JumpCloud
 JVM's
+JWT's
 Kaggle/M
 Kafdrop
 Kafka
@@ -253,6 +258,7 @@ subprocesses
 subtab
 syslog
 TaskManager
+taxability
 Tcpdump
 Telegraf
 Tenant
@@ -268,11 +274,14 @@ UDFs
 unassign
 uncomment
 unencrypted
+United States
 Unschedule
 untrusted
 unaggregated
 UpCloud
 upsert
+UUID
+UUIDs
 vectorizing
 virtualized
 VM
@@ -286,5 +295,6 @@ Worldmap
 worldPing
 Zabbix
 zapier
+zdm-proxy
 Zipkin
 ZooKeeper

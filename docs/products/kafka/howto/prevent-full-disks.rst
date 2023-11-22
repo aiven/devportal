@@ -11,7 +11,9 @@ If any node in the service surpasses the critical threshold of disk usage (more 
 
 When the disk space is insufficient, and the ACL blocks write operations, you will encounter an error. For example, if you are using the Python client for Apache Kafka, you may receive the following error message:
 
-   TopicAuthorizationFailedError: [Error 29] TopicAuthorizationFailedError: you-topic
+.. code::
+
+   TopicAuthorizationFailedError: [Error 29] TopicAuthorizationFailedError: your-topic
 
 
 Upgrade to a larger service plan
@@ -45,7 +47,7 @@ Delete one or more topics
 
 Deleting a topic frees up the disk space it previously used. The log cleaner process may take a few minutes to remove the associated data files from the disk. Once completed, the access control list (ACL) is updated to allow write operations.
 
-You can also use the CLI command :ref:`avn-cli-delete-topic` or make a call to `API endpoint <https://api.aiven.io/doc/#operation/ServiceKafkaTopicDelete>`_ from any native Apache Kafka client to delete topics.
+You can also use the CLI command :doc:`avn cli delete-topic </docs/tools/cli/service/topic>` or make a call to `API endpoint <https://api.aiven.io/doc/#operation/ServiceKafkaTopicDelete>`_ from any native Apache Kafka client to delete topics.
 
 .. note:: You must use an admin-level user account for the connection.
 

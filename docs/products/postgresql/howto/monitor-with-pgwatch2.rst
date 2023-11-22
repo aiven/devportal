@@ -6,7 +6,7 @@ Monitor PostgreSQL® metrics with pgwatch2
 .. Note::
 
     Aiven for PostgreSQL supports the most popular extensions, but, due to security implications, can't support all the available extensions.
-    Check :doc:`../reference/list-of-extensions` and :doc:`../howto/manage-extensions` for details on the supported PostgreSQL extensions on the Aiven platform.
+    Check :doc:`/docs/products/postgresql/reference/list-of-extensions` and :doc:`/docs/products/postgresql/howto/manage-extensions` for details on the supported PostgreSQL extensions on the Aiven platform.
 
 Prepare an Aiven for PostgreSQL instance for pgwatch2
 -------------------------------------------------------
@@ -29,7 +29,7 @@ The following steps need to be executed on the Aiven for PostgreSQL instance to 
 
     CREATE EXTENSION IF NOT EXISTS pg_stat_statements;
 
-5. The `pgwatch2 documentation`_ recommends to enable timing of database I/O calls by setting the PostgreSQL configuration parameter ``track_io_timing`` (see :doc:`../reference/list-of-advanced-params`).
+5. The `pgwatch2 documentation`_ recommends to enable timing of database I/O calls by setting the PostgreSQL configuration parameter ``track_io_timing`` (see :doc:`/docs/products/postgresql/reference/list-of-advanced-params`).
     .. warning::  According to the `PostgreSQL documentation`_, setting ``track_io_timing = on`` can cause significant overhead.
 
 

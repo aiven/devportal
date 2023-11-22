@@ -1,12 +1,12 @@
 Access PgBouncer statistics
 ===========================
 
-PgBouncer is used at Aiven for :doc:`../concepts/pg-connection-pooling`.
+PgBouncer is used at Aiven for :doc:`/docs/products/postgresql/concepts/pg-connection-pooling`.
 
 Get PgBouncer URL
 ------------------
 
-PgBouncer URL can be checked under **Pools** in `Aiven Console <https://console.aiven.io/>`_ > your Aiven for PostgreSQL® service's page > **Pools** view (available from the sidebar). Alternatively, it can be extracted via :doc:`Aiven Command Line interface<../../../tools/cli>`, using ``jq`` (https://stedolan.github.io/jq/) to parse the JSON response.
+PgBouncer URL can be checked under **Pools** in `Aiven Console <https://console.aiven.io/>`_ > your Aiven for PostgreSQL® service's page > **Pools** view (available from the sidebar). Alternatively, it can be extracted via :doc:`Aiven Command Line interface</docs/tools/cli>`, using ``jq`` (https://stedolan.github.io/jq/) to parse the JSON response.
 
 Execute the following command replacing the ``INSTANCE_NAME`` parameter with the name of your instance::
 

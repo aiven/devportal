@@ -119,44 +119,56 @@ To safely make this change you will:
 -  Import already existing service to the Terraform state.
 
 1. To change from the old ``aiven_service`` to the new ``aiven_kafka``
-resource, the resource type should be changed, and the old ``service_type``
-field removed. Any references to ``aiven_service.kafka.*`` should be updated to instead read ``aiven_kafka.kafka.*`` instead. Here's an example showing the update in action::
+   resource, the resource type should be changed, and the old ``service_type``
+   field removed. Any references to ``aiven_service.kafka.*`` should be updated to instead read ``aiven_kafka.kafka.*`` instead. Here's an example showing the update in action:
+   
+   .. code::
 
-    - resource "aiven_service" "kafka" {
-    -    service_type            = "kafka"
-    + resource "aiven_kafka" "kafka" {
-        ...
-    }
-    resource "aiven_service_user" "kafka_user" {
-      project      = var.aiven_project_name
-    -  service_name = aiven_service.kafka.service_name
-    +  service_name = aiven_kafka.kafka.service_name
-      username     = var.kafka_user_name
-    }
+      - resource "aiven_service" "kafka" {
+      -    service_type            = "kafka"
+      + resource "aiven_kafka" "kafka" {
+          ...
+      }
+      resource "aiven_service_user" "kafka_user" {
+        project      = var.aiven_project_name
+      -  service_name = aiven_service.kafka.service_name
+      +  service_name = aiven_kafka.kafka.service_name
+        username     = var.kafka_user_name
+      }
 
+2. Check the current state of the world:
 
-2. Check the current state of the world::
+   .. code::
 
-    terraform state list | grep kf
+      terraform state list | grep kf
 
-3. Remove the service from the control of Terraform, and write a backup of the state into your local directory::
+3. Remove the service from the control of Terraform, and write a backup of the state into your local directory:
 
-    terraform state rm -backup=./ aiven_service.kafka
+   .. code::
 
-.. tip::
-    Use the ``-dry-run`` flag to see this change before it is actually made
+      terraform state rm -backup=./ aiven_service.kafka
 
-4. Add the service back to Terraform by importing it as a new service with the new service type::
+   .. tip::
 
-    terraform import aiven_kafka.kafka demo-project/existing-kafka
+      Use the ``-dry-run`` flag to see this change before it is actually made
 
-5. Check that the import is going to run as you expect::
+4. Add the service back to Terraform by importing it as a new service with the new service type:
 
-    terraform plan
+   .. code::
 
-6. Finally, go ahead and apply the new configuration::
+      terraform import aiven_kafka.kafka demo-project/existing-kafka
 
-    terraform apply
+5. Check that the import is going to run as you expect:
+
+   .. code::
+    
+      terraform plan
+
+6. Apply the new configuration:
+
+   .. code::
+
+      terraform apply
 
 Further reading
 '''''''''''''''

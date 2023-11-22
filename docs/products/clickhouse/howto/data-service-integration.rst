@@ -3,10 +3,8 @@ Manage Aiven for ClickHouse® data service integrations
 
 Aiven for ClickHouse supports two types of integrations:
 
-Regular integrations
-   Logs, metrics, dataflow/replication, and authentication integrations among your Aiven services and with external applications
-Data service integrations
-  Integrations with other Aiven services to use them as data sources
+- Regular integrations: Logs, metrics, dataflow/replication, and authentication integrations among your Aiven services and with external applications
+- Data service integrations: Integrations with other Aiven services to use them as data sources
 
 This article details how to set up and use data service integrations in Aiven for ClickHouse.
 

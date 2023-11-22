@@ -1,7 +1,7 @@
 ``avn service tags``
 ============================================
 
-Here you’ll find the full list of commands for ``avn service tags``.
+Here you'll find the full list of commands for ``avn service tags``.
 
 
 Manage service tags
@@ -23,7 +23,7 @@ Retrieves the tags associated with an Aiven service.
 
 **Example:** Retrieve the tags associated with the service named ``kafka-demo``.
 
-::
+.. code::
   
   avn service tags list kafka-demo
 
@@ -36,7 +36,7 @@ Retrieves the tags associated with an Aiven service.
 
 **Example:** Retrieve the tags associated with the service named ``kafka-demo`` in JSON format.
 
-::
+.. code::
   
   avn service tags list kafka-demo --json
 
@@ -71,7 +71,7 @@ Replaces a tag associated with an Aiven service, deleting the any old entry firs
 
 **Example:** in the ``demo-kafka`` Aiven service, replace the tag with key ``scope`` to the value ``userclicks``
 
-::
+.. code::
 
     avn service tags replace demo-kafka \
         --tag scope=userclicks 
@@ -100,7 +100,7 @@ Update tags associated with an Aiven service.
 * add the tag with key ``bu`` and value ``emea``
 * remove the tag with key ``team``
 
-::
+.. code::
 
     avn service tags update demo-kafka  \
         --add-tag scope=userclicks      \

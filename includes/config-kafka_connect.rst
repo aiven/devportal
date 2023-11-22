@@ -1,9 +1,3 @@
-..
-    ``additional_backup_regions``
-    -----------------------------
-    *array*
-
-    **Additional Cloud Regions for Backup Replication** 
 
 
 
@@ -113,11 +107,17 @@
 
 **The maximum size of a request in bytes** This setting will limit the number of record batches the producer will send in a single request to avoid sending huge requests.
 
+``scheduled_rebalance_max_delay_ms``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*integer*
+
+**The maximum delay of rebalancing connector workers** The maximum delay that is scheduled in order to wait for the return of one or more departed workers before rebalancing and reassigning their connectors and tasks to the group. During this period the connectors and tasks of the departed workers remain unassigned.  Defaults to 5 minutes.
+
 ``session_timeout_ms``
 ~~~~~~~~~~~~~~~~~~~~~~
 *integer*
 
-**The timeout used to detect failures when using Kafka’s group management facilities** The timeout in milliseconds used to detect failures when using Kafka’s group management facilities (defaults to 10000).
+**The timeout used to detect failures when using Kafka's group management facilities** The timeout in milliseconds used to detect failures when using Kafka's group management facilities (defaults to 10000).
 
 
 

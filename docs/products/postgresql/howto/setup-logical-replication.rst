@@ -61,7 +61,7 @@ This example assumes a source database called ``origin_database`` on a self-mana
 
     When creating a publication entry, the ``publish`` parameter defines the operations to transfer. In the above example, all the ``INSERT``, ``UPDATE`` or ``DELETE`` operations will be transferred.
 
-3. PostgreSQL’s logical replication doesn’t copy table definitions, that can be extracted from the ``origin_database`` with ``pg_dump`` and included in a ``origin-database-schema.sql`` file with::
+3. PostgreSQL's logical replication doesn't copy table definitions, that can be extracted from the ``origin_database`` with ``pg_dump`` and included in a ``origin-database-schema.sql`` file with::
 
     pg_dump --schema-only --no-publications \
     SRC_CONN_URI                            \

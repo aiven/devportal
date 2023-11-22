@@ -18,7 +18,7 @@ software.
 **Version numbering**
 ~~~~~~~~~~~~~~~~~~~~~
 
-Aiven services inherit the upstream project’s software versioning
+Aiven services inherit the upstream project's software versioning
 scheme. Depending on the service, a major version can be either a single
 digit (e.g. PostgreSQL® 14) or ``major.minor`` (e.g. Kafka® 3.2). The
 exact version of the service is visible in `Aiven Console <https://console.aiven.io/>`_ once the
@@ -151,6 +151,9 @@ EOL one year after it's made available on Aiven platform.
    +-------------+---------------+------------------+------------------+
    | 3.5         | 2024-07-31    | 2024-03-30       | 2023-07-31       |
    +-------------+---------------+------------------+------------------+
+   | 3.6         | 2024-10-18    | 2024-07-18       | 2023-10-18       |
+   +-------------+---------------+------------------+------------------+
+
 
 .. _h_0f2929c770:
 

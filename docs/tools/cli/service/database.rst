@@ -1,7 +1,7 @@
 ``avn service database``
 ============================================
 
-Here you’ll find the full list of commands for ``avn service database``.
+Here you'll find the full list of commands for ``avn service database``.
 
 
 Manage databases
@@ -27,7 +27,7 @@ Creates a database within an Aiven for PostgreSQL®, Aiven for MySQL or Aiven fo
 
 **Example:** Create a new database named ``analytics-it`` within the service named ``pg-demo``.
 
-::
+.. code::
   
   avn service database-create pg-demo --dbname analytics-it
 
@@ -49,7 +49,7 @@ Removes a specific database within an Aiven for PostgreSQL®, Aiven for MySQL or
 
 **Example:** Delete the database named ``analytics-it`` within the service named ``pg-demo``
 
-::
+.. code::
 
     avn service database-delete pg-demo --dbname analytics-it  
 
@@ -69,6 +69,6 @@ Lists the service databases available in an Aiven for PostgreSQL®, Aiven for My
 
 **Example:** List the service databases within the service named ``pg-demo``
 
-::
+.. code::
 
     avn service database-list pg-demo

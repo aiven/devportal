@@ -41,3 +41,10 @@ Aiven for ClickHouse® how-tos
     - :doc:`Connect to external database via JDBC </docs/products/clickhouse/howto/connect-with-jdbc>`
     - :doc:`Manage Aiven for ClickHouse® data service integrations </docs/products/clickhouse/howto/data-service-integration>`
     - :doc:`Manage Aiven for ClickHouse® integration databases </docs/products/clickhouse/howto/integration-databases>`
+
+.. dropdown:: Tiered storage
+
+    - :doc:`Enable tiered storage in Aiven for ClickHouse® </docs/products/clickhouse/howto/enable-tiered-storage>`
+    - :doc:`Configure tiered storage in Aiven for ClickHouse® </docs/products/clickhouse/howto/configure-tiered-storage>`
+    - :doc:`Check data distribution in tiered storage for Aiven for ClickHouse® </docs/products/clickhouse/howto/check-data-tiered-storage>`
+    - :doc:`Transfer data between storage devices in Aiven for ClickHouse® </docs/products/clickhouse/howto/transfer-data-tiered-storage>`

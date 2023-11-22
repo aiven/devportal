@@ -1,7 +1,7 @@
 Restore PostgreSQL® from a backup
 =================================
 
-Aiven for PostgreSQL® databases are automatically backed up and can be restored from a backup at any point in time within the **backup retention period**, which :doc:`varies by plan <../concepts/pg-backups>`. The restore is created by "Forking": a new PostgreSQL instance is created and content from the original database is restored into it.
+Aiven for PostgreSQL® databases are automatically backed up and can be restored from a backup at any point in time within the **backup retention period**, which :doc:`varies by plan </docs/products/postgresql/concepts/pg-backups>`. The restore is created by "Forking": a new PostgreSQL instance is created and content from the original database is restored into it.
 
 .. Note::
     Aiven for PostgreSQL doesn't allow a service to be rolled back to a backup in-place since it creates alternative timelines for the database, adding complexity for the user.
@@ -13,10 +13,10 @@ To restore a PostgreSQL database, take the following steps:
 3. In the **Overview** page of your service, select **New database fork**.
 4. Enter a service name and choose a project name, database version, cloud region and plan for the new instance.
 5. Select the **Source service state** defining the backup point, the options are as follows:
-    * **Latest transaction**
-    * **Point in time** - the date selector allows to chose a precise point in time within the available backup retention period.
+   * **Latest transaction**
+   * **Point in time** - the date selector allows to chose a precise point in time within the available backup retention period.
 
-Once the new service is running, you can change your application’s connection settings to point to it.
+Once the new service is running, you can change your application's connection settings to point to it.
 
 .. Tip::
     Forked services can also be very useful for testing purposes, allowing you to create a completely realistic, separate copy of the actual production database with its data.
@@ -29,4 +29,5 @@ Manual restoration should only be necessary when data is accidentally corrupted 
 .. Note::
     The Hobbyist service plan does not support database forking, so you have to use an external tool, such as ``pg_dump``, to perform a backup.
 
-To perform a manual backup, see :doc:`create-manual-backups`.
+To perform a manual backup, see
+:doc:`Create manual PostgreSQL® backups </docs/products/postgresql/howto/create-manual-backups>`.

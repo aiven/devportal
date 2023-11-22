@@ -1,44 +1,39 @@
 Aiven Provider for Terraform
 =============================
 
-With Aiven's `Terraform <https://www.terraform.io>`_ provider, you can use an open-source infrastructure as code software tool to declare and manage your cloud services.
+With Aiven's `Terraform <https://www.terraform.io>`_ provider, you can use an open source infrastructure as code tool to declare and manage your cloud services.
 
-See the `Aiven Terraform provider documentation <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_ to learn about the services and resources,and visit the `GitHub repository <https://github.com/aiven/terraform-provider-aiven>`_ to report any issues or contribute to the project.
+Start using Aiven Provider for Terraform
+-----------------------------------------
 
-.. caution::
-
-  Recreating stateful services with Terraform will possibly delete the service and all its data before creating it again. Whenever the Terraform plan indicates that a service will be deleted or replaced, a catastrophic action is possibly about to happen.
-
-  Some properties, like project and the resource name, cannot be changed and it will trigger a resource replacement.
-
-  We recommend you set the ``termination_protection`` property to true on all production services, it will prevent Terraform from removing the service. Be aware that any logical databases, topics or other configurations may be removed even when this setting is enabled. Be very careful!
-
-Getting started
----------------
-
-Check out the :doc:`get started guide </docs/tools/terraform/get-started>` for your first Terraform project.
-
-.. grid:: 1 2 2 2
+.. grid:: 2 2 2 2
 
     .. grid-item-card::
         :shadow: md
         :margin: 2 2 0 0
 
-        💻 :doc:`/docs/tools/terraform/howto`
+        :doc:`Get started </docs/tools/terraform/get-started>`
+        
+        Follow an example to learn how to set up a Terraform project.
 
     .. grid-item-card::
         :shadow: md
         :margin: 2 2 0 0
 
-        📖 :doc:`/docs/tools/terraform/reference`
+        `Aiven Provider documentation <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_
 
-Learn more
-----------
-Check out these resources to learn more:
+        Details on the data sources and resources supported by the Aiven Provider for Terraform.
 
-* `Aiven Terraform Provider documentation <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_
-* `Terraform scripts and code samples on GitHub <https://github.com/aiven/aiven-examples/tree/main/terraform>`_
+
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
+
+        `Aiven Terraform Cookbook <https://aiven.io/developer/terraform>`_
+
+        Sample code for different use cases available on the Aiven Developer Center.
+
 
 Get involved
-------------
-If you have any comments or want to contribute to the tool, please join us on the `GitHub repository <https://github.com/aiven/terraform-provider-aiven>`_.
+-------------
+To report issues, give feedback, or to contribute to the tool join us on the `GitHub repository <https://github.com/aiven/terraform-provider-aiven>`_.

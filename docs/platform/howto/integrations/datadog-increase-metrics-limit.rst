@@ -9,7 +9,7 @@ Identify that metrics have been dropped
 ----------------------------------------
 The following is an example log of a large Apache Kafka® service cluster where some metrics are missing and cannot be found in the Datadog dashboards after service integration. These metrics have been dropped by user Telegraf.
 
-::
+.. code::
  
   2022-02-15T22:47:30.601220+0000 scoober-kafka-3c1132a3-82 user-telegraf: 2022-02-15T22:47:30Z W! [outputs.prometheus_client] Metric buffer overflow; 3378 metrics have been dropped
   2022-02-15T22:47:30.625696+0000 scoober-kafka-3c1132a3-86 user-telegraf: 2022-02-15T22:47:30Z W! [outputs.prometheus_client] Metric buffer overflow; 1197 metrics have been dropped
@@ -27,13 +27,13 @@ The ``max_jmx_metrics`` is not exposed in the Aiven Console yet, but you can cha
 
 1. Find the ``SERVICE_INTEGRATION_ID`` for your Datadog integration with
 
-::
+.. code::
 
   avn service integration-list --project=PROJECT_NAME SERVICE_NAME
 
 2. Change the value of ``max_jmx_metrics`` to the new LIMIT:
 
-::
+.. code::
 
   avn service integration-update SERVICE_INTEGRATION_ID --project PROJECT_NAME -c max_jmx_metrics=LIMIT
 

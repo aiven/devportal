@@ -46,7 +46,7 @@ Creates a new Kafka topic on the specified Aiven for Apache Kafka service.
 * ``BU=FINANCE`` tag
 
 
-::
+.. code::
 
   avn service topic-create demo-kafka invoices  \
     --partitions 3                              \
@@ -74,7 +74,7 @@ Deletes a Kafka topic on the specified Aiven for Apache Kafka service.
 
 **Example:** Delete the topic named ``invoices`` in the ``demo-kafka`` service.
 
-::
+.. code::
 
     avn service topic-delete demo-kafka invoices
 
@@ -96,7 +96,7 @@ Retrieves Kafka topic on the specified Aiven for Apache Kafka service.
 
 **Example:** Retrieve the information about a topic named ``invoices`` in the ``demo-kafka`` service.
 
-::
+.. code::
 
     avn service topic-get demo-kafka invoices
 
@@ -136,7 +136,7 @@ Lists Kafka topics on the specified Aiven for Apache Kafka service together with
 
 **Example:** Retrieve list of topics available in the ``demo-kafka`` service.
 
-::
+.. code::
 
     avn service topic-list demo-kafka
 
@@ -186,7 +186,7 @@ Updates a Kafka topic on the specified Aiven for Apache Kafka service.
 
 **Example:** Update the topic named ``invoices`` in the ``demo-kafka`` service. Set ``4`` partitions and ``3`` as replication factor. Furthermore remove the ``BU`` tag and add a new ``CC=FINANCE_DE`` tag.
 
-::
+.. code::
 
   avn service topic-update demo-kafka invoices  \
     --partitions 4                              \

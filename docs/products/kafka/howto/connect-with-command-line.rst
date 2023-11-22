@@ -85,7 +85,7 @@ After the connection is established you can send messages according to selected 
 
 .. note::
 
-    For more information on how to use ``kafka-avro-console-producer`` see the `Confluent developer documentation <https://docs.confluent.io/platform/current/tutorials/examples/clients/docs/kafka-commands.html#consume-avro-records>`_.
+    For more information on how to use ``kafka-avro-console-producer`` see the `Confluent developer documentation <https://developer.confluent.io/tutorials/kafka-console-consumer-producer-avro/kafka.html>`_.
 
 Consume messages
 -----------------

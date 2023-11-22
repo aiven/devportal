@@ -25,25 +25,36 @@ In the following example, the ``aiven_database`` field is migrated to the new ``
         database_name = "<DATABASE_NAME>"
     }
 
-2. View a list of all resources in the state file::
+2. View a list of all resources in the state file:
 
-    terraform state list
+   .. code::
 
-3. Remove the resource from the control of Terraform::
+      terraform state list
 
-    terraform state rm <DEPRECATED_RESOURCE>
+3. Remove the resource from the control of Terraform:
 
-.. tip::
-    Use the ``-dry-run`` flag to preview the changes without applying them.
+   .. code::
 
-4. Add the resource back to Terraform by importing it as a new resource::
+      terraform state rm <DEPRECATED_RESOURCE>
 
-    terraform import <NEW_RESOURCE> project_name/service_name/db_name
+   .. tip::
+     
+      Use the ``-dry-run`` flag to preview the changes without applying them.
 
-5. Check that the import is going to run as you expect::
+4. Add the resource back to Terraform by importing it as a new resource:
 
-    terraform plan
+   .. code::
+   
+     terraform import <NEW_RESOURCE> project_name/service_name/db_name
 
-6. Apply the new configuration::
+5. Check that the import is going to run as you expect:
 
-    terraform apply
+   .. code::
+
+      terraform plan
+
+6. Apply the new configuration:
+
+   .. code::
+     
+      terraform apply

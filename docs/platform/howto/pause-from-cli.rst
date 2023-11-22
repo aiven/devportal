@@ -7,14 +7,14 @@ One option is to power the service off temporarily. This way you can come back a
 
 You can update the state of your service either through the service overview page in `Aiven Console <https://console.aiven.io>`_ or by using Aiven command line interface:
 
-::
+.. code::
 
     avn service update demo-open-search --power-off
 
 
 When you're ready to continue using the service run the command to power it on. Use ``wait`` command to easily see when the service is up and running.
 
-::
+.. code::
 
     avn service update demo-open-search --power-on
     avn service wait demo-open-search
@@ -22,7 +22,7 @@ When you're ready to continue using the service run the command to power it on. 
 
 If you have finished exploring your OpenSearch® service, you can destroy or "terminate" the service. To terminate the service completely use the following command:
 
-::
+.. code::
 
     avn service terminate demo-open-search
 

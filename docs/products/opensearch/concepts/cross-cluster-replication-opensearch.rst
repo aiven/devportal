@@ -7,7 +7,7 @@ OpenSearch® cross-cluster replication
 
 Cross-cluster replication in Aiven for OpenSearch allows you to replicate the entire cluster, including all of its indexes, mappings, and metadata, from one service to another across different regions and cloud providers. 
 
-Cross-cluster replication follows an `active-passive` model where the follower service pulls all data and indexes from the leader service. Once you have a :doc:`cross-cluster replication setup <../howto/setup-cross-cluster-replication-opensearch>`, the leader cluster automatically replicates data to all its follower clusters. You can set up follower clusters in different regions and on different cloud providers. For simplicity, all index creation, deletion, new data, metadata, and configuration will be replicated automatically.
+Cross-cluster replication follows an `active-passive` model where the follower service pulls all data and indexes from the leader service. Once you have a :doc:`cross-cluster replication setup </docs/products/opensearch/howto/setup-cross-cluster-replication-opensearch>`, the leader cluster automatically replicates data to all its follower clusters. You can set up follower clusters in different regions and on different cloud providers. For simplicity, all index creation, deletion, new data, metadata, and configuration will be replicated automatically.
 
 Benefits of cross-cluster replication
 -------------------------------------
@@ -32,4 +32,4 @@ Some limitations include:
 - In case of a node recycle event, replication will be paused until the service is running again.
 
 .. seealso:: 
-    Learn how to :doc:`Set up cross-cluster replication for Aiven for OpenSearch® <../howto/setup-cross-cluster-replication-opensearch>`. 
+    Learn how to :doc:`Set up cross-cluster replication for Aiven for OpenSearch® </docs/products/opensearch/howto/setup-cross-cluster-replication-opensearch>`. 

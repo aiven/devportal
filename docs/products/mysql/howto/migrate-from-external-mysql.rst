@@ -57,7 +57,7 @@ Perform the migration
     grant replication slave on *.* TO 'SRC_USERNAME'@'%';
     grant select, process, event on *.* to 'SRC_USERNAME'@'%'
 
-2. If you don't have an Aiven for MySQL database yet, create it via :doc:`Aiven Console <../get-started>` or the dedicated :ref:`Aiven CLI command <avn-cli-service-create>`
+2. If you don't have an Aiven for MySQL database yet, create it via :doc:`Aiven Console </docs/products/mysql/get-started>` or the dedicated :ref:`Aiven CLI command <avn-cli-service-create>`
 
 3. Set the migration details via the ``avn service update`` :ref:`Aiven CLI command <avn-cli-service-update>` substituting the parameters accordingly::
 
@@ -70,13 +70,17 @@ Perform the migration
         -c migration.ssl=SRC_SSL \
         DEST_NAME
 
-4. Check the migration status via the dedicated ``avn service migration-status`` :ref:`Aiven CLI command <avn-cli-service-migration-status>`::
+4. Check the migration status via the dedicated ``avn service migration-status`` :ref:`Aiven CLI command <avn-cli-service-migration-status>`:
 
-    avn --show-http service migration-status DEST_NAME
+   .. code::
+      
+      avn --show-http service migration-status DEST_NAME
 
-Whilst the migration process is ongoing, the ``migration_detail.status`` will be ``syncing``::
-
-    {
+Whilst the migration process is ongoing, the ``migration_detail.status`` will be ``syncing``:
+   
+   .. code::
+    
+      {
         "migration": {
             "error": null,
             "method": "replication",
@@ -92,7 +96,7 @@ Whilst the migration process is ongoing, the ``migration_detail.status`` will be
                 "status": "syncing"
             }
         ]
-    }
+      }
     
 
 .. Note::
@@ -102,7 +106,9 @@ Whilst the migration process is ongoing, the ``migration_detail.status`` will be
 Stop the replication
 --------------------
 
-If you reach a point where you no longer need the ongoing replication to happen, you can remove the configuration from the destination service via the ``avn service update`` :ref:`Aiven CLI command <avn-cli-service-update>`::
+If you reach a point where you no longer need the ongoing replication to happen, you can remove the configuration from the destination service via the ``avn service update`` :ref:`Aiven CLI command <avn-cli-service-update>`:
 
-    avn service update --remove-option migration DEST_NAME
+.. code::
+
+   avn service update --remove-option migration DEST_NAME
 

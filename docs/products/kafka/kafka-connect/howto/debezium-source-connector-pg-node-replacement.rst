@@ -25,7 +25,7 @@ In cases when the Debezium connector can't recover during or after the PostgreSQ
 
 The above errors are unrecoverable, meaning that they require a restart of the connector task(s) in order to resume operations again. 
 
-A restart can be performed manually either through the `Aiven Console <https://console.aiven.io/>`_, in under the `Connectors` tab console or via the `Apache Kafka® Connect REST API <https://docs.confluent.io/platform/current/connect/references/restapi.html#rest-api-task-restart>`__. You can get the service URI from the `Aiven Console <https://console.aiven.io/>`_, in the service detail page.
+A restart can be performed manually either through the `Aiven Console <https://console.aiven.io/>`_, in under the ``Connectors`` tab console or via the `Apache Kafka® Connect REST API <https://docs.confluent.io/platform/current/connect/references/restapi.html#rest-api-task-restart>`__. You can get the service URI from the `Aiven Console <https://console.aiven.io/>`_, in the service detail page.
 
 .. image:: /images/products/postgresql/pg-debezium-cdc_image.png
    :alt: The Aiven Console page showing the Debezium connector error
@@ -107,6 +107,6 @@ To ensure that client applications that depend on events captured by Debezium ge
 
 .. Tip::
 
-   The example contained in the `dedicated Aiven repository <https://github.com/aiven/debezium-pg-kafka-connect-test/blob/53da8ee8fde8bf7802fd5bbb6aa39359cd1c0877/bin/python_scripts/debezium_pg_producer.py#L66>`__ demonstrates this implementation.
+   The example contained in the `dedicated Aiven repository <https://github.com/aiven/debezium-pg-kafka-connect-test/blob/main/bin/python_scripts/debezium_pg_producer.py>`__ demonstrates this implementation.
 
 As per above guideline, setting ``"_aiven.restart.on.failure": true`` on all Debezium connectors ensures that failed tasks are automatically restarted in case they fail. By default tasks status is checked every 15 minutes but the interval can be customised if needed.

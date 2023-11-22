@@ -35,10 +35,14 @@ This code creates a MySQL client and opens a connection to the database. It then
 .. note::
    This example replaces the query string parameter to specify ``sslmode=verify-ca`` to make sure that the SSL certificate is verified, and adds the location of the cert.
 
-Run the following code::
+Run the following code:
+
+.. code::
 
     php index.php
 
-If the script runs successfully, the output is the MySQL version running in your service like::
+If the script runs successfully, the output is the MySQL version running in your service like:
 
-    8.0.28
+.. code::
+
+   8.0.28

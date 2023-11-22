@@ -29,15 +29,13 @@ They cover the following:
 * Access entities (for example, users, roles, passwords, or secrets) stored in Zookeeper
 * Database definitions
 * Table schemas
-* Table content (:ref:`part files <part-files>`)
-
-.. _part-files:
+* Table content (``part files``)
 
 .. topic:: Part files
     
     With the ClickHouse's ReplicatedMergeTree table engine, each INSERT query results in creating a new file, so-called part, written only once and not modifiable.
 
-Using part files allows incremental backups in Aiven for ClickHouse: only changed parts are backed up and files already available in the object storage are left out from the backup.
+    Using part files allows incremental backups in Aiven for ClickHouse: only changed parts are backed up and files already available in the object storage are left out from the backup.
 
 Recovery
 ''''''''

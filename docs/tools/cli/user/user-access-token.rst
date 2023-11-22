@@ -31,14 +31,14 @@ Creates a new access token for the logged-in user.
 
 **Example:** Create a new access token.
 
-::
+.. code::
 
   avn user access-token create --description "To be used with Python Notebooks"
 
 
 **Example:** Create a new token expiring every hour if not used.
 
-::
+.. code::
 
   avn user access-token create                       \
     --description "To be used with Python Notebooks" \
@@ -70,7 +70,7 @@ Retrieves the information for all the access tokens active session in the sessio
 
 **Example:** Retrieve the information for the logged-in user.
 
-::
+.. code::
 
   avn user access-token list
 
@@ -103,7 +103,8 @@ Tokens can also be expired via the :ref:`avncli user-tokens-expire` command.
     - The full token or token prefix identifying the token to revoke
 
 **Example:** Revoke the access token starting with ``6JsKDclT3OMQ``.      
-::
+
+.. code::
 
   avn user access-token revoke "6JsKDclT3OMQ"
 
@@ -126,7 +127,8 @@ Updates the description of an access token.
     - Description of how the token will be used
 
 **Example:** Update the description of the access token starting with ``6JsKDclT3OMQ``.      
-::
+
+.. code::
 
   avn user access-token update "6JsKDclT3OMQ" --description "To be used with Jupyter Notebooks"
 

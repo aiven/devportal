@@ -19,7 +19,7 @@ If you prefer launching a new service from the CLI, `Aiven CLI <https://github.c
 
 In order to launch a service, decide on the service plan, cloud provider, and region you want to run your service on. Then run the following command to create an Aiven for Apache Cassandra service named ``demo-cassandra``: 
 
-::
+.. code::
 
       avn service create demo-cassandra       \
          --service-type cassandra             \

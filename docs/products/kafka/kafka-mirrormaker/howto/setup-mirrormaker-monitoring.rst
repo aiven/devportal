@@ -11,7 +11,7 @@ To set up an integration to push Aiven for Apache Kafka MirrorMaker 2 metrics to
 
 The following example demonstrates how to push the metrics of an Aiven for Apache Kafka MirrorMaker 2 service named ``mirrormaker-demo`` into an Aiven for InfluxDB service named ``influxdb-demo`` via the :ref:`Aiven CLI <avn_service_integration_create>`.
 
-::
+.. code::
 
     avn service integration-create      \
             -t influxdb-demo            \
@@ -32,7 +32,7 @@ Other methods to monitor the replication
 * Monitor the latest messages from all partitions.  
    An example using ``kt`` and ``jq``:
 
-::
+.. code::
 
     kt consume -auth ./kafka.conf -brokers service-project.aivencloud.com:24949 \
     -topic topicname -offsets all=newest:newest | \

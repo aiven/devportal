@@ -13,7 +13,7 @@ An Apache Kafka topic represents a continuous stream of messages that typically 
 
 For example, if there is a topic containing a user's home address, on every update, a message is sent using ``user_id`` as the primary key and home address as the value:
 
-::
+.. code::
 
    1001 -> "4 Privet Dr"
    1002 -> "221B Baker Street"
@@ -158,10 +158,10 @@ The compaction thread then scans the **tail**, removing every record having a ke
     - Key
     - Value
   * - 1
-    - 1001 :bdg-secondary:`delete`
+    - 1001 (``delete``)
     - 4 Privet Dr
   * - 2
-    - 1002 :bdg-secondary:`delete`
+    - 1002 (``delete``)
     - 221B Baker Street
   * - 3
     - 1003

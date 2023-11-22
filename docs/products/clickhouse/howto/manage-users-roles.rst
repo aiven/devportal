@@ -41,9 +41,11 @@ This article shows you examples of how to create roles and grant privileges. The
 Create a new role
 ^^^^^^^^^^^^^^^^^
 
-To create a new role named `auditor`, run the following command::
+To create a new role named `auditor`, run the following command:
 
-    CREATE ROLE auditor;
+.. code::
+
+   CREATE ROLE auditor;
 
 You can find more information `on role creation here <https://clickhouse.com/docs/en/sql-reference/statements/create/role/>`_.
 
@@ -52,7 +54,7 @@ Grant permissions
 
 You can grant permissions both to specific roles and to individual users. The grants can be also granular, targeting specific databases, tables, columns, or rows.
 
-For example, the following request grants the `auditor` role permissions to select data from the `transactions` database::
+For example, the following request grants the ``auditor`` role permissions to select data from the ``transactions`` database::
 
     GRANT SELECT ON transactions.* TO auditor;
 
@@ -64,7 +66,7 @@ Or to particular columns of a table::
 
     GRANT SELECT(date,description,amount) ON transactions.expenses TO auditor
 
-To grant the `auditor` and `external` roles to several users, run::
+To grant the ``auditor`` and ``external`` roles to several users, run::
 
     GRANT auditor, external TO Mary.Anderson, James.Miller;
 
@@ -93,13 +95,15 @@ Set roles
 
 A single user can be assigned different roles, either individually or simultaneously.
 
-::
+.. code::
 
     SET ROLE auditor;
 
-You can also specify a role to be activated by default when the user logs in::
+You can also specify a role to be activated by default when the user logs in:
 
-    SET DEFAULT ROLE auditor, external TO Mary.Anderson, James.Miller;
+.. code::
+  
+   SET DEFAULT ROLE auditor, external TO Mary.Anderson, James.Miller;
 
 Delete a role
 ^^^^^^^^^^^^^
@@ -128,11 +132,11 @@ Run the following commands to see all available grants, users, and roles::
 
     SHOW GRANTS;
 
-::
+.. code::
 
     SHOW USERS;
 
-::
+.. code::
 
     SHOW ROLES;
 
@@ -145,4 +149,4 @@ You can also see the users, their roles, and permissions in the  `Aiven web cons
 Manage using Terraform
 ------------------------
 
-You can also manage user roles and access using the `Aiven Provider for Terraform </docs/tools/terraform>`. Try the Aiven Terraform Provider Cookbook recipe, Manage user privileges for Aiven for ClickHouse® services using Terraform<https://aiven.io/developer/manage-user-privileges-clickhouse-terraform>`.
+You can also manage user roles and access using the :doc:`Aiven Provider for Terraform </docs/tools/terraform>`. Try Aiven Terraform Provider Cookbook recipe `Manage user privileges for Aiven for ClickHouse® services using Terraform <https://aiven.io/developer/manage-user-privileges-clickhouse-terraform>`_.
