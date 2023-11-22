@@ -1,7 +1,7 @@
 ``avn service database``
 ============================================
 
-Here you’ll find the full list of commands for ``avn service database``.
+Here you'll find the full list of commands for ``avn service database``.
 
 
 Manage databases

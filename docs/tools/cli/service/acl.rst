@@ -1,7 +1,7 @@
 ``avn service acl``
 ============================================
 
-Here you’ll find the full list of commands for ``avn service acl``.
+Here you'll find the full list of commands for ``avn service acl``.
 
 
 Manage Apache Kafka® access control lists

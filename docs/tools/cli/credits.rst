@@ -1,7 +1,7 @@
 ``avn credits``
 ==================================
 
-Here you’ll find the full list of commands for ``avn credits``.
+Here you'll find the full list of commands for ``avn credits``.
 
 
 Aiven credits

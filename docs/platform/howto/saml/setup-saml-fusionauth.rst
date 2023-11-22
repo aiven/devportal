@@ -49,7 +49,7 @@ First you need to create an API Key in your FusionAuth instance:
 
 #. On the **API Keys** page, find your new key and click on the value in the **Key** column. 
 
-#. Copy the whole key. You’ll use this for the script.
+#. Copy the whole key. You'll use this for the script.
 
    .. image:: /images/platform/howto/saml/fusionauth/grab-api-key.png
       :alt: Grabbing API Key.

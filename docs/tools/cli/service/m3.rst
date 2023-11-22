@@ -1,7 +1,7 @@
 ``avn service m3``
 ============================================
 
-Here you’ll find the full list of commands for ``avn service m3``.
+Here you'll find the full list of commands for ``avn service m3``.
 
 
 Manage Aiven for M3 namespaces

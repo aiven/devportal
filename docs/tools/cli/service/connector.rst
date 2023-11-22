@@ -1,7 +1,7 @@
 ``avn service connector``
 ============================================
 
-Here you’ll find the full list of commands for ``avn service connector``.
+Here you'll find the full list of commands for ``avn service connector``.
 
 
 Manage Apache Kafka® Connect connectors details

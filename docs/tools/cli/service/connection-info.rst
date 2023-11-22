@@ -1,7 +1,7 @@
 ``avn service connection-info``
 ==================================================
 
-Here you’ll find the full list of commands for ``avn service connection-info``.
+Here you'll find the full list of commands for ``avn service connection-info``.
 
 .. _avn_cli_service_connection_info_kcat:
 
