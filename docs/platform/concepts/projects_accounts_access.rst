@@ -23,8 +23,6 @@ Grouping your projects in organizations and organizational units lets you centra
 
 * Groups: Managed at the organization level and assigned to projects
 
-* Teams: Specific to a single organization or organizational unit and cannot be shared between them
-
 * Support contracts: Specific to a single organization and cannot be shared between them
 
 * Billing groups: Specific to a single organization and cannot be shared between them
@@ -59,16 +57,6 @@ Groups
 ~~~~~~
 
 :doc:`Organization users </docs/platform/howto/manage-org-users>` can be :doc:`added to groups </docs/platform/howto/manage-groups>`, making it easy to control access to the services in a project. When you :doc:`add a group to a project </docs/platform/howto/add-groups-projects>`, you also select the role for that group. This role gives all users in that group the same level of access to all services in the project.
-
-Teams
-~~~~~
-
-.. important::
-    **Teams are becoming groups**
-    
-    :doc:`Groups </docs/platform/howto/manage-groups>` are an easier way to control access to your organization's projects and services for a group of users.
-
-You can also use teams within organizations or organizational units to control access to projects for a group of users. When you create a team, you choose which projects to add it to. Another option is to set up :doc:`SAML single sign-on (SSO) </docs/platform/howto/list-saml>` for an organization that automatically adds users to a team when they sign up. For greater security, you may want to use a combination of SAML and RBAC regardless of the size of team.
 
 Best practices for organizations
 ---------------------------------
