@@ -11,7 +11,7 @@ To use Datadog Database Monitoring with your Aiven for PostgreSQL® services, yo
 
 * Apply any outstanding maintenance updates mentioning the Datadog integration. 
 * Ensure the :doc:`Datadog Metrics integration </docs/integrations/datadog/datadog-metrics>` is enabled. 
-* The :doc:`PostgreSQL extensions <../reference/list-of-extensions>` - ``pg_stat_statements`` and ``aiven_extras``, must be enabled by executing the following `CREATE EXTENSION <https://www.postgresql.org/docs/current/sql-createextension.html>`_ SQL commands directly on the Aiven for PostgreSQL® database service.
+* The :doc:`PostgreSQL extensions `/docs/products/postgresql/reference/list-of-extensions` - ``pg_stat_statements`` and ``aiven_extras``, must be enabled by executing the following `CREATE EXTENSION <https://www.postgresql.org/docs/current/sql-createextension.html>`_ SQL commands directly on the Aiven for PostgreSQL® database service.
 
 .. code::
 
