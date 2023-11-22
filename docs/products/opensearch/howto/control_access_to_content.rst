@@ -5,7 +5,7 @@ Effective access control and permissions management are crucial for Aiven for Op
 By using the **Users** tab in the `Aiven Console <https://console.aiven.io>`_ for your Aiven for OpenSearch service, you can manage access control and permissions for your service users. You can create new users, modify their details, and assign index patterns and permissions for each user.
 
 .. note:: 
-   Alternatively, you can enable :doc:`OpenSearch Security management <../howto/enable-opensearch-security>` for your Aiven for OpenSearch service and manage users and permissions via the OpenSearch Security dashboard.
+   Alternatively, you can enable :doc:`OpenSearch Security management `/docs/products/opensearch/howto/enable-opensearch-security` for your Aiven for OpenSearch service and manage users and permissions via the OpenSearch Security dashboard.
 
 Create user without access control
 -----------------------------------
@@ -35,7 +35,7 @@ To create a service new user with access control, follow these steps:
 .. note:: 
    The password for service users is automatically generated and can be reset if necessary.
 
-After creating a new service user, the next step is for them to log in to the :doc:`OpenSearch Dashboard <../dashboards>` using their assigned credentials. This will grant them access to the dashboard, where they can perform various actions based on their assigned permissions. 
+After creating a new service user, the next step is for them to log in to the :doc:`OpenSearch Dashboard `/docs/products/opensearch/dashboards` using their assigned credentials. This will grant them access to the dashboard, where they can perform various actions based on their assigned permissions. 
 
 Manage users
 --------------

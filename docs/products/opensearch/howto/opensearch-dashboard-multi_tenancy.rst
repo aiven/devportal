@@ -15,7 +15,7 @@ Prerequisites
 Enabling security management (optional)
 ----------------------------------------
 
-Enabling OpenSearch Security management is optional if you are using the default tenants (Private and Global) in OpenSearch Dashboard without the need to restrict access to the Global tenant. However, if you intend to create custom tenants or require advanced authentication and authorization features, you must :doc:`enable OpenSearch Security management <../howto/enable-opensearch-security>`.
+Enabling OpenSearch Security management is optional if you are using the default tenants (Private and Global) in OpenSearch Dashboard without the need to restrict access to the Global tenant. However, if you intend to create custom tenants or require advanced authentication and authorization features, you must :doc:`enable OpenSearch Security management `/docs/products/opensearch/howto/enable-opensearch-security`.
 
 
 Configure multi-tenancy in OpenSearch® Dashboard
