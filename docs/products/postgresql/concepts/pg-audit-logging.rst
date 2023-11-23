@@ -24,36 +24,36 @@ Why use audit logging
 There are multiple reasons why you may want to use the audit logging. Note the following as benefits of using this feature:
 
 Data Security
-  * Monitor user activities to identify unusual or suspicious behavior
-  * Detect unauthorized access attempts to critical data or systems
-  * Identify intrusion attempts or unauthorized activities within the organization's IT environment
+* Monitor user activities to identify unusual or suspicious behavior
+* Detect unauthorized access attempts to critical data or systems
+* Identify intrusion attempts or unauthorized activities within the organization's IT environment
 
 Compliance
-  * Use audit logs as a regulatory compliance evidence to demonstrate that the organization meets industry or state regulations during audits
-  * Track access to sensitive data to comply with data privacy regulations
+* Use audit logs as a regulatory compliance evidence to demonstrate that the organization meets industry or state regulations during audits
+* Track access to sensitive data to comply with data privacy regulations
 
 Accountability
-  * Have specific actions attributed to individual users to hold them accountable for their activities within the system
-  * Track changes to databases and systems to hold users accountable for alterations or configurations
+* Have specific actions attributed to individual users to hold them accountable for their activities within the system
+* Track changes to databases and systems to hold users accountable for alterations or configurations
 
 Operational security
-  * Monitor and analyze audit logs to proactively identify and resolve security incidents
-  * Analyze audit logs to detect and respond to potential security threats
+* Monitor and analyze audit logs to proactively identify and resolve security incidents
+* Analyze audit logs to detect and respond to potential security threats
 
 Incident management and root cause analysis
-  * Investigate an incident with audit logs as a detailed trail of events leading up to the incidents
-  * Analyze the root cause of an incident with audit logs providing data on actions and events that may have led to the incident
+* Investigate an incident with audit logs as a detailed trail of events leading up to the incidents
+* Analyze the root cause of an incident with audit logs providing data on actions and events that may have led to the incident
 
 System performance optimization
-  * Monitor and analyze system performance to identify bottlenecks.
-  * Analyzing audit logs to assess resource utilization patterns and optimize the system configuration
+* Monitor and analyze system performance to identify bottlenecks.
+* Analyzing audit logs to assess resource utilization patterns and optimize the system configuration
 
 Data recovery and disaster planning
-  * Use audit logs for data restoration in case of data loss or system failure
-  * Analyze audit logs to improve system resilience and disaster planning strategies by identify potential points of failure
+* Use audit logs for data restoration in case of data loss or system failure
+* Analyze audit logs to improve system resilience and disaster planning strategies by identify potential points of failure
 
 Change management and version control
-  * Use audit logs to keep a record of changes made to databases, software, and configurations, ensuring a proper version control
+* Use audit logs to keep a record of changes made to databases, software, and configurations, ensuring a proper version control
 
 Use cases
 ---------
