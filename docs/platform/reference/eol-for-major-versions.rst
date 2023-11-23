@@ -1,7 +1,10 @@
-EOL for major versions of Aiven Services
+EOL for major versions of Aiven Services and Tools
 ========================================
 
-End of Life (EOL) refers to the deadline after which affected Aiven services are retired and will be no longer supported or maintained.
+End of Life (EOL) refers to the deadline after which affected Aiven services and tools are retired and will be no longer supported or maintained.
+
+**Aiven services**
+~~~~~~~~~~~~~~~~~~
 
 Since August 2020, Aiven aims to follow the EOL schedule set by the
 original authors and maintainers of the open source software, aka
@@ -15,8 +18,8 @@ following the upstream project's EOL schedule, we ensure that Aiven
 services are always running on supported versions of the open source
 software.
 
-**Version numbering**
-~~~~~~~~~~~~~~~~~~~~~
+Version numbering
+-----------------
 
 Aiven services inherit the upstream project's software versioning
 scheme. Depending on the service, a major version can be either a single
@@ -176,7 +179,7 @@ six months after it's made available on Aiven platform.
    +-------------+---------------+------------------+------------------+
 
 Aiven for M3DB
---------------------
+--------------
 
 Starting from v1.5, Aiven for M3DB version will reach EOL six months after **newer major/minor version** is made available on Aiven platform.
 
@@ -203,8 +206,8 @@ are controlled by the customer.
 It applies to both **powered-on** and **powered-off** services running
 the affected versions.
 
-EOL notification
-~~~~~~~~~~~~~~~~
+EOL notification for Aiven services
+-----------------------------------
 
 When Aiven defines the EOL date for a service major version,
 
@@ -236,3 +239,52 @@ without committing their production services to a one-way upgrade.
    you see a ``New database fork`` button. This will allow you to make a
    separate new database service that is cloned from the current one's
    backups.
+
+**Aiven tools**
+~~~~~~~~~~~~~~~
+
+Alongside the Aiven web console, Aiven offers multiple tools for customers to interact with the Aiven platform and services. These include  the Aiven CLI, the Aiven Terraform provider and the Aiven Kubernetes operator. Breaking changes in the Aiven API can result in new major versions of the Aiven tools. While backwards compatibility is typically maintained, certain changes require us to deprecate older versions of the tools.
+
+Aiven CLI
+---------
+
+   +-------------+---------------+
+   | **Version** | **Aiven EOL** |
+   |             |               |
+   +-------------+---------------+
+   | 1.x         | 2023-12-11    |
+   +-------------+---------------+
+   | 2.x         | 2023-12-11    |
+   +-------------+---------------+
+   | 3.x         | 2023-12-11    |
+   +-------------+---------------+
+   | 4.x         | `TBA*`        |
+   +-------------+---------------+
+
+Aiven Terraform provider
+------------------------
+
+   +-------------+---------------+
+   | **Version** | **Aiven EOL** |
+   |             |               |
+   +-------------+---------------+
+   | 1.x         | 2023-12-31    |
+   +-------------+---------------+
+   | 2.x         | 2023-12-31    |
+   +-------------+---------------+
+   | 3.x         | 2023-12-31    |
+   +-------------+---------------+
+   | 4.x         | `TBA*`        |
+   +-------------+---------------+
+
+Aiven Kubernetes operator
+-------------------------
+
+   +-------------+---------------+
+   | **Version** | **Aiven EOL** |
+   |             |               |
+   +-------------+---------------+
+   | 0.x         | `TBA*`        |
+   +-------------+---------------+
+   | 1.x         | `TBA*`        |
+   +-------------+---------------+
