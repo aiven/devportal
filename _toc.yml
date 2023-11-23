@@ -433,6 +433,8 @@ entries:
             title: Advanced parameters
           - file: docs/products/kafka/reference/kafka-metrics-prometheus
             title: Metrics available via Prometheus
+          - file: docs/products/kafka/reference/kstream-data-write-issue
+            title: Resolving Data Write Issues with Kafka Streams 3.6.0
 
       - file: docs/products/kafka/kafka-connect
         title: Apache Kafka Connect
