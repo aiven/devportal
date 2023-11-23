@@ -248,6 +248,8 @@ Alongside the Aiven web console, Aiven offers multiple tools for customers to in
 Aiven CLI
 ---------
 
+.. container:: intercom-interblocks-table-container
+
    +-------------+---------------+
    | **Version** | **Aiven EOL** |
    |             |               |
@@ -264,6 +266,8 @@ Aiven CLI
 Aiven Terraform provider
 ------------------------
 
+.. container:: intercom-interblocks-table-container
+
    +-------------+---------------+
    | **Version** | **Aiven EOL** |
    |             |               |
@@ -279,6 +283,8 @@ Aiven Terraform provider
 
 Aiven Kubernetes operator
 -------------------------
+
+.. container:: intercom-interblocks-table-container
 
    +-------------+---------------+
    | **Version** | **Aiven EOL** |
