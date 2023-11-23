@@ -13,21 +13,21 @@ Connect to Apache Kafka® with Conduktor
 
    * The three files downloaded: access key, access certificate and CA certificate
 
-.. image:: /images/products/kafka/conduktor-config.png
-    :alt: Screenshot of the cluster configuration screen
+   .. image:: /images/products/kafka/conduktor-config.png
+      :alt: Screenshot of the cluster configuration screen
 
-Conduktor will create the keystore and truststore files in the folder that you specified, or you can choose an alternative location. Click the **Create** button and the helper will create the configuration for Conduktor to connect to your Aiven for Apache Kafka service.
+   Conduktor will create the keystore and truststore files in the folder that you specified, or you can choose an alternative location. Click the **Create** button and the helper will create the configuration for Conduktor to connect to your Aiven for Apache Kafka service.
 
 4. Click the **Test Kafka Connectivity** button to check that everything is working as expected.
 
-.. Tip::
+   .. Tip::
 
-   If you experience a Java SSL error when testing the connectivity, add the service CA certificate to the list of Conduktor's trusted certificates.
+      If you experience a Java SSL error when testing the connectivity, add the service CA certificate to the list of Conduktor's trusted certificates.
 
-   * Download the **CA Certificate** file to your computer.
+      * Download the **CA Certificate** file to your computer.
 
-   * In the Conduktor application, click the settings dropdown in the bottom right hand side and choose **Network**.
-
-   * On the **Trusted Certificates** tab, select **Import** and then supply the CA certificate file you downloaded. Save the settings.
+      * In the Conduktor application, click the settings dropdown in the bottom right hand side and choose **Network**.
+ 
+      * On the **Trusted Certificates** tab, select **Import** and then supply the CA certificate file you downloaded. Save the settings.
 
 Once connected, you can visit the `Conduktor documentation <https://docs.conduktor.io/>`_ to learn more about using this tool.

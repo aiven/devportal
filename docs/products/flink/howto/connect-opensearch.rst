@@ -21,7 +21,8 @@ To create an Apache Flink table based on an Aiven for OpenSearch® index via Aiv
 2. Create a new application or select an existing one with Aiven for OpenSearch® integration.
     
    .. note:: 
-        If editing an existing application, create a new version to make changes to the source or sink tables.
+     
+      If editing an existing application, create a new version to make changes to the source or sink tables.
 
 3. In the **Create new version** screen, select **Add sink tables**.
 

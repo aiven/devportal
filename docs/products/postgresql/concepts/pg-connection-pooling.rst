@@ -80,7 +80,7 @@ Adding a PgBouncer pooler that utilizes fewer backend connections frees up serve
     end
 
 
-Instead of having dedicated connections per client, now PgBouncer manages the connections assignment optimising them based on client request and settings like the :ref:`pooling-modes`.
+Instead of having dedicated connections per client, now PgBouncer manages the connections assignment optimising them based on client request and settings like the pooling modes.
 
 .. Tip::
     Many frameworks and libraries (ORMs, Django, Rails, etc.) support client-side pooling, which solves much the same problem. However, when there are many distributed applications or devices accessing the same database, a server-side solution is a better approach.

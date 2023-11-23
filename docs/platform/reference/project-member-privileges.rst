@@ -44,28 +44,28 @@ You can grant different levels of access to project members using roles:
      - Power services on/off
      - Edit members and roles
    * - Administrator
-     - |tick|
-     - |tick|
-     - |tick|
-     - |tick|
-     - |tick|
-     - |tick|
+     - ✅
+     - ✅
+     - ✅
+     - ✅
+     - ✅
+     - ✅
    * - Operator
-     - |tick|
-     - |tick|
-     - |tick|
-     - |tick|
-     - |tick|
+     - ✅
+     - ✅
+     - ✅
+     - ✅
+     - ✅
      - 
    * - Developer
-     - |tick|
-     - |tick|
-     - |tick|
-     - |tick|
+     - ✅
+     - ✅
+     - ✅
+     - ✅
      - 
      - 
    * - Read Only
-     - |tick|
+     - ✅
      - 
      - 
      - 

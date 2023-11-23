@@ -1,5 +1,5 @@
-Terraform to apply "promote to master" on PostgreSQL® read-only replica
-#######################################################################
+Promote PostgreSQL® read-only replica to primary
+#################################################
 
 On the Aiven console, if you use "service integrations" to create a read-only replica from an existing PostgreSQL or MySQL service, there is an option for the read-only replica service to promote to master using the 
 **Promote to master** button under the *Overview* tab. While the Terraform documentation does not explicitly mention how to promote the read-only replica to master, you can remove the service integration between services to accomplish the task.

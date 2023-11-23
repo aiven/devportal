@@ -5,9 +5,9 @@ Learning to work with streaming data is much more fun with data, so to get you s
 
 .. Note::
 
-    The following example is based on `Docker <https://www.docker.com/>`_ images, which require `Docker <https://www.docker.com/>`_ or `Podman <https://podman.io/>`_ to be executed.
+   The following example is based on `Docker <https://www.docker.com/>`_ images, which require `Docker <https://www.docker.com/>`_ or `Podman <https://podman.io/>`_ to be executed.
 
-The following example assumes you have an Aiven for Apache Kafka® service running. You can create one following the :doc:`dedicated instructions <../getting-started>`.
+The following example assumes you have an Aiven for Apache Kafka® service running. You can create one following the :doc:`dedicated instructions </docs/products/kafka/getting-started>`.
 
 
 Fake data generator on Docker
@@ -25,39 +25,40 @@ To learn data streaming, you need a continuous flow of data and for that you can
 
 3. Create a new access token via the `Aiven Console <https://console.aiven.io/>`_ or the following command in the :doc:`Aiven CLI </docs/tools/cli/account>`, changing the ``max-age-seconds`` appropriately for the duration of your test:
 
-.. code::
+   .. code::
+ 
+      avn user access-token create                            \
+      --description "Token used by Fake data generator"       \
+      --max-age-seconds 3600                                  \
+      --json | jq -r '.[].full_token'
 
-    avn user access-token create                            \
-    --description "Token used by Fake data generator"       \
-    --max-age-seconds 3600                                  \
-    --json | jq -r '.[].full_token'
+   .. Tip::
 
-.. Tip::
-
-    The above command uses ``jq`` (https://stedolan.github.io/jq/) to parse the result of the Aiven CLI command. If you don't have ``jq`` installed, you can remove the ``| jq -r '.[].full_token'`` section from the above command and parse the JSON result manually to extract the access token.
+      The above command uses ``jq`` (https://stedolan.github.io/jq/) to parse the result of the Aiven CLI command.
+      If you don't have ``jq`` installed, you can remove the ``| jq -r '.[].full_token'`` section from the above command and parse the JSON result manually to extract the access token.
 
 4. Edit the ``conf/env.conf`` file filling the following placeholders:
 
-* ``my_project_name``: the name of your Aiven project
-* ``my_kafka_service_name``: the name of your Aiven for Apache Kafka instance
-* ``my_topic_name``: the name of the target topic, can be any name
-* ``my_aiven_email``: the email address used as username to log in to Aiven services
-* ``my_aiven_token``: the access token generated during the previous step
+   * ``my_project_name``: the name of your Aiven project
+   * ``my_kafka_service_name``: the name of your Aiven for Apache Kafka instance
+   * ``my_topic_name``: the name of the target topic, can be any name
+   * ``my_aiven_email``: the email address used as username to log in to Aiven services
+   * ``my_aiven_token``: the access token generated during the previous step
 
 5. Build the Docker image with:
 
-.. code::
+   .. code::
 
-    docker build -t fake-data-producer-for-apache-kafka-docker .
+      docker build -t fake-data-producer-for-apache-kafka-docker .
 
-.. Tip::
+   .. Tip::
 
-    Every time you change any parameters in the ``conf/env.conf`` file, you need to rebuild the Docker image to start using them.
+      Every time you change any parameters in the ``conf/env.conf`` file, you need to rebuild the Docker image to start using them.
 
 6. Start the streaming data flow with:
 
-.. code::
-
-    docker run fake-data-producer-for-apache-kafka-docker
+   .. code::
+ 
+      docker run fake-data-producer-for-apache-kafka-docker
 
 7. Once the Docker image is running, check in the target Aiven for Apache Kafka® service that the topic is populated. This can be done with the `Aiven Console <https://console.aiven.io/>`_, if the Kafka REST option is enabled, in the *Topics* tab. Alternatively you can use tools like :doc:`kcat <kcat>` to achieve the same.

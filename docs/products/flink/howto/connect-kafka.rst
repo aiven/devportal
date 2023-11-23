@@ -17,8 +17,9 @@ To create a Apache Flink® table based on an Aiven for Apache Kafka® topic via 
 1. In the Aiven for Apache Flink service page, select **Application** from the left sidebar.
 2. Create a new application or select an existing one with Aiven for Apache Kafka integration. 
 
-.. note:: 
-    If editing an existing application, create a new version to make changes to the source or sink tables.
+   .. note:: 
+    
+      If editing an existing application, create a new version to make changes to the source or sink tables.
 
 3. In the **Create new version** screen, select **Add source tables**.
 4. Select **Add new table** or select **Edit** if you want to edit an existing source table. 
