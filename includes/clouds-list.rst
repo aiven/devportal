@@ -316,13 +316,13 @@ Google Cloud
     - Europe, Switzerland 
   * - Europe
     - ``google-europe-west8``
-    - Europe, Milan, Italy 
+    - Europe, Italy, Milan 
   * - Europe
     - ``google-europe-west9``
     - Europe, France 
   * - Europe
     - ``google-europe-west12``
-    - Europe, Turin, Italy 
+    - Europe, Italy, Turin 
   * - Middle East
     - ``google-me-west1``
     - Middle East, Israel 
