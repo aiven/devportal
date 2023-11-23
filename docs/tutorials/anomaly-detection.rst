@@ -184,7 +184,7 @@ After creating the service, you'll be redirected to the service details page. Ap
 
 You can define the service integrations, in the Aiven for Apache Flink® **Overview** tab, with the following steps:
 
-1. Click **Get started** on the banner at the top of the *Overview* page.
+1. Click **Get started** on the banner at the top of the **Overview** page.
 
    .. image:: /images/tutorials/anomaly-detection/flink-console-integration.png
       :alt: Aiven for Apache Flink Overview tab, showing the **Get started** button
@@ -192,7 +192,7 @@ You can define the service integrations, in the Aiven for Apache Flink® **Overv
 2. Select **Aiven for Apache Kafka®** and then select the ``demo-kafka`` service.
 3. Click **Integrate**.
 4. Click the **+** icon under *Data Flow*.
-5. Check the **Aiven for PostgreSQL** checkbox in the `Aiven Data Services` section.
+5. Check the **Aiven for PostgreSQL** checkbox in the ``Aiven Data Services`` section.
 6. Select **Aiven for PostgreSQL®** and then select the ``demo-postgresql`` service.
 7. Click **Integrate**.
 

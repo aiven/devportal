@@ -28,8 +28,9 @@ In addition to the above, gather the following information about the source Post
 * ``Decoding plugin name``: The decoding plugin name to use for capturing the changes. For PostgreSQL CDC, set it as ``pgoutput``.
 
 .. important:: 
-    To create a PostgreSQL CDC source connector in Aiven for Apache Flink with Aiven for PostgreSQL using the pgoutput plugin, you need to have superuser privileges.
-    For more information, see :ref:`Troubleshooting`. 
+   To create a PostgreSQL CDC source connector in Aiven for Apache Flink with Aiven for PostgreSQL using the pgoutput plugin, you need to have superuser privileges.
+   
+   For more information, see :ref:`Troubleshooting`. 
 
 
 Configure the PostgreSQL CDC connector 
@@ -45,9 +46,11 @@ Follow these steps to configure the PostgreSQL CDC Connector in the Aiven for Fl
 3. Select **Create first version** to create the first version of the application.
 4. Select **Add your first source table** to add a source table.
 5. In the **Add new source table** screen, select the *Aiven for PostgreSQL®* service as the integrated service.
-6. In the **Table SQL** section, enter the SQL statement to create the PostgreSQL-based Apache Flink table with CDC connector. For example: 
+6. In the **Table SQL** section, enter the SQL statement to create the PostgreSQL-based Apache Flink table with CDC connector.
 
-    .. code:: 
+   For example: 
+
+   .. code:: 
 
         CREATE TABLE test_table (
             column1 INT,
@@ -64,19 +67,19 @@ Follow these steps to configure the PostgreSQL CDC Connector in the Aiven for Fl
             'decoding.plugin.name' = 'pgoutput'
             )
 
-    Where: 
+   Where: 
 
-    * ``connector``: The connector type to be used, which is ``postgres-cdc`` in this case.
-    * ``hostname``: The hostname or address of the PostgreSQL database server. 
-    * ``username``: The username to authenticate with the PostgreSQL database.
-    * ``password``: The password for the provided username.
-    * ``schema-name``: The name of the schema where the source table is located, which is set to ``public`` in the example.
-    * ``table-name``: The name of the source table to be captured by the CDC connector, which is set to ``test-1`` in the example.
-    * ``port``: The port number of the PostgreSQL database server.
-    * ``database-name``: The name of the database where the source table resides, which is set to ``defaultdb`` in the example.
-    * ``decoding.plugin.name``: The decoding plugin to be used by the CDC connector, which is set to ``pgoutput`` in the example.
+   * ``connector``: The connector type to be used, which is ``postgres-cdc`` in this case.
+   * ``hostname``: The hostname or address of the PostgreSQL database server. 
+   * ``username``: The username to authenticate with the PostgreSQL database.
+   * ``password``: The password for the provided username.
+   * ``schema-name``: The name of the schema where the source table is located, which is set to ``public`` in the example.
+   * ``table-name``: The name of the source table to be captured by the CDC connector, which is set to ``test-1`` in the example.
+   * ``port``: The port number of the PostgreSQL database server.
+   * ``database-name``: The name of the database where the source table resides, which is set to ``defaultdb`` in the example.
+   * ``decoding.plugin.name``: The decoding plugin to be used by the CDC connector, which is set to ``pgoutput`` in the example.
 
-    .. Note::
+   .. Note::
 
         The PostgreSQL CDC connector will use or create a publication named ``dbz_publication`` tracking the changes of one or more tables. Therefore, the publication must already exist in PostgreSQL, or the connecting user must have enough privileges to create it.
 
