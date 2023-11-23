@@ -41,15 +41,15 @@ Furthermore you need to collect the following information about the target Cassa
 * ``TOPIC_LIST``: The list of topics to sink divided by comma
 * ``KCQL_TRANSFORMATION``: The KCQL syntax to parse the topic data, should be in the format:
 
-  ::
+  .. code::
 
-    INSERT INTO CASSANDRA_TABLE
-    SELECT LIST_OF_FIELDS 
-    FROM APACHE_KAFKA_TOPIC
+     INSERT INTO CASSANDRA_TABLE
+     SELECT LIST_OF_FIELDS 
+     FROM APACHE_KAFKA_TOPIC
 
 .. Warning::
 
-    The Cassandra destination table ``CASSANDRA_TABLE`` needs to be created before starting the connector, otherwise the connector task will fail.
+   The Cassandra destination table ``CASSANDRA_TABLE`` needs to be created before starting the connector, otherwise the connector task will fail.
 
 * ``APACHE_KAFKA_HOST``: The hostname of the Apache Kafka service, only needed when using Avro as data format
 * ``SCHEMA_REGISTRY_PORT``: The Apache Kafka's schema registry port, only needed when using Avro as data format
@@ -130,9 +130,9 @@ To create a Apache Kafka Connect connector, follow these steps:
 6. Paste the connector configuration (stored in the ``cassandra_sink.json`` file) in the form.
 7. Select **Apply**.
 
-.. Note::
+   .. Note::
 
-    The Aiven Console parses the configuration file and fills the relevant UI fields. You can review the UI fields across the various tab and change them if necessary. The changes will be reflected in JSON format in the **Connector configuration** text box.
+      The Aiven Console parses the configuration file and fills the relevant UI fields. You can review the UI fields across the various tab and change them if necessary. The changes will be reflected in JSON format in the **Connector configuration** text box.
 
 8. After all the settings are correctly configured, select **Create connector**.
 9. Verify the connector status under the **Connectors** screen. 
@@ -154,7 +154,10 @@ If you have a topic named ``students`` containing the following data that you wa
     {"id":3, "name":"carlo", "age": 33}
     {"id":2, "name":"lucy", "age": 21}
 
-You can sink the ``students`` topic to Cassandra with the following connector configuration, after replacing the placeholders for ``CASSANDRA_HOST``, ``CASSANDRA_PORT``, ``CASSANDRA_USERNAME``, ``CASSANDRA_PASSWORD``, ``CASSANDRA_KEYSTORE``, ``CASSANDRA_KEYSTORE_PASSWORD``, ``CASSANDRA_TRUSTSTORE``, ``CASSANDRA_TRUSTSTORE_PASSWORD`, ``CASSANDRA_KEYSPACE``:
+You can sink the ``students`` topic to Cassandra with the following connector configuration,
+after replacing the placeholders for ``CASSANDRA_HOST``, ``CASSANDRA_PORT``, ``CASSANDRA_USERNAME``,
+``CASSANDRA_PASSWORD``, ``CASSANDRA_KEYSTORE``, ``CASSANDRA_KEYSTORE_PASSWORD``, ``CASSANDRA_TRUSTSTORE``,
+``CASSANDRA_TRUSTSTORE_PASSWORD``, ``CASSANDRA_KEYSPACE``.
 
 .. code-block:: json
 

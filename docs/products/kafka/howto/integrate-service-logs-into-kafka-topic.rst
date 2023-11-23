@@ -37,7 +37,9 @@ Test the integration (with Aiven for Apache Kafka)
 3. From the **Topic info** screen, select **Messages**. 
    
     .. note:: 
-        Alternatively, you can access the messages for a topic by selecting the ellipsis in the row of the topic and choosing **Topic messages**.
+      
+       Alternatively, you can access the messages for a topic by selecting the ellipsis in the row of the topic and choosing **Topic messages**.
+
 4. In the **Messages** screen, select **Fetch Messages** to view the log entries that were sent from your source service.
 5. To see the messages in JSON format, use the **FORMAT** drop-down menu and select *json*.
 

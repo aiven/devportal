@@ -86,9 +86,9 @@ To create a Kafka Connect connector, follow these steps:
 6. Paste the connector configuration (stored in the ``gcs_sink.json`` file) in the form.
 7. Select **Apply**.
 
-.. Note::
+   .. Note::
 
-    The Aiven Console parses the configuration file and fills the relevant UI fields. You can review the UI fields across the various tab and change them if necessary. The changes will be reflected in JSON format in the **Connector configuration** text box.
+      The Aiven Console parses the configuration file and fills the relevant UI fields. You can review the UI fields across the various tab and change them if necessary. The changes will be reflected in JSON format in the **Connector configuration** text box.
 
 7. After all the settings are correctly configured, select **Create connector**.
 8. Verify the connector status under the **Connectors** screen. 
