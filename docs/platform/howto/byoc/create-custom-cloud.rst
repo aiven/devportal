@@ -28,7 +28,7 @@ The process of creating a custom cloud in Aiven differs depending on what cloud 
 
 .. topic:: BYOC self-service in Aiven Console
 
-   You configure your custom cloud setup in `Aiven Console <https://console.aiven.io/>`_ and prepare your own AWS account so that Aiven can access it. In `Aiven Console <https://console.aiven.io/>`_, you follow the **Create custom cloud** workflow to generate a Terraform infrastructure-as-code (IaC) template. Next, you deploy this template in your AWS account to acquire Role ARN (Amazon Resource Name). You supply your Role ARN into the **Create custom cloud** wizard, which gives Aiven the permissions to securely access your AWS account, create resources, and manage them onward. Finally, you select projects that can use your new custom clouds for creating services, and you add customer contacts for your custom cloud.
+   You configure your custom cloud setup in `Aiven Console <https://console.aiven.io/>`_ and prepare your own AWS account so that Aiven can access it. In `Aiven Console <https://console.aiven.io/>`_, you follow the **Create custom cloud** workflow to generate a Terraform infrastructure-as-code (IaC) template. Next, you deploy this template in your AWS account to acquire IAM Role ARN (Amazon Resource Name). You supply your IAM Role ARN into the **Create custom cloud** wizard, which gives Aiven the permissions to securely access your AWS account, create resources, and manage them onward. Finally, you select projects that can use your new custom clouds for creating services, and you add customer contacts for your custom cloud.
 
 * If you want to use the GCP or Azure cloud providers, you have your custom cloud created by the Aiven team, not via Aiven Console.
 
