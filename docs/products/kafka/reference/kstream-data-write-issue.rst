@@ -14,8 +14,12 @@ This could lead to errors in broker logs as,
 
 Solution
 --------
-To address this issue, it is recommended to upgrade your Apache Kafka® Streams clients to version 3.6.1. This version contains the necessary fixes to resolve the ``UNKNOWN_SERVER_ERROR``.
+**Recommended solution:** To address this issue, it is recommended to upgrade your Apache Kafka® Streams clients to version 3.6.1. This version contains the necessary fixes to resolve the ``UNKNOWN_SERVER_ERROR``.
 
+**Quick workaround:** Alternatively, in the event of encountering a failure requiring an immediate remedy, users can set the ``transaction_partition_verification_enable`` parameter to ``false`` under advanced configuration of the service. This configuration allows Kafka to accept messages despite the existing bug.
+
+.. Important::
+    However, it is essential to re-enable ``transaction_partition_verification_enable``  setting once the client is upgraded.
 
 .. Note::
-    If the issue persists even after upgrading Apache Kafka® Streams to 3.6.1 version, please reach out to our support team for further assistance.
+    If the issue persists even after trying the above remedies, please reach out to our support team for further assistance.
