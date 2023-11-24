@@ -169,11 +169,11 @@ To acquire connection information for your service component using AWS PrivateLi
   
      avn service connection-info UTILITY_NAME SERVICE_NAME --privatelink-connection-id PRIVATELINK_CONNECTION_ID
   
-  .. topic:: Where
+.. topic:: Where
   
-    * UTILITY_NAME for Aiven for Apache Kafka®, for example, can be ``kcat``.
-    * SERVICE_NAME for Aiven for Apache Kafka®, for example, can be ``kafka-12a3b4c5``.
-    * PRIVATELINK_CONNECTION_ID can be ``plc39413abcdef``.
+   * UTILITY_NAME for Aiven for Apache Kafka®, for example, can be ``kcat``.
+   * SERVICE_NAME for Aiven for Apache Kafka®, for example, can be ``kafka-12a3b4c5``.
+   * PRIVATELINK_CONNECTION_ID can be ``plc39413abcdef``.
 
 * For SASL connection information for Aiven for Apache Kafka® service components using AWS PrivateLink, run the following command:
 
@@ -181,15 +181,15 @@ To acquire connection information for your service component using AWS PrivateLi
   
      avn service connection-info UTILITY_NAME SERVICE_NAME --privatelink-connection-id PRIVATELINK_CONNECTION_ID -a sasl
   
-  .. topic:: Where
+.. topic:: Where
   
-    * UTILITY_NAME for Aiven for Apache Kafka®, for example, can be ``kcat``.
-    * SERVICE_NAME for Aiven for Apache Kafka®, for example, can be ``kafka-12a3b4c5``.
-    * PRIVATELINK_CONNECTION_ID can be ``plc39413abcdef``.
+   * UTILITY_NAME for Aiven for Apache Kafka®, for example, can be ``kcat``.
+   * SERVICE_NAME for Aiven for Apache Kafka®, for example, can be ``kafka-12a3b4c5``.
+   * PRIVATELINK_CONNECTION_ID can be ``plc39413abcdef``.
   
-  .. note::
+.. note::
   
-     SSL certificates and SASL credentials are the same for all the connections. You can use the same credentials with any access route.
+   SSL certificates and SASL credentials are the same for all the connections. You can use the same credentials with any access route.
   
 .. _h_2a1689a687:
 
