@@ -8,7 +8,7 @@ A time series indexes a series of data points in chronological order, usually as
 * the temperature of a home during a day
 * the position of a satellite during a day
 
-The data in these examples consists of a measured value (temperature or position) corresponding to the time at which the reading of the value took place. 
+The data in these examples consists of a measured value (temperature or position) corresponding to the time at which the reading of the value took place. 
 
 Enable TimescaleDB on Aiven for PostgreSQL
 ------------------------------------------

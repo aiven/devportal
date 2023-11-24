@@ -48,7 +48,7 @@ You can execute this query to test:
    +-------+
    | three |
    +-------+
-   |     3 |
+   |     3 |
    +-------+
    1 row in set (0.0539 sec)
 

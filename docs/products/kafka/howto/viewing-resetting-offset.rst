@@ -85,13 +85,13 @@ To reset the offset use the following command replacing:
 .. code::
 
    kafka-consumer-groups.sh \
-       --bootstrap-server demo-kafka.my-project.aivencloud.com:17072 \
-       --command-config consumer.properties \
-       --group test-group \
-       --topic test-topic \
-       --reset-offsets \
-       --to-earliest \
-       --execute
+       --bootstrap-server demo-kafka.my-project.aivencloud.com:17072 \
+       --command-config consumer.properties \
+       --group test-group \
+       --topic test-topic \
+       --reset-offsets \
+       --to-earliest \
+       --execute
 
 The ``--reset-offsets`` command has the following additional options:
 

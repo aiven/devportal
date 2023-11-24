@@ -61,9 +61,9 @@ Ensure that you use port 6733, the default port for Jolokia. Replace ``joljkr2l:
 .. code-block:: shell
 
    curl --cacert ca.pem \
-       -X POST \
-       https://joljkr2l:PWD@HOST_IP:6733/jolokia/  \
-       -d \
+       -X POST \
+       https://joljkr2l:PWD@HOST_IP:6733/jolokia/  \
+       -d \
    '{"type":"read","mbean":"kafka.server:type=ReplicaManager,name=PartitionCount"}'
 
 Jolokia supports searching beans using ``search`` command:
@@ -71,9 +71,9 @@ Jolokia supports searching beans using ``search`` command:
 .. code-block:: shell
 
    curl --cacert ca.pem \
-       -X POST \
-       https://joljkr2l:PWD@HOST_IP:6733/jolokia/  \
-       -d \
+       -X POST \
+       https://joljkr2l:PWD@HOST_IP:6733/jolokia/  \
+       -d \
    '{"type":"search","mbean":"kafka.server:*"}'
 
 

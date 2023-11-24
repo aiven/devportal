@@ -117,12 +117,12 @@ The replication factor is adjusted automatically:
 
 * If ``number_of_replicas`` is too large for the current cluster size, it is automatically lowered to the maximum possible value (the number of nodes on the cluster - 1).
 * If ``number_of_replicas`` is 0 on a multi-node cluster, it is automatically increased to 1.
-* If ``number_of_replicas`` is between 1 and the maximum value, it is not adjusted.
+* If ``number_of_replicas`` is between 1 and the maximum value, it is not adjusted.
 
-When the replication factor (``number_of_replicas`` value) is greater than the size of the cluster, ``number_of_replicas`` is automatically lowered, as it is not possible to replicate index shards to more nodes than there are on the cluster.
+When the replication factor (``number_of_replicas`` value) is greater than the size of the cluster, ``number_of_replicas`` is automatically lowered, as it is not possible to replicate index shards to more nodes than there are on the cluster.
 
 .. note::
-    The replication factor is ``number_of_replicas`` + 1. For example, for a three-node cluster, the maximum ``number_of_replicas`` value is 2, which means that all shards on the index are replicated to all three nodes.
+    The replication factor is ``number_of_replicas`` + 1. For example, for a three-node cluster, the maximum ``number_of_replicas`` value is 2, which means that all shards on the index are replicated to all three nodes.
 
 
 ------

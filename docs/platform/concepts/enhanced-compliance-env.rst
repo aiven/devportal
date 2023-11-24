@@ -2,7 +2,7 @@ Enhanced compliance environments (ECE)
 ===========================================
 
 As a business that collects, manages, and operates on sensitive data that is protected by privacy and
-compliance rules and regulations – any vendor that assists with this collection, management and
+compliance rules and regulations - any vendor that assists with this collection, management and
 operation is subject to these same rules and regulations. Aiven meets the needs of these
 businesses by providing specialized enhanced compliance environments (ECE) that comply with many
 of the most common compliance requirements.
@@ -12,7 +12,7 @@ compliance requirement that no ECE VPC is shared and the managed environment is 
 from the standard Aiven deployment environment. This decreases the blast radius of the environment
 to prevent inadvertent data sharing. Furthermore, users of an ECE **must** encrypt all data prior
 to reaching an Aiven service. As part of the increased compliance of the environment, enhanced logging
-is enabled for – ``stderr``, ``stout``, and ``stdin``.
+is enabled for - ``stderr``, ``stout``, and ``stdin``.
 
 Who is eligible?
 ----------------
@@ -73,7 +73,7 @@ Migrating
 ----------------
 Migrations to Aiven are fairly straightforward in general, but migrating to an ECE can add a
 tiny bit of complexity. If the migration is for a new service there are a few standard
-migration methods that will work – please contact `sales <sales@aiven.io>`_ and a Solution Architect
+migration methods that will work - please contact `sales <sales@aiven.io>`_ and a Solution Architect
 will be able to help.
 
 If you need to migrate an existing Aiven service to an ECE the standard automated migration
