@@ -25,27 +25,27 @@ AWS PrivateLink. You also need the AWS console or CLI to create a VPC endpoint.
 **Note:** Aiven for Apache Cassandra® and Aiven for M3 services do not
 currently support AWS PrivateLink.
 
-#. | Create an AWS PrivateLink resource on the Aiven service:
+#. Create an AWS PrivateLink resource on the Aiven service:
    
-   | The Amazon Resource Name (ARN) for the principals that are allowed
-     to connect to the VPC endpoint service and the AWS network load
-     balancer requires your Amazon account ID. In addition, you can set
-     the access scope for an entire AWS account, a given user account,
-     or a given role. Only give permissions to roles that you trust, as
-     an allowed role can connect from any VPC.
+   The Amazon Resource Name (ARN) for the principals that are allowed
+   to connect to the VPC endpoint service and the AWS network load
+   balancer requires your Amazon account ID. In addition, you can set
+   the access scope for an entire AWS account, a given user account,
+   or a given role. Only give permissions to roles that you trust, as
+   an allowed role can connect from any VPC.
 
    -  Using the Aiven CLI, run the following command including your AWS
       account ID, the access scope, and the name of your Aiven service:
 
       .. code::
 
-         $ avn service privatelink aws create --principal arn:aws:iam::$AWS_account_ID:$access_scope $Aiven_service_name
+         avn service privatelink aws create --principal arn:aws:iam::$AWS_account_ID:$access_scope $Aiven_service_name
 
       For example:
 
       .. code::
 
-         $ avn service privatelink aws create --principal arn:aws:iam::012345678901:user/mwf my-kafka
+         avn service privatelink aws create --principal arn:aws:iam::012345678901:user/mwf my-kafka
 
    -  Using `Aiven Console <https://console.aiven.io>`__:
 
@@ -58,54 +58,56 @@ currently support AWS PrivateLink.
 
       #. In the **Create Privatelink** window, enter the Amazon Resource Names (ARN) for the principals that you want to use, and select **Create** .
 
-   | This creates an AWS network load balancer dedicated to your Aiven
-     service and attaches it to an AWS VPC endpoint service that you can
-     later use to connect to your account's VPC endpoint.
-
-   | The PrivateLink resource stays in the initial ``creating`` state
-     for up to a few minutes while the load balancer is being launched.
-     After the load balancer and VPC endpoint service have been created,
-     the state changes to ``active`` and the ``aws_service_id`` and
-     ``aws_service_name`` values are set.
+         This creates an AWS network load balancer dedicated to your Aiven
+         service and attaches it to an AWS VPC endpoint service that you can
+         later use to connect to your account's VPC endpoint.
+   
+         The PrivateLink resource stays in the initial ``creating`` state
+         for up to a few minutes while the load balancer is being launched.
+         After the load balancer and VPC endpoint service have been created,
+         the state changes to ``active`` and the ``aws_service_id`` and
+         ``aws_service_name`` values are set.
 
 #. In the AWS CLI, run the following command to create a VPC endpoint:
 
    .. code::
 
-      $ aws ec2 --region eu-west-1 create-vpc-endpoint --vpc-endpoint-type Interface --vpc-id $your_vpc_id --subnet-ids $space_separated_list_of_subnet_ids --security-group-ids $security_group_ids --service-name com.amazonaws.vpce.eu-west-1.vpce-svc-0b16e88f3b706aaf1
+      aws ec2 --region eu-west-1 create-vpc-endpoint --vpc-endpoint-type Interface --vpc-id $your_vpc_id --subnet-ids $space_separated_list_of_subnet_ids --security-group-ids $security_group_ids --service-name com.amazonaws.vpce.eu-west-1.vpce-svc-0b16e88f3b706aaf1
 
-   | 
-   | Replace the ``--service-name`` value with the value shown next to
-     **Network** > **AWS service name** in `Aiven Console <https://console.aiven.io>`__ or by
-     running the following command in the Aiven CLI:
+     
+   Replace the ``--service-name`` value with the value shown next to
+   **Network** > **AWS service name** in `Aiven Console <https://console.aiven.io>`__ or by
+   running the following command in the Aiven CLI:
 
-   .. code::
+   .. code:: 
 
-      $ avn service privatelink aws get aws_service_name
+      avn service privatelink aws get aws_service_name
 
-   | 
-   | Note that for fault tolerance, you should specify a subnet ID for
-     each availability zone in the region. The security groups determine
-     the instances that are allowed to connect to the endpoint network
-     interfaces created by AWS into the specified subnets.
+     
+   Note that for fault tolerance, you should specify a subnet ID for
+   each availability zone in the region. The security groups determine
+   the instances that are allowed to connect to the endpoint network
+   interfaces created by AWS into the specified subnets.
 
-   | Alternatively, you can create the VPC endpoint in `AWS Console <https://console.aws.amazon.com>`__ under **VPC** > **Endpoints** > **Create endpoint** . See the `AWS documentation <https://docs.aws.amazon.com/vpc/latest/userguide/vpce-interface.html#create-interface-endpoint>`__ for details.
+   Alternatively, you can create the VPC endpoint in `AWS Console <https://console.aws.amazon.com>`__ under **VPC** > **Endpoints** > **Create endpoint** . See the `AWS documentation <https://docs.aws.amazon.com/vpc/latest/userguide/vpce-interface.html#create-interface-endpoint>`__ for details.
 
-   | **Note:** For Aiven for Apache Kafka® services, the security group
-     for the VPC endpoint must allow ingress in the port range
-     ``10000-31000`` to accommodate the pool of Kafka broker ports used
-     in our PrivateLink implementation.
+   .. note::
+     
+      For Aiven for Apache Kafka® services, the security group
+      for the VPC endpoint must allow ingress in the port range
+      ``10000-31000`` to accommodate the pool of Kafka broker ports used
+      in our PrivateLink implementation.
    
-   | It takes a while before the endpoint is ready to use as AWS
-     provisions network interfaces to each of the subnets and connects
-     them to the Aiven VPC endpoint service. Once the AWS endpoint state
-     changes to ``available`` , the connection is visible in Aiven.
+      It takes a while before the endpoint is ready to use as AWS
+      provisions network interfaces to each of the subnets and connects
+      them to the Aiven VPC endpoint service. Once the AWS endpoint state
+      changes to ``available`` , the connection is visible in Aiven.
 
-#. | Enable PrivateLink access for Aiven service components:
+#. Enable PrivateLink access for Aiven service components:
    
-   | You can control each service component separately - for example,
-     you can enable PrivateLink access for Kafka while allowing Kafka
-     Connect to connect via VPC peering connections only.
+   You can control each service component separately - for example,
+   you can enable PrivateLink access for Kafka while allowing Kafka
+   Connect to connect via VPC peering connections only.
 
    -  In the Aiven CLI, set
       ``user_config.privatelink_access.<service component>`` to ``true``
@@ -113,10 +115,10 @@ currently support AWS PrivateLink.
 
       .. code::
 
-         $ avn service update -c privatelink_access.kafka=true $Aiven_service_name
-         $ avn service update -c privatelink_access.kafka_connect=true $Aiven_service_name
-         $ avn service update -c privatelink_access.kafka_rest=true $Aiven_service_name
-         $ avn service update -c privatelink_access.schema_registry=true $Aiven_service_name
+         avn service update -c privatelink_access.kafka=true $Aiven_service_name
+         avn service update -c privatelink_access.kafka_connect=true $Aiven_service_name
+         avn service update -c privatelink_access.kafka_rest=true $Aiven_service_name
+         avn service update -c privatelink_access.schema_registry=true $Aiven_service_name
 
    -  In `Aiven Console <https://console.aiven.io>`__:
 
@@ -163,32 +165,32 @@ To acquire connection information for your service component using AWS PrivateLi
 
 * For SSL connection information for your service component using AWS PrivateLink, run the following command:
 
-.. code-block:: bash
-
-   avn service connection-info UTILITY_NAME SERVICE_NAME --privatelink-connection-id PRIVATELINK_CONNECTION_ID
-
-.. topic:: Where
-
-  * UTILITY_NAME for Aiven for Apache Kafka®, for example, can be ``kcat``.
-  * SERVICE_NAME for Aiven for Apache Kafka®, for example, can be ``kafka-12a3b4c5``.
-  * PRIVATELINK_CONNECTION_ID can be ``plc39413abcdef``.
+  .. code-block:: bash
+  
+     avn service connection-info UTILITY_NAME SERVICE_NAME --privatelink-connection-id PRIVATELINK_CONNECTION_ID
+  
+  .. topic:: Where
+  
+    * UTILITY_NAME for Aiven for Apache Kafka®, for example, can be ``kcat``.
+    * SERVICE_NAME for Aiven for Apache Kafka®, for example, can be ``kafka-12a3b4c5``.
+    * PRIVATELINK_CONNECTION_ID can be ``plc39413abcdef``.
 
 * For SASL connection information for Aiven for Apache Kafka® service components using AWS PrivateLink, run the following command:
 
-.. code-block:: bash
-
-   avn service connection-info UTILITY_NAME SERVICE_NAME --privatelink-connection-id PRIVATELINK_CONNECTION_ID -a sasl
-
-.. topic:: Where
-
-  * UTILITY_NAME for Aiven for Apache Kafka®, for example, can be ``kcat``.
-  * SERVICE_NAME for Aiven for Apache Kafka®, for example, can be ``kafka-12a3b4c5``.
-  * PRIVATELINK_CONNECTION_ID can be ``plc39413abcdef``.
-
-.. note::
-
-   SSL certificates and SASL credentials are the same for all the connections. You can use the same credentials with any access route.
-
+  .. code-block:: bash
+  
+     avn service connection-info UTILITY_NAME SERVICE_NAME --privatelink-connection-id PRIVATELINK_CONNECTION_ID -a sasl
+  
+  .. topic:: Where
+  
+    * UTILITY_NAME for Aiven for Apache Kafka®, for example, can be ``kcat``.
+    * SERVICE_NAME for Aiven for Apache Kafka®, for example, can be ``kafka-12a3b4c5``.
+    * PRIVATELINK_CONNECTION_ID can be ``plc39413abcdef``.
+  
+  .. note::
+  
+     SSL certificates and SASL credentials are the same for all the connections. You can use the same credentials with any access route.
+  
 .. _h_2a1689a687:
 
 Update the allowed principals list
@@ -203,7 +205,7 @@ allowed to connect a VPC endpoint:
 
       # avn service privatelink aws update --principal arn:aws:iam::$AWS_account_ID:$access_scope $Aiven_service_name
 
-   | **Note:** When you add an entry, also include the ``--principal`` arguments for existing entries.
+     **Note:** When you add an entry, also include the ``--principal`` arguments for existing entries.
 
 -  In `Aiven Console <https://console.aiven.io>`__:
 
@@ -226,7 +228,7 @@ Deleting a privatelink connection
 
    .. code::
 
-      $ avn service privatelink aws delete $Aiven_service_name
+      avn service privatelink aws delete $Aiven_service_name
 
    .. code::
 

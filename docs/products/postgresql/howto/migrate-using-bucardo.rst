@@ -32,18 +32,18 @@ Replicating changes
 
 To migrate your data using Bucardo:
 
-#. | Install Bucardo using `the installation
+#. Install Bucardo using `the installation
      instructions <https://bucardo.org/Bucardo/installation/>`__ on the
      Bucardo site.
 
-#. | Install the ``aiven_extras`` `extension <https://docs.aiven.io/docs/products/postgresql/concepts/dba-tasks-pg.html#aiven-extras-extension>`_ to your current database.
+#. Install the ``aiven_extras`` `extension <https://docs.aiven.io/docs/products/postgresql/concepts/dba-tasks-pg.html#aiven-extras-extension>`_ to your current database.
    | Bucardo requires the superuser role to set the
      ``session_replication_role`` parameter. Aiven uses the open source
      ``aiven_extras`` extension to allow you to run ``superuser``
      commands as a different user, as direct ``superuser`` access is not
      provided for security reasons.
 
-#. | Open and edit the ``Bucardo.pm`` file with administrator
+#. Open and edit the ``Bucardo.pm`` file with administrator
      privileges.
    | The location of the file can vary according to your operating
      system, but you might find it in
@@ -69,7 +69,7 @@ To migrate your data using Bucardo:
 
    e. | Save your changes and close the file.
 
-#. | Add your source and destination databases.
+#. Add your source and destination databases.
    | For example:
 
    .. code::
@@ -105,10 +105,10 @@ To migrate your data using Bucardo:
       (sudo) bucardo start
       bucardo status sync_src_to_dest
 
-#. | Start Bucardo and run the ``status`` command. When ``Current state`` is ``Good`` , the data is flowing to your
+#. Start Bucardo and run the ``status`` command. When ``Current state`` is ``Good`` , the data is flowing to your
      Aiven database.
 
-#. | Log in to the `Aiven web console <https://console.aiven.io>`_, select your Aiven for PostgreSQL service from the **Services** list, and select **Current Queries** from the sidebar in your service's page. This shows you that the ``bucardo`` process is inserting data.
+#. Log in to the `Aiven web console <https://console.aiven.io>`_, select your Aiven for PostgreSQL service from the **Services** list, and select **Current Queries** from the sidebar in your service's page. This shows you that the ``bucardo`` process is inserting data.
 
 #. Once all your data is synchronized, switch the database connection
    for your applications to Aiven for PostgreSQL.
