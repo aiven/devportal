@@ -58,7 +58,7 @@ is not needed if there's only one subscription:
 
 .. code::
 
-   az account set --subscription <subscription name or id> 
+   az account set --subscription <subscription name or id> 
 
 
 2. create application object

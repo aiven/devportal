@@ -32,31 +32,25 @@ Replicating changes
 
 To migrate your data using Bucardo:
 
-#. | Install Bucardo using `the installation
-     instructions <https://bucardo.org/Bucardo/installation/>`__ on the
-     Bucardo site.
+#. Install Bucardo using `the installation instructions <https://bucardo.org/Bucardo/installation/>`__ on the Bucardo site.
 
-#. | Install the ``aiven_extras`` `extension <https://docs.aiven.io/docs/products/postgresql/concepts/dba-tasks-pg.html#aiven-extras-extension>`_ to your current database.
-   | Bucardo requires the superuser role to set the
-     ``session_replication_role`` parameter. Aiven uses the open source
-     ``aiven_extras`` extension to allow you to run ``superuser``
-     commands as a different user, as direct ``superuser`` access is not
-     provided for security reasons.
+#. Install the ``aiven_extras`` `extension <https://docs.aiven.io/docs/products/postgresql/concepts/dba-tasks-pg.html#aiven-extras-extension>`_ to your current database.
+   Bucardo requires the superuser role to set the
+   ``session_replication_role`` parameter. Aiven uses the open source
+   ``aiven_extras`` extension to allow you to run ``superuser``
+   commands as a different user, as direct ``superuser`` access is not
+   provided for security reasons.
 
-#. | Open and edit the ``Bucardo.pm`` file with administrator
-     privileges.
-   | The location of the file can vary according to your operating
-     system, but you might find it in
-     ``/usr/local/share/perl5/5.32/Bucardo.pm`` , for example.
+#. Open and edit the ``Bucardo.pm`` file with administrator privileges. The location of the file can vary according to your operating system, but you might find it in ``/usr/local/share/perl5/5.32/Bucardo.pm``, for example.
 
-   a. Scroll down until you see a ``disable_triggers`` function, in line 5324 in `Bucardo.pm <https://github.com/bucardo/bucardo/blob/1ff4d32d1924f3437af3fbcc1a50c1a5b21d5f5c/Bucardo.pm>`_.
+   #. Scroll down until you see a ``disable_triggers`` function, in line 5324 in `Bucardo.pm <https://github.com/bucardo/bucardo/blob/1ff4d32d1924f3437af3fbcc1a50c1a5b21d5f5c/Bucardo.pm>`_.
 
-   b. In line 5359 in `Bucardo.pm <https://github.com/bucardo/bucardo/blob/1ff4d32d1924f3437af3fbcc1a50c1a5b21d5f5c/Bucardo.pm>`_, change ``SET session_replication_role = default`` to
+   #. In line 5359 in `Bucardo.pm <https://github.com/bucardo/bucardo/blob/1ff4d32d1924f3437af3fbcc1a50c1a5b21d5f5c/Bucardo.pm>`_, change ``SET session_replication_role = default`` to
       the following:
 
-      .. code::
+     .. code::
 
-         $dbh->do(q{select aiven_extras.session_replication_role('replica');});
+        $dbh->do(q{select aiven_extras.session_replication_role('replica');});
 
    c. Scroll down to the ``enable_triggers`` function in line 5395 in `Bucardo.pm <https://github.com/bucardo/bucardo/blob/1ff4d32d1924f3437af3fbcc1a50c1a5b21d5f5c/Bucardo.pm>`_.
 
@@ -67,16 +61,16 @@ To migrate your data using Bucardo:
 
          $dbh->do(q{select aiven_extras.session_replication_role('origin');});
 
-   e. | Save your changes and close the file.
+   e. Save your changes and close the file.
 
-#. | Add your source and destination databases.
-   | For example:
+#. Add your source and destination databases.
+   For example:
 
-   .. code::
+  .. code::
 
-      bucardo add db srcdb dbhost=0.0.0.0 dbport=5432 dbname=all_your_base dbuser=$DBUSER dbpass=$DBPASS
+     bucardo add db srcdb dbhost=0.0.0.0 dbport=5432 dbname=all_your_base dbuser=$DBUSER dbpass=$DBPASS
 
-      bucardo add db destdb dbhost=cg-pg-dev-sandbox.aivencloud.com dbport=21691 dbname=all_your_base dbuser=$DBUSER dbpass=$DBPASS
+     bucardo add db destdb dbhost=cg-pg-dev-sandbox.aivencloud.com dbport=21691 dbname=all_your_base dbuser=$DBUSER dbpass=$DBPASS
 
 #. Add the tables that you want to replicate:
 
@@ -93,8 +87,8 @@ To migrate your data using Bucardo:
       pg_dump --schema-only --no-owner all_your_base > base.sql
       psql "$AIVEN_DB_URL" < base.sql
 
-   | You can restore the source data or provide only the schema,
-     depending on the size of your current database.
+   You can restore the source data or provide only the schema,
+   depending on the size of your current database.
 
 #. Create the ``dbgroup`` for Bucardo:
 
@@ -105,10 +99,10 @@ To migrate your data using Bucardo:
       (sudo) bucardo start
       bucardo status sync_src_to_dest
 
-#. | Start Bucardo and run the ``status`` command. When ``Current state`` is ``Good`` , the data is flowing to your
-     Aiven database.
+#. Start Bucardo and run the ``status`` command. When ``Current state`` is ``Good`` , the data is flowing to your
+   Aiven database.
 
-#. | Log in to the `Aiven web console <https://console.aiven.io>`_, select your Aiven for PostgreSQL service from the **Services** list, and select **Current Queries** from the sidebar in your service's page. This shows you that the ``bucardo`` process is inserting data.
+#. Log in to the `Aiven web console <https://console.aiven.io>`_, select your Aiven for PostgreSQL service from the **Services** list, and select **Current Queries** from the sidebar in your service's page. This shows you that the ``bucardo`` process is inserting data.
 
 #. Once all your data is synchronized, switch the database connection
    for your applications to Aiven for PostgreSQL.

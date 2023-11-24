@@ -2,18 +2,16 @@
 Create and manage teams
 =======================
 
-.. important::
-    **Teams are becoming groups**
-    
-    :doc:`Groups </docs/platform/howto/manage-groups>` are an easier way to control access to your organization's projects and services for a group of users. 
-    
-    :ref:`migrate_teams_to_groups`
-
-
 **Teams** let you create user groups and assign different access levels to specific projects. Users must be part of an organization before being added to a team. To create and manage teams, click **Admin** and then select **Teams**.
 
+.. important::
+   **Teams are becoming groups**
+    
+   :doc:`Groups </docs/platform/howto/manage-groups>` are an easier way to control access to your organization's projects and services for a group of users. 
+   See :ref:`migrate_teams_to_groups`.
+
 Create a new team
---------------------------
+-----------------
 
 #. Click **Create new team**.
 

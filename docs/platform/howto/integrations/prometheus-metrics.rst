@@ -22,9 +22,9 @@ Check Prometheus support for your service
 
 Usually one Prometheus integration endpoint can be used for all services in the same project. To check if Prometheus is supported on your service, you need to verify if the project for this service has a Prometheus integration endpoint created. For this purpose, take the following steps:
 
-#. | Log in to `Aiven Console <https://console.aiven.io/>`_, go to **Projects** in the top navigation bar, and select your project from the dropdown list.
-#. | On the **Services** page, select **Integration endpoints** from the left sidebar.
-#. | On the **Integration endpoints** page, select **Prometheus** from the list available integration endpoints, and check if there is any endpoint available under **Endpoint Name**.
+#. Log in to `Aiven Console <https://console.aiven.io/>`_, go to **Projects** in the top navigation bar, and select your project from the dropdown list.
+#. On the **Services** page, select **Integration endpoints** from the left sidebar.
+#. On the **Integration endpoints** page, select **Prometheus** from the list available integration endpoints, and check if there is any endpoint available under **Endpoint Name**.
 
 If there is a Prometheus endpoint available, your service supports Prometheus. If there's no Prometheus endpoint available, proceed to :ref:`Enable Prometheus on your Aiven project <enable-prometheus>` to set up Prometheus for your service (project).
 
@@ -35,21 +35,21 @@ Enable Prometheus
 
 Aiven offers Prometheus endpoints for your services. To enable this feature, take the following steps:
 
-#. | Log in to `Aiven Console <https://console.aiven.io/>`_, go to **Projects** in the top navigation bar, and select your project from the dropdown list.
-#. | On the **Services** page, select **Integration endpoints** from the left sidebar.
-#. | On the **Integration endpoints** page, select **Prometheus** from the list available integration endpoints, and select **Add new endpoint**.
-#. | In the **Create new Prometheus endpoint** window, enter the details for the endpoint, and select **Create**. 
-#. | Select **Services** from the sidebar, and navigate to the service that you would like to monitor.
-#. | On the **Overview** page of your service, go to the **Service integrations** section, and select **Manage integrations**.
-#. | On the **Integrations** page, select **Prometheus**. 
-#. | In the **Prometheus integration** window, select the endpoint name you created from the dropdown list, and select **Enable**.
+#. Log in to `Aiven Console <https://console.aiven.io/>`_, go to **Projects** in the top navigation bar, and select your project from the dropdown list.
+#. On the **Services** page, select **Integration endpoints** from the left sidebar.
+#. On the **Integration endpoints** page, select **Prometheus** from the list available integration endpoints, and select **Add new endpoint**.
+#. In the **Create new Prometheus endpoint** window, enter the details for the endpoint, and select **Create**. 
+#. Select **Services** from the sidebar, and navigate to the service that you would like to monitor.
+#. On the **Overview** page of your service, go to the **Service integrations** section, and select **Manage integrations**.
+#. On the **Integrations** page, select **Prometheus**. 
+#. In the **Prometheus integration** window, select the endpoint name you created from the dropdown list, and select **Enable**.
 
    .. note::
       
       At the top of the **Integrations** page, you will see the Prometheus integration listed and status ``active``. 
 
-#. | From the **Integrations** page, go to the **Overview** page > the **Connection information** section > the **Prometheus** tab.
-#. | Copy **Service URI**, and use it in your browser to access the Prometheus dashboard.
+#. From the **Integrations** page, go to the **Overview** page > the **Connection information** section > the **Prometheus** tab.
+#. Copy **Service URI**, and use it in your browser to access the Prometheus dashboard.
 
 .. topic:: Result
 

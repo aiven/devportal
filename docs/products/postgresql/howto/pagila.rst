@@ -191,7 +191,7 @@ Let's explore the dataset with a few queries. All the queries results were limit
         |MARGARET  |MOORE    |
         |DOROTHY   |TAYLOR   |
 
-.. dropdown:: See who rented most DVDs – and how many times
+.. dropdown:: See who rented most DVDs - and how many times
 
     .. code:: sql
 

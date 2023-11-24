@@ -50,11 +50,11 @@ Alternatively, the same settings can be specified directly on the command line w
 .. code::
 
    kcat \
-       -b demo-kafka.my-demo-project.aivencloud.com:17072 \
-       -X security.protocol=ssl \
-       -X ssl.key.location=service.key \
-       -X ssl.certificate.location=service.cert \
-       -X ssl.ca.location=ca.pem
+       -b demo-kafka.my-demo-project.aivencloud.com:17072 \
+       -X security.protocol=ssl \
+       -X ssl.key.location=service.key \
+       -X ssl.certificate.location=service.cert \
+       -X ssl.ca.location=ca.pem
 
 If :doc:`SASL authentication <kafka-sasl-auth>` is enabled, then the ``kcat`` configuration file requires the following entries:
 
