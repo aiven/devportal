@@ -22,12 +22,12 @@ Follow these steps to enable your slow queries in your Aiven for MySQL service v
 
 1. Log in to `Aiven Console <https://console.aiven.io/>`_.
 2. In the **Services** page, select your Aiven for MySQL service.
-3. In the **Overview** page of your service, scroll down to the **Advanced configuration** section and select **Change**.
-4. In the **Edit advanced configuration** window
+3. In the **Service settings** page of your service, scroll down to the **Advanced configuration** section and select **Configure**.
+4. In the **Advanced configuration** window
 
-   1. Select **Add configuration option**. From the unfolded list, choose ``mysql.slow_query_log``. Enable ``mysql.slow_query_log`` by toggling it to ``On``. By default, ``mysql.slow_query_log`` is disabled.
-   2. Select **Add configuration option**. From the unfolded list, choose ``mysql.long_query_time``. Set ``mysql.long_query_time`` according to your specific need.
-   3. Select **Save advanced configuration**.
+   1. Select **Add configuration options**. From the unfolded list, choose ``mysql.slow_query_log``. Enable ``mysql.slow_query_log`` by toggling it to ``On``. By default, ``mysql.slow_query_log`` is disabled.
+   2. Select **Add configuration options**. From the unfolded list, choose ``mysql.long_query_time``. Set ``mysql.long_query_time`` according to your specific need.
+   3. Select **Save configuration**.
 
 Your Aiven for MySQL service can now log slow queries. If you want to simulate slow queries to check this feature, check the next section.
 
@@ -72,5 +72,3 @@ You can expect to receive an output similar to the following:
 .. warning::
 
    Disabling the ``mysql.slow_query_log`` setting truncates the ``mysql.slow_query_log`` table. Make sure to back up the data from the ``mysql.slow_query_log`` table in case you need it for further analysis.
-
-

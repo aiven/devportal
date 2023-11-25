@@ -87,7 +87,7 @@ When executing the ``ALTER TABLE`` statement for a large table, you may encounte
     
     Creating index 'PRIMARY' required more than 'mysql.innodb_online_alter_log_max_size' bytes of modification log. Please try again.
 
-For the operation to succeed, you need to set a value that is high enough. Depending on the table size, this could be a few gigabytes or even more for very large tables. You can change ``mysql.innodb_online_alter_log_max_size`` as follows: `Aiven Console <https://console.aiven.io/>`_ > your Aiven for MySQL service > the **Overview** page of your service > the **Advanced configuration** section > **Change** > **Add configuration option** > ``mysql.innodb_online_alter_log_max_size`` > set a value > **Save advanced configuration**.
+For the operation to succeed, you need to set a value that is high enough. Depending on the table size, this could be a few gigabytes or even more for very large tables. You can change ``mysql.innodb_online_alter_log_max_size`` as follows: `Aiven Console <https://console.aiven.io/>`_ > your Aiven for MySQL service's page > the **Service settings** page of the service > the **Advanced configuration** section > **Configure** > **Add configuration options** > ``mysql.innodb_online_alter_log_max_size`` > set a value > **Save configuration**.
 
 .. seealso::
     

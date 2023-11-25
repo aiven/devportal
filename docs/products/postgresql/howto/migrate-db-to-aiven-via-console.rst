@@ -215,7 +215,7 @@ Migrate a database
 Step 1: Configure
 '''''''''''''''''
 
-Get familiar with the guidelines provided in the **PostgreSQL migration configuration guide** window, and select **Get started**.
+Get familiar with the guidelines provided in the **PostgreSQL migration configuration guide** window, make sure your configuration is in line with them, and select **Get started**.
 
 Step 2: Validation
 ''''''''''''''''''
