@@ -25,16 +25,14 @@ without affecting the running service. This is useful in two main aspects:
 Here are the steps to upgrade a PostgreSQL service:
 
 1. Log in to `Aiven Console <https://console.aiven.io/>`_, and select the instance that you want to upgrade.
-
-2. In the **Overview** page of your service, scroll down to the **PostgreSQL version** section, and select **Upgrade version**.
-
-3. In the **Upgrade Aiven for PostgreSQL Confirmation** window, select the version that you want to upgrade to from the dropdown menu.
+2. Select **Service settings** from the sidebar of your service's page.
+3. Navigate to the **Service management** section, and select **Upgrade versioin** from the **Actions** (**...**) menu.
+4. In the **Upgrade Aiven for PostgreSQL Confirmation** window, select the version that you want to upgrade to from the dropdown menu.
 
 .. Note::
     When you select the version, the system checks the compatibility of the upgrade.
 
-
-4. Select **Upgrade**.
+5. Select **Upgrade**.
 
    The system starts applying the upgrade.
 
