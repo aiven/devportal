@@ -15,7 +15,7 @@ To use the ClickHouse® client across different operating systems, we recommend 
 Connection properties
 ---------------------
 
-You will need to know the following properties to establish a secure connection with your Aiven for ClickHouse service: **Host**, **Port**, **User** and **Password**. You will find these in the *Connection information* section in the *Overview* page of your service in the `Aiven web console <https://console.aiven.io/>`_.
+You will need to know the following properties to establish a secure connection with your Aiven for ClickHouse service: **Host**, **Port**, **User** and **Password**. You will find these in the **Connection information** section on the **Overview** page of your service in the `Aiven web console <https://console.aiven.io/>`_.
 
 Command template
 ----------------
