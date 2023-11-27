@@ -22,7 +22,7 @@ Pre-requisites
 
   .. code-block:: bash
 
-     $conn .= ";sslmode=verify-ca;sslrootcert='D:/absolute/path/to/ssl/certs/ca.pem
+     $conn .= ";sslmode=verify-ca;sslrootcert='D:/absolute/path/to/ssl/certs/ca.pem'"
 
 .. note::
    Your PHP installation needs to include the `MySQL functions <https://www.php.net/manual/en/ref.pdo-pgsql.php>`_ (most installations have this already).
