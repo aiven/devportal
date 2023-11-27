@@ -124,6 +124,8 @@ entries:
     - file: docs/platform/howto/prepare-for-high-load
     - file: docs/platform/howto/scale-services
     - file: docs/platform/concepts/dynamic-disk-sizing
+    - file: docs/platform/howto/disk-autoscaler
+      title: Disk autoscaling
     - file: docs/platform/howto/cleanup-powered-off-services
     - file: docs/platform/howto/add-storage-space
     - file: docs/platform/howto/access-service-logs
