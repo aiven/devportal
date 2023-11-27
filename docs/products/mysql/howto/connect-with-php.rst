@@ -18,7 +18,7 @@ Pre-requisites
 --------------
 
 * :doc:`/docs/platform/howto/download-ca-cert` from `Aiven Console <https://console.aiven.io/>`__ > the **Overview** page of your service. This example assumes it is in a local file called ``ca.pem``.
-* Make sure you have permissions to read/ write to the `ca.pem` file and you add an absolute path to the `ca.pem` file into :ref:`the code <connect-mysql-php-code>`:
+* Make sure you have read/write permissions to the `ca.pem` file and you add an absolute path to this file into :ref:`the code <connect-mysql-php-code>`:
 
   .. code-block:: bash
 
