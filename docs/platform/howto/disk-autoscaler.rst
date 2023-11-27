@@ -15,16 +15,16 @@ Service disk autoscaler increases disk storage capacity automatically when the d
 How it works
 ------------
 
-There are a few steps illustratig how disk autoscaler works:
+There are a few steps illustrating how disk autoscaler works:
 
 1. You create an disk autoscaler integration endpoint in your Aiven project setting the maximum additional storage at the same time.
 2. You enable a disk autoscaler integration for your service using the new disk autoscaler integration endpoint.
 3. From that point onward, the evaluation of disk space availability for your service is done every 30 seconds.
-4. When disk storage consumption reaches the treshold for a specific service, disk autoscaler increases available storage space by 10% every time taking the currently-used service plan as a baseline.
+4. When disk storage consumption reaches the threshold for a specific service, disk autoscaler increases available storage space by 10% every time taking the currently-used service plan as a baseline.
 
 .. topic:: AUTOSCALE THRESHOLDS PER SERVICE TYPE
 
-   The treshold at which disk autoscaling is triggered is a percentage of the available disk storage capacity and depends on a service type:
+   The threshold at which disk autoscaling is triggered is a percentage of the available disk storage capacity and depends on a service type:
 
    * Aiven for Apache Cassandra®: 35% of the available disk storage capacity
    * Aiven for OpenSearch®: 75% of the available disk storage capacity
