@@ -18,9 +18,16 @@ Pre-requisites
 --------------
 
 * :doc:`/docs/platform/howto/download-ca-cert` from `Aiven Console <https://console.aiven.io/>`__ > the **Overview** page of your service. This example assumes it is in a local file called ``ca.pem``.
+* Make sure you have permissions to read/ write to the `ca.pem` file. If not, add an absolute path to the `ca.pem` file into :ref:`the code <connect-mysql-php-code>`:
+
+  .. code-block:: bash
+
+     $conn .= ";sslmode=verify-ca;sslrootcert='D:/absolute/path/to/ssl/certs/ca.pem
 
 .. note::
    Your PHP installation needs to include the `MySQL functions <https://www.php.net/manual/en/ref.pdo-pgsql.php>`_ (most installations have this already).
+
+.. _connect-mysql-php-code:
 
 Code
 ----
