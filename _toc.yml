@@ -140,17 +140,22 @@ entries:
     - file: docs/platform/reference/list_of_clouds
     - file: docs/platform/concepts/availability-zones
     - file: docs/platform/howto/list-byoc
-      title: BYOC
+      title: Bring your own cloud (BYOC)
       entries:
         - file: docs/platform/concepts/byoc
+          title: About BYOC
+        - file: docs/platform/howto/byoc/enable-byoc
+          title: Enable BYOC
         - file: docs/platform/howto/byoc/create-custom-cloud
           title: Create custom cloud
         - file: docs/platform/howto/byoc/assign-project-custom-cloud
-          title: Assign projects
+          title: Attach projects
         - file: docs/platform/howto/byoc/add-customer-info-custom-cloud
           title: Add customer contacts
         - file: docs/platform/howto/byoc/rename-custom-cloud
           title: Rename custom cloud
+        - file: docs/platform/howto/byoc/delete-custom-cloud
+          title: Delete custom cloud
     - file: docs/platform/concepts/enhanced-compliance-env
     - file: docs/platform/concepts/aiven-node-firewall-configuration
     - file: docs/platform/concepts/cloud-security
