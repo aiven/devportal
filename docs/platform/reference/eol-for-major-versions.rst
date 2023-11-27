@@ -227,12 +227,7 @@ own schedule. After the EOL date:
 1. If the service is powered on, it's auto-upgraded to the latest version.
 2. If the service is powered off, it's deleted.
 
-Aiven platform offers database forking as an efficient tool to verify
+Aiven platform offers :doc:`database forking </docs/platform/howto/console-fork-service>` as an efficient tool to verify
 the version upgrade so that customers can safely test compatibility
 without committing their production services to a one-way upgrade.
 
-.. Tip::
-   Navigate to the service's ``Overview`` page and scroll down until
-   you see a ``New database fork`` button. This will allow you to make a
-   separate new database service that is cloned from the current one's
-   backups.
