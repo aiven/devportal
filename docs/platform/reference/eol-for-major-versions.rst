@@ -1,7 +1,10 @@
-EOL for major versions of Aiven Services
-========================================
+End of life for major versions of Aiven services and tools
+==========================================================
 
-End of Life (EOL) refers to the deadline after which affected Aiven services are retired and will be no longer supported or maintained.
+End of life (EOL) refers to the deadline after which affected Aiven services and tools are retired and no longer supported or maintained.
+
+Aiven services
+--------------
 
 Since August 2020, Aiven aims to follow the EOL schedule set by the
 original authors and maintainers of the open source software, aka
@@ -15,8 +18,8 @@ following the upstream project's EOL schedule, we ensure that Aiven
 services are always running on supported versions of the open source
 software.
 
-**Version numbering**
-~~~~~~~~~~~~~~~~~~~~~
+Version numbering
+'''''''''''''''''
 
 Aiven services inherit the upstream project's software versioning
 scheme. Depending on the service, a major version can be either a single
@@ -24,8 +27,8 @@ digit (e.g. PostgreSQL® 14) or ``major.minor`` (e.g. Kafka® 3.2). The
 exact version of the service is visible in `Aiven Console <https://console.aiven.io/>`_ once the
 service is up and running.
 
-Aiven for Elasticsearch
------------------------
+Aiven for Elasticsearch®
+''''''''''''''''''''''''
 
 Aiven for Elasticsearch major versions will reach EOL on the same date
 as the upstream open source project's EOL.  `Aiven for OpenSearch® <https://docs.aiven.io/docs/products/opensearch.html>`_
@@ -49,7 +52,7 @@ is Aiven's service offering for Elasticsearch.
 
 
 Aiven for OpenSearch®
----------------------
+'''''''''''''''''''''
 
 Aiven for OpenSearch® is the open source continuation of the original Elasticsearch service.
 
@@ -73,7 +76,7 @@ Aiven for OpenSearch® is the open source continuation of the original Elasticse
 
 
 Aiven for PostgreSQL®
----------------------
+'''''''''''''''''''''
 
 Aiven for PostgreSQL® major versions will reach EOL on the same date as
 the upstream open source project's EOL .
@@ -105,7 +108,7 @@ the upstream open source project's EOL .
 .. _aiven-for-kafka:
 
 Aiven for Apache Kafka®
------------------------
+'''''''''''''''''''''''
 
 Starting with v2.5, Aiven for Kafka® ``major.minor`` version will reach
 EOL one year after it's made available on Aiven platform.
@@ -157,8 +160,8 @@ EOL one year after it's made available on Aiven platform.
 
 .. _h_0f2929c770:
 
-Aiven for Cassandra®
---------------------
+Aiven for Apache Cassandra®
+'''''''''''''''''''''''''''
 
 Starting with v4, Aiven for Cassandra® ``major`` version will reach EOL
 six months after it's made available on Aiven platform.
@@ -176,7 +179,7 @@ six months after it's made available on Aiven platform.
    +-------------+---------------+------------------+------------------+
 
 Aiven for M3DB
---------------------
+''''''''''''''
 
 Starting from v1.5, Aiven for M3DB version will reach EOL six months after **newer major/minor version** is made available on Aiven platform.
 
@@ -194,8 +197,8 @@ Starting from v1.5, Aiven for M3DB version will reach EOL six months after **new
    | 1.5         | N/A           | N/A              | 2022-05-05       |
    +-------------+---------------+------------------+------------------+
 
-Aiven service EOL policy for major versions
--------------------------------------------
+EOL policy for major versions
+'''''''''''''''''''''''''''''
 
 Aiven EOL policy is applicable only for services whose major versions
 are controlled by the customer.
@@ -203,8 +206,8 @@ are controlled by the customer.
 It applies to both **powered-on** and **powered-off** services running
 the affected versions.
 
-EOL notification
-~~~~~~~~~~~~~~~~
+EOL notifications
+'''''''''''''''''
 
 When Aiven defines the EOL date for a service major version,
 
@@ -216,10 +219,10 @@ When Aiven defines the EOL date for a service major version,
 -  Email reminders will be sent to customers on a monthly cadence. On
    the month of the EOL date, the cadence shifts to weekly reminders.
 
-Our recommendation
-------------------
+EOL best practices
+''''''''''''''''''
 
-We **highly recommend** customers to perform the version upgrade well
+It's highly recommended to perform the version upgrade well
 before EOL so that they can test compatibility for any breaking changes,
 plan for unforeseen issues, and migrate to the newer version at their
 own schedule. After the EOL date:
@@ -236,3 +239,56 @@ without committing their production services to a one-way upgrade.
    you see a ``New database fork`` button. This will allow you to make a
    separate new database service that is cloned from the current one's
    backups.
+
+Aiven tools
+-----------
+
+Alongside `Aiven Console <https://console.aiven.io/>`_, Aiven offers multiple tools for interacting with the Aiven platform and services. These include the Aiven CLI, the Aiven Terraform provider, and the Aiven Kubernetes® operator. Breaking changes in the Aiven API can result in new major versions of the Aiven tools. While backwards compatibility is typically maintained, certain changes require us to deprecate older versions of the tools.
+
+Aiven CLI
+'''''''''
+
+.. container:: intercom-interblocks-table-container
+
+   +-------------+---------------+
+   | **Version** | **Aiven EOL** |
+   |             |               |
+   +-------------+---------------+
+   | 1.x         | 2023-12-11    |
+   +-------------+---------------+
+   | 2.x         | 2023-12-11    |
+   +-------------+---------------+
+   | 3.x         | 2023-12-11    |
+   +-------------+---------------+
+   | 4.x         | `TBA*`        |
+   +-------------+---------------+
+
+Aiven Terraform provider
+''''''''''''''''''''''''
+
+.. container:: intercom-interblocks-table-container
+
+   +-------------+---------------+
+   | **Version** | **Aiven EOL** |
+   |             |               |
+   +-------------+---------------+
+   | 1.x         | 2023-12-31    |
+   +-------------+---------------+
+   | 2.x         | 2023-12-31    |
+   +-------------+---------------+
+   | 3.x         | 2023-12-31    |
+   +-------------+---------------+
+   | 4.x         | `TBA*`        |
+   +-------------+---------------+
+
+Aiven Kubernetes operator
+'''''''''''''''''''''''''
+
+.. container:: intercom-interblocks-table-container
+
+   +-------------+---------------+
+   | **Version** | **Aiven EOL** |
+   |             |               |
+   +-------------+---------------+
+   | 0.x         | `TBA*`        |
+   +-------------+---------------+
