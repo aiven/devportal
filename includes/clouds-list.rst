@@ -303,6 +303,9 @@ Google Cloud
     - ``google-europe-west1``
     - Europe, Belgium 
   * - Europe
+    - ``google-europe-west12``
+    - Europe, Italy 
+  * - Europe
     - ``google-europe-west2``
     - Europe, England 
   * - Europe
@@ -316,13 +319,10 @@ Google Cloud
     - Europe, Switzerland 
   * - Europe
     - ``google-europe-west8``
-    - Europe, Italy, Milan 
+    - Europe, Italy 
   * - Europe
     - ``google-europe-west9``
     - Europe, France 
-  * - Europe
-    - ``google-europe-west12``
-    - Europe, Italy, Turin 
   * - Middle East
     - ``google-me-west1``
     - Middle East, Israel 
