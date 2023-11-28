@@ -1,7 +1,7 @@
 Scale your Aiven service disks automatically
 ============================================
 
-Discover the service disk autoscaler and its capabilities. Find out how it works and how to use it with your Aiven for service.
+Discover the service disk autoscaler and its capabilities. Find out how it works and how to use it with your Aiven services.
 
 .. topic:: Pricing
 
@@ -69,7 +69,6 @@ Enable with Aiven API
 ~~~~~~~~~~~~~~~~~~~~~
 
 To enable disk autoscaler on your service via `Aiven API <https://api.aiven.io/doc/>`_, call the `ServiceIntegrationEndpointCreate <https://api.aiven.io/doc/#tag/Service_Integrations/operation/ServiceIntegrationEndpointCreate>`_ endpoint on your project and, next, the `ServiceIntegrationCreate <https://api.aiven.io/doc/#tag/Service_Integrations/operation/ServiceIntegrationCreate>`_ endpoint to create an autoscaler integration on your service.
-`ServiceUpdate <https://api.aiven.io/doc/#tag/Service/operation/ServiceUpdate>`_ endpoint passing ``{"service disk autoscaler": {"enabled": true}}`` in the ``user_config`` object.
 
 1. Call the `ServiceIntegrationEndpointCreate <https://api.aiven.io/doc/#tag/Service_Integrations/operation/ServiceIntegrationEndpointCreate>`_ endpoint on your project passing the following in the request body:
 
@@ -124,6 +123,10 @@ You can use the :doc:`Aiven CLI client </docs/tools/cli>` to enable disk autosca
 
    avn service update -c service disk autoscaler.enabled=true SERVICE_NAME
 
+
+avn service integration-endpoint-create
+avn service integration-create
+
 Configure disk autoscaler
 -------------------------
 
@@ -171,6 +174,8 @@ You can use the :doc:`Aiven CLI client </docs/tools/cli>` to configure disk auto
 .. code-block:: bash
 
    avn service update -c service disk autoscaler.PARAMETER_NAME=PARAMETER_VALUE SERVICE_NAME
+
+For updating max additional disk storage: avn service integration-endpoint-update
 
 Disable disk autoscaler
 -----------------------
@@ -232,6 +237,9 @@ You can use the :doc:`Aiven CLI client </docs/tools/cli>` to disable disk autosc
 .. code-block:: bash
 
    avn service update -c service disk autoscaler.enabled=false SERVICE_NAME
+
+avn service integration-delete
+avn service integration-endpoint-delete
 
 Related reading
 ---------------
