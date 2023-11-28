@@ -1,9 +1,11 @@
-Get technical notifications
-============================
+Manage project and service notifications
+=========================================
 
 To stay up to date with the latest news about the services in a project, you can set up notifications for technical contacts for the project. If you don't add a technical email for a project, email notifications will still be sent to users with admin and operator roles.
 
 Notifications include information about plan sizes, performance, outages and scheduled maintenance. High priority notifications (for example, a plan running out of space) are also sent to project admin users. 
+
+.. _set_contacts:
 
 Set up email notifications
 """""""""""""""""""""""""""
@@ -13,6 +15,7 @@ Set up email notifications
 #. In the **Technical Emails** section, add the email addresses.
 
 #. Click **Save changes**. 
+
 
 Set up Slack notifications
 """""""""""""""""""""""""""
@@ -26,11 +29,6 @@ To get notifications in Slack, you can add a Slack channel's or DM email address
 
 #. In the Aiven Console, go to the project that you want to get notifications for.
 
-#. Click **Settings**.
-
-#. In the **Technical Emails** section, add the email address that you created for the Slack channel or  DM.                
-
-
-#. Click **Save changes**. 
+#. Follow the instructions to :ref:`set the Slack email address as a project or service contact <set_contacts>`.
 
 Alternatively, you can `set up a Slackbot forwarding address <https://slack.com/help/articles/206819278-Send-emails-to-Slack#h_01F4WE06MBF06BBHQNZ1G0H2K5>`_ and use that to automatically forward Aiven's email notifications from your email client.
