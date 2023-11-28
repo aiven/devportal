@@ -117,15 +117,21 @@ To enable disk autoscaler on your service via `Aiven API <https://api.aiven.io/d
 Enable with Aiven CLI
 ~~~~~~~~~~~~~~~~~~~~~
 
-You can use the :doc:`Aiven CLI client </docs/tools/cli>` to enable disk autoscaler for your service by running the following command:
+You can enable disk autoscaler for your service with the :doc:`Aiven CLI client </docs/tools/cli>` by run the commands to create the following:
+* Autoscaler integration endpoint on your project
+* Autoscaler integration on your service using the new autoscaler integration endpoint
 
-.. code-block:: bash
+1. Run the following command to create an autoscaler integration endpoint on your project:
 
-   avn service update -c service disk autoscaler.enabled=true SERVICE_NAME
+   .. code-block:: bash
 
+      avn service integration-endpoint-create PROJECT_NAME
 
-avn service integration-endpoint-create
-avn service integration-create
+2. Run the following command to create an autoscaler integration on your service using the new autoscaler integration endpoint:
+
+   .. code-block:: bash
+
+      avn service integration-create SERVICE_NAME
 
 Configure disk autoscaler
 -------------------------
@@ -169,13 +175,13 @@ Call the `ServiceIntegrationEndpointUpdate <https://api.aiven.io/doc/#tag/Servic
 Configure with Aiven CLI
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can use the :doc:`Aiven CLI client </docs/tools/cli>` to configure disk autoscaler on your service by running the following command:
+You can use the :doc:`Aiven CLI client </docs/tools/cli>` to configure the maximum additional disk storage allowed for autoscaling purposes on your service.
+
+Run the following command passing a desired maximum additional disk storage as PARAMETER_VALUE_IN_GB:
 
 .. code-block:: bash
 
-   avn service update -c service disk autoscaler.PARAMETER_NAME=PARAMETER_VALUE SERVICE_NAME
-
-For updating max additional disk storage: avn service integration-endpoint-update
+   avn service integration-endpoint-update -c autoscaler.MAX_ADDITIONAL_STORAGE=PARAMETER_VALUE_IN_GB SERVICE_NAME
 
 Disable disk autoscaler
 -----------------------
@@ -234,12 +240,21 @@ Disable with Aiven CLI
 
 You can use the :doc:`Aiven CLI client </docs/tools/cli>` to disable disk autoscaler on your service by running the following command:
 
-.. code-block:: bash
+You can disable disk autoscaler on your service with the :doc:`Aiven CLI client </docs/tools/cli>` by run the commands to delete the following:
+* Autoscaler integration on your service
+* Autoscaler integration endpoint on your project (if you don't need the autoscaler integration endpoint on your project for any future purposes).
 
-   avn service update -c service disk autoscaler.enabled=false SERVICE_NAME
+1. Run the following command to delete an autoscaler integration on your service:
 
-avn service integration-delete
-avn service integration-endpoint-delete
+   .. code-block:: bash
+
+      avn service integration-delete SERVICE_NAME
+
+2. Run the following command to delete an autoscaler integration endpoint on your project:
+
+   .. code-block:: bash
+
+      avn service integration-endpoint-delete PROJECT_NAME
 
 Related reading
 ---------------
