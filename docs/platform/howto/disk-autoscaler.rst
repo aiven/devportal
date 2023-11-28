@@ -5,7 +5,7 @@ Discover the service disk autoscaler and its capabilities. Find out how it works
 
 .. topic:: Pricing
 
-   Costs of using disk autoscaler depend on your service type and plan. You're only charged based on your actual storage usage. For more details on the costs of using disk autoscaler, check the same for dynamic disk sizing (DDS) in `Aiven Plans and Pricing <https://aiven.io/pricing?product=kafka>`_ or contact us at sales@Aiven.io.
+   Costs of using disk autoscaler depend on your service type and plan. You're only charged based on actual storage usage on your service. For more details on the costs of using disk autoscaler, check the same for dynamic disk sizing (DDS) in `Aiven Plans and Pricing <https://aiven.io/pricing?product=kafka>`_ or contact us at sales@Aiven.io.
 
 Why use disk autoscaling
 ------------------------
