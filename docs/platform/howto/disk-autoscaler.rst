@@ -68,8 +68,52 @@ Enable on a service
 Enable with Aiven API
 ~~~~~~~~~~~~~~~~~~~~~
 
-To enable disk autoscaler on your service via `Aiven API <https://api.aiven.io/doc/>`_, call the
+To enable disk autoscaler on your service via `Aiven API <https://api.aiven.io/doc/>`_, call the `ServiceIntegrationEndpointCreate <https://api.aiven.io/doc/#tag/Service_Integrations/operation/ServiceIntegrationEndpointCreate>`_ endpoint on your project and, next, the `ServiceIntegrationCreate <https://api.aiven.io/doc/#tag/Service_Integrations/operation/ServiceIntegrationCreate>`_ endpoint to create an autosclaler integration on your service.
 `ServiceUpdate <https://api.aiven.io/doc/#tag/Service/operation/ServiceUpdate>`_ endpoint passing ``{"service disk autoscaler": {"enabled": true}}`` in the ``user_config`` object.
+
+1. Call the `ServiceIntegrationEndpointCreate <https://api.aiven.io/doc/#tag/Service_Integrations/operation/ServiceIntegrationEndpointCreate>`_ endpoint on your project passing the following in the request body:
+
+   * Endpoint name (path and request body parameters)
+   * Endpoint type (request body): ``autoscaler``
+   * ``max_additional_storage`` (request body > ``user_config`` object)
+
+   .. code-block:: bash
+
+      curl --request POST \
+        --url https://api.aiven.io/v1/project/{project_name}/integration_endpoint \
+        --header 'Authorization: Bearer REPLACE_WITH_YOUR_BEARER_TOKEN' \
+        --header 'content-type: application/json' \
+        --data
+           '{
+              "endpoint_name": "REPLACE_WITH_ENDPOINT_NAME",
+              "endpoint_type": "autoscaler",
+              "user_config": {
+                "autoscaler": {
+                  "max_additional_storage": "REPLACE_WITH_DESIRED_VALUE_IN_GB"
+                }
+              }
+            }'
+
+2. Call the `ServiceIntegrationCreate <https://api.aiven.io/doc/#tag/Service_Integrations/operation/ServiceIntegrationCreate>`_ endpoint on your service passing the following in the request body:
+
+   * ``dest_endpoint_id``: ID of your new autoscaler integration endpoint
+   * ``integration_type``: ``autoscaler``
+   * ``source_project``: the name of a project your autoscaler endpoint is created for
+   * ``source_service``:  the name of a service for which you want to enable autoscaler
+
+   .. code-block:: bash
+
+      curl --request POST \
+        --url https://api.aiven.io/v1/project/{project_name}/integration \
+        --header 'Authorization: Bearer REPLACE_WITH_YOUR_BEARER_TOKEN' \
+        --header 'content-type: application/json' \
+        --data
+           '{
+              "dest_endpoint_id": "REPLACE_WITH_YOUR_NEW_AUTOSCALER_ENDPOINT_ID",
+              "integration_type": "autoscaler",
+              "source_project": "REPLACE_WITH_PROJECT_NAME",
+              "source_service": "REPLACE_WITH_SERVICE_NAME"
+           }'
 
 Enable with Aiven CLI
 ~~~~~~~~~~~~~~~~~~~~~
@@ -96,8 +140,28 @@ Configure in Aiven Console
 Configure with Aiven API
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can use `Aiven API <https://api.aiven.io/doc/>`_ to configure disk autoscaler on your service. Call the
-`ServiceUpdate <https://api.aiven.io/doc/#tag/Service/operation/ServiceUpdate>`_ endpoint passing desired service disk autoscaler parameters in the ``user_config`` object.
+You can use `Aiven API <https://api.aiven.io/doc/>`_ to configure the maximum additional disk storage allowed for autoscaling purposes on your service.
+
+Call the `ServiceIntegrationEndpointUpdate <https://api.aiven.io/doc/#tag/Service_Integrations/operation/ServiceIntegrationEndpointUpdate>`_ endpoint passing the following parameters in your request:
+
+* ``project_name`` (path parameter)
+* ``integration_endpoint_id`` (path parameter)
+* ``max_additional_storage`` (request body > ``user_config`` object)
+
+.. code-block:: bash
+
+   curl --request PUT \
+     --url https://api.aiven.io/v1/project/{project_name}/integration_endpoint/{integration_endpoint_id} \
+     --header 'Authorization: Bearer REPLACE_WITH_YOUR_BEARER_TOKEN' \
+     --header 'content-type: application/json' \
+     --data
+        '{
+           "user_config": {
+             "autoscaler": {
+               "max_additional_storage": "REPLACE_WITH_DESIRED_VALUE_IN_GB"
+             }
+           }
+         }'
 
 Configure with Aiven CLI
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -134,8 +198,31 @@ Delete an autoscaler endpoint
 Disable with Aiven API
 ~~~~~~~~~~~~~~~~~~~~~~
 
-You can use `Aiven API <https://api.aiven.io/doc/>`_ to disable disk autoscaler on your service. Call the
-`ServiceUpdate <https://api.aiven.io/doc/#tag/Service/operation/ServiceUpdate>`_ endpoint passing ``{"service disk autoscaler": {"enabled": false}}`` in the ``user_config`` object.
+To disable disk autoscaler on your service via `Aiven API <https://api.aiven.io/doc/>`_, call the `ServiceIntegrationDelete <https://api.aiven.io/doc/#tag/Service_Integrations/operation/ServiceIntegrationDelete>`_ endpoint to delete an autosclaler integration on your service and, next, the `ServiceIntegrationEndpointDelete <https://api.aiven.io/doc/#tag/Service_Integrations/operation/ServiceIntegrationEndpointDelete>`_ endpoint on your project to delete the autoscaler integration endpoint if you don't need it for any future purposes.
+
+`ServiceUpdate <https://api.aiven.io/doc/#tag/Service/operation/ServiceUpdate>`_ endpoint passing ``{"service disk autoscaler": {"enabled": true}}`` in the ``user_config`` object.
+
+1. Call the `ServiceIntegrationDelete <https://api.aiven.io/doc/#tag/Service_Integrations/operation/ServiceIntegrationDelete>`_ endpoint on your service passing the following in the request body:
+
+   * ``project_name`` (path parameter): the name of a project in which your autoscaler service integration is enabled
+   * ``integration_id`` (path parameter): ID of an autoscaler service integration you want to disable
+
+   .. code-block:: bash
+
+      curl --request DELETE \
+        --url https://api.aiven.io/v1/project/{project_name}/integration/{integration_id} \
+        --header 'Authorization: Bearer REPLACE_WITH_YOUR_BEARER_TOKEN'
+
+2. Call the `ServiceIntegrationEndpointDelete <https://api.aiven.io/doc/#tag/Service_Integrations/operation/ServiceIntegrationEndpointDelete>`_ endpoint on your project passing the following in the request body:
+
+   * ``project_name`` (path parameter): the name of a project in which your autoscaler integration endpoint is created
+   * ``integration_endpoint_id`` (path parameter): ID of an autoscaler integration endpoint you want to delete 
+
+   .. code-block:: bash
+
+      curl --request DELETE \
+        --url https://api.aiven.io/v1/project/{project_name}/integration_endpoint/{integration_endpoint_id} \
+        --header 'Authorization: Bearer REPLACE_WITH_YOUR_BEARER_TOKEN'
 
 Disable with Aiven CLI
 ~~~~~~~~~~~~~~~~~~~~~~
