@@ -100,7 +100,7 @@ Now that you have a dataset with two empty tables, we'll load data into each of 
 
    ``hits_v1.tsv`` contains approximately 7Gb of data. Depending on your internet connection, it can take some time to load all the items.
 
-#. Run the corresponding command for ``visits_v1.tsv`:
+#. Run the corresponding command for ``visits_v1.tsv``:
    
    .. code::
 
