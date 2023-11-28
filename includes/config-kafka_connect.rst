@@ -1,4 +1,10 @@
 
+``additional_backup_regions``
+-----------------------------
+*array*
+
+**Additional Cloud Regions for Backup Replication** 
+
 
 
 ``ip_filter``
@@ -117,7 +123,7 @@
 ~~~~~~~~~~~~~~~~~~~~~~
 *integer*
 
-**The timeout used to detect failures when using Kafka's group management facilities** The timeout in milliseconds used to detect failures when using Kafka's group management facilities (defaults to 10000).
+**The timeout used to detect failures when using Kafka’s group management facilities** The timeout in milliseconds used to detect failures when using Kafka’s group management facilities (defaults to 10000).
 
 
 
