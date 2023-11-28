@@ -73,7 +73,7 @@ To enable disk autoscaler on your service via `Aiven API <https://api.aiven.io/d
 1. Call the `ServiceIntegrationEndpointCreate <https://api.aiven.io/doc/#tag/Service_Integrations/operation/ServiceIntegrationEndpointCreate>`_ endpoint on your project passing the following in the request body:
 
    * Endpoint name (path and request body parameters)
-   * Endpoint type (request body): ``autoscaler``
+   * ``endpoint_type`` (request body): ``disk_storage``
    * ``max_additional_storage`` (request body > ``user_config`` object)
 
    .. code-block:: bash
@@ -85,7 +85,7 @@ To enable disk autoscaler on your service via `Aiven API <https://api.aiven.io/d
         --data
            '{
               "endpoint_name": "REPLACE_WITH_ENDPOINT_NAME",
-              "endpoint_type": "autoscaler",
+              "endpoint_type": "disk_storage",
               "user_config": {
                 "autoscaler": {
                   "max_additional_storage": "REPLACE_WITH_DESIRED_VALUE_IN_GB"
@@ -118,20 +118,33 @@ Enable with Aiven CLI
 ~~~~~~~~~~~~~~~~~~~~~
 
 You can enable disk autoscaler for your service with the :doc:`Aiven CLI client </docs/tools/cli>` by run the commands to create the following:
-* Autoscaler integration endpoint on your project
-* Autoscaler integration on your service using the new autoscaler integration endpoint
+* Autoscaler integration endpoint on your project (:ref:`avn service integration-endpoint-create <avn_service_integration_endpoint_create>`)
+* Autoscaler integration on your service using the new autoscaler integration endpoint (:ref:`avn service integration-create <avn_service_integration_create>`)
 
 1. Run the following command to create an autoscaler integration endpoint on your project:
 
    .. code-block:: bash
 
-      avn service integration-endpoint-create PROJECT_NAME
+      avn service integration-endpoint-create                                                   \
+         --project YOUR_PROJECT_NAME                                                            \
+         --endpoint-name DESIRED_ENDPOINT_NAME                                                  \
+         --endpoint-type disk_storage                                                           \
+         --user-config-json '{"max_additional_storage":"REPLACE_WITH_DESIRED_VALUE_IN_GB"}'
 
-2. Run the following command to create an autoscaler integration on your service using the new autoscaler integration endpoint:
+2. Run the :ref:`avn service integration-endpoint-list <avn_service_integration_endpoint_list>` command to retrieve the identifier of the new endpoint:
+
+   .. code-block:: shell
+
+      avn service integration-endpoint-list --project YOUR_PROJECT_NAME
+
+3. Run the following command to create an autoscaler integration on your service using the new autoscaler integration endpoint:
 
    .. code-block:: bash
 
-      avn service integration-create SERVICE_NAME
+      avn service integration-create
+         --dest-service YOUR_SERVICE_NAME                             \
+         --integration-type autoscaler                                \
+         --source-endpoint-id ID_OF_AUTOSCALER_INTEGRATION_ENDPOINT
 
 Configure disk autoscaler
 -------------------------
