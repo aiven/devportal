@@ -252,23 +252,34 @@ To disable disk autoscaler on your service via `Aiven API <https://api.aiven.io/
 Disable with Aiven CLI
 ~~~~~~~~~~~~~~~~~~~~~~
 
-You can use the :doc:`Aiven CLI client </docs/tools/cli>` to disable disk autoscaler on your service by running the following command:
-
 You can disable disk autoscaler on your service with the :doc:`Aiven CLI client </docs/tools/cli>` by run the commands to delete the following:
+
 * Autoscaler integration on your service
 * Autoscaler integration endpoint on your project (if you don't need the autoscaler integration endpoint on your project for any future purposes).
 
-1. Run the following command to delete an autoscaler integration on your service:
+1. Retrieve the ID of an integration you want to disable by running the following command:
 
    .. code-block:: bash
 
-      avn service integration-delete SERVICE_NAME
+      avn service integration-list SERVICE_NAME
 
-2. Run the following command to delete an autoscaler integration endpoint on your project:
+2. Run the following command to delete an autoscaler integration on your service:
 
    .. code-block:: bash
 
-      avn service integration-endpoint-delete PROJECT_NAME
+      avn service integration-delete INTEGRATION_ID
+
+3. Retrieve the ID of an autoscaler integration endpoint you want to delete by running the following command:
+
+   .. code-block:: bash
+
+      avn service integration-endpoint-list PROJECT_NAME
+
+3. Run the following command to delete an autoscaler integration endpoint on your project:
+
+   .. code-block:: bash
+
+      avn service integration-endpoint-delete ENDPOINT_ID
 
 Related reading
 ---------------
