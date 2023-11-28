@@ -190,7 +190,7 @@ Configure with Aiven CLI
 
 You can use the :doc:`Aiven CLI client </docs/tools/cli>` to configure the maximum additional disk storage allowed for autoscaling purposes on your service.
 
-Run the :ref:`avn service integration-endpoint-update <avn_service_integration_endpoint_update>` command passing a desired maximum additional disk storage as PARAMETER_VALUE_IN_GB:
+Run the :ref:`avn service integration-endpoint-update <avn-service-integration-endpoint-update>` command passing a desired maximum additional disk storage as PARAMETER_VALUE_IN_GB:
 
 .. code-block:: bash
 
