@@ -3,7 +3,9 @@
 Rename files and adding redirects
 ===================================
 
-The project supports a redirects file, named ``_redirects``; the format is `source` and `destination` as paths relative to the root of the project. Here's an example::
+The project supports a redirects file, named ``_redirects``; the format is `source` and `destination` as paths relative to the root of the project. Here's an example:
+
+.. code::
 
     /docs/products/flink/howto/real-time-alerting-solution-cli.html    /docs/products/flink/howto/real-time-alerting-solution.html
 

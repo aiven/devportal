@@ -240,9 +240,11 @@ It's time to start streaming the fake IoT data that you'll later process with wi
 .. Note::
     You can also use other existing data, although the examples in this tutorial are based on the IoT sample data.
 
-1. Clone the `Dockerized fake data producer for Aiven for Apache Kafka® <https://github.com/aiven/fake-data-producer-for-apache-kafka-docker>`_ repository to your computer::
-
-    git clone https://github.com/aiven/fake-data-producer-for-apache-kafka-docker.git
+1. Clone the `Dockerized fake data producer for Aiven for Apache Kafka® <https://github.com/aiven/fake-data-producer-for-apache-kafka-docker>`_ repository to your computer:
+   
+   .. code::
+   
+      git clone https://github.com/aiven/fake-data-producer-for-apache-kafka-docker.git
 
 #. Navigate in the to the ``fake-data-producer-for-apache-kafka-docker`` directory and copy the ``conf/env.conf.sample`` file to ``conf/env.conf``.
 

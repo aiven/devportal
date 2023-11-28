@@ -110,9 +110,11 @@ OpenSearch is designed to make stored information easy to search and access (the
 Search all items
 ''''''''''''''''
 
-OpenSearch has support for excellent search querying, but if you want to get everything::
+OpenSearch has support for excellent search querying, but if you want to get everything:
 
-    curl OPENSEARCH_URI/_search
+.. code::
+
+   curl OPENSEARCH_URI/_search
 
 Search results include some key fields to look at when you try this example:
 

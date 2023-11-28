@@ -59,7 +59,9 @@ The command returns some information about the newly created static IP address.
 
 When the IP address has been provisioned, the state turns to ``created``. The
 list of static IP addresses in the current project is available using the
-``static-ip list`` command::
+``static-ip list`` command:
+
+.. code::
 
    avn static-ip list
 
@@ -81,7 +83,9 @@ Associate static IP addresses with a service
 --------------------------------------------
 
 Using the name of the service, and the ID of the static IP address, you can
-assign which service a static IP should be used by::
+assign which service a static IP should be used by:
+
+.. code::
 
    avn static-ip associate --service my-static-pg ip359373e5e56
    avn static-ip associate --service my-static-pg ip358375b2765
