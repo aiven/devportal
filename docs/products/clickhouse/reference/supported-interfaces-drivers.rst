@@ -14,20 +14,37 @@ Aiven for ClickHouse® supports the following fundamental underlying interfaces 
 * ``Native TCP``
 * ``MySQL Interface``
 
-.. topic:: Full list of interfaces (protocols) supported in Aiven for ClickHouse
+.. note::
    
-   Check out `Drivers and Interfaces <https://clickhouse.com/docs/en/interfaces/overview>`_ for all the details.
+   For security reasons, you need TLS (plaintext) to connect to Aiven for ClickHouse. 
+
+.. topic:: Not supported interfaces (protocols)
+
+   * `HTTP`
+   * `gRPC`
+   * `PostgreSQL`
+
+.. seealso::
+   
+   For the full list of interfaces and protocols supported in ClickHouse, check out `Drivers and Interfaces <https://clickhouse.com/docs/en/interfaces/overview>`_.
 
 Drivers (libraries)
 -------------------
 
 There are a number of drivers (libraries) that use one of :ref:`the fundamental underlying interfaces supported in Aiven for ClickHouse <clickhouse-interfaces>` under the hood. It's up to you to pick up a driver (library) of your choice and use it for connecting to your Aiven for ClickHouse service.
 
-.. topic:: Full list of drivers (libraries) supported in Aiven for ClickHouse
+.. seealso::
+
+   * Check out :doc:`how to use different drivers (libraries) for connecting to Aiven for ClickHouse </docs/products/clickhouse/howto/list-connect-to-service>`.
    
-   Check out `Drivers and Interfaces <https://clickhouse.com/docs/en/interfaces/overview>`_ for all the details.
+   * For the full list of drivers and libraries that support connecting to ClickHouse, check out `Drivers and Interfaces <https://clickhouse.com/docs/en/interfaces/overview>`_.
+
+.. note::
+
+   You can connect to Aiven for ClickHouse with any driver that uses TLS and one of the supported protocols.
 
 Related reading
 ---------------
 
-Check out :doc:`how to connect to Aiven for ClickHouse using different libraries </docs/products/clickhouse/howto/list-connect-to-service>`.
+* :doc:`How to connect to Aiven for ClickHouse using different libraries </docs/products/clickhouse/howto/list-connect-to-service>`
+* `Drivers and interfaces supported in ClickHouse <https://clickhouse.com/docs/en/interfaces/overview>`_
