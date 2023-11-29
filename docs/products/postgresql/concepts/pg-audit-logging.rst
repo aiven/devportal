@@ -1,5 +1,5 @@
-Aiven for PostgreSQL audit logging
-==================================
+Aiven for PostgreSQL® audit logging
+===================================
 
 .. important::
 
@@ -21,7 +21,7 @@ The audit logging feature allows you to monitor and track activities within rell
 Why use audit logging
 ---------------------
 
-There are multiple reasons why you may want to use the audit logging. Note the following as benefits of using this feature:
+There are multiple reasons why you may want to use the audit logging. Note the following benefits of using this feature:
 
 Data Security
 * Monitor user activities to identify unusual or suspicious behavior
@@ -78,9 +78,18 @@ Education
 How it works
 ------------
 
+Before you start
+''''''''''''''''
+
 You can enable, configure, and use the audit logging feature on the service level or the database level with Aiven for PostgreSQL 11+ Pro Plan as an ``avnadmin`` superuser.
 
-To use the audit logging on your service (database) for collecting logs in Aiven for PostgreSQL, you need to :doc:`enable and configure this feature </docs/products/postgresql/howto/pgaudit-logging>` in `Aiven Console <https://console.aiven.io>`_ or using `Aiven API <https://api.aiven.io/doc/>`_ or :doc:`Aiven CLI </docs/tools/cli>`.
+Enable with predefined settings
+'''''''''''''''''''''''''''''''
+
+To use the audit logging on your service (database) for collecting logs in Aiven for PostgreSQL, you need to :doc:`enable and configure this feature </docs/products/postgresql/howto/pgaudit-logging>` in `Aiven Console <https://console.aiven.io>`_, via `Aiven API <https://api.aiven.io/doc/>`_, or with :doc:`Aiven CLI </docs/tools/cli>`.
+
+Configure for your use case
+'''''''''''''''''''''''''''
 
 When enabled on your service, the audit logging can be configured so that it addresses your specific needs. There are a few `audit logging parameters <https://github.com/pgaudit/pgaudit/tree/6afeae52d8e4569235bf6088e983d95ec26f13b7#readme>`_ that you might want to configure for that purpose:
 
@@ -109,20 +118,27 @@ When enabled on your service, the audit logging can be configured so that it add
 ``pgaudit.role``
   Master role to use for an object audit logging
 
-.. topic:: Audit logging parameters
+.. topic:: Full list of audit logging parameters
 
     For information on all the parameters available for configuring the audit logging, see `Settings <https://github.com/pgaudit/pgaudit/tree/6afeae52d8e4569235bf6088e983d95ec26f13b7#readme>`_.
 
+Collect and visualize logs
+''''''''''''''''''''''''''
+
 You can access the collected logs by :ref:`integrating with a service monitoring and analyzing logs, for example, Aiven for OpenSearch® <enable-log-integration>`. Finally, to visuaize your logs, you can use :doc:`OpenSearch Dashboards </docs/products/opensearch/dashboards>`.
+
+Disable if no longer neeeded
+''''''''''''''''''''''''''''
 
 To disable the audit logging on your service (database), you can use `Aiven Console <https://console.aiven.io>`_, `Aiven API <https://api.aiven.io/doc/>`_, or :doc:`Aiven CLI </docs/tools/cli>` for :ref:`modifying your service's advanced configuration <disable-pgaudit>`. 
 
 Limitations
 -----------
 
-To be able to enable, configure, and use the audit logging, you need the following:
+To be able to activate, configure, and use the audit logging, you need the following:
 
-* Aiven for PostgreSQL Pro Plan
+* Pro Platform enabled for your Aiven organization
+* Pro Features enabled for your Aiven project
 * PostgreSQL version 11 or higher
 * ``avnadmin`` superuser role
 
