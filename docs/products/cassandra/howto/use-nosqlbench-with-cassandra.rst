@@ -66,7 +66,9 @@ The following parameters are used:
 * ``workload``: option calls a specific workload file that is compiled inside the ``nb`` executable and instructs ``nb`` to generate key/value pairs for a table called ``baselines.keyvalue``. You can read more on how to define custom workloads in the :ref:`dedicated documentation <nosqlbench_cassandra>`
 * ``phase``: refers to a specific point in the ``workload`` definition file and specifies the particular ``activity`` to run. In the example, the phase is ``schema`` which means that the nosqlbench will create the schema of the Cassandra keyspace.
 
-To create client connections and produce data in the keyspace and tables created, you need to run the following command line, after substituting the placeholders for ``HOST``, ``PORT``, ``PASSWORD`` and ``SSL_CERTFILE``::
+To create client connections and produce data in the keyspace and tables created, you need to run the following command line, after substituting the placeholders for ``HOST``, ``PORT``, ``PASSWORD`` and ``SSL_CERTFILE``:
+
+.. code::
 
     ./nb run \
       host=HOST                        \
