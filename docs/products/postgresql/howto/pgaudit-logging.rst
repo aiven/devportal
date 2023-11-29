@@ -11,7 +11,7 @@ About audit logging
 -------------------
 
 The audit logging feature allows you to monitor and track activities within relational database systems, which helps to achieve the following:
-  
+
 * Data security and integrity
 * Detection and prevention of an unauthorized access, data breaches, and unexpected changes
 * Identification of a potential fraud or misuse
@@ -22,42 +22,43 @@ The audit logging feature allows you to monitor and track activities within rela
 
 .. seealso::
 
-   For more information on the PostgreSQL® audit logging feature, check out :doc:`PostgreSQL® audit logging </docs/products/postgresql/concepts/pg-audit-logging>`.
+   For more information on the Aiven PostgreSQL® audit logging feature, check out :doc:`Aiven for PostgreSQL® audit logging </docs/products/postgresql/concepts/pg-audit-logging>`.
+
+Prerequisites
+-------------
+
+* Pro Platform enabled for your Aiven organization
+* Pro Features enabled for your Aiven project
+* PostgreSQL version 11 or higher
+* ``avnadmin`` superuser role
+* Depending on what interface you'd like to use to interact with the feature
+  * Access to `Aiven Console <https://console.aiven.io>`_
+  * `Aiven API <https://www.postman.com/aiven-apis/workspace/aiven/collection/21112408-1f6306ef-982e-49f8-bdae-4d9fdadbd6cd>`_
+  * Terraform
+  * :doc:`Aiven CLI client </docs/tools/cli>`
+  * SQL
 
 Enable audit logging
 --------------------
 
-You can enable the audit logging by setting the ``pgaudit.featureEnabled`` parameter to ``true`` in your service's advanced configuration. You can do that using `Aiven Console <https://console.aiven.io>`_, `Aiven API <https://api.aiven.io/doc/>`_, or :doc:`Aiven CLI </docs/tools/cli>`.
+You can enable audit logging by setting the ``pgaudit.featureEnabled`` parameter to ``true`` in your service's advanced configuration. You can do that using `Aiven Console <https://console.aiven.io>`_, `Aiven API <https://api.aiven.io/doc/>`_, :doc:`Aiven CLI </docs/tools/cli>`, or SQL.
 
-Prerequisites
-'''''''''''''
+Enable in Aiven Console
+~~~~~~~~~~~~~~~~~~~~~~~
 
-* Aiven for PostgreSQL Pro Plan
-* PostgreSQL version 11 or higher
-* ``avnadmin`` role
-* :doc:`Aiven CLI </docs/tools/cli>` / ``psql``
+.. important::
 
-Enable audit logs in Aiven Console
-''''''''''''''''''''''''''''''''''
+   In `Aiven Console <https://console.aiven.io/>`_, you can enable audit logging at the service level only. To enable it on a database or for a user, you need to use SQL.
 
-1. Go to `Aiven Console <https://console.aiven.io>`_ > organization > project > Aiven for PostgreSQL service > **Overview** > **Advanced configuration** > **Change** > **Add configuration option**.
-2. Add the ``pgaudit.featureEnabled`` parameter and set it to ``true``.
-3. Save the updated configuration.
+1. Log in to `Aiven Console <https://console.aiven.io>`_, and navigate to your organization > project > Aiven for PostgreSQL service.
+2. On the **Overview** page of your service, select **Service settings** from the sidebar.
+3. On the **Service settings** page, navigate to the **Advanced configuration** section and select **Configure**.
+4. In the **Advanced configuration** window, select **Add configuration options**, add the ``pgaudit.featureEnabled`` parameter, set it to ``true``, and select **Save configuration**.
 
-Enable audit logs with Aiven CLI
-''''''''''''''''''''''''''''''''
+Enable with Aiven API
+~~~~~~~~~~~~~~~~~~~~~
 
-You can use the :doc:`Aiven CLI client </docs/tools/cli>` to interact with :doc:`the Aiven API </docs/tools/api>`. Run the :ref:`avn service update <avn-cli-service-update>` command to update your service by setting the ``pgaudit.featureEnabled`` parameter's value to ``true``.
-
-.. code-block:: bash
-
-   avn service update demo-pg        \
-     -c pgaudit.featureEnabled=true
-
-Enable audit logs with Aiven API
-''''''''''''''''''''''''''''''''
-
-You can use the `curl` command line tool to interact with :doc:`the Aiven API </docs/tools/api>`. Use the `ServiceUpdate <https://api.aiven.io/doc/#tag/Service/operation/ServiceUpdate>`_ endpoint to update your service's configuration by setting the ``pgaudit.featureEnabled`` parameter's value to ``true``.
+You can use the `curl` command line tool to interact with :doc:`the Aiven API </docs/tools/api>`. Call the `ServiceUpdate <https://api.aiven.io/doc/#tag/Service/operation/ServiceUpdate>`_ endpoint to update your service's configuration by passing ``{"pgaudit.featureEnabled": "true"}`` in the ``user_config`` object.
 
 .. code-block:: bash
 
@@ -72,79 +73,160 @@ You can use the `curl` command line tool to interact with :doc:`the Aiven API </
             }
          }'
 
-..
-   .. note::
+Enable with SQL
+~~~~~~~~~~~~~~~
 
-      Configuration changes take effect only on new connections.
+.. note::
 
-   To configure the audit logging, use the ``aiven-extras`` extension and its ``set_pgaudit_parameter()`` function on the service level.
+   SQL allows for fine-grained enablement of audit logging: on a database, for a user (role), or for a database-role combination.
 
-   1. Use :doc:`Aiven CLI </docs/tools/cli>` (or :doc:`psql </docs/products/postgresql/howto/connect-psql>`) to connect to your instance.
+Enable on a database
+''''''''''''''''''''
 
-      .. code-block:: bash
+1. :doc:`Connect to your Aiven for PostgreSQL service </docs/products/postgresql/howto/list-code-samples>`.
 
-         avn service cli --project $PG_PROJECT $PG_SERVICE_NAME
+2. Run the following query:
 
-   2. Enable ``pgaudit`` and ``aiven-extras`` extensions.
+   .. code-block:: bash
 
-      .. code-block:: bash
+      ALTER DATABASE DATABASE_NAME set pgaudit.featureEnabled = 'on'
 
-         CREATE EXTENSION pgaudit CASCADE;
-         CREATE EXTENSION aiven_extras CASCADE;
+Enable for a user
+'''''''''''''''''
 
-   3. Use ``aiven_extras.set_pgaudit_parameter()`` to configure the audit logging.
+1. :doc:`Connect to your Aiven for PostgreSQL service </docs/products/postgresql/howto/list-code-samples>`.
 
-      .. note::
+2. Run the following query:
 
-         By default, the audit logging does not emit any audit records.
+   .. code-block:: bash
 
-      To enable the logging and start getting audit records, configure relevant parameters using ``set_pgaudit_parameter`` with the parameter and the target database name.
+      ALTER ROLE ROLE_NAME SET pgaudit.featureEnabled = 'on'
 
-      .. code-block:: bash
+Enable on a DB for a user
+'''''''''''''''''''''''''
 
-         SELECT aiven_extras.set_pgaudit_parameter('log', 'defaultdb', 'all, -misc');
+1. :doc:`Connect to your Aiven for PostgreSQL service </docs/products/postgresql/howto/list-code-samples>`.
+
+2. Run the following query:
+
+   .. code-block:: bash
+
+      ALTER ROLE ROLE_NAME IN DATABASE DATABASE_NAME SET pgaudit.featureEnabled = 'on'
+
+Enable with Aiven CLI
+~~~~~~~~~~~~~~~~~~~~~
+
+You can use the :doc:`Aiven CLI client </docs/tools/cli>` to interact with :doc:`the Aiven API </docs/tools/api>`. Run the :ref:`avn service update <avn-cli-service-update>` command to update your service by setting the ``pgaudit.featureEnabled`` parameter's value to ``true``.
+
+.. code-block:: bash
+
+   avn service update -c pgaudit.featureEnabled=true SERVICE_NAME
+
+.. important::
+
+   By default, audit logging does not emit any audit records. To trigger a logging operation and start receiving audit records, configure audit logging parameters as detailed in :ref:`Configure audit logging <configure-audit-logging>`.
+
+.. _configure-audit-logging:
 
 Configure audit logging
 -----------------------
 
-You can configure the audit logging by setting different `audit logging parameters <https://github.com/pgaudit/pgaudit/tree/6afeae52d8e4569235bf6088e983d95ec26f13b7#readme>`_ to in your service's advanced configuration. You can do that using `Aiven Console <https://console.aiven.io>`_, `Aiven API <https://api.aiven.io/doc/>`_, or :doc:`Aiven CLI </docs/tools/cli>`.
+.. note::
+
+   Configuration changes take effect only on new connections.
+
+You can configure audit logging by setting `its parameters <https://github.com/pgaudit/pgaudit/tree/6afeae52d8e4569235bf6088e983d95ec26f13b7#readme>`_ using `Aiven Console <https://console.aiven.io>`_, `Aiven API <https://api.aiven.io/doc/>`_, :doc:`Aiven CLI </docs/tools/cli>`, SQL.
 
 .. topic:: Audit logging parameters
 
-    For information on all the parameters available for configuring the audit logging, see `Settings <https://github.com/pgaudit/pgaudit/tree/6afeae52d8e4569235bf6088e983d95ec26f13b7#readme>`_.
+   For information on all the parameters available for configuring audit logging, see `Settings <https://github.com/pgaudit/pgaudit/tree/6afeae52d8e4569235bf6088e983d95ec26f13b7#settings>`_.
 
-Prerequisites
-'''''''''''''
+Configure in Aiven Console
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* Aiven for PostgreSQL Pro Plan
-* PostgreSQL version 11 or higher
-* ``avnadmin`` superuser role
-* :doc:`Aiven CLI </docs/tools/cli>` / ``psql``
+.. important::
 
-Configure audit logs in Aiven Console
-'''''''''''''''''''''''''''''''''''''
+   In `Aiven Console <https://console.aiven.io/>`_, you can enable audit logging at the service level only. To enable it on a database or for a user, you need to use SQL.
 
-1. Go to `Aiven Console <https://console.aiven.io>`_ > organization > project > Aiven for PostgreSQL service > **Overview** > **Advanced configuration** > **Change** > **Add configuration option**.
-2. Add a parameter and set it as needed.
-3. Save the updated configuration.
+1. Log in to `Aiven Console <https://console.aiven.io>`_, and navigate to your organization > project > Aiven for PostgreSQL service.
+2. On the **Overview** page of your service, select **Service settings** from the sidebar.
+3. On the **Service settings** page, navigate to the **Advanced configuration** section and select **Configure**.
+4. In the **Advanced configuration** window, select **Add configuration options**, find a desired parameter (all prefixed with ``pgaudit.log``), set its value as needed, and select **Save configuration**.
 
-Configure audit logs with Aiven CLI
-'''''''''''''''''''''''''''''''''''
+Configure with Aiven API
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-Configure audit logs with Aiven API
-'''''''''''''''''''''''''''''''''''
+You can use `Aiven API <https://api.aiven.io/doc/>`_ to configure audit logging on your service. Call the
+`ServiceUpdate <https://api.aiven.io/doc/#tag/Service/operation/ServiceUpdate>`_ endpoint passing desired audit logging parameters in the ``user_config`` object.
 
-Configure the session audit logging
-'''''''''''''''''''''''''''''''''''
+.. code-block:: bash
 
-The session audit logging allows recording detailed logs of all SQL statements and commands executed during a database session in the backend of a system.
+   curl --request PUT                                                                      \
+      --url https://api.aiven.io/v1/project/YOUR_PROJECT_NAME/service/YOUR_SERVICE_NAME    \
+      --header 'Authorization: Bearer YOUR_BEARER_TOKEN'                                   \
+      --header 'content-type: application/json'                                            \
+      --data
+         '{
+            "user_config": {
+              "pgaudit": {
+                "PARAMETER_NAME": "PARAMETER_VALUE"
+              }
+            }
+          }'
 
-Before enabling the session audit logging, make sure your setup meets the following prerequisites:
+Configure with SQL
+~~~~~~~~~~~~~~~~~~
 
-* Aiven for PostgreSQL Pro Plan
-* Aiven for PostgreSQL version 11 or higher
-* ``avnadmin`` superuser role
-* SQL interface
+.. note::
+
+   SQL allows for fine-grained configuration of audit logging: on a database, for a user (role), or for a database-role combination.
+
+Configure on a database
+'''''''''''''''''''''''
+
+1. :doc:`Connect to your Aiven for PostgreSQL service </docs/products/postgresql/howto/list-code-samples>`.
+
+2. Run the following query:
+
+   .. code-block:: bash
+
+      ALTER DATABASE DATABASE_NAME SET pgaudit.log_PARAMETER_NAME = PARAMETER_VALUE
+
+Configure for a user
+''''''''''''''''''''
+
+1. :doc:`Connect to your Aiven for PostgreSQL service </docs/products/postgresql/howto/list-code-samples>`.
+
+2. Run the following query:
+
+   .. code-block:: bash
+
+      ALTER ROLE ROLE_NAME SET pgaudit.log_PARAMETER_NAME = PARAMETER_VALUE
+
+Configure on a DB for a user
+''''''''''''''''''''''''''''
+
+1. :doc:`Connect to your Aiven for PostgreSQL service </docs/products/postgresql/howto/list-code-samples>`.
+
+2. Run the following query:
+
+   .. code-block:: bash
+
+      ALTER ROLE ROLE_NAME IN DATABASE DATABASE_NAME SET pgaudit.log_PARAMETER_NAME = PARAMETER_VALUE
+
+Configure with Aiven CLI
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can use the :doc:`Aiven CLI client </docs/tools/cli>` to configure audit logging on your service by running the following command:
+
+.. code-block:: bash
+
+   avn service update -c pgaudit.PARAMETER_NAME=PARAMETER_VALUE SERVICE_NAME
+
+Use session audit logging
+-------------------------
+
+Session audit logging allows recording detailed logs of all SQL statements and commands executed during a database session in the system's backend.
 
 To enable the session audit logging, run the following query:
 
@@ -152,18 +234,22 @@ To enable the session audit logging, run the following query:
 
    set pgaudit.log = 'write, ddl';
 
+.. seealso::
+
+   For more details on how to set up, configure, and use session audit logging, check out `Session audit logging <https://github.com/pgaudit/pgaudit/tree/6afeae52d8e4569235bf6088e983d95ec26f13b7#session-audit-logging>`_.
+
 Access your logs
 ----------------
 
 To access audit logs from Aiven for PostgreSQL, you need to create an integration with a service that allows monitoring and analyzing logs. For that purpose, you can seamlessly integrate Aiven for PostgreSQL with an Aiven for OpenSearch® service.
 
 Use the console
-'''''''''''''''
+~~~~~~~~~~~~~~~
 
 For instructions on how to integrate your service with Aiven for OpenSearch, see :ref:`Enable log integration <enable-log-integration>`.
 
 Use Aiven CLI
-'''''''''''''
+~~~~~~~~~~~~~
 
 You can also use :doc:`Aiven CLI </docs/tools/cli>` to create the service integration.
 
@@ -176,7 +262,7 @@ You can also use :doc:`Aiven CLI </docs/tools/cli>` to create the service integr
 
 .. topic:: Results
 
-   After the service integration is set up and propagated to the service configuration, the logs are available in Aiven for OpenSearch. Each log record emitted by the audit logging is stored in Aiven for OpenSearch as a single message, which cannot be guaranteed for external integrations such as Remote Syslog.
+   After the service integration is set up and propagated to the service configuration, the logs are available in Aiven for OpenSearch. Each log record emitted by audit logging is stored in Aiven for OpenSearch as a single message, which cannot be guaranteed for external integrations such as Remote Syslog.
 
 Visualize your logs
 -------------------
@@ -197,8 +283,89 @@ To preview your audit logs in OpenSearch Dashboards, use the filtering tool by s
 Disable audit logging
 ---------------------
 
-You can disable the audit logging on your database or service by setting the ``pgaudit.featureEnabled`` parameter to ``false`` in your service's advanced configuration. You can do that at any time using `Aiven Console <https://console.aiven.io>`_, `Aiven API <https://api.aiven.io/doc/>`_, or :doc:`Aiven CLI </docs/tools/cli>`.
+You can disable  audit logging on your database or service by setting the ``pgaudit.featureEnabled`` parameter to ``false`` in your service's advanced configuration. You can do that at any time using `Aiven Console <https://console.aiven.io>`_, `Aiven API <https://api.aiven.io/doc/>`_, or :doc:`Aiven CLI </docs/tools/cli>`.
 
 .. note::
 
-   The audit logging is disable automatically if you unsubscribe the service from Pro Plan.
+   Audit logging is disable automatically if you unsubscribe the service from Pro Plan.
+
+You can disable audit logging by setting the ``pgaudit.featureEnabled`` parameter to ``true`` in your service's advanced configuration. You can do that using `Aiven Console <https://console.aiven.io>`_, `Aiven API <https://api.aiven.io/doc/>`_, :doc:`Aiven CLI </docs/tools/cli>`, or SQL.
+
+Disable in Aiven Console
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. important::
+
+   In `Aiven Console <https://console.aiven.io/>`_, you can disable audit logging at the service level only. To disable it on a database or for a user, you need to use SQL.
+
+1. Log in to `Aiven Console <https://console.aiven.io>`_, and navigate to your organization > project > Aiven for PostgreSQL service.
+2. On the **Overview** page of your service, select **Service settings** from the sidebar.
+3. On the **Service settings** page, navigate to the **Advanced configuration** section and select **Configure**.
+4. In the **Advanced configuration** window, select **Add configuration options**, add the ``pgaudit.featureEnabled`` parameter, set it to ``true``, and select **Save configuration**.
+
+Disable with Aiven API
+~~~~~~~~~~~~~~~~~~~~~~
+
+You can use the `curl` command line tool to interact with :doc:`the Aiven API </docs/tools/api>`. Call the `ServiceUpdate <https://api.aiven.io/doc/#tag/Service/operation/ServiceUpdate>`_ endpoint to update your service's configuration by passing ``{"pgaudit.featureEnabled": "true"}`` in the ``user_config`` object.
+
+.. code-block:: bash
+
+   curl --request PUT                                                                      \
+      --url https://api.aiven.io/v1/project/YOUR_PROJECT_NAME/service/YOUR_SERVICE_NAME    \
+      --header 'Authorization: Bearer YOUR_BEARER_TOKEN'                                   \
+      --header 'content-type: application/json'                                            \
+      --data
+         '{
+            "user_config": {
+               "pgaudit.featureEnabled": "true"
+            }
+         }'
+
+Disable with SQL
+~~~~~~~~~~~~~~~~
+
+.. note::
+
+   SQL allows you to disable audit logging on a few levels: database, user (role), or database-role combination.
+
+Disable on a database
+'''''''''''''''''''''
+
+1. :doc:`Connect to your Aiven for PostgreSQL service </docs/products/postgresql/howto/list-code-samples>`.
+
+2. Run the following query:
+
+   .. code-block:: bash
+
+      ALTER DATABASE DATABASE_NAME set pgaudit.featureEnabled = 'on'
+
+Disable for a user
+''''''''''''''''''
+
+1. :doc:`Connect to your Aiven for PostgreSQL service </docs/products/postgresql/howto/list-code-samples>`.
+
+2. Run the following query:
+
+   .. code-block:: bash
+
+      ALTER ROLE ROLE_NAME SET pgaudit.featureEnabled = 'on'
+
+Disable on a DB for a user
+''''''''''''''''''''''''''
+
+1. :doc:`Connect to your Aiven for PostgreSQL service </docs/products/postgresql/howto/list-code-samples>`.
+
+2. Run the following query:
+
+   .. code-block:: bash
+
+      ALTER ROLE ROLE_NAME IN DATABASE DATABASE_NAME SET pgaudit.featureEnabled = 'on'
+
+Disable with Aiven CLI
+~~~~~~~~~~~~~~~~~~~~~~
+
+You can use the :doc:`Aiven CLI client </docs/tools/cli>` to interact with :doc:`the Aiven API </docs/tools/api>`. Run the :ref:`avn service update <avn-cli-service-update>` command to update your service by setting the ``pgaudit.featureEnabled`` parameter's value to ``true``.
+
+.. code-block:: bash
+
+   avn service update -c pgaudit.featureEnabled=true SERVICE_NAME
