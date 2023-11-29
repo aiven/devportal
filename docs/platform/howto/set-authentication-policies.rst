@@ -21,7 +21,7 @@ With third-party authentication enabled, users can choose to log in using Google
 Organization SSO
 ~~~~~~~~~~~~~~~~~
 
-You can restrict your organization users to using SSO through a :doc:`verified domain </docs/platform/howto/manage-domains>`.  
+You can restrict your organization users to log in using SSO through an :doc:`identity provider </docs/platform/howto/saml-authentication>`.  
 
 Set an authentication policy 
 ------------------------------

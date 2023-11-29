@@ -9,9 +9,9 @@ Prerequisite steps in Aiven Console
 
 #. In the organization, click **Admin**.
 
-#. Select **Authentication**.
+#. Select **Identity providers**.
 
-#. Click **Add authentication method**.
+#. Click **Add identity provider**.
 
 #. Enter a name and select SAML. You can also select the groups that users will be added to when they sign up or log in through this authentication method.
 
