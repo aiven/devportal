@@ -32,7 +32,7 @@ Go to the *Overview* page of your Aiven for Apache Kafka service.
      #. Next to *CA Certificate*, click **Download** and save the ``ca.pem`` file
      #. Note the *Password* required for the SASL, we'll need it for authentication
 
-* Created the keystore ``client.keystore.p12`` and truststore ``client.truststore.jks`` by following  :doc:`our article on configuring Java SSL to access Kafka <../howto/keystore-truststore>`
+* Created the keystore ``client.keystore.p12`` and truststore ``client.truststore.jks`` by following  :doc:`our article on configuring Java SSL to access Kafka </docs/products/kafka/howto/keystore-truststore>`
 
 .. Warning::
 
