@@ -20,7 +20,7 @@ Easy management
 ---------------
 
 Scalability
-  You can seamlessly :doc:`scale your ClickHouse cluster </docs/platform/howto/scale-services>` horizontally or vertically as your data and needs change using the pre-packaged plans. Aiven for ClickHouse also supports :doc:`sharding </docs/products/clickhouse/howto/use-shards-with-distributed-table>` as a horizontal cluster scaling strategy.
+  You can seamlessly :doc:`scale your ClickHouse cluster </docs/platform/howto/scale-services>` horizontally or vertically as your data and needs change using the pre-packaged plans. Aiven for ClickHouse also supports :doc:`sharding </docs/products/clickhouse/howto/use-shards-with-distributed-table>` as a horizontal cluster scaling-up strategy.
 
 Resource tags
   You can assign metadata to your services in the form of tags. They help you organize, search, and filter Aiven resources. You can :doc:`tag your service </docs/platform/howto/tag-resources>` by purpose, owner, environment, or any other criteria.

@@ -52,6 +52,9 @@ From the information about restrictions on using Aiven for ClickHouse, you can e
    * - Creating a database using SQL
      - You cannot create a database directly using SQL, for example, if you'd like to add a non-default database.
      - Use the Aiven's public API.
+   * - Scaling down a sharded cluster
+     - You only can scale up between shards. Scaling down is not supported with the sharding strategy. You cannot downgrade to a service plan with fewer VMs if your ClickHouse cluster is sharded.
+     - Use the Aiven's public API.
 
 Limits
 ------
