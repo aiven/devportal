@@ -16,12 +16,12 @@ When two-factor authentication is required, users won't be able to access any re
 Third-party authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-With third-party authentication enabled, users can choose to log in using Google, Microsoft, or GitHub.
+Users can choose to log in using Google, Microsoft, or GitHub.
 
-Organization SSO
-~~~~~~~~~~~~~~~~~
+Organization identity providers (SSO)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can restrict your organization users to log in using SSO through an :doc:`identity provider </docs/platform/howto/saml-authentication>`.  
+Organization users are restricted to logging in using SSO through an :doc:`identity provider </docs/platform/howto/saml-authentication>`.  
 
 Set an authentication policy 
 ------------------------------
