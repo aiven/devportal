@@ -17,7 +17,9 @@ Variable                Description
 Pre-requisites
 ''''''''''''''
 
-If there is ``maven`` installed then download of ``jredis`` and dependencies and putting it to ``lib`` folder could be done ::
+If there is ``maven`` installed then download of ``jredis`` and dependencies and putting it to ``lib`` folder could be done:
+
+.. code::
 
     mvn org.apache.maven.plugins:maven-dependency-plugin:2.8:get -Dartifact=redis.clients:jedis:4.1.1:jar -Ddest=lib/jedis-4.1.1.jar \
     && mvn org.apache.maven.plugins:maven-dependency-plugin:2.8:get -Dartifact=org.apache.commons:commons-pool2:2.11.1:jar -Ddest=lib/commons-pool2-2.11.1.jar \

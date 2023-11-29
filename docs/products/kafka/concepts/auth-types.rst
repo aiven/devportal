@@ -67,7 +67,7 @@ This identity is then by default stored in Apache ZooKeeper™.
 Enable SASL authentication
 ---------------------------
 
-Follow the steps from our article :doc:`to enable SASL authentication <../howto/kafka-sasl-auth>`
+Follow the steps from our article :doc:`to enable SASL authentication </docs/products/kafka/howto/kafka-sasl-auth>`
 
 -----
 

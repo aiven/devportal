@@ -40,17 +40,21 @@ Use a replica
 To use a read only replica:
 
 1. Log in to the Aiven web console and select your PostgreSQL service.
-2. In the **Overview** page, copy the **Replica URI** an use it to connect via ``psql``::
-
-    psql POSTGRESQL_REPLICA_URI
+2. In the **Overview** page, copy the **Replica URI** an use it to connect via ``psql``:
+   
+   .. code::
+   
+      psql POSTGRESQL_REPLICA_URI
 
 
 Identify replica status
 -----------------------
 
-To check whether you are connected to a primary or replica node, run the following command within a ``psql`` terminal already connected to a database::
-
-    SELECT * FROM pg_is_in_recovery();
+To check whether you are connected to a primary or replica node, run the following command within a ``psql`` terminal already connected to a database:
+   
+.. code::
+   
+   SELECT * FROM pg_is_in_recovery();
 
 If the above command returns ``TRUE`` if you are connected to the replica, and ``FALSE`` if you are connected to the primary server.
 

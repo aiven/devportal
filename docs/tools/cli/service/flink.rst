@@ -228,12 +228,14 @@ Create an Aiven for Flink® application version in a specified project and servi
 
   Sinking data using the :doc:`Slack connector </docs/products/flink/howto/slack-connector>`, doesn't need an integration.
 
-  **Example**: to create an integration between an Aiven for Apache Flink service named ``flink-democli`` and an Aiven for Apache Kafka service named ``demo-kafka`` you can use the following command::
+  **Example**: to create an integration between an Aiven for Apache Flink service named ``flink-democli`` and an Aiven for Apache Kafka service named ``demo-kafka`` you can use the following command:
+  
+  .. code::
 
-    avn service integration-create    \
-      --integration-type flink        \
-      --dest-service flink-democli    \
-      --source-service demo-kafka
+     avn service integration-create    \
+       --integration-type flink        \
+       --dest-service flink-democli    \
+       --source-service demo-kafka
   
   All the available command integration options can be found in the :ref:`dedicated document <avn_service_integration_create>`
 

@@ -65,46 +65,60 @@ Add and modify resource tags with the Aiven client
 Add and modify service tags 
 """"""""""""""""""""""""""""
 
-* Add new tags to a service::
+* Add new tags to a service:
 
-    avn service tags update your-service --add-tag business_unit=sales --add-tag env=smoke_test
+  .. code::
 
-* Modify or remove tags::
+     avn service tags update your-service --add-tag business_unit=sales --add-tag env=smoke_test
 
-    avn service tags update your-service --add-tag env=production --remove-tag business_unit
+* Modify or remove tags:
+ 
+  .. code::
+  
+     avn service tags update your-service --add-tag env=production --remove-tag business_unit
 
-* List service tags::
+* List service tags:
 
-    avn service tags list your-service
-    KEY  VALUE
-    ===  ==========
-    env  production
+  .. code::
+  
+     avn service tags list your-service
+     KEY  VALUE
+     ===  ==========
+     env  production
 
-* Replace tags with a set of new ones, removing the old ones::
+* Replace tags with a set of new ones, removing the old ones:
 
-    avn service tags replace your-service --tag cost_center=U1345
+  .. code::
+    
+     avn service tags replace your-service --tag cost_center=U1345
 
-    avn service tags list your-service
-    KEY          VALUE
-    ===========  =====
-    cost_center  U1345
+     avn service tags list your-service
+     KEY          VALUE
+     ===========  =====
+     cost_center  U1345
 
 Add and modify project tags
 """"""""""""""""""""""""""""
 
 The commands ``update``, ``list`` and ``replace`` exist for tagging projects too, and work the same way:
 
-* Add tags to a project::
+* Add tags to a project:
 
-    avn project tags update --project your-project --add-tag business_unit=sales
+  .. code::
 
-* Replace project tags::
+     avn project tags update --project your-project --add-tag business_unit=sales
 
-    avn project tags replace --project your-project --tag env=smoke_test
+* Replace project tags:
+  
+  .. code::
 
-* List project tags::
+     avn project tags replace --project your-project --tag env=smoke_test
 
-    avn project tags list
-    KEY  VALUE
-    ===  ==========
-    env  smoke_test
+* List project tags:
+
+  .. code::
+
+     avn project tags list
+     KEY  VALUE
+     ===  ==========
+     env  smoke_test

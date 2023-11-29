@@ -24,13 +24,12 @@ Furthermore you need to collect the following information about the target Influ
 * ``TOPIC_LIST``: The list of topics to sink divided by comma
 * ``KCQL_TRANSFORMATION``: The KCQL syntax to parse the topic data, should be in the format
 
-  ::
+  .. code::
 
-    INSERT
-    INTO INFLUXDB_TABLe_NAME
-    SELECT LIST_OF_FIELDS 
-    FROM APACHE_KAFKA_TOPIC
-
+     INSERT
+     INTO INFLUXDB_TABLe_NAME
+     SELECT LIST_OF_FIELDS 
+     FROM APACHE_KAFKA_TOPIC
 
 * ``APACHE_KAFKA_HOST``: The hostname of the Apache Kafka service, only needed when using Avro as data format
 * ``SCHEMA_REGISTRY_PORT``: The Apache Kafka's schema registry port, only needed when using Avro as data format

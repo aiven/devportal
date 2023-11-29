@@ -29,8 +29,10 @@ The ``aiven_extras`` extension, developed and maintained by Aiven, enables the `
 * Manage `publications <https://www.postgresql.org/docs/current/sql-createpublication.html>`_
 * :doc:`Claim public schema ownership </docs/products/postgresql/howto/claim-public-schema-ownership>`
 
-You can install the ``aiven_extras`` extension executing the following command with the ``avnadmin`` user::
+You can install the ``aiven_extras`` extension executing the following command with the ``avnadmin`` user:
 
-    CREATE EXTENSION aiven_extras CASCADE;
+.. code::
+
+   CREATE EXTENSION aiven_extras CASCADE;
 
 For more information about ``aiven_extras`` check the `GitHub repository <https://github.com/aiven/aiven-extras>`_ for the project.
