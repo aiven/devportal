@@ -28,7 +28,11 @@ Additional reference information for Aiven for ClickHouse®:
     .. grid-item-card:: :doc:`Table functions supported in Aiven for ClickHouse® </docs/products/clickhouse/reference/supported-table-functions>`
         :shadow: md
         :margin: 2 2 0 0
+
     .. grid-item-card:: :doc:`Interfaces and drivers supported in Aiven for ClickHouse® </docs/products/clickhouse/reference/supported-interfaces-drivers>`
         :shadow: md
         :margin: 2 2 0 0
 
+    .. grid-item-card:: :doc:`Aiven for ClickHouse® metrics available via Datadog </docs/products/clickhouse/reference/clickhouse-metrics-datadog>`
+        :shadow: md
+        :margin: 2 2 0 0
