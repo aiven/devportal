@@ -1,24 +1,33 @@
 Aiven for ClickHouse® metrics available via Datadog
 ===================================================
 
-This article provides the list of all metrics available via Datadog for Aiven for ClickHouse® services.
+Learn what metrics are available via Datadog for Aiven for ClickHouse® services.
 
-You can retrieve the complete list of available metrics for your service by requesting the Datadog endpoint as follows:
+Request a metrics list for your service
+---------------------------------------
+
+You can retrieve the complete list of available metrics for your Aiven service by requesting the Datadog endpoint as follows:
 
 .. code-block:: bash
 
     curl --cacert ca.pem \
-        --user '<Datadog_USER>:<Datadog_PASSWORD>' \
-        'https://<CASSANDRA_HOSTNAME>:<Datadog_PORT>/metrics'
+        --user 'API_KEY' \
+        'https://<CLICKHOUSE_HOSTNAME>:<DATADOG_PORT>/metrics'
 
 Where you substitute the following:
 
 * Aiven project certificate for ``ca.pem``
-* Datadog credentials for ``<Datadog_USER>:<Datadog_PASSWORD>``
-* Aiven for ClickHouse hostname for ``<CASSANDRA_HOSTNAME>``
-* Datadog port for ``<Datadog_PORT>``
+* Datadog endpoint API key for ``API_KEY``
+* Aiven for ClickHouse hostname for ``<CLICKHOUSE_HOSTNAME>``
+* Datadog port for ``<DATADOG_PORT>``
 
-.. Tip::
+Get the standard list of ClickHouse metrics in Datadog
+------------------------------------------------------
 
-    You can check how to use Datadog with Aiven in :doc:`Aiven and Datadog integration </docs/integrations/datadog/>`.
-    See also :doc:`Increase metrics limit setting for Datadog </docs/platform/howto/integrations/datadog-increase-metrics-limit>`.
+Check out `Metrics <https://docs.datadoghq.com/integrations/clickhouse/?tab=host#metrics>`_ for the full list of ClickHouse metrics available in Datadog.
+
+Related reading
+---------------
+
+* Check how to use Datadog with Aiven services in :doc:`Datadog and Aiven </docs/integrations/datadog/>`.
+* Check how to send metrics to Datadog from Aiven services in :doc:`Send metrics to Datadog </docs/integrations/datadog/datadog-metrics>`.
