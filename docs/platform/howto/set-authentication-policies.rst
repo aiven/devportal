@@ -1,7 +1,7 @@
 Set authentication policies for organization users 
 ===================================================
 
-The authentication policy for your organization specifies the ways that users can access your organization on the Aiven platform: with a password, third-party authentication, or organization single sign-on (SSO). :doc:`Managed users </docs/platform/concepts/managed-users>` cannot log in with disabled authentication methods. Users that are not managed can log in with disabled methods, but they won't have access to the organization if they do.
+The authentication policy for your organization specifies the ways that users can access your organization on the Aiven platform: with a password, third-party authentication, or organization single sign-on (SSO). 
 
 Authentication types
 ---------------------
