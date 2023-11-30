@@ -20,7 +20,7 @@ Database migration steps
 
 1. Log into `Aiven Console <https://console.aiven.io/>`_.
 2. Navigate to **Service settings** from the sidebar.
-3. Scroll to the **Service management** sectionand use the ellipsis to view additional menu options.
+3. Scroll to the **Service management** section and use the ellipsis to view additional menu options.
 4. Select **Import database** to initiate the import process.
 
 
@@ -47,7 +47,7 @@ Step 3: Migration
 ''''''''''''''''''''
 Once all the necessary checks have been completed successfully, you can proceed with the migration process.
 
-* Click **Start migration** to initiate th data migration process to Aiven for Dragonfly.
+* Click **Start migration** to initiate the data migration process to Aiven for Dragonfly.
 
 
 

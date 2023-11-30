@@ -1,4 +1,4 @@
-Migrate xxternal Redis databases to Aiven for Dragonfly®
+Migrate external Redis®* databases to Aiven for Dragonfly®
 ===========================================================================
 
 Redis is an in-memory data structure store commonly used as a database, cache, message broker, and queue. The Aiven Console provides an intuitive wizard to facilitate the migration of your external Redis databases to Aiven for Dragonfly.
@@ -72,7 +72,7 @@ During the migration, you can:
 
 * Close the migration wizard by clicking **Close window** and later return to monitor the migration status from the service overview page.
 * The migration duration varies based on the size of your database. You can continue writing to the target database during migration but avoid manual changes that might impact replication.
-* Certain managed database features will be disabled while the mirgration is in progress. 
+* Certain managed database features will be disabled while the migration is in progress. 
 * If necessary, stop the migration by selecting **Stop migration**. Data that has already been migrated will remain on Aiven.
 
 .. warning::
@@ -98,7 +98,7 @@ Once the migration is complete:
 
 
 
-Related Reading
+Related reading
 ---------------
 * Migrating to Aiven for Dragonfly 
 * Aiven for Dragonfly documentation </docs/products/dragonfly/index>`
