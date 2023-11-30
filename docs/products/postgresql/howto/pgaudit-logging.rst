@@ -32,7 +32,7 @@ Prerequisites
 * PostgreSQL version 11 or higher
 * ``avnadmin`` superuser role
 * Depending on what interface you'd like to use to interact with the feature
-  * Access to `Aiven Console <https://console.aiven.io>`_
+  * Access to `Aiven Console <https://console.aiven.io/>`_
   * `Aiven API <https://api.aiven.io/doc/>`_ (`Aiven API Postman collection <https://www.postman.com/aiven-apis/workspace/aiven/collection/21112408-1f6306ef-982e-49f8-bdae-4d9fdadbd6cd>`_)
   * Terraform
   * :doc:`Aiven CLI client </docs/tools/cli>`
@@ -41,7 +41,7 @@ Prerequisites
 Enable audit logging
 --------------------
 
-You can enable audit logging by setting the ``pgaudit.featureEnabled`` parameter to ``true`` in your service's advanced configuration. You can do that using `Aiven Console <https://console.aiven.io>`_, `Aiven API <https://api.aiven.io/doc/>`_, :doc:`Aiven CLI </docs/tools/cli>`, or SQL.
+You can enable audit logging by setting the ``pgaudit.featureEnabled`` parameter to ``true`` in your service's advanced configuration. You can do that using `Aiven Console <https://console.aiven.io/>`_, `Aiven API <https://api.aiven.io/doc/>`_, :doc:`Aiven CLI </docs/tools/cli>`, or SQL.
 
 Enable in Aiven Console
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -50,7 +50,7 @@ Enable in Aiven Console
 
    In `Aiven Console <https://console.aiven.io/>`_, you can enable audit logging at the service level only. To enable it on a database or for a user, you need to use SQL.
 
-1. Log in to `Aiven Console <https://console.aiven.io>`_, and navigate to your organization > project > Aiven for PostgreSQL service.
+1. Log in to `Aiven Console <https://console.aiven.io/>`_, and navigate to your organization > project > Aiven for PostgreSQL service.
 2. On the **Overview** page of your service, select **Service settings** from the sidebar.
 3. On the **Service settings** page, navigate to the **Advanced configuration** section and select **Configure**.
 4. In the **Advanced configuration** window, select **Add configuration options**, add the ``pgaudit.featureEnabled`` parameter, set it to ``true``, and select **Save configuration**.
@@ -135,7 +135,7 @@ Configure audit logging
 
    Configuration changes take effect only on new connections.
 
-You can configure audit logging by setting `its parameters <https://github.com/pgaudit/pgaudit/tree/6afeae52d8e4569235bf6088e983d95ec26f13b7#readme>`_ using `Aiven Console <https://console.aiven.io>`_, `Aiven API <https://api.aiven.io/doc/>`_, :doc:`Aiven CLI </docs/tools/cli>`, SQL.
+You can configure audit logging by setting `its parameters <https://github.com/pgaudit/pgaudit/tree/6afeae52d8e4569235bf6088e983d95ec26f13b7#readme>`_ using `Aiven Console <https://console.aiven.io/>`_, `Aiven API <https://api.aiven.io/doc/>`_, :doc:`Aiven CLI </docs/tools/cli>`, SQL.
 
 .. topic:: Audit logging parameters
 
@@ -148,7 +148,7 @@ Configure in Aiven Console
 
    In `Aiven Console <https://console.aiven.io/>`_, you can enable audit logging at the service level only. To enable it on a database or for a user, you need to use SQL.
 
-1. Log in to `Aiven Console <https://console.aiven.io>`_, and navigate to your organization > project > Aiven for PostgreSQL service.
+1. Log in to `Aiven Console <https://console.aiven.io/>`_, and navigate to your organization > project > Aiven for PostgreSQL service.
 2. On the **Overview** page of your service, select **Service settings** from the sidebar.
 3. On the **Service settings** page, navigate to the **Advanced configuration** section and select **Configure**.
 4. In the **Advanced configuration** window, select **Add configuration options**, find a desired parameter (all prefixed with ``pgaudit.log``), set its value as needed, and select **Save configuration**.
@@ -283,7 +283,7 @@ To preview your audit logs in OpenSearch Dashboards, use the filtering tool by s
 Disable audit logging
 ---------------------
 
-You can disable  audit logging by setting the ``pgaudit.featureEnabled`` parameter to ``false`` in your service's advanced configuration. You can do that at any time using `Aiven Console <https://console.aiven.io>`_, `Aiven API <https://api.aiven.io/doc/>`_, :doc:`Aiven CLI </docs/tools/cli>`, or SQL.
+You can disable  audit logging by setting the ``pgaudit.featureEnabled`` parameter to ``false`` in your service's advanced configuration. You can do that at any time using `Aiven Console <https://console.aiven.io/>`_, `Aiven API <https://api.aiven.io/doc/>`_, :doc:`Aiven CLI </docs/tools/cli>`, or SQL.
 
 .. important::
 
@@ -296,7 +296,7 @@ Disable in Aiven Console
 
    In `Aiven Console <https://console.aiven.io/>`_, you can disable audit logging at the service level only. To disable it on a database or for a user, you need to use SQL.
 
-1. Log in to `Aiven Console <https://console.aiven.io>`_, and navigate to your organization > project > Aiven for PostgreSQL service.
+1. Log in to `Aiven Console <https://console.aiven.io/>`_, and navigate to your organization > project > Aiven for PostgreSQL service.
 2. On the **Overview** page of your service, select **Service settings** from the sidebar.
 3. On the **Service settings** page, navigate to the **Advanced configuration** section and select **Configure**.
 4. In the **Advanced configuration** window, select **Add configuration options**, add the ``pgaudit.featureEnabled`` parameter, set it to ``false``, and select **Save configuration**.
