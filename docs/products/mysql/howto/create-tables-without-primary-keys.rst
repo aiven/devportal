@@ -32,9 +32,9 @@ You have two options to create the tables:
 3. In the **Overview** page of your service, scroll down to the **Advanced configuration** section and select **Change**.
 4. In the **Edit advanced configuration** window, find ``mysql.sql_require_primary_key`` and disable it by using the toggle switch. Select **Save advanced configuration**.
 
-  .. warning::
+   .. warning::
     
-    It is only recommended to use this approach when the table is created by an external application and using the session variable is not an option. To prevent more problematic tables from being unexpectedly created in the future you should enable the setting again once you finished creating the tables without primary keys.
+      It is only recommended to use this approach when the table is created by an external application and using the session variable is not an option. To prevent more problematic tables from being unexpectedly created in the future you should enable the setting again once you finished creating the tables without primary keys.
 
 .. seealso::
   
