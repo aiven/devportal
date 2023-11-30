@@ -283,13 +283,11 @@ To preview your audit logs in OpenSearch Dashboards, use the filtering tool by s
 Disable audit logging
 ---------------------
 
-You can disable  audit logging on your database or service by setting the ``pgaudit.featureEnabled`` parameter to ``false`` in your service's advanced configuration. You can do that at any time using `Aiven Console <https://console.aiven.io>`_, `Aiven API <https://api.aiven.io/doc/>`_, or :doc:`Aiven CLI </docs/tools/cli>`.
+You can disable  audit logging by setting the ``pgaudit.featureEnabled`` parameter to ``false`` in your service's advanced configuration. You can do that at any time using `Aiven Console <https://console.aiven.io>`_, `Aiven API <https://api.aiven.io/doc/>`_, :doc:`Aiven CLI </docs/tools/cli>`, or SQL.
 
-.. note::
+.. important::
 
-   Audit logging is disable automatically if you unsubscribe the service from Pro Plan.
-
-You can disable audit logging by setting the ``pgaudit.featureEnabled`` parameter to ``true`` in your service's advanced configuration. You can do that using `Aiven Console <https://console.aiven.io>`_, `Aiven API <https://api.aiven.io/doc/>`_, :doc:`Aiven CLI </docs/tools/cli>`, or SQL.
+   Audit logging gets disabled automatically if you unsubscribe from Pro Platform or Pro Features.
 
 Disable in Aiven Console
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -301,12 +299,12 @@ Disable in Aiven Console
 1. Log in to `Aiven Console <https://console.aiven.io>`_, and navigate to your organization > project > Aiven for PostgreSQL service.
 2. On the **Overview** page of your service, select **Service settings** from the sidebar.
 3. On the **Service settings** page, navigate to the **Advanced configuration** section and select **Configure**.
-4. In the **Advanced configuration** window, select **Add configuration options**, add the ``pgaudit.featureEnabled`` parameter, set it to ``true``, and select **Save configuration**.
+4. In the **Advanced configuration** window, select **Add configuration options**, add the ``pgaudit.featureEnabled`` parameter, set it to ``false``, and select **Save configuration**.
 
 Disable with Aiven API
 ~~~~~~~~~~~~~~~~~~~~~~
 
-You can use the `curl` command line tool to interact with :doc:`the Aiven API </docs/tools/api>`. Call the `ServiceUpdate <https://api.aiven.io/doc/#tag/Service/operation/ServiceUpdate>`_ endpoint to update your service's configuration by passing ``{"pgaudit.featureEnabled": "true"}`` in the ``user_config`` object.
+You can use the `curl` command line tool to interact with :doc:`the Aiven API </docs/tools/api>`. Call the `ServiceUpdate <https://api.aiven.io/doc/#tag/Service/operation/ServiceUpdate>`_ endpoint to update your service's configuration by passing ``{"pgaudit.featureEnabled": "false"}`` in the ``user_config`` object.
 
 .. code-block:: bash
 
@@ -317,7 +315,7 @@ You can use the `curl` command line tool to interact with :doc:`the Aiven API </
       --data
          '{
             "user_config": {
-               "pgaudit.featureEnabled": "true"
+               "pgaudit.featureEnabled": "false"
             }
          }'
 
@@ -337,7 +335,7 @@ Disable on a database
 
    .. code-block:: bash
 
-      ALTER DATABASE DATABASE_NAME set pgaudit.featureEnabled = 'on'
+      ALTER DATABASE DATABASE_NAME set pgaudit.featureEnabled = 'off'
 
 Disable for a user
 ''''''''''''''''''
@@ -348,7 +346,7 @@ Disable for a user
 
    .. code-block:: bash
 
-      ALTER ROLE ROLE_NAME SET pgaudit.featureEnabled = 'on'
+      ALTER ROLE ROLE_NAME SET pgaudit.featureEnabled = 'off'
 
 Disable on a DB for a user
 ''''''''''''''''''''''''''
@@ -359,13 +357,13 @@ Disable on a DB for a user
 
    .. code-block:: bash
 
-      ALTER ROLE ROLE_NAME IN DATABASE DATABASE_NAME SET pgaudit.featureEnabled = 'on'
+      ALTER ROLE ROLE_NAME IN DATABASE DATABASE_NAME SET pgaudit.featureEnabled = 'off'
 
 Disable with Aiven CLI
 ~~~~~~~~~~~~~~~~~~~~~~
 
-You can use the :doc:`Aiven CLI client </docs/tools/cli>` to interact with :doc:`the Aiven API </docs/tools/api>`. Run the :ref:`avn service update <avn-cli-service-update>` command to update your service by setting the ``pgaudit.featureEnabled`` parameter's value to ``true``.
+You can use the :doc:`Aiven CLI client </docs/tools/cli>` to interact with :doc:`the Aiven API </docs/tools/api>`. Run the :ref:`avn service update <avn-cli-service-update>` command to update your service by setting the ``pgaudit.featureEnabled`` parameter's value to ``false``.
 
 .. code-block:: bash
 
-   avn service update -c pgaudit.featureEnabled=true SERVICE_NAME
+   avn service update -c pgaudit.featureEnabled=false SERVICE_NAME
