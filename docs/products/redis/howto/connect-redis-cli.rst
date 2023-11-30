@@ -31,12 +31,13 @@ Execute the following from a terminal window:
 
     redis-cli -u REDIS_URI
 
-
 This code connects to the Redis®* database.
 
-To check the connection is working, execute the following code::
+To check the connection is working, execute the following code:
 
-    INFO
+.. code::
+ 
+   INFO
 
 The command returns all the Redis parameters:
 
@@ -50,14 +51,18 @@ The command returns all the Redis parameters:
     redis_mode:standalone
     ...
 
-To set a key, execute the following command::
+To set a key, execute the following command:
 
-    SET mykey mykeyvalue123
+.. code::
+
+   SET mykey mykeyvalue123
 
 The command should output a confirmation ``OK`` statement. 
 
-To retrieve the key value, execute the following command::
+To retrieve the key value, execute the following command:
 
-    GET mykey
+.. code::
+   
+   GET mykey
 
 The result is the value of the key, in the above example ``"mykeyvalue123"``.

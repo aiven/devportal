@@ -66,27 +66,38 @@ In this example, the ``aiven_database`` field is updated to the service-specific
         database_name = "<DATABASE_NAME>"
     }
 
-2. View a list of all resources in the state file::
+2. View a list of all resources in the state file:
 
-    terraform state list
+   .. code::
 
-3. Remove the resource from the control of Terraform::
+      terraform state list
 
-    terraform state rm aiven_database
+3. Remove the resource from the control of Terraform:
+   
+   .. code::
+   
+      terraform state rm aiven_database
 
-.. tip::
-    Use the ``-dry-run`` flag to preview the changes without applying them.
+   .. tip::
+    
+      Use the ``-dry-run`` flag to preview the changes without applying them.
 
-4. Add the resource back to Terraform by importing it as a new resource::
+4. Add the resource back to Terraform by importing it as a new resource:
 
-    terraform import aiven_pg_database project_name/service_name/db_name
+   .. code::
+     
+      terraform import aiven_pg_database project_name/service_name/db_name
 
-5. Check that the import is going to run as you expect::
+5. Check that the import is going to run as you expect:
+   
+   .. code::
 
-    terraform plan
+      terraform plan
 
-6. Apply the new configuration::
-
-    terraform apply
+6. Apply the new configuration:
+   
+   .. code::
+     
+      terraform apply
 
 You can follow these steps to update the other resources that were deprecated in version 3 of the provider.

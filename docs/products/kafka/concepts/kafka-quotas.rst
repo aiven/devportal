@@ -1,7 +1,7 @@
 Quotas in Aiven for Apache Kafka®
 ====================================
 
-Quotas ensure fair resource allocation, stability, and efficiency in your Kafka cluster. In Aiven for Apache Kafka®, you can :doc:`add quotas <../howto/manage-quotas>` to limit the data or requests exchanged by producers and consumers within a specific period, preventing issues like broker overload, network congestion, and service disruptions caused by excessive or malicious traffic. You can effectively manage resource consumption and ensure optimal user performance by implementing quotas. You can add and manage quotas using `Aiven Console <https://console.aiven.io/>`_ and `Aiven API <https://api.aiven.io/doc/>`_. 
+Quotas ensure fair resource allocation, stability, and efficiency in your Kafka cluster. In Aiven for Apache Kafka®, you can :doc:`add quotas </docs/products/kafka/howto/manage-quotas>` to limit the data or requests exchanged by producers and consumers within a specific period, preventing issues like broker overload, network congestion, and service disruptions caused by excessive or malicious traffic. You can effectively manage resource consumption and ensure optimal user performance by implementing quotas. You can add and manage quotas using `Aiven Console <https://console.aiven.io/>`_ and `Aiven API <https://api.aiven.io/doc/>`_. 
 
 Using quotas offer several benefits:
 
@@ -25,11 +25,11 @@ Client ID and users in quotas
 --------------------------------
 **Client ID** and **User** are two types of entities that can be used to enforce quotas in Kafka.
 
-**Client ID** 
-  A Client ID is a unique identifier assigned to each client application or producer/consumer instance that connects to a Kafka cluster. It helps track the activity and resource usage of individual clients. When configuring quotas, you can set limits based on the Client ID, allowing you to control the amount of resources (such as network bandwidth or CPU) a specific client can utilize.
+**Client ID:** 
+A Client ID is a unique identifier assigned to each client application or producer/consumer instance that connects to a Kafka cluster. It helps track the activity and resource usage of individual clients. When configuring quotas, you can set limits based on the Client ID, allowing you to control the amount of resources (such as network bandwidth or CPU) a specific client can utilize.
 
-**Users**
-  A User represents the authenticated identity of a client connecting to a cluster. With authentication mechanisms like SASL, users are associated with specific connections. By setting quotas based on Users, resource limits can be enforced per-user. 
+**Users:**
+A User represents the authenticated identity of a client connecting to a cluster. With authentication mechanisms like SASL, users are associated with specific connections. By setting quotas based on Users, resource limits can be enforced per-user. 
 
 Quotas enforcement 
 -------------------
@@ -39,10 +39,7 @@ When a client exceeds its quota, the broker calculates the necessary delay to br
 
 Quota violations are swiftly detected using short measurement windows, typically 30 windows of 1 second each. This ensures timely correction and prevents bursts of traffic followed by long delays, providing a better user experience.
 
-For more information, refer to `Enforcement <https://kafka.apache.org/documentation>`_ in the Apache Kafka® official documentation.
-
-.. seealso:: 
-    * :doc:`How to add and manage quotas <../howto/manage-quotas>`
+For more information, see `Enforcement <https://kafka.apache.org/documentation>`_ in the Apache Kafka® official documentation and :doc:`How to add and manage quotas </docs/products/kafka/howto/manage-quotas>`
 
 
 Further reading

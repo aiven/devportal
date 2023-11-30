@@ -12,13 +12,17 @@ Aiven for Redis®* uses SSL encrypted connections by default. This is shown by t
 
     You can find the ``Service URI`` on `Aiven console <https://console.aiven.io/>`_.
 
-Since **Redis 6**, the ``redis-cli`` tool itself supports SSL connections; therefore, you can connect directly to your service using::
+Since **Redis 6**, the ``redis-cli`` tool itself supports SSL connections; therefore, you can connect directly to your service using:
+
+.. code::
 
     redis-cli -u rediss://username:password@host:port
 
-Alternatively, you can use the third-party `Redli tool <https://github.com/IBM-Cloud/redli>`_::
+Alternatively, you can use the third-party `Redli tool <https://github.com/IBM-Cloud/redli>`_:
 
-    redli -u rediss://username:password@host:port
+.. code::
+
+   redli -u rediss://username:password@host:port
 
 
 Not every Redis client supports SSL-encrypted connections.

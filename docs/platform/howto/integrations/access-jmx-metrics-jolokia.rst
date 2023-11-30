@@ -1,5 +1,3 @@
-Jolokia
-
 Access JMX metrics via Jolokia
 ===============================
 

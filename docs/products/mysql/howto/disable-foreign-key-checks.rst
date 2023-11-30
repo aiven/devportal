@@ -1,9 +1,11 @@
 Disable foreign key checks
 ==========================
 
-All Aiven for MySQL® services have foreign key checks enabled by default helping in keeping referential integrity across tables. However, you might want to disable it for a particular session. For example, when migrating to an Aiven for MySQL you may face errors related to foreign key violations similar to::
+All Aiven for MySQL® services have foreign key checks enabled by default helping in keeping referential integrity across tables. However, you might want to disable it for a particular session. For example, when migrating to an Aiven for MySQL you may face errors related to foreign key violations similar to:
 
-  ERROR 3780 (HY000) at line 11596: Referencing column 'g_id' and referenced column 'g_id' in foreign key constraint 'FK_33b11dcfac6148578da087b07c2f388f' are incompatible.
+.. code::
+  
+   ERROR 3780 (HY000) at line 11596: Referencing column 'g_id' and referenced column 'g_id' in foreign key constraint 'FK_33b11dcfac6148578da087b07c2f388f' are incompatible.
 
 The following explains how to temporarily disable Aiven for MySQL foreign key checking for the duration of a session.
 

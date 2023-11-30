@@ -7,9 +7,11 @@ To connect to the cluster, you'll need ``service_uri``, which you can find eithe
 
 We strongly recommend using environment variables for credential information. A good way to do this is to use ``dotenv``. You will find installation and usage instructions `on its library's project page <https://github.com/motdotla/dotenv>`_, but in short, you need to create ``.env`` file in the project and assign ``SERVICE_URI`` inside of this file.
 
-Add the require line to the top of your file::
+Add the require line to the top of your file:
 
-    require("dotenv").config()
+.. code::
+   
+   require("dotenv").config()
 
 Now you can refer to the value of ``service_uri`` as ``process.env.SERVICE_URI`` in the code.
 

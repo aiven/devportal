@@ -17,9 +17,11 @@ Variable                Description
 Pre-requisites
 ''''''''''''''
 
-Get the ``go-redis/redis`` library::
+Get the ``go-redis/redis`` library:
 
-    go get github.com/go-redis/redis/v8
+.. code::
+   
+   go get github.com/go-redis/redis/v8
 
 Code
 ''''

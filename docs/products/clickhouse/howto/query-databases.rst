@@ -26,17 +26,23 @@ The requests that you run through the query editor rely on the permissions grant
 Examples of queries
 ^^^^^^^^^^^^^^^^^^^
 
-Retrieve a list of current databases::
+Retrieve a list of current databases:
 
-    SHOW DATABASES
+.. code::
 
-Count rows::
+   SHOW DATABASES
 
-    SELECT COUNT(*) FROM transactions.accounts
+Count rows:
 
-Create a new role::
+.. code:: 
 
-    CREATE ROLE accountant
+   SELECT COUNT(*) FROM transactions.accounts
+
+Create a new role:
+
+.. code:: 
+
+   CREATE ROLE accountant
 
 .. _play-iu:
 

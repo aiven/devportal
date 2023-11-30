@@ -170,9 +170,9 @@ In a client library
 
 To configure the consistency level in a client library, add an extra parameter or object to define the consistency level on your software component before running a particular query.
 
-.. topic:: Example::
-    
-    In Python, you can specify ``consistency_level`` as a parameter for the ``SimpleStatement`` object.
+.. topic:: Example:
+   
+   In Python, you can specify ``consistency_level`` as a parameter for the ``SimpleStatement`` object.
 
    .. code-block:: bash
     

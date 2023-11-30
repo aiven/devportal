@@ -6,9 +6,11 @@ This example connects to an Aiven for Apache Cassandra® service from Python as 
 Pre-requisites
 ''''''''''''''
 
-Install the ``cassandra-driver`` library::
+Install the ``cassandra-driver`` library:
 
-    pip install cassandra-driver
+.. code::
+ 
+   pip install cassandra-driver
 
 Variables
 '''''''''

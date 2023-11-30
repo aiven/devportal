@@ -44,6 +44,10 @@ def parse_pages(html_build_dir):
                 for admonition in elements.select('div.admonition'):
                     admonition.decompose()
 
+                # remove code block
+                for code in elements.select('div.highlight-shell.notranslate'):
+                    code.decompose()
+
                 # remove tables of contents
                 for toc in elements.select('div.toctree-wrapper'):
                     toc.decompose()
