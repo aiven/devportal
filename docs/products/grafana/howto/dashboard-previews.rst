@@ -11,21 +11,17 @@ The dashboard previews feature is an opt-in beta feature available in Grafana 9.
 Enable dashboard previews
 -------------------------
 
-Follow these steps to enable dashboard previews for your Aiven for Grafana service:
+To enable dashboard previews for your Aiven for Grafana service, follow these steps:
 
-1. Log in to the `Aiven Console <https://console.aiven.io/>`_.
-2. On the **Services** page, click the Grafana service for which you want to enable dashboard previews. 
-3. On the **Services overview** page, scroll down to the **Advanced configuration** section. 
-4. Click the **Change** button.
-5. In the **Edit advanced configuration** pop-up screen, turn the toggle on next to ``dashboad_previews_enabled`` to enable the feature. 
-6. Click the **Save advanced configuration** button. You will notice the status next to ``dashboad_previews_enabled`` change from ``not synced`` to ``synced``. 
-
-.. image:: /images/products/grafana/enable-dashboard-previews.png
-    :alt: Enable dashboard previews in Advanced configuration
-
-7. Using the **Service URI**, open the Grafana login page. 
-8. Enter the username and password, and click **Log in**. 
-9.  Click **Dashboards** on the left side menu, and select the grid layout to view dashboard previews of all the dashboards. Dashboard previews are rendered as thumbnails and can be sorted alphabetically. 
+1. Log in to `Aiven Console <https://console.aiven.io/>`_, and select the Aiven for Grafana service where you want to enable dashboard previews.
+2. Click **Service settings** on the sidebar. 
+3. Scroll to the **Advanced configuration** section, and select **Configure**.
+4. On the **Advanced configuration** screen, click **Add configuration options**.
+5. Locate ``dashboard_previews_enabled`` using the search bar and set it to the **Enabled** position.
+6. Select **Save configuration**. You will see the status next to ``dashboard_previews_enabled`` change from ``not synced`` to ``synced``.
+7. Go to the **Overview** page and use the **Service URI** to open the Grafana login page.
+8. Enter your username and password, then click **Log in**.
+9. To view dashboard previews, click **Dashboards** in the left menu and choose the grid layout. Previews will appear as thumbnails and can be organized alphabetically.
 
 .. image:: /images/products/grafana/dashboard-previews-on-grafana.png
     :alt: Dashboard previews on Grafana
