@@ -14,7 +14,7 @@ Discover the Aiven for PostgreSQL® audit logging feature and its capabilities. 
 About audit logging
 -------------------
 
-The audit logging feature allows you to monitor and track activities within rellational database systems, which helps you cope with unauthorized access, data breaches, or fraudulent activities ensuring data integrity and security. Using audit logs enables you to maintain compliance with regulations and standards set by a government or an industry. The audit logging is also a tool for investigating and resolving data discrepancies, troubleshooting system errors, and optimizing database performance. For more applications of the audit logging feature, check out :ref:`Why use the audit logging <why-use-pgaudit>`.
+The audit logging feature allows you to monitor and track activities within relational database systems, which helps you cope with unauthorized access, data breaches, or fraudulent activities ensuring data integrity and security. Using audit logs enables you to maintain compliance with regulations and standards set by a government or an industry. The audit logging is also a tool for investigating and resolving data discrepancies, troubleshooting system errors, and optimizing database performance. For more applications of the audit logging feature, check out :ref:`Why use the audit logging <why-use-pgaudit>`.
 
 .. _why-use-pgaudit:
 
@@ -98,7 +98,7 @@ When enabled on your service, the audit logging can be configured so that it add
 ``pgaudit.log`` (default: none)
   Classes of statements to be logged by the session audit logging
 ``pgaudit.log_catalog`` (default: on)	
-  Whether the session audit logging should be enabled for a statement with all relations in pg_catalog
+  Whether the session audit logging should be enabled for a statement with all relations in ``pg_catalog``
 ``pgaudit.log_client``
   Whether log messages should be visible to a client process, such as ``psql``
 ``pgaudit.log_level``
@@ -125,10 +125,10 @@ When enabled on your service, the audit logging can be configured so that it add
 Collect and visualize logs
 ''''''''''''''''''''''''''
 
-You can access the collected logs by :ref:`integrating with a service monitoring and analyzing logs, for example, Aiven for OpenSearch® <enable-log-integration>`. Finally, to visuaize your logs, you can use :doc:`OpenSearch Dashboards </docs/products/opensearch/dashboards>`.
+You can access the collected logs by :ref:`integrating with a service monitoring and analyzing logs, for example, Aiven for OpenSearch® <enable-log-integration>`. Finally, to visualize your logs, you can use :doc:`OpenSearch Dashboards </docs/products/opensearch/dashboards>`.
 
-Disable if no longer neeeded
-''''''''''''''''''''''''''''
+Disable if no longer needed
+'''''''''''''''''''''''''''
 
 To disable the audit logging on your service (database), you can use `Aiven Console <https://console.aiven.io>`_, `Aiven API <https://api.aiven.io/doc/>`_, or :doc:`Aiven CLI </docs/tools/cli>` for :ref:`modifying your service's advanced configuration <disable-pgaudit>`. 
 

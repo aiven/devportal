@@ -33,7 +33,7 @@ Prerequisites
 * ``avnadmin`` superuser role
 * Depending on what interface you'd like to use to interact with the feature
   * Access to `Aiven Console <https://console.aiven.io>`_
-  * `Aiven API <https://www.postman.com/aiven-apis/workspace/aiven/collection/21112408-1f6306ef-982e-49f8-bdae-4d9fdadbd6cd>`_
+  * `Aiven API <https://api.aiven.io/doc/>`_ (`Aiven API Postman collection <https://www.postman.com/aiven-apis/workspace/aiven/collection/21112408-1f6306ef-982e-49f8-bdae-4d9fdadbd6cd>`_)
   * Terraform
   * :doc:`Aiven CLI client </docs/tools/cli>`
   * SQL
