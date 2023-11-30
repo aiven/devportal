@@ -18,7 +18,7 @@ The audit logging feature allows you to monitor and track activities within rela
 * Compliance with regulations and standards required either by an industry or a government
 * Accountability (by user and change tracking)
 * Improved incident management and root cause analysis
-* :doc:`Other </docs/products/postgresql/concepts/pg-audit-logging>`
+* :doc:`And more </docs/products/postgresql/concepts/pg-audit-logging>`
 
 .. seealso::
 
@@ -73,6 +73,19 @@ You can use the `curl` command line tool to interact with :doc:`the Aiven API </
             }
          }'
 
+Enable with Aiven CLI
+~~~~~~~~~~~~~~~~~~~~~
+
+You can use the :doc:`Aiven CLI client </docs/tools/cli>` to interact with :doc:`the Aiven API </docs/tools/api>`. Run the :ref:`avn service update <avn-cli-service-update>` command to update your service by setting the ``pgaudit.featureEnabled`` parameter's value to ``true``.
+
+.. code-block:: bash
+
+   avn service update -c pgaudit.featureEnabled=true SERVICE_NAME
+
+.. important::
+
+   By default, audit logging does not emit any audit records. To trigger a logging operation and start receiving audit records, configure audit logging parameters as detailed in :ref:`Configure audit logging <configure-audit-logging>`.
+
 Enable with SQL
 ~~~~~~~~~~~~~~~
 
@@ -112,19 +125,6 @@ Enable on a DB for a user
    .. code-block:: bash
 
       ALTER ROLE ROLE_NAME IN DATABASE DATABASE_NAME SET pgaudit.featureEnabled = 'on'
-
-Enable with Aiven CLI
-~~~~~~~~~~~~~~~~~~~~~
-
-You can use the :doc:`Aiven CLI client </docs/tools/cli>` to interact with :doc:`the Aiven API </docs/tools/api>`. Run the :ref:`avn service update <avn-cli-service-update>` command to update your service by setting the ``pgaudit.featureEnabled`` parameter's value to ``true``.
-
-.. code-block:: bash
-
-   avn service update -c pgaudit.featureEnabled=true SERVICE_NAME
-
-.. important::
-
-   By default, audit logging does not emit any audit records. To trigger a logging operation and start receiving audit records, configure audit logging parameters as detailed in :ref:`Configure audit logging <configure-audit-logging>`.
 
 .. _configure-audit-logging:
 
@@ -174,6 +174,15 @@ You can use `Aiven API <https://api.aiven.io/doc/>`_ to configure audit logging 
             }
           }'
 
+Configure with Aiven CLI
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can use the :doc:`Aiven CLI client </docs/tools/cli>` to configure audit logging on your service by running the following command:
+
+.. code-block:: bash
+
+   avn service update -c pgaudit.PARAMETER_NAME=PARAMETER_VALUE SERVICE_NAME
+
 Configure with SQL
 ~~~~~~~~~~~~~~~~~~
 
@@ -214,17 +223,8 @@ Configure on a DB for a user
 
       ALTER ROLE ROLE_NAME IN DATABASE DATABASE_NAME SET pgaudit.log_PARAMETER_NAME = PARAMETER_VALUE
 
-Configure with Aiven CLI
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-You can use the :doc:`Aiven CLI client </docs/tools/cli>` to configure audit logging on your service by running the following command:
-
-.. code-block:: bash
-
-   avn service update -c pgaudit.PARAMETER_NAME=PARAMETER_VALUE SERVICE_NAME
-
-Use session audit logging
--------------------------
+Configure session audit logging
+-------------------------------
 
 Session audit logging allows recording detailed logs of all SQL statements and commands executed during a database session in the system's backend.
 
@@ -232,7 +232,13 @@ To enable the session audit logging, run the following query:
 
 .. code-block:: bash
 
-   set pgaudit.log = 'write, ddl';
+   SELECT aiven_extras.set_pgaudit_parameter('log', 'DATABASE_NAME', 'CLASSES_OF_STATEMENTS_TO_BE_LOGGED');
+
+.. topic:: Example
+
+   .. code-block:: bash
+
+      SELECT aiven_extras.set_pgaudit_parameter('log', 'defaultdb', 'read, ddl');
 
 .. seealso::
 
@@ -243,10 +249,32 @@ Access your logs
 
 To access audit logs from Aiven for PostgreSQL, you need to create an integration with a service that allows monitoring and analyzing logs. For that purpose, you can seamlessly integrate Aiven for PostgreSQL with an Aiven for OpenSearch® service.
 
-Use the console
-~~~~~~~~~~~~~~~
+Use Aiven Console
+~~~~~~~~~~~~~~~~~
 
 For instructions on how to integrate your service with Aiven for OpenSearch, see :ref:`Enable log integration <enable-log-integration>`.
+
+Use Aiven API
+~~~~~~~~~~~~~
+
+Call the `ServiceIntegrationCreate <https://api.aiven.io/doc/#tag/Service_Integrations/operation/ServiceIntegrationCreate>`_ endpoint passing the following parameters in the request body:
+
+* ``integration_type``: ``logs``
+* ``source_service``: the name of an Aiven for PostgreSQL
+* ``destination_service``: the name of an Aiven for OpenSearch service
+
+.. code-block:: bash
+
+   curl --request POST \
+     --url https://api.aiven.io/v1/project/{project_name}/integration \
+     --header 'Authorization: Bearer REPLACE_WITH_YOUR_BEARER_TOKEN' \
+     --header 'content-type: application/json' \
+     --data
+        '{
+           "integration_type": "logs",
+           "source_service": "REPLACE_WITH_POSTGRESQL_SERVICE_NAME",
+           "destination_service": "REPLACE_WITH_OPENSEARCH_SERVICE_NAME",
+        }'
 
 Use Aiven CLI
 ~~~~~~~~~~~~~
@@ -269,7 +297,7 @@ Visualize your logs
 
 Since your logs are already available in Aiven for OpenSearch, you can use :doc:`OpenSearch Dashboards </docs/products/opensearch/dashboards>` to visualize them. Check out how to access OpenSearch Dashboards in :ref:`Access OpenSearch Dashboards <access-os-dashboards>`. For instructions on how to start using OpenSearch Dashboards, see :doc:`Getting started </docs/products/opensearch/dashboards/getting-started>`.
 
-To preview your audit logs in OpenSearch Dashboards, use the filtering tool by selecting ``AIVEN_AUDIT_FROM``, setting its value to `pg`, and applying the filter.
+To preview your audit logs in OpenSearch Dashboards, use the filtering tool: select ``AIVEN_AUDIT_FROM``, set its value to `pg`, and apply the filter.
 
 .. image:: /images/products/postgresql/pgaudit-logs-in-os-dashboards.png
    :alt: Audit logging logs in OpenSearch Dashboards
@@ -319,6 +347,15 @@ You can use the `curl` command line tool to interact with :doc:`the Aiven API </
             }
          }'
 
+Disable with Aiven CLI
+~~~~~~~~~~~~~~~~~~~~~~
+
+You can use the :doc:`Aiven CLI client </docs/tools/cli>` to interact with :doc:`the Aiven API </docs/tools/api>`. Run the :ref:`avn service update <avn-cli-service-update>` command to update your service by setting the ``pgaudit.featureEnabled`` parameter's value to ``false``.
+
+.. code-block:: bash
+
+   avn service update -c pgaudit.featureEnabled=false SERVICE_NAME
+
 Disable with SQL
 ~~~~~~~~~~~~~~~~
 
@@ -358,12 +395,3 @@ Disable on a DB for a user
    .. code-block:: bash
 
       ALTER ROLE ROLE_NAME IN DATABASE DATABASE_NAME SET pgaudit.featureEnabled = 'off'
-
-Disable with Aiven CLI
-~~~~~~~~~~~~~~~~~~~~~~
-
-You can use the :doc:`Aiven CLI client </docs/tools/cli>` to interact with :doc:`the Aiven API </docs/tools/api>`. Run the :ref:`avn service update <avn-cli-service-update>` command to update your service by setting the ``pgaudit.featureEnabled`` parameter's value to ``false``.
-
-.. code-block:: bash
-
-   avn service update -c pgaudit.featureEnabled=false SERVICE_NAME
