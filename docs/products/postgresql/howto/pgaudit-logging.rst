@@ -139,7 +139,7 @@ You can configure audit logging by setting `its parameters <https://github.com/p
 
 .. topic:: Audit logging parameters
 
-   For information on all the parameters available for configuring audit logging, see `Settings <https://github.com/pgaudit/pgaudit/tree/6afeae52d8e4569235bf6088e983d95ec26f13b7#settings>`_.
+   For information on all the parameters available for configuring audit logging, see `Settings <https://github.com/pgaudit/pgaudit/tree/6afeae52d8e4569235bf6088e983d95ec26f13b7>`_.
 
 Configure in Aiven Console
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -236,7 +236,7 @@ To enable the session audit logging, run the following query:
 
 .. seealso::
 
-   For more details on how to set up, configure, and use session audit logging, check out `Session audit logging <https://github.com/pgaudit/pgaudit/tree/6afeae52d8e4569235bf6088e983d95ec26f13b7#session-audit-logging>`_.
+   For more details on how to set up, configure, and use session audit logging, check out `Session audit logging <https://github.com/pgaudit/pgaudit/tree/6afeae52d8e4569235bf6088e983d95ec26f13b7>`_.
 
 Access your logs
 ----------------
