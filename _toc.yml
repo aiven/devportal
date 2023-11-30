@@ -873,6 +873,13 @@ entries:
         title: HowTo
         entries:
         - file:  docs/products/dragonfly/howto/test-howto
+      - file: docs/products/dragonfly/howto/list-migrate-data
+        title: Data migration
+        entries:
+        - file: docs/products/dragonfly/howto/migrate-aiven-redis-df-console
+          title: Migrate Aiven for Redis
+        - file: docs/products/mysql/howto/migrate-ext-redis-df-console
+          title: Migrate external Redis
 
 
 
