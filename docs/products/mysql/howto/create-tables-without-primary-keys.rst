@@ -8,14 +8,17 @@ If your Aiven for MySQL® service was created after 2020-06-03, by default it do
 3. In the **Overview** page of your service, scroll down to the **Advanced configuration** section.
 4. Check the **Advanced configuration** section for the ``mysql.sql_require_primary_key`` parameter and its status.
 
-If ``mysql.sql_require_primary_key`` is enabled, your Aiven for MySQL does not allow you to create new tables without primary keys. Attempts to create tables without primary keys will result in the following error message::
-
-    Unable to create or change a table without a primary key, when the system variable 'sql_require_primary_key' is set. Add a primary key to the table or unset this variable to avoid this message. Note that tables without a primary key can cause performance problems in row-based replication, so please consult your DBA before changing this setting.
-
-If creating tables without primary keys is prevented and the table that you're trying to create is known to be small, you may override this setting and create the table anyway. 
-
+   If ``mysql.sql_require_primary_key`` is enabled, your Aiven for MySQL does not allow you to create new tables without primary keys. Attempts to create tables without primary keys will result in the following error message:
+   
+   .. code::
+      
+      Unable to create or change a table without a primary key, when the system variable 'sql_require_primary_key' is set. Add a primary key to the table or unset this variable to avoid this message. Note that tables without a primary key can cause performance problems in row-based replication, so please consult your DBA before changing this setting.
+   
+   If creating tables without primary keys is prevented and the table that you're trying to create is known to be small, you may override this setting and create the table anyway. 
+   
 .. seealso::
-    You can read more about the MySQL replication in the :ref:`Replication overview <myslq-replication-overview>` article.
+   
+   You can read more about the MySQL replication in the :ref:`Replication overview <myslq-replication-overview>` article.
 
 You have two options to create the tables:
 
