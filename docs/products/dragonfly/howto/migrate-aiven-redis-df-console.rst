@@ -9,7 +9,7 @@ Prerequisites
 -------------------------------------------
 Before starting the migration from an Aiven for Redis service:
 
-* Confirm the Aiven for Redis service is accessible over the Internet. For more information, see  `Public internet access </docs/platform/howto/public-access-in-vpc>`.
+* Confirm the Aiven for Redis service is accessible over the Internet. For more information, see :doc:`Public internet access </docs/platform/howto/public-access-in-vpc>`.
 * Make sure to note the Aiven project and Aiven for Redis service names for migration in the Aiven Console.
 
 The Aiven Console migration tool automatically uses connection details like the hostname, port, and credentials linked to the selected Aiven for Redis service.
@@ -24,18 +24,19 @@ Database migration steps
 4. Select **Import database** to initiate the import process.
 
 
+
 Step 1: Configure
 '''''''''''''''''''
 Begin the migration process by selecting **Import an Aiven for Redis service**:
 
-1. From the drop-down menu, select the **Project name**.
-2. From the subsequent drop-down, select the **Service name** of the Aiven for Redis database you intend to migrate.
-4. Select **Get started** to proceed with the migration.
+1. From the drop-down menu, select your project name.
+2. From the subsequent drop-down, select the Aiven for Redis database you intend to migrate.
+3. Click **Get started** to proceed with the migration.
 
 
 Step 2: Validation
 ''''''''''''''''''''''
-The Aiven Console will automatically attempt to validate the database configurations for the selected Aiven for Redis service. Select **Run validation** to validate the connection. 
+The Aiven Console will automatically attempt to validate the database configurations for the selected Aiven for Redis service. Click **Run validation** to validate the connection. 
 
 .. warning:: 
 
@@ -46,7 +47,7 @@ Step 3: Migration
 ''''''''''''''''''''
 Once all the necessary checks have been completed successfully, you can proceed with the migration process.
 
-* Select **Start migration** to initiate th data migration process to Aiven for Dragonfly.
+* Click **Start migration** to initiate th data migration process to Aiven for Dragonfly.
 
 
 
@@ -55,8 +56,8 @@ Step 4: Replication
 
 While the migration is in progress:
 
-* You can close the migration wizard by selecting **Close window** and return later to check the progress. You can keep track of the migration progress by checking the service overview page.
-* To stop the migration, select **Stop migration**. This action will preserve the data already migrated to Aiven.
+* You can close the migration wizard by clicking **Close window** and return later to check the progress. You can keep track of the migration progress by checking the service overview page.
+* To stop the migration, clicking **Stop migration**. This action will preserve the data already migrated to Aiven.
 
 .. important::
 
@@ -85,8 +86,9 @@ Upon successful migration:
 
    Avoid system updates or configuration changes during active replication to prevent unintentional migrations.
 
-.. topic:: Replication Mode Active?
 
+.. topic:: Replication mode active?
+   
    Your data is now synchronized to Aiven for Dragonfly, with new writes to the source database being continuously synced.
 
 

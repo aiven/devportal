@@ -26,8 +26,9 @@ Before starting the migration process, ensure you have the following:
 .. note::
    Instances such as AWS ElastiCache for Redis that do not have public IP addresses will require a VPC and peering connection to establish a migration.
 
-Migrating a Redis Database to Aiven for Dragonfly
--------------------------------------------------
+
+Database migration steps
+--------------------------
 
 To migrate a Redis database to Aiven for Dragonfly:
 
@@ -38,14 +39,14 @@ To migrate a Redis database to Aiven for Dragonfly:
 
 
 Step 1: Configure
------------------
+``````````````````
 Start by reviewing the database migration configuration guidelines. Confirm compatibility with Dragonfly and proceed as follows:
 
 * Select **Import an external Redis database**.
 * Click **Get started** to begin the migration.
 
 Step 2: Validation
-------------------
+````````````````````
 Enter the required details to establish a connection with your source Redis database:
 
 * **Hostname:** The public hostname, connection string, or IP address for the database connection.
@@ -58,14 +59,14 @@ Enter the required details to establish a connection with your source Redis data
    Address any issues that arise to ensure a smooth migration. Note that not all components of your Redis setup will be migrated. User accounts, ACLs, configurations, and active commands or scripts will not be transferred, but all database data and its content will be.
 
 Step 3: Migration
------------------
+````````````````````
 
 Once all the necessary checks have been completed successfully, you can proceed with the migration process.
 
 * Select **Start migration** to initiate th data migration process to Aiven for Dragonfly.
 
 Migration in progress
-```````````````````````
+'''''''''''''''''''''''
 
 During the migration, you can:
 
@@ -79,17 +80,19 @@ During the migration, you can:
    * Stopping this migration will immediately halt the ongoing replication process, preserving the data already transferred to Aiven. You have the option to  initiate a new database migration at any time in the future, which will overwrite the entire database and its contents on Aiven with the latest data from the source.
    * Avoid actions that could disrupt the replication process, such as changing replication configurations or firewall settings.
 
-Step 4 - Close
---------------
+Step 4 - Close and post-migration steps
+``````````````````````````````````````````
 Once the migration is complete:
 
 * Click **Close connection** to end replication. 
 * Click **Keep replicating** to maintain ongoing data synchronization.
 
 .. warning:: 
-    System updates or any configuration changes during replication may restart nodes and trigger a new database migration. Before making any modifications, confirm that replication is either complete or stopped.
+   
+   System updates or any configuration changes during replication may restart nodes and trigger a new database migration. Before making any modifications, confirm that replication is either complete or stopped.
 
 .. topic:: Replication Mode Active?
+
    Newly added data to the original Redis database will continue to sync with your Aiven for Dragonfly service until you decide to stop replication.
 
 
@@ -97,7 +100,7 @@ Once the migration is complete:
 
 Related Reading
 ---------------
-* :doc:`Migrating to Aiven for Dragonfly </docs/products/dragonfly/howto/migrate-external-redis>`
-* :doc:`Aiven for Dragonfly documentation </docs/products/dragonfly/index>`
+* Migrating to Aiven for Dragonfly 
+* Aiven for Dragonfly documentation </docs/products/dragonfly/index>`
 
 

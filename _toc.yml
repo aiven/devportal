@@ -868,18 +868,18 @@ entries:
       - file: docs/products/dragonfly/concepts
         title: Concepts
         entries:
-        - file:  docs/products/dragonfly/concepts/test-concept
+        - file: docs/products/dragonfly/concepts/test-concept
       - file: docs/products/dragonfly/howto
         title: HowTo
         entries:
-        - file:  docs/products/dragonfly/howto/test-howto
-      - file: docs/products/dragonfly/howto/list-migrate-data
-        title: Data migration
-        entries:
-        - file: docs/products/dragonfly/howto/migrate-aiven-redis-df-console
-          title: Migrate Aiven for Redis
-        - file: docs/products/mysql/howto/migrate-ext-redis-df-console
-          title: Migrate external Redis
+        - file: docs/products/dragonfly/howto/test-howto
+        - file: docs/products/dragonfly/howto/list-migrate-data
+          title: Data migration
+          entries:
+          - file: docs/products/dragonfly/howto/migrate-aiven-redis-df-console
+            title: Migrate Aiven for Redis
+          - file: docs/products/dragonfly/howto/migrate-ext-redis-df-console
+            title: Migrate external Redis
 
 
 
