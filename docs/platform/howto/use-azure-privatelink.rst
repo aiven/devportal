@@ -186,9 +186,9 @@ To acquire connection information for your service component using Azure Private
 
 * For SSL connection information for your service component using Azure Private Link, run the following command:
 
-.. code-block:: bash
+  .. code-block:: bash
 
-   avn service connection-info UTILITY_NAME SERVICE_NAME -p PRIVATELINK_CONNECTION_ID
+     avn service connection-info UTILITY_NAME SERVICE_NAME -p PRIVATELINK_CONNECTION_ID
 
 .. topic:: Where
 
@@ -198,9 +198,9 @@ To acquire connection information for your service component using Azure Private
 
 * For SASL connection information for Aiven for Apache Kafka® service components using Azure Private Link, run the following command:
 
-.. code-block:: bash
+  .. code-block:: bash
 
-   avn service connection-info UTILITY_NAME SERVICE_NAME -p PRIVATELINK_CONNECTION_ID -a sasl
+     avn service connection-info UTILITY_NAME SERVICE_NAME -p PRIVATELINK_CONNECTION_ID -a sasl
 
 .. topic:: Where
 
