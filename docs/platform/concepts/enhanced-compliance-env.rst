@@ -50,24 +50,31 @@ Environment:
 
 The necessary peering information to enable the peer from our end. This differs between clouds:
 
-AWS:
-    * AWS account ID
-    * VPC ID
-GCP:
-    * GCP Project ID
-    * VPC Network Name
-Azure:
-    * Azure Tenant ID
-    * Azure App ID
-    * Azure VNet ID
+**AWS:**
+
+* AWS account ID
+* VPC ID
+
+**GCP:**
+
+* GCP Project ID
+* VPC Network Name
+
+**Azure:**
+
+* Azure Tenant ID
+* Azure App ID
+* Azure VNet ID
 
 What compliances are covered?
 --------------------------------
 Although not exhaustive, Aiven is capable of supporting both the Health Insurance Portability and
 Accountability Act (HIPAA) and the Payment Card Industry Data Security Standard (PCI DSS)
-compliances. If you require compliance beyond these please contact our sales department so we
+compliances.
+
+If you require compliance beyond these please contact our sales department so we
 can better understand your specific needs. Additionally, we also offer an alternative deployment
-option -- :doc:`Bring Your Own Cloud (BYOC) </docs/platform/concepts/byoc>`.
+option. See :doc:`Bring Your Own Cloud (BYOC) </docs/platform/concepts/byoc>`.
 
 Migrating
 ----------------
