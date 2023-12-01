@@ -3,7 +3,7 @@ Manage project and service notifications
 
 To stay up to date with the latest information about services and projects, you can set service and project contacts to receive email notifications. Notifications include information about plan sizes, performance, outages, and scheduled maintenance. 
 
-The contacts for a project can be set to the admin and operators of that project, or to specific email addresses. Project contacts receive notifications about the project. They also receive the notifications for all services, unless you set a separate service contact for a service.
+The contacts for a project can be set to the admin and operators of that project (this is the default), or to specific email addresses. Project contacts receive notifications about the project. They also receive the notifications for all services, unless you set a separate service contact for a service.
 
 Service contacts by default are the project contacts. However, if you set other email addresses as serivce contacts for a service, email notifications will only be sent to those contacts for that specific service.
 
@@ -23,11 +23,11 @@ Set project contacts
 Set service contacts 
 """""""""""""""""""""
 
-#. In the service, open the menu in the top right.
+#. In the service, click **Service settings**.
 
-#. Select **Change service contacts**.
+#. In the **Service status** section, open the menu in the top right and select **Change service contacts**.
 
-#. Select the contacts that you want to receive email notifications.
+#. Select the contacts that you want to receive email notifications for this service.
 
 #. Click **Save**. 
 
@@ -42,7 +42,7 @@ To get notifications in Slack, you can add a Slack channel's or DM email address
    .. note::
        If you don't see the email integrations option, ask the owner or admin of the workspace or organization to `allow incoming emails <https://slack.com/help/articles/360053335433-Manage-incoming-emails-for-your-workspace-or-organization>`_.
 
-#. In the Aiven Console, go to the project that you want to get notifications for.
+#. In the `Aiven Console <https://console.aiven.io/>`_, go to the project or service that you want to get notifications for.
 
 #. Follow the instructions to set the Slack email address as a :ref:`project contact <set-project-contacts>` or :ref:`service contact <set-service-contacts>`.
 
