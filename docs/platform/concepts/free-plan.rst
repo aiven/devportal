@@ -24,9 +24,10 @@ Free plans include:
 * Backups
 * Integrations between different Aiven services including free, paid, and trial services
 * AWS hosting in a limited number of regions:
-    * EMEA: aws-eu-north-1, aws-eu-west-1, aws-eu-west-2, aws-eu-west-3
-    * Americas: aws-us-east-1, aws-us-east-2, aws-us-west-2, aws-ca-central-1
-    * APAC: aws-ap-south-1
+
+  * EMEA: aws-eu-north-1, aws-eu-west-1, aws-eu-west-2, aws-eu-west-3
+  * Americas: aws-us-east-1, aws-us-east-2, aws-us-west-2, aws-ca-central-1
+  * APAC: aws-ap-south-1
 
 There are some limitations of the free plan services:
 
