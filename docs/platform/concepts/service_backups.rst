@@ -173,7 +173,7 @@ Aiven for ClickHouse backups contain database lists, table schemas, table conten
 
 .. seealso::
 
-    For more information on Aiven for ClickHouse backups, see :ref:`Backup and restore <backup-and-restore>`.
+    For more information on Aiven for ClickHouse backups, see :doc:`Backup and restore </docs/products/clickhouse/concepts/disaster-recovery>`.
 
 Access to backups
 -----------------
