@@ -1,5 +1,5 @@
-Get started with Dragonfly
-==================================
+Get started with Aiven for Dragonfly®
+=======================================
 
 The first step in using Aiven for Redis®* is to create a service. You can do so either using the `Aiven Web Console <https://console.aiven.io/>`_ or the `Aiven CLI <https://github.com/aiven/aiven-client>`_.
 
@@ -20,13 +20,13 @@ Create a Dragonfly service using the Aiven CLI
 1. Determine the service plan, cloud provider, and region you want to use for your Redis®* service.
 2. Run the following command to create a Redis®* service named demo-Redis:
 
-::
+.. code:: 
 
-      avn service create demo-Redis       \
-         --service-type redis             \
-         --cloud CLOUD_AND_REGION         \
-         --plan PLAN                      \
-         --project PROJECT_NAME 
+    avn service create dragonfly-harshini-test   \
+        --service-type dragonfly                 \
+        --cloud google-europe-north1             \
+        --plan startup-4                         \
+        --project dev-sandbox
 
 .. note::
     There are additional options available to you, which you can view by running the following commands:
@@ -35,10 +35,10 @@ Create a Dragonfly service using the Aiven CLI
     * For type-specific options: ``avn service types -v`` 
 
 
-Connect to Aiven for Redis
+Connect to Aiven for Dragonfly
 -----------------------------
 
-Learn how to connect to Aiven for Redis using different programming languages or through CLI: 
+Learn how to connect to Aiven for Dragonfly using different programming languages or through CLI: 
 
 
 
