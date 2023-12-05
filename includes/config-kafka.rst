@@ -1,4 +1,9 @@
 
+``additional_backup_regions``
+-----------------------------
+*array*
+
+**Additional Cloud Regions for Backup Replication** 
 
 
 
@@ -15,6 +20,14 @@
 *array*
 
 **IP filter** Allow incoming connections from CIDR address block, e.g. '10.20.0.0/16'
+
+
+
+``service_log``
+---------------
+*['boolean', 'null']*
+
+**Service logging** Store logs for the service so that they are available in the HTTP API and console.
 
 
 
@@ -641,6 +654,12 @@
 *integer*
 
 **consumer.request.timeout.ms** The maximum total time to wait for messages for a request if the maximum number of messages has not yet been reached
+
+``name_strategy_validation``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*boolean*
+
+**name.strategy.validation** If true, validate that given schema is registered under expected subject name by the used name strategy when producing messages.
 
 ``simpleconsumer_pool_size_max``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
