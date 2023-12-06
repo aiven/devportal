@@ -125,14 +125,6 @@
 
 
 
-``additional_backup_regions``
------------------------------
-*array*
-
-**Additional Cloud Regions for Backup Replication** 
-
-
-
 ``m3_version``
 --------------
 *['string', 'null']*
