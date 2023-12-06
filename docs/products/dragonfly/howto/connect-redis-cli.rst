@@ -4,7 +4,7 @@ Connect with ``redis-cli``
 This example demonstrates how to connect to Dragonfly using ``redis-cli``, which supports nearly all the same commands as it does for Redis®. For more information, see `Dragonfly CLI <https://www.dragonflydb.io/docs/development/cli>`_.
 
 Variables
-'''''''''
+-----------
 
 Replace the following placeholders in the code sample with the appropriate values:
 
@@ -15,14 +15,14 @@ Variable                Description
 ==================      =============================================================
 
 Pre-requisites
-''''''''''''''
+------------------
 
 Ensure the following before proceeding:
 
 1. The ``redis-cli`` client installed. This can be installed as part of the Redis server installation or as a standalone client. Refer to the `Redis Installation Guide <https://redis.io/docs/getting-started/tutorial/>`_ for more information.
 
 Code
-''''
+-----
 
 To connect to Dragonfly, execute the following command in a terminal window:
 
