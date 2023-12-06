@@ -36,14 +36,14 @@ Create a Dragonfly service using the Aiven CLI
 
 
 Connect to Aiven for Dragonfly
------------------------------
+-------------------------------
 
 Learn how to connect to Aiven for Dragonfly using different programming languages or through CLI: 
 
 
 
-Explore other resources for Aiven for Redis
-----------------------------------------------
+Explore other resources for Aiven for Dragonfly
+-------------------------------------------------
 
 
 * Learn about how Aiven for Redis supports high availability.

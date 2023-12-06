@@ -872,7 +872,15 @@ entries:
       - file: docs/products/dragonfly/howto
         title: HowTo
         entries:
-        - file:  docs/products/dragonfly/howto/test-howto
+        - file: docs/products/dragonfly/howto/test-howto
+        - file: docs/products/dragonfly/howto/list-code-samples
+          title: Connect to service
+          entries:
+            - file: docs/products/dragonfly/howto/connect-redis-cli
+            - file: docs/products/dragonfly/howto/connect-go
+            - file: docs/products/dragonfly/howto/connect-node
+            - file: docs/products/dragonfly/howto/connect-python
+
 
 
 
