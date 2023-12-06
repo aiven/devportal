@@ -7,16 +7,18 @@ The Basic support tier is provided to all customers on paid plans. If you are us
 
 In addition to the Basic support tier, we offer three additional tiers that offer faster response times, phone support, and other services. For more information about support plans, please see `Aiven support details page <https://aiven.io/support-services>`_ or contact sales@Aiven.io to discuss the paid support options.
 
-You can create and track support tickets in the `Aiven Console <https://console.aiven.io/>`_ following the instructions on this page. For other services included in your support tier - such as business reviews or disaster recovery planning - contact the sales team at sales@Aiven.io.
+You can create and track support requests in the Aiven Support Portal following the instructions on this page. For other services included in your support tier - such as business reviews or disaster recovery planning - contact the sales team at sales@Aiven.io.
 
-Create a support ticket
-~~~~~~~~~~~~~~~~~~~~~~~~
+Create a support request
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To create support tickets in the `Aiven Console <https://console.aiven.io/>`_:
+To create support requests: 
 
-#. Click **Support**.
+#. In the `Aiven Console <https://console.aiven.io/>`_, click **Support**.
 
-#. Click **Create ticket**. 
+#. Click **Go to Support Portal**.
+
+#. Click **New Request**. 
 
 #. Enter a **Subject** and detailed **Description** of the issue. 
 
@@ -31,8 +33,6 @@ To create support tickets in the `Aiven Console <https://console.aiven.io/>`_:
 
 #. Select the affected project, service, and a severity level.
 
-#. Click **Create ticket**. 
+#. Click **Submit**. 
 
-The new support ticket is sent to our support team for review and you also receive a confirmation email. `Response times <https://aiven.io/support-services>`_ vary by case severity and support tier. 
-
-You can track the status of your tickets from the project support center, but information and updates are sent directly to your email address. You can update your ticket's details and communicate with the support team by replying to these emails. If you are on a paid support tier, your account team is also notified.
+You can track the status of your request in the portal. `Response times <https://aiven.io/support-services>`_ vary by case severity and support tier. If you are on a paid support tier, your account team is also notified about the request.
