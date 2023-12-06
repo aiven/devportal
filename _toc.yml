@@ -869,6 +869,7 @@ entries:
         title: Concepts
         entries:
         - file:  docs/products/dragonfly/concepts/test-concept
+        - file:  docs/products/dragonfly/concepts/ha-dragonfly
       - file: docs/products/dragonfly/howto
         title: HowTo
         entries:

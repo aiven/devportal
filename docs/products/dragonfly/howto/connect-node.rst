@@ -1,7 +1,7 @@
 Connect with NodeJS
 =====================
 
-This example demonstrates how to connect to Dragonfly from NodeJS using the `ioredis` library, which is officially supported and compatible with Dragonfly. For more information, see `Dragonfly SDKs <https://www.dragonflydb.io/docs/development/sdks>`_.
+This example demonstrates how to connect to Dragonfly from NodeJS using the ``ioredis`` library, which is officially supported and compatible with Dragonfly. For more information, see `Dragonfly SDKs <https://www.dragonflydb.io/docs/development/sdks>`_.
 
 Variables
 ----------
@@ -17,7 +17,7 @@ Variable                Description
 Pre-requisites
 ---------------
 
-Install the `ioredis` library:
+Install the ``ioredis`` library:
 
 .. code::
 
@@ -26,7 +26,7 @@ Install the `ioredis` library:
 Code
 -----
 
-Create a new file named `index.js`, add the following content and replace the ``DRAGONFLY_URI`` placeholder with your Dragonfly instance's connection URI:
+Create a new file named ``index.js``, add the following content and replace the ``DRAGONFLY_URI`` placeholder with your Dragonfly instance's connection URI:
 
 .. code::
 
@@ -44,9 +44,9 @@ Create a new file named `index.js`, add the following content and replace the ``
         process.exit(1);
    });
 
-This code connects to Dragonfly, sets a key named `key` with the value `hello world` (without expiration), then retrieves and prints the value of this key.
+This code connects to Dragonfly, sets a key named ``key`` with the value ``hello world`` (without expiration), then retrieves and prints the value of this key.
 
-Run the Code
+Run the code
 --------------
 
 To execute the code, use the following command in your terminal:

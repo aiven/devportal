@@ -63,17 +63,17 @@ Create a new file named ``main.go`` and add the following content, replacing the
 
 This code connects to Dragonfly, sets a key named ``key`` with the value ``hello world`` (with no expiration), and then retrieves and prints the value of this key.
 
-Run the Code
-'''''''''''''
+Run the code
+--------------
 
 To run the code, use the following command in your terminal:
 
 .. code::
 
-    go run main.go
+   go run main.go
 
 If everything is set up correctly, the output should be:
 
 .. code::
 
-    The value of key is: hello world
+   The value of key is: hello world
