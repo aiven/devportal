@@ -42,15 +42,15 @@ Configure SAML on Auth0
 
 10. In the **Settings** section for the Application Callback URL, remove the existing configuration and add the following field mapping configuration:
 
-.. code-block:: shell
-
-  {
-    "email": "email",
-    "first_name": "first_name",
-    "identity": "email",
-    "last_name": "last_name",
-    "mapUnknownClaimsAsIs": true
-  }
+    .. code-block:: shell
+   
+      {
+        "email": "email",
+        "first_name": "first_name",
+        "identity": "email",
+        "last_name": "last_name",
+        "mapUnknownClaimsAsIs": true
+      }
 
 11. Click **Enable** and **Save**.
 
@@ -81,8 +81,9 @@ Go back to the **Authentication** page in `Aiven Console <https://console.aiven.
    * **Signup URL**: For users that don't have an Aiven user account and need to create a new Aiven user linked to this IdP.
    * **Account link URL**: For users that already have an Aiven user account to link their existing Aiven user with the configured IdP. 
   
-  .. note::
-    If you set up a SAML authentication method before and are now switching to a new IdP, existing users need to log in with the new account link URL to finish the setup.
+.. note::
+
+   If you set up a SAML authentication method before and are now switching to a new IdP, existing users need to log in with the new account link URL to finish the setup.
 
 Troubleshooting
 ---------------
