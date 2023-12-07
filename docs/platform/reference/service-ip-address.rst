@@ -30,7 +30,7 @@ where
 
 .. note::
    
-   * Second-level domain part of ``aivencloud.com`` might change to another name in the future if the domain becomes unavailable for updates.
+   Second-level domain part of ``aivencloud.com`` might change to another name in the future if the domain becomes unavailable for updates.
 
 .. important::
 
