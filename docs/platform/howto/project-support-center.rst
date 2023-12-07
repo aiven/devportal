@@ -1,5 +1,5 @@
-Submit a support ticket
-=========================
+Support 
+========
 
 The Basic support tier is provided to all customers on paid service plans. If you are using a free service, you can ask questions in the Aiven Community Forum. 
 
@@ -8,7 +8,7 @@ Aiven also offers three additional support tiers with faster response times, pho
 You can create and track support tickets in the Aiven Support Center. For other services included in your support tier - such as business reviews or disaster recovery planning - contact the sales team at sales@Aiven.io.
 
 Create a support ticket
-~~~~~~~~~~~~~~~~~~~~~~~~~ 
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. In the `Aiven Console <https://console.aiven.io/>`_, click **Support**.
 
