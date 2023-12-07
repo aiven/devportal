@@ -1,26 +1,32 @@
-Get support in the Aiven Console
-=================================
+Submit a support ticket
+=========================
 
-Aiven is committed to providing excellent and responsive support to all of our customers. We monitor our services 24/7 and rapidly address any anomalies.
+The Basic support tier is provided to all customers on paid service plans. If you are using a free service, you can ask questions in the Aiven Community Forum. 
 
-The Basic support tier is provided to all customers on paid plans. If you are using a free service, you can ask questions in the Aiven Community Forum. 
+Aiven also offers three additional support tiers with faster response times, phone support, and other services. For more information about these tiers, check out the `Aiven support details page <https://aiven.io/support-services>`_ or contact sales@Aiven.io.
 
-In addition to the Basic support tier, we offer three additional tiers that offer faster response times, phone support, and other services. For more information about support plans, please see `Aiven support details page <https://aiven.io/support-services>`_ or contact sales@Aiven.io to discuss the paid support options.
+You can create and track support tickets in the Aiven Support Center. For other services included in your support tier - such as business reviews or disaster recovery planning - contact the sales team at sales@Aiven.io.
 
-You can create and track support requests in the Aiven Support Portal following the instructions on this page. For other services included in your support tier - such as business reviews or disaster recovery planning - contact the sales team at sales@Aiven.io.
-
-Create a support request
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-To create support requests: 
+Create a support ticket
+~~~~~~~~~~~~~~~~~~~~~~~~~ 
 
 #. In the `Aiven Console <https://console.aiven.io/>`_, click **Support**.
 
-#. Click **Go to Support Portal**.
+#. Click **Go to Aiven Support Center**.
 
-#. Click **New Request**. 
+#. Click **Create ticket**. 
 
-#. Enter a **Subject** and detailed **Description** of the issue. 
+#. Enter a **Subject**.
+
+#. Select a **Severity** level:
+
+    * Low: The primary functions are working, but some secondary functionality is not working.
+    * High: The primary functions are working, but severely limited or slow.
+    * Critical: The primary functions are not working and it's not possible to find workarounds.
+
+#. Select the affected **Product**.
+
+#. Enter a detailed **Description** of the issue. 
 
    .. note::
 
@@ -31,8 +37,10 @@ To create support requests:
     * Any error messages
     * Any languages or frameworks you are using
 
-#. Select the affected project, service, and a severity level.
+#. Optional: Upload a file, such as a screenshot.
 
 #. Click **Submit**. 
 
-You can track the status of your request in the portal. `Response times <https://aiven.io/support-services>`_ vary by case severity and support tier. If you are on a paid support tier, your account team is also notified about the request.
+If you are on a paid support tier, your account team is also notified when you submit a ticket. 
+
+You can track the status of your tickets on the **My tickets** page. `Response times <https://aiven.io/support-services>`_ vary by case severity and support tier. 
