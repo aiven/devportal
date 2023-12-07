@@ -36,4 +36,4 @@ Limitations
 * Before downgrading your service plan to Hobbyist or Startup-1, where dashboard previews are unavailable, you need first to disable it on the current service. 
 
 .. seealso::
-    For more information on Dashboard previews, see `Grafana documentation <https://grafana.com/docs/grafana/latest/search/dashboard-previews/>`_. 
+    For more information on Dashboard previews, see `Grafana documentation <https://grafana.com/docs/grafana/latest/dashboards/>`_. 

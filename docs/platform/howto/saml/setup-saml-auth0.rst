@@ -87,4 +87,4 @@ Go back to the **Authentication** page in `Aiven Console <https://console.aiven.
 Troubleshooting
 ---------------
 
-If you have issues, you can use the `SAML Tracer browser extension <https://addons.mozilla.org/firefox/addon/saml-tracer/>`_ to check the process step by step. 
+If you have issues, you can use the `SAML Tracer browser extension <https://addons.mozilla.org/en-US/firefox/addon/saml-tracer>`_ to check the process step by step. 
