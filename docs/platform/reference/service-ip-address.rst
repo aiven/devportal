@@ -26,7 +26,15 @@ where
 
 * ``<SERVICE_NAME>`` is the name of the service
 * ``<PROJECT_NAME>`` is the name of the project
-* ``*`` is a variable component consisting of one or more letters of alphanumeric subdomains
+* ``*`` is a variable component consisting of one or more levels of alphanumeric subdomains for the purpose of load balancing between DNS zones.
+
+.. note::
+   
+   * Second-level domain part of ``aivencloud.com`` might change to another name in the future if the domain becomes unavailable for updates.
+
+.. important::
+
+   Always use a fully-qualified domain name returned by Aiven API. Make sure your code doesn't put any constraints on the domain part or format of the returned service hostname.
 
 .. Note::
 
