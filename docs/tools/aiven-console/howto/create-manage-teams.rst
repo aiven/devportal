@@ -7,7 +7,7 @@ Create and manage teams
 .. important::
    **Teams are becoming groups**
     
-   :doc:`Groups </docs/platform/howto/manage-groups>` are an easier way to control access to your organization's projects and services for a group of users. 
+   Groups are an easier way to control access to your organization's projects and services for a group of users. 
    See :ref:`migrate_teams_to_groups`.
 
 Create a new team

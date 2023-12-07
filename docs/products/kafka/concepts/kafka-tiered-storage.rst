@@ -9,7 +9,9 @@ Tiered storage in Aiven for Apache Kafka® enables more effective data managemen
 
 
 .. note:: 
+
     - Tiered storage for Aiven for Apache Kafka® is supported starting from Apache Kafka® version 3.6.
+    
     - Tiered storage for Aiven for Apache Kafka® is not available for startup-2 plans.
 
 
