@@ -59,6 +59,12 @@
 /docs/products/opensearch/howto/list-upgrade                            /docs/products/opensearch/howto
 /docs/products/opensearch/howto/upgrade-to-opensearch                  /docs/products/opensearch/concepts/opensearch-vs-elasticsearch
 /docs/tutorials                                                        /docs/integrations
+/docs/platform/howto/list-support                                      /docs/platform/howto/project-support-center
+/docs/platform/howto/change-support-tier                               /docs/platform/howto/project-support-center
+/docs/platform/concepts/service-level-agreement                        /docs/platform/howto/project-support-center
+
+
+
 
 # Moved to https://aiven.io/developer
 /docs/tools/terraform/reference/cookbook                                        https://aiven.io/developer/terraform
