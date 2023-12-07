@@ -33,7 +33,6 @@ Aiven for Dragonfly® offers different plans with varying levels of high availab
      - Custom backup features based on user requirements.
      - Custom based on user requirements
 
-Check out our `Plans & Pricing <https://aiven.io/pricing?product=dragonfly>`_ page for more information.
 
 Failure handling
 ----------------
