@@ -26,7 +26,7 @@ where
 
 * ``<SERVICE_NAME>`` is the name of the service
 * ``<PROJECT_NAME>`` is the name of the project
-* ``*`` is a variable component
+* ``*`` is a variable component consisting of one or more letters of alphanumeric subdomains
 
 .. Note::
 
