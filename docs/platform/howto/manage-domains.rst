@@ -4,7 +4,7 @@ Manage domains
 .. important:: 
     The domains feature is an :doc:`early availability feature </docs/platform/concepts/beta_services>`. To use it, enable the managed users :doc:`feature preview </docs/platform/howto/feature-preview>` in your user profile.
 
-Verified domains let you manage users in your organization and set up security policies.
+Verified domains let you manage users in your organization.
 
 There are two ways you can verify a domain:
 
