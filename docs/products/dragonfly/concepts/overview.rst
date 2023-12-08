@@ -1,7 +1,7 @@
 Aiven for Dragonfly® overview
 ================================
 
-Aiven for Dragonfly® is a revolutionary **high-scale, Redis®* compatible in-memory database service** tailored for businesses that demand large-scale, ultra-low latency database clusters. Dragonfly is a significant advancement in efficiently managing large amounts of data, optimizing processing and storage capabilities.
+Aiven for Dragonfly is an advanced, **high-scale, and Redis®* compatible in-memory database service** that can be easily deployed in your preferred cloud environment. It provides lightning-fast data storage and retrieval capabilities, making it ideal for businesses that handle large-scale data operations.
 
 Why Dragonfly?
 --------------
