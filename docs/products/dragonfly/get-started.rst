@@ -36,7 +36,6 @@ Create a Dragonfly service using the Aiven CLI
 
 
 Connect to Aiven for Dragonfly
------------------------------------
 
 Learn how to connect to Aiven for Dragonfly using different programming languages:
 
@@ -47,7 +46,6 @@ Learn how to connect to Aiven for Dragonfly using different programming language
 
 
 Explore other resources for Aiven for Dragonfly
---------------------------------------------------
 
 * Learn about how Aiven for Dragonfly supports high availability.
 * Migrate data from Aiven for Dragonfly to Aiven for Dragonfly.

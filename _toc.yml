@@ -868,11 +868,25 @@ entries:
       - file: docs/products/dragonfly/concepts
         title: Concepts
         entries:
-        - file: docs/products/dragonfly/concepts/test-concept
+
+        - file:  docs/products/dragonfly/concepts/test-concept
+        - file:  docs/products/dragonfly/concepts/ha-dragonfly
+
+       
+
       - file: docs/products/dragonfly/howto
         title: HowTo
         entries:
         - file: docs/products/dragonfly/howto/test-howto
+
+        - file: docs/products/dragonfly/howto/list-code-samples
+          title: Connect to service
+          entries:
+            - file: docs/products/dragonfly/howto/connect-redis-cli
+            - file: docs/products/dragonfly/howto/connect-go
+            - file: docs/products/dragonfly/howto/connect-node
+            - file: docs/products/dragonfly/howto/connect-python
+
         - file: docs/products/dragonfly/howto/list-migrate-data
           title: Data migration
           entries:
@@ -880,6 +894,7 @@ entries:
             title: Migrate Aiven for Redis
           - file: docs/products/dragonfly/howto/migrate-ext-redis-df-console
             title: Migrate external Redis
+
 
 
 
