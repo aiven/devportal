@@ -33,7 +33,7 @@ The following steps need to be executed on the Aiven for PostgreSQL instance to 
 
       CREATE EXTENSION IF NOT EXISTS pg_stat_statements;
 
-5. The `pgwatch2 documentation`_ recommends to enable timing of database I/O calls by setting the PostgreSQL configuration parameter ``track_io_timing`` (see :doc:`/docs/products/postgresql/reference/list-of-advanced-params`).
+5. The `pgwatch2 documentation`_ recommends to enable timing of database I/O calls by setting the PostgreSQL configuration parameter ``track_io_timing`` (see :doc:`/docs/products/postgresql/reference/advanced-params`).
 
    .. warning::
        
