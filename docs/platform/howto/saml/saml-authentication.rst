@@ -28,9 +28,9 @@ SAML Authentication methods are configured at the organization level:
 
 #. In the organization, click **Admin**.
 
-#. Select **Authentication**.
+#. Select **Identity providers**.
 
-#. Click on **Add authentication method**.
+#. Click **Add identity provider**.
 
 #. Enter a name and select SAML. You can also select the groups that users will be added to when they sign up or log in through this authentication method.
 
