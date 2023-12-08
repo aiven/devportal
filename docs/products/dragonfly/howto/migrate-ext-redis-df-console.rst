@@ -6,6 +6,16 @@ Redis is an in-memory data structure store commonly used as a database, cache, m
 .. important::
    The migration of databases from Google Cloud Memorystore for Redis is not supported at this time.
 
+Compatibility overview
+-----------------------
+Before migrating an external Redis database to Aiven for Dragonfly, carefully review your current Redis setup.
+
+* **Review database setup:** Examine your Redis database's data structures, storage patterns, and configurations.Identify any unique features, custom settings, and specific configurations.
+
+* **API compatibility:** While Dragonfly closely mirrors Redis API commands, there may be variations, especially with newer versions of Redis. For detailed insights on command compatibility, refer to the `Dragonfly API compatibility documentation <https://www.dragonflydb.io/docs/command-reference/compatibility>`_.
+
+
+
 Prerequisites
 -------------
 

@@ -1,16 +1,25 @@
 Migrate Aiven for Redis®* to Aiven for Dragonfly®
 ==============================================================
 
-Transition Aiven for Redis®* databases seamlessly to Aiven for Dragonfly using the `Aiven Console <https://console.aiven.io/>`_. This guide provides detailed instructions for the migration process. 
+Transition Aiven for Redis® databases seamlessly to Aiven for Dragonfly using the `Aiven Console <https://console.aiven.io/>`_. This article provides detailed instructions for the migration process.
 
-The Aiven Console migration tool facilitates a smooth data transfer to Aiven for Dragonfly, enhancing scalability and performance for data infrastructure.
+The Aiven Console migration tool simplifies the process of migrating databases to the Aiven for Dragonfly managed service.
+
+Compatibility overview
+-----------------------
+Before migrating an external Redis database to Aiven for Dragonfly, carefully review your current Redis setup.
+
+* **Review database setup:** Examine your Redis database's data structures, storage patterns, and configurations.Identify any unique features, custom settings, and specific configurations.
+
+* **API compatibility:** While Dragonfly closely mirrors Redis API commands, there may be variations, especially with newer versions of Redis. For detailed insights on command compatibility, refer to the `Dragonfly API compatibility documentation <https://www.dragonflydb.io/docs/command-reference/compatibility>`_.
+
 
 Prerequisites 
 -------------------------------------------
 Before starting the migration from an Aiven for Redis service:
 
 * Confirm the Aiven for Redis service is accessible over the Internet. For more information, see :doc:`Public internet access </docs/platform/howto/public-access-in-vpc>`.
-* Make sure to note the Aiven project and Aiven for Redis service names for migration in the Aiven Console.
+* Make a note of the Aiven project and Aiven for Redis service names for migration in the Aiven Console.
 
 The Aiven Console migration tool automatically uses connection details like the hostname, port, and credentials linked to the selected Aiven for Redis service.
 
@@ -18,7 +27,7 @@ The Aiven Console migration tool automatically uses connection details like the 
 Database migration steps
 --------------------------
 
-1. Log into `Aiven Console <https://console.aiven.io/>`_.
+1.  Log in to the `Aiven Console <https://console.aiven.io/>`_ and select the Aiven for Dragonfly service to which you want to migrate your Redis database.
 2. Navigate to **Service settings** from the sidebar.
 3. Scroll to the **Service management** section and use the ellipsis to view additional menu options.
 4. Select **Import database** to initiate the import process.
@@ -36,7 +45,7 @@ Begin the migration process by selecting **Import an Aiven for Redis service**:
 
 Step 2: Validation
 ''''''''''''''''''''''
-The Aiven Console will automatically attempt to validate the database configurations for the selected Aiven for Redis service. Click **Run validation** to validate the connection. 
+The `Aiven Console <https://console.aiven.io/>`_ will automatically attempt to validate the database configurations for the selected Aiven for Redis service. Click **Run validation** to validate the connection. 
 
 .. warning:: 
 
@@ -59,15 +68,15 @@ While the migration is in progress:
 * You can close the migration wizard by clicking **Close window** and return later to check the progress. You can keep track of the migration progress by checking the service overview page.
 * To stop the migration, clicking **Stop migration**. This action will preserve the data already migrated to Aiven.
 
-.. important::
+  .. important::
 
- To prevent conflicts during replication:
+   To prevent conflicts during replication:
 
-* Avoid writing to tables in the target database that is currently undergoing migration.
-* Do not manually change the replication settings of the source database.
-* Refrain from making any changes that could interfere with the connection between the source and target databases, such as updating firewall rules or trusted sources.
+   * Avoid writing to tables in the target database that is currently undergoing migration.
+   * Do not manually change the replication settings of the source database.
+   * Refrain from making any changes that could interfere with the connection between the source and target databases, such as updating firewall rules or trusted sources.
 
-.. note::
+  .. note::
 
    If the migration fails, investigate, resolve, and restart the migration using **Start over**.
 
@@ -95,8 +104,8 @@ Upon successful migration:
 Related reading
 ---------------
 
-- :doc:`Aiven for Redis®* documentation </docs/products/redis/get-started>`
-- Aiven for Dragonfly documentation 
+* :doc:`Aiven for Redis®* documentation </docs/products/redis/get-started>`
+* :doc:`Aiven for Dragonfly documentation </docs/products/dragonfly/get-started>`
 
 
 

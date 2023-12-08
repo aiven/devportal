@@ -6,31 +6,33 @@ Aiven for Dragonfly® is a revolutionary **high-scale, Redis®* compatible in-me
 Why Dragonfly?
 --------------
 
-Dragonfly is designed to overcome the limitations of Redis OSS, especially under high-load conditions. While renowned for its speed and adaptability as an in-memory data repository, Redis encounters limitations when handling large-scale data management and achieving high throughput. Dragonfly addresses these challenges by enabling vertical scaling, optimizing hardware resources, and supporting larger memory footprints.
+Dragonfly is designed to overcome the limitations of Redis Open Source Software (Redis OSS), especially under high-load conditions. While renowned for its speed and adaptability as an in-memory data repository, Redis encounters limitations when handling large-scale data management and achieving high throughput. Dragonfly addresses these challenges by enabling vertical scaling, optimizing hardware resources, and supporting larger memory footprints.
 
 With Aiven for Dragonfly, businesses can handle workloads exceeding 1TB with more than 10 times the throughput performance of Redis OSS, along with reduced latency. This makes it an ideal solution for enterprises with growing data needs.
 
-Features and benefits of Aiven for Dragonfly
-------------------------------------------------
+
+Features and benefits
+---------------------
 
 Aiven for Dragonfly offers numerous features and benefits:
 
-* **High-scale Redis compatibility:** It is a seamless drop-in replacement for Redis, capable of handling extensive workloads with enhanced performance.
+* **Redis compatibility at scale:** It is a seamless drop-in replacement for Redis, capable of handling extensive workloads with enhanced performance.
 
 * **Optimized for large-scale operations:** Dragonfly is specifically built to address the scalability and resource utilization limitations of Redis Open Source Software (Redis OSS).
 
-* **Advanced performance:** Thanks to its unique threading model and shared-nothing architecture, Dragonfly achieves vertical scaling that Redis OSS cannot, ensuring more efficient operation under heavy loads.
+* **Advanced performance:** Dragonfly's unique threading model and shared-nothing architecture allow it to scale vertically, enhancing its performance efficiency, especially in environments with heavy data loads.
+
 
 * **Efficient backup and memory management:** Improved snapshot capabilities lead to more efficient memory usage during backups.
 
 * **High availability and replication:** It includes active-passive replication and persistence capabilities, ensuring data reliability and consistency.
 
-* **Ease of integration:** Requires no changes to existing code or infrastructure, offering a straightforward integration process.
+* **Ease of integration:** Dragonfly integrates smoothly with existing systems, requiring no code changes, simplifying the adoption process.
 
-Ways to use Aiven for Dragonfly
------------------------------------
+Use cases
+---------------------
 
-* Aiven for Dragonfly is ideal for businesses requiring large-scale, high-performance in-memory data storage and processing.
+* **Data-intensive enterprises:** Ideal for businesses that necessitate robust, high-performance in-memory data storage and processing capabilities.
 
-* It can be used for applications where Redis OSS's scalability and throughput performance limitations are a concern.
+* **Scaling and performance needs:** Perfectly suited for situations where the need for greater scalability and higher throughput goes beyond what Redis OSS can handle.
 

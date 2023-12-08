@@ -868,17 +868,10 @@ entries:
       - file: docs/products/dragonfly/concepts
         title: Concepts
         entries:
-
-        - file:  docs/products/dragonfly/concepts/test-concept
-        - file:  docs/products/dragonfly/concepts/ha-dragonfly
-
-       
-
+          - file:  docs/products/dragonfly/concepts/ha-dragonfly
       - file: docs/products/dragonfly/howto
         title: HowTo
         entries:
-        - file: docs/products/dragonfly/howto/test-howto
-
         - file: docs/products/dragonfly/howto/list-code-samples
           title: Connect to service
           entries:
