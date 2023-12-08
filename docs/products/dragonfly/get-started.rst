@@ -36,24 +36,19 @@ Create a Dragonfly service using the Aiven CLI
 
 
 Connect to Aiven for Dragonfly
--------------------------------
 
-Learn how to connect to Aiven for Dragonfly using different programming languages or through CLI: 
+Learn how to connect to Aiven for Dragonfly using different programming languages:
 
+* redis-cli
+* Go
+* Node
+* Python
 
 
 Explore other resources for Aiven for Dragonfly
--------------------------------------------------
-
 
 * Learn about how Aiven for Redis supports high availability.
+* Migrate data from Aiven for Redis to Aiven for Dragonfly.
+* Migrate data from external Redis to Aiven for Dragonfly.
 
-* Check how Aiven for Redis supports SSL connections and how can be configured.
 
-* See how Aiven for Redis solves the challenges related to high memory usage and high change rate.
-
-* Learn how estimate the max number of simultaneous connections in Aiven for Redis service.
-
-* Learn about inbuilt support for running Lua scripts in Aiven for Redis service.
-
-* Learn how to benchmark the performance of Aiven for Redis service.
