@@ -47,7 +47,7 @@ If you don't have an organization, click **Create organization** to :doc:`create
 
 Organization and organizational unit settings are available on the **Admin** page. Here you can:
 
-* :doc:`Manage your groups</docs/platform/howto/manage-groups>` 
+* :doc:`Manage your groups </docs/platform/howto/manage-groups>` 
 * Create new projects under an organization or organizational unit
 * Configure :doc:`authentication methods for an organization </docs/platform/howto/list-saml>`
 * View logs of activity such as the adding or removing of users, changing authentication methods, and more

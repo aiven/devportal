@@ -10,85 +10,85 @@ Amazon Web Services
     - Description
   * - Africa
     - ``aws-af-south-1``
-    - Africa, South Africa 
+    - Africa, South Africa: Cape Town
   * - Asia-Pacific
     - ``aws-ap-east-1``
-    - Asia, Hong Kong 
+    - Asia, Hong Kong: Hong Kong
   * - Asia-Pacific
     - ``aws-ap-northeast-1``
-    - Asia, Japan 
+    - Asia, Japan: Tokyo
   * - Asia-Pacific
     - ``aws-ap-northeast-2``
-    - Asia, Korea 
+    - Asia, Korea: Seoul
   * - Asia-Pacific
     - ``aws-ap-northeast-3``
-    - Asia, Japan 
+    - Asia, Japan: Osaka
   * - Asia-Pacific
     - ``aws-ap-south-1``
-    - Asia, India 
+    - Asia, India: Mumbai
   * - Asia-Pacific
     - ``aws-ap-south-2``
-    - Asia, India 
+    - Asia, India: Hyderabad
   * - Asia-Pacific
     - ``aws-ap-southeast-1``
-    - Asia, Singapore 
+    - Asia, Singapore: Singapore
   * - Asia-Pacific
     - ``aws-ap-southeast-3``
-    - Asia, Jakarta 
+    - Asia, Jakarta: Jakarta
   * - Australia
     - ``aws-ap-southeast-2``
-    - Australia, New South Wales 
+    - Australia, New South Wales: Sydney
   * - Australia
     - ``aws-ap-southeast-4``
-    - Australia, Melbourne
+    - Australia, Melbourne: Melbourne
   * - Europe
     - ``aws-eu-central-1``
-    - Europe, Germany 
+    - Europe, Germany: Frankfurt
   * - Europe
     - ``aws-eu-central-2``
-    - Europe, Switzerland 
+    - Europe, Switzerland: Zurich
   * - Europe
     - ``aws-eu-north-1``
-    - Europe, Sweden 
+    - Europe, Sweden: Stockholm
   * - Europe
     - ``aws-eu-south-1``
-    - Europe, Italy 
+    - Europe, Italy: Milan
   * - Europe
     - ``aws-eu-south-2``
-    - Europe, Spain 
+    - Europe, Spain: Madrid
   * - Europe
     - ``aws-eu-west-1``
-    - Europe, Ireland 
+    - Europe, Ireland: Ireland
   * - Europe
     - ``aws-eu-west-2``
-    - Europe, England 
+    - Europe, England: London
   * - Europe
     - ``aws-eu-west-3``
-    - Europe, France 
+    - Europe, France: Paris
   * - Middle East
     - ``aws-me-central-1``
-    - Middle East, UAE 
+    - Middle East, UAE: UAE
   * - Middle East
     - ``aws-me-south-1``
-    - Middle East, Bahrain 
+    - Middle East, Bahrain: Bahrain
   * - North America
     - ``aws-ca-central-1``
-    - Canada, Quebec 
+    - Canada, Quebec: Canada Central
   * - North America
     - ``aws-us-east-1``
-    - United States, Virginia 
+    - United States, Virginia: N. Virginia
   * - North America
     - ``aws-us-east-2``
-    - United States, Ohio 
+    - United States, Ohio: Ohio
   * - North America
     - ``aws-us-west-1``
-    - United States, California 
+    - United States, California: N. California
   * - North America
     - ``aws-us-west-2``
-    - United States, Oregon 
+    - United States, Oregon: Oregon
   * - South America
     - ``aws-sa-east-1``
-    - South America, Brazil 
+    - South America, Brazil: São Paulo
 
 Azure
 -----------------------------------------------------
@@ -100,118 +100,118 @@ Azure
     - Description
   * - Africa
     - ``azure-south-africa-north``
-    - Africa, South Africa 
+    - Africa, South Africa: South Africa North
   * - Asia-Pacific
     - ``azure-eastasia``
-    - Asia, Hong Kong 
+    - Asia, Hong Kong: East Asia
   * - Asia-Pacific
     - ``azure-india-central``
-    - Asia, India 
+    - Asia, India: Central India
   * - Asia-Pacific
     - ``azure-india-south``
-    - Asia, India 
+    - Asia, India: South India
   * - Asia-Pacific
     - ``azure-india-west``
-    - Asia, India 
+    - Asia, India: West India
   * - Asia-Pacific
     - ``azure-japaneast``
-    - Asia, Japan 
+    - Asia, Japan: Japan East
   * - Asia-Pacific
     - ``azure-japanwest``
-    - Asia, Japan 
+    - Asia, Japan: Japan West
   * - Asia-Pacific
     - ``azure-korea-central``
-    - Asia, Korea 
+    - Asia, Korea: Korea Central
   * - Asia-Pacific
     - ``azure-korea-south``
-    - Asia, Korea 
+    - Asia, Korea: Korea South
   * - Asia-Pacific
     - ``azure-southeastasia``
-    - Asia, Singapore 
+    - Asia, Singapore: Southeast Asia
   * - Australia
     - ``azure-australia-central``
-    - Australia, Canberra 
+    - Australia, Canberra: Australia Central
   * - Australia
     - ``azure-australiaeast``
-    - Australia, New South Wales 
+    - Australia, New South Wales: Australia East
   * - Australia
     - ``azure-australiasoutheast``
-    - Australia, Victoria 
+    - Australia, Victoria: Australia Southeast
   * - Europe
     - ``azure-france-central``
-    - Europe, France 
+    - Europe, France: France Central
   * - Europe
     - ``azure-germany-north``
-    - Europe, Germany 
+    - Europe, Germany: Germany North
   * - Europe
     - ``azure-germany-westcentral``
-    - Europe, Germany 
+    - Europe, Germany: Germany West Central
   * - Europe
     - ``azure-northeurope``
-    - Europe, Ireland 
+    - Europe, Ireland: North Europe
   * - Europe
     - ``azure-norway-east``
-    - Europe, Norway 
+    - Europe, Norway: Norway East
   * - Europe
     - ``azure-norway-west``
-    - Europe, Norway 
+    - Europe, Norway: Norway West
   * - Europe
     - ``azure-sweden-central``
-    - Europe, Gävle 
+    - Europe, Gävle: Sweden Central
   * - Europe
     - ``azure-switzerland-north``
-    - Europe, Switzerland 
+    - Europe, Switzerland: Switzerland North
   * - Europe
     - ``azure-uksouth``
-    - Europe, England 
+    - Europe, England: UK South
   * - Europe
     - ``azure-ukwest``
-    - Europe, Wales 
+    - Europe, Wales: UK West
   * - Europe
     - ``azure-westeurope``
-    - Europe, Netherlands 
+    - Europe, Netherlands: West Europe
   * - Middle East
     - ``azure-qatar-central``
-    - Middle East, Doha 
+    - Middle East, Doha: Qatar Central
   * - Middle East
     - ``azure-uae-north``
-    - Middle East, United Arab Emirates 
+    - Middle East, United Arab Emirates: Middle East
   * - North America
     - ``azure-canadacentral``
-    - Canada, Ontario 
+    - Canada, Ontario: Canada Central
   * - North America
     - ``azure-canadaeast``
-    - Canada, Quebec 
+    - Canada, Quebec: Canada East
   * - North America
     - ``azure-centralus``
-    - United States, Iowa 
+    - United States, Iowa: Central US
   * - North America
     - ``azure-eastus``
-    - United States, Virginia 
+    - United States, Virginia: East US
   * - North America
     - ``azure-eastus2``
-    - United States, Virginia 
+    - United States, Virginia: East US 2
   * - North America
     - ``azure-northcentralus``
-    - United States, Illinois 
+    - United States, Illinois: North Central US
   * - North America
     - ``azure-southcentralus``
-    - United States, Texas 
+    - United States, Texas: South Central US
   * - North America
     - ``azure-westcentralus``
-    - United States, Wyoming 
+    - United States, Wyoming: West Central US
   * - North America
     - ``azure-westus``
-    - United States, California 
+    - United States, California: West US
   * - North America
     - ``azure-westus2``
-    - United States, Washington 
+    - United States, Washington: West US 2
   * - North America
     - ``azure-westus3``
-    - United States, Phoenix 
+    - United States, Phoenix: West US 3
   * - South America
     - ``azure-brazilsouth``
-    - South America, Brazil 
+    - South America, Brazil: Brazil South
 
 DigitalOcean
 -----------------------------------------------------
@@ -223,31 +223,31 @@ DigitalOcean
     - Description
   * - Asia-Pacific
     - ``do-blr``
-    - Asia, India 
+    - Asia, India: Bangalore
   * - Asia-Pacific
     - ``do-sgp``
-    - Asia, Singapore 
+    - Asia, Singapore: Singapore
   * - Australia
     - ``do-syd``
-    - Australia, New South Wales 
+    - Australia, New South Wales: Sydney
   * - Europe
     - ``do-ams``
-    - Europe, Netherlands 
+    - Europe, Netherlands: Amsterdam
   * - Europe
     - ``do-fra``
-    - Europe, Germany 
+    - Europe, Germany: Frankfurt
   * - Europe
     - ``do-lon``
-    - Europe, England 
+    - Europe, England: London
   * - North America
     - ``do-nyc``
-    - United States, New York 
+    - United States, New York: New York
   * - North America
     - ``do-sfo``
-    - United States, California 
+    - United States, California: San Francisco
   * - North America
     - ``do-tor``
-    - Canada, Ontario 
+    - Canada, Ontario: Toronto
 
 Google Cloud
 -----------------------------------------------------
@@ -259,109 +259,112 @@ Google Cloud
     - Description
   * - Asia-Pacific
     - ``google-asia-east1``
-    - Asia, Taiwan 
+    - Asia, Taiwan: Taiwan
   * - Asia-Pacific
     - ``google-asia-east2``
-    - Asia, Hong Kong 
+    - Asia, Hong Kong: Hong Kong
   * - Asia-Pacific
     - ``google-asia-northeast1``
-    - Asia, Japan 
+    - Asia, Japan: Tokyo
   * - Asia-Pacific
     - ``google-asia-northeast2``
-    - Asia, Japan 
+    - Asia, Japan: Osaka
   * - Asia-Pacific
     - ``google-asia-northeast3``
-    - Asia, Korea 
+    - Asia, Korea: Seoul
   * - Asia-Pacific
     - ``google-asia-south1``
-    - Asia, India 
+    - Asia, India: Mumbai
   * - Asia-Pacific
     - ``google-asia-south2``
-    - Asia, India 
+    - Asia, India: Delhi
   * - Asia-Pacific
     - ``google-asia-southeast1``
-    - Asia, Singapore 
+    - Asia, Singapore: Singapore
   * - Asia-Pacific
     - ``google-asia-southeast2``
-    - Asia, Indonesia 
+    - Asia, Indonesia: Jakarta
   * - Australia
     - ``google-australia-southeast1``
-    - Australia, New South Wales 
+    - Australia, New South Wales: Sydney
   * - Australia
     - ``google-australia-southeast2``
-    - Australia, Victoria 
+    - Australia, Victoria: Melbourne
   * - Europe
     - ``google-europe-central2``
-    - Europe, Poland 
+    - Europe, Poland: Warsaw
   * - Europe
     - ``google-europe-north1``
-    - Europe, Finland 
+    - Europe, Finland: Finland
   * - Europe
     - ``google-europe-southwest1``
-    - Europe, Madrid 
+    - Europe, Madrid: Spain
   * - Europe
     - ``google-europe-west1``
-    - Europe, Belgium 
+    - Europe, Belgium: Belgium
   * - Europe
     - ``google-europe-west2``
-    - Europe, England 
+    - Europe, England: London
   * - Europe
     - ``google-europe-west3``
-    - Europe, Germany 
+    - Europe, Germany: Frankfurt
   * - Europe
     - ``google-europe-west4``
-    - Europe, Netherlands 
+    - Europe, Netherlands: Netherlands
   * - Europe
     - ``google-europe-west6``
-    - Europe, Switzerland 
+    - Europe, Switzerland: Zürich
   * - Europe
     - ``google-europe-west8``
-    - Europe, Italy 
+    - Europe, Italy: Milan
   * - Europe
     - ``google-europe-west9``
-    - Europe, France 
+    - Europe, France: Paris
+  * - Europe
+    - ``google-europe-west12``
+    - Europe, Italy: Turin
   * - Middle East
     - ``google-me-west1``
-    - Middle East, Israel 
+    - Middle East, Israel: Tel Aviv
   * - North America
     - ``google-northamerica-northeast1``
-    - Canada, Quebec 
+    - Canada, Quebec: Montréal
   * - North America
     - ``google-northamerica-northeast2``
-    - Canada, Ontario 
+    - Canada, Ontario: Toronto
   * - North America
     - ``google-us-central1``
-    - United States, Iowa 
+    - United States, Iowa: Iowa
   * - North America
     - ``google-us-east1``
-    - United States, South Carolina 
+    - United States, South Carolina: South Carolina
   * - North America
     - ``google-us-east4``
-    - United States, Virginia 
+    - United States, Virginia: Northern Virginia
   * - North America
     - ``google-us-east5``
-    - United States, Ohio 
+    - United States, Ohio: Columbus
   * - North America
     - ``google-us-south1``
-    - United States, Texas 
+    - United States, Texas: Dallas
   * - North America
     - ``google-us-west1``
-    - United States, Oregon 
+    - United States, Oregon: Oregon
   * - North America
     - ``google-us-west2``
-    - United States, California 
+    - United States, California: Los Angeles
   * - North America
     - ``google-us-west3``
-    - United States, Utah 
+    - United States, Utah: Salt Lake City
   * - North America
     - ``google-us-west4``
-    - United States, Nevada 
+    - United States, Nevada: Las Vegas
   * - South America
     - ``google-southamerica-east1``
-    - South America, Brazil 
+    - South America, Brazil: Sao Paulo
   * - South America
     - ``google-southamerica-west1``
-    - South America, Chile 
+    - South America, Chile: Santiago
 
 UpCloud
 -----------------------------------------------------
@@ -373,40 +376,40 @@ UpCloud
     - Description
   * - Asia-Pacific
     - ``upcloud-sg-sin``
-    - Asia, Singapore 
+    - Asia, Singapore: Singapore
   * - Australia
     - ``upcloud-au-syd``
-    - Australia, New South Wales 
+    - Australia, New South Wales: Sydney
   * - Europe
     - ``upcloud-de-fra``
-    - Europe, Germany 
+    - Europe, Germany: Frankfurt
   * - Europe
     - ``upcloud-es-mad``
-    - Europe, Spain 
+    - Europe, Spain: Madrid
   * - Europe
     - ``upcloud-fi-hel``
-    - Europe, Finland 
+    - Europe, Finland: Helsinki
   * - Europe
     - ``upcloud-fi-hel1``
-    - Europe, Finland 
+    - Europe, Finland: Helsinki
   * - Europe
     - ``upcloud-fi-hel2``
-    - Europe, Finland 
+    - Europe, Finland: Helsinki
   * - Europe
     - ``upcloud-nl-ams``
-    - Europe, Netherlands 
+    - Europe, Netherlands: Amsterdam
   * - Europe
     - ``upcloud-pl-waw``
-    - Europe, Poland 
+    - Europe, Poland: Warsaw
   * - Europe
     - ``upcloud-se-sto``
-    - Europe, Sweden 
+    - Europe, Sweden: Stockholm
   * - North America
     - ``upcloud-us-chi``
-    - United States, Illinois 
+    - United States, Illinois: Chicago
   * - North America
     - ``upcloud-us-nyc``
-    - United States, New York 
+    - United States, New York: New York
   * - North America
     - ``upcloud-us-sjo``
-    - United States, California 
+    - United States, California: San Jose

@@ -22,8 +22,9 @@ Follow these steps add a new table to an application using the `Aiven Console <h
 2. Select **Create new version**. 
 3. On the **Create new version** screen, navigate to the **Add source tables** or **Add sink tables** screen within your application.
 4. Select **Add new table** to add a new table to your application.
-    .. note:: 
-        If you already have a sink table listed, you must delete it before adding a new one, only one sink table is allowed per job.
+   
+   .. note:: 
+      If you already have a sink table listed, you must delete it before adding a new one, only one sink table is allowed per job.
 
 5. Select the **Integrated service** from the drop-down list in the **Add new source table** or **Add new sink table** screen, respectively.
 6. In the **Table SQL** section, enter the statement that will create the table. The interactive query feature if the editor will prompt you for error or invalid queries. 
@@ -34,8 +35,9 @@ Import an existing table
 Follow these steps import an existing table from another application: 
 
 1. In the **Add source tables** or **Add sink tables** screen, select **Import existing table** to import a table to your application. 
-    .. note::
-        If you already have a sink table listed, you must delete it before importing a new one.
+   
+   .. note::
+      If you already have a sink table listed, you must delete it before importing a new one.
 
 2. From the **Import existing source table** or **Import existing sink table** screen:
 
@@ -53,14 +55,14 @@ Follow these steps to clone a table within an application:
 
 1. In the **Add source tables** screen, locate the table you want to clone and click **Clone** next to it. 
 
-.. note::
-    Clone option is not available sink tables. 
+   .. note::
+      Clone option is not available sink tables. 
 
 2. Select the **Integrated service** from the drop-down list.
 3. In the **Table SQL** section, update the table name.
 
-.. note:: 
-    You will not be able to add the table if there are errors within the statement. 
+   .. note:: 
+      You will not be able to add the table if there are errors within the statement. 
 
 4. Select **Add table** to complete the process.
 

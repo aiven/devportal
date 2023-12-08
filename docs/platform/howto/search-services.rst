@@ -20,13 +20,17 @@ You can also add filters to the search field yourself. The supported filters are
 * ``provider``
 * ``region``
 
-You can add multiple values to filters separated by a comma. For example, this is how you would view all running PostgreSQL® services that are hosted on AWS or Google Cloud::
+You can add multiple values to filters separated by a comma. For example, this is how you would view all running PostgreSQL® services that are hosted on AWS or Google Cloud:
 
-    service:pg status:running provider:aws,google
+.. code::
 
-You can use these filters alongside keyword searches. For example, to see all powered off Kafka® services with *production* in the name, you could use the following:::
+   service:pg status:running provider:aws,google
 
-    production service:kafka status:poweroff 
+You can use these filters alongside keyword searches. For example, to see all powered off Kafka® services with *production* in the name, you could use the following:
+
+.. code::
+ 
+   production service:kafka status:poweroff 
 
 Filter by service type
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -107,6 +111,8 @@ To filter the services by the cloud provider they are hosted on, use the filter 
 Filter by cloud region
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Find the supported values for the ``region`` filter in the *Cloud* column of the tables in :doc:`List of available cloud regions </docs/platform/reference/list_of_clouds>`. For example, to see all services in the AWS ``eu-central-1`` region, you use this filter::
+Find the supported values for the ``region`` filter in the *Cloud* column of the tables in :doc:`List of available cloud regions </docs/platform/reference/list_of_clouds>`. For example, to see all services in the AWS ``eu-central-1`` region, you use this filter:
 
-    region:aws-eu-central-1
+.. code::
+ 
+   region:aws-eu-central-1

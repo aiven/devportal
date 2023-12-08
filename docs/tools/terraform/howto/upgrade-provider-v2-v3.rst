@@ -60,9 +60,10 @@ To safely make this change you will:
 -  Import already existing resource to the Terraform state.
 
 1. To change from the old ``aiven_vpc_peering_connection`` to the new ``aiven_azure_vpc_peering_connection`` resource,
-the resource type should be changed.
-Any references to ``aiven_vpc_peering_connection.foo.*`` should be updated to instead read ``aiven_azure_vpc_peering_connection.foo.*`` instead.
-Here's an example showing the update in action:
+   the resource type should be changed.
+   Any references to ``aiven_vpc_peering_connection.foo.*`` should be updated to instead read ``aiven_azure_vpc_peering_connection.foo.*`` instead.
+   
+   Here's an example showing the update in action:
 
    .. code::
 
@@ -97,9 +98,9 @@ Here's an example showing the update in action:
    
       terraform state rm aiven_vpc_peering_connection.foo
 
-  .. tip::
+   .. tip::
 
-     Use the ``-dry-run`` flag to see this change before it is actually made
+      Use the ``-dry-run`` flag to see this change before it is actually made
 
 4. Add the resource back to Terraform by importing it as a new resource with the new type:
 

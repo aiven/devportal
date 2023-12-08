@@ -18,7 +18,7 @@ What are you going to build
 
 Anomaly detection is a way to find unusual or unexpected things in data. It is immensely helpful in a variety of fields, such as fraud detection, network security, quality control and others. By following this tutorial you will build your own streaming anomaly detection system.
 
-For example: a payment processor might set up anomaly detection against an e-commerce store if it notices that the store – which sells its items in Indian Rupees and is only configured to sell to the Indian market – is suddenly receiving a high volume of orders from Spain. This behavior could indicate fraud. Another example is that of a domain hosting service implementing a CAPTCHA against an IP address it deems is interacting with one of its domains in rapid succession.
+For example: a payment processor might set up anomaly detection against an e-commerce store if it notices that the store - which sells its items in Indian Rupees and is only configured to sell to the Indian market - is suddenly receiving a high volume of orders from Spain. This behavior could indicate fraud. Another example is that of a domain hosting service implementing a CAPTCHA against an IP address it deems is interacting with one of its domains in rapid succession.
 
 While it's often easier to validate anomalies in data once they due to be stored in the database, it's more useful to check in-stream and address unwanted activity before it affects our dataset.
 
@@ -184,7 +184,7 @@ After creating the service, you'll be redirected to the service details page. Ap
 
 You can define the service integrations, in the Aiven for Apache Flink® **Overview** tab, with the following steps:
 
-1. Click **Get started** on the banner at the top of the *Overview* page.
+1. Click **Get started** on the banner at the top of the **Overview** page.
 
    .. image:: /images/tutorials/anomaly-detection/flink-console-integration.png
       :alt: Aiven for Apache Flink Overview tab, showing the **Get started** button
@@ -192,7 +192,7 @@ You can define the service integrations, in the Aiven for Apache Flink® **Overv
 2. Select **Aiven for Apache Kafka®** and then select the ``demo-kafka`` service.
 3. Click **Integrate**.
 4. Click the **+** icon under *Data Flow*.
-5. Check the **Aiven for PostgreSQL** checkbox in the `Aiven Data Services` section.
+5. Check the **Aiven for PostgreSQL** checkbox in the ``Aiven Data Services`` section.
 6. Select **Aiven for PostgreSQL®** and then select the ``demo-postgresql`` service.
 7. Click **Integrate**.
 
@@ -240,9 +240,11 @@ It's time to start streaming the fake IoT data that you'll later process with wi
 .. Note::
     You can also use other existing data, although the examples in this tutorial are based on the IoT sample data.
 
-1. Clone the `Dockerized fake data producer for Aiven for Apache Kafka® <https://github.com/aiven/fake-data-producer-for-apache-kafka-docker>`_ repository to your computer::
-
-    git clone https://github.com/aiven/fake-data-producer-for-apache-kafka-docker.git
+1. Clone the `Dockerized fake data producer for Aiven for Apache Kafka® <https://github.com/aiven/fake-data-producer-for-apache-kafka-docker>`_ repository to your computer:
+   
+   .. code::
+   
+      git clone https://github.com/aiven/fake-data-producer-for-apache-kafka-docker.git
 
 #. Navigate in the to the ``fake-data-producer-for-apache-kafka-docker`` directory and copy the ``conf/env.conf.sample`` file to ``conf/env.conf``.
 
@@ -460,9 +462,10 @@ You can go ahead an try yourself to define the windowing pipeline. If, on the ot
 2. Click on **Create new application** and name it ``cpu_agg``.
 3. Click on **Create first version**.
 4. To import the source ``CPU_IN`` table from the previously created ``filtering`` application:
-    * Click on **Import existing source table**
-    * Select ``filtering`` as application, ``Version 1`` as version, ``CPU_IN`` as table and click **Next**
-    * Click on **Add table**
+
+   1. Click on **Import existing source table**
+   2. Select ``filtering`` as application, ``Version 1`` as version, ``CPU_IN`` as table and click **Next**
+   3. Click on **Add table**
 
 5. Navigate to the **Add sink tables** tab.
 6. Create the sink table (named ``CPU_OUT_AGG``) pointing to a new Apache Kafka® topic named ``cpu_agg_stats``, where the 30 second aggregated data will land, by:

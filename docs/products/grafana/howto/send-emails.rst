@@ -34,18 +34,22 @@ To configure the Aiven for Grafana service:
     
       avn user login <you@example.com> --token
 
-2. configure the service using your own SMTP values::
+2. configure the service using your own SMTP values:
 
-    avn service update --project yourprojectname yourservicename \
-    -c smtp_server.host=smtp.example.com \
-    -c smtp_server.port=465 \
-    -c smtp_server.username=emailsenderuser \
-    -c smtp_server.password=emailsenderpass \
-    -c smtp_server.from_address="grafana@yourcompany.com" 
+   .. code::
+    
+      avn service update --project yourprojectname yourservicename \
+      -c smtp_server.host=smtp.example.com \
+      -c smtp_server.port=465 \
+      -c smtp_server.username=emailsenderuser \
+      -c smtp_server.password=emailsenderpass \
+      -c smtp_server.from_address="grafana@yourcompany.com" 
 
-3. (optionally) Review all available custom options, and configure as needed::
-
-    avn service types -v
+3. (optionally) Review all available custom options, and configure as needed:
+   
+   .. code::
+   
+      avn service types -v
 
 
 You have now set up your Aiven for Grafana to send emails.

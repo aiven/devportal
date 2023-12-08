@@ -14,7 +14,9 @@ The connector is able to recover from temporary errors to the database and start
 Common Debezium errors related to PostgreSQL node replacement
 -------------------------------------------------------------
 
-In cases when the Debezium connector can't recover during or after the PostgreSQL node replacements, the following errors are commonly shown in logs::
+In cases when the Debezium connector can't recover during or after the PostgreSQL node replacements, the following errors are commonly shown in logs:
+
+.. code::
 
    # ERROR 1
    org.apache.kafka.connect.errors.ConnectException: Could not create PostgreSQL connection

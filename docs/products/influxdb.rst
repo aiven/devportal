@@ -15,7 +15,7 @@ InfluxDB is a great time series data solution. It is known for its ability to ha
 Get started with Aiven for InfluxDB®
 -------------------------------------
 
-Take your first steps with Aiven for InfluxDB® by following our :doc:`/docs/products/influxdb/get-started` article, or browse through our full list of articles:
+Take your first steps with Aiven for InfluxDB® by following our :doc:`Getting started with Aiven for InfluxDB </docs/products/influxdb/get-started>` article, or browse through our full list of articles:
 
 .. grid:: 1 2 2 2
 

@@ -68,7 +68,11 @@ entries:
     title: User and access management
     entries:
     - file: docs/platform/howto/manage-org-users
+      title: Invite and remove organization users
+    - file: docs/platform/concepts/managed-users
+    - file: docs/platform/howto/manage-domains
     - file: docs/platform/howto/delete-user
+    - file: docs/platform/howto/make-super-admin
     - file: docs/platform/howto/list-user-profile
       entries:
       - file: docs/platform/howto/edit-user-profile
@@ -78,6 +82,8 @@ entries:
       - file: docs/platform/howto/add-authentication-method
       - file: docs/platform/reference/password-policy
       - file: docs/platform/howto/user-2fa
+      - file: docs/platform/howto/set-authentication-policies
+        title: Set authentication policies
       - file: docs/platform/concepts/authentication-tokens
       - file: docs/platform/howto/create_authentication_token
       - file: docs/platform/howto/list-saml
@@ -139,17 +145,22 @@ entries:
     - file: docs/platform/reference/list_of_clouds
     - file: docs/platform/concepts/availability-zones
     - file: docs/platform/howto/list-byoc
-      title: BYOC
+      title: Bring your own cloud (BYOC)
       entries:
         - file: docs/platform/concepts/byoc
+          title: About BYOC
+        - file: docs/platform/howto/byoc/enable-byoc
+          title: Enable BYOC
         - file: docs/platform/howto/byoc/create-custom-cloud
           title: Create custom cloud
         - file: docs/platform/howto/byoc/assign-project-custom-cloud
-          title: Assign projects
+          title: Attach projects
         - file: docs/platform/howto/byoc/add-customer-info-custom-cloud
           title: Add customer contacts
         - file: docs/platform/howto/byoc/rename-custom-cloud
           title: Rename custom cloud
+        - file: docs/platform/howto/byoc/delete-custom-cloud
+          title: Delete custom cloud
     - file: docs/platform/concepts/enhanced-compliance-env
     - file: docs/platform/concepts/aiven-node-firewall-configuration
     - file: docs/platform/concepts/cloud-security
@@ -432,6 +443,8 @@ entries:
             title: Advanced parameters
           - file: docs/products/kafka/reference/kafka-metrics-prometheus
             title: Metrics available via Prometheus
+          - file: docs/products/kafka/reference/kstream-data-write-issue
+            title: Resolving Data Write Issues with Kafka Streams 3.6.0
 
       - file: docs/products/kafka/kafka-connect
         title: Apache Kafka Connect
@@ -734,6 +747,8 @@ entries:
         entries:
           - file: docs/products/cassandra/reference/advanced-params
             title: Advanced parameters
+          - file: docs/products/cassandra/reference/cassandra-metrics-prometheus
+            title: Metrics via Prometheus
 
   # -------- CLICKHOUSE --------
   - file: docs/products/clickhouse
@@ -845,6 +860,8 @@ entries:
         entries:
           - file: docs/products/clickhouse/reference/supported-table-engines
             title: Table engines
+          - file: docs/products/clickhouse/reference/supported-interfaces-drivers
+            title: Interfaces and drivers
           - file: docs/products/clickhouse/reference/metrics-list
             title: ClickHouse metrics in Grafana
           - file: docs/products/clickhouse/reference/supported-table-functions

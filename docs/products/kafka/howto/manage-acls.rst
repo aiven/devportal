@@ -48,7 +48,7 @@ You can add a new access control list grant via the `Aiven Console <https://cons
       * Resources
       * Permissions
 
-    Refer to the :doc:`Access control lists and permission mapping <../concepts/acl>` section for more information.
+   Refer to the :doc:`Access control lists and permission mapping </docs/products/kafka/concepts/acl>` section for more information.
 
 #. Click **Add ACL entry**.
 

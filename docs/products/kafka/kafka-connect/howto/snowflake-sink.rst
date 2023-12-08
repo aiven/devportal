@@ -106,17 +106,17 @@ To create a Kafka Connect connector, follow these steps:
 6. Paste the connector configuration (stored in the ``snowflake_sink.json`` file) in the form.
 7. Select **Apply**.
 
-.. Note::
+   .. Note::
 
-    The Aiven Console parses the configuration file and fills the relevant UI fields. You can review the UI fields across the various tab and change them if necessary. The changes will be reflected in JSON format in the **Connector configuration** text box.
+      The Aiven Console parses the configuration file and fills the relevant UI fields. You can review the UI fields across the various tab and change them if necessary. The changes will be reflected in JSON format in the **Connector configuration** text box.
 
 8. After all the settings are correctly configured, select **Create connector**.
 9. Verify the connector status under the **Connectors** screen. 
 10. Verify the presence of the data in the target Snowflake database.
 
-.. Note::
+    .. Note::
 
-    You can also create connectors using the :ref:`Aiven CLI command <avn_service_connector_create>`.
+       You can also create connectors using the :ref:`Aiven CLI command <avn_service_connector_create>`.
 
 
 Example: Create a Snowflake sink connector on a topic in Avro format
@@ -130,12 +130,14 @@ The example creates an Snowflake sink connector with the following properties:
 * Snowflake schema: ``testschema``
 * Snowflake URL: ``XX0000.eu-central-1.snowflakecomputing.com``
 * Snowflake user: ``testuser``
-* User private key:: 
+* User private key:
 
-    XXXXXXXYYY
-    ZZZZZZZZZZ
-    KKKKKKKKKK
-    YY
+  .. code::
+
+     XXXXXXXYYY
+     ZZZZZZZZZZ
+     KKKKKKKKKK
+     YY
 
 * User private key passphrase: ``password123``
 

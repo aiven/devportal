@@ -4,7 +4,7 @@ Enable the consumer lag predictor for Aiven for Apache Kafka®
 The :doc:`consumer lag predictor </docs/products/kafka/concepts/consumer-lag-predictor>` in Aiven for Apache Kafka® provides visibility into the time between message production and consumption, allowing for improved cluster performance and scalability.
 
 .. important::
-    Consumer Lag Predictor for Aiven for Apache Kafka® is a limited availability feature. If you’re interested in trying out this feature, contact the sales team at sales@Aiven.io.
+    Consumer Lag Predictor for Aiven for Apache Kafka® is a limited availability feature. If you're interested in trying out this feature, contact the sales team at sales@Aiven.io.
 
 
 Prerequisites
@@ -22,11 +22,13 @@ Enable via Aiven Console
 
 1. In `Aiven Console <https://console.aiven.io/>`_, select your project and then choose your Aiven for Apache Kafka® service.
 
-2. On the **Overview** page, scroll down to **Advanced configuration** and select **Configure**.
+2. Click **Service settings** on the sidebar. 
 
-3. In the **Advanced configuration** screen, select **Add configuration options**.
+3. Scroll to the **Advanced configuration** section, and select **Configure**.
 
-4. In the add configuration options:
+4. In the **Advanced configuration** screen, select **Add configuration options**.
+
+5. In the add configuration options:
 
    - Find and set ``kafka_lag_predictor.enabled`` to **Enabled** position. This enables the lag predictor to compute predictions for all consumer groups across all topics.
    - Find ``kafka_lag_predictor.group_filters`` and enter the desired consumer group pattern. This specifies which consumer groups to consider during lag prediction calculations.
@@ -35,7 +37,7 @@ Enable via Aiven Console
     
      By default, the consumer lag predictor calculates the lag of all consumer groups. To restrict the calculation to specific groups, use the ``kafka_lag_predictor.group_filters`` option.
 
-5. Select **Save configurations** to save your changes and enable consumer lag prediction.
+6. Select **Save configurations** to save your changes and enable consumer lag prediction.
 
 Enable via Aiven CLI
 ------------------------------------------------

@@ -11,4 +11,4 @@ If you need to have your service running under a different name, the best option
 
 .. seealso::
 
-   Learn more :doc:`about service forking <../concepts/service-forking>`.
+   Learn more :doc:`about service forking </docs/platform/concepts/service-forking>`.

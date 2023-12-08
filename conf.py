@@ -320,6 +320,7 @@ rst_epilog = """
    :width: 24px
    :class: no-scaled-link
 
+
 .. |beta| replace:: :bdg-secondary:`beta`
 
 .. |preview| replace:: :bdg-secondary:`preview`

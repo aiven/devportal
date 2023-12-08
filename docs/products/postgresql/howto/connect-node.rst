@@ -23,9 +23,11 @@ Pre-requisites
 
 For this example you will need:
 
-* The npm ``pg`` package::
+* The npm ``pg`` package:
 
-    npm install pg --save
+  .. code::
+
+     npm install pg --save
 
 * :doc:`/docs/platform/howto/download-ca-cert` from the service overview page, this example assumes it is in a local file called ``ca.pem``.
 
@@ -39,10 +41,14 @@ Add the following to ``index.js`` and replace the connection parameters with the
 
 This code creates a PostgreSQL client and opens a connection to the database. Then runs a query checking the database version and prints the response.
 
-To run the code::
+To run the code:
 
-    node index.js
+.. code::
+   
+   node index.js
 
-If the script runs successfully, the outputs should be the PostgreSQL version running in your service like::
+If the script runs successfully, the outputs should be the PostgreSQL version running in your service like:
+
+.. code::
 
     PostgreSQL 13.3 on x86_64-pc-linux-gnu, compiled by gcc, a 68c5366192 p 6520304dc1, 64-bit

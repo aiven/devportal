@@ -15,7 +15,7 @@ Commands for managing Aiven services via ``avn`` commands.
 
 Manages the Aiven for Apache Kafka® ACL entries.
 
-More information on ``acl-add``, ``acl-delete`` and ``acl-list`` can be found in :doc:`the dedicated page <service/acl>`.
+More information on ``acl-add``, ``acl-delete`` and ``acl-list`` can be found in :doc:`the dedicated page </docs/tools/cli/service/acl>`.
 
 ``avn service backup-list``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -131,9 +131,9 @@ Creates a new service.
   * - ``--service-type``
     - The type of service; the :ref:`service types command <avn-cli-service-type>` has the available values
   * - ``--plan``
-    - Aiven subscription plan name; check :ref:`avn_service_plan` for more information
+    - Aiven subscription plan name; check :ref:`avn_service_plan <avn-service-plan>` for more information
   * - ``--cloud``
-    - The cloud region name; check :ref:`avn-cloud-list` for more information
+    - The cloud region name; check :ref:`avn-cloud-list <avn-cloud-list>` for more information
   * - ``--disk-space-gib``
     - Total amount of disk space for data storage (GiB)
   * - ``--no-fail-if-exists``
@@ -447,7 +447,7 @@ Retrieves the metrics for a defined service in Google chart compatible format. T
 
 Get migration status
 
-.. _avn_service_plan:
+.. _avn-service-plan:
 
 ``avn service plans``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -461,7 +461,7 @@ Lists the service plans available in a selected project for a defined service ty
   * - Parameter
     - Information
   * - ``--service-type``
-    - The type of service, check :ref:`avn-cli-service-type` for more information
+    - The type of service, check :ref:`avn-cli-service-type <avn-cli-service-type>` for more information
   * - ``--cloud``
     - The cloud region
   * - ``--monthly``
@@ -655,7 +655,9 @@ Permanently deletes a service.
 .. Warning::
 
   The ``terminate`` command deletes the service and the associated data. The data is not recoverable. 
-  To temporarily shut down the service use the :ref:`service update command <avn-cli-service-update>` ``avn service update SERVICE_NAME --power-off``
+  To temporarily shut down the service use the
+  :ref:`service update command <avn-cli-service-update>`:
+  ``avn service update SERVICE_NAME --power-off``
 
 .. list-table::
   :header-rows: 1
@@ -720,7 +722,9 @@ An example of ``service types`` output:
   pg                 PostgreSQL - Object-Relational Database Management System
   redis              Redis - In-Memory Data Structure Store
 
-The service types command in verbose mode also shows all the configuration options for each type of service::
+The service types command in verbose mode also shows all the configuration options for each type of service:
+
+.. code::
 
     avn service types -v
 
@@ -742,13 +746,13 @@ Updates the settings for an Aiven service.
   * - ``service_name``
     - The name of the service
   * - ``--cloud``
-    - The name of the cloud region where to deploy the service; check :ref:`avn-cloud-list` for more information
+    - The name of the cloud region where to deploy the service; check :ref:`avn-cloud-list <avn-cloud-list>`.
   * - ``-c KEY=VALUE``
     - Apply a configuration setting. Run ``avn service types -v`` to view available values.
   * - ``--disk-space-gib``
     - Total amount of disk space for data storage (GiB)
   * - ``--plan``
-    - Aiven subscription plan name; check :ref:`avn_service_plan` for more information
+    - Aiven subscription plan name. See :ref:`avn_service_plan <avn-service-plan>`.
   * - ``--power-on``
     - Power on the service
   * - ``--power-off``

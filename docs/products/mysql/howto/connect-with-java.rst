@@ -53,8 +53,10 @@ Run the code after replacement of the placeholders with values for your project:
 
    javac MySqlExample.java && java -cp mysql-driver-8.0.28.jar:. MySqlExample -host MYSQL_HOST -port MYSQL_PORT -database MYSQL_DATABASE -username avnadmin -password MYSQL_PASSWORD
 
-If the script runs successfully, the output will be the values that were inserted into the table::
+If the script runs successfully, the output will be the values that were inserted into the table:
 
-    Version: 8.0.26
+.. code::
+
+   Version: 8.0.26
 
 Now that your application is connected, you are all set to use Java with Aiven for MySQL.

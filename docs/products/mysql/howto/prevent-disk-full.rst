@@ -8,9 +8,11 @@ Switch to the read-only mode
 
 Aiven automatically detects when your service is running out of free space and prevents further writes to it. This process is done by setting the MySQL ``@@GLOBAL.read_only`` flag to ``1``. The threshold for moving to this state is when your disk usage is at 97% or higher.
 
-Once your service is made ``read-only``, the service reports errors when you attempt to insert, update, or delete data::
+Once your service is made ``read-only``, the service reports errors when you attempt to insert, update, or delete data:
 
-    ERROR 1290 (HY000): The MySQL server is running with the --read-only option so it cannot execute this statement  
+.. code::
+
+   ERROR 1290 (HY000): The MySQL server is running with the --read-only option so it cannot execute this statement  
 
 Free up disk space
 ------------------
@@ -32,16 +34,20 @@ Delete data
 
 As your service is set in ``read-only`` mode, attempting to free disk space by deleting data can't be done directly. To disable the ``read-only`` state, you need to use our API to temporarily remove the restriction. 
 
-You can use our API and send a POST request to::
+You can use our API and send a POST request to:
 
-    https://api.aiven.io/v1/project/<PROJECT>/service/<SERVICE_NAME>/enable-writes 
+.. code::
+
+   https://api.aiven.io/v1/project/<PROJECT>/service/<SERVICE_NAME>/enable-writes 
     
-The output of a successful operation is::
+The output of a successful operation is:
 
-    {
-    "message": "Writes temporarily enabled",
-    "until": "2022-04-22T13:42:05.385432Z"
-    }
+.. code::
+
+   {
+     "message": "Writes temporarily enabled",
+     "until": "2022-04-22T13:42:05.385432Z"
+   }
 
 This way you can free up space within the next 15 minutes.
 

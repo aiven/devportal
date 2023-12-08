@@ -42,10 +42,10 @@ Furthermore you need to collect the following information about the source Postg
 
     If you're using Aiven for PostgreSQL and Aiven for Apache Kafka the above details are available in the `Aiven console <https://console.aiven.io/>`_ service Overview tab or via the dedicated ``avn service get`` command with the :ref:`Aiven CLI <avn_service_get>`.
 
-Setup a PostgreSQL Debezium source connector with Aiven CLI
------------------------------------------------------------
+Set up a PostgreSQL Debezium source connector with Aiven CLI
+------------------------------------------------------------
 
-The following example demonstrates how to setup a Debezium source Connector for Apache Kafka to a PostgreSQL database using the :ref:`Aiven CLI dedicated command <avn_service_connector_create>`.
+The following example demonstrates how to setup a Debezium source Connector for Apache Kafka to a PostgreSQL database using the :doc:`Aiven CLI dedicated command </docs/tools/cli/service/connector>`.
 
 Define a Kafka Connect configuration file
 '''''''''''''''''''''''''''''''''''''''''
@@ -157,19 +157,18 @@ To create the publication in PostgreSQL:
 
 * Installing the ``aiven-extras`` extension:
 
-.. code::
+  .. code::
 
-    CREATE EXTENSION aiven_extras CASCADE;
+     CREATE EXTENSION aiven_extras CASCADE;
 
 * Create a publication (with name e.g. ``my_test_publication``) for all the tables:
 
-.. code::
+  .. code::
 
-    SELECT * 
-    FROM aiven_extras.pg_create_publication_for_all_tables(
+     SELECT * 
+     FROM aiven_extras.pg_create_publication_for_all_tables(
         'my_test_publication', 
         'INSERT,UPDATE,DELETE'
-        );
+     );
 
 * Make sure to use the correct publication name (e.g. ``my_test_publication``) in the connector definition and restart the connector
-

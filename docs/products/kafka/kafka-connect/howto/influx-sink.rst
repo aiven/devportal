@@ -24,13 +24,12 @@ Furthermore you need to collect the following information about the target Influ
 * ``TOPIC_LIST``: The list of topics to sink divided by comma
 * ``KCQL_TRANSFORMATION``: The KCQL syntax to parse the topic data, should be in the format
 
-  ::
+  .. code::
 
-    INSERT
-    INTO INFLUXDB_TABLe_NAME
-    SELECT LIST_OF_FIELDS 
-    FROM APACHE_KAFKA_TOPIC
-
+     INSERT
+     INTO INFLUXDB_TABLe_NAME
+     SELECT LIST_OF_FIELDS 
+     FROM APACHE_KAFKA_TOPIC
 
 * ``APACHE_KAFKA_HOST``: The hostname of the Apache Kafka service, only needed when using Avro as data format
 * ``SCHEMA_REGISTRY_PORT``: The Apache Kafka's schema registry port, only needed when using Avro as data format
@@ -108,9 +107,9 @@ To create a Apache Kafka Connect connector, follow these steps:
 6. Paste the connector configuration (stored in the ``influxdb_sink.json`` file) in the form.
 7. Select **Apply**.
 
-.. Note::
+   .. Note::
 
-    The Aiven Console parses the configuration file and fills the relevant UI fields. You can review the UI fields across the various tab and change them if necessary. The changes will be reflected in JSON format in the **Connector configuration** text box.
+      The Aiven Console parses the configuration file and fills the relevant UI fields. You can review the UI fields across the various tab and change them if necessary. The changes will be reflected in JSON format in the **Connector configuration** text box.
 
 8. After all the settings are correctly configured, select **Create connector**. 
 9. Verify the connector status under the **Connectors** screen. 

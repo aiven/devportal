@@ -1,7 +1,6 @@
 
 
 
-
 ``opensearch_version``
 ----------------------
 *['string', 'null']*
@@ -31,6 +30,14 @@
 *array*
 
 **IP filter** Allow incoming connections from CIDR address block, e.g. '10.20.0.0/16'
+
+
+
+``service_log``
+---------------
+*['boolean', 'null']*
+
+**Service logging** Store logs for the service so that they are available in the HTTP API and console.
 
 
 
@@ -416,19 +423,19 @@
 
 ``email_sender_name``
 ~~~~~~~~~~~~~~~~~~~~~
-*['string']*
+*string*
 
 **Sender name placeholder to be used in Opensearch Dashboards and Opensearch keystore** This should be identical to the Sender name defined in Opensearch dashboards
 
 ``email_sender_username``
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-*['string']*
+*string*
 
 **Sender username for Opensearch alerts** 
 
 ``email_sender_password``
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-*['string']*
+*string*
 
 **Sender password for Opensearch alerts to authenticate with SMTP server** Sender password for Opensearch alerts to authenticate with SMTP server
 

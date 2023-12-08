@@ -20,8 +20,8 @@ To change the retention period for a single topic, follow these steps:
 
 #. In the modify topic screen, update the value of **Retention ms** to the desired retention length in milliseconds. If you cannot find **Retention ms**, use the search bar to locate it
 
-.. note:: 
-    The **Retention ms** option is displayed in the modify topic screen for topics where advanced configuration was enabled during topic creation.
+   .. note:: 
+      The **Retention ms** option is displayed in the modify topic screen for topics where advanced configuration was enabled during topic creation.
 
 #. Select **Update** to save your changes. 
 
@@ -30,9 +30,9 @@ To change the retention period for a single topic, follow these steps:
 
 #. Change the value of **Retention ms** value to the desired retention length in milliseconds.
 
-.. Tip::
+   .. Tip::
 
-    You can also change **Retention bytes** setting if you want to limit amount of data retained based on the storage usage.
+      You can also change **Retention bytes** setting if you want to limit amount of data retained based on the storage usage.
 
 
 At a service level

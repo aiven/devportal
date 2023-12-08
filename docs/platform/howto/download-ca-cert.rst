@@ -9,4 +9,4 @@ Or, you can use the ``avn`` :doc:`command-line tool </docs/tools/cli>` with the 
 
    avn service user-creds-download --username <username> <service-name>
 
-Read more: :doc:`../concepts/tls-ssl-certificates`
+Read more: :doc:`/docs/platform/concepts/tls-ssl-certificates`

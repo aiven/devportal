@@ -22,9 +22,9 @@ Create a database
 2. In the **Databases and tables** page, select **Create database** > **ClickHouse database**.
 3. In the **Create ClickHouse database** window, enter a name for your database and select **Create database**.
 
-.. note::
+   .. note::
 
-    All databases must be created through the web console.
+      All databases must be created through the web console.
 
 Connect to ClickHouse
 ---------------------

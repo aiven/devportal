@@ -82,17 +82,17 @@ To create a Apache Kafka Connect connector, follow these steps:
 6. Paste the connector configuration (stored in the ``splunk_sink.json`` file) in the form.
 7. Select **Apply**.
 
-.. Note::
+   .. Note::
 
-    The Aiven Console parses the configuration file and fills the relevant UI fields. You can review the UI fields across the various tabs and change them if necessary. The changes will be reflected in JSON format in the **Connector configuration** text box.
+      The Aiven Console parses the configuration file and fills the relevant UI fields. You can review the UI fields across the various tabs and change them if necessary. The changes will be reflected in JSON format in the **Connector configuration** text box.
 
 7. After all the settings are correctly configured, select **Create connector**.
 8. Verify the connector status under the **Connectors** screen. 
 9. Verify the data in the target Splunk instance. 
 
-.. Note::
+   .. Note::
 
-    You can also create connectors using the :ref:`Aiven CLI command <avn_service_connector_create>`.
+      You can also create connectors using the :ref:`Aiven CLI command <avn_service_connector_create>`.
 
 Example: Create a simple Splunk sink connector
 ----------------------------------------------

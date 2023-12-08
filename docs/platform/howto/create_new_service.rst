@@ -25,7 +25,7 @@ Follow these steps to create a new service in `Aiven Console <https://console.ai
 
          This determines the number of servers and what kind of memory, CPU, and disk resources are allocated to your service. Check out `Plans & Pricing <https://aiven.io/pricing?product=pg>`_ for details.
 
-   3. Add :doc:`disk storage <../concepts/dynamic-disk-sizing>` for your service by using the slider, if needed. The cost for the additional storage is in the service summary section.  
+   3. Add :doc:`disk storage </docs/platform/concepts/dynamic-disk-sizing>` for your service by using the slider, if needed. The cost for the additional storage is in the service summary section.  
 
       .. note::
 

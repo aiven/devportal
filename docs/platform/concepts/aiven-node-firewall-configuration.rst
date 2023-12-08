@@ -7,7 +7,7 @@ Intra-node connections are limited to point-to-point connections to specific IP 
 Service ports that you can connect to depend on the service type and deployment type. The configuration can also affect the ports that are available:
 
 * Is the service in a public network, :doc:`dedicated VPC </docs/platform/howto/manage-vpc-peering>`, virtual cloud account, or a  :doc:`Bring Your Own Cloud (BYOC) </docs/platform/concepts/byoc>` setup ?
-* Have you configured IP ranges in  user_config.ip_filter?
+* Have you configured IP ranges in  user_config.ip_filter?
 * Have you :doc:`enabled public internet access for services in a VPC </docs/platform/howto/public-access-in-vpc>`?
 
 Commonly opened ports

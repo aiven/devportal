@@ -1,7 +1,7 @@
 Optimize PostgreSQL® slow queries 
 =================================
 
-PostgreSQL® gives you the ability to :doc:`indentify slow queries <../howto/identify-pg-slow-queries>` using the ``pg_stat_statements`` view. The following article contains several common optimization techniques to improve slow running queries.
+PostgreSQL® gives you the ability to :doc:`indentify slow queries </docs/products/postgresql/howto/identify-pg-slow-queries>` using the ``pg_stat_statements`` view. The following article contains several common optimization techniques to improve slow running queries.
 
 Common slow queries optimizations
 '''''''''''''''''''''''''''''''''
@@ -11,9 +11,9 @@ It is worth knowing that many database indexes on a table can also cause problem
 Handle an increase in database connections
 ------------------------------------------
 
-When your application code scales horizontally to accommodate high loads, you might find that you inadvertently reach the :doc:`connection limits <../reference/pg-connection-limits>` for your plan. Each connection in PostgreSQL runs in a separate process, and this makes them more expensive (compared to threads, for example) in terms of inter-process communication and memory usage, since each connection consumes a certain amount of RAM.
+When your application code scales horizontally to accommodate high loads, you might find that you inadvertently reach the :doc:`connection limits </docs/products/postgresql/reference/pg-connection-limits>` for your plan. Each connection in PostgreSQL runs in a separate process, and this makes them more expensive (compared to threads, for example) in terms of inter-process communication and memory usage, since each connection consumes a certain amount of RAM.
 
-In such cases, you can use the :doc:`connection pooling <../concepts/pg-connection-pooling>`, based on `PgBouncer <https://www.pgbouncer.org>`_, to handle an increase in database connections. You can add and configure the connection pooling for your service in the **Pools** view in `Aiven Console <https://console.aiven.io/>`_.
+In such cases, you can use the :doc:`connection pooling </docs/products/postgresql/concepts/pg-connection-pooling>`, based on `PgBouncer <https://www.pgbouncer.org>`_, to handle an increase in database connections. You can add and configure the connection pooling for your service in the **Pools** view in `Aiven Console <https://console.aiven.io/>`_.
 
 Move read-only queries to standby nodes
 ---------------------------------------

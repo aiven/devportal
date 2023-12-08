@@ -49,6 +49,6 @@ To use the ``pg_repack`` extension:
 
 .. seealso::
   - For more information, see `pg_repack <https://reorg.github.io/pg_repack/>`_ documentation.
-  - For more information on managing extensions, see :doc:`Install or update extension <../howto/manage-extensions>`.
+  - For more information on managing extensions, see :doc:`Install or update extension </docs/products/postgresql/howto/manage-extensions>`.
   
 

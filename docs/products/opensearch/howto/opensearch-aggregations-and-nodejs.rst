@@ -9,7 +9,7 @@ Learn how to aggregate data using OpenSearch and its NodeJS client. In this tuto
 Prepare the playground
 **********************
 
-You can create an OpenSearch cluster either with the visual interface or with the command line. Depending on your preference follow the instructions for :doc:`getting started with the console for Aiven for Opensearch <../getting-started>` or see :doc:`how to create a service with the help of Aiven command line interface <../../../tools/cli/service>`.
+You can create an OpenSearch cluster either with the visual interface or with the command line. Depending on your preference follow the instructions for :doc:`getting started with the console for Aiven for Opensearch </docs/products/opensearch/getting-started>` or see :doc:`how to create a service with the help of Aiven command line interface </docs/tools/cli/service>`.
 
 .. note::
 
@@ -25,7 +25,7 @@ To organise our development space we'll use these files:
 - ``helpers.js`` to contain utilities for logging responses,
 - ``search.js`` and ``aggregation.js`` for methods specific to search and aggregation requests.
 
-We’ll be adding code into these files and running the methods from the command line.
+We'll be adding code into these files and running the methods from the command line.
 
 Connect to the cluster and load data
 ------------------------------------
@@ -40,7 +40,7 @@ Now you're ready to start aggregating the data.
 Aggregations
 ************
 
-In this tutorial we'll write and run examples for three different types of aggregations: metric, bucket and pipeline. You can read more about aggregations in :doc:`a concept article <../concepts/aggregations>`.
+In this tutorial we'll write and run examples for three different types of aggregations: metric, bucket and pipeline. You can read more about aggregations in :doc:`a concept article </docs/products/opensearch/concepts/aggregations>`.
 
 Structure and syntax
 --------------------

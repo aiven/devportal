@@ -28,16 +28,16 @@ Client <https://github.com/aiven/aiven-client>`__ .
 .. code::
 
    avn service integration-endpoint-create --project your-project \
-       -d example-syslog -t rsyslog \
-       -c server=logs.example.com -c port=514 \
-       -c format=rfc5424 -c tls=true
+       -d example-syslog -t rsyslog \
+       -c server=logs.example.com -c port=514 \
+       -c format=rfc5424 -c tls=true
 
 When defining the remote syslog server the following parameters can be
 applied using the ``-c`` switch.
 
 Required:
 
--  ``server`` -  DNS name or IPv4 address of the server
+-  ``server`` -  DNS name or IPv4 address of the server
 
 -  ``port`` - port to connect to
 
@@ -100,17 +100,17 @@ endpoint previously created
 .. code::
 
    avn service integration-endpoint-list --project your-project
-   ENDPOINT_ID                           ENDPOINT_NAME   ENDPOINT_TYPE
-   ====================================  ==============  =============
-   618fb764-5832-4636-ba26-0d9857222cfd  example-syslog  rsyslog
+   ENDPOINT_ID                           ENDPOINT_NAME   ENDPOINT_TYPE
+   ====================================  ==============  =============
+   618fb764-5832-4636-ba26-0d9857222cfd  example-syslog  rsyslog
 
 Then you can link the service to the endpoint
 
 .. code::
 
    avn service integration-create --project your-project \
-       -t rsyslog -s your-service \
-       -D 618fb764-5832-4636-ba26-0d9857222cfd
+       -t rsyslog -s your-service \
+       -D 618fb764-5832-4636-ba26-0d9857222cfd
 
 Example configurations
 ----------------------
@@ -118,15 +118,6 @@ Example configurations
 Rsyslog is a standard integration so you can use it with any external system. We have collected some examples of how to integrate with popular third party platforms to get you started quickly.
 
 .. note:: All integrations can be configured using the Aiven Console or the Aiven CLI though the examples are easier to copy and paste in the CLI form.
-
-* :ref:`Coralogix<rsyslog_coralogix>`
-* :doc:`Datadog </docs/integrations/datadog/datadog-logs>`
-* :ref:`Loggly<rsyslog_loggly>`
-* :doc:`Logtail </docs/integrations/rsyslog/logtail>`
-* :ref:`Mezmo<rsyslog_mezmo>`
-* :ref:`New Relic<rsyslog_new_relic>`
-* :ref:`Papertrail<rsyslog_papertrail>`
-* :ref:`Sumo Logic<rsyslog_sumo_logic>`
 
 .. _rsyslog_coralogix:
 
@@ -216,7 +207,7 @@ Papertrail
 ~~~~~~~~~~
 
 As `Papertrail <https://www.papertrail.com/>`_ identifies the client based on
-the server and port  you only need to copy the appropriate values from the
+the server and port  you only need to copy the appropriate values from the
 "Log Destinations" page and use those as the values for ``server`` and ``port``
 respectively. You **do not need** the ca-bundle as the Papertrail servers use
 certificates signed by a known CA. You also need to set the format to

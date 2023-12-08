@@ -2,7 +2,7 @@ Enhanced compliance environments (ECE)
 ===========================================
 
 As a business that collects, manages, and operates on sensitive data that is protected by privacy and
-compliance rules and regulations – any vendor that assists with this collection, management and
+compliance rules and regulations - any vendor that assists with this collection, management and
 operation is subject to these same rules and regulations. Aiven meets the needs of these
 businesses by providing specialized enhanced compliance environments (ECE) that comply with many
 of the most common compliance requirements.
@@ -12,7 +12,7 @@ compliance requirement that no ECE VPC is shared and the managed environment is 
 from the standard Aiven deployment environment. This decreases the blast radius of the environment
 to prevent inadvertent data sharing. Furthermore, users of an ECE **must** encrypt all data prior
 to reaching an Aiven service. As part of the increased compliance of the environment, enhanced logging
-is enabled for – ``stderr``, ``stout``, and ``stdin``.
+is enabled for - ``stderr``, ``stout``, and ``stdin``.
 
 Who is eligible?
 ----------------
@@ -33,9 +33,9 @@ any applicable marketplaces and spend down their commitment accordingly.
 
 Similarities to a standard environment
 ------------------------------------------------
-In many ways, an ECE is the same as a standard Aiven deployment. All of Aiven’s tooling
+In many ways, an ECE is the same as a standard Aiven deployment. All of Aiven's tooling
 (:doc:`CLI </docs/tools/cli>`, :doc:`Terraform </docs/tools/terraform>`, etc.) interact with ECEs seamlessly, you will still be able to take advantage
-of all of Aiven’s service integrations, and access to the environment can be achieved through
+of all of Aiven's service integrations, and access to the environment can be achieved through
 VPC peering or Privatelink (on AWS or Azure). However, there are some key differences from
 standard environments as well:
 
@@ -50,30 +50,37 @@ Environment:
 
 The necessary peering information to enable the peer from our end. This differs between clouds:
 
-AWS:
-    * AWS account ID
-    * VPC ID
-GCP:
-    * GCP Project ID
-    * VPC Network Name
-Azure:
-    * Azure Tenant ID
-    * Azure App ID
-    * Azure VNet ID
+**AWS:**
+
+* AWS account ID
+* VPC ID
+
+**GCP:**
+
+* GCP Project ID
+* VPC Network Name
+
+**Azure:**
+
+* Azure Tenant ID
+* Azure App ID
+* Azure VNet ID
 
 What compliances are covered?
 --------------------------------
 Although not exhaustive, Aiven is capable of supporting both the Health Insurance Portability and
 Accountability Act (HIPAA) and the Payment Card Industry Data Security Standard (PCI DSS)
-compliances. If you require compliance beyond these please contact our sales department so we
+compliances.
+
+If you require compliance beyond these please contact our sales department so we
 can better understand your specific needs. Additionally, we also offer an alternative deployment
-option -- :doc:`Bring Your Own Cloud (BYOC) </docs/platform/concepts/byoc>`.
+option. See :doc:`Bring Your Own Cloud (BYOC) </docs/platform/concepts/byoc>`.
 
 Migrating
 ----------------
 Migrations to Aiven are fairly straightforward in general, but migrating to an ECE can add a
 tiny bit of complexity. If the migration is for a new service there are a few standard
-migration methods that will work – please contact `sales <sales@aiven.io>`_ and a Solution Architect
+migration methods that will work - please contact `sales <sales@aiven.io>`_ and a Solution Architect
 will be able to help.
 
 If you need to migrate an existing Aiven service to an ECE the standard automated migration

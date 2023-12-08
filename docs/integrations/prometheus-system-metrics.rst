@@ -8,7 +8,7 @@ About the Prometheus integration
 
 The Prometheus integration allows you to monitor your Aiven services and understand the resource usage. Using this integration, you can also track some non-service-specific metrics that may be worth monitoring.
 
-To start using Prometheus for monitoring the metrics, you need to :doc:`configure the Prometheus integration and set up the Prometheus server <../platform/howto/integrations/prometheus-metrics>`.
+To start using Prometheus for monitoring the metrics, you need to :doc:`configure the Prometheus integration and set up the Prometheus server </docs/platform/howto/integrations/prometheus-metrics>`.
 
 Get a list of available service metrics
 ---------------------------------------

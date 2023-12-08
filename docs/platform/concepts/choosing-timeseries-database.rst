@@ -17,4 +17,4 @@ time series databases in its product portfolio.
    **high availability.**
 
 Find our more about our time series offerings on `our website
-<https://aiven.io/time-series-databases/what-are-time-series-databases>`__ .
+<https://aiven.io/time-series-databases/what-are-time-series-databases>`__.

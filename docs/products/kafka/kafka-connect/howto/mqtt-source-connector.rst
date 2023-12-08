@@ -81,7 +81,7 @@ To create a Apache Kafka Connect connector, follow these steps:
 6. Paste the connector configuration (stored in the ``mqtt_source.json`` file) in the form.
 7. Select **Apply**.
 
-To create the connector, access the `Aiven Console <https://console.aiven.io/>`_ and select the Aiven for Apache Kafka® or Aiven for Apache Kafka® Connect service where the connector needs to be defined, then:
+   To create the connector, access the `Aiven Console <https://console.aiven.io/>`_ and select the Aiven for Apache Kafka® or Aiven for Apache Kafka® Connect service where the connector needs to be defined, then:
 
    .. Note::
 

@@ -18,13 +18,15 @@ Creates a new Aiven for Apache Kafka® MirrorMaker 2 replication flow.
 
   Before creating a replication flow, an :ref:`integration <avn_service_integration_create>` needs to be created between the Aiven for Apache Kafka MirrorMaker 2 service and each of the source and the target services.
   
-  E.g. An integration with alias ``kafka-target-alias`` between an Aiven for Apache Kafka service named ``kafka-target`` and an Aiven for Apache Kafka MirrorMaker 2 named ``kafka-mm`` can be created with::
+  E.g. An integration with alias ``kafka-target-alias`` between an Aiven for Apache Kafka service named ``kafka-target`` and an Aiven for Apache Kafka MirrorMaker 2 named ``kafka-mm`` can be created with:
 
-    avn service integration-create \
-      -s kafka-target              \
-      -d kafka-mm                  \
-      -t kafka_mirrormaker         \
-      -c cluster_alias=kafka-target-alias
+  .. code::
+    
+     avn service integration-create \
+       -s kafka-target              \
+       -d kafka-mm                  \
+       -t kafka_mirrormaker         \
+       -c cluster_alias=kafka-target-alias
   
   At most **one** replication flow can be build between any two Aiven for Apache Kafka services.
 

@@ -8,19 +8,21 @@ A time series indexes a series of data points in chronological order, usually as
 * the temperature of a home during a day
 * the position of a satellite during a day
 
-The data in these examples consists of a measured value (temperature or position) corresponding to the time at which the reading of the value took place. 
+The data in these examples consists of a measured value (temperature or position) corresponding to the time at which the reading of the value took place. 
 
 Enable TimescaleDB on Aiven for PostgreSQL
 ------------------------------------------
 
-TimescaleDB is available as an extension; you can enable it by running::
+TimescaleDB is available as an extension; you can enable it by running:
 
-     CREATE EXTENSION timescaledb CASCADE;
+.. code::
+
+   CREATE EXTENSION timescaledb CASCADE;
 
 After enabling the extension, you can create TimescaleDB hypertables and make use of its features for working with time-series data.
 For further information, have a look at the `Getting Started <https://docs.timescale.com/timescaledb/latest/how-to-guides/hypertables/create/>`_ guide from Timescale.
 
-More information about :doc:`how to install and manage extensions <../howto/manage-extensions>` is also available.
+More information about :doc:`how to install and manage extensions </docs/products/postgresql/howto/manage-extensions>` is also available.
 
 TSL-licensed features
 ---------------------

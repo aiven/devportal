@@ -4,9 +4,9 @@ Manage Karapace schema registry authorization
 Karapace schema registry authorization allows you to authenticate the user, to control access to individual `Karapace schema registry REST API endpoints <https://github.com/aiven/karapace>`_, and to filter the content the endpoints return.
 
 .. tip:: 
-  Some older Aiven for Apache Kafka® services may not have this feature enabled by default, and you need to :doc:`enable Karapace schema registry authorization <../howto/enable-schema-registry-authorization>`.
+  Some older Aiven for Apache Kafka® services may not have this feature enabled by default, and you need to :doc:`enable Karapace schema registry authorization </docs/products/kafka/karapace/howto/enable-schema-registry-authorization>`.
 
-Karapace schema registry authorization is configured using :doc:`Access Control Lists (ACLs) <../concepts/acl-definition>`. You can manage the Karapace schema registry authorization ACL entries using the :doc:`Aiven CLI </docs/tools/cli/service/schema-registry-acl>`. 
+Karapace schema registry authorization is configured using :doc:`Access Control Lists (ACLs) </docs/products/kafka/karapace/concepts/acl-definition>`. You can manage the Karapace schema registry authorization ACL entries using the :doc:`Aiven CLI </docs/tools/cli/service/schema-registry-acl>`. 
 
 Using the Aiven CLI commands, you can 
 

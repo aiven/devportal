@@ -5,7 +5,7 @@ Aiven for Apache Kafka® offers flexibility in configuring tiered storage and se
 
 .. important:: 
     
-    Aiven for Apache Kafka® tiered storage is a :doc:`limited availability feature </docs/platform/concepts/beta_services>`. If you’re interested in trying out this feature, contact the sales team at sales@Aiven.io.
+    Aiven for Apache Kafka® tiered storage is a :doc:`limited availability feature </docs/platform/concepts/beta_services>`. If you're interested in trying out this feature, contact the sales team at sales@Aiven.io.
 
 Prerequisite
 ------------
@@ -27,10 +27,10 @@ For a new topic
 4. Select **True** to activate tiered storage for the topic.
 5. Additionally, you can also set the values for ``local_retention_ms`` and ``local_retention_bytes`` using the respective options from the drop-down list.
 
-.. important:: 
-    If the values for ``local_retention_bytes`` and ``local_retention_ms`` are not set, they default to -2 or take the configuration from the service level.
+   .. important:: 
+      If the values for ``local_retention_bytes`` and ``local_retention_ms`` are not set, they default to -2 or take the configuration from the service level.
 
-    When set to -2, the retention in local storage will match the total retention. In this scenario, the data segments sent to remote storage are also retained locally. The remote storage will contain older data segments than in the local storage only when the total retention is set to be greater than the local retention. 
+      When set to -2, the retention in local storage will match the total retention. In this scenario, the data segments sent to remote storage are also retained locally. The remote storage will contain older data segments than in the local storage only when the total retention is set to be greater than the local retention. 
 
 6. Select **Add topic** to save your changes and add the topic with tiered storage.
 

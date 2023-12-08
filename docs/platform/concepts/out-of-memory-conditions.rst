@@ -35,7 +35,7 @@ Left unchecked, the ``OOM Killer`` may opt to kill the primary service. This is 
 
 Further, if Aiven's management platform detects that the primary service is unavailable for |failover_primary| , the service will be marked as down and a failover will occur. 
 
-To mitigate this scenario, namespaces are used, :doc:`some with additional memory limits <service-memory-limits>`, in combination with an ``oom_score_adjust`` on the primary process, to coax the ``OOM Killer`` into selection of less critical processes. 
+To mitigate this scenario, namespaces are used, :doc:`some with additional memory limits </docs/platform/concepts/service-memory-limits>`, in combination with an ``oom_score_adjust`` on the primary process, to coax the ``OOM Killer`` into selection of less critical processes. 
 
 This will still result in a service restart, but in a more controlled process, where the database is shut down, rather than killed; exposure to data loss is limited and recovery is faster when the service restarts, often avoiding failover.
 
@@ -54,7 +54,7 @@ For most databases, the service memory footprint can often be reduced by:
 - Tuning indexes for query load
 - Dropping unused objects from storage
 
-In cases where the working set no longer fits into memory, consider :doc:`scaling your service <../howto/scale-services>`.
+In cases where the working set no longer fits into memory, consider :doc:`scaling your service </docs/platform/howto/scale-services>`.
 
 
 .. include:: /includes/platform-variables.rst

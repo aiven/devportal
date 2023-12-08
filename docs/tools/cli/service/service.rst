@@ -1,7 +1,7 @@
 ``avn service index``
 ============================================
 
-Here you’ll find the full list of commands for ``avn service index``.
+Here you'll find the full list of commands for ``avn service index``.
 
 
 Manage OpenSearch® indexes

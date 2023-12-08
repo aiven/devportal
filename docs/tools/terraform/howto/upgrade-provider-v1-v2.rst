@@ -55,8 +55,7 @@ Between v0.12 and v0.13, the syntax of Terraform files changed. If you have the 
 follow these steps to get the updated syntax:
 
 
-1. Upgrade your modules first by installing Terraform v0.13.x (i.e. 0.13.7):
-``tfenv install 0.13.7 && tfenv use 0.13.7`` and then using ``0.13upgrade`` tool.
+1. Upgrade your modules first by installing Terraform v0.13.x (i.e. 0.13.7): ``tfenv install 0.13.7 && tfenv use 0.13.7`` and then using ``0.13upgrade`` tool.
 
 2. Update ``required_version`` from ``>= 0.12`` to ``>= 0.13`` in the requirements block.
 
@@ -70,17 +69,17 @@ More information `here <https://www.terraform.io/upgrade-guides/0-13.html>`_.
 
 5. Run ``terraform init -upgrade``
 
-.. image:: /images/tools/terraform/terraform-upgrade.jpg
-   :alt: Screenshot of the upgrade command in action
+   .. image:: /images/tools/terraform/terraform-upgrade.jpg
+      :alt: Screenshot of the upgrade command in action
+ 
+   You may see warnings or errors like the above, these will point towards
+   changes made between the release you are running and the latest release.
+ 
+   The warnings will provide recommendations on the changes to make and you
+   can get more information using our
+   `docs <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_.
 
-You may see warnings or errors like the above, these will point towards
-changes made between the release you are running and the latest release.
-
-The warnings will provide recommendations on the changes to make and you
-can get more information using our
-`docs <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_.
-
-Now we can remove the old Terraform folder ``rm -rf ~/.terraform.d``.
+   Now we can remove the old Terraform folder ``rm -rf ~/.terraform.d``.
 
 6. As the last step run ``terraform plan``
 

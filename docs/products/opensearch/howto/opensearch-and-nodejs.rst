@@ -1,12 +1,12 @@
 Write search queries with OpenSearch® and NodeJS
 ================================================
 
-Learn how the OpenSearch® JavaScript client gives a clear and useful interface to communicate with an OpenSearch cluster and run search queries. To make it more delicious we’ll be using a recipe dataset from Kaggle 🍕.
+Learn how the OpenSearch® JavaScript client gives a clear and useful interface to communicate with an OpenSearch cluster and run search queries. To make it more delicious we'll be using a recipe dataset from Kaggle 🍕.
 
 Prepare the playground
 **********************
 
-You can create an OpenSearch cluster either with the visual interface or with the command line. Depending on your preference follow the instructions for :doc:`getting started with the console for Aiven for Opensearch <../getting-started>` or see :doc:`how to create a service with the help of Aiven command line interface <../../../tools/cli/service>`.
+You can create an OpenSearch cluster either with the visual interface or with the command line. Depending on your preference follow the instructions for :doc:`getting started with the console for Aiven for Opensearch </docs/products/opensearch/getting-started>` or see :doc:`how to create a service with the help of Aiven command line interface </docs/tools/cli/service>`.
 
 .. note::
 
@@ -22,7 +22,7 @@ To organise our development space we'll use these files:
 - ``helpers.js`` to contain utilities for logging responses,
 - ``search.js`` for methods specific to search requests.
 
-We’ll be adding code into these files and running the methods from the command line.
+We'll be adding code into these files and running the methods from the command line.
 
 Connect to the cluster and load data
 ------------------------------------
@@ -398,7 +398,7 @@ Now it's your turn to experiment! Create your own boolean query, using what we l
 What's next?
 ************
 
-Now that you learned how to work with search queries, have a look at :doc:`our tutorial for aggregations <opensearch-aggregations-and-nodejs>`. Or, if you're done for a day, see :doc:`how you can pause the service <../../../platform/howto/pause-from-cli>`.
+Now that you learned how to work with search queries, have a look at :doc:`our tutorial for aggregations <opensearch-aggregations-and-nodejs>`. Or, if you're done for a day, see :doc:`how you can pause the service </docs/platform/howto/pause-from-cli>`.
 
 Resources
 *********

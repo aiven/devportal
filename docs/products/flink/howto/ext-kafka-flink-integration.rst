@@ -229,6 +229,4 @@ If you have an external Apache Kafka service already running, you can integrate 
 7. Select the checkbox next to **Apache Kafka**, and choose the external Apache Kafka endpoint from the list to integrate.
 8. Select **Integrate**.
 
-Once you have completed these steps, the integration will be ready, and you can start creating :doc:`Aiven for Apache Flink applications <..//howto/create-flink-applications>` that use the external Apache Kafka service as either a source or sink.
-
-
+Once you have completed these steps, the integration will be ready, and you can start creating :doc:`Aiven for Apache Flink applications </docs/products/flink/howto/create-flink-applications>` that use the external Apache Kafka service as either a source or sink.

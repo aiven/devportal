@@ -10,9 +10,11 @@ To perform a migration from an external MySQL to Aiven for MySQL the following r
 
 * The source server needs to be publicly available or accessible via a virtual private cloud (VPC) peering connection between the private networks, and any firewalls need to be open to allow traffic between the source and target servers.
 * You have a user account on the source server with sufficient privileges to create a user for the replication process.
-* `GTID <https://dev.mysql.com/doc/refman/8.0/en/replication-gtids.html>`_ is enabled on the source database.  To review the current GTID setting, run the following command on the source cluster::
+* `GTID <https://dev.mysql.com/doc/refman/8.0/en/replication-gtids.html>`_ is enabled on the source database.  To review the current GTID setting, run the following command on the source cluster:
 
-    show global variables like 'gtid_mode';
+.. code::
+   
+   show global variables like 'gtid_mode';
 
 .. Note::
     If you are migrating from MySQL in GCP, you need to enable backups with `PITR <https://cloud.google.com/sql/docs/mysql/backup-recovery/pitr>`_ for GTID to be set to ``on``
@@ -57,7 +59,7 @@ Perform the migration
     grant replication slave on *.* TO 'SRC_USERNAME'@'%';
     grant select, process, event on *.* to 'SRC_USERNAME'@'%'
 
-2. If you don't have an Aiven for MySQL database yet, create it via :doc:`Aiven Console <../get-started>` or the dedicated :ref:`Aiven CLI command <avn-cli-service-create>`
+2. If you don't have an Aiven for MySQL database yet, create it via :doc:`Aiven Console </docs/products/mysql/get-started>` or the dedicated :ref:`Aiven CLI command <avn-cli-service-create>`
 
 3. Set the migration details via the ``avn service update`` :ref:`Aiven CLI command <avn-cli-service-update>` substituting the parameters accordingly::
 

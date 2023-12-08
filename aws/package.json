@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "@aws-sdk/client-secrets-manager": "^3.204.0",
+    "@aws-sdk/client-secrets-manager": "^3.370.0",
     "@opensearch-project/opensearch": "^1.0.2",
     "aws-sdk": "^2.1364.0",
     "pg": "^8.7.3"
