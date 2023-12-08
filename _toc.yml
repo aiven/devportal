@@ -69,6 +69,7 @@ entries:
     entries:
     - file: docs/platform/howto/manage-org-users
       title: Invite and remove organization users
+    - file: docs/platform/howto/manage-domains
     - file: docs/platform/howto/delete-user
     - file: docs/platform/howto/make-super-admin
     - file: docs/platform/howto/list-user-profile
