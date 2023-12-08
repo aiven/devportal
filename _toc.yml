@@ -1353,12 +1353,3 @@ entries:
       title: Upgrade your support tier
     - file: docs/platform/concepts/service-level-agreement
     - file: docs/platform/concepts/beta_services
-
-  # -------- COMMUNITY --------
-  - file: docs/community
-    title: Community
-    entries:
-    - file: docs/community/challenge/catch-the-bus
-      title: Catch the Bus - Aiven challenge with ClickHouse
-    - file: docs/community/challenge/the-rolling-challenge
-      title: Rolling - Aiven challenge with Apache Kafka and Apache Flink
