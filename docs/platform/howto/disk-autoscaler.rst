@@ -5,22 +5,30 @@ Discover the service disk autoscaler and its capabilities. Find out how it works
 
 .. topic:: Pricing
 
-   Costs of using disk autoscaler depend on your service type and plan. You're only charged based on actual storage usage on your service. For more details on the costs of using disk autoscaler, check the same for dynamic disk sizing (DDS) in `Aiven Plans and Pricing <https://aiven.io/pricing?product=kafka>`_ or contact us at sales@Aiven.io.
+   Costs of using disk autoscaler depend on your service type and plan. You're only charged for additional storage space actually provisioned for your service. Costs of using disk autoscaler correspond to costs of using dynamic disk sizing (DDS), which you can check in `Aiven Plans and Pricing <https://aiven.io/pricing?product=kafka>`_.
 
 Why use disk autoscaling
 ------------------------
 
-Service disk autoscaler increases disk storage capacity automatically when the disk is running out of space. Disk autoscaling allows you to improve the cost-efficiency of operating your Aiven services: you can start with a relatively small-sized disk and only have it scaled up when needed with no risk of running out of disk space at any point.
+Service disk autoscaler increases disk storage capacity automatically when the disk is running out of space.
+
+.. note::
+
+   Currently, service disk autoscaler doesn't support scaling down.
+
+* Disk autoscaling allows you to improve the cost-efficiency of operating your Aiven services: You can start with a regular-sized disk and only have it scaled up when needed with no risk of running out of disk space at any point.
+
+* Disk autoscaling helps improve service resiliency eliminating the risk of a service becoming non-functional as a consequence of running out of disk space. Use disk autoscaling to make sure your service remains operational in case of unexpected high demand for disk space.
 
 How it works
 ------------
 
 There are a few steps illustrating how disk autoscaler works:
 
-1. You create an disk autoscaler integration endpoint in your Aiven project setting the maximum additional storage at the same time.
+1. You create a disk autoscaler integration endpoint in your Aiven project setting the maximum additional storage at the same time.
 2. You enable a disk autoscaler integration for your service using the new disk autoscaler integration endpoint.
 3. From that point onward, the evaluation of disk space availability for your service is done every 30 seconds.
-4. When disk storage consumption reaches the threshold for a specific service, disk autoscaler increases available storage space by 10% every time taking the currently-used service plan as a baseline.
+4. When disk storage consumption reaches the threshold for a specific service, disk autoscaler increases available storage space by 10% every time taking the currently-used disk space as a baseline.
 
 .. topic:: AUTOSCALE THRESHOLDS PER SERVICE TYPE
 
