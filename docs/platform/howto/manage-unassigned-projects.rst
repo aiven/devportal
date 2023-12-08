@@ -1,35 +1,35 @@
 Manage unassigned projects
 ===========================
-An unassigned project is a project that isn't assigned to an organization or organizational unit. Projects that are part of an organization or unit are easier to maintain as common settings like authentication are centrally managed at the organization level.
+An unassigned project is a project that isn't assigned to an organization or organizational unit. Projects that are part of an organization or unit are easier to maintain as common settings like authentication are centrally managed at the organization level. These projects also get the latest feature updates.
 
 .. important::
-    Aiven is planning to discontinue support for unassigned projects. Organize your projects in the way that works best for you by assigning them now to an organization or organizational unit. If you have unassigned projects after that date, they will be assigned to your organization. If you don't have an organization, one will be created and the unassigned projects will be moved there.
+    It's no longer possible to create unassigned projects and projects that are not assigned to an organization or unit will not be updated with new features. We recommend assigning all projects to an organization or unit using the instructions on this page.
 
 Learn more about :doc:`organizations, organizational units, and projects </docs/platform/concepts/projects_accounts_access>`.
 
 Manage unassigned projects in Aiven Console
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Assign standalone projects to an organization or unit
-------------------------------------------------------
+Assign projects to an organization or unit
+--------------------------------------------
 
-If you don't have an organization, you need to :ref:`create an organization <create-org>` first and then assign your projects to it.
+If you don't have an organization, you need to :ref:`create one <create-org>` first.
 
-To assign standalone projects to an organization or unit in the `Aiven web console <https://console.aiven.io/>`_: 
+To assign standalone projects to an organization or unit in the `Aiven Console <https://console.aiven.io/>`_: 
 
 1. Click **Projects**.
 2. Click **View unassigned projects** to see a list of all projects not assigned to an organization or organizational unit. If you don't see **View unassigned projects** in the dropdown menu, then you don't have any unassigned projects.
-3. On the **Unassigned projects** page, click **Assign project**.
+3. On the **Unassigned projects** page, click **Assign project** for a project you want to assign.
 4. Add any other projects that you want to assign to the same organization or unit.
 5. Select the organization or organizational unit.
-6. Click **Associate Projects**.
+6. Click **Assign projects**.
 
 .. _create-org:
 
 Create an organization
 -----------------------
 
-Projects must be assigned to organizations or units within organizations. We recommend using **only one organization** and creating organizational units to group your projects. 
+Projects must be assigned to organizations or units. We recommend using only one organization and creating organizational units to group your projects. 
 
 If you don't have any organization yet, you can create one:
 
