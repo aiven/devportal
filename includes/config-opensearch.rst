@@ -1,7 +1,6 @@
 
 
 
-
 ``opensearch_version``
 ----------------------
 *['string', 'null']*
@@ -31,6 +30,14 @@
 *array*
 
 **IP filter** Allow incoming connections from CIDR address block, e.g. '10.20.0.0/16'
+
+
+
+``service_log``
+---------------
+*['boolean', 'null']*
+
+**Service logging** Store logs for the service so that they are available in the HTTP API and console.
 
 
 
@@ -114,13 +121,13 @@
 ~~~~~~~~~~~~~
 *['string', 'null']*
 
-**The key in the JSON payload that stores the user's roles** The key in the JSON payload that stores the user's roles. The value of this key must be a comma-separated list of roles. Required only if you want to use roles in the JWT
+**The key in the JSON payload that stores the user’s roles** The key in the JSON payload that stores the user’s roles. The value of this key must be a comma-separated list of roles. Required only if you want to use roles in the JWT
 
 ``subject_key``
 ~~~~~~~~~~~~~~~
 *['string', 'null']*
 
-**The key in the JSON payload that stores the user's name** The key in the JSON payload that stores the user's name. If not defined, the subject registered claim is used. Most IdP providers use the preferred_username claim. Optional.
+**The key in the JSON payload that stores the user’s name** The key in the JSON payload that stores the user’s name. If not defined, the subject registered claim is used. Most IdP providers use the preferred_username claim. Optional.
 
 ``jwt_header``
 ~~~~~~~~~~~~~~
@@ -416,19 +423,19 @@
 
 ``email_sender_name``
 ~~~~~~~~~~~~~~~~~~~~~
-*['string']*
+*string*
 
 **Sender name placeholder to be used in Opensearch Dashboards and Opensearch keystore** This should be identical to the Sender name defined in Opensearch dashboards
 
 ``email_sender_username``
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-*['string']*
+*string*
 
 **Sender username for Opensearch alerts** 
 
 ``email_sender_password``
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-*['string']*
+*string*
 
 **Sender password for Opensearch alerts to authenticate with SMTP server** Sender password for Opensearch alerts to authenticate with SMTP server
 

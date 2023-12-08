@@ -7,29 +7,28 @@ Pre-requisites
 ---------------
 
 #. Install `node-rdkafka <https://github.com/blizzard/node-rdkafka>`_. Make sure that you have OpenSSL set up on your machine.
+#. Go to the *Overview* page of your Aiven for Apache Kafka service and choose how to authenticate.
 
-Go to the *Overview* page of your Aiven for Apache Kafka service.
+   * To connect with SSL authentication, in the *Connection information* section:
 
-* If you are going to connect with SSL authentication:
+     #. If **Authentication Method** is shown, choose **Client Certificate**
+     #. Next to *Access Key*, click **Download** and save the ``service.key`` file.
+     #. Next to *Access Certificate*, click **Download** and save the ``service.cert`` file.
+     #. Next to *CA Certificate*, click **Download** and save the ``ca.pem`` file.
 
-  * In the *Connection information* section:
+   * To connect using SASL authentication:
 
-    #. If **Authentication Method** is shown, choose **Client Certificate**
-    #. Next to *Access Key*, click **Download** and save the ``service.key`` file.
-    #. Next to *Access Certificate*, click **Download** and save the ``service.cert`` file.
-    #. Next to *CA Certificate*, click **Download** and save the ``ca.pem`` file.
+     #. Follow the instructions at `Use SASL Authentication with Apache Kafka® <https://docs.aiven.io/docs/products/kafka/howto/kafka-sasl-auth.html>`_ to enable SASL.
 
-* If you are going to connect using SASL authentication:
+     #. In the *Connection Information* section
 
-  #. Follow the instructions at `Use SASL Authentication with Apache Kafka® <https://docs.aiven.io/docs/products/kafka/howto/kafka-sasl-auth.html>`_ to enable SASL.
+        #. Select **SASL** as the **Authentication Method**
+        #. Next to *CA Certificate*, click **Download** and save the ``ca.pem`` file
+        #. Note the *Password* required for the SASL, we'll need it for authentication
 
-  #. In the *Connection Information* section
-
-     #. Select **SASL** as the **Authentication Method**
-     #. Next to *CA Certificate*, click **Download** and save the ``ca.pem`` file
-     #. Note the *Password* required for the SASL, we'll need it for authentication
-
-Note that the *CA Certificate* ``ca.pem`` file has the same contents by either route.
+.. note::
+  
+   The *CA Certificate* ``ca.pem`` file has the same content regardless of the authentication method.
 
 .. Warning::
 

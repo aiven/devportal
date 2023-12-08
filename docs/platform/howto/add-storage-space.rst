@@ -29,7 +29,7 @@ You can add storage to your running service in `Aiven Console <https://console.a
 
 4. In the **Upgrade service storage** window, use the slider to add disk storage.
 
-.. note::
+   .. note::
       
       The price shown for the additional storage includes backup costs.
 
@@ -87,4 +87,5 @@ For example, if you use a ``Startup-4`` plan with a 80-GiB disk by default and y
 .. note::
 
    - When you perform a service upgrade or downgrade horizontally, remember to include all additional disks the service uses. For example, when switching from ``Startup-4`` to ``Business-4`` or from ``Business-4`` to ``Startup-4``, include all the additional disks available for this service.
+   
    - Similarly, when you fork an existing service, include all additional disks the service uses.

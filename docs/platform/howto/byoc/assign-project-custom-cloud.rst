@@ -19,13 +19,11 @@ With the BYOC feature enabled, you can :doc:`create custom clouds </docs/platfor
 Later, you can come back to the **Available projects** tab in your cloud's page in `Aiven Console <https://console.aiven.io/>`_ and update the settings you configured during the :doc:`initial custom cloud's setup </docs/platform/howto/byoc/create-custom-cloud>`.
 
 
-1. In the **Custom cloud's availability in your organization** section, select either
+1. In the **Custom cloud's availability in your organization** section, select either:
 
-* **By default for all projects** to make your custom cloud available in all existing and future projects in the organization
+   * **By default for all projects** to make your custom cloud available in all existing and future projects in the organization, or;
 
-or
-
-* **By selection** to pick specific projects or organizational units where you want your custom cloud to be available.
+   * **By selection** to pick specific projects or organizational units where you want your custom cloud to be available.
 
 2. If you go for the **By selection** option, the **Assign organizational units** field and the **Assign projects** field show up. Enter the names of organizational units and/ or projects in which you want to be able to use your custom cloud.
 

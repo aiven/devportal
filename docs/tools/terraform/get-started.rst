@@ -25,76 +25,76 @@ Terraform files declare the structure of the infrastructure, the dependencies, a
 
 Set up the Terraform project in an empty folder: 
 
-1. Create a new Terraform file, ``provider.tf``, to declare a dependency on the Aiven Provider for Terraform.
+#. Create a new Terraform file, ``provider.tf``, to declare a dependency on the Aiven Provider for Terraform.
 
-Add the following code to the file and specify the version in the ``required_providers`` block. You can find the latest version on the `Aiven Provider page <https://registry.terraform.io/providers/aiven/aiven/latest>`_.
-
-.. code:: terraform
-
-  terraform {
-    required_providers {
-      aiven = {
-        source  = "aiven/aiven"
-        version = ">=4.0.0, < 5.0.0"
-      }
-    }
-  }
-  
-  provider "aiven" {
-    api_token = var.aiven_api_token
-  }
-
-3. Create a file named ``redis.tf``. 
-
-Add the following code to define the configuration of a single-node Aiven for Redis®* service:
-
-.. code:: terraform
-
-    # Redis service
-    
-    resource "aiven_redis" "single-node-aiven-redis" {
-      project                 = var.project_name
-      cloud_name              = "google-northamerica-northeast1"
-      plan                    = "startup-4"
-      service_name            = "gcp-single-node-redis1"
-      maintenance_window_dow  = "monday"
-      maintenance_window_time = "10:00:00"
-    
-      redis_user_config {
-        redis_maxmemory_policy = "allkeys-random"
-    
-        public_access {
-          redis = true
+   Add the following code to the file and specify the version in the ``required_providers`` block. You can find the latest version on the `Aiven Provider page <https://registry.terraform.io/providers/aiven/aiven/latest>`_.
+   
+   .. code:: terraform
+   
+      terraform {
+        required_providers {
+          aiven = {
+            source  = "aiven/aiven"
+            version = ">=4.0.0, < 5.0.0"
+          }
         }
       }
-    }
+      
+      provider "aiven" {
+        api_token = var.aiven_api_token
+      }
+
+#. Create a file named ``redis.tf``. 
+
+   Add the following code to define the configuration of a single-node Aiven for Redis®* service:
+
+   .. code:: terraform
+
+      # Redis service
+      
+      resource "aiven_redis" "single-node-aiven-redis" {
+        project                 = var.project_name
+        cloud_name              = "google-northamerica-northeast1"
+        plan                    = "startup-4"
+        service_name            = "gcp-single-node-redis1"
+        maintenance_window_dow  = "monday"
+        maintenance_window_time = "10:00:00"
+      
+        redis_user_config {
+          redis_maxmemory_policy = "allkeys-random"
+      
+          public_access {
+            redis = true
+          }
+        }
+      }
     
     
-5. Create a file named ``variables.tf``. This is used to avoid including sensitive information in source control. 
+#. Create a file named ``variables.tf``. This is used to avoid including sensitive information in source control. 
 
-Add the following code to declare the API token and project name variables:
+   Add the following code to declare the API token and project name variables:
 
-.. code:: terraform
-
-   variable "aiven_api_token" {
-     description = "Aiven console API token"
-     type        = string
-   }
+   .. code:: terraform
    
-   variable "project_name" {
-     description = "Aiven console project name"
-     type        = string
-   }
+      variable "aiven_api_token" {
+        description = "Aiven console API token"
+        type        = string
+      }
+      
+      variable "project_name" {
+        description = "Aiven console project name"
+        type        = string
+      }
    
    
-6. Create a file named ``terraform.tfvars`` to define the values of the sensitive information. 
+#. Create a file named ``terraform.tfvars`` to define the values of the sensitive information. 
 
-Add the following code, replacing ``AIVEN_AUTHENTICATION_TOKEN`` with your API token and ``AIVEN_PROJECT_NAME`` with the name of your project:
-
-.. code:: terraform
-
-   aiven_api_token = "AIVEN_AUTHENTICATION_TOKEN"
-   project_name    = "AIVEN_PROJECT_NAME"
+   Add the following code, replacing ``AIVEN_AUTHENTICATION_TOKEN`` with your API token and ``AIVEN_PROJECT_NAME`` with the name of your project:
+   
+   .. code:: terraform
+   
+      aiven_api_token = "AIVEN_AUTHENTICATION_TOKEN"
+      project_name    = "AIVEN_PROJECT_NAME"
    
 
 .. _plan-and-apply:
@@ -102,29 +102,29 @@ Add the following code, replacing ``AIVEN_AUTHENTICATION_TOKEN`` with your API t
 Plan and apply the configuration
 '''''''''''''''''''''''''''''''''
 
-1. The ``init`` command prepares the working directly for use with Terraform. Run this command to automatically find, download, and install the necessary Aiven Provider plugins:
+#. The ``init`` command prepares the working directly for use with Terraform. Run this command to automatically find, download, and install the necessary Aiven Provider plugins:
 
-.. code:: bash
+   .. code:: bash
 
-   terraform init 
+      terraform init 
 
-2. Run the ``plan`` command to create an execution plan and preview the changes that will be made (for example, what resources will be created or modified):
+#. Run the ``plan`` command to create an execution plan and preview the changes that will be made (for example, what resources will be created or modified):
 
-.. code:: bash
+   .. code:: bash
+   
+      terraform plan
 
-   terraform plan
+#. To create the resources, run:
 
-3. To create the resources, run:
-
-.. code:: bash
-
-   terraform apply --auto-approve
+   .. code:: bash
+   
+      terraform apply --auto-approve
 
 The output will be similar to the following:
 
 .. code:: bash
   
-  Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+   Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
 
 You can also see the new Redis service in the `Aiven Console <https://console.aiven.io>`_.
 
@@ -133,32 +133,33 @@ Clean up
 
 To delete the service and its data:
 
-1. Create a destroy plan and preview the changes to your infrastructure with the following command:
+#. Create a destroy plan and preview the changes to your infrastructure with the following command:
 
-.. code:: bash
+   .. code:: bash
+   
+      terraform plan -destroy
 
-   terraform plan -destroy
+#. To delete the resources and all data, run: 
 
-2. To delete the resources and all data, run: 
+   .. code:: bash
+   
+      terraform destroy
 
-.. code:: bash
+#. Enter "yes" to confirm. The output will be similar to the following:
 
-   terraform destroy
-
-3. Enter "yes" to confirm. The output will be similar to the following:
-
-.. code:: bash
-
-  Do you really want to destroy all resources?
-  Terraform will destroy all your managed infrastructure, as shown above.
-  There is no undo. Only 'yes' will be accepted to confirm.
-
-  Enter a value: yes
-  ...
-  Destroy complete! Resources: 1 destroyed.
+   .. code:: bash
+   
+     Do you really want to destroy all resources?
+     Terraform will destroy all your managed infrastructure, as shown above.
+     There is no undo. Only 'yes' will be accepted to confirm.
+   
+     Enter a value: yes
+     ...
+     Destroy complete! Resources: 1 destroyed.
 
 Next steps 
 '''''''''''
+
 * Try `another sample project <https://github.com/aiven/terraform-provider-aiven/blob/main/sample_project/sample.tf>`_ to set up integrated Aiven for Kafka®, PostgreSQL®, InfluxDB®, and Grafana® services.
 
 * Read the `Terraform Docs <https://www.terraform.io/language/modules/develop/structure>`_ to learn about more complex project structures.

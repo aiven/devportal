@@ -17,9 +17,9 @@ To learn data streaming, you need a continuous flow of data and for that you can
 
 1. Clone the repository:
 
-.. code::
+   .. code::
 
-    git clone https://github.com/aiven/fake-data-producer-for-apache-kafka-docker
+      git clone https://github.com/aiven/fake-data-producer-for-apache-kafka-docker
 
 2. Copy the file ``conf/env.conf.sample`` to ``conf/env.conf``
 
