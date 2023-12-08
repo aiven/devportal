@@ -7,8 +7,8 @@ To enable **Karapace schema registry** and **REST APIs** on Aiven for Apache Kaf
 2. Click **Service settings** on the sidebar. 
 3. In the **Service management** section, click **Actions** (**...**).
 4. From the dropdown menu, enable the setting for either or both of the features based on your requirements:
-     a. Click **Enable REST API (Karapace)**. Confirm your choice in the dialog by clicking **Enable**.
-     b. Click **Enable Schema Registry (Karapace)**. Confirm your choice in the dialog by clicking **Enable**.
+   a. Click **Enable REST API (Karapace)**. Confirm your choice in the dialog by clicking **Enable**.
+   b. Click **Enable Schema Registry (Karapace)**. Confirm your choice in the dialog by clicking **Enable**.
 
 To learn more about Karapace and its features, visit the [Karapace homepage](https://www.karapace.io) and the [Karapace GitHub project](https://github.com/aiven/karapace).
 
