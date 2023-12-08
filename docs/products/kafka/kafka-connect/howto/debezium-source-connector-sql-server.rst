@@ -17,7 +17,9 @@ To use the Debezium source connector for SQL server, you need to enabled at data
 Enable CDC at database level
 ''''''''''''''''''''''''''''
 
-To enable the CDC at database level, you can use the following command::
+To enable the CDC at database level, you can use the following command:
+
+.. code::
 
     USE <DATABASE_NAME>
     GO
@@ -26,16 +28,20 @@ To enable the CDC at database level, you can use the following command::
 
 .. Note::
 
-    If you're using GCP Cloud SQL for SQL Server, you can enable database CDC with::
+    If you're using GCP Cloud SQL for SQL Server, you can enable database CDC with:
     
-        EXEC msdb.dbo.gcloudsql_cdc_enable_db '<DATABASE_NAME>'
+    .. code::
+    
+       EXEC msdb.dbo.gcloudsql_cdc_enable_db '<DATABASE_NAME>'
 
 Once the CDC is enabled, a new schema called ``cdc`` is created for the target database, containing all the required tables.
 
 Enable CDC at table level
 '''''''''''''''''''''''''
 
-To enable CDC for a table you can execute the following command::
+To enable CDC for a table you can execute the following command:
+
+.. code::
 
     USE <DATABASE_NAME>
     GO
@@ -56,16 +62,18 @@ The command above has the following parameters:
 
 .. Note::
 
-    If you're using GCP Cloud SQL for SQL Server, you can enable database CDC on a table with::
+   If you're using GCP Cloud SQL for SQL Server, you can enable database CDC on a table with:
+    
+   .. code::
 
-        EXEC sys.sp_cdc_enable_table
-        @source_schema = N'<SCHEMA_NAME>',
-        @source_name = N'<TABLE_NAME>',
-        @role_name = N'<ROLE_NAME>'
+      EXEC sys.sp_cdc_enable_table
+      @source_schema = N'<SCHEMA_NAME>',
+      @source_name = N'<TABLE_NAME>',
+      @role_name = N'<ROLE_NAME>'
 
 .. Warning::
 
-    When evolving table schemas in online mode, new columns information might be lost until the CDC is re-enabled for the table. More information are available in the `related Debezium documentation <https://debezium.io/documentation/reference/stable/connectors/sqlserver.html#sqlserver-schema-evolution>`_.
+   When evolving table schemas in online mode, new columns information might be lost until the CDC is re-enabled for the table. More information are available in the `related Debezium documentation <https://debezium.io/documentation/reference/stable/connectors/sqlserver.html#sqlserver-schema-evolution>`_.
 
 
 .. _connect_debezium_sql_server_source_prereq:

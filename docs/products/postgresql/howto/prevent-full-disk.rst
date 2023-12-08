@@ -5,9 +5,11 @@ If your Aiven for PostgreSQL® service runs out of disk space, the service will 
 
 To prevent this situation, Aiven automatically detects when your service is running out of free space and stops further write operations by setting the ``default_transaction_read_only``  parameter to ``ON``.
 
-With this setting in place, clients trying to execute write operations will start facing errors like::
+With this setting in place, clients trying to execute write operations will start facing errors like:
 
-    cannot execute CREATE TABLE in a read-only transaction.
+.. code::
+  
+   cannot execute CREATE TABLE in a read-only transaction.
 
 To re-enable database writes you need to increase the available space, by either deleting data or upgrading to a larger plan.
 
@@ -40,7 +42,7 @@ Enable database writes for a specific session
 
 If you want to enable writes for a session, login to the required database and execute the following command:
 
-::
+.. code::
 
     SET default_transaction_read_only = OFF;
 
@@ -51,7 +53,7 @@ Enable database writes for a limited amount of time
 
 If you want to enable any writes to the database for a limited amount of time, send the following ``POST`` request using :doc:`Aiven APIs </docs/tools/api>` and replacing the ``PROJECT_NAME`` and ``SERVICE_NAME`` placeholders:
 
-::
+.. code::
 
     https://api.aiven.io/v1/project/<PROJECT_NAME>/service/<SERVICE_NAME>/enable-writes
 

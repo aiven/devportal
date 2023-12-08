@@ -12,6 +12,7 @@ Aiven for Apache Cassandra® HowTo
 
     - :doc:`Manage data in Aiven for Apache Cassandra with DSBULK </docs/products/cassandra/howto/use-dsbulk-with-cassandra>`
     - :doc:`Perform a stress test with nosqlbench </docs/products/cassandra/howto/use-nosqlbench-with-cassandra>`
+    - :doc:`Migrate with ZDM Proxy </docs/products/cassandra/howto/zdm-proxy>`
 
 .. dropdown:: Cluster management
 

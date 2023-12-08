@@ -13,9 +13,11 @@ The ``avn`` client is an ideal way to use Aiven's services in a scriptable way. 
 Install
 '''''''
 
-The ``avn`` utility is a Python package, so you can install using ``pip``::
+The ``avn`` utility is a Python package, so you can install using ``pip``:
 
-    pip install aiven-client
+.. code::
+
+   pip install aiven-client
 
 Check your install by running ``avn`` and looking for usage output.
 
@@ -23,16 +25,21 @@ Check your install by running ``avn`` and looking for usage output.
 Authenticate
 ''''''''''''
 
-There are two options for authenticating. The first is to use your username, and then enter your password when prompted::
+There are two options for authenticating. The first is to use your username, and then enter your password when prompted:
 
-  avn user login <you@example.com>
+.. code::
+ 
+   avn user login <you@example.com>
 
-For security reasons, it is recommended to use an access token, especially if you use SSO. You can use a command like::
+For security reasons, it is recommended to use an access token, especially if you use SSO. You can use a command like:
 
-  avn user login <you@example.com> --token
+.. code::
+ 
+   avn user login <you@example.com> --token
 
 .. tip::
-  To learn how to create an authentication token refer to :doc:`../platform/howto/create_authentication_token`
+ 
+   To learn how to create an authentication token refer to :doc:`/docs/platform/howto/create_authentication_token`
 
 This command will prompt you for a token rather than a password.
 

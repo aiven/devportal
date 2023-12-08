@@ -31,14 +31,16 @@ Use ``pg_repack`` extension
 To use the ``pg_repack`` extension: 
 
 1. Connect to the database as ``avnadmin`` user, and run the following command to create the extension: 
-:: 
 
-  CREATE EXTENSION pg_repack;
+   .. code:: 
+
+      CREATE EXTENSION pg_repack;
 
 2. Run the ``pg_repack`` command on the table to reorganize it. 
-::
 
-  pg_repack -k -U avnadmin -h <HOSTNAME> -p <PORT> -d <DATABASENAME> -t <TABLENAME>   
+   .. code::
+
+      pg_repack -k -U avnadmin -h <HOSTNAME> -p <PORT> -d <DATABASENAME> -t <TABLENAME>   
 
 .. note:: 
   - Using ``-k`` skips the superuser checks in the client. This setting is useful when using pg_repack on platforms that support running it as non-superusers.
@@ -47,6 +49,6 @@ To use the ``pg_repack`` extension:
 
 .. seealso::
   - For more information, see `pg_repack <https://reorg.github.io/pg_repack/>`_ documentation.
-  - For more information on managing extensions, see :doc:`Install or update extension <../howto/manage-extensions>`.
+  - For more information on managing extensions, see :doc:`Install or update extension </docs/products/postgresql/howto/manage-extensions>`.
   
 

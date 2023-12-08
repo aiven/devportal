@@ -86,9 +86,6 @@ This is a two step process. First, you create the SAML SP-Initiated authenticati
 
    * ``X.509 Certificate``
 
-   .. image:: /images/platform/howto/saml/okta/okta-saml-settings.png
-      :alt: SAML settings in Okta showing the application data.
-
 #. Go to the **Assignments** tab.
 
 #. Click **Assign** to assign users or groups to the Okta application.
@@ -109,21 +106,19 @@ Go back to the **Authentication** page in the `Aiven Console <https://console.ai
 
 3. Add the configuration settings from Okta: 
 
-.. list-table::
-   :header-rows: 1
-   :align: left
+   .. list-table::
+     :header-rows: 1
+     :align: left
 
-   * - Parameter
-     - Value
-   * - ``SAML IDP Url`` 
-     - ``Identity Provider Single Sign-On URL``
-   * - ``SAML Entity ID`` 
-     - ``Identity Provider Issuer``
-   * - ``SAML Certificate`` 
-     - ``X.509 Certificate``
+     * - Parameter
+       - Value
+     * - ``SAML IDP Url`` 
+       - ``Identity Provider Single Sign-On URL``
+     * - ``SAML Entity ID`` 
+       - ``Identity Provider Issuer``
+     * - ``SAML Certificate`` 
+       - ``X.509 Certificate``
 
-.. image:: /images/platform/howto/saml/okta/okta-edit-method.png
-   :alt: Edit authentication method page in Aiven Console.
 
 4. Toggle on ``IdP login`` and ``Enable authentication method``. 
 
@@ -131,11 +126,11 @@ Go back to the **Authentication** page in the `Aiven Console <https://console.ai
 
 6. In the **Signup and link accounts URLs** section, copy the appropriate link and send it to your users to switch them to the new IdP:
   
-* **Signup URL**: For users that don't have an Aiven user account and need to create a new Aiven user linked to this IdP.
-* **Account link URL**: For users that already have an Aiven user account to link their existing Aiven user with the configured IdP. 
+   * **Signup URL**: For users that don't have an Aiven user account and need to create a new Aiven user linked to this IdP.
+   * **Account link URL**: For users that already have an Aiven user account to link their existing Aiven user with the configured IdP. 
   
-  .. note::
-    If you set up a SAML authentication method before and are now switching to a new IdP, existing users need to log in with the new account link URL to finish the setup.
+.. note::
+   If you set up a SAML authentication method before and are now switching to a new IdP, existing users need to log in with the new account link URL to finish the setup.
     
 Troubleshooting
 ---------------

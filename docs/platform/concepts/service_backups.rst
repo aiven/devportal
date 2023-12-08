@@ -19,7 +19,7 @@ Service power-off/on backup policy
 
 Whenever a service is powered on from a powered-off state, the latest available backup is restored.
 
-Services that have been powered off for more than 180 days are reviewed. A notification email will be sent to you to provide time for taking action before the service and backup are deleted as part of the :doc:`periodic cleanup of powered-off services <../howto/cleanup-powered-off-services>`.
+Services that have been powered off for more than 180 days are reviewed. A notification email will be sent to you to provide time for taking action before the service and backup are deleted as part of the :doc:`periodic cleanup of powered-off services </docs/platform/howto/cleanup-powered-off-services>`.
 
 If you wish to keep the powered-off service for more than 180 days, power on the service and then power it off again to avoid the routine cleanup.
 
@@ -68,7 +68,7 @@ If the Apache Kafka® service is powered off/on or if any incidents lead to the 
 
 To back up data passing through Apache Kafka, we recommend using one of the following tools:
 
-* :doc:`MirrorMaker 2<../../products/kafka/kafka-mirrormaker>` to replicate the data to another cluster, which could be an Aiven service or a Apache Kafka cluster on your own infrastructure. With MirrorMaker 2, the backup cluster operates as an independent Apache Kafka service. You can freely choose a zone for your backup service since it operates independently from the primary service.
+* :doc:`MirrorMaker 2 </docs/products/kafka/kafka-mirrormaker>` to replicate the data to another cluster, which could be an Aiven service or a Apache Kafka cluster on your own infrastructure. With MirrorMaker 2, the backup cluster operates as an independent Apache Kafka service. You can freely choose a zone for your backup service since it operates independently from the primary service.
   
   .. note::
         
@@ -173,7 +173,7 @@ Aiven for ClickHouse backups contain database lists, table schemas, table conten
 
 .. seealso::
 
-    For more information on Aiven for ClickHouse backups, see :ref:`Backup and restore <backup-and-restore>`.
+    For more information on Aiven for ClickHouse backups, see :doc:`Backup and restore </docs/products/clickhouse/concepts/disaster-recovery>`.
 
 Access to backups
 -----------------
@@ -189,7 +189,7 @@ Recommended backup tools per service are as follows:
 
 * `PostgreSQL <https://www.postgresql.org/docs/14/app-pgdump.html>`__: ``pgdump``
 * `MySQL <https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html>`_: ``mysqldump``
-* `Redis <https://redis.io/docs/ui/cli/#remote-backups-of-rdb-files>`_: ``redis-cli`` 
+* `Redis <https://redis.io/docs/connect/cli/#remote-backups-of-rdb-files>`_: ``redis-cli`` 
 * `Cassandra <https://docs.datastax.com/en/archived/cql/3.3/cql/cql_reference/cqlshCopy.html>`_: ``cqlsh`` 
 * `OpenSearch <https://github.com/elasticsearch-dump/elasticsearch-dump>`_: ``elasticdump``
 * `InfluxDB <https://docs.influxdata.com/influxdb/v1.8/tools/influx-cli/>`_: ``influxd``

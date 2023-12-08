@@ -40,14 +40,16 @@ In order for ``dsbulk`` to read the security certificate to connect to Aiven ser
 
 1. Go to `Aiven Console <https://console.aiven.io/>`_ and download the certificate from the **Overview** page of your Aiven for Apache Cassandra service. Save the CA certificate in a file called ``cassandra-certificate.pem`` in a directory on the linux system where ``dsbulk`` runs.
 
-2. Run this command line to create a truststore file and import the certificate in it::
+2. Run this command line to create a truststore file and import the certificate in it:
+   
+   .. code::
 
-    keytool -import -v                \
-      -trustcacerts                   \ 
-      -alias CARoot                   \
-      -file cassandra-certificate.pem \
-      -keystore client.truststore \
-      -storepass KEYSTORE_PASSWORD
+      keytool -import -v                \
+        -trustcacerts                   \ 
+        -alias CARoot                   \
+        -file cassandra-certificate.pem \
+        -keystore client.truststore \
+        -storepass KEYSTORE_PASSWORD
 
 
    A truststore file called ``client.truststore`` is created in the directory where the ``keytool`` command has been launched.
@@ -58,7 +60,9 @@ In order for ``dsbulk`` to read the security certificate to connect to Aiven ser
    
    By creating a configuration file, the ``dsbulk`` command line is more readable and it doesn't show passwords in clear text. If you don't create a configuration file, every option must be explicitly provided on the command line.
 
-4. Create a file that contains the connection configuration like the following::
+4. Create a file that contains the connection configuration like the following:
+
+   .. code::
 
       datastax-java-driver {
         advanced {
@@ -89,17 +93,19 @@ Run a ``dsbulk`` command to count records in a Cassandra table
 
 Once the configuration file is created, you can run the ``dsbulk``. 
 
-1. Navigate to the `bin` subdirectory of the downloaded ``dsbulk`` package.
+1. Navigate to the ``bin`` subdirectory of the downloaded ``dsbulk`` package.
 
-2. Run the following command::
+2. Run the following command:
 
-    ./dsbulk count                      \
-      -f /full/path/to/conf.file        \
-      -k baselines                      \
-      -t keyvalue                       \
-      -h HOST                           \
-      -port PORT                        \
-      --log.verbosity 2
+   .. code::
+    
+      ./dsbulk count                      \
+        -f /full/path/to/conf.file        \
+        -k baselines                      \
+        -t keyvalue                       \
+        -h HOST                           \
+        -port PORT                        \
+        --log.verbosity 2
 
    where:
 
@@ -112,7 +118,9 @@ Once the configuration file is created, you can run the ``dsbulk``.
 Extract data from a Cassandra table in CSV format
 -------------------------------------------------
 
-To extract the data from a table, you can use the following command::
+To extract the data from a table, you can use the following command:
+
+.. code::
 
    ./dsbulk unload        \
     -f /full/path/to/conf.file       \
@@ -128,8 +136,10 @@ This command will extract all records from the table and output in a CSV format 
 Load data into a Cassandra table from a CSV file
 ------------------------------------------------
 
-To load data into a Cassandra table, the command line is very similar to the previous command::
+To load data into a Cassandra table, the command line is very similar to the previous command:
 
+.. code::
+  
    ./dsbulk load            \
     -f /full/path/to/conf.file         \
     -k baselines            \

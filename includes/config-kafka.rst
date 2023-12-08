@@ -1,9 +1,4 @@
-..
-    ``additional_backup_regions``
-    -----------------------------
-    *array*
 
-    **Additional Cloud Regions for Backup Replication** 
 
 
 
@@ -20,6 +15,14 @@
 *array*
 
 **IP filter** Allow incoming connections from CIDR address block, e.g. '10.20.0.0/16'
+
+
+
+``service_log``
+---------------
+*['boolean', 'null']*
+
+**Service logging** Store logs for the service so that they are available in the HTTP API and console.
 
 
 
@@ -259,6 +262,18 @@
 
 **log.index.size.max.bytes** The maximum size in bytes of the offset index
 
+``log_local_retention_ms``
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+*integer*
+
+**log.local.retention.ms** The number of milliseconds to keep the local log segments before it gets eligible for deletion. If set to -2, the value of log.retention.ms is used. The effective value should always be less than or equal to log.retention.ms value.
+
+``log_local_retention_bytes``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*integer*
+
+**log.local.retention.bytes** The maximum size of local log segments that can grow for a partition before it gets eligible for deletion. If set to -2, the value of log.retention.bytes is used. The effective value should always be less than or equal to log.retention.bytes value.
+
 ``log_message_downconversion_enable``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 *boolean*
@@ -373,6 +388,30 @@
 
 **producer.purgatory.purge.interval.requests** The purge interval (in number of requests) of the producer request purgatory(defaults to 1000).
 
+``sasl_oauthbearer_expected_audience``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*string*
+
+**sasl.oauthbearer.expected.audience** The (optional) comma-delimited setting for the broker to use to verify that the JWT was issued for one of the expected audiences.
+
+``sasl_oauthbearer_expected_issuer``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*string*
+
+**sasl.oauthbearer.expected.issuer** Optional setting for the broker to use to verify that the JWT was created by the expected issuer.
+
+``sasl_oauthbearer_jwks_endpoint_url``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*string*
+
+**sasl.oauthbearer.jwks.endpoint.url** OIDC JWKS endpoint URL. By setting this the SASL SSL OAuth2/OIDC authentication is enabled. See also other options for SASL OAuth2/OIDC. 
+
+``sasl_oauthbearer_sub_claim_name``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*string*
+
+**sasl.oauthbearer.sub.claim.name** Name of the scope from which to extract the subject claim from the JWT. Defaults to sub.
+
 ``socket_request_max_bytes``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 *integer*
@@ -390,6 +429,12 @@
 *integer*
 
 **transaction.remove.expired.transaction.cleanup.interval.ms** The interval at which to remove transactions that have expired due to transactional.id.expiration.ms passing (defaults to 3600000 (1 hour)).
+
+``transaction_partition_verification_enable``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*boolean*
+
+**transaction.partition.verification.enable** Enable verification that checks that the partition has been added to the transaction before writing transactional records to the partition
 
 
 
@@ -511,11 +556,17 @@
 
 **The maximum size of a request in bytes** This setting will limit the number of record batches the producer will send in a single request to avoid sending huge requests.
 
+``scheduled_rebalance_max_delay_ms``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*integer*
+
+**The maximum delay of rebalancing connector workers** The maximum delay that is scheduled in order to wait for the return of one or more departed workers before rebalancing and reassigning their connectors and tasks to the group. During this period the connectors and tasks of the departed workers remain unassigned.  Defaults to 5 minutes.
+
 ``session_timeout_ms``
 ~~~~~~~~~~~~~~~~~~~~~~
 *integer*
 
-**The timeout used to detect failures when using Kafka’s group management facilities** The timeout in milliseconds used to detect failures when using Kafka’s group management facilities (defaults to 45000).
+**The timeout used to detect failures when using Kafka’s group management facilities** The timeout in milliseconds used to detect failures when using Kafka’s group management facilities (defaults to 10000).
 
 
 
@@ -599,11 +650,31 @@
 
 **consumer.request.timeout.ms** The maximum total time to wait for messages for a request if the maximum number of messages has not yet been reached
 
+``name_strategy_validation``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*boolean*
+
+**name.strategy.validation** If true, validate that given schema is registered under expected subject name by the used name strategy when producing messages.
+
 ``simpleconsumer_pool_size_max``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 *integer*
 
 **simpleconsumer.pool.size.max** Maximum number of SimpleConsumers that can be instantiated per broker
+
+
+
+``tiered_storage``
+------------------
+*object*
+
+**Tiered storage configuration** 
+
+``enabled``
+~~~~~~~~~~~
+*boolean*
+
+**Enabled** Whether to enable the tiered storage functionality
 
 
 
@@ -624,6 +695,14 @@
 *boolean*
 
 **leader_eligibility** If true, Karapace / Schema Registry on the service nodes can participate in leader election. It might be needed to disable this when the schemas topic is replicated to a secondary cluster and Karapace / Schema Registry there must not participate in leader election. Defaults to `true`.
+
+
+
+``aiven_kafka_topic_messages``
+------------------------------
+*boolean*
+
+**Allow access to read Kafka topic messages in the Aiven Console and REST API.** 
 
 
 

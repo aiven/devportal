@@ -17,18 +17,22 @@ and to have installed ``avn``, the `Aiven CLI tool <https://docs.aiven.io/docs/t
 
 4. Change the password and make a note of it somewhere safe.
 
-5. Login with ``avn`` and then run the following command to update the stored password in the console ::
+5. Login with ``avn`` and then run the following command to update the stored password in the console:
 
-    avn service user-password-reset \
-      --username avnadmin \
-      --new-password <new password noted above> \
-      <service name>
+   .. code::
 
-   For example ::
+      avn service user-password-reset \
+        --username avnadmin \
+        --new-password <new password noted above> \
+        <service name>
 
-       avn service user-password-reset \
-         --username avnadmin \
-         --new-password my_super_secure_password \
-         my-grafana-service
+   For example:
+   
+   .. code::
+
+      avn service user-password-reset \
+        --username avnadmin \
+        --new-password my_super_secure_password \
+        my-grafana-service
 
 6. Refresh the Aiven Console and the new password should now be displayed for the ``avnadmin`` user.

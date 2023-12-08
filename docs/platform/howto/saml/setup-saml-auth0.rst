@@ -68,9 +68,9 @@ Go back to the **Authentication** page in `Aiven Console <https://console.aiven.
 
 3. Add the configuration settings from Auth0:
 
-* Set the ``SAML IDP URL`` to the ``Identity Provider Login URL`` from Auth0.
-* Set the ``SAML Entity ID`` to the ``Issuer URN`` from Auth0 .
-* Paste the certificate from Auth0 into the ``SAML Certificate`` field.
+   * Set the ``SAML IDP URL`` to the ``Identity Provider Login URL`` from Auth0.
+   * Set the ``SAML Entity ID`` to the ``Issuer URN`` from Auth0 .
+   * Paste the certificate from Auth0 into the ``SAML Certificate`` field.
 
 4. Click **Edit method** to save your changes.
 
@@ -78,8 +78,8 @@ Go back to the **Authentication** page in `Aiven Console <https://console.aiven.
 
 6. In the **Signup and link accounts URLs** section, copy the appropriate link and send it to your users to switch them to the new IdP:
   
-* **Signup URL**: For users that don't have an Aiven user account and need to create a new Aiven user linked to this IdP.
-* **Account link URL**: For users that already have an Aiven user account to link their existing Aiven user with the configured IdP. 
+   * **Signup URL**: For users that don't have an Aiven user account and need to create a new Aiven user linked to this IdP.
+   * **Account link URL**: For users that already have an Aiven user account to link their existing Aiven user with the configured IdP. 
   
   .. note::
     If you set up a SAML authentication method before and are now switching to a new IdP, existing users need to log in with the new account link URL to finish the setup.
@@ -87,4 +87,4 @@ Go back to the **Authentication** page in `Aiven Console <https://console.aiven.
 Troubleshooting
 ---------------
 
-If you have issues, you can use the `SAML Tracer browser extension <https://addons.mozilla.org/firefox/addon/saml-tracer/>`_ to check the process step by step. 
+If you have issues, you can use the `SAML Tracer browser extension <https://addons.mozilla.org/en-US/firefox/addon/saml-tracer>`_ to check the process step by step. 

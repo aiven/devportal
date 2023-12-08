@@ -1,24 +1,54 @@
-import requests
 import argparse
-from typing import Dict
+import re
+import requests
+from dataclasses import dataclass
+from typing import Dict, Self
+from natsort import natsorted
 
 
-def create_cloud_entry(cloud: Dict) -> str:
-    """Creates cloud entry with formatted info.
+@dataclass
+class CloudEntry:
+    description: str
+    geo_region: str
+    name: str
+    vendor_code: str
+    vendor_name: str
 
-    :param cloud: contains relevant info about cloud
-    :returns: formatted string with cloud info
-    :rtype: str
-    """
-    entry = ""
-    # Printing in title case to make it look better
-    entry += f'  * - {cloud["geo_region"].title()}'
-    entry += "\n"
-    entry += f'    - ``{cloud["cloud_name"]}``'
-    entry += "\n"
-    prefix = cloud["cloud_description"][0 : cloud["cloud_description"].find("-")]
-    entry += f"    - {prefix}"
-    return entry
+    @classmethod
+    def from_dict(cls: type[Self], cloud: dict[str, str | float], /) -> Self:
+        """Create cloud entry from dict
+
+        :param cloud: contains relevant info about cloud
+        :rtype: CloudEntry
+        """
+
+        description_parts = [
+            description_part.strip()
+            for description_part in re.split(r"[,:-]", cloud["cloud_description"])
+        ]
+        vendor_name = description_parts.pop(2)
+        description = f"{description_parts[0]}, {description_parts[1]}: {description_parts[2]}"
+        cloud_name = cloud["cloud_name"]
+        vendor_code = cloud_name[0:cloud_name.index("-")]
+        return cls(
+            description=description,
+            geo_region=cloud["geo_region"].title(),  # Printing in title case to make it look better
+            name=cloud_name,
+            vendor_code=vendor_code,
+            vendor_name=vendor_name,
+        )
+
+    def to_str(self) -> str:
+        """Creates cloud entry with formatted info.
+
+        :returns: formatted string with cloud info
+        :rtype: str
+        """
+        result = ""
+        result += f"  * - {self.geo_region}\n"
+        result += f"    - ``{self.name}``\n"
+        result += f"    - {self.description}"
+        return result
 
 
 def main():
@@ -33,33 +63,21 @@ def main():
     response = requests.get("https://api.aiven.io/v1/clouds")
     data = response.json()["clouds"]
 
-    # Sorting the data by vendor and region
-    # * Vendor is contained in the cloud_name field, between the start and the '-' symbol
-    # * geographical region is contained in the geo_region field
-    # * the cloud name itself is contained in the cloud_name field
-    data = sorted(
-        data,
-        key=lambda k: k["cloud_name"][0 : k["cloud_name"].find("-")]
-        + " "
-        + k["geo_region"]
-        + k["cloud_name"],
+    cloud_entries = natsorted(
+        (CloudEntry.from_dict(cloud) for cloud in data),
+        key=lambda cloud: (cloud.vendor_code, cloud.geo_region, cloud.name),
     )
 
     # This helps creating a new section every time there is a change in the Cloud vendor
-    prev_cloud = None
+    prev_cloud_vendor_code = None
     res = ""
-    for cloud in data:
-        # Extracting the cloud vendor information available in the cloud_description field between the `-` symbol and the `:` symbol
-        curr_cloud = cloud["cloud_description"][
-            cloud["cloud_description"].find("-")
-            + 2 : cloud["cloud_description"].find(":")
-        ]
+    for cloud_entry in cloud_entries:
         res += "\n"
         # If current_cloud is different than  the previous cloud, let's create a new title, section, table
-        if curr_cloud != prev_cloud:
-            prev_cloud = curr_cloud
+        if cloud_entry.vendor_code != prev_cloud_vendor_code:
+            prev_cloud_vendor_code = cloud_entry.vendor_code
             res += "\n"
-            res += curr_cloud
+            res += cloud_entry.vendor_name
             res += "\n"
             res += "-----------------------------------------------------"
             res += "\n"
@@ -76,7 +94,7 @@ def main():
             res += "    - Description"
             res += "\n"
 
-        res += create_cloud_entry(cloud)
+        res += cloud_entry.to_str()
 
     with open(filename, "w") as text_file:
         text_file.write(res)

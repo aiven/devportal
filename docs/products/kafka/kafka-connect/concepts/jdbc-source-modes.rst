@@ -19,7 +19,7 @@ Thus, if the source table contains ``100.000`` rows, the connector will insert `
 Incrementing mode
 -----------------
 
-Using the ``incrementing`` mode, the connector will query the table and append a `WHERE` condition based on an **incrementing column** in order to fetch new rows. The incrementing mode requires that a column containing an always growing number (like a series) is present in the source table. The incrementing column is used to check which rows have been added since last query. 
+Using the ``incrementing`` mode, the connector will query the table and append a ``WHERE`` condition based on an **incrementing column** in order to fetch new rows. The incrementing mode requires that a column containing an always growing number (like a series) is present in the source table. The incrementing column is used to check which rows have been added since last query. 
 
 .. Note::
 
@@ -103,7 +103,7 @@ The columns ``created_date`` and ``modified_date`` can be used as timestamp colu
 
 The following polls will append a ``WHERE`` condition to the query selecting only rows with ``modified_date`` or ``created_date`` greater than the previously recorded maximum value using the ``COALESCENCE`` function. In the example below, the condition will be:
 
-::
+.. code::
  
   WHERE COALESCENCE(modified_date, created_date) > '2021-04-06'
   

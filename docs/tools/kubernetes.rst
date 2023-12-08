@@ -6,9 +6,6 @@ Aiven Operator for Kubernetes® allows users to manage Aiven services through th
 .. note::
     Only Aiven for PostgreSQL®, Aiven for Apache Kafka®, Aiven for ClickHouse®, Aiven for Redis®*, and Aiven for OpenSearch® are supported at this time.
 
-
-|
-
     Kubernetes, also known as K8s, is an open-source system for automating deployment, scaling, and management of containerized applications. Kubernetes Operators are software extensions to Kubernetes that make use of custom resources to manage applications and their components. `Kubernetes website <https://kubernetes.io/>`_.
 
 Getting started
@@ -166,7 +163,7 @@ Create a file named ``pod-psql.yaml`` with the content below:
           - secretRef:
               name: pg-connection
 
-The connection information – in this case, the PostgreSQL service URI – is automatically created by the operator within a Kubernetes secret named after the value from the ``connInfoSecretTarget.name`` field.
+The connection information in this case, the PostgreSQL service URI, is automatically created by the operator within a Kubernetes secret named after the value from the ``connInfoSecretTarget.name`` field.
 
 Go ahead and run ``apply`` to create the pod and test the connection:
 

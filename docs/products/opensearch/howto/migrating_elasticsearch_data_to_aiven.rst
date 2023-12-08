@@ -26,7 +26,7 @@ To migrate or copy data:
 
 #. Use the `Aiven CLI client <https://github.com/aiven/aiven-client>`_ to set the ``reindex.remote.whitelist`` parameter to point to your source Elasticsearch service:
 
-   ::
+   .. code::
 
       avn service update your-service-name -c opensearch.reindex_remote_whitelist=your.non-aiven-service.example.com:9200 
 
@@ -44,33 +44,33 @@ To migrate or copy data:
    #. Export mapping from your source Elasticsearch index.
       For example, using ``curl``:
 
-      ::
+      .. code::
 
          curl https://avnadmin:yourpassword@os-123-demoprj.aivencloud.com:23125/logs-2024-09-21/_mapping > mapping.json
    
 
       if you have ``jq`` you can run the following or else you need to manually edit ``mapping.json`` to remove the wrapping ``{"logs-2024-09-21":{"mappings": ... }}`` and keep ``{"properties":...}}``
       
-      ::
+      .. code::
 
          jq .[].mappings mapping.json > src_mapping.json    
 
 
    #. Create the empty index on your destination OpenSearch service.
 
-      ::
+      .. code::
 
          curl -XPUT https://avnadmin:yourpassword@os-123-demoprj.aivencloud.com:23125/logs-2024-09-21
 
    #. Import mapping on your destination OpenSearch index.
 
-      ::
+      .. code::
 
          curl -XPUT https://avnadmin:yourpassword@os-123-demoprj.aivencloud.com:23125/logs-2024-09-21/_mapping \
          -H 'Content-type: application/json' -T src_mapping.json
    #. Submit the reindexing request.
 
-      ::
+      .. code::
 
          curl -XPOST https://avnadmin:yourpassword@os-123-demoprj.aivencloud.com:23125/_reindex \
            -H 'Content-type: application/json' \
@@ -89,7 +89,7 @@ To migrate or copy data:
    #. Wait for the reindexing process to finish.
       If you see a message like the following in the response, check that the host name and port match the ones that you set earlier:
 
-      ::
+      .. code::
 
          [your.non-aiven-service.example.com:9200] not whitelisted in reindex.remote.whitelist
 
@@ -103,4 +103,3 @@ To migrate or copy data:
 
 ------
 
-*Elasticsearch is a trademark of Elasticsearch B.V., registered in the U.S. and in other countries.*

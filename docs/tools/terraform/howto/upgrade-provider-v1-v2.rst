@@ -55,8 +55,7 @@ Between v0.12 and v0.13, the syntax of Terraform files changed. If you have the 
 follow these steps to get the updated syntax:
 
 
-1. Upgrade your modules first by installing Terraform v0.13.x (i.e. 0.13.7):
-``tfenv install 0.13.7 && tfenv use 0.13.7`` and then using ``0.13upgrade`` tool.
+1. Upgrade your modules first by installing Terraform v0.13.x (i.e. 0.13.7): ``tfenv install 0.13.7 && tfenv use 0.13.7`` and then using ``0.13upgrade`` tool.
 
 2. Update ``required_version`` from ``>= 0.12`` to ``>= 0.13`` in the requirements block.
 
@@ -70,17 +69,17 @@ More information `here <https://www.terraform.io/upgrade-guides/0-13.html>`_.
 
 5. Run ``terraform init -upgrade``
 
-.. image:: /images/tools/terraform/terraform-upgrade.jpg
-   :alt: Screenshot of the upgrade command in action
+   .. image:: /images/tools/terraform/terraform-upgrade.jpg
+      :alt: Screenshot of the upgrade command in action
+ 
+   You may see warnings or errors like the above, these will point towards
+   changes made between the release you are running and the latest release.
+ 
+   The warnings will provide recommendations on the changes to make and you
+   can get more information using our
+   `docs <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_.
 
-You may see warnings or errors like the above, these will point towards
-changes made between the release you are running and the latest release.
-
-The warnings will provide recommendations on the changes to make and you
-can get more information using our
-`docs <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_.
-
-Now we can remove the old Terraform folder ``rm -rf ~/.terraform.d``.
+   Now we can remove the old Terraform folder ``rm -rf ~/.terraform.d``.
 
 6. As the last step run ``terraform plan``
 
@@ -119,44 +118,56 @@ To safely make this change you will:
 -  Import already existing service to the Terraform state.
 
 1. To change from the old ``aiven_service`` to the new ``aiven_kafka``
-resource, the resource type should be changed, and the old ``service_type``
-field removed. Any references to ``aiven_service.kafka.*`` should be updated to instead read ``aiven_kafka.kafka.*`` instead. Here's an example showing the update in action::
+   resource, the resource type should be changed, and the old ``service_type``
+   field removed. Any references to ``aiven_service.kafka.*`` should be updated to instead read ``aiven_kafka.kafka.*`` instead. Here's an example showing the update in action:
+   
+   .. code::
 
-    - resource "aiven_service" "kafka" {
-    -    service_type            = "kafka"
-    + resource "aiven_kafka" "kafka" {
-        ...
-    }
-    resource "aiven_service_user" "kafka_user" {
-      project      = var.aiven_project_name
-    -  service_name = aiven_service.kafka.service_name
-    +  service_name = aiven_kafka.kafka.service_name
-      username     = var.kafka_user_name
-    }
+      - resource "aiven_service" "kafka" {
+      -    service_type            = "kafka"
+      + resource "aiven_kafka" "kafka" {
+          ...
+      }
+      resource "aiven_service_user" "kafka_user" {
+        project      = var.aiven_project_name
+      -  service_name = aiven_service.kafka.service_name
+      +  service_name = aiven_kafka.kafka.service_name
+        username     = var.kafka_user_name
+      }
 
+2. Check the current state of the world:
 
-2. Check the current state of the world::
+   .. code::
 
-    terraform state list | grep kf
+      terraform state list | grep kf
 
-3. Remove the service from the control of Terraform, and write a backup of the state into your local directory::
+3. Remove the service from the control of Terraform, and write a backup of the state into your local directory:
 
-    terraform state rm -backup=./ aiven_service.kafka
+   .. code::
 
-.. tip::
-    Use the ``-dry-run`` flag to see this change before it is actually made
+      terraform state rm -backup=./ aiven_service.kafka
 
-4. Add the service back to Terraform by importing it as a new service with the new service type::
+   .. tip::
 
-    terraform import aiven_kafka.kafka demo-project/existing-kafka
+      Use the ``-dry-run`` flag to see this change before it is actually made
 
-5. Check that the import is going to run as you expect::
+4. Add the service back to Terraform by importing it as a new service with the new service type:
 
-    terraform plan
+   .. code::
 
-6. Finally, go ahead and apply the new configuration::
+      terraform import aiven_kafka.kafka demo-project/existing-kafka
 
-    terraform apply
+5. Check that the import is going to run as you expect:
+
+   .. code::
+    
+      terraform plan
+
+6. Apply the new configuration:
+
+   .. code::
+
+      terraform apply
 
 Further reading
 '''''''''''''''

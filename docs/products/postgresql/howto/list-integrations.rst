@@ -19,7 +19,7 @@ Aiven for PostgreSQL® integrations
         :shadow: md
         :margin: 2 2 0 0
 
-    .. grid-item-card:: :doc:`Report and analyze with Google Data Studio </docs/products/postgresql/howto/analyze-with-google-data-studio>`
+    .. grid-item-card:: :doc:`Report and analyze with Google Looker Studio </docs/products/postgresql/howto/analyze-with-google-data-studio>`
         :shadow: md
         :margin: 2 2 0 0
 

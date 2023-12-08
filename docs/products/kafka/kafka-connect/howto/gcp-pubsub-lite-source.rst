@@ -103,11 +103,12 @@ To create a Kafka Connect connector, follow these steps:
 
 8. After all the settings are correctly configured, select **Create connector**.
 9.  Verify the connector status under the **Connectors** screen.
-10. Verify the presence of the data in the target Pub/Sub dataset, the table name is equal to the Apache Kafka topic name. If you need to change the target table name, you can do so using the Kafka Connect ``RegexRouter`` transformation.
+10. Verify the presence of the data in the target Pub/Sub dataset, the table name is equal to the Apache Kafka topic name.
+    If you need to change the target table name, you can do so using the Kafka Connect ``RegexRouter`` transformation.
 
-   .. note::
+    .. note::
 
-      You can also create connectors using the :ref:`Aiven CLI command <avn_service_connector_create>`.
+       You can also create connectors using the :doc:`Aiven CLI command </docs/tools/cli/service/connector>`.
 
 Example: Create a Google Pub/Sub source connector
 -------------------------------------------------

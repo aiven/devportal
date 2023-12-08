@@ -25,19 +25,19 @@ Console.
 Another option is to use the `Aiven
 Client <https://github.com/aiven/aiven-client>`__ .
 
-::
+.. code::
 
    avn service integration-endpoint-create --project your-project \
-       -d example-syslog -t rsyslog \
-       -c server=logs.example.com -c port=514 \
-       -c format=rfc5424 -c tls=true
+       -d example-syslog -t rsyslog \
+       -c server=logs.example.com -c port=514 \
+       -c format=rfc5424 -c tls=true
 
 When defining the remote syslog server the following parameters can be
 applied using the ``-c`` switch.
 
 Required:
 
--  ``server`` -  DNS name or IPv4 address of the server
+-  ``server`` -  DNS name or IPv4 address of the server
 
 -  ``port`` - port to connect to
 
@@ -97,20 +97,20 @@ integration by clicking **Use integration** in the modal window.
 Alternately, with the Aiven Client, first you need the id of the
 endpoint previously created
 
-::
+.. code::
 
    avn service integration-endpoint-list --project your-project
-   ENDPOINT_ID                           ENDPOINT_NAME   ENDPOINT_TYPE
-   ====================================  ==============  =============
-   618fb764-5832-4636-ba26-0d9857222cfd  example-syslog  rsyslog
+   ENDPOINT_ID                           ENDPOINT_NAME   ENDPOINT_TYPE
+   ====================================  ==============  =============
+   618fb764-5832-4636-ba26-0d9857222cfd  example-syslog  rsyslog
 
 Then you can link the service to the endpoint
 
-::
+.. code::
 
    avn service integration-create --project your-project \
-       -t rsyslog -s your-service \
-       -D 618fb764-5832-4636-ba26-0d9857222cfd
+       -t rsyslog -s your-service \
+       -D 618fb764-5832-4636-ba26-0d9857222cfd
 
 Example configurations
 ----------------------
@@ -118,15 +118,6 @@ Example configurations
 Rsyslog is a standard integration so you can use it with any external system. We have collected some examples of how to integrate with popular third party platforms to get you started quickly.
 
 .. note:: All integrations can be configured using the Aiven Console or the Aiven CLI though the examples are easier to copy and paste in the CLI form.
-
-* :ref:`Coralogix<rsyslog_coralogix>`
-* :doc:`Datadog </docs/integrations/datadog/datadog-logs>`
-* :ref:`Loggly<rsyslog_loggly>`
-* :doc:`Logtail </docs/integrations/rsyslog/logtail>`
-* :ref:`Mezmo<rsyslog_mezmo>`
-* :ref:`New Relic<rsyslog_new_relic>`
-* :ref:`Papertrail<rsyslog_papertrail>`
-* :ref:`Sumo Logic<rsyslog_sumo_logic>`
 
 .. _rsyslog_coralogix:
 
@@ -143,7 +134,7 @@ The Syslog Endpoint to use for ``server`` depends on your account:
 
 See the Coralogix `Rsyslog <https://coralogix.com/docs/>`_ documentation for more information.
 
-::
+.. code::
 
    avn service integration-endpoint-create --project your-project \
        -d coralogix -t rsyslog \
@@ -162,7 +153,7 @@ For
 `Loggly <https://www.loggly.com/>`_
 integration, you need to use a custom ``logline`` format with your token.
 
-::
+.. code::
 
    avn service integration-endpoint-create --project your-project \
        -d loggly -t rsyslog \
@@ -177,7 +168,7 @@ Mezmo (LogDNA)
 
 For `Mezmo <https://www.mezmo.com/>`_ syslog integration you need to use a custom ``logline`` format with your key.
 
-::
+.. code::
 
    avn service integration-endpoint-create --project your-project \
       -d logdna -t rsyslog \
@@ -202,7 +193,7 @@ The value to use for ``server`` depends on the account location:
 
 For more information see `Use TCP endpoint to forward logs to New Relic <https://docs.newrelic.com/docs/logs/log-api/use-tcp-endpoint-forward-logs-new-relic/>`_
 
-::
+.. code::
 
    avn service integration-endpoint-create --project your-project \
        -d newrelic -t rsyslog \
@@ -216,13 +207,13 @@ Papertrail
 ~~~~~~~~~~
 
 As `Papertrail <https://www.papertrail.com/>`_ identifies the client based on
-the server and port  you only need to copy the appropriate values from the
+the server and port  you only need to copy the appropriate values from the
 "Log Destinations" page and use those as the values for ``server`` and ``port``
 respectively. You **do not need** the ca-bundle as the Papertrail servers use
 certificates signed by a known CA. You also need to set the format to
 ``rfc3164`` .
 
-::
+.. code::
 
    avn service integration-endpoint-create --project your-project \
        -d papertrail -t rsyslog \
@@ -238,7 +229,7 @@ For `Sumo Logic <https://www.sumologic.com/>`_
 you need to use a custom ``logline`` format with your collector token, use the server and port of the collector,
 and replace ``YOUR_DEPLOYMENT`` with one of ``au``, ``ca``, ``de``, ``eu``, ``fed``, ``in``, ``jp``, ``us1`` or ``us2``. See `Cloud Syslog Source <https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-Syslog-Source>`_ for more information.
 
-::
+.. code::
 
    avn service integration-endpoint-create --project your-project \
        -d sumologic -t rsyslog \

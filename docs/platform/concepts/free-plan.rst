@@ -23,19 +23,20 @@ Free plans include:
 * Monitoring for metrics and logs
 * Backups
 * Integrations between different Aiven services including free, paid, and trial services
-* AWS hosting in a limited number of regions:
-    * EMEA: aws-eu-north-1, aws-eu-west-1, aws-eu-west-2, aws-eu-west-3
-    * Americas: aws-us-east-1, aws-us-east-2, aws-us-west-2, aws-ca-central-1
-    * APAC: aws-ap-south-1
+* DigitalOcean hosting in a limited number of regions:
+
+  * EMEA: do-ams (Amsterdam), do-ldn (London), do-fra (Frankfurt)
+  * Americas: do-nyc (New York), do-sfo (San Francisco), do-tor (Toronto)
+  * APAC: do-blr (Bangalore)
 
 There are some limitations of the free plan services:
 
 * No VPC peering
 * No external service integrations
 * No forking
-* For PostgreSQL and MySQL: no connection pooling
+* For PostgreSQL: no connection pooling
 * Support only through the `Aiven Community Forum <https://aiven.io/community/forum/>`_
-* Only a limited number of AWS regions, no other cloud providers
+* Only a limited number of DigitalOcean regions, no other cloud providers
 * Only one service per service type per user and :doc:`organization </docs/platform/concepts/projects_accounts_access>`
 * Not covered under Aiven's 99.99% SLA
 

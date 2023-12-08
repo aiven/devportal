@@ -9,9 +9,9 @@ Aiven offers a selection of :doc:`authentication methods for Apache Kafka® <../
 4. Select **Change**.
 5. Enable the ``kafka_authentication_methods.sasl`` setting, and then select **Save advanced configuration**.
 
-.. image:: /images/products/kafka/enable-sasl.png
-   :alt: Enable SASL authentication for Apache Kafka
-   :width: 100%
+   .. image:: /images/products/kafka/enable-sasl.png
+      :alt: Enable SASL authentication for Apache Kafka
+      :width: 100%
 
 The **Connection information** at the top of the **Overview** page will now offer the ability to connect via SASL or via Client Certificate.
 

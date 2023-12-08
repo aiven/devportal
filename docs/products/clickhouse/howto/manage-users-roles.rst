@@ -8,7 +8,7 @@ Add a new user
 
 To create a new user account for your service,
 
-1. Log in to the `Aiven web console <https://console.aiven.io/>`_ and, select your ClickHouse® service.
+#. Log in to the `Aiven web console <https://console.aiven.io/>`_ and, select your ClickHouse® service.
 
 #. Select **Users and roles** from the sidebar of your service's page.
 
@@ -41,9 +41,11 @@ This article shows you examples of how to create roles and grant privileges. The
 Create a new role
 ^^^^^^^^^^^^^^^^^
 
-To create a new role named `auditor`, run the following command::
+To create a new role named `auditor`, run the following command:
 
-    CREATE ROLE auditor;
+.. code::
+
+   CREATE ROLE auditor;
 
 You can find more information `on role creation here <https://clickhouse.com/docs/en/sql-reference/statements/create/role/>`_.
 
@@ -52,37 +54,47 @@ Grant permissions
 
 You can grant permissions both to specific roles and to individual users. The grants can be also granular, targeting specific databases, tables, columns, or rows.
 
-For example, the following request grants the `auditor` role permissions to select data from the `transactions` database::
+For example, the following request grants the ``auditor`` role permissions to select data from the ``transactions`` database:
+
+.. code::
 
     GRANT SELECT ON transactions.* TO auditor;
 
-You can limit the grant to a specified table::
+You can limit the grant to a specified table:
+
+.. code::
 
     GRANT SELECT ON transactions.expenses TO auditor;
 
-Or to particular columns of a table::
+Or to particular columns of a table:
+
+.. code::
 
     GRANT SELECT(date,description,amount) ON transactions.expenses TO auditor
 
-To grant the `auditor` and `external` roles to several users, run::
+To grant the ``auditor`` and ``external`` roles to several users, run:
+
+.. code::
 
     GRANT auditor, external TO Mary.Anderson, James.Miller;
 
-To allow the creation of new users::
+To allow the creation of new users:
+
+.. code::
 
     GRANT CREATE USER ON transactions.* TO administrator
 
 There are a variety of privileges that you can grant, and you can find `the full list in the ClickHouse documentation <https://clickhouse.com/docs/en/sql-reference/statements/grant/#privileges>`_.
 
-.. note ::
+.. note::
 
     You can grant permissions to a table that does not yet exist.
 
-.. note ::
+.. note::
 
     Users can grant permissions according to their privileges. If the user lacks the required permissions for a requested operation, they receive a `Not enough privileges` exception.
 
-.. warning ::
+.. warning::
 
     Privileges are not revoked when a table or database is removed. They continue to be active for any new table or database that is created with the same name.
 
@@ -93,46 +105,56 @@ Set roles
 
 A single user can be assigned different roles, either individually or simultaneously.
 
-::
+.. code::
 
     SET ROLE auditor;
 
-You can also specify a role to be activated by default when the user logs in::
+You can also specify a role to be activated by default when the user logs in:
 
-    SET DEFAULT ROLE auditor, external TO Mary.Anderson, James.Miller;
+.. code::
+  
+   SET DEFAULT ROLE auditor, external TO Mary.Anderson, James.Miller;
 
 Delete a role
 ^^^^^^^^^^^^^
 
-If you no longer need a role, you can remove it::
+If you no longer need a role, you can remove it:
+
+.. code::
 
     DROP ROLE auditor;
 
 Revoke permissions
 ^^^^^^^^^^^^^^^^^^
 
-Remove all or specific privileges from users or roles::
+Remove all or specific privileges from users or roles:
 
-    REVOKE SELECT ON transactions.expenses FROM Mary.Anderson;
+.. code::
 
-Revoke all privileges to a table or database simultaneously::
+   REVOKE SELECT ON transactions.expenses FROM Mary.Anderson;
 
-    REVOKE ALL PRIVILEGES ON database.table FROM external;
+Revoke all privileges to a table or database simultaneously:
+
+.. code::
+  
+   REVOKE ALL PRIVILEGES ON database.table FROM external;
 
 See the ClickHouse documentation `for more information on revoking privileges <https://clickhouse.com/docs/en/sql-reference/statements/revoke/>`_.
 
 Check permissions
 ^^^^^^^^^^^^^^^^^
 
-Run the following commands to see all available grants, users, and roles::
+Run the following commands to see all available grants, users, and roles:
+
+.. code::
 
     SHOW GRANTS;
 
-::
+.. code::
 
     SHOW USERS;
 
-::
+.. code::
 
     SHOW ROLES;
 
@@ -145,4 +167,4 @@ You can also see the users, their roles, and permissions in the  `Aiven web cons
 Manage using Terraform
 ------------------------
 
-You can also manage user roles and access using the `Aiven Provider for Terraform </docs/tools/terraform>`. Try the Aiven Terraform Provider Cookbook recipe, Manage user privileges for Aiven for ClickHouse® services using Terraform<https://aiven.io/developer/manage-user-privileges-clickhouse-terraform>`.
+You can also manage user roles and access using the :doc:`Aiven Provider for Terraform </docs/tools/terraform>`. Try Aiven Terraform Provider Cookbook recipe `Manage user privileges for Aiven for ClickHouse® services using Terraform <https://aiven.io/developer/manage-user-privileges-clickhouse-terraform>`_.

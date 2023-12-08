@@ -21,7 +21,7 @@ Why connection pooling?
 
 A high number of backend connections can become a problem with PostgreSQL, as the resource cost per connection is quite high due to how PostgreSQL manages client connections. PostgreSQL creates a separate backend process for each connection, and the unnecessary memory usage caused by the processes will start affecting the total throughput of the system at some point. Moreover, if each connection is very active, the performance can be affected by the high number of parallel executing tasks.
 
-It makes sense to have enough connections so that each CPU core on the server has something to do (each connection can only utilise a single CPU core), but a hundred connections per CPU core may be too much. All this is workload-specific, but often a good number of connections to have is roughly 3-5 times the CPU core count. Aiven enforces :doc:`connection limits <../reference/pg-connection-limits>` to avoid overloading the PostgreSQL database.
+It makes sense to have enough connections so that each CPU core on the server has something to do (each connection can only utilise a single CPU core), but a hundred connections per CPU core may be too much. All this is workload-specific, but often a good number of connections to have is roughly 3-5 times the CPU core count. Aiven enforces :doc:`connection limits </docs/products/postgresql/reference/pg-connection-limits>` to avoid overloading the PostgreSQL database.
 
 
 
@@ -80,14 +80,14 @@ Adding a PgBouncer pooler that utilizes fewer backend connections frees up serve
     end
 
 
-Instead of having dedicated connections per client, now PgBouncer manages the connections assignment optimising them based on client request and settings like the :ref:`pooling-modes`.
+Instead of having dedicated connections per client, now PgBouncer manages the connections assignment optimising them based on client request and settings like the pooling modes.
 
 .. Tip::
     Many frameworks and libraries (ORMs, Django, Rails, etc.) support client-side pooling, which solves much the same problem. However, when there are many distributed applications or devices accessing the same database, a server-side solution is a better approach.
 
 .. _pooling-modes:
 
-Connection pooling modes
+Connection pooling modes 
 ------------------------
 
 Aiven for PostgreSQL supports three different operational pool modes: ``transaction``, ``session`` and ``statement``.

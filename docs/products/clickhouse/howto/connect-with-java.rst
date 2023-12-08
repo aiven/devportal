@@ -45,33 +45,33 @@ Connect to the service
 
 2. Replace ``CLICKHOUSE_HTTPS_HOST`` and ``CLICKHOUSE_HTTPS_PORT`` in the command with your connection values and run the code.
 
-.. code-block:: shell
+   .. code-block:: shell
 
-    jdbc:ch://CLICKHOUSE_HTTPS_HOST:CLICKHOUSE_HTTPS_PORT?ssl=true&sslmode=STRICT
+      jdbc:ch://CLICKHOUSE_HTTPS_HOST:CLICKHOUSE_HTTPS_PORT?ssl=true&sslmode=STRICT
 
 3. Replace ``CLICKHOUSE_USER`` and ``CLICKHOUSE_PASSWORD`` in the code with meaningful data and run the code.
 
-.. code-block:: java
+   .. code-block:: java
 
-    import com.clickhouse.jdbc.ClickHouseConnection;
-    import com.clickhouse.jdbc.ClickHouseDataSource;
-    
-    import java.sql.ResultSet;
-    import java.sql.SQLException;
-    import java.sql.Statement;
-    
-    public class Main {
-        public static void main(String[] args) throws SQLException {
-            String connString = "jdbc:ch://CLICKHOUSE_HTTPS_HOST:CLICKHOUSE_HTTPS_PORT?ssl=true&sslmode=STRICT";
-            ClickHouseDataSource database = new ClickHouseDataSource(connString);
-            ClickHouseConnection connection = database.getConnection("CLICKHOUSE_USER", "CLICKHOUSE_PASSWORD");
-            Statement statement = connection.createStatement();
-            ResultSet result_set = statement.executeQuery("SELECT 1 AS one");
-            while (result_set.next()) {
-                System.out.println(result_set.getInt("one"));
+        import com.clickhouse.jdbc.ClickHouseConnection;
+        import com.clickhouse.jdbc.ClickHouseDataSource;
+        
+        import java.sql.ResultSet;
+        import java.sql.SQLException;
+        import java.sql.Statement;
+        
+        public class Main {
+            public static void main(String[] args) throws SQLException {
+                String connString = "jdbc:ch://CLICKHOUSE_HTTPS_HOST:CLICKHOUSE_HTTPS_PORT?ssl=true&sslmode=STRICT";
+                ClickHouseDataSource database = new ClickHouseDataSource(connString);
+                ClickHouseConnection connection = database.getConnection("CLICKHOUSE_USER", "CLICKHOUSE_PASSWORD");
+                Statement statement = connection.createStatement();
+                ResultSet result_set = statement.executeQuery("SELECT 1 AS one");
+                while (result_set.next()) {
+                    System.out.println(result_set.getInt("one"));
+                }
             }
         }
-    }
 
 .. topic:: Expected result
 

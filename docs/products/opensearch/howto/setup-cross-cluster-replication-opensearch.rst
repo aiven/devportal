@@ -9,7 +9,7 @@ Setup cross cluster replication for Aiven for OpenSearch® |beta|
     - Cross cluster replication feature for Aiven for OpenSearch is a beta release. 
     - Cross cluster replication is not available for Hobbyist and Startup plans.
 
-Follow these steps to set up :doc:`cross cluster replication <../concepts/cross-cluster-replication-opensearch>` for your Aiven for OpenSearch service: 
+Follow these steps to set up :doc:`cross cluster replication </docs/products/opensearch/concepts/cross-cluster-replication-opensearch>` for your Aiven for OpenSearch service: 
 
 1. Log in to the `Aiven Console <https://console.aiven.io/>`_, and select the Aiven for OpenSearch service for which you want to set up cross cluster replication. 
 2. In the service's **Overview** screen, scroll to the **Cross cluster replications** section and select **Create follower**.
@@ -26,7 +26,7 @@ Follow these steps to set up :doc:`cross cluster replication <../concepts/cross-
    * Add additional disk storage based on your business requirements
 4. Select **Create**.
 
-The follower cluster service will be in a `Rebuilding` state, and, once complete, the follower cluster will be ready to pull all data and indexes from the leader service. 
+The follower cluster service will be in a ``Rebuilding`` state, and, once complete, the follower cluster will be ready to pull all data and indexes from the leader service. 
 
 .. note:: 
    To learn about the current limitations with cross cluster replications for Aiven for OpenSearch, see the :ref:`Limitations <ccr-limitatons>` section. 

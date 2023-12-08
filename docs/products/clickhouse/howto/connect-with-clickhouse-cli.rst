@@ -10,7 +10,7 @@ To use the ClickHouse® client across different operating systems, we recommend 
 
 .. note::
 
-    There are other installation options available for ClickHouse clients for different operating systems. You can find them in `Install ClickHouse-client and ClickHouse-local <https://clickhouse.com/docs/en/integrations/sql-clients/clickhouse-client-local#install-clickhouse-client-and-clickhouse-local>`_ and `Available Installation Options <https://clickhouse.com/docs/en/install/#available-installation-options>`_ in the official ClickHouse documentation.
+    There are other installation options available for ClickHouse clients for different operating systems. You can find them in `ClickHouse local <https://clickhouse.com/docs/en/operations/utilities/clickhouse-local>`_ and `Install ClickHouse <https://clickhouse.com/docs/en/install>`_ in the official ClickHouse documentation.
 
 Connection properties
 ---------------------
@@ -56,7 +56,9 @@ Alternatively, sometimes you might want to run individual queries and be able to
     --secure                            \
     --query="YOUR SQL QUERY GOES HERE"
 
-Similar to above example, you can request the list of present databases directly::
+Similar to above example, you can request the list of present databases directly:
+
+.. code::
 
     docker run --interactive            \
     --rm clickhouse/clickhouse-server clickhouse-client \

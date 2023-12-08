@@ -9,7 +9,7 @@ $conn = "mysql:";
 $conn .= "host=" . $fields["host"];
 $conn .= ";port=" . $fields["port"];;
 $conn .= ";dbname=defaultdb";
-$conn .= ";sslmode=verify-ca;sslrootcert=ca.pem";
+$conn .= ";sslmode=verify-ca;sslrootcert='D:/absolute/path/to/ssl/certs/ca.pem'";
 
 try {
     $db = new PDO($conn, $fields["user"], $fields["pass"]);

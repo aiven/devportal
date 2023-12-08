@@ -8,15 +8,15 @@ First, there are some steps that need to be completed on the Google Cloud Market
 Google Cloud Marketplace setup
 ------------------------------
 
-1. Navigate to `Aiven Managed Database Services on the Google Cloud Marketplace <https://console.cloud.google.com/marketplace/product/aiven-public/aiven>`_.  This page contains information about all of Aiven's services and how the marketplace subscription works.  Click the **Subscribe** button on this page.
+#. Navigate to `Aiven Managed Database Services on the Google Cloud Marketplace <https://console.cloud.google.com/marketplace/product/aiven-public/aiven>`_.  This page contains information about all of Aiven's services and how the marketplace subscription works.  Click the **Subscribe** button on this page.
 
-2. Select your desired billing account, then read and agree to the terms and conditions.
+#. Select your desired billing account, then read and agree to the terms and conditions.
 
-3. When you are ready, click the **Subscribe** button at the bottom of the page.  You will NOT be charged by clicking this button; this only sets up a billing subscription between GCP and Aiven.  You will only be charged after deploying Aiven services.
+#. When you are ready, click the **Subscribe** button at the bottom of the page.  You will NOT be charged by clicking this button; this only sets up a billing subscription between GCP and Aiven.  You will only be charged after deploying Aiven services.
 
-4. You should now see a message that says  "Your order request has been sent to Aiven".  Click on the **Go to product page** button.
+#. You should now see a message that says  "Your order request has been sent to Aiven".  Click on the **Go to product page** button.
 
-5. Everything is now complete in your GCP account, but you still need to setup the Aiven account.  Click on the **Manage on provider** button to go to the Aiven console to complete the process.
+#. Everything is now complete in your GCP account, but you still need to setup the Aiven account.  Click on the **Manage on provider** button to go to the Aiven console to complete the process.
 
 .. image:: /images/platform/howto/gcp-manage-on-provider.png
    :alt: Google Cloud Marketplace page after subscribing, showing the "Manage on provider" button
@@ -25,14 +25,15 @@ Google Cloud Marketplace setup
 Aiven account setup
 -------------------
 
-6. You should now be on a signup page at Aiven, asking you for your email address to create a new account.
+#. You should now be on a signup page at Aiven, asking you for your email address to create a new account.
 
-7. After entering your email address, you will be sent an email to confirm your registration.  Click on the link.
+#. After entering your email address, you will be sent an email to confirm your registration.  Click on the link.
 
-8. You can now proceed to the `Aiven console for GCP <https://console.gcp.aiven.io/>`_, where you can manage your Aiven services as normal.
+#. You can now proceed to the `Aiven console for GCP <https://console.gcp.aiven.io/>`_, where you can manage your Aiven services as normal.
 
 .. image:: /images/platform/howto/gcp-console.png
    :alt: The GCP version of the Aiven web console
+   
 .. note:: 
    Note the URL is https://console.gcp.aiven.io - this uses a different account system than https://console.aiven.io.  If you have an existing Aiven account you will need to create a new Aiven GCP account using the Aiven GCP console, and when coming back to Aiven in the future, you will need to use https://console.gcp.aiven.io to login.
 

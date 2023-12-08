@@ -1,7 +1,7 @@
 Access control lists and permission mapping
 ============================================
 
-Aiven for Apache Kafka® uses **access control lists** (ACL) and user definitions to establish individual rights to produce, consume or manage topics. To manage users and ACL entries, you can access the corresponding options in the left-side navigation menu on the service page within the `Aiven Console <https://console.aiven.io/>`_. For detailed instructions, see :doc:`Manage users and access control lists <../howto/manage-acls>`.
+Aiven for Apache Kafka® uses **access control lists** (ACL) and user definitions to establish individual rights to produce, consume or manage topics. To manage users and ACL entries, you can access the corresponding options in the left-side navigation menu on the service page within the `Aiven Console <https://console.aiven.io/>`_. For detailed instructions, see :doc:`Manage users and access control lists </docs/products/kafka/howto/manage-acls>`.
 
 ACL structure
 -------------
@@ -33,7 +33,7 @@ Examples:
 
 .. Warning:: 
 
-  By default, Aiven adds an ``avnadmin`` service user to every new service and adds `admin` permission for all topics to that user. When you create your own ACLs to restrict access, you probably want to remove this ACL entry.
+  By default, Aiven adds an ``avnadmin`` service user to every new service and adds ``admin`` permission for all topics to that user. When you create your own ACLs to restrict access, you probably want to remove this ACL entry.
 
 .. Note::
 

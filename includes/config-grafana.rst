@@ -1,9 +1,4 @@
-..
-    ``additional_backup_regions``
-    -----------------------------
-    *array*
 
-    **Additional Cloud Regions for Backup Replication** 
 
 
 
@@ -20,6 +15,14 @@
 *array*
 
 **IP filter** Allow incoming connections from CIDR address block, e.g. '10.20.0.0/16'
+
+
+
+``service_log``
+---------------
+*['boolean', 'null']*
+
+**Service logging** Store logs for the service so that they are available in the HTTP API and console.
 
 
 
@@ -127,6 +130,14 @@
 
 
 
+``oauth_allow_insecure_email_lookup``
+-------------------------------------
+*boolean*
+
+**Enforce user lookup based on email instead of the unique ID provided by the IdP** 
+
+
+
 ``auth_generic_oauth``
 ----------------------
 *object*
@@ -162,6 +173,12 @@
 *string*
 
 **Authorization URL** 
+
+``auto_login``
+~~~~~~~~~~~~~~
+*boolean*
+
+**Allow users to bypass the login screen and automatically log in** 
 
 ``client_id``
 ~~~~~~~~~~~~~
@@ -491,7 +508,7 @@
 --------------------
 *boolean*
 
-**Enable or disable Grafana alerting functionality** 
+**Enable or disable Grafana legacy alerting functionality. This should not be enabled with unified_alerting_enabled.** 
 
 
 
@@ -628,6 +645,14 @@
 *string*
 
 **Default time zone for user preferences. Value 'browser' uses browser local time zone.** 
+
+
+
+``unified_alerting_enabled``
+----------------------------
+*boolean*
+
+**Enable or disable Grafana unified alerting functionality. By default this is enabled and any legacy alerts will be migrated on upgrade to Grafana 9+. To stay on legacy alerting, set unified_alerting_enabled to false and alerting_enabled to true. See https://grafana.com/docs/grafana/latest/alerting/set-up/migrating-alerts/ for more details.** 
 
 
 

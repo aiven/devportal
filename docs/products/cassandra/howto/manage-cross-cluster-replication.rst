@@ -69,9 +69,7 @@ Add an extra disk space
     
       You can also change your service plan by selecting **Change plan** in the **Your current plan** section.
 
-.. topic:: Result
-    
-    You've added extra disk storage space for your CCR-enabled service and its CCR-replica service.
+You've added extra disk storage space for your CCR-enabled service and its CCR-replica service.
 
 .. _set-up-replication-factor:
 
@@ -150,15 +148,11 @@ In the shell
 1. :doc:`Connect to your service via cqlsh </docs/products/cassandra/howto/connect-cqlsh-cli>`.
 2. Run ``CONSISTENCY;`` to check your current setting for the consistency level.
 
-.. topic:: Expected output
-
-    The query can return, for example, ``Current consistency level is ONE.``, which means that a confirmation of an operation completion on one node is enough for this operation to be considered as successful.
+   Expected output: The query can return, for example, ``Current consistency level is ONE.``, which means that a confirmation of an operation completion on one node is enough for this operation to be considered as successful.
 
 1. To set up the consistency level to a specific value, run the ``CONSISTENCY consistency_level_argument;`` query.
 
-.. topic:: Allowed consistency level arguments
-
-    For the list of the allowed consistency level arguments for Apache Cassandra, see `CONSISTENCY <https://cassandra.apache.org/doc/4.1/cassandra/tools/cqlsh.html#consistency>`_ in the Apache Cassandra documentation.
+   Allowed consistency level arguments: For the list of the allowed consistency level arguments for Apache Cassandra, see `CONSISTENCY <https://cassandra.apache.org/doc/4.1/cassandra/tools/cqlsh.html#consistency>`_ in the Apache Cassandra documentation.
 
 .. code-block:: bash
    :caption: Example
@@ -170,17 +164,15 @@ In a client library
 
 To configure the consistency level in a client library, add an extra parameter or object to define the consistency level on your software component before running a particular query.
 
-.. topic:: Example::
-    
-    In Python, you can specify `consistency_level`` as a parameter for the `SimpleStatement` object.
+.. topic:: Example:
+   
+   In Python, you can specify ``consistency_level`` as a parameter for the ``SimpleStatement`` object.
 
    .. code-block:: bash
     
       session.execute(SimpleStatement("LIST ROLES", consistency_level=ConsistencyLevel.ALL))
 
-.. topic:: Result
-
-    You've set up the consistency level for your service. Now operations on your data are considered as successfully completed according to the consistency level you specified.
+You've set up the consistency level for your service. Now operations on your data are considered as successfully completed according to the consistency level you specified.
 
 .. seealso::
 

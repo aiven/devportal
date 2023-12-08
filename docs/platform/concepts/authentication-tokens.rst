@@ -57,4 +57,4 @@ It is also good practice to rotate your authorization tokens on a regular basis,
 
 .. note::
 
-    Follow :doc:`Create an authentication token <../howto/create_authentication_token>` to create an authentication token from `Aiven Console <https://console.aiven.io/>`_ or the Aiven CLI.
+    Follow :doc:`Create an authentication token </docs/platform/howto/create_authentication_token>` to create an authentication token from `Aiven Console <https://console.aiven.io/>`_ or the Aiven CLI.

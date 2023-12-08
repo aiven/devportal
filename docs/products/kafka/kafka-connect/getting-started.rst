@@ -19,10 +19,10 @@ To create a new Aiven for Apache Kafka Connect dedicated service:
 
 5. Select the cloud provider and region on which you want to run your service.
 
-.. note:: The pricing for the same service may vary between
-    different providers and regions. The service summary on the
-    right side of the console shows you the pricing for your
-    selected options.
+   .. note:: The pricing for the same service may vary between
+      different providers and regions. The service summary on the
+      right side of the console shows you the pricing for your
+      selected options.
 
 6. Select a service plan. This defines how many servers and what kind of memory, CPU, and disk resources are allocated to your service.
 

@@ -115,7 +115,7 @@ The example creates an Couchbase source connector with the following properties:
 
 The connector configuration is the following:
 
-::
+.. code::
 
     {
         "name": "couchbase_source",

@@ -5,7 +5,7 @@ Use Google Private Service Connect with Aiven services
 
     Google Private Service Connect is a :doc:`limited availability feature </docs/platform/concepts/beta_services>`, which you can request from the sales team (sales@Aiven.io). During the limited availability stage, you can use the feature at no cost. If you want to continue using Google Private Service Connect after it reaches general availability, you'll be billed according to the latest applicable price.
 
-    Google Private Service Connect is only supported for Aiven for Apache Kafka®.
+    Google Private Service Connect is supported for Aiven for Apache Kafka® and Aiven for ClickHouse® only.
 
 Discover Google Private Service Connect and benefits of using it with your Aiven services. Learn how to enable Google Private Service Connect for Aiven services.
 
@@ -84,36 +84,39 @@ Step 3: Approve the created connection
 
 1. Update the state of Private Service Connect connections for your Aiven service by running
 
-.. code:: shell
+   .. code:: shell
 
-    avn service privatelink google refresh MY_SERVICE_NAME
+      avn service privatelink google refresh MY_SERVICE_NAME
 
 2. Retry the following command until it returns the pending-user-approval status:
 
-.. code:: shell
+   .. code:: shell
 
-    avn service privatelink google connection list MY_SERVICE_NAME
+      avn service privatelink google connection list MY_SERVICE_NAME
 
-.. code:: shell
+   .. code:: shell
 
-    PRIVATELINK_CONNECTION_ID  PSC_CONNECTION_ID  STATE                  USER_IP_ADDRESS
-    =========================  =================  =====================  ===============
-    plc3fd852bec98             12870921937223780  pending-user-approval  null
+      PRIVATELINK_CONNECTION_ID  PSC_CONNECTION_ID  STATE                  USER_IP_ADDRESS
+      =========================  =================  =====================  ===============
+      plc3fd852bec98             12870921937223780  pending-user-approval  null
 
-.. note::
-   * PSC_CONNECTION_ID is the identifier assigned to Google for the connection, and you can use it to verify that the connection is indeed matching your Private Service Connect endpoint.
-   * PRIVATELINK_CONNECTION_ID is an Aiven internal identifier for the connection, which is needed in the final connection approval step.
+   .. note::
+    
+      * PSC_CONNECTION_ID is the identifier assigned to Google for the connection, and you can use it to verify that the connection is indeed matching your Private Service Connect endpoint.
+
+      * PRIVATELINK_CONNECTION_ID is an Aiven internal identifier for the connection, which is needed in the final connection approval step.
 
 3. To enable a connection, approve it.
 
-.. note::
-    By approving the connection, you provide the IP address assigned to your PSC endpoint - whether automatically assigned or static. Aiven uses this IP address for pointing the service DNS records necessary for the clients to reach the Aiven service through the Private Service Connect connection.
+   .. note::
+     
+      By approving the connection, you provide the IP address assigned to your PSC endpoint - whether automatically assigned or static. Aiven uses this IP address for pointing the service DNS records necessary for the clients to reach the Aiven service through the Private Service Connect connection.
 
-To approve the connection, run the following approval command:
+   To approve the connection, run the following approval command:
 
-.. code:: shell
+   .. code:: shell
 
-    avn service privatelink google connection approve MY_SERVICE_NAME --privatelink-connection-id PRIVATELINK_CONNECTION_ID --user-ip-address PSC_ENDPOINT_IP_ADDRESS
+      avn service privatelink google connection approve MY_SERVICE_NAME --privatelink-connection-id PRIVATELINK_CONNECTION_ID --user-ip-address PSC_ENDPOINT_IP_ADDRESS
 
 As a result, the connection initially transitions to the user-approved state.
 
@@ -127,13 +130,13 @@ As a result, the connection initially transitions to the user-approved state.
     =========================  =================  =============  ===============
     plc3fd852bec98             12870921937223780  user-approved  10.0.0.100
 
-You may be need to run the ``avn service privatelink google refresh`` command at this point since updates to service attachment accept lists are not immediately reflected in the states of returned connected endpoints.
+You may need to run the ``avn service privatelink google refresh`` command at this point since updates to service attachment accept lists are not immediately reflected in the states of returned connected endpoints.
 
 .. code:: shell
 
     avn service privatelink google refresh MY_SERVICE_NAME
 
-After establishing the connection and populating DNS records , the connection appears as ``active``.
+After establishing the connection and populating DNS records, the connection appears as ``active``.
 
 .. code:: shell
 
@@ -176,8 +179,50 @@ To enable Private Link access in `Aiven Console <https://console.aiven.io/>`_, t
 
     Each service component can be controlled separately. For example, you can enable Private Service Connect access for your Aiven for Apache Kafka® service while allowing Kafka® Connect to only be connected via VNet peering.
 
+Acquire connection information
+------------------------------
+
+One Private Service Connect connection
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you have one private endpoint connected to your Aiven service, you can preview the connection information (URI, hostname, or port required to access the service through the private endpoint) in `Aiven Console <https://console.aiven.io/>`_ > the service's **Overview** page > the **Connection information** section, where you'll also find the switch for the ``privatelink`` access route. ``privatelink``-access-route values for ``host`` and ``port`` differ from those for the ``dynamic`` access route used by default to connect to the service.
+
+Multiple Private Service Connect connections
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Use CLI to acquire connection information for more than one Private Service Connect connection.
+
+Each endpoint (connection) has PRIVATELINK_CONNECTION_ID, which you can check using the :doc:`avn service privatelink google connection list SERVICE_NAME </docs/tools/cli/service/privatelink>` command.
+
+To acquire connection information for your service component using Private Service Connect, run the :doc:`avn service connection-info </docs/tools/cli/service/connection-info>` command.
+
+* For SSL connection information for your service component using Private Service Connect, run the following command:
+
+  .. code-block:: bash
+
+     avn service connection-info UTILITY_NAME SERVICE_NAME -p PRIVATELINK_CONNECTION_ID
+
+.. topic:: Where
+
+  * UTILITY_NAME is ``kcat``, for example
+  * SERVICE_NAME is ``kafka-12a3b4c5``, for example
+  * PRIVATELINK_CONNECTION_ID is ``plc39413abcdef``, for example
+
+* For SASL connection information for Aiven for Apache Kafka® service components using Private Service Connect, run the following command:
+
+  .. code-block:: bash
+
+     avn service connection-info UTILITY_NAME SERVICE_NAME -p PRIVATELINK_CONNECTION_ID -a sasl
+
+.. topic:: Where
+
+  * UTILITY_NAME is ``kcat``, for example
+  * SERVICE_NAME is ``kafka-12a3b4c5``, for example
+  * PRIVATELINK_CONNECTION_ID is ``plc39413abcdef``, for example
+
 .. note::
-   Connection information, such as the service URI or hostname and port to access the service through the private endpoint, is available on the service's **Overview** page in `Aiven Console <https://console.aiven.io/>`_.
+
+   SSL certificates and SASL credentials are the same for all the connections.
 
 Delete a Private Link service
 ------------------------------

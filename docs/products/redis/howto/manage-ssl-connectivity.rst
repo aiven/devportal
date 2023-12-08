@@ -12,13 +12,17 @@ Aiven for Redis®* uses SSL encrypted connections by default. This is shown by t
 
     You can find the ``Service URI`` on `Aiven console <https://console.aiven.io/>`_.
 
-Since **Redis 6**, the ``redis-cli`` tool itself supports SSL connections; therefore, you can connect directly to your service using::
+Since **Redis 6**, the ``redis-cli`` tool itself supports SSL connections; therefore, you can connect directly to your service using:
+
+.. code::
 
     redis-cli -u rediss://username:password@host:port
 
-Alternatively, you can use the third-party `Redli tool <https://github.com/IBM-Cloud/redli>`_::
+Alternatively, you can use the third-party `Redli tool <https://github.com/IBM-Cloud/redli>`_:
 
-    redli -u rediss://username:password@host:port
+.. code::
+
+   redli -u rediss://username:password@host:port
 
 
 Not every Redis client supports SSL-encrypted connections.
@@ -31,7 +35,8 @@ Set up ``stunnel`` process
 If you want to keep SSL settings on database side, but hide it from the client side, you can set up a ``stunnel`` process on the client to handle encryption.
 
 You can use the following ``stunnel`` configuration, for example ``stunnel.conf``, to set up a ``stunnel`` process.
-::
+
+.. code::
 
     client = yes
     foreground = yes
@@ -71,7 +76,7 @@ It is important to note that when SSL is in use, HAProxy will be responsible for
 Allow plain-text connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-An alternative is disable database SSL allowing allow plain-text connections. To allow plain-text connections, you can change this setting on **Overview** in the **Advanced configuration** section, or using the :doc:`Aiven Command Line interface<../../../tools/cli>`.
+An alternative is disable database SSL allowing allow plain-text connections. To allow plain-text connections, you can change this setting on **Overview** in the **Advanced configuration** section, or using the :doc:`Aiven Command Line interface</docs/tools/cli>`.
 
 .. Warning::
 

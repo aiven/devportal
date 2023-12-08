@@ -12,7 +12,7 @@ With all these relational information, Pagila is a perfect fit to play around wi
 Load Pagila to your Aiven for PostgreSQL service
 ------------------------------------------------
 
-Before exploring the Pagila database, follow the :doc:`create new service article<../../../platform/howto/create_new_service>` to spin up a PostgreSQL instance.
+Before exploring the Pagila database, follow the :doc:`create new service article</docs/platform/howto/create_new_service>` to spin up a PostgreSQL instance.
 
 1. Download the ``pagila-data.sql`` from our `GitHub repository <https://github.com/aiven/devportal/blob/main/code/products/postgresql/pagila/pagila-data.sql>`_.
 
@@ -191,7 +191,7 @@ Let's explore the dataset with a few queries. All the queries results were limit
         |MARGARET  |MOORE    |
         |DOROTHY   |TAYLOR   |
 
-.. dropdown:: See who rented most DVDs – and how many times
+.. dropdown:: See who rented most DVDs - and how many times
 
     .. code:: sql
 

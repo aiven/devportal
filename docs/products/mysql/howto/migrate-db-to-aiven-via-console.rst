@@ -115,7 +115,7 @@ Pre-configure the source
 
   .. code-block:: bash
 
-     GRANT ALL ON <database-name>.* TO ‘username’@‘%’;
+     GRANT ALL ON <database-name>.* TO ‘username'@‘%';
 
   Reload the grant tables to apply the changes to the permissions.
 

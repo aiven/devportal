@@ -54,18 +54,18 @@ Set up an Azure application
 
 11. Add the following parameters to the **Basic SAML Configuration**:
 
-.. list-table::
-      :header-rows: 1
-      :align: left
+    .. list-table::
+          :header-rows: 1
+          :align: left
 
-      * - Parameter
-        - Value
-      * - ``Identifier (Entity ID)``
-        - ``https://api.aiven.io/v1/sso/saml/account/{account_id}/method/{account_authentication_method_id}/metadata``
-      * - ``Reply URL (Assertion Consumer Service URL)``
-        - ``https://api.aiven.io/v1/sso/saml/account/{account_id}/method/{account_authentication_method_id}/acs``
-      * - ``Sign on URL``
-        - ``https://console.aiven.io``
+          * - Parameter
+            - Value
+          * - ``Identifier (Entity ID)``
+            - ``Metadata URL``
+          * - ``Reply URL (Assertion Consumer Service URL)``
+            - ``ACS URL``
+          * - ``Sign on URL``
+            - ``https://console.aiven.io``
 
 
 12. Click **Save**.
@@ -77,18 +77,18 @@ Create a claim and add users
 
 2. Create an attribute with the following data:
 
-.. list-table::
-      :header-rows: 1
-      :align: left
+   .. list-table::
+        :header-rows: 1
+        :align: left
 
-      * - Parameter
-        - Value
-      * - ``Name``
-        - ``email``
-      * - ``Source``
-        - ``Attribute``
-      * - ``Source Attribute``
-        - ``user.mail``
+        * - Parameter
+          - Value
+        * - ``Name``
+          - ``email``
+        * - ``Source``
+          - ``Attribute``
+        * - ``Source Attribute``
+          - ``user.mail``
 
 3. Download the **Certificate (Base64)** from the **SAML Signing Certificate** section.
 
@@ -109,9 +109,9 @@ Go back to the **Authentication** page in `Aiven Console <https://console.aiven.
 
 3. Add the configuration settings from Azure:
 
-* Set the ``SAML IDP URL`` to the ``Login URL`` from Azure.
-* Set the ``SAML Entity ID`` to the ``Azure AD Identifier`` from Azure.
-* Paste the certificate from Azure into the ``SAML Certificate`` field.
+   * Set the ``SAML IDP URL`` to the ``Login URL`` from Azure.
+   * Set the ``SAML Entity ID`` to the ``Azure AD Identifier`` from Azure.
+   * Paste the certificate from Azure into the ``SAML Certificate`` field.
 
 4. Click **Edit method** to save your changes.
 
@@ -119,11 +119,11 @@ Go back to the **Authentication** page in `Aiven Console <https://console.aiven.
 
 6. In the **Signup and link accounts URLs** section, copy the appropriate link and send it to your users to switch them to the new IdP:
   
-* **Signup URL**: For users that don't have an Aiven user account and need to create a new Aiven user linked to this IdP.
-* **Account link URL**: For users that already have an Aiven user account to link their existing Aiven user with the configured IdP. 
-  
-  .. note::
-    If you set up a SAML authentication method before and are now switching to a new IdP, existing users need to log in with the new account link URL to finish the setup.
+   * **Signup URL**: For users that don't have an Aiven user account and need to create a new Aiven user linked to this IdP.
+   * **Account link URL**: For users that already have an Aiven user account to link their existing Aiven user with the configured IdP. 
+
+.. note::
+   If you set up a SAML authentication method before and are now switching to a new IdP, existing users need to log in with the new account link URL to finish the setup.
 
 Troubleshooting
 ---------------

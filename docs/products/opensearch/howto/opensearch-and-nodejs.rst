@@ -1,12 +1,12 @@
 Write search queries with OpenSearch® and NodeJS
 ================================================
 
-Learn how the OpenSearch® JavaScript client gives a clear and useful interface to communicate with an OpenSearch cluster and run search queries. To make it more delicious we’ll be using a recipe dataset from Kaggle 🍕.
+Learn how the OpenSearch® JavaScript client gives a clear and useful interface to communicate with an OpenSearch cluster and run search queries. To make it more delicious we'll be using a recipe dataset from Kaggle 🍕.
 
 Prepare the playground
 **********************
 
-You can create an OpenSearch cluster either with the visual interface or with the command line. Depending on your preference follow the instructions for :doc:`getting started with the console for Aiven for Opensearch <../getting-started>` or see :doc:`how to create a service with the help of Aiven command line interface <../../../tools/cli/service>`.
+You can create an OpenSearch cluster either with the visual interface or with the command line. Depending on your preference follow the instructions for :doc:`getting started with the console for Aiven for Opensearch </docs/products/opensearch/getting-started>` or see :doc:`how to create a service with the help of Aiven command line interface </docs/tools/cli/service>`.
 
 .. note::
 
@@ -22,7 +22,7 @@ To organise our development space we'll use these files:
 - ``helpers.js`` to contain utilities for logging responses,
 - ``search.js`` for methods specific to search requests.
 
-We’ll be adding code into these files and running the methods from the command line.
+We'll be adding code into these files and running the methods from the command line.
 
 Connect to the cluster and load data
 ------------------------------------
@@ -134,7 +134,7 @@ One of the examples of a term-level query is searching for all entries containin
       );
     };
 
-::
+.. code::
 
     run-func search term sodium 0
 
@@ -174,7 +174,7 @@ When dealing with numeric values, naturally we want to be able to search for cer
       );
     };
 
-::
+.. code::
 
     run-func search range sodium 0 10
 
@@ -216,7 +216,7 @@ When searching for terms inside text fields, we can take into account typos and 
 
 See if you can find recipes with misspelled pineapple 🍍
 
-::
+.. code::
 
     run-func search fuzzy title pinapple 2
 
@@ -255,7 +255,7 @@ To see ``match`` in action use the method below to search for "Tomato garlic sou
       );
     };
 
-::
+.. code::
 
     run-func search match title 'Tomato-garlic soup with dill'
 
@@ -300,7 +300,7 @@ When the order of the words is important, use ``match_phrase`` instead of ``matc
 
 We can use this method to find some recipes for pizza with pineapple. I learned from my Italian colleague that this considered a combination only for tourists, not a true pizza recipe. We'll do it by searching the ``directions`` field for words "pizza" and "pineapple" with top-most distance of 10 words in between.
 
-::
+.. code::
 
     run-func search slop directions "pizza pineapple" 10
 
@@ -345,7 +345,7 @@ This example also sets ``size`` to demonstrate how we can get more than 10 resul
 
 To find recipes with tomato, salmon or tuna and no onion run this query:
 
-::
+.. code::
 
     run-func search query ingredients "(salmon|tuna) +tomato -onion" 100
 
@@ -389,7 +389,7 @@ In the next method we combine what we learned so far, using both term-level and 
       );
     };
 
-::
+.. code::
 
     run-func search boolean
 
@@ -398,7 +398,7 @@ Now it's your turn to experiment! Create your own boolean query, using what we l
 What's next?
 ************
 
-Now that you learned how to work with search queries, have a look at :doc:`our tutorial for aggregations <opensearch-aggregations-and-nodejs>`. Or, if you're done for a day, see :doc:`how you can pause the service <../../../platform/howto/pause-from-cli>`.
+Now that you learned how to work with search queries, have a look at :doc:`our tutorial for aggregations <opensearch-aggregations-and-nodejs>`. Or, if you're done for a day, see :doc:`how you can pause the service </docs/platform/howto/pause-from-cli>`.
 
 Resources
 *********

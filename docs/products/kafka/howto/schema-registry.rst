@@ -48,7 +48,7 @@ Create version 1 of the Avro schema
 
 To create an Avro schema, you need a definition file. As example you can use a **click record** schema defined in JSON and stored in a file named ``ClickRecord.avsc`` containing the following:
 
-::
+.. code::
 
     {"type": "record",
       "name": "ClickRecord",
@@ -70,13 +70,17 @@ Once the schema is defined, you need to compile it, and it can be done **manuall
 Manual schema compilation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In case of manual schema compilation, download ``avro-tools-1.11.0.jar`` from https://avro.apache.org/releases.html or via maven using the following::
+In case of manual schema compilation, download ``avro-tools-1.11.0.jar`` from https://avro.apache.org/releases.html or via maven using the following:
 
-    mvn org.apache.maven.plugins:maven-dependency-plugin:2.8:get -Dartifact=org.apache.avro:avro-tools:1.11.0:jar -Ddest=avro-tools-1.11.0.jar
+.. code::
 
-The schema defined in the previous step, can be now compiled to produce a Java class ``ClickRecord.java`` in the ``io.aiven.avro.example`` package (taken from the ``namespace`` parameter)::
+   mvn org.apache.maven.plugins:maven-dependency-plugin:2.8:get -Dartifact=org.apache.avro:avro-tools:1.11.0:jar -Ddest=avro-tools-1.11.0.jar
 
-    java -jar avro-tools-1.11.0.jar compile schema ClickRecord.avsc .
+The schema defined in the previous step, can be now compiled to produce a Java class ``ClickRecord.java`` in the ``io.aiven.avro.example`` package (taken from the ``namespace`` parameter):
+   
+.. code::
+     
+   java -jar avro-tools-1.11.0.jar compile schema ClickRecord.avsc .
 
 .. Note:: 
 
@@ -86,7 +90,9 @@ Auto schema compilation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 With auto, the schema is compiled during the project build with, for example, ``maven-avro-plugin`` or ``gradle-avro-plugin``.
-The following is a configuration example for ``maven-avro-plugin`` when ``ClickRecord.avsc`` is stored in the path ``src/main/avro/ClickRecord.avsc``::
+The following is a configuration example for ``maven-avro-plugin`` when ``ClickRecord.avsc`` is stored in the path ``src/main/avro/ClickRecord.avsc``:
+
+.. code::
 
     <plugin>
         <groupId>org.apache.avro</groupId>
@@ -116,7 +122,9 @@ Set consumer and producer properties for schema registry
 
 The full code to create consumer and producers using the Schema Registry in Aiven for Apache Kafka can be found in the `Aiven examples GitHub repository <https://github.com/aiven/aiven-examples/tree/master/solutions/kafka-schema-registry>`_. The following contains a list of the properties required.
 
-For producers you need to specify::
+For producers you need to specify:
+
+.. code::
 
       props.put(CommonClientConfigs.BOOTSTRAP_SERVERS_CONFIG, [BOOTSTRAPSERVERS]);
       props.put(CommonClientConfigs.SECURITY_PROTOCOL_CONFIG, "SSL");
@@ -132,7 +140,9 @@ For producers you need to specify::
       props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
       props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, KafkaAvroSerializer.class.getName());
 
-For consumers you need to specify::
+For consumers you need to specify:
+
+.. code::
 
       props.put(CommonClientConfigs.BOOTSTRAP_SERVERS_CONFIG, [BOOTSTRAPSERVERS]);
       props.put(CommonClientConfigs.SECURITY_PROTOCOL_CONFIG, "SSL");

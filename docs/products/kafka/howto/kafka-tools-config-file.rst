@@ -28,14 +28,16 @@ Define the configuration file
 
     The ``avn service user-kafka-java-creds`` :ref:`Aiven CLI command <avn_service_user_kafka_java_creds>` accepts a ``--password`` parameter setting the same password for the truststore, keystore and key
    
-An example of the ``configuration.properties`` content is the following::
+An example of the ``configuration.properties`` content is the following:
 
-    security.protocol=SSL
-    ssl.protocol=TLS
-    ssl.keystore.type=PKCS12
-    ssl.keystore.location=client.keystore.p12
-    ssl.keystore.password=changeit
-    ssl.key.password=changeit
-    ssl.truststore.location=client.truststore.jks
-    ssl.truststore.password=changeit
-    ssl.truststore.type=JKS
+.. code::
+  
+   security.protocol=SSL
+   ssl.protocol=TLS
+   ssl.keystore.type=PKCS12
+   ssl.keystore.location=client.keystore.p12
+   ssl.keystore.password=changeit
+   ssl.key.password=changeit
+   ssl.truststore.location=client.truststore.jks
+   ssl.truststore.password=changeit
+   ssl.truststore.type=JKS

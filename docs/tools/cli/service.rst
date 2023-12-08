@@ -15,7 +15,7 @@ Commands for managing Aiven services via ``avn`` commands.
 
 Manages the Aiven for Apache Kafka® ACL entries.
 
-More information on ``acl-add``, ``acl-delete`` and ``acl-list`` can be found in :doc:`the dedicated page <service/acl>`.
+More information on ``acl-add``, ``acl-delete`` and ``acl-list`` can be found in :doc:`the dedicated page </docs/tools/cli/service/acl>`.
 
 ``avn service backup-list``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -34,7 +34,7 @@ Retrieves the list of backups for a certain service.
 
 **Example:** Retrieve the list of backups for the service ``grafana-25c408a5``.
 
-::
+.. code::
   
   avn service backup-list grafana-25c408a5
 
@@ -66,7 +66,7 @@ Retrieves the project CA that the selected service belongs to.
 
 **Example:** Retrieve the CA certificate for the project where the service named ``kafka-doc`` belongs and store it under ``/tmp/ca.pem``.
 
-::
+.. code::
 
   avn service ca get kafka-doc --target-filepath /tmp/ca.pem
 
@@ -88,7 +88,7 @@ Opens the appropriate interactive shell, such as ``psql`` or ``redis-cli``, to t
 
 **Example:** Open a new ``psql`` shell connecting to an Aiven for PostgreSQL® service named ``pg-doc``.
 
-::
+.. code::
 
   avn service cli pg-doc
 
@@ -131,9 +131,9 @@ Creates a new service.
   * - ``--service-type``
     - The type of service; the :ref:`service types command <avn-cli-service-type>` has the available values
   * - ``--plan``
-    - Aiven subscription plan name; check :ref:`avn_service_plan` for more information
+    - Aiven subscription plan name; check :ref:`avn_service_plan <avn-service-plan>` for more information
   * - ``--cloud``
-    - The cloud region name; check :ref:`avn-cloud-list` for more information
+    - The cloud region name; check :ref:`avn-cloud-list <avn-cloud-list>` for more information
   * - ``--disk-space-gib``
     - Total amount of disk space for data storage (GiB)
   * - ``--no-fail-if-exists``
@@ -153,7 +153,7 @@ Creates a new service.
 * Kafka Connect enabled
 * 600 GiB of total storage capacity
 
-::
+.. code::
   
   avn service create kafka-demo             \
     --service-type kafka                    \
@@ -179,7 +179,7 @@ Resets the service credentials. More information on user password change is prov
 
 **Example:** Reset the credentials of a service named ``kafka-demo``.
 
-::
+.. code::
   
   avn service credentials-reset kafka-demo
 
@@ -200,7 +200,7 @@ List current service connections/queries for an Aiven for PostgreSQL®, Aiven fo
 
 **Example:** List the queries running for a service named ``pg-demo``.
 
-::
+.. code::
   
   avn service current-queries pg-demo
 
@@ -246,13 +246,13 @@ Retrieves a single service details.
 
 **Example:** Retrieve the ``pg-demo`` service details in the ``'{service_name} {service_uri}'`` format.
 
-::
+.. code::
 
     avn service get pg-demo --format '{service_name} {service_uri}'
 
 **Example:** Retrieve the ``pg-demo`` full service details in JSON format.
 
-::
+.. code::
 
     avn service get pg-demo --json
 
@@ -293,7 +293,7 @@ Service keypair commands. The use cases for this command are limited to accessin
 
 **Example:** Retrieve the keypair, and save them to the ``/tmp`` directory, for an Aiven for Apache Cassandra® service, called ``test-cass``, that was started in migration mode.
 
-::
+.. code::
 
     avn service keypair get --key-filepath /tmp/keyfile --cert-filepath /tmp/certfile test-cass cassandra_migrate_sstableloader_user
 
@@ -315,7 +315,7 @@ Lists services within an Aiven project.
 
 **Example:** Retrieve all the services running in the currently selected project.
 
-::
+.. code::
 
     avn service list
 
@@ -334,7 +334,7 @@ An example of ``service list`` output:
 
 **Example:** Retrieve all the services with name ``demo-pg`` running in the project named ``mytestproject``.
 
-::
+.. code::
 
     avn service list demo-pg --project mytestproject
 
@@ -356,7 +356,7 @@ Retrieves the selected service logs.
 
 **Example:** Retrieve the logs for the service named ``pg-demo``.
 
-::
+.. code::
 
     avn service logs pg-demo
 
@@ -388,7 +388,7 @@ Starts the service maintenance updates.
 
 **Example:** Start the maintenance updates for the service named ``pg-demo``.
 
-::
+.. code::
 
     avn service maintenance-start pg-demo
 
@@ -436,7 +436,7 @@ Retrieves the metrics for a defined service in Google chart compatible format. T
 
 **Example:** Retrieve the daily metrics for the service named ``pg-demo``.
 
-::
+.. code::
 
     avn service metrics pg-demo --period day
 
@@ -447,7 +447,7 @@ Retrieves the metrics for a defined service in Google chart compatible format. T
 
 Get migration status
 
-.. _avn_service_plan:
+.. _avn-service-plan:
 
 ``avn service plans``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -461,7 +461,7 @@ Lists the service plans available in a selected project for a defined service ty
   * - Parameter
     - Information
   * - ``--service-type``
-    - The type of service, check :ref:`avn-cli-service-type` for more information
+    - The type of service, check :ref:`avn-cli-service-type <avn-cli-service-type>` for more information
   * - ``--cloud``
     - The cloud region
   * - ``--monthly``
@@ -469,7 +469,7 @@ Lists the service plans available in a selected project for a defined service ty
 
 **Example:** List the service plans available for a PostgreSQL® service in the ``google-europe-west3`` region.
 
-::
+.. code::
 
     avn service plans --service-type pg --cloud google-europe-west3
 
@@ -516,7 +516,7 @@ A description of the retrieved columns for Aiven for PostgreSQL can be found in 
 
 **Example:** List the queries for an Aiven for PostgreSQL service named ``pg-demo`` including the query blurb, number of calls and both total and mean execution time.
 
-::
+.. code::
   
   avn service queries pg-demo --format '{query},{calls},{total_time},{mean_time}'
 
@@ -538,7 +538,7 @@ Resetting query statistics could be useful to measure database behaviour in a pr
 
 **Example:** Reset the queries for a service named ``pg-demo``.
 
-::
+.. code::
   
   avn service queries-reset pg-demo
 
@@ -597,7 +597,7 @@ Create a service task
 
 **Example:** Create a migration task to migrate a MySQL database to Aiven to the service ``mysql`` in project ``myproj``
 
-::
+.. code::
 
   avn service task-create --operation migration_check --source-service-uri mysql://user:password@host:port/databasename --project myproj mysql
 
@@ -633,7 +633,7 @@ Get details for a single task for your service
 
 **Example:** Check the status of your migration task with id ``e2df7736-66c5-4696-b6c9-d33a0fc4cbed`` for the service named ``mysql`` in the ``myproj`` project
 
-::
+.. code::
 
   avn service task-get --task-id e2df7736-66c5-4696-b6c9-d33a0fc4cbed --project myproj mysql
 
@@ -655,7 +655,9 @@ Permanently deletes a service.
 .. Warning::
 
   The ``terminate`` command deletes the service and the associated data. The data is not recoverable. 
-  To temporarily shut down the service use the :ref:`service update command <avn-cli-service-update>` ``avn service update SERVICE_NAME --power-off``
+  To temporarily shut down the service use the
+  :ref:`service update command <avn-cli-service-update>`:
+  ``avn service update SERVICE_NAME --power-off``
 
 .. list-table::
   :header-rows: 1
@@ -670,7 +672,7 @@ Permanently deletes a service.
 
 **Example:** Terminate the service named ``demo-pg``.
 
-::
+.. code::
 
     avn service terminate demo-pg
 
@@ -696,7 +698,7 @@ Lists the Aiven service types available in a project.
 
 **Example:** Retrieve all the services types available in the currently selected project.
 
-::
+.. code::
 
     avn service types
 
@@ -720,7 +722,9 @@ An example of ``service types`` output:
   pg                 PostgreSQL - Object-Relational Database Management System
   redis              Redis - In-Memory Data Structure Store
 
-The service types command in verbose mode also shows all the configuration options for each type of service::
+The service types command in verbose mode also shows all the configuration options for each type of service:
+
+.. code::
 
     avn service types -v
 
@@ -742,13 +746,13 @@ Updates the settings for an Aiven service.
   * - ``service_name``
     - The name of the service
   * - ``--cloud``
-    - The name of the cloud region where to deploy the service; check :ref:`avn-cloud-list` for more information
+    - The name of the cloud region where to deploy the service; check :ref:`avn-cloud-list <avn-cloud-list>`.
   * - ``-c KEY=VALUE``
     - Apply a configuration setting. Run ``avn service types -v`` to view available values.
   * - ``--disk-space-gib``
     - Total amount of disk space for data storage (GiB)
   * - ``--plan``
-    - Aiven subscription plan name; check :ref:`avn_service_plan` for more information
+    - Aiven subscription plan name. See :ref:`avn_service_plan <avn-service-plan>`.
   * - ``--power-on``
     - Power on the service
   * - ``--power-off``
@@ -770,7 +774,7 @@ Updates the settings for an Aiven service.
 
 **Example:** Update the service named ``demo-pg``, move it to ``azure-germany-north`` region and enable termination protection.
 
-::
+.. code::
 
     avn service update demo-pg        \
       --cloud azure-germany-north     \
@@ -779,14 +783,14 @@ Updates the settings for an Aiven service.
 
 **Example:** Update the service named ``big-service`` to scale it down to the ``Business-4`` plan.
 
-::
+.. code::
 
     avn service update big-service        \
       --plan business-4     
 
 **Example:** Update the service named ``secure-database`` to only accept connections from the range ``10.0.1.0/24`` and the IP ``10.25.10.12``.
 
-::
+.. code::
 
     avn service update secure-database \
       -c ip_filter=10.0.1.0/24,10.25.10.1/32
@@ -795,7 +799,7 @@ Updates the settings for an Aiven service.
 
 **Example:** Update the Kafka version of the service named ``kafka-service``. 
 
-::
+.. code::
 
     avn service update \ 
       kafka-service -c kafka_version=X.X
@@ -824,7 +828,7 @@ For each service, lists the versions available together with:
 
 **Example:** List all service versions.
 
-::
+.. code::
 
   avn service versions
 
@@ -861,7 +865,7 @@ Waits for the service to reach the ``RUNNING`` state
 
 **Example:** Wait for the service named ``pg-doc`` to reach the ``RUNNING`` state.
 
-::
+.. code::
 
   avn service wait pg-doc
 

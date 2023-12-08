@@ -43,7 +43,9 @@ Start by configuring the link between Aiven and Datadog for logs. This setup onl
   * - ``AIVEN_PROJECT_NAME``
     - Found in the web console
 
-This is the format to use, replacing the variables listed. Don't edit the values surrounded by ``%`` signs, such as ``%msg%`` as these are used in constructing the log line::
+This is the format to use, replacing the variables listed. Don't edit the values surrounded by ``%`` signs, such as ``%msg%`` as these are used in constructing the log line:
+
+.. code::
 
    DATADOG_API_KEY <%pri%>1 %timestamp:::date-rfc3339% %HOSTNAME%.AIVEN_PROJECT_NAME %app-name% - - - %msg%
 
@@ -51,7 +53,10 @@ An example of the correct format, using an example API key and ``my_project`` as
 
 ``01234567890123456789abcdefabcdef <%pri%>1 %timestamp:::date-rfc3339% %HOSTNAME%.my_project %app-name% - - - %msg%``
 
-.. note::  Metrics and logs are correlated in Datadog by hostname. The metrics integration is currently configured to append the project name to the hostname in order to disambiguate between services that have the same name in different projects. Adding the project name to the hostname in the syslog integration to Datadog assures that they can be correlated again in the Datadog dashboard. Not doing so will not result in missing logs, but the logs that appear in Datadog will miss tags that come from this correlation with the metrics. See https://docs.datadoghq.com/integrations/rsyslog.
+.. note::
+   
+   Metrics and logs are correlated in Datadog by hostname. The metrics integration is currently configured to append the project name to the hostname in order to disambiguate between services that have the same name in different projects. Adding the project name to the hostname in the syslog integration to Datadog assures that they can be correlated again in the Datadog dashboard. Not doing so will not result in missing logs, but the logs that appear in Datadog will miss tags that come from this correlation with the metrics.
+   See the `Datadog documentation <https://docs.datadoghq.com/integrations/rsyslog>`_.
 
 
 4. Select **Create** to save the endpoint.
@@ -63,8 +68,8 @@ Follow the steps in this section for each of the services whose logs should be s
 
 1. From the **Service Overview** page, select **Manage integrations** and choose the **Rsyslog** option.
 
-.. image:: /images/integrations/rsyslog-service-integration.png
-   :alt: Screenshot of system integrations including rsyslog
+   .. image:: /images/integrations/rsyslog-service-integration.png
+      :alt: Screenshot of system integrations including rsyslog
 
 2. Pick the log integration you created earlier from the dropdown and choose **Enable**.
 

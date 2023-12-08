@@ -34,26 +34,29 @@ In order to use the **logical replication** method, you'll need the following:
 * An available replication slot on the destination cluster for each database migrated from the source cluster.
 
 
-1. If you don't have an Aiven for PostgreSQL database yet, run the following command to create a couple of PostgreSQL services via :doc:`../../../tools/cli` substituting the parameters accordingly::
-
-    avn service create -t pg -p DEST_PG_PLAN DEST_PG_NAME
+1. If you don't have an Aiven for PostgreSQL database yet, run the following command to create a couple of PostgreSQL services via :doc:`/docs/tools/cli` substituting the parameters accordingly:
+   
+   .. code::
+   
+      avn service create -t pg -p DEST_PG_PLAN DEST_PG_NAME
 
 2. Enable the ``aiven_extras`` extension in the Aiven for PostgreSQL® target database as written in the :ref:`dedicated document <aiven_extras_extension>`.
 
 3. Set the ``wal_level`` to ``logical`` on source database. Check the following examples for the main managed databases:
 
-   * :doc:`Amazon Aurora <./logical-replication-aws-aurora>`
-   * :doc:`Amazon RDS <./logical-replication-aws-rds>`
-   * :doc:`Google Cloud SQL <./logical-replication-gcp-cloudsql>`
+   * :doc:`Amazon Aurora </docs/products/postgresql/howto/logical-replication-aws-aurora>`
+   * :doc:`Amazon RDS </docs/products/postgresql/howto/logical-replication-aws-rds>`
+   * :doc:`Google Cloud SQL </docs/products/postgresql/howto/logical-replication-gcp-cloudsql>`
 
    .. Note::
-    Aiven for PostgreSQL has ``wal_level`` set to ``logical`` by default
+    
+      Aiven for PostgreSQL has ``wal_level`` set to ``logical`` by default
 
    To review the current ``wal_level``, run the following command on the source cluster via ``psql``
 
    .. code:: sql
 
-    show wal_level;
+      show wal_level;
 
 .. _pg_migrate_wal:
 
@@ -86,7 +89,7 @@ Perform the migration with ``aiven-db-migrate``
 Run ``aiven-db-migrate`` using the Aiven CLI  
 ''''''''''''''''''''''''''''''''''''''''''''
 
-You can initiate a migration to an Aiven for PostgreSQL® service with the :doc:`../../../tools/cli` and the following command, substituting the placeholders accordingly:
+You can initiate a migration to an Aiven for PostgreSQL® service with the :doc:`/docs/tools/cli` and the following command, substituting the placeholders accordingly:
 
 .. code:: bash
 
@@ -106,7 +109,7 @@ You can initiate a migration to an Aiven for PostgreSQL® service with the :doc:
 Check the migration status using the Aiven CLI
 ''''''''''''''''''''''''''''''''''''''''''''''
 
-You can check the migration status using the :doc:`Aiven CLI <../../../tools/cli>` and the following call:
+You can check the migration status using the :doc:`Aiven CLI </docs/tools/cli>` and the following call:
 
 .. code:: bash
 
@@ -115,10 +118,13 @@ You can check the migration status using the :doc:`Aiven CLI <../../../tools/cli
 
 
 .. Note::
-    There maybe delay for migration status to update the current progress, keep running this command to see the most up-to-date status.
+  
+    There may be delay for migration status to update the current progress, keep running this command to see the most up-to-date status.
 
 
-The output should be similar to the following, which mentions that the ``pg_dump`` migration of the ``defaultdb`` database is ``done`` and the logical ``replication`` of the ``has_aiven_extras`` database is syncing::
+The output should be similar to the following, which mentions that the ``pg_dump`` migration of the ``defaultdb`` database is ``done`` and the logical ``replication`` of the ``has_aiven_extras`` database is syncing:
+
+.. code::
 
     -----Response Begin-----
     {
@@ -149,12 +155,13 @@ The output should be similar to the following, which mentions that the ``pg_dump
 
 
 .. Note::
-    The overall ``method`` field is left empty due to the mixed methods used to migrate each database.
+  
+   The overall ``method`` field is left empty due to the mixed methods used to migrate each database.
 
 Stop the migration process using the Aiven CLI
 ''''''''''''''''''''''''''''''''''''''''''''''
 
-Once the migration is finished, you can stop the related process using the :doc:`../../../tools/cli`.
+Once the migration is finished, you can stop the related process using the :doc:`/docs/tools/cli`.
 
 .. Warning::
 

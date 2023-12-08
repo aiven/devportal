@@ -21,4 +21,4 @@ Aiven for PostgreSQL® instances limit the number of allowed connections to make
    * - Startup/Business/Premium-64 and above
      - 1000
 
-When several clients or client threads are connecting to the database, Aiven recommends using :doc:`connection pooling<../concepts/pg-connection-pooling>` to limit the number of actual backend connections. Connection pooling is available in all Aiven for PostgreSQL Startup, Business, and Premium plans, and can be :doc:`configured in the console<../howto/manage-pool>`.
+When several clients or client threads are connecting to the database, Aiven recommends using :doc:`connection pooling </docs/products/postgresql/concepts/pg-connection-pooling>` to limit the number of actual backend connections. Connection pooling is available in all Aiven for PostgreSQL Startup, Business, and Premium plans, and can be :doc:`configured in the console </docs/products/postgresql/howto/manage-pool>`.

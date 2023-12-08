@@ -36,19 +36,19 @@ Code
 
 Execute the following from a terminal window to connect to the MySQL database:
 
-::
+.. code::
 
     mysqlsh --sql SERVICE_URI
 
 You can execute this query to test:
 
-::
+.. code::
 
    MySQL ssl defaultdb SQL> select 1 + 2 as three;
    +-------+
    | three |
    +-------+
-   |     3 |
+   |     3 |
    +-------+
    1 row in set (0.0539 sec)
 
@@ -90,7 +90,7 @@ This step requires to manually specify individual parameters. You can find those
 
 Once you have these parameters, execute the following from a terminal window to connect to the MySQL database:
 
-::
+.. code::
 
    mysql --user avnadmin --password=USER_PASSWORD --host USER_HOST --port USER_PORT DB_NAME
 

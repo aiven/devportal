@@ -18,8 +18,8 @@ In case of **Apache Kafka®** and **OpenSearch®** the service DNS address resol
 
     While the DNS name remains the same, the IP address it points to, will change during a maintenance break. To know more about static IP addresses, check the :doc:`related documentation <static-ips>`.
 
-.. warning:: 
-    OpenSearch Dashboards will be **not accessible** during a **maintenance update** that also consists of version updates to your Aiven for OpenSearch service. The duration of the maintenance window can vary based on the updates. The dashboards will be accessible again once the update is completed.
+.. note:: 
+    Starting with Aiven for OpenSearch® versions 1.3.13 and 2.10, OpenSearch Dashboards will remain available during a maintenance update that also consists of version updates to your Aiven for OpenSearch service.
 
 Maintenance updates
 ~~~~~~~~~~~~~~~~~~~

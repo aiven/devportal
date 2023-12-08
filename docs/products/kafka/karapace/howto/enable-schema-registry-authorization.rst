@@ -7,9 +7,11 @@ Most Aiven for Apache Kafka® services will automatically have :doc:`schema regi
 
     avn service update --enable-schema-registry-authorization SERVICE_NAME
 
-2. You can similarly disable the Karapace schema registry authorization using::
+2. You can similarly disable the Karapace schema registry authorization using:
 
-    avn service update --disable-schema-registry-authorization SERVICE_NAME
+   .. code::
+
+      avn service update --disable-schema-registry-authorization SERVICE_NAME
 
 .. warning:: 
-    Enabling Karapace schema registry authorization can disrupt access for users if the access control rules have not been configured to allow this. For more information, see :doc:`Manage Karapace schema registry authorization <../howto/manage-schema-registry-authorization>`.
+    Enabling Karapace schema registry authorization can disrupt access for users if the access control rules have not been configured to allow this. For more information, see :doc:`Manage Karapace schema registry authorization </docs/products/kafka/karapace/howto/manage-schema-registry-authorization>`.

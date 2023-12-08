@@ -1,29 +1,50 @@
 MirrorMaker 2 common parameters
 ###############################
 
-1. ``kafka_mirrormaker.tasks_max_per_cpu`` in advanced options can be increased, set it to match the number of partitions may improve performance.
-2. Interval seconds for the following settings should match, intervals can be decreased to sync data more frequently:
+MirrorMaker 2 (MM2) offers a suite of parameters to help with data replication and monitoring within Apache Kafka® ecosystems. This topic outlines common parameters you can adjust, along with tips for validating MM2's performance.
 
-  Advanced options:
-    * ``kafka_mirrormaker.emit_checkpoints_interval_seconds``
-    * ``kafka_mirrormaker.sync_group_offsets_interval_seconds`` 
-    * Replication flow:
-        * Sync interval in seconds
+1. Increase the value of ``kafka_mirrormaker.tasks_max_per_cpu`` in the advanced options. Setting this to match the number of partitions can enhance performance.
+2. Ensure the interval seconds for the following settings match. You can reduce these intervals for more frequent data synchronization:
 
-3. Add `*[\-\.]` internal to the topic black list:
-    * connect.* __.*, crowdcontrol.public.events, .*[\-\.]internal
-    * The following parameters can be tuned depending on use case:
-        * ``kafka_mirrormaker.consumer_fetch_min_bytes``
-        * ``kafka_mirrormaker.producer_batch_size``
-        * ``kafka_mirrormaker.producer_buffer_memory``
-        * ``kafka_mirrormaker.producer_linger_ms``
-        * ``kafka_mirrormaker.producer_max_request_size``
+   - Advanced options:
+    
+     - ``kafka_mirrormaker.emit_checkpoints_interval_seconds``
+     - ``kafka_mirrormaker.sync_group_offsets_interval_seconds`` 
 
-To validate MM2 is caught up on the messages, the following can be monitored:
-------------------------------------------------------------------------------
+   - Replication flow:
+     
+     - ``Sync interval in seconds``.
 
-1. ``Metric kafka.consumer_lag``
-2. ``jmx.kafka.connect.mirror.record_count``:
-    * When MirrorMaker 2 stops producing records to a topic then the value of this metric stops increasing and therefore a flat line is visible in the dashboard
-3. With kt the following command helps to to retrieve the latest messages from all partitions:
-    * ``kt consume -auth ./mykafka.conf -brokers service-project.aivencloud.com:24949 -topic topicname -offsets all=newest:newest | jq -c -s 'sort_by(.partition) | .[] | {partition: .partition, value: .value, timestamp: .timestamp}'``
+3. To exclude internal topics, add these patterns to your topic blacklist:
+
+   - ``.*[\-\.]internal`` ``.*\.replica`` ``__.*`` ``connect.*``
+
+4. Depending on your use case, consider adjusting these parameters:
+
+   - ``kafka_mirrormaker.consumer_fetch_min_bytes``
+   - ``kafka_mirrormaker.producer_batch_size``
+   - ``kafka_mirrormaker.producer_buffer_memory``
+   - ``kafka_mirrormaker.producer_linger_ms``
+   - ``kafka_mirrormaker.producer_max_request_size`` 
+
+MirrorMaker 2 validation tips
+---------------------------------
+
+To ensure MirrorMaker 2 is up-to-date with message processing, monitor these:
+
+1. **Consumer lag metric**:
+   Monitor the ``kafka.consumer_lag`` metric.
+
+2. **Dashboard metrics**:
+   If MirrorMaker 2 stops adding records to a topic, the ``jmx.kafka.connect.mirror.record_count`` metric stops increasing, showing a flat line on the dashboard.
+
+3. **Retrieve latest messages with `kt`**:
+   Use `kt <https://github.com/fgeller/kt>`_  to retrieve the latest messages from all partitions with the following command:
+   
+   .. code::
+   
+        kt consume -auth ./mykafka.conf \
+        -brokers SERVICE-PROJECT.aivencloud.com:PORT \
+        -topic topicname -offsets all=newest:newest | \
+        jq -c -s 'sort_by(.partition) | .[] | \
+        {partition: .partition, value: .value, timestamp: .timestamp}'

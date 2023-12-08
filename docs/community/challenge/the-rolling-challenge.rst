@@ -24,9 +24,11 @@ The goal is to make sense of the incoming stream of data.
 
 4. Create a new :doc:`Aiven authentication token </docs/platform/howto/create_authentication_token>`
 
-5. Clone the `Aiven fake data generator on Docker <https://github.com/aiven/fake-data-producer-for-apache-kafka-docker>`_ with::
+5. Clone the `Aiven fake data generator on Docker <https://github.com/aiven/fake-data-producer-for-apache-kafka-docker>`_ with:
 
-    git clone https://github.com/aiven/fake-data-producer-for-apache-kafka-docker
+   .. code::
+
+      git clone https://github.com/aiven/fake-data-producer-for-apache-kafka-docker
 
 6. Copy the file ``conf/env.conf.sample`` to ``conf/env.conf`` and edit the following parameters
 
@@ -60,13 +62,13 @@ The goal is to make sense of the incoming stream of data.
 
 7. Build the Docker image
 
-   ::
+   .. code::
     
     docker build -t fake-data-producer-for-apache-kafka-docker .
 
 8. Run the Docker image
 
-   ::
+   .. code::
     
     docker run fake-data-producer-for-apache-kafka-docker
 
@@ -78,7 +80,9 @@ The goal is to make sense of the incoming stream of data.
 
     .. Tip:: 
     
-        The source table can be mapped in Aiven for Apache Flink with the following SQL, using the ``rolling`` topic as source::
+        The source table can be mapped in Aiven for Apache Flink with the following SQL, using the ``rolling`` topic as source:
+        
+        .. code::
 
             
             CREATE TABLE ROLLING_IN(
