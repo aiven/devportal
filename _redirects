@@ -13,7 +13,7 @@
 /api                /docs/tools/api
 /cli                /docs/tools/cli.html
 /terraform          /docs/tools/terraform
-/community          https://aiven.io/community/forum/
+/community          https://aiven.io/community/
 
 # Renamed/deleted files
 /docs/products/flink/howto/real-time-alerting-solution-cli.html       /docs/products/flink/howto/real-time-alerting-solution.html
