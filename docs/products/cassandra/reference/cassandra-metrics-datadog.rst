@@ -6,7 +6,7 @@ Learn what metrics are available via Datadog for Aiven for Apache Cassandra® se
 Get a metrics list for your service
 -----------------------------------
 
-The list of Aiven for Apache Cassandra metrics avialable in Datadog corresponds to the list of metrics available for the open-source Apache Cassandra and can be checked in `Metrics <https://docs.datadoghq.com/integrations/cassandra/#metrics>`_.
+The list of Aiven for Apache Cassandra metrics available in Datadog corresponds to the list of metrics available for the open-source Apache Cassandra and can be checked in `Metrics <https://docs.datadoghq.com/integrations/cassandra/#metrics>`_.
 
 Related reading
 ---------------
