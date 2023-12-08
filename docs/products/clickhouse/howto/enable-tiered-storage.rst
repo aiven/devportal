@@ -34,7 +34,7 @@ Prerequisites
 
 * You have an Aiven organization and at least one project.
 * You have a command line tool (:doc:`ClickHouse client </docs/products/clickhouse/howto/connect-with-clickhouse-cli>`) installed.
-* All maintenance updates are applied on your service (check on the **Overview** page of your service in Aiven Console).
+* All maintenance updates are applied on your service (check in Aiven Console: your service's page > **Service settings** > **Service management** > **Maintenance updates**).
 
 Enable tiered storage on a project
 ----------------------------------

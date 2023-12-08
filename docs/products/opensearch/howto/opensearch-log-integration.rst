@@ -45,14 +45,10 @@ There are two parameters that you can adjust when integrating logs to your OpenS
 You can change the configuration of the ``index prefix`` and ``index retention limit`` after the integration is enabled.
 
 1. Log in to the `Aiven Console <https://console.aiven.io/>`_, and select the Aiven for OpenSearch service.
-   
-2. On the service's **Overview** screen, scroll to **Service integrations**, and select **Manage integrations**.
-
-4. From the list in the **Integrations** screen, find the service to configure.
-
-5. Select **Edit** from the drop-down menu (ellipsis), and make the necessary changes to the parameters.
-
-6. Select **Edit** to save your changes. 
+2. Click **Integrations** on the sidebar.
+3. Identify the service you want to configure in the Integrations page.
+4. Click **Actions** (**...**) menu, select **Edit** to modify the necessary parameters.
+5. After making the changes, click **Edit** again to save them.
 
 
 Disable logs integration
@@ -60,12 +56,8 @@ Disable logs integration
 
 If you no longer wish to send logs from your service to OpenSearch, follow these steps to disable the integration:
 
-1. On the **Overview** page, scroll down to the **Service integrations**.
-
-2. Select **Manage integrations**.
-
-3. From the list in the **Integrations** screen, find the service to disable the integration.
-
-4. Select **Disconnect** from the drop-down menu (ellipsis).
+1. In your Aiven for OpenSearch service, navigate to the **Integrations** screen using the left sidebar and locate the service you want to modify.
+2. From the **Actions** (**...**) menu, select **Disconnect** to proceed with disabling the integration.
+3. In the confirmation window, click **Disconnect** again to confirm and save the changes.
 
 Your log integration for OpenSearch will be disabled. 

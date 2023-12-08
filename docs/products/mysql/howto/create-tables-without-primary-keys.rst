@@ -4,9 +4,10 @@ Create new tables without primary keys
 If your Aiven for MySQL® service was created after 2020-06-03, by default it does not allow creating new tables without primary keys. You can check this by taking the following steps:
 
 1. Log in to `Aiven Console <https://console.aiven.io/>`_.
-2. In the **Services** page, select your Aiven for MySQL service that you want to check.
-3. In the **Overview** page of your service, scroll down to the **Advanced configuration** section.
-4. Check the **Advanced configuration** section for the ``mysql.sql_require_primary_key`` parameter and its status.
+2. On the **Services** page, select your Aiven for MySQL service that you want to check.
+3. On your service's page, select **Service settings** from the sidebar.
+4. On the **Service settings** page of your service, scroll down to the **Advanced configuration** section.
+5. Check the **Advanced configuration** section for the ``mysql.sql_require_primary_key`` parameter and its status.
 
    If ``mysql.sql_require_primary_key`` is enabled, your Aiven for MySQL does not allow you to create new tables without primary keys. Attempts to create tables without primary keys will result in the following error message:
    
@@ -31,9 +32,10 @@ You have two options to create the tables:
 * Disabling ``mysql.sql_require_primary_key`` parameter. To disable the ``mysql.sql_require_primary_key`` parameter, take the following steps:
   
 1. Log in to `Aiven Console <https://console.aiven.io/>`_.
-2. In the **Services** page, select your Aiven for MySQL service that you want to check.
-3. In the **Overview** page of your service, scroll down to the **Advanced configuration** section and select **Change**.
-4. In the **Edit advanced configuration** window, find ``mysql.sql_require_primary_key`` and disable it by using the toggle switch. Select **Save advanced configuration**.
+2. On the **Services** page, select your Aiven for MySQL service that you want to check.
+3. On your service's page, select **Service settings** from the sidebar.
+4. On the **Service settings** page of your service, scroll down to the **Advanced configuration** section and select **Configure**.
+5. In the **Advanced configuration** window, find ``mysql.sql_require_primary_key`` and disable it by using the toggle switch. Select **Save configuration**.
 
    .. warning::
     

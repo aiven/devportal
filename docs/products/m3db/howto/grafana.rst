@@ -7,9 +7,9 @@ Integrate M3DB and Grafana
 --------------------------
 
 1. Log into `Aiven Console <https://console.aiven.io>`_ and select your Aiven for M3DB service.
-2. On the service overview page, scroll to **Service integrations** and select **Manage Integrations**. 
+2. Click **Integrations** on the sidebar.
 3. Select **Monitor Data in Grafana**. 
-4. Choose either a new or existing service.
+4. Choose either a new service or existing service.
 
    - When creating a new service you will need to select the cloud, region and plan to use. You should also give your service a name. The service overview page shows the nodes rebuilding, and then indicates when they are ready.
    - If you're already using Grafana on Aiven, you can integrate your M3DB as a data source for that existing Grafana. 

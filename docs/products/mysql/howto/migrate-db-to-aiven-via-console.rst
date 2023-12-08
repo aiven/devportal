@@ -115,7 +115,7 @@ Pre-configure the source
 
   .. code-block:: bash
 
-     GRANT ALL ON <database-name>.* TO ‘username'@‘%';
+     GRANT ALL ON DATABASE_NAME.* TO USERNAME_CONNECTING_TO_SOURCE_DB;
 
   Reload the grant tables to apply the changes to the permissions.
 
@@ -130,15 +130,16 @@ Pre-configure the source
 Migrate a database
 ------------------
 
-1. Log in to `Aiven Console <https://console.aiven.io/>`_.
-2. From the **Services** list, select the service where your target database is located.
-3. In the **Overview** page of the selected service, navigate to the **Migrate database** section and select **Set up migration**.
-4. Guided by the **MySQL migration configuration guide** wizard, go through all the migration steps.
+1. Log in to the `Aiven Console <https://console.aiven.io/>`_.
+2. On the **Services** page, select the service where your target database is located.
+3. From the sidebar on your service's page, select **Service settings**.
+4. On the **Service settings** page, navigate to the **Service management** section, and select **Import database**.
+5. Guided by the migration wizard, go through all the migration steps.
 
 Step 1 - configure
 ''''''''''''''''''
 
-Make sure your configuration is in line with **Guidelines for successful database migration** provided in the migration wizard and select **Get started**.
+Get familiar **Guidelines for successful database migration** provided in the **MySQL migration configuration guide** window, make sure your configuration is in line with them, and select **Get started**.
 
 Step 2 - validation
 '''''''''''''''''''
