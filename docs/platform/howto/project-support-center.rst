@@ -12,47 +12,6 @@ The Aiven service level agreement (SLA) details can be found at `aiven.io/sla <h
 
 Custom SLAs are available for premium plans. Contact us at sales@Aiven.io for more details.
 
-Create a support ticket
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-You can create and track support tickets in the Aiven Support Center. For other services included in your support tier - such as business reviews or disaster recovery planning - contact the sales team at sales@Aiven.io.
-
-#. In the `Aiven Console <https://console.aiven.io/>`_, click **Support**.
-
-#. Click **Go to Aiven Support Center**.
-
-#. Click **Create ticket**. 
-
-#. Enter a **Subject**.
-
-#. Select a **Severity** level:
-
-    * Low: The primary functions are working, but some secondary functionality is not working.
-    * High: The primary functions are working, but severely limited or slow.
-    * Critical: The primary functions are not working and it's not possible to find workarounds.
-
-#. Select the affected **Product**.
-
-#. Enter a detailed **Description** of the issue. 
-
-   .. note::
-
-    Include the following information in the description to help the support team provide timely assistance:
-   
-    * The affected functionality (for example, networking, metrics, deployment)
-    * Steps to reproduce the problem
-    * Any error messages
-    * Any languages or frameworks you are using
-
-#. Optional: Upload a file, such as a screenshot.
-
-#. Click **Submit**. 
-
-If you are on a paid support tier, your account team is also notified when you submit a ticket. 
-
-You can track the status of your tickets on the **My tickets** page. `Response times <https://aiven.io/support-services>`_ vary by case severity and support tier. 
-
-
 .. _upgrade-support-tier:
 
 Upgrade your support tier
@@ -81,3 +40,67 @@ To upgrade your organization's support tier in the `Aiven Console <https://conso
 #. Click **Upgrade tier**.
 
 It typically takes 1-2 business days to set up the new support tier. You can view the status of your request on the support page under **Current support tier**.
+
+
+Create a support ticket
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can create and track support tickets in the Aiven Support Center. For other services included in your support tier - such as business reviews or disaster recovery planning - contact the sales team at sales@Aiven.io.
+
+#. In the `Aiven Console <https://console.aiven.io/>`_, click **Support**.
+
+#. Click **Go to Aiven Support Center**.
+
+#. Click **Create ticket**. 
+
+#. Enter email addresses to CC in the support ticket. All new comments and updates will be sent to these emails.
+
+#. Enter a **Subject**.
+
+#. Select a **Severity** level:
+
+    * Low: The primary functions are working, but some secondary functionality is not working.
+    * High: The primary functions are working, but severely limited or slow.
+    * Critical: The primary functions are not working and it's not possible to find workarounds.
+
+#. Optional: Enter the ID of the affected projects and services.
+
+#. Select the affected **Product** and the reason for creating the ticket.
+
+#. Enter a detailed **Description** of the issue. 
+
+   .. note::
+
+    Include the following information in the description to help the support team provide timely assistance:
+   
+    * The affected functionality (for example, networking, metrics, deployment)
+    * Steps to reproduce the problem
+    * Any error messages
+    * Any languages or frameworks you are using
+
+#. Optional: Upload a file, such as screenshots or logs.
+
+#. Click **Create ticket**. 
+
+If you are on a paid support tier, your account team is also notified when you submit a ticket. 
+
+You can track the status of your tickets on the **My tickets** page. `Response times <https://aiven.io/support-services>`_ vary by case severity and support tier. 
+
+
+Add users to a support ticket
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can CC other users in an open support ticket by adding their email addresses to the ticket. 
+
+* CCed emails that belong to Aiven users can also add comments and CC other emails on those tickets.
+* Non-users would only be able to reply to emails to add a comment? Can they CC others via email, adding them to the ticket?
+
+To add someone to a support ticket:
+
+#. On the **My tickets** page, open the ticket.
+
+#. Click **Add to conversation**.
+
+#. Add the email addresses in the **CC** field separated by a space.
+
+#. Enter a comment and click **Submit**.
