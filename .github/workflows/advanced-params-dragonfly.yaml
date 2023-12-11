@@ -1,0 +1,39 @@
+name: Dragonfly - Create PR to Update Advanced parameters
+
+on:
+  schedule:
+    - cron: "0 6 * * 2"
+  workflow_dispatch:
+
+jobs:
+  advanced_params_dragonfly:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repo
+        uses: actions/checkout@v2
+
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.8"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Dragonfly - Update Advanced parameters
+        run: make service-type-config-dragonfly
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          commit-message: Dragonfly - Update Advanced parameters
+          committer: GitHub <noreply@github.com>
+          author: GitHub <noreply@github.com>
+          title: Dragonfly - Update Advanced parameters
+          body: Dragonfly - update advanced parameters file
+          base: main
+          branch: dragonfly-update-advanced-params
+          labels: dragonfly, automated-pr
+          delete-branch: true
