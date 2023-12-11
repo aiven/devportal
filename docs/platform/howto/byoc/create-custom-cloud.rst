@@ -478,7 +478,7 @@ In the **Create custom cloud** wizard, proceed as follows:
      
      Make sure an IP address range you use meets the following requirements:
      * IP address range is within the private IP address ranges allowed in `RFC 1918 <https://datatracker.ietf.org/doc/html/rfc1918>`_.
-     * CIDR block size doesn't excced the ``/24`` netmask.
+     * CIDR block size doesn't exceed the ``/24`` netmask.
 
      .. note::
 
