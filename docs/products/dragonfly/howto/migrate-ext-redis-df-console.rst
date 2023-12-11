@@ -73,7 +73,7 @@ Step 3: Migration
 
 Once all the necessary checks have been completed successfully, you can proceed with the migration process.
 
-* Select **Start migration** to initiate th data migration process to Aiven for Dragonfly.
+* Select **Start migration** to initiate the data migration process to Aiven for Dragonfly.
 
 Migration in progress
 '''''''''''''''''''''''
@@ -83,7 +83,7 @@ During the migration, you can:
 * Close the migration wizard by clicking **Close window** and later return to monitor the migration status from the service overview page.
 * The migration duration varies based on the size of your database. You can continue writing to the target database during migration but avoid manual changes that might impact replication.
 * Certain managed database features will be disabled while the migration is in progress. 
-* If necessary, stop the migration by selecting **Stop migration**. Data that has already been migrated will remain on Aiven.
+* If needed, halt the migration by selecting **Stop migration**. Previously migrated data will remain on Aiven.
 
 .. warning::
    
