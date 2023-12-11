@@ -13,6 +13,7 @@
 /api                /docs/tools/api
 /cli                /docs/tools/cli.html
 /terraform          /docs/tools/terraform
+/community          https://aiven.io/community/
 
 # Renamed/deleted files
 /docs/products/flink/howto/real-time-alerting-solution-cli.html       /docs/products/flink/howto/real-time-alerting-solution.html
@@ -73,13 +74,15 @@
 /docs/tools/terraform/reference/cookbook/kafka-mongodb-recipe                   https://aiven.io/developer/apache-kafka-with-mongodb
 /docs/tools/terraform/reference/cookbook/kafka-debezium-postgres-source         https://aiven.io/developer/debezium-source-postgresql-kafka-across-clouds
 /docs/tools/terraform/reference/cookbook/kafka-topics-http-connector-recipe     https://aiven.io/developer/kafka-with-http-sink
-/docs/tools/terraform/reference/cookbook/kafka-custom-conf-recipe                https://aiven.io/developer/apache-kafka-with-custom-configurations
+/docs/tools/terraform/reference/cookbook/kafka-custom-conf-recipe               https://aiven.io/developer/apache-kafka-with-custom-configurations
 /docs/tools/terraform/reference/cookbook/m3db-m3agg-recipe                      https://aiven.io/developer/m3-aggregator-integration
 /docs/tools/terraform/reference/cookbook/postgresql-read-replica-recipe         https://aiven.io/developer/postgresql-read-only-terraform
 /docs/tools/terraform/reference/cookbook/clickhouse-access-setup-recipe         https://aiven.io/developer/manage-user-privileges-clickhouse-terraform
 /docs/products/clickhouse/howto/configure-access-terraform-deployed             https://aiven.io/developer/manage-user-privileges-clickhouse-terraform
 /docs/tools/terraform/reference/cookbook/kafka-clickhouse-integration-recipe    https://aiven.io/developer/kafka-source-for-clickhouse
-/docs/tools/terraform/reference/cookbook/postgres-clickhouse-integration-recipe     https://aiven.io/developer/postgresql-source-for-clickhouse
+/docs/tools/terraform/reference/cookbook/postgres-clickhouse-integration-recipe https://aiven.io/developer/postgresql-source-for-clickhouse
+/docs/community/challenge/catch-the-bus                                         https://aiven.io/community/
+/docs/community/challenge/the-rolling-challenge                                 https://aiven.io/community/
 
 # Redirect from .index.html to specific page names for landing
 
