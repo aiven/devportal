@@ -223,8 +223,8 @@ Aiven CLI
 | 4.x         | `TBA*`        |
 +-------------+---------------+
 
-Aiven Terraform provider
-''''''''''''''''''''''''
+Aiven Provider for Terraform
+'''''''''''''''''''''''''''''
 
 Older versions will continue to work, but there will be no new features or bug fixes after the EOL date.
 
@@ -241,8 +241,8 @@ Older versions will continue to work, but there will be no new features or bug f
 | 4.x         | `TBA*`        |
 +-------------+---------------+
 
-Aiven Kubernetes operator
-'''''''''''''''''''''''''
+Aiven Operator for Kubernetes
+''''''''''''''''''''''''''''''
 
 +-------------+---------------+
 | **Version** | **Aiven EOL** |
