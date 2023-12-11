@@ -72,10 +72,10 @@ While the migration is in progress:
 
    To prevent conflicts during replication:
 
-   * Avoid writing to tables in the target database that is currently undergoing migration.
+   * The target database will be in a read-only state during migration. Writing to the database is only possible once the migration is stopped.
    * Do not manually change the replication settings of the source database.
-   * Refrain from making any changes that could interfere with the connection between the source and target databases, such as updating firewall rules or trusted sources.
-
+   * Avoid making network or configuration changes that could disrupt the ongoing connection between the source and target databases, such as modifying firewall rules or altering trusted sources.
+   
   .. note::
 
    If the migration fails, investigate, resolve, and restart the migration using **Start over**.

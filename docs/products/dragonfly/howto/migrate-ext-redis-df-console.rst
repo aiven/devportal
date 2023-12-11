@@ -30,7 +30,7 @@ Before starting the migration process, ensure you have the following:
   * **Password:** The password associated with the username.
 
 * Ensure firewalls allow traffic between databases or disable them temporarily.
-* The source Redis database must be SSL-secured, a standard migration requirement.
+* Using an SSL-secured connection for data transfer is highly recommended during the source Redis database migration.
 * If the source Redis service is not publicly accessible, establish a VPC peering connection between the private networks. You will need the VPC ID and cloud name for the migration.
 
 .. note::
@@ -81,13 +81,13 @@ Migration in progress
 During the migration, you can:
 
 * Close the migration wizard by clicking **Close window** and later return to monitor the migration status from the service overview page.
-* The migration duration varies based on the size of your database. You can continue writing to the target database during migration but avoid manual changes that might impact replication.
+* The duration of the migration depends on the size of your database. During migration, the target database will be in a read-only state. Writing to the database is only possible once the migration is stopped.
 * Certain managed database features will be disabled while the migration is in progress. 
 * If needed, halt the migration by selecting **Stop migration**. Previously migrated data will remain on Aiven.
 
 .. warning::
    
-   * Stopping this migration will immediately halt the ongoing replication process, preserving the data already transferred to Aiven. You have the option to  initiate a new database migration at any time in the future, which will overwrite the entire database and its contents on Aiven with the latest data from the source.
+   * Stopping this migration will immediately halt the ongoing replication process, preserving the data already transferred to Aiven. You have the option to initiate a new database migration at any time in the future, which will overwrite the entire database and its contents on Aiven with the latest data from the source.
    * Avoid actions that could disrupt the replication process, such as changing replication configurations or firewall settings.
 
 Step 4 - Close and post-migration steps
