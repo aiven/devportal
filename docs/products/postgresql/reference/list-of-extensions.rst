@@ -63,7 +63,7 @@ Geographical features
 - `postgis <https://postgis.net/>`__. PostGIS geometry and geography spatial types and functions.
 - `postgis_legacy <https://postgis.net/>`__. Legacy functions for PostGIS.
 - `postgis_raster <https://postgis.net/docs/RT_reference.html>`__. PostGIS raster types and functions.
-- ``postgis_sfcgal`` - http://postgis.net/docs/reference.html#reference_sfcgal. PostGIS SFCGAL functions.
+- `postgis_sfcgal <http://postgis.net/docs/reference.html#reference_sfcgal>`__. PostGIS SFCGAL functions.
 - `postgis_tiger_geocoder <https://postgis.net/docs/Extras.html#Tiger_Geocoder>`__. PostGIS tiger geocoder and reverse geocoder.
 - `postgis_topology <https://postgis.net/docs/Topology.html>`__. PostGIS topology spatial types and functions.
 
@@ -82,7 +82,6 @@ Connectivity
 ------------
 
 - `dblink <https://www.postgresql.org/docs/current/contrib-dblink-function.html>`__. Connect to other PostgreSQL databases from within a database.
-
 - `postgres_fdw <https://www.postgresql.org/docs/current/postgres-fdw.html>`__. Foreign-data wrapper for remote PostgreSQL servers.
 
 
