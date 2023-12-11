@@ -749,6 +749,8 @@ entries:
             title: Advanced parameters
           - file: docs/products/cassandra/reference/cassandra-metrics-prometheus
             title: Metrics via Prometheus
+          - file: docs/products/cassandra/reference/cassandra-metrics-datadog
+            title: Metrics via Datadog
 
   # -------- CLICKHOUSE --------
   - file: docs/products/clickhouse
@@ -863,7 +865,11 @@ entries:
           - file: docs/products/clickhouse/reference/supported-interfaces-drivers
             title: Interfaces and drivers
           - file: docs/products/clickhouse/reference/metrics-list
-            title: ClickHouse metrics in Grafana
+            title: Metrics in Grafana
+          - file: docs/products/clickhouse/reference/clickhouse-metrics-datadog
+            title: Metrics via Datadog
+          - file: docs/products/clickhouse/reference/clickhouse-metrics-prometheus
+            title: Metrics via Prometheus
           - file: docs/products/clickhouse/reference/supported-table-functions
             title: Table functions
           - file: docs/products/clickhouse/reference/s3-supported-file-formats
