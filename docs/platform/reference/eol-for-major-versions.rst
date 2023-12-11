@@ -1,31 +1,19 @@
 End of life for major versions of Aiven services and tools
 ==========================================================
 
-End of life (EOL) refers to the deadline after which affected Aiven services and tools are retired and no longer supported or maintained.
+End of life (EOL) is the date after which Aiven services and tools are no longer supported or maintained.
 
 Aiven services
 --------------
 
-Since August 2020, Aiven aims to follow the EOL schedule set by the
-original authors and maintainers of the open source software, aka
-upstream projects. Once the upstream project retires a specific version,
-they do not receive security updates and critical bug fixes anymore by
-the maintainers.
+Aiven aims to follow the EOL schedule set by the original authors and maintainers of the open source software (the upstream projects). Once the upstream project retires a specific version, they do not receive security updates and critical bug fixes anymore by the maintainers.
 
-Continued use of outdated services means that they no longer offer our
-customers the level of protection their business needs. Therefore, by
-following the upstream project's EOL schedule, we ensure that Aiven
-services are always running on supported versions of the open source
-software.
+Outdated services don't offer the level of protection our customers need, so Aiven follows the upstream project's EOL schedule to ensure that Aiven services are always running on supported versions.
 
 Version numbering
 '''''''''''''''''
 
-Aiven services inherit the upstream project's software versioning
-scheme. Depending on the service, a major version can be either a single
-digit (e.g. PostgreSQL® 14) or ``major.minor`` (e.g. Kafka® 3.2). The
-exact version of the service is visible in `Aiven Console <https://console.aiven.io/>`_ once the
-service is up and running.
+Aiven services inherit the upstream project's software versioning scheme. Depending on the service, a major version can be either a single digit (for example, PostgreSQL® 14) or in the format ``major.minor`` (for example, Kafka® 3.2). The exact version of the service is visible in the `Aiven Console <https://console.aiven.io/>`_ when the service is running.
 
 Aiven for Elasticsearch®
 ''''''''''''''''''''''''
@@ -51,7 +39,7 @@ is Aiven's service offering for Elasticsearch.
 Aiven for OpenSearch®
 '''''''''''''''''''''
 
-Aiven for OpenSearch® is the open source continuation of the original Elasticsearch service.
+Aiven for OpenSearch® is the open source continuation of the original Elasticsearch service. The EOL for Aiven for OpenSearch® is generally dependent on the upstream project.
 
 +-------------+------------------------+------------------+------------------+
 | **Version** | **Aiven EOL**          | **Availability   | **Upstream EOL** |
@@ -65,15 +53,12 @@ Aiven for OpenSearch® is the open source continuation of the original Elasticse
 
 `*` To be announced
 
-.. note:: 
-   The EOL for Aiven for OpenSearch® is generally dependent on the upstream project.
-
 
 Aiven for PostgreSQL®
 '''''''''''''''''''''
 
 Aiven for PostgreSQL® major versions will reach EOL on the same date as
-the upstream open source project's EOL .
+the upstream open source project's EOL.
 
 +-------------+---------------+------------------+------------------+
 | **Version** | **Aiven EOL** | **Availability   | **Availability   |
@@ -102,8 +87,8 @@ the upstream open source project's EOL .
 Aiven for Apache Kafka®
 '''''''''''''''''''''''
 
-Starting with v2.5, Aiven for Kafka® ``major.minor`` version will reach
-EOL one year after it's made available on Aiven platform.
+Starting with v2.5, Aiven for Kafka® versions will reach
+EOL one year after they are made available on the Aiven platform.
 
 +-------------+---------------+------------------+------------------+
 | **Version** | **Aiven EOL** | **Availability   | **Availability   |
@@ -153,8 +138,8 @@ EOL one year after it's made available on Aiven platform.
 Aiven for Apache Cassandra®
 '''''''''''''''''''''''''''
 
-Starting with v4, Aiven for Cassandra® ``major`` version will reach EOL
-six months after it's made available on Aiven platform.
+Starting with v4, Aiven for Cassandra® major versions will reach EOL
+six months after they are made available on the Aiven platform.
 
 
 +-------------+---------------+------------------+------------------+
@@ -170,7 +155,7 @@ six months after it's made available on Aiven platform.
 Aiven for M3DB
 ''''''''''''''
 
-Starting from v1.5, Aiven for M3DB version will reach EOL six months after **newer major/minor version** is made available on Aiven platform.
+Starting from v1.5, Aiven for M3DB versions will reach EOL six months after newer major and minor versions are made available on the Aiven platform.
 
 +-------------+---------------+------------------+------------------+
 | **Version** | **Aiven EOL** | **Availability   | **Availability   |
@@ -187,50 +172,40 @@ Starting from v1.5, Aiven for M3DB version will reach EOL six months after **new
 EOL policy for major versions
 '''''''''''''''''''''''''''''
 
-Aiven EOL policy is applicable only for services whose major versions
-are controlled by the customer.
+The Aiven EOL policy is applicable only for services whose major versions are controlled by the customer.
 
-It applies to both **powered-on** and **powered-off** services running
-the affected versions.
+It applies to both powered-on and powered-off services running the affected versions.
 
 EOL notifications
 '''''''''''''''''
 
-When Aiven defines the EOL date for a service major version,
+When Aiven sets the EOL date for a service major version:
 
--  Customers will receive an EOL email announcement along with
-   instructions on the next steps.
+- Customers receive an email notification along with instructions on the next steps.
 
--  `Aiven Console <https://console.aiven.io/>`_ will also show an EOL alert for affected services.
+- The `Aiven Console <https://console.aiven.io/>`_ shows an EOL alert for affected services.
 
--  Email reminders will be sent to customers on a monthly cadence. On
-   the month of the EOL date, the cadence shifts to weekly reminders.
+- Email reminders are sent to customers monthly. 
+
+- In the month of the EOL date, the weekly reminders are sent to customers. 
 
 EOL best practices
 ''''''''''''''''''
 
-It's highly recommended to perform the version upgrade well
-before EOL so that they can test compatibility for any breaking changes,
-plan for unforeseen issues, and migrate to the newer version at their
-own schedule. After the EOL date:
+It's highly recommended to perform the version upgrade well before EOL so that you can test the compatibility for any breaking changes, plan for unforeseen issues, and migrate to the newer version on your own schedule. After the EOL date:
 
-1. If the service is powered on, it's auto-upgraded to the latest version.
+1. If the service is powered on, it's automatically upgraded to the latest version.
 2. If the service is powered off, it's deleted.
 
-Aiven platform offers :doc:`database forking </docs/platform/howto/console-fork-service>` as an efficient tool to verify
-the version upgrade so that customers can safely test compatibility
-without committing their production services to a one-way upgrade.
+Aiven offers :doc:`database forking </docs/platform/howto/console-fork-service>` as an efficient tool to test the version upgrade before upgrading their production services.
 
-.. Tip::
-   Navigate to the service's ``Overview`` page and scroll down until
-   you see a ``New database fork`` button. This will allow you to make a
-   separate new database service that is cloned from the current one's
-   backups.
 
 Aiven tools
 -----------
 
-Alongside `Aiven Console <https://console.aiven.io/>`_, Aiven offers multiple tools for interacting with the Aiven platform and services. These include the Aiven CLI, the Aiven Terraform provider, and the Aiven Kubernetes® operator. Breaking changes in the Aiven API can result in new major versions of the Aiven tools. While backwards compatibility is typically maintained, certain changes require us to deprecate older versions of the tools.
+Aiven offers multiple tools for interacting with the Aiven platform and services. These include the Aiven CLI, the Aiven Provider for Terraform, and the Aiven Operator for Kubernetes®. 
+
+Breaking changes in the Aiven API can result in new major versions of the Aiven tools. While backwards compatibility is typically maintained, certain changes require us to deprecate older versions of the tools. 
 
 Aiven CLI
 '''''''''
@@ -250,6 +225,8 @@ Aiven CLI
 
 Aiven Terraform provider
 ''''''''''''''''''''''''
+
+Older versions will continue to work, but there are no new features or bug fixes after the EOL date.
 
 +-------------+---------------+
 | **Version** | **Aiven EOL** |
