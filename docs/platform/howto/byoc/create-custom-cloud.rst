@@ -472,7 +472,7 @@ In the **Create custom cloud** wizard, proceed as follows:
    * Region
    * CIDR
 
-     **CIDR** represents an IP address range of the BYOC VPC. It needs to be specified in the IaC template so that a `CIDR block of the VPC <https://docs.aws.amazon.com/vpc/latest/userguide/vpc-cidr-blocks.html>`_ can be created in your AWS account while deploying the template. Check `the AWS documentation on VPC CIDR blocks <https://docs.aws.amazon.com/vpc/latest/userguide/vpc-cidr-blocks.html>`_ for more information.
+     **CIDR** represents an IP address range of the BYOC VPC. It needs to be specified in the IaC template so that a CIDR block of the VPC can be created in your AWS account while deploying the template.
 
      In the **CIDR** field, specify an IP address range for the BYOC VPC using a CIDR block notation, for example: ``10.0.0.0/16``, ``172.31.0.0/16``, or ``192.168.0.0/20``.
      
