@@ -1,7 +1,7 @@
 Connect with Python
 ====================
 
-This example demonstrates how to connect to Dragonfly using Python, using the ``redis-py`` library, which is officially supported by Dragonfly. For more information, see `Dragonfly SDKs <https://www.dragonflydb.io/docs/development/sdks>`_.
+This example demonstrates how to connect to Dragonfly® using Python, using the ``redis-py`` library, which is officially supported by Dragonfly. For more information, see `Dragonfly SDKs <https://www.dragonflydb.io/docs/development/sdks>`_.
 
 Variables
 -----------

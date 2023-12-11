@@ -1,7 +1,7 @@
 Connect with Go
 ================
 
-This example demonstrates how to connect to Dragonfly using Go, using the ``go-redis/redis`` library, which is officially supported with Dragonfly. For more information, see `Dragonfly SDKs <https://www.dragonflydb.io/docs/development/sdks>`_.
+This example demonstrates how to connect to Dragonfly® using Go, using the ``go-redis/redis`` library, which is officially supported with Dragonfly. For more information, see `Dragonfly SDKs <https://www.dragonflydb.io/docs/development/sdks>`_.
 
 Variables
 ----------
@@ -11,7 +11,7 @@ These are the placeholders you will need to replace in the code sample:
 ==================      =============================================================
 Variable                Description
 ==================      =============================================================
-``DRAGONFLY_URI``       URL for the Dragonfly connection
+``DRAGONFLY_URI``       URL for the Dragonfly® connection
 ==================      =============================================================
 
 Pre-requisites

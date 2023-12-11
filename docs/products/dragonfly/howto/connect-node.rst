@@ -1,7 +1,7 @@
 Connect with NodeJS
 =====================
 
-This example demonstrates how to connect to Dragonfly from NodeJS using the ``ioredis`` library, which is officially supported and compatible with Dragonfly. For more information, see `Dragonfly SDKs <https://www.dragonflydb.io/docs/development/sdks>`_.
+This example demonstrates how to connect to Dragonfly® from NodeJS using the ``ioredis`` library, which is officially supported and compatible with Dragonfly. For more information, see `Dragonfly SDKs <https://www.dragonflydb.io/docs/development/sdks>`_.
 
 Variables
 ----------
