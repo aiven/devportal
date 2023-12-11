@@ -5,7 +5,7 @@ To stay up to date with the latest information about services and projects, you 
 
 The contacts for a project can be set to the admin and operators of that project (this is the default), or to specific email addresses. Project contacts receive notifications about the project. They also receive the notifications for all services, unless you set a separate service contact for a service.
 
-Service contacts by default are the project contacts. However, if you set other email addresses as serivce contacts for a service, email notifications will only be sent to those contacts for that specific service.
+Service contacts by default are the project contacts. However, if you set other email addresses as service contacts for a service, email notifications will only be sent to those contacts for that specific service.
 
 .. _set-project-contacts:
 
