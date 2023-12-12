@@ -12,7 +12,7 @@ With Aiven, HA for your service is supported in business and premium plans. See 
 
 .. seealso::
 
-    :ref:`Cross-availability-zone data distribution <cross-zone data distro>` 
+    :ref:`Cross-availability-zone data distribution <cross-zone-data-distro>` 
 
 .. _backup-and-restore:
 
