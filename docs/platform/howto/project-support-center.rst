@@ -1,16 +1,12 @@
 Support 
 ========
 
-The Basic support tier is provided to all customers on paid service plans. If you are using a free service, you can ask questions in the Aiven Community Forum. 
+The Basic support tier is provided to all customers on paid service plans. Aiven offers three additional support tiers with faster response times, phone support, and other services. For more information about the tiers, check out the `Aiven support details page <https://aiven.io/support-services>`_ or contact sales@Aiven.io. 
 
-Aiven offers three additional support tiers with faster response times, phone support, and other services. For more information about these tiers, check out the `Aiven support details page <https://aiven.io/support-services>`_ or contact sales@Aiven.io. You can :ref:`upgrade your support tier <upgrade-support-tier>` in the Aiven Console.
+If you are using a free service, you can ask questions in the `Aiven Community Forum <https://aiven.io/community/forum/>`_. 
 
-Service level agreement
-~~~~~~~~~~~~~~~~~~~~~~~~
+The Aiven service level agreement (SLA) is available on `the SLA page <https://aiven.io/sla>`_. Custom SLAs are available for premium plans. Contact the sales team at sales@Aiven.io for more details.
 
-The Aiven service level agreement (SLA) details can be found at `aiven.io/sla <https://aiven.io/sla>`_.
-
-Custom SLAs are available for premium plans. Contact us at sales@Aiven.io for more details.
 
 .. _upgrade-support-tier:
 
@@ -59,9 +55,9 @@ You can create and track support tickets in the Aiven Support Center. For other 
 
 #. Select a **Severity** level:
 
-    * Low: The primary functions are working, but some secondary functionality is not working.
-    * High: The primary functions are working, but severely limited or slow.
-    * Critical: The primary functions are not working and it's not possible to find workarounds.
+   * Low: The primary functions are working, but some secondary functionality is not working.
+   * High: The primary functions are working, but severely limited or slow.
+   * Critical: The primary functions are not working and it's not possible to find workarounds.
 
 #. Optional: Enter the ID of the affected projects and services.
 
@@ -78,7 +74,10 @@ You can create and track support tickets in the Aiven Support Center. For other 
     * Any error messages
     * Any languages or frameworks you are using
 
-#. Optional: Upload a file, such as screenshots or logs.
+#. Optional: Upload files such as screenshots, logs, or :ref:`HAR files <create-har-files>`.
+   
+   .. important::
+        Aiven support will never ask you to provide sensitive data such as passwords or personal information. You should remove (not redact) any sensitive data in files that you attach to a support ticket.
 
 #. Click **Create ticket**. 
 
@@ -87,13 +86,15 @@ If you are on a paid support tier, your account team is also notified when you s
 You can track the status of your tickets on the **My tickets** page. `Response times <https://aiven.io/support-services>`_ vary by case severity and support tier. 
 
 
-Add users to a support ticket
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Add participants to a support ticket
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can CC other users in an open support ticket by adding their email addresses to the ticket. 
 
 * CCed emails that belong to Aiven users can also add comments and CC other emails on those tickets.
 * Non-users would only be able to reply to emails to add a comment? Can they CC others via email, adding them to the ticket?
+
+If you want to give every organization user access to all support tickets in your organization contact your account manager.
 
 To add someone to a support ticket:
 
@@ -104,3 +105,39 @@ To add someone to a support ticket:
 #. Add the email addresses in the **CC** field separated by a space.
 
 #. Enter a comment and click **Submit**.
+
+
+Follow all support tickets in your organization
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Super admin can get notifications for updates on all tickets in their organization. 
+
+#. Click **My tickets**.
+
+#. On the **Tickets in my organization** tab, click **Follow all tickets**.
+
+You will get email notifications for all updates on both existing and new tickets. You can unfollow them at any time.
+
+
+.. _create-har-files:
+
+Create HAR files
+~~~~~~~~~~~~~~~~~
+
+Aiven support may need information about the network requests that are generated in your browser when you experience a problem. Browsers can capture a log of these network requests in a HAR (HTTP Archive) file. 
+
+If the support team asks for a HAR file:
+
+#. Use your browser to create the HAR file while you go through the steps to reproduce the problem:
+
+   * Follow the `instructions for Internet Explorer/Edge, Firefox, and Chrome <https://toolbox.googleapps.com/apps/har_analyzer/>`_.
+   * For Safari, make sure you can access the `developer tools <https://support.apple.com/en-ie/guide/safari/sfri20948/mac>`_ and then follow the instructions for `exporting a HAR file <https://webkit.org/web-inspector/network-tab/>`_. 
+
+#. Replace sensitive data in the file with placeholders while retaining the JSON structure and format. Examples of sensitive data include:
+   
+   * Personal identifiers such as email addresses and phone numbers
+   * Authentication tokens or passwords
+   * Sensitive URLs
+   * Sensitive cookies or headers
+
+

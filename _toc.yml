@@ -1344,6 +1344,7 @@ entries:
 
   # -------- SUPPORT --------
   - file: docs/platform/howto/project-support-center
+    title: Support
 
   # -------- COMMUNITY --------
   - file: docs/community
