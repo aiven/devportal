@@ -484,6 +484,9 @@ In the **Create custom cloud** wizard, proceed as follows:
      .. note::
 
         * CIDR block needs be large enough so that, after splitting it into per-region subnets, each subnet has enough addresses to fit required services.
+
+          For example, using the maximum ``/24`` prefix length, you should have up to 16 IP addresses available, which might be enough for a few services, but can pose challenges during node replacements or maintenance upgrades, when you may need extra addresses.
+
         * Make sure the CIDR block of your BYOC VCP doesn't overlap with the CIDR blocks of VPCs you plan to peer your BYOC VPC with. You cannot change the BYOC VPC CIDR block after your custom cloud is created.
 
 2. Select **Next**.
