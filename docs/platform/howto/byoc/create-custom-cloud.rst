@@ -472,19 +472,19 @@ In the **Create custom cloud** wizard, proceed as follows:
    * Region
    * CIDR
 
-     **CIDR** represents an IP address range of the BYOC VPC. It needs to be specified in the IaC template so that a CIDR block of the VPC can be created in your AWS account while deploying the template.
+     The **CIDR** block defines the IP address range of the VPC that Aiven creates in your AWS account. Any Aiven service created in your Aiven organization will be placed in the VPC and will get an IP address within this address range.
 
      In the **CIDR** field, specify an IP address range for the BYOC VPC using a CIDR block notation, for example: ``10.0.0.0/16``, ``172.31.0.0/16``, or ``192.168.0.0/20``.
      
      Make sure an IP address range you use meets the following requirements:
 
      * IP address range is within the private IP address ranges allowed in `RFC 1918 <https://datatracker.ietf.org/doc/html/rfc1918>`_.
-     * CIDR block size doesn't exceed the ``/24`` netmask.
+     * CIDR block size is between ``/16`` (65536 IP addresses) and ``/24`` (256 IP addresses).
 
      .. note::
 
         * CIDR block needs be large enough so that, after splitting it into per-region subnets, each subnet has enough addresses to fit required services.
-        * If creating VPC peerings, make sure a CIDR block of your VCP doesn't overlap with CIDR blocks of peer VPCs.
+        * Make sure the CIDR block of your BYOC VCP doesn't overlap with the CIDR blocks of VPCs you plan to peer your BYOC VPC with. You cannot change the BYOC VPC CIDR block after your custom cloud is created.
 
 2. Select **Next**.
    
