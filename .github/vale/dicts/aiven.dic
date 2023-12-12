@@ -69,6 +69,7 @@ Docker
 dockerized
 downsampled
 downsampling
+Dragonfly
 DSBulk
 DZone
 Elasticsearch
@@ -208,6 +209,7 @@ rebalance
 rebalances
 rebalancing
 Redis
+Redis OSS
 redis_timeout
 Redli
 refcard
@@ -228,6 +230,7 @@ Savepoints
 savepoints
 schemaless
 scriptable
+SDKs?
 Security
 serde
 serializer
