@@ -1,5 +1,9 @@
 
+``additional_backup_regions``
+-----------------------------
+*array*
 
+**Additional Cloud Regions for Backup Replication** 
 
 
 
