@@ -3,34 +3,38 @@ High availability in Aiven for Dragonfly®
 
 Aiven for Dragonfly® offers different plans with varying levels of high availability. The available features depend on the selected plan. Refer to the table below for a summary of these plans:
 
+.. important:: 
+    Aiven for Dragonfly® is currently a :doc:`limited availability </docs/platform/concepts/beta_services>` service. If you are interested in exploring this offering, reach out to our sales team at sales@Aiven.io for more information and access.
+
+
 .. list-table::
    :header-rows: 1
    :widths: 20 20 30 30 10
 
    * - Plan
-     - Node Configuration
-     - High Availability & Failover Features
-     - Backup Features
-     - Backup History
+     - Node configuration
+     - High availability & failover features
+     - Backup features
+     - Backup history
    * - **Startup**
      - Single-node
      - Limited availability. No automatic failover.
-     - Automatic backups to a remote location.
+     - During limited availability, only one latest snapshot stored.
      - 1 day
    * - **Business**
      - Two-node (primary + standby)
      - High availability with automatic failover to a standby node if the primary fails.
-     - Automatic backups to a remote location.
+     - During limited availability, only one latest snapshot stored.
      - 3 days
    * - **Premium**
      - Three-node (primary + standby + standby)
      - Enhanced high availability with automatic failover among multiple standby nodes if the primary fails.
-     - Automatic backups to a remote location.
+     - During limited availability, only one latest snapshot stored.
      - 13 days
    * - **Custom**
      - Custom configurations
      - Custom high availability and failover features based on user requirements.
-     - Custom backup features based on user requirements.
+     - During limited availability, only one latest snapshot stored.
      - Custom based on user requirements
 
 
