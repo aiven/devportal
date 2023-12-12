@@ -54,7 +54,7 @@ From the information about restrictions on using Aiven for ClickHouse, you can e
      - Use the Aiven's public API.
    * - Scaling down the number of nodes
      - You only can scale up the number of nodes in a cluster.
-     - -
+     - \-
 
 Limits
 ------
