@@ -79,7 +79,7 @@ Create a support ticket
 
 #. Click **Create ticket**. 
 
-You can track the status of your tickets on the **My tickets** page. `Response times <https://aiven.io/support-services#:~:text=for%20immediate%20attention.-,Response%20times%20by%20case%20severity,-Response%20times%20by>`_ vary by case severity and support tier. If you are not satisfied with the processing of your ticket, add ``#escalate`` in the comments.
+You can track the status of your tickets on the **My tickets** page. `Response times <https://aiven.io/support-services>`_ vary by case severity and support tier. If you are not satisfied with the processing of your ticket, add ``#escalate`` in the comments.
 
 
 Add participants to a support ticket
