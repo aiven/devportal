@@ -658,6 +658,11 @@ entries:
             entries:
               - file: docs/products/flink/howto/create-flink-applications
                 title: Create Apache Flink applications
+                entries:
+                  - file: docs/products/flink/howto/create-sql-application
+                    title: Create an SQL application
+                  - file: docs/products/flink/howto/create-jar-application
+                    title: Create a JAR application
               - file: docs/products/flink/howto/manage-flink-applications
                 title: Manage Apache Flink applications
           - file: docs/products/flink/howto/list-flink-tables
@@ -910,10 +915,6 @@ entries:
             title: Migrate Aiven for Redis
           - file: docs/products/dragonfly/howto/migrate-ext-redis-df-console
             title: Migrate external Redis
-
-
-
-
 
 
   # -------- GRAFANA --------
