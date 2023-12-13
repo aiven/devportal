@@ -43,7 +43,7 @@ Aiven for OpenSearch® is the open source continuation of the original Elasticse
 
 +-------------+------------------------+--------------------+------------------+
 | **Version** | **Aiven EOL**          | **Service creation | **Upstream EOL** |
-|             |                        | supported by**     |                  |
+|             |                        | supported until**  |                  |
 +-------------+------------------------+--------------------+------------------+
 | 1.x         | `TBA*`                 | `TBA*`             | `TBA*`           |
 +-------------+------------------------+--------------------+------------------+
@@ -61,7 +61,7 @@ the upstream open source project's EOL.
 
 +-------------+---------------+--------------------+--------------------+
 | **Version** | **Aiven EOL** | **Service creation | **Service creation |
-|             |               | supported by**     | supported from**   |
+|             |               | supported until**  | supported from**   |
 +-------------+---------------+--------------------+--------------------+
 | 9.5         | 2021-04-15    | 2021-01-26         | 2015-12-22         |
 +-------------+---------------+--------------------+--------------------+
@@ -90,7 +90,7 @@ EOL one year after they are made available on the Aiven platform.
 
 +-------------+---------------+--------------------+--------------------+
 | **Version** | **Aiven EOL** | **Service creation | **Service creation |
-|             |               | supported by**     | supported from**   |
+|             |               | supported until**  | supported from**   |
 +-------------+---------------+--------------------+--------------------+
 | 1.0.x       | 2021-02-01    |                    | 2017-11-01         |
 +-------------+---------------+--------------------+--------------------+
@@ -140,7 +140,7 @@ six months after they are made available on the Aiven platform.
 
 +-------------+---------------+--------------------+--------------------+
 | **Version** | **Aiven EOL** | **Service creation | **Service creation |
-|             |               | supported by**     | supported from**   |
+|             |               | supported until**  | supported from**   |
 +-------------+---------------+--------------------+--------------------+
 | 3           | 2022-07-27    | 2022-04-27         | 2018-11-08         |
 +-------------+---------------+--------------------+--------------------+
@@ -154,7 +154,7 @@ Starting from v1.5, Aiven for M3DB versions will reach EOL six months after newe
 
 +-------------+---------------+--------------------+--------------------+
 | **Version** | **Aiven EOL** | **Service creation | **Service creation |
-|             |               | supported by**     | supported from**   |
+|             |               | supported until**  | supported from**   |
 +-------------+---------------+--------------------+--------------------+
 | 1.1         | 2023-09-01    | 2023-06-01         | 2021-02-23         |
 +-------------+---------------+--------------------+--------------------+
@@ -166,7 +166,7 @@ Starting from v1.5, Aiven for M3DB versions will reach EOL six months after newe
 EOL policy for major versions
 '''''''''''''''''''''''''''''
 
-The Aiven EOL policy is applicable only for services whose major versions are controlled by the customer.
+The Aiven EOL policy is applicable only for services whose major versions are controlled until the customer.
 
 It applies to both powered-on and powered-off services running the affected versions.
 
