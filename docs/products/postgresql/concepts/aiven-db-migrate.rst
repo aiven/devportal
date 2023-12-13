@@ -17,19 +17,19 @@ Migration requirements
 
 The following are the two basic requirements for a migration:
 
-1. The source server is publicly available or there is a virtual private cloud (VPC) peering connection between the private networks
-2. A user account with access to the destination cluster from an external IP, as configured in ``pg_hba.conf`` on the source cluster is present
+#. The source server is publicly available or there is a virtual private cloud (VPC) peering connection between the private networks
+#. A user account with access to the destination cluster from an external IP, as configured in ``pg_hba.conf`` on the source cluster is present.
 
-   Additionally to perform a **logical replication**, the following need to be valid:
+Additionally to perform a **logical replication**, the following need to be valid:
 
-3. PostgreSQL® version 10 or newer
-4. Credentials with superuser access to the source cluster or the ``aiven-extras`` extension installed (see also: `Aiven Extras on GitHub <https://github.com/aiven/aiven-extras>`_)
+#. PostgreSQL® version 10 or newer
+#. Credentials with superuser access to the source cluster or the ``aiven-extras`` extension installed (see also: `Aiven Extras on GitHub <https://github.com/aiven/aiven-extras>`_)
 
    .. Note::
       The ``aiven_extras``  extension allows you to perform publish/subscribe-style logical replication without a superuser account, and it is preinstalled on Aiven for PostgreSQL servers.
 
-* An available replication slot on the destination cluster for each database migrated from the source cluster.
-* ``wal_level`` setting on the source cluster to ``logical``.
+   * An available replication slot on the destination cluster for each database migrated from the source cluster.
+   * ``wal_level`` setting on the source cluster to ``logical``.
 
 Migration pre-checks
 ''''''''''''''''''''

@@ -6,7 +6,7 @@ About backups in Aiven for PostgreSQL®
 
 Aiven for PostgreSQL® databases are automatically backed up, with **full backups** made daily, and **write-ahead logs (WAL)** copied at 5 minute intervals, or for every new file generated. All backups are encrypted using ``pghoard``, an open source tool developed and maintained by Aiven, that you can find `on GitHub <https://github.com/aiven/pghoard>`_.
 
-The time of day when the daily backups are made is initially randomly selected, but can be customised by setting the ``backup_hour`` and ``backup_minute`` advanced parameters, see :doc:`/docs/products/postgresql/reference/list-of-advanced-params`.
+The time of day when the daily backups are made is initially randomly selected, but can be customised by setting the ``backup_hour`` and ``backup_minute`` advanced parameters, see :doc:`/docs/products/postgresql/reference/advanced-params`.
 
 .. note::
 

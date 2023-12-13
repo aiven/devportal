@@ -10,3 +10,7 @@ Aiven for Apache Cassandra® reference
     .. grid-item-card:: :doc:`Aiven for Apache Cassandra metrics available via Prometheus </docs/products/cassandra/reference/cassandra-metrics-prometheus>`
         :shadow: md
         :margin: 2 2 0 0
+
+    .. grid-item-card:: :doc:`Aiven for Apache Cassandra metrics available via Datadog </docs/products/cassandra/reference/cassandra-metrics-datadog>`
+        :shadow: md
+        :margin: 2 2 0 0

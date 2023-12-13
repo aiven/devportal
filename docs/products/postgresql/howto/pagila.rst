@@ -16,37 +16,37 @@ Before exploring the Pagila database, follow the :doc:`create new service articl
 
 1. Download the ``pagila-data.sql`` from our `GitHub repository <https://github.com/aiven/devportal/blob/main/code/products/postgresql/pagila/pagila-data.sql>`_.
 
-.. Tip::
-    You may use the following command on your terminal::
+   .. Tip::
+      You may use the following command on your terminal:
 
-        wget https://raw.githubusercontent.com/aiven/devportal/main/code/products/postgresql/pagila/pagila-data.sql
+      .. code::
+        
+         wget https://raw.githubusercontent.com/aiven/devportal/main/code/products/postgresql/pagila/pagila-data.sql
 
 2. Connect to the PostgreSQL instance using the following command. The ``SERVICE_URI`` value can be found in the Aiven Console dashboard.
 
-.. code:: shell
+   .. code:: shell
 
-   psql 'SERVICE_URI'
+      psql 'SERVICE_URI'
 
 3. Within the ``psql`` shell, create a database named ``pagila`` and connect to it with the command below:
 
-.. code:: psql
-
-    CREATE DATABASE pagila;
-    \c pagila;
+   .. code:: psql
+ 
+      CREATE DATABASE pagila;
+      \c pagila;
 
 4. Populate the database with the command below. This might take some time.
 
-.. code:: psql
+   .. code:: psql
 
-    \i pagila-data.sql;
+      \i pagila-data.sql;
 
 5. Once the command finishes, make sure to reconnect to the database to access the imported data:
 
-.. code:: psql
+   .. code:: psql
 
-    \c pagila;
-
-**You are ready to go!** You can use the :ref:`Sample queries<sample_queries>` section below to explore the database. Have fun!
+      \c pagila;
 
 Entity-relationship model diagram
 ---------------------------------

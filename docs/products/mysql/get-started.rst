@@ -14,7 +14,7 @@ Start a service
 
    This view shows the connection parameters for your MySQL service and its current status.
    
-3. You can make changes to the service configuration in the **Overview** page, even while the service is being built.
+3. On the **Overview** page, select **Service settings** from the sidebar to access the **Advanced configuration** section and make changes to the service configuration, even while the service is being built.
 
    You can find the available configuration options in the :doc:`reference article </docs/products/mysql/reference/advanced-params>`.
 

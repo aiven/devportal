@@ -13,8 +13,10 @@ There are several key calculations which are fundamental to tuning:
 - Concurrency
 
 .. Important::
-  |  **Query output is for reference only**
-  |  Queries should be run per service for accuracy and re-evaluated periodically for change. 
+  
+   **Query output is for reference only**
+   
+   Queries should be run per service for accuracy and re-evaluated periodically for change. 
 
 
 Service memory
