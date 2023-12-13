@@ -1345,12 +1345,3 @@ entries:
   # -------- SUPPORT --------
   - file: docs/platform/howto/project-support-center
     title: Support
-
-  # -------- COMMUNITY --------
-  - file: docs/community
-    title: Community
-    entries:
-    - file: docs/community/challenge/catch-the-bus
-      title: Catch the Bus - Aiven challenge with ClickHouse
-    - file: docs/community/challenge/the-rolling-challenge
-      title: Rolling - Aiven challenge with Apache Kafka and Apache Flink

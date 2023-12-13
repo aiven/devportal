@@ -3,7 +3,7 @@ Support
 
 The Basic support tier is provided to all customers on paid service plans. Aiven offers three additional support tiers with faster response times, phone support, and other services. For more information about the tiers, check out the `Aiven support details page <https://aiven.io/support-services>`_ or contact sales@Aiven.io. 
 
-If you are using a free service, you can ask questions in the `Aiven Community Forum <https://aiven.io/community/forum/>`_. 
+For other services included in your support tier - such as business reviews or disaster recovery planning - contact the sales team at sales@Aiven.io. If you are using a free service, you can ask questions in the `Aiven Community Forum <https://aiven.io/community/forum/>`_. 
 
 The Aiven service level agreement (SLA) is available on `the SLA page <https://aiven.io/sla>`_. Custom SLAs are available for premium plans. Contact the sales team at sales@Aiven.io for more details.
 
@@ -41,8 +41,6 @@ It typically takes 1-2 business days to set up the new support tier. You can vie
 Create a support ticket
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can create and track support tickets in the Aiven Support Center. For other services included in your support tier - such as business reviews or disaster recovery planning - contact the sales team at sales@Aiven.io.
-
 #. In the `Aiven Console <https://console.aiven.io/>`_, click **Support**.
 
 #. Click **Go to Aiven Support Center**.
@@ -77,38 +75,31 @@ You can create and track support tickets in the Aiven Support Center. For other 
 #. Optional: Upload files such as screenshots, logs, or :ref:`HAR files <create-har-files>`.
    
    .. important::
-        Aiven support will never ask you to provide sensitive data such as passwords or personal information. You should remove (not redact) any sensitive data in files that you attach to a support ticket.
+        Aiven support will never ask you to provide sensitive data such as passwords or personal information. Remove or replace sensitive data in files that you attach to a support ticket.
 
 #. Click **Create ticket**. 
 
-If you are on a paid support tier, your account team is also notified when you submit a ticket. 
-
-You can track the status of your tickets on the **My tickets** page. `Response times <https://aiven.io/support-services>`_ vary by case severity and support tier. 
+You can track the status of your tickets on the **My tickets** page. `Response times <https://aiven.io/support-services#:~:text=for%20immediate%20attention.-,Response%20times%20by%20case%20severity,-Response%20times%20by>`_ vary by case severity and support tier. If you are not satisfied with the processing of your ticket, add ``#escalate`` in the comments.
 
 
 Add participants to a support ticket
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can CC other users in an open support ticket by adding their email addresses to the ticket. 
+If you want to give every organization user access to all support tickets in your organization contact your account team.
 
-* CCed emails that belong to Aiven users can also add comments and CC other emails on those tickets.
-* Non-users would only be able to reply to emails to add a comment? Can they CC others via email, adding them to the ticket?
-
-If you want to give every organization user access to all support tickets in your organization contact your account manager.
-
-To add someone to a support ticket:
+To add Aiven users to a support ticket:
 
 #. On the **My tickets** page, open the ticket.
 
 #. Click **Add to conversation**.
 
-#. Add the email addresses in the **CC** field separated by a space.
+#. Add the email addresses in the **CC** field separated by a space. This must be the same email address they use to log in.
 
 #. Enter a comment and click **Submit**.
 
 
-Follow all support tickets in your organization
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Get notifications for all support tickets 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Super admin can get notifications for updates on all tickets in their organization. 
 
@@ -140,4 +131,4 @@ If the support team asks for a HAR file:
    * Sensitive URLs
    * Sensitive cookies or headers
 
-
+#. Send the sanitized file to the support team in your reply to their email or in the ticket's comments.
