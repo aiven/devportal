@@ -1,8 +1,8 @@
 Default service IP address and hostname
-=========================================
+=======================================
 
 Default service IP address
-----------------------------
+--------------------------
 
 When a new Aiven service is created, the chosen cloud service provider will dynamically assign one or more public IP address from their connection pool. This IP address is not permanent, and with every service maintenance (in case of failover, maintenance upgrade or cloud migration) the IP address changes since Aiven creates a new node, migrates the existing data to it and then retire the old node. 
 
@@ -19,14 +19,23 @@ When a new service is being provisioned, its hostname is defined as follows:
 
 .. code::
 
-   <SERVICE_NAME>-<PROJECT_NAME>.aivencloud.com
+   <SERVICE_NAME>-<PROJECT_NAME>.*.aivencloud.com
 
 
-where:
+where
 
 * ``<SERVICE_NAME>`` is the name of the service
 * ``<PROJECT_NAME>`` is the name of the project
+* ``*`` is a variable component consisting of one or more levels of alphanumeric subdomains for the purpose of load balancing between DNS zones.
+
+.. note::
+   
+   Second-level domain part of ``aivencloud.com`` might change to another name in the future if the domain becomes unavailable for updates.
+
+.. important::
+
+   Always use a fully-qualified domain name returned by Aiven API. Make sure your code doesn't put any constraints on the domain part or format of the returned service hostname.
 
 .. Note::
 
-    If the ``<SERVICE_NAME>`` is too short or was recently used (e.g. if you drop and recreate a service with the same name) then the hostname format could be ``<SERVICE_NAME><3RANDOMLETTERS>-<PROJECT_NAME>.aivencloud.com``
+    If the ``<SERVICE_NAME>`` is too short or was recently used (for example, if you drop and recreate a service with the same name), the hostname format could be ``<SERVICE_NAME><3RANDOMLETTERS>-<PROJECT_NAME>.*.aivencloud.com``.

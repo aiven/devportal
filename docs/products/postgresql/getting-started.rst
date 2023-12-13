@@ -46,9 +46,9 @@ If you're checking out PostgreSQL, loading a test dataset will give you somethin
       \c dellstore
 
 
-.. Tip::
+   .. Tip::
 
-    Your ``psql`` terminal prefix will change to ``dellstore==>`` when you are connected to the correct database.
+      Your ``psql`` terminal prefix will change to ``dellstore==>`` when you are connected to the correct database.
 
 5. Populate the database by executing the following command from ``psql``:
 
@@ -83,15 +83,16 @@ The output should look like this:
     public | reorder                  | table    | avnadmin
     (12 rows)
 
-Further reading
-----------------
 
-Here are some more resources to help you on your PostgreSQL journey:
+.. seealso::
 
-* Code examples for connecting to PostgreSQL from your application:
-    * :doc:`Go <howto/connect-go>`
-    * :doc:`Python <howto/connect-python>`
-* How to :doc:`use PgAdmin <howto/connect-pgadmin>` with Aiven for PostgreSQL
-* How to :doc:`migrate your PostgreSQL to Aiven <concepts/aiven-db-migrate>`
-* Learn PostgreSQL with some `PostgreSQL Exercises <https://pgexercises.com/>`_
-* The `awesome PostgreSQL ecosystem <https://github.com/dhamaniasad/awesome-postgres>`_ of tools and solutions
+   - Code examples for connecting to PostgreSQL from your application:
+
+     - :doc:`Go <howto/connect-go>`
+     - :doc:`Python <howto/connect-python>`
+    
+   - How to :doc:`use PgAdmin <howto/connect-pgadmin>` with Aiven for PostgreSQL
+   - How to :doc:`migrate your PostgreSQL to Aiven <concepts/aiven-db-migrate>`
+   - Learn PostgreSQL with some `PostgreSQL Exercises <https://pgexercises.com/>`_
+   - The `awesome PostgreSQL ecosystem <https://github.com/dhamaniasad/awesome-postgres>`_ of tools and solutions
+   

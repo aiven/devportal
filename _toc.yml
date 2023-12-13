@@ -69,6 +69,9 @@ entries:
     title: User and access management
     entries:
     - file: docs/platform/howto/manage-org-users
+      title: Invite and remove organization users
+    - file: docs/platform/concepts/managed-users
+    - file: docs/platform/howto/manage-domains
     - file: docs/platform/howto/delete-user
     - file: docs/platform/howto/make-super-admin
     - file: docs/platform/howto/list-user-profile
@@ -80,6 +83,8 @@ entries:
       - file: docs/platform/howto/add-authentication-method
       - file: docs/platform/reference/password-policy
       - file: docs/platform/howto/user-2fa
+      - file: docs/platform/howto/set-authentication-policies
+        title: Set authentication policies
       - file: docs/platform/concepts/authentication-tokens
       - file: docs/platform/howto/create_authentication_token
       - file: docs/platform/howto/list-saml
@@ -745,6 +750,8 @@ entries:
             title: Advanced parameters
           - file: docs/products/cassandra/reference/cassandra-metrics-prometheus
             title: Metrics via Prometheus
+          - file: docs/products/cassandra/reference/cassandra-metrics-datadog
+            title: Metrics via Datadog
 
   # -------- CLICKHOUSE --------
   - file: docs/products/clickhouse
@@ -859,7 +866,11 @@ entries:
           - file: docs/products/clickhouse/reference/supported-interfaces-drivers
             title: Interfaces and drivers
           - file: docs/products/clickhouse/reference/metrics-list
-            title: ClickHouse metrics in Grafana
+            title: Metrics in Grafana
+          - file: docs/products/clickhouse/reference/clickhouse-metrics-datadog
+            title: Metrics via Datadog
+          - file: docs/products/clickhouse/reference/clickhouse-metrics-prometheus
+            title: Metrics via Prometheus
           - file: docs/products/clickhouse/reference/supported-table-functions
             title: Table functions
           - file: docs/products/clickhouse/reference/s3-supported-file-formats
@@ -868,8 +879,46 @@ entries:
             title: Formats for ClickHouse-Kafka data exchange
           - file: docs/products/clickhouse/reference/advanced-params
             title: Advanced parameters
+  
+# ---------Dragonfly --------------
+
+  - file: docs/products/dragonfly
+    title: Dragonfly
+    entries:
+      - file: docs/products/dragonfly/concepts/overview
+        title: Overview
+      - file: docs/products/dragonfly/get-started
+        title: Quickstart
+      - file: docs/products/dragonfly/concepts
+        title: Concepts
+        entries:
+          - file:  docs/products/dragonfly/concepts/ha-dragonfly
+      - file: docs/products/dragonfly/howto
+        title: HowTo
+        entries:
+        - file: docs/products/dragonfly/howto/list-code-samples
+          title: Connect to service
+          entries:
+            - file: docs/products/dragonfly/howto/connect-redis-cli
+            - file: docs/products/dragonfly/howto/connect-go
+            - file: docs/products/dragonfly/howto/connect-node
+            - file: docs/products/dragonfly/howto/connect-python
+
+        - file: docs/products/dragonfly/howto/list-migrate-data
+          title: Data migration
+          entries:
+          - file: docs/products/dragonfly/howto/migrate-aiven-redis-df-console
+            title: Migrate Aiven for Redis
+          - file: docs/products/dragonfly/howto/migrate-ext-redis-df-console
+            title: Migrate external Redis
+
+
+
+
+
 
   # -------- GRAFANA --------
+
   - file: docs/products/grafana
     title: Grafana
     entries:
@@ -1269,7 +1318,7 @@ entries:
       - file: docs/products/postgresql/reference
         title: Reference
         entries:
-          - file: docs/products/postgresql/reference/list-of-advanced-params
+          - file: docs/products/postgresql/reference/advanced-params
             title: Advanced parameters
           - file: docs/products/postgresql/reference/pg-connection-limits
             title: Connection limits per plan
@@ -1345,3 +1394,4 @@ entries:
   # -------- SUPPORT --------
   - file: docs/platform/howto/project-support-center
     title: Support
+

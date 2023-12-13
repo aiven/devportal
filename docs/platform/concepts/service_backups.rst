@@ -1,7 +1,7 @@
 Backups at Aiven
 ================
 
-This article provides information on general rules for handling service backups in Aiven. It also covers service-specific backup details, such as backup frequency and retention period per service. Learn about our backup-restore strategies for powering-off/on services and find out if Aiven allows accessing backups.
+On top of general rules for handling service backups in Aiven, there are service-specific backup details, such as backup frequency and retention period per service. Backup policies for service power-off/on and service deletion are common for all the services, similarly as the backup access policy.
 
 About backups at Aiven
 ----------------------
@@ -15,13 +15,38 @@ Aiven takes service backups for managing purposes. These backups are compressed 
 .. note::  If you change a cloud provider or an availability zone for your service, its backups are not migrated from their original location.
 
 Service power-off/on backup policy
-------------------------------------
+----------------------------------
 
 Whenever a service is powered on from a powered-off state, the latest available backup is restored.
 
 Services that have been powered off for more than 180 days are reviewed. A notification email will be sent to you to provide time for taking action before the service and backup are deleted as part of the :doc:`periodic cleanup of powered-off services </docs/platform/howto/cleanup-powered-off-services>`.
 
 If you wish to keep the powered-off service for more than 180 days, power on the service and then power it off again to avoid the routine cleanup.
+
+Service backup deletion policy
+------------------------------
+
+For services that have been deleted for over 41 days, all the backups are automatically deleted and, hence, no longer available.
+
+Access to backups
+-----------------
+
+The Aiven platform takes care of all maintenance operations required for running complex software at scale, allowing you to focus on using your services. The open-source tools used for service backups can be leveraged in your own infrastructure.
+
+Since service backups are encrypted and stored in the object storage, accessing them is not possible. If you do need to backup your service, use the standard tooling for this service.
+
+Recommended backup tools per service are as follows:
+
+* `PostgreSQL® <https://www.postgresql.org/docs/14/app-pgdump.html>`__: ``pgdump``
+* `MySQL® <https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html>`_: ``mysqldump``
+* `Redis®* <https://redis.io/docs/connect/cli/#remote-backups-of-rdb-files>`_: ``redis-cli`` 
+* `Cassandra® <https://docs.datastax.com/en/archived/cql/3.3/cql/cql_reference/cqlshCopy.html>`_: ``cqlsh`` 
+* `OpenSearch® <https://github.com/elasticsearch-dump/elasticsearch-dump>`_: ``elasticdump``
+* `InfluxDB® <https://docs.influxdata.com/influxdb/v1.8/tools/influx-cli/>`_: ``influxd``
+
+.. note::
+    
+    The listed backup tools are merely recommendations and are not intended to create a snapshot of your Aiven service but to provide access to the data.
 
 Backup profile per service
 --------------------------
@@ -95,7 +120,7 @@ For Aiven for PostgreSQL, full daily backups are taken, and WAL segments are con
 
 You can supplement this with a remote read-only replica service, which you can run in a different cloud region or with another cloud provider and promote to master if needed.
 
-To shift the backup schedule to a new time, you can modify the backup time configuration option in **Advanced configuration** in `Aiven Console <https://console.aiven.io/>`_ (the service's **Overview** page). If a recent backup has been taken, it may take another backup cycle before the new backup time takes effect.
+To shift the backup schedule to a new time, you can modify the backup time configuration option in **Advanced configuration** in `Aiven Console <https://console.aiven.io/>`_ (the service's **Service settings** page). If a recent backup has been taken, it may take another backup cycle before the new backup time takes effect.
 
 .. seealso::
     
@@ -110,7 +135,7 @@ Aiven for MySQL®
 
 Aiven for MySQL databases are automatically backed up with full daily backups and binary logs recorded continuously. All backups are encrypted with the open source `myhoard <https://github.com/aiven/myhoard>`_ software. Myhoard uses `Percona XtraBackup <https://www.percona.com/>`_ internally for taking full (or incremental) snapshots for MySQL.
 
-To shift the backup schedule to a new time, you can modify the backup time configuration option in **Advanced configuration** in `Aiven Console <https://console.aiven.io/>`_ (the service's **Overview** page). If a recent backup has been taken, it may take another backup cycle before the new backup time takes effect.
+To shift the backup schedule to a new time, you can modify the backup time configuration option in **Advanced configuration** in `Aiven Console <https://console.aiven.io/>`_ (the service's **Service settings** page). If a recent backup has been taken, it may take another backup cycle before the new backup time takes effect.
 
 .. seealso::
     
@@ -144,7 +169,7 @@ Aiven for Redis backups are taken every 12 hours.
 
 For persistence, Aiven supports Redis Database Backup (RDB).
 
-You can control the persistence feature using ``redis_persistence`` under **Advanced configuration** in `Aiven Console <https://console.aiven.io/>`_ (the service's **Overview** page):
+You can control the persistence feature using ``redis_persistence`` under **Advanced configuration** in `Aiven Console <https://console.aiven.io/>`_ (the service's **Service settings** page):
 
 * When ``redis_persistence`` is set to ``rdb``, Redis does RDB dumps every 10 minutes if any key is changed. Also, RDB dumps are done according to the backup schedule for backup purposes.
 * When ``redis_persistence`` is ``off``, no RDB dumps or backups are done, so data can be lost at any moment if the service is restarted for any reason or if the service is powered off. This also means the service can't be forked.
@@ -173,27 +198,4 @@ Aiven for ClickHouse backups contain database lists, table schemas, table conten
 
 .. seealso::
 
-    For more information on Aiven for ClickHouse backups, see :ref:`Backup and restore <backup-and-restore>`.
-
-Access to backups
------------------
-
-The Aiven platform takes care of all maintenance operations required for running complex software at scale, allowing you to focus on using your services. The open-source tools used for service backups can be leveraged in your own infrastructure. 
-
-The Aiven platform is designed to handle the operational aspects of running complex software at scale, allowing you to focus on using the services instead of maintaining them. Aiven handles service availability, security, connectivity, and backups.
-
-Since service backups are encrypted and stored in the object storage, accessing them is not possible. If you do need to backup your service, use the standard tooling for this service.
-
-
-Recommended backup tools per service are as follows:
-
-* `PostgreSQL <https://www.postgresql.org/docs/14/app-pgdump.html>`__: ``pgdump``
-* `MySQL <https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html>`_: ``mysqldump``
-* `Redis <https://redis.io/docs/connect/cli/#remote-backups-of-rdb-files>`_: ``redis-cli`` 
-* `Cassandra <https://docs.datastax.com/en/archived/cql/3.3/cql/cql_reference/cqlshCopy.html>`_: ``cqlsh`` 
-* `OpenSearch <https://github.com/elasticsearch-dump/elasticsearch-dump>`_: ``elasticdump``
-* `InfluxDB <https://docs.influxdata.com/influxdb/v1.8/tools/influx-cli/>`_: ``influxd``
-
-.. note::
-    
-    The listed backup tools are merely recommendations and are not intended to create a snapshot of your Aiven service but to provide access to the data.
+    For more information on Aiven for ClickHouse backups, see :doc:`Backup and restore </docs/products/clickhouse/concepts/disaster-recovery>`.

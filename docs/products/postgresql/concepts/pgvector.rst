@@ -26,16 +26,11 @@ In most cases, vector similarity calculations use distance metrics, for example,
 How pgvector works
 ------------------
 
-Enabling pgvector
-  You enable the extension on your database.
-Vectorizing data
-  You generate embeddings for your data, for example, for a products catalog using tools such as the `OpenAI API <https://platform.openai.com/docs/api-reference/embeddings/create>`_ client.
-Storing embeddings
-  You store the embeddings in Aiven for PostgreSQL using the pgvector extension.
-Querying embeddings
-  You use the embeddings for the vector similarity search on the products catalog.
-Adding indices
-  By default, pgvector executes the *exact* nearest neighbor search, which gives the perfect recall. If you add an index to use the *approximate* nearest neighbor search, you can speed up your search, trading off some recall for performance.
+- Enabling pgvector: You enable the extension on your database.
+- Vectorizing data: You generate embeddings for your data, for example, for a products catalog using tools such as the `OpenAI API <https://platform.openai.com/docs/api-reference/embeddings/create>`_ client.
+- Storing embeddings: You store the embeddings in Aiven for PostgreSQL using the pgvector extension.
+- Querying embeddings: You use the embeddings for the vector similarity search on the products catalog.
+- Adding indices: By default, pgvector executes the *exact* nearest neighbor search, which gives the perfect recall. If you add an index to use the *approximate* nearest neighbor search, you can speed up your search, trading off some recall for performance.
 
 Why use pgvector
 ----------------
@@ -55,8 +50,8 @@ There are multiple industry applications for similarity searches over vector emb
 
 .. topic:: Examples
     
-    * AI-powered tools can find similarities between products or transactions, which can be used to produce product recommendations or detect potential scams or frauds.
-    * Sentiment analysis: words represented with similar vector embeddings have similar sentiment scores.
+   * AI-powered tools can find similarities between products or transactions, which can be used to produce product recommendations or detect potential scams or frauds.
+   * Sentiment analysis: words represented with similar vector embeddings have similar sentiment scores.
 
 What's next
 -----------

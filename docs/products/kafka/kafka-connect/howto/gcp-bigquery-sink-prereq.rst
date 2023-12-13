@@ -15,7 +15,7 @@ To be able to sink data from Apache Kafka® to Google BigQuery via the dedicated
 Create a new Google service account and generate a JSON service key
 -------------------------------------------------------------------
 
-Follow the `instructions <https://cloud.google.com/docs/authentication/getting-started>`_ to: 
+Follow the `instructions <https://cloud.google.com/docs/authentication/client-libraries>`_ to: 
 
 * create a new Google service account
 * create a JSON service key
