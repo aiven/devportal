@@ -37,11 +37,11 @@ You can view maintenance updates pending for your service using the following:
 
 - ``service`` endpoint in `Aiven REST API <https://api.aiven.io/doc/#tag/Service/operation/ServiceGet>`_
 
-Perdiodic infrastructure updates
+Periodic infrastructure updates
 --------------------------------
 
 There are regular maintenance updates for service nodes based on their age. Maintenance updates are scheduled automatically for services with nodes active for 180 days and more.
 
 .. important::
 
-   Perdiodic infrastructure updates are mandatory for all the services except for those with maintenance disabled.
+   Periodic infrastructure updates are mandatory for all the services except for those with maintenance disabled.
