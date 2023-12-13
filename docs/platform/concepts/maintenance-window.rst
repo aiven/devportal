@@ -40,7 +40,7 @@ You can view maintenance updates pending for your service using the following:
 Periodic infrastructure updates
 --------------------------------
 
-There are regular maintenance updates for service nodes based on their age. Maintenance updates are scheduled automatically for services with nodes active for 180 days and more.
+Maintenance updates are scheduled automatically for services with nodes active for 180 days and more.
 
 .. important::
 
