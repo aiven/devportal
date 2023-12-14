@@ -115,7 +115,7 @@ You will get email notifications for all updates on both existing and new ticket
 Create HAR files
 ~~~~~~~~~~~~~~~~~
 
-Aiven support may need information about the network requests that are generated in your browser when you experience a problem. Browsers can capture a log of these network requests in a HAR (HTTP Archive) file. 
+The support team may need information about the network requests that are generated in your browser when you experience a problem. Browsers can capture a log of these network requests in a HAR (HTTP Archive) file. 
 
 If the support team asks for a HAR file:
 
