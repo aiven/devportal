@@ -13,6 +13,9 @@ With password authentication enabled, users log in with their email address and 
 
 When two-factor authentication is required, users won't be able to access any resources in your organization until they set up 2FA.
 
+.. note::
+    Authentication tokens are not affected and will continue to work when you enable two-factor authentication.
+
 Third-party authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
