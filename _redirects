@@ -62,6 +62,8 @@
 /docs/tutorials                                                        /docs/integrations
 /docs/products/postgresql/reference/list-of-advanced-params            /docs/products/postgresql/reference/advanced-params
 /docs/products/kafka/reference/kstream-data-write-issue                https://aiven.io/changelog#06-12-2023
+/docs/platform/howto/update-tax-status                                 /docs/platform/howto/use-billing-groups
+/docs/platform/concepts/tax-information                                /docs/platform/concepts/hourly-billing-model
 
 # Moved to https://aiven.io/developer
 /docs/tools/terraform/reference/cookbook                                        https://aiven.io/developer/terraform

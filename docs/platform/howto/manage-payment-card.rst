@@ -6,7 +6,6 @@ You can add a payment card to your organization and use it as the payment method
 
 Add a payment card
 ~~~~~~~~~~~~~~~~~~~~
-To add a payment card in the `Aiven Console <https://console.aiven.io/>`_: 
 
 #. Click **Billing**. 
 #. Click **Payment methods**.
