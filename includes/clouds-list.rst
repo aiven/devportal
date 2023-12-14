@@ -324,6 +324,12 @@ Google Cloud
     - ``google-europe-west12``
     - Europe, Italy: Turin
   * - Middle East
+    - ``google-me-central1``
+    - Middle East, Qatar: Doha
+  * - Middle East
+    - ``google-me-central2``
+    - Middle East, Saudi Arabia: Dammam
+  * - Middle East
     - ``google-me-west1``
     - Middle East, Israel: Tel Aviv
   * - North America
