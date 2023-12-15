@@ -620,6 +620,7 @@ entries:
             title: Aiven Flink applications
           - file: docs/products/flink/concepts/supported-syntax-sql-editor
           - file: docs/products/flink/concepts/custom-jars
+            title: Custom JARs
           - file: docs/products/flink/concepts/tables
             title: Flink tables
           - file: docs/products/flink/concepts/checkpoints
