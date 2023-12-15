@@ -497,9 +497,11 @@ Use the Terraform template generated in step :ref:`Generate an infrastructure te
 
 2. Optionally, modify the template as needed.
 
-.. topic:: Accessing services in custom clouds across security groups and from IP address ranges
-
-   To be able to connect to a custom-cloud service from different security groups (other than the one dedicated for the custom cloud) or from IP address ranges you need to add specific ingress rules before you apply a Terraform infrastructure template in your AWS account in the process of creating a custom cloud resources. Before adding ingress rules, check out examples of how this can be done provided in the Terraform template you generated and downloaded from `Aiven Console <https://console.aiven.io/>`_.
+   .. note:: 
+    
+      To connect to a custom-cloud service from different security groups (other than the one dedicated for the custom cloud) or from IP address ranges, add specific ingress rules before you apply a Terraform infrastructure template in your AWS account in the process of creating a custom cloud resources.
+      
+      Before adding ingress rules, see the examples provided in the Terraform template you generated and downloaded from `Aiven Console <https://console.aiven.io/>`_.
 
 3. In your AWS account, run the template with the variables using Terraform.
 
@@ -518,15 +520,15 @@ Select in what projects you'll be able to use your new custom cloud to create se
 
 Continue working in the **Create custom cloud** wizard by taking the following steps:
 
-1. In the **Custom cloud's availability in your organization** section, select either
+#. In the **Custom cloud's availability in your organization** section, select either:
 
-* **By default for all projects** to make your custom cloud available in all existing and future projects in the organization
+   * **By default for all projects** to make your custom cloud available in all existing and future projects in the organization
 
-or
+   or
 
-* **By selection** to pick specific projects or organizational units where you want your custom cloud to be available.
+   * **By selection** to pick specific projects or organizational units where you want your custom cloud to be available.
 
-1. If you go for the **By selection** option, dropdown menus **Assign organizational units** and **Assign projects** show up. Use them to select organizational units and/ or projects in which you want to be able to use your custom cloud.
+#. If you go for the **By selection** option, dropdown menus **Assign organizational units** and **Assign projects** show up. Use them to select organizational units and/ or projects in which you want to be able to use your custom cloud.
 
 .. note::
 
