@@ -38,7 +38,7 @@ Creates a new ticket.
 
 **Example:** Create a new ticket with severity ``low`` for the service ``pg-demo`` in the project ``proj-test``.
 
-::
+.. code::
 
   avn ticket create --service pg-demo               \
       --project proj-test                           \
@@ -65,7 +65,7 @@ Retrieves the list of support tickets together with the associated details like 
 
 **Example:** Retrieve all the tickets in ``open`` state for the ``proj-test`` project
 
-::
+.. code::
 
   avn ticket list         \
       --project proj-test \

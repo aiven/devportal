@@ -166,7 +166,7 @@ To load data with NodeJS we'll use `OpenSearch JavaScript client  <https://githu
 
 Download `full_format_recipes.json <https://www.kaggle.com/hugodarwood/epirecipes?select=full_format_recipes.json>`_, unzip and put it into the project folder.
 
-It is possible to index values either one by one or by using a bulk operation. Because we have a file containing a long list of recipes we’ll use a bulk operation. A bulk endpoint expects a request in a format of a list where an action and an optional document are followed one after another:
+It is possible to index values either one by one or by using a bulk operation. Because we have a file containing a long list of recipes we'll use a bulk operation. A bulk endpoint expects a request in a format of a list where an action and an optional document are followed one after another:
 
 * Action and metadata
 * Optional document
@@ -193,7 +193,7 @@ To achieve this expected format, use a flat map to create a flat list of such pa
       client.bulk({ refresh: true, body }, console.log(result.body));
     };
 
-Run this method to load the data and wait till it's done. We’re injecting over 20k recipes, so it can take 10-15 seconds.
+Run this method to load the data and wait till it's done. We're injecting over 20k recipes, so it can take 10-15 seconds.
 
 .. _get-mapping-with-nodejs:
 
@@ -237,7 +237,7 @@ You should be able to see the following structure:
       title: { type: 'text', fields: { keyword: [Object] } }
     }
 
-These are the fields you can play with. You can find information on dynamic mapping types `in the documentation <https://opensearch.org/docs/latest/opensearch/mappings/#dynamic-mapping>`_.
+These are the fields you can play with. You can find information on dynamic mapping types `in the documentation <https://opensearch.org/docs/latest/field-types/index/#dynamic-mapping>`_.
 
 Sample queries with HTTP client
 -------------------------------

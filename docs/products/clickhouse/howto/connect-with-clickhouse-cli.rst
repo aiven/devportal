@@ -15,7 +15,7 @@ To use the ClickHouse® client across different operating systems, we recommend 
 Connection properties
 ---------------------
 
-You will need to know the following properties to establish a secure connection with your Aiven for ClickHouse service: **Host**, **Port**, **User** and **Password**. You will find these in the *Connection information* section in the *Overview* page of your service in the `Aiven web console <https://console.aiven.io/>`_.
+You will need to know the following properties to establish a secure connection with your Aiven for ClickHouse service: **Host**, **Port**, **User** and **Password**. You will find these in the **Connection information** section on the **Overview** page of your service in the `Aiven web console <https://console.aiven.io/>`_.
 
 Command template
 ----------------
@@ -56,7 +56,9 @@ Alternatively, sometimes you might want to run individual queries and be able to
     --secure                            \
     --query="YOUR SQL QUERY GOES HERE"
 
-Similar to above example, you can request the list of present databases directly::
+Similar to above example, you can request the list of present databases directly:
+
+.. code::
 
     docker run --interactive            \
     --rm clickhouse/clickhouse-server clickhouse-client \

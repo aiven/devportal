@@ -17,4 +17,4 @@ To create a new PostgreSQL® database:
 
 .. Tip::
 
-   You can also use the :ref:`Aiven client <avn-service-database-create>` or the :doc:`PostgreSQL client<connect-psql>` to create your database from the CLI.
+   You can also use the :ref:`Aiven client <avn-service-database-create>` or the :doc:`PostgreSQL client </docs/products/postgresql/howto/connect-psql>` to create your database from the CLI.

@@ -5,7 +5,7 @@ Aiven continuously monitors services to ensure they are healthy; if problems ari
 
 The exact error message depends on your client library and log formatting, but should be similar to the following:
 
-::
+.. code::
 
     [2021-02-04 09:01:20,118] WARN [Producer clientId=test-producer] Received invalid metadata error in produce request on partition topic1-25 due to org.apache.kafka.common.errors.NotLeaderForPartitionException: This server is not the leader for that topic-partition.. Going to request metadata update now (org.apache.kafka.clients.producer.internals.Sender)
 

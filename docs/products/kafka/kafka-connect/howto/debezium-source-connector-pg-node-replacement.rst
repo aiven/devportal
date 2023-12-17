@@ -14,7 +14,9 @@ The connector is able to recover from temporary errors to the database and start
 Common Debezium errors related to PostgreSQL node replacement
 -------------------------------------------------------------
 
-In cases when the Debezium connector can't recover during or after the PostgreSQL node replacements, the following errors are commonly shown in logs::
+In cases when the Debezium connector can't recover during or after the PostgreSQL node replacements, the following errors are commonly shown in logs:
+
+.. code::
 
    # ERROR 1
    org.apache.kafka.connect.errors.ConnectException: Could not create PostgreSQL connection
@@ -25,7 +27,7 @@ In cases when the Debezium connector can't recover during or after the PostgreSQ
 
 The above errors are unrecoverable, meaning that they require a restart of the connector task(s) in order to resume operations again. 
 
-A restart can be performed manually either through the `Aiven Console <https://console.aiven.io/>`_, in under the `Connectors` tab console or via the `Apache Kafka® Connect REST API <https://docs.confluent.io/platform/current/connect/references/restapi.html#rest-api-task-restart>`__. You can get the service URI from the `Aiven Console <https://console.aiven.io/>`_, in the service detail page.
+A restart can be performed manually either through the `Aiven Console <https://console.aiven.io/>`_, in under the ``Connectors`` tab console or via the `Apache Kafka® Connect REST API <https://docs.confluent.io/platform/current/connect/references/restapi.html#rest-api-task-restart>`__. You can get the service URI from the `Aiven Console <https://console.aiven.io/>`_, in the service detail page.
 
 .. image:: /images/products/postgresql/pg-debezium-cdc_image.png
    :alt: The Aiven Console page showing the Debezium connector error

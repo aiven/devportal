@@ -107,10 +107,10 @@ To create a Apache Kafka Connect connector, follow these steps:
 6. Paste the connector configuration (stored in the ``redis_sink.json`` file) in the form.
 7. Select **Apply**.
 
-.. Note::
+   .. Note::
 
-    The Aiven Console parses the configuration file and fills the relevant UI fields. You can review the UI fields across the various tab and change them if necessary. The changes will be reflected in JSON format in the **Connector configuration** text box.
-
+      The Aiven Console parses the configuration file and fills the relevant UI fields. You can review the UI fields across the various tab and change them if necessary. The changes will be reflected in JSON format in the **Connector configuration** text box.
+ 
 8. After all the settings are correctly configured, select **Create connector**.
 9. Verify the connector status under the **Connectors** screen.
 10. Verify the presence of the data in the target Redis service.
@@ -157,7 +157,7 @@ The configuration file contains the following peculiarities:
 
 Once the connector is created successfully, you should see the following three entries in the target Redis database.
 
-::
+.. code::
 
     1) "students-1" containing "{\"name\":\"carlo\",\"id\":1,\"age\":77}"
     2) "students-2" containing "{\"name\":\"lucy\",\"id\":2,\"age\":21}"

@@ -33,7 +33,7 @@ From the information about restrictions on using Aiven for ClickHouse, you can e
 
        * Some special table engines and the Log engine are not supported in Aiven for ClickHouse.
 
-       * Some engines are remapped to their `Replicated` alternatives, for example, `MergeTree` -> `ReplicatedMergeTree`.
+       * Some engines are remapped to their ``Replicated`` alternatives, for example, ``MergeTree`` **>** ``ReplicatedMergeTree``.
      - * For storing data, use the `Buffer engine <https://clickhouse.com/docs/en/engines/table-engines/special/buffer/>`_ instead of the Log engine.
 
        * Use the available table engines listed in :doc:`Supported table engines in Aiven for ClickHouse </docs/products/clickhouse/reference/supported-table-engines>`.
@@ -45,13 +45,16 @@ From the information about restrictions on using Aiven for ClickHouse, you can e
      - \-
    * - Querying all shards at once
      - If you have a sharded plan, you must use a Distributed view on top of your MergeTree table to query all the shards at the same time, and you should use it for inserts too.
-     - Use the `Distributed` view with sharded plans.
+     - Use the ``Distributed`` view with sharded plans.
    * - ON CLUSTER queries
      - Aiven for ClickHouse doesn't support ON CLUSTER queries because it actually runs each data definition query on all the servers of the cluster without using `ON CLUSTER`.
-     - Run queries without `ON CLUSTER`.
+     - Run queries without ``ON CLUSTER``.
    * - Creating a database using SQL
      - You cannot create a database directly using SQL, for example, if you'd like to add a non-default database.
      - Use the Aiven's public API.
+   * - Scaling down the number of nodes
+     - You only can scale up the number of nodes in a cluster.
+     - \-
 
 Limits
 ------

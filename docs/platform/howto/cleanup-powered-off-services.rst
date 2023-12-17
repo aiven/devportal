@@ -8,7 +8,9 @@ The Aiven platform receive regular maintenance updates to keep the services upda
 Keeping services in powered-off state for a long time lowers the feasibility of a smooth upgrade path, making it harder for Aiven to continue supporting your needs.
 
 .. note:: 
+  
     * It is recommended that you regularly review your services and delete those that are no longer needed. This allows Aiven to focus on supporting the services that you actively use and better utilize platform resources.
+    
     * If a service has been powered off for 90 days, you will receive email notifications reminding you that the service has been inactive for a prolonged period. If the service remains powered off for 180 consecutive days, it is subject to automatic deletion.
 
 

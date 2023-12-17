@@ -13,6 +13,8 @@ If you have not enabled logical replication on Google Cloud SQL PostgreSQL® alr
     .. image:: /images/products/postgresql/migrate-cloudsql-network.png
         :alt: Cloud SQL PostgreSQL network
 
-3. Set replication role to PostgreSQL user (or the user will be used for migration) in Cloud SQL PostgreSQL::
-
-    ALTER ROLE postgres REPLICATION;
+3. Set replication role to PostgreSQL user (or the user will be used for migration) in Cloud SQL PostgreSQL:
+   
+   .. code::
+     
+      ALTER ROLE postgres REPLICATION;

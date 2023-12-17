@@ -15,7 +15,9 @@ The **Service URI** has information in the following format:
 
 For security reasons is recommended to use environment variables to save your credential information. You can use the ``dotenv`` `Python library <https://pypi.org/project/python-dotenv/>`_ to manage your environment variables. Follow its ``README`` file for installation instructions.
 
-After is installed, you need to create ``.env`` file in the root directory of your project with the ``SERVICE_URI`` on it::
+After is installed, you need to create ``.env`` file in the root directory of your project with the ``SERVICE_URI`` on it:
+
+.. code::
 
     SERVICE_URI=<https://<user>:<password>@<host>:<port>
 

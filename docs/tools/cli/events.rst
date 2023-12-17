@@ -46,13 +46,13 @@ Lists instance or integration creation, deletion or modification events.
 
 **Example:** Show the recent events of the currently selected project.
 
-::
+.. code::
 
   avn events
 
 
 **Example:** Show the most recent 10 events of a named project.
 
-::
+.. code::
 
   avn events -n 10 --project my-project

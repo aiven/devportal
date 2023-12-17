@@ -35,7 +35,7 @@ Prerequisites
 * Depending on the method you choose to use for enabling CCR
 
   * Access to `Aiven Console <https://console.aiven.io/>`_
-  * `cURL` CLI tool
+  * ``cURL`` CLI tool
   * `Aiven CLI tool <https://github.com/aiven/aiven-client>`_
 
 * See :ref:`Limitations <ccr-limitations>`.
@@ -176,7 +176,7 @@ Using :doc:`Aiven APIs </docs/tools/api>`, you can enable CCR for
 
 .. note::
    
-   In this instruction, the `curl` command line tool is used to interact with Aiven APIs.
+   In this instruction, the ``curl`` command line tool is used to interact with Aiven APIs.
 
 .. topic:: Understand parameters to be supplied
 

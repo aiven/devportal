@@ -26,7 +26,7 @@ with a low number that allows efficient data processing and increase it
 if needed.
 
 As a general rule of thumb, the recommendation is to have max 4000
-partitions per broker, and max 200 000 partitions per cluster (`source <https://blogs.apache.org/kafka/entry/apache-kafka-supports-more-partitions>`_).
+partitions per broker, and max 200 000 partitions per cluster (`source <https://blogsarchive.apache.org/kafka/entry/apache-kafka-supports-more-partitions>`_).
 
 .. note:: Ordering is guaranteed only per partition. If you require relative ordering of records, you need to put that subset of data into the same partition.
 

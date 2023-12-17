@@ -19,7 +19,9 @@ Variable                Description
 Configuring Telegraf InfluxDB® output plugin for M3
 ---------------------------------------------------
 
-Below is an example of how to configure Telegraf to send metrics to M3 using the InfluxDB line-protocol. These lines belong in the **output plugins** section of your Telegraf configuration file::
+Below is an example of how to configure Telegraf to send metrics to M3 using the InfluxDB line-protocol. These lines belong in the **output plugins** section of your Telegraf configuration file:
+
+.. code::
 
     # Configuration for sending metrics to M3
     [[outputs.influxdb]]
@@ -42,7 +44,9 @@ Below is an example of how to configure Telegraf to send metrics to M3 using the
 Configuring Telegraf Prometheus remote write for M3
 ---------------------------------------------------
 
-Here's an example of how to configure Telegraf to send metrics to M3 using the Prometheus remote write protocol. These lines go in the output plugins section of the Telegraf configuration file::
+Here's an example of how to configure Telegraf to send metrics to M3 using the Prometheus remote write protocol. These lines go in the output plugins section of the Telegraf configuration file:
+
+.. code::
 
     # Configuration for sending metrics to M3
     [outputs.http]

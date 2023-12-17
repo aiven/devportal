@@ -6,10 +6,10 @@ This section provides information on creating `Apache Flink® tables <https://ni
 
 Learn how to: 
 
-* :doc:`Create an Apache Kafka®-based Apache Flink® table <../howto/connect-kafka>`
+* :doc:`Create an Apache Kafka®-based Apache Flink® table </docs/products/flink/howto/connect-kafka>`
   
-* :doc:`Create a PostgreSQL®-based Apache Flink® table <../howto/connect-pg>`
+* :doc:`Create a PostgreSQL®-based Apache Flink® table </docs/products/flink/howto/connect-pg>`
   
-* :doc:`Create an OpenSearch®-based Apache Flink® table <../howto/connect-opensearch>`
+* :doc:`Create an OpenSearch®-based Apache Flink® table </docs/products/flink/howto/connect-opensearch>`
   
-* :doc:`Create a Slack-based Apache Flink® table <../howto/slack-connector>`
+* :doc:`Create a Slack-based Apache Flink® table </docs/products/flink/howto/slack-connector>`

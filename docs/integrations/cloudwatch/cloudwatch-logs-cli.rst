@@ -30,11 +30,13 @@ This is what you'll need to send your logs from the AWS CloudWatch using the :do
 Configure the integration
 -------------------------
 
-1. Open the Aiven client, and log in::
+1. Open the Aiven client, and log in:
 
-    avn user login <you@example.com> --token
+   .. code::
+    
+      avn user login <you@example.com> --token
 
-.. seealso:: Learn more about  :doc:`/docs/tools/cli/user/user-access-token`
+   .. seealso:: Learn more about  :doc:`/docs/tools/cli/user/user-access-token`
 
 2. Collect the following information for the creation of the endpoint between your Aiven account and AWS CloudWatch. These are the placeholders you will need to replace in the code sample:
 

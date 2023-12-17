@@ -28,9 +28,11 @@ Variable               Description
 
 .. Tip::
     
-    The ``INTEGRATION_ID`` parameter can be found by issuing::
-        
-        avn service integration-list SERVICE_NAME
+    The ``INTEGRATION_ID`` parameter can be found by issuing:
+    
+    .. code::
+     
+       avn service integration-list SERVICE_NAME
 
 Customise Apache Kafka® metrics sent to Datadog
 -----------------------------------------------
@@ -51,7 +53,9 @@ To customise the metrics sent to Datadog, you can use the ``service integration-
 * ``exclude_consumer_groups``: defining the comma separated list of consumer groups to include
 
 
-As example to sent the ``kafka.log.log_size`` and ``kafka.log.log_end_offset`` metrics for ``topic1`` and ``topic2`` execute the following code::
+As example to sent the ``kafka.log.log_size`` and ``kafka.log.log_end_offset`` metrics for ``topic1`` and ``topic2`` execute the following code:
+
+.. code::
 
     avn service integration-update                                                \
         -c kafka_custom_metrics=['kafka.log.log_size','kafka.log.log_end_offset'] \

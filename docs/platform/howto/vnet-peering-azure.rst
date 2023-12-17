@@ -43,22 +43,22 @@ as well as the :doc:`Aiven CLI </docs/tools/cli>` to follow this guide.
 
 Using the Azure CLI:
 
-::
+.. code::
 
    az account clear
    az login
 
-| This should open a window in your browser prompting to choose an Azure
-  account to log in with. An account with at least the **Application
-  administrator** role assignment will be needed for the later steps.
+This should open a window in your browser prompting to choose an Azure
+account to log in with. An account with at least the **Application
+administrator** role assignment will be needed for the later steps.
 
 If you manage multiple Azure subscriptions, also configure the Azure CLI
 to default to the correct subscription for the subsequent commands. This
 is not needed if there's only one subscription:
 
-::
+.. code::
 
-   az account set --subscription <subscription name or id> 
+   az account set --subscription <subscription name or id> 
 
 
 2. create application object
@@ -67,7 +67,7 @@ is not needed if there's only one subscription:
 Create an application object in your AD tenant. Using the Azure CLI,
 this can be done with:
 
-::
+.. code::
 
    az ad app create --display-name "<name of your choosing>" --sign-in-audience AzureADMultipleOrgs --key-type Password
 
@@ -84,7 +84,7 @@ Create a service principal for the app object you created. The service
 principal should be created to the Azure subscription the VNet you wish
 to peer is located in:
 
-::
+.. code::
 
    az ad sp create --id $user_app_id
 
@@ -97,7 +97,7 @@ shown in the output.
 4. set a password for your app object
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-::
+.. code::
 
    az ad app credential reset --id $user_app_id
 
@@ -107,21 +107,21 @@ as ``$user_app_secret`` below
 5. find the id properties of your virtual network
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This can be found in the Azure portal in "Virtual networks" -> name of
-your network -> “JSON View” -> "Resource ID", or using
+This can be found in the Azure portal in **Virtual networks** > name of
+your network > **JSON View** > **Resource ID**, or using
 
-::
+.. code::
 
    az network vnet list
 
 Save the ``id`` field which will be referred to as ``$user_vnet_id`` .
 Also grab
 
--  the Azure Subscription ID ("Properties" -> "Subscription ID") or the
+-  the Azure Subscription ID (**Properties** > **Subscription ID**) or the
    part after ``/subscriptions/`` in the resource ID. This is referred
    to as ``$user_subscription_id``
 
--  the resource group name ("Properties" -> "Resource group") or the
+-  the resource group name (**Properties** > **Resource group**) or the
    ``resourceGroup`` field in the output. This is referred to as
    ``$user_resource_group``
 
@@ -143,7 +143,7 @@ app object and service principal has, you can create a custom role with
 just that permission. The built-in *Network Contributor* role includes
 that permission, and can be found using the Azure CLI with
 
-::
+.. code::
 
    az role definition list --name "Network Contributor"
 
@@ -151,7 +151,7 @@ The ``id`` field from the output will be used as
 ``$network_contributor_role_id`` to assign the service principal that
 role:
 
-::
+.. code::
 
    az role assignment create --role $network_contributor_role_id --assignee-object-id $user_sp_id --scope $user_vnet_id
 
@@ -170,7 +170,7 @@ from the Project VPC VNet in the Aiven subscription to the VNet from step
 5 in your subscription. For this the Aiven app object needs a service
 principal in your subscription:
 
-::
+.. code::
 
    az ad sp create --id 55f300d4-fc50-4c5e-9222-e90a6e2187fb
 
@@ -192,7 +192,7 @@ permissions. In order to target a network in your subscription with a
 peering and nothing else, we'll create a this a custom role definition,
 with only a single action allowing to do that and only that:
 
-::
+.. code::
 
    az role definition create --role-definition '{"Name": "<name of your choosing>", "Description": "Allows creating a peering to vnets in scope (but not from)", "Actions": ["Microsoft.Network/virtualNetworks/peer/action"], "AssignableScopes": ["/subscriptions/'$user_subscription_id'"]}'
 
@@ -211,7 +211,7 @@ peer with your VNet, assign the role created in the previous step to the
 Aiven service principal (step 7) with the scope of your VNet (step 5)
 with
 
-::
+.. code::
 
    az role assignment create --role $aiven_role_id --assignee-object-id $aiven_sp_id --scope $user_vnet_id
 
@@ -220,10 +220,10 @@ with
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The ID of your AD tenant will be needed in the next step. Find it from
-the Azure portal from "Azure Active Directory" -> "Properties" ->
-"Directory ID" or with the Azure CLI using
+the Azure portal from **Azure Active Directory** > **Properties** >
+**Directory ID** or with the Azure CLI using
 
-::
+.. code::
 
    az account list
 
@@ -247,7 +247,7 @@ your tenant to give it access to the service principal created in step 7
   be found with ``avn vpc list``
 | Using the Aiven CLI:
 
-::
+.. code::
 
    avn vpc peering-connection create --project-vpc-id $aiven_project_vpc_id --peer-cloud-account $user_subscription_id --peer-resource-group $user_resource_group --peer-vpc $user_vnet_name --peer-azure-app-id $user_app_id --peer-azure-tenant-id $user_tenant_id
 
@@ -263,7 +263,7 @@ peering connection is being set up by the Aiven platform.
 Run the following command until the state is no longer ``APPROVED`` ,
 but ``PENDING_PEER`` :
 
-::
+.. code::
 
    avn vpc peering-connection get -v --project-vpc-id $aiven_project_vpc_id --peer-cloud-account $user_subscription_id --peer-resource-group $user_resource_group --peer-vpc $user_vnet_name
 
@@ -286,20 +286,20 @@ output is referred to as the ``$aiven_vnet_id``
 
 Log out the Azure user you logged in with in step 1 using
 
-::
+.. code::
 
    az account clear
 
 Log in the application object you created with in step 2 to your AD
 tenant with
 
-::
+.. code::
 
    az login --service-principal -u $user_app_id -p $user_app_secret --tenant $user_tenant_id
 
 Log in the same application object to the Aiven AD tenant
 
-::
+.. code::
 
    az login --service-principal -u $user_app_id -p $user_app_secret --tenant $aiven_tenant_id
 
@@ -307,7 +307,7 @@ Now that your application object has a session with both AD tenants,
 create a peering from your VNet to the VNet in the Aiven subscription
 with
 
-::
+.. code::
 
    az network vnet peering create --name <peering name of your choosing> --remote-vnet $aiven_vnet_id --vnet-name $user_vnet_name --resource-group $user_resource_group --subscription $user_subscription_id --allow-vnet-access
 
@@ -322,7 +322,7 @@ again and creating the peering again after waiting a bit by repeating
 the commands in this step. If the error message persists, please check
 the role assignment in step 6 was correct.
 
-::
+.. code::
 
    The client '<random uuid>' with object id '<another random uuid>' does not have authorization to perform action 'Microsoft.Network/virtualNetworks/virtualNetworkPeerings/write' over scope '$user_vnet_id' If access was recently granted, please refresh your credentials.
 
@@ -338,6 +338,6 @@ in the Project VPC can be reached through the peering. To check if the
 peering connection is ``ACTIVE`` , run the same Aiven CLI
 ``avn vpc peering-connection get`` command from step 12. In some cases it has taken up to 15 minutes for the state to update:
 
-::
+.. code::
 
    avn vpc peering-connection get -v --project-vpc-id $aiven_project_vpc_id --peer-cloud-account $user_subscription_id --peer-resource-group $user_resource_group --peer-vpc $user_vnet_name

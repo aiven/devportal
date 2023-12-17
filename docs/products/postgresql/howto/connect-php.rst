@@ -37,10 +37,14 @@ This code creates a PostgreSQL client and opens a connection to the database. Th
 .. note::
    This example replaces the query string parameter to specify ``sslmode=verify-ca`` to make sure that the SSL certificate is verified, and adds the location of the cert.
 
-To run the code::
+To run the code:
 
-    php index.php
+.. code::
+  
+   php index.php
 
-If the script runs successfully, the outputs should be the PostgreSQL version running in your service like::
+If the script runs successfully, the outputs should be the PostgreSQL version running in your service like:
 
-    PostgreSQL 13.3 on x86_64-pc-linux-gnu, compiled by gcc, a 68c5366192 p 6520304dc1, 64-bit
+.. code::
+   
+   PostgreSQL 13.3 on x86_64-pc-linux-gnu, compiled by gcc, a 68c5366192 p 6520304dc1, 64-bit

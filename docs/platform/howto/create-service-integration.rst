@@ -1,7 +1,7 @@
 Create service integrations
 ============================
 
-If you're not sure what a service integration is, see :doc:`Service integration <../concepts/service-integration>` for an overview. This article will guide you on how to create service integrations between different Aiven services and move telemetry data using these integrations.
+If you're not sure what a service integration is, see :doc:`Service integration </docs/platform/concepts/service-integration>` for an overview. This article will guide you on how to create service integrations between different Aiven services and move telemetry data using these integrations.
 
 Prerequisites
 -------------
@@ -37,10 +37,10 @@ Create an integration
 
    This dashboard is a predefined view that is automatically maintained by Aiven.
    
-   .. note::
+.. note::
       
-      It may take a minute to start getting data into to the dashboard view if you just enabled the integrations. The view can be refreshed by reloading in the top-right corner. You can add custom dashboards by either defining them from scratch in Grafana or by saving a copy of the predefined dashboard under a different name that does not start with *Aiven*.
+   It may take a minute to start getting data into to the dashboard view if you just enabled the integrations. The view can be refreshed by reloading in the top-right corner. You can add custom dashboards by either defining them from scratch in Grafana or by saving a copy of the predefined dashboard under a different name that does not start with *Aiven*.
 
 .. warning::
 
-    Any changes that you make to the predefined dashboard are eventually automatically overwritten by the system.
+   Any changes that you make to the predefined dashboard are eventually automatically overwritten by the system.

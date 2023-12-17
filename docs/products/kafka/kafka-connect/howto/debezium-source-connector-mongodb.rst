@@ -71,9 +71,9 @@ The configuration file contains the following entries:
 
   .. Note::
 
-    The ``key.converter`` and ``value.converter`` sections are only needed when pushing data in Avro format. If omitted the messages will be defined in JSON format.
+     The ``key.converter`` and ``value.converter`` sections are only needed when pushing data in Avro format. If omitted the messages will be defined in JSON format.
 
-    The ``USER_INFO`` is **not** a placeholder, no substitution is needed for that parameter.
+     The ``USER_INFO`` is **not** a placeholder, no substitution is needed for that parameter.
 
 
 Create a Kafka Connect connector with the Aiven Console
@@ -89,7 +89,7 @@ To create a Kafka Connect connector, follow these steps:
 6. Paste the connector configuration (stored in the ``debezium_source_mongodb.json`` file) in the form.
 7. Select **Apply**.
 
-    .. note::
+   .. note::
 
       The Aiven Console parses the configuration file and fills the relevant UI fields. You can review the UI fields across the various tabs and change them if necessary. The changes will be reflected in JSON format in the **Connector configuration** text box.
 
@@ -102,6 +102,6 @@ To create a Kafka Connect connector, follow these steps:
 8. Verify the connector status under the **Connectors** screen. 
 9. Verify the presence of the data in the target Apache Kafka topic coming from the MongoDB dataset. The topic name is equal to the concatenation of the database and collection name. If you need to change the target table name, you can do so using the Kafka Connect ``RegexRouter`` transformation.
 
-.. note::
 
-    You can also create connectors using the :ref:`Aiven CLI command <avn_service_connector_create>`.
+
+You can also create connectors using the :ref:`Aiven CLI command <avn_service_connector_create>`.

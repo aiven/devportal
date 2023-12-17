@@ -10,18 +10,19 @@ Enable JIT on the global level
 
 You can enable JIT for the complete Aiven for PostgreSQL service both via `Aiven Console <https://console.aiven.io/>`_ and :doc:`Aiven CLI </docs/tools/cli>`. 
 
-To enable JIT in the `Aiven console <https://console.aiven.io/>`_, take the following steps:
+To enable JIT in the `Aiven Console <https://console.aiven.io/>`_, take the following steps:
 
-#. Log in to the `Aiven web console <https://console.aiven.io/>`_.
+#. Log in to the `Aiven Console <https://console.aiven.io/>`_.
 #. From the **Services** page, select the the Aiven for PostgreSQL service where you want to enable JIT.
-#. In your service's **Overview** page, scroll down to the **Advanced configuration** settings, and select **Change**.
-#. In the **Edit advanced configuration** window, select **Add configuration option**.
-#. Select parameter ``pg.jit``, and switch the toggle to ``on``.
-#. Select **Save advanced configuration**.
+#. From the sidebar on your service's page, select **Service settings**.
+#. On the **Service settings** page, navigate to the **Advanced configuration** section, and select **Configure**.
+#. In the **Advanced configuration** window, select **Add configuration options**.
+#. Select parameter ``pg.jit``, and switch the toggle to ``Enabled``.
+#. Select **Save configuration**.
 
 To enable JIT via :doc:`Aiven CLI </docs/tools/cli>`, you can use the :ref:`service update command <avn-cli-service-update>`:
 
-::
+.. code::
 
     avn service update -c pg.jit=true PG_SERVICE_NAME
 
@@ -30,15 +31,15 @@ Enable JIT for a specific database
 
 You might not want to use JIT for most simple queries since it would increase the cost. JIT can also be enabled for a single database:
 
-1. Connect to the database where you want to enable JIT. E.g. with ``psql`` and the service URI available in the Aiven for PostgreSQL service overview console page
+1. Connect to the database where you want to enable JIT, for example, with ``psql`` and the service URI available in `Aiven Console <https://console.aiven.io/>`_ > your Aiven for PostgreSQL service > the **Overview** page.
 
-::
+.. code::
 
     psql PG_CONNECTION_URI
 
 2. Alter the database (in the example ``mytestdb``) and enable JIT
 
-::
+.. code::
 
     alter database mytestdb set jit=on;
 
@@ -53,13 +54,13 @@ JIT can be enabled also for a specific user:
 
 1. Connect to the database where you want to enable JIT using, for example, ``psql`` and the service URI available in `Aiven Console <https://console.aiven.io/>`_ > the **Overview** page of your Aiven for PostgreSQL service.
 
-::
+.. code::
 
     psql PG_CONNECTION_URI
 
 2. Alter the role (in the example: ``mytestrole``), and enable JIT.
 
-::
+.. code::
 
     alter role mytestrole set jit=on;
 
@@ -69,13 +70,13 @@ JIT can be enabled also for a specific user:
 
 3. Start a new session with the role, and check that JIT is running.
 
-::
+.. code::
 
     show jit;
 
 The result should be:
 
-::
+.. code::
 
      jit 
     -----
@@ -84,7 +85,7 @@ The result should be:
 
 4. Run a simple query to test JIT is applied properly.
 
-::
+.. code::
 
     defaultdb=> explain analyze select sum(row) from table;
                                                                 QUERY PLAN                                                     

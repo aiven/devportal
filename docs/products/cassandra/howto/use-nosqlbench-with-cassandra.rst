@@ -42,8 +42,10 @@ Create a schema and load data
 
 Nosqlbench can be used to create a sample schema and load data.
 
-The schema can be created with the following command, after substituting the placeholders for ``HOST``, ``PORT``, ``PASSWORD`` and ``SSL_CERTFILE``::
+The schema can be created with the following command, after substituting the placeholders for ``HOST``, ``PORT``, ``PASSWORD`` and ``SSL_CERTFILE``:
 
+.. code::
+  
    ./nb run                            \
       host=HOST                        \
       port=PORT                        \
@@ -64,7 +66,9 @@ The following parameters are used:
 * ``workload``: option calls a specific workload file that is compiled inside the ``nb`` executable and instructs ``nb`` to generate key/value pairs for a table called ``baselines.keyvalue``. You can read more on how to define custom workloads in the :ref:`dedicated documentation <nosqlbench_cassandra>`
 * ``phase``: refers to a specific point in the ``workload`` definition file and specifies the particular ``activity`` to run. In the example, the phase is ``schema`` which means that the nosqlbench will create the schema of the Cassandra keyspace.
 
-To create client connections and produce data in the keyspace and tables created, you need to run the following command line, after substituting the placeholders for ``HOST``, ``PORT``, ``PASSWORD`` and ``SSL_CERTFILE``::
+To create client connections and produce data in the keyspace and tables created, you need to run the following command line, after substituting the placeholders for ``HOST``, ``PORT``, ``PASSWORD`` and ``SSL_CERTFILE``:
+
+.. code::
 
     ./nb run \
       host=HOST                        \
@@ -94,11 +98,15 @@ Nosqlbench uses workflows to define the load activity. You can define your own w
 Check the workflow details
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To check the details of the several predefined workloads and activities, you can dump the definition to a file. To have the list of all the pre-compiled workloads execute::
+To check the details of the several predefined workloads and activities, you can dump the definition to a file. To have the list of all the pre-compiled workloads execute:
+
+.. code::
 
    ./nb --list-workloads
 
-The above command will generate the list of pre-compiled workloads like::
+The above command will generate the list of pre-compiled workloads like:
+
+.. code::
 
     # An IOT workload with more optimal settings for DSE
     /activities/baselines/cql-iot-dse.yaml
@@ -110,7 +118,9 @@ The above command will generate the list of pre-compiled workloads like::
     /activities/baselines/cql-keyvalue.yaml
 
 
-To edit a particular workload file locally, you execute the following, replacing the placeholder ``WORKLOAD_NAME`` with the name of the workload::
+To edit a particular workload file locally, you execute the following, replacing the placeholder ``WORKLOAD_NAME`` with the name of the workload:
+
+.. code::
 
    ./nb --copy WORKLOAD_NAME
 
@@ -124,8 +134,10 @@ Create your own workload
 Workload files can be modified and then executed with ``nb`` using the command option ``workload=WORKLOAD_NAME``.
 
 The tool expects the file ``WORKLOAD_NAME.yaml`` to be in the same directory of the ``nb`` command.
-If you create the file called ``my-workload.yaml`` in the same directory of ``nb`` command, the new workload can be run with this command line::
+If you create the file called ``my-workload.yaml`` in the same directory of ``nb`` command, the new workload can be run with this command line:
 
+.. code::
+  
    ./nb run                   \
       driver=cql              \
       workload=my-workload

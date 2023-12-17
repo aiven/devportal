@@ -1,7 +1,7 @@
 Manage connection pooling
 =========================
 
-Connection Pooling allows you to maintain very large numbers of connections to a database while minimizing the consumption of server resources. Read more about it on :doc:`../concepts/pg-connection-pooling`.
+Connection Pooling allows you to maintain very large numbers of connections to a database while minimizing the consumption of server resources. Read more about it on :doc:`/docs/products/postgresql/concepts/pg-connection-pooling`.
 
 Connection pooling tips
 -----------------------------
@@ -50,10 +50,14 @@ Connection pools for replicas
 
 For all Business and Premium plans, whenever you define a connection pool, the same connection pool is created both for primary and standby servers. For standby servers, the connection pool URI is exactly the same as for the primary server, except that the host name has a ``replica-`` prefix.
 
-For example, if the primary connection URI is as follows::
+For example, if the primary connection URI is as follows:
+
+.. code::
 
     postgres://avnadmin:password@pg-prod-myproject.aivencloud.com:20986/mypool?params
 
-The replica connection pool URI is as follows::
+The replica connection pool URI is as follows:
 
+.. code::
+  
     postgres://avnadmin:password@replica-pg-prod-myproject.aivencloud.com:20986/mypool?params

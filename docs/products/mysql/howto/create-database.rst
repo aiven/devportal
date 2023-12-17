@@ -15,4 +15,4 @@ To create a new MySQL® database, take the following steps:
 
 .. Tip::
 
-   You can also use the :ref:`Aiven client <avn-service-database-create>` or the :doc:`MySQL client<connect-from-cli>` to create your database from the CLI.
+   You can also use the :ref:`Aiven client <avn-service-database-create>` or the :doc:`MySQL client </docs/products/mysql/howto/connect-from-cli>` to create your database from the CLI.

@@ -35,17 +35,17 @@ Furthermore you need to collect the following information about the target Cassa
 * ``CASSANDRA_KEYSPACE``: The Cassandra keyspace to use to source the data from
 * ``KCQL_TRANSFORMATION``: The KCQL syntax to parse the topic data, should be in the format:
 
-  ::
+  .. code::
 
-    INSERT INTO APACHE_KAFKA_TOPIC
-    SELECT LIST_OF_FIELDS 
-    FROM CASSANDRA_TABLE
-    [PK CASSANDRA_TABLE_COLUMN]
-    [INCREMENTAL_MODE=MODE]
+     INSERT INTO APACHE_KAFKA_TOPIC
+     SELECT LIST_OF_FIELDS 
+     FROM CASSANDRA_TABLE
+     [PK CASSANDRA_TABLE_COLUMN]
+     [INCREMENTAL_MODE=MODE]
 
-.. Warning::
+  .. Warning::
 
-    By default the connector acts in **bulk mode**, extracting all the rows from the Cassandra table on a polling interval and pushing them to the Apache Kafka topic. You can however define **incremental options** by defining the `incremental mode and primary key <https://docs.lenses.io/5.0/integrations/connectors/stream-reactor/sources/cassandrasourceconnector/>`_.
+     By default the connector acts in **bulk mode**, extracting all the rows from the Cassandra table on a polling interval and pushing them to the Apache Kafka topic. You can however define **incremental options** by defining the `incremental mode and primary key <https://docs.lenses.io/5.0/integrations/connectors/stream-reactor/sources/cassandrasourceconnector/>`_.
 
 * ``APACHE_KAFKA_HOST``: The hostname of the Apache Kafka service, only needed when using Avro as data format
 * ``SCHEMA_REGISTRY_PORT``: The Apache Kafka's schema registry port, only needed when using Avro as data format
@@ -126,17 +126,16 @@ To create a Kafka Connect connector, follow these steps:
 6. Paste the connector configuration (stored in the ``cassandra_source.json`` file) in the form.
 7. Select **Apply**.
 
-.. Note::
+   .. Note::
 
-    The Aiven Console parses the configuration file and fills the relevant UI fields. You can review the UI fields across the various tab and change them if necessary. The changes will be reflected in JSON format in the **Connector configuration** text box.
+      The Aiven Console parses the configuration file and fills the relevant UI fields. You can review the UI fields across the various tab and change them if necessary. The changes will be reflected in JSON format in the **Connector configuration** text box.
 
 8. After all the settings are correctly configured, select **Create new connector**. 
 9. Verify the connector status under the **Connectors** screen. 
 10. Verify the presence of the data in the target Cassandra service. 
 
-.. Note::
 
-    You can also create connectors using the :ref:`Aiven CLI command <avn_service_connector_create>`.
+You can also create connectors using the :ref:`Aiven CLI command <avn_service_connector_create>`.
 
 Example: Create a Cassandra source connector
 -------------------------------------------------------

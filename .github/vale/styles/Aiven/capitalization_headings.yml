@@ -39,6 +39,7 @@ exceptions:
   - Datadog
   - Debezium
   - Dev
+  - DHCP
   - Disaster Recovery
   - Docker
   - Dynamic Disk Sizing

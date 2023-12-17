@@ -44,14 +44,15 @@ The following set of steps are executed during an upgrade procedure:
 
 2. Once the new nodes are running, they join the Apache Kafka cluster
 
-.. Note::
-    The Apache Kafka cluster now contains a mix of old and new nodes       
+   .. Note::
+     
+      The Apache Kafka cluster now contains a mix of old and new nodes       
 
 3. The partition data and leadership is transferred to new nodes
 
-.. mermaid::
+   .. mermaid::
 
-    flowchart TD;
+      flowchart TD;
 
         subgraph KafkaCluster
             subgraph Node1
@@ -87,23 +88,22 @@ The following set of steps are executed during an upgrade procedure:
         PartitionB2 -.-> PartitionNewB2
         PartitionC2 -.-> PartitionNewC2
 
-.. Warning::
+   .. Warning::
 
-    This step is CPU intensive due to the additional data movement overhead.
+      This step is CPU intensive due to the additional data movement overhead.
 
 4. Once old nodes don't have any partition data, they are retired from the cluster.
         
-.. Note::
+   .. Note::
 
-    Depending on the cluster size more new nodes are added (by default up to 6 nodes at a time are replaced)
-
+      Depending on the cluster size more new nodes are added (by default up to 6 nodes at a time are replaced)
 
 
 5. The process is completed once the last old node has been removed from the cluster
 
-.. mermaid::
+   .. mermaid::
 
-    flowchart TD;
+      flowchart TD;
 
         subgraph KafkaCluster
             subgraph NewNode1

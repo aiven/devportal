@@ -49,7 +49,7 @@ To acknowledge the new SSL certificate with the `Aiven Console <https://console.
 
     The same can be achieved with the Aiven API, using the "Modify service user credentials" `endpoint <https://api.aiven.io/doc/#operation/ServiceUserCredentialsModify>`_:
 
-    ::
+    .. code::
 
         curl --request PUT \
             --url https://api.aiven.io/v1/project/<project>/service/<service>/user/<username> \

@@ -69,11 +69,14 @@ Docker
 dockerized
 downsampled
 downsampling
+Dragonfly
 DSBulk
 DZone
 Elasticsearch
+enablement
 Epicurious
 etcd
+eval
 event_type
 European Union
 failover
@@ -206,6 +209,7 @@ rebalance
 rebalances
 rebalancing
 Redis
+Redis OSS
 redis_timeout
 Redli
 refcard
@@ -226,6 +230,7 @@ Savepoints
 savepoints
 schemaless
 scriptable
+SDKs?
 Security
 serde
 serializer

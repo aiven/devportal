@@ -51,7 +51,11 @@ Send logs to an external service
 
 .. note:: Logs are split per day with index name consisting of your desired index prefix and a date in a format year-month-day, for example ``logs-2022-08-30``.
 
-.. note:: You can also set up the integration using Aiven CLI and the commands :ref:`avn service integration-endpoint-create <avn_service_integration_endpoint_create>` and :ref:`avn service integration-endpoint-list <avn_service_integration_endpoint_list>` and :ref:`avn_service_integration_create`
+.. note:: You can also set up the integration using Aiven CLI and the following commands:
+  
+   - :ref:`avn service integration-endpoint-create <avn_service_integration_endpoint_create>`
+   - :ref:`avn service integration-endpoint-list <avn_service_integration_endpoint_list>` 
+   - :ref:`avn service integration-create <avn_service_integration_create>`
 
 
 .. warning:: Integration are not available on Hobbyist plans. If you want to enable integrations please select at least a startup plan.

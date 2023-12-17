@@ -54,9 +54,11 @@ You can see the information about the task including the ID.
 
 **Step 2: retrieve your task's status.**
 
-You can check the status of your task by running::
+You can check the status of your task by running:
 
-    avn service task-get --task-id e2df7736-66c5-4696-b6c9-d33a0fc4cbed --project MY_PROJECT_NAME mysql
+.. code::
+
+   avn service task-get --task-id e2df7736-66c5-4696-b6c9-d33a0fc4cbed --project MY_PROJECT_NAME mysql
 
 You can find whether the operation succeeds and more relevant information about the migration.
 

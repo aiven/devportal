@@ -27,13 +27,17 @@ For this example you will need:
 
 * Python 3.7 or later
 
-* The Python ``PyMySQL`` library. You can install this with ``pip``::
+* The Python ``PyMySQL`` library. You can install this with ``pip``:
+  
+  .. code::
+   
+     pip install pymysql
 
-    pip install pymysql
+* Install ``cryptography`` package:
 
-* Install ``cryptography`` package::
-
-   pip install cryptography
+  .. code::
+  
+     pip install cryptography
 
 Code
 ''''
@@ -45,13 +49,17 @@ Add the following to ``main.py`` and replace the placeholders with values for yo
 
 This code creates a MySQL client and connects to the database. It creates a table, inserts some values, fetches them and prints the output.
 
-To run the code::
+To run the code:
 
-    python main.py
+.. code::
 
-If the script runs successfully, the output will be the values that were inserted into the table::
+   python main.py
 
-    [{'id': 1}, {'id': 2}]    
+If the script runs successfully, the output will be the values that were inserted into the table:
+
+.. code::
+    
+   [{'id': 1}, {'id': 2}]    
 
 Now that your application is connected, you are all set to use Python with Aiven for MySQL.
 

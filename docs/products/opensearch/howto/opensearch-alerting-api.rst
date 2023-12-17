@@ -10,8 +10,8 @@ We are using a ``sample-host-health`` index as datasource to create a simple ale
 
 OpenSearch API Alerting API URL can be copied from Aiven console:
 
-Click the **Overview** tab -> **OpenSearch** under `Connection Information` -> **Service URI**
-append ``_plugins/_alerting/monitors`` to the **Service URI**
+Click the **Overview** tab > **OpenSearch** under ``Connection Information`` > **Service URI**
+append ``_plugins/_alerting/monitors`` to the **Service URI**.
 
 Example:
 
@@ -30,5 +30,5 @@ Use ``curl`` to create the alert
    https://username:password@os-name-myproject.aivencloud.com:24947/_plugins/_alerting/monitors \
    -H 'Content-type: application/json' -T cpu_alert.json
 
-* The required JSON request format can be found in `OpenSearch Alerting API documentation <https://opensearch.org/docs/latest/monitoring-plugins/alerting/api/#sample-request>`_
+* The required JSON request format can be found in `OpenSearch Alerting API documentation <https://opensearch.org/docs/latest/observing-your-data/alerting/api/>`_
 

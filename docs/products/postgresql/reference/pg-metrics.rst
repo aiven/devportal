@@ -1,7 +1,7 @@
 PostgreSQL® metrics exposed in Grafana®
 =======================================
 
-The metrics/dashboard integration in the Aiven console enables you to push PostgreSQL® metrics to an external endpoint like Datadog or to create an integration and a prebuilt dashboard in Aiven for Grafana®. For more information on enabling the integration, see :doc:`../howto/report-metrics-grafana`. This article describes the default dashboard created in Grafana for any PostgreSQL instance.
+The metrics/dashboard integration in the Aiven console enables you to push PostgreSQL® metrics to an external endpoint like Datadog or to create an integration and a prebuilt dashboard in Aiven for Grafana®. For more information on enabling the integration, see :doc:`/docs/products/postgresql/howto/report-metrics-grafana`. This article describes the default dashboard created in Grafana for any PostgreSQL instance.
 
 General info about default dashboards
 -------------------------------------
@@ -148,7 +148,7 @@ The metrics in the PostgreSQL overview section are grouped by logical database. 
       - Some potentially large files that are not included in this value. Most notably, the write-ahead log (WAL) is not included in the size of the logical databases as it is not tied to any specific logical database.
     * - ``Connections``
       - The number of open connections to the database
-      - Each connection puts a large burden on the PostgreSQL server and this number :doc:`should typically be fairly small even for large plans <pg-connection-limits>`. Use connection pooling to :doc:`reduce the number of connections <../concepts/pg-connection-pooling>` to the actual database server.
+      - Each connection puts a large burden on the PostgreSQL server and this number :doc:`should typically be fairly small even for large plans <pg-connection-limits>`. Use connection pooling to :doc:`reduce the number of connections </docs/products/postgresql/concepts/pg-connection-pooling>` to the actual database server.
     * - ``Oldest running query age``
       - The age of the oldest running query
       - Typical queries run in milliseconds, and having queries that run for minutes often indicates an issue.

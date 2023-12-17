@@ -1,7 +1,7 @@
 ``avn service privatelink``
 ==============================================
 
-Here you’ll find the full list of commands for ``avn service privatelink``.
+Here you'll find the full list of commands for ``avn service privatelink``.
 
 
 Manage Aiven privatelink service for AWS and Azure
@@ -27,7 +27,7 @@ Lists PrivateLink cloud availability and prices.
 
 **Example:** Lists PrivateLink cloud availability and prices.
 
-::
+.. code::
 
     avn service privatelink availability
 
@@ -65,7 +65,7 @@ Lists AWS PrivateLink connection information for a service.
 
 **Example:** List AWS PrivateLink connection information for the ``kafka-12a3b4c5`` service.
 
-::
+.. code::
 
     avn service privatelink aws connection list kafka-12a3b4c5
 
@@ -104,7 +104,7 @@ Creates an AWS PrivateLink for a service. To add multiple principals, repeat `--
 
 **Example:** Create an AWS PrivateLink for the ``kafka-12a3b4c5`` service.
 
-::
+.. code::
 
     avn service privatelink aws create --principal 'arn:aws:iam::123456789012:user/cloud_user' --principal 'arn:aws:iam::987654321098:user/cloud_user' kafka-12a3b4c5
 
@@ -138,7 +138,7 @@ Deletes an AWS PrivateLink defined for a service.
     - Format of the output string
 
 **Example:** Delete the AWS PrivateLink for the ``kafka-12a3b4c5`` service. 
-::
+.. code::
 
     avn service privatelink aws delete kafka-12a3b4c5
 
@@ -177,7 +177,7 @@ Lists AWS PrivateLink information for a service.
 
 **Example:** List AWS PrivateLink information for the ``kafka-12a3b4c5`` service.
 
-::
+.. code::
 
     avn service privatelink aws get kafka-12a3b4c5
 
@@ -213,7 +213,7 @@ Updates AWS PrivateLink principals for a service. To update multiple principals,
 
 **Example:** Update AWS principals for the ``kafka-12a3b4c5`` service.
 
-::
+.. code::
 
     avn service privatelink aws update                        \
       --principal 'arn:aws:iam::123456789012:user/cloud_user' \
@@ -251,7 +251,7 @@ Approves a pending Azure Private Link connection endpoint.
 
 **Example:** Approve the Azure Private Link ``plc12345abcdef`` connection for the ``kafka-12a3b4c5`` service.
 
-::
+.. code::
 
     avn service privatelink azure connection approve kafka-12a3b4c5 plc12345abcdef
 
@@ -285,7 +285,7 @@ Lists Azure Private Link connection information for a service.
 
 **Example:** List Azure Private Link connection information for the ``kafka-12a3b4c5`` service.
 
-::
+.. code::
 
     avn service privatelink azure connection list kafka-12a3b4c5
 
@@ -323,7 +323,7 @@ Updates an Azure Private Link connection with the Private IP address of the priv
 
 **Example:** In the ``kafka-12a3b4c5`` service, update the IP of the Azure Private Link connection ``plc12345abcdef`` to ``10.19.1.4``.
 
-::
+.. code::
 
     avn service privatelink azure connection update   \
       --endpoint-ip-address 10.19.1.4                 \
@@ -362,7 +362,7 @@ Creates an Azure Private Link for a service.
 
 **Example:** Create an Azure Private Link for the ``kafka-12a3b4c5`` service.
 
-::
+.. code::
 
     avn service privatelink azure create    \
       --user-subscription-id                \
@@ -399,7 +399,7 @@ Deletes an Azure Private Link defined for a service.
 
 **Example:** Delete Azure Private Link for the ``kafka-12a3b4c5`` service.
 
-::
+.. code::
 
     avn service privatelink azure delete kafka-12a3b4c5
 
@@ -433,7 +433,7 @@ Lists Azure Private Link information for a service.
 
 **Example:** List Azure Private Link information for the ``kafka-12a3b4c5`` service.
 
-::
+.. code::
 
     avn service privatelink azure get kafka-12a3b4c5
 
@@ -467,7 +467,7 @@ Refreshes incoming Azure Private Link endpoint connections.
 
 **Example:** Refresh incoming Azure Private Link endpoint connections for the ``kafka-12a3b4c5`` service.
 
-::
+.. code::
 
     avn service privatelink azure refresh kafka-12a3b4c5
 

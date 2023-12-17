@@ -30,7 +30,7 @@ The Apache Kafka Connect® S3 sink connector needs the following permission to t
 
 The following is an example of AWS inline policy that can be added to the IAM user by replacing the ``<AWS_S3_BUCKET_NAME>`` placeholder:
 
-::
+.. code::
 
     {
         "Version": "2012-10-17",

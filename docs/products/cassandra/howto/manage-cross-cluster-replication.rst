@@ -32,18 +32,19 @@ Change the service plan
 
 .. note::
     
-    It's recommended to use the `Aiven console <https://console.aiven.io/>`_ for changing the plan for a CCR-enabled service.
+    It's recommended to use `Aiven Console <https://console.aiven.io/>`_ for changing the plan for a CCR-enabled service.
 
 1. Log in to `Aiven Console <https://console.aiven.io/>`_.
 2. From the **Services** page, select a CCR-enabled Aiven for Apache Cassandra service that you want to update.
-3. In the **Overview** page of your service, navigate to **Service plan** and select **Change plan**.
-4. In the **Change service plan** view, select a new plan you want to use for your service.
+3. On the **Overview** page of your service, select **Service settings** from the sidebar.
+4. On the **Service settings** page of your service, navigate to the **Service plan** section, and select **Change plan** from the **Actions** (**...**) menu.
+5. In the **Change service plan** window, select a new plan you want to use for your service.
 
    .. tip::
       
       You can also add extra disk space for your service by using the slider in the **Additional disk storage** section.
 
-5. Select **Change**.
+6. Select **Change**.
 
 .. topic:: Result
     
@@ -62,16 +63,19 @@ Add an extra disk space
 
 1. Log in to `Aiven Console <https://console.aiven.io/>`_.
 2. From the **Services** page, select a CCR-enabled Aiven for Apache Cassandra service that you want to update.
-3. In the **Overview** page of your service, navigate to the **Service plan** section and select **Add storage**.
-4. In the **Upgrade service storage** view, use the slider to add extra disk space for your service.
+3. On the **Overview** page of your service, select **Service settings** from the sidebar.
+4. On the **Service settings** page of your service, navigate to the **Service plan** section, and select **Add additional storage** from the **Actions** (**...**) menu.
+5. In the **Upgrade service storage** window, use the slider to add extra disk space for your service.
 
    .. tip::
     
       You can also change your service plan by selecting **Change plan** in the **Your current plan** section.
 
+6. Select **Save changes**.
+
 .. topic:: Result
-    
-    You've added extra disk storage space for your CCR-enabled service and its CCR-replica service.
+
+   You've added extra disk storage space for your CCR-enabled service and its CCR-replica service.
 
 .. _set-up-replication-factor:
 
@@ -150,15 +154,11 @@ In the shell
 1. :doc:`Connect to your service via cqlsh </docs/products/cassandra/howto/connect-cqlsh-cli>`.
 2. Run ``CONSISTENCY;`` to check your current setting for the consistency level.
 
-.. topic:: Expected output
-
-    The query can return, for example, ``Current consistency level is ONE.``, which means that a confirmation of an operation completion on one node is enough for this operation to be considered as successful.
+   Expected output: The query can return, for example, ``Current consistency level is ONE.``, which means that a confirmation of an operation completion on one node is enough for this operation to be considered as successful.
 
 1. To set up the consistency level to a specific value, run the ``CONSISTENCY consistency_level_argument;`` query.
 
-.. topic:: Allowed consistency level arguments
-
-    For the list of the allowed consistency level arguments for Apache Cassandra, see `CONSISTENCY <https://cassandra.apache.org/doc/4.1/cassandra/tools/cqlsh.html#consistency>`_ in the Apache Cassandra documentation.
+   Allowed consistency level arguments: For the list of the allowed consistency level arguments for Apache Cassandra, see `CONSISTENCY <https://cassandra.apache.org/doc/4.1/cassandra/tools/cqlsh.html#consistency>`_ in the Apache Cassandra documentation.
 
 .. code-block:: bash
    :caption: Example
@@ -170,17 +170,15 @@ In a client library
 
 To configure the consistency level in a client library, add an extra parameter or object to define the consistency level on your software component before running a particular query.
 
-.. topic:: Example::
-    
-    In Python, you can specify `consistency_level`` as a parameter for the `SimpleStatement` object.
+.. topic:: Example:
+   
+   In Python, you can specify ``consistency_level`` as a parameter for the ``SimpleStatement`` object.
 
    .. code-block:: bash
     
       session.execute(SimpleStatement("LIST ROLES", consistency_level=ConsistencyLevel.ALL))
 
-.. topic:: Result
-
-    You've set up the consistency level for your service. Now operations on your data are considered as successfully completed according to the consistency level you specified.
+You've set up the consistency level for your service. Now operations on your data are considered as successfully completed according to the consistency level you specified.
 
 .. seealso::
 

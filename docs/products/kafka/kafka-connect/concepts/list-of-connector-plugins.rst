@@ -17,7 +17,7 @@ Source connectors enable the integration of data from an existing technology int
 
 * `Debezium for MySQL <https://debezium.io/docs/connectors/mysql/>`__ 
 
-* :doc:`Debezium for PostgreSQL® <../howto/debezium-source-connector-pg>`
+* :doc:`Debezium for PostgreSQL® </docs/products/kafka/kafka-connect/howto/debezium-source-connector-pg>`
 
 * `Debezium for SQL Server <https://debezium.io/docs/connectors/sqlserver/>`__ 
 
@@ -38,7 +38,7 @@ Sink connectors
 
 Sink connectors enable the integration of data from an existing Apache Kafka topic to a target technology. The following is the list of available sink connectors:
 
-* :doc:`Aiven for Apache Kafka® S3 Sink Connector <../howto/s3-sink-connector-aiven>`
+* :doc:`Aiven for Apache Kafka® S3 Sink Connector </docs/products/kafka/kafka-connect/howto/s3-sink-connector-aiven>`
 
 * `Confluent Amazon S3 Sink <https://docs.aiven.io/docs/products/kafka/kafka-connect/howto/s3-sink-connector-confluent>`__
 

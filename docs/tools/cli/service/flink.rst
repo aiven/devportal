@@ -48,7 +48,7 @@ The ``application_properties`` parameter should contain the following common pro
 
 **Example:** Creates an Aiven for Apache Flink application named ``DemoApp`` in the service ``flink-democli`` and project ``my-project``. 
 
-::
+.. code::
 
   avn service flink create-application flink-democli  \
     --project my-project                              \
@@ -85,7 +85,7 @@ Lists all the Aiven for Apache Flink® applications in a specified project and s
 
 **Example:** Lists all the Aiven for Flink applications for the service ``flink-democli`` in the project ``my-project``. 
 
-::
+.. code::
 
   avn service flink list-applications flink-democli \
     --project my-project 
@@ -126,7 +126,7 @@ Retrieves the information about the Aiven for Flink® applications in a specifie
 
 **Example:** Retrieves information about Aiven for Flink® application with application-id ``2b29f4aa-a496-4fca-8575-23544415606e`` for service ``flink-democli`` and project ``my-project`` 
 
-::
+.. code::
   
   avn service flink get-application flink-democli \
     --project my-project                          \
@@ -179,7 +179,8 @@ The ``application_properties`` parameter should contain the following common pro
     -  The name of the application
 
 **Example:** Updates the name of the Aiven for Flink application from ``Demo`` to ``DemoApp`` for application-id ``986b2d5f-7eda-480c-bcb3-0f903a866222`` in the service ``flink-democli`` and project ``my-project``. 
-::
+
+.. code::
   
   avn  service flink update-application flink-democli     \
     --project my-project                                  \
@@ -207,7 +208,7 @@ Delete an Aiven for Flink® application in a specified project and service.
 
 **Example:** Deletes the Aiven for Flink application with application-id  ``64192db8-d073-4e28-956b-82c71b016e3e`` for the service ``flink-democli`` in the project ``my-project``. 
 
-::
+.. code::
   
   avn  service flink delete-application flink-democli \
     --project my-project                              \
@@ -227,12 +228,14 @@ Create an Aiven for Flink® application version in a specified project and servi
 
   Sinking data using the :doc:`Slack connector </docs/products/flink/howto/slack-connector>`, doesn't need an integration.
 
-  **Example**: to create an integration between an Aiven for Apache Flink service named ``flink-democli`` and an Aiven for Apache Kafka service named ``demo-kafka`` you can use the following command::
+  **Example**: to create an integration between an Aiven for Apache Flink service named ``flink-democli`` and an Aiven for Apache Kafka service named ``demo-kafka`` you can use the following command:
+  
+  .. code::
 
-    avn service integration-create    \
-      --integration-type flink        \
-      --dest-service flink-democli    \
-      --source-service demo-kafka
+     avn service integration-create    \
+       --integration-type flink        \
+       --dest-service flink-democli    \
+       --source-service demo-kafka
   
   All the available command integration options can be found in the :ref:`dedicated document <avn_service_integration_create>`
 
@@ -274,30 +277,36 @@ The ``application_version_properties`` parameter should contain the following co
 
 **Example:** Creates a new Aiven for Flink application version for application-id ``986b2d5f-7eda-480c-bcb3-0f903a866222`` with the following details:
 
-* **Source**: a table, named ``special_orders`` coming from an Apache Kafka® topic named ``special_orders_topic`` using the integration with id ``4ec23427-9e9f-4827-90fa-ea9e38c31bc3`` and the following columns::
+* **Source**: a table, named ``special_orders`` coming from an Apache Kafka® topic named ``special_orders_topic`` using the integration with id ``4ec23427-9e9f-4827-90fa-ea9e38c31bc3`` and the following columns:
 
-    id INT, 
-    name VARCHAR, 
-    topping VARCHAR
+   .. code::
 
-* **Sink**: a table, called ``pizza_orders``, writing to an Apache Kafka® topic named ``pizza_orders_topic`` using the integration with id ``4ec23427-9e9f-4827-90fa-ea9e38c31bc3`` and the following columns::
+      id INT, 
+      name VARCHAR, 
+      topping VARCHAR
 
-    id INT, 
-    name VARCHAR, 
-    topping VARCHAR
+* **Sink**: a table, called ``pizza_orders``, writing to an Apache Kafka® topic named ``pizza_orders_topic`` using the integration with id ``4ec23427-9e9f-4827-90fa-ea9e38c31bc3`` and the following columns:
 
-* **SQL statement**::
+   .. code::
+    
+      id INT, 
+      name VARCHAR, 
+      topping VARCHAR
 
-    INSERT INTO special_orders 
-    SELECT id, 
-      name, 
-      c.topping 
-    FROM pizza_orders 
-      CROSS JOIN UNNEST(pizzas) b 
-      CROSS JOIN UNNEST(b.additionalToppings) AS c(topping) 
-    WHERE c.topping IN ('🍍 pineapple', '🍓 strawberry','🍌 banana')
+* **SQL statement**:
 
-::
+  .. code::
+
+      INSERT INTO special_orders 
+      SELECT id, 
+        name, 
+        c.topping 
+      FROM pizza_orders 
+        CROSS JOIN UNNEST(pizzas) b 
+        CROSS JOIN UNNEST(b.additionalToppings) AS c(topping) 
+      WHERE c.topping IN ('🍍 pineapple', '🍓 strawberry','🍌 banana')
+
+.. code::
   
   avn service flink create-application-version flink-democli        \
     --project my-project                                            \
@@ -353,8 +362,6 @@ The ``application_version_properties`` parameter should contain the following co
     }"""
 
 
-
-
 ``avn service flink validate-application-version``
 ''''''''''''''''''''''''''''''''''''''''''''''''''
 Validates the Aiven for Flink® application version in a specified project and service.
@@ -369,12 +376,14 @@ Validates the Aiven for Flink® application version in a specified project and s
 
   Sinking data using the :doc:`Slack connector </docs/products/flink/howto/slack-connector>`, doesn't need an integration.
 
-  **Example**: to create an integration between an Aiven for Apache Flink service named ``flink-democli`` and an Aiven for Apache Kafka service named ``demo-kafka`` you can use the following command::
-
-    avn service integration-create    \
-      --integration-type flink        \
-      --dest-service flink-democli    \
-      --source-service demo-kafka
+  **Example**: to create an integration between an Aiven for Apache Flink service named ``flink-democli`` and an Aiven for Apache Kafka service named ``demo-kafka`` you can use the following command:
+  
+  .. code::
+     
+     avn service integration-create    \
+       --integration-type flink        \
+       --dest-service flink-democli    \
+       --source-service demo-kafka
   
   All the available command integration options can be found in the :ref:`dedicated document <avn_service_integration_create>`
 
@@ -417,7 +426,7 @@ The ``application_version_properties`` parameter should contain the following co
 
 **Example:** Validates the Aiven for Flink application version for the application-id ``986b2d5f-7eda-480c-bcb3-0f903a866222``. 
 
-::
+.. code::
   
   avn service flink validate-application-version flink-democli        \
     --project my-project                                            \
@@ -499,7 +508,7 @@ Retrieves information about a specific version of an Aiven for Flink® applicati
 * Application version id: ``7a1c6266-64da-4f6f-a8b0-75207f997c8d``
 
 
-::
+.. code::
   
   avn service flink get-application-version flink-democli \
     --project my-project                                  \
@@ -533,7 +542,7 @@ Deletes a version of the Aiven for Flink® application in a specified project an
 * Application id: ``986b2d5f-7eda-480c-bcb3-0f903a866222``
 * Application version id: ``7a1c6266-64da-4f6f-a8b0-75207f997c8d``
 
-::
+.. code::
   
   avn service flink delete-application-version flink-democli  \
     --project my-project                                      \
@@ -560,7 +569,7 @@ Lists all the Aiven for Flink® application deployments in a specified project a
 
 **Example:** Lists all the Aiven for Flink application deployments for application-id ``f171af72-fdf0-442c-947c-7f6a0efa83ad`` for the service ``flink-democli``, in the project ``my-project``. 
 
-::
+.. code::
   
   avn service flink list-application-deployments flink-democli \
     --project my-project                                       \
@@ -589,7 +598,7 @@ Retrieves information about an Aiven for Flink® application deployment in a spe
 
 **Example:** Retrieves the details of the Aiven for Flink application deployment for the application-id ``f171af72-fdf0-442c-947c-7f6a0efa83ad``, deployment-id ``bee0b5cb-01e7-49e6-bddb-a750caed4229`` for the service ``flink-democli``, in the project ``my-project``. 
 
-::
+.. code::
   
   avn service flink get-application-deployment flink-democli \
     --project my-project                                     \
@@ -637,7 +646,7 @@ The ``deployment_properties`` parameter should contain the following common prop
 
 **Example:** Create a new Aiven for Flink application deployment for the application id ``986b2d5f-7eda-480c-bcb3-0f903a866222``.
 
-::
+.. code::
 
   avn service flink create-application-deployment  flink-democli  \
     --project my-project                                          \
@@ -666,7 +675,7 @@ Deletes an Aiven for Flink® application deployment in a specified project and s
 
 **Example:** Deletes the Aiven for Flink application deployment with application-id ``f171af72-fdf0-442c-947c-7f6a0efa83ad`` and deployment-id ``6d5e2c03-2235-44a5-ab8f-c544a4de04ef``.
 
-::
+.. code::
   
   avn service flink delete-application-deployment flink-democli   \
     --project my-project                                          \
@@ -696,7 +705,7 @@ Stops a running Aiven for Flink® application deployment in a specified project 
 
 **Example:** Stops the Aiven for Flink application deployment with application-id ``f171af72-fdf0-442c-947c-7f6a0efa83ad`` and deployment-id ``6d5e2c03-2235-44a5-ab8f-c544a4de04ef``.
 
-::
+.. code::
   
   avn service flink stop-application-deployment flink-democli   \
     --project my-project                                          \
@@ -725,7 +734,7 @@ Cancels an Aiven for Flink® application deployment in a specified project and s
 
 **Example:** Cancels the Aiven for Flink application deployment with application-id ``f171af72-fdf0-442c-947c-7f6a0efa83ad`` and deployment-id ``6d5e2c03-2235-44a5-ab8f-c544a4de04ef``.
 
-::
+.. code::
   
   avn service flink cancel-application-deployments flink-democli   \
     --project my-project                                          \

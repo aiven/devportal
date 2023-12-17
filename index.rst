@@ -90,6 +90,20 @@ Get started with Aiven's fully-managed services.
         :shadow: md
         :margin: 2 2 0 0
 
+        |icon-dragonfly| **Dragonfly** 
+        
+        Advanced, scalable in-memory data store for high-performance computing needs.
+
+        .. button-link:: docs/products/dragonfly
+            :color: primary
+            :outline:
+
+            Learn about Dragonfly
+
+    .. grid-item-card::
+        :shadow: md
+        :margin: 2 2 0 0
+
         |icon-grafana| **Grafana®** 
         
         The visualization tool you need to explore and understand your data. Grafana integrates with the other services in just a few clicks.

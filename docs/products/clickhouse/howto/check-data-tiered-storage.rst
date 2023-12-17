@@ -34,26 +34,26 @@ Run a data distribution check with the ClickHouse client (CLI)
 
    .. code-block:: bash
 
-    SELECT
-        database,
-        table,
-        disk_name,
-        formatReadableSize(sum(data_compressed_bytes)) AS total_size,
-        count(*) AS parts_count,
-        formatReadableSize(min(data_compressed_bytes)) AS min_part_size,
-        formatReadableSize(median(data_compressed_bytes)) AS median_part_size,
-        formatReadableSize(max(data_compressed_bytes)) AS max_part_size
-    FROM system.parts
-    GROUP BY
-        database,
-        table,
-        disk_name
-    ORDER BY
-        database ASC,
-        table ASC,
-        disk_name ASC
+      SELECT
+          database,
+          table,
+          disk_name,
+          formatReadableSize(sum(data_compressed_bytes)) AS total_size,
+          count(*) AS parts_count,
+          formatReadableSize(min(data_compressed_bytes)) AS min_part_size,
+          formatReadableSize(median(data_compressed_bytes)) AS median_part_size,
+          formatReadableSize(max(data_compressed_bytes)) AS max_part_size
+      FROM system.parts
+      GROUP BY
+          database,
+          table,
+          disk_name
+      ORDER BY
+          database ASC,
+          table ASC,
+          disk_name ASC
 
-   You can expect to receive the following output:
+     You can expect to receive the following output:
 
    .. code-block:: bash
 
@@ -63,9 +63,8 @@ Run a data distribution check with the ClickHouse client (CLI)
     │ system   │ query_log │ default   │ 75.85 MiB  │         102 │ 7.51 KiB      │ 12.36 KiB        │ 1.55 MiB      │
     └──────────┴───────────┴───────────┴────────────┴─────────────┴───────────────┴──────────────────┴───────────────┘
 
-.. topic:: Result
    
-   The query returns a table with data distribution details for all databases and tables that belong to your service: the storage device they use, their total sizes as well as parts counts and sizing.
+The query returns a table with data distribution details for all databases and tables that belong to your service: the storage device they use, their total sizes as well as parts counts and sizing.
 
 What's next
 -----------

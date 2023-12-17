@@ -10,7 +10,7 @@ Prerequisites
 To connect Aiven for Apache Kafka® and Klaw, you need to have the following setup: 
 
 * A running Aiven for Apache Kafka® service. See :doc:`Getting started with Aiven for Apache Kafka </docs/products/kafka/getting-started>` for more information. 
-* A running Klaw cluster. See `Run Klaw from the source <https://www.klaw-project.io/docs/run-source>`_ for more information.
+* A running Klaw cluster. See `Run Klaw from the source <https://www.klaw-project.io/docs/quickstart>`_ for more information.
 * Configured :doc:`Java keystore and truststore containing the service SSL certificates </docs/products/kafka/howto/keystore-truststore>`. 
 
 Connect Aiven for Apache Kafka® to Klaw
@@ -41,7 +41,7 @@ Follow the below steps to configure and connect Aiven for Apache Kafka® with Kl
    -  **Environment Name:** Select environment from the drop-down list
    
       .. note::  
-         To learn more, see `Clusters and environments <https://www.klaw-project.io/docs/clusters-environments>`__ in Klaw documentation.  
+         To learn more, see `Clusters and environments <https://www.klaw-project.io/docs/Concepts/clusters-environments>`__ in Klaw documentation.  
 
    -  **Select Cluster:** Select the cluster you added from the drop-down list. The bootstrap servers and protocol details are automatically populated 
    -  **Default Partitions:** Enter the number of partitions based on your requirements. The default value is set to 2
@@ -51,7 +51,7 @@ Follow the below steps to configure and connect Aiven for Apache Kafka® with Kl
    -  **Topic prefix (optional):** Enter a topic prefix
    -  **Tenant:** The value is set to default Tenant
    
-      .. note:: Klaw is multi-tenant by default. Each tenant manages topics with their own teams in isolation. Every tenant has its own set of Apache Kafka® environments, and users of one tenant cannot view/access topics, or ACLS from other tenants. It provides isolation avoiding any security breach. For this topic, I have used the default tenant configuration. For more information, see `Klaw documentation <https://www.klaw-project.io/docs/get-started-kafka#configure-the-cluster-to-sync>`__. 
+      .. note:: Klaw is multi-tenant by default. Each tenant manages topics with their own teams in isolation. Every tenant has its own set of Apache Kafka® environments, and users of one tenant cannot view/access topics, or ACLS from other tenants. It provides isolation avoiding any security breach. For this topic, I have used the default tenant configuration. For more information, see `Klaw documentation <https://www.klaw-project.io/docs/getstarted#configure-the-cluster-to-sync>`__. 
 
 8. Click **Save**. 
 
@@ -102,7 +102,7 @@ After retrieving the SSL certificate files and configuring the SSL keystore and 
 2. Next, open the ``application.properties`` file located in the ``klaw/cluster-api/src/main/resources`` directory. 
 3. Configure the SSL properties to connect to Apache Kafka® clusters by editing the following lines:
 
-   ::
+   .. code::
 
       klawssl.kafkassl.keystore.location=client.keystore.p12
       klawssl.kafkassl.keystore.pwd=klaw1234
@@ -119,7 +119,7 @@ After retrieving the SSL certificate files and configuring the SSL keystore and 
 
    The following is an example of an ``application.properties`` file configured with Klaw Cluster ID, keystore, and truststore paths and passwords. 
 
-   ::
+   .. code::
 
       demo_cluster.kafkassl.keystore.location=/Users/demo.user/Documents/Klaw/demo-certs/client.keystore.p12
       demo_cluster.kafkassl.keystore.pwd=Aiventest123!

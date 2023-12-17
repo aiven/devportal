@@ -30,7 +30,7 @@ Creates a new VPC.
 
 **Example:** Create a new VPC in ``aws-us-west-1`` cloud region with network range ``10.1.2.0/24``
 
-::
+.. code::
 
   avn vpc create              \
     --cloud aws-us-west-1     \
@@ -62,7 +62,7 @@ Deletes an existing VPC.
 
 **Example:** Delete the VPC with id ``1548c3f6-6240-45ab-892f-2dfacc62ed0d``.
 
-::
+.. code::
 
   avn vpc delete \
   --project-vpc-id 1548c3f6-6240-45ab-892f-2dfacc62ed0d
@@ -95,7 +95,7 @@ Lists all the project's VPC.
 
 **Example:** List all project's VPC.
 
-::
+.. code::
 
   avn vpc list
 
@@ -150,7 +150,7 @@ Creates a peering connection for a project VPC to AWS, GCP or Azure.
 
 **Example:** Create a peering connection for AWS.
 
-::
+.. code::
 
   avn vpc peering-connection create \
     --project-vpc-id b032dfbf-b035-4cf5-8b15-b7cd6a68aqqd \
@@ -192,7 +192,7 @@ Deletes a VPC peering connection.
 
 **Example:** Delete the VPC peering connection between the ``b032dfbf-b035-4cf5-8b15-b7cd6a68aqqd`` Aiven VPC and the ``vpc-abcdef01234567890`` AWS VPC.
 
-::
+.. code::
 
   avn vpc peering-connection delete \
     --project-vpc-id b032dfbf-b035-4cf5-8b15-b7cd6a68aqqd \
@@ -234,7 +234,7 @@ Fetches a VPC peering connection details.
 
 **Example:** Fetch VPC peering connection details.
 
-::
+.. code::
 
   avn vpc peering-connection get \
     --project-vpc-id b032dfbf-b035-4cf5-8b15-b7cd6a68aabd \
@@ -271,7 +271,7 @@ Lists VPC peering connections.
 
 **Example:** List VPC peering connections for the VPC with id ``b032dfbf-b035-4cf5-8b15-b7cd6a68aabd``.
 
-::
+.. code::
 
   avn vpc peering-connection list --project-vpc-id b032dfbf-b035-4cf5-8b15-b7cd6a68aabd
 

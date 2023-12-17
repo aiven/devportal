@@ -21,8 +21,9 @@ To setup a JDBC sink connector, you need an Aiven for Apache Kafka service :doc:
 Furthermore you need to collect the following information about the target database service upfront:
 
 * ``DB_CONNECTION_URL``: The database JDBC connection URL, the following are few examples based on different technologies:
-    * PostgreSQL: ``jdbc:postgresql://HOST:PORT/DB_NAME?sslmode=SSL_MODE``
-    * MySQL: ``jdbc:mysql://HOST:PORT/DB_NAME?ssl-mode=SSL_MODE``
+
+  * PostgreSQL: ``jdbc:postgresql://HOST:PORT/DB_NAME?sslmode=SSL_MODE``
+  * MySQL: ``jdbc:mysql://HOST:PORT/DB_NAME?ssl-mode=SSL_MODE``
 
 * ``DB_USERNAME``: The database username to connect
 * ``DB_PASSWORD``: The password for the username selected
@@ -35,11 +36,11 @@ Furthermore you need to collect the following information about the target datab
 
 .. Note::
 
-    If you're using Aiven for PostgreSQL® and Aiven for MySQL® the above details are available in the `Aiven console <https://console.aiven.io/>`_ service *Overview tab* or via the dedicated ``avn service get`` command with the :ref:`Aiven CLI <avn_service_get>`.
+   If you're using Aiven for PostgreSQL® and Aiven for MySQL® the above details are available in the `Aiven console <https://console.aiven.io/>`_ service *Overview tab* or via the dedicated ``avn service get`` command with the :ref:`Aiven CLI <avn_service_get>`.
 
-    The ``SCHEMA_REGISTRY`` related parameters are available in the Aiven for Apache Kafka® service page, *Overview* tab, and *Schema Registry* subtab
+   The ``SCHEMA_REGISTRY`` related parameters are available in the Aiven for Apache Kafka® service page, *Overview* tab, and *Schema Registry* subtab
 
-    As of version 3.0, Aiven for Apache Kafka no longer supports Confluent Schema Registry. For more information, read `the article describing the replacement, Karapace <https://help.aiven.io/en/articles/5651983>`_
+   As of version 3.0, Aiven for Apache Kafka no longer supports Confluent Schema Registry. For more information, read `the article describing the replacement, Karapace <https://help.aiven.io/en/articles/5651983>`_
 
 Setup a JDBC sink connector with Aiven Console
 ----------------------------------------------------
@@ -85,20 +86,21 @@ The configuration file contains the following entries:
 * ``auto.create``: boolean flag enabling the target table creation if it doesn't exists.
 * ``auto.evolve``: boolean flag enabling the target table modification in cases of schema modification of the messages in the topic.
 * ``insert.mode``: defines the insert mode, it can be:
-    * ``insert``: uses standard ``INSERT`` statements.
-    * ``upsert``: uses the upsert semantics supported by the target database, more information in the `dedicated GitHub repository <https://github.com/aiven/jdbc-connector-for-apache-kafka/blob/master/docs/sink-connector.md>`__
-    * ``update``: uses the update semantics supported by the target database. E.g. ``UPDATE``, more information in the `dedicated GitHub repository <https://github.com/aiven/jdbc-connector-for-apache-kafka/blob/master/docs/sink-connector.md>`__
+
+  * ``insert``: uses standard ``INSERT`` statements.
+  * ``upsert``: uses the upsert semantics supported by the target database, more information in the `dedicated GitHub repository <https://github.com/aiven/jdbc-connector-for-apache-kafka/blob/master/docs/sink-connector.md>`__
+  * ``update``: uses the update semantics supported by the target database. E.g. ``UPDATE``, more information in the `dedicated GitHub repository <https://github.com/aiven/jdbc-connector-for-apache-kafka/blob/master/docs/sink-connector.md>`__
 
 * ``delete.enabled``: boolean flag enabling the deletion of rows in the target table on tombstone messages.
 
-.. Note::
+  .. Note::
 
-    A tombstone message has:
+     A tombstone message has:
     
-    * a not null **key**
-    * a null **value**
+     * a not null **key**
+     * a null **value**
 
-    In case of tombstone messages and ``delete.enabled`` set to ``true``, the JDBC sink connector will delete the row referenced by the message key. If set to ``true``, it requires the ``pk.mode`` to be ``record_key`` to be able to identify the rows to delete.
+     In case of tombstone messages and ``delete.enabled`` set to ``true``, the JDBC sink connector will delete the row referenced by the message key. If set to ``true``, it requires the ``pk.mode`` to be ``record_key`` to be able to identify the rows to delete.
 
 
 * ``pk.mode``: defines the fields to use as primary key. Allowed options are:

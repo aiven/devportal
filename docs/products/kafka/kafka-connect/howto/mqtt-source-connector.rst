@@ -46,7 +46,7 @@ Define a Kafka Connect configuration file
 
 Define the connector configurations in a file (we'll refer to it with the name ``mqtt_source.json``) with the following content, creating a file is not strictly necessary but allows to have all the information in one place before copy/pasting them in the `Aiven Console <https://console.aiven.io/>`_:
 
-::
+.. code::
 
     {
         "name": "CONNECTOR_NAME",
@@ -81,7 +81,7 @@ To create a Apache Kafka Connect connector, follow these steps:
 6. Paste the connector configuration (stored in the ``mqtt_source.json`` file) in the form.
 7. Select **Apply**.
 
-To create the connector, access the `Aiven Console <https://console.aiven.io/>`_ and select the Aiven for Apache Kafka® or Aiven for Apache Kafka® Connect service where the connector needs to be defined, then:
+   To create the connector, access the `Aiven Console <https://console.aiven.io/>`_ and select the Aiven for Apache Kafka® or Aiven for Apache Kafka® Connect service where the connector needs to be defined, then:
 
    .. Note::
 

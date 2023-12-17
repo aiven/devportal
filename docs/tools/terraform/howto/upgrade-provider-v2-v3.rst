@@ -60,52 +60,67 @@ To safely make this change you will:
 -  Import already existing resource to the Terraform state.
 
 1. To change from the old ``aiven_vpc_peering_connection`` to the new ``aiven_azure_vpc_peering_connection`` resource,
-the resource type should be changed.
-Any references to ``aiven_vpc_peering_connection.foo.*`` should be updated to instead read ``aiven_azure_vpc_peering_connection.foo.*`` instead.
-Here's an example showing the update in action::
+   the resource type should be changed.
+   Any references to ``aiven_vpc_peering_connection.foo.*`` should be updated to instead read ``aiven_azure_vpc_peering_connection.foo.*`` instead.
+   
+   Here's an example showing the update in action:
 
-    - resource "aiven_vpc_peering_connection" "foo" {
-        vpc_id                = data.aiven_project_vpc.vpc.id
-    -   peer_cloud_account    = "Azure subscription ID"
-    -   peer_vpc              = "Azure virtual network name of the peered VPC"
-        peer_azure_app_id     = "Azure app registration id in UUID4 form"
-        peer_azure_tenant_id  = "Azure tenant id in UUID4 form"
-        peer_resource_group   = "Azure resource group name of the peered VPC"
-      }
+   .. code::
 
-    + resource "aiven_azure_vpc_peering_connection" "foo" {
-        vpc_id                = data.aiven_project_vpc.vpc.id
-    +   azure_subscription_id = "Azure subscription ID"
-    +   vnet_name             = "Azure virtual network name of the peered VPC"
-        peer_azure_app_id     = "Azure app registration id in UUID4 form"
-        peer_azure_tenant_id  = "Azure tenant id in UUID4 form"
-        peer_resource_group   = "Azure resource group name of the peered VPC"
-      }
+      - resource "aiven_vpc_peering_connection" "foo" {
+          vpc_id                = data.aiven_project_vpc.vpc.id
+      -   peer_cloud_account    = "Azure subscription ID"
+      -   peer_vpc              = "Azure virtual network name of the peered VPC"
+          peer_azure_app_id     = "Azure app registration id in UUID4 form"
+          peer_azure_tenant_id  = "Azure tenant id in UUID4 form"
+          peer_resource_group   = "Azure resource group name of the peered VPC"
+        }
+
+      + resource "aiven_azure_vpc_peering_connection" "foo" {
+          vpc_id                = data.aiven_project_vpc.vpc.id
+      +   azure_subscription_id = "Azure subscription ID"
+      +   vnet_name             = "Azure virtual network name of the peered VPC"
+          peer_azure_app_id     = "Azure app registration id in UUID4 form"
+          peer_azure_tenant_id  = "Azure tenant id in UUID4 form"
+          peer_resource_group   = "Azure resource group name of the peered VPC"
+        }
 
 
-2. Check the current state of the world::
+2. Check the current state of the world:
 
-    terraform state list | grep azure
+   .. code::
 
-3. Remove the resource from the control of Terraform::
+      terraform state list | grep azure
 
-    terraform state rm aiven_vpc_peering_connection.foo
+3. Remove the resource from the control of Terraform:
+   
+   .. code::
+   
+      terraform state rm aiven_vpc_peering_connection.foo
 
-.. tip::
-    Use the ``-dry-run`` flag to see this change before it is actually made
+   .. tip::
 
-4. Add the resource back to Terraform by importing it as a new resource with the new type::
+      Use the ``-dry-run`` flag to see this change before it is actually made
 
-    terraform import aiven_azure_vpc_peering_connection.foo project_name/vpc_id/azure_subscription_id/vnet_name
+4. Add the resource back to Terraform by importing it as a new resource with the new type:
 
-5. Check that the import is going to run as you expect::
+   .. code::
 
-    terraform plan
+      terraform import aiven_azure_vpc_peering_connection.foo project_name/vpc_id/azure_subscription_id/vnet_name
 
-6. Finally, go ahead and apply the new configuration::
+5. Check that the import is going to run as you expect:
 
-    terraform apply
+   .. code::
+    
+      terraform plan
 
-.. Note::
-    You can follow a similar approach to update ``aiven_database`` and ``aiven_service_user`` resources,
-    which have been deprecated in v3 of the provider.
+6. Apply the new configuration:
+
+   .. code::
+    
+      terraform apply
+
+   .. Note::
+    
+      You can follow a similar approach to update ``aiven_database`` and ``aiven_service_user`` resources,
+      which have been deprecated in v3 of the provider.

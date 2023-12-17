@@ -2,16 +2,16 @@
 Create and manage teams
 =======================
 
-.. important::
-    **Teams are becoming groups**
-    
-    :doc:`Groups </docs/platform/howto/manage-groups>` are an easier way to control access to your organization's projects and services for a group of users.
-
-
 **Teams** let you create user groups and assign different access levels to specific projects. Users must be part of an organization before being added to a team. To create and manage teams, click **Admin** and then select **Teams**.
 
+.. important::
+   **Teams are becoming groups**
+    
+   Groups are an easier way to control access to your organization's projects and services for a group of users. 
+   See :ref:`migrate_teams_to_groups`.
+
 Create a new team
---------------------------
+-----------------
 
 #. Click **Create new team**.
 
@@ -20,7 +20,7 @@ Create a new team
 #. Click **Create team**.
 
 Add users to a team
---------------------------
+--------------------
 
 #. Click the name of the team that you want to add users to.
 
@@ -54,3 +54,29 @@ To add projects and roles to a team:
 #. Click **Add project to team**.
 
 You can edit the permissions or delete the project from this team by clicking the more options menu for the project.
+
+.. _migrate_teams_to_groups:
+
+Migrate teams to groups
+------------------------
+
+To get started using organization groups, replace your existing teams with groups:
+
+#. In the organization, click **Admin** 
+
+#. Click **Organization** and on the **Teams** tab view each team to make a note of: 
+
+   * which users are members of the team
+   * which projects the team is assigned to
+   * the permission level that is assigned for each project
+
+#. Click **Groups** and then **Create group**. 
+
+#. Enter the name of one of the teams and assign the same users to this group. Do this for each of your organization's teams.
+
+#. :doc:`Add each new group to the same projects </docs/platform/howto/add-groups-projects>` that the teams are assigned to. Set the role to the same permission level that is used for the team.
+
+   .. important::
+    Users on the account owners team automatically become super admin. To give them the same permission level, after deleting the account owners team :doc:`make them super admin </docs/platform/howto/make-super-admin>`.
+
+#. After confirming all users have the correct access, delete the teams.

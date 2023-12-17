@@ -21,7 +21,7 @@ Most of our services use a browser-recognized CA certificate, but there are exce
   
 - **Aiven for Apache Kafka®** requires the Aiven project CA certificate, and also the client key and certificate.
 
-For these services you can :doc:`../howto/download-ca-cert` from the service overview page.
+For these services you can :doc:`/docs/platform/howto/download-ca-cert` from the service overview page.
 
 .. note::
     Older/existing services may be using the Aiven project's CA, you can request switching to a browser-recognized certificate by opening support ticket and letting us know.

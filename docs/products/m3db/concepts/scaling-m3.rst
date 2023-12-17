@@ -70,7 +70,7 @@ Read more about this configuration `in the M3DB documentation <https://m3db.io/d
 Number of files
 '''''''''''''''
 
-There is a limit to the number of files that each Aiven M3DB node can support. The number of files increases with the number of :ref:`block shards <Terminology Shard>` that your namespace configuration requires. To increase the number of total blocks available, we recommend increasing the number of nodes in your setup.
+There is a limit to the number of files that each Aiven M3DB node can support. The number of files increases with the number of :doc:`block shards </docs/products/m3db/reference/terminology>` that your namespace configuration requires. To increase the number of total blocks available, we recommend increasing the number of nodes in your setup.
 
 CPU usage
 ---------

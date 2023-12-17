@@ -18,13 +18,15 @@ Creates a new Aiven for Apache Kafka® MirrorMaker 2 replication flow.
 
   Before creating a replication flow, an :ref:`integration <avn_service_integration_create>` needs to be created between the Aiven for Apache Kafka MirrorMaker 2 service and each of the source and the target services.
   
-  E.g. An integration with alias ``kafka-target-alias`` between an Aiven for Apache Kafka service named ``kafka-target`` and an Aiven for Apache Kafka MirrorMaker 2 named ``kafka-mm`` can be created with::
+  E.g. An integration with alias ``kafka-target-alias`` between an Aiven for Apache Kafka service named ``kafka-target`` and an Aiven for Apache Kafka MirrorMaker 2 named ``kafka-mm`` can be created with:
 
-    avn service integration-create \
-      -s kafka-target              \
-      -d kafka-mm                  \
-      -t kafka_mirrormaker         \
-      -c cluster_alias=kafka-target-alias
+  .. code::
+    
+     avn service integration-create \
+       -s kafka-target              \
+       -d kafka-mm                  \
+       -t kafka_mirrormaker         \
+       -c cluster_alias=kafka-target-alias
   
   At most **one** replication flow can be build between any two Aiven for Apache Kafka services.
 
@@ -51,7 +53,7 @@ Creates a new Aiven for Apache Kafka® MirrorMaker 2 replication flow.
 * enable MirrorMaker 2 heartbeats
 * enable synching of consumer groups offset every ``60`` seconds
 
-::
+.. code::
 
   avn mirrormaker replication-flow create kafka-mm \
     --source-cluster kafka-source-alias \
@@ -95,7 +97,7 @@ Deletes an existing Aiven for Apache Kafka® MirrorMaker 2 replication flow.
 
 **Example:** In the service ``kafka-mm`` delete the replication flow from an Aiven for Apache Kafka service with integration alias ``kafka-source-alias`` to the service named ``kafka-target-alias``.
 
-::
+.. code::
 
   avn mirrormaker replication-flow delete kafka-mm \
     --source-cluster kafka-source-alias \
@@ -122,7 +124,7 @@ Retrieves the configuration details of an existing Aiven for Apache Kafka® Mirr
 
 **Example:** In the service ``kafka-mm`` retrieve the details of the replication flow from an Aiven for Apache Kafka service with integration alias ``kafka-source-alias`` to the service named ``kafka-target-alias``.
 
-::
+.. code::
 
   avn mirrormaker replication-flow get kafka-mm \
     --source-cluster kafka-source-alias \
@@ -165,7 +167,7 @@ Lists the configuration details for all replication flows defined in an existing
 
 **Example:** List the configuration details for all replication flows defined in an existing Aiven for Apache Kafka MirrorMaker 2 named ``kafka-mm``.
 
-::
+.. code::
 
   avn mirrormaker replication-flow list kafka-mm 
 
@@ -213,7 +215,7 @@ Updates an existing Aiven for Apache Kafka® MirrorMaker 2 replication flow.
 
 **Example:** In the service ``kafka-mm`` update the replication flow from an Aiven for Apache Kafka service with integration alias ``kafka-source-alias`` to a service named ``kafka-target-alias`` with the settings contained in a file named ``replication-flow.json``.
 
-::
+.. code::
 
   avn mirrormaker replication-flow update kafka-mm \
     --source-cluster kafka-source-alias \

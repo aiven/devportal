@@ -19,7 +19,7 @@ Retrieve the current service parameters with Aiven CLI
 
 To retrieve the existing Aiven for Apache Kafka configuration use the following command:
 
-::
+.. code::
 
     avn service get SERVICE_NAME --json
 
@@ -30,7 +30,7 @@ Retrieve the customizable parameters with Aiven CLI
 
 Not all Aiven for Apache Kafka parameters are customizable, to retrieve  the list of those parameters you can change use the following command:
 
-::
+.. code::
     
     avn service types -v
 
@@ -41,7 +41,7 @@ Update a service parameter with the Aiven CLI
 
 To modify a service parameter use the :ref:`Aiven CLI service update command <avn-cli-service-update>`. E.g. to modify the ``message.max.bytes`` parameter use the following command:
 
-::
+.. code::
 
     avn service update SERVICE_NAME -c "kafka.message_max_bytes=newmaximumbytelimit"
 

@@ -19,13 +19,13 @@ By default, each TaskManager is configured with a single slot for maximum job is
 
 Cluster restart strategy
 ------------------------
-The default restart strategy of the cluster is set to `Failure Rate`. This controls how Apache Flink restarts in case of failures during job execution. Administrators can change this setting in the advanced configuration options of the service.
+The default restart strategy of the cluster is set to ``Failure Rate``. This controls how Apache Flink restarts in case of failures during job execution. Administrators can change this setting in the advanced configuration options of the service.
 
 For more information on available options, refer to `Apache Flink fault tolerance <https://nightlies.apache.org/flink/flink-docs-master/docs/deployment/config/#fault-tolerance>`_ documentation. 
 
 Disaster recovery
 -----------------
-Periodic checkpoints have been configured to be persisted externally in object storage. They allow Flink to recover states and positions in the streams by giving the application the same semantics as a failure-free execution. For information on checkpoints, see :doc:`Checkpoints <../concepts/checkpoints>`. 
+Periodic checkpoints have been configured to be persisted externally in object storage. They allow Flink to recover states and positions in the streams by giving the application the same semantics as a failure-free execution. For information on checkpoints, see :doc:`Checkpoints </docs/products/flink/concepts/checkpoints>`. 
 
 Security considerations
 -----------------------

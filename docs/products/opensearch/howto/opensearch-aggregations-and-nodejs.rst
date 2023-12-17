@@ -9,7 +9,7 @@ Learn how to aggregate data using OpenSearch and its NodeJS client. In this tuto
 Prepare the playground
 **********************
 
-You can create an OpenSearch cluster either with the visual interface or with the command line. Depending on your preference follow the instructions for :doc:`getting started with the console for Aiven for Opensearch <../getting-started>` or see :doc:`how to create a service with the help of Aiven command line interface <../../../tools/cli/service>`.
+You can create an OpenSearch cluster either with the visual interface or with the command line. Depending on your preference follow the instructions for :doc:`getting started with the console for Aiven for Opensearch </docs/products/opensearch/getting-started>` or see :doc:`how to create a service with the help of Aiven command line interface </docs/tools/cli/service>`.
 
 .. note::
 
@@ -25,7 +25,7 @@ To organise our development space we'll use these files:
 - ``helpers.js`` to contain utilities for logging responses,
 - ``search.js`` and ``aggregation.js`` for methods specific to search and aggregation requests.
 
-We’ll be adding code into these files and running the methods from the command line.
+We'll be adding code into these files and running the methods from the command line.
 
 Connect to the cluster and load data
 ------------------------------------
@@ -40,7 +40,7 @@ Now you're ready to start aggregating the data.
 Aggregations
 ************
 
-In this tutorial we'll write and run examples for three different types of aggregations: metric, bucket and pipeline. You can read more about aggregations in :doc:`a concept article <../concepts/aggregations>`.
+In this tutorial we'll write and run examples for three different types of aggregations: metric, bucket and pipeline. You can read more about aggregations in :doc:`a concept article </docs/products/opensearch/concepts/aggregations>`.
 
 Structure and syntax
 --------------------
@@ -121,15 +121,17 @@ Using the draft structure of an aggregation we can create a method to calculate 
       );
     };
 
-Run the method from the command line::
+Run the method from the command line:
 
-    run-func aggregate averageRating
+.. code::
+
+   run-func aggregate averageRating
 
 You'll see a calculated numeric value, the average of all values from the rating field across the documents.
 
-::
+.. code::
 
-    { value: 3.7130597014925373 }
+   { value: 3.7130597014925373 }
 
 ``avg`` is one of many metric aggregation functions offered by OpenSearch. We can also use ``max``, ``min``, ``sum`` and others.
 
@@ -138,7 +140,6 @@ To have a possibility to easily change aggregation function and aggregation fiel
 * move the aggregation type and aggregation field to the method parameters, so that different values can be passed as arguments
 * generate name dynamically based on field name
 * separate the callback function and use the dynamically generated name to print out the result
-
 
 With these changes our method looks like this:
 
@@ -177,9 +178,11 @@ With these changes our method looks like this:
       );
     };
 
-Run the method to make sure that we still can calculate the average rating ::
+Run the method to make sure that we still can calculate the average rating:
 
-    run-func aggregate metric avg rating
+.. code::
+
+   run-func aggregate metric avg rating
 
 And because we like clean code, move and export the ``logAggs`` function from ``helpers.js`` and reference it in ``aggregate.js``.
 
@@ -192,7 +195,7 @@ Other simple metrics
 
 We can use the method we created to run other types of metric aggregations, for example, to find what the minimum sodium value is, in any of the recipes:
 
-::
+.. code::
 
     run-func aggregate metric min sodium
 
@@ -203,15 +206,15 @@ Cardinality
 
 Another interesting single-value metric is ``cardinality``. Cardinality is an estimated number of distinct values found in a field of a document.
 
-For example, by calculating the cardinality of the rating field, you will learn that there are only eight distinct rating values over all 20k recipes. Which makes me suspect that the rating data was added artificially later into the data set. The cardinality of `calories`, `sodium` and `fat` field contain more realistic diversity:
+For example, by calculating the cardinality of the rating field, you will learn that there are only eight distinct rating values over all 20k recipes. Which makes me suspect that the rating data was added artificially later into the data set. The cardinality of ``calories``, ``sodium`` and ``fat`` field contain more realistic diversity:
 
-::
+.. code::
 
-    run-func aggregate metric cardinality rating
+   run-func aggregate metric cardinality rating
 
-::
+.. code::
 
-    { value: 8 }
+   { value: 8 }
 
 Calculating cardinality for sodium and other fields and see what conclusions you can make!
 
@@ -222,21 +225,21 @@ A multi-value aggregation returns an object rather than a single value. An examp
 
 Get a set of metrics (``avg``, ``count``, ``max``, ``min`` and ``sum``) by using ``stats`` aggregation type:
 
-::
+.. code::
 
     run-func aggregate metric stats rating
 
-::
+.. code::
 
     { count: 20100, min: 0, max: 5, avg: 3.7130597014925373, sum: 74632.5 }
 
 To get additional information, such as standard deviation, variance and bounds, use ``extended_stats``:
 
-::
+.. code::
 
     run-func aggregate metric extended_stats rating
 
-::
+.. code::
 
     {
       count: 20100,
@@ -266,13 +269,13 @@ Percentiles
 
 Another example of a multi-value aggregation are ``percentiles``. Percentiles are used to interpret and understand data indicating how a given data point compares to other values in a data set. For example, if you take a test and score on the 80th percentile, it means that you did better than 80% of participants. Similarly, when a provider measures internet usage and peaks, the 90th percentile indicates that 90% of time the usage falls below that amount.
 
-Calculate percentiles for `calories`:
+Calculate percentiles for ``calories``:
 
-::
+.. code::
 
     run-func aggregate metric percentiles calories
 
-::
+.. code::
 
     {
       values: {
@@ -288,11 +291,11 @@ Calculate percentiles for `calories`:
 
 From the returned result you can see that 50% of recipes have less than 331 calories. Interestingly, only one percent of the meals is more than 3256 calories. You must be curious what falls within that last percentile ;) Now that we know the value to look for, we can use `a range query <https://docs.aiven.io/docs/products/opensearch/howto/opensearch-and-nodejs.html#find-fields-with-a-value-within-a-range>`_ to find the recipes. Set the minimum value, but keep the maximum empty to allow no bounds:
 
-::
+.. code::
 
     run-func search range calories 3256
 
-::
+.. code::
 
     [
       'Ginger Crunch Cake with Strawberry Sauce ',
@@ -356,12 +359,16 @@ We use ``range`` aggregation and add a property ``ranges`` to describe how we wa
       );
     };
 
-Run it with ::
+Run it with:
 
-    run-func aggregate sodiumRange
+.. code::
 
-And then check the results::
+   run-func aggregate sodiumRange
 
+And then check the results:
+
+.. code::
+  
     {
       buckets: [
         { key: '*-500.0', to: 500, doc_count: 10411 },
@@ -418,16 +425,22 @@ However, our method is narrowed down to a specific scenario. We want to refactor
       );
     };
 
-To make sure that the upgraded function works just like the one one, run::
+To make sure that the upgraded function works just like the one one, run:
 
-    run-func aggregate range sodium 500 1000
+.. code::
 
-Now you can run the method with other fields and custom ranges, for example, split recipes into buckets based on values in the field `fat`::
+   run-func aggregate range sodium 500 1000
 
-    run-func aggregate range fat 1 5 10 30 50 100
+Now you can run the method with other fields and custom ranges, for example, split recipes into buckets based on values in the field ``fat``:
+
+.. code::
+
+   run-func aggregate range fat 1 5 10 30 50 100
 
 
-The returned buckets are::
+The returned buckets are:
+
+.. code::
 
     {
       buckets: [
@@ -441,7 +454,7 @@ The returned buckets are::
       ]
     }
 
-Why not experiment more with the range aggregation? We still have `protein` values, and can also play with the values for the ranges to learn more about recipes from our dataset.
+Why not experiment more with the range aggregation? We still have ``protein`` values, and can also play with the values for the ranges to learn more about recipes from our dataset.
 
 Buckets for every unique value
 ------------------------------
@@ -449,7 +462,7 @@ Buckets for every unique value
 Sometimes we want to divide the data into buckets, where each bucket corresponds to a unique value present in a field.
 This type of aggregations is called ``terms`` aggregation and is helpful when we need to have more granular understanding of a dataset. For example, we can learn how many recipes belong to each category.
 
-The structure of the method for `terms aggregation` will be similar to what we wrote for the ranges, with a couple of differences:
+The structure of the method for ``terms aggregation`` will be similar to what we wrote for the ranges, with a couple of differences:
 
 * use aggregation type ``terms``
 * use an optional property ``size``, which specifies the upper limit of the buckets we want to create.
@@ -481,11 +494,15 @@ The structure of the method for `terms aggregation` will be similar to what we w
       );
     };
 
-To get the buckets created for different categories run::
+To get the buckets created for different categories run:
 
-    run-func aggregate terms categories.keyword
+.. code::
 
-Here are the resulting delicious categories::
+   run-func aggregate terms categories.keyword
+
+Here are the resulting delicious categories:
+
+.. code::
 
     {
       doc_count_error_upper_bound: 0,
@@ -506,9 +523,11 @@ Here are the resulting delicious categories::
 
 We can see a couple of interesting things in the response. First, there were just 10 buckets created, each of which contains ``doc_count`` indicating number of recipes within particular category. Second, ``sum_other_doc_count`` is the sum of documents which are left out of response, this number is high because almost every recipe is assigned to more than one category.
 
-We can increase the number of created buckets by using the ``size`` property::
+We can increase the number of created buckets by using the ``size`` property:
 
-    run-func aggregate terms categories.keyword 30
+.. code::
+
+   run-func aggregate terms categories.keyword 30
 
 Now the list of buckets contains 30 items.
 
@@ -519,7 +538,7 @@ Did you notice that the buckets created with the help of ``terms`` aggregation a
 
 You can use the ``rare_terms`` aggregation! This creates a set of buckets sorted by number of documents in ascending order. As a result, the most rarely used items will be at the top of the response.
 
-``rare_terms`` request is very similar to ``terms``, however, instead of `size` property which defines total number of created buckets, ``rare_terms`` relies on ``max_doc_count``, which sets upper limit for number of documents per bucket.
+``rare_terms`` request is very similar to ``terms``, however, instead of ``size`` property which defines total number of created buckets, ``rare_terms`` relies on ``max_doc_count``, which sets upper limit for number of documents per bucket.
 
 .. code-block:: javascript
 
@@ -549,7 +568,7 @@ You can use the ``rare_terms`` aggregation! This creates a set of buckets sorted
     };
 
 
-::
+.. code::
 
     run-func aggregate rareTerms categories.keyword 3
 
@@ -558,7 +577,7 @@ The result will return us all the categories with at most three documents each. 
 Histograms
 ----------
 
-The story of bucket aggregations won't be complete without speaking about histograms. Histograms aggregate date based on provided interval. And since we have a `date` property, we'll build a date histogram.
+The story of bucket aggregations won't be complete without speaking about histograms. Histograms aggregate date based on provided interval. And since we have a ``date`` property, we'll build a date histogram.
 
 The format of the histogram aggregation is similar to what we saw so far, so we can create a new method almost identical to previous ones:
 
@@ -589,13 +608,15 @@ The format of the histogram aggregation is similar to what we saw so far, so we 
       );
     };
 
-Values for the interval field can be from `minute` up to a `year`.
+Values for the interval field can be from ``minute`` up to a ``year``.
 
-::
+.. code::
 
     run-func aggregate dateHistogram date year
 
-The results when we use a year::
+The results when we use a year:
+
+.. code::
 
     {
       buckets: [
@@ -689,11 +710,15 @@ When put these pieces together we can write this method:
       );
     };
 
-Run it on the command line::
+Run it on the command line:
 
-    run-func aggregate movingAverage
+.. code::
 
-The returned  data for every year including a value ``moving_average``::
+   run-func aggregate movingAverage
+
+The returned  data for every year including a value ``moving_average``:
+
+.. code::
 
     [
       {
@@ -764,7 +789,7 @@ We used one of existing built-in functions ``MovingFunctions.unweightedAvg(value
 
 You can also use other functions such as max(), min(), stdDev() and sum(). Additionally, you can write your own functions, such as
 
-::
+.. code::
 
     moving_fn: {
         script: "return values.length === 1 ? 1 : 0"

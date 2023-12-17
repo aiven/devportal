@@ -36,7 +36,7 @@ Define an Apache Kafka Connect® configuration file
 
 Define the connector configurations in a file (we'll refer to it with the name ``gcs_sink.json``) with the following content:
 
-::
+.. code::
 
     {
         "name": "my-gcs-connector",
@@ -67,7 +67,7 @@ The configuration file contains the following entries:
 
 .. Tip::
 
-    You can define GCS sink connector naming and data formats by setting the :doc:`dedicated parameters <../reference/gcs-sink-formats>`.
+    You can define GCS sink connector naming and data formats by setting the :doc:`dedicated parameters </docs/products/kafka/kafka-connect/reference/gcs-sink-formats>`.
 
 
 Check out the `GitHub repository parameters documentation <https://github.com/aiven/gcs-connector-for-apache-kafka>`_ for the full list of configuration options.
@@ -86,9 +86,9 @@ To create a Kafka Connect connector, follow these steps:
 6. Paste the connector configuration (stored in the ``gcs_sink.json`` file) in the form.
 7. Select **Apply**.
 
-.. Note::
+   .. Note::
 
-    The Aiven Console parses the configuration file and fills the relevant UI fields. You can review the UI fields across the various tab and change them if necessary. The changes will be reflected in JSON format in the **Connector configuration** text box.
+      The Aiven Console parses the configuration file and fills the relevant UI fields. You can review the UI fields across the various tab and change them if necessary. The changes will be reflected in JSON format in the **Connector configuration** text box.
 
 7. After all the settings are correctly configured, select **Create connector**.
 8. Verify the connector status under the **Connectors** screen. 
@@ -116,7 +116,7 @@ The example creates an GCS sink connector with the following properties:
 
 The connector configuration is the following:
 
-::
+.. code::
 
     {
         "name": "my_gcs_sink",

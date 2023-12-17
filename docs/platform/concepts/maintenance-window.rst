@@ -1,5 +1,8 @@
+Service maintenance
+===================
+
 Maintenance window
-==================
+------------------
 
 The **maintenance window** is a time window during which the nodes behind Aiven services are switched to new upgraded version and, once the process is completed, the overall URI DNS name is pointed at the new location.
 
@@ -22,14 +25,23 @@ In case of **Apache Kafka®** and **OpenSearch®** the service DNS address resol
     Starting with Aiven for OpenSearch® versions 1.3.13 and 2.10, OpenSearch Dashboards will remain available during a maintenance update that also consists of version updates to your Aiven for OpenSearch service.
 
 Maintenance updates
-~~~~~~~~~~~~~~~~~~~
+-------------------
 
 Security updates, platform updates that affect reliability or stability of the service nodes, and quarterly patch updates are always mandatory. Other updates are initially optional. Advance notice is given for all updates. After optional updates have been available for six months, they become mandatory and are applied on the next week's maintenance window at the earliest. This means you have at least 7 days advance notice with exception of critical security updates. These critical updates are applied in the maintenance window of the current week. During service upgrades, maintenance updates are automatically applied and do not require any action from you.
 
 You can view maintenance updates pending for your service using the following: 
 
-- Service's **overview** page in `Aiven Console <https://console.aiven.io/>`_
+- `Aiven Console <https://console.aiven.io/>`_ > **Service settings** page > **Service management** section 
 
 - ``avn service get`` command in `Aiven CLI <https://docs.aiven.io/docs/tools/cli/service#avn-service-get>`_
 
 - ``service`` endpoint in `Aiven REST API <https://api.aiven.io/doc/#tag/Service/operation/ServiceGet>`_
+
+Periodic infrastructure updates
+--------------------------------
+
+Maintenance updates are scheduled automatically for services with nodes active for 180 days and more.
+
+.. important::
+
+   Periodic infrastructure updates are mandatory for all the services except for those with maintenance disabled.

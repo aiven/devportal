@@ -13,6 +13,7 @@
 /api                /docs/tools/api
 /cli                /docs/tools/cli.html
 /terraform          /docs/tools/terraform
+/community          https://aiven.io/community/
 
 # Renamed/deleted files
 /docs/products/flink/howto/real-time-alerting-solution-cli.html       /docs/products/flink/howto/real-time-alerting-solution.html
@@ -47,7 +48,7 @@
 /docs/products/clickhouse/howto/add-service-users                      /docs/products/clickhouse/howto/manage-users-roles
 /docs/products/clickhouse/howto/add-service-users.html                 /docs/products/clickhouse/howto/manage-users-roles.html
 /docs/products/clickhouse/sample-dataset.html                          /docs/products/clickhouse/howto/load-dataset.html
-/docs/products/flink/howto/create-job.html                             /docs/products/flink/howto/create-job/create-flink-applications.html 
+/docs/products/flink/howto/create-job.html                             /docs/products/flink/howto/create-job/create-flink-applications.html
 /docs/products/flink/concepts/flink-for-analysts.html                  /docs/products/flink/list-overview.html
 /docs/products/flink/concepts/flink-for-operators.html                 /docs/products/flink/list-overview.html
 /docs/products/flink/howto/real-time-alerting-solution                 /docs/tutorials/anomaly-detection
@@ -56,12 +57,15 @@
 /docs/products/clickhouse/concepts/databases-and-tables.html           /docs/products/clickhouse/howto/manage-databases-tables.html
 /docs/products/clickhouse/howto/integrate-pg.html                      /docs/products/clickhouse/howto/integrate-postgresql.html
 /docs/platform/concepts/byoa.html                                      /docs/platform/concepts/byoc.html
-/docs/products/opensearch/howto/list-upgrade                            /docs/products/opensearch/howto
+/docs/products/opensearch/howto/list-upgrade                           /docs/products/opensearch/howto
 /docs/products/opensearch/howto/upgrade-to-opensearch                  /docs/products/opensearch/concepts/opensearch-vs-elasticsearch
+/docs/tutorials                                                        /docs/integrations
+/docs/products/postgresql/reference/list-of-advanced-params            /docs/products/postgresql/reference/advanced-params
+/docs/products/kafka/reference/kstream-data-write-issue                https://aiven.io/changelog#06-12-2023
 
-# Moved to https://aiven.io/developer 
+# Moved to https://aiven.io/developer
 /docs/tools/terraform/reference/cookbook                                        https://aiven.io/developer/terraform
-/docs/tools/terraform/reference/cookbook.html                                   https://aiven.io/developer/terraform 
+/docs/tools/terraform/reference/cookbook.html                                   https://aiven.io/developer/terraform
 /docs/tools/terraform/reference/cookbook/kafka-connect-terraform-recipe         https://aiven.io/developer/apache-kafka-to-opensearch-terraform
 /docs/tools/terraform/reference/cookbook/multicloud-postgresql-recipe           https://aiven.io/developer/multicloud-postgresql-terraform
 /docs/tools/terraform/reference/cookbook/kafka-flink-integration-recipe         https://aiven.io/developer/kafka-source-sink-flink-integration
@@ -72,13 +76,15 @@
 /docs/tools/terraform/reference/cookbook/kafka-mongodb-recipe                   https://aiven.io/developer/apache-kafka-with-mongodb
 /docs/tools/terraform/reference/cookbook/kafka-debezium-postgres-source         https://aiven.io/developer/debezium-source-postgresql-kafka-across-clouds
 /docs/tools/terraform/reference/cookbook/kafka-topics-http-connector-recipe     https://aiven.io/developer/kafka-with-http-sink
-/docs/tools/terraform/reference/cookbook/kafka-custom-conf-recipe                https://aiven.io/developer/apache-kafka-with-custom-configurations
+/docs/tools/terraform/reference/cookbook/kafka-custom-conf-recipe               https://aiven.io/developer/apache-kafka-with-custom-configurations
 /docs/tools/terraform/reference/cookbook/m3db-m3agg-recipe                      https://aiven.io/developer/m3-aggregator-integration
 /docs/tools/terraform/reference/cookbook/postgresql-read-replica-recipe         https://aiven.io/developer/postgresql-read-only-terraform
 /docs/tools/terraform/reference/cookbook/clickhouse-access-setup-recipe         https://aiven.io/developer/manage-user-privileges-clickhouse-terraform
 /docs/products/clickhouse/howto/configure-access-terraform-deployed             https://aiven.io/developer/manage-user-privileges-clickhouse-terraform
 /docs/tools/terraform/reference/cookbook/kafka-clickhouse-integration-recipe    https://aiven.io/developer/kafka-source-for-clickhouse
-/docs/tools/terraform/reference/cookbook/postgres-clickhouse-integration-recipe     https://aiven.io/developer/postgresql-source-for-clickhouse
+/docs/tools/terraform/reference/cookbook/postgres-clickhouse-integration-recipe https://aiven.io/developer/postgresql-source-for-clickhouse
+/docs/community/challenge/catch-the-bus                                         https://aiven.io/community/
+/docs/community/challenge/the-rolling-challenge                                 https://aiven.io/community/
 
 # Redirect from .index.html to specific page names for landing
 

@@ -25,16 +25,14 @@ without affecting the running service. This is useful in two main aspects:
 Here are the steps to upgrade a PostgreSQL service:
 
 1. Log in to `Aiven Console <https://console.aiven.io/>`_, and select the instance that you want to upgrade.
-
-2. In the **Overview** page of your service, scroll down to the **PostgreSQL version** section, and select **Upgrade version**.
-
-3. In the **Upgrade Aiven for PostgreSQL Confirmation** window, select the version that you want to upgrade to from the dropdown menu.
+2. Select **Service settings** from the sidebar of your service's page.
+3. Navigate to the **Service management** section, and select **Upgrade versioin** from the **Actions** (**...**) menu.
+4. In the **Upgrade Aiven for PostgreSQL Confirmation** window, select the version that you want to upgrade to from the dropdown menu.
 
 .. Note::
     When you select the version, the system checks the compatibility of the upgrade.
 
-
-4. Select **Upgrade**.
+5. Select **Upgrade**.
 
    The system starts applying the upgrade.
 
@@ -49,7 +47,7 @@ Here are the steps to upgrade a PostgreSQL service:
 .. Note::
    A full backup of a large database may take a long time to complete. It may take some time before the standby node becomes available, as they can only be launched when a backup taken from the new version is available.
 
-More information about upgrade and failover procedures can be found in the :doc:`dedicated page <../concepts/upgrade-failover>`.
+More information about upgrade and failover procedures can be found in the :doc:`dedicated page </docs/products/postgresql/concepts/upgrade-failover>`.
 
 .. Warning::
     Once the upgrade is started, the PostgreSQL instance can't be restored to the previous version. Similarly, the pre-existing backups cannot be used for procedures such as Point In Time Recovery since they were created with an earlier version of PostgreSQL.
