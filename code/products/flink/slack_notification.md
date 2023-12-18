@@ -1,6 +1,6 @@
 INSERT INTO SLACK_SINK
 SELECT
-    '<CHANNEL_ID>', 
+    '$CHANNEL_ID', 
     'host:' || CPU.hostname || 
     ' CPU: ' || cpu || 
     ' avg CPU value:' ||  TRY_CAST(usage_avg as string) || 
