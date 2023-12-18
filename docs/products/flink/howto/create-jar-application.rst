@@ -30,7 +30,7 @@ Create and deploy application
    * Review and accept the terms of service by checking the box.
    * Click **Upload version** to upload your JAR file.
    
-7. After the upload, you will be redirected to the application's overview page.
+7. After the upload, you are redirected to the application's overview page.
 8. To deploy the application, click **Create deployment**. In the **Create new deployment** dialog:
 
    * Select the application version to deploy. 
