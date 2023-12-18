@@ -59,8 +59,3 @@ Create SQL applications using Aiven CLI
 ------------------------------------------
 For information on creating and managing Aiven for Apache Flink application using :doc:`Aiven CLI </docs/tools/cli>`, see :doc:`Manage Aiven for Apache Flink® applications </docs/tools/cli/service/flink>` document. 
 
-
-
-
-
-
