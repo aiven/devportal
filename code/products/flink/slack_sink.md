@@ -3,5 +3,5 @@ create table SLACK_SINK (
     message STRING
 ) WITH (
     'connector' = 'slack',
-    'token' = '<SLACK_TOKEN>'
+    'token' = '$SLACK_TOKEN'
 )
