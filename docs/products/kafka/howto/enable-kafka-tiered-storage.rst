@@ -57,10 +57,9 @@ Configure default retention policies at service-level
 
 Additionally, you can configure the retention policies from the :ref:`Tiered storage overview <modify-retention-polices>` page.
 
-Configure client-side parameter
------------------------------------
-
-For optimal performance and to avoid failures or broker interruptions with tiered storage, update the client-side parameter ``fetch.max.wait.ms`` from the default 500ms to 5000ms.
+(Optional) Configure client-side parameter
+-------------------------------------------
+For optimal performance and reduced risk of broker interruptions when using tiered storage, it is recommended to update the client-side parameter ``fetch.max.wait.ms`` from its default value of 500ms to 5000ms.
 
 
 Enable tiered storage via Aiven CLI 
