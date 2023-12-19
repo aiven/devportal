@@ -63,7 +63,7 @@ Perform the migration
 
 3. Set the migration details via the ``avn service update`` :ref:`Aiven CLI command <avn-cli-service-update>` substituting the parameters accordingly::
 
-    avn service update \
+    avn service update --project PROJECT_NAME \
         -c migration.host=SRC_HOSTNAME \
         -c migration.port=SRC_PORT \
         -c migration.username=SRC_USERNAME \
@@ -76,7 +76,7 @@ Perform the migration
 
    .. code::
       
-      avn --show-http service migration-status DEST_NAME
+      avn --show-http service migration-status --project PROJECT_NAME DEST_NAME
 
 Whilst the migration process is ongoing, the ``migration_detail.status`` will be ``syncing``:
    
@@ -112,5 +112,5 @@ If you reach a point where you no longer need the ongoing replication to happen,
 
 .. code::
 
-   avn service update --remove-option migration DEST_NAME
+   avn service update --project PROJECT_NAME --remove-option migration DEST_NAME
 
