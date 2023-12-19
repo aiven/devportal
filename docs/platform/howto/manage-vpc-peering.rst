@@ -85,7 +85,7 @@ Troubleshoot VPC connection issues
 
 Any network changes to VPC peered hosts external from Aiven can cause issues with routing to your Aiven services hosted in a VPC. To troubleshoot such issues, :ref:`refresh VPC connections <refresh-vcp-connections>`.
 
-Changes to your VPCs (such as adding a new subent) can take up to 24 hours to take effect. There's no need to troubleshoot issues with your changes not applied unless it's been over 24 hours since you introduced the changes. You can always force immediate  application of your changes by :ref:`refreshing VPC connections <refresh-vcp-connections>`.
+Changes to your VPCs (such as adding a new subnet) can take up to 24 hours to take effect. There's no need to troubleshoot issues with your changes not applied unless it's been over 24 hours since you introduced the changes. You can always request the application of your changes by :ref:`refreshing VPC connections <refresh-vcp-connections>`.
 
 .. _refresh-vcp-connections:
 
