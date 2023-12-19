@@ -52,7 +52,7 @@ For an existing topic
 
 5. Select **Update** to save your changes and activate tiered storage.
 
-(Optional) Configure client-side parameter
+(Optional) configure client-side parameter
 -------------------------------------------
 For optimal performance and reduced risk of broker interruptions when using tiered storage, it is recommended to update the client-side parameter ``fetch.max.wait.ms`` from its default value of 500ms to 5000ms.
 

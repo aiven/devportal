@@ -57,7 +57,7 @@ Configure default retention policies at service-level
 
 Additionally, you can configure the retention policies from the :ref:`Tiered storage overview <modify-retention-polices>` page.
 
-(Optional) Configure client-side parameter
+(Optional) configure client-side parameter
 -------------------------------------------
 For optimal performance and reduced risk of broker interruptions when using tiered storage, it is recommended to update the client-side parameter ``fetch.max.wait.ms`` from its default value of 500ms to 5000ms.
 
