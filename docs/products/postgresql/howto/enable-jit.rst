@@ -24,7 +24,7 @@ To enable JIT via :doc:`Aiven CLI </docs/tools/cli>`, you can use the :ref:`serv
 
 .. code::
 
-    avn service update -c pg.jit=true PG_SERVICE_NAME
+    avn service update --project PROJECT_NAME -c pg.jit=true PG_SERVICE_NAME
 
 Enable JIT for a specific database
 ----------------------------------
