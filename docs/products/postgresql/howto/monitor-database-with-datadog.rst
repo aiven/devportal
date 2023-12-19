@@ -35,7 +35,7 @@ Using the ``avn service integration-list`` :ref:`Aiven CLI command <avn_service_
 
   .. code::
    
-     avn service integration-update --user-config '{"datadog_dbm_enabled": true}' <INTEGRATION_UUID>
+     avn service integration-update --project <PROJECT_NAME> --user-config '{"datadog_dbm_enabled": true}' <INTEGRATION_UUID>
 
 * Check if user-config ``datadog_dbm_enabled`` set correctly:
 
