@@ -346,7 +346,7 @@ If you feel brave, you can go ahead and try try yourself in the `Aiven Console <
 
 5. In the **Add source tables** tab, create the source table (named ``CPU_IN``), pointing to the Apache Kafka® topic ``cpu_load_stats_real`` where the IoT sensor readings are stored by:
 
-   * Select ``Aiven for Apache Kafka - demo-kafka`` as `Integrated service`
+   * Select ``Aiven for Apache Kafka - demo-kafka`` as *Integrated service*.
    * Paste the following SQL:
 
      .. literalinclude:: /code/products/flink/basic_cpu-in_table.md
@@ -368,7 +368,7 @@ If you feel brave, you can go ahead and try try yourself in the `Aiven Console <
 7. Create the sink table (named ``CPU_OUT_FILTER``), pointing to a new Apache Kafka® topic named ``cpu_load_stats_real_filter`` where the readings exceeding the ``80%`` threshold will land, by:
 
    * Clicking on the **Add your first sink table**.
-   * Selecting ``Aiven for Apache Kafka - demo-kafka`` as `Integrated service`.
+   * Selecting ``Aiven for Apache Kafka - demo-kafka`` as *Integrated service*.
    * Pasting the following SQL:
 
      .. literalinclude:: /code/products/flink/basic_cpu-out-filter_table.md
@@ -471,7 +471,7 @@ You can go ahead an try yourself to define the windowing pipeline. If, on the ot
 6. Create the sink table (named ``CPU_OUT_AGG``) pointing to a new Apache Kafka® topic named ``cpu_agg_stats``, where the 30 second aggregated data will land, by:
 
    * Clicking on the **Add your first sink table**.
-   * Selecting ``Aiven for Apache Kafka - demo-kafka`` as `Integrated service`.
+   * Selecting ``Aiven for Apache Kafka - demo-kafka`` as *Integrated service*.
    * Pasting the following SQL:
 
      .. literalinclude:: /code/products/flink/windowed_cpu-out-agg_table.md
@@ -567,7 +567,7 @@ To create the notification data pipeline, you can go ahead an try yourself or fo
 4. To create a source table ``CPU_IN_AGG`` pointing to the Apache Kafka topic ``cpu_agg_stats``:
 
    * Click on **Add your first source table**.
-   * Select ``Aiven for Apache Kafka - demo-kafka`` as `Integrated service`.
+   * Select ``Aiven for Apache Kafka - demo-kafka`` as *Integrated service*.
    * Paste the following SQL:
 
      .. literalinclude:: /code/products/flink/windowed_cpu-in-agg_table.md
@@ -578,7 +578,7 @@ To create the notification data pipeline, you can go ahead an try yourself or fo
 5. To create a source table ``CPU_THRESHOLDS`` pointing to the PostgreSQL table ``cpu_thresholds``:
 
    * Click on **Add new table**.
-   * Select ``Aiven for PostgreSQL - demo-postgresql`` as `Integrated service`.
+   * Select ``Aiven for PostgreSQL - demo-postgresql`` as *Integrated service*.
    * Paste the following SQL:
 
      .. literalinclude:: /code/products/flink/pgthresholds_source-thresholds_table.md
