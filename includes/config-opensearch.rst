@@ -1,4 +1,10 @@
 
+``additional_backup_regions``
+-----------------------------
+*array*
+
+**Additional Cloud Regions for Backup Replication** 
+
 
 
 ``opensearch_version``
@@ -324,6 +330,12 @@
 *object*
 
 **Opensearch Security Plugin Settings** 
+
+``enable_security_audit``
+~~~~~~~~~~~~~~~~~~~~~~~~~
+*boolean*
+
+**Enable/Disable security audit** 
 
 ``thread_pool_search_size``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
