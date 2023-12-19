@@ -27,7 +27,7 @@ Create and deploy application
 6. In the **Upload new version** dialog:
 
    * Click **Choose file** to select your custom JAR file.
-   * Select the *Terms of Service* checkbox to indicate your agreement.
+   * Select the **Terms of Service** checkbox to indicate your agreement.
    * Click **Upload version** to upload your JAR file.
    
 7. After the upload, you are redirected to the application's overview page.
