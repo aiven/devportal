@@ -83,18 +83,19 @@ Also note that safelisting applies to both internal and external traffic. If you
 Troubleshoot VPC connection issues
 ----------------------------------
 
-Any network changes to VPC peered hosts external from Aiven can cause issues with routing to your Aiven services hosted in a VPC. To troubleshoot such issues, :ref:`refresh VPC connections <refresh-vcp-connections>`.
+Any network changes to VPC peered hosts external from Aiven can cause issues with routing to your Aiven services hosted in a VPC.
+In such case, try to refresh your VPC connections.
 
-Changes to your VPCs (such as adding a new subnet) can take up to 24 hours to take effect. There's no need to troubleshoot issues with your changes not applied unless it's been over 24 hours since you introduced the changes. You can always request the application of your changes by :ref:`refreshing VPC connections <refresh-vcp-connections>`.
+.. note::
+ 
+   Changes to your VPCs (such as adding a new subnet) can take up to 24 hours to take effect so wait at least 24h before refreshing your VPC connections.
 
-.. _refresh-vcp-connections:
-
-To refresh VCP connections, take the following steps:
+To refresh your VCP connections:
 
 1. In `Aiven Console <https://console.aiven.io/>`_, select **VPCs**.
 2. Find the ID of the affected VPC and select it from the **Internal ID** column.
 3. Select **Refresh VPC connections**.
 
-As a result, the platform checks the VPC peering connection and rebuilds the peering connection state if there are any changes detected.
+The platform checks the VPC peering connection and rebuilds the peering connection state if there are any changes detected.
 
 For any other issues, open a support ticket from `Aiven Console <https://console.aiven.io/>`_ to get in touch with the support team and/or see :doc:`Get support in the Aiven Console </docs/platform/howto/project-support-center>`.
