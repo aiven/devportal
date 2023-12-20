@@ -4,7 +4,7 @@ Manage organizations
 Delete an organization 
 -----------------------
 
-#. Delete all :doc:`projects </docs/platform/howto/manage-project>` in the organization and its organizational units. 
+#. Delete all :doc:`projects </docs/platform/howto/manage-project>` in the organization and in the organizational units. 
 
 #. Click **Admin**.
 
