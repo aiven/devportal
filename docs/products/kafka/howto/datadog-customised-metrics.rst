@@ -42,9 +42,30 @@ Before customising the metrics, make sure that you have a Datadog endpoint confi
 To customise the metrics sent to Datadog, you can use the ``service integration-update`` passing the following customised parameters:
 
 * ``kafka_custom_metrics``: defining the comma separated list of custom metrics to include (within ``kafka.log.log_size``, ``kafka.log.log_start_offset`` and ``kafka.log.log_end_offset``)
+
+As example to sent the ``kafka.log.log_size`` and ``kafka.log.log_end_offset`` metrics execute the following code:
+
+.. code::
+
+    avn service integration-update                                                \
+        -c kafka_custom_metrics=['kafka.log.log_size','kafka.log.log_end_offset'] \
+        INTEGRATION_ID
+
+Once the update is successful and metrics have been collected and pushed, you should see them in your Datadog explorer.
+
+.. seealso:: Learn more about :doc:`/docs/integrations/datadog`.
+
+
+Customise Apache Kafka® Consumer Integration metrics sent to Datadog
+====================================================================
+
+`Kafka Consumer Integration <https://docs.datadoghq.com/integrations/kafka/?tab=host#kafka-consumer-integration>`_ collects metrics for message offsets.
+
+To customise the metrics sent from this Datadog integration to Datadog, you can use the ``service integration-update`` passing the following customised parameters:
+
 * ``include_topics``: defining the comma separated list of topics to include
 
-.. Tip:: 
+.. Tip::
 
     By default, all topics are included.
 
@@ -52,16 +73,13 @@ To customise the metrics sent to Datadog, you can use the ``service integration-
 * ``include_consumer_groups``: defining the comma separated list of consumer groups to include
 * ``exclude_consumer_groups``: defining the comma separated list of consumer groups to include
 
-
-As example to sent the ``kafka.log.log_size`` and ``kafka.log.log_end_offset`` metrics for ``topic1`` and ``topic2`` execute the following code:
+As example to include topics ``topic1`` and ``topic2`` and exclude topic ``topic3`` execute the following code:
 
 .. code::
 
     avn service integration-update                                                \
-        -c kafka_custom_metrics=['kafka.log.log_size','kafka.log.log_end_offset'] \
         -c include_topics=['topic1','topic2']                                     \
+        -c exclude_topics=['topic3']                                                   \
         INTEGRATION_ID
 
 Once the update is successful and metrics have been collected and pushed, you should see them in your Datadog explorer.
-
-.. seealso:: Learn more about :doc:`/docs/integrations/datadog`.
