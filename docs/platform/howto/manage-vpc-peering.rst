@@ -6,7 +6,7 @@ Virtual Private Cloud (VPC) peering is a method of connecting separate AWS, Goog
 .. _platform_howto_setup_vpc_peering:
 
 Configure VPC peering
-----------------------------------------
+---------------------
 
 In Aiven, VPC peering is configured as a project and region-specific setting. This means that all services created and running use the same VPC peering connection. If necessary, you can use different connections for VPC peering across multiple projects.
 
@@ -30,7 +30,7 @@ To set up VPC peering for your Aiven project:
 The state of the VPC is shown in the table.
 
 Cloud-specific VPC peering instructions
-----------------------------------------
+---------------------------------------
 
 - :doc:`Set up VPC peering on Amazon Web Services (AWS) </docs/platform/howto/vpc-peering-aws>`
 - :doc:`Set up VPC peering on Google Cloud Platform (GCP) </docs/platform/howto/vpc-peering-gcp>`
@@ -41,7 +41,7 @@ Cloud-specific VPC peering instructions
        Depending on the cloud provider that you selected for the VPC connection, you also have to accept a VPC peering connection request or set up a corresponding VPC peering connection to Aiven. 
 
 Deploy new services to a VPC
--------------------------------
+----------------------------
 
 When you create a new service, your peered VPC is available as a new geolocation on the **VPC** tab under **Select service region**. It can take a few minutes for a newly created VPC to appear for service deployments.
 
@@ -50,13 +50,13 @@ When you create a new service, your peered VPC is available as a new geolocation
        The service nodes use firewall rules to allow only connections from private IP ranges that originate from networks on the other end of VPC peering connections. You can only deploy services to a VPC if they belong to the project where that specific VPC was created.
 
 Delete an existing VPC and VPC peering
-----------------------------------------
+--------------------------------------
 
 Before deleting an existing VPC from `Aiven Console <https://console.aiven.io/>`_, you should move out any active services from that VPC. To delete a VPC, navigate to `Aiven Console <https://console.aiven.io/>`_ > **VPCs**. Find your VPC and select **Delete** from the meatballs menu for this VPC.
 Once the VPC is deleted, the cloud provider side of the peering connection will go to an inactive or deleted state.
 
 Migrate a public service to a VPC
------------------------------------
+---------------------------------
 
 You can migrate any Aiven service to a different VPC:
 
@@ -71,7 +71,7 @@ You can migrate any Aiven service to a different VPC:
 #. Click **Migrate**. 
 
 Access VPC services from the public internet
------------------------------------------------
+--------------------------------------------
 
 When you move your service to a VPC, access from public networks is blocked by default. If you switch to public access, a separate endpoint is created with a public prefix. 
 You can enable public Internet access for your services by following the :doc:`Enable public access in a VPC </docs/platform/howto/public-access-in-vpc>` instructions.
@@ -81,9 +81,15 @@ IP filtering (the **Allowed IP addresses** list on the service's **Overview** pa
 Also note that safelisting applies to both internal and external traffic. If you safelist an external IP address and want to keep traffic flowing with the internal (peered) connections, make sure that you safelist the CIDR blocks of the peered networks as well to avoid disruptions to the service.
 
 Troubleshoot VPC connection issues
--------------------------------------
+----------------------------------
 
-Any network changes to VPC peered hosts external from Aiven can cause issues with routing to your Aiven services hosted in a VPC. To troubleshoot such issues, take the following steps:
+Any network changes to VPC peered hosts external from Aiven can cause issues with routing to your Aiven services hosted in a VPC. To troubleshoot such issues, :ref:`refresh VPC connections <refresh-vcp-connections>`.
+
+Changes to your VPCs (such as adding a new subnet) can take up to 24 hours to take effect. There's no need to troubleshoot issues with your changes not applied unless it's been over 24 hours since you introduced the changes. You can always request the application of your changes by :ref:`refreshing VPC connections <refresh-vcp-connections>`.
+
+.. _refresh-vcp-connections:
+
+To refresh VCP connections, take the following steps:
 
 1. In `Aiven Console <https://console.aiven.io/>`_, select **VPCs**.
 2. Find the ID of the affected VPC and select it from the **Internal ID** column.
