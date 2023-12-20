@@ -101,7 +101,7 @@ Monitor is a job that runs on a defined schedule and queries OpenSearch indices.
    Under **Run every** select ``1`` ``Minutes``
 
 .. note::
-   Schedule Frequency can be `By internal`, `Daily`, `Weekly`, `Monthly`, `Custom CRON expression`
+   Schedule Frequency can be ``By internal``, ``Daily`` ``Weekly`` ``Monthly``, ``Custom CRON expression``.
 
 1. Fill in the fields under **Data source** 
    

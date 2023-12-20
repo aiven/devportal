@@ -41,7 +41,7 @@ This article shows you examples of how to create roles and grant privileges. The
 Create a new role
 ^^^^^^^^^^^^^^^^^
 
-To create a new role named `auditor`, run the following command:
+To create a new role named **auditor**, run the following command:
 
 .. code::
 

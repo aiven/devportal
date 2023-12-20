@@ -45,7 +45,7 @@ Create an integration
 
 To connect Aiven for ClickHouse and Aiven for Apache Kafka by enabling a data service integration, see :ref:`Create data service integrations <create-data-service-integration>`.
 
-The newly created database name has the following format: `service_KAFKA_SERVICE_NAME`, where KAFKA_SERVICE_NAME is the name of your Apache Kafka service.
+The newly created database name has the following format: ``service_KAFKA_SERVICE_NAME``, where KAFKA_SERVICE_NAME is the name of your Apache Kafka service.
 
 .. note::
 

@@ -496,7 +496,7 @@ When the application  is running, you should start to see messages containing th
 Create a threshold table in PostgreSQL
 ''''''''''''''''''''''''''''''''''''''
 
-You will use a PostgreSQL table to store the various IoT thresholds based on the `hostname`. The table will later be used by a Flink application to compare the average CPU usage with the thresholds and send the notifications to a Slack channel.
+You will use a PostgreSQL table to store the various IoT thresholds based on the ``hostname``. The table will later be used by a Flink application to compare the average CPU usage with the thresholds and send the notifications to a Slack channel.
 
 You can create the thresholds table in the ``demo-postgresql`` service with the following steps:
 
