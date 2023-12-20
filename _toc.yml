@@ -25,6 +25,7 @@ entries:
     entries:
     - file: docs/platform/concepts/projects_accounts_access
     - file: docs/tools/aiven-console/howto/create-accounts
+    - file: docs/platform/howto/manage-organizations
     - file: docs/platform/howto/manage-project
     - file: docs/platform/reference/project-member-privileges
     - file: docs/platform/howto/manage-unassigned-projects
