@@ -12,8 +12,8 @@ There are several key calculations which are fundamental to tuning:
 - Thread buffers
 - Concurrency
 
-.. topic::
-   **Query output is for reference only**
+.. important::
+   Query output is for reference only.
    
    Queries should be run per service for accuracy and re-evaluated periodically for change. 
 
@@ -83,9 +83,10 @@ Queries may use part or all of the allocation.
   |           17.9375 |
   +-------------------+
 
-.. topic::
-   **The actual amount of memory a query could use is technically unbounded.**
+.. important::
    
+   The actual amount of memory a query could use is technically unbounded.
+      
    Uncontrolled memory allocations and temporary table usage can adversely affect memory allocation.
    The data dictionary size is based on the number of tables, fields and indexes within the database.
 
@@ -106,8 +107,9 @@ The :doc:`max_connections <max-number-of-connections>` parameter is based off th
   |               226 |
   +-------------------+ 
 
-.. topic::
-   **This parameter should be used as a guideline only**. 
+.. important::
+   
+   This parameter should be used as a guideline only.
     
    By default, ``max_connections`` is configured for *optimistic* concurrency using all available memory.
     
