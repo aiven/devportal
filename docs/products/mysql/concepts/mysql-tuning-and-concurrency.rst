@@ -12,8 +12,7 @@ There are several key calculations which are fundamental to tuning:
 - Thread buffers
 - Concurrency
 
-.. Important::
-  
+.. topic::
    **Query output is for reference only**
    
    Queries should be run per service for accuracy and re-evaluated periodically for change. 
@@ -24,9 +23,9 @@ Service memory
 
 The :doc:`service memory </docs/platform/concepts/service-memory-limits>` can be calculated as:
 
-  |service_memory|
+|service_memory|
 
-where the overhead is currently |vm_overhead|
+where the overhead is currently |vm_overhead|.
 
 
 Global buffers 
@@ -84,10 +83,11 @@ Queries may use part or all of the allocation.
   |           17.9375 |
   +-------------------+
 
-.. Important::
-  | **The actual amount of memory a query could use is technically unbounded.**
-  | Uncontrolled memory allocations and temporary table usage can adversely affect memory allocation.
-  | The data dictionary size is based on the number of tables, fields and indexes within the database.
+.. topic::
+   **The actual amount of memory a query could use is technically unbounded.**
+   
+   Uncontrolled memory allocations and temporary table usage can adversely affect memory allocation.
+   The data dictionary size is based on the number of tables, fields and indexes within the database.
 
 
 Concurrency
@@ -106,19 +106,20 @@ The :doc:`max_connections <max-number-of-connections>` parameter is based off th
   |               226 |
   +-------------------+ 
 
-.. Important::
-    **This parameter should be used as a guideline only**. 
+.. topic::
+   **This parameter should be used as a guideline only**. 
     
-    By default, ``max_connections`` is configured for *optimistic* concurrency using all available memory.
+   By default, ``max_connections`` is configured for *optimistic* concurrency using all available memory.
     
-    In many instances, if the ``max connections`` are fully utilized, resource overcommitment and :doc:`/docs/platform/concepts/out-of-memory-conditions` will occur.
+   
+   In many instances, if the ``max connections`` are fully utilized, resource overcommitment and :doc:`/docs/platform/concepts/out-of-memory-conditions` will occur.
 
 At ~18 MB per connection, a 4 GiB service has a potential memory usage of 4068 MB (18 * 226).
 This is less than the service RAM, but exceeds the :doc:`service memory limit </docs/platform/concepts/service-memory-limits>`.
 
 **For performance and stability, the following calculation is recommended:**
 
-  :math:`max\_concurrency =` |mysql_max_concurrency|
+:math:`max\_concurrency =` |mysql_max_concurrency|
 
 This value may be pessimistic for a workload that does not require the full thread buffer, but is an advisable starting point for concurrency testing and monitoring. Concurrency can be incremented, if service memory permits.
 
