@@ -1,7 +1,7 @@
 Configure Apache Kafka® metrics sent to Datadog
 ===============================================
 
-When creating a `Datadog service integration <https://docs.datadoghq.com/integrations/kafka/?tab=host#kafka-consumer-integration>`_, customize which metrics are sent to the Datadog endpoint using the `Aiven CLI <https://aiven.io/docs/products/kafka>`_.
+When creating a `Datadog service integration <https://docs.datadoghq.com/integrations/kafka/?tab=host#kafka-consumer-integration>`_, customize which metrics are sent to the Datadog endpoint using the :doc:`Aiven CLI </docs/tools/cli>`.
 
 The following metrics are currently supported for each topic and partition in Apache Kafka®:
 
@@ -36,7 +36,7 @@ You can find the ``INTEGRATION_ID`` parameter by executing this command:
 Customize Apache Kafka® metrics for Datadog
 ----------------------------------------------------
 
-Before customizing metrics, ensure a Datadog endpoint is configured and enabled in your Aiven for Apache Kafka service. For setup instructions, see `Send metrics to Datadog <https://aiven.io/docs/integrations/datadog/datadog-metrics>`_. Format any listed parameters as a comma-separated list: ``['value0', 'value1', 'value2', ...]``.
+Before customizing metrics, ensure a Datadog endpoint is configured and enabled in your Aiven for Apache Kafka service. For setup instructions, see :doc:`Send metrics to Datadog </docs/integrations/datadog/datadog-metrics>`. Format any listed parameters as a comma-separated list: ``['value0', 'value1', 'value2', ...]``.
 
 
 To customize the metrics sent to Datadog, you can use the ``service integration-update`` passing the following customized parameters:
