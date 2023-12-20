@@ -1,17 +1,17 @@
 Configure Apache Kafka® metrics sent to Datadog
 ===============================================
 
-When creating a :doc:`Datadog service integration </docs/integrations/datadog/datadog-metrics>`, you can customise which metrics are sent to the Datadog endpoint using the :doc:`Aiven CLI </docs/tools/cli>`.
+When creating a `Datadog service integration <https://docs.datadoghq.com/integrations/kafka/?tab=host#kafka-consumer-integration>`_, customize which metrics are sent to the Datadog endpoint using the `Aiven CLI <https://aiven.io/docs/products/kafka>`_.
 
-For each Apache Kafka® topic and partition, the following metrics are currently supported:
+The following metrics are currently supported for each topic and partition in Apache Kafka®:
 
 * ``kafka.log.log_size``
 * ``kafka.log.log_start_offset``
 * ``kafka.log.log_end_offset``
 
-.. Tip::
+.. note:: 
 
-    All the above metrics are tagged with ``topic`` and ``partition`` allowing you to monitor each topic and partition independently.
+    All metrics are tagged with ``topic`` and ``partition``, enabling independent monitoring of each ``topic`` and ``partition``.
 
 Variables
 ---------
@@ -23,27 +23,27 @@ Variable               Description
 ==================     ============================================================================
 ``SERVICE_NAME``       Aiven for Apache Kafka® service name
 ------------------     ----------------------------------------------------------------------------
-``INTEGRATION_ID``     ID of the integration between the Aiven for Apache Kafka service and Datadog
+``INTEGRATION_ID``     ID of the integration between Aiven for Apache Kafka service and Datadog
 ==================     ============================================================================
 
-.. Tip::
     
-    The ``INTEGRATION_ID`` parameter can be found by issuing:
-    
-    .. code::
+You can find the ``INTEGRATION_ID`` parameter by executing this command:
+
+.. code::
      
-       avn service integration-list SERVICE_NAME
+   avn service integration-list SERVICE_NAME
 
-Customise Apache Kafka® metrics sent to Datadog
------------------------------------------------
+Customize Apache Kafka® metrics for Datadog
+----------------------------------------------------
 
-Before customising the metrics, make sure that you have a Datadog endpoint configured and enabled in your Aiven for Apache Kafka service. For details on how to set up the Datadog integration, check the :doc:`dedicated article </docs/integrations/datadog/datadog-metrics>`.  Please note that in all the below parameters a 'comma separated list' has the following format: ``['value0','value1','value2','...']``.
+Before customizing metrics, ensure a Datadog endpoint is configured and enabled in your Aiven for Apache Kafka service. For setup instructions, see `Send metrics to Datadog <https://aiven.io/docs/integrations/datadog/datadog-metrics>`_. Format any listed parameters as a comma-separated list: ``['value0', 'value1', 'value2', ...]``.
 
-To customise the metrics sent to Datadog, you can use the ``service integration-update`` passing the following customised parameters:
 
-* ``kafka_custom_metrics``: defining the comma separated list of custom metrics to include (within ``kafka.log.log_size``, ``kafka.log.log_start_offset`` and ``kafka.log.log_end_offset``)
+To customize the metrics sent to Datadog, you can use the ``service integration-update`` passing the following customized parameters:
 
-As example to sent the ``kafka.log.log_size`` and ``kafka.log.log_end_offset`` metrics execute the following code:
+* ``kafka_custom_metrics``: defining the comma-separated list of custom metrics to include (within ``kafka.log.log_size``, ``kafka.log.log_start_offset`` and ``kafka.log.log_end_offset``)
+
+For example, to send the ``kafka.log.log_size`` and ``kafka.log.log_end_offset`` metrics, execute the following code:
 
 .. code::
 
@@ -51,29 +51,28 @@ As example to sent the ``kafka.log.log_size`` and ``kafka.log.log_end_offset`` m
         -c kafka_custom_metrics=['kafka.log.log_size','kafka.log.log_end_offset'] \
         INTEGRATION_ID
 
-Once the update is successful and metrics have been collected and pushed, you should see them in your Datadog explorer.
 
-.. seealso:: Learn more about :doc:`/docs/integrations/datadog`.
+After you successfully update and the metrics are collected and sent to Datadog, you can view them in your Datadog explorer.
+
+.. seealso:: Learn more about :doc:`Datadog and Aiven </docs/integrations/datadog>`.
 
 
-Customise Apache Kafka® Consumer Integration metrics sent to Datadog
-====================================================================
+Customize Apache Kafka® consumer metrics for Datadog
+-----------------------------------------------------
 
-`Kafka Consumer Integration <https://docs.datadoghq.com/integrations/kafka/?tab=host#kafka-consumer-integration>`_ collects metrics for message offsets.
+`Kafka Consumer Integration <https://docs.datadoghq.com/integrations/kafka/?tab=host#kafka-consumer-integration>`_ collects metrics for message offsets. To customize the metrics sent from this Datadog integration to Datadog, you can use the ``service integration-update`` passing the following customized parameters:
 
-To customise the metrics sent from this Datadog integration to Datadog, you can use the ``service integration-update`` passing the following customised parameters:
+* ``include_topics``:  Specify a comma-separated list of topics to include.
 
-* ``include_topics``: defining the comma separated list of topics to include
-
-.. Tip::
+  .. Note::
 
     By default, all topics are included.
 
-* ``exclude_topics``: defining the comma separated list of topics to exclude
-* ``include_consumer_groups``: defining the comma separated list of consumer groups to include
-* ``exclude_consumer_groups``: defining the comma separated list of consumer groups to include
+* ``exclude_topics``: Specify a comma-separated list of topics to exclude.
+* ``include_consumer_groups``: Specify a comma-separated list of consumer groups to include.
+* ``exclude_consumer_groups``: Specify a comma-separated list of consumer groups to exclude.
 
-As example to include topics ``topic1`` and ``topic2`` and exclude topic ``topic3`` execute the following code:
+For example, to include topics ``topic1`` and ``topic2``, and exclude ``topic3``, execute the following code:
 
 .. code::
 
@@ -82,4 +81,4 @@ As example to include topics ``topic1`` and ``topic2`` and exclude topic ``topic
         -c exclude_topics=['topic3']                                                   \
         INTEGRATION_ID
 
-Once the update is successful and metrics have been collected and pushed, you should see them in your Datadog explorer.
+After you successfully update and the metrics are collected and sent to Datadog, you can view them in your Datadog explorer.
