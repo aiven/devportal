@@ -50,10 +50,16 @@ Configure default retention policies at service-level
 `````````````````````````````````````````````````````````````````````````````
 
 1. Access `Aiven console <https://console.aiven.io/>`_, select your project, and choose your Aiven for Apache Kafka service.
-2. On the **Overview** page, navigate to **Advanced configuration** and select **Change**.
-3. In the **Edit advanced configuration** view, choose **Add configuration option**.
-4. To set the retention policy for Aiven for Apache Kafka tiered storage, select ``kafka.log_local_retention_ms`` for time-specific retention or ``kafka.log_local_retention_bytes`` for size-specific retention.
-5. Select **Save advanced configuration** to apply your changes.
+2. In the service page, select **Service settings** from the sidebar. 
+3. On the **Service settings** page, scroll down to the **Advanced configuration** section, and click **Configure**.
+4. In the **Advanced configuration** dialog, click **Add configuration option**.
+5. To define the retention policy for Aiven for Apache Kafka tiered storage, choose either of these options:
+
+   * Find ``kafka.log_local_retention_ms`` and set the value to define the retention period in milliseconds for time-based retention.
+
+   * Find ``kafka.log_local_retention_bytes`` and set the value to define the retention limit in bytes for size-based retention.
+
+6. Click **Save configuration** to apply your changes.
 
 Additionally, you can configure the retention policies from the :ref:`Tiered storage overview <modify-retention-polices>` page.
 
