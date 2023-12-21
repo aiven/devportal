@@ -34,9 +34,9 @@ To create a Loggly integration using the `Aiven Console <https://console.aiven.i
   * **TLS** - disabled (see below how to enable TLS with avn client)
   * **Format** - ``rfc5424``
   * **Structured Data** - ``TOKEN@NNNNN TAG="your-tag"`` replacing
-    
+
     * ``TOKEN`` needs to be replaced with your Loggly **customer token** retrieved in the prerequisite stage
-    * ``NNNNN`` is Loggly Private Enterprise Number (PEN) which is ``41058`` (check `Loggly documentation <https://www.loggly.com/docs/streaming-syslog-without-using-files/>`_ for up to date information)
+    * ``NNNNN`` is Loggly Private Enterprise Number (PEN) which is ``41058`` (check `Loggly documentation <https://documentation.solarwinds.com/en/success_center/loggly/content/admin/streaming-syslog-without-using-files.htm>`_ for up to date information)
     * ``your-tag`` with any arbitrary tag value wrapped in double quotes
 
 .. Tip::
