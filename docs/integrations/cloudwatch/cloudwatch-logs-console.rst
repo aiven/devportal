@@ -39,7 +39,7 @@ Send logs from an Aiven service to AWS CloudWatch
 
 Follow the steps in this section for each of the services whose logs should be sent to AWS CloudWatch.
 
-1. On the **Service Overview** page, select **Manage integrations** and choose the **AWS CloudWatch Logs** option.
+1. On the **Overview** page of your service, select **Integrations** and choose the **Amazon CloudWatch Logs** option.
 
 .. image:: /images/integrations/cloudwatch-overview-integrations.png
    :alt: Screenshot of system integrations including AWS CloudWatch Logs
