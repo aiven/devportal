@@ -119,17 +119,15 @@ The :doc:`Aiven for Apache Kafka </docs/products/kafka>` service is responsible 
 Customise the Aiven for Apache Kafka service
 ''''''''''''''''''''''''''''''''''''''''''''
 
-Now that your service is created, you need to customise its functionality. In the **Overview** tab of your freshly created service, you'll see a bunch of toggles and properties. Change these two:
+Now that your service is created, you need to customise its functionality. On the **Service settings** page of your freshly created service, you'll see a bunch of toggles and properties. Change these two:
 
 1. Enable the Apache Kafka REST APIs to manage and query via the Aiven Console.
 
-   Navigate to **Kafka REST API (Karapace)** > **Enable**.
-
+   Navigate to **Service settings** page > **Service management** section > actions (**...**) menu > **Enable REST API (Karapace)**.
 
 2. Enable the :doc:`automatic creation of Apache Kafka topics </docs/products/kafka/howto/create-topics-automatically>` to create new Apache Kafka® topics on the fly while pushing a first record.
 
-   Navigate to **Advanced configuration** > **Add configuration option** > ``kafka.auto_create_topics_enable``, switch the setting on and then click **Save advanced configuration**.
-
+   Navigate to **Service settings** page > **Advanced configuration** section > **Configure** > **Add configuration options** > ``kafka.auto_create_topics_enable``, enable the selected parameter using the toggle switch, and select **Save configuration**.
 
 Create an Aiven for PostgreSQL® service
 '''''''''''''''''''''''''''''''''''''''''
@@ -147,9 +145,9 @@ You can create the Aiven for PostgreSQL database with the following steps:
 
 5. Select `Startup-4` as service plan. The `Startup-4` plan allows you to define the service integrations needed to define Apache Flink streaming transformations over the data in the PostgreSQL® table.
 
-5. Enter ``demo-postgresql`` as name for your service.
+6. Enter ``demo-postgresql`` as name for your service.
 
-6. Click **Create service** under the summary on the right side of the console
+7. Click **Create service** under the summary on the right side of the console
 
 
 Create an Aiven for Apache Flink service
@@ -172,8 +170,6 @@ You can create the Aiven for Apache Flink service with the following steps:
 
 6. Click **Create Service** under the summary on the right side of the console.
 
-
-
 Integrate Aiven for Apache Flink service with sources and sinks
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
@@ -182,25 +178,17 @@ After creating the service, you'll be redirected to the service details page. Ap
 * Aiven for Apache Kafka®, which contains the stream of IoT sensor readings.
 * Aiven for PostgreSQL®, which contains the alerting thresholds.
 
-You can define the service integrations, in the Aiven for Apache Flink® **Overview** tab, with the following steps:
+You can define the service integrations, on the Aiven for Apache Flink® **Overview** page, with the following steps:
 
-1. Click **Get started** on the banner at the top of the **Overview** page.
-
-   .. image:: /images/tutorials/anomaly-detection/flink-console-integration.png
-      :alt: Aiven for Apache Flink Overview tab, showing the **Get started** button
-
-2. Select **Aiven for Apache Kafka®** and then select the ``demo-kafka`` service.
-3. Click **Integrate**.
-4. Click the **+** icon under *Data Flow*.
-5. Check the **Aiven for PostgreSQL** checkbox in the ``Aiven Data Services`` section.
-6. Select **Aiven for PostgreSQL®** and then select the ``demo-postgresql`` service.
-7. Click **Integrate**.
+1. Select **Create data pipeline** in section **Create and manage your data streams with ease** at the top of the **Overview** page.
+2. In the **Data Service Integrations** window, select the **Aiven for Apache Kafka** checkbox and, next, select the ``demo-kafka`` service. Select **Integrate**.
+3. Back on the **Overview** page, in the **Data Flow** section, select the **+** icon.
+4. In the **Data Service Integrations** window, select the **Aiven for PostgreSQL** checkbox and, next, select the ``demo-postgresql`` service. Select **Integrate**.
 
 Once the above steps are completed, your **Data Flow** section should be similar to the below:
 
 .. image:: /images/tutorials/anomaly-detection/flink-integrations-done.png
       :alt: Aiven for Apache Flink Overview tab, showing the Integrations to Aiven for Apache Kafka and Aiven for PostgreSQL
-
 
 Set up the IoT metrics streaming dataset
 ----------------------------------------

@@ -151,11 +151,15 @@ To enable Private Link access for your service in the Aiven CLI, set ``user_conf
 
 To enable Private Link access in `Aiven Console <https://console.aiven.io/>`_:
 
-#. Select the service that you want to enable access to.
-#. On the **Overview** page of your service, in the **Advanced configuration** section, select **Change**.
-#. Select **Add configuration option** > ``privatelink_access.<service component>`` for the components that you want to enable.
-#. Toggle the switch next to the components to set the values to true.
-#. Select **Save advanced configuration**.
+#. On the **Overview** page of your service, select **Service settings** from the sidebar.
+#. On the **Service settings** page, navigate to the **Cloud and network** section and select **More network configurations** from the actions (**...**) menu.
+#. In the **Network configuration** window, take the following actions:
+
+   #. Select **Add configuration options**.
+   #. In the search field, enter ``privatelink_access``.
+   #. From the displayed component names, select the names of the components that you want to enable (``privatelink_access.<service component>``).
+   #. Select the toggle switches for the selected components to enable them.
+   #. Select **Save configuration**.
 
 .. Tip::
 
