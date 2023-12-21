@@ -35,8 +35,8 @@ Add Datadog metrics integration to your Aiven service
 To enable the Datadog metrics integration for each service that requires metric tracking in Datadog, follow these steps:
 
 1. In the `Aiven Console <https://console.aiven.io/>`_, select your service. 
-2. In the service **Overview** page, scroll to **Service integrations** and select **Manage integrations**. 
-3. In the **Integrations** screen, select **Datadog**.
+2. From the **Overview** page of your service, scroll to **Service integrations** and select **Manage integrations**. 
+3. In the **Integrations** screen, select **Datadog Metrics**.
 
 4. Select the Datadog endpoint you want to use from the drop-down list and select **Enable**.
 
