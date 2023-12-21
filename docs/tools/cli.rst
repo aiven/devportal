@@ -66,14 +66,6 @@ A set of administrative commands to set up billing groups and manage which proje
 The billing group command also enables access to the credit code features, and detailed invoice line data.
 
 
-``card``
-''''''''
-
-Manage the payment cards on your account.
-
-:doc:`See detailed command information <cli/card>`.
-
-
 ``cloud``
 '''''''''
 
