@@ -28,7 +28,7 @@ Enable OAuth2/OIDC via Aiven Console
 -------------------------------------------------------
 
 1. In the `Aiven Console <https://console.aiven.io/>`_, select your project and then choose your Aiven for Apache Kafka® service.
-2. In the service, select **Service settings** from the sidebar. 
+2. In the service page, select **Service settings** from the sidebar. 
 3. On the **Service settings** page, scroll down to the **Advanced configuration** section, and click **Configure**.
 4. In the **Advanced configuration** dialog, select **Add configuration options**.
 5. Set the following OIDC parameters:

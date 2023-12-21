@@ -6,7 +6,7 @@ Apache ZooKeeper™ is a crucial component used by Apache Kafka® and Aiven mana
 In order to change ZooKeeper configuration properties follow these steps:
 
 #. In the `Aiven Console <https://console.aiven.io/>`_, select your project and then choose your Aiven for Apache Kafka® service.
-#. In the service, select **Service settings** from the sidebar. 
+#. In the service page, select **Service settings** from the sidebar. 
 #. On the **Service settings** page, scroll down to the **Advanced configuration** section, and click **Configure**.
 #. In the **Advanced configuration** dialog, click **Add configuration option** to add new configurations or modify the values of existing configurations.
 #. Click  **Save configuration**.

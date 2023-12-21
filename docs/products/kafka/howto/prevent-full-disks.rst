@@ -20,7 +20,7 @@ Upgrade to a larger service plan
 
 #. In the `Aiven Console <https://console.aiven.io/>`_, select your project and then choose your Aiven for Apache Kafka® service.
 
-#. In the service, select **Service settings** from the sidebar. 
+#. In the service page, select **Service settings** from the sidebar. 
 
 #.  On the **Service settings** page, scroll to **Service plan** and select **Change plan** from the **Actions (…)** menu. 
 

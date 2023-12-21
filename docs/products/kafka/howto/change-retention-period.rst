@@ -39,7 +39,7 @@ At a service level
 ~~~~~~~~~~~~~~~~~~~
 
 #.  In the `Aiven Console <https://console.aiven.io/>`_, select your project and then choose your Aiven for Apache Kafka® service.
-#.  In the service, select **Service settings** from the sidebar. 
+#.  In the service page, select **Service settings** from the sidebar. 
 #.  On the **Service settings** page, scroll down to the **Advanced configuration** section, and click **Configure**.
 #.  In the **Advanced configuration** dialog, click **Add configuration options**.
 #.  You have two options to configure the retention period for Apache Kafka® logs:

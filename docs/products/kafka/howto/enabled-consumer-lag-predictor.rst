@@ -22,7 +22,7 @@ Enable via Aiven Console
 
 1. In the `Aiven Console <https://console.aiven.io/>`_, select your project and then choose your Aiven for Apache Kafka® service.
 
-2. Click **Service settings** on the sidebar. 
+2.  In the service page, click **Service settings** on the sidebar. 
 
 3. Scroll to the **Advanced configuration** section, and select **Configure**.
 
