@@ -18,11 +18,11 @@ To define a replication flow between a source Apache Kafka cluster and a target 
 2. In the service **Overview** screen, scroll to the **Service integrations** section and select **Manage integrations**.
 
 3. If there is no integration for the source/target Apache Kafka cluster, follow these steps to set up the necessary integrations:
-   
-  * On the Integrations screen, choose the desired integration from the list for the source Apache Kafka cluster.
-  * Select an existing Apache Kafka service you want to use as the source/target for the replication flow.
-  * Provide a cluster alias name (e.g., source-Kafka) to the integration of the Apache Kafka cluster.
-  * Repeat the above steps to set up the integration for the target Apache Kafka cluster and provide a cluster alias name.
+  
+   * On the Integrations screen, choose the desired integration from the list for the source Apache Kafka cluster.
+   * Select an existing Apache Kafka service you want to use as the source/target for the replication flow.
+   * Provide a cluster alias name (e.g., source-Kafka) to the integration of the Apache Kafka cluster.
+   * Repeat the above steps to set up the integration for the target Apache Kafka cluster and provide a cluster alias name.
 
 4. Once that the source and target Apache Kafka clusters are configure, select **Replication flows** from the left sidebar. 
 

@@ -27,10 +27,11 @@ Before proceeding with the setup, ensure you have:
 Enable OAuth2/OIDC via Aiven Console
 -------------------------------------------------------
 
-1. In `Aiven Console <https://console.aiven.io/>`_, select your project and then choose your Aiven for Apache Kafka® service.
-2. On the **Overview** page, scroll down to **Advanced configuration** and select **Configure**.
-3. In the **Advanced configuration** screen, select **Add configuration options**.
-4. Set the following OIDC parameters:
+1. In the `Aiven Console <https://console.aiven.io/>`_, select your project and then choose your Aiven for Apache Kafka® service.
+2. In the service, select **Service settings** from the sidebar. 
+3. On the **Service settings** page, scroll down to the **Advanced configuration** section, and click **Configure**.
+4. In the **Advanced configuration** dialog, select **Add configuration options**.
+5. Set the following OIDC parameters:
 
    * ``kafka.sasl_oauthbearer_jwks_endpoint_url``
 
@@ -60,7 +61,7 @@ Enable OAuth2/OIDC via Aiven Console
     Adjusting OIDC configurations, such as enabling, disabling, or modifying settings, can lead to a rolling restart of Kafka brokers. As a result, the brokers may temporarily operate with different configurations. To minimize any operational disruptions,  plan to implement these changes during a maintenance window or at a time that ensures a minimal impact on your operations.
 
 
-5. Select **Save configurations** to save your changes
+6. Select **Save configurations** to save your changes
 
 
 

@@ -5,18 +5,20 @@ The log cleaner serves the purpose of preserving only the latest value associate
 
 Enable log compaction for all topics
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#. Log in to `Aiven Console <https://console.aiven.io/>`_ and select your Aiven for Apache Kafka service.
-#. On the **Overview** page, scroll down to **Advanced configuration** and select **Add configuration option**.
+#. In the `Aiven Console <https://console.aiven.io/>`_, select your project and then choose your Aiven for Apache Kafka® service.
+#. In the service, select **Service settings** from the sidebar. 
+#. On the **Service settings** page, scroll down to the **Advanced configuration** section, and click **Configure**.
+#. In the **Advanced configuration** dialog, click **Add configuration options**.
 #. Find ``log.cleanup.policy`` in the list and select it.
 #. Set the value to ``compact``.
-#. Select **Save advanced configuration**. 
+#. Click **Save configuration**. 
 
 .. warning:: This change will affect all topics in the cluster that do not have a configuration override in place.
 
 Enable log compaction for a specific topic
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Log in to `Aiven Console <https://console.aiven.io/>`_ and select your Aiven for Apache Kafka service.
+#. In the `Aiven Console <https://console.aiven.io/>`_, select your project and then choose your Aiven for Apache Kafka® service.
 #. Select **Topics** from the left sidebar.
 #. Select a topic you want to modify and select **Modify** in the context menu.
 #. From the drop-down options for the **Cleanup policy**, select the value ``compact``.
