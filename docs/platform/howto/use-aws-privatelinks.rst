@@ -55,7 +55,7 @@ currently support AWS PrivateLink.
       aws ec2 --region eu-west-1 create-vpc-endpoint --vpc-endpoint-type Interface --vpc-id $your_vpc_id --subnet-ids $space_separated_list_of_subnet_ids --security-group-ids $security_group_ids --service-name com.amazonaws.vpce.eu-west-1.vpce-svc-0b16e88f3b706aaf1
 
 
-   Replace the ``--service-name`` value with the value shown either in the `Aiven Console <https://console.aiven.io>`_ > **Service settings** page > **Cloud and network** section > actions (**...**) menu > **Edit AWS PrivateLink** > **AWS service name** or as an output of the following Aiven CLI command:
+   Replace the ``--service-name`` value with the value shown either in the `Aiven Console <https://console.aiven.io>`__ > **Service settings** page > **Cloud and network** section > actions (**...**) menu > **Edit AWS PrivateLink** > **AWS service name** or as an output of the following Aiven CLI command:
 
    .. code:: bash
 
@@ -124,7 +124,7 @@ Acquire connection information
 One AWS PrivateLink connection
 ''''''''''''''''''''''''''''''
 
-If you have one private endpoint connected to your Aiven service, you can preview the connection information (URI, hostname, or port required to access the service through the private endpoint) in `Aiven Console <https://console.aiven.io/>`_ > the service's **Overview** page > the **Connection information** section, where you'll also find the switch for the ``privatelink`` access route. ``privatelink``-access-route values for ``host`` and ``port`` differ from those for the ``dynamic`` access route used by default to connect to the service.
+If you have one private endpoint connected to your Aiven service, you can preview the connection information (URI, hostname, or port required to access the service through the private endpoint) in `Aiven Console <https://console.aiven.io>`__ > the service's **Overview** page > the **Connection information** section, where you'll also find the switch for the ``privatelink`` access route. ``privatelink``-access-route values for ``host`` and ``port`` differ from those for the ``dynamic`` access route used by default to connect to the service.
 
 .. note::
 
