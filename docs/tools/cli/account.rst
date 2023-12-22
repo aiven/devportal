@@ -5,11 +5,6 @@ This article has the full list of commands for managing organization or organiza
 
 Check out the full description of :doc:`Aiven's security model </docs/platform/concepts/cloud-security>` for more information.
 
-``avn account authentication-method``
-'''''''''''''''''''''''''''''''''''''
-
-A full list of commands is available in a :doc:`separate article for managing authentication methods in the CLI <account/account-authentication-method>`.
-
 ``avn account create``
 '''''''''''''''''''''''
 
