@@ -21,5 +21,5 @@ Set read-only access in a database
 You can set up the read-only access for a specific user's role in a particular database.
 
 1. Create a new database which will be used as a template ``CREATE DATABASE ro_<name>_template...``
-2. Update the standardizable information of the database
+2. For the new template database, set permissions and roles that you want as default ones in the template.
 3. When creating a new database, use ``CREATE DATABASE <name> WITH TEMPLATE = 'ro_<name>_template'``

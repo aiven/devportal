@@ -39,7 +39,7 @@ Database administration tasks
         :shadow: md
         :margin: 2 2 0 0
 
-    .. grid-item-card:: :doc:`Use the PostgreSQL® pg_repack extension </docs/productspostgresql/howto/use-pg-repack-extension>`
+    .. grid-item-card:: :doc:`Use the PostgreSQL® pg_repack extension </docs/products/postgresql/howto/use-pg-repack-extension>`
         :shadow: md
         :margin: 2 2 0 0
 
