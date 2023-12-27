@@ -1,9 +1,11 @@
 Restrict access to databases or tables in Aiven for PostgreSQL®
 ===============================================================
-This article shows how you can restrict access to Aiven for PostgreSQL® databases and tables by setting up read-only permissions for specific user's roles.
+
+You can restrict access to Aiven for PostgreSQL® databases and tables by setting up read-only permissions for specific user's roles.
 
 Set read-only access in a schema
 --------------------------------
+
 1. Modify default permissions for a user's role in a particular schema.
 
 .. code-block:: bash
@@ -18,8 +20,9 @@ Set read-only access in a schema
 
 Set read-only access in a database
 ----------------------------------
+
 You can set up the read-only access for a specific user's role in a particular database.
 
-1. Create a new database which will be used as a template ``create database ro_<name>_template...``
+1. Create a new database which will be used as a template ``create database ro_<name>_template...``.
 2. For the new template database, set permissions and roles that you want as default ones in the template.
-3. When creating a new database, use ``create database NAME with template = 'ro_<name>_template'``
+3. When creating a new database, use ``create database NAME with template = 'ro_<name>_template'``.
