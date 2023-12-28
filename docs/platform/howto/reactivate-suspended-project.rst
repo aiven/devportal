@@ -3,9 +3,11 @@ Reactivate suspended projects
 
 If you have bills past due and didn't set up a payment method, you may receive this error when trying to log in to the console:
 
-  ERROR
+.. code::
 
-  Project suspended, access prohibited
+   ERROR
+
+   Project suspended, access prohibited
 
 Reactivate a suspended project
 ------------------------------
