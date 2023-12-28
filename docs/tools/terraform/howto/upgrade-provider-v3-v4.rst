@@ -51,20 +51,20 @@ In this example, the ``aiven_database`` field is updated to the service-specific
 
 1. Update ``aiven_database`` references to ``aiven_pg_database`` as in this example file:
 
-.. code::
-
-    - resource "aiven_database" "mydatabase" {
-        project       = aiven_project.myproject.project
-        service_name  = aiven_pg.mypg.service_name
-        database_name = "<DATABASE_NAME>"
-    }
-
-
-    + resource "aiven_pg_database" "mydatabase" {
-        project       = aiven_project.myproject.project
-        service_name  = aiven_pg.mypg.service_name
-        database_name = "<DATABASE_NAME>"
-    }
+   .. code::
+  
+      - resource "aiven_database" "mydatabase" {
+          project       = aiven_project.myproject.project
+          service_name  = aiven_pg.mypg.service_name
+          database_name = "<DATABASE_NAME>"
+      }
+  
+  
+      + resource "aiven_pg_database" "mydatabase" {
+          project       = aiven_project.myproject.project
+          service_name  = aiven_pg.mypg.service_name
+          database_name = "<DATABASE_NAME>"
+      }
 
 2. View a list of all resources in the state file:
 
