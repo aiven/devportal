@@ -44,8 +44,8 @@ From the information about restrictions on using Aiven for ClickHouse, you can e
      - Aiven for ClickHouse doesn't support Kafka Schema Registry, which allows to build stream processing pipelines with schemas.
      - \-
    * - Querying all shards at once
-     - If you have a sharded plan, you must use a Distributed view on top of your MergeTree table to query all the shards at the same time, and you should use it for inserts too.
-     - Use the ``Distributed`` view with sharded plans.
+     - If you have a sharded plan, you must use a distributed table on top of your MergeTree table to query all the shards at the same time, and you should use it for inserts too.
+     - Use a distributed table with sharded plans. Check :doc:`Query data across shards </docs/products/clickhouse/howto/use-shards-with-distributed-table>` for the instructions.
    * - ON CLUSTER queries
      - Aiven for ClickHouse doesn't support ON CLUSTER queries because it actually runs each data definition query on all the servers of the cluster without using `ON CLUSTER`.
      - Run queries without ``ON CLUSTER``.
