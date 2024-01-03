@@ -18,6 +18,7 @@ entries:
       - file: docs/platform/howto/billing-google-cloud-platform-marketplace-subscription
         title: Set up Google Cloud Marketplace subscriptions
     - file: docs/tools/aiven-console
+    - file: docs/platform/concepts/beta_services
     - file: docs/platform/howto/feature-preview
 
   # -------- ORGANIZATIONS, UNITS, PROJECTS --------
@@ -1390,11 +1391,6 @@ entries:
             title: Troubleshoot connection issues
 
   # -------- SUPPORT --------
-  - file: docs/platform/howto/list-support
+  - file: docs/platform/howto/project-support-center
     title: Support
-    entries:
-    - file: docs/platform/howto/project-support-center
-    - file: docs/platform/howto/change-support-tier
-      title: Upgrade your support tier
-    - file: docs/platform/concepts/service-level-agreement
-    - file: docs/platform/concepts/beta_services
+
