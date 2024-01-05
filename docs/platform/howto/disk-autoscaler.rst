@@ -1,5 +1,5 @@
-Scale your Aiven service disks automatically
-============================================
+Scale your Aiven service disks automatically |preview|
+======================================================
 
 Discover the service disk autoscaler and its capabilities. Find out how it works and how to use it with your Aiven services.
 
