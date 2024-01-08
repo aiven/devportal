@@ -6,12 +6,12 @@ Administrators can configure log and metrics integrations to Aiven services so t
 Logs
 ----
 
-Choose **Manage integrations** from the service overview page to add an integration that will send service logs to an Aiven for OpenSearch® service. This can be an existing service, or you can choose to create a new one.
+On the **Overview** page of your service, select **Integrations** to add an integration that will send service logs to an Aiven for OpenSearch® service. This can be an existing service, or you can choose to create a new one.
 
 Metrics
 -------
 
-On the service overview page, choose **Manage integrations** to set up an integration to push service metrics to an M3, InfluxDB® or PostgreSQL® service on Aiven. This can be an existing service or you can create a new one to receive the metrics.
+On the **Overview** page of your service, select **Integrations** to set up an integration to push service metrics to an M3, InfluxDB® or PostgreSQL® service on Aiven. This can be an existing service or you can create a new one to receive the metrics.
 
 Dashboards
 ----------

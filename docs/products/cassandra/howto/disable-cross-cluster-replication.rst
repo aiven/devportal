@@ -84,7 +84,7 @@ Use the :ref:`avn service terminate <avn-cli-service-terminate>` command to disa
 
 .. code-block:: bash
 
-   avn service terminate ccr_peer_service_name
+   avn service terminate --project PROJECT_NAME ccr_peer_service_name
 
 Disable CCR with API
 --------------------

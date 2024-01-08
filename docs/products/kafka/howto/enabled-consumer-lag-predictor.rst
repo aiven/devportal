@@ -20,9 +20,9 @@ Before you start, ensure you have the following:
 Enable via Aiven Console
 ----------------------------------------------------
 
-1. In `Aiven Console <https://console.aiven.io/>`_, select your project and then choose your Aiven for Apache Kafka® service.
+1. In the `Aiven Console <https://console.aiven.io/>`_, select your project and then choose your Aiven for Apache Kafka® service.
 
-2. Click **Service settings** on the sidebar. 
+2.  In the service page, click **Service settings** on the sidebar. 
 
 3. Scroll to the **Advanced configuration** section, and select **Configure**.
 
@@ -37,7 +37,7 @@ Enable via Aiven Console
     
      By default, the consumer lag predictor calculates the lag of all consumer groups. To restrict the calculation to specific groups, use the ``kafka_lag_predictor.group_filters`` option.
 
-6. Select **Save configurations** to save your changes and enable consumer lag prediction.
+6. Select **Save configuration** to save your changes and enable consumer lag prediction.
 
 Enable via Aiven CLI
 ------------------------------------------------

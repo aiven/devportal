@@ -76,9 +76,10 @@ For example, to include topics ``topic1`` and ``topic2``, and exclude ``topic3``
 
 .. code::
 
-    avn service integration-update                                                \
-        -c include_topics=['topic1','topic2']                                     \
-        -c exclude_topics=['topic3']                                                   \
+
+    avn service integration-update                                                  \
+        -c kafka_custom_metrics="['kafka.log.log_size','kafka.log.log_end_offset']" \
+        -c include_topics="['topic1','topic2']"                                     \
         INTEGRATION_ID
 
 After you successfully update and the metrics are collected and sent to Datadog, you can view them in your Datadog explorer.

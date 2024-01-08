@@ -10,9 +10,12 @@ Apache
 API
 APIs
 ARN
+ARNs
 Astacus
 Auth0
 autojoin
+autoscaler
+autoscaling
 autovacuum
 Avro
 AZ
@@ -279,6 +282,7 @@ UDFs
 unassign
 uncomment
 unencrypted
+unfollow
 United States
 Unschedule
 untrusted

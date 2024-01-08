@@ -17,11 +17,11 @@ Certificate requirements
 
 Most of our services use a browser-recognized CA certificate, but there are exceptions:
 
-- **Aiven for PostgreSQL®** requires the Aiven project CA certificate to connect when using `verify-ca` or `verify-full` as ``sslmode``. The first mode requires the client to verify that the server certificate is actually emitted by the Aiven CA, while the second provides maximum security by performing HTTPS-like validation on the hostname as well. The default ``sslmode``, `require`, ensures TLS is used when connecting to the database, but does not verify the server certificate. For more information, see the `PostgreSQL documentation <https://www.postgresql.org/docs/current/libpq-ssl.html#LIBPQ-SSL-SSLMODE-STATEMENTS>`_
+- **Aiven for PostgreSQL®** requires the Aiven project CA certificate to connect when using `verify-ca` or `verify-full` as ``sslmode``. The first mode requires the client to verify that the server certificate is actually emitted by the Aiven CA, while the second provides maximum security by performing HTTPS-like validation on the hostname as well. The default ``sslmode``, ``require``, ensures TLS is used when connecting to the database, but does not verify the server certificate. For more information, see the `PostgreSQL documentation <https://www.postgresql.org/docs/current/libpq-ssl.html#LIBPQ-SSL-SSLMODE-STATEMENTS>`_
   
 - **Aiven for Apache Kafka®** requires the Aiven project CA certificate, and also the client key and certificate.
 
-For these services you can :doc:`/docs/platform/howto/download-ca-cert` from the service overview page.
+For these services you can :doc:`/docs/platform/howto/download-ca-cert` from **Overview** page of your service.
 
 .. note::
     Older/existing services may be using the Aiven project's CA, you can request switching to a browser-recognized certificate by opening support ticket and letting us know.

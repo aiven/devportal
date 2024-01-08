@@ -8,10 +8,7 @@ The Point-in-Time Recovery (PITR) process allows you to restore your Grafana ser
 
 2. Click **Fork & restore**.
 
-.. image:: /images/products/grafana/grafana-pitr-fork-restore.png
-    :alt: click 'Fork & restore' from backup tab of Grafana service from Aiven console
-
-3. In the **New Database Fork** screen, 
+3. In the **New Database Fork** dialog, 
 
    - Provide a name for the new service.
    - Verify that the appropriate Project name is chosen.

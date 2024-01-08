@@ -29,7 +29,7 @@ To check the TLS versions clients are connecting with, you can query the ``pg_st
 
 .. code::
 
-     datname  │   pid   │ usesysid │ usename  │ application_name │  client_addr   │ ssl │ version │         cipher         │         backend_start         
+    datname   │   pid   │ usesysid │ usename  │ application_name │  client_addr   │ ssl │ version │         cipher         │         backend_start         
     ──────────┼─────────┼──────────┼──────────┼──────────────────┼────────────────┼─────┼─────────┼────────────────────────┼───────────────────────────────
     defaultdb │ 2172508 │    16412 │ avnadmin │ psql             │ 192.178.0.1    │ t   │ TLSv1.3 │ TLS_AES_256_GCM_SHA384 │ 2022-09-12 12:39:12.644646+00
 

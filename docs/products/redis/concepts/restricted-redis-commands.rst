@@ -31,10 +31,10 @@ Disabled eval commands
 The following script evaluation commands in the Aiven for Redis* service are disabled. If you require these commands to be enabled, contact Aiven support.
 
 - ``eval``: Executes a Lua script server-side.	
-- ``eval_ro``: Read-only variant of the `eval` command.	
+- ``eval_ro``: Read-only variant of the ``eval`` command.	
 - ``evalsha``: Executes a script cached on the server side by its SHA1 digest.	
-- ``evalsha_ro``: Read-only variant of the `evalsha` command.	
+- ``evalsha_ro``: Read-only variant of the ``evalsha`` command.	
 - ``fcall``: Calls a Redis function.	
-- ``fcall_ro``: Read-only variant of the `fcall` command.	
+- ``fcall_ro``: Read-only variant of the ``fcall`` command.	
 - ``function``: Manages Redis functions.	
 - ``script``: Manages the script cache.

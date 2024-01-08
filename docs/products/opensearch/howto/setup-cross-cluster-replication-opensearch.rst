@@ -1,4 +1,4 @@
-Setup cross cluster replication for Aiven for OpenSearch® |beta|
+Setup cross cluster replication for Aiven for OpenSearch®
 ================================================================
 
 .. important::
@@ -6,19 +6,19 @@ Setup cross cluster replication for Aiven for OpenSearch® |beta|
    Aiven for OpenSearch® cross-cluster replication (CCR) is a :doc:`limited availability feature </docs/platform/concepts/beta_services>`. If you're interested in trying out this feature, contact the sales team at `sales@Aiven.io <mailto:sales@Aiven.io>`_.
 
 .. note:: 
-    - Cross cluster replication feature for Aiven for OpenSearch is a beta release. 
-    - Cross cluster replication is not available for Hobbyist and Startup plans.
+  
+   - Cross cluster replication is not available for the Hobbyist and Startup plans.
 
 Follow these steps to set up :doc:`cross cluster replication </docs/products/opensearch/concepts/cross-cluster-replication-opensearch>` for your Aiven for OpenSearch service: 
 
 1. Log in to the `Aiven Console <https://console.aiven.io/>`_, and select the Aiven for OpenSearch service for which you want to set up cross cluster replication. 
 2. In the service's **Overview** screen, scroll to the **Cross cluster replications** section and select **Create follower**.
-3. In the **Create OpenSearch follower cluster** page, 
+3. In the **Create OpenSearch follower cluster** page: 
 
-   * Enter a name for the follower cluster 
-   * Select the desired cloud provider
-   * Select the desired cloud region
-   * Select the service plan
+   * Enter a name for the follower cluster. 
+   * Select the desired cloud provider.
+   * Select the desired cloud region.
+   * Select the service plan.
 
    .. note:: 
       During creation, the follower cluster service must have the same service plan as the leader cluster service. This ensures the follower cluster service has as much memory as the leader cluster. You can change the service plan as required later. 

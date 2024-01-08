@@ -34,9 +34,9 @@ To create a Loggly integration using the `Aiven Console <https://console.aiven.i
   * **TLS** - disabled (see below how to enable TLS with avn client)
   * **Format** - ``rfc5424``
   * **Structured Data** - ``TOKEN@NNNNN TAG="your-tag"`` replacing
-    
+
     * ``TOKEN`` needs to be replaced with your Loggly **customer token** retrieved in the prerequisite stage
-    * ``NNNNN`` is Loggly Private Enterprise Number (PEN) which is ``41058`` (check `Loggly documentation <https://www.loggly.com/docs/streaming-syslog-without-using-files/>`_ for up to date information)
+    * ``NNNNN`` is Loggly Private Enterprise Number (PEN) which is ``41058`` (check `Loggly documentation <https://documentation.solarwinds.com/en/success_center/loggly/content/admin/streaming-syslog-without-using-files.htm>`_ for up to date information)
     * ``your-tag`` with any arbitrary tag value wrapped in double quotes
 
 .. Tip::
@@ -60,7 +60,7 @@ After enabling this service integration, it will be shown as active in the `Aive
 
 .. Note::
 
-   It may take a few moments to setup the new log, and you can track the status in your service overview.
+   It may take a few moments to setup the new log, and you can track the status on the **Overview** page of your service > the **Service integrations** section.
 
 Your logs should now be visible on Loggly **Search** tab. Enter the tag name your previously specified (e.g. ``tag:your-tag`` ) and it will populate the dashboard with the log events from the Aiven service.
 

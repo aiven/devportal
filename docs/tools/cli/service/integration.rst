@@ -195,6 +195,8 @@ An example of ``avn service integration-endpoint-types-list`` output:
     Send service logs to remote syslog           rsyslog                          alerta, alertmanager, cassandra, clickhouse, elasticsearch, flink, grafana, influxdb, kafka, kafka_connect, kafka_mirrormaker, m3aggregator, m3coordinator, m3db, mysql, opensearch, pg, redis, sw
     Send service metrics to SignalFX             signalfx                         kafka
 
+.. _avn-service-integration-endpoint-update:
+
 ``avn service integration-endpoint-update``
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
