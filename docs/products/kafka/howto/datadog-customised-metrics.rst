@@ -57,9 +57,9 @@ As example to sent the ``kafka.log.log_size`` and ``kafka.log.log_end_offset`` m
 
 .. code::
 
-    avn service integration-update                                                \
-        -c kafka_custom_metrics=['kafka.log.log_size','kafka.log.log_end_offset'] \
-        -c include_topics=['topic1','topic2']                                     \
+    avn service integration-update                                                  \
+        -c kafka_custom_metrics="['kafka.log.log_size','kafka.log.log_end_offset']" \
+        -c include_topics="['topic1','topic2']"                                     \
         INTEGRATION_ID
 
 Once the update is successful and metrics have been collected and pushed, you should see them in your Datadog explorer.
