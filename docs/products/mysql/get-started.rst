@@ -1,7 +1,7 @@
 Getting started with Aiven for MySQL®
 =====================================
 
-Aiven for MySQL® services are managed from `Aiven Console <https://console.aiven.io/>`__ .
+Aiven for MySQL® services are managed from `Aiven Console <https://console.aiven.io/>`__.
 
 Start a service
 ---------------
@@ -27,11 +27,13 @@ Next steps
 ----------
 
 * Learn how to connect to MySQL:
-    - :doc:`From the command line </docs/products/mysql/howto/connect-from-cli>`
-    - :doc:`With MySQL workbench </docs/products/mysql/howto/connect-from-mysql-workbench>`
+
+  - :doc:`From the command line </docs/products/mysql/howto/connect-from-cli>`
+  - :doc:`With MySQL workbench </docs/products/mysql/howto/connect-from-mysql-workbench>`
 
 * Create additional databases:
-    - :doc:`Create your database </docs/products/mysql/howto/create-database>`
+
+  - :doc:`Create your database </docs/products/mysql/howto/create-database>`
 
 * Connect from your own :doc:`Python application </docs/products/mysql/howto/connect-with-python>`.
 

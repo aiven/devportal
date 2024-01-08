@@ -1,4 +1,4 @@
-Setup cross cluster replication for Aiven for OpenSearch® |beta|
+Setup cross cluster replication for Aiven for OpenSearch®
 ================================================================
 
 .. important::
@@ -7,7 +7,6 @@ Setup cross cluster replication for Aiven for OpenSearch® |beta|
 
 .. note:: 
   
-   - The cross cluster replication feature for Aiven for OpenSearch is a beta release. 
    - Cross cluster replication is not available for the Hobbyist and Startup plans.
 
 Follow these steps to set up :doc:`cross cluster replication </docs/products/opensearch/concepts/cross-cluster-replication-opensearch>` for your Aiven for OpenSearch service: 
