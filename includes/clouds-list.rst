@@ -433,27 +433,27 @@ Oracle Cloud Infrastructure
   * - Region
     - Cloud
     - Description
-  * - Europe
-    - ``eu-frankfurt-1``
-    - Germany, Germany Central: Frankfurt
   * - Asia-Pacific
     - ``ap-mumbai-1``
     - India, India West: Mumbai
-  * - Middle East
-    - ``me-dubai-1``
-    - UAE, UAE East: Dubai
-  * - South America
-    - ``sa-saopaulo-1``
-    - Brazil, Brazil East: São Paulo
-  * - Europe
-    - ``uk-london-1``
-    - United Kingdom, UK South: London
-  * - North America
-    - ``us-ashburn-1``
-    - US East, Virginia: Ashburn
   * - Asia-Pacific
     - ``ap-sydney-1``
     - Australia, Australia East: Sydney
+  * - Europe
+    - ``eu-frankfurt-1``
+    - Germany, Germany Central: Frankfurt
+  * - Europe
+    - ``uk-london-1``
+    - United Kingdom, UK South: London
+  * - Middle East
+    - ``me-dubai-1``
+    - UAE, UAE East: Dubai
+  * - North America
+    - ``us-ashburn-1``
+    - US East, Virginia: Ashburn
   * - North America
     - ``us-phoenix-1``
     - US West, Arizona: Phoenix
+  * - South America
+    - ``sa-saopaulo-1``
+    - Brazil, Brazil East: São Paulo
