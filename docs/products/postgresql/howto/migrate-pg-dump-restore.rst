@@ -36,7 +36,7 @@ Perform the migration
 
    .. code::
 
-      avn service create -t pg -p DEST_PG_PLAN DEST_PG_NAME
+      avn service create --project PROJECT_NAME -t pg -p DEST_PG_PLAN DEST_PG_NAME
 
    .. Tip::
      

@@ -105,6 +105,9 @@ service-type-config-redis:
 service-type-config-influxdb:
 	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "influxdb" "includes/config-influxdb.rst"
 
+service_type_config-dragonfly:
+	python "$(SOURCEDIR)/scripts/aiven/service_type_config.py" "dragonfly" "includes/config-dragonfly.rst"
+
 # TODO: add automation for "pg". See https://github.com/aiven/devportal/issues/1026
 
 # (Re)Generate cloud listing

@@ -18,11 +18,13 @@ When the disk space is insufficient, and the ACL blocks write operations, you wi
 Upgrade to a larger service plan
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Login to the `Aiven Console <https://console.aiven.io/>`_ and select your service.
+#. In the `Aiven Console <https://console.aiven.io/>`_, select your project and then choose your Aiven for Apache Kafka® service.
 
-#. On the **Overview** page, scroll down to **Service plan** and select **Change plan**. 
+#. In the service page, select **Service settings** from the sidebar. 
 
-#. Select your new service plan and select **Change**. 
+#.  On the **Service settings** page, scroll to **Service plan** and select **Change plan** from the **Actions (…)** menu. 
+
+#. In the **Change service plan** dialog, select your new service plan and select **Change**. 
 
 This will deploy new nodes with increased disk space. Once the data is migrated from the old nodes to the new ones, disk usage will return to an acceptable level, and write operations will be allowed again. 
 
@@ -36,9 +38,9 @@ Follow the steps from our article on :doc:`how to add additional storage to your
 Delete one or more topics
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Login to the `Aiven Console <https://console.aiven.io/>`__ and select your service.
+#. In the `Aiven Console <https://console.aiven.io/>`_, select your project and then choose your Aiven for Apache Kafka® service.
 
-#. Select **Topics** from the left sidebar.
+#. Select **Topics** from the sidebar.
 
 #. Select the topic you want to remove, and in the **Topic info** screen, select **Remove**. 
 
@@ -53,8 +55,6 @@ You can also use the CLI command :doc:`avn cli delete-topic </docs/tools/cli/ser
 Decrease retention time/size
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Another way to make more space available without deleting an entire
-topic is to reduce the retention time or size for one or more topics. If
-you know how old the oldest messages are in a topic, you can lower the
-retention time for the topic to make more space available. Follow the instructions :doc:`to change retention period </docs/products/kafka/howto/change-retention-period>`.
+Another way to make more space available without deleting an entire topic is to reduce the retention time or size for one or more topics. If
+you know how old the oldest messages are in a topic, you can lower the retention time for the topic to make more space available. Follow the instructions :doc:`to change retention period </docs/products/kafka/howto/change-retention-period>`.
 

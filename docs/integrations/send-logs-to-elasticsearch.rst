@@ -41,12 +41,11 @@ Send logs to an external service
 
 #. Navigate to **Services** from the menu on the left.
 #. Select the service which logs you want to send to the external Elasticsearch service.
-#. On the service *Overview* page scroll to the section *Service integrations*.
+#. On the **Overview** page of your service, navigate to the **Service integrations** section.
 #. Select **Manage integrations**. 
-#. Select Elasticsearch from the list.
-#. In the newly appeared modal window choose the endpoint with name ``CONNECTION_NAME`` from the list and select **ENABLE**.
-#. You can now close the modal window.
-#. Observe the status change for newly added integration in the section **Service integrations** on the service overview page.
+#. Select **Elasticsearch Logs** from the list.
+#. In the newly-appeared modal window, select the endpoint with name ``CONNECTION_NAME`` from the list and select **ENABLE**. Close the modal window.
+#. Observe the status change for newly-added integration in the **Service integrations** section on the **Overview** page of your service.
 #. Verify that the logs are flowing into your Elasticsearch.
 
 .. note:: Logs are split per day with index name consisting of your desired index prefix and a date in a format year-month-day, for example ``logs-2022-08-30``.

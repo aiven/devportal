@@ -10,9 +10,12 @@ Apache
 API
 APIs
 ARN
+ARNs
 Astacus
 Auth0
 autojoin
+autoscaler
+autoscaling
 autovacuum
 Avro
 AZ
@@ -161,6 +164,7 @@ MongoDB
 MySQL
 myhoard
 namespace/MS
+netmask
 NodeJS
 nosqlbench
 npm
@@ -278,6 +282,7 @@ UDFs
 unassign
 uncomment
 unencrypted
+unfollow
 United States
 Unschedule
 untrusted

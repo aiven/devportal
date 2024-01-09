@@ -18,6 +18,7 @@ entries:
       - file: docs/platform/howto/billing-google-cloud-platform-marketplace-subscription
         title: Set up Google Cloud Marketplace subscriptions
     - file: docs/tools/aiven-console
+    - file: docs/platform/concepts/beta_services
     - file: docs/platform/howto/feature-preview
 
   # -------- ORGANIZATIONS, UNITS, PROJECTS --------
@@ -25,6 +26,7 @@ entries:
     entries:
     - file: docs/platform/concepts/projects_accounts_access
     - file: docs/tools/aiven-console/howto/create-accounts
+    - file: docs/platform/howto/manage-organizations
     - file: docs/platform/howto/manage-project
     - file: docs/platform/reference/project-member-privileges
     - file: docs/platform/howto/manage-unassigned-projects
@@ -129,6 +131,8 @@ entries:
     - file: docs/platform/howto/prepare-for-high-load
     - file: docs/platform/howto/scale-services
     - file: docs/platform/concepts/dynamic-disk-sizing
+    - file: docs/platform/howto/disk-autoscaler
+      title: Disk autoscaling
     - file: docs/platform/howto/cleanup-powered-off-services
     - file: docs/platform/howto/add-storage-space
     - file: docs/platform/howto/access-service-logs
@@ -245,7 +249,6 @@ entries:
           entries:
             - glob: docs/tools/cli/account/*
         - file: docs/tools/cli/billing-group
-        - file: docs/tools/cli/card
         - file: docs/tools/cli/cloud
         - file: docs/tools/cli/credits
         - file: docs/tools/cli/events
@@ -1277,6 +1280,7 @@ entries:
               - file: docs/products/postgresql/howto/use-pgvector
                 title: Enable and use pgvector
               - file: docs/products/postgresql/howto/pg-object-size
+              - file: docs/products/postgresql/howto/readonly-user
           - file: docs/products/postgresql/howto/list-replication-migration
             title: Migrate
             entries:
@@ -1390,11 +1394,6 @@ entries:
             title: Troubleshoot connection issues
 
   # -------- SUPPORT --------
-  - file: docs/platform/howto/list-support
+  - file: docs/platform/howto/project-support-center
     title: Support
-    entries:
-    - file: docs/platform/howto/project-support-center
-    - file: docs/platform/howto/change-support-tier
-      title: Upgrade your support tier
-    - file: docs/platform/concepts/service-level-agreement
-    - file: docs/platform/concepts/beta_services
+

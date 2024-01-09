@@ -38,7 +38,7 @@ In order to use the **logical replication** method, you'll need the following:
    
    .. code::
    
-      avn service create -t pg -p DEST_PG_PLAN DEST_PG_NAME
+      avn service create --project PROJECT_NAME -t pg -p DEST_PG_PLAN DEST_PG_NAME
 
 2. Enable the ``aiven_extras`` extension in the Aiven for PostgreSQL® target database as written in the :ref:`dedicated document <aiven_extras_extension>`.
 
@@ -93,13 +93,13 @@ You can initiate a migration to an Aiven for PostgreSQL® service with the :doc:
 
 .. code:: bash
 
-    avn service update -c migration.host=SRC_HOSTNAME   \
-        -c migration.port=SRC_PORT                      \
-        -c migration.ssl=true                           \
-        -c migration.username=SRC_USERNAME              \
-        -c migration.password=SRC_PASSWORD              \
-        -c migration.dbname=DST_DBNAME                  \
-        -c migration.ignore_dbs=DB_TO_SKIP              \
+    avn service update --project PROJECT_NAME -c migration.host=SRC_HOSTNAME   \
+        -c migration.port=SRC_PORT                                             \
+        -c migration.ssl=true                                                  \
+        -c migration.username=SRC_USERNAME                                     \
+        -c migration.password=SRC_PASSWORD                                     \
+        -c migration.dbname=DST_DBNAME                                         \
+        -c migration.ignore_dbs=DB_TO_SKIP                                     \
         DEST_PG_NAME
 
 .. Note::
@@ -113,9 +113,8 @@ You can check the migration status using the :doc:`Aiven CLI </docs/tools/cli>` 
 
 .. code:: bash
 
-    avn --show-http service migration-status \
+    avn --project PROJECT_NAME --show-http service migration-status \
         DEST_PG_NAME
-
 
 .. Note::
   
@@ -176,7 +175,7 @@ The migration process can be stopped with:
 
 .. code:: bash
 
-    avn service update --remove-option migration DEST_PG_NAME
+    avn service update --project PROJECT_NAME --remove-option migration DEST_PG_NAME
 
 
 The above command removes all logical replication-related objects from both source and destination cluster. 

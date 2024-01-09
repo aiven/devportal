@@ -16,15 +16,14 @@ The console migration tool enables you to migrate MySQL databases to managed MyS
 * Cloud-hosted MySQL databases
 * Managed MySQL database clusters on Aiven.
 
-With the console migration tool, you can migrate your data using either the :ref:`continuous migration method <continuous-migration>` (default and recommended) or the :ref:`one-time snapshot method <mysqldump-migration>` (``mysqldump``).
+The console migration tool provides 2 migration methods:
 
-.. _continuous-migration:
+- **(Recommended) Continuous migration:** Used by default in the tool and taken as a method to follow in this guide. This method uses logical replication so that data transfer is possible not only for existing data in the source database when triggering the migration but also for any data written to the source database during the migration.
 
-* Recommended continuous migration method is used by default in the tool and taken as a method to follow in this guide. This method uses logical replication so that data transfer is possible not only for the data that has already been there in the source database when triggering the migration but also for any data written to the source database during the migration.
+- **mysqldump**: Exports the current contents of the source database into a text file and imports it to the target database.
+  Any changes written to the source database during the migration are **not transferred**. 
 
-.. _mysqldump-migration:
-
-* ``mysqldump`` exports current contents of the source database into a text file and imports it to the target database. Any changes written to the source database during the migration are not transferred. When you trigger the migration setup in the console and initial checks detect that your source database does not support the logical replication, you are notified about it via wizard. To continue with the migration, you can select the alternative ``mysqldump`` migration method in the wizard.
+  When you trigger the migration setup in the console and initial checks detect that your source database does not support the logical replication, you are notified about it via the migration wizard. To continue with the migration, you can select the alternative ``mysqldump`` migration method in the wizard.
 
 Prerequisites
 -------------
@@ -164,12 +163,12 @@ Step 3 - migration
 
 If all the checks pass with no error messages, you can trigger the migration by selecting **Start migration**.
 
+.. _stop-migration-mysql:
+
 Step 4 - replicating
 ''''''''''''''''''''
 
-.. _stop-migration-mysql:
-
-While the migration is in progress, you can
+While the migration is in progress, you can:
 
 * Let it proceed until completed by selecting **Close window**, which closes the wizard. You come back to check the status at any time.
 * Discontinue the migration by selecting **Stop migration**, which retains the data already migrated. For information on how to follow up on a stopped migration process, see :ref:`Start over <start-over-mysql>`.

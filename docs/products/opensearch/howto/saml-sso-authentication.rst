@@ -42,7 +42,7 @@ To enable SAML authentication for your Aiven for OpenSearch service, follow thes
    
      .. note:: 
       
-      The SP Entity ID can be any arbitrary value defined by the user. Additionally, OpenSearch suggests creating a new application for OpenSearch Dashboards and using the URL of your OpenSearch Dashboards as the SP entity ID.
+        The SP Entity ID can be any arbitrary value defined by the user. Additionally, OpenSearch suggests creating a new application for OpenSearch Dashboards and using the URL of your OpenSearch Dashboards as the SP entity ID.
    
    * **SAML roles key**: This is an optional field that allows you to map SAML roles to Aiven for OpenSearch roles.
    * **SAML subject key**: This is also an optional field that allows you to map SAML subject to Aiven for OpenSearch users.

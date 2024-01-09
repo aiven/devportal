@@ -12,7 +12,7 @@ Execute the following command replacing the ``INSTANCE_NAME`` parameter with the
 
 .. code::
 
-   avn service get INSTANCE_NAME --json | jq -r '.connection_info.pgbouncer'
+   avn service get INSTANCE_NAME --project PROJECT_NAME --json | jq -r '.connection_info.pgbouncer'
 
 The output will be similar to the below:
 

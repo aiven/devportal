@@ -62,7 +62,7 @@ Aiven offers Prometheus endpoints for your services. To enable this feature, tak
 Accessing Prometheus in a VPC
 ''''''''''''''''''''''''''''''
 
-If you use a VPC in your project, to access Prometheus, you need to go to `Aiven Console <https://console.aiven.io/>`_ > your project > the service you want to monitor using Prometheus > the **Overview** page > the **Advanced configuration** section and enable property ``public_access.prometheus``.
+If you use a VPC in your project, to access Prometheus, you need to go to `Aiven Console <https://console.aiven.io/>`_ > your project > the service you want to monitor using Prometheus > the **Service settings** page > the **Cloud and network** section > the actions (**...**) menu > the **More network configurations**. In the **Network configuration** window, select **Add configuration options**, search for property ``public_access.prometheus``, enable it, and select **Save configuration**.
 
 Configure Prometheus
 --------------------

@@ -325,6 +325,12 @@
 
 **Opensearch Security Plugin Settings** 
 
+``enable_security_audit``
+~~~~~~~~~~~~~~~~~~~~~~~~~
+*boolean*
+
+**Enable/Disable security audit** 
+
 ``thread_pool_search_size``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 *integer*
