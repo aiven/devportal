@@ -10,7 +10,7 @@ For a single topic
 
 To change the retention period for a single topic, follow these steps:
 
-#. Log in to `Aiven Console <https://console.aiven.io/>`_ and select your Aiven for Apache Kafka® service.
+#. In the `Aiven Console <https://console.aiven.io/>`_, select your project and then choose your Aiven for Apache Kafka® service.
 
 #. Select **Topics** from the left sidebar.
 
@@ -38,15 +38,16 @@ To change the retention period for a single topic, follow these steps:
 At a service level
 ~~~~~~~~~~~~~~~~~~~
 
-#.  Log in to `Aiven Console <https://console.aiven.io/>`_ and select your Aiven for Apache Kafka® service.
-#.  On the **Overview** page, scroll down to **Advanced configuration** and select **Change**. 
-#.  In the **Edit advanced configuration** screen, select **Add configuration option**.
-#.  You have two options to configure the retention period for Apache Kafka® logs. 
+#.  In the `Aiven Console <https://console.aiven.io/>`_, select your project and then choose your Aiven for Apache Kafka® service.
+#.  In the service page, select **Service settings** from the sidebar. 
+#.  On the **Service settings** page, scroll down to the **Advanced configuration** section, and click **Configure**.
+#.  In the **Advanced configuration** dialog, click **Add configuration options**.
+#.  You have two options to configure the retention period for Apache Kafka® logs:
 
-    * You can either select ``kafka.log_retention_hours`` or ``kafka.log_retention_ms`` and set the desired length of time for retention.
-    *  Alternatively, if you prefer to limit the amount of data retained based on storage usage, you can specify the value for ``kafka.log_retention_bytes``.
+    * You can either find ``kafka.log_retention_hours`` or ``kafka.log_retention_ms`` and set the desired length of time for retention.
+    * Alternatively, if you prefer to limit the amount of data retained based on storage usage, you can specify the value for ``kafka.log_retention_bytes``.
 
-#. Click on **Save advanced configuration**.
+#. Click on **Save configuration**.
 
 Unlimited retention
 ~~~~~~~~~~~~~~~~~~~~~
@@ -55,7 +56,7 @@ We do not limit the maximum retention period in any way, and in order to disable
 
 .. Warning:: 
 
-    Using high retention periods without monitoring the available storage space can cause your service to run out of disk space. These situations are not covered by our SLA.
+   Using high retention periods without monitoring the available storage space can cause your service to run out of disk space. These situations are not covered by our SLA.
 
 
 

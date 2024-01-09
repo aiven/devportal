@@ -9,21 +9,21 @@ Use the following steps to migrate from resources that have been deprecated or r
 In the following example, the ``aiven_database`` field is migrated to the new ``aiven_pg_database`` field for an Aiven for PostgreSQL® service. 
 
 1. Replace references to the deprecated field with the new field. In the following file ``aiven_database`` was replaced with ``aiven_pg_database``:
-
-.. code::
-
-    - resource "aiven_database" "mydatabase" {
-        project       = aiven_project.myproject.project
-        service_name  = aiven_pg.mypg.service_name
-        database_name = "<DATABASE_NAME>"
-    }
-
-
-    + resource "aiven_pg_database" "mydatabase" {
-        project       = aiven_project.myproject.project
-        service_name  = aiven_pg.mypg.service_name
-        database_name = "<DATABASE_NAME>"
-    }
+   
+   .. code::
+   
+       - resource "aiven_database" "mydatabase" {
+           project       = aiven_project.myproject.project
+           service_name  = aiven_pg.mypg.service_name
+           database_name = "<DATABASE_NAME>"
+       }
+   
+   
+       + resource "aiven_pg_database" "mydatabase" {
+           project       = aiven_project.myproject.project
+           service_name  = aiven_pg.mypg.service_name
+           database_name = "<DATABASE_NAME>"
+       }
 
 2. View a list of all resources in the state file:
 

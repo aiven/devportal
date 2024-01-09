@@ -5,9 +5,8 @@ You can send your service logs to Google Cloud Logging to store, search, analyze
 
 There are two steps to setting up this integration: 
 
-1. Create the Google Cloud Logging integration
-
-2. Create the integration endpoint
+1. Create the Google Cloud Logging integration.
+2. Create the integration endpoint.
 
 You can do this using either the `Aiven Console <https://console.aiven.io/>`_ or the :doc:`CLI </docs/tools/cli>`.
 
@@ -70,14 +69,14 @@ Step 2. Add the integration endpoint to your service
 
 1. Get the endpoint identifier:
 
-.. code-block:: shell
+   .. code-block:: shell
 
-    avn service integration-endpoint-list --project your-project-name
+      avn service integration-endpoint-list --project your-project-name
 
 2. Use the ``endpoint_id`` to attach the service to the endpoint:
 
-.. code-block:: shell
+   .. code-block:: shell
 
-    avn service integration-create --project your-project-name  \
-    -t external_google_cloud_logging -s your-service            \
-    -D <ENDPOINT_ID>
+      avn service integration-create --project your-project-name  \
+      -t external_google_cloud_logging -s your-service            \
+      -D <ENDPOINT_ID>

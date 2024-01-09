@@ -240,88 +240,62 @@ html_sidebars = {
 
 # -- Replacements -----------------------------------------------------------
 rst_epilog = """
-.. |icon-challenge-trophy| image:: /images/community/challenge-trophy.svg
+
+.. |icon-postgres| image:: /images/icons/icon-pg.svg
    :width: 24px
    :class: no-scaled-link
 
-.. |icon-twitter| image:: /images/social_media/icon-twitter.svg
+.. |icon-mysql| image:: /images/icons/icon-mysql.svg
    :width: 24px
    :class: no-scaled-link
 
-.. |icon-github| image:: /images/social_media/icon-github.svg
+.. |icon-kafka| image:: /images/icons/icon-kafka.svg
    :width: 24px
    :class: no-scaled-link
 
-.. |icon-blog| image:: /images/social_media/icon-blog.svg
+.. |icon-kafka-connect| image:: /images/icons/icon-kafka-connect.svg
    :width: 24px
    :class: no-scaled-link
 
-.. |icon-youtube| image:: /images/social_media/icon-youtube.svg
+.. |icon-kafka-mirrormaker| image:: /images/icons/icon-kafka-mirrormaker.svg
    :width: 24px
    :class: no-scaled-link
 
-.. |icon-postgres| image:: /images/icon-pg.svg
+.. |icon-m3db| image:: /images/icons/icon-m3db.svg
    :width: 24px
    :class: no-scaled-link
 
-.. |icon-mysql| image:: /images/icon-mysql.svg
+.. |icon-influxdb| image:: /images/icons/icon-influxdb.svg
    :width: 24px
    :class: no-scaled-link
 
-.. |icon-kafka| image:: /images/icon-kafka.svg
+.. |icon-opensearch| image:: /images/icons/icon-opensearch.png
    :width: 24px
    :class: no-scaled-link
 
-.. |icon-kafka-connect| image:: /images/icon-kafka-connect.svg
+.. |icon-cassandra| image:: /images/icons/icon-cassandra.svg
    :width: 24px
    :class: no-scaled-link
 
-.. |icon-kafka-mirrormaker| image:: /images/icon-kafka-mirrormaker.svg
+.. |icon-redis| image:: /images/icons/icon-redis.svg
    :width: 24px
    :class: no-scaled-link
 
-.. |icon-m3db| image:: /images/icon-m3db.svg
+.. |icon-grafana| image:: /images/icons/icon-grafana.svg
    :width: 24px
    :class: no-scaled-link
 
-.. |icon-influxdb| image:: /images/icon-influxdb.svg
+.. |icon-flink| image:: /images/icons/icon-flink.svg
    :width: 24px
    :class: no-scaled-link
 
-.. |icon-opensearch| image:: /images/icon-opensearch.png
+.. |icon-clickhouse| image:: /images/icons/icon-clickhouse.svg
    :width: 24px
    :class: no-scaled-link
 
-.. |icon-cassandra| image:: /images/icon-cassandra.svg
-   :width: 24px
-   :class: no-scaled-link
-
-.. |icon-redis| image:: /images/icon-redis.svg
-   :width: 24px
-   :class: no-scaled-link
-
-.. |icon-grafana| image:: /images/icon-grafana.svg
-   :width: 24px
-   :class: no-scaled-link
-
-.. |icon-flink| image:: /images/icon-flink.svg
-   :width: 24px
-   :class: no-scaled-link
-
-.. |icon-clickhouse| image:: /images/icon-clickhouse.svg
-   :width: 24px
-   :class: no-scaled-link
-
-.. |icon-dragonfly| image:: /images/icon-dragonfly.svg
+.. |icon-dragonfly| image:: /images/icons/icon-dragonfly.svg
    :width: 24px
    :class: no-scaled-link   
-
-.. |tick| image:: /images/icon-tick.png
-   :width: 24px
-   :class: no-scaled-link
-
-
-.. |beta| replace:: :bdg-secondary:`beta`
 
 .. |preview| replace:: :bdg-secondary:`preview`
 
