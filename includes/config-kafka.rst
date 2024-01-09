@@ -1,7 +1,4 @@
 
-
-
-
 ``custom_domain``
 -----------------
 *['string', 'null']*
