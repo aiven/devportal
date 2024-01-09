@@ -1,6 +1,7 @@
 
 
 
+
 ``opensearch_version``
 ----------------------
 *['string', 'null']*
@@ -447,37 +448,37 @@
 
 ``ism_enabled``
 ~~~~~~~~~~~~~~~
-*['boolean', 'null']*
+*boolean*
 
 **Specifies whether ISM is enabled or not** 
 
 ``ism_history_enabled``
 ~~~~~~~~~~~~~~~~~~~~~~~
-*['boolean', 'null']*
+*boolean*
 
 **Specifies whether audit history is enabled or not. The logs from ISM are automatically indexed to a logs document.** 
 
 ``ism_history_max_age``
 ~~~~~~~~~~~~~~~~~~~~~~~
-*['integer', 'null']*
+*integer*
 
 **The maximum age before rolling over the audit history index in hours** 
 
 ``ism_history_max_docs``
 ~~~~~~~~~~~~~~~~~~~~~~~~
-*['integer', 'null']*
+*integer*
 
 **The maximum number of documents before rolling over the audit history index.** 
 
 ``ism_history_rollover_check_period``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-*['integer', 'null']*
+*integer*
 
 **The time between rollover checks for the audit history index in hours.** 
 
 ``ism_history_rollover_retention_period``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-*['integer', 'null']*
+*integer*
 
 **How long audit history indices are kept in days.** 
 
