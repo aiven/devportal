@@ -280,6 +280,12 @@
 
 **Require users to belong to one of given organizations** 
 
+``skip_org_role_sync``
+~~~~~~~~~~~~~~~~~~~~~~
+*boolean*
+
+**Automatically sync user roles.** 
+
 
 
 ``auth_gitlab``
