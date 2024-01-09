@@ -419,3 +419,41 @@ UpCloud
   * - North America
     - ``upcloud-us-sjo``
     - United States, California: San Jose
+
+Oracle Cloud Infrastructure
+-----------------------------------------------------
+
+.. important::
+
+   Oracle Cloud Infrastructure (OCI) is supported on the Aiven platfrom as a :doc:`limited availability feature </docs/platform/concepts/beta_services>`. If you're interested in trying it out, contact the sales team at sales@Aiven.io.
+
+.. list-table::
+  :header-rows: 1
+
+  * - Region
+    - Cloud
+    - Description
+  * - Europe
+    - ``eu-frankfurt-1``
+    - Germany, Germany Central: Frankfurt
+  * - Asia-Pacific
+    - ``ap-mumbai-1``
+    - India, India West: Mumbai
+  * - Middle East
+    - ``me-dubai-1``
+    - UAE, UAE East: Dubai
+  * - South America
+    - ``sa-saopaulo-1``
+    - Brazil, Brazil East: São Paulo
+  * - Europe
+    - ``uk-london-1``
+    - United Kingdom, UK South: London
+  * - North America
+    - ``us-ashburn-1``
+    - US East, Virginia: Ashburn
+  * - Asia-Pacific
+    - ``ap-sydney-1``
+    - Australia, Australia East: Sydney
+  * - North America
+    - ``us-phoenix-1``
+    - US West, Arizona: Phoenix
