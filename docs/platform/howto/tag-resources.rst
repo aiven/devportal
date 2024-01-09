@@ -36,7 +36,7 @@ To add tags to a project, take the following steps:
 
 #. Log in to `Aiven Console <https://console.aiven.io/>`_ and select your organization and your project from the top navigation bar.
 #. On the project's page, select **Settings** from the sidebar.
-#. On the **Settings** page, add a key and its value in the **Billing Reference Tags** or **Project Tags** fields, and select the **+** icon to add more tags in the same manner.
+#. On the **Settings** page, click **Add tag** and enter a key and its value in the **Billing Reference Tags** or **Project Tags** fields, and select the **+** icon to add more tags in the same manner.
 #. Select **Save changes** to save all of your tags.
 
 .. topic:: Result
@@ -45,18 +45,17 @@ To add tags to a project, take the following steps:
 
 Add tags to services
 """"""""""""""""""""
+To add tags to a service, follow these steps:
 
-To add tags to a service, take the following steps:
+1. Log in to the `Aiven Console <https://console.aiven.io/>`_ and select your organization and your project from the top navigation bar.
+2. On the **Services** page of your project, select the service you wish to tag.
+3. On the service page, select **Service settings** from the sidebar.
+4. In the **Service status** section, click **Actions (...)**, then click **Add service tags** from the dropdown menu.
+5. In the **Tag this service** dialog, enter a key and its value in the **Service Tags** fields. 
+6. Click **Add tag** to add additional tags.
+7. Click **Save changes** to apply the tags.
 
-#. Log in to `Aiven Console <https://console.aiven.io/>`_ and select your organization and your project from the top navigation bar.
-#. On the **Services** page of your project, select the service that you want to tag. 
-#. On the **Overview** page of the service, go to **Service Tags** > **Tag service**.
-#. In the **Tag this service** window, add a key and its value in the **Service Tags** fields, and select the **+** icon to add more tags in the same manner.
-#. Select **Save changes** to save all of your tags.
-
-.. topic:: Result
-
-   You can see the tags listed in the table on the **Projects** page.
+You can see the tags listed in the table on the **Projects** page.
 
 
 Add and modify resource tags with the Aiven client

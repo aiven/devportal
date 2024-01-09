@@ -21,19 +21,17 @@ Add storage to a running service
 
 You can add storage to your running service in `Aiven Console <https://console.aiven.io/>`_ without interrupting the service. 
 
-1. Log in to `Aiven Console <https://console.aiven.io/>`_, and go to your project.
-
-2. On the **Services** page, select your service.
-
-3. On the **Overview** page of your service, go to the **Service plan** section, and select **Add storage**. 
-
-4. In the **Upgrade service storage** window, use the slider to add disk storage.
+1. Log into the `Aiven Console <https://console.aiven.io/>`_, select your project and then select the service for which you want to add storage.
+2. On the service page, click **Service settings** from the sidebar. 
+3. In the **Service plan** section, click **Actions (...)**. 
+4. From the dropdown menu, select **Manage additional storage**. 
+5. In the **Upgrade service storage** dialog, click **Change plan** choose the new service plan and tier or use the slider to add disk storage.
 
    .. note::
       
       The price shown for the additional storage includes backup costs.
 
-5. Select **Save changes**.
+9. Click **Save changes**.
 
 .. topic:: Result
    
@@ -57,18 +55,16 @@ Before you start
 Remove added storage
 """"""""""""""""""""
 
-#. Log in to `Aiven Console <https://console.aiven.io/>`_, and go to your project.
-
-#. On the **Services** page, select your service.
-
-#. On the **Overview** page of your service, go to the **Service plan** section, and select **Edit** next to **Additional disk storage**. 
-
-#. In the **Upgrade service storage** window, use the slider to remove disk storage. 
+1. Log into the `Aiven Console <https://console.aiven.io/>`_, select your project and then select the service for which you want to add storage.
+2. On the service page, click **Service settings** from the sidebar. 
+3. In the **Service plan** section, click **Actions (...)**. 
+4. From the dropdown menu, select **Manage additional storage**. 
+5. In the **Upgrade service storage** dialog, use the slider to remove disk storage. 
 
    .. note::
       You can only remove storage that you previously added using this feature. If you want to downgrade further, you can :doc:`change your service plan </docs/platform/howto/scale-services>`.
 
-#. Select **Save changes**. 
+6. Click **Save changes**. 
 
 .. topic:: Result
 
