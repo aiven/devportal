@@ -13,7 +13,7 @@ To ensure uninterrupted access to your service during the migration phase, condu
 Migration process
 --------------------
 
-Detail the step-by-step process for migrating Aiven services into a VPC. Break down each step and provide clear instructions:
+Follow these steps to migrate Aiven services to a VPC: 
 
 #. **VPC creation and peering**: :doc:`Create a VPC </docs/platform/howto/manage-vpc-peering>` and establish peering.
 #. **Network peering validation**: Test the network peering with a non-critical service.
