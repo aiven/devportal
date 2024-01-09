@@ -4,15 +4,15 @@ Scale your service
 When creating a new Aiven service, you are not tied to a plan. Your services can be adjusted to better match your needs. Services can be moved to a higher or lower plan, and to a different tier—Startup, Business or Premium.
 
 
-1. Log in to `Aiven Console <https://console.aiven.io/>`_.
-2. Go to your **Services**, and select the service you want to scale.
-3. On the **Overview** page of your service, scroll down to **Service plan** > **Change plan**. 
-4. In the **Change service plan** window, select the new service plan and new tier, if required.
-5. Select **Change**.
+1. Log into the `Aiven Console <https://console.aiven.io/>`_, select your project and then select the service you want to scale.
+2. On the service page, click **Service settings** from the sidebar. 
+3. In the **Service plan** section, click **Actions (...)**. 
+4. From the dropdown menu, click **Change plan**.
+5. In the **Change service plan** dialog, choose the new service plan and tier, if required.
+6. Click **Change**.
 
-.. topic:: Result
+Your service is in the *Rebuilding* state. Once the rebuilding is over, your new service plan will be active on your service. The service is still accessible through the plan-change process. 
 
-   Your service is in the *Rebuilding* state. Once the rebuilding is over, your new service plan will be active on your service. The service is still accessible through the plan-change process. 
 
 .. note::
 
