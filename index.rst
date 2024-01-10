@@ -253,7 +253,7 @@ Automation
         
         A public API you can use for programmatic integrations.
 
-        .. button-link:: docs/tools/api
+        .. button-link:: https://docs.aiven.io/docs/tools/api
             :color: primary
             :outline:
 
