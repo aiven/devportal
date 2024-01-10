@@ -11,7 +11,7 @@ This is where the bring your own cloud (BYOC) feature comes in enabling you to u
 Why use BYOC
 ------------
 
-Consider using BYOC and custom clouds if you have specific business needs or project requirements. There a few major reasons to utilize BYOC:
+Consider using BYOC and custom clouds if you have specific business needs or project requirements. There are a few major reasons to use BYOC:
 
 * **Compliance**: Aiven offers managed environments for several standard compliance regulations, such as HIPAA, PCI DSS, and GDPR. However, if you have strict regulatory requirements or special compliance requirements, BYOC may be the best option for you.
 * **Network auditing**: If you require the visibility of all traffic within any VPC you operate in or need frequent auditing capabilities, BYOC is potentially a good fit. BYOC gives you the ability to audit network metadata but not the actual contents.
