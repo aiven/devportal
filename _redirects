@@ -92,6 +92,16 @@
 /docs/tools/cli/account/account-authentication-method                           /docs/tools/cli/account
 /docs/tools/cli/card                                                            /docs/tools/cli/account
 /docs/tools/api/examples                                                        /docs/tools/api
+/docs/products/postgresql/getting-started                                       /docs/products/postgresql/get-started
+/docs/products/m3db/getting-started                                             /docs/products/m3db/get-started
+/docs/products/flink/getting-started                                            /docs/products/flink/get-started
+/docs/products/kafka/getting-started                                            /docs/products/kafka/get-started
+/docs/products/clickhouse/getting-started                                       /docs/products/clickhouse/get-started
+/docs/products/opensearch/getting-started                                       /docs/products/opensearch/get-started
+/docs/products/kafka/karapace/getting-started                                   /docs/products/kafka/karapace/get-started
+/docs/products/kafka/kafka-connect/getting-started                              /docs/products/kafka/kafka-connect/get-started
+/docs/products/opensearch/dashboards/getting-started                            /docs/products/opensearch/dashboards/get-started
+/docs/products/kafka/kafka-mirrormaker/getting-started                          /docs/products/kafka/kafka-mirrormaker/get-started
 
 # Redirect from .index.html to specific page names for landing
 

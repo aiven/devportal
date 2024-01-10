@@ -313,7 +313,7 @@ entries:
   - file: docs/products/kafka
     title: Apache Kafka
     entries:
-      - file: docs/products/kafka/getting-started
+      - file: docs/products/kafka/get-started
         title: Get started
       - file: docs/products/kafka/howto/fake-sample-data
         title: Sample data generator
@@ -448,7 +448,7 @@ entries:
       - file: docs/products/kafka/kafka-connect
         title: Apache Kafka Connect
         entries:
-        - file: docs/products/kafka/kafka-connect/getting-started
+        - file: docs/products/kafka/kafka-connect/get-started
         - file: docs/products/kafka/kafka-connect/concepts
           entries:
           - file: docs/products/kafka/kafka-connect/concepts/list-of-connector-plugins
@@ -559,7 +559,7 @@ entries:
       - file: docs/products/kafka/kafka-mirrormaker
         title: Apache Kafka MirrorMaker2
         entries:
-        - file: docs/products/kafka/kafka-mirrormaker/getting-started
+        - file: docs/products/kafka/kafka-mirrormaker/get-started
         - file: docs/products/kafka/kafka-mirrormaker/concepts
           entries:
           - file: docs/products/kafka/kafka-mirrormaker/concepts/disaster-recovery-migration
@@ -586,7 +586,7 @@ entries:
       - file: docs/products/kafka/karapace
         title: Karapace
         entries:
-        - file: docs/products/kafka/karapace/getting-started
+        - file: docs/products/kafka/karapace/get-started
         - file: docs/products/kafka/karapace/concepts
           title: Concepts
           entries:
@@ -620,7 +620,7 @@ entries:
             title: Plans and pricing
           - file: docs/products/flink/reference/flink-limitations
             title: Limitations
-      - file: docs/products/flink/getting-started
+      - file: docs/products/flink/get-started
         title: Quickstart
       - file: docs/products/flink/concepts
         title: Concepts
@@ -766,7 +766,7 @@ entries:
             title: Plans and pricing
           - file: docs/products/clickhouse/reference/limitations
             title: Limits and limitations
-      - file: docs/products/clickhouse/getting-started
+      - file: docs/products/clickhouse/get-started
         title: Quickstart
       - file: docs/products/clickhouse/concepts
         title: Concepts
@@ -984,7 +984,7 @@ entries:
   - file: docs/products/m3db
     title: M3DB
     entries:
-      - file: docs/products/m3db/getting-started
+      - file: docs/products/m3db/get-started
         title: Get started
       - file: docs/products/m3db/concepts
         title: Concepts
@@ -1082,7 +1082,7 @@ entries:
   - file: docs/products/opensearch
     title: OpenSearch
     entries:
-      - file: docs/products/opensearch/getting-started
+      - file: docs/products/opensearch/get-started
         title: Quickstart
         entries:
         - file: docs/products/opensearch/howto/sample-dataset
@@ -1181,7 +1181,7 @@ entries:
       - file: docs/products/opensearch/dashboards
         title: OpenSearch Dashboards
         entries:
-          - file: docs/products/opensearch/dashboards/getting-started
+          - file: docs/products/opensearch/dashboards/get-started
           - file: docs/products/opensearch/dashboards/howto
             title: HowTo
             entries:
@@ -1208,7 +1208,7 @@ entries:
     entries:
       - file: docs/products/postgresql/overview
         title: Overview
-      - file: docs/products/postgresql/getting-started
+      - file: docs/products/postgresql/get-started
         title: Quickstart
       - file: docs/products/postgresql/concepts
         title: Concepts

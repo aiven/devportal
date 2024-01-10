@@ -23,7 +23,7 @@ Read more about `the M3 components <https://m3db.io/docs/overview/components/>`_
 Get started with Aiven for M3
 -----------------------------
 
-Take your first steps with Aiven for M3 by following our :doc:`/docs/products/m3db/getting-started` article, or browse through our full list of articles:
+Take your first steps with Aiven for M3 by following our :doc:`/docs/products/m3db/get-started` article, or browse through our full list of articles:
 
 
 .. grid:: 1 2 2 2
