@@ -45,9 +45,9 @@ Prerequisites
 * :doc:`Dynamic disk sizing (DDS) </docs/platform/concepts/dynamic-disk-sizing>` supported for the service plan and the cloud hosting the service
 * Role of the operator for your Aiven organization, project, and service
 * Depending on what interface you'd like to use for interacting with disk autoscaler:
-    * Access to `Aiven Console <https://console.aiven.io/>`_
-    * `Aiven API <https://api.aiven.io/doc/>`_
-    * :doc:`Aiven CLI client </docs/tools/cli>`
+  * Access to `Aiven Console <https://console.aiven.io/>`_
+  * `Aiven API <https://api.aiven.io/doc/>`_
+  * :doc:`Aiven CLI client </docs/tools/cli>`
 
 Enable disk autoscaler
 ----------------------
