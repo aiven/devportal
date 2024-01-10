@@ -1,14 +1,11 @@
 Rename your AWS custom cloud in Aiven
 =====================================
 
-
-A :doc:`custom cloud </docs/platform/concepts/byoc>` is a secure environment within your cloud provider account to run Aiven-managed data services. Using a custom cloud in Aiven may be the optimal solution if you have specific business needs or project requirements, such as a strict regulatory compliance. Creating and using custom clouds in your Aiven organization requires enabling :doc:`the bring your own cloud (BYOC) feature </docs/platform/concepts/byoc>`. Check the availability of the feature in :ref:`Who is eligible for BYOC <eligible-for-byoc>`. To activate BYOC in your Aiven organization, follow the steps in :doc:`Enable bring your own cloud (BYOC) with Aiven </docs/platform/howto/byoc/enable-byoc>`.
+Change the name of your :doc:`custom cloud </docs/platform/concepts/byoc>`.
 
 .. important::
 
     Custom cloud configuration in Aiven is an :doc:`early availability feature </docs/platform/concepts/beta_services>`. You cover the costs associated with building and maintaining your custom cloud: payments for your integrated AWS infrastructure and Aiven services within the custom cloud.
-
-This article details how to change the name of your custom cloud in `Aiven Console <https://console.aiven.io/>`_.
 
 About renaming custom clouds
 ----------------------------
@@ -48,8 +45,8 @@ You can preview the updated name of your cloud by taking the following steps:
 4. From the left sidebar, select **Bring your own cloud**.
 5. In the **Bring your own cloud** view, see the list of the available clouds and identify the cloud with the name you updated.
 
-Related reading
----------------
+Related pages
+-------------
 
 * :doc:`Bring your own cloud </docs/platform/concepts/byoc>`
 * :doc:`Create a custom cloud in Aiven </docs/platform/howto/byoc/create-custom-cloud>`

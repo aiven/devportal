@@ -1,13 +1,11 @@
 Enable your AWS custom cloud in Aiven organizations, units, or projects
 =======================================================================
 
-A :doc:`custom cloud </docs/platform/concepts/byoc>` is a secure environment within your cloud provider account to run Aiven-managed data services. Using a custom cloud in Aiven may be the optimal solution if you have specific business needs or project requirements, such as a strict regulatory compliance. Creating and using custom clouds in your Aiven organization requires enabling :doc:`the bring your own cloud (BYOC) feature </docs/platform/concepts/byoc>`. Check the availability of the feature in :ref:`Who is eligible for BYOC <eligible-for-byoc>`. To activate BYOC in your Aiven organization, follow the steps in :doc:`Enable bring your own cloud (BYOC) with Aiven </docs/platform/howto/byoc/enable-byoc>`.
+To be able to use a :doc:`custom cloud </docs/platform/concepts/byoc>` in your Aiven organizations, units, or projects, you need to configure its availability.
 
 .. important::
 
     Custom cloud configuration in Aiven is an :doc:`early availability feature </docs/platform/concepts/beta_services>`. You cover the costs associated with building and maintaining your custom cloud: payments for your integrated AWS infrastructure and Aiven services within the custom cloud.
-
-This article details how to allow your projects in Aiven to use your custom cloud, for example, to create services.
 
 About making custom clouds available from your projects
 -------------------------------------------------------
@@ -66,8 +64,8 @@ You can verify if the cloud availability changes you made are live by taking the
 5. In the **Bring your own cloud** view, select one of the clouds available on the list.
 6. In the selected cloud's page, navigate to the **Available projects** tab and check the available projects and organizational units list for the updates you made.
 
-Related reading
----------------
+Related pages
+-------------
 
 * :doc:`Bring your own cloud </docs/platform/concepts/byoc>`
 * :doc:`Enable the bring your own cloud (BYOC) feature </docs/platform/howto/byoc/enable-byoc>`
