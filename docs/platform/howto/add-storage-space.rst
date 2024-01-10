@@ -4,6 +4,7 @@ Add or remove storage
 With :doc:`dynamic disk sizing </docs/platform/concepts/dynamic-disk-sizing>`, you can add or remove disk storage (by factor of 10 GiB) both when you create a service and later for a running service.
 
 .. note::
+  
    - You cannot add or remove storage when service nodes are in the rebalancing state, for example, during a maintenance update or a service upgrade.
    - This feature is not available for all service plans.
 
