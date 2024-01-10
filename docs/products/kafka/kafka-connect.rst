@@ -127,7 +127,7 @@ Sink connectors
 Get started with Aiven for Apache Kafka® Connect
 ------------------------------------------------
 
-Take your first steps with Aiven for Apache Kafka Connect by following our :doc:`/docs/products/kafka/kafka-connect/getting-started` article, or browse through our full list of articles:
+Take your first steps with Aiven for Apache Kafka Connect by following our :doc:`/docs/products/kafka/kafka-connect/get-started` article, or browse through our full list of articles:
 
 
 .. grid:: 1 2 2 2

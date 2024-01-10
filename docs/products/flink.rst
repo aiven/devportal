@@ -5,7 +5,7 @@ Aiven for Apache Flink® is a fully managed service that leverages the power of 
 
 .. grid:: 1 2 2 2
 
-    .. grid-item-card:: :doc:`Quickstart </docs/products/flink/getting-started>`
+    .. grid-item-card:: :doc:`Quickstart </docs/products/flink/get-started>`
         :shadow: md
         :margin: 2 2 0 0
 

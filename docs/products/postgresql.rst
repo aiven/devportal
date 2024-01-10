@@ -7,7 +7,7 @@ Aiven for PostgreSQL® is is a fully-managed and hosted relational database serv
 
 .. grid:: 1 2 2 2
 
-    .. grid-item-card:: :doc:`Quickstart </docs/products/postgresql/getting-started>`
+    .. grid-item-card:: :doc:`Quickstart </docs/products/postgresql/get-started>`
         :shadow: md
         :margin: 2 2 0 0
 

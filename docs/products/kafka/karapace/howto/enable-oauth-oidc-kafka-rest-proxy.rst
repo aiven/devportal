@@ -36,7 +36,7 @@ To establish OAuth2/OIDC authentication for the Karapace REST proxy, complete th
 
 Prerequisites
 ```````````````
-* :doc:`Aiven for Apache Kafka® </docs/products/kafka/getting-started>` service running with :doc:`OAuth2/OIDC enabled </docs/products/kafka/howto/enable-oidc>`.
+* :doc:`Aiven for Apache Kafka® </docs/products/kafka/get-started>` service running with :doc:`OAuth2/OIDC enabled </docs/products/kafka/howto/enable-oidc>`.
 * :doc:`Karapace schema registry and REST APIs enabled </docs/products/kafka/karapace/howto/enable-karapace>`.
 * Ensure access to an OIDC-compliant provider, such as Auth0, Okta, Google Identity Platform, or Azure.
 
