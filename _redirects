@@ -91,6 +91,7 @@
 /docs/community/challenge/the-rolling-challenge                                 https://aiven.io/community/
 /docs/tools/cli/account/account-authentication-method                           /docs/tools/cli/account
 /docs/tools/cli/card                                                            /docs/tools/cli/account
+/docs/tools/api/examples                                                        /docs/tools/api
 
 # Redirect from .index.html to specific page names for landing
 

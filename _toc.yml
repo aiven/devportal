@@ -266,8 +266,6 @@ entries:
       # -------- API --------
       - file: docs/tools/api
         title: Aiven API
-        entries:
-          - file: docs/tools/api/examples
 
       # -------- TERRAFORM --------
       - file: docs/tools/terraform
