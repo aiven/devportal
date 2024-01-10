@@ -1,13 +1,11 @@
 Delete your AWS custom cloud in Aiven
 =====================================
 
-A :doc:`custom cloud </docs/platform/concepts/byoc>` is a secure environment within your cloud provider account to run Aiven-managed data services. Using a custom cloud in Aiven may be the optimal solution if you have specific business needs or project requirements, such as a strict regulatory compliance. Creating and using custom clouds in your Aiven organization requires enabling :doc:`the bring your own cloud (BYOC) feature </docs/platform/concepts/byoc>`. Check the availability of the feature in :ref:`Who is eligible for BYOC <eligible-for-byoc>`. To activate BYOC in your Aiven organization, follow the steps in :doc:`Enable bring your own cloud (BYOC) with Aiven </docs/platform/howto/byoc/enable-byoc>`.
+Delete a :doc:`custom cloud </docs/platform/concepts/byoc>` so that it's no longer available in your Aiven organizations, units, or projects.
 
 .. important::
 
     Custom cloud configuration in Aiven is an :doc:`early availability feature </docs/platform/concepts/beta_services>`. You cover the costs associated with building and maintaining your custom cloud: payments for your integrated AWS infrastructure and Aiven services within the custom cloud.
-
-This article details how to delete your custom cloud in `Aiven Console <https://console.aiven.io/>`_.
 
 About deleting custom clouds
 ----------------------------
@@ -62,8 +60,8 @@ You can verify if you deleted your cloud successfully by taking the following st
 4. From the left sidebar, select **Bring your own cloud**.
 5. In the **Bring your own cloud** view, see the list of the available clouds to make sure the cloud you intended to delete is actually gone.
 
-Related reading
----------------
+Related pages
+-------------
 
 * :doc:`Bring your own cloud </docs/platform/concepts/byoc>`
 * :doc:`Enable bring your own cloud (BYOC) </docs/platform/howto/byoc/enable-byoc>`
