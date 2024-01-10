@@ -46,24 +46,20 @@ Enable BYOC
 5. In the **Bring your own cloud** view, select **Contact us**.
 6. In the **Contact us** window, enter your email address and country. Select the cloud provider you want to use, add any other information you think might be relevant, and select **Confirm**.
 
-.. topic:: Result
-
    The scheduling assistant shows up so that you can schedule a short call with the Aiven sales team to proceed on your BYOC enablement request.
 
 7. Using the scheduling assistant, select a date and time when you want to talk to our sales team to share your requirements and make sure BYOC suits your needs. Confirm the selected time, make sure you add the call to your calendar, and close the the scheduling assistant.
 8. Join the scheduled call with our sales team to follow up with them on enabling BYOC in your environment.
 
-.. topic:: Result
-   
    If the call reveals BYOC addresses your needs and your environment is eligible for BYOC, the feature will be enabled for your Aiven organization.
 
 Next steps
 ----------
 
-With BYOC activated in your Aiven organization, it's possible for you to have custom clouds created:
+With BYOC activated in your Aiven organization, you can use custom clouds:
 
-* Either :ref:`by yourself using Aiven Console if the cloud provider you selected was AWS <create-cloud-aws>`
-* Or :ref:`by the Aiven team if the cloud provider you selected was GCP or Azure <create-cloud-non-aws>`.
+* :ref:`Create them yourself using Aiven Console if the cloud provider you selected was AWS <create-cloud-aws>`
+* :ref:`Request the Aiven team to create one if the cloud provider you selected was GCP or Azure <create-cloud-non-aws>`.
 
 Related reading
 ---------------

@@ -79,8 +79,7 @@ Next, create an application in your FusionAuth instance:
  
 #. On the **SAML** tab, and toggle on the **Enabled** switch.
 
-#. Paste the **Metadata URL** and **ACS URL** you copied from the Aiven Console to the **Issuer** and
-**Authorized redirect URLs** fields in your FusionAuth application, respectively.
+#. Paste the **Metadata URL** and **ACS URL** you copied from the Aiven Console to the **Issuer** and **Authorized redirect URLs** fields in your FusionAuth application, respectively.
 
    .. list-table::
      :header-rows: 1
