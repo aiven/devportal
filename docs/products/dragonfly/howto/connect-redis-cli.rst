@@ -19,7 +19,7 @@ Pre-requisites
 
 Ensure the following before proceeding:
 
-1. The ``redis-cli`` client installed. This can be installed as part of the Redis®* server installation or as a standalone client. Refer to the `Redis Installation Guide <https://redis.io/docs/get-started/tutorial/>`_ for more information.
+1. The ``redis-cli`` client installed. This can be installed as part of the Redis®* server installation or as a standalone client. Refer to the `Redis Installation Guide <https://redis.io/docs/getting-started/tutorial/>`_ for more information.
 
 Code
 -----
