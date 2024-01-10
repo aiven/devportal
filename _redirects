@@ -65,6 +65,7 @@
 /docs/platform/concepts/service-level-agreement                        /docs/platform/howto/project-support-center
 /docs/products/postgresql/reference/list-of-advanced-params            /docs/products/postgresql/reference/advanced-params
 /docs/products/kafka/reference/kstream-data-write-issue                https://aiven.io/changelog#06-12-2023
+/docs/tools/api/examples                                               /docs/tools/api
 
 
 # Moved to https://aiven.io/developer
@@ -91,7 +92,7 @@
 /docs/community/challenge/the-rolling-challenge                                 https://aiven.io/community/
 /docs/tools/cli/account/account-authentication-method                           /docs/tools/cli/account
 /docs/tools/cli/card                                                            /docs/tools/cli/account
-/docs/tools/api/examples                                                        /docs/tools/api
+
 
 # Redirect from .index.html to specific page names for landing
 
