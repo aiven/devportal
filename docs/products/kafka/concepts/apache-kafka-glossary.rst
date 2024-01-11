@@ -1,7 +1,7 @@
 Apache Kafka® glossary
 ======================
 
-An in-depth guide to understanding the terminology of Apache Kafka®
+A comprehensive glossary of essential Apache Kafka® terms and their meanings.
 
 .. _Broker:
 
