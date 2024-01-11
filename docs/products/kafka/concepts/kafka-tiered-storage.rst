@@ -43,7 +43,7 @@ Pricing
 Tiered storage costs are determined by the amount of remote storage used, measured in GB/hour. The highest usage level within each hour is the basis for calculating charges.
 
 
-Related reading
+Related pages
 ----------------
 
 * :doc:`How tiered storage works in Aiven for Apache Kafka® </docs/products/kafka/concepts/tiered-storage-how-it-works>`

@@ -76,7 +76,7 @@ What's next
 * :doc:`Enable tiered storage in Aiven for ClickHouse </docs/products/clickhouse/howto/enable-tiered-storage>`
 * :doc:`Configure data retention thresholds for tiered storage </docs/products/clickhouse/howto/configure-tiered-storage>`
 
-Related reading
+Related pages
 ---------------
 
 * :doc:`Check data volume distribution between different disks </docs/products/clickhouse/howto/check-data-tiered-storage>`

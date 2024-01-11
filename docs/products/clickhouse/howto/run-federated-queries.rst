@@ -194,7 +194,7 @@ Once the table is defined, SELECT and INSERT statements execute GET and POST req
    INSERT INTO trips_export_endpoint_table
    VALUES (8765, 10, now() - INTERVAL 15 MINUTE, now(), 50, 20)
 
-Related reading
+Related pages
 ---------------
 
 * :doc:`About querying external data in Aiven for ClickHouse® </docs/products/clickhouse/concepts/federated-queries>`

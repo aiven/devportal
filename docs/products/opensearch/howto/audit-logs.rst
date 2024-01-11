@@ -88,6 +88,6 @@ To access and visualize audit logs in OpenSearch, follow the steps below:
 3. **Save and modify visualization**: Once you've created a visualization, save it for future reference. You can always return to modify and update it as your requirements evolve
 
 
-Related reading
+Related pages
 ----------------
 * `OpenSearch audit logs documentation <https://opensearch.org/docs/latest/security/audit-logs/index/>`_

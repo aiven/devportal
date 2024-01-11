@@ -17,7 +17,7 @@ Let's say you have a topic with a **total retention threshold** of **1000 GB** a
 * If the total size of the data exceeds 1000 GB, Apache Kafka will begin deleting the oldest data from remote storage.
 
 
-Related reading
+Related pages
 ----------------
 
 * :doc:`Tiered storage in Aiven for Apache Kafka® overview </docs/products/kafka/concepts/kafka-tiered-storage>`

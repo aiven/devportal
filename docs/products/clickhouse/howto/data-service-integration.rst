@@ -98,7 +98,7 @@ Stop data service integrations
 
    Your integration has been removed along with all the corresponding databases and configuration information.
 
-Related reading
+Related pages
 ---------------
 
 * :doc:`Manage Aiven for ClickHouse® integration databases </docs/products/clickhouse/howto/integration-databases>`

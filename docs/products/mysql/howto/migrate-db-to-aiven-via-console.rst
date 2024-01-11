@@ -214,7 +214,7 @@ If you :ref:`stop a migration process <stop-migration-mysql>`, you cannot restar
    
    If you start a new migration using the same connection details when your *target* database is not empty, the migration tool truncates your *target* database and an existing data set gets overwritten with the new data set.
 
-Related reading
+Related pages
 ---------------
 
 - :doc:`Migrate to Aiven for MySQL from an external MySQL </docs/products/mysql/howto/migrate-from-external-mysql>`

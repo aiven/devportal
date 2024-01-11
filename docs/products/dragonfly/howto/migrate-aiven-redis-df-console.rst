@@ -101,7 +101,7 @@ Upon successful migration:
    Your data is now synchronized to Aiven for Dragonfly, with new writes to the source database being continuously synced.
 
 
-Related reading
+Related pages
 ---------------
 
 * :doc:`Aiven for Redis®* documentation </docs/products/redis/get-started>`

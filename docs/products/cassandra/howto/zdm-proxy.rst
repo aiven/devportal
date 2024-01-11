@@ -246,7 +246,7 @@ You can expect to receive output similar to the following:
 
     ``50`` and ``48`` are there in the target table since ZDM Proxy has forwarded the write request to the target service. ``42``, ``44``, and ``46`` are not there since ZDM Proxy has not sent the read request to the target service.
 
-Related reading
+Related pages
 ---------------
 
 * `zdm-proxy GitHub <https://github.com/datastax/zdm-proxy>`_
