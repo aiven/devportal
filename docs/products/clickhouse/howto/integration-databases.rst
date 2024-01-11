@@ -112,7 +112,7 @@ Delete integration databases
 
    Your integration database has been removed from the **Databases and tables** list.
 
-Related reading
+Related pages
 ---------------
 
 * :doc:`Manage Aiven for ClickHouse® data service integrations </docs/products/clickhouse/howto/data-service-integration>`

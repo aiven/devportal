@@ -80,6 +80,6 @@ To manage tenants in the OpenSearch dashboard, you can follow these steps:
 * **Edit, delete, or duplicate tenants**: To manage existing tenants, select them from the list and use the **Actions** dropdown to edit, delete, or duplicate them according to your needs.
 
 
-Related articles
+Related pages
 ------------------
 * `OpenSearch Dashboards multi-tenancy <https://opensearch.org/docs/2.6/security/multi-tenancy/tenant-index/>`_

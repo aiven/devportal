@@ -170,7 +170,7 @@ You may want to prewarm the ``shared_buffers`` in anticipation of a specific wor
 
 If the ``shared buffers`` size is less than pre-loaded data, only the tailing end of the data is cached as the earlier data encounters a forced ejection.
 
-Read more
------------
+Related pages
+-------------
 
 For more information on shared buffers, see `Resource Consumption <https://www.postgresql.org/docs/current/runtime-config-resource.html>`_ in the PostgreSQL documentation.

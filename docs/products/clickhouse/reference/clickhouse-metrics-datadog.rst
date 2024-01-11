@@ -8,7 +8,7 @@ Get a metrics list for your service
 
 The list of Aiven for ClickHouse metrics available in Datadog corresponds to the list of metrics available for the open-source ClickHouse and can be checked in `Metrics <https://docs.datadoghq.com/integrations/clickhouse/?tab=host#metrics>`_.
 
-Related reading
+Related pages
 ---------------
 
 * Check how to use Datadog with Aiven services in :doc:`Datadog and Aiven </docs/integrations/datadog/>`.

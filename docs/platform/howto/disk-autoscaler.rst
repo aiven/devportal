@@ -290,7 +290,7 @@ You can disable disk autoscaler on your service with the :doc:`Aiven CLI client 
 
       avn service integration-endpoint-delete ENDPOINT_ID
 
-Related reading
+Related pages
 ---------------
 
 :doc:`Dynamic disk sizing (DDS) </docs/platform/concepts/dynamic-disk-sizing>`

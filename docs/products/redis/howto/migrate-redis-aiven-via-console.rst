@@ -101,7 +101,7 @@ When the wizard informs you about the completion of the migration, you can choos
 
     Your data has been successfully migrated to the designated Aiven for Redis database, and any subsequent additions to the connected databases are being continuously synchronized. 
 
-Related articles
+Related pages
 ----------------
 
 *  :doc:`/docs/products/redis/howto/migrate-aiven-redis` 

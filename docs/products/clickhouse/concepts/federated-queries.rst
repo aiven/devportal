@@ -46,7 +46,7 @@ Limitations
 * Federated queries in Aiven for ClickHouse only support S3-compatible object storage providers for the time being. More external data sources coming soon!
 * Virtual tables are only supported for URL sources, using the URL table engine. Stay tuned for us supporting the S3 table engine in the future!
 
-Related reading
+Related pages
 ---------------
 
 * :doc:`Read and pull data from S3 object storages and web resources over HTTP </docs/products/clickhouse/howto/run-federated-queries>`
