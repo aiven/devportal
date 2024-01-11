@@ -1,7 +1,7 @@
-Configure Aiven for Apache Kafka®-Prometheus via Privatelink
-============================================================
+Configure Prometheus for Aiven for Apache Kafka® using Privatelink
+====================================================================
 
-Ensure secure and efficient monitoring of your Aiven for Apache Kafka® multi-node service with Privatelink Prometheus integration. Privatelink establishes a secure connection between your network and Aiven to keep your Apache Kafka data private and secure.
+You can integrate Prometheus with your Aiven for Apache Kafka® service using Privatelink for secure monitoring. This setup uses a Privatelink load balancer, which allows for efficient service discovery of Apache Kafka nodes and enables you to connect to your Aiven for Apache Kafka service using a private endpoint in your network or VPCs.
 
 
 Prerequisites
@@ -17,10 +17,10 @@ Before you start, ensure you have the following:
 Configuration steps
 --------------------
 
-Step 1: Basic configuration
+Basic configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Begin by configuring Prometheus to scrape metrics from your Aiven for Apache Kafka service. This setup involves specifying various parameters for secure and accurate data retrieval. Folowing is an example configuration:
+Begin by configuring Prometheus to scrape metrics from your Aiven for Apache Kafka service. This setup involves specifying various parameters for secure data retrieval. Following is an example configuration:
 
 .. code-block:: yaml
 
@@ -48,20 +48,23 @@ Begin by configuring Prometheus to scrape metrics from your Aiven for Apache Kaf
 - ``tls_config``: Manages TLS settings. 
 
   .. note::
-    Setting ``insecure_skip_verify: true`` is crucial for Privatelink connections, as it permits Prometheus to disregard TLS certificate validation against host IP addresses, facilitating seamless connectivity.
+    Setting ``insecure_skip_verify: true`` is crucial, as it permits Prometheus to disregard TLS certificate validation against host IP addresses, facilitating seamless connectivity.
 
-- ``basic_auth``: Provides authentication credentials for Kafka service access.
-- ``http_sd_configs``: Configures HTTP service discovery. Includes:
-- ``url``: The URI for Prometheus Privatelink service access.
-- ``refresh_interval``: The frequency of target list refresh, e.g., ``120s``.
+- ``basic_auth``: Provides authentication credentials for Apache Kafka service access.
+- ``http_sd_configs``: Configures HTTP Service Discovery. Includes:
+
+  - ``url``: The URI for Prometheus Privatelink service access.
+  - ``refresh_interval``: The frequency of target list refresh, e.g., ``120s``.
   
 .. note::
-    The ``basic_auth`` and ``tls_config`` are specified twice - first for fetching the HTTP SD response and then for the metrics. This duplication is necessary because the same authentication and security settings are used to retrieve the service discovery information and scrape the metrics.
+    The ``basic_auth`` and ``tls_config`` are specified twice - first for scraping the HTTP SD response and then to retrieve service metrics. This duplication is necessary because the same authentication and security settings are used to retrieve the service discovery information and scrape the metrics.
 
-Step 2: (Optional) Metadata and relabeling 
+(Optional) Metadata and relabeling 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If your setup involves multiple Privatelink connections, this optional step allows for more precise target management. Use the ``__meta_privatelink_connection_id`` label to filter and distinguish metrics from different Privatelink connections. This approach is beneficial in scenarios requiring separate monitoring of distinct data streams.
+If your setup involves multiple Privatelink connections, you can leverage Prometheus's relabeling for better target management. This approach allows you to dynamically modify target label sets before scraping. 
+
+To manage metrics from different Privatelink connections, include the ``__meta_privatelink_connection_id`` label in your configuration. This setup helps categorize and filter relevant metrics for each connection.
 
 .. code-block:: yaml
 
@@ -69,6 +72,10 @@ If your setup involves multiple Privatelink connections, this optional step allo
       - source_labels: [__meta_privatelink_connection_id]
         regex: 1
         action: keep
+
+
+The ``regex: 1`` in the configuration is a placeholder. Make sure to replace ``1`` with the actual Privatelink connection ID that you wish to monitor.
+
 
 
 Related pages
