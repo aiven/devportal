@@ -319,6 +319,7 @@ entries:
         title: Sample data generator
       - file: docs/products/kafka/concepts
         entries:
+          - file: docs/products/kafka/concepts/apache-kafka-glossary
           - file: docs/products/kafka/concepts/upgrade-procedure
             title: Upgrade procedure
           - file: docs/products/kafka/concepts/horizontal-vertical-scaling
