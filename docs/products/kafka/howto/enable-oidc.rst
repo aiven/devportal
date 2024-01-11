@@ -10,7 +10,7 @@ Aiven for Apache Kafka integrates with a wide range of OpenID Connect identity p
 
 Before proceeding with the setup, ensure you have:
 
-* :doc:`Aiven for Apache Kafka® </docs/products/kafka/getting-started>` service running.
+* :doc:`Aiven for Apache Kafka® </docs/products/kafka/get-started>` service running.
 * **Access to an OIDC provider**: Options include Auth0, Okta, Google Identity Platform, Azure, or any other OIDC compliant provider.
 * Required configuration details from your OIDC provider:
   

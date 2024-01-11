@@ -13,7 +13,7 @@ To define a replication flow between a source Apache Kafka cluster and a target 
 
 .. Note::
 
-    If no Aiven for Apache Kafka MirrorMaker 2 are already defined, :doc:`you can create one in the Aiven console <../getting-started>`.
+    If no Aiven for Apache Kafka MirrorMaker 2 are already defined, :doc:`you can create one in the Aiven console <../get-started>`.
 
 2. In the service **Overview** screen, scroll to the **Service integrations** section and select **Manage integrations**.
 

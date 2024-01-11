@@ -9,7 +9,7 @@ Prerequisites
 -------------
 To connect Aiven for Apache Kafka® and Klaw, you need to have the following setup: 
 
-* A running Aiven for Apache Kafka® service. See :doc:`Getting started with Aiven for Apache Kafka </docs/products/kafka/getting-started>` for more information. 
+* A running Aiven for Apache Kafka® service. See :doc:`Getting started with Aiven for Apache Kafka </docs/products/kafka/get-started>` for more information. 
 * A running Klaw cluster. See `Run Klaw from the source <https://www.klaw-project.io/docs/quickstart>`_ for more information.
 * Configured :doc:`Java keystore and truststore containing the service SSL certificates </docs/products/kafka/howto/keystore-truststore>`. 
 
