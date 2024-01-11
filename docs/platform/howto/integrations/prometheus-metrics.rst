@@ -70,17 +70,17 @@ If you use a VPC in your project, follow these steps to access Prometheus:
 
 2. Select your project, and select the service you want to monitor using Prometheus.
 
-4. Click **Service settings** from the sidebar. 
+3. Click **Service settings** from the sidebar. 
 
-5. In the **Cloud and network** section, click on the actions (**...**) menu.
+4. In the **Cloud and network** section, click on the actions (**...**) menu.
 
-6. Choose **More network configurations**.
+5. Choose **More network configurations**.
 
-7. In the **Network configuration** window, select **Add configuration options**.
+6. In the **Network configuration** window, select **Add configuration options**.
 
-8. Search for the ``public_access.prometheus`` property and enable it.
+7. Search for the ``public_access.prometheus`` property and enable it.
 
-10. Click **Save configuration**.
+8. Click **Save configuration**.
 
 
 
