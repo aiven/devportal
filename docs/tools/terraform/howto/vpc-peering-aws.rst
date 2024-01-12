@@ -12,7 +12,7 @@ Prerequisites:
 
 * Create an :doc:`Aiven authentication token </docs/platform/howto/create_authentication_token>`.
 
-* `Install the AWS CLI <https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html>`_.
+* `Install the AWS CLI <https://docs.aws.amazon.com/cli/latest/userguide/get-started-install.html>`_.
 
 * `Configure the AWS CLI <https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html>`_.
 

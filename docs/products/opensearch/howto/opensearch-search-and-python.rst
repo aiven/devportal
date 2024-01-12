@@ -522,8 +522,8 @@ As you can see, this search returns results 🍍:
 
 It is your turn, try out more combinations to better understand the fuzzy query.
 
-Read more
-'''''''''
+Related pages
+'''''''''''''
 
 Want to try out OpenSearch with other clients? You can learn how to write search queries with NodeJS client, see :doc:`our tutorial <opensearch-and-nodejs>`. We created an OpenSearch cluster, connected to it, and tried out different types of search queries. Now, you can explore more resources to help you to learn other features of OpenSearch and its Python client.
 

@@ -8,7 +8,7 @@ Aiven for OpenSearch® is a fully managed distributed search and analytics suite
 
 .. grid:: 1 2 2 2
 
-    .. grid-item-card:: :doc:`Quickstart </docs/products/opensearch/getting-started>`
+    .. grid-item-card:: :doc:`Quickstart </docs/products/opensearch/get-started>`
         :shadow: md
         :margin: 2 2 0 0
 

@@ -43,7 +43,7 @@ There are a number of drivers (libraries) that use one of :ref:`the fundamental 
 
    You can connect to Aiven for ClickHouse with any driver that uses TLS and one of the supported protocols.
 
-Related reading
+Related pages
 ---------------
 
 * :doc:`How to connect to Aiven for ClickHouse using different libraries </docs/products/clickhouse/howto/list-connect-to-service>`

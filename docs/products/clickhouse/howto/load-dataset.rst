@@ -29,7 +29,7 @@ Once done, you should have two files available: ``hits_v1.tsv`` and ``visits_v1.
 Set up the service and database
 -------------------------------
 
-If you don't yet have an Aiven for ClickHouse service, follow the steps in our :doc:`getting started guide </docs/products/clickhouse/getting-started>` to create one.
+If you don't yet have an Aiven for ClickHouse service, follow the steps in our :doc:`getting started guide </docs/products/clickhouse/get-started>` to create one.
 
 When you create a service, a default database was already added. However, you can create separate databases specific to your use case. We will create a database with the name ``datasets``, keeping it the same as in the ClickHouse documentation.
 

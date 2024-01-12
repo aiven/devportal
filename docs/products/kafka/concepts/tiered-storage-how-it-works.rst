@@ -50,12 +50,12 @@ Segments are encrypted with 256-bit AES encryption before being uploaded to the 
 
 
 
-Related reading
+Related pages
 ----------------
 
 * :doc:`Tiered storage in Aiven for Apache Kafka® overview </docs/products/kafka/concepts/kafka-tiered-storage>`
 * :doc:`Guarantees </docs/products/kafka/concepts/tiered-storage-guarantees>`
-* :doc:`Limitiations </docs/products/kafka/concepts/tiered-storage-limitations>`
+* :doc:`Limitations </docs/products/kafka/concepts/tiered-storage-limitations>`
 * :doc:`Enabled tiered storage for Aiven for Apache Kafka® service </docs/products/kafka/howto/enable-kafka-tiered-storage>`
 
 
