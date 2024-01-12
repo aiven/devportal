@@ -29,7 +29,7 @@ To disable Pro Platform for an organization, you should first disable any Pro fe
 
 #. Click **Pro Platform**.
 
-#. Open the actions mentu and select **Disable Pro Platform**.
+#. Open the actions menu and select **Disable Pro Platform**.
 
 #. To confirm, click **Disable Pro Platform**. 
 
