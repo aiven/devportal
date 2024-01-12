@@ -175,4 +175,4 @@ Learn more about integrations with Aiven:
 
 * :doc:`Aiven integrations </docs/platform/concepts/service-integration>`
 * :doc:`Datadog integration </docs/integrations/datadog>`
-* :doc:`Configure Prometheus for Aiven for Apache Kafka® via Privatelink </docs/products/kafka/howto/kafka-prometheus-privatelink>`
+* Configure Prometheus for Aiven for Apache Kafka® via Privatelink
