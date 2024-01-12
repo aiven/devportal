@@ -39,6 +39,6 @@ Use cases
 
 * **Scaling and performance needs:** Perfectly suited for situations where the need for greater scalability and higher throughput goes beyond what Redis OSS can handle.
 
-Related reading
+Related pages
 ----------------
 * For detailed information about Dragonfly, refer to `Dragonfly documentation <https://www.dragonflydb.io/docs>`_.

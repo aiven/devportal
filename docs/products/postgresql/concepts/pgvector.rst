@@ -58,7 +58,7 @@ What's next
 
 :doc:`Enable and use pgvector on Aiven for PostgreSQL® </docs/products/postgresql/howto/use-pgvector>`
 
-Related reading
+Related pages
 ---------------
 
 `pgvector README on GitHub <https://github.com/pgvector/pgvector/blob/master/README.md>`_

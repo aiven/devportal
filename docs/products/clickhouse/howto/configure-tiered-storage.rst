@@ -83,7 +83,7 @@ What's next
 
 * :doc:`Check data volume distribution between different disks </docs/products/clickhouse/howto/check-data-tiered-storage>`
 
-Related reading
+Related pages
 ---------------
 
 * :doc:`About tiered storage in Aiven for ClickHouse </docs/products/clickhouse/concepts/clickhouse-tiered-storage>`

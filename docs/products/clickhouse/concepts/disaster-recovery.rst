@@ -73,7 +73,7 @@ Aiven for ClickHouse has a few restrictions on the disaster recovery capability.
     
     For all the restrictions and limits for Aiven for ClickHouse, see :doc:`Aiven for ClickHouse limits and limitations </docs/products/clickhouse/reference/limitations>`.
 
-Related reading
+Related pages
 ---------------
 
 * :doc:`Disaster Recovery testing scenarios </docs/platform/concepts/disaster-recovery-test-scenarios>`

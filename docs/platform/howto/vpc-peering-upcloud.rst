@@ -160,7 +160,7 @@ To refresh the DHCP lease for a network interface, run the following commands:
 
       dhclient NETWORK_INTERFACE_NAME
 
-Related reading
+Related pages
 ---------------
 
 * :doc:`Manage Virtual Private Cloud (VPC) peering </docs/platform/howto/manage-vpc-peering>`

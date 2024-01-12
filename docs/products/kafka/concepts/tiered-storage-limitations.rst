@@ -12,7 +12,7 @@ Limitations
 * If you enable tiered storage on a service, you can't migrate the service to a different region or cloud, except for moving to a virtual cloud in the same region. For migration to a different region or cloud, contact `Aiven support <mailto:support@aiven.io>`_.
 
 
-Related reading
+Related pages
 ----------------
 
 * :doc:`Tiered storage in Aiven for Apache Kafka® overview </docs/products/kafka/concepts/kafka-tiered-storage>`

@@ -62,7 +62,7 @@ Aiven supports a subset of existing Azure cloud regions with availability zones.
 - ``azure-westeurope``
 - ``azure-westus2``
 
-Related reading
+Related pages
 ---------------
 
 - :doc:`PostgreSQL® backups </docs/products/postgresql/concepts/pg-backups>`

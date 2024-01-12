@@ -108,7 +108,7 @@ Once the migration is complete:
 
 
 
-Related reading
+Related pages
 ---------------
 * Migrating to Aiven for Dragonfly 
 * Aiven for Dragonfly documentation </docs/products/dragonfly/index>`

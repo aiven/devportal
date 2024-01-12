@@ -92,6 +92,6 @@ For detailed explanations on the OIDC parameters, refer to the :ref:`console-aut
 
 
 
-See also
---------
+Related pages
+-------------
 - Enable OAuth2/OIDC support for Apache Kafka® REST proxy 

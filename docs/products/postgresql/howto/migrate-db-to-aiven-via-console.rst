@@ -285,7 +285,7 @@ As soon as the wizard communicates the completion of the migration, check if the
 
    You have successfully migrated your PostgreSQL database into you Aiven for PostgreSQL service.
 
-Related reading
+Related pages
 ---------------
 
 - :doc:`About aiven-db-migrate </docs/products/postgresql/concepts/aiven-db-migrate>`

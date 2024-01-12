@@ -100,7 +100,7 @@ To stop the pgvector extension and remove it from a database, run the following 
 
    DROP EXTENSION vector;
 
-Related reading
+Related pages
 ---------------
 
 * :doc:`pgvector for AI-powered search in Aiven for PostgreSQL® </docs/products/postgresql/concepts/pgvector>`
