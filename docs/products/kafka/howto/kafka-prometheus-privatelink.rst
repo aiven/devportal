@@ -9,7 +9,7 @@ Prerequisites
 
 Before you start, ensure you have the following:
 
-- :doc:`Aiven for Apache Kafka® </docs/products/kafka/getting-started>` service running.
+- :doc:`Aiven for Apache Kafka® </docs/products/kafka/get-started>` service running.
 - :doc:`Prometheus integration </docs/platform/howto/integrations/prometheus-metrics>` set up for your Aiven for Apache Kafka for extracting metrics.
 - Necessary permissions to modify service configurations.
 
