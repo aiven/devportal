@@ -280,4 +280,4 @@ For features that are only available on the Pro Platform, add the following admo
 .. code::
 
     .. important:: 
-        {feature name} is available on the :doc:`Pro Platform </docs/platform/concepts/pro-platform>`.
+        {feature name} is available on :doc:`Pro Platform </docs/platform/concepts/pro-platform>`.
