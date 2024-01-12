@@ -18,13 +18,13 @@ entries:
       - file: docs/platform/howto/billing-google-cloud-platform-marketplace-subscription
         title: Set up Google Cloud Marketplace subscriptions
     - file: docs/tools/aiven-console
-    - file: docs/platform/howto/pro-platform
     - file: docs/platform/concepts/beta_services
     - file: docs/platform/howto/feature-preview
 
   # -------- ORGANIZATIONS, UNITS, PROJECTS --------
   - file: docs/platform/howto/list-account
     entries:
+    - file: docs/platform/howto/pro-platform
     - file: docs/platform/concepts/projects_accounts_access
     - file: docs/tools/aiven-console/howto/create-accounts
     - file: docs/platform/howto/manage-organizations
