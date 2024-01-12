@@ -6,10 +6,12 @@ Pro Platform gives enterprise organizations added capabilities for implementing 
 To use Pro features, enable Pro Platform for your organization.  
 
 
-Enable Pro Platform for an organization
-----------------------------------------
+Enable Pro Platform 
+--------------------
 
-#. Click the user information icon and select **Admin**.
+To enable Pro Platform for an organization:
+
+#. In the organization, click **Admin**.
 
 #. Click **Pro Platform**.
 
@@ -23,11 +25,11 @@ Disable Pro Platform
 
 To disable Pro Platform for an organization, you should first disable any Pro features being used in your services.
 
-#. Click the user information icon and select **Admin**.
+#. In the organization, click **Admin**.
 
 #. Click **Pro Platform**.
 
-#. Click **Disable Pro Platform**.
+#. Open the actions mentu and select **Disable Pro Platform**.
 
 #. To confirm, click **Disable Pro Platform**. 
 
