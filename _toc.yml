@@ -318,6 +318,7 @@ entries:
       - file: docs/products/kafka/howto/fake-sample-data
         title: Sample data generator
       - file: docs/products/kafka/concepts
+        title: Concepts
         entries:
           - file: docs/products/kafka/concepts/upgrade-procedure
             title: Upgrade procedure
