@@ -275,7 +275,7 @@ For features that are in the early availability stage and can be enabled in the 
 Pro Platform feature note template
 '''''''''''''''''''''''''''''''''''
 
-For features that are only available on the Pro Platform, add the following admonition directly under the article title:
+For features that are only available to customers that have Pro Platform enabled, add the following admonition directly under the article title:
 
 .. code::
 

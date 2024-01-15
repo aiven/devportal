@@ -3,34 +3,5 @@ Pro Platform
 
 Pro Platform gives enterprise organizations added capabilities for implementing security, resilience, reliability, and cost-efficiency strategies for their data infrastructure. Pro Platform features are available across disaster recovery, security and compliance, advanced networking, and user lifecycle management.
 
-To use Pro features, enable Pro Platform for your organization.  
+To enable Pro Platform for your organization and use Pro features, contact the sales team at sales@Aiven.io.  
 
-
-Enable Pro Platform 
---------------------
-
-To enable Pro Platform for an organization:
-
-#. In the organization, click **Admin**.
-
-#. Click **Pro Platform**.
-
-#. Select a billing group for the Pro Platform charges. 
-
-#. Click **Enable Pro Platform**.
-
-
-Disable Pro Platform
----------------------
-
-To disable Pro Platform for an organization, you should first disable any Pro features being used in your services.
-
-#. In the organization, click **Admin**.
-
-#. Click **Pro Platform**.
-
-#. Open the actions menu and select **Disable Pro Platform**.
-
-#. To confirm, click **Disable Pro Platform**. 
-
-You can enable Pro Platform again at any time.
