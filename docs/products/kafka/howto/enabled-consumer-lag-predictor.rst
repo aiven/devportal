@@ -102,10 +102,10 @@ After enabling the consumer lag predictor, you can use Prometheus to access and 
    * - Metric
      - Type
      - Description
-   * - ``kafka_lag_predictor_topic_produced_records``
+   * - ``kafka_lag_predictor_topic_produced_records_total``
      - Counter
      - Represents the total count of records produced.
-   * - ``kafka_lag_predictor_group_consumed_records``
+   * - ``kafka_lag_predictor_group_consumed_records_total``
      - Counter
      - Represents the total count of records consumed.
    * - ``kafka_lag_predictor_group_lag_predicted_seconds``
