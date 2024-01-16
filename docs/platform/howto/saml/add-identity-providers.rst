@@ -14,20 +14,18 @@ To set up single sign-on through an IdP for your organization:
 ?????????
 
 
-Step 1. Set up the SAML authentication method in Aiven Console
-----------------------------------------------------------------
-
-SAML Authentication methods are configured at the organization level:
+Step 1. Add the identity provider in the Aiven Console
+-------------------------------------------------------
 
 #. In the organization, click **Admin**.
 
-#. Select **Authentication**.
+#. Select **Identity providers**.
 
-#. Click on **Add authentication method**.
+#. Click on **Add identity provider**.
 
-#. Enter a name and select SAML. You can also select the groups that users will be added to when they sign up or log in through this authentication method.
+#. Select an IdP and enter a name.
 
-You are shown the two parameters needed for the SAML authentication setup in your Identity Provider:
+#. On the **Configuration** step, you are shown two parameters needed for the SAML authentication setup in your IdP:
 
 * Metadata URL
 * ACS URL
