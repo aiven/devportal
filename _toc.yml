@@ -910,6 +910,12 @@ entries:
           - file: docs/products/dragonfly/howto/migrate-ext-redis-df-console
             title: Migrate external Redis
 
+      - file: docs/products/dragonfly/reference
+        title: Reference
+        entries:
+        - file: docs/products/dragonfly/reference/advanced-params
+          title: Advanced parameters
+
 
 
 
