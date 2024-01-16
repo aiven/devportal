@@ -1,4 +1,9 @@
 
+``additional_backup_regions``
+-----------------------------
+*array*
+
+**Additional Cloud Regions for Backup Replication** 
 
 
 
@@ -256,6 +261,12 @@
 
 **Automatically sign-up users on successful sign-in** 
 
+``auto_login``
+~~~~~~~~~~~~~~
+*boolean*
+
+**Allow users to bypass the login screen and automatically log in** 
+
 ``client_id``
 ~~~~~~~~~~~~~
 *string*
@@ -284,7 +295,7 @@
 ~~~~~~~~~~~~~~~~~~~~~~
 *boolean*
 
-**Automatically sync user roles.** 
+**Stop automatically syncing user roles** 
 
 
 
