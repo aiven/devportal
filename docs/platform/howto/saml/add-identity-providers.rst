@@ -30,22 +30,11 @@ Step 1. Add the identity provider in the Aiven Console
 * Metadata URL
 * ACS URL
 
-Step 2. Configure SAML on your Identity Provider
-------------------------------------------------
 
-Setup instructions for specific providers are available on the following pages:
+Step 2. Configure SAML on your identity provider
+-------------------------------------------------
 
-* :doc:`Set up SAML with Auth0 </docs/platform/howto/saml/setup-saml-auth0>`
-* :doc:`Set up SAML with FusionAuth </docs/platform/howto/saml/setup-saml-fusionauth>`
-* :doc:`Set up SAML with Microsoft Azure Active Directory </docs/platform/howto/saml/setup-saml-azure>`
-* :doc:`Set up SAML with Okta </docs/platform/howto/saml/setup-saml-okta>`
-* :doc:`Set up SAML with OneLogin </docs/platform/howto/saml/setup-saml-onelogin>`
-* :doc:`Set up SAML with Google </docs/platform/howto/saml/setup-saml-google>`
-
-If your provider isn't listed, contact us at support@Aiven.io so we can assist you with the configuration.
-
-
-In your IdP, use the metadata URL and ACS URL to configure a new application. The following table shows how the configuration information provided by Aiven is referred to in some of the more popular IdPs.
+In your IdP, use the metadata URL and ACS URL to configure a new application. The following table shows how the configuration parameters provided in the Aiven Console is referred to in some popular IdPs.
 
 .. list-table::
   :header-rows: 1
@@ -75,6 +64,17 @@ In your IdP, use the metadata URL and ACS URL to configure a new application. Th
     - ``Email``
     - ``user.mail``
     - ``LoginUser.email``
+
+Setup instructions are also available for specific providers:
+
+* :doc:`Auth0 </docs/platform/howto/saml/setup-saml-auth0>`
+* :doc:`FusionAuth </docs/platform/howto/saml/setup-saml-fusionauth>`
+* :doc:`Microsoft Azure Active Directory </docs/platform/howto/saml/setup-saml-azure>`
+* :doc:`Okta </docs/platform/howto/saml/setup-saml-okta>`
+* :doc:`OneLogin </docs/platform/howto/saml/setup-saml-onelogin>`
+* :doc:`Google </docs/platform/howto/saml/setup-saml-google>`
+
+If your provider isn't listed, contact the support team at support@Aiven.io for help with the configuration.
 
 
 Step 3. Finish the configuration in Aiven 
