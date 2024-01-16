@@ -34,38 +34,7 @@ Step 1. Add the identity provider in the Aiven Console
 Step 2. Configure SAML on your identity provider
 -------------------------------------------------
 
-In your IdP, use the metadata URL and ACS URL to configure a new application. The following table shows how the configuration parameters provided in the Aiven Console is referred to in some popular IdPs.
-
-.. list-table::
-  :header-rows: 1
-  :align: left
-
-  * - Aiven
-    - Auth0
-    - Okta
-    - OneLogin
-    - Azure Active Directory
-    - Centrify
-  * - ACS URL
-    - Application Callback URL
-    - SSO URL
-    - Recipient
-    - Reply
-    - -
-  * - Metadata
-    - -
-    - Audience
-    - Audience URI
-    - Identifier
-    - SP Entity
-  * - Email Mapping
-    - ``email``
-    - ``user.email``
-    - ``Email``
-    - ``user.mail``
-    - ``LoginUser.email``
-
-Setup instructions are also available for specific providers:
+In your IdP, use the metadata URL and ACS URL to configure a new application. Setup instructions are available for some specific providers:
 
 * :doc:`Auth0 </docs/platform/howto/saml/setup-saml-auth0>`
 * :doc:`FusionAuth </docs/platform/howto/saml/setup-saml-fusionauth>`
