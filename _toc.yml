@@ -36,13 +36,12 @@ entries:
     title: Billing and payments
     entries:
     - file: docs/platform/concepts/hourly-billing-model
-    - file: docs/platform/concepts/corporate-billing
-    - file: docs/platform/concepts/tax-information
-    - file: docs/platform/howto/update-tax-status
     - file: docs/platform/howto/list-billing
       title: Payment methods
       entries:
+      - file: docs/platform/concepts/corporate-billing
       - file: docs/platform/howto/manage-payment-card
+      - file: docs/platform/howto/pay-by-bank-transfer
       - file: docs/platform/howto/list-marketplace-payments
         title: Marketplace subscriptions
         entries:
