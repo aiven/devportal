@@ -65,6 +65,7 @@
 /docs/platform/concepts/service-level-agreement                        /docs/platform/howto/project-support-center
 /docs/products/postgresql/reference/list-of-advanced-params            /docs/products/postgresql/reference/advanced-params
 /docs/products/kafka/reference/kstream-data-write-issue                https://aiven.io/changelog#06-12-2023
+/docs/tools/api/examples                                               /docs/tools/api
 
 
 # Moved to https://aiven.io/developer
@@ -91,6 +92,8 @@
 /docs/community/challenge/the-rolling-challenge                                 https://aiven.io/community/
 /docs/tools/cli/account/account-authentication-method                           /docs/tools/cli/account
 /docs/tools/cli/card                                                            /docs/tools/cli/account
+
+
 /docs/tools/api/examples                                                        /docs/tools/api
 /docs/products/postgresql/getting-started                                       /docs/products/postgresql/get-started
 /docs/products/m3db/getting-started                                             /docs/products/m3db/get-started
@@ -102,6 +105,7 @@
 /docs/products/kafka/kafka-connect/getting-started                              /docs/products/kafka/kafka-connect/get-started
 /docs/products/opensearch/dashboards/getting-started                            /docs/products/opensearch/dashboards/get-started
 /docs/products/kafka/kafka-mirrormaker/getting-started                          /docs/products/kafka/kafka-mirrormaker/get-started
+
 
 # Redirect from .index.html to specific page names for landing
 
