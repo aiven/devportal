@@ -59,6 +59,14 @@
 /docs/products/opensearch/howto/list-upgrade                           /docs/products/opensearch/howto
 /docs/products/opensearch/howto/upgrade-to-opensearch                  /docs/products/opensearch/concepts/opensearch-vs-elasticsearch
 /docs.aiven.io/docs/platform/howto/list-saml                           /docs.aiven.io/docs/platform/howto/list-identity-providers
+/docs/platform/howto/saml/saml-authentication                          /docs/platform/howto/saml/add-identity-providers
+/docs/platform/howto/saml/setup-saml-auth0                             /docs/platform/howto/saml/add-auth0-idp
+/docs/platform/howto/saml/setup-saml-azure                             /docs/platform/howto/saml/add-azure-idp
+/docs/platform/howto/saml/setup-saml-fusionauth                        /docs/platform/howto/saml/add-fusionauth-idp
+/docs/platform/howto/saml/setup-saml-google                            /docs/platform/howto/saml/add-google-idp
+/docs/platform/howto/saml/setup-saml-jumpcloud                         /docs/platform/howto/saml/add-jumpcloud-idp
+/docs/platform/howto/saml/setup-saml-okta                              /docs/platform/howto/saml/add-okta-idp
+/docs/platform/howto/saml/setup-saml-onelogin                          /docs/platform/howto/saml/add-onelogin-idp
 
 
 # Moved to https://aiven.io/developer 

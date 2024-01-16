@@ -1,5 +1,5 @@
-Set up SAML with Google
-=======================
+Add Google as an identity provider 
+===================================
 
 This article explains how to set up SAML with Google for an organization in Aiven. For more information on SAML and instructions for other identity providers, see the :doc:`Set up SAML authentication </docs/platform/howto/saml/saml-authentication>` article.
 

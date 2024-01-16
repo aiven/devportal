@@ -1,5 +1,5 @@
-Set up SAML with JumpCloud
-===========================
+Add JumpCloud as an identity provider 
+======================================
 
 This article explains how to set up SAML with `JumpCloud <https://jumpcloud.com/>`_ for an organization in Aiven. For more information on SAML and instructions for other identity providers, see the :doc:`Set up SAML authentication </docs/platform/howto/saml/saml-authentication>` article.
 

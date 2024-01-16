@@ -1,5 +1,5 @@
-Set up SAML with Microsoft Azure Active Directory
-=================================================
+Add Microsoft Azure Active Directory as an identity provider 
+=============================================================
 
 This article explains how to set up SAML with `Microsoft Azure Active Directory (AD) <https://azure.microsoft.com/en-us/products/active-directory/>`_ for an organization in Aiven. For more information on SAML and instructions for other identity providers, see the :doc:`Set up SAML authentication </docs/platform/howto/saml/saml-authentication>` article.
 

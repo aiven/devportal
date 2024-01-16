@@ -1,5 +1,6 @@
-Set up SAML with Okta
-======================
+Add Okta as an identity provider 
+================================
+
 
 This article explains how to set up SAML with `Okta <https://www.okta.com/>`_ for an organization in Aiven. For more information on SAML and instructions for other identity providers, see the :doc:`Set up SAML authentication </docs/platform/howto/saml/saml-authentication>` article. 
 
