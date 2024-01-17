@@ -20,8 +20,8 @@ Create and deploy application
 ---------------------------------
 
 1. Access the `Aiven Console <https://console.aiven.io/>`_ and select the Aiven for Apache Flink service where you want to deploy a JAR application.
-2. From the left sidebar, click **Applications** and then click **Create new application**.
-3. In the **Create new application** dialog, enter a name for your JAR application, and select **JAR** as the application type from the drop-down.
+2. From the left sidebar, click **Applications** and then click **Create application**.
+3. In the **Create application** dialog, enter a name for your JAR application, and select **JAR** as the application type from the drop-down.
 4. Click **Create application** to proceed.
 5. Click **Upload first version** to upload the first version of the application. 
 6. In the **Upload new version** dialog:
@@ -36,8 +36,14 @@ Create and deploy application
    * Select the application version to deploy. 
    * Select a :doc:`savepoint </docs/products/flink/concepts/savepoints>` if you wish to deploy from a specific state. No savepoints are available for the first application deployment. 
    * Toggle **Restart on failure** to automatically restart Flink jobs upon failure.
+   * In the **Program args** field, provide command-line arguments consisting of variables and configurations relevant to your application's logic upon submission. Each argument is limited to 64 characters, with a total limit of 32 separate items.
    * Specify the number of `parallel instances <https://nightlies.apache.org/flink/flink-docs-master/docs/dev/datastream/execution/parallel/>`_ you require for the task.
   
 9.  Click **Deploy without a savepoint** to begin the deployment process.
-10. The application status will display as **Initializing** during deployment and change to **Running** once it is ready and deployed. 
+10. While deploying, the application status shows **Initializing**. Once deployed, the status changes to **Running**.
 
+
+Related pages
+--------------
+
+* :doc:`Manage Aiven for Apache Flink® applications </docs/products/flink/howto/manage-flink-applications>`

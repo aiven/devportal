@@ -13,8 +13,8 @@ Create and deploy application
 Create an SQL application in Aiven for Apache Flink® using the `Aiven Console <https://console.aiven.io/>`_:
 
 1. In the `Aiven Console <https://console.aiven.io/>`_, select the Aiven for Apache Flink service where you want to create and deploy a Flink application.
-2. From the left sidebar, click **Applications** and then click **Create new application**.
-3. In the **Create new application** dialog, enter the name of your application and select **SQL** as the application type. 
+2. From the left sidebar, click **Applications** and then click **Create application**.
+3. In the **Create application** dialog, enter the name of your application and select **SQL** as the application type. 
 4. Click **Create application**.
 5. Click **Create first version** to create the first version of the application. 
 6. Click **Add your first source table** to add a source table. 
@@ -53,7 +53,7 @@ Create an SQL application in Aiven for Apache Flink® using the `Aiven Console <
     * Toggle **Restart on failure** to automatically restart Flink jobs upon failure.
     * Specify the number of `parallel instances <https://nightlies.apache.org/flink/flink-docs-master/docs/dev/datastream/execution/parallel/>` you require for the task.
 13. Click **Deploy without a savepoint** to begin the deployment process.
-14. The application status will display as **Initializing** during deployment and change to **Running** once it is ready and deployed. 
+14. While deploying, the application status shows **Initializing**. Once deployed, the status changes to **Running**.
 
 Create SQL applications using Aiven CLI
 ------------------------------------------
