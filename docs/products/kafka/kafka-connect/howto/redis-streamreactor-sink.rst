@@ -3,6 +3,10 @@ Create a stream reactor sink connector from Apache Kafka® to Redis®*
 
 **The Redis stream reactor sink connector** enables you to move data from **an Aiven for Apache Kafka® cluster** to **a Redis®* database**. The Lenses.io implementation enables you to write `KCQL transformations <https://docs.lenses.io/connectors/sink/redis.html>`_ on the topic data before sending it to the Redis database.
 
+.. important:: 
+
+    A known issue with the ``GEOADD`` command in version 4.2.0 of the Redis stream reactor sink connector may cause exceptions during initialization under specific configurations. For more information, see the `GitHub issue <https://github.com/lensesio/stream-reactor/issues/990>`_. 
+
 .. note::
 
     You can check the full set of available parameters and configuration options in the `connector's documentation <https://docs.lenses.io/connectors/sink/redis.html>`_.
