@@ -5,7 +5,7 @@ You can give your organization users access to Aiven through an identity provide
 
 To set up single sign-on through an IdP for your organization:
 
-1. Add the identity provider in the Aiven Console.
+1. Add the identity provider in the `Aiven Console <https://console.aiven.io/>`_ .
 2. Configure SAML on your IdP.
 3. Finalize the setup in the Aiven Console using information from your IdP.
 4. Link your users to the identity provider.
@@ -46,17 +46,21 @@ If your provider isn't listed, contact the support team at support@Aiven.io for 
 Step 3. Finish the configuration in Aiven 
 ------------------------------------------
 
-Go back to the **Authentication** page in the `Aiven Console <https://console.aiven.io/>`_ to enable the SAML authentication method:
-
-#. Select the name of the authentication method that you created.
-
-#. Toggle on **Enable Authentication method**. To let users initiate a login directly from your IdP, toggle on **IdP login**. 
-
-#. In the **SAML configuration** section, click **Edit**.
+Go back to the Aiven Console to complete setting up the IdP: 
 
 #. Enter the **IDP URL**, **Entity Id**, and **SAML Certificate** details.
 
-#. Click **Edit method**. 
+#. Click **Next**. 
+
+#. Configure the security options for this IdP:
+   
+   * Require authentication context: This lets the IdP enforce stricter security measures to help prevent unauthorized access, such as requiring multi-factor authentication.
+   
+   * Require assertion to be signed: The IdP will check for a digital signature. This security measure ensures the integrity and authenticity of the assertions by verifying that they were issued by a trusted party and have not been tampered with. 
+   
+   * Sign authorization request sent to IdP: A digital signature is added to the request to verify its authenticity and integrity.
+
+#. Click **Next** and complete the setup.
 
 
 Step 4. Log in with the identity provider
