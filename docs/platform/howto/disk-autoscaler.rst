@@ -1,5 +1,9 @@
-Scale your Aiven service disks automatically |preview|
-======================================================
+Scale your Aiven service disks automatically
+============================================
+
+.. important::
+
+   Service disk autoscaler is a :doc:`limited availability feature </docs/platform/concepts/beta_services>`. If you're interested in trying it out, contact the sales team at sales@Aiven.io.
 
 Discover the service disk autoscaler and its capabilities. Find out how it works and how to use it with your Aiven services.
 
