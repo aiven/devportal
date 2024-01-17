@@ -784,6 +784,8 @@ entries:
             title: Federated queries
           - file: docs/products/clickhouse/concepts/clickhouse-tiered-storage
             title: Tiered storage
+          - file: docs/products/clickhouse/concepts/data-integration-overview
+            title: Data integration
       - file: docs/products/clickhouse/howto
         title: HowTo
         entries:

@@ -26,6 +26,10 @@ Aiven service
         :shadow: md
         :margin: 2 2 0 0
 
+    .. grid-item-card:: :doc:`Data service integration with Aiven for ClickHouse® </docs/products/clickhouse/concepts/data-integration-overview>`
+        :shadow: md
+        :margin: 2 2 0 0
+
 General
 -------
 
