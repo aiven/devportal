@@ -34,7 +34,7 @@ Step 1. Add the IdP in the Aiven Console
 Step 2. Configure SAML on your IdP
 -----------------------------------
 
-In your IdP, use the metadata URL and ACS URL from the Aiven Console to configure a new application. Setup instructions are available for these specific providers:
+In your IdP, use the metadata URL and ACS URL from the configuration step in the wizard to configure a new application. Setup instructions are available for these specific providers:
 
 * :doc:`Auth0 </docs/platform/howto/saml/setup-saml-auth0>`
 * :doc:`FusionAuth </docs/platform/howto/saml/setup-saml-fusionauth>`
