@@ -14,8 +14,8 @@ To set up single sign-on through an IdP for your organization:
 ?????????
 
 
-Step 1. Add the identity provider in the Aiven Console
--------------------------------------------------------
+Step 1. Add the IdP in the Aiven Console
+-----------------------------------------
 
 #. In the organization, click **Admin**.
 
@@ -31,10 +31,10 @@ Step 1. Add the identity provider in the Aiven Console
 * ACS URL
 
 
-Step 2. Configure SAML on your identity provider
--------------------------------------------------
+Step 2. Configure SAML on your IdP
+-----------------------------------
 
-In your IdP, use the metadata URL and ACS URL to configure a new application. Setup instructions are available for some specific providers:
+In your IdP, use the metadata URL and ACS URL from the Aiven Console to configure a new application. Setup instructions are available for these specific providers:
 
 * :doc:`Auth0 </docs/platform/howto/saml/setup-saml-auth0>`
 * :doc:`FusionAuth </docs/platform/howto/saml/setup-saml-fusionauth>`
@@ -62,7 +62,7 @@ Go back to the **Authentication** page in the `Aiven Console <https://console.ai
 #. Click **Edit method**. 
 
 
-Step 4. Log in with the SAML authentication method
+Step 4. Log in with the identity provider
 --------------------------------------------------
 
 After the authentication method is enabled, there are two URLs in the **Signup and link accounts URLs** section:
