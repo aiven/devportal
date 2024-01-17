@@ -16,13 +16,13 @@ Step 1. Add the IdP in the Aiven Console
 
 #. In the organization, click **Admin**.
 
-#. Select **Identity providers**.
+#. Click **Identity providers**.
 
-#. Click on **Add identity provider**.
+#. Click **Add identity provider**.
 
 #. Select an IdP and enter a name.
 
-#. On the **Configuration** step, you are shown two parameters needed for the SAML authentication setup in your IdP:
+#. On the **Configuration** step are two parameters that you need to set up the SAML authentication in your IdP:
 
 * Metadata URL
 * ACS URL
