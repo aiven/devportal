@@ -63,31 +63,36 @@ Go back to the Aiven Console to complete setting up the IdP:
 #. Click **Next** and complete the setup.
 
 
-Step 4. Log in with the identity provider
+Step 4. Link your users to the identity provider
 --------------------------------------------------
 
-After the authentication method is enabled, there are two URLs in the **Signup and link accounts URLs** section:
+Your organization users should automatically be able to use the identity provider to sign up and log in to Aiven. You can also handle this manually using URLs:
 
-* **Signup URL**: For users that don't have an Aiven user account to create a new Aiven user linked to the configured IdP.
-* **Account link URL**: For users that already have an Aiven user account to link their existing Aiven user with the configured IdP.
+#. On the **Identity providers** page, click the name of the IdP.
 
-Send the appropriate URL to link the authentication method to a new or existing Aiven user. If you set up a SAML authentication method before and are now switching to a new IdP, existing users need to log in with the new account link URL to finish the setup.
+#. In the **Overview** section there are two URLs:
 
-When a user clicks on the link, they will be redirected to a page to link their Aiven user account with the SAML account:
+   * **Signup URL**: Users that don't have an Aiven user account can use this to create a new Aiven user linked to this IdP.
+
+   * **User account link URL**: Users that already have an Aiven user account can link their existing Aiven user with this IdP.
+
+#. Send the appropriate URL to your organization users. If you set up a different IdP before and are now switching to a new IdP, existing users need to log in with the new account link URL to finish the setup.
+
+When a user clicks on the link, they will be redirected to a page to link their Aiven user account with the IdP:
 
 * For existing users that are already logged into the Aiven Console
 
-  #. Click on the **Link profile** button. You are redirected to your SAML provider's authentication page.
-  #. Once logged in to the provider, you will be redirected back to the Aiven Console. The authentication method is linked to your profile.
+  #. Click on the **Link profile** button. You are redirected to your IdP's authentication page.
+  #. Once logged in to the provider, you will be redirected back to the Aiven Console and the IdP is linked to your profile. You can use the IdP for all future logins.
 
 * For existing users that are not logged into the Aiven Console
 
   #. Click on the **Login** button.  
-  #. On the login page of the Aiven Console, log in as usual. You are redirected to your SAML provider's authentication page.
-  #. Once logged in to the provider, you are redirected back to the Aiven Console. The authentication method is linked to your profile.
+  #. On the login page of the Aiven Console, log in as usual. You are redirected to your IdP's authentication page.
+  #. Once logged in to the provider, you are redirected back to the Aiven Consoleand the IdP is linked to your profile. You can use the IdP for all future logins.
 
 * For new users without an Aiven user account
 
-  #. Click **Sign up**. You are redirected to your SAML provider's authentication page.
+  #. Click **Sign up**. You are redirected to your IdP's authentication page.
   #. Once logged in to the provider, you are redirected back to the Aiven sign up page.
-  #. Complete the sign up process. Your Aiven profile is linked with your SAML authentication method.
+  #. Complete the sign up process. The IdP is linked to your profile and you can use it for all future logins.
