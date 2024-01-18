@@ -654,11 +654,13 @@ entries:
                 title: Integrate with Apache Kafka
               - file: docs/products/flink/howto/connect-bigquery
                 title: Integrate with Google BigQuery
-          - file: docs/products/flink/howto/list-flink-applications
-            title: Aiven for Apache Flink applications
+          - file: docs/products/flink/howto/create-flink-applications
+            title: Apache Flink applications
             entries:
-              - file: docs/products/flink/howto/create-flink-applications
-                title: Create Apache Flink applications
+              - file: docs/products/flink/howto/create-sql-application
+                title: Create an SQL application
+              - file: docs/products/flink/howto/create-jar-application
+                title: Create a JAR application
               - file: docs/products/flink/howto/manage-flink-applications
                 title: Manage Apache Flink applications
           - file: docs/products/flink/howto/list-flink-tables
@@ -917,10 +919,6 @@ entries:
         entries:
         - file: docs/products/dragonfly/reference/advanced-params
           title: Advanced parameters
-
-
-
-
 
 
   # -------- GRAFANA --------
