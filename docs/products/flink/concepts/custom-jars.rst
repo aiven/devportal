@@ -26,7 +26,7 @@ Custom JARs can be applied in various scenarios, including but not limited to:
 
 
 
-Related reading
+Related pages
 -----------------
-* How to use custom JARs in Aiven for Apache Flink application 
+* :doc:`How to use custom JARs in Aiven for Apache Flink application <docs/products/flink/howto/create-jar-application>`
 
