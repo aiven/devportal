@@ -123,6 +123,7 @@ Create a new CCR service pair
    .. code-block:: bash
 
       avn service create                                   \
+         --project project_name                            \
          --service-type cassandra                          \
          --cloud cloud_region_name                         \
          --plan service_plan_name                          \
@@ -138,6 +139,7 @@ Create a new CCR service pair
    .. code-block:: bash
 
       avn service create                                   \
+         --project project_name                            \
          --service-type cassandra                          \
          --cloud cloud_region_name                         \
          --plan service_plan_name                          \
@@ -159,6 +161,7 @@ Use the :ref:`avn service create <avn-cli-service-create>` command to create a n
 .. code-block:: bash
 
    avn service create                                   \
+      --project project_name                            \
       --service-type cassandra                          \
       --cloud cloud_region_name                         \
       --plan service_plan_name                          \
@@ -269,7 +272,7 @@ What's next
 * :doc:`Manage CCR on Aiven for Apache Cassandra </docs/products/cassandra/howto/manage-cross-cluster-replication>`
 * :doc:`Disable CCR on Aiven for Apache Cassandra </docs/products/cassandra/howto/disable-cross-cluster-replication>`
 
-Related reading
+Related pages
 ---------------
 
 * :doc:`About cross-cluster replication on Aiven for Apache Cassandra </docs/products/cassandra/concepts/cross-cluster-replication>`

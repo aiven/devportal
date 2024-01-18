@@ -36,47 +36,43 @@ Prerequisites
 Create data service integrations
 --------------------------------
 
-1. Log in to the `Aiven web console <https://console.aiven.io/>`_.
-2. In the **Services** page, select an Aiven for ClickHouse service you want to integrate with a data service.
-3. Select **Get started** from the **Integrate your Aiven for ClickHouse** section in the **Overview** page of your service.
+#. Log in to the `Aiven web console <https://console.aiven.io/>`_.
+#. In the **Services** page, select an Aiven for ClickHouse service you want to integrate with a data service.
+#. Select **Get started** from the **Integrate your Aiven for ClickHouse** section in the **Overview** page of your service.
+#. In the **Data service integrations** wizard, select one of the following options:
+   
+   **Option 1: Create a new service and integrate it**
+   
+   To create an integration with a **new service**: 
+   
+   #. Make sure the checkboxes for both service types are unchecked.
+   #. In the **Data service integrations** view, select **Create service**.
+   #. :doc:`Set up the new service </docs/platform/howto/create_new_service>`.
+   #. Come back to your primary service and create an integration to the newly-created service.
+      For that purpose, skip the steps that follow and start over with building your integration using this
+      instruction but now follow the steps below about **integrating with an existing service**.
 
-4. In the **Data service integrations** wizard, select one of the following options:
+   **Option 2: Use an existing service and integrate it**
 
-* To create a new service and integrate it, make sure the checkboxes for both service types are unchecked.
+   To create an integration with an **existing service**:
+   
+   #. Select a service of the chosen type from the list of services available for integration.
+   #. Select **Continue** and proceed to the next step to integrate the database.
 
-  .. dropdown:: Expand for next steps
+#. In the **Integration databases** view, select either **Enable without databases** or **Add databases** depending on whether you want to enable your integration with databases:
 
-     1. In the **Data service integrations** view, select **Create service**.
-     2. :doc:`Set up the new service </docs/platform/howto/create_new_service>`.
-     3. Come back to your primary service and create an integration to the newly-created service. For that purpose, skip the steps that follow and start over with building your integration using this instruction but now follow the part on :ref:`integrating with an existing service <integrate-existing-service>`.
+   - To enable your integration **with** databases:
 
-  or
+     #. In the **Integration databases** view, select **Add databases**.
+     #. In the **Add integration databases** section, enter database names and schema names and select **Enable** when ready.
 
-.. _integrate-existing-service:
+        You can preview the created databases by selecting **Databases  tables** from the sidebar.
 
-* To create an integration with an existing service, select a type of service you want to integrate with (Aiven for Apache Kafka or Aiven for PostgreSQL).
+   - To enable your integration **without** databases
 
-  .. dropdown:: Expand for next steps
-
-    1. Select a service of the chosen type from the list of services available for integration.
-    2. Select **Continue** and proceed to the :ref:`database setup part <integration-db>`.
-
-.. _integration-db:
-
-5. In the **Integration databases** view, select either **Enable without databases** or **Add databases** depending on whether you want to enable your integration with databases.
-
-   .. dropdown:: Expand for enabling your integration with databases
-
-      1. In the **Integration databases** view, select **Add databases**.
-      2. In the **Add integration databases** section, enter database names and schema names and select **Enable** when ready.
-
-      You can preview the created databases by selecting **Databases  tables** from the sidebar.
-
-   .. dropdown:: Expand for enabling your integration without databases
-
-      In the **Integration databases** view, select **Enable without databases**.
+     #. In the **Integration databases** view, select **Enable without databases**.
       
-      You can preview the created integration by selecting **Overview** from the sidebar.
+        You can preview the created integration by selecting **Overview** from the sidebar.
 
 View data service integrations
 ------------------------------
@@ -102,7 +98,7 @@ Stop data service integrations
 
    Your integration has been removed along with all the corresponding databases and configuration information.
 
-Related reading
+Related pages
 ---------------
 
 * :doc:`Manage Aiven for ClickHouse® integration databases </docs/products/clickhouse/howto/integration-databases>`

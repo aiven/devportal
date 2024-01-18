@@ -27,13 +27,17 @@ For this example you will need:
 
 * Python 3.7 or later
 
-* The Python ``PyMySQL`` library. You can install this with ``pip``::
+* The Python ``PyMySQL`` library. You can install this with ``pip``:
+  
+  .. code::
+   
+     pip install pymysql
 
-    pip install pymysql
+* Install ``cryptography`` package:
 
-* Install ``cryptography`` package::
-
-   pip install cryptography
+  .. code::
+  
+     pip install cryptography
 
 Code
 ''''

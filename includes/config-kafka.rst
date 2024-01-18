@@ -1,5 +1,4 @@
 
-
 ``custom_domain``
 -----------------
 *['string', 'null']*
@@ -13,6 +12,14 @@
 *array*
 
 **IP filter** Allow incoming connections from CIDR address block, e.g. '10.20.0.0/16'
+
+
+
+``service_log``
+---------------
+*['boolean', 'null']*
+
+**Service logging** Store logs for the service so that they are available in the HTTP API and console.
 
 
 
@@ -420,6 +427,12 @@
 
 **transaction.remove.expired.transaction.cleanup.interval.ms** The interval at which to remove transactions that have expired due to transactional.id.expiration.ms passing (defaults to 3600000 (1 hour)).
 
+``transaction_partition_verification_enable``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*boolean*
+
+**transaction.partition.verification.enable** Enable verification that checks that the partition has been added to the transaction before writing transactional records to the partition
+
 
 
 ``kafka_authentication_methods``
@@ -550,7 +563,7 @@
 ~~~~~~~~~~~~~~~~~~~~~~
 *integer*
 
-**The timeout used to detect failures when using Kafka's group management facilities** The timeout in milliseconds used to detect failures when using Kafka's group management facilities (defaults to 10000).
+**The timeout used to detect failures when using Kafka’s group management facilities** The timeout in milliseconds used to detect failures when using Kafka’s group management facilities (defaults to 10000).
 
 
 
@@ -633,6 +646,12 @@
 *integer*
 
 **consumer.request.timeout.ms** The maximum total time to wait for messages for a request if the maximum number of messages has not yet been reached
+
+``name_strategy_validation``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*boolean*
+
+**name.strategy.validation** If true, validate that given schema is registered under expected subject name by the used name strategy when producing messages.
 
 ``simpleconsumer_pool_size_max``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

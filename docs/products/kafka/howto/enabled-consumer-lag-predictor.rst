@@ -13,20 +13,22 @@ Prerequisites
 Before you start, ensure you have the following:
 
 - Aiven account.
-- :doc:`Aiven for Apache Kafka® </docs/products/kafka/getting-started>` service running.
+- :doc:`Aiven for Apache Kafka® </docs/products/kafka/get-started>` service running.
 - :doc:`Prometheus integration </docs/platform/howto/integrations/prometheus-metrics>` set up for your Aiven for Apache Kafka for extracting metrics.
 - Necessary permissions to modify service configurations.
 
 Enable via Aiven Console
 ----------------------------------------------------
 
-1. In `Aiven Console <https://console.aiven.io/>`_, select your project and then choose your Aiven for Apache Kafka® service.
+1. In the `Aiven Console <https://console.aiven.io/>`_, select your project and then choose your Aiven for Apache Kafka® service.
 
-2. On the **Overview** page, scroll down to **Advanced configuration** and select **Configure**.
+2.  In the service page, click **Service settings** on the sidebar. 
 
-3. In the **Advanced configuration** screen, select **Add configuration options**.
+3. Scroll to the **Advanced configuration** section, and select **Configure**.
 
-4. In the add configuration options:
+4. In the **Advanced configuration** screen, select **Add configuration options**.
+
+5. In the add configuration options:
 
    - Find and set ``kafka_lag_predictor.enabled`` to **Enabled** position. This enables the lag predictor to compute predictions for all consumer groups across all topics.
    - Find ``kafka_lag_predictor.group_filters`` and enter the desired consumer group pattern. This specifies which consumer groups to consider during lag prediction calculations.
@@ -35,7 +37,7 @@ Enable via Aiven Console
     
      By default, the consumer lag predictor calculates the lag of all consumer groups. To restrict the calculation to specific groups, use the ``kafka_lag_predictor.group_filters`` option.
 
-5. Select **Save configurations** to save your changes and enable consumer lag prediction.
+6. Select **Save configuration** to save your changes and enable consumer lag prediction.
 
 Enable via Aiven CLI
 ------------------------------------------------
@@ -100,10 +102,10 @@ After enabling the consumer lag predictor, you can use Prometheus to access and 
    * - Metric
      - Type
      - Description
-   * - ``kafka_lag_predictor_topic_produced_records``
+   * - ``kafka_lag_predictor_topic_produced_records_total``
      - Counter
      - Represents the total count of records produced.
-   * - ``kafka_lag_predictor_group_consumed_records``
+   * - ``kafka_lag_predictor_group_consumed_records_total``
      - Counter
      - Represents the total count of records consumed.
    * - ``kafka_lag_predictor_group_lag_predicted_seconds``

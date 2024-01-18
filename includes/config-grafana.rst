@@ -1,3 +1,5 @@
+
+
 ``custom_domain``
 -----------------
 *['string', 'null']*
@@ -11,6 +13,14 @@
 *array*
 
 **IP filter** Allow incoming connections from CIDR address block, e.g. '10.20.0.0/16'
+
+
+
+``service_log``
+---------------
+*['boolean', 'null']*
+
+**Service logging** Store logs for the service so that they are available in the HTTP API and console.
 
 
 
@@ -244,6 +254,12 @@
 
 **Automatically sign-up users on successful sign-in** 
 
+``auto_login``
+~~~~~~~~~~~~~~
+*boolean*
+
+**Allow users to bypass the login screen and automatically log in** 
+
 ``client_id``
 ~~~~~~~~~~~~~
 *string*
@@ -267,6 +283,12 @@
 *array*
 
 **Require users to belong to one of given organizations** 
+
+``skip_org_role_sync``
+~~~~~~~~~~~~~~~~~~~~~~
+*boolean*
+
+**Stop automatically syncing user roles** 
 
 
 

@@ -13,11 +13,12 @@ Elasticsearch servers to the same cluster, online migration is not
 currently possible.
 
 .. important::
-    Migrating from Elasticsearch to OpenSearch may affect the connectivity between client applications and your service. For example, some code included in clients or tools may check the service version, which might not work with OpenSearch. We recommend that you check the following OpenSearch resources for more information:
+   
+   Migrating from Elasticsearch to OpenSearch may affect the connectivity between client applications and your service. For example, some code included in clients or tools may check the service version, which might not work with OpenSearch. We recommend that you check the following OpenSearch resources for more information:
 
-    * `OpenSearch release notes <https://github.com/opensearch-project/OpenSearch/blob/main/release-notes/opensearch.release-notes-1.0.0.md>`_
-    * `OpenSearch Dashboards release notes <https://github.com/opensearch-project/OpenSearch-Dashboards/blob/main/release-notes/opensearch-dashboards.release-notes-1.0.0.md>`_
-    * `Frequently asked questions about OpenSearch <https://opensearch.org/faq/>`_
+   * `OpenSearch release notes <https://github.com/opensearch-project/OpenSearch/blob/main/release-notes/opensearch.release-notes-1.0.0.md>`_
+   * `OpenSearch Dashboards release notes <https://github.com/opensearch-project/OpenSearch-Dashboards/blob/main/release-notes/opensearch-dashboards.release-notes-1.0.0.md>`_
+   * `Frequently asked questions about OpenSearch <https://opensearch.org/faq/>`_
 
 
 To migrate or copy data:

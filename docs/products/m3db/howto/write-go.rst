@@ -19,9 +19,11 @@ Pre-requisites
 
 For this example you will need:
 
-1. The Prometheus client for Go::
+1. The Prometheus client for Go:
 
-    go get -u github.com/m3db/prometheus_remote_client_golang/promremote
+   .. code::
+     
+      go get -u github.com/m3db/prometheus_remote_client_golang/promremote
 
  
 

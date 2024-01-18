@@ -150,17 +150,17 @@ To refresh the DHCP lease for a network interface, run the following commands:
 
 1. To clear the existing DHCP lease
 
-    .. code-block:: bash
+   .. code-block:: bash
 
-        dhclient -r NETWORK_INTERFACE_NAME
+      dhclient -r NETWORK_INTERFACE_NAME
 
 2. To request a renewal of the DHCP lease
 
-    .. code-block:: bash
+   .. code-block:: bash
 
-        dhclient NETWORK_INTERFACE_NAME
+      dhclient NETWORK_INTERFACE_NAME
 
-Related reading
+Related pages
 ---------------
 
 * :doc:`Manage Virtual Private Cloud (VPC) peering </docs/platform/howto/manage-vpc-peering>`

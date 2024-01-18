@@ -40,6 +40,7 @@ Aiven for PostgreSQL® how-tos
     - :doc:`Prevent PostgreSQL® full disk issues </docs/products/postgresql/howto/prevent-full-disk>`
     - :doc:`Enable and use pgvector on Aiven for PostgreSQL® </docs/products/postgresql/howto/use-pgvector>`
     - :doc:`Check size of a database, a table or an index </docs/products/postgresql/howto/pg-object-size>`
+    - :doc:`Restrict access to databases or tables in Aiven for PostgreSQL®". </docs/products/postgresql/howto/readonly-user>`
 
 .. dropdown:: Migration
 
@@ -64,7 +65,7 @@ Aiven for PostgreSQL® how-tos
     - :doc:`Monitor PostgreSQL metrics with Grafana® </docs/products/postgresql/howto/report-metrics-grafana>`
     - :doc:`Monitor PostgreSQL metrics with pgwatch2 </docs/products/postgresql/howto/monitor-with-pgwatch2>`
     - :doc:`Visualize data with Grafana® </docs/products/postgresql/howto/visualize-grafana>`
-    - :doc:`Report and analyze with Google Data Studio </docs/products/postgresql/howto/analyze-with-google-data-studio>`
+    - :doc:`Report and analyze with Google Looker Studio </docs/products/postgresql/howto/analyze-with-google-data-studio>`
     - :doc:`Integrate two PostgreSQL services </docs/products/postgresql/howto/datasource-integration>`
 
 .. dropdown:: Cluster management

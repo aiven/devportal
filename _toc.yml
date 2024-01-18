@@ -18,6 +18,7 @@ entries:
       - file: docs/platform/howto/billing-google-cloud-platform-marketplace-subscription
         title: Set up Google Cloud Marketplace subscriptions
     - file: docs/tools/aiven-console
+    - file: docs/platform/concepts/beta_services
     - file: docs/platform/howto/feature-preview
 
   # -------- ORGANIZATIONS, UNITS, PROJECTS --------
@@ -25,6 +26,7 @@ entries:
     entries:
     - file: docs/platform/concepts/projects_accounts_access
     - file: docs/tools/aiven-console/howto/create-accounts
+    - file: docs/platform/howto/manage-organizations
     - file: docs/platform/howto/manage-project
     - file: docs/platform/reference/project-member-privileges
     - file: docs/platform/howto/manage-unassigned-projects
@@ -68,6 +70,9 @@ entries:
     title: User and access management
     entries:
     - file: docs/platform/howto/manage-org-users
+      title: Invite and remove organization users
+    - file: docs/platform/concepts/managed-users
+    - file: docs/platform/howto/manage-domains
     - file: docs/platform/howto/delete-user
     - file: docs/platform/howto/make-super-admin
     - file: docs/platform/howto/list-user-profile
@@ -79,6 +84,8 @@ entries:
       - file: docs/platform/howto/add-authentication-method
       - file: docs/platform/reference/password-policy
       - file: docs/platform/howto/user-2fa
+      - file: docs/platform/howto/set-authentication-policies
+        title: Set authentication policies
       - file: docs/platform/concepts/authentication-tokens
       - file: docs/platform/howto/create_authentication_token
       - file: docs/platform/howto/list-saml
@@ -124,6 +131,8 @@ entries:
     - file: docs/platform/howto/prepare-for-high-load
     - file: docs/platform/howto/scale-services
     - file: docs/platform/concepts/dynamic-disk-sizing
+    - file: docs/platform/howto/disk-autoscaler
+      title: Disk autoscaling
     - file: docs/platform/howto/cleanup-powered-off-services
     - file: docs/platform/howto/add-storage-space
     - file: docs/platform/howto/access-service-logs
@@ -140,17 +149,22 @@ entries:
     - file: docs/platform/reference/list_of_clouds
     - file: docs/platform/concepts/availability-zones
     - file: docs/platform/howto/list-byoc
-      title: BYOC
+      title: Bring your own cloud (BYOC)
       entries:
         - file: docs/platform/concepts/byoc
+          title: About BYOC
+        - file: docs/platform/howto/byoc/enable-byoc
+          title: Enable BYOC
         - file: docs/platform/howto/byoc/create-custom-cloud
           title: Create custom cloud
         - file: docs/platform/howto/byoc/assign-project-custom-cloud
-          title: Assign projects
+          title: Attach projects
         - file: docs/platform/howto/byoc/add-customer-info-custom-cloud
           title: Add customer contacts
         - file: docs/platform/howto/byoc/rename-custom-cloud
           title: Rename custom cloud
+        - file: docs/platform/howto/byoc/delete-custom-cloud
+          title: Delete custom cloud
     - file: docs/platform/concepts/enhanced-compliance-env
     - file: docs/platform/concepts/aiven-node-firewall-configuration
     - file: docs/platform/concepts/cloud-security
@@ -235,7 +249,6 @@ entries:
           entries:
             - glob: docs/tools/cli/account/*
         - file: docs/tools/cli/billing-group
-        - file: docs/tools/cli/card
         - file: docs/tools/cli/cloud
         - file: docs/tools/cli/credits
         - file: docs/tools/cli/events
@@ -253,8 +266,6 @@ entries:
       # -------- API --------
       - file: docs/tools/api
         title: Aiven API
-        entries:
-          - file: docs/tools/api/examples
 
       # -------- TERRAFORM --------
       - file: docs/tools/terraform
@@ -302,11 +313,12 @@ entries:
   - file: docs/products/kafka
     title: Apache Kafka
     entries:
-      - file: docs/products/kafka/getting-started
+      - file: docs/products/kafka/get-started
         title: Get started
       - file: docs/products/kafka/howto/fake-sample-data
         title: Sample data generator
       - file: docs/products/kafka/concepts
+        title: Concepts
         entries:
           - file: docs/products/kafka/concepts/upgrade-procedure
             title: Upgrade procedure
@@ -404,6 +416,7 @@ entries:
               - file: docs/products/kafka/howto/kafka-streams-with-aiven-for-kafka
               - file: docs/products/kafka/howto/flink-with-aiven-for-kafka
               - file: docs/products/kafka/howto/datadog-customised-metrics
+              - file: docs/products/kafka/howto/kafka-prometheus-privatelink
               - file: docs/products/kafka/howto/ksql-docker
                 title: Use ksqlDB with Aiven for Apache Kafka
               - file: docs/products/kafka/howto/add-missing-producer-consumer-metrics
@@ -433,13 +446,11 @@ entries:
             title: Advanced parameters
           - file: docs/products/kafka/reference/kafka-metrics-prometheus
             title: Metrics available via Prometheus
-          - file: docs/products/kafka/reference/kstream-data-write-issue
-            title: Resolving Data Write Issues with Kafka Streams 3.6.0
 
       - file: docs/products/kafka/kafka-connect
         title: Apache Kafka Connect
         entries:
-        - file: docs/products/kafka/kafka-connect/getting-started
+        - file: docs/products/kafka/kafka-connect/get-started
         - file: docs/products/kafka/kafka-connect/concepts
           entries:
           - file: docs/products/kafka/kafka-connect/concepts/list-of-connector-plugins
@@ -550,7 +561,7 @@ entries:
       - file: docs/products/kafka/kafka-mirrormaker
         title: Apache Kafka MirrorMaker2
         entries:
-        - file: docs/products/kafka/kafka-mirrormaker/getting-started
+        - file: docs/products/kafka/kafka-mirrormaker/get-started
         - file: docs/products/kafka/kafka-mirrormaker/concepts
           entries:
           - file: docs/products/kafka/kafka-mirrormaker/concepts/disaster-recovery-migration
@@ -577,7 +588,7 @@ entries:
       - file: docs/products/kafka/karapace
         title: Karapace
         entries:
-        - file: docs/products/kafka/karapace/getting-started
+        - file: docs/products/kafka/karapace/get-started
         - file: docs/products/kafka/karapace/concepts
           title: Concepts
           entries:
@@ -611,7 +622,7 @@ entries:
             title: Plans and pricing
           - file: docs/products/flink/reference/flink-limitations
             title: Limitations
-      - file: docs/products/flink/getting-started
+      - file: docs/products/flink/get-started
         title: Quickstart
       - file: docs/products/flink/concepts
         title: Concepts
@@ -645,11 +656,13 @@ entries:
                 title: Integrate with Apache Kafka
               - file: docs/products/flink/howto/connect-bigquery
                 title: Integrate with Google BigQuery
-          - file: docs/products/flink/howto/list-flink-applications
-            title: Aiven for Apache Flink applications
+          - file: docs/products/flink/howto/create-flink-applications
+            title: Apache Flink applications
             entries:
-              - file: docs/products/flink/howto/create-flink-applications
-                title: Create Apache Flink applications
+              - file: docs/products/flink/howto/create-sql-application
+                title: Create an SQL application
+              - file: docs/products/flink/howto/create-jar-application
+                title: Create a JAR application
               - file: docs/products/flink/howto/manage-flink-applications
                 title: Manage Apache Flink applications
           - file: docs/products/flink/howto/list-flink-tables
@@ -741,6 +754,8 @@ entries:
             title: Advanced parameters
           - file: docs/products/cassandra/reference/cassandra-metrics-prometheus
             title: Metrics via Prometheus
+          - file: docs/products/cassandra/reference/cassandra-metrics-datadog
+            title: Metrics via Datadog
 
   # -------- CLICKHOUSE --------
   - file: docs/products/clickhouse
@@ -757,7 +772,7 @@ entries:
             title: Plans and pricing
           - file: docs/products/clickhouse/reference/limitations
             title: Limits and limitations
-      - file: docs/products/clickhouse/getting-started
+      - file: docs/products/clickhouse/get-started
         title: Quickstart
       - file: docs/products/clickhouse/concepts
         title: Concepts
@@ -852,8 +867,14 @@ entries:
         entries:
           - file: docs/products/clickhouse/reference/supported-table-engines
             title: Table engines
+          - file: docs/products/clickhouse/reference/supported-interfaces-drivers
+            title: Interfaces and drivers
           - file: docs/products/clickhouse/reference/metrics-list
-            title: ClickHouse metrics in Grafana
+            title: Metrics in Grafana
+          - file: docs/products/clickhouse/reference/clickhouse-metrics-datadog
+            title: Metrics via Datadog
+          - file: docs/products/clickhouse/reference/clickhouse-metrics-prometheus
+            title: Metrics via Prometheus
           - file: docs/products/clickhouse/reference/supported-table-functions
             title: Table functions
           - file: docs/products/clickhouse/reference/s3-supported-file-formats
@@ -862,8 +883,48 @@ entries:
             title: Formats for ClickHouse-Kafka data exchange
           - file: docs/products/clickhouse/reference/advanced-params
             title: Advanced parameters
+  
+# ---------Dragonfly --------------
+
+  - file: docs/products/dragonfly
+    title: Dragonfly
+    entries:
+      - file: docs/products/dragonfly/concepts/overview
+        title: Overview
+      - file: docs/products/dragonfly/get-started
+        title: Quickstart
+      - file: docs/products/dragonfly/concepts
+        title: Concepts
+        entries:
+          - file:  docs/products/dragonfly/concepts/ha-dragonfly
+      - file: docs/products/dragonfly/howto
+        title: HowTo
+        entries:
+        - file: docs/products/dragonfly/howto/list-code-samples
+          title: Connect to service
+          entries:
+            - file: docs/products/dragonfly/howto/connect-redis-cli
+            - file: docs/products/dragonfly/howto/connect-go
+            - file: docs/products/dragonfly/howto/connect-node
+            - file: docs/products/dragonfly/howto/connect-python
+
+        - file: docs/products/dragonfly/howto/list-migrate-data
+          title: Data migration
+          entries:
+          - file: docs/products/dragonfly/howto/migrate-aiven-redis-df-console
+            title: Migrate Aiven for Redis
+          - file: docs/products/dragonfly/howto/migrate-ext-redis-df-console
+            title: Migrate external Redis
+
+      - file: docs/products/dragonfly/reference
+        title: Reference
+        entries:
+        - file: docs/products/dragonfly/reference/advanced-params
+          title: Advanced parameters
+
 
   # -------- GRAFANA --------
+
   - file: docs/products/grafana
     title: Grafana
     entries:
@@ -931,7 +992,7 @@ entries:
   - file: docs/products/m3db
     title: M3DB
     entries:
-      - file: docs/products/m3db/getting-started
+      - file: docs/products/m3db/get-started
         title: Get started
       - file: docs/products/m3db/concepts
         title: Concepts
@@ -1029,7 +1090,7 @@ entries:
   - file: docs/products/opensearch
     title: OpenSearch
     entries:
-      - file: docs/products/opensearch/getting-started
+      - file: docs/products/opensearch/get-started
         title: Quickstart
         entries:
         - file: docs/products/opensearch/howto/sample-dataset
@@ -1128,7 +1189,7 @@ entries:
       - file: docs/products/opensearch/dashboards
         title: OpenSearch Dashboards
         entries:
-          - file: docs/products/opensearch/dashboards/getting-started
+          - file: docs/products/opensearch/dashboards/get-started
           - file: docs/products/opensearch/dashboards/howto
             title: HowTo
             entries:
@@ -1155,7 +1216,7 @@ entries:
     entries:
       - file: docs/products/postgresql/overview
         title: Overview
-      - file: docs/products/postgresql/getting-started
+      - file: docs/products/postgresql/get-started
         title: Quickstart
       - file: docs/products/postgresql/concepts
         title: Concepts
@@ -1224,6 +1285,7 @@ entries:
               - file: docs/products/postgresql/howto/use-pgvector
                 title: Enable and use pgvector
               - file: docs/products/postgresql/howto/pg-object-size
+              - file: docs/products/postgresql/howto/readonly-user
           - file: docs/products/postgresql/howto/list-replication-migration
             title: Migrate
             entries:
@@ -1263,7 +1325,7 @@ entries:
       - file: docs/products/postgresql/reference
         title: Reference
         entries:
-          - file: docs/products/postgresql/reference/list-of-advanced-params
+          - file: docs/products/postgresql/reference/advanced-params
             title: Advanced parameters
           - file: docs/products/postgresql/reference/pg-connection-limits
             title: Connection limits per plan
@@ -1337,20 +1399,6 @@ entries:
             title: Troubleshoot connection issues
 
   # -------- SUPPORT --------
-  - file: docs/platform/howto/list-support
+  - file: docs/platform/howto/project-support-center
     title: Support
-    entries:
-    - file: docs/platform/howto/project-support-center
-    - file: docs/platform/howto/change-support-tier
-      title: Upgrade your support tier
-    - file: docs/platform/concepts/service-level-agreement
-    - file: docs/platform/concepts/beta_services
 
-  # -------- COMMUNITY --------
-  - file: docs/community
-    title: Community
-    entries:
-    - file: docs/community/challenge/catch-the-bus
-      title: Catch the Bus - Aiven challenge with ClickHouse
-    - file: docs/community/challenge/the-rolling-challenge
-      title: Rolling - Aiven challenge with Apache Kafka and Apache Flink

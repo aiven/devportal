@@ -10,9 +10,9 @@ The practical memory limit will always be less than the service physical memory 
 
 A server (or node) **usable memory** can be calculated as: 
   
-  |vm_usable_memory| 
+|vm_usable_memory| 
 
-.. important:: This ``overhead`` is currently calculated as: |vm_overhead|
+.. important:: ``overhead`` is calculated as: |vm_overhead|.
 
 Services may utilize optional components, service integrations, connection pooling, or plug-ins, which are not included in overhead calculations.
 

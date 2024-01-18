@@ -6,12 +6,14 @@ OpenSearch Security is a powerful feature that enhances the security of your Ope
 With OpenSearch Security enabled, you can manage user access and permissions directly from the :doc:`OpenSearch Dashboard </docs/products/opensearch/dashboards>`, giving you full control over your service's security.
 
 .. warning:: 
-  * Once you have enabled OpenSearch Security management, you can no longer use `Aiven Console <https://console.aiven.io/>`_, `Aiven API <https://api.aiven.io/doc/>`_, :doc:`Aiven CLI </docs/tools/cli>`, :doc:`Aiven Terraform provider </docs/tools/terraform>` or :doc:`Aiven Operator for Kubernetes® </docs/tools/kubernetes>` to manage access controls.
-  * You must use the OpenSearch Security Dashboard or OpenSearch Security API for managing user authentication and access control after enabling OpenSearch Security management.
-  * Once enabled, OpenSearch Security management cannot be disabled. If you need assistance disabling OpenSearch Security management, contact `Aiven support <https://aiven.io/support-services>`_.
+  
+   * Once you have enabled OpenSearch Security management, you can no longer use `Aiven Console <https://console.aiven.io/>`_, `Aiven API <https://api.aiven.io/doc/>`_, :doc:`Aiven CLI </docs/tools/cli>`, :doc:`Aiven Terraform provider </docs/tools/terraform>` or :doc:`Aiven Operator for Kubernetes® </docs/tools/kubernetes>` to manage access controls.
+   * You must use the OpenSearch Security Dashboard or OpenSearch Security API for managing user authentication and access control after enabling OpenSearch Security management.
+   * Once enabled, OpenSearch Security management cannot be disabled. If you need assistance disabling OpenSearch Security management, contact `Aiven support <https://aiven.io/support-services>`_.
 
 .. note:: 
-  * To implement basic and simplified access control, you can use :doc:`Aiven's Access Control Lists (ACL) </docs/products/opensearch/howto/control_access_to_content>` to manage user roles and permissions.
+
+   To implement basic and simplified access control, you can use :doc:`Aiven's Access Control Lists (ACL) </docs/products/opensearch/howto/control_access_to_content>` to manage user roles and permissions.
   
 OpenSearch Security use cases
 --------------------------------

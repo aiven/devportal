@@ -3,7 +3,7 @@ Aiven for PostgreSQL® reference
 
 .. grid:: 1 2 2 2
 
-    .. grid-item-card:: :doc:`Advanced parameters </docs/products/postgresql/reference/list-of-advanced-params>`
+    .. grid-item-card:: :doc:`Advanced parameters </docs/products/postgresql/reference/advanced-params>`
         :shadow: md
         :margin: 2 2 0 0
 

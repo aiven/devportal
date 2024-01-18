@@ -48,7 +48,8 @@ Aiven offers Prometheus endpoints for your services. To enable this feature, tak
       
       At the top of the **Integrations** page, you will see the Prometheus integration listed and status ``active``. 
 
-#. From the **Integrations** page, go to the **Overview** page > the **Connection information** section > the **Prometheus** tab.
+#. Next, navigate to the service's **Overview** page, and then locate the **Connection information** section. 
+#. Click on the **Prometheus** tab.
 #. Copy **Service URI**, and use it in your browser to access the Prometheus dashboard.
 
 .. topic:: Result
@@ -59,10 +60,29 @@ Aiven offers Prometheus endpoints for your services. To enable this feature, tak
   
    There might be a slight delay of approximately one minute before the metrics become available.
 
+
 Accessing Prometheus in a VPC
 ''''''''''''''''''''''''''''''
 
-If you use a VPC in your project, to access Prometheus, you need to go to `Aiven Console <https://console.aiven.io/>`_ > your project > the service you want to monitor using Prometheus > the **Overview** page > the **Advanced configuration** section and enable property ``public_access.prometheus``.
+If you use a VPC in your project, follow these steps to access Prometheus:
+
+1. Access `Aiven Console <https://console.aiven.io/>`_.
+
+2. Select your project, and select the service you want to monitor using Prometheus.
+
+3. Click **Service settings** from the sidebar. 
+
+4. In the **Cloud and network** section, click on the actions (**...**) menu.
+
+5. Choose **More network configurations**.
+
+6. In the **Network configuration** window, select **Add configuration options**.
+
+7. Search for the ``public_access.prometheus`` property and enable it.
+
+8. Click **Save configuration**.
+
+
 
 Configure Prometheus
 --------------------
@@ -133,7 +153,7 @@ Multi-node services
 
 .. note::
   
-   For Aiven services with multiple nodes and a Replica URI, the primary DNS name does not include standby IP addresses. To track those, make sure to include the replica DNS names in the list. If you have ``<PROMETHEUS_SERVICE_URI>`` as ``public-example.aivencloud.com``, then you will need to add ``public-replica-example.aivencloud.com``. This applies to PostgreSQL®, MySQL®, and Redis®* services.
+   For Aiven services with multiple nodes and a Replica URI, the primary DNS name does not include standby IP addresses. To track those, make sure to include the replica DNS names in the list. If you have ``<PROMETHEUS_SERVICE_URI>`` as ``public-example.aivencloud.com``, then you will need to add ``public-replica-example.aivencloud.com``. This applies to PostgreSQL®, MySQL®, Apache Kafka®, and Redis®* services.
 
 View full list of metrics
 ''''''''''''''''''''''''''
@@ -148,10 +168,11 @@ You can preview the full list of metrics in :doc:`Prometheus system metrics </do
   
    For some services the metrics provided by different hosts may vary depending on the host role. Most notably for Kafka® only one of the nodes provides metrics related to consumer group offsets.
 
-More integrations
+Related pages
 -----------------
 
 Learn more about integrations with Aiven:
 
 * :doc:`Aiven integrations </docs/platform/concepts/service-integration>`
 * :doc:`Datadog integration </docs/integrations/datadog>`
+* Configure Prometheus for Aiven for Apache Kafka® via Privatelink

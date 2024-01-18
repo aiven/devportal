@@ -1,7 +1,7 @@
 Send Aiven logs to Logtail
 ==========================
 
-`Logtail <https://betterstack.com/logtail>`_ is a logging service with solid database backing and a cool SQL query interface. You can use the Aiven :doc:`/docs/integrations/rsyslog` to send your logs to Logtail. This article will show you how to set this up.
+`Logtail <https://betterstack.com/logs>`_ is a logging service with solid database backing and a cool SQL query interface. You can use the Aiven :doc:`/docs/integrations/rsyslog` to send your logs to Logtail. This article will show you how to set this up.
 
 1. Set up an Rsyslog source on Logtail. Choose **Connect source**, give your source a **Name**, and select "Rsyslog" as the **Platform**.
 

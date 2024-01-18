@@ -48,9 +48,9 @@ Using the Azure CLI:
    az account clear
    az login
 
-| This should open a window in your browser prompting to choose an Azure
-  account to log in with. An account with at least the **Application
-  administrator** role assignment will be needed for the later steps.
+This should open a window in your browser prompting to choose an Azure
+account to log in with. An account with at least the **Application
+administrator** role assignment will be needed for the later steps.
 
 If you manage multiple Azure subscriptions, also configure the Azure CLI
 to default to the correct subscription for the subsequent commands. This
@@ -107,8 +107,8 @@ as ``$user_app_secret`` below
 5. find the id properties of your virtual network
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This can be found in the Azure portal in "Virtual networks" -> name of
-your network -> “JSON View” -> "Resource ID", or using
+This can be found in the Azure portal in **Virtual networks** > name of
+your network > **JSON View** > **Resource ID**, or using
 
 .. code::
 
@@ -117,11 +117,11 @@ your network -> “JSON View” -> "Resource ID", or using
 Save the ``id`` field which will be referred to as ``$user_vnet_id`` .
 Also grab
 
--  the Azure Subscription ID ("Properties" -> "Subscription ID") or the
+-  the Azure Subscription ID (**Properties** > **Subscription ID**) or the
    part after ``/subscriptions/`` in the resource ID. This is referred
    to as ``$user_subscription_id``
 
--  the resource group name ("Properties" -> "Resource group") or the
+-  the resource group name (**Properties** > **Resource group**) or the
    ``resourceGroup`` field in the output. This is referred to as
    ``$user_resource_group``
 
@@ -220,8 +220,8 @@ with
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The ID of your AD tenant will be needed in the next step. Find it from
-the Azure portal from "Azure Active Directory" -> "Properties" ->
-"Directory ID" or with the Azure CLI using
+the Azure portal from **Azure Active Directory** > **Properties** >
+**Directory ID** or with the Azure CLI using
 
 .. code::
 

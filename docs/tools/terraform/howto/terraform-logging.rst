@@ -44,7 +44,7 @@ If you are encountering issues when deploying your Aiven service via Terraform, 
 
 3.  To generate an example of the core and provider logs,run: 
 
-.. code:: Shell
+    .. code:: Shell
 
-    terraform refresh
+       terraform refresh
 

@@ -1,16 +1,9 @@
 Aiven for InfluxDB®
 ===================
 
-What is Aiven for InfluxDB®?
-----------------------------
-
 Aiven for InfluxDB® is a fully managed high-performance time series database designed for highly variable data, deployable in the cloud of your choice. It can ingest and query hundreds of thousands of data points a second.
 
-
-Why InfluxDB®?
---------------
-
-InfluxDB is a great time series data solution. It is known for its ability to handle variable data sets and query past data. And with Aiven, you can deploy InfluxDB in minutes and enhance your existing architecture.
+With Aiven, you can deploy InfluxDB in minutes and enhance your existing architecture.
 
 Get started with Aiven for InfluxDB®
 -------------------------------------

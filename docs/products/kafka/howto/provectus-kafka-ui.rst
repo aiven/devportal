@@ -40,9 +40,11 @@ Since container for Provectus® UI for Apache Kafka® uses non-root user, to avo
      
       chmod 700 SSL_STORE_FOLDER
 
-3. Copy secrets there (replace the ``SSL_KEYSTORE_FILE_NAME`` and ``SSL_TRUSTSTORE_FILE_NAME`` with the keystores and truststores file names)::
+3. Copy secrets there (replace the ``SSL_KEYSTORE_FILE_NAME`` and ``SSL_TRUSTSTORE_FILE_NAME`` with the keystores and truststores file names):
 
-    cp SSL_KEYSTORE_FILE_NAME SSL_TRUSTSTORE_FILE_NAME SSL_STORE_FOLDER
+   .. code::
+   
+      cp SSL_KEYSTORE_FILE_NAME SSL_TRUSTSTORE_FILE_NAME SSL_STORE_FOLDER
 
 4. Give read permissions for secret files for everyone:
 

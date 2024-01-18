@@ -66,7 +66,7 @@ Send logs from an Aiven service to Datadog
 
 Follow the steps in this section for each of the services whose logs should be sent to Datadog.
 
-1. From the **Service Overview** page, select **Manage integrations** and choose the **Rsyslog** option.
+1. On the **Overview** page of your service, select **Integrations** from the sidebar, and select the **Rsyslog** option.
 
    .. image:: /images/integrations/rsyslog-service-integration.png
       :alt: Screenshot of system integrations including rsyslog

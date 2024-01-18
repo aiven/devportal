@@ -1,18 +1,11 @@
 Aiven for M3
 ============
 
-What is Aiven for M3?
----------------------
-
 Aiven for M3 is a fully managed **distributed time series database**, deployable in the cloud of your choice which can bring unlimited scalability and high-availability to your monitoring environment and other time series applications.
 
 Aiven for M3 consists of  ``n`` number of **M3DB** and **M3 Coordinator** pairs (where  ``n`` is the number of nodes as chosen for your Aiven plan). 
 
-
-Why M3?
--------
-
-M3 is a specialized time series store which is a great choice if your organization has a very large volume of metrics to handle, and it can be used as part of your observability solution. It is optimized for storing and serving time series through associated pairs of times and values. It also provides a reverse index of time series. 
+M3 is a great choice if your organization has a very large volume of metrics to handle, and it can be used as part of your observability solution. It is optimized for storing and serving time series through associated pairs of times and values. It also provides a reverse index of time series. 
 
 .. note::
    Aiven offers M3 because we ourselves needed a solution that would work with the size of our own metrics - and we love it!
@@ -23,7 +16,7 @@ Read more about `the M3 components <https://m3db.io/docs/overview/components/>`_
 Get started with Aiven for M3
 -----------------------------
 
-Take your first steps with Aiven for M3 by following our :doc:`/docs/products/m3db/getting-started` article, or browse through our full list of articles:
+Take your first steps with Aiven for M3 by following our :doc:`/docs/products/m3db/get-started` article, or browse through our full list of articles:
 
 
 .. grid:: 1 2 2 2

@@ -1,17 +1,22 @@
-Enable Karapace schema registry and REST APIs 
+Enable Karapace schema registry and REST APIs
 =============================================
 
-To enable **Karapace schema registry** and **REST APIs** on Aiven for Apache Kafka® from the Aiven Console, follow these steps: 
+To enable **Karapace schema registry** and **REST APIs** on Aiven for Apache Kafka® from the Aiven Console, follow these steps:
 
-1. In the `Aiven Console <https://console.aiven.io/>`_, click on the service to view its overview screen. 
-2. Look for **Schema Registry (Karapace)** or **Apache Kafka REST API (Karapace)**, and enable the setting for either one of the features based on your requirements. 
+1. In the `Aiven Console <https://console.aiven.io/>`_, select your project and then choose your Aiven for Apache Kafka® service.
+2. Click **Service settings** on the sidebar. 
+3. In the **Service management** section, click **Actions** (**...**).
+4. From the dropdown menu, enable the setting for either or both of the features based on your requirements:
 
-To learn more about Karapace and its features, see the `Karapace homepage <https://www.karapace.io/>`_ and `GitHub project <https://github.com/aiven/karapace>`_.
+   a. Click **Enable REST API (Karapace)**. Confirm your choice in the dialog by clicking **Enable**.
+   b. Click **Enable Schema Registry (Karapace)**. Confirm your choice in the dialog by clicking **Enable**.
 
-.. tip:: 
-    If you use any of our automation or other integrations, the parameters to enable schema registry or REST APIs on your service are named ``schema_registry`` and ``kafka_rest``.  
+To learn more about Karapace and its features, visit the [Karapace homepage](https://www.karapace.io) and the [Karapace GitHub project](https://github.com/aiven/karapace).
+
+.. tip::
+    For automation or integration setups, use the parameters ``schema_registry`` and ``kafka_rest`` to enable the schema registry or REST APIs on your service.
 
 More resources
 --------------
-For more information on how to setup Karapace with Aiven for Apache Kafka® using `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_, see `Apache Kafka® with Karapace Schema Registry <https://aiven.io/developer/apache-kafka-karapace>`_.
+For instructions on setting up Karapace with Aiven for Apache Kafka® using `Aiven Terraform Provider <https://registry.terraform.io/providers/aiven/aiven/latest/docs>`_, see `Apache Kafka® with Karapace Schema Registry <https://aiven.io/developer/apache-kafka-karapace>`_.
   

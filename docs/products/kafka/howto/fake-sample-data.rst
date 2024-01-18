@@ -7,7 +7,7 @@ Learning to work with streaming data is much more fun with data, so to get you s
 
    The following example is based on `Docker <https://www.docker.com/>`_ images, which require `Docker <https://www.docker.com/>`_ or `Podman <https://podman.io/>`_ to be executed.
 
-The following example assumes you have an Aiven for Apache Kafka® service running. You can create one following the :doc:`dedicated instructions </docs/products/kafka/getting-started>`.
+The following example assumes you have an Aiven for Apache Kafka® service running. You can create one following the :doc:`dedicated instructions </docs/products/kafka/get-started>`.
 
 
 Fake data generator on Docker
@@ -17,9 +17,9 @@ To learn data streaming, you need a continuous flow of data and for that you can
 
 1. Clone the repository:
 
-.. code::
+   .. code::
 
-    git clone https://github.com/aiven/fake-data-producer-for-apache-kafka-docker
+      git clone https://github.com/aiven/fake-data-producer-for-apache-kafka-docker
 
 2. Copy the file ``conf/env.conf.sample`` to ``conf/env.conf``
 

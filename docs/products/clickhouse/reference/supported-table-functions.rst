@@ -10,6 +10,10 @@ Table functions supported in Aiven for ClickHouse®
       SELECT *
       FROM deltaLake('s3://bucket/path/to/lake')
 
+.. note::
+
+   Occasionally, you may find specific table functions disabled for security reasons.
+
 Aiven for ClickHouse® supports the following table functions:
 
 * ``cluster``
@@ -17,6 +21,7 @@ Aiven for ClickHouse® supports the following table functions:
 * ``cosn``
 * ``deltaLake``
 * ``format``
+* ``gcs``
 * ``generateRandom``
 * ``hudi``
 * ``iceberg``
@@ -26,8 +31,8 @@ Aiven for ClickHouse® supports the following table functions:
 * ``null``
 * ``numbers``
 * ``numbers_mt``
+* ``oss``
 * ``postgresql``
-* ``remote``
 * ``remoteSecure``
 * ``s3``
 * ``s3Cluster``

@@ -10,9 +10,12 @@ Apache
 API
 APIs
 ARN
+ARNs
 Astacus
 Auth0
 autojoin
+autoscaler
+autoscaling
 autovacuum
 Avro
 AZ
@@ -69,9 +72,11 @@ Docker
 dockerized
 downsampled
 downsampling
+Dragonfly
 DSBulk
 DZone
 Elasticsearch
+enablement
 Epicurious
 etcd
 eval
@@ -160,6 +165,7 @@ MongoDB
 MySQL
 myhoard
 namespace/MS
+netmask
 NodeJS
 nosqlbench
 npm
@@ -208,6 +214,7 @@ rebalance
 rebalances
 rebalancing
 Redis
+Redis OSS
 redis_timeout
 Redli
 refcard
@@ -228,6 +235,7 @@ Savepoints
 savepoints
 schemaless
 scriptable
+SDKs?
 Security
 serde
 serializer
@@ -275,6 +283,7 @@ UDFs
 unassign
 uncomment
 unencrypted
+unfollow
 United States
 Unschedule
 untrusted

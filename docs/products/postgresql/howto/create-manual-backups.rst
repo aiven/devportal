@@ -19,12 +19,14 @@ Variable                Description
 Create backups with ``pg_dump``
 '''''''''''''''''''''''''''''''
 
-Perform a backup of your database using the standard PostgreSQL ``pg_dump`` command. Full detail on the parameters can be found in the `associated documentation <https://www.postgresql.org/docs/current/app-pgdump.html>`_, but a typical command would look something like this::
+Perform a backup of your database using the standard PostgreSQL ``pg_dump`` command. Full detail on the parameters can be found in the `associated documentation <https://www.postgresql.org/docs/current/app-pgdump.html>`_, but a typical command would look something like this:
 
-     pg_dump 'POSTGRESQL_URI' \
-         -f backup_folder     \
-         -j 2                 \
-         -F directory
+.. code::
+  
+   pg_dump 'POSTGRESQL_URI' \
+       -f backup_folder     \
+       -j 2                 \
+       -F directory
 
 This command creates a backup in ``directory`` format (ready for use with ``pg_restore``) using 2 concurrent jobs and storing the output to a folder called ``backup_folder``.
 

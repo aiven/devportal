@@ -52,21 +52,21 @@ Check if the distributed table you created is available and if you can use it to
 
 1. Run a read query for the number of table rows:
 
-.. code-block:: sql
+   .. code-block:: sql
 
-    SELECT count() FROM test_db.cash_flows_distributed
+      SELECT count() FROM test_db.cash_flows_distributed
 
 As a response to this query, you can expect to receive a number of rows from all the shards. This is because when you connect on one node and read from the distributed table, ClickHouse® aggregates the data from all the shards and returns all of it.
 
 2. Run a write query to insert new data into the distributed table:
 
-.. code-block:: sql
+   .. code-block:: sql
 
-    INSERT INTO test_db.cash_flows_distributed (
+      INSERT INTO test_db.cash_flows_distributed (
         EventDate, SourceAccount, TargetAccount, Amount
-    )
-    VALUES (
+      )
+      VALUES (
         '2022-01-02 03:04:05', 123, 456, 100.0
-    )
+      )
 
 When you insert data into the distributed table, ClickHouse® decides on which node the data should be stored and write it to the correct node making sure that a similar volume of data is written on all the nodes.

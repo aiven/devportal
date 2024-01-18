@@ -3,7 +3,7 @@ Manage Aiven for ClickHouse® integration databases
 
 Aiven for ClickHouse supports :doc:`regular integrations </docs/products/clickhouse/howto/list-integrations>` and :doc:`data service integrations </docs/products/clickhouse/howto/data-service-integration>`.
 
-You can create Aiven for ClickHouse® integrations databases in the `Aiven web console <https://console.aiven.io/>`_ either when :ref:`creating a new data service integration <integration-db>` or from the the **Databases and tables** view of your service.
+You can create Aiven for ClickHouse® integrations databases in the `Aiven web console <https://console.aiven.io/>`_ either when :ref:`creating a new data service integration <create-integ-db>` or from the the **Databases and tables** view of your service.
 
 This article details how to set up and manage integration databases from the the **Databases and tables** view of your Aiven for ClickHouse service.
 
@@ -21,6 +21,8 @@ Prerequisites
 
 * Aiven account
 * Access to `Aiven web console <https://console.aiven.io/>`_
+
+.. _create-integ-db:
 
 Create integration databases
 ----------------------------
@@ -110,7 +112,7 @@ Delete integration databases
 
    Your integration database has been removed from the **Databases and tables** list.
 
-Related reading
+Related pages
 ---------------
 
 * :doc:`Manage Aiven for ClickHouse® data service integrations </docs/products/clickhouse/howto/data-service-integration>`

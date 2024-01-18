@@ -70,13 +70,17 @@ Once the schema is defined, you need to compile it, and it can be done **manuall
 Manual schema compilation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In case of manual schema compilation, download ``avro-tools-1.11.0.jar`` from https://avro.apache.org/releases.html or via maven using the following::
+In case of manual schema compilation, download ``avro-tools-1.11.0.jar`` from https://avro.apache.org/releases.html or via maven using the following:
 
-    mvn org.apache.maven.plugins:maven-dependency-plugin:2.8:get -Dartifact=org.apache.avro:avro-tools:1.11.0:jar -Ddest=avro-tools-1.11.0.jar
+.. code::
 
-The schema defined in the previous step, can be now compiled to produce a Java class ``ClickRecord.java`` in the ``io.aiven.avro.example`` package (taken from the ``namespace`` parameter)::
+   mvn org.apache.maven.plugins:maven-dependency-plugin:2.8:get -Dartifact=org.apache.avro:avro-tools:1.11.0:jar -Ddest=avro-tools-1.11.0.jar
 
-    java -jar avro-tools-1.11.0.jar compile schema ClickRecord.avsc .
+The schema defined in the previous step, can be now compiled to produce a Java class ``ClickRecord.java`` in the ``io.aiven.avro.example`` package (taken from the ``namespace`` parameter):
+   
+.. code::
+     
+   java -jar avro-tools-1.11.0.jar compile schema ClickRecord.avsc .
 
 .. Note:: 
 

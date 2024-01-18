@@ -84,36 +84,39 @@ Step 3: Approve the created connection
 
 1. Update the state of Private Service Connect connections for your Aiven service by running
 
-.. code:: shell
+   .. code:: shell
 
-    avn service privatelink google refresh MY_SERVICE_NAME
+      avn service privatelink google refresh MY_SERVICE_NAME
 
 2. Retry the following command until it returns the pending-user-approval status:
 
-.. code:: shell
+   .. code:: shell
 
-    avn service privatelink google connection list MY_SERVICE_NAME
+      avn service privatelink google connection list MY_SERVICE_NAME
 
-.. code:: shell
+   .. code:: shell
 
-    PRIVATELINK_CONNECTION_ID  PSC_CONNECTION_ID  STATE                  USER_IP_ADDRESS
-    =========================  =================  =====================  ===============
-    plc3fd852bec98             12870921937223780  pending-user-approval  null
+      PRIVATELINK_CONNECTION_ID  PSC_CONNECTION_ID  STATE                  USER_IP_ADDRESS
+      =========================  =================  =====================  ===============
+      plc3fd852bec98             12870921937223780  pending-user-approval  null
 
-.. note::
-   * PSC_CONNECTION_ID is the identifier assigned to Google for the connection, and you can use it to verify that the connection is indeed matching your Private Service Connect endpoint.
-   * PRIVATELINK_CONNECTION_ID is an Aiven internal identifier for the connection, which is needed in the final connection approval step.
+   .. note::
+    
+      * PSC_CONNECTION_ID is the identifier assigned to Google for the connection, and you can use it to verify that the connection is indeed matching your Private Service Connect endpoint.
+
+      * PRIVATELINK_CONNECTION_ID is an Aiven internal identifier for the connection, which is needed in the final connection approval step.
 
 3. To enable a connection, approve it.
 
-.. note::
-    By approving the connection, you provide the IP address assigned to your PSC endpoint - whether automatically assigned or static. Aiven uses this IP address for pointing the service DNS records necessary for the clients to reach the Aiven service through the Private Service Connect connection.
+   .. note::
+     
+      By approving the connection, you provide the IP address assigned to your PSC endpoint - whether automatically assigned or static. Aiven uses this IP address for pointing the service DNS records necessary for the clients to reach the Aiven service through the Private Service Connect connection.
 
-To approve the connection, run the following approval command:
+   To approve the connection, run the following approval command:
 
-.. code:: shell
+   .. code:: shell
 
-    avn service privatelink google connection approve MY_SERVICE_NAME --privatelink-connection-id PRIVATELINK_CONNECTION_ID --user-ip-address PSC_ENDPOINT_IP_ADDRESS
+      avn service privatelink google connection approve MY_SERVICE_NAME --privatelink-connection-id PRIVATELINK_CONNECTION_ID --user-ip-address PSC_ENDPOINT_IP_ADDRESS
 
 As a result, the connection initially transitions to the user-approved state.
 
@@ -127,13 +130,13 @@ As a result, the connection initially transitions to the user-approved state.
     =========================  =================  =============  ===============
     plc3fd852bec98             12870921937223780  user-approved  10.0.0.100
 
-You may be need to run the ``avn service privatelink google refresh`` command at this point since updates to service attachment accept lists are not immediately reflected in the states of returned connected endpoints.
+You may need to run the ``avn service privatelink google refresh`` command at this point since updates to service attachment accept lists are not immediately reflected in the states of returned connected endpoints.
 
 .. code:: shell
 
     avn service privatelink google refresh MY_SERVICE_NAME
 
-After establishing the connection and populating DNS records , the connection appears as ``active``.
+After establishing the connection and populating DNS records, the connection appears as ``active``.
 
 .. code:: shell
 
@@ -166,11 +169,15 @@ To enable Private Service Connect access for your service in the Aiven CLI, set 
 
 To enable Private Link access in `Aiven Console <https://console.aiven.io/>`_, take the following steps:
 
-1. Select the service that you want to enable access to.
-2. On the **Overview** page of your service, in the **Advanced configuration** section, select **Change**.
-3. Select **Add configuration option**, and select the ``privatelink_access.<service component>`` option for the components that you want to enable.
-4. Toggle the switch next to the components to set the values to ``true``.
-5. Select **Save advanced configuration**.
+#. On the **Overview** page of your service, select **Service settings** from the sidebar.
+#. On the **Service settings** page, navigate to the **Cloud and network** section and select **More network configurations** from the actions (**...**) menu.
+#. In the **Network configuration** window, take the following actions:
+
+   #. Select **Add configuration options**.
+   #. In the search field, enter ``privatelink_access``.
+   #. From the displayed component names, select the names of the components that you want to enable (``privatelink_access.<service component>``).
+   #. Select the toggle switches for the selected components to enable them.
+   #. Select **Save configuration**.
 
 .. Tip::
 
@@ -195,9 +202,9 @@ To acquire connection information for your service component using Private Servi
 
 * For SSL connection information for your service component using Private Service Connect, run the following command:
 
-.. code-block:: bash
+  .. code-block:: bash
 
-   avn service connection-info UTILITY_NAME SERVICE_NAME -p PRIVATELINK_CONNECTION_ID
+     avn service connection-info UTILITY_NAME SERVICE_NAME -p PRIVATELINK_CONNECTION_ID
 
 .. topic:: Where
 
@@ -207,9 +214,9 @@ To acquire connection information for your service component using Private Servi
 
 * For SASL connection information for Aiven for Apache Kafka® service components using Private Service Connect, run the following command:
 
-.. code-block:: bash
+  .. code-block:: bash
 
-   avn service connection-info UTILITY_NAME SERVICE_NAME -p PRIVATELINK_CONNECTION_ID -a sasl
+     avn service connection-info UTILITY_NAME SERVICE_NAME -p PRIVATELINK_CONNECTION_ID -a sasl
 
 .. topic:: Where
 

@@ -15,32 +15,40 @@ To get started, you need three services:
 Create an integration
 ---------------------
 
-1. In `Aiven Console <https://console.aiven.io/>`_, :doc:`create the new services: <create_new_service>` Aiven for Apache Kafka®, Aiven for PostgreSQL®, and Aiven for Grafana®. You can choose your preferred cloud provider, region, and any plan from **startup** / **business** / **premium**.  
+1. In the `Aiven Console <https://console.aiven.io/>`_, :doc:`create new services <create_new_service>` including Aiven for Apache Kafka®, Aiven for PostgreSQL®, and Aiven for Grafana®. Choose your preferred cloud provider, region, and a plan from **startup**, **business**, or **premium**.
 
-2. Once all three services are running in `Aiven Console <https://console.aiven.io/>`_, select the Aiven for PostgreSQL service from the **Services** page, and make sure the **Overview** page of your service is open. On the **Overview** page, go to **Service integrations** > **Manage integrations** > **Aiven solutions** > **Monitor Data in Grafana**. In the **Datasource integration** window, make sure the **Existing service** radio button is highlighted, and select the newly created Aiven for Grafana service. Select **Enable**.
+2. Once all three services are running in the `Aiven Console <https://console.aiven.io/>`_, select the Aiven for PostgreSQL service from the **Services** page. Ensure you are on the **Overview** page of your service. 
+   
+   a. Select to **Integrations**  from the sidebar. 
+   b. Under  **Aiven solutions**, click **Monitor Data in Grafana**. 
+   c. In the **Datasource integration** window, select the **Existing service** radio button and choose the Aiven for Grafana service you created.
+   d. Click **Enable**.
 
-3. Enable receiving metrics from the Aiven for Apache Kafka service. On the **Overview** page of your Aiven for PostgreSQL service, go to **Service integrations** > **Manage integrations** > **Aiven solutions** > **Receive Metrics**. In the **Metrics integration** window, make sure the **Existing service** radio button is highlighted, and select the newly created Aiven for Apache Kafka service. Select **Enable**.
+3. To enable metrics from the Aiven for Apache Kafka service, go to the **Overview** page of your Aiven for PostgreSQL service. 
+   
+   a. Select **Service integrations** from the sidebar. 
+   b. Under **Aiven solutions**, select **Receive Metrics**. 
+   c. In the **Metrics integration** window, ensure the **Existing service** radio button is selected and choose the Aiven for Apache Kafka service.
+   d. Click **Enable**.
 
    .. note::
    
-      You have now the advanced Aiven for Apache Kafka telemetry data flowing to the Aiven for PostgreSQL service.
+      This step allows advanced Aiven for Apache Kafka telemetry data to flow into the Aiven for PostgreSQL service.
 
-4. Open the Grafana dashboard to see the Aiven for Apache Kafka metrics data.
+4. To view the Aiven for Apache Kafka metrics data in Grafana:
 
-   1. In `Aiven Console <https://console.aiven.io/>`_, select your Aiven for Grafana service from the **Services** view.
-   2. In the **Overview** page of your service, navigate to the **Connection information** section.
-   3. Use **Service URI** from the **Connection information** section to access the Grafana service in your browser. To log in, use the credentials available in the the **Connection information** section (the ``avnadmin`` user and the password).
+   a. In the `Aiven Console <https://console.aiven.io/>`_, select your Aiven for Grafana service from the **Services** page.
+   b. In the **Connection information** section on the service **Overview** page, copy the **Service URI** from the **Connection information** to access the Grafana service in your browser. 
+   c. Log in using the credentials provided in the **Connection information** section (the ``avnadmin`` user and the password).
 
 .. note::
    
-   If you cannot see a dashboard after logging in, search for a dashboard from the top-left corner in the Grafana console to find dashboard ``Aiven Kafka - <YOUR_KAFKA_SERVICE_NAME> - Resources``. 
-
-   This dashboard is a predefined view that is automatically maintained by Aiven.
+   If you don't see a dashboard after logging in, search for ``Aiven Kafka - <YOUR_KAFKA_SERVICE_NAME> - Resources`` from the top-left corner in the Grafana console. This is a predefined dashboard automatically maintained by Aiven.
    
 .. note::
       
-   It may take a minute to start getting data into to the dashboard view if you just enabled the integrations. The view can be refreshed by reloading in the top-right corner. You can add custom dashboards by either defining them from scratch in Grafana or by saving a copy of the predefined dashboard under a different name that does not start with *Aiven*.
+   Data may take a minute to appear on the dashboard if you've just enabled the integrations. Refresh the view by reloading the page from the top-right corner. You can create custom dashboards either from scratch in Grafana or by saving a copy of the predefined dashboard under a different name that does not start with *Aiven*.
 
 .. warning::
 
-   Any changes that you make to the predefined dashboard are eventually automatically overwritten by the system.
+   Any modifications to the predefined dashboard will be automatically overwritten by the system in time.

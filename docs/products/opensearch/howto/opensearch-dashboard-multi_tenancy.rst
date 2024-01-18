@@ -1,4 +1,4 @@
-Set up OpenSearch® Dashboard multi-tenancy |beta|
+Set up OpenSearch® Dashboard multi-tenancy
 ==================================================
 
 Aiven for OpenSearch® provides support for multi-tenancy through OpenSearch Security Dashboard. Multi-tenancy in OpenSearch Security enables multiple users or groups to securely access the same OpenSearch cluster while maintaining their distinct permissions and data access levels. With multi-tenancy, each tenant has its own isolated space for working with indexes, visualizations, dashboards, and other OpenSearch objects, ensuring tenant-specific data and resources are protected from unauthorized access. 
@@ -80,6 +80,6 @@ To manage tenants in the OpenSearch dashboard, you can follow these steps:
 * **Edit, delete, or duplicate tenants**: To manage existing tenants, select them from the list and use the **Actions** dropdown to edit, delete, or duplicate them according to your needs.
 
 
-Related articles
+Related pages
 ------------------
 * `OpenSearch Dashboards multi-tenancy <https://opensearch.org/docs/2.6/security/multi-tenancy/tenant-index/>`_

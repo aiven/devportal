@@ -8,9 +8,9 @@ Prerequisite steps in Aiven Console
 
 #. In the organization, click **Admin**.
 
-#. Select **Authentication**.
+#. Select **Identity providers**.
 
-#. Click **Add authentication method**.
+#. Click **Add identity provider**.
 
 #. Enter a name and select SAML. You can also select the groups that users will be added to when they sign up or log in through this authentication method.
 
@@ -34,7 +34,7 @@ This is a two step process. First, you create the SAML SP-Initiated authenticati
 
 #. Enter a name for the app and add a logo. 
 
-#. Set it's visibility for your Okta users and click **Next**.
+#. Set its visibility for your Okta users and click **Next**.
 
 #. Set the following values in the app configuration:
 

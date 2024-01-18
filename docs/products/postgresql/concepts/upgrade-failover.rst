@@ -31,9 +31,15 @@ After the replica promotion, ``servicename-projectname.aivencloud.com`` would po
 Replica server disconnection
 """"""""""""""""""""""""""""
 
-If the **replica** server disappears, Aiven's management platform uses a **300-second timeout** before marking the server as down and creating a new replica server. During this period, the DNS ``replica-servicename-projectname.aivencloud.com`` points to the disappeared server that might not serve queries anymore. The DNS record pointing to the primary server (``servicename-projectname.aivencloud.com``) remains unchanged.
+If the **replica** server disappears, Aiven's management platform uses a **60-second timeout** before marking the server as down and creating a new replica server.
 
-If the replica server does not come back online during these 300 seconds, ``replica-servicename-projectname.aivencloud.com`` is pointed to the primary server until a new replica server is fully functional.
+.. note::
+   Each Aiven for PostgreSQL® Business plan supports one replica server only, which is why the service's read replica endpoint ``replica-SERVICE_NAME-PROJECT_NAME.aivencloud.com`` remains unavailable and queries to this endpoint time-out until a new replica is available.
+
+.. tip::
+   For higher availability on a service's read replica endpoint, you can upgrade to a Premium plan with two standby servers used as read replicas.
+
+The DNS record pointing to primary server ``SERVICE_NAME-PROJECT_NAME.aivencloud.com`` remains unchanged during the recovery of the replica server.
 
 Controlled switchover during upgrades or migrations
 ---------------------------------------------------

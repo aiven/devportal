@@ -8,9 +8,9 @@ Prerequisite steps in Aiven Console
 
 #. In the organization, click **Admin**.
 
-#. Select **Authentication**.
+#. Select **Identity providers**.
 
-#. Click **Add authentication method**.
+#. Click **Add identity provider**.
 
 #. Enter a name and select SAML. You can also select the groups that users will be added to when they sign up or log in through this authentication method.
 
@@ -79,8 +79,7 @@ Next, create an application in your FusionAuth instance:
  
 #. On the **SAML** tab, and toggle on the **Enabled** switch.
 
-#. Paste the **Metadata URL** and **ACS URL** you copied from the Aiven Console to the **Issuer** and
-**Authorized redirect URLs** fields in your FusionAuth application, respectively.
+#. Paste the **Metadata URL** and **ACS URL** you copied from the Aiven Console to the **Issuer** and **Authorized redirect URLs** fields in your FusionAuth application, respectively.
 
    .. list-table::
      :header-rows: 1

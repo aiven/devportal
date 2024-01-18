@@ -1,24 +1,69 @@
-import requests
 import argparse
-from typing import Dict
+import jinja2
+import re
+import requests
+from dataclasses import dataclass
+from typing import cast, Self
+from natsort import natsorted
+
+CLOUD_ENTRIES_TEMPLATE = """\
+{% set state = namespace(prev_cloud_vendor_code=None) %}
+{%- for cloud_entry in cloud_entries -%}
+{% if cloud_entry.vendor_code != state.prev_cloud_vendor_code %}
+{% set state.prev_cloud_vendor_code = cloud_entry.vendor_code %}
+{{ cloud_entry.vendor_name }}
+-----------------------------------------------------
+.. list-table::
+  :header-rows: 1
+
+  * - Region
+    - Cloud
+    - Description
+{%- endif %}
+  * - {{ cloud_entry.geo_region }}
+    - ``{{ cloud_entry.name }}``
+    - {{ cloud_entry.description }}
+  {%- endfor -%}
+"""
 
 
-def create_cloud_entry(cloud: Dict) -> str:
-    """Creates cloud entry with formatted info.
+@dataclass
+class CloudEntry:
+    description: str
+    geo_region: str
+    name: str
+    vendor_code: str
+    vendor_name: str
 
-    :param cloud: contains relevant info about cloud
-    :returns: formatted string with cloud info
-    :rtype: str
-    """
-    entry = ""
-    # Printing in title case to make it look better
-    entry += f'  * - {cloud["geo_region"].title()}'
-    entry += "\n"
-    entry += f'    - ``{cloud["cloud_name"]}``'
-    entry += "\n"
-    prefix = cloud["cloud_description"][0 : cloud["cloud_description"].find("-")]
-    entry += f"    - {prefix}"
-    return entry
+    @classmethod
+    def from_dict(cls: type[Self], cloud: dict[str, str | float], /) -> Self:
+        """Create cloud entry from dict
+
+        :param cloud: contains relevant info about cloud
+        :rtype: CloudEntry
+        """
+
+        description_parts = [
+            description_part.strip()
+            for description_part in re.split(
+                r"[,:-]", cast(str, cloud["cloud_description"])
+            )
+        ]
+        vendor_name = description_parts.pop(2)
+        description = (
+            f"{description_parts[0]}, {description_parts[1]}: {description_parts[2]}"
+        )
+        cloud_name = cast(str, cloud["cloud_name"])
+        vendor_code = cloud_name[0 : cloud_name.index("-")]
+        return cls(
+            description=description,
+            geo_region=cast(
+                str, cloud["geo_region"]
+            ).title(),  # Printing in title case to make it look better
+            name=cloud_name,
+            vendor_code=vendor_code,
+            vendor_name=vendor_name,
+        )
 
 
 def main():
@@ -33,50 +78,12 @@ def main():
     response = requests.get("https://api.aiven.io/v1/clouds")
     data = response.json()["clouds"]
 
-    # Sorting the data by vendor and region
-    # * Vendor is contained in the cloud_name field, between the start and the '-' symbol
-    # * geographical region is contained in the geo_region field
-    # * the cloud name itself is contained in the cloud_name field
-    data = sorted(
-        data,
-        key=lambda k: k["cloud_name"][0 : k["cloud_name"].find("-")]
-        + " "
-        + k["geo_region"]
-        + k["cloud_name"],
+    cloud_entries = natsorted(
+        (CloudEntry.from_dict(cloud) for cloud in data),
+        key=lambda cloud: (cloud.vendor_code, cloud.geo_region, cloud.name),
     )
 
-    # This helps creating a new section every time there is a change in the Cloud vendor
-    prev_cloud = None
-    res = ""
-    for cloud in data:
-        # Extracting the cloud vendor information available in the cloud_description field between the `-` symbol and the `:` symbol
-        curr_cloud = cloud["cloud_description"][
-            cloud["cloud_description"].find("-")
-            + 2 : cloud["cloud_description"].find(":")
-        ]
-        res += "\n"
-        # If current_cloud is different than  the previous cloud, let's create a new title, section, table
-        if curr_cloud != prev_cloud:
-            prev_cloud = curr_cloud
-            res += "\n"
-            res += curr_cloud
-            res += "\n"
-            res += "-----------------------------------------------------"
-            res += "\n"
-
-            res += ".. list-table::"
-            res += "\n"
-            res += "  :header-rows: 1"
-            res += "\n\n"
-
-            res += "  * - Region"
-            res += "\n"
-            res += "    - Cloud"
-            res += "\n"
-            res += "    - Description"
-            res += "\n"
-
-        res += create_cloud_entry(cloud)
+    res = jinja2.Template(CLOUD_ENTRIES_TEMPLATE).render(cloud_entries=cloud_entries)
 
     with open(filename, "w") as text_file:
         text_file.write(res)

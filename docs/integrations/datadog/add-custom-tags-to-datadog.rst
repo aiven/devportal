@@ -36,11 +36,10 @@ To add tags to the service integration:
 
 #. Log in to `Aiven Console <https://console.aiven.io/>`_, and select your service.
 
-#. In the service **Overview** page, scroll to **Service integration** and select **Manage integrations**.
+#. On the **Overview** page of your service, navigate to the **Service integrations** section and select **Manage integrations**.
 
 #. Next to the Datadog integration listed at the top on the Integrations screen, select **Edit** from the drop-down menu (ellipsis).
 
 #. Enter the desired tags in the provided field. You can add multiple tags by selecting the **Add** icon and optionally include descriptions for each tag.
 
 #. Select **Save configuration** to apply the changes.
-

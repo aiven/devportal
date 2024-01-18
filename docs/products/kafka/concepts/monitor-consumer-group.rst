@@ -8,7 +8,7 @@ This section builds on the :doc:`service integrations </docs/platform/concepts/s
 
 Topics 
 ---------
-In Apache Kafka®, a topic serves as a unique channel for discussions. Producers send messages to the topic while consumers read those messages. For instance, in a topic named `soccer`, you can read what others say about soccer (acting as a consumer) or post messages about soccer (acting as a producer).
+In Apache Kafka®, a topic serves as a unique channel for discussions. Producers send messages to the topic while consumers read those messages. For instance, in a topic named ``soccer``, you can read what others say about soccer (acting as a consumer) or post messages about soccer (acting as a producer).
 
 Topic partitions 
 -----------------

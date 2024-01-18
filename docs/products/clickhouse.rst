@@ -7,7 +7,7 @@ Aiven for ClickHouse® is a fully managed distributed columnar database based on
 
 .. grid:: 1 2 2 2
 
-    .. grid-item-card:: :doc:`Quickstart </docs/products/clickhouse/getting-started>`
+    .. grid-item-card:: :doc:`Quickstart </docs/products/clickhouse/get-started>`
         :shadow: md
         :margin: 2 2 0 0
 

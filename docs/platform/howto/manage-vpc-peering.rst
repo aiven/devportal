@@ -6,7 +6,7 @@ Virtual Private Cloud (VPC) peering is a method of connecting separate AWS, Goog
 .. _platform_howto_setup_vpc_peering:
 
 Configure VPC peering
-----------------------------------------
+---------------------
 
 In Aiven, VPC peering is configured as a project and region-specific setting. This means that all services created and running use the same VPC peering connection. If necessary, you can use different connections for VPC peering across multiple projects.
 
@@ -30,7 +30,7 @@ To set up VPC peering for your Aiven project:
 The state of the VPC is shown in the table.
 
 Cloud-specific VPC peering instructions
-----------------------------------------
+---------------------------------------
 
 - :doc:`Set up VPC peering on Amazon Web Services (AWS) </docs/platform/howto/vpc-peering-aws>`
 - :doc:`Set up VPC peering on Google Cloud Platform (GCP) </docs/platform/howto/vpc-peering-gcp>`
@@ -41,7 +41,7 @@ Cloud-specific VPC peering instructions
        Depending on the cloud provider that you selected for the VPC connection, you also have to accept a VPC peering connection request or set up a corresponding VPC peering connection to Aiven. 
 
 Deploy new services to a VPC
--------------------------------
+----------------------------
 
 When you create a new service, your peered VPC is available as a new geolocation on the **VPC** tab under **Select service region**. It can take a few minutes for a newly created VPC to appear for service deployments.
 
@@ -50,45 +50,54 @@ When you create a new service, your peered VPC is available as a new geolocation
        The service nodes use firewall rules to allow only connections from private IP ranges that originate from networks on the other end of VPC peering connections. You can only deploy services to a VPC if they belong to the project where that specific VPC was created.
 
 Delete an existing VPC and VPC peering
-----------------------------------------
+--------------------------------------
 
 Before deleting an existing VPC from `Aiven Console <https://console.aiven.io/>`_, you should move out any active services from that VPC. To delete a VPC, navigate to `Aiven Console <https://console.aiven.io/>`_ > **VPCs**. Find your VPC and select **Delete** from the meatballs menu for this VPC.
 Once the VPC is deleted, the cloud provider side of the peering connection will go to an inactive or deleted state.
 
 Migrate a public service to a VPC
------------------------------------
+---------------------------------
 
 You can migrate any Aiven service to a different VPC:
 
 #. In `Aiven Console <https://console.aiven.io/>`_, go to your service.
 
-#. On the **Overview** page of your service, go in to **Cloud and VPC** section, click **Migrate cloud**.
+#. On the **Overview** page of your service, select **Service settings** from the sidebar.
 
-#. In the **Region** section, select the **VPC** tab.
+#. On the **Service settings** page, navigate to the **Cloud and network** section and select **Change cloud or region** from the actions (**...**) menu.
 
-#. Select the VPC that you want to use.
-
-#. Click **Migrate**. 
+#. In the **Migrate service to another cloud** window > the **Region** section, select the **VPCs** tab, select the VPC that you want to use, and select **Migrate**.
 
 Access VPC services from the public internet
------------------------------------------------
+--------------------------------------------
 
 When you move your service to a VPC, access from public networks is blocked by default. If you switch to public access, a separate endpoint is created with a public prefix. 
 You can enable public Internet access for your services by following the :doc:`Enable public access in a VPC </docs/platform/howto/public-access-in-vpc>` instructions.
 
-IP filtering (the **Allowed IP addresses** list on the service's **Overview** page) is still available for a service deployed to a VPC where both public and private access are allowed. We recommend that you use IP filtering when your VPC service is also exposed to the public internet.
+IP filtering (the **Service settings** page > the **Cloud and network** section > the actions (**...**) menu > **Set public IP filters**) is still available for a service deployed to a VPC where both public and private access are allowed. We recommend that you use IP filtering when your VPC service is also exposed to the public internet.
 
-Also note that safelisting applies to both internal and external traffic. If you safelist an external IP address and want to keep traffic flowing with the internal (peered) connections, make sure that you safelist the CIDR blocks of the peered networks as well to avoid disruptions to the service.
+.. note::
+
+   **Public IP filters** are restricted via VPC. IP filters apply to publicly-accessible endpoints only.
+
+Safelisting applies to both internal and external traffic. If you safelist an external IP address and want to keep traffic flowing with the internal (peered) connections, make sure that you safelist the CIDR blocks of the peered networks as well to avoid disruptions to the service.
 
 Troubleshoot VPC connection issues
--------------------------------------
+----------------------------------
 
-Any network changes to VPC peered hosts external from Aiven can cause issues with routing to your Aiven services hosted in a VPC. To troubleshoot such issues, take the following steps:
+Any network changes to VPC peered hosts external from Aiven can cause issues with routing to your Aiven services hosted in a VPC.
+In such case, try to refresh your VPC connections.
+
+.. note::
+ 
+   Changes to your VPCs (such as adding a new subnet) can take up to 24 hours to take effect so wait at least 24h before refreshing your VPC connections.
+
+To refresh your VCP connections:
 
 1. In `Aiven Console <https://console.aiven.io/>`_, select **VPCs**.
 2. Find the ID of the affected VPC and select it from the **Internal ID** column.
 3. Select **Refresh VPC connections**.
 
-As a result, the platform checks the VPC peering connection and rebuilds the peering connection state if there are any changes detected.
+The platform checks the VPC peering connection and rebuilds the peering connection state if there are any changes detected.
 
 For any other issues, open a support ticket from `Aiven Console <https://console.aiven.io/>`_ to get in touch with the support team and/or see :doc:`Get support in the Aiven Console </docs/platform/howto/project-support-center>`.

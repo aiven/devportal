@@ -15,7 +15,7 @@ Get a list of available service metrics
 
 To discover the metrics available for your services, make an HTTP ``GET`` request to your Prometheus service endpoint.
 
-1. Once your Prometheus integration is configured, collect the following Prometheus service details from `Aiven Console <https://console.aiven.io/>`_ > your service's the **Overview** page > the **Connection information** section > the **Prometheus** tab:
+1. Once your Prometheus integration is configured, collect the following Prometheus service details from `Aiven Console <https://console.aiven.io/>`_ > the **Overview** page of your service > the **Connection information** section > the **Prometheus** tab:
 
 * Prometheus URL
 * Username

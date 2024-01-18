@@ -13,9 +13,11 @@ The steps below show you how to download the dataset, set up a connection with t
 Download the dataset
 --------------------
 
-Download the original dataset directly from `the dataset documentation page <https://clickhouse.com/docs/en/getting-started/example-datasets/metrica/>`_. You can do this using cURL, where the generic command looks like this::
+Download the original dataset directly from `the dataset documentation page <https://clickhouse.com/docs/en/getting-started/example-datasets/metrica/>`_. You can do this using cURL, where the generic command looks like this:
 
-    curl address_to_file_in_format_tsv_xz | unxz --threads=`nproc` > file-name.tsv
+.. code::
+
+   curl address_to_file_in_format_tsv_xz | unxz --threads=`nproc` > file-name.tsv
 
 .. note::
     The ``nproc`` Linux command, which prints the number of processing units, is not available on macOS. To use the above command, add an alias for ``nproc`` into your  ``~/.zshrc`` file: ``alias nproc="sysctl -n hw.logicalcpu"``.
@@ -27,7 +29,7 @@ Once done, you should have two files available: ``hits_v1.tsv`` and ``visits_v1.
 Set up the service and database
 -------------------------------
 
-If you don't yet have an Aiven for ClickHouse service, follow the steps in our :doc:`getting started guide </docs/products/clickhouse/getting-started>` to create one.
+If you don't yet have an Aiven for ClickHouse service, follow the steps in our :doc:`getting started guide </docs/products/clickhouse/get-started>` to create one.
 
 When you create a service, a default database was already added. However, you can create separate databases specific to your use case. We will create a database with the name ``datasets``, keeping it the same as in the ClickHouse documentation.
 
@@ -79,24 +81,28 @@ Load data
 
 Now that you have a dataset with two empty tables, we'll load data into each of the tables. However, because we need to access files outside the docker container, we'll run the command specifying ``--query`` parameter. To do this:
 
-1. Go to the folder where you stored the downloaded files for ``hits_v1.tsv`` and ``visits_v1.tsv``.
+#. Go to the folder where you stored the downloaded files for ``hits_v1.tsv`` and ``visits_v1.tsv``.
 
-#. Run the following command::
-
-        cat hits_v1.tsv | docker run        \
-        --interactive                       \
-        --rm clickhouse/clickhouse-server clickhouse-client  \
-        --user USERNAME                     \
-        --password PASSWORD                 \
-        --host HOST                         \
-        --port PORT                         \
-        --secure                            \
-        --max_insert_block_size=100000      \
-        --query="INSERT INTO datasets.hits_v1 FORMAT TSV"
+#. Run the following command:
+   
+   .. code::
+    
+      cat hits_v1.tsv | docker run        \
+      --interactive                       \
+      --rm clickhouse/clickhouse-server clickhouse-client  \
+      --user USERNAME                     \
+      --password PASSWORD                 \
+      --host HOST                         \
+      --port PORT                         \
+      --secure                            \
+      --max_insert_block_size=100000      \
+      --query="INSERT INTO datasets.hits_v1 FORMAT TSV"
 
    ``hits_v1.tsv`` contains approximately 7Gb of data. Depending on your internet connection, it can take some time to load all the items.
 
-#. Run the corresponding command for ``visits_v1.tsv``::
+#. Run the corresponding command for ``visits_v1.tsv``:
+   
+   .. code::
 
         cat visits_v1.tsv | docker run      \
         --interactive                       \

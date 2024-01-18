@@ -1,5 +1,5 @@
-Understanding MySQL memory usage
-==================================
+Understand MySQL memory usage
+=============================
 
 **MySQL memory utilization can appear high, even if the service is relatively idle.**
 

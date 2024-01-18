@@ -12,7 +12,7 @@ Prerequisites
 --------------
 
 * :doc:`Aiven for Apache Flink service </docs/platform/howto/create_new_service>` with Aiven for Apache Kafka® integration. See :doc:`/docs/products/flink/howto/create-integration` for more information.  
-* Aiven for Apache Kafka® service with Karapace Schema registry enabled. See :doc:`/docs/products/kafka/karapace/getting-started` for more information.  
+* Aiven for Apache Kafka® service with Karapace Schema registry enabled. See :doc:`/docs/products/kafka/karapace/get-started` for more information.  
 * By default, Flink cannot create Apache Kafka topics while pushing the first record automatically. To change this behavior, enable in the Aiven for Apache Kafka target service the ``kafka.auto_create_topics_enable`` option in **Advanced configuration** section.
 
 Create an Apache Flink® table with Confluent Avro

@@ -208,13 +208,14 @@ Migrate a database
 
 1. Log in to the `Aiven Console <https://console.aiven.io/>`_.
 2. On the **Services** page, select the service where your target database is located.
-3. On the **Overview** page of the selected service, scroll down to the **Migrate database** section and select **Set up migration**.
-4. Guided by the migration wizard, go through all the migration steps.
+3. From the sidebar on your service's page, select **Service settings**.
+4. On the **Service settings** page, navigate to the **Service management** section, and select **Import database**.
+5. Guided by the migration wizard, go through all the migration steps.
 
 Step 1: Configure
 '''''''''''''''''
 
-Get familiar with the guidelines provided in the **PostgreSQL migration configuration guide** window and select **Get started**.
+Get familiar with the guidelines provided in the **PostgreSQL migration configuration guide** window, make sure your configuration is in line with them, and select **Get started**.
 
 Step 2: Validation
 ''''''''''''''''''
@@ -252,7 +253,7 @@ Trigger the migration by selecting **Start migration** in the **Database migrati
 
 While the migration is in progress, you can take the following actions:
 
-* Let it proceed until completed by selecting **Close window**, which closes the wizard. You can come back to check the status at any time on the **Overview** page of the service in the **Migrate database** section.
+* Let it proceed until completed by selecting **Close window**, which closes the wizard. You can come back to check the status at any time on the **Service settings** page > the **Service management** section > **Import database**.
 * Write to the target database.
 * Discontinue the migration by selecting **Stop migration**. Although the data already migrated is retained, you cannot restart the stopped process. To continue with the migration, you need to start a new migration process from scratch.
 
@@ -277,14 +278,14 @@ As soon as the wizard communicates the completion of the migration, check if the
 
    This information in the wizard means that your data has been transferred to Aiven, but some new data is still continuously being synced between the connected databases.
 
-* If there is no replication in progress, select **Close connection** in the migration wizard to finalize the migration process. As a result, on the **Overview** page of the service > the **Migrate database** section, you'll see the **Ready** tag.
-* If the replication mode is active, you can select **Keep replicating**. As a result, on the **Overview** page of the service > the **Migrate database** section, you'll see the **Syncing** tag, and you'll be able to check the status of the migration process by selecting **Status update**.
+* If there is no replication in progress, select **Close connection** in the migration wizard to finalize the migration process. As a result, on the **Service settings** page > the **Service management** section > **Import database**, you'll see the **Ready** tag.
+* If the replication mode is active, you can select **Keep replicating**. As a result, on the **Service settings** page > the **Service management** section > **Import database**, you'll see the **Syncing** tag, and you'll be able to check the status of the migration process by selecting **Status update**.
 
 .. topic:: Result
 
    You have successfully migrated your PostgreSQL database into you Aiven for PostgreSQL service.
 
-Related reading
+Related pages
 ---------------
 
 - :doc:`About aiven-db-migrate </docs/products/postgresql/concepts/aiven-db-migrate>`

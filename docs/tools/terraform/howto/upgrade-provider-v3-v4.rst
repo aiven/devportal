@@ -51,42 +51,53 @@ In this example, the ``aiven_database`` field is updated to the service-specific
 
 1. Update ``aiven_database`` references to ``aiven_pg_database`` as in this example file:
 
-.. code::
+   .. code::
+  
+      - resource "aiven_database" "mydatabase" {
+          project       = aiven_project.myproject.project
+          service_name  = aiven_pg.mypg.service_name
+          database_name = "<DATABASE_NAME>"
+      }
+  
+  
+      + resource "aiven_pg_database" "mydatabase" {
+          project       = aiven_project.myproject.project
+          service_name  = aiven_pg.mypg.service_name
+          database_name = "<DATABASE_NAME>"
+      }
 
-    - resource "aiven_database" "mydatabase" {
-        project       = aiven_project.myproject.project
-        service_name  = aiven_pg.mypg.service_name
-        database_name = "<DATABASE_NAME>"
-    }
+2. View a list of all resources in the state file:
 
+   .. code::
 
-    + resource "aiven_pg_database" "mydatabase" {
-        project       = aiven_project.myproject.project
-        service_name  = aiven_pg.mypg.service_name
-        database_name = "<DATABASE_NAME>"
-    }
+      terraform state list
 
-2. View a list of all resources in the state file::
+3. Remove the resource from the control of Terraform:
+   
+   .. code::
+   
+      terraform state rm aiven_database
 
-    terraform state list
+   .. tip::
+    
+      Use the ``-dry-run`` flag to preview the changes without applying them.
 
-3. Remove the resource from the control of Terraform::
+4. Add the resource back to Terraform by importing it as a new resource:
 
-    terraform state rm aiven_database
+   .. code::
+     
+      terraform import aiven_pg_database project_name/service_name/db_name
 
-.. tip::
-    Use the ``-dry-run`` flag to preview the changes without applying them.
+5. Check that the import is going to run as you expect:
+   
+   .. code::
 
-4. Add the resource back to Terraform by importing it as a new resource::
+      terraform plan
 
-    terraform import aiven_pg_database project_name/service_name/db_name
-
-5. Check that the import is going to run as you expect::
-
-    terraform plan
-
-6. Apply the new configuration::
-
-    terraform apply
+6. Apply the new configuration:
+   
+   .. code::
+     
+      terraform apply
 
 You can follow these steps to update the other resources that were deprecated in version 3 of the provider.

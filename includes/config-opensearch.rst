@@ -34,6 +34,14 @@
 
 
 
+``service_log``
+---------------
+*['boolean', 'null']*
+
+**Service logging** Store logs for the service so that they are available in the HTTP API and console.
+
+
+
 ``static_ips``
 --------------
 *boolean*
@@ -114,13 +122,13 @@
 ~~~~~~~~~~~~~
 *['string', 'null']*
 
-**The key in the JSON payload that stores the user's roles** The key in the JSON payload that stores the user's roles. The value of this key must be a comma-separated list of roles. Required only if you want to use roles in the JWT
+**The key in the JSON payload that stores the user’s roles** The key in the JSON payload that stores the user’s roles. The value of this key must be a comma-separated list of roles. Required only if you want to use roles in the JWT
 
 ``subject_key``
 ~~~~~~~~~~~~~~~
 *['string', 'null']*
 
-**The key in the JSON payload that stores the user's name** The key in the JSON payload that stores the user's name. If not defined, the subject registered claim is used. Most IdP providers use the preferred_username claim. Optional.
+**The key in the JSON payload that stores the user’s name** The key in the JSON payload that stores the user’s name. If not defined, the subject registered claim is used. Most IdP providers use the preferred_username claim. Optional.
 
 ``jwt_header``
 ~~~~~~~~~~~~~~
@@ -318,6 +326,12 @@
 
 **Opensearch Security Plugin Settings** 
 
+``enable_security_audit``
+~~~~~~~~~~~~~~~~~~~~~~~~~
+*boolean*
+
+**Enable/Disable security audit** 
+
 ``thread_pool_search_size``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 *integer*
@@ -416,55 +430,55 @@
 
 ``email_sender_name``
 ~~~~~~~~~~~~~~~~~~~~~
-*['string']*
+*string*
 
 **Sender name placeholder to be used in Opensearch Dashboards and Opensearch keystore** This should be identical to the Sender name defined in Opensearch dashboards
 
 ``email_sender_username``
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-*['string']*
+*string*
 
 **Sender username for Opensearch alerts** 
 
 ``email_sender_password``
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-*['string']*
+*string*
 
 **Sender password for Opensearch alerts to authenticate with SMTP server** Sender password for Opensearch alerts to authenticate with SMTP server
 
 ``ism_enabled``
 ~~~~~~~~~~~~~~~
-*['boolean', 'null']*
+*boolean*
 
 **Specifies whether ISM is enabled or not** 
 
 ``ism_history_enabled``
 ~~~~~~~~~~~~~~~~~~~~~~~
-*['boolean', 'null']*
+*boolean*
 
 **Specifies whether audit history is enabled or not. The logs from ISM are automatically indexed to a logs document.** 
 
 ``ism_history_max_age``
 ~~~~~~~~~~~~~~~~~~~~~~~
-*['integer', 'null']*
+*integer*
 
 **The maximum age before rolling over the audit history index in hours** 
 
 ``ism_history_max_docs``
 ~~~~~~~~~~~~~~~~~~~~~~~~
-*['integer', 'null']*
+*integer*
 
 **The maximum number of documents before rolling over the audit history index.** 
 
 ``ism_history_rollover_check_period``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-*['integer', 'null']*
+*integer*
 
 **The time between rollover checks for the audit history index in hours.** 
 
 ``ism_history_rollover_retention_period``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-*['integer', 'null']*
+*integer*
 
 **How long audit history indices are kept in days.** 
 

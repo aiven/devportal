@@ -1,12 +1,12 @@
-Report and analyze with Google Data Studio
-==========================================
+Report and analyze with Google Looker Studio
+============================================
 
-Google Data Studio allows you to create reports and visualisations of the data in your Aiven for PostgreSQL® database, and combine these with data from many other data sources.
+Google Looker Studio (previously Data Studio) allows you to create reports and visualisations of the data in your Aiven for PostgreSQL® database, and combine these with data from many other data sources.
 
 Variables
 ---------
 
-These are the values you will need to connect to Google Data Studio:
+These are the values you will need to connect to Google Looker Studio:
 
 ==================      ===========================================================================
 Variable                Description
@@ -20,14 +20,14 @@ Variable                Description
 Pre-requisites
 --------------
 
-1. You will need a Google account, to access Google Data Studio.
+1. You will need a Google account, to access Google Looker Studio.
 
 2. On the Aiven Console service page for your PostgreSQL database, download the CA certificate. The default filename is ``ca.pem``.
 
-Connect your Aiven for PostgreSQL data source to Google Data Studio
--------------------------------------------------------------------
+Connect your Aiven for PostgreSQL data source to Google Looker Studio
+---------------------------------------------------------------------
 
-#. Login to Google and open `Google Data Studio <https://datastudio.google.com/>`__ .
+#. Login to Google and open `Google Looker Studio <https://lookerstudio.google.com/overview>`__ .
 
 #. Select **Create** and choose **Data source**.
 

@@ -63,13 +63,13 @@ When connecting to a PostgreSQL service, ClickHouse needs to know the name of th
 
 .. code::
 
-    avn service integration-list CLICKHOUSE_SERVICE_NAME | grep PG_SERVICE_NAME
+    avn service integration-list --project PROJECT_NAME CLICKHOUSE_SERVICE_NAME | grep PG_SERVICE_NAME
 
-2. Update the configuration settings using the service integration id retrieved in the previous step and your integration settings. Replace ``SERVICE_INTEGRATION_ID``, ``PG_DATABASE`` and ``PG_SCHEMA`` with your values, you can add more than one combination of database/schema in the object ``databases``:
+1. Update the configuration settings using the service integration id retrieved in the previous step and your integration settings. Replace ``SERVICE_INTEGRATION_ID``, ``PG_DATABASE`` and ``PG_SCHEMA`` with your values, you can add more than one combination of database/schema in the object ``databases``:
 
 .. code::
 
-    avn service integration-update SERVICE_INTEGRATION_ID \
+    avn service integration-update --project PROJECT_NAME SERVICE_INTEGRATION_ID \
     --user-config-json '{
         "databases":[{"database":"PG_DATABASE","schema":"PG_SCHEMA"}]
     }'

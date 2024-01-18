@@ -8,11 +8,12 @@ The short interruption mentioned above does not include the potential delays cau
 
 When spinning a new Aiven service, you are not tied to a cloud provider or region. Your services can be migrated to better match your needs. Services can be moved to another cloud provider, or another region within the same provider, or both.
 
-1. Log in to `Aiven Console <https://console.aiven.io/>`_.
-2. Go to your **Services**, and select the service you want to migrate.
-3. On the **Overview** page of your service, scroll down to **Cloud and VPC** > **Migrate cloud**.
-4. In the **Migrate service to another cloud** window, select new cloud provider and region.
-5. Select **Migrate**.
+1. Log into the `Aiven Console <https://console.aiven.io/>`_, select your project and then select the service you want migrate to another cloud or region.
+2. On the service page, click **Service settings** from the sidebar. 
+3. In the **Cloud and network** section, click **Actions (...)**. 
+4. From the dropdown menu, click **Change cloud or region**. 
+5. In the **Migrate service to another cloud** window, select new cloud provider and region.
+6. Select **Migrate**.
 
 .. topic:: Result
 
