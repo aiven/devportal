@@ -1,7 +1,7 @@
 Custom JARs in Aiven for Apache Flink®
 =================================================
 
-Aiven for Apache Flink enables you to upload, deploy, and manage your own Java code as custom JARs within a JAR application.  This feature expands the capabilities of Aiven for Apache Flink, allowing you to add custom capabilities that extend beyond the default SQL features. With custom JARs, you can swiftly develop and maximize the potential of your Aiven for Flink application.
+Aiven for Apache Flink enables you to upload, deploy, and manage your own Java code as custom JARs within a :doc:`JAR application </docs/products/flink/howto/create-jar-application>`.  This feature expands the capabilities of Aiven for Apache Flink, allowing you to add custom capabilities that extend beyond the default SQL features. With custom JARs, you can swiftly develop and maximize the potential of your Aiven for Flink application.
 
 What are custom JARs?
 -------------------------
@@ -25,5 +25,8 @@ Custom JARs can be applied in various scenarios, including but not limited to:
 * **Custom data processing and enrichment:** Custom JARs facilitate the processing and enrichment of data from sources not natively supported by Flink's core APIs. This includes implementing unique data processing logic and applying custom functions for data transformation and enrichment.
 
 
+Related pages
+--------------
 
-
+* :doc:`How to use custom JARs in Aiven for Apache Flink application </docs/products/flink/howto/create-jar-application>`. 
+  
