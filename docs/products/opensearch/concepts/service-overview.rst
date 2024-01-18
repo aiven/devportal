@@ -3,16 +3,12 @@ Aiven for OpenSearch® overview
 
 Aiven for OpenSearch® is a fully managed distributed search and analytics suite, deployable in the cloud of your choice. Ideal for logs management, application and website search, analytical aggregations and more. OpenSearch is an open source fork derived from Elasticsearch.
 
-
 `OpenSearch® <https://opensearch.org>`_ is an open-source search and analytics suite including a search engine, NoSQL document database, and visualization interface. OpenSearch offers a distributed, full-text search engine based on `Apache Lucene® <https://lucene.apache.org/>`_ with a RESTful API interface and support for JSON documents. Aiven for OpenSearch and Aiven for OpenSearch Dashboards are available on a cloud of your choice.
 
 .. note::
     OpenSearch and OpenSearch Dashboards projects were forked in 2021 from the formerly open source projects Elasticsearch and Kibana.
 
 Aiven for OpenSearch includes OpenSearch Dashboards, giving a fully-featured user interface and visualization platform for your data.
-
-Why OpenSearch?
----------------
 
 OpenSearch is designed to be robust and scalable, capable of handling various data types and structures. It provides high-performance search functionality for data of any size or type, and with schemaless storage, it can index various sources with different data structures.
 

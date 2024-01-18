@@ -53,12 +53,8 @@ There are multiple industry applications for similarity searches over vector emb
    * AI-powered tools can find similarities between products or transactions, which can be used to produce product recommendations or detect potential scams or frauds.
    * Sentiment analysis: words represented with similar vector embeddings have similar sentiment scores.
 
-What's next
------------
-
-:doc:`Enable and use pgvector on Aiven for PostgreSQL® </docs/products/postgresql/howto/use-pgvector>`
-
 Related pages
----------------
+-------------
 
-`pgvector README on GitHub <https://github.com/pgvector/pgvector/blob/master/README.md>`_
+- :doc:`Enable and use pgvector on Aiven for PostgreSQL® </docs/products/postgresql/howto/use-pgvector>`
+- `pgvector README on GitHub <https://github.com/pgvector/pgvector/blob/master/README.md>`_
