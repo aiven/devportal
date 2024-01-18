@@ -1,6 +1,6 @@
 Create a JAR application
 ========================
-Aiven for Apache Flink® enables you to upload and deploy custom code as a JAR file, enhancing your Flink applications with advanced data processing capabilities.
+Aiven for Apache Flink® enables you to upload and deploy :doc:`custom code as a JAR file </docs/products/flink/concepts/custom-jars>`, enhancing your Flink applications with advanced data processing capabilities.
 
 .. important:: 
   
