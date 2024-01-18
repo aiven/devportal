@@ -17,7 +17,7 @@ Create an integration
 
 1. In the `Aiven Console <https://console.aiven.io/>`_, :doc:`create new services <create_new_service>` including Aiven for Apache Kafka®, Aiven for PostgreSQL®, and Aiven for Grafana®. Choose your preferred cloud provider, region, and a plan from **startup**, **business**, or **premium**.
 
-2. Once all three services are running in the `Aiven Console <https://console.aiven.io/>`, select the Aiven for PostgreSQL service from the **Services** page. Ensure you are on the **Overview** page of your service. 
+2. Once all three services are running in the `Aiven Console <https://console.aiven.io/>`_, select the Aiven for PostgreSQL service from the **Services** page. Ensure you are on the **Overview** page of your service. 
    
    a. Select to **Integrations**  from the sidebar. 
    b. Under  **Aiven solutions**, click **Monitor Data in Grafana**. 
