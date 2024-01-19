@@ -20,6 +20,8 @@ You are shown two parameters needed to set up the SAML authentication in Microso
 * Metadata URL
 * ACS URL
 
+.. _configure-saml-azure:
+
 Configure SAML on Microsoft Azure
 ----------------------------------
 

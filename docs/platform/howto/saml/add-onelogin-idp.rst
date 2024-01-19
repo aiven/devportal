@@ -19,6 +19,8 @@ You are shown two parameters needed to set up the SAML authentication in OneLogi
 * Metadata URL
 * ACS URL
 
+.. _configure-saml-onelogin:
+
 Configure SAML on OneLogin
 ---------------------------
 

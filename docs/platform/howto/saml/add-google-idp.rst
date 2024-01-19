@@ -19,6 +19,8 @@ You are shown two parameters needed to set up the SAML authentication in Google:
 * Metadata URL
 * ACS URL
 
+.. _configure-saml-google:
+
 Configure SAML on Google
 ------------------------
 

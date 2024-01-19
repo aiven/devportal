@@ -20,6 +20,8 @@ You are shown two parameters needed to set up the SAML authentication in Okta:
 * Metadata URL
 * ACS URL
 
+.. _configure-saml-okta:
+
 Configure SAML on Okta
 -----------------------
 

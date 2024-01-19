@@ -33,12 +33,12 @@ Step 2. Configure SAML on your IdP
 
 Use the metadata URL and ACS URL from the Aiven Console to configure a new application in your IdP. Setup instructions are available for these specific providers:
 
-* :doc:`Auth0 </docs/platform/howto/saml/add-auth0-idp>`
-* :doc:`FusionAuth </docs/platform/howto/saml/add-fusionauth-idp>`
-* :doc:`Microsoft Azure Active Directory </docs/platform/howto/saml/add-azure-idp>`
-* :doc:`Okta </docs/platform/howto/saml/add-okta-idp>`
-* :doc:`OneLogin </docs/platform/howto/saml/add-onelogin-idp>`
-* :doc:`Google </docs/platform/howto/saml/add-google-idp>`
+* :ref:`Auth0 <configure-saml-auth0>`
+* :ref:`FusionAuth <configure-saml-fusionauth>`
+* :ref:`Microsoft Azure Active Directory <configure-saml-azure>`
+* :ref:`Okta <configure-saml-okta>`
+* :ref:`OneLogin <configure-saml-onelogin>`
+* :ref:`Google <configure-saml-google>`
 
 If your provider isn't listed, contact the support team at support@Aiven.io for help with the configuration.
 

@@ -21,6 +21,8 @@ You are shown two parameters needed to set up the SAML authentication in FusionA
 * Metadata URL
 * ACS URL
 
+.. _configure-saml-fusionauth:
+
 Configure SAML on FusionAuth
 ----------------------------
 

@@ -19,6 +19,8 @@ You are shown two parameters needed to set up the SAML authentication in JumpClo
 * Metadata URL
 * ACS URL
 
+.. _configure-saml-jumpcloud:
+
 Configure SAML on JumpCloud
 ----------------------------
 
