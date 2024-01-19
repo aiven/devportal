@@ -79,9 +79,6 @@ This is a two step process. First, you create the SAML SP-Initiated authenticati
 
    * ``X.509 Certificate``
 
-   .. image:: /images/platform/howto/saml/okta/okta-saml-settings.png
-      :alt: SAML settings in Okta showing the application data.
-
 #. Go to the **Assignments** tab.
 
 #. Click **Assign** to assign users or groups to the Okta application.
