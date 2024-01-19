@@ -66,7 +66,3 @@ Go back to the **Authentication** page in `Aiven Console <https://console.aiven.
   .. note::
     If you set up a SAML authentication method before and are now switching to a new IdP, existing users need to log in with the new account link URL to finish the setup.
 
-Troubleshooting
----------------
-
-If you have issues, you can use the `SAML Tracer browser extension <https://addons.mozilla.org/firefox/addon/saml-tracer/>`_ to check the process step by step. 

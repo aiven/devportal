@@ -133,3 +133,9 @@ When a user clicks on the link, they will be redirected to a page to link their 
   #. Click **Sign up**. You are redirected to your IdP's authentication page.
   #. Once logged in to the provider, you are redirected back to the Aiven sign up page.
   #. Complete the sign up process. The IdP is linked to your profile and you can use it for all future logins.
+
+
+Troubleshooting
+---------------
+
+If you have issues, you can use the `SAML Tracer browser extension <https://addons.mozilla.org/firefox/addon/saml-tracer/>`_ to check the process step by step. 

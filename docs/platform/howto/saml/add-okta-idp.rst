@@ -136,25 +136,21 @@ Troubleshooting
 Authentication failed
 ~~~~~~~~~~~~~~~~~~~~~
 
-When launching Aiven SAML application getting the following error::
+When launching the Aiven SAML application, you get the following error::
 
    Authentication Failed
 
    Login failed.  Please contact your account administrator for more details.
 
-Check Okta authentication in Aiven console if **IdP login** and **Enable authentication method** are
-enabled.
+Check that **IdP initiated login** is enabled.
 
 
 Invalid ``RelayState``
 ~~~~~~~~~~~~~~~~~~~~~~
 
-If you get the ``Invalid RelayState``, then you are attempting an IdP-initiated auth flow, for example by clicking the Aiven SAML app from the Okta UI. Previously, Aiven did not support IdP-initiated flows, but now it is possible if you set the ``Default RelayState`` in Okta to the corresponding console of your account as defined in the Configure SAML on Okta section.
+If you get the ``Invalid RelayState`` error, then you are attempting an IdP-initiated auth flow. This happens, for example, when you click the Aiven SAML app in Okta. Set the ``Default RelayState`` in Okta to the corresponding console of your account as defined in the **Configure SAML on Okta** section.
 
 The Okta password does not work
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Make sure to use the **Account Link URL** to add the Okta Authentication method to your Aiven profile. 
-
-Once linked, you should get the choice of multiple sign-in methods as well as see the other
-Authentication method in **User Information** -> **Authentication** section on the `Aiven Console <https://console.aiven.io/>`__.
+Make sure to use the **Account Link URL** to add the Okta IdP to your Aiven user account. You can see a list of authentication methods in **User information** > **Authentication**.

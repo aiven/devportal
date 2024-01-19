@@ -121,9 +121,6 @@ Go back to the **Authentication** page in `Aiven Console <https://console.aiven.
 Troubleshooting
 ---------------
 
-Error: contact your administrator
-"""""""""""""""""""""""""""""""""
-
 If you get an error message suggesting you contact your administrator, try these steps: 
 
 #. Go to the Microsoft Azure AD user profile for the users.
