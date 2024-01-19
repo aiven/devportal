@@ -10,6 +10,7 @@ To set up single sign-on through an IdP for your organization:
 3. Finalize the setup in the Aiven Console using information from your IdP.
 4. Link your users to the identity provider.
 
+.. _add-idp-aiven-console:
 
 Step 1. Add the IdP in the Aiven Console
 -----------------------------------------

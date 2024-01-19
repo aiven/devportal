@@ -1,25 +1,14 @@
 Add FusionAuth as an identity provider 
 =======================================
 
-This article explains how to set up SAML with `FusionAuth <https://fusionauth.io/>`_ for an organization in Aiven. For more information on SAML and instructions for other identity providers, see the :doc:`Set up SAML authentication </docs/platform/howto/saml/saml-authentication>` article.
+Use `FusionAuth <https://fusionauth.io/>`_ to give your organization users single sign-on (SSO) access to Aiven. 
+
 
 Prerequisite steps in Aiven Console
 ------------------------------------
 
-#. In the organization, click **Admin**.
+Add FusionAuth as an :ref:`identity provider <add-idp-aiven-console>` in the Console. 
 
-#. Select **Authentication**.
-
-#. Click **Add authentication method**.
-
-#. Enter a name and select SAML. You can also select the groups that users will be added to when they sign up or log in through this authentication method.
-
-#. Click **Add method**.
-
-You are shown two parameters needed to set up the SAML authentication in FusionAuth:
-
-* Metadata URL
-* ACS URL
 
 .. _configure-saml-fusionauth:
 
