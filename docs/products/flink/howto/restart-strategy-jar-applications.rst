@@ -1,13 +1,13 @@
 Restart strategy in JAR applications
 ======================================
 
-A restart strategy is a set of rules that Apache Flink® adheres to when dealing with application failures. These strategies enable the automatic restart of a failed job under specific conditions and parameters, which is crucial for high availability and fault tolerance in distributed and scalable systems.
+A restart strategy is a set of rules that Apache Flink® adheres to when dealing with Flink job failures. These strategies enable the automatic restart of a failed Flink job under specific conditions and parameters, which is crucial for high availability and fault tolerance in distributed and scalable systems.
 
 
 Default restart strategy for JAR applications
 -----------------------------------------------
 
-Aiven for Apache Flink® includes a default restart strategy for JAR applications. This strategy uses the **exponential-delay** technique, incrementally increasing the delay time between restarts up to a specified maximum. Once this maximum delay is reached, it remains constant for any subsequent restarts. The default strategy is fully integrated into the Aiven for Apache Flink cluster configuration and automatically applies to all JAR applica
+Aiven for Apache Flink® includes a default restart strategy for JAR applications. This strategy uses the **exponential-delay** technique, incrementally increasing the delay time between restarts up to a specified maximum. Once this maximum delay is reached, it remains constant for any subsequent restarts. The default strategy is fully integrated into the Aiven for Apache Flink cluster configuration and automatically applies to all JAR applications. 
 
 View the default strategy
 ````````````````````````````````````````````
@@ -38,9 +38,9 @@ Key considerations when disabling default restarts
 
 Before choosing to disable the default restart strategy, consider the following:
 
-- **Persistent failures**: Disabling restarts means that if a Flink Job fails, it will not attempt to recover, potentially leading to permanent job failure.
+- **Persistent failures**:  Disabling restarts means that if a Flink Job fails, Flink will not attempt to recover the job, leading to permanent job failure.
 - **Testing and debugging**: Disabling is beneficial when identifying issues in the application code, as it prevents the masking of errors through automatic restarts.
-- **External factors**: Jobs can fail due to external factors, such as infrastructure changes or maintenance activities. If you disable restarts, your Flink jobs might become vulnerable to failures.
+- **External factors**: Jobs can fail due to external factors, such as infrastructure changes or maintenance activities. If you disable restarts, your Flink jobs will become vulnerable to failures.
 - **Operational risks**: In production environments, it is generally advisable to use the default restart strategy to ensure high availability and fault tolerance.
 
 
