@@ -57,35 +57,11 @@ Configure SAML on OneLogin
 
 
 Finish the configuration in Aiven
----------------------------------
+----------------------------------
 
-Go back to the **Authentication** page in `Aiven Console <https://console.aiven.io/>`_ to enable the SAML authentication method:
+Go back to the Aiven Console to :ref:`configure the IdP <configure-idp-aiven-console>` and complete the setup.
 
-1. Select the name of the OneLogin method that you created.
 
-2. In the SAML configuration section, click **Edit**. 
-
-3. Add the configuration settings from OneLogin: 
-
-* Set the ``SAML IDP URL`` to the ``SAML 2.0 Endpoint (HTTP)`` from OneLogin. 
-
-* Set the ``SAML Entity ID`` to the ``Issuer URL`` from OneLogin.
-
-* Paste the certificate from OneLogin into ``SAML Certificate``.
-
-4. If you set ``SAML Initiator`` to ``OneLogin`` in your OneLogin application, then toggle on ``IdP login``.
-
-5. Toggle on **Enable authentication method** at the top of the page. 
-
-6. In the **Signup and link accounts URLs** section, copy the appropriate link and send it to your users to switch them to the new IdP:
-  
-* **Signup URL**: For users that don't have an Aiven user account and need to create a new Aiven user linked to this IdP.
-* **Account link URL**: For users that already have an Aiven user account to link their existing Aiven user with the configured IdP. 
-  
-  .. note::
-    If you set up a SAML authentication method before and are now switching to a new IdP, existing users need to log in with the new account link URL to finish the setup.
-
-   
 Troubleshooting
 ----------------
 
