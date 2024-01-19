@@ -38,7 +38,7 @@ Key considerations when disabling default restarts
 
 Before choosing to disable the default restart strategy, consider the following:
 
-- **Persistent failures**:  Disabling restarts means that if a Flink Job fails, Flink will not attempt to recover the job, leading to permanent job failure.
+- **Persistent failures**: Disabling restarts means that if a Flink Job fails, Flink will not attempt to recover it, leading to permanent job failure.
 - **Testing and debugging**: Disabling is beneficial when identifying issues in the application code, as it prevents the masking of errors through automatic restarts.
 - **External factors**: Jobs can fail due to external factors, such as infrastructure changes or maintenance activities. If you disable restarts, your Flink jobs will become vulnerable to failures.
 - **Operational risks**: In production environments, it is generally advisable to use the default restart strategy to ensure high availability and fault tolerance.
