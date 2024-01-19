@@ -99,8 +99,8 @@ Go back to the Aiven Console to complete setting up the IdP:
 
 If you saved your IdP as a draft, you can open the settings by clicking the name of the IdP.
 
-  .. note::
-    If you set up a SAML authentication method before and are now switching to a new IdP, existing users need to log in with the new account link URL to finish the setup.
+.. note::
+  If you set up a SAML authentication method before and are now switching to a new IdP, existing users need to log in with the new account link URL to finish the setup.
 
 
 Step 4. Link your users to the identity provider
