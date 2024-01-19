@@ -42,13 +42,47 @@ Use the metadata URL and ACS URL from the Aiven Console to configure a new appli
 
 If your provider isn't listed, contact the support team at support@Aiven.io for help with the configuration.
 
+.. _configure-idp-aiven-console:
 
 Step 3. Finish the configuration in Aiven 
 ------------------------------------------
 
-Go back to the Aiven Console to complete setting up the IdP: 
+Go back to the Aiven Console to complete setting up the IdP:
 
-#. Enter the **IDP URL**, **Entity Id**, and **SAML Certificate** details.
+#. Enter the **IDP URL** and **Entity Id** details.
+
+.. list-table::
+  :header-rows: 1
+  :align: left
+
+  * - Aiven
+    - Auth0
+    - Azure AD
+    - FusionAuth
+    - Google
+    - JumpCloud
+    - Okta
+    - OneLogin
+  * - **IdP URL**
+    - ``Identity Provider Login URL`` 
+    - ``Login URL``
+    - ``Login URL``
+    - ``SSO URL``
+    - ``IDP URL``
+    - ``Identity Provider Single Sign-On URL``
+    - ``SAML 2.0 Endpoint (HTTP)``
+  * - **Entity ID**
+    - ``Issuer URN``
+    - ``Azure AD Identifier``
+    - ``Entity ID``
+    - ``Entity ID``
+    - ``IdP Entity ID``
+    - ``Identity Provider Issuer``
+    - ``Issuer URL``
+
+#. Paste the certificate from the IdP into the **Certificate** field.
+
+#. (Optional) Paste or upload a JSON file with configuration details for your IdP.
 
 #. Click **Next**. 
 
@@ -61,6 +95,8 @@ Go back to the Aiven Console to complete setting up the IdP:
    * Sign authorization request sent to IdP: A digital signature is added to the request to verify its authenticity and integrity.
 
 #. Click **Next** and complete the setup.
+
+If you saved your IdP as a draft, you can open the settings by clicking the name of the IdP.
 
 
 Step 4. Link your users to the identity provider
