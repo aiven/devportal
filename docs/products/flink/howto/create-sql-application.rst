@@ -51,7 +51,7 @@ Create an SQL application in Aiven for Apache Flink® using the `Aiven Console <
     * Select the application version to deploy. The default version for the first deployment is **Version: 1**.
     * Select a :doc:`savepoint </docs/products/flink/concepts/savepoints>` if you wish to deploy from a specific state. No savepoints are available for the first application deployment. 
     * Toggle **Restart on failure** to automatically restart Flink jobs upon failure.
-    * Specify the number of `parallel instances <https://nightlies.apache.org/flink/flink-docs-master/docs/dev/datastream/execution/parallel/>` you require for the task.
+    * Specify the number of `parallel instances <https://nightlies.apache.org/flink/flink-docs-master/docs/dev/datastream/execution/parallel/>`_ you require for the task.
 13. Click **Deploy without a savepoint** to begin the deployment process.
 14. While deploying, the application status shows **Initializing**. Once deployed, the status changes to **Running**.
 
