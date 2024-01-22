@@ -49,7 +49,7 @@ Organization and organizational unit settings are available on the **Admin** pag
 
 * :doc:`Manage your groups </docs/platform/howto/manage-groups>` 
 * Create new projects under an organization or organizational unit
-* Configure :doc:`authentication methods for an organization </docs/platform/howto/list-saml>`
+* Configure :doc:`authentication policies for an organization </docs/platform/howto/list-authentication>`
 * View logs of activity such as the adding or removing of users, changing authentication methods, and more
 * Rename or delete an organization or organizational unit 
 
