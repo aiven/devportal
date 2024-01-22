@@ -24,7 +24,7 @@ Users can choose to log in using Google, Microsoft, or GitHub.
 Organization identity providers (SSO)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Organization users are restricted to logging in using SSO through an :doc:`identity provider </docs/platform/howto/saml/saml-authentication>`.  
+Organization users are restricted to logging in using SSO through an :doc:`identity provider </docs/platform/howto/saml/add-identity-providers>`.  
 
 Set an authentication policy 
 ------------------------------
