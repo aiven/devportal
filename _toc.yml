@@ -88,17 +88,17 @@ entries:
         title: Set authentication policies
       - file: docs/platform/concepts/authentication-tokens
       - file: docs/platform/howto/create_authentication_token
-      - file: docs/platform/howto/list-saml
-        title: SAML authentication
-        entries:
-        - file: docs/platform/howto/saml/saml-authentication
-        - file: docs/platform/howto/saml/setup-saml-auth0
-        - file: docs/platform/howto/saml/setup-saml-azure
-        - file: docs/platform/howto/saml/setup-saml-fusionauth
-        - file: docs/platform/howto/saml/setup-saml-jumpcloud
-        - file: docs/platform/howto/saml/setup-saml-okta
-        - file: docs/platform/howto/saml/setup-saml-onelogin
-        - file: docs/platform/howto/saml/setup-saml-google
+    - file: docs/platform/howto/list-identity-providers
+      title: Identity providers
+      entries:
+      - file: docs/platform/howto/saml/add-identity-providers
+      - file: docs/platform/howto/saml/add-auth0-idp
+      - file: docs/platform/howto/saml/add-azure-idp
+      - file: docs/platform/howto/saml/add-fusionauth-idp
+      - file: docs/platform/howto/saml/add-jumpcloud-idp
+      - file: docs/platform/howto/saml/add-okta-idp
+      - file: docs/platform/howto/saml/add-onelogin-idp
+      - file: docs/platform/howto/saml/add-google-idp
     - file: docs/platform/howto/list-groups
       entries:
       - file: docs/platform/howto/manage-groups
@@ -318,6 +318,7 @@ entries:
       - file: docs/products/kafka/howto/fake-sample-data
         title: Sample data generator
       - file: docs/products/kafka/concepts
+        title: Concepts
         entries:
           - file: docs/products/kafka/concepts/upgrade-procedure
             title: Upgrade procedure
@@ -415,6 +416,7 @@ entries:
               - file: docs/products/kafka/howto/kafka-streams-with-aiven-for-kafka
               - file: docs/products/kafka/howto/flink-with-aiven-for-kafka
               - file: docs/products/kafka/howto/datadog-customised-metrics
+              - file: docs/products/kafka/howto/kafka-prometheus-privatelink
               - file: docs/products/kafka/howto/ksql-docker
                 title: Use ksqlDB with Aiven for Apache Kafka
               - file: docs/products/kafka/howto/add-missing-producer-consumer-metrics
@@ -436,7 +438,6 @@ entries:
             - file: docs/products/kafka/howto/tiered-storage-overview-page
               title: Tiered storage overview page
 
-
       - file: docs/products/kafka/reference
         title: Reference
         entries:
@@ -444,6 +445,12 @@ entries:
             title: Advanced parameters
           - file: docs/products/kafka/reference/kafka-metrics-prometheus
             title: Metrics available via Prometheus
+
+      - file: docs/products/kafka/troubleshooting
+        title: Troubleshooting
+        entries:
+          - file: docs/products/kafka/troubleshooting/troubleshoot-consumer-disconnections
+            title: Troubleshoot consumer disconnections
 
       - file: docs/products/kafka/kafka-connect
         title: Apache Kafka Connect
@@ -628,6 +635,8 @@ entries:
           - file: docs/products/flink/concepts/flink-applications
             title: Aiven Flink applications
           - file: docs/products/flink/concepts/supported-syntax-sql-editor
+          - file: docs/products/flink/concepts/custom-jars
+            title: Custom JARs
           - file: docs/products/flink/concepts/tables
             title: Flink tables
           - file: docs/products/flink/concepts/checkpoints
@@ -652,13 +661,17 @@ entries:
                 title: Integrate with Apache Kafka
               - file: docs/products/flink/howto/connect-bigquery
                 title: Integrate with Google BigQuery
-          - file: docs/products/flink/howto/list-flink-applications
-            title: Aiven for Apache Flink applications
+          - file: docs/products/flink/howto/create-flink-applications
+            title: Apache Flink applications
             entries:
-              - file: docs/products/flink/howto/create-flink-applications
-                title: Create Apache Flink applications
+              - file: docs/products/flink/howto/create-sql-application
+                title: Create an SQL application
+              - file: docs/products/flink/howto/create-jar-application
+                title: Create a JAR application
               - file: docs/products/flink/howto/manage-flink-applications
                 title: Manage Apache Flink applications
+              - file: docs/products/flink/howto/restart-strategy-jar-applications
+                title: Restart Strategy for JAR Applications
           - file: docs/products/flink/howto/list-flink-tables
             title: Apache Flink tables
             entries:
@@ -910,9 +923,11 @@ entries:
           - file: docs/products/dragonfly/howto/migrate-ext-redis-df-console
             title: Migrate external Redis
 
-
-
-
+      - file: docs/products/dragonfly/reference
+        title: Reference
+        entries:
+        - file: docs/products/dragonfly/reference/advanced-params
+          title: Advanced parameters
 
 
   # -------- GRAFANA --------

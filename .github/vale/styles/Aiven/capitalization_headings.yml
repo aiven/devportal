@@ -86,6 +86,7 @@ exceptions:
   - Loggly
   - Logtail
   - Microsoft Azure
+  - Microsoft Azure Active Directory
   - MirrorMaker
   - MongoDB
   - MySQL

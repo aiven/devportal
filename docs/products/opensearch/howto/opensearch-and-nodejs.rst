@@ -1,7 +1,7 @@
 Write search queries with OpenSearch® and NodeJS
 ================================================
 
-Learn how the OpenSearch® JavaScript client gives a clear and useful interface to communicate with an OpenSearch cluster and run search queries. To make it more delicious we'll be using a recipe dataset from Kaggle 🍕.
+Learn how the OpenSearch® JavaScript client gives a clear and useful interface to communicate with an OpenSearch cluster and run search queries. To make it more delicious we'll be using a recipe dataset from Kaggle.
 
 Prepare the playground
 **********************
@@ -395,21 +395,19 @@ In the next method we combine what we learned so far, using both term-level and 
 
 Now it's your turn to experiment! Create your own boolean query, using what we learned to find recipes with particular nutritional values and ingredients. Experiment using different clauses to see how they affects the results.
 
-What's next?
-************
+Related pages
+*************
 
-Now that you learned how to work with search queries, have a look at :doc:`our tutorial for aggregations <opensearch-aggregations-and-nodejs>`. Or, if you're done for a day, see :doc:`how you can pause the service </docs/platform/howto/pause-from-cli>`.
-
-Resources
-*********
-
-We created an OpenSearch cluster, connected to it and tried out different types of search queries. But this is just a tip of the iceberg. Here are some resources to help you learn other features of OpenSearch and its JavaScript client
-
-* `Demo repository <https://github.com/aiven/demo-open-search-node-js>`_ - All the examples we run in this tutorial can be found in
-* `OpenSearch JavaScript client  <https://github.com/opensearch-project/opensearch-js>`_
-* :doc:`How to use OpenSearch with curl <opensearch-with-curl>`
-* `Official OpenSearch documentation <https://opensearch.org>`_
-    *  `Term-level queries <https://opensearch.org/docs/latest/opensearch/query-dsl/term/>`_
-    *  `Full-text queries <https://opensearch.org/docs/latest/opensearch/query-dsl/full-text/>`_
-    *  `Boolean queries <https://opensearch.org/docs/latest/opensearch/query-dsl/bool/>`_
+- :doc:`Aggregation tutorial <opensearch-aggregations-and-nodejs>`. 
+- :doc:`Pausing the service </docs/platform/howto/pause-from-cli>`.
+- `Demo repository <https://github.com/aiven/demo-open-search-node-js>`_.
+  All the examples we run in this tutorial can be found in:
+  
+  - `OpenSearch JavaScript client  <https://github.com/opensearch-project/opensearch-js>`_
+  - :doc:`How to use OpenSearch with curl <opensearch-with-curl>`
+  - `Official OpenSearch documentation <https://opensearch.org>`_
+  
+    -  `Term-level queries <https://opensearch.org/docs/latest/opensearch/query-dsl/term/>`_
+    -  `Full-text queries <https://opensearch.org/docs/latest/opensearch/query-dsl/full-text/>`_
+    -  `Boolean queries <https://opensearch.org/docs/latest/opensearch/query-dsl/bool/>`_
 

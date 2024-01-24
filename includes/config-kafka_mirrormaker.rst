@@ -89,5 +89,23 @@
 
 **Maximum number of MirrorMaker tasks (of each type) per service CPU** 'tasks.max' is set to this multiplied by the number of CPUs in the service.
 
+``offset_lag_max``
+~~~~~~~~~~~~~~~~~~
+*integer*
+
+**Maximum offset lag before it is resynced** How out-of-sync a remote partition can be before it is resynced.
+
+``groups``
+~~~~~~~~~~
+*string*
+
+**Comma-separated list of consumer groups to replicate** Consumer groups to replicate. Supports comma-separated group IDs and regexes.
+
+``groups_exclude``
+~~~~~~~~~~~~~~~~~~
+*string*
+
+**Comma-separated list of group IDs and regexes to exclude from replication** Exclude groups. Supports comma-separated group IDs and regexes. Excludes take precedence over includes.
+
 
 

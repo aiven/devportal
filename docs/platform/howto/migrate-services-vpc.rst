@@ -72,7 +72,7 @@ You can migrate your Aiven services into a VPC using the `Aiven Console <https:/
 #. In the **Cloud and network** section, click **Actions (...)**.
 #. Choose **Change cloud or region** from the dropdown menu.
 #. In the **Migrate service to another cloud** window, select the **VPC** tab and choose the appropriate region for your project's dedicated VPC. Make sure the `Public Internet` tag is noted.
-#. Start the migration process. Afterwards, monitor for the `Project VPC` tag to appear on the service's page, which signifies the successful migration.
+#. Start the migration process. Afterwards, monitor for the ``Project VPC`` tag to appear on the service's page, which signifies the successful migration.
 
 In `Aiven Console <https://console.aiven.io/>`_, use the **Cloud and VPC** > **Migrate cloud** section on the service's **Overview** page to migrate your Aiven services into a VPC. Note the ``Public Internet`` tag.
 

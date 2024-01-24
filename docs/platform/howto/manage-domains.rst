@@ -1,9 +1,6 @@
 Manage domains
 ===============
 
-.. important:: 
-    The domains feature is an :doc:`early availability feature </docs/platform/concepts/beta_services>`. To use it, enable the managed users :doc:`feature preview </docs/platform/howto/feature-preview>` in your user profile.
-
 Verified domains let you manage users in your organization.
 
 There are two ways you can verify a domain:
@@ -11,8 +8,8 @@ There are two ways you can verify a domain:
 * by adding a DNS TXT record to the domain (recommended)
 * by uploading an HTML file to your website
 
-.. note::
-    After adding a domain, your organization users will automatically become managed users. 
+After adding a domain, organization users automatically become :doc:`managed users </docs/platform/concepts/managed-users>`. 
+
 
 Add a domain using a DNS TXT record
 -------------------------------------

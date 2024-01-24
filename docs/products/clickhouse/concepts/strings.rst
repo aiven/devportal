@@ -41,11 +41,6 @@ ClickHouse supports a wide range of functions for working with JSON. With specif
 
 .. topic:: Examples
 
-    ``visitParamExtractString(params, name)``
-      Parse the string in double quotes.
-
-    ``JSONExtractString(json[, indices_or_keys]…)``
-      Parse a JSON and extract a string.
-
-    ``toJSONString``
-      Convert a value of any data type to its JSON representation.
+   - ``visitParamExtractString(params, name)``: Parse the string in double quotes.
+   - ``JSONExtractString(json[, indices_or_keys]…)``: Parse a JSON and extract a string.
+   - ``toJSONString``: Convert a value of any data type to its JSON representation.
