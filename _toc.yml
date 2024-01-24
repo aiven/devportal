@@ -438,7 +438,6 @@ entries:
             - file: docs/products/kafka/howto/tiered-storage-overview-page
               title: Tiered storage overview page
 
-
       - file: docs/products/kafka/reference
         title: Reference
         entries:
@@ -446,6 +445,12 @@ entries:
             title: Advanced parameters
           - file: docs/products/kafka/reference/kafka-metrics-prometheus
             title: Metrics available via Prometheus
+
+      - file: docs/products/kafka/troubleshooting
+        title: Troubleshooting
+        entries:
+          - file: docs/products/kafka/troubleshooting/troubleshoot-consumer-disconnections
+            title: Troubleshoot consumer disconnections
 
       - file: docs/products/kafka/kafka-connect
         title: Apache Kafka Connect
