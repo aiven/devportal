@@ -3,7 +3,8 @@ Enable and configure tiered storage for topics
 
 .. important:: 
     
-    Aiven for Apache Kafka® tiered storage is a :doc:`early availability feature </docs/platform/concepts/beta_services>`. If you're interested in trying out this feature, contact the sales team at sales@Aiven.io.
+    Aiven for Apache Kafka® tiered storage is an :doc:`early availability feature </docs/platform/concepts/beta_services>`. To use this feature, contact our sales team at `sales@Aiven.io <mailto:sales@Aiven.io>`_ to activate tiered storage for your account.
+    After activation, you must enable the feature from the :doc:`feature preview page </docs/platform/howto/feature-preview>` in your user profile to start using tiered storage.
 
 
 Aiven for Apache Kafka® allows you to easily configure tiered storage and set retention policies for individual topics. Learn how to configure tiered storage for individual topics and set local retention policies step by step.
