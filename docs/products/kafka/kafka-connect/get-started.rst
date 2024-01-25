@@ -4,6 +4,16 @@ Getting started
 Before creating an Aiven for Apache Kafka® Connect service, ensure that you have existing Aiven for Apache Kafka® services set up in your project. If your project does not have any Aiven for Apache Kafka services, you must create one by following the instructions in the :doc:`create new service guide </docs/platform/howto/create_new_service>`.
 
 
+Key benefits of Apache Kafka® Connect with Aiven for Apache Kafka services:
+
+- You can integrate multiple dedicated Kafka Connect services with the same Aiven for Apache Kafka cluster without any conflicts, even if they run on the same cluster nodes.
+- Each service has its own data management (config, offsets, status) in separate internal topics, identified by integration IDs. This ensures smooth operation and avoids data interference.
+- You don't have to delete your existing connectors when you set up a standalone Apache Kafka Connect service. They can keep running in their current deployment.
+- If you want to migrate a connector from one Kafka Connect service to another, make sure to migrate the offsets as well.
+
+
+
+
 .. _apache_kafka_connect_dedicated_cluster:
 
 Create a dedicated Aiven for Apache Kafka® Connect service

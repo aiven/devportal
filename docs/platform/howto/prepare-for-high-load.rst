@@ -46,9 +46,17 @@ If you forecast a load that can't be handled by the current service plan, you ca
 Define the backups schedule
 ---------------------------
 
-During the backup process, you may experience a temporary higher load. It is therefore recommended to perform them outside of your peak traffic hours to lower the impact.
+To minimize the impact of the higher load during the backup process, it is recommended to schedule backups outside of peak traffic hours.
 
-For Aiven for PostgreSQL® and Aiven for MySQL® services, you can configure the time in the day when the daily backups are taken by setting the ``backup_hour`` and ``backup_minute`` variables in `Aiven Console <https://console.aiven.io/>`_ > your service's **Overview** page > the **Advanced configuration** section.
+To configure the daily backup time in  **Aiven for PostgreSQL®** and **Aiven for MySQL®** services:
+
+#. Access the `Aiven Console <https://console.aiven.io/>`, select your project and then choose your service. 
+#. In the service page, select **Service settings** from the sidebar, and scroll down to the **Advanced configuration** section. 
+#. Click **Configure**.
+#. In the **Advanced configuration** dialog, configure the values for these variables: 
+
+   * ``backup_hour``: The hour of the day when the backup starts.
+   * ``backup_minute``: The minute of the hour to begin the backup. 
 
 .. Tip::
 

@@ -1,7 +1,8 @@
 Enable Apache Kafka® Connect on Aiven for Apache Kafka®
 =======================================================
 
-To enable Apache Kafka® Connect on Aiven for Apache Kafka® services, those should be running on business or premium plans.
+Leveraging Aiven for Apache Kafka services with Apache Kafka Connect can enhance data streaming capabilities between sources and sinks. To use Apache Kafka® Connect with Aiven for Apache Kafka® services, you need to have a business or premium plan.
+
 
 .. Warning::
 
@@ -11,6 +12,8 @@ To enable Apache Kafka Connect on Aiven for Apache Kafka nodes
 
 1. Log into `Aiven Console <https://console.aiven.io>`_ and select the Aiven for Apache Kafka service where to enable Apache Kafka Connect
 
-2. Scroll down the **Service overview** page to the **Apache Kafka Connect** section and turn it on.
+2. Select **Connectors** from the sidebar. 
+3. On the **Connectors** page, click **Enable connector on this service**. 
+
 
 The Apache Kafka Connect connection information are now available at the top of the **Service overview** page in the Kafka Connect tab.
