@@ -3,14 +3,10 @@ Enable your AWS custom cloud in Aiven organizations, units, or projects
 
 To be able to use a :doc:`custom cloud </docs/platform/concepts/byoc>` in your Aiven organizations, units, or projects, you need to configure its availability.
 
-.. important::
-
-    Custom cloud configuration in Aiven is an :doc:`early availability feature </docs/platform/concepts/beta_services>`. You cover the costs associated with building and maintaining your custom cloud: payments for your integrated AWS infrastructure and Aiven services within the custom cloud.
-
 About making custom clouds available from your projects
 -------------------------------------------------------
 
-With the BYOC feature enabled, you can :doc:`create custom clouds </docs/platform/howto/byoc/create-custom-cloud>` in your Aiven organization. As a part of the :doc:`initial custom cloud's setup in Aiven Console </docs/platform/howto/byoc/create-custom-cloud>`, you select in what projects you'll be able to use your new custom cloud to create services. You decide if you want to make your cloud available for all the projects in your organization, selected organizational units, or specific projects only.
+With the BYOC feature enabled, you can :doc:`create custom clouds </docs/platform/howto/byoc/create-custom-cloud>` in your Aiven organization. As a part of the :doc:`initial custom cloud's setup in Aiven Console </docs/platform/howto/byoc/create-custom-cloud>`, you select in what projects you'll be able to use your new custom cloud to host Aiven services. You decide if you want to make your cloud available for all the projects in your organization, selected organizational units, or specific projects only.
 
 Later, you can come back to the **Available projects** tab in your cloud's page in `Aiven Console <https://console.aiven.io/>`_ and update the settings you configured during the :doc:`initial custom cloud's setup </docs/platform/howto/byoc/create-custom-cloud>`.
 
@@ -48,9 +44,10 @@ Enable projects to use your custom cloud
 
    * Select **Assign projects** to enable your custom cloud in specific organizational units and/ or projects. In the **Assign projects** window, use the available dropdown menus to select desired units and/ or projects as needed. Confirm your choice by selecting **Assign projects**.
 
-.. topic:: Result
+In the projects and/ or organizational units for which you enable your custom cloud, you can perform the following operations:
 
-    In the projects and/ or organizational units you assigned, you can create services using your custom cloud.
+* Create new services in the custom cloud
+* Migrate existing services to the custom cloud
 
 Check it out
 ------------

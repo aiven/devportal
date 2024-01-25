@@ -9,10 +9,6 @@ Create a :doc:`custom cloud </docs/platform/concepts/byoc>` in your Aiven organi
     
     * Enabling :doc:`the BYOC feature </docs/platform/concepts/byoc>` or creating custom clouds in your Aiven environment does not affect the configuration of your existing organizations, projects, or services. This only makes the new BYOC capabilities available in your environment.
 
-.. important::
-
-    Custom cloud configuration in Aiven is an :doc:`early availability feature </docs/platform/concepts/beta_services>`. You cover the costs associated with building and maintaining your custom cloud: payments for your integrated AWS infrastructure and Aiven services within the custom cloud.
-
 About creating a custom cloud
 -----------------------------
 
@@ -520,7 +516,13 @@ Use the Terraform template generated in step :ref:`Generate an infrastructure te
 Set up your custom cloud's availability
 '''''''''''''''''''''''''''''''''''''''
 
-Select in what projects you'll be able to use your new custom cloud to create services. You can make your cloud available for all the projects in your organization, selected organizational units, or specific projects only.
+Select in what projects you'll be able to use your new custom cloud as a hosting cloud for services.
+
+.. note::
+
+   In the projects where you enable your custom cloud, you'll be able to create new services in the custom cloud and migrate your existing services to the custom cloud.
+   
+You can make your cloud available for all the projects in your organization, selected organizational units, or specific projects only.
 
 Continue working in the **Create custom cloud** wizard by taking the following steps:
 
@@ -541,15 +543,19 @@ Continue working in the **Create custom cloud** wizard by taking the following s
 Add customer contacts
 '''''''''''''''''''''
 
-Select at least one person whom Aiven can contact in case any technical issue with the custom cloud needs fixing. Continue working in the **Create custom cloud** wizard by taking the following steps:
+Select at least one person whom Aiven can contact in case any technical issues with your need to be fixed.
 
-1. In the **Customer contacts** section, select a contact person's role using the **Job title** dropdown menu, and provide their email address in the **Email** field.
-2. Use **+ Add another contact** to add as many customer contacts as needed for your custom cloud.
+.. note::
+
+   **Admin** is a mandatory role, which is required as a primary support contact.
+
+Continue working in the **Create custom cloud** wizard by taking the following steps:
+
+1. In the **Customer contacts** section, set up the mandatory **Admin** contact by providing an email address in the **Email** field.
+2. Use **+ Add another contact** to add as many customer contacts as needed for your custom cloud: select a contact person's role using the **Job title** dropdown menu, and provide an email address in the **Email** field.
 3. Select **Create**.
 
-.. topic:: Result
-
-     The custom cloud process has been initiated for you, which is communicated in the the **Create custom cloud** wizard as **Creating your custom cloud**.
+The custom cloud process has been initiated for you, which is communicated in the the **Create custom cloud** wizard as **Creating your custom cloud**.
 
 Complete the cloud setup
 ''''''''''''''''''''''''
@@ -575,9 +581,7 @@ You can check the status of your custom cloud by taking the following steps:
 4. From the left sidebar, select **Bring your own cloud**.
 5. In the **Bring your own cloud** view, identify your new cloud on the list of available clouds and check its status in the **Status** column.
 
-.. topic:: Result
-
-   If your custom cloud's status is **Active**, its deployment has been completed. Your custom cloud is ready to use and you can see it on the list of your custom clouds in the **Bring your own cloud** view. Now you can create services using your new custom cloud.
+If your custom cloud's status is **Active**, its deployment has been completed. Your custom cloud is ready to use and you can see it on the list of your custom clouds in the **Bring your own cloud** view. Now you can create new services in the custom cloud and migrate your existing services to the custom cloud.
 
 Next steps
 ----------
@@ -587,12 +591,19 @@ Destroy the Terraform resources
 
 As soon as you new custom cloud gets the **Active** status, remove the Terraform resources your created in your AWS account while creating the cloud. See the guidelines on how to use the ``destroy`` command in `Command: destroy <https://developer.hashicorp.com/terraform/cli/commands/destroy>`_.
 
-Create a service using the new cloud
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Create new services in the custom cloud
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To create a service in `Aiven Console <https://console.aiven.io/>`_ using your new custom cloud, follow the guidelines in :doc:`Create a new service </docs/platform/howto/create_new_service>`.
+To create a service in `Aiven Console <https://console.aiven.io/>`_ in your new custom cloud, follow the guidelines in :doc:`Create a new service </docs/platform/howto/create_new_service>`.
 
-When you get to the **Select service region** step while setting up your service in `Aiven Console <https://console.aiven.io/>`_, you'll be able to select **Custom clouds** from among available regions.
+When creating a service in the `Aiven Console <https://console.aiven.io/>`_, at the **Select service region** step, select **Custom clouds** from among available regions.
+
+Migrate existing services to the custom cloud
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To migrate an existing Aiven service to your new custom cloud using the `Aiven Console <https://console.aiven.io/>`_, follow the guidelines in :doc:`Migrate service to another cloud or region </docs/platform/howto/migrate-services-cloud-region>`.
+
+When migration your service in the `Aiven Console <https://console.aiven.io/>`_ > the **Migrate service to another cloud** window, select **Custom clouds** from among available regions.
 
 Related pages
 -------------
