@@ -54,16 +54,21 @@ You receive two separate monthly invoices, one from Aiven for their managed serv
 
 .. _byoc-deployment:
 
-Architecture of the standard BYOC deployment
---------------------------------------------
+Standard BYOC architecture
+--------------------------
 
 With BYOC, you can use any standard Aiven method (for example, :doc:`CLI </docs/tools/cli>` or :doc:`Terraform </docs/tools/terraform>`) to manage your services and generally have the same user experience as with the regular Aiven deployment model.
 
-.. image:: /images/platform/byoc-standard.png
+.. image:: /images/platform/byoc-one-vpc-arch.png
    :alt: Overview architecture diagram with VPC set up
 
-The standard BYOC deployment requires you to create a Virtual Private Cloud (VPC) dedicated to Aiven services within each region you want to operate in. Aiven accesses these VPCs via a static IP address and then routes traffic through a proxy for additional security. To accomplish this, Aiven utilizes a bastion host logically separated from the
-Aiven services you deploy. As the user of these services (for example, Aiven for Apache Kafka®), you are able to utilize them through standard VPC peering techniques. Although the bastion host and the service nodes reside in your managed VPC, they are not accessible (for example, SSH) to anyone outside Aiven.
+The standard BYOC deployment requires you to create a Virtual Private Cloud (**BYOC VPC**) dedicated to Aiven-managed services within a cloud region you want to operate in. Aiven accesses this VPC from a static IP address and routes traffic through a proxy for additional security. To accomplish this, Aiven utilizes a bastion host physically separated from the Aiven services you deploy. You are able to integrate your services using standard VPC peering techniques.
+
+.. note::
+   
+   Although the bastion host and the service nodes reside in the VPC under your management (**BYOC VPC**), they are not accessible (for example, via SSH) to anyone outside Aiven.
+
+   The bastion and workload nodes require outbound access to the Internet to work properly (supporting HA signaling to the Aiven management node and RPM download from Aiven repositories).
 
 Depending on the service used, Aiven takes regular backups to enable forking, point in time recovery (PITR), and disaster recovery. These backups by default do not reside in your cloud. If there is a requirement to have all backups
 in your own cloud, it's still possible. To accomplish this, Aiven needs an object storage and read-write permissions.
