@@ -270,3 +270,14 @@ For features that are in the early availability stage and can be enabled in the 
 
     .. important:: 
         {feature name} is an :doc:`early availability feature </docs/platform/concepts/beta_services>`. To use it, :doc:`enable the feature preview </docs/platform/howto/feature-preview.html>` in your user profile.
+
+
+Pro Platform feature note template
+'''''''''''''''''''''''''''''''''''
+
+For features that are only available to customers that have Pro Platform enabled, add the following admonition directly under the article title:
+
+.. code::
+
+    .. important:: 
+        {feature name} is available on :doc:`Pro Platform </docs/platform/concepts/pro-platform>`.
